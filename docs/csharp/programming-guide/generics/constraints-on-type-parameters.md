@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: d05307735506db0f0e4abab067334e4f0466ee6a
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
-ms.translationtype: MT
+ms.openlocfilehash: 19bf511ee7252bc305dbb4b6f32636955eba0ab8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204643"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337261"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typu (C# Průvodce programováním)
 
@@ -25,8 +25,8 @@ Omezení informují kompilátor o možnostech, které musí mít argument typu. 
 |`where T : notnull`|Argument typu musí být typ, který nemůže mít hodnotu null. Argumentem může být typ odkazu, který neumožňuje hodnotu C# null, v 8,0 nebo novějším, nebo typ hodnoty, která není null. Toto omezení platí také pro libovolnou třídu, rozhraní, delegáta nebo typ pole.|
 |`where T : unmanaged`|Argument typu musí být [nespravovaný typ](../../language-reference/builtin-types/unmanaged-types.md), který nemůže mít hodnotu null. Omezení `unmanaged` implikuje omezení `struct` a nelze je kombinovat s omezeními `struct` ani `new()`.|
 |`where T : new()`|Argument typu musí mít veřejný konstruktor bez parametrů. Při použití společně s jinými omezeními je nutné zadat omezení `new()` jako poslední. Omezení `new()` nelze kombinovat s omezeními `struct` a `unmanaged`.|
-|*název základní třídy `where T :`\<>*|Argument typu musí být nebo odvozen ze zadané základní třídy.|
-|*název rozhraní `where T :`\<>*|Argument typu musí být nebo implementovat zadané rozhraní. Je možné zadat více omezení rozhraní. Omezení rozhraní může být také obecné.|
+|*název základní třídy `where T :`\<*|Argument typu musí být nebo odvozen ze zadané základní třídy.|
+|*název rozhraní `where T :`\<*|Argument typu musí být nebo implementovat zadané rozhraní. Je možné zadat více omezení rozhraní. Omezení rozhraní může být také obecné.|
 |`where T : U`|Argument typu zadaný pro T musí být nebo odvozen od argumentu zadaného pro U.|
 
 ## <a name="why-use-constraints"></a>Proč použít omezení
@@ -107,20 +107,20 @@ Pokud Odkomentujete poslední řádek, nebude zkompilován. `first` i `test` jso
 
 Počínaje C# 7,3 můžete také zadat typ <xref:System.Enum?displayProperty=nameWithType> jako omezení základní třídy. CLR vždy povoluje toto omezení, ale C# jazyk ho nepovolil. Obecné typy pomocí `System.Enum` poskytují programové programování pro ukládání výsledků do mezipaměti pomocí statických metod v `System.Enum`. Následující ukázka vyhledá všechny platné hodnoty pro typ výčtu a potom vytvoří slovník, který tyto hodnoty mapuje na jeho řetězcovou reprezentaci.
 
-[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
+[!code-csharp[using the enum constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
 
-Používané metody využívají reflexi, což má dopad na výkon. Tuto metodu lze zavolat pro sestavení kolekce, která je uložena v mezipaměti a znovu použita, nikoli volání, která vyžadují reflexi.
+Metody použité k použití reflexe, který má dopad na výkon. Tuto metodu lze zavolat pro sestavení kolekce, která je uložena v mezipaměti a znovu použita, nikoli volání, která vyžadují reflexi.
 
 Můžete ji použít, jak je znázorněno v následujícím příkladu, pro vytvoření výčtu a sestavení slovníku jeho hodnot a názvů:
 
-[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#19)]
+[!code-csharp[enum definition](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#19)]
 
-[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#20)]
+[!code-csharp[using the enum constrained method](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#20)]
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
-- [Průvodce programováním v C#](../index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
 - [Úvod do obecných typů](./index.md)
 - [Obecné třídy](./generic-classes.md)
 - [new – omezení](../../language-reference/keywords/new-constraint.md)

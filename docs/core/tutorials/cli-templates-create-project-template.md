@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 1f4e73287fca650b20ed5617c8dfd80e0bd8363c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 64b029f87135c3424d01a6833619f0aec3833883
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318276"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340356"
 ---
 # <a name="tutorial-create-a-project-template"></a>Kurz: Vytvoření šablony projektu
 
@@ -29,13 +29,13 @@ V této části série se naučíte:
 ## <a name="prerequisites"></a>Požadavky
 
 * Vyplňte [část 1](cli-templates-create-item-template.md) této série kurzů.
-* Otevřete terminál a přejděte do složky _working\templates\\_ .
+* Otevřete terminál a přejděte do složky _working\templates_ .
 
 ## <a name="create-a-project-template"></a>Vytvoření šablony projektu
 
 Projektové šablony vytvářejí projekty připravené k spuštění, které uživatelům usnadňují spuštění pracovní sady kódu. .NET Core obsahuje několik šablon projektů, jako je například Konzolová aplikace nebo knihovna tříd. V tomto příkladu vytvoříte nový projekt konzoly, který povolí C# 8,0 a vytvoří `async main` vstupní bod.
 
-V terminálu přejděte do složky _working\templates\\_ a vytvořte novou podsložku s názvem _consoleasync_. Zadejte podsložku a spusťte `dotnet new console` pro vygenerování standardní konzolové aplikace. Pokud chcete vytvořit novou šablonu, budete upravovat soubory vytvořené touto šablonou.
+V terminálu přejděte do složky _working\templates_ a vytvořte novou podsložku s názvem _consoleasync_. Zadejte podsložku a spusťte `dotnet new console` pro vygenerování standardní konzolové aplikace. Pokud chcete vytvořit novou šablonu, budete upravovat soubory vytvořené touto šablonou.
 
 ```console
 working
@@ -98,7 +98,7 @@ Teď, když máte vytvořený obsah šablony, je nutné vytvořit šablonu confi
 
 ## <a name="create-the-template-config"></a>Vytvoření šablony konfigurace
 
-Šablony jsou v rozhraní .NET Core rozpoznány pomocí speciální složky a konfiguračního souboru, který se nachází v kořenovém adresáři šablony. V tomto kurzu se složka šablony nachází na adrese _working\templates\consoleasync\\_ .
+Šablony jsou v rozhraní .NET Core rozpoznány pomocí speciální složky a konfiguračního souboru, který se nachází v kořenovém adresáři šablony. V tomto kurzu se složka šablony nachází na adrese _working\templates\consoleasync_.
 
 Když vytvoříte šablonu, všechny soubory a složky ve složce šablon budou zahrnuty jako součást šablony kromě speciální konfigurační složky. Tato konfigurační složka má název _. template. config_.
 

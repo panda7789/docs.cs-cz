@@ -4,12 +4,12 @@ description: Nedávná vylepšení C# jazyka umožňují psát ověřitelný bez
 ms.date: 10/23/2018
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 3dc3213cf24f4cdd8f0f1b7752263b4a609b2fa2
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f590a338d35966e2cd3a507164057a49b8a5f6f8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039632"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346705"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečného a C# efektivního kódu
 
@@ -72,42 +72,42 @@ Toto doporučení použijte vždy, když je záměrem návrhu vytvořit neměnn�
 
 ## <a name="declare-readonly-members-when-a-struct-cant-be-immutable"></a>Deklarovat členy jen pro čtení, pokud struktura nemůže být neměnná
 
-V C# 8,0 a novějších platí, že pokud je typ struktury proměnlivý, měli byste deklarovat členy, které nezpůsobí, že by mutace byly`readonly`. Například následující je proměnlivá varianta struktury 3D bodů:
+V C# 8,0 a novějších platí, že pokud je typ struktury proměnlivý, měli byste deklarovat členy, které nezpůsobí, že by mutace byly `readonly`. Například následující je proměnlivá varianta struktury 3D bodů:
 
 ```csharp
 public struct Point3D
 {
     public Point3D(double x, double y, double z)
     {
-        this.X = x;
-        this.Y = y;
-        this.Z = z;
+        _x = x;
+        _y = y;
+        _z = z;
     }
 
     private double _x;
-    public double X 
-    { 
-        readonly get { return _x;}; 
-        set { _x = value; }
+    public double X
+    {
+        readonly get => _x;
+        set => _x = value;
     }
-    
+
     private double _y;
-    public double Y 
-    { 
-        readonly get { return _y;}; 
-        set { _y = value; }
+    public double Y
+    {
+        readonly get => _y;
+        set => _y = value;
     }
 
     private double _z;
-    public double Z 
-    { 
-        readonly get { return _z;}; 
-        set { _z = value; }
+    public double Z
+    {
+        readonly get => _z;
+        set => _z = value;
     }
 
     public readonly double Distance => Math.Sqrt(X * X + Y * Y + Z * Z);
 
-    public readonly override string ToString() => $"{X, Y, Z }";
+    public readonly override string ToString() => $"{X}, {Y}, {Z}";
 }
 ```
 
@@ -137,7 +137,7 @@ public struct Point3D
 }
 ```
 
-Nechcete, aby volající měnili počátek, takže byste měli vrátit hodnotu `readonly ref`:
+Nechcete, aby volající měnili počátek, takže byste měli vrátit hodnotu `ref readonly`:
 
 ```csharp
 public struct Point3D
@@ -152,7 +152,7 @@ public struct Point3D
 
 Vrácení `ref readonly` umožňuje uložit kopírování větších struktur a zachovat neměnnosti vašich interních datových členů.
 
-Na webu volání využije volající možnost použít vlastnost `Origin` jako `readonly ref` nebo jako hodnotu:
+Na webu volání využije volající možnost použít vlastnost `Origin` jako `ref readonly` nebo jako hodnotu:
 
 [!code-csharp[AssignRefReadonly](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#AssignRefReadonly "Assigning a ref readonly")]
 
@@ -176,7 +176,7 @@ Typy hodnot jsou zkopírovány při předání do volané metody, pokud nezadát
 
 Přidejte modifikátor `in`, který předává argument odkazem a deklaruje záměr návrhu k předání argumentů odkazem, aby nedocházelo k zbytečnému kopírování. Nebudete mít v úmyslu upravovat objekt použitý jako argument.
 
-Tento postup často vylepšuje výkon pro typy hodnot ReadOnly, které jsou větší než <xref:System.IntPtr.Size?displayProperty=nameWithType>. Pro jednoduché typy (`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` a `bool`a `enum` typy) , všechny potenciální nárůsty výkonu jsou minimální. Ve skutečnosti se výkon může snížit pomocí předávacího odkazu pro typy menší než <xref:System.IntPtr.Size?displayProperty=nameWithType>.
+Tento postup často vylepšuje výkon pro typy hodnot ReadOnly, které jsou větší než <xref:System.IntPtr.Size?displayProperty=nameWithType>. U jednoduchých typů (`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` a `bool`a `enum`ch typů) jsou všechny potenciální nárůsty výkonu minimální. Ve skutečnosti se výkon může snížit pomocí předávacího odkazu pro typy menší než <xref:System.IntPtr.Size?displayProperty=nameWithType>.
 
 Následující kód ukazuje příklad metody, která vypočítá vzdálenost mezi dvěma body v 3D prostoru.
 
@@ -238,7 +238,7 @@ Související funkce jazyka je schopnost deklarovat typ hodnoty, který musí b�
 
 Můžete mít podobné požadavky na práci s pamětí vytvořenou pomocí [`stackalloc`](language-reference/operators/stackalloc.md) nebo při použití paměti z rozhraní API pro interoperabilitu. Pro tyto potřeby můžete definovat vlastní typy `ref struct`.
 
-## <a name="readonly-ref-struct-type"></a>typ `readonly ref struct`
+## <a name="readonly-ref-struct-type"></a>Typ `readonly ref struct`
 
 Deklarace struktury jako `readonly ref` kombinuje výhody a omezení deklarace `ref struct` a `readonly struct`. Paměť využitá rozsahem jen pro čtení je omezená na jeden rámec zásobníku a paměť, kterou používá rozsah jen pro čtení, se nedá změnit.
 

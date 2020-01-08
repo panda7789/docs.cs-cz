@@ -2,12 +2,12 @@
 title: Průvodce programováním (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: 977aedd7-0084-46a0-b56f-345787a55da1
-ms.openlocfilehash: c971f0a92829df40a14631aaff353a268f277f11
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: dc13af06cf6c439d739d76904f206ebc50ba3187
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783201"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634804"
 ---
 # <a name="programming-guide-linq-to-dataset"></a>Průvodce programováním (LINQ to DataSet)
 Tato část obsahuje koncepční informace a příklady pro programování s LINQ to DataSet.  
@@ -20,19 +20,19 @@ Tato část obsahuje koncepční informace a příklady pro programování s LIN
  Popisuje způsob dotazování <xref:System.Data.DataSet> objektů.  
   
  [Porovnání datových řádků](comparing-datarows-linq-to-dataset.md)  
- Popisuje, jak použít <xref:System.Data.DataRowComparer> objekt pro porovnání datových řádků.  
+ Popisuje, jak použít objekt <xref:System.Data.DataRowComparer> k porovnání datových řádků.  
   
  [Vytvoření datové tabulky z dotazu](creating-a-datatable-from-a-query-linq-to-dataset.md)  
- Poskytuje informace o vytvoření <xref:System.Data.DataTable> z LINQ to DataSetho dotazu <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> pomocí metody.  
+ Poskytuje informace o vytváření <xref:System.Data.DataTable> z LINQ to DataSetho dotazu pomocí metody <xref:System.Data.DataTableExtensions.CopyToDataTable%2A>.  
   
- [Postupy: Implementujte\<CopyToDataTable T >, kde obecný typ T není DataRow.](implement-copytodatatable-where-type-not-a-datarow.md)  
- Popisuje, jak implementovat vlastní `CopyToDataTable<T>` metodu, kde obecný parametr T není typu. <xref:System.Data.DataRow>  
+ [Postupy: implementace CopyToDataTable\<T >, kde obecný typ T není DataRow](implement-copytodatatable-where-type-not-a-datarow.md)  
+ Popisuje, jak implementovat vlastní metodu `CopyToDataTable<T>`, kde obecný parametr T není typu <xref:System.Data.DataRow>.  
   
  [Obecné pole a metody SetField](generic-field-and-setfield-methods-linq-to-dataset.md)  
  Poskytuje informace o obecných <xref:System.Data.DataRowExtensions.Field%2A> a <xref:System.Data.DataRowExtensions.SetField%2A> metodách.  
   
  [Datová vazba a LINQ to DataSet](data-binding-and-linq-to-dataset.md)  
- Popisuje datovou vazbu <xref:System.Data.DataView> pomocí objektu.  
+ Popisuje datovou vazbu pomocí objektu <xref:System.Data.DataView>.  
   
  [Ladění dotazů v LINQ to DataSet](debugging-linq-to-dataset-queries.md)  
  Poskytuje informace o ladění a řešení potíží s LINQ to DataSet dotazy.  
@@ -41,9 +41,9 @@ Tato část obsahuje koncepční informace a příklady pro programování s LIN
  Popisuje problémy se zabezpečením v LINQ to DataSet.  
   
  [Příklady LINQ to DataSet](linq-to-dataset-examples.md)  
- Poskytuje příklady dotazů, které používají [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] operátory.  
+ Poskytuje příklady dotazů, které používají operátory LINQ.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
  <xref:System.Data.DataRowComparer>  
   
  <xref:System.Data.DataRowExtensions>  
@@ -55,4 +55,4 @@ Tato část obsahuje koncepční informace a příklady pro programování s LIN
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ a ADO.NET](linq-and-ado-net.md)
-- [LINQ (Language Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md)
+- [ (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md)

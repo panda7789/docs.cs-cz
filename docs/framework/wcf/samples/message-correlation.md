@@ -2,21 +2,22 @@
 title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 0f5124b8172a7a4d553d19e08309affb48e7468c
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: adabf02cb8ec232a887bd4720ea9552a7d870fe3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714868"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348334"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
-Tato ukázka předvádí, jak může aplikace služby Řízení front zpráv (MSMQ) odesílat zprávy MSMQ službě Windows Communication Foundation (WCF) a jak se dají mezi aplikacemi odesílatele a přijímače sladit zprávy ve scénáři požadavků a odpovědí. V této ukázce se používá vazba msmqIntegrationBinding. Tato služba je v tomto případě samoobslužná Konzolová aplikace, která umožňuje sledovat službu, která přijímá zprávy ve frontě. tis.  
-  
- Služba zpracuje zprávu přijatou od odesílatele a pošle zprávu odpovědi zpět odesilateli. Odesilatel koreluje odpověď, kterou obdržel, na žádost, kterou odeslal původně. Vlastnosti `MessageID` a `CorrelationID` zprávy slouží ke korelaci požadavků a zpráv odpovědí.  
-  
- Kontrakt služby `IOrderProcessor` definuje jednosměrnou operaci služby, která je vhodná pro použití při zařazování do fronty. Zpráva služby MSMQ neobsahuje záhlaví akce, takže není možné automaticky mapovat různé zprávy MSMQ na provozní kontrakty. V tomto případě může v tomto případě existovat pouze jedna kontrakt operace. Chcete-li ve službě definovat více kontraktů operací, aplikace musí poskytnout informace o tom, které záhlaví ve zprávě služby MSMQ (například popisek nebo ID korelace) lze použít k rozhodnutí, který kontrakt operace se má odeslat. 
-  
- Zpráva služby MSMQ neobsahuje také informace o tom, která záhlaví jsou namapována na různé parametry kontraktu operace. Proto může být v kontraktu operace pouze jeden parametr. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, který obsahuje podkladovou zprávu služby MSMQ. Typ "T" ve třídě `MsmqMessage<T>` představuje data serializovaná do těla zprávy služby MSMQ. V této ukázce je typ `PurchaseOrder` serializován do těla zprávy služby MSMQ.  
+
+Tato ukázka předvádí, jak může aplikace služby Řízení front zpráv (MSMQ) odesílat zprávy MSMQ službě Windows Communication Foundation (WCF) a jak se dají mezi aplikacemi odesílatele a přijímače sladit zprávy ve scénáři požadavků a odpovědí. V této ukázce se používá vazba msmqIntegrationBinding. Tato služba je v tomto případě samoobslužná Konzolová aplikace, která umožňuje sledovat službu, která přijímá zprávy ve frontě. tis.
+
+ Služba zpracuje zprávu přijatou od odesílatele a pošle zprávu odpovědi zpět odesilateli. Odesilatel koreluje odpověď, kterou obdržel, na žádost, kterou odeslal původně. Vlastnosti `MessageID` a `CorrelationID` zprávy slouží ke korelaci požadavků a zpráv odpovědí.
+
+ Kontrakt služby `IOrderProcessor` definuje jednosměrnou operaci služby, která je vhodná pro použití při zařazování do fronty. Zpráva služby MSMQ neobsahuje záhlaví akce, takže není možné automaticky mapovat různé zprávy MSMQ na provozní kontrakty. V tomto případě může v tomto případě existovat pouze jedna kontrakt operace. Chcete-li ve službě definovat více kontraktů operací, aplikace musí poskytnout informace o tom, které záhlaví ve zprávě služby MSMQ (například popisek nebo ID korelace) lze použít k rozhodnutí, který kontrakt operace se má odeslat.
+
+ Zpráva služby MSMQ neobsahuje také informace o tom, která záhlaví jsou namapována na různé parametry kontraktu operace. Proto může být v kontraktu operace pouze jeden parametr. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, který obsahuje podkladovou zprávu služby MSMQ. Typ "T" ve třídě `MsmqMessage<T>` představuje data serializovaná do těla zprávy služby MSMQ. V této ukázce je typ `PurchaseOrder` serializován do těla zprávy služby MSMQ.
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -269,7 +270,7 @@ static void DisplayOrderStatus()
 > [!NOTE]
 > Tato ukázka vyžaduje instalaci služby Řízení front zpráv (MSMQ). Pokyny k instalaci služby MSMQ najdete v části Viz také.
 
-### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
+## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
@@ -289,7 +290,7 @@ static void DisplayOrderStatus()
 
 4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
-### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky mezi počítači
+## <a name="run-the-sample-across-computers"></a>Spuštění ukázky napříč počítači
 
 1. Zkopírujte programové soubory služby ze složky \service\bin\ ve složce specifické pro daný jazyk do počítače služby.
 
@@ -304,14 +305,14 @@ static void DisplayOrderStatus()
 6. V klientském počítači spusťte z příkazového řádku soubor Client. exe.
 
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
-> `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
-  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`
+
 ## <a name="see-also"></a>Viz také:
 
 - [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)

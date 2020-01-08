@@ -10,14 +10,15 @@ helpviewer_keywords:
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
 author: KrzysztofCwalina
-ms.openlocfilehash: 28b00f5911bb47536ec44b96f284e47b6c671149
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
-ms.translationtype: MT
+ms.openlocfilehash: 93554594b49b742a6a5e8461b6b16046701ec07c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353743"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347852"
 ---
 # <a name="parameter-design"></a>Návrh parametru
+
 Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s pokyny pro kontrolu argumentů. Kromě toho byste měli postupovat podle pokynů popsaných v tématu [parametry pojmenování](../../../docs/standard/design-guidelines/naming-parameters.md).  
   
  **✓ DO** používat alespoň odvozený typ parametru, který poskytuje funkci vyžadovanou člena.  
@@ -40,7 +41,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
   
  Tím se lépe komunikuje vztah mezi metodami.  
   
-### <a name="choosing-between-enum-and-boolean-parameters"></a>Volba mezi výčtovým a logickým parametrem  
+### <a name="choose-between-enum-and-boolean-parameters"></a>Zvolit mezi výčtovým a logickým parametrem  
  **✓ DO** použijte výčty, pokud člen byste jinak museli dvě nebo více parametrů logická hodnota.  
   
  **X DO NOT** používat logické hodnoty, pokud jste si naprosto jisti, nikdy bude potřeba více než dvě hodnoty.  
@@ -49,7 +50,7 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
   
  **✓ CONSIDER** pomocí logických výrazů pro konstruktor parametry, které jsou hodnoty skutečně dvou stavů a jednoduše slouží k inicializaci logická hodnota vlastnosti.  
   
-### <a name="validating-arguments"></a>Ověřují se argumenty  
+### <a name="validate-arguments"></a>Ověřit argumenty  
  **✓ DO** ověřte argumenty předaný veřejný, chráněný nebo – explicitně implementovaná členy. Pokud se ověření nepovede, vyvolejte <xref:System.ArgumentException?displayProperty=nameWithType>nebo jednu z jejích podtříd.  
   
  Všimněte si, že skutečné ověření nemusí nutně probíhat ve veřejném nebo chráněném členu. Může dojít na nižší úrovni v některé soukromé nebo interní rutině. Hlavním bodem je, že celá oblast Surface, která je vystavena koncovým uživatelům, kontroluje argumenty.  
@@ -66,10 +67,10 @@ Tato část obsahuje obecné pokyny pro návrh parametrů, včetně oddílů s p
   
  Pokud je člen citlivý na zabezpečení, doporučujeme vytvořit kopii a pak ověřit a zpracovat argument.  
   
-### <a name="parameter-passing"></a>Předávání parametrů  
+### <a name="pass-parameters"></a>Parametry předání  
  Z perspektivy návrháře architektury existují tři hlavní skupiny parametrů: parametry podle hodnoty, parametry `ref` a parametry `out`.  
   
- Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako jsou například C#, VB.NET a C++, jsou ve výchozím nastavení k předávání parametrů podle hodnoty.  
+ Pokud je předán argument pomocí parametru podle hodnoty, člen obdrží kopii skutečného předaného argumentu. Pokud je argumentem hodnotový typ, je kopie argumentu vložena do zásobníku. Pokud je argumentem odkazový typ, kopie odkazu je vložena do zásobníku. Nejoblíbenější jazyky CLR, jako například C#, Visual Basic a C++, jsou ve výchozím nastavení k předávání parametrů podle hodnoty.  
   
  Pokud je předán argument pomocí parametru `ref`, člen obdrží odkaz na vlastní předaný argument. Pokud je argumentem hodnotový typ, odkaz na argument je vložen do zásobníku. Pokud je argumentem odkazový typ, odkaz na odkaz je vložen do zásobníku. parametry `Ref` lze použít k umožnění člena upravovat argumenty předané volajícím.  
   

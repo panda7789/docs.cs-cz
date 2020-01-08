@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 2b9948ce22eb221d9d757fcec4c556d365469fdf
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 0eb9883373484b72f771e0033936f56d00f9186d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039265"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346811"
 ---
 # <a name="console-application"></a>Konzolová aplikace
 
@@ -27,7 +27,7 @@ V tomto kurzu máte spoustu funkcí. Pojďme je sestavit jednou po jednom.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Docker.
+Budete muset nastavit počítač tak, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Docker.
 Budete muset nainstalovat svůj oblíbený editor kódu.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
@@ -82,7 +82,8 @@ using System.IO;
 
 Rozhraní <xref:System.Collections.Generic.IEnumerable%601> je definováno v oboru názvů <xref:System.Collections.Generic>. Třída <xref:System.IO.File> je definována v oboru názvů <xref:System.IO>.
 
-Tato metoda je speciální typ C# metody označované jako *Metoda iterátoru*. Metody enumerátoru vracejí sekvence, které jsou vyhodnocovány laxně vytvářená. To znamená, že každá položka v sekvenci je vygenerována tak, jak je požadována kódem, který spotřebovává sekvenci. Metody enumerátoru jsou metody, které obsahují jeden nebo více příkazů [`yield return`](../language-reference/keywords/yield.md) . Objekt vrácený metodou `ReadFrom` obsahuje kód pro vygenerování každé položky v sekvenci. V tomto příkladu zahrnuje čtení dalšího řádku textu ze zdrojového souboru a vrácení tohoto řetězce. Pokaždé, když volající kód požádá o další položku z sekvence, kód přečte další řádek textu ze souboru a vrátí jej. Když je soubor kompletně načtený, sekvence indikuje, že nejsou k dispozici žádné další položky.
+Tato metoda je speciální typ C# metody označované jako *Metoda iterátoru*.
+Metody enumerátoru vracejí sekvence, které jsou vyhodnocovány laxně vytvářená. To znamená, že každá položka v sekvenci je vygenerována tak, jak je požadována kódem, který spotřebovává sekvenci. Metody enumerátoru jsou metody, které obsahují jeden nebo více příkazů [`yield return`](../language-reference/keywords/yield.md) . Objekt vrácený metodou `ReadFrom` obsahuje kód pro vygenerování každé položky v sekvenci. V tomto příkladu zahrnuje čtení dalšího řádku textu ze zdrojového souboru a vrácení tohoto řetězce. Pokaždé, když volající kód požádá o další položku z sekvence, kód přečte další řádek textu ze souboru a vrátí jej. Když je soubor kompletně načtený, sekvence indikuje, že nejsou k dispozici žádné další položky.
 
 Existují dva další C# prvky syntaxe, které mohou být pro vás nové. Příkaz [`using`](../language-reference/keywords/using-statement.md) v této metodě spravuje čištění prostředků. Proměnná, která je inicializována v příkazu `using` (`reader`v tomto příkladu), musí implementovat rozhraní <xref:System.IDisposable>. Toto rozhraní definuje jedinou metodu, `Dispose`, která by měla být volána, když by měl být prostředek uvolněn. Kompilátor vygeneruje toto volání, když provádění dosáhne uzavírací složené závorky příkazu `using`. Kód generovaný kompilátorem zajišťuje uvolnění prostředku i v případě, že je vyvolána výjimka z kódu v bloku definovaném příkazem using.
 
@@ -156,7 +157,8 @@ Spusťte ukázku a budete moct číst nahlas v jeho předem nakonfigurovaném te
 
 ## <a name="async-tasks"></a>Asynchronní úlohy
 
-V tomto posledním kroku přidáte kód pro asynchronní zápis výstupu do jedné úlohy a zároveň spustíte jiný úkol pro čtení vstupu od uživatele, pokud chtějí zrychlit nebo zpomalit zobrazení textu, nebo ukončit zobrazování textu. V tomto případě je to několik kroků a na konci budete mít k dispozici všechny potřebné aktualizace.
+V tomto posledním kroku přidáte kód pro asynchronní zápis výstupu do jedné úlohy a zároveň spustíte jiný úkol pro čtení vstupu od uživatele, pokud chtějí zrychlit nebo zpomalit zobrazení textu, nebo ukončit zobrazování textu.
+V tomto případě je to několik kroků a na konci budete mít k dispozici všechny potřebné aktualizace.
 Prvním krokem je vytvoření metody, která vrací asynchronní <xref:System.Threading.Tasks.Task>, která představuje kód, který jste dosud vytvořili pro čtení a zobrazení souboru.
 
 Přidejte tuto metodu do třídy `Program` (je pořízena z těla vaší `Main` metody):

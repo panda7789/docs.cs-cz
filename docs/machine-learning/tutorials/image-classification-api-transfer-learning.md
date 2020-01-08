@@ -3,15 +3,15 @@ title: 'Kurz: automatizované vizuální prověřování pomocí učení přenos
 description: V tomto kurzu se dozvíte, jak pomocí funkce Transfer Learning vytvořit TensorFlow model hloubkového učení v ML.NET pomocí rozhraní API pro detekci imagí pro klasifikaci imagí konkrétních ploch jako prasklé nebo neprasklé.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 11/14/2019
+ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 443f9e9a83ebf31bb6c62323015af4a554323b67
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 4781e39a0c8827adb6ab0155d5215645242208a5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74205059"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348156"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Kurz: automatizované vizuální prověřování pomocí přenosu přenosu s rozhraním API pro klasifikaci imagí ML.NET
 
@@ -84,7 +84,7 @@ Teď, když máte obecné znalosti o učení přenosů a rozhraní API klasifika
 1. Nainstalujte balíček NuGet verze **Microsoft.ml** **1.4.0** :
     1. V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
     1. Jako zdroj balíčku vyberte "nuget.org".
-    1. Vyberte kartu **Procházet** .
+    1. Vyberte kartu **Procházet**.
     1. Zaškrtněte políčko **zahrnout předběžné verze** .
     1. Vyhledejte **Microsoft.ml**.
     1. Vyberte tlačítko **instalovat** .

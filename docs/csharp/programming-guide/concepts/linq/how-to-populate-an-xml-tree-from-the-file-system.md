@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Naplnění stromu XML ze systému souborů (C#)'
+title: Postup naplnění stromu XML ze systému souborů (C#)
 ms.date: 07/20/2015
 ms.assetid: 2aa2ccac-4a22-47ae-9107-3bb8df232576
-ms.openlocfilehash: dc3850c943ebac8980abbff0933413538823d21d
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: beb44be1a787fa09b091aa48022dbb5b10c4632b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485168"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345785"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postupy: Naplnění stromu XML ze systému souborů (C#)
-Je běžné použití užitečné stromů XML jako úložiště dat hierarchické název/hodnota. Můžete naplnění stromu XML s hierarchickými daty a pak ji dotazovat, transformují je a v případě potřeby ho serializovat. V tomto scénáři použití mnoha specifické sémantiku XML, například obory názvů a chování mezer, nejsou důležité. Místo toho používají stromu XML jako malé, v paměti, hierarchické databázi jednoho uživatele.  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postup naplnění stromu XML ze systému souborů (C#)
+Společnou a užitečnou aplikací stromů XML je úložiště dat hierarchického názvu nebo hodnoty. Můžete naplnit strom XML hierarchickými daty a pak je dotazovat, transformovat a v případě potřeby ho serializovat. V tomto scénáři použití nejsou důležité mnohé z sémantiky specifické pro XML, jako jsou například obory názvů a prázdné znaky. Místo toho můžete strom XML používat jako malou databázi, hierarchickou databázi s jedním uživatelem.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se naplní stromu XML z místního systému souborů pomocí rekurze. Následně se dotazuje stromu výpočtu celkové velikosti všech souborů ve stromové struktuře.  
+ Následující příklad naplní strom XML z místního systému souborů pomocí rekurze. Pak se dotazuje na strom a vypočítá celkový počet velikostí všech souborů ve stromu.  
   
 ```csharp  
 class Program  

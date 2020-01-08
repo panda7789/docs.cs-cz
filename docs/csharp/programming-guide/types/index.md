@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 27560449daa18741a53e3affa33e08afa40d006a
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: bf520c57f5578f82a0d00e4c7db40e43b308eddf
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552497"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345669"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -68,7 +68,7 @@ C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádřen�
 
 ## <a name="custom-types"></a>Vlastní typy
 
-Použijete konstrukce [struct](../../language-reference/keywords/struct.md), [Class](../../language-reference/keywords/class.md), [Interface](../../language-reference/keywords/interface.md)a [Enum](../../language-reference/keywords/enum.md) k vytvoření vlastních typů. Samotná knihovna tříd .NET je kolekce vlastních typů poskytovaných Microsoftem, které můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou nejčastěji používané typy v knihovně tříd k dispozici v jakémkoli C# programu. Ostatní budou k dispozici pouze v případě, že explicitně přidáte odkaz na projekt do sestavení, ve kterém jsou definovány. Poté, co má kompilátor odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v tomto sestavení ve zdrojovém kódu. Další informace naleznete v tématu [Knihovna tříd .NET](../../../standard/class-library-overview.md).
+Použijete konstrukce [struct](../../language-reference/keywords/struct.md), [Class](../../language-reference/keywords/class.md), [Interface](../../language-reference/keywords/interface.md)a [Enum](../../language-reference/builtin-types/enum.md) k vytvoření vlastních typů. Samotná knihovna tříd .NET je kolekce vlastních typů poskytovaných Microsoftem, které můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou nejčastěji používané typy v knihovně tříd k dispozici v jakémkoli C# programu. Ostatní budou k dispozici pouze v případě, že explicitně přidáte odkaz na projekt do sestavení, ve kterém jsou definovány. Poté, co má kompilátor odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v tomto sestavení ve zdrojovém kódu. Další informace naleznete v tématu [Knihovna tříd .NET](../../../standard/class-library-overview.md).
 
 ## <a name="the-common-type-system"></a>Obecný systém typů
 
@@ -91,7 +91,7 @@ Následující obrázek znázorňuje typy hodnot a typy odkazů v CTS:
 
 Typy hodnot jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType>, které jsou odvozeny z <xref:System.Object?displayProperty=nameWithType>. Typy, které jsou odvozeny od <xref:System.ValueType?displayProperty=nameWithType> mají zvláštní chování v modulu CLR. Proměnné typu hodnoty přímo obsahují jejich hodnoty, což znamená, že je paměť přidělena vloženému v jakémkoli kontextu, kdy je proměnná deklarována. Neexistuje žádné samostatné přidělení haldy nebo režie uvolňování paměti pro proměnné typu hodnoty.
 
-Existují dvě kategorie typů hodnot: [struct](../../language-reference/keywords/struct.md) a [Enum](../../language-reference/keywords/enum.md).
+Existují dvě kategorie typů hodnot: [struct](../../language-reference/keywords/struct.md) a [Enum](../../language-reference/builtin-types/enum.md).
 
 Předdefinované číselné typy jsou struktury a mají vlastnosti a metody, ke kterým máte přístup:
 
@@ -116,17 +116,17 @@ Klíčové slovo [struct](../../language-reference/keywords/struct.md) můžete 
 
 Další informace o strukturách naleznete v tématu [structs](../classes-and-structs/structs.md). Další informace o typech hodnot v rozhraní .NET naleznete v tématu [typy hodnot](../../language-reference/keywords/value-types.md).
 
-Druhá kategorie typů hodnot je [Enum](../../language-reference/keywords/enum.md). Výčet definuje sadu pojmenovaných celočíselných konstant. Například výčet <xref:System.IO.FileMode?displayProperty=nameWithType> v knihovně tříd .NET obsahuje sadu pojmenovaných celých čísel, která určují, jak by měl být soubor otevřen. Je definován tak, jak je znázorněno v následujícím příkladu:
+Druhá kategorie typů hodnot je [Enum](../../language-reference/builtin-types/enum.md). Výčet definuje sadu pojmenovaných celočíselných konstant. Například výčet <xref:System.IO.FileMode?displayProperty=nameWithType> v knihovně tříd .NET obsahuje sadu pojmenovaných celých čísel, která určují, jak by měl být soubor otevřen. Je definován tak, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]
 
 `System.IO.FileMode.Create` konstanta má hodnotu 2. Název je však mnohem smysluplnější pro lidi, kteří čtou zdrojový kód, a z tohoto důvodu je lepší používat výčty namísto konstantních literálových čísel. Další informace najdete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
-Všechny výčty dědí z <xref:System.Enum?displayProperty=nameWithType>, které dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, která platí pro struktury, platí také pro výčty. Další informace o výčtech naleznete v tématu [výčtové typy](../enumeration-types.md).
+Všechny výčty dědí z <xref:System.Enum?displayProperty=nameWithType>, které dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, která platí pro struktury, platí také pro výčty. Další informace o výčtech naleznete v tématu [výčtové typy](../../language-reference/builtin-types/enum.md).
 
 ### <a name="reference-types"></a>Odkazové typy
 
-Typ, který je definován jako [Třída](../../language-reference/keywords/class.md), [delegát](../../language-reference/builtin-types/reference-types.md), pole nebo [rozhraní](../../language-reference/keywords/interface.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte objekt pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřaďte objekt, který byl vytvořen jinde pomocí `new`, jak je znázorněno v Následující příklad:
+Typ, který je definován jako [Třída](../../language-reference/keywords/class.md), [delegát](../../language-reference/builtin-types/reference-types.md), pole nebo [rozhraní](../../language-reference/keywords/interface.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte objekt pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřaďte objekt, který byl vytvořen jinde pomocí `new`, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 MyClass mc = new MyClass();
@@ -166,7 +166,7 @@ stringList.Add("String example");
 stringList.Add(4);
 ```
 
-Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](../../language-reference/builtin-types/reference-types.md). Třídy obecné kolekce se nazývají *kolekce se silnými typy* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `stringList` v části předchozí příklad. Další informace najdete v tématu [Obecné typy](../generics/index.md).
+Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](../../language-reference/builtin-types/reference-types.md). Třídy obecné kolekce se nazývají *kolekce se silnými* typy, protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `stringList` v předchozím příkladu. Další informace najdete v tématu [Obecné typy](../generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>Implicitní typy, anonymní typy a typy hodnot s možnou hodnotou null
 

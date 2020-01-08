@@ -2,12 +2,12 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 0ee11b67dcd9c7251df17dc7523dc20765e157c5
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 1e0290a4df688d39f84086dc4c1b41712f81076a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716693"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345149"
 ---
 # <a name="srmp"></a>SRMP
 Tato ukázka předvádí, jak pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP provádět komunikaci v transakční frontě.  
@@ -28,7 +28,7 @@ Tato ukázka předvádí, jak pomocí služby Řízení front zpráv (MSMQ) pře
   
 5. Pokud chcete mít jistotu, že se protokol HTTP používá ke komunikaci, můžete povolit spuštění služby MSMQ v zesíleném režimu. Tím se zajistí, že žádné zprávy, které se na tomto počítači hostují, nemůžou dorazit pomocí jakéhokoli přenosu bez protokolu HTTP.  
   
-6. Po výběru možnosti MSMQ pro spuštění v zesíleném režimu vyžaduje počítač nové spuštění v [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+6. Po vybrání možnosti MSMQ pro spuštění v zesíleném režimu vyžaduje počítač opětovné spuštění v systému Windows Server 2003.  
   
 7. Spusťte službu.  
   

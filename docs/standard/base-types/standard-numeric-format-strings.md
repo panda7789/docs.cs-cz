@@ -1,5 +1,5 @@
 ---
-title: Standardní řetězce formátu čísla
+title: Řetězce standardního číselného formátu
 ms.date: 06/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: c654ff2856891331f5680c673ac52f64ee2be141
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 04ac99c6b5100c3749eefc219e51b4d0084bef06
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121758"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346646"
 ---
-# <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
+# <a name="standard-numeric-format-strings"></a>Řetězce standardního číselného formátu
 
 Řetězce standardního číselného formátu se používají pro formátování běžných číselných typů. Standardní řetězec číselného formátu má formu `Axx`, kde:
 
@@ -53,15 +53,15 @@ Standardní řetězce číselného formátu jsou podporovány v:
 
 |Specifikátor formátu|Name|Popis|Příklady|
 |----------------------|----------|-----------------|--------------|
-|"C" nebo "c"|Měna|Výsledek: hodnota měny.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu měny ("C")](#CFormatString).|123,456 ("C", en-US)-> \\$123,46<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 €<br /><br /> 123,456 ("C", ja-JP)-> ¥123<br /><br /> -123,456 ("C3", en-US)-> (\\$123,456)<br /><br /> -123,456 ("C3", fr-FR)->-€123 456<br /><br /> -123,456 ("C3", ja-JP)->-¥123,456|
+|"C" nebo "c"|Měna|Výsledek: hodnota měny.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu měny ("C")](#CFormatString).|123,456 ("C", en-US)-> \\$123,46<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 €<br /><br /> 123,456 ("C", ja-JP)-> ¥123<br /><br /> -123,456 ("C3", en-US)-> (\\$123,456)<br /><br /> -123,456 ("C3", fr-FR)->-€123 456<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
 |"D" nebo "d"|Desetinné číslo|Výsledek: celá čísla s volitelným záporným znaménkem.<br /><br /> Podporováno: pouze integrálovými typy.<br /><br /> Specifikátor přesnosti: minimální počet číslic.<br /><br /> Výchozí specifikátor přesnosti: minimální požadovaný počet číslic.<br /><br /> Další informace: [specifikátor desítkového formátu ("D")](#DFormatString).|1234 ("D")-> 1234<br /><br /> -1234 ("D6")->-001234|
 |"E" nebo "e"|Exponenciální (vědecký) zápis|Výsledek: exponenciální zápis.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: 6.<br /><br /> Další informace: [specifikátor exponenciálního formátu ("E")](#EFormatString).|1052,0329112756 ("E", en-US)-> 1.052033 E + 003<br /><br /> 1052,0329112756 ("e", fr-FR)-> 1, 052033e + 003<br /><br /> -1052,0329112756 ("E2", en-US)->-1,05 e + 003<br /><br /> -1052,0329112756 ("E2", fr-FR)->-1, 05E + 003|
-|"F" nebo "f"|Pevná desetinná čárka|Výsledek: integrální a desítkové číslo s volitelným záporným znaménkem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu s pevnou desetinnou čárkou ("F")](#FFormatString).|1234,567 ("F", en-US)-> 1234,57<br /><br /> 1234,567 ("F", de-DE)-> 1234, 57<br /><br /> 1234 ("F1", en-US)-> 1234,0<br /><br /> 1234 ("F1", de-DE)-> 1234, 0<br /><br /> -1234,56 ("F4", en-US)->-1234,5600<br /><br /> -1234,56 ("F4", de-DE)->-1234, 1234,5600|
+|"F" nebo "f"|Pevná desetinná čárka|Výsledek: integrální a desítkové číslo s volitelným záporným znaménkem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu s pevnou desetinnou čárkou ("F")](#FFormatString).|1234,567 ("F", en-US)-> 1234,57<br /><br /> 1234,567 ("F", de-DE)-> 1234, 57<br /><br /> 1234 ("F1", en-US)-> 1234,0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234,56 ("F4", en-US)->-1234,5600<br /><br /> -1234,56 ("F4", de-DE)->-1234, 1234,5600|
 |"G" nebo "g"|Obecné|Výsledek: kompaktnější rozhraní s pevnou desetinnou čárkou nebo vědeckým zápisem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: počet nejvýznamnějších číslic.<br /><br /> Výchozí specifikátor přesnosti: závisí na číselném typu.<br /><br /> Další informace: [specifikátor obecného formátu ("G")](#GFormatString).|-123,456 ("G", en-US)->-123,456<br /><br /> -123,456 ("G", sv-SE)->-123 456<br /><br /> 123,4546 ("G4", en-US)-> 123,5<br /><br /> 123,4546 ("G4", sv-SE)-> 123, 5<br /><br /> -1.234567890 e-25 ("G", en-US)->-1.23456789 E-25<br /><br /> -1.234567890 e-25 ("G", sv-SE)->-1, 23456789E-25|
-|"N" nebo "n"|Číslo|Výsledek: integrální a desítkové číslice, oddělovače skupin a oddělovač desetinných míst s volitelným záporným znaménkem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor číselného formátu ("N")](#NFormatString).|1234,567 ("N", en-US)-> 1 234,57<br /><br /> 1234,567 ("N", ru-RU)-> 1 234, 57<br /><br /> 1234 ("N1", en-US)-> 1 234,0<br /><br /> 1234 ("N1", ru-RU)-> 1 234, 0<br /><br /> -1234,56 ("N3", en-US)->-1 234,560<br /><br /> -1234,56 ("N3", ru-RU)->-1 234 560|
-|"P" nebo "p"|Procento|Výsledek: číslo vynásobené číslem 100 a zobrazené se symbolem procenta.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu procent ("P")](#PFormatString).|1 ("P", en-US) – > 100,00%<br /><br /> 1 ("P", fr-FR)-> 100, 00%<br /><br /> -0,39678 ("P1", en-US)->-39,7%<br /><br /> -0,39678 ("P1", fr-FR)->-39, 7%|
+|"N" nebo "n"|Počet|Výsledek: integrální a desítkové číslice, oddělovače skupin a oddělovač desetinných míst s volitelným záporným znaménkem.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor číselného formátu ("N")](#NFormatString).|1234,567 ("N", en-US)-> 1 234,57<br /><br /> 1234,567 ("N", ru-RU)-> 1 234, 57<br /><br /> 1234 ("N1", en-US)-> 1 234,0<br /><br /> 1234 ("N1", ru-RU)-> 1 234, 0<br /><br /> -1234,56 ("N3", en-US)->-1 234,560<br /><br /> -1234,56 ("N3", ru-RU)->-1 234 560|
+|"P" nebo "p"|Procento|Výsledek: číslo vynásobené číslem 100 a zobrazené se symbolem procenta.<br /><br /> Podporováno: všemi číselnými typy.<br /><br /> Specifikátor přesnosti: požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: definováno <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [specifikátor formátu procent ("P")](#PFormatString).|1 ("P", en-US) – > 100,00%<br /><br /> 1 ("P", fr-FR) -> 100,00 %<br /><br /> -0,39678 ("P1", en-US)->-39,7%<br /><br /> -0,39678 ("P1", fr-FR)->-39, 7%|
 |"R" nebo "r"|Zpáteční převod|Výsledek: řetězec, který může použít operaci zpátečního převodu na stejné číslo.<br /><br /> Podporováno: <xref:System.Single>, <xref:System.Double>a <xref:System.Numerics.BigInteger>.<br /><br /> Poznámka: doporučuje se jenom pro <xref:System.Numerics.BigInteger> typ. U <xref:System.Double>ch typů použijte "G17"; pro <xref:System.Single> typy použijte "G9". <br> Specifikátor přesnosti: ignorováno.<br /><br /> Další informace: [specifikátor formátu Round-Trip ("R")](#RFormatString).|123456789,12345678 ("R")-> 123456789,12345678<br /><br /> -1234567890,12345678 ("R")->-1234567890,1234567|
-|"X" nebo "x"|Šestnáctková hodnota|Výsledek: šestnáctkový řetězec.<br /><br /> Podporováno: pouze integrálovými typy.<br /><br /> Specifikátor přesnosti: počet číslic ve výsledném řetězci.<br /><br /> Další informace: [specifikátor šestnáctkového formátu ("X")](#XFormatString).|255 ("X")-> FF<br /><br /> -1 ("x")-> FF<br /><br /> 255 ("X4") – > 00ff<br /><br /> -1 ("X4") – > 00FF|
+|"X" nebo "x"|Šestnáctková hodnota|Výsledek: šestnáctkový řetězec.<br /><br /> Podporováno: pouze integrálovými typy.<br /><br /> Specifikátor přesnosti: počet číslic ve výsledném řetězci.<br /><br /> Další informace: [specifikátor šestnáctkového formátu ("X")](#XFormatString).|255 ("X") -> FF<br /><br /> -1 ("x")-> FF<br /><br /> 255 ("X4") – > 00ff<br /><br /> -1 ("X4") -> 00FF|
 |Jakýkoli jiný samostatný znak|Neznámý specifikátor|Výsledek: vyvolá <xref:System.FormatException> za běhu.||
 
 <a name="Using"></a>
@@ -203,9 +203,9 @@ Obecný specifikátor formátu ("G") převede číslo na více kompaktních hodn
 
 |Číselný typ|Výchozí přesnost|
 |------------------|-----------------------|
-|<xref:System.Byte> nebo <xref:System.SByte>|3 číslice|
-|<xref:System.Int16> nebo <xref:System.UInt16>|5 číslic|
-|<xref:System.Int32> nebo <xref:System.UInt32>|10 číslic|
+|<xref:System.Byte> Nebo <xref:System.SByte>|3 číslice|
+|<xref:System.Int16> Nebo <xref:System.UInt16>|5 číslic|
+|<xref:System.Int32> Nebo <xref:System.UInt32>|10 číslic|
 |<xref:System.Int64>|19 číslic|
 |<xref:System.UInt64>|20 číslic|
 |<xref:System.Numerics.BigInteger>|Neomezeno (stejné jako ["R"](#RFormatString))|
@@ -322,7 +322,7 @@ Následující příklad formátuje <xref:System.Numerics.BigInteger> hodnotu se
 > [!IMPORTANT]
 > V některých případech <xref:System.Double> hodnoty formátované pomocí řetězce standardního číselného formátu "R", pokud jsou kompilovány pomocí `/platform:x64` nebo `/platform:anycpu` přepínače a spouštěny v 64 systémech. Další informace najdete v následujícím článku.
 
-Chcete-li se vyhnout problému <xref:System.Double> hodnoty formátované pomocí řetězce standardního číselného formátu "R", neúspěšně zaokrouhlí na Trip, pokud jsou kompilovány pomocí `/platform:x64` nebo `/platform:anycpu` přepínače a spouštěny v 64 systémech. můžete <xref:System.Double> hodnoty formátovat pomocí "G17". standardní řetězec číselného formátu. Následující příklad používá formátovací řetězec "R" s hodnotou <xref:System.Double>, která neprovádí operaci round-trip, a také používá řetězec formátu "G17" k úspěšnému přenosu původní hodnoty:
+Chcete-li se vyhnout problému <xref:System.Double> hodnoty formátované pomocí řetězce standardního číselného formátu "R", neúspěšně se zaokrouhlí na Trip, pokud jsou kompilovány pomocí `/platform:x64` nebo `/platform:anycpu` přepínače a spouštěny v 64 systémech. můžete <xref:System.Double> hodnoty naformátovat pomocí řetězce standardního číselného formátu "G17". Následující příklad používá formátovací řetězec "R" s hodnotou <xref:System.Double>, která neprovádí operaci round-trip, a také používá řetězec formátu "G17" k úspěšnému přenosu původní hodnoty:
 
 [!code-csharp[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#RoundTrip)]
 [!code-vb[System.Double.ToString#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex1.vb#5)]
@@ -355,7 +355,7 @@ Následující příklad formátuje <xref:System.Int32> hodnoty pomocí šestná
 
 Nastavení v položce **místní a jazykové** nastavení v Ovládacích panelech ovlivní výsledný řetězec vytvořený při operaci formátování. Tato nastavení slouží k inicializaci objektu <xref:System.Globalization.NumberFormatInfo> přidruženého k aktuální jazykové verzi vlákna, což poskytuje hodnoty používané k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.
 
-Kromě toho, pokud je konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> použit k vytvoření instance nového objektu <xref:System.Globalization.CultureInfo>, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, všechna přizpůsobení, která jsou vytvořena položkou **místní a jazykové nastavení** v Ovládacích panelech, budou použito pro nový objekt <xref:System.Globalization.CultureInfo>. Konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> lze použít k vytvoření objektu <xref:System.Globalization.CultureInfo>, který nereflektuje vlastní nastavení systému.
+Kromě toho, pokud <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> konstruktor slouží k vytvoření instance nového objektu <xref:System.Globalization.CultureInfo>, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, bude pro nový objekt <xref:System.Globalization.CultureInfo> použita jakákoli vlastní nastavení vytvořená položkou **místní a jazykové nastavení** v Ovládacích panelech. Konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> lze použít k vytvoření objektu <xref:System.Globalization.CultureInfo>, který nereflektuje vlastní nastavení systému.
 
 ### <a name="numberformatinfo-properties"></a>Vlastnosti objektu NumberFormatInfo
 
@@ -370,13 +370,13 @@ Některé popisy specifikátorů standardního číselného formátu odkazují n
 
 ### <a name="floating-point-infinities-and-nan"></a>Nekonečno s plovoucí desetinnou čárkou a NaN
 
-Bez ohledu na řetězec formátu, pokud je hodnota <xref:System.Single> nebo <xref:System.Double> typu s plovoucí desetinnou čárkou kladné nekonečno, záporné nekonečno nebo není číslo (NaN), formátovaný řetězec je hodnota příslušné <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>nebo <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> vlastnost, která je určeno aktuálně použitelným objektem <xref:System.Globalization.NumberFormatInfo>.
+Bez ohledu na řetězec formátu, pokud je hodnota <xref:System.Single> nebo <xref:System.Double> typu s plovoucí desetinnou čárkou kladné nekonečno, záporné nekonečno nebo není číslo (NaN), formátovaný řetězec je hodnota příslušné <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>, <xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>nebo <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A> vlastnost, která je určena aktuálně použitým objektem <xref:System.Globalization.NumberFormatInfo>.
 
 ## <a name="example"></a>Příklad
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-partial-note.md)]
 
-Následující příklad formátuje číselnou integrální hodnotu a hodnotu s plovoucí desetinnou čárkou pomocí jazykové verze en-US a všech specifikátorů standardního číselného formátu. V tomto příkladu se používají dva konkrétní číselné typy (<xref:System.Double> a <xref:System.Int32>), ale výsledkem by byly podobné výsledky pro libovolný jiný číselný základní typ (<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>, <xref:System.Numerics.BigInteger>, <xref:System.Decimal>a <xref:System.Single>).
+Následující příklad formátuje číselnou integrální hodnotu a hodnotu s plovoucí desetinnou čárkou pomocí jazykové verze en-US a všech specifikátorů standardního číselného formátu. V tomto příkladu se používají dva konkrétní číselné typy (<xref:System.Double> a <xref:System.Int32>), ale výsledkem jsou podobné výsledky pro jakýkoli jiný numerický typ (<xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>, <xref:System.Numerics.BigInteger>, <xref:System.Decimal>a <xref:System.Single>).
 
 [!code-csharp[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#FinalExample)]
 [!code-vb[system.x.tostring-and-culture#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.X.ToString-and-Culture/vb/xts.vb#1)]

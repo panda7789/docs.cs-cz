@@ -3,12 +3,12 @@ title: C#Typy a proměnné – prohlídka C# jazyka
 description: Informace o definování typů a deklaraci proměnných vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 863f37714da06ca55c8c9092f06c445995d47ce3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 02840169730e53875baccfa012ae9653e32a35c9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739160"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346852"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -46,7 +46,7 @@ Následující text uvádí přehled C#systému typů.
 
 [ValueTypes]: ../language-reference/keywords/value-types-table.md
 [SimpleTypes]: ../language-reference/keywords/value-types.md#simple-types
-[EnumTypes]: ../language-reference/keywords/enum.md
+[EnumTypes]: ../language-reference/builtin-types/enum.md
 [StructTypes]: ../language-reference/keywords/struct.md
 [NullableTypes]: ../language-reference/builtin-types/nullable-value-types.md
 [ReferenceTypes]: ../language-reference/keywords/reference-types.md
@@ -93,7 +93,7 @@ Existuje několik druhů *proměnných* v C#, včetně polí, prvků pole, míst
   - Hodnota, která má přesný typ
 - Typ hodnoty s možnou hodnotou null
   - `null` hodnota nebo hodnota daného přesného typu
-- odkazy objektů
+- Objekt nástroje
   - Odkaz na `null`, odkaz na objekt libovolného typu odkazu, nebo odkaz na zabalenou hodnotu libovolného typu hodnoty
 - Typ třídy
   - Odkaz na `null`, odkaz na instanci tohoto typu třídy nebo odkaz na instanci třídy odvozené z tohoto typu třídy

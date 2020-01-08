@@ -2,12 +2,12 @@
 title: Refaktoring pomocí rozšiřující metody
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: 1045a649907f877bddd0ec2d8c0e5dfa2a5d0830
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c66fb90f9949ee3e47105498b211c857d5d63804
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346509"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348021"
 ---
 # <a name="refactoring-using-an-extension-method-visual-basic"></a>Refaktoring pomocí metody rozšíření (Visual Basic)
 Tento příklad sestaví v předchozím příkladu a [načítá text z odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)refaktoringem zřetězení řetězců pomocí funkce Pure, která je implementována jako metoda rozšíření.  
@@ -135,7 +135,7 @@ Module Module1
         Return sb.ToString()  
     End Function  
   
-    ' Following function is required because VB does not support short circuit evaluation  
+    ' Following function is required because Visual Basic does not support short circuit evaluation  
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, _  
                                          ByVal defaultStyle As String) As String  
         If (styleNode Is Nothing) Then  

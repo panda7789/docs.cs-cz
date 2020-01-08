@@ -9,12 +9,12 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: d1e30162cbce65193783d2fb0607900f209cc648
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 04595e96f6f14b8806a2d89625151910cac9e0d2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422689"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345423"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
 
@@ -34,9 +34,9 @@ V rámci oboru názvů můžete deklarovat nula nebo více následujících typ�
 
 - [struct](struct.md)
 
-- [enum](enum.md)
+- [enum](../builtin-types/enum.md)
 
-- [delegate](../builtin-types/reference-types.md)
+- [delegate](../builtin-types/reference-types.md#the-delegate-type)
 
 Bez ohledu na to, jestli explicitně deklarujete obor C# názvů ve zdrojovém souboru, kompilátor přidá výchozí obor názvů. Tento nepojmenovaný obor názvů, který se někdy označuje jako globální obor názvů, se nachází v každém souboru. Libovolný identifikátor v globálním oboru názvů je k dispozici pro použití v pojmenovaném oboru názvů.
 

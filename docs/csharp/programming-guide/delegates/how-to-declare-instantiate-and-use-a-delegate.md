@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: deklarování, vytváření instancí a používání průvodce C# programováním delegátů'
+title: Postup deklarace, vytvoření instance a použití průvodce C# programováním delegátů
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: bd3d80023f6cb382f057e976dba01daf5e28db50
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 02c3087d27e5018b77079a2dd6f260a0e7232d3a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423325"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346374"
 ---
-# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postupy: Deklarování, vytváření instancí a použití delegáta (Průvodce programováním v C#)
+# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postup deklarace, vytvoření instance a použití delegáta (C# Průvodce programováním)
 V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[csProgGuideDelegates#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#13)]  
@@ -76,4 +76,4 @@ V C# 1,0 a novějších, mohou být Delegáti deklarováni, jak je znázorněno 
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Události](../events/index.md)
-- [Delegáty](./index.md)
+- [Delegáti](./index.md)

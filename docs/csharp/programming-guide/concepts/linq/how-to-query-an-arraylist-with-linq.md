@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: dotazování objektu ArrayList pomocí LINQ (C#)'
+title: Postup dotazování objektu ArrayList pomocí LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: 2bfb471c-6e9a-4e60-bd83-4a1778abde11
-ms.openlocfilehash: c22cd6ef22b5ca182266c1e8db10151e07567fc6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b8edb90d33c92324d4f76c7e6977641fe4499d9d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969828"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345709"
 ---
-# <a name="how-to-query-an-arraylist-with-linq-c"></a>Postupy: dotazování objektu ArrayList pomocí LINQ (C#)
+# <a name="how-to-query-an-arraylist-with-linq-c"></a>Postup dotazování objektu ArrayList pomocí LINQ (C#)
 Při použití LINQ k dotazování na neobecné <xref:System.Collections.IEnumerable> kolekce, jako je například <xref:System.Collections.ArrayList>, je nutné explicitně deklarovat typ proměnné rozsahu, aby odrážel konkrétní typ objektů v kolekci. Například pokud máte <xref:System.Collections.ArrayList> objektů `Student`, [klauzule FROM](../../../language-reference/keywords/from-clause.md) by měla vypadat takto:  
   
 ```csharp
@@ -22,7 +22,7 @@ var query = from Student s in arrList
  Použití explicitně typované proměnné rozsahu ve výrazu dotazu je ekvivalentní volání metody <xref:System.Linq.Enumerable.Cast%2A>. <xref:System.Linq.Enumerable.Cast%2A> vyvolá výjimku, pokud nelze provést zadané přetypování. <xref:System.Linq.Enumerable.Cast%2A> a <xref:System.Linq.Enumerable.OfType%2A> jsou dvě standardní metody operátoru dotazu, které pracují s neobecnými typy <xref:System.Collections.IEnumerable>. Další informace najdete v tématu [vztahy typů v operacích dotazu LINQ](./type-relationships-in-linq-query-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje jednoduchý dotaz přes <xref:System.Collections.ArrayList>. Všimněte si, že tento příklad používá Inicializátory objektů, když kód volá metodu <xref:System.Collections.ArrayList.Add%2A>, ale to není požadavek.  
+ Následující příklad ukazuje jednoduchý dotaz nad <xref:System.Collections.ArrayList>. Všimněte si, že tento příklad používá Inicializátory objektů, když kód volá metodu <xref:System.Collections.ArrayList.Add%2A>, ale to není požadavek.  
   
 ```csharp  
 using System;  

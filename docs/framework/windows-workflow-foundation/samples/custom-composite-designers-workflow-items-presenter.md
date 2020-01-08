@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: 542440d6bf9d6809abee1ec37c85c44ce72fd132
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 081dce85946fab85cff474508c46770c762b9e76
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715162"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338727"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Návrháři vlastního skládání – místo pro položky pracovních postupů
 
@@ -24,11 +24,13 @@ Tato ukázka demonstruje:
 
 - Přepsání výchozího návrháře v znovu hostované aplikaci.
 
-### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
+## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Otevřete ukázkové řešení **UsingWorkflowItemsPresenter. sln** pro C# nebo pro jazyk VB v aplikaci Visual Studio 2010.
+1. Otevřete ukázkové řešení **UsingWorkflowItemsPresenter. sln** pro C# nebo pro Visual Basic v aplikaci Visual Studio 2010.
 
-2. Sestavte a spusťte řešení. Měla by se otevřít znovu hostující aplikace návrháře pracovních postupů a aktivity můžete přetáhnout na plátno.
+2. Sestavte a spusťte řešení.
+
+   Otevře se opětovně hostující aplikace návrháře pracovních postupů a aktivity můžete přetáhnout na plátno.
 
 ## <a name="sample-highlights"></a>Ukázka světel
 

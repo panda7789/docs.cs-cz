@@ -2,12 +2,12 @@
 title: Neobecná aktivita ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: a4bbc594ec0bf2d387e700508c7d92685216accc
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 93a6b1d815ef6478974ceadf8ad935be2a3bdea5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715658"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338660"
 ---
 # <a name="non-generic-foreach"></a>Neobecná aktivita ForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] lodí ve své sadě nástrojů sadu aktivit toku řízení, včetně <xref:System.Activities.Statements.ForEach%601>, což umožňuje iteraci v kolekcích <xref:System.Collections.Generic.IEnumerable%601>.  
@@ -17,7 +17,7 @@ ms.locfileid: "74715658"
  Tento příklad ukazuje, jak implementovat neobecnou <xref:System.Activities.Statements.ForEach%601> aktivitu a její Návrhář. Tuto aktivitu lze použít k iterování prostřednictvím <xref:System.Collections.ArrayList>.  
   
 ## <a name="foreach-activity"></a>Aktivita ForEach  
- Příkaz C#/VB `foreach` vytvoří výčet prvků kolekce a spustí vložený příkaz pro každý prvek kolekce. [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ekvivalentní aktivity `foreach` jsou <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.ParallelForEach%601>. Aktivita <xref:System.Activities.Statements.ForEach%601> obsahuje seznam hodnot a textů. V době běhu se seznam opakuje a text se spustí pro každou hodnotu v seznamu.  
+ Příkaz C#webový Basic `foreach` vytvoří výčet prvků kolekce a spustí vložený příkaz pro každý prvek kolekce. [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ekvivalentní aktivity `foreach` jsou <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.ParallelForEach%601>. Aktivita <xref:System.Activities.Statements.ForEach%601> obsahuje seznam hodnot a textů. V době běhu se seznam opakuje a text se spustí pro každou hodnotu v seznamu.  
   
  Ve většině případů by měla být obecná verze aktivity upřednostňovaným řešením, protože pokrývá většinu scénářů, ve kterých by se použily, a poskytuje kontrolu typu v době kompilace. Neobecnou verzi lze použít pro iteraci v rámci typů, které implementují neobecné <xref:System.Collections.IEnumerable> rozhraní.  
   

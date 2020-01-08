@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 543f05cd52e62166b8a5ee318a588dee1e8ef76a
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 4f52a89179e241dcfce5c888e03518d878009175
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838192"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348062"
 ---
 # <a name="net-architectural-components"></a>Komponenty architektury .NET
 
@@ -49,7 +49,7 @@ Další informace o .NET Framework najdete v [průvodci .NET Framework](../frame
 
 ### <a name="mono"></a>Mono
 
-Mono je implementace rozhraní .NET, která se používá hlavně v případě, že je vyžadován malý modul runtime. Je to modul runtime, který využívá aplikace Xamarin v Androidu, Mac, iOS, tvOS a watchOS a zaměřuje se hlavně na malé nároky. Mono také vystavuje hry vytvořené pomocí modulu Unity.
+Mono je implementace rozhraní .NET, která se používá hlavně v případě, že je vyžadován malý modul runtime. Je to modul runtime, který využívá aplikace Xamarin na Androidu, macOS, iOS, tvOS a watchOS a zaměřuje se hlavně na malé nároky. Mono také vystavuje hry vytvořené pomocí modulu Unity.
 
 Podporuje všechny aktuálně publikované verze .NET Standard.
 
@@ -61,7 +61,7 @@ Další informace o mono najdete v [dokumentaci k mono](https://www.mono-project
 
 ### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
-UWP je implementace rozhraní .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, phablets, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace se dají zapisovat do C++, C#, VB.NET a JavaScriptu. Při použití C# a VB.NET jsou rozhraní API .NET k dispozici v rozhraní .NET Core.
+UWP je implementace rozhraní .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, phablets, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace se dají zapisovat do C++, C#Visual Basic a JavaScriptu. Při použití C# a Visual Basic rozhraní API .NET poskytuje .NET Core.
 
 Další informace o UWP najdete v tématu [Úvod do Univerzální platforma Windows](/windows/uwp/get-started/universal-application-platform-guide).
 
@@ -112,4 +112,4 @@ Oficiální dokumenty ISO/IEC jsou k dispozici na stránce Standard ISO/IEC – 
 - [Průvodce rozhraním .NET Framework](../framework/index.md)
 - [Průvodce jazykem C#](../csharp/index.yml)
 - [Průvodce jazykem F#](../fsharp/index.yml)
-- [Průvodce VB.NET](../visual-basic/index.yml)
+- [Průvodce jazykem Visual Basic](../visual-basic/index.yml)

@@ -1,6 +1,6 @@
 ---
-title: Try... Catch... Příkaz finally - jazyka Visual Basic
-description: Zjistěte, jak použít zpracování výjimek s příkazy jazyka Visual Basic Try/Catch/Finally.
+title: Zkusit... Zachytit... Finally – příkaz
+description: Naučte se používat zpracování výjimek s příkazy Visual Basic try/catch/finally.
 ms.date: 12/07/2018
 f1_keywords:
 - vb.Try...Catch...Finally
@@ -21,16 +21,16 @@ helpviewer_keywords:
 - structured exception handling, Try...Catch...Finally statements
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
 ms.custom: seodec18
-ms.openlocfilehash: 126f20c86bb47e8002382e069ce6236600394aba
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: MT
+ms.openlocfilehash: eb04b6cff0847009407e38a3696e9be7c700356c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638774"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337336"
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch....Finally – příkaz (Visual Basic)
 
-Poskytuje způsob, jak zpracovat některé nebo všechny možné chyby, které mohou nastat v daném bloku kódu, za stálého běhu programu.
+Poskytuje způsob, jak zpracovat některé nebo všechny možné chyby, které mohou nastat v daném bloku kódu, a přitom stále spouštět kód.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -51,151 +51,151 @@ End Try
 
 |Termín|Definice|
 |---|---|
-|`tryStatements`|Volitelné. Příkazů, kde může dojít k chybě. Může být složený příkaz.|
-|`Catch`|Volitelné. Více `Catch` bloky povolené. Pokud dojde k výjimce při zpracování `Try` blokovat, každý `Catch` je příkaz zkoumán, v textové pořadí. určíte, zda zpracovává výjimku, s `exception` reprezentující výjimku, která byla vyvolána.|
-|`exception`|Volitelné. Libovolný název proměnné. Počáteční hodnota `exception` je hodnota vyvolané chyby. Použít s `Catch` k určení chybou byla zachycena. Pokud tento parametr vynechán, `Catch` příkaz zachytí jakoukoli výjimku.|
-|`type`|Volitelné. Určuje typ filtru třídy. Pokud hodnota `exception` je typu určeného `type` nebo odvozeného typu, identifikátor vázán na objekt výjimky.|
-|`When`|Volitelné. A `Catch` příkazem `When` klauzule zachytává výjimky pouze tehdy, když `expression` vyhodnotí jako `True`. A `When` až po kontrole typ výjimky, je použita klauzule a `expression` mohou odkazovat na identifikátor reprezentující výjimku.|
-|`expression`|Volitelné. Musí být implicitně převeditelný na `Boolean`. Libovolný výraz, který popisuje obecný filtru. Obvykle se používá k filtrování podle čísla chyby. Použít s `When` – klíčové slovo k určení podmínek, za kterých je zachycena chybu.|
-|`catchStatements`|Volitelné. Příkazů pro zpracování chyb, ke kterým dochází v přidruženém `Try` bloku. Může být složený příkaz.|
-|`Exit Try`|Volitelné. Klíčové slovo, které se přeruší z celkového počtu `Try...Catch...Finally` struktury. Provádění pokračuje s kódem, hned za `End Try` příkazu. `Finally` Příkazu bude stále spuštěn. Není povoleno v `Finally` bloky.|
-|`Finally`|Volitelné. A `Finally` bloku je vždy spuštěn při provádění opustí libovolné části `Try...Catch` příkazu.|
-|`finallyStatements`|Volitelné. Příkazů, který se spustí po další zpracování chyby došlo k chybě.|
-|`End Try`|Ukončuje `Try...Catch...Finally` struktury.|
+|`tryStatements`|Volitelné. Příkazy, kde může dojít k chybě. Může být složený příkaz.|
+|`Catch`|Volitelné. Je povoleno více bloků `Catch`. Pokud dojde k výjimce při zpracování `Try` bloku, každý příkaz `Catch` je zkontrolován v textovém pořadí, aby určil, zda zpracovává výjimku, `exception` představují výjimku, která byla vyvolána.|
+|`exception`|Volitelné. Libovolný název proměnné. Počáteční hodnota `exception` je hodnota vyvolané chyby. Používá se s `Catch` k určení zjištěné chyby. Je-li tento parametr vynechán, příkaz `Catch` zachytí jakoukoli výjimku.|
+|`type`|Volitelné. Určuje typ filtru třídy. Pokud je hodnota `exception` typu určeném `type` nebo odvozeného typu, bude identifikátor svázán s objektem výjimky.|
+|`When`|Volitelné. Příkaz `Catch` s klauzulí `When` zachytává výjimky pouze v případě, že je `expression` vyhodnocena jako `True`. Klauzule `When` je použita pouze po kontrole typu výjimky a `expression` mohou odkazovat na identifikátor představující výjimku.|
+|`expression`|Volitelné. Musí být implicitně převoditelné na `Boolean`. Libovolný výraz, který popisuje obecný filtr. Obvykle se používá k filtrování podle čísla chyby. Používá se s klíčovým slovem `When` k určení podmínek, za kterých se zachytí chyba.|
+|`catchStatements`|Volitelné. Příkazy pro zpracování chyb, ke kterým došlo v přidruženém bloku `Try`. Může být složený příkaz.|
+|`Exit Try`|Volitelné. Klíčové slovo, které se rozdělí z `Try...Catch...Finally` struktury. Provádění pokračuje pomocí kódu hned za příkazem `End Try`. Příkaz `Finally` bude stále proveden. Není povolené v blocích `Finally`.|
+|`Finally`|Volitelné. `Finally` blok je vždy spuštěn, když provádění opustí jakoukoli část příkazu `Try...Catch`.|
+|`finallyStatements`|Volitelné. Příkazy, které se spustí po všech ostatních zpracováních chyb.|
+|`End Try`|Ukončí strukturu `Try...Catch...Finally`.|
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud očekáváte, že konkrétní výjimka muže vzniknout během určité části kódu, vložte kód `Try` blokovat a použít `Catch` blok se zachovat kontrolu a zpracovala výjimku. Pokud k němu dojde.
+Pokud očekáváte, že určitá výjimka může nastat během konkrétní části kódu, vložte kód do `Try`ového bloku a pomocí `Catch` bloku zachovejte kontrolu a zpracujte výjimku, pokud k ní dojde.
 
-A `Try…Catch` příkaz se skládá z `Try` bloku, za nímž následuje jedna nebo více `Catch` klauzule, které určují obslužné rutiny pro různé výjimky. Když je výjimka vyvolána `Try` blokovat, Visual Basic vyhledá `Catch` příkaz, který zpracovává výjimku. Pokud odpovídající `Catch` příkaz nebyl nalezen, Visual Basic zjišťuje metody, která volá metodu aktuální výše v zásobníku volání a tak dále. Pokud ne `Catch` nalezen blok, Visual Basic zobrazí zprávu neošetřená výjimka na uživatele a zastaví provádění programu.
+Příkaz `Try…Catch` se skládá z bloku `Try` následovaného jednou nebo více `Catch` klauzulími, které určují obslužné rutiny pro různé výjimky. Pokud je vyvolána výjimka ve `Try` bloku, Visual Basic vyhledá příkaz `Catch`, který zpracovává výjimku. Pokud nebyl nalezen odpovídající příkaz `Catch`, Visual Basic prověřuje metodu, která volala aktuální metodu, a tak dále v zásobníku volání. Pokud není nalezen žádný blok `Catch`, Visual Basic zobrazí uživateli neošetřenou zprávu o výjimce a zastaví provádění programu.
 
-Můžete použít více než jednu `Catch` výroky `Try…Catch` příkazu. Pokud to provedete, pořadí `Catch` klauzulí je důležité, protože jsou zkoumány podle pořadí. Zachycení více specifické výjimky než těch, které jsou specifické pro less.
+V příkazu `Try…Catch` můžete použít více než jeden `Catch` příkaz. Pokud to uděláte, pořadí klauzulí `Catch` je významné, protože jsou prověřeny v daném pořadí. Zachyťte konkrétnější výjimky před méně specifickými výjimkami.
 
-Následující `Catch` příkaz podmínky jsou po nejméně konkrétní a zachytí všechny výjimky, které jsou odvozeny z <xref:System.Exception> třídy. Jednu z těchto variant má obvykle použít jako poslední `Catch` blokovat `Try...Catch...Finally` struktury po zachycení specifické výjimky očekáváte. Tok řízení můžete nikdy nedorazí `Catch` blok, který následuje některý z těchto variant.
+Následující podmínky příkazu `Catch` jsou nejméně specifické a budou zachytit všechny výjimky, které jsou odvozeny z třídy <xref:System.Exception>. Tuto variantu byste měli obvykle používat jako poslední `Catch` blok ve struktuře `Try...Catch...Finally`, a to po zachycení všech konkrétních výjimek, které očekáváte. Tok řízení nemůže nikdy dosáhnout `Catch` blok, který následuje po jedné z těchto variant.
 
-- `type` Je `Exception`, například: `Catch ex As Exception`
+- `type` je `Exception`, například: `Catch ex As Exception`
 
-- Příkaz nemá žádné `exception` proměnných, například: `Catch`
+- Příkaz nemá `exception` proměnnou, například: `Catch`
 
-Když `Try…Catch…Finally` příkaz je vnořená v jiném `Try` bloku, Visual Basic nejprve zkontroluje každý `Catch` příkaz v nejvnitřnější `Try` bloku. Pokud neexistuje odpovídající `Catch` příkaz nenajde, vyhledávání pokračuje do `Catch` ve vnějším `Try…Catch…Finally` bloku.
+Pokud je příkaz `Try…Catch…Finally` vnořen v jiném bloku `Try`, Visual Basic nejprve prověřuje každý `Catch` příkaz v nejvnitřnějším `Try` bloku. Pokud se nenajde žádný vyhovující příkaz `Catch`, hledání pokračuje na `Catch` příkazů vnějšího `Try…Catch…Finally` bloku.
 
-Lokální proměnné z `Try` nejsou k dispozici v bloku `Catch` blokovat, protože jde o samostatné bloky. Pokud chcete použít proměnnou ve více než jeden blok, deklarace proměnné mimo `Try...Catch...Finally` struktury.
+Místní proměnné z `Try` bloku nejsou k dispozici v bloku `Catch`, protože jsou to samostatné bloky. Pokud chcete použít proměnnou ve více než jednom bloku, deklarujte proměnnou mimo strukturu `Try...Catch...Finally`.
 
 > [!TIP]
-> `Try…Catch…Finally` Příkaz je dostupný jako fragment kódu technologie IntelliSense. Ve Správci fragmentů kódu, rozbalte **vzorky kódu – If, For Each, Try Catch, vlastnost atd**a potom **zpracování chyb (výjimek)**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).
+> Příkaz `Try…Catch…Finally` je k dispozici jako fragment kódu technologie IntelliSense. Ve Správci fragmentů kódu rozbalte položku **vzory kódu – Pokud pro každou, zkuste zachytit, vlastnost atd**. a pak **zpracování chyb (výjimky)** . Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).
 
 ## <a name="finally-block"></a>Blok finally
 
-Pokud máte jeden nebo více příkazů, které musí spustit před ukončením `Try` strukturu, použijte `Finally` bloku. Řízení se předá `Finally` blokovat těsně před plánovaným začátkem předá z celkového počtu `Try…Catch` struktury. To platí i v případě, že dojde k výjimce kdekoli uvnitř `Try` struktury.
+Pokud máte jeden nebo více příkazů, které musí být spuštěny před ukončením `Try` struktury, použijte blok `Finally`. Řízení se předá do `Finally` bloku těsně před tím, než se předává ze struktury `Try…Catch`. To platí i v případě, že dojde k výjimce kdekoli uvnitř `Try` struktury.
 
-A `Finally` bloku je užitečné pro spuštění jakéhokoli kódu, které musí spustit i v případě, že dojde k výjimce. Řízení je předáno `Finally` blokovat bez ohledu na to, jak `Try...Catch` blokovat ukončí.
+Blok `Finally` je užitečný pro spuštění libovolného kódu, který musí být spuštěn, i když dojde k výjimce. Ovládací prvek se předává do bloku `Finally` bez ohledu na to, jak se `Try...Catch` blok ukončí.
 
-Kód v `Finally` blok i v případě, že váš kód zjistí `Return` příkaz v `Try` nebo `Catch` bloku. Ovládací prvek z nepředává `Try` nebo `Catch` blokovat na odpovídající `Finally` blokovat v následujících případech:
+Kód v `Finally`ovém bloku běží i v případě, že váš kód nalezne `Return` příkaz v `Try` nebo `Catch` bloku. Ovládací prvek nepřechází z `Try` nebo `Catch` bloku na odpovídající `Finally` blok v následujících případech:
 
-- [End – příkaz](end-statement.md) dochází v `Try` nebo `Catch` bloku.
+- V bloku `Try` nebo `Catch` byl nalezen [příkaz end](end-statement.md) .
 
-- A <xref:System.StackOverflowException> je vyvolána `Try` nebo `Catch` bloku.
+- V bloku `Try` nebo `Catch` je vyvolána <xref:System.StackOverflowException>.
 
-Není platné. explicitně přenést do spuštění `Finally` bloku. Přenos z celkového počtu spuštění `Finally` blok není platný, s výjimkou prostřednictvím výjimku.
+Explicitní přenos spuštění do `Finally`ového bloku není platný. Přenos spuštění z `Finally`ho bloku není platný, s výjimkou výjimky.
 
-Pokud `Try` alespoň jeden příkaz neobsahuje `Catch` bloku, musí obsahovat `Finally` bloku.
+Pokud `Try` příkaz neobsahuje alespoň jeden blok `Catch`, musí obsahovat blok `Finally`.
 
 > [!TIP]
-> Pokud nemáte zachytit specifické výjimky `Using` se chová stejně jako `Try…Finally` bloku a záruky zacházení s prostředky, bez ohledu na to, jak ukončení bloku. To platí dokonce i s neošetřenou výjimkou. Další informace najdete v tématu [příkazu Using](using-statement.md).
+> Pokud nemusíte zachytit konkrétní výjimky, příkaz `Using` se chová jako `Try…Finally` blok a zaručuje odstranění prostředků bez ohledu na to, jakým způsobem ukončujete blok. To je pravdivé i s neošetřenou výjimkou. Další informace naleznete v tématu [using – příkaz](using-statement.md).
 
-## <a name="exception-argument"></a>Výjimky argumentu
+## <a name="exception-argument"></a>Argument výjimky
 
-`Catch` Bloku `exception` je argument instancí <xref:System.Exception> třídu nebo třídu odvozenou od `Exception` třídy. `Exception` Odpovídá chyby, ke které došlo k chybě v instanci třídy `Try` bloku.
+Argument `Catch` Block `exception` je instancí třídy <xref:System.Exception> nebo třídy, která je odvozena od třídy `Exception`. Instance třídy `Exception` odpovídá chybě, ke které došlo v bloku `Try`.
 
-Vlastnosti `Exception` objektu zobrazíte nápovědu, jak určit příčinu a umístění výjimky. Například <xref:System.Exception.StackTrace%2A> seznamů vlastností volané metody, která vedla k výjimce, pomáhá najít, kde došlo k chybě v kódu. <xref:System.Exception.Message%2A> vrátí zprávu, která popisuje výjimku. <xref:System.Exception.HelpLink%2A> Vrátí odkaz na související soubor nápovědy. <xref:System.Exception.InnerException%2A> Vrátí `Exception` objektu, která způsobila aktuální výjimku nebo vrátí `Nothing` Pokud neexistuje žádná původní `Exception`.
+Vlastnosti objektu `Exception` pomůžou identifikovat příčinu a umístění výjimky. Například vlastnost <xref:System.Exception.StackTrace%2A> zobrazí seznam volaných metod, které vedly k výjimce, což vám pomůže najít, kde došlo k chybě v kódu. <xref:System.Exception.Message%2A> vrátí zprávu, která popisuje výjimku. <xref:System.Exception.HelpLink%2A> vrátí odkaz na související soubor Help. <xref:System.Exception.InnerException%2A> vrátí objekt `Exception`, který způsobil aktuální výjimku, nebo vrátí `Nothing`, pokud neexistuje původní `Exception`.
 
-## <a name="considerations-when-using-a-trycatch-statement"></a>Informace týkající se použití Try... Catch – příkaz
+## <a name="considerations-when-using-a-trycatch-statement"></a>Doporučení při použití try... Catch – příkaz
 
-Použití `Try…Catch` příkaz pouze k signalizaci výskytu neobvyklých nebo neočekávané události. Důvody patří:
+Použijte příkaz `Try…Catch` jenom k signalizaci výskytu neobvyklých nebo neočekávaných událostí programu. K tomu patří následující důvody:
 
-- Zachycování výjimek za běhu vytvoří další režii a by mohla být pomalejší než předběžné kontroly, aby výjimky.
+- Zachycování výjimek za běhu vytváří další režii a je pravděpodobně pomalejší než předběžná kontrola, aby nedocházelo k výjimkám.
 
-- Pokud `Catch` bloku nezpracovává správně, výjimka nemusí být uveden správně pro uživatele.
+- Pokud `Catch` blok není správně zpracován, výjimka nemusí být správně hlášena uživatelům.
 
-- Zpracování výjimek je program složitější.
+- Zpracování výjimek způsobuje složitější program.
 
-Není vždy nutné `Try…Catch` příkaz podmínku, která by mohla nastat. Následující příklad zkontroluje, zda soubor existuje. před pokusem o otevření. To snižuje nutnost zachycení výjimky vyvolané <xref:System.IO.File.OpenText%2A> metody.
+Nepotřebujete vždy příkaz `Try…Catch` ke kontrole podmínky, která by mohla nastat. Následující příklad zkontroluje, zda soubor existuje, než se pokusí ho otevřít. To snižuje nutnost zachycení výjimky vyvolané metodou <xref:System.IO.File.OpenText%2A>.
 
 [!code-vb[VbVbalrStatements#94](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#94)]
 
-Ujistěte se, že kód v `Catch` bloky může hlásit výjimky na uživatele, správně prostřednictvím bezpečné pro vlákna protokolování nebo příslušné zprávy. V opačném případě může zůstat výjimky neznámý.
+Zajistěte, aby kód v blocích `Catch` mohl správně hlásit výjimky uživatelům, ať už prostřednictvím protokolování bezpečného pro přístup z více vláken, nebo vhodné zprávy. V opačném případě mohou výjimky zůstat neznámé.
 
 ## <a name="async-methods"></a>Asynchronní metody
 
-Pokud určíte metodu s [asynchronní](../modifiers/async.md) modifikátor, můžete použít [Await](../operators/await-operator.md) operátor v metodě. Příkaz s `Await` operátor pozastaví provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci. Když úloha, která je přidružena `Await` operátor dokončí, obnoví spuštění ve stejnou metodu. Další informace najdete v tématu [tok řízení v asynchronních programech](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).
+Pokud označíte metodu pomocí modifikátoru [Async](../modifiers/async.md) , můžete použít operátor [await](../operators/await-operator.md) v metodě. Příkaz s operátorem `Await` pozastaví provádění metody až do dokončení očekávané úlohy. Úkol představuje probíhající práci. Po dokončení úlohy, která je spojena s operátorem `Await`, se provádění pokračuje ve stejné metodě. Další informace najdete v tématu [řízení toku v asynchronních programech](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).
 
-Úkol vrácený asynchronní metody ukončit v chybovém stavu, která je dokončena z důvodu neošetřené výjimky. Úkol může také skončit ve zrušeném stavu, což vede `OperationCanceledException` vyvolané z výrazu await. K zachycení buď typ výjimky, umístěte `Await` výraz, který je spojen s úlohou v `Try` blokovat a zachytit výjimku v `Catch` bloku. Příklad je k dispozici dále v tomto tématu.
+Úloha vrácená asynchronní metodou může končit chybovým stavem, což značí, že byla dokončena z důvodu neošetřené výjimky. Úloha může také končit zrušeným stavem, což způsobí, že `OperationCanceledException` vyvolala z výrazu await. Chcete-li zachytit buď typ výjimky, umístěte výraz `Await`, který je spojen s úlohou v bloku `Try` a zachytí výjimku v bloku `Catch`. Příklad je uveden dále v tomto tématu.
 
-Úloha může být v chybovém stavu, protože více výjimek tým byl zodpovědný za jeho přerušením. Úloha může být například výsledek volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Když budete očekávat takový úkol, zachycené výjimky je pouze jednu z výjimek a nelze předpovědět, které k výjimce. Příklad je k dispozici dále v tomto tématu.
+Úloha může být v chybném stavu, protože za její chybu byla zodpovědná více výjimek. Například úloha může být výsledkem volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Při čekání na takovou úlohu je zachycená výjimka pouze jedna z výjimek a nelze předpovědět, která výjimka bude zachycena. Příklad je uveden dále v tomto tématu.
 
-`Await` Výraz nemůže být uvnitř `Catch` bloku nebo `Finally` bloku.
+Výraz `Await` nemůže být uvnitř bloku `Catch` nebo bloku `Finally`.
 
 ## <a name="iterators"></a>Iterátory
 
-Funkce iterátoru nebo `Get` přistupující objekt provádí vlastní iterace nad kolekcí. Iterátor používá [Yield](yield-statement.md) příkaz k vrácení každého prvku kolekce jeden po druhém. Volání funkce iterátoru pomocí [For Each... Další příkaz](for-each-next-statement.md).
+Funkce iterátoru nebo přistupující objekt `Get` provádí vlastní iteraci v kolekci. Iterátor používá příkaz [yield](yield-statement.md) k vrácení každého prvku kolekce v jednom okamžiku. Vyvoláte funkci iterátoru pomocí metody [for each... Další příkaz](for-each-next-statement.md).
 
-A `Yield` příkaz může být v rámci `Try` bloku. A `Try` blok, který obsahuje `Yield` může mít příkaz `Catch` a ostatní porty blokuje může mít `Finally` bloku. Najdete v části "zkuste bloky v jazyce Visual Basic" [iterátory](../../programming-guide/concepts/iterators.md) příklad.
+Příkaz `Yield` může být uvnitř bloku `Try`. `Try` blok, který obsahuje příkaz `Yield`, může mít `Catch` bloky a může mít `Finally` blok. Příklad naleznete v části "try Blocks in Visual Basic" v tématu [iterátory](../../programming-guide/concepts/iterators.md) .
 
-A `Yield` příkaz nejde provést uvnitř `Catch` bloku nebo `Finally` bloku.
+Příkaz `Yield` nemůže být uvnitř bloku `Catch` nebo bloku `Finally`.
 
-Pokud `For Each` text (mimo funkce iterátoru) vyvolá výjimku, `Catch` bloku funkce iterátoru není spuštěn, ale `Finally` je proveden blok v funkce iterátoru. A `Catch` bloku funkce iterátoru zachytává pouze výjimky, ke kterým dochází uvnitř funkce iterátoru.
+Pokud `For Each` tělo (mimo funkci iterátoru) vyvolá výjimku, není proveden blok `Catch` ve funkci iterátoru, ale je spuštěn blok `Finally` ve funkci iterátoru. `Catch` blok uvnitř funkce iterátoru zachytává pouze výjimky, ke kterým dojde uvnitř funkce iterátoru.
 
-## <a name="partial-trust-situations"></a>Situacích částečné důvěryhodnosti
+## <a name="partial-trust-situations"></a>Situace s částečnou důvěryhodností
 
-V situacích částečné důvěryhodnosti, jako je například aplikace hostované ve sdílené síťové složce `Try...Catch...Finally` nezachytí výjimky zabezpečení, ke kterým dochází před vyvoláním metody, která obsahuje volání. Následující příklad, když vložit ho do sdílené složky serveru a spusťte z něj, vytvoří chybu "System.Security.SecurityException: Požadavek se nezdařil." Další informace o bezpečnostním výjimkám, najdete v článku <xref:System.Security.SecurityException> třídy.
+V situacích s částečným vztahem důvěryhodnosti, jako je například aplikace hostovaná v síťové sdílené složce, `Try...Catch...Finally` nezachytí výjimky zabezpečení, ke kterým dojde před vyvoláním metody, která obsahuje volání. Následující příklad: když ho umístíte na sdílenou složku na serveru a spustíte z něj, vytvoří se chyba "System. Security. SecurityException: požadavek se nezdařil." Další informace o výjimkách zabezpečení naleznete v tématu Třída <xref:System.Security.SecurityException>.
 
 [!code-vb[VbVbalrStatements#85](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#85)]
 
-V takové částečným vztahem důvěryhodnosti situace, je nutné umístit `Process.Start` příkaz v samostatném `Sub`. Počáteční volání `Sub` se nezdaří. Díky tomu `Try...Catch` má zachytit před `Sub` obsahující `Process.Start` je spuštěná a vytváří výjimku zabezpečení.
+V takové situaci s částečným vztahem důvěryhodnosti je nutné vložit příkaz `Process.Start` do samostatné `Sub`. Počáteční volání `Sub` se nezdaří. To umožňuje `Try...Catch` zachytit před `Sub`, který obsahuje `Process.Start`, a vytvořenou výjimkou zabezpečení.
 
 ## <a name="examples"></a>Příklady
 
-### <a name="the-structure-of-trycatchfinally"></a>Struktury Try... Catch... Nakonec
+### <a name="the-structure-of-trycatchfinally"></a>Struktura try... Zachytit... Uznan
 
-Následující příklad ukazuje strukturu `Try...Catch...Finally` příkazu.
+Následující příklad ukazuje strukturu příkazu `Try...Catch...Finally`.
 
 [!code-vb[VbVbalrStatements#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#86)]  
 
-### <a name="exception-in-a-method-called-from-a-try-block"></a>Výjimka v metodě volat z bloku Try
+### <a name="exception-in-a-method-called-from-a-try-block"></a>Výjimka v metodě volané z bloku try
 
-V následujícím příkladu `CreateException` vyvolá metoda výjimku `NullReferenceException`. Není v kódu, který generuje výjimku `Try` bloku. Proto `CreateException` metodu ke zpracování výjimky. `RunSample` Metoda zpracování výjimky, protože volání `CreateException` metoda je `Try` bloku.
+V následujícím příkladu metoda `CreateException` vyvolá `NullReferenceException`. Kód, který generuje výjimku, není v bloku `Try`. Proto metoda `CreateException` nezpracovává výjimku. Metoda `RunSample` zpracovává výjimku, protože volání metody `CreateException` je v bloku `Try`.
 
-Příklad obsahuje `Catch` příkazy pro několik typů výjimek, seřazené od nejkonkrétnější většinu obecných.
+Příklad obsahuje příkazy `Catch` pro několik typů výjimek, seřazené od nejvyšších po nejobecnější.
 
 [!code-vb[VbVbalrStatements#91](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#91)]
 
-### <a name="the-catch-when-statement"></a>Příkaz Catch, když
+### <a name="the-catch-when-statement"></a>Příkaz catch when
 
-Následující příklad ukazuje způsob použití `Catch When` příkaz k filtrování podmíněný výraz. Pokud podmíněný výraz je vyhodnocen jako `True`, kód `Catch` blok.
+Následující příklad ukazuje, jak použít příkaz `Catch When` pro filtrování podmíněného výrazu. Pokud se podmíněný výraz vyhodnotí jako `True`, kód v bloku `Catch` se spustí.
 
 [!code-vb[VbVbalrStatements#92](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#92)]
 
-### <a name="nested-try-statements"></a>Vnořené příkazy Try
+### <a name="nested-try-statements"></a>Vnořené příkazy try
 
-Následující příklad obsahuje `Try…Catch` příkaz, který je součástí `Try` bloku. Vnitřní `Catch` bloku vyvolá výjimku, která má jeho `InnerException` nastavenou na původní výjimku. Vnější `Catch` bloku hlásí svůj vlastní výjimku a vnitřní výjimku.
+Následující příklad obsahuje příkaz `Try…Catch`, který je obsažen v bloku `Try`. Vnitřní `Catch` blok vyvolá výjimku, která má svou vlastnost `InnerException` nastavenou na původní výjimku. Vnější `Catch` blok hlásí svou vlastní výjimku a vnitřní výjimku.
 
 [!code-vb[VbVbalrStatements#93](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#93)]
 
 ### <a name="exception-handling-for-async-methods"></a>Zpracování výjimek pro asynchronní metody
 
-Následující příklad ukazuje zpracování výjimek pro asynchronní metody. Zachytit výjimku, která se vztahuje na asynchronní úlohy, `Await` výraz `Try` bloku volajícího a výjimky je zachycena v `Catch` bloku.
+Následující příklad znázorňuje zpracování výjimek pro asynchronní metody. Chcete-li zachytit výjimku, která se vztahuje na asynchronní úlohu, je výraz `Await` v bloku `Try` volajícího a výjimka je zachycena v bloku `Catch`.
 
-Zrušením komentáře u `Throw New Exception` řádek v příkladu předvést zpracování výjimek. Výjimka je zachycena v `Catch` blokovat, úkolu `IsFaulted` je nastavena na `True`a úkolu `Exception.InnerException` je nastavena na výjimku.
+Odkomentujte `Throw New Exception` řádek v příkladu k demonstraci zpracování výjimek. Výjimka je zachycena v bloku `Catch`, vlastnost `IsFaulted` úlohy je nastavena na hodnotu `True`a vlastnost `Exception.InnerException` úkolu je nastavena na výjimku.
 
-Zrušením komentáře u `Throw New OperationCancelledException` řádku předvést, co se stane, když zrušíte asynchronní proces. Výjimka je zachycena v `Catch` bloku a tato úloha `IsCanceled` je nastavena na `True`. Ale za určitých podmínek, které se nevztahují na tomto příkladu `IsFaulted` je nastavena na `True` a `IsCanceled` je nastavena na `False`.
+Odkomentujte `Throw New OperationCancelledException` řádek k předvedení toho, co se stane, když zrušíte asynchronní proces. Výjimka je zachycena v bloku `Catch` a vlastnost `IsCanceled` úlohy je nastavena na `True`. Nicméně za určitých podmínek, které se na tento příklad nevztahují, `IsFaulted` je nastavené na `True` a `IsCanceled` je nastavená na `False`.
 
 [!code-vb[csAsyncExceptions#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csasyncexceptions/vb/class1.vb#1)]
 
-### <a name="handling-multiple-exceptions-in-async-methods"></a>Zpracování více výjimky v asynchronních metodách
+### <a name="handling-multiple-exceptions-in-async-methods"></a>Zpracování více výjimek v asynchronních metodách
 
-Následující příklad ukazuje zpracování výjimek, kde více úkolů může vést k více výjimek. `Try` Má bloku `Await` výraz pro úlohu, která <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> vrátila. Když tři úkolů, ke kterému je úkol dokončený <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> se použije se dokončí.
+Následující příklad znázorňuje zpracování výjimek, kde více úloh může mít za následek vícenásobné výjimky. `Try` blok má výraz `Await` pro úkol, který <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> vrácen. Úkol je dokončen, když jsou dokončeny tři úkoly, na které <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> použito.
 
-Všechny tři úkoly dojde k výjimce. `Catch` Bloku prochází výjimky, které jsou součástí `Exception.InnerExceptions` vlastnosti úkolu, který `Task.WhenAll` vrátila.
+Každá ze tří úkolů způsobuje výjimku. Blok `Catch` prochází výjimkami, které se nacházejí ve vlastnosti `Exception.InnerExceptions` úlohy, kterou `Task.WhenAll` vrátil.
 
 [!code-vb[csAsyncExceptions#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csasyncexceptions/vb/class1.vb#3)]
 

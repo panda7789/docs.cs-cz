@@ -2,12 +2,12 @@
 title: Zásadní změny v .NET Core
 description: Přečtěte si o nejnovějších změnách v každé verzi .NET Core.
 ms.date: 11/27/2019
-ms.openlocfilehash: 30459ca1178c0d62427138b22dd42f11cd2c2475
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 3e1b2a7d0edea1c06af340711182e533aa007c61
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568038"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343734"
 ---
 # <a name="breaking-change-selectors"></a>Odrušující selektory změn
 
@@ -15,9 +15,12 @@ Následující selektory verzí a oblastí poskytují filtrovaný seznam použit
 
 ## <a name="by-version"></a>Podle verze
 
-Vyberte verzi .NET Core, na kterou aktuálně cílíte, a potom verzi .NET Core, na kterou chcete migrovat:
+Vyberte verzi rozhraní .NET, na kterou aktuálně cílíte, a potom verzi .NET Core, na kterou chcete migrovat:
 
 [!INCLUDE[versionselector](~/includes/core-changes/versionselector.md)]
+
+> [!TIP]
+> Pokud migrujete aplikaci model Windows Forms z .NET Framework na .NET Core, přečtěte si téma [přerušující změny v model Windows Forms (.NET Framework až .NET Core)](../porting/winforms-breaking-changes.md) místo používání selektoru verzí.
 
 ## <a name="by-area"></a>Podle oblasti
 

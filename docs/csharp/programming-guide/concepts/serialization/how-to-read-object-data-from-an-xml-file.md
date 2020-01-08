@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Čtení dat objektů ze souboru XML (C#)'
+title: Čtení dat objektů ze souboru XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: 1d6ec71b9e408e1536063fc3d8f1badc0f38551e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 2da5919c11ed2d6e43f4f9fc406f43e3ed48060f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590738"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346434"
 ---
-# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Postupy: Čtení dat objektů ze souboru XML (C#)
-Tento příklad načte data objektů, která byla dříve zapsána do souboru XML <xref:System.Xml.Serialization.XmlSerializer> pomocí třídy.  
+# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Čtení dat objektů ze souboru XML (C#)
+Tento příklad načte data objektů, která byla dříve zapsána do souboru XML pomocí třídy <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Příklad  
   
@@ -43,7 +43,7 @@ public void ReadXML()
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Nahraďte název souboru "c:\temp\SerializationOverview.xml" názvem souboru, který obsahuje Serializovaná data. Další informace o serializaci dat naleznete v tématu [How to: Zápis dat objektů do souboru XML (C#).](./how-to-write-object-data-to-an-xml-file.md)  
+Nahraďte název souboru "c:\temp\SerializationOverview.xml" názvem souboru, který obsahuje Serializovaná data. Další informace o serializaci dat naleznete v tématu [jak zapisovat data objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md).
   
  Třída musí mít veřejný konstruktor bez parametrů.  
   
@@ -64,6 +64,6 @@ public void ReadXML()
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO.StreamWriter>
-- [Postupy: Zápis dat objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md)
+- [Zápis dat objektů do souboru XML (C#)](./how-to-write-object-data-to-an-xml-file.md)
 - [SerializaceC#()](./index.md)
 - [Průvodce programováním v jazyce C#](../../index.md)

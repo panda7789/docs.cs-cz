@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Provést transformaci textu do souboru XML (C#) pomocí streamování'
+title: Jak provádět transformace streamování textu do formátu XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
-ms.openlocfilehash: 6dc48a7342bbeedb79e8e7f4a9270899be336f91
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 496535b7f868095a62be2b72b1eea2b082e00a44
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851033"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345799"
 ---
-# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Postupy: Provést transformaci textu do souboru XML (C#) pomocí streamování
+# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Jak provádět transformace streamování textu do formátu XML (C#)
 
-Jedním z přístupů ke zpracování textového souboru je zápis metody rozšíření, která vytvoří datový soubor v jednom okamžiku pomocí `yield return` konstrukce. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděným odloženým způsobem. Pokud potom použijete <xref:System.Xml.Linq.XStreamingElement> ke streamování výstupu, můžete vytvořit transformaci z textového souboru do formátu XML, který používá minimální množství paměti bez ohledu na velikost zdrojového textového souboru.
+Jedním ze způsobů, jak zpracovat textový soubor, je napsat metodu rozšíření, která vytvoří datový soubor v daném čase pomocí `yield return` konstrukce. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděným odloženým způsobem. Pokud potom použijete <xref:System.Xml.Linq.XStreamingElement> ke streamování výstupu, můžete vytvořit transformaci z textového souboru do formátu XML, který používá minimální množství paměti bez ohledu na velikost zdrojového textového souboru.
 
  V souvislosti s transformacemi streamování dochází k nějakým aspektům. Transformace streamování se nejlépe používá v situacích, kdy můžete celý soubor zpracovat jednou a pokud můžete řádky zpracovat v pořadí, ve kterém se nachází ve zdrojovém dokumentu. Pokud je třeba soubor zpracovat více než jednou, nebo pokud budete muset řádky seřadit předtím, než je budete moci zpracovat, ztratíte spoustu výhod používání techniky streamování.
 

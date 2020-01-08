@@ -2,12 +2,12 @@
 title: ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 130265070e82245de4bdd49599df9fa9f435f5ed
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 5b7246350478bbc8907bb9f52e425821402f8806
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569414"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346218"
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET je sada tříd, které zpřístupňují služby pro přístup k datům pro .NET Framework programátory. ADO.NET poskytuje bohatou sadu komponent pro vytváření distribuovaných aplikací pro sdílení dat. Je nedílnou součástí .NET Framework a poskytuje přístup k datům relačních, XML a aplikací. ADO.NET podporuje nejrůznější potřeby vývoje, včetně vytváření front-endové klientů databáze a obchodních objektů střední vrstvy používaných aplikacemi, nástroji, jazyky nebo internetovými prohlížeči.  
@@ -19,7 +19,7 @@ ADO.NET je sada tříd, které zpřístupňují služby pro přístup k datům p
  [Přehled ADO.NET](ado-net-overview.md)  
  Poskytuje Úvod k návrhu a součástem ADO.NET.  
   
- [Entity Framework](https://go.microsoft.com/fwlink/?LinkID=213876)  
+ [Entity Framework](/ef/ef6/index)  
  Popisuje, jak vytvořit aplikace pomocí Entity Framework.  
   
  [Zabezpečení aplikací ADO.NET](securing-ado-net-applications.md)  

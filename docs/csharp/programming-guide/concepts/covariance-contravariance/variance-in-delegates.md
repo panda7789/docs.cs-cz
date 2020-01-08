@@ -2,12 +2,12 @@
 title: Variance v delegátechC#()
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: a65b2fb84e2eae57eecaf5307ca76fbce412d44c
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: cdf7cad97ececbf4baae8328b1df55318c627cbb
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772045"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345168"
 ---
 # <a name="variance-in-delegates-c"></a>Variance v delegátechC#()
 .NET Framework 3,5 zavedl podporu variance pro párové signatury metod s typy delegátů ve C#všech delegátech v. To znamená, že můžete přiřadit delegáty nejen metody, které mají odpovídající signatury, ale také metody, které vracejí více odvozené typy (kovariance), nebo které přijímají parametry, které mají méně odvozené typy (kontravariance), než které jsou určeny typem delegáta. . To zahrnuje obecné i neobecné delegáty.  
@@ -85,7 +85,7 @@ public static void Test()
 }  
 ```  
   
- Použijete-li pouze podporu variance pro spárování signatur metod s typy delegátů a nepoužíváte klíčová slova `in` a `out`, je možné, že někdy lze vytvořit instanci delegátů se stejnými výrazy lambda nebo metodami, ale nemůžete přiřadit jednu delegovat na jiný  
+ Použijete-li pouze podporu variance pro spárování signatur metod s typy delegátů a nepoužíváte klíčová slova `in` a `out`, je možné, že někdy lze vytvořit instanci delegátů se stejnými výrazy lambda nebo metodami, ale nelze přiřadit jednoho delegáta jinému.  
   
  V následujícím příkladu kódu `SampleGenericDelegate<String>` nelze explicitně převést na `SampleGenericDelegate<Object>`, i když `String` dědí `Object`. Tento problém můžete vyřešit tak, že označíte obecný parametr `T` s klíčovým slovem `out`.  
   
@@ -140,7 +140,7 @@ public delegate void DContravariant<in A>(A a);
 ```  
   
 > [!IMPORTANT]
-> parametry `ref`, `in` a `out` C# nelze označit jako typ variant.  
+> parametry `ref`, `in`a `out` C# nelze označit jako typ variant.  
   
  Je také možné podporovat odchylku i kovarianci v rámci stejného delegáta, ale pro různé parametry typu. To je ukázáno v následujícím příkladu.  
   
@@ -200,4 +200,4 @@ public static void Test()
 
 - [Obecné typy](../../../../standard/generics/index.md)
 - [Použití odchylky pro obecné delegáty Func a ActionC#()](./using-variance-for-func-and-action-generic-delegates.md)
-- [Postupy: kombinování delegátů (vícesměrové Delegáti)](../../delegates/how-to-combine-delegates-multicast-delegates.md)
+- [Postup kombinování delegátů (Delegáti vícesměrového vysílání)](../../delegates/how-to-combine-delegates-multicast-delegates.md)

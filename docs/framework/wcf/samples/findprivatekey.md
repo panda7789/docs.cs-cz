@@ -1,15 +1,15 @@
 ---
-title: Ukázka FindPrivateKey – WCF
+title: Ukázka FindPrivateKey
 ms.date: 12/04/2017
 helpviewer_keywords:
 - FindPrivateKey
 ms.assetid: 16b54116-0ceb-4413-af0c-753bb2a785a6
-ms.openlocfilehash: 4ba4316489c1494da9421bea5c513e44c6eb50a7
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0ed1e5e81a5d2f7f3586e5dce306e8244b5ebd48
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989874"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346020"
 ---
 # <a name="findprivatekey-sample"></a>Ukázka FindPrivateKey
 
@@ -46,13 +46,13 @@ cacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto
 
 Pokud si chcete stáhnout projekt, přejděte na [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459).
 
-1. Otevřete Průzkumníka souborů a přejděte do složky *WF_WCF_Samples\WCF\Setup\FindPrivateKey\CS* v umístění adresáře, kam jste si nainstalovali ukázku.
+1. Otevřete Průzkumníka souborů a přejděte do složky *WF_WCF_Samples \wcf\setup\findprivatekey\cs* v umístění adresáře, kam jste nainstalovali ukázku.
 
 2. Dvojím kliknutím na ikonu souboru. sln otevřete soubor v aplikaci Visual Studio.
 
 3. V nabídce **sestavení** vyberte znovu **Sestavit řešení**.
 
-4. Sestavení řešení vygeneruje soubor: FindPrivateKey.exe.
+4. Sestavení řešení vygeneruje soubor: FindPrivateKey. exe.
 
 ## <a name="conventionscommand-line-entries"></a>Konvence – položky příkazového řádku
 
@@ -62,7 +62,7 @@ Pokud si chcete stáhnout projekt, přejděte na [ukázky Windows Communication 
 
  "*možnost1* &#124; *možnost2*" představuje volbu mezi sadami možností.
 
- Hodnota > představuje hodnotu parametru, která se má zadat.\<
+ "\<*value*>" představuje hodnotu parametru, která se má zadat.
 
 ## <a name="usage"></a>Použití
 
@@ -70,7 +70,7 @@ Pokud si chcete stáhnout projekt, přejděte na [ukázky Windows Communication 
 FindPrivateKey <storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]
 ```
 
-,
+Kde:
 
 | Parametr         | Popis                                                                       |
 |-----------------|-----------------------------------------------------------------------------------|

@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)'
+title: Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
-ms.openlocfilehash: e6c0cbf523095122be4227bebee8d7a234eba2d0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e869d57c413d175c092cdc15a6fe54cab94e04b8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592391"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347353"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Postupy: Řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
 Následující příklad ukazuje, jak řadit řádky strukturovaného textu, například hodnoty oddělené čárkami, podle libovolného pole na řádku. Pole lze dynamicky určit za běhu. Předpokládat, že pole v souboru skóre. csv reprezentují číslo ID studenta, po kterém následuje řada čtyř výsledků testu.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Vytvoření souboru, který obsahuje data  
   
-1. Zkopírujte data skóre. CSV z tématu [postupy: Připojte obsah z nepodobných souborů (LINQ)C#(](./how-to-join-content-from-dissimilar-files-linq.md) ) a uložte ho do složky řešení.  
+1. Zkopírujte data výsledků. CSV z tématu [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) a uložte je do složky řešení.  
   
 ## <a name="example"></a>Příklad  
   
@@ -76,7 +76,7 @@ public class SortLines
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
-Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Privátní
+title: Soukromé
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Private
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Private keyword [Visual Basic]
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-ms.openlocfilehash: 5600744aeca79a54f51a1f9ecd0ef00fed4b00fd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0c855c4e08b365b4cb75ab062d2ec304a79612ab
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351334"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347920"
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom v rámci svého kontextu deklarace, včetně v rámci libovolných obsažených typů.  
@@ -65,7 +65,8 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom
 - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
 - [Private Protected](./private-protected.md)
-- [Chráněné](./protected-friend.md)    [úrovně přístupu typu Friend v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Protected Friend](./protected-friend.md)
+- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

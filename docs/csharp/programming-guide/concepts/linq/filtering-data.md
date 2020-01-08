@@ -2,12 +2,12 @@
 title: Filtrování dat (C#)
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: eb448c1c2ea6d9b3fcf0120043cafebc01cd3805
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 74399244990f8ff2deaa1d10576ea94a57c16bee
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418477"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346995"
 ---
 # <a name="filtering-data-c"></a>Filtrování dat (C#)
 Filtrování odkazuje na operaci omezení sady výsledků tak, aby obsahovala pouze prvky, které odpovídají zadané podmínce. Označuje se také jako výběr.  
@@ -50,7 +50,7 @@ foreach (string str in query)
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
 - [where – klauzule](../../../language-reference/keywords/where-clause.md)
-- [Postupy: Dynamické určování filtrů predikátů za běhu](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
-- [Postupy: vytvoření dotazu na metadata sestavení s reflexí (LINQ)C#()](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [Postupy: dotazování na soubory se zadaným atributem nebo názvem (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
-- [Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Dynamické určování filtrů predikátů při běhu](../../../linq/dynamically-specify-predicate-filters-at-runtime.md)
+- [Postup dotazování na metadata sestavení s reflexí (LINQ)C#()](./how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
+- [Dotazování na soubory se zadaným atributem nebo názvem (C#)](./how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

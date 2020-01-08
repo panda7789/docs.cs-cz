@@ -2,12 +2,12 @@
 title: Specifické funkce Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 869d6108edaa7f32101b6fe8d077e4eba7eef6b5
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: c534575fcf70035bc728642dbb65b05db1fd4686
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802593"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345108"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce Windows Workflow Foundation
 
@@ -189,7 +189,7 @@ Aktivitu vývojového diagramu lze použít k implementaci odhadované hry. Odha
 
 ## <a name="procedural-activities-sequence-if-foreach-switch-assign-dowhile-while"></a>Procesní aktivity (sekvence, if, ForEach, přepínač, Assign, DoWhile, while)
 
-Procesní aktivity poskytují mechanismus pro modelování sekvenčního řízení toku pomocí konceptů, které jsou obeznámeny s programátory. Tyto aktivity umožňují tradičně strukturované konstrukce programovacích jazyků a v případě potřeby poskytují jazykovou paritu běžných procedurálních jazyků, C#jako je/vb.
+Procesní aktivity poskytují mechanismus pro modelování sekvenčního řízení toku pomocí konceptů, které jsou obeznámeny s programátory. Tyto aktivity umožňují sestavování tradičně strukturovaných programovacích jazyků a v případě potřeby poskytovat jazykové rozdíly pomocí běžných procedurálních C# jazyků, jako jsou a Visual Basic.
 
 ### <a name="getting-started"></a>Začínáme
 
@@ -231,7 +231,7 @@ Aktivita <xref:System.Activities.Statements.InvokeMethod> umožňuje vyvolání 
 
 ## <a name="error-handling-activities"></a>Aktivity zpracovávající chyby
 
-Aktivita <xref:System.Activities.Statements.TryCatch> poskytuje mechanismus pro zachycení výjimek, ke kterým dochází během provádění sady obsažených aktivit (podobně jako konstrukce try/catch v C#/VB). <xref:System.Activities.Statements.TryCatch> poskytuje zpracování výjimek na úrovni pracovního postupu. Pokud je vyvolána neošetřená výjimka, je pracovní postup přerušen a blok finally nebude proveden. Toto chování je konzistentní s C#.
+Aktivita <xref:System.Activities.Statements.TryCatch> poskytuje mechanismus pro zachycení výjimek, ke kterým dochází během provádění sady obsažených aktivit (podobně jako konstrukce try/catch v C# a Visual Basic). <xref:System.Activities.Statements.TryCatch> poskytuje zpracování výjimek na úrovni pracovního postupu. Pokud je vyvolána neošetřená výjimka, je pracovní postup přerušen a blok finally nebude proveden. Toto chování je konzistentní s C#.
 
 ### <a name="getting-started"></a>Začínáme
 

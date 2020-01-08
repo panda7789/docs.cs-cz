@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Ověřit pomocí XSD (LINQ to XML) (C#)'
+title: Jak ověřit pomocí XSD (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 6a7f83a9-2d74-4c2b-8417-0a8595879516
-ms.openlocfilehash: 0e35e12efa9530fd5bbcf7a21e86ed03c1325bc4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 29830457b63f36dd401a412364060339344f35cb
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253253"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347253"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-c"></a>Postupy: Ověřit pomocí XSD (LINQ to XML) (C#)
-<xref:System.Xml.Schema> Obor názvů obsahuje metody rozšíření, které usnadňují ověřování stromu XML proti souboru XSD (XML Schema Definition Language). Další informace najdete v <xref:System.Xml.Schema.Extensions.Validate%2A> dokumentaci k metodě.  
+# <a name="how-to-validate-using-xsd-linq-to-xml-c"></a>Jak ověřit pomocí XSD (LINQ to XML) (C#)
+Obor názvů <xref:System.Xml.Schema> obsahuje metody rozšíření, které usnadňují ověřování stromu XML proti souboru XSD (XML Schema Definition Language). Další informace najdete v dokumentaci k metodě <xref:System.Xml.Schema.Extensions.Validate%2A>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>a potom ověří dva <xref:System.Xml.Linq.XDocument> objekty proti sadě schémat. Jeden z dokumentů je platný, druhý není.  
+ Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>a potom ověří dva objekty <xref:System.Xml.Linq.XDocument> proti sadě schémat. Jeden z dokumentů je platný, druhý není.  
   
 ```csharp  
 string xsdMarkup =  
@@ -76,11 +76,11 @@ doc2 did not validate
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ověřuje, zda dokument XML z [ukázkového souboru XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) jsou platné na základě schématu ze [vzorového souboru XSD: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md). Pak upraví zdrojový dokument XML. Změní `CustomerID` atribut prvního zákazníka. Po změně budou objednávky odkazovat na zákazníka, který neexistuje, takže dokument XML nebude nadále ověřen.  
+ Následující příklad ověřuje, že dokument XML z [ukázkového souboru XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) jsou platné pro schéma z [ukázkového souboru XSD: zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md). Pak upraví zdrojový dokument XML. Změní atribut `CustomerID` prvního zákazníka. Po změně budou objednávky odkazovat na zákazníka, který neexistuje, takže dokument XML nebude nadále ověřen.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
- V tomto příkladu se používá následující schéma XSD: [Ukázkový soubor XSD: Zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md).  
+ V tomto příkladu se používá následující schéma XSD: [ukázkový soubor XSD: zákazníci a objednávky](./sample-xsd-file-customers-and-orders1.md).  
   
 ```csharp  
 XmlSchemaSet schemas = new XmlSchemaSet();  

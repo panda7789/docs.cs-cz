@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Načtení omezené hodnoty elementu (C#)'
+title: Načtení omezené hodnoty elementu (C#)
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-ms.openlocfilehash: 662c20cf2b17b9f93e00f0fd3c5cf925b5274de5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b9b69b5a18106f82d13cb54208c2362f8239711e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253372"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347450"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Postupy: Načtení omezené hodnoty elementu (C#)
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Načtení omezené hodnoty elementu (C#)
 Toto téma ukazuje, jak získat omezené hodnoty elementu. Nedávná hodnota je hodnota pouze konkrétního prvku, na rozdíl od hloubkové hodnoty, která zahrnuje hodnoty všech podřízených prvků zřetězených do jednoho řetězce.  
   
- Při načítání hodnoty prvku pomocí přetypování nebo <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnosti načtete hloubkovou hodnotu. Pro načtení omezené hodnoty můžete použít `ShallowValue` metodu rozšíření, jak je znázorněno v následujícím příkladu. Načtení omezené hodnoty je užitečné, pokud chcete vybrat prvky na základě jejich obsahu.  
+ Při načítání hodnoty prvku pomocí přetypování nebo vlastnosti <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> načtete hloubkovou hodnotu. K načtení omezené hodnoty můžete použít metodu rozšíření `ShallowValue`, jak je znázorněno v následujícím příkladu. Načtení omezené hodnoty je užitečné, pokud chcete vybrat prvky na základě jejich obsahu.  
   
  V následujícím příkladu je deklarována metoda rozšíření, která načte s nejomezeným hodnotou elementu. Potom používá metodu rozšíření v dotazu k vypsání všech prvků, které obsahují počítanou hodnotu.  
   

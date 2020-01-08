@@ -1,53 +1,53 @@
 ---
-title: Konfigurace HTTP a HTTPS - WCF
+title: Konfigurace HTTP a HTTPS
 ms.date: 04/08/2019
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 4bfdbbc19bb9ed72bc50ebeeac114241ccd47c25
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: f7fd2bad6ced09b638cc1bb5d539fab1b9ce7d25
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053403"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75336690"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 
-Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Nastavení HTTP/HTTPS se konfigurují pomocí Internetové informační služby (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované na nastavení služby IIS protokolu HTTP nebo HTTPS lze nastavit v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud je služba WCF v místním prostředí, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.
+Služby a Klienti WCF můžou komunikovat přes protokol HTTP a HTTPS. Nastavení HTTP/HTTPS jsou nakonfigurovaná pomocí Internetová informační služba (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostovaná v rámci nastavení IIS HTTP nebo HTTPS, můžete nakonfigurovat v rámci služby IIS (pomocí nástroje inetmgr. exe). Pokud je služba WCF v místním prostředí, nastavení HTTP nebo HTTPS se konfigurují pomocí nástroje příkazového řádku.
 
-Minimálně chcete konfigurovat adresu URL registrace a přidat výjimku brány Firewall pro adresu URL vaší služby budete používat. Tato nastavení můžete konfigurovat pomocí nástroje Netsh.exe.
+Minimálně je potřeba nakonfigurovat registraci adresy URL a přidat výjimku brány firewall pro adresu URL, kterou bude služba používat. Tato nastavení můžete nakonfigurovat pomocí nástroje Netsh. exe.
 
-## <a name="configuring-namespace-reservations"></a>Konfigurace rezervace oboru názvů
+## <a name="configuring-namespace-reservations"></a>Konfigurace rezervací oboru názvů
 
-Rezervace Namespace přiřadí oprávnění pro část oboru názvů HTTP URL ke konkrétní skupině uživatelů. Rezervace opravňuje tito uživatelé vytvářet služby, které naslouchat na část oboru názvů. Rezervace se předpony adres URL, to znamená, že rezervace pokrývá všechny dílčí cesty rezervace. Rezervace Namespace povolit dva způsoby, jak použít zástupné znaky. Popisuje dokumentace k rozhraní API serveru HTTP [pořadí rozlišení rozsahu deklarace identity oboru názvů, které se týkají zástupné znaky](/windows/desktop/Http/routing-incoming-requests).
+Rezervace oboru názvů přiřadí práva pro část oboru názvů URL protokolu HTTP ke konkrétní skupině uživatelů. Rezervace dává těmto uživatelům právo vytvářet služby, které naslouchají této části oboru názvů. Rezervace jsou předpony adres URL, což znamená, že rezervace pokrývá všechny dílčí cesty cesty rezervace. Rezervace oboru názvů povolují dva způsoby použití zástupných znaků. Dokumentace k rozhraní API serveru HTTP popisuje [pořadí rozlišení mezi deklaracemi oboru názvů, které zahrnují zástupné znaky](/windows/desktop/Http/routing-incoming-requests).
 
-Podobně jako požadavek na přidání registrace oboru názvů můžete vytvořit běžící aplikaci. Registrace a rezervace soutěžit o části obor názvů. Rezervace mohou mít přednost před registrace podle pořadí podle rozlišení [pořadí rozlišení rozsahu deklarace identity oboru názvů, které se týkají zástupné znaky](/windows/desktop/Http/routing-incoming-requests). V takovém případě rezervace blokuje běžící aplikaci příjem požadavků.
+Běžící aplikace může vytvořit podobný požadavek na přidání registrace oboru názvů. Registrace a rezervace jsou konkurenční pro části oboru názvů. Rezervace může mít přednost před registrací podle pořadí rozlišení [mezi deklaracemi oboru názvů, které zahrnují zástupné znaky](/windows/desktop/Http/routing-incoming-requests). V takovém případě rezervace blokuje běžící aplikaci od přijímání požadavků.
 
-Pomocí nástroje Netsh.exe v následujícím příkladu:
+Následující příklad používá nástroj Netsh. exe:
 
 ```console
 netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
 ```
 
-Tento příkaz přidá rezervaci adresy URL pro obor názvů zadané adresy URL pro účet doména\uživatel. Další informace o použití příkazu netsh, zadejte `netsh http add urlacl /?` v příkazovém řádku a potom stiskněte klávesu Enter.
+Tento příkaz přidá rezervaci adresy URL pro zadaný obor názvů URL pro účet doména \ uživatel. Další informace o použití příkazu netsh získáte tak, že do příkazového řádku zadáte `netsh http add urlacl /?` a stisknete klávesu ENTER.
 
-## <a name="configuring-a-firewall-exception"></a>Konfigurace výjimek brány firewall
+## <a name="configuring-a-firewall-exception"></a>Konfigurace výjimky brány firewall
 
-Při samoobslužné hostování služby WCF, který komunikuje přes protokol HTTP, výjimky musí být přidány do konfigurace brány firewall pro povolení příchozích připojení pomocí konkrétní adresy URL.
+Při samoobslužném hostování služby WCF, která komunikuje přes protokol HTTP, musí být do konfigurace brány firewall přidána výjimka umožňující příchozí připojení pomocí konkrétní adresy URL.
 
 ## <a name="configuring-ssl-certificates"></a>Konfigurace certifikátů SSL
 
-Protokol vrstvy SSL (Secure Sockets) používá certifikáty na klienta a serveru pro ukládání šifrovacích klíčů. Server poskytuje svůj certifikát SSL, když se vytvoří připojení tak, aby klient lze ověřit identitu serveru. Na serveru můžete také požádat o certifikát od klienta k zajištění vzájemného ověřování obou stranách připojení.
+Protokol SSL (SSL (Secure Sockets Layer)) používá k ukládání šifrovacích klíčů certifikáty na klientovi a na serveru. Server poskytuje svůj certifikát SSL, když je vytvořeno připojení, aby klient mohl ověřit identitu serveru. Server taky může požádat o certifikát od klienta, aby se zajistilo vzájemné ověřování obou stran připojení.
 
-Certifikáty jsou uloženy v centralizované úložiště podle IP adresy a portu počtu připojení. Speciální IP adresu 0.0.0.0 odpovídá jakékoli IP adresu místního počítače. Všimněte si, že úložiště certifikátů není rozlišit adresy URL na základě cesty. Služby se stejnou IP adresu a port kombinací musí sdílet certifikáty, i v případě, že cesta v adrese URL pro služby se liší.
+Certifikáty jsou uložené v centralizovaném úložišti podle IP adresy a čísla portu připojení. Speciální IP adresa 0.0.0.0 odpovídá libovolné IP adrese pro místní počítač. Všimněte si, že úložiště certifikátů nerozlišuje adresy URL na základě cesty. Služby se stejnou kombinací IP adresy a portu musí sdílet certifikáty, i když je cesta v adrese URL pro služby odlišná.
 
-Podrobné pokyny najdete v tématu [jak: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
+Podrobné pokyny najdete v tématu [Postup: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
 
-## <a name="configuring-the-ip-listen-list"></a>Konfigurace seznamu vlastností listenurimode nastavenou IP
+## <a name="configuring-the-ip-listen-list"></a>Konfigurace seznamu naslouchání protokolu IP
 
-Rozhraní API HTTP serveru vytvoří vazbu jenom na IP adresu a port jakmile se uživatel zaregistruje adresy URL. Ve výchozím nastavení rozhraní API serveru HTTP váže na port v adrese URL pro všechny IP adresy počítače. Konflikt nastane, pokud aplikace, která nepoužívá rozhraní API serveru HTTP byl dříve spojen daná kombinace IP adresy a portu. Seznam naslouchání IP umožňuje služeb WCF pro existovat současně s aplikací, které používají port pro některé z IP adresy počítače. Pokud IP naslouchání seznam obsahuje všechny položky, rozhraní API HTTP serveru pouze vytvoří vazbu tyto IP adresy, které určuje seznamu. Úprava seznamu naslouchání IP vyžaduje oprávnění správce.
+Rozhraní API serveru HTTP se váže jenom na IP adresu a port, jakmile uživatel zaregistruje adresu URL. Rozhraní API serveru HTTP se ve výchozím nastavení váže k portu v adrese URL pro všechny IP adresy daného počítače. Konflikt nastane, pokud aplikace, která nepoužívá rozhraní API serveru HTTP, byla dříve vázaná na tuto kombinaci IP adresy a portu. Seznam naslouchání protokolu IP umožňuje službám WCF koexistovat s aplikacemi, které používají port pro některé z IP adres počítače. Pokud seznam naslouchání protokolu IP obsahuje nějaké položky, rozhraní API serveru HTTP se váže pouze na tyto IP adresy, které seznam určuje. Změna seznamu naslouchání protokolu IP vyžaduje oprávnění správce.
 
-Pomocí nástroje netsh k úpravě seznamu naslouchání IP, jak je znázorněno v následujícím příkladu:
+Pomocí nástroje Netsh upravte seznam IP listeny, jak je znázorněno v následujícím příkladu:
 
 ```console
 netsh http add iplisten ipaddress=0.0.0.0:8000
@@ -55,9 +55,9 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 
 ## <a name="other-configuration-settings"></a>Další nastavení konfigurace
 
-Při použití <xref:System.ServiceModel.WSDualHttpBinding>, připojení klienta používá výchozí hodnoty, které jsou kompatibilní s rezervace oboru názvů a brány Windows firewall. Pokud budete chtít upravit základní adresu duální připojení klienta, také musíte nakonfigurovat nastavení protokolu HTTP na straně klienta tak, aby odpovídala nové adrese.
+Při použití <xref:System.ServiceModel.WSDualHttpBinding>připojení klienta používá výchozí hodnoty, které jsou kompatibilní s rezervacemi oboru názvů a bránou Windows Firewall. Pokud se rozhodnete přizpůsobit základní adresu klienta duálního připojení, musíte také nakonfigurovat tato nastavení protokolu HTTP v klientovi tak, aby odpovídala nové adrese.
 
-Rozhraní API HTTP Server má nastavení některé pokročilé konfigurace, které nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení se zachovají v registru a platí pro všechny aplikace spuštěné v systémech, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [nastavení registru Http.sys pro službu IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). Většina uživatelů nemusí tato nastavení změnit.
+Rozhraní API serveru HTTP má několik pokročilých nastavení konfigurace, která nejsou k dispozici prostřednictvím HttpCfg. Tato nastavení jsou zachována v registru a platí pro všechny aplikace spuštěné v systémech, které používají rozhraní API serveru HTTP. Informace o těchto nastaveních najdete v tématu [nastavení registru http. sys pro službu IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). Většina uživatelů tyto nastavení nepotřebuje měnit.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -3,12 +3,12 @@ title: 'Kurz: vytvoření prvního analyzátoru a opravy kódu'
 description: V tomto kurzu najdete podrobné pokyny k sestavení analyzátoru a opravy kódu pomocí sady .NET Compiler SDK (rozhraní Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 7bd0fda9fb717a48c09aafde47f9b7f4f360c357
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 99401e74588088d56b3fbd916e050f5d468722a1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837048"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346942"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: vytvoření prvního analyzátoru a opravy kódu
 
@@ -520,7 +520,7 @@ int k = i + j;
 
 Po těchto změnách získáte červené vlnovky pouze první dvě proměnné. Přidejte `const` do `i` i `j`a dostanete nové upozornění na `k`, protože teď může být `const`.
 
-Blahopřejeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples. Nebo si můžete stáhnout [soubor zip dokončeného projektu](https://github.com/dotnet/samples/blob/master/csharp/roslyn-sdk/Tutorials/MakeConst.zip)
+Blahopřejeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples.
 
 ## <a name="other-resources"></a>Další zdroje
 

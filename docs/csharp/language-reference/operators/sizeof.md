@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: 32103043d4c3a8b38f4c8aad80282f6c0555719f
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 4488e2313a58a24e324001a4dccdee86a456bb5b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038940"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345265"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof – operátorC# (Referenční dokumentace)
 
@@ -23,21 +23,21 @@ Operátor `sizeof` vyžaduje [nezabezpečený](../keywords/unsafe.md) kontext. V
 
 |Výraz|Hodnota konstanty|
 |---------|---------------|
-|`sizeof(sbyte)`|první|
-|`sizeof(byte)`|první|
-|`sizeof(short)`|odst|
-|`sizeof(ushort)`|odst|
+|`sizeof(sbyte)`|1|
+|`sizeof(byte)`|1|
+|`sizeof(short)`|2|
+|`sizeof(ushort)`|2|
 |`sizeof(int)`|4|
 |`sizeof(uint)`|4|
 |`sizeof(long)`|8|
 |`sizeof(ulong)`|8|
-|`sizeof(char)`|odst|
+|`sizeof(char)`|2|
 |`sizeof(float)`|4|
 |`sizeof(double)`|8|
-|`sizeof(decimal)`|16bitovém|
-|`sizeof(bool)`|první|
+|`sizeof(decimal)`|16|
+|`sizeof(bool)`|1|
 
-Nemusíte také používat nezabezpečený kontext, pokud je Operand operátoru `sizeof` název typu [výčtu](../keywords/enum.md) .
+Nemusíte také používat nezabezpečený kontext, pokud je Operand operátoru `sizeof` název typu [výčtu](../builtin-types/enum.md) .
 
 Následující příklad ukazuje použití operátoru `sizeof`:
 

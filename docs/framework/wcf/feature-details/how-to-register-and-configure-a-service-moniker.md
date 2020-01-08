@@ -5,12 +5,12 @@ helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: 47e11ff2bc5b1c3eca152ba1fa429b5785c2f01b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a73f6333a91cd8018fe8e0c34d44db87938b8058
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976128"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347096"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: registrace a konfigurace monikeru služby
 Předtím, než použijete moniker služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM se zadaným kontraktem, je nutné zaregistrovat požadované typy s atributem COM a nakonfigurovat aplikaci COM a moniker s požadovanou vazbou. rozšířeného.  
@@ -87,7 +87,7 @@ Předtím, než použijete moniker služby Windows Communication Foundation (WCF
     > [!NOTE]
     > : Pokud je moniker poškozený nebo pokud není služba k dispozici, volání `GetObject` vrátí chybu neplatné syntaxe. Pokud se zobrazí tato chyba, ujistěte se, že moniker, který používáte, je správný a služba je k dispozici.  
   
-     I když se toto téma zaměřuje na použití monikeru služby z kódu VB 6,0, můžete použít moniker služby z jiných jazyků. Při použití monikeru z C++ kódu by se sestavení vygenerované pomocí Svcutil. exe mělo importovat s "no_namespace named_guids raw_interfaces_only", jak je znázorněno v následujícím kódu.  
+     I když se toto téma zaměřuje na použití monikeru služby z kódu Visual Basic 6,0, můžete použít moniker služby z jiných jazyků. Při použití monikeru z C++ kódu by se sestavení vygenerované pomocí Svcutil. exe mělo importovat s "no_namespace named_guids raw_interfaces_only", jak je znázorněno v následujícím kódu.  
   
     ```cpp
     #import "ComTestProxy.tlb" no_namespace named_guids  

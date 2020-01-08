@@ -5,19 +5,19 @@ helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-ms.openlocfilehash: c18cce1898b8834c20d5e4af70c1b010e4b96e11
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 00427004448997aa234b335b397390f9fabe1bd5
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740898"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559908"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Podkladový kód a kód XAML v subsystému WPF
 <a name="introduction"></a>Kód na pozadí je termín, který se používá k popisu kódu, který je spojen s objekty definovanými značkou, když [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka je kompilována kódu. Toto téma popisuje požadavky na pozadí kódu a také alternativní mechanismus vloženého kódu pro kód v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  Toto téma obsahuje následující oddíly:  
   
-- [Požadovaný](#Prerequisites)  
+- [Požadované součásti](#Prerequisites)  
   
 - [Kód na pozadí a jazyk XAML](#codebehind_and_the_xaml_language)  
   
@@ -33,7 +33,7 @@ ms.locfileid: "73740898"
   
 <a name="codebehind_and_the_xaml_language"></a>   
 ## <a name="code-behind-and-the-xaml-language"></a>Kód na pozadí a jazyk XAML  
- Jazyk XAML obsahuje funkce na úrovni jazyka, které umožňují přidružit soubory kódu k souborům značek ze strany souboru značek. Konkrétně jazyk XAML definuje direktivy [X:Class direktivy](../../xaml-services/x-class-directive.md)jazyka, direktiva [x:Subclass –](../../xaml-services/x-subclass-directive.md)a [direktiva x:ClassModifier –](../../xaml-services/x-classmodifier-directive.md). Přesně způsob, jak by měl být kód vytvořen a jak integrovat značky a kód, není součástí jazyka XAML. Je ponecháno až do architektury, jako je WPF, k určení, jak integrovat kód, jak použít XAML v aplikacích a programovacích modelech a akce sestavení nebo jiná podpora, kterou vyžaduje.  
+ Jazyk XAML obsahuje funkce na úrovni jazyka, které umožňují přidružit soubory kódu k souborům značek ze strany souboru značek. Konkrétně jazyk XAML definuje direktivy [X:Class direktivy](../../../desktop-wpf/xaml-services/xclass-directive.md)jazyka, direktiva [x:Subclass –](../../../desktop-wpf/xaml-services/xsubclass-directive.md)a [direktiva x:ClassModifier –](../../../desktop-wpf/xaml-services/xclassmodifier-directive.md). Přesně způsob, jak by měl být kód vytvořen a jak integrovat značky a kód, není součástí jazyka XAML. Je ponecháno až do architektury, jako je WPF, k určení, jak integrovat kód, jak použít XAML v aplikacích a programovacích modelech a akce sestavení nebo jiná podpora, kterou vyžaduje.  
   
 <a name="Code_behind__Event_Handler__and_Partial_Class"></a>   
 ## <a name="code-behind-event-handler-and-partial-class-requirements-in-wpf"></a>Kód na pozadí, obslužná rutina události a požadavky na částečnou třídu v subsystému WPF  
@@ -50,17 +50,17 @@ ms.locfileid: "73740898"
   
 <a name="x_Code"></a>   
 ## <a name="xcode"></a>x:Code  
- [x:Code](../../xaml-services/x-code-intrinsic-xaml-type.md) je element direktivy definovaný v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Element direktivy `x:Code` může obsahovat vložený programovací kód. Kód, který je definovaný jako vložený, může komunikovat s [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] na stejné stránce. Následující příklad znázorňuje vložený C# kód. Všimněte si, že kód je uvnitř elementu `x:Code` a že kód musí být uzavřený pomocí `<CDATA[`...`]]>` k úniku obsahu pro XML, takže procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (interpretace schématu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] schématu) se nepokusí Interpretujte obsah doslova jako XML.  
+ [x:Code](../../../desktop-wpf/xaml-services/xcode-intrinsic-xaml-type.md) je element direktivy definovaný v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Element direktivy `x:Code` může obsahovat vložený programovací kód. Kód, který je definovaný jako vložený, může komunikovat s [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] na stejné stránce. Následující příklad znázorňuje vložený C# kód. Všimněte si, že kód je uvnitř elementu `x:Code` a že kód musí být uzavřený pomocí `<CDATA[`...`]]>` k úniku obsahu pro XML, takže procesor [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (interpretace schématu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] schématu) se nepokusí interpretovat obsah doslova jako XML.  
   
  [!code-xaml[XAMLOvwSupport#ButtonWithInlineCode](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page4.xaml#buttonwithinlinecode)]  
   
 <a name="Inline_Code_Limitations"></a>   
 ## <a name="inline-code-limitations"></a>Omezení vloženého kódu  
- Měli byste zvážit vyloučení nebo omezení použití vloženého kódu. V souvislosti s architekturou a kódováním filozofie udržování oddělení značek a kódu na pozadí udržuje role návrháře a vývojářů mnohem obecnější. Na pokročilejší úrovni může být kód, který píšete pro vložený kód, nevhodný pro zápis, protože jste vždy zapsáni do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vygenerované částečné třídy a lze použít pouze výchozí mapování oboru názvů XML. Vzhledem k tomu, že nemůžete přidat příkazy `using`, je nutné plně kvalifikovat mnoho volání rozhraní API, které provedete. Výchozí mapování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnují většinu, ale ne všechny obory názvů CLR, které jsou k dispozici v sestaveních [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]; budete muset plně kvalifikovat volání typů a členů obsažených v jiných oborech názvů CLR. Nemůžete také definovat cokoli nad částečnou třídou ve vloženém kódu a všechny entity uživatelského kódu, na které odkazujete, musí existovat jako člen nebo proměnná v rámci generované částečné třídy. Jiné funkce programování specifické pro konkrétní jazyk, například makra nebo `#ifdef` proti globálním proměnným nebo proměnným sestavení, nejsou k dispozici ani. Další informace najdete v tématu [vnitřní typ XAML x:Code](../../xaml-services/x-code-intrinsic-xaml-type.md).  
+ Měli byste zvážit vyloučení nebo omezení použití vloženého kódu. V souvislosti s architekturou a kódováním filozofie udržování oddělení značek a kódu na pozadí udržuje role návrháře a vývojářů mnohem obecnější. Na pokročilejší úrovni může být kód, který píšete pro vložený kód, nevhodný pro zápis, protože jste vždy zapsáni do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vygenerované částečné třídy a lze použít pouze výchozí mapování oboru názvů XML. Vzhledem k tomu, že nemůžete přidat příkazy `using`, je nutné plně kvalifikovat mnoho volání rozhraní API, které provedete. Výchozí mapování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnují většinu, ale ne všechny obory názvů CLR, které jsou k dispozici v sestaveních [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]; budete muset plně kvalifikovat volání typů a členů obsažených v jiných oborech názvů CLR. Nemůžete také definovat cokoli nad částečnou třídou ve vloženém kódu a všechny entity uživatelského kódu, na které odkazujete, musí existovat jako člen nebo proměnná v rámci generované částečné třídy. Jiné funkce programování specifické pro konkrétní jazyk, například makra nebo `#ifdef` proti globálním proměnným nebo proměnným sestavení, nejsou k dispozici ani. Další informace najdete v tématu [vnitřní typ XAML x:Code](../../../desktop-wpf/xaml-services/xcode-intrinsic-xaml-type.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
-- [x:Code – vnitřní typ jazyka XAML](../../xaml-services/x-code-intrinsic-xaml-type.md)
+- [x:Code – vnitřní typ jazyka XAML](../../../desktop-wpf/xaml-services/xcode-intrinsic-xaml-type.md)
 - [Sestavení aplikace WPF](../app-development/building-a-wpf-application-wpf.md)
 - [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)

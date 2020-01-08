@@ -11,12 +11,12 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-ms.openlocfilehash: a685be7cc3b346b271413e2c29faae5a839313f4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a977b17d4b2c797bbe38d289a57f3d9d31fa64fa
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74340248"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345970"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>Postupy: Volání procedury operátora (Visual Basic)
 Proceduru operátoru zavoláte pomocí symbolu operátoru ve výrazu. V případě operátoru převodu zavoláte [funkci CType](../../../../visual-basic/language-reference/functions/ctype-function.md) pro převod hodnoty z jednoho datového typu na jiný.  
@@ -50,7 +50,7 @@ Proceduru operátoru zavoláte pomocí symbolu operátoru ve výrazu. V případ
   
  Příklad volání procedury operátoru konverzace naleznete v tématu [How to: Use a Class definující operátory](./how-to-use-a-class-that-defines-operators.md).  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
  Ujistěte se, že třída nebo struktura, kterou používáte, definuje operátor, který chcete použít.  
   
 ## <a name="see-also"></a>Viz také:

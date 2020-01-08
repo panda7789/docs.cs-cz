@@ -5,14 +5,14 @@ author: mgroves
 ms.technology: csharp-fundamentals
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 54eb3038594e1d4becf8a1bddd58b1e0e6464d68
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 6e200b151f3b2d84764dcdb379186d72f560eb22
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039292"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346823"
 ---
-# <a name="using-attributes-in-c"></a>Používání atributů v jazyce C\#
+# <a name="use-attributes-in-c"></a>Použití atributů v jazyce C\#
 
 Atributy poskytují způsob, jak přidružit informace s kódem deklarativním způsobem. Mohou také poskytovat opakovaně použitelný prvek, který lze použít na celou řadu cílů.
 
@@ -21,8 +21,9 @@ Vezměte v úvahu atribut `[Obsolete]`. Dá se použít na třídy, struktury, m
 V tomto kurzu se seznámíte s postupem přidávání atributů do kódu, vytváření a používání vlastních atributů a používání některých atributů, které jsou součástí .NET Core.
 
 ## <a name="prerequisites"></a>Požadavky
-Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) .
-Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, macOS nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
+Budete muset nastavit počítač tak, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) .
+Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, macOS nebo v kontejneru Docker.
+Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
@@ -30,7 +31,7 @@ Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci .NET
 
 `dotnet new console`
 
-Tento příkaz vytvoří soubory projektu .NET Core Barebones. Aby bylo možné obnovit závislosti potřebné k zkompilování tohoto projektu, bude nutné provést `dotnet restore`.
+Tento příkaz vytvoří holé soubory projektu .NET Core. Aby bylo možné obnovit závislosti potřebné k zkompilování tohoto projektu, bude nutné provést `dotnet restore`.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -38,10 +39,10 @@ Chcete-li spustit program, použijte `dotnet run`. Měl by se zobrazit výstup "
 
 ## <a name="how-to-add-attributes-to-code"></a>Postup přidání atributů do kódu
 
-V C#rozhraní jsou atributy třídy, které dědí z`Attribute`základní třídy. Libovolnou třídu, která dědí z `Attribute` lze použít jako řazení "značky" v jiných částech kódu.
+V C#rozhraní jsou atributy třídy, které dědí z `Attribute` základní třídy. Libovolnou třídu, která dědí z `Attribute` lze použít jako řazení "značky" v jiných částech kódu.
 Například existuje atribut nazvaný `ObsoleteAttribute`. Používá se k signalizaci, že kód je zastaralý a neměl by se už používat. Tento atribut lze umístit na třídu například pomocí hranatých závorek.
 
-[!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
+[!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]
 
 Všimněte si, že i když je třída volána `ObsoleteAttribute`, je nutné použít `[Obsolete]` v kódu. Toto je konvence, C# která následuje.
 Pokud zvolíte, můžete použít celé jméno `[ObsoleteAttribute]`.
@@ -91,7 +92,7 @@ Atributy lze použít v řadě "cíle". Výše uvedené příklady je ukazují n
 * GenericParameter
 * Rozhraní
 * Metoda
-* Modul
+* – modul
 * Parametr
 * Vlastnost
 * ReturnValue
@@ -111,7 +112,7 @@ Atributy fungují jako metadata. Bez některých pasivních sil nebudou ve skute
 
 Chcete-li najít atributy a pracovat s nimi, je obvykle potřeba [reflexe](../programming-guide/concepts/reflection.md) . V tomto kurzu nevidím podrobně zamyšlení, ale základní nápad je, že reflexe umožňuje psát kód v C# , který prověřuje jiný kód.
 
-Například můžete použít reflexi k získání informací o třídě (přidejte `using System.Reflection;` v hlavičce kódu): 
+Například můžete použít reflexi k získání informací o třídě (přidejte `using System.Reflection;` v hlavičce kódu):
 
 [!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
 
@@ -140,12 +141,12 @@ Tady je několik významných atributů integrovaných do knihoven základních 
 * `[Conditional]`. Tento atribut je v oboru názvů `System.Diagnostics`. Tento atribut lze použít na metody (nebo třídy atributů). Do konstruktoru musíte předat řetězec.
 Pokud se tento řetězec neshoduje s direktivou `#define`, pak C# kompilátor odebere všechna volání této metody (ale ne samotné metody). Obvykle se používá pro účely ladění (diagnostiky).
 
-* `[CallerMemberName]`. Tento atribut lze použít pro parametry a v oboru názvů `System.Runtime.CompilerServices`. Toto je atribut, který se používá k vložení názvu metody, která volá jinou metodu. Obvykle se používá jako způsob, jak eliminovat řetězce Magic při implementaci INotifyPropertyChanged v různých architekturách uživatelského rozhraní. Příklad:
+* `[CallerMemberName]`. Tento atribut lze použít pro parametry a v oboru názvů `System.Runtime.CompilerServices`. Toto je atribut, který se používá k vložení názvu metody, která volá jinou metodu. Obvykle se používá jako způsob, jak eliminovat řetězce Magic při implementaci INotifyPropertyChanged v různých architekturách uživatelského rozhraní. Jako příklad:
 
 [!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 
 Ve výše uvedeném kódu není nutné mít literál `"Name"` řetězec. To může přispět k tomu, aby se předešlo chybám souvisejícím s překlepem a také docházelo k plynulejšímu refaktoringu/přejmenování
 
-## <a name="summary"></a>Souhrn
+## <a name="summary"></a>Přehled
 
 Atributy přinášejí deklarativní sílu C#na, ale jsou meta datovým formulářem kódu a nejednají sami sebe.

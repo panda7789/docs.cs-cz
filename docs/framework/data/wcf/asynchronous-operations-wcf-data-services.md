@@ -6,12 +6,12 @@ helpviewer_keywords:
 - asynchronous operations [WCF Data Services]
 - WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
-ms.openlocfilehash: 3e8d3ec46362751ea8bbfe5120e35a050d0e7a6c
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 5191f3d03facaafc64f6df494ff90cd0ce1c1988
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569364"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346186"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Asynchronní operace (WCF Data Services)
 Webové aplikace musí vyhovovat vysoké latenci mezi klientem a serverem než aplikace, které běží v interních sítích. Pro optimalizaci výkonu a uživatelského prostředí vaší aplikace doporučujeme použít asynchronní metody <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy při přístupu k WCF Data Servicesm serverům přes web.  
@@ -21,7 +21,7 @@ Webové aplikace musí vyhovovat vysoké latenci mezi klientem a serverem než a
  Asynchronní operace lze provádět pomocí páru metod na <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy, které začínají na *začátku* a *konci* . Metody *Begin* zaregistrují delegáta, který služba volá po dokončení operace. *Koncové* metody by měly být volány v delegátovi, který je zaregistrován pro zpracování zpětného volání z dokončených operací. Při volání metody *End* k dokončení asynchronní operace je nutné provést ze stejné <xref:System.Data.Services.Client.DataServiceQuery%601> nebo <xref:System.Data.Services.Client.DataServiceContext> instance, kterou jste použili k zahájení operace. Každá metoda *Begin* přebírá `state` parametr, který může předat objektu stavu zpětnému volání. Tento objekt stavu je načten z <xref:System.IAsyncResult>, která je dodávána se zpětným voláním a slouží k volání odpovídající metody *End* k dokončení asynchronní operace. Například pokud zadáte instanci <xref:System.Data.Services.Client.DataServiceQuery%601> jako parametr `state` při volání metody <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> na instanci, bude <xref:System.IAsyncResult>stejná instance <xref:System.Data.Services.Client.DataServiceQuery%601> vrácena. Tato instance <xref:System.Data.Services.Client.DataServiceQuery%601> pak slouží k volání metody <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> k dokončení operace dotazu. Další informace najdete v tématu [Postupy: spouštění dotazů na asynchronní datové služby](how-to-execute-asynchronous-data-service-queries-wcf-data-services.md).  
   
 > [!NOTE]
-> Klientské knihovny, které jsou k dispozici v .NET Framework pro Silverlight, podporují pouze asynchronní operace. Další informace najdete v tématu [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149).  
+> Klientské knihovny, které jsou k dispozici v .NET Framework pro Silverlight, podporují pouze asynchronní operace. Další informace najdete v tématu [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
   
  Klientské knihovny .NET Framework podporují následující asynchronní operace:  
   

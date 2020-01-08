@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: e1894d57a613531fecba6786529a735431d01423
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
-ms.translationtype: MT
+ms.openlocfilehash: 21b2b0fb606333ace05b6525c9f461e6ee1709d1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929082"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338522"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -72,7 +72,7 @@ Viz [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master
 
 Možnost vyvíjet a spouštět aplikaci, která se dá použít na více různých operačních systémech, jako jsou Linux, Windows a iOS, aniž by bylo nutné je znovu zapisovat. To umožňuje opětovné použití kódu a konzistenci mezi aplikacemi na různých platformách.
 
-## <a name="ecosystem"></a>Ekosystému
+## <a name="ecosystem"></a>ekosystému
 
 Veškerý běhový software, vývojové nástroje a komunitní prostředky, které se používají k sestavování a spouštění aplikací pro danou technologii.
 
@@ -100,7 +100,7 @@ Systém uvolňování paměti je implementace automatické správy paměti.  GC 
 
 Viz [shromažďování paměti](garbage-collection/index.md).
 
-## <a name="il"></a>KÓDU
+## <a name="il"></a>IL
 
 Převodní jazyk.
 
@@ -118,7 +118,7 @@ Implementace rozhraní .NET zahrnuje následující:
 
 - Jeden nebo více modulů runtime. Příklady: CLR, CoreCLR, CoreRT.
 - Knihovna tříd, která implementuje verzi .NET Standard a může obsahovat další rozhraní API. Příklady: .NET Framework základní knihovny tříd, knihovna základních tříd .NET Core.
-- Volitelně jeden nebo více aplikačních architektur. Příklady: ASP.NET, model Windows Forms a WPF jsou součástí .NET Framework.
+- Volitelně jeden nebo více aplikačních architektur. Příklady: ASP.NET, model Windows Forms a WPF jsou obsaženy v .NET Framework.
 - Volitelně vývojové nástroje. Některé vývojové nástroje se sdílejí mezi více implementacemi.
 
 Příklady implementací rozhraní .NET:
@@ -163,7 +163,7 @@ Vysoce výkonná a open source implementace .NET pro více platforem. Zahrnuje z
 
 Viz [.NET Core](../core/index.md).
 
-## <a name="net-core-cli"></a>.NET Core CLI
+## <a name="net-core-cli"></a>Rozhraní příkazového řádku .NET Core
 
 Sada nástrojů pro více platforem pro vývoj aplikací .NET Core.
 
@@ -205,9 +205,9 @@ Generování nativních (imagí)
 
 Tuto technologii si můžete představit jako trvalý kompilátor JIT. Obvykle kompiluje kód na počítači, kde je spuštěn kód, ale kompilace obvykle probíhá v době instalace.
 
-## <a name="package"></a>Balíček
+## <a name="package"></a>balíček
 
-Balíček &mdash; NuGet nebo pouze balíček &mdash; je soubor *. zip* s jedním nebo více sestaveními se stejným názvem společně s dalšími metadaty, jako je jméno autora.
+Balíček NuGet &mdash; nebo pouze balíček &mdash; je soubor *. zip* s jedním nebo více sestaveními se stejným názvem společně s dalšími metadaty, jako je jméno autora.
 
 Soubor *. zip* má příponu *. nupkg* a může obsahovat prostředky, jako jsou soubory *DLL* a *XML* soubory pro použití s více cílovými rozhraními a verzemi. Při instalaci v aplikaci nebo knihovně jsou příslušné prostředky vybrány na základě cílového rozhraní určeného aplikací nebo knihovnou. Prostředky, které definují rozhraní, jsou ve složce *ref* a assety definující implementaci jsou ve složce *lib* .
 
@@ -269,7 +269,7 @@ Viz [cílová rozhraní](frameworks.md).
 
 Univerzální platforma Windows.
 
-Implementace .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, phablets, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace se dají zapisovat do C++, C#, VB.NET a JavaScriptu. Při použití C# a VB.NET jsou rozhraní API .NET k dispozici v rozhraní .NET Core.
+Implementace .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, phablets, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace se dají zapisovat do C++, C#Visual Basic a JavaScriptu. Při použití C# a Visual Basic rozhraní API .NET poskytuje .NET Core.
 
 ## <a name="see-also"></a>Viz také:
 

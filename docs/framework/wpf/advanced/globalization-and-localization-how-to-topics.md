@@ -7,15 +7,15 @@ helpviewer_keywords:
 - localization [WPF], features
 - globalization [WPF], features
 ms.assetid: c4b484fb-bc90-4186-a08d-f081e7109cad
-ms.openlocfilehash: a2ab04f40a3299bc0cd5a17c0f31e4f4ee0433ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98368a54fad095337038236d7bfdc2123edb6be2
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010290"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559406"
 ---
 # <a name="globalization-and-localization-how-to-topics"></a>Postupy: Témata globalizace a lokalizace
-Témata v této části popisují, jak vývoj světově připravených aplikací.  
+Témata v této části popisují, jak vyvíjet aplikace připravené pro použití ve světě.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Lokalizace aplikace](how-to-localize-an-application.md)  
@@ -31,6 +31,6 @@ Témata v této části popisují, jak vývoj světově připravených aplikací
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [Práce s atributem xml:lang v jazyce XAML](../../xaml-services/xml-lang-handling-in-xaml.md)  
+ [Práce s atributem xml:lang v jazyce XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md)  
   
 ## <a name="related-sections"></a>Související oddíly

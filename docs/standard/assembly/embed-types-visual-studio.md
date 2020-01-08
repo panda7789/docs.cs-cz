@@ -5,12 +5,12 @@ ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 47a339de60301e01b52a4b8a3a85945624daf940
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: f11fbedad766753ee462c5f597b823493cdaf7cf
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733201"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338560"
 ---
 # <a name="walkthrough-embed-types-from-managed-assemblies-in-visual-studio"></a>Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio
 
@@ -51,9 +51,9 @@ Vzhledem k tomu, že primární funkce vkládání typů je podpora sestavení C
 
 Prvním krokem je vytvoření sestavení rozhraní rovnocennosti typů.
 
-1. V aplikaci Visual Studio vyberte **soubor**  > **Nový**  > **projekt**.
+1. V sadě Visual Studio, vyberte **souboru** > **nový** > **projektu**.
 
-1. V dialogovém okně **vytvořit nový projekt** zadejte do pole **Hledat šablony** *knihovnu tříd* . C# V seznamu vyberte šablonu **Knihovna tříd vb (.NET Framework)** a pak vyberte **Další**.
+1. V dialogovém okně **vytvořit nový projekt** zadejte do pole **Hledat šablony** *knihovnu tříd* . V seznamu vyberte C# šablonu **knihovny tříd nebo Visual Basic (.NET Framework)** a pak vyberte **Další**.
 
 1. V dialogovém okně **Konfigurovat nový projekt** , v části **název projektu**zadejte *TypeEquivalenceInterface*a pak vyberte **vytvořit**. Vytvoří se nový projekt.
 
@@ -110,7 +110,7 @@ Prvním krokem je vytvoření sestavení rozhraní rovnocennosti typů.
    <Assembly: ImportedFromTypeLib("")>
    ```
 
-1. Vyberte **soubor**  > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL** +**SHIFT** +**s** a uložte soubory a projekt.
+1. Vyberte **soubor** > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL**+**SHIFT**+**s** a uložte soubory a projekt.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceInterface** a vyberte možnost **sestavit**. Soubor DLL knihovny tříd je zkompilován a uložen do zadané výstupní cesty sestavení, například *C:\TypeEquivalenceSample*.
 
@@ -118,9 +118,9 @@ Prvním krokem je vytvoření sestavení rozhraní rovnocennosti typů.
 
 Dále vytvořte třídu prostředí runtime ekvivalenci typu.
 
-1. V aplikaci Visual Studio vyberte **soubor**  > **Nový**  > **projekt**.
+1. V sadě Visual Studio, vyberte **souboru** > **nový** > **projektu**.
 
-1. V dialogovém okně **vytvořit nový projekt** zadejte do pole **Hledat šablony** *knihovnu tříd* . C# V seznamu vyberte šablonu **Knihovna tříd vb (.NET Framework)** a pak vyberte **Další**.
+1. V dialogovém okně **vytvořit nový projekt** zadejte do pole **Hledat šablony** *knihovnu tříd* . V seznamu vyberte C# šablonu **knihovny tříd nebo Visual Basic (.NET Framework)** a pak vyberte **Další**.
 
 1. V dialogovém okně **Konfigurovat nový projekt** , v části **název projektu**zadejte *TypeEquivalenceRuntime*a pak vyberte **vytvořit**. Vytvoří se nový projekt.
 
@@ -134,7 +134,7 @@ Dále vytvořte třídu prostředí runtime ekvivalenci typu.
 
 1. V dialogovém okně **vytvořit klíč se silným názvem** zadejte do pole **název souboru klíče** *Key. snk*. Zrušte zaškrtnutí políčka **chránit soubor klíče heslem** a pak vyberte **OK**.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceRuntime** a vyberte **Přidat**  > **odkaz**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceRuntime** a vyberte **Přidat** > **odkaz**.
 
 1. V dialogovém okně **Správce odkazů** vyberte **Procházet** a přejděte do složky výstupní cesta. Vyberte soubor *TypeEquivalenceInterface. dll* , vyberte **Přidat**a pak vyberte **OK**.
 
@@ -182,7 +182,7 @@ Dále vytvořte třídu prostředí runtime ekvivalenci typu.
    End Class
    ```
 
-1. Vyberte **soubor**  > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL** +**SHIFT** +**s** a uložte soubory a projekt.
+1. Vyberte **soubor** > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL**+**SHIFT**+**s** a uložte soubory a projekt.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceRuntime** a vyberte možnost **sestavit**. Soubor DLL knihovny tříd je zkompilován a uložen do zadané výstupní cesty sestavení.
 
@@ -190,9 +190,9 @@ Dále vytvořte třídu prostředí runtime ekvivalenci typu.
 
 Nakonec vytvořte rovnocenný typ klientského programu, který odkazuje na sestavení rozhraní.
 
-1. V aplikaci Visual Studio vyberte **soubor**  > **Nový**  > **projekt**.
+1. V sadě Visual Studio, vyberte **souboru** > **nový** > **projektu**.
 
-1. V dialogovém okně **vytvořit nový projekt** zadejte do pole **Hledat šablony** text *Konzola* . V seznamu vyberte C# šablonu **Konzolová aplikace nebo aplikace VB (.NET Framework)** a pak vyberte **Další**.
+1. V dialogovém okně **vytvořit nový projekt** zadejte do pole **Hledat šablony** text *Konzola* . V seznamu vyberte šablonu **aplikace Visual Basic konzoly (.NET Framework)** a pak vyberte možnost **Další.** C#
 
 1. V dialogovém okně **Konfigurovat nový projekt** , v části **název projektu**zadejte *TypeEquivalenceClient*a pak vyberte **vytvořit**. Vytvoří se nový projekt.
 
@@ -200,7 +200,7 @@ Nakonec vytvořte rovnocenný typ klientského programu, který odkazuje na sest
 
 1. V levém podokně obrazovky **vlastnosti** vyberte **sestavit** a pak nastavte **výstupní cestu** ke stejnému umístění, které jste použili pro projekt TypeEquivalenceInterface, například *C:\TypeEquivalenceSample*.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceClient** a vyberte **Přidat**  > **odkaz**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceClient** a vyberte **Přidat** > **odkaz**.
 
 1. Pokud je soubor **TypeEquivalenceInterface. dll** již v dialogovém okně **Správce odkazů** uveden, vyberte jej. Pokud ne, vyberte **Procházet**, přejděte do složky výstupní cesta, vyberte soubor *TypeEquivalenceInterface. dll* (ne *TypeEquivalenceRuntime. dll*) a vyberte **Přidat**. Vyberte **OK**.
 
@@ -250,15 +250,15 @@ Nakonec vytvořte rovnocenný typ klientského programu, který odkazuje na sest
    End Module
    ```
 
-1. Vyberte **soubor**  > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL** +**SHIFT** +**s** a uložte soubory a projekt.
+1. Vyberte **soubor** > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL**+**SHIFT**+**s** a uložte soubory a projekt.
 
-1. Stisknutím **kombinace kláves Ctrl** +**F5** Sestavte a spusťte program. Všimněte si, že výstup konzoly vrátí sestavení verze **1.0.0.0**.
+1. Stisknutím **kombinace kláves Ctrl**+**F5** Sestavte a spusťte program. Všimněte si, že výstup konzoly vrátí sestavení verze **1.0.0.0**.
 
 ## <a name="modify-the-interface"></a>Změna rozhraní
 
 Nyní upravte sestavení rozhraní a změňte jeho verzi.
 
-1. V aplikaci Visual Studio vyberte **soubor**  > **otevřete**  > **projekt/řešení**a otevřete projekt **TypeEquivalenceInterface** .
+1. V aplikaci Visual Studio vyberte **soubor** > **otevřete** > **projekt/řešení**a otevřete projekt **TypeEquivalenceInterface** .
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt **TypeEquivalenceInterface** a vyberte **vlastnosti**.
 
@@ -276,7 +276,7 @@ Nyní upravte sestavení rozhraní a změňte jeho verzi.
    Function GetDate() As Date
    ```
 
-1. Vyberte **soubor**  > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL** +**SHIFT** +**s** a uložte soubory a projekt.
+1. Vyberte **soubor** > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL**+**SHIFT**+**s** a uložte soubory a projekt.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceInterface** a vyberte možnost **sestavit**. Nová verze souboru DLL knihovny tříd je zkompilována a uložena do výstupní cesty sestavení.
 
@@ -284,7 +284,7 @@ Nyní upravte sestavení rozhraní a změňte jeho verzi.
 
 Také upravte třídu modulu runtime a aktualizujte její verzi.
 
-1. V aplikaci Visual Studio vyberte **soubor**  > **otevřete**  > **projekt/řešení**a otevřete projekt **TypeEquivalenceRuntime** .
+1. V aplikaci Visual Studio vyberte **soubor** > **otevřete** > **projekt/řešení**a otevřete projekt **TypeEquivalenceRuntime** .
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt **TypeEquivalenceRuntime** a vyberte **vlastnosti**.
 
@@ -307,7 +307,7 @@ Také upravte třídu modulu runtime a aktualizujte její verzi.
    End Function
    ```
 
-1. Vyberte **soubor**  > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL** +**SHIFT** +**s** a uložte soubory a projekt.
+1. Vyberte **soubor** > **Uložit vše** nebo stiskněte klávesovou **zkratku CTRL**+**SHIFT**+**s** a uložte soubory a projekt.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt **TypeEquivalenceRuntime** a vyberte možnost **sestavit**. Nová verze souboru DLL knihovny tříd je zkompilována a uložena do výstupní cesty sestavení.
 

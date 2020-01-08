@@ -2,12 +2,12 @@
 title: Ochrana osobních údajů a zabezpečení dat
 ms.date: 03/30/2017
 ms.assetid: 46fa5839-adf7-4c7c-bce3-71e941fa7de9
-ms.openlocfilehash: 04e405307d3aa42388c396cd69c465ba7ec70d35
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a8d7ae2ece966b4649c9c988c123304fe3f1b4d9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783224"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348141"
 ---
 # <a name="privacy-and-data-security"></a>Ochrana osobních údajů a zabezpečení dat
 Zabezpečení a Správa citlivých informací v aplikaci ADO.NET závisí na základních produktech a technologiích, které jste použili k jejímu vytvoření. ADO.NET přímo neposkytuje služby pro zabezpečení nebo šifrování dat.  
@@ -21,11 +21,11 @@ Zabezpečení a Správa citlivých informací v aplikaci ADO.NET závisí na zá
  Ochrana přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec představuje potenciální chybu zabezpečení, pokud není zabezpečená. Připojovací řetězce uložené v konfiguračních souborech jsou uloženy ve standardních souborech XML, pro které .NET Framework definovaly společnou sadu prvků. Chráněná konfigurace umožňuje šifrovat citlivé informace v konfiguračním souboru. I když jsou primárně určené pro aplikace ASP.NET, chráněná konfigurace se dá použít taky k šifrování oddílů konfiguračního souboru v aplikacích pro Windows. Další informace najdete v tématu [ochrana informací o připojení](protecting-connection-information.md).  
   
 ## <a name="securing-string-values-in-memory"></a>Zabezpečení řetězcových hodnot v paměti  
- <xref:System.String> Pokud objekt obsahuje citlivé informace, jako je například heslo, číslo platební karty nebo osobní údaje, existuje riziko, že tyto informace mohou být po použití odhaleny, protože aplikace nemůže odstranit data z paměti počítače.  
+ Pokud objekt <xref:System.String> obsahuje citlivé informace, jako je například heslo, číslo platební karty nebo osobní údaje, existuje riziko, že tyto informace mohou být po použití odhaleny, protože aplikace nemůže odstranit data z paměti počítače.  
   
- Objekt <xref:System.String> je neměnný. jeho hodnotu nelze po vytvoření změnit. Změny, které se zobrazí pro úpravu řetězcové hodnoty, ve skutečnosti vytvoří novou <xref:System.String> instanci objektu v paměti a uloží data jako prostý text. Kromě toho není možné předpovědět, kdy budou instance řetězců odstraněny z paměti. Recyklace paměti s řetězci není deterministické pro uvolňování paměti .NET. Nepoužívejte třídy <xref:System.Text.StringBuilder>a, Pokud jsou data skutečně citlivá. <xref:System.String>  
+ <xref:System.String> je neměnný; jeho hodnotu nelze po vytvoření změnit. Změny, které se zobrazí pro úpravu řetězcové hodnoty, ve skutečnosti vytvoří novou instanci objektu <xref:System.String> v paměti a uloží data jako prostý text. Kromě toho není možné předpovědět, kdy budou instance řetězců odstraněny z paměti. Recyklace paměti s řetězci není deterministické pro uvolňování paměti .NET. Nepoužívejte třídy <xref:System.String> a <xref:System.Text.StringBuilder>, pokud jsou data skutečně citlivá.  
   
- <xref:System.Security.SecureString> Třída poskytuje metody pro šifrování textu pomocí data Protection API (DPAPI) v paměti. Řetězec se pak odstraní z paměti, když už nepotřebujete. Neexistuje žádná `ToString` metoda pro rychlé čtení obsahu <xref:System.Security.SecureString>. Můžete inicializovat novou instanci `SecureString` bez hodnoty nebo předáním ukazatele na <xref:System.Char> pole objektů. Pak můžete použít různé metody třídy pro práci s řetězcem. Chcete-li získat další informace, Stáhněte si [ukázkovou aplikaci SecureString](https://go.microsoft.com/fwlink/?LinkId=120418), která ukazuje `SecureString` , jak použít třídu z.  
+ Třída <xref:System.Security.SecureString> poskytuje metody pro šifrování textu pomocí Data Protection API (DPAPI) v paměti. Řetězec se pak odstraní z paměti, když už nepotřebujete. Neexistuje žádná `ToString` metoda pro rychlé čtení obsahu <xref:System.Security.SecureString>. Můžete inicializovat novou instanci `SecureString` bez hodnoty nebo předáním ukazatele na pole objektů <xref:System.Char>. Pak můžete použít různé metody třídy pro práci s řetězcem.
   
 ## <a name="see-also"></a>Viz také:
 

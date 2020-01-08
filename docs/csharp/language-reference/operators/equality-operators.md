@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 11d2161004af5199d9e501f8ab1e3c0382e6bfe7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: ecbb90dab8ccbd9148461c1372e21c523f3835e3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039023"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345317"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnostiC# (Referenční dokumentace)
 
@@ -28,7 +28,7 @@ Operátory [`==` (rovnost)](#equality-operator-) a [`!=` (nerovnost)](#inequalit
 
 ## <a name="equality-operator-"></a>Operátor rovnosti = =
 
-Operátor rovnosti `==` vrátí `true`, pokud se jeho operandy rovnají, `false` v opačném případě.
+Operátor rovnosti `==` vrátí `true`, pokud jsou jeho operandy stejné, `false` jinak.
 
 ### <a name="value-types-equality"></a>Rovnost typů hodnot
 
@@ -37,11 +37,11 @@ Operandy [předdefinovaných hodnotových typů](../keywords/value-types-table.m
 [!code-csharp-interactive[value types equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ValueTypesEquality)]
 
 > [!NOTE]
-> Pro operátory `==`, [`<`, `>`, `<=`a `>=`](comparison-operators.md) , pokud některý z operandů není číslo (<xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>), je výsledek operace `false`. To znamená, že hodnota `NaN` není větší než, menší nebo rovna žádné jiné hodnotě `double` (nebo `float`), včetně `NaN`. Další informace a příklady najdete v článku referenční článek o <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>.
+> Pro operátory `==`, [`<`, `>`, `<=`a `>=`](comparison-operators.md) , pokud některý z operandů není číslo (<xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>), je výsledek operace `false`. To znamená, že hodnota `NaN` není větší než, menší nebo rovna žádné jiné hodnotě `double` (nebo `float`), včetně `NaN`. Další informace a příklady najdete v článku informace o <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>.
 
-Dva operandy stejného typu [výčtu](../keywords/enum.md) jsou stejné, pokud jsou odpovídající hodnoty základního integrálního typu stejné.
+Dva operandy stejného typu [výčtu](../builtin-types/enum.md) jsou stejné, pokud jsou odpovídající hodnoty základního integrálního typu stejné.
 
-Uživatelsky definované typy [struktur](../keywords/struct.md) nepodporují ve výchozím nastavení operátor `==`. Aby bylo možné podporovat operátor `==`, musí být tato uživatelsky definovanou strukturou [přetížena](operator-overloading.md) .
+Uživatelsky definované typy [struktur](../keywords/struct.md) nepodporují ve výchozím nastavení operátor `==`. Aby bylo možné podporovat operátor `==`, musí být uživatelsky definovanou strukturou [přetížena](operator-overloading.md) .
 
 Počínaje C# 7,3 jsou operátory `==` a `!=` podporovány C# [řazenými kolekcemi členů](../../tuples.md). Další informace naleznete v části [rovnost a řazené kolekce členů](../../tuples.md#equality-and-tuples) v článku [ C# typy řazené kolekce členů](../../tuples.md) .
 
@@ -51,7 +51,7 @@ Ve výchozím nastavení jsou dva operandy typu odkazu stejné, pokud odkazují 
 
 [!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
 
-Jak ukazuje příklad, uživatelsky definované typy odkazů podporují ve výchozím nastavení operátor `==`. Typ odkazu však může přetížit operátor `==`. Pokud typ odkazu přetěžuje operátor `==`, použijte metodu <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> a ověřte, zda dva odkazy tohoto typu odkazují na stejný objekt.
+Jak ukazuje příklad, uživatelsky definované typy odkazů podporují operátor `==` ve výchozím nastavení. Typ odkazu však může přetížit operátor `==`. Pokud typ odkazu přetěžuje operátor `==`, použijte metodu <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> a ověřte, zda dva odkazy tohoto typu odkazují na stejný objekt.
 
 ### <a name="string-equality"></a>Rovnost řetězců
 
@@ -63,7 +63,7 @@ To je ordinální porovnání rozlišující malá a velká písmena. Další in
 
 ### <a name="delegate-equality"></a>Rovnost delegáta
 
-Dva operandy [delegáta](../../programming-guide/delegates/index.md) stejného typu modulu runtime jsou stejné, pokud jsou oba `null` nebo jsou jejich seznamy volání stejné délky a mají stejné položky na každé pozici:
+Dva operandy [delegáta](../../programming-guide/delegates/index.md) stejného typu modulu runtime jsou stejné, když jsou `null` nebo jsou jejich seznamy volání stejné délky a mají stejné položky na každé pozici:
 
 [!code-csharp-interactive[delegate equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#DelegateEquality)]
 
@@ -75,7 +75,7 @@ Delegáty vytvořené z vyhodnocení sémanticky identických [výrazů lambda](
 
 ## <a name="inequality-operator-"></a>Operátor nerovnosti! =
 
-Operátor nerovnosti `!=` vrátí `true`, pokud jeho operandy nejsou stejné, `false` v opačném případě. U operandů [předdefinovaných typů](../keywords/built-in-types-table.md)výraz `x != y` vytvoří stejný výsledek jako výraz `!(x == y)`. Další informace o rovnosti typů naleznete v části [operátor rovnosti](#equality-operator-) .
+Operátor nerovnosti `!=` vrátí `true`, pokud jeho operandy nejsou stejné, `false` jinak. U operandů [předdefinovaných typů](../keywords/built-in-types-table.md)výraz `x != y` vytvoří stejný výsledek jako `!(x == y)`výrazu. Další informace o rovnosti typů naleznete v části [operátor rovnosti](#equality-operator-) .
 
 Následující příklad ukazuje použití operátoru `!=`:
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: cf642fcac7233d27f2ed9052829c145038e93419
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: e68ff69147d239d997e0787efe318d2364a16d98
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038875"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345294"
 ---
 # <a name="--and---operators-c-reference"></a>-and-= – operátoryC# (referenční informace)
 
@@ -62,13 +62,13 @@ je ekvivalentem
 x = x - y
 ```
 
-s výjimkou, že `x` je vyhodnocena pouze jednou.
+s výjimkou `x` je vyhodnocena pouze jednou.
 
 Následující příklad ukazuje použití operátoru `-=`:
 
 [!code-csharp-interactive[-= examples](~/samples/csharp/language-reference/operators/SubtractionOperator.cs#SubtractAndAssign)]
 
-Operátor `-=` můžete použít také k určení metody obslužné rutiny události, která se má odebrat při zrušení odběru [události](../keywords/event.md). Další informace najdete v tématu [Postup: přihlášení a](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)odhlášení odběru událostí.
+Operátor `-=` můžete použít také k určení metody obslužné rutiny události, která se má odebrat při zrušení odběru [události](../keywords/event.md). Další informace najdete v tématu [jak se přihlásit k odběru událostí a odhlásit se z](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)nich.
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 

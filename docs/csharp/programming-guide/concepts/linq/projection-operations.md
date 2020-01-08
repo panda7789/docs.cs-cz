@@ -2,12 +2,12 @@
 title: Operace projekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-ms.openlocfilehash: 4b34f3e578e746d75bdad7baaf731d743830713c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a2a2ae762d63d5ff26c7018caef1a83558042fb5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591558"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346525"
 ---
 # <a name="projection-operations-c"></a>Operace projekce (C#)
 Projekce odkazuje na operaci transformace objektu do nového formuláře, který se často skládá pouze z těchto vlastností, které budou následně použity. Pomocí projekce můžete vytvořit nový typ, který je sestaven z každého objektu. Můžete promítnout vlastnost a na ní provést matematickou funkci. Původní objekt můžete také promítnout beze změny.  
@@ -18,13 +18,13 @@ Projekce odkazuje na operaci transformace objektu do nového formuláře, který
   
 |Název metody|Popis|C#Syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Vyberte|Projekty hodnoty, které jsou založeny na transformační funkci.|`select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|  
-|Operátor SelectMany|Projektuje sekvence hodnot, které jsou založeny na transformační funkci a poté jsou shrnuty do jedné sekvence.|Použít více `from` klauzulí|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|  
+|, verze Select|Projekty hodnoty, které jsou založeny na transformační funkci.|`select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|  
+|Operátor SelectMany|Projektuje sekvence hodnot, které jsou založeny na transformační funkci a poté jsou shrnuty do jedné sekvence.|Použít více klauzulí `from`|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
   
-### <a name="select"></a>Vyberte  
- V následujícím příkladu je použita `select` klauzule pro projekt prvního písmene z každého řetězce v seznamu řetězců.  
+### <a name="select"></a>, verze Select  
+ V následujícím příkladu je použita klauzule `select` pro projekt prvního písmene z každého řetězce v seznamu řetězců.  
   
 ```csharp  
 List<string> words = new List<string>() { "an", "apple", "a", "day" };  
@@ -45,7 +45,7 @@ foreach (string s in query)
 ```  
   
 ### <a name="selectmany"></a>Operátor SelectMany  
- Následující příklad používá více `from` klauzulí pro každé slovo z každého řetězce v seznamu řetězců.  
+ Následující příklad používá více klauzulí `from` pro každé slovo z každého řetězce v seznamu řetězců.  
   
 ```csharp  
 List<string> phrases = new List<string>() { "an apple a day", "the quick brown fox" };  
@@ -71,7 +71,7 @@ foreach (string s in query)
 ```  
   
 ## <a name="select-versus-selectmany"></a>Vybrat versus operátor SelectMany  
- Jak obojí `Select()` , `SelectMany()` tak je vytvořit výslednou hodnotu (nebo hodnoty) ze zdrojových hodnot. `Select()`vytvoří jednu výslednou hodnotu pro každou zdrojovou hodnotu. Celkový výsledek je tedy kolekce, která má stejný počet prvků jako zdrojová kolekce. Naproti tomu `SelectMany()` vytvoří jeden celkový výsledek, který obsahuje zřetězené dílčí kolekce z každé zdrojové hodnoty. Funkce transformace, která je předána jako argument pro `SelectMany()` , musí vracet vyčíslitelné sekvence hodnot pro každou zdrojovou hodnotu. Tyto vyčíslitelné sekvence jsou poté zřetězeny nástrojem `SelectMany()` , aby vytvořily jednu velkou sekvenci.  
+ Jak `Select()`, tak `SelectMany()` je vytvořit výslednou hodnotu (nebo hodnoty) ze zdrojových hodnot. `Select()` vytvoří jednu hodnotu výsledku pro každou zdrojovou hodnotu. Celkový výsledek je tedy kolekce, která má stejný počet prvků jako zdrojová kolekce. Naproti tomu `SelectMany()` vytváří jeden celkový výsledek, který obsahuje zřetězené dílčí kolekce z každé zdrojové hodnoty. Funkce transformace, která je předána jako argument pro `SelectMany()` musí vracet vyčíslitelné sekvence hodnot pro každou zdrojovou hodnotu. Tyto vyčíslitelné sekvence jsou poté zřetězeny `SelectMany()`, aby vytvořily jednu velkou sekvenci.  
   
  Následující dva ilustrace znázorňují koncepční rozdíl mezi akcemi těchto dvou metod. V každém případě Předpokládejme, že funkce Selector (transformace) vybere pole květů z každé zdrojové hodnoty.  
   
@@ -84,7 +84,7 @@ foreach (string s in query)
  ![Obrázek znázorňující akci operátor SelectMany&#40;&#41;](./media/projection-operations/select-many-action-graphic.png )  
   
 ### <a name="code-example"></a>Příklad kódu  
- Následující příklad porovnává chování `Select()` a. `SelectMany()` Kód vytvoří "kytici" květů z každého seznamu názvů květin ve zdrojové kolekci. V tomto příkladu "jediná hodnota", kterou funkce <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> transformace používá, je sám kolekcí hodnot. K tomu je zapotřebí `foreach` nadbytečné smyčky pro zobrazení výčtu každého řetězce v každé dílčí sekvenci.  
+ Následující příklad porovnává chování `Select()` a `SelectMany()`. Kód vytvoří "kytici" květů z každého seznamu názvů květin ve zdrojové kolekci. V tomto příkladu "jednoduchá hodnota", kterou funkce transformace <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> používá, je sám kolekcí hodnot. K tomu je potřeba smyčka extra `foreach`, aby bylo možné vytvořit výčet každého řetězce v každé dílčí sekvenci.  
   
 ```csharp  
 class Bouquet  
@@ -164,5 +164,5 @@ static void SelectVsSelectMany()
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
 - [select – klauzule](../../../language-reference/keywords/select-clause.md)
-- [Postupy: Naplnit kolekce objektů z více zdrojů (LINQ)C#()](./how-to-populate-object-collections-from-multiple-sources-linq.md)
-- [Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)](./how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

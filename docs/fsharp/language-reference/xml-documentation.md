@@ -1,13 +1,13 @@
 ---
-title: Dokumentace XML (F#)
+title: dokumentace XML
 description: Přečtěte si informace F# o podpoře pro generování dokumentace z komentářů.
 ms.date: 05/16/2016
-ms.openlocfilehash: b89ab4117f4dd71126f8e203f4a5271ab3c30021
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0a87915c361fc88f0c05264e1c17278fd656a167
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630816"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344693"
 ---
 # <a name="xml-documentation"></a>dokumentace XML
 
@@ -26,14 +26,14 @@ Existují dva způsoby, jak zapsat dokumentační komentáře XML. Jedním z nic
 |Syntaxe značky|Popis|
 |----------|-----------|
 |**\<c\>** _text_ **\</c\>**|Určuje, že *text* je kód. Tuto značku mohou použít generátory dokumentace k zobrazení textu v písmu, které je vhodné pro kód.|
-|**souhrnnýtext\>/Summary \<** **\<\>**|Určuje, zda je *text* stručným popisem prvku programu. Popis je obvykle jedna nebo dvě věty.|
-|_text_ **poznámky/Remarks\> \<** **\<\>**|Určuje, že *text* obsahuje doplňkové informace o prvku programu.|
-|**\>** **názevparam\> = "Name" Description/param\<**  **\<**|Určuje název a popis pro funkci nebo parametr metody.|
-|**\>**  **typeparam\<Name = "** název"**Popis/typeparam\<\>**|Určuje název a popis parametru typu.|
-| **vrátí\</Returns\>** textu **.\<\>**|Určuje, že *text* popisuje návratovou hodnotu funkce nebo metody.|
-|**\>**  **Exception\<cref = "** Type"**Description/Exception\<\>**|Určuje typ výjimky, která může být vygenerována a podmínky, za kterých je vyvolána.|
-|**\>**  **Viz\<cref = "** Reference"**text/See\<\>**|Určuje vložený odkaz na jiný prvek programu. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. *Text* je text zobrazený v odkazu.|
-|**\>** SeeAlso cref = "Reference"/  **\<**|Určuje odkaz na další typ, který se zobrazí také v dokumentaci. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. Viz také odkazy obvykle se zobrazí v dolní části stránky dokumentace.|
+|**\<summary\>** _text_ **\</Summary\>**|Určuje, zda je *text* stručným popisem prvku programu. Popis je obvykle jedna nebo dvě věty.|
+|**\<poznámky\>** _text_ **\</Remarks\>**|Určuje, že *text* obsahuje doplňkové informace o prvku programu.|
+|**\<param Name = "** _Name_ **"\>** _Description_ **\</param\>**|Určuje název a popis pro funkci nebo parametr metody.|
+|**\<typeparam název = "** _název_ **"\>** _Popis_ **\</typeparam\>**|Určuje název a popis parametru typu.|
+|**\<vrátí**  _text_\> **\</Returns\>**|Určuje, že *text* popisuje návratovou hodnotu funkce nebo metody.|
+|**\<Exception cref = "** _Type_ **"\>** _Description_ **\</Exception\>**|Určuje typ výjimky, která může být vygenerována a podmínky, za kterých je vyvolána.|
+|**\<viz cref = "** _reference_ **"\>** _text_ **\</See\>**|Určuje vložený odkaz na jiný prvek programu. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. *Text* je text zobrazený v odkazu.|
+|**\<SeeAlso cref = "** _reference_ **"/\>**|Určuje odkaz na další typ, který se zobrazí také v dokumentaci. *Odkaz* je název, který se zobrazí v souboru dokumentace XML. Viz také odkazy obvykle se zobrazí v dolní části stránky dokumentace.|
 |**\<para\>** _text_ **\</para\>**|Určuje odstavec textu. Slouží k oddělení textu uvnitř značky **poznámky** .|
 
 ## <a name="example"></a>Příklad

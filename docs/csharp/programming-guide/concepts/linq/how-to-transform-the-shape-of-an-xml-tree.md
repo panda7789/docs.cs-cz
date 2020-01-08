@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Transformace tvaru stromu XML (C#)'
+title: Jak transformovat tvar stromu XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 93c5d426-dea2-4709-a991-60204de42e8f
-ms.openlocfilehash: c6f78decdcc32d202f4a0f1e51a012dce8aa7d6c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 91f91ed6fea5371fae2ce67a413f4825f37af6c3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592218"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347308"
 ---
-# <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a>Postupy: Transformace tvaru stromu XML (C#)
+# <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a>Jak transformovat tvar stromu XML (C#)
 *Tvar* dokumentu XML odkazuje na jeho názvy elementů, názvy atributů a charakteristiky jeho hierarchie.  
   
  Někdy budete muset změnit tvar dokumentu XML. Například může být nutné odeslat existující dokument XML do jiného systému, který vyžaduje různé názvy elementů a atributů. Můžete procházet dokumentem, odstraňovat a předávat prvky podle potřeby, ale použití funkční konstrukce má za následek čitelnější a udržovatelný kód. Další informace o konstrukci funkčnosti naleznete v tématu [funkční konstrukce (LINQ to XML) (C#)](./functional-construction-linq-to-xml.md).  
@@ -21,9 +21,9 @@ ms.locfileid: "69592218"
 ## <a name="example"></a>Příklad  
  Následující kód změní tvar souboru XML pomocí vložených výrazů dotazů.  
   
- Zdrojový dokument XML v tomto příkladu obsahuje `Customers` element `Root` pod prvkem, který obsahuje všechny zákazníky. Obsahuje `Orders` také element `Root` pod prvkem, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v `Orders` elementu `Customer` v rámci elementu. Původní dokument také obsahuje `CustomerID` element `Order` v elementu; tento prvek bude odebrán z dokumentu, ve kterém se nachází.  
+ Zdrojový dokument XML v tomto příkladu obsahuje element `Customers` pod prvkem `Root`, který obsahuje všechny zákazníky. Obsahuje také prvek `Orders` pod prvkem `Root`, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v prvku `Orders` v rámci `Customer` elementu. Původní dokument obsahuje také prvek `CustomerID` v prvku `Order`; Tento prvek bude odebrán z dokumentu opětovného tvaru.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  
@@ -49,7 +49,7 @@ XElement newCustOrd =
 Console.WriteLine(newCustOrd);  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  
@@ -88,9 +88,9 @@ Console.WriteLine(newCustOrd);
 ## <a name="example"></a>Příklad  
  Tento příklad přejmenuje některé prvky a převede některé atributy na prvky.  
   
- Kód volá `ConvertAddress`, který vrátí <xref:System.Xml.Linq.XElement> seznam objektů. Argumentem metody je dotaz, který určuje `Address` komplexní prvek, `Type` kde `"Shipping"`atribut má hodnotu.  
+ Kód volá `ConvertAddress`, která vrací seznam objektů <xref:System.Xml.Linq.XElement>. Argumentem metody je dotaz, který určuje `Address` složitý prvek, kde `Type` atribut má hodnotu `"Shipping"`.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 static IEnumerable<XElement> ConvertAddress(XElement add)  
@@ -123,7 +123,7 @@ static void Main(string[] args)
 }  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <PO>  

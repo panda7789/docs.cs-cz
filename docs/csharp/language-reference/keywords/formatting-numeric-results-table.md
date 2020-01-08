@@ -8,12 +8,12 @@ helpviewer_keywords:
 - numeric formatting [C#]
 - String.Format method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-ms.openlocfilehash: 2cba5e704787ae6368b2543c985babf2fde3b4dd
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 853faf481e546f2980d799d5daf50a14c608c052
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422745"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345474"
 ---
 # <a name="formatting-numeric-results-table-c-reference"></a>Tabulka formátování číselných výsledkůC# (referenční)
 
@@ -21,15 +21,15 @@ V následující tabulce jsou uvedeny podporované specifikátory formátu pro f
 
 |Specifikátor formátu|Popis|Příklady|Výsledek|  
 |----------------------|-----------------|--------------|------------|  
-|C nebo c|Měna|`string s = $"{2.5:C}";`<br /><br /> `string s = $"{-2.5:C}";`|$2,50<br /><br /> ($2,50)|  
+|C nebo c|Měna|`string s = $"{2.5:C}";`<br /><br /> `string s = $"{-2.5:C}";`|\\$2,50<br /><br /> (\\$2,50)|  
 |D nebo d|Desetinné číslo|`string s = $"{25:D5}";`|00025|  
 |E nebo e|Exponenciální|`string s = $"{250000:E2}";`|2.50 e + 005|  
 |F nebo f|Pevná desetinná čárka|`string s = $"{2.5:F2}";`<br /><br /> `string s = $"{2.5:F0}";`|2,50<br /><br /> 3|  
 |G nebo g|Obecné|`string s = $"{2.5:G}";`|2,5|  
-|N nebo n|číselné|`string s = $"{2500000:N}";`|2 500 000,00|  
-|P nebo p|Procento|`string s = $"{0.25:P}";`|25,00%|  
+|N nebo n|Čísla|`string s = $"{2500000:N}";`|2,500,000.00|  
+|P nebo p|Procento|`string s = $"{0.25:P}";`|25,00 %|  
 |R nebo r|Zpáteční převod|`string s = $"{2.5:R}";`|2,5|  
-|X nebo x|Šestnáctková hodnota|`string s = $"{250:X}";`<br /><br /> `string s = $"{0xffff:X}";`|POLOŽEK<br /><br /> FFFF|  
+|X nebo x|Šestnáctková hodnota|`string s = $"{250:X}";`<br /><br /> `string s = $"{0xffff:X}";`|FA<br /><br /> FFFF|  
 
 ## <a name="remarks"></a>Poznámky
 

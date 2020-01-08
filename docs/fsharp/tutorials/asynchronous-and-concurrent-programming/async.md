@@ -1,13 +1,13 @@
 ---
-title: Asynchronní programování vF#
+title: Asynchronní programování
 description: Naučte F# se, jak poskytuje čistou podporu pro asynchronii na základě programovacího modelu na úrovni jazyka odvozeného od konceptů základních funkcí programování.
 ms.date: 12/17/2018
-ms.openlocfilehash: 583b0f5154e6ad8875b21503cfb78f70a069ff7b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 471566befd69f330fb9254dbd57b19569d9f9ad3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837100"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344664"
 ---
 # <a name="async-programming-in-f"></a>Asynchronní programování v F\#
 
@@ -16,7 +16,7 @@ Asynchronní programování je mechanismus, který je nezbytný pro moderní apl
 - Prezentující proces serveru, který může obsluhovat velký počet souběžných příchozích požadavků a současně minimalizuje systémové prostředky, které při zpracování požadavků čekají na vstupy ze systémů nebo služeb, které jsou pro tento proces externí.
 - Údržba s reagujícím uživatelským rozhraním nebo hlavním vláknem při současném průběhu práce na pozadí
 
-I když práce na pozadí často zahrnuje využití více vláken, je důležité vzít v úvahu koncepty asynchronii a multithreading samostatně. Ve skutečnosti se jedná o samostatné obavy a jedna z nich neznamená jinou. Jak je uvedeno v tomto článku, popište to podrobněji.
+I když práce na pozadí často zahrnuje využití více vláken, je důležité vzít v úvahu koncepty asynchronii a multithreading samostatně. Ve skutečnosti se jedná o samostatné obavy a jedna z nich neznamená jinou. Níže v tomto článku najdete další podrobnosti.
 
 ## <a name="asynchrony-defined"></a>Asynchronii – definováno
 
@@ -69,13 +69,13 @@ let main argv =
     0
 ```
 
-V tomto příkladu je funkce `printTotalFileBytes` typu `string -> Async<unit>`. Volání funkce ve skutečnosti neprovede asynchronní výpočet. Místo toho vrátí `Async<unit>`, který funguje jako * specifikace práce, která má být provedena asynchronně. Bude volat `Async.AwaitTask` v jeho těle, který převede výsledek <xref:System.IO.File.WriteAllBytesAsync%2A> na odpovídající typ při jeho volání.
+V tomto příkladu je funkce `printTotalFileBytes` typu `string -> Async<unit>`. Volání funkce ve skutečnosti neprovede asynchronní výpočet. Místo toho vrátí `Async<unit>`, který funguje jako *specifikace* práce, která má být provedena asynchronně. Volá `Async.AwaitTask` v jeho těle, který převede výsledek <xref:System.IO.File.WriteAllBytesAsync%2A> na příslušný typ.
 
 Další důležitou linkou je volání `Async.RunSynchronously`. Jedná se o jednu z asynchronních funkcí modulu, které je třeba volat, pokud chcete skutečně provést F# asynchronní výpočet.
 
-Toto je zásadní rozdíl se stylem C#/VB `async` programování. V F#asynchronních výpočtech se můžete představit jako **studené úlohy**. Je nutné je explicitně spustit ke skutečnému provedení. To má několik výhod, protože umožňuje kombinovat a sekvencovat asynchronní práci mnohem jednodušší než v C#/VB.
+Jedná se o základní rozdíl se základními C#webovými `async` programování. V F#asynchronních výpočtech se můžete představit jako **studené úlohy**. Je nutné je explicitně spustit ke skutečnému provedení. To má několik výhod, protože umožňuje kombinovat a sekvencovat asynchronní práci mnohem jednodušší než v C# nebo Visual Basic.
 
-## <a name="combining-asynchronous-computations"></a>Kombinování asynchronních výpočtů
+## <a name="combine-asynchronous-computations"></a>Kombinování asynchronních výpočtů
 
 Tady je příklad, který sestaví na předchozím základě kombinováním výpočtů:
 
@@ -110,7 +110,7 @@ Jak vidíte, funkce `main` obsahuje ještě několik dalších volání. V konce
 
 Když se tento program spustí, `printTotalFileBytes` běží paralelně pro každý argument příkazového řádku. Vzhledem k tomu, že asynchronní výpočty provádějí nezávisle na programu flow, neexistuje žádné pořadí, ve kterém tisknou své informace a dokončí provádění. Výpočty budou naplánovány paralelně, ale jejich pořadí provádění není zaručeno.
 
-## <a name="sequencing-asynchronous-computations"></a>Sekvence asynchronních výpočtů
+## <a name="sequence-asynchronous-computations"></a>Sekvence asynchronních výpočtů
 
 Vzhledem k tomu, že `Async<'T>` je specifikace práce, nikoli už spuštěná úloha, můžete snadno provádět komplikovanější transformace. Tady je příklad, který sekvencí sadu asynchronních výpočtů, aby se prováděly po druhém.
 
@@ -162,7 +162,7 @@ Co je potřeba sledovat:
 
 ### <a name="asyncstartimmediate"></a>Async. StartImmediate –
 
-Spustí asynchronní výpočet počínaje okamžitě na aktuálním vlákně operačního systému. To je užitečné, pokud potřebujete během výpočtu aktualizovat něco v volajícím vlákně. Například pokud asynchronní výpočet musí aktualizovat uživatelské rozhraní (například aktualizace indikátoru průběhu), je třeba použít `Async.StartImmediate`.
+Spustí asynchronní výpočet, který se spouští okamžitě na aktuálním vlákně operačního systému. To je užitečné, pokud potřebujete během výpočtu aktualizovat něco v volajícím vlákně. Například pokud asynchronní výpočet musí aktualizovat uživatelské rozhraní (například aktualizace indikátoru průběhu), je třeba použít `Async.StartImmediate`.
 
 Podpis:
 
@@ -180,7 +180,7 @@ Co je potřeba sledovat:
 
 ### <a name="asyncstartastask"></a>Async. Startastask –
 
-Spustí výpočet ve fondu vláken. Vrátí <xref:System.Threading.Tasks.Task%601>, který bude dokončen v odpovídajícím stavu po ukončení výpočtu (vytvoří výsledek, vyvolá výjimku nebo se zruší). Pokud není k dispozici žádný token zrušení, použije se výchozí token zrušení.
+Provede výpočet ve fondu vláken. Vrátí <xref:System.Threading.Tasks.Task%601>, který bude dokončen v odpovídajícím stavu po ukončení výpočtu (vytvoří výsledek, vyvolá výjimku nebo se zruší). Pokud není k dispozici žádný token zrušení, použije se výchozí token zrušení.
 
 Podpis:
 
@@ -330,7 +330,7 @@ Co je potřeba sledovat:
 - Výjimky vyvolané výpočty zahájenými pomocí `Async.Start` nejsou šířeny volajícímu. Zásobník volání bude zcela zrušeno.
 - Všechny ovlivněné práce (například volání `printfn`) spuštěné s `Async.Start` nezpůsobí, že se projeví v hlavním vlákně provádění programu.
 
-## <a name="interoperating-with-net"></a>Spolupráce s .NET
+## <a name="interoperate-with-net"></a>Spolupráce s .NET
 
 Možná pracujete s knihovnou .NET nebo C# základem kódu, který používá asynchronní programování typu [Async/await](../../../standard/async.md). Vzhledem C# k tomu, že většina knihoven .net používá <xref:System.Threading.Tasks.Task%601> a <xref:System.Threading.Tasks.Task> typy jako základní abstrakce namísto `Async<'T>`, je nutné překročit hranici mezi těmito dvěma přístupy do asynchronii.
 
@@ -371,7 +371,7 @@ module Async =
 
 Již existuje `Async.AwaitTask`, který jako vstup přijímá <xref:System.Threading.Tasks.Task>. S tímto a dříve definovanou funkcí `startTaskFromAsyncUnit` můžete začít a očekávat <xref:System.Threading.Tasks.Task> typy z F# asynchronního výpočtu.
 
-## <a name="relationship-to-multithreading"></a>Vztah k multithreadingu
+## <a name="relationship-to-multi-threading"></a>Vztah k více vláknům
 
 I když je vlákno v rámci tohoto článku zmíněno, je třeba pamatovat si dva důležité věci:
 

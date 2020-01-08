@@ -6,12 +6,12 @@ helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-ms.openlocfilehash: 50df0e9c42d366c9c79dde3b0d34f85b8e552a45
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 310d0abd8fd2ceac5f8dfaa2647cb6ac26513a0f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418034"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346411"
 ---
 # <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Delegáti s pojmenovanými vs. anonymními metodami (Průvodce programováním v C#)
 [Delegát](../../language-reference/builtin-types/reference-types.md) může být spojen s pojmenovanou metodou. Při vytváření instance delegáta pomocí pojmenované metody je metoda předána jako parametr, například:  
@@ -40,6 +40,6 @@ ms.locfileid: "73418034"
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [Delegáty](./index.md)
-- [Postupy: kombinování delegátů (vícesměrové Delegáti)](./how-to-combine-delegates-multicast-delegates.md)
+- [Delegáti](./index.md)
+- [Postup kombinování delegátů (Delegáti vícesměrového vysílání)](./how-to-combine-delegates-multicast-delegates.md)
 - [Události](../events/index.md)

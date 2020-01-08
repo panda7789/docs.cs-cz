@@ -1,23 +1,23 @@
 ---
-title: Co je nového v .NET Core 3,1
+title: Co je nového v .NET Core 3.1
 description: Přečtěte si o nových funkcích, které najdete v .NET Core 3,1.
 dev_langs:
 - csharp
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 08ae824b79ba6a1ff5a92a0b4306eabe5ccadfd2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: a9f47c2909375251460b45792822e491d56fb242
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838321"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342851"
 ---
-# <a name="whats-new-in-net-core-31"></a>Co je nového v .NET Core 3,1
+# <a name="whats-new-in-net-core-31"></a>Co je nového v .NET Core 3.1
 
 Tento článek popisuje, co je v .NET Core 3,1 novinkou. Tato verze obsahuje menší vylepšení .NET Core 3,0 a zaměřuje se na malé, ale důležité opravy. Nejdůležitější funkcí pro .NET Core 3,1 je, že se jedná o [dlouhodobou podporu (LTS)](#long-term-support) .
 
-Pokud používáte Visual Studio 2019, musíte aktualizovat na [Visual studio 2019 16,4](https://visualstudio.microsoft.com/downloads/) pro práci s projekty .net Core 3,1. Další informace o tom, co je nového v aplikaci Visual Studio, naleznete v [blogu sady Visual Studio](https://devblogs.microsoft.com/visualstudio/tis-the-season-visual-studio-2019/).
+Pokud používáte Visual Studio 2019, musíte aktualizovat na [Visual studio 2019 verze 16,4](https://visualstudio.microsoft.com/downloads/) pro práci s projekty .net Core 3,1. Další informace o tom, co je nového v aplikaci Visual Studio, naleznete v [blogu sady Visual Studio](https://devblogs.microsoft.com/visualstudio/tis-the-season-visual-studio-2019/).
 
 Visual Studio pro Mac také podporuje a zahrnuje .NET Core 3,1 v kanálu Visual Studio pro Mac 8,4 Preview. Aby bylo možné používat .NET Core 3,1, musíte se přihlásit k kanálu verze Preview.
 

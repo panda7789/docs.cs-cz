@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 08df16be9df6d55ab9f1426e205e56d9609ce72e
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: f34ee198ba49a168ed8b56785bea68beee2eb214
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569226"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348125"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
-WCF Data Services používá protokol OData (Open Data Protocol) k vystavování dat jako informačního kanálu. OData podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu Atom poskytuje OData standardní metodu pro serializaci dat, jako jsou například entity a vztahy, do formátu XML, který může být součástí textu zprávy HTTP. OData definuje výchozí mapování vlastností entit mezi daty, která jsou obsažená v entitách a elementech Atom. Další informace najdete v tématu [Formát OData: Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
+WCF Data Services používá protokol OData (Open Data Protocol) k vystavování dat jako informačního kanálu. OData podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu Atom poskytuje OData standardní metodu pro serializaci dat, jako jsou například entity a vztahy, do formátu XML, který může být součástí textu zprávy HTTP. OData definuje výchozí mapování vlastností entit mezi daty, která jsou obsažená v entitách a elementech Atom. Další informace najdete v tématu [Formát OData: Atom](https://www.odata.org/documentation/odata-version-2-0/atom-format/).  
   
  Můžete mít scénář aplikace, který vyžaduje, aby data vlastnosti vrácená datovou službou byla serializována vlastním způsobem, nikoli ve formátu standardního informačního kanálu. Pomocí protokolu OData můžete v datovém kanálu upravit serializaci tak, aby vlastnosti entity mohly být namapovány na nepoužívané prvky a atributy položky nebo na vlastní prvky položky v informačním kanálu.  
   
@@ -31,7 +31,7 @@ WCF Data Services používá protokol OData (Open Data Protocol) k vystavování
 > Když definujete vlastní kanály, musíte zaručit, že všechny vlastnosti entity, které mají definované vlastní mapování, jsou zahrnuté do projekce. Pokud v projekci není obsažena vlastnost mapované entity, může dojít ke ztrátě dat. Další informace najdete v tématu [projekce dotazů](query-projections-wcf-data-services.md).  
   
 ## <a name="customizing-feeds-with-the-entity-framework-provider"></a>Přizpůsobení informačních kanálů pomocí poskytovatele Entity Framework  
- Datový model používaný u poskytovatele Entity Framework je v souboru. edmx reprezentován jako XML. V tomto případě jsou atributy, které definují vlastní kanály, přidány do `EntityType` a `Property` prvky, které představují typy entit a vlastnosti v datovém modelu. Tyto atributy přizpůsobení informačního kanálu nejsou definovány ve [formátu\[MC-CSDL\]: koncepčního definičního souboru schématu](https://go.microsoft.com/fwlink/?LinkId=159072), což je formát, který poskytovatel Entity Framework používá k definování datového modelu. Proto je nutné deklarovat atributy přizpůsobení kanálu v konkrétním oboru názvů schématu, který je definován jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Následující fragment kódu XML ukazuje atributy přizpůsobení informačního kanálu, které byly aplikovány na `Property` elementy `Products` typu entity, které definují vlastnosti `ProductName`, `ReorderLevel`a `UnitsInStock`.  
+ Datový model používaný u poskytovatele Entity Framework je v souboru. edmx reprezentován jako XML. V tomto případě jsou atributy, které definují vlastní kanály, přidány do `EntityType` a `Property` prvky, které představují typy entit a vlastnosti v datovém modelu. Tyto atributy přizpůsobení informačního kanálu nejsou definovány ve [formátu\[MC-CSDL\]: koncepčního definičního souboru schématu](https://docs.microsoft.com/openspecs/windows_protocols/mc-csdl/c03ad8c3-e8b7-4306-af96-a9e52bb3df12), což je formát, který poskytovatel Entity Framework používá k definování datového modelu. Proto je nutné deklarovat atributy přizpůsobení kanálu v konkrétním oboru názvů schématu, který je definován jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Následující fragment kódu XML ukazuje atributy přizpůsobení informačního kanálu, které byly aplikovány na `Property` elementy `Products` typu entity, které definují vlastnosti `ProductName`, `ReorderLevel`a `UnitsInStock`.  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedAttributes](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/northwind.csdl#edmfeedattributes)]  
   

@@ -1,6 +1,6 @@
 ---
-title: LINQ (Language Integrated Query)
-description: Zjistěte, jak LINQ poskytuje možnosti dotazování úrovni jazyka a rozhraní API pro C# a VB jako způsob, jak napsat kód výrazová, deklarativní.
+title: LINQ (integrovaný dotaz jazyka)
+description: Naučte se, jak LINQ poskytuje možnosti dotazování na úrovni jazyka a C# rozhraní API pro a Visual Basic jako způsob, jak napsat výrazující, deklarativní kód.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
@@ -9,18 +9,18 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 2e4b23b7bf197c9984c53b2f4cc2acaa61731d38
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 6ec86b7e728eef2cb4937662fd013d7fe951904d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238635"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347277"
 ---
-# <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
+# <a name="linq-language-integrated-query"></a>LINQ (integrovaný dotaz jazyka)
 
 ## <a name="what-is-it"></a>Co je to?
 
-LINQ poskytuje možnosti dotazování úrovni jazyka a [funkce vyššího řádu](https://en.wikipedia.org/wiki/Higher-order_function) rozhraní API pro C# a VB jako způsob, jak napsat kód výrazová, deklarativní.
+LINQ poskytuje funkce pro dotazování na úrovni jazyka a rozhraní API s [vyšším pořadím](https://en.wikipedia.org/wiki/Higher-order_function) pro C# a Visual Basic jako způsob, jak napsat expresně deklarativní kód.
 
 Syntaxe dotazu na úrovni jazyka:
 
@@ -36,7 +36,7 @@ Dim linqExperts = From p in programmers
                   Select New LINQExpert(p)
 ```
 
-Stejný příklad použití `IEnumerable<T>` rozhraní API:
+Stejný příklad s použitím rozhraní `IEnumerable<T>` API:
 
 ```csharp
 var linqExperts = programmers.Where(p => p.IsNewToLINQ)
@@ -48,11 +48,11 @@ Dim linqExperts = programmers.Where(Function(p) p.IsNewToLINQ).
                              Select(Function(p) New LINQExpert(p))
 ```
 
-## <a name="linq-is-expressive"></a>LINQ je Expressive
+## <a name="linq-is-expressive"></a>LINQ je vyjádření
 
-Představte si máte seznam mazlíčků, ale má být převeden do slovníku, kam máte přístup mazlíčky přímo nástrojem jeho `RFID` hodnotu.
+Představte si, že máte seznam domácích, ale chcete ho převést do slovníku, kde můžete získat přístup k PET přímo podle jeho `RFID` hodnoty.
 
-Tradiční imperativního kódu:
+Tradiční imperativní kód:
 
 ```csharp
 var petLookup = new Dictionary<int, Pet>();
@@ -71,7 +71,7 @@ For Each pet in pets
 Next
 ```
 
-Záměrem za kód je nechcete vytvářet novou `Dictionary<int, Pet>` a přidejte do ní prostřednictvím smyčku, je pro převod existujícího seznamu do slovníku! LINQ zachová záměrem služba nepodporuje imperativního kódu.
+Záměr za kódem není vytvořit novou `Dictionary<int, Pet>` a přidat do něj prostřednictvím smyčky, je převést existující seznam do slovníku. LINQ zachovává záměr, zatímco imperativní kód ne.
 
 Ekvivalentní výraz LINQ:
 
@@ -83,13 +83,13 @@ var petLookup = pets.ToDictionary(pet => pet.RFID);
 Dim petLookup = pets.ToDictionary(Function(pet) pet.RFID)
 ```
 
-Kód pomocí jazyka LINQ je užitečné, protože evens hrací pole mezi cílem a kódem, když důvody jako programátor. Jiné bonusové je zkrácení kódu. Představte si redukování 1/3 dělalo nad velkých částech základ kódu. Poměrně sladké záležitost, pravé?
+Kód, který používá LINQ, je užitečný, protože se jedná o hrací pole mezi záměrem a kódem v případě, kdy je důvodem jako programátor. Další bonus je kód zkrácení. Představte si zmenšení velkých částí základu kódu pomocí 1/3, jak bylo dokončeno. Hodně sladkých, hned?
 
-## <a name="linq-providers-simplify-data-access"></a>Zprostředkovatelé dotazů LINQ zjednodušit přístup k datům
+## <a name="linq-providers-simplify-data-access"></a>Poskytovatelé LINQ zjednodušují přístup k datům
 
-Významné blok softwaru v reálném světě všechno, co zásadní kolem práci s daty z některé zdroje (databáze, JSON, XML atd.). Často to zahrnuje nové rozhraní API pro každý zdroj dat, které vám můžou jít učení. LINQ to zjednodušuje tím, že poskytuje abstrakci společné prvky přístup k datům do syntaxe dotazu, která vypadá stejně bez ohledu na zdroj dat, který vyberete.
+V rámci značné škály softwaru na volném světě se všechno otáčí kolem dat z nějakého zdroje (databáze, JSON, XML atd.). To často zahrnuje učení nového rozhraní API pro každý zdroj dat, což může být nepříjemné. LINQ to zjednodušuje tím, že abstrakce společných prvků přístupu k datům do syntaxe dotazu, která vypadá stejně, jako vybraný zdroj dat.
 
-Vezměte v úvahu následující: vyhledání všech elementů XML pomocí konkrétní atribut hodnotu.
+Vezměte v úvahu následující: vyhledání všech elementů XML s konkrétní hodnotou atributu.
 
 ```csharp
 public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement documentRoot, string elementName,
@@ -111,13 +111,13 @@ End Function
 
 ```
 
-Psaní kódu ručně procházet dokumentu XML k provedení této úlohy by bylo mnohem složitější.
+Psaní kódu pro ruční procházení dokumentu XML k provedení této úlohy by bylo mnohem náročnější.
 
-Interakce s XML není jediné, co můžete dělat s zprostředkovatelé dotazů LINQ. [Technologie LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně holou objektově-relační Mapovač (ORM) určené pro databázi MSSQL serveru. [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna poskytuje efektivní procházení dokumentu JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovna, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110))!
+Interakce s XML není jedinou věcí, kterou můžete dělat s poskytovateli LINQ. [LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně prosté objekty – relační mapování (ORM) pro databázi serveru MSSQL. Knihovna [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) poskytuje efektivní procházení dokumentů JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovna, která vyžaduje, můžete také [napsat vlastního poskytovatele LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110)).
 
-## <a name="why-use-the-query-syntax"></a>Proč používat syntaxi dotazu?
+## <a name="why-use-the-query-syntax"></a>Proč použít syntaxi dotazu?
 
-To je otázka, které často se zobrazí. Po všech tento,
+Jedná se o otázku, která se často vyskytuje. Po všech těchto případech to
 
 ```csharp
 var filteredItems = myItems.Where(item => item.Foo);
@@ -127,7 +127,7 @@ var filteredItems = myItems.Where(item => item.Foo);
 Dim filteredItems = myItems.Where(Function(item) item.Foo)
 ```
 
-je mnohem přesnější než toto:
+je mnohem výstižnější než toto:
 
 ```csharp
 var filteredItems = from item in myItems
@@ -141,31 +141,31 @@ Dim filteredItems = From item In myItems
                     Select item
 ```
 
-Syntaxe rozhraní API není právě přesnější způsob, jak provést syntaxi dotazu?
+Není syntaxí rozhraní API jenom výstižnější způsob, jak provádět syntaxi dotazů?
 
-Ne. Syntaxe dotazu umožňuje použití **nechat** klauzule, které umožňuje zavést a vytvoření vazby proměnné v rámci oboru výrazem s použitím v další části výrazu. Reprodukce stejný kód s pouze syntaxi rozhraní API můžete udělat, ale pravděpodobně povede k kódu, který se těžko čitelný.
+Ne. Syntaxe dotazu umožňuje použití klauzule **let** , která umožňuje začlenit a vytvořit jeho proměnnou v rámci rozsahu výrazu a použít ji v následných částech výrazu. Reprodukce stejného kódu jenom pomocí syntaxe rozhraní API se dá provést, ale nejpravděpodobnější příčinou je, že je obtížné číst kód.
 
-Takže to si žádá otázku, **by měl pouze použijete syntaxi dotazu?**
+Takže byste to begs na otázku, **měli byste pouze použít syntaxi dotazu?**
 
-Odpověď na tuto otázku se **Ano** Pokud...
+Odpověď na tuto otázku je **Ano** , pokud...
 
-* Stávající základ kódu už používá syntaxi dotazu
-* Je potřeba proměnné s rozsahem v rámci své dotazy z důvodu složitosti
-* Dáváte přednost syntaxi dotazů a nebude odklánět pozornost od vašeho základu kódu
+* Existující základ kódu už používá syntaxi dotazu.
+* V důsledku složitosti je potřeba oborovat proměnné v dotazech.
+* Dáváte přednost syntaxi dotazů a nebude se navíc z vašeho základu kódu.
 
-Odpověď na tuto otázku se **žádné** Pokud...
+Odpověď na tuto **otázku není v případě.** ..
 
-* Stávající základ kódu už používá syntaxi rozhraní API
-* Nemáte žádné požadavky na rozsah proměnné v dotazech
-* Dáváte přednost syntaxi rozhraní API a nebude odklánět pozornost od vašeho základu kódu
+* Existující základ kódu už používá syntaxi rozhraní API.
+* V rámci dotazů nemusíte oborovat proměnné.
+* Dáváte přednost syntaxi rozhraní API a nebude se navíc z vašeho základu kódu.
 
 ## <a name="essential-samples"></a>Základní ukázky
 
-Seznam skutečně komplexní ukázky dotazů LINQ naleznete [101 ukázek pro LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).
+Úplný seznam ukázek LINQ najdete v [101Ch ukázkách LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).
 
-Tady je rychlý ukázku některé základní údaje LINQ. To není nijak komplexní, protože LINQ poskytuje výrazně víc funkcí než co se tady zobrazují.
+Následuje rychlá ukázka některých základních částí jazyka LINQ. Tato možnost není nijak ucelená, protože LINQ poskytuje výrazně více funkcí, než se tady prezentuje.
 
-* A másle bread - `Where`, `Select`, a `Aggregate`:
+* Chléb a `Where`másla, `Select`a `Aggregate`:
 
 ```csharp
 // Filtering a list.
@@ -209,7 +209,7 @@ Dim seed As Integer = 0
 Dim sumOfStrings As Integer = strings.Aggregate(seed, Function(s1, s2) s1.Length + s2.Length)
 ```
 
-* Sloučení seznamů:
+* Sloučení seznamu seznamů:
 
 ```csharp
 // Transforms the list of kennels into a list of all their dogs.
@@ -221,7 +221,7 @@ var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
 Dim allDogsFromKennels = kennels.SelectMany(Function(kennel) kennel.Dogs)
 ```
 
-* Sjednocení mezi dvěma sadami (s vlastní Komparátor):
+* Sjednocení mezi dvěma sadami (s vlastním komparátor):
 
 ```csharp
 public class DogHairLengthComparer : IEqualityComparer<Dog>
@@ -282,7 +282,7 @@ End Class
 Dim allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, New DogHairLengthComparer())
 ```
 
-* Průnik mezi dvěma sadami:
+* Průnik dvou sad:
 
 ```csharp
 // Gets the volunteers who spend share time with two humane societies.
@@ -296,7 +296,7 @@ Dim volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      New VolunteerTimeComparer())
 ```
 
-* Pořadí:
+* Třídění
 
 ```csharp
 // Get driving directions, ordering by if it's toll-free before estimated driving time.
@@ -312,7 +312,7 @@ Dim results = DirectionsProcessor.GetDirections(start, end).
                 ThenBy(Function(direction) direction.EstimatedTime)
 ```
 
-* Nakonec více advanced vzorku: určení, jestli jsou stejné hodnoty vlastností dvě instance stejného typu (Borrowed a upravené z [tento příspěvek na StackOverflow](https://stackoverflow.com/a/844855)):
+* Nakonec pokročilejší vzorek: určení, jestli se hodnoty vlastností dvou instancí stejného typu rovnají (jsou vypůjčené a upravené z [tohoto příspěvku StackOverflow](https://stackoverflow.com/a/844855)):
 
 ```csharp
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
@@ -352,7 +352,7 @@ End Function
 
 ## <a name="plinq"></a>PLINQ
 
-PLINQ nebo paralelní LINQ, je modul pro paralelní provádění pro výrazy LINQ. Regulární výraz LINQ jinými slovy, může být triviálně paralelizován, napříč libovolným počtem vláken. To lze provést prostřednictvím volání `AsParallel()` před výrazem.
+PLINQ nebo Paralelní LINQ je paralelní prováděcí modul pro výrazy LINQ. Jinými slovy regulární výraz LINQ může být triviální paralelní napříč libovolným počtem vláken. To je provedeno prostřednictvím volání `AsParallel()` před výrazem.
 
 Zvažte použití těchto zdrojů:
 
@@ -384,16 +384,16 @@ Public Shared GetAllFacebookUserLikesMessage(facebookUsers As IEnumerable(Of Fac
 }
 ```
 
-Tento kód bude oddílu `facebookUsers` napříč systémová vlákna podle potřeby, součet celkový počet lajků. v každém vláknu paralelně, součtu výsledky počítají tak, že každé vlákno a projektů, které do nice řetězce.
+Tento kód bude v případě potřeby rozdělit `facebookUsers` mezi systémová vlákna a celková hodnota by měla být rozložená v každém vlákně, sečte výsledky vypočítané každým vláknem a projekt, jehož výsledkem je dobrý řetězec.
 
-Ve formuláři diagramu:
+Ve tvaru diagramu:
 
-![PLINQ diagram](./media/using-linq/plinq-diagram.png)
+![Diagram PLINQ](./media/using-linq/plinq-diagram.png)
 
-Paralelizovat úlohy vázané na procesor, které lze snadno vyjádřit pomocí LINQ (jinými slovy, jsou čistě funkce a žádné vedlejší účinky) jsou skvělé Release candidate pro PLINQ. Pro úlohy, které _proveďte_ mají vedlejší účinek, zvažte použití [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).
+Paralelizovat úlohy vázané na procesor, které je možné snadno vyjádřit prostřednictvím LINQ (jinými slovy, jsou čistě funkce a nemají žádné vedlejší účinky) jsou skvělým kandidátem na PLINQ. Pro úlohy, _které mají_ vedlejší efekt, zvažte použití [paralelní knihovny Tasks](./parallel-programming/task-parallel-library-tpl.md).
 
-## <a name="further-resources"></a>Další materiály:
+## <a name="further-resources"></a>Další zdroje informací:
 
-* [101 ukázek pro LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-* [Linqpad](https://www.linqpad.net/), playground prostředí a dotazování databáze modul pro C#/F#/VB
-* [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), e knihu naučí, jak je implementovaná LINQ na objekty
+* [Ukázky 101 LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
+* [Linqpad](https://www.linqpad.net/), prostředí Playground a stroj pro dotazování databáze pro C#/F#webový Basic
+* [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), pro učení, jak se implementuje LINQ-to-Objects

@@ -5,16 +5,16 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 5183781d6a131aa395cf7c1fd8a09e05ed0bd71d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: fa0ae18221c33d196960239411f8860a561b20ee
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926155"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340372"
 ---
 # <a name="tutorial-create-an-item-template"></a>Kurz: Vytvoření šablony položky
 
-Pomocí .NET Core můžete vytvářet a nasazovat šablony, které generují projekty, soubory i prostředky. Tento kurz je první částí série, která vás seznámí s postupem vytvoření, instalace a odinstalace šablon pro použití s `dotnet new` příkazem.
+Pomocí .NET Core můžete vytvářet a nasazovat šablony, které generují projekty, soubory i prostředky. Tento kurz je první částí série, která vás seznámí s postupem vytvoření, instalace a odinstalace, šablon pro použití s příkazem `dotnet new`.
 
 V této části série se naučíte:
 
@@ -33,7 +33,7 @@ V této části série se naučíte:
 
   Referenční článek vysvětluje základní informace o šablonách a způsobu jejich spojování. Některé z těchto informací se tady opakují.
 
-* Otevřete terminál a přejděte do složky _working\templates\\_  .
+* Otevřete terminál a přejděte do složky _working\templates_ .
 
 ## <a name="create-the-required-folders"></a>Vytvoření požadovaných složek
 
@@ -54,7 +54,7 @@ parent_folder
 
 Šablona položky je konkrétní typ šablony, která obsahuje jeden nebo více souborů. Tyto typy šablon jsou užitečné, pokud chcete vygenerovat něco jako soubor s konfigurací, kódem nebo souborem řešení. V tomto příkladu vytvoříte třídu, která přidá metodu rozšíření k typu řetězce.
 
-V terminálu přejděte do složky _working\templates\\_  a vytvořte novou podsložku s názvem _rozšíření_. Zadejte složku.
+V terminálu přejděte do složky _working\templates_ a vytvořte novou podsložku s názvem _rozšíření_. Zadejte složku.
 
 ```console
 working
@@ -62,7 +62,7 @@ working
     └───extensions
 ```
 
-Vytvořte nový soubor s názvem _CommonExtensions.cs_ a otevřete ho ve svém oblíbeném textovém editoru. Tato třída poskytne metodu rozšíření s názvem `Reverse` , která bude měnit obsah řetězce. Vložte následující kód a soubor uložte:
+Vytvořte nový soubor s názvem _CommonExtensions.cs_ a otevřete ho ve svém oblíbeném textovém editoru. Tato třída poskytne metodu rozšíření nazvanou `Reverse`, která vrátí obsah řetězce. Vložte následující kód a soubor uložte:
 
 ```csharp
 using System;
@@ -85,7 +85,7 @@ Teď, když máte vytvořený obsah šablony, je nutné vytvořit šablonu confi
 
 ## <a name="create-the-template-config"></a>Vytvoření šablony konfigurace
 
-Šablony jsou v rozhraní .NET Core rozpoznány pomocí speciální složky a konfiguračního souboru, který se nachází v kořenovém adresáři šablony. V tomto kurzu se složka šablony nachází na adrese _working\templates\extensions\\_ .
+Šablony jsou v rozhraní .NET Core rozpoznány pomocí speciální složky a konfiguračního souboru, který se nachází v kořenovém adresáři šablony. V tomto kurzu se složka šablony nachází na adrese _working\templates\extensions_.
 
 Když vytvoříte šablonu, všechny soubory a složky ve složce šablon budou zahrnuty jako součást šablony kromě speciální konfigurační složky. Tato konfigurační složka má název _. template. config_.
 
@@ -116,14 +116,14 @@ Otevřete _template. JSON_ s oblíbeným textovým editorem a vložte následuj�
 }
 ```
 
-Tento konfigurační soubor obsahuje všechna nastavení pro šablonu. Můžete zobrazit základní nastavení, `name` například a `shortName`, `tags/type` ale existuje také hodnota nastavená na `item`. Tato šablona kategorizuje šablonu jako šablonu položky. Typ šablony, kterou jste vytvořili, není nijak omezen. Hodnoty `item` a`project` jsou běžné názvy, které doporučuje .NET Core, aby uživatelé mohli snadno filtrovat typ šablony, kterou hledají.
+Tento konfigurační soubor obsahuje všechna nastavení pro šablonu. Můžete zobrazit základní nastavení, například `name` a `shortName`, ale existuje i `tags/type` hodnota, která je nastavená na `item`. Tato šablona kategorizuje šablonu jako šablonu položky. Typ šablony, kterou jste vytvořili, není nijak omezen. Hodnoty `item` a `project` jsou běžné názvy, které doporučuje .NET Core, aby uživatelé mohli snadno filtrovat typ šablony, kterou hledají.
 
-Položka představuje sloupec **značky** , který se zobrazí při spuštění `dotnet new` a získání seznamu šablon. `classifications` Uživatelé můžou vyhledávat i na základě klasifikačních značek. Nepleťte `tags` si vlastnost \*v souboru `classifications` . JSON se seznamem značek. Existují dvě různé věci, které se nazývají podobně. Úplné schéma pro soubor *template. JSON* najdete v [úložišti schémat JSON](http://json.schemastore.org/template). Další informace o souboru *template. JSON* najdete v tématu [dotnet šablonování wiki](https://github.com/dotnet/templating/wiki).
+`classifications` položka představuje sloupec **značky** , který se zobrazí, když spustíte `dotnet new` a získáte seznam šablon. Uživatelé můžou vyhledávat i na základě klasifikačních značek. Nepleťte si vlastnost `tags` v souboru \*. JSON se seznamem `classifications` značek. Existují dvě různé věci, které se nazývají podobně. Úplné schéma pro soubor *template. JSON* najdete v [úložišti schémat JSON](http://json.schemastore.org/template). Další informace o souboru *template. JSON* najdete v tématu [dotnet šablonování wiki](https://github.com/dotnet/templating/wiki).
 
 Teď, když máte platný soubor _. template. config/Template. JSON_ , je vaše šablona připravená k instalaci. V terminálu přejděte do složky _rozšíření_ a spusťte následující příkaz, který nainstaluje šablonu umístěnou v aktuální složce:
 
-* **Ve Windows**:`dotnet new -i .\`
-* **V systému Linux nebo MacOS**:`dotnet new -i ./`
+* **Ve Windows**: `dotnet new -i .\`
+* **V systému Linux nebo MacOS**: `dotnet new -i ./`
 
 Tento příkaz vypíše seznam nainstalovaných šablon, které by měly obsahovat vaše.
 
@@ -149,7 +149,7 @@ Worker Service                                    worker                [C#]    
 
 ## <a name="test-the-item-template"></a>Testování šablony položky
 
-Teď, když máte nainstalovanou šablonu položky, otestujte ji. Přejděte do složky _test/_ Folder a vytvořte novou konzolovou aplikaci pomocí `dotnet new console`nástroje. Tím se vygeneruje pracovní projekt, který lze snadno otestovat `dotnet run` pomocí příkazu.
+Teď, když máte nainstalovanou šablonu položky, otestujte ji. Přejděte do složky _test/_ Folder a vytvořte novou konzolovou aplikaci pomocí `dotnet new console`. Tím se vygeneruje pracovní projekt, který lze snadno otestovat pomocí příkazu `dotnet run`.
 
 ```console
 C:\test> dotnet new console
@@ -167,7 +167,7 @@ C:\test> dotnet run
 Hello World!
 ```
 
-Dále spusťte příkaz `dotnet new stringext` , který vygeneruje _CommonExtensions.cs_ ze šablony.
+Dále spusťte `dotnet new stringext` pro vygenerování _CommonExtensions.cs_ ze šablony.
 
 ```console
 C:\test> dotnet new stringext
@@ -191,7 +191,7 @@ Blahopřejeme! Vytvořili jste a nasadili šablonu položky pomocí .NET Core. P
 
 ## <a name="uninstall-the-template"></a>Odinstalace šablony
 
-Vzhledem k tomu, že jste nainstalovali šablonu podle cesty k souboru, je nutné ji odinstalovat s **absolutní** cestou k souboru. Seznam nainstalovaných šablon můžete zobrazit spuštěním `dotnet new -u` příkazu. Vaše šablona by měla být uvedena jako poslední. Použijte cestu uvedenou k odinstalaci šablony pomocí `dotnet new -u <ABSOLUTE PATH TO TEMPLATE DIRECTORY>` příkazu.
+Vzhledem k tomu, že jste nainstalovali šablonu podle cesty k souboru, je nutné ji odinstalovat s **absolutní** cestou k souboru. Seznam nainstalovaných šablon můžete zobrazit spuštěním příkazu `dotnet new -u`. Vaše šablona by měla být uvedena jako poslední. Pomocí příkazu `dotnet new -u <ABSOLUTE PATH TO TEMPLATE DIRECTORY>` použijte cestu k odinstalaci šablony.
 
 ```console
 C:\working> dotnet new -u
@@ -226,7 +226,7 @@ Currently installed items:
 C:\working> dotnet new -u C:\working\templates\extensions
 ```
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste vytvořili šablonu položky. Pokud se chcete dozvědět, jak vytvořit šablonu projektu, pokračujte v této sérii kurzů.
 

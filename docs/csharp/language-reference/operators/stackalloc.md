@@ -6,22 +6,20 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: 82fc1649bac66c0e934db13c50390b977432c34c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 4f3ba6594eb16cf16db6a1de78fe05509c5f4d7d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036147"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345274"
 ---
 # <a name="stackalloc-operator-c-reference"></a>stackalloc – operátorC# (Referenční dokumentace)
 
 Operátor `stackalloc` přiděluje blok paměti v zásobníku. Blok paměti přidělený zásobníkem, který byl vytvořen během provádění metody, je automaticky zahozen při návratu této metody. Nelze explicitně uvolnit paměť přidělenou operátorem `stackalloc`. Blok paměti přidělený zásobníku nepodléhá [uvolňování](../../../standard/garbage-collection/index.md) paměti a nemusí být připnutý s [příkazem`fixed`](../keywords/fixed-statement.md).
 
-Ve výrazu `stackalloc T[E]`musí být `T` [nespravovaného typu](../builtin-types/unmanaged-types.md) a `E` musí být výraz typu `int`.
-
 Výsledek operátoru `stackalloc` můžete přiřadit proměnné jednoho z následujících typů:
 
-- Počínaje C# 7,2 <xref:System.Span%601?displayProperty=nameWithType>nebo<xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, jak ukazuje následující příklad:
+- Počínaje C# 7,2 <xref:System.Span%601?displayProperty=nameWithType> nebo <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, jak ukazuje následující příklad:
 
   [!code-csharp[stackalloc span](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToSpan)]
 
@@ -31,7 +29,7 @@ Výsledek operátoru `stackalloc` můžete přiřadit proměnné jednoho z násl
 
   [!code-csharp[stackalloc expression](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AsExpression)]
 
-  Počínaje C# 8,0 můžete použít výraz`stackalloc`v jiných výrazech vždy, když je povolena proměnná<xref:System.Span%601>nebo<xref:System.ReadOnlySpan%601>, jak ukazuje následující příklad:
+  Počínaje C# 8,0 můžete použít výraz `stackalloc` v jiných výrazech vždy, když je povolena proměnná <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601>, jak ukazuje následující příklad:
 
   [!code-csharp[stackalloc in nested expressions](~/samples/csharp/language-reference/operators/StackallocOperator.cs#Nested)]
 
@@ -50,13 +48,15 @@ Obsah nově přidělené paměti není definován. Počínaje C# 7,3 můžete po
 
 [!code-csharp[stackalloc initialization](~/samples/csharp/language-reference/operators/StackallocOperator.cs#StackallocInit)]
 
-## <a name="security"></a>Zabezpečení
+Ve výrazu `stackalloc T[E]`musí být `T` [nespravovaného typu](../builtin-types/unmanaged-types.md) a `E` musí být výraz typu [int](../builtin-types/integral-numeric-types.md).
+
+## <a name="security"></a>Zabezpečení –
 
 Použití `stackalloc` v modulu CLR (Common Language Runtime) automaticky povoluje funkce pro detekci přetečení vyrovnávací paměti. Pokud se zjistí přetečení vyrovnávací paměti, proces se ukončí co nejrychleji, aby se minimalizovala pravděpodobnost spuštění škodlivého kódu.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [alokace zásobníku](~/_csharplang/spec/unsafe-code.md#stack-allocation) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [alokace zásobníku](~/_csharplang/spec/unsafe-code.md#stack-allocation) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md) a v poznámce k návrhu funkce pro [Povolení `stackalloc` ve vnořených kontextech](~/_csharplang/proposals/csharp-8.0/nested-stackalloc.md) .
 
 ## <a name="see-also"></a>Viz také:
 

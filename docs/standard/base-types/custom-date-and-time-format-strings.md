@@ -1,5 +1,5 @@
 ---
-title: Vlastní řetězce formátu data a času – .NET
+title: Vlastní řetězce formátu data a času
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: ce4aeda8c9fb3c73d133316f985d99e7271411c9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 87436b7d9e2041afb14b146ae0c16201c8593154
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73103768"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348297"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
@@ -46,53 +46,53 @@ Následující tabulka popisuje specifikátory vlastního formátu data a času
 
 | Specifikátor formátu | Popis | Příklady |
 | ---------------------- | ----------------- | -------------- |
-|"d"|Den měsíce, od 1 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "d"](#dSpecifier).|2009-06-01T13:45:30-> 1<br /><br /> 2009-06-15T13:45:30 – > 15|
-|"dd"|Den měsíce, od 01 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "dd"](#ddSpecifier).|2009-06-01T13:45:30 – > 01<br /><br /> 2009-06-15T13:45:30 – > 15|
+|"d"|Den měsíce, od 1 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "d"](#dSpecifier).|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|
+|"dd"|Den měsíce, od 01 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "dd"](#ddSpecifier).|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|
 |"ddd"|Zkrácený název dne v týdnu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ddd"](#dddSpecifier).|2009-06-15T13:45:30-> Mon (EN-US)<br /><br /> 2009-06-15T13:45:30-> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30-> LUN. (fr-FR)|
-|"dddd"|Úplný název dne v týdnu.<br /><br /> Další informace: [specifikátor "dddd" vlastního formátu](#ddddSpecifier).|2009-06-15T13:45:30-> pondělí (EN-US)<br /><br /> 2009-06-15T13:45:30-> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30-> Lundi (fr-FR)|
-|"f"|Desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "f" vlastního formátu](#fSpecifier).|2009-06-15T13:45:30.6170000-> 6<br /><br /> 2009-06-15T13:45:30.05-> 0|
-|"ff"|Setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "FF" vlastního formátu](#ffSpecifier).|2009-06-15T13:45:30.6170000-> 61<br /><br /> 2009-06-15T13:45:30.0050000-> 00|
-|"fff"|Milisekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "fff" vlastního formátu](#fffSpecifier).|6/15/2009 13:45:30.617-> 617<br /><br /> 6/15/2009 13:45:30.0005-> 000|
-|"ffff"|Desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#ffffSpecifier).|2009-06-15T13:45:30.6175000-> 6175<br /><br /> 2009-06-15T13:45:30.0000500-> 0000|
-|"fffff"|Stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#fffffSpecifier).|2009-06-15T13:45:30.6175400-> 61754<br /><br /> 6/15/2009 13:45:30.000005-> 00000|
-|"ffffff"|Miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#ffffffSpecifier).|2009-06-15T13:45:30.6175420-> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> 000000|
-|"fffffff"|Desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#fffffffSpecifier).|2009-06-15T13:45:30.6175425-> 6175425<br /><br /> 2009-06-15T13:45:30.0001150-> 0001150|
-|"F"|Pokud je hodnota nenulová, jedná se o desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "F" vlastního formátu](#F_Specifier).|2009-06-15T13:45:30.6170000-> 6<br /><br /> 2009-06-15T13:45:30.0500000-> (žádný výstup)|
-|"FF"|Pokud je hodnota nenulová, jedná se o setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "FF" vlastního formátu](#FF_Specifier).|2009-06-15T13:45:30.6170000-> 61<br /><br /> 2009-06-15T13:45:30.0050000-> (žádný výstup)|
-|"FFF"|Pokud je hodnota nenulová, jedná se o milisekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "fff" vlastního formátu](#FFF_Specifier).|2009-06-15T13:45:30.6170000-> 617<br /><br /> 2009-06-15T13:45:30.0005000-> (žádný výstup)|
-|"FFFF"|Pokud je hodnota nenulová, jedná se o desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#FFFF_Specifier).|2009-06-15T13:45:30.5275000-> 5275<br /><br /> 2009-06-15T13:45:30.0000500-> (žádný výstup)|
-|"FFFFF"|Pokud je hodnota nenulová, jedná se o stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#FFFFF_Specifier).|2009-06-15T13:45:30.6175400-> 61754<br /><br /> 2009-06-15T13:45:30.0000050-> (žádný výstup)|
-|"FFFFFF"|Pokud je hodnota nenulová, jedná se o miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#FFFFFF_Specifier).|2009-06-15T13:45:30.6175420-> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> (žádný výstup)|
-|"FFFFFFF"|Pokud je hodnota nenulová, jedná se o desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#FFFFFFF_Specifier).|2009-06-15T13:45:30.6175425-> 6175425<br /><br /> 2009-06-15T13:45:30.0001150-> 000115|
-|"g", "gg"|Období nebo éra.<br /><br /> Další informace: [Specifikátor vlastního formátu "g" nebo "GG"](#gSpecifier).|2009-06-15T13:45:30.6170000-> N.L.|
-|"h"|Hodiny ve 12hodinovém formátu, od 1 do 12.<br /><br /> Další informace: [specifikátor "h" vlastního formátu](#hSpecifier).|2009-06-15T01:45:30-> 1<br /><br /> 2009-06-15T13:45:30-> 1|
-|"hh"|Hodiny ve 12hodinovém formátu, od 01 do 12.<br /><br /> Další informace: [specifikátor "HH" vlastního formátu](#hhSpecifier).|2009-06-15T01:45:30 – > 01<br /><br /> 2009-06-15T13:45:30 – > 01|
-|"H"|Hodiny ve 24hodinovém formátu, od 0 do 23.<br /><br /> Další informace: [specifikátor "H" vlastního formátu](#H_Specifier).|2009-06-15T01:45:30-> 1<br /><br /> 2009-06-15T13:45:30 – > 13|
-|"HH"|Hodiny ve 24hodinovém formátu, od 00 do 23.<br /><br /> Další informace: [specifikátor "HH" vlastního formátu](#HH_Specifier).|2009-06-15T01:45:30 – > 01<br /><br /> 2009-06-15T13:45:30 – > 13|
-|"K"|Informace o časovém pásmu.<br /><br /> Další informace: [Specifikátor vlastního formátu "K"](#KSpecifier).|S <xref:System.DateTime>mi hodnotami:<br /><br /> 2009-06-15T13:45:30, neurčený druh – ><br /><br /> 2009-06-15T13:45:30, druh UTC-> Z<br /><br /> 2009-06-15T13:45:30, druh Local->-07:00 (závisí na nastavení místního počítače)<br /><br /> S <xref:System.DateTimeOffset>mi hodnotami:<br /><br /> 2009-06-15T01:45:30.07:00-->-07:00<br /><br /> 2009-06-15T08:45:30 + 00:00--> + 00:00|
-|"m"|Minuty, od 0 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "m"](#mSpecifier).|2009-06-15T01:09:30 – > 9<br /><br /> 2009-06-15T13:29:30-> 29|
-|"mm"|Minuty, od 00 do 59.<br /><br /> Další informace: [specifikátor "mm" vlastního formátu](#mmSpecifier).|2009-06-15T01:09:30-> 09<br /><br /> 2009-06-15T01:45:30 – > 45|
-|"M"|Měsíc, od 1 do 12.<br /><br /> Další informace: [Specifikátor vlastního formátu "M"](#M_Specifier).|2009-06-15T13:45:30 – > 6|
-|"MM"|Měsíc, od 01 do 12.<br /><br /> Další informace: [specifikátor "mm" vlastního formátu](#MM_Specifier).|2009-06-15T13:45:30-> 06|
+|"dddd"|Úplný název dne v týdnu.<br /><br /> Další informace: [specifikátor "dddd" vlastního formátu](#ddddSpecifier).|2009-06-15T13:45:30-> pondělí (EN-US)<br /><br /> 2009-06-15T13:45:30 -> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30-> Lundi (fr-FR)|
+|"f"|Desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "f" vlastního formátu](#fSpecifier).|2009-06-15T13:45:30.6170000 -> 6<br /><br /> 2009-06-15T13:45:30.05 -> 0|
+|"ff"|Setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "FF" vlastního formátu](#ffSpecifier).|2009-06-15T13:45:30.6170000 -> 61<br /><br /> 2009-06-15T13:45:30.0050000 -> 00|
+|"fff"|Milisekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "fff" vlastního formátu](#fffSpecifier).|6/15/2009 13:45:30.617 -> 617<br /><br /> 6/15/2009 13:45:30.0005 -> 000|
+|"ffff"|Desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#ffffSpecifier).|2009-06-15T13:45:30.6175000 -> 6175<br /><br /> 2009-06-15T13:45:30.0000500  -> 0000|
+|"fffff"|Stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#fffffSpecifier).|2009-06-15T13:45:30.6175400 -> 61754<br /><br /> 6/15/2009 13:45:30.000005 -> 00000|
+|"ffffff"|Miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#ffffffSpecifier).|2009-06-15T13:45:30.6175420 -> 617542<br /><br /> 2009-06-15T13:45:30.0000005 -> 000000|
+|"fffffff"|Desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#fffffffSpecifier).|2009-06-15T13:45:30.6175425 -> 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -> 0001150|
+|"F"|Pokud je hodnota nenulová, jedná se o desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "F" vlastního formátu](#F_Specifier).|2009-06-15T13:45:30.6170000 -> 6<br /><br /> 2009-06-15T13:45:30.0500000-> (žádný výstup)|
+|"FF"|Pokud je hodnota nenulová, jedná se o setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "FF" vlastního formátu](#FF_Specifier).|2009-06-15T13:45:30.6170000 -> 61<br /><br /> 2009-06-15T13:45:30.0050000-> (žádný výstup)|
+|"FFF"|Pokud je hodnota nenulová, jedná se o milisekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor "fff" vlastního formátu](#FFF_Specifier).|2009-06-15T13:45:30.6170000 -> 617<br /><br /> 2009-06-15T13:45:30.0005000-> (žádný výstup)|
+|"FFFF"|Pokud je hodnota nenulová, jedná se o desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#FFFF_Specifier).|2009-06-15T13:45:30.5275000 -> 5275<br /><br /> 2009-06-15T13:45:30.0000500-> (žádný výstup)|
+|"FFFFF"|Pokud je hodnota nenulová, jedná se o stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#FFFFF_Specifier).|2009-06-15T13:45:30.6175400 -> 61754<br /><br /> 2009-06-15T13:45:30.0000050-> (žádný výstup)|
+|"FFFFFF"|Pokud je hodnota nenulová, jedná se o miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#FFFFFF_Specifier).|2009-06-15T13:45:30.6175420 -> 617542<br /><br /> 2009-06-15T13:45:30.0000005-> (žádný výstup)|
+|"FFFFFFF"|Pokud je hodnota nenulová, jedná se o desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#FFFFFFF_Specifier).|2009-06-15T13:45:30.6175425 -> 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -> 000115|
+|"g", "gg"|Období nebo éra.<br /><br /> Další informace: [Specifikátor vlastního formátu "g" nebo "GG"](#gSpecifier).|2009-06-15T13:45:30.6170000 -> A.D.|
+|"h"|Hodiny ve 12hodinovém formátu, od 1 do 12.<br /><br /> Další informace: [specifikátor "h" vlastního formátu](#hSpecifier).|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 1|
+|"hh"|Hodiny ve 12hodinovém formátu, od 01 do 12.<br /><br /> Další informace: [specifikátor "HH" vlastního formátu](#hhSpecifier).|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 01|
+|"H"|Hodiny ve 24hodinovém formátu, od 0 do 23.<br /><br /> Další informace: [specifikátor "H" vlastního formátu](#H_Specifier).|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 13|
+|"HH"|Hodiny ve 24hodinovém formátu, od 00 do 23.<br /><br /> Další informace: [specifikátor "HH" vlastního formátu](#HH_Specifier).|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 13|
+|"K"|Informace o časovém pásmu.<br /><br /> Další informace: [Specifikátor vlastního formátu "K"](#KSpecifier).|S <xref:System.DateTime>mi hodnotami:<br /><br /> 2009-06-15T13:45:30, neurčený druh – ><br /><br /> 2009-06-15T13:45:30, druh UTC-> Z<br /><br /> 2009-06-15T13:45:30, druh Local->-07:00 (závisí na nastavení místního počítače)<br /><br /> S <xref:System.DateTimeOffset>mi hodnotami:<br /><br /> 2009-06-15T01:45:30-07:00 --> -07:00<br /><br /> 2009-06-15T08:45:30+00:00 --> +00:00|
+|"m"|Minuty, od 0 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "m"](#mSpecifier).|2009-06-15T01:09:30 -> 9<br /><br /> 2009-06-15T13:29:30 -> 29|
+|"mm"|Minuty, od 00 do 59.<br /><br /> Další informace: [specifikátor "mm" vlastního formátu](#mmSpecifier).|2009-06-15T01:09:30 -> 09<br /><br /> 2009-06-15T01:45:30 -> 45|
+|"M"|Měsíc, od 1 do 12.<br /><br /> Další informace: [Specifikátor vlastního formátu "M"](#M_Specifier).|2009-06-15T13:45:30 -> 6|
+|"MM"|Měsíc, od 01 do 12.<br /><br /> Další informace: [specifikátor "mm" vlastního formátu](#MM_Specifier).|2009-06-15T13:45:30 -> 06|
 |"MMM"|Zkrácený název měsíce.<br /><br /> Další informace: [Specifikátor vlastního formátu "MMM"](#MMM_Specifier).|2009-06-15T13:45:30. >. června (EN-US)<br /><br /> 2009-06-15T13:45:30-> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30-> června (zu-ZA)|
 |"MMMM"|Úplný název měsíce.<br /><br /> Další informace: [Specifikátor vlastního formátu "MMMM"](#MMMM_Specifier).|2009-06-15T13:45:30-> června (EN-US)<br /><br /> 2009-06-15T13:45:30-> Juni (da-DK)<br /><br /> 2009-06-15T13:45:30-> uJuni (zu-ZA)|
-|"s"|Sekundy, od 0 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "s"](#sSpecifier).|2009-06-15T13:45:09-> 9|
-|"ss"|Sekundy, od 00 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "SS"](#ssSpecifier).|2009-06-15T13:45:09-> 09|
-|"t"|První znak označení pro dopoledne/odpoledne.<br /><br /> Další informace: [Specifikátor vlastního formátu "t"](#tSpecifier).|2009-06-15T13:45:30-> P (EN-US)<br /><br /> 2009-06-15T13:45:30-> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR)|
-|"tt"|Označení pro dopoledne/odpoledne.<br /><br /> Další informace: [Specifikátor vlastního formátu "tt"](#ttSpecifier).|2009-06-15T13:45:30-> ODP. (EN-US)<br /><br /> 2009-06-15T13:45:30-> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR)|
-|"y"|Rok, od 0 do 99.<br /><br /> Další informace: [Specifikátor vlastního formátu "y"](#ySpecifier).|0001-01-01T00:00:00-> 1<br /><br /> 0900-01-01T00:00:00-> 0<br /><br /> 1900-01-01T00:00:00-> 0<br /><br /> 2009-06-15T13:45:30 – > 9<br /><br /> 2019-06-15T13:45:30 – > 19|
-|"yy"|Rok, od 00 do 99.<br /><br /> Další informace: [Specifikátor vlastního formátu "yy"](#yySpecifier).|0001-01-01T00:00:00-> 01<br /><br /> 0900-01-01T00:00:00-> 00<br /><br /> 1900-01-01T00:00:00-> 00<br /><br /> 2019-06-15T13:45:30 – > 19|
-|"yyy"|Rok s nejméně třemi číslicemi.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyy"](#yyySpecifier).|0001-01-01T00:00:00-> 001<br /><br /> 0900-01-01T00:00:00-> 900<br /><br /> 1900-01-01T00:00:00-> 1900<br /><br /> 2009-06-15T13:45:30 – > 2009|
-|"yyyy"|Rok jako čtyřmístné číslo.<br /><br /> Další informace: [Specifikátor vlastního formátu "rrrr"](#yyyySpecifier).|0001-01-01T00:00:00-> 0001<br /><br /> 0900-01-01T00:00:00-> 0900<br /><br /> 1900-01-01T00:00:00-> 1900<br /><br /> 2009-06-15T13:45:30 – > 2009|
-|"yyyyy"|Rok jako pětimístné číslo.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyyyy"](#yyyyySpecifier).|0001-01-01T00:00:00-> 00001<br /><br /> 2009-06-15T13:45:30 – > 02009|
-|"z"|Posun hodin od času UTC, bez počátečních nul.<br /><br /> Další informace: [Specifikátor vlastního formátu "z"](#zSpecifier).|2009-06-15T13:45:30.07:00->-7|
-|"zz"|Posun hodin od času UTC, s počáteční nulou pro jednocifernou hodnotu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ZZ"](#zzSpecifier).|2009-06-15T13:45:30.07:00->-07|
-|"zzz"|Posun v hodinách a minutách od času UTC.<br /><br /> Další informace: [Specifikátor vlastního formátu "ZZZ"](#zzzSpecifier).|2009-06-15T13:45:30.07:00->-07:00|
-|":"|Oddělovač času.<br /><br /> Další informace: [Specifikátor vlastního formátu ":"](#timeSeparator).|2009-06-15T13:45:30->: (EN-US)<br /><br /> 2009-06-15T13:45:30->. (it-IT)<br /><br /> 2009-06-15T13:45:30->: (ja-JP)|
-|"/"|Oddělovač data.<br /><br /> Další informace: [specifikátor "/" vlastního formátu](#dateSeparator).|2009-06-15T13:45:30->/(EN-US)<br /><br /> 2009-06-15T13:45:30-> – (ar-DZ)<br /><br /> 2009-06-15T13:45:30->. (tr-TR)|
+|"s"|Sekundy, od 0 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "s"](#sSpecifier).|2009-06-15T13:45:09 -> 9|
+|"ss"|Sekundy, od 00 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "SS"](#ssSpecifier).|2009-06-15T13:45:09 -> 09|
+|"t"|První znak označení pro dopoledne/odpoledne.<br /><br /> Další informace: [Specifikátor vlastního formátu "t"](#tSpecifier).|2009-06-15T13:45:30-> P (EN-US)<br /><br /> 2009-06-15T13:45:30 -> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR)|
+|"tt"|Označení pro dopoledne/odpoledne.<br /><br /> Další informace: [Specifikátor vlastního formátu "tt"](#ttSpecifier).|2009-06-15T13:45:30-> ODP. (EN-US)<br /><br /> 2009-06-15T13:45:30 -> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30-> (fr-FR)|
+|"y"|Rok, od 0 do 99.<br /><br /> Další informace: [Specifikátor vlastního formátu "y"](#ySpecifier).|0001-01-01T00:00:00 -> 1<br /><br /> 0900-01-01T00:00:00 -> 0<br /><br /> 1900-01-01T00:00:00 -> 0<br /><br /> 2009-06-15T13:45:30 -> 9<br /><br /> 2019-06-15T13:45:30 -> 19|
+|"yy"|Rok, od 00 do 99.<br /><br /> Další informace: [Specifikátor vlastního formátu "yy"](#yySpecifier).|0001-01-01T00:00:00 -> 01<br /><br /> 0900-01-01T00:00:00 -> 00<br /><br /> 1900-01-01T00:00:00 -> 00<br /><br /> 2019-06-15T13:45:30 -> 19|
+|"yyy"|Rok s nejméně třemi číslicemi.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyy"](#yyySpecifier).|0001-01-01T00:00:00 -> 001<br /><br /> 0900-01-01T00:00:00 -> 900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-15T13:45:30 -> 2009|
+|"yyyy"|Rok jako čtyřmístné číslo.<br /><br /> Další informace: [Specifikátor vlastního formátu "rrrr"](#yyyySpecifier).|0001-01-01T00:00:00 -> 0001<br /><br /> 0900-01-01T00:00:00 -> 0900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-15T13:45:30 -> 2009|
+|"yyyyy"|Rok jako pětimístné číslo.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyyyy"](#yyyyySpecifier).|0001-01-01T00:00:00 -> 00001<br /><br /> 2009-06-15T13:45:30 -> 02009|
+|"z"|Posun hodin od času UTC, bez počátečních nul.<br /><br /> Další informace: [Specifikátor vlastního formátu "z"](#zSpecifier).|2009-06-15T13:45:30-07:00 -> -7|
+|"zz"|Posun hodin od času UTC, s počáteční nulou pro jednocifernou hodnotu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ZZ"](#zzSpecifier).|2009-06-15T13:45:30-07:00 -> -07|
+|"zzz"|Posun v hodinách a minutách od času UTC.<br /><br /> Další informace: [Specifikátor vlastního formátu "ZZZ"](#zzzSpecifier).|2009-06-15T13:45:30-07:00 -> -07:00|
+|":"|Oddělovač času.<br /><br /> Další informace: [Specifikátor vlastního formátu ":"](#timeSeparator).|2009-06-15T13:45:30->: (EN-US)<br /><br /> 2009-06-15T13:45:30 -> . (it-IT)<br /><br /> 2009-06-15T13:45:30 -> : (ja-JP)|
+|"/"|Oddělovač data.<br /><br /> Další informace: [specifikátor "/" vlastního formátu](#dateSeparator).|2009-06-15T13:45:30->/(EN-US)<br /><br /> 2009-06-15T13:45:30 -> - (ar-DZ)<br /><br /> 2009-06-15T13:45:30 -> . (tr-TR)|
 |*řetězec "String*"<br /><br /> *řetězec "String*"|Oddělovač řetězcového literálu.<br /><br /> Další informace: [znakové literály](#Literals).|2009-06-15T13:45:30 ("ARR:" h:m t)-> ARR: 1:45 P<br /><br /> 2009-06-15T13:45:30 (' ARR: ' h:m t)-> ARR: 1:45 P|
 |%|Definuje následující znak jako specifikátor vlastního formátu.<br /><br /> Další informace:[použití jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers).|2009-06-15T13:45:30 (% h)-> 1|
-|&#92;|Řídicí znak.<br /><br /> Další informace: [literály znaků](#Literals) a [Použití řídicího znaku](#escape).|2009-06-15T13:45:30 (h \h) – > 1 h|
+|&#92;|Řídicí znak.<br /><br /> Další informace: [literály znaků](#Literals) a [Použití řídicího znaku](#escape).|2009-06-15T13:45:30 (h \h) -> 1 h|
 |Jakýkoli jiný znak|Znak je zkopírován do výsledného řetězce beze změny.<br /><br /> Další informace: [znakové literály](#Literals).|2009-06-15T01:45:30 (ARR hh: mm t)-> ARR 01:45 A|
 
 Následující oddíly poskytují další informace o jednotlivých specifikátorech vlastního formátu data a času. Není-li uvedeno jinak, každý specifikátor Vytvoří identickou řetězcovou reprezentaci bez ohledu na to, zda se používá s hodnotou <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotou.
@@ -149,7 +149,7 @@ Specifikátor vlastního formátu "f" představuje nejvýznamnější číslici 
 
 Pokud specifikátor formátu "f" použijete bez dalšího specifikátoru formátu, je interpretován jako specifikátor standardního formátu data a času "f". Další informace o použití jednoduchého specifikátoru formátu naleznete v části [použití jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers) dále v tomto článku.
 
-Použijete-li specifikátory formátu "f" jako součást formátu řetězce zadaného <xref:System.DateTime.ParseExact%2A>, <xref:System.DateTime.TryParseExact%2A>, <xref:System.DateTimeOffset.ParseExact%2A>nebo <xref:System.DateTimeOffset.TryParseExact%2A> metody, počet specifikátorů formátu "f" označuje počet nejvýznamnějších číslic zlomků sekund, které musí být přítomny. řetězec se úspěšně analyzoval.
+Použijete-li specifikátory formátu "f" jako součást formátu řetězce zadaného <xref:System.DateTime.ParseExact%2A>, <xref:System.DateTime.TryParseExact%2A>, <xref:System.DateTimeOffset.ParseExact%2A>nebo <xref:System.DateTimeOffset.TryParseExact%2A> metody, počet specifikátorů formátu "f" označuje počet nejvýznamnějších číslic zlomků sekund, které musí být k dispozici pro úspěšné analyzování řetězce.
 
 Následující příklad obsahuje specifikátor vlastního formátu "f" v řetězci vlastního formátu.
 
@@ -604,7 +604,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "zzz" ve vla
 Specifikátor vlastního formátu ":" představuje oddělovač času, který se používá k rozlišení hodin, minut a sekund. Odpovídající lokalizovaný oddělovač času je načten z vlastnosti <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> aktuální nebo zadané jazykové verze.
 
 > [!NOTE]
-> Chcete-li změnit oddělovač času pro určitý řetězec data a času, zadejte znak oddělovače v oddělovači řetězcového literálu. Například řetězec vlastního formátu `hh'_'dd'_'ss` vytvoří výsledný řetězec, ve kterém je "\_" (podtržítko) vždy použito jako oddělovač času. Chcete-li změnit časový oddělovač pro všechna data jazykové verze, buď změňte hodnotu vlastnosti <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> aktuální jazykové verze, nebo vytvořte instanci <xref:System.Globalization.DateTimeFormatInfo> objektu, přiřaďte tento znak vlastnosti <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A> a zavolejte přetížení metody formátování, které obsahuje parametr <xref:System.IFormatProvider>.
+> Chcete-li změnit oddělovač času pro určitý řetězec data a času, zadejte znak oddělovače v oddělovači řetězcového literálu. Například řetězec vlastního formátu `hh'_'dd'_'ss` vytvoří výsledný řetězec, ve kterém je "\_" (podtržítko) vždy použito jako oddělovač času. Chcete-li změnit časový oddělovač pro všechna data jazykové verze, buď změňte hodnotu vlastnosti <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> aktuální jazykové verze, nebo vytvořte instanci <xref:System.Globalization.DateTimeFormatInfo> objektu, přiřaďte tento znak vlastnosti <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A> a zavolejte přetížení metody formátování, která obsahuje parametr <xref:System.IFormatProvider>.
 
 Pokud je specifikátor formátu ":" použit bez dalšího vlastního specifikátoru formátu, je interpretován jako specifikátor standardního formátu data a času a vyvolá <xref:System.FormatException>. Další informace o použití jednoduchého specifikátoru formátu naleznete v části [použití jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers) dále v tomto článku.
 
@@ -615,7 +615,7 @@ Pokud je specifikátor formátu ":" použit bez dalšího vlastního specifikát
 Specifikátor vlastního formátu "/" představuje oddělovač dat, který se používá k rozlišení roků, měsíců a dnů. Odpovídající lokalizovaný oddělovač data je načten z vlastnosti <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A?displayProperty=nameWithType> aktuální nebo zadané jazykové verze.
 
 > [!NOTE]
-> Chcete-li změnit oddělovač data pro určitý řetězec data a času, zadejte znak oddělovače v oddělovači řetězcového literálu. Například řetězec vlastního formátu `mm'/'dd'/'yyyy` vytvoří výsledný řetězec, ve kterém je znak "/" vždy použit jako oddělovač data. Chcete-li změnit oddělovač data pro všechna data jazykové verze, buď změňte hodnotu vlastnosti <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A?displayProperty=nameWithType> aktuální jazykové verze, nebo vytvořte instanci <xref:System.Globalization.DateTimeFormatInfo> objektu, přiřaďte tento znak vlastnosti <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A> a zavolejte přetížení metody formátování, které obsahuje parametr <xref:System.IFormatProvider>.
+> Chcete-li změnit oddělovač data pro určitý řetězec data a času, zadejte znak oddělovače v oddělovači řetězcového literálu. Například řetězec vlastního formátu `mm'/'dd'/'yyyy` vytvoří výsledný řetězec, ve kterém je znak "/" vždy použit jako oddělovač data. Chcete-li změnit oddělovač data pro všechna data jazykové verze, buď změňte hodnotu vlastnosti <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A?displayProperty=nameWithType> aktuální jazykové verze, nebo vytvořte instanci objektu <xref:System.Globalization.DateTimeFormatInfo>, přiřaďte tento znak vlastnosti <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A> a zavolejte přetížení metody formátování, která obsahuje parametr <xref:System.IFormatProvider>.
 
 Pokud je specifikátor formátu "/" použit bez dalšího vlastního specifikátoru formátu, je interpretován jako specifikátor standardního formátu data a času a vyvolá <xref:System.FormatException>. Další informace o použití jednoduchého specifikátoru formátu naleznete v části [použití jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers) dále v tomto článku.
 
@@ -627,10 +627,10 @@ Následující znaky v řetězci vlastního formátu data a času jsou vyhrazeny
 
 ||||||
 |-|-|-|-|-|
-|F|H|K|M|d|
-|FJ|Věcn|h|m|s|
-|t|y|od|%|:|
-|/|"|'|&#92;||
+|F|H|Síťový|M|společnosti|
+|f|G|h|m|s|
+|t|y|z|%|:|
+|/|"|tokenu prostředku|&#92;||
 
 Všechny ostatní znaky jsou vždy interpretovány jako znakové literály a v operaci formátování jsou zahrnuty ve výsledném řetězci beze změny.  V operaci analýzy musí přesně odpovídat znakům ve vstupním řetězci; Porovnávání rozlišuje velká a malá písmena.
 
@@ -684,7 +684,7 @@ Následující příklad používá řídicí znak, aby zamezil operacím formá
 
 Nastavení **místní a jazykové** nastavení v Ovládacích panelech ovlivní výsledný řetězec vytvořený pomocí operace formátování, která zahrnuje mnoho vlastních specifikátorů formátu data a času. Tato nastavení slouží k inicializaci objektu <xref:System.Globalization.DateTimeFormatInfo> přidruženého k aktuální jazykové verzi vlákna, což poskytuje hodnoty používané k řízení formátování. Počítače, které používají různá nastavení, generují různé výsledné řetězce.
 
-Kromě toho, pokud použijete konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> k vytvoření instance nového objektu <xref:System.Globalization.CultureInfo>, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, všechna přizpůsobení, která jsou vytvořena položkou **místní a jazykové nastavení** v Ovládacích panelech, budou použito pro nový objekt <xref:System.Globalization.CultureInfo>. Konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> lze použít k vytvoření objektu <xref:System.Globalization.CultureInfo>, který nereflektuje vlastní nastavení systému.
+Kromě toho, pokud použijete konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> k vytvoření instance nového objektu <xref:System.Globalization.CultureInfo>, který představuje stejnou jazykovou verzi jako aktuální jazyková verze systému, všechna přizpůsobení vytvořená položkou **místní a jazykové nastavení** v Ovládacích panelech budou použita pro nový objekt <xref:System.Globalization.CultureInfo>. Konstruktor <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> lze použít k vytvoření objektu <xref:System.Globalization.CultureInfo>, který nereflektuje vlastní nastavení systému.
 
 ### <a name="datetimeformatinfo-properties"></a>Vlastnosti DateTimeFormatInfo
 

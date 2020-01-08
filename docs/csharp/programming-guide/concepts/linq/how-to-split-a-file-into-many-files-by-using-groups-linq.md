@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)'
+title: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: 5f2ae7657162ba5a2c88e5378119eaad4cb1e288
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 934b6385a8634c23a4e29098367c9aaa7355f11c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253278"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347310"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
 Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a pak vytvořit sadu nových souborů, které data organizují novým způsobem.  
   
 ### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  
@@ -126,7 +126,7 @@ class SplitWithGroups
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 

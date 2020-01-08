@@ -6,12 +6,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: 5559acd162b26a94b009ec21691d1501c90db290
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: aa4315dfc0b98b1033da9bd8bd7f7d3fbf6873a8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419532"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346543"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 
@@ -55,7 +55,7 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
  Výsledek tohoto příkazu závisí na tom, zda `SomeType` typ hodnoty nebo typ odkazu. Pokud se jedná o typ hodnoty, příkaz vytvoří pole 10 prvků, z nichž každý má typ `SomeType`. Pokud je `SomeType` odkazový typ, příkaz vytvoří pole 10 prvků, z nichž každá je inicializována na odkaz s hodnotou null.  
   
- Další informace o typech hodnot a odkazových typech naleznete v tématu [typy](/dotnet/csharp/language-reference/keywords).  
+Další informace o typech hodnot a odkazových typech naleznete v tématu [typy hodnot](../../language-reference/keywords/value-types.md) a [odkazové typy](../../language-reference/keywords/reference-types.md).
   
 ## <a name="see-also"></a>Viz také:
 

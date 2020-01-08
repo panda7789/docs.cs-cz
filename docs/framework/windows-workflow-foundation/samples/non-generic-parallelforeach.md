@@ -2,12 +2,12 @@
 title: Neobecná ParallelForEach
 ms.date: 03/30/2017
 ms.assetid: de17e7a2-257b-48b3-91a1-860e2e9bf6e6
-ms.openlocfilehash: 33e0c8ef8c04b7d58815760ae1152f63891fdfd5
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: ea7f57b8812dca3dfcb4908730dd788182d50c5c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715646"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347621"
 ---
 # <a name="non-generic-parallelforeach"></a>Neobecná ParallelForEach
 
@@ -19,7 +19,7 @@ Tento příklad ukazuje, jak implementovat neobecnou <xref:System.Activities.Sta
 
 ## <a name="parallelforeach-activity"></a>Aktivita ParallelForEach
 
-Příkaz C#/VB `foreach` vytvoří výčet prvků kolekce a spustí vložený příkaz pro každý prvek kolekce. [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ekvivalentní aktivity jsou <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.ParallelForEach%601>. Aktivita <xref:System.Activities.Statements.ForEach%601> obsahuje seznam hodnot a textů. V době běhu se seznam opakuje a text se spustí pro každou hodnotu v seznamu.
+Příkaz C#webový Basic `foreach` vytvoří výčet prvků kolekce a spustí vložený příkaz pro každý prvek kolekce. [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ekvivalentní aktivity jsou <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.ParallelForEach%601>. Aktivita <xref:System.Activities.Statements.ForEach%601> obsahuje seznam hodnot a textů. V době běhu se seznam opakuje a text se spustí pro každou hodnotu v seznamu.
 
 <xref:System.Activities.Statements.ParallelForEach%601> má <xref:System.Activities.Statements.ParallelForEach%601.CompletionCondition%2A>, aby byla <xref:System.Activities.Statements.ParallelForEach%601> aktivita dokončena včas, pokud vyhodnocení <xref:System.Activities.Statements.ParallelForEach%601.CompletionCondition%2A> vrátí `true`. <xref:System.Activities.Statements.ParallelForEach%601.CompletionCondition%2A> se vyhodnocuje po dokončení každé iterace.
 

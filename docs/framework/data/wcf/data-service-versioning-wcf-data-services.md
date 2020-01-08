@@ -6,12 +6,12 @@ helpviewer_keywords:
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-ms.openlocfilehash: 730a7e4b58d544af9ebc58317cda336be8e946e2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 341cd8e21b84b220236947bca50311e5a1a75c72
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283039"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346115"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datových služeb (WCF Data Services)
 Protokol OData (Open Data Protocol) umožňuje vytvářet datové služby, aby klienti měli přístup k datům jako prostředky pomocí identifikátorů URI, které jsou založené na datovém modelu. OData podporuje taky definici operací služby. Po počátečním nasazení a potenciálně během své životnosti může být potřeba tyto datové služby změnit z nejrůznějších důvodů, jako jsou třeba změny obchodních potřeb, požadavky na informace o technologii nebo řešení dalších problémů. Pokud provedete změny v existující datové službě, je nutné zvážit, zda chcete definovat novou verzi datové služby a jak nejlépe minimalizovat dopad na existující klientské aplikace. V tomto tématu najdete pokyny, kdy a jak vytvořit novou verzi datové služby. Popisuje také, jak WCF Data Services zpracovává výměnu mezi klienty a datovými službami, které podporují různé verze protokolu OData.
@@ -53,7 +53,7 @@ Protokol OData (Open Data Protocol) umožňuje vytvářet datové služby, aby k
 ## <a name="odata-protocol-versions"></a>Verze protokolu OData
  Při vydání nových verzí OData nemusí klientské aplikace používat stejnou verzi protokolu OData, jakou podporuje datová služba. Starší klientská aplikace může získat přístup k datové službě, která podporuje novější verzi OData. Klientská aplikace může také používat novější verzi knihovny WCF Data Services klienta, která podporuje novější verzi OData, než je služba, ke které se přistupovalo.
 
- WCF Data Services využívá podporu poskytovanou službou OData ke zpracování takových scénářů správy verzí. Existuje také podpora pro generování a používání metadat datového modelu k vytváření tříd klientských datových služeb, když klient používá jinou verzi OData než datová služba používá. Další informace najdete v tématu [OData: Správa verzí protokolů](https://go.microsoft.com/fwlink/?LinkId=186071).
+ WCF Data Services využívá podporu poskytovanou službou OData ke zpracování takových scénářů správy verzí. Existuje také podpora pro generování a používání metadat datového modelu k vytváření tříd klientských datových služeb, když klient používá jinou verzi OData než datová služba používá. Další informace najdete v části Správa verzí protokolu v článku [OData: Přehled](https://www.odata.org/documentation/odata-version-2-0/overview/) .
 
 ### <a name="version-negotiation"></a>Vyjednávání verze
  Datovou službu lze nakonfigurovat tak, aby definovala nejvyšší verzi protokolu OData, kterou bude služba používat, bez ohledu na verzi, kterou klient požaduje. To lze provést zadáním <xref:System.Data.Services.Common.DataServiceProtocolVersion> hodnoty pro vlastnost <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> <xref:System.Data.Services.DataServiceBehavior> používané datovou službou. Další informace najdete v tématu [konfigurace datové služby](configuring-the-data-service-wcf-data-services.md).
@@ -64,14 +64,14 @@ Protokol OData (Open Data Protocol) umožňuje vytvářet datové služby, aby k
 
 |Verze protokolu OData|Podpora zavedená v...|
 |-----------------------------------------------------------------------------------|----------------------------|
-|Verze 1|-.NET Framework 3,5 Service Pack 1 (SP1)<br />– Silverlight verze 3|
+|Verze 1|-.NET Framework 3,5 Service Pack 1 (SP1)<br />– Silverlight verze 3|
 |Verze 2|-.NET Framework 4<br />– Aktualizace .NET Framework 3,5 SP1. Aktualizaci můžete stáhnout a nainstalovat z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=158125).<br />– Silverlight verze 4|
 |Verze 3|– Můžete si stáhnout a nainstalovat předběžnou verzi, která podporuje OData verze 3 z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=203885).|
 
 ### <a name="metadata-versions"></a>Verze metadat
  Ve výchozím nastavení WCF Data Services používá ke znázornění datového modelu verzi 1,1 CSDL. To je vždy případ datových modelů, které jsou založeny na poskytovateli reflexe nebo vlastním poskytovateli datových služeb. Pokud je však datový model definován pomocí Entity Framework, bude verze CSDL vrácena stejná jako verze, kterou používá Entity Framework. Verze CSDL je určena oborem názvů [elementu Schema (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#schema-element-csdl).
 
- Prvek `DataServices` vrácených metadat obsahuje také atribut `DataServiceVersion`, což je stejná hodnota jako hlavička `DataServiceVersion` ve zprávě odpovědi. Klientské aplikace, jako je například dialogové okno **Přidat odkaz na službu** v aplikaci Visual Studio, používají tyto informace k vygenerování tříd klientských datových služeb, které fungují správně s verzí WCF Data Services, která je hostitelem datové služby. Další informace najdete v tématu [OData: Správa verzí protokolů](https://go.microsoft.com/fwlink/?LinkId=186071).
+ Prvek `DataServices` vrácených metadat obsahuje také atribut `DataServiceVersion`, což je stejná hodnota jako hlavička `DataServiceVersion` ve zprávě odpovědi. Klientské aplikace, jako je například dialogové okno **Přidat odkaz na službu** v aplikaci Visual Studio, používají tyto informace k vygenerování tříd klientských datových služeb, které fungují správně s verzí WCF Data Services, která je hostitelem datové služby. Další informace najdete v části Správa verzí protokolu v článku [OData: Přehled](https://www.odata.org/documentation/odata-version-2-0/overview/) .
 
 ## <a name="see-also"></a>Viz také:
 

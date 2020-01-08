@@ -7,22 +7,22 @@ dev_langs:
 - CSharp
 - VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-ms.openlocfilehash: ba88fc6ba4cba8d46ed1b43080d471b1b7c4bd75
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 49526808a65b68c6df734bd7f3e76eff1e4a6bc5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928876"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338300"
 ---
 # <a name="tutorial-define-a-windows-communication-foundation-service-contract"></a>Kurz: Definování kontraktu Windows Communication Foundation služby
 
-Tento kurz popisuje prvních pět úloh nutných k vytvoření aplikace Basic Windows Communication Foundation (WCF). Přehled kurzů najdete v tématu [kurz: Začněte s Windows Communication Foundation aplikacemi](getting-started-tutorial.md).
+Tento kurz popisuje prvních pět úloh nutných k vytvoření aplikace Basic Windows Communication Foundation (WCF). Přehled kurzů najdete v tématu [kurz: Začínáme s Windows Communication Foundation aplikacemi](getting-started-tutorial.md).
 
-Při vytváření služby WCF je vaším prvním úkolem Definování kontraktu služby. Kontrakt služby určuje, které operace služba podporuje. Operaci lze představit jako metodu webové služby. Kontrakty služby vytvoříte tak, že definujete rozhraní Visual C# nebo Visual Basic (VB). Rozhraní má následující vlastnosti:
+Při vytváření služby WCF je vaším prvním úkolem Definování kontraktu služby. Kontrakt služby určuje, které operace služba podporuje. Operaci lze představit jako metodu webové služby. Kontrakty služby vytvoříte definováním rozhraní C# nebo Visual Basic. Rozhraní má následující vlastnosti:
 
 - Každá metoda v rozhraní odpovídá konkrétní operaci služby. 
-- Pro každé rozhraní je nutné použít <xref:System.ServiceModel.ServiceContractAttribute> atribut.
-- Pro každou operaci/metodu je nutné použít <xref:System.ServiceModel.OperationContractAttribute> atribut. 
+- Pro každé rozhraní je nutné použít atribut <xref:System.ServiceModel.ServiceContractAttribute>.
+- Pro každou operaci/metodu je nutné použít atribut <xref:System.ServiceModel.OperationContractAttribute>. 
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
@@ -47,13 +47,13 @@ V tomto kurzu se naučíte:
 
    4. Vyberte **OK**.
 
-      Visual Studio vytvoří projekt, který má tři soubory: *IService1.cs* (nebo *IService1. vb* pro projekt Visual Basic), *Service1.cs* (nebo *Service1. vb* pro Visual Basic projekt) a *App. config*. Visual Studio definuje tyto soubory následujícím způsobem: 
+      Visual Studio vytvoří projekt, který má tři soubory: *IService1.cs* (nebo *IService1. vb* pro projekt Visual Basic), *Service1.cs* (nebo *Service1. vb* pro projekt Visual Basic) a *App. config*. Visual Studio definuje tyto soubory následujícím způsobem: 
       - Soubor *IService1* obsahuje výchozí definici kontraktu služby. 
       - Soubor *Service1* obsahuje výchozí implementaci kontraktu služby. 
       - Soubor *App. config* obsahuje informace o konfiguraci potřebné k načtení výchozí služby pomocí nástroje pro hostování služby Visual Studio WCF. Další informace o nástroji pro hostování služby WCF najdete v tématu [Hostitel služby WCF (WcfSvcHost. exe)](wcf-service-host-wcfsvchost-exe.md).
 
       > [!NOTE]
-      > Pokud jste nainstalovali Visual Studio s Visual Basic nastavení vývojářského prostředí, řešení může být skryté. Pokud se jedná o tento případ, vyberte **Možnosti** v nabídce **nástroje** a pak v okně **Možnosti** vyberte **projekty a řešení** > **Obecné** . Vyberte možnost **vždy zobrazit řešení**. Ověřte také, že je vybrána možnost **Uložit nové projekty při vytvoření** .
+      > Pokud jste nainstalovali Visual Studio s Visual Basic nastavení vývojářského prostředí, řešení může být skryté. Pokud se jedná o tento případ, **Vyberte možnosti** v **nabídce nástroje** a pak v okně **možnosti** vyberte **projekty a řešení** > **Obecné** . Vyberte možnost **vždy zobrazit řešení**. Ověřte také, že je vybrána možnost **Uložit nové projekty při vytvoření** .
 
 3. Z **Průzkumník řešení**otevřete soubor **IService1.cs** nebo **IService1. vb** a nahraďte jeho kód následujícím kódem:
 
@@ -98,9 +98,9 @@ V tomto kurzu se naučíte:
     End Namespace
     ```
 
-     Tato Smlouva definuje online kalkulačku. Všimněte si `ICalculator` , že rozhraní je označeno <xref:System.ServiceModel.ServiceContractAttribute> atributem ( `ServiceContract`zjednodušeno jako). Tento atribut definuje obor názvů pro jednoznačnost názvu kontraktu. Kód označí každou operaci <xref:System.ServiceModel.OperationContractAttribute> kalkulačky atributem (zjednodušeno jako `OperationContract`).
+     Tato Smlouva definuje online kalkulačku. Všimněte si, že rozhraní `ICalculator` je označeno atributem <xref:System.ServiceModel.ServiceContractAttribute> (zjednodušené jako `ServiceContract`). Tento atribut definuje obor názvů pro jednoznačnost názvu kontraktu. Kód označí každou operaci kalkulačky atributem <xref:System.ServiceModel.OperationContractAttribute> (zjednodušené jako `OperationContract`).
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
@@ -111,4 +111,4 @@ V tomto kurzu jste se naučili:
 Přejděte k dalšímu kurzu, kde se dozvíte, jak implementovat kontrakt služby WCF.
 
 > [!div class="nextstepaction"]
-> [Kurz: Implementace kontraktu služby WCF](how-to-implement-a-wcf-contract.md)
+> [Kurz: implementace kontraktu služby WCF](how-to-implement-a-wcf-contract.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Seskupování souborů podle přípony (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: 9e0b5bc29cbfc454cc8031bcd62ed723b8995095
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 67beec0d3681bf7f0b04d9a402566076fd27ceba
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344551"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347484"
 ---
 # <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Postupy: seskupování souborů podle přípony (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak lze LINQ použít k provádění pokročilých operací seskupení a řazení v seznamech souborů nebo složek. Ukazuje také výstup stránky v okně konzoly pomocí metod <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A>.  
@@ -93,8 +93,8 @@ End Module
   
  Výstup z tohoto programu může být dlouhý v závislosti na podrobnostech místního systému souborů a nastavení, na které je `startFolder`. Pokud chcete povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránky procházet výsledky. Stejné postupy můžete použít pro Windows a webové aplikace. Všimněte si, že vzhledem k tomu, že kód stránky má položky ve skupině, je nutná vnořená `For Each` smyčka. K dispozici je také některá další logika, která umožňuje vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončit program. V tomto konkrétním případě se stránkovací dotaz spustí proti výsledkům uloženým v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ to SQL, taková mezipaměť není nutná.  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
+## <a name="compile-the-code"></a>Kompilace kódu  
+Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
   
 ## <a name="see-also"></a>Viz také:
 

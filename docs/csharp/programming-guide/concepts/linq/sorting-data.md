@@ -2,12 +2,12 @@
 title: Řazení dat (C#)
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 78b263c384895b736b11cc524befa42b4a896380
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8db5ab2ead0e59b8d41d83704ff237d4493155c3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418192"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346459"
 ---
 # <a name="sorting-data-c"></a>Řazení dat (C#)
 Operace řazení řadí prvky sekvence na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení pro prvky. Zadáním druhého kritéria řazení můžete prvky seřadit v rámci každé primární skupiny řazení.  
@@ -26,7 +26,7 @@ Operace řazení řadí prvky sekvence na základě jednoho nebo více atributů
 |OrderByDescending|Seřadí hodnoty v sestupném pořadí.|`orderby … descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|  
 |ThenBy|Provede sekundární řazení ve vzestupném pořadí.|`orderby …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=nameWithType>|  
 |ThenByDescending|Provede sekundární řazení v sestupném pořadí.|`orderby …, … descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=nameWithType>|  
-|Zpět|Obrátí pořadí prvků v kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
+|Reverse|Obrátí pořadí prvků v kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
   
@@ -131,5 +131,5 @@ foreach (string str in query)
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
 - [orderby – klauzule](../../../language-reference/keywords/orderby-clause.md)
-- [Postupy: řazení výsledků klauzule JOIN](../../../linq/order-the-results-of-a-join-clause.md)
-- [Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Řazení výsledků klauzule join](../../../linq/order-the-results-of-a-join-clause.md)
+- [Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
-ms.openlocfilehash: b96c68c06099db2f396d16772cfaa8aee37390fe
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 7071aaf88346ee217226632501ebd6c82cfc1cb8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838010"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346760"
 ---
 # <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: auditování událostí zabezpečení Windows Communication Foundation
 Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpečení do protokolu událostí systému Windows, který lze zobrazit pomocí Prohlížeč událostí systému Windows. Toto téma vysvětluje, jak nastavit aplikaci tak, aby protokoloval události zabezpečení. Další informace o auditování WCF najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
@@ -24,7 +24,7 @@ Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpe
      [!code-csharp[AuditingSecurityEvents#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#2)]
      [!code-vb[AuditingSecurityEvents#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#2)]  
   
-     Výčet <xref:System.ServiceModel.AuditLogLocation> má tři hodnoty: `Application`, `Security`nebo `Default`. Hodnota určuje jeden z protokolů viditelných v Prohlížeč událostí, buď protokol zabezpečení, nebo protokol aplikace. Pokud použijete `Default` hodnotu, bude skutečný protokol záviset na operačním systému, ve kterém je aplikace spuštěná. Pokud je povolené auditování a umístění protokolu není zadané, použije se výchozí protokol `Security` pro platformy, které podporují zápis do protokolu zabezpečení. v opačném případě bude zapisovat do protokolu `Application`. Ve výchozím nastavení podporuje pouze [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a Windows Vista do protokolu zabezpečení.  
+     Výčet <xref:System.ServiceModel.AuditLogLocation> má tři hodnoty: `Application`, `Security`nebo `Default`. Hodnota určuje jeden z protokolů viditelných v Prohlížeč událostí, buď protokol zabezpečení, nebo protokol aplikace. Pokud použijete `Default` hodnotu, bude skutečný protokol záviset na operačním systému, ve kterém je aplikace spuštěná. Pokud je povolené auditování a umístění protokolu není zadané, použije se výchozí protokol `Security` pro platformy, které podporují zápis do protokolu zabezpečení. v opačném případě bude zapisovat do protokolu `Application`. Ve výchozím nastavení podporuje systém Windows Server 2003 a systém Windows Vista do protokolu zabezpečení pouze zápis.  
   
 2. Nastavte typy událostí, které se mají auditovat. Současně můžete auditovat události na úrovni služby nebo události autorizace na úrovni zprávy. Chcete-li to provést, nastavte vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A> nebo vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel%2A> na jednu z hodnot výčtu <xref:System.ServiceModel.AuditLevel>, jak je znázorněno v následujícím kódu.  
   

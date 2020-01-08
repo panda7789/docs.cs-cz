@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 6f0a2cfd5a6de9c8c05bc3daea1e242183ebf03e
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: e5580e81b9175cd95491fdba724bacbffa692a5e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552343"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345391"
 ---
 # <a name="switch-c-reference"></a>přepínač (C# Referenční dokumentace)
 
@@ -47,7 +47,7 @@ V C# 6 a starších verzích výraz porovnávání musí být výraz, který vra
 - [řetězec](../builtin-types/reference-types.md).
 - [logická](../builtin-types/bool.md)hodnota.
 - [celočíselná](../builtin-types/integral-numeric-types.md) hodnota, například `int` nebo `long`.
-- hodnota [výčtu](enum.md) .
+- hodnota [výčtu](../builtin-types/enum.md) .
 
 Počínaje C# 7,0 se výraz shody může jednat o libovolný výraz, který není null.
 
@@ -78,7 +78,7 @@ Tento požadavek se obvykle splní explicitním ukončením oddílu přepínače
 
 [!code-csharp[switch#4](~/samples/snippets/csharp/language-reference/keywords/switch/switch4.cs#1)]
 
-Provedení seznamu příkazů v oddílu switch s popiskem Case, který odpovídá výrazu shody, začíná prvním příkazem a pokračuje přes seznam příkazů, obvykle dokud není příkaz skoku, například `break``goto case``goto label`, `return`nebo `throw`, je dosaženo. V tomto okamžiku se ovládací prvek přenáší mimo příkaz `switch` nebo na jiný popisek případu. Příkaz `goto`, pokud se používá, musí přenést řízení na konstantní popisek. Toto omezení je nezbytné, protože při pokusu o přenos řízení na nekonstantní popisek může mít nežádoucí vedlejší účinky, například přenáší řízení na nezamýšlené umístění v kódu nebo vytvoření nekonečné smyčky.
+Vykonání seznamu příkazů v oddílu switch s popiskem Case, který odpovídá výrazu shody, začíná prvním příkazem a pokračuje přes seznam příkazů, obvykle dokud není dosaženo příkazu skok, jako je `break`, `goto case`, `goto label`, `return`nebo `throw`. V tomto okamžiku se ovládací prvek přenáší mimo příkaz `switch` nebo na jiný popisek případu. Příkaz `goto`, pokud se používá, musí přenést řízení na konstantní popisek. Toto omezení je nezbytné, protože při pokusu o přenos řízení na nekonstantní popisek může mít nežádoucí vedlejší účinky, například přenáší řízení na nezamýšlené umístění v kódu nebo vytvoření nekonečné smyčky.
 
 ## <a name="case-labels"></a>Popisky případů
 
@@ -90,7 +90,7 @@ Vzhledem C# k tomu, že 6 podporuje pouze konstantní vzor a neumožňuje opakov
 
 V C# 7,0, protože jsou však podporovány jiné modely, popisky case nemusí definovat vzájemně se vylučující hodnoty a více vzorů se může shodovat s výrazem shody. Vzhledem k tomu, že jsou spuštěny pouze příkazy v prvním oddílu přepínače, který obsahuje odpovídající vzor, je nyní důležité pořadí, v jakém jsou `case` příkazy. Pokud C# zjistí oddíl Switch, jehož příkaz Case nebo příkazy jsou ekvivalentní nebo jsou podmnožinou předchozích příkazů, vygeneruje chybu kompilátoru, CS8120, "případ přepínače již byl zpracován předchozím případem".
 
-Následující příklad ukazuje příkaz `switch`, který používá celou řadu nevzájemně se vylučujících vzorů. Pokud přesunete oddíl `case 0:` přepínač tak, že již není prvním oddílem v příkazu `switch`, vygeneruje chybu C# kompilátoru, protože celé číslo, jehož hodnota je nula, je podmnožina všech celých čísel, což je vzor definovaný pomocí příkazu `case int val` .
+Následující příklad ukazuje příkaz `switch`, který používá celou řadu nevzájemně se vylučujících vzorů. Pokud přesunete oddíl `case 0:` přepínač tak, že již není prvním oddílem v příkazu `switch`, vygeneruje chybu C# kompilátoru, protože celé číslo, jehož hodnota je nula, je podmnožina všech celých čísel, což je vzor definovaný pomocí příkazu `case int val`.
 
 [!code-csharp[switch#5](~/samples/snippets/csharp/language-reference/keywords/switch/switch5.cs#1)]
 

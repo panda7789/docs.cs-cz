@@ -1,15 +1,15 @@
 ---
 title: Průvodce platformou .NET Core
-description: .NET Core je modulární a vysoce výkonná implementace .NET pro vytváření aplikací pro Windows, Linux a Mac. Seznamte se s .NET Core, abyste mohli začít.
+description: .NET Core je modulární a vysoce výkonná implementace .NET pro vytváření aplikací pro Windows, Linux a macOS. Seznamte se s .NET Core, abyste mohli začít.
 author: richlander
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: b2622dba53d64c9dcf58e852d57de117fe79eb2e
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 80a3b12972e24c3022ac2aa14406aa60635815a3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837009"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341357"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -27,11 +27,11 @@ Pokud hledáte jinou verzi rozhraní .NET Core, jsou všechny verze .NET Core k 
 
 ## <a name="net-core-31"></a>.NET Core 3,1
 
-Nejnovější verze je .NET Core 3,1. Což zahrnuje menší vylepšení .NET Core 3,0. .NET Core 3,1 je ale dlouhodobě podporovanou verzí. Další informace o verzi .NET Core 3,1 najdete v článku [novinky v rozhraní .NET core 3,1](./whats-new/dotnet-core-3-1.md).
+Nejnovější verze je .NET Core 3,1. 3,1 obsahuje menší vylepšení .NET Core 3,0, ale .NET Core 3,1 je [dlouhodobě podporovanou verzí](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Další informace o verzi .NET Core 3,1 najdete v článku [novinky v rozhraní .NET core 3,1](./whats-new/dotnet-core-3-1.md).
 
 ## <a name="create-your-first-application"></a>Vytvoření první aplikace
 
-Po instalaci .NET Core SDK otevřete příkazový řádek. Zadejte následující `dotnet` příkazy pro vytvoření a spuštění C# aplikace:
+Po instalaci .NET Core SDK otevřete příkazový řádek. Chcete-li vytvořit a spustit C# aplikaci, zadejte následující příkazy `dotnet`:
 
 ```dotnetcli
 dotnet new console

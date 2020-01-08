@@ -1,121 +1,121 @@
 ---
-title: Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC
-description: Zjistěte, jak k detekování a zmírnění chyby zabezpečení časování s Cipher Block Chaining CBC () režim Symetrické dešifrování pomocí odsazení.
+title: Ohrožení zabezpečení při dešifrování CBC
+description: Naučte se, jak detekovat a zmírnit omezení chyb časování pomocí symetrického dešifrování režimu CBC (Cipher-Block-Chaining) pomocí odsazení.
 ms.date: 06/12/2018
 author: blowdart
 ms.author: mairaw
-ms.openlocfilehash: 6d8c2593cdbc4bbff2b1507196989282b16aa9a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 1d570cf3da197e7af5c1a1ab4e4df0d21f2cb2d7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933897"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347232"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC
 
-Společnost Microsoft věří, že už nejsou bezpečné dešifrovat data zašifrovaná pomocí šifrování se symetrickým režim Cipher Block Chaining CBC (), při použití ověřitelných odsazení bez první zajištění integrity šifrovaného textu, s výjimkou specifickou okolnosti. Toto posouzení podle aktuálně známé kryptografickém výzkumu. 
+Společnost Microsoft se domnívá, že již není bezpečná k dešifrování dat šifrovaných pomocí režimu CBC (Cipher-Block-Chaining) symetrického šifrování, pokud bylo použito ověřitelné odsazení bez předchozího zadání integrity šifrovaného textu, s výjimkou konkrétního žádný. Tento odhad je založen na aktuálně známém kryptografickém výzkumu. 
 
 ## <a name="introduction"></a>Úvod
 
-Útok odsazení oracle je typ útoku proti šifrovaná data, která umožňuje útočníkovi dešifrovat obsah dat, bez znalosti klíč.
+Útok typu Oracle pro vyplňování je typ útoku proti šifrovaným datům, který umožňuje útočníkovi dešifrovat obsah dat bez znalosti klíče.
 
-Oracle odkazuje "říct" které poskytuje útočník informace o tom, zda je akce, kterou správné nebo ne. Imagine přehrávání panelu nebo karet hry s podřízeným. Když své pro rozpoznávání tváře aktivuje emotikonami velké objemy vzhledem k tomu, že Jana domnívá, že je o aby dobré přesunu, je oracle. Jako protihráč, vám pomůže tento oracle další přesunout odpovídající plán.
+Oracle odkazuje na "Řekněte", který poskytuje útočníkovi informace o tom, zda je akce, kterou spouštíte, správná nebo ne. Představte si, že budete hrát desku nebo karetní hru s podřízeným. Když se tváře s velkým úsměvem, protože si domníváme, že se chystá, aby se zajistil dobrý pohyb, je to Oracle. Jako protihráč může použít tento Oracle k naplánování dalšího přesunu.
 
-Výplň je konkrétní kryptografických období. Některé šifry, které jsou algoritmy používané k šifrování dat, pracovat na bloky dat, ve kterém je každý blok s pevnou velikostí. Není-li data, která chcete šifrovat správnou velikost tak, aby vyplnil bloky, vaše data doplněno, dokud se provádí. Mnoho forem odsazení vyžadují tento odsazení vždy mít k dispozici, i když původní vstup není vhodné velikosti. To umožňuje odsazení vždy bezpečně odebrat po dešifrování.
+Odsazení je konkrétní kryptografické podmínky. Některá šifry, které jsou algoritmy používané k šifrování vašich dat, fungují na blocích dat, kde každý blok má pevně danou velikost. Pokud data, která chcete zašifrovat, nemají správnou velikost pro vyplnění bloků, vaše data se doplní, dokud to neudělá. Mnoho forem odsazení vyžaduje, aby bylo odsazení vždy k dispozici, i když původní vstup měl správnou velikost. To umožňuje, aby se výplň vždy bezpečně odebrala při dešifrování.
 
-Sestavení dvě věci, implementaci softwaru se společností oracle odsazení zjistí, zda dešifrovaná data mají platný odsazení. Oracle může být jednoduše vrací hodnotu, která říká "Neplatný odsazení" něco nebo složitější jako trvá zlepšení života na zemi jiný čas ke zpracování platný blok na rozdíl od neplatný blok.
+Implementace těchto dvou věcí společně s doplňováním Oracle odhalí, zda má dešifrovaná data platné odsazení. Oracle může být něco jednoduchého, protože vrací hodnotu, která říká "Neplatné odsazení", nebo něco složitějšího, jako by bylo možné zpracovat platný blok na rozdíl od neplatného bloku.
 
-Blokový šifry mají jiné vlastnosti volá režimu, který určuje vztah data v první blok dat v druhé blok, a tak dále. Jednou z nejčastěji používaných režimech je CBC. CBC představuje počáteční náhodných blokovat, známé jako inicializační vektor (IV) a kombinuje předchozí blok s výsledkem statické šifrování, aby ho tak, aby šifrování stejná zpráva se stejným klíčem není vždy vytvořila stejný výstup šifrované.
+Šifry založené na bloku mají jinou vlastnost, která se nazývá režim, který určuje vztah mezi daty v prvním bloku a daty ve druhém bloku atd. Jedním z nejčastěji používaných režimů je CBC. CBC zavádí počáteční náhodný blok, který se označuje jako inicializační vektor (IV), a zkombinuje předchozí blok s výsledkem statického šifrování, aby se zajistilo, že šifrování stejné zprávy se stejným klíčem nikdy nevytvoří stejný šifrovaný výstup.
 
-Útočník může použít odsazení oracle, v kombinaci s jak CBC data strukturovaná, odesílat zprávy o něco změněné kódu, který zpřístupňuje oracle a posílat data, dokud oracle dozví se, je správná data. Z odpovědi může útočník dešifrování zprávy bajt po bajtu.
+Útočník může použít výplň Oracle, a to v kombinaci s tím, jak jsou CBC data strukturovaná, aby odesílaly mírně změněné zprávy do kódu, který zveřejňuje Oracle, a dál odesílá data, dokud je Oracle neupozorní, že data jsou správná. Od této odpovědi může útočník dešifrovat bajt po bajtu.
 
-Moderní počítačových sítí jsou tyto vysoce kvalitní, že útočník může zjistit, velmi malý (méně než 0,1 ms) rozdíly v provádění čas na vzdálených systémů. Aplikace, které jsou za předpokladu, že úspěšná dešifrování může dojít pouze v případě dat nebylo manipulováno se může být zranitelný vůči útokům z nástrojů, které jsou určeny k sledujte rozdíly v úspěšné a neúspěšné dešifrování. Tento rozdíl časování může být v některých jazycích a knihovnách mnohem závažnější než jiné, je nyní předpokládá, že toto je praktické před internetovými útoky pro všechny jazyky a knihovny, když je aplikace odpovědi na chybu vzít v úvahu.
+Moderní počítačové sítě mají takovou vysokou kvalitu, kterou může útočník detekovat velmi malými rozdíly (méně než 0,1 ms) v době provádění ve vzdálených systémech. Aplikace, u kterých se předpokládá, že úspěšné dešifrování může nastat jenom v případě, že data nebyla zfalšována, můžou být zranitelná vůči útokům z nástrojů, které jsou navržené tak, aby sledovaly rozdíly v úspěšném a neúspěšném dešifrování. I když tento časový rozdíl může být v některých jazycích nebo knihovnách důležitější než jiné, je to pro všechny jazyky a knihovny v případě, že je odezva aplikace na selhání v úvahu, to je praktická hrozba.
 
-Tento útok spoléhá na schopnost změnit šifrovaná data a výsledek s oracle testu. Jediný způsob, jak plně zmírnění tohoto útoku je zjištění změn k šifrovaným datům a provádět všechny akce na něm odmítnout. K vytvoření podpisu pro data a ověřit podpis před provedením jakékoli operace, které je standardní způsob. Podpis musí být možné ověřit, nemůže být vytvořen uživatelem zlými úmysly, jinak, by přejít šifrovaná data, a potom compute nový podpis podle změněná data. Jeden běžný typ odpovídajícím podpisem se označuje jako ověřovací kód zprávy s klíči hash (metoda HMAC). V tom, že trvá tajný klíč známý jenom na osobu, vytváření HMAC a osobě, ověřování, se liší od kontrolní součet kódu HMAC s. Bez vlastnictví klíče nejde produkovat správné HMAC. Když se zobrazí vaše data, by trvat šifrovaná data, jste a sdílené složky odesílatele, a pak porovnat HMAC odeslali proti ten je vypočítán nezávisle na sobě výpočetní HMAC pomocí tajného klíče. Toto porovnání musí být konstantní čas, jinak jste přidali další zjistitelná oracle, povolení jiného typu útoku.
+Tento útok se spoléhá na možnost změnit šifrovaná data a otestovat výsledek pomocí Oracle. Jediným způsobem, jak plně zmírnit útok, je zjistit změny šifrovaných dat a odmítnout na ni provádět jakékoli akce. Standardní způsob, jak to provést, je vytvořit podpis pro data a ověřit podpis před provedením jakékoli operace. Podpis musí být ověřitelný, nemůže ho vytvořit útočník, jinak změní šifrovaná data a pak vypočítá nový podpis na základě změněných dat. Jeden běžný typ odpovídající signatury se označuje jako ověřovací kód zprávy hash s klíčem (HMAC). HMAC se liší od kontrolního součtu v tom, že přebírá tajný klíč, známý jenom pro osobu, která vyrábí HMAC a osoba ji ověřuje. Bez použití klíče nemůžete vytvořit správné HMAC. Když obdržíte data, zašifrujte zašifrovaná data, nezávisle COMPUTE HMAC pomocí tajného klíče a sdílené složky odesílatele a pak porovnejte HMAC, která se poslala oproti vypočítanému. Toto porovnání musí být konstantní čas, jinak jste přidali další zjistitelnou databázi Oracle umožňující jiný typ útoku.
 
-Stručně řečeno používat, aby bylo vytvořeno CBC blokové šifry bezpečně, musí je zkombinovat s kódu HMAC s (nebo další kontrolu integrity dat), které ověřit pomocí porovnání konstantním času než to zkusíte data dešifrovat. Protože všechny změněné zprávy čekat na stejné množství vytvořilo odpověď, je zabráněno útoku.
+Aby bylo možné bezpečně použít doplněné šifrované šifry CBC, je nutné je kombinovat s HMAC (nebo jinou kontrolou integrity dat), kterou ověříte s použitím porovnání konstantního času, než se pokusíte data dešifrovat. Vzhledem k tomu, že všechny změněné zprávy přebírají stejnou dobu jako odpověď, útok se zabrání.
 
-## <a name="who-is-vulnerable"></a>Kdo je ohrožené
+## <a name="who-is-vulnerable"></a>Kdo je ohrožen
 
-Toto ohrožení zabezpečení platí pro spravovaný i nativní aplikace, které provádějí své vlastní šifrování a dešifrování. To zahrnuje, například:
+Tato chyba zabezpečení se týká spravovaných i nativních aplikací, které provádějí vlastní šifrování a dešifrování. Patří sem například:
 
-- Aplikace, která se zašifruje do souboru cookie pro pozdější dešifrování na serveru.
-- Databázové aplikace, která poskytuje možnost uživatelů k vložení dat do tabulky, jejichž sloupce se dešifrují později.
-- Aplikace pro přenos dat, která spoléhá na šifrování pomocí sdíleného klíče k ochraně dat během přenosu.
-- Aplikace, která šifruje a dešifruje zprávy "vnitřní" tunelu TLS.
+- Aplikace, která šifruje soubor cookie pro pozdější dešifrování na serveru.
+- Databázová aplikace, která uživatelům umožňuje vkládat data do tabulky, jejíž sloupce jsou později dešifrovány.
+- Aplikace pro přenos dat, která spoléhá na šifrování pomocí sdíleného klíče k ochraně dat při přenosu.
+- Aplikace, která šifruje a dešifruje zprávy "v rámci" tunelu TLS.
 
-Všimněte si, že použití protokolu TLS samostatně nemůže chránit v těchto scénářích.
+Upozorňujeme, že při použití samotného TLS se v těchto scénářích neochrání.
 
-Ohrožené aplikace:
+Zranitelná aplikace:
 
-- Dešifruje data pomocí režimu CBC šifrování s režimem ověřitelný odsazení, jako je například ve formátu PKCS #7 nebo ANSI X.923.
-- Provede dešifrování bez nutnosti provést kontrolu integrity dat (prostřednictvím MACU nebo asymetrický digitální podpis).
+- Dešifruje data pomocí režimu šifry CBC s ověřitelným režimem odsazení, jako je PKCS # 7 nebo ANSI X. 923.
+- Provede dešifrování bez provedení kontroly integrity dat (přes MAC nebo asymetrický digitální podpis).
 
-To platí i pro aplikace založené na abstrakce přes horní těchto primitivních hodnot, jako je například struktura EnvelopedData Cryptographic Message Syntax (PKCS #7/CMS).
+To platí také pro aplikace postavené na abstrakcích přes tyto primitivní prvky, jako je například syntaxe kryptografické zprávy (PKCS # 7/CMS) EnvelopedData struktura.
 
-## <a name="related-areas-of-concern"></a>Související oblastí zájmu
+## <a name="related-areas-of-concern"></a>Související oblasti k obavám
 
-Výzkum vedlo Microsoft dále se starat o CBC zprávy, které jsou doplněny ISO 10126-ekvivalentem odsazení, když zpráva obsahuje strukturu dobře známé nebo předvídatelný zápatí. Například obsah připravený v části pravidla syntaxe W3C XML šifrování a zpracování doporučení (xmlenc EncryptedXml). Při W3C pokyny k podepisování zpráv pak šifrování považovaná za vhodné v době, doporučuje Microsoft teď vždy provádění šifrování přihlášení pak.
+Výzkum vedla společnost Microsoft o další obavy o CBCch zprávách, které jsou doplněny odpovídajícím odsazením ISO 10126, když má zpráva dobře známou nebo předvídatelné struktury zápatí. Například obsah připravený v rámci pravidel syntaxe šifrování W3C XML a doporučení pro zpracování (xmlenc, EncryptedXml). I když pokyny W3C pro podepsání zprávy se pak považují za vhodné, Microsoft teď doporučuje vždycky zašifrovat a podepsat.
 
-Vývojáři aplikací by měl vždy dávejte ověřovat použitelnost asymetrického podpisu klíče, protože není žádná vlastní důvěryhodný vztah mezi asymetrický klíč a libovolného zprávy.
+Vývojáři aplikací by měli vždy vědomi ověření použitelnosti asymetrického klíče podpisu, protože mezi asymetrickým klíčem a libovolnou zprávou neexistuje vztah důvěryhodnosti.
 
 ## <a name="details"></a>Podrobnosti
 
-V minulosti došlo shody, které jsou důležité k šifrování i ověřování důležitých dat, prostředky, jako jsou podpisy HMAC nebo RSA. Má však bylo méně jasné pokyny o tom, jak pořadí operace šifrování a ověřování. Z důvodu chyby podrobně popsané v tomto článku pokyny od Microsoftu je teď vždy používejte paradigma "šifrování then znak". To znamená nejdřív šifrování dat s využitím symetrický klíč a potom výpočetní MAC nebo asymetrického podpisu přes šifrovaného textu (šifrovaná data). Při dešifrování dat, proveďte opačně. Nejprve potvrdit MAC nebo podpis šifrovaného textu a pak ho dešifrovat.
+Historicky jsme dosáhli konsensu, že je důležité šifrovat a ověřovat důležitá data pomocí prostředků, jako jsou například HMAC nebo podpis RSA. V takovém případě však existuje méně jasných pokynů pro sekvencování operací šifrování a ověřování. V souvislosti s touto chybou v tomto článku jsou teď pokyny Microsoftu k tomu, abyste vždycky použili paradigma "šifrovat a pak-podepsat". To znamená, že nejprve Šifrujte data pomocí symetrického klíče a pak vypočítáte klíč MAC nebo asymetrický podpis přes šifrovaný text (šifrovaná data). Při dešifrování dat proveďte reverzní. Nejdřív potvrďte adresu MAC nebo podpis šifrovaného textu a pak ho dešifrujte.
 
-Třída chyby zabezpečení označované jako "padding oracle útoky" označuje existovat více než deset let. Tyto chyby útočníkovi umožnit dešifrovat data zašifrovaná pomocí bloku symetrické algoritmy, například AES a 3DES pomocí více než 4096 pokusů na jednoho datového bloku. Ujistěte se, tyto nedostatky zabezpečení použijte skutečnost, že block šifer se nejčastěji používají s daty ověřitelný odsazení na konci. Bylo zjištěno, že pokud útočník lze manipulovat s šifrovaného textu a zjistěte, zda úmyslné poškozování způsobilo chybu ve formátu odsazení na konci, útočník může data dešifrovat.
+V případě více než 10 let bylo známo, že existují třídy chyb zabezpečení, které jsou známy jako "útoky Oracle pro vyplňování". Tyto chyby zabezpečení umožňují útočníkovi dešifrovat data zašifrovaná pomocí symetrických blokových algoritmů, jako jsou AES a 3DES, s využitím maximálně 4096ch pokusů na blok dat. Tato ohrožení zabezpečení využívají skutečnost, že se na konci často používají data blokující šifry s ověřitelnými daty odsazení. Bylo zjištěno, že pokud útočník může manipulovat s šifrovaným datovým časem a zjistit, zda manipulace způsobila chybu ve formátu odsazení na konci, může útočník data dešifrovat.
 
-Na začátku praktické útoky jsou založené na službách, které vrátí různé chybové kódy na základě na, jestli byl platný, jako je například Chyba zabezpečení technologie ASP.NET odsazení [MS10-070](/security-updates/SecurityBulletins/2010/ms10-070). Společnost Microsoft však nyní věří, že je potřeba provést podobné útoky pomocí pouze rozdíly mezi časování mezi zpracování platný a neplatný odsazení.
+Zpočátku byly praktické útoky založené na službách, které vrátily různé kódy chyb na základě toho, jestli bylo odsazení platné, jako je například zranitelnost ASP.NET [MS10-070](/security-updates/SecurityBulletins/2010/ms10-070). Společnost Microsoft se však nyní domnívá, že je praktické provádět podobné útoky pouze v případě, že je mezi nimi platné a neplatné odsazení.
 
-Za předpokladu, že podpis používá schéma šifrování a ověření podpisu se provádí s pevnou modul runtime pro danou délku dat (bez ohledu na obsah), můžete ověřit integritu dat bez generování žádné informace Útočník prostřednictvím [kanál ze strany](https://en.wikipedia.org/wiki/Side-channel_attack). Protože kontroly integrity odmítne všechny zmanipulovanou zprávy, je zmírnit hrozby oracle odsazení.
+Za předpokladu, že šifrovací schéma používá podpis a že se pro danou délku dat (bez ohledu na obsah) provádí ověření podpisu s pevným modulem runtime, může být integrita dat ověřena bez vygenerování jakýchkoli informací útočníkem přes [postranní kanál](https://en.wikipedia.org/wiki/Side-channel_attack). Vzhledem k tomu, že kontrola integrity odmítne jakékoli neoprávněné zprávy, dojde k omezení hrozby Oracle pro odsazení.
 
 ## <a name="guidance"></a>Doprovodné materiály
 
-Především společnost Microsoft doporučuje, aby všechna data, která má důvěrnost musí přenášet přes zabezpečení TLS (Transport Layer), nástupce do vrstvy SSL (Secure Sockets).
+A především společnost Microsoft doporučuje, aby všechna data, která mají důvěrné požadavky, byla přenášena přes protokol TLS (Transport Layer Security), nástupce SSL (Secure Sockets Layer) (SSL).
 
-Dále analyzujte aplikaci:
+Dále proveďte analýzu aplikace na:
 
-- Pochopení přesně jaké při provádění šifrování a se zajišťuje šifrování, jaké platformy a rozhraní API používáte.
-- Být jisti, že každé použití na každé úrovni symetrický [algoritmus šifrování bloku](https://en.wikipedia.org/wiki/Block_cipher#Notable_block_ciphers), jako je AES a 3DES v režimu CBC začlenit použijte kontrolu integrity dat s klíči tajný klíč (asymetrického podpisu HMAC, nebo chcete-li změnit režim šifrování pro [ověření šifrování](https://en.wikipedia.org/wiki/Authenticated_encryption) režimu (AE), jako jsou GCM nebo CCM).
+- Přesné pochopení toho, jaké šifrování provádíte a jaké šifrování poskytují platformy a rozhraní API, které používáte.
+- Ujistěte se, že každé použití v každé vrstvě [algoritmu symetrického bloku šifrování](https://en.wikipedia.org/wiki/Block_cipher#Notable_block_ciphers), jako je AES a 3DES, v režimu CBC zahrnuje použití kontroly integrity dat tajných klíčů (asymetrický podpis, HMAC nebo ke změně režimu šifry na [ověřený šifrovací](https://en.wikipedia.org/wiki/Authenticated_encryption) režim (AE), jako je například GCM nebo ccm).
 
-Podle současných výzkumů, obecně předpokládá se, že při ověřování a šifrování kroky jsou provedeny nezávisle pro jiné AE režimy šifrování, ověřování šifrovaný text (šifrování then znaménko) je nejlepší obecných možností. Však neexistuje žádná přitom správnou odpověď kryptografie a této generalizaci není tak dobré, jako řízené Rady od profesionální cryptographer.
+V závislosti na aktuálním výzkumu se obecně předpokládá, že pokud jsou kroky ověřování a šifrování prováděny nezávisle na jiných režimech šifrování, ověřování šifrovaných informací (šifrování a podepsání) je nejlepší volbou. Neexistuje však žádná platná odpověď na šifrování a tato generalizace není stejně vhodná jako směrná Rada od profesního cryptographeru.
 
-Aplikace, které nelze změnit jejich formát zasílání zpráv, ale neověřené dešifrování CBC se doporučuje pro pokus o začlenit způsoby zmírnění rizik, jako:
+Aplikace, které nemůžou měnit formát zpráv, ale provádějí neověřené dešifrování CBC, by se měly doporučit při pokusu o začlenit rizika, jako jsou:
 
-- Dešifrování bez povolení-li ověřit nebo odebrat odsazení:
-  - Žádné odsazení, které byly použity stále je potřeba odebrat nebo ignorovat, přesouváte zatížení do vaší aplikace.
-  - Výhoda spočívá v odsazení ověření a odebrání může být zahrnut do další logiku ověření dat aplikace. Pokud odsazení ověření a ověření dat můžete udělat v konstantním času, se snižuje hrozby.
-  - Protože délka zjištěné zprávy se změní výklad odsazení, stále informace možná budou časování vyzařováno tento přístup.
+- Dešifrovat bez povolení dešifry pro ověření nebo odebrání odsazení:
+  - Všechna předplatná, která byla použita stále, je nutné odebrat nebo ignorovat, přesunete zatížení do aplikace.
+  - Výhodou je, že ověření a odebrání odsazení lze začlenit do jiné logiky ověřování dat aplikace. Pokud se ověření odsazení a ověření dat dá provést v konstantním čase, dojde k omezení hrozby.
+  - Vzhledem k tomu, že výklad odsazení změní vnímanou délku zprávy, mohou být stále informace o časování vydávané z tohoto přístupu.
 - Změňte režim odsazení dešifrování na ISO10126:
-  - Odsazení dešifrování ISO10126 je kompatibilní s PKCS7 šifrování odsazení a ANSIX923 šifrování odsazení.
-  - Změna režimu snižuje ve znalostní bázi oracle odsazení 1 bajt místo celý blok. Ale pokud má obsah dobře známé zápatí, jako je znak pravé – element XML, útoky související můžete dál k útoku na zbytek zprávy.
-  - To také nezabrání obnovení ve formátu prostého textu v situacích, kde může útočník vynucení stejné jako prostý text s posunem jiná zpráva šifrování více než jednou.
-- Brána vyhodnocení volání dešifrování Ztlumit signál časování:
-  - Výpočet doby uchování musí být minimálně nad rámec maximální množství času, které by pro datový segment, který obsahuje odsazení provést operaci dešifrování.
-  - Čas výpočty by mělo být provedeno podle pokynů v [získávání ve vysokém rozlišení časová razítka](/windows/desktop/sysinfo/acquiring-high-resolution-time-stamps), nikoli pomocí <xref:System.Environment.TickCount?displayProperty=nameWithType> (v souladu s vrácení over nebo přetečení) nebo odečtení dvou časová razítka systému (v souladu s úpravy NTP chyby).
-  - Výpočty čas musí být včetně dešifrovací operace, včetně všechny potenciální výjimky spravované nebo aplikací v jazyce C++, nikoli pouze, aby bylo vytvořeno na konci.
-  - Pokud úspěch nebo neúspěch byla zjištěna ještě, brána časování je potřeba při jeho platnost vyprší, vrátí hodnotu neúspěch.
-- Služby, které provádějí neověřené dešifrování by měl mít nastavené ke zjištění, že má větší "neplatné" zprávy pocházejí monitorování.
-  - Berte v úvahu, že tento signál představuje počet falešně pozitivních výsledků (oprávněně poškozená data) i falešně negativní (šíření útoku přes obejít zjišťování dostatečně dlouho).
+  - OdISO10126 dešifrování je kompatibilní s odsazením šifrování PKCS7 i s odsazením ANSIX923 šifrování.
+  - Změna režimu omezí znalosti od Oracle odsazení od celého bloku. Pokud však obsah obsahuje dobře známé zápatí, jako je například uzavírací element XML, mohou související útoky pokračovat v útoku na zbytek zprávy.
+  - To také nebrání v situacích, kdy by útočník mohl převést stejný prostý text, aby byl několikrát zašifrovaný pomocí jiného posunu zprávy.
+- Brána vyhodnocuje vyhodnocení volání dešifrování a ztlumení signálu časování:
+  - Výpočet doby blokování musí obsahovat minimum, než je maximální doba, po kterou by měla operace dešifrování platit pro jakýkoliv datový segment, který obsahuje odsazení.
+  - Časové výpočty by se měly provádět v souladu s pokyny pro [získání časových razítek s vysokým rozlišením](/windows/desktop/sysinfo/acquiring-high-resolution-time-stamps), ne pomocí <xref:System.Environment.TickCount?displayProperty=nameWithType> (v rámci převzetí/přetečení) nebo odečtením dvou systémových časových razítek (v závislosti na chybách při úpravách NTP).
+  - Časová období musí být zahrnutá do dešifrovací operace, včetně všech potenciálních výjimek ve C++ spravovaných nebo aplikací, a ne jenom na konci.
+  - Pokud se zatím zjistila úspěch nebo neúspěch, musí časová brána při vypršení platnosti vracet chybu.
+- Služby, které provádějí neověřené dešifrování, by měly mít k dispozici monitorování, aby bylo možné zjistit, že se nejedná o neplatnou zprávu.
+  - Mějte na paměti, že tento signál ponese falešně pozitivní (legitimně poškozená data) a falešně negativní výsledek (za dostatečně dlouhou dobu šíří útok na obcházení).
 
-## <a name="finding-vulnerable-code---native-applications"></a>Hledání zranitelné kód – nativní aplikace
+## <a name="finding-vulnerable-code---native-applications"></a>Hledání chybných nativních aplikací kódu
 
-Pro programy vytvořena šifrování Windows: Další knihovny služby nové generace (CNG):
+Pro programy vytvořené proti knihovně Windows Cryptography: Next Generation (CNG):
 
-- Volání dešifrování [BCryptDecrypt](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptdecrypt), zadání `BCRYPT_BLOCK_PADDING` příznak.
-- Popisovač klíče byl inicializován pomocí volání [BCryptSetProperty](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptsetproperty) s [BCRYPT_CHAINING_MODE](/windows/desktop/SecCNG/cng-property-identifiers#BCRYPT_CHAINING_MODE) nastavena na `BCRYPT_CHAIN_MODE_CBC`.
-  - Protože `BCRYPT_CHAIN_MODE_CBC` je výchozí nastavení, která měla vliv na kód nemusí mít přiřazené libovolnou hodnotu pro `BCRYPT_CHAINING_MODE`.
+- Dešifrovací volání je [BCryptDecrypt](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptdecrypt), určení příznaku `BCRYPT_BLOCK_PADDING`.
+- Obslužná rutina klíče byla inicializována voláním [BCryptSetProperty](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptsetproperty) s [BCRYPT_CHAINING_MODE](/windows/desktop/SecCNG/cng-property-identifiers#BCRYPT_CHAINING_MODE) nastavenou na `BCRYPT_CHAIN_MODE_CBC`.
+  - Vzhledem k tomu, že `BCRYPT_CHAIN_MODE_CBC` je výchozí, ovlivněný kód nemusí mít přiřazenou žádnou hodnotu pro `BCRYPT_CHAINING_MODE`.
 
-Pro programy vytvořené starší kryptografické rozhraní API Windows:
+Pro programy vytvořené proti staršímu rozhraní API Windows pro šifrování:
 
-- Volání dešifrování [CryptDecrypt](/windows/desktop/api/wincrypt/nf-wincrypt-cryptdecrypt) s `Final=TRUE`.
-- Popisovač klíče byl inicializován pomocí volání [CryptSetKeyParam](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetkeyparam) s [KP_MODE](/windows/desktop/api/wincrypt/nf-wincrypt-cryptgetkeyparam) nastavena na `CRYPT_MODE_CBC`.
-  - Protože `CRYPT_MODE_CBC` je výchozí nastavení, která měla vliv na kód nemusí mít přiřazené libovolnou hodnotu pro `KP_MODE`.
+- Dešifrovací volání je [CryptDecrypt](/windows/desktop/api/wincrypt/nf-wincrypt-cryptdecrypt) pomocí `Final=TRUE`.
+- Obslužná rutina klíče byla inicializována voláním [CryptSetKeyParam](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetkeyparam) s [KP_MODE](/windows/desktop/api/wincrypt/nf-wincrypt-cryptgetkeyparam) nastavenou na `CRYPT_MODE_CBC`.
+  - Vzhledem k tomu, že `CRYPT_MODE_CBC` je výchozí, ovlivněný kód nemusí mít přiřazenou žádnou hodnotu pro `KP_MODE`.
 
-## <a name="finding-vulnerable-code---managed-applications"></a>Hledání kódu zranitelné – spravované aplikace
+## <a name="finding-vulnerable-code---managed-applications"></a>Hledání ohrožených aplikací spravovaných kódem
 
-- Dešifrování volání <xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor> nebo <xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor(System.Byte[],System.Byte[])> metody <xref:System.Security.Cryptography.SymmetricAlgorithm?displayProperty=nameWithType>.
-  - To zahrnuje následující odvozené typy v .NET, ale může také obsahovat typy třetích stran:
+- Dešifrovací volání je <xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor> nebo <xref:System.Security.Cryptography.SymmetricAlgorithm.CreateDecryptor(System.Byte[],System.Byte[])> metody na <xref:System.Security.Cryptography.SymmetricAlgorithm?displayProperty=nameWithType>.
+  - To zahrnuje následující odvozené typy v rozhraní .NET, ale mohou také zahrnovat typy třetích stran:
     - <xref:System.Security.Cryptography.Aes>
     - <xref:System.Security.Cryptography.AesCng>
     - <xref:System.Security.Cryptography.AesCryptoServiceProvider>
@@ -129,24 +129,24 @@ Pro programy vytvořené starší kryptografické rozhraní API Windows:
     - <xref:System.Security.Cryptography.TripleDES>
     - <xref:System.Security.Cryptography.TripleDESCng>
     - <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>
-- <xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType> Nastavenou na <xref:System.Security.Cryptography.PaddingMode.PKCS7?displayProperty=nameWithType>, <xref:System.Security.Cryptography.PaddingMode.ANSIX923?displayProperty=nameWithType>, nebo <xref:System.Security.Cryptography.PaddingMode.ISO10126?displayProperty=nameWithType>.
-  - Protože <xref:System.Security.Cryptography.PaddingMode.PKCS7?displayProperty=nameWithType> je výchozí nastavení, která měla vliv na kód může být nikdy přiřazena <xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType> vlastnost.
-- <xref:System.Security.Cryptography.SymmetricAlgorithm.Mode?displayProperty=nameWithType> Nastavenou na <xref:System.Security.Cryptography.CipherMode.CBC?displayProperty=nameWithType>
-  - Protože <xref:System.Security.Cryptography.CipherMode.CBC?displayProperty=nameWithType> je výchozí nastavení, která měla vliv na kód může být nikdy přiřazena <xref:System.Security.Cryptography.SymmetricAlgorithm.Mode?displayProperty=nameWithType> vlastnost.
+- Vlastnost <xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType> byla nastavena na <xref:System.Security.Cryptography.PaddingMode.PKCS7?displayProperty=nameWithType>, <xref:System.Security.Cryptography.PaddingMode.ANSIX923?displayProperty=nameWithType>nebo <xref:System.Security.Cryptography.PaddingMode.ISO10126?displayProperty=nameWithType>.
+  - Vzhledem k tomu, že <xref:System.Security.Cryptography.PaddingMode.PKCS7?displayProperty=nameWithType> je výchozí, ovlivněný kód nemusí nikdy mít přiřazenou vlastnost <xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType>.
+- Vlastnost <xref:System.Security.Cryptography.SymmetricAlgorithm.Mode?displayProperty=nameWithType> byla nastavena na hodnotu <xref:System.Security.Cryptography.CipherMode.CBC?displayProperty=nameWithType>
+  - Vzhledem k tomu, že <xref:System.Security.Cryptography.CipherMode.CBC?displayProperty=nameWithType> je výchozí, ovlivněný kód nemusí nikdy mít přiřazenou vlastnost <xref:System.Security.Cryptography.SymmetricAlgorithm.Mode?displayProperty=nameWithType>.
 
-## <a name="finding-vulnerable-code---cryptographic-message-syntax"></a>Hledání zranitelné kód – syntaxe kryptografické zprávy
+## <a name="finding-vulnerable-code---cryptographic-message-syntax"></a>Hledání zranitelného kódu – syntaxe kryptografické zprávy
 
-Neověřená zpráva CMS EnvelopedData jehož šifrovaný obsah používá režimu CBC AES (2.16.840.1.101.3.4.1.2, 2.16.840.1.101.3.4.1.22, 2.16.840.1.101.3.4.1.42), (1.3.14.3.2.7) DES, 3DES (1.2.840.113549.3.7) nebo RC2 (1.2.840.113549.3.2) je ohrožené, stejně jako zprávy použití jakékoli jiné algoritmy šifrování bloku v režimu CBC.
+Neověřená zpráva CMS EnvelopedData, jejíž šifrovaný obsah používá režim CBC AES (2.16.840.1.101.3.4.1.2, 2.16.840.1.101.3.4.1.22, 2.16.840.1.101.3.4.1.42), DES (1.3.14.3.2.7), 3DES (1.2.840.113549.3.7) nebo RC2 (1.2.840.113549.3.2), je zranitelná a také zprávy používající jakékoli jiné algoritmy blokového šifrování v režimu CBC.
 
-Při šifrování datového proudu nejsou náchylný k této konkrétní chyby, společnost Microsoft doporučuje vždy ověřování přes kontrola ContentEncryptionAlgorithm hodnotu data.
+I když nejsou šifry streamů náchylné k této konkrétní chybě zabezpečení, společnost Microsoft doporučuje vždycky ověřovat data prostřednictvím kontroly hodnoty ContentEncryptionAlgorithm.
 
-Pro spravované aplikace CMS EnvelopedData objekt blob může být zjištěny jako libovolnou hodnotu, která je předána <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decode(System.Byte[])?displayProperty=fullName>.
+U spravovaných aplikací se dá EnvelopedData objekt BLOB CMS zjistit jako libovolná hodnota, která se předává do <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decode(System.Byte[])?displayProperty=fullName>.
 
-U nativních aplikací lze zjistit CMS EnvelopedData blob jako libovolná hodnota zadaná pro zpracování CMS prostřednictvím [CryptMsgUpdate](/windows/desktop/api/wincrypt/nf-wincrypt-cryptmsgupdate) jehož výsledný [CMSG_TYPE_PARAM](/windows/desktop/api/wincrypt/nf-wincrypt-cryptmsggetparam) je `CMSG_ENVELOPED` nebo je popisovač CMS dále odeslané `CMSG_CTRL_DECRYPT` instrukce prostřednictvím [CryptMsgControl](/windows/desktop/api/wincrypt/nf-wincrypt-cryptmsgcontrol).
+U nativních aplikací se dá EnvelopedData objekt BLOB CMS zjistit jako jakákoli hodnota poskytnutá popisovači CMS prostřednictvím [CryptMsgUpdate](/windows/desktop/api/wincrypt/nf-wincrypt-cryptmsgupdate) , jehož výsledná [CMSG_TYPE_PARAM](/windows/desktop/api/wincrypt/nf-wincrypt-cryptmsggetparam) je `CMSG_ENVELOPED`, nebo popisovač CMS se později pošle `CMSG_CTRL_DECRYPT` instrukcí prostřednictvím [CryptMsgControl](/windows/desktop/api/wincrypt/nf-wincrypt-cryptmsgcontrol).
 
-## <a name="vulnerable-code-example---managed"></a>Příklad kódu zranitelné – spravované
+## <a name="vulnerable-code-example---managed"></a>Příklad zranitelného kódu – spravováno
 
-Tato metoda načte soubor cookie a dešifruje ji a není žádná kontrola integrity dat je viditelný. Obsah souboru cookie, který je pro čtení touto metodou proto může útoku, uživatel, který přijal nebo útočník, který získal hodnotu zašifrovaného souboru cookie.
+Tato metoda přečte soubor cookie a dešifruje a nezobrazuje se žádná kontrola integrity dat. Proto může být obsah souboru cookie, který je čten touto metodou, napaden uživatelem, který ji přijal, nebo jakýmkoli útočníkem, který získal hodnotu šifrovaného souboru cookie.
 
 ```csharp
 private byte[] DecryptCookie(string cookieName)
@@ -171,17 +171,17 @@ private byte[] DecryptCookie(string cookieName)
 }
 ```
 
-## <a name="example-code-following-recommended-practices---managed"></a>Následující příklad kódu doporučené postupy – spravované
+## <a name="example-code-following-recommended-practices---managed"></a>Příklad kódu pro následující doporučené postupy – spravováno
 
-Následující vzorový kód používá formát nestandardní zprávy z
+Následující vzorový kód používá nestandardní formát zprávy.
 
 `cipher_algorithm_id || hmac_algorithm_id || hmac_tag || iv || ciphertext`
 
-kde `cipher_algorithm_id` a `hmac_algorithm_id` algoritmus identifikátory jsou místní aplikace (nestandardní) reprezentace tyto algoritmy. Tyto identifikátory může dávat smysl v ostatních částech existující protokol zasílání zpráv, nikoli jako úplné zřetězených bytestream
+kde identifikátory algoritmu `cipher_algorithm_id` a `hmac_algorithm_id` jsou místní (nestandardní) reprezentace těchto algoritmů. Tyto identifikátory můžou v jiných částech vašeho stávajícího protokolu pro zasílání zpráv smysl místo jako nebytestreamně zřetězené.
 
-Tento příklad také používá jeden hlavní klíč k odvození šifrovací klíč a klíčem HMAC. To i v zájmu usnadnění práce poskytuje při zapínání jednotlivě označenými aplikace do aplikace s klíči duální a povzbudit udržování dva klíče jako různé hodnoty. Další zaručuje, že klíčem HMAC a šifrovacího klíče nelze získat synchronizována.
+V tomto příkladu se k odvození šifrovacího klíče a klíče HMAC používá jeden hlavní klíč. Tato možnost je poskytována jako pohodlí pro zapnutí jednorázové aplikace v aplikaci s dvojitou konvencí a pro povýšení uchování těchto dvou klíčů jako různých hodnot. Dále zaručuje, že klíče HMAC a šifrovací klíč nebudou synchronizovány.
 
-Tato ukázka nepřijme <xref:System.IO.Stream> pro šifrování nebo dešifrování. Aktuální využívá formát data jednofázové šifrování obtížné protože `hmac_tag` hodnota předchází šifrovaného textu. Tento formát však byla vybrána, protože všechny prvky pevné velikosti udržuje na začátek jednodušší zajistit analyzátor. V tomto formátu dat je možné, jednofázové dešifrovat, ačkoli implementátora se zobrazí se upozornění GetHashAndReset volání a ověření výsledku před voláním TransformFinalBlock. Streamování šifrování je důležité, jiný režim AE může být vyžadováno.
+Tato ukázka nepřijímá <xref:System.IO.Stream> pro šifrování ani dešifrování. Aktuální formát dat je obtížné složit šifrování, protože hodnota `hmac_tag` předchází šifrovanému textu. Tento formát byl však vybrán, protože udržuje všechny prvky pevné velikosti na začátku, aby byl analyzátor jednodušší. S tímto formátem dat je možné provést dešifrování jedním průchodem, i když je implementátor opatrní při volání GetHashAndReset a ověřit výsledek před voláním TransformFinalBlock. Pokud je šifrování streamování důležité, může se vyžadovat jiný režim AE.
 
 ```csharp
 // ==++==

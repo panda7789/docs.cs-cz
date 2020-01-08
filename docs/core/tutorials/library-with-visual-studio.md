@@ -1,64 +1,100 @@
 ---
-title: Sestavení C# knihovny .NET Standard sady Visual Studio 2017
-description: Zjistěte, jak vytvořit knihovnu tříd .NET Standard napsané v jazyce C# pomocí sady Visual Studio 2017.
-author: BillWagner
-ms.author: wiwagn
-ms.date: 08/07/2017
+title: Sestavení knihovny tříd .NET Standard v aplikaci Visual Studio
+description: Naučte se vytvářet .NET Standard knihovny tříd napsané v C# nebo Visual Basic pomocí sady Visual Studio.
+ms.date: 12/09/2019
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 440ef2ed398b22262923422efd7f1259e3ee9b74
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: MT
+ms.openlocfilehash: 160993a4dd40356cde541616a1f15f87712e8ae2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633695"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343118"
 ---
-# <a name="build-a-net-standard-library-with-c-and-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení knihovny .NET Standard s C# a .NET Core SDK v sadě Visual Studio 2017
+# <a name="build-a-net-standard-library-in-visual-studio"></a>Sestavení knihovny .NET Standard v aplikaci Visual Studio
 
-A *knihovny tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, který cílí na .NET Standard 2.0 umožňuje knihovny, které jsou volány žádné implementace .NET, která podporuje danou verzi .NET Standard. Po dokončení knihovnu tříd, můžete se rozhodnout, zda chcete distribuovat jako součást jiného výrobce nebo určuje, zda chcete zahrnout jako součást připojené pomocí jedné nebo více aplikací.
+*Knihovna tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, která cílí na .NET Standard 2,0, umožňuje, aby byla vaše knihovna volána jakoukoli implementací .NET, která podporuje tuto verzi .NET Standard. Po dokončení knihovny tříd se můžete rozhodnout, zda je chcete distribuovat jako součást třetí strany, nebo zda ji chcete zahrnout jako součást sady s jednou nebo více aplikacemi.
 
 > [!NOTE]
-> Seznam verzí rozhraní .NET Standard a platformy, které podporují, najdete v tématu [.NET Standard](../../standard/net-standard.md).
+> Seznam verzí .NET Standard a platforem, které podporují, najdete v tématu [.NET Standard](../../standard/net-standard.md).
 
-V tomto tématu vytvoříte knihovnu jednoduchý nástroj, který obsahuje jedinou metodu zpracování řetězců. Budete implementovat jako [– metoda rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) tak, že můžete volat, jakoby byly členem <xref:System.String> třídy.
+V tomto tématu vytvoříte jednoduchou knihovnu nástrojů, která obsahuje jedinou metodu pro zpracování řetězců. Implementujete ho jako [metodu rozšíření](../../csharp/programming-guide/classes-and-structs/extension-methods.md) , takže ji můžete zavolat, jako kdyby byla členem třídy <xref:System.String>.
 
-## <a name="creating-a-class-library-solution"></a>Vytvoření řešení knihovny tříd
+## <a name="create-a-visual-studio-solution"></a>Vytvoření řešení pro Visual Studio
 
-Začněte vytvořením řešení pro váš projekt knihovny tříd a její související projekty. Řešení sady Visual Studio slouží pouze jako kontejner pro jeden nebo více projektů. Vytvoření řešení:
+Začněte vytvořením prázdného řešení pro vložení projektu knihovny tříd do. Řešení sady Visual Studio slouží jako kontejner pro jeden nebo více projektů. Další související projekty přidáte do stejného řešení, pokud budete pokračovat s řadou kurzů.
 
-1. Na řádku nabídek sady Visual Studio, zvolte **souboru** > **nový** > **projektu**.
+Vytvoření prázdného řešení:
 
-1. V **nový projekt** dialogového okna, rozbalte **ostatní typy projektů** uzel a vyberte možnost **řešení sady Visual Studio**. Název řešení "ClassLibraryProjects" a vyberte **OK** tlačítko.
+1. Otevřít Visual Studio.
 
-   ![Dialogové okno Nový projekt se zvýrazněným nové prázdné řešení](./media/library-with-visual-studio/new-project-dialog.png)
+2. V okně Start vyberte možnost **vytvořit nový projekt**.
 
-## <a name="creating-the-class-library-project"></a>Vytvoření projektu knihovny tříd
+3. Na stránce **vytvořit nový projekt** zadejte do vyhledávacího pole **řešení** . Zvolte šablonu **prázdného řešení** a klikněte na tlačítko **Další**.
 
-Vytvoření projektu knihovny třídy:
+   ![Šablonu prázdného řešení v sadě Visual Studio](media/library-with-visual-studio/blank-solution.png)
 
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **ClassLibraryProjects** řešení a v místní nabídce vyberte možnost **přidat** > **nový Projekt**.
+4. Na stránce **Konfigurovat nový projekt** zadejte do pole **název projektu** **ClassLibraryProjects** . Pak zvolte **vytvořit**.
 
-1. V **přidat nový projekt** dialogového okna, rozbalte **Visual C#** uzlu, vyberte **.NET Standard** uzel, za nímž následuje **knihovna tříd (.NET Standard)** šablony projektu. V **název** textové pole, zadejte "StringLibrary" jako název projektu. Vyberte **OK** vytvořte projekt knihovny tříd.
+> [!TIP]
+> Tento krok můžete také přeskočit a nechat si Visual Studio vytvořit řešení při vytváření projektu v dalším kroku. Vyhledejte možnosti řešení na stránce **Konfigurovat nový projekt** .
 
-   ![Přidat dialogové okno Nový projekt knihovny](./media/library-with-visual-studio/add-new-library-project.png)
+## <a name="create-a-class-library-project"></a>Vytvořit projekt knihovny tříd
 
-   Potom otevře se okno kódu ve vývojovém prostředí sady Visual Studio.
+<!-- markdownlint-disable MD025 -->
 
-   ![Visual Studio okno aplikace zobrazuje kód výchozí knihovny třídy šablony](./media/library-with-visual-studio/string-library-project.png)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-1. Zkontrolujte, že naše knihovny, zaměřuje správná verze modulu .NET Standard. Klikněte pravým tlačítkem na projekt knihovny v **Průzkumníka řešení** windows, vyberte **vlastnosti**. **Cílová architektura** textovém poli se zobrazí, že jsme cílíte .NET Standard 2.0.
+1. Přidejte do řešení C# nový projekt knihovny tříd .NET Standard s názvem "StringLibrary".
 
-   ![Vlastnosti projektu pro knihovny tříd](./media/library-with-visual-studio/library-project-properties.png)
+   1. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení a vyberte **Přidat** > **Nový projekt**.
 
-1. Nahraďte kód v okně kód následujícím kódem a soubor uložte:
+   1. Na stránce **Přidat nový projekt** zadejte do vyhledávacího pole **Library** . Vyberte **C#** ze seznamu jazyk a v seznamu platforma zvolte možnost **všechny platformy** . Zvolte šablonu **Knihovna tříd (.NET Standard)** a klikněte na tlačítko **Další**.
+
+   1. Na stránce **Konfigurovat nový projekt** zadejte do pole **název projektu** **StringLibrary** . Pak zvolte **vytvořit**.
+
+1. Zkontrolujte, zda je knihovna cílena na správnou verzi .NET Standard. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt knihovny a pak vyberte **vlastnosti**. Textové pole **cílové rozhraní** uvádí, že cíle projektu .NET Standard 2,0.
+
+   ![Vlastnosti projektu pro knihovnu tříd](./media/library-with-visual-studio/library-project-properties.png)
+
+1. Kód v okně kód nahraďte následujícím kódem a uložte soubor:
 
    [!CODE-csharp[ClassLib#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/classlib.cs)]
 
-   Knihovna tříd `UtilityLibraries.StringLibrary`, obsahuje metodu s názvem `StartsWithUpper`, který vrátí hodnotu <xref:System.Boolean> hodnotu, která určuje, zda aktuální instance řetězec začíná velkým písmenem. Unicode standard rozlišuje velká písmena z malých písmen. <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> Vrátí metoda `true` Pokud znak je velké písmeno.
+   Knihovna tříd, `UtilityLibraries.StringLibrary`, obsahuje metodu s názvem `StartsWithUpper`. Tato metoda vrací hodnotu <xref:System.Boolean>, která označuje, zda aktuální instance řetězce začíná velkým znakem. Standard Unicode rozlišuje velká písmena od malých písmen. Metoda <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> vrátí `true`, pokud je znak velkými písmeny.
 
-1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. Projekt by měl zkompiluje bez chyb.
+1. Na panelu nabídek vyberte **sestavení** **řešení**Build > .
 
-   ![Podokno výstup zobrazuje, že sestavení bylo úspěšné](./media/library-with-visual-studio/output-pane-successful-build.png)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 
-## <a name="next-step"></a>Další krok
+1. Přidejte do řešení nový projekt knihovny tříd Visual Basic .NET Standard s názvem "StringLibrary".
 
-Úspěšně jste vytvořili knihovnu. Protože nejsou volány kterékoliv z jeho metod, zatím nevíte, jestli funguje podle očekávání. Dalším krokem při vývoji vaší knihovny je testovat pomocí [projekt testů jednotek](testing-library-with-visual-studio.md).
+   1. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení a vyberte **Přidat** > **Nový projekt**.
+
+   1. Na stránce **Přidat nový projekt** zadejte do vyhledávacího pole **Library** . V seznamu jazyk vyberte možnost **Visual Basic** a v seznamu platforma zvolte možnost **všechny platformy** . Zvolte šablonu **Knihovna tříd (.NET Standard)** a klikněte na tlačítko **Další**.
+
+   1. Na stránce **Konfigurovat nový projekt** zadejte do pole **název projektu** **StringLibrary** . Pak zvolte **vytvořit**.
+
+1. Zkontrolujte, zda je knihovna cílena na správnou verzi .NET Standard. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt knihovny a pak vyberte **vlastnosti**. Textové pole **cílové rozhraní** uvádí, že cíle projektu .NET Standard 2,0.
+
+   ![Vlastnosti projektu pro knihovnu tříd](./media/library-with-visual-studio/vb/library-project-properties.png)
+
+1. V dialogovém okně **vlastnosti** vymažte text v textovém poli **kořenový obor názvů** . Pro každý projekt Visual Basic automaticky vytvoří obor názvů, který odpovídá názvu projektu. V tomto kurzu definujete obor názvů nejvyšší úrovně pomocí klíčového slova [`namespace`](../../visual-basic/language-reference/statements/namespace-statement.md) v souboru kódu.
+
+1. Kód v okně kód nahraďte následujícím kódem a uložte soubor:
+
+   [!CODE-vb[ClassLib#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/stringlibrary.vb)]
+
+   Knihovna tříd, `UtilityLibraries.StringLibrary`, obsahuje metodu s názvem `StartsWithUpper`. Tato metoda vrací hodnotu <xref:System.Boolean>, která označuje, zda aktuální instance řetězce začíná velkým znakem. Standard Unicode rozlišuje velká písmena od malých písmen. Metoda <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> vrátí `true`, pokud je znak velkými písmeny.
+
+1. Na panelu nabídek vyberte **sestavení** **řešení**Build > .
+
+---
+
+   Projekt by měl být zkompilován bez chyby.
+
+## <a name="next-steps"></a>Další kroky
+
+Úspěšně jste vytvořili knihovnu. Vzhledem k tomu, že jste nevolali žádnou z jeho metod, nevíte, zda funguje podle očekávání. Dalším krokem při vývoji knihovny je testování.
+
+> [!div class="nextstepaction"]
+> [Vytvoření projektu pro testování částí](testing-library-with-visual-studio.md)

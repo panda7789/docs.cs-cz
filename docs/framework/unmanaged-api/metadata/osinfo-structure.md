@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fac7b480-7adb-4450-a5e9-690fed81ffae
 topic_type:
 - apiref
-ms.openlocfilehash: 89111bf7eb03d20c2010c7a20c4cd055c2a021e3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d66e9bc3a027610d917e15dc9769b92ea1c5fb71
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430730"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345606"
 ---
 # <a name="osinfo-structure"></a>OSINFO – struktura
 Obsahuje podrobnosti o operačním systému pro sestavení nebo modul.  
@@ -38,7 +38,7 @@ typedef struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`dwOSPlatformId`|Jedna z hodnot identifikátorů definovaných funkcí platformy Microsoft Windows `GetVersionEx`. Podporovány jsou následující hodnoty:<br /><br /> -VER_PLATFORM_WIN32s nebo 0x0000, pokud chcete zadat Microsoft Windows 3,1.<br />-VER_PLATFORM_WIN32_WINDOWS nebo 0x0001, chcete-li určit systémy Windows 95, Windows 98 nebo operační systémy, které jsou z nich pořízené.<br />-VER_PLATFORM_WIN32_NT nebo 0x0010, chcete-li určit systémy Windows NT nebo operační systémy, které jsou z něj pořízené.|  
+|`dwOSPlatformId`|Jedna z hodnot identifikátorů definovaných funkcí platformy Microsoft Windows `GetVersionEx`. Podporovány jsou následující hodnoty:<br /><br /> -VER_PLATFORM_WIN32s nebo 0x0000, pokud chcete zadat Microsoft Windows 3,1.<br />-VER_PLATFORM_WIN32_WINDOWS nebo 0x0001, chcete-li určit systémy Windows 95, Windows 98 nebo operační systémy, které jsou z nich pořízené.<br />-VER_PLATFORM_WIN32_NT nebo 0x0002, chcete-li určit systémy Windows NT nebo operační systémy, které jsou z něj pořízené.|  
 |`dwOSMajorVersion`|Hlavní verze operačního systému nebo hodnota NULL k označení libovolné verze.|  
 |`dwOSMinorVersion`|Dílčí verze operačního systému nebo hodnota NULL k označení libovolné verze.|  
   

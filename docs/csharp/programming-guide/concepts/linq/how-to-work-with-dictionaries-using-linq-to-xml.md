@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Práce se slovníky pomocí LINQ to XMLC#()'
+title: Jak pracovat se slovníky pomocí LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: 55512e6039010d74d390c805c119935c436f9834
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253243"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347229"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postupy: Práce se slovníky pomocí LINQ to XMLC#()
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Jak pracovat se slovníky pomocí LINQ to XML (C#)
 Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá forma konstrukce funkčnosti, ve které se dotazuje <xref:System.Xml.Linq.XElement> na nové objekty a výsledná kolekce se předává jako argument konstruktoru kořenového <xref:System.Xml.Linq.XElement> objektu.  
+ V tomto příkladu se používá forma konstrukce funkčnosti, ve které se dotazují projekty nové <xref:System.Xml.Linq.XElement> objekty a výsledná kolekce se předává jako argument konstruktoru kořenového objektu <xref:System.Xml.Linq.XElement>.  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  
@@ -28,7 +28,7 @@ XElement root = new XElement("Root",
 Console.WriteLine(root);  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  
@@ -57,7 +57,7 @@ foreach (string str in dict.Keys)
     Console.WriteLine("{0}:{1}", str, dict[str]);  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```output  
 Child1:Value1  

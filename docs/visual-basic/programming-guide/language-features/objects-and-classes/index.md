@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: d45aca8b137f56cf058b63b9286504259c0005eb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 589b0b362cc25fd10e2780fd541cf9f7cfb546a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346702"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344642"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objekty a třídy v Visual Basic
 
@@ -53,7 +53,7 @@ Objekt je nutné vytvořit před tím, než budete moci získat přístup k jeho
 > [!NOTE]
 > Kdykoli je to možné, měli byste deklarovat proměnnou, která má být typu třídy, který chcete přiřadit. Tato metoda se nazývá *časná vazba*. Pokud neznáte typ třídy v době kompilace, můžete vyvolat *pozdní vazbu* tím, že deklarujete proměnnou, která má být [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). Pozdní vazba ale může snížit výkon a omezit přístup k členům objektu run-time. Další informace naleznete v tématu [deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md).
 
-### <a name="multiple-instances"></a>Více instancí
+### <a name="multiple-instances"></a>Několik instancí
 
 Objekty nově vytvořené z třídy jsou často identické. Jakmile však existují jako jednotlivé objekty, jejich proměnné a vlastnosti lze změnit nezávisle na ostatních instancích. Například pokud přidáte tři zaškrtávací políčka do formuláře, každé zaškrtávací políčko objekt je instancí třídy <xref:System.Windows.Forms.CheckBox>. Jednotlivé <xref:System.Windows.Forms.CheckBox> objekty sdílejí společnou sadu vlastností a schopností (vlastnosti, proměnné, procedury a události) definované třídou. Každý má však vlastní název, může být samostatně povolen a zakázán a může být umístěn v jiném umístění ve formuláři.
 
@@ -71,7 +71,7 @@ warningLabel.Text = "Data not saved"
 
 #### <a name="intellisense-listing-of-members"></a>Seznam členů IntelliSense
 
-IntelliSense Vypíše členy třídy při vyvolání možnosti seznamu členů, například při zadání tečky (`.`) jako operátoru přístupu členů. Zadáte-li období za názvem proměnné deklarované jako instance této třídy, technologie IntelliSense Vypíše všechny členy instance a žádné sdílené členy. Zadáte-li období za samotný název třídy, IntelliSense zobrazí seznam všech sdílených členů a žádné členy instance. Další informace najdete v tématu [použití technologie IntelliSense](/visualstudio/ide/using-intellisense).
+IntelliSense Vypíše členy třídy při vyvolání možnosti seznamu členů, například při zadání tečky (`.`) jako operátoru přístupu členů. Zadáte-li období za názvem proměnné deklarované jako instance této třídy, technologie IntelliSense Vypíše všechny členy instance a žádné sdílené členy. Zadáte-li období za samotný název třídy, IntelliSense zobrazí seznam všech sdílených členů a žádné členy instance. Další informace najdete v tématu [pomocí technologie IntelliSense](/visualstudio/ide/using-intellisense).
 
 ### <a name="fields-and-properties"></a>Pole a vlastnosti
 
@@ -239,9 +239,9 @@ V následujícím příkladu Předpokládejme, že chcete definovat zvláštní 
 
 Odvozené třídy dědí členy ze třídy, na které jsou založeny, což umožňuje v hierarchii tříd přidat složitost během průběhu. Další informace najdete v tématu [základy dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).
 
-### <a name="compiling-the-code"></a>Kompilování kódu
+### <a name="compile-the-code"></a>Kompilace kódu
 
-Ujistěte se, že kompilátor má přístup ke třídě, ze které hodláte odvodit novou třídu. To může znamenat, že plně kvalifikované jeho jméno, jako v předchozím příkladu, nebo určení jeho oboru názvů v [příkazu Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Pokud je třída v jiném projektu, může být nutné přidat odkaz na tento projekt. Další informace naleznete v tématu [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project).
+Ujistěte se, že kompilátor má přístup ke třídě, ze které hodláte odvodit novou třídu. To může znamenat, že plně kvalifikované jeho jméno, jako v předchozím příkladu, nebo určení jeho oboru názvů v [příkazu Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Pokud je třída v jiném projektu, může být nutné přidat odkaz na tento projekt. Další informace najdete v tématu [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project).
 
 ### <a name="containment-relationship"></a>Vztah členství ve skupině
 

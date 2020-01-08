@@ -4,12 +4,12 @@ description: V tomto pokročilém kurzu se naučíte prozkoumat data pomocí ind
 ms.date: 09/20/2019
 ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: bbf3f257db9079c4f69f25c9ea08e7711b5ea04b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 3d4c022ff8d6e7f260632e34d6f28277014c85c8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039671"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345620"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
@@ -30,9 +30,9 @@ Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 - <xref:System.Index?displayProperty=nameWithType> představuje index do sekvence.
 - Index z operátoru end `^`, který určuje, že index je relativní ke konci sekvence.
 - <xref:System.Range?displayProperty=nameWithType> představuje dílčí rozsah sekvence.
-- Operátor rozsahu `..`, který jako svůj operand Určuje začátek a konec rozsahu.
+- Operátor rozsahu `..`, který určuje začátek a konec rozsahu jako jeho operandy.
 
-Pojďme začít s pravidly pro indexy. Vezměte v úvahu pole `sequence`. `0` index je stejný jako `sequence[0]`. `^0` index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n`index `^n` stejný jako `sequence[sequence.Length - n]`.
+Pojďme začít s pravidly pro indexy. Zvažte pole `sequence`. `0` index je stejný jako `sequence[0]`. `^0` index je stejný jako `sequence[sequence.Length]`. Všimněte si, že `sequence[^0]` vyvolá výjimku, stejně jako `sequence[sequence.Length]`. V případě libovolného čísla `n`index `^n` stejný jako `sequence[sequence.Length - n]`.
 
 ```csharp
 string[] words = new string[]
@@ -78,9 +78,11 @@ Následující příklad znázorňuje mnoho z důvodů pro tyto volby. Pokud chc
 
 ## <a name="type-support-for-indices-and-ranges"></a>Podpora typů pro indexy a rozsahy
 
-Pokud typ poskytuje [indexer](../programming-guide/indexers/index.md) s parametrem <xref:System.Index> nebo <xref:System.Range>, explicitně podporuje indexy nebo rozsahy v uvedeném pořadí.
+Indexy a rozsahy poskytují nejasnou, stručnou syntaxi pro přístup k jednomu prvku nebo dílčímu rozsahu prvků v sekvenci. Indexový výraz obvykle vrací typ prvků sekvence. Výraz rozsahu obvykle vrací stejný typ sekvence jako zdrojovou sekvenci.
 
-Typ je **vypočítán** , pokud má vlastnost s názvem `Length` nebo `Count` s přístupným mechanismem getter a návratovým typem `int`. Typ Count, který explicitně nepodporuje indexy nebo rozsahy, může pro ně poskytnout implicitní podporu. Další informace naleznete v části Podpora [implicitního indexu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) a [Podpora implicitního rozsahu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) v [poznámce k návrhu funkcí](~/_csharplang/proposals/csharp-8.0/ranges.md).
+Pokud typ poskytuje [indexer](../programming-guide/indexers/index.md) s parametrem <xref:System.Index> nebo <xref:System.Range>, explicitně podporuje indexy nebo rozsahy v uvedeném pořadí. Když typ poskytne indexer, který přebírá jeden <xref:System.Range> parametr, může se zvolit, že se má vrátit jiný typ sekvence, například <xref:System.Span%601?displayProperty=nameWithType>.
+
+Typ je **vypočítán** , pokud má vlastnost s názvem `Length` nebo `Count` s přístupným mechanismem getter a návratovým typem `int`. Typ Count, který explicitně nepodporuje indexy nebo rozsahy, může pro ně poskytnout implicitní podporu. Další informace naleznete v části Podpora [implicitního indexu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) a [Podpora implicitního rozsahu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) v [poznámce k návrhu funkcí](~/_csharplang/proposals/csharp-8.0/ranges.md). Rozsahy, které používají implicitní rozsah, vracejí stejný typ sekvence jako zdrojová sekvence.
 
 Například následující typy rozhraní .NET podporují jak indexy, tak rozsahy: <xref:System.Array>, <xref:System.String>, <xref:System.Span%601>a <xref:System.ReadOnlySpan%601>. <xref:System.Collections.Generic.List%601> podporuje indexy, ale nepodporuje rozsahy.
 

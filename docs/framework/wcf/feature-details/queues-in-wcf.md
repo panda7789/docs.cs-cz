@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-ms.openlocfilehash: e921084ed28cb4e846cb269e57e58a194e9437a5
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: fbe3a546fd431beb5ddf1d71153d38580a19ecc9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837334"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348337"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
 Témata v této části popisují podporu Windows Communication Foundation (WCF) pro fronty. Služba WCF poskytuje podporu pro řazení do fronty tím, že využije služby Řízení front zpráv (dříve označované jako MSMQ) jako přenos a umožňuje následující scénáře:  
@@ -50,7 +50,7 @@ Témata v této části popisují podporu Windows Communication Foundation (WCF)
  Vysvětluje, jak zpracovávat poškozené zprávy (zprávy, které překročily maximální počet pokusů o doručení do přijímající aplikace).  
   
  [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
- Shrnuje rozdíly ve funkci fronty WCF mezi systémy Windows Vista, [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+ Shrnuje rozdíly ve funkci fronty WCF mezi systémy Windows Vista, Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
  [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  Popisuje, jak používat zabezpečení přenosu k zabezpečení zpráv ve frontě.  

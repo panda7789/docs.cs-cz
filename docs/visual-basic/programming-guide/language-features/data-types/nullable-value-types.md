@@ -1,5 +1,5 @@
 ---
-title: Typy hodnot s možnou hodnotou null – Visual Basic
+title: Typy hodnot s povolenou hodnotou Null
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Nullable
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - nullable types [Visual Basic]
 - data types [Visual Basic], nullable
 ms.assetid: 9ac3b602-6f96-4e6d-96f7-cd4e81c468a6
-ms.openlocfilehash: 1fb8f8d1657b8eab6b15858c2a6607cbde82e542
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 0d259e11a969f4eb7e64626a4adf498db06ece06
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732934"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347842"
 ---
 # <a name="nullable-value-types-visual-basic"></a>Typy hodnot s povolenou hodnotou Null (Visual Basic)
 
@@ -66,7 +66,7 @@ Chcete-li načíst hodnotu proměnné typu s možnou hodnotou null, měli byste 
 
 Pokud jsou v logických výrazech použity `Boolean` proměnné s hodnotou null, může být výsledek `True`, `False`nebo `Nothing`. Následuje tabulka pravdy pro `And` a `Or`. Vzhledem k tomu, že `b1` a `b2` nyní mají tři možné hodnoty, existují devět kombinací pro vyhodnocení.
 
-|B1|B2|B1 a B2|B1 nebo B2|
+|b1|b2|B1 a B2|B1 nebo B2|
 |--------|--------|---------------|--------------|
 |`Nothing`|`Nothing`|`Nothing`|`Nothing`|
 |`Nothing`|`True`|`Nothing`|`True`|
@@ -78,7 +78,7 @@ Pokud jsou v logických výrazech použity `Boolean` proměnné s hodnotou null,
 |`False`|`True`|`False`|`True`|
 |`False`|`False`|`False`|`False`|
 
-Pokud je hodnota logické proměnné nebo výrazu `Nothing`, není `true` ani `false`. Vezměte v úvahu následující příklad.
+Pokud je hodnota logické proměnné nebo výrazu `Nothing`, není `true` ani `false`. Zamyslete se nad následujícím příkladem.
 
 [!code-vb[VbVbalrNullableValue#6](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrNullableValue/VB/Class1.vb#6)]
 

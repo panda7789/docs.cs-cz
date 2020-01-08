@@ -4,16 +4,16 @@ description: Pomáhat pro vlastníky projektů, kteří chtějí kompilovat své
 author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 789f50ffb61b80f590a24bc45693df895b3424f7
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
-ms.translationtype: MT
+ms.openlocfilehash: acb73720d231bdb9f27eb0b75b3383c33cef2202
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801937"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343542"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání projektu pro podporu .NET Framework a .NET Core
 
-Přečtěte si, jak vytvořit řešení, které se zkompiluje jak pro .NET Framework, tak i .NET Core souběžně. Prohlédněte si několik možností uspořádání projektů, které vám pomůžou dosáhnout tohoto cíle. Tady jsou některé typické scénáře, které je potřeba vzít v úvahu při rozhodování, jak nastavit rozložení projektu pomocí .NET Core. Seznam nemusí zahrnovat všechno, co potřebujete; nastavte prioritu podle potřeb vašeho projektu.
+Přečtěte si, jak vytvořit řešení, které se zkompiluje jak pro .NET Framework, tak i .NET Core souběžně. Prohlédněte si několik možností uspořádání projektů, které vám pomůžou dosáhnout tohoto cíle. Tady jsou některé typické scénáře, které je potřeba vzít v úvahu při rozhodování o tom, jak nastavit rozložení projektu pomocí .NET Core. Seznam nemusí zahrnovat všechno, co potřebujete; nastavte prioritu podle potřeb vašeho projektu.
 
 - [**Kombinování stávajících projektů a projektů .NET Core do samostatných projektů**](#replace-existing-projects-with-a-multi-targeted-net-core-project)
 
@@ -46,7 +46,7 @@ Následující článek popisuje několik způsobů, jak přidat podporu pro .NE
 
 Znovu uspořádejte úložiště tak, aby všechny existující *\*soubory. csproj* byly odebrány a byl vytvořen jediný soubor *\*. csproj* , který cílí na více platforem. Tato možnost je skvělá, protože jeden projekt je schopný kompilovat pro různá rozhraní. Má také možnost zvládnout různé možnosti kompilace a závislosti na cílové rozhraní.
 
-![Vytvoření hodnoty csproj, která cílí na více platforem](./media/project-structure/multi-targeted-project.png)
+![Vytvoření csproj, který se zaměřuje na více platforem](./media/project-structure/multi-targeted-project.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/)
 

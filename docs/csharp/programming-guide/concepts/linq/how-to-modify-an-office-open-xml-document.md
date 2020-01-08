@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Úprava dokumentu Office Open XML (C#)'
+title: Postup úpravy dokumentu Office Open XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-ms.openlocfilehash: cb80a450de104760f64c84e11829f6609d8ee177
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 620530b14513356dc9bb5d942e8db7691a03880d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253541"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345848"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-c"></a>Postupy: Úprava dokumentu Office Open XML (C#)
+# <a name="how-to-modify-an-office-open-xml-document-c"></a>Postup úpravy dokumentu Office Open XML (C#)
 Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží ho.  
   
  Další informace o Office Open XML najdete v tématu [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) a [www.ericwhite.com](http://ericwhite.com/).  
@@ -17,7 +17,7 @@ Toto téma představuje příklad, který otevře dokument Office Open XML, upra
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá první element odstavce v dokumentu. Načte text z odstavce a pak odstraní veškerý text, který je v odstavci spuštěn. Vytvoří nový běh textu, který se skládá z textu prvního odstavce, který byl převeden na velká písmena. Poté rozbalí změněné XML do otevřeného balíčku XML a zavře ho.  
   
- Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -139,7 +139,7 @@ class Program
 }  
 ```  
   
- Pokud po spuštění `SampleDoc.docx` tohoto programu otevřete aplikaci, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
+ Pokud po spuštění tohoto programu otevřete `SampleDoc.docx`, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
   
  Při spuštění s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XMLC#()](./creating-the-source-office-open-xml-document.md)v tomto příkladu se vytvoří následující výstup:  
   

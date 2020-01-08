@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: 359b10eb-ec05-4cc6-ac96-c2b060afc4de
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1ac2f2a33ce66813c009d475a1f7b2b27937a0c3
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 95d56888085ac7799992638f69ee1227c4c47325
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345536"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemaset"></a>Ověření schématu XML (XSD) s třídou XmlSchemaSet
 Dokumenty XML lze ověřit podle schématu XML schématu definice jazyka (XSD) v <xref:System.Xml.Schema.XmlSchemaSet>.  
@@ -23,7 +23,7 @@ Dokumenty XML lze ověřit podle schématu XML schématu definice jazyka (XSD) v
  Dokumenty XML jsou ověřovány metodou <xref:System.Xml.XmlReader.Create%2A> třídy <xref:System.Xml.XmlReader>. Chcete-li ověřit dokument XML, Sestavte objekt <xref:System.Xml.XmlReaderSettings>, který obsahuje schéma XML Schema Definition Language (XSD), pomocí kterého lze ověřit dokument XML.  
   
 > [!NOTE]
-> Obor názvů <xref:System.Xml.Schema> obsahuje metody rozšíření, které usnadňují ověřování stromu XML proti souboru XSD při použití [LINQ to XMLC#()](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md). Další informace o ověřování dokumentů XML pomocí LINQ to XML naleznete v tématu [How to: Validate using XSD (LINQ to XML) (C#)](../../../csharp/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a [How to: Validate using XSD (LINQ to XML) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md).  
+> Obor názvů <xref:System.Xml.Schema> obsahuje metody rozšíření, které usnadňují ověřování stromu XML proti souboru XSD při použití [LINQ to XMLC#()](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md). Další informace o ověřování dokumentů XML pomocí LINQ to XML naleznete v tématu [Jak ověřit pomocí XSD (LINQ to XML) (C#)](../../../csharp/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a [Postupy: ověřování pomocí XSD (LINQ to XML) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md).
   
  Jednotlivé schéma nebo sadu schémat (jako <xref:System.Xml.Schema.XmlSchemaSet>) lze přidat do <xref:System.Xml.Schema.XmlSchemaSet> předáním jednoho jako parametru <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodě <xref:System.Xml.Schema.XmlSchemaSet>. Všimněte si, že při ověřování dokumentu se cílový obor názvů dokumentu musí shodovat s cílovým oborem názvů schématu v sadě schémat.  
   

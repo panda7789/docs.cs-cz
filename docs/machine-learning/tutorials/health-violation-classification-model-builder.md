@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 07729e1667f8aa3aba74576943d79eaa3bcd14d8
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 90abbc9ffe5765880d18d0d29c8e13bc1330ddc3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552884"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341558"
 ---
 # <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Kurz: klasifikace závažnosti porušení stavu restaurací pomocí Tvůrce modelů
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 > - Příprava a pochopení dat
 > - Zvolte scénář
 > - Načtení dat z databáze
-> - Výuka modelu
+> - Trénování modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
@@ -87,7 +87,7 @@ Tvůrce modelů přijímá data z databáze SQL Server nebo místního souboru v
 1. Ponechte výchozí výběry sloupců, **InspectionType** a **ViolationDescription**, zaškrtněte rozevírací seznam **vstupní sloupce (funkce)** .
 1. Vyberte odkaz **výuka** , který se přesune k dalšímu kroku v Tvůrci modelů.
 
-## <a name="train-the-model"></a>Výuka modelu
+## <a name="train-the-model"></a>Trénování modelu
 
 Úkolem strojového učení, který se používá ke studiu modelu klasifikace problému v tomto kurzu, je klasifikace s více třídami. V průběhu procesu školení modelů vlacích sestaví model modelování samostatné modely pomocí různých algoritmů a nastavení třídy s více třídami, aby bylo možné najít nejlepší model pro datovou sadu.
 
@@ -152,4 +152,4 @@ Další informace o tématech uvedených v tomto kurzu najdete v následujícíc
 
 - [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenarios)
 - [Klasifikace s více třídami](../resources/glossary.md#multiclass-classification)
-- [Metrika modelu klasifikace s více třídami](../resources/metrics.md#metrics-for-multi-class-classification)
+- [Metrika modelu klasifikace s více třídami](../resources/metrics.md#evaluation-metrics-for-multi-class-classification)

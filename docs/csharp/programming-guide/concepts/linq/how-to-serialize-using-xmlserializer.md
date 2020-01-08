@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Serializace pomocí XmlSerializerC#()'
+title: Postup při serializaci pomocí XmlSerializerC#()
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
-ms.openlocfilehash: a3b9976dc4aaf132e8c3c8f03c678724db2b6989
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 0ec19e964471382c6f10f07d6d4bb25f88fd532f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253323"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347400"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a>Postupy: Serializace pomocí XmlSerializerC#()
+# <a name="how-to-serialize-using-xmlserializer-c"></a>Postup při serializaci pomocí XmlSerializerC#()
 Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří počet objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Pak je zaserializace do paměťového proudu a pak je deserializace z paměťového proudu.  
+ Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>. Pak je zaserializace do paměťového proudu a pak je deserializace z paměťového proudu.  
   
 ```csharp  
 using System;  

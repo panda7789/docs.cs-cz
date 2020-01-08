@@ -2,12 +2,12 @@
 title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 9df137fe-335b-46e0-aecf-ea8a9eddd4e3
-ms.openlocfilehash: 15e7666a5fcb5a16628216354c18599f87c7d905
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f0eeda77a721d482ec7a2b8562c0a71f34c5a3ae
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74341519"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348049"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (Visual Basic)
 
@@ -72,9 +72,9 @@ End Class
 
 Tento příklad také ukazuje, jak vrátit proměnnou dotazu z funkce.
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compile-the-code"></a>Kompilace kódu
 
-Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
+Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
 
 ## <a name="see-also"></a>Viz také:
 

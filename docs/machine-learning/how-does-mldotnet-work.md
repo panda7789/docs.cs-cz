@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 5d8093c77799a55f4bc13e82c06c856dbb8d85cd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7d15c49ade4cd32389f7c86440b3a66aec8e4ea8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976741"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345203"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -21,7 +21,7 @@ Central to ML.NET je **model**strojového učení. Model určuje kroky potřebn�
 
 Jakmile máte model, můžete ho přidat do aplikace, aby se předpovědi.
 
-ML.NET běží na Windows, Linux a macOS pomocí .NET Core nebo Windows pomocí .NET Framework. bit 64 se podporuje na všech platformách. ve Windows se podporuje bit 32, s výjimkou funkcí souvisejících s TensorFlow, LightGBM a ONNX.
+ML.NET běží na Windows, Linux a macOS pomocí .NET Core nebo Windows pomocí .NET Framework. bit 64 se podporuje na všech platformách. ve Windows se podporuje bit 32 s výjimkou funkcí TensorFlow, LightGBM a ONNX.
 
 Příklady typů předpovědi, které můžete vytvořit pomocí ML.NET:
 
@@ -30,11 +30,11 @@ Příklady typů předpovědi, které můžete vytvořit pomocí ML.NET:
 |Klasifikace/kategorizace|Automatické rozdělení zpětné vazby od zákazníků do pozitivních a záporných kategorií|
 |Regrese/předpověď souvislých hodnot|Předpověď ceny na pracoviště na základě velikosti a umístění|
 |Detekce anomálií|Rozpoznat podvodné bankovní transakce |
-|Doporučit|Návrhy produktů, které online nakupující může chtít koupit, na základě jejich předchozích nákupů|
+|Doporučení|Návrhy produktů, které online nakupující může chtít koupit, na základě jejich předchozích nákupů|
 |Časová řada/sekvenční data|Předpověď počasí nebo prodeje produktů|
-|Klasifikace obrázku|Kategorizace pathologies v lékařských imagích|
+|Klasifikace obrázků|Kategorizace pathologies v lékařských imagích|
 
-## <a name="hello-mlnet-world"></a>Hello World ML.NET World
+## <a name="hello-mlnet-world"></a>Hello ML.NET World
 
 Kód v následujícím fragmentu kódu demonstruje nejjednodušší aplikaci ML.NET. V tomto příkladu se vytvoří model lineární regrese, který bude předpovídat ceny za domácnosti pomocí velikosti domu a dat o cenách. 
 
@@ -176,14 +176,14 @@ Aplikace ML.NET začíná objektem <xref:Microsoft.ML.MLContext>. Tento objekt t
 |-|-|-|-|
 |Načítání a ukládání dat||<xref:Microsoft.ML.DataOperationsCatalog>||
 |Příprava dat||<xref:Microsoft.ML.TransformsCatalog>||
-|Školicí algoritmy|binární klasifikace|<xref:Microsoft.ML.BinaryClassificationCatalog>||
-||klasifikace s více třídami|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
+|Školicí algoritmy|Binární klasifikace|<xref:Microsoft.ML.BinaryClassificationCatalog>||
+||Klasifikace s více třídami|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
 ||Detekce anomálií|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
 ||Clustering|<xref:Microsoft.ML.ClusteringCatalog>||
 ||Prognózování|<xref:Microsoft.ML.ForecastingCatalog>||
-||Pořadí|<xref:Microsoft.ML.RankingCatalog>||
-||Nevýhody|<xref:Microsoft.ML.RegressionCatalog>||
-||Základě|<xref:Microsoft.ML.RecommendationCatalog>|Přidat `Microsoft.ML.Recommender` balíček NuGet|
+||Nejlepší hodnocení|<xref:Microsoft.ML.RankingCatalog>||
+||Regrese|<xref:Microsoft.ML.RegressionCatalog>||
+||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat `Microsoft.ML.Recommender` balíček NuGet|
 ||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat `Microsoft.ML.TimeSeries` balíček NuGet|
 |Využití modelu ||<xref:Microsoft.ML.ModelOperationsCatalog>||
 
@@ -204,7 +204,7 @@ Ve fragmentu kódu `Concatenate` a `Sdca` obě metody v katalogu. Každý z nich
 
 V tomto okamžiku jsou objekty vytvořeny pouze. Nedošlo k žádnému spuštění.
 
-### <a name="train-the-model"></a>Výuka modelu
+### <a name="train-the-model"></a>Trénování modelu
 
 Jakmile se objekty v kanálu vytvoří, dají se data využít ke školení modelu.
 
@@ -242,7 +242,7 @@ Každá transformace v kanálu má vstupní schéma (názvy dat, typy a velikost
 
 Pokud výstupní schéma z jedné transformace v kanálu neodpovídá vstupnímu schématu další transformace, ML.NET vyvolá výjimku.
 
-Objekt zobrazení dat obsahuje sloupce a řádky. Každý sloupec má název a typ a délku. Například: vstupní sloupce v příkladu ceny na pracovišti mají **Velikost** a **cenu**. Jsou oba typy a jsou skalární množství namísto vektorů.
+Objekt zobrazení dat obsahuje sloupce a řádky. Každý sloupec má název a typ a délku. Například vstupní sloupce v ceně za domu jsou **Velikost** a **Cena**. Jsou oba typy a jsou skalární množství namísto vektorů.
 
    ![Příklad zobrazení dat ML.NET s daty předpovědi ceny domu](./media/ml-net-dataview.png)
 

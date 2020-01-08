@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: fec23439236fccb23964c0feb22691a973c787b1
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 62b218a7259d824930a2eb2c7f810b480034e2b6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838088"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338020"
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou protokolovat události zabezpečení (buď úspěšné, neúspěšné nebo oboje) pomocí funkce auditování. Události se zapisují do protokolu událostí systému Windows a dají se prozkoumat pomocí Prohlížeč událostí.  
@@ -73,7 +73,7 @@ Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou prot
 </configuration>  
 ```  
   
- Pokud je povolené auditování a `auditLogLocation` nezadáte, použije se výchozí název protokolu "Security" (zabezpečení) pro platformu, která podporuje zápis do protokolu zabezpečení. v opačném případě se jedná o protokol "aplikace". Pouze operační systémy [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a Windows Vista podporují zápis do protokolu zabezpečení. Další informace najdete v části operační systém dále v tomto tématu.  
+ Pokud je povolené auditování a `auditLogLocation` nezadáte, použije se výchozí název protokolu "Security" (zabezpečení) pro platformu, která podporuje zápis do protokolu zabezpečení. v opačném případě se jedná o protokol "aplikace". Pouze operační systémy Windows Server 2003 a Windows Vista podporují zápis do protokolu zabezpečení. Další informace najdete v části operační systém dále v tomto tématu.  
   
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení  
  Pokud uživatel se zlými úmysly ví, že je povolené auditování, může útočník odeslat neplatné zprávy, které způsobí zápis položek auditu. Pokud se tento způsob vyplní protokolem auditu, systém auditování se nezdařil. Pokud to chcete zmírnit, nastavte vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> na `true` a použijte vlastnosti Prohlížeč událostí k řízení chování auditování. Další informace najdete v článku podpora Microsoftu o zobrazení a správě protokolů událostí pomocí Prohlížeč událostí v systému Windows XP, který je k dispozici na stránce [jak zobrazit a spravovat protokoly událostí v Prohlížeč událostí systému Windows XP](https://go.microsoft.com/fwlink/?LinkId=89150).  
@@ -88,7 +88,7 @@ Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou prot
 |Systém|Protokol aplikace|Protokol zabezpečení|  
 |------------|---------------------|------------------|  
 |[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] nebo novější|Podporované|Není podporováno|  
-|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)] a Windows Vista|Podporované|Kontext vlákna musí mít `SeAuditPrivilege`|  
+|Windows Server 2003 SP1 a Windows Vista|Podporované|Kontext vlákna musí mít `SeAuditPrivilege`|  
   
 #### <a name="other-factors"></a>Jiné faktory  
  Kromě operačního systému jsou v následující tabulce popsána další nastavení, která řídí povolení protokolování.  

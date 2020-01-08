@@ -1,27 +1,27 @@
 ---
-title: Přehled služeb pracovních postupů – WCF
+title: Přehled služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
-ms.openlocfilehash: 757a55363a8cb92fc547750183d1261f51f8f682
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: cb013dd419d09af61eaff290709164427b1b655f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639241"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347865"
 ---
 # <a name="workflow-services-overview"></a>Přehled služeb pracovních postupů
 
-Služby pracovních postupů jsou službám WCF, které jsou implementovány pomocí pracovních postupů. Služby pracovních postupů jsou pracovní postupy, které používají zasílání zpráv aktivity pro odesílání a příjem zpráv Windows Communication Foundation (WCF). Rozhraní .NET framework 4.5 představuje počet zasílání zpráv aktivity, které umožňují odesílání a příjem zpráv z v rámci pracovního postupu. Další informace o zasílání zpráv aktivity a jak můžete použít k implementaci jiná zpráva exchange vzorů najdete v tématu [zasílání zpráv aktivity](messaging-activities.md).
+Služby pracovních postupů jsou služby založené na WCF, které jsou implementované pomocí pracovních postupů. Služby pracovních postupů jsou pracovní postupy, které používají aktivity zasílání zpráv k posílání a přijímání zpráv Windows Communication Foundation (WCF). .NET Framework 4,5 zavádí řadu aktivit zasílání zpráv, které umožňují odesílat a přijímat zprávy v rámci pracovního postupu. Další informace o aktivitách zasílání zpráv a o tom, jak je lze použít k implementaci různých vzorců výměny zpráv, najdete v tématu [aktivity zasílání zpráv](messaging-activities.md).
 
-## <a name="benefits-of-using-workflow-services"></a>Výhody používání služby pracovního postupu
+## <a name="benefits-of-using-workflow-services"></a>Výhody používání služeb pracovních postupů
 
-Jak se stále stanou distribuované aplikace, jednotlivé služby převzít odpovědnost za volání jiné služby, přesměrovat na určitou část práce. Implementace těchto volání jako asynchronní operace zavádí některé složitost do kódu. Zpracování chyb přidá další složitosti ve formě zpracování výjimek a poskytuje podrobné informace o sledování. Některé služby jsou často trvají dlouho a může trvat až cenné systémové prostředky při čekání na vstup. Kvůli těmto problémům distribuované aplikace jsou často velmi složité a těžko napsat a udržovat. Pracovní postupy jsou přirozený způsob, jak vyjádřit koordinaci asynchronní práci, zejména volání externích služeb. Pracovní postupy platí také v představující dlouhotrvající obchodních procesů. Je tato kvality, kterým je pracovní postup skvělý prostředek k vytváření služeb v distribuovaném prostředí.
+Vzhledem k rostoucímu množství aplikací se jednotlivé služby stanou zodpovědností za volání dalších služeb, které přestanou práci na některých úlohách. Implementace těchto volání jako asynchronních operací zavádí určitou složitost kódu. Zpracování chyb přidává další složitost ve formě zpracování výjimek a poskytování podrobných informací o sledování. Některé služby jsou často dlouho spuštěné a při čekání na vstup můžou zabírat cenné systémové prostředky. Z důvodu těchto problémů jsou distribuované aplikace často velmi složité a obtížné je zapisovat a udržovat. Pracovní postupy představují přirozený způsob, jak vyjádřit koordinaci asynchronních prací, zejména volání na externí služby. Pracovní postupy jsou také efektivní v zastoupení dlouhodobě spuštěných obchodních procesů. Jsou to tyto kvality, díky kterým je pracovní postup skvělým prostředkem pro vytváření služeb v distribuovaném prostředí.
 
-## <a name="implementing-a-workflow-service"></a>Implementace služby pracovních postupů
+## <a name="implementing-a-workflow-service"></a>Implementace služby pracovního postupu
 
-Při implementaci služby WCF, můžete definovat několik smluv, které popisují služby a data, která odesílá a přijímá. Data je vyjádřena jako data kontraktů a kontraktů zpráv. Služby WCF a pracovního postupu pomocí definice kontraktu dat kontrakt a zprávy jako součást služby popisy. Samotné služby zveřejňuje metadata (ve formě WSDL) pro popis operace služby. Ve službě WCF definování kontraktů služby a operace kontraktů služby a operace, které podporuje. Ve službě pracovního postupu, ale těchto smluv jsou součástí samotný proces firmy. Pomocí procesu nazývaného smlouvy odvození jsou vystaveny v metadatech. Když je hostované služby pracovních postupů, pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>, definice pracovního postupu je zkontrolován a kontrakt je generován a základě sadu zasílání zpráv aktivity v pracovním postupu nalezen. Zejména následující aktivity a vlastnosti slouží ke generování kontraktu:
+Při implementaci služby WCF definujete počet kontraktů, které popisují službu a data, která odesílá a přijímá. Data jsou reprezentována jako kontrakty dat a kontrakty zpráv. WCF i služba pracovních postupů používají jako součást popisů služeb kontrakt dat a definice kontraktů zpráv. Služba sama zveřejňuje metadata (ve formě WSDL) k popisu operací služby. V rámci WCF, kontrakty služeb a kontrakty operací definují službu a operace, které podporuje. Ve službě pracovních postupů se ale tyto smlouvy nacházejí v rámci samotného obchodního procesu. Jsou zpřístupněny v metadatech pomocí procesu nazývaného odvození kontraktu. Když je služba pracovního postupu hostovaná pomocí <xref:System.ServiceModel.Activities.WorkflowServiceHost>, prověří se definice pracovního postupu a vygeneruje se kontrakt na základě sady aktivit zasílání zpráv, které se v pracovním postupu nacházejí. K vygenerování kontraktu se používají zejména následující aktivity a vlastnosti:
 
-<xref:System.ServiceModel.Activities.Receive> Aktivita
+Aktivita <xref:System.ServiceModel.Activities.Receive>
 
 - <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>
 
@@ -29,36 +29,36 @@ Při implementaci služby WCF, můžete definovat několik smluv, které popisuj
 
 - <xref:System.ServiceModel.Activities.Receive.Action%2A>
 
-<xref:System.ServiceModel.Activities.SendReply> Aktivita
+Aktivita <xref:System.ServiceModel.Activities.SendReply>
 
 - <xref:System.ServiceModel.Activities.SendReply.Action%2A>
 
-<xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivita
+Aktivita <xref:System.ServiceModel.Activities.TransactedReceiveScope>
 
-Konečný výsledek odvození smlouvy je popis služby pomocí stejné datové struktury jako služby WCF a kontrakty operace. Potom tyto informace slouží k vystavení WSDL pro službu pracovního postupu.
+Konečný výsledek odvození smlouvy je popis služby, která používá stejné datové struktury jako služby WCF a kontrakty operací. Tyto informace se pak použijí k vystavení WSDL pro službu pracovního postupu.
 
 > [!NOTE]
-> [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] neumožňuje zápis služeb pracovních postupů pomocí existující definici kontraktu bez podpory některé další nástroje. Kontrakty služeb pracovního postupu jsou vytvořené v procesu odvození smlouvy, jak jsme vysvětlili výše. Kontrakty zpráv a kontrakty dat jsou plně podporovány, ale.
+> [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] neumožňuje psát služby pracovních postupů pomocí existující definice smlouvy bez nutnosti další podpory nástrojů. Kontrakty služby pracovního postupu se vytvářejí procesem odvození kontraktu, který je popsaný výše. Kontrakty zpráv a kontrakty dat se ale plně podporují.
 
-## <a name="workflow-services-and-msmq-based-bindings"></a>Služby pracovních postupů a na základě služby MSMQ vazby
+## <a name="workflow-services-and-msmq-based-bindings"></a>Služby pracovních postupů a vazby založené na službě MSMQ
 
-WCF definuje dvě vazby služby MSMQ podle <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>.  Na základě služby MSMQ vazby se často používají služby pracovního postupu z důvodu dlouhého povahu těchto služeb. Mít vazby služby MSMQ založené `ValidityDuration` vlastnost, která určuje, jak dlouho může převzít služby MSMQ zprávy platný. Vzhledem k povaze dlouhodobě spuštěných služeb pracovních postupů je možné, že doba platnosti služby MSMQ zprávy může uplynout, než ji může zpracovat služby pracovního postupu. Proto je velmi důležité nastavit doba platnosti vazby služby MSMQ na odpovídající hodnotu. Tato hodnota musí být vybrána na základě pracovního postupu a jak zpracovávat zprávy. Například pokud máte pracovní postup s <xref:System.ServiceModel.Activities.Receive> aktivity, za nímž následuje vlastní aktivitu, která přebírá 10 minut, za nímž následuje jiný <xref:System.ServiceModel.Activities.Receive> aktivity, správné hodnoty pro `ValidityDuration` by být delší než 10 minut.
+WCF definuje dvě vazby založené na službě MSMQ <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>.  Vazby založené na službě MSMQ se často používají se službami pracovních postupů kvůli dlouhodobé povaze takových služeb. Vazby založené na službě MSMQ mají vlastnost `ValidityDuration`, která určuje, jak dlouho mohou být zprávy služby MSMQ považovány za platné. Z důvodu dlouhodobého chodu služeb pracovních postupů je možné, že doba platnosti zprávy služby MSMQ může uplynout před tím, než ji služba pracovního postupu zpracuje. Je proto velmi důležité nastavit dobu platnosti vazby služby MSMQ na odpovídající hodnotu. Tato hodnota musí být zvolena na základě pracovního postupu a způsobu, jakým zpracovává zprávy. Pokud máte například pracovní postup s aktivitou <xref:System.ServiceModel.Activities.Receive> následovaný vlastní aktivitou, která trvá 10 minut, a za ní následuje jiná aktivita <xref:System.ServiceModel.Activities.Receive>, správná hodnota `ValidityDuration` by byla větší než 10 minut.
 
 ## <a name="hosting-a-workflow-service"></a>Hostování služby pracovního postupu
 
-Stejně jako služby WCF musí být hostovaný služeb pracovních postupů. Použití služby WCF <xref:System.ServiceModel.ServiceHost> třídy a hostování služeb pracovních postupů služby použijte <xref:System.ServiceModel.Activities.WorkflowServiceHost> pro hostování služeb. Stejně jako služby WCF je možné hostovat služby pracovního postupu mnoha různými způsoby, třeba:
+Podobně jako služby WCF musí být služby pracovních postupů hostované. Služby WCF používají třídu <xref:System.ServiceModel.ServiceHost> k hostování služeb a služeb pracovních postupů, které používají <xref:System.ServiceModel.Activities.WorkflowServiceHost> k hostování služeb. Podobně jako služby WCF je možné služby pracovních postupů hostovat různými způsoby, například:
 
-- Ve spravované aplikaci rozhraní .NET Framework.
+- Ve spravované aplikaci .NET Framework.
 
-- V Internetové informační službě (IIS).
+- V Internetová informační služba (IIS).
 
-- V aktivační službě procesů Windows (WAS).
+- V aktivační službě procesů systému Windows (WAS).
 
-- Ve spravované službě Windows.
+- Ve spravované službě systému Windows.
 
-Pracovní postup služby hostované ve spravované aplikaci rozhraní .NET Framework nebo spravované služby Windows vytvořit instanci <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy a předat ji instance <xref:System.ServiceModel.Activities.WorkflowService> , který obsahuje definici pracovního postupu v rámci <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> vlastnost. Definice pracovního postupu, který obsahuje zasílání zpráv aktivity je vystavený jako služba pracovního postupu.
+Služby pracovních postupů hostované ve spravované aplikaci .NET Framework nebo spravované službě systému Windows vytvoří instanci třídy <xref:System.ServiceModel.Activities.WorkflowServiceHost> a předejte jí instanci <xref:System.ServiceModel.Activities.WorkflowService>, která obsahuje definici pracovního postupu v rámci vlastnosti <xref:System.ServiceModel.Activities.WorkflowService.Body%2A>. Definice pracovního postupu, která obsahuje aktivity zasílání zpráv, se zveřejňuje jako služba pracovního postupu.
 
-K hostování služby pracovního postupu v IIS nebo WAS, umístěte .xamlx souboru, který obsahuje definici služby pracovního postupu do virtuálního adresáře. Výchozí koncový bod (pomocí <xref:System.ServiceModel.BasicHttpBinding>) je automaticky vytvořen pro další informace, najdete v článku [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md). Můžete také umístit soubor Web.config ve virtuálním adresáři zadat vlastní koncové body. Pokud je vaše definice pracovního postupu v sestavení můžete umístit soubor .svc ve virtuálním adresáři a pracovní postup sestavení v adresáři App_Code. Souboru SVC musíte zadat objekt pro vytváření hostitele služby a třídy, která implementuje služba pracovního postupu. Následující příklad ukazuje, jak zadat objekt pro vytváření hostitele služby a určit třídu, která implementuje služba pracovního postupu.
+Chcete-li hostovat službu pracovního postupu ve službě IIS nebo WAS, umístěte soubor. xamlx, který obsahuje definici služby pracovního postupu, do virtuálního adresáře. Výchozí koncový bod (pomocí <xref:System.ServiceModel.BasicHttpBinding>) se vytvoří automaticky a další informace najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md). Můžete také umístit soubor Web. config do virtuálního adresáře a zadat tak vlastní koncové body. Pokud je vaše definice pracovního postupu v sestavení, můžete umístit soubor. svc do virtuálního adresáře a sestavení pracovního postupu v adresáři App_Code. Soubor. svc musí určovat objekt pro vytváření hostitele služby a třídu, která implementuje službu pracovního postupu. Následující příklad ukazuje, jak zadat objekt pro vytváření hostitele služby a zadat třídu, která implementuje službu pracovního postupu.
 
 ```
 <%@ServiceHost Factory=" System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory

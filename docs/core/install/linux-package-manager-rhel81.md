@@ -4,21 +4,18 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 12/03/2019
-ms.openlocfilehash: 3ef639d5b76e81856ec8370d10e098c455ca8b3d
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
-ms.translationtype: MT
+ms.openlocfilehash: 8674b5d9d0f0ee384ca6798a7ea699bad67c5e5e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74836925"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341195"
 ---
 # <a name="rhel-81-package-manager---install-net-core"></a>Správce balíčků RHEL 8,1 – instalace .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
 Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na RHEL 8,1. .NET Core 3,1 není ještě k dispozici pro RHEL 8,1.
-
-> [!NOTE]
-> RHEL 8,0 nezahrnuje .NET Core 3,0. K aktualizaci na RHEL 8,1 použijte příkaz `yum upgrade`.
 
 > [!NOTE]
 > RHEL 8,0 nezahrnuje .NET Core 3,0. K aktualizaci na RHEL 8,1 použijte příkaz `yum upgrade`.

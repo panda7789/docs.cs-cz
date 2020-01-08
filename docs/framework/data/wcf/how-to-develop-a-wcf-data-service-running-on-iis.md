@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: 684361dbb97e70296a3061f71102662023f88d9a
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 5c75425783d3468ac42ef7cb32cd9c93e812192a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800510"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338340"
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: vývoj datové služby WCF běžící v rámci služby IIS
 
@@ -132,7 +132,7 @@ Po vytvoření služby je nutné výslovně poskytnout přístup k prostředkům
 
 5. Pomocí jednoho z následujících kroků připojte datový model k databázi a potom klikněte na tlačítko **Další**:
 
-    - Pokud již nemáte nakonfigurované připojení k databázi, klikněte na tlačítko **nové připojení** a vytvořte nové připojení. Další informace naleznete v tématu [How to: Create Connections to SQL Server databases](https://go.microsoft.com/fwlink/?LinkId=123631). Tato instance SQL Server musí mít připojenou ukázkovou databázi Northwind.
+    - Pokud již nemáte nakonfigurované připojení k databázi, klikněte na tlačítko **nové připojení** a vytvořte nové připojení. Další informace naleznete v tématu [How to: Create Connections to SQL Server databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)). Tato instance SQL Server musí mít připojenou ukázkovou databázi Northwind.
 
          \- nebo –
 

@@ -1,19 +1,19 @@
 ---
-title: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
+title: Začínáme s .NET Core pomocí sady Visual Studio pro Mac
 description: Toto téma vás provede vytvořením jednoduché konzolové aplikace pomocí Visual Studio pro Mac a .NET Core.
 author: mairaw
-ms.date: 07/11/2019
+ms.date: 12/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: feaed88e902080c5c3b07578b78f8437489a690c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: f6faf5519109202a2865b0f316251bd2c85a5606
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428581"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342964"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
-Visual Studio pro Mac poskytuje integrované vývojové prostředí (IDE) pro vývoj aplikací .NET Core. Toto téma vás provede vytvořením jednoduché konzolové aplikace pomocí Visual Studio pro Mac a .NET Core.
+Visual Studio pro Mac poskytuje integrované vývojové prostředí (IDE) pro vývoj aplikací .NET Core. Tento článek vás provede vytvořením jednoduché konzolové aplikace pomocí Visual Studio pro Mac a .NET Core.
 
 > [!NOTE]
 > Vaše zpětná vazba je vysoce ohodnocená. Existují dva způsoby, jak můžete poskytnout týmu vývoje zpětnou vazbu v Visual Studio pro Mac:
@@ -23,7 +23,7 @@ Visual Studio pro Mac poskytuje integrované vývojové prostředí (IDE) pro v�
 
 ## <a name="prerequisites"></a>Požadavky
 
-Viz téma [závislosti a požadavky rozhraní .NET Core](../install/dependencies.md?tabs=netcore30&pivots=os-macos) .
+Viz článek [.NET Core závislosti a požadavky](../install/dependencies.md?pivots=os-macos) .
 
 Podívejte se na článek o [podpoře .NET Core](/visualstudio/mac/net-core-support) , abyste měli jistotu, že používáte podporovanou verzi .NET Core.
 

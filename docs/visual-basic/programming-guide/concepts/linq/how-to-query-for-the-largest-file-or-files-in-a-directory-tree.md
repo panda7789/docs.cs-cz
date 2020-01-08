@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření dotazu na největší soubor či soubory v adresářovém stromu (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
-ms.openlocfilehash: 4f7dcb46670612695b5a7219b12a7f2e83746af2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 34f2cd97cafbe142c9462e8d0cf7c17f9f0d16f9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347670"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346073"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: vytvoření dotazu na největší soubor nebo soubory ve stromu adresářů (LINQ) (Visual Basic)
 Tento příklad ukazuje pět dotazů týkajících se velikosti souboru v bajtech:  
@@ -115,10 +115,10 @@ End Module
   
  Chcete-li vrátit jeden nebo více úplných objektů <xref:System.IO.FileInfo>, musí dotaz nejprve projít každý zdroj dat a pak je seřadit podle hodnoty vlastnosti length. Pak může vrátit jednu z nich nebo sekvenci s největší délkou. Použijte <xref:System.Linq.Enumerable.First%2A> k vrácení prvního prvku v seznamu. Použijte <xref:System.Linq.Enumerable.Take%2A> k vrácení prvního n počtu prvků. Určete sestupné řazení, aby bylo možné umístit nejmenší prvky na začátek seznamu.  
   
- Dotaz volá samostatnou metodu, která získá velikost souboru v bajtech, aby využívala možnou výjimku, která se vyvolá v případě, že se soubor v časovém období odstranil v jiném vlákně, protože byl ve volání `GetFiles`vytvořený objekt <xref:System.IO.FileInfo>. I přes objekt <xref:System.IO.FileInfo> již byl vytvořen, výjimka může být způsobena tím, že se objekt <xref:System.IO.FileInfo> pokusí aktualizovat jeho vlastnost <xref:System.IO.FileInfo.Length%2A> pomocí nejaktuálnější velikosti v bajtech, při které je vlastnost poprvé k dispozici. Vložením této operace do bloku try-catch mimo dotaz se řídí pravidlo vyloučení operací v dotazech, které můžou způsobit vedlejší účinky. Obecně je potřeba věnovat velkou péči při využívání výjimek, aby se zajistilo, že aplikace zůstane v neznámém stavu.  
+ Dotaz, volá do samostatné metodě získat velikost souboru v bajtech, aby bylo možné využívat možné výjimku, která bude vyvolána v případě, kdy byl odstraněn soubor v jiném vlákně v období od <xref:System.IO.FileInfo> objekt byl vytvořen při volání funkce `GetFiles`. I přes objekt <xref:System.IO.FileInfo> již byl vytvořen, výjimka může být způsobena tím, že se objekt <xref:System.IO.FileInfo> pokusí aktualizovat jeho vlastnost <xref:System.IO.FileInfo.Length%2A> pomocí nejaktuálnější velikosti v bajtech, při které je vlastnost poprvé k dispozici. Vložením této operace do bloku try-catch mimo dotaz se řídí pravidlo vyloučení operací v dotazech, které můžou způsobit vedlejší účinky. Obecně je potřeba věnovat velkou péči při využívání výjimek, aby se zajistilo, že aplikace zůstane v neznámém stavu.  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
+## <a name="compile-the-code"></a>Kompilace kódu  
+Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
   
 ## <a name="see-also"></a>Viz také:
 

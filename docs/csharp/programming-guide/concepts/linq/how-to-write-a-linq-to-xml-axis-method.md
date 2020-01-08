@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Zápis metody osy LINQ to XML (C#)'
+title: Zápis metody LINQ to XML osy (C#)
 ms.date: 07/20/2015
 ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
-ms.openlocfilehash: 74105ff9d08479a4fc702b02e6929130272b237b
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: fc602f91dc6da16c4a019bb42ff178ae3de4ea03
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253225"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348357"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Postupy: Zápis metody osy LINQ to XML (C#)
+# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Zápis metody LINQ to XML osy (C#)
 Můžete napsat vlastní metody osy pro načtení kolekcí ze stromu XML. Jedním z nejlepších způsobů, jak to provést, je napsat metodu rozšíření, která vrátí kolekci prvků nebo atributů. Můžete napsat metodu rozšíření, která vrátí konkrétní podmnožinu prvků nebo atributů na základě požadavků vaší aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá dvě metody rozšíření. První rozšiřující metoda, `GetXPath`, pracuje na <xref:System.Xml.Linq.XObject>a vrací výraz XPath, který při vyhodnocování vrátí uzel nebo atribut. Druhá rozšiřující metoda, `Find`, pracuje na. <xref:System.Xml.Linq.XElement> Vrátí kolekci <xref:System.Xml.Linq.XAttribute> objektů a <xref:System.Xml.Linq.XElement> objektů, které obsahují nějaký zadaný text.  
+ Následující příklad používá dvě metody rozšíření. První rozšiřující metoda, `GetXPath`pracuje na <xref:System.Xml.Linq.XObject>a vrátí výraz XPath, který při vyhodnocování vrátí uzel nebo atribut. Druhá rozšiřující metoda, `Find`pracuje na <xref:System.Xml.Linq.XElement>. Vrátí kolekci objektů <xref:System.Xml.Linq.XAttribute> a <xref:System.Xml.Linq.XElement> objektů, které obsahují nějaký zadaný text.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 public static class MyExtensions  
@@ -278,7 +278,7 @@ class Program
 }  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```output  
 /PurchaseOrders/PurchaseOrder[1]/@OrderDate  

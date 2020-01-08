@@ -4,12 +4,12 @@ description: Další informace o základních typech (čísel, řetězců a obje
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: e1cb5b103459ff691bf6ed8f8ebc1fa3fd8487c3
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 7b6dec16b3fd84ced856a9f0e42f38189b1e03fd
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552319"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75339282"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnné a hodnoty
 
@@ -58,7 +58,7 @@ C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádřen�
   
 ## <a name="custom-types"></a>Vlastní typy
 
-Použijete konstrukce [struct](language-reference/keywords/class.md), [Class](language-reference/keywords/class.md), [Interface](language-reference/keywords/interface.md)a [Enum](language-reference/keywords/enum.md) k vytvoření vlastních typů. Knihovna tříd .NET Framework sám o sobě kolekce vlastních typů poskytovaných Microsoftem, které můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou nejčastěji používané typy v knihovně tříd k dispozici v jakémkoli C# programu. Ostatní budou k dispozici pouze v případě, že explicitně přidáte odkaz na projekt do sestavení, ve kterém jsou definovány. Poté, co má kompilátor odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v tomto sestavení ve zdrojovém kódu.
+Použijete konstrukce [struct](language-reference/keywords/class.md), [Class](language-reference/keywords/class.md), [Interface](language-reference/keywords/interface.md)a [Enum](language-reference/builtin-types/enum.md) k vytvoření vlastních typů. Knihovna tříd .NET Framework sám o sobě kolekce vlastních typů poskytovaných Microsoftem, které můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou nejčastěji používané typy v knihovně tříd k dispozici v jakémkoli C# programu. Ostatní budou k dispozici pouze v případě, že explicitně přidáte odkaz na projekt do sestavení, ve kterém jsou definovány. Poté, co má kompilátor odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v tomto sestavení ve zdrojovém kódu.
   
 ## <a name="generic-types"></a>Obecné typy
 
@@ -66,7 +66,7 @@ Typ lze deklarovat s jedním nebo více *parametry typu* , které slouží jako 
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
-Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](language-reference/builtin-types/reference-types.md#the-object-type). Třídy obecné kolekce se nazývají *kolekce se silnými typy* , protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `strings` v části předchozí příklad. Další informace najdete v tématu [Obecné typy](programming-guide/generics/index.md).
+Použití parametru typu umožňuje znovu použít stejnou třídu pro uchování libovolného typu elementu, aniž by bylo nutné převést každý prvek na [Object](language-reference/builtin-types/reference-types.md#the-object-type). Třídy obecné kolekce se nazývají *kolekce se silnými* typy, protože kompilátor zná konkrétní typ prvků kolekce a může vyvolat chybu v době kompilace, pokud se například pokusíte přidat celé číslo do objektu `strings` v předchozím příkladu. Další informace najdete v tématu [Obecné typy](programming-guide/generics/index.md).
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>Implicitní typy, anonymní typy a typy řazené kolekce členů
 
@@ -80,7 +80,7 @@ Je běžné, že chcete vrátit více než jednu hodnotu z metody. Lze vytvořit
 
 Je důležité porozumět dvěma základním bodům o typu systému v .NET Framework:  
   
-- Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je napříkladC# <xref:System.Int32> (klíčové slovo:`int`), jsou odvozeny z jednoho základního typu, kterýC# je<xref:System.Object>(klíčové slovo:`object`). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../standard/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](programming-guide/classes-and-structs/inheritance.md).  
+- Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je napříkladC# <xref:System.Int32> (klíčové slovo: `int`), jsou odvozeny z jednoho základního typu, kterýC# je <xref:System.Object> (klíčové slovo: `object`). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../standard/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](programming-guide/classes-and-structs/inheritance.md).  
   
 - Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET Framework a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](language-reference/keywords/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou **struktury**. Další informace o typech hodnot naleznete v tématu [struktury](structs.md). Typy, které definujete pomocí klíčového slova [Class](language-reference/keywords/class.md) , jsou odkazové typy. Další informace o typech odkazů naleznete v tématu [třídy](programming-guide/classes-and-structs/classes.md). Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
 

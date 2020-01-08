@@ -14,12 +14,12 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-ms.openlocfilehash: 9957c38ad625a27395a3bcc3ddd9ce0b4797b93d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 16daa0ef3133b6cd04dc48b7f79fd365098e4bdf
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127606"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348075"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v .NET
 
@@ -48,7 +48,7 @@ Kromě data a času může řetězcová reprezentace data a času zahrnovat posu
   
 Zprostředkovatel formátu slouží také k interpretaci nejednoznačného číselného data. Není jasné, které součásti data reprezentované řetězcem "02/03/04" jsou měsíc, den a rok. Komponenty jsou interpretovány podle pořadí podobných formátů data ve zprostředkovateli formátu.
 
-## <a name="parse"></a>Analýza
+## <a name="parse"></a>Analyzovat
 
 Následující příklad ukazuje použití metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> k převedení `string` na <xref:System.DateTime>. V tomto příkladu se používá jazyková verze přidružená k aktuálnímu vláknu. Pokud <xref:System.Globalization.CultureInfo> přidružená k aktuální jazykové verzi nemůže analyzovat vstupní řetězec, je vyvolána <xref:System.FormatException>.
 
@@ -56,7 +56,7 @@ Následující příklad ukazuje použití metody <xref:System.DateTime.Parse%2A
 > Všechny C# ukázky v tomto článku se spouštějí v prohlížeči. Kliknutím na tlačítko **Spustit** zobrazíte výstup. Můžete je také upravit a experimentovat.
 
 > [!NOTE]
-> Tyto příklady jsou k dispozici v úložišti Docs na GitHubu pro i [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) [VB](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Můžete si také stáhnout projekt jako podřízený ZipFile pro [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) nebo [VB](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
+> Tyto příklady jsou k dispozici v úložišti Docs na GitHubu pro i [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) [Visual Basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Nebo můžete stáhnout projekt jako soubor zip pro [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) nebo [Visual Basic](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
 
 [!code-csharp-interactive[Parsing.DateAndTime#1](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#1)]
 [!code-vb[Parsing.DateAndTime#1](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#1)]

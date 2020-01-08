@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Seskupit soubory podle přípony (LINQ) (C#)'
+title: Postup seskupení souborů podle přípony (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 21a98320-a5a1-4981-82d8-6a637e7d9018
-ms.openlocfilehash: aa3e428a4655bfcc0707e111da3ca6206a2b9596
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: d12b40c7dba7bd3e10f30ddfd394b25c36794428
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593255"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345903"
 ---
-# <a name="how-to-group-files-by-extension-linq-c"></a>Postupy: Seskupit soubory podle přípony (LINQ) (C#)
-Tento příklad ukazuje, jak lze LINQ použít k provádění pokročilých operací seskupení a řazení v seznamech souborů nebo složek. Ukazuje také výstup stránky v okně konzoly pomocí <xref:System.Linq.Enumerable.Skip%2A> metod a. <xref:System.Linq.Enumerable.Take%2A>  
+# <a name="how-to-group-files-by-extension-linq-c"></a>Postup seskupení souborů podle přípony (LINQ) (C#)
+Tento příklad ukazuje, jak lze LINQ použít k provádění pokročilých operací seskupení a řazení v seznamech souborů nebo složek. Ukazuje také výstup stránky v okně konzoly pomocí metod <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A>.  
   
 ## <a name="example"></a>Příklad  
  Následující dotaz ukazuje, jak seskupit obsah zadaného stromu adresářů podle přípony názvu souboru.  
@@ -102,10 +102,10 @@ class GroupByExtension
 }  
 ```  
   
- Výstup z tohoto programu může být dlouhý v závislosti na podrobnostech místního systému souborů a k čemu `startFolder` je nastaven na. Pokud chcete povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránky procházet výsledky. Stejné postupy můžete použít pro Windows a webové aplikace. Všimněte si, že vzhledem k tomu, že kód stránky položky ve skupině `foreach` , je nutná vnořená smyčka. K dispozici je také některá další logika, která umožňuje vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončit program. V tomto konkrétním případě se stránkovací dotaz spustí proti výsledkům uloženým v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ to SQL, taková mezipaměť není nutná.  
+ Výstup z tohoto programu může být dlouhý v závislosti na podrobnostech místního systému souborů a nastavení, na které je `startFolder`. Pokud chcete povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránky procházet výsledky. Stejné postupy můžete použít pro Windows a webové aplikace. Všimněte si, že vzhledem k tomu, že kód stránky má položky ve skupině, je nutná vnořená `foreach` smyčka. K dispozici je také některá další logika, která umožňuje vypočítat aktuální pozici v seznamu a umožnit uživateli zastavit stránkování a ukončit program. V tomto konkrétním případě se stránkovací dotaz spustí proti výsledkům uloženým v mezipaměti z původního dotazu. V jiných kontextech, jako je například LINQ to SQL, taková mezipaměť není nutná.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

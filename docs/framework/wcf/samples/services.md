@@ -1,64 +1,64 @@
 ---
-title: Ukázky – WCF Services
+title: Ukázky služeb
 ms.date: 03/30/2017
 ms.assetid: 462a2218-f8c6-4fb7-95bc-64765459c429
-ms.openlocfilehash: 9c4c6c0083a685f2f85b01ed3a5bed377708dd13
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: afc4d20034730421d0b72659be62a64048a4c77e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425455"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345125"
 ---
 # <a name="services"></a>Služby
 
-Tato část obsahuje ukázky, které předvádějí služby Windows Communication Foundation (WCF).
+Tato část obsahuje ukázky, které ukazují služby Windows Communication Foundation (WCF).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-- [Hosting](../../../../docs/framework/wcf/feature-details/hosting.md)\
-Ukazuje hostování služby WCF.
+- [Hostování](../../../../docs/framework/wcf/feature-details/hosting.md)\
+Znázorňuje hostování služeb WCF.
 
-- [Vzájemná spolupráce služeb](service-interoperability.md)\
-Ukazuje interakce mezi WCF a další technologie služby.
+- \ [interoperability služeb](service-interoperability.md)
+Ukazuje interakci mezi WCF a dalšími technologiemi služeb.
 
-- [Chování](behaviors.md)\
+- \ [chování](behaviors.md)
 Ukazuje chování služby WCF.
 
-- [Zabezpečení služby](service-security.md)\
+- \ [zabezpečení služby](service-security.md)
 Ukazuje zabezpečení služby WCF.
 
 - [Zjednodušená konfigurace pro služby WCF](simplified-configuration-for-wcf-services.md)\
-Ukazuje, jak implementovat a konfigurovat typické službu a klienta pomocí WCF.
+Ukazuje, jak implementovat a nakonfigurovat typickou službu a klienta pomocí WCF.
 
-- [Používání standardních koncových bodů](usage-of-standard-endpoints.md)\
-Popisuje způsob použití standardních koncových bodů v konfiguračních souborech služby.
+- [Použití standardních koncových bodů](usage-of-standard-endpoints.md)\
+Ukazuje, jak používat standardní koncové body v konfiguračních souborech služby.
 
-- [Zásady rozšířené ochrany](extended-protection-policy.md)\
-Ukazuje iniciativy zabezpečení pro ochranu před útoky (typu MITM) man-in-the-middle rozšířenou ochranu.
+- \ [zásady rozšířené ochrany](extended-protection-policy.md)
+Ukazuje rozšířenou ochranu, bezpečnostní iniciativu pro ochranu proti útokům MITM (man-in-the-middle).
 
-- [Objekt pro vytváření kanálů konfigurace](configuration-channel-factory.md)\
-Ukazuje použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.
+- \ [továrního nastavení kanálu konfigurace](configuration-channel-factory.md)
+Demonstruje použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>.
 
-- [Adresování](addressing.md)\
-Ukazuje různé aspekty a vlastnosti adresy koncového bodu.
+- \ [adresování](addressing.md)
+Ukazuje různé aspekty a funkce adres koncových bodů.
 
-- [Dnešní](imperative.md)\
-Ukazuje, jak definovat <xref:System.ServiceModel.WSHttpBinding> služby promocí kódu, místo definování `wsHttpBinding` vazby v konfiguraci.
+- [Imperativní](imperative.md)\
+Ukazuje, jak definovat <xref:System.ServiceModel.WSHttpBinding> pro službu pomocí kódu namísto definování `wsHttpBinding` vazby v konfiguraci.
 
-- [Více kontraktů](multiple-contracts.md)\
-Ukazuje, jak implementovat více než jeden kontrakt na služby a jak nakonfigurovat koncové body pro komunikaci s každým implementovaných kontraktů.
+- \ [více kontraktů](multiple-contracts.md)
+Ukazuje, jak implementovat více kontraktů ve službě a jak nakonfigurovat koncové body pro komunikaci se všemi implementovanými kontrakty.
 
-- [Více koncových bodů](multiple-endpoints.md)\
-Ukazuje, jak konfigurovat několik koncových bodů ve službě a komunikovat s každého koncového bodu z klienta.
+- \ [více koncových bodů](multiple-endpoints.md)
+Ukazuje, jak nakonfigurovat více koncových bodů ve službě a jak komunikovat s každým koncovým bodem z klienta.
 
-- [Víc koncových bodů na jedné adrese ListenUri](multiple-endpoints-at-a-single-listenuri.md)\
-Ukazuje, služby, který je hostitelem více koncových bodů na jedné `ListenUri`.
+- [Několik koncových bodů na jednom\ ListenUri](multiple-endpoints-at-a-single-listenuri.md)
+Demonstruje službu, která hostuje více koncových bodů v jednom `ListenUri`.
 
 - [OperationContextScope](operationcontextscope.md)\
-Ukazuje, jak odeslat další informace o volání WCF pomocí hlavičky.
+Ukazuje, jak odeslat další informace o volání WCF pomocí hlaviček.
 
 - [Popis služby](service-description.md)\
-Ukazuje, jak může služba načíst jeho informace popisu služby za běhu.
+Ukazuje, jak může služba získat informace o popisu služby za běhu.
 
-- [ConcurrencyMode.Reentrant](concurrencymode-reentrant.md)\
-Popisuje způsob použití vícenásobné souběžný režim na implementaci služby.
+- [Režim ConcurrencyMode. znovu vstupující](concurrencymode-reentrant.md)\
+Ukazuje, jak použít předaný režim souběžnosti pro implementaci služby.

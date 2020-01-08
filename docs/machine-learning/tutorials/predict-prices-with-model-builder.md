@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: ed2afe307492b6d38e7e2f9d8ae02dafbb5ae1f4
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 254f3c4c05a2c18f6182fc5f18d93114e20ed953
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552932"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344993"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -25,7 +25,7 @@ V tomto kurzu se naučíte:
 > - Příprava a pochopení dat
 > - Zvolte scénář
 > - Načtení dat
-> - Výuka modelu
+> - Trénování modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
@@ -86,7 +86,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 1. V rozevíracím seznamu *sloupec pro předpověď (popisek)* vyberte možnost *fare_amount* .
 1. Rozbalte rozevírací seznam *vstupní sloupce (funkce)* a zrušte kontrolu *trip_time_in_secs* sloupce, aby se vyloučil jako funkce během školení.  Přejděte do kroku výuka nástroje Tvůrce modelů.
 
-## <a name="train-the-model"></a>Výuka modelu
+## <a name="train-the-model"></a>Trénování modelu
 
 Úkol strojového učení, který se používá k výuce modelu předpovědi cen v tomto kurzu, je regrese. V průběhu procesu školení modelů vlacích sestaví model modelování samostatné modely pomocí různých regresních algoritmů a nastavení, které pro datovou sadu vyhledají nejlepší model provádění.
 
@@ -163,13 +163,13 @@ Pokud potřebujete odkazovat na vygenerované projekty později v jiném řešen
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste zjistili, jak:
+V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 >
 > - Příprava a pochopení dat
 > - Zvolte scénář
 > - Načtení dat
-> - Výuka modelu
+> - Trénování modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
@@ -179,5 +179,5 @@ Další informace o tématech uvedených v tomto kurzu najdete v následujícíc
 
 - [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenarios)
 - [Nevýhody](../resources/glossary.md#regression)
-- [Metriky regresního modelu](../resources/metrics.md#metrics-for-regression)
+- [Metriky regresního modelu](../resources/metrics.md#evaluation-metrics-for-regression-and-recommendation)
 - [Sada dat pro cestu NYC TLC taxislužby](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)

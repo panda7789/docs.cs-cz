@@ -2,12 +2,12 @@
 title: Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 ms.date: 03/30/2017
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
-ms.openlocfilehash: 429e11cdafc154b6913ab9de76dabe9c5b81d924
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: c57d0266102c5ad79657e875cb0107a2c11cabca
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837711"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337599"
 ---
 # <a name="ws-atomictransaction-configuration-utility-wsatconfigexe"></a>Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 Konfigurační nástroj WS-AtomicTransaction se používá ke konfiguraci základních nastavení podpory WS-AtomicTransaction.  
@@ -25,7 +25,7 @@ wsatConfig [Options]
   
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\wsatConfig.exe  
   
- Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], je nutné před spuštěním WsatConfig. exe stáhnout aktualizaci. Další informace o této aktualizaci najdete v článku [aktualizace pro Windows Communication Foundation (KB912817)](https://www.microsoft.com/download/details.aspx?id=21520).  
+ Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo Windows Server 2003, je nutné před spuštěním nástroje WsatConfig. exe stáhnout aktualizaci. Další informace o této aktualizaci najdete v článku [aktualizace pro Windows Communication Foundation (KB912817)](https://www.microsoft.com/download/details.aspx?id=21520).  
   
  V následující tabulce jsou uvedeny možnosti, které lze použít s konfiguračním nástrojem WS-AtomicTransaction (wsatConfig. exe).  
   

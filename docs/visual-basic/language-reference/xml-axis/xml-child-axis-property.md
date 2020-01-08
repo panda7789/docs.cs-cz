@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML child axis property [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 89a59d00-985e-4f5c-b59f-29b47bad11cb
-ms.openlocfilehash: 968154908bc6cb62bb221d42a1f71b329aa7096f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 728c17cd2ed8661e0a5f1f2b8e929059713a1edf
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349453"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545115"
 ---
 # <a name="xml-child-axis-property-visual-basic"></a>Vlastnost osy podřízeného souboru XML (Visual Basic)
 Poskytuje přístup k podřízeným položkám jedné z následujících: objekt <xref:System.Xml.Linq.XElement>, objekt <xref:System.Xml.Linq.XDocument>, kolekci objektů <xref:System.Xml.Linq.XElement> nebo kolekce objektů <xref:System.Xml.Linq.XDocument>.  
@@ -32,7 +32,7 @@ object.<child>
 |---|---|  
 |`object`|Požadováno. Objekt <xref:System.Xml.Linq.XElement>, objekt <xref:System.Xml.Linq.XDocument>, kolekce objektů <xref:System.Xml.Linq.XElement> nebo kolekce objektů <xref:System.Xml.Linq.XDocument>.|  
 |.<|Požadováno. Označuje začátek podřízené vlastnosti osy.|  
-|`child`|Požadováno. Název podřízených uzlů, pro které má být přístup, z formuláře [`prefix:]name`.<br /><br /> -   `Prefix` – volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí být globální obor názvů XML definovaný pomocí příkazu `Imports`.<br />`Name` -   – povinné. Název místního podřízeného uzlu. Viz [Názvy deklarovaných elementů XML a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|`child`|Požadováno. Název podřízených uzlů, pro které má být přístup z formuláře `[prefix:]name`.<br /><br /> -   `Prefix` – volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí být globální obor názvů XML definovaný pomocí příkazu `Imports`.<br />`Name` -   – povinné. Název místního podřízeného uzlu. Viz [Názvy deklarovaných elementů XML a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
 |>|Požadováno. Označuje konec podřízené vlastnosti osy.|  
   
 ## <a name="return-value"></a>Návratová hodnota  

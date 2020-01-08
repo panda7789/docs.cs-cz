@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření dotazu na soubory s konkrétním atributem či názvem'
 ms.date: 07/20/2015
 ms.assetid: b26026a3-3f43-448f-a582-259997af6be0
-ms.openlocfilehash: 68b8f02e3c7f53092ef91f2b8b96736a644a7fd1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 970fb862b843016425e3a0f0c2bcf00e6fcba3a6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347690"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342142"
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>Postupy: dotazování na soubory se zadaným atributem nebo názvem (Visual Basic)
 Tento příklad ukazuje, jak najít všechny soubory, které mají zadanou příponu názvu souboru (například ". txt") v zadaném stromu adresářů. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
@@ -60,8 +60,8 @@ Module FindFileByExtension
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
+## <a name="compile-the-code"></a>Kompilace kódu  
+Vytvořte projekt konzolové aplikace Visual Basic s příkazem `Imports` pro obor názvů System. Linq.
   
 ## <a name="see-also"></a>Viz také:
 

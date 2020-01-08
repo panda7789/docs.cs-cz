@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: c7042de2-2422-4039-94e8-ac298896af69
-ms.openlocfilehash: 047d566c13f03803d2e5c3bc6cce0db56df4a3f0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 94f12b4cc6cb35864fefbb3b5bb1378bec5e974c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345840"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347567"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters-visual-basic"></a>Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů (Visual Basic).
 Pokud má procedura parametr [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) , nemůžete definovat přetíženou verzi, která vezme jednorozměrné pole pro pole parametrů. Další informace naleznete v části "implicitní přetížení pro parametr ParamArray" v tématu Co je [třeba v postupech přetížení](./considerations-in-overloading-procedures.md).  
@@ -47,7 +47,7 @@ Pokud má procedura parametr [ParamArray](../../../../visual-basic/language-refe
   
  Kód v přetížených verzích nemusí testovat, zda volající kód zadal jednu nebo více hodnot pro parametr `ParamArray`, nebo pokud ano, kolik jich má. Visual Basic předá řízení verzi, která odpovídá seznamu argumentů volání.  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
  Vzhledem k tomu, že procedura s parametrem `ParamArray` je ekvivalentem sady přetížených verzí, nelze takovou proceduru přetížit se seznamem parametrů odpovídajícím některé z těchto implicitních přetížení. Další informace najdete v tématu věnovaném [důležitým postupům při přetížení](./considerations-in-overloading-procedures.md).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  

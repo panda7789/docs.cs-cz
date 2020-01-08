@@ -1,51 +1,51 @@
 ---
-title: Podporované scénáře nasazení – WCF
+title: Podporované scénáře nasazení
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 2da55176cbfe618b332f2df210e3e1c0516b17ae
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 6898ec33564a526d0e444502ebb6ed7f142f1856
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170039"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347985"
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 
-Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená pro splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru WCF splňuje požadavky na sdílené poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v rámci technologie ASP.NET 2.0 úrovni Medium Trust oprávnění nastavit z bezpečnostních důvodů internetovém měřítku. Na straně klienta WCF částečným vztahem důvěryhodnosti podpory je navržená pro splnění požadavků nasazení technologií, jako [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo technologii WPF na aplikace prohlížeče XAML, která jim umožňují bezproblémové a zabezpečené nasazení desktopové aplikace z nedůvěryhodné weby.
+Podmnožina funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodných aplikacích je navržena tak, aby splňovala požadavky některých, ale ne všech scénářů pro použití služby WCF. Na serveru služba WCF splňuje požadavky na internetové poskytovatele sdíleného hostování, kteří spouštějí aplikace třetích stran v sadě oprávnění ASP.NET 2,0 střední důvěryhodnosti nastavené z bezpečnostních důvodů. Na straně klienta je podpora částečné důvěryhodnosti služby WCF navržena tak, aby splňovala požadavky na technologie nasazení, jako je například [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo technologie aplikačního prohlížeče XAML WPF, což umožňuje bezproblémové a zabezpečené nasazení desktopových aplikací z nedůvěryhodných lokalit.
 
-## <a name="minimum-permission-requirements"></a>Požadavky na minimální oprávnění
+## <a name="minimum-permission-requirements"></a>Minimální požadavky na oprávnění
 
-WCF podporuje podmnožinu funkcí v aplikace spuštěné v některé z následujících sad standardní pojmenovaných oprávnění:
+WCF podporuje podmnožinu funkcí v aplikacích spuštěných v jedné z následujících standardních pojmenovaných sad oprávnění:
 
-- Střední oprávnění důvěryhodnosti
+- Oprávnění střední důvěryhodnosti
 
-- Oprávnění pro zónu Internetu
+- Oprávnění pro internetovou zónu
 
-Pokus o použití WCF v částečně důvěryhodné aplikace s víc omezující oprávnění může vést k bezpečnostním výjimkám v době běhu.
+Pokus o použití WCF v částečně důvěryhodných aplikacích s více omezujícími oprávněními může za běhu způsobit výjimky zabezpečení.
 
-Další informace o funkcích podporovaných v těchto sad oprávnění najdete v tématu [Kompatibilita funkce částečné důvěryhodnosti](partial-trust-feature-compatibility.md).
+Další informace o funkcích podporovaných v těchto sadách oprávnění najdete v tématu [Kompatibilita funkcí částečné důvěryhodnosti](partial-trust-feature-compatibility.md).
 
-## <a name="partial-trust-on-the-server"></a>Částečné důvěryhodnosti na serveru
+## <a name="partial-trust-on-the-server"></a>Částečná důvěryhodnost na serveru
 
-Mnoho poskytovatelů obchodní aplikace ASP.NET Web hostitelské služby stanoví, že aplikace běžící na jejich serverech spustit v sadě ASP.NET 2.0 úrovni Medium Trust oprávnění. Služby WCF můžete spustit v těchto prostředích, pokud používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>, nebo <xref:System.ServiceModel.WSHttpBinding> se zabezpečením na úrovni přenosu.
+Mnoho komerčních poskytovatelů webových aplikací ASP.NET vyžaduje, aby aplikace běžící na jejich serverech běžely v sadě oprávnění ASP.NET 2,0 Medium důvěryhodnosti. Služby WCF mohou běžet v těchto prostředích za předpokladu, že používají <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WebHttpBinding>nebo <xref:System.ServiceModel.WSHttpBinding> se zabezpečením na úrovni přenosu.
 
-WCF služby spuštěné na úrovni Medium Trust hostitelská prostředí se mohou chovat i jako střední vrstvy služby odesíláním zpráv na jiné servery v reakci na požadavky klientů. Střední vrstvy scénáře na serveru jsou podporovány, pokud hostitelské prostředí udělil aplikace odpovídající <xref:System.Net.WebPermission> provádět požadavky na odchozích k požadovanému serveru.
+Služby WCF spuštěné v prostředích hostujících střední důvěryhodnosti můžou fungovat taky jako služby střední vrstvy tím, že budou posílat zprávy na jiné servery v reakci na požadavky klientů. Scénáře střední vrstvy na serveru jsou podporované, pokud hostující prostředí aplikaci udělily příslušné <xref:System.Net.WebPermission> k vytváření odchozích požadavků na požadovaný server.
 
-Kromě pomocí jedné z podporovaných vazby SOAP zasílání zpráv SOAP, podporuje WCF <xref:System.ServiceModel.WebHttpBinding> pro vytváření webových služeb v částečně důvěryhodné aplikace. [WCF Web HTTP programovací Model](wcf-web-http-programming-model.md), [syndikace WCF](wcf-syndication.md), a [integrace jazyka AJAX a podpora formátu JSON](ajax-integration-and-json-support.md) funkcí služby WCF je dostupná v částečném vztahu důvěryhodnosti.
+Kromě zasílání zpráv protokolu SOAP pomocí jedné z podporovaných vazeb SOAP podporuje WCF <xref:System.ServiceModel.WebHttpBinding> pro vytváření služeb webového stylu v částečně důvěryhodných aplikacích. [Model programování webových služeb HTTP WCF](wcf-web-http-programming-model.md), [Syndikace WCF](wcf-syndication.md)a [integrace AJAX a funkce podpory JSON](ajax-integration-and-json-support.md) pro WCF jsou všechny podporovány v částečném vztahu důvěryhodnosti.
 
-Služby pracovních postupů, vyžadují oprávnění plné důvěryhodnosti a nelze použít v částečně důvěryhodné aplikace.
+Služby pracovních postupů vyžadují plná oprávnění důvěryhodnosti a nelze je použít v částečně důvěryhodných aplikacích.
 
-Další informace najdete v tématu [jak: Použití střední důvěryhodnosti v technologii ASP.NET 2.0](https://go.microsoft.com/fwlink/?LinkId=84603).
+Další informace najdete v tématu [How to: use Medium Trust v ASP.NET 2,0](https://go.microsoft.com/fwlink/?LinkId=84603).
 
-## <a name="partial-trust-on-the-client"></a>Částečné důvěryhodnosti na straně klienta
+## <a name="partial-trust-on-the-client"></a>Částečná důvěryhodnost na klientovi
 
-Při stahování a spouštění kódu z nedůvěryhodné weby na Internetu, musí být přijata určité bezpečnostní opatření. Obě [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) a pro WPF XAML aplikace prohlížeče (XBAP) ujistěte se, technologie využívání částečným vztahem důvěryhodnosti udělit omezená oprávnění (zóny Internet) nedůvěryhodného kódu.
+Pokud stahujete a spouštíte kód z nedůvěryhodných internetových serverů, je nutné vzít v nich určitá bezpečnostní opatření. Jak technologie ClickOnce nasazení, tak i WPF ( [vývojová](/visualstudio/deployment/clickonce-security-and-deployment) technologie v jazyce XAML) pro udělení omezených oprávnění (Internet Zone) k nedůvěryhodnému kódu je použití částečného vztahu důvěryhodnosti.
 
-WCF slouží ke komunikaci se vzdálenými servery z v rámci částečně důvěryhodné aplikace nasazené buď [nasazení ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) nebo XBAP. Zahrnuje sadu oprávnění zóny Internet <xref:System.Net.WebPermission> původního hostitele, který umožňuje tyto aplikace ke komunikaci s jejich zdrojový server pomocí kteréhokoli z podporovaných vazby WCF je popsáno v [Kompatibilita funkce částečné důvěryhodnosti ](partial-trust-feature-compatibility.md).
+WCF lze použít ke komunikaci se vzdálenými servery v rámci částečně důvěryhodných aplikací nasazených buď [nasazením ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) , nebo XBAP. Sada oprávnění pro internetovou zónu zahrnuje <xref:System.Net.WebPermission> pro zdrojového hostitele, což umožňuje těmto aplikacím komunikovat s původním serverem pomocí kterékoli z podporovaných vazeb WCF popsaných v tématu [Kompatibilita funkcí částečné důvěryhodnosti](partial-trust-feature-compatibility.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Zabezpečení přístupu kódu](../../misc/code-access-security.md)
-- [Přehled Windows Presentation Foundation aplikace hostované prohlížečem](../../wpf/app-development/wpf-xaml-browser-applications-overview.md)
+- [Přehled aplikací Windows Presentation Foundation hostovaných v prohlížeči](../../wpf/app-development/wpf-xaml-browser-applications-overview.md)
 - [Částečná důvěryhodnost](partial-trust.md)
-- [Úrovně důvěryhodnosti technologie ASP.NET a zásady souborů](https://docs.microsoft.com/previous-versions/wyts434y(v=vs.140))
+- [ASP.NET úrovně důvěryhodnosti a soubory zásad](https://docs.microsoft.com/previous-versions/wyts434y(v=vs.140))

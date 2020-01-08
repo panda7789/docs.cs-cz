@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-ms.openlocfilehash: 47544cf74b4fa09fd8ee868ea940ef24a453840e
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 50f2444764ddb212513550ff0a62fcfecab2c45a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834637"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347994"
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>Určování přenosu dat v kontraktech služby
 Windows Communication Foundation (WCF) si můžete představit jako infrastrukturu zasílání zpráv. Operace služby mohou přijímat zprávy, zpracovávat je a odesílat zprávy. Zprávy jsou popsány pomocí kontraktů operací. Zvažte například následující kontrakt.  
@@ -147,7 +147,7 @@ public float GetAirfare(
   
  `public int GetCurrentTemperature();`  
   
- Například v jazyce VB:  
+ Například v Visual Basic:  
   
  `<OperationContract()>`  
   
@@ -564,7 +564,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
  V některých případech nejsou předdefinované serializátory pro váš scénář dostatečné. Ve většině případů můžete stále používat abstrakci <xref:System.Runtime.Serialization.XmlObjectSerializer>, ze které jsou odvozeny <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Runtime.Serialization.NetDataContractSerializer>.  
   
- Předchozí tři případy (zachování typu .NET, zachování grafu objektů a úplné vlastní serializace založené na `XmlObjectSerializer`) vyžadují, aby byl do sítě zapojen vlastní serializátor. Provedete to provedením následujících kroků:  
+ Předchozí tři případy (zachování typu .NET, zachování grafu objektů a úplné vlastní serializace založené na `XmlObjectSerializer`) vyžadují, aby byl do sítě zapojen vlastní serializátor. Postupujte při tom podle následujících pokynů:  
   
 1. Pište vlastní chování vyplývající z <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>.  
   

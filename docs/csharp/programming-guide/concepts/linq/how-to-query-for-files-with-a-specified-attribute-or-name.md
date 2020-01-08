@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Dotaz na soubory se zadaným atributem nebo názvem (C#)'
+title: Dotazování na soubory se zadaným atributem nebo názvem (C#)
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: c1ecaad7e4fb4538331ba8f8076c9795acc52877
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 8ecf3263dcee9b54d01dd0b577ba8bec2a199da9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592896"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346719"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: Dotaz na soubory se zadaným atributem nebo názvem (C#)
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Dotazování na soubory se zadaným atributem nebo názvem (C#)
 Tento příklad ukazuje, jak najít všechny soubory, které mají zadanou příponu názvu souboru (například ". txt") v zadaném stromu adresářů. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
   
 ## <a name="example"></a>Příklad  
@@ -64,7 +64,7 @@ class FindFileByExtension
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-  Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
+  Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 

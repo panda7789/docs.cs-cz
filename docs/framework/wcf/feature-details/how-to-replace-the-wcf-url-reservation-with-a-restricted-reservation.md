@@ -2,19 +2,19 @@
 title: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 900b258a1119b069e5ef0a6ff66078281bb06f1b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 3d14d76334b15bdb490184a48da11ba48b84deea
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837386"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544647"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
 Rezervace adresy URL umožňuje omezit, kdo může přijímat zprávy z adresy URL nebo ze sady adres URL. Rezervace se skládá ze šablony adresy URL, seznamu řízení přístupu (ACL) a sady příznaků. Šablona adresy URL definuje adresy URL, které rezervace ovlivňuje. Další informace o tom, jak se zpracovávají šablony adres URL, najdete v tématu [směrování příchozích požadavků](https://go.microsoft.com/fwlink/?LinkId=136764). Seznam řízení přístupu (ACL) určuje, kteří uživatelé nebo skupiny uživatelů mají povolený příjem zpráv ze zadaných adres URL. Příznaky označují, zda má rezervace poskytnout uživateli nebo skupině oprávnění k naslouchání na adrese URL přímo nebo k delegování oprávnění k naslouchání jinému procesu.  
   
  V rámci výchozí konfigurace operačního systému vytvoří Windows Communication Foundation (WCF) globálně dostupnou rezervaci pro port 80, aby všichni uživatelé mohli spouštět aplikace, které pro duplexní komunikaci používají duální vazby HTTP. Vzhledem k tomu, že seznam ACL u této rezervace je pro všechny, správci nemůžou explicitně povolit nebo zakázat oprávnění k naslouchání na adrese URL nebo sadě adres URL. Toto téma vysvětluje, jak odstranit tuto rezervaci a jak znovu vytvořit rezervaci s omezeným seznamem ACL.  
   
- V systému Windows Vista nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)] můžete všechny rezervace adres URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními zobrazit zadáním `netsh http show urlacl`.  Následující příklad ukazuje, co se má podobat rezervaci adresy URL WCF.  
+V systému Windows Vista nebo Windows Server 2008 můžete zobrazit všechny rezervace adres URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními zadáním `netsh http show urlacl`. Následující příklad ukazuje, co se má podobat rezervaci adresy URL WCF:
 
 ```
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  

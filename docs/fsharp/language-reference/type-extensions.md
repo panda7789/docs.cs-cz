@@ -2,12 +2,12 @@
 title: Rozšíření typů
 description: Přečtěte F# si, jak rozšíření typu umožňují přidat nové členy do dříve definovaného typu objektu.
 ms.date: 11/04/2019
-ms.openlocfilehash: d26d7b2b507f04e9cb68ade4c0409403643f74ba
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3e2c6971156bd562ed5d5428e6b7ffdc520c4cf5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978247"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341574"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
@@ -98,7 +98,7 @@ Volitelná rozšíření se v rozšířeném typu nezobrazují, pokud jsou zkont
 
 Volitelné členy rozšíření jsou zkompilovány do statických členů, pro které je instance objektu implicitně předána jako první parametr. Fungují však jako v případě, že se jedná o členy instance nebo statické členy podle toho, jak jsou deklarovány.
 
-Nepovinní členové rozšíření C# ani uživatelé v jazyce VB nejsou viditelní. Mohou být spotřebovány pouze v jiném F# kódu.
+Nepovinní členové rozšíření C# ani nemohou Visual Basic zákazníky. Mohou být spotřebovány pouze v jiném F# kódu.
 
 ## <a name="generic-limitation-of-intrinsic-and-optional-type-extensions"></a>Obecné omezení vnitřních a volitelných rozšíření typu
 

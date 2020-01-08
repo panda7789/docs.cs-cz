@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: a0c5592f2f4cca8173f9b777f2c3f14fe468feac
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: ca660e6485c492ea7883503be4a98e1b7000427a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423309"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346371"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegáti (Průvodce programováním v C#)
 [Delegát](../../language-reference/builtin-types/reference-types.md) je typ, který představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
@@ -52,11 +52,11 @@ ms.locfileid: "73423309"
   
 - [Použití odchylek v delegátech](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Postupy: kombinování delegátů (vícesměrové Delegáti)](./how-to-combine-delegates-multicast-delegates.md)  
+- [Postup kombinování delegátů (Delegáti vícesměrového vysílání)](./how-to-combine-delegates-multicast-delegates.md)  
   
-- [Postupy: Deklarování, vytváření instancí a použití delegáta](./how-to-declare-instantiate-and-use-a-delegate.md)  
+- [Postup deklarace, vytvoření instance a použití delegáta](./how-to-declare-instantiate-and-use-a-delegate.md)
 
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
 
 Další informace naleznete v tématu [Delegáti](~/_csharplang/spec/delegates.md) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   

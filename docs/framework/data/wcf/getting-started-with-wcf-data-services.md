@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: c832fa5b-cf86-4690-be5a-a226c0e49530
-ms.openlocfilehash: e85ccece5cccb28827850548f71ec0a8a4faea70
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: d2cf693fb0656a835b3f32306bdbb26e03d371e8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569214"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348084"
 ---
 # <a name="getting-started-with-wcf-data-services"></a>Začínáme s WCF Data Services
 Témata v této části vám pomůžou rychle pochopit protokol OData (Open Data Protocol) a jak používat WCF Data Services k vystavování a využívání kanálů OData pomocí vysvětlení základních technologií. Tato část obsahuje koncepční obsah a [rychlý](quickstart-wcf-data-services.md) úvodní kurz.  
@@ -36,10 +36,6 @@ Témata v této části vám pomůžou rychle pochopit protokol OData (Open Data
  Obsahuje odkazy na prostředky WCF Data Services a OData.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149)  
+ [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
   
  [Začínáme](../adonet/ef/getting-started.md)  
-  
-## <a name="see-also"></a>Viz také:
-
-- [Sada OData SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
