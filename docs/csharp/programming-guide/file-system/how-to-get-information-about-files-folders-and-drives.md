@@ -1,16 +1,15 @@
 ---
 title: Jak získat informace o souborech, složkách a jednotkách – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-ms.openlocfilehash: e8bd65b1c8c24f69d280cf69deaf25daf7cf8818
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 6024b1be4ce826900c6f9b367323fb19ac55d2c7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635389"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705207"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Jak získat informace o souborech, složkách a jednotkách (C# Průvodce programováním)
 V .NET Framework můžete získat přístup k informacím o systému souborů pomocí následujících tříd:  

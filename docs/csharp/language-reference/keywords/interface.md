@@ -1,22 +1,21 @@
 ---
 title: odkaz na C# rozhraní
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - interface_CSharpKeyword
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: 058d6b96e96a3237ebac2ca079807fd154715d68
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 19ca4b8a490dc85de0d0e2be6d3ca8fa7982fc14
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608649"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713442"
 ---
 # <a name="interface-c-reference"></a>interface (Referenční dokumentace jazyka C#)
 
-Rozhraní obsahuje pouze signatury [metod](../../programming-guide/classes-and-structs/methods.md), [vlastností](../../programming-guide/classes-and-structs/properties.md), [událostí](../../programming-guide/events/index.md) nebo indexerů [](../../programming-guide/indexers/index.md). Třída nebo struktura, která implementuje rozhraní, musí implementovat členy rozhraní zadané v definici rozhraní. V následujícím příkladu musí třída `ImplementationClass` implementovat metodu s názvem `SampleMethod`, která nemá žádné parametry a vrací `void`.
+Rozhraní obsahuje pouze signatury [metod](../../programming-guide/classes-and-structs/methods.md), [vlastností](../../programming-guide/classes-and-structs/properties.md), [událostí](../../programming-guide/events/index.md) nebo [indexerů](../../programming-guide/indexers/index.md). Třída nebo struktura, která implementuje rozhraní, musí implementovat členy rozhraní zadané v definici rozhraní. V následujícím příkladu musí třída `ImplementationClass` implementovat metodu s názvem `SampleMethod`, která nemá žádné parametry a vrací `void`.
 
 Další informace a příklady naleznete v tématu [rozhraní](../../programming-guide/interfaces/index.md).
 

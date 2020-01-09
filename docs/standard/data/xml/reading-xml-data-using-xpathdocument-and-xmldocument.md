@@ -6,22 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5711b225-6aa2-4e4f-9898-19f2d518ad1a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 68d19784bab8a5d5a1994ea139b5631f56c7c680
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 87ae96944f9a9f2bbcefb54c343f429c75c3022d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698730"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710385"
 ---
 # <a name="reading-xml-data-using-xpathdocument-and-xmldocument"></a>Načítání dat XML pomocí XPathDocument a XmlDocument
-Existují dva způsoby, jak číst v dokumentu XML <xref:System.Xml.XPath?displayProperty=nameWithType> oboru názvů. Jeden je ke čtení dokumentu XML pomocí jen pro čtení <xref:System.Xml.XPath.XPathDocument> třídy a druhý je ke čtení dokumentu XML pomocí upravitelné <xref:System.Xml.XmlDocument> třídy v <xref:System.Xml?displayProperty=nameWithType> oboru názvů.  
+Existují dva způsoby, jak číst dokument XML v oboru názvů <xref:System.Xml.XPath?displayProperty=nameWithType>. Jedním z nich je čtení dokumentu XML pomocí třídy <xref:System.Xml.XPath.XPathDocument> jen pro čtení a druhý je čtení dokumentu XML pomocí upravitelné <xref:System.Xml.XmlDocument> třídy v oboru názvů <xref:System.Xml?displayProperty=nameWithType>.  
   
-## <a name="reading-xml-documents-using-the-xpathdocument-class"></a>Čtení dokumentů XML pomocí XPathDocument třídy  
- <xref:System.Xml.XPath.XPathDocument> Třída poskytuje rychlé, jen pro čtení, v paměti reprezentace dokumentu XML pomocí modelu dat XPath. Instance <xref:System.Xml.XPath.XPathDocument> třídy jsou vytvořeny pomocí jedné z jejích šesti konstruktorů. Tyto konstruktory umožňují čtení dokumentu XML pomocí <xref:System.IO.Stream>, <xref:System.IO.TextReader>, nebo <xref:System.Xml.XmlReader> objektu, jakož i `string` cestu k souboru XML.  
+## <a name="reading-xml-documents-using-the-xpathdocument-class"></a>Čtení dokumentů XML pomocí třídy XPathDocument  
+ Třída <xref:System.Xml.XPath.XPathDocument> poskytuje rychlé znázornění dokumentu XML, který je jen pro čtení a který je v paměti, pomocí datového modelu XPath. Instance <xref:System.Xml.XPath.XPathDocument> třídy jsou vytvořeny pomocí některého z šesti konstruktorů. Tyto konstruktory umožňují číst dokument XML pomocí <xref:System.IO.Stream>, <xref:System.IO.TextReader>nebo <xref:System.Xml.XmlReader> objektu a také `string` cestu k souboru XML.  
   
- Následující příklad ukazuje použití <xref:System.Xml.XPath.XPathDocument> třídy `string` konstruktor ke čtení dokumentu XML.  
+ Následující příklad znázorňuje použití konstruktoru `string` třídy <xref:System.Xml.XPath.XPathDocument> ke čtení dokumentu XML.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -32,9 +30,9 @@ XPathDocument document = new XPathDocument("books.xml");
 ```  
   
 ## <a name="reading-xml-documents-using-the-xmldocument-class"></a>Čtení dokumentů XML pomocí třídy XmlDocument  
- <xref:System.Xml.XmlDocument> Třídy je upravitelné reprezentací implementace základní úrovně 1 W3C Document Object Model (DOM) a základní modelu DOM úrovně 2 dokumentu XML v paměti. Instance <xref:System.Xml.XmlDocument> třídy jsou vytvořeny pomocí jedné z jeho tři konstruktory. Můžete vytvořit nový, prázdný <xref:System.Xml.XmlDocument> objektu voláním <xref:System.Xml.XmlDocument> třída konstruktor bez parametrů. Po volání konstruktoru, použijte <xref:System.Xml.XmlDocument.Load%2A> metodu pro načtení dat XML do nového <xref:System.Xml.XmlDocument> objektu z <xref:System.IO.Stream>, <xref:System.IO.TextReader>, nebo <xref:System.Xml.XmlReader> objektu, stejně jako `string` cestu k souboru XML.  
+ Třída <xref:System.Xml.XmlDocument> je upravitelná reprezentace v paměti dokumentu XML implementující XML úrovně 1 Core a Core DOM úrovně 2 (W3C model DOM (Document Object Model)). Instance <xref:System.Xml.XmlDocument> třídy jsou vytvořeny pomocí některého z jeho tří konstruktorů. Můžete vytvořit nový prázdný objekt <xref:System.Xml.XmlDocument> voláním konstruktoru třídy <xref:System.Xml.XmlDocument> bez parametrů. Po volání konstruktoru použijte metodu <xref:System.Xml.XmlDocument.Load%2A> k načtení dat XML do nového objektu <xref:System.Xml.XmlDocument> z objektu <xref:System.IO.Stream>, <xref:System.IO.TextReader>nebo <xref:System.Xml.XmlReader> a také `string` cestou k souboru XML.  
   
- Následující příklad ukazuje použití <xref:System.Xml.XmlDocument> třída konstruktor bez parametrů a <xref:System.Xml.XmlDocument.Load%2A> metodu za účelem čtení dokumentu XML.  
+ Následující příklad znázorňuje použití konstruktoru třídy <xref:System.Xml.XmlDocument> bez parametrů a metody <xref:System.Xml.XmlDocument.Load%2A> pro čtení dokumentu XML.  
   
 ```vb  
 Dim document As XmlDocument = New XmlDocument()  
@@ -47,27 +45,27 @@ document.Load("books.xml");
 ```  
   
 ## <a name="determining-the-encoding-of-an-xml-document"></a>Určení kódování dokumentu XML  
- <xref:System.Xml.XmlReader> Objekt lze použít ke čtení dokumentu XML a vytvořit <xref:System.Xml.XPath.XPathDocument> a <xref:System.Xml.XmlDocument> objektů, jak je znázorněno v předchozích částech. Nicméně <xref:System.Xml.XmlReader> objekt může číst data, která není kódovaný a v důsledku neposkytuje žádné informace o kódování.  
+ Objekt <xref:System.Xml.XmlReader> lze použít ke čtení dokumentu XML a k vytvoření objektů <xref:System.Xml.XPath.XPathDocument> a <xref:System.Xml.XmlDocument>, jak je znázorněno v předchozích částech. Objekt <xref:System.Xml.XmlReader> však může číst nekódované data a v důsledku toho neposkytuje žádné informace o kódování.  
   
- <xref:System.Xml.XmlTextReader> Třída dědí z <xref:System.Xml.XmlReader> třídy, poskytuje kódování informací pomocí jeho <xref:System.Xml.XmlTextReader.Encoding%2A> vlastnost a můžete použít k vytvoření <xref:System.Xml.XPath.XPathDocument> objektu nebo <xref:System.Xml.XmlDocument> objektu.  
+ Třída <xref:System.Xml.XmlTextReader> dědí z třídy <xref:System.Xml.XmlReader>, poskytuje informace o kódování pomocí jeho vlastnosti <xref:System.Xml.XmlTextReader.Encoding%2A> a lze jej použít k vytvoření objektu <xref:System.Xml.XPath.XPathDocument> nebo objektu <xref:System.Xml.XmlDocument>.  
   
- Další informace o kódování na základě informací poskytnutých <xref:System.Xml.XmlTextReader> najdete v tématu <xref:System.Xml.XmlTextReader.Encoding%2A> vlastnost <xref:System.Xml.XmlTextReader> třídy referenční dokumentaci.  
+ Další informace o informacích o kódování poskytovaných třídou <xref:System.Xml.XmlTextReader> naleznete v tématu vlastnost <xref:System.Xml.XmlTextReader.Encoding%2A> v dokumentaci třídy <xref:System.Xml.XmlTextReader> reference.  
   
-## <a name="creating-xpathnavigator-objects"></a>Vytváření objektů s objektem XPathNavigator nastaveným na  
- Po přečtení dokumentu XML do jedné <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu, můžete vytvořit <xref:System.Xml.XPath.XPathNavigator> objektu k výběru, vyhodnocení, přejděte a v některých případech může upravovat podkladová data XML.  
+## <a name="creating-xpathnavigator-objects"></a>Vytváření objektů XPathNavigator  
+ Po přečtení dokumentu XML do objektu <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> můžete vytvořit objekt <xref:System.Xml.XPath.XPathNavigator> pro výběr, vyhodnocení, procházení a v některých případech upravit podkladová data XML.  
   
- Jak <xref:System.Xml.XPath.XPathDocument> a <xref:System.Xml.XmlDocument> třídy, navíc k <xref:System.Xml.XmlNode> třídy, implementujte <xref:System.Xml.XPath.IXPathNavigable> rozhraní <xref:System.Xml.XPath?displayProperty=nameWithType> oboru názvů. V důsledku toho poskytují všechny třídy <xref:System.Xml.XPath.IXPathNavigable.CreateNavigator%2A> metodu, která vrátí <xref:System.Xml.XPath.XPathNavigator> objektu.  
+ <xref:System.Xml.XPath.XPathDocument> i <xref:System.Xml.XmlDocument> třídy kromě třídy <xref:System.Xml.XmlNode> implementují rozhraní <xref:System.Xml.XPath.IXPathNavigable> oboru názvů <xref:System.Xml.XPath?displayProperty=nameWithType>. V důsledku toho všechny tři třídy poskytují <xref:System.Xml.XPath.IXPathNavigable.CreateNavigator%2A> metodu, která vrací objekt <xref:System.Xml.XPath.XPathNavigator>.  
   
-### <a name="editing-xml-documents-using-the-xpathnavigator-class"></a>Úpravy dokumentů XML pomocí XPathNavigator třídy  
- Kromě výběr, vyhodnocení a navigace v datech XML <xref:System.Xml.XPath.XPathNavigator> třídy lze použít k úpravě dokumentu XML v některých případech založené na objektu, který byl vytvořen.  
+### <a name="editing-xml-documents-using-the-xpathnavigator-class"></a>Úpravy dokumentů XML pomocí třídy XPathNavigator  
+ Kromě výběru, vyhodnocení a navigace XML data lze třídu <xref:System.Xml.XPath.XPathNavigator> použít k úpravám dokumentu XML v některých případech, a to na základě objektu, který jej vytvořil.  
   
- <xref:System.Xml.XPath.XPathDocument> Třídy je jen pro čtení při <xref:System.Xml.XmlDocument> třída je upravovat a v důsledku toho <xref:System.Xml.XPath.XPathNavigator> objekty vytvořené z <xref:System.Xml.XPath.XPathDocument> objektu nelze použít k úpravě dokumentu XML při vytvořených ze <xref:System.Xml.XmlDocument> objekt může. <xref:System.Xml.XPath.XPathDocument> Třída by měla sloužit ke čtení dokumentu XML. V případech, kdy potřebujete upravit dokument XML, nebo vyžadují přístup k další funkce poskytovaná modulem <xref:System.Xml.XmlDocument> třídy, jako je zpracování událostí <xref:System.Xml.XmlDocument> třída by měla být použita.  
+ Třída <xref:System.Xml.XPath.XPathDocument> je jen pro čtení, je-li <xref:System.Xml.XmlDocument> třída upravitelná <xref:System.Xml.XPath.XPathNavigator> a v důsledku toho nelze objekty vytvořené pomocí objektu <xref:System.Xml.XPath.XPathDocument> použít k úpravě dokumentu XML, i když jsou vytvořeny z objektu <xref:System.Xml.XmlDocument>. Třída <xref:System.Xml.XPath.XPathDocument> by měla být použita pouze pro čtení dokumentu XML. V případech, kdy potřebujete upravit dokument XML nebo vyžadovat přístup k dalším funkcím poskytovaným <xref:System.Xml.XmlDocument> třídou, jako je zpracování událostí, by měla být použita třída <xref:System.Xml.XmlDocument>.  
   
- <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> Vlastnost <xref:System.Xml.XPath.XPathNavigator> Určuje třídu, pokud <xref:System.Xml.XPath.XPathNavigator> objekt může upravovat XML data.  
+ Vlastnost <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> třídy <xref:System.Xml.XPath.XPathNavigator> určuje, zda objekt <xref:System.Xml.XPath.XPathNavigator> může upravovat data XML.  
   
- Následující tabulka popisuje výhody <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> vlastností pro každou třídu.  
+ Následující tabulka popisuje hodnotu vlastnosti <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> pro každou třídu.  
   
-|<xref:System.Xml.XPath.IXPathNavigable> Implementace|<xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> Hodnota|  
+|<xref:System.Xml.XPath.IXPathNavigable> implementace|Hodnota <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A>|  
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|  
 |<xref:System.Xml.XPath.XPathDocument>|`false`|  
 |<xref:System.Xml.XmlDocument>|`true`|  

@@ -3,35 +3,33 @@ title: Obory názvů a specifikace DTD v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1e9b55c4-76ad-4f54-8d96-7ce4b4cf1e05
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a3a3ec957a55ff23dec728ccd31fe9e1f52ce78f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 22762e3a7003d9b28a53c7b500829aaa41924c6d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590215"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710593"
 ---
 # <a name="namespaces-and-dtds-in-the-dom"></a>Obory názvů a specifikace DTD v modelu DOM
-Podpora dokumentu typ definice (DTD) complicate oboru názvů. Například následující kód XML obsahuje výchozí atributy obsahující dvojteček při jejich názvy.  
+Definice typu dokumentu (DTD) komplikuje podporu oboru názvů. Například následující kód XML obsahuje výchozí atributy obsahující dvojtečky ve svých názvech.  
   
 ```xml  
 <!ATTLIST item x:id CDATA #IMPLIED>  
 ```  
   
- Následující jsou uvedena možná řešení, pokud je povolený tento konstruktor:  
+ Níže jsou uvedena možná řešení, pokud je tato konstrukce povolená:  
   
-- `x:` Je zpracováván jako předponu oboru názvů, ale tuto předponu, musí být možné přeložit pomocí `xmlns:x` deklarace oboru názvů, který musí taky existovat někde jinde v DTD. Jedná se o chybu pro tuto předponu mapování na něco jiného v dokumentu instance.  
+- `x:` se považuje za předponu oboru názvů, ale tato předpona musí být přeložitelný pomocí `xmlns:x` deklarace oboru názvů, která musí existovat také někde v DTD. Namapování této předpony na jinou hodnotu v dokumentu instance je chyba.  
   
-- `x:` Je považován za předponu oboru názvů, ale tato předpona je vždy přeložit v rámci prvků instance. To znamená, že předpona, která by mohla ve skutečnosti mapují na jiný obor názvů Uniform Resource Identifier (identifikátory URI), v závislosti na rozsahu oboru názvů ve kterém `item` element objeví. Toto chování je předvídatelnější než uvedené v předchozích odrážky rozlišení, ale má jiné složité následky, protože vyžaduje materializace výchozí atributy.  
+- `x:` se považuje za předponu oboru názvů, ale tato předpona je vždy vyřešena v kontextu prvků instance. To znamená, že předpona může být ve skutečnosti namapována na různé obory názvů identifikátorů URI (Uniform Resource Identifier), v závislosti na oboru názvů, ve kterém se zobrazí prvek `item`. Toto chování je více předvídatelné než řešení uvedené v předchozí odrážce, ale má jiné složité důsledky, protože vyžaduje, aby byly výchozí atributy vyhodnoceny.  
   
-- Dvojtečka je ignorován, protože je v DTD a název atributu je `x:y`, žádná předpona a žádný obor názvů identifikátoru URI.  
+- Dvojtečka je ignorována, protože je v definici DTD a název atributu je `x:y`, žádná předpona a žádný identifikátor URI oboru názvů.  
   
-- Dvojtečka ve výchozí atribut vyvolá výjimku, informacemi o tom, že se nepodporují použití dvojteček v názvech definici DTD. Výsledkem je předvídatelný chování, ale znamená, že nelze načíst řadu World Wide Web Consortium (W3C) publikovaný specifikace DTD.  
+- Dvojtečka ve výchozím atributu vyvolá výjimku, která říká, že dvojtečky v názvech uvnitř DTD nejsou podporovány. Výsledkem je předvídatelné chování, ale znamená, že nemůžete načíst mnoho publikovaných definic DTD konsorcium World Wide Web (W3C).  
   
-- Když uživatel požádá o ověření DTD, podpora oboru názvů pro celý dokument je vypnutý. Umožňuje načíst W3C DTD a výsledkem je předvídatelný chování.  
+- Když uživatel vyžádá ověření DTD, podpora oboru názvů pro celý dokument je vypnuta. Díky tomu je možné načíst specifikace DTD W3C a výsledky v předvídatelném chování.  
   
- Kód XML v rozhraní Microsoft .NET Framework implementuje druhou možnost pro maximální kompatibility W3C.  
+ XML v Microsoft .NET Framework implementuje druhou možnost maximální kompatibility W3C.  
   
 ## <a name="see-also"></a>Viz také:
 

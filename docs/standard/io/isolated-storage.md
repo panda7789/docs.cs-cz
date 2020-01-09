@@ -18,14 +18,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 33583f430e5af2f3fa7027233febd9ec61f85a3f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ed784bafda2aed829f2e97d7e7e8b2716c48c7ba
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802450"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706579"
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
 <a name="top"></a>Pro desktopové aplikace je izolované úložiště mechanismus pro ukládání dat, který poskytuje izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.
@@ -51,7 +49,7 @@ Toto téma obsahuje následující oddíly:
 
 - [Příbuzná témata](#related_topics)
 
-- [Reference](#reference)
+- [Odkazy](#reference)
 
 <a name="data_compartments_and_stores"></a>
 
@@ -175,7 +173,7 @@ Mnoho aplikací používá databáze k ukládání a izolaci dat. V tomto příp
 |[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob čtení struktury adresářů a souborů v izolovaném úložišti.|
 |[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|Poskytuje příklad zápisu řetězce do souboru izolovaného úložiště a jeho zpětné čtení.|
 |[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob odstraňování souborů a adresářů izolovaného úložiště.|
-|[Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|
+|[Vstup/výstup souborů a datových proudů](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|
 
 <a name="reference"></a>
 

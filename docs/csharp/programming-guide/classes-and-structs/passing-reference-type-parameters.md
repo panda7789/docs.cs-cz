@@ -1,17 +1,16 @@
 ---
 title: Předávání parametrů typu odkazu – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-ms.openlocfilehash: 6489d31ac1e466fdbf2b47ce1aae7e1139af0960
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6fa0e60fafabaa9fb04cdc5d5bf3f9e29490e84f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419047"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714723"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Předávání parametrů typu odkazu (Průvodce programováním v C#)
 Proměnná [typu odkazu](../../language-reference/keywords/reference-types.md) neobsahuje přímo data; obsahuje odkaz na jeho data. Při předání parametru typu odkazu podle hodnoty je možné změnit data patřící do odkazovaného objektu, jako je například hodnota člena třídy. Nelze však změnit hodnotu samotného odkazu; Nemůžete například použít stejný odkaz pro přidělení paměti pro nový objekt a jeho zachování mimo metodu. Chcete-li to provést, předejte parametr pomocí klíčového slova [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) . Pro zjednodušení následující příklady používají `ref`.  

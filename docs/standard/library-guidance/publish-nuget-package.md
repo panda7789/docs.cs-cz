@@ -1,47 +1,45 @@
 ---
 title: Publikování balíčku NuGet
-description: Doporučení osvědčených postupů pro publikování knihovny .NET NuGet
-author: jamesnk
-ms.author: mairaw
+description: Doporučení osvědčených postupů pro publikování knihoven .NET do NuGet.
 ms.date: 10/02/2018
-ms.openlocfilehash: 9c8442b52ed2c54d2fb3368a2e886c5fc2b19148
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e567fe3f7e00bf322cdd50786e50128961107469
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640774"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706462"
 ---
 # <a name="publishing-a-nuget-package"></a>Publikování balíčku NuGet
 
-Balíčky NuGet se publikovat a použít z úložišť balíčků. I když NuGet.org nejčastěji známé a využité úložiště, publikovat balíčky NuGet mnoho místech:
+Balíčky NuGet se zveřejňují a spotřebovávají z úložišť balíčků. I když je NuGet.org nejčastěji známé a používané úložiště, je k dispozici mnoho míst pro publikování balíčků NuGet:
 
-* **[NuGet.org](https://www.nuget.org/)**  slouží jako primární online úložiště balíčků NuGet. Všech balíčků na NuGet.org jsou veřejně dostupné pro všechny uživatele. Ve výchozím nastavení Visual Studio má NuGet.org jako zdroj balíčků a řada vývojářů NuGet.org je pouze úložiště balíčků, kterou budete pracovat. NuGet.org je nejlepším místem, kde můžete publikovat stabilní balíčky a balíčky v předběžné verzi, které chcete zpětná vazba komunity na.
+* **[NuGet.org](https://www.nuget.org/)** je primární online úložiště pro balíčky NuGet. Všechny balíčky v NuGet.org jsou veřejně dostupné všem uživatelům. Ve výchozím nastavení sada Visual Studio NuGet.org jako zdroj balíčku a pro mnoho vývojářů NuGet.org je jediným úložištěm balíčků, se kterým budou pracovat. NuGet.org je to nejlepší místo pro publikování stabilních balíčků a předběžných vydaných balíčků, na které chcete komunitu poskytovat názory.
 
-* **[MyGet](https://myget.org/)**  je služba úložiště, která podporuje informační kanály vlastních balíčků pro open source projektů. MyGet veřejné vlastního kanálu je ideálním místem pro publikovat balíčky v předběžné verzi vytvořené služby CI. MyGet také poskytuje privátní kanály komerčně.
+* **[MyGet](https://myget.org/)** je služba úložiště, která podporuje vlastní kanály balíčků pro open source projekty. Vlastní informační kanál MyGet je ideálním místem pro publikování předběžných verzí balíčků vytvořených službou CI. MyGet také poskytuje soukromé informační kanály komerčně.
 
-* A **[místní informační kanál](/nuget/hosting-packages/local-feeds)** umožňuje přistupovat ke všem složku jako úložiště balíčků a zpřístupňuje `*.nupkg` soubory ve složce přístupný balíčkem NuGet. Místní informační kanál je užitečné pro testování před publikováním na NuGet.org balíčku NuGet.
+* **[Místní kanál](/nuget/hosting-packages/local-feeds)** umožňuje považovat složku jako úložiště balíčků a zpřístupňuje soubory `*.nupkg` ve složce přístupné pomocí NuGet. Místní kanál je vhodný pro otestování balíčku NuGet před jeho publikováním na NuGet.org.
 
 > [!NOTE]
-> NuGet.org [neumožňuje balíček odstranit](/nuget/policies/deleting-packages) po nahrání. Balíček může neuvedené tak, že není veřejně viditelné v uživatelském rozhraní ale `*.nupkg` stále je možné stáhnout na obnovení. Navíc nuget.org nepovoluje duplicitní balíčku verze. Chcete-li opravit balíček NuGet s chybou budete muset vyjmutí ze seznamu nesprávné balíčku, zvýší číslo verze a publikujte novou verzi balíčku.
+> NuGet.org [neumožňuje odstranění balíčku](/nuget/policies/deleting-packages) po jeho nahrání. Balíček může být nezobrazený, aby nebyl veřejně viditelný v uživatelském rozhraní, ale `*.nupkg` se pořád dá stáhnout při obnovení. Nuget.org také nepovoluje duplicitní verze balíčků. Chcete-li opravit balíček NuGet s chybou, je třeba zrušit seznam nesprávného balíčku, zvýšit číslo verze a publikovat novou verzi balíčku.
 
-**PROVEĎTE ✔️** [publikovat stabilní balíčky a balíčky v předběžné verzi](/nuget/create-packages/publish-a-package) chcete zpětná vazba komunity na NuGet.org.
+**✔️** [publikovat stabilní balíčky a předběžné verze balíčků](/nuget/create-packages/publish-a-package) , ve kterých chcete, aby se komunitní názory na NuGet.org.
 
-**✔️ ZVAŽTE** publikování balíčky v předběžné verzi MyGet informačního kanálu ze sestavení kontinuální integrace.
+**✔️ zvažte** publikování předběžných verzí balíčků do MyGet kanálu ze sestavení průběžné integrace.
 
-**✔️ ZVAŽTE** testování balíčků ve vašem vývojovém prostředí pomocí místního kanálu či MyGet. Zkontrolujte balíček funguje potom ji publikovat na NuGet.org.
+**✔️ zvažte** testování balíčků ve vývojovém prostředí pomocí místního informačního kanálu nebo MyGet. Zkontrolujte, jestli balíček funguje, a pak ho publikujte na NuGet.org.
 
-## <a name="nugetorg-security"></a>NuGet.org security
+## <a name="nugetorg-security"></a>Zabezpečení NuGet.org
 
-Je důležité, že nelze přístup k vašemu účtu NuGet a odeslat škodlivý verzi knihovny. NuGet.org nabízí dvojúrovňového ověřování a e-mailové oznámení, když se publikuje balíček. Tyto funkce povolit po přihlášení na NuGet.org na **nastavení účtu** stránky.
+Je důležité, aby chybné objekty actor měly přístup k vašemu účtu NuGet a nahráli škodlivou verzi vaší knihovny. NuGet.org nabízí dvojúrovňové ověřování a e-mailová oznámení při publikování balíčku. Tyto funkce povolte po přihlášení k NuGet.org na stránce **Nastavení účtu** .
 
-![alternativní text](./media/publish-nuget-package/nuget-2fa.png "zabezpečení účtu NuGet")
+![alternativní text](./media/publish-nuget-package/nuget-2fa.png "Zabezpečení účtu NuGet")
 
-**PROVEĎTE ✔️** použít účet Microsoft pro přihlášení k NuGet.
+k přihlášení do NuGet se **✔️** použít účet Microsoft.
 
-**PROVEĎTE ✔️** povolení dvoufaktorového ověřování pro přístup k NuGet.
+**✔️** povolit dvojúrovňové ověřování pro přístup k nugetu.
 
-**PROVEĎTE ✔️** povolit e-mailové oznámení, když se publikuje balíček.
+Při publikování balíčku **✔️** povolit e-mailová oznámení.
 
 >[!div class="step-by-step"]
 >[Předchozí](sourcelink.md)
->[další](versioning.md)
+>[Další](versioning.md)

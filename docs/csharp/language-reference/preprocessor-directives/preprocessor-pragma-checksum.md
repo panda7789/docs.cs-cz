@@ -1,18 +1,17 @@
 ---
 title: '#pragma Checksum – C# reference'
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma checksum'
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-ms.openlocfilehash: 4103b6262fc5085c1204f423a36c9c5c2053b497
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 1bbb404e1183daa5e68e512e7439b6ae52abd605
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605649"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712478"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma – kontrolní součet (Referenční dokumentace jazyka C#)
 Vygeneruje kontrolní součty pro zdrojové soubory, které pomáhají s laděním ASP.NET stránek.  
@@ -40,7 +39,7 @@ Vygeneruje kontrolní součty pro zdrojové soubory, které pomáhají s laděn�
   
  Při vytváření projektu ASP.NET ve vizuálu C#obsahuje generovaný zdrojový soubor kontrolní součet pro soubor. aspx, ze kterého se zdroj vygeneroval. Kompilátor potom tyto informace zapíše do souboru PDB.  
   
- Pokud kompilátor v souboru nenalezne žádnou `#pragma checksum` direktivu, vypočítá kontrolní součet a zapíše hodnotu do souboru PDB.  
+ Pokud kompilátor nalezne v souboru žádnou direktivu `#pragma checksum`, vypočítá kontrolní součet a zapíše hodnotu do souboru PDB.  
   
 ## <a name="example"></a>Příklad  
   

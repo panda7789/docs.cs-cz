@@ -7,14 +7,12 @@ helpviewer_keywords:
 - progress information, .NET Framework installer
 - .NET Framework, installing
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e07bb3443fb9461fa707d66e74350a39980c60c0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: cd81ad83aee80341d0334cfa8caa165b25ee0564
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975555"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716486"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 
@@ -59,7 +57,7 @@ Kompletní řešení sady Visual Studio pro [ukázku .NET Framework 4,5 chainer]
 
 V následujících částech jsou popsány významné soubory v této ukázce: MMIOChainer. h, ChainingdotNet4. cpp a IProgressObserver. h.
 
-#### <a name="mmiochainerh"></a>MMIOChainer. h
+#### <a name="mmiochainerh"></a>MMIOChainer.h
 
 - Soubor MMIOChainer. h (viz [kompletní kód](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=663039622)) obsahuje definici datové struktury a základní třídu, ze které by měla být odvozena třída řetězení. .NET Framework 4,5 rozšiřuje strukturu dat MMIO pro zpracování dat, která vyžaduje Instalační program .NET Framework 4,5. Změny struktury MMIO jsou zpětně kompatibilní, takže .NET Framework 4 chainer může pracovat s nastavením .NET Framework 4,5 bez nutnosti opětovné kompilace. Tento scénář ale nepodporuje funkci pro snížení restartu systému.
 
@@ -96,7 +94,7 @@ V následujících částech jsou popsány významné soubory v této ukázce: M
 
 - Struktura dat `MmioDataStructure` by se neměla používat přímo; místo toho použijte třídu `MmioChainer` k implementaci vašeho řetězu. Je odvozena od třídy `MmioChainer` pro zřetězení .NET Framework 4,5 distribuovatelných.
 
-#### <a name="iprogressobserverh"></a>IProgressObserver. h
+#### <a name="iprogressobserverh"></a>IProgressObserver.h
 
 - Soubor IProgressObserver. h Implementuje pozorovatele průběhu ([Viz kompletní kód](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=1263700592)). Tento pozorovatel se upozorní na průběh stahování a instalace (zadaný jako nepodepsaný `char`, 0-255, který indikuje 1%-100% dokončení). Pozorovatel je upozorněn také v případě, že chainee odesílá zprávu a pozorovatel by měl poslat odpověď.
 
@@ -110,7 +108,7 @@ V následujících částech jsou popsány významné soubory v této ukázce: M
         };
     ```
 
-#### <a name="chainingdotnet45cpp"></a>ChainingdotNet 4.5. cpp
+#### <a name="chainingdotnet45cpp"></a>ChainingdotNet4.5.cpp
 
 - Soubor [chainingdotnet 4.5. cpp](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=1757268882) implementuje třídu `Server`, která je odvozena z třídy `MmioChainer` a přepíše příslušné metody pro zobrazení informací o průběhu. MmioChainer vytvoří oddíl se zadaným názvem oddílu a inicializuje řetěz se zadaným názvem události. Název události je uložen v mapované datové struktuře. Název oddílu a události by měl být jedinečný. Třída `Server` v následujícím kódu spustí zadaný instalační program, monitoruje jeho průběh a vrátí ukončovací kód.
 

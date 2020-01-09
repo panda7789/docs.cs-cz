@@ -1,6 +1,5 @@
 ---
 title: Main () a argumenty příkazového řádku – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 08/02/2017
 f1_keywords:
 - CS5001
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: a5707e8cfff11dd9d27fffc9deb41662fb2c4460
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0571ec6dbc42f103ec922a6b2b13a52510640a78
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281755"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75700598"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Argumenty Main () a příkazového řádku (C# Průvodce programováním)
 
@@ -58,6 +57,6 @@ Přidání `async` a `Task`, `Task<int>` návratové typy, zjednodušuje kód pr
 ## <a name="see-also"></a>Viz také:
 
 - [Sestavování pomocí programu csc.exe v příkazovém řádku](../../language-reference/compiler-options/command-line-building-with-csc-exe.md)
-- [Průvodce programováním v C#](../index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
 - [Metody](../classes-and-structs/methods.md)
 - [V programu v jazyce C#](../inside-a-program/index.md)

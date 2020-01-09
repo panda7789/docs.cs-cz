@@ -1,6 +1,5 @@
 ---
 title: ReadOnly – odkaz C# na klíčové slovo
-ms.custom: seodec18
 ms.date: 06/21/2018
 f1_keywords:
 - readonly_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 30419200cfce785d7fcbbf59650241580a1f0ce4
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f9fa6f893e7f999564c4dcb43d40755547d3c793
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454960"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713115"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
@@ -103,7 +102,7 @@ Pokud použijete modifikátor `readonly` na příslušné `struct` metody, získ
 
 Modifikátor `readonly` je platný pro většinu členů `struct`, včetně metod, které přepíší metody deklarované v <xref:System.Object?displayProperty=nameWithType>. Existují určitá omezení:
 
-- Nemůžete deklarovat `readonly` statických členů.
+- Nelze deklarovat `readonly` statické metody nebo vlastnosti.
 - Nelze deklarovat `readonly` konstruktory.
 
 Můžete přidat modifikátor `readonly` k vlastnosti nebo deklaraci indexeru:

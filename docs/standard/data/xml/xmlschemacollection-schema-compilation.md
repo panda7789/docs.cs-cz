@@ -1,28 +1,26 @@
 ---
-title: XmlSchemaCollection Schema Compilation
+title: Kompilace schématu XmlSchemaCollection
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 40d7ef11dde882d99c21fe541c2689c52a634edf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1f300bab01f94af8c70c8b67a69a73fbc5ba5bac
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915941"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709826"
 ---
-# <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection Schema Compilation
+# <a name="xmlschemacollection-schema-compilation"></a>Kompilace schématu XmlSchemaCollection
 **XmlSchemaCollection** je mezipaměť nebo knihovna, kde mohou být uloženy a ověřeny schémata XML-data redukovaná (XDR) a XML Schema Definition Language (XSD). **XmlSchemaCollection** vylepšuje výkon ukládáním schémat do paměti místo přístupu ze souboru nebo adresy URL.  
   
 > [!NOTE]
-> I když třída XmlSchemaCollection ukládá schémata XDR i schémata XML, jakákoliv metoda a vlastnost, která přijímá nebo vrací objekt **XmlSchema** , podporuje pouze schémata XML.  
+> I když třída **XmlSchemaCollection** ukládá schémata XDR i schémata XML, jakákoliv metoda a vlastnost, která přijímá nebo vrací objekt **XmlSchema** , podporuje pouze schémata XML.  
   
 > [!IMPORTANT]
-> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. <xref:System.Xml.Schema.XmlSchemaCollection> Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> Třída <xref:System.Xml.Schema.XmlSchemaCollection> je nyní zastaralá a byla nahrazena třídou <xref:System.Xml.Schema.XmlSchemaSet>. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaSet> naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
   
 ## <a name="add-schemas-to-the-collection"></a>Přidání schémat do kolekce  
  Schémata jsou načtena do kolekce pomocí metody **Add** kolekce **XmlSchemaCollection**, v níž je schéma přidruženo k identifikátoru URI oboru názvů. V případě schémat XML bude identifikátor URI oboru názvů obvykle cílovým oborem názvů schématu. V případě schémat XDR je identifikátor URI oboru názvů zadaný při přidání schématu do kolekce.  
@@ -34,10 +32,10 @@ ms.locfileid: "69915941"
  Schéma můžete z kolekce načíst pomocí vlastnosti **Item** . Vlastnost **Item** přebírá řetězec představující identifikátor URI oboru názvů přidružený ke schématu, obvykle jeho cílový obor názvů a vrací objekt **XmlSchema** . Vlastnost **Item** se vztahuje pouze na schémata XML. Návratová hodnota je vždy nulový odkaz pro schémata XDR, protože nemají k dispozici objektový model.  
   
 ## <a name="validate-xml-documents-using-xmlschemacollection"></a>Ověřování dokumentů XML pomocí XmlSchemacollection  
- Dokument instance XML můžete ověřit pomocí kolekce XmlSchemaCollection vytvořením objektu XmlSchemaCollection , přidáním schémat do kolekce a nastavením vlastnosti schemas v **XmlValidatingReader** na hodnotu Přiřaďte vytvořenou **kolekci XmlSchemaCollection** k **XmlValidatingReader**.  
+ Dokument instance XML můžete ověřit pomocí kolekce **XmlSchemaCollection** vytvořením objektu **XmlSchemaCollection** , přidáním schémat do kolekce a nastavením vlastnosti **schemas** v **XmlValidatingReader** k přiřazení vytvořené kolekce **XmlSchemaCollection** k **XmlValidatingReader**.  
   
 ### <a name="improved-performance"></a>Vylepšený výkon  
- Doporučuje se, pokud ověřujete více než jeden dokument proti stejnému schématu, že použijete sadu XmlSchemaCollection , protože poskytuje lepší výkon ukládáním schémat do mezipaměti v paměti.  
+ Doporučuje se, pokud ověřujete více než jeden dokument proti stejnému schématu, že použijete sadu **XmlSchemaCollection** , protože poskytuje lepší výkon ukládáním schémat do mezipaměti v paměti.  
   
  Následující příklad kódu vytvoří objekt **XmlSchemaCollection** , přidá schémata do kolekce a nastaví vlastnost **schemas** .  
   

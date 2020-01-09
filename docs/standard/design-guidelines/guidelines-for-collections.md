@@ -3,90 +3,89 @@ title: Pokyny pro kolekce
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-author: KrzysztofCwalina
-ms.openlocfilehash: a8e8672d71500478dbbe28512e413e8ada501f45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 231d8b04c11f19c4440e184533e1eeaded72b70b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669042"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709319"
 ---
 # <a name="guidelines-for-collections"></a>Pokyny pro kolekce
-Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které mají některé běžné charakteristiky lze považovat za kolekce. Je téměř vždy vhodné pro tyto typy implementace <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže se v této části považujeme pouze typy implementace jeden nebo oba z těchto rozhraní být kolekce.  
+Jakýkoli typ navržený specificky pro manipulaci se skupinou objektů s některými běžnými charakteristikami lze považovat za kolekci. Je téměř vždy vhodný pro tyto typy implementovat <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže v této části doporučujeme pouze typy implementující jedno nebo obě tato rozhraní do kolekcí.  
   
  **X DO NOT** slabě typovaná kolekce použít veřejné rozhraní API.  
   
- Typ položky přesně, nikoli jakákoliv z jeho základních typů (platí jenom pro veřejné členy kolekce) by měl být typu všechny návratové hodnoty a parametry představující kolekci položek.  
+ Typ všech vrácených hodnot a parametrů představujících položky kolekce by měl být přesný typ položky, nikoli žádný z jeho základních typů (platí pouze pro veřejné členy kolekce).  
   
  **X DO NOT** použít <xref:System.Collections.ArrayList> nebo <xref:System.Collections.Generic.List%601> veřejné rozhraní API.  
   
- Tyto typy jsou datové struktury, která se používá v interní implementace, nejsou ve veřejných rozhraní API. `List<T>` je optimalizované pro výkon a výkon za cenu čistotu rozhraní API a flexibilitu. Například, pokud vrátíte `List<T>`, nikdy nebudete moct dostávat oznámení, když kód klienta upraví kolekci. Navíc `List<T>` poskytuje mnoho členů, jako například <xref:System.Collections.Generic.List%601.BinarySearch%2A>, které nejsou užitečné nebo použít v mnoha scénářích. Následující dvě části popisují typy (abstrakce) určený speciálně pro použití ve veřejných rozhraní API.  
+ Tyto typy jsou datové struktury navržené pro použití v interní implementaci, nikoli ve veřejných rozhraních API. `List<T>` je optimalizováno pro výkon a výkon v ceně výkonu rozhraní API a flexibility. Pokud například vrátíte `List<T>`, nebudete někdy moci dostávat oznámení, když kód klienta upraví kolekci. `List<T>` také zveřejňuje mnoho členů, jako je například <xref:System.Collections.Generic.List%601.BinarySearch%2A>, které nejsou užitečné nebo použitelné v mnoha scénářích. Následující dvě části popisují typy (abstrakce) navržené speciálně pro použití ve veřejných rozhraních API.  
   
  **X DO NOT** použít `Hashtable` nebo `Dictionary<TKey,TValue>` veřejné rozhraní API.  
   
- Tyto typy jsou datové struktury, která se používá v interní implementaci. Veřejné rozhraní API používejte <xref:System.Collections.IDictionary>, `IDictionary <TKey, TValue>`, nebo vlastní typ implementující jedno nebo obě rozhraní.  
+ Tyto typy jsou datové struktury navržené pro použití při interní implementaci. Veřejná rozhraní API by měla používat <xref:System.Collections.IDictionary>, `IDictionary <TKey, TValue>`nebo vlastní typ implementující jedno nebo obě rozhraní.  
   
  **X DO NOT** použít <xref:System.Collections.Generic.IEnumerator%601>, <xref:System.Collections.IEnumerator>, nebo jakýkoli jiný typ, který implementuje kterékoli z těchto rozhraní, s výjimkou jako návratový typ `GetEnumerator` metoda.  
   
- Typy jiné než vrácení enumerátory z metody `GetEnumerator` nelze použít s `foreach` příkazu.  
+ Typy, které vracejí enumerátory z jiných metod než `GetEnumerator`, nelze použít spolu s příkazem `foreach`.  
   
- **X DO NOT** implementovat obě `IEnumerator<T>` a `IEnumerable<T>` na stejného typu. Totéž platí i pro neobecné rozhraní `IEnumerator` a `IEnumerable`.  
+ **X DO NOT** implementovat obě `IEnumerator<T>` a `IEnumerable<T>` na stejného typu. Totéž platí pro neobecná rozhraní `IEnumerator` a `IEnumerable`.  
   
-## <a name="collection-parameters"></a>Kolekce parametrů  
- **✓ DO** typ specializuje nejmenší možné použít jako typ parametru. Většina členy trvá kolekcí, jak používat parametry `IEnumerable<T>` rozhraní.  
+## <a name="collection-parameters"></a>Parametry kolekce  
+ **✓ DO** typ specializuje nejmenší možné použít jako typ parametru. Většina členů, kteří přibírají kolekce jako parametry, používá rozhraní `IEnumerable<T>`.  
   
  **X AVOID** pomocí <xref:System.Collections.Generic.ICollection%601> nebo <xref:System.Collections.ICollection> jako parametr pouze pro přístup `Count` vlastnost.  
   
- Místo toho zvažte použití `IEnumerable<T>` nebo `IEnumerable` a dynamicky kontroluje, zda daný objekt implementuje `ICollection<T>` nebo `ICollection`.  
+ Místo toho zvažte použití `IEnumerable<T>` nebo `IEnumerable` a dynamicky kontroluje, zda objekt implementuje `ICollection<T>` nebo `ICollection`.  
   
-## <a name="collection-properties-and-return-values"></a>Kolekce vlastností a návratové hodnoty  
+## <a name="collection-properties-and-return-values"></a>Vlastnosti kolekce a návratové hodnoty  
  **X DO NOT** zadejte vlastnosti nastavit kolekce.  
   
- Uživatelům můžete nahradit obsah kolekce nejprve vymazáním kolekce a následným přidáním nového obsahu. Pokud nahrazování celé kolekce je běžný scénář, zvažte poskytnutí `AddRange` metody v kolekci.  
+ Uživatelé mohou obsah kolekce nahradit tak, že nejprve vymaže kolekci a následně přidají nový obsah. Pokud je nahrazení celé kolekce běžným scénářem, zvažte poskytnutí `AddRange` metody v kolekci.  
   
  **✓ DO** použít `Collection<T>` nebo podtřídou třídy `Collection<T>` pro vlastnosti nebo return hodnoty představující kolekce pro čtení a zápis.  
   
- Pokud `Collection<T>` nesplňuje některé požadavky (například kolekce nesmí implementovat <xref:System.Collections.IList>), použijte vlastní kolekce implementací `IEnumerable<T>`, `ICollection<T>`, nebo <xref:System.Collections.Generic.IList%601>.  
+ Pokud `Collection<T>` nesplňuje určitý požadavek (například kolekce nesmí implementovat <xref:System.Collections.IList>), použijte vlastní kolekci implementací `IEnumerable<T>`, `ICollection<T>`nebo <xref:System.Collections.Generic.IList%601>.  
   
  **✓ DO** použít <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>, podtřídou třídy `ReadOnlyCollection<T>`, nebo ve výjimečných případech `IEnumerable<T>` pro vlastnosti nebo return hodnoty představující kolekce jen pro čtení.  
   
- Obecně platí, dáváte přednost `ReadOnlyCollection<T>`. Pokud nesplňuje některé požadavky (například kolekce nesmí implementovat `IList`), použijte vlastní kolekce implementací `IEnumerable<T>`, `ICollection<T>`, nebo `IList<T>`. Pokud se rozhodnete implementovat vlastní kolekce jen pro čtení, implementovat `ICollection<T>.IsReadOnly` vrátit `true`.  
+ Obecně je vhodnější `ReadOnlyCollection<T>`. Pokud nesplňuje určitý požadavek (například shromažďování nesmí implementovat `IList`), použijte vlastní kolekci implementací `IEnumerable<T>`, `ICollection<T>`nebo `IList<T>`. Pokud implementujete vlastní kolekci jen pro čtení, implementujte `ICollection<T>.IsReadOnly` pro návrat `true`.  
   
- V případech, kdy jste si jisti, že je jediným případem se někdy budete chtít podporu dopředné iterace, můžete jednoduše použít `IEnumerable<T>`.  
+ V případech, kdy jste si jisti, že jediný scénář, který budete chtít někdy podporovat, je iterace jenom pro přeposílání, můžete jednoduše použít `IEnumerable<T>`.  
   
  **✓ CONSIDER** pomocí podtřídy obecné základní kolekce místo použití kolekce přímo.  
   
- To umožňuje lepší názvu a pro přidávání členů pomocné rutiny, které nejsou k dispozici u typů kolekce základní. To platí zejména pro rozhraní API vysoké úrovně.  
+ To umožňuje lepší název a přidání pomocných členů, kteří nejsou přítomni v základních typech kolekce. To se hodí hlavně pro rozhraní API vysoké úrovně.  
   
  **✓ CONSIDER** vrácení podtřídou třídy `Collection<T>` nebo `ReadOnlyCollection<T>` velmi běžně používaných metod a vlastností.  
   
- To znamená, že umožní přidají metody helper nebo změňte implementaci kolekce v budoucnu.  
+ To umožní přidat pomocné metody nebo změnit implementaci kolekce v budoucnu.  
   
- **✓ CONSIDER** pomocí kolekci s klíčem, je-li mít jedinečné klíče položky uložené v kolekci (názvy, ID, atd.). Kolekce s klíči jsou kolekce, které můžete indexovat pomocí celé číslo a klíč a jsou obvykle implementovány pomocí dědění z `KeyedCollection<TKey,TItem>`.  
+ **✓ CONSIDER** pomocí kolekci s klíčem, je-li mít jedinečné klíče položky uložené v kolekci (názvy, ID, atd.). Kolekce s klíčem jsou kolekce, které mohou být indexovány pomocí celého čísla i klíče a jsou obvykle implementovány děděním z `KeyedCollection<TKey,TItem>`.  
   
- Kolekce s klíči obvykle mají větší pracovníkům paměti by se neměl používat, pokud zatížení paměti převažuje získané výhody s klíči.  
+ Kolekce s klíčem mají obvykle větší nároky na paměť a neměly by se používat v případě, že režie paměti převyšuje výhody použití klíčů.  
   
- **X DO NOT** vrátit hodnotu null. hodnoty z vlastnosti kolekce nebo z metody, které vrací kolekce. Místo toho vrátí prázdnou kolekci nebo prázdné pole.  
+ **X DO NOT** vrátit hodnotu null. hodnoty z vlastnosti kolekce nebo z metody, které vrací kolekce. Místo toho se vrátí prázdná kolekce nebo prázdné pole.  
   
- Obecně platí, že by měla být hodnota null a prázdné kolekce (0 položek) nebo pole chovají stejně.  
+ Obecným pravidlem je, že kolekce a pole s hodnotou null a prázdné (0 položka) by měly být ošetřeny stejným způsobem.  
   
-### <a name="snapshots-versus-live-collections"></a>Snímky a živé kolekce  
- Kolekce představující stavu v určitém okamžiku v čase se kterým se říká kolekce snímku. Kolekce obsahující řádků vrácená z dotazu databáze by například snímku. Kolekce, vždycky představujících aktuální stav, se nazývají živé kolekce. Například kolekce `ComboBox` položky je kolekce za provozu.  
+### <a name="snapshots-versus-live-collections"></a>Snímky versus živé kolekce  
+ Kolekce představující stav v určitém okamžiku se nazývají kolekce snímků. Například kolekce obsahující řádky vrácené z databázového dotazu by byla snímkem. Kolekce, které vždy představují aktuální stav, se nazývají živé kolekce. Například kolekce `ComboBox`ch položek je živá kolekce.  
   
- **X DO NOT** vracejí snímek kolekce z vlastností. Vlastnosti by měla vrátit živé kolekce.  
+ **X DO NOT** vracejí snímek kolekce z vlastností. Vlastnosti by měly vracet živé kolekce.  
   
- Gettery vlastností by měl být velmi jednoduché operace. Vrácení snímku vyžaduje vytvoření kopie vnitřní kolekce v operaci O(n).  
+ Metody getter vlastnosti by měly být velmi prosté operace. Vrácení snímku vyžaduje vytvoření kopie interní kolekce v operaci O (n).  
   
  **✓ DO** použít kolekci snímku nebo živé `IEnumerable<T>` (nebo jeho dílčí) představují kolekce, které jsou volatile (tj, který můžete změnit bez explicitně úpravy kolekce).  
   
- Všechny kolekce představující sdíleného prostředku (např. soubory v adresáři) jsou obecně volatile. Tato kolekce jsou velmi obtížné či nemožné implementovat jako živé kolekcí, není-li implementace jednoduše dopředné enumerátor.  
+ Obecně platí, že všechny kolekce, které představují sdílený prostředek (například soubory v adresáři), jsou nestálé. Tyto kolekce jsou velmi obtížné nebo nemožné implementovat jako živé kolekce, pokud implementace nestačí jenom pro dopředné enumerátory.  
   
-## <a name="choosing-between-arrays-and-collections"></a>Volba mezi pole a kolekce  
+## <a name="choosing-between-arrays-and-collections"></a>Výběr mezi poli a kolekcemi  
  **✓ DO** upřednostnit kolekce přes pole.  
   
- Kolekce poskytují větší kontrolu nad obsah, můžete v průběhu času vyvíjejí a jsou lépe použitelná. Kromě toho pomocí pole pro scénáře, jen pro čtení se nedoporučují, protože je odrazovat vysokými náklady na klonování pole. Použitelnost studií vyplývá, že někteří vývojáři klidem více pomocí rozhraní API založená na kolekci.  
+ Kolekce poskytují větší kontrolu nad obsahem, můžou se v průběhu času vyvíjet a jsou užitečnější. Kromě toho se nedoporučuje používat pole pro scénáře jen pro čtení, protože náklady na klonování pole jsou zakazují. Studie použitelnosti ukázaly, že někteří vývojáři se lépe cítí pomocí rozhraní API založených na kolekcích.  
   
- Ale pokud vyvíjíte rozhraní API nízké úrovně, může být vhodnější použít pole pro čtení i zápis scénáře. Pole mají nižší paměťové nároky, což pomáhá snižovat pracovní sady, a přístup k prvkům v poli je rychlejší, protože je optimalizovaný modul runtime.  
+ Pokud ale vyvíjíte rozhraní API nízké úrovně, může být lepší použít pole pro scénáře pro čtení i zápis. Pole mají menší nároky na paměť, což pomáhá snižovat pracovní sadu a přístup k prvkům v poli je rychlejší, protože je optimalizován modulem runtime.  
   
  **✓ CONSIDER** použití polí v nižší úrovně rozhraní API minimalizovat využití paměti a maximalizovat výkon.  
   
@@ -97,18 +96,18 @@ Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které maj
 ## <a name="implementing-custom-collections"></a>Implementace vlastních kolekcí  
  **✓ CONSIDER** dědění z `Collection<T>`, `ReadOnlyCollection<T>`, nebo `KeyedCollection<TKey,TItem>` při návrhu nové kolekce.  
   
- **✓ DO** implementovat `IEnumerable<T>` při návrhu nové kolekce. Zvažte implementaci `ICollection<T>` nebo dokonce `IList<T>` to bude dávat smysl.  
+ **✓ DO** implementovat `IEnumerable<T>` při návrhu nové kolekce. Zvažte implementaci `ICollection<T>` nebo dokonce `IList<T>`, kde to dává smysl.  
   
- Při implementaci těchto vlastní kolekce, mají tvar API stanovené `Collection<T>` a `ReadOnlyCollection<T>` co nejpřesněji. To znamená explicitně implementovat stejné členy, pojmenujte parametry, jako jsou tyto dvě kolekce název je a tak dále.  
+ Při implementaci takové vlastní kolekce se řiďte vzorem rozhraní API vytvořeným `Collection<T>` a `ReadOnlyCollection<T>` co nejpřesněji. To znamená, že je třeba implementovat stejné členy explicitně, pojmenovat parametry jako tyto dvě kolekce a tak dále.  
   
  **✓ CONSIDER** implementace rozhraní neobecné kolekce (`IList` a `ICollection`) Pokud kolekce se často předá rozhraní API trvá tato rozhraní jako vstup.  
   
  **X AVOID** implementace rozhraní pro kolekce na typy s komplexní rozhraní API koncept kolekce, které nejsou.  
   
- **X DO NOT** dědit z neobecného základní kolekcí, jako `CollectionBase`. Použití `Collection<T>`, `ReadOnlyCollection<T>`, a `KeyedCollection<TKey,TItem>` místo.  
+ **X DO NOT** dědit z neobecného základní kolekcí, jako `CollectionBase`. Místo toho použijte `Collection<T>`, `ReadOnlyCollection<T>`a `KeyedCollection<TKey,TItem>`.  
   
-### <a name="naming-custom-collections"></a>Názvy vlastních kolekcí  
- Kolekce (typy, které implementují `IEnumerable`) jsou vytvořeny hlavně pro dva důvody: (1) Chcete-li vytvořit novou strukturu dat s operacemi specifický pro strukturu a často odlišných výkonových existujícím datovým strukturám charakteristik (například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.LinkedList%601>, <xref:System.Collections.Generic.Stack%601>) a (2) Chcete-li vytvořit kolekci specializované pro drží určitou sadu položek (například <xref:System.Collections.Specialized.StringCollection>). Datové struktury jsou nejčastěji používají v interní implementaci aplikací a knihoven. Specializované kolekce se hlavně zveřejněné v rozhraní API (jako typy vlastností a parametrů).  
+### <a name="naming-custom-collections"></a>Pojmenovávání vlastních kolekcí  
+ Kolekce (typy, které implementují `IEnumerable`) se vytvářejí hlavně ze dvou důvodů: (1) pro vytvoření nové struktury dat s operacemi specifickými pro strukturu a často různé charakteristiky výkonu než stávající datové struktury (např. <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.LinkedList%601>, <xref:System.Collections.Generic.Stack%601>) a (2) pro vytvoření specializované kolekce pro uchovávání konkrétní sady položek (například <xref:System.Collections.Specialized.StringCollection>). V interní implementaci aplikací a knihoven se často používají datové struktury. Specializované kolekce jsou převážně vystaveny v rozhraních API (jako typy vlastností a parametrů).  
   
  **✓ DO** používat příponu "Slovník" v názvech abstrakce implementace `IDictionary` nebo `IDictionary<TKey,TValue>`.  
   
@@ -118,15 +117,15 @@ Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které maj
   
  **X AVOID** pomocí libovolné přípony zdání konkrétní implementace, jako je například "LinkedList" nebo "Zatřiďovací tabulky," v názvech abstrakce kolekce.  
   
- **✓ CONSIDER** prefixu názvy kolekci s názvem typu položky. Například kolekce ukládání položek typu `Address` (implementace `IEnumerable<Address>`) by měly být pojmenovány `AddressCollection`. Pokud typ položky je rozhraní, předponu "I" položky lze vynechat typu. Díky tomu se kolekce <xref:System.IDisposable> položky lze volat `DisposableCollection`.  
+ **✓ CONSIDER** prefixu názvy kolekci s názvem typu položky. Například kolekce, která ukládá položky typu `Address` (implementace `IEnumerable<Address>`), by měla být pojmenována `AddressCollection`. Pokud je typ položky rozhraní, může být předpona "I" typu položky vynechána. Proto může být kolekce <xref:System.IDisposable>ch položek volána `DisposableCollection`.  
   
  **✓ CONSIDER** pomocí předpony "Jen pro čtení" v názvech kolekcí jen pro čtení, pokud odpovídající kolekci lze zapisovat, mohou být přidány nebo již existuje v rámci.  
   
- Například by měla být volána jen pro čtení kolekce řetězců `ReadOnlyStringCollection`.  
+ Například kolekce řetězců jen pro čtení by měla být volána `ReadOnlyStringCollection`.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

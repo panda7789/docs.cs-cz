@@ -1,18 +1,17 @@
 ---
 title: Oddělovače pro dokumentační značky – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML [C#], delimiters
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-ms.openlocfilehash: 17594e557df922c1c512b4d643cd85ac76ea5a81
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 064519e6d849736690f28c78e0efbc4067f9e6a9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523490"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711789"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro dokumentační značky (Průvodce programováním v C#)
 Použití komentářů dokumentu XML vyžaduje oddělovače, které označují kompilátoru, kde komentář k dokumentaci začíná a končí. Pomocí značek dokumentace XML můžete použít následující typy oddělovačů:  
@@ -21,7 +20,7 @@ Použití komentářů dokumentu XML vyžaduje oddělovače, které označují k
  Jeden řádek oddělovače. Jedná se o formulář, který je zobrazen v příkladech dokumentace a který se C# používá v šablonách Visual Project. Pokud je za oddělovačem mezera, tento znak není zahrnutý ve výstupu XML.  
   
 > [!NOTE]
-> Integrované vývojové prostředí (IDE) sady Visual Studio obsahuje funkci s názvem úpravy inteligentních komentářů, která automaticky vkládá \<summary > a \< značky > a přesune kurzor do těchto značek po zadání `///` oddělovače v editoru kódu. Tuto funkci můžete zapnout nebo vypnout v [dialogovém okně Možnosti](/visualstudio/ide/reference/options-text-editor-csharp-advanced).  
+> Integrované vývojové prostředí (IDE) sady Visual Studio obsahuje funkci s názvem úpravy inteligentních komentářů, která automaticky vkládá \<souhrn > a \</Summary > značky a přesune kurzor do těchto značek po zadání `///` oddělovače v editoru kódu. Tuto funkci můžete zapnout nebo vypnout v [dialogovém okně Možnosti](/visualstudio/ide/reference/options-text-editor-csharp-advanced).  
   
  `/** */`  
  Víceřádkové oddělovače.  

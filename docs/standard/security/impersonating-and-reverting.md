@@ -10,23 +10,21 @@ helpviewer_keywords:
 - security [.NET Framework], impersonating Windows accounts
 - impersonating Windows accounts
 ms.assetid: b93d402c-6c28-4f50-b2bc-d9607dc3e470
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 97b15ea2202ca410dd517db63a7145d27f62bb48
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14b01ec3ac800abd795e87b641a442df100f102b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018590"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706016"
 ---
 # <a name="impersonating-and-reverting"></a>Zosobnění a návrat
-Někdy můžete potřebovat k získání tokenu účtu Windows zosobnit účet Windows. Aplikace založená na technologii ASP.NET například může mít jednat jménem několika uživatelů v různých časech. Vaše aplikace může přijmout token, který představuje správce z Internetové informační služby (IIS), zosobnit uživatele, provedení určité operace a vrátit k předchozí identitu. V dalším kroku ji může přijmout token ze služby IIS, který reprezentuje uživatele s menším počtem práv, provádět některé operace a znovu vrátit.  
+Někdy může být nutné získat token účtu systému Windows k zosobnění účtu systému Windows. Například vaše aplikace založená na ASP.NET může muset v různých časech jednat jménem několika uživatelů. Vaše aplikace může přijmout token, který představuje správce z Internetová informační služba (IIS), zosobnit tohoto uživatele, provést operaci a vrátit se k předchozí identitě. V dalším kroku může přijmout token ze služby IIS, který představuje uživatele s menšími právy, provede nějakou operaci a vrátí se znovu.  
   
- V situacích, kdy vaše aplikace musí zosobnit účet Windows, která nebyla připojena k aktuálnímu vláknu službou IIS je nutné získat token tohoto účtu a použít ho k aktivaci účtu. Uděláte to tak provádění těchto úkolů:  
+ V situacích, kdy musí vaše aplikace zosobnit účet systému Windows, který nebyl připojen k aktuálnímu vláknu službou IIS, je nutné načíst token tohoto účtu a použít ho k aktivaci účtu. Můžete to provést provedením následujících úloh:  
   
-1. Získat token účtu pro určitého uživatele tím, že zavoláte na nespravovanou **LogonUser** metody. Tato metoda není v knihovně základních tříd rozhraní .NET Framework, ale je umístěn v nespravovanou **advapi32.dll**. Přístup k metodám v nespravovaném kódu je pokročilá operace a je nad rámec této diskuse. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md). Další informace o **LogonUser** metoda a **advapi32.dll**, naleznete v dokumentaci Platform SDK.  
+1. Načtěte token účtu pro konkrétního uživatele voláním nespravované metody **LogonUser** . Tato metoda není v .NET Framework základní knihovny tříd, ale je umístěna v nespravované knihovně **advapi32. dll**. Přístup k metodám v nespravovaném kódu je pokročilá operace a překračuje rozsah této diskuze. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md). Další informace o metodě **LogonUser** a **advapi32. dll**naleznete v dokumentaci k sadě SDK platformy.  
   
-2. Vytvořit novou instanci třídy **WindowsIdentity** třídy, prochází token. Následující kód ukazuje toto volání, kde `hToken` představuje Windows token.  
+2. Vytvořte novou instanci třídy **WindowsIdentity** a předejte token. Následující kód demonstruje toto volání, kde `hToken` představuje token systému Windows.  
   
     ```csharp  
     WindowsIdentity impersonatedIdentity = new WindowsIdentity(hToken);  
@@ -36,7 +34,7 @@ Někdy můžete potřebovat k získání tokenu účtu Windows zosobnit účet W
     Dim impersonatedIdentity As New WindowsIdentity(hToken)  
     ```  
   
-3. Začněte tím, že vytvoříte novou instanci třídy zosobnění <xref:System.Security.Principal.WindowsImpersonationContext> třídy a inicializuje ji <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A?displayProperty=nameWithType> metoda inicializovaného třídy, jak je znázorněno v následujícím kódu.  
+3. Zahajte zosobnění vytvořením nové instance třídy <xref:System.Security.Principal.WindowsImpersonationContext> a jejím inicializací pomocí metody <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A?displayProperty=nameWithType> inicializované třídy, jak je znázorněno v následujícím kódu.  
   
     ```csharp  
     WindowsImpersonationContext myImpersonation = impersonatedIdentity.Impersonate();  
@@ -46,7 +44,7 @@ Někdy můžete potřebovat k získání tokenu účtu Windows zosobnit účet W
     WindowsImpersonationContext myImpersonation = impersonatedIdentity.Impersonate()  
     ```  
   
-4. Pokud už nepotřebujete k zosobnění, zavolejte <xref:System.Security.Principal.WindowsImpersonationContext.Undo%2A?displayProperty=nameWithType> metoda Obnova zosobnění, jak je znázorněno v následujícím kódu.  
+4. Pokud již nepotřebujete zosobnit, zavolejte metodu <xref:System.Security.Principal.WindowsImpersonationContext.Undo%2A?displayProperty=nameWithType> pro vrácení zosobnění, jak je znázorněno v následujícím kódu.  
   
     ```csharp  
     myImpersonation.Undo();  
@@ -56,9 +54,9 @@ Někdy můžete potřebovat k získání tokenu účtu Windows zosobnit účet W
     myImpersonation.Undo()  
     ```  
   
- Pokud je důvěryhodné, kód se už připojilo <xref:System.Security.Principal.WindowsPrincipal> objekt vlákna, můžete volat metodu instance **zosobnit**, které nepřijímá token účtu. Všimněte si, že se jedná pouze užitečné, když **WindowsPrincipal** objektu ve vlákně představuje uživatele, než pod kterým proces aktuálně spouští. Například může dojít k této situaci pomocí technologie ASP.NET s ověřováním Windows zapnutý a zosobnění vypnuté. V takovém případě je proces spuštěn pod účtem nakonfigurovat v Internetové informační služby (IIS), pokud je aktuální objekt zabezpečení představuje uživatele Windows, který je přistoupit ke stránce.  
+ Pokud důvěryhodný kód již k vláknu připojen objekt <xref:System.Security.Principal.WindowsPrincipal>, můžete zavolat metodu instance **impersonate**, která nepřijímá token účtu. Všimněte si, že tato operace je užitečná pouze v případě, že objekt **WindowsPrincipal** ve vlákně představuje uživatele, který není v současné době spuštěn. Například se můžete setkat s tím, že se tato situace může vyskytnout s ověřováním systému Windows, které je zapnuté a zosobněné. V takovém případě je proces spuštěn pod účtem nakonfigurovaným ve službě Internetová informační služba (IIS), zatímco aktuální objekt zabezpečení představuje uživatele systému Windows, který přistupuje k této stránce.  
   
- Všimněte si, že ani jeden **zosobnit** ani **zpět** změny **hlavní** objektu (<xref:System.Security.Principal.IPrincipal>) přidružené k aktuálnímu kontextu volání. Místo toho zosobnění a vracení změn token spojený s aktuální proces operačního systému...  
+ Všimněte si, že ani nemůže **Zrušit** změny objektu **zabezpečení** (<xref:System.Security.Principal.IPrincipal>) přidruženého k aktuálnímu kontextu volání. Místo toho jsou zosobnění a vrácení změn tokenu přidruženého k aktuálnímu procesu operačního systému.  
   
 ## <a name="see-also"></a>Viz také:
 

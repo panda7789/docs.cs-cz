@@ -1,6 +1,5 @@
 ---
-title: Nezabezpečený kód a ukazatele – C# Průvodce programováním pro službu
-ms.custom: seodec18
+title: Nezabezpečený kód a ukazatele C# – Průvodce programováním
 ms.date: 07/20/2015
 helpviewer_keywords:
 - security [C#], type safety
@@ -11,37 +10,37 @@ helpviewer_keywords:
 - C# language, pointers
 - pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
-ms.openlocfilehash: 99f0b925a37bff8b6ab1ff46e9ce2f0ea0a38aed
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 013af4e55c8fc396bbc92058d7fb454484f3263e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959478"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711828"
 ---
-# <a name="unsafe-code-and-pointers-c-programming-guide"></a>Nezabezpečený kód a ukazatele (C# Programming Guide)
+# <a name="unsafe-code-and-pointers-c-programming-guide"></a>Nezabezpečený kód a ukazateleC# (Průvodce programováním)
 
-Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmetiku ukazatele ve výchozím nastavení. Nicméně pomocí [nebezpečné](../../language-reference/keywords/unsafe.md) – klíčové slovo, můžete definovat nezabezpečený kontext, ve které je možné ukazatele. Další informace o ukazatelích naleznete v tématu [typy ukazatelů](pointer-types.md).  
+Aby se zachovala bezpečnost typů a C# zabezpečení, ve výchozím nastavení nepodporuje aritmetický ukazatel. Pomocí klíčového slova [unsafe](../../language-reference/keywords/unsafe.md) můžete však definovat nezabezpečený kontext, ve kterém mohou být ukazatele použity. Další informace o ukazatelích naleznete v tématu [typy ukazatelů](pointer-types.md).  
   
 > [!NOTE]
-> V modulu common language runtime (CLR) nebezpečný kód se označuje jako neověřitelný kód. Nezabezpečený kód v jazyce C# není nutně nebezpečné; je jenom kód, jejichž zabezpečení nelze ověřit pomocí modulu CLR. Modul CLR proto pouze spustí nezabezpečený kód by byl v plně důvěryhodná sestavení. Pokud používáte nebezpečný kód, je vaší povinností ujistit, že váš kód nezavádí rizika zabezpečení nebo ukazatel chyby.  
+> V modulu CLR (Common Language Runtime) se nezabezpečený kód označuje jako neověřitelný kód. Nezabezpečený C# kód v nástroji není nutně nebezpečný; je to pouze kód, jehož bezpečnost nemůže být ověřena modulem CLR. Modul CLR proto spustí pouze nezabezpečený kód, pokud je v plně důvěryhodném sestavení. Pokud používáte nezabezpečený kód, je vaše zodpovědnost za to, že váš kód nezavádí bezpečnostní rizika nebo chyby ukazatelů.  
   
 ## <a name="unsafe-code-overview"></a>Přehled nebezpečného kódu
 
 Nezabezpečený kód má následující vlastnosti:
 
-- Metody, typy a bloků kódu může být definován jako bezpečné.
+- Metody, typy a bloky kódu lze definovat jako nebezpečné.
 
-- V některých případech může nezabezpečený kód zvýšit výkon vaší aplikace tak, že odeberete kontroly hranice pole.
+- V některých případech může nezabezpečený kód zvýšit výkon aplikace odebráním kontrol hranic pole.
 
-- Nezabezpečený kód je potřeba při volání nativních funkcí, které vyžadují ukazatele.
+- Nezabezpečený kód je vyžadován při volání nativních funkcí, které vyžadují ukazatele.
 
-- Použití nezabezpečeného kódu představuje rizika zabezpečení a stabilitu.
+- Použití nebezpečného kódu zavádí rizika zabezpečení a stability.
 
-- Kód, který obsahuje nebezpečné bloky musí být kompilována s [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.
+- Kód, který obsahuje nebezpečné bloky, musí být zkompilován s možností [– nezabezpečený](../../language-reference/compiler-options/unsafe-compiler-option.md) kompilátor.
   
 ## <a name="related-sections"></a>Související oddíly
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [Typy ukazatelů](pointer-types.md)
 
@@ -49,7 +48,7 @@ Další informace naleznete v tématu:
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [nezabezpečený kód](~/_csharplang/spec/unsafe-code.md) téma [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v tématu věnovaném [nebezpečnému kódu](~/_csharplang/spec/unsafe-code.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Viz také:
 

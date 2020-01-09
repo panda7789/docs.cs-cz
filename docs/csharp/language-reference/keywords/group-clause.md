@@ -1,6 +1,5 @@
 ---
 title: klauzule Group – C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - group
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 59bffc3df7155780fab90f9959ed99a21bda8eba
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 75a366ec24e4e48af7e87d3372950aad8d76435b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635922"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713473"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 

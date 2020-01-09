@@ -13,14 +13,12 @@ helpviewer_keywords:
 - one-way communication [.NET Framework]
 - local computer communication [.NET Framework], pipes
 ms.assetid: e7773c77-c646-4a01-8a96-a003d59fc4c9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 810b29b4abde174e3634a03d5c7b5e0e43de11b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16018be820951a2739d602edb99845eb89495d5e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947169"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706644"
 ---
 # <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a>Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů
 Anonymní kanály poskytují meziprocesovou komunikaci na místním počítači. Tyto anonymní kanály nabízejí méně funkcí než pojmenované kanály, mají však také menší nákladovou režii. Anonymní kanály lze použít pro usnadnění meziprocesové komunikace na místním počítači. Anonymní kanály nelze použít pro komunikaci v rámci sítě.  
@@ -48,4 +46,4 @@ Anonymní kanály poskytují meziprocesovou komunikaci na místním počítači.
 ## <a name="see-also"></a>Viz také:
 
 - [Pojmenované kanály](../../../docs/standard/io/pipe-operations.md)
-- [Postupy: Použití pojmenované kanály meziprocesová síťová komunikace](../../../docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)
+- [Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů](../../../docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)

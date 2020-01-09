@@ -3,19 +3,17 @@ title: Zpracování dat XML pomocí modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 56b6e9c7-ed82-4a65-a647-7be32c83bcc8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d34d22d8329f0bc26c1e29653137211bf300d324
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 01ef4bef57b8a2e3e13f28a98adb21b111f3f4ed
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647824"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710450"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Zpracování dat XML pomocí modelu DOM
-XML Document Object Model (DOM) zpracovává XML data jako standardní sadu objektů a slouží ke zpracování dat XML v paměti. `System.Xml` Obor názvů poskytuje programový reprezentace XML dokumenty, fragmentů, uzly nebo sad uzlů. Je založen na základní úrovni 1 modelu DOM World Wide Web Consortium (W3C) a doporučení modelu DOM úroveň 2 jádra.  
+XML model DOM (Document Object Model) (DOM) zpracovává data XML jako standardní sadu objektů a slouží ke zpracování dat XML v paměti. Obor názvů `System.Xml` poskytuje programové znázornění dokumentů XML, fragmentů, uzlů nebo sad uzlů. Vychází z konsorcium World Wide Web (W3C) DOM úrovně 1 Core a DOM – základní doporučení úrovně 2.  
   
- <xref:System.Xml.XmlDocument> Třída představuje dokument XML. Obsahuje členy pro načtení a vytvoření všechny ostatní objekty jazyka XML. Použití <xref:System.Xml.XmlDocument>a jeho souvisejících tříd, můžete vytvořit dokumentů XML, načtení a přístup k datům a upravovat data, a uložit změny.  
+ Třída <xref:System.Xml.XmlDocument> představuje dokument XML. Obsahuje členy pro načtení a vytvoření všech ostatních objektů XML. Pomocí <xref:System.Xml.XmlDocument>a souvisejících tříd můžete vytvářet dokumenty XML, načítat a přistupovat k datům, upravovat data a ukládat změny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -59,4 +57,4 @@ XML Document Object Model (DOM) zpracovává XML data jako standardní sadu obje
   
 ## <a name="related-sections"></a>Související oddíly  
  [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- Popisuje použití zpracování XML <xref:System.Xml.XPath.XPathNavigator> třídy.
+ Popisuje zpracování XML pomocí třídy <xref:System.Xml.XPath.XPathNavigator>.

@@ -1,17 +1,16 @@
 ---
 title: Použití ukazatelů ke kopírování pole průvodce C# programováním bajtů
-ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - byte arrays [C#]
 - arrays [C#], byte
 - pointers [C#], to copy bytes
-ms.openlocfilehash: 2673b5a7b87e90618c3a8e579e34e7c7e80efa81
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 4929699c2d1e07b16d4694cff79f9b1394b1de38
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634999"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75698453"
 ---
 # <a name="how-to-use-pointers-to-copy-an-array-of-bytes-c-programming-guide"></a>Použití ukazatelů ke kopírování pole bajtů (C# Průvodce programováním)
 

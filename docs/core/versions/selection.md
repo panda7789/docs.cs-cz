@@ -4,13 +4,12 @@ description: Přečtěte si, jak rozhraní .NET Core automaticky najde a zvolí 
 author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
-ms.custom: seodec18
-ms.openlocfilehash: 043b9b85633e81670783e7870f1be7726ab07e81
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 546725db907937dea6fe0739656fb585a8855644
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454618"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713974"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core, kterou chcete použít.
 
@@ -79,7 +78,7 @@ Daná sada SDK podporuje pevnou sadu rozhraní omezené do cílové architektury
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Aplikace závislé na architektuře – předávají změny
 
-Spouštíte-li aplikaci ze zdroje s [`dotnet run`](../tools/dotnet-run.md), z [**nasazení závislého na rozhraní**](../deploying/index.md#framework-dependent-deployments-fdd) s [`dotnet myapp.dll`](../tools/dotnet.md#description)nebo ze [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#framework-dependent-executables-fde) s `myapp.exe`, je spustitelný soubor `dotnet` **hostitelem** . pro aplikaci.
+Spouštíte-li aplikaci ze zdroje s [`dotnet run`](../tools/dotnet-run.md), z [**nasazení závislého na rozhraní**](../deploying/index.md#framework-dependent-deployments-fdd) s [`dotnet myapp.dll`](../tools/dotnet.md#description)nebo z [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#framework-dependent-executables-fde) s `myapp.exe`, je spustitelný soubor `dotnet` **hostitel** pro aplikaci.
 
 Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Pokud jste například zadali `netcoreapp2.0` v souboru projektu a `2.0.4` je nejnovějším nainstalovaným modulem runtime .NET, je použita `2.0.4` modul runtime.
 
@@ -92,7 +91,7 @@ Několik příkladů použití ukazuje chování, pokud cílíte na 2,0:
 - je zadáno 2,0. Nejsou nainstalovány žádné 2,0. * verzí. 2.2.2 je nainstalovaná nejvyšší verze 2. x modulu runtime. 2.2.2 se používá.
 - je zadáno 2,0. Nejsou nainstalovány žádné 2. verze x. 3.0.0 je nainstalován. Zobrazí se chybová zpráva.
 
-Dílčí verze s přesměrováním obsahuje jeden vedlejší dopad, který může mít vliv na koncové uživatele. Vezměte v úvahu následující scénář:
+Dílčí verze s přesměrováním obsahuje jeden vedlejší dopad, který může mít vliv na koncové uživatele. Uvažte následující příklady:
 
 1. Aplikace určuje, že se vyžaduje 2,0.
 2. Pokud je spuštěná, verze 2,0. * není nainstalovaná, ale je 2.2.2. Bude použita verze 2.2.2.

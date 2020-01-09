@@ -1,6 +1,5 @@
 ---
 title: Indexery – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 03/10/2017
 f1_keywords:
 - cs.indexers
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 02dc8c21b86438c801fb151d9f02a223b60d6197
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c00f506a682ec5d9805537b80159fd41d2174b67
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423236"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75702945"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -64,7 +63,7 @@ Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako 
   
 - [Omezení přístupnosti přístupového objektu](../classes-and-structs/restricting-accessor-accessibility.md)  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
 
 Další informace najdete v tématu [indexery](~/_csharplang/spec/classes.md#indexers) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   

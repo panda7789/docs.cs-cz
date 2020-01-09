@@ -2,12 +2,12 @@
 title: Co je nového v C# 7,1
 description: Přehled nových funkcí v C# 7,1.
 ms.date: 04/09/2019
-ms.openlocfilehash: ee68cbf129d02fc58155a603d6a3f63cfb182cd0
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 5d2d6f51b6422f5b4db5c6bd275b5ffce1f695f8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105554"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714582"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7,1
 
@@ -17,20 +17,20 @@ C#7,1 přidá prvek konfigurace [výběru jazykové verze](../language-reference
 
 Nové funkce jazyka v této verzi jsou:
 
-- [`async``Main` metoda](#async-main)
-  - Vstupní bod aplikace může mít `async` modifikátor.
-- [`default`literálové výrazy](#default-literal-expressions)
+- [Metoda `async` `Main`](#async-main)
+  - Vstupním bodem aplikace může být modifikátor `async`.
+- [`default` literálové výrazy](#default-literal-expressions)
   - Můžete použít výchozí literálové výrazy ve výchozích hodnotových výrazech, pokud cílový typ lze odvodit.
 - [Odvozené názvy elementů řazené kolekce členů](#inferred-tuple-element-names)
   - Názvy prvků řazené kolekce členů lze odvodit z inicializace řazené kolekce členů v mnoha případech.
 - [Porovnávání vzorů v parametrech obecného typu](#pattern-matching-on-generic-type-parameters)
   - Můžete použít výrazy porovnávání vzorů u proměnných, jejichž typ je parametr obecného typu.
 
-Nakonec má kompilátor dvě možnosti `-refout` a odkaz na `-refonly` [generování sestavení odkazu](#reference-assembly-generation).
+Nakonec má kompilátor dvě možnosti `-refout` a `-refonly`, které řídí [generování sestavení odkazu](#reference-assembly-generation).
 
 Chcete-li používat nejnovější funkce v bodu vydání, je nutné [nakonfigurovat verzi jazyka kompilátoru](../language-reference/configure-language-version.md) a vybrat verzi.
 
-Zbývající část tohoto článku poskytuje přehled jednotlivých funkcí. U každé funkce se dozvíte, co je důvod na pozadí. Naučíte se syntaxí. Pomocí `dotnet try` globálního nástroje můžete prozkoumat tyto funkce ve vašem prostředí:
+Zbývající část tohoto článku poskytuje přehled jednotlivých funkcí. U každé funkce se dozvíte, co je důvod na pozadí. Naučíte se syntaxí. Tyto funkce můžete ve svém prostředí prozkoumat pomocí globálního nástroje `dotnet try`:
 
 1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
 1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
@@ -39,7 +39,7 @@ Zbývající část tohoto článku poskytuje přehled jednotlivých funkcí. U 
 
 ## <a name="async-main"></a>Asynchronní – hlavní
 
-*Asynchronní metoda Main* umožňuje použití `await` v `Main` metodě.
+*Asynchronní metoda Main* umožňuje použít `await` v metodě `Main`.
 Dříve byste museli psát:
 
 ```csharp
@@ -60,7 +60,7 @@ static async Task<int> Main()
 }
 ```
 
-Pokud program nevrátí ukončovací kód, můžete deklarovat `Main` metodu, která <xref:System.Threading.Tasks.Task>vrátí:
+Pokud program nevrátí ukončovací kód, můžete deklarovat `Main` metodu, která vrátí <xref:System.Threading.Tasks.Task>:
 
 ```csharp
 static async Task Main()
@@ -110,7 +110,7 @@ Další informace o této funkci najdete v článku o [řazených kolekcích čl
 
 ## <a name="pattern-matching-on-generic-type-parameters"></a>Porovnávání vzorů v parametrech obecného typu
 
-Počínaje C# 7,1, výraz vzoru pro `is` a `switch` vzor typu může mít typ parametru obecného typu. To může být nejužitečnější při kontrole typů, které mohou `struct` být `class` buď nebo typy, a chcete se vyhnout zabalení.
+Počínaje C# 7,1, výraz vzoru pro `is` a vzor typu `switch` může mít typ parametru obecného typu. To může být nejužitečnější při kontrole typů, které mohou být buď `struct`, nebo `class` typy a chcete se vyhnout zabalení.
 
 ## <a name="reference-assembly-generation"></a>Generování referenčního sestavení
 

@@ -8,14 +8,12 @@ helpviewer_keywords:
 - reflection, Windows Store apps
 - .NET for Windows Store apps, TypeInfo class
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d68f406b704df905528d444b605681ca6e871127
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 42bcfd4a1adc66511a1183807c09e77d1448c754
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714447"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715888"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
 

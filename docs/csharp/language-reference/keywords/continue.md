@@ -1,6 +1,5 @@
 ---
 title: Continue – příkaz C# – reference
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - continue_CSharpKeyword
@@ -8,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-ms.openlocfilehash: 74d166dbcf03b868baf464864e4c246f789df9cc
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 83b43b31eacf0ed835ee3d7a919538eb9f1dd1e8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605868"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713663"
 ---
 # <a name="continue-c-reference"></a>continue (Referenční dokumentace jazyka C#)
 
-[](./while.md) [](./do.md) [](./foreach-in.md) [](./for.md)Příkaz předá řízení následující iteraci ohraničujícího příkazu while, do, pro nebo foreach, ve kterém se zobrazí. `continue`
+Příkaz `continue` předá řízení další iteraci ohraničujícího příkazu [while](./while.md) [, do,](./do.md) [pro](./for.md)nebo [foreach](./foreach-in.md) , ve kterém se zobrazí.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu je čítač inicializován pro počítání od 1 do 10. Pomocí `continue` příkazu v kombinaci s výrazem `(i < 9)`se přeskočí příkazy mezi `continue` a koncem `for` těla.
+V tomto příkladu je čítač inicializován pro počítání od 1 do 10. Pomocí příkazu `continue` ve spojení s `(i < 9)`výrazů se příkazy mezi `continue` a koncem `for`ho textu přeskočí.
 
 [!code-csharp[csrefKeywordsJump#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#3)]
 

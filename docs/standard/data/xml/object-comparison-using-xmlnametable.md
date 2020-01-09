@@ -6,17 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 814f5434dd0473b3b1dd613a2eba14a828c464d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63278f1aa1fe47377d2dae322a9d12338bbe45dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936705"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710528"
 ---
 # <a name="object-comparison-using-xmlnametable"></a>Porovnání objektů pomocí XmlNameTable
-**XmlDocuments**, při vytvoření, máte název tabulky vytvořené speciálně pro tento dokument. Při načtení do dokumentu XML nebo nové elementy nebo atributy vytvořené, názvy atributů a element jsou vloženy do **XmlNameTable**. Můžete taky vytvořit **XmlDocument** použití stávající **tabulky názvů** z jiného dokumentu. Při **XmlDocuments** jsou vytvořeny pomocí konstruktoru, který přebírá **XmlNameTable** parametr, dokument má přístup k uzlu názvy, obory názvů a předpony, které už jsou uložené ve  **XmlNameTable**. Bez ohledu na to, jak načíst název tabulky s názvy, jakmile se názvy jsou uložené v tabulce, názvy mohou být porovnány rychle pomocí objektu porovnání namísto porovnání řetězců. Řetězce můžete také přidat pomocí názvu tabulky <xref:System.Xml.NameTable.Add%2A>. Následující příklad kódu ukazuje řetězec a název tabulky vytváří **MyString** přidávají do tabulky. Potom **třídou XMLDocument nastavenou na** je vytvořený pomocí tabulky a názvy prvků a atributů v **Myfile.xml** jsou přidány do existující název tabulky.  
+V **případě, že**jsou vytvořeny, mají vytvořenou tabulku názvů specificky pro tento dokument. Když je do dokumentu načten kód XML, nebo jsou vytvořeny nové prvky nebo atributy, názvy atributů a elementů jsou vloženy do **XmlNameTable**. Můžete také vytvořit **XmlDocument** pomocí existující **NameTable** z jiného dokumentu. Když jsou vytvořeny **XmlDocument** pomocí konstruktoru, který přebírá parametr **XmlNameTable** , dokument má přístup k názvům uzlů, oborům názvů a předponám, které jsou již uloženy v **XmlNameTable**. Bez ohledu na to, jak je tabulka názvů načtena s názvy, jakmile jsou názvy uloženy v tabulce, lze názvy porovnávat rychle pomocí porovnání objektů namísto porovnání řetězců. Řetězce lze do tabulky názvů přidat také pomocí <xref:System.Xml.NameTable.Add%2A>. Následující ukázka kódu ukazuje vytvoření tabulky názvů a přidání řetězcové sady **MyString** do tabulky. Poté je vytvořen kód **XmlDocument** pomocí této tabulky a názvy elementů a atributů v **souboru MyFile. XML** jsou přidány do existující tabulky názvů.  
   
 ```vb  
 Dim nt As New NameTable()  
@@ -32,7 +30,7 @@ XmlDocument doc = new XmlDocument(nt);
 doc.Load("Myfile.xml");  
 ```  
   
- Následující příklad kódu ukazuje vytvoření dokumentu, dvě nové prvky, které se přidávají do dokumentu také přidá název tabulky dokumentů a porovnání objektu na názvy.  
+ Následující příklad kódu ukazuje vytvoření dokumentu, dva nové prvky, které jsou přidány do dokumentu, který je také přidá do tabulky názvů dokumentů, a porovnání objektů s názvy.  
   
 ```vb  
 Dim doc1 As XmlDocument = imp.CreateDocument()  
@@ -51,7 +49,7 @@ if (((object)node1.Name) == ((object)node2.Name))
 { ...  
 ```  
   
- Název tabulky předané mezi dvěma dokumenty výše popsaném scénáři je obvyklá, když stejného typu dokumentu je zpracovávána opakovaně, jako je například pořadí dokumentů na webu elektronického obchodování, které odpovídají schématu XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) a stejné řetězce se opakují. Tabulka se stejným názvem pomocí poskytuje vylepšení výkonu, jako stejným názvem elementu dochází ve více dokumentů.  
+ Výše uvedený scénář tabulky názvů předaných mezi dvěma dokumenty je typický při opakovaném zpracování stejného typu dokumentu, jako je například objednávka dokumentů na webu elektronického obchodování, který je v souladu se schématem jazyka XML (XSD) nebo typem dokumentu. definice (DTD) a stejné řetězce se opakují. Použití stejné tabulky názvů přináší vylepšení výkonu, protože stejný název elementu se vyskytuje ve více dokumentech.  
   
 ## <a name="see-also"></a>Viz také:
 

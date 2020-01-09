@@ -6,22 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7d1bbe8b-ed43-4e62-a5ba-d602d244f4ae
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3c7c8f6739fc5132af2c8cf1af2c111d51565db0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e19e0d18dc0f4aceb38bf006c3b9b80276455510
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923305"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709761"
 ---
 # <a name="xpathdocument-input-to-xsltransform"></a>Vstup XPathDocument do XslTransform
-Je <xref:System.Xml.XPath.XPathDocument> mezipaměť jen pro čtení, která slouží ke zpracování dokumentů pomocí <xref:System.Xml.Xsl.XslTransform>. Je nastrukturovaná podobně jako XML model DOM (Document Object Model) (DOM), ale je vysoce optimalizovaná pro zpracování transformací XSLT (Extensible Stylesheet Language) a datový model jazyka XML Path (XPath) pomocí funkcí optimalizace XPath na <xref:System.Xml.XPath.XPathNavigator>.  
+<xref:System.Xml.XPath.XPathDocument> je mezipaměť jen pro čtení, která slouží ke zpracování dokumentů <xref:System.Xml.Xsl.XslTransform>. Je nastrukturovaná podobně jako XML model DOM (Document Object Model) (DOM), ale je vysoce optimalizovaná pro zpracování transformací XSLT (Extensible Stylesheet Language) a datový model jazyka XML Path (XPath) pomocí funkcí optimalizace XPath v <xref:System.Xml.XPath.XPathNavigator>.  
   
 > [!NOTE]
-> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralá v .NET Framework 2,0. Transformace XSLT (Extensible Stylesheet Language) můžete použít k <xref:System.Xml.Xsl.XslCompiledTransform> transformaci pomocí třídy. Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
+> Třída <xref:System.Xml.Xsl.XslTransform> je v .NET Framework 2,0 zastaralá. Pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform> můžete provádět transformace XSLT (Extensible Stylesheet Language). Další informace najdete v tématu [použití třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md) .  
   
- Následující ukázka kódu vytvoří <xref:System.Xml.XPath.XPathDocument> transformaci jako vstup do transformace.  
+ Následující ukázka kódu vytvoří <xref:System.Xml.XPath.XPathDocument> jako vstup pro transformaci.  
   
 ```vb  
 Dim xslt as XslTransform = new XslTransform()  

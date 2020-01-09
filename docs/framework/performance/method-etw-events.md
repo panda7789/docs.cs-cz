@@ -5,14 +5,12 @@ helpviewer_keywords:
 - ETW, method events (CLR)
 - method events [.NET Framework]
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fd29d07b6253cb8c177cc1e8854435ce0079b520
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4937afe8bb23be58b72d082cd5ba200b4948ab4d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974914"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715985"
 ---
 # <a name="method-etw-events"></a>Události Trasování událostí pro Windows metod
 
@@ -26,7 +24,7 @@ Všechny události metody jsou vyvolány klíčovým slovem `JITKeyword` (0x10) 
 
 Klíčové slovo a úroveň jsou uvedeny v následující tabulce. Další informace najdete v tématu [klíčová slova a úrovně CLR ETW](clr-etw-keywords-and-levels.md).
 
-|Klíčové slovo pro vyvolání události|Obsah|
+|Klíčové slovo pro vyvolání události|Úroveň|
 |-----------------------------------|-----------|
 |Zprostředkovatel běhového prostředí `JITKeyword` (0x10)|Informační (4)|
 |Zprostředkovatel běhového prostředí `NGenKeyword` (0x20)|Informační (4)|
@@ -44,11 +42,11 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|název pole|Datový typ|Popis|
+|Název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
-|MethodID|Win: UInt64|Jedinečný identifikátor metody V případě pomocných metod JIT je tato metoda nastavena na počáteční adresu metody.|
-|ModuleID|Win: UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocníky JIT.)|
-|MethodStartAddress|Win: UInt64|Počáteční adresa metody|
+|MethodID|win:UInt64|Jedinečný identifikátor metody V případě pomocných metod JIT je tato metoda nastavena na počáteční adresu metody.|
+|ModuleID|win:UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocníky JIT.)|
+|MethodStartAddress|win:UInt64|Počáteční adresa metody|
 |MethodSize|Win: UInt32|Velikost metody|
 |MethodToken|Win: UInt32|0 pro dynamické metody a pomocníky JIT.|
 |MethodFlags|Win: UInt32|0x1: dynamická metoda.<br /><br /> 0x2: obecná metoda.<br /><br /> 0x4: metoda kódu kompilovaná JIT (jinak kód nativní bitové kopie NGEN).<br /><br /> 0x8: pomocná metoda|
@@ -60,7 +58,7 @@ Tyto události jsou vyvolány pouze pod poskytovatelem doběhu. Označují konec
 
 Klíčové slovo a úroveň jsou uvedeny v následující tabulce:
 
-|Klíčové slovo pro vyvolání události|Obsah|
+|Klíčové slovo pro vyvolání události|Úroveň|
 |-----------------------------------|-----------|
 |poskytovatel doběhu `AppDomainResourceManagementRundownKeyword` (0x800)|Informační (4)|
 |poskytovatel doběhu `JitRundownKeyword` (0x10)|Informační (4)|
@@ -77,7 +75,7 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|název pole|Datový typ|Popis|
+|Název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|
 
@@ -85,7 +83,7 @@ Následující tabulka ukazuje data události:
 
 Klíčové slovo a úroveň jsou uvedeny v následující tabulce:
 
-|Klíčové slovo pro vyvolání události|Obsah|
+|Klíčové slovo pro vyvolání události|Úroveň|
 |-----------------------------------|-----------|
 |Zprostředkovatel běhového prostředí `JITKeyword` (0x10)|Verbose (5)|
 |Zprostředkovatel běhového prostředí `NGenKeyword` (0x20)|Verbose (5)|
@@ -103,24 +101,24 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|název pole|Datový typ|Popis|
+|Název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
-|MethodID|Win: UInt64|Jedinečný identifikátor metody V případě pomocných metod JIT nastavte na počáteční adresu metody.|
-|ModuleID|Win: UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocníky JIT.)|
-|MethodStartAddress|Win: UInt64|Počáteční adresa.|
+|MethodID|win:UInt64|Jedinečný identifikátor metody V případě pomocných metod JIT nastavte na počáteční adresu metody.|
+|ModuleID|win:UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocníky JIT.)|
+|MethodStartAddress|win:UInt64|Počáteční adresa.|
 |MethodSize|Win: UInt32|Délka metody.|
 |MethodToken|Win: UInt32|0 pro dynamické metody a pomocníky JIT.|
 |MethodFlags|Win: UInt32|0x1: dynamická metoda.<br /><br /> 0x2: obecná metoda.<br /><br /> 0x4: kompilovaná metoda JIT (jinak generovaná pomocí NGen. exe)<br /><br /> 0x8: pomocná metoda|
-|MethodNameSpace|Win: UnicodeString|Úplný název oboru názvů přidružený k metodě|
-|MethodName|Win: UnicodeString|Úplný název třídy přidružený k metodě|
-|MethodSignature|Win: UnicodeString|Podpis metody (čárkami oddělený seznam názvů typů)|
+|MethodNameSpace|win:UnicodeString|Úplný název oboru názvů přidružený k metodě|
+|MethodName|win:UnicodeString|Úplný název třídy přidružený k metodě|
+|MethodSignature|win:UnicodeString|Podpis metody (čárkami oddělený seznam názvů typů)|
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|
 
 ## <a name="methodjittingstarted-event"></a>Událost MethodJittingStarted
 
 Klíčové slovo a úroveň jsou uvedeny v následující tabulce:
 
-|Klíčové slovo pro vyvolání události|Obsah|
+|Klíčové slovo pro vyvolání události|Úroveň|
 |-----------------------------------|-----------|
 |Zprostředkovatel běhového prostředí `JITKeyword` (0x10)|Verbose (5)|
 |Zprostředkovatel běhového prostředí `NGenKeyword` (0x20)|Verbose (5)|
@@ -135,15 +133,15 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|název pole|Datový typ|Popis|
+|Název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
-|MethodID|Win: UInt64|Jedinečný identifikátor metody|
-|ModuleID|Win: UInt64|Identifikátor modulu, ke kterému patří tato metoda|
+|MethodID|win:UInt64|Jedinečný identifikátor metody|
+|ModuleID|win:UInt64|Identifikátor modulu, ke kterému patří tato metoda|
 |MethodToken|Win: UInt32|0 pro dynamické metody a pomocníky JIT.|
 |MethodILSize|Win: UInt32|Velikost jazyka MSIL (Microsoft Intermediate Language) pro metodu, která je kompilována JIT.|
-|MethodNameSpace|Win: UnicodeString|Úplný název třídy přidružený k metodě|
-|MethodName|Win: UnicodeString|Název metody|
-|MethodSignature|Win: UnicodeString|Podpis metody (čárkami oddělený seznam názvů typů)|
+|MethodNameSpace|win:UnicodeString|Úplný název třídy přidružený k metodě|
+|MethodName|win:UnicodeString|Název metody.|
+|MethodSignature|win:UnicodeString|Podpis metody (čárkami oddělený seznam názvů typů)|
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|
 
 ## <a name="see-also"></a>Viz také:

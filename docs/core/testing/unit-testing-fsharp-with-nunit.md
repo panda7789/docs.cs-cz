@@ -5,13 +5,12 @@ author: rprouse
 ms.date: 10/04/2018
 dev_langs:
 - fsharp
-ms.custom: seodec18
-ms.openlocfilehash: 3be4ec01137a96a9b38869cbbb81fb0e89b7d700
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
-ms.translationtype: HT
+ms.openlocfilehash: 3347e5b90c31589e9a0f99ac0d9298927a717f56
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559497"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715449"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a nunit
 

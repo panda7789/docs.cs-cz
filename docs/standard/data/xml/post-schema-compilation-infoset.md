@@ -7,21 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7e7892289248c9651b529bcc68d7228b8babb28a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 016032b2b37ced5592edc18934ed183c475f5598
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949497"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710476"
 ---
 # <a name="post-schema-compilation-infoset"></a>Informační sada po kompilaci schématu
-[Doporučení schématu XML World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) popisuje informace o sadě (informační sadu), který musí být vystavené pro ověřování schématu před a po kompilaci schématu. Model objektu schématu XML (SOM) zobrazení této vystavení před a po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána.  
+[Doporučení schématu XML pro konsorcium World Wide Web (W3C)](https://www.w3.org/XML/Schema) se zabývá sadou informací (informační sada), která musí být vystavena pro ověření před schématem a pro kompilaci po sestavení schématu. Model objektu XML schématu (SOM) zobrazuje tuto expozici před a po volání metody <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> <xref:System.Xml.Schema.XmlSchemaSet>.  
   
- Informační sada předběžné schéma ověření je vytvořený při úpravách schématu. Informační sada po kompilaci schématu je generován poté <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána v průběhu kompilace schématu a je přístupný jako vlastnosti.  
+ Informační sada pro ověření před schématem je sestavena během úprav schématu. Informační sada po kompilaci po schématu je vygenerována po volání metody <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> <xref:System.Xml.Schema.XmlSchemaSet> je volána během kompilace schématu a je vystavena jako vlastnosti.  
   
- Objektový model, který představuje ověřování schématu před a po kompilaci schématu infosets; je SOM skládá se ze tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Všechny číst a Zapisovat vlastnosti třídy v <xref:System.Xml.Schema> obor názvů patřit do informační předběžné schéma ověření sadu při všechny vlastnosti jen pro čtení třídy v <xref:System.Xml.Schema> obor názvů patřit do informační sada po kompilaci schématu. Výjimkou z tohoto pravidla jsou následující vlastnosti, které jsou informační sadu předběžné schéma ověření a vlastnosti informační sada po kompilaci schématu.  
+ SOM je objektový model, který představuje ověření předběžného schématu a Infosets kompilace po sestavení. skládá se z tříd v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType>. Všechny vlastnosti čtení a zápisu tříd v oboru názvů <xref:System.Xml.Schema> patří do informační sady předběžného schématu, zatímco všechny vlastnosti tříd, které jsou jen pro čtení třídy v oboru názvů <xref:System.Xml.Schema>, patří do informační sady pro kompilaci po schématu. Výjimkou z tohoto pravidla jsou následující vlastnosti, které jsou zároveň vlastnostmi sady inverze pro ověřování schématu a vlastností informačního doplňku pro kompilaci po schématu.  
   
 |Třída|Vlastnost|  
 |-----------|--------------|  
@@ -32,9 +30,9 @@ ms.locfileid: "61949497"
 |<xref:System.Xml.Schema.XmlSchemaParticle>|<xref:System.Xml.Schema.XmlSchemaParticle.MaxOccurs%2A>, <xref:System.Xml.Schema.XmlSchemaParticle.MinOccurs%2A>|  
 |<xref:System.Xml.Schema.XmlSchemaComplexType>|<xref:System.Xml.Schema.XmlSchemaComplexType.AnyAttribute%2A>|  
   
- Například <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaComplexType> obsahují `BlockResolved` a `FinalResolved` vlastnosti. Tyto vlastnosti se používají k uložení hodnoty `Block` a `Final` vlastnosti po schématu byl zkompilován a ověřit. `BlockResolved` a `FinalResolved` jsou vlastnosti jen pro čtení, které jsou součástí informační sada po kompilaci schématu.  
+ Například třídy <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaComplexType> mají vlastnosti `BlockResolved` a `FinalResolved`. Tyto vlastnosti jsou použity pro uchování hodnot `Block` a `Final` vlastností poté, co bylo schéma kompilováno a ověřeno. `BlockResolved` a `FinalResolved` jsou vlastnosti jen pro čtení, které jsou součástí informační sady po sestavení schématu.  
   
- Následující příklad ukazuje <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> třídy sady po ověření schématu. Před ověřování, obsahuje vlastnost `null` odkaz a <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je nastavena na název typu nejistá. Po ověření <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je přeložit na platný typ, typ objektu je k dispozici <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> vlastnost.  
+ Následující příklad ukazuje vlastnost <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> <xref:System.Xml.Schema.XmlSchemaElement> sadě třídy po ověření schématu. Před ověřením vlastnost obsahuje `null` odkaz a <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je nastaven na název daného typu. Po ověření se <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> přeloží na platný typ a objekt typu je k dispozici prostřednictvím vlastnosti <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A>.  
   
  [!code-cpp[PsciSample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/PsciSample/CPP/PsciSample.cpp#1)]
  [!code-csharp[PsciSample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/PsciSample/CS/PsciSample.cs#1)]

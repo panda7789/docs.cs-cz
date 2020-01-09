@@ -1,16 +1,15 @@
 ---
 title: Výjimky generované kompilátorem – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], compiler-generated
 ms.assetid: 53b52f97-b366-4ed7-b05b-9eb78096b7f9
-ms.openlocfilehash: 4be85bee5fe9c0eeba1c83ac7f79e922c127cc9c
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
-ms.translationtype: HT
+ms.openlocfilehash: 2a6b2c3fa053f1c555856df8098975340e78e2b2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559562"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705311"
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>Výjimky generované kompilátorem (Průvodce programováním v C#)
 Některé výjimky jsou vyvolány automaticky modulem CLR .NET Framework modul CLR (Common Language Runtime), pokud selže základní operace. Tyto výjimky a jejich chybové podmínky jsou uvedeny v následující tabulce.  

@@ -1,17 +1,16 @@
 ---
 title: Multidimenzionální pole – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: 63b8729a14e4c309e85a588c5cddc692fb6a6fad
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: eb49f4386b6106328f1613b5ec70794ac26fc9b7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597405"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715039"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Vícerozměrná pole (Průvodce programováním v C#)
 
@@ -33,7 +32,7 @@ Pole mohou mít více než jednu dimenzi. Například následující deklarace v
   
  [!code-csharp[csProgGuideArrays#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#14)]  
   
- Pokud se rozhodnete deklarovat proměnnou pole bez inicializace, je nutné použít `new` operátor k přiřazení pole k proměnné. Použití `new` je znázorněno v následujícím příkladu.  
+ Pokud se rozhodnete deklarovat proměnnou pole bez inicializace, je nutné použít operátor `new` k přiřazení pole k proměnné. V následujícím příkladu je uvedena použití `new`.  
   
  [!code-csharp[csProgGuideArrays#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#15)]  
   
@@ -41,7 +40,7 @@ Pole mohou mít více než jednu dimenzi. Například následující deklarace v
   
  [!code-csharp[csProgGuideArrays#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#16)]  
   
- Podobně následující příklad získá hodnotu konkrétního prvku pole a přiřadí ho k proměnné `elementValue`.  
+ Podobně následující příklad získá hodnotu konkrétního prvku pole a přiřadí ji k proměnné `elementValue`.  
   
  [!code-csharp[csProgGuideArrays#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#42)]  
   

@@ -12,13 +12,12 @@ helpviewer_keywords:
 - parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
-author: KrzysztofCwalina
-ms.openlocfilehash: a43ec815275e58f4bc6462fb4f5cb4733267de31
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 823bc893c9384bb687e5f9a196abe497db14f4db
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972105"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709475"
 ---
 # <a name="constructor-design"></a>Návrh konstruktoru
 
@@ -76,9 +75,9 @@ Je-li výjimka vyvolána z konstruktoru typu, nelze typ použít v aktuální do
 
 **✓ CONSIDER** inicializace statického pole vloženě než explicitně pomocí statické konstruktory, protože modul runtime je schopen optimalizovat výkon typy, které nemají explicitně definovaných statického konstruktoru.
 
-*Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
+*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
-*Přetištěno oprávněním Pearsonova vzdělávání, Inc. pomocí [pokynů pro návrh rozhraní: Konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) , od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
+*Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
 ## <a name="see-also"></a>Viz také:
 

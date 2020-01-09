@@ -8,45 +8,43 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d8b1c63f10d1d79c3fec6cad87c9a82f03716c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dc4d13e09a91633fac1fcf5bd8ab5b043473bd7d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052648"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711308"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
-Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato kolekce třída je implementace bezpečné pro vlákna. Doporučujeme vám použít ho pokaždé, když se více vláken může být pokus o přístup k prvkům.  
+Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebrat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato třída kolekce je implementace bezpečná pro přístup z více vláken. Doporučujeme, abyste ho používali vždy, když se více vláken může pokusit o přístup k prvkům současně.  
   
- <xref:System.Collections.Concurrent.ConcurrentDictionary%602> nabízí několik metod pohodlí, které není nutné, aby kód nejprve zkontrolujte, jestli existuje klíč předtím, než se pokusí přidat nebo odebrat data. Následující tabulka uvádí tyto metody pohodlí a popisuje jejich použití.  
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602> poskytuje několik pohodlných metod, které neumožňují kódu před tím, než se pokusí přidat nebo odebrat data, nejprve zkontrolovat, zda existuje klíč. Následující tabulka uvádí tyto praktické metody a popisuje, kdy je lze použít.  
   
-|Metoda|Použijte v této situaci...|  
+|Metoda|Použít, když...|  
 |------------|---------------|  
-|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>|Chcete přidat novou hodnotu pro zadaný klíč a, pokud klíč již existuje, chcete nahradit její hodnotu.|  
-|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>|Chcete načíst existující hodnotu pro zadaný klíč a, pokud klíč neexistuje, budete chtít zadat dvojice klíč/hodnota.|  
-|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryAdd%2A>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryGetValue%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryUpdate%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryRemove%2A>|Chcete přidat, získat, aktualizovat nebo odebrat dvojici klíč/hodnota, a pokud klíč již existuje nebo z jakéhokoli důvodu nezdaří, budete chtít provádět některé alternativní akci.|  
+|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>|Chcete přidat novou hodnotu pro zadaný klíč a v případě, že klíč již existuje, chcete nahradit jeho hodnotu.|  
+|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>|Chcete načíst existující hodnotu pro zadaný klíč, a pokud klíč neexistuje, chcete zadat dvojici klíč/hodnota.|  
+|<xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryAdd%2A>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryGetValue%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryUpdate%2A> , <xref:System.Collections.Concurrent.ConcurrentDictionary%602.TryRemove%2A>|Chcete přidat, získat, aktualizovat nebo odebrat dvojici klíč/hodnota, a pokud klíč již existuje nebo se pokus nezdaří z jiného důvodu, budete chtít provést několik alternativních akcí.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá dva <xref:System.Threading.Tasks.Task> instance přidání některých prvků <xref:System.Collections.Concurrent.ConcurrentDictionary%602> současně a potom vypíše veškerý obsah, chcete-li zobrazit, že prvky byly úspěšně přidány. Tento příklad také ukazuje způsob použití <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>, <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>, a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> metody pro přidání, aktualizace a načítat položky z kolekce.  
+ Následující příklad používá dvě instance <xref:System.Threading.Tasks.Task> pro přidání některých prvků do <xref:System.Collections.Concurrent.ConcurrentDictionary%602> souběžně a pak výstup všech obsahu, aby bylo možné zobrazit, že prvky byly úspěšně přidány. Příklad také ukazuje, jak použít metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>, <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> pro přidání, aktualizaci a načtení položek z kolekce.  
   
  [!code-csharp[CDS#16](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds_dictionaryhowto.cs#16)]
  [!code-vb[CDS#16](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/cds_concdict.vb#16)]  
   
- <xref:System.Collections.Concurrent.ConcurrentDictionary%602> je určená pro scénáře s více vlákny. Nemáte nepoužívají zámky ve vašem kódu přidat nebo odebrat položky z kolekce. Vždy je však možné pro jedno vlákno k načtení hodnoty a jiné vlákno se okamžitě aktualizovat kolekci tím, že stejný klíč novou hodnotu.  
+ <xref:System.Collections.Concurrent.ConcurrentDictionary%602> je navržen pro scénáře s více vlákny. K přidání nebo odebrání položek z kolekce není nutné v kódu používat zámky. Je však vždy možné, že jedno vlákno načte hodnotu a další vlákno okamžitě aktualizuje kolekci tím, že zadává stejnou klíčovou novou hodnotu.  
   
- Také Ačkoli všechny metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602> jsou bezpečné pro vlákna, ne všechny metody jsou atomické, konkrétně <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>. Uživatelský delegát, který je předán do těchto metod je vyvolána mimo slovníku interní zámku (to se provádí zabránit zablokování všechna vlákna neznámý kód). Proto je možné toto pořadí k událostem:  
+ I když jsou všechny metody <xref:System.Collections.Concurrent.ConcurrentDictionary%602> bezpečné pro přístup z více vláken, ne všechny metody jsou atomické, konkrétně <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>. Uživatelský delegát, který je předán těmto metodám, je vyvolán mimo vnitřní zámek slovníku (to je provedeno, aby se zabránilo neznámému kódu v blokování všech vláken). Proto je možné, že dojde k této sekvenci událostí:  
   
- 1\) threadA volání <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>, zjistí žádná položka a vytvoří novou položku a přidat tak, že vyvolá delegáta metoda valueFactory.  
+ 1\) volá <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>, nenalezne žádnou položku a vytvoří novou položku, kterou přidáte, voláním delegáta metoda valueFactory.  
   
- 2\) threadB volání <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> souběžně, je vyvolán delegát její metoda valueFactory dorazí na interní zámek před threadA a proto jeho nový pár klíč hodnota se přidá do slovníku.  
+ 2\) threadB volá <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> souběžně, je vyvolán jeho delegát metoda valueFactory a dorazí na interní zámek před vláknem, a proto je do slovníku přidána nová dvojice klíč-hodnota.  
   
- 3\) dokončí threadA v uživatelském delegátu a vlákna dorazí na zámek, ale teď se zobrazí, že položka již existuje.  
+ 3\) delegování uživatele vlákna a vlákno se dokončí na zámek, ale nyní vidí, že položka již existuje.  
   
- 4\) threadA provede "Get" a vrátí data, která byla dříve přidal threadB.  
+ 4\) vlákno provede "Get" a vrátí data, která byla dříve přidána pomocí threadB.  
   
- Proto není zaručeno, že data, která je vrácena <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> je stejná data, která byla vytvořena metoda valueFactory vlákna. Podobně jako posloupnost událostí může dojít, když <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> je volána.  
+ Proto není zaručeno, že data, která jsou vrácena pomocí <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>, jsou stejná data, která byla vytvořena metoda valuefactoryem vlákna. Podobná posloupnost událostí může nastat při volání <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

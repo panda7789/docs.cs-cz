@@ -1,18 +1,16 @@
 ---
-title: 'Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo novějších verzí'
+title: 'Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring apps to support .NET Framework
 - .NET Framework, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cd267de1e632fdc40dc50e8acdeba7d16bf8e61a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 586f39fc9b50dcd45bb959ebd0063e3c38d9c3ed
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779478"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716250"
 ---
 # <a name="how-to-configure-an-app-to-support-net-framework-4-or-later-versions"></a>Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí
 
@@ -22,7 +20,7 @@ Všechny aplikace, které jsou hostiteli společného jazykového modulu runtime
 
 - Konfigurační soubor.
 
-     Pokud konfigurační soubor aplikace zahrnuje [ \<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) položky, které určují jednu nebo více .NET Framework verzí a jedna z těchto verzí se nachází v počítači uživatele, aplikace bude spuštěna na této verzi. Konfigurační soubor načte [ \<položky supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) v pořadí, v jakém jsou uvedeny, a používá první .NET Framework uvedenou verzi, která je k dispozici v počítači uživatele. (Použijte [ \<requiredRuntime > element](../configure-apps/file-schema/startup/requiredruntime-element.md) pro verzi 1,0.)
+     Pokud konfigurační soubor aplikace zahrnuje [\<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) položky, které určují jednu nebo více .NET Framework verzí, a jedna z těchto verzí je přítomna v počítači uživatele, aplikace bude spuštěna na této verzi. Konfigurační soubor čte [\<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md) záznamů v pořadí, v jakém jsou uvedeny, a používá první .NET Framework uvedenou verzi, která je k dispozici v počítači uživatele. (Pro verzi 1,0 použijte [prvek >\<requiredRuntime](../configure-apps/file-schema/startup/requiredruntime-element.md) .)
 
 - Kompilovaná verze.
 
@@ -30,7 +28,7 @@ Všechny aplikace, které jsou hostiteli společného jazykového modulu runtime
 
 - Nainstalována je nejnovější verze.
 
-     Pokud není k dispozici verze .NET Framework, na které byla aplikace vytvořena, a konfigurační soubor neurčuje verzi v [ \<prvku > supportedRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md), aplikace se pokusí spustit na nejnovější verzi .NET Framework, která je k dispozici. v počítači uživatele.
+     Pokud není k dispozici verze .NET Framework, na které byla aplikace vytvořena, a konfigurační soubor neurčuje verzi v [elementu\<supportedRuntime >](../configure-apps/file-schema/startup/supportedruntime-element.md), aplikace se pokusí spustit na nejnovější verzi .NET Framework, která se nachází v počítači uživatele.
 
      Aplikace rozhraní .NET Framework 1.0, 1.1, 2.0, 3.0 a 3.5 se však nemusí automaticky spustit v rozhraní .NET Framework 4 nebo vyšším a v některých případech může uživatel obdržet chybovou zprávu s výzvou k instalaci rozhraní .NET Framework 3.5. Chování aktivace závisí rovněž na operačním systému uživatele, protože různé verze systému Windows obsahují různé verze rozhraní .NET Framework. Pokud vaše aplikace podporuje rozhraní .NET Framework 3.5 a 4 nebo vyšší, doporučujeme označit to více záznamy v konfiguračním souboru, aby nedocházelo k chybám inicializace rozhraní .NET Framework. Další informace najdete v tématu [verze a závislosti](versions-and-dependencies.md).
 
@@ -45,9 +43,9 @@ Všechny aplikace, které jsou hostiteli společného jazykového modulu runtime
 
 1. Přidejte nebo vyhledejte konfigurační soubor pro projekt s rozhraním .NET Framework. Konfigurační soubor pro aplikaci je ve stejném adresáři jako aplikace a má stejný název jako aplikace, avšak má příponu .config. Například pro aplikaci s názvem MyExecutable.exe musí mít konfigurační soubor aplikace název MyExecutable.exe.config.
 
-     Chcete-li přidat konfigurační soubor, v panelu nabídek aplikace Visual Studio vyberte možnost **projekt**, **Přidat novou položku**. V levém podokně zvolte **Obecné** a pak zvolte **konfigurační soubor**. Pojmenujte konfigurační soubor *AppName*. exe. config. Tyto možnosti nabídek nejsou k dispozici pro projekty aplikací pro Windows Store ani aplikací pro Windows Phone, protože na těchto platformách nelze změnit zásady aktivace.
+     Chcete-li přidat konfigurační soubor, v panelu nabídek aplikace Visual Studio vyberte možnost **projekt**, **Přidat novou položku**. V levém podokně zvolte **Obecné** a pak zvolte **konfigurační soubor**. Pojmenujte konfigurační soubor *AppName*. exe. config. Tyto možnosti nabídky nejsou k dispozici pro projekty aplikací pro Windows Store ani aplikací pro Windows Phone, protože na těchto platformách nelze změnit zásady aktivace.
 
-2. Do konfiguračního souboru aplikace přidejte > element [ supportedRuntime,atonásledujícímzpůsobem:\<](../configure-apps/file-schema/startup/supportedruntime-element.md)
+2. Do konfiguračního souboru aplikace přidejte [\<prvek > supportedRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md) , a to následujícím způsobem:
 
     ```xml
     <configuration>
@@ -57,7 +55,7 @@ Všechny aplikace, které jsou hostiteli společného jazykového modulu runtime
     </configuration>
     ```
 
-     *kde\<Version >* určuje verzi modulu CLR, která je v souladu s verzí .NET Framework, kterou vaše aplikace podporuje. Použijte následující řetězce:
+     kde *\<verze >* určuje verzi modulu CLR, která je v souladu s verzí .NET Framework, kterou vaše aplikace podporuje. Použijte následující řetězce:
 
     - Rozhraní .NET Framework 1.0: „v1.0.3705“
 
@@ -67,7 +65,7 @@ Všechny aplikace, které jsou hostiteli společného jazykového modulu runtime
 
     - .NET Framework 4 a novější verze: "v 4.0"
 
-     Můžete přidat více [ \<prvků > supportedRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md) , které jsou uvedeny v pořadí podle priority, a určit tak podporu více verzí .NET Framework.
+     Můžete přidat více [\<prvků > supportedRuntime](../configure-apps/file-schema/startup/supportedruntime-element.md) , které jsou uvedeny v pořadí podle priority, a určit tak podporu více verzí .NET Framework.
 
  Následující tabulka ukazuje, jak nastavení konfiguračního souboru a nainstalované verze rozhraní .NET Framework na počítači určují, na které verzi se aplikace pro rozhraní .NET Framework 3.5 spustí. Příklady jsou specifické pro aplikaci rozhraní .NET Framework 3.5, ale můžete použít podobnou logiku pro cílovou aplikaci vytvořenou pomocí předchozích verzí rozhraní .NET Framework. Číslo verze rozhraní .NET Framework 2.0 (v2.0.50727) se používá k určení rozhraní .NET Framework 3.5 v konfiguračním souboru aplikace.
 
@@ -79,7 +77,7 @@ Všechny aplikace, které jsou hostiteli společného jazykového modulu runtime
 |`<supportedRuntime version="v4.0"/>` <br /> `<supportedRuntime version="v2.0.50727"/>`|Spustí se na 3.5|Spouští se ve 4 nebo novějších verzích.|Spouští se ve 4 nebo novějších verzích.|
 |`<supportedRuntime version="v4.0"/>`|Zobrazí se chybová zpráva, která vyzve uživatele k instalaci správné verze*|Spouští se ve 4 nebo novějších verzích.|Spouští se ve 4 nebo novějších verzích.|
 
- \*Další informace o této chybové zprávě a způsobech, jak jí předcházet [, naleznete v tématu .NET Framework chyby inicializace: Správa uživatelského prostředí](../deployment/initialization-errors-managing-the-user-experience.md).
+ \* Další informace o této chybové zprávě a způsobech, jak se jim vyhnout, najdete v tématu [chyby při inicializaci .NET Framework: Správa prostředí pro uživatele](../deployment/initialization-errors-managing-the-user-experience.md).
 
 ## <a name="see-also"></a>Viz také:
 

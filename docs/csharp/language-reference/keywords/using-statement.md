@@ -1,16 +1,15 @@
 ---
 title: použití odkazu na C# příkaz
-ms.custom: seodec18
 ms.date: 10/15/2019
 helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
-ms.openlocfilehash: f5ff78eaf9d565a9708c7a3a11754579389e79e8
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 52cde99fd029ce50f159b2a87fbfbf47fc79dccc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422248"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712959"
 ---
 # <a name="using-statement-c-reference"></a>using – příkazC# (Referenční dokumentace)
 
@@ -38,13 +37,13 @@ Příkaz `using` zajišťuje, že <xref:System.IDisposable.Dispose%2A> je volán
 
 Novější syntaxe příkazu `using` se překládá na velmi podobný kód. Blok `try` se otevře, kde je proměnná deklarována. Blok `finally` se přidá na konec ohraničujícího bloku, obvykle na konci metody.
 
-Další informace o příkazu `try` - `finally` naleznete v tématu [try-finally](try-finally.md) .
+Další informace o příkazu `try`-`finally` naleznete v tématu [try-finally](try-finally.md) .
 
 V příkazu `using` lze deklarovat více instancí typu, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csrefKeywordsNamespace#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#6)]
 
-Můžete zkombinovat více deklarací stejného typu pomocí nové syntaxe, kterou přináší i C# 8. To je znázorněno v následujícím příkladu:
+Můžete zkombinovat více deklarací stejného typu pomocí nové syntaxe, kterou přináší i C# 8. To je ukázáno v následujícím příkladu:
 
 [!code-csharp[csrefKeywordsNamespace#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#MultipleUsing)]
 

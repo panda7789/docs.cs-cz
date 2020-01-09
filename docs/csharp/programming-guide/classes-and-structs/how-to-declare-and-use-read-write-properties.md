@@ -1,6 +1,5 @@
 ---
 title: Jak deklarovat a používat vlastnosti pro čtení a zápis C# – Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - get accessor [C#], declaring properties
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - read/write properties [C#]
 - accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: 2865feb74692e7075c92a9ee2b5cd2a7735a8e62
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5b880cfc3ace197a3bad2f707cf55543dbe7b78e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971018"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714921"
 ---
 # <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Postup deklarace a použití vlastností čtení a zápisu (C# Průvodce programováním)
 Vlastnosti poskytují pohodlí pro veřejné datové členy, aniž by došlo k rizikům, která jsou součástí nechráněného, nekontrolovaného a neověřeného přístupu k datům objektu. To se provádí prostřednictvím *přístupových objektů*: speciální metody, které přiřazují a načítají hodnoty z podkladového datového člena. Přistupující objekt [set](../../language-reference/keywords/set.md) umožňuje přiřadit datové členy a přistupující objekt [Get](../../language-reference/keywords/get.md) načte hodnoty datových členů.  

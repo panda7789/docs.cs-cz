@@ -5,14 +5,12 @@ helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a6928b5ac41a6af36dc7d5e7f5bb02074ba742e5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 73665915a70225c2b1da47c7b60347b089564884
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974594"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716032"
 ---
 # <a name="loader-etw-events"></a>Události Trasování událostí pro Windows zavaděče
 Tyto události shromažďují informace týkající se načítání a uvolňování aplikačních domén, sestavení a modulů.  
@@ -22,7 +20,7 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
 ## <a name="application-domain-events"></a>Události domény aplikace
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Událost|Obsah|  
+|Klíčové slovo pro vyvolání události|Událost|Úroveň|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AppDomainLoad_V1` a `AppDomainUnLoad_V1`|Informační (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informační (4)|  
@@ -39,18 +37,18 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|AppDomainID|Win: UInt64|Jedinečný identifikátor pro doménu aplikace.|  
+|AppDomainID|win:UInt64|Jedinečný identifikátor pro doménu aplikace.|  
 |AppDomainFlags|Win: UInt32|0x1: výchozí doména.<br /><br /> 0x2: spustitelný soubor.<br /><br /> 0x4: doména aplikace, bit 28-31: zásady sdílení této domény.<br /><br /> 0: Sdílená doména.|  
-|Doména AppDomain|Win: UnicodeString|Popisný název domény aplikace Může dojít ke změně během životnosti procesu.|  
+|AppDomainName|win:UnicodeString|Popisný název domény aplikace Může dojít ke změně během životnosti procesu.|  
 |AppDomainIndex|Win: UInt32|Index této domény aplikace|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
 
 ## <a name="clr-loader-assembly-events"></a>Události sestavení zavaděče CLR  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Událost|Obsah|  
+|Klíčové slovo pro vyvolání události|Událost|Úroveň|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AssemblyLoad` a `AssemblyUnload`|Informační (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informační (4)|  
@@ -67,19 +65,19 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|AssemblyID|Win: UInt64|Jedinečné ID pro sestavení|  
-|AppDomainID|Win: UInt64|ID domény tohoto sestavení|  
-|BindingID|Win: UInt64|ID, které jedinečně identifikuje vazbu sestavení.|  
+|AssemblyID|win:UInt64|Jedinečné ID pro sestavení|  
+|AppDomainID|win:UInt64|ID domény tohoto sestavení|  
+|BindingID|win:UInt64|ID, které jedinečně identifikuje vazbu sestavení.|  
 |AssemblyFlags –|Win: UInt32|0x1: doména neutrální sestavení<br /><br /> 0x2: dynamické sestavení.<br /><br /> 0x4: sestavení má nativní bitovou kopii.<br /><br /> 0x8: Kolekční sestavení.|  
-|Doplňk|Win: UnicodeString|Plně kvalifikovaný název sestavení.|  
+|Doplňk|win:UnicodeString|Plně kvalifikovaný název sestavení.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|   
 
 ## <a name="module-events"></a>Události modulu
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Událost|Obsah|  
+|Klíčové slovo pro vyvolání události|Událost|Úroveň|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`ModuleLoad_V2` a `ModuleUnload_V2`|Informační (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informační (4)|  
@@ -97,21 +95,21 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ModuleID|Win: UInt64|Jedinečné ID pro modul|  
-|AssemblyID|Win: UInt64|ID sestavení, ve kterém se nachází tento modul.|  
+|ModuleID|win:UInt64|Jedinečné ID pro modul|  
+|AssemblyID|win:UInt64|ID sestavení, ve kterém se nachází tento modul.|  
 |ModuleFlags|Win: UInt32|0x1: doménový neutrální modul<br /><br /> 0x2: modul má nativní bitovou kopii.<br /><br /> 0x4: dynamický modul.<br /><br /> 0x8: modul manifestu.|  
 |Reserved1|Win: UInt32|Rezervované pole|  
-|ModuleILPath|Win: UnicodeString|Cesta k obrázku jazyka MSIL (Microsoft Intermediate Language) pro modul nebo název dynamického modulu, pokud se jedná o dynamické sestavení (zakončené znakem null).|  
-|ModuleNativePath|Win: UnicodeString|Cesta k nativní imagi modulu, pokud je k dispozici (zakončené znakem null).|  
+|ModuleILPath|win:UnicodeString|Cesta k obrázku jazyka MSIL (Microsoft Intermediate Language) pro modul nebo název dynamického modulu, pokud se jedná o dynamické sestavení (zakončené znakem null).|  
+|ModuleNativePath|win:UnicodeString|Cesta k nativní imagi modulu, pokud je k dispozici (zakončené znakem null).|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
 |ManagedPdbSignature|Win: GUID|Podpis identifikátoru GUID databáze spravovaného programu (PDB), který odpovídá tomuto modulu. (Viz poznámky.)|  
 |ManagedPdbAge|Win: UInt32|Věkové číslo zapsané do spravovaného souboru PDB, který odpovídá tomuto modulu. (Viz poznámky.)|  
-|ManagedPdbBuildPath|Win: UnicodeString|Cesta k umístění, kde byl sestaven spravovaný soubor PDB odpovídající tomuto modulu. V některých případech to může být jen název souboru. (Viz poznámky.)|  
+|ManagedPdbBuildPath|win:UnicodeString|Cesta k umístění, kde byl sestaven spravovaný soubor PDB odpovídající tomuto modulu. V některých případech to může být jen název souboru. (Viz poznámky.)|  
 |NativePdbSignature|Win: GUID|Podpis identifikátoru GUID PDB generátoru nativních imagí (NGen), který odpovídá tomuto modulu (Pokud je k dispozici). (Viz poznámky.)|  
 |NativePdbAge|Win: UInt32|Věkové číslo zapsané do souboru PDB NGen, který odpovídá tomuto modulu, pokud je k dispozici. (Viz poznámky.)|  
-|NativePdbBuildPath|Win: UnicodeString|Cesta k umístění, kde byla sestavena služba NGen PDB odpovídající tomuto modulu, je-li k dispozici. V některých případech to může být jen název souboru. (Viz poznámky.)|  
+|NativePdbBuildPath|win:UnicodeString|Cesta k umístění, kde byla sestavena služba NGen PDB odpovídající tomuto modulu, je-li k dispozici. V některých případech to může být jen název souboru. (Viz poznámky.)|  
   
 ### <a name="remarks"></a>Poznámky  
   
@@ -124,7 +122,7 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
 ## <a name="clr-domain-module-events"></a>Události modulu CLR pro domény
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Událost|Obsah|  
+|Klíčové slovo pro vyvolání události|Událost|Úroveň|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|Informační (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informační (4)|  
@@ -140,21 +138,21 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ModuleID|Win: UInt64|Identifikuje sestavení, ke kterému tento modul patří.|  
-|AssemblyID|Win: UInt64|ID sestavení, ve kterém se nachází tento modul.|  
-|AppDomainID|Win: UInt64|ID domény aplikace, ve které se tento modul používá|  
+|ModuleID|win:UInt64|Identifikuje sestavení, ke kterému tento modul patří.|  
+|AssemblyID|win:UInt64|ID sestavení, ve kterém se nachází tento modul.|  
+|AppDomainID|win:UInt64|ID domény aplikace, ve které se tento modul používá|  
 |ModuleFlags|Win: UInt32|0x1: doménový neutrální modul<br /><br /> 0x2: modul má nativní bitovou kopii.<br /><br /> 0x4: dynamický modul.<br /><br /> 0x8: modul manifestu.|  
 |Reserved1|Win: UInt32|Rezervované pole|  
-|ModuleILPath|Win: UnicodeString|Cesta k obrázku jazyka MSIL pro modul nebo název dynamického modulu, pokud se jedná o dynamické sestavení (zakončené znakem null).|  
-|ModuleNativePath|Win: UnicodeString|Cesta k nativní imagi modulu, pokud je k dispozici (zakončené znakem null).|  
+|ModuleILPath|win:UnicodeString|Cesta k obrázku jazyka MSIL pro modul nebo název dynamického modulu, pokud se jedná o dynamické sestavení (zakončené znakem null).|  
+|ModuleNativePath|win:UnicodeString|Cesta k nativní imagi modulu, pokud je k dispozici (zakončené znakem null).|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
 
 ## <a name="module-range-events"></a>Události rozsahu modulu
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Událost|Obsah|  
+|Klíčové slovo pro vyvolání události|Událost|Úroveň|  
 |-----------------------------------|-----------|-----------|  
 |`PerfTrackKeyWord`)|`ModuleRange`|Informační (4)|  
 |`PerfTrackKeyWord`|`ModuleRangeDCStart`|Informační (4)|  
@@ -170,15 +168,15 @@ Tyto události shromažďují informace týkající se načítání a uvolňová
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|Win: UInt16|Jednoznačně identifikuje konkrétní instanci CLR v procesu, pokud je načteno více instancí modulu CLR.|  
-|ModuleID|Win: UInt64|Identifikuje sestavení, ke kterému tento modul patří.|  
+|ModuleID|win:UInt64|Identifikuje sestavení, ke kterému tento modul patří.|  
 |RangeBegin|Win: UInt32|Posun v modulu, který představuje začátek rozsahu zadaného typu rozsahu.|  
 |RangeSize|Win: UInt32|Velikost zadaného rozsahu v bajtech|  
 |Hodnotu RangeType|Win: UInt32|Jedna hodnota 0x4, která představuje studené daty IBC rozsahy. Toto pole může v budoucnu představovat více hodnot.|  
 |RangeSize1|Win: UInt32|0 označuje chybná data.|  
-|RangeBegin2|Win: UnicodeString||  
+|RangeBegin2|win:UnicodeString||  
   
 ### <a name="remarks"></a>Poznámky  
  Pokud byla načtená image NGen v procesu .NET Framework optimalizovaná pomocí daty IBC, zaprotokoluje se `ModuleRange` událost, která obsahuje aktivní rozsahy v imagi NGen, spolu s jejími `moduleID` a `ClrInstanceID`.  Pokud není image NGen optimalizovaná pomocí daty IBC, tato událost se neprotokoluje. Chcete-li určit název modulu, musí být tato událost řazena s událostmi trasování událostí pro Windows načtení modulu.  

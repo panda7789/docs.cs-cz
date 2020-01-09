@@ -1,18 +1,17 @@
 ---
 title: Postup zpracování výjimky pomocí Průvodce Try-Catch- C# Programming
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#], try/catch blocks
 - exceptions [C#], try/catch blocks
 - try/catch blocks [C#]
 ms.assetid: ca8e3773-980e-4767-8633-7408540e9818
-ms.openlocfilehash: 14a24a42c533a8f3a281564955c4b45743b99c84
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: adfc53cbe4fd603ac3a6de6b9a0162320d5a2e19
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346256"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712283"
 ---
 # <a name="how-to-handle-an-exception-using-trycatch-c-programming-guide"></a>Postup zpracování výjimky pomocí try/catch (C# Průvodce programováním)
 Účelem bloku [try-catch](../../language-reference/keywords/try-catch.md) je zachycení a zpracování výjimky generované pracovním kódem. Některé výjimky lze zpracovat v `catch` bloku a problém je vyřešen, aniž by došlo k opakovanému vyvolání výjimky; častěji jen to, co můžete udělat, je však zajistěte, aby byla vyvolána příslušná výjimka.  

@@ -14,13 +14,12 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.custom: seodec18
-ms.openlocfilehash: a8eb45e45a905f0b366642050f4845460e14aaf8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 91fc0022eae3f036e0ec046ea12446871926ab27
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132907"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711464"
 ---
 # <a name="changing-case-in-net"></a>Změna velikosti písmen v .NET
 Pokud napíšete aplikaci, která přijímá vstup od uživatele, nikdy nemusíte mít jistotu, v jakém případě bude tento případ použit k zadání dat. Často chcete, aby byly řetězce použita konzistentně, zejména v případě, že je zobrazujete v uživatelském rozhraní. Následující tabulka popisuje tři metody změny velikosti písmen. První dvě metody poskytují přetížení, které přijímá jazykovou verzi.  
@@ -48,7 +47,7 @@ Pokud napíšete aplikaci, která přijímá vstup od uživatele, nikdy nemusít
  [!code-csharp[Strings.ChangingCase#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.ChangingCase/cs/Example.cs#1)]
  [!code-vb[Strings.ChangingCase#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.ChangingCase/vb/Example.vb#1)]  
   
- V předchozím příkladu je standardně závislý na jazykové verzi; aplikuje konvence pro velká a malá písmena aktuální jazykové verze. Chcete-li provést změnu velikosti písmen nezávisle na jazykové verzi nebo použít konvence pro velká a malá písmena konkrétní jazykové verze, použijte přetížení metody <xref:System.String.ToUpper%28System.Globalization.CultureInfo%29?displayProperty=nameWithType> a zadejte hodnotu <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> nebo objekt <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>, který představuje zadanou jazykovou verzi parametru *jazykové verze* . . Příklad, jak použít metodu <xref:System.String.ToUpper%2A> k provedení změny velikosti písmen nezávisle na jazykové verzi, naleznete v tématu [provádění změn velikosti písmen nezávisle na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md).  
+ V předchozím příkladu je standardně závislý na jazykové verzi; aplikuje konvence pro velká a malá písmena aktuální jazykové verze. Chcete-li provést změnu velikosti písmen nezávisle na jazykové verzi nebo použít konvence pro velká a malá písmena konkrétní jazykové verze, použijte přetížení metody <xref:System.String.ToUpper%28System.Globalization.CultureInfo%29?displayProperty=nameWithType> a zadejte hodnotu <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> nebo objekt <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>, který představuje zadanou jazykovou verzi parametru *jazykové verze* . Příklad, jak použít metodu <xref:System.String.ToUpper%2A> k provedení změny velikosti písmen nezávisle na jazykové verzi, naleznete v tématu [provádění změn velikosti písmen nezávisle na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md).  
   
 ## <a name="tolower"></a>toLower  
  Metoda <xref:System.String.ToLower%2A?displayProperty=nameWithType> je podobná předchozí metodě, ale místo toho převádí všechny znaky v řetězci na malá písmena. Následující příklad převede řetězec "Hello World!" na malá písmena.  
@@ -56,7 +55,7 @@ Pokud napíšete aplikaci, která přijímá vstup od uživatele, nikdy nemusít
  [!code-csharp[Strings.ChangingCase#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Strings.ChangingCase/cs/Example.cs#2)]
  [!code-vb[Strings.ChangingCase#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Strings.ChangingCase/vb/Example.vb#2)]  
   
- V předchozím příkladu je standardně závislý na jazykové verzi; aplikuje konvence pro velká a malá písmena aktuální jazykové verze. Chcete-li provést změnu velikosti písmen nezávisle na jazykové verzi nebo použít konvence pro velká a malá písmena konkrétní jazykové verze, použijte přetížení metody <xref:System.String.ToLower%28System.Globalization.CultureInfo%29?displayProperty=nameWithType> a zadejte hodnotu <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> nebo objekt <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>, který představuje zadanou jazykovou verzi parametru *jazykové verze* . . Příklad, jak použít metodu <xref:System.String.ToLower%28System.Globalization.CultureInfo%29> k provedení změny velikosti písmen nezávisle na jazykové verzi, naleznete v tématu [provádění změn velikosti písmen nezávisle na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md).  
+ V předchozím příkladu je standardně závislý na jazykové verzi; aplikuje konvence pro velká a malá písmena aktuální jazykové verze. Chcete-li provést změnu velikosti písmen nezávisle na jazykové verzi nebo použít konvence pro velká a malá písmena konkrétní jazykové verze, použijte přetížení metody <xref:System.String.ToLower%28System.Globalization.CultureInfo%29?displayProperty=nameWithType> a zadejte hodnotu <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> nebo objekt <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>, který představuje zadanou jazykovou verzi parametru *jazykové verze* . Příklad, jak použít metodu <xref:System.String.ToLower%28System.Globalization.CultureInfo%29> k provedení změny velikosti písmen nezávisle na jazykové verzi, naleznete v tématu [provádění změn velikosti písmen nezávisle na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-case-changes.md).  
   
 ## <a name="totitlecase"></a>ToTitleCase  
  <xref:System.Globalization.TextInfo.ToTitleCase%2A?displayProperty=nameWithType> převede první znak každého slova na velká a zbývající znaky na malá. Slova, která jsou zcela velká, se však považují za zkratky a nebudou převedena.  

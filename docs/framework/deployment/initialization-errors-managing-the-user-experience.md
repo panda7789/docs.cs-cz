@@ -6,14 +6,12 @@ helpviewer_keywords:
 - initialization errors [.NET Framework]
 - .NET Framework, initialization errors
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cadcb5c2e85f046b5c1c561c17663b7c94829f4f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 73a0ffd4a39b144a61bf559ac424414728fb9a3f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802239"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716457"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Chyby inicializace .NET Framework: Správa prostředí uživatele
 
@@ -82,7 +80,7 @@ CLR obsahuje sadu hostitelů pro celou řadu scénářů a tito hostitelé zobra
 
 Systém aktivace CLR poskytuje stejné chování a uživatelské rozhraní ve Windows 8 jako v ostatních verzích operačního systému Windows, s výjimkou případů, kdy dojde k potížím při načítání CLR 2,0. Systém Windows 8 obsahuje .NET Framework 4,5, který používá CLR 4,5. Systém Windows 8 však neobsahuje .NET Framework 2,0, 3,0 nebo 3,5, které všechny používají CLR 2,0. V důsledku toho aplikace, které závisí na CLR 2,0, ve výchozím nastavení neběží ve Windows 8. Místo toho se zobrazí následující dialogové okno, které uživatelům umožní nainstalovat .NET Framework 3,5. Uživatelé také mohou povolit .NET Framework 3,5 v Ovládacích panelech. Obě možnosti jsou popsány v článku [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).
 
-![Dialogové okno pro 3,5 instalaci v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "Výzva k instalaci rozhraní .NET Framework 3.5 na vyžádání")
+![Dialogové okno pro 3,5 instalaci v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "Výzva k instalaci .NET Framework 3,5 na vyžádání")
 
 > [!NOTE]
 > .NET Framework 4,5 nahrazuje .NET Framework 4 (CLR 4) v počítači uživatele. Proto se aplikace .NET Framework 4 spouštějí bez problémů bez zobrazení tohoto dialogového okna ve Windows 8.

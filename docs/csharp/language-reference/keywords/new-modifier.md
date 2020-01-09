@@ -1,16 +1,15 @@
 ---
 title: nový modifikátor – C# referenční informace
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: 082cd37eca6b5de1251d73a5483665f8a98b0132
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6c4fedd469efb79f91780dff26da89b586de2d1c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422671"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713334"
 ---
 # <a name="new-modifier-c-reference"></a>New – modifikátorC# (Referenční dokumentace)
 

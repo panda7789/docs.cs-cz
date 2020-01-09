@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 32695d3bc29693ab4cf1e2f9d721d35598ecfb86
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 01e11ed62b0855b9027dfd7999f8b787c075028a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344710"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709670"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Skriptování šablony stylů XSLT pomocí \<msxsl: > skriptu
 Třída <xref:System.Xml.Xsl.XslTransform> podporuje vložené skriptování pomocí elementu `script`.  

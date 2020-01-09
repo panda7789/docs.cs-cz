@@ -15,13 +15,12 @@ helpviewer_keywords:
 - constructs, alternation
 - .NET Framework regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.custom: seodec18
-ms.openlocfilehash: 352cfd65cd4620d8274ff0a14ea507cd49522470
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8db9ef72415f148aca2c975fc4e8b70421e3adc3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140563"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711555"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukce alternace v regulárních výrazech
 
@@ -50,7 +49,7 @@ Regulární výraz, který používá `|` znak, `\bgr(a|e)y\b`, je interpretová
 |<code>(a&#124;e)</code>|Porovná buď se znakem „a“, nebo s „e“.|  
 |`y\b`|Porovnává s "y" na hranici slova.|  
 
-Znak `|` lze také použít k provedení shody s více znaky nebo podvýrazy, které mohou obsahovat libovolnou kombinaci znakových literálů a prvků jazyka regulárních výrazů. (Třída znaků tuto funkci neposkytuje.) Následující příklad používá `|` znak k extrakci buď rodného čísla sociálního pojištění (USA), což je číslo 9 číslic ve formátu *ddd*-*DD*-*dddd*nebo Ein (USA) identifikační číslo (), které je číslo 9 číslice ve formátu *dd*-*ddddddd*.
+Znak `|` lze také použít k provedení shody s více znaky nebo podvýrazy, které mohou obsahovat libovolnou kombinaci znakových literálů a prvků jazyka regulárních výrazů. (Třída znaků tuto funkci neposkytuje.) V následujícím příkladu se používá `|` znak pro extrakci buď rodného čísla sociálního zabezpečení (SSN), což je číslo 9 číslic ve formátu *ddd*-*DD*-*dddd*, nebo Ein (USA), což je 9 číslic ve formátu *DD*-*ddddddd*.
 
 [!code-csharp[RegularExpressions.Language.Alternation#2](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation2.cs#2)]
 [!code-vb[RegularExpressions.Language.Alternation#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation2.vb#2)]  
@@ -101,7 +100,7 @@ Tento prvek jazyka se pokusí vyhledat jeden ze dvou vzorů v závislosti na tom
 
 `(?(` *název* `)` *yes* `|` *No* `)`
 
-or
+nebo
 
 `(?(` *číslo* `)` *yes* `|` *No* `)`
 

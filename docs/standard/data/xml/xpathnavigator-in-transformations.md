@@ -6,25 +6,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 57290af1df8d370c928a97aba1622e41a6a33589
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 240f9ca7a887a4a146437fdef46de776b299705a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026732"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709748"
 ---
 # <a name="xpathnavigator-in-transformations"></a>XPathNavigator v transformacích
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určený pro použití jako vstup do šablony stylů jazyk pro transformace XSLT (). Je implementován v <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>, a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datovém modelu World Wide Web Consortium (W3C), jak je popsáno v části 5 doporučení jazyk XML Path (XPath).  
+Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje náhodný přístup jen pro čtení k datům a je navržena pro použití jako vstup do rozšiřitelného jazyka stylů XSL pro transformace (XSLT). Je implementována na <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> je založena na datovém modelu konsorcium World Wide Web (W3C), jak je popsáno v části 5 doporučení jazyka XML Path (XPath).  
   
- <xref:System.Xml.XPath.XPathNavigator> Definuje model kurzoru nad jakékoli úložiště a poskytuje rychlý a jen pro čtení dotazy XPath přes jakékoli úložiště dat. <xref:System.Xml.XPath.XPathNavigator> Je také třída pro iterace přes fragmenty stromu výsledek.  
+ <xref:System.Xml.XPath.XPathNavigator> definuje model kurzoru v jakémkoli úložišti a poskytuje rychlé dotazy XPath jen pro čtení v jakémkoli úložišti dat. <xref:System.Xml.XPath.XPathNavigator> je také třída, která se má použít pro iteraci fragmentů stromu výsledků.  
   
- Rozhraní API umožňuje získat informace z aktuálního uzlu v úložišti a přesunout do propojených uzlů. <xref:System.Xml.XPath.XPathNavigator> Je model styl kurzor, který provádí přechod zálohovaných store pomocí sady **přesunout** metody. <xref:System.Xml.XPath.XPathNavigator> Vždy je umístěn na uzlu. Žádné **přesunout** metody, které se nedaří listy <xref:System.Xml.XPath.XPathNavigator> beze změny.  
+ Rozhraní API umožňuje získat informace z aktuálního uzlu ve Storu a přejít na připojené uzly. <xref:System.Xml.XPath.XPathNavigator> je model stylu kurzoru, který provádí přecházení přes úložiště pomocí sady metod **Move** . <xref:System.Xml.XPath.XPathNavigator> je vždy umístěn na uzlu. Všechny metody **Move** , které selžou, ponechá <xref:System.Xml.XPath.XPathNavigator> beze změny.  
   
- <xref:System.Xml.XPath.XPathNavigator> Je třída pro iterace přes fragmenty stromu výsledek. Následující vzorový kód vytvoří fragment stromu výsledek předloze se styly voláním funkce s parametrem `fragment`, který obsahuje XML.  
+ <xref:System.Xml.XPath.XPathNavigator> je třída, která se má použít pro iteraci fragmentů stromu výsledků. Následující ukázka kódu vytvoří fragment stromu výsledek v rámci předlohy se styly voláním funkce s parametrem, `fragment`, který obsahuje XML.  
   
-## <a name="testxsl"></a>test.xsl  
+## <a name="testxsl"></a>test. xsl  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -57,13 +55,13 @@ ms.locfileid: "62026732"
 </xsl:stylesheet>  
 ```  
   
-## <a name="testxml"></a>test.xml  
+## <a name="testxml"></a>test. XML  
   
 ```xml  
 <root>Some text</root>  
 ```  
   
- Následující kód používá **test.xsl** šablony stylů a **test.xml** vstupní data.  
+ Následující kód používá **soubor test. xsl** šablony a **test. XML** Input data.  
   
 ```vb  
 Imports System  
@@ -110,7 +108,7 @@ public class sample
 ```  
   
 ## <a name="output"></a>Výstup  
- Výsledek transformace se nachází v souboru **out.xml**:  
+ Výsledek transformace se nachází v souboru **out. XML**:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>Joe  

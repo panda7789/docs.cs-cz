@@ -3,13 +3,13 @@ title: Přidat odkaz na webovou službu WCF
 description: Přehled nástroje Microsoft WCF Web Service Reference Provider, který přidává funkce pro projekty .NET Core a ASP.NET Core, podobně jako Přidat odkaz na službu pro .NET Framework projekty.
 author: dasetser
 ms.date: 10/29/2019
-ms.custom: mvc, seodec18
-ms.openlocfilehash: feecf374e1af48f349495c13ea91b810c6b0a1c3
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.custom: mvc
+ms.openlocfilehash: cdd6b457d289dd7b752c97c5645f0797f24b72aa
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191907"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715674"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použití nástroje poskytovatele referencí webové služby WCF
 
@@ -27,9 +27,9 @@ V průběhu let mnoho vývojářů sady Visual Studio využilo produktivitu, kte
 > [!NOTE]
 > Možnost **odkazu webové služby WCF** je platná pro projekty vytvořené pomocí následujících šablon projektu:
 >
-> - **Visual C#**   >  **.NET Core**
-> - **Vizuální C#**   >  **.NET Standard**
-> - Webová aplikace  **C# Visual**  > **Web**  > **ASP.NET Core**
+> - **Visual C#**  >  **.NET Core**
+> - **Vizuální C#**  >  **.NET Standard**
+> - Webová aplikace  **C# Visual** > **Web** > **ASP.NET Core**
 
 Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás tento článek provede přidáním odkazu na službu WCF do projektu:
 
@@ -45,7 +45,7 @@ Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás 
 
 3. Vyberte službu.
 
-    čl. V průvodci **konfigurací odkazu webové služby WCF** je dostupných několik možností hledání služeb:
+    3a. V průvodci **konfigurací odkazu webové služby WCF** je dostupných několik možností hledání služeb:
 
      * Pokud chcete vyhledat služby definované v aktuálním řešení, klikněte na tlačítko **Vyhledat** .
      * Pokud chcete vyhledat služby hostované na zadané adrese, zadejte adresu URL služby do pole **adresa** a klikněte na tlačítko **Přejít** .
@@ -53,7 +53,7 @@ Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás 
 
     3b. Vyberte službu ze seznamu výsledků hledání v poli **služby** . V případě potřeby zadejte obor názvů pro vygenerovaný kód do textového pole odpovídající **obor názvů** .
 
-    3C. Kliknutím na tlačítko **Další** otevřete **Možnosti datový typ** a stránky **Možnosti klienta** . Případně můžete kliknutím na tlačítko **Dokončit** použít výchozí možnosti.
+    3c. Kliknutím na tlačítko **Další** otevřete **Možnosti datový typ** a stránky **Možnosti klienta** . Případně můžete kliknutím na tlačítko **Dokončit** použít výchozí možnosti.
 
 4. Formulář **Možnosti datového typu** umožňuje upřesnit vygenerovaná nastavení konfigurace odkazu na službu:
 

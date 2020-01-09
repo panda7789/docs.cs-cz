@@ -6,19 +6,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d26872fb97551e5392eb3f6a1a0825728046553
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ecbed7e57628b4e140e0f4dbcd600643617b075a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965883"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710892"
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
 **XmlNodeChangedEventArgs** zapouzdřuje argumenty předávané obslužným rutinám událostí registrovaným v objektu **XmlDocument** pro zpracování událostí. Události a popis, kdy jsou aktivovány, jsou uvedeny v následující tabulce.  
   
-|Událost|Aktiv|  
+|Událost|Aktivováno|  
 |-----------|-----------|  
 |<xref:System.Xml.XmlDocument.NodeInserting>|V případě, že bude uzel patřící do aktuálního dokumentu vložen do jiného uzlu.|  
 |<xref:System.Xml.XmlDocument.NodeInserted>|Pokud byl uzel patřící do aktuálního dokumentu vložen do jiného uzlu.|  
@@ -28,7 +26,7 @@ ms.locfileid: "69965883"
 |<xref:System.Xml.XmlDocument.NodeChanged>|Při změně hodnoty uzlu.|  
   
 > [!NOTE]
-> Pokud je využití paměti **objektu XmlDataDocument** plně optimalizované tak, aby používalo úložiště **DataSet** , nemusí **objektu XmlDataDocument** po provedení změn v podkladové **datové sadě**vyvolat žádnou z výše uvedených událostí. Pokud tyto události potřebujete, je nutné projít celým třídou **XmlDocument** , aby bylo využití paměti neplně optimalizované.  
+> Pokud je využití paměti **objektu XmlDataDocument** plně optimalizované tak, aby používalo úložiště **DataSet** , nemusí **objektu XmlDataDocument** po provedení změn v podkladové **datové sadě**vyvolat žádnou z výše uvedených událostí. Pokud tyto události potřebujete, je nutné projít celým **třídou XmlDocument** , aby bylo využití paměti neplně optimalizované.  
   
  Následující příklad kódu ukazuje, jak definovat obslužnou rutinu události a jak přidat obslužnou rutinu události do události.  
   

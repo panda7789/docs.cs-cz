@@ -1,5 +1,5 @@
 ---
-title: /debug
+title: -debug
 ms.date: 03/10/2018
 helpviewer_keywords:
 - debug compiler switches
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -debug compiler option [Visual Basic]
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-ms.openlocfilehash: 3beb9ad3829c2f55120a9136e6e54185551bd20b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: df65d1c095f5a22d562d78e15baf750a20ec2556
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344781"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716779"
 ---
 # <a name="-debug-visual-basic"></a>-Debug (Visual Basic)
 
@@ -30,18 +30,18 @@ nebo
 -debug:[full | pdbonly]
 ```
 
-## <a name="arguments"></a>Argumenty
+## <a name="arguments"></a>Arguments
 
 |Termín|Definice|
 |---|---|
-|`+` &#124; `-`|Volitelná. Určení `+` nebo `/debug` způsobí, že kompilátor vygeneruje ladicí informace a umístí jej do souboru PDB. Určení `-` má stejný účinek jako nespecifikuje `/debug`.|
-|`full` &#124; `pdbonly`|Volitelná. Určuje typ ladicích informací generovaných kompilátorem. Pokud nezadáte `/debug:pdbonly`, výchozí hodnota je `full`, která umožňuje připojit k běžícímu programu ladicí program. Argument `pdbonly` umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazuje kód jazyka sestavení pouze v případě, že je spuštěný program připojen k ladicímu programu.|
+|`+` &#124; `-`|Volitelné. Určení `+` nebo `-debug` způsobí, že kompilátor vygeneruje ladicí informace a umístí jej do souboru PDB. Určení `-` má stejný účinek jako nespecifikuje `-debug`.|
+|`full` &#124; `pdbonly`|Volitelné. Určuje typ ladicích informací generovaných kompilátorem. Pokud nezadáte `-debug:pdbonly`, výchozí hodnota je `full`, která umožňuje připojit k běžícímu programu ladicí program. Argument `pdbonly` umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazuje kód jazyka sestavení pouze v případě, že je spuštěný program připojen k ladicímu programu.|
 
 ## <a name="remarks"></a>Poznámky
 
-Tuto možnost použijte k vytvoření sestavení ladění. Pokud nezadáte `/debug`, `/debug+`nebo `/debug:full`, nebudete moci ladit výstupní soubor programu.
+Tuto možnost použijte k vytvoření sestavení ladění. Pokud nezadáte `-debug`, `-debug+`nebo `-debug:full`, nebudete moci ladit výstupní soubor programu.
 
-Ve výchozím nastavení nejsou informace o ladění generovány (`/debug-`). Chcete-li vygenerovat ladicí informace, zadejte `/debug` nebo `/debug+`.
+Ve výchozím nastavení nejsou informace o ladění generovány (`-debug-`). Chcete-li vygenerovat ladicí informace, zadejte `-debug` nebo `-debug+`.
 
 Informace o tom, jak nakonfigurovat výkon ladění aplikace, najdete v tématu [Vytvoření obrázku pro snadnější ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).
 

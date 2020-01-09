@@ -1,6 +1,5 @@
 ---
 title: Abstraktní a zapečetěné třídy a členy třídy C# – Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - abstract classes [C#]
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-ms.openlocfilehash: 97b367b5c3d09087541ee206a2899a7aefd95305
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 07738031f1dec05424f7c3756f49a8f1f9a2c44b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971353"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714998"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)
 Klíčové slovo [abstract](../../language-reference/keywords/abstract.md) umožňuje vytvářet třídy a členy [třídy](../../language-reference/keywords/class.md) , které jsou neúplné a které musí být implementovány v odvozené třídě.  

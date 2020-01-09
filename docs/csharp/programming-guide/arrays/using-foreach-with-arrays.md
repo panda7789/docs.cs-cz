@@ -1,31 +1,30 @@
 ---
-title: Použití příkazu foreach s poli - C# Průvodce programováním pro službu
-ms.custom: seodec18
+title: Použití příkazu foreach s poli C# – Průvodce programováním
 ms.date: 05/23/2018
 helpviewer_keywords:
 - arrays [C#], foreach
 - foreach statement [C#], using with arrays
 ms.assetid: 5f2da2a9-1f56-4de5-94cc-e07f4f7a0244
-ms.openlocfilehash: a22cb939370b38780881eca0d9585a14002c8250
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb121b0f5d990ef6e596b34a45606e2abde6811a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683714"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705675"
 ---
-# <a name="using-foreach-with-arrays-c-programming-guide"></a>Použití příkazu foreach s poli (C# Programming Guide)
+# <a name="using-foreach-with-arrays-c-programming-guide"></a>Použití příkazu foreach s poliC# (Průvodce programováním)
 
-[Foreach](../../language-reference/keywords/foreach-in.md) příkaz umožňuje jednoduchý a přímý způsob iterace prvků pole.
+Příkaz [foreach](../../language-reference/keywords/foreach-in.md) poskytuje jednoduchý a čistě způsob, jak iterovat prvky pole.
 
-Pro jednorozměrné pole `foreach` příkaz zpracovává prvky ve vzestupném pořadí index, od indexu 0 a končí index `Length - 1`:
+Pro jednorozměrná pole zpracovává příkaz `foreach` prvky ve vzestupném pořadí indexů počínaje indexem 0 a končí `Length - 1`indexu:
 
  [!code-csharp[csProgGuideArrays#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#28)]
 
-Pro vícerozměrná pole je provázán prvků tak, že indexy rozměr nejvíce vpravo se zvýšenou první pak dimenzi a tak dále zleva další vlevo:
+U multidimenzionálních polí jsou elementy procházeny tak, že jsou nejprve zvyšovány indexy pravého rozměru, potom následující levá dimenze atd. vlevo:
 
  [!code-csharp[csProgGuideArrays#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#29)]
 
-Však s multidimenzionálními poli použijete [pro](../../language-reference/keywords/for.md) smyčky vám dává větší kontrolu nad pořadí, ve které se má zpracovat prvky pole.
+Nicméně s multidimenzionálními poli, pomocí vnořené smyčky [for](../../language-reference/keywords/for.md) , získáte větší kontrolu nad pořadím, ve kterém mají být zpracovány prvky pole.
 
 ## <a name="see-also"></a>Viz také:
 

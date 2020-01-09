@@ -2,12 +2,12 @@
 title: Začínáme s jazykem F# v editoru Visual Studio Code
 description: Naučte se používat F# s Visual Studio Code a sadou modulů plug-in Ionide.
 ms.date: 12/23/2018
-ms.openlocfilehash: 2802438144eb2352c3abeeccfc126b16c6a87d8f
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 91265303c2954387df0f500940c9af68b3c97dac
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204916"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559661"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s jazykem F# v editoru Visual Studio Code
 
@@ -20,7 +20,7 @@ Chcete-li začít, ujistěte se, že máte [ F# a modul plug-in Ionide správně
 Chcete-li vytvořit F# nový projekt, otevřete příkazový řádek a vytvořte nový projekt s .NET Core CLI:
 
 ```dotnetcli
-dotnet new console -lang F# -o FirstIonideProject
+dotnet new console -lang "F#" -o FirstIonideProject
 ```
 
 Po dokončení změňte adresář na projekt a otevřete Visual Studio Code:
@@ -133,7 +133,7 @@ Začněte tím, že otevřete soubor *program. FS* , který jste vytvořili dř�
 
 Dále vytvořte nový [`module`](../language-reference/modules.md) nazvaný `PigLatin` a zkopírujte `toPigLatin` funkci, kterou jste předtím vytvořili.
 
-[!code-fsharp[ToPigLatin](~/samples/snippets/fsharp/getting-started/pig-latin.fs#L1-L14)]
+[!code-fsharp[ToPigLatin](~/samples/snippets/fsharp/getting-started/pig-latin.fs#L3-L14)]
 
 Tento modul by měl být nad `main`ovou funkcí a pod deklarací `open System`. Pořadí deklarací v F#nástroji, takže je nutné definovat funkci před jejich voláním v souboru.
 
@@ -151,7 +151,7 @@ let main argv =
 
 Nyní můžete spustit konzolovou aplikaci z příkazového řádku:
 
-```console
+```dotnetcli
 dotnet run apple banana
 ```
 
@@ -164,7 +164,7 @@ Tady je několik způsobů, jak můžete řešit některé problémy, se kterým
 1. Chcete-li získat funkce pro úpravu kódu Ionide, F# je třeba uložit soubory na disk a do složky, která je otevřena v pracovním prostoru Visual Studio Code.
 1. Pokud jste provedli změny v systému nebo nastavili požadavky Ionide Visual Studio Code otevřít, restartujte Visual Studio Code.
 1. Pokud máte v adresářích projektu neplatné znaky, Ionide nemusí fungovat.  Pokud se jedná o tento případ, přejmenujte adresáře projektu.
-1. Pokud žádný z příkazů Ionide nefunguje, zkontrolujte [Visual Studio Code vazby](https://code.visualstudio.com/docs/customization/keybindings#_customizing-shortcuts) klíčů a podívejte se, jestli je nepřepisujete havárií.
+1. Pokud žádný z příkazů Ionide nefunguje, zkontrolujte [vazby Visual Studio Code klíčů](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization) a zjistěte, jestli je nebudete mít v úmyslu přepisování.
 1. Pokud je Ionide na vašem počítači poškozená a žádná z výše uvedených kroků nevyřešila váš problém, zkuste na svém počítači odebrat `ionide-fsharp` adresář a znovu sadu modulů plug-in.
 1. Pokud se projekt nepovedlo načíst ( F# Průzkumník řešení to uvidí), klikněte pravým tlačítkem na tento projekt a kliknutím na **Zobrazit podrobnosti** Získejte další diagnostické informace.
 

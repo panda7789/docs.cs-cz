@@ -9,14 +9,12 @@ helpviewer_keywords:
 - profile [.NET Framework Client Profile]
 - .NET Framework Client Profile
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 72749f47d85c4ed910bf8bf925d14246dcb4244a
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 32fc29500a8a2e95b52ba16847020cdb390caceb
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195174"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716575"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 .NET Client Profile je podmnožinou .NET Framework, která byla poskytnuta s .NET Framework 4 a staršími verzemi a byla optimalizována pro klientské aplikace. .NET Framework je vývojová platforma pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spuštění spravované aplikace a knihovnu tříd .NET Framework. .NET Framework 4 a starší verze poskytují dvě možnosti nasazení: úplný .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  

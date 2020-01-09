@@ -3,17 +3,15 @@ title: Ověření názvu atributu a elementu XML při vytváření nových uzlů
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: b489f647-a175-4659-ada4-170058bb41d0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 008cf14e63b8458feebf26eaf27be516bb79f933
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c99ffa9d139d94d26c562cb1668f1b855bed32d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61959039"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709943"
 ---
 # <a name="xml-element-and-attribute-name-verification-when-creating-new-nodes"></a>Ověření názvu atributu a elementu XML při vytváření nových uzlů
-XML Document Object Model (DOM) zkontroluje platnost názvů při vytváření nového elementu nebo atributu uzlů. Pokud název obsahuje neplatné znaky, je vyvolána výjimka. Chcete-li zajistit, aby názvy jsou platná a kódovaného správně, budete muset použít **XmlConvert** třídy název kódování a dekódování zpět na úrovni aplikace. **XmlWriter** má metod, které provádí další prací zajistíte, že se vygeneruje ve správném formátu XML.  
+Model DOM (Document Object Model) XML (DOM) kontroluje platnost názvů při vytváření nových uzlů prvků nebo uzlů atributů. Pokud názvy obsahují neplatné znaky, je vyvolána výjimka. Aby bylo zajištěno, že názvy jsou platné a kódované správně, je nutné použít třídu **XmlConvert** ke kódování názvu a dekódování na úrovni aplikace. Funkce **XmlWriter** má metody, které provedly další práci, aby bylo zajištěno, že kód XML je vygenerován správně.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,56 +3,54 @@ title: Chyby XSLT s možností zotavení
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 32a4875b42c0282ffdb90e3fc825b38af935affb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e3ff86cc80887d14fdffe50f256409cb70ff2d88
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590048"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710372"
 ---
 # <a name="recoverable-xslt-errors"></a>Chyby XSLT s možností zotavení
-Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelného chování. Například část 7.3 vytváření zpracování pokyny, XSLT 1.0 doporučení státy, jedná se o chybu, pokud vytvoření instance obsah `xsl:processing-instruction` vytvoří uzly než textové uzly. Pro některé problémy XSLT 1.0 doporučení indikuje, co rozhodnutí třeba pokud se rozhodne procesoru zotavit z chyby. Na problém uvedený v části 7.3 W3C říká, že implementace můžete obnovit tuto chybu ignorovat uzly a jejich obsah.  
+Doporučení W3C XSL Transformers (XSLT) verze 1,0 obsahuje oblasti, ve kterých se může poskytovatel implementace rozhodnout, jak tuto situaci zpracovat. Tyto oblasti se považují za volitelné chování. Například v části 7,3 vytvoření instrukcí pro zpracování, v případě, že se při vytváření instance obsahu `xsl:processing-instruction` vytvoří jiné uzly než textové uzly, doporučení XSLT 1,0 uvádí, že se jedná o chybu. V případě některých problémů doporučení XSLT 1,0 určuje, jaké rozhodnutí by mělo být provedeno, pokud se procesor rozhodne obnovit z chyby. V případě problému uvedeného v části 7,3 oznámí W3C, že implementace se může zotavit z této chyby ignorováním uzlů a jejich obsahu.  
   
-## <a name="discretionary-behaviors"></a>Volitelného chování  
- Následující tabulka obsahuje seznam všech volitelného chování dovolují XSLT 1.0 doporučení a jak jsou zpracovávány těchto projevů <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
+## <a name="discretionary-behaviors"></a>Volitelné chování  
+ V následující tabulce jsou uvedeny všechny volitelné chování, které povoluje doporučení XSLT 1,0, a způsob, jakým jsou tato chování zpracována třídou <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
-- Obnovit znamená, že <xref:System.Xml.Xsl.XslCompiledTransform> třídy bude obnoven. k této chybě. <xref:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered?displayProperty=nameWithType> Události je možné nahlásit všechny události z procesoru XSLT.  
+- Obnovení indikuje, že se z této chyby bude obnovovat třída <xref:System.Xml.Xsl.XslCompiledTransform>. Událost <xref:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered?displayProperty=nameWithType> lze použít k hlášení událostí z procesoru XSLT.  
   
-- Chyba udává, že je vyvolána výjimka pro tuto podmínku.  
+- Chyba indikuje, že pro tuto podmínku je vyvolána výjimka.  
   
-- Najdete v části odkazy [doporučení W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/TR/xslt) a [chyby specifikaci W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
+- Odkazy na oddíly najdete v [doporučení XSLT verze 1,0](https://www.w3.org/TR/xslt) a XSL [XSLT (w3c) verze 1,0 Specification seznam chyb](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
   
-|Podmínka XSLT|Section|Chování XslCompiledTransform|  
+|Podmínka XSLT|Část|Chování XslCompiledTransform|  
 |--------------------|-------------|-----------------------------------|  
-|Textový uzel odpovídá obě `xsl:strip-space` a `xsl:preserve-space`.|3.4|Obnovit|  
-|Zdrojový uzel odpovídá více než jedno pravidlo šablony.|5.5|Obnovit|  
-|Obor názvů identifikátoru URI je deklarován jako alias pro více identifikátorů URI oboru názvů, všechny mají stejnou přednost importovat.|7.1.1|Obnovit|  
-|`name` Atribut `xsl:attribute` a `xsl:element` vygenerovaná hodnota atributu není QName.|7.1.2, 7.1.3|Chyba *|  
-|Dvě atribut sady stejné importu a rozšířit – název atributu mají společnou a neexistuje žádné další sadu atributů obsahující společný atribut, který má stejný název s vyšší význam.|7.1.4|Obnovit|  
-|Přidání atributu do elementu po podřízené objekty byly přidány do něj.|7.1.3|Chyba *|  
-|Vytváří se atribut s názvem 'xmlns'|7.1.3|Chyba *|  
-|Přidání atributu do uzlu, který není element.|7.1.3|Chyba *|  
-|Vytvoření uzlů než textovém uzlů během vytvoření instance obsah `xsl:attribute` atribut.|7.1.3|Chyba *|  
-|`name` Atribut `xsl:processing-instruction` nevydává NCName a cíl instrukcí pro zpracování.|7.3|Chyba *|  
-|Vytvoření instance obsah `xsl:processing-instruction` vytvoří uzly než textové uzly.|7.3|Chyba *|  
-|Výsledek vytvoření instance obsah `xsl:processing-instruction` obsahuje řetězec "? >"|7.3|Obnovit|  
-|Výsledek vytvoření instance obsah `xsl:processing-instruction` obsahuje řetězec "--" nebo končí řetězcem "-".|7.4|Obnovit|  
-|Výsledek vytvoření instance obsah `xsl:comment` vytvoří uzly než textové uzly.|7.4|Chyba *|  
-|Šablony v rámci elementu vazby proměnné vrátí uzel atributu nebo uzel oboru názvů.|11.2|Chyba *|  
-|Je chyba při načítání prostředku z identifikátoru URI předaného do funkce dokumentu.|12.1|Chyba|  
-|Odkaz na identifikátor URI ve funkci dokumentu obsahuje identifikátor fragmentu a dojde k chybě při zpracování identifikátor fragmentu.|12.1|Obnovit *|  
-|Existuje víc atributů se stejným názvem, ale jinými hodnotami, které nejsou s názvem oddílu cdata prvky v `xsl:output` se stejným importu přednost.|16|Obnovit|  
-|Procesor nepodporuje kódování v `xsl:output` kódování atributu.|16.1|Obnovit|  
-|Zakazuje se výstup uvození pro textový uzel, který se používá pro něco jiného než textový uzel ve stromu výsledek.|16.4|Obnovit *|  
-|Převod fragment stromu výsledek na číslo nebo řetězec. Pokud fragment stromu výsledek obsahuje textový uzel se výstup uvození povolena.|16.4|Obnovit *|  
-|Výstup uvozovacích znaků je zakázaná pro znak, který nemůže být reprezentovaný v kódování, procesoru XSLT se používá pro výstup.|16.4|Obnovit *|  
-|Přidání uzlu oboru názvů na prvek po podřízené objekty byly přidány do ní nebo po atributy byly přidány do něj.|errata 25|Chyba *|  
-|`value` Atribut `xsl:number` NaN, nekonečné nebo menší než 0,5|errata 24|Obnovit|  
-|Druhý argument funkce dokumentu sady uzlů je prázdný a odkaz na identifikátor URI je relativní.|errata 14|Obnovit|  
+|Textový uzel odpovídá `xsl:strip-space` i `xsl:preserve-space`.|3.4|Obnovit|  
+|Zdrojový uzel se shoduje s více než jedním pravidlem šablony.|5.5|Obnovit|  
+|Identifikátor URI oboru názvů je deklarován jako alias pro více identifikátorů URI oboru názvů, přičemž všechny mají stejnou prioritu importu.|7.1.1|Obnovit|  
+|Atribut `name` v `xsl:attribute` a `xsl:element` vygenerovaný z hodnoty atributu není QName.|7.1.2, 7.1.3|Chyba|  
+|Dvě sady atributů se stejným importem a rozšířeným názvem mají atribut společný a neexistuje žádná sada atributů obsahující společný atribut se stejným názvem s vyšší důležitostí.|7.1.4|Obnovit|  
+|Přidání atributu do elementu po přidání podřízených objektů do objektu.|7.1.3|Chyba|  
+|Vytváření atributu s názvem xmlns|7.1.3|Chyba|  
+|Přidání atributu do uzlu, který není elementem.|7.1.3|Chyba|  
+|Vytváření jiných uzlů než textových uzlů během vytváření instancí obsahu atributu `xsl:attribute`.|7.1.3|Chyba|  
+|Atribut `name` `xsl:processing-instruction` nepřinese NCName i cíl instrukcí pro zpracování.|7.3|Chyba|  
+|Vytvoření instance obsahu `xsl:processing-instruction` vytvoří jiné uzly než textové uzly.|7.3|Chyba|  
+|Výsledek vytvoření instance obsahu `xsl:processing-instruction` obsahuje řetězec "? >"|7.3|Obnovit|  
+|Výsledek vytvoření instance obsahu `xsl:processing-instruction` obsahuje řetězec "--" nebo končí "-".|7,4|Obnovit|  
+|Výsledek vytvoření instance obsahu `xsl:comment` vytvoří jiné uzly než textové uzly.|7,4|Chyba|  
+|Šablona v rámci prvku variabilní vazby vrací uzel atributu nebo uzel oboru názvů.|11.2|Chyba|  
+|Došlo k chybě při načítání prostředku z identifikátoru URI předaného do funkce dokumentu.|12.1|Chyba|  
+|Odkaz na identifikátor URI ve funkci dokumentu obsahuje identifikátor fragmentu a při zpracování identifikátoru fragmentu došlo k chybě.|12.1|Opravitelné|  
+|Existuje více atributů se stejným názvem, ale různé hodnoty, které nejsou pojmenované prvky CDATA oddílu v `xsl:output` se stejnou prioritou importu.|16|Obnovit|  
+|Procesor nepodporuje kódování v atributu `xsl:output` Encoding.|16.1|Obnovit|  
+|Zakázání výstupních řídicích znaků pro textový uzel, který se používá pro něco jiného než textový uzel ve stromové struktuře výsledek.|16.4|Opravitelné|  
+|Převod fragmentu stromu výsledků na číslo nebo řetězec, pokud fragment stromu výsledku obsahuje textový uzel s povoleným výstupním uvozovacím příkazem.|16.4|Opravitelné|  
+|Výstupní uvozovací znaky jsou zakázané pro znak, který se nedá reprezentovat v kódování, které procesor XSLT používá pro výstup.|16.4|Opravitelné|  
+|Přidání uzlu oboru názvů do elementu po přidání podřízených objektů nebo po jejich přidání do objektu Namespace.|Seznam chyb 25|Chyba|  
+|Atribut `value` `xsl:number` je NAN, infinitá nebo menší než 0,5.|Seznam chyb 24|Obnovit|  
+|Druhý argument node-nastaveno na funkci dokumentu je prázdný a odkaz na identifikátor URI je relativní.|Seznam chyb 14|Obnovit|  
   
- <sup>*</sup> Toto chování se liší od <xref:System.Xml.Xsl.XslTransform> třídy. Další informace najdete v tématu [implementace volitelného chování ve třídě XslTransform](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md).  
+ <sup>*</sup> Toto chování se liší od <xref:System.Xml.Xsl.XslTransform> třídy. Další informace naleznete v tématu [implementace volitelného chování ve třídě XslTransform](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md).  
   
 ## <a name="see-also"></a>Viz také:
 

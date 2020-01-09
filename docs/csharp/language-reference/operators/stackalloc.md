@@ -1,17 +1,16 @@
 ---
 title: operátor stackalloc – C# odkaz
-ms.custom: seodec18
 ms.date: 09/20/2019
 f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: 4f3ba6594eb16cf16db6a1de78fe05509c5f4d7d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 5654cae622cd94c8dad7e58fbc8a99fcf48391a9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345274"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712621"
 ---
 # <a name="stackalloc-operator-c-reference"></a>stackalloc – operátorC# (Referenční dokumentace)
 

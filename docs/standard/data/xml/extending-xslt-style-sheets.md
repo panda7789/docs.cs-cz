@@ -3,27 +3,25 @@ title: Rozšíření šablon stylů XSLT
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: df4ba2bf-a99e-4d22-bbf3-04fc67669dbc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ff952df59dc8291b12df2b238052d4c40c834e2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 04f9788fe34ba74d0cf12fdd37adf46e85777192
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966488"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710866"
 ---
 # <a name="extending-xslt-style-sheets"></a>Rozšíření šablon stylů XSLT
-Tato část se věnuje různým způsobům rozšíření funkcí XSLT. Můžete přidat objekty rozšíření nebo parametry s využitím <xref:System.Xml.Xsl.XsltArgumentList> třídy. Rozšíření objektů nebo parametrů může být volána z šablony stylů. Kromě toho můžete také vložit bloky skriptu do šablony stylů pomocí `msxsl:script` elementu.  
+Tato část popisuje různé metody rozšíření funkce XSLT. Můžete přidat objekty rozšíření nebo parametry pomocí třídy <xref:System.Xml.Xsl.XsltArgumentList>. Objekty rozšíření nebo parametry lze následně volat ze šablon stylů. Kromě toho můžete také vkládat bloky skriptu do šablon stylů pomocí elementu `msxsl:script`.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Objekty rozšíření XSLT](../../../../docs/standard/data/xml/xslt-extension-objects.md)  
- Popisuje použití <xref:System.Xml.Xsl.XsltArgumentList> tříd pro objekty rozšíření XSLT procesu.  
+ Popisuje použití třídy <xref:System.Xml.Xsl.XsltArgumentList> ke zpracování objektů rozšíření XSLT.  
   
  [Parametry XSLT](../../../../docs/standard/data/xml/xslt-parameters.md)  
- Popisuje použití <xref:System.Xml.Xsl.XsltArgumentList> třídy XSLT parametry procesu.  
+ Popisuje použití třídy <xref:System.Xml.Xsl.XsltArgumentList> ke zpracování parametrů XSLT.  
   
  [Bloky skriptu používající element msxsl:script](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md)  
- Popisuje použití `msxsl:script` elementu.  
+ Popisuje použití prvku `msxsl:script`.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

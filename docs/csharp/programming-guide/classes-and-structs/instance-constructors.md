@@ -1,17 +1,16 @@
 ---
 title: Konstruktory instancí – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: 198f9db1430226343fd3709c66d16b68e975ab3a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ee3cc30334154ef8aae6d7d26286463c537ff3dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922173"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714802"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory instancí (Průvodce programováním v C#)
 
@@ -24,21 +23,21 @@ Konstruktory instancí slouží k vytvoření a inicializaci všech proměnných
 > [!NOTE]
 > Pro přehlednost Tato třída obsahuje veřejná pole. Použití veřejných polí není doporučeným způsobem programování, protože umožňuje libovolné metodě kdekoli v programu neomezený a neověřený přístup k vnitřním pracovním postupům objektu. Datové členy by měly být obecně soukromé a měly by být k dispozici pouze prostřednictvím metod a vlastností třídy.  
   
- Tento konstruktor instance se volá vždycky, když se vytvoří objekt `Coords` založený na třídě. Konstruktor podobný tomuto typu, který nepřijímá žádné argumenty, se nazývá *konstruktor bez parametrů*. Je však často užitečné poskytnout další konstruktory. Například můžeme přidat konstruktor do `Coords` třídy, která nám umožní zadat počáteční hodnoty pro datové členy:  
+ Tento konstruktor instance se volá vždycky, když se vytvoří objekt založený na třídě `Coords`. Konstruktor podobný tomuto typu, který nepřijímá žádné argumenty, se nazývá *konstruktor bez parametrů*. Je však často užitečné poskytnout další konstruktory. Do třídy `Coords` můžeme například přidat konstruktor, který nám umožňuje zadat počáteční hodnoty pro datové členy:  
   
  [!code-csharp[csProgGuideObjects#76](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#76)]  
   
- To umožňuje `Coords` vytvářet objekty s výchozími nebo konkrétními počátečními hodnotami, jako jsou:  
+ To umožňuje `Coords` objekty vytvořit s výchozími nebo konkrétními počátečními hodnotami, jako je:  
   
  [!code-csharp[csProgGuideObjects#77](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#77)]  
   
- Pokud třída nemá konstruktor, konstruktor bez parametrů se automaticky vygeneruje a k inicializaci polí objektu se použijí výchozí hodnoty. Například hodnota [int](../../language-reference/builtin-types/integral-numeric-types.md) je inicializována na hodnotu 0. Další informace o výchozích hodnotách najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md). Proto vzhledem k tomu `Coords` , že konstruktor bez parametrů třídy inicializuje všechny datové členy na nulu, lze jej odebrat zcela, aniž by bylo nutné měnit způsob fungování třídy. Kompletní příklad použití více konstruktorů je uveden v příkladu 1 dále v tomto tématu a příklad automaticky generovaného konstruktoru je uveden v příkladu 2.  
+ Pokud třída nemá konstruktor, konstruktor bez parametrů se automaticky vygeneruje a k inicializaci polí objektu se použijí výchozí hodnoty. Například hodnota [int](../../language-reference/builtin-types/integral-numeric-types.md) je inicializována na hodnotu 0. Další informace o výchozích hodnotách najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md). Proto vzhledem k tomu, že konstruktor bez parametrů `Coords` inicializuje všechny datové členy na nulu, lze jej odebrat zcela, aniž by bylo nutné měnit způsob fungování třídy. Kompletní příklad použití více konstruktorů je uveden v příkladu 1 dále v tomto tématu a příklad automaticky generovaného konstruktoru je uveden v příkladu 2.  
   
  Konstruktory instancí lze také použít k volání konstruktorů instancí základních tříd. Konstruktor třídy může vyvolat konstruktor základní třídy prostřednictvím inicializátoru následujícím způsobem:  
   
  [!code-csharp[csProgGuideObjects#78](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#78)]  
   
- V tomto příkladu `Circle` Třída předává hodnoty reprezentující poloměr a výšku do konstruktoru `Shape` poskytnutého z, který `Circle` je odvozen. Úplný příklad s `Shape` využitím `Circle` a se zobrazí v tomto tématu jako příklad 3.  
+ V tomto příkladu třída `Circle` předává hodnoty reprezentující poloměr a výšku do konstruktoru poskytnutého `Shape`, ze kterého je odvozen `Circle`. Úplný příklad použití `Shape` a `Circle` se zobrazí v tomto tématu jako příklad 3.  
   
 ## <a name="example-1"></a>Příklad 1  
  Následující příklad ukazuje třídu se dvěma konstruktory třídy, jedna bez argumentů a jedna se dvěma argumenty.  
@@ -46,14 +45,14 @@ Konstruktory instancí slouží k vytvoření a inicializaci všech proměnných
  [!code-csharp[csProgGuideObjects#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#4)]  
   
 ## <a name="example-2"></a>Příklad 2  
- V tomto příkladu třída `Person` nemá žádné konstruktory. v takovém případě je konstruktor bez parametrů k dispozici automaticky a pole jsou inicializována na výchozí hodnoty.  
+ V tomto příkladu třída `Person` nemá žádné konstruktory. v takovém případě je konstruktor bez parametrů automaticky zadán a pole jsou inicializována na jejich výchozí hodnoty.  
   
  [!code-csharp[csProgGuideObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#8)]  
   
- Všimněte si, že výchozí hodnota `age` je `0` `name` a výchozí hodnota je `null`. Další informace o výchozích hodnotách najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md).  
+ Všimněte si, že výchozí hodnota `age` je `0` a výchozí hodnota `name` je `null`. Další informace o výchozích hodnotách najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md).  
   
 ## <a name="example-3"></a>Příklad 3  
- Následující příklad ukazuje použití inicializátoru základní třídy. Třída je odvozena z obecné třídy `Shape`a `Cylinder` třída je odvozena z `Circle` třídy. `Circle` Konstruktor u každé odvozené třídy používá svůj inicializátor základní třídy.  
+ Následující příklad ukazuje použití inicializátoru základní třídy. Třída `Circle` je odvozena od obecné `Shape`třídy a třída `Cylinder` je odvozena od třídy `Circle`. Konstruktor u každé odvozené třídy používá svůj inicializátor základní třídy.  
   
  [!code-csharp[csProgGuideObjects#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#9)]  
   

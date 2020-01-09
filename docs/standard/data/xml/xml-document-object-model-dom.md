@@ -3,18 +3,16 @@ title: model DOM (Document Object Model) dokumentu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: b5e52844-4820-47c0-a61d-de2da33e9f54
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 160d056491ca71f6de039e8cac7302a61504fcd5
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 4faa481a6331863112b7dba65bdbccb69cd12b7d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662485"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709956"
 ---
 # <a name="xml-document-object-model-dom"></a>model DOM (Document Object Model) dokumentu XML
 
-Třída XML Document Object Model (DOM) je v paměti reprezentace dokumentu XML. V modelu DOM můžete prostřednictvím kódu programu čtení, manipulaci a upravit dokument XML. **XmlReader** XML přečte třída; však poskytuje přístup bez mezipaměti, pouze vpřed, jen pro čtení. To znamená, že neexistují žádné možnosti upravit hodnoty atributu nebo obsahu elementu nebo možnost vkládat a odebrání uzlů s **XmlReader**. Pro úpravy je primární funkce modelu DOM. Je běžné a způsobem strukturovaná, že XML data reprezentované v paměti, ačkoli skutečná data XML je uložen v lineárně v souboru nebo přicházející z jiného objektu. Následuje XML data.
+Třída XML model DOM (Document Object Model) (DOM) je reprezentace dokumentu XML v paměti. Model DOM umožňuje programově číst, manipulovat a upravovat dokument XML. Třída **XmlReader** také přečte XML; ale poskytuje neuložený obsah do mezipaměti, jen pro čtení a přístup jen pro čtení. To znamená, že neexistují žádné možnosti pro úpravu hodnot atributu nebo obsahu prvku nebo možnost vkládat a odebírat uzly pomocí objektu **XmlReader**. Úpravy jsou primární funkcí modelu DOM. Je to běžný a strukturovaný způsob, jak jsou data XML reprezentována v paměti, přestože skutečná data XML jsou ukládána lineárním způsobem v souboru nebo přicházejí v jiném objektu. Níže jsou data XML.
 
 ## <a name="input"></a>Vstup
 
@@ -33,24 +31,24 @@ Třída XML Document Object Model (DOM) je v paměti reprezentace dokumentu XML.
   </books>
 ```
 
-Následující obrázek znázorňuje, jak paměti strukturovaná přečtení tato data XML do modelu DOM struktury.
+Následující obrázek ukazuje, jak je strukturována paměť, když jsou tato data XML čtena do struktury DOM.
 
-![Strukturu dokumentu XML](../../../../docs/standard/data/xml/media/xml-to-domtree.gif "XML_To_DOMTree") strukturu dokumentu XML
+![Struktura dokumentu XML](../../../../docs/standard/data/xml/media/xml-to-domtree.gif "XML_To_DOMTree") Struktura dokumentu XML
 
-V rámci struktury dokumentu XML, každý kruhu na tomto obrázku představuje uzlu, která je volána **XmlNode** objektu. **XmlNode** objekt je základní objekt ve stromové struktuře modelu DOM. **XmlDocument** třídu, která rozšiřuje **XmlNode**, podporuje metody pro provádění operací na dokument jako celek (například načtení do paměti nebo uložení souboru XML do souboru. Kromě toho **XmlDocument** poskytuje prostředky k zobrazení a manipulaci s uzly v celém dokumentu XML. Obě **XmlNode** a **XmlDocument** mají vylepšení výkonu a použitelnosti a mají metody a vlastnosti pro:
+V rámci struktury dokumentu XML každý kroužek na tomto obrázku představuje uzel, který se nazývá objekt **XmlNode** . Objekt **XmlNode** je základní objekt ve stromové struktuře modelu DOM. Třída **XmlDocument** , která rozšiřuje **XmlNode**, podporuje metody pro provádění operací v dokumentu jako celku (například načtení do paměti nebo uložení XML do souboru. **XmlDocument** navíc poskytuje prostředky pro zobrazení a manipulaci s uzly v celém dokumentu XML. **XmlNode** i **XmlDocument** mají vylepšení výkonu a použitelnosti a mají metody a vlastnosti pro:
 
-- Přístup a úpravy uzlů, které jsou specifické pro modelu DOM, jako jsou uzly element, uzly odkaz na entitu a tak dále.
+- Přístup k uzlům, které jsou specifické pro model DOM, jako jsou uzly elementů, uzly odkazů na entity a tak dále, upravte.
 
-- Načte celý uzly kromě informace, které obsahuje uzel, například podle textu v uzlu elementu.
+- Načtěte celé uzly kromě informací, které uzel obsahuje, jako je například text v uzlu element.
 
   > [!NOTE]
-  > Pokud aplikace nevyžaduje, aby struktura nebo poskytované v modelu DOM, možností pro úpravy **XmlReader** a **XmlWriter** třídy poskytnout přístup bez mezipaměti, dopředné datový proud XML. Další informace naleznete v tématu <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.
+  > Pokud aplikace nevyžaduje strukturu nebo možnosti úprav poskytované modelem DOM, třídy **XmlReader** a **XmlWriter** poskytují neuložený datový proud, který je určen pouze pro přístup ke streamu XML. Další informace naleznete v tématu <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>.
 
-**Uzel** objekty mají sadu metod a vlastností, jakož i základní a jasně definované vlastnosti. Zde jsou některé z těchto vlastností:
+Objekty **uzlů** mají sadu metod a vlastností a také základní a jasně definované charakteristiky. Některé z těchto vlastností jsou:
 
-- Uzly mít jeden nadřazený uzel, nadřazený uzel je uzel přímo nad nimi. Uzel nejvyšší úrovně a obsahuje samotný dokument a fragmentů dokumentu, je pouze uzly, které nemají nadřazené kořen dokumentu.
+- Uzly mají jeden nadřazený uzel, nadřazený uzel je nad uzlem přímo. Jediným uzlem, které nemají nadřazený objekt, je kořen dokumentu, protože se jedná o uzel nejvyšší úrovně, který obsahuje samotný dokument a fragmenty dokumentů.
 
-- Většina uzlů může mít více podřízených uzlů, které jsou uzly pod nimi. Následuje seznam typy uzlů, které mohou obsahovat podřízené uzly.
+- Většina uzlů může mít více podřízených uzlů, které jsou uzly přímo pod nimi. Následuje seznam typů uzlů, které mohou mít podřízené uzly.
 
   - **Dokument**
 
@@ -62,19 +60,19 @@ V rámci struktury dokumentu XML, každý kruhu na tomto obrázku představuje u
 
   - **Atribut**
 
-  **XmlDeclaration**, **Notation**, **Entity**, **CDATASection**, **Text**,  **Komentář**, **ProcessingInstruction**, a **DocumentType** uzly nemají podřízené uzly.
+  Uzly **XmlDeclaration**, **Notation**, **entity**, **CDATASection**, **text**, **Comment**, **ProcessingInstruction**a **DocumentType** nemají podřízené uzly.
 
-- Uzly, které jsou na stejné úrovni, v diagramu pomocí **knihy** a **pubinfo** uzly, jsou na stejné úrovni.
+- Uzly, které jsou na stejné úrovni, reprezentované v diagramu **Kniha** a uzly **pubinfo** , jsou na stejné úrovni.
 
-Jedna vlastnost v modelu DOM se způsob, jakým zpracovává atributy. Atributy nejsou uzly, které jsou součástí nadřazeného, podřízené a vztahy na stejné úrovni. Atributy jsou považovány za vlastnost uzlu elementu a se skládá z názvu a hodnoty pár. Například, pokud máte data XML, který se skládá z `format="dollar`"přidružené k tomuto prvku `price`, slovo `format` je název a hodnota `format` atribut je `dollar`. K načtení `format="dollar"` atribut **cena** uzlu, volání **GetAttribute** metodu, když je ukazatel myši nachází na `price` uzlu elementu. Další informace najdete v tématu [přístup k atributům v modelu DOM](../../../../docs/standard/data/xml/accessing-attributes-in-the-dom.md).
+Jedna z vlastností modelu DOM je způsob, jakým zpracovává atributy. Atributy nejsou uzly, které jsou součástí vztahů nadřazených, podřízených a na stejné úrovni. Atributy jsou považovány za vlastnost uzlu elementu a jsou tvořeny názvem a dvojicí hodnot. Například pokud máte data XML sestávající z `format="dollar`"přidruženo k elementu `price`, slovo `format` je název a hodnota atributu `format` je `dollar`. Chcete-li načíst atribut `format="dollar"` **cenového** uzlu, zavolejte metodu **GetAttribute** , když je kurzor umístěn v uzlu `price` elementu. Další informace naleznete v tématu [přístup k atributům v modelu DOM](../../../../docs/standard/data/xml/accessing-attributes-in-the-dom.md).
 
-Protože XML je načíst do paměti, se vytvoří uzly. Ale ne všechny uzly jsou stejného typu. Element v XML má různá pravidla a syntaxe než instrukce pro zpracování. Proto jako je čtení různá data, typ uzlu je přiřazena k jednotlivým uzlům. Tento typ uzlu určuje vlastnosti a funkce uzlu.
+V případě, že je kód XML čten do paměti, jsou vytvořeny uzly. Ale ne všechny uzly jsou stejného typu. Element v jazyce XML má odlišná pravidla a syntaxi než instrukce pro zpracování. Proto se při čtení různých dat typ uzlu přiřadí každému uzlu. Tento typ uzlu určuje vlastnosti a funkce uzlu.
 
-Další informace o typech uzlů vygenerované v paměti, naleznete v tématu [typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md). Další informace o objekty vytvořené v uzlu stromu, naleznete v tématu [mapování hierarchie objektů na XML Data](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).
+Další informace o typech uzlů generovaných v paměti naleznete v tématu [typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md). Další informace o objektech vytvořených ve stromové struktuře uzlu najdete v tématu [mapování hierarchie objektů na data XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).
 
-Microsoft rozšířil rozhraní API, která jsou k dispozici v World Wide Web Consortium (W3C) modelu DOM úrovně 1 a 2 úroveň usnadňují práci s dokumentu XML. Při plné podpoře standardů W3C, přidejte další třídy, metody a vlastnosti funkce nad rámec co se dá dělat pomocí modelu DOM. W3C XML Nové třídy umožňují přístup k relační data, poskytuje metody pro synchronizaci s dat ADO.NET, současně vystavení dat jako XML. Další informace najdete v tématu [synchronizace datové sady s datovým dokumentem XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).
+Společnost Microsoft rozšířila rozhraní API, která jsou k dispozici v konsorcium World Wide Web (W3C) DOM úrovně 1 a 2, aby bylo snazší pracovat s dokumentem XML. I když plně podporují standardy W3C, další třídy, metody a vlastnosti přidávají funkce nad rámec toho, co je možné provést pomocí konsorcia W3C XML DOM. Nové třídy vám umožní přístup k relačním datům, což vám dává metody pro synchronizaci s daty ADO.NET a současně zpřístupňují data jako XML. Další informace najdete v tématu [synchronizace datové sady s objektu XmlDataDocument](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).
 
-V modelu DOM je zvláště užitečná pro čtení dat XML do paměti pro změnu jeho strukturu, můžete přidat nebo odebrat uzly nebo upravit data ukládaná společností uzel jako text obsažen v elementu. Ale jsou k dispozici další třídy, které jsou rychlejší než v modelu DOM v jiných scénářích. Rychlá, bez mezipaměti, dopředné stream přístup XML, použijte **XmlReader** a **XmlWriter**. Pokud potřebujete s modelem kurzor náhodný přístup a **XPath**, použijte **objektem XPathNavigator nastaveným na** třídy.
+Model DOM je nejužitečnější pro čtení dat XML do paměti pro změnu struktury, pro přidání nebo odebrání uzlů nebo pro úpravu dat držených uzlem jako v textu obsaženém v prvku. K dispozici jsou však jiné třídy, které jsou rychlejší než model DOM v jiných scénářích. V případě rychlého, neuloženého datového proudu, který je pouze pro zápis do mezipaměti, použijte rozhraní **XmlReader** a **XmlWriter**. Pokud potřebujete náhodný přístup pomocí modelu kurzoru a **XPath**, použijte třídu **XPathNavigator** .
 
 ## <a name="see-also"></a>Viz také:
 

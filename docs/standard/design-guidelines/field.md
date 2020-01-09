@@ -7,40 +7,39 @@ helpviewer_keywords:
 - read-only fields
 - member design guidelines, fields
 ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
-author: KrzysztofCwalina
-ms.openlocfilehash: 3ab8fe279605c4795bb3a26557d0241b186b273a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d39c9b95d759902d6d523b028f3db8b8da954336
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026403"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709345"
 ---
 # <a name="field-design"></a>Návrh pole
-Princip zapouzdření je jedním z nejdůležitějších pojmy v objektově orientovaný návrh. Tento princip hlásí, že data uložená v objektu by měla být přístupné pouze pro tento objekt.  
+Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově orientovaném návrhu. Tato zásada uvádí, že data uložená v objektu by měla být přístupná pouze k tomuto objektu.  
   
- Užitečný způsob, jak interpretovat princip je říct, že typ by měl být navržené tak, aby k polím tohoto typu (název nebo typ změn) můžete změnit bez narušení kód jiný než pro členy typu. Tomto výkladu okamžitě znamená, že všechna pole musí být privátní.  
+ Užitečný způsob, jak interpretovat princip, je říci, že by měl být navržen typ tak, aby bylo možné provést změny v polích daného typu (změny názvu nebo typu) bez narušení kódu, který je jiný než pro členy typu. Tato interpretace okamžitě znamená, že všechna pole musí být soukromá.  
   
- Vylučujeme konstantní a statické pole jen pro čtení z tohoto striktní omezení, protože pole, podle definice téměř nikdy musejí změnit.  
+ Z tohoto striktního omezení vyloučíme pole s konstantním a statickým oprávněním jen pro čtení, protože taková pole, která jsou skoro podle definice, se nikdy nevyžadují ke změně.  
   
  **X DO NOT** zadejte pole instance, která jsou veřejných nebo chráněný.  
   
- Vlastnosti by měla poskytnout pro přístup k pole namísto tak jejich veřejné nebo chráněné.  
+ Měli byste poskytnout vlastnosti pro přístup k polím místo jejich veřejné nebo chráněné.  
   
  **✓ DO** pro konstanty, které se budou měnit nikdy používat konstantní pole.  
   
- Kompilátor se oděl do hodnoty pole const přímo do kódu volání. Proto konstantních hodnot lze nikdy změnit bez rizika porušení kompatibilitu.  
+ Kompilátor vypálí hodnoty konstantních polí přímo na volání kódu. Proto hodnoty const nelze nikdy změnit bez rizika přerušení kompatibility.  
   
  **✓ DO** použít veřejné statické `readonly` pole pro instance předdefinovaných objektů.  
   
- Pokud jsou předdefinované instance daného typu, je deklarujte jako veřejná pole jen pro čtení statické v samotném typu.  
+ Pokud existují předdefinované instance typu, deklarujte je jako veřejná pole pouze pro čtení samotného typu.  
   
  **X DO NOT** přiřadit instancí měnitelný typy `readonly` pole.  
   
- Měnitelný typ je typ s instancemi, které můžete upravit po jsou vytvořeny. Například pole, většina kolekce a datové proudy jsou měnitelné typy, ale <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>, a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné. Modifikátor jen pro čtení na pole typu odkazu brání instance uloženo v poli nahradit, ale nezabrání data instance pole nebylo možné měnit voláním členů změna instance.  
+ Proměnlivý typ je typ s instancemi, které lze změnit po vytvoření instance. Například pole, většina kolekcí a datové proudy jsou proměnlivé typy, ale <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné. Modifikátor jen pro čtení v poli typu odkazu brání instanci, která je uložena v poli, aby byla měněna, ale nezabrání v tom, aby byla data instance pole upravována voláním členů, kteří mění instanci.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

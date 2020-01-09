@@ -1,6 +1,5 @@
 ---
 title: await – operátor C# – referenční informace
-ms.custom: seodec18
 ms.date: 11/08/2019
 f1_keywords:
 - await_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 36cb4a5def6b75281edbe878d89af0c18ab226ec
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 6dc058f3850e30d8c424d4372c47b127c7d361b6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140654"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712738"
 ---
 # <a name="await-operator-c-reference"></a>await – operátorC# (Referenční dokumentace)
 
@@ -40,7 +39,7 @@ Klíčová slova `async` a `await` jsou k C# dispozici v 5 a novějších verzí
 
 ## <a name="await-operator-in-the-main-method"></a>await – operátor v metodě Main
 
-Počínaje C# 7,1 [`Main` metoda](../../programming-guide/main-and-command-args/index.md), která je vstupním bodem aplikace, může vracet`Task`nebo`Task<int>`, což umožňuje, aby byla asynchronní, takže můžete použít operátor`await`ve svém těle. V dřívějších C# verzích, abyste zajistili, že `Main` metoda čeká na dokončení asynchronní operace, můžete načíst hodnotu vlastnosti <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> instance <xref:System.Threading.Tasks.Task%601>, která je vrácena odpovídající asynchronní metodou. Pro asynchronní operace, které neposkytují hodnotu, můžete zavolat metodu <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Informace o tom, jak vybrat jazykovou verzi, najdete v tématu [ C# jazyková verze](../configure-language-version.md).
+Počínaje C# 7,1 [`Main` metoda](../../programming-guide/main-and-command-args/index.md), která je vstupním bodem aplikace, může vracet `Task` nebo `Task<int>`, což umožňuje, aby byla asynchronní, takže můžete použít operátor `await` ve svém těle. V dřívějších C# verzích, abyste zajistili, že `Main` metoda čeká na dokončení asynchronní operace, můžete načíst hodnotu vlastnosti <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> instance <xref:System.Threading.Tasks.Task%601>, která je vrácena odpovídající asynchronní metodou. Pro asynchronní operace, které neposkytují hodnotu, můžete zavolat metodu <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Informace o tom, jak vybrat jazykovou verzi, najdete v tématu [ C# jazyková verze](../configure-language-version.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

@@ -1,20 +1,19 @@
 ---
 title: Explicitní implementace rozhraní – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - explicit interfaces [C#]
 - interfaces [C#], explicit
 ms.assetid: 181c901f-0d4c-4f29-97fc-895079617bf2
-ms.openlocfilehash: 498c45ff1c5837f5dcb0d4a80d0e3bb249abd694
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ac90726fd50f104d1b9251d4f9b097b721ea5e7d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589215"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75701755"
 ---
 # <a name="explicit-interface-implementation-c-programming-guide"></a>Implementace explicitního rozhraní (Průvodce programováním v C#)
-Pokud [Třída](../../language-reference/keywords/class.md) implementuje dvě rozhraní, která obsahují člena se stejnou signaturou, pak implementace tohoto člena na třídu způsobí, že obě rozhraní budou používat tento člen jako svou implementaci. V následujícím příkladu všechna volání `Paint` vyvolávají stejnou metodu.  
+Pokud [Třída](../../language-reference/keywords/class.md) implementuje dvě rozhraní, která obsahují člena se stejnou signaturou, pak implementace tohoto člena na třídu způsobí, že obě rozhraní budou používat tento člen jako svou implementaci. V následujícím příkladu všechna volání `Paint` vyvolat stejnou metodu.  
   
  [!code-csharp[csProgGuideInheritance#39](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#39)]  
   
@@ -22,7 +21,7 @@ Pokud [Třída](../../language-reference/keywords/class.md) implementuje dvě ro
   
  [!code-csharp[csProgGuideInheritance#40](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#40)]  
   
- Člen `IControl.Paint` třídy je k dispozici pouze `IControl` prostřednictvím rozhraní a `ISurface.Paint` je k dispozici pouze `ISurface`prostřednictvím. Implementace obou metod jsou oddělené a nejsou k dispozici přímo na třídě. Příklad:  
+ Člen třídy `IControl.Paint` je k dispozici pouze prostřednictvím rozhraní `IControl` a `ISurface.Paint` je k dispozici pouze prostřednictvím `ISurface`. Implementace obou metod jsou oddělené a nejsou k dispozici přímo na třídě. Příklad:  
   
  [!code-csharp[csProgGuideInheritance#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#41)]  
   

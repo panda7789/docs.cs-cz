@@ -3,27 +3,25 @@ title: Úpravy dat XML pomocí XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: b1f91616-3115-4264-9821-c66589d11d11
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ef68511e425e047fa853e47bd4d463d9662c740c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b9225f1efcca0f4874a98f2b83d1964aacef735
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934487"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710957"
 ---
 # <a name="editing-xml-data-using-xpathnavigator"></a>Úpravy dat XML pomocí XPathNavigator
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody pro vkládat, upravovat a odebírat uzly a hodnot z dokumentu XML obsažených v <xref:System.Xml.XmlDocument> objektu. Chcete-li použít některé z těchto metod vložení, úpravu a odebrání uzlů a hodnot, <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, to znamená, že jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> vlastnost musí mít hodnotu true.  
+Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje metody pro vkládání, úpravy a odebírání uzlů a hodnot z dokumentu XML obsaženého v objektu <xref:System.Xml.XmlDocument>. Aby bylo možné použít některou z těchto metod pro vložení, úpravu a odebrání uzlů a hodnot, musí být objekt <xref:System.Xml.XPath.XPathNavigator> upravitelný, to znamená, že vlastnost <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> musí mít hodnotu true.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vložení dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md)  
- Popisuje, jak vložit na stejné úrovni, podřízený, atribut uzlů a hodnoty v <xref:System.Xml.XmlDocument> pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
+ Popisuje způsob vložení uzlů na stejné úrovni, podřízených prvků, atributů a hodnot do objektu <xref:System.Xml.XmlDocument> pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
  [Změna dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)  
- Popisuje, jak upravit uzly a hodnoty v <xref:System.Xml.XmlDocument> pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
+ Popisuje, jak upravit uzly a hodnoty v objektu <xref:System.Xml.XmlDocument> pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
  [Odebrání dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)  
- Popisuje, jak odebrat uzly a hodnoty ze <xref:System.Xml.XmlDocument> pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
+ Popisuje, jak odebrat uzly a hodnoty z objektu <xref:System.Xml.XmlDocument> pomocí <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: 2e443030445d2817c8f53a044a261edd22eeb26e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9a0640a7ce73fa8454442cd301157bf5c265f9de
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973271"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713900"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Jak zřetězit více řetězců (C# průvodce)
 
@@ -41,7 +41,7 @@ V jiných případech může být kombinování řetězců ve smyčce, kde neví
   
 [!code-csharp-interactive[string concatenation using string builder](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#4)]  
 
-Můžete si přečíst další informace o [důvodech pro výběr zřetězení řetězců nebo `StringBuilder` třídy](xref:System.Text.StringBuilder#StringAndSB) .
+Můžete si přečíst další informace o [důvodech pro výběr zřetězení řetězců nebo `StringBuilder` třídy](xref:System.Text.StringBuilder#StringAndSB).
 
 Další možností připojení řetězců z kolekce je použití metody <xref:System.String.Concat%2A?displayProperty=nameWithType>. Použijte <xref:System.String.Join%2A?displayProperty=nameWithType> metodu, pokud by měly být zdrojové řetězce odděleny oddělovač. Následující kód kombinuje pole slov pomocí obou metod:
 

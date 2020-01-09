@@ -17,105 +17,103 @@ helpviewer_keywords:
 - Rijndael
 - encryption [.NET Framework], asymmetric keys
 ms.assetid: a164ba4f-e596-4bbe-a9ca-f214fe89ed48
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4fc959ee2e29224d6d2598291141e6c922223529
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2ebf3f86ac550c0179b2e26879a7df128fd529e9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645354"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706094"
 ---
 # <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>Postupy: Šifrování elementů XML pomocí asymetrických klíčů
-Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu Specifikace World Wide Web Consortium (W3C) pro šifrování XML se nachází v <https://www.w3.org/TR/xmldsig-core/>.  
+Můžete použít třídy v oboru názvů <xref:System.Security.Cryptography.Xml> k zašifrování elementu v dokumentu XML.  Šifrování XML je standardní způsob, jak vyměňovat nebo ukládat šifrovaná data XML, aniž byste se museli snadno přečíst.  Další informace o standardu šifrování XML najdete v tématu Specifikace konsorcium World Wide Web (W3C) pro šifrování XML umístěné v <https://www.w3.org/TR/xmldsig-core/>.  
   
- Vám pomůže šifrování XML nahradit všechny – element XML nebo dokument <`EncryptedData`> element, který obsahuje šifrovaná data XML.  <`EncryptedData`> Element může také obsahovat dílčí prvky, které obsahují informace o klíčích a procesy používané při šifrování.  Šifrování XML umožňuje dokument obsahovat několik elementů šifrované a umožňuje element, který má být zašifrovaný více než jednou.  Příklad kódu v tomto postupu ukazuje, jak vytvořit <`EncryptedData`> element společně s několika dalšími dílčími elementy, které použijete později při dešifrování.  
+ Můžete použít šifrování XML k nahrazení libovolného elementu XML nebo dokumentu pomocí <`EncryptedData`> elementu, který obsahuje šifrovaná data XML.  Prvek <`EncryptedData`> může také obsahovat dílčí prvky, které obsahují informace o klíčích a procesech použitých při šifrování.  Šifrování XML umožňuje dokumentu obsahovat více šifrovaných prvků a umožňuje vícenásobné šifrování elementu.  Příklad kódu v tomto postupu ukazuje, jak vytvořit <`EncryptedData`> prvek spolu s několika dalšími dílčími prvky, které můžete použít později během dešifrování.  
   
- V tomto příkladu šifruje elementu XML s použitím dva klíče.  Generuje pár veřejného a privátního klíče RSA a uloží pár klíčů zabezpečeného kontejneru klíčů.  Příklad poté vytvoří samostatné relaci klíče pomocí algoritmus Advanced Encryption (Standard AES), také nazývané algoritmu Rijndael.  V příkladu používá klíč relace AES pro šifrování dokumentů XML a pak pomocí veřejného klíče RSA pro šifrování s klíčem relace AES.  Nakonec příklad uloží zašifrovaný klíč relace a šifrovaná data XML v dokumentu XML v rámci nového <`EncryptedData`> element.  
+ Tento příklad šifruje XML element pomocí dvou klíčů.  Vygeneruje pár veřejného a privátního klíče RSA a uloží dvojici klíčů do zabezpečeného kontejneru klíčů.  Příklad následně vytvoří samostatný klíč relace pomocí algoritmu standard AES (Advanced Encryption Standard) (AES), který se označuje také jako algoritmus Rijndael.  V příkladu je použit klíč relace AES k šifrování dokumentu XML a poté používá veřejný klíč RSA k šifrování klíče relace AES.  Nakonec příklad uloží šifrovaný klíč relace AES a zašifrovaná data XML do dokumentu XML v rámci nového <`EncryptedData`> elementu.  
   
- K dešifrování elementu XML, načíst privátní klíč RSA v kontejneru klíčů, použít ho k dešifrování klíče relace a pak použít klíč relace k dešifrování dokumentu.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [jak: Dešifrování elementů XML pomocí asymetrických klíčů](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md).  
+ Chcete-li dešifrovat XML element, načtěte privátní klíč RSA z kontejneru klíčů, použijte ho k dešifrování klíče relace a pak použijte klíč relace k dešifrování dokumentu.  Další informace o tom, jak dešifrovat XML element, který byl zašifrovaný pomocí tohoto postupu, naleznete v tématu [How to: deencrypt XML Elements with asymetrické klíče](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md).  
   
- Tento příklad je vhodný pro situace, kdy je potřeba šifrovaná data sdílet více aplikací nebo pokud aplikace potřebuje k uložení šifrovaná data mezi časem, které běží.  
+ Tento příklad je vhodný pro situace, kdy více aplikací potřebuje sdílet šifrovaná data nebo kde aplikace potřebuje ukládat šifrovaná data mezi časy, ve kterých běží.  
   
-### <a name="to-encrypt-an-xml-element-with-an-asymmetric-key"></a>K šifrování platný element XML s asymetrický klíč  
+### <a name="to-encrypt-an-xml-element-with-an-asymmetric-key"></a>Šifrování elementu XML pomocí asymetrického klíče  
   
-1. Vytvoření <xref:System.Security.Cryptography.CspParameters> objektu a zadejte název kontejneru klíčů.  
+1. Vytvořte objekt <xref:System.Security.Cryptography.CspParameters> a zadejte název kontejneru klíčů.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#2)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#2)]  
   
-2. Vygenerovat symetrický klíč pomocí <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy.  Klíč se automaticky uloží do kontejneru klíčů při předání <xref:System.Security.Cryptography.CspParameters> objekt konstruktoru <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy.  Tento klíč se použije k šifrování s klíčem relace AES a lze načíst později je dešifrovat.  
+2. Vygenerujte symetrický klíč pomocí třídy <xref:System.Security.Cryptography.RSACryptoServiceProvider>.  Klíč se automaticky uloží do kontejneru klíčů při předání objektu <xref:System.Security.Cryptography.CspParameters> do konstruktoru třídy <xref:System.Security.Cryptography.RSACryptoServiceProvider>.  Tento klíč se použije k zašifrování klíče relace AES a bude možné ho později načíst k dešifrování.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#3)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#3)]  
   
-3. Vytvoření <xref:System.Xml.XmlDocument> objekt načtením souboru XML z disku.  <xref:System.Xml.XmlDocument> Objekt obsahuje element XML k šifrování.  
+3. Vytvořte objekt <xref:System.Xml.XmlDocument> načtením souboru XML z disku.  Objekt <xref:System.Xml.XmlDocument> obsahuje element XML k zašifrování.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#4](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#4)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#4)]  
   
-4. Najít zadaný element v <xref:System.Xml.XmlDocument> objektu a vytvořte nový <xref:System.Xml.XmlElement> objekt reprezentující element, který chcete zašifrovat. V tomto příkladu `"creditcard"` šifrovaná prvku.  
+4. Vyhledá zadaný element v objektu <xref:System.Xml.XmlDocument> a vytvoří nový objekt <xref:System.Xml.XmlElement>, který reprezentuje element, který chcete zašifrovat. V tomto příkladu je prvek `"creditcard"` zašifrovaný.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#5)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#5)]  
   
-5. Vytvořit novou relaci klíče pomocí <xref:System.Security.Cryptography.RijndaelManaged> třídy.  Tento klíč bude šifrování elementu XML a pak se sám zašifrován a umístěny v dokumentu XML.  
+5. Vytvořte nový klíč relace pomocí třídy <xref:System.Security.Cryptography.RijndaelManaged>.  Tento klíč zašifruje XML element a pak bude zašifrovaný a umístěný v dokumentu XML.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#6)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#6)]  
   
-6. Vytvořit novou instanci třídy <xref:System.Security.Cryptography.Xml.EncryptedXml> třídy a použít ho k zašifrování zadaného elementu pomocí klíče relace.  <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData%2A> Metoda vrátí šifrovaný element jako pole šifrovaných bajtů.  
+6. Vytvořte novou instanci třídy <xref:System.Security.Cryptography.Xml.EncryptedXml> a použijte ji k zašifrování zadaného elementu pomocí klíče relace.  Metoda <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData%2A> vrátí zašifrovaný prvek jako pole šifrovaných bajtů.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#7)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#7)]  
   
-7. Vytvoření <xref:System.Security.Cryptography.Xml.EncryptedData> objektu a jeho naplnění identifikátor URL šifrovaný element XML.  Tento identifikátor URL umožňuje dešifrování strana vědět, že kód XML obsahuje šifrovaný element.  Můžete použít <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl> pole k určení identifikátoru adresy URL.  Element XML ve formátu prostého textu se nahradí <`EncryptedData`> element zapouzdřené situace <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
+7. Sestavte objekt <xref:System.Security.Cryptography.Xml.EncryptedData> a naplňte ho identifikátorem URL šifrovaného elementu XML.  Tento identifikátor adresy URL umožňuje dešifrovací straně upozornit, že kód XML obsahuje zašifrovaný element.  K určení identifikátoru adresy URL můžete použít pole <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl>.  Nešifrovaný element XML bude nahrazen <`EncryptedData`> element zapouzdřený tímto <xref:System.Security.Cryptography.Xml.EncryptedData>m objektem.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#8)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#8)]  
   
-8. Vytvoření <xref:System.Security.Cryptography.Xml.EncryptionMethod> , který je inicializován na identifikátor URL kryptografický algoritmus používaný ke generování klíče relace.  Předání <xref:System.Security.Cryptography.Xml.EncryptionMethod> objektu <xref:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod%2A> vlastnost.  
+8. Vytvořte objekt <xref:System.Security.Cryptography.Xml.EncryptionMethod>, který je inicializován na identifikátor adresy URL kryptografického algoritmu používaného k vygenerování klíče relace.  Předejte objekt <xref:System.Security.Cryptography.Xml.EncryptionMethod> do vlastnosti <xref:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod%2A>.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#9)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#9)]  
   
-9. Vytvoření <xref:System.Security.Cryptography.Xml.EncryptedKey> objektu tak, aby obsahovala šifrovaný klíč relace.  Šifrování klíče relace, přidejte ji tak <xref:System.Security.Cryptography.Xml.EncryptedKey> objektu a zadejte název klíče relace a klíče identifikátoru adresy URL.  
+9. Vytvořte objekt <xref:System.Security.Cryptography.Xml.EncryptedKey>, který bude obsahovat zašifrovaný klíč relace.  Zašifrujte klíč relace, přidejte ho do objektu <xref:System.Security.Cryptography.Xml.EncryptedKey> a zadejte název klíče relace a adresu URL identifikátoru klíče.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#10)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#10)]  
   
-10. Vytvořte nový <xref:System.Security.Cryptography.Xml.DataReference> objekt, který mapuje šifrovaná data na určitý klíč relace.  Tento krok vám umožní snadno určit více částí dokumentu XML bylo zašifrováno jeden klíč.  
+10. Vytvoří nový objekt <xref:System.Security.Cryptography.Xml.DataReference>, který mapuje šifrovaná data na konkrétní klíč relace.  Tento volitelný krok umožňuje snadno určit, že více částí dokumentu XML bylo zašifrováno jedním klíčem.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#11)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#11)]  
   
-11. Šifrovaný klíč k přidání <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
+11. Přidejte šifrovaný klíč do objektu <xref:System.Security.Cryptography.Xml.EncryptedData>.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#12)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#12)]  
   
-12. Vytvořte nový <xref:System.Security.Cryptography.Xml.KeyInfo> objektu k zadání názvu klíče RSA.  Přidejte ji tak <xref:System.Security.Cryptography.Xml.EncryptedData> objektu. To pomáhá dešifrování stran identifikovat správné asymetrický klíč používat k dešifrování klíče relace.  
+12. Vytvořte nový objekt <xref:System.Security.Cryptography.Xml.KeyInfo> pro zadání názvu klíče RSA.  Přidejte jej do objektu <xref:System.Security.Cryptography.Xml.EncryptedData>. To pomáhá dešifrovací straně identifikovat správný asymetrický klíč, který se má použít při dešifrování klíče relace.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#13](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#13)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#13)]  
   
-13. Přidat data šifrovaný element <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
+13. Přidejte data šifrovaných prvků do objektu <xref:System.Security.Cryptography.Xml.EncryptedData>.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#14](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#14)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#14)]  
   
-14. Nahraďte element z původní <xref:System.Xml.XmlDocument> objektu <xref:System.Security.Cryptography.Xml.EncryptedData> elementu.  
+14. Nahraďte prvek z původního objektu <xref:System.Xml.XmlDocument> prvkem <xref:System.Security.Cryptography.Xml.EncryptedData>.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#15](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#15)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#15)]  
   
-15. Uložit <xref:System.Xml.XmlDocument> objektu.  
+15. Uložte objekt <xref:System.Xml.XmlDocument>.  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#16](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#16)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#16)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad předpokládá, že soubor s názvem `"test.xml"` existuje ve stejném adresáři jako zkompilovaný program.  Dále předpokládá, že `"test.xml"` obsahuje `"creditcard"` elementu.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít ho v tomto příkladu.  
+ V tomto příkladu se předpokládá, že soubor s názvem `"test.xml"` existuje ve stejném adresáři jako kompilovaný program.  Předpokládá také, že `"test.xml"` obsahuje `"creditcard"` prvek.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít ho v tomto příkladu.  
   
 ```xml  
 <root>  
@@ -131,16 +129,16 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Chcete-li kompilaci tohoto příkladu, je potřeba zahrnout odkaz na `System.Security.dll`.  
+- Chcete-li tento příklad zkompilovat, je třeba zahrnout odkaz na `System.Security.dll`.  
   
-- Následující obory názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
+- Zahrňte následující obory názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>a <xref:System.Security.Cryptography.Xml>.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nikdy ukládat symetrický šifrovací klíč ve formátu prostého textu nebo přenášet symetrického klíče mezi počítači ve formátu prostého textu.  Kromě toho nikdy ukládat nebo přenášet privátní klíč pro pár asymetrických klíčů ve formátu prostého textu.  Další informace o symetrický a asymetrické kryptografické klíče najdete v tématu [generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md).  
+ Nikdy neukládejte symetrický kryptografický klíč ve formě prostého textu nebo přenášet symetrický klíč mezi počítači ve formátu prostého textu.  Kromě toho nikdy Neukládat ani nepřenášet privátní klíč dvojice asymetrických klíčů ve formátu prostého textu.  Další informace o symetrických a asymetrických kryptografických klíčích najdete v tématu [generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md).  
   
- Klíč pro vložení nikdy přímo do zdrojového kódu.  Vložené klíče ze sestavení pomocí snadno přečíst [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nebo otevřením sestavení v textovém editoru, jako je například Poznámkový blok.  
+ Nikdy nevkládat klíč přímo do zdrojového kódu.  Vložené klíče lze snadno přečíst ze sestavení pomocí nástroje [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nebo otevřením sestavení v textovém editoru, jako je Poznámkový blok.  
   
- Po dokončení pomocí kryptografického klíče, vymažte ho z paměti nastavením všech bajtů na hodnotu nula nebo voláním <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> metoda třídy spravované kryptografie.  Kryptografické klíče můžete někdy se číst z paměti pomocí ladicího programu nebo z pevného disku Pokud stránkovaného umístění v paměti na disk.  
+ Až budete s použitím kryptografického klíče hotovi, vymažte ho z paměti nastavením každého bajtu na nulu nebo voláním metody <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> spravované kryptografické třídy.  Kryptografické klíče je někdy možné z paměti načítat pomocí ladicího programu nebo je číst z pevného disku, pokud je umístění v paměti stránkované na disk.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidávání a odebírání položek seznamu řízení přístupu (pouze rozhraní .NET Framework)'
+title: 'Postupy: přidávání a odebírání položek seznamu Access Control (pouze .NET Framework)'
 ms.date: 01/14/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,36 +13,34 @@ helpviewer_keywords:
 - I/O [.NET Framework], access control list entries
 - access control lists [.NET Framework]
 ms.assetid: 53758b39-bd9b-4640-bb04-cad5ed8d0abf
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 351d8325cc0fc1a1b551b6d513cad02f1291daab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5f41c518b8732adff95593cab29d7085adcc9ab3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61752057"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708125"
 ---
-# <a name="how-to-add-or-remove-access-control-list-entries-net-framework-only"></a>Postupy: Přidávání a odebírání položek seznamu řízení přístupu (pouze rozhraní .NET Framework)
-K přidávání a odebírání položek seznamu řízení přístupu (ACL) do nebo ze souboru nebo adresáře, získat <xref:System.Security.AccessControl.FileSecurity> nebo <xref:System.Security.AccessControl.DirectorySecurity> objektu souboru nebo adresáře. Úpravy objektu a použijte ji zpět do souboru nebo adresáře.  
+# <a name="how-to-add-or-remove-access-control-list-entries-net-framework-only"></a>Postupy: přidávání a odebírání položek seznamu Access Control (pouze .NET Framework)
+Chcete-li přidat nebo odebrat položky seznamu Access Control (seznam ACL) do souboru nebo adresáře nebo z něj, získejte objekt <xref:System.Security.AccessControl.FileSecurity> nebo <xref:System.Security.AccessControl.DirectorySecurity> ze souboru nebo adresáře. Upravte objekt a pak ho použijte zpátky do souboru nebo adresáře.  
   
-## <a name="add-or-remove-an-acl-entry-from-a-file"></a>Přidat nebo odebrat položku seznamu ACL souboru  
+## <a name="add-or-remove-an-acl-entry-from-a-file"></a>Přidat nebo odebrat položku seznamu řízení přístupu (ACL) ze souboru  
   
-1. Volání <xref:System.IO.File.GetAccessControl%2A?displayProperty=nameWithType> metodu k získání <xref:System.Security.AccessControl.FileSecurity> objekt, který obsahuje aktuální položky seznamu ACL souboru.  
+1. Voláním metody <xref:System.IO.File.GetAccessControl%2A?displayProperty=nameWithType> získáte objekt <xref:System.Security.AccessControl.FileSecurity>, který obsahuje aktuální položky seznamu ACL souboru.  
   
-2. Přidávání a odebírání položek seznamu ACL z <xref:System.Security.AccessControl.FileSecurity> vrácen objekt z kroku 1.  
+2. Přidá nebo odebere položky seznamu řízení přístupu z objektu <xref:System.Security.AccessControl.FileSecurity> vráceného z kroku 1.  
   
-3. Aby se změny projevily, předejte <xref:System.Security.AccessControl.FileSecurity> do objektu <xref:System.IO.File.SetAccessControl%2A?displayProperty=nameWithType> metoda.  
+3. Chcete-li použít změny, předejte objekt <xref:System.Security.AccessControl.FileSecurity> do metody <xref:System.IO.File.SetAccessControl%2A?displayProperty=nameWithType>.  
   
-## <a name="add-or-remove-an-acl-entry-from-a-directory"></a>Přidat nebo odebrat položku seznamu ACL z adresáře  
+## <a name="add-or-remove-an-acl-entry-from-a-directory"></a>Přidat nebo odebrat položku seznamu řízení přístupu (ACL) z adresáře  
   
-1. Volání <xref:System.IO.Directory.GetAccessControl%2A?displayProperty=nameWithType> metodu k získání <xref:System.Security.AccessControl.DirectorySecurity> objekt, který obsahuje aktuální položky seznamu ACL adresáře.  
+1. Voláním metody <xref:System.IO.Directory.GetAccessControl%2A?displayProperty=nameWithType> získáte objekt <xref:System.Security.AccessControl.DirectorySecurity>, který obsahuje aktuální položky seznamu ACL adresáře.  
   
-2. Přidávání a odebírání položek seznamu ACL z <xref:System.Security.AccessControl.DirectorySecurity> vrácen objekt z kroku 1.  
+2. Přidá nebo odebere položky seznamu řízení přístupu z objektu <xref:System.Security.AccessControl.DirectorySecurity> vráceného z kroku 1.  
   
-3. Aby se změny projevily, předejte <xref:System.Security.AccessControl.DirectorySecurity> do objektu <xref:System.IO.Directory.SetAccessControl%2A?displayProperty=nameWithType> metoda.  
+3. Chcete-li použít změny, předejte objekt <xref:System.Security.AccessControl.DirectorySecurity> do metody <xref:System.IO.Directory.SetAccessControl%2A?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
- Chcete-li spustit tento příklad, musíte použít platný uživatelský nebo skupinový účet. V příkladu se používá <xref:System.IO.File> objektu. Použijte stejný postup <xref:System.IO.FileInfo>, <xref:System.IO.Directory>, a <xref:System.IO.DirectoryInfo> třídy.
+ Chcete-li spustit tento příklad, je nutné použít platný účet uživatele nebo skupiny. V příkladu se používá objekt <xref:System.IO.File>. Pro třídy <xref:System.IO.FileInfo>, <xref:System.IO.Directory>a <xref:System.IO.DirectoryInfo> použijte stejný postup.
 
  [!code-csharp[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
  [!code-vb[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  

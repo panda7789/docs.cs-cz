@@ -5,13 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.custom: seodec18
-ms.openlocfilehash: 86145e8971d9a59fba17368d9530f40d86bf2858
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 38d7c856e9a536db9ef26349175ad440a49f5fe2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037677"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713952"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -49,7 +48,7 @@ downloadButton.Clicked += async (o, e) =>
 };
 ```
 
-A je to! Kód vyjadřuje záměr (asynchronně stahovat data), aniž by bylo nutné zabřednete v interakci s objekty Task.
+A je to hotovo. Kód vyjadřuje záměr (asynchronně stahovat data), aniž by bylo nutné zabřednete v interakci s objekty Task.
 
 ### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a>Příklad vázaný na procesor: provádění výpočtu hry
 
@@ -81,7 +80,7 @@ A je to!  Tento kód čistě vyjadřuje záměr události kliknutí na tlačítk
 
 Existuje velký počet přesunů, ve kterých jsou jednotlivé asynchronní operace obavy.  Pokud jste zajímái o tom, co se děje, na základě pokrývání `Task` a `Task<T>`, další informace najdete [v](../standard/async-in-depth.md) podrobném článku.
 
-Na C# straně sebe Kompilátor transformuje váš kód do stavového počítače, který uchovává informace o tom, jako je například vrácení spuštění, když je dosaženo`await`a pokračuje v provádění po dokončení úlohy na pozadí.
+Na C# straně sebe Kompilátor transformuje váš kód do stavového počítače, který uchovává informace o tom, jako je například vrácení spuštění, když je dosaženo `await` a pokračuje v provádění po dokončení úlohy na pozadí.
 
 Pro teoreticky-skloněnou je to implementace [modelu asynchronii pro příslib](https://en.wikipedia.org/wiki/Futures_and_promises).
 
@@ -243,9 +242,9 @@ Výrazy lambda v jazyce LINQ používají odložené provádění, což znamená
 
 Blokování aktuálního vlákna jako prostředku pro čekání na dokončení úlohy může způsobit zablokování a blokované kontextová vlákna a může vyžadovat podstatně složitější zpracování chyb. V následující tabulce najdete pokyny, jak se zabývat čekáním na úlohy neblokujícím způsobem:
 
-| Použít... | Místo... | Kdy to chcete udělat |
+| Postup... | Místo... | Kdy to chcete udělat |
 | --- | --- | --- |
-| `await` | `Task.Wait` nebo `Task.Result` | Načítání výsledku úlohy na pozadí |
+| `await` | `Task.Wait` Nebo `Task.Result` | Načítání výsledku úlohy na pozadí |
 | `await Task.WhenAny` | `Task.WaitAny` | Čeká se na dokončení všech úloh. |
 | `await Task.WhenAll` | `Task.WaitAll` | Čeká se na dokončení všech úloh. |
 | `await Task.Delay` | `Thread.Sleep` | Čekání na časový úsek |

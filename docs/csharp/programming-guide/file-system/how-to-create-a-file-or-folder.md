@@ -1,6 +1,5 @@
 ---
 title: Postup vytvoření souboru nebo složky – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders [C#]
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: 97231a2e4818be3b99c796a407ae4b167e27f669
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: e0d0a7fbbc7e6a5c9a0bd00dec1188c5cfdcf896
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635701"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705246"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Postup vytvoření souboru nebo složky (C# Průvodce programováním)
 Můžete programově vytvořit složku v počítači, vytvořit podsložku, vytvořit soubor v podsložce a zapsat data do souboru.  

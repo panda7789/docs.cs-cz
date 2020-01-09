@@ -14,26 +14,24 @@ helpviewer_keywords:
 - stores, creating files and directories
 - storing data using isolated storage, creating files and directories
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 92f4b686a5a2bdc74ff3f0f68de4c6b2048da5a1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83e8c800dc74d9689f1bfdb506a6b454e87b36ca
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61751907"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707867"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Postupy: Vytváření souborů a adresářů v izolovaném úložišti
-Po získání izolovaného úložiště, můžete vytvořit adresářů a souborů k ukládání dat. V rámci úložiště jsou zadané názvy souborů a adresářů s ohledem na kořenovém virtuálním souborovém systému.  
+Po získání izolovaného úložiště můžete vytvářet adresáře a soubory pro ukládání dat. V rámci úložiště jsou zadány názvy souborů a adresářů s ohledem na kořen virtuálního systému souborů.  
   
- Chcete-li vytvořit adresář, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType> metodu instance. Pokud zadáte podadresáře adresáře, který neexistuje, vytvoří se oba adresáře. Pokud určíte adresář, který již existuje, metoda vrátí bez vytvoření adresáře a není vyvolána žádná výjimka. Nicméně, pokud zadáte název adresáře, který obsahuje neplatné znaky, <xref:System.IO.IsolatedStorage.IsolatedStorageException> je vyvolána výjimka.  
+ Chcete-li vytvořit adresář, použijte metodu instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType>. Pokud zadáte podadresář adresáře, který neexistuje, vytvoří se oba adresáře. Pokud zadáte adresář, který již existuje, metoda se vrátí bez vytvoření adresáře a není vyvolána žádná výjimka. Pokud však zadáte název adresáře, který obsahuje neplatné znaky, je vyvolána výjimka <xref:System.IO.IsolatedStorage.IsolatedStorageException>.  
   
- Chcete-li vytvořit soubor, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> metody.  
+ Chcete-li vytvořit soubor, použijte metodu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType>.  
   
- V operačním systému Windows, izolované úložiště souboru a adresáře názvy jsou malá a velká písmena. To znamená pokud vytvoříte soubor s názvem `ThisFile.txt`a pak vytvořte jiný soubor s názvem `THISFILE.TXT`, je vytvořen pouze jeden soubor. Název souboru udržuje jeho původní malých a velkých písmen pro účely zobrazení.  
+ V operačním systému Windows se v názvech souborů a adresářů izolovaného úložiště nerozlišují velká a malá písmena. To znamená, že pokud vytvoříte soubor s názvem `ThisFile.txt`a pak vytvoříte další soubor s názvem `THISFILE.TXT`, vytvoří se pouze jeden soubor. Název souboru uchovává původní velikost písmen pro účely zobrazení.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak vytváření souborů a adresářů v izolovaném úložišti.  
+ Následující příklad kódu ukazuje, jak vytvořit soubory a adresáře v izolovaném úložišti.  
   
  [!code-csharp[Conceptual.IsolatedStorage#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source.cs#1)]
  [!code-vb[Conceptual.IsolatedStorage#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source.vb#1)]  

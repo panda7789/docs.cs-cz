@@ -6,22 +6,20 @@ helpviewer_keywords:
 - user-filtered exceptions
 - exceptions, user-filtered
 ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 228bae8db833abfa3c8c906d57e2177cde644548
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5537404178b746310f720c5b0c075c77287dda4c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945454"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708450"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>Používání obslužných rutin uživatelsky filtrovaných výjimek
 
-Visual Basic v současné době podporuje uživatelsky filtrovaných výjimek. Obslužných rutin uživatelsky filtrovaných výjimek zachytit a zpracovat výjimky založené na požadavcích, které definujete pro výjimku. Použijte tyto obslužné rutiny **Catch** příkaz **při** – klíčové slovo.  
+V současné době Visual Basic podporuje výjimky filtrované uživatelem. Uživatelsky filtrované obslužné rutiny výjimek zachytí a zpracovávají výjimky na základě požadavků, které definujete pro výjimku. Tyto obslužné rutiny používají příkaz **catch** s klíčovým slovem **when** .  
   
- Tato technika je užitečná, když určitý objekt výjimky odpovídá více chyb. V takovém případě objekt obvykle má vlastnost, která obsahuje chybový kód, který je přidružený k chybě. Chcete-li vybrat pouze konkrétní chyba zpracování v, který můžete použít vlastnost chybového kódu ve výrazu **Catch** klauzuli.  
+ Tato technika je užitečná, když konkrétní objekt výjimky odpovídá více chybám. V takovém případě má objekt obvykle vlastnost, která obsahuje konkrétní kód chyby spojený s chybou. Vlastnost kód chyby ve výrazu můžete použít k výběru pouze konkrétní chyby, kterou chcete v této klauzuli **catch** zpracovat.  
   
- Ukazuje následující příklad jazyka Visual Basic **Catch/když** příkazu.  
+ Následující příklad Visual Basic ukazuje příkaz **catch/when** .  
   
 ```vb
 Try  
@@ -31,12 +29,12 @@ Try
 End Try  
 ```  
   
- Výraz v klauzuli filtrované uživatele není omezeno žádným způsobem. Pokud dojde k výjimce během zpracování výrazu uživatelsky filtrovaných, tato výjimka se zahodí a považován za výraz filtru má být vyhodnocen na hodnotu false. V tomto případě common language runtime pokračuje v hledání pro obslužnou rutinu pro aktuální výjimku.  
+ Výraz klauzule filtrované uživatelem není nijak omezen. Pokud při provádění výrazu filtrovaného uživatelem dojde k výjimce, je tato výjimka zahozena a výraz filtru je považován za vyhodnocený jako NEPRAVDA. V takovém případě modul CLR (Common Language Runtime) pokračuje v hledání obslužné rutiny pro aktuální výjimku.  
   
-## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a>Kombinování specifické výjimky a uživatelsky filtrovaných klauzule  
- Příkaz catch může obsahovat určité výjimky a uživatelsky filtrovaných klauzule. Modul runtime nejprve ověřuje určité výjimky. Pokud bude úspěšné konkrétní výjimky, modul runtime spustí filtr uživatelů. Obecný filtr může obsahovat odkaz na proměnné deklarované ve třídě filtru. Všimněte si, že pořadí dvou klauzulí filtru je nevratná.  
+## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a>Kombinování konkrétní výjimky a uživatelem filtrovaných klauzulí  
+ Příkaz catch může obsahovat konkrétní výjimku i klauzule filtrované uživatelem. Modul runtime nejprve testuje specifickou výjimku. Pokud je specifická výjimka úspěšná, modul runtime spustí filtr uživatele. Obecný filtr může obsahovat odkaz na proměnnou deklarovanou ve filtru třídy. Všimněte si, že pořadí dvou klauzulí filtru nelze vrátit zpět.  
   
- Ukazuje následující příklad jazyka Visual Basic specifickou výjimku `ClassLoadException` v **Catch** příkaz jako použití klauzule filtrované uživatelem **při** – klíčové slovo.  
+ Následující příklad Visual Basic ukazuje konkrétní výjimku `ClassLoadException` v příkazu **catch** a také klauzuli filtrovanou uživatelem pomocí klíčového slova **when** .  
   
 ```vb
 Try  

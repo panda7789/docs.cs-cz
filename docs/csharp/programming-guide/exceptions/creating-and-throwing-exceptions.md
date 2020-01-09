@@ -1,6 +1,5 @@
 ---
 title: Vytváření a vyvolávání výjimek C# – Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - catching exceptions [C#]
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: dfc852722531c06f986f54221ad094b13496561f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: f775a0917560a219f24329adcb1542f605d47dc2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417940"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712296"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky se používají k označení toho, že při spuštění programu došlo k chybě. Objekty výjimek, které popisují chybu, jsou vytvořeny a následně *vyvolány* pomocí klíčového slova [throw](../../language-reference/keywords/throw.md) . Modul runtime pak vyhledá nejvíce kompatibilní obslužnou rutinu výjimky.  
@@ -62,7 +61,7 @@ Výjimky se používají k označení toho, že při spuštění programu došlo
   
  Nové vlastnosti by měly být přidány do třídy výjimek pouze v případě, že data, která poskytují, jsou užitečná pro vyřešení výjimky. Pokud jsou do odvozené třídy Exception přidány nové vlastnosti, `ToString()` by měly být přepsány, aby vracely přidané informace.  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
 
 Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkaz throw](~/_csharplang/spec/statements.md#the-throw-statement) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   

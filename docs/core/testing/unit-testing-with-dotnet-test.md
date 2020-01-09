@@ -4,13 +4,12 @@ description: Seznamte se s koncepty C# testování částí v a .NET Core pomoc�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.custom: seodec18
-ms.openlocfilehash: 420ab4c7f23ef3fd6cd26d91c2b4f075f1a205f5
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 226db54047747fbd065c64f5e4812094921c7f62
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835444"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714240"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování C# částí v .NET Core pomocí příkazu dotnet test a xUnit
 

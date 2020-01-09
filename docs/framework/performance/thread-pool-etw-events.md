@@ -5,14 +5,12 @@ helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8f1c92154fe62b1b6ba6981606680daf37d087f4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e1deb17dfdfea4c8b66eb8d836a10bf888727e1a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974868"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715905"
 ---
 # <a name="thread-pool-etw-events"></a>Události Trasování událostí pro Windows fondu vláken
 Tyto události shromažďují informace o vláknech Worker a I/O.  
@@ -29,7 +27,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
 ### <a name="threadpoolworkerthreadstart-and-threadpoolworkerthreadstop"></a>ThreadPoolWorkerThreadStart a ThreadPoolWorkerThreadStop  
  Následující tabulka ukazuje klíčové slovo a úroveň pro tyto události. (Další informace najdete v tématu [klíčová slova a úrovně CLR ETW](clr-etw-keywords-and-levels.md).)  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -44,7 +42,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |ActiveWorkerThreadCount|Win: UInt32|Počet pracovních vláken, která jsou k dispozici pro zpracování práce, včetně těch, které již zpracovávají práci.|  
 |RetiredWorkerThreadCount|Win: UInt32|Počet pracovních vláken, která nejsou k dispozici pro zpracování práce, ale jsou držena v rezervě v případě, že jsou později potřeba další vlákna.|  
@@ -56,7 +54,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
 #### <a name="threadpoolworkerthreadadjustmentsample"></a>ThreadPoolWorkerThreadAdjustmentSample  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -68,15 +66,15 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|zvyšují|Win: Double|Počet dokončení na jednotku času.|  
+|Propustnost|Win: Double|Počet dokončení na jednotku času.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentadjustment"></a>ThreadPoolWorkerThreadAdjustmentAdjustment  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -88,7 +86,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |AverageThroughput|Win: Double|Průměrná propustnost vzorku měření.|  
 |NewWorkerThreadCount|Win: UInt32|Nový počet aktivních pracovních vláken.|  
@@ -98,7 +96,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
 #### <a name="threadpoolworkerthreadadjustmentstats"></a>ThreadPoolWorkerThreadAdjustmentStats  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -110,16 +108,16 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|úkolu|Win: Double|Množství času v sekundách, během kterého byly tyto statistiky shromažďovány.|  
-|zvyšují|Win: Double|Průměrný počet dokončení za sekundu v průběhu tohoto intervalu.|  
+|Doba platnosti|Win: Double|Množství času v sekundách, během kterého byly tyto statistiky shromažďovány.|  
+|Propustnost|Win: Double|Průměrný počet dokončení za sekundu v průběhu tohoto intervalu.|  
 |ThreadWave|Win: Double|Vyhrazeno pro interní použití.|  
 |ThroughputWave|Win: Double|Vyhrazeno pro interní použití.|  
 |ThroughputErrorEstimate|Win: Double|Vyhrazeno pro interní použití.|  
 |AverageThroughputErrorEstimate|Win: Double|Vyhrazeno pro interní použití.|  
 |ThroughputRatio|Win: Double|Relativní zvýšení propustnosti způsobené kolísáním počtu aktivních pracovních vláken v průběhu tohoto intervalu.|  
-|jistotou|Win: Double|Míra platnosti pole ThroughputRatio.|  
+|Spolehlivost|Win: Double|Míra platnosti pole ThroughputRatio.|  
 |NewcontrolSetting|Win: Double|Počet aktivních pracovních vláken, která budou sloužit jako základ pro budoucí variace počtu aktivních vláken.|  
 |NewThreadWaveMagnitude|Win: UInt16|Velikost budoucích variant počtu aktivních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
@@ -130,7 +128,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
 ### <a name="iothreadcreate_v1"></a>IOThreadCreate_V1  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -142,16 +140,16 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Výpočtu|Win: UInt64|Počet vstupně-výstupních vláken, včetně nově vytvořeného vlákna.|  
-|NumRetired|Win: UInt64|Počet vyřazených pracovních vláken.|  
+|Počet|win:UInt64|Počet vstupně-výstupních vláken, včetně nově vytvořeného vlákna.|  
+|NumRetired|win:UInt64|Počet vyřazených pracovních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ### <a name="iothreadretire_v1"></a>IOThreadRetire_V1  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -163,16 +161,16 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Výpočtu|Win: UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
-|NumRetired|Win: UInt64|Počet vyřazených vstupně-výstupních vláken.|  
+|Počet|win:UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
+|NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ### <a name="iothreadunretire_v1"></a>IOThreadUnretire_V1  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -184,16 +182,16 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Výpočtu|Win: UInt64|Počet vstupně-výstupních vláken ve fondu vláken, včetně tohoto typu.|  
-|NumRetired|Win: UInt64|Počet vyřazených vstupně-výstupních vláken.|  
+|Počet|win:UInt64|Počet vstupně-výstupních vláken ve fondu vláken, včetně tohoto typu.|  
+|NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ### <a name="iothreadterminate"></a>IOThreadTerminate  
  Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|Obsah|  
+|Klíčové slovo pro vyvolání události|Úroveň|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informační (4)|  
   
@@ -205,10 +203,10 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|název pole|Datový typ|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Výpočtu|Win: UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
-|NumRetired|Win: UInt64|Počet vyřazených vstupně-výstupních vláken.|  
+|Počet|win:UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
+|NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ## <a name="see-also"></a>Viz také:

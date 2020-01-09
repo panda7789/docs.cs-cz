@@ -17,14 +17,12 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b39373239d6aefaa671afebbb85dc2156866358f
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 66e7d01f37a1119b9d2076a9131aa40f26d15625
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204808"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708188"
 ---
 # <a name="asynchronous-file-io"></a>Asynchronní I/O soubory
 
@@ -36,11 +34,11 @@ V rozhraní .NET Framework 4 a předchozích verzích je pro implementaci asyn
 
 C#a Visual Basic každý má dvě klíčová slova pro asynchronní programování:
 
-- `Async` (Visual Basic) nebo modifikátor `async`C#(), který se používá k označení metody, která obsahuje asynchronní operaci.
+- Modifikátor `Async` (Visual Basic) nebo `async` (jazyk C#), který se používá pro označení metody, jež obsahuje asynchronní operaci.
 
-- `Await` (Visual Basic) nebo operátor `await`C#(), který je použit pro výsledek asynchronní metody.
+- Modifikátor `Await` (Visual Basic) nebo `await` (jazyk C#), který se používá pro výsledek asynchronní metody.
 
-Pro implementaci asynchronních vstupně-výstupních operací je třeba použít klíčová slova spolu s asynchronními metodami, jak je znázorněno v následujících příkladech. Další informace naleznete v tématu [asynchronní programování s modifikátorem Async aC#await ()](../../csharp/programming-guide/concepts/async/index.md) nebo [asynchronní programování s použitím modifikátoru Async a operátoru Await (Visual Basic)](../../visual-basic/programming-guide/concepts/async/index.md).
+Pro implementaci asynchronních vstupně-výstupních operací je třeba použít klíčová slova spolu s asynchronními metodami, jak je znázorněno v následujících příkladech. Další informace najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../csharp/programming-guide/concepts/async/index.md) nebo [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../visual-basic/programming-guide/concepts/async/index.md).
 
 Následující příklad znázorňuje, jakým způsobem lze objekty <xref:System.IO.FileStream> použít pro asynchronní kopírování souborů z jednoho adresáře do druhého. Je třeba poznamenat, že obslužná rutina <xref:System.Web.UI.WebControls.Button.Click> pro ovládací prvek <xref:System.Windows.Controls.Button> je označena modifikátorem `async`, jelikož volá asynchronní metodu.
 

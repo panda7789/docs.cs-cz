@@ -13,12 +13,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-ms.openlocfilehash: e562c0f5ec01380c792b4dc064554171cfb007e7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: deac87ca4690990a4d00f63d0ea9b843c3f9a9c4
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74339958"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344479"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Postupy: Změna hodnoty argumentu procedury (Visual Basic)
 Když zavoláte proceduru, každý argument, který zadáte, odpovídá jednomu z parametrů definovaných v proceduře. V některých případech kód procedury může změnit hodnotu podkladové hodnoty argumentu v volajícím kódu. V jiných případech může procedura změnit pouze svou místní kopii argumentu.  
@@ -69,7 +69,7 @@ Když zavoláte proceduru, každý argument, který zadáte, odpovídá jednomu 
   
  Můžete zabránit postupu v úpravě proměnné samotné v kódu volání. Viz [Postupy: Ochrana argumentu procedury proti změnám hodnot](./how-to-protect-a-procedure-argument-against-value-changes.md).  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
  Pokud předáte proměnnou odkazem, je nutné použít klíčové slovo `ByRef` k určení tohoto mechanismu.  
   
  Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty. Nicméně je dobrým programovacím postupem, jak zahrnout klíčové slovo [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) s každým deklarovaným parametrem. To usnadňuje čtení kódu.  

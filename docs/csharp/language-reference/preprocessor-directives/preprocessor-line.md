@@ -1,24 +1,23 @@
 ---
 title: '#odkaz na C# řádek'
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - '#line'
 helpviewer_keywords:
 - '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
-ms.openlocfilehash: b4ac4fd3277fb53251e87321500d1b8007458037
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 79033fa652af62c76d54737fbf0a0b47cf3aae99
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608535"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712491"
 ---
 # <a name="line-c-reference"></a>#line (referenční dokumentace jazyka C#)
 
-`#line`umožňuje upravit číslování řádků kompilátoru a (volitelně) výstup názvu souboru pro chyby a upozornění.
+`#line` umožňuje upravit číslování řádků kompilátoru a (volitelně) výstup názvu souboru pro chyby a upozornění.
 
-Následující příklad ukazuje, jak ohlásit dvě upozornění spojená s čísly řádků. Direktiva vynutí, aby číslo dalšího řádku bylo 200 (výchozí hodnota je #6), a až do další `#line` direktivy bude název souboru uveden jako "Special". `#line 200` `#line default` Direktiva vrátí číslování řádků do výchozího číslování, což spočítá řádky, které byly přečíslovány předchozí direktivou.
+Následující příklad ukazuje, jak ohlásit dvě upozornění spojená s čísly řádků. Direktiva `#line 200` vynutí, aby číslo dalšího řádku bylo 200 (i když je výchozí hodnota #6) a do další `#line` direktivy, název souboru bude hlášen jako "Special". Direktiva `#line default` vrací číslování řádků do výchozího číslování, což počítá řádky, které byly přečíslovány předchozí direktivou.
 
 ```csharp
 class MainClass
@@ -51,15 +50,15 @@ MainClass.cs(13,16): warning CS0168: The variable 'd' is declared but never used
 
 ## <a name="remarks"></a>Poznámky
 
-`#line` Direktiva může být použita v automatizovaném mezilehlém kroku procesu sestavení. Například pokud byly řádky odebrány z původního souboru zdrojového kódu, ale přesto jste chtěli, aby kompilátor vygeneroval výstup na základě původního číslování řádků v souboru, mohli byste odebrat řádky a potom simulovat původní číslování `#line`řádků.
+Direktiva `#line` může být použita v automatizovaném mezilehlém kroku procesu sestavení. Například pokud byly řádky odebrány z původního souboru zdrojového kódu, ale přesto jste chtěli, aby kompilátor vygeneroval výstup na základě originálního číslování řádků v souboru, mohli byste odebrat řádky a potom simulovat původní číslování řádků pomocí `#line`.
 
-Direktiva skryje po sobě následující řádky z ladicího programu, což znamená, že když postupuje vývojář pomocí kódu, všechny řádky `#line hidden` mezi a a `#line` další direktivou (za předpokladu, `#line hidden` že se nejedná o jinou direktivu). `#line hidden` zvýší se. Tato možnost slouží také k tomu, aby ASP.NET bylo možné odlišit od uživatelsky definovaného a strojově generovaného kódu. I když je ASP.NET primárním spotřebitelem této funkce, je pravděpodobnější, že ji budou využívat více generátorů zdrojů.
+Direktiva `#line hidden` skrývá po sobě jdoucí řádky z ladicího programu, což znamená, že pokud kroky pro vývojáře procházejí kódem, všechny řádky mezi `#line hidden` a další `#line`ou direktivou (za předpokladu, že se nejedná o jinou direktivu `#line hidden`), se zvýší. Tato možnost slouží také k tomu, aby ASP.NET bylo možné odlišit od uživatelsky definovaného a strojově generovaného kódu. I když je ASP.NET primárním spotřebitelem této funkce, je pravděpodobnější, že ji budou využívat více generátorů zdrojů.
 
-`#line hidden` Direktiva nemá vliv na názvy souborů nebo čísla řádků při zasílání zpráv o chybách. To znamená, že pokud ve skrytém bloku dojde k chybě, kompilátor oznámí aktuální název souboru a číslo řádku chyby.
+Direktiva `#line hidden` neovlivňuje názvy souborů nebo čísla řádků při zasílání zpráv o chybách. To znamená, že pokud ve skrytém bloku dojde k chybě, kompilátor oznámí aktuální název souboru a číslo řádku chyby.
 
-`#line filename` Direktiva Určuje název souboru, který se má zobrazit ve výstupu kompilátoru. Ve výchozím nastavení se používá skutečný název souboru se zdrojovým kódem. Název souboru musí být v uvozovkách ("") a musí předcházet číslo řádku.
+Direktiva `#line filename` Určuje název souboru, který se má zobrazit ve výstupu kompilátoru. Ve výchozím nastavení se používá skutečný název souboru se zdrojovým kódem. Název souboru musí být v uvozovkách ("") a musí předcházet číslo řádku.
 
-Soubor zdrojového kódu může mít libovolný počet `#line` direktiv.
+Soubor se zdrojovým kódem může mít libovolný počet direktiv `#line`.
 
 ## <a name="example-1"></a>Příklad 1
 

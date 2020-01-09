@@ -2,12 +2,12 @@
 title: C#jazykové verze – C# Průvodce
 description: Přečtěte si informace C# o tom, jak je jazyková verze určena na základě vašeho projektu, a v různých hodnotách, na které lze ručně upravit.
 ms.date: 07/10/2019
-ms.openlocfilehash: aa4f16d91b38fec7f5d4cd0b2632e62552b64eb7
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 90624816a68de694cacd0017c6d3162f6a89431c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698806"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713877"
 ---
 # <a name="c-language-versioning"></a>C#jazykové verze
 
@@ -19,14 +19,14 @@ Pravidla v tomto článku se vztahují na kompilátor dodaný se sadou Visual St
 
 Kompilátor určuje výchozí hodnotu na základě těchto pravidel:
 
-|Cílová architektura|verze|C#výchozí verze jazyka|
+|Cílová architektura|Verze nástroje|C#výchozí verze jazyka|
 |----------------|-------|---------------------------|
 |.NET Core|3.x|C# 8.0|
 |.NET Core|2.x|C# 7.3|
-|.NET Standard|2,1|C# 8.0|
+|.NET Standard|2.1|C# 8.0|
 |.NET Standard|2.0|C# 7.3|
 |.NET Standard|verze|C# 7.3|
-|.NET Framework|všechny|C# 7.3|
+|.NET Framework|vše|C# 7.3|
 
 ## <a name="default-for-previews"></a>Výchozí pro náhledy
 
@@ -38,7 +38,7 @@ Pokud je nutné explicitně zadat C# verzi, můžete to provést několika způs
 
 - Ručně upravte [soubor projektu](#edit-the-project-file).
 - Nastaví jazykovou verzi [pro více projektů v podadresáři](#configure-multiple-projects).
-- Konfigurace [Možnosti kompilátoru `-langversion`](compiler-options/langversion-compiler-option.md)
+- Nakonfigurujte [možnost kompilátoru`-langversion`](compiler-options/langversion-compiler-option.md).
 
 ### <a name="edit-the-project-file"></a>Upravit soubor projektu
 
@@ -50,11 +50,11 @@ V souboru projektu můžete nastavit jazykovou verzi. Například pokud výslovn
 </PropertyGroup>
 ```
 
-Hodnota `preview` používá nejnovější verzi jazyka Preview C# , kterou podporuje kompilátor.
+Hodnota `preview` používá nejnovější dostupnou jazykovou verzi C# Preview, kterou podporuje kompilátor.
 
 ### <a name="configure-multiple-projects"></a>Konfigurace více projektů
 
-Můžete vytvořit soubor **Directory. Build. props** , který obsahuje prvek `<LangVersion>` ke konfiguraci více adresářů. Obvykle to provedete v adresáři řešení. Přidejte následující do souboru **Directory. Build. props** v adresáři řešení:
+Můžete vytvořit soubor **Directory. Build. props** , který obsahuje prvek `<LangVersion>` pro konfiguraci více adresářů. Obvykle to provedete v adresáři řešení. Přidejte následující do souboru **Directory. Build. props** v adresáři řešení:
 
 ```xml
 <Project>
@@ -72,14 +72,14 @@ V následující tabulce jsou uvedeny všechny C# aktuální jazykové verze. Ko
 
 |Hodnota|Význam|
 |------------|-------------|
-|Tisk|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze Preview.|
+|preview|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze Preview.|
 |nejnovější|Kompilátor přijímá syntaxi z nejnovější vydané verze kompilátoru (včetně dílčí verze).|
 |latestMajor|Kompilátor přijímá syntaxi z poslední vydané hlavní verze kompilátoru.|
 |8.0|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 8,0 nebo nižší.|
-|7,3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší.|
-|7,2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší.|
+|7.3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší.|
+|7.2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší.|
 |7,1|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,1 nebo nižší.|
-|čl|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší.|
+|7|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší.|
 |6|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 6,0 nebo nižší.|
 |5|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 5,0 nebo nižší.|
 |4|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 4,0 nebo nižší.|

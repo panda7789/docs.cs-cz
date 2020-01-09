@@ -1,16 +1,15 @@
 ---
 title: Postup kopírování, odstraňování a přesouvání souborů a složek – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [C#]
 ms.assetid: 62e52cd7-9597-4e4a-acf9-1315f5cdbf05
-ms.openlocfilehash: 234e534ef081d3ab527d307b9d3f1756783ad5ac
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 662f0ab3b9e69aa8bfb0085f42f577b850029e4d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635558"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712270"
 ---
 # <a name="how-to-copy-delete-and-move-files-and-folders-c-programming-guide"></a>Postup kopírování, odstraňování a přesouvání souborů a složek (C# Průvodce programováním)
 Následující příklady ukazují, jak kopírovat, přesunout a odstraňovat soubory a složky synchronním způsobem pomocí tříd <xref:System.IO.File?displayProperty=nameWithType>, <xref:System.IO.Directory?displayProperty=nameWithType>, <xref:System.IO.FileInfo?displayProperty=nameWithType>a <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> z oboru názvů <xref:System.IO?displayProperty=nameWithType>. Tyto příklady neposkytují indikátor průběhu ani žádné jiné uživatelské rozhraní. Pokud chcete zadat standardní dialogové okno průběhu, přečtěte si téma [jak poskytnout dialogové okno průběhu pro operace se soubory](how-to-provide-a-progress-dialog-box-for-file-operations.md).  

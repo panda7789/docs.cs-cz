@@ -3,13 +3,12 @@ title: Začínáme s jazykem C# a nástrojem Visual Studio Code
 description: Naučte se, jak vytvořit a ladit první aplikaci .NET Core C# pomocí Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.custom: seodec18
-ms.openlocfilehash: 4e283f631f463953185a37bf196a1a9b706eee2b
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fdf26d67ca06ffb5ae9f8c12aa29819280770d5c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002318"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715311"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
@@ -29,13 +28,13 @@ Pojďme začít jednoduchý program Hello World v .NET Core:
 
     - Otevřete Visual Studio Code.
     - V levé nabídce klikněte na ikonu Průzkumníka a pak klikněte na **Otevřít složku**.
-    - Vyberte **soubor** > **Otevřít složku** z hlavní nabídky a otevřete složku, ve které chcete mít C# projekt, a klikněte na **Vybrat složku**. V našem příkladu vytvoříme složku pro náš projekt s názvem *HelloWorld*.
+    - Vyberte **soubor** > **Otevřít složku** v hlavní nabídce a otevřete složku, ve které chcete mít C# projekt, a klikněte na **Vybrat složku**. V našem příkladu vytvoříme složku pro náš projekt s názvem *HelloWorld*.
 
       ![Visual Studio Code otevření složky](media/with-visual-studio-code/vs-code-open-folder.png)
 
 2. Inicializovat C# projekt:
 
-    - Otevřete integrovaný terminál z Visual Studio Code výběrem možnosti **zobrazit** > **integrovaný terminál** z hlavní nabídky.
+    - Otevřete integrovaný terminál z Visual Studio Code výběrem možnosti **zobrazit** > **integrovaného terminálu** z hlavní nabídky.
     - V okně terminálu zadejte `dotnet new console`.
     - Tento příkaz vytvoří soubor *program.cs* ve složce s jednoduchým již zapsaným programem "Hello World" společně se souborem C# projektu s názvem *HelloWorld. csproj*.
 
@@ -43,7 +42,7 @@ Pojďme začít jednoduchý program Hello World v .NET Core:
 
 3. Vyřešte prostředky sestavení:
 
-    - Pro **.NET Core 1. x**zadejte `dotnet restore`. Pokud používáte `dotnet restore`, získáte přístup k požadovaným balíčkům .NET Core, které jsou potřeba k sestavení projektu.
+    - Pro **.NET Core 1. x**zadejte `dotnet restore`. Spuštění `dotnet restore` umožňuje přístup k požadovaným balíčkům .NET Core, které jsou potřeba k sestavení projektu.
 
       ![Příkaz dotnet restore](media/with-visual-studio-code/dotnet-restore-command.png)
 
@@ -92,7 +91,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 ## <a name="add-a-class"></a>Přidání třídy
 
 1. Pokud chcete přidat novou třídu, klikněte pravým tlačítkem na VSCode Explorer a vyberte **nový soubor**. Tím se přidá nový soubor do složky, kterou jste otevřeli v VSCode.
-2. Pojmenujte soubor *MyClass.cs*. Je nutné jej uložit s rozšířením `.cs` na konci, aby bylo rozpoznáno jako CSharp soubor.
+2. Pojmenujte soubor *MyClass.cs*. Je nutné jej uložit s příponou `.cs` na konci, aby jej bylo možné rozpoznat jako soubor CSharp.
 3. Přidejte následující kód k vytvoření první třídy. Ujistěte se, že jste zahrnuli správný obor názvů, abyste na něj mohli odkazovat ze souboru *program.cs* :
 
     ``` csharp

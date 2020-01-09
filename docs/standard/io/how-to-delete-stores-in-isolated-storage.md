@@ -15,24 +15,22 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting stores
 - data storage using isolated storage, deleting stores
 ms.assetid: 3947e333-5af6-4601-b2f1-24d4d6129cf3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a935ec663dd178d35aff745e907d2aae48e5b65c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b1e8e651fd8e18c79dd629c154fb6c4d74243e3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622582"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707824"
 ---
 # <a name="how-to-delete-stores-in-isolated-storage"></a>Postupy: Odstraňování úložišť v izolovaném úložišti
-<xref:System.IO.IsolatedStorage.IsolatedStorageFile> Třída poskytuje dvě metody pro odstranění souborů izolovaného úložiště:  
+Třída <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje dvě metody pro odstranění souborů izolovaného úložiště:  
   
-- Metoda instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> nepřijímá žádné argumenty a odstranění úložiště, která je volá. Nejsou žádná oprávnění požadovaná pro tuto operaci. Veškerý kód, který můžete získat přístup k úložišti data můžete odstranit některé nebo všechny dovnitř.  
+- Metoda instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> nepřijímá žádné argumenty a odstraňuje úložiště, které ho volá. Pro tuto operaci nejsou požadována žádná oprávnění. Jakýkoli kód, který má přístup k úložišti, může odstranit všechna data, která v něm jsou.  
   
-- Statická metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29> přijímá <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> hodnotu výčtu a odstraní všechna úložiště pro uživatele, který spouští kód. Tato operace vyžaduje <xref:System.Security.Permissions.IsolatedStorageFilePermission> oprávnění <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> hodnotu.  
+- Statická metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29> přebírá hodnotu <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> výčtu a odstraní všechna úložiště pro uživatele, který spouští kód. Tato operace vyžaduje oprávnění <xref:System.Security.Permissions.IsolatedStorageFilePermission> pro hodnotu <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje použití statické a instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A> metody. Třída získá dvě úložiště; jeden je izolováno podle uživatele a sestavení a druhý je izolováno podle uživatele, domény a sestavení. Úložišti uživatele, domény a sestavení se pak odstraní voláním <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> metoda souboru izolovaného úložiště `isoStore1`. Potom se odstraní všechny zbývající úložiště pro uživatele voláním statické metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29>.  
+ Následující příklad kódu ukazuje použití metod statického a instančního <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A>. Třída získá dvě obchody; jeden je izolovaný pro uživatele a sestavení a druhý je izolovaný pro uživatele, doménu a sestavení. Pak se odstraní úložiště uživatel, doména a sestavení voláním metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> souboru izolovaného úložiště `isoStore1`. Všechna zbývající úložiště pro uživatele jsou pak odstraněna voláním statické metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%28System.IO.IsolatedStorage.IsolatedStorageScope%29>.  
   
  [!code-cpp[Conceptual.IsolatedStorage#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source3.cpp#3)]
  [!code-csharp[Conceptual.IsolatedStorage#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source3.cs#3)]

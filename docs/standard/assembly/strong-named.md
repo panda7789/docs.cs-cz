@@ -5,14 +5,12 @@ helpviewer_keywords:
 - strong-named assemblies, about strong-named assemblies
 - assemblies [.NET Framework], strong-named
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 67beeba6ce33fb1a8c3d02337d98282ccf30341a
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 12b8df3195b2708e4556d4f8065227054db9eb14
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991297"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711568"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
 
@@ -22,7 +20,7 @@ Silné pojmenovávání sestavení vytvoří jedinečnou identitu pro sestavení
 
 Silné pojmenované sestavení je generováno pomocí privátního klíče, který odpovídá veřejnému klíči distribuovanému se sestavením a samotným sestavením. Sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, ze kterých se skládá sestavení. Sestavení se stejným silným názvem by měla být shodná.
 
-Sestavení se silným názvem můžete vytvořit pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [jak: Podepište sestavení silným názvem](sign-strong-name.md) nebo [sn. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md).
+Sestavení se silným názvem můžete vytvořit pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [Postup: podepsání sestavení silným názvem](sign-strong-name.md) nebo [sn. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md).
 
 Když je vytvořeno sestavení se silným názvem, obsahuje jednoduchý textový název sestavení, číslo verze, volitelné informace o jazykové verzi, digitální podpis a veřejný klíč, který odpovídá privátnímu klíči používanému k podepisování.
 
@@ -48,6 +46,6 @@ Pokud jste Open Source vývojář a chcete mít výhody identity sestavení se s
 ## <a name="see-also"></a>Viz také:
 
 - [Globální mezipaměť sestavení](../../framework/app-domains/gac.md)
-- [Postupy: Podepsat sestavení silným názvem](sign-strong-name.md)
+- [Postupy: podepsání sestavení silným názvem](sign-strong-name.md)
 - [SN. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)

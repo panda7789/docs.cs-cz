@@ -5,12 +5,12 @@ author: thraka
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: bcf9ea0bb9a8346284c49060786afefa0f77745e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 0968d9db1dbfbdc8c586328ee8e02315f17950b9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341401"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714394"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -54,21 +54,19 @@ Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurz�
 | ![ikona filmové kamery pro video](./media/video-icon.png "Podívejte se na video") | Podívejte se, [Jak nainstalovat a používat Visual Studio Code a video .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core/) na Channel 9. |
 | ![ikona filmové kamery pro video](./media/video-icon.png "Podívejte se na video") | Podívejte se na videa k [platformě .NET Core 101](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWoazjhXQzBKMrFuArxpW80) na YouTube. |
 
-Seznam podporovaných verzí Windows najdete v článku [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-windows) .
-
-Seznam podporovaných verzí Windows najdete v článku [.NET Core SDK a závislosti modulu runtime](install/dependencies.md?pivots=os-windows) .
+Seznam podporovaných verzí Windows najdete v článku [závislosti a požadavky .NET Core](install/dependencies.md?pivots=os-windows) .
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurzů:
 
-- [Začínáme s .NET Core s využitím příkazového řádku](./tutorials/cli-create-console-app.md)
+- [Začínáme s .NET Core pomocí příkazového řádku](./tutorials/cli-create-console-app.md)
 
 |   |   |
 |---|---|
 | ![ikona filmové kamery pro video](./media/video-icon.png "Podívejte se na video") | Podívejte se na video o [zahájení práce s Visual Studio Code C# používání a .NET Core v Ubuntu](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu). |
 
-Seznam podporovaných distribuce a verzí pro Linux najdete v článku věnovaném [.NET Core SDK a závislostem modulu runtime](install/dependencies.md?pivots=os-linux) .
+Seznam podporovaných distribuce a verzí pro Linux najdete v článku [závislosti a požadavky .NET Core](install/dependencies.md?pivots=os-linux) .
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
@@ -83,6 +81,6 @@ Začněte vyvíjet aplikace .NET Core pomocí následujících podrobných kurz�
 |---|---|
 | ![ikona filmové kamery pro video](media/video-icon.png "Podívejte se na video") | Podívejte se na video o [zahájení práce s Visual Studio Code C# používání a .NET Core v MacOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac). |
 
-Seznam podporovaných verzí OS X/macOS najdete v článku věnovaném [.NET Core SDK a závislostem modulu runtime](install/dependencies.md?pivots=os-macos) .
+Seznam podporovaných verzí OS X/macOS najdete v článku [závislosti a požadavky .NET Core](install/dependencies.md?pivots=os-macos) .
 
 ---

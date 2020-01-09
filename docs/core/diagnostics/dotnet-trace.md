@@ -1,15 +1,13 @@
 ---
 title: dotnet – nástroj trasování – .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-Trace.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 11/21/2019
-ms.openlocfilehash: 07eaec843e27f5d291b6d18fab53c43051794626
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 64c931db5a18659707e832aaca910cfbbd6823c0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428890"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714425"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>dotnet – Nástroj pro analýzu výkonu trasování
 
@@ -110,7 +108,7 @@ Převede `nettrace` trasování na alternativní formáty pro použití s altern
 dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 ```
 
-### <a name="arguments"></a>Argumenty
+### <a name="arguments"></a>Arguments
 
 - **`<input-filename>`**
 
@@ -210,7 +208,7 @@ Předchozí příkaz zakáže běhové události a spravovaný Profiler zásobn�
 
 Modul runtime .NET Core podporuje následující poskytovatele rozhraní .NET. .NET Core používá stejná klíčová slova k povolení trasování `Event Tracing for Windows (ETW)` i `EventPipe`.
 
-| Název zprostředkovatele                            | Informace |
+| Název zprostředkovatele                            | Informace o nástroji |
 |------------------------------------------|-------------|
 | `Microsoft-Windows-DotNETRuntime`        | [Zprostředkovatel modulu runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Běhová klíčová slova CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
 | `Microsoft-Windows-DotNETRuntimeRundown` | [Poskytovatel doběhu](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Doběhuá klíčová slova CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |

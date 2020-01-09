@@ -1,16 +1,15 @@
 ---
 title: Používání struktur – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 491ee0224ffa39262992f7f42d20e5f97560b73f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d85b11204eb1f1de3a95efc67054cdffc4c219e8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429496"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714666"
 ---
 # <a name="using-structs-c-programming-guide"></a>Používání struktur (C# Průvodce programováním)
 
@@ -50,6 +49,6 @@ Tento příklad ukazuje funkci, která je jedinečná pro struktury. Vytvoří o
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../index.md)
+- [Průvodce programováním v jazyce C#](../index.md)
 - [Třídy a struktury](index.md)
 - [Struktury](structs.md)

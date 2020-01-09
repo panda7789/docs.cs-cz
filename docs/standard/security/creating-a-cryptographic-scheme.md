@@ -6,31 +6,29 @@ helpviewer_keywords:
 - encryption [.NET Framework], creating cryptographic schemes
 - cryptography [.NET Framework], creating cryptographic schemes
 ms.assetid: d40c509f-5a5e-46cc-94cb-a951e9ab6843
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3ef3741ef5cec720c2fb285c9aa60d610acc0be9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 00fff5f346633a9682d75cf6a3be7e8e7d5db7e8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909386"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706289"
 ---
 # <a name="creating-a-cryptographic-scheme"></a>Vytváření šifrovacích schémat
-Kryptografické součásti rozhraní .NET Framework mohou být kombinovány pro vytvoření různých schémat k šifrování a dešifrování dat.  
+Kryptografické komponenty .NET Framework mohou být kombinovány pro vytváření různých schémat pro šifrování a dešifrování dat.  
   
- Jednoduché šifrovacích schémat pro šifrování a dešifrování dat například zadat následující kroky:  
+ Jednoduché kryptografické schéma pro šifrování a dešifrování dat může určovat následující kroky:  
   
-1. Každá ze smluvních stran generuje pár veřejného a privátního klíče.  
+1. Každá strana vygeneruje pár veřejného a privátního klíče.  
   
-2. Smluvní strany vyměňují své veřejné klíče.  
+2. Smluvní strany si vyměňují jejich veřejné klíče.  
   
-3. Každá ze smluvních stran vygeneruje tajný klíč pro šifrování TripleDES, například a nově vytvořený klíč zašifruje pomocí veřejného klíče druhé strany.  
+3. Každá ze smluvních stran generuje tajný klíč pro šifrování TripleDES, například a zašifruje nově vytvořený klíč pomocí veřejného klíče druhého.  
   
-4. Každá ze smluvních stran odesílá data do jiné a zkombinuje tajný klíč druhé strany s vlastní, v určitém pořadí, chcete-li vytvořit nový tajný klíč.  
+4. Každá ze smluvních stran odesílá data do druhé a kombinuje tajný klíč druhé s vlastním tajným klíčem, a to v konkrétním pořadí pro vytvoření nového tajného klíče.  
   
-5. Smluvní strany souhlasí potom zahájit konverzaci pomocí symetrického šifrování.  
+5. Strany pak iniciují konverzaci pomocí symetrického šifrování.  
   
- Vytváření šifrovacích schémat není jednoduchý úkol.
+ Vytváření šifrovacího schématu není triviální úloha.
   
 ## <a name="see-also"></a>Viz také:
 

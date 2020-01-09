@@ -1,50 +1,48 @@
 ---
-title: Začínáme s vytvářením vysoce kvalitní knihoven .NET
-description: Začínáme vytvářet knihovny .NET.
-author: jamesnk
-ms.author: mairaw
+title: Začínáme s vytvářením vysoce kvalitních knihoven .NET
+description: Začínáme s vytvářením knihoven .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 980f0edcee07688935f6d08f3ce1ed812159695e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 10576219d8470a171ad0f1f347196999b2a2ee03
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640725"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706488"
 ---
 # <a name="get-started"></a>Začínáme
 
 ## <a name="cross-platform-targetingcross-platform-targetingmd"></a>[Cílení na více platforem](./cross-platform-targeting.md)
 
-Jak můžete vytvářet multiplatformní knihovny .NET Standard a cílení na více platforem. .NET běží na mnoha místech a vhodné knihovny .NET nutné snažit se nejvíce podporovat tolik platformy a vývojáři.
+Jak používat .NET Standard a cílení na více platforem k vytváření knihoven pro různé platformy. .NET běží na mnoha místech a dobré knihovny .NET by se měly snažit o podporu co nejvíce platforem a vývojářů.
 
 ## <a name="strong-namingstrong-namingmd"></a>[Vytváření silných názvů](./strong-naming.md)
 
-Další informace o silné pojmenovávání a jeho výhody a nevýhody. Silné názvy knihovny .NET umožňuje vývojářům nejvíce jeho použití a je součástí osvědčeného.
+Přečtěte si o silných názvech a jejich výhodách a nevýhodách. Silné pojmenování knihovny .NET umožňuje většině vývojářů používat ji a je doporučeným osvědčeným postupem.
 
 ## <a name="nuget-and-open-source-librariesnugetmd"></a>[NuGet a open source knihovny](./nuget.md)
 
-Nejlepší způsob, jak vytvořit balíčky NuGet pro open source knihovny .NET, včetně doporučených metadata pro všechny balíčky publikována veřejně na NuGet.org.
+Nejlepším způsobem, jak vytvářet balíčky NuGet pro open source knihovny .NET, včetně doporučených metadat pro všechny veřejně publikované balíčky na NuGet.org.
 
 ### <a name="dependenciesdependenciesmd"></a>[Závislosti](./dependencies.md)
 
-NuGet umožňuje snadno se používá existující balíčky při sestavování knihovny .NET. Další informace o běžných zdrojů závislostí NuGet třecí plochy a jak se jim vyhnout.
+Nástroj NuGet usnadňuje použití existujících balíčků při vytváření knihovny .NET. Seznamte se s běžnými zdroji tření závislosti NuGet a s tím, jak se jim vyhnout.
 
 ### <a name="source-linksourcelinkmd"></a>[Odkaz na zdroj](./sourcelink.md)
 
-Odkaz na zdroj je skvělý nástroj, který umožňuje uživatelům vaší knihovny .NET Krokovat s vnořením jeho zdrojový kód během ladění. Tento článek představuje přehled odkazu na zdroj a proč byste měli používat.
+Odkaz na zdroj je skvělý nástroj, který umožňuje uživatelům vaší knihovny .NET krokovat do zdrojového kódu při ladění. Tento článek představuje přehled toho, co je to zdrojový odkaz a proč byste ho měli používat.
 
 ### <a name="publishingpublish-nuget-packagemd"></a>[Publikování](./publish-nuget-package.md)
 
-I když NuGet.org nejčastěji známé a využité úložiště, publikovat balíčky NuGet mnoho místech. Další informace o různých balíčku NuGet úložiště k dispozici a osvědčené postupy zabezpečení pro publikování knihovny .NET.
+I když je NuGet.org nejčastěji známé a používané úložiště, je k dispozici mnoho míst pro publikování balíčků NuGet. Přečtěte si o různých dostupných úložištích balíčků NuGet a osvědčených postupech zabezpečení pro publikování knihovny .NET.
 
 ## <a name="versioningversioningmd"></a>[Správa verzí](./versioning.md)
 
-Dobré knihovny .NET postupně měnit, přidávat funkce, oprava chyb a vylepšení výkonu v pozdějších verzích. Další informace o různých čísel verzí a jak komunikovat zásadní změny pro vývojáře.
+Kvalitní knihovny .NET se v průběhu času vyvíjí, přidávají se funkce, opravují chyby a zlepšují výkon v pozdějších verzích. Přečtěte si o různých číslech verzí a o tom, jak můžou vývojáři informovat o nejnovějších změnách.
 
 ### <a name="breaking-changesbreaking-changesmd"></a>[Změny způsobující chyby](./breaking-changes.md)
 
-Je důležité pro knihovnu .NET najít rovnováhu mezi stabilitu pro stávající uživatele a inovace v budoucnosti. Další informace o různých druzích zásadní změny a strategie pro přidávání nových funkcí při zachování zpětné kompatibility.
+Je důležité, aby knihovna .NET vyhledala rovnováhu mezi stabilitou stávajících uživatelů a inovací pro budoucnost. Přečtěte si o různých druzích zásadních změn a strategií pro přidávání nových funkcí a zachování zpětné kompatibility.
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[další](cross-platform-targeting.md)
+>[Další](cross-platform-targeting.md)

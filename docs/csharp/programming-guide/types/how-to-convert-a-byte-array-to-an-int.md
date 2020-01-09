@@ -1,17 +1,16 @@
 ---
 title: Postup převodu pole bajtů na programový průvodce pro celé C# číslo
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - conversions [C#], byte array to int
 - byte arrays [C#], converting to int
 ms.assetid: d6ac20e2-448e-4aea-99b9-faf04c6f1e79
-ms.openlocfilehash: a553d8778997a2323c54c72be8e68aff590a7c7d
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 9f477649dba1b42d7a10d521c010977707daf3ec
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635051"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75698752"
 ---
 # <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>Převod pole bajtů na typ int (C# Průvodce programováním)
 

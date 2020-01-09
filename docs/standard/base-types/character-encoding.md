@@ -11,13 +11,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.custom: seodec18
-ms.openlocfilehash: 3ac5602c32ce0dcfe21e913868faa7ab356e4194
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3cd461d8c56c3f31bf3ffe04acf239ecd32fe328
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120593"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711438"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 
@@ -209,7 +208,7 @@ Namísto poskytnutí nejlepšího náhradního nebo náhradního řetězce můž
 
 Objekty <xref:System.Text.EncoderFallbackException> a <xref:System.Text.DecoderFallbackException> poskytují následující informace o stavu, který způsobil výjimku:
 
-- Objekt <xref:System.Text.EncoderFallbackException> obsahuje metodu <xref:System.Text.EncoderFallbackException.IsUnknownSurrogate%2A>, která označuje, zda znak nebo znaky, které nelze zakódovat, reprezentují neznámý náhradní pár (v takovém případě metoda vrátí `true`) nebo neznámý jediný znak (v takovém případě Metoda vrací `false`). Znaky v náhradní dvojici jsou k dispozici z vlastností <xref:System.Text.EncoderFallbackException.CharUnknownHigh%2A?displayProperty=nameWithType> a <xref:System.Text.EncoderFallbackException.CharUnknownLow%2A?displayProperty=nameWithType>. Z vlastnosti <xref:System.Text.EncoderFallbackException.CharUnknown%2A?displayProperty=nameWithType> je k dispozici neznámý jediný znak. Vlastnost <xref:System.Text.EncoderFallbackException.Index%2A?displayProperty=nameWithType> označuje pozici v řetězci, na které byl nalezen první znak, který nelze zakódovat.
+- Objekt <xref:System.Text.EncoderFallbackException> obsahuje metodu <xref:System.Text.EncoderFallbackException.IsUnknownSurrogate%2A>, která označuje, zda znak nebo znaky, které nelze zakódovat, reprezentují neznámý náhradní pár (v takovém případě metoda vrátí `true`) nebo neznámý jediný znak (v takovém případě metoda vrátí `false`). Znaky v náhradní dvojici jsou k dispozici z vlastností <xref:System.Text.EncoderFallbackException.CharUnknownHigh%2A?displayProperty=nameWithType> a <xref:System.Text.EncoderFallbackException.CharUnknownLow%2A?displayProperty=nameWithType>. Z vlastnosti <xref:System.Text.EncoderFallbackException.CharUnknown%2A?displayProperty=nameWithType> je k dispozici neznámý jediný znak. Vlastnost <xref:System.Text.EncoderFallbackException.Index%2A?displayProperty=nameWithType> označuje pozici v řetězci, na které byl nalezen první znak, který nelze zakódovat.
 
 - Objekt <xref:System.Text.DecoderFallbackException> obsahuje vlastnost <xref:System.Text.DecoderFallbackException.BytesUnknown%2A>, která vrací pole bajtů, které nelze dekódovat. Vlastnost <xref:System.Text.DecoderFallbackException.Index%2A?displayProperty=nameWithType> označuje počáteční pozici neznámých bajtů.
 

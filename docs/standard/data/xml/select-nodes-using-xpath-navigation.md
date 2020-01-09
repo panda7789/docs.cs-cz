@@ -6,22 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b2fc0846b3f3801d64ee3bf1f1dc4b347034ad38
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8f4136683f13a52b84ab9e8bfd69f30c8914e029
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939569"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710177"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Výběr uzlů pomocí navigace XPath
 XML model DOM (Document Object Model) (DOM) obsahuje metody, které umožňují použít navigaci jazyka XML Path (XPath) k dotazování na informace v modelu DOM. Pomocí XPath můžete najít jeden konkrétní uzel nebo najít všechny uzly, které splňují určitá kritéria.  
   
 ## <a name="xpath-select-methods"></a>Metody výběru XPath  
- Třídy modelu DOM poskytují dvě metody pro výběr XPath: <xref:System.Xml.XmlNode.SelectSingleNode%2A> metodu <xref:System.Xml.XmlNode.SelectNodes%2A> a metodu. <xref:System.Xml.XmlNode.SelectSingleNode%2A> Metoda vrátí první uzel, který odpovídá kritériím výběru. Metoda vrací objekt <xref:System.Xml.XmlNodeList> , který obsahuje odpovídající uzly. <xref:System.Xml.XmlNode.SelectNodes%2A>  
+ Třídy modelu DOM poskytují dvě metody pro výběr XPath: metodu <xref:System.Xml.XmlNode.SelectSingleNode%2A> a metodu <xref:System.Xml.XmlNode.SelectNodes%2A>. Metoda <xref:System.Xml.XmlNode.SelectSingleNode%2A> vrátí první uzel, který odpovídá kritériím výběru. Metoda <xref:System.Xml.XmlNode.SelectNodes%2A> vrátí <xref:System.Xml.XmlNodeList>, který obsahuje odpovídající uzly.  
   
- V následujícím příkladu je použita <xref:System.Xml.XmlNode.SelectSingleNode%2A> metoda k výběru prvního `book` uzlu, ve kterém poslední jméno autora splňuje zadaná kritéria. Soubor Bookstore. XML (který je k dispozici na konci tohoto tématu) se používá jako vstupní soubor.  
+ Následující příklad používá metodu <xref:System.Xml.XmlNode.SelectSingleNode%2A> k výběru prvního uzlu `book`, ve kterém poslední jméno autora splňuje zadaná kritéria. Soubor Bookstore. XML (který je k dispozici na konci tohoto tématu) se používá jako vstupní soubor.  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -56,7 +54,7 @@ XmlNode node = root.SelectSingleNode(
 Console.WriteLine(node.InnerXml);  
 ```  
   
- Následující příklad používá <xref:System.Xml.XmlNode.SelectNodes%2A> metodu pro výběr všech uzlů knihy, ve kterých je cena větší než zadaná hodnota. Cena za každou knihu ve vybraném seznamu se pak programově sníží o deset procent. Nakonec se aktualizovaný soubor zapíše do konzoly. Soubor Bookstore. XML (který je k dispozici na konci tohoto tématu) se používá jako vstupní soubor.  
+ Následující příklad používá metodu <xref:System.Xml.XmlNode.SelectNodes%2A> k výběru všech uzlů knihy, ve kterých je cena větší než zadaná hodnota. Cena za každou knihu ve vybraném seznamu se pak programově sníží o deset procent. Nakonec se aktualizovaný soubor zapíše do konzoly. Soubor Bookstore. XML (který je k dispozici na konci tohoto tématu) se používá jako vstupní soubor.  
   
 ```vb  
 ' Load the document and set the root element.  
@@ -118,16 +116,16 @@ doc.DocumentElement.FirstChild.SelectNodes(. . . )
 this doc.DocumentElement.FirstChild.SelectNodes(. . .);  
 ```  
   
- Všechny <xref:System.Xml.XmlNodeList> objekty jsou synchronizovány s podkladovým dokumentem. Proto pokud procházíte seznamem uzlů a upravíte hodnotu uzlu, je tento uzel aktualizován také v dokumentu, ze kterého pochází. Všimněte si, že v předchozím příkladu se změnila i změna uzlu, <xref:System.Xml.XmlNodeList> který je upravený ve vybraném podkladovém dokumentu.  
+ Všechny objekty <xref:System.Xml.XmlNodeList> jsou synchronizovány s podkladovým dokumentem. Proto pokud procházíte seznamem uzlů a upravíte hodnotu uzlu, je tento uzel aktualizován také v dokumentu, ze kterého pochází. V předchozím příkladu si všimněte, že při změně uzlu ve vybraném <xref:System.Xml.XmlNodeList> je upraven také původní dokument.  
   
 > [!NOTE]
 > Při změně podkladového dokumentu je vhodné znovu spustit příkaz SELECT. Pokud je uzel změněn, což by mohlo způsobit, že uzel bude přidán do seznamu uzlů, pokud předtím nebyl, nebo by nyní mohl být odebrán ze seznamu uzlů, není zaručeno, že seznam uzlů je nyní přesný.  
   
 ## <a name="namespaces-in-xpath-expressions"></a>Obory názvů ve výrazech XPath  
- Výrazy XPath můžou zahrnovat obory názvů. Překlad oboru názvů je podporován pomocí <xref:System.Xml.XmlNamespaceManager>. Pokud výraz XPath obsahuje předponu, předpona a identifikátor URI oboru názvů musí být <xref:System.Xml.XmlNamespaceManager>přidán do, <xref:System.Xml.XmlNamespaceManager> a je předána <xref:System.Xml.XmlNode.SelectNodes%28System.String%2CSystem.Xml.XmlNamespaceManager%29> metodě nebo <xref:System.Xml.XmlNode.SelectSingleNode%28System.String%2CSystem.Xml.XmlNamespaceManager%29> . Všimněte si, že výše uvedené příklady kódu <xref:System.Xml.XmlNamespaceManager> používají k překladu oboru názvů dokumentu Bookstore. XML.  
+ Výrazy XPath můžou zahrnovat obory názvů. Překlad oboru názvů je podporován pomocí <xref:System.Xml.XmlNamespaceManager>. Pokud výraz XPath obsahuje předponu, předpona a identifikátor URI oboru názvů musí být přidán do <xref:System.Xml.XmlNamespaceManager>a <xref:System.Xml.XmlNamespaceManager> je předána metodě <xref:System.Xml.XmlNode.SelectNodes%28System.String%2CSystem.Xml.XmlNamespaceManager%29> nebo <xref:System.Xml.XmlNode.SelectSingleNode%28System.String%2CSystem.Xml.XmlNamespaceManager%29>. Všimněte si, že výše uvedené příklady kódu používají <xref:System.Xml.XmlNamespaceManager> k překladu oboru názvů dokumentu Bookstore. XML.  
   
 > [!NOTE]
-> Pokud výraz XPath neobsahuje předponu, předpokládá se, že obor názvů URI (Uniform Resource Identifier) je prázdný obor názvů. Pokud váš kód XML obsahuje výchozí obor názvů, je stále nutné přidat předponu a identifikátor URI oboru <xref:System.Xml.XmlNamespaceManager>názvů do; v opačném případě nebudou vybrány žádné uzly.  
+> Pokud výraz XPath neobsahuje předponu, předpokládá se, že obor názvů URI (Uniform Resource Identifier) je prázdný obor názvů. Pokud váš kód XML obsahuje výchozí obor názvů, je stále nutné přidat předponu a identifikátor URI oboru názvů do <xref:System.Xml.XmlNamespaceManager>; v opačném případě nebudou vybrány žádné uzly.  
   
 #### <a name="input-file"></a>Vstupní soubor  
  Následuje soubor Bookstore. XML, který se používá jako vstupní soubor v příkladech v tomto tématu:  

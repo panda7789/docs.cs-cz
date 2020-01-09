@@ -2,13 +2,12 @@
 title: Prohlídka C# – C# Průvodce
 description: Začínáte C#? Seznamte se se základy jazyka.
 ms.date: 04/05/2019
-ms.custom: seoapril2019
-ms.openlocfilehash: 7398703dc75e7ad7ab8da497eb39e8eeba6d1eba
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: e2d7af3a35dc9d4fdeddf9eb742d155ab33094b4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346862"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711659"
 ---
 # <a name="a-tour-of-the-c-language"></a>Prohlídka C# jazyka
 

@@ -11,40 +11,39 @@ helpviewer_keywords:
 - type design guidelines, structures
 - structures [.NET Framework], design guidelines
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
-author: KrzysztofCwalina
-ms.openlocfilehash: e787c5b34848a561b43c3457341673f11cc2bd00
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8841a30f1dd0420b2ea45740b1e33bde5199c3f9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775543"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709046"
 ---
 # <a name="struct-design"></a>Návrh struktury
-Typ hodnoty pro obecné účely se nejčastěji označuje jako struktury, jeho klíčové slovo C#. Tato část obsahuje pokyny pro návrh obecné struktury.  
+Typ hodnoty pro obecné účely se nejčastěji označuje jako struktura a její C# klíčové slovo. V této části najdete pokyny pro obecný návrh struktury.  
   
- **X neměňte** poskytovat konstruktor bez parametrů pro strukturu.  
+ **X** neposkytuje konstruktor bez parametrů pro strukturu.  
   
- Za toto pravidlo umožňuje pole struktur, který se má vytvořit bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si, že C# neumožňuje struktury mít konstruktor bez parametrů.  
+ Podle těchto pokynů umožňuje vytvořit pole struktur bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si C# , že neumožňuje strukturám mít konstruktory bez parametrů.  
   
  **X DO NOT** definování typů měnitelný hodnotu.  
   
- Proměnlivé hodnoty typy mají několik problémů. Například typ hodnoty návratu metoda getter vlastnosti volající obdrží kopii. Vzhledem k tomu, že kopie je vytvořena implicitně, vývojáři se nemusíte být vědomi, mutace kopii a na původní hodnotu. Některé jazyky (dynamické jazyky, zejména) také mít problémy pomocí proměnlivé hodnoty typů, protože i lokální proměnné, při dereferenci, způsobit, že kopie má být provedeno.  
+ Proměnlivé typy hodnot mají několik problémů. Například pokud vlastnost getter vrátí typ hodnoty, volající obdrží kopii. Vzhledem k tomu, že kopie je vytvořena implicitně, vývojáři nemusí vědět, že se jedná o kopii, a nikoli původní hodnotu. Také některé jazyky (například dynamické jazyky) mají problémy s použitím proměnlivých hodnotových typů, protože i místní proměnné, pokud jsou převedené, způsobují vytvoření kopie.  
   
  **✓ DO** jistotu, že stav, kde všechny instance dat je nastavený na nulu, false, nebo hodnotu null (podle potřeby) je platný.  
   
- To zabraňuje nechtěnému vytváření instancí neplatný při vytváření pole struktury.  
+ To brání nechtěnému vytvoření neplatných instancí při vytvoření pole struktury.  
   
  **✓ DO** implementovat <xref:System.IEquatable%601> u typů hodnot.  
   
- <xref:System.Object.Equals%2A?displayProperty=nameWithType> Metoda u typů hodnot způsobí, že zabalení a jeho výchozí implementace není velmi efektivní, protože používá reflexi. <xref:System.IEquatable%601.Equals%2A> může mít mnohem lepší výkon a může být implementováno tak, aby nezpůsobí zabalení.  
+ Metoda <xref:System.Object.Equals%2A?displayProperty=nameWithType> na hodnotových typech způsobuje zabalení a její výchozí implementace není velmi efektivní, protože používá reflexi. <xref:System.IEquatable%601.Equals%2A> může mít mnohem lepší výkon a může být implementováno tak, že nebude způsobovat zabalení.  
   
- **X DO NOT** explicitně rozšířit <xref:System.ValueType>. Ve skutečnosti většina jazyků to neumožňuje.  
+ **X DO NOT** explicitně rozšířit <xref:System.ValueType>. Většinou tyto jazyky tuto skutečnost znemožňují.  
   
- Obecně platí struktury může být velmi užitečné, ale by měla sloužit pouze pro malé, jednu, neměnné hodnoty, které se nesmí použít boxing. často.  
+ Obecně mohou být struktury velmi užitečné, ale měly by být použity pouze pro malé, jednoduché, neměnné hodnoty, které nebudou často zabaleny.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

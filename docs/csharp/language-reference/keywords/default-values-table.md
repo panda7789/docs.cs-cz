@@ -1,17 +1,16 @@
 ---
 title: Výchozí hodnoty tabulka – C# odkaz
-ms.custom: seodec18
 description: Zjistěte, jaké jsou výchozí hodnoty C# typů.
 ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 3604316b75bb3a6a4de39991899a837f64e547d2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: b15da080c34e2c24ff2a0ecda639f7fe68fb7573
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345490"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713643"
 ---
 # <a name="default-values-table-c-reference"></a>Tabulka výchozích hodnot (C# Referenční dokumentace)
 

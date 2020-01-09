@@ -1,15 +1,13 @@
 ---
 title: Pokyny k open source knihovně .NET
 description: Doporučení pro osvědčené postupy pro vývojáře k vytváření vysoce kvalitních knihoven .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 10/17/2018
-ms.openlocfilehash: eff6c822757af6fb85622e88714accd40c32bcf5
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: c1e1c302eede86fd5555a8e84630e216e96f1ce7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928962"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706449"
 ---
 # <a name="open-source-library-guidance"></a>Pokyny pro open-source knihovnu
 
@@ -30,7 +28,7 @@ Aspekty vysoce kvalitních Open Source knihoven .NET:
 
 ## <a name="types-of-recommendations"></a>Typy doporučení
 
-Každý článek nabízí čtyři typy doporučení: **Udělejte**, **zvažte**, **Vyhněte**sea nepoužívejte. Typ doporučení indikuje, jak by měl následovat.
+Každý článek nabízí čtyři typy doporučení: **udělejte**, **zvažte**, **Vyhněte**se a **nepoužívejte.** Typ doporučení indikuje, jak by měl následovat.
 
 Měli byste téměř **vždy postupovat podle doporučení do** . Příklad:
 
@@ -42,11 +40,11 @@ Na druhé **straně doporučujeme,** aby se obecně následovala doporučení, a
 
 **Vyhněte** se doporučením označení věcí, které obecně nejsou dobrý nápad, ale porušení pravidla je někdy vhodné:
 
-**❌ Se vyhnout** Balíček NuGet odkazuje na přesnou verzi.
+**❌ se vyhnout** Balíček NuGet odkazuje na přesnou verzi.
 
 A nakonec nenaznačují doporučení, co byste měli skoro **nikdy dělat:**
 
-**❌** Nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
+**❌** nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
 
 >[!div class="step-by-step"]
 >[Next](get-started.md)

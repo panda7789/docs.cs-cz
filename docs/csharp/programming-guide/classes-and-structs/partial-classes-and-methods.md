@@ -1,18 +1,17 @@
 ---
 title: Částečné třídy a metody – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 2df3492274c2abceebf1d37b87be9cc9bb455b5f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ea8d95c41df236897761ace1062ec325a069d52b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419169"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714749"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 
@@ -61,7 +60,7 @@ Následující jsou sloučeny ze všech definicí částečného typu:
 
 - class – atributy
 
-- členy
+- členové
 
 Zvažte například následující deklarace:
 
@@ -166,7 +165,7 @@ partial void onNameChanged()
 
 - Můžete vytvořit [delegáta](../../language-reference/builtin-types/reference-types.md) částečné metody, která je definována a implementována, ale nikoli částečnou metodu, která byla definována pouze.
 
-## <a name="c-language-specification"></a>Specifikace jazyka C#
+## <a name="c-language-specification"></a>C# – jazyková specifikace
 
 Další informace naleznete v tématu [částečné typy](~/_csharplang/spec/classes.md#partial-types) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 

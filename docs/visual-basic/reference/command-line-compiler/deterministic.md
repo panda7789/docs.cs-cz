@@ -5,12 +5,12 @@ helpviewer_keywords:
 - deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
 - -deterministic compiler option [Visual Basic]
-ms.openlocfilehash: 6a83b636dd83534788f3a38971e0fef2919314f5
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 9b611a72656bdd570eccec8a0585bf5ce6fa55f6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005629"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716793"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -24,7 +24,7 @@ Způsobí, že kompilátor sestaví sestavení, jejichž výstup Byte-byte je st
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení je výstup kompilátoru z dané sady vstupů jedinečný, protože kompilátor přidá časové razítko a identifikátor GUID, který je vygenerován z náhodných čísel. Použijete-li možnost `-deterministic` k vytvoření *deterministického sestavení*, jeden z nich je identický s binárním obsahem v rámci kompilací, pokud vstup zůstává stejný.
+Ve výchozím nastavení je výstup kompilátoru z dané sady vstupů jedinečný, protože kompilátor přidá časové razítko a identifikátor GUID, který je vygenerován z náhodných čísel. Použijete možnost `-deterministic` k vytvoření *deterministického sestavení*, jehož binární obsah je identický v rámci kompilací, pokud vstup zůstává stejný.
 
 Kompilátor považuje za účel determinismem následující vstupy:
 
@@ -44,7 +44,7 @@ Kompilátor považuje za účel determinismem následující vstupy:
   - Další soubory, které mohou používat analyzátory
 - Aktuální jazyková verze (pro jazyk, ve kterém se vytvářejí zprávy o diagnostice a výjimkách).
 - Výchozí kódování (nebo aktuální znaková stránka), pokud kódování není zadáno.
-- Existence, neexistence a obsah souborů v cestách pro hledání kompilátoru (určené například pomocí `/lib` nebo `/recurse`).
+- Existence, neexistence a obsah souborů v cestách pro hledání kompilátoru (určené například pomocí `-lib` nebo `-recurse`).
 - Platforma CLR, na které je kompilátor spuštěn.
 - Hodnota `%LIBPATH%`, která může ovlivnit načítání závislostí analyzátoru.
 

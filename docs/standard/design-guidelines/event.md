@@ -10,18 +10,17 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-author: KrzysztofCwalina
-ms.openlocfilehash: 530c68ea5342263acd07f8dc8a8c8ce889652503
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 78d765a7af77b1e6a6ecd483677cea2d4c6b0d5b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026442"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709423"
 ---
 # <a name="event-design"></a>Návrh události
-Události jsou nejčastěji používané formuláři zpětná volání (konstrukce, které umožňují rozhraní pro volání do uživatelského kódu). Jiné mechanismy zpětné volání zahrnout členy, přičemž delegáty, virtuální členy a založeny na rozhraní modulů plug-in. Data z použitelnost studie označuje, že většina vývojářů je pohodlnější použití událostí, než které využívají jiné mechanismy zpětné volání. Události jsou krásně součástí sady Visual Studio a mnoha jazyků.  
+Události jsou nejčastěji používané formy zpětných volání (konstrukce, které umožňují rozhraní volat do uživatelského kódu). Mezi další mechanismy zpětného volání patří členové, kteří přijímají delegáty, virtuální členy a moduly plug-in založené na rozhraní. data z studií použitelnosti označují, že většina vývojářů je pohodlnější díky událostem, než používá jiné mechanismy zpětného volání. . Události jsou v ucelené integraci se sadou Visual Studio a mnoha jazyky.  
   
- Je důležité si uvědomit, že existují dvě skupiny událostí: události vyvolané před stavu změny systému, volá se před událostmi a události vyvolané po změně stavu, volá se po události. Příkladem předběžné události může být `Form.Closing`, která je vyvolána před zavřením formuláře. Příkladem po události může být `Form.Closed`, která je vyvolána po zavření formuláře.  
+ Je důležité si uvědomit, že existují dvě skupiny událostí: události vyvolané před stavem změny systému, nazývané před událostmi a události vyvolané po změně stavu, označované po událostech. Příkladem předběžné události by byla `Form.Closing`, která je aktivována před zavřením formuláře. Příkladem následné události by byl `Form.Closed`, který je vyvolán po zavření formuláře.  
   
  **✓ DO** použít termín "vyvolat" pro události místo "fire" nebo "spustit".  
   
@@ -29,17 +28,17 @@ Události jsou nejčastěji používané formuláři zpětná volání (konstruk
   
  **✓ CONSIDER** pomocí podtřídou třídy <xref:System.EventArgs> jako argument událost, pokud si nejste zcela jisti událost nikdy nebudete potřebovat k provedení žádná data pro zpracování metody událostí v takovém případě můžete použít `EventArgs` typ přímo.  
   
- Pokud neodešlete rozhraní API pomocí `EventArgs` přímo, nikdy budete moct přidat žádná data k realizaci s událostí bez porušení kompatibilitu. Pokud používáte podtřídu, i pokud původně úplně prázdná, bude možné přidávat vlastnosti pro podtřídu v případě potřeby.  
+ Pokud rozhraní API dodáváte přímo pomocí `EventArgs`, nebudete nikdy moci přidat žádná data, která by se měla přenést s událostí bez narušení kompatibility. Použijete-li podtřídu i v případě, že je zpočátku zcela prázdná, budete moci v případě potřeby přidat vlastnosti do podtřídy.  
   
- **✓ DO** použít chráněné virtuální metodu pro vyvolání každé události. To platí pouze pro nestatické události v nezapečetěné třídy, struktury, zapečetěné třídy ani statické události.  
+ **✓ DO** použít chráněné virtuální metodu pro vyvolání každé události. To platí pouze pro nestatické události pro nezapečetěné třídy, nikoli pro struktury, zapečetěné třídy nebo statické události.  
   
- Cílem této metody je poskytnout způsob, jakým odvozené třídy za účelem zpracování události pomocí přepsání. Přepsání je flexibilnější, rychlejší a přirozenější způsob, jak zpracovat událostí třídy base v odvozených třídách. Název metody podle konvence by měla začínat řetězcem "On" a následovat název události.  
+ Účelem metody je poskytnout pro odvozenou třídu způsob, jakým má být událost zpracována pomocí přepsání. Přepisování je flexibilnější, rychlejší a přirozený způsob zpracování událostí základní třídy v odvozených třídách. Podle konvence má název metody začínat na "on" a musí následovat za názvem události.  
   
- Odvozené třídy můžete volat základní implementaci metody v jeho přepsání. Připravit pro tento bez zahrnutí zpracování v metodě, která je požadována pro základní třídu fungovat správně.  
+ Odvozená třída může zvolit, že se má volat základní implementace metody v jejím přepsání. Připravte se na to bez jakéhokoli zpracování v metodě, která je nutná pro správné fungování základní třídy.  
   
  **✓ DO** trvat jeden parametr chráněná metoda, která vyvolává událost.  
   
- Parametr by měl být pojmenován `e` a by měl být typu Třída argumentů události.  
+ Parametr by měl mít název `e` a měl by být zadán jako třída argumentu události.  
   
  **X DO NOT** předejte hodnotu null pro odesílatele při vyvolání nestatické události.  
   
@@ -47,18 +46,18 @@ Události jsou nejčastěji používané formuláři zpětná volání (konstruk
   
  **X DO NOT** předejte jako parametr data událostí hodnotu null při vyvolání události.  
   
- Je třeba předat `EventArgs.Empty` Pokud nechcete předávat žádná data pro metodu zpracování událostí. Vývojáři očekávat, že tento parametr nechcete mít hodnotu null.  
+ Pokud nechcete předat žádná data do metody zpracování událostí, je vhodné předat `EventArgs.Empty`. Vývojáři očekávají, že tento parametr nemá hodnotu null.  
   
- **✓ CONSIDER** vyvolávání událostí, které můžete zrušit koncového uživatele. To platí pouze pro před událostmi.  
+ **✓ CONSIDER** vyvolávání událostí, které můžete zrušit koncového uživatele. To platí jenom pro předběžné události.  
   
- Použití <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> nebo jeho podtřídy jako argument události koncovému uživateli pro zrušení události.  
+ Pokud chcete koncovému uživateli dovolit události zrušit, použijte <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> nebo jeho podtřídu jako argument události.  
   
-### <a name="custom-event-handler-design"></a>Obslužná rutina návrhu vlastní událost  
- Existují případy, ve kterém `EventHandler<T>` nelze použít, třeba když rozhraní musí fungovat s předchozími verzemi modulu CLR, který nepodporuje obecné typy. V takových případech může být potřeba navrhovat a vyvíjet vlastní událost obslužné rutiny delegáta.  
+### <a name="custom-event-handler-design"></a>Vlastní návrh obslužné rutiny událostí  
+ Existují případy, kdy `EventHandler<T>` nelze použít, například když rozhraní potřebuje pracovat se staršími verzemi modulu CLR, které nepodporovaly obecné typy. V takových případech může být nutné navrhnout a vyvinout delegáta vlastní obslužné rutiny události.  
   
  **✓ DO** použít návratový typ void pro obslužné rutiny událostí.  
   
- Obslužné rutiny události můžete volat metody, případně pro více objektů zpracování více událostí. Pokud pro navrácení hodnoty byly povoleny metody zpracování událostí, by bylo více vrácených hodnot pro každé vyvolání události.  
+ Obslužná rutina události může vyvolat více metod zpracování událostí, případně u více objektů. Pokud metody zpracování událostí povolily vrácení hodnoty, bude pro každé vyvolání události k dispozici více vrácených hodnot.  
   
  **✓ DO** použít `object` jako typ prvního parametru obslužné rutiny události a pojmenujte ji `sender`.  
   
@@ -66,9 +65,9 @@ Události jsou nejčastěji používané formuláři zpětná volání (konstruk
   
  **X DO NOT** mít více než dva parametry obslužných rutin událostí.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

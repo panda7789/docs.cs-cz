@@ -3,20 +3,18 @@ title: Rozpoznané typy uzlů s dotazy XPath
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1d33e22d-18e5-43f8-a466-2e3d0a8dd094
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: aa004f0def04c7efe2ba7450050a899760b0bbcd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cc1aa668ccf6fc7f210f48a28cf76b364459c784
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590191"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710541"
 ---
 # <a name="node-types-recognized-with-xpath-queries"></a>Rozpoznané typy uzlů s dotazy XPath
-Typy uzlů, které jsou rozpoznány ve dotaz XPath nejsou stejné typy uzlů nalezen v modelu Document Object Model (DOM).  
+Typy uzlů rozpoznané v dotazu XPath nejsou stejné typy uzlů, které se nacházejí v model DOM (Document Object Model) (DOM).  
   
 ## <a name="w3c-xpath-node-types"></a>Typy uzlů XPath W3C  
- Typy uzlů, které jsou rozpoznány ve dotaz XPath nejsou typy uzlů nalezen v modelu Document Object Model (DOM). Toto jsou typy uzlů XPath reprezentována <xref:System.Xml.XPath.XPathNodeType> výčtu.  
+ Typy uzlů rozpoznané v dotazu XPath nejsou typy uzlů, které se nacházejí v model DOM (Document Object Model) (DOM). Níže jsou uvedeny typy uzlů XPath reprezentované výčtem <xref:System.Xml.XPath.XPathNodeType>.  
   
 - <xref:System.Xml.XPath.XPathNodeType.All>  
   
@@ -38,13 +36,13 @@ Typy uzlů, které jsou rozpoznány ve dotaz XPath nejsou stejné typy uzlů nal
   
 - <xref:System.Xml.XPath.XPathNodeType.Whitespace>  
   
- Tyto typy uzlů jsou založeny na XPath datový model, ve kterém uzly jsou odvozeny z nastavení XML informací. <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace> a <xref:System.Xml.XPath.XPathNodeType.Whitespace> typy uzlů se rozšíření rozhraní Microsoft .NET Framework pro základní uzel typů uvedených v modelu dat XPath.  
+ Tyto typy uzlů jsou založeny na datovém modelu XPath, kde jsou uzly odvozeny ze sady informací XML. Typy uzlů <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace> a <xref:System.Xml.XPath.XPathNodeType.Whitespace> jsou rozšířeními od Microsoftu .NET Framework k typům základních uzlů popsaným v datovém modelu XPath.  
   
- Typ uzlu atribut se používá různě v modelu dat XPath než jsou v modelu DOM. V modelu dat XPath uzlu elementu má sadu uzlů atributů s ní spojené a uzlu element je nadřazeného člena každý uzel atributu. V modelu DOM, uzel prvku je však vlastníka a není nadřazený. V obou modelech uzly atributu a oboru názvů nejsou považovány za podřízené uzly uzlu elementu.  
+ Typ uzlu atributu je v datovém modelu XPath použit odlišně, než je v modelu DOM. V datovém modelu XPath uzel elementu obsahuje sadu uzlů atributů, které se týkají, a uzel elementu je nadřazeným uzlem každého uzlu atributu. V modelu DOM je však uzel prvku vlastníkem a nikoli nadřazeným objektem. V obou modelech se uzly atributů a názvů nepovažují za podřízené uzly uzlu elementu.  
   
- Typ uzlu oboru názvů je doplněk k modelu dat XPath a není rozpoznaný typ modelu DOM uzlu.  
+ Typ uzlu oboru názvů je doplněk k datovému modelu XPath a není rozpoznaným typem uzlu modelu DOM.  
   
- Další informace o procházení elementu, atributu a uzly oboru názvů, najdete v článku [uzlu nastavení navigace pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) a [atribut a Namespace uzlu navigace pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md) témata.  
+ Další informace o přechodu elementů, atributů a uzlů oboru názvů naleznete v tématu [uzel nastavení navigace pomocí prvku XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) a [atribut a uzel oboru názvů pomocí témat XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md) .  
   
 ## <a name="see-also"></a>Viz také:
 

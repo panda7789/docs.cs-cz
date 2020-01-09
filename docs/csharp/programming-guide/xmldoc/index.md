@@ -1,6 +1,5 @@
 ---
 title: Komentáře k dokumentaci XML C# – Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - cs.xml
@@ -12,12 +11,12 @@ helpviewer_keywords:
 - C# language, XML code comments
 - XML documentation comments [C#]
 ms.assetid: 803b7f7b-7428-4725-b5db-9a6cff273199
-ms.openlocfilehash: 08357017a29f05c11e316e037497b1ee24d06eff
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 07daff8b819220fad07e516281b93b24e39cba46
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634973"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711763"
 ---
 # <a name="xml-documentation-comments-c-programming-guide"></a>Dokumentační komentáře XML (Průvodce programováním v C#)
 V jazyce Visual C# můžete vytvářet dokumentaci ke kódu zadáním prvků XML do zvláštních polí komentáře (označeno třemi lomítky) ve zdrojovém kódu přímo před blok kódu, na který se komentáře vztahují, například:  

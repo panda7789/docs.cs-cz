@@ -11,14 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ee8cc1b677ad6f6c2718c155edbba632df38dbd3
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 909b03588d2a41f667bfa117a5cecb420b125088
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974698"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708394"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 Kovariance a kontravariance jsou výrazy, které odkazují na schopnost použít více odvozeného typu (konkrétnější) nebo méně odvozený typ (méně specifické), než bylo původně určeno. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: Příklady předpokládají základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  
@@ -146,13 +144,13 @@ Kovariance a kontravariance jsou výrazy, které odkazují na schopnost použít
 ## <a name="list-of-variant-generic-interface-and-delegate-types"></a>Seznam variantních obecných typů rozhraní a delegátů
  V .NET Framework 4 mají následující typy rozhraní a delegátů parametry kovariantního nebo kontravariantního typu.  
   
-|Typ|Parametry kovariantního typu|Parametry kontravariantního typu|  
+|Type|Parametry kovariantního typu|Parametry kontravariantního typu|  
 |----------|-------------------------------|-----------------------------------|  
-|<xref:System.Action%601> <xref:System.Action%6016>||Ano|  
+|<xref:System.Action%601> až <xref:System.Action%6016>||Ano|  
 |<xref:System.Comparison%601>||Ano|  
 |<xref:System.Converter%602>|Ano|Ano|  
 |<xref:System.Func%601>|Ano||  
-|<xref:System.Func%602> <xref:System.Func%6017>|Ano|Ano|  
+|<xref:System.Func%602> až <xref:System.Func%6017>|Ano|Ano|  
 |<xref:System.IComparable%601>||Ano|  
 |<xref:System.Predicate%601>||Ano|  
 |<xref:System.Collections.Generic.IComparer%601>||Ano|  

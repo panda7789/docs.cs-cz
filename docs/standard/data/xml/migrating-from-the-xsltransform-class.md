@@ -6,50 +6,48 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2b0536607faa629e6113db0012056622d1adb541
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 95e71e1fdd0ded145025316a5d6597b27a6cc970
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027144"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710645"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z třídy XslTransform
 
-Architektura XSLT byla přepracována ve verzi Visual Studio 2005. <xref:System.Xml.Xsl.XslTransform> Byl nahrazen třídy <xref:System.Xml.Xsl.XslCompiledTransform> třídy.
+Architektura XSLT byla přepracována v vydání sady Visual Studio 2005. Třída <xref:System.Xml.Xsl.XslTransform> byla nahrazena <xref:System.Xml.Xsl.XslCompiledTransform>ou třídou.
 
-Následující části popisují některé hlavní rozdíly mezi <xref:System.Xml.Xsl.XslCompiledTransform> a <xref:System.Xml.Xsl.XslTransform> třídy.
+V následujících částech jsou popsány některé z hlavních rozdílů mezi <xref:System.Xml.Xsl.XslCompiledTransform> a <xref:System.Xml.Xsl.XslTransform>mi třídami.
 
 ## <a name="performance"></a>Výkon
 
-<xref:System.Xml.Xsl.XslCompiledTransform> Třída zahrnuje mnoho vylepšení výkonu. Zkompiluje nový procesoru XSLT šablony stylů XSLT na běžné mezilehlého formátu, podobně jako na modul CLR (CLR) nemá pro jiných programovacích jazycích. Jakmile je zkompilován šablony stylů, může do mezipaměti a znovu použít.
+Třída <xref:System.Xml.Xsl.XslCompiledTransform> zahrnuje mnoho vylepšení výkonu. Nový procesor XSLT zkompiluje šablonu stylů XSLT dolů do společného mezilehlého formátu, podobně jako modul CLR (Common Language Runtime) pro jiné programovací jazyky. Jakmile je šablona stylů zkompilována, může být uložena do mezipaměti a znovu použita.
 
-<xref:System.Xml.Xsl.XslCompiledTransform> Třída také obsahuje další optimalizace, které usnadňují mnohem rychlejší než <xref:System.Xml.Xsl.XslTransform> třídy.
+Třída <xref:System.Xml.Xsl.XslCompiledTransform> obsahuje také další optimalizace, které jsou mnohem rychlejší než <xref:System.Xml.Xsl.XslTransform>á třída.
 
 > [!NOTE]
-> I když celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třída je lepší, než <xref:System.Xml.Xsl.XslTransform> třídy, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslCompiledTransform> třídy můžou provádět více pomalu než <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslTransform> třída první, když je volán na transformaci. Je to proto musí být kompilován soubor XSLT, předtím, než je načten. Další informace najdete v následujícím blogovém příspěvku: [Pomalejší než XslTransform XslCompiledTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)
+> I když je celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třídy lepší než <xref:System.Xml.Xsl.XslTransform> třídy, metoda <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> třídy <xref:System.Xml.Xsl.XslCompiledTransform> může při prvním volání na transformaci pracovat pomaleji než metoda <xref:System.Xml.Xsl.XslTransform.Load%2A> třídy <xref:System.Xml.Xsl.XslTransform>. Důvodem je, že soubor XSLT musí být zkompilován před jeho načtením. Další informace najdete v tomto blogovém příspěvku: [XslCompiledTransform pomalejší než XslTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)
 
-## <a name="security"></a>Zabezpečení
+## <a name="security"></a>Zabezpečení –
 
-Ve výchozím nastavení <xref:System.Xml.Xsl.XslCompiledTransform> třídy zakáže podporu pro XSLT `document()` funkce a vložené skriptování. Tyto funkce se dá nastavit tak, že vytvoříte <xref:System.Xml.Xsl.XsltSettings> objekt, který má funkce povolena a předá se <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Následující příklad ukazuje, jak povolit skriptování a provedení transformace XSLT.
+Ve výchozím nastavení třída <xref:System.Xml.Xsl.XslCompiledTransform> zakáže podporu funkce `document()` XSLT a vloženého skriptování. Tyto funkce lze povolit vytvořením objektu <xref:System.Xml.Xsl.XsltSettings> s povolenými funkcemi a předáním do metody <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>. Následující příklad ukazuje, jak povolit skriptování a provést transformaci XSLT.
 
 [!code-csharp[XML_Migration#16](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#16)]
 [!code-vb[XML_Migration#16](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#16)]
 
-Další informace najdete v tématu [aspekty zabezpečení XSLT](../../../../docs/standard/data/xml/xslt-security-considerations.md).
+Další informace najdete v tématu věnovaném [bezpečnostním hlediskům XSLT](../../../../docs/standard/data/xml/xslt-security-considerations.md).
 
 ## <a name="new-features"></a>Nové funkce
 
 ### <a name="temporary-files"></a>Dočasné soubory
 
-Dočasné soubory jsou vygenerovány někdy během XSLT zpracování. Pokud šablona stylů obsahuje bloky kódu skriptu, nebo pokud je kompilován nastavení ladění je nastavená na hodnotu true, dočasné soubory může vytvořit ve složce % TEMP %. Může existovat instancí se neodstraní některé dočasné soubory z důvodu problémy načasování. Například, pokud jsou soubory používá aktuální domény aplikace nebo pomocí ladicího programu, finalizační metodu <xref:System.CodeDom.Compiler.TempFileCollection> objekt nebude možné je odstranit.
+Dočasné soubory jsou někdy generovány během zpracování XSLT. Pokud šablona stylů obsahuje bloky skriptu nebo pokud je zkompilována s nastavením ladění nastaveným na hodnotu true, mohou být ve složce% TEMP% vytvořeny dočasné soubory. Můžou nastat případy, kdy se některé dočasné soubory neodstraní kvůli problémům s časováním. Například pokud jsou soubory používány aktuální aplikací AppDomain nebo ladicím programem, finalizační metoda objektu <xref:System.CodeDom.Compiler.TempFileCollection> nebude schopna je odebrat.
 
-<xref:System.Xml.Xsl.XslCompiledTransform.TemporaryFiles%2A> Vlastnost lze použít pro další čištění. abyste měli jistotu, že všechny dočasné soubory byly odebrány z klienta.
+Vlastnost <xref:System.Xml.Xsl.XslCompiledTransform.TemporaryFiles%2A> lze použít k dodatečnému vyčištění, aby bylo zajištěno, že všechny dočasné soubory budou odebrány z klienta.
 
-### <a name="support-for-the-xsloutput-element-and-xmlwriter"></a>Podpora pro elementu xsl: Output elementu a XmlWriter
+### <a name="support-for-the-xsloutput-element-and-xmlwriter"></a>Podpora elementu xsl: output a XmlWriter
 
-<xref:System.Xml.Xsl.XslTransform> Třídy Ignorovat `xsl:output` nastavení při výstupu transformace byla odeslána do <xref:System.Xml.XmlWriter> objektu. <xref:System.Xml.Xsl.XslCompiledTransform> Třída má <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A> vlastnost, která vrátí <xref:System.Xml.XmlWriterSettings> objekt obsahující informace o výstupu odvozený od `xsl:output` elementu šablony stylů. <xref:System.Xml.XmlWriterSettings> Objektu se používá k vytvoření <xref:System.Xml.XmlWriter> objekt se správným nastavením, které mohou být předány <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Následující kód jazyka C# ukazuje toto chování:
+Třída <xref:System.Xml.Xsl.XslTransform> ignorovala `xsl:output` nastavení, když byl výstup transformace odeslán do objektu <xref:System.Xml.XmlWriter>. Třída <xref:System.Xml.Xsl.XslCompiledTransform> má vlastnost <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A>, která vrací objekt <xref:System.Xml.XmlWriterSettings> obsahující výstupní informace odvozené z prvku `xsl:output` šablon stylů. Objekt <xref:System.Xml.XmlWriterSettings> slouží k vytvoření objektu <xref:System.Xml.XmlWriter> se správným nastavením, které lze předat metodě <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>. Toto chování C# je znázorněno v následujícím kódu:
 
 ```csharp
 // Create the XslTransform object and load the style sheet.
@@ -67,15 +65,15 @@ xslt.Transform(doc, writer);
 writer.Close();
 ```
 
-### <a name="debug-option"></a>Debug – možnost
+### <a name="debug-option"></a>Možnost ladění
 
-<xref:System.Xml.Xsl.XslCompiledTransform> Třída může generovat ladicí informace, které umožňuje provádět ladění stylů se Microsoft Visual Studio Debugger. Další informace naleznete v tématu <xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29>.
+Třída <xref:System.Xml.Xsl.XslCompiledTransform> může generovat ladicí informace, které vám umožní ladit šablonu stylů pomocí ladicího programu Microsoft Visual Studio. Další informace naleznete v tématu <xref:System.Xml.Xsl.XslCompiledTransform.%23ctor%28System.Boolean%29>.
 
-## <a name="behavioral-differences"></a>Behaviorální rozdíly
+## <a name="behavioral-differences"></a>Rozdíly v chování
 
-### <a name="transforming-to-an-xmlreader"></a>Transformace do třídy XmlReader
+### <a name="transforming-to-an-xmlreader"></a>Transformace na objekt XmlReader
 
-<xref:System.Xml.Xsl.XslTransform> Třída má několik přetížení transformace, které vracejí výsledky transformace jako <xref:System.Xml.XmlReader> objektu. Tato přetížení slouží k načtení výsledků transformace do reprezentaci v paměti (například <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument>) bez dalších nákladů na režii serializace a deserializace výsledného kódu XML stromu. Následující kód jazyka C# ukazuje, jak načíst výsledky transformace do <xref:System.Xml.XmlDocument> objektu.
+Třída <xref:System.Xml.Xsl.XslTransform> obsahuje několik přetížení transformace, které vracejí výsledky transformace jako objekt <xref:System.Xml.XmlReader>. Tato přetížení lze použít k načtení výsledků transformace do reprezentace v paměti (například <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument>) bez toho, aby vznikla režie serializace a deserializace výsledného stromu XML. Následující C# kód ukazuje, jak načíst výsledky transformace do objektu <xref:System.Xml.XmlDocument>.
 
 ```csharp
 // Load the style sheet
@@ -87,7 +85,7 @@ XmlDocument doc = new XmlDocument();
 doc.Load(xslt.Transform(input, (XsltArgumentList)null));
 ```
 
-<xref:System.Xml.Xsl.XslCompiledTransform> Třída nepodporuje transformaci na <xref:System.Xml.XmlReader> objektu. Ale můžete udělat něco podobného podle pomocí <xref:System.Xml.XPath.XPathNavigator.CreateNavigator%2A> metodu pro načtení výsledný XML stromu přímo z <xref:System.Xml.XmlWriter>. Následující kód jazyka C# ukazuje, jak provést stejný úkol pomocí <xref:System.Xml.Xsl.XslCompiledTransform>.
+Třída <xref:System.Xml.Xsl.XslCompiledTransform> nepodporuje transformaci na objekt <xref:System.Xml.XmlReader>. Můžete však něco podobného pomocí metody <xref:System.Xml.XPath.XPathNavigator.CreateNavigator%2A> k načtení výsledného stromu XML přímo z <xref:System.Xml.XmlWriter>. Následující C# kód ukazuje, jak provést stejnou úlohu pomocí <xref:System.Xml.Xsl.XslCompiledTransform>.
 
 ```csharp
 // Transform input document to XmlDocument for additional processing
@@ -99,33 +97,33 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 
 ### <a name="discretionary-behavior"></a>Volitelné chování
 
-Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelného chování. Existuje několik oblastí kde <xref:System.Xml.Xsl.XslCompiledTransform> chová jinak než <xref:System.Xml.Xsl.XslTransform> třídy. Další informace najdete v tématu [obnovitelné chyby XSLT](../../../../docs/standard/data/xml/recoverable-xslt-errors.md).
+Doporučení W3C XSL Transformers (XSLT) verze 1,0 obsahuje oblasti, ve kterých se může poskytovatel implementace rozhodnout, jak tuto situaci zpracovat. Tyto oblasti se považují za volitelné chování. Existuje několik oblastí, kde se <xref:System.Xml.Xsl.XslCompiledTransform> chová jinak než <xref:System.Xml.Xsl.XslTransform> třída. Další informace najdete v tématu [obnovitelné chyby XSLT](../../../../docs/standard/data/xml/recoverable-xslt-errors.md).
 
-### <a name="extension-objects-and-script-functions"></a>Rozšíření objektů a funkcí skriptu
+### <a name="extension-objects-and-script-functions"></a>Objekty rozšíření a funkce skriptu
 
-<xref:System.Xml.Xsl.XslCompiledTransform> přináší například tato dvě nová omezení týkající se použití funkce skriptu:
+<xref:System.Xml.Xsl.XslCompiledTransform> zavádí dvě nová omezení pro použití funkcí skriptu:
 
-- Výrazy XPath může být volána pouze veřejné metody.
+- Z výrazů XPath mohou být volány pouze veřejné metody.
 
-- Přetížení se liší od sebe navzájem na základě počtu argumentů. Pokud více než jednomu přetížení má stejný počet argumentů, bude vyvolána výjimka.
+- Přetížení lze odlišit od ostatních v závislosti na počtu argumentů. Pokud má více než jedno přetížení stejný počet argumentů, bude vyvolána výjimka.
 
-V <xref:System.Xml.Xsl.XslCompiledTransform>vazbu (metoda vyhledávání názvu) do funkce skriptu dochází v době kompilace a šablony stylů, které ve spolupráci s XslTransform mohou způsobit výjimku, pokud jsou načtené <xref:System.Xml.Xsl.XslCompiledTransform>.
+V <xref:System.Xml.Xsl.XslCompiledTransform>vazba (vyhledávání názvů metod) ke skriptovým funkcím probíhá v době kompilace a šablony stylů, které pracovaly s XslTransform, mohou způsobit výjimku, když jsou načteny pomocí <xref:System.Xml.Xsl.XslCompiledTransform>.
 
-<xref:System.Xml.Xsl.XslCompiledTransform> podporuje s `msxsl:using` a `msxsl:assembly` podřízených elementů v rámci `msxsl:script` elementu. `msxsl:using` a `msxsl:assembly` elementy se používají k deklarování další obory názvů a sestavení pro použití v bloku skriptu. Zobrazit [bloky skriptu s použitím msxsl: script](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md) Další informace.
+<xref:System.Xml.Xsl.XslCompiledTransform> podporuje s podřízenými prvky `msxsl:using` a `msxsl:assembly` v rámci elementu `msxsl:script`. Prvky `msxsl:using` a `msxsl:assembly` slouží k deklaraci dalších oborů názvů a sestavení pro použití v bloku skriptu. Další informace najdete v tématu [bloky skriptu pomocí msxsl: Script](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md) .
 
-<xref:System.Xml.Xsl.XslCompiledTransform> zakazuje rozšíření objekty, které mají více přetížení se stejným číslem argumenty.
+<xref:System.Xml.Xsl.XslCompiledTransform> zakáže objekty rozšíření, které mají více přetížení se stejným počtem argumentů.
 
-### <a name="msxml-functions"></a>MSXML funkce
+### <a name="msxml-functions"></a>Funkce MSXML
 
-Podpora pro další MSXML funkce byly přidány do <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Následující seznam popisuje nové nebo vylepšené funkce:
+Do třídy <xref:System.Xml.Xsl.XslCompiledTransform> se přidala podpora dalších funkcí MSXML. Následující seznam popisuje nové nebo vylepšené funkce:
 
-- msxsl:node-nastavit: <xref:System.Xml.Xsl.XslTransform> vyžaduje argument [funkce sada uzlů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) funkci fragment stromu výsledek. <xref:System.Xml.Xsl.XslCompiledTransform> Třída nemá tento požadavek.
+- msxsl: node-set: <xref:System.Xml.Xsl.XslTransform> nutné, aby argument funkce [funkce sady uzlů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) byl fragmentem stromu výsledku. Třída <xref:System.Xml.Xsl.XslCompiledTransform> nemá tento požadavek.
 
-- msxsl:Version: Tato funkce není podporována v <xref:System.Xml.Xsl.XslCompiledTransform>.
+- msxsl: Version: Tato funkce je podporována v <xref:System.Xml.Xsl.XslCompiledTransform>.
 
-- Funkce rozšíření XPath: [Ms:string-compare – funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [ms:utc funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [MS: namespace-uri funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [ms:local – název funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [ms:number – funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), [ms:format-datum funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100)), a [ms:format – čas funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) funkce jsou nyní podporovány.
+- Funkce rozšíření XPath: [funkce MS: String-Compare](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [MS: UTC](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [MS: Namespace-URI](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [MS: funkce local-Name](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [MS: Number Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), [MS: Format-Date](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100))a MS: funkce funkcí v [době formátování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) jsou nyní podporovány.
 
-- Schéma souvisejících funkcí rozšíření XPath: Tyto funkce nepodporuje nativně podle <xref:System.Xml.Xsl.XslCompiledTransform>. Ale že je možné implementovat jako funkcí rozšíření.
+- Funkce rozšíření XPath související se schématem: tyto funkce se nativně nepodporují <xref:System.Xml.Xsl.XslCompiledTransform>. Lze je však implementovat jako funkce rozšíření.
 
 ## <a name="see-also"></a>Viz také:
 

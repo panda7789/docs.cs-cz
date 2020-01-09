@@ -5,12 +5,12 @@ helpviewer_keywords:
 - object variables [Visual Basic], declaring
 - declaring object variables [Visual Basic]
 ms.assetid: 2fa77dde-1fb2-439a-80d4-3e9787649fad
-ms.openlocfilehash: 4cfad1d820b584d4610d24c392b14ac3958471b7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: eaaeda2a986584e6e1a2e0d2cda3890fb6187598
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352906"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344238"
 ---
 # <a name="how-to-declare-an-object-variable-and-assign-an-object-to-it-in-visual-basic"></a>Postupy: Deklarace objektové proměnné a přiřazení objektu k proměnné v jazyce Visual Basic
 
@@ -31,7 +31,7 @@ Můžete zkombinovat deklaraci a přiřazení inicializací proměnné jako sou�
 Dim thisObject As Object= "This is an Object"
 ```
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compile-the-code"></a>Kompilace kódu
 
 Tento příklad vyžaduje:
 

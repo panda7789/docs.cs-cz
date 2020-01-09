@@ -5,12 +5,12 @@ helpviewer_keywords:
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
-ms.openlocfilehash: bb0bdb3c10a7df2ca954fbdb9382a25bf805068d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1c65841e4c124252cfa41bcd4d0c305a426687ee
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349744"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632347"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu lambda (Visual Basic)
 *Výraz lambda* je funkce nebo podprogram, který nemá název. Výraz lambda lze použít všude, kde je typ delegáta platný.  
@@ -65,7 +65,7 @@ ms.locfileid: "74349744"
   
      `Dim add1 = Function`   `(index As Integer)`  
   
-3. Stiskněte klávesu ENTER. Příkaz `End Function` je automaticky přidán.  
+3. Stiskněte ENTER. Příkaz `End Function` je automaticky přidán.  
   
 4. V těle funkce přidejte následující kód, který vytvoří výraz a vrátí hodnotu. K určení návratového typu nepoužíváte klauzuli `As`.  
   
@@ -85,7 +85,7 @@ ms.locfileid: "74349744"
   
      `Dim add1 = Sub`  `(msg As String)`  
   
-3. Stiskněte klávesu ENTER. Příkaz `End Sub` je automaticky přidán.  
+3. Stiskněte ENTER. Příkaz `End Sub` je automaticky přidán.  
   
 4. V těle funkce přidejte následující kód, který se spustí při vyvolání podrutiny.  
   
@@ -100,7 +100,7 @@ ms.locfileid: "74349744"
   
  [!code-vb[VbVbalrLambdas#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class4.vb#10)]  
   
- Předchozí příklad je ekvivalentní následujícímu kódu, který je napsán v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] syntaxe:  
+ Předchozí příklad je ekvivalentní následujícímu kódu, který je napsán v syntaxi LINQ (Language-Integrated Query):  
   
  [!code-vb[VbVbalrLambdas#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class5.vb#11)]  
   

@@ -1,17 +1,16 @@
 ---
 title: Zpracování souboru XML – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: b2b19a2b2c46df5b78b6ebba48955cae55d32121
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 2c3ba0e12d0d7e6a568c4c3741d99b901fca2722
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846939"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75696516"
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
 
@@ -27,13 +26,13 @@ Kompilátor při generování řetězců ID sleduje následující pravidla:
 
     |Znak|Popis|
     |---------------|-----------------|
-    |N|– obor názvů<br /><br /> Do oboru názvů nemůžete přidávat komentáře k dokumentaci, ale můžete na ně cref odkazy, kde se podporují.|
+    |N|Obor názvů<br /><br /> Do oboru názvů nemůžete přidávat komentáře k dokumentaci, ale můžete na ně cref odkazy, kde se podporují.|
     |T|Typ: třída, rozhraní, struktura, výčet, delegát|
     |F|pole|
     |P|vlastnost (včetně indexerů nebo jiných indexovaných vlastností)|
     |M|Metoda (včetně takových speciálních metod jako konstruktory, operátory a tak dále)|
     |E|event|
-    |!|Řetězec chyby<br /><br /> Zbytek řetězce poskytuje informace o chybě. C# Kompilátor generuje informace o chybě pro odkazy, které nelze přeložit.|
+    |!|řetězec chyby<br /><br /> Zbytek řetězce poskytuje informace o chybě. C# Kompilátor generuje informace o chybě pro odkazy, které nelze přeložit.|
 
 - Druhá část řetězce je plně kvalifikovaný název položky začínající v kořenu oboru názvů. Název položky, její nadřazené typy a obor názvů jsou odděleny tečkami. Pokud má název položky vlastní tečky, nahradí se znakem hash (#). Předpokládá se, že žádná položka nemá v názvu přímo znak hash. Například plně kvalifikovaný název konstruktoru řetězce by byl "System. String. #ctor".
 
@@ -57,15 +56,15 @@ Kompilátor při generování řetězců ID sleduje následující pravidla:
 
   - ELEMENT_TYPE_GENERICARRAY je reprezentována jako "[?]" za typem elementu pole. C# Kompilátor to nikdy negeneruje.
 
-  - ELEMENT_TYPE_ARRAY je reprezentována jako [*lowerbound*:`size`,*lowerbound*:`size`], kde je počet čárek-1 a dolní meze a velikost jednotlivých dimenzí, pokud jsou známy, jsou reprezentovány v desítkové soustavě. Pokud není zadaná dolní mez nebo velikost, je tato hodnota jednoduše vynechána. Pokud je spodní mez a velikost pro konkrétní dimenzi vynechána, je vynechána i znak ': '. Například dvojrozměrné pole s 1 jako dolní meze a nespecifikované velikosti je [1:, 1:].
+  - ELEMENT_TYPE_ARRAY se reprezentuje jako [*lowerbound*:`size`,*lowerbound*:`size`], kde počet čárek je Rank-1 a dolní meze a velikost každé dimenze, pokud jsou známé, jsou reprezentovány v desítkové soustavě. Pokud není zadaná dolní mez nebo velikost, je tato hodnota jednoduše vynechána. Pokud je spodní mez a velikost pro konkrétní dimenzi vynechána, je vynechána i znak ': '. Například dvojrozměrné pole s 1 jako dolní meze a nespecifikované velikosti je [1:, 1:].
 
-  - ELEMENT_TYPE_FNPTR je reprezentovaná jako "= FUNC:`type`(*Signature*)", kde `type` je návratový typ a *Signatura* jsou argumenty metody. Nejsou-li žádné argumenty, jsou vynechány kulaté závorky. C# Kompilátor to nikdy negeneruje.
+  - ELEMENT_TYPE_FNPTR je reprezentována jako "= FUNC:`type`(*Signature*)", kde `type` je návratový typ a *Signatura* je argumenty metody. Nejsou-li žádné argumenty, jsou vynechány kulaté závorky. C# Kompilátor to nikdy negeneruje.
 
     Následující komponenty signatur nejsou reprezentovány, protože nejsou nikdy použity pro odlišení přetížených metod:
 
   - konvence volání
 
-  - Návratový typ
+  - návratový typ
 
   - ELEMENT_TYPE_SENTINEL
 
@@ -75,7 +74,7 @@ Kompilátor při generování řetězců ID sleduje následující pravidla:
 
      ``<member name="T:SampleClass`2">`` je značka pro typ, který je definován jako `public class SampleClass<T, U>`.
 
-     Pro metody, které přibírají obecné typy jako parametry, jsou parametry obecného typu zadány jako čísla, která začínají značkami zaškrtnutí (například \`0 \`1). Každé číslo představující zápis pole založený na nule pro obecné parametry typu.
+     Pro metody, které přibírají obecné typy jako parametry, jsou parametry obecného typu zadány jako čísla, která začínají značkami zaškrtnutí (například \`0\`1). Každé číslo představující zápis pole založený na nule pro obecné parametry typu.
 
 ## <a name="examples"></a>Příklady
 

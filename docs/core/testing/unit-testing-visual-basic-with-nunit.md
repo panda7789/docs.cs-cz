@@ -3,13 +3,12 @@ title: Testování částí Visual Basic v .NET Core pomocí příkazu dotnet te
 description: Seznamte se s koncepty testování částí v .NET Core pomocí interaktivního prostředí, které vytváří ukázkové Visual Basic řešení, pomocí NUnit.
 author: rprouse
 ms.date: 10/04/2018
-ms.custom: seodec18
-ms.openlocfilehash: 4776916c316e18de954c8ccaa985075dc2ea0fc5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8f05d25a0add76f5c552f5b9ac1eb310c3d6407a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428720"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715410"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Testování částí Visual Basic knihoven .NET Core pomocí příkazu dotnet test a NUnit
 
@@ -20,7 +19,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 ## <a name="prerequisites"></a>Požadavky
 
 - [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze.
-- Textový editor nebo Editor kódu dle vašeho výběru.
+- Textový editor nebo editor kódu podle vašeho výběru.
 
 ## <a name="creating-the-source-project"></a>Vytvoření zdrojového projektu
 

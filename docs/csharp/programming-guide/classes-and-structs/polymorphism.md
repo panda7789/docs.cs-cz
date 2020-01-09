@@ -1,17 +1,16 @@
 ---
 title: Polymorfismus – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: be075c358d9ca2c36b6d173fca983c16f6b0d78c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4f65082ad5094eb0aab28edeb06790a9af4019c6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970340"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714734"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí pilíř objektově orientovaného programování, a to po zapouzdření a dědičnosti. Polymorfismus je řecký Word, který znamená "velký tvar" a má dva odlišné aspekty:  

@@ -6,20 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2913ccf3-f932-4363-8028-9e2d22ce6093
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b8666aa9cb9f0512c600a77891b16f439c46995a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1a17aea66be7f9d35336434408c49bae8046b7e7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934417"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710905"
 ---
 # <a name="evaluate-xpath-expressions-using-xpathnavigator"></a>Vyhodnocení výrazů XPath pomocí XPathNavigator
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metodu pro vyhodnocení výrazu XPath. <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> Metoda má výraz XPath, se vyhodnotí a vrátí W3C XPath typu logická hodnota, číslo, řetězec nebo sada uzlů na základě výsledku výrazu XPath.  
+Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje metodu <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> k vyhodnocení výrazu XPath. Metoda <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> přebírá výraz XPath, vyhodnocuje ho a vrací typ XPath typu Boolean, Number, String nebo Node v závislosti na výsledku výrazu XPath.  
   
-## <a name="the-evaluate-method"></a>Vyhodnocení metody  
- <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> Metoda má výraz XPath, se vyhodnotí a vrátí zadaný výsledek logickou hodnotu (<xref:System.Boolean>), počet (<xref:System.Double>), řetězec (<xref:System.String>), nebo sada uzlů (<xref:System.Xml.XPath.XPathNodeIterator>). Například <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metodu lze použít v matematické metodě. Následující příklad kódu vypočítá celková cena všech knih v `books.xml` souboru.  
+## <a name="the-evaluate-method"></a>Metoda Evaluate  
+ Metoda <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> přebírá výraz XPath, vyhodnocuje ho a vrátí typový výsledek Boolean (<xref:System.Boolean>), Number (<xref:System.Double>), String (<xref:System.String>) nebo set Node (<xref:System.Xml.XPath.XPathNodeIterator>). Například metoda <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> může být použita v matematické metodě. Následující příklad kódu vypočítá celkovou cenu ze všech knih v souboru `books.xml`.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -39,12 +37,12 @@ Double total = (Double)navigator.Evaluate(query);
 Console.WriteLine(total);  
 ```  
   
- V příkladu přebírá `books.xml` souboru jako vstup.  
+ V příkladu se jako vstup používá soubor `books.xml`.  
   
  [!code-xml[XPathXMLExamples#1](../../../../samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/books.xml#1)]  
   
 ### <a name="position-and-last-functions"></a>pozice a poslední funkce  
- <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> Přetížené metody. Jeden z <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> přebírá metody <xref:System.Xml.XPath.XPathNodeIterator> objektu jako parametr. Tento konkrétní <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metodou je stejný jako <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metodu, která přebírá pouze <xref:System.Xml.XPath.XPathExpression> objektu jako parametr, s tím rozdílem, že umožňuje uzel nastavení argumentu pro zadání pro provedení vyhodnocení na aktuální kontext. Je vyžadován pro cestu XPath tento kontext `position()` a `last()` funkce jsou relativní vzhledem k aktuální uzel kontextu. Není-li použít jako predikát v kroku umístění, `position()` a `last()` funkce vyžadují odkaz na uzel nastavení, aby se vyhodnotilo, jinak `position` a `last` funkce vrátit `0`.  
+ Metoda <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> je přetížena. Jedna z metod <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> přebírá objekt <xref:System.Xml.XPath.XPathNodeIterator> jako parametr. Tato konkrétní <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> metoda je shodná s metodou <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>, která přebírá jako parametr pouze objekt <xref:System.Xml.XPath.XPathExpression>, s výjimkou toho, že umožňuje argumentu sady uzlů určit aktuální kontext k provedení vyhodnocení. Tento kontext je vyžadován pro `position()` XPath a `last()` funkce, protože jsou relativní vzhledem k aktuálnímu uzlu kontextu. Pokud není použit jako predikát v kroku umístění, funkce `position()` a `last()` vyžadují odkaz na sadu uzlů, aby bylo možné je vyhodnotit jinak, `position` a `last` funkce vrátí `0`.  
   
 ## <a name="see-also"></a>Viz také:
 

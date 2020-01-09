@@ -1,18 +1,17 @@
 ---
 title: Jak spustit čistící kód pomocí Průvodce pro C# nakonec programování
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - try/finally blocks [C#]
 - exceptions [C#], try/finally block
 - exception handling [C#], try/finally block
 ms.assetid: 1b1e5aef-3f32-4a88-9d39-b5fffb33bdaf
-ms.openlocfilehash: 00cc7e40220397f4154de5be1e78a894e37374e8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: d1ba761e64053d656ad4cd004133fc455a57c6f6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346263"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705272"
 ---
 # <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Jak spustit čistící kód pomocí finally (C# Průvodce programováním)
 Účelem příkazu `finally` je zajistit, že nezbytné vyčištění objektů, obvykle objekty, které jsou uchovávány na externích zdrojích, dochází okamžitě, i když je vyvolána výjimka. Jedním z příkladů takového vyčištění je volání <xref:System.IO.Stream.Close%2A> na <xref:System.IO.FileStream> ihned po použití namísto čekání na uvolnění objektu modulem CLR (Common Language Runtime), a to takto:  

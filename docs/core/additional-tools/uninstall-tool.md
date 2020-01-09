@@ -2,13 +2,13 @@
 title: Odinstalační nástroj
 description: Přehled nástroje pro odinstalaci rozhraní .NET Core, což je průvodce nástrojem, který umožňuje řízené vyčištění sad .NET Core SDK a modulů runtime.
 author: sfoslund
-ms.date: 12/17/2019
-ms.openlocfilehash: 5a1a419d5ad09643a7063cc03ec727c547268cc6
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.date: 01/06/2020
+ms.openlocfilehash: 4944c983cbd02b456c3a09a1b03bc28ba6e458cc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443545"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714542"
 ---
 # <a name="net-core-uninstall-tool"></a>Nástroj pro odinstalaci .NET Core
 
@@ -446,7 +446,7 @@ Poznámky:
 
   Nastaví úroveň podrobností. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `normal`.
 
-* **`-y, --yes`** Provede příkaz bez potvrzení hodnoty Y/n.
+* **`-y, --yes`** Provede příkaz bez potvrzení hodnoty Y/N.
   
 * **`--force`** Vynutí odebrání verzí, které mohou být použity v aplikaci Visual Studio nebo sadách SDK.
 
@@ -462,7 +462,7 @@ Poznámky:
 > [!NOTE]
 > Ve výchozím nastavení jsou zachovány sady .NET Core SDK a moduly runtime, které mohou být vyžadovány aplikací Visual Studio nebo jinými sadami SDK. V následujících příkladech mohou některé ze zadaných sad SDK a modulu runtime zůstat v závislosti na stavu počítače. Pokud chcete odebrat všechny sady SDK a moduly runtime, uveďte je explicitně jako argumenty nebo použijte možnost `--force`.
 
-* Odeberte všechny běhové moduly runtime x86 .NET s výjimkou `3.0.0-preview6-27804-01` verze, aniž by bylo nutné potvrzovat a/n:
+* Odeberte všechny moduly runtime .NET Core s výjimkou verze `3.0.0-preview6-27804-01` bez Vyžadování potvrzení a/N:
 
   ```console
   dotnet-core-uninstall remove --all-but 3.0.0-preview6-27804-01 --runtime --yes
@@ -477,7 +477,7 @@ Poznámky:
 * Odebrání sady .NET Core 1.1.11 SDK bez výstupu konzoly:
 
   ```console
-  dotnet-core-uninstall remove 1.1.11 --sdk --yes -verbosity q
+  dotnet-core-uninstall remove 1.1.11 --sdk --yes --verbosity q
   ```
 
 * Odeberte všechny sady SDK .NET Core, které je možné bezpečně odebrat tímto nástrojem:

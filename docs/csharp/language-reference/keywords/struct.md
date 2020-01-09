@@ -1,6 +1,5 @@
 ---
 title: struktura – C# referenční informace
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - struct_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: a78488ad902b0a96a30ad197b0ece043543c3d69
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9363cff913027d491f7df0e0d0dac61638d6f802
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422302"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715128"
 ---
 # <a name="struct-c-reference"></a>struct (Referenční dokumentace jazyka C#)
 
@@ -30,7 +29,7 @@ public struct Book
 
 ## <a name="remarks"></a>Poznámky
 
-Struktury mohou také obsahovat [konstruktory](../../programming-guide/classes-and-structs/constructors.md), [konstanty](../../programming-guide/classes-and-structs/constants.md), [pole](../../programming-guide/classes-and-structs/fields.md), [metody](../../programming-guide/classes-and-structs/methods.md), [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [indexery](../../programming-guide/indexers/index.md), [operátory](../operators/index.md), [události](../../programming-guide/events/index.md)a [vnořené typy](../../programming-guide/classes-and-structs/nested-types.md), i když je několik takových členů požadováno, měli byste zvážit, že místo toho napište třídu typu.
+Struktury mohou také obsahovat [konstruktory](../../programming-guide/classes-and-structs/constructors.md), [konstanty](../../programming-guide/classes-and-structs/constants.md), [pole](../../programming-guide/classes-and-structs/fields.md), [metody](../../programming-guide/classes-and-structs/methods.md), [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [indexery](../../programming-guide/indexers/index.md), [operátory](../operators/index.md), [události](../../programming-guide/events/index.md)a [vnořené typy](../../programming-guide/classes-and-structs/nested-types.md), i když Pokud je vyžadováno několik takových členů, měli byste zvážit místo toho, aby typ obsahoval třídu.
 
 Příklady najdete v tématu [použití struktur](../../programming-guide/classes-and-structs/using-structs.md).
 

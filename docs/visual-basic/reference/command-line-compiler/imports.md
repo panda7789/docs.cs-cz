@@ -6,12 +6,12 @@ helpviewer_keywords:
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: 380e71e462f736d4564a37b83567007fa9461b05
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2a1dd19189ff65413255b9bc137e1a7f0227bbe1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332956"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716652"
 ---
 # <a name="-imports-visual-basic"></a>-Imports (Visual Basic)
 Importuje obory názvů z určeného sestavení.  
@@ -22,7 +22,7 @@ Importuje obory názvů z určeného sestavení.
 -imports:namespaceList  
 ```  
   
-## <a name="arguments"></a>Argumenty  
+## <a name="arguments"></a>Arguments  
   
 |Termín|Definice|  
 |---|---|  
@@ -33,12 +33,12 @@ Importuje obory názvů z určeného sestavení.
   
  Členy v oboru názvů určeném pomocí `-imports` jsou k dispozici pro všechny soubory zdrojového kódu v kompilaci. Použijte [příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) k použití oboru názvů v jednom souboru zdrojového kódu.  
   
-|Nastavení/Imports v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení – importy v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
 |1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **odkazy** .<br />3. Zadejte název oboru názvů do pole vedle tlačítka **Přidat import uživatele** .<br />4. klikněte na tlačítko **Přidat import uživatele** .|  
   
 ## <a name="example"></a>Příklad  
- Při zadání `/imports:system.globalization` je zkompilován následující kód. Bez něho, úspěšná kompilace vyžaduje, aby byl příkaz `Imports System.Globalization` zahrnut na začátku souboru zdrojového kódu nebo aby byla vlastnost plně kvalifikovaná jako `System.Globalization.CultureInfo.CurrentCulture.Name`.
+ Při zadání `-imports:system.globalization` je zkompilován následující kód. Bez něho, úspěšná kompilace vyžaduje, aby byl příkaz `Imports System.Globalization` zahrnut na začátku souboru zdrojového kódu nebo aby byla vlastnost plně kvalifikovaná jako `System.Globalization.CultureInfo.CurrentCulture.Name`.
 
 ```vb
 Module Example

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - procedural code [WPF], accessing resources from
 - resources [WPF], creating with procedural code
 ms.assetid: c1cfcddb-e39c-41c8-a7f3-60984914dfae
-ms.openlocfilehash: 3d504467c137c1e3f494e120217957661f4e75a3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 11903a9bae25b0646d944fb11038e07434996015
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458754"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559742"
 ---
 # <a name="resources-and-code"></a>Zdroje a kód
 Tento přehled se zaměřuje na to, jak je možné k prostředkům [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] přistupovat nebo vytvořit pomocí kódu místo [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] syntaxe. Další informace o obecném využití prostředků a prostředcích [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] perspektivě syntaxe najdete v tématu [prostředky XAML](xaml-resources.md).  
@@ -42,7 +42,7 @@ Tento přehled se zaměřuje na to, jak je možné k prostředkům [!INCLUDE[TLA
   
 <a name="objectaskey"></a>   
 ## <a name="using-objects-as-keys"></a>Použití objektů jako klíčů  
- Většina využití prostředků nastaví klíč prostředku jako řetězec. Nicméně různé funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] záměrně nepoužívají typ řetězce k zadání klíčů, ale tento parametr je objekt. Schopnost, že se prostředek bude používat objektem, se používá ve stylu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a podpora. Styly v motivech, které se stanou výchozím stylem pro jiný ovládací prvek bez stylu, jsou každou klíčem <xref:System.Type> ovládacího prvku, na který by se měly vztahovat. Se zachováním pomocí typu poskytuje spolehlivý vyhledávací mechanismus, který pracuje na výchozích instancích každého typu ovládacího prvku a typ lze detekovat reflexí a použitým pro styly odvozených tříd, i když odvozený typ jinak nemá žádný výchozí styl. Můžete zadat <xref:System.Type> klíč pro prostředek definovaný v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pomocí [rozšíření značek x:Type](../../xaml-services/x-type-markup-extension.md). Podobná rozšíření existují pro další použití neřetězcových klíčů, která podporují funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], jako je například [rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md).  
+ Většina využití prostředků nastaví klíč prostředku jako řetězec. Nicméně různé funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] záměrně nepoužívají typ řetězce k zadání klíčů, ale tento parametr je objekt. Schopnost, že se prostředek bude používat objektem, se používá ve stylu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a podpora. Styly v motivech, které se stanou výchozím stylem pro jiný ovládací prvek bez stylu, jsou každou klíčem <xref:System.Type> ovládacího prvku, na který by se měly vztahovat. Se zachováním pomocí typu poskytuje spolehlivý vyhledávací mechanismus, který pracuje na výchozích instancích každého typu ovládacího prvku a typ lze detekovat reflexí a použitým pro styly odvozených tříd, i když odvozený typ jinak nemá žádný výchozí styl. Můžete zadat <xref:System.Type> klíč pro prostředek definovaný v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pomocí [rozšíření značek x:Type](../../../desktop-wpf/xaml-services/xtype-markup-extension.md). Podobná rozšíření existují pro další použití neřetězcových klíčů, která podporují funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], jako je například [rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md).  
   
 ## <a name="see-also"></a>Viz také:
 

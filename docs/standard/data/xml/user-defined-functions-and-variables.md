@@ -6,44 +6,42 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4772f20e-1e7f-496e-93c2-1484473be555
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c2ce474dac44de1ac72811ecd3bc294ba57ce40a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7040c2ccf6e3bfc6efcbec3505c633c6c3c6508f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61952019"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710060"
 ---
 # <a name="user-defined-functions-and-variables"></a>Uživatelem definované funkce a proměnné
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které se používají k interakci s <xref:System.Xml.XPath.XPathDocument> data. Standardní funkce XPath můžete doplnit prostřednictvím implementace rozšíření funkce a proměnné pro použití ve výrazech dotazů XPath. <xref:System.Xml.XPath.XPathExpression.SetContext%2A> Metoda může přijímat kontext uživatelem definované odvozený od <xref:System.Xml.Xsl.XsltContext>. Uživatelem definované funkce jsou vyřešené prostřednictvím vlastní místní.  
+Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje sadu metod, které slouží k interakci s daty <xref:System.Xml.XPath.XPathDocument>. Standardní funkce XPath můžete doplnit implementací funkcí rozšíření a proměnných pro použití ve výrazech dotazů XPath. Metoda <xref:System.Xml.XPath.XPathExpression.SetContext%2A> může přijmout uživatelsky definovaný kontext odvozený od <xref:System.Xml.Xsl.XsltContext>. Uživatelsky definované funkce jsou vyřešeny vlastním kontextem.  
   
- Rozšíření funkcí a proměnných, může být užitečné při prevenci útoků prostřednictvím injektáže XML. V těchto scénářích uživatelský vstup je přiřazená vlastní proměnné a zpracovat pomocí funkcí rozšíření, nikoli jako vstup nezpracovaných dat, které jsou spojeny s instrukce pro zpracování. Rozšíření funkcí a proměnných obsahují uživatelský vstup, aby funguje jen na XML data tak, jak má návrhářem.  
+ Funkce a proměnné rozšíření mohou být užitečné při prevenci útoků injektáže XML. V těchto scénářích je uživatelský vstup přiřazen k vlastním proměnným a zpracován funkcí rozšíření, nikoli jako nezpracovaný vstup zřetězený s pokyny pro zpracování. Funkce rozšíření a proměnné obsahují uživatelský vstup, takže fungují pouze na datech XML, která jsou určena návrhářem.  
   
- Použití rozšíření implementovat vlastní <xref:System.Xml.Xsl.XsltContext> třídy společně s rozhraní <xref:System.Xml.Xsl.IXsltContextFunction> a <xref:System.Xml.Xsl.IXsltContextVariable> , které podporují funkce rozšíření a proměnné. <xref:System.Xml.XPath.XPathExpression> Přidá vstupu uživatele s jeho <xref:System.Xml.Xsl.XsltArgumentList> vlastního <xref:System.Xml.Xsl.XsltContext>.  
+ Chcete-li použít rozšíření, implementujte vlastní třídu <xref:System.Xml.Xsl.XsltContext> spolu s rozhraními <xref:System.Xml.Xsl.IXsltContextFunction> a <xref:System.Xml.Xsl.IXsltContextVariable>, které podporují funkce a proměnné rozšíření. <xref:System.Xml.XPath.XPathExpression> přidá vstup uživatele s jeho <xref:System.Xml.Xsl.XsltArgumentList> do vlastního <xref:System.Xml.Xsl.XsltContext>.  
   
- <xref:System.Xml.XPath.XPathExpression> Představuje kompilované dotaz, který <xref:System.Xml.XPath.XPathNavigator> používá k vyhledání a zpracování uzly identifikovaný výraz.  
+ <xref:System.Xml.XPath.XPathExpression> představuje kompilovaný dotaz, který <xref:System.Xml.XPath.XPathNavigator> používá k vyhledání a zpracování uzlů identifikovaných výrazem.  
   
- Následující příklad ukazuje implementaci vlastní místní třídy odvozené z <xref:System.Xml.Xsl.XsltContext>. Komentáře v kódu popisují členy třídy a jejich použití v vlastní funkce. Implementace funkce a proměnné a ukázkové aplikace, která používá tyto implementace postupujte podle tohoto segmentu kódu.  
+ Následující příklad ukazuje implementaci třídy vlastního kontextu odvozenou z <xref:System.Xml.Xsl.XsltContext>. Komentáře v kódu popisují členy třídy a jejich použití ve vlastních funkcích. Implementace funkcí a proměnných a ukázková aplikace, která používá tyto implementace, se řídí tímto segmentem kódu.  
   
  [!code-csharp[XPathExtensionFunctions#2](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#2)]
  [!code-vb[XPathExtensionFunctions#2](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#2)]  
   
- Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextFunction>. Třída, která implementuje <xref:System.Xml.Xsl.IXsltContextFunction> rozpozná a spustí uživatelem definované funkce. Tento příklad používá funkci identifikovaný deklarace: `private int CountChar(string title, char charTocount)`.  
+ Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextFunction>. Třída, která implementuje <xref:System.Xml.Xsl.IXsltContextFunction> řeší a provádí uživatelsky definované funkce. Tento příklad používá funkci identifikovanou deklarací: `private int CountChar(string title, char charTocount)`.  
   
  Komentáře kódu popisují členy třídy.  
   
  [!code-csharp[XPathExtensionFunctions#3](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#3)]
  [!code-vb[XPathExtensionFunctions#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#3)]  
   
- Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextVariable>. Tato třída překládá odkazy na uživatelské proměnné ve výrazech dotazů XPath v době běhu. Instance této třídy se vytvoří a vrátí přepsané <xref:System.Xml.Xsl.XsltContext.ResolveVariable%2A> metoda vlastní <xref:System.Xml.Xsl.XsltContext> třídy.  
+ Následující kód implementuje <xref:System.Xml.Xsl.IXsltContextVariable>. Tato třída překládá odkazy na uživatelsky definované proměnné ve výrazech dotazů XPath za běhu. Instance této třídy je vytvořena a vrácena přepsanou metodou <xref:System.Xml.Xsl.XsltContext.ResolveVariable%2A> třídy Custom <xref:System.Xml.Xsl.XsltContext>.  
   
  Komentáře kódu popisují členy třídy.  
   
  [!code-csharp[XPathExtensionFunctions#4](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#4)]
  [!code-vb[XPathExtensionFunctions#4](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#4)]  
   
- S předchozí definice tříd v oboru, následující kód používá vlastní funkce k počítání znaků v elementech `Tasks.xml` dokumentu. Komentáře v kódu popisují kód, který zkompiluje vlastní funkce a spustí ho proti `Tasks.xml` dokumentu.  
+ S definicemi předchozí třídy v oboru používá následující kód vlastní funkci pro počítání znaků v prvcích `Tasks.xml` dokumentu. Komentáře v kódu popisují kód, který zkompiluje vlastní funkci a spustí jej v dokumentu `Tasks.xml`.  
   
  [!code-csharp[XPathExtensionFunctions#1](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#1)]
  [!code-vb[XPathExtensionFunctions#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#1)]  

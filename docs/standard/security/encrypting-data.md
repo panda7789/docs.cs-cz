@@ -11,22 +11,20 @@ helpviewer_keywords:
 - cryptography [.NET Framework], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d37f7980c3024fa545e5395a4614dcd41a111794
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: b335e0d39c1809b028e2005a472fe77729e9d267
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353198"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706211"
 ---
 # <a name="encrypting-data"></a>Šifrování dat
 Symetrické šifrování a asymetrické šifrování se provádí pomocí různých procesů. Symetrické šifrování se provádí na datových proudech a je proto užitečné pro šifrování velkých objemů dat. Asymetrické šifrování se provádí na malém počtu bajtů a je proto užitečné jenom pro malé objemy dat.  
   
 ## <a name="symmetric-encryption"></a>Symetrické šifrování  
- Spravované třídy symetrického kryptografie se používají se speciální třídou streamu nazvanou <xref:System.Security.Cryptography.CryptoStream>, která šifruje data čtená do datového proudu. Třída **CryptoStream** je inicializována se třídou spravovaného datového proudu, třída implementuje rozhraní <xref:System.Security.Cryptography.ICryptoTransform> (vytvořené ze třídy, která implementuje kryptografický algoritmus), a výčet <xref:System.Security.Cryptography.CryptoStreamMode>, který popisuje typ přístupu povolený pro **CryptoStream**. Třídu **CryptoStream** lze inicializovat pomocí libovolné třídy, která je odvozena z třídy <xref:System.IO.Stream>, včetně <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream> a <xref:System.Net.Sockets.NetworkStream>. Pomocí těchto tříd můžete provádět symetrické šifrování u nejrůznějších objektů streamu.  
+ Spravované třídy symetrického kryptografie se používají se speciální třídou datového proudu s názvem <xref:System.Security.Cryptography.CryptoStream>, který šifruje data čtená do datového proudu. Třída **CryptoStream** je inicializována se třídou spravovaného datového proudu, třída implementuje rozhraní <xref:System.Security.Cryptography.ICryptoTransform> (vytvořené ze třídy, která implementuje šifrovací algoritmus), a výčet <xref:System.Security.Cryptography.CryptoStreamMode>, který popisuje typ přístupu povolený pro objekt **CryptoStream**. Třídu **CryptoStream** lze inicializovat pomocí libovolné třídy, která je odvozena od třídy <xref:System.IO.Stream>, včetně <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>a <xref:System.Net.Sockets.NetworkStream>. Pomocí těchto tříd můžete provádět symetrické šifrování u nejrůznějších objektů streamu.  
   
- Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged>, která implementuje šifrovací algoritmus Rijndael a používá ho k šifrování pro třídu **CryptoStream** . V tomto příkladu je objekt **CryptoStream** inicializován pomocí objektu Stream s názvem `myStream`, který může být jakýkoli typ spravovaného datového proudu. Metodě **CreateEncryptor** z třídy **RijndaelManaged** se předal klíč a IV, který se používá k šifrování. V tomto případě se použije výchozí klíč a hodnota IV vygenerované z `rmCrypto`. Nakonec se předává **CryptoStreamMode. Write** , který zadává přístup pro zápis do datového proudu.  
+ Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged>, která implementuje šifrovací algoritmus Rijndael a používá ho k provedení šifrování ve třídě **CryptoStream** . V tomto příkladu je **CryptoStream** inicializován s objektem datového proudu s názvem `myStream`, který může být jakýkoli typ spravovaného datového proudu. Metodě **CreateEncryptor** z třídy **RijndaelManaged** se předal klíč a IV, který se používá k šifrování. V tomto případě se použijí výchozí klíč a hodnota IV vygenerované z `rmCrypto`. Nakonec se předává **CryptoStreamMode. Write** , který zadává přístup pro zápis do datového proudu.  
   
 ```vb  
 Dim rmCrypto As New RijndaelManaged()  
@@ -43,7 +41,7 @@ CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateEncryptor()
  Následující příklad ukazuje celý proces vytvoření datového proudu, šifrování datového proudu, zápis do datového proudu a zavření datového proudu. Tento příklad vytvoří síťový datový proud, který je zašifrovaný pomocí třídy **CryptoStream** a třídy **RijndaelManaged** . Do šifrovaného datového proudu pomocí třídy <xref:System.IO.StreamWriter> se zapisuje zpráva.  
   
 > [!NOTE]
-> Tento příklad můžete použít také k zápisu do souboru. Provedete to tak, že odstraníte odkaz <xref:System.Net.Sockets.TcpClient> a nahradíte <xref:System.Net.Sockets.NetworkStream> pomocí <xref:System.IO.FileStream>.  
+> Tento příklad můžete použít také k zápisu do souboru. Chcete-li to provést, odstraňte odkaz <xref:System.Net.Sockets.TcpClient> a nahraďte <xref:System.Net.Sockets.NetworkStream> <xref:System.IO.FileStream>.  
   
 ```vb  
 Imports System  

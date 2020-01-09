@@ -4,20 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2bed01a74c5b3338df958a3e178c06602bd69866
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 602ee3c88237a902d48339836fbe25f636ae9705
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052120"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716511"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Jak ladit problémy s aktivací CLR
 
-Pokud narazíte na problémy při provádění aplikace se správnou verzí modulu CLR (Common Language Runtime), můžete zobrazit a ladit aktivační protokoly CLR. Tyto protokoly můžou být velmi užitečné při určování hlavní příčiny problému s aktivací, když vaše aplikace buď načte jinou verzi CLR, než se očekávalo, nebo vůbec nenačte CLR. Chyby [inicializace .NET Framework: Správa uživatelského prostředí](initialization-errors-managing-the-user-experience.md) se zabývá tím, že se pro aplikaci nenajde žádný modul CLR.
+Pokud narazíte na problémy při provádění aplikace se správnou verzí modulu CLR (Common Language Runtime), můžete zobrazit a ladit aktivační protokoly CLR. Tyto protokoly můžou být velmi užitečné při určování hlavní příčiny problému s aktivací, když vaše aplikace buď načte jinou verzi CLR, než se očekávalo, nebo vůbec nenačte CLR. [Chyby inicializace .NET Framework: Správa uživatelského prostředí](initialization-errors-managing-the-user-experience.md) , které popisuje prostředí, když pro aplikaci není nalezeno CLR.
 
-Protokolování aktivace CLR lze povolit v rámci systému pomocí klíče registru HKEY_LOCAL_MACHINE nebo systémové proměnné prostředí. Protokol bude vygenerován, dokud nebude odebrána položka registru nebo proměnná prostředí. Alternativně můžete použít proměnnou uživatelského prostředí nebo uživatele nebo procesu k povolení protokolování s jiným rozsahem a dobou trvání.
+Protokolování aktivace CLR lze povolit v rámci systému pomocí HKEY_LOCAL_MACHINE klíče registru nebo proměnné prostředí systému. Protokol bude vygenerován, dokud nebude odebrána položka registru nebo proměnná prostředí. Alternativně můžete použít proměnnou uživatelského prostředí nebo uživatele nebo procesu k povolení protokolování s jiným rozsahem a dobou trvání.
 
 Protokoly aktivace CLR by se neměly zaměňovat s [protokoly vazeb sestavení](../tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou zcela odlišné.
 
@@ -25,15 +23,15 @@ Protokoly aktivace CLR by se neměly zaměňovat s [protokoly vazeb sestavení](
 
 ### <a name="using-the-registry"></a>Použití registru
 
-1. V editoru registru přejděte na HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework (na 32 počítači) nebo HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework složka (na 64 počítači).
+1. V editoru registru přejděte na HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\. NETFramework (na 32 počítači) nebo\\HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft. NETFramework složka (na 64 počítači).
 
-2. Přidejte řetězcovou hodnotu s `CLRLoadLogDir`názvem a nastavte ji na úplnou cestu k existujícímu adresáři, kam chcete ukládat protokoly aktivace CLR.
+2. Přidejte řetězcovou hodnotu s názvem `CLRLoadLogDir`a nastavte ji na úplnou cestu k existujícímu adresáři, kam chcete ukládat protokoly aktivace CLR.
 
 Protokolování aktivace zůstane povolené, dokud neodeberete řetězcovou hodnotu.
 
 ### <a name="using-an-environment-variable"></a>Použití proměnné prostředí
 
-- Nastavte proměnnou `COMPLUS_CLRLoadLogDir` prostředí na řetězec, který představuje úplnou cestu k existujícímu adresáři, do kterého chcete ukládat protokoly aktivace modulu CLR.
+- Nastavte proměnnou prostředí `COMPLUS_CLRLoadLogDir` na řetězec, který představuje úplnou cestu k existujícímu adresáři, do kterého chcete ukládat protokoly aktivace modulu CLR.
 
     Způsob nastavení proměnné prostředí určuje jeho rozsah:
 
@@ -112,7 +110,7 @@ V následujícím příkladu aktivačního protokolu jsou nejužitečnější in
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
     ```
 
-- **instalace funkcí na vyžádání** odkazuje na povolení .NET Framework 3,5 ve Windows 8. Viz [chyby při inicializaci .NET Framework: Správa uživatelského prostředí](initialization-errors-managing-the-user-experience.md) pro další informace o tomto scénáři.
+- **instalace funkcí na vyžádání** odkazuje na povolení .NET Framework 3,5 ve Windows 8. Další informace o tomto scénáři najdete v tématu [.NET Framework chyby inicializace: Správa uživatelského prostředí](initialization-errors-managing-the-user-experience.md) .
 
     ```output
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3

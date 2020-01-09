@@ -3,13 +3,12 @@ title: Globální nástroje .NET Core
 description: Přehled toho, jaké globální nástroje .NET Core jsou a jaké jsou .NET Core CLI příkazy, které jsou pro ně k dispozici.
 author: KathleenDollard
 ms.date: 05/29/2018
-ms.custom: seodec18
-ms.openlocfilehash: 116739f80d5157632a8e44a19cbef6ba7971d339
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 665cee64cb92efd16f5528feb656b377f9f3283c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318300"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714162"
 ---
 # <a name="net-core-global-tools-overview"></a>Přehled globálních nástrojů .NET Core
 
@@ -69,7 +68,7 @@ Tool 'dotnetsay' (version '2.0.0') was successfully installed.
 
 Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-| JINÉHO          | Cesta                          |
+| OS          | Cesta                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -91,7 +90,7 @@ Pokud je příkaz `dotnetsay`, zavolejte ho pomocí:
 dotnetsay
 ```
 
-Pokud autor nástroje chtěl, aby se zobrazil v kontextu výzvy `dotnet`, mohl by je napsat způsobem, který ho zavolá jako `dotnet <command>`, například:
+Pokud autor nástroje chtěl zobrazit nástroj v kontextu `dotnet` výzvy, mohl by jej napsat způsobem, který ho zavolá jako `dotnet <command>`, například:
 
 ```dotnetcli
 dotnet doc
@@ -108,9 +107,9 @@ dotnet <command> --help
 
 ## <a name="other-cli-commands"></a>Další příkazy rozhraní příkazového řádku
 
-.NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použijte libovolný příkaz `dotnet tool` s jednou z následujících možností:
+.NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použijte kterýkoli z `dotnet tool` příkazů s jednou z následujících možností:
 
-* `--global` nebo `-g` určuje, že se příkaz vztahuje na globální nástroje pro všechny uživatele.
+* `--global` nebo `-g` určuje, že se příkaz vztahuje na globální nástroje pro uživatele.
 * `--tool-path` určuje vlastní umístění pro globální nástroje.
 
 Zjistit, které příkazy jsou k dispozici pro globální nástroje:

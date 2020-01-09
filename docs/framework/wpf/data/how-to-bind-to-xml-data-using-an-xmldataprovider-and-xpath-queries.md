@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: f075d646539de5d68e1c9c75d9664451125e9919
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: a5ad7d8bce9bc0a760868e483278d1836f9472af
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733563"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559696"
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Postupy: Připojení k datům XML použitím objektu XMLDataProvider a dotazů XPath
 Tento příklad ukazuje, jak vytvořit propojení s daty XML pomocí <xref:System.Windows.Data.XmlDataProvider>.  
@@ -26,7 +26,7 @@ Tento příklad ukazuje, jak vytvořit propojení s daty XML pomocí <xref:Syste
   
  [!code-xaml[XMLDataSource#1](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
   
- Jak ukazuje tento příklad, chcete-li vytvořit stejnou deklaraci vazby v syntaxi atributu, je nutné speciální znaky správně Escape. Další informace naleznete v tématu [znakové entity XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
+ Jak ukazuje tento příklad, chcete-li vytvořit stejnou deklaraci vazby v syntaxi atributu, je nutné speciální znaky správně Escape. Další informace naleznete v tématu [znakové entity XML a XAML](../../../desktop-wpf/xaml-services/xml-character-entities.md).  
   
  Při spuštění tohoto příkladu se v <xref:System.Windows.Controls.ListBox> zobrazí následující položky. Jedná se o *název*všech prvků v *knihách* , které *mají hodnotu "* *out*" nebo *číslo* hodnoty 3 nebo větší nebo rovno 8. Všimněte si, že nejsou vráceny žádné položky *CD* , protože <xref:System.Windows.Data.XmlDataProvider.XPath%2A> hodnota nastavená v <xref:System.Windows.Data.XmlDataProvider> označuje, že by měly být vystaveny pouze prvky *Books* (v zásadě nastavení filtru).  
   
@@ -65,4 +65,4 @@ Tento příklad ukazuje, jak vytvořit propojení s daty XML pomocí <xref:Syste
 - [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)
 - [Přehled zdrojů vazby](binding-sources-overview.md)
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [Postupy](data-binding-how-to-topics.md)

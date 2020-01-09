@@ -2,13 +2,12 @@
 title: 'Kurz: vytvoření řešení .NET Core v macOS pomocí Visual Studio Code'
 description: Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pomocí Visual Studio Code.
 ms.date: 12/19/2019
-ms.custom: seodec18
-ms.openlocfilehash: 825665264d4db902ba4c6cbcce7a7add11ec003d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 4dc44a0aa155dca3c106a7da68cf100ef644b58b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75339603"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715305"
 ---
 # <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Kurz: vytvoření řešení .NET Core v macOS pomocí Visual Studio Code
 

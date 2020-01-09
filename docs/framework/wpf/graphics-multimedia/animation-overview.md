@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-ms.openlocfilehash: 870fc1d1f02dca7d4488a27385fcfeaec8098ced
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f0f55c948d10c61ebab57f47e3461531ccf5f610
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039178"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559713"
 ---
 # <a name="animation-overview"></a>Přehled animace
 
@@ -292,7 +292,7 @@ Přiřazení názvu <xref:System.Windows.FrameworkElement> se liší od přiřaz
 
 - Chcete-li vytvořit <xref:System.Windows.FrameworkElement> cíli animace, přidělte mu název nastavením jeho vlastnosti <xref:System.Windows.FrameworkElement.Name%2A>. V kódu je také nutné použít metodu <xref:System.Windows.FrameworkElement.RegisterName%2A> k registraci názvu elementu se stránkou, do které patří.
 
-- Chcete-li vytvořit objekt <xref:System.Windows.Freezable> cíli animace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte [direktivu x:Name](../../xaml-services/x-name-directive.md) k přiřazení názvu. V kódu stačí použít metodu <xref:System.Windows.FrameworkElement.RegisterName%2A> k registraci objektu se stránkou, do které patří.
+- Chcete-li vytvořit objekt <xref:System.Windows.Freezable> cíli animace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte [direktivu x:Name](../../../desktop-wpf/xaml-services/xname-directive.md) k přiřazení názvu. V kódu stačí použít metodu <xref:System.Windows.FrameworkElement.RegisterName%2A> k registraci objektu se stránkou, do které patří.
 
 Následující části obsahují příklad pojmenování prvku v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Podrobnější informace o pojmenování a cílení najdete v [přehledu scénářů](storyboards-overview.md).
 

@@ -3,18 +3,16 @@ title: Direktivy šablon stylů vložené v dokumentu
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d79fb295-ebc7-438d-ba1b-05be7d534834
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 65987c5e29d593758b21259d6367202c882df2de
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 19e25ab7262bb006144eea71e74bd7454066b3f6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026936"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710151"
 ---
 # <a name="style-sheet-directives-embedded-in-a-document"></a>Direktivy šablon stylů vložené v dokumentu
 
-V některých případech existující kód XML obsahuje direktiva list stylu `<?xml:stylesheet?>`. Microsoft Internet Explorer přijímá to jako alternativu k `<?xml-stylesheet?>` syntaxe. Pokud XML data obsahuje `<?xml:stylesheet?>` direktiv, jak je znázorněno v následující data pokusu o načtení těchto dat do XML Document Object Model (DOM) dojde k výjimce.
+V některých případech existující XML obsahuje direktivu šablon stylů `<?xml:stylesheet?>`. Aplikace Microsoft Internet Explorer přijímá jako alternativu k syntaxi `<?xml-stylesheet?>`. Pokud data XML obsahují direktivu `<?xml:stylesheet?>`, jak je znázorněno na následujících datech, pokus o načtení těchto dat do XML model DOM (Document Object Model) (DOM) vyvolá výjimku.
 
 ```xml
 <?xml version="1.0" ?>
@@ -25,17 +23,17 @@ V některých případech existující kód XML obsahuje direktiva list stylu `<
 </root>
 ```
 
-K tomu dochází, `<?xml:stylesheet?>` je považován za neplatný **ProcessingInstruction** do modelu DOM. Žádné **ProcessingInstruction**, podle oborů názvů ve specifikaci XML, může obsahovat jenom názvy no dvojtečka (NCNames), na rozdíl od kvalifikované názvy (QNames).
+K tomu dochází, protože `<?xml:stylesheet?>` se považuje za neplatný **ProcessingInstruction** do modelu DOM. Jakékoli **ProcessingInstruction**, v závislosti na oborech názvů ve specifikaci XML, mohou být pouze názvy bez dvojtečky (NCNames), nikoli kvalifikované názvy (QName).
 
-Z část 6 oborů názvů ve specifikaci XML, má vliv **zatížení** a **příkaz LoadXml** metody v souladu s specifikace, která je v dokumentu:
+Z oddílu 6 specifikací oboru názvů ve specifikaci XML je účinek, aby metody **Load** a **LoadXml** splňovaly specifikace je v dokumentu:
 
-- Všechny názvy atributů a typy prvků obsahovat dvojtečku nebo vůbec.
+- Všechny typy prvků a názvy atributů obsahují buď žádnou, nebo jednu dvojtečku.
 
-- Žádné názvy entit, ProcessingInstruction cíle nebo názvy výpisů obsahovat jakékoli použití dvojteček.
+- Názvy entit, cíle ProcessingInstruction ani názvy Notation neobsahují žádné dvojtečky.
 
-S `<?xml:stylesheet?>` obsahuje dvojtečku, můžete nyní porušovat pravidla v druhém odrážky.
+U `<?xml:stylesheet?>`, který obsahuje dvojtečku, jste teď poznamenali pravidlo ve druhé odrážce.
 
-Podle World Wide Web Consortium (W3C) [přidružení šablony stylů XML dokumenty verze 1.0 doporučení](https://www.w3.org/TR/xml-stylesheet/), instrukce pro zpracování šablony stylů XSLT přidružení k dokumentu XML je `<?xml-stylesheet?>`, se nahrazení dvojtečka Dash.
+V souladu s konsorcium World Wide Web (W3C), který [přiřazuje šablony stylů s dokumenty XML verze 1,0](https://www.w3.org/TR/xml-stylesheet/), je pokyn ke zpracování k přidružení šablony stylů XSLT k dokumentu XML `<?xml-stylesheet?>`a pomlčkou nahrazuje dvojtečku.
 
 ## <a name="see-also"></a>Viz také:
 

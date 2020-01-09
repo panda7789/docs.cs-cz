@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -doc compiler option [Visual Basic]
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
-ms.openlocfilehash: 3da049b912d791f26814bb4b6cbb70998803726a
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: a818fd46bd93682f0bede1d22b8cbc2ca6467a40
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005645"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716743"
 ---
 # <a name="-doc"></a>-doc
 Zpracuje komentáře dokumentace do souboru XML.  
@@ -22,7 +22,7 @@ Zpracuje komentáře dokumentace do souboru XML.
 -doc[+ | -]  
 ```
 
-or  
+nebo  
 
 ```console
 -doc:file  
@@ -32,11 +32,11 @@ or
   
 |Termín|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelné. Zadáním + nebo pouhým `-doc` způsobí, že kompilátor vygeneruje informace o dokumentaci a umístí je do souboru XML. Zadání `-` je ekvivalentem neurčení `-doc`, což nezpůsobí vytvoření informací o dokumentaci.|  
+|`+` &#124; `-`|Volitelné. Zadáním + nebo pouhým `-doc`způsobí, že kompilátor vygeneruje informace o dokumentaci a umístí je do souboru XML. Určení `-` je ekvivalentem neurčení `-doc`, což nezpůsobí vytvoření informací o dokumentaci.|  
 |`file`|Vyžaduje se, pokud se používá `-doc:`. Určuje výstupní soubor XML, který je vyplněn komentáři ze souborů zdrojového kódu kompilace. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek ("").|  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-doc` určuje, zda kompilátor generuje soubor XML obsahující dokumentační komentáře. Použijete-li syntaxi `-doc:file`, parametr `file` určuje název souboru XML. Použijete-li `-doc` nebo `-doc+`, kompilátor převezme název souboru XML ze spustitelného souboru nebo knihovny, kterou vytvořil kompilátor. Použijete-li `-doc-` nebo nezadáte možnost `-doc`, kompilátor nevytvoří soubor XML.  
+ Možnost `-doc` určuje, zda kompilátor generuje soubor XML obsahující dokumentační komentáře. Použijete-li syntaxi `-doc:file`, parametr `file` Určuje název souboru XML. Použijete-li `-doc` nebo `-doc+`, kompilátor převezme název souboru XML ze spustitelného souboru nebo knihovny, kterou vytvořil kompilátor. Použijete-li `-doc-` nebo nezadáte možnost `-doc`, kompilátor nevytvoří soubor XML.  
   
  V souborech zdrojového kódu mohou komentáře k dokumentaci předcházet následující definice:  
   
@@ -46,7 +46,7 @@ or
   
  Chcete-li použít vygenerovaný soubor XML s funkcí Visual Studio [IntelliSense](/visualstudio/ide/using-intellisense) , nechte název souboru XML stejný jako sestavení, které chcete podporovat. Ujistěte se, že soubor XML je ve stejném adresáři jako sestavení, takže pokud je na sestavení odkazováno v projektu sady Visual Studio, je nalezen soubor. XML také. Soubory dokumentace XML nejsou vyžadovány, aby technologie IntelliSense pracovala pro kód v rámci projektu nebo v rámci projektů, na které se odkazuje v projektu.  
   
- Pokud nekompilujete s `/target:module`, soubor XML obsahuje značky `<assembly></assembly>`. Tyto značky určují název souboru obsahujícího manifest sestavení pro výstupní soubor kompilace.  
+ Pokud kompilujete pomocí `-target:module`, soubor XML obsahuje značky `<assembly></assembly>`. Tyto značky určují název souboru obsahujícího manifest sestavení pro výstupní soubor kompilace.  
   
  Způsoby, jak generovat dokumentaci z komentářů v kódu, naleznete v tématu [značky komentářů XML](../../../visual-basic/language-reference/xmldoc/index.md) .  
   

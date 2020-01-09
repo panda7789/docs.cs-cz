@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-ms.openlocfilehash: bd79d95a18fb1935d97fff2d1b2c7767752b9765
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d186670489ada51fced67ff9adeb73b14909b664
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351722"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716691"
 ---
 # <a name="-target-visual-basic"></a>-Target (Visual Basic)
 
@@ -27,9 +27,9 @@ Určuje formát výstupu kompilátoru.
 
 Následující tabulka shrnuje efekt možnosti `-target`.
 
-|**Nastavení**|**Předvídatelně**|
+|**Možnost**|**Chování**|
 |----------------|------------------|
-|`-target:exe`|Způsobí, že kompilátor vytvoří spustitelnou konzolovou aplikaci.<br /><br /> Toto je výchozí možnost, pokud není zadána možnost `-target`. Spustitelný soubor se vytvoří s příponou. exe.<br /><br /> Pokud není uvedeno jinak s možností `/out`, název výstupního souboru převezme název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována pouze jedna `Sub Main` procedura. Pomocí možnosti kompilátoru `-main` určete, která třída obsahuje `Sub Main` postup.|
+|`-target:exe`|Způsobí, že kompilátor vytvoří spustitelnou konzolovou aplikaci.<br /><br /> Toto je výchozí možnost, pokud není zadána možnost `-target`. Spustitelný soubor se vytvoří s příponou. exe.<br /><br /> Pokud není uvedeno jinak s možností `-out`, název výstupního souboru převezme název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována pouze jedna `Sub Main` procedura. Pomocí možnosti kompilátoru `-main` určete, která třída obsahuje `Sub Main` postup.|
 |`-target:library`|Způsobí, že kompilátor vytvoří dynamickou knihovnu (DLL).<br /><br /> Soubor dynamické knihovny je vytvořen s příponou. dll.<br /><br /> Pokud není uvedeno jinak s možností `-out`, název výstupního souboru převezme název prvního vstupního souboru.<br /><br /> Při sestavování knihovny DLL není nutná `Sub Main` procedura.|
 |`-target:module`|Způsobí, že kompilátor vygeneruje modul, který lze přidat do sestavení.<br /><br /> Výstupní soubor je vytvořen s příponou. netmodule.<br /><br /> Modul CLR (Common Language Runtime) .NET nemůže načíst soubor, který nemá sestavení. Takový soubor však lze začlenit do manifestu sestavení sestavení pomocí `-reference`.<br /><br /> Když kód v jednom modulu odkazuje na interní typy v jiném modulu, oba moduly musí být začleněny do manifestu sestavení pomocí `-reference`.<br /><br /> Možnost [-addmodule –](../../../visual-basic/reference/command-line-compiler/addmodule.md) Importuje metadata z modulu.|
 |`-target:winexe`|Způsobí, že kompilátor vytvoří spustitelnou aplikaci založenou na Windows.<br /><br /> Spustitelný soubor se vytvoří s příponou. exe. Aplikace pro systém Windows je taková, která poskytuje uživatelské rozhraní z knihovny tříd .NET Framework nebo pomocí rozhraní API systému Windows.<br /><br /> Pokud není uvedeno jinak s možností `-out`, název výstupního souboru převezme název vstupního souboru, který obsahuje `Sub Main` postup.<br /><br /> V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována pouze jedna `Sub Main` procedura. V případech, kdy má váš kód více než jednu třídu, která má `Sub Main` proceduru, použijte možnost kompilátoru `-main` k určení, která třída obsahuje `Sub Main` proceduru.|

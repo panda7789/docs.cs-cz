@@ -1,6 +1,5 @@
 ---
 title: Postup převodu řetězce na číslo – C# programovací Průvodce
-ms.custom: seodec18
 ms.date: 02/11/2019
 helpviewer_keywords:
 - conversions [C#]
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: a22b3af659630e947490858915e638e601b5f18f
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 21732acd65eb4522b19ce84600fd8b333fb8a705
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635038"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711867"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Převod řetězce na číslo (C# Průvodce programováním)
 

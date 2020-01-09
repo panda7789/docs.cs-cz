@@ -4,18 +4,18 @@ description: Naučte se dokumentovat kód pomocí dokumentačních komentářů 
 ms.date: 02/14/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 92a64a8f7a652f8b957013fc05f426e6b983655d
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 6aa52030e20f61b26311347a57629658ebe0e609
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710993"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713943"
 ---
-# <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu s komentáři XML
+# <a name="document-your-code-with-xml-comments"></a>Dokumentování kódu pomocí komentářů XML
 
 Komentáře dokumentace XML jsou zvláštním druhem komentáře, přidané nad definici libovolného uživatelsky definovaného typu nebo člena.
 Jsou speciální, protože mohou být zpracovány kompilátorem pro generování souboru dokumentace XML v době kompilace.
-Soubor XML generovaný kompilátorem lze distribuovat společně s sestavením .NET tak, aby Visual Studio a jiné prostředí pro vývoj mohli používat technologii IntelliSense k zobrazení rychlých informací o typech nebo členech. Navíc můžete soubor XML spustit prostřednictvím nástrojů, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , pro generování odkazů na webové stránky rozhraní API.
+Soubor XML generovaný kompilátorem lze distribuovat společně s sestavením .NET tak, aby Visual Studio a jiné prostředí pro vývoj mohli používat technologii IntelliSense k zobrazení rychlých informací o typech nebo členech. Kromě toho lze spustit soubor XML prostřednictvím nástrojů jako [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) ke generování websites referenční dokumentace rozhraní API.
 
 Komentáře dokumentace XML, stejně jako všechny ostatní komentáře, jsou kompilátorem ignorovány.
 
@@ -41,7 +41,7 @@ Komentáře dokumentace XML používají tři lomítka (`///`) a tělo komentá�
 
 [!code-csharp[XML Documentation Comment](../../samples/snippets/csharp/concepts/codedoc/xml-comment.cs)]
 
-## <a name="walkthrough"></a>Podrobné
+## <a name="walkthrough"></a>Návod
 
 Pojďme si projít dokumentací velmi základní knihovny pro matematiku, abychom novým vývojářům usnadnili pochopení/přispívání a vývojářům třetích stran používat.
 
@@ -92,14 +92,14 @@ To zahrnuje použití podřízené značky `<code>`.
 
 Značka `code` zachovává zalomení řádků a odsazení po delších příkladech.
 
-## <a name="para"></a>\<para >
+## <a name="para"></a>\<para>
 
 Použijte značku `<para>` k formátování obsahu v rámci jeho nadřazené značky. `<para>` se obvykle používá uvnitř značky, jako je například `<remarks>` nebo `<returns>`, k rozdělení textu do odstavců.
 Můžete naformátovat obsah značky `<remarks>` pro definici třídy.
 
 [!code-csharp[Para Tag](~/samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
 
-## <a name="c"></a>\<c >
+## <a name="c"></a>\<c>
 
 Stále v tématu formátování, použijte značku `<c>` pro označení části textu jako kódu.
 Vypadá to jako značka `<code>`, ale je vložená. Je užitečné, pokud chcete zobrazit rychlý příklad kódu jako součást obsahu značky.
@@ -170,7 +170,7 @@ Vytvořte neuspořádaný seznam každé matematické operace, kterou podporuje 
 
 Seřazený seznam nebo tabulku můžete vytvořit tak, že změníte atribut `type` na `number` nebo `table`, v uvedeném pořadí.
 
-### <a name="putting-it-all-together"></a>Společné umístění
+### <a name="put-it-all-together"></a>Spojení všech součástí dohromady
 
 Pokud jste postupovali podle tohoto kurzu a v případě potřeby použili značky v kódu, váš kód by měl nyní vypadat podobně jako následující:
 
@@ -206,7 +206,7 @@ Atribut `id`, který lze použít místo `name` představuje ID značky, která 
 ### <a name="user-defined-tags"></a>Uživatelsky definované značky
 
 Všechny značky, které jsou uvedeny výše, představují ty, které jsou rozpoznávány C# kompilátorem. Uživatel však může definovat vlastní značky.
-Nástroje, jako je Sandcastle, podporují i další značky, jako je [`<event>`](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm), [`<note>`](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm) a dokonce i podporu [dokumentace oborů názvů](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
+Nástroje jako Sandcastle přinášejí podporu pro další značky, jako je například [\<> události](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm) a [\<Poznámka >](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm), a dokonce podporují [dokumentování názvů](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
 Je také možné použít vlastní nebo interní nástroje pro tvorbu dokumentace se standardními značkami a více výstupních formátů z formátu HTML do formátu PDF.
 
 ## <a name="recommendations"></a>Doporučení
@@ -218,7 +218,7 @@ Dokumentování kódu se doporučuje z mnoha důvodů. Níže jsou uvedeny někt
 - Minimální typy a jejich členové by měli mít `<summary>` značku, protože její obsah je potřebný pro IntelliSense.
 - Text dokumentace by měl být napsán pomocí úplných vět končících s úplnými pozastávkami.
 - Částečné třídy jsou plně podporovány a informace o dokumentaci budou zřetězeny do jediné položky pro daný typ.
-- Kompilátor ověřuje syntaxi `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>` a `<typeparam>` značek.
+- Kompilátor ověřuje syntaxi značek `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>`a `<typeparam>`.
 - Kompilátor ověřuje parametry, které obsahují cesty k souborům a odkazy na jiné části kódu.
 
 ## <a name="see-also"></a>Viz také:

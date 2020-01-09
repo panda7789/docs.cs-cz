@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zápis textu do souboru'
+title: 'Postupy: zápis textu do souboru'
 ms.date: 01/04/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,53 +11,51 @@ helpviewer_keywords:
 - streams, writing text to files
 - data streams, writing text to files
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d2fb5a30e165b78fef797bf8bfe536b66cae9a1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 42b758eeb36a4c319c3e1f24676cb600d580902e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640752"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706605"
 ---
-# <a name="how-to-write-text-to-a-file"></a>Postupy: Zápis textu do souboru
-Toto téma ukazuje různé způsoby zápisu textu do souborů pro aplikace .NET. 
+# <a name="how-to-write-text-to-a-file"></a>Postupy: zápis textu do souboru
+V tomto tématu se dozvíte o různých způsobech zápisu textu do souboru pro aplikaci .NET. 
 
 Následující třídy a metody se obvykle používají k zápisu textu do souboru:  
   
-- <xref:System.IO.StreamWriter> obsahuje metody pro zápis do souboru synchronně (<xref:System.IO.StreamWriter.Write%2A> a <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).  
+- <xref:System.IO.StreamWriter> obsahuje metody pro synchronně zapisování do souboru (<xref:System.IO.StreamWriter.Write%2A> a <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).  
   
-- <xref:System.IO.File> poskytuje statické metody pro zápis textu do souboru, například <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru, například <xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A>, a <xref:System.IO.File.AppendText%2A>.  
+- <xref:System.IO.File> poskytuje statické metody pro zápis textu do souboru, například <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo pro přidání textu do souboru, například <xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A>a <xref:System.IO.File.AppendText%2A>.  
   
-- <xref:System.IO.Path> slouží k řetězci, které obsahují informace o cestě souboru nebo adresáře. Obsahuje <xref:System.IO.Path.Combine%2A> metoda a, v .NET Core 2.1 a později, <xref:System.IO.Path.Join%2A> a <xref:System.IO.Path.TryJoin%2A> metody, které umožňují zřetězení řetězců k sestavení cesty k souboru nebo adresáře.
+- <xref:System.IO.Path> je pro řetězce, které obsahují informace o cestě k souboru nebo adresáři. Obsahuje metodu <xref:System.IO.Path.Combine%2A> a v .NET Core 2,1 a novějších metodách <xref:System.IO.Path.Join%2A> a <xref:System.IO.Path.TryJoin%2A>, které umožňují zřetězení řetězců k sestavení cesty k souboru nebo adresáři.
 
 > [!NOTE]
-> Následující příklady ukazují jenom minimální množství kódu, které jsou potřeba. Reálné aplikace obvykle poskytuje robustnější kontroly chyb a zpracování výjimek.  
+> Následující příklady znázorňují pouze minimální požadovaný kód. Reálné aplikace obvykle poskytují robustnější kontrolu chyb a zpracování výjimek.  
   
-## <a name="example-synchronously-write-text-with-streamwriter"></a>Příklad: Synchronně napsat text pomocí třídy StreamWriter
+## <a name="example-synchronously-write-text-with-streamwriter"></a>Příklad: synchronní zápis textu pomocí StreamWriter
 
-Následující příklad ukazuje způsob použití <xref:System.IO.StreamWriter> tříd synchronně zápisu textu na nový řádek jeden soubor současně. Protože <xref:System.IO.StreamWriter> objekt je deklarovaný a instance v `using` příkaz, <xref:System.IO.StreamWriter.Dispose%2A> je vyvolána metoda, která automaticky vyprázdní a zavře datový proud.  
+Následující příklad ukazuje, jak použít třídu <xref:System.IO.StreamWriter> k synchronnímu zápisu textu do nového souboru po jednom řádku. Vzhledem k tomu, že objekt <xref:System.IO.StreamWriter> je deklarován a vytvořen v příkazu `using`, je vyvolána metoda <xref:System.IO.StreamWriter.Dispose%2A>, která automaticky vyprázdní a uzavře datový proud.  
 
 [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/write.cs)] 
 [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/write.vb)]  
 
-## <a name="example-synchronously-append-text-with-streamwriter"></a>Příklad: Synchronně připojit text pomocí třídy StreamWriter
+## <a name="example-synchronously-append-text-with-streamwriter"></a>Příklad: synchronní připojení textu pomocí StreamWriter
 
-Následující příklad ukazuje způsob použití <xref:System.IO.StreamWriter> tříd synchronně přidat text do textového souboru vytvořeného v prvním příkladu.   
+Následující příklad ukazuje, jak použít třídu <xref:System.IO.StreamWriter> k synchronnímu připojení textu k textovému souboru vytvořenému v prvním příkladu.   
 
 [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/append.cs)] 
 [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/append.vb)]  
 
-## <a name="example-asynchronously-write-text-with-streamwriter"></a>Příklad: Asynchronně napsat text pomocí třídy StreamWriter
+## <a name="example-asynchronously-write-text-with-streamwriter"></a>Příklad: asynchronní zápis textu pomocí StreamWriter
 
-Následující příklad ukazuje způsob asynchronního zápisu textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy. K vyvolání <xref:System.IO.StreamWriter.WriteAsync%2A> metody volání metody, které musí být v rámci `async` metody. C# Příklad vyžaduje C# 7.1 nebo novější, který přidává podporu pro `async` modifikátor na vstupní bod programu. 
+Následující příklad ukazuje, jak asynchronně zapisovat text do nového souboru pomocí třídy <xref:System.IO.StreamWriter>. Chcete-li vyvolat metodu <xref:System.IO.StreamWriter.WriteAsync%2A>, musí být volání metody v rámci metody `async`. C# Příklad vyžaduje C# 7,1 nebo novější, který přidává podporu modifikátoru `async` v vstupním bodě programu. 
 
 [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/async.cs)] 
 [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/async.vb)]  
 
-## <a name="example-write-and-append-text-with-the-file-class"></a>Příklad: Zapsat a připojit text pomocí třídy souboru
+## <a name="example-write-and-append-text-with-the-file-class"></a>Příklad: zápis a přidávání textu pomocí třídy File
 
-Následující příklad ukazuje, jak zápis textu do nového souboru a přidávat nové řádky textu do stejného souboru pomocí <xref:System.IO.File> třídy. <xref:System.IO.File.WriteAllText%2A> a <xref:System.IO.File.AppendAllLines%2A> metod otevřete a zavřete soubor automaticky. Pokud cesta poskytnete <xref:System.IO.File.WriteAllText%2A> metoda již existuje, přepíše se.  
+Následující příklad ukazuje, jak napsat text do nového souboru a připojit nové řádky textu ke stejnému souboru pomocí třídy <xref:System.IO.File>. Metody <xref:System.IO.File.WriteAllText%2A> a <xref:System.IO.File.AppendAllLines%2A> otevřou a zavřou soubor automaticky. Pokud cesta, kterou zadáte do metody <xref:System.IO.File.WriteAllText%2A>, již existuje, soubor bude přepsán.  
 
 [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/file.cs)] 
 [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/file.vb)]  
@@ -67,8 +65,8 @@ Následující příklad ukazuje, jak zápis textu do nového souboru a přidáv
 - <xref:System.IO.StreamWriter>
 - <xref:System.IO.Path>
 - <xref:System.IO.File.CreateText%2A?displayProperty=nameWithType>
-- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
-- [Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)
-- [Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)
-- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)
-- [Vstupně-výstupních operací souborů a datových proudů](../../../docs/standard/io/index.md)
+- [Postupy: zobrazení výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
+- [Postupy: čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)
+- [Postupy: otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)
+- [Postupy: čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)
+- [Vstupně-výstupní operace se soubory a datovým proudem](../../../docs/standard/io/index.md)

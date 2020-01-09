@@ -1,6 +1,5 @@
 ---
 title: <example> – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <example>
@@ -9,14 +8,14 @@ helpviewer_keywords:
 - <example> C# XML tag
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
-ms.openlocfilehash: 17956838c20a4342873478869c07c6382f037fcb
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 13f4a2bb9dcef5bd0359f7e5bd9cab60acde3719
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523511"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75697010"
 ---
-# <a name="example-c-programming-guide"></a>> \<example (C# Průvodce programováním)
+# <a name="example-c-programming-guide"></a>Příklad > \<(C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,7 +27,7 @@ ms.locfileid: "72523511"
  Popis ukázky kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Značka > \<example umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití značky [\<code >](./code.md) .  
+ \<příklad > tag umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití značky [> kódu\<](./code.md) .  
   
  Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   

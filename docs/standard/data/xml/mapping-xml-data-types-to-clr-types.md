@@ -3,21 +3,19 @@ title: Mapování datových typů XML na typy CLR
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: cabdfcad-f359-479b-b71c-8b2fad42ca49
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 48ec3a5b719b05112b257871f64a34f2bc21eeab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 536c8dcd03d98879e24ae62d2b8a47e36564aaf6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650177"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710658"
 ---
 # <a name="mapping-xml-data-types-to-clr-types"></a>Mapování datových typů XML na typy CLR
 
-Následující tabulka popisuje výchozí mapování mezi datovými typy XML a běžné typy language runtime (CLR).
+Následující tabulka popisuje výchozí mapování mezi datovými typy XML a typy modulu CLR (Common Language Runtime).
 
 > [!NOTE]
-> `xs` a `xdt` předpony jsou mapovány na <https://www.w3.org/2001/XMLSchema> a <https://www.w3.org/2003/05/xpath-datatypes> identifikátorů URI oboru názvů v uvedeném pořadí.
+> `xs` a předpony `xdt` jsou namapovány na <https://www.w3.org/2001/XMLSchema> a v uvedeném pořadí identifikátory URI oboru názvů <https://www.w3.org/2003/05/xpath-datatypes>.
 
 |Typ XML|Typ CLR|
 |--------------|--------------|
@@ -71,12 +69,12 @@ Následující tabulka popisuje výchozí mapování mezi datovými typy XML a b
 |`xdt:anyAtomicType`|<xref:System.Object>|
 |`xs:anySimpleType`|<xref:System.String>|
 |Uzel dokumentu|<xref:System.Xml.XPath.XPathNavigator>|
-|Uzlu elementu|<xref:System.Xml.XPath.XPathNavigator>|
+|Uzel elementu|<xref:System.Xml.XPath.XPathNavigator>|
 |Uzel atributu|<xref:System.Xml.XPath.XPathNavigator>|
-|Uzel Namespace|<xref:System.Xml.XPath.XPathNavigator>|
+|Uzel oboru názvů|<xref:System.Xml.XPath.XPathNavigator>|
 |Textový uzel|<xref:System.Xml.XPath.XPathNavigator>|
 |Uzel komentáře|<xref:System.Xml.XPath.XPathNavigator>|
-|Uzel zpracování instrukcí|<xref:System.Xml.XPath.XPathNavigator>|
+|Zpracovává se uzel instrukcí.|<xref:System.Xml.XPath.XPathNavigator>|
 
 ## <a name="see-also"></a>Viz také:
 

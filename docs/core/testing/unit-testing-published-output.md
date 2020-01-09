@@ -4,13 +4,12 @@ description: Naučte se spouštět testy publikovaných knihoven místo ve zdroj
 author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
-ms.custom: seodec18
-ms.openlocfilehash: e4fd25dc9ff30bdfe85cd1167a1dc41ea20a5f80
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 7618d37782de3a16f1963380bbb56945fb73e8eb
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771928"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714257"
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Testování publikovaného výstupu pomocí dotnet VSTest
 

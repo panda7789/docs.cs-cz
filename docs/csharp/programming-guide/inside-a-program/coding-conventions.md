@@ -1,18 +1,17 @@
 ---
 title: C#Konvence kódování C# – Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 42e1814af38fa442255f6da79fb4862ce3d0f361
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c56d673de958f49a9ace60350442e89039e1d69f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423209"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712101"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Převody kódování C# (Průvodce programováním v C#)
  Konvence kódování slouží k následujícím účelům:  
@@ -115,7 +114,7 @@ ms.locfileid: "73423209"
   
      [!code-csharp[csProgGuideCodingConventions#13](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#13)]  
   
-### <a name="delegates"></a>Delegáty  
+### <a name="delegates"></a>Delegáti  
   
 - K vytvoření instancí typu delegáta použijte stručnou syntaxi.  
   
@@ -193,7 +192,7 @@ ms.locfileid: "73423209"
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   
-## <a name="security"></a>Zabezpečení  
+## <a name="security"></a>Zabezpečení –  
  Postupujte podle pokynů v části [zásady bezpečného kódování](../../../standard/security/secure-coding-guidelines.md).  
   
 ## <a name="see-also"></a>Viz také:

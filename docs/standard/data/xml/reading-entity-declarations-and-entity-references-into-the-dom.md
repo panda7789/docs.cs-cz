@@ -3,17 +3,15 @@ title: Načtení deklarací entit a odkazů na entity do modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e30b52b8cdfb4d185687d58c80f4475730031c86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa650e75d7661eeafea74146f5cbb61878978575
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698794"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710398"
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Načtení deklarací entit a odkazů na entity do modelu DOM
-Entita je deklarace, která uvádí název, který se má použít v souboru XML místo obsahu nebo značky. Existují dvě části k entitám. Nejprve musíte tie název pro nahrazení obsahu pomocí deklarace entity. Vytvoří pomocí deklarace entity `<!ENTITY name "value">` syntaxe v definici typu dokumentu (DTD) nebo schématu XML. Za druhé název definovaný v deklaraci entity se následně používá v souboru XML. Při použití v souboru XML, je volána odkazu na entitu. Například následující deklaraci entita deklaruje entity názvu `publisher` jsou spojeny s obsahem "Microsoft Press".  
+Entita je deklarace, která uvádí název, který se má použít v XML místo obsahu nebo kódu. Existují dvě části pro entity. Nejprve je třeba spojit název nahrazujícího obsahu pomocí deklarace entity. Deklarace entity je vytvořena pomocí syntaxe `<!ENTITY name "value">` v dokumentu definice typu dokumentu (DTD) nebo schématu XML. V druhém případě je název definovaný v deklaraci entity následně použit v souboru XML. Při použití v kódu XML se nazývá odkaz na entitu. Například následující deklarace entity deklaruje entitu názvu `publisher` přidružit k obsahu "Microsoft Press".  
   
 ```xml  
 <!ENTITY publisher "Microsoft Press">  
@@ -26,14 +24,14 @@ Entita je deklarace, která uvádí název, který se má použít v souboru XML
 <pubinfo>Published by &publisher;</pubinfo>  
 ```  
   
- Některé analyzátorů automaticky rozšíří entity dokumentu je načtena do paměti. Proto když XML je načítána do paměti, entity prohlášení jsou zapamatovaných a uložit. Pokud následně analyzátor nalezne `&;` znaků, které identifikovat odkaz na obecnou entitu, analyzátor vyhledá tímto názvem v tabulce entity prohlášení. Odkaz na `&publisher;` nahrazuje obsah, který představuje. Pomocí následující kód XML  
+ Některé analyzátory automaticky rozbalí entity, když je dokument načten do paměti. Proto když je soubor XML čten do paměti, deklarace entit jsou zachovány a uloženy. Pokud analyzátor následně nalezne `&;` znaků, které identifikují obecný odkaz na entitu, analyzátor vyhledá tento název v tabulce deklarací entit. Odkaz, `&publisher;` je nahrazen obsahem, který představuje. Pomocí následujícího kódu XML  
   
 ```xml  
 <author>Fred</author>  
 <pubinfo>Published by &publisher;</pubinfo>  
 ```  
   
- rozbalení odkaz na entitu a nahrazování `&publisher;` díky Microsoft Press obsah poskytuje následující rozšířené kód XML.  
+ Rozbalením odkazu na entitu a nahrazením `&publisher;` pomocí obsahu Microsoft Press získáte následující rozšířené XML.  
   
  **Output**  
   
@@ -42,17 +40,17 @@ Entita je deklarace, která uvádí název, který se má použít v souboru XML
 <pubinfo>Published by Microsoft Press</pubinfo>  
 ```  
   
- Existují různé druhy entit. Následující diagram znázorňuje rozdělení typy entit a terminologie.  
+ Existuje mnoho druhů entit. Následující diagram znázorňuje rozdělení typů entit a terminologie.  
   
  ![Vývojový diagram hierarchie typů entit](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
   
- Ve výchozím nastavení pro implementaci rozhraní Microsoft .NET Framework z XML Document Object Model (DOM) je zachování odkazy na entity a ne rozbalit entity při načtení XML. Důsledkem tohoto je, že jako dokument se načte do modelu DOM, **XmlEntityReference** uzlu, který obsahuje odkaz na proměnnou `&publisher;` je vytvořen, s podřízenými uzly představující obsah entity deklarované v DTD.  
+ Výchozí hodnota pro implementaci model DOM (Document Object Model) XML (DOM) pro Microsoft .NET Framework je zachovat odkazy na entity a nerozšiřovat entity, když je XML načteno. Důvodem je, že když je dokument načten v modelu DOM, je vytvořen uzel **XmlEntityReference** obsahující referenční proměnnou `&publisher;`, s podřízenými uzly, které představují obsah v entitě deklarované v souboru DTD.  
   
- Použití `<!ENTITY publisher "Microsoft Press">` entity prohlášení, následující diagram ukazuje **XmlEntity** a **XmlText** uzlů vytvořené z této deklarace.  
+ Pomocí deklarace entity `<!ENTITY publisher "Microsoft Press">` se v následujícím diagramu zobrazují uzly **XmlEntity** a **XmlText** vytvořené z této deklarace.  
   
- ![uzlů vytvořené z entity prohlášení](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
+ ![uzly vytvořené z deklarace entity](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
   
- Rozdíly při odkazy na entity rozbaleny, a pokud nejsou různá v jakých uzlů se generují ve stromové struktuře modelu DOM, v paměti. Rozdíl v uzlech, které jsou generovány je vysvětleno v tématech [odkazy na Entity jsou zachovány](../../../../docs/standard/data/xml/entity-references-are-preserved.md) a [odkazy na Entity jsou rozšířené a Nezachované](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
+ Rozdíly při rozbalení odkazů na entity a v případě, že nejsou v nich rozdíl v tom, jaké uzly jsou generovány ve stromové struktuře modelu DOM, v paměti. Rozdíl v uzlech, které jsou generovány, je vysvětlen v tématech [odkazy na entity jsou zachovány](../../../../docs/standard/data/xml/entity-references-are-preserved.md) a [odkazy na entity jsou rozšířeny a nejsou zachovány](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
   
 ## <a name="see-also"></a>Viz také:
 

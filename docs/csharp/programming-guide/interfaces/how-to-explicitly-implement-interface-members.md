@@ -1,16 +1,15 @@
 ---
 title: Explicitní implementace členů rozhraní – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
-ms.openlocfilehash: 4efc325b3587ee790cce739727506a28c3a1f524
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: d006db2a7501a3273f5cd11e82bc589b21e1ce9f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635402"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712088"
 ---
 # <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Postup explicitní implementace členů rozhraní (C# Průvodce programováním)
 Tento příklad deklaruje [rozhraní](../../language-reference/keywords/interface.md), `IDimensions`a třídu, `Box`, která explicitně implementuje členy rozhraní `getLength` a `getWidth`. Členové jsou k dispozici prostřednictvím instance rozhraní `dimensions`.  

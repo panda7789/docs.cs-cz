@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 21b2b0fb606333ace05b6525c9f461e6ee1709d1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 9bca68753a93721e48d1ff90aa7baf3a147da0ee
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338522"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708201"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -58,7 +58,7 @@ Tento CLR je sestaven ze stejné základní znakové sady jako CLR. Původně Co
 
 Základní knihovna tříd .NET Core (BCL)
 
-Sada knihoven, které tvoří obory názvů System. * (a v omezeném rozsahu Microsoft. *). BCL je pro obecné účely rozhraní nižší úrovně, které používá aplikační architektury vyšší úrovně, například ASP.NET Core, sestavení. Zdrojový kód .NET Core BCL je obsažený v [úložišti CoreFX](https://github.com/dotnet/corefx). Většina rozhraní API .NET Core je však také k dispozici v .NET Framework, takže si CoreFX můžete představit jako rozvětvení .NET Framework BCL.
+Sada knihoven, které tvoří systém.\* (a do oboru názvů Microsoft.\*) s omezeným rozsahem. BCL je pro obecné účely rozhraní nižší úrovně, které používá aplikační architektury vyšší úrovně, například ASP.NET Core, sestavení. Zdrojový kód .NET Core BCL je obsažen v [úložišti modulu runtime .NET Core](https://github.com/dotnet/runtime). Většina rozhraní API .NET Core je však také k dispozici v .NET Framework, takže si CoreFX můžete představit jako rozvětvení .NET Framework BCL.
 
 ## <a name="corert"></a>CoreRT
 
@@ -66,7 +66,7 @@ Modul runtime .NET Core.
 
 Na rozdíl od CLR/CoreCLR není CoreRT virtuálním počítačem, což znamená, že nezahrnuje zařízení pro generování a spouštění kódu průběžně, protože nezahrnuje [JIT](#jit). Nicméně obsahuje [GC](#gc) a možnost identifikace typu modulu runtime (RTTI) a reflexe. Nicméně systém jeho typů je navržen tak, aby se metadata pro reflexi nevyžadovala. To umožňuje, aby byl řetěz nástrojů [AOT](#aot) , který může propojit nadbytečné metadata a (důležitější je důležitější) identifikovat kód, který aplikace nepoužívá. CoreRT je ve vývoji.
 
-Viz [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
+Přečtěte si [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
 
 ## <a name="cross-platform"></a>pro různé platformy
 

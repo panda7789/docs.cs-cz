@@ -1,17 +1,16 @@
 ---
 title: Rozhraní – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 08/21/2018
 helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: d03917353a9e6879ccb3b368d7d190aeeacb702c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 3187b8b94c6e46ec13312fc31ac1ed9852199d6b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635233"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714610"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -54,7 +53,7 @@ Rozhraní má následující vlastnosti:
 - Rozhraní je jako abstraktní základní třída s pouze abstraktními členy. Všechny třídy nebo struktury, které implementují rozhraní, musí implementovat všechny jeho členy.
 - Nelze vytvořit instanci rozhraní přímo. Jeho členové jsou implementováni jakoukoliv třídou nebo strukturou, která implementuje rozhraní.
 - Rozhraní můžou obsahovat události, indexery, metody a vlastnosti.
-- Rozhraní neobsahují žádnou implementaci metod.
+- Rozhraní neobsahují žádnou implementaci metod ( C# v 8,0, rozhraní můžou mít [výchozí implementaci pro metody](../../whats-new/csharp-8.md#default-interface-methods)).
 - Třída nebo struktura může implementovat více rozhraní. Třída může dědit základní třídu a také implementovat jedno nebo více rozhraní.
 
 ## <a name="in-this-section"></a>V tomto oddílu

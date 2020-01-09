@@ -3,17 +3,15 @@ title: Dynamické aktualizace pro NodeLists a NamedNodeMaps
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 76c511fd-6704-4ca4-8078-860a68d898ad
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9f56ba8711988f2f7d743dc4ff7b69272e2642a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 58dfde94c2f37b0a09ee795b9df20296c9f86da6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934469"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710970"
 ---
 # <a name="dynamic-updates-to-nodelists-and-namednodemaps"></a>Dynamické aktualizace pro NodeLists a NamedNodeMaps
-Vzhledem k tomu, **XmlNodeList** a **XmlNamedNodeMap** obsahují sadu uzlů, ale dokument XML je načten do paměti a je upravována, World Wide Web Consortium (W3C) uvádí, že tyto objekty která obsahují sadu uzlů musí být dynamické. To znamená pokud se změní podkladové dokument, pak data v těchto dvou objektů by měl změnit také. Proto pokud máte **XmlNodeList** , která obsahuje všechny podřízené prvky prvku konkrétní (například prvek X) a pak přidejte další prvek, Q, element v dokumentu v rámci elementu X. **XmlNodeList** musí být také tento nový prvek Q přidat do své kolekce. Totéž platí v opačném pořadí. Pokud uzel se přidá do **XmlNodeList**, je také aktualizovat zdrojový dokument.  
+Vzhledem k tomu, že **XmlNodeList** a **XmlNamedNodeMap** obsahují sadu uzlů, ale dokument XML je načten do paměti a je upravován, konsorcium World Wide Web (W3C) uvádí, že tyto objekty, které obsahují sady uzlů, musí být dynamické. To znamená, že pokud se změní podkladové dokumenty, data v těchto dvou objektech by se měla změnit také. Proto pokud máte **XmlNodeList** , který obsahuje všechny podřízené prvky určitého prvku (například element X), pak přidáte další prvek, element Q, do dokumentu pod prvkem x. **XmlNodeList** by měl také mít přidán nový element Q do své kolekce. Totéž platí v obráceném pořadí. Pokud se do **XmlNodeList**přidá uzel, bude aktualizován i příslušný dokument.  
   
 ## <a name="see-also"></a>Viz také:
 

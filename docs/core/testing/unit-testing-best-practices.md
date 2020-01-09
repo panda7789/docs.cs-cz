@@ -4,13 +4,12 @@ description: Naučte se osvědčené postupy pro psaní testů jednotek, které 
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.custom: seodec18
-ms.openlocfilehash: afd6e7e25573cbb571b225c263b9bcfccfca5647
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 387d66bfeaf48359a27a532247a799c319f38caa
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926389"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714282"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Osvědčené postupy testování částí pomocí .NET Core a .NET Standard
 
@@ -33,7 +32,7 @@ Chyby regrese jsou chyby, které jsou představeny, když je provedena změna ap
 Při testování částí je možné znovu spustit celou sadu testů po každém sestavení nebo dokonce i po změně řádku kódu. Máte jistotu, že nový kód neruší existující funkce.
 
 ### <a name="executable-documentation"></a>Dokumentace ke spustitelnému souboru
-Nemusí vždy být zřejmé, co konkrétní metoda dělá nebo jak se chová podle určitého vstupu. Můžete se zeptat sami: Jak se tato metoda chová, když ji předáte do prázdného řetězce? Platnost?
+Nemusí vždy být zřejmé, co konkrétní metoda dělá nebo jak se chová podle určitého vstupu. Můžete se zeptat sami: jak se tato metoda chová, když ji předáte do prázdného řetězce? Platnost?
 
 Máte-li sadu dobře pojmenovaných testů jednotek, každý test by měl být schopný jasně vysvětlit očekávaný výstup pro daný vstup. Kromě toho by měl být schopný ověřit, zda skutečně funguje.
 
@@ -83,7 +82,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-Přejmenováním třídy na `FakeOrder`, jste vytvořili třídu a mnohem obecnější, třídu lze použít jako objekt typu nebo jako zástupnou proceduru. Podle toho, co je vhodnější pro testovací případ. Ve výše uvedeném příkladu `FakeOrder` se používá jako zástupná procedura. Nepoužíváte `FakeOrder` ho v žádném tvaru nebo formuláři během kontrolního výrazu. `FakeOrder`byla právě předána do `Purchase` třídy, aby splňovala požadavky konstruktoru.
+Přejmenováním třídy na `FakeOrder`jste vytvořili třídu a mnohem obecnější, třídu lze použít jako objekt typu nebo jako zástupnou proceduru. Podle toho, co je vhodnější pro testovací případ. Ve výše uvedeném příkladu se `FakeOrder` používá jako zástupná procedura. Nepoužíváte `FakeOrder` v žádném tvaru nebo formuláři během kontrolního výrazu. `FakeOrder` byla právě předána do třídy `Purchase`, aby splňovala požadavky konstruktoru.
 
 Pokud ho chcete použít jako objekt, může to vypadat nějak takto.
 
@@ -96,7 +95,7 @@ purchase.ValidateOrders();
 Assert.True(mockOrder.Validated);
 ```
 
-V tomto případě kontrolujete vlastnost s napodobeninou (pro kterou je uplatněno), takže ve výše uvedeném fragmentu `mockOrder` kódu je objekt typu.
+V tomto případě kontrolujete vlastnost s napodobeninou (pro kterou je uplatněno), takže ve výše uvedeném fragmentu kódu je `mockOrder` objektem.
 
 > [!IMPORTANT]
 > Je důležité získat správnou opravu této terminologie. Pokud voláte své zástupné procedury, ostatní vývojáři budou mít na záměr nepravdivé předpoklady.
@@ -118,7 +117,7 @@ Název testu by měl sestávat ze tří částí:
 
 Testy jsou více, než pouze zajištění, že váš kód funguje, ale také poskytují dokumentaci. Stejně jako při prohlížení sady jednotkových testů byste měli být schopni odvodit chování kódu bez ohledu na samotný kód. Kromě toho, když testy selžou, vidíte přesně ty scénáře, které nesplňují vaše očekávání.
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeNaming](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeNaming)]
 
 #### <a name="better"></a>Zájmu
@@ -138,7 +137,7 @@ Testy jsou více, než pouze zajištění, že váš kód funguje, ale také pos
 
 Čitelnost je jedním z nejdůležitějších aspektů při psaní testu. Oddělení každé z těchto akcí v rámci testu jasně zvýrazní závislosti vyžadované pro volání vašeho kódu, způsob, jakým je váš kód volán a co se snažíte uplatnit. I když může být možné zkombinovat některé kroky a zmenšit velikost testu, primárním cílem je udělat co možná čitelnou zkoušku.
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeArranging](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeArranging)]
 
 #### <a name="better"></a>Zájmu
@@ -154,7 +153,7 @@ Vstup, který se má použít v testu jednotek, by měl být nejjednodušší, a
 
 Testy, které obsahují více informací, než je nutné k předání testu, mají větší šanci na zavedení chyb do testu a může udělat záměr méně jasného záměru testu. Při psaní testů, které chcete zaměřit na chování. Nastavení zvláštních vlastností pro modely nebo použití nenulových hodnot v případě potřeby, pouze odčítání od toho, co se snažíte prokázat.
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeMinimallyPassing](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeMinimallyPassing)]
 
 #### <a name="better"></a>Zájmu
@@ -173,14 +172,14 @@ Při pojmenování proměnných v testování částí je důležité, pokud nen
 > [!TIP] 
 > Při psaní testů byste se měli zaměřit na co nejvíc záměrů. V případě řetězců Magic je dobrým přístupem přiřadit tyto hodnoty konstantám.
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeMagicString](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeMagicString)]
 
 #### <a name="better"></a>Zájmu
 [!code-csharp[AfterMagicString](../../../samples/csharp/unit-testing-best-practices/after/StringCalculatorTests.cs#AfterMagicString)]
 
 ### <a name="avoid-logic-in-tests"></a>Vyhnout se logice v testech
-Při psaní testů jednotek vyhnout se ručnímu zřetězení řetězců a logickým podmínkám `if` `for`, `while`jako například `switch`,,, atd.
+Při psaní testů jednotek se vyhnete ručnímu zřetězení řetězců a logickým podmínkám, jako je například `if`, `while`, `for`, `switch`atd.
 
 #### <a name="why"></a>Proč?
 
@@ -192,7 +191,7 @@ Když zavedete logiku do sady testů, šance na to, že dojde k chybě, se výra
 > [!TIP]
 > Pokud se logika v testu jeví jako nenevyhnutelná, zvažte rozdělení testu na dva nebo více různých testů.
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[LogicInTests](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#LogicInTests)]
 
 #### <a name="better"></a>Zájmu
@@ -207,12 +206,12 @@ Pokud pro testy požadujete podobný objekt nebo stav, preferovat pomocnou metod
 - Menší pravděpodobnost nastavení pro daný test je příliš velká nebo příliš malá.
 - Menší šance na stav sdílení mezi testy, které mezi nimi vytváří nežádoucí závislosti.
 
-V rozhraních `Setup` testování částí je volána před každou a každou jednotkovou zkouškou v rámci sady testů. I když se některý z nich může zobrazit jako užitečný nástroj, obvykle končí na bloated a těžko čte testy. Každý test bude mít k dispozici různé požadavky, aby bylo možné spustit test a začít. Bohužel vynutí, `Setup` abyste pro každý test používali přesně stejné požadavky.
+V rozhraních pro testování částí je `Setup` volána před každou a každou jednotkovou zkouškou v rámci sady testů. I když se některý z nich může zobrazit jako užitečný nástroj, obvykle končí na bloated a těžko čte testy. Každý test bude mít k dispozici různé požadavky, aby bylo možné spustit test a začít. `Setup` však vynutí použití přesně stejných požadavků pro každý test.
 
 > [!NOTE] 
 > xUnit odebral SetUp i rozboru od verze 2. x
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeSetup](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeSetup)]
 
 ```csharp
@@ -247,7 +246,7 @@ Při zavedení více kontrolních výrazů do testovacího případu není zaru�
 > [!NOTE]
 > Běžnou výjimkou z tohoto pravidla je při uplatnění na objekt. V tomto případě je všeobecně přijatelné mít více kontrolních výrazů proti každé vlastnosti, aby bylo zajištěno, že objekt je ve stavu, ve kterém očekáváte.
 
-#### <a name="bad"></a>Špatné:
+#### <a name="bad"></a>Chybně:
 [!code-csharp[BeforeMultipleAsserts](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeMultipleAsserts)]
 
 #### <a name="better"></a>Zájmu
@@ -271,9 +270,9 @@ private string TrimInput(string input)
 }
 ```
 
-První reakce může být začít psát test pro `TrimInput` , protože chcete zajistit, aby metoda fungovala podle očekávání. Je však možné, že `ParseLogLine` je zcela možné `sanitizedInput` manipulovat takovým způsobem, že neočekáváte, vygenerování testu proti `TrimInput` nevýhodám. 
+První reakce může být začít psát test pro `TrimInput`, protože chcete zajistit, aby metoda fungovala podle očekávání. Je však možné, že `ParseLogLine` manipulovat `sanitizedInput` takovým způsobem, že neočekáváte, vykreslení testu proti `TrimInput` nevýhodně. 
 
-Skutečný test by měl být proveden proti veřejné metodě `ParseLogLine` , protože to je to, co byste měli v konečném případě zajímat. 
+Skutečný test by měl probíhat proti `ParseLogLine` veřejnému způsobu, protože to je to, co byste měli v konečném případě zajímat. 
 
 ```csharp
 public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
@@ -289,7 +288,7 @@ public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
 S tímto pohledem, pokud vidíte soukromou metodu, vyhledejte veřejnou metodu a zapište testy proti této metodě. Vzhledem k tomu, že soukromá metoda vrátí očekávaný výsledek, neznamená to, že systém, který nakonec volá privátní metodu, používá výsledek správně.
 
 ### <a name="stub-static-references"></a>Statické odkazy na zástupné procedury
-Jedním ze zásad testování částí je, že musí mít plnou kontrolu nad testovaným systémem. To může být problematické, pokud výrobní kód zahrnuje volání statických odkazů ( `DateTime.Now`např.). Vezměte v úvahu následující kód:
+Jedním ze zásad testování částí je, že musí mít plnou kontrolu nad testovaným systémem. To může být problematické, když produkční kód zahrnuje volání statických odkazů (např. `DateTime.Now`). Vezměte v úvahu následující kód:
 
 ```csharp
 public int GetDiscountedPrice(int price)
@@ -379,4 +378,4 @@ public void GetDiscountedPrice_OnTuesday_ReturnsHalfPrice()
 }
 ```
 
-Sada testů nyní má úplnou kontrolu nad `DateTime.Now` a může při volání metody do této metody zástupné procedury jakékoli hodnoty.
+Sada testů nyní má úplnou kontrolu nad `DateTime.Now` a při volání do metody může zástupné procedury jakékoli hodnoty.

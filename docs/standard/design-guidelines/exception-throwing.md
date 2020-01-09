@@ -7,22 +7,21 @@ helpviewer_keywords:
 - explicitly throwing exceptions
 - throwing exceptions, design guidelines
 ms.assetid: 5388e02b-52f5-460e-a2b5-eeafe60eeebe
-author: KrzysztofCwalina
-ms.openlocfilehash: 74eee418a3c87b335cdf96557c4e17b95aff7b58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7d1b63e5fde57cbe37a1250d16b6bf74a2d5dc8e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669066"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709397"
 ---
 # <a name="exception-throwing"></a>Vyvolání výjimek
-Vyvolání výjimek pokynů popsaných v této části vyžadují správné definice význam selhání spuštění. Chyba při spuštění vyvolá se při každém člena nelze provést, který byl navržený tak, aby se (co člen již název napovídá). Například pokud `OpenFile` metoda popisovač otevřený soubor nemůže vracet volajícímu, může být považován Chyba při spuštění.  
+Výjimky – pokyny pro vyvolání výjimky popsané v této části vyžadují dobrou definici významu selhání spuštění. K selhání spuštění dojde pokaždé, když člen nemůže dělat, co byl navržený tak, aby to provedl (co název členu implikuje). Například pokud metoda `OpenFile` nemůže vrátit otevřený popisovač souboru volajícímu, bude považována za chybu spuštění.  
   
- Většina vývojářů se staly umíte pracovat se použití výjimek pro využití chyby jako např. dělení nulou či odkazy s hodnotou null. V rámci výjimky se používají pro všechny chybové stavy, včetně zpracování chyb.  
+ Většina vývojářů se seznámila s používáním výjimek pro chyby použití, jako je dělení nulou nebo odkazy s hodnotou null. V rozhraní se výjimky používají pro všechny chybové stavy, včetně chyb spuštění.  
   
  **X DO NOT** návratové kódy chyb.  
   
- Výjimky jsou primární prostředky zpráv o chybách v rozhraní.  
+ Výjimky jsou primárními prostředky pro hlášení chyb v rozhraních.  
   
  **✓ DO** sestavy selhání spuštění ve vyvolání výjimky.  
   
@@ -30,39 +29,39 @@ Vyvolání výjimek pokynů popsaných v této části vyžadují správné defi
   
  **X DO NOT** používat výjimky pro normálního toku řízení, pokud je to možné.  
   
- S výjimkou chyby systému a operace s potenciální konflikty časování by měl framework návrháři navrhovat rozhraní API, tak uživatelům můžete napsat kód, který nevrací výjimky. Můžete například poskytnout způsob, jak zkontrolovat předpoklady před voláním člen tak uživatelům můžete napsat kód, který nevrací výjimky.  
+ S výjimkou selhání systému a operací s potenciálními konflikty časování by měli návrháři architektury navrhovat rozhraní API, aby mohli uživatelé napsat kód, který nevyvolá výjimky. Například můžete zadat způsob, jak kontrolovat předběžné podmínky před voláním členu, aby mohli uživatelé napsat kód, který nevyvolá výjimky.  
   
- Člen sloužící ke kontrole předběžné podmínky jiného člena se často označuje jako tester a člena, který ve skutečnosti funguje se volá doer.  
+ Člen, který se používá ke kontrole předběžných podmínek jiného člena, se často označuje jako Tester a člen, který práci skutečně provede, se nazývá Doer.  
   
- Existují případy, kdy vzor Tester Doer může mít nároky na výkon nepřijatelný. V takových případech takzvané vzor analýzy zkuste by měl být (viz [výjimek a výkonu](../../../docs/standard/design-guidelines/exceptions-and-performance.md) Další informace).  
+ Existují případy, kdy test a Doer vzor může mít nepřijatelný výkon. V takových případech by se měl vzít v úvahu vzor typu try-Parse (viz [výjimky a výkon](../../../docs/standard/design-guidelines/exceptions-and-performance.md) pro další informace).  
   
- **✓ CONSIDER** vliv na výkon u vyvolávání výjimek. Sazby za throw nad 100 za sekundu se pravděpodobně výrazně ovlivnit výkon většinu aplikací.  
+ **✓ CONSIDER** vliv na výkon u vyvolávání výjimek. Míry volání přesahující výše 100 za sekundu budou pravděpodobně výrazně ovlivňovat výkon většiny aplikací.  
   
  **✓ DO** dokumentu všechny výjimky vyvolané veřejně s členy z důvodu narušení člena smlouvy (místo selhání systému) a je považovat za část vaše smlouvy.  
   
- Výjimky, které jsou součástí smlouvy nesmí změnit z jedné verze na další (tj, by neměly měnit typ výjimky a neměl by se přidávat nové výjimky).  
+ Výjimky, které jsou součástí kontraktu, by neměly být změněny z jedné verze na další (tj. typ výjimky by se neměly měnit a nové výjimky by neměly být přidány).  
   
  **X DO NOT** veřejné členy, které můžete buď throw nebo není na některé možnost základě.  
   
  **X DO NOT** mají veřejné členy, které vracejí výjimky jako návratová hodnota nebo `out` parametr.  
   
- Vrácení výjimky z veřejných rozhraní API namísto vyvolání jejich poráží mnohé z výhod hlášení chyb na základě výjimky.  
+ Vrácení výjimek z veřejných rozhraní API namísto vyvolání přináší mnoho výhod zasílání zpráv o chybách na základě výjimek.  
   
  **✓ CONSIDER** pomocí metody tvůrce výjimky.  
   
- Je běžné vyvolat stejnou výjimku z různých míst. Aby se zabránilo jejímu narůstání kódu, použijte pomocné metody vytvoření výjimky a inicializaci jejich vlastností.  
+ Je běžné vyvolat stejnou výjimku z různých míst. Chcete-li se vyhnout dispozici determinističtější kódu, použijte pomocné metody, které vytvářejí výjimky a inicializujte jejich vlastnosti.  
   
- Navíc nejsou členy, které vyvolají výjimky získávání vložená. Přesunutí příkaz throw do Tvůrce může umožnit člen se nedá vložit.  
+ Také členy, kteří vyvolávají výjimky, nejsou vloženy. Přesunutí příkazu throw uvnitř tvůrce může umožňovat, aby byl člen vložen.  
   
  **X DO NOT** vyvolat výjimky z bloky filtru výjimek.  
   
- Když filtru výjimky vyvolá výjimku, výjimka se zachycuje prostřednictvím modulu CLR a filtr vrátí hodnotu false. Toto chování je nerozeznatelná od tohoto filtru, provádění a vrácení hodnoty false explicitně a proto je velmi obtížné ladit.  
+ Pokud filtr výjimek vyvolá výjimku, je výjimka zachycena modulem CLR a filtr vrátí hodnotu false. Toto chování je neodlišitelné od vykonání filtru a vrací hodnotu false explicitně a je proto velmi obtížné ho ladit.  
   
- **X AVOID** explicitně vyvolání výjimky z finally – bloky. Implicitně vyvolané výjimky vyplývající z volání metod, které vyvolají jsou přijatelné.  
+ **X AVOID** explicitně vyvolání výjimky z finally – bloky. Implicitně vyvolané výjimky, které jsou výsledkem volání metod, které vyvolává vyvolání, jsou přijatelné.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

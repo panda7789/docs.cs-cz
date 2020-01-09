@@ -11,22 +11,20 @@ helpviewer_keywords:
 - try/catch blocks
 - catch blocks
 ms.assetid: 12af9ff3-8587-4f31-90cf-6c2244e0fdae
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3da35dae374018f0695f79022e83ad397e98cb88
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f0956c6418d894a5768463861151f86a1948850
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970882"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708578"
 ---
-# <a name="how-to-use-specific-exceptions-in-a-catch-block"></a>Postup používání specifických výjimek v bloku catch
+# <a name="how-to-use-specific-exceptions-in-a-catch-block"></a>Používání specifických výjimek v bloku catch
 
-Obecně je programování je dobrým zvykem catch konkrétní typ výjimky, a nemuseli používat základní `catch` příkazu.
+Obecně je dobrým programovacím postupem zachytit konkrétní typ výjimky namísto použití základního příkazu `catch`.
 
-Když dojde k výjimce, jsou předány do zásobníku a každý blok catch dostane příležitost, aby to zvládnul. Je důležité pořadí příkazů catch. Umístit bloky catch cílené na specifické výjimky než blok catch výjimky nebo kompilátor zahlásí chybu. Určuje blok catch správné odpovídající typ výjimky k názvu na výjimku zadanou v bloku catch. Pokud neexistuje žádný konkrétní blok catch, výjimku zachycuje se prostřednictvím obecný zachytávací blok, pokud existuje.
+Pokud dojde k výjimce, je předán zásobníku a každý blok catch je dána příležitostí k jejímu zpracování. Pořadí příkazů catch je důležité. Umístěte bloky catch cílené na konkrétní výjimky před obecným blokem catch výjimky nebo kompilátor může vystavit chybu. Správný blok catch je určen porovnáním typu výjimky s názvem výjimky zadané v bloku catch. Pokud není k dispozici žádný konkrétní blok catch, je výjimka zachycena obecným blokem catch, pokud nějaká existuje.
 
-Následující příklad kódu používá `try` / `catch` bloku catch <xref:System.InvalidCastException>. Ukázka vytvoří třídu s názvem `Employee` s jedinou vlastností, úroveň zaměstnance (`Emlevel`). Je metoda `PromoteEmployee`, přebírá objekt a zvýší úroveň zaměstnance. <xref:System.InvalidCastException> Dojde k při <xref:System.DateTime> instance předána `PromoteEmployee` metody.
+Následující příklad kódu používá `try`/`catch` blok k zachycení <xref:System.InvalidCastException>. Ukázka vytvoří třídu s názvem `Employee` s jedinou vlastností, úrovní zaměstnance (`Emlevel`). Metoda, `PromoteEmployee`, přebírá objekt a zvyšuje úroveň zaměstnance. K <xref:System.InvalidCastException> dojde, když je instance <xref:System.DateTime> předána metodě `PromoteEmployee`.
 
 [!code-cpp[CatchException#2](../../../samples/snippets/cpp/VS_Snippets_CLR/CatchException/CPP/catchexception1.cpp#2)]
 [!code-csharp[CatchException#2](../../../samples/snippets/csharp/VS_Snippets_CLR/CatchException/CS/catchexception1.cs#2)]

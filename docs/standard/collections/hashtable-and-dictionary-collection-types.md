@@ -10,31 +10,29 @@ helpviewer_keywords:
 - hash function
 - collections [.NET Framework], Hashtable collection type
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fefd9f95a669c9c0384cefe41322c7a10a96a3b7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6f234b6205fd30507b9342d9839db6adcddfc2e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909035"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711373"
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Typy kolekce Hashtable a Dictionary
-<xref:System.Collections.Hashtable?displayProperty=nameWithType> Třídy a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> implementovat obecné třídy <xref:System.Collections.IDictionary?displayProperty=nameWithType> rozhraní. <xref:System.Collections.Generic.Dictionary%602> Obecnou třídu také implementuje <xref:System.Collections.Generic.IDictionary%602> obecného rozhraní. Každý prvek v těchto kolekcích tedy pár klíč hodnota.  
+Třídu <xref:System.Collections.Hashtable?displayProperty=nameWithType> a obecné třídy <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> implementují rozhraní <xref:System.Collections.IDictionary?displayProperty=nameWithType>. <xref:System.Collections.Generic.Dictionary%602> obecná třída také implementuje obecné rozhraní <xref:System.Collections.Generic.IDictionary%602>. Proto každý prvek v těchto kolekcích je dvojice klíč-hodnota.  
   
- A <xref:System.Collections.Hashtable> objekt se skládá z bloků, které obsahují elementy kolekce. Blok je virtuální podskupina elementů v rámci <xref:System.Collections.Hashtable>, takže se dají vyhledávání a načítání jednodušší a rychlejší než v většiny kolekcí. Každý blok souvisí s hodnotu hash, která je generována pomocí funkce hash a je založena na klíči elementu.  
+ Objekt <xref:System.Collections.Hashtable> se skládá z kontejnerů, které obsahují prvky kolekce. Interval je virtuální podskupina prvků v rámci <xref:System.Collections.Hashtable>, která umožňuje vyhledávání a načítání snazší a rychlejší než ve většině kolekcí. Každý interval je přidružen k hodnotě hash, která je generována pomocí funkce hash a je založena na klíči elementu.  
   
- Obecné <xref:System.Collections.Generic.HashSet%601> třída je Neseřazený kolekce obsahující jedinečných prvků.  
+ Obecná třída <xref:System.Collections.Generic.HashSet%601> je neuspořádaná kolekce pro obsahující jedinečné prvky.  
   
- Funkce hash je algoritmus, který vrátí číselnou hodnotu hash na základě klíče. Klíč je hodnota některé vlastnosti objektu ukládají. Funkce hash musí vracet vždycky stejnou hodnotu hash pro stejný klíč. Je možné pro funkce hash pro generování stejnou hodnotu hash pro dva různé klíče, ale funkce hash, který generuje kód hash jedinečný pro každý jedinečných klíčů výsledky lepší výkon při načítání prvků z tabulky hash.  
+ Funkce hash je algoritmus, který vrací číselný kód hash na základě klíče. Klíč je hodnota některé vlastnosti objektu, který se ukládá. Funkce hash musí vždycky vracet stejný kód hash pro stejný klíč. Funkce hash může generovat stejný kód hash pro dva různé klíče, ale funkce hash, která generuje jedinečný kód hash pro každý jedinečný klíč, má za následek lepší výkon při načítání prvků z zatřiďovací tabulky.  
   
- Každý objekt, který se používá jako prvek v <xref:System.Collections.Hashtable> musí být schopna generovat kód hash sama za sebe pomocí implementace <xref:System.Object.GetHashCode%2A> metody. Ale můžete také zadat funkce hash pro všechny prvky v <xref:System.Collections.Hashtable> pomocí <xref:System.Collections.Hashtable> konstruktor, který přijímá <xref:System.Collections.IHashCodeProvider> implementaci jako jeden ze svých parametrů.  
+ Každý objekt, který je použit jako prvek v <xref:System.Collections.Hashtable> musí být schopný vygenerovat kód hash sám pro sebe pomocí implementace metody <xref:System.Object.GetHashCode%2A>. Můžete však také zadat funkci hash pro všechny prvky v <xref:System.Collections.Hashtable> pomocí konstruktoru <xref:System.Collections.Hashtable>, který přijímá <xref:System.Collections.IHashCodeProvider> implementaci jako jeden z jeho parametrů.  
   
- Při přidání objektu <xref:System.Collections.Hashtable>, uloží se v bloku, který je spojen s hodnotou hash, která odpovídá hodnotě hash objektu. Pokud hodnota je prohledávána v <xref:System.Collections.Hashtable>, je generována hodnota hash pro tuto hodnotu a je prohledána sady přidružené k tento kód hash.  
+ Když je objekt přidán do <xref:System.Collections.Hashtable>, je uložen v kontejneru, který je přidružen k hodnotě hash, která odpovídá kódu hash objektu. Při hledání hodnoty v <xref:System.Collections.Hashtable>se pro tuto hodnotu vygeneruje kód hash a v kontejneru přidruženého k tomuto kódu hash se proprohledávají.  
   
- Funkce hash pro řetězce může například trvat kódy ASCII každého znaku v řetězci a přidejte je dohromady a generovat kód hash. Řetězec "výlet" by mít hodnotu hash, která se liší od hodnoty hash pro řetězec "nákupní košík"; řetězce "výlet" a "nákupní košík" by proto být v různých kontejnerů. Naproti tomu "zdůraznit" a "My jsme zvolili zákusky" bude mít stejnou hodnotu hash a by být ve stejném bloku.  
+ Například funkce hash pro řetězec může mít kódy ASCII každého znaku v řetězci a jejich přidáním společně pro vygenerování kódu hash. Řetězec "piknik" by měl kód hash, který se liší od kódu hash pro řetězec "košík"; Proto jsou řetězce "piknik" a "košík" v různých intervalech. Naopak "stresed" a "desserts" by měly stejný kód hash a by byl ve stejném kontejneru.  
   
- <xref:System.Collections.Generic.Dictionary%602> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602> třídy mají stejně jako <xref:System.Collections.Hashtable> třídy. A <xref:System.Collections.Generic.Dictionary%602> určitého typu (jiných než <xref:System.Object>) poskytuje lepší výkon než <xref:System.Collections.Hashtable> pro typy hodnot. Důvodem je, že prvky <xref:System.Collections.Hashtable> jsou typu <xref:System.Object>; proto zabalení a rozbalení obvykle dojde ukládat nebo načítat hodnotového typu. <xref:System.Collections.Concurrent.ConcurrentDictionary%602> Třída má být použit, při více vláken může přístupu ke kolekci současně.  
+ Třídy <xref:System.Collections.Generic.Dictionary%602> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602> mají stejné funkce jako třída <xref:System.Collections.Hashtable>. <xref:System.Collections.Generic.Dictionary%602> určitého typu (kromě <xref:System.Object>) poskytuje lepší výkon než <xref:System.Collections.Hashtable> pro typy hodnot. Důvodem je, že prvky <xref:System.Collections.Hashtable> jsou typu <xref:System.Object>; proto k zabalení a rozbalení obvykle dochází, když ukládáte nebo načítáte typ hodnoty. Třída <xref:System.Collections.Concurrent.ConcurrentDictionary%602> by měla být použita, pokud více vláken může přistupovat ke kolekci současně.  
   
 ## <a name="see-also"></a>Viz také:
 

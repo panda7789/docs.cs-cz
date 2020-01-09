@@ -14,22 +14,20 @@ helpviewer_keywords:
 - encryption [.NET Framework], hash
 - hash
 ms.assetid: 33660f33-b70f-4dca-8c87-ab35cfc2961a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 995f54e81a48fb3f809d99981ad135974544eb28
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 98bdce59ccbbb3b1d00ea5521169214c2bd7a10b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353168"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706198"
 ---
 # <a name="ensuring-data-integrity-with-hash-codes"></a>Zajištění integrity dat pomocí hodnot hash
 Hodnota hash je číselná hodnota s pevnou délkou, která jednoznačně identifikuje data. Hodnoty hash představují velké objemy dat s mnohem menšími číselnými hodnotami, takže se používají s digitálními podpisy. Hodnotu hash můžete efektivně podepsat, než je třeba podepsat větší hodnotu. Hodnoty hash jsou také užitečné pro ověření integrity dat odesílaných prostřednictvím nezabezpečených kanálů. Hodnota hash přijatých dat se dá porovnat s hodnotou hash dat, protože byla odeslána, aby se zjistilo, jestli se data změnila.  
   
- Toto téma popisuje, jak generovat a ověřit kódy hash pomocí tříd v <xref:System.Security.Cryptography?displayProperty=nameWithType> oboru názvů.  
+ Toto téma popisuje, jak generovat a ověřit kódy hash pomocí tříd v oboru názvů <xref:System.Security.Cryptography?displayProperty=nameWithType>.  
   
 ## <a name="generating-a-hash"></a>Generování hodnoty hash  
- Spravované třídy hash mohou vytvořit hodnotu hash pole bajtů nebo objektu spravovaného datového proudu. Následující příklad používá algoritmus hash SHA1 k vytvoření hodnoty hash pro řetězec. V příkladu se používá <xref:System.Text.UnicodeEncoding> třída pro převod řetězce na pole bajtů, které jsou hashy <xref:System.Security.Cryptography.SHA1Managed> pomocí třídy. Hodnota hash se pak zobrazí v konzole nástroje.  
+ Spravované třídy hash mohou vytvořit hodnotu hash pole bajtů nebo objektu spravovaného datového proudu. Následující příklad používá algoritmus hash SHA1 k vytvoření hodnoty hash pro řetězec. V příkladu se používá třída <xref:System.Text.UnicodeEncoding> pro převod řetězce na pole bajtů, které jsou hashy pomocí <xref:System.Security.Cryptography.SHA1Managed> třídy. Hodnota hash se pak zobrazí v konzole nástroje.  
 
  Microsoft doporučuje SHA256 nebo lepší kvůli kolizi problémů se SHA1.
   

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-ms.openlocfilehash: e47fd1c606f7d4cd0cf2fa6398beaa183ed95076
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 5109bf42c9caa7528c5405bb1a5cff0cfb62a5ac
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838153"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705753"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Konstanty a výčty (Visual Basic)
 
@@ -27,7 +27,7 @@ Visual Basic poskytuje řadu předdefinovaných konstant a výčtů pro vývojá
 |---|---|  
 |`CONFIG`|Řetězec, který odpovídá aktuálnímu nastavení pole **Konfigurace aktivního řešení** v **Configuration Manager**.|  
 |`DEBUG`|Hodnota `Boolean`, kterou lze nastavit v dialogovém okně **Vlastnosti projektu** . Ve výchozím nastavení konfigurace ladění pro projekt definuje `DEBUG`. Pokud je definována `DEBUG`, metody třídy <xref:System.Diagnostics.Debug> generují výstup do okna **výstup** . Pokud není definován, <xref:System.Diagnostics.Debug> metody třídy nejsou zkompilovány a není vygenerován žádný výstup ladění.|  
-|`TARGET`|Řetězec představující typ výstupu pro projekt nebo nastavení možnosti **/target** příkazového řádku. Možné hodnoty `TARGET` jsou:<br /><br /> – "winexe" pro aplikaci pro Windows.<br />– "exe" pro konzolovou aplikaci.<br />– "knihovna" pro knihovnu tříd.<br />– "modul" pro modul.<br />-Možnost **/target** lze nastavit v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu [-target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
+|`TARGET`|Řetězec představující typ výstupu pro projekt nebo nastavení možnosti příkazového řádku pro **cíl** . Možné hodnoty `TARGET` jsou:<br /><br /> – "winexe" pro aplikaci pro Windows.<br />– "exe" pro konzolovou aplikaci.<br />– "knihovna" pro knihovnu tříd.<br />– "modul" pro modul.<br />-Možnost- **target** lze nastavit v integrovaném vývojovém prostředí sady Visual Studio. Další informace najdete v tématu [-target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
 |`TRACE`|Hodnota `Boolean`, kterou lze nastavit v dialogovém okně **Vlastnosti projektu** . Ve výchozím nastavení všechny konfigurace pro projekt definují `TRACE`. Pokud je definována `TRACE`, metody třídy <xref:System.Diagnostics.Trace> generují výstup do okna **výstup** . Pokud není definován, <xref:System.Diagnostics.Trace> metody třídy nejsou kompilovány a není vygenerován žádný `Trace` výstup.|  
 |`VBC_VER`|Číslo představující Visual Basic verze, v *Hlavní*. *vedlejší* formát|  
   

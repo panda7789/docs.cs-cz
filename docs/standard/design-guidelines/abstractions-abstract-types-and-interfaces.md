@@ -8,34 +8,33 @@ helpviewer_keywords:
 - abstract types [.NET Framework]
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
-author: KrzysztofCwalina
-ms.openlocfilehash: fcf566c24677630fdbb1fcd0eb7628f830b3be2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 014144764609c8a7faa87f3d080900824f9189eb
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789217"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709579"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstrakce (abstraktní typy a rozhraní)
-Abstrakce je typ, který popisuje kontrakt ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a začne s kvalitně definované sady referenční dokumentaci popisující požadovaný sémantiku typy implementace kontraktu. Některé z vašich nejdůležitějších abstrakce v rozhraní .NET Framework zahrnují <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, a <xref:System.Object>.  
+Abstrakce je typ, který popisuje kontrakt, ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a jsou dodávány s dobře definovanou sadou Referenční dokumentace popisující požadovanou sémantiku typů, které implementují kontrakt. Mezi nejdůležitější abstrakce v .NET Framework patří <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>a <xref:System.Object>.  
   
- Architektury můžete rozšířit pomocí implementace konkrétního typu implementujícího typ podporuje smlouvy abstrakci a pomocí rozhraní API náročné (nasazeny na) tento konkrétní typ odběru.  
+ Rozhraní můžete roztáhnout implementací konkrétního typu, který podporuje kontrakt abstrakce, a použitím tohoto konkrétního typu s rozhraními API architektury, které spotřebovávají (pracuje na) abstrakce.  
   
- Smysl a užitečné abstrakce, která dokáže odolat zkušební doba je velmi obtížné navrhnout. Hlavní problémy s dokončením je stále správnou sadu členů, častěji a ne méně. Pokud abstrakci má příliš mnoho členů, bude obtížné či nemožné i k implementaci. Pokud má moc malý počet členů pro funkci přislíbeném, bude v mnoha scénářích zajímavých zbytečná.  
+ Smysluplná a užitečná abstrakce, která může vydržet test času, je velmi obtížné navrhnout. Hlavní obtížnost je získání správné sady členů, ne více a méně. Pokud má abstrakce příliš mnoho členů, je obtížné nebo dokonce možné ji implementovat. Pokud má příliš málo členů pro přislíbenou funkci, je to v mnoha zajímavých scénářích zbytečné.  
   
- Příliš mnoho odběrů v rámci také negativně ovlivnit využitelnost rozhraní framework. Často je poměrně obtížné porozumět abstrakci bez nutnosti porozumět, jak zapadá do větší přehled o konkrétní implementace a rozhraní API fungujícími v odběru. Názvy abstrakce a jejich členy jsou také nutně abstract, které často jsou nejasné a unapproachable bez první Principy širšího kontextu jejich použití.  
+ Příliš mnoho abstrakcí v rámci architektury má také negativní vliv na použitelnost rozhraní. Je často poměrně obtížné pochopit abstrakci, aniž byste pochopili, jak se vejde na větší obrázek konkrétních implementací a rozhraní API, která na abstrakci pracují. Názvy abstrakcí a jejich členů jsou také nutně abstraktní, což často usnadňuje jejich nepřístupné a nepřístupné, aniž by bylo nutné nejprve pochopit širší kontext jejich využití.  
   
- Abstrakce však poskytují velmi výkonné rozšíření, což často nesmí shodovat s další mechanismy rozšiřitelnosti. Jsou základem mnoho vzorech architektury, jako jsou moduly plug-in IOC (Inversion) ovládacího prvku, kanály a tak dále. Jsou také velmi důležité pro testovatelnost architektur. Dobré abstrakce umožňují zástupných procedur si náročné závislosti za účelem testování částí. Stručně řečeno abstrakce zodpovídají za sought-after bohatost moderních architektur objektově orientovaný.  
+ Abstrakce však poskytují extrémně výkonnou rozšiřitelnost, kterou jiné mechanismy rozšíření nemůžou často porovnat. Jsou v jádru mnoha vzorů architektury, jako jsou moduly plug-in, inverze řídicích prvků (IoC), kanály atd. Jsou také mimořádně důležité pro testování architektur. Dobré abstrakce umožňují, aby byly pro účely testování částí využívány těžké závislosti. V souhrnu jsou abstrakce zodpovědné za hledané – po bohatosti moderních rozhraní orientovaných na objekty.  
   
  **X DO NOT** zadejte abstrakce, pokud jsou neotestovali ve vývoji několik rozhraní API využívání abstrakce a konkrétní implementace.  
   
  **✓ DO** zvolit pečlivě abstraktní třídy a rozhraní při navrhování abstrakci.  
   
- **✓ CONSIDER** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by měly umožnit uživatelům k ověření, zda jejich implementace správnou implementaci kontraktu.  
+ **✓ CONSIDER** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by uživatelům umožnily testovat, zda jejich implementace správně implementují kontrakt.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

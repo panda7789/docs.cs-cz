@@ -18,14 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 323b3fedb570ff97012b148aaeda2311b01960b5
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: aa8a62ee0c653a1905283696b97f55a3e6ffff85
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74205022"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706540"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždycky omezený na uživatele, který ho vytvořil. Pro implementaci tohoto typu izolace používá modul CLR stejný pojem identity uživatele, jakou operační systém rozpozná, což je identita přidružená k procesu, ve kterém kód běží při otevření úložiště. Tato identita je identita ověřeného uživatele, ale zosobnění může způsobit, že se identita aktuálního uživatele dynamicky mění.  

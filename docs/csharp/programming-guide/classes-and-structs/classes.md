@@ -1,23 +1,22 @@
 ---
 title: Třídy – C# Průvodce programováním
-ms.custom: seodec18
 description: Přečtěte si o typech tříd a o tom, jak je vytvořit
 ms.date: 08/21/2018
 helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 193446ff98edce3b7c078c6eeba07cf9acdadaf0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 832095e1d9712c85ad588836e8eba8f523719021
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597171"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714978"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 
-## <a name="reference-types"></a>Typy odkazů  
-Typ, který je definován jako [Třída](../../language-reference/keywords/class.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte instanci třídy pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřadíte objekt kompatibilního typu, který mohl být vytvořen. jinde, jak je znázorněno v následujícím příkladu:
+## <a name="reference-types"></a>Odkazové typy  
+Typ, který je definován jako [Třída](../../language-reference/keywords/class.md) , je *odkazový typ*. V době běhu, pokud deklarujete proměnnou typu odkazu, proměnná obsahuje hodnotu [null](../../language-reference/keywords/null.md) , dokud explicitně nevytvoříte instanci třídy pomocí operátoru [New](../../language-reference/operators/new-operator.md) , nebo přiřadíte objekt kompatibilního typu, který mohl být vytvořen jinde, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 //Declaring an object of type MyClass.
@@ -27,7 +26,7 @@ MyClass mc = new MyClass();
 MyClass mc2 = mc;
 ```
 
-Když je objekt vytvořen, je k dispozici dostatek paměti na spravované haldě pro daný objekt a proměnná obsahuje pouze odkaz na umístění daného objektu. Typy na spravované haldě vyžadují režii při jejich přidělování a v případě, že jsou uvolněny automatickou funkcí správy paměti modulu CLR, která se označuje jako uvolňování paměti. Uvolňování paměti je ale také vysoce optimalizované a ve většině scénářů nevytváří problém s výkonem. Další informace o uvolňování paměti najdete v tématu [Automatická správa paměti a uvolňování](../../../standard/garbage-collection/gc.md)paměti.  
+Když je objekt vytvořen, je k dispozici dostatek paměti na spravované haldě pro daný objekt a proměnná obsahuje pouze odkaz na umístění daného objektu. Typy na spravované haldě vyžadují režii při jejich přidělování a v případě, že jsou uvolněny automatickou funkcí správy paměti modulu CLR, která se označuje jako *uvolňování*paměti. Uvolňování paměti je ale také vysoce optimalizované a ve většině scénářů nevytváří problém s výkonem. Další informace o uvolňování paměti najdete v tématu [Automatická správa paměti a uvolňování](../../../standard/garbage-collection/gc.md)paměti.  
   
 ## <a name="declaring-classes"></a>Deklarace tříd
 
@@ -41,7 +40,7 @@ Když je objekt vytvořen, je k dispozici dostatek paměti na spravované haldě
  }
 ```
 
- `class` Klíčovému slovu předchází úroveň přístupu. Vzhledem k tomu, že v tomto případě je použita možnost [Public](../../language-reference/keywords/public.md) , může kdokoli vytvořit instance této třídy. Název třídy následuje za `class` klíčovým slovem. Název třídy musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Zbytek definice je tělo třídy, kde jsou definovány chování a data. Pole, vlastnosti, metody a události třídy jsou souhrnně označovány jako *členy třídy*.  
+ Klíčovému slovu `class` předchází úroveň přístupu. Vzhledem k tomu, že v tomto případě je použita možnost [Public](../../language-reference/keywords/public.md) , může kdokoli vytvořit instance této třídy. Název třídy následuje klíčové slovo `class`. Název třídy musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Zbytek definice je tělo třídy, kde jsou definovány chování a data. Pole, vlastnosti, metody a události třídy jsou souhrnně označovány jako *členy třídy*.  
   
 ## <a name="creating-objects"></a>Vytváření objektů
 
@@ -53,7 +52,7 @@ I když se někdy používají jako zaměnitelné, třída a objekt jsou různé
  Customer object1 = new Customer();
  ```
 
- Když je vytvořena instance třídy, odkaz na objekt je předán zpět do programátora. V předchozím příkladu `object1` je odkaz na objekt, který je založen na `Customer`. Tento odkaz odkazuje na nový objekt, ale neobsahuje data objektu samotné. Ve skutečnosti můžete vytvořit odkaz na objekt, aniž byste vůbec vytvořili objekt:  
+ Když je vytvořena instance třídy, odkaz na objekt je předán zpět do programátora. V předchozím příkladu je `object1` odkazem na objekt, který je založen na `Customer`. Tento odkaz odkazuje na nový objekt, ale neobsahuje data objektu samotné. Ve skutečnosti můžete vytvořit odkaz na objekt, aniž byste vůbec vytvořili objekt:  
  
 ```csharp
  Customer object2;
@@ -66,13 +65,13 @@ I když se někdy používají jako zaměnitelné, třída a objekt jsou různé
  Customer object4 = object3;
 ```
   
- Tento kód vytvoří dva odkazy na objekty, které odkazují na stejný objekt. Proto se všechny změny objektu provedené prostřednictvím `object3` projeví v následných `object4`použitích. Vzhledem k tomu, že objekty, které jsou založeny na třídách, jsou odkazovány odkazem, třídy jsou označovány jako typy odkazů.  
+ Tento kód vytvoří dva odkazy na objekty, které odkazují na stejný objekt. Proto se všechny změny objektu provedené pomocí `object3` projeví v následných použitích `object4`. Vzhledem k tomu, že objekty, které jsou založeny na třídách, jsou odkazovány odkazem, třídy jsou označovány jako typy odkazů.  
   
 ## <a name="class-inheritance"></a>Dědičnost tříd  
 
 Třídy plně podporují *Dědičnost*, základní charakteristiky objektově orientovaného programování. Při vytváření třídy můžete dědit z jakéhokoli jiného rozhraní nebo třídy, která není definována jako [sealed](../../language-reference/keywords/sealed.md), a jiné třídy mohou dědit z vaší třídy a přepsat virtuální metody třídy.
 
-Dědičnost je provedeno pomocí odvození, což znamená, že třída je deklarována pomocí *základní třídy* , ze které dědí data a chování. Základní třída je určena připojením dvojtečky a názvem základní třídy za názvem odvozené třídy, například takto:  
+Dědičnost je provedeno pomocí *odvození*, což znamená, že třída je deklarována pomocí *základní třídy* , ze které dědí data a chování. Základní třída je určena připojením dvojtečky a názvem základní třídy za názvem odvozené třídy, například takto:  
 
  ```csharp
  public class Manager : Employee
@@ -92,11 +91,11 @@ Definice tříd mohou být rozděleny mezi různé zdrojové soubory. Další in
   
 ## <a name="example"></a>Příklad
 
-Následující příklad definuje veřejnou třídu, která obsahuje [automaticky implementovanou vlastnost](auto-implemented-properties.md), metodu a speciální metodu, která se nazývá konstruktor. Další informace naleznete v tématech [vlastnosti](properties.md), [metody](methods.md)a [konstruktory](constructors.md) . Instance třídy se pak vytvoří s `new` klíčovým slovem.  
+Následující příklad definuje veřejnou třídu, která obsahuje [automaticky implementovanou vlastnost](auto-implemented-properties.md), metodu a speciální metodu, která se nazývá konstruktor. Další informace naleznete v tématech [vlastnosti](properties.md), [metody](methods.md)a [konstruktory](constructors.md) . Instance třídy se pak vytvoří s klíčovým slovem `new`.  
   
 [!code-csharp[Class Example](~/samples/snippets/csharp/programming-guide/classes-and-structs/class-example.cs)] 
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#
+## <a name="c-language-specification"></a>C# – jazyková specifikace
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   

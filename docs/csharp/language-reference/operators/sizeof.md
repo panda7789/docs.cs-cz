@@ -1,6 +1,5 @@
 ---
 title: sizeof – C# operátor odkazu
-ms.custom: seodec18
 ms.date: 07/25/2019
 f1_keywords:
 - sizeof_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: 4488e2313a58a24e324001a4dccdee86a456bb5b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: c88f205a616587e5437bf4fc81bcbdcbbc19a9ac
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345265"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712634"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof – operátorC# (Referenční dokumentace)
 

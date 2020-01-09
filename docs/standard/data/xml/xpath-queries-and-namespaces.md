@@ -6,30 +6,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0704e78a0e7fbf3987b3bc75bb46e135f00110e9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 91503ce0bffa1a9390432a51bff1ef10d80f563a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615341"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709774"
 ---
 # <a name="xpath-queries-and-namespaces"></a>Dotazy a obory názvů XPath
-Dotazy XPath vědomi obory názvů v dokumentu XML a předpony oboru názvů můžete použít k vyfiltrování názvy prvků a atributů. Kvalifikující názvy prvků a atributů s předponu oboru názvů omezí vrácené dotaz XPath pro pouze ty uzly, které patří do konkrétní obor názvů uzly.  
+Dotazy XPath mají na paměti obory názvů v dokumentu XML a můžou použít předpony oboru názvů k získání názvů elementů a atributů. Kvalifikování názvů elementů a atributů s předponou oboru názvů omezuje uzly vrácené dotazem XPath pouze na ty uzly, které patří do konkrétního oboru názvů.  
   
- Například pokud předponu `books` mapuje na obor názvů `http://www.contoso.com/books`, pak následující dotaz XPath `/books:books/books:book` vybere pouze ty `book` prvky v oboru názvů `http://www.contoso.com/books`.  
+ Například pokud předpona `books` namapována na obor názvů `http://www.contoso.com/books`, pak následující dotaz XPath `/books:books/books:book` vybere pouze ty `book` elementy v oboru názvů `http://www.contoso.com/books`.  
   
 ## <a name="the-xmlnamespacemanager"></a>XmlNamespaceManager  
- Obory názvů používané dotaz XPath, objekt odvozený z <xref:System.Xml.IXmlNamespaceResolver> rozhraní jako <xref:System.Xml.XmlNamespaceManager> třídy je vytvořený pomocí identifikátoru URI oboru názvů a předpony, které mají být zahrnuty dotaz XPath.  
+ Chcete-li použít obory názvů v dotazu XPath, objekt odvozený z rozhraní <xref:System.Xml.IXmlNamespaceResolver>, jako je <xref:System.Xml.XmlNamespaceManager> třída, je vytvořen pomocí identifikátoru URI a předpony oboru názvů, které mají být zahrnuty do dotazu XPath.  
   
- <xref:System.Xml.XmlNamespaceManager> Objekt může být použitý v dotazu v každé z následujících způsobů.  
+ Objekt <xref:System.Xml.XmlNamespaceManager> může být v dotazu použit v každém z následujících způsobů.  
   
-- <xref:System.Xml.XmlNamespaceManager> Objekt je spojen s existujícím <xref:System.Xml.XPath.XPathExpression> s použitím <xref:System.Xml.XPath.XPathExpression.SetContext%2A> metodu <xref:System.Xml.XPath.XPathExpression> objektu. Také může zkompilovat nový <xref:System.Xml.XPath.XPathExpression> pomocí statické <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu, která přebírá řetězec představující výraz XPath a <xref:System.Xml.XmlNamespaceManager> jako parametry a vrátí nový objekt <xref:System.Xml.XPath.XPathExpression> objektu.  
+- Objekt <xref:System.Xml.XmlNamespaceManager> je přidružen k existujícímu objektu <xref:System.Xml.XPath.XPathExpression> pomocí metody <xref:System.Xml.XPath.XPathExpression.SetContext%2A> objektu <xref:System.Xml.XPath.XPathExpression>. Můžete také zkompilovat nový objekt <xref:System.Xml.XPath.XPathExpression> pomocí metody static <xref:System.Xml.XPath.XPathExpression.Compile%2A>, která přebírá řetězec představující výraz XPath a objekt <xref:System.Xml.XmlNamespaceManager> jako parametry a vrací nový objekt <xref:System.Xml.XPath.XPathExpression>.  
   
-- <xref:System.Xml.XmlNamespaceManager> Samotný objekt je předán jako parametr přijímání <xref:System.Xml.XPath.XPathNavigator> metoda spolu s řetězec představující výraz XPath třídy.  
+- Samotný objekt <xref:System.Xml.XmlNamespaceManager> je předán jako parametr pro přijetí metody <xref:System.Xml.XPath.XPathNavigator> třídy spolu s řetězcem představujícím výraz XPath.  
   
- Toto jsou metody <xref:System.Xml.XPath.XPathNavigator> třídu, která typu reference přijmout objekt odvozený od <xref:System.Xml.IXmlNamespaceResolver> rozhraní jako parametr.  
+ Níže jsou uvedené metody třídy <xref:System.Xml.XPath.XPathNavigator>, které přijímají objekt odvozený z rozhraní <xref:System.Xml.IXmlNamespaceResolver> jako parametr.  
   
 - <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>  
   
@@ -37,8 +35,8 @@ Dotazy XPath vědomi obory názvů v dokumentu XML a předpony oboru názvů mů
   
 - <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
-### <a name="the-default-namespace"></a>Výchozí Namespace  
- V dokumentu XML, který následuje, výchozí obor názvů s prázdnou předponu slouží k deklaraci `http://www.contoso.com/books` oboru názvů.  
+### <a name="the-default-namespace"></a>Výchozí obor názvů  
+ V dokumentu XML, který následuje, je použit výchozí obor názvů s prázdnou předponou pro deklaraci oboru názvů `http://www.contoso.com/books`.  
   
 ```xml  
 <books xmlns="http://www.contoso.com/books">  
@@ -50,13 +48,13 @@ Dotazy XPath vědomi obory názvů v dokumentu XML a předpony oboru názvů mů
 </books>  
 ```  
   
- Výraz XPath prázdnou předponu považuje `null` oboru názvů. Jinými slovy lze použít pouze předpony, které jsou namapované na obory názvů v dotazy XPath. To znamená, pokud chcete zadat dotaz na obor názvů v dokumentu XML, i když jsou výchozí obor názvů, budete muset definovat předponu pro něj.  
+ XPath zpracovává prázdnou předponu jako obor názvů `null`. Jinými slovy, v dotazech XPath lze použít pouze předpony mapované na obory názvů. To znamená, že pokud chcete dotazovat na obor názvů v dokumentu XML, i když se jedná o výchozí obor názvů, musíte pro něj definovat předponu.  
   
- Například bez definování předponu pro dokument XML výše, XPath dotaz `/books/book` nebudou nalezeny žádné výsledky.  
+ Například bez definice prefixu pro dokument XML výše, `/books/book` dotaz XPath nevrátí žádné výsledky.  
   
- Aby se zabránilo nejednoznačnosti při dotazování dokumentů pomocí některé uzly není v oboru názvů a některé ve výchozím oboru názvů musí být vázán předponu.  
+ Předpona musí být vázána, aby zabránila nejednoznačnosti při dotazování dokumentů s některými uzly, které nejsou v oboru názvů, a některé ve výchozím oboru názvů.  
   
- Následující kód definuje předponu pro výchozí obor názvů a vybere všechny `book` elementy ze `http://www.contoso.com/books` oboru názvů.  
+ Následující kód definuje předponu pro výchozí obor názvů a vybere všechny `book` prvky z oboru názvů `http://www.contoso.com/books`.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  

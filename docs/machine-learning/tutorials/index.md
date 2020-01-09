@@ -1,14 +1,13 @@
 ---
 title: Kurzy ML.NET
 description: Prozkoumejte kurzy ML.NET, kde se dozvíte, jak vytvářet vlastní řešení AI a integrovat je do aplikací .NET.
-ms.custom: seodec18
 ms.date: 07/08/2019
-ms.openlocfilehash: bf59efb4118d9d4fac24413d7568df412a0e9475
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 771ecd83d3f901af84da1f55d7b48152e8145205
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977176"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716623"
 ---
 # <a name="mlnet-tutorials"></a>Kurzy ML.NET
 

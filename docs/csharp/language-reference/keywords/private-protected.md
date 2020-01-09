@@ -1,14 +1,13 @@
 ---
 title: soukromý chráněný – C# odkaz
-ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: dfb2e754d81116012b9fc3f8fd4f6fe1ad0daef1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: a73d61712075cf24d2b94c505104df1fade629e9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422623"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713206"
 ---
 # <a name="private-protected-c-reference"></a>Private ProtectedC# (Referenční dokumentace)
 

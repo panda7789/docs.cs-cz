@@ -1,6 +1,5 @@
 ---
 title: klauzule JOIN – C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - join
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-ms.openlocfilehash: 2e1304c9f38c82b43b0c6551d1b5e7aac523dfe4
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 8e52e9db241392b67818b7316767dd97bd38432a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635961"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713406"
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 

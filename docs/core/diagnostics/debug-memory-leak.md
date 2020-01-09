@@ -1,16 +1,14 @@
 ---
 title: Ladění kurzu nevracení paměti
 description: Naučte se ladit nevracení paměti v .NET Core.
-author: sdmaclea
-ms.author: stmaclea
 ms.topic: tutorial
 ms.date: 12/17/2019
-ms.openlocfilehash: def848b5fe6f08cf32067b833bbf6a97a56edda1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: cb137503cbc81f5ab9438dadcf1dc1c6750a1ca8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443510"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715595"
 ---
 # <a name="tutorial-debug-a-memory-leak-in-net-core"></a>Kurz: ladění nevracení paměti v .NET Core
 

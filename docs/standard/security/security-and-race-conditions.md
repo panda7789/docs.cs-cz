@@ -11,20 +11,18 @@ helpviewer_keywords:
 - secure coding, race conditions
 - code security, race conditions
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 57ceaedc7c38ae70a0db5a7fd584a765a7474aff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8980122acdd069bc840aa09129483a1cb9a379fd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933806"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705870"
 ---
 # <a name="security-and-race-conditions"></a>Zabezpečení a konflikty časování
-Další oblastí zájmu je potenciální bezpečnostní rizika zneužité časování. Existuje několik způsobů, ve kterých k tomu může dojít. Související témata, které následují popisují některé z hlavních problémů, které musí vývojáři vyhnout.  
+Další oblastí obav je potenciál bezpečnostních děr vycházejících ze sporných podmínek. Existuje několik způsobů, jak se k tomu může dojít. Dílčí témata, která následují, popisují některé hlavní nástrah, se kterými se vývojář musí vyhnout.  
   
-## <a name="race-conditions-in-the-dispose-method"></a>Časování v metody Dispose  
- Případě, že třída **Dispose** – metoda (Další informace najdete v tématu [uvolňování](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné tento kód pro vyčištění uvnitř **Dispose** můžete spustit více než jednou, jak je znázorněno v následujícím příkladu.  
+## <a name="race-conditions-in-the-dispose-method"></a>Konflikty časování v metodě Dispose  
+ Pokud metoda **Dispose** třídy (pro další informace, viz [uvolňování paměti](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné, že čistící kód uvnitř **Dispose** lze spustit více než jednou, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Sub Dispose()  
@@ -46,13 +44,13 @@ void Dispose()
 }  
 ```  
   
- Protože toto **Dispose** implementace není synchronizovaný, je možné, `Cleanup` má být volána nejprve jedno vlákno a pak druhého podprocesu před `_myObj` je nastavena na **null**. Zda se jedná o problém zabezpečení závisí na co se stane, když `Cleanup` spuštěn kód. Hlavní problém s nesynchronizované **Dispose** implementací zahrnuje použití popisovače prostředku, jako jsou například soubory. Nesprávné odstranění může způsobit nesprávné popisovač, kterou chcete použít, což často vede k ohrožení zabezpečení.  
+ Vzhledem k tomu, že tato implementace **Dispose** není synchronizována, je možné, že `Cleanup` být volána prvním jedním vláknem a druhým vláknem, před `_myObj` je nastavena na **hodnotu null**. Bez ohledu na to, zda se jedná o zabezpečení, závisí na tom, co se stane, když `Cleanup` kód spouští. Hlavní problém s nesynchronizovanými implementacemi **Dispose** zahrnuje použití popisovačů prostředků, jako jsou soubory. Nesprávné vyřazení může způsobit použití chybného popisovače, což často vede k ohrožení zabezpečení.  
   
-## <a name="race-conditions-in-constructors"></a>Časování v konstruktorech  
- V některých aplikacích je možné pro ostatní vlákna pro přístup ke členům třídy před jejich konstruktor třídy zcela spustili. Měli byste zkontrolovat všechny třídy konstruktory, abyste měli jistotu, že pokud k tomu musí dojít, nebo synchronizaci vláken, v případě potřeby neexistují žádné problémy se zabezpečením.  
+## <a name="race-conditions-in-constructors"></a>Konflikty časování v konstruktorech  
+ V některých aplikacích může být možné, aby další vlákna mohla přistupovat ke členům třídy před tím, než se jejich konstruktory tříd úplně spustí. Měli byste zkontrolovat všechny konstruktory třídy, aby se zajistilo, že nedochází k žádným problémům se zabezpečením, pokud by k tomu došlo, nebo v případě potřeby synchronizaci vláken.  
   
-## <a name="race-conditions-with-cached-objects"></a>Ke konfliktům časování s objekty uložené v mezipaměti  
- Kód, který ukládá informace o zabezpečení nebo který používá zabezpečení přístupu kódu [Assert](../../../docs/framework/misc/using-the-assert-method.md) operace může být také snadno napadnutelný časování Pokud jiné části třídy nejsou synchronizované odpovídajícím způsobem, jak je znázorněno v následujícím příkladu.  
+## <a name="race-conditions-with-cached-objects"></a>Konflikty časování s objekty uloženými v mezipaměti  
+ Kód, který ukládá do mezipaměti informace o zabezpečení nebo používá operaci [vyhodnocení](../../../docs/framework/misc/using-the-assert-method.md) zabezpečení přístupu kódu, může být také ohrožen konflikty časování, pokud jiné části třídy nejsou vhodně synchronizovány, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Sub SomeSecureFunction()  
@@ -97,12 +95,12 @@ void DoOtherWork()
 }  
 ```  
   
- Pokud existují další cesty k `DoOtherWork` , který lze volat z jiného vlákna se stejným objektem, nedůvěryhodné volající může zpozdit poslední požadavek.  
+ Pokud existují další cesty `DoOtherWork`, které je možné volat z jiného vlákna se stejným objektem, může nedůvěryhodný volající nakládat za poptávkou.  
   
- Pokud váš kód mezipaměti informace o zabezpečení, ujistěte se, abyste si pro toto ohrožení zabezpečení.  
+ Pokud váš kód ukládá do mezipaměti informace o zabezpečení, ujistěte se, že je pro tuto chybu zabezpečení revidován.  
   
-## <a name="race-conditions-in-finalizers"></a>Časování v finalizační metody  
- V objektu, který odkazuje na statickou nebo nespravovaný prostředek, který poté uvolní v jeho finalizační metoda může také dojít ke konfliktům časování. Pokud více objektů sdílí prostředek, který je zpracováván v finalizační metodu třídy, musíte synchronizovat objekty veškerý přístup k prostředku.  
+## <a name="race-conditions-in-finalizers"></a>Konflikty časování v finalizačních podmínkách  
+ Ke konfliktům časování může dojít také v objektu, který odkazuje na statický nebo nespravovaný prostředek, který je poté uvolněn v jeho finalizační metodě. Pokud více objektů sdílí prostředek, který je manipulován v finalizační metodě třídy, musí objekty synchronizovat veškerý přístup k tomuto prostředku.  
   
 ## <a name="see-also"></a>Viz také:
 

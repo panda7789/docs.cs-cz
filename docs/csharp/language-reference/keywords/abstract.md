@@ -1,6 +1,5 @@
 ---
 title: abstraktní C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - abstract
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: a6c0ac86689c5d095fc077beb39d6281f77aab24
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 96e8bbce2e67c316d5cd1cd78e3e2506dabead25
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422945"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713855"
 ---
 # <a name="abstract-c-reference"></a>abstract (Referenční dokumentace jazyka C#)
 Modifikátor `abstract` označuje, že upravená věc má chybějící nebo nekompletní implementaci. Modifikátor abstract lze použít se třídami, metodami, vlastnostmi, indexery a událostmi. Použijte modifikátor `abstract` v deklaraci třídy k označení toho, že třída je určena pouze pro základní třídu jiných tříd, nikoli na vlastní instanci. Členy označené jako abstraktní musí být implementovány neabstraktními třídami odvozenými z abstraktní třídy.
@@ -78,7 +77,7 @@ BaseClass bc = new BaseClass();   // Error
   
 Zobrazí se chyba oznamující, že kompilátor nemůže vytvořit instanci abstraktní třídy ' BaseClass '.  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

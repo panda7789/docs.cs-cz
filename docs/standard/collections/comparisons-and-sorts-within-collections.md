@@ -12,49 +12,47 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2d9124c90d09e2fa94a0eaa2ff8cd4e4ab15206f
-ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
+ms.openlocfilehash: fc6972061994e17c2176d3ab278b8d2b37c725ee
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67135674"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711386"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
-<xref:System.Collections> Třídy proveďte porovnání v téměř všech procesů zapojených do Správa kolekcí, zda hledání elementu, který chcete odebrat nebo vrátí hodnotu z dvojice klíč hodnota.  
+Třídy <xref:System.Collections> provádějí porovnání téměř všemi procesy zapojenými do správy kolekcí, bez ohledu na to, zda se má element vyhledat, nebo vrátit hodnotu páru klíč-hodnota.  
   
- Kolekce obvykle využívají porovnávání rovnosti a/nebo pořadí porovnávací metody. Pro porovnání se používají dva konstruktory.  
+ Kolekce obvykle využívají porovnávání rovnosti a/nebo porovnávací řazení. Pro porovnání se používají dva konstrukce.  
   
 <a name="BKMK_Checkingforequality"></a>   
-## <a name="checking-for-equality"></a>Kontroly rovnosti  
- Metody jako `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A>, a `Remove` použít porovnávání rovnosti pro elementy v kolekci. Pokud kolekce je obecný, než položek porovnání rovnosti podle následujících pokynů:  
+## <a name="checking-for-equality"></a>Kontroluje se rovnost.  
+ Metody jako `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A>a `Remove` používají pro prvky kolekce porovnávání rovnosti. Pokud je kolekce obecná, než jsou položky porovnány podle následujících pokynů:  
   
-- Pokud typ T implementuje <xref:System.IEquatable%601> obecné rozhraní a pak procedury rovnosti je <xref:System.IEquatable%601.Equals%2A> metodu rozhraní.  
+- Pokud typ T implementuje obecné rozhraní <xref:System.IEquatable%601>, pak je porovnávání rovnosti metodou <xref:System.IEquatable%601.Equals%2A> tohoto rozhraní.  
   
-- Pokud typ T neimplementuje <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=nameWithType> se používá.  
+- Pokud typ T neimplementuje <xref:System.IEquatable%601>, použije se <xref:System.Object.Equals%2A?displayProperty=nameWithType>.  
   
- Kromě toho některá přetížení konstruktoru pro kolekce slovníku přijmout <xref:System.Collections.Generic.IEqualityComparer%601> implementace, která se používá k porovnání rovnosti klíčů. Příklad najdete v tématu <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=nameWithType> konstruktoru.  
+ Kromě toho některé přetížení konstruktoru pro kolekce slovníku přijímají implementaci <xref:System.Collections.Generic.IEqualityComparer%601>, která se používá k porovnání klíčů pro rovnost. Příklad naleznete v <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=nameWithType> konstruktoru.  
   
 <a name="BKMK_Determiningsortorder"></a>   
-## <a name="determining-sort-order"></a>Určení pořadí řazení  
- Metody jako `BinarySearch` a `Sort` použijte pořadí porovnávače pro elementy v kolekci. Porovnání může být mezi prvky v kolekci, nebo mezi prvkem a zadanou hodnotu. Pro porovnání objektů, je koncept `default comparer` a `explicit comparer`.  
+## <a name="determining-sort-order"></a>Určování pořadí řazení  
+ Metody jako `BinarySearch` a `Sort` používají pro prvky kolekce porovnávací řazení. Porovnání mohou být mezi prvky kolekce nebo mezi prvkem a zadanou hodnotou. Pro porovnávání objektů existuje pojem `default comparer` a `explicit comparer`.  
   
- Výchozí porovnávací metody spoléhá na minimálně jeden z objektů porovnávané hodnotě implementovat **IComparable** rozhraní. Je vhodné provádět **IComparable** na všechny třídy se používají jako hodnoty v seznamu kolekce nebo jako klíče v kolekci slovníku. Pro obecnou kolekci porovnání rovnosti se určuje podle následujícího schématu:  
+ Výchozí porovnávání spoléhá alespoň na jeden objekt, který je porovnán pro implementaci rozhraní **IComparable** . Je vhodné implementovat **IComparable** u všech tříd, které se používají jako hodnoty v kolekci seznamu nebo jako klíče v kolekci slovníku. Pro obecnou kolekci je porovnání rovnosti určeno podle následujících hodnot:  
   
-- Pokud typ T implementuje <xref:System.IComparable%601?displayProperty=nameWithType> obecné rozhraní a pak výchozí porovnávací metody je <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=nameWithType> metoda rozhraní  
+- Pokud typ T implementuje obecné rozhraní <xref:System.IComparable%601?displayProperty=nameWithType>, pak je výchozí porovnávací metodou <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=nameWithType> tohoto rozhraní.  
   
-- Pokud typ T implementuje neobecnou <xref:System.IComparable?displayProperty=nameWithType> rozhraní, pak je výchozí porovnávací metody <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> metodu rozhraní.  
+- Pokud typ T implementuje jiné než obecné <xref:System.IComparable?displayProperty=nameWithType> rozhraní, pak je výchozí porovnávací metoda <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> tohoto rozhraní.  
   
-- Pokud typ T není implementovat buď rozhraní, nejsou k dispozici žádné výchozí porovnávací metody a porovnání nebo porovnání delegáta musí být zadaná explicitně.  
+- Pokud typ T neimplementuje rozhraní, pak neexistuje žádná výchozí porovnávací hodnota a explicitní porovnávací nebo relační delegát musí být poskytnut explicitně.  
   
- Pokud chcete poskytnout explicitní porovnávání, některé metody přijímají **IComparer** implementace jako parametr. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> metoda přijímá <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementace.  
+ Aby bylo možné poskytnout explicitní porovnání, některé metody přijímají implementaci **IComparer** jako parametr. Například metoda <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> přijímá <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementaci.  
   
- Nastavení aktuální jazykové verze systému může ovlivnit, porovnávání a řazení v rámci kolekce. Ve výchozím nastavení, porovnávání a řazení v **kolekce** třídy jsou závislé na jazykové verzi. Chcete-li ignorovat nastavení jazykové verze a tím získat jednotné porovnání a řazení výsledků, použijte <xref:System.Globalization.CultureInfo.InvariantCulture%2A> pomocí přetížení členů, které přijímají <xref:System.Globalization.CultureInfo>. Další informace najdete v tématu [provádění řetězcových operací nezávislých na jazykové verzi v kolekcích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) a [provádění řetězcových operací nezávislých na jazykové verzi v polích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).  
+ Aktuální nastavení jazykové verze systému může ovlivnit porovnání a seřazení v rámci kolekce. Ve výchozím nastavení porovnání a řazení v **kolekcích** tříd jsou závislé na jazykové verzi. Chcete-li ignorovat nastavení jazykové verze, a proto získat konzistentní porovnání a řazení výsledků, použijte <xref:System.Globalization.CultureInfo.InvariantCulture%2A> s přetíženími členů, která přijímají <xref:System.Globalization.CultureInfo>. Další informace naleznete v tématu [provádění řetězcových operací nezávislých na jazykové verzi v kolekcích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) a [provádění řetězcových operací nezávislých na jazykové verzi v polích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-arrays.md).  
   
 <a name="BKMK_Equalityandsortexample"></a>   
 ## <a name="equality-and-sort-example"></a>Příklad rovnosti a řazení  
- Následující kód ukazuje implementaci nástroje <xref:System.IEquatable%601> a <xref:System.IComparable%601> na jednoduché obchodní objekt. Kromě toho, pokud objekt je uložená v seznamu a seřazeny, uvidíte, že volání <xref:System.Collections.Generic.List%601.Sort> metodu vede pomocí výchozí porovnávací metody pro `Part` typ a <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29> metoda implementovaná pomocí anonymní metodu.  
+ Následující kód ukazuje implementaci <xref:System.IEquatable%601> a <xref:System.IComparable%601> v jednoduchém obchodním objektu. Kromě toho, když je objekt uložen v seznamu a seřazen, se zobrazí, že volání metody <xref:System.Collections.Generic.List%601.Sort> má za následek použití výchozí porovnávací metody pro `Part` typ a metoda <xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29> implementovaná pomocí anonymní metody.  
   
  [!code-csharp[System.Collections.Generic.List.Sort#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.list.sort/cs/program.cs#1)]
  [!code-vb[System.Collections.Generic.List.Sort#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.list.sort/vb/module1.vb#1)]  

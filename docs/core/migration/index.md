@@ -2,13 +2,12 @@
 title: Migrace .NET Core ze služby Project. JSON
 description: Naučte se migrovat starší projekt .NET Core pomocí Project. JSON.
 ms.date: 07/19/2017
-ms.custom: seodec18
-ms.openlocfilehash: 2912262d1191114d2314fed89e31c91c114f1935
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: f81d01c052c3632c48a5f961be86eab686c2074e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773900"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714355"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migrace projektů .NET Core ze služby Project. JSON
 
@@ -35,7 +34,7 @@ Po otevření souboru *. xproj* nebo souboru řešení, který odkazuje na soubo
 
 ![Dialog s jednosměrným upgradem zobrazující seznam projektů, které se mají migrovat](media/one-way-upgrade.jpg)
 
-Visual Studio automaticky migruje vybrané projekty. Pokud při migraci řešení nezvolíte možnost všechny projekty, zobrazí se stejné dialogové okno s výzvou k upgradu zbývajících projektů z tohoto řešení. Po dokončení migrace projektu můžete zobrazit a upravit jeho obsah tak, že kliknete pravým tlačítkem myši na projekt v okně **Průzkumník řešení** a vyberete **upravit \<project název >. csproj**.
+Visual Studio automaticky migruje vybrané projekty. Pokud při migraci řešení nezvolíte možnost všechny projekty, zobrazí se stejné dialogové okno s výzvou k upgradu zbývajících projektů z tohoto řešení. Po dokončení migrace projektu můžete zobrazit a upravit jeho obsah tak, že kliknete pravým tlačítkem myši na projekt v okně **Průzkumník řešení** a vyberete **Upravit \<název projektu >. csproj**.
 
 Migrované soubory (*Project. JSON*, *Global. JSON*, *. xproj*a soubor řešení) se přesunou do složky *zálohy* . Migrovaný soubor řešení je upgradován na Visual Studio 2017 nebo Visual Studio 2019 a nebudete moci otevřít tento soubor řešení v aplikaci Visual Studio 2015 nebo starší verze. Soubor s názvem *UpgradeLog. htm* , který obsahuje sestavu migrace, se také ukládá a otevírá automaticky.
 
@@ -89,4 +88,4 @@ Příklady před a po migraci ze starého formátu csproj na nový najdete v čl
 
 ## <a name="see-also"></a>Viz také:
 
-- [Port, migrace a upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)
+- [Přenos, migrace a Upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)

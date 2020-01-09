@@ -1,17 +1,16 @@
 ---
 title: Použití typu dynamický průvodce C# programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: aa1e8ce53038fce24854561e83db1c086b5b276e
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: c5ac5b3692266010f0be8672ef744baaa32e6a03
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635012"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711854"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu Dynamic (C# Průvodce programováním)
 

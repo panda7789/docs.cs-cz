@@ -7,46 +7,45 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], about
 - class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-author: KrzysztofCwalina
-ms.openlocfilehash: c20430f9cdcd71cc2e178d38aeed48f9fa4e75c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 623391de63891c1695a63482a424bb76a861deba
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026377"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709306"
 ---
 # <a name="framework-design-guidelines"></a>Pokyny k návrhu architektury
-Tato část obsahuje pokyny pro návrh knihoven, které rozšiřují a pracovat s rozhraním .NET Framework. Cílem je pomoct knihovny návrhářů tím, že poskytuje jednotný programovací model, který je nezávislý na programovací jazyk se používá pro vývoj pro zajištění konzistence rozhraní API a snadné použití. Doporučujeme postupovat podle následujících pokynů návrhu, při vytváření tříd a komponent, které rozšiřují rozhraní .NET Framework. Návrh nekonzistentní knihovny nepříznivě má vliv na produktivitu vývojářů a odrazuje od přijetí.  
+V této části najdete pokyny pro návrh knihoven, které rozšíří a komunikují s .NET Framework. Cílem je pomáhat Návrháři knihovny zajistit konzistenci rozhraní API a snadné použití poskytnutím jednotného programovacího modelu, který je nezávislý na programovacím jazyku používaném pro vývoj. Při vývoji tříd a komponent, které .NET Framework rozšiřuje, doporučujeme postupovat podle těchto pokynů k návrhu. Nekonzistentní návrh knihovny nepříznivě ovlivňuje produktivitu vývojářů a nedoporučuje přijetí.  
   
- Pokyny jsou uspořádané jako jednoduchý doporučení předponu podmínky `Do`, `Consider`, `Avoid`, a `Do not`. Tyto pokyny jsou určeny k pomohou návrhářům tříd knihovny pochopit kompromisy mezi různými řešeními. Můžou nastat situace, kdy návrh dobrý knihovna vyžaduje, aby že porušují tyto pokyny k návrhu. Takové případy by měl být vzácné a je důležité, abyste měli vymazat a poutavé důvod svého rozhodnutí.  
+ Pokyny jsou uspořádané jako jednoduchá doporučení s podmínkami `Do`, `Consider`, `Avoid`a `Do not`. Tyto pokyny jsou určeny k tomu, aby Návrháři knihoven tříd pochopili kompromisy mezi různými řešeními. Můžou nastat situace, kdy dobrý návrh knihovny vyžaduje, abyste ponarušili tyto pokyny k návrhu. Takové případy by měly být vzácné a je důležité, abyste měli jasný a přesvědčivý důvod pro vaše rozhodnutí.  
   
- Tyto pokyny jsou výňatkem z knihy *pokyny k návrhu architektury: Konvence, Idiomy a vzory pro knihovny opakovaně použitelných .NET, 2nd Edition*, Krzysztof Cwalina a Brad Abrams.  
+ Tyto pokyny jsou uvedené v *pokynech pro návrh Book Framework: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice*, Krzysztof Cwalina a Brad Abrams.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)  
- Obsahuje pokyny pro pojmenování sestavení, oborů názvů, typy a členy v knihovnách tříd.  
+ Poskytuje pokyny pro pojmenování sestavení, oborů názvů, typů a členů v knihovnách tříd.  
   
  [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- Poskytuje pokyny pro používání statických a abstraktní třídy, rozhraní, výčty, struktury a ostatní typy.  
+ Poskytuje pokyny pro použití statických a abstraktních tříd, rozhraní, výčtů, struktur a dalších typů.  
   
  [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
- Obsahuje pokyny pro návrh a pomocí vlastnosti, metody, konstruktory, pole, události, operátory a parametry.  
+ Poskytuje pokyny pro návrh a používání vlastností, metod, konstruktorů, polí, událostí, operátorů a parametrů.  
   
  [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
- Popisuje rozšíření mechanismy, jako je vytváření podtříd, události, virtuální členy a zpětná volání a vysvětluje, jak zvolit mechanismy, které nejlépe splňovat požadavky na vaše architektura.  
+ Popisuje mechanismy rozšiřitelnosti, jako je například použití podtříd, používání událostí, virtuálních členů a zpětných volání, a vysvětluje, jak zvolit mechanismy, které nejlépe vyhovují požadavkům vašeho rozhraní.  
   
  [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)  
- Popisuje pokyny k návrhu pro navrhování, vyvolání a zachycení výjimky.  
+ Popisuje pokyny návrhu pro návrh, vyvolání a zachycení výjimek.  
   
  [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)  
- Popisuje pokyny pro běžné typy, jako je například pole, atributy a kolekce pomocí, podpora serializace a operátory rovnosti přetížení.  
+ Popisuje pokyny pro použití běžných typů, jako jsou pole, atributy a kolekce, podpora serializace a přetížení operátorů rovnosti.  
   
  [Obecné vzory návrhu](../../../docs/standard/design-guidelines/common-design-patterns.md)  
- Obsahuje pokyny pro výběr a implementace vlastnosti závislosti.  
+ Poskytuje pokyny pro výběr a implementaci vlastností závislosti.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

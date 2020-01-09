@@ -11,14 +11,12 @@ helpviewer_keywords:
 - resx files
 - .resx files
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: df7ce0795daabdf34f46e20460bef23e7c486467
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2cfb2d9874b34eef78fe462e0270fd70307a9f61
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043895"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715706"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres. exe (Editor lokalizace prostředků systému Windows)
 
@@ -65,13 +63,13 @@ Pokud nástroj Winres.exe nedokáže rozlišit verzi ovládacího prvku, vytvoř
 
 Obecně platí, že dříve než začnete lokalizovat formuláře Windows Forms pro určitou aplikaci, měli byste se rozhodnout, zda chcete k lokalizaci použít sadu Visual Studio, nebo nástroj Winres.exe. Kompatibilita verzí, jak je popsáno dále, může bránit přepínání z jednoho nástroje na druhý.
 
-Výhodou sady Visual Studio je, že ji můžete použít k vývoji i lokalizaci aplikace. Chcete-li lokalizovat formulář, po dokončení vývoje nastavte <xref:System.ComponentModel.LocalizableAttribute> vlastnost ( **lokalizovatelné** vlastnosti v editoru **vlastností** ) na `true` a změňte její vlastnost **Language** na požadovanou cílovou jazykovou verzi. Poté změňte řetězce a upravte umístění a velikost ovládacích prvků tak, aby vyhovovaly řetězcům cílové jazykové verze. Při ukládání lokalizovaného souboru .resx sada Visual Studio do souboru zapíše pouze lokalizovatelné vlastnosti (vlastnosti, které se v cílové jazykové verzi změnily). Sada Visual Studio automaticky vytvoří satelitní sestavení pro lokalizovaný soubor .resx ve správném adresáři.
+Výhodou sady Visual Studio je, že ji můžete použít k vývoji i lokalizaci aplikace. Chcete-li lokalizovat formulář, po dokončení vývoje nastavte <xref:System.ComponentModel.LocalizableAttribute> formuláře (vlastnost **Localize** v editoru **vlastností** ) na `true` a změňte jeho vlastnost **Language** na požadovanou cílovou jazykovou verzi. Poté změňte řetězce a upravte umístění a velikost ovládacích prvků tak, aby vyhovovaly řetězcům cílové jazykové verze. Při ukládání lokalizovaného souboru .resx sada Visual Studio do souboru zapíše pouze lokalizovatelné vlastnosti (vlastnosti, které se v cílové jazykové verzi změnily). Sada Visual Studio automaticky vytvoří satelitní sestavení pro lokalizovaný soubor .resx ve správném adresáři.
 
 I když Visual Studio poskytuje integrované vývojové a lokalizační prostředí, je nástroj Winres. exe doporučeným nástrojem pro použití v případě, že je lokalizace prováděna pomocí nástrojů pro lokalizace třetích stran. Protože Winres.exe je pouze lokalizační nástroj, umožňuje jasnější oddělení kódu aplikace od formulářů určených k lokalizaci, což je při řízení velkých projektů praktičtější.
 
 ## <a name="using-winresexe"></a>Používání nástroje Winres.exe
 
-Chcete-li lokalizovat pomocí nástroje Winres. exe, musíte nejprve vyvinout aplikaci pomocí vizuálního návrháře, jako je **Návrhář formulářů** v aplikaci Visual Studio. Po dokončení vývoje <xref:System.ComponentModel.LocalizableAttribute> nastavte vlastnost ( **lokalizovatelné** vlastnosti v editoru **vlastností** ) na `true`a pak předání souboru. resx výchozí jazykové verzi na lokalizátora třetí strany. Tento soubor .resx obsahuje další informace, které nástroj Winres.exe použije k obnovení verze návrhu původního formuláře.
+Chcete-li lokalizovat pomocí nástroje Winres. exe, musíte nejprve vyvinout aplikaci pomocí vizuálního návrháře, jako je **Návrhář formulářů** v aplikaci Visual Studio. Po dokončení vývoje nastavte <xref:System.ComponentModel.LocalizableAttribute> formuláře ( **lokalizovatelné** vlastnosti v editoru **vlastností** ) na `true`a pak předání souboru. resx výchozí jazykové verzi na lokalizátora třetí strany. Tento soubor .resx obsahuje další informace, které nástroj Winres.exe použije k obnovení verze návrhu původního formuláře.
 
 > [!NOTE]
 > Nástroj Winres.exe nelze použít k úpravě výchozího souboru prostředků. Nástroj Winres.exe interpretuje všechny změněné vlastnosti jako lokalizované vlastnosti a ukládá je do souboru prostředků cílové jazykové verze.
@@ -100,13 +98,13 @@ Měli byste použít verzi nástroje Winres. exe, která byla vydaná s .NET Fra
 |Visual Studio 2017|4.6|4.6|
 
 > [!NOTE]
-> Ačkoli se režim VSFM vyznačuje výhodou kompatibility se sadou Visual Studio, tak vzhledem k tomu, že do souboru prostředků jsou uloženy pouze změněné hodnoty, nástroj Winres.exe vyžaduje, aby se soubory nadřazené aktuálnímu souboru prostředků nacházely ve stejném adresáři. Například úpravy `TestApp.de-DE.resources`, němčina v souboru prostředků Německo, vyžaduje přítomnost výchozího souboru prostředků, `TestApp.resx`a případně soubor `TestApp.de.resources`prostředků neutrální jazykové verze.
+> Ačkoli se režim VSFM vyznačuje výhodou kompatibility se sadou Visual Studio, tak vzhledem k tomu, že do souboru prostředků jsou uloženy pouze změněné hodnoty, nástroj Winres.exe vyžaduje, aby se soubory nadřazené aktuálnímu souboru prostředků nacházely ve stejném adresáři. Například úprava `TestApp.de-DE.resources`, němčina v souboru prostředků Německo, vyžaduje přítomnost výchozího souboru prostředků, `TestApp.resx`a případně soubor prostředků neutrální jazykové verze `TestApp.de.resources`.
 
 ## <a name="examples"></a>Příklady
 
 ### <a name="to-localize-a-resx-or-resources-file-associated-with-a-form"></a>Lokalizace souborů .resx nebo .resources spojených s formulářem
 
-1. Pro `winres` spuštění nástroje Winres. exe zadejte do příkazového řádku pro vývojáře.
+1. Zadáním `winres` na příkazovém řádku pro vývojáře spusťte nástroj Winres. exe.
 
 2. Chcete-li otevřít výchozí prostředky pro vytvoření formuláře pro lokalizaci, klikněte na příkaz **otevřít** v nabídce **soubor** a přejděte k souboru a otevřete jej.
 
@@ -114,13 +112,13 @@ Měli byste použít verzi nástroje Winres. exe, která byla vydaná s .NET Fra
 
      Při spouštění nástroje Winres.exe do příkazového řádku zadejte název otevíraného souboru.
 
-     Následující příkaz spustí nástroj Winres. exe a načte formulář přidružený `TestApp.resx` k v návrháři formuláře.
+     Následující příkaz spustí nástroj Winres. exe a načte formulář přidružený k `TestApp.resx` v návrháři formuláře.
 
     ```console
     winres TestApp.resx
     ```
 
-     Následující příkaz spustí nástroj Winres. exe a načte formulář přidružený `TestApp.resources` k v návrháři formuláře.
+     Následující příkaz spustí nástroj Winres. exe a načte formulář přidružený k `TestApp.resources` v návrháři formuláře.
 
     ```console
     winres TestApp.resources
@@ -135,7 +133,7 @@ Měli byste použít verzi nástroje Winres. exe, která byla vydaná s .NET Fra
 
 5. Vyberte odpovídající jazykovou verzi a režim souboru a pak klikněte na **OK**.
 
-   Nástroj uloží soubor pomocí konvence pojmenování, kterou doba běhu pro lokalizované soubory prostředků očekává. Například pokud se rozhodnete `TestApp.resources` pro němčinu v Německu, nástroj soubor uloží jako. `TestApp.de-DE.resources` Pokud se rozhodnete `TestApp.resx` pro němčinu v Německu, nástroj soubor uloží jako. `TestApp.de-DE.resx` Další informace o zásadách vytváření názvů prostředků naleznete v tématu [balení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md). Seznam předdefinovaných názvů jazykových verzí používaných v době běhu naleznete v tématu <xref:System.Globalization.CultureInfo> třída.
+   Nástroj uloží soubor pomocí konvence pojmenování, kterou doba běhu pro lokalizované soubory prostředků očekává. Pokud například `TestApp.resources` pro němčinu v Německu, nástroj ho uloží jako `TestApp.de-DE.resources`. Pokud lokalizaci `TestApp.resx` pro němčinu v Německu, nástroj soubor uloží jako `TestApp.de-DE.resx`. Další informace o zásadách vytváření názvů prostředků naleznete v tématu [balení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md). Seznam předdefinovaných názvů jazykových verzí používaných v době běhu naleznete v tématu Třída <xref:System.Globalization.CultureInfo>.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -3,38 +3,36 @@ title: Navigace v sadě uzlů pomocí XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1a954b41-7173-40bc-8544-d430f209b1e5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 44b102cf160dcc4b3f188451d42d3b8dbefa5d1f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 91115af03b635d7660721fac5ce8bd749953e4ff
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590183"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710567"
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>Navigace v sadě uzlů pomocí XPathNavigator
-Můžete přejít přes uzly v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu pomocí uzel nastavení metody navigace <xref:System.Xml.XPath.XPathNavigator> třídy. Můžete přejít přes všechny uzly nebo vybrané sady uzlů, které vrátí jednu z metod výběr <xref:System.Xml.XPath.XPathNavigator> třídy.  
+Můžete procházet uzly v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu pomocí uzlu, který je navigačními metodami třídy <xref:System.Xml.XPath.XPathNavigator>. Můžete přecházet přes všechny uzly nebo přes vybranou sadu uzlů vrácenou jednou z metod výběru třídy <xref:System.Xml.XPath.XPathNavigator>.  
   
-## <a name="element-node-set-navigation"></a>Navigace v sadě uzlů – element  
- <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje několik metod pro pohyb mezi uzly element. V následující tabulce jsou uvedeny navigační metody, které jsou k dispozici a jak přecházejí; popis To nezahrnuje metody použít pro účely navigace uzly atributu a oboru názvů.  
+## <a name="element-node-set-navigation"></a>Uzel elementu – nastavení navigace  
+ Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje několik metod, které slouží k procházení uzlů prvků. V následující tabulce jsou uvedeny dostupné metody navigace a popis jejich přesunu; nezahrnuje metody používané pro navigaci v uzlech atributu a oboru názvů.  
   
- Další informace o výběru uzlů v <xref:System.Xml.XPath.XPathNavigator> objektu, najdete v článku [výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md). Další informace o procházení atributu a oboru názvů uzlů najdete v tématu [atribut a Namespace uzlu navigace pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md).  
+ Další informace o výběru uzlů v objektu <xref:System.Xml.XPath.XPathNavigator> najdete v tématu [výběr, vyhodnocení a porovnání dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md). Další informace o navigaci v uzlech atributů a oboru názvů naleznete v tématu [navigace pomocí atributů a uzlu oboru názvů pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md).  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na stejné pozici <xref:System.Xml.XPath.XPathNavigator> zadané.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToChild%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na podřízený uzel pro aktuální uzel.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do prvního uzlu na stejné úrovni pro aktuální uzel.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na první podřízený uzel pro aktuální uzel.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToFollowing%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> pro zadaný element v pořadí dokumentů.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> k uzlu, který má atribut typu `ID` s hodnotou, která odpovídá daný <xref:System.String>.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> k dalšímu uzlu na stejné úrovni pro aktuální uzel.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToParent%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na nadřazený uzel pro aktuální uzel.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do předchozího uzlu na stejné úrovni pro aktuální uzel.|  
-|<xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> pro kořenový uzel dokumentu XML.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do stejné pozice <xref:System.Xml.XPath.XPathNavigator> zadaného.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToChild%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do podřízeného uzlu aktuálního uzlu.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na první uzel na stejné úrovni jako aktuální uzel.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do prvního podřízeného uzlu aktuálního uzlu.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToFollowing%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na zadaný element v pořadí dokumentů.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na uzel, který má atribut typu `ID` s hodnotou, která odpovídá danému <xref:System.String>.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na další uzel na stejné úrovni jako aktuální uzel.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToParent%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do nadřazeného uzlu aktuálního uzlu.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> na předchozí uzel na stejné úrovni jako aktuální uzel.|  
+|<xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A>|Přesune <xref:System.Xml.XPath.XPathNavigator> do kořenového uzlu dokumentu XML.|  
   
-## <a name="comments-and-processing-instruction-node-navigation"></a>Komentáře a navigační uzel zpracování instrukcí  
- Následující <xref:System.Xml.XPath.XPathNavigator> metody třídy jsou platné pro přesun do komentáře nebo zpracování pokyny z jiných uzlů v dokumentu XML.  
+## <a name="comments-and-processing-instruction-node-navigation"></a>Komentáře a zpracování – navigace uzlu instrukcí  
+ Následující metody třídy <xref:System.Xml.XPath.XPathNavigator> jsou platné pro přesun na komentáře nebo pokyny pro zpracování z jiných uzlů v dokumentu XML.  
   
 - <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>  
   

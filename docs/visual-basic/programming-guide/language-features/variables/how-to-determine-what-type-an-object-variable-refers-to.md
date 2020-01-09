@@ -6,12 +6,12 @@ helpviewer_keywords:
 - variables [Visual Basic], object
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
-ms.openlocfilehash: 9f9b89e2fea0bd69cba6d50fa1d1fb9cc3927685
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b3778a170759f685db78e7dcde219138196f9eca
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348618"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344190"
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určení, na jaký typ proměnná objektu odkazuje (Visual Basic)
 
@@ -50,7 +50,7 @@ Proměnná objektu obsahuje ukazatel na data, která jsou uložená jinde. Typ t
 
     Kritérium kompatibility závisí na tom, zda je zadaný typ třída, struktura nebo rozhraní. Obecně jsou typy kompatibilní, pokud je objekt stejného typu jako, dědí z nebo implementuje zadaný typ. Další informace naleznete v tématu [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md).
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compile-the-code"></a>Kompilace kódu
 
 Všimněte si, že zadaný typ nemůže být proměnná nebo výraz. Musí se jednat o název definovaného typu, jako je například třída, struktura nebo rozhraní. To zahrnuje vnitřní typy, jako `Integer` a `String`.
 

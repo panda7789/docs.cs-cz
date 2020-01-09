@@ -24,14 +24,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6f0e268995449bc27b93c92ac8654c09fca9cd14
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 66af8126ab61d37065b9a328d5e088ed7bf4cbef
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975830"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709202"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 

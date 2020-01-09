@@ -3,13 +3,12 @@ title: Přehled nástroje WCF Svcutil
 description: Přehled nástroje Microsoft WCF dotnet-Svcutil, který přidává funkce pro projekty .NET Core a ASP.NET Core podobně jako nástroj WCF Svcutil pro projekty .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.custom: seodec18
-ms.openlocfilehash: 89fe72c8116498ff60d439ce17ef2e857edf621e
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: d204576f27227ce6e65d61471f19cdf3ec4df37a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771986"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714567"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet – nástroj Svcutil pro .NET Core
 
@@ -175,10 +174,10 @@ dotnet svcutil --help
 
 Pokud máte nějaké dotazy nebo připomínky, [otevřete problém na GitHubu](https://github.com/dotnet/wcf/issues/new). V [ÚLOŽIŠTI WCF na GitHubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling)můžete také zkontrolovat všechny existující otázky nebo problémy.
 
-## <a name="release-notes"></a>Poznámky k verzi
+## <a name="release-notes"></a>Zpráva k vydání verze
 
 - Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) .
 
-## <a name="information"></a>Informace
+## <a name="information"></a>Informace o nástroji
 
 - [dotnet – balíček NuGet pro Svcutil](https://nuget.org/packages/dotnet-svcutil)

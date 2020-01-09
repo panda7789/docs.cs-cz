@@ -1,17 +1,16 @@
 ---
 title: Postup iterace prostřednictvím průvodce C# programováním adresářových stromů
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 5ae41fa0b18ef31c7cd7d00fb8a9c4afa7df93ac
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: be3931a23e7a88affcf4d0abf617ec00bd35297a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635376"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712257"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postup iterace v adresářovém stromu (C# Průvodce programováním)
 Fráze "iterace stromu adresářů" znamená přístup ke každému souboru v každém vnořeném podadresáři v zadané kořenové složce, a to v jakékoli hloubce. Nemusíte nutně otevírat jednotlivé soubory. Můžete jednoduše načíst název souboru nebo podadresáře jako `string`, nebo můžete načíst další informace ve formě objektu <xref:System.IO.FileInfo?displayProperty=nameWithType> nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType>.  

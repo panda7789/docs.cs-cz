@@ -1,17 +1,16 @@
 ---
 title: Konstanty C# – Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: b7c005063ed1d7f881a42d340525c21ee89948b4
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 0abb728c58d50e3d7709d680dd91794c4be6afef
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347138"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705740"
 ---
 # <a name="constants-c-programming-guide"></a>Konstanty (Průvodce programováním v C#)
 Konstanty jsou neměnné hodnoty, které jsou známy v době kompilace a nemění se po dobu života programu. Konstanty jsou deklarovány s modifikátorem [const](../../language-reference/keywords/const.md) . Pouze C# předdefinované typy (kromě <xref:System.Object?displayProperty=nameWithType>) mohou být deklarovány jako `const`. Seznam předdefinovaných typů najdete v tématu [tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md). Uživatelsky definované typy, včetně tříd, struktur a polí, nelze `const`. Použijte modifikátor [jen pro čtení](../../language-reference/keywords/readonly.md) k vytvoření třídy, struktury nebo pole, která je inicializována jednou za běhu (například v konstruktoru) a poté nelze změnit.  

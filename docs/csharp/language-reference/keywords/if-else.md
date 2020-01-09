@@ -1,6 +1,5 @@
 ---
-title: if-else – C# odkaz
-ms.custom: seodec18
+title: if-else- C# reference
 ms.date: 07/20/2015
 f1_keywords:
 - if_CSharpKeyword
@@ -11,22 +10,22 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: 18b41446eb13f4b91db86d79316a5299b0f3020a
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 98c1a8dceec3e5a47627841988e2d722c56fc36c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300483"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715267"
 ---
 # <a name="if-else-c-reference"></a>if-else (Referenční dokumentace jazyka C#)
 
-`if` Příkaz určuje, který příkaz ke spuštění na základě hodnoty logického výrazu. V následujícím příkladu `bool` proměnné `condition` je nastavena na `true` a pak se změnami `if` příkaz. Výstup je `The variable is set to true.`.
+Příkaz `if` identifikuje, který příkaz se má spustit na základě hodnoty logického výrazu. V následujícím příkladu je proměnná `bool` `condition` nastavená na `true` a pak se vrátila do příkazu `if`. Výstup je `The variable is set to true.`.
 
 [!code-csharp[csrefKeywordsSelection#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#1)]
 
-V příkladech v tomto tématu můžete spustit tak, že je `Main` metoda Konzolová aplikace.
+Příklady v tomto tématu můžete spustit tak, že je umístíte do metody `Main` konzolové aplikace.
 
-`if` Příkaz v jazyce C# může mít dvě formy, jak ukazuje následující příklad.
+Příkaz `if` v C# nástroji může přijmout dvě formy, jak ukazuje následující příklad.
 
 ```csharp
 // if-else statement
@@ -48,41 +47,41 @@ if (condition)
 // Next statement in the program.
 ```
 
-V `if-else` příkazu, pokud `condition` vyhodnotí jako true, `then-statement` běží. Pokud `condition` má hodnotu false, `else-statement` běží. Protože `condition` nemůže být zároveň true a false, `then-statement` a `else-statement` z `if-else` příkazu můžete oba nespouštět. Po `then-statement` nebo `else-statement` spuštění, ovládací prvek bude převeden na příkaz následující po `if` příkazu.
+Pokud se v příkazu `if-else` `condition` vyhodnotí jako true, `then-statement` se spustí. Pokud je `condition` false, `else-statement` se spustí. Vzhledem k tomu, že `condition` nemůže být současně true a false, `then-statement` a `else-statement` příkazu `if-else` nikdy nejdou spustit současně. Po `then-statement` nebo spuštění `else-statement` je ovládací prvek převeden na další příkaz po příkazu `if`.
 
-V `if` příkaz, který neobsahuje `else` příkazu, pokud `condition` má hodnotu true, `then-statement` běží. Pokud `condition` má hodnotu false, je kontrola předána dalšímu příkazu po `if` příkazu.
+V příkazu `if`, který neobsahuje příkaz `else`, pokud `condition` má hodnotu true, `then-statement` se spustí. Pokud je `condition` false, ovládací prvek se převede na další příkaz po příkazu `if`.
 
-Jak `then-statement` a `else-statement` se může skládat z jednoho příkazu nebo více příkazů, které jsou uzavřeny ve složených závorkách (`{}`). Pro jeden příkaz složené závorky jsou nepovinné, ale doporučený.
+`then-statement` i `else-statement` se mohou skládat z jednoho příkazu nebo více příkazů, které jsou uzavřeny v závorkách (`{}`). V případě jednoho příkazu jsou složené závorky volitelné, ale doporučené.
 
-Příkaz nebo příkazy v `then-statement` a `else-statement` mohou být jakéhokoli typu, včetně jiného `if` příkaz vnořit do původní `if` příkazu. Ve vnořené `if` příkazy, každý `else` klauzule patří na poslední `if` , který nemá odpovídající `else`. V následujícím příkladu `Result1` se zobrazí, pokud obě `m > 10` a `n > 20` vyhodnocen na hodnotu true. Pokud `m > 10` má hodnotu true, ale `n > 20` má hodnotu false, `Result2` se zobrazí.
+Příkaz nebo příkazy v `then-statement` a `else-statement` mohou být libovolného druhu, včetně jiného příkazu `if` vnořeného v původním příkazu `if`. Ve vnořených příkazech `if` každá klauzule `else` patří do posledního `if`, který nemá odpovídající `else`. V následujícím příkladu se `Result1` zobrazí, pokud jsou obě `m > 10` a `n > 20` vyhodnoceny jako true. Pokud je `m > 10` true, ale `n > 20` je false, `Result2` se zobrazí.
 
 [!code-csharp[csrefKeywordsSelection#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#2)]
 
-Pokud místo toho chcete `Result2` se zobrazí, když `(m > 10)` má hodnotu false, můžete zadat toto přidružení pomocí závorek k navázání začátku a konce ve vnořeném `if` příkaz, jak ukazuje následující příklad.
+Pokud místo toho chcete, aby se `Result2` zobrazovaly, když `(m > 10)` je false, můžete zadat toto přidružení pomocí složených závorek pro vytvoření začátku a konce vnořeného příkazu `if`, jak ukazuje následující příklad.
 
 [!code-csharp[csrefKeywordsSelection#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#3)]
 
-`Result2` se zobrazí, pokud podmínka `(m > 10)` nevyhodnotí jako false.
+`Result2` se zobrazí, pokud je podmínka `(m > 10)` vyhodnocena jako NEPRAVDA.
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu, zadejte znak z klávesnice a program používá vnořený `if` příkaz k určení, zda je vstupní znak abecední znak. Pokud vstupní znak je znak abecedy, program zkontroluje, zda je vstupní znak malé nebo velké písmeno. Zobrazí se zpráva pro každý případ.
+V následujícím příkladu zadáte znak z klávesnice a program použije vnořený příkaz `if` k určení, zda je vstupním znakem abecední znak. Pokud je vstupním znakem abecední znak, program zkontroluje, zda je vstupní znak malý nebo malý. Pro každý případ se zobrazí zpráva.
 
 [!code-csharp[csrefKeywordsSelection#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#4)]
 
 ## <a name="example"></a>Příklad
 
-Také můžete vnořit `if` výroku uvnitř jiného bloku, jak ukazuje následující kód částečné. Příklad používá vnořené `if` příkazy uvnitř jiného dvou bloků a pak jeden blok. Komentáře zadejte podmínky, které jsou true nebo false v každém bloku.
+Můžete také vnořit příkaz `if` do bloku else, jak ukazuje následující částečný kód. Příklad vnořování `if` příkazy uvnitř dvou bloků else a jednom bloku. Komentáře určují, které podmínky jsou v každém bloku pravdivé nebo nepravdivé.
 
 [!code-csharp[csrefKeywordsSelection#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#5)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad určuje, zda je vstupní znak malé písmeno, velké písmeno nebo číslo. Pokud jsou všechny tři podmínky hodnotu false, není znak alfanumerický znak. V příkladu se zobrazí zprávu pro každý případ.
+Následující příklad určuje, zda je vstupní znak malé písmeno, velké písmeno nebo číslo. Pokud jsou všechny tři podmínky false, znak není alfanumerický znak. V příkladu se zobrazí zpráva pro každý případ.
 
 [!code-csharp[csrefKeywordsSelection#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#6)]
 
-Stejně jako příkaz v jiného bloku nebo bloku pak může být libovolný platný příkaz, můžete použít libovolný platný výraz logickou podmínku. Můžete použít [logické operátory](../operators/boolean-logical-operators.md) například `!`, `&&`, `||`, `&`, `|`, a `^` aby složených podmínek. Následující kód ukazuje příklady.
+Stejně jako příkaz v bloku else nebo blok, který může být libovolným platným příkazem, můžete pro podmínku použít libovolný platný logický výraz. Složené podmínky můžete provádět pomocí [logických operátorů](../operators/boolean-logical-operators.md) , jako jsou `!`, `&&`, `||`, `&`, `|`a `^`. Následující kód ukazuje příklady.
 
 ```csharp
 // NOT
@@ -137,7 +136,7 @@ if (!(m >= n || m >= p))
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [?: – operátor](../operators/conditional-operator.md)

@@ -3,14 +3,12 @@ title: Správa oborů názvů v dokumentu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3befdd0ec96856a62e5c3c603935303498758710
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 64ef9fd4ca3a9a83b9cd3eba9cb952b0f668e9f0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423930"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710697"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastními a předdefinovanými identifikátory URI. Chcete-li vytvořit tato přidružení, definujete předpony pro identifikátor URI oboru názvů a použijete tyto předpony pro kvalifikaci názvů elementů a atributů v datech XML. Obory názvů zabraňují kolizím názvů prvků a atributů a umožňují, aby elementy a atributy stejného názvu byly zpracovány a ověřovány jinak.  
@@ -67,16 +65,16 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
   
  Tady jsou některé úlohy správy a vyhledávání, které můžete provádět s <xref:System.Xml.XmlNamespaceManager> třídou. Další informace a příklady naleznete v odkazech na referenční stránku pro jednotlivé metody nebo vlastnosti.  
   
-|Chcete-li|Použití|  
+|Pro|Použití|  
 |--------|---------|  
-|Přidat obor názvů|<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A> – metoda|  
-|Odebrání oboru názvů|<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A> – metoda|  
+|Přidat obor názvů|Metoda <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
+|Odebrání oboru názvů|Metoda <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
 |Najít identifikátor URI pro výchozí obor názvů|<xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A> – vlastnost|  
-|Najít identifikátor URI pro předponu oboru názvů|<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A> – metoda|  
-|Vyhledání předpony pro identifikátor URI oboru názvů|<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A> – metoda|  
-|Získá seznam oborů názvů v aktuálním uzlu.|<xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A> – metoda|  
+|Najít identifikátor URI pro předponu oboru názvů|Metoda <xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
+|Vyhledání předpony pro identifikátor URI oboru názvů|Metoda <xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
+|Získá seznam oborů názvů v aktuálním uzlu.|Metoda <xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
 |Obor oboru názvů|metody <xref:System.Xml.XmlNamespaceManager.PushScope%2A> a <xref:System.Xml.XmlNamespaceManager.PopScope%2A>|  
-|Ověří, jestli je v aktuálním oboru definovaná předpona.|<xref:System.Xml.XmlNamespaceManager.HasNamespace%2A> – metoda|  
+|Ověří, jestli je v aktuálním oboru definovaná předpona.|Metoda <xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
 |Získat tabulku názvů použitou k vyhledání předpon a identifikátorů URI|<xref:System.Xml.XmlNamespaceManager.NameTable%2A> – vlastnost|  
   
 ## <a name="see-also"></a>Viz také:

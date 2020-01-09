@@ -6,27 +6,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a7701f887410aa263483e52a5dd65a09d1444aa6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8c6819b4c1628d9e09a9bbf96ae8d5edbb6c643d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589875"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710073"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Načtení uzlů bez stanoveného pořadí podle názvu nebo indexu
-**XmlNamedNodeMap** je popsána ve specifikaci World Wide Web Consortium (W3C) jako NamedNodeMap a je potřeba zpracovat neuspořádanou sadu uzlů s možností odkaz uzlů podle jejich názvu nebo indexu. Jediný způsob, kterým máte přístup **XmlNamedNodeMap** je, když **XmlNamedNodeMap** , je vrácena prostřednictvím metody nebo vlastnosti. Existují tři metody nebo vlastnosti, které vracejí **XmlNamedNodeMap**:  
+**XmlNamedNodeMap** je popsána ve specifikaci konsorcium World Wide Web (W3C) jako NamedNodeMap a je vyžadována pro zpracování neuspořádané sady uzlů s možností odkazovat uzly podle jejich názvu nebo indexu. Jediným způsobem, jakým máte přístup k **XmlNamedNodeMap** , je, že **XmlNamedNodeMap** je vrácen prostřednictvím metody nebo vlastnosti. Existují tři metody nebo vlastnosti, které vracejí **XmlNamedNodeMap**:  
   
-- XmlElement.Attributes  
+- XmlElement. Attributes  
   
 - XmlDocumentType.Entities  
   
 - XmlDocumentType.Notations  
   
- Například **XmlDocumentType.Entities** vlastnost získá kolekci **XmlEntity** uzly deklarované v deklarace typu dokumentu. Tato kolekce se vrátí jako **XmlNamedNodeMap**, a můžete iteraci prostřednictvím kolekce s použitím **počet** vlastnosti a zobrazení informací o entitách. Příklad procházení **XmlNamedNodeMap**, naleznete v tématu <xref:System.Xml.XmlDocumentType.Entities%2A>.  
+ Například vlastnost **XmlDocumentType. Entities** Získá kolekci uzlů **XmlEntity** deklarovaných v deklaraci typu dokumentu. Tato kolekce se vrátí jako **XmlNamedNodeMap**a můžete iterovat v rámci kolekce s použitím vlastnosti **Count** a informací o zobrazení entity. Příklad iterace prostřednictvím **XmlNamedNodeMap**naleznete v tématu <xref:System.Xml.XmlDocumentType.Entities%2A>.  
   
- **XmlAttributeCollection** je odvozen z **XmlNamedNodeMap** a pouze atributy nejsou upravitelné, zápisy a entity jsou jen pro čtení. Použití **XmlNamedNodeMap** pro atributy, můžete získat uzly pro tyto atributy založené na jejich názvy XML. Tato funkce poskytuje snadný způsob pro manipulaci s kolekce atributů na uzlu elementu. To může být přímo s rozdíly **XmlNodeList**, která také implementuje **IEnumerable** rozhraní, ale s přístupový objekt indexu, Ne řetězec. **RemoveNamedItem** a **SetNamedItem** metody se používají pouze pro **XmlAttributeCollection**. Přidání nebo odebrání z kolekce atributů, ať už pomocí **AttributeCollection** nebo **XmlNamedNodeMap** implementace, upraví kolekce atributů na elementu. Následující příklad kódu ukazuje, jak přesunout atribut a vytvořit nový atribut.  
+ **Atribut XmlAttributeCollection** je odvozen z **XmlNamedNodeMap** a pouze atributy lze upravovat, zatímco zápisy a entity jsou jen pro čtení. Pomocí **XmlNamedNodeMap** pro atributy můžete získat uzly pro tyto atributy na základě jejich názvů XML. To poskytuje snadnou metodu pro manipulaci s kolekcí atributů v uzlu element. To může být kontrast přímo s **XmlNodeList**, které také implementuje rozhraní **IEnumerable** , ale s objektem pro přístup k indexu místo řetězce. Metody **RemoveNamedItem** a **SetNamedItem** se používají pouze proti **atributu XmlAttributeCollection**. Přidání nebo odebrání kolekce atributů bez ohledu na to, zda použití **atributucollection** nebo implementace **XmlNamedNodeMap** , upraví kolekci atributů na elementu. Následující příklad kódu ukazuje, jak přesunout atribut a vytvořit nový atribut.  
   
 ```vb  
 Imports System  
@@ -117,7 +115,7 @@ class test {
 }  
 ```  
   
- Chcete-li zobrazit příklad dalšího kódu, který ukazuje atribut odebírán z **AttributeCollection**, naleznete v tématu [XmlNamedNodeMap.RemoveNamedItem metoda](Overload:System.Xml.XmlNamedNodeMap.RemoveNamedItem). Další informace o metodách a vlastnostech najdete v části [XmlNamedNodeMap členy](AllMembers.T:System.Xml.XmlNamedNodeMap).  
+ Chcete-li zobrazit další příklad kódu, který ukazuje odebrání atributu zcollection **atributucollection**, viz [Metoda XmlNamedNodeMap. RemoveNamedItem](Overload:System.Xml.XmlNamedNodeMap.RemoveNamedItem). Další informace o metodách a vlastnostech naleznete v tématu [XmlNamedNodeMap Members](AllMembers.T:System.Xml.XmlNamedNodeMap).  
   
 ## <a name="see-also"></a>Viz také:
 

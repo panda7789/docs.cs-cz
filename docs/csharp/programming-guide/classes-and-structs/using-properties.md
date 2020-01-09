@@ -1,18 +1,17 @@
 ---
 title: Použití vlastností – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - set accessor [C#]
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-ms.openlocfilehash: 3b10c24645dad842f498fb49c60b3272829cce29
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 5f4697ea518e7fe03df4ecac9d748386a8ac6313
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579165"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705402"
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 
@@ -22,7 +21,7 @@ Na rozdíl od polí nejsou vlastnosti klasifikovány jako proměnné. Proto nelz
 
 Vlastnosti mají mnoho použití: může ověřit data před tím, než povolí změnu. mohou transparentně vystavovat data pro třídu, kde jsou data skutečně načtena z nějakého jiného zdroje, jako je například databáze. mohou provést akci při změně dat, jako je například vyvolání události nebo změna hodnoty jiných polí.
 
-Vlastnosti jsou deklarovány v bloku třídy zadáním úrovně přístupu pole, za nímž následuje typ vlastnosti následovaný názvem vlastnosti a následným blokem kódu, který deklaruje `get` přistupující objekt nebo přístupový objekt `set`. Příklad:
+Vlastnosti jsou deklarovány v bloku třídy zadáním úrovně přístupu pole, za nímž následuje typ vlastnosti následovaný názvem vlastnosti a následným blokem kódu, který deklaruje `get`přistupující objekt nebo přístupový objekt `set`. Příklad:
 
 [!code-csharp[csProgGuideProperties#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#7)]
 
@@ -62,7 +61,7 @@ Když přiřadíte hodnotu vlastnosti, `set` přistupující objekt je vyvolán 
 
 [!code-csharp[csProgGuideProperties#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#13)]
 
-Použití implicitního názvu parametru `value` pro deklaraci místní proměnné v přístupovém objektu `set` je chybné.
+Použití implicitního názvu parametru `value`pro deklaraci místní proměnné v přístupovém objektu `set` je chybné.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -95,7 +94,7 @@ Níže jsou uvedené důležité body v předchozím příkladu:
 
      [!code-csharp[csProgGuideProperties#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#4)]  
 
-- @No__t_0 přetypování se používá pro přístup k skryté vlastnosti v základní třídě:
+- `(Employee)` přetypování se používá pro přístup k skryté vlastnosti v základní třídě:
 
      [!code-csharp[csProgGuideProperties#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#5)]
 
@@ -103,7 +102,7 @@ Níže jsou uvedené důležité body v předchozím příkladu:
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu dvě třídy, `Cube` a `Square`, implementujte abstraktní třídu, `Shape` a přepište její abstraktní `Area` vlastnost. Všimněte si použití modifikátoru [přepsání](../../language-reference/keywords/override.md) u vlastností. Program přijme stranu jako vstup a vypočítá oblasti pro čtvercovou a datovou krychli. Také přijme oblast jako vstup a vypočte odpovídající stranu pro čtvercovou a datovou krychli.
+V tomto příkladu dvě třídy, `Cube` a `Square`, implementujte abstraktní třídu, `Shape`a přepište její abstraktní `Area` vlastnost. Všimněte si použití modifikátoru [přepsání](../../language-reference/keywords/override.md) u vlastností. Program přijme stranu jako vstup a vypočítá oblasti pro čtvercovou a datovou krychli. Také přijme oblast jako vstup a vypočte odpovídající stranu pro čtvercovou a datovou krychli.
 
 [!code-csharp[csProgGuideProperties#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#6)]
 

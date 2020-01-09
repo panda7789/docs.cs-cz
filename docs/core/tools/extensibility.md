@@ -2,13 +2,12 @@
 title: Model rozšiřitelnosti .NET Core CLI
 description: Přečtěte si, jak můžete nástroje rozhraní příkazového řádku (CLI) zvětšit.
 ms.date: 04/12/2017
-ms.custom: seodec18
-ms.openlocfilehash: 400d47f9d5bca53a23d09eb4eb94519f9824b473
-ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
+ms.openlocfilehash: 4f49735fa94b2a7ee32e0d80590f9e680edeff16
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012975"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714183"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů pro .NET Core CLI
 
@@ -40,13 +39,13 @@ Tyto nástroje jsou ideální pro servery sestavení, protože není potřeba ni
 Nakonec tento model rozšiřitelnosti poskytuje podporu pro vytváření nástrojů, které potřebují přístup k sestavenému výstupu projektu. Do této kategorie patří například různé nástroje pro zobrazení Razor v aplikacích [ASP.NET](https://www.asp.net/) MVC.
 
 ### <a name="consuming-per-project-tools"></a>Zpracování nástrojů pro jednotlivé projekty
-Spotřeba těchto nástrojů vyžaduje, abyste přidali `<DotNetCliToolReference>` prvek do souboru projektu pro každý nástroj, který chcete použít. `<DotNetCliToolReference>` Uvnitř prvku odkazujete na balíček, ve kterém se nástroj nachází, a zadejte požadovanou verzi. Po spuštění [`dotnet restore`](dotnet-restore.md)se nástroj a jeho závislosti obnoví.
+Spotřeba těchto nástrojů vyžaduje, abyste přidali `<DotNetCliToolReference>` element do souboru projektu pro každý nástroj, který chcete použít. Uvnitř elementu `<DotNetCliToolReference>` odkazujete na balíček, ve kterém se nástroj nachází, a zadejte požadovanou verzi. Po spuštění [`dotnet restore`](dotnet-restore.md)se nástroj a jeho závislosti obnoví.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 Pro nástroje, které potřebují načíst výstup sestavení projektu ke spuštění, je obvykle jiná závislost, která je uvedena v rámci normální závislosti v souboru projektu. Vzhledem k tomu, že rozhraní příkazového řádku používá jako modul sestavení MSBuild, doporučujeme, aby tyto části nástroje byly zapsány jako vlastní [cíle](/visualstudio/msbuild/msbuild-targets) a [úkoly](/visualstudio/msbuild/msbuild-tasks)MSBuild, protože mohou být součástí celého procesu sestavení. Také mohou získat jakákoli a všechna data, která jsou vytvářena prostřednictvím sestavení, například umístění výstupních souborů, aktuální konfigurace, která je vytvořena a tak dále. Všechny tyto informace se stávají sadou vlastností nástroje MSBuild, které lze číst z libovolného cíle. Můžete vidět, jak přidat vlastní cíl pomocí NuGetu dále v tomto dokumentu.
 
-Pojďme se podívat na příklad přidání jednoduchého nástroje pouze pro nástroje do jednoduchého projektu. V případě příkladu s názvem `dotnet-api-search` , který umožňuje prohledat balíčky NuGet pro zadané rozhraní API, je zde soubor projektu aplikace konzoly, který používá tento nástroj:
+Pojďme se podívat na příklad přidání jednoduchého nástroje pouze pro nástroje do jednoduchého projektu. V případě ukázkového příkazu s názvem `dotnet-api-search`, který umožňuje vyhledat balíčky NuGet pro zadané rozhraní API, je zde soubor projektu aplikace konzoly, který používá tento nástroj:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -62,14 +61,14 @@ Pojďme se podívat na příklad přidání jednoduchého nástroje pouze pro n�
 </Project>
 ```
 
-Prvek je strukturován podobným způsobem `<PackageReference>` jako element. `<DotNetCliToolReference>` Potřebuje ID balíčku balíčku, který obsahuje nástroj a jeho verzi, aby se mohl obnovit.
+Element `<DotNetCliToolReference>` je strukturován podobným způsobem jako `<PackageReference>` prvek. Potřebuje ID balíčku balíčku, který obsahuje nástroj a jeho verzi, aby se mohl obnovit.
 
 ### <a name="building-tools"></a>Vytváření nástrojů
 Jak už bylo zmíněno, nástroje jsou jenom přenosné konzolové aplikace. Nástroje sestavíte stejně, jako byste vytvořili jinou konzolovou aplikaci.
-Po sestavení použijete [`dotnet pack`](dotnet-pack.md) příkaz k vytvoření balíčku NuGet (soubor. nupkg), který obsahuje váš kód, informace o jeho závislostech atd. Balíčku můžete dát libovolný název, ale aplikace uvnitř, skutečný binární soubor nástroje, musí být `dotnet-<command>` v `dotnet` souladu s konvencí, aby ji bylo možné vyvolat.
+Po sestavení můžete pomocí příkazu [`dotnet pack`](dotnet-pack.md) vytvořit balíček NuGet (soubor. nupkg), který obsahuje váš kód, informace o jeho závislostech atd. Do balíčku můžete dát libovolný název, ale aplikace uvnitř, skutečný binární soubor nástroje, musí odpovídat konvenci `dotnet-<command>`, aby `dotnet` mohl vyvolat.
 
 > [!NOTE]
-> V RC3 verzích nástrojů `dotnet pack` příkazového řádku .NET Core měl příkaz chybu, která způsobila, že se nástroj *. runtimeconfig. JSON* nebalí pomocí nástroje. Při nedostatku tohoto souboru dojde k chybám za běhu. Pokud narazíte na toto chování, nezapomeňte aktualizovat na nejnovější nástroje a zkuste to `dotnet pack` znovu.
+> V RC3 verzích nástrojů příkazového řádku .NET Core měla příkaz `dotnet pack` chybu, která způsobila, že *runtimeconfig. JSON* není zabalený pomocí nástroje. Při nedostatku tohoto souboru dojde k chybám za běhu. Pokud narazíte na toto chování, nezapomeňte aktualizovat na nejnovější nástroje a zkuste `dotnet pack` znovu.
 
 Vzhledem k tomu, že nástroje jsou přenosné aplikace, uživatel, který nástroj spotřebovává, musí mít verzi knihoven .NET Core, pro kterou byl nástroj vytvořen, aby mohl nástroj spustit. Všechny ostatní závislosti, které nástroj používá a které nejsou obsaženy v knihovnách .NET Core, se obnoví a umístí do mezipaměti NuGet. Celý nástroj je proto spouštěn pomocí sestavení z knihoven .NET Core i sestavení z mezipaměti NuGet.
 
@@ -80,9 +79,9 @@ Můžete také zobrazit [implementaci nástrojů používaných](https://github.
 
 ## <a name="custom-targets"></a>Vlastní cíle
 
-Balíčky NuGet mají možnost zabalit [vlastní cíle a soubory props nástroje MSBuild](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Když přesunete .NET Core CLI nástrojů pro použití nástroje MSBuild, stejný mechanismus rozšíření teď platí pro projekty .NET Core. Tento typ rozšiřitelnosti byste měli použít, pokud chcete rozšíření procesu sestavení, nebo když chcete získat přístup k jakémukoli artefaktům v procesu sestavení, jako jsou například generované soubory nebo chcete zkontrolovat konfiguraci, pod kterou je vyvoláno sestavení. a tak dále.
+Balíčky NuGet mají možnost [zabalit vlastní cíle a soubory props nástroje MSBuild](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Když přesunete .NET Core CLI nástrojů pro použití nástroje MSBuild, stejný mechanismus rozšíření teď platí pro projekty .NET Core. Tento typ rozšiřitelnosti byste měli použít, pokud chcete rozšíření procesu sestavení, nebo když chcete získat přístup k jakémukoli artefaktům v procesu sestavení, jako jsou například generované soubory nebo chcete zkontrolovat konfiguraci, pod kterou je vyvoláno sestavení. a tak dále.
 
-V následujícím příkladu můžete vidět soubor projektu cíle pomocí `csproj` syntaxe. Tento [`dotnet pack`](dotnet-pack.md) příkaz dá pokyn k tomu, co zabalit, umístění souborů cílů a sestavení do složky *sestavení* uvnitř balíčku. Všimněte si, že `Label` `dotnet pack instructions`element, který má vlastnost nastavenou na, a cíl definovaný pod ním. `<ItemGroup>`
+V následujícím příkladu se můžete podívat na soubor projektu cíle pomocí syntaxe `csproj`. Tím se dá pokyn [`dotnet pack`](dotnet-pack.md) příkazu, který se má zabalit, umístit soubory cílů i sestavení do složky *sestavení* uvnitř balíčku. Všimněte si `<ItemGroup>` elementu, který má vlastnost `Label` nastavenou na `dotnet pack instructions`a cíl definovaný pod ním.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -131,20 +130,20 @@ V následujícím příkladu můžete vidět soubor projektu cíle pomocí `cspr
 </Project>
 ```
 
-Používání vlastních cílů je provedeno poskytnutím `<PackageReference>` , které ukazuje na balíček a jeho verzi v rámci projektu, který je právě rozšířen. Na rozdíl od nástrojů balíček vlastní cíle zahrnuje do uzavření závislosti projektu.
+Používání vlastních cílů se provádí poskytnutím `<PackageReference>`, které odkazuje na balíček a jeho verzi v projektu, který se rozšiřuje. Na rozdíl od nástrojů balíček vlastní cíle zahrnuje do uzavření závislosti projektu.
 
-Použití vlastního cíle závisí výhradně na tom, jak ho nakonfigurujete. Vzhledem k tomu, že se jedná o cíl nástroje MSBuild, může záviset na daném cíli, běžet po jiném cíli a lze jej také `dotnet msbuild -t:<target-name>` ručně vyvolat pomocí příkazu.
+Použití vlastního cíle závisí výhradně na tom, jak ho nakonfigurujete. Vzhledem k tomu, že se jedná o cíl nástroje MSBuild, může záviset na daném cíli, běžet po jiném cíli a lze jej také ručně vyvolat pomocí příkazu `dotnet msbuild -t:<target-name>`.
 
-Pokud však chcete uživatelům poskytnout lepší uživatelské prostředí, můžete kombinovat nástroje pro jednotlivé projekty a vlastní cíle. V tomto scénáři by nástroj pro každý projekt v podstatě přijal pouze jakékoli potřebné parametry a převedl to na požadované [`dotnet msbuild`](dotnet-msbuild.md) vyvolání, které by způsobilo provedení cíle. Ukázku tohoto druhu součinnosti si můžete prohlédnout v úložišti [ukázek MVP 2016 Hackathon](https://github.com/dotnet/MVPSummitHackathon2016) v [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) projektu.
+Pokud však chcete uživatelům poskytnout lepší uživatelské prostředí, můžete kombinovat nástroje pro jednotlivé projekty a vlastní cíle. V tomto scénáři by nástroj na projekt v podstatě přijal libovolné potřebné parametry a převedl to na požadované [`dotnet msbuild`](dotnet-msbuild.md) vyvolání, které by způsobilo provedení cíle. Ukázku tohoto druhu součinnosti si můžete prohlédnout na úložišti [ukázek MVP 2016 Hackathon](https://github.com/dotnet/MVPSummitHackathon2016) v projektu [`dotnet-packer`](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) .
 
 ## <a name="path-based-extensibility"></a>Rozšiřitelnost na základě cesty
 Rozšíření na základě cesty se obvykle používá ve vývojových počítačích, kde potřebujete nástroj, který koncepčně pokrývá více než jeden projekt. Hlavní nevýhodou tohoto mechanismu rozšíření je to, že je vázaný na počítač, na kterém nástroj existuje. Pokud ho potřebujete na jiném počítači, budete ho muset nasadit.
 
-Tento model rozšiřitelnosti sady nástrojů rozhraní příkazového řádku je velmi jednoduchý. Jak je popsáno v [přehledu .NET Core CLI](index.md), `dotnet` může ovladač spustit libovolný příkaz, který se jmenuje po `dotnet-<command>` této konvenci. Výchozí logika rozlišení nejprve vyhledá několik umístění a nakonec se vrátí k systémové cestě. Pokud požadovaný příkaz v systémové cestě existuje a je to binární soubor, který se dá vyvolat, `dotnet` ovladač ho vyvolá.
+Tento model rozšiřitelnosti sady nástrojů rozhraní příkazového řádku je velmi jednoduchý. Jak je popsáno v [přehledu .NET Core CLI](index.md), `dotnet` ovladač může spustit jakýkoli příkaz, který se jmenuje po `dotnet-<command>` konvenci. Výchozí logika rozlišení nejprve vyhledá několik umístění a nakonec se vrátí k systémové cestě. Pokud v systémové cestě existuje požadovaný příkaz a je to binární soubor, který lze vyvolat, `dotnet` ovladač ho vyvolá.
 
 Soubor musí být spustitelný. V systémech UNIX to znamená cokoli, co má nastaven bit spouštění prostřednictvím `chmod +x`. Ve Windows můžete použít soubory *cmd* .
 
-Pojďme se podívat na velmi jednoduchou implementaci nástroje "Hello World". Budeme používat i `bash` `cmd` ve Windows.
+Pojďme se podívat na velmi jednoduchou implementaci nástroje "Hello World". Ve Windows budeme používat jak `bash`, tak `cmd`.
 Následující příkaz jednoduše vrátí "Hello World" do konzoly.
 
 ```bash
@@ -157,6 +156,6 @@ echo "Hello World!"
 echo "Hello World"
 ```
 
-V MacOS můžeme tento skript Uložit jako `dotnet-hello` a nastavit jeho spustitelný bit pomocí. `chmod +x dotnet-hello` Pak můžeme `/usr/local/bin` pomocí příkazu `ln -s <full_path>/dotnet-hello /usr/local/bin/`vytvořit symbolický odkaz na něj. Díky tomu bude možné vyvolat příkaz pomocí `dotnet hello` syntaxe.
+V macOS můžete tento skript Uložit jako `dotnet-hello` a nastavit jeho spustitelný bit pomocí `chmod +x dotnet-hello`. V `/usr/local/bin` pak můžeme vytvořit symbolický odkaz pomocí příkazového `ln -s <full_path>/dotnet-hello /usr/local/bin/`. Díky tomu bude možné vyvolat příkaz pomocí syntaxe `dotnet hello`.
 
-Ve Windows můžeme tento skript Uložit jako `dotnet-hello.cmd` a umístit ho do umístění, které je v systémové cestě (nebo ho můžete přidat do složky, která je už v cestě). Za tímto účelem můžete spustit tento příklad `dotnet hello` pouze pomocí.
+Ve Windows můžeme tento skript Uložit jako `dotnet-hello.cmd` a umístit ho do umístění, které je v systémové cestě (nebo ho můžete přidat do složky, která je už v cestě). Za tímto účelem můžete spustit tento příklad jenom pomocí `dotnet hello`.

@@ -38,14 +38,12 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 40c1b98f82fe53819edc437bbac575c1df206496
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: bd51ea1b79ac1dbd89a862f3961cc8508a87f301
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834541"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715974"
 ---
 # <a name="reliability-best-practices"></a>Spolehlivost – doporučené postupy
 

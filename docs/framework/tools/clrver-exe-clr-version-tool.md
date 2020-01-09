@@ -5,14 +5,12 @@ helpviewer_keywords:
 - Clrver.exe
 - CLR Version tool
 ms.assetid: cbc2ee86-bdc8-4a65-a8f1-ba23bce3a699
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5a94965c106b6ec231e3f80802f82c76dfd5eac6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: bfc612ef5455e1b4a03d15fd99a8a1873d2c7c08
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044759"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715800"
 ---
 # <a name="clrverexe-clr-version-tool"></a>Clrver.exe (nástroj verze CLR)
 Nástroj CLR Version (Clrver.exe) vypíše všechny verze modulu Common Language Runtime (CLR) nainstalované v počítači.  

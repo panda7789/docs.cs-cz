@@ -1,18 +1,17 @@
 ---
 title: odebrat kontextové klíčové slovo C# – odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - remove_CSharpKeyword
 helpviewer_keywords:
 - remove event accessor [C#]
 ms.assetid: c8223426-c17b-4fe2-8406-01564cf1dd2b
-ms.openlocfilehash: 568b979c8b2e859dcfa87a3c3446132c740ff14c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 8ea3ea1910e28c03b2a894c64415cb2ccff942d0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635909"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713141"
 ---
 # <a name="remove-c-reference"></a>remove (Referenční dokumentace jazyka C#)
 

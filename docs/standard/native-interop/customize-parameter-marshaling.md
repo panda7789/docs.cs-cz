@@ -1,71 +1,69 @@
 ---
-title: Přizpůsobení parametrů zařazování – .NET
-description: Zjistěte, jak přizpůsobit, jak .NET zařazuje parametry nativní reprezentace.
-author: jkoritzinsky
-ms.author: jekoritz
+title: Přizpůsobení zařazování parametrů – .NET
+description: Naučte se, jak přizpůsobit, jak .NET zařazování parametrů do nativní reprezentace.
 ms.date: 01/18/2019
-ms.openlocfilehash: 877eb00c18c9108fe6bcfb50104ff5ed813e85f3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 36fb8c105a8836d77b862095a616de3ba641073c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065468"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706358"
 ---
-# <a name="customizing-parameter-marshaling"></a>Přizpůsobení zařazování parametru
+# <a name="customizing-parameter-marshaling"></a>Přizpůsobení zařazování parametrů
 
-Pokud modul .NET runtime výchozí chování zařazování parametru neumí, co chcete, můžete použít použití <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> atribut přizpůsobit, jak zařadit parametry.
+Pokud chování při zařazování výchozích parametrů modulu .NET runtime nezpůsobí, můžete použít atribut <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> k přizpůsobení způsobu zařazení parametrů.
 
 ## <a name="customizing-string-parameters"></a>Přizpůsobení parametrů řetězce
 
-.NET nabízí různé formáty pro zařazování řetězce. Tyto metody jsou rozděleny do různých částí na řetězce ve stylu jazyka C a zaměřené na Windows formáty řetězců.
+Rozhraní .NET má různé formáty pro zařazování řetězců. Tyto metody jsou rozděleny do samostatných oddílů v řetězcích stylu C a ve formátech řetězců orientovaných na systém Windows.
 
 ### <a name="c-style-strings"></a>Řetězce ve stylu jazyka C
 
-Každá z těchto formátů předá řetězec zakončený hodnotou null do nativního kódu. Se liší podle kódování nativního řetězce.
+Každý z těchto formátů předá řetězec zakončený hodnotou null do nativního kódu. Liší se v kódování nativního řetězce.
 
-| `System.Runtime.InteropServices.UnmanagedType` Hodnota | Kódování |
+| hodnota `System.Runtime.InteropServices.UnmanagedType` | Kódování |
 |------------------------------------------------------|----------|
 | LPStr | ANSI |
 | LPUTF8Str | UTF-8 | 
 | LPWStr | UTF-16 |
 | LPTStr | UTF-16 |
 
-<xref:System.Runtime.InteropServices.UnmanagedType.VBByRefStr?displayProperty=nameWithType> Formát se mírně liší. Stejně jako `LPWStr`, zařazuje řetězec, který má nativní C-style řetězec zakódovaný ve formátu UTF-16. Ale spravovaný podpis má předat do řetězce podle odkazu a odpovídající nativní podpis přebírá řetězec podle hodnoty. Toto rozlišení umožňuje používat nativní rozhraní API, které přijímá řetězec podle hodnoty a změní ho místně bez nutnosti použití `StringBuilder`. Nedoporučujeme ručně pomocí tohoto formátu, protože je náchylný k záměně se podpisy neshodují nativní a spravované.
+Formát <xref:System.Runtime.InteropServices.UnmanagedType.VBByRefStr?displayProperty=nameWithType> se mírně liší. Podobně jako `LPWStr`, zařazování řetězce do nativního řetězce ve stylu jazyka C kódovaného v kódování UTF-16. Spravovaný podpis však předáte do řetězce odkazem a na základě odpovídajícího nativního podpisu převezme řetězec podle hodnoty. Tento rozdíl umožňuje použít nativní rozhraní API, které přebírá řetězec podle hodnoty a upravuje ho místně bez nutnosti použít `StringBuilder`. Doporučujeme, abyste ručně používali tento formát, protože je náchylný k záměně s neshodou nativních a spravovaných podpisů.
 
-### <a name="windows-centric-string-formats"></a>Formáty řetězce zaměřené na Windows
+### <a name="windows-centric-string-formats"></a>Formáty řetězců orientované na systém Windows
 
-Při interakci s rozhraními COM nebo OLE, pravděpodobně zjistíte, že nativní funkce přijímají řetězce jako `BSTR` argumenty. Můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> nespravovaného typu řetězec jako `BSTR`.
+Při interakci s rozhraními COM nebo OLE pravděpodobně zjistíte, že nativní funkce přebírají řetězce jako argumenty `BSTR`. K zařazení řetězce jako `BSTR`můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> nespravovaný typ.
 
-Pokud jste při interakci s rozhraními API WinRT, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> formát zařazování řetězce jako `HSTRING`.
+Pokud pracujete s rozhraními API WinRT, můžete použít formát <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> k zařazení řetězce jako `HSTRING`.
 
-## <a name="customizing-array-parameters"></a>Přizpůsobení pole parametrů
+## <a name="customizing-array-parameters"></a>Přizpůsobení parametrů pole
 
-.NET také poskytuje několik způsobů zařazování pole parametrů. Pokud voláte rozhraní API, která přijímá pole stylu C, použijte <xref:System.Runtime.InteropServices.UnmanagedType.LPArray?displayProperty=nameWithType> nespravovaného typu. Pokud hodnoty v poli potřebovat vlastní zařazování, můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute.ArraySubType> pole na `[MarshalAs]` atribut, který.
+Rozhraní .NET také poskytuje více způsobů zařazování parametrů pole. Pokud voláte rozhraní API, které přijímá pole ve stylu jazyka C, použijte <xref:System.Runtime.InteropServices.UnmanagedType.LPArray?displayProperty=nameWithType> nespravovaný typ. Pokud hodnoty v poli vyžadují přizpůsobené zařazování, můžete použít pole <xref:System.Runtime.InteropServices.MarshalAsAttribute.ArraySubType> v atributu `[MarshalAs]` pro.
 
-Pokud používáte rozhraní API modelu COM, bude pravděpodobně nutné zařazení parametry pole jako `SAFEARRAY*`s. Uděláte to tak, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> nespravovaného typu. Výchozí typ elementů `SAFEARRAY` můžete zobrazit v tabulce na [přizpůsobení `object` pole](./customize-struct-marshaling.md#marshaling-systemobjects). Můžete použít <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> polí pro přizpůsobení elementu přesný typ `SAFEARRAY`.
+Pokud používáte rozhraní API modelu COM, budete pravděpodobně muset zařazovat parametry pole jako `SAFEARRAY*`s. K tomu můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> nespravovaný typ. Výchozí typ prvků `SAFEARRAY` lze zobrazit v tabulce [přizpůsobení `object` polí](./customize-struct-marshaling.md#marshaling-systemobjects). Pole <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> lze použít k přizpůsobení přesného typu prvku `SAFEARRAY`.
 
-## <a name="customizing-boolean-or-decimal-parameters"></a>Přizpůsobení parametrů logická nebo desetinné číslo
+## <a name="customizing-boolean-or-decimal-parameters"></a>Přizpůsobení logických nebo desetinných parametrů
 
-Informace o zařazování parametry logická nebo desetinné číslo, naleznete v tématu [přizpůsobení struktura zařazování](customize-struct-marshaling.md).
+Informace o zařazování logických nebo desetinných parametrů najdete v tématu [přizpůsobení zařazování struktury](customize-struct-marshaling.md).
 
-## <a name="customizing-object-parameters-windows-only"></a>Přizpůsobení parametry objektu (jen Windows)
+## <a name="customizing-object-parameters-windows-only"></a>Přizpůsobení parametrů objektu (pouze systém Windows)
 
-Modul runtime rozhraní .NET na Windows, poskytuje několik různých způsobů, jak zařadit parametry objektu do nativního kódu.
+V systému Windows modul runtime .NET poskytuje řadu různých způsobů zařazování parametrů objektů do nativního kódu.
 
-### <a name="marshaling-as-specific-com-interfaces"></a>Zařazování jako konkrétní rozhraní modelu COM
+### <a name="marshaling-as-specific-com-interfaces"></a>Zařazování jako specifických rozhraní COM
 
-Pokud vaše rozhraní API bere ukazatel na objekt modelu COM, můžete použít některý z následujících `UnmanagedType` formáty na `object`-zadali parametr předat jako tato konkrétní rozhraní .NET:
+Pokud rozhraní API převezme ukazatel na objekt modelu COM, můžete použít libovolný z následujících formátů `UnmanagedType` v parametru `object`typu a sdělit tak technologii .NET možnost zařazování jako těchto specifických rozhraní:
 
 - `IUnknown`
 - `IDispatch`
 - `IInspectable`
 
-Kromě toho pokud váš typ je označen `[ComVisible(true)]` nebo při zařazování `object` typ, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.Interface?displayProperty=nameWithType> formát zařazování objektu jako obálka volatelná aplikacemi COM pro zobrazení modelu COM typu.
+Kromě toho, pokud je typ označený `[ComVisible(true)]` nebo zařadíte `object` typ, můžete použít formát <xref:System.Runtime.InteropServices.UnmanagedType.Interface?displayProperty=nameWithType> k zařazení objektu jako vydanou obálku modelu COM pro zobrazení vašeho typu.
 
 ### <a name="marshaling-to-a-variant"></a>Zařazování do `VARIANT`
 
-Pokud vaše nativní rozhraní API trvá Win32 `VARIANT`, můžete použít <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> formátovat při vaší `object` parametr k zařazování objekty jako `VARIANT`s. Naleznete v dokumentaci [přizpůsobení `object` pole](customize-struct-marshaling.md#marshaling-systemobjects) pro mapování mezi typy rozhraní .NET a `VARIANT` typy.
+Pokud vaše nativní rozhraní API přebírá `VARIANT`Win32, můžete použít formát <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> na parametru `object` k zařazení objektů jako `VARIANT`s. V dokumentaci k [přizpůsobení `object` polí](customize-struct-marshaling.md#marshaling-systemobjects) pro mapování mezi typy rozhraní .net a `VARIANT` typy.
 
-### <a name="custom-marshalers"></a>Vlastní zařazování
+### <a name="custom-marshalers"></a>Vlastní zařazovací modul
 
-Pokud chcete projekt nativní rozhraní modelu COM do různých spravovaného typu, můžete použít `UnmanagedType.CustomMarshaler` formátu a implementaci <xref:System.Runtime.InteropServices.ICustomMarshaler> poskytnout vlastní zařazování kód.
+Pokud chcete promítnout nativní rozhraní COM do jiného spravovaného typu, můžete použít formát `UnmanagedType.CustomMarshaler` a implementaci <xref:System.Runtime.InteropServices.ICustomMarshaler> k poskytnutí vlastního kódu zařazování.

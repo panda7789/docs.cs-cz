@@ -1,16 +1,19 @@
 ---
-title: 'Postupy: Vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek'
+title: Postup vytvoření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
 description: Naučte se vytvářet uživatelsky definované výjimky s lokalizovanými zprávami výjimek.
 author: Youssef1313
+dev_langs:
+- csharp
+- vb
 ms.date: 09/13/2019
-ms.openlocfilehash: 453e332541628770932da2a6802fdcaee5211a84
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9360fccf27a0900d8380461e03baa5806ce1e0da
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141521"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708915"
 ---
-# <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Postupy: Vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
+# <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Postup vytvoření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
 
 V tomto článku se naučíte, jak vytvořit uživatelsky definované výjimky, které jsou zděděné ze základní <xref:System.Exception> třídy s lokalizovanými zprávami výjimek pomocí satelitních sestavení.
 
@@ -27,6 +30,13 @@ Chcete-li vytvořit vlastní výjimku, použijte následující postup:
     [Serializable]
     public class StudentNotFoundException : Exception { }
     ```
+    
+    ```vb
+    <Serializable>
+    Public Class StudentNotFoundException
+        Inherits Exception
+    End Class
+    ```
 
 1. Přidejte výchozí konstruktory:
 
@@ -42,6 +52,24 @@ Chcete-li vytvořit vlastní výjimku, použijte následující postup:
         public StudentNotFoundException(string message, Exception inner)
             : base(message, inner) { }
     }
+    ```
+    
+    ```vb
+    <Serializable>
+    Public Class StudentNotFoundException
+        Inherits Exception
+
+        Public Sub New()
+        End Sub
+
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+
+        Public Sub New(message As String, inner As Exception)
+            MyBase.New(message, inner)
+        End Sub
+    End Class
     ```
 
 1. Definujte jakékoli další vlastnosti a konstruktory:
@@ -68,12 +96,41 @@ Chcete-li vytvořit vlastní výjimku, použijte následující postup:
     }
     ```
 
+    ```vb
+    <Serializable>
+    Public Class StudentNotFoundException
+        Inherits Exception
+
+        Public ReadOnly Property StudentName As String
+
+        Public Sub New()
+        End Sub
+
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+
+        Public Sub New(message As String, inner As Exception)
+            MyBase.New(message, inner)
+        End Sub
+
+        Public Sub New(message As String, studentName As String)
+            Me.New(message)
+            StudentName = studentName
+        End Sub
+    End Class
+    ```
+
 ## <a name="create-localized-exception-messages"></a>Vytvoření lokalizovaných zpráv výjimek
 
 Vytvořili jste vlastní výjimku a můžete ji vyvolat kdekoli pomocí kódu podobného následujícímu:
 
 ```csharp
 throw new StudentNotFoundException("The student cannot be found.", "John");
+```
+
+```vb
+Throw New StudentNotFoundException("The student cannot be found.", "John")
 ```
 
 Problém s předchozím řádkem je, že `"The student cannot be found."` je pouze konstantní řetězec. V lokalizované aplikaci chcete mít různé zprávy v závislosti na jazykové verzi uživatele.
@@ -100,8 +157,8 @@ Chcete-li vytvořit lokalizované zprávy o výjimce:
     throw new StudentNotFoundException(resourceManager.GetString("StudentNotFound"), "John");
     ```
 
-  > [!NOTE]
-  > Pokud je název projektu `TestProject` a soubor prostředků *ExceptionMessages. resx* se nachází ve složce *Resources* projektu, plně kvalifikovaný název souboru prostředků je `TestProject.Resources.ExceptionMessages`.
+    > [!NOTE]
+    > Pokud je název projektu `TestProject` a soubor prostředků *ExceptionMessages. resx* se nachází ve složce *Resources* projektu, plně kvalifikovaný název souboru prostředků je `TestProject.Resources.ExceptionMessages`.
 
 ## <a name="see-also"></a>Viz také:
 

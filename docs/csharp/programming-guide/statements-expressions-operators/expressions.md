@@ -1,17 +1,16 @@
 ---
 title: Výrazy – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 05/11/2017
 helpviewer_keywords:
 - expressions [C#]
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
-ms.openlocfilehash: e08220362c0acec6060ade75131e34a6b3fb7390
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4bbee8f15c2591e8b172df9a6759449d48697804
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417699"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75699090"
 ---
 # <a name="expressions-c-programming-guide"></a>Výrazy (Průvodce programováním v C#)
 
@@ -49,7 +48,7 @@ System.Convert.ToInt32("35");
   
  Další informace o literálech naleznete v tématu [Types](/dotnet/csharp/language-reference/keywords).  
   
- V předchozím příkladu jsou `i` i `s` jednoduché názvy, které identifikují místní proměnné. Pokud jsou tyto proměnné použity ve výrazu, název proměnné se vyhodnotí na hodnotu, která je aktuálně uložena v umístění proměnné v paměti. To je znázorněno v následujícím příkladu:  
+ V předchozím příkladu jsou `i` i `s` jednoduché názvy, které identifikují místní proměnné. Pokud jsou tyto proměnné použity ve výrazu, název proměnné se vyhodnotí na hodnotu, která je aktuálně uložena v umístění proměnné v paměti. To je ukázáno v následujícím příkladu:  
   
  [!code-csharp[csProgGuideStatements#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#3)]
 
@@ -92,6 +91,6 @@ Další informace naleznete v oddílu [Expressions](~/_csharplang/spec/expressio
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Operátory](../../language-reference/operators/index.md)
 - [Metody](../classes-and-structs/methods.md)
-- [Delegáty](../delegates/index.md)
+- [Delegáti](../delegates/index.md)
 - [Typy](../types/index.md)
 - [LINQ](../../linq/index.md)

@@ -1,17 +1,16 @@
 ---
 title: Vícenásobná pole – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 8d1be351e3aabea44138323d04c922dd1cccb78a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 56013f0143d5efcb31a476909cb6e92504ff0dbc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597338"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705701"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Vícenásobná pole (Průvodce programováním v C#)
 
@@ -21,7 +20,7 @@ Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole
   
  [!code-csharp[csProgGuideArrays#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#19)]  
   
- Než budete moci použít `jaggedArray`, musí být inicializovány jeho prvky. Prvky můžete inicializovat takto:  
+ Než budete moci použít `jaggedArray`, musí být inicializovány její prvky. Prvky můžete inicializovat takto:  
   
  [!code-csharp[csProgGuideArrays#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#20)]  
   
@@ -35,11 +34,11 @@ Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole
   
  [!code-csharp[csProgGuideArrays#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#22)]  
   
- Můžete použít následující zkrácený tvar. Všimněte si, že nelze vynechat `new` operátor z inicializace prvků, protože neexistuje žádná výchozí inicializace pro prvky:  
+ Můžete použít následující zkrácený tvar. Všimněte si, že nelze vynechat operátor `new` z inicializace elementů, protože neexistuje žádná výchozí inicializace pro prvky:  
   
  [!code-csharp[csProgGuideArrays#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#23)]  
   
- Vícenásobné pole je pole pole, a proto jeho prvky jsou odkazové typy a jsou inicializovány na `null`.  
+ Vícenásobné pole je pole polí, a proto jeho prvky jsou odkazové typy a jsou inicializovány na `null`.  
   
  Můžete přistupovat k jednotlivým prvkům pole, jako jsou tyto příklady:  
   
@@ -49,7 +48,7 @@ Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole
   
  [!code-csharp[csProgGuideArrays#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#25)]  
   
- Můžete přistupovat k jednotlivým prvkům, jak je znázorněno v tomto příkladu, který zobrazuje hodnotu `[1,0]` prvku prvního pole (hodnota `5`):  
+ Můžete přistupovat k jednotlivým prvkům, jak je znázorněno v tomto příkladu, který zobrazuje hodnotu prvku `[1,0]` prvního pole (`5`hodnot):  
   
  [!code-csharp[csProgGuideArrays#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#26)]  
   

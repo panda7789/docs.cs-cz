@@ -1,17 +1,16 @@
 ---
 title: Vlastnosti rozhraní – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: fad674c6d56011afcccbe9ce2a88e7af411fe0a2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ff892a35f4be6600c00bc0c72c2f789ef6eb4408
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579158"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705532"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
 
@@ -23,7 +22,7 @@ Přistupující objekt vlastnosti rozhraní nemá tělo. Proto je účel příst
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu rozhraní `IEmployee` má vlastnost pro čtení i zápis, `Name` a vlastnost jen pro čtení `Counter`. Třída `Employee` implementuje rozhraní `IEmployee` a používá tyto dvě vlastnosti. Program přečte název nového zaměstnance a aktuální počet zaměstnanců a zobrazí název zaměstnance a vypočtené číslo zaměstnance.
+V tomto příkladu rozhraní `IEmployee` má vlastnost pro čtení i zápis, `Name`a vlastnost jen pro čtení `Counter`. Třída `Employee` implementuje rozhraní `IEmployee` a používá tyto dvě vlastnosti. Program přečte název nového zaměstnance a aktuální počet zaměstnanců a zobrazí název zaměstnance a vypočtené číslo zaměstnance.
 
 Můžete použít plně kvalifikovaný název vlastnosti, který odkazuje na rozhraní, ve kterém je člen deklarován. Příklad:
 
@@ -43,7 +42,7 @@ implementuje vlastnost `Name` v rozhraní `ICitizen`.
 
 **`210 Hazem Abolrous`**
 
-## <a name="sample-output"></a>Ukázkový výstup
+## <a name="sample-output"></a>Výstup ukázky
 
 ```console
 Enter number of employees: 210

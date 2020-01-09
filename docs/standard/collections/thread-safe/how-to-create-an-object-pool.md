@@ -8,19 +8,17 @@ dev_langs:
 helpviewer_keywords:
 - object pool, in .NET Framework
 ms.assetid: 0480e7ff-b6f9-480e-a889-2ed4264d8372
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0bc0c6bebbab6e84c165f41300a4cb16c8746a07
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 888521eb5c3c3169c4b39a26e82fef2e35c286d9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644414"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711269"
 ---
 # <a name="how-to-create-an-object-pool-by-using-a-concurrentbag"></a>Postupy: Vytvoření fondu objektů pomocí ConcurrentBag
-Tento příklad ukazuje způsob používání souběžného kontejneru za implementace fondu objektů. Objekt fondy může zlepšit výkon aplikace v situacích, kde budete potřebovat více instancí třídy a třídy je náročné vytvořit nebo odstranit. Když klientský program požádá o objekt, fondu objektů se nejprve pokusí neposkytne, které již byly vytvořeny a vrácen do fondu. Pokud není k dispozici, pouze je nový objekt vytvoří.  
+Tento příklad ukazuje, jak použít souběžný kontejner k implementaci fondu objektů. Fondy objektů můžou zlepšit výkon aplikace v situacích, kdy požadujete více instancí třídy a že je třída nenáročná na vytvoření nebo zničení. Když klientský program požádá o nový objekt, fond objektů se nejprve pokusí zadat, který již byl vytvořen a vrácen do fondu. Pokud není k dispozici žádný, je vytvořen nový objekt.  
   
- <xref:System.Collections.Concurrent.ConcurrentBag%601> slouží k ukládání objektů, protože umožňuje rychlé vkládání a odstranění, zejména v případě, že je ve stejném vlákně je jak přidávání a odebírání položek. V tomto příkladu může dále rozšířit má být sestaven kolem <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>, který implementuje kontejner objektů a dat datová struktura, stejně jako <xref:System.Collections.Concurrent.ConcurrentQueue%601> a <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
+ <xref:System.Collections.Concurrent.ConcurrentBag%601> slouží k uložení objektů, protože podporuje rychlé vkládání a odebírání, zejména v případě, že stejné vlákno přidává i odebírá položky. Tento příklad může být dále rozšířen tak, aby byl sestaven kolem <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>, které implementuje struktura dat balíčku, jak <xref:System.Collections.Concurrent.ConcurrentQueue%601> a <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[CDS#04](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/objectpool.cs#04)]

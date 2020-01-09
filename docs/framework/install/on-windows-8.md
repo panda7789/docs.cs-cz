@@ -2,15 +2,13 @@
 title: Instalace .NET Framework ve Windows 8
 ms.custom: updateeachrelease
 description: Informace o tom, jak nainstalovat .NET Framework ve Windows 8
-author: rlander
-ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: d0ee776fce94988478c8432e265c834ff2082ef0
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0d9afb30088256b6c5c1fd8c0b2c99e3a9760b89
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853885"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716732"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Instalace rozhraní .NET Framework v systému Windows 8 a Windows Server 2012
 
@@ -23,7 +21,7 @@ Tyto pokyny vám pomůžou nainstalovat .NET Frameworké verze, které potřebuj
 ## <a name="net-framework-48"></a>.NET Framework 4,8
 
 > [!div class="button"]
-> [Stáhnout .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Stáhnout .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 .NET Framework 4,8 se podporuje v systému Windows Server 2012. Ve Windows 8 to není podporováno.
 
@@ -35,13 +33,13 @@ Tyto pokyny vám pomůžou nainstalovat .NET Frameworké verze, které potřebuj
 
 .NET Framework 4,6 podporuje aplikace sestavené pro .NET Framework 4,0 až 4,6.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Postupujte podle pokynů a nainstalujte [.NET Framework 3,5 ve Windows 8 a 10](dotnet-35-windows-10.md).
 
 .NET Framework 3,5 podporuje aplikace sestavené pro .NET Framework 1,0 až 3,5.
 
-## <a name="help"></a>Help
+## <a name="help"></a>Nápověda
 
 Pokud nemůžete získat správnou verzi .NET Framework, můžete [požádat o pomoc Microsoftu](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help) .
 

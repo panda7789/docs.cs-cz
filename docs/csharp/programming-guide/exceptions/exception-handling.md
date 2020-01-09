@@ -1,17 +1,16 @@
 ---
 title: Zpracování výjimek – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: 895f561c15941d851980ea9b392d2e86db2462f3
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ee1e5bd15183dad9ffe97824f9b194668e9d3b17
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423288"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705298"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
 Blok [Try](../../language-reference/keywords/try-catch.md) je používán C# programátory k rozdělení kódu, který může být ovlivněn výjimkou. Přidružené bloky [catch](../../language-reference/keywords/try-catch.md) se používají ke zpracování všech výsledných výjimek. Blok [finally](../../language-reference/keywords/try-finally.md) obsahuje kód, který je spuštěn bez ohledu na to, zda je vyvolána výjimka v bloku `try`, jako je například uvolnění prostředků, které jsou přiděleny v bloku `try`. `try` blok vyžaduje jeden nebo více přidružených bloků `catch` nebo blok `finally` nebo obojí.  
@@ -52,7 +51,7 @@ Blok [Try](../../language-reference/keywords/try-catch.md) je používán C# pro
   
  [!code-csharp[csProgGuideExceptions#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#11)]  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
 
 Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkaz try](~/_csharplang/spec/statements.md#the-try-statement) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   

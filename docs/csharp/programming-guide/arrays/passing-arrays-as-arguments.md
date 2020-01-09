@@ -1,28 +1,27 @@
 ---
-title: Předávání polí jako argumentů - C# Průvodce programováním pro službu
-ms.custom: seodec18
+title: Předávání polí jako argumentů – C# Průvodce programováním
 ms.date: 07/05/2018
 helpviewer_keywords:
 - arrays [C#], passing as arguments
 ms.assetid: f3a0971e-c87c-4a1f-8262-bc0a3b712772
-ms.openlocfilehash: 1538988c1145a19055074b440f04cbaac4ef7aa7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2e53008910a9062ada25680eb4b8e54a225fd226
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651984"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705688"
 ---
-# <a name="passing-arrays-as-arguments-c-programming-guide"></a>Předávání polí jako argumentů (C# Programming Guide)
+# <a name="passing-arrays-as-arguments-c-programming-guide"></a>Předávání polí jako argumentů (C# Průvodce programováním)
 
-Pole může být předány jako argumenty na parametry metod. Protože pole jsou typy odkazů, metodu můžete změnit hodnotu prvků.
+Pole mohou být předána jako argumenty parametrům metody. Vzhledem k tomu, že pole jsou odkazové typy, metoda může změnit hodnotu prvků.
 
-## <a name="passing-single-dimensional-arrays-as-arguments"></a>Jednorozměrná předávání polí jako argumentů
+## <a name="passing-single-dimensional-arrays-as-arguments"></a>Předávání jednorozměrného pole jako argumentů
 
-Metodu můžete předat inicializované jednorozměrné pole. Například následující příkaz odešle pole tisku metodě.
+Do metody můžete předat inicializované jednorozměrné pole. Například následující příkaz odešle pole do metody Print.
 
 [!code-csharp[csProgGuideArrays#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#34)]
 
-Následující kód ukazuje částečnou implementaci metody tisku.
+Následující kód ukazuje částečnou implementaci metody Print.
 
 [!code-csharp[csProgGuideArrays#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#33)]
 
@@ -32,27 +31,27 @@ Můžete inicializovat a předat nové pole v jednom kroku, jak je znázorněno 
 
 ### <a name="example"></a>Příklad
 
-V následujícím příkladu je pole řetězců inicializován a předat jako argument `DisplayArray` metodu pro řetězce. Metoda zobrazí prvků pole. Dále `ChangeArray` metoda obrátí prvků pole a pak `ChangeArrayElements` metoda upraví první tři prvky pole. Poté, co každá metoda vrací výsledek, `DisplayArray` metoda ukazuje, že předá podle hodnoty pole nezabrání změny k prvkům pole.
+V následujícím příkladu je pole řetězců inicializováno a předáno jako argument metodě `DisplayArray` pro řetězce. Metoda zobrazí prvky pole. Dále metoda `ChangeArray` obrátí prvky pole a poté metoda `ChangeArrayElements` upraví první tři prvky pole. Po vrácení každé metody metoda `DisplayArray` ukazuje, že předání pole hodnotou nezabrání změnám prvků pole.
 
 [!code-csharp[csProgGuideArrays#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/ArrayExample.cs)]
 
-## <a name="passing-multidimensional-arrays-as-arguments"></a>Předání vícerozměrných polí jako argumentů
+## <a name="passing-multidimensional-arrays-as-arguments"></a>Předávání multidimenzionálních polí jako argumentů
 
-Inicializované vícerozměrná pole můžete předat metodě stejným způsobem, který předáte jednorozměrné pole.
+Inicializované multidimenzionální pole do metody předáte stejným způsobem jako jednorozměrné pole.
 
 [!code-csharp[csProgGuideArrays#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#41)]
 
-Následující kód znázorňuje deklaraci částečné tisku metody, která přijímá jako svůj argument dvourozměrné pole.
+Následující kód ukazuje částečnou deklaraci metody Print, která přijímá dvojrozměrné pole jako argument.
 
 [!code-csharp[csProgGuideArrays#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#36)]
 
-Můžete inicializovat a předejte nové pole v jednom kroku, jak je znázorněno v následujícím příkladu:
+Můžete inicializovat a předat nové pole v jednom kroku, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csProgGuideArrays#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#32)]
 
 ### <a name="example"></a>Příklad
 
-V následujícím příkladu je inicializován a předat dvourozměrné pole celých čísel `Print2DArray` metody. Metoda zobrazí prvků pole.
+V následujícím příkladu je inicializováno dvojrozměrné pole celých čísel a předáno do metody `Print2DArray`. Metoda zobrazí prvky pole.
 
 [!code-csharp[csProgGuideArrays#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#31)]
 

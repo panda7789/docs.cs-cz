@@ -1,6 +1,5 @@
 ---
 title: Hello World – váš první program pomocí sady Visual Studio ve Windows nebo v systému C# Mac – Průvodce programováním
-ms.custom: seodec18
 ms.date: 09/12/2019
 f1_keywords:
 - cs.program
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: edab64bf02a2b60cce21af536d2da98193dea9a1
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 910fa4af1b4e45ce627b589a06910dc168490047
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196213"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712140"
 ---
 # <a name="hello-world----your-first-program"></a>Hello World – první program
 
@@ -50,7 +49,7 @@ C:\Program Files\dotnet\dotnet.exe (process 11964) exited with code 0.
 Press any key to close this window . . .
 ```
 
-Stisknutím klávesy zavřete okno.
+Stisknutím jakékoli klávesy zavřete okno.
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 

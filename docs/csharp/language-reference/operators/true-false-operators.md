@@ -1,24 +1,23 @@
 ---
 title: operátory true a false – C# referenční informace
-ms.custom: seodec18
 ms.date: 12/10/2018
 helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: f65ed3b362080d7a8afe89e22bd132d1fc190b06
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 498f8698401e91845b14ee1dbcda84ba7166bd14
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552466"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712595"
 ---
 # <a name="true-and-false-operators-c-reference"></a>operátory true a false (C# Referenční dokumentace)
 
 Operátor `true` vrátí hodnotu [bool](../builtin-types/bool.md) `true`, která značí, že jeho operand je jednoznačně true. Operátor `false` vrací hodnotu `bool` `true` k indikaci, že jeho operand je jednoznačně false. Operátory `true` a `false` nezaručují vzájemné doplnění. To znamená, že operátor `true` i `false` může vrátit hodnotu `bool` `false` pro stejný operand. Pokud typ definuje jeden ze dvou operátorů, musí také definovat jiný operátor.
 
 > [!TIP]
-> `bool?` typ použijte, pokud potřebujete podporovat logiku se třemi hodnotami (například při práci s databázemi, které podporují logický typ se třemi hodnotami). C#poskytuje operátory`&`a`|`, které podporují logiku se třemi hodnotami s operandy`bool?`. Další informace naleznete v části s [možnou hodnotou null logických operátorů](boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](boolean-logical-operators.md) .
+> `bool?` typ použijte, pokud potřebujete podporovat logiku se třemi hodnotami (například při práci s databázemi, které podporují logický typ se třemi hodnotami). C#poskytuje operátory `&` a `|`, které podporují logiku se třemi hodnotami s operandy `bool?`. Další informace naleznete v části s [možnou hodnotou null logických operátorů](boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](boolean-logical-operators.md) .
 
 ## <a name="boolean-expressions"></a>logické výrazy
 
@@ -26,7 +25,7 @@ Typ s definovaným operátorem `true` může být typ výsledku řídicího podm
 
 ## <a name="user-defined-conditional-logical-operators"></a>Podmíněné logické operátory definované uživatelem
 
-Pokud typ s definovanými operátory `true` a `false` [přetěžuje](operator-overloading.md) [logický operátor OR](boolean-logical-operators.md#logical-or-operator-) `|` nebo [logický operátor and](boolean-logical-operators.md#logical-and-operator-) `&` určitým způsobem, [podmíněný logický operátor OR](boolean-logical-operators.md#conditional-logical-or-operator-) `||` nebo [ podmíněný logický operátor AND](boolean-logical-operators.md#conditional-logical-and-operator-) `&&`, v uvedeném pořadí, lze vyhodnotit pro operandy daného typu. Další informace naleznete v části [uživatelsky definované Podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Pokud typ s definovaným operátorem `true` a `false` [přetěžuje](operator-overloading.md) [logický operátor OR](boolean-logical-operators.md#logical-or-operator-) `|` nebo [logický operátor and](boolean-logical-operators.md#logical-and-operator-) `&` určitým způsobem, může být [podmíněný logický operátor or](boolean-logical-operators.md#conditional-logical-or-operator-) `||` nebo [podmíněný logický operátor and](boolean-logical-operators.md#conditional-logical-and-operator-) `&&`v daném pořadí vyhodnocen pro operandy daného typu. Další informace naleznete v části [uživatelsky definované Podmíněné logické operátory](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="example"></a>Příklad
 

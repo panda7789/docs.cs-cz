@@ -3,13 +3,12 @@ title: Balíčky, metabalíčky a architektury – .NET Core
 description: Naučte se terminologie pro balíčky, metabalíčky a rozhraní.
 author: richlander
 ms.date: 06/20/2016
-ms.custom: seodec18
-ms.openlocfilehash: 7b019686df195a8cebdce126f7a0b2d22548dc0e
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: bd40ca603aaa9685fca9934368895bf7e945d962
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275761"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715511"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metabalíčky a architektury
 
@@ -136,7 +135,7 @@ Může se stát, že se nezvykle cílit na `netstandard1.3`, ale použijte verzi
 
 Opačný počet by neměl být platný: cílový `netstandard1.6` s verzí 1.3.0 `NETStandard.Library`. Nejde cílit na vyšší rámec s nižším Metapackage, protože nižší verze Metapackage nebude zveřejňovat žádné prostředky pro toto rozhraní vyšší úrovně. Schéma správy verzí pro metabalíčky vyhodnotí, že metabalíčky odpovídá nejvyšší verzi rozhraní Framework, které popisují. Na základě schématu správy verzí je první verze `NETStandard.Library` v 1.6.0 s tím, že obsahuje `netstandard1.6` assety. v 1.3.0 se používá v příkladu výše, pro symetrii s výše uvedeným příkladem, ale ve skutečnosti neexistuje.
 
-### <a name="net-core-application"></a>Aplikace .NET Core
+### <a name="net-core-application"></a>Aplikace v .NET Core
 
 Rozhraní .NET Core ([moniker cílového rozhraní Framework](../standard/frameworks.md): `netcoreapp`) představuje balíčky a přidružená rozhraní API, která jsou součástí distribuce .NET Core a modelu konzolové aplikace, kterou poskytuje. Aplikace .NET Core musí používat toto rozhraní, protože by se měly zaměřit na model konzolové aplikace, stejně jako knihovny, které mají být spouštěny pouze v rozhraní .NET Core. Použití tohoto rozhraní omezuje aplikace a knihovny na spouštění pouze v .NET Core. 
 

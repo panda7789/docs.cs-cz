@@ -1,18 +1,17 @@
 ---
 title: Rozšiřující metody – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#], adding to existing types
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 66c8dee059d65f6628bf38edecf2f5abec320eea
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 1ab831b10b4152e8713cdfba4962822042c15673
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635831"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714945"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro kód klienta napsané C#v F# a Visual Basic neexistuje žádný zřejmý rozdíl mezi voláním metody rozšíření a metodami, které jsou ve skutečnosti definovány v typu.  

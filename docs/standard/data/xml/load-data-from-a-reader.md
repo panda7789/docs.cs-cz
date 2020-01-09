@@ -3,31 +3,29 @@ title: Načtení dat z čtečky
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 7e74918c-bc72-4977-a49b-e1520a6d8f60
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e4b789a23b790757ce2dfaa82b6eaec7fdaf3cb3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 90a66e04bda4fb2ee4216e8aabd631afb2f28dd0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647874"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710710"
 ---
 # <a name="load-data-from-a-reader"></a>Načtení dat z čtečky
-Pokud dokument XML je načtené pomocí možnosti <xref:System.Xml.XmlDocument.Load%2A> metoda a parametr <xref:System.Xml.XmlReader>, existují rozdíly v chování, která nastane v porovnání s chování načítání dat z jiných formátů. Pokud čtečka nachází ve stavu počáteční <xref:System.Xml.XmlDocument.Load%2A> využívá celý obsah ze čtečky a sestavení XML Document Object Model (DOM) z všechna data ve čtečce.  
+Pokud je dokument XML načten pomocí metody <xref:System.Xml.XmlDocument.Load%2A> a parametru <xref:System.Xml.XmlReader>, existují rozdíly v chování, ke kterému dochází v porovnání s chováním při načítání dat z jiných formátů. Pokud je čtenář v jeho počátečním stavu, <xref:System.Xml.XmlDocument.Load%2A> spotřebovává celý obsah čtecího zařízení a sestaví XML model DOM (Document Object Model) (DOM) ze všech dat ve čtečce.  
   
- Pokud ukazatel čtení je již umístěný na uzlu někde v dokumentu a čtečky je pak předán <xref:System.Xml.XmlDocument.Load%2A> metody <xref:System.Xml.XmlDocument.Load%2A> se pokusí přečíst aktuální uzel a všechny na stejné úrovni, až koncovou značku, která ukončí aktuální hloubka do paměti. Úspěch pokusu o <xref:System.Xml.XmlDocument.Load%2A> závisí na uzlu, který je čtečka na při pokusu o zatížení, jako <xref:System.Xml.XmlDocument.Load%2A> ověří, jestli je ve správném formátu XML ze čtečky. Pokud kód XML není ve správném formátu, <xref:System.Xml.XmlDocument.Load%2A> vyvolá výjimku. Například následující sadu uzlů obsahovat dva prvky na kořenové úrovni serveru, kód XML není ve správném formátu, a <xref:System.Xml.XmlDocument.Load%2A> vyvolá výjimku.  
+ Pokud je čtenář již umístěn v uzlu někam v dokumentu a čtecí modul je pak předán metodě <xref:System.Xml.XmlDocument.Load%2A>, <xref:System.Xml.XmlDocument.Load%2A> se pokusí přečíst aktuální uzel a všechny položky na stejné úrovni až po koncovou značku, která zavírá aktuální hloubku do paměti. Úspěch <xref:System.Xml.XmlDocument.Load%2A> v závislosti na uzlu, ke kterému je čtenář zapnutý při pokusu o načtení, tak, jak <xref:System.Xml.XmlDocument.Load%2A> ověřuje, že XML ze čtecího zařízení je ve správném formátu. Pokud XML není ve správném formátu, <xref:System.Xml.XmlDocument.Load%2A> vyvolá výjimku. Například následující sada uzlů obsahuje dva elementy na kořenové úrovni, XML není ve správném formátu a <xref:System.Xml.XmlDocument.Load%2A> vyvolá výjimku.  
   
-- Uzel komentáře, za nímž následuje uzlu elementu, za nímž následuje uzlu elementu, za nímž následuje uzlu EndElement.  
+- Uzel komentáře následovaný uzlem elementu následovaným uzlem elementu následovaným uzlem EndElement.  
   
- Následující sada uzlů vytvoří neúplné modelu DOM, protože neexistuje žádný element na kořenové úrovni.  
+ Následující sada uzlů vytvoří nekompletní model DOM, protože neexistuje žádný element na úrovni root.  
   
-- Uzel komentáře, za nímž následuje za nímž následuje uzel komentáře, za nímž následuje uzlu EndElement ProcessingInstruction uzlu.  
+- Uzel komentáře následovaný uzlem ProcessingInstruction následovaným uzlem komentáře následovaným uzlem EndElement.  
   
- Nevyvolá výjimku a načíst data. Můžete přidat kořenový element k hornímu okraji tyto uzly a vytvořit ve správném formátu XML, který můžete uložit bez chyb.  
+ Tím se nevyvolá výjimka a data se načtou. Kořenový element můžete přidat do horní části těchto uzlů a vytvořit kód XML ve správném formátu, který lze uložit bez chyb.  
   
- Pokud ukazatel čtení je umístěný na uzel typu list, který není platný pro kořenové úrovni dokumentu (například bílého místa nebo atribut uzlu), čtečky pokračovat ve čtení, dokud je umístěn na uzlu, který lze použít pro kořen. Dokument začíná načítání v tomto okamžiku.  
+ Pokud je čtecí modul umístěn na listovém uzlu, který je neplatný pro kořenovou úroveň dokumentu (například prázdný znak nebo uzel atributu), čtecí modul bude pokračovat v čtení, dokud nebude umístěn na uzlu, který lze použít pro kořen. Dokument začíná v tomto okamžiku načten.  
   
- Ve výchozím nastavení <xref:System.Xml.XmlDocument.Load%2A> neověřuje, zda je platný, pomocí definice typu dokumentu (DTD) nebo ověřování schématu XML. Pouze ověří, zda je soubor XML ve správném formátu. Aby dojde k ověření, je potřeba vytvořit <xref:System.Xml.XmlReader> pomocí <xref:System.Xml.XmlReaderSettings> třídy. <xref:System.Xml.XmlReader> Třída může vynutit ověřování pomocí DTD nebo schématu definice jazyk (XSD) schématu. <xref:System.Xml.ValidationType> Vlastnost na <xref:System.Xml.XmlReaderSettings> třída určuje, zda <xref:System.Xml.XmlReader> instance vynucuje ověřování. Další informace o ověřování XML dat, najdete v části poznámky <xref:System.Xml.XmlReader> referenční stránce.  
+ Ve výchozím nastavení <xref:System.Xml.XmlDocument.Load%2A> neověřuje, zda je XML platný, pomocí definice typu dokumentu (DTD) nebo ověřování schématu. Ověřuje pouze to, zda je soubor XML správně vytvořen. Aby bylo ověřování provedeno, je třeba vytvořit <xref:System.Xml.XmlReader> pomocí <xref:System.Xml.XmlReaderSettings> třídy. Třída <xref:System.Xml.XmlReader> může vyhovět ověřování pomocí schématu DTD nebo schématu definice jazyka (XSD). Vlastnost <xref:System.Xml.ValidationType> třídy <xref:System.Xml.XmlReaderSettings> určuje, zda instance <xref:System.Xml.XmlReader> vynutila ověřování. Další informace o ověřování dat XML naleznete v části poznámky na referenční stránce <xref:System.Xml.XmlReader>.  
   
 ## <a name="see-also"></a>Viz také:
 

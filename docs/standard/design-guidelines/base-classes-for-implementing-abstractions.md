@@ -6,32 +6,31 @@ helpviewer_keywords:
 - abstractions [.NET Framework]
 - base classes, abstractions
 ms.assetid: 37a2d9a4-9721-482a-a40f-eee2c1d97875
-author: KrzysztofCwalina
-ms.openlocfilehash: 6811423258481fcbae24743c9b17f3f20c379c58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: af62658ce728dd480df630cf6162549f33f28b4d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785538"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709540"
 ---
 # <a name="base-classes-for-implementing-abstractions"></a>Základní třídy pro implementaci abstrakcí
-Přesněji řečeno třída změní základní třídy, pokud jiné třídy je odvozen z něj. Pro účely této části ale základní třídy je třída navržená především pro poskytování běžné abstrakce nebo pro jiné třídy opakovaně používat některé výchozí implementace ale dědičnosti. Základní třídy se obvykle nacházejí uprostřed hierarchie dědičnosti mezi několika vlastní implementace v dolní části a abstrakce na nejnižší úrovni hierarchie.  
+V případě, že je z něj odvozena jiná třída, třída se bude zcela vymluvit jako základní třída. Pro účely této části je však základní třídou třída navržená hlavně pro poskytnutí společné abstrakce nebo pro jiné třídy pro opakované použití některé výchozí implementace, i když je dědění. Základní třídy obvykle sedí uprostřed hierarchií dědičnosti mezi abstrakcí v kořenovém adresáři hierarchie a několika vlastními implementacemi v dolní části.  
   
- Pro implementaci abstrakcí slouží jako pomocné rutiny implementace. Například jeden z rozhraní Framework abstrakce pro seřazené kolekce položek je <xref:System.Collections.Generic.IList%601> rozhraní. Implementace <xref:System.Collections.Generic.IList%601> není triviální, a proto rozhraní zajišťuje několik základních tříd, jako například <xref:System.Collections.ObjectModel.Collection%601> a <xref:System.Collections.ObjectModel.KeyedCollection%602>, který slouží jako pomocné rutiny pro implementaci vlastní kolekce.  
+ Slouží jako implementační pomocníky k implementaci abstrakcí. Například jedna z abstrakcí rozhraní pro uspořádané kolekce položek je <xref:System.Collections.Generic.IList%601> rozhraní. Implementace <xref:System.Collections.Generic.IList%601> není triviální, a proto rozhraní poskytuje několik základních tříd, jako je například <xref:System.Collections.ObjectModel.Collection%601> a <xref:System.Collections.ObjectModel.KeyedCollection%602>, které slouží jako pomocník pro implementaci vlastních kolekcí.  
   
- Základní třídy obvykle nejsou vhodné, která bude sloužit jako abstrakce samy, protože mají tendenci obsahují příliš mnoho implementací. Například `Collection<T>` základní třída obsahuje velké množství implementace týkající se skutečnosti, že implementuje neobecné `IList` rozhraní (aby lépe integrovat neobecné kolekce) a na skutečnost, že je kolekce položek uložených v paměti v jednom z jeho polí.  
+ Základní třídy většinou nejsou vhodné k tomu, aby sloužily jako abstrakce samotných, protože by měly obsahovat příliš mnoho implementace. Například základní třída `Collection<T>` obsahuje mnoho implementace souvisejících se skutečností, že implementuje neobecné `IList` rozhraní (pro integraci lépe s neobecnými kolekcemi) a fakt, že se jedná o kolekci položek uložených v paměti v jednom z jeho polí.  
   
- Jak bylo uvedeno výše základních tříd může poskytnout nedocenitelné nápovědy pro uživatele, kteří potřebují k implementaci abstrakcí, ale ve stejnou dobu, může představovat i nevýhodu významné. Tyto přidat styčné plochy a zvětšit hloubku hierarchie dědičnosti a proto koncepčně zkomplikovat rozhraní framework. Základní třídy by proto použít pouze v případě, že poskytují uživatelům rozhraní výrazně zlepšit situaci. Mělo by se vyhnout Pokud, zadejte hodnotu pouze pro implementátory rozhraní, ve kterém případu delegování na interní implementaci namísto dědičnosti ze základní třídy silného považovat za.  
+ Jak už bylo popsáno, základní třídy mohou poskytnout nevýznamnou nápovědu pro uživatele, kteří potřebují implementovat abstrakce, ale ve stejnou dobu se může jednat o významnou zodpovědnost. Přidávají oblast Surface a zvyšují hloubku hierarchií dědičnosti a tak koncepčně komplikuje rozhraní. Proto by měly být použity základní třídy pouze v případě, že poskytují významnou hodnotu uživatelům rozhraní. Měli byste se vyhnout, pokud poskytují hodnotu pouze implementátorům rozhraní, v takovém případě by mělo být silně zváženo delegování na vnitřní implementaci místo dědičnosti základní třídy.  
   
- **✓ CONSIDER** provedení základní třídy abstraktní i v případě, že neobsahují žádné abstraktní členy. To jasně komunikuje uživatelům určené výhradně, aby se dědila z třídy.  
+ **✓ CONSIDER** provedení základní třídy abstraktní i v případě, že neobsahují žádné abstraktní členy. To jasně oznamuje uživatelům, že třída je navržena výhradně pro dědění.  
   
- **✓ CONSIDER** umístění základních tříd do samostatného oboru názvů z nejdůležitějších scénář typů. Podle definice základních tříd jsou určené pro scénáře pokročilých rozšíření a proto nejsou zajímavé pro většinu uživatelů.  
+ **✓ CONSIDER** umístění základních tříd do samostatného oboru názvů z nejdůležitějších scénář typů. Podle definice jsou základní třídy určené pro pokročilé scénáře rozšiřitelnosti, proto nejsou zajímavé pro většinu uživatelů.  
   
  **X AVOID** pojmenování základní třídy s příponou "Základní", pokud třída je určena pro použití v veřejná rozhraní API.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

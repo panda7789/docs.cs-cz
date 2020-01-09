@@ -8,14 +8,12 @@ helpviewer_keywords:
 - stores, current user
 - removing stores
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1ca9b10623e4a8a1a977c926262c63f3f2ab076e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 46e846eaf92835fb2a9130b85ed20749934ca5a1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044136"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715716"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (nástroj izolovaného úložiště)
 Nástroj izolované úložiště vypíše seznam všech existujících úložišť pro aktuálního uživatele nebo všechna existující úložiště odebere.  

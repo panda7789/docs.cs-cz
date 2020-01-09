@@ -1,19 +1,17 @@
 ---
 title: Postup serializace a deserializace JSON C# pomocí-.NET
-author: tdykstra
-ms.author: tdykstra
 ms.date: 09/16/2019
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 3d3dc0011562e25854938aff857f2832a5978b49
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a9c690e736a08c729a4099d5e7a519ed17ec282c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283335"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705792"
 ---
 # <a name="how-to-serialize-and-deserialize-json-in-net"></a>Postup serializace a deserializace JSON v rozhraní .NET
 
@@ -23,7 +21,7 @@ Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím r
 
 Většina vzorových ukázkových kódů v serializaci <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` na "poměrně tištěné" formátu JSON (s odsazením a prázdným znakem pro lidské čitelnost). Při použití v produkčním prostředí byste obvykle přijali výchozí hodnotu `false` pro toto nastavení.
 
-## <a name="namespaces"></a>Obory názvů
+## <a name="namespaces"></a>Jmenné prostory
 
 Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy. Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Příklady kódu, které jsou uvedené v tomto článku, vyžadují direktivy `using` pro jeden nebo oba tyto obory názvů:
 
@@ -381,7 +379,7 @@ Zde je příklad objektu pro serializaci a výstup JSON:
 |---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00|
 | TemperatureCelsius| 25 |
-| Souhrn| null|
+| Přehled| null|
 
 ```json
 {
@@ -460,7 +458,7 @@ Chcete-li minimalizovat uvozovací znaky, můžete použít <xref:System.Text.En
 
 ## <a name="serialize-properties-of-derived-classes"></a>Serializovat vlastnosti odvozených tříd
 
-Polymorfní serializace není podporována, pokud zadáte v době kompilace typ, který se má serializovat. Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastWithWind`:
+Polymorfní serializace není podporována, pokud zadáte v době kompilace typ, který se má serializovat. Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastDerived`:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
@@ -470,7 +468,7 @@ A Předpokládejme, že argument typu metody `Serialize` v době kompilace je `W
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
 
-V tomto scénáři není vlastnost `WindSpeed` serializována i v případě, že je objekt `weatherForecast` ve skutečnosti objekt `WeatherForecastWithWind`. Serializovat se budou jenom vlastnosti základní třídy:
+V tomto scénáři není vlastnost `WindSpeed` serializována i v případě, že je objekt `weatherForecast` ve skutečnosti objekt `WeatherForecastDerived`. Serializovat se budou jenom vlastnosti základní třídy:
 
 ```json
 {
@@ -575,7 +573,7 @@ Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typ
 |---------|---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00||
 | TemperatureCelsius| 0 | Neshoda malých a velkých písmen (`temperatureCelsius` ve formátu JSON), takže vlastnost není nastavená. |
-| Souhrn | Horká ||
+| Přehled | Horká ||
 | ExtensionData – | temperatureCelsius: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
 || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
 | |SummaryWords:<br>Studená<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|

@@ -1,16 +1,15 @@
 ---
 title: Použití implicitního typu lokálních proměnných a polí ve výrazu dotazu – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
-ms.openlocfilehash: c6022aaa4c37bc0c11c09375d3637d8287fce61a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: f4ff71fc4dc1a0b2affa1f032ab1d3d6bb04d297
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970426"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705558"
 ---
 # <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Použití implicitního typu lokálních proměnných a polí ve výrazu dotazu (C# Průvodce programováním)
 Můžete použít implicitně typované lokální proměnné, kdykoli chcete, aby kompilátor určil typ místní proměnné. Pro uložení anonymních typů, které se často používají ve výrazech dotazů, je nutné použít implicitní typové lokální proměnné. Následující příklady ilustrují volitelná i požadovaná použití implicitních typů místních proměnných v dotazech.  
@@ -30,7 +29,7 @@ Můžete použít implicitně typované lokální proměnné, kdykoli chcete, ab
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [Rozšiřující metody](./extension-methods.md)
+- [Metody rozšíření](./extension-methods.md)
 - [LINQ (jazykově integrovaný dotaz)](../../linq/index.md)
 - [var](../../language-reference/keywords/var.md)
 - [LINQ v jazyce C#](../../linq/index.md)

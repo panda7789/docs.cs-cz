@@ -1,16 +1,15 @@
 ---
 title: Kontextová klíčová slova – C# reference
-ms.custom: seodec18
 ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: 9197ebb1fa48011c60a6d224497e57a604870fc3
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1de8fbccfa9485a546689233ea8a601a8bd697a5
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422872"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713645"
 ---
 # <a name="contextual-keywords-c-reference"></a>Kontextová klíčová slova (Referenční dokumentace jazyka C#)
 

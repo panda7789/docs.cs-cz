@@ -18,13 +18,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.custom: seodec18
-ms.openlocfilehash: cd6b24a6dd893f0c522573a0e19914164c15141f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c88776ea9d8ba17d86767b704e8b0eaff5b6cb89
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973946"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711477"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 
@@ -75,7 +74,7 @@ Například metoda <xref:System.String.IndexOf%2A>, která vrací index podřet�
 Doporučujeme, abyste vybrali přetížení, které nepoužívá výchozí hodnoty, z následujících důvodů:
 
 - Některá přetížení s výchozími parametry (ta, která hledají <xref:System.Char> v instanci řetězce) provádějí ordinální porovnávání, zatímco ostatní (ty, které hledají řetězec v instanci řetězce), jsou závislé na jazykové verzi. Je obtížné si pamatovat si, kterou metodu používá tuto výchozí hodnotu a snadno Zaměňujte přetížení.
-- Záměr kódu, který závisí na výchozích hodnotách pro volání metody, není jasný. V následujícím příkladu, který závisí na výchozích hodnotách, je obtížné zjistit, zda vývojář skutečně určil ordinální nebo jazykové porovnání dvou řetězců nebo zda rozdíl mezi `protocol` a "http" může způsobit, že test rovnosti na vrátit `false`.
+- Záměr kódu, který závisí na výchozích hodnotách pro volání metody, není jasný. V následujícím příkladu, který závisí na výchozích hodnotách, je obtížné zjistit, zda vývojář skutečně určil ordinální nebo jazykové porovnání dvou řetězců nebo zda rozdíl mezi `protocol` a "http" může způsobit, že test rovnosti vrátí `false`.
 
      [!code-csharp[Conceptual.Strings.BestPractices#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/explicitargs1.cs#1)]
      [!code-vb[Conceptual.Strings.BestPractices#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/explicitargs1.vb#1)]
@@ -90,7 +89,7 @@ Obecně doporučujeme, abyste volali metodu, která nespoléhá na výchozí hod
 Porovnání řetězců je srdcem mnoha operací souvisejících s řetězci, zejména pro řazení a testování rovnosti. Řetězce se řadí ve stanoveném pořadí: Pokud je "my" zobrazen před řetězcem v setříděném seznamu řetězců, "my" musí porovnat méně než nebo se rovnat "String". Kromě toho porovnání implicitně definuje rovnost. Operace porovnání vrátí nulu pro řetězce, které považuje za shodné. Dobrým výkladem je, že žádný řetězec není menší než druhý. Mezi smysluplné operace zahrnující řetězce patří jeden nebo oba tyto postupy: porovnání s jiným řetězcem a provádění dobře definované operace řazení.
 
 > [!NOTE]
-> Můžete stáhnout [tabulky váhy řazení](https://www.microsoft.com/download/details.aspx?id=10921), sadu textových souborů, které obsahují informace o váhu znaků používaných při řazení a porovnávání operací pro operační systémy Windows, a [výchozí tabulku prvků kolace sady Unicode](https://www.unicode.org/Public/UCA/latest/allkeys.txt). nejnovější verzi tabulky váhy řazení pro Linux a macOS. Konkrétní verze tabulky váhy řazení v systému Linux a macOS závisí na verzi [mezinárodní komponenty pro knihovny Unicode](http://site.icu-project.org/) nainstalované v systému. Informace o verzích ICU a verzích Unicode, které implementují, najdete v tématu [stažení ICU](http://site.icu-project.org/download).
+> Můžete si stáhnout [tabulky váhy řazení](https://www.microsoft.com/download/details.aspx?id=10921), sadu textových souborů, které obsahují informace o váhu znaků používaných při operacích řazení a porovnávání pro operační systémy Windows, a [výchozí tabulku prvků kolace sady Unicode](https://www.unicode.org/Public/UCA/latest/allkeys.txt), nejnovější verzi tabulky váhy řazení pro Linux a MacOS. Konkrétní verze tabulky váhy řazení v systému Linux a macOS závisí na verzi [mezinárodní komponenty pro knihovny Unicode](http://site.icu-project.org/) nainstalované v systému. Informace o verzích ICU a verzích Unicode, které implementují, najdete v tématu [stažení ICU](http://site.icu-project.org/download).
 
 Vyhodnocování dvou řetězců pro rovnost nebo řazení ale nepřinese jediný správný výsledek; výsledek závisí na kritériích použitých k porovnání řetězců. Konkrétně porovnávání řetězců, které jsou ordinální nebo které jsou založeny na velikosti písmen a řazení aktuální jazykové verze nebo [invariantní jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture) (jazyková verze nezávislá na základě anglického jazyka), mohou způsobit různé výsledky.
 
@@ -200,7 +199,7 @@ V rovnováze má neutrální jazyková verze velmi málo vlastností, které jso
 
 Následující tabulka popisuje mapování z kontextu sémantického řetězce na člen <xref:System.StringComparison> výčtu:
 
-|Data|Předvídatelně|Odpovídající System. StringComparison<br /><br /> value|
+|Datové|Chování|Odpovídající System. StringComparison<br /><br /> hodnotu|
 |----------|--------------|-----------------------------------------------------|
 |Interní identifikátory s rozlišováním velkých a malých písmen.<br /><br /> Identifikátory citlivé na velká a malá písmena ve standardech, jako je XML a HTTP.<br /><br /> Nastavení související se zabezpečením velkých a malých písmen.|Nelingvistické identifikátory, kde se přesně shodují bajty.|<xref:System.StringComparison.Ordinal>|
 |Interní identifikátory bez rozlišení velkých a malých písmen.<br /><br /> Identifikátory bez rozlišení velkých a malých písmen ve standardech, jako je XML a HTTP.<br /><br /> Cesty k souborům.<br /><br /> Klíče a hodnoty registru.<br /><br /> Proměnné prostředí.<br /><br /> Identifikátory prostředků (například názvy popisovačů).<br /><br /> Nastavení týkající se zabezpečení nerozlišuje velká a malá písmena.|Nelingvistické identifikátory, kde Case není důležité; hlavně data uložená ve většině systémových služeb Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|

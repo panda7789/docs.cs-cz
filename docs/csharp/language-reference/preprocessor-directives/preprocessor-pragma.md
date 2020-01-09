@@ -1,21 +1,20 @@
 ---
 title: '#pragma – C# reference'
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma'
 helpviewer_keywords:
 - '#pragma directive [C#]'
 ms.assetid: 5b7944cd-d402-46a1-ad8f-feffb2d83673
-ms.openlocfilehash: 65ca38ff6993117b6ed9f716d4ac93ba2d4a9ddf
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3bd62364aeae0f21715711324655ef7d00d88afc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605668"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712452"
 ---
 # <a name="pragma-c-reference"></a>#pragma (referenční dokumentace jazyka C#)
-`#pragma`poskytne kompilátoru zvláštní pokyny pro kompilaci souboru, ve kterém se zobrazí. Pokyny musí kompilátor podporovat. Jinými slovy, nemůžete použít `#pragma` k vytvoření vlastních instrukcí pro předzpracování. Kompilátor společnosti C# Microsoft podporuje následující dvě `#pragma` pokyny:  
+`#pragma` poskytuje kompilátoru speciální pokyny pro kompilaci souboru, ve kterém se zobrazí. Pokyny musí kompilátor podporovat. Jinými slovy, nemůžete použít `#pragma` k vytvoření vlastních instrukcí pro předzpracování. Kompilátor společnosti C# Microsoft podporuje následující dvě `#pragma` instrukce:  
   
  [#pragma warning](./preprocessor-pragma-warning.md)  
   

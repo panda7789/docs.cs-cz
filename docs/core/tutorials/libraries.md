@@ -3,15 +3,14 @@ title: Vývoj knihoven pomocí nástrojů pro různé platformy
 description: Naučte se vytvářet knihovny .NET Core pomocí nástrojů .NET Core CLI. Vytvoříte knihovnu, která podporuje více rozhraní.
 author: cartermp
 ms.date: 05/01/2017
-ms.custom: seodec18
-ms.openlocfilehash: 13c8541d1045f9130b3b5b260769a50fdc2316ba
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
-ms.translationtype: HT
+ms.openlocfilehash: 4132113037e6c5ec555d2d1859b8217a1a53d07f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559536"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714032"
 ---
-# <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
+# <a name="develop-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
 Tento článek popisuje, jak psát knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku pro různé platformy. Rozhraní příkazového řádku poskytuje efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. Knihovny můžete vytvářet i v aplikaci Visual Studio a pokud je vaše preferované prostředí, [Přečtěte si průvodce sadou Visual Studio](library-with-visual-studio.md).
 
@@ -21,7 +20,7 @@ Potřebujete na svém počítači nainstalované [.NET Core SDK a CLI](https://d
 
 V části tohoto dokumentu, které se týkají .NET Framework verzí, potřebujete [.NET Framework](https://dotnet.microsoft.com) nainstalovány na počítači s Windows.
 
-Kromě toho, pokud chcete podporovat starší .NET Framework cíle, je nutné nainstalovat sady Target/Developer Packs pro starší verze architektury ze [stránky archivu stahování v rozhraní .NET](https://dotnet.microsoft.com/download/archives). Další informace najdete v této tabulce:
+Kromě toho, pokud chcete podporovat starší .NET Framework cíle, je nutné nainstalovat sady Target Packs nebo sady Developer Pack ze [stránky archivu stahování v rozhraní .NET](https://dotnet.microsoft.com/download/archives). Další informace najdete v této tabulce:
 
 | Verze rozhraní .NET Framework | Co stáhnout                                       |
 | ---------------------- | ------------------------------------------------------ |
@@ -45,9 +44,9 @@ Zde je uvedeno, co tato tabulka znamená pro účely vytvoření knihovny:
 
 Verze .NET Standard, kterou vyberete, bude kompromis mezi přístupem k nejnovějším rozhraním API a možností cílit na více implementací rozhraní .NET a .NET Standard verzí. Rozsah cílových platforem a verzí ovládáte tak, že vybíráte verzi `netstandardX.X` (kde `X.X` je číslo verze) a přidáte ho do souboru projektu (`.csproj` nebo `.fsproj`).
 
-Máte tři primární možnosti při cílení na .NET Standard v závislosti na vašich potřebách.
+V závislosti na vašich potřebách máte tři primární možnosti, které cílí na .NET Standard.
 
-1. Můžete použít výchozí verzi .NET Standard poskytnutou šablonami – `netstandard1.4` – což vám umožní přístup k většině rozhraní API na .NET Standard, i když je stále kompatibilní s UWP, .NET Framework 4.6.1 a .NET Standard 2,0.
+1. Můžete použít výchozí verzi .NET Standard poskytnutou šablonami, `netstandard1.4`, která vám umožní přístup k většině rozhraní API na .NET Standard, zatímco pořád jsou kompatibilní s UWP, .NET Framework 4.6.1 a .NET Standard 2,0.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -59,18 +58,18 @@ Máte tři primární možnosti při cílení na .NET Standard v závislosti na 
 
 2. Můžete použít nižší nebo vyšší verzi .NET Standard úpravou hodnoty v uzlu `TargetFramework` souboru projektu.
 
-    Verze .NET Standard jsou zpětně kompatibilní. To znamená, že `netstandard1.0` knihoven běží na `netstandard1.1`ch platformách a vyšších. Neexistuje však žádná dopředná kompatibilita – nižší .NET Standard platforma nemůže odkazovat na vyšší úroveň. To znamená, že knihovny `netstandard1.0` nemohou odkazovat na knihovny cílené na `netstandard1.1` nebo vyšší. Vyberte standardní verzi, která má správnou kombinaci rozhraní API a podpory platforem podle vašich potřeb. Pro teď doporučujeme `netstandard1.4`.
+    Verze .NET Standard jsou zpětně kompatibilní. To znamená, že `netstandard1.0` knihoven běží na `netstandard1.1`ch platformách a vyšších. Nejedná se však o dopředné kompatibility. Nižší .NET Standard platformy nemůžou odkazovat na vyšší úrovně. To znamená, že knihovny `netstandard1.0` nemohou odkazovat na knihovny cílené na `netstandard1.1` nebo vyšší. Vyberte standardní verzi, která má správnou kombinaci rozhraní API a podpory platforem podle vašich potřeb. Pro teď doporučujeme `netstandard1.4`.
 
-3. Pokud chcete cílit na .NET Framework verze 4,0 nebo nižší nebo chcete použít rozhraní API dostupné v .NET Framework, ale ne v .NET Standard (například `System.Drawing`), přečtěte si následující oddíly a Naučte se, jak cílit.
+3. Pokud chcete cílit .NET Framework verze 4,0 nebo nižší nebo chcete použít rozhraní API dostupné v .NET Framework, ale ne v .NET Standard (například `System.Drawing`), přečtěte si následující oddíly a Naučte se, jak cílit.
 
-## <a name="how-to-target-the-net-framework"></a>Jak cílit na .NET Framework
+## <a name="how-to-target-net-framework"></a>Jak cílit na .NET Framework
 
 > [!NOTE]
 > V těchto pokynech se předpokládá, že máte na svém počítači nainstalovanou .NET Framework. Pokud chcete získat nainstalované závislosti, přečtěte si [požadavky](#prerequisites) .
 
-Mějte na paměti, že některé z .NET Framework verze, které tady používají, už nejsou podporovány. Přečtěte si [Nejčastější dotazy k zásadám životního cyklu podpory .NET Framework](https://support.microsoft.com/gp/framework_faq/en-us) pro nepodporované verze.
+Mějte na paměti, že některé z .NET Framework používané verze už nejsou podporované. Přečtěte si [Nejčastější dotazy k zásadám životního cyklu podpory .NET Framework](https://support.microsoft.com/gp/framework_faq/en-us) pro nepodporované verze.
 
-Pokud chcete dosáhnout maximálního počtu vývojářů a projektů, použijte jako cíl standardních hodnot .NET Framework 4,0. Chcete-li cílit na .NET Framework, bude nutné začít pomocí správného monikeru cílového rozhraní .NET Framework (TFM), který odpovídá .NET Framework verzi, kterou chcete podporovat.
+Pokud chcete dosáhnout maximálního počtu vývojářů a projektů, použijte jako cíl standardních hodnot .NET Framework 4,0. Chcete-li cílit na .NET Framework, začněte pomocí správného monikeru cílového rozhraní .NET Framework (TFM), který odpovídá .NET Framework verzi, kterou chcete podporovat.
 
 | Verze rozhraní .NET Framework | TFM      |
 | ---------------------- | -------- |
@@ -97,7 +96,7 @@ Pak tento TFM vložíte do oddílu `TargetFramework` souboru projektu. Tady je p
 </Project>
 ```
 
-A je to! I když je tato kompilace zkompilována pouze pro .NET Framework 4, můžete použít knihovnu v novějších verzích .NET Framework.
+A je to! I když se tato kompilace kompiluje jenom pro .NET Framework 4, můžete použít knihovnu v novějších verzích .NET Framework.
 
 ## <a name="how-to-multitarget"></a>Jak cílit
 
@@ -269,7 +268,7 @@ Váš kód bude automaticky znovu vytvořen při vyvolání příkazu `dotnet te
 
 Běžnou potřebou pro větší knihovny je umístit funkci do různých projektů.
 
-Představte si, že si přejete vytvořit knihovnu, kterou by C# bylo F#možné spotřebovat v idiomatickou a. To by znamenalo, že uživatelé vaší knihovny ji spotřebují způsobem, který je C# přirozený F#nebo. Například C# můžete použít knihovnu podobný následujícímu:
+Představte si, že chcete vytvořit knihovnu, která by mohla C# být F#spotřebována v idiomatickou a. To by znamenalo, že uživatelé vaší knihovny ji spotřebují způsobem, který je C# přirozený F#nebo. Například C# můžete použít knihovnu podobný následujícímu:
 
 ```csharp
 using AwesomeLibrary.CSharp;

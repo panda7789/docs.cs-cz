@@ -4,13 +4,13 @@ description: Publikování vytvoří sadu souborů, které jsou nutné ke spušt
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/10/2019
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 44e799ad76848278e3731b26b14a18e7fade760f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: 485d62ce67f284fe1bbe931dcaa00671be154f35
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343154"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715373"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio"></a>Publikování aplikace Hello World .NET Core pomocí sady Visual Studio
 

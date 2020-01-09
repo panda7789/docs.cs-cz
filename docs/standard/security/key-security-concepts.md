@@ -11,14 +11,12 @@ helpviewer_keywords:
 - permissions [.NET Framework]
 - security [.NET Framework], about security
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fe4c2e1775313039e8612ae7efbd3d22af710bab
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b7bcb7e56ca14d129eadcaeac19452d4a443713d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917261"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705969"
 ---
 # <a name="key-security-concepts"></a>Klíčové koncepty zabezpečení
 Microsoft .NET Framework nabízí zabezpečení na základě rolí, které umožňuje řešit problémy zabezpečení mobilního kódu a poskytovat podporu, která umožňuje komponentám určit, kteří uživatelé mají oprávnění dělat.  
@@ -28,7 +26,7 @@ Microsoft .NET Framework nabízí zabezpečení na základě rolí, které umož
   
  Během kompilace just-in-time (JIT) ověří volitelný proces ověření metadata a jazyk MSIL (Microsoft Intermediate Language) metody, která má být zkompilována JIT do nativního strojového kódu, aby ověřil, zda jsou typově bezpečná. Tento proces se přeskočí, pokud má kód oprávnění obejít ověřování. Další informace o ověřování najdete v tématu [proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md).  
   
- I když ověření bezpečnosti typu není nutné pro spuštění spravovaného kódu, bezpečnost typů hraje zásadní roli v izolaci sestavení a vynucení zabezpečení. Pokud je kód typově bezpečný, modul CLR (Common Language Runtime) může zcela izolovat sestavení od sebe navzájem. Tato izolace pomáhá zajistit, že sestavení nemůžou negativně ovlivnit a zvyšuje spolehlivost aplikace. Typově bezpečné komponenty se můžou bezpečně spouštět ve stejném procesu, i když jsou důvěryhodné na různých úrovních. Pokud kód není typově bezpečný, může dojít k nežádoucím vedlejším účinkům. Modul runtime například nemůže zabránit spravovanému kódu v volání nativního (nespravovaného) kódu a provádění škodlivých operací. Pokud je kód typově bezpečný, mechanismus vynucování zabezpečení modulu runtime zajišťuje, aby nezískal přístup k nativnímu kódu, pokud k tomu nemá oprávnění. Veškerý kód, který není typově bezpečný, musí být udělen <xref:System.Security.Permissions.SecurityPermission> s předaným členem <xref:System.Security.Permissions.SecurityPermissionAttribute.SkipVerification%2A> výčtu ke spuštění.  
+ I když ověření bezpečnosti typu není nutné pro spuštění spravovaného kódu, bezpečnost typů hraje zásadní roli v izolaci sestavení a vynucení zabezpečení. Pokud je kód typově bezpečný, modul CLR (Common Language Runtime) může zcela izolovat sestavení od sebe navzájem. Tato izolace pomáhá zajistit, že sestavení nemůžou negativně ovlivnit a zvyšuje spolehlivost aplikace. Typově bezpečné komponenty se můžou bezpečně spouštět ve stejném procesu, i když jsou důvěryhodné na různých úrovních. Pokud kód není typově bezpečný, může dojít k nežádoucím vedlejším účinkům. Modul runtime například nemůže zabránit spravovanému kódu v volání nativního (nespravovaného) kódu a provádění škodlivých operací. Pokud je kód typově bezpečný, mechanismus vynucování zabezpečení modulu runtime zajišťuje, aby nezískal přístup k nativnímu kódu, pokud k tomu nemá oprávnění. Veškerý kód, který není typově bezpečný, musí být udělen <xref:System.Security.Permissions.SecurityPermission> s předaným členem výčtu <xref:System.Security.Permissions.SecurityPermissionAttribute.SkipVerification%2A> ke spuštění.  
   
  Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../../docs/framework/misc/code-access-security-basics.md).  
   
@@ -44,12 +42,12 @@ Microsoft .NET Framework nabízí zabezpečení na základě rolí, které umož
  Další informace najdete v tématu [objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md).  
   
 ## <a name="authentication"></a>Ověřování  
- Ověřování je proces zjišťování a ověřování identity objektu zabezpečení prozkoumáním přihlašovacích údajů uživatele a ověřením těchto přihlašovacích údajů proti nějaké autoritě. Informace získané během ověřování jsou přímo použitelné vaším kódem. Můžete také použít .NET Framework zabezpečení založené na rolích k ověření aktuálního uživatele a určení, zda chcete, aby tento objekt zabezpečení měl přístup k vašemu kódu. Příklady ověřování objektu zabezpečení pro konkrétní role <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> naleznete v tématu přetížení metody. Například můžete použít <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> přetížení k určení, zda je aktuální uživatel členem skupiny Administrators.  
+ Ověřování je proces zjišťování a ověřování identity objektu zabezpečení prozkoumáním přihlašovacích údajů uživatele a ověřením těchto přihlašovacích údajů proti nějaké autoritě. Informace získané během ověřování jsou přímo použitelné vaším kódem. Můžete také použít .NET Framework zabezpečení založené na rolích k ověření aktuálního uživatele a určení, zda chcete, aby tento objekt zabezpečení měl přístup k vašemu kódu. Příklady ověřování objektu zabezpečení pro konkrétní role naleznete v tématu přetížení metody <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType>. Například můžete použít přetížení <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> k určení, zda je aktuální uživatel členem skupiny Administrators.  
   
  Dnes se používá celá řada ověřovacích mechanismů, mnohé z nich je možné použít s .NET Framework zabezpečení na základě rolí. Některé z nejčastěji používaných mechanismů jsou Basic, Digest, Passport, operační systém (například NTLM nebo Kerberos) nebo mechanizmy definované aplikací.  
   
 ### <a name="example"></a>Příklad  
- Následující příklad vyžaduje, aby aktivní objekt zabezpečení byl správce. `name` Parametr je`null`, který umožňuje každému uživateli, který je správcem, předat požadavek.  
+ Následující příklad vyžaduje, aby aktivní objekt zabezpečení byl správce. Parametr `name` je `null`, který umožňuje každému uživateli, který je správcem, předat požadavek.  
   
 > [!NOTE]
 > V systému Windows Vista Určuje nástroj řízení uživatelských účtů oprávnění uživatele. Pokud jste členem předdefinované skupiny Administrators, máte přiřazeny dva přístupové tokeny run-time: token přístupu uživatele se standardním oprávněním a token přístupu správce. Ve výchozím nastavení máte roli standardního uživatele. Chcete-li spustit kód, který vyžaduje, abyste byli správcem, musíte nejprve zvýšit oprávnění ze standardního uživatele na správce. To můžete provést po spuštění aplikace kliknutím pravým tlačítkem myši na ikonu aplikace a označením, že chcete spustit jako správce.  

@@ -1,16 +1,14 @@
 ---
 title: Instalace .NET Framework ve Windows 10
 description: Naučte se, jak nainstalovat .NET Framework ve Windows 10 nebo Windows serveru 2016.
-author: rlander
-ms.author: mairaw
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 0de48e14f11d3763ee239b28b40bdb809dbeb433
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: c2b274bb85b6d4c496e7b6b6b62f05aa932202dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853937"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716369"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace .NET Framework ve Windows 10 a Windows serveru 2016 a novějších verzích
 
@@ -27,7 +25,7 @@ Po pokusu o spuštění aplikace a zobrazení dialogu na počítači, který bud
 - [Windows 10 Květen 2019 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
 > [!div class="button"]
-> [Stáhnout .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Stáhnout .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48) lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 až 4.7.2.
 
@@ -56,7 +54,7 @@ Pokud používáte Windows 10 1507 nebo 1511 a chcete nainstalovat .NET Framewor
 
 .NET Framework 4.6.2 podporuje aplikace sestavené pro .NET Framework 4,0 až 4.6.2.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Postupujte podle pokynů a nainstalujte [.NET Framework 3,5 ve Windows 10](dotnet-35-windows-10.md).
 
@@ -74,7 +72,7 @@ Verze .NET Framework 4. x jsou místní aktualizace na starší verze. To znamen
 
 Seznam všech verzí .NET Framework dostupných ke stažení najdete na stránce [soubory ke stažení pro rozhraní .NET](https://dotnet.microsoft.com/download) .
 
-## <a name="help"></a>Help
+## <a name="help"></a>Nápověda
 
 Pokud se vám nedaří nainstalovat správnou verzi .NET Framework, můžete [požádat o pomoc Microsoft](mailto:dotnet-install-help@service.microsoft.com?subject=Install-Help).
 

@@ -6,43 +6,42 @@ helpviewer_keywords:
 - member design guidelines, properties
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
-author: KrzysztofCwalina
-ms.openlocfilehash: e4ed4fd39a9ebd63b9d5dbff38dc15647d65934f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d5cdbfdb38c7aebaca6cbcdeb63959ac12884e0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026304"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709124"
 ---
 # <a name="property-design"></a>Návrh vlastnosti
-Přestože jsou vlastnosti technicky velmi podobné metody, jsou značně odlišná z hlediska jejich scénáře použití. Měla by se zobrazit jako inteligentní pole. Mají volání syntaxe pole a flexibilitu metody.  
+I když jsou vlastnosti technicky velmi podobné metodám, jsou v souladu s jejich scénáři použití poměrně odlišné. Měly by se zobrazit jako inteligentní pole. Mají volání syntaxe polí a flexibilitu metod.  
   
  **✓ DO** vytvořit vlastnosti jen pro get, pokud má volající neměli mít možnost ke změně hodnoty vlastnosti.  
   
- Mějte na paměti, že pokud typ vlastnosti je proměnlivý odkazový typ, hodnoty vlastnosti lze změnit i v případě, že vlastnost je určená jenom pro.  
+ Pamatujte, že pokud je typ vlastnosti proměnlivý typ odkazu, hodnota vlastnosti může být změněna i v případě, že je vlastnost určena pouze pro čtení.  
   
  **X DO NOT** poskytnout setter s širší usnadnění než metoda getter vlastnosti jen pro sadu nebo vlastnosti.  
   
- Například nepoužívejte vlastnosti veřejné metody setter a getter chráněné.  
+ Nepoužívejte například vlastnosti s veřejnou setter a Protected getter.  
   
- Pokud metoda getter vlastnosti nejde zadat, implementujte funkci jako metodu. Vezměte v úvahu od názvu metody název `Set` a postupujte podle pokynů s co by mít pojmenujete vlastnost. Například <xref:System.AppDomain> obsahuje metodu nazvanou `SetCachePath` namísto toho, aby vlastnost jen pro sadu s názvem `CachePath`.  
+ Pokud vlastnost getter nelze poskytnout, implementujte funkci namísto metody. Zvažte možnost spustit název metody s `Set` a sledujte, co byste měli pojmenovat vlastnost. Například <xref:System.AppDomain> má metodu nazvanou `SetCachePath` místo toho, aby byla vlastnost pouze set s názvem `CachePath`.  
   
  **✓ DO** zadejte rozumný výchozí hodnoty pro všechny vlastnosti, zajistíte, že výchozí hodnoty nezpůsobovalo neustálé bezpečnostní riziko nebo terribly neefektivní kód.  
   
  **✓ DO** povolit vlastnosti nastavit v libovolném pořadí, i když to vede k dočasné neplatný stav objektu.  
   
- Je běžné, že dva nebo více vlastností tak, aby vzájemně propojené do bodu, ve kterých některé hodnoty jednu vlastnost může být neplatný zadané hodnoty dalších vlastností na stejný objekt. V takovém případě by měly být výjimky vyplývající z neplatný stav odložit, dokud vzájemně propojené vlastnosti jsou skutečně používané tímto objektem společně.  
+ Je běžné, že dvě nebo více vlastností bude možné vzájemně souviset s bodem, kde některé hodnoty jedné vlastnosti mohou být neplatné vzhledem k hodnotám jiných vlastností stejného objektu. V takových případech by měly být výjimky, které jsou výsledkem neplatného stavu, odloženy, dokud se tyto vlastnosti nepoužívají společně s objektem.  
   
  **✓ DO** zachovat předchozí hodnotu, pokud metoda setter vlastnosti vyvolá výjimku.  
   
  **X AVOID** vyvolání výjimky z metody vlastnost getter.  
   
- Gettery vlastností by měl být jednoduché operace a nemají žádné předpoklady. Pokud getter může vyvolat výjimku, by pravděpodobně upravena jako metodu. Všimněte si, že toto pravidlo se nevztahuje na indexery, kde Očekáváme, že výjimky v důsledku ověřování argumentů.  
+ Metody getter vlastnosti by měly být jednoduché operace a neměly by obsahovat žádné předběžné podmínky. Pokud getter může vyvolat výjimku, měla by být pravděpodobně přepracována jako metoda. Všimněte si, že toto pravidlo se nevztahuje na indexery, kde očekáváme výjimky v důsledku ověřování argumentů.  
   
-### <a name="indexed-property-design"></a>Indexovaná vlastnost návrhu  
- Indexovaná vlastnost je speciální vlastnost, která může mít parametry a mohou být volány pomocí speciální syntaxe podobná indexování pole.  
+### <a name="indexed-property-design"></a>Návrh indexovaných vlastností  
+ Indexovaná vlastnost je speciální vlastnost, která může mít parametry a může být volána se speciální syntaxí podobnou indexování pole.  
   
- Indexované vlastnosti se běžně označují jako indexery. Indexery by měla sloužit pouze v rozhraní API, která poskytuje přístup k položkám v logické kolekce. Například řetězec je kolekce znaků a indexer na <xref:System.String?displayProperty=nameWithType> byl přidán přístup k jeho znaků.  
+ Indexované vlastnosti se běžně označují jako indexery. Indexery by měly být používány pouze v rozhraních API, která poskytují přístup k položkám v logické kolekci. Například řetězec je kolekce znaků a indexer na <xref:System.String?displayProperty=nameWithType> byl přidán pro přístup ke svým znakům.  
   
  **✓ CONSIDER** použití indexery pro poskytnutí přístupu k datům uloženým v interní pole.  
   
@@ -50,42 +49,42 @@ Přestože jsou vlastnosti technicky velmi podobné metody, jsou značně odliš
   
  **X AVOID** použití indexovaných vlastností s více než jeden parametr.  
   
- Pokud návrhu vyžaduje více parametrů, zvažte, jestli přistupující objekt vlastnosti ve skutečnosti představuje logické kolekce. Pokud tomu tak není, použijte metody. Vezměte v úvahu od názvu metody název `Get` nebo `Set`.  
+ Pokud návrh vyžaduje více parametrů, převezměte v úvahu, zda vlastnost ve skutečnosti představuje přistupující objekt k logické kolekci. Pokud ne, použijte místo toho metody. Zvažte možnost spustit název metody pomocí `Get` nebo `Set`.  
   
  **X AVOID** indexery s typy parametrů jinak než <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Int64?displayProperty=nameWithType>, <xref:System.String?displayProperty=nameWithType>, <xref:System.Object?displayProperty=nameWithType>, nebo výčet.  
   
- Pokud návrhu vyžaduje jiné typy parametrů, důrazně opětovné vyhodnocení, jestli přistupující objekt rozhraní API ve skutečnosti představuje logické kolekce. Pokud tomu tak není, použijte metodu. Vezměte v úvahu od názvu metody název `Get` nebo `Set`.  
+ Pokud návrh vyžaduje jiné typy parametrů, silně znovu Vyhodnoťte, jestli rozhraní API skutečně představuje přistupující objekt k logické kolekci. Pokud tomu tak není, použijte metodu. Zvažte možnost spustit název metody pomocí `Get` nebo `Set`.  
   
  **✓ DO** použijte název `Item` pro indexovaných vlastností, pokud je samozřejmě lepší název (například najdete v článku <xref:System.String.Chars%2A> vlastnost na `System.String`).  
   
- V jazyce C# indexery jsou ve výchozím nastavení s názvem položky. <xref:System.Runtime.CompilerServices.IndexerNameAttribute> Lze upravit tento název.  
+ V C#nástroji jsou indexery ve výchozím nastavení pojmenované položky. K přizpůsobení tohoto názvu lze použít <xref:System.Runtime.CompilerServices.IndexerNameAttribute>.  
   
  **X DO NOT** zadejte indexer a metody, které jsou sémanticky ekvivalentní.  
   
  **X DO NOT** zadat více než jednu řadu přetížené indexery jednomu typu.  
   
- To je vynucena kompilátorem jazyka C#.  
+ Toto je vynutil C# kompilátorem.  
   
  **X DO NOT** nevýchozí použití indexovaných vlastností.  
   
- To je vynucena kompilátorem jazyka C#.  
+ Toto je vynutil C# kompilátorem.  
   
-### <a name="property-change-notification-events"></a>Oznámení události změny vlastnosti  
- Někdy je užitečné poskytnout událost upozornění uživatele změny hodnoty vlastnosti. Například `System.Windows.Forms.Control` vyvolá `TextChanged` událostí po hodnota jeho `Text` je změněna vlastnost.  
+### <a name="property-change-notification-events"></a>Události upozornění na změnu vlastnosti  
+ Někdy je užitečné poskytnout událost upozorňující uživatele na změny v hodnotě vlastnosti. Například `System.Windows.Forms.Control` vyvolává událost `TextChanged` po změně hodnoty vlastnosti `Text`.  
   
  **✓ CONSIDER** vyvolání změnit události oznámení při změně hodnoty vlastností v vysoké úrovně rozhraní API (obvykle návrháře komponenty).  
   
- Pokud je dobré scénář pro uživatele potřebujete vědět, kdy je změna vlastnosti objektu, by měla vyvolat objekt událost oznámení o změně pro vlastnost.  
+ Pokud je dobrým scénářem, že uživatel ví, kdy se změní vlastnost objektu, měl by objekt vyvolat událost upozornění na změnu pro vlastnost.  
   
- Je ale pravděpodobné, aby za režie potřebná k vyvolání těchto událostí pro rozhraní API nízké úrovně, jako je například základní typy nebo kolekce. Například <xref:System.Collections.Generic.List%601> by vyvolat tyto události při přidání nové položky do seznamu a `Count` změny vlastností.  
+ Nepředpokládá se však, že bude nutné zvýšit nároky na vyvolání takových událostí pro rozhraní API nižší úrovně, jako jsou základní typy nebo kolekce. <xref:System.Collections.Generic.List%601> například nevyvolává takové události, když se do seznamu přidá nová položka a změní se vlastnost `Count`.  
   
  **✓ CONSIDER** vyvolání události oznámení při změně hodnoty vlastnosti prostřednictvím externí vynutí změn.  
   
- Pokud se změní hodnota vlastnosti prostřednictvím některé externí platnost (způsobem jinak než pomocí volání metody na objektu), vyvolat události znamenat pro vývojáře, že hodnota se mění a došlo ke změně. Dobrým příkladem je `Text` vlastnost ovládacího prvku textového pole. Když uživatel zadá text `TextBox`, automaticky změní hodnotu vlastnosti.  
+ Pokud se hodnota vlastnosti mění přes některé externí síly (způsobem, který je jiný než voláním metod objektu), vyvolávají události upozorňující na vývojáře, že se hodnota mění a změnila. Dobrým příkladem je vlastnost `Text` ovládacího prvku textového pole. Když uživatel zadá text do `TextBox`, hodnota vlastnosti se automaticky změní.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,6 +1,5 @@
 ---
 title: <typeparam> – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - typeparam
@@ -8,14 +7,14 @@ helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-ms.openlocfilehash: e5e0d7be46e02bd30799b54246db729ae63ca300
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 04145b82cbed0e9a5cae38ff9ef33d061ee792c9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523284"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694527"
 ---
-# <a name="typeparam-c-programming-guide"></a>> \<typeparam (C# Průvodce programováním)
+# <a name="typeparam-c-programming-guide"></a>\<typeparam > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

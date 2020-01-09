@@ -1,6 +1,5 @@
 ---
 title: příkaz break – C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - break
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - break keyword [C#]
 ms.assetid: be2571ed-efb0-4965-b122-81e5b09db0b9
-ms.openlocfilehash: 2628da73364cf94a52e2862d349243c100d4afaf
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: ef276fd9e8da0ea25695c5afdf06a300bbd2a123
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179938"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713755"
 ---
 # <a name="break-c-reference"></a>break (Referenční dokumentace jazyka C#)
 
@@ -46,7 +45,7 @@ V tomto příkladu je příkaz `break` použit k přerušení vnitřní vnořen�
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu se příkaz `break` používá pouze k přerušení aktuální větve během každé iterace smyčky. Samotný cyklus není ovlivněn instancemi `break`, které patří do vnořeného příkazu [Switch](./switch.md) .
+V tomto příkladu je příkaz `break` použit pouze k přerušení aktuální větve během každé iterace smyčky. Samotný cyklus není ovlivněn instancemi `break`, které patří do vnořeného příkazu [Switch](./switch.md) .
 
 [!code-csharp[csrefKeywordsJump#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#8)]
 

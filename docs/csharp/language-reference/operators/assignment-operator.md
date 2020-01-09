@@ -1,18 +1,17 @@
 ---
 title: Operátory přiřazení – C# referenční informace
-ms.custom: seodec18
 ms.date: 09/10/2019
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 103bc823ab6a56d53a3f2ec05b8de9295f1de400
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 19f74e6835ae555a3a38aa6ca8679948c7f290dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039083"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712751"
 ---
 # <a name="assignment-operators-c-reference"></a>Operátory přiřazení (C# Referenční dokumentace)
 
@@ -36,7 +35,7 @@ Následující příklad ukazuje použití operátoru přiřazení s lokální p
 
 ## <a name="ref-assignment-operator"></a>operátor přiřazení ref
 
-Počínaje C# 7,3 můžete použít operátor přiřazení ref`= ref`k opětovnému přiřazení místní proměnné ref nebo [ref](../keywords/ref.md#ref-readonly-locals) pro [místní](../keywords/ref.md#ref-locals) typ. Následující příklad ukazuje použití operátoru přiřazení ref:
+Počínaje C# 7,3 můžete použít operátor přiřazení ref `= ref` k opětovnému přiřazení místní proměnné ref nebo [ref](../keywords/ref.md#ref-readonly-locals) pro [místní](../keywords/ref.md#ref-locals) typ. Následující příklad ukazuje použití operátoru přiřazení ref:
 
 [!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
@@ -44,7 +43,7 @@ V případě operátoru přiřazení odkazu musí být oba operandy stejného ty
 
 ## <a name="compound-assignment"></a>Složené přiřazení
 
-Pro binární operátor `op` se složený výraz přiřazení formuláře
+Pro binární operátor `op`, výraz složeného přiřazení formuláře
 
 ```csharp
 x op= y
@@ -56,13 +55,13 @@ je ekvivalentem
 x = x op y
 ```
 
-s výjimkou, že `x` je vyhodnocena pouze jednou.
+s výjimkou `x` je vyhodnocena pouze jednou.
 
 Složené přiřazení je podporováno [aritmetickými](arithmetic-operators.md#compound-assignment)a [logickými logickými](boolean-logical-operators.md#compound-assignment)a operátory [SHIFT a Shift](bitwise-and-shift-operators.md#compound-assignment) .
 
 ## <a name="null-coalescing-assignment"></a>Přiřazení slučování s hodnotou null
 
-Počínaje C# 8,0 můžete použít operátor přiřazení s použitím hodnoty null`??=`k přiřazení hodnoty jeho pravého operandu k jeho levému operandu pouze v případě, že je operand na levé straně vyhodnocen jako`null`. Další informace najdete v tématu [?? a?? =](null-coalescing-operator.md) – článek o operátorech
+Počínaje C# 8,0 můžete použít operátor přiřazení s použitím hodnoty null `??=` k přiřazení hodnoty jeho pravého operandu k jeho levému operandu pouze v případě, že je operand na levé straně vyhodnocen jako `null`. Další informace najdete v tématu [?? a?? =](null-coalescing-operator.md) – článek o operátorech
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 

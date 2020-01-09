@@ -9,14 +9,12 @@ helpviewer_keywords:
 - .NET Framework, deploying
 - .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 04cbfb8d41135b57c3e090959e041f95fcda2840
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b1ba9810b4b0d5a1688318db1093a9ce9bdf8fda
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975682"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716467"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 
@@ -38,7 +36,7 @@ Pro konkrétní informace o nasazení a údržbě .NET Framework použijte násl
 
   - Režimy instalace:
 
-    - [Tichá instalace](deployment-guide-for-developers.md#chaining_custom)
+    - [Bezobslužná instalace](deployment-guide-for-developers.md#chaining_custom)
 
     - [Zobrazení uživatelského rozhraní](deployment-guide-for-developers.md#chaining_default)
 
@@ -136,7 +134,7 @@ Některé informace o balení a nasazení pro .NET Framework jsou popsány v dal
 
      Pomocí této možnosti vytvoříte soubory. msi pro použití s Instalační služba systému Windows nebo zabalíte aplikaci pro použití s nějakým jiným instalačním programem.
 
-### <a name="distribution"></a>Šíření
+### <a name="distribution"></a>Distribuce
 
 .NET Framework poskytuje následující možnosti pro distribuci aplikací:
 
@@ -165,7 +163,7 @@ Požadavky na zabezpečení mohou také ovlivnit způsob nasazení aplikace. Opr
 |[Jak běhové prostředí vyhledává sestavení](how-the-runtime-locates-assemblies.md)|Popisuje, jak modul CLR (Common Language Runtime) určuje, které sestavení se má použít ke splnění požadavku vazby.|
 |[Doporučené postupy pro načtení sestavení](best-practices-for-assembly-loading.md)|Popisuje způsoby, jak zabránit problémům s typem identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalším chybám.|
 |[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](reducing-system-restarts.md)|Popisuje správce restartování, který znemožňuje restartování, kdykoli je to možné, a vysvětluje, jak můžou aplikace, které instalují .NET Framework, využít.|
-|[Příručka nasazení pro administrátory](guide-for-administrators.md)|Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí System Center Configuration Manager (SCCM).|
+|[Příručka nasazení pro administrátory](guide-for-administrators.md)|Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí služby Microsoft Endpoint Configuration Manager.|
 |[Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md)|Vysvětluje, jak můžou vývojáři instalovat .NET Framework na počítačích uživatelů s jejich aplikacemi.|
 |[Nasazení aplikací, služeb a komponent](/visualstudio/deployment/deploying-applications-services-and-components)|Popisuje možnosti nasazení v aplikaci Visual Studio, včetně pokynů pro publikování aplikace pomocí technologie ClickOnce a Instalační služba systému Windows.|
 |[Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Popisuje, jak zabalit aplikaci model Windows Forms a nasadit ji pomocí technologie ClickOnce na klientské počítače v síti.|

@@ -8,61 +8,59 @@ dev_langs:
 helpviewer_keywords:
 - BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 07dbffff9f3d93a33fa458fb9c2f16e64aeaf977
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fb01d29c723962e28d8ec4afc984cb4d6c48f9b5
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664548"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711321"
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection – přehled
-<xref:System.Collections.Concurrent.BlockingCollection%601> je třídy kolekce bezpečné pro vlákna, která poskytuje následující funkce:  
+<xref:System.Collections.Concurrent.BlockingCollection%601> je třída kolekce bezpečná pro přístup z více vláken, která poskytuje následující funkce:  
   
-- Implementace vzoru producent – příjemce.  
+- Implementace vzoru producent-příjemce.  
   
-- Souběžné přidávání a odebírání položek z více vláken.  
+- Souběžné přidávání a přebírání položek z více vláken.  
   
-- Volitelné maximální kapacity.  
+- Volitelná maximální kapacita  
   
-- Operace vložení a odstranění, které blokovat, pokud kolekce je prázdná nebo úplná.  
+- Operace vložení a odebrání, které blokují, když je kolekce prázdná nebo plná  
   
-- Vkládání a odstranění "akci" operace, které neblokují nebo které jsou blokovány až po zadaném časovém období.  
+- Vložení a odebrání operací "Try", které neblokují nebo zablokují do zadaného časového období.  
   
-- Zapouzdřuje jakýkoli typ kolekce, která implementuje <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>  
+- Zapouzdřuje libovolný typ kolekce, který implementuje <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>.  
   
-- Zrušení s tokeny zrušení.  
+- Zrušení s tokeny zrušení  
   
-- Dva druhy výčet s `foreach` (`For Each` v jazyce Visual Basic):  
+- Dva druhy výčtu s `foreach` (`For Each` v Visual Basic):  
   
     1. Výčet jen pro čtení.  
   
-    2. Výčet, který odebere položky, jako jsou ve výčtu.  
+    2. Výčet, který odebere položky při vytváření výčtu.  
   
 ## <a name="bounding-and-blocking-support"></a>Podpora ohraničování a blokování  
- <xref:System.Collections.Concurrent.BlockingCollection%601> podporuje funkcí ohraničování a blokování. Ohraničující znamená, že můžete nastavit maximální kapacitu kolekce. Ohraničující je důležité v některých scénářích, protože umožňuje řídit maximální velikost kolekce v paměti a vytváření vláken zabraňuje přesunutí příliš daleko náskok před používání vláken.  
+ <xref:System.Collections.Concurrent.BlockingCollection%601> podporuje ohraničování a blokování. Ohraničování znamená, že můžete nastavit maximální kapacitu kolekce. Ohraničování je důležité v určitých situacích, protože umožňuje řídit maximální velikost kolekce v paměti a brání v tom, aby vyráběná vlákna byla přetažena příliš daleko před náročnými vlákny.  
   
- Více vláken nebo úloh můžete přidat položky do kolekce souběžně, a pokud kolekce dosáhne zadané maximální kapacity, vytváření vláken bude blokovat, dokud je položka odebrána. Více příjemců odebrání položek současně, a pokud kolekce prázdná, používání vláken bude blokovat, dokud producent přidá položku. Vytváření vlákno může volat <xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A> k označení, že nebudou přidány žádné další položky. Monitorování spotřebitelů <xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> vlastnost vědět, pokud kolekce je prázdná a budou přidány žádné další položky. Následující příklad ukazuje jednoduchý BlockingCollection s ohraničenou kapacitu 100. Výrobce úkol přidá položky do kolekce tak dlouho, dokud některé externí podmínka je PRAVDA a pak zavolá <xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A>. Příjemce úkolu trvá až do položky <xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> vlastnost má hodnotu true.  
+ Více vláken nebo úkolů může do kolekce současně přidávat položky a pokud kolekce dosáhne zadané maximální kapacity, výrobní vlákna zablokuje, dokud nebude položka odebrána. Více příjemců může odebírat položky souběžně, a pokud je kolekce prázdná, budou spotřebovávat vlákna zablokovat, dokud producent nepřidá položku. Produkující vlákno může volat <xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A> pro indikaci, že nebudou přidány žádné další položky. Příjemci monitorují vlastnost <xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A>, aby věděli, že je kolekce prázdná a nepřidaly se žádné další položky. Následující příklad ukazuje jednoduchou Blokujícícollection s ohraničenou kapacitou 100. Úkol výrobce přidá položky do kolekce, pokud je některá externí podmínka pravdivá, a potom zavolá <xref:System.Collections.Concurrent.BlockingCollection%601.CompleteAdding%2A>. Úkol příjemce převezme položky, dokud vlastnost <xref:System.Collections.Concurrent.BlockingCollection%601.IsCompleted%2A> nevrátí hodnotu true.  
   
  [!code-csharp[CDS_BlockingCollection#04](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#04)]
  [!code-vb[CDS_BlockingCollection#04](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#04)]  
   
- Kompletní příklad naleznete v tématu [jak: Přidat a jednotlivě převzít položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md).  
+ Úplný příklad naleznete v tématu [How to: Add and přebírat Items from a BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md).  
   
-## <a name="timed-blocking-operations"></a>Vypršel časový limit operace blokování  
- V vypršel časový limit blokování <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> operace na ohraničené kolekce, metoda se pokusí přidat nebo odebrat položky. Pokud je k dispozici položka přejde do proměnné, která byla předána odkazem a metoda vrátí hodnotu true. Metoda vrátí hodnotu false, pokud žádná položka nenačtete po zadaný časový limit. Vlákno je potom můžete provést některé další užitečné práce než to zkusíte znovu získat přístup ke kolekci. Příklad vypršel časový limit blokování přístupu, najdete ve druhém příkladu v [jak: Přidat a jednotlivě převzít položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md).  
+## <a name="timed-blocking-operations"></a>Časované operace blokování  
+ Při časovaném blokování operací <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> v ohraničených kolekcích se metoda pokusí přidat nebo převzít položku. Pokud je položka k dispozici, je umístěna do proměnné, která byla předána odkazem, a metoda vrátí hodnotu true. Pokud po zadaném časovém limitu není načtena žádná položka, vrátí metoda hodnotu false. Vlákno je pak zdarma, aby před dalším pokusem o přístup k této kolekci provede nějakou další užitečnou práci. Příklad časovaného blokování přístupu naleznete v druhém příkladu v tématu [Postupy: Přidání a převzetí položek jednotlivě z blokující kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md).  
   
-## <a name="cancelling-add-and-take-operations"></a>Rušení operací přidání a odebrání  
- Přidat a provést operace se obvykle provádí ve smyčce. Zrušíte smyčku předáním <xref:System.Threading.CancellationToken> k <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> nebo <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> metodu a poté kontrolu hodnoty tokenu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost při každé iteraci. Pokud je hodnota true, je jenom na vás tak, požadavek na zrušení čištění jakýchkoli prostředků a ukončení smyčky. Následující příklad ukazuje přetížení <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> , který přijme token zrušení, a kód, který se používá:  
+## <a name="cancelling-add-and-take-operations"></a>Rušení přidání a provedení operací  
+ Operace přidání a provedení operací se obvykle provádějí ve smyčce. Smyčku můžete zrušit předáním <xref:System.Threading.CancellationToken> do metody <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> nebo <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> a následnou kontrolou hodnoty vlastnosti <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> tokenu u každé iterace. Pokud je hodnota true, pak je až na to, abyste odpověděli na žádost o zrušení vyčištěním všech prostředků a ukončením smyčky. Následující příklad ukazuje přetížení <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A>, který přijímá token zrušení a kód, který ho používá:  
   
  [!code-csharp[CDS_BlockingCollection#05](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#05)]
  [!code-vb[CDS_BlockingCollection#05](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#05)]  
   
- Příklad toho, jak přidat podporu zrušení, najdete ve druhém příkladu v [jak: Přidat a jednotlivě převzít položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md).  
+ Příklad, jak přidat podporu zrušení, naleznete v druhém příkladu v tématu [Postupy: Přidání a převzetí položek jednotlivě z blokující kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md).  
   
-## <a name="specifying-the-collection-type"></a>Zadání typu kolekce  
- Když vytvoříte <xref:System.Collections.Concurrent.BlockingCollection%601>, můžete zadat pouze omezená kapacitou, ale také typ kolekce pro použití. Například můžete zadat <xref:System.Collections.Concurrent.ConcurrentQueue%601> pro první v prvním out (FIFO) chování, nebo <xref:System.Collections.Concurrent.ConcurrentStack%601> pro poslední chování v first-out (LIFO). Můžete použít jakékoli třídy kolekce, která implementuje <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> rozhraní. Výchozí typ kolekce pro <xref:System.Collections.Concurrent.BlockingCollection%601> je <xref:System.Collections.Concurrent.ConcurrentQueue%601>. Následující příklad kódu ukazuje, jak vytvořit <xref:System.Collections.Concurrent.BlockingCollection%601> řetězců, které má kapacitu 1000 a používá <xref:System.Collections.Concurrent.ConcurrentBag%601>:  
+## <a name="specifying-the-collection-type"></a>Určení typu kolekce  
+ Při vytváření <xref:System.Collections.Concurrent.BlockingCollection%601>můžete zadat nejen ohraničenou kapacitu, ale také typ kolekce, která se má použít. Můžete například zadat <xref:System.Collections.Concurrent.ConcurrentQueue%601> pro první chování při prvním vynechání (FIFO) nebo <xref:System.Collections.Concurrent.ConcurrentStack%601> pro poslední chování funkce LIFO (First in-first out). Můžete použít libovolnou třídu kolekce, která implementuje rozhraní <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>. Výchozí typ kolekce pro <xref:System.Collections.Concurrent.BlockingCollection%601> je <xref:System.Collections.Concurrent.ConcurrentQueue%601>. Následující příklad kódu ukazuje, jak vytvořit <xref:System.Collections.Concurrent.BlockingCollection%601> řetězců, které mají kapacitu 1000 a používá <xref:System.Collections.Concurrent.ConcurrentBag%601>:  
   
 ```vb  
 Dim bc = New BlockingCollection(Of String)(New ConcurrentBag(Of String()), 1000)  
@@ -72,13 +70,13 @@ Dim bc = New BlockingCollection(Of String)(New ConcurrentBag(Of String()), 1000)
 BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag<string>(), 1000 );  
 ```  
   
- Další informace najdete v tématu [jak: Přidání funkcí ohraničování a blokování do kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md).  
+ Další informace najdete v tématu [Postup: Přidání ohraničování a blokování funkcí do kolekce](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md).  
   
 ## <a name="ienumerable-support"></a>Podpora IEnumerable  
- <xref:System.Collections.Concurrent.BlockingCollection%601> poskytuje <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> metodu, která umožňuje uživatelům používat `foreach` (`For Each` v jazyce Visual Basic) k odebrání položek, dokud se nedokončí kolekce, což znamená, že je prázdný a nebudou přidány žádné další položky. Další informace najdete v tématu [jak: Použití příkazu ForEach k odebrání položek v BlockingCollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md).  
+ <xref:System.Collections.Concurrent.BlockingCollection%601> poskytuje metodu <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A>, která umožňuje uživatelům pomocí `foreach` (`For Each` v Visual Basic) odebírat položky, dokud není kolekce dokončena, což znamená, že je prázdná a nebudou přidány žádné další položky. Další informace naleznete v tématu [Postupy: použití příkazu foreach k odebrání položek v blokujícícollection](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md).  
   
-## <a name="using-many-blockingcollections-as-one"></a>Použití mnoha BlockingCollection jako jeden  
- Pro scénáře, ve kterých je potřeba příjemce současně provést položky z několika kolekcí, můžete vytvářet pole <xref:System.Collections.Concurrent.BlockingCollection%601> a používají statické metody, jako <xref:System.Collections.Concurrent.BlockingCollection%601.TakeFromAny%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.AddToAny%2A> , který bude přidávat nebo odebírat z některého z kolekce v pole. Pokud je blokování jednu kolekci, metodu okamžitě pokusí jiného dokud nenajde ten, který můžete provádět operace. Další informace najdete v tématu [jak: Použití polí blokujících kolekcí v kanálu](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md).  
+## <a name="using-many-blockingcollections-as-one"></a>Použití mnoha BlockingCollections jako jednoho  
+ Pro scénáře, ve kterých musí příjemce převzít položky z více kolekcí současně, můžete vytvořit pole <xref:System.Collections.Concurrent.BlockingCollection%601> a použít statické metody, jako je například <xref:System.Collections.Concurrent.BlockingCollection%601.TakeFromAny%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.AddToAny%2A>, které budou přidány nebo přebírat ze všech kolekcí v poli. Pokud je jedna kolekce blokována, metoda se okamžitě pokusí o další, dokud nenajde tu, která může provést operaci. Další informace najdete v tématu [How to: use Arrays Blocking Collections in a Pipeline](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md).  
   
 ## <a name="see-also"></a>Viz také:
 

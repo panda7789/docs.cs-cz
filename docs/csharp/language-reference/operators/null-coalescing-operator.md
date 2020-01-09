@@ -1,6 +1,5 @@
 ---
 title: ?? a?? = operátory – C# referenční informace
-ms.custom: seodec18
 ms.date: 09/10/2019
 f1_keywords:
 - ??_CSharpKeyword
@@ -11,24 +10,24 @@ helpviewer_keywords:
 - null-coalescing assignment [C#]
 - ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 2bd6fe3d2d283e64eebc2251416fa5234e30bdad
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: b3d56c6c08443d344002b8e780a72fc547c316bb
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739657"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712647"
 ---
 # <a name="-and--operators-c-reference"></a>?? a?? = – operátoryC# (Reference)
 
 Operátor slučování null `??` vrátí hodnotu jeho levého operandu, pokud není `null`; v opačném případě vyhodnotí operand na pravé straně a vrátí jeho výsledek. Operátor `??` nevyhodnotí svůj operand na pravé straně, pokud je levý operand vyhodnocen jako jiný než null.
 
-K dispozici v 8,0 a novějších operátor přiřazení s nulovou hodnotou`??=`přiřadí hodnotu jeho operandu na levý operand pouze v C# případě, že je operand na levé straně vyhodnocen jako`null`. Operátor `??=` nevyhodnotí svůj operand na pravé straně, pokud je levý operand vyhodnocen jako jiný než null.
+K dispozici v 8,0 a novějších operátor přiřazení s nulovou hodnotou `??=` přiřadí hodnotu jeho operandu na levý operand pouze v C# případě, že je operand na levé straně vyhodnocen jako `null`. Operátor `??=` nevyhodnotí svůj operand na pravé straně, pokud je levý operand vyhodnocen jako jiný než null.
 
 [!code-csharp[null-coalescing assignment](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#Assignment)]
 
 Levý operand operátoru `??=` musí být proměnná, [vlastnost](../../programming-guide/classes-and-structs/properties.md)nebo element [indexeru](../../programming-guide/indexers/index.md) .
 
-V C# 7,3 a starších verzích musí být typ levého operandu operátoru `??` buď [odkazový typ](../keywords/reference-types.md) , nebo [typ hodnoty s možnou hodnotou null](../builtin-types/nullable-value-types.md). Počínaje C# 8,0 je tento požadavek nahrazen následujícím: typ levého operandu operátorů`??`a`??=`nesmí být typ hodnoty, která není null. Konkrétně počínaje C# 8,0 můžete použít operátory slučování s hodnotou null s neomezenými parametry typu:
+V C# 7,3 a starších verzích musí být typ levého operandu operátoru `??` buď [odkazový typ](../keywords/reference-types.md) , nebo [typ hodnoty s možnou hodnotou null](../builtin-types/nullable-value-types.md). Počínaje C# 8,0 je tento požadavek nahrazen následujícím: typ levého operandu operátorů `??` a `??=` nesmí být typ hodnoty, která není null. Konkrétně počínaje C# 8,0 můžete použít operátory slučování s hodnotou null s neomezenými parametry typu:
 
 [!code-csharp[unconstrained type parameter](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#UnconstrainedType)]
 
@@ -60,13 +59,13 @@ Operátory `??` a `??=` mohou být užitečné v následujících situacích:
 
   Metodu <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> použijte v případě, že hodnota, která se má použít, pokud je hodnota typu s možnou hodnotou null `null` by měla být výchozí hodnotou základního typu hodnoty.
 
-- Počínaje C# 7,0 můžete použít [výraz`throw`](../keywords/throw.md#the-throw-expression) jako pravý operand operátoru`??`, aby byl kód pro kontrolu argumentu výstižnější:
+- Počínaje C# 7,0 můžete použít [výraz`throw`](../keywords/throw.md#the-throw-expression) jako pravý operand operátoru `??`, aby byl kód pro kontrolu argumentu výstižnější:
 
   [!code-csharp[with throw expression](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithThrowExpression)]
 
   Předchozí příklad také ukazuje, jak pomocí [členů Expression-těle](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) definovat vlastnost.
 
-- Počínaje C# 8,0 můžete použít operátor`??=`k nahrazení kódu formuláře
+- Počínaje C# 8,0 můžete použít operátor `??=` k nahrazení kódu formuláře
 
   ```csharp
   if (variable is null)
@@ -95,5 +94,5 @@ Další informace o operátoru `??=` najdete v [poznámce k návrhu funkcí](~/_
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
-- [?. ani? [] – operátory](member-access-operators.md#null-conditional-operators--and-)
+- [?. a ?[] operátory](member-access-operators.md#null-conditional-operators--and-)
 - [?: – operátor](conditional-operator.md)

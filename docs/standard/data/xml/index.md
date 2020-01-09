@@ -3,14 +3,12 @@ title: Dokumenty a data XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 60614a95e4091b4d7bd9ae3a71e2ddeca53e29ba
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e0c3f3e99b06b65caf79d87a7831369f6fb33b08
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424856"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710788"
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 
@@ -46,7 +44,7 @@ Třídy XML v .NET Framework poskytují tyto výhody:
 
 - **Připojitelné architektury.** .NET Framework poskytuje architekturu, ve které komponenty mohou být vzájemně využívány, a data lze streamovat mezi komponentami. Například úložiště dat, například objekt <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument>, lze transformovat pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform> a výstup lze následně streamovat buď do jiného úložiště, nebo vráceného jako datový proud z webové služby.
 
-- **Předepsané.** Pro lepší výkon aplikace některé třídy XML v .NET Framework podporují model založený na streamování s následujícími charakteristikami:
+- **Výkon.** Pro lepší výkon aplikace některé třídy XML v .NET Framework podporují model založený na streamování s následujícími charakteristikami:
 
   - Minimální ukládání do mezipaměti pouze pro analýzu modelu vyžádání obsahu (<xref:System.Xml.XmlReader>).
 
@@ -84,5 +82,5 @@ Popisuje, jak jsou datové typy XML mapovány na typy CLR, jak převést datové
 [ADO.NET](../../../../docs/framework/data/adonet/index.md)\
 Poskytuje informace o tom, jak přistupovat k datům pomocí ADO.NET.
 
-\ [zabezpečení](../../../../docs/standard/security/index.md)
+[Zabezpečení](../../../../docs/standard/security/index.md)\
 V této části najdete přehled systému .NET Framework Security.

@@ -1,15 +1,13 @@
 ---
 title: Zařazování typů – .NET
 description: Přečtěte si, jak .NET zařazování vašich typů do nativní reprezentace.
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: bc44a2c63dfa3fde3e3c4197e5d1fe79857ea717
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 91b8f3d6cb53fd7a0adea7ea9669e7459e81445f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929070"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706263"
 ---
 # <a name="type-marshaling"></a>Zařazování typů
 
@@ -38,15 +36,15 @@ Tato první tabulka popisuje mapování pro různé typy, pro které je zařazov
 | `uint`    | `uint32_t`              |
 | `long`    | `int64_t`               |
 | `ulong`   | `uint64_t`              |
-| `char`    | Buď `char` `CharSet` nebo `char16_t` v závislosti na typu volání nebo struktury volání nespravovaného systému. Podívejte se na [dokumentaci k charset](charset.md). |
-| `string`  | Buď `char*` `CharSet` nebo `char16_t*` v závislosti na typu volání nebo struktury volání nespravovaného systému. Podívejte se na [dokumentaci k charset](charset.md). |
+| `char`    | Buď `char`, nebo `char16_t` v závislosti na `CharSet`i nebo v rámci struktury volání nespravovaného systému. Podívejte se na [dokumentaci k charset](charset.md). |
+| `string`  | Buď `char*`, nebo `char16_t*` v závislosti na `CharSet`i nebo v rámci struktury volání nespravovaného systému. Podívejte se na [dokumentaci k charset](charset.md). |
 | `System.IntPtr` | `intptr_t`        |
 | `System.UIntPtr` | `uintptr_t`      |
 | Typy ukazatelů .NET (např. `void*`)  | `void*` |
-| Typ odvozený od`System.Runtime.InteropServices.SafeHandle` | `void*` |
-| Typ odvozený od`System.Runtime.InteropServices.CriticalHandle` | `void*`          |
+| Typ odvozený z `System.Runtime.InteropServices.SafeHandle` | `void*` |
+| Typ odvozený z `System.Runtime.InteropServices.CriticalHandle` | `void*`          |
 | `bool`    | Typ `BOOL` Win32       |
-| `decimal` | Struktura `DECIMAL` com |
+| `decimal` | Struktura `DECIMAL` COM |
 | Delegát .NET | Nativní ukazatel na funkci |
 | `System.DateTime` | Typ `DATE` Win32 |
 | `System.Guid` | Typ `GUID` Win32 |
@@ -55,26 +53,26 @@ Několik kategorií zařazování má jiné výchozí hodnoty, pokud je zařazov
 
 | Typ .NET | Nativní typ (parametr) | Nativní typ (pole) |
 |-----------|-------------------------|---------------------|
-| .NET – pole | Ukazatel na začátek pole nativní reprezentace prvků pole. | Nepovoleno bez `[MarshalAs]` atributu|
-| Třída s `LayoutKind`nebo `Sequential``Explicit` | Ukazatel na nativní reprezentace třídy | Nativní reprezentace třídy |
+| .NET – pole | Ukazatel na začátek pole nativní reprezentace prvků pole. | Není povolené bez atributu `[MarshalAs]`.|
+| Třída s `LayoutKind` `Sequential` nebo `Explicit` | Ukazatel na nativní reprezentace třídy | Nativní reprezentace třídy |
 
 Následující tabulka obsahuje výchozí pravidla zařazování, která jsou pouze pro systém Windows. Na platformách jiných než Windows se tyto typy nedají zařadit.
 
 | Typ .NET | Nativní typ (parametr) | Nativní typ (pole) |
 |-----------|-------------------------|---------------------|
 | `object`  | `VARIANT`               | `IUnknown*`         |
-| `System.Array` | Rozhraní COM | Nepovoleno bez `[MarshalAs]` atributu |
-| `System.ArgIterator` | `va_list` | Nepovolené |
-| `System.Collections.IEnumerator` | `IEnumVARIANT*` | Nepovolené |
-| `System.Collections.IEnumerable` | `IDispatch*` | Nepovolené |
-| `System.DateTimeOffset` | `int64_t`představuje počet taktů od půlnoci od 1. ledna 1601. || `int64_t`představuje počet taktů od půlnoci od 1. ledna 1601. |
+| `System.Array` | Rozhraní COM | Není povolené bez atributu `[MarshalAs]`. |
+| `System.ArgIterator` | `va_list` | Není povoleno |
+| `System.Collections.IEnumerator` | `IEnumVARIANT*` | Není povoleno |
+| `System.Collections.IEnumerable` | `IDispatch*` | Není povoleno |
+| `System.DateTimeOffset` | `int64_t` představující počet taktů od půlnoci 1. ledna 1601 || `int64_t` představující počet taktů od půlnoci 1. ledna 1601 |
 
 Některé typy lze zařadit pouze jako parametry, nikoli jako pole. Tyto typy jsou uvedeny v následující tabulce:
 
 | Typ .NET | Nativní typ (pouze parametr) |
 |-----------|------------------------------|
-| `System.Text.StringBuilder` | Buď `char*` `CharSet` nebo `char16_t*` v závislosti na volání metody P/Invoke.  Podívejte se na [dokumentaci k charset](charset.md). |
-| `System.ArgIterator` | `va_list`(pouze v systému Windows x86/x64/arm64) |
+| `System.Text.StringBuilder` | Buď `char*`, nebo `char16_t*` v závislosti na `CharSet` volání nespravovaného volání.  Podívejte se na [dokumentaci k charset](charset.md). |
+| `System.ArgIterator` | `va_list` (pouze v systému Windows x86/x64/arm64) |
 | `System.Runtime.InteropServices.ArrayWithOffset` | `void*` |
 | `System.Runtime.InteropServices.HandleRef` | `void*` |
 
@@ -89,14 +87,14 @@ Při volání metod v objektech COM v rozhraní .NET modul runtime aplikace změ
 | `bool`    | `VARIANT_BOOL`                 |
 | `StringBuilder` | `LPWSTR`                 |
 | `string`  | `BSTR`                         |
-| Typy delegátů | `_Delegate*`v .NET Framework. Zakázáno v .NET Core. |
+| Typy delegátů | `_Delegate*` v .NET Framework. Zakázáno v .NET Core. |
 | `System.Drawing.Color` | `OLECOLOR`        |
 | .NET – pole | `SAFEARRAY`                   |
-| `string[]` | `SAFEARRAY`z `BSTR`s        |
+| `string[]` | `SAFEARRAY` `BSTR`s        |
 
 ## <a name="marshaling-classes-and-structs"></a>Zařazování tříd a struktur
 
-Dalším aspektem zařazování typů je předání struktury do nespravované metody. Například některé z nespravovaných metod vyžadují strukturu jako parametr. V těchto případech je potřeba vytvořit odpovídající strukturu nebo třídu ve spravované části světa a použít ji jako parametr. Avšak pouze definování třídy není dostatečné, je také nutné instruovat zařazování, jak mapovat pole ve třídě na nespravovanou strukturu. Tady se `StructLayout` atribut hodí.
+Dalším aspektem zařazování typů je předání struktury do nespravované metody. Například některé z nespravovaných metod vyžadují strukturu jako parametr. V těchto případech je potřeba vytvořit odpovídající strukturu nebo třídu ve spravované části světa a použít ji jako parametr. Avšak pouze definování třídy není dostatečné, je také nutné instruovat zařazování, jak mapovat pole ve třídě na nespravovanou strukturu. Tady se atribut `StructLayout` hodí.
 
 ```csharp
 [DllImport("kernel32.dll")]
@@ -121,7 +119,7 @@ public static void Main(string[] args) {
 }
 ```
 
-Předchozí kód ukazuje jednoduchý příklad volání do `GetSystemTime()` funkce. Zajímavý bit je na řádku 4. Atribut určuje, že pole třídy by měly být postupně mapovány na strukturu na druhé (nespravované) straně. To znamená, že názvy polí nejsou důležité, pouze jejich pořadí je důležité, protože musí odpovídat nespravované struktuře, jak je znázorněno v následujícím příkladu:
+Předchozí kód ukazuje jednoduchý příklad volání do funkce `GetSystemTime()`. Zajímavý bit je na řádku 4. Atribut určuje, že pole třídy by měly být postupně mapovány na strukturu na druhé (nespravované) straně. To znamená, že názvy polí nejsou důležité, pouze jejich pořadí je důležité, protože musí odpovídat nespravované struktuře, jak je znázorněno v následujícím příkladu:
 
 ```c
 typedef struct _SYSTEMTIME {

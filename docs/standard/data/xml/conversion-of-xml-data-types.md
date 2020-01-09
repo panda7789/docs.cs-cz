@@ -6,22 +6,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 56b5b51848858b7f1240059ca30eb48474650b73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b0cdab8861ca50b40ce2b422fcc1acf16e2f2273
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669118"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711087"
 ---
 # <a name="conversion-of-xml-data-types"></a>Převod datových typů XML
-Většina metod součástí **XmlConvert** třída slouží k převedení dat mezi řetězci a formáty silného typu. Metody jsou nezávislé národní prostředí. To znamená, že není berou v úvahu žádné nastavení národního prostředí při provádění převodu.  
+Většina metod nalezených ve třídě **XmlConvert** slouží k převodu dat mezi řetězci a formátů silného typu. Metody jsou nezávislé na národním prostředí. To znamená, že při konverzi neberou v úvahu žádná nastavení národního prostředí.  
   
-## <a name="reading-string-as-types"></a>Čtení řetězce jako typy  
- Následující příklad přečte řetězce a převede jej na **data a času** typu.  
+## <a name="reading-string-as-types"></a>Čtení řetězce jako typů  
+ Následující příklad přečte řetězec a převede ho na typ **DateTime** .  
   
- Daný následující vstup XML:  
+ S ohledem na následující vstup XML:  
   
  **Vstup**  
   
@@ -29,7 +27,7 @@ Většina metod součástí **XmlConvert** třída slouží k převedení dat me
 <Element>2001-02-27T11:13:23</Element>  
 ```  
   
- Převede řetězec na tento kód **data a času** formátu:  
+ Tento kód převede řetězec na formát **data a času** :  
   
 ```vb  
 reader.ReadStartElement()  
@@ -43,10 +41,10 @@ DateTime vDateTime = XmlConvert.ToDateTime(reader.ReadString());
 Console.WriteLine(vDateTime);  
 ```  
   
-## <a name="writing-strings-as-types"></a>Psaní řetězců jako typy  
- Následující ukázkový čtení **Int32** a převede ho na řetězec.  
+## <a name="writing-strings-as-types"></a>Zápis řetězců jako typů  
+ Následující příklad přečte typ **Int32** a převede ho na řetězec.  
   
- Daný následující vstup XML:  
+ S ohledem na následující vstup XML:  
   
  **Vstup**  
   
@@ -54,7 +52,7 @@ Console.WriteLine(vDateTime);
 <TestInt32>-2147483648</TestInt32>  
 ```  
   
- Tento kód převede **Int32** do **řetězec**:  
+ Tento kód převede typ **Int32** na **řetězec**:  
   
 ```vb  
 Dim vInt32 As Int32 = -2147483648  

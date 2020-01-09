@@ -15,14 +15,12 @@ helpviewer_keywords:
 - encryption [.NET Framework], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8edb88d13732650e00292d63ad4e1975a97ac704
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 8ca4c4c5b1257411ecdf86858040bf428a9e6ce0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291639"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706055"
 ---
 # <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: Uložení asymetrického klíče v kontejneru klíčů
 Asymetrické soukromé klíče by nikdy neměly být uloženy doslovně nebo ve formátu prostého textu v místním počítači. Pokud potřebujete uložit soukromý klíč, měli byste použít kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy kontejnerů klíčů RSA na úrovni počítače a na úrovni uživatele](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).  

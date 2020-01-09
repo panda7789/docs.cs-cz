@@ -16,13 +16,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-ms.custom: seodec18
-ms.openlocfilehash: 53f16e65a3cd19cd516756f3a2d036039964e021
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 319aa76754adc852528f35448d9906d4e903693b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971373"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711542"
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 Kotvy nebo atomické kontrolní výrazy s nulovou šířkou určují pozici v řetězci, kde musí být shoda. Použijete-li ve výrazu hledání kotvu, modul regulárních výrazů neprojde řetězcem ani nespotřebovává znaky; vyhledá shodu pouze na zadané pozici. Například `^` určuje, že shoda musí začínat na začátku řádku nebo řetězce. Proto regulární výraz `^http:` odpovídá "http:" pouze v případě, že dojde na začátku řádku. V následující tabulce jsou uvedeny kotvy podporované regulárními výrazy v rozhraní .NET.  

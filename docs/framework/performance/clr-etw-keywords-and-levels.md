@@ -7,14 +7,12 @@ helpviewer_keywords:
 - ETW, CLR keywords
 - ETW, CLR levels
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 56ecdc41c5b5a3f7ee272768d5c2a3745da26633
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 929ed00c44b52dd94fc9d15e564cce7eeff1619e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975518"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716193"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
 Události trasování událostí pro Windows (ETW) je možné filtrovat podle kategorie a úrovně. [Klíčová slova ETW modulu CLR](#clr-etw-keywords) události umožňují filtrovat události podle kategorie. používají se v kombinaci pro modul runtime a poskytovatele doběhu. [Úrovně událostí](#etw-event-levels) jsou identifikovány pomocí příznaků.  

@@ -1,15 +1,13 @@
 ---
 title: Protokolování a trasování – .NET Core
 description: Úvod do protokolování a trasování .NET Core.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 08/05/2019
-ms.openlocfilehash: 46e64a7f60b88c26ceef9ac817be885bfa180c8e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 392b88c9ea3c31c919a605ac0a5c886f7d63f79a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926353"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714413"
 ---
 # <a name="net-core-logging-and-tracing"></a>Protokolování a trasování .NET Core
 
@@ -29,7 +27,7 @@ Tato jednoduchá technika je překvapivě výkonná. Dá se použít v situacíc
 
 ### <a name="print-style-apis"></a>Styly tisku – rozhraní API
 
-Třídy <xref:System.Console?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace?displayProperty=nameWithType> a<xref:System.Diagnostics.Debug?displayProperty=nameWithType> obsahují podobné rozhraní API stylu tisku, které je vhodné pro protokolování.
+Třídy <xref:System.Console?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace?displayProperty=nameWithType>a <xref:System.Diagnostics.Debug?displayProperty=nameWithType> poskytují podobné rozhraní API stylu tisku, které je vhodné pro protokolování.
 
 Volba stylu tiskového rozhraní API, které se má použít. Hlavní rozdíly:
 
@@ -38,13 +36,13 @@ Volba stylu tiskového rozhraní API, které se má použít. Hlavní rozdíly:
   - Užitečné pro informace, které může zákazník potřebovat k zobrazení ve vydané verzi.
   - Vzhledem k tomu, že se jedná o nejjednodušší přístup, často se používá pro dočasné ladění ad-hoc. Tento kód ladění často nikdy není vrácen se změnami do správy zdrojového kódu.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
-  - Povoleno pouze v `TRACE` případě, že je definován.
-  - <xref:System.Diagnostics.Trace.Listeners> Ve<xref:System.Diagnostics.DefaultTraceListener>výchozím nastavení zapisuje do přílohy.
+  - Povoluje se jenom v případě, že je definovaná `TRACE`.
+  - Zapisuje do připojených <xref:System.Diagnostics.Trace.Listeners>ve výchozím nastavení <xref:System.Diagnostics.DefaultTraceListener>.
   - Použijte toto rozhraní API při vytváření protokolů, které budou povolené ve většině sestavení.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
-  - Povoleno pouze v `DEBUG` případě, že je definován.
+  - Povoluje se jenom v případě, že je definovaná `DEBUG`.
   - Zapisuje do připojeného ladicího programu.
-  - `*nix` Pokud`COMPlus_DebugWriteToStdErr` je nastaveno, při zápisu do stderr.
+  - Při `*nix` zápisy do stderr, pokud je nastavena `COMPlus_DebugWriteToStdErr`.
   - Použijte toto rozhraní API při vytváření protokolů, které budou povoleny pouze v sestavení ladění.
 
 ### <a name="logging-events"></a>Události protokolování
@@ -78,16 +76,16 @@ Následující rozhraní API jsou podrobněji orientované na události. Místo 
 
 Rozhraní API na nízké úrovni nemusí být správná volba pro vaše potřeby přihlašování. Možná budete chtít zvážit protokolovací rozhraní.
 
-<xref:Microsoft.Extensions.Logging.ILogger> Rozhraní bylo použito k vytvoření společného protokolovacího rozhraní, ve kterém lze vkládat protokolovací nástroje pomocí injektáže závislosti.
+Rozhraní <xref:Microsoft.Extensions.Logging.ILogger> bylo použito k vytvoření společného protokolovacího rozhraní, ve kterém lze vkládat protokolovací nástroje pomocí injektáže závislostí.
 
-Chcete-li například umožnit, aby vaše aplikace `ASP.NET` nejlépe vystavila podporu pro výběr integrovaných a platforem třetích stran:
+Například, chcete-li, aby bylo možné vytvořit nejlepší volbu pro vaši aplikaci, `ASP.NET` nabízí podporu pro výběr předdefinovaných rozhraní a platforem třetích stran:
 
 - [ASP.NET integrovaná zprostředkovatelé protokolování](/aspnet/core/fundamentals/logging/#built-in-logging-providers)
 - [ASP.NET zprostředkovatelé protokolování třetích stran](/aspnet/core/fundamentals/logging/#third-party-logging-providers)
 
 ## <a name="logging-related-references"></a>Protokolování souvisejících odkazů
 
-- [Postupy: Podmíněně kompilovat pomocí trasování a ladění](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
 
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 
@@ -95,9 +93,9 @@ Chcete-li například umožnit, aby vaše aplikace `ASP.NET` nejlépe vystavila 
 
 - Interpolace řetězců může zjednodušit zápis kódu protokolování. [ C# ](../../csharp/language-reference/tokens/interpolated.md)
 
-- <xref:System.Exception.Message?displayProperty=nameWithType> Vlastnost je užitečná pro protokolování výjimek.
+- Vlastnost <xref:System.Exception.Message?displayProperty=nameWithType> je užitečná pro protokolování výjimek.
 
-- <xref:System.Diagnostics.StackTrace?displayProperty=nameWithType> Třída může být užitečná pro poskytování informací o zásobníku v protokolech.
+- Třída <xref:System.Diagnostics.StackTrace?displayProperty=nameWithType> může být užitečná pro poskytování informací o zásobníku v protokolech.
 
 ## <a name="performance-considerations"></a>Důležité informace o výkonu
 

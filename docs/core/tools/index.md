@@ -2,19 +2,18 @@
 title: Nástroje rozhraní příkazového řádku .NET Core (CLI)
 description: Přehled nástrojů a funkcí rozhraní příkazového řádku (CLI) .NET Core
 ms.date: 08/14/2017
-ms.custom: seodec18
-ms.openlocfilehash: 4ff5cfd6c5a70c92387911ab87ddea5cee80275e
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: b3bffb47ff973bd0da90e3f943e817756e563138
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117389"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714140"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Nástroje rozhraní příkazového řádku .NET Core (CLI)
 
 Rozhraní příkazového řádku .NET Core (CLI) je nové sada nástrojů pro různé platformy pro vývoj aplikací .NET. Rozhraní příkazového řádku je základ, na kterém můžou REST nástroje, jako jsou například integrovaná vývojová prostředí (IDEs), editory a orchestrace sestavení.
 
-## <a name="installation"></a>Instalace
+## <a name="installation"></a>Instalace služby
 
 Buď použijte nativní instalační programy, nebo použijte skripty instalačního prostředí:
 
@@ -36,12 +35,12 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [new](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [budování](dotnet-build.md)
-- [opětovn](dotnet-publish.md)
+- [publikování](dotnet-publish.md)
 - [spouštěl](dotnet-run.md)
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [Přenes](dotnet-migrate.md)
+- [migraci](dotnet-migrate.md)
 - [Odstranit](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 - [Pomoc](dotnet-help.md)
@@ -70,12 +69,12 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [new](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [budování](dotnet-build.md)
-- [opětovn](dotnet-publish.md)
+- [publikování](dotnet-publish.md)
 - [spouštěl](dotnet-run.md)
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [Přenes](dotnet-migrate.md)
+- [migraci](dotnet-migrate.md)
 - [Odstranit](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 
@@ -122,13 +121,13 @@ dotnet /build_output/my_app.dll
 
 ---
 
-### <a name="driver"></a>Faktorů
+### <a name="driver"></a>kartu Ovladač
 
 Ovladač má název [dotnet](dotnet.md) a má dvě zodpovědnosti, buď spuštění [aplikace závislé na rozhraní](../deploying/index.md) , nebo spuštění příkazu. 
 
-Chcete-li spustit aplikaci závislou na rozhraní, zadejte aplikaci za ovladačem, například `dotnet /path/to/my_app.dll`. Při provádění příkazu ze složky, kde se nachází knihovna DLL aplikace, stačí provést `dotnet my_app.dll`. Pokud chcete použít konkrétní verzi modulu runtime .NET Core, použijte `--fx-version <VERSION>` možnost (viz Referenční dokumentace [příkazu dotnet](dotnet.md) ).
+Chcete-li spustit aplikaci závislou na rozhraní, zadejte aplikaci za ovladačem, například `dotnet /path/to/my_app.dll`. Při provádění příkazu ze složky, kde se nachází knihovna DLL aplikace, stačí provést `dotnet my_app.dll`. Pokud chcete použít konkrétní verzi modulu runtime .NET Core, použijte možnost `--fx-version <VERSION>` (viz Referenční dokumentace [příkazu dotnet](dotnet.md) ).
 
-Když zadáte příkaz do ovladače, `dotnet.exe` spustí se proces spuštění příkazu CLI. Příklad:
+Když zadáte příkaz do ovladače, `dotnet.exe` spustí proces spuštění příkazu CLI. Příklad:
 
 ```dotnetcli
 dotnet build
@@ -138,19 +137,19 @@ Nejdřív ovladač určuje verzi sady SDK, která se má použít. Pokud není k
 
 ### <a name="command"></a>Příkaz
 
-Příkaz provede akci. Například `dotnet build` sestavení kódu. `dotnet publish`publikuje kód. Příkazy jsou implementovány jako Konzolová aplikace pomocí `dotnet {command}` konvence.
+Příkaz provede akci. Například `dotnet build` sestavení kódu. `dotnet publish` publikuje kód. Příkazy jsou implementovány jako Konzolová aplikace pomocí `dotnet {command}` konvence.
 
 ### <a name="arguments"></a>Arguments
 
-Argumenty, které předáte na příkazovém řádku, jsou argumenty příkazu, který jste vyvolali. Například když `dotnet publish my_app.csproj`spustíte `my_app.csproj` , argument označuje projekt, který se má publikovat `publish` a který se předává do příkazu.
+Argumenty, které předáte na příkazovém řádku, jsou argumenty příkazu, který jste vyvolali. Například při spuštění `dotnet publish my_app.csproj`argument `my_app.csproj` označuje projekt k publikování a je předán do příkazu `publish`.
 
 ### <a name="options"></a>Možnosti
 
-Možnosti, které zadáte na příkazovém řádku, jsou možnosti vyvolání příkazu. Například když `dotnet publish --output /build_output`spustíte `--output` , možnost a její `publish` hodnota jsou předány do příkazu.
+Možnosti, které zadáte na příkazovém řádku, jsou možnosti vyvolání příkazu. Například když spustíte `dotnet publish --output /build_output`, možnost `--output` a její hodnota se předají do příkazu `publish`.
 
 ## <a name="migration-from-projectjson"></a>Migrace z Project. JSON
 
-Pokud jste použili nástroj Preview 2 pro vytváření projektů založených na *projektu Project. JSON*, Projděte si téma věnované [migraci dotnet](dotnet-migrate.md) pro informace o migraci projektu do MSBuild/ *. csproj* pro použití s nástroji pro vydávání verzí. Pro projekty .NET Core vytvořené před vydáním nástroje verze Preview 2 buď ručně aktualizujte projekt podle pokynů v části [migrace z DNX na .NET Core CLI (Project. JSON)](../migration/from-dnx.md) a pak použijte `dotnet migrate` nebo přímo Upgradujte své projekty.
+Pokud jste použili nástroj Preview 2 pro vytváření projektů založených na *projektu Project. JSON*, Projděte si téma věnované [migraci dotnet](dotnet-migrate.md) pro informace o migraci projektu do MSBuild/ *. csproj* pro použití s nástroji pro vydávání verzí. Pro projekty .NET Core vytvořené před vydáním nástroje verze Preview 2 buď ručně aktualizujte projekt podle pokynů v části [migrace z DNX na .NET Core CLI (Project. JSON)](../migration/from-dnx.md) a pak použijte `dotnet migrate` nebo přímo upgradujte projekty.
 
 ## <a name="see-also"></a>Viz také:
 

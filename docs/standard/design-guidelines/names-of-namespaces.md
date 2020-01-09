@@ -8,20 +8,19 @@ helpviewer_keywords:
 - namespaces [.NET Framework], names
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
-author: KrzysztofCwalina
-ms.openlocfilehash: b8b6ec195fd3f95a4255ea820f2bffcb3e27ba19
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0678f695e3ae7c40660031862c9073a21fd72491
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615221"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709228"
 ---
 # <a name="names-of-namespaces"></a>Názvy oborů názvů
-Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů vytváří dostatečná přehlednost pro programátora pomocí rozhraní hned vědět, co je pravděpodobné, že obsah oboru názvů. Následující šablony určuje obecné pravidlo pro pojmenování obory názvů:  
+Stejně jako u jiných pokynů pro pojmenování je cílem při pojmenovávání oborů názvů vytváření dostatečné srozumitelnosti pro programátora pomocí rozhraní, aby okamžitě věděli, co může být obsah oboru názvů. Následující šablona určuje obecné pravidlo pro názvové obory názvů:  
   
  `<Company>.(<Product>|<Technology>)[.<Feature>][.<Subnamespace>]`  
   
- Následují příklady:  
+ Zde jsou příklady:  
   
  `Fabrikam.Math`  
  `Litware.Security`  
@@ -30,59 +29,59 @@ Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů
   
  **✓ DO** použít název stabilní, nezávislé na verzi produktu, na druhé úrovni název oboru názvů.  
   
- **X DO NOT** používat organizační hierarchie jako základ pro názvy v oboru názvů hierarchií, protože názvy skupin v rámci společnosti jsou obvykle krátkodobou. Uspořádání hierarchie oborů názvů okolo skupin souvisejících technologiích.  
+ **X DO NOT** používat organizační hierarchie jako základ pro názvy v oboru názvů hierarchií, protože názvy skupin v rámci společnosti jsou obvykle krátkodobou. Uspořádejte hierarchii oborů názvů kolem skupin souvisejících technologií.  
   
- **✓ DO** PascalCasing a komponenty samostatného oboru názvů pomocí tečky (například `Microsoft.Office.PowerPoint`). Pokud vlastní značky využívá netradičních velká a malá písmena, postupujte i v případě, že odchylují od malých a velkých písmen normální obor názvů malých a velkých písmen definované vlastní značky.  
+ **✓ DO** PascalCasing a komponenty samostatného oboru názvů pomocí tečky (například `Microsoft.Office.PowerPoint`). Pokud vaše značka používá netradiční velikost písmen, měli byste postupovat podle velkých a malých písmen definovaných vaší značkou, a to i v případě, že se liší od normálního velikosti oboru názvů.  
   
  **✓ CONSIDER** pomocí názvy v množném čísle obor názvů, kde je to vhodné.  
   
- Například použít `System.Collections` místo `System.Collection`. Názvy a zkratky jsou však výjimkou tohoto pravidla. Například použít `System.IO` místo `System.IOs`.  
+ Použijte například `System.Collections` místo `System.Collection`. Názvy značek a akronymy jsou však výjimkou tohoto pravidla. Použijte například `System.IO` místo `System.IOs`.  
   
  **X DO NOT** používají stejný název pro obor názvů a typ v daném oboru názvů.  
   
- Například nepoužívejte `Debug` jako obor názvů pojmenujte a také zadat třídu s názvem `Debug` ve stejném oboru názvů. Několik kompilátory vyžadují tyto typy jako plně kvalifikovaný.  
+ Nepoužívejte například `Debug` jako název oboru názvů a potom zadejte třídu s názvem `Debug` ve stejném oboru názvů. Několik kompilátorů vyžaduje, aby tyto typy byly plně kvalifikované.  
   
-### <a name="namespaces-and-type-name-conflicts"></a>Obory názvů a typ název je v konfliktu  
+### <a name="namespaces-and-type-name-conflicts"></a>Konflikty oborů názvů a typů  
  **X DO NOT** zavést názvy obecného typu, jako `Element`, `Node`, `Log`, a `Message`.  
   
- Je velmi vysoká pravděpodobnost, že díky tomu povede k zadání názvu je v konfliktu v běžných scénářích. By měl kvalifikovat názvy obecných typů (`FormElement`, `XmlNode`, `EventLog`, `SoapMessage`).  
+ Existuje velmi vysoká pravděpodobnost, že by to mělo způsobit konflikty názvů typů v běžných scénářích. Měli byste kvalifikovat názvy obecných typů (`FormElement`, `XmlNode`, `EventLog`, `SoapMessage`).  
   
- Existují konkrétní pokyny ke vyhnutí se konfliktům název typu pro různé kategorie oborů názvů.  
+ Existují konkrétní pokyny pro předcházení konfliktům názvů typů pro různé kategorie oborů názvů.  
   
-- **Obory názvů modelu aplikace**  
+- **Obory názvů aplikačního modelu**  
   
-     Obory názvů, které patří do jedné aplikační model se často používají společně, ale jsou téměř nikdy používat s obory názvů modelů jiné aplikace. Například <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů je velmi zřídka použít v kombinaci s <xref:System.Web.UI?displayProperty=nameWithType> oboru názvů. Následuje seznam známých aplikaci modelu obor názvů skupin:  
+     Obory názvů patřící k jednomu aplikačnímu modelu se velmi často používají společně, ale nejsou skoro nikdy použity s obory názvů jiných modelů aplikací. Například obor názvů <xref:System.Windows.Forms?displayProperty=nameWithType> je velmi zřídka používán společně s oborem názvů <xref:System.Web.UI?displayProperty=nameWithType>. Následuje seznam známých skupin oborů názvů aplikačního modelu:  
   
      `System.Windows*`   
      `System.Web.UI*`  
   
      **X DO NOT** předáte typy v oborech názvů v rámci jedné aplikace model se stejným názvem.  
   
-     Například nepřidávejte typ s názvem `Page` k <xref:System.Web.UI.Adapters?displayProperty=nameWithType> obor názvů, protože <xref:System.Web.UI?displayProperty=nameWithType> již obsahuje typ s názvem oboru názvů `Page`.  
+     Nepřidejte například typ s názvem `Page` do <xref:System.Web.UI.Adapters?displayProperty=nameWithType> oboru názvů, protože <xref:System.Web.UI?displayProperty=nameWithType> obor názvů již obsahuje typ s názvem `Page`.  
   
 - **Obory názvů infrastruktury**  
   
-     Tato skupina obsahuje obory názvů, které se importují jen zřídka během vývoje běžných aplikací. Například `.Design` oborů názvů se používá hlavně při vývoji programovacích nástrojů. Vyhnutí se konfliktům s typy v těchto oborech názvů není důležité.  
+     Tato skupina obsahuje obory názvů, které se při vývoji běžných aplikací importují zřídka. Například `.Design` obory názvů se používají hlavně při vývoji programovacích nástrojů. Předcházení konfliktům s typy v těchto oborech názvů není důležité.  
   
-- **Obory názvů jádra**  
+- **Základní obory názvů**  
   
-     Základní oborů názvů patří všechny `System` obory názvů, s výjimkou obory názvů modelů aplikací a infrastruktury obory názvů. Obory názvů Core patří mimo jiné `System`, `System.IO`, `System.Xml`, a `System.Net`.  
+     Klíčové obory názvů zahrnují všechny obory názvů `System` s výjimkou oborů názvů modelů aplikací a oborů názvů infrastruktury. Mezi základní obory názvů patří mimo jiné `System`, `System.IO`, `System.Xml`a `System.Net`.  
   
      **X DO NOT** udělení typy názvy, které by byl v konfliktu s žádným typem v oborech názvů jádra.  
   
-     Například nikdy nepoužívejte `Stream` jako název typu. By byla v konfliktu s <xref:System.IO.Stream?displayProperty=nameWithType>, velmi často používána typu.  
+     Například nikdy nepoužívejte `Stream` jako název typu. Je v konfliktu s <xref:System.IO.Stream?displayProperty=nameWithType>, často používaným typem.  
   
-- **Obor názvů skupin technologie**  
+- **Skupiny oboru názvů technologií**  
   
-     Tato kategorie zahrnuje všechny obory názvů se stejným první dva uzly oboru názvů `(<Company>.<Technology>*`), jako například `Microsoft.Build.Utilities` a `Microsoft.Build.Tasks`. Je důležité, že typy, které patří do jedné technologie nejsou v konfliktu mezi sebou.  
+     Tato kategorie zahrnuje všechny obory názvů se stejnými prvními dvěma uzly oboru názvů `(<Company>.<Technology>*`), například `Microsoft.Build.Utilities` a `Microsoft.Build.Tasks`. Je důležité, aby typy patřící do jedné technologie nebyly vzájemně v konfliktu.  
   
      **X DO NOT** přiřadit názvy typů, které by byl v konfliktu s jinými typy v rámci jedné technologie.  
   
      **X DO NOT** zavést typ konflikty v názvech mezi typy v oborech názvů technologii a na obor názvů modelu aplikace (Pokud je tato technologie není určena pro použití s modelem aplikace).  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

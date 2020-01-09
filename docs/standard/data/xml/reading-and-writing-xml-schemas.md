@@ -7,30 +7,28 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f80157ddf394fdd058793830bfe3052b41ad1e40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 889c5f85a2ea3fc08dadefda5509de0fcfab76ec
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698756"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710411"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich
-Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápis schémata jazyk (XSD) definice schématu XML ze souborů nebo jiných zdrojů a sestavení XML schémata v paměti pomocí tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů, které mapují na struktury definované v celém světě Wide Web Consortium (W3C) doporučení schématu XML.  
+Rozhraní API modelu modelu objektu schématu (SOM) je možné použít ke čtení a zápisu schémat XML Schema Definition Language (XSD) ze souborů nebo jiných zdrojů a sestavení schémat XML v paměti pomocí tříd v oboru názvů <xref:System.Xml.Schema?displayProperty=nameWithType>, který se mapuje na struktury definované v doporučeních schématu XML konsorcium World Wide Web (W3C).  
   
 ## <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich  
- <xref:System.Xml.Schema.XmlSchema> Třída poskytuje <xref:System.Xml.Schema.XmlSchema.Read%2A> a <xref:System.Xml.Schema.XmlSchema.Write%2A> metody pro čtení a zápis schémat XML. <xref:System.Xml.Schema.XmlSchema.Read%2A> Vrátí metoda <xref:System.Xml.Schema.XmlSchema> objekt představující schématu XML a přijímá volitelný <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro zpracování upozornění při ověřování schématu a při čtení schématu XML došlo k chybám.  
+ Třída <xref:System.Xml.Schema.XmlSchema> poskytuje metody <xref:System.Xml.Schema.XmlSchema.Read%2A> a <xref:System.Xml.Schema.XmlSchema.Write%2A> pro čtení a zápis schémat XML. Metoda <xref:System.Xml.Schema.XmlSchema.Read%2A> vrátí objekt <xref:System.Xml.Schema.XmlSchema> reprezentující schéma XML a převezme volitelné <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro zpracování upozornění ověřování schématu a chyby zjištěné při čtení schématu XML.  
   
- <xref:System.Xml.Schema.XmlSchema.Write%2A> Metoda zapíše schémat XML pro <xref:System.IO.Stream>, <xref:System.IO.TextWriter> a <xref:System.Xml.XmlWriter> objektů a můžete provést volitelný <xref:System.Xml.XmlNamespaceManager> objektu jako parametr. <xref:System.Xml.XmlNamespaceManager> Se používá ke zpracování obory názvů v schématu XML. Další informace o <xref:System.Xml.XmlNamespaceManager> najdete v tématu [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  
+ Metoda <xref:System.Xml.Schema.XmlSchema.Write%2A> zapisuje schémata XML do <xref:System.IO.Stream>, <xref:System.IO.TextWriter> a <xref:System.Xml.XmlWriter> objektů a může převzít volitelný objekt <xref:System.Xml.XmlNamespaceManager> jako parametr. <xref:System.Xml.XmlNamespaceManager> se používá ke zpracování oborů názvů zjištěných ve schématu XML. Další informace o třídě <xref:System.Xml.XmlNamespaceManager> naleznete v tématu [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  
   
- Následující příklad kódu ukazuje čtení a zápis schémat XML z a do souboru. Příklad kódu používá `example.xsd` souboru, načte ji do <xref:System.Xml.Schema.XmlSchema> pomocí `static` <xref:System.Xml.Schema.XmlSchema.Read%2A> metoda a pak zapíše do konzoly a nový soubor `new.xsd` souboru. Příklad kódu také poskytuje <xref:System.Xml.Schema.ValidationEventHandler> jako parametr `static` <xref:System.Xml.Schema.XmlSchema.Read%2A> metodu ke zpracování všech upozornění při ověřování schématu nebo při čtení schématu XML došlo k chybám. Pokud <xref:System.Xml.Schema.ValidationEventHandler> nezadáte (`null`), žádná upozornění ani chyby jsou hlášeny.  
+ Následující příklad kódu ukazuje čtení a zápis XML schémat z a do souboru. Příklad kódu přebírá soubor `example.xsd`, čte ho do objektu <xref:System.Xml.Schema.XmlSchema> pomocí metody `static`<xref:System.Xml.Schema.XmlSchema.Read%2A> a pak zapíše soubor do konzoly a do nového souboru `new.xsd`. Příklad kódu také poskytuje <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro metodu `static`<xref:System.Xml.Schema.XmlSchema.Read%2A>, která zpracovává všechna upozornění ověřování schématu nebo chyby zjištěné při čtení schématu XML. Pokud není zadán <xref:System.Xml.Schema.ValidationEventHandler> (`null`), nejsou hlášeny žádná upozornění ani chyby.  
   
  [!code-cpp[XmlSchemaReadWriteExample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaReadWriteExample/CPP/XmlSchemaReadWriteExample.cpp#1)]
  [!code-csharp[XmlSchemaReadWriteExample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaReadWriteExample/CS/XmlSchemaReadWriteExample.cs#1)]
  [!code-vb[XmlSchemaReadWriteExample#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaReadWriteExample/VB/XmlSchemaReadWriteExample.vb#1)]  
   
- V příkladu přebírá `example.xsd` jako vstup.  
+ Příklad přebírá `example.xsd` jako vstup.  
   
 ```xml  
 <?xml version="1.0"?>  

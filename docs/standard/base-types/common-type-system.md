@@ -16,13 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.custom: seodec18
-ms.openlocfilehash: 5590bb07c3927ba50000d7f9d99f11e30373343d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5223c9b2031b1e25ec2f84326c811da1a78ddc15
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105711"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711412"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Společný typ systému definuje, jak jsou typy deklarovány, používány a spravovány v modulu CLR (Common Language Runtime) a je také důležitou součástí podpory modulu runtime pro integraci mezi jazyky. Společný typ systému provádí následující funkce:  
@@ -63,7 +62,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
 - [Rozhraní](#Interfaces)  
   
-- [Delegáty](#Delegates)  
+- [Delegáti](#Delegates)  
   
 <a name="Classes"></a>   
 ### <a name="classes"></a>Třídy  
@@ -71,12 +70,12 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
  Následující tabulka popisuje některé vlastnosti, které třída může mít. Každý jazyk, který podporuje modul runtime, poskytuje způsob, jak označit, že třída nebo člen třídy má jednu nebo více těchto vlastností. Nicméně jednotlivé programovací jazyky, které cílí na rozhraní .NET, nemusí mít k dispozici všechny tyto vlastnosti.  
   
-|Charakteristiku|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
 |sealed|Určuje, že jinou třídu nelze z tohoto typu odvodit.|  
 |implements|Označuje, že třída používá jedno nebo více rozhraní tím, že poskytuje implementace členů rozhraní.|  
 |abstract|Označuje, že se nedá vytvořit instance třídy. Pokud ho chcete použít, musíte z něj odvodit jinou třídu.|  
-|zdědí|Označuje, že instance třídy lze použít kdekoli je určena základní třída. Odvozená třída, která dědí ze základní třídy, může používat implementaci všech veřejných členů poskytovaných základní třídou nebo odvozenou třídu může přepsat implementaci veřejných členů s vlastní implementací.|  
+|Dědí|Označuje, že instance třídy lze použít kdekoli je určena základní třída. Odvozená třída, která dědí ze základní třídy, může používat implementaci všech veřejných členů poskytovaných základní třídou nebo odvozenou třídu může přepsat implementaci veřejných členů s vlastní implementací.|  
 |exportováno nebo neexportováno|Označuje, zda je třída viditelná vně sestavení, ve kterém je definována. Tato vlastnost se vztahuje pouze na třídy nejvyšší úrovně a nikoli na vnořené třídy.|  
   
 > [!NOTE]
@@ -139,7 +138,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
  Každý jazyk musí poskytovat pravidla pro mapování implementace na rozhraní, které vyžaduje člen, protože více než jedno rozhraní může deklarovat člena se stejnou signaturou a tito členové mohou mít samostatné implementace.  
   
 <a name="Delegates"></a>   
-### <a name="delegates"></a>Delegáty  
+### <a name="delegates"></a>Delegáti  
  Delegáti jsou odkazové typy, které slouží k podobnému účelu jako ukazatelé C++na funkci v. Používají se pro obslužné rutiny událostí a funkce zpětného volání v rozhraní .NET. Na rozdíl od ukazatelů na funkce jsou delegáti zabezpečeni, ověřitelné a typově bezpečné. Typ delegáta může představovat libovolnou metodu instance nebo statickou metodu, která má kompatibilní podpis.  
   
  Parametr delegáta je kompatibilní s odpovídajícím parametrem metody, pokud je typ parametru delegáta více omezující než typ parametru metody, protože to zaručuje, že argument předaný delegátovi lze bezpečně předat Metoda.  
@@ -159,7 +158,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
  V mnoha případech, jako je například metoda zpětného volání, představuje delegát pouze jednu metodu a jediné akce, které je třeba provést, vytvoří delegáta a vyvolá ho.  
   
- Pro delegáty, kteří představují více metod, poskytuje rozhraní .NET metody <xref:System.Delegate> a <xref:System.MulticastDelegate> delegovat třídy pro podporu operací, jako je přidání metody do seznamu volání delegáta (metoda <xref:System.Delegate.Combine%2A?displayProperty=nameWithType>), odebrání metody (metoda <xref:System.Delegate.Remove%2A?displayProperty=nameWithType>). a získání seznamu vyvolání (<xref:System.Delegate.GetInvocationList%2A?displayProperty=nameWithType> metoda).  
+ Pro delegáty, kteří představují více metod, poskytuje .NET metody <xref:System.Delegate> a <xref:System.MulticastDelegate> třídy delegátů pro podporu operací, jako je přidání metody do seznamu volání delegáta (metoda <xref:System.Delegate.Combine%2A?displayProperty=nameWithType>), odebrání metody (metoda <xref:System.Delegate.Remove%2A?displayProperty=nameWithType>) a získání seznamu vyvolání (metoda <xref:System.Delegate.GetInvocationList%2A?displayProperty=nameWithType>).  
   
 > [!NOTE]
 > Není nutné používat tyto metody pro delegáty obslužných rutin událostí v C#, C++a Visual Basic, protože tyto jazyky poskytují syntaxi pro přidávání a odebírání obslužných rutin událostí.  
@@ -190,7 +189,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
 |Usnadnění|Popis|  
 |-------------------|-----------------|  
-|public|Typ je přístupný pro všechna sestavení.|  
+|public,|Typ je přístupný pro všechna sestavení.|  
 |sestavení|Typ je přístupný pouze v rámci jeho sestavení.|  
   
  Přístupnost vnořeného typu závisí na své doméně přístupnosti, která je určena deklarovanou přístupností člena a doménou přístupnosti bezprostředně obsahujícího typu. Nicméně doména přístupnosti vnořeného typu nemůže přesáhnout typ nadřazeného typu.  
@@ -199,7 +198,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
 - Pokud je deklarovaná přístupnost `M` `public`, doména přístupnosti `M` je doména přístupnosti `T`.  
   
-- Pokud je deklarovaná přístupnost `M` `protected internal`, doména přístupnosti `M` je průnik domény přístupnosti `T` s textem programu `P` a textem programu libovolného typu odvozeného z `T` deklarovaného mimo. `P`.  
+- Pokud je deklarovaná přístupnost `M` `protected internal`, doména přístupnosti `M` je průnik domény přístupnosti `T` s textem programu `P` a textem programu libovolného typu odvozeného z `T` deklarovaného mimo `P`.  
   
 - Pokud je deklarovaná přístupnost `M` `protected`, doména přístupnosti `M` je průnik domény přístupnosti `T` s textem programu `T` a jakýmkoli typem odvozeným od `T`.  
   
@@ -259,7 +258,7 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
  [!code-csharp[Conceptual.Types.Members.Properties#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.properties/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Properties#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.properties/vb/example.vb#1)]  
   
- Kromě zahrnutí samotné vlastnosti obsahuje jazyk MSIL (Microsoft Intermediate Language) pro typ, který obsahuje čitelnou vlastnost, metodu `get_`*PropertyName* a jazyk MSIL pro typ, který obsahuje vlastnost s možností zápisu, obsahuje `set_`*PropertyName* – metoda  
+ Kromě zahrnutí samotné vlastnosti obsahuje jazyk MSIL (Microsoft Intermediate Language) pro typ, který obsahuje čitelnou vlastnost, metodu `get_`*PropertyName* a jazyk MSIL pro typ, který obsahuje vlastnost s možností zápisu, obsahuje metodu `set_`*PropertyName* .  
   
 <a name="Methods"></a>   
 ### <a name="methods"></a>Metody  
@@ -289,15 +288,15 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
 ## <a name="characteristics-of-type-members"></a>Charakteristiky členů typu  
  Společný typ systému umožňuje členům typu mít různé charakteristiky. jazyky však nejsou vyžadovány k podpoře všech těchto vlastností. Následující tabulka obsahuje popis vlastností členů.  
   
-|Charakteristiku|Může platit pro|Popis|  
+|Charakteristika|Může platit pro|Popis|  
 |--------------------|------------------|-----------------|  
 |abstract|Metody, vlastnosti a události|Typ neposkytuje implementaci metody. Typy, které dědí nebo implementují abstraktní metody, musí poskytovat implementaci pro metodu. Jediná výjimka je v případě, že odvozený typ je sám abstraktní typ. Všechny abstraktní metody jsou virtuální.|  
-|privátní, Rodina, sestavení, rodina a sestavení, Rodina, sestavení nebo veřejné|Všechny|Definuje přístupnost člena:<br /><br /> private<br /> Přístupný pouze v rámci stejného typu jako člen nebo v rámci vnořeného typu.<br /><br /> rodiny<br /> Přístupné ze stejného typu jako člen a z odvozeného typu, který z něj dědí.<br /><br /> sestavení<br /> Přístupný pouze v sestavení, ve kterém je definován typ.<br /><br /> Rodina a sestavení<br /> Přístupný pouze z typů, které jsou způsobilé pro rodinu a přístup k sestavení.<br /><br /> řada nebo sestavení<br /> Přístupný pouze z typů, které jsou způsobilé pro přístup buď k rodině, nebo k sestavení.<br /><br /> public<br /> Přístupný z libovolného typu.|  
+|privátní, Rodina, sestavení, rodina a sestavení, Rodina, sestavení nebo veřejné|Všechny|Definuje přístupnost člena:<br /><br /> private<br /> Přístupný pouze v rámci stejného typu jako člen nebo v rámci vnořeného typu.<br /><br /> rodina<br /> Přístupné ze stejného typu jako člen a z odvozeného typu, který z něj dědí.<br /><br /> sestavení<br /> Přístupný pouze v sestavení, ve kterém je definován typ.<br /><br /> Rodina a sestavení<br /> Přístupný pouze z typů, které jsou způsobilé pro rodinu a přístup k sestavení.<br /><br /> řada nebo sestavení<br /> Přístupný pouze z typů, které jsou způsobilé pro přístup buď k rodině, nebo k sestavení.<br /><br /> public,<br /> Přístupný z libovolného typu.|  
 |finální|Metody, vlastnosti a události|Virtuální metodu nelze přepsat v odvozeném typu.|  
 |pouze pro inicializaci|Pole|Hodnotu lze inicializovat pouze a nelze ji zapsat po inicializaci.|  
-|případě|Pole, metody, vlastnosti a události|Pokud člen není označen jako `static`C# (a C++), `Shared` (Visual Basic), `virtual` (C# a C++) nebo `Overridable` (Visual Basic), jedná se o člen instance (neexistuje žádné klíčové slovo instance). V paměti bude tolik kopií takových členů, jako jsou objekty, které ho používají.|  
+|instance|Pole, metody, vlastnosti a události|Pokud člen není označen jako `static`C# (a C++), `Shared` (Visual Basic), `virtual` (C# a C++) nebo `Overridable` (Visual Basic), jedná se o člen instance (neexistuje žádné klíčové slovo instance). V paměti bude tolik kopií takových členů, jako jsou objekty, které ho používají.|  
 |literál|Pole|Hodnota přiřazená k poli je pevná hodnota, která je známá v době kompilace předdefinovaného typu hodnoty. Pole literálu jsou někdy označována jako konstanty.|  
-|NewSlot nebo override|Všechny|Definuje, jak člen komunikuje se zděděnými členy, které mají stejnou signaturu:<br /><br /> NewSlot<br /> Skryje zděděné členy, které mají stejnou signaturu.<br /><br /> override<br /> Nahrazuje definici zděděné virtuální metody.<br /><br /> Výchozí hodnota je NewSlot.|  
+|NewSlot nebo override|Všechny|Definuje, jak člen komunikuje se zděděnými členy, které mají stejnou signaturu:<br /><br /> NewSlot<br /> Skryje zděděné členy, které mají stejnou signaturu.<br /><br /> přepsání<br /> Nahrazuje definici zděděné virtuální metody.<br /><br /> Výchozí hodnota je NewSlot.|  
 |static|Pole, metody, vlastnosti a události|Člen patří do typu, ve kterém je definován, nikoli na konkrétní instanci typu; člen existuje i v případě, že instance typu není vytvořena a je sdílena mezi všemi instancemi typu.|  
 |virtual|Metody, vlastnosti a události|Metoda může být implementována odvozeným typem a lze ji vyvolat staticky nebo dynamicky. Pokud se používá dynamické volání, typ instance, která provádí volání v době běhu (spíše než typ známý v době kompilace), určuje, která implementace metody je volána. Chcete-li vyvolat virtuální metodu staticky, proměnná může být převedena na typ, který používá požadovanou verzi metody.|  
   
@@ -316,6 +315,6 @@ Společný typ systému definuje, jak jsou typy deklarovány, používány a spr
   
 ## <a name="see-also"></a>Viz také:
 
-- [.NET API – prohlížeč](/dotnet/api)
+- [Prohlížeč rozhraní API .NET](/dotnet/api)
 - [Modul CLR (Common Language Runtime)](../../../docs/standard/clr.md)
 - [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)

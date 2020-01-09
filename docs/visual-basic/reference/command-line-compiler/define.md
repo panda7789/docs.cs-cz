@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: fd0875f09bf3ba7211ede500aa0da45f8b7cd2c7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5035466de4aa17c374824e1b0f02ed594731a9d3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344766"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716802"
 ---
 # <a name="-define-visual-basic"></a>-define (Visual Basic)
 Definuje podmíněné konstanty kompilátoru.  
@@ -31,12 +31,12 @@ nebo
 -d:["]symbol[=value][,symbol[=value]]["]  
 ```  
   
-## <a name="arguments"></a>Argumenty  
+## <a name="arguments"></a>Arguments  
   
 |Termín|Definice|  
 |---|---|  
 |`symbol`|Požadováno. Symbol, který má být definován.|  
-|`value`|Volitelná. Hodnota, kterou chcete přiřadit `symbol`. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
+|`value`|Volitelné. Hodnota, kterou chcete přiřadit `symbol`. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
   
 ## <a name="remarks"></a>Poznámky  
  Možnost `-define` má podobný efekt jako použití direktivy preprocesoru `#Const` ve zdrojovém souboru, s tím rozdílem, že konstanty definované s `-define` jsou veřejné a platí pro všechny soubory v projektu.  
@@ -47,7 +47,7 @@ nebo
   
  Můžete definovat více symbolů pomocí `-define` čárkou pro oddělení definic symbolů.  
   
-|Nastavení/define v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení – definice v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
 |1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit**.<br />4. upravte hodnotu v poli **vlastní konstanty** .|  
   

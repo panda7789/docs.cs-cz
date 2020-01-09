@@ -1,17 +1,16 @@
 ---
 title: Metody – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 318f51afefd780ed7be0ab8c2a72acb5fcf9db15
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 5955228d51d2f6845a363bcaf32581b6598273f6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699967"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714768"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 
@@ -22,7 +21,7 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že b
 
 ## <a name="method-signatures"></a>Signatury metod
 
-Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md) zadáním úrovně přístupu, například `public` nebo `private`, volitelné modifikátory, jako je například `abstract` nebo `sealed`, návratová hodnota, název metody a všechny parametry metody. Tyto části jsou společně signaturou metody.
+Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md) zadáním úrovně přístupu, jako je například `public` nebo `private`, volitelné modifikátory, jako je například `abstract` nebo `sealed`, návratová hodnota, název metody a všechny parametry metody. Tyto části jsou společně signaturou metody.
 
 > [!NOTE]
 > Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.
@@ -53,19 +52,19 @@ Typ odkazu vytvoříte pomocí klíčového slova `class`, jak ukazuje následuj
 
 [!code-csharp[csProgGuideObjects#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#42)]
 
-Nyní Pokud předáte objekt, který je založen na tomto typu pro metodu, odkaz na objekt je předán. Následující příklad předá objekt typu `SampleRefType` do metody `ModifyObject`:
+Nyní Pokud předáte objekt, který je založen na tomto typu pro metodu, odkaz na objekt je předán. Následující příklad předává objekt typu `SampleRefType` do metody `ModifyObject`:
 
 [!code-csharp[csProgGuideObjects#75](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#75)]
 
-Příklad v podstatě totéž jako předchozí příklad v tom, že předává argument podle hodnoty metodě. Ale vzhledem k tomu, že se používá typ odkazu, je výsledek jiný. Úprava, která je provedena v `ModifyObject` do pole `value` parametru, `obj`, také změní pole `value` argumentu, `rt` v metodě `TestRefType`. Metoda `TestRefType` zobrazí jako výstup 33.
+Příklad v podstatě totéž jako předchozí příklad v tom, že předává argument podle hodnoty metodě. Ale vzhledem k tomu, že se používá typ odkazu, je výsledek jiný. Úpravy, které jsou provedeny v `ModifyObject` `value` pole parametru, `obj`, také mění `value` pole argumentu, `rt`v metodě `TestRefType`. Metoda `TestRefType` zobrazí jako výstup 33.
 
 Další informace o tom, jak předat typy odkazu odkazem a podle hodnoty, naleznete v tématu [předávání parametrů typu odkazu](./passing-reference-type-parameters.md) a [odkazových typů](../../language-reference/keywords/reference-types.md).
 
 ## <a name="return-values"></a>Vrácené hodnoty
 
-Metody mohou vracet hodnotu volajícímu. Pokud návratový typ, typ uvedený před názvem metody, není `void`, metoda může vracet hodnotu pomocí klíčového slova `return`. Příkaz s klíčovým slovem `return` následovaný hodnotou, která odpovídá typu vrácené hodnoty, vrátí tuto hodnotu volajícímu metody.
+Metody mohou vracet hodnotu volajícímu. Pokud návratový typ, typ uvedený před názvem metody, není `void`, metoda může vracet hodnotu pomocí klíčového slova `return`. Příkaz s klíčovým slovem `return` následovaný hodnotou, která odpovídá návratový typ, vrátí tuto hodnotu volajícímu metody.
 
-Hodnota může být vrácena volajícímu podle hodnoty nebo, počínaje C# 7,0, [odkazem](ref-returns.md). Hodnoty se vrátí volajícímu pomocí odkazu, pokud se v signatuře metody používá klíčové slovo `ref` a následuje každé klíčové slovo-1 `return`. Například následující signatura metody a příkaz return označují, že metoda vrací názvy proměnných `estDistance` odkazem na volajícího.
+Hodnota může být vrácena volajícímu podle hodnoty nebo, počínaje C# 7,0, [odkazem](ref-returns.md). Hodnoty se vrátí volajícímu pomocí odkazu, pokud je klíčové slovo `ref` použito v signatuře metody a následuje za každým `return` klíčovým slovem. Například následující signatura metody a příkaz return označují, že metoda vrátí názvy proměnných `estDistance` odkazem na volajícího.
 
 ```csharp
 public ref double GetEstimatedDistance()
@@ -74,7 +73,7 @@ public ref double GetEstimatedDistance()
 }
 ```
 
-Klíčové slovo `return` také zastaví provádění metody. Pokud je návratový typ `void`, je příkaz `return` bez hodnoty stále užitečný k zastavení provádění metody. Bez klíčového slova `return` se Metoda zastaví, když dosáhne konce bloku kódu. Metody s návratovým typem, který není typu void, jsou vyžadovány k použití klíčového slova `return` pro vrácení hodnoty. Tyto dvě metody například používají klíčové slovo `return` pro vrácení celých čísel:
+Klíčové slovo `return` také zastaví provádění metody. Pokud je návratový typ `void`, je příkaz `return` bez hodnoty stále užitečný k zastavení provádění metody. Bez klíčového slova `return`, Metoda zastaví provádění, když dosáhne konce bloku kódu. Pro použití klíčového slova `return` k vrácení hodnoty jsou vyžadovány metody s návratovým typem, který není typu void. Například tyto dvě metody používají klíčové slovo `return` k vrácení celých čísel:
 
 [!code-csharp[csProgGuideObjects#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#44)]
 
@@ -84,7 +83,7 @@ Chcete-li použít hodnotu vrácenou metodou, volající metoda může použít 
 
 [!code-csharp[csProgGuideObjects#46](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#46)]
 
-Použití místní proměnné, v tomto případě `result` pro uložení hodnoty je volitelné. Může to usnadnit čitelnost kódu nebo může být nutné, pokud potřebujete uložit původní hodnotu argumentu pro celý rozsah metody.
+Použití místní proměnné, v tomto případě `result`pro uložení hodnoty je volitelné. Může to usnadnit čitelnost kódu nebo může být nutné, pokud potřebujete uložit původní hodnotu argumentu pro celý rozsah metody.
 
 Chcete-li použít hodnotu vrácenou odkazem z metody, je nutné deklarovat [místní proměnnou ref](ref-returns.md#ref-locals) , pokud máte v úmyslu změnit její hodnotu. Například pokud metoda `Planet.GetEstimatedDistance` vrátí hodnotu <xref:System.Double> odkazem, můžete ji definovat jako místní proměnnou ref s kódem podobným následujícímu:
 
@@ -92,7 +91,7 @@ Chcete-li použít hodnotu vrácenou odkazem z metody, je nutné deklarovat [mí
 ref int distance = plant
 ```
 
-Vrácení multidimenzionálního pole z metody `M`, které upraví obsah pole, není nutné, pokud volání funkce předává pole do `M`.  Výsledné pole můžete vracet z `M` pro dobrý styl nebo funkční tok hodnot, ale není nutné, protože C# předává všechny odkazové typy podle hodnoty a hodnota odkazu na pole je ukazatel na pole. V metodě `M` jsou všechny změny v obsahu pole pozorovatelované jakýmkoli kódem, který má odkaz na pole, jak je znázorněno v následujícím příkladu:
+Vrácení multidimenzionálního pole z metody, `M`, která upraví obsah pole, není nutné, pokud volající funkce předala pole do `M`.  Výsledné pole můžete vracet z `M` pro dobrý styl nebo funkční tok hodnot, ale není to nutné, protože C# předává všechny odkazové typy podle hodnoty a hodnota odkazu na pole je ukazatel na pole. V metodě `M`jsou všechny změny obsahu pole pozorovatelně pozorovatelný kódem, který má odkaz na pole, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 static void Main(string[] args)
@@ -125,11 +124,11 @@ Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/k
 > [!NOTE]
 > Asynchronní metoda se vrátí volajícímu, když dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo získá na konec asynchronní metody, podle toho, co nastane dříve.
 
-Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task> nebo void. Typ vrácené hodnoty void slouží hlavně k definování obslužných rutin událostí, kde je požadován návratový typ void. Asynchronní metoda, která vrací typ void, nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá.
+Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>nebo void. Typ vrácené hodnoty void slouží hlavně k definování obslužných rutin událostí, kde je požadován návratový typ void. Asynchronní metoda, která vrací typ void, nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá.
 
 V následujícím příkladu je `DelayAsync` asynchronní metodou, která má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má příkaz `return`, který vrací celé číslo. Proto deklarace metody `DelayAsync` musí mít návratový typ `Task<int>`. Vzhledem k tomu, že návratový typ je `Task<int>`, vyhodnocení výrazu `await` v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující příkaz: `int result = await delayTask`.
 
-Metoda `startButton_Click` je příkladem asynchronní metody, která má návratový typ void. Vzhledem k tomu, že `DoSomethingAsync` je asynchronní metoda, musí být úloha volání `DoSomethingAsync` očekávána, jak ukazuje následující příkaz: `await DoSomethingAsync();`. Metoda `startButton_Click` musí být definována s modifikátorem `async`, protože metoda má výraz `await`.
+Metoda `startButton_Click` je příkladem asynchronní metody, která má návratový typ void. Vzhledem k tomu, že `DoSomethingAsync` je asynchronní metoda, musí být úloha volání `DoSomethingAsync` očekávána, jak ukazuje následující příkaz: `await DoSomethingAsync();`. Metoda `startButton_Click` musí být definována modifikátorem `async`, protože metoda má výraz `await`.
 
 [!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]
 
@@ -139,7 +138,7 @@ Další informace o asynchronních metodách naleznete v tématu [asynchronní p
 
 ## <a name="expression-body-definitions"></a>Definice textu výrazu
 
-Je běžné mít definice metod, které se jednoduše vrátí s výsledkem výrazu nebo které mají jediný příkaz jako tělo metody. Pro definování takových metod pomocí `=>` je k dispozici zástupce syntaxe:
+Je běžné mít definice metod, které se jednoduše vrátí s výsledkem výrazu nebo které mají jediný příkaz jako tělo metody. Pro definování takových metod pomocí `=>`je k dispozici zástupce syntaxe:
 
 ```csharp
 public Point Move(int dx, int dy) => new Point(x + dx, y + dy);
@@ -150,7 +149,7 @@ public string Name => First + " " + Last;
 public Customer this[long id] => store.LookupCustomer(id);
 ```
 
-Pokud metoda vrátí `void` nebo je asynchronní metodou, pak tělo metody musí být výraz příkazu (totéž jako u výrazů lambda). U vlastností a indexerů musí být jen pro čtení a nepoužíváte klíčové slovo `get` přístupového objektu.
+Pokud metoda vrátí `void` nebo je asynchronní metoda, pak tělo metody musí být výraz příkazu (totéž jako u výrazů lambda). U vlastností a indexerů musí být jen pro čtení a nepoužívejte klíčové slovo přistupující objekt `get`.
 
 ## <a name="iterators"></a>Iterátory
 
@@ -158,7 +157,7 @@ Iterátor provádí vlastní iteraci v kolekci, jako je například seznam nebo 
 
 Můžete zavolat iterátor z klientského kódu pomocí příkazu [foreach](../../language-reference/keywords/foreach-in.md) .
 
-Návratový typ iterátoru může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> nebo <xref:System.Collections.Generic.IEnumerator%601>.
+Návratový typ iterátoru může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>nebo <xref:System.Collections.Generic.IEnumerator%601>.
 
 Další informace najdete v tématu [iterátory](../concepts/iterators.md).
 

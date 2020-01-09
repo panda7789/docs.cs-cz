@@ -1,15 +1,13 @@
 ---
 title: Instalace .NET Framework 3,5 ve Windows 10, 8,1, 8
 description: Přečtěte si, jak nainstalovat .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8.
-author: rlander
-ms.author: mairaw
 ms.date: 07/16/2018
-ms.openlocfilehash: 16bc8b48d3e54cf3094b6bcc7a47ef863fa639b2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 208016e22eed324a3996552284072c6ad29637a5
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344831"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716382"
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
 

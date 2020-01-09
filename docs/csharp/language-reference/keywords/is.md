@@ -1,6 +1,5 @@
 ---
 title: je C# odkaz
-ms.custom: seodec18
 ms.date: 06/21/2019
 f1_keywords:
 - is_CSharpKeyword
@@ -8,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: a04105137fad7cd3a25b869c3aa7fcbe91ed20ab
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 1a1f539e80f8d843f40640fa798cf6122f316a9f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566307"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715240"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#)
 
-Operátor zkontroluje, zda je výsledek výrazu kompatibilní s daným typem nebo (počínaje C# 7,0) testuje výraz na vzor. `is` Informace o operátoru testování `is` typu najdete v části [operátor is](../operators/type-testing-and-cast.md#is-operator) pro [operátory typu testování a přetypování](../operators/type-testing-and-cast.md) .
+Operátor `is` kontroluje, zda je výsledek výrazu kompatibilní s daným typem nebo (počínaje C# 7,0) testuje výraz na vzor. Informace o operátoru `is` testování typu naleznete v článku [operátor is](../operators/type-testing-and-cast.md#is-operator) pro [operátory typu testování a přetypování](../operators/type-testing-and-cast.md) .
 
-## <a name="pattern-matching-with-is"></a>Porovnávání vzorů s`is`
+## <a name="pattern-matching-with-is"></a>Porovnávání vzorů s `is`
 
-Počínaje C# 7,0, `is` příkazy [přepínače](switch.md) a podporují porovnávání vzorů. `is` Klíčové slovo podporuje následující vzory:
+Počínaje C# 7,0, příkazy `is` a [Switch](switch.md) podporují porovnávání vzorů. Klíčové slovo `is` podporuje následující vzory:
 
 - [Vzor typu](#type-pattern), který testuje, zda lze výraz převést na zadaný typ a, pokud může být, přetypování jej na proměnnou daného typu.
 
@@ -31,15 +30,15 @@ Počínaje C# 7,0, `is` příkazy [přepínače](switch.md) a podporují porovn�
 
 ### <a name="type-pattern"></a>Vzor typu
 
-Při použití vzoru typu pro porovnávání vzorů testuje, `is` zda lze výraz převést na zadaný typ a, pokud může být, přetypování na proměnnou daného typu. Je to jasné rozšíření `is` příkazu, které umožňuje vyhodnocování a konverzi stručných typů. Obecná forma `is` vzoru typu je:
+Při použití vzoru typu k provedení porovnávání se vzorem `is` testuje, zda lze výraz převést na zadaný typ a, pokud může být, přetypování na proměnnou daného typu. Je to jasné rozšíření příkazu `is`, které umožňuje vyhodnocování a konverzi stručných typů. Obecná forma `is`ho vzoru typu je:
 
 ```csharp
    expr is type varname
 ```
 
-kde *expr* je výraz, který je vyhodnocen jako instance nějakého typu, *typ* je název typu, na který má být výsledek *výrazu* převeden, a *název_proměnné* je objekt, na který je výsledek *výrazu* převeden, pokud `is` test je `true`. 
+kde *expr* je výraz, který je vyhodnocen jako instance nějakého typu, *typ* je název typu, na který má být výsledek *výrazu* převeden, a *název_proměnné* je objekt, na který je výsledek *výrazu* převeden, pokud je `is` test `true`. 
 
-Výraz je `true` IF není *a kterákoli* z následujících možností je true: `null` `is`
+Výraz `is` je `true`, pokud *výraz* není `null`a kterákoli z následujících možností je pravdivá:
 
 - *výraz* je instancí stejného typu jako *typ*.
 
@@ -51,17 +50,17 @@ Výraz je `true` IF není *a kterákoli* z následujících možností je true: 
 
 Počínaje C# 7,1, *expr* může být typ kompilace definovaný parametrem obecného typu a jeho omezeními.
 
-Je-li `true` *výraz expr* a `is` je použit `if` s příkazem , je přiřazena pouze v `if` rámci příkazu. Rozsah *název_proměnné* je z `is` výrazu na konec `if` bloku ohraničujícího příkaz. Použití *název_proměnné* v jakémkoli jiném umístění generuje chybu při kompilaci pro použití proměnné, která nebyla přiřazena.
+Je-li *výraz expr* `true` a je-li `is` použit s příkazem `if`, je příkaz *název_proměnné* přiřazen pouze v rámci příkazu `if`. Rozsah *název_proměnné* je z výrazu `is` na konec bloku ohraničujícího příkaz `if`. Použití *název_proměnné* v jakémkoli jiném umístění generuje chybu při kompilaci pro použití proměnné, která nebyla přiřazena.
 
-Následující příklad používá `is` vzor typu k poskytnutí implementace <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> metody typu.
+Následující příklad používá vzor typu `is` k poskytnutí implementace <xref:System.IComparable.CompareTo(System.Object)?displayProperty=nameWithType> metody typu.
 
 [!code-csharp[is#5](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern5.cs#5)]
 
-Bez porovnávání vzorů může být tento kód napsán následujícím způsobem. Použití porovnávání vzorů typů vytváří více kompaktních a čitelných kódů tím, že eliminuje nutnost testovat, zda je `null`výsledek převodu.  
+Bez porovnávání vzorů může být tento kód napsán následujícím způsobem. Použití porovnávání vzorů typů vytváří více kompaktních čitelných kódů tím, že eliminuje nutnost testovat, zda je výsledek převodu `null`.  
 
 [!code-csharp[is#6](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern6.cs#6)]
 
-Vzor `is` typu také při určování typu hodnoty vytvoří více kompaktního kódu. V následujícím příkladu je použit `is` vzorek typu k určení, zda `Person` je objekt nebo `Dog` instance před zobrazením hodnoty příslušné vlastnosti.
+Vzor typu `is` také při určování typu hodnoty vytvoří více kompaktního kódu. V následujícím příkladu je použit vzor typu `is` k určení, zda je objekt `Person` nebo instance `Dog` před zobrazením hodnoty příslušné vlastnosti.
 
 [!code-csharp[is#9](../../../../samples/snippets/csharp/language-reference/keywords/is/is-type-pattern9.cs#9)]
 
@@ -71,7 +70,7 @@ Ekvivalentní kód bez porovnávání vzorů vyžaduje samostatné přiřazení,
 
 ### <a name="constant-pattern"></a>Konstantní vzorek
 
-Při provádění porovnávání vzorů s konstantním vzorem otestuje, `is` zda výraz odpovídá zadané konstantě. V C# 6 a starších verzích je konstantní vzorek podporován příkazem [Switch](switch.md) . Počínaje C# 7,0 se podporuje `is` i příkaz. Jeho syntaxe je:
+Při provádění porovnávání vzorů s konstantním vzorem `is` testuje, zda výraz odpovídá zadané konstantě. V C# 6 a starších verzích je konstantní vzorek podporován příkazem [Switch](switch.md) . Počínaje C# 7,0 se podporuje i příkaz `is`. Jeho syntaxe je:
 
 ```csharp
    expr is constant
@@ -87,27 +86,27 @@ kde *expr* je výraz, který se má vyhodnotit, a *konstanta* je hodnota, která
 
 Konstantní výraz je vyhodnocen následujícím způsobem:
 
-- Pokud je *výraz* a *konstanta* integrální typy, C# operátor rovnosti určuje, zda výraz `true` vrátí hodnotu (tj. `expr == constant`zda).
+- Je *-li výraz* a *konstanta* integrální typy C# , operátor rovnosti určuje, zda výraz vrátí hodnotu `true` (tj. zda `expr == constant`).
 
 - V opačném případě je hodnota výrazu určena voláním statické metody [Object. Equals (Expr, konstanta)](xref:System.Object.Equals(System.Object,System.Object)) .  
 
-Následující příklad kombinuje vzorce typu a konstanty k otestování, zda je `Dice` objekt instancí, a pokud je, k určení, zda je hodnota indexu předána 6.
+Následující příklad kombinuje vzorce typu a konstanty k otestování, zda je objekt `Dice` instance a, pokud je, k určení, zda je hodnota indexu vrácena 6.
 
 [!code-csharp[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
 
-`null` Kontrolu lze provést pomocí konstantního vzoru. Klíčové slovo je podporováno `is` příkazem. `null` Jeho syntaxe je:
+Kontrolu `null` lze provést pomocí konstantního vzoru. Klíčové slovo `null` je podporováno příkazem `is`. Jeho syntaxe je:
 
 ```csharp
    expr is null
 ```
 
-Následující příklad ukazuje porovnání `null` kontrol:
+Následující příklad ukazuje porovnání `null` kontroly:
 
 [!code-csharp[is#11](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern11.cs#11)]
 
 ### <a name="var-pattern"></a>variabilní vzorek
 
-`var` Vzor je catch-All pro libovolný typ nebo hodnotu. Hodnota *expr* je vždy přiřazena místní proměnné, která má stejný typ jako typ času kompilace *expr*. Výsledek `is` výrazu je vždy `true`. Jeho syntaxe je:
+Vzor `var` je catch-All pro libovolný typ nebo hodnotu. Hodnota *expr* je vždy přiřazena místní proměnné, která má stejný typ jako typ času kompilace *expr*. Výsledek výrazu `is` je vždy `true`. Jeho syntaxe je:
 
 ```csharp
    expr is var varname

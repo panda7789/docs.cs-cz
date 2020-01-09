@@ -1,6 +1,5 @@
 ---
 title: <list> – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - list
@@ -13,14 +12,14 @@ helpviewer_keywords:
 - <item> C# XML tag
 - <list> C# XML tag
 ms.assetid: c9620b1b-c2e6-43f1-ab88-8ab47308ffec
-ms.openlocfilehash: 0df6653171aa0366f555c39e4644f13b2b7384f9
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 6e6f3a3399f2bffe84b5cec733833c974a0bb51b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523427"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711750"
 ---
-# <a name="list-c-programming-guide"></a>> \<list (C# Průvodce programováním)
+# <a name="list-c-programming-guide"></a>> seznam \<(C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -44,11 +43,11 @@ ms.locfileid: "72523427"
  Buď položka v seznamu odrážek nebo číslovaný seznam, nebo definice `term`.  
   
 ## <a name="remarks"></a>Poznámky  
- Blok > \<listheader slouží k definování řádku záhlaví seznamu tabulek nebo definic. Při definování tabulky stačí zadat položku pro termín v záhlaví.  
+ Blok > \<listheader – se používá k definování řádku záhlaví v seznamu tabulek nebo definic. Při definování tabulky stačí zadat položku pro termín v záhlaví.  
   
- Každá položka v seznamu je určena pomocí \<item > bloku. Při vytváření seznamu definic bude nutné zadat jak `term`, tak `description`. U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description`.  
+ Každá položka v seznamu je určena položkou \<> bloku. Při vytváření seznamu definic bude nutné zadat jak `term`, tak `description`. U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description`.  
   
- Seznam nebo tabulka může mít tolik \<item > bloky podle potřeby.  
+ Seznam nebo tabulka může v případě potřeby obsahovat tolik \<položek >.  
   
  Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   

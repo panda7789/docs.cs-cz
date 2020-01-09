@@ -2,12 +2,12 @@
 title: Projektování XML v odlišném tvaru
 ms.date: 07/20/2015
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-ms.openlocfilehash: dd8b95ca442c9f2f17940423dde22f627669cd0b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 400ceafe8ca219efbbb921d573126e0ca80bbb5e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347148"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344499"
 ---
 # <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Projektování XML v jiném obrazci (Visual Basic)
 Toto téma ukazuje příklad projektu XML, který je v jiném tvaru než zdrojový kód XML.  
@@ -69,7 +69,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))  
     End Function  
   
-    ' Following function is required because VB does not support short circuit evaluation  
+    ' Following function is required because Visual Basic does not support short circuit evaluation  
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, _  
                                          ByVal defaultStyle As String) As String  
         If (styleNode Is Nothing) Then  

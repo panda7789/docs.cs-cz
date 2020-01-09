@@ -1,14 +1,13 @@
 ---
 title: ML.NET návody
 description: Naučte se, jak provést konkrétní úkoly, které vám pomůžou při vytváření a Machine Learning integrace do vašich aplikací .NET.
-ms.custom: seodec18
 ms.date: 03/01/2019
-ms.openlocfilehash: e2b4ff77c7f76282d70c06b5ef534306fe4e93a6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4ce2de77c35062aa19449e3ba6bb3d5abd003d60
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977113"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715670"
 ---
 # <a name="net-machine-learning-how-to-guides"></a>Průvodce strojovým učením .NET
 
@@ -22,7 +21,7 @@ V části Postupy v příručce ML.NET můžete najít rychlé odpovědi na čas
 
 * [Předzpracování školicích dat pomocí normalizování pro použití při zpracování dat.](normalizers-preprocess-data-ml-net.md)
 
-## <a name="train-the-model"></a>Výuka modelu
+## <a name="train-the-model"></a>Trénování modelu
 
 * [Naučte se model strojového učení pomocí křížového ověřování.](train-machine-learning-model-cross-validation-ml-net.md)
 
@@ -32,7 +31,7 @@ V části Postupy v příručce ML.NET můžete najít rychlé odpovědi na čas
 
 * [Vypočítá metriky pro vyhodnocení kvality modelu.](verify-model-quality-ml-net.md)
 
-### <a name="model-explainability"></a>Světlost modelu
+### <a name="model-explainability"></a>Model explainability
 
 * [Určete důležitost funkcí modelů s důležitou funkcí permutace.](explain-machine-learning-model-permutation-feature-importance-ml-net.md)
 

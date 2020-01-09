@@ -1,44 +1,44 @@
 ---
-title: Zabezpečení přenosu s anonymním klientem – WCF
+title: Zabezpečení přenosu pomocí anonymního klienta
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: aac3b2ac6cfcca137bddaefafd290e744ee991eb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c3e44c87dfa70ac3a7acc5a83ac596efc22b6155
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637438"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344761"
 ---
-# <a name="transport-security-with-an-anonymous-client"></a>Zabezpečení přenosu s anonymním klientem
+# <a name="transport-security-with-an-anonymous-client"></a>Zabezpečení přenosu pomocí anonymního klienta
 
-Tento scénář Windows Communication Foundation (WCF) používá k zajištění důvěrnost a integrita zabezpečení přenosu (HTTPS). Server musí být ověřené pomocí certifikátu vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Klient není ověřována každý použitý mechanizmus a je proto anonymní.
+Tento scénář Windows Communication Foundation (WCF) používá k zajištění důvěrnosti a integrity zabezpečení přenosu (HTTPS). Server musí být ověřený s certifikátem SSL (Secure Sockets Layer) (SSL) a klienti musí důvěřovat certifikátu serveru. Klient není ověřen žádným mechanismem a proto je anonymní.
 
-Ukázková aplikace, najdete v části [zabezpečení přenosu WS](../samples/ws-transport-security.md). Další informace o zabezpečení přenosu, naleznete v tématu [Přehled zabezpečení přenosu](transport-security-overview.md).
+Ukázkovou aplikaci najdete v tématu [zabezpečení přenosu v protokolu WS](../samples/ws-transport-security.md). Další informace o zabezpečení přenosu najdete v tématu [Přehled zabezpečení přenosu](transport-security-overview.md).
 
-Další informace o pomocí certifikátu služby najdete v tématu [Working with Certificates](working-with-certificates.md) a [jak: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
+Další informace o používání certifikátu se službou najdete v tématu [práce s certifikáty](working-with-certificates.md) a [Postupy: Konfigurace portu s certifikátem SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
 
-![Pomocí zabezpečení přenosu s anonymním klientem](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
+![Použití zabezpečení přenosu u anonymního klienta](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
-|Vlastnost|Popis|
+|Charakteristika|Popis|
 |--------------------|-----------------|
-|Režim zabezpečení|Přenos|
-|Interoperabilita|Existující webové služby a klienti|
-|Ověření (Server)<br /><br /> Ověření (klient)|Ano<br /><br /> Úroveň aplikace (bez podpory WCF)|
+|Režim zabezpečení|Doprava|
+|Interoperabilita|Se stávajícími webovými službami a klienty|
+|Ověřování (Server)<br /><br /> Ověřování (klient)|Ano<br /><br /> Úroveň aplikace (žádná podpora WCF)|
 |Integrita|Ano|
 |Důvěrnost|Ano|
-|Přenos|HTTPS|
+|Doprava|HTTPS|
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|
 
-## <a name="service"></a>Služba
+## <a name="service"></a>Service
 
-Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
 
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.
 
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.
 
 ### <a name="code"></a>Kód
 
@@ -47,9 +47,9 @@ Následující kód ukazuje, jak vytvořit koncový bod pomocí zabezpečení p�
 [!code-csharp[c_SecurityScenarios#5](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#5)]
 [!code-vb[c_SecurityScenarios#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#5)]
 
-### <a name="configuration"></a>Konfiguraci
+### <a name="configuration"></a>Konfigurace
 
-Následující kód nastaví stejný koncový bod pomocí konfigurace. Klient není ověřována každý použitý mechanizmus a proto je anonymní.
+Následující kód nastaví stejný koncový bod pomocí konfigurace. Klient není ověřen žádným mechanismem a proto je anonymní.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -80,11 +80,11 @@ Následující kód nastaví stejný koncový bod pomocí konfigurace. Klient ne
 
 ## <a name="client"></a>Klient
 
-Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
 
-- Vytvoření samostatného klienta pomocí kódu (a kód klienta).
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).
 
-- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:
 
      [!code-csharp[C_SecurityScenarios#0](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -94,9 +94,9 @@ Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z t
 [!code-csharp[c_SecurityScenarios#6](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#6)]
 [!code-vb[c_SecurityScenarios#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#6)]
 
-### <a name="configuration"></a>Konfiguraci
+### <a name="configuration"></a>Konfigurace
 
-Následující konfigurace lze namísto kódu k nastavení služby Azure.
+Následující konfiguraci lze použít místo kódu k nastavení služby.
 
 ```xml
 <configuration>

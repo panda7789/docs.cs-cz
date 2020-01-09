@@ -1,16 +1,15 @@
 ---
 title: Expression – těle členové – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 02/06/2019
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
-ms.openlocfilehash: 45dcc58b252963e80798ba86ca5c4f461d493fac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f212bb707d3dd2d4a7cc917d335a83cff01ed0cf
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120145"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711984"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Výrazy – těle členové (C# Průvodce programováním)
 
@@ -26,9 +25,9 @@ Pro metody a vlastnosti jen pro čtení v C# 6 byly zavedeny podpory definic tě
 
 |Člen  |Podporováno pro... |
 |---------|---------|
-|[Metoda](#methods)  |C# 6 |
+|[– Metoda](#methods)  |C# 6 |
 |[Vlastnost jen pro čtení](#read-only-properties)   |C# 6  |
-|[Majetek](#properties)  |C# 7.0 |
+|[Vlastnost](#properties)  |C# 7.0 |
 |[BeginRequestEventArgs](#constructors)   |C# 7.0 |
 |[Finalizační metodu](#finalizers)     |C# 7.0 |
 |[Indexer](#indexers)       |C# 7.0 |
@@ -59,7 +58,7 @@ Další informace o vlastnostech naleznete v tématu [vlastnosti (C# Průvodce p
 
 ## <a name="properties"></a>Vlastnosti
 
-Počínaje verzí C# 7,0 můžete použít definice těla výrazu k implementaci`get`vlastností a přístupových objektů`set`. Následující příklad ukazuje, jak to provést:
+Počínaje verzí C# 7,0 můžete použít definice těla výrazu k implementaci `get` vlastností a přístupových objektů `set`. Následující příklad ukazuje, jak to provést:
 
 [!code-csharp[expression-bodied-property-get-set](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]
 

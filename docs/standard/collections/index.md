@@ -10,14 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bb231df9ed33b89fa15cde998379b2964cf32ff9
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 9b868bd5ed77788cd9b44c11623ae38eba58153c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204775"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711360"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data je často možné zpracovávat efektivněji, když jsou uložená a manipulována jako kolekce. Můžete použít třídu <xref:System.Array?displayProperty=nameWithType> nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System. Collections. neproměnlivé obory názvů pro přidání, odebrání a úpravu individuálních prvků nebo rozsahu prvků v kolekci.  

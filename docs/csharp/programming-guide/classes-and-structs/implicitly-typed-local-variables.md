@@ -1,17 +1,16 @@
 ---
 title: Implicitně typované lokální proměnné – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 2d791e233ea869381de3a1c29f79d81d549904e0
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 692a0f8ad933f3ba4bef50681cb3487fa0a7eea9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635818"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714838"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (C# Průvodce programováním)
 

@@ -6,14 +6,12 @@ helpviewer_keywords:
 - installing .NET Framework
 - installation [.NET Framework]
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e2b030508897f13cce1fc6439809b98bbae17813
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 6261a883e7b99b7fd38da2a17ab4820c81552506
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975676"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716433"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Omezení restartů systému při instalaci rozhraní .NET Framework 4.5
 Instalační program .NET Framework 4,5 používá [správce restartování](/windows/win32/rstmgr/about-restart-manager) k tomu, aby se zabránilo restartování systému, kdykoli je to možné během instalace. Pokud instalační program aplikace nainstaluje .NET Framework, může pro tuto funkci využít správce restartování rozhraní. Další informace najdete v tématu [Postupy: získání průběhu z instalačního programu .NET Framework 4,5](how-to-get-progress-from-the-dotnet-installer.md).  

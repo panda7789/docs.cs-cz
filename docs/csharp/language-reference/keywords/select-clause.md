@@ -1,6 +1,5 @@
 ---
 title: vybrat klauzuli – C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - select_CSharpKeyword
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - select keyword [C#]
 - select clause [C#]
 ms.assetid: df01e266-5781-4aaa-80c4-67cf28ea093f
-ms.openlocfilehash: f1bfbeccaf6c3916a591f6447760fa01c3f8a3b6
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b4d25f80e4cdb08fbc28fa4db3cb1c790b1145e6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422355"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713089"
 ---
 # <a name="select-clause-c-reference"></a>select – klauzule (Referenční dokumentace jazyka C#)
 

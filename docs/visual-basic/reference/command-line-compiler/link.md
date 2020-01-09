@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-ms.openlocfilehash: ecb7b0448b8ee9c1c1fc1eb9542b693d60a38ffd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c15f55f3a3c2b4e404767ddf96e258bc1e9771d7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74335852"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716758"
 ---
 # <a name="-link-visual-basic"></a>-Link (Visual Basic)
 Způsobí, že kompilátor zpřístupní informace o typu COM v zadaných sestaveních pro projekt, který právě kompilujete.  
@@ -33,7 +33,7 @@ nebo
 -l:fileList  
 ```  
   
-## <a name="arguments"></a>Argumenty  
+## <a name="arguments"></a>Arguments  
   
 |Termín|Definice|  
 |---|---|  
@@ -86,7 +86,7 @@ nebo
  Následující příkazový řádek zkompiluje zdrojový soubor `OfficeApp.vb` a referenční sestavení z `COMData1.dll` a `COMData2.dll` k výrobě `OfficeApp.exe`.  
   
 ```console  
-vbc -link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.vb  
+vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb  
 ```  
   
 ## <a name="see-also"></a>Viz také:

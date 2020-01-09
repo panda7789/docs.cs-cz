@@ -17,25 +17,23 @@ helpviewer_keywords:
 - locating directories in isolated storage file
 - storing data using isolated storage, finding files and directories
 ms.assetid: eb28458a-6161-4e7a-9ada-30ef93761b5c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 277f7d562d5e345556a9047f6e4bf2b60eaef462
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dfebcc9acf0b699f898c106921d15ce0294bc5d2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61751732"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707130"
 ---
 # <a name="how-to-find-existing-files-and-directories-in-isolated-storage"></a>Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti
 
-Chcete-li vyhledat adresář v izolovaném úložišti, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A?displayProperty=nameWithType> metody. Tato metoda přebírá řetězec, který představuje vzor hledání. Můžete použít jedním znakem (?) a více znaků (\*) zástupné znaky v vzor hledání, ale zástupné znaky musí být uvedena v poslední části názvu. Například `directory1/*ect*` je platný hledaný řetězec, ale `*ect*/directory2` není.  
+Chcete-li vyhledat adresář v izolovaném úložišti, použijte metodu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A?displayProperty=nameWithType>. Tato metoda přebírá řetězec, který představuje vzor hledání. Ve vzoru vyhledávání můžete použít zástupné znaky s jedním znakem (?) i více znaky (\*), ale zástupné znaky se musí objevit v poslední části názvu. Například `directory1/*ect*` je platný hledaný řetězec, ale `*ect*/directory2` není.  
   
- Chcete-li vyhledat soubor, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A?displayProperty=nameWithType> metody. Omezení zástupných znaků v řetězci pro vyhledávání, které se vztahuje na <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> platí také pro <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A>.  
+ Chcete-li vyhledat soubor, použijte metodu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A?displayProperty=nameWithType>. Omezení pro zástupné znaky ve vyhledávacích řetězcích, které platí pro <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A>, platí také pro <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A>.  
   
- Ani jeden z těchto metod je rekurzivní. <xref:System.IO.IsolatedStorage.IsolatedStorageFile> třída neposkytuje žádné metody pro zobrazení seznamu všech adresářů a souborů v úložišti. Rekurzivní metody jsou však uvedeny v následujícím příkladu kódu.  
+ Ani jedna z těchto metod není rekurzivní; Třída <xref:System.IO.IsolatedStorage.IsolatedStorageFile> neposkytuje žádné metody pro výpis všech adresářů nebo souborů ve vašem úložišti. Nicméně rekurzivní metody jsou uvedeny v následujícím příkladu kódu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak vytváření souborů a adresářů v izolovaném úložišti. Nejprve je úložiště, které je izolováno podle uživatele, domény a sestavení načten a umístí do `isoStore` proměnné. <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A> Metoda se používá k několika různým adresářům, nastavení a <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.IsolatedStorage.IsolatedStorageFile%29> konstruktor vytvoří některé soubory v těchto adresářích. Kód poté prochází výsledky `GetAllDirectories` metody. Tato metoda používá <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> najít všechny názvy adresářů v aktuálním adresáři. Tyto názvy jsou uloženy v poli a potom `GetAllDirectories` zavolá sama sebe, předávání v každém adresáři se nenašel. V důsledku toho jsou všechny názvy adresářů vrátí ve formě pole. V dalším kroku kód volá `GetAllFiles` metody. Tato metoda volá `GetAllDirectories` Pokud chcete zjistit, názvy všech adresářů a poté zkontroluje každý adresář pro soubory pomocí <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> metody. Výsledek se vrátí v poli pro zobrazení.  
+ Následující příklad kódu ukazuje, jak vytvořit soubory a adresáře v izolovaném úložišti. Nejprve se načte úložiště izolované pro uživatele, doménu a sestavení a umístí se do proměnné `isoStore`. Metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A> slouží k nastavení několika různých adresářů a konstruktor <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.IsolatedStorage.IsolatedStorageFile%29> vytvoří některé soubory v těchto adresářích. Kód pak projde výsledky metody `GetAllDirectories`. Tato metoda používá <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> k vyhledání všech názvů adresářů v aktuálním adresáři. Tyto názvy jsou uloženy v poli a následně `GetAllDirectories` volání sebe sama a procházející v každém nalezeném adresáři. V důsledku toho jsou všechny názvy adresářů vráceny v poli. Dále kód volá metodu `GetAllFiles`. Tato metoda volá `GetAllDirectories` pro zjištění názvů všech adresářů a pak zkontroluje každý adresář pro soubory pomocí metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A>. Výsledek je vrácen v poli pro zobrazení.  
   
  [!code-cpp[Conceptual.IsolatedStorage#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source8.cpp#9)]
  [!code-csharp[Conceptual.IsolatedStorage#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source8.cs#9)]

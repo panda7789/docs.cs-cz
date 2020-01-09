@@ -3,23 +3,21 @@ title: Odebrání uzlů z modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 0a98e0ca-0555-45c1-ab69-0d8d20ca1abd
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: be592466627e6ee7b23c608e0defe786548907ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a34b92abc59215c3cb2b94afd88e2e30405b4e9a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698665"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710307"
 ---
 # <a name="removing-nodes-from-the-dom"></a>Odebrání uzlů z modelu DOM
-Chcete-li odebrat uzel z XML Document Object Model (DOM), použijte <xref:System.Xml.XmlNode.RemoveChild%2A> metoda odebrání určitého uzlu. Při odebírání uzlu metodu odebere podstrom, které patří k uzlu odebírá; To znamená pokud není uzel typu list.  
+Chcete-li odebrat uzel z XML model DOM (Document Object Model) (DOM), použijte metodu <xref:System.Xml.XmlNode.RemoveChild%2A> k odebrání konkrétního uzlu. Když odeberete uzel, metoda odstraní podstrom patřící k odebíranému uzlu. To znamená, že pokud se nejedná o uzel typu list.  
   
- Chcete-li odebrat více uzlů z modelu DOM, použijte <xref:System.Xml.XmlNode.RemoveAll%2A> metoda odebrat všechny podřízené prvky a atributy, pokud je k dispozici pro aktuální uzel.  
+ Chcete-li odebrat více uzlů z modelu DOM, použijte metodu <xref:System.Xml.XmlNode.RemoveAll%2A> k odebrání všech podřízených objektů a atributů, pokud jsou k dispozici pro aktuální uzel.  
   
- Pokud pracujete s <xref:System.Xml.XmlNamedNodeMap>, můžete odebrat uzel pomocí <xref:System.Xml.XmlNamedNodeMap.RemoveNamedItem%2A> metoda.  
+ Pokud pracujete s <xref:System.Xml.XmlNamedNodeMap>, můžete uzel odebrat pomocí metody <xref:System.Xml.XmlNamedNodeMap.RemoveNamedItem%2A>.  
   
- Chcete-li odebrat atributy, naleznete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
+ Chcete-li odebrat atributy, přečtěte si téma [Odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
   
 ## <a name="see-also"></a>Viz také:
 

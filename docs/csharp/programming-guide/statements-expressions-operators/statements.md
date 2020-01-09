@@ -1,17 +1,16 @@
 ---
 title: Příkazy – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 8cac8144516666690715ff4e0bdc526c365765f5
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: d50b50bb291d0d087015ea5bd075ae90ced66ff5
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635103"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711932"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 

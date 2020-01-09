@@ -3,41 +3,39 @@ title: Odebrání atributů z uzlu elementu v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7031d34916c520f52550d215a1a8e62880209c87
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bb18e712d5ed2cd06c7ae0e867b19ca8a9ad2513
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590038"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710346"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Odebrání atributů z uzlu elementu v modelu DOM
-Existuje mnoho způsobů, jak odebrat atributy. Jednou z metod je odebrat z kolekce atributu. K tomuto účelu se provádí následující kroky:  
+Existuje mnoho způsobů, jak odebrat atributy. Jednou z postupů je odebrat je z kolekce atributů. K tomu je potřeba provést následující kroky:  
   
-1. Získat kolekci atributu pomocí elementu `XmlAttributeCollection attrs = elem.Attributes;`.  
+1. Získat kolekci atributů z elementu pomocí `XmlAttributeCollection attrs = elem.Attributes;`.  
   
 2. Odeberte atribut z kolekce atributů pomocí jedné ze tří metod:  
   
-    - Použití <xref:System.Xml.XmlAttributeCollection.Remove%2A> odebrat konkrétní atribut.  
+    - Pro odebrání konkrétního atributu použijte <xref:System.Xml.XmlAttributeCollection.Remove%2A>.  
   
-    - Použití <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> odebrat všechny atributy z kolekce a nechte elementu žádné atributy.  
+    - Použijte <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> k odebrání všech atributů z kolekce a ponechání elementu bez atributů.  
   
-    - Použití <xref:System.Xml.XmlAttributeCollection.RemoveAt%2A> odebrat atribut z kolekce atributů pomocí jeho indexové číslo.  
+    - Pomocí <xref:System.Xml.XmlAttributeCollection.RemoveAt%2A> můžete odebrat atribut z kolekce atributů pomocí jeho čísla indexu.  
   
- Následující metody odebrání atributů z uzlu elementu.  
+ Následující metody odstraňují atributy z uzlu element.  
   
-- Použití <xref:System.Xml.XmlElement.RemoveAllAttributes%2A> odebrat kolekci atributů.  
+- Pro odebrání kolekce atributů použijte <xref:System.Xml.XmlElement.RemoveAllAttributes%2A>.  
   
-- Použití <xref:System.Xml.XmlElement.RemoveAttribute%2A> odebrat jeden atribut podle názvu z kolekce.  
+- Pomocí <xref:System.Xml.XmlElement.RemoveAttribute%2A> odebrat jeden atribut podle názvu z kolekce.  
   
-- Použití <xref:System.Xml.XmlElement.RemoveAttributeAt%2A> odebrat jeden atribut číslem indexu z kolekce.  
+- Použijte <xref:System.Xml.XmlElement.RemoveAttributeAt%2A> k odebrání jednoho atributu podle čísla indexu z kolekce.  
   
- Jeden další alternativou je načíst prvek, získat atribut z kolekce atributů a odebrat uzel atributu přímo. Pokud chcete získat atribut z kolekce atributů, můžete použít název, `XmlAttribute attr = attrs["attr_name"];`, index `XmlAttribute attr = attrs[0];`, nebo plně kvalifikovaný název s oborem názvů `XmlAttribute attr = attrs["attr_localName", "attr_namespace"]`.  
+ Jednou z možností je získat element, získat atribut z kolekce atributů a přímo odebrat uzel atributu. Chcete-li získat atribut z kolekce atributů, můžete použít název, `XmlAttribute attr = attrs["attr_name"];`, index `XmlAttribute attr = attrs[0];`nebo plně kvalifikovaný název s oborem názvů `XmlAttribute attr = attrs["attr_localName", "attr_namespace"]`.  
   
- Bez ohledu na použitou k odebrání atributů metodu jsou zvláštní omezení týkající se odebrání atributů, které jsou definovány jako výchozí atributy v definici typu dokumentu (DTD). Výchozí atributy nelze odebrat, pokud je odebrán element, do kterých patří. Výchozí atributy jsou vždy k dispozici pro prvky, které mají výchozí atributy deklarované. Odebrání výchozí atribut ze <xref:System.Xml.XmlAttributeCollection> nebo z <xref:System.Xml.XmlElement> výsledky v atributu nahrazení vložen do <xref:System.Xml.XmlAttributeCollection> prvku inicializována na výchozí hodnotu, která byla deklarována. Pokud máte definované jako element `<book att1="1" att2="2" att3="3"></book>`, máte `book` deklarovat element s tři výchozí atributy. Implementace XML Document Object Model (DOM) zaručuje, že pokud je to to `book` existuje element, má tyto tři výchozí atributy `att1`, `att2`, a `att3`.  
+ Bez ohledu na metodu použitou k odebrání atributů existují zvláštní omezení na odebrání atributů, které jsou definovány jako výchozí atributy v definici typu dokumentu (DTD). Výchozí atributy nelze odebrat, pokud není odebrán element, ke kterému patří. Pro prvky, které mají deklarované výchozí atributy, jsou vždy přítomny výchozí atributy. Odebrání výchozího atributu z <xref:System.Xml.XmlAttributeCollection> nebo z <xref:System.Xml.XmlElement> vede k nahrazení nahrazujícího atributu vloženého do <xref:System.Xml.XmlAttributeCollection> elementu, inicializovaného na výchozí hodnotu, která byla deklarována. Pokud máte element definovaný jako `<book att1="1" att2="2" att3="3"></book>`, pak máte `book` element se třemi výchozími atributy deklarovanými. Implementace XML model DOM (Document Object Model) (DOM) zaručuje, že pokud tento `book` prvek existuje, má tyto tři výchozí atributy `att1`, `att2`a `att3`.  
   
- Při volání s <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> metoda nastaví hodnotu atributu String.Empty, protože atribut nemůže existovat bez hodnoty.  
+ Při volání s <xref:System.Xml.XmlAttribute>metoda <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> nastaví hodnotu atributu na String. Empty, protože atribut nesmí existovat bez hodnoty.  
   
 ## <a name="see-also"></a>Viz také:
 

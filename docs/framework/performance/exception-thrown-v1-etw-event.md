@@ -5,14 +5,12 @@ helpviewer_keywords:
 - ExceptionThrown_V1 event [.NET Framework]
 - ETW, ExceptionThrown_V1 event (CLR)
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3f0e968053c87319bf90bf3de0f21d750ec899ab
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 80faf6e607755ee79c7ec17f2d7d3d5bdce822b7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447626"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716056"
 ---
 # <a name="exception-thrown_v1-etw-event"></a>Událost Trasování událostí pro Windows výjimky Thrown_V1
 Tato událost zachycuje informace o vyvolaných výjimkách.  
@@ -31,7 +29,7 @@ Tato událost zachycuje informace o vyvolaných výjimkách.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Typ dat|Popis|  
+|Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |Typ výjimky|win:UnicodeString|Typ výjimky; například `System.NullReferenceException`.|  
 |Zpráva o výjimce|win:UnicodeString|Skutečná zpráva výjimky|  

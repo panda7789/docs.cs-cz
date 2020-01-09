@@ -1,26 +1,25 @@
 ---
 title: Atribut cref – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: d088e1fcd0a1d1910b1284909dccf7b7d7b1d479
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 13bdfefaaa6f8daff0e7d9e30a6353af34654ba2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588163"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75697244"
 ---
 # <a name="cref-attribute-c-programming-guide"></a>cref – atribut (Průvodce programováním v C#)
-`cref` Atribut v dokumentaci XML označuje označení "odkaz na kód". Určuje, zda je vnitřní text značky prvkem kódu, jako je například typ, metoda nebo vlastnost. Nástroje dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , používají `cref` atributy k automatickému vygenerování hypertextových odkazů na stránku, kde je daný typ nebo člen dokumentován.  
+Atribut `cref` v dokumentaci XML označuje označení "odkaz na kód". Určuje, zda je vnitřní text značky prvkem kódu, jako je například typ, metoda nebo vlastnost. Nástroje dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , používají atributy `cref` k automatickému vygenerování hypertextových odkazů na stránku, kde je daný typ nebo člen dokumentován.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje `cref` atributy používané v [ \<tématu >](./see.md) značek.  
+ Následující příklad ukazuje `cref` atributy používané v [\<zobrazit značky >](./see.md) .  
   
  [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]  
   
- Při kompilaci program vytvoří následující soubor XML. Všimněte si, `cref` že atribut `GetZero` metody, například, byl transformován kompilátorem na `"M:TestNamespace.TestClass.GetZero"`. Předpona "M:" znamená "metoda" a je konvence, kterou rozpoznávají nástroje dokumentace, jako jsou DocFX a Sandcastle. Úplný seznam předpon najdete v tématu [zpracování souboru XML](./processing-the-xml-file.md).  
+ Při kompilaci program vytvoří následující soubor XML. Všimněte si, že atribut `cref` pro metodu `GetZero`, například, byl transformován kompilátorem na `"M:TestNamespace.TestClass.GetZero"`. Předpona "M:" znamená "metoda" a je konvence, kterou rozpoznávají nástroje dokumentace, jako jsou DocFX a Sandcastle. Úplný seznam předpon najdete v tématu [zpracování souboru XML](./processing-the-xml-file.md).  
   
 ```xml  
 <?xml version="1.0"?>  

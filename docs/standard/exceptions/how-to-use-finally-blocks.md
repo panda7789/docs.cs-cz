@@ -13,20 +13,18 @@ helpviewer_keywords:
 - finally blocks
 - ArgumentOutOfRangeException class
 ms.assetid: 4b9c0137-04af-4468-91d1-b9014df8ddd2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 213ab53c68a37ac0ba5f337a1d6fc32bfe6f8989
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 44fbb53437c4c8f19a424227a167e2e268b77057
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970908"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708829"
 ---
-# <a name="how-to-use-finally-blocks"></a>Postup použití bloku finally.
+# <a name="how-to-use-finally-blocks"></a>Jak používat bloky finally
 
-Když dojde k výjimce, zastaví provádění a ovládací prvek dostane k obslužné rutině příslušné výjimky. To často znamená, že se přeskočí řádky kódu, který očekáváte, že má být proveden. Některé vyčištění prostředků, jako je například zavření souboru, je nutné provést i v případě, že dojde k výjimce. K tomuto účelu můžete použít `finally` bloku. A `finally` vždy provede blok, bez ohledu na to, zda je vyvolána výjimka.
+Pokud dojde k výjimce, spuštění se zastaví a ovládací prvek se přestává příslušné obslužné rutině výjimky. To často znamená, že řádky kódu, které očekáváte, jsou vynechány. Některé vyčištění prostředků, jako je například zavření souboru, je nutné provést i v případě, že je vyvolána výjimka. K tomu můžete použít blok `finally`. `finally` blok se vždy spustí bez ohledu na to, zda je vyvolána výjimka.
 
-Následující příklad kódu používá `try` / `catch` bloku catch <xref:System.ArgumentOutOfRangeException>. `Main` Metoda vytvoří dvě pole a pokusí se zkopírujte jeden na druhý. Vytvoří akci <xref:System.ArgumentOutOfRangeException> a bude chyba zapsána do konzoly. `finally` Blok se spustí bez ohledu na to výsledek akce kopírování.
+Následující příklad kódu používá `try`/`catch` blok k zachycení <xref:System.ArgumentOutOfRangeException>. Metoda `Main` vytvoří dvě pole a pokusí se je zkopírovat do druhé. Akce vygeneruje <xref:System.ArgumentOutOfRangeException> a chyba se zapíše do konzoly. `finally` blok se provede bez ohledu na výsledek akce kopírování.
 
 [!code-cpp[CodeTryCatchFinallyExample#3](../../../samples/snippets/cpp/VS_Snippets_CLR/CodeTryCatchFinallyExample/CPP/source2.cpp#3)]
 [!code-csharp[CodeTryCatchFinallyExample#3](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeTryCatchFinallyExample/CS/source2.cs#3)]

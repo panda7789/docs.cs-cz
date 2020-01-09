@@ -1,17 +1,16 @@
 ---
 title: Obecné typy a atributy – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], attributes
 - attributes [C#], with generics
 ms.assetid: da9fc326-4648-454a-8e13-3911a2edefd7
-ms.openlocfilehash: 99a24a7069145dfad5ce6c9c91f2a8653eb9a224
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 47bf4e8f07a8b6778db8fa675d745d362dc10d7d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589636"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75703023"
 ---
 # <a name="generics-and-attributes-c-programming-guide"></a>Obecné typy a atributy (Průvodce programováním v C#)
 Atributy lze použít na obecné typy stejným způsobem jako jiné než obecné typy. Další informace o použití atributů naleznete v tématu [Attributes](../concepts/attributes/index.md).  
@@ -26,7 +25,7 @@ Atributy lze použít na obecné typy stejným způsobem jako jiné než obecné
   
  [!code-csharp[csProgGuideGenerics#49](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#49)]  
   
- Zadejte více parametrů typu pomocí vhodného počtu čárek. V tomto příkladu `GenericClass2` má dva parametry typu:  
+ Zadejte více parametrů typu pomocí vhodného počtu čárek. V tomto příkladu má `GenericClass2` dva parametry typu:  
   
  [!code-csharp[csProgGuideGenerics#50](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#50)]  
   
@@ -42,7 +41,7 @@ Atributy lze použít na obecné typy stejným způsobem jako jiné než obecné
   
  [!code-csharp[csProgGuideGenerics#53](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#53)]  
   
- Chcete-li získat informace o obecném typu nebo parametru typu v době běhu, můžete použít metody <xref:System.Reflection>. Další informace naleznete v tématu [Obecné typy a](./generics-and-reflection.md) reflexe.  
+ Chcete-li získat informace o obecném typu nebo parametru typu v době běhu, můžete použít metody <xref:System.Reflection>. Další informace naleznete v tématu [Obecné typy a reflexe](./generics-and-reflection.md) .  
   
 ## <a name="see-also"></a>Viz také:
 

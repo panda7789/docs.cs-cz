@@ -3,13 +3,12 @@ title: Telemetrie .NET Core SDK
 description: Objevte funkce telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.custom: seodec18
-ms.openlocfilehash: ecb8dbed036a04726867d004dbadf6205c1fa09f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8bde344ee393e113502a0895ee55c241cbf24c57
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281778"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714106"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrie .NET Core SDK
 
@@ -55,7 +54,7 @@ Ochrana vašich osobních údajů je pro nás důležitá. Pokud máte podezřen
 
 Funkce telemetrie shromažďuje následující data:
 
-| Verze sady SDK | Data |
+| Verze sady SDK | Datové |
 |--------------|------|
 | Všechny          | Časové razítko vyvolání |
 | Všechny          | Byl vyvolán příkaz (například "Build"), který začíná hodnotou hash 2,1. |
@@ -95,8 +94,8 @@ Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu 
 |-------------------------|------------------------------------------------------------------------------------------------|
 | `--verbosity`           | Všechny příkazy                                                                                   |
 | `--language`            | `dotnet new`                                                                                   |
-| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run``dotnet test`                  |
-| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test``dotnet vstest` |
+| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`                  |
+| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`, `dotnet vstest` |
 | `--runtime`             | `dotnet build``dotnet publish`                                                              |
 | `--platform`            | `dotnet vstest`                                                                                |
 | `--logger`              | `dotnet vstest`                                                                                |

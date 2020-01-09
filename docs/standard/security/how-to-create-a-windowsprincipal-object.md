@@ -11,23 +11,21 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8f298a7b036857e783efa128ce45ee8634ce993d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d409c0e9a2a6564e5fb16e4e2c72ab661ae2d5ce
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795176"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706159"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Postupy: Vytvoření objektu WindowsPrincipal
-Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPrincipal> objekt, v závislosti na tom, zda kód nutné opakovaně provádět ověřování na základě rolí nebo musí provést pouze jednou.  
+Existují dva způsoby, jak vytvořit objekt <xref:System.Security.Principal.WindowsPrincipal>, v závislosti na tom, zda kód musí opakovaně provádět ověřování na základě rolí, nebo musí být proveden pouze jednou.  
   
- Pokud kód musí opakovaně provádět ověřování na základě rolí, první z těchto postupů vytváří menší nároky. Pokud kód potřebuje provést ověření na základě rolí pouze jednou, můžete vytvořit <xref:System.Security.Principal.WindowsPrincipal> s použitím sekundu z následujících postupů.  
+ Pokud kód musí opakovaně provádět ověřování na základě rolí, pak první z následujících postupů vytvoří méně režijních nákladů. Pokud kód musí učinit ověřování na základě role pouze jednou, můžete vytvořit objekt <xref:System.Security.Principal.WindowsPrincipal> pomocí druhého z následujících postupů.  
   
-### <a name="to-create-a-windowsprincipal-object-for-repeated-validation"></a>K vytvoření objektu WindowsPrincipal pro opakované ověření  
+### <a name="to-create-a-windowsprincipal-object-for-repeated-validation"></a>Vytvoření objektu WindowsPrincipal pro opakované ověření  
   
-1. Volání <xref:System.AppDomain.SetPrincipalPolicy%2A> metodu na <xref:System.AppDomain> objekt, který je vrácený statické <xref:System.AppDomain.CurrentDomain%2A?displayProperty=nameWithType> vlastnost předávání metodu <xref:System.Security.Principal.PrincipalPolicy> hodnotu výčtu, která určuje, co by měl být nové zásady. Podporované hodnoty jsou <xref:System.Security.Principal.PrincipalPolicy.NoPrincipal>, <xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal>, a <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>. Následující kód ukazuje volání této metody.  
+1. Zavolejte metodu <xref:System.AppDomain.SetPrincipalPolicy%2A> u objektu <xref:System.AppDomain>, který je vrácený vlastností static <xref:System.AppDomain.CurrentDomain%2A?displayProperty=nameWithType>, předáním metody <xref:System.Security.Principal.PrincipalPolicy> hodnotu výčtu, která indikuje, co by mělo být nové zásady. Podporované hodnoty jsou <xref:System.Security.Principal.PrincipalPolicy.NoPrincipal>, <xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal>a <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>. Následující kód demonstruje toto volání metody.  
   
     ```csharp  
     AppDomain.CurrentDomain.SetPrincipalPolicy(  
@@ -39,7 +37,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPri
         PrincipalPolicy.WindowsPrincipal)  
     ```  
   
-2. Nastavit zásady, použijte statické <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> vlastnost pro načtení instanční objekt, který zapouzdřuje aktuálního uživatele Windows. Vzhledem k tomu, že vlastnost návratový typ <xref:System.Security.Principal.IPrincipal>, musíte přetypovat výsledek, který má <xref:System.Security.Principal.WindowsPrincipal> typu. Následující kód inicializuje novou <xref:System.Security.Principal.WindowsPrincipal> objektu na hodnotu objektu spojené s aktuálním vláknem.  
+2. Pomocí sady zásad použijte vlastnost statického <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> k načtení objektu zabezpečení, který zapouzdřuje aktuálního uživatele systému Windows. Vzhledem k tomu, že návratový typ vlastnosti je <xref:System.Security.Principal.IPrincipal>, musíte přetypovat výsledek na typ <xref:System.Security.Principal.WindowsPrincipal>. Následující kód inicializuje nový objekt <xref:System.Security.Principal.WindowsPrincipal> k hodnotě objektu zabezpečení přidruženého k aktuálnímu vláknu.  
   
     ```csharp  
     WindowsPrincipal myPrincipal =   
@@ -51,11 +49,11 @@ Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPri
         CType(Thread.CurrentPrincipal, WindowsPrincipal)   
     ```  
   
-3. Po vytvoření objektu zabezpečení, můžete použít některou z několika metod abyste ověřili, že.  
+3. Po vytvoření objektu zabezpečení můžete použít některou z několika metod k jeho ověření.  
   
-### <a name="to-create-a-windowsprincipal-object-for-a-single-validation"></a>K vytvoření objektu WindowsPrincipal pro jedno ověření  
+### <a name="to-create-a-windowsprincipal-object-for-a-single-validation"></a>Vytvoření objektu WindowsPrincipal pro jedno ověření  
   
-1. Inicializovat nový <xref:System.Security.Principal.WindowsIdentity> objektu voláním statické <xref:System.Security.Principal.WindowsIdentity.GetCurrent%2A?displayProperty=nameWithType> metodu, která vyhledá aktuální účet Windows a uvádí informace o tento účet do nově vytvořeného identity objektu. Následující kód vytvoří novou <xref:System.Security.Principal.WindowsIdentity> objektu a inicializuje ji aktuálně ověřeného uživatele.  
+1. Inicializujte nový objekt <xref:System.Security.Principal.WindowsIdentity> voláním statické metody <xref:System.Security.Principal.WindowsIdentity.GetCurrent%2A?displayProperty=nameWithType>, která se dotazuje na aktuální účet systému Windows a umístí informace o tomto účtu do nově vytvořeného objektu identity. Následující kód vytvoří nový objekt <xref:System.Security.Principal.WindowsIdentity> a inicializuje jej na aktuálně ověřeného uživatele.  
   
     ```csharp  
     WindowsIdentity myIdentity = WindowsIdentity.GetCurrent();  
@@ -65,7 +63,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPri
     Dim myIdentity As WindowsIdentity = WindowsIdentity.GetCurrent()  
     ```  
   
-2. Vytvořte nový <xref:System.Security.Principal.WindowsPrincipal> objektu a předejte jí hodnotu <xref:System.Security.Principal.WindowsIdentity> objekt vytvořený v předchozím kroku.  
+2. Vytvořte nový objekt <xref:System.Security.Principal.WindowsPrincipal> a předejte mu hodnotu objektu <xref:System.Security.Principal.WindowsIdentity> vytvořeného v předchozím kroku.  
   
     ```csharp  
     WindowsPrincipal myPrincipal = new WindowsPrincipal(myIdentity);  
@@ -75,7 +73,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPri
     Dim myPrincipal As New WindowsPrincipal(myIdentity)  
     ```  
   
-3. Po vytvoření objektu zabezpečení, můžete použít některou z několika metod abyste ověřili, že.  
+3. Po vytvoření objektu zabezpečení můžete použít některou z několika metod k jeho ověření.  
   
 ## <a name="see-also"></a>Viz také:
 

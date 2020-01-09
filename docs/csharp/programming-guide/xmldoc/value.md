@@ -1,6 +1,5 @@
 ---
 title: <value> – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <value>
@@ -8,14 +7,14 @@ helpviewer_keywords:
 - <value> C# XML tag
 - value C# XML tag
 ms.assetid: 08dbadaf-9ab6-43d9-9493-98e43bed199a
-ms.openlocfilehash: 09577d931c6b1f571cd4112c788da38bab85bf42
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a30435c40ad31e026b9cb1952086984548f0cdb6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523276"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694540"
 ---
-# <a name="value-c-programming-guide"></a>> \<value (C# Průvodce programováním)
+# <a name="value-c-programming-guide"></a>> hodnota \<(C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -27,7 +26,7 @@ ms.locfileid: "72523276"
  Popis vlastnosti  
   
 ## <a name="remarks"></a>Poznámky  
- Značka > \<value umožňuje popsat hodnotu, kterou vlastnost představuje. Všimněte si, že při přidání vlastnosti prostřednictvím průvodce kódem ve vývojovém prostředí sady Visual Studio .NET bude přidána značka [\<summary >](./summary.md) pro novou vlastnost. Měli byste potom ručně přidat značku > \<value k popisu hodnoty, kterou vlastnost představuje.  
+ Hodnota \<> tag umožňuje popsat hodnotu, kterou vlastnost představuje. Všimněte si, že při přidání vlastnosti přes průvodce kódem ve vývojovém prostředí sady Visual Studio .NET bude přidána značka [\<summary >](./summary.md) pro novou vlastnost. Měli byste pak ručně přidat \<Value > tag k popisu hodnoty, kterou vlastnost představuje.  
   
  Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   

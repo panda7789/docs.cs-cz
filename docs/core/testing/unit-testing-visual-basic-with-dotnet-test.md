@@ -4,13 +4,12 @@ description: Seznamte se s koncepty testování částí v .NET Core pomocí int
 author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
-ms.custom: seodec18
-ms.openlocfilehash: 1738aa805947fbe0c1b7c2c770947ce650692b5f
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c587aaa5c4c50ec66ac6cd8cd7aefd7b0ca1a80c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117058"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715423"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Testování částí Visual Basic knihoven .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -21,7 +20,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 ## <a name="creating-the-source-project"></a>Vytvoření zdrojového projektu
 
 Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-VB-using-dotnet-test* pro uložení řešení.
-V tomto novém adresáři spusťte příkaz [`dotnet new sln`](../tools/dotnet-new.md) a vytvořte nové řešení. Tento postup usnadňuje správu knihovny tříd i projektu testu jednotek.
+V tomto novém adresáři spusťte [`dotnet new sln`](../tools/dotnet-new.md) a vytvořte nové řešení. Tento postup usnadňuje správu knihovny tříd i projektu testu jednotek.
 V adresáři řešení vytvořte adresář *PrimeService* . Máte zatím následující strukturu adresářů a souborů:
 
 ```
@@ -30,7 +29,7 @@ V adresáři řešení vytvořte adresář *PrimeService* . Máte zatím násled
     /PrimeService
 ```
 
-Vytvořte *PrimeService* aktuální adresář a spusťte příkaz [`dotnet new classlib -lang VB`](../tools/dotnet-new.md) k vytvoření zdrojového projektu. Přejmenujte *Class1. vb* na *PrimeService. vb*. Vytvoříte selhání implementace `PrimeService` třídy:
+Vytvořte *PrimeService* aktuální adresář a spusťte [`dotnet new classlib -lang VB`](../tools/dotnet-new.md) pro vytvoření zdrojového projektu. Přejmenujte *Class1. vb* na *PrimeService. vb*. Vytvoříte selhání implementace `PrimeService` třídy:
 
 ```vb
 Namespace Prime.Services
@@ -42,7 +41,7 @@ Namespace Prime.Services
 End Namespace
 ```
 
-Změňte adresář zpátky na *test Unit-Test-VB-using-dotnet-test* Directory. Spusťte [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) , chcete-li přidat projekt knihovny tříd do řešení.
+Změňte adresář zpátky na *test Unit-Test-VB-using-dotnet-test* Directory. Spusťte [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) pro přidání projektu knihovny tříd do řešení.
 
 ## <a name="creating-the-test-project"></a>Vytváření testovacího projektu
 
@@ -67,7 +66,7 @@ Nastavte adresář *PrimeService. Tests* na aktuální adresář a vytvořte nov
 </ItemGroup>
 ```
 
-Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali xUnit a xUnit Runner. Nyní přidejte `PrimeService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
+Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new` v předchozím kroku jsme přidali xUnit a xUnit Runner. Nyní přidejte knihovnu tříd `PrimeService` jako jinou závislost do projektu. Použijte příkaz [`dotnet add reference`](../tools/dotnet-add-reference.md) :
 
 ```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.vbproj
@@ -88,7 +87,7 @@ Máte následující konečné rozložení složky:
         PrimeServiceTests.vbproj
 ```
 
-Spusťte [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) v adresáři *Unit-Testing-VB-using-dotnet-test* . 
+Proveďte [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) v adresáři *testování částí-VB-using-dotnet-test* . 
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
@@ -112,9 +111,9 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-`<Fact>` Atribut označuje testovací metodu, která je spuštěna nástrojem Test Runner. Z rutiny *testování částí-using-dotnet-test*spusťte [`dotnet test`](../tools/dotnet-test.md) sestavení testů a knihovny tříd a poté spusťte testy. XUnit Test Runner obsahuje vstupní bod programu pro spuštění testů. `dotnet test`spustí Test Runner pomocí projektu testování částí, který jste vytvořili.
+Atribut `<Fact>` označuje testovací metodu, která je spuštěna nástrojem Test Runner. Z rutiny *testování částí-using-dotnet-test*spusťte [`dotnet test`](../tools/dotnet-test.md) pro sestavení testů a knihovny tříd a poté spusťte testy. XUnit Test Runner obsahuje vstupní bod programu pro spuštění testů. `dotnet test` spustí Test Runner pomocí projektu testování částí, který jste vytvořili.
 
-Test se nezdařil. Ještě jste nevytvořili implementaci. Proveďte tento test průchodu vytvořením nejjednoduššího kódu `PrimeService` ve třídě, která funguje:
+Test se nezdařil. Ještě jste nevytvořili implementaci. Proveďte tento test průchodu tak, že napíšete nejjednodušší kód ve třídě `PrimeService`, která funguje:
 
 ```vb
 Public Function IsPrime(candidate As Integer) As Boolean
@@ -125,17 +124,17 @@ Public Function IsPrime(candidate As Integer) As Boolean
 End Function
 ```
 
-V adresáři *testování částí-VB-using-dotnet-test* spusťte `dotnet test` znovu. Příkaz spustí sestavení `PrimeService` pro`PrimeService.Tests` projekt a potom pro projekt. `dotnet test` Po sestavení obou projektů spustí tento jediný test. Předá.
+V adresáři *Unit-Testing-VB-using-dotnet-test* spusťte znovu `dotnet test`. Příkaz `dotnet test` spustí sestavení pro projekt `PrimeService` a potom pro projekt `PrimeService.Tests`. Po sestavení obou projektů spustí tento jediný test. Předá.
 
 ## <a name="adding-more-features"></a>Přidání dalších funkcí
 
-Teď, když jste udělali jeden test Pass, je čas zapsat další. Pro čísla apostrofů existuje několik dalších jednoduchých případů: 0, -1. Tyto případy můžete přidat jako nové testy s `<Fact>` atributem, ale to se rychle bude zdlouhavé. Existují další atributy xUnit, které umožňují napsat sadu podobných testů.  `<Theory>` Atribut představuje sadu testů, které spouštějí stejný kód, ale mají různé vstupní argumenty. `<InlineData>` Atribut můžete použít k zadání hodnot pro tyto vstupy.
+Teď, když jste udělali jeden test Pass, je čas zapsat další. Pro čísla apostrofů existuje několik dalších jednoduchých případů: 0,-1. Tyto případy můžete přidat jako nové testy s atributem `<Fact>`, ale to se rychle bude zdlouhavé. Existují další atributy xUnit, které umožňují napsat sadu podobných testů.  Atribut `<Theory>` představuje sadu testů, které spouštějí stejný kód, ale mají různé vstupní argumenty. Pomocí atributu `<InlineData>` můžete zadat hodnoty pro tyto vstupy.
 
 Místo vytváření nových testů použijte tyto dva atributy pro vytvoření jedné teorie. Teoretická je metoda, která testuje několik hodnot menší než dvě, což je nejnižší číslo základny:
 
 [!code-vb[Sample_TestCode](../../../samples/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb?name=Sample_TestCode)]
 
-Spuštění `dotnet test`a dva z těchto testů selžou. Chcete-li provést všechny testy Pass, změňte `if` klauzuli na začátku metody:
+Spusťte `dotnet test`a dva z těchto testů selžou. Chcete-li provést všechny testy Pass, změňte klauzuli `if` na začátku metody:
 
 ```vb
 if candidate < 2

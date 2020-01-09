@@ -1,16 +1,15 @@
 ---
 title: Postup implementace a volání vlastní metody rozšíření – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: f3d96c033380698ade37c49ecbfeed14f05d3e11
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7e2092a37c1f042a087e03f4a272139b585156c8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970897"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705597"
 ---
 # <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Postup implementace a volání vlastní metody rozšíření (C# Průvodce programováním)
 Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro libovolný typ rozhraní .NET. Kód klienta může použít vaše metody rozšíření přidáním odkazu na knihovnu DLL, který obsahuje, a přidáním direktivy [using](../../language-reference/keywords/using-directive.md) , která určuje obor názvů, ve kterém jsou definovány metody rozšíření.  
@@ -42,7 +41,7 @@ Toto téma ukazuje, jak implementovat vlastní metody rozšíření pro libovoln
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [Rozšiřující metody](./extension-methods.md)
+- [Metody rozšíření](./extension-methods.md)
 - [LINQ (jazykově integrovaný dotaz)](../../linq/linq-in-csharp.md)
 - [Statické třídy a jejich členové](./static-classes-and-static-class-members.md)
 - [protected](../../language-reference/keywords/protected.md)

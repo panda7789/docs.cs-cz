@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
-ms.openlocfilehash: 6e8697379a6fbb5cc15b60291e5b822897c2c013
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 49e6f79c13c94a3f2f6891b259c4bb2bec54ae6f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348326"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344524"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Návod: Ověření, že hesla jsou složitá (Visual Basic).
 Tato metoda kontroluje některé charakteristiky silného hesla a aktualizuje parametr řetězce o informace o tom, která Kontrola hesla se nezdařila.  
@@ -23,14 +23,14 @@ Tato metoda kontroluje některé charakteristiky silného hesla a aktualizuje pa
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbcnRegEx#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#1)]  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
  Zavolejte tuto metodu předáním řetězce, který obsahuje toto heslo.  
   
  Tento příklad vyžaduje:  
   
 - Přístup k členům oboru názvů <xref:System.Text.RegularExpressions>. Pokud plně nekvalifikujete názvy členů v kódu, přidejte `Imports` příkaz. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
-## <a name="security"></a>Zabezpečení  
+## <a name="security"></a>Zabezpečení –  
  Pokud přesouváte heslo v síti, musíte pro přenos dat použít zabezpečenou metodu. Další informace najdete v tématu [zabezpečení webových aplikací ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100)).
   
  Přesnost funkce `ValidatePassword` můžete zlepšit přidáním dalších kontrol složitosti:  

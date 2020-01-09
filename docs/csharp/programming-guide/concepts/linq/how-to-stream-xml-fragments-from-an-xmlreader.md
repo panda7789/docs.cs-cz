@@ -2,14 +2,15 @@
 title: Postup streamování fragmentů XML z objektu XmlReaderC#()
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: 20fa4096a79648edc3f5d699f764fc6d71fa0ba4
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: f7914d33622518f983a685dd2e844a25fd3ca15f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635649"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714658"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Postup streamování fragmentů XML z objektu XmlReaderC#()
+
 V případě potřeby zpracování velkých souborů XML nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamovat fragmenty pomocí <xref:System.Xml.XmlReader>.  
   
  Jedním z nejúčinnějších způsobů, jak použít <xref:System.Xml.XmlReader> ke čtení objektů <xref:System.Xml.Linq.XElement>, je napsat vlastní metodu vlastní osy. Metoda Axis obvykle vrací kolekci, například <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, jak je znázorněno v příkladu v tomto tématu. V metodě vlastní osy po vytvoření fragmentu XML voláním metody <xref:System.Xml.Linq.XNode.ReadFrom%2A> vraťte kolekci pomocí `yield return`. To poskytuje sémantiku pro odložené provádění vlastní metody osy.  
@@ -81,4 +82,3 @@ ccc
 ```  
   
  V tomto příkladu je zdrojový dokument velmi malý. Nicméně i v případě, že existovaly miliony `Child` prvků, bude mít tento příklad pořád malou paměť.  
-  

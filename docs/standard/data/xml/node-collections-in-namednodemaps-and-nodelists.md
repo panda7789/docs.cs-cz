@@ -3,19 +3,17 @@ title: Kolekce uzlů v NamedNodeMaps a NodeLists
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 025954b8-7aa8-47c5-a1c1-f81064fb4d65
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 66f5874da91cfbe381f49c6dbe82d4622bcfc88b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6af51d993f8328b4e5d1abb05fcc4b06daa53d7b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644306"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710580"
 ---
 # <a name="node-collections-in-namednodemaps-and-nodelists"></a>Kolekce uzlů v NamedNodeMaps a NodeLists
-Můžete načíst sadu uzlů a vložit ho do neseřazené nebo seřazené kolekce. Při uvedení sady uzlů do Neseřazený kolekce, sada je volán NamedNodeMap World Wide Web Consortium (W3C); můžete načíst data podle názvu nebo indexu u tohoto typu kolekce. Uvedení sady uzlů v uspořádanou kolekci je volán seznamu W3C a data je možné načíst podle index založený na nule. NamedNodeMaps a NodeLists jsou popsány Konzorcium W3C. Je implementace v rozhraní Microsoft .NET Framework pro NamedNodeMap **XmlNamedNodeMap**, a seznamu je implementované **XmlNodeList**.  
+Můžete načíst sadu uzlů a umístit ji do seřazené nebo neuspořádané kolekce. Při vložení sady uzlů do neuspořádané kolekce se sada nazývá konsorcium World Wide Web NamedNodeMap (W3C); data můžete načíst podle názvu nebo indexu v tomto typu kolekce. Vložení sady uzlů do seřazené kolekce se nazývá seznam uzlů. konsorcium W3C a data lze načíst pomocí indexu založeného na nule. NamedNodeMaps a NodeLists jsou popsány konsorciem W3C. Implementace v Microsoft .NET Framework pro NamedNodeMap jsou **XmlNamedNodeMap**a seznam uzlů. je implementováno pomocí **XmlNodeList**.  
   
- Informace o kolekci neuspořádaný, naleznete v tématu [Neseřazený načtení uzlů podle názvu nebo indexu](../../../../docs/standard/data/xml/unordered-node-retrieval-by-name-or-index.md). Informace o uspořádanou kolekci, najdete v části [seřazené načtení uzlů podle indexu](../../../../docs/standard/data/xml/ordered-node-retrieval-by-index.md).  
+ Informace o neuspořádané kolekci naleznete v tématu [neuspořádané načtení uzlu podle názvu nebo indexu](../../../../docs/standard/data/xml/unordered-node-retrieval-by-name-or-index.md). Informace o seřazené kolekci najdete v tématu [pořadí načítání uzlů podle indexu](../../../../docs/standard/data/xml/ordered-node-retrieval-by-index.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 8b57affa05c77d8ed20bfead7de767a8dd994241
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 35e02d1ad4409e754c2466f7d0ae7e68214772e6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348585"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716695"
 ---
 # <a name="-reference-visual-basic"></a>-Reference (Visual Basic)
 Způsobí, že kompilátor provede informace o typech v zadaných sestaveních, které jsou k dispozici pro projekt, který právě kompilujete.  
@@ -31,7 +31,7 @@ nebo
 -r:fileList  
 ```  
   
-## <a name="arguments"></a>Argumenty  
+## <a name="arguments"></a>Arguments  
   
 |Termín|Definice|  
 |---|---|  
@@ -52,7 +52,7 @@ nebo
   
  Ve výchozím nastavení se používá soubor odezvy Vbc. rsp, který odkazuje na běžně používaná .NET Framework sestavení. Použijte `-noconfig`, pokud nechcete, aby kompilátor používal Vbc. rsp.  
   
- Krátká forma `-reference` je `/r`.  
+ Krátká forma `-reference` je `-r`.  
   
 ## <a name="example"></a>Příklad  
  Následující příkaz zkompiluje zdrojový soubor `Input.vb` a referenční sestavení z `Metad1.dll` a `Metad2.dll` k výrobě `Out.exe`.  

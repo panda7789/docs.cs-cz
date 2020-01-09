@@ -5,14 +5,12 @@ helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: d266cbd8-bf91-41d1-baf0-afbc481a741f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7e2add2756106234227c7b2dd62ae107adc58854
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c7b9dcb99e08a1ef2844c5811897aa87ff86f866
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052183"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716557"
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Konfigurace přesměrování vazby sestavení
 Ve výchozím nastavení používají aplikace sadu .NET Framework sestavení, která byla dodávána s verzí modulu runtime použitou ke kompilaci aplikace. Můžete použít **appliesTo** atribut na [\<assemblyBinding>](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) prvku v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Sestavení rozhraní. Tento nepovinný atribut používá .NET Framework číslo verze k označení, na kterou verzi se vztahuje. Pokud ne **appliesTo** atribut zadán, **\<assemblyBinding>** element platí pro všechny verze rozhraní .NET Framework.  

@@ -8,18 +8,17 @@ helpviewer_keywords:
 - exceptions, catching
 - exceptions, throwing
 ms.assetid: ab22ce03-78f9-4dca-8824-c7ed3bdccc27
-author: KrzysztofCwalina
-ms.openlocfilehash: b947c7cce057c060b1ab5054d1227f5703ccbf89
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b202d618d9d2216c8998181303250081de6781c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026333"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708981"
 ---
 # <a name="using-standard-exception-types"></a>Použití standardních typů výjimek
-Tato část popisuje standardních výjimek poskytované rozhraní Framework a podrobnosti o jejich využití. V seznamu nejsou v žádném smyslu vyčerpávající. Najdete na referenční dokumentaci rozhraní .NET Framework pro použití jiných typů výjimek Framework.  
+Tato část popisuje standardní výjimky poskytované rozhraním a podrobnosti o jejich použití. Seznam není úplným způsobem vyčerpávající. Informace o použití jiných typů výjimek rozhraní naleznete v referenční dokumentaci k .NET Framework.  
   
-## <a name="exception-and-systemexception"></a>Výjimky a SystemException  
+## <a name="exception-and-systemexception"></a>Výjimka a SystemException  
  **X DO NOT** throw <xref:System.Exception?displayProperty=nameWithType> nebo <xref:System.SystemException?displayProperty=nameWithType>.  
   
  **X DO NOT** catch `System.Exception` nebo `System.SystemException` v rámci kódu, pokud máte v úmyslu opětovné.  
@@ -32,36 +31,36 @@ Tato část popisuje standardních výjimek poskytované rozhraní Framework a p
 ## <a name="invalidoperationexception"></a>InvalidOperationException  
  **✓ DO** throw <xref:System.InvalidOperationException> Pokud objekt je v nevhodném stavu.  
   
-## <a name="argumentexception-argumentnullexception-and-argumentoutofrangeexception"></a>ArgumentException ArgumentNullException a ArgumentOutOfRangeException  
- **✓ DO** throw <xref:System.ArgumentException> nebo jednoho z jeho podtypech Pokud chybné argumenty jsou předány na člena. Preferovat nejvíc odvozený typ výjimky, pokud je k dispozici.  
+## <a name="argumentexception-argumentnullexception-and-argumentoutofrangeexception"></a>ArgumentException, ArgumentNullException a ArgumentOutOfRangeException  
+ **✓ DO** throw <xref:System.ArgumentException> nebo jednoho z jeho podtypech Pokud chybné argumenty jsou předány na člena. Preferovat největší odvozený typ výjimky, je-li k dispozici.  
   
  **✓ DO** nastavit `ParamName` při vyvolání jeden podtříd `ArgumentException`.  
   
- Tato vlastnost představuje název parametru, která způsobila vyvolání výjimky. Všimněte si, že vlastnost lze nastavit pomocí jednoho z přetížení konstruktoru.  
+ Tato vlastnost představuje název parametru, který způsobil výjimku vyvolání výjimky. Všimněte si, že vlastnost může být nastavena pomocí jednoho z přetížení konstruktoru.  
   
  **✓ DO** použít `value` pro název implicitní hodnota parametru nastavením vlastností.  
   
-## <a name="nullreferenceexception-indexoutofrangeexception-and-accessviolationexception"></a>NullReferenceException IndexOutOfRangeException a výjimka AccessViolationException  
- **X DO NOT** povolit veřejně možné volat rozhraní API pro explicitně nebo implicitně throw <xref:System.NullReferenceException>, <xref:System.AccessViolationException>, nebo <xref:System.IndexOutOfRangeException>. Tyto výjimky jsou vyhrazené a vyvolané prováděcí modul a ve že většině případů označuje chybu.  
+## <a name="nullreferenceexception-indexoutofrangeexception-and-accessviolationexception"></a>NullReferenceException, IndexOutOfRangeException a AccessViolationException –  
+ **X DO NOT** povolit veřejně možné volat rozhraní API pro explicitně nebo implicitně throw <xref:System.NullReferenceException>, <xref:System.AccessViolationException>, nebo <xref:System.IndexOutOfRangeException>. Tyto výjimky jsou vyhrazeny a vyvolány spouštěcím modulem a ve většině případů značí chybu.  
   
- Proveďte kontrolu, aby tyto výjimky argumentu. Vyvolání těchto výjimek poskytuje metodu, která se můžou časem změnit podrobnosti implementace.  
+ Udělejte kontrolu argumentů, aby nedocházelo k vyvolání těchto výjimek. Vyvolávání těchto výjimek zpřístupňuje podrobnosti o implementaci vaší metody, která se může v průběhu času měnit.  
   
 ## <a name="stackoverflowexception"></a>StackOverflowException  
- **X DO NOT** explicitní generování <xref:System.StackOverflowException>. Pouze pomocí modulu CLR by měla být explicitně vyvolána výjimka.  
+ **X DO NOT** explicitní generování <xref:System.StackOverflowException>. Výjimka by měla být explicitně vyvolána pouze modulem CLR.  
   
  **X DO NOT** catch `StackOverflowException`.  
   
- Je téměř nemožné psát spravovaný kód, který zůstává konzistentní za přítomnosti libovolného zásobníku přetečení. Díky používání sond přesunout přetečení zásobníku na jasně definovaných místa, nikoli podle anulování z přetečení zásobníku libovolného zůstaly konzistentní nespravované části modulu CLR.  
+ Není skoro možné psát spravovaný kód, který zůstává konzistentní v přítomnosti libovolného přetečení zásobníku. Nespravované části CLR zůstávají konzistentní pomocí sond pro přesun přetečení zásobníku do dobře definovaných míst a nikoli z přetečení z libovolného zásobníku.  
   
 ## <a name="outofmemoryexception"></a>OutOfMemoryException  
- **X DO NOT** explicitní generování <xref:System.OutOfMemoryException>. Tato výjimka je vyvolána pouze infrastrukturou CLR.  
+ **X DO NOT** explicitní generování <xref:System.OutOfMemoryException>. Tato výjimka má být vyvolána pouze infrastrukturou CLR.  
   
-## <a name="comexception-sehexception-and-executionengineexception"></a>ComException SEHException – a ExecutionEngineException  
- **X DO NOT** explicitní generování <xref:System.Runtime.InteropServices.COMException>, <xref:System.ExecutionEngineException>, a <xref:System.Runtime.InteropServices.SEHException>. Tyto výjimky jsou vyvolány pouze infrastruktury CLR.  
+## <a name="comexception-sehexception-and-executionengineexception"></a>ComException, SEHException – a ExecutionEngineException  
+ **X DO NOT** explicitní generování <xref:System.Runtime.InteropServices.COMException>, <xref:System.ExecutionEngineException>, a <xref:System.Runtime.InteropServices.SEHException>. Tyto výjimky mají být vyvolány pouze infrastrukturou CLR.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

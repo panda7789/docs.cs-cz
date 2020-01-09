@@ -9,34 +9,33 @@ helpviewer_keywords:
 - case sensitivity, capitalization conventions
 - names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
-author: KrzysztofCwalina
-ms.openlocfilehash: e0da4cd747846921d170d9c07d6f1fb91dbd4ed7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fee7f5b7749c97a87e37581f67cbe1b49250b9ce
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615255"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709527"
 ---
 # <a name="capitalization-conventions"></a>Konvence pro malá a velká písmena
-Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a velká, že při použití konzistentně, zkontrolujte identifikátory pro typy, členy a parametry snadno čitelný.  
+Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití Case, která při použití konzistentně usnadňuje čtení identifikátorů pro typy, členy a parametry.  
   
-## <a name="capitalization-rules-for-identifiers"></a>Malá a velká písmena pravidel pro identifikátory  
- K rozlišení slova v identifikátoru, velké první písmeno první písmeno každého slova v identifikátoru. Nepoužívejte podtržítka k rozlišení slova, nebo pro tento účel, kdekoli v identifikátory. Existují dva způsoby vhodné pro velké první písmeno identifikátory, v závislosti na použití identifikátoru:  
+## <a name="capitalization-rules-for-identifiers"></a>Pravidla psaní velkých písmen pro identifikátory  
+ Chcete-li odlišit slova v identifikátoru, velkými písmeny každého slova v identifikátoru. Nepoužívejte podtržítka k odlišení slov nebo pro tuto skutečnost, a to kdekoli v identifikátorech. Existují dva vhodné způsoby, jak měnit identifikátory v závislosti na použití identifikátoru:  
   
 - PascalCasing  
   
 - camelCasing  
   
- Konvence PascalCasing používá pro všechny identifikátory s výjimkou názvů parametrů velká první znak každého slova (včetně přes dvě písmena délku zkratky), jak je znázorněno v následujícím příkladu:  
+ PascalCasing konvence, která se používá pro všechny identifikátory kromě názvů parametrů, převede první znak každého slova (včetně zkratek na dvě písmena), jak je znázorněno v následujících příkladech:  
   
  `PropertyDescriptor`  
  `HtmlTag`  
   
- Zvláštní případ se provádí dvoupísmenné zkratky, ve kterých jsou velké obě písmena, jak je znázorněno v následující identifikátor:  
+ Zvláštní případ se skládá pro zkratky se dvěma písmeny, ve kterých jsou písmena velká, jak je znázorněno v následujícím identifikátoru:  
   
  `IOStream`  
   
- Konvence camelCasing používá pouze pro názvy parametrů velká první znak každého slova s výjimkou první slovo, jak je znázorněno v následujícím příkladu. Příklad také ukazuje, dvoupísmenné zkratky, které začínají identifikátorem ve formátu camelCase jsou malá písmena.  
+ Konvence camelCasing použitá pouze pro názvy parametrů, převede první znak každého slova s výjimkou prvního slova, jak je znázorněno v následujících příkladech. Jak ukazuje tento příklad, zkratky se dvěma písmeny, které začínají identifikátorem ve stylu CamelCase-použita, jsou malá.  
   
  `propertyDescriptor`  
  `ioStream`  
@@ -46,28 +45,28 @@ Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a
   
  **✓ DO** použít camelCasing pro názvy parametrů.  
   
- Následující tabulka popisuje malá a velká písmena pravidla pro různé typy identifikátorů.  
+ Následující tabulka popisuje pravidla psaní velkých a malých písmen pro různé typy identifikátorů.  
   
 |identifikátor|Velikost písmen|Příklad|  
 |----------------|------------|-------------|  
-|Obor názvů|Pascal|`namespace System.Security { ... }`|  
-|Type|Pascal|`public class StreamReader { ... }`|  
-|Rozhraní|Pascal|`public interface IEnumerable { ... }`|  
-|Metoda|Pascal|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
-|Vlastnost|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  
-|Událost|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
-|Pole|Pascal|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
-|Hodnota výčtu|Pascal|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
-|Parametr|Camel|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
+|Názvový prostor|Jazyce|`namespace System.Security { ... }`|  
+|Type|Jazyce|`public class StreamReader { ... }`|  
+|Rozhraní|Jazyce|`public interface IEnumerable { ... }`|  
+|Metoda|Jazyce|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|  
+|Vlastnost|Jazyce|`public class String {` <br />  `public int Length { get; }` <br /> `}`|  
+|Událost|Jazyce|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
+|Pole|Jazyce|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
+|Hodnota výčtu|Jazyce|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
+|Parametr|CamelCase|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
   
-## <a name="capitalizing-compound-words-and-common-terms"></a>Velká písmena složených slov a běžných termínů  
- Většina složené podmínky jsou považovány za jednoho slova pro účely malá a velká písmena.  
+## <a name="capitalizing-compound-words-and-common-terms"></a>Složená slova na velkých písmen a běžné výrazy  
+ Většina složených výrazů se považuje za jednotlivá slova pro účely velkých a malých písmen.  
   
  **X DO NOT** převedení na velká písmena jednotlivých slov ve složených slov takzvané uzavřený formuláře.  
   
- Toto jsou složené slova napsaná jako jediné slovo, jako je například koncový bod. Pro účely pokyny pro velká a malá písmena považovat za složené slovo Uzavřeno formuláře jednoho slova. Chcete-li zjistit, pokud je složené slovo napsané v uzavřená forma použití aktuální slovníku.  
+ Jedná se o složená slova zapsaná jako jedno slovo, například koncový bod. Pro účely pokynů pro používání malých a velkých písmen považovat uzavřený složený Word jako jedno slovo. Pomocí aktuálního slovníku určíte, zda je v zavřeném formuláři napsán složený text.  
   
-|Pascal|Camel|Not|  
+|Jazyce|CamelCase|Not|  
 |------------|-----------|---------|  
 |`BitFlag`|`bitFlag`|`Bitflag`|  
 |`Callback`|`callback`|`CallBack`|  
@@ -95,14 +94,14 @@ Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a
 |`WhiteSpace`|`whiteSpace`|`Whitespace`|  
 |`Writable`|`writable`|`Writeable`|  
   
-## <a name="case-sensitivity"></a>Rozlišování velikosti písmen  
- Jazyky, které můžou běžet na modulu CLR není požadována podpora rozlišování, i když některé provést. I v případě, že jazyk podporuje, jiné jazyky, které můžou přistupovat k rozhraní framework nepodporují. Libovolné rozhraní API, které jsou zvenku přístupný, proto nelze spoléhat na případ samostatně k rozlišení mezi dvěma názvy ve stejném kontextu.  
+## <a name="case-sensitivity"></a>Rozlišovat velká a malá písmena  
+ Jazyky, které mohou být spuštěny na CLR, nejsou vyžadovány pro podporu rozlišování velkých a malých písmen, i když některé z nich. I v případě, že ho váš jazyk podporuje, jiné jazyky, které by mohly mít přístup k vašemu rozhraní, ne. Každé rozhraní API, které je externě přístupné, proto nemůže spoléhat na velká a malá písmena, aby bylo možné rozlišovat mezi dvěma názvy ve stejném kontextu.  
   
- **X DO NOT** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy nesmí liší případ samotný.  
+ **X DO NOT** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy se nesmí lišit pouze podle velikosti písmen.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

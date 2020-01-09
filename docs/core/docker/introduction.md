@@ -2,13 +2,13 @@
 title: Úvod do Docker
 description: Tento článek poskytuje úvodní informace a přehled pro Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 22c8fa4cda5cfd6564695d3b86072c64f22fa335
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.custom: mvc
+ms.openlocfilehash: 278c921de83282d61b25f4d44e91535981285e83
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74087392"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715550"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -30,7 +30,7 @@ Vzhledem k tomu, že kontejnery jsou vytvořeny z imagí, mají image sadu param
 
 Kontejner je instance spustitelný obrázku. Při sestavování image nasadíte svoji aplikaci a závislosti. Potom lze vytvořit instanci více kontejnerů, z nichž každá je izolována od sebe. Každá instance kontejneru má vlastní systém souborů, paměť a síťové rozhraní.
 
-### <a name="registries"></a>Registr
+### <a name="registries"></a>Registry
 
 Registry kontejnerů jsou kolekcí úložišť imagí. Obrázky můžete založit na imagi registru. Kontejnery můžete vytvořit přímo z image v registru. [Vztah mezi kontejnery Docker, obrázky a Registry](../../architecture/microservices/container-docker-introduction/docker-containers-images-registries.md) je důležitý koncept při [navrhování a sestavování kontejnerových aplikací nebo mikroslužeb](../../architecture/microservices/architect-microservice-container-applications/index.md). Tento přístup značně zkracuje dobu mezi vývojem a nasazením.
 
@@ -52,23 +52,23 @@ Společnost Microsoft poskytuje obrázky, které jsou upraveny pro konkrétní s
 
 Různé kontejnery podpory služeb Azure. Vytvoříte image Docker pro aplikaci a nasadíte ji na jednu z následujících služeb:
 
-- [Služba Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) \
+- [Služba Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/)\
 Škálujte a orchestrujte kontejnery Linux pomocí Kubernetes.
 
-- [Azure App Service](https://azure.microsoft.com/services/app-service/containers/) \
+- [Azure App Service](https://azure.microsoft.com/services/app-service/containers/)\
 Nasaďte webové aplikace nebo rozhraní API s využitím kontejnerů Linux v prostředí PaaS.
 
-- [Azure Container Instances](https://azure.microsoft.com/services/container-instances/) \
+- [Azure Container Instances](https://azure.microsoft.com/services/container-instances/)\
 Hostujte svůj kontejner v cloudu bez jakýchkoli služeb pro správu vyšší úrovně.
 
-- [Azure Batch](https://azure.microsoft.com/services/batch/) \
+- [Azure Batch](https://azure.microsoft.com/services/batch/)\
 Spusťte opakované výpočetní úlohy s využitím kontejnerů.
 
 - \ [Service Fabric Azure](https://azure.microsoft.com/services/service-fabric/)
 Namodernizovat aplikace .NET do mikroslužeb pomocí kontejnerů Windows serveru.
 
-- [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) \
-Ukládání a Správa imagí kontejnerů napříč všemi typy nasazení Azure
+- [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)\
+Ukládejte a spravujte image kontejnerů napříč všemi typy nasazení Azure.
 
 ## <a name="next-steps"></a>Další kroky
 

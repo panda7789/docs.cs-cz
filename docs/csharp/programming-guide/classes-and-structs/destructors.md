@@ -1,18 +1,17 @@
 ---
 title: Finalizační metody – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 10/08/2018
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: f7cb9bd05d08a33be53abad58b78b39e36c6dffe
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9c00f14da9d79418e4fb204bac30e539b234197f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419351"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715017"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Průvodce programováním)
 Finalizační metody (označované také jako **destruktory**) se používají k provedení všech nezbytných finálních vyčištění při shromažďování instance třídy systémem uvolňování paměti.  

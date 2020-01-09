@@ -1,6 +1,5 @@
 ---
 title: <summary> – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <summary>
@@ -9,14 +8,14 @@ helpviewer_keywords:
 - <summary> C# XML tag
 - summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
-ms.openlocfilehash: f0e67ca248e5c94318032c8769410d4fd4c9d3a9
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 63c65e11a274779015cf99859b7fa67bb536529d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523307"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711685"
 ---
-# <a name="summary-c-programming-guide"></a>> \<summary (C# Průvodce programováním)
+# <a name="summary-c-programming-guide"></a>> \<souhrnuC# (Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,9 +27,9 @@ ms.locfileid: "72523307"
  Souhrn objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- K popisu typu nebo člena typu by měla být použita značka \<summary >. Pomocí [\<remarks >](./remarks.md) přidat doplňující informace k popisu typu. Pomocí [atributu cref](./cref-attribute.md) můžete povolit nástroje dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , a vytvářet interní hypertextové odkazy na stránky dokumentace pro prvky kódu.  
+ K popisu typu nebo členu typu by měla být použita značka \<Summary >. Pomocí [\<poznámky >](./remarks.md) přidat doplňující informace k popisu typu. Pomocí [atributu cref](./cref-attribute.md) můžete povolit nástroje dokumentace, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) , a vytvářet interní hypertextové odkazy na stránky dokumentace pro prvky kódu.  
   
- Text pro značku \<summary > je jediným zdrojem informací o typu v technologii IntelliSense a je také zobrazen v okně Prohlížeč objektů.  
+ Text > Značka \<Summary je jediným zdrojem informací o typu v technologii IntelliSense a je také zobrazen v okně Prohlížeč objektů.  
   
  Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru. Chcete-li vytvořit konečnou dokumentaci založenou na souboru generovaném kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako je [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).  
   

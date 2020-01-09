@@ -3,17 +3,15 @@ title: Odebrání uzlů, obsahu a hodnot z dokumentu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d818a29a-6ee5-4725-97c4-78cf60a156b6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7ef344bc7a1a594f442e7c0ce42402911f0637ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: def229c636e1cd0414282113e61a649fa197ef81
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912818"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710320"
 ---
 # <a name="removing-nodes-content-and-values-from-an-xml-document"></a>Odebrání uzlů, obsahu a hodnot z dokumentu XML
-Jakmile XML Document Object Model (DOM) v paměti, můžete odebrat uzly ze stromu nebo odebrat obsah a hodnoty z určité typy uzlů. Informace o tom, jak odebrat uzel typu list nebo celého uzlu podstrom z dokumentu najdete v tématu [odebrání uzlů z modelu DOM](../../../../docs/standard/data/xml/removing-nodes-from-the-dom.md). Informace o tom, jak odebrat atributy pro element najdete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md). Informace o odebrání obsahu uzlu, ale ponechání uzel ve stromu, naleznete v tématu [odebrání obsahu uzlu v modelu DOM](../../../../docs/standard/data/xml/removing-node-content-in-the-dom.md).  
+Jakmile je XML model DOM (Document Object Model) (DOM) v paměti, můžete odebrat uzly ze stromu nebo odebrat obsah a hodnoty z určitých typů uzlů. Informace o tom, jak odebrat uzel typu list nebo celý podstrom uzlu z dokumentu, naleznete v tématu [Odebrání uzlů z modelu DOM](../../../../docs/standard/data/xml/removing-nodes-from-the-dom.md). Informace o odebrání atributů prvku naleznete v tématu [Odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md). Informace o odebrání obsahu uzlu, ale zrušení uzlu ve stromové struktuře, naleznete v tématu [Odebrání obsahu uzlu v modelu DOM](../../../../docs/standard/data/xml/removing-node-content-in-the-dom.md).  
   
 ## <a name="see-also"></a>Viz také:
 

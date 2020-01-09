@@ -12,13 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-author: KrzysztofCwalina
-ms.openlocfilehash: b4da14575d29582814d32a3050087b7acc0da802
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a9cd531100057fbad4884a20e6e7db6ef94e7956
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353699"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709215"
 ---
 # <a name="names-of-type-members"></a>Názvy členů typu
 Typy jsou tvořeny členy: metody, vlastnosti, události, konstruktory a pole. Následující části popisují pokyny pro pojmenování členů typu.  
@@ -48,9 +47,9 @@ public class String {
   
  Tento model obvykle označuje, že by vlastnost měla být ve skutečnosti metodou.  
   
- **✓ DO** název vlastnosti kolekce s množném čísle věta popisující položek v kolekci namísto použití singulární frázi "Seznam" nebo "Kolekce."  
+ **✓ Do** vlastností shromažďování názvů pomocí množném fráze, která popisuje položky v kolekci namísto použití fráze v jednotném čísle následovaných "list" nebo "Collection".  
   
- **✓ DO** název logické vlastnosti s nevyjádřil fráze (`CanSeek` místo `CantSeek`). Volitelně můžete také zadat předponu logických vlastností pomocí "is", "může" nebo "má", ale pouze tam, kde přidá hodnotu.  
+ **✓ DO** název logické vlastnosti s nevyjádřil fráze (`CanSeek` místo `CantSeek`). Volitelně můžete také zadat předponu logických vlastností pomocí "is", "Can" nebo "má", ale pouze tam, kde přidá hodnotu.  
   
  **✓ CONSIDER** poskytuje vlastnost se stejným názvem jako jeho typu.  
   

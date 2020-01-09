@@ -1,6 +1,5 @@
 ---
-title: Zaškrtnuto a nezaškrtnuto- C# odkaz
-ms.custom: seodec18
+title: Zkontrolováno a nezkontrolováno - C# odkaz
 ms.date: 05/15/2018
 helpviewer_keywords:
 - operators [C#], checked and unchecked
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 7abc19e0657330752e7798d060516c48aa402297
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a3b1ef8e6d8e496eda74ab25b3fe17f8174bac11
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771767"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713721"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
 C#příkazy mohou být provedeny v kontrolovaném nebo nezaškrtnutém kontextu. V kontrolovaném kontextu přetečení aritmetického přetečení vyvolá výjimku. V nekontrolovaném kontextu se aritmetické přetečení ignoruje a výsledek se zkrátí tak, že zahodí jakékoli bity s vysokým pořadím, které se nevejdou do cílového typu.  

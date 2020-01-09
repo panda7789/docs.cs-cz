@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Čtení textu ze souboru'
+title: 'Postupy: čtení textu ze souboru'
 ms.date: 01/03/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,35 +12,33 @@ helpviewer_keywords:
 - data streams, reading text from files
 - I/O [.NET Framework], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7330c209ce6514459d3ab1dd58dc1c80b1978a56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49ea989a2b11c6572dc08970cf96e2df5f4fa024
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947105"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706657"
 ---
-# <a name="how-to-read-text-from-a-file"></a>Postupy: Čtení textu ze souboru
-Následující příklady znázorňují způsob synchronního a asynchronního čtení textu z textového souboru pomocí rozhraní .NET pro aplikace klasické pracovní plochy. V obou příkladech je při vytváření instance třídy <xref:System.IO.StreamReader> třídu, zadejte relativní nebo absolutní cesta k souboru. 
+# <a name="how-to-read-text-from-a-file"></a>Postupy: čtení textu ze souboru
+Následující příklady znázorňují způsob synchronního a asynchronního čtení textu z textového souboru pomocí rozhraní .NET pro aplikace klasické pracovní plochy. V obou příkladech, při vytváření instance třídy <xref:System.IO.StreamReader>, zadáte relativní nebo absolutní cestu k souboru. 
   
 > [!NOTE]
-> Tyto příklady kódu se nevztahují na vývoj pro aplikace pro Universal Windows (UPW), protože modul Windows Runtime poskytuje různé stream typy pro čtení a zápis do souborů. Příklad, který znázorňuje způsob čtení textu ze souboru v aplikaci UWP, naleznete v tématu [rychlý start: Čtení a zápis do souborů](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)). Příklady, které ukazují, jak k převodu mezi datovými proudy rozhraní .NET Framework a datovými proudy Windows Runtime naleznete v tématu [jak: Převod mezi datovými proudy rozhraní .NET Framework a datovými proudy Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md).  
+> Tyto příklady kódu se nevztahují na vývoj aplikací pro univerzální platformu Windows (UWP), protože prostředí Windows Runtime poskytuje různé typy datových proudů pro čtení a zápis do souborů. Příklad, který ukazuje, jak číst text ze souboru v aplikaci UWP, najdete v tématu [rychlý Start: čtení a zápis souborů](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)). Příklady, které ukazují, jak převést mezi datovými proudy .NET Framework a prostředí Windows Runtime datových proudů, naleznete v tématu [How to: Convert between .NET Framework Streams and prostředí Windows Runtime Streams](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md).  
   
-## <a name="example-synchronous-read-in-a-console-app"></a>Příklad: Synchronní číst v konzolové aplikaci  
-Následující příklad ukazuje operaci synchronního čtení v rámci konzolové aplikace. Tento příklad otevře textový soubor pomocí čtečku datového proudu, zkopíruje obsah na řetězec a vypíše řetězec do konzoly.  
+## <a name="example-synchronous-read-in-a-console-app"></a>Příklad: synchronní čtení v konzolové aplikaci  
+Následující příklad ukazuje synchronní operaci čtení v konzolové aplikaci. Tento příklad otevře textový soubor pomocí čtečky datových proudů, zkopíruje obsah do řetězce a vytvoří výstup řetězce do konzoly.  
   
 > [!IMPORTANT]
-> Příklad předpokládá, že soubor s názvem *TestFile.txt* již existuje ve stejné složce jako aplikace.  
+> V příkladu se předpokládá, že soubor s názvem *Testfile. txt* už existuje ve stejné složce jako aplikace.  
 
  [!code-csharp[Conceptual.BasicIO.TextFiles#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source3.cs#3)]
  [!code-vb[Conceptual.BasicIO.TextFiles#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source3.vb#3)]  
   
-## <a name="example-asynchronous-read-in-a-wpf-app"></a>Příklad: Asynchronní čtení v aplikaci WPF 
- Následující příklad ukazuje operaci asynchronního čtení v aplikaci Windows Presentation Foundation (WPF).  
+## <a name="example-asynchronous-read-in-a-wpf-app"></a>Příklad: asynchronní čtení v aplikaci WPF 
+ Následující příklad ukazuje asynchronní operaci čtení v aplikaci Windows Presentation Foundation (WPF).  
   
 > [!IMPORTANT]
-> Příklad předpokládá, že soubor s názvem *TestFile.txt* již existuje ve stejné složce jako aplikace.  
+> V příkladu se předpokládá, že soubor s názvem *Testfile. txt* už existuje ve stejné složce jako aplikace.  
 
  [!code-csharp[TextFiles](../../../samples/snippets/csharp/VS_Snippets_Wpf/TextFiles/MainWindow.xaml.cs)]
  [!code-vb[TextFiles](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextFiles/MainWindow.xaml.vb)]  
@@ -50,13 +48,13 @@ Následující příklad ukazuje operaci synchronního čtení v rámci konzolov
 - <xref:System.IO.StreamReader>  
 - <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>  
 - <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>  
-- [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
-- [Postupy: Vytváření adresářů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))  
-- [Rychlý start: Čtení a zápis do souborů](https://docs.microsoft.com/previous-versions/windows/apps/hh758325%28v=win.10%29)  
-- [Postupy: Převod mezi datovými proudy rozhraní .NET Framework a datovými proudy Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
-- [Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
-- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
-- [Postupy: Čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)  
-- [Postupy: Zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
-- [Vstupně-výstupních operací souborů a datových proudů](../../../docs/standard/io/index.md)
+- [I/O asynchronní soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
+- [Postupy: vytvoření seznamu adresářů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))  
+- [Rychlý Start: čtení a zápis souborů](https://docs.microsoft.com/previous-versions/windows/apps/hh758325%28v=win.10%29)  
+- [Postupy: převod mezi .NET Frameworkmi proudy a datovými proudy prostředí Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
+- [Postupy: čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
+- [Postupy: otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
+- [Postupy: zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
+- [Postupy: čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)  
+- [Postupy: zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
+- [Vstupně-výstupní operace se soubory a datovým proudem](../../../docs/standard/io/index.md)

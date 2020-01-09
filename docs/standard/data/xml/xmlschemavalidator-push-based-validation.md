@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a420a134eda6c62758b0d218e3c0a4a4922b048c
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 6a0cc110c2b8bcd97b9f5c16a344db5a63046353
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72250045"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709800"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Přímé ověření XmlSchemaValidator
 
@@ -442,7 +440,7 @@ Následující tabulka popisuje přechod stavu <xref:System.Xml.Schema.XmlSchema
 
 |Stát|Transition|
 |-----------|----------------|
-|Ověření|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; Toplevel *) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
+|Ověřit|<xref:System.Xml.Schema.XmlSchemaValidator.Initialize%2A> (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A> &#124; Toplevel *) <xref:System.Xml.Schema.XmlSchemaValidator.EndValidation%2A>|
 |TopLevel|Element &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|
 |Prvek|<xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>* (<xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> obsahu\*)? <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A> &#124;<br /><br /> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateElement%2A> <xref:System.Xml.Schema.XmlSchemaValidator.ValidateAttribute%2A>\* <xref:System.Xml.Schema.XmlSchemaValidator.ValidateEndOfAttributes%2A> obsahu\* <xref:System.Xml.Schema.XmlSchemaValidator.SkipToEndElement%2A>&#124;|
 |Obsah|Element &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateWhitespace%2A> &#124; <xref:System.Xml.Schema.XmlSchemaValidator.ValidateText%2A>|
@@ -454,7 +452,7 @@ Výše uvedená tabulka přechodu stavu používá interpunkční znaménka k po
 
 Následující tabulka popisuje, jak se symboly interpunkčních znamének v tabulce přechodu stavu nacházejí výše ovlivňují metody a další stavy, které mohou být volány pro každý stav v přechodu stavu třídy <xref:System.Xml.Schema.XmlSchemaValidator>.
 
-|Písmeno|Popis|
+|Symbol|Popis|
 |------------|-----------------|
 |&#124;|Lze zavolat buď metodu, nebo stav (jeden před pruhový nebo ten).|
 |?|Metoda nebo stav, který předchází otazník je volitelný, ale pokud je volána, lze ji volat pouze jednou.|

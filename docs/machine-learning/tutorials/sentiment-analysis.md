@@ -3,13 +3,13 @@ title: 'Kurz: analýza komentářů webu – binární klasifikace'
 description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z komentářů k webu a provede příslušnou akci. Mínění třídění binárních souborů používá C# v aplikaci Visual Studio.
 ms.date: 09/30/2019
 ms.topic: tutorial
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 4fec19c6d7a83ba4e5b2bd0cd6e196ee19c49ce8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: mvc
+ms.openlocfilehash: 4f54d867875efc3aa966f683a39b18d09952d8e0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344951"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711607"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: analýza mínění komentářů k webu pomocí binární klasifikace v ML.NET
 

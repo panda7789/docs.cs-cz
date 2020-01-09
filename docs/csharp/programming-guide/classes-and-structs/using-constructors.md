@@ -1,16 +1,15 @@
 ---
 title: Použití konstruktorů – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: cb6a0befb9e2e628f066061282532513019c1419
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7d027a67e533cb1ed7b2cea38112b4f585bf5fbc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418734"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714643"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
 
@@ -89,7 +88,7 @@ Console.WriteLine("{0}, {1}", a, b);
   
  Konstruktor lze deklarovat staticky pomocí klíčového slova [static](../../language-reference/keywords/static.md) . Statické konstruktory jsou volány automaticky, bezprostředně před tím, než jsou k dispozici statická pole a jsou obecně použity pro inicializaci statických členů třídy. Další informace naleznete v tématu [statické konstruktory](./static-constructors.md).  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
 
 Další informace naleznete v tématu [konstruktory instancí](~/_csharplang/spec/classes.md#instance-constructors) a [statické konstruktory](~/_csharplang/spec/classes.md#static-constructors) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   

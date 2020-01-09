@@ -1,6 +1,5 @@
 ---
 title: klauzule WHERE – C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - whereclause_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - where keyword [C#]
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
-ms.openlocfilehash: f145811da2a90dd544b0590ad75af92b281884bc
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 42932809d58c739afc165676c0b90c5a23f568de
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635883"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712816"
 ---
 # <a name="where-clause-c-reference"></a>where – klauzule (Referenční dokumentace jazyka C#)
 

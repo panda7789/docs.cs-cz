@@ -1,53 +1,52 @@
 ---
-title: Správa závislostí v nástroje pro .NET Core
-description: Vysvětluje, jak spravovat závislosti s nástroji .NET Core.
+title: Správa závislostí v nástrojích .NET Core
+description: Vysvětluje, jak spravovat závislosti pomocí nástrojů .NET Core.
 ms.date: 03/06/2017
-ms.custom: seodec18
-ms.openlocfilehash: ef2de666ee3e6a06ab62f45afe3c624bbbb44ac4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c088829ce3d5197198b7ff22a1331b8baba41d7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665725"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714212"
 ---
-# <a name="managing-dependencies-with-net-core-sdk-10"></a>Správa závislostí s .NET Core SDK 1.0
+# <a name="managing-dependencies-with-net-core-sdk-10"></a>Správa závislostí pomocí .NET Core SDK 1,0
 
-S přechodem na projektů .NET Core ze souboru project.json na csproj a MSBuild došlo také významnou investici, jejímž výsledkem sjednocení soubor projektu a prostředky, které umožňují sledování závislostí. Pro projekty .NET Core je podobná nebyla jaké project.json. Neexistuje žádný samostatný soubor JSON nebo XML, který sleduje závislostí NuGet. S touto změnou jsme zavedli jiný typ *odkaz* do souboru csproj syntaxe volána `<PackageReference>`. 
+Když přesunete projekty .NET Core z Project. JSON na csproj a MSBuild, nastaly se významné investice také z důvodu sjednocení souboru projektu a prostředků, které umožňují sledování závislostí. Pro projekty .NET Core se jedná o podobný kód jako Project. JSON. Neexistuje žádný samostatný soubor JSON nebo XML, který sleduje závislosti NuGet. V této změně jsme také zavedli další typ *odkazu* do syntaxe csproj s názvem `<PackageReference>`. 
 
-Tento dokument popisuje nový typ odkazu. Také ukazuje, jak přidat závislost balíčku pomocí tento nový typ odkazu do projektu. 
+Tento dokument popisuje nový typ odkazu. Také ukazuje, jak přidat závislost balíčku pomocí tohoto nového typu odkazu na váš projekt. 
 
-## <a name="the-new-packagereference-element"></a>Nové \<PackageReference > – element
-`<PackageReference>` Má následující základní strukturu:
+## <a name="the-new-packagereference-element"></a>Nový \<prvek > PackageReference
+`<PackageReference>` má následující základní strukturu:
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" />
 ```
 
-Pokud jste se seznámili s nástrojem MSBuild, bude vypadat povědomě na jiné typy odkazů, které již existují. Klíč je `Include` příkazu, který určuje id balíčku, který chcete přidat do projektu. `<Version>` Podřízený prvek určuje verzi zobrazíte. Verze jsou určeny podle [pravidla verze NuGet](/nuget/create-packages/dependency-versions#version-ranges).
+Pokud jste obeznámeni s nástrojem MSBuild, bude se seznámit s dalšími typy odkazů, které již existují. Klíč je příkaz `Include`, který určuje ID balíčku, který chcete přidat do projektu. Podřízený prvek `<Version>` určuje verzi, která má být získána. Verze jsou zadány na základě [pravidel verze NuGet](/nuget/create-packages/dependency-versions#version-ranges).
 
 > [!NOTE]
-> Pokud nejste obeznámeni s celkovým `csproj` syntaxe, naleznete v tématu [odkaz na projekt MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference) Další informace naleznete v dokumentaci.  
+> Pokud nejste obeznámeni s celkovou syntaxí `csproj`, další informace naleznete v referenční dokumentaci k [projektu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference) .  
 
-Přidání závislostí, který je k dispozici pouze v konkrétní cíle se provádí pomocí podmínek stejně jako v následujícím příkladu:
+Přidání závislosti, která je k dispozici pouze v určitém cíli, se provádí pomocí podmínek, jako v následujícím příkladu:
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
 ```
 
-Výše uvedené znamená, že závislost budou pouze platná, pokud sestavení se děje to uvedeny cíle. `$(TargetFramework)` v podmínce je vlastnost MSBuild, která je nastavena v projektu. Pro nejčastěji používané aplikace .NET Core nemusíte to provést. 
+Výše uvedené znamená, že závislost bude platná pouze v případě, že se pro daný cíl děje sestavení. `$(TargetFramework)` v podmínce je vlastnost MSBuild, která je nastavena v projektu. Pro většinu běžných aplikací .NET Core to nebudete potřebovat. 
 
-## <a name="adding-a-dependency-to-your-project"></a>Přidání závislostí do projektu
-Přidání závislostí pro váš projekt je jednoduché. Tady je příklad toho, jak přidat verzi Json.NET `9.0.1` do projektu. Samozřejmě se vztahuje na všechny další závislosti NuGet. 
+## <a name="adding-a-dependency-to-your-project"></a>Přidání závislosti do projektu
+Přidání závislosti do projektu je jednoduché. Tady je příklad, jak přidat Json.NET verze `9.0.1` do projektu. Samozřejmě platí pro všechny ostatní závislosti NuGet. 
 
-Při otevření souboru projektu se zobrazí dvě nebo více `<ItemGroup>` uzly. Všimnete si, že jeden z uzlů již `<PackageReference>` prvky v ní. Můžete přidat nové závislosti pro tento uzel nebo vytvořte novou; To je zcela na vás jako výsledek bude stejný. 
+Po otevření souboru projektu se zobrazí dva nebo více `<ItemGroup>`ch uzlů. Všimněte si, že jeden z uzlů již obsahuje `<PackageReference>` prvky. Do tohoto uzlu můžete přidat novou závislost nebo vytvořit novou. je zcela na vás, protože výsledek bude stejný. 
 
-V tomto příkladu použijeme výchozí šablonu, která na základě `dotnet new console`. Toto je jednoduchou konzolovou aplikaci. Když nám otevřít projekt, jsme nejprve vyhledat `<ItemGroup>` s již existujícím `<PackageReference>` v ní. Potom jsme do něj přidejte následující:
+V tomto příkladu použijeme výchozí šablonu, která je zahozena `dotnet new console`. Toto je jednoduchá Konzolová aplikace. Po otevření projektu jsme nejdřív našli `<ItemGroup>` už existující `<PackageReference>`. Následně do něj přidáte následující:
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
 ```
 
-Potom jsme uložte projekt a spusťte `dotnet restore` příkaz a nainstalujte závislosti. 
+Potom uložte projekt a spuštěním příkazu `dotnet restore` pro instalaci závislosti. 
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -66,5 +65,5 @@ Potom jsme uložte projekt a spusťte `dotnet restore` příkaz a nainstalujte z
 </Project>
 ```
 
-## <a name="removing-a-dependency-from-the-project"></a>Odebrání závislostí projektu
-Odebrání závislosti ze souboru projektu vyžaduje jednoduše odebrání `<PackageReference>` ze souboru projektu.
+## <a name="removing-a-dependency-from-the-project"></a>Odebrání závislosti z projektu
+Odebrání závislosti ze souboru projektu zahrnuje pouhou odebrání `<PackageReference>` ze souboru projektu.

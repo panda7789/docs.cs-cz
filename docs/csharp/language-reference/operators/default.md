@@ -1,16 +1,15 @@
 ---
 title: výchozí C# reference operátoru
-ms.custom: seodec18
 description: Použití výchozího operátoru k vytvoření výchozí hodnoty typu
 ms.date: 08/01/2019
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 6503e82a42f116a7ba8461ae060592377579f255
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 744bdf1ec683ef32bba508c260590c0ed4c6e987
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039054"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712712"
 ---
 # <a name="default-operator-c-reference"></a>Default – operátorC# (Referenční dokumentace)
 
@@ -24,7 +23,7 @@ Klíčové slovo `default` lze také použít jako výchozí popisek Case v rám
 
 ## <a name="default-literal"></a>výchozí literál
 
-Počínaje C# 7,1 můžete použít literál`default`k vytvoření výchozí hodnoty typu, když kompilátor může odvodit typ výrazu. Výraz literálu `default` vytvoří stejnou hodnotu jako výraz `default(T)`, kde `T` je odvozený typ. Literál `default` lze použít v některém z následujících případů:
+Počínaje C# 7,1 můžete použít literál `default` k vytvoření výchozí hodnoty typu, když kompilátor může odvodit typ výrazu. Výraz literálu `default` vytvoří stejnou hodnotu jako výraz `default(T)`, kde `T` je odvozený typ. Literál `default` lze použít v některém z následujících případů:
 
 - V přiřazení nebo inicializaci proměnné.
 - V deklaraci výchozí hodnoty pro [volitelný parametr metody](../../methods.md#optional-parameters-and-arguments).

@@ -12,13 +12,12 @@ helpviewer_keywords:
 - interfaces [.NET Framework], names
 - generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
-author: KrzysztofCwalina
-ms.openlocfilehash: 2ecd708ccb8eb91270e8ef9c174b8d7e599a2629
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 96d9904af0106d797c9fc5199bda76da53874451
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353720"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709241"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Názvy tříd, struktur a rozhraní
 Pokyny pro pojmenování, které následují, se týkají obecného typu pojmenování.  

@@ -1,6 +1,5 @@
 ---
 title: <remarks> – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - remarks
@@ -9,14 +8,14 @@ helpviewer_keywords:
 - remarks C# XML tag
 - <remarks> C# XML tag
 ms.assetid: f8641391-31f3-4735-af7a-c502a5b6a251
-ms.openlocfilehash: 508201fed57fce93b64691de55dce45780adc13c
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 2391a8ee0bb55402ff5183c837e36d04a39e6555
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523353"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711698"
 ---
-# <a name="remarks-c-programming-guide"></a>> \<remarks (C# Průvodce programováním)
+# <a name="remarks-c-programming-guide"></a>\<poznámky > (C# Průvodce programováním)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -28,7 +27,7 @@ ms.locfileid: "72523353"
  Popis člena  
   
 ## <a name="remarks"></a>Poznámky  
- Značka > \<remarks slouží k přidání informací o typu, doplňování informací zadaných s [\<summary >](./summary.md). Tyto informace se zobrazí v okně Prohlížeč objektů.  
+ Značka \<poznámky > se používá k přidání informací o typu, doplňování informací zadaných s [\<souhrn >](./summary.md). Tyto informace se zobrazí v okně Prohlížeč objektů.  
   
  Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
   

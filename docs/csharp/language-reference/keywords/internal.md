@@ -1,6 +1,5 @@
 ---
 title: interní C# odkaz
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - internal_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: f72866cafbf291310d88fc6f18a5a15dc77c621d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: db653d0ed7f4835348484242b03392a8955c6392
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422725"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713430"
 ---
 # <a name="internal-c-reference"></a>internal (Referenční dokumentace jazyka C#)
 Klíčové slovo `internal` je [modifikátor přístupu](./access-modifiers.md) pro typy a členy typů. 
@@ -87,7 +86,7 @@ public class TestAccess
 }  
 ```  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
 
 Další informace najdete v tématu [deklarované přístupnosti](~/_csharplang/spec/basic-concepts.md#declared-accessibility) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   

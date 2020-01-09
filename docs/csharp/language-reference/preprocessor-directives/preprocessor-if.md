@@ -1,22 +1,21 @@
 ---
 title: '#If – direktiva preprocesoru C# – referenční informace'
-ms.custom: seodec18
 ms.date: 10/27/2019
 f1_keywords:
 - '#if'
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: e467a890e971e6c6f2c681ee503d7c7ead19a1e4
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 656b8d9eb2bda2d01f001748c992958e95387744
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552446"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712504"
 ---
 # <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
 
-Když C# kompilátor narazí na direktivu`#if`a následně na něj následuje direktiva [#endif](preprocessor-endif.md) , zkompiluje kód mezi direktivami pouze v případě, že je definován zadaný symbol. Na rozdíl od jazyka C++C a nemůžete přiřadit číselnou hodnotu k symbolu. Příkaz #if v C# je logický a pouze testuje, zda byl symbol definován nebo nikoli. Příklad:
+Když C# kompilátor narazí na direktivu `#if` a následně na něj následuje direktiva [#endif](preprocessor-endif.md) , zkompiluje kód mezi direktivami pouze v případě, že je definován zadaný symbol. Na rozdíl od jazyka C++C a nemůžete přiřadit číselnou hodnotu k symbolu. Příkaz #if v C# je logický a pouze testuje, zda byl symbol definován nebo nikoli. Příklad:
 
 ```csharp
 #if DEBUG

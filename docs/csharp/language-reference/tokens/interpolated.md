@@ -1,6 +1,5 @@
 ---
 title: $-odinterpolace řetězců C# – referenční informace
-ms.custom: seodec18
 description: Interpolace řetězců poskytuje čitelnější a pohodlný Syntax pro formátování výstupu řetězce než tradiční složené formátování řetězce.
 ms.date: 09/02/2019
 f1_keywords:
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.openlocfilehash: cda8582da9ca8262ec2ce6bcfbb76e2e2f5f6006
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b32bbbb0bd99878822d7ca5abdba80b46539846a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421847"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715083"
 ---
 # <a name="---string-interpolation-c-reference"></a>$-Řetězcová interpolaceC# (Referenční dokumentace)
 
@@ -61,7 +60,7 @@ Následující příklad ukazuje, jak zahrnout složenou závorku ve výsledném
 Interpolované doslovné řetězce začíná znakem `$` následovaným `@` znakem. Další informace o doslovnéch řetězcích naleznete v tématech [řetězec](../builtin-types/reference-types.md) a [doslovného identifikátoru](verbatim.md) .
 
 > [!NOTE]
-> Počínaje C# 8,0 můžete použít tokeny`$`a`@`v libovolném pořadí: `$@"..."`i`@$"..."`jsou platné interpolované řetězce. V dřívějších C# verzích musí být token `$` uveden před tokenem `@`.
+> Počínaje C# 8,0 můžete použít tokeny `$` a `@` v libovolném pořadí: `$@"..."` i `@$"..."` jsou platné interpolované řetězce. V dřívějších C# verzích musí být token `$` před tokenem `@`.
 
 ## <a name="implicit-conversions-and-how-to-specify-iformatprovider-implementation"></a>Implicitní převody a určení `IFormatProvider` implementace
 
@@ -83,7 +82,7 @@ Následující příklad používá implicitní převod na <xref:System.Formatta
 
 [!code-csharp-interactive[create culture-specific result strings](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#4)]
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 Pokud s interpolací řetězce začínáte, přečtěte si téma o [interpolaci C# řetězce v](../../tutorials/exploration/interpolated-strings.yml) interaktivním kurzu. Můžete také [v C# kurzu ověřit jinou řetězcovou interpolaci](../../tutorials/string-interpolation.md) , která ukazuje, jak použít interpolované řetězce pro vytváření formátovaných řetězců.
 

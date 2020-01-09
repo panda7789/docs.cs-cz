@@ -1,17 +1,16 @@
 ---
 title: Obecné třídy – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 6eb4df4489f4b377c68c5d49d1bf0bb01b835e85
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 13a1ca2d85be0c61b9d0f09c0c5cb670b49f5625
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589763"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75703218"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
 Obecné třídy zapouzdřují operace, které nejsou specifické pro konkrétní datový typ. Nejběžnější použití pro obecné třídy je kolekce, jako jsou propojené seznamy, zatřiďovací tabulky, zásobníky, fronty, stromy a tak dále. Operace, jako je přidání a odebrání položek z kolekce, jsou prováděny v podstatě stejným způsobem bez ohledu na typ uložených dat.  
@@ -26,7 +25,7 @@ Obecné třídy zapouzdřují operace, které nejsou specifické pro konkrétní
   
 - Jaká omezení se mají použít pro parametry typu (viz [omezení u parametrů typu](./constraints-on-type-parameters.md)).  
   
-     Dobrým pravidlem je použít maximální možné omezení, které vám pořád umožní zpracovat typy, které musíte zpracovat. Například pokud víte, že vaše obecná třída je určena pouze pro použití s odkazovým typem, použijte omezení třídy. Tím zabráníte nezamýšlenému použití vaší třídy s typy hodnot a umožní vám použít `as` operátor na `T`a vyhledat hodnoty null.  
+     Dobrým pravidlem je použít maximální možné omezení, které vám pořád umožní zpracovat typy, které musíte zpracovat. Například pokud víte, že vaše obecná třída je určena pouze pro použití s odkazovým typem, použijte omezení třídy. Tím zabráníte nezamýšlenému použití vaší třídy s typy hodnot a umožníte použít operátor `as` v `T`a vyhledat hodnoty null.  
   
 - Určuje, zda se má faktorovat obecné chování pro základní třídy a podtřídy.  
   
@@ -34,11 +33,11 @@ Obecné třídy zapouzdřují operace, které nejsou specifické pro konkrétní
   
 - Zda má být implementováno jedno nebo více obecných rozhraní.  
   
-     Například pokud navrhujete třídu, která bude použita k vytváření položek v obecných typech kolekce, bude pravděpodobně nutné implementovat rozhraní <xref:System.IComparable%601> , například, kde `T` je typ vaší třídy.  
+     Například pokud navrhujete třídu, která bude použita k vytváření položek v obecných typech kolekce, bude pravděpodobně nutné implementovat rozhraní, například <xref:System.IComparable%601>, kde `T` je typ vaší třídy.  
   
  Příklad jednoduché obecné třídy naleznete v tématu [Úvod do obecných typů](./index.md).  
   
- Pravidla pro parametry typu a omezení mají několik důsledků pro chování obecné třídy, zejména týkající se dědičnosti a přístupnosti členů. Než budete pokračovat, měli byste pochopit určité výrazy. Pro klientský kód obecné `Node<T>,` třídy může odkazovat na třídu buď zadáním argumentu typu, pro vytvoření uzavřeného konstruovaného typu (`Node<int>`). Alternativně může ponechat parametr typu neurčeno, například při zadání obecné základní třídy pro vytvoření otevřeného konstruovaného typu (`Node<T>`). Obecné třídy mohou dědit od konkrétních, uzavřených nebo otevřených základních tříd:  
+ Pravidla pro parametry typu a omezení mají několik důsledků pro chování obecné třídy, zejména týkající se dědičnosti a přístupnosti členů. Než budete pokračovat, měli byste pochopit určité výrazy. Pro obecnou třídu `Node<T>,` klientský kód může odkazovat na třídu buď zadáním argumentu typu, pro vytvoření uzavřeného konstruovaného typu (`Node<int>`). Alternativně může ponechat parametr typu neurčeno, například při zadání obecné základní třídy pro vytvoření otevřeného konstruovaného typu (`Node<T>`). Obecné třídy mohou dědit od konkrétních, uzavřených nebo otevřených základních tříd:  
   
  [!code-csharp[csProgGuideGenerics#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#16)]  
   
@@ -64,7 +63,7 @@ Obecné třídy zapouzdřují operace, které nejsou specifické pro konkrétní
   
  Pokud Obecná třída implementuje rozhraní, všechny instance této třídy lze přetypovat na toto rozhraní.  
   
- Obecné třídy jsou invariantní. Jinými slovy, pokud vstupní parametr určuje `List<BaseClass>`, zobrazí se chyba při kompilaci, pokud se pokusíte `List<DerivedClass>`zadat.  
+ Obecné třídy jsou invariantní. Jinými slovy, pokud vstupní parametr určuje `List<BaseClass>`, zobrazí se při pokusu o poskytnutí `List<DerivedClass>`Chyba při kompilaci.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 2a751acc129ebd1c917b87f8083ffef72c7d8c17
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 5612ebce67946e22aaeeba861115ce4f8967e1f5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568221"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344462"
 ---
 ### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru
 
-Řada rozhraní API, která vrací verze v rozhraní .NET Core, teď vrátila verzi produktu místo verze souboru.
+Mnoho rozhraní API, které vrací verze v rozhraní .NET Core, nyní vrátí verzi produktu místo verze souboru.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
 V .NET Core 2,2 a předchozích verzích metody jako <xref:System.Environment.Version?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>a dialog vlastností souboru pro sestavení .NET Core odrážejí verzi souboru. Počínaje .NET Core 3,0 se odrážejí verze produktu.
 

@@ -3,17 +3,15 @@ title: Odebrání obsahu uzlu v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 615d81a7-f44f-416c-a9ab-bfe03f85e6e4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 737766586ee920a87c25dd42896bdfb14ae69d98
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f5086bdea8ff1f0ee5329f347223ebb4a6bd71da
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698704"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710333"
 ---
 # <a name="removing-node-content-in-the-dom"></a>Odebrání obsahu uzlu v modelu DOM
-Pro typy uzlů, které dědí z <xref:System.Xml.XmlCharacterData>, které jsou <xref:System.Xml.XmlComment>, <xref:System.Xml.XmlText>, <xref:System.Xml.XmlCDataSection>, <xref:System.Xml.XmlWhitespace>, a <xref:System.Xml.XmlSignificantWhitespace> typy uzlů, můžete odebrat pomocí znaků <xref:System.Xml.XmlCharacterData.DeleteData%2A> metodu, která odebere rozsah znaky z uzlu. Pokud chcete úplně odebrat obsah, můžete odebrat uzel, který obsahuje obsah. Pokud chcete zachovat uzlu, ale obsah je nesprávná, změňte obsah. Informace o úpravě obsahu uzlu najdete v tématu [úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
+U typů uzlů, které dědí z <xref:System.Xml.XmlCharacterData>typy uzlů <xref:System.Xml.XmlComment>, <xref:System.Xml.XmlText>, <xref:System.Xml.XmlCDataSection>, <xref:System.Xml.XmlWhitespace>a <xref:System.Xml.XmlSignificantWhitespace> můžete odebrat znaky pomocí metody <xref:System.Xml.XmlCharacterData.DeleteData%2A>, která odebere rozsah znaků z uzlu. Pokud chcete zcela odebrat obsah, odeberte uzel obsahující obsah. Pokud chcete zachovat uzel, ale obsah není správný, upravte obsah. Informace o úpravách obsahu uzlu naleznete [v tématu Úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
   
 ## <a name="see-also"></a>Viz také:
 

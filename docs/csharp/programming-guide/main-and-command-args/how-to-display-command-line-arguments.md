@@ -1,16 +1,15 @@
 ---
 title: Postup zobrazení argumentů příkazového řádku – C# Průvodce programováním
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#], displaying
 ms.assetid: b8479f2d-9e05-4d38-82da-2e61246e5437
-ms.openlocfilehash: 3ae2f65696c6661ab4f732b604267116996162b2
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 210dad71220572535a0325fac925b0453b0d4e03
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635168"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712023"
 ---
 # <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Postup zobrazení argumentů příkazového řádku (C# Průvodce programováním)
 Argumenty poskytované spustitelnému souboru na příkazovém řádku jsou přístupné prostřednictvím volitelného parametru pro `Main`. Argumenty jsou k dispozici ve formě pole řetězců. Každý prvek pole obsahuje jeden argument. Odeberou se prázdné místo mezi argumenty. Například zvažte tyto vyvolání příkazového řádku fiktivního spustitelného souboru:  

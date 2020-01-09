@@ -6,17 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 31f277d11cba8191c326d56f017b8acc6503c6b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ac7e1b68f3f43a0c84c7330666825207e5b90004
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968715"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711048"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na datové typy rozhraní .NET Framework
-Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , <xref:System.Xml.XmlConvert>naleznete v tématu.  
+Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , naleznete v tématu <xref:System.Xml.XmlConvert>.  
   
  Řetězec vrácený metodou **ToString** je řetězcová verze dat, která je předána. Kromě toho existuje několik typů .NET Framework, které se převádějí pomocí třídy **XmlConvert** , ale nepoužívají metody ve třídě **System. Convert** . Třída **XmlConvert** se řídí specifikací datového typu XSD (XML Schema) a má datový typ, na který může **XmlConvert** mapovat.  
   
@@ -29,8 +27,8 @@ Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **
 |Single. NegativeInfinity|"-INF"|  
 |Double. PositiveInfinity|"INF"|  
 |Double. NegativeInfinity|"-INF"|  
-|DateTime|Formát je "rrrr-MM-ddTHH: mm: sszzzzzz" a jeho podmnožiny.|  
-|Timespan|Formát je PnYnMnTnHnMnS, což `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
+|Datum a čas|Formát je "rrrr-MM-ddTHH: mm: sszzzzzz" a jeho podmnožiny.|  
+|Časový rozsah|Formát je PnYnMnTnHnMnS, což je, `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
   
 > [!NOTE]
 > Pokud převedete některý z .NET Framework typů uvedených v tabulce na řetězec pomocí metody **ToString** , vrácený řetězec není základní typ, ale typ řetězce XML Schema (XSD).  
@@ -78,9 +76,9 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
 |Platný vstupní parametr řetězce|Typ výstupu .NET Framework|  
 |----------------------------------|--------------------------------|  
-|podmínka|Logická hodnota. true|  
+|„true“|Logická hodnota. true|  
 |"1"|Logická hodnota. true|  
-|chybné|Boolean. false|  
+|„false“|Boolean. false|  
 |"0"|Boolean. false|  
   
  Například s ohledem na následující kód XML:  
@@ -121,7 +119,7 @@ Console.WriteLine(bvalue);
 |"INF"|Double. PositiveInfinity|  
 |"-INF"|Double. NegativeInfinity|  
   
- Následující zápis `<Infinity>INF</Infinity>`kódu:  
+ Následující kód zapisuje `<Infinity>INF</Infinity>`:  
   
 ```vb  
 Dim value As Double = Double.PositiveInfinity  

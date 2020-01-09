@@ -3,48 +3,46 @@ title: Typy uzlů XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 623583f16c23b55c16f648fedcd039ca36f73b1f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83b8c09323e73a9b3ba7dea8d272d7d41d03add1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026858"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710086"
 ---
 # <a name="types-of-xml-nodes"></a>Typy uzlů XML
-Při čtení dokumentu XML do paměti jako strom uzly jsou typy uzlů pro uzly rozhodla vytvořené uzly. Má několik druhů typy uzlů, určené World Wide Web Consortium (W3C) XML Document Object Model (DOM) a uvedené v části 1.1.1 strukturu modelu DOM. Následující tabulka uvádí typy uzlů, přiřazené k typu uzlu a krátký popis každého objektu.  
+Když je dokument XML čten do paměti jako strom uzlů, typy uzlů pro uzly jsou určeny při vytváření uzlů. XML model DOM (Document Object Model) (DOM) má několik druhů typů uzlů určených konsorcium World Wide Web (W3C) a uvedené v části 1.1.1 model struktury DOM. V následující tabulce jsou uvedeny typy uzlů, objekt přiřazený k tomuto typu uzlu a stručný popis každého z nich.  
   
-|Typ uzlu modelu DOM|Objekt|Popis|  
+|Typ uzlu DOM|Objekt|Popis|  
 |-------------------|------------|-----------------|  
-|Dokument|<xref:System.Xml.XmlDocument>|Kontejner všech uzlů ve stromu. To se také nazývá kořen dokumentu, který není vždy stejný jako kořenový element.|  
-|DocumentFragment|<xref:System.Xml.XmlDocumentFragment>|Dočasné kontejner obsahující jeden nebo více uzlů bez žádné stromová struktura.|  
-|DocumentType|<xref:System.Xml.XmlDocumentType>|Představuje `<!DOCTYPE…>` uzlu.|  
-|EntityReference|<xref:System.Xml.XmlEntityReference>|Představuje odkaz na text bez rozšířit entity.|  
+|Dokument|<xref:System.Xml.XmlDocument>|Kontejner všech uzlů ve stromu Je také označován jako kořenový adresář dokumentu, který není vždy stejný jako kořenový element.|  
+|DocumentFragment|<xref:System.Xml.XmlDocumentFragment>|Dočasný vaku obsahující jeden nebo více uzlů bez stromové struktury.|  
+|DocumentType|<xref:System.Xml.XmlDocumentType>|Představuje uzel `<!DOCTYPE…>`.|  
+|EntityReference|<xref:System.Xml.XmlEntityReference>|Představuje nerozbalený textový odkaz na entitu.|  
 |Prvek|<xref:System.Xml.XmlElement>|Představuje uzel elementu.|  
-|attr|<xref:System.Xml.XmlAttribute>|Představuje atribut prvku.|  
-|ProcessingInstruction|<xref:System.Xml.XmlProcessingInstruction>|Je uzel zpracování instrukcí.|  
-|Komentář|<xref:System.Xml.XmlComment>|Uzel komentáře.|  
-|Text|<xref:System.Xml.XmlText>|Text, který patří k elementu nebo atributu.|  
-|CDATASection|<xref:System.Xml.XmlCDataSection>|Představuje CDATA.|  
-|Entity|<xref:System.Xml.XmlEntity>|Představuje `<!ENTITY…>` deklarace ve formátu XML dokumentu, buď z podsadě interní dokumentu typ definice (DTD), nebo externí specifikace DTD a parametr entity.|  
-|Zápis|<xref:System.Xml.XmlNotation>|Představuje notace deklarované v DTD.|  
+|ATTR|<xref:System.Xml.XmlAttribute>|Je atributem elementu.|  
+|ProcessingInstruction|<xref:System.Xml.XmlProcessingInstruction>|Je uzel instrukcí pro zpracování.|  
+|Komentář|<xref:System.Xml.XmlComment>|Uzel komentáře|  
+|Text|<xref:System.Xml.XmlText>|Text patřící k elementu nebo atributu|  
+|CDATASection|<xref:System.Xml.XmlCDataSection>|Reprezentuje CDATA.|  
+|Entity|<xref:System.Xml.XmlEntity>|Představuje deklarace `<!ENTITY…>` v dokumentu XML, buď z podmnožiny interního typu dokumentu (DTD), nebo z externích definicí a entit parametrů.|  
+|Notace|<xref:System.Xml.XmlNotation>|Představuje notaci deklarovaný v DTD.|  
   
- I když atribut (*attr*) je uveden v 1. úrovně modelu DOM W3C části 1.2 základní rozhraní jako uzel, není to považováno za podřízené libovolného uzlu elementu.  
+ I když je atribut (*ATTR*) uveden v části 1,2 konsorcia W3C úrovně 1 v části základní rozhraní jako uzel, není považován za podřízený uzel žádného elementu.  
   
- Následující tabulka uvádí typy dalšího uzlu nejsou definovány parametrem W3C, ale jsou k dispozici pro použití v objektovém modelu rozhraní Microsoft .NET Framework jako **XmlNodeType** výčty. Proto neexistuje žádný odpovídající modelu DOM uzel typu sloupec pro tyto typy uzlů.  
+ Následující tabulka uvádí další typy uzlů, které nejsou definovány konsorciem W3C, ale jsou k dispozici pro použití v modelu Microsoft .NET Framework Object Model jako výčty **XmlNodeType** . Proto pro tyto typy uzlů neexistuje žádný shodný sloupec typu uzlu modelu DOM.  
   
 |Typ uzlu|Popis|  
 |---------------|-----------------|  
 |<xref:System.Xml.XmlDeclaration>|Představuje uzel deklarace `<?xml version="1.0"…>`.|  
-|<xref:System.Xml.XmlSignificantWhitespace>|Představuje významnou mezeru, což je prázdné místo v smíšený obsah.|  
-|<xref:System.Xml.XmlWhitespace>|Představuje mezer v obsahu elementu.|  
-|Vlastnost EndElement|Vrátí, když **XmlReader** získá koncový prvek.<br /><br /> Ukázkový soubor XML:  **\< /položka >**<br /><br /> Další informace naleznete v tématu <xref:System.Xml.XmlNodeType>.|  
-|EndEntity|Vrátí, když **XmlReader** získá za účelem nahrazení entity jako výsledek volání <xref:System.Xml.XmlReader.ResolveEntity%2A>. Další informace naleznete v tématu <xref:System.Xml.XmlNodeType>.|  
+|<xref:System.Xml.XmlSignificantWhitespace>|Představuje významné prázdné znaky, což je prázdné místo ve smíšeném obsahu.|  
+|<xref:System.Xml.XmlWhitespace>|Představuje prázdné místo v obsahu elementu.|  
+|EndElement|Vrátí se, když se **XmlReader** dostane na konec elementu.<br /><br /> Příklad XML: **\</item >**<br /><br /> Další informace najdete v tématu <xref:System.Xml.XmlNodeType>.|  
+|EndEntity|Vrátí se, když se **XmlReader** vrátí na konec náhrady entity v důsledku volání <xref:System.Xml.XmlReader.ResolveEntity%2A>. Další informace najdete v tématu <xref:System.Xml.XmlNodeType>.|  
   
- Chcete-li zobrazit příklad kódu, který čte ve formátu XML a používá případu konstrukce u typů uzlů na tiskové informace o uzlu a její obsah, najdete v článku <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A>.  
+ Chcete-li zobrazit příklad kódu, který čte v jazyce XML a používá v typech uzlů konstrukci Case pro tisk informací o uzlu a jeho obsahu, přečtěte si téma <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A>.  
   
- Další informace o hierarchii objektů typy uzlů a jejich název ekvivalentních objektů naleznete v tématu [hierarchii XML Document Object Model (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md). Další informace o objekty vytvořené v uzlu stromu, naleznete v tématu [mapování hierarchie objektů na XML Data](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).  
+ Další informace o hierarchii objektů typů uzlů a jejich ekvivalentních názvů objektů naleznete v tématu [XML model DOM (Document Object Model) (DOM) hierarchii](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md). Další informace o objektech vytvořených ve stromové struktuře uzlu najdete v tématu [mapování hierarchie objektů na data XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md).  
   
 ## <a name="see-also"></a>Viz také:
 

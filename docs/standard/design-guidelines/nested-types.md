@@ -10,40 +10,39 @@ helpviewer_keywords:
 - members [.NET Framework], type
 - class library design guidelines [.NET Framework], nested types
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
-author: KrzysztofCwalina
-ms.openlocfilehash: 22c14d05105154ff642cb8a44eda8e7c5d0575e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3467851aa767efcd0557e8a412cd36316a48b9b0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756868"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709150"
 ---
 # <a name="nested-types"></a>Vnořené typy
-Vnořený typ je typ definovaný v rámci jiného typu, která se nazývá nadřazeného typu. Vnořený typ má přístup na všechny členy jeho nadřazeného typu. Například má přístup k privátním položkám definované nadřazeného typu a chráněné pole definovaná ve všech nadřazených členů nadřazeného typu.  
+Vnořený typ je typ definovaný v oboru jiného typu, který se nazývá nadřazený typ. Vnořený typ má přístup ke všem členům svého nadřazeného typu. Má například přístup k soukromým polím definovaným v nadřazeném typu a chráněným polím definovaným ve všech nadřazených členů nadřazených typů.  
   
- Obecně platí vnořené typy by měly používat střídmě. Existuje několik důvodů. Někteří vývojáři nejsou plně seznámení s konceptem. Tyto vývojáře, například mít problémy se syntaxí File://Server.Fabrikam.com/SD deklarování proměnných vnořené typy. Vnořené typy jsou také velmi úzce svázány s jejich nadřazené typy a jako taková nejsou vhodné být obecné typy.  
+ Obecně platí, že vnořené typy by se měly používat zřídka. Z tohoto důvodu je k dispozici několik důvodů. Někteří vývojáři nejsou plně obeznámeni s konceptem. Tito vývojáři mohou mít například problémy s syntaxí deklarování proměnných vnořených typů. Vnořené typy jsou také velmi úzce spojeny s jejich nadřazenými typy a jako takové nejsou vhodné pro obecné typy.  
   
- Vnořené typy jsou nejvhodnější pro modelování podrobnosti implementace jejich nadřazené typy. Koncový uživatel by měl mít jen zřídka pro deklarování proměnných vnořeného typu a téměř nikdy by měl mít explicitně vytvořit instanci vnořené typy. Například čítače výčtu kolekce může být vnořený typ této kolekce. Instance čítače se obvykle vytvářejí pomocí jejich nadřazených typů a protože mnoho jazyky podporují příkaz foreach, enumerátor proměnné zřídka musí deklarovat koncovým uživatelem.  
+ Vnořené typy jsou nejvhodnější pro podrobnosti o implementaci modelování jejich nadřazených typů. Koncový uživatel by měl definovat proměnné vnořeného typu zřídka a téměř nikdy by neměl muset explicitně vytvářet instance vnořených typů. Například enumerátor kolekce může být vnořeným typem kolekce. Enumerátory jsou obvykle vytvořeny pomocí jejich ohraničujícího typu a protože mnoho jazyků podporuje příkaz foreach, proměnné čítače výčtu zřídka musí být deklarovány koncovým uživatelem.  
   
  **✓ DO** použití vnořené typy vztah mezi vnořené typy a jeho vnější typ tak, aby člen usnadnění sémantika je žádoucí.  
   
  **X DO NOT** použití veřejného vnořené typy jako logické seskupení vytvořit; pomocí oborů názvů pro tuto.  
   
- **X AVOID** veřejně vystaven vnořené typy. Jedinou výjimkou je, pokud proměnné vnořeného typu potřeba deklarovat pouze ve výjimečných případech, jako je například vytvoření podtřídy nebo jiné scénáře rozšířená přizpůsobení.  
+ **X AVOID** veřejně vystaven vnořené typy. Jedinou výjimkou je, že proměnné vnořeného typu musí být deklarovány pouze ve výjimečných scénářích, jako je například použití podtříd nebo jiné pokročilé scénáře přizpůsobení.  
   
  **X DO NOT** použijte vnořené typy, pokud typ je pravděpodobně bude odkazovat mimo nadřazeného typu.  
   
- Například výčet předaný metodě definované třídy nesmí být definována jako vnořený typ ve třídě.  
+ Například výčet předaný metodě definovanému pro třídu by neměl být definován jako vnořený typ ve třídě.  
   
- **X DO NOT** použít vnořené typy, pokud je nutné vytvořit instanci kódem na straně klienta.  Pokud typ nemá veřejný konstruktor, ji by měl pravděpodobně není vnořit.  
+ **X DO NOT** použít vnořené typy, pokud je nutné vytvořit instanci kódem na straně klienta.  Má-li typ veřejný konstruktor, neměl by být pravděpodobně vnořený.  
   
- Pokud můžete vytvořit instanci typu, který zdá se, že označuje typ má místo v rámci sama o sobě (můžete ji vytvořit, pracujete s ním a zničit bez někdy použití vnějšího typu) a proto by neměl být vnořený. Vnitřní typy by neměly znovu použít široce mimo vnější typ bez jakékoli relace jednání do vnějšího typu.  
+ Pokud lze vytvořit instanci typu, která označuje, že typ má místo v rozhraní vlastní (můžete ho vytvořit, pracovat s ním a zničit jej bez použití vnějšího typu), a proto by neměl být vnořen. Vnitřní typy by se neměly široce používat vně vnějšího typu bez jakéhokoli vztahu k vnějšímu typu.  
   
- **X DO NOT** definovat vnořené typy jako člen rozhraní. Řadu jiných jazyků nepodporují tato konstrukce.  
+ **X DO NOT** definovat vnořené typy jako člen rozhraní. Mnohé jazyky tuto konstrukci nepodporují.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

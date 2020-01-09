@@ -15,15 +15,15 @@ helpviewer_keywords:
 - grouping data [LINQ in Visual Basic]
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
-ms.openlocfilehash: e9a646d60bb22507f4c6bcbcdf9222fd0ed18f02
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b9216dba23f49e4d9fd99687e38f5c13addde8fb
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345753"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636871"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Základní operace dotazů (Visual Basic)
-Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazů v Visual Basic a některé z typických druhů operací, které v dotazu provedete. Další informace naleznete v následujících tématech:  
+Toto téma poskytuje stručný úvod do výrazů LINQ (Language-Integrated Query) v Visual Basic a na některé běžné druhy operací, které v dotazu provedete. Další informace naleznete v následujících tématech:  
   
  [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
@@ -32,7 +32,7 @@ Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinqext](~/includes/vbtec
  [Návod: zápis dotazů v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)  
   
 ## <a name="specifying-the-data-source-from"></a>Určení zdroje dat (From)  
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu je prvním krokem určení zdroje dat, který chcete dotazovat. Proto je klauzule `From` v dotazu vždy první. Operátory dotazu vyberou a tvarují výsledek na základě typu zdroje.  
+ V dotazu LINQ je prvním krokem určení zdroje dat, který chcete dotazovat. Proto je klauzule `From` v dotazu vždy první. Operátory dotazu vyberou a tvarují výsledek na základě typu zdroje.  
   
  [!code-vb[VbLINQBasicOps#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#1)]  
   

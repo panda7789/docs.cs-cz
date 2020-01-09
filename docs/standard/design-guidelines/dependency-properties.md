@@ -3,23 +3,22 @@ title: Vlastnosti závislosti
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-author: KrzysztofCwalina
-ms.openlocfilehash: 52d7a69a3f52c67ebff3f3db1daf0790e995913a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd12d05dbba133503778e6df3cd0e6c3e5689d5b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778765"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709488"
 ---
 # <a name="dependency-properties"></a>Vlastnosti závislosti
-Vlastnost závislosti (DP) je regulární vlastnost, která uloží svou hodnotu v úložišti vlastností místo ukládání proměnná typu (pole), např.  
+Vlastnost závislosti (DP) je obvyklá vlastnost, která ukládá její hodnotu do úložiště vlastností místo jejich uložení do proměnné typu (pole), například.  
   
- Na vlastnost připojené závislostí je druh vlastnost závislosti nemodelují jako statické metody Get a Set představující "properties" popisující vztahy mezi objekty a jejich kontejnery (například pozici `Button` objektu na `Panel` kontejner).  
+ Připojená vlastnost Dependency je druh vlastnosti závislosti, která se modeluje jako statické metody Get a set, které představují vlastnosti popisující vztahy mezi objekty a jejich kontejnery (například umístění objektu `Button` v kontejneru `Panel`).  
   
  **✓ DO** zadejte vlastnosti závislosti, pokud budete potřebovat k podpoře funkce WPF například stylů, aktivační události, vazby dat, animací, dynamické prostředky a dědičnosti vlastností.  
   
 ## <a name="dependency-property-design"></a>Návrh vlastnosti závislosti  
- **✓ DO** dědí <xref:System.Windows.DependencyObject>, nebo jeden z jeho podtypech při implementaci vlastností závislostí. Typ poskytuje implementaci velmi efektivní úložiště vlastností a automaticky podporuje datové vazby WPF.  
+ **✓ DO** dědí <xref:System.Windows.DependencyObject>, nebo jeden z jeho podtypech při implementaci vlastností závislostí. Typ poskytuje velmi efektivní implementaci úložiště vlastností a automaticky podporuje datovou vazbu WPF.  
   
  **✓ DO** zadejte regulární vlastnost CLR a veřejné statické jen pro čtení pole ukládání instanci <xref:System.Windows.DependencyProperty?displayProperty=nameWithType> pro každou vlastnost závislosti.  
   
@@ -29,18 +28,18 @@ Vlastnost závislosti (DP) je regulární vlastnost, která uloží svou hodnotu
   
  **X DO NOT** explicitně nastavit výchozí hodnoty vlastností závislostí v kódu; nastavte je v metadatech.  
   
- Pokud nastavíte výchozí vlastnost explicitně, by mohly bránit tuto vlastnost z nastavování některé implicitní prostředky, například styl.  
+ Pokud nastavíte výchozí nastavení vlastnosti explicitně, můžete zabránit tomu, aby se tato vlastnost nastavila některými implicitními prostředky, jako je styl.  
   
  **X DO NOT** vkládat kód do vlastnosti přistupující objekty než standardní kód pro přístup k statické pole.  
   
- Statické pole, že kód nebude spuštěno Pokud je nastavena implicitní prostředky, například styl, protože práce se styly používá přímo.  
+ Tento kód nebude proveden, pokud je vlastnost nastavena pomocí implicitních prostředků, jako je například styl, protože styl používá přímo pole static.  
   
- **X DO NOT** zabezpečené data pomocí vlastností závislostí. Vlastnosti závislostí i privátní přístupná veřejně.  
+ **X DO NOT** zabezpečené data pomocí vlastností závislostí. K vlastnostem soukromé závislosti lze přistupovat i na veřejném.  
   
-## <a name="attached-dependency-property-design"></a>Návrh vlastnosti připojené závislostí  
- Vlastnosti závislostí popsaných v předchozí části představují vnitřní vlastnosti deklarujícího typu; například `Text` vlastností je vlastnost `TextButton`, který deklaruje. Zvláštní druh vlastnost závislosti je vlastnost připojené závislosti.  
+## <a name="attached-dependency-property-design"></a>Návrh vlastnosti připojené závislosti  
+ Vlastnosti závislosti popsané v předchozí části označují vnitřní vlastnosti deklarovaného typu; například vlastnost `Text` je vlastnost `TextButton`, která ji deklaruje. Speciálním druhem vlastnosti závislosti je vlastnost připojené závislosti.  
   
- Klasické příkladem připojené vlastnosti je <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> vlastnost. Vlastnost představuje pozici sloupce tlačítka (ne mřížky), ale je pouze relevantní tlačítko je součástí do mřížky, takže je "připojeno" k tlačítka pomocí mřížky.  
+ Klasickým příkladem připojené vlastnosti je vlastnost <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType>. Vlastnost představuje pozici sloupce tlačítko (ne mřížka), ale je relevantní pouze v případě, že je tlačítko obsaženo v mřížce, a proto je "připojené" k tlačítkům na základě mřížky.  
   
 ```xaml
 <Grid>  
@@ -54,7 +53,7 @@ Vlastnost závislosti (DP) je regulární vlastnost, která uloží svou hodnotu
 </Grid>  
 ```  
   
- Definice připojené vlastnosti vypadá převážně u vlastnosti regulárního závislosti, s tím rozdílem, přístupové objekty jsou reprezentovány statické metody Get a Set:  
+ Definice připojené vlastnosti vypadá hlavně podobně jako vlastnost běžné závislosti s tím rozdílem, že přistupující objekty jsou reprezentovány pomocí statických metod get a set:  
   
 ```csharp
 public class Grid {  
@@ -76,26 +75,26 @@ public class Grid {
 }  
 ```  
   
-## <a name="dependency-property-validation"></a>Ověření vlastností závislostí  
- Vlastnosti často implementovat, co se nazývá ověření. Logiku ověřování provede při pokusu o změnit hodnotu vlastnosti.  
+## <a name="dependency-property-validation"></a>Ověřování vlastností závislosti  
+ Vlastnosti často implementují, co se nazývá ověřování. Logika ověřování se spustí, když se provede pokus o změnu hodnoty vlastnosti.  
   
- Bohužel přistupující objekty vlastnosti závislost nemůže obsahovat libovolný ověřovací kód. Místo toho logiku ověření závislostí vlastnost je nutné zadat během registrace vlastnost.  
+ Přístupové objekty vlastnosti bohužel nemůžou obsahovat libovolný ověřovací kód. Místo toho je nutné při registraci vlastnosti zadat logiku ověřování vlastností závislostí.  
   
- **X DO NOT** chápat logiku ověření pro vlastnost závislosti vlastnosti přistupující objekty. Místo toho předat zpětné volání pro ověření do `DependencyProperty.Register` metody.  
+ **X DO NOT** chápat logiku ověření pro vlastnost závislosti vlastnosti přistupující objekty. Místo toho předejte zpětné volání ověření do metody `DependencyProperty.Register`.  
   
-## <a name="dependency-property-change-notifications"></a>Oznámení změn vlastností závislosti  
- **X DO NOT** implementovat logiku oznámení změn v přístupové objekty vlastnosti závislosti. Vlastnosti závislosti obsahují integrované změnit funkci oznámení, které musí být použito poskytnutím zpětné volání oznámení změn, aby <xref:System.Windows.PropertyMetadata>.  
+## <a name="dependency-property-change-notifications"></a>Oznámení o změně vlastnosti závislosti  
+ **X DO NOT** implementovat logiku oznámení změn v přístupové objekty vlastnosti závislosti. Vlastnosti závislosti mají vestavěnou funkci oznámení změn, kterou je nutné použít k poskytnutí zpětného volání oznámení o změně <xref:System.Windows.PropertyMetadata>.  
   
-## <a name="dependency-property-value-coercion"></a>Vynucení hodnotu vlastnosti závislosti  
- Vlastnost převod se provádí při změně hodnoty zadané pro vlastnost setter podle setter předtím, než se skutečně upraví úložiště vlastností.  
+## <a name="dependency-property-value-coercion"></a>Hodnota vlastnosti závislosti – vynucení  
+ K převodu vlastnosti dojde, pokud je hodnota zadaná metodě setter vlastnosti změněna před samotným úpravou úložiště vlastností.  
   
  **X DO NOT** implementovat logiku na převod přístupové objekty vlastnosti závislosti.  
   
- Vlastnosti závislosti mají integrovanou vynucení funkce a je možné poskytnutím zpětné volání vynucení, aby `PropertyMetadata`.  
+ Vlastnosti závislosti mají integrovanou funkci vynucení a lze ji použít poskytnutím zpětného volání pro `PropertyMetadata`.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
   
 ## <a name="see-also"></a>Viz také:
 

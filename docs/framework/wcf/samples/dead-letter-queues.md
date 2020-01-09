@@ -2,12 +2,12 @@
 title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 244920eb9a0cdb33f4d5d83b939fe1166f4f5fcd
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: d493aba9a3f7a51824243fe8d06441ab563b2261
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837906"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344530"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhaly při doručování. Vychází ze vzorových [vazeb v transakční službě MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . V této ukázce se používá vazba `netMsmqBinding`. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
@@ -16,7 +16,7 @@ Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhal
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
 > [!NOTE]
-> Tato ukázka předvádí každou frontu nedoručených zpráv aplikace, která je k dispozici pouze v systému Windows Vista. Ukázku můžete upravit tak, aby používala výchozí systémové fronty pro službu MSMQ 3,0 na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+> Tato ukázka předvádí každou frontu nedoručených zpráv aplikace, která je k dispozici pouze v systému Windows Vista. Ukázku lze upravit tak, aby v systému Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]používala výchozí systémové fronty pro službu MSMQ 3,0.
 
  V komunikaci ve frontě klient komunikuje se službou pomocí fronty. Klient přesněji odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.
 

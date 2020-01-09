@@ -3,78 +3,76 @@ title: Pravidla pro odvození jednoduchých typů
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 15e7692abfe06ec9e9f91a3b229bf99971eaecc1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 17429e77f7764873e607a8feaa62da1cc6e014a4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62027014"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710229"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Pravidla pro odvození jednoduchých typů
-Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodí typ dat pro atributy a elementy.  
+Popisuje, jak třída <xref:System.Xml.Schema.XmlSchemaInference> odvodí datový typ pro atributy a elementy.  
   
- <xref:System.Xml.Schema.XmlSchemaInference> Třídy odvodí typ dat pro atributy a prvky jako jednoduché typy. Tato část popisuje potenciální odvozené typy, jak několika rozdílné hodnoty jsou sloučeny do jednoho typu a jak definovat schéma `xsi` atributy jsou zpracovány.  
+ Třída <xref:System.Xml.Schema.XmlSchemaInference> odvodí datový typ pro atributy a elementy jako jednoduché typy. Tato část popisuje potenciální odvozené typy, způsob, jakým jsou více různých hodnot sloučeny na jeden typ a jak jsou zpracovávány atributy definující `xsi` schématu.  
   
 ## <a name="inferred-types"></a>Odvozené typy  
- <xref:System.Xml.Schema.XmlSchemaInference> Třídy odvodí elementu a atribut hodnoty jako jednoduché typy a obsahuje atribut typu v výsledný schéma. Odvodit všechny typy jsou jednoduché typy. Žádné základní typy nebo omezující vlastnosti jsou zahrnuty jako součást výsledný schéma.  
+ Třída <xref:System.Xml.Schema.XmlSchemaInference> odvodí element a hodnoty atributu jako jednoduché typy a obsahuje atribut typu ve výsledném schématu. Všechny odvozené typy jsou jednoduché typy. Jako součást výsledného schématu nejsou zahrnuté žádné základní typy ani omezující vlastnosti.  
   
- Hodnoty jsou zkoumány samostatně, jak se vyskytují v dokumentu XML. Typ je odvozen pro hodnoty v době, kdy je zkontrolován. Pokud se pro atribut nebo element byl odvozen typ a hodnotu pro atribut nebo element, který neodpovídá aktuálně odvozený typ, dochází <xref:System.Xml.Schema.XmlSchemaInference> třídy podporuje typ pro každou sadu pravidel. Tato pravidla jsou popsány v části Typ povýšení později v tomto tématu.  
+ Hodnoty jsou zkontrolovány jednotlivě, jak jsou zjištěny v dokumentu XML. Typ je odvozený pro hodnotu v okamžiku, kdy je vyhodnocena. Pokud byl typ odvozen pro atribut nebo element a byla zjištěna hodnota atributu nebo elementu, která neodpovídá aktuálně odvozenému typu, třída <xref:System.Xml.Schema.XmlSchemaInference> propaguje typ pro každou sadu pravidel. Tato pravidla jsou popsána v části propagace typů dále v tomto tématu.  
   
- Následující tabulka uvádí možné typy odvozené pro výsledný schéma.  
+ V následující tabulce jsou uvedeny možné odvozené typy pro výsledné schéma.  
   
-|Jednoduchý typ.|Popis|  
+|Jednoduchý typ|Popis|  
 |-----------------|-----------------|  
-|Logická hodnota|Hodnota TRUE, false, 0, 1.|  
+|Logická hodnota|True, false, 0, 1.|  
 |byte|Celá čísla v rozsahu od – 128 do 127.|  
 |unsignedByte|Celá čísla v rozsahu od 0 do 255.|  
-|short|Celá čísla v rozsahu –32768 do 32767.|  
-|unsignedShort|Celá čísla v rozsahu 0 až 65535.|  
-|int|Celá čísla v rozsahu –2147483648 do 2147483647.|  
+|short|Celá čísla v rozsahu od – 32768 do 32767.|  
+|unsignedShort|Celá čísla v rozsahu od 0 do 65535.|  
+|int|Celá čísla v rozsahu od – 2147483648 do 2147483647.|  
 |unsignedInt|Celá čísla v rozsahu od 0 do 4294967295.|  
-|long|Celá čísla v rozsahu –9223372036854775808 k 9223372036854775807.|  
-|unsignedLong|Celá čísla v rozsahu 0 – 18446744073709551615.|  
-|integer|Konečný počet číslic, případně s předponou "-".|  
-|decimal|Číselné hodnoty, které se skládat z 0 až 28 platných číslic.|  
-|float|Desetinná místa může volitelně následovat "E" nebo "e" následované celočíselnou hodnotu představující exponent. Desetinné hodnoty mohou být v rozsahu-16777216 k 16777216. Exponent hodnoty mohou být v rozsahu –149 na 104.<br /><br /> Plovoucí desetinnou čárkou umožňuje pro zvláštní hodnoty k reprezentování nekonečna a jiné než číselné hodnoty. Jsou speciální hodnoty typu float: 0, -0, INF, -INF, NaN.|  
-|double|Stejné jako plovoucí desetinnou čárkou s výjimkou desetinné hodnoty můžou být v rozsahu-9007199254740992 k 9007199254740992 a exponentu hodnoty mohou být v rozsahu –1075 k 970.<br /><br /> Double umožňuje pro zvláštní hodnoty k reprezentování nekonečna a jiné než číselné hodnoty. Jsou speciální hodnoty typu float: 0, -0, INF, -INF, NaN.|  
+|long|Celá čísla v rozsahu od – 9223372036854775808 do 9223372036854775807.|  
+|unsignedLong|Celá čísla v rozsahu od 0 do 18446744073709551615.|  
+|integer|Konečný počet číslic může být předponou "-".|  
+|decimal|Číselné hodnoty, které obsahují 0 až 28 číslic přesnosti.|  
+|float|Desetinná místa volitelně následované "E" nebo "e" následovaná celočíselnou hodnotou představující exponent. Desítkové hodnoty můžou být v rozsahu od-16777216 do 16777216. Hodnoty exponentu můžou být v rozsahu od – 149 do 104.<br /><br /> Float umožňuje, aby speciální hodnoty představovaly nekonečno a jiné než číselné hodnoty. Speciální hodnoty pro float jsou: 0,-0, INF,-INF, NaN.|  
+|double|Stejné jako float s výjimkou desetinných hodnot můžou být v rozsahu-9007199254740992 až 9007199254740992 a hodnoty exponentu můžou být v rozsahu od – 1075 do 970.<br /><br /> Double umožňuje, aby speciální hodnoty představovaly nekonečno a jiné než číselné hodnoty. Speciální hodnoty pro float jsou: 0,-0, INF,-INF, NaN.|  
 |doba trvání|Formát doby trvání W3C.|  
-|data a času.|Formát data a času ve formátu W3C.|  
+|data a času.|Formát data a času W3C.|  
 |čas|Formát času W3C.|  
-|Datum|Hodnoty roku zakázáno 0001 až 9999.|  
-|gYearMonth|W3C gregoriánský měsíc a rok formátu.|  
+|Datum|Hodnoty roku jsou omezeny z 0001 na 9999.|  
+|gYearMonth|Gregoriánský formát měsíce a roku W3C.|  
 |odkazy řetězců|Jeden nebo více znaků Unicode.|  
   
 ## <a name="type-promotion"></a>Propagace typu  
- <xref:System.Xml.Schema.XmlSchemaInference> Třída zkontroluje hodnoty elementu a atributu jeden po druhém. Podle výskytu hodnoty nejvíce omezující bez znaménka typ je odvozen. Pokud byl odvozen typ pro atribut nebo element a novou hodnotu, která se neshoduje s aktuálně odvozený typ narazí, odvozený typ je povýšen na nový typ, který se vztahuje na aktuálně odvozený typ a nová hodnota. <xref:System.Xml.Schema.XmlSchemaInference> Třídy při zvyšování úrovně odvozený typ zvažte předchozí hodnoty.  
+ Třída <xref:System.Xml.Schema.XmlSchemaInference> kontroluje jednu po druhé hodnoty atributu a elementu. V případě, že jsou zjištěny hodnoty, je odvozeno nejvíce omezující typ bez znaménka. Pokud byl typ odvozen pro atribut nebo element a byla zjištěna nová hodnota, která neodpovídá aktuálně odvozenému typu, odvozený typ je povýšen na nový typ, který se vztahuje na aktuálně odvozený typ i na novou hodnotu. Třída <xref:System.Xml.Schema.XmlSchemaInference> při povýšení odvozeného typu zváží předchozí hodnoty.  
   
- Představte si třeba následující fragmentů XML ze dvou dokumentů XML:  
+ Zvažte například následující fragmenty kódu XML ze dvou dokumentů XML:  
   
  `<MyElement1 attr1="12" />`  
   
  `<MyElement1 attr1="52344" />`  
   
- Při první `attr1` zjištěna hodnota je typu `attr1` je odvozený jako `unsignedByte` na základě hodnoty `12`. Při druhém `attr1` je nalezen, typ je povýšen na `unsignedShort` podle aktuálně odvozený typ `unsignedByte` a aktuální hodnotou `52344`.  
+ Při výskytu první `attr1` hodnoty je typ `attr1` odvozen jako `unsignedByte` na základě hodnoty `12`. Když se vyskytne druhý `attr1`, je typ povýšen na `unsignedShort` na základě aktuálně odvozeného typu `unsignedByte` a aktuální hodnoty `52344`.  
   
- Nyní zvažte následující kód XML ze dvou dokumentů XML:  
+ Nyní zvažte následující XML ze dvou dokumentů XML:  
   
  `<MyElement2 attr2="0" />`  
   
  `<MyElement2 attr2="true" />`  
   
- Při první `attr2` zjištěna hodnota je typu `attr2` je odvozený jako `unsignedByte` na základě hodnoty `0`. Při druhý `attr2` je zjištěna, typ je povýšen na `string` podle aktuálně odvozený typ `unsignedByte` a aktuální hodnotou `true` protože <xref:System.Xml.Schema.XmlSchemaInference> třídy zvažte předchozí hodnoty, při zvyšování úrovně odvození typu. Nicméně pokud obě instance `attr2` byly zjištěny ve stejném dokumentu XML a nejsou ve dvou různých dokumentů XML, jak je znázorněno výše, `attr2` by byl odvozen jako `boolean`.  
+ Při výskytu první `attr2` hodnoty je typ `attr2` odvozen jako `unsignedByte` na základě hodnoty `0`. Když se vyskytne druhý `attr2`, je typ povýšen na `string` na základě aktuálně odvozeného typu `unsignedByte` a aktuální hodnoty `true`, protože třída <xref:System.Xml.Schema.XmlSchemaInference> při zvýšení úrovně odvozeného typu zváží předchozí hodnoty. Pokud však byly nalezeny obě instance `attr2` ve stejném dokumentu XML a nikoli ve dvou různých dokumentech XML, jak je znázorněno výše, `attr2` by bylo odvozeno jako `boolean`.  
   
-### <a name="ignored-attributes-from-the-httpswwww3org2001xmlschema-instance-namespace"></a>Ignorovat atributů z <https://www.w3.org/2001/XMLSchema-instance> obor názvů
+### <a name="ignored-attributes-from-the-httpswwww3org2001xmlschema-instance-namespace"></a>Ignorované atributy z oboru názvů <https://www.w3.org/2001/XMLSchema-instance>
 
-Definování schématu jsou následující atributy, které jsou ignorovány při odvozování schématu.  
+Níže jsou atributy definující schéma, které jsou ignorovány během odvození schématu.  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`xsi:type`|Pokud je element s `xsi:type` zadán, `xsi:type` se ignoruje.|  
-|`xsi:nil`|Pokud element s `xsi:nil` zjištěn atribut, jeho deklaraci elementu ve schématu odvozené má hodnotu `nillable="true"`. Element s `xsi:nil` atribut nastaven na `true` nemůže mít podřízené elementy.|  
-|`xsi:schemaLocation`|Pokud `xsi:schemaLocation` je nalezen, je ignorována.|  
-|`xsi:noNamespaceSchemaLocation`|Pokud `xsi:noNamespaceSchemaLocation` je nalezen, je ignorována.|  
+|`xsi:type`|Pokud je nalezen element se zadaným `xsi:type`, `xsi:type` je ignorováno.|  
+|`xsi:nil`|Pokud je nalezen element s atributem `xsi:nil`, jeho deklarace elementu v odvozeném schématu má hodnotu `nillable="true"`. Element s atributem `xsi:nil` nastaveným na `true` nemůže mít podřízené prvky.|  
+|`xsi:schemaLocation`|Pokud dojde k `xsi:schemaLocation`, ignoruje se.|  
+|`xsi:noNamespaceSchemaLocation`|Pokud dojde k `xsi:noNamespaceSchemaLocation`, ignoruje se.|  
   
 ## <a name="see-also"></a>Viz také:
 

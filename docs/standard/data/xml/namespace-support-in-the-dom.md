@@ -3,27 +3,25 @@ title: Podpora oboru názvů v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: f0548ead-0fed-41ee-b33e-117ba900d3bc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1a468d1a2b15d1f92726d8d429fbc5ddece96e6d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7efe03f25fde0681ebd9e3c7c8ea81f6686a8ec1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647864"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710606"
 ---
 # <a name="namespace-support-in-the-dom"></a>Podpora oboru názvů v modelu DOM
-Je zcela oboru názvů s ohledem na XML Document Object Model (DOM). Jsou podporovány pouze s ohledem na obor názvů XML dokumentů. World Wide Web Consortium (W3C) určuje, že může být mimo obor názvů s deklaracemi modelu DOM aplikace, které implementují úrovně 1 a modelu DOM úrovně 2 funkcí jsou s ohledem na obor názvů. Všechny funkce v modelu DOM jazyka XML jsou však s ohledem na obor názvů bez ohledu na to, pokud je metoda od úrovně 1 nebo úrovně 2 modelu DOM doporučení.  
+XML model DOM (Document Object Model) (DOM) je plně podporující obor názvů. Jsou podporovány pouze dokumenty XML zohledňující obor názvů. Konsorcium World Wide Web (W3C) určuje, že aplikace modelu DOM, které implementují úroveň 1, můžou být nezohledňované a funkce DOM úrovně 2 se s oborem názvů nepodporují. Všechny funkce v modelu XML DOM však podporují obor názvů bez ohledu na to, zda je metoda z doporučení úrovně 1 nebo 2 DOM.  
   
- Například v mimo obor názvů – s ohledem na nastavení, volání `setAttribute("A:b", "123")`, jak je uvedeno v modelu DOM na úrovni 1 doporučení, nemá za následek atribut s předponou `A` a místní název `b`. Výsledkem by byla atributu s hodnotou `A:b`.  
+ Například v případě nastavení, které nepoužívá obor názvů, volání `setAttribute("A:b", "123")`, jak je uvedeno v doporučení DOM úrovně 1, nemá za následek atribut s předponou `A` a místním názvem `b`. Výsledkem by byl atribut s hodnotou `A:b`.  
   
- V prostředí s ohledem na obor názvů, volání na úroveň 2 modelu DOM `setAttribute("A:b", "123")` výsledků v atributu s předponou `A` a místní název `b`. Toto je Princip modelu DOM rozhraní Microsoft .NET Framework.  
+ V prostředí s oborem názvů je volání DOM úrovně 2 `setAttribute("A:b", "123")` výsledkem atribut s předponou `A` a místním názvem `b`. Tímto způsobem funguje Microsoft .NET Framework DOM.  
   
- Pro všechny metody, které přebírají parametr name, je proto tyto metody také mít předponu kvalifikovat název. Parametr name, jako `A:b` v **setAttribute** metoda 1. úrovně modelu DOM, je analyzován následujícím způsobem:  
+ Proto pro všechny metody, které přijímají parametr Name, tyto metody také převezmou předponu, která bude kvalifikována název. Parametr Name, například `A:b` v metodě **SetAttributes** DOM úrovně 1, se analyzuje takto:  
   
-- Pokud neexistují žádné dvojtečky (:), pak místní název je nastavený `name` parametr a předponu a NamespaceURI jsou prázdné řetězce.  
+- Pokud neexistují žádné dvojtečky (:) znaky, místní název je nastaven na parametr `name` a předpona a NamespaceURI jsou prázdné řetězce.  
   
-- Pokud se najde dvojtečkou název rozdělit do dvou částí na základě pozice první znak dvojtečky. Předpona, která je nastavena na řetězec nalezen před dvojtečku a místní název nastavený na řetězec nalezen za dvojtečkou. Pro metody, které nepřebírají hodnotu NamespaceURI jeho atribut NamespaceURI není vyřešený a zůstane nastavit na prázdný řetězec. V opačném případě jeho atribut NamespaceURI nastavený na řetězec předaný metodě. Pokud předpona, která není definován, pak bude **Uložit** metoda a **InnerXml** a **OuterXml** vlastnosti selhání.  
+- Je-li nalezen dvojtečka, název je rozdělen do dvou částí na základě pozice prvního znaku dvojtečky. Předpona je nastavena na řetězec, který byl nalezen před dvojtečkou a místní název je nastaven na řetězec, který byl nalezen za dvojtečkou. Pro metody, které nevezmou hodnotu NamespaceURI, NamespaceURI není vyřešen a zůstane nastaven na prázdný řetězec. V opačném případě je NamespaceURI nastaven na řetězec předaný metodě. Pokud není předpona definována, pak vlastnosti **Save** a **InnerXml** a **OuterXml** selžou.  
   
 ## <a name="see-also"></a>Viz také:
 

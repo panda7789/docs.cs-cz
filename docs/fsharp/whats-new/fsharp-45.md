@@ -2,12 +2,12 @@
 title: Co je nového v F# 4,5 – F# příručka
 description: Získejte přehled o nových funkcích dostupných v F# 4,5.
 ms.date: 11/27/2019
-ms.openlocfilehash: 780b33a564432aae5ec99c70ff8620988b553fd1
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: b699165125d345ad783b24da8a0a994cba72d4ba
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74644108"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715692"
 ---
 # <a name="whats-new-in-f-45"></a>Co je nového v F# 4,5
 
@@ -77,7 +77,7 @@ type S(count1: int, count2: int) =
     member x.Count2 = count2
 ```
 
-To vám neumožní deklarovat proměnlivého člena ve struktuře a emitovat metadata, která umožňují F# a C# považuje je jako ReadOnly, pokud je využívána ze sestavení. Další informace najdete v tématu [struktury jen pro čtení](../language-reference/structures.md#readonly-structs) .
+To vám neumožní deklarovat proměnlivého člena ve struktuře a emitovat metadata, která umožňují F# a C# považuje je jako ReadOnly, pokud je využívána ze sestavení. Další informace najdete v tématu [struktury jen pro čtení](../language-reference/structures.md#readonly-structs).
 
 ## <a name="void-pointers"></a>Ukazatele void
 

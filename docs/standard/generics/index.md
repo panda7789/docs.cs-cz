@@ -26,14 +26,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0eb88b8f46d425ae840c2bf8ed8eb479971d1cbc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: f04b6fcd1641a53efe75d38ab7122967bff6a58d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974669"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708368"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 
@@ -92,7 +90,7 @@ Obecné typy umožňují přizpůsobit metodu, třídu, strukturu nebo rozhraní
      [!code-csharp[HowToGeneric#24](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/source2.cs#24)]
      [!code-vb[HowToGeneric#24](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/source2.vb#24)]  
   
-- Lepší výkon. Obecné typy kolekcí obecně poskytují lepší pro ukládání a manipulaci s typy hodnot, protože není nutné pole hodnot.  
+- Vyšší výkon. Obecné typy kolekcí obecně poskytují lepší pro ukládání a manipulaci s typy hodnot, protože není nutné pole hodnot.  
   
 - Obecné Delegáti umožňují typově bezpečná zpětná volání bez nutnosti vytvářet více tříd delegátů. Například obecný delegát <xref:System.Predicate%601> umožňuje vytvořit metodu, která implementuje vlastní kritéria hledání pro konkrétní typ a použít metodu s metodami <xref:System.Array> typu, jako jsou <xref:System.Array.Find%2A>, <xref:System.Array.FindLast%2A>a <xref:System.Array.FindAll%2A>.  
   
