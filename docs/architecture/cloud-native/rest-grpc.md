@@ -3,12 +3,12 @@ title: REST a gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od protokolu HTTP REST.
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: c77343e7a594d34cbd2c00ce11281bd6bf4000c1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4c829407d494a3529d1fb9953cd3f56f73e90636
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337077"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711633"
 ---
 # <a name="rest-and-grpc"></a>REST a gRPC
 
@@ -24,7 +24,7 @@ gRPC je moderní architektura RPC, která je odlehčená a vysoce výkonná. Pro
 
 - I když HTTP 1,1 posílá data jako nešifrovaný text, HTTP/2 je binární protokol. Analyzuje data rychleji pomocí méně paměti, snižuje latenci sítě se souvisejícími vylepšeními rychlosti a efektivněji spravuje síťové prostředky.
 - I když je protokol HTTP 1,1 omezený na zpracování jednoho požadavku nebo odpovědi na operaci round-trip v čase, protokol HTTP/2 podporuje multiplexování nebo více paralelních požadavků přes stejné připojení.
-- HTTP/2 podporuje plně duplexní nebo obousměrnou komunikaci, kde oba klienti i servery můžou komunikovat současně. Klient může odesílat data žádosti současně se serverem, který odesílá data odpovědi zpět.
+- HTTP/2 podporuje plně duplexní nebo obousměrnou komunikaci, kdy klient i server můžou komunikovat současně. Klient může odesílat data žádosti současně se serverem, který odesílá data odpovědi zpět.
 - Streamování je integrované do HTTP/2, což znamená, že požadavky i odpovědi můžou asynchronně streamovat velké datové sady.
 - V kombinaci gRPC a HTTP/2 se výrazně zvyšuje výkon. V [Windows Communication Foundation (WCF)](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) agilním výkon gRPC a překračuje rychlost a efektivitu [vazeb NetTcp](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8). Ale na rozdíl od NetTCP se gRPC neomezuje na jazyky Microsoftu, jako je C# nebo Visual Basic.
 

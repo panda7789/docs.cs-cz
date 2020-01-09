@@ -2,12 +2,12 @@
 title: Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení integračních událostí pro implementaci komunikace založené na událostech mezi mikroslužbami.
 ms.date: 10/02/2018
-ms.openlocfilehash: a355ba9ede4e3390edd858d173dd88548e876202
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 6d4e324a05def91935a82df41c971a75cb75c3f8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711224"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712400"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 
@@ -27,7 +27,7 @@ Jak je uvedeno v části architektura, můžete si vybrat z více technologií z
 
 V případě, že je pro vaše vývojové prostředí implementováno pouze vytváření konceptů služby Event Bus, jako v ukázce eShopOnContainers, může být k dispozici Jednoduchá implementace nad RabbitMQ spuštěným jako kontejner. Ale u důležitých a produkčních systémů, které vyžadují vysokou škálovatelnost, možná budete chtít vyhodnotit a použít Azure Service Bus.
 
-Pokud požadujete abstrakci vysoké úrovně a bohatší funkce jako [Sagas](https://docs.particular.net/nservicebus/sagas/) pro dlouhotrvající procesy, které usnadňují distribuci distribuovaným vývojům, další komerční a open-source sběrnici, jako je NServiceBus, MassTransit a jasnější, je posuzování. V tomto případě by se abstrakce a rozhraní API používaly obvykle přímo z těch, které poskytují tyto sběrnice služby na vysoké úrovni, a ne vlastní abstrakce (jako jsou [jednoduché abstrakce sběrnice událostí poskytované na eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/BuildingBlocks/EventBus/EventBus/Abstractions/IEventBus.cs)). V takovém případě můžete prohledat [rozvětvené eShopOnContainers pomocí NServiceBus](https://go.particular.net/eShopOnContainers) (další odvozená ukázka implementovaná konkrétním softwarem).
+Pokud vyžadujete, aby se vyhodnotily špičkové abstrakce a bohatší funkce jako [Sagas](https://docs.particular.net/nservicebus/sagas/) pro dlouhotrvající procesy, které usnadňují distribuovaný vývoj, budou se vyhodnocovat i další komerční a open-source sběrnice, jako je NServiceBus, MassTransit a jasnější. V tomto případě by se abstrakce a rozhraní API používaly obvykle přímo z těch, které poskytují tyto sběrnice služby na vysoké úrovni, a ne vlastní abstrakce (jako jsou [jednoduché abstrakce sběrnice událostí poskytované na eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/BuildingBlocks/EventBus/EventBus/Abstractions/IEventBus.cs)). V takovém případě můžete [eShopOnContainers rozvětvení pomocí NServiceBus](https://go.particular.net/eShopOnContainers) (další odvozená ukázka implementovaná konkrétním softwarem).
 
 Samozřejmě byste mohli kdykoli vytvořit vlastní funkce služby Service Bus, jako je RabbitMQ a Docker, ale práci potřebnou k rezásobě kol může být pro vlastní podnikovou aplikaci moc nákladné.
 
