@@ -4,14 +4,12 @@ description: ML.NET poskytuje možnost Přidat strojové učení do aplikací .N
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.author: nakersha
-author: natke
-ms.openlocfilehash: 7d15c49ade4cd32389f7c86440b3a66aec8e4ea8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 98251c39a4bdaba8203c26c6a781a86efc46efa4
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345203"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740092"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -214,7 +212,7 @@ Jakmile se objekty v kanálu vytvoří, dají se data využít ke školení mode
 
 Volání `Fit()` používá vstupní školicí data k odhadování parametrů modelu. To se označuje jako školení modelu. Mějte na paměti, že výše uvedený model lineární regrese měl dva parametry modelu: **bias** a **váhy**. Po volání `Fit()` jsou známy hodnoty parametrů. Většina modelů bude mít mnoho dalších parametrů než toto.
 
-Další informace o školení modelů najdete v tématu [postup](./how-to-guides/train-machine-learning-model-ml-net.md) při výuce modelu.
+Další informace o školení modelů najdete v tématu [postup](./how-to-guides/train-machine-learning-model-ml-net.md)při výuce modelu.
 
 Výsledný objekt modelu implementuje rozhraní <xref:Microsoft.ML.ITransformer>. To znamená, že model transformuje vstupní data do předpovědi.
 

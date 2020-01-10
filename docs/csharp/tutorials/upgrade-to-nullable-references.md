@@ -4,12 +4,12 @@ description: Tento rozšířený kurz ukazuje, jak migrovat existující kód s 
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 75bc8d278efb66363212e3e000154ffc70f373bf
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: e480cfa7c041d18a2bdaf8caa2468165e855186e
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634908"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740463"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: migrace stávajícího kódu s odkazy s možnou hodnotou null
 
@@ -167,4 +167,4 @@ Parametr `IMapper` je zadán jako neprázdný odkaz. Je volána ASP.NET Core kó
 
 Opravili jste upozornění, která jste identifikovali při počáteční kompilaci testů, takže teď můžete zapnout kontext anotace s možnou hodnotou null pro oba projekty. Znovu sestavte projekty; Kompilátor ohlásí žádná upozornění. V úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/finished) můžete získat kód dokončeného projektu.
 
-Nové funkce, které podporují typy odkazů s možnou hodnotou null, vám pomůžou najít a opravit potenciální chyby ve způsobu zpracování `null` hodnot ve vašem kódu. Povolení kontextu anotace s možnou hodnotou null umožňuje vyjádřit svůj záměr návrhu: některé proměnné by nikdy neměly mít hodnotu null, jiné proměnné mohou obsahovat hodnoty null. Tyto funkce usnadňují deklaraci záměru návrhu. Podobně kontext varování s možnou hodnotou null instruuje kompilátor, aby vydával upozornění v případě porušení tohoto záměru. Tato upozornění vás provedou, abyste provedli aktualizace, díky kterým je váš kód větší odolný a méně pravděpodobný, aby během provádění vyvolal `NullReferenceException`. Rozsah těchto kontextů můžete řídit tak, abyste se mohli soustředit na místní oblasti kódu, které se mají migrovat, zatímco zbývající základ kódu se nedotkne. V praxi můžete tuto úlohu migrace provést jako součást běžné údržby tříd. V tomto kurzu se ukázal proces migrace aplikace na použití typů odkazů s možnou hodnotou null. Můžete prozkoumat větší reálný příklad tohoto procesu prozkoumáním žádosti o přijetí změn (PR [Jan Skeet](https://github.com/jskeet) ), která umožňuje zahrnutí typů odkazů s možnou hodnotou null do [NodaTime](https://github.com/nodatime/nodatime/pull/1240/commits).
+Nové funkce, které podporují typy odkazů s možnou hodnotou null, vám pomůžou najít a opravit potenciální chyby ve způsobu zpracování `null` hodnot ve vašem kódu. Povolení kontextu anotace s možnou hodnotou null umožňuje vyjádřit svůj záměr návrhu: některé proměnné by nikdy neměly mít hodnotu null, jiné proměnné mohou obsahovat hodnoty null. Tyto funkce usnadňují deklaraci záměru návrhu. Podobně kontext varování s možnou hodnotou null instruuje kompilátor, aby vydával upozornění v případě porušení tohoto záměru. Tato upozornění vás provedou, abyste provedli aktualizace, díky kterým je váš kód větší odolný a méně pravděpodobný, aby během provádění vyvolal `NullReferenceException`. Rozsah těchto kontextů můžete řídit tak, abyste se mohli soustředit na místní oblasti kódu, které se mají migrovat, zatímco zbývající základ kódu se nedotkne. V praxi můžete tuto úlohu migrace provést jako součást běžné údržby tříd. V tomto kurzu se ukázal proces migrace aplikace na použití typů odkazů s možnou hodnotou null. Můžete prozkoumat větší reálný příklad tohoto procesu prozkoumáním žádosti o přijetí změn (PR [Jan Skeet](https://github.com/jskeet) ), která umožňuje zahrnutí typů odkazů s možnou hodnotou null do [NodaTime](https://github.com/nodatime/nodatime/pull/1240/commits). Nebo něco navíc se naučíte používat pro použití typů odkazů s možnou hodnotou null s Entity Framework Core v [Entity Framework Core pracuje s typy odkazů s možnou hodnotou null](/ef/core/miscellaneous/nullable-reference-types).

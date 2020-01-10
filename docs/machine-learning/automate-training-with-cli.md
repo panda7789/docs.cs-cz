@@ -1,16 +1,14 @@
 ---
 title: Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
 description: Zjistěte, jak pomocí nástroje CLI ML.NET automaticky proškolit nejlepší model z příkazového řádku.
-author: natke
-ms.author: nakersha
 ms.date: 12/17/2019
 ms.custom: how-to
-ms.openlocfilehash: c7ad80d627e69df329ffe6b53de60520188347d8
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: ffcdba28fcb73a02f5d4726075588fe3b7789375
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636598"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740131"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
 

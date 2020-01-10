@@ -3,13 +3,12 @@ title: Běhové prostředí pro nasazení samoobslužných aplikací v rozhraní
 description: Přečtěte si o dotnet publish změnách pro samostatná nasazení.
 author: KathleenDollard
 ms.date: 05/31/2018
-ms.custom: seodec18
-ms.openlocfilehash: 6a0cdfb34973822c2f40cdb37d4038d3b7ad8e2a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 22385c7b5d2bf87755fd51cd6268d21fe3431c74
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522098"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740793"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>Samostatné nasazení – dopředné posunutí modulu runtime
 
@@ -29,11 +28,11 @@ ms.locfileid: "72522098"
 Spuštění `restore` jako součást operace `publish` může být pro váš scénář nežádoucí. Abyste se vyhnuli `restore` během `publish` při vytváření samostatných aplikací, udělejte toto:
 
 - Nastavte vlastnost `RuntimeIdentifiers` na seznam oddělený středníkem všech [identifikátorů RID](../rid-catalog.md) , které se mají publikovat.
-- Vlastnost `TargetLatestRuntimePatch` nastavte na hodnotu `true`.
+- Nastavte `TargetLatestRuntimePatch` vlastnost `true`.
 
 ## <a name="no-restore-argument-with-dotnet-publish-options"></a>Argument No-Restore s možnostmi dotnet publish
 
-Pokud chcete vytvořit samostatně používané aplikace i [aplikace závislé na architektuře](index.md) se stejným souborem projektu a chcete použít argument `--no-restore` s `dotnet publish` a pak zvolte jednu z následujících možností:
+Pokud chcete vytvořit samostatně používané aplikace i [aplikace závislé na architektuře](index.md) se stejným souborem projektu a chcete použít argument `--no-restore` s `dotnet publish`a pak zvolte jednu z následujících možností:
 
 1. Preferovat chování závislé na rozhraní. Pokud je aplikace závislá na rozhraní, jedná se o výchozí chování. Pokud je aplikace samostatná a může použít neopravený místní modul runtime 2.1.0, nastavte `TargetLatestRuntimePatch` na `false` v souboru projektu.
 

@@ -5,13 +5,13 @@ ms.date: 09/03/2018
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: f80b483fedc600a1e1a48d36ce9b7b95c6de9f27
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.custom: vs-dotnet
+ms.openlocfilehash: 6116b2322ed2071b78bcd77de7c38ad07c327aa6
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428893"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740835"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -32,7 +32,7 @@ Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestav
 
 1. Vytvořte projekt.
 
-   Vyberte **soubor** > **Nový** > **projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "FDD". Klikněte na tlačítko **OK** .
+   Vyberte **Soubor** > **Nový** > **Projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "FDD". Vyberte tlačítko **OK**.
 
 1. Přidejte zdrojový kód aplikace.
 
@@ -75,7 +75,7 @@ Nasazení rozhraní závislého na rozhraní s jednou nebo více závislostmi t�
 
 1. Pokud je v systému už `Newtonsoft.Json` nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
 
-Všimněte si, že nasazení závislé na rozhraní se závislostmi třetích stran je pouze přenosné jako své závislosti třetích stran. Pokud například knihovna třetí strany podporuje jenom macOS, aplikace není přenosná na systémy Windows. K tomu dojde v případě, že závislost třetí strany závisí na nativním kódu. Dobrým příkladem je [Kestrel Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Pokud je vytvořen FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor modulu runtime (RID)](../rid-catalog.md) , který nativní závislost podporuje (a který existuje v jeho balíčku NuGet).
+Nasazení závislé na rozhraní se závislostmi třetích stran je stejně přenosné jako závislosti svých třetích stran. Pokud například knihovna třetí strany podporuje jenom macOS, aplikace není přenosná na systémy Windows. K tomu dojde v případě, že závislost třetí strany závisí na nativním kódu. Dobrým příkladem je [Kestrel Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Pokud je vytvořen FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor modulu runtime (RID)](../rid-catalog.md) , který nativní závislost podporuje (a který existuje v jeho balíčku NuGet).
 
 ## <a name="simpleSelf"></a>Samostatné nasazení bez závislostí třetích stran
 
@@ -83,7 +83,7 @@ Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytv
 
 1. Vytvořte projekt.
 
-   Vyberte **soubor** > **Nový** > **projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "SCD", a klikněte na tlačítko **OK** .
+   Vyberte **Soubor** > **Nový** > **Projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "SCD", a klikněte na tlačítko **OK** .
 
 1. Přidejte zdrojový kód aplikace.
 
@@ -94,7 +94,7 @@ Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytv
 
 1. Určete, zda chcete použít invariantní režim globalizace.
 
-   Zejména v případě, že je vaše aplikace cílena na Linux, můžete snížit celkovou velikost svého nasazení využitím [režimu invariantování globalizace](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Režim invariantní globalizace je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [invariantní jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture).
+   Zejména v případě, že je vaše aplikace cílena na Linux, můžete snížit celkovou velikost svého nasazení využitím [režimu invariantování globalizace](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md). Režim invariantní globalizace je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [invariantní jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture).
 
    Chcete-li povolit režim invariant, klikněte pravým tlačítkem myši na projekt (ne řešení) v **Průzkumník řešení**a vyberte **Upravit SCD. csproj** nebo **upravte SCD. vbproj**. Pak přidejte do souboru následující zvýrazněné řádky:
 
@@ -120,7 +120,7 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
    1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt (ne řešení) a vyberte **Upravit SCD. csproj**.
 
-   1. Vytvořte značku `<RuntimeIdentifiers>` v oddílu `<PropertyGroup>` souboru *csproj* , který definuje platformy, na které vaše aplikace cílí, a určete identifikátor modulu runtime (RID) pro každou cílovou platformu. Všimněte si, že je také nutné přidat středník pro oddělení identifikátorů RID. Seznam identifikátorů modulu runtime najdete v tématu [katalog identifikátorů modulu runtime](../rid-catalog.md) .
+   1. Vytvořte značku `<RuntimeIdentifiers>` v oddílu `<PropertyGroup>` souboru *csproj* , který definuje platformy, na které vaše aplikace cílí, a určete identifikátor modulu runtime (RID) pro každou cílovou platformu. Je také nutné přidat středník pro oddělení identifikátorů RID. Seznam identifikátorů modulu runtime najdete v tématu [katalog identifikátorů modulu runtime](../rid-catalog.md) .
 
    Například následující příklad označuje, že aplikace běží na 64 operačních systémech Windows 10 a 64 operačním systému OS X verze 10,11.
 
@@ -130,7 +130,7 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
    </PropertyGroup>
    ```
 
-   Všimněte si, že `<RuntimeIdentifiers>` element může přejít do jakékoli `<PropertyGroup>`, kterou máte v souboru *csproj* . V této části se zobrazí kompletní vzorový soubor *csproj* .
+   Element `<RuntimeIdentifiers>` může přejít do jakékoli `<PropertyGroup>`, kterou máte v souboru *csproj* . V této části se zobrazí kompletní vzorový soubor *csproj* .
 
 1. Publikujte svoji aplikaci.
 
@@ -158,7 +158,7 @@ Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
          1. Pomocí předchozích kroků znovu vytvořte profil pro `osx.10.11-x64` platformu. **Cílové umístění** je *Bin\Release\PublishOutput\osx.10.11-x64*a **cílový modul runtime** je `osx.10.11-x64`. Název, který Visual Studio přiřadí k tomuto profilu, je **FolderProfile2**.
 
-      Všimněte si, že každé cílové umístění obsahuje kompletní sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
+      Každé cílové umístění obsahuje kompletní sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
 
 Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
@@ -194,7 +194,7 @@ Pro každou platformu, na kterou vaše aplikace cílí, udělejte toto:
 
    Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se publikuje nasazení aplikace závislé na rozhraní do adresáře *\<projekt-adresář > \bin\Release\netcoreapp2.1\publish* .
 
-   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" do cesty k souboru, aplikace Visual Studio publikuje nasazení závislého rozhraní aplikace do adresáře *\<projekt-adresář > \bin\Release\netcoreapp2.1\publish\linux* .
+   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" k cestě k souboru, Visual Studio publikuje nasazení aplikace závislé na rozhraní do adresáře *\<Project-directory > \bin\Release\netcoreapp2.1\publish\linux* .
 
 1. Vytvořte profil tak, že vyberete ikonu rozevíracího seznamu vedle tlačítka **publikovat** a vyberete **vytvořit profil**. Pak vyberte tlačítko **vytvořit profil** a vytvořte profil.
 
@@ -222,7 +222,7 @@ Nakonfigurovali jste profily a teď jste připraveni publikovat svou aplikaci. P
 
    2. Vyberte profil, který chcete publikovat, a pak vyberte **publikovat**. Udělejte to pro každý profil, který se má publikovat.
 
-   Všimněte si, že každé cílové umístění (v případě našeho příkladu bin\release\netcoreapp2.1\publish\\*Profile-název* obsahuje úplnou sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
+   Každé cílové umístění (v případě našeho příkladu bin\release\netcoreapp2.1\publish\\*Profile-název* obsahuje úplnou sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
 
 Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
@@ -307,7 +307,7 @@ Následuje kompletní soubor *csproj* pro tento projekt:
 
 Při nasazení aplikace jsou také součástí souborů aplikace všechny závislosti třetích stran používané ve vaší aplikaci. V systému, ve kterém je aplikace spuštěná, se nevyžadují knihovny třetích stran.
 
-Mějte na paměti, že můžete nasadit samostatné nasazení s knihovnou třetích stran do platforem podporovaných v této knihovně. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
+Samostatné nasazení můžete nasadit jenom pomocí knihovny třetích stran na platformy podporované touto knihovnou. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
 
 ## <a name="see-also"></a>Viz také:
 

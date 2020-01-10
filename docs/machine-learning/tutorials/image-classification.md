@@ -4,14 +4,12 @@ description: Přečtěte si, jak přenést znalosti z existujícího modelu Tens
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-author: natke
-ms.author: nakersha
-ms.openlocfilehash: 952ce5c52bcd09b8c4e4e40d5ddf85835a26478d
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 5fe47c42d0cf24ebfdc33a937e1afbd11a976680
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204987"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738961"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Kurz: generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow
 
@@ -45,7 +43,7 @@ Pro účely tohoto kurzu použijete část TensorFlow modelu vyškolená pro kla
 
 ## <a name="select-the-right-machine-learning-task"></a>Vyberte správnou úlohu strojového učení.
 
-### <a name="deep-learning"></a>Obsáhlý Learning
+### <a name="deep-learning"></a>Hluboké učení
 
 [Obsáhlý Learning](https://en.wikipedia.org/wiki/Deep_learning) je podmnožinou Machine Learning, což jsou revolutionizing oblasti, jako je počítačové zpracování obrazu a rozpoznávání řeči.
 
@@ -68,7 +66,7 @@ Obrázek ![Pizza image](./media/image-classification/220px-Pepperoni_pizza.jpg)
 >[!Note]
 > Předchozí image patří do Wikimedia a jsou jim tyto atributy:
 >
-> * Veřejná doména "220px-Pepperoni_pizza. jpg", https://commons.wikimedia.org/w/index.php?curid=79505
+> * "220px-Pepperoni_pizza.jpg" Public Domain, https://commons.wikimedia.org/w/index.php?curid=79505,
 > * "119px-Nalle_-_a_small_brown_teddy_bear. jpg" pomocí [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) – s použitím uživatelsky definovaných grafů, CC by-SA 2,0, https://commons.wikimedia.org/w/index.php?curid=48166.
 > * "193px-Broodrooster. jpg" podle [M. Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) vlastní práce, CC by-sa 3,0, https://commons.wikimedia.org/w/index.php?curid=27403
 
@@ -86,7 +84,7 @@ Jak je znázorněno v následujícím diagramu, přidáte odkaz na balíčky NuG
 
 ![Diagram TensorFlow Transform ML.NET archu](./media/image-classification/tensorflow-mlnet.png)
 
-### <a name="multiclass-classification"></a>klasifikace s více třídami
+### <a name="multiclass-classification"></a>Klasifikace s více třídami
 
 Po použití modelu TensorFlowho zahájení k extrakci funkcí vhodných jako vstup pro klasický algoritmus strojového učení přidáme ML.NET třídění s [více třídami](../resources/tasks.md#multiclass-classification).
 
@@ -94,7 +92,7 @@ Konkrétní Trainer použitý v tomto případě je [algoritmus MULTINOMIAL logi
 
 Algoritmus implementovaný tímto Trainer se dobře hodí v případě problémů s velkým počtem funkcí, což je případ pro model hloubkového učení, který pracuje s daty imagí.
 
-### <a name="data"></a>Data
+### <a name="data"></a>Datové
 
 Existují dva zdroje dat: `.tsv` soubor a soubory obrázků.  `tags.tsv` soubor obsahuje dva sloupce: první z nich je definována jako `ImagePath` a druhá druhá `Label` odpovídající imagi. Následující ukázkový soubor neobsahuje řádek záhlaví a vypadá takto:
 
@@ -114,7 +112,7 @@ toaster2.png    appliance
 Obrázky školení a testování se nacházejí ve složkách assetů, které stáhnete do souboru ZIP. Tyto image patří do Wikimedia.
 > *[Wikimedia](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208), bezplatné úložiště médií.* Načteno 10:48, 17. října 2018 z: https://commons.wikimedia.org/wiki/Pizza https://commons.wikimedia.org/wiki/Toaster https://commons.wikimedia.org/wiki/Teddy_bear
 
-## <a name="setup"></a>Nastavení
+## <a name="setup"></a>Instalace
 
 ### <a name="create-a-project"></a>Vytvoření projektu
 
@@ -342,7 +340,7 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
     [!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReturnModel)]
 
-## <a name="run-the-application"></a>Spusťte aplikaci!
+## <a name="run-the-application"></a>Spusťte aplikaci.
 
 1. Přidejte volání `GenerateModel` v metodě `Main` po vytvoření třídy MLContext:
 

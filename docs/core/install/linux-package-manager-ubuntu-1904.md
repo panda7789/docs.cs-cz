@@ -4,12 +4,12 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 69bfc3395f5cd92ed54850e5ea8b76eba7f27d83
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: a229369b9252d08fe5fc83add98c694214ce5ba5
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74959744"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740605"
 ---
 # <a name="ubuntu-1904-package-manager---install-net-core"></a>Správce balíčků Ubuntu 19,04 – instalace .NET Core
 
@@ -21,9 +21,9 @@ Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core 
 
 Před instalací .NET budete potřebovat:
 
-- Registrace klíče Microsoftu
-- registrace úložiště produktu
-- Nainstalovat požadované závislosti
+- Zaregistrujte si klíč Microsoft.
+- Zaregistrujte úložiště produktu.
+- Nainstalujte požadované závislosti.
 
 Stačí to provést jednou na jednom počítači.
 
@@ -34,7 +34,7 @@ wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-pr
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-## <a name="install-the-net-core-sdk"></a>Install the .NET Core SDK
+## <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
 Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstalujte .NET Core SDK. V terminálu spusťte následující příkazy.
 

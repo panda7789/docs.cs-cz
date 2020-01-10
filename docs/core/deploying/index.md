@@ -2,13 +2,12 @@
 title: Nasazení aplikace .NET Core
 description: Přečtěte si o způsobech nasazení aplikace .NET Core.
 ms.date: 12/03/2018
-ms.custom: seodec18
-ms.openlocfilehash: fd15d41065b0a6ecb1a0bf04a0f0ab292a0a5fb7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 41c5285f2a9ddf38e4be7326bd5cba1c58370fe7
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089197"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740820"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET Core
 
@@ -16,7 +15,7 @@ Pro aplikace .NET Core můžete vytvořit tři typy nasazení:
 
 - Nasazení závislé na rozhraní. Jak naznačuje název, nasazení závislé na rozhraní (FDD) spoléhá na přítomnost sdílené verze .NET Core v rámci systému v cílovém systému. Vzhledem k tomu, že je rozhraní .NET Core již přítomno, aplikace je také přenosná mezi instalacemi rozhraní .NET Core. Vaše aplikace obsahuje pouze vlastní kód a všechny závislosti třetích stran, které jsou mimo knihovny .NET Core. FDDs obsahují soubory *. dll* , které lze spustit pomocí [nástroje dotnet](../tools/dotnet.md) z příkazového řádku. Například `dotnet app.dll` spouští aplikaci s názvem `app`.
 
-- Samostatné nasazení. Na rozdíl od FDD, samostatné nasazení (SCD) nespoléhá na přítomnost sdílených komponent v cílovém systému. Všechny komponenty, včetně knihoven .NET Core a modulu runtime .NET Core, jsou součástí aplikace a jsou izolované od jiných aplikací .NET Core. SCDs zahrnují spustitelný soubor (například *App. exe* na platformách Windows pro aplikaci s názvem `app`), což je Přejmenovaná verze hostitele .NET Core specifická pro konkrétní platformu a soubor *. dll* (například *App. dll*), který je skutečný použití.
+- Samostatné nasazení. Na rozdíl od FDD, samostatné nasazení (SCD) nespoléhá na přítomnost sdílených komponent v cílovém systému. Všechny komponenty, včetně knihoven .NET Core a modulu runtime .NET Core, jsou součástí aplikace a jsou izolované od jiných aplikací .NET Core. SCDs obsahují spustitelný soubor (například *App. exe* na platformách systému Windows pro aplikaci s názvem `app`), která je Přejmenovaná verze hostitele .NET Core specifická pro konkrétní platformu a soubor *. dll* (například *App. dll*), což je skutečná aplikace.
 
 - Spustitelné soubory závislé na rozhraní. Vytvoří spustitelný soubor, který běží na cílové platformě. Podobně jako FDDs, spustitelné soubory závislé na rozhraních (FDE) jsou specifické pro platformu a nejsou samostatně obsaženy. Tato nasazení se pořád spoléhají na přítomnost sdílené systémové verze .NET Core, která se má spustit. Na rozdíl od SCD vaše aplikace obsahuje jenom váš kód a všechny závislosti třetích stran, které jsou mimo knihovny .NET Core. FDEs vyprodukuje spustitelný soubor, který běží na cílové platformě.
 
@@ -64,7 +63,7 @@ Má také řadu nevýhod:
 
 - Velikost balíčku pro nasazení je poměrně velká, protože musíte zahrnout rozhraní .NET Core i aplikace a její závislosti třetích stran.
 
-  Od .NET Core 2,0 můžete zmenšit velikost nasazení v systémech Linux o přibližně 28 MB pomocí [*režimu invariantní globalizace*](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).NET Core. Rozhraní .NET Core v systému Linux obvykle spoléhá na [ICU knihovny](http://icu-project.org) pro podporu globalizace. V režimu invariant nejsou knihovny součástí vašeho nasazení a všechny jazykové verze se chovají jako [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
+  Od .NET Core 2,0 můžete zmenšit velikost nasazení v systémech Linux o přibližně 28 MB pomocí [*režimu invariantní globalizace*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).NET Core. Rozhraní .NET Core v systému Linux obvykle spoléhá na [ICU knihovny](http://icu-project.org) pro podporu globalizace. V režimu invariant nejsou knihovny součástí vašeho nasazení a všechny jazykové verze se chovají jako [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
 - Nasazením mnoha samostatných aplikací .NET Core do systému můžete využívat značné množství místa na disku, protože každá aplikace duplikuje soubory .NET Core.
 

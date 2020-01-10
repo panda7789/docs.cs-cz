@@ -2,12 +2,12 @@
 title: Typy přerušujících změn – .NET Core
 description: Přečtěte si, jak se .NET Core pokusí zachovat kompatibilitu pro vývojáře napříč verzemi .NET a jaký druh změny se považuje za zásadní změnu.
 ms.date: 06/10/2019
-ms.openlocfilehash: 5624a35a0d71224faf9adc5df2b02a529e650314
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: a84468c0c0e04f367dc7e89ce806ac01b2b49b48
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567708"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740892"
 ---
 # <a name="changes-that-affect-compatibility"></a>Změny ovlivňující kompatibilitu
 
@@ -19,7 +19,7 @@ V průběhu své historie se .NET pokusilo udržet vysokou úroveň kompatibilit
 
 Společně s kompatibilitou mezi implementacemi .NET očekávají vývojáři vysokou úroveň kompatibility napříč verzemi .NET Core. Konkrétně kód napsaný pro starší verzi rozhraní .NET Core by měl běžet plynule v novější verzi .NET Core. Mnoho vývojářů předpokládá, že nová rozhraní API nalezená v nově vydaných verzích rozhraní .NET Core by měla být také kompatibilní s předběžnými verzemi, ve kterých byla tato rozhraní API zavedena.
 
-Tento článek popisuje kategorie změn kompatibility (nebo zásadní změny) a způsob, jakým tým .NET vyhodnocuje změny v každé z těchto kategorií. Porozumění způsobu, jakým tým .NET přistupuje k možným nepřípadným změnám, je zvláště užitečné pro vývojáře, kteří otevřou žádosti o přijetí změn v úložišti [dotnet/corefx](https://github.com/dotnet/corefx) GitHubu, které upravují chování existujících rozhraní API.
+Tento článek popisuje kategorie změn kompatibility (nebo zásadní změny) a způsob, jakým tým .NET vyhodnocuje změny v každé z těchto kategorií. Porozumění způsobu, jakým tým .NET přistupuje k možným nepřípadným změnám, je zvláště užitečné pro vývojáře, kteří otevřou žádosti o přijetí změn v úložišti GitHubu [a modulu runtime](https://github.com/dotnet/runtime) , které upravují chování existujících rozhraní API.
 
 > [!NOTE]
 > Definici kategorií kompatibility, jako je binární kompatibilita a zpětná kompatibilita, najdete v tématu [přerušující kategorie změn](categories.md).
@@ -151,7 +151,7 @@ Změny v této kategorii upravují oblast veřejného povrchu typu. Většina zm
 
 - **❌ odebrání klíčového slova [Virtual](../../csharp/language-reference/keywords/virtual.md) ze člena**
 
-  I když se tato často nejedná o zásadní změnu C# , protože kompilátor chce vygenerovat instrukce [callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) Intermediate Language (IL) pro volání nevirtuálních metod (`callvirt` provádí kontrolu hodnot null, zatímco normální volání ne), toto chování není inproměnná z několika důvodů:
+  I když se často nejedná o zásadní změnu, C# protože kompilátor chce vygenerovat instrukce [callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) Intermediate Language (IL) pro volání nevirtuálních metod (`callvirt` provádí kontrolu null, zatímco normální volání ne), toto chování není pro několik důvodů neproměnné:
   - C#není jediným jazykem, který cílí na .NET.
 
   - C# Kompilátor stále častěji snaží optimalizovat `callvirt` na normální volání, kdykoli je cílová metoda nevirtuální a pravděpodobně není null (například metoda, ke které se přistupoval prostřednictvím [operátoru rozšíření?. null](../../csharp/language-reference/operators/member-access-operators.md#null-conditional-operators--and-)).
@@ -270,7 +270,7 @@ Změny v této kategorii upravují oblast veřejného povrchu typu. Většina zm
 
   Ve většině případů je odebrání atributu (například <xref:System.NonSerializedAttribute>) zásadní změnou.
 
-## <a name="platform-support"></a>Podpora platforem
+## <a name="platform-support"></a>Podpora platformy
 
 - **✔️ podporující operaci na platformě, která nebyla dřív podporovaná**
 

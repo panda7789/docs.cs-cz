@@ -1,15 +1,14 @@
 ---
 title: Jak zvolit ML.NET algoritmus
 description: Naučte se zvolit ML.NET algoritmus pro model služby Machine Learning.
-author: natke
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: 0721418d8b0b3c9ab645eb9885b0f4951c37762e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 0fed33203c02303e37e47f548e08ec131eeb1c77
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976702"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75739992"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Jak zvolit ML.NET algoritmus
 
@@ -81,8 +80,8 @@ Tyto školitele vytvoří Trainer s více třídami z binárního Trainer. Použ
 
 |Algoritmus|Vlastnosti|Školitelé|
 |---------|----------|--------|
-|Jedna oproti všem|Tato třída třídění s více třídami navlakuje jeden binární klasifikátor pro každou třídu, který rozlišuje tuto třídu od všech ostatních tříd. Má omezené škálování podle počtu tříd pro kategorizaci.|[OneVersusAllTrainer\<BinaryClassificationTrainer >](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
-|Párový párování|Tento klasifikační klasifikátory navlakují binární klasifikační algoritmus na každou dvojici tříd. Má omezené škálování podle počtu tříd, protože každá kombinace dvou tříd musí být vyškolená.|[PairwiseCouplingTrainer\<BinaryClassificationTrainer >](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|
+|Jedna oproti všem|Tato třída třídění s více třídami navlakuje jeden binární klasifikátor pro každou třídu, který rozlišuje tuto třídu od všech ostatních tříd. Má omezené škálování podle počtu tříd pro kategorizaci.|[OneVersusAllTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
+|Párový párování|Tento klasifikační klasifikátory navlakují binární klasifikační algoritmus na každou dvojici tříd. Má omezené škálování podle počtu tříd, protože každá kombinace dvou tříd musí být vyškolená.|[PairwiseCouplingTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|
 
 ## <a name="k-means"></a>K-znamená
 

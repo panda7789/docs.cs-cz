@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: a306bfe4b794409f7f64359daee7e18d34826921
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e3619214bcd8830e82c827680d08260e95dc2b36
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441442"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741713"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -24,7 +24,7 @@ ms.locfileid: "74441442"
 > [!NOTE]
 > [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] neumožňuje komunikaci mezi procesy spuštěnými různými uživateli prostřednictvím příkazu **Spustit jako** .  
   
- Klientské aplikace automatizace uživatelského rozhraní lze zapsat s jistotou, že budou fungovat na více architekturách. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core maskuje jakékoli rozdíly v rozhraních, které jsou základem různých částí [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Například vlastnost `Content` [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] tlačítko, vlastnost `Caption` tlačítka [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a vlastnost `ALT` obrázku HTML je namapována na jedinou vlastnost, <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>v zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ Klientské aplikace automatizace uživatelského rozhraní lze zapsat s jistotou, že budou fungovat na více architekturách. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core maskuje jakékoli rozdíly v rozhraních, které jsou základem různých částí [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Například vlastnost `Content` [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] tlačítko, vlastnost `Caption` tlačítka Win32 a vlastnost `ALT` obrázku HTML je namapována na jednu vlastnost, <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>v zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaných operačních systémech Windows, na kterých běží .NET Framework (viz článek [.NET Framework požadavky na systém](../get-started/system-requirements.md) nebo verze .NET Core počínaje .net Core 3,0.  
   
@@ -54,7 +54,7 @@ Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaný
   
  Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obory názvů, knihovny DLL, které je obsahují, a cílovou skupinu, která je používá.  
   
-|Obor názvů|Odkazované knihovny DLL|Cílová skupina|  
+|Názvový prostor|Odkazované knihovny DLL|Cílová skupina|  
 |---------------|---------------------|--------------|  
 |<xref:System.Windows.Automation>|UIAutomationClientUIAutomationTypes|Vývojáři klienta automatizace uživatelského rozhraní; slouží k vyhledání <xref:System.Windows.Automation.AutomationElement> objektů, registraci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ch událostí a práci s [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]mi vzory ovládacích prvků.|  
 |<xref:System.Windows.Automation.Provider>|UIAutomationProviderUIAutomationTypes|Vývojáři zprostředkovatelů automatizace uživatelského rozhraní pro jiné architektury než [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].|  

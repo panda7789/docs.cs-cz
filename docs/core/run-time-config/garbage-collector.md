@@ -3,12 +3,12 @@ title: Nastavení konfigurace pro kolektor paměti
 description: Přečtěte si o nastaveních modulu runtime pro konfiguraci způsobu, jakým systém uvolňování paměti spravuje paměť pro aplikace .NET Core.
 ms.date: 11/13/2019
 ms.topic: reference
-ms.openlocfilehash: e7f6877a3cbc7f28776a93b9126f4b64026487fa
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 41157db7770a89f4402fa6675f7031c508f33aca
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800625"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740557"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace běhu pro uvolňování paměti
 
@@ -217,7 +217,7 @@ Další informace o některých těchto nastaveních najdete v tématu [středn�
 ### <a name="complus_gcname"></a>COMPlus_GCName
 
 - Určuje cestu k knihovně obsahující systém uvolňování paměti, který modul runtime zamýšlí načíst.
-- Další informace najdete v tématu [Návrh zavaděče samostatného modulu GC](https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/standalone-gc-loading.md).
+- Další informace najdete v tématu [Návrh zavaděče samostatného modulu GC](https://github.com/dotnet/runtime/blob/master/docs/design/features/standalone-gc-loading.md).
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |

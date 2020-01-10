@@ -6,12 +6,12 @@ helpviewer_keywords:
 - List control type
 - UI Automation, List control type
 ms.assetid: 0e959fcb-50f2-413b-948d-7167d279bc11
-ms.openlocfilehash: c5ea011651537aa5836eeebe217239234fec40ae
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d870452348f8837ec6773fc066ed52844f7acccd
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446729"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741607"
 ---
 # <a name="ui-automation-support-for-the-list-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku seznam
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "74446729"
   
  Typ ovládacího prvku seznam poskytuje způsob, jak uspořádat plochou skupinu nebo skupiny položek a umožní uživateli vybrat jednu nebo více těchto položek. Typ ovládacího prvku seznam má volné omezení pro typy podřízených elementů, které může obsahovat. To umožňuje zprostředkovatelům automatizace uživatelského rozhraní podporovat známý element pro kontejnery výběru.  
   
- Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v následujících částech se vztahují na všechny ovládací prvky, které implementují typ ovládacího prvku seznam, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. Seznam ovládacích prvků kontejneru je příkladem ovládacích prvků, které implementují typ ovládacího prvku seznam.  
+ Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v následujících částech se vztahují na všechny ovládací prvky, které implementují typ ovládacího prvku seznam, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. Seznam ovládacích prvků kontejneru je příkladem ovládacích prvků, které implementují typ ovládacího prvku seznam.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
@@ -64,9 +64,9 @@ Ovládací prvek seznamu nesmí obsahovat položky, které mají hierarchickou r
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Viz poznámky.|Pokud je popisek statický text, musí tato vlastnost vystavit odkaz na tento ovládací prvek.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Seznam|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|seznamu|Lokalizovaný řetězec odpovídající typu ovládacího prvku seznam.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|V zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] je vždy zahrnut ovládací prvek seznam.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládací prvek seznam je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|True|Pokud kontejner může přijmout vstup z klávesnice, hodnota této vlastnosti by měla být true.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|V zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] je vždy zahrnut ovládací prvek seznam.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvek seznam je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Pravda|Pokud kontejner může přijmout vstup z klávesnice, hodnota této vlastnosti by měla být true.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Viz poznámky.|Text helpu pro ovládací prvky seznam by měl vysvětlit, proč se uživateli požaduje, aby si vyžádal volbu ze seznamu možností. Například "výběr položky z tohoto seznamu nastaví rozlišení zobrazení pro monitor."|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   

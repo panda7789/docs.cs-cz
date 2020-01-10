@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ověřování pozice pomocí kontejneru hostitele Win32'
+title: 'Postupy: Spuštění testu použitím kontejneru hostitele Win32'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,30 +9,30 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Win32 host containers [WPF], hit tests using
 ms.assetid: 9491f7f3-d8ba-4573-a888-2f064d1349dc
-ms.openlocfilehash: ac5cae5bcd94dc8bf80ff95b8971914e1fa5ba2c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b71783f2d061c9139de4449d8e0106eb00345894
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025103"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740179"
 ---
-# <a name="how-to-hit-test-using-a-win32-host-container"></a>Postupy: Ověřování pozice pomocí kontejneru hostitele Win32
-Můžete vytvořit vizuální objekty v rámci [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] okno tím, že hostitel poskytuje okno kontejneru pro vizuální objekty. Kvůli omezením vizuální objekty zpracování událostí zpracování zpráv předávaných do smyčky filtru zprávy okna kontejneru hostitele. Odkazovat na [kurzu: Hostování vizuální objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md) Další informace o tom, k hostování vizuální objektů v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
+# <a name="how-to-hit-test-using-a-win32-host-container"></a>Postupy: Spuštění testu použitím kontejneru hostitele Win32
+Můžete vytvořit vizuální objekty v okně Win32 tím, že poskytnete kontejner hostitelského okna pro vizuální objekty. Chcete-li zajistit zpracování událostí pro obsažené vizuální objekty, které zpracovávají zprávy předané do smyčky filtru zpráv kontejneru hostitelského okna. Další informace o tom, jak hostovat vizuální objekty v okně Win32, najdete [v tématu Kurz: hostování vizuálních objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md) .  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje, jak nastavit myš obslužné rutiny událostí pro [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno, které slouží jako kontejner hostitele pro vizuální objekty.  
+ Následující kód ukazuje, jak nastavit obslužné rutiny událostí myši pro okno Win32, které se používá jako kontejner hostitele pro vizuální objekty.  
   
  [!code-csharp[VisualsHitTesting#103](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyWindow.cs#103)]
  [!code-vb[VisualsHitTesting#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyWindow.vb#103)]  
   
- Následující příklad ukazuje, jak nastavit pozice v reakci na soutisku události konkrétní myši.  
+ Následující příklad ukazuje, jak nastavit test přístupů v reakci na přesahy konkrétních událostí myši.  
   
  [!code-csharp[VisualsHitTesting#104](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyCircle.cs#104)]
  [!code-vb[VisualsHitTesting#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyCircle.vb#104)]  
   
- <xref:System.Windows.Interop.HwndSource> Objekt představuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsah [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] okna. Hodnota <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost <xref:System.Windows.Interop.HwndSource> objekt představuje nejvyšší uzel v hierarchii vizuálního stromu.  
+ Objekt <xref:System.Windows.Interop.HwndSource> prezentuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahu v rámci okna Win32. Hodnota vlastnosti <xref:System.Windows.Interop.HwndSource.RootVisual%2A> objektu <xref:System.Windows.Interop.HwndSource> představuje uzel nejvyšší úrovně v hierarchii vizuálního stromu.  
   
- Úplnou ukázku na přístupů testování objektů pomocí kontejneru hostitele Win32, najdete v části [spuštění testu s ukázkou vzájemná spolupráce grafického subsystému Win32](https://go.microsoft.com/fwlink/?LinkID=159995).  
+ Kompletní ukázku pro testování objektů pomocí kontejneru hostitele Win32 naleznete v tématu [test volání s ukázkovou meziprovozu](https://go.microsoft.com/fwlink/?LinkID=159995)Win32.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - control types, Image
 - Image control type
 ms.assetid: 4e0eeefb-e09b-46d2-b83b-0a7e35543ab8
-ms.openlocfilehash: 52ccece88284724b03a6eb2d678bb27ab1d687c1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 504ef2e8ceb5a359ecb9ac74c5da5c8dfabccaa2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446764"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741204"
 ---
 # <a name="ui-automation-support-for-the-image-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku obrázek
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "74446764"
   
  Ovládací prvky obrázku používané jako ikony, informační grafika a grafy budou podporovat typ ovládacího prvku obrázek. Ovládací prvky používané jako obrázky na pozadí nebo vodotisk nebudou podporovat typ ovládacího prvku obrázek.  
   
- Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku obrázek. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky obrázku, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku obrázek. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky obrázku, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
@@ -29,7 +29,7 @@ ms.locfileid: "74446764"
   
 |Zobrazení ovládacích prvků|Zobrazení obsahu|  
 |------------------|------------------|  
-|Image|Obrázek (závisí na tom, zda obrázek obsahuje informace (na základě hodnoty vlastnosti `IsContentElement`))|  
+|Obrázek|Obrázek (závisí na tom, zda obrázek obsahuje informace (na základě hodnoty vlastnosti `IsContentElement`))|  
   
 <a name="Required_UI_Automation_Properties"></a>   
 ## <a name="required-ui-automation-properties"></a>Požadované vlastnosti automatizace uživatelského rozhraní  
@@ -43,10 +43,10 @@ ms.locfileid: "74446764"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Viz poznámky.|Pokud ovládací prvek může obdržet fokus klávesnice, musí podporovat tuto vlastnost.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Vlastnost Name musí být vystavena pro všechny ovládací prvky obrázku, které obsahují informace. Programový přístup k těmto informacím vyžaduje, aby byl k dispozici textový ekvivalent na grafiku. Je-li ovládací prvek obrázek čistě dekorativní, je nutné jej zobrazit pouze v zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a není nutné mít název. Architektury uživatelského rozhraní musí pro obrázky, které lze nastavit v rámci svého rozhraní, podporovat alternativní vlastnost textu nebo alternativní text. Tato vlastnost se pak namapuje na vlastnost název [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Viz poznámky.|Pokud je popisek statický text, musí tato vlastnost vystavit odkaz na tento ovládací prvek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Image|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Obrázek|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|obrazu|Lokalizovaný řetězec odpovídající typu ovládacího prvku obrázek.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Viz poznámky.|Ovládací prvek obrázek musí být zahrnut v zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], pokud obsahuje smysluplné informace, které již nejsou vystaveny koncovému uživateli.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládací prvek obrázek je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvek obrázek je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Viz poznámky.|Vlastnost HelpText zveřejňuje lokalizovaný řetězec, který popisuje skutečný vzhled ovládacího prvku (například červeného čtverce s bílým znakem ' X ') nebo jiné informace popisku přidružené k imagi.<br /><br /> Tato vlastnost musí být podporována, je-li nutné zadat dlouhý popis pro předávání dalších informací o ovládacím prvku obrázek. Například složitý graf nebo diagram. Tato vlastnost je mapována na značku HTML LongDesc a značku DESC Scalable Vector Graphics (SVG). Vývojáři, kteří pracují s ovládacími prvky obrázku, musí podporovat vlastnost, která umožňuje nastavení vizuálního popisu na ovládacím prvku. Tato vlastnost musí být namapovaná na vlastnost VisualDescription pro automatizaci uživatelského rozhraní.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|Viz poznámky.|Pokud ovládací prvek obrázek představuje informace o stavu konkrétní položky na obrazovce, ovládací prvek by měl být obsažen v rámci položky. Když je obrázek obsažen v položce, musí položka podporovat vlastnost status a vyvolat vhodná oznámení při změně stavu.<br /><br /> Je-li obrázek samostatným ovládacím prvkem a probíhá jeho stav, musí být tato vlastnost podporována.|  
   

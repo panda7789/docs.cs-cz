@@ -3,13 +3,12 @@ title: Vytváření distribučních balíčků .NET Core
 description: Naučte se, jak zabalit, pojmenovat a verze .NET Core pro distribuci.
 author: tmds
 ms.date: 10/09/2019
-ms.custom: seodec18
-ms.openlocfilehash: 715eb944c3e7626696f64e63b874e2f77595cf46
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: cfd6003cfac5c00fc06ebc6195eccd55a0d7afe7
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393586"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740937"
 ---
 # <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET Core
 
@@ -84,7 +83,7 @@ I když existuje jeden hostitel, většina ostatních komponent je v adresáří
 
 - (8) **License. txt, ThirdPartyNotices. txt** jsou licence .NET Core a licence knihoven třetích stran používané v .NET Core v uvedeném pořadí.
 
-- (9, 10) **dotnet. 1. gz, dotnet** `dotnet.1.gz` je ruční stránka dotnet. `dotnet` je symlink na hostitele dotnet (1). Tyto soubory jsou nainstalovány ve dobře známých umístěních pro integraci systému.
+- (9, 10) **dotnet. 1. gz, dotnet** `dotnet.1.gz` je ruční stránka dotnet. `dotnet` je symlink na hostitele dotnet (1). Tyto soubory jsou nainstalovány ve známých umístěních pro integraci systému.
 
 - (11.12) **Microsoft. NETCore. app. ref, Microsoft. AspNetCore. app. ref** popisují rozhraní API `x.y` verze rozhraní .NET Core a ASP.NET Core v uvedeném pořadí. Tyto sady jsou používány při kompilování pro tyto cílové verze.
 
@@ -126,7 +125,7 @@ Následující seznam obsahuje doporučené balíčky:
 - `dotnet-runtime-deps-[major].[minor]` _(volitelné)_ – nainstaluje závislosti pro spouštění aplikací, které jsou v samostatném kontejneru.
   - **Verze:** \<runtime verze >
   - **Příklad:** dotnet-runtime-deps-2,1
-  - **Závislosti:** _distribuce konkrétní závislosti_
+  - **Závislosti:** _závislosti specifické pro distribuci_
 
 - `dotnet-runtime-[major].[minor]` – nainstaluje konkrétní modul runtime.
   - **Verze:** \<runtime verze >

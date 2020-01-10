@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: ae120311e7e58b34437de987e9f9a18e917043c0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 72fa95bde0c41e913bdaa35da7fdcd34f81b3057
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974079"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740264"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je navržená tak, aby ukládala vývojáře z potíží s vlákny. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebude muset psát rozhraní, které používá více než jedno vlákno. Vzhledem k tomu, že programy s více vlákny jsou složité a obtížné je ladit, měli byste se jim vyhnout v případě existence řešení s jedním vláknem.
@@ -58,7 +58,7 @@ ms.locfileid: "73974079"
 ### <a name="a-single-threaded-application-with-a-long-running-calculation"></a>Aplikace s jedním vláknem s dlouhodobou kalkulací
  Většina grafických uživatelských rozhraní (GUI) stráví velkou část času nečinnosti při čekání na události, které jsou vygenerovány v reakci na interakci uživatele. S pečlivým programováním je možné tento čas nečinnosti použít, aniž by to ovlivnilo odezvu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Model vláken [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepovoluje vstup k přerušení operace, která probíhají ve vlákně [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. To znamená, že musíte mít jistotu, že se do <xref:System.Windows.Threading.Dispatcher> pravidelně dostanou nedokončené vstupní události před tím, než se zastarou.
 
- Vezměte v úvahu následující příklad:
+ Vezměte v úvahu v následujícím příkladu:
 
  ![Snímek obrazovky, který zobrazuje vlákna z primárních čísel.](./media/threading-model/threading-prime-numbers.png)
 
@@ -203,7 +203,7 @@ ms.locfileid: "73974079"
  Je možné, že `handler2` bude trvat velkou dobu zpracování této události. `handler2` může používat <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> k zahájení vnořené smyčky zpráv, která se nevrátí na hodiny. Pokud `handler2` neoznačí událost jako zpracovanou, když je tato smyčka dokončená, událost se projde do stromu, i když je moc stará.
 
 ### <a name="reentrancy-and-locking"></a>Vícenásobný přístup a uzamykání
- Blokovací mechanizmus modulu CLR (Common Language Runtime) se chová přesně tak, jak je možné ho představit. může se stát, že vlákno ukončí operaci kompletně při požadavku na zámek. Ve skutečnosti vlákno nadále přijímá a zpracovává zprávy s vysokou prioritou. To pomáhá zabránit zablokování a dávat rozhraní s minimální odezvou, ale zavádí možnost drobných chyb.  Velká většina času, o které nepotřebujete nic vědět, ale za výjimečných okolností (obvykle zahrnující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] zprávy okna nebo součásti modelu COM STA) to může být velmi důležité.
+ Blokovací mechanizmus modulu CLR (Common Language Runtime) se chová přesně tak, jak je možné ho představit. může se stát, že vlákno ukončí operaci kompletně při požadavku na zámek. Ve skutečnosti vlákno nadále přijímá a zpracovává zprávy s vysokou prioritou. To pomáhá zabránit zablokování a dávat rozhraní s minimální odezvou, ale zavádí možnost drobných chyb.  Velká většina času, o které nepotřebujete nic vědět, ale za výjimečných okolností (obvykle se týká zpráv oken Win32 nebo komponent modelu COM STA), se může jednat o znalost.
 
  Většina rozhraní není sestavena s ohledem na bezpečnost vlákna, protože vývojáři pracují s předpokladem, že k [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nikdy nemá přístup více než jedno vlákno. V takovém případě může toto jediné vlákno provádět změny v prostředí v neočekávaných časech, což způsobuje, že by se mělo vyřešit tyto nenáročné účinky <xref:System.Windows.Threading.DispatcherObject> mechanismu vzájemného vyloučení. Vezměte v úvahu následující pseudokódu:
 

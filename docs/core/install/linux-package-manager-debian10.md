@@ -4,12 +4,12 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 2c24a02423f5aa8f011cfb4705efb51d97cfaf1e
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 2f3f04ef67115b28b1be91909e88c7ae714260db
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74836946"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740719"
 ---
 # <a name="debian-10-package-manager---install-net-core"></a>Správce balíčků Debian 10 – instalace .NET Core
 
@@ -21,9 +21,9 @@ Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core 
 
 Před instalací .NET budete potřebovat:
 
-- Registrace klíče Microsoftu
-- registrace úložiště produktu
-- Nainstalovat požadované závislosti
+- Zaregistrujte si klíč Microsoft.
+- Zaregistrujte úložiště produktu.
+- Nainstalujte požadované závislosti.
 
 Stačí to provést jednou na jednom počítači.
 

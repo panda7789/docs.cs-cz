@@ -4,13 +4,12 @@ description: Naučte se vytvořit balíček NuGet pomocí příkazu dotnet Pack.
 author: cartermp
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
-ms.custom: seodec18
-ms.openlocfilehash: 4927e3796be42d70d25a1947d4519312aef7e289
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: ddc19faa7547637036686146f8600f40713541a8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343606"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740862"
 ---
 # <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Vytvoření balíčku NuGet pomocí nástrojů rozhraní příkazového řádku (CLI) .NET Core
 
@@ -19,9 +18,9 @@ ms.locfileid: "75343606"
 
 Očekává se, že jsou knihovny .NET Standard a .NET Core distribuované jako balíčky NuGet. To je fakt, jak jsou distribuovány a spotřebovány všechny knihovny .NET Standard. Tato možnost je nejsnáze hotová pomocí příkazu `dotnet pack`.
 
-Představte si, že jste právě napsali Super novou knihovnu, kterou byste chtěli distribuovat přes NuGet. Můžete vytvořit balíček NuGet s nástroji pro různé platformy, abyste ho mohli přesně dělat. Následující příklad předpokládá knihovnu s názvem **SuperAwesomeLibrary** , která cílí na `netstandard1.0`.
+Představte si, že jste právě napsali Super novou knihovnu, kterou byste chtěli distribuovat přes NuGet. Můžete vytvořit balíček NuGet pomocí nástrojů pro různé platformy, aby to přesně odpovídalo! Následující příklad předpokládá knihovnu s názvem **SuperAwesomeLibrary** , která cílí na `netstandard1.0`.
 
-Pokud máte přenosné závislosti; To znamená, že projekt, který závisí na jiném balíčku, budete muset před vytvořením balíčku NuGet ověřit balíčky pro celé řešení pomocí příkazu `dotnet restore`. Pokud to neuděláte, výsledkem bude, že příkaz `dotnet pack` nefunguje správně.
+Pokud máte přenosné závislosti, tedy projekt, který závisí na jiném balíčku, nezapomeňte obnovit balíčky pro celé řešení pomocí příkazu `dotnet restore` před vytvořením balíčku NuGet. Pokud to neuděláte, dojde k tomu, že příkaz `dotnet pack` nefunguje správně.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -46,7 +45,7 @@ SuperAwesomeLibrary.1.0.0.nupkg
 SuperAwesomeLibrary.1.0.0.symbols.nupkg
 ```
 
-Všimněte si, že se tím vytvoří balíček, který je schopný ladit. Pokud chcete vytvořit balíček NuGet s binárními soubory vydání, stačí přidat přepínač `--configuration` (nebo `-c`) a jako argument použít `release`.
+Tím se vytvoří balíček, který je schopný ladit. Pokud chcete vytvořit balíček NuGet s binárními soubory vydání, stačí přidat přepínač `--configuration` (nebo `-c`) a jako argument použít `release`.
 
 ```dotnetcli
 dotnet pack --configuration release

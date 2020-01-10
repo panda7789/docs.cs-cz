@@ -1,5 +1,5 @@
 ---
-title: HttpWebRequest._CoreResponse pole
+title: HttpWebRequest. _CoreResponse – pole
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +10,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 3627c9bf0d72ccec3a0d6d9c7c89b62f83dcd4b4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d16936f6984e73a886f5f48e05b53501ced63c1b
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706062"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740445"
 ---
-# <a name="httpwebrequestcoreresponse-field"></a>HttpWebRequest. \_CoreResponse pole
+# <a name="httpwebrequest_coreresponse-field"></a>HttpWebRequest.\_pole CoreResponse
 
-`HttpWebRequest._CoreResponse` je objekt (buď [CoreResponseData](coreresponsedata.md) nebo <xref:System.Exception>) obsahující výsledky analýzy odpovědi HTTP.
+`HttpWebRequest._CoreResponse` je objekt (buď [CoreResponseData](coreresponsedata.md) nebo <xref:System.Exception>), který obsahuje výsledek analýzy odpovědi HTTP.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ private object _CoreResponse
 ```
 
 > [!WARNING]
-> Toto rozhraní API není určena pro použití přímo v kódu. Místo toho používejte <xref:System.Diagnostics.DiagnosticSource> k připojení sítě kódu. Zobrazit [DiagnosticSource uživatelská příručka](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+> Toto rozhraní API není určeno k použití přímo v kódu. Místo toho byste k připojení síťového kódu měli použít <xref:System.Diagnostics.DiagnosticSource>. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
 > 
-> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

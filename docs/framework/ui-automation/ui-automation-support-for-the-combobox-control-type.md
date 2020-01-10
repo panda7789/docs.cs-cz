@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Combo Box control type
 - ComboBox controls
 ms.assetid: bb321126-4770-41da-983a-67b7b89d45dd
-ms.openlocfilehash: eea5068fa5e5e9401a8197c1be9e14f8064b1aa4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6cdabc3b8d55f6f1b4568b513cbb812e043db689
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441096"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741685"
 ---
 # <a name="ui-automation-support-for-the-combobox-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ComboBox
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "74441096"
   
  Pole se seznamem je pole se seznamem kombinované se statickým ovládacím prvkem nebo ovládacím prvkem pro úpravy, který zobrazuje aktuálně vybranou položku v části seznamu pole se seznamem. Část seznamu ovládacího prvku se zobrazí ve všech časech, nebo se zobrazí pouze v případě, že uživatel vybere šipku rozevíracího seznamu (což je tlačítko push) vedle ovládacího prvku. Pokud je pole výběru ovládacím prvkem pro úpravy, může uživatel zadat informace, které nejsou v seznamu. v opačném případě může uživatel vybrat pouze položky v seznamu.  
   
- Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku ComboBox. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se vztahují na všechny ovládací prvky pole se seznamem, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku ComboBox. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se vztahují na všechny ovládací prvky pole se seznamem, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
@@ -44,9 +44,9 @@ ms.locfileid: "74441096"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Viz poznámky.|Podporováno, pokud je ohraničen obdélník. Pokud není k dispozici žádný bod v ohraničujícím obdélníku a provádíte specializované testování přístupů, přepíšete a získáte bod, který je k dispozici.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|ComboBox|Tato hodnota je stejná pro všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] architektury.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Viz poznámky.|Text helpu pro ovládací prvky pole se seznamem by měl vysvětlit, proč se uživateli zobrazí výzva k výběru možnosti z pole se seznamem. Text je podobný informacím prezentovaným pomocí popisu tlačítka. Například "vybrat položku pro nastavení rozlišení displeje".|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Ovládací prvky pole se seznamem jsou vždy zahrnuty v zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládací prvky pole se seznamem jsou vždy zahrnuty v zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|True|Ovládací prvky pole se seznamem zpřístupňují sadu položek z kontejneru výběru. Ovládací prvek pole se seznamem může obdržet fokus klávesnice, i když klient automatizace uživatelského rozhraní nastaví fokus na pole se seznamem, může se stát, že se všechny položky v podstromu pole se seznamem dostanou fokusem.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Ovládací prvky pole se seznamem jsou vždy zahrnuty v zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvky pole se seznamem jsou vždy zahrnuty v zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Pravda|Ovládací prvky pole se seznamem zpřístupňují sadu položek z kontejneru výběru. Ovládací prvek pole se seznamem může obdržet fokus klávesnice, i když klient automatizace uživatelského rozhraní nastaví fokus na pole se seznamem, může se stát, že se všechny položky v podstromu pole se seznamem dostanou fokusem.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Viz poznámky.|Ovládací prvky pole se seznamem obvykle mají statický textový popisek, na který odkazuje tato vlastnost.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"pole se seznamem"|Lokalizovaný řetězec odpovídající typu ovládacího prvku ComboBox.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Ovládací prvek pole se seznamem obvykle získá svůj název z ovládacího prvku statický text.|  

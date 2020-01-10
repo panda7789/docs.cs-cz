@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 004ef2a768f4a5415942d405e4a8292928c89f94
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4a6c8b27812e9f60e52132169dda0464c24abcc2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340658"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740563"
 ---
 # <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
@@ -96,7 +96,7 @@ Visual Studio může nainstalovat nejnovější .NET Core SDK a modul runtime.
 
 ### <a name="select-a-workload"></a>Vyberte úlohu.
 
-Při instalaci nebo úpravách sady Visual Studio vyberte jednu z následujících úloh v závislosti na typu aplikace, kterou sestavujete:
+Při instalaci nebo úpravách sady Visual Studio vyberte jednu nebo více následujících úloh v závislosti na typu aplikace, kterou vytváříte:
 
 - Úloha **vývoje .NET Core pro více platforem** v části **Další sady nástrojů** .
 - Úlohy **vývoje ASP.NET a webu** v části **web & Cloud** .
@@ -133,7 +133,7 @@ I když Visual Studio Code nepřichází s automatizovaným instalačním progra
 
 [Dotnet – instalační skripty](../tools/dotnet-install-script.md) se používají pro automatizaci a pro instalaci sady SDK bez správy. Skript si můžete stáhnout z [referenční stránky dotnet-install Script](../tools/dotnet-install-script.md).
 
-Skript ve výchozím nastavení instaluje nejnovější verzi [LTS (Long Term support)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , což je .net Core 2,1. Chcete-li nainstalovat aktuální vydání rozhraní .NET Core, spusťte skript s následujícím přepínačem.
+Skript ve výchozím nastavení instaluje nejnovější verzi [LTS (Long Term support)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , což je .net Core 3,1. Chcete-li nainstalovat aktuální vydání rozhraní .NET Core, spusťte skript s následujícím přepínačem.
 
 ```powershell
 dotnet-install.ps1 -Channel Current
@@ -147,7 +147,7 @@ dotnet-install.ps1 -Channel Current
 
 [Dotnet – instalační skripty](../tools/dotnet-install-script.md) se používají pro automatizaci a pro instalaci sady SDK bez správy. Skript si můžete stáhnout z [referenční stránky dotnet-install Script](../tools/dotnet-install-script.md).
 
-Skript ve výchozím nastavení instaluje nejnovější verzi [LTS (Long Term support)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , což je .net Core 2,1. Chcete-li nainstalovat aktuální vydání rozhraní .NET Core, spusťte skript s následujícím přepínačem.
+Skript ve výchozím nastavení instaluje nejnovější verzi [LTS (Long Term support)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , což je .net Core 3,1. Chcete-li nainstalovat aktuální vydání rozhraní .NET Core, spusťte skript s následujícím přepínačem.
 
 ```bash
 ./dotnet-install.sh -c Current

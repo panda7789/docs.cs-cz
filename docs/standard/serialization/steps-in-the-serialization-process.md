@@ -5,23 +5,23 @@ helpviewer_keywords:
 - binary serialization, steps
 - serialization, steps
 ms.assetid: 4bcbc883-2a91-418f-b968-6c86a25e9737
-ms.openlocfilehash: b697e8c590d0865b26eaa9f66a333504a5faece2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f30dd550437e6bc1030c79865bf2edd2c0efbfa9
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61954047"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741047"
 ---
 # <a name="steps-in-the-serialization-process"></a>Kroky v procesu serializace
-Když <xref:System.Runtime.Serialization.Formatter.Serialize*> metoda je volána na [formátovací modul](xref:System.Runtime.Serialization.Formatter), serializaci objektů pokračuje podle následujícího pořadí pravidel:
+Když je metoda <xref:System.Runtime.Serialization.Formatter.Serialize%2A> volána pro [formátovací modul](xref:System.Runtime.Serialization.Formatter), serializace objektu pokračuje podle následujícího pořadí pravidel:
 
-- Chcete-li zjistit, zda formátovací modul obsahuje náhradní selektor se provede kontrola. Pokud formátovací modul, zkontrolujte, zda selektor náhradní zpracovává objekty daného typu. Pokud selektor zpracovává typ objektu <xref:System.Runtime.Serialization.ISerializable.GetObjectData*?displayProperty=nameWithType> je volán na náhradní selektor.
+- Chcete-li zjistit, zda formátovací modul obsahuje náhradní selektor se provede kontrola. Pokud formátovací modul, zkontrolujte, zda selektor náhradní zpracovává objekty daného typu. Pokud selektor zpracovává typ objektu, <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A?displayProperty=nameWithType> je volána v náhradním selektoru.
 
-- Pokud není k dispozici žádné náhradní selektor nebo pokud nezpracovává typ objektu, chcete-li určit, zda je označeno objekt se provede kontrola [Serializable](xref:System.SerializableAttribute) atribut. Pokud ne, je objekt <xref:System.Runtime.Serialization.SerializationException> je vyvolána výjimka.
+- Pokud není k dispozici žádný náhradní selektor nebo pokud nezpracovává typ objektu, je provedena kontroly pro určení, zda je objekt označen atributem [serializovatelný](xref:System.SerializableAttribute) . Pokud objekt není, je vyvolána <xref:System.Runtime.Serialization.SerializationException>.
 
-- Pokud objekt označen odpovídajícím způsobem, zkontrolujte, zda daný objekt implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní. Pokud je objekt, <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> je volána v objektu.
+- Pokud je objekt vhodně označený, ověřte, zda objekt implementuje rozhraní <xref:System.Runtime.Serialization.ISerializable>. Pokud objekt je, <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> je volána na objektu.
   
-- Pokud objekt neimplementuje <xref:System.Runtime.Serialization.ISerializable>, se používá výchozí zásady serializace, serializaci všechna pole nejsou označeny jako [NonSerialized](xref:System.NonSerializedAttribute).
+- Pokud objekt neimplementuje <xref:System.Runtime.Serialization.ISerializable>, použije se výchozí zásada serializace a serializace všech polí, která nejsou označena jako [neserializovatelné](xref:System.NonSerializedAttribute).
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   

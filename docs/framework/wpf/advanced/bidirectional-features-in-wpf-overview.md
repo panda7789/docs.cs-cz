@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 385ce8d263991361512371dcacff52fcf0bbe738
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 19fb15a6310eba19792d7bd0744c2ae87f47c6fa
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740946"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740421"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 
@@ -54,7 +54,7 @@ Následující obrázek ukazuje výstup předchozího příkladu:
 
 ## <a name="flowdocument"></a>FlowDocument
 
-Řada vývojových platforem, jako je HTML, [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] a Java, nabízí speciální podporu pro vývoj obousměrného obsahu. Jazyky značek, jako je například HTML, poskytují zapisovači obsahu potřebné značky k zobrazení textu v libovolném požadovaném směru, například značka HTML 4,0, "dir", který přijímá "RTL" nebo "ltr" jako hodnoty. Tato značka je podobná vlastnosti <xref:System.Windows.FrameworkElement.FlowDirection%2A>, ale vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A> pracuje s pokročilejším způsobem rozložení textového obsahu a lze ji použít pro obsah jiný než text.
+Řada vývojových platforem, jako je HTML, Win32 a Java, poskytuje speciální podporu pro vývoj obousměrného obsahu. Jazyky značek, jako je například HTML, poskytují zapisovači obsahu potřebné značky k zobrazení textu v libovolném požadovaném směru, například značka HTML 4,0, "dir", který přijímá "RTL" nebo "ltr" jako hodnoty. Tato značka je podobná vlastnosti <xref:System.Windows.FrameworkElement.FlowDirection%2A>, ale vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A> pracuje s pokročilejším způsobem rozložení textového obsahu a lze ji použít pro obsah jiný než text.
 
 V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]je <xref:System.Windows.Documents.FlowDocument> univerzální prvek [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], který může hostovat kombinaci textu, tabulek, obrázků a dalších prvků. Ukázky v následujících částech používají tento prvek.
 
@@ -78,7 +78,7 @@ Následující příklad ukazuje použití <xref:System.Windows.Documents.Run> a
 
 ## <a name="span-elements"></a>Span – elementy
 
-Prvek <xref:System.Windows.Documents.Span> pracuje jako oddělovač hranice mezi textem s různými směry toku.  I <xref:System.Windows.Documents.Span> prvky se stejným směrem toku jsou považovány za mají různé obousměrné obory, což znamená, že <xref:System.Windows.Documents.Span> prvky jsou uspořádány v <xref:System.Windows.FlowDirection> kontejneru, pouze obsah v rámci elementu <xref:System.Windows.Documents.Span> následuje <xref:System.Windows.FlowDirection> @no__ t_5.
+Prvek <xref:System.Windows.Documents.Span> pracuje jako oddělovač hranice mezi textem s různými směry toku.  I <xref:System.Windows.Documents.Span> prvky se stejným směrem toku jsou považovány za mají různé obousměrné obory, což znamená, že <xref:System.Windows.Documents.Span> prvky jsou uspořádány v <xref:System.Windows.FlowDirection>kontejneru, pouze obsah v rámci elementu <xref:System.Windows.Documents.Span> následuje <xref:System.Windows.FlowDirection> <xref:System.Windows.Documents.Span>.
 
 Následující obrázek znázorňuje směr toku několika prvků <xref:System.Windows.Controls.TextBlock>.
 
@@ -124,7 +124,7 @@ Následující obrázek znázorňuje nové zarovnání <xref:System.Windows.Medi
 
 ![Obrázek, který zobrazuje panel nástrojů se směrem k levému barevnému přechodu.](./media/bidirectional-features-in-wpf-overview/toolbar-right-left-gradient.png)
 
-Následující příklad nakreslí <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.Controls.ToolBar>. (Chcete-li ji nakreslit vlevo, odeberte atribut <xref:System.Windows.FlowDirection> v <xref:System.Windows.Controls.ToolBar>.
+Následující příklad nakreslí <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.Controls.ToolBar>. (Chcete-li ji nakreslit vlevo, odeberte atribut <xref:System.Windows.FlowDirection> v <xref:System.Windows.Controls.ToolBar>.
 
 [!code-xaml[Gradient#Gradient](~/samples/snippets/csharp/VS_Snippets_Wpf/Gradient/CS/Window1.xaml#gradient)]
 
@@ -147,7 +147,7 @@ Následující obrázek ukazuje převrácený <xref:System.Windows.Controls.Imag
 Následující příklad ukazuje, že <xref:System.Windows.Controls.Image> nedědí <xref:System.Windows.FlowDirection> z <xref:System.Windows.Controls.StackPanel>, který jej obsahuje.
 
 > [!NOTE]
-> V C:\ musíte mít soubor s názvem **ms_logo. jpg.** jednotku pro spuštění tohoto příkladu.
+> Na C:\ musíte mít soubor s názvem **ms_logo. jpg.** jednotku pro spuštění tohoto příkladu.
 
 [!code-xaml[Image#Image](~/samples/snippets/csharp/VS_Snippets_Wpf/Image/CS/Window1.xaml#image)]
 
@@ -156,9 +156,9 @@ Následující příklad ukazuje, že <xref:System.Windows.Controls.Image> nedě
 
 **Ruky**
 
-Kromě <xref:System.Windows.Controls.Image>je další zajímavý prvek <xref:System.Windows.Shapes.Path>. Cesta je objekt, který může nakreslit řadu propojených čar a křivek. Chová se způsobem podobným <xref:System.Windows.Controls.Image> týkajícím se jeho <xref:System.Windows.FlowDirection>; například jeho <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> je vodorovným zrcadlem svého <xref:System.Windows.FlowDirection.LeftToRight>ho One. Nicméně na rozdíl od <xref:System.Windows.Controls.Image><xref:System.Windows.Shapes.Path> dědí jeho <xref:System.Windows.FlowDirection> z kontejneru a druhý jej nemusíte explicitně určovat.
+Kromě <xref:System.Windows.Controls.Image>je další zajímavý prvek <xref:System.Windows.Shapes.Path>. Cesta je objekt, který může nakreslit řadu propojených čar a křivek. Chová se způsobem podobným <xref:System.Windows.Controls.Image> týkajícím se jeho <xref:System.Windows.FlowDirection>; například jeho <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.FlowDirection> je vodorovným zrcadlem svého <xref:System.Windows.FlowDirection.LeftToRight>ho One. Nicméně na rozdíl od <xref:System.Windows.Controls.Image><xref:System.Windows.Shapes.Path> dědí jeho <xref:System.Windows.FlowDirection> z kontejneru a druhý jej nemusíte explicitně určovat.
 
-V následujícím příkladu je nakreslena Jednoduchá šipka pomocí 3 čáry. První šipka zdědí směr <xref:System.Windows.FlowDirection.RightToLeft>ho toku od <xref:System.Windows.Controls.StackPanel>, takže počáteční a koncový bod se měří od kořene na pravé straně. Druhá šipka, která má explicitní <xref:System.Windows.FlowDirection.RightToLeft> <xref:System.Windows.FlowDirection> také začíná na pravé straně. Třetí šipka ale má svůj počáteční kořen na levé straně. Další informace o kreslení najdete v tématu <xref:System.Windows.Media.LineGeometry> a <xref:System.Windows.Media.GeometryGroup>.
+V následujícím příkladu je nakreslena Jednoduchá šipka pomocí 3 čáry. První šipka zdědí směr <xref:System.Windows.FlowDirection.RightToLeft>ho toku od <xref:System.Windows.Controls.StackPanel>, takže počáteční a koncový bod se měří od kořene na pravé straně. Druhá šipka, která má explicitní <xref:System.Windows.FlowDirection.RightToLeft><xref:System.Windows.FlowDirection> také začíná na pravé straně. Třetí šipka ale má svůj počáteční kořen na levé straně. Další informace o kreslení najdete v tématu <xref:System.Windows.Media.LineGeometry> a <xref:System.Windows.Media.GeometryGroup>.
 
 [!code-xaml[Paths#Paths](~/samples/snippets/csharp/VS_Snippets_Wpf/Paths/CS/Window1.xaml#paths)]
 

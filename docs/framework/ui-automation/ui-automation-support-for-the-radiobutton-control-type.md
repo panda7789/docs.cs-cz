@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Radio Button control type
 - RadioButton control type
 ms.assetid: 87170464-7857-41f1-bcf7-bb41be31cb53
-ms.openlocfilehash: b5a64c987fd8d7816e2327e048b90ce20fa61c53
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 416d6d6b9d8e7fbd3b3bb5483ddd8dc22380166c
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800314"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741562"
 ---
 # <a name="ui-automation-support-for-the-radiobutton-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku RadioButton
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "74800314"
   
  Přepínací tlačítko se skládá z kulatého tlačítka a textu definovaného aplikací (popisek), ikony nebo rastrového obrázku, který označuje volbu, kterou může uživatel provést, výběrem tlačítka. Aplikace obvykle pomocí přepínačů v poli skupiny umožní uživateli zvolit ze sady souvisejících, ale vzájemně se vylučujících možností. Například aplikace může představovat skupinu přepínačů, ze kterých může uživatel vybrat předvolby formátu pro text vybraný v klientské oblasti. Uživatel může vybrat odpovídající přepínač, který se zarovnává vlevo, vpravo nebo zarovnaného formátu. Uživatel obvykle může ze sady přepínačů vybrat pouze jednu možnost.  
   
- Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku RadioButton. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky seznamu bez ohledu na to, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku RadioButton. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky seznamu bez ohledu na to, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
@@ -57,7 +57,7 @@ ms.locfileid: "74800314"
 |Řídicí vzorek/vlastnost vzoru ovládacího prvku|Podpora/hodnota|Poznámky|  
 |-----------------------------------------------|--------------------|-----------|  
 |<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Ano|Všechny ovládací prvky přepínače musí podporovat vzor výběrové položky, aby bylo možné je vybrat.|  
-|<xref:System.Windows.Automation.Provider.ISelectionItemProvider.SelectionContainer%2A>|Viz poznámky.|`SelectionContainerProperty` musí být vždy dokončeny, aby klient automatizace uživatelského rozhraní mohl určit, které další přepínače v rámci konkrétního kontextu spolu vzájemně souvisí.  U [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] verze přepínače nebude tato vlastnost podporována, protože není možné získat tyto informace z rozhraní starší verze.|  
+|<xref:System.Windows.Automation.Provider.ISelectionItemProvider.SelectionContainer%2A>|Viz poznámky.|`SelectionContainerProperty` musí být vždy dokončeny, aby klient automatizace uživatelského rozhraní mohl určit, které další přepínače v rámci konkrétního kontextu spolu vzájemně souvisí.  V případě přepínacího tlačítka verze Win32 Tato vlastnost nebude podporována, protože není možné získat tyto informace z rozhraní starší verze.|  
 |<xref:System.Windows.Automation.Provider.IToggleProvider>|Nikdy|Přepínač po nastavení nemůže cyklicky procházet svůj stav.  Tento vzor nesmí být nikdy podporován na přepínači.|  
   
 <a name="Required_UI_Automation_Events"></a>   

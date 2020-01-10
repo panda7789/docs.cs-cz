@@ -3,13 +3,13 @@ title: Kontejnerizace aplikace s využitím kurzu Docker
 description: V tomto kurzu se naučíte, jak kontejnerizace aplikaci .NET Core pomocí Docker.
 ms.date: 06/26/2019
 ms.topic: tutorial
-ms.custom: mvc, seodec18
-ms.openlocfilehash: b344731c7d356f3705d9909b6901234f91ec7d6d
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.custom: mvc
+ms.openlocfilehash: e012fcf78c88e7f64f6ee205cd69b69683bed9c3
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521888"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740761"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: kontejnerizace aplikace .NET Core
 
@@ -30,7 +30,7 @@ Porozumíte sestavení kontejneru Docker a nasazování úloh pro aplikaci .NET 
 
 Nainstalujte následující požadavky:
 
-- @No__t_1 [SDK pro .NET Core 2,2](https://dotnet.microsoft.com/download)
+- \ [SDK pro .NET Core 2,2](https://dotnet.microsoft.com/download)
 Pokud máte nainstalované rozhraní .NET Core, pomocí příkazu `dotnet --info` určete, kterou sadu SDK používáte.
 
 - [Docker Community Edition](https://www.docker.com/products/docker-desktop)
@@ -49,9 +49,9 @@ Pokud používáte sadu SDK, která je novější, třeba 3,0, ujistěte se, že
 }
 ```
 
-Uložte tento soubor. Přítomnost souboru vynutí, aby rozhraní .NET Core používalo verzi 2,2 pro jakýkoli `dotnet` příkaz nazvaný z této složky a níže.
+Soubor uložte. Přítomnost souboru vynutí, aby rozhraní .NET Core používalo verzi 2,2 pro jakýkoli `dotnet` příkaz nazvaný z této složky a níže.
 
-## <a name="create-net-core-app"></a>Vytvoření aplikace .NET Core
+## <a name="create-net-core-app"></a>Vytvoření aplikace v .NET Core
 
 Potřebujete aplikaci .NET Core, kterou bude kontejner Docker spustit. Otevřete terminál, vytvořte pracovní složku, pokud jste to ještě neudělali, a zadejte ji. V pracovní složce spusťte následující příkaz, který vytvoří nový projekt v podadresáři s názvem *App*:
 
@@ -124,7 +124,7 @@ namespace myapp
 }
 ```
 
-Uložte soubor a znovu otestujte program pomocí `dotnet run`. Mějte na paměti, že tato aplikace bude běžet po neomezenou dobu. Pomocí příkazu Cancel <kbd>CTRL</kbd> +<kbd>C</kbd> zastavte. Zobrazí se následující výstup:
+Uložte soubor a znovu otestujte program pomocí `dotnet run`. Mějte na paměti, že tato aplikace bude běžet po neomezenou dobu. Pomocí příkazu Cancel <kbd>CTRL</kbd>+<kbd>C</kbd> zastavte. Zobrazí se následující výstup:
 
 ```console
 > dotnet run
@@ -212,7 +212,7 @@ Z terminálu spusťte následující příkaz:
 docker build -t myimage -f Dockerfile .
 ```
 
-Docker zpracuje každý řádek v *souboru Dockerfile*. @No__t_0 v příkazu `docker build` dá Docker pokyn k použití aktuální složky k vyhledání *souboru Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **MyImage** , které odkazuje na tuto image. Po dokončení tohoto příkazu spusťte `docker images` pro zobrazení seznamu nainstalovaných imagí:
+Docker zpracuje každý řádek v *souboru Dockerfile*. `.` v příkazu `docker build` dá Docker pokyn k použití aktuální složky k vyhledání *souboru Dockerfile*. Tento příkaz sestaví image a vytvoří místní úložiště s názvem **MyImage** , které odkazuje na tuto image. Po dokončení tohoto příkazu spusťte `docker images` pro zobrazení seznamu nainstalovaných imagí:
 
 ```console
 > docker images
@@ -276,7 +276,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ### <a name="manage-the-container"></a>Správa kontejneru
 
-Každému kontejneru je přiřazen náhodný název, který můžete použít k odkazování na tuto instanci kontejneru. Například kontejner, který byl vytvořen automaticky, zvolil název **boring_matsumoto** (bude jiný a tento název lze použít ke spuštění kontejneru). Automatický název přepíšete pomocí parametru `docker create --name`.
+Každému kontejneru je přiřazen náhodný název, který můžete použít k odkazování na tuto instanci kontejneru. Například kontejner, který byl vytvořen automaticky, zvolil název **boring_matsumoto** (vaše se bude lišit) a tento název lze použít ke spuštění kontejneru. Automatický název přepíšete pomocí parametru `docker create --name`.
 
 Následující příklad používá příkaz `docker start` ke spuštění kontejneru a poté používá příkaz `docker ps` k zobrazení pouze kontejnerů, které jsou spuštěny:
 
@@ -358,7 +358,7 @@ Counter: 5
 ^C
 ```
 
-V `docker run -it` příkaz <kbd>CTRL + C</kbd> zastaví proces, který je spuštěný v kontejneru, který zase zastaví kontejner. Vzhledem k tomu, že byl zadán parametr `--rm`, kontejner je automaticky odstraněn při zastavení procesu. Ověřte, že neexistuje:
+V `docker run -it`příkaz <kbd>CTRL + C</kbd> zastaví proces, který je spuštěný v kontejneru, který zase zastaví kontejner. Vzhledem k tomu, že byl zadán parametr `--rm`, kontejner je automaticky odstraněn při zastavení procesu. Ověřte, že neexistuje:
 
 ```console
 > docker ps -a
@@ -371,7 +371,7 @@ Příkaz `docker run` také umožňuje upravit `ENTRYPOINT` příkaz z *souboru 
 
 #### <a name="windows"></a>Windows
 
-V tomto příkladu se `ENTRYPOINT` změní na `cmd.exe`. Stiskem <kbd>klávesy CTRL</kbd> +<kbd>C</kbd> ukončíte proces a zastavíte kontejner.
+V tomto příkladu se `ENTRYPOINT` změní na `cmd.exe`. Stiskem <kbd>klávesy CTRL</kbd>+<kbd>C</kbd> ukončíte proces a zastavíte kontejner.
 
 ```console
 > docker run -it --rm --entrypoint "cmd.exe" myimage
@@ -422,7 +422,7 @@ Docker má mnoho různých příkazů, které pokrývají, co chcete s kontejner
 
 ## <a name="clean-up-resources"></a>Vyčištění prostředků
 
-V tomto kurzu jste vytvořili kontejnery a image. Pokud chcete, tyto prostředky odstraňte. Následující příkazy použijte k
+Během tohoto kurzu jste vytvořili kontejnery a image. Pokud chcete, tyto prostředky odstraňte. Následující příkazy použijte k
 
 01. Vypsat všechny kontejnery
 
@@ -430,7 +430,7 @@ V tomto kurzu jste vytvořili kontejnery a image. Pokud chcete, tyto prostředky
     > docker ps -a
     ```
 
-02. Zastavte kontejnery, které jsou spuštěny. @No__t_0 představuje název automaticky přiřazený kontejneru.
+02. Zastavte kontejnery, které jsou spuštěny. `CONTAINER_NAME` představuje název automaticky přiřazený kontejneru.
 
     ```console
     > docker stop CONTAINER_NAME

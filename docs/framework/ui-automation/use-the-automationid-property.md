@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-ms.openlocfilehash: 43a67a8dd73931172a6fa729c054ad494b29134e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: a07a9c9bf6b0bf1e2f8ce56653a90a3aad3c4b2f
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800301"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741374"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
@@ -31,7 +31,7 @@ ms.locfileid: "74800301"
  Zjistili jsme tři primární scénáře klientské aplikace automatizace uživatelského rozhraní, které vyžadují použití <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> k dosažení přesného a konzistentního výsledku při hledání prvků.  
   
 > [!NOTE]
-> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> podporuje všechny prvky automatizace uživatelského rozhraní v zobrazení ovládacích prvků kromě oken aplikace nejvyšší úrovně, automatizace uživatelského rozhraní odvozené od [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků, které nemají ID nebo X:UID –, a automatizace uživatelského rozhraní odvozené z ovládacích prvků [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], které nemají ID ovládacího prvku.  
+> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> podporuje všechny prvky automatizace uživatelského rozhraní v zobrazení ovládacích prvků kromě oken aplikace nejvyšší úrovně, automatizace uživatelského rozhraní odvozené od [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládacích prvků, které nemají ID nebo X:UID –, a automatizace uživatelského rozhraní odvozené z ovládacích prvků Win32, které nemají ID ovládacího prvku.  
   
 #### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>Použití jedinečného a zjistitelného AutomationID k vyhledání konkrétního prvku ve stromu automatizace uživatelského rozhraní  
   

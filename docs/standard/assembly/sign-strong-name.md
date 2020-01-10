@@ -11,17 +11,17 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: c9ddbcf8f7b6307ab2d89b819aee4809f753a0fe
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 64f3a51b29a7116c736fea0e76465a4a73c640c2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138612"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738778"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: podepsání sestavení silným názvem
 
 > [!NOTE]
-> I když .NET Core podporuje sestavení se silným názvem a všechna sestavení v knihovně .NET Core jsou podepsaná, většina sestavení třetích stran nepotřebuje silné názvy. Další informace najdete v tématu [podepisování silného názvu](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/strong-name-signing.md) na GitHubu.
+> I když .NET Core podporuje sestavení se silným názvem a všechna sestavení v knihovně .NET Core jsou podepsaná, většina sestavení třetích stran nepotřebuje silné názvy. Další informace najdete v tématu [podepisování silného názvu](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) na GitHubu.
 
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  
   
@@ -54,7 +54,7 @@ V [Developer Command Prompt pro Visual Studio](../../framework/tools/developer-c
 
 **Al** **/out:** \<*assemblyName*>  *\<název modulu >* **/keyfile:** \<název *souboru*>  
 
-,  
+Kde:  
 
 - *AssemblyName* je název silně podepsaného sestavení (soubor *. dll* nebo *. exe* ), který bude linker sestavení generovat.  
   

@@ -7,16 +7,16 @@ ms.date: 09/23/2019
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 4fa0153cfa9dd52f4d80301d228dde3f16225bfd
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 6a4406775056b76dfa789911b8bb14e84dbc8eea
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582028"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738653"
 ---
 # <a name="net-standard"></a>.NET Standard
 
-[.NET Standard](https://github.com/dotnet/standard) je formální specifikace rozhraní API .NET, která jsou určená k dispozici pro všechny implementace .NET. Motivace za .NET Standard vytváří větší jednotnost v ekosystému .NET. [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) pokračuje v vytváření jednotnosti pro chování implementace rozhraní .NET, ale pro implementace knihovny .NET není k dispozici podobná specifikace pro knihovny tříd .NET Base (BCL).
+[.NET Standard](https://github.com/dotnet/standard) je formální specifikace rozhraní API .NET, která jsou určená k dispozici pro všechny implementace rozhraní .NET. Motivace na pozadí .NET Standard vytváří větší jednotnost v ekosystému .NET. [ECMA 335](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) pokračuje v vytváření jednotnosti pro chování implementace rozhraní .NET, ale pro implementace knihovny .NET není k dispozici podobná specifikace pro knihovny tříd .NET Base (BCL).
 
 .NET Standard umožňuje následující klíčové scénáře:
 
@@ -24,7 +24,7 @@ ms.locfileid: "72582028"
 - Umožňuje vývojářům vytvářet přenosné knihovny, které jsou použitelné napříč implementacemi rozhraní .NET, a to pomocí stejné sady rozhraní API.
 - Snižuje nebo eliminuje podmíněnou kompilaci sdíleného zdroje v důsledku rozhraní API .NET, pouze pro rozhraní API operačního systému.
 
-Různé implementace rozhraní .NET cílí na konkrétní verze .NET Standard. Každá verze implementace rozhraní .NET oznamuje nejvyšší .NET Standard verzi, kterou podporuje, příkaz, který znamená, že podporuje také předchozí verze. Například .NET Framework 4,6 implementuje .NET Standard 1,3, což znamená, že zveřejňuje všechna rozhraní API definovaná v .NET Standard verzích 1,0 až 1,3. Podobně .NET Framework 4.6.1 implementuje .NET Standard 1,4, zatímco .NET Core 1,0 implementuje .NET Standard 1,6.
+Různé implementace rozhraní .NET cílí na konkrétní verze .NET Standard. Každá verze implementace rozhraní .NET oznamuje nejvyšší .NET Standard verzi, kterou podporuje, příkaz, který znamená, že podporuje také předchozí verze. Například .NET Framework 4,6 implementuje .NET Standard 1,3, což znamená, že zpřístupňuje všechna rozhraní API definovaná v .NET Standard verzích 1,0 až 1,3. Podobně .NET Framework 4.6.1 implementuje .NET Standard 1,4, zatímco .NET Core 1,0 implementuje .NET Standard 1,6.
 
 ## <a name="net-implementation-support"></a>Podpora implementace rozhraní .NET
 
@@ -86,7 +86,7 @@ Primární distribuční vozidlo pro .NET Standard referenční sestavení jsou 
 
 Balíčky NuGet cílí na jednu nebo víc [platforem](frameworks.md). Balíčky .NET Standard cílí na architekturu ".NET Standard". .NET Standard rozhraní můžete cílit pomocí `netstandard` [Compact TFM](frameworks.md) (například `netstandard1.4`). Knihovny určené ke spuštění na více modulech runtime by měly cílit na toto rozhraní. Pro nejširší sadu rozhraní API cílové `netstandard2.0`, protože počet dostupných rozhraní API je víc než dvojnásobný mezi .NET Standard 1,6 a 2,0.
 
-[@No__t_1](https://www.nuget.org/packages/NETStandard.Library/) Metapackage odkazuje na úplnou sadu balíčků NuGet, které definují .NET Standard.  Nejběžnějším způsobem cílení na `netstandard` je odkazování na tento Metapackage. Popisuje a poskytuje přístup k knihovnám ~ 40 .NET a přidruženým rozhraním API, která definují .NET Standard. Pokud chcete získat přístup k dalším rozhraním API, můžete odkazovat na další balíčky, které cílí na `netstandard`.
+[`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/) Metapackage odkazuje na úplnou sadu balíčků NuGet, které definují .NET Standard.  Nejběžnějším způsobem cílení na `netstandard` je odkazování na tento Metapackage. Popisuje a poskytuje přístup k knihovnám ~ 40 .NET a přidruženým rozhraním API, která definují .NET Standard. Pokud chcete získat přístup k dalším rozhraním API, můžete odkazovat na další balíčky, které cílí na `netstandard`.
 
 ### <a name="versioning"></a>Správa verzí
 
@@ -151,13 +151,13 @@ Můžete zobrazit sadu profilů PCL, které jsou kompatibilní s .NET Standard:
 |:-----------:|:-------------:|------------------------------------------------------------------------------
 | Profile7    | 1.1           | .NET Framework 4,5, Windows 8
 | Profile31   | 1.0           | Windows 8.1 Windows Phone Silverlight 8,1
-| Profile32   | 1,2           | Windows 8.1 Windows Phone 8,1
-| Profile44   | 1,2           | .NET Framework 4.5.1, Windows 8.1
+| Profile32   | 1.2           | Windows 8.1 Windows Phone 8,1
+| Profile44   | 1.2           | .NET Framework 4.5.1, Windows 8.1
 | Profile49   | 1.0           | .NET Framework 4,5, Windows Phone Silverlight 8
 | Profile78   | 1.0           | .NET Framework 4,5, Windows 8, Windows Phone Silverlight 8
 | Profile84   | 1.0           | Windows Phone 8,1, Windows Phone Silverlight 8,1
 | Profile111  | 1.1           | .NET Framework 4,5, Windows 8, Windows Phone 8,1
-| Profile151  | 1,2           | .NET Framework 4.5.1, Windows 8.1 Windows Phone 8,1
+| Profile151  | 1.2           | .NET Framework 4.5.1, Windows 8.1 Windows Phone 8,1
 | Profile157  | 1.0           | Windows 8.1 Windows Phone 8,1 Windows Phone Silverlight 8,1
 | Profile259  | 1.0           | .NET Framework 4,5, Windows 8, Windows Phone 8,1, Windows Phone Silverlight 8
 

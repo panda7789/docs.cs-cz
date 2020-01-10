@@ -1,23 +1,21 @@
 ---
 title: dotnet – čítače – .NET Core
 description: Naučte se instalovat a používat nástroj příkazového řádku dotnet-Counter.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 10/14/2019
-ms.openlocfilehash: b2fab239713d9d19c580580496e73a91ceafcc52
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 10af451a8b1b4d8b27da1490b99b19a4359c860f
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321587"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740800"
 ---
-# <a name="dotnet-counters"></a>dotnet – čítače
+# <a name="dotnet-counters"></a>dotnet-counters
 
 **Tento článek se týká: ✓** .net Core 3,0 SDK a novějších verzí
 
 ## <a name="install-dotnet-counters"></a>Instalace dotnet – čítače
 
-Chcete-li nainstalovat nejnovější vydanou verzi [balíčku NuGet](https://www.nuget.org/packages/dotnet-counters)`dotnet-counters`, použijte příkaz pro [instalaci nástroje dotnet](../tools/dotnet-tool-install.md) :
+Pokud chcete nainstalovat nejnovější verzi `dotnet-counters` [balíčku NuGet](https://www.nuget.org/packages/dotnet-counters), použijte [instalační příkaz nástroje dotnet](../tools/dotnet-tool-install.md) :
 
 ```dotnetcli
 dotnet tool install --global dotnet-counters
@@ -31,7 +29,7 @@ dotnet-counters [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Popis
 
-`dotnet-counters` je nástroj pro monitorování výkonu, který slouží ke sledování stavu ad-hoc a prvotnímu šetření výkonu na nejvyšší úrovni. Může sledovat hodnoty čítače výkonu, které jsou publikovány prostřednictvím rozhraní API <xref:System.Diagnostics.Tracing.EventCounter>. Například můžete rychle monitorovat věci, jako je využití CPU, nebo četnost výjimek vyvolaných v aplikaci .NET Core, abyste viděli, jestli existují nějaké podezřelé před začneteí do závažnějšího šetření výkonu pomocí `PerfView` nebo `dotnet-trace`.
+`dotnet-counters` je nástroj pro monitorování výkonu, který slouží ke sledování stavu ad-hoc a prvotnímu šetření výkonu na nejvyšší úrovni. Může sledovat hodnoty čítače výkonu, které jsou publikovány prostřednictvím rozhraní <xref:System.Diagnostics.Tracing.EventCounter> API. Například můžete rychle monitorovat věci, jako je využití CPU, nebo četnost výjimek vyvolaných v aplikaci .NET Core, abyste viděli, jestli existují nějaké podezřelé před začneteí do závažnějšího šetření výkonu pomocí `PerfView` nebo `dotnet-trace`.
 
 ## <a name="options"></a>Možnosti
 
@@ -102,7 +100,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
 
 ### <a name="examples"></a>Příklady
 
-- Monitoruje všechny čítače z `System.Runtime` v intervalu obnovování po dobu 3 sekund:
+- Monitorovat všechny čítače z `System.Runtime` v intervalu obnovování po dobu 3 sekund:
 
   ```console
   > dotnet-counters monitor --process-id 1902  --refresh-interval 3 System.Runtime
@@ -129,7 +127,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
       GC Heap Size (MB)                            811
   ```
 
-- Monitoruje hodnoty `EventCounter` od uživatelsky definovaných `EventSource`. Další informace najdete v tématu [kurz: jak změřit výkon pro velmi časté události pomocí EventCounters](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
+- Monitorujte `EventCounter` hodnoty z uživatelsky definované `EventSource`. Další informace najdete v tématu [kurz: jak změřit výkon pro velmi časté události pomocí EventCounters](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
 
   ```console
   > dotnet-counters monitor --process-id 1902 Samples-EventCounterDemos-Minimal

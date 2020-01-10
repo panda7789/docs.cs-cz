@@ -3,12 +3,12 @@ title: Použití modelu syntaxe .NET Compiler Platform SDK
 description: Tento přehled poskytuje pochopení typů, které používáte pro pochopení a manipulaci se syntaxmi uzlů.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: 2cfd3c8bc8f47421c7992f7fea28c7b156450147
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fc1b1f5ae5ec985425c8d6aec49ef7f830ea9162
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346931"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740470"
 ---
 # <a name="work-with-syntax"></a>Práce se syntaxí
 
@@ -65,11 +65,11 @@ Na rozdíl od syntaktických uzlů a tokenů syntaxe minihry neobsahuje rodiče.
 
 Každý uzel, token nebo minihry ví svou polohu v rámci zdrojového textu a počtu znaků, ze kterých se skládá. Pozice textu je reprezentována jako 32ová celá čísla, což je index `char` založený na nule. Objekt <xref:Microsoft.CodeAnalysis.Text.TextSpan> je počáteční pozice a počet znaků, který je reprezentován jako celé číslo. Pokud má <xref:Microsoft.CodeAnalysis.Text.TextSpan> nulovou délku, odkazuje na umístění mezi dvěma znaky.
 
-Každý uzel má dvě <xref:Microsoft.CodeAnalysis.Text.TextSpan> vlastnosti: <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> a <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*>.
+Každý uzel má dvě <xref:Microsoft.CodeAnalysis.Text.TextSpan> vlastnosti: <xref:Microsoft.CodeAnalysis.SyntaxNode.Span%2A> a <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan%2A>.
 
-Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> je textový rozsah od začátku prvního tokenu v podstromu uzlu na konec posledního tokenu. Tento rozsah neobsahuje žádné počáteční ani koncové minihryy.
+Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.Span%2A> je textový rozsah od začátku prvního tokenu v podstromu uzlu na konec posledního tokenu. Tento rozsah neobsahuje žádné počáteční ani koncové minihryy.
 
-Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*> je textový rozsah, který zahrnuje normální rozpětí uzlu, a rozpětí všech úvodních a koncových minihry.
+Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan%2A> je textový rozsah, který zahrnuje normální rozpětí uzlu, a rozpětí všech úvodních a koncových minihry.
 
 Příklad:
 
@@ -85,11 +85,11 @@ Uzel příkazu uvnitř bloku má rozpětí vyznačené jednotlivými svislými p
 
 ## <a name="kinds"></a>Druzí
 
-Každý uzel, token nebo minihry má vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> typu <xref:System.Int32?displayProperty=nameWithType>, která identifikuje přesný reprezentovaný prvek syntaxe. Tuto hodnotu lze přetypovat na výčet specifický pro jazyk. Každý jazyk C# nebo Visual Basic má jeden `SyntaxKind` výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, v uvedeném pořadí), který obsahuje seznam všech možných uzlů, tokenů a minihry prvků v gramatice. Tento převod lze provést automaticky přístupem k metodám rozšíření <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType>.
+Každý uzel, token nebo minihry má vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> typu <xref:System.Int32?displayProperty=nameWithType>, která identifikuje přesný reprezentovaný prvek syntaxe. Tuto hodnotu lze přetypovat na výčet specifický pro jazyk. Každý jazyk C# nebo Visual Basic má jeden `SyntaxKind` výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, v uvedeném pořadí), který obsahuje seznam všech možných uzlů, tokenů a minihry prvků v gramatice. Tento převod lze provést automaticky přístupem k metodám rozšíření <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind%2A?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind%2A?displayProperty=nameWithType>.
 
 Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> umožňuje snadnou nejednoznačnost typů uzlů syntaxe, které sdílejí stejnou třídu Node. Pro tokeny a minihry je tato vlastnost jediným způsobem, jak odlišit jeden typ prvku od jiného.
 
-Například jedna třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken>a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> jako podřízené objekty. Vlastnost <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*> rozlišuje, zda se jedná o <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression>nebo <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression> druh uzlu syntaxe.
+Například jedna třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken>a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> jako podřízené objekty. Vlastnost <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind%2A> rozlišuje, zda se jedná o <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression>nebo <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression> druh uzlu syntaxe.
 
 ## <a name="errors"></a>Chyby
 

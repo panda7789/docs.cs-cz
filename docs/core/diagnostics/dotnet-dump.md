@@ -1,26 +1,24 @@
 ---
 title: dotnet – výpis paměti – .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-dump.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 10/14/2019
-ms.openlocfilehash: bb4f7827f898431c55603b070f5b7a23fe44cba5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: dcd5dd42620010c1a9b6dffd3365fc1b777c0eeb
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973458"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740774"
 ---
-# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Vypsat shromažďování a nástroj pro analýzu (`dotnet-dump`)
+# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Výpis kolekce a analytického nástroje (`dotnet-dump`)
 
 **Tento článek se týká: ✓** .net Core 3,0 SDK a novějších verzí
 
 > [!NOTE]
-> `dotnet-dump` není v macOS podporováno.
+> `dotnet-dump` není v macOS podporován.
 
-## <a name="installing-dotnet-dump"></a>Instalace `dotnet-dump`
+## <a name="installing-dotnet-dump"></a>Instalace nástroje `dotnet-dump`
 
-Chcete-li nainstalovat nejnovější vydanou verzi [balíčku NuGet](https://www.nuget.org/packages/dotnet-dump)`dotnet-dump`, použijte příkaz pro [instalaci nástroje dotnet](../tools/dotnet-tool-install.md) :
+Pokud chcete nainstalovat nejnovější verzi `dotnet-dump` [balíčku NuGet](https://www.nuget.org/packages/dotnet-dump), použijte [instalační příkaz nástroje dotnet](../tools/dotnet-tool-install.md) :
 
 ```dotnetcli
 dotnet tool install -g dotnet-dump
@@ -34,7 +32,7 @@ dotnet-dump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Popis
 
-Globální nástroj `dotnet-dump` je způsob, jak shromažďovat a analyzovat výpisy Windows a Linux bez jakéhokoli nativního ladicího programu, jako je `lldb` v systému Linux. Tento nástroj je důležitý na platformách, jako je například Alpine Linux, kde není k dispozici plně funkční `lldb`. Nástroj `dotnet-dump` umožňuje spouštět příkazy SOS k analýze havárií a uvolňování paměti (GC), ale není to nativní ladicí program, takže se nepodporují například zobrazení nativních rámců zásobníku.
+Nástroj `dotnet-dump` Global je způsob, jak shromažďovat a analyzovat výpisy Windows a Linux, aniž by to mělo žádný nativní ladicí program, jako je `lldb` v systému Linux. Tento nástroj je důležitý na platformách, jako je například Alpine Linux, kde není k dispozici plně funkční `lldb`. Nástroj `dotnet-dump` umožňuje spouštět příkazy SOS k analýze havárií a uvolňování paměti (GC), ale není to nativní ladicí program, takže se nepodporují například zobrazení nativních rámců zásobníku.
 
 ## <a name="options"></a>Možnosti
 
@@ -77,10 +75,10 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
   Určuje typ výpisu, který určuje typy informací shromažďovaných z procesu. Existují dva typy:
 
-  - `Heap` – velký a poměrně obsáhlý výpis, který obsahuje seznamy modulů, seznam vláken, všechny zásobníky, informace o výjimkách, informace o popisovači a veškerou paměť s výjimkou mapovaných imagí.
+  - `Heap` – velký a poměrně vyčerpávající výpis obsahující seznamy modulů, seznam vláken, všechny zásobníky, informace o výjimkách, informace o popisovači a všechny paměti s výjimkou mapovaných imagí.
   - `Mini` – malý výpis obsahující seznamy modulů, seznam vláken, informace o výjimce a všechny zásobníky.
 
-  Není-li tento parametr zadán, je výchozí hodnota `Heap`.
+  Pokud není zadaný, `Heap` je výchozí hodnota.
 
 - **`-o|--output <output_dump_path>`**
 
@@ -146,7 +144,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `gcroot <arguments>`                | Zobrazí informace o odkazech (neboli kořenech) na objekt na zadané adrese.              |
 | `gcwhere <arguments>`               | Zobrazí umístění v haldě GC argumentu předaného.                               |
 | `ip2md <arguments>`                 | Zobrazí strukturu MethodDesc na zadané adrese v kódu JIT.                       |
-| `histclear <arguments>`             | Uvolní všechny prostředky, které používá rodina příkazů `hist*`.                                |
+| `histclear <arguments>`             | Uvolňuje všechny prostředky, které používá rodina `hist*` příkazů.                                |
 | `histinit <arguments>`              | Inicializuje struktury SOS ze zátěžového protokolu uloženého v laděné položce.                     |
 | `histobj <arguments>`               | Zobrazí přemístění zátěžového protokolu uvolňování paměti související s `<arguments>`.              |
 | `histobjfind <arguments>`           | Zobrazí všechny položky protokolu, které odkazují na objekt na zadané adrese.               |
@@ -158,9 +156,9 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `syncblk <arguments>`               | Zobrazí informace o držiteli SyncBlock.                                                           |
 | `threads|setthread <threadid>`      | Nastaví nebo zobrazí aktuální ID vlákna pro příkazy SOS.                                  |
 
-## <a name="using-dotnet-dump"></a>Použití `dotnet-dump`
+## <a name="using-dotnet-dump"></a>Použití metody `dotnet-dump`
 
-Prvním krokem je shromáždění výpisu paměti. Tento krok lze přeskočit, pokud již byl vygenerován základní Výpis paměti. Pro každý operační systém nebo integrovanou [funkci generování výpisu](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/xplat-minidump-generation.md#configurationpolicy) modulu runtime .NET Core můžete vytvořit základní výpisy.
+Prvním krokem je shromáždění výpisu paměti. Tento krok lze přeskočit, pokud již byl vygenerován základní Výpis paměti. Pro každý operační systém nebo integrovanou [funkci generování výpisu](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) modulu runtime .NET Core můžete vytvořit základní výpisy.
 
 ```console
 $ dotnet-dump collect --process-id 1902
@@ -220,7 +218,7 @@ HResult: 80131604
 
 Pokud pracujete v Docker, vyžaduje výpis kolekce výpisu `SYS_PTRACE` (`--cap-add=SYS_PTRACE` nebo `--privileged`).
 
-V obrázcích Docker systému Microsoft .NET Core SDK Linux mohou některé příkazy `dotnet-dump` vyvolat následující výjimku:
+V obrázcích Docker systému Microsoft .NET Core SDK Linux mohou některé `dotnet-dump` příkazy vyvolat následující výjimku:
 
 > Neošetřená výjimka: System. DllNotFoundException –: nelze načíst sdílenou knihovnu ' libdl.so ' nebo jednu z jejích závislostí.
 

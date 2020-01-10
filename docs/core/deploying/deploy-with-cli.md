@@ -7,13 +7,12 @@ ms.date: 12/12/2019
 dev_langs:
 - csharp
 - vb
-ms.custom: seodec18
-ms.openlocfilehash: 0c175d8ba8e4011213265a6cfa2e5e8fea0303b2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 98f1e96ac087727e711f9ebf3d3eaf86c4d4eec9
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343578"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740852"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování aplikací .NET Core pomocí rozhraní příkazového řádku
 
@@ -135,7 +134,7 @@ Vždy, když použijete přepínač `-r`, cesta ke výstupní složce se změní
 Pokud používáte [ukázkovou aplikaci](#sample-app), spusťte `dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false`. Tento příkaz vytvoří následující spustitelný soubor: `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe`
 
 > [!NOTE]
-> Celkovou velikost nasazení můžete snížit povolením **režimu invariantování globalizace**. Tento režim je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [neutrální jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a o tom, jak ho povolit, najdete v tématu [Nevariantní režim globalizace .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
+> Celkovou velikost nasazení můžete snížit povolením **režimu invariantování globalizace**. Tento režim je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [neutrální jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a o tom, jak ho povolit, najdete v tématu [Nevariantní režim globalizace .NET Core](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).
 
 ## <a name="self-contained-deployment"></a>Samostatná nasazení
 
@@ -150,7 +149,7 @@ K publikování SCD je nutné použít následující přepínače s příkazem 
 - `--self-contained true` tento přepínač instruuje .NET Core SDK, aby vytvořil spustitelný soubor jako SCD.
 
 > [!NOTE]
-> Celkovou velikost nasazení můžete snížit povolením **režimu invariantování globalizace**. Tento režim je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [neutrální jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a o tom, jak ho povolit, najdete v tématu [Nevariantní režim globalizace .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md).
+> Celkovou velikost nasazení můžete snížit povolením **režimu invariantování globalizace**. Tento režim je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [neutrální jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a o tom, jak ho povolit, najdete v tématu [Nevariantní režim globalizace .NET Core](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).
 
 ## <a name="see-also"></a>Viz také:
 

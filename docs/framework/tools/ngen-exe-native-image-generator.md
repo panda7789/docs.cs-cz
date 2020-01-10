@@ -18,19 +18,19 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-ms.openlocfilehash: e6c4baae854e5997b153e1363ca8ed4204e10e2b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 297bc3f9182e76523eda4d4be3112f4d1d7e3fee
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085212"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741788"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 
 Generátor nativních bitových kopií (Ngen.exe) je nástroj zvyšující výkon spravovaných aplikací. Nástroj Ngen.exe vytváří nativní bitové kopie, což jsou soubory obsahující zkompilovaný strojový kód specifický pro procesor, a instaluje je do mezipaměti nativních bitových kopií v místním počítači. Modul runtime může ke kompilaci původního sestavení použít nativní bitové kopie z mezipaměti namísto kompilátoru JIT (just-in-time).
 
 > [!NOTE]
-> Ngen. exe zkompiluje nativní bitové kopie pro sestavení, která cílí pouze na .NET Framework. Ekvivalentní generátor nativních bitových kopií pro .NET Core je [CrossGen](https://github.com/dotnet/coreclr/blob/master/Documentation/building/crossgen.md). 
+> Ngen. exe zkompiluje nativní bitové kopie pro sestavení, která cílí pouze na .NET Framework. Ekvivalentní generátor nativních bitových kopií pro .NET Core je [CrossGen](https://github.com/dotnet/runtime/blob/master/docs/workflow/building/coreclr/crossgen.md).
 
 Změny nástroje Ngen. exe v .NET Framework 4:
 
@@ -131,7 +131,7 @@ V následující tabulce je uvedena syntaxe každého `action`. Popisy jednotliv
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
 |`/silent`|Potlačí zobrazování zpráv o úspěchu.|
 |`/verbose`|Zobrazí podrobné informace o ladění. **Poznámka:**  V důsledku omezení operačního systému Tato možnost nezobrazuje ve Windows 98 a Windows Millennium Edition tolik dalších informací.|
-|`/help``/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|
+|`/help`, `/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -149,7 +149,7 @@ Ngen. exe generuje nativní bitové kopie pro sestavení určené argumentem `as
 
 Nástroj Ngen.exe udržuje počet odkazů na závislosti. Předpokládejme například, že `MyAssembly.exe` a `YourAssembly.exe` jsou nainstalovány v mezipaměti nativní bitové kopie a oba mají odkazy na `OurDependency.dll`. Pokud `MyAssembly.exe` odinstalujete, `OurDependency.dll` se neodinstaluje. Odebere se, jenom když se odinstaluje i `YourAssembly.exe`.
 
-Pokud generujete nativní bitovou kopii pro sestavení v globální mezipaměti sestavení (GAC), zadejte její zobrazovaný název. Viz <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>.
+Pokud generujete nativní bitovou kopii pro sestavení v globální mezipaměti sestavení (GAC), zadejte její zobrazovaný název. Podívejte se na téma <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>.
 
 Nativní bitové kopie, které generuje Ngen.exe, mohou být sdíleny napříč doménami aplikace. To znamená, že nástroj Ngen.exe lze použít ve scénářích aplikací, které vyžadují, aby byla sestavení sdílena napříč doménami aplikace. Určení neutrality domény:
 
@@ -394,7 +394,7 @@ Nástroj Ngen.exe zaznamenává tyto informace při generování nativní bitov�
 
 <a name="Troubleshooting"></a>
 
-## <a name="troubleshooting"></a>Poradce při potížích
+## <a name="troubleshooting"></a>Odstraňování problémů
 
 Následující témata Poradce při potížích umožňují zjistit, které nativní bitové kopie jsou používány a které nemohou být použity vaší aplikací, k určení, kdy kompilátor JIT začne kompilovat metodu a ukazuje, jak se odhlásit ze zadaného nativního kompilování bitové kopie. způsobů.
 
@@ -586,7 +586,7 @@ Za normálních okolností je nativní Image Service inicializovaná instalačn�
 Služba také komunikuje s ručním příkazem Ngen. exe. Ruční příkazy mají přednost před aktivitou na pozadí.
 
 > [!NOTE]
-> V systému Windows Vista je název zobrazený pro nativní Image Service "Microsoft.NET Framework NGEN v 2.0.50727 _X86" nebo "Microsoft.NET Framework NGEN v 2.0.50727 _X64". Ve všech starších verzích Microsoft Windows se jedná o název ".NET runtime Optimization Service v 2.0.50727 _X86" nebo ".NET runtime Optimization Service v 2.0.50727 _X64".
+> V systému Windows Vista je název zobrazený pro nativní Image Service "Microsoft.NET Framework NGEN v 2.0.50727_X86" nebo "Microsoft.NET Framework NGEN v 2.0.50727_X64". Ve všech starších verzích systému Microsoft Windows je název ".NET runtime Optimization Service v 2.0.50727_X86" nebo ".NET runtime Optimization Service v 2.0.50727_X64".
 
 ### <a name="launching-deferred-operations"></a>Spouštění odložených operací
 

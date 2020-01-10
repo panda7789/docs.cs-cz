@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: ed153e817746a88277c191dfb14c465ff2d8bfa1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: c6d120445bc6625b37c461c1bf2686b10833dc13
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344910"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740938"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -113,7 +113,7 @@ Vzhledem k tomu, že .NET Core podporuje souběžnou instalaci a její modul run
 
 ### <a name="comparison-with-mono"></a>Porovnání s mono
 
-[Mono](https://www.mono-project.com/) je původní implementace .NET pro více platforem. Začala jako [Open-Source](https://github.com/mono/mono) alternativa pro .NET Framework a přechodem do cílení na mobilní zařízení jako zařízení s iOS a Androidem se stala oblíbená. Dá se představit za klonování komunity .NET Framework. Projektový tým mono se spoléhal na otevřené [standardy .NET](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména ECMA 335) publikované společností Microsoft za účelem poskytování kompatibilní implementace.
+[Mono](https://www.mono-project.com/) je původní implementace .NET pro více platforem. Začala jako [Open-Source](https://github.com/mono/mono) alternativa pro .NET Framework a přechodem do cílení na mobilní zařízení jako zařízení s iOS a Androidem se stala oblíbená. Dá se představit za klonování komunity .NET Framework. Projektový tým mono se spoléhal na otevřené [standardy .NET](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) (zejména ECMA 335) publikované společností Microsoft za účelem poskytování kompatibilní implementace.
 
 Hlavní rozdíly mezi .NET Core a mono:
 

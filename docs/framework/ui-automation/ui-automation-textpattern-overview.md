@@ -6,19 +6,19 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: 41787927-df1f-4f4a-aba3-641662854fc4
-ms.openlocfilehash: b7e378d79109d33859a38ea398cffd2193044abd
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 22966c8ed80be99497e7d05b56455c3057fdd81a
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800195"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741414"
 ---
 # <a name="ui-automation-textpattern-overview"></a>Přehled prvku TextPattern automatizace uživatelského rozhraní
 
 > [!NOTE]
 > Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).
 
-Tento přehled popisuje, jak použít [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] k vystavení textového obsahu, včetně formátů a atributů stylu, textových ovládacích prvků v platformách podporovaných [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Mezi tyto ovládací prvky patří, ale nejsou omezeny na .NET Framework <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox> od společnosti Microsoft, jakož i jejich ekvivalenty [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)].
+Tento přehled popisuje, jak použít [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] k vystavení textového obsahu, včetně formátů a atributů stylu, textových ovládacích prvků v platformách podporovaných [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Mezi tyto ovládací prvky patří, ale nejsou omezeny na .NET Framework <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.RichTextBox> společnosti Microsoft a také jejich ekvivalenty Win32.
 
 Vystavení textového obsahu ovládacího prvku je provedeno pomocí vzoru ovládacího prvku <xref:System.Windows.Automation.TextPattern>, který představuje obsah kontejneru textu jako textový Stream. <xref:System.Windows.Automation.TextPattern> vyžaduje podporu třídy <xref:System.Windows.Automation.Text.TextPatternRange> k vystavení formátu a atributů stylu. <xref:System.Windows.Automation.Text.TextPatternRange> podporuje <xref:System.Windows.Automation.TextPattern> tím, že představuje souvislý nebo vícenásobný nesouvislý text v kontejneru textu s kolekcí <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> a <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncových bodů. <xref:System.Windows.Automation.Text.TextPatternRange> podporuje funkce, jako je výběr, porovnání, načítání a procházení.
 

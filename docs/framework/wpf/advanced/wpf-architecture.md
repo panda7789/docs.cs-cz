@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 04e6c6fb5dd903e0f52a29bb2c0739d899ce2bb1
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 382facef15e79c4ce49fdedaeb1a072b7591e4a0
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636351"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740214"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů WPF a popisuje, jak jejich interakce funguje. Také podrobně popisuje některé z možností provedených architekty WPF.  
@@ -38,7 +38,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
 <a name="System_Threading_DispatcherObject"></a>   
 ## <a name="systemthreadingdispatcherobject"></a>System.Threading.DispatcherObject  
- Většina objektů v subsystému WPF je odvozená od <xref:System.Windows.Threading.DispatcherObject>, která poskytuje základní konstrukce pro práci s souběžnou a vláknovou operací. WPF je založen na systému zasílání zpráv, který implementuje dispečer. To funguje podobně jako u známého [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)]ového pumpy zpráv; dispečer WPF ve skutečnosti používá zprávy User32 pro provádění volání mezi vlákny.  
+ Většina objektů v subsystému WPF je odvozená od <xref:System.Windows.Threading.DispatcherObject>, která poskytuje základní konstrukce pro práci s souběžnou a vláknovou operací. WPF je založen na systému zasílání zpráv, který implementuje dispečer. To funguje podobně jako u známého pumpy zpráv Win32; dispečer WPF ve skutečnosti používá zprávy User32 pro provádění volání mezi vlákny.  
   
  Existují dva základní koncepty, které je potřeba pochopit při diskuzi o souběžnosti v technologii WPF – Spřažení dispečera a vlákna.  
   

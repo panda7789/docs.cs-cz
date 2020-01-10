@@ -4,14 +4,12 @@ description: V tomto kurzu se dozvíte, jak používat předem vyškolený model
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.author: nakersha
-author: natke
-ms.openlocfilehash: 8c3544b60b1fba1d419ca091b0a1d85fbbdbe2d6
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 0e80cdc6bb7dcc62a57466e909451da972c92db8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204926"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738694"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Kurz: analýza míněních recenzí filmů pomocí předem připraveného modelu TensorFlow v ML.NET
 
@@ -32,7 +30,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 * [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 
-## <a name="setup"></a>Nastavení
+## <a name="setup"></a>Instalace
 
 ### <a name="create-the-application"></a>Vytvoření aplikace
 
@@ -81,16 +79,16 @@ Recenze filmů je text bezplatné Form. Vaše aplikace převede text na vstupní
 
 První je rozdělit text na samostatná slova a použít poskytnutý soubor mapování pro mapování jednotlivých slov na celočíselné kódování. Výsledkem této transformace je pole celé číslo proměnné s délkou odpovídající počtu slov ve větě.
 
-|Vlastnost| Hodnota|Typ|
+|Vlastnost| Hodnota|Type|
 |-------------|-----------------------|------|
-|ReviewText|Tato film je skutečně dobrá|string|
+|ReviewText|Tato film je skutečně dobrá|odkazy řetězců|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 
 Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 600. Jedná se o délku, kterou model TensorFlow očekává.
 
-|Vlastnost| Hodnota|Typ|
+|Vlastnost| Hodnota|Type|
 |-------------|-----------------------|------|
-|ReviewText|Tato film je skutečně dobrá|string|
+|ReviewText|Tato film je skutečně dobrá|odkazy řetězců|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 |Funkce|14, 22, 9, 66, 78,... |int [600]|
 
@@ -226,7 +224,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provede předpověď na jeden řádek dat:
 
-    |Vlastnost| Hodnota|Typ|
+    |Vlastnost| Hodnota|Type|
     |-------------|-----------------------|------|
     |Předpověď|[0,5459937, 0,454006255]|float []|
 
@@ -238,7 +236,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
     [!code-csharp[CallPredictSentiment](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#CallPredictSentiment)]
 
-## <a name="results"></a>Výsledky
+## <a name="results"></a>výsledků
 
 Sestavte a spusťte aplikaci.
 

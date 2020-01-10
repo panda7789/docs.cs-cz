@@ -2,18 +2,18 @@
 title: dotnet-install scripts
 description: Přečtěte si o dotnet – instalace skriptů pro instalaci nástrojů .NET Core CLI a sdíleného modulu runtime.
 ms.date: 01/16/2019
-ms.openlocfilehash: 867be93b5a4c66258df438ce718dabbd4ef2891c
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: f72e12fc415824a9c69eba6f52e3c01717cf654c
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849572"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740527"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
 ## <a name="name"></a>Name
 
-`dotnet-install.ps1` | `dotnet-install.sh`-Skript použitý k instalaci nástrojů .NET Core CLI a sdíleného modulu runtime.
+`dotnet-install.ps1` | `dotnet-install.sh`-skript používaný k instalaci nástrojů .NET Core CLI a sdíleného modulu runtime.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -27,22 +27,22 @@ macOS/Linux:
 
 ## <a name="description"></a>Popis
 
-`dotnet-install` Skripty se používají k provedení instalace .NET Core SDK bez správy, která zahrnuje nástroje .NET Core CLI a sdílený modul runtime.
+Skripty `dotnet-install` slouží k provedení instalace .NET Core SDK bez správy, která zahrnuje nástroje .NET Core CLI a sdílený modul runtime.
 
 Doporučujeme používat stabilní verzi, která je hostována na [hlavním webu .NET Core](https://dot.net). K přímým cestám ke skriptům patří:
 
-- <https://dot.net/v1/dotnet-install.sh>(bash, UNIX)
-- <https://dot.net/v1/dotnet-install.ps1>(PowerShell, Windows)
+- <https://dot.net/v1/dotnet-install.sh> (bash, UNIX)
+- <https://dot.net/v1/dotnet-install.ps1> (PowerShell, Windows)
 
 Hlavní užitečnost těchto skriptů je ve scénářích automatizace a v instalacích bez správy. Existují dva skripty: jeden je PowerShellový skript, který funguje ve Windows, a druhý je bash skript, který funguje na Linux/macOS. Oba skripty mají stejné chování. Skript bash také čte přepínače prostředí PowerShell, takže můžete použít přepínače prostředí PowerShell se skriptem v systémech Linux/macOS.
 
-Instalační skripty stáhnou soubor ZIP/tarballu z buildu CLI a budou pokračovat v jeho instalaci buď ve výchozím umístění, nebo v umístění určeném parametrem `-InstallDir|--install-dir`. Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji. Pokud chcete získat pouze sdílený modul runtime, zadejte `--runtime` argument.
+Instalační skripty stáhnou soubor ZIP/tarballu z buildu CLI a budou pokračovat v jeho instalaci buď ve výchozím umístění, nebo v umístění určeném parametrem `-InstallDir|--install-dir`. Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji. Pokud chcete získat pouze sdílený modul runtime, zadejte argument `--runtime`.
 
-Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním `--no-path` argumentu.
+Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním argumentu `--no-path`.
 
 Před spuštěním skriptu nainstalujte požadované [závislosti](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md).
 
-Konkrétní verzi můžete nainstalovat pomocí `--version` argumentu. Verze musí být zadaná jako verze se třemi částmi (například 1.0.0-13232). Pokud není zadaný, použije se `latest` verze.
+Konkrétní verzi můžete nainstalovat pomocí argumentu `--version`. Verze musí být zadaná jako verze se třemi částmi (například 1.0.0-13232). Pokud není k dispozici, používá `latest` verzi.
 
 ## <a name="options"></a>Možnosti
 
@@ -50,10 +50,10 @@ Konkrétní verzi můžete nainstalovat pomocí `--version` argumentu. Verze mus
 
   Určuje zdrojový kanál pro instalaci. Možné hodnoty jsou:
 
-  - `Current`– Nejvíc aktuální verze
-  - `LTS`– Kanál dlouhodobé podpory (aktuálně podporovaná verze).
+  - `Current` – aktuální verze.
+  - `LTS` – kanál dlouhodobé podpory (aktuálně podporovaná verze).
   - Verze se dvěma částmi ve formátu X. Y představující specifickou verzi (například `2.0` nebo `1.0`).
-  - Název větve Například `release/2.0.0` `master` ,, nebo (pro noční vydání). `release/2.0.0-preview2`
+  - Název větve Například `release/2.0.0`, `release/2.0.0-preview2`nebo `master` (pro noční vydání).
 
   Výchozí hodnota je `LTS`. Další informace o kanálech podpory rozhraní .NET najdete na stránce [zásady podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) .
 
@@ -61,11 +61,11 @@ Konkrétní verzi můžete nainstalovat pomocí `--version` argumentu. Verze mus
 
   Představuje konkrétní verzi buildu. Možné hodnoty jsou:
 
-  - `latest`– Nejnovější sestavení kanálu (používá se s `-Channel` možností)
-  - `coherent`-Nejnovější souvislý Build na kanálu; používá nejnovější kombinaci stabilního balíčku (používá se s možnostmi názvu `-Channel` větve).
-  - Verze se třemi částmi ve formátu X. Y. Z představující specifickou verzi buildu; `-Channel` nahrazuje možnost. Například: `2.0.0-preview2-006120`.
+  - `latest` – nejnovější sestavení kanálu (používá se s možností `-Channel`)
+  - `coherent` – nejnovější souvislé sestavení na kanálu; používá nejnovější kombinaci stabilního balíčku (používá se s názvem větve `-Channel` možností).
+  - Verze se třemi částmi ve formátu X. Y. Z představující specifickou verzi buildu; nahrazuje možnost `-Channel`. Například: `2.0.0-preview2-006120`.
 
-  Pokud není zadaný, `-Version` `latest`použije se výchozí hodnota.
+  Pokud není zadaný, `-Version` výchozí nastavení `latest`.
 
 - **`-InstallDir <DIRECTORY>`**
 
@@ -73,25 +73,25 @@ Konkrétní verzi můžete nainstalovat pomocí `--version` argumentu. Verze mus
 
 - **`-Architecture <ARCHITECTURE>`**
 
-  Architektura binárních souborů .NET Core, které se mají nainstalovat Možné hodnoty jsou `<auto>`, `amd64` `x64`,,, a`arm64` .`arm` `x86` Výchozí hodnota je `<auto>`, která představuje aktuálně běžící architekturu OS.
+  Architektura binárních souborů .NET Core, které se mají nainstalovat Možné hodnoty jsou `<auto>`, `amd64`, `x64`, `x86`, `arm64`a `arm`. Výchozí hodnota je `<auto>`, která představuje aktuálně běžící architekturu OS.
 
 - **`-SharedRuntime`**
 
   > [!NOTE]
   > Tento parametr je zastaralý a v budoucí verzi skriptu ho můžete odebrat. Doporučená alternativa je `Runtime` možnost.
 
-  Nainstaluje jenom sdílené běhové bity, ne celou sadu SDK. To je ekvivalentní k zadání `-Runtime dotnet`.
+  Nainstaluje jenom sdílené běhové bity, ne celou sadu SDK. Jedná se o ekvivalent určení `-Runtime dotnet`.
 
 - **`-Runtime <RUNTIME>`**
 
   Nainstaluje pouze sdílený modul runtime, nikoli celou sadu SDK. Možné hodnoty jsou:
 
-  - `dotnet``Microsoft.NETCore.App` – sdílený modul runtime.
-  - `aspnetcore``Microsoft.AspNetCore.App` – sdílený modul runtime.
+  - `dotnet` – `Microsoft.NETCore.App` sdílený modul runtime.
+  - `aspnetcore` – `Microsoft.AspNetCore.App` sdílený modul runtime.
 
 - **`-DryRun`**
 
-  Když se tato nastavení nastaví, skript neprovede instalaci. Místo toho zobrazí příkazový řádek, který se má použít k konzistentně instalaci požadované verze .NET Core CLI. Pokud například zadáte verzi `latest`, zobrazí se odkaz s konkrétní verzí, aby se tento příkaz mohl ve skriptu sestavení použít deterministické. Také se zobrazí umístění binárního souboru, pokud dáváte přednost instalaci nebo stažení.
+  Když se tato nastavení nastaví, skript neprovede instalaci. Místo toho zobrazí příkazový řádek, který se má použít k konzistentně instalaci požadované verze .NET Core CLI. Například pokud zadáte `latest`verze, zobrazí se odkaz s konkrétní verzí, aby tento příkaz bylo možné použít ve skriptu sestavení deterministické. Také se zobrazí umístění binárního souboru, pokud dáváte přednost instalaci nebo stažení.
 
 - **`-NoPath`**
 
@@ -195,7 +195,7 @@ Konkrétní verzi můžete nainstalovat pomocí `--version` argumentu. Verze mus
   macOS/Linux:
 
   ```bash
-  curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin <additional install-script args>
+  curl -ssl https://dot.net/v1/dotnet-install.sh | bash /dev/stdin <additional install-script args>
   ```
 
 ## <a name="see-also"></a>Viz také:

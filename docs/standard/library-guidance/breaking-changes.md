@@ -1,15 +1,13 @@
 ---
 title: Přerušující změny a knihovny .NET
 description: Doporučení osvědčených postupů pro navigaci při zásadních změnách při vytváření knihoven .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 6881b8737d9dd3fa7fa71f099fa1dc97b747033d
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 8536662ae1cd9733efbcc0c6526bd69d34a13177
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104662"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740980"
 ---
 # <a name="breaking-changes"></a>Změny způsobující chyby
 
@@ -56,7 +54,7 @@ Změny chování jsou nejběžnějším typem zásadní změny: téměř jakáko
 
 Přidání funkcí a vylepšení špatného chování je vhodné, ale bez péče může být pro stávající uživatele velmi obtížné provést upgrade. Jedním ze způsobů, jak přispět vývojářům v práci s zásadními změnami chování, je skrýt ho za nastavením. Nastavení umožní vývojářům aktualizace na nejnovější verzi vaší knihovny současně se zvolením možnosti výslovný souhlas nebo odhlášení nedostatku změn. Tato strategie umožňuje vývojářům zůstat v aktuálním stavu, zatímco umožní přizpůsobovat jejich využívání kódu v průběhu času.
 
-ASP.NET Core MVC má například koncept [verze kompatibility](/aspnet/core/mvc/compatibility-version) , který upravuje Funkce povolené a zakázané na `MvcOptions`.
+ASP.NET Core MVC má například koncept [verze kompatibility](/aspnet/core/mvc/compatibility-version) , který upravuje Funkce povolené a zakázané v `MvcOptions`.
 
 **✔️ zvažte** , že se ve výchozím nastavení vypnou nové funkce, pokud mají vliv na existující uživatele a umožní vývojářům, aby se k této funkci přihlásili pomocí nastavení.
 
@@ -64,9 +62,9 @@ ASP.NET Core MVC má například koncept [verze kompatibility](/aspnet/core/mvc/
 
 K binárnímu poškození dojde, když změníte veřejné rozhraní API vaší knihovny, takže sestavení kompilována proti starším verzím knihovny již nebudou schopna volat rozhraní API. Například změna signatury metody přidáním nového parametru způsobí, že sestavení zkompilované na starší verzi knihovny vyvolají <xref:System.MissingMethodException>.
 
-Binární zásadní změna může také poškodit **celé sestavení**. Přejmenováním sestavení pomocí `AssemblyName` dojde ke změně identity sestavení, jako je přidání, odebrání nebo změna klíče silného pojmenování sestavení. Změna identity sestavení způsobí přerušení veškerého zkompilovaného kódu, který ho používá.
+Binární zásadní změna může také poškodit **celé sestavení**. Přejmenováním sestavení pomocí `AssemblyName` dojde ke změně identity sestavení, protože se přidá, odebere nebo změní silný klíč pojmenování sestavení. Změna identity sestavení způsobí přerušení veškerého zkompilovaného kódu, který ho používá.
 
-**❌** Neměňte název sestavení.
+**❌** neměňte název sestavení.
 
 **❌** Nepřidávat, odebírat ani měnit silný názvový klíč.
 
@@ -74,9 +72,9 @@ Binární zásadní změna může také poškodit **celé sestavení**. Přejmen
 
 > Přidání cokoli do rozhraní způsobí, že existující typy, které ji implementují, selžou. Abstraktní základní třída umožňuje přidat výchozí virtuální implementaci.
 
-**✔️ je vhodné** umístit <xref:System.ObsoleteAttribute> na typy a členy, které mají být v úmyslu odebrány. Atribut by měl obsahovat pokyny pro aktualizaci kódu, aby již nepoužíval zastaralé rozhraní API.
+**✔️ zvažte** umístění <xref:System.ObsoleteAttribute> na typy a členy, které chcete odebrat. Atribut by měl obsahovat pokyny pro aktualizaci kódu, aby již nepoužíval zastaralé rozhraní API.
 
-> Kód, který volá typy a metody pomocí <xref:System.ObsoleteAttribute> , vytvoří upozornění sestavení se zprávou poskytnutou atributu. Upozornění dávají uživatelům, kteří používají zastaralý čas na ploše rozhraní API k migraci, takže po odebrání zastaralého rozhraní API už ho nepoužívají.
+> Kód, který volá typy a metody s <xref:System.ObsoleteAttribute>, vygeneruje upozornění sestavení se zprávou poskytnutou atributu. Upozornění dávají uživatelům, kteří používají zastaralý čas na ploše rozhraní API k migraci, takže po odebrání zastaralého rozhraní API už ho nepoužívají.
 
 ```csharp
 public class Document
@@ -94,7 +92,7 @@ public class Document
 }
 ```
 
-**✔️** je <xref:System.ObsoleteAttribute> vhodné zachovat typy a metody s neomezenou dobu v knihovně nízké a střední úrovně.
+**✔️** zajistěte, aby byly typy a metody s <xref:System.ObsoleteAttribute> po dobu neurčitou v knihovnách nízké úrovně a střední úrovně.
 
 > Odebrání rozhraní API je binární zásadní změna. Vzhledem k tomu, že udržování zastaralých typů a metod, pokud je zachování nízkých nákladů, nepřidává do knihovny velké množství technického dluhu. Neodebrání typů a metod může přispět k tomu, abyste se vyhnuli nejhorším scénářům uvedeným výše.
 
@@ -102,7 +100,7 @@ public class Document
 
 - [Požadavky na verzi a aktualizace C# pro vývojáře](../../csharp/whats-new/version-update-considerations.md)
 - [Konečný průvodce pro změny v .NET v rozhraní API](https://stackoverflow.com/questions/1456785/a-definitive-guide-to-api-breaking-changes-in-net)
-- [CoreFX přerušující pravidla změny](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/breaking-change-rules.md)
+- [Rozhraní .NET – pravidla změny](https://github.com/dotnet/runtime/blob/master/docs/coding-guidelines/breaking-change-rules.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](versioning.md)

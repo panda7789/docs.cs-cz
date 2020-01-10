@@ -10,12 +10,12 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: ceab7db1f9eeb47ec020e220ec702af8181855e2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 645c44998812453008fc91d5cf4b8463c51bef9a
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442477"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741723"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
@@ -58,14 +58,14 @@ Počínaje systémem Windows Vista umožňuje Windows uživatelům změnit nasta
   
  Řešení je ve dvou částech.  
   
-1. Nejprve zajistěte, aby klientská aplikace mohla zohledňovat rozlišení DPI. Chcete-li to provést, zavolejte funkci [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `SetProcessDPIAware` při spuštění. Ve spravovaném kódu je tato funkce k dispozici následující deklarace.  
+1. Nejprve zajistěte, aby klientská aplikace mohla zohledňovat rozlišení DPI. Chcete-li to provést, zavolejte funkci Win32 `SetProcessDPIAware` při spuštění. Ve spravovaném kódu je tato funkce k dispozici následující deklarace.  
   
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
      Tato funkce umožňuje celému procesu zohledňovat rozlišení DPI, což znamená, že všechny systémy Windows, které patří do procesu, jsou bez měřítka. V [ukázce zvýrazňovače](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)například čtyři okna, která tvoří zvýrazněný obdélník, jsou umístěna na fyzických souřadnicích získaných z automatizace uživatelského rozhraní, nikoli v logických souřadnicích. Pokud Ukázka nezohledňuje rozlišení DPI, zvýrazní se zvýraznění na logických souřadnicích na ploše, což by vedlo k nesprávnému umístění v prostředí, které není 96 dpi.  
   
-2. Chcete-li získat souřadnice kurzoru, zavolejte `GetPhysicalCursorPos`funkce [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]. Následující příklad ukazuje, jak deklarovat a používat tuto funkci.  
+2. Chcete-li získat souřadnice kurzoru, zavolejte `GetPhysicalCursorPos`funkce Win32. Následující příklad ukazuje, jak deklarovat a používat tuto funkci.  
   
      [!code-csharp[UIAClient_snip#185](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#185)]
      [!code-vb[UIAClient_snip#185](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#185)]  
@@ -73,7 +73,7 @@ Počínaje systémem Windows Vista umožňuje Windows uživatelům změnit nasta
 > [!CAUTION]
 > Nepoužívejte <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType>. Chování této vlastnosti mimo klientské okna v prostředí s měřítkem není definováno.  
   
- Pokud vaše aplikace provádí přímou komunikaci mezi procesy s aplikacemi, které nepodporují rozlišení DPI, možná jste převedli převod mezi logickými a fyzickými souřadnicemi pomocí funkcí [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
+ Pokud vaše aplikace provádí přímou komunikaci mezi procesy s aplikacemi, které nepodporují rozlišení DPI, možná jste převedli převod mezi logickými a fyzickými souřadnicemi pomocí funkcí Win32 `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Viz také:
 

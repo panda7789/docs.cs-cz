@@ -1,5 +1,5 @@
 ---
-title: CoreResponseData.m_StatusCode pole
+title: CoreResponseData. m_StatusCode – pole
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,14 +10,14 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 53338c75d31cef3ab89879632710dba3e52091ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8abe619a57cc61fc3502807f60deccbbd578f382
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675400"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741002"
 ---
-# <a name="coreresponsedatamstatuscode-field"></a>CoreResponseData.m\_StatusCode pole
+# <a name="coreresponsedatam_statuscode-field"></a>CoreResponseData. m\_pole StatusCode
 
 `CoreResponseData.m_StatusCode` je <xref:System.Net.HttpStatusCode> obsahující stav odpovědi.
 
@@ -28,14 +28,14 @@ public HttpStatusCode m_StatusCode
 ```
 
 > [!WARNING]
-> Toto rozhraní API není určena pro použití přímo v kódu. Místo toho používejte <xref:System.Diagnostics.DiagnosticSource> k připojení sítě kódu. Zobrazit [DiagnosticSource uživatelská příručka](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+> Toto rozhraní API není určeno k použití přímo v kódu. Místo toho byste k připojení síťového kódu měli použít <xref:System.Diagnostics.DiagnosticSource>. Viz [uživatelská příručka pro DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
 > 
-> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Sestavení:** Systém (System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**Verze rozhraní .NET framework:** Dostupné od verze 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

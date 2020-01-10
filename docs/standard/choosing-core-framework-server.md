@@ -4,12 +4,12 @@ description: Průvodce implementací rozhraní .NET, který byste měli zvážit
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: e5df362231b0786a58a4c3c9ae8f5a167930a12e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b2b9e15cfdfd63d070ae94c29a9f2d1a5b5c87b2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799251"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738666"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -46,7 +46,7 @@ Architektura mikroslužeb umožňuje kombinovat technologie napříč hranicí s
 
 K dispozici je mnoho platforem infrastruktury. Služba [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) je navržená pro rozsáhlé a komplexní systémy mikroslužeb. [Azure App Service](https://azure.microsoft.com/services/app-service/) je dobrou volbou pro bezstavové mikroslužby. Alternativy mikroslužeb na základě Docker vyhovují jakémukoli druhu přístupu ke mikroslužbám, jak je vysvětleno v části [Containers (kontejnery](#containers) ). Všechny tyto platformy podporují .NET Core a jsou ideální pro hostování vašich mikroslužeb.
 
-Další informace o architektuře mikroslužeb najdete v tématu [mikroslužby .NET. Architektura pro kontejnerové aplikace](../architecture/microservices/index.md).NET.
+Další informace o architektuře mikroslužeb najdete v tématu [mikroslužby .NET. Architektura pro kontejnerové aplikace .NET](../architecture/microservices/index.md).
 
 ### <a name="containers"></a>Kontejnery
 
@@ -85,17 +85,17 @@ Takže v případě, že knihovny nebo balíčky NuGet využívají technologie,
 
 Některé technologie .NET Framework nejsou dostupné v .NET Core. Některé z nich mohou být k dispozici v novějších verzích .NET Core. Ostatní se nevztahují na nové vzory aplikací, na které cílí .NET Core, a nemusí být nikdy k dispozici. V následujícím seznamu jsou uvedeny nejběžnější technologie, které se v .NET Core nenašly:
 
-- Aplikace webových formulářů ASP.NET: Webové formuláře ASP.NET jsou k dispozici pouze v .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Neexistují žádné plány k převedení ASP.NET webových formulářů do .NET Core.
+- ASP.NET webové formuláře aplikace: webové formuláře ASP.NET jsou k dispozici pouze v .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Neexistují žádné plány k převedení ASP.NET webových formulářů do .NET Core.
 
-- Aplikace webových stránek ASP.NET: Webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core. 
+- ASP.NET webové stránky aplikace: webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core. 
 
 - Implementace služeb WCF. I když existuje [Knihovna WCF-Client](https://github.com/dotnet/wcf) ke využívání služeb WCF z .NET Core, implementace serveru WCF je aktuálně dostupná jenom v .NET Framework. Tento scénář není součástí aktuálního plánu pro .NET Core, ale je považován za budoucí.
 
-- Služby související s pracovním postupem: Programovací model Windows Workflow Foundation (WF), služby pracovních postupů (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako "ADO.NET Data Services") jsou k dispozici pouze v .NET Framework.  Neexistují žádné plány, jak přenést WF/WCF + WF/WCF Data Services do .NET Core.
+- Služby související s pracovním postupem: programovací model Windows Workflow Foundation (WF), služby pracovních postupů (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako "ADO.NET Data Services") jsou k dispozici pouze v .NET Framework.  Neexistují žádné plány, jak přenést WF/WCF + WF/WCF Data Services do .NET Core.
 
-- Jazyková podpora: Visual Basic a F# jsou aktuálně podporovány v rozhraní .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných šablon projektů naleznete v tématu [Možnosti šablony pro dotnet New](../core/tools/dotnet-new.md#arguments).
+- Podpora jazyků: Visual Basic a F# jsou aktuálně podporované v rozhraní .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných šablon projektů naleznete v tématu [Možnosti šablony pro dotnet New](../core/tools/dotnet-new.md#arguments).
 
-Kromě oficiálního plánu jsou k dispozici i další rozhraní .NET Core. Úplný seznam najdete v tématu CoreFX problémy označené jako [port-to-Core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Tento seznam nepředstavuje závazek společnosti Microsoft, aby tyto komponenty byly součástí .NET Core. Jednoduše zachytíte přáním z komunity. Pokud se zajímáte o jakékoli součásti označené jako `port-to-core`, účastní se diskuzí na GitHubu. A pokud si myslíte, že chybí něco, zapište nový problém do [úložiště CoreFX](https://github.com/dotnet/corefx/issues/new).
+Kromě oficiálního plánu jsou k dispozici i další rozhraní .NET Core. Úplný seznam najdete v tématu CoreFX problémy označené jako [port-to-Core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Tento seznam nepředstavuje závazek společnosti Microsoft, aby tyto komponenty byly součástí .NET Core. Jednoduše zachytíte přáním z komunity. Pokud se rozhodnete o kterékoli součásti označené jako `port-to-core`, účastníte se diskusí na GitHubu. A pokud si myslíte, že chybí něco, zapište nový problém do [úložiště .NET](https://github.com/dotnet/runtime/issues/new).
 
 ### <a name="a-need-to-use-a-platform-that-doesnt-support-net-core"></a>Je potřeba použít platformu, která nepodporuje .NET Core.
 
@@ -110,4 +110,4 @@ Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NE
 - [Přenos z .NET Framework do .NET Core](../core/porting/index.md)
 - [Úvod k .NET a Dockeru](../core/docker/introduction.md)
 - [Přehled komponent .NET](components.md)
-- [Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET](../architecture/microservices/index.md)
+- [Mikroslužby .NET. Architektura pro kontejnerové aplikace .NET](../architecture/microservices/index.md)

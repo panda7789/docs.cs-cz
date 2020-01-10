@@ -1,5 +1,5 @@
 ---
-title: Vytvoření a použití ssemblies se silným názvem
+title: Vytváření a používání sestavení se silným názvem
 ms.date: 08/19/2019
 helpviewer_keywords:
 - strong-name bypass feature
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - strong-named assemblies, loading into trusted application domains
 - assembly binding, strong-named
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
-ms.openlocfilehash: 700eca16e7755823456c3e3ace17eb5e6b3526ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 18a0b7d657290835a34c705513d0d7a4ccbfc61c
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122514"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738679"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 
@@ -29,7 +29,7 @@ Silný název se skládá z identity sestavení – jednoduchý textový název,
 Sestavení se silným názvem může používat pouze typy z jiných sestavení se silným názvem. V opačném případě by došlo k ohrožení integrity sestavení se silným názvem.
 
 > [!NOTE]
-> I když .NET Core podporuje sestavení se silným názvem a všechna sestavení v knihovně .NET Core jsou podepsaná, většina sestavení třetích stran nepotřebuje silné názvy. Další informace najdete v tématu [podepisování silného názvu](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/strong-name-signing.md) na GitHubu.
+> I když .NET Core podporuje sestavení se silným názvem a všechna sestavení v knihovně .NET Core jsou podepsaná, většina sestavení třetích stran nepotřebuje silné názvy. Další informace najdete v tématu [podepisování silného názvu](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) na GitHubu.
 
 ## <a name="strong-name-scenario"></a>Scénář se silným názvem
 
@@ -66,7 +66,7 @@ Funkce obcházení se vztahuje na jakékoli sestavení, které je podepsáno sil
 
 Tato funkce se dá zakázat pro jednotlivé aplikace nebo pro počítač. Viz [Postup: zákaz funkce obcházení silného názvu](disable-strong-name-bypass-feature.md).
 
-## <a name="related-topics"></a>Související témata
+## <a name="related-topics"></a>Příbuzná témata
 
 |Název|Popis|
 |-----------|-----------------|

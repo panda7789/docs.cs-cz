@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 0ba4e8ff639cdfbbec596da45a6e950fff921974
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 0c98d0e7363e7732f44f2edf238b9cb6d2bf11fb
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740721"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740287"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 V tomto tématu se seznámíte s hlavními typografické funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu, podpora typografie OpenType, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
@@ -59,7 +59,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
   
 - Chování písem nezávislá na globálním nastavení, jako je například národní prostředí systému.  
   
-- Samostatné typy <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>a <xref:System.Windows.FontStyle> pro definování <xref:System.Windows.Media.FontFamily>. To poskytuje větší flexibilitu než v [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] programování, ve kterém se k definování rodiny písem používá logické kombinace kurzívy a tučného písma.  
+- Samostatné typy <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>a <xref:System.Windows.FontStyle> pro definování <xref:System.Windows.Media.FontFamily>. To poskytuje větší flexibilitu než v programování Win32, ve které jsou logické kombinace kurzívy a tučně použity k definování rodiny písem.  
   
 - Směr zápisu (vodorovně versus svisle) zpracovává nezávisle na názvu písma.  
   
@@ -157,4 +157,4 @@ Text pomocí technologie ClearType y-Direction antialiasing
 - [Kreslení formátovaného textu](drawing-formatted-text.md)
 - [Pokročilé formátování textu](advanced-text-formatting.md)
 - [Text](optimizing-performance-text.md)
-- [Typografie Microsoftu](https://docs.microsoft.com/typography/)
+- [Microsoft Typography](https://docs.microsoft.com/typography/)

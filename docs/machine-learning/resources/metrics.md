@@ -2,14 +2,12 @@
 title: ML.NET metriky
 description: Pochopení metrik, které se používají k vyhodnocení výkonu ML.NET modelu
 ms.date: 12/17/2019
-author: natke
-ms.author: nakersha
-ms.openlocfilehash: b154c88281b65730c107a52034dfa40a45d4e367
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 8e823fd8cc344c1b8e0ecd709b527137368cbfa0
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347756"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75739601"
 ---
 # <a name="evaluate-your-mlnet-model-with-metrics"></a>Vyhodnocení modelu ML.NET pomocí metrik
 

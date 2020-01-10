@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Edit control type
 - UI Automation, Edit control type
 ms.assetid: 6db9d231-c0a0-4e17-910e-ac80357f774f
-ms.openlocfilehash: 500dc450ad171ed50316c8e08d62258d745049cb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f51e55a8a87ad1112c1b752568220611b9bf70e8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448456"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741664"
 ---
 # <a name="ui-automation-support-for-the-edit-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku úprav
 
@@ -22,7 +22,7 @@ Toto téma poskytuje informace o podpoře [!INCLUDE[TLA2#tla_uiautomation](../..
 
 Ovládací prvky pro úpravy umožňují uživateli zobrazit a upravit jednoduchý řádek textu bez podpory formátovaného formátu.
 
-Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku pro úpravy. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se vztahují na všechny ovládací prvky pro úpravy, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].
+Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku pro úpravy. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se vztahují na všechny ovládací prvky pro úpravy, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].
 
 <a name="Required_UI_Automation_Tree_Structure"></a>
 
@@ -52,8 +52,8 @@ V následující tabulce jsou uvedeny vlastnosti [!INCLUDE[TLA2#tla_uiautomation
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Viz poznámky.|Pokud je k ovládacímu prvku přidružen statický textový popisek, musí tato vlastnost vystavit odkaz na tento ovládací prvek. Pokud je ovládací prvek text dílčí součástí jiného ovládacího prvku, nebude mít nastavenou vlastnost `LabeledBy`.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Upravit|Tato hodnota je stejná pro všechny [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] architektury.|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|úpravě|Lokalizovaný řetězec odpovídající typu ovládacího prvku pro úpravy.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Textové pole je vždy součástí zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Textové pole je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Textové pole je vždy součástí zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Textové pole je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsPasswordProperty>|Viz poznámky.|Musí být nastaven na hodnotu true u ovládacích prvků pro úpravy, které obsahují hesla. Pokud ovládací prvek pro úpravy obsahuje obsah hesla, lze tuto vlastnost použít čtečkou obrazovky k určení, zda mají být stisknuty klávesy pro čtení, jak je uživatel zadá.|
 
 <a name="Required_UI_Automation_Control_Patterns"></a>

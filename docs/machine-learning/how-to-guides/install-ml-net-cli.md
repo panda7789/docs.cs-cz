@@ -2,14 +2,12 @@
 title: Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
 description: Naučte se instalovat, upgradovat, downgradovat a odinstalovat nástroj rozhraní příkazového řádku ML.NET (CLI).
 ms.date: 12/18/2019
-ms.author: nakersha
-author: natke
-ms.openlocfilehash: 07b6e924ed9c6b0c278a86539ebe7d750f9ced37
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 350122f2d2d2f03484ab6e272b482adf2094495c
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636585"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75739964"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
 
