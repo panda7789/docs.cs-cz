@@ -1,15 +1,13 @@
 ---
 title: Jak jsou verze prostředí .NET Core Runtime a sady SDK
 description: Tento článek vás seznámí s tím, jak jsou .NET Core SDK a modul runtime ve verzi (podobně jako sémantická Správa verzí).
-author: bleroy
 ms.date: 07/26/2018
-ms.custom: seodec18
-ms.openlocfilehash: cc3a834fdb6347f2cfd93b2c8daeae5bcc222575
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: c85a2112b439768068663688947960ac814de824
+ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342917"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75777320"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Přehled toho, jak je verze .NET Core
 
@@ -25,7 +23,7 @@ Modul runtime .NET Core a .NET Core SDK přidávají nové funkce v jiné míře
 
 Třetí pozice čísla verze sady SDK komunikuje s podverzem a číslem opravy. Vedlejší verze je vynásobena 100. Dílčí verze 1, verze patch 2 by byla reprezentovaná jako 102. Poslední dvě číslice reprezentují číslo opravy. Například vydání .NET Core 2,2 může vytvořit vydání jako v následující tabulce:
 
-| Změna                | .NET Core Runtime | .NET Core SDK (*) |
+| Změna                | .NET Core Runtime | .NET Core SDK (\*) |
 |-----------------------|-------------------|-------------------|
 | Původní vydaná verze       | 2.2.0             | 2.2.100           |
 | Oprava sady SDK             | 2.2.0             | 2.2.101           |

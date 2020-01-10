@@ -3,17 +3,16 @@ title: Port od .NET Framework do .NET Core
 description: Pochopení procesu přenosu a zjišťování nástrojů, které můžete najít užitečné při přenosu .NET Framework projektu do .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.custom: seodec18
-ms.openlocfilehash: 89f00e5c6ce7f3cea7a3135c9b2856c54a70da40
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b5b010acbccf134afe800aa5bb98a0ae6e9ffa25
+ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038522"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75777358"
 ---
-# <a name="overview-of-the-porting-process-from-net-framework-to-net-core"></a>Přehled procesu přenosu z .NET Framework do .NET Core
+# <a name="overview-of-porting-from-net-framework-to-net-core"></a>Přehled přenosů z .NET Framework do .NET Core
 
-Je možné, že máte kód, který se v současnosti spouští na .NET Framework, které vás zajímá o přenos do .NET Core. Tento článek popisuje:
+Je možné, že máte kód, který se v současnosti spouští na .NET Framework, které vás zajímá o přenos do .NET Core. Tento článek obsahuje:
 
 * Přehled procesu přenosu.
 * Seznam nástrojů, které můžete najít užitečné při přenosu kódu do .NET Core.
@@ -22,7 +21,7 @@ Je možné, že máte kód, který se v současnosti spouští na .NET Framework
 
 Při přenosu projektu do .NET Core doporučujeme použít následující postup:
 
-1. Přecílíte na všechny projekty, které chcete přenést, aby bylo možné cílit na .NET Framework 4.7.2 nebo vyšší.
+1. Přecílíte na všechny projekty, které chcete přenést na cílovou .NET Framework 4.7.2 nebo vyšší.
 
    Tento krok zajistí, že můžete použít alternativy rozhraní API pro cíle specifické pro .NET Framework, když .NET Core nepodporuje konkrétní rozhraní API.
 
@@ -32,7 +31,7 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
 3. Nainstalujte [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md) do svých projektů, abyste identifikovali vyvolané <xref:System.PlatformNotSupportedException> na některých platformách a nějaké jiné potenciální problémy s kompatibilitou.
 
-   Tento nástroj je podobný analyzátoru přenositelnosti, ale místo analýzy toho, jestli se můžou věci vytvářet v .NET Core, se analyzuje, pokud používáte rozhraní API způsobem, který vyvolá <xref:System.PlatformNotSupportedException> za běhu. I když se nejedná o běžný postup, Pokud přesouváte z .NET Framework 4.7.2 nebo vyšší, je dobré ho kontrolovat.
+   Tento nástroj je podobný analyzátoru přenositelnosti, ale místo toho, aby se mohly analyzovat věci pro .NET Core, analyzuje, jestli používáte rozhraní API způsobem, který vyvolá <xref:System.PlatformNotSupportedException> v době běhu. I když se nejedná o běžný postup, Pokud přesouváte z .NET Framework 4.7.2 nebo vyšší, je dobré ho kontrolovat.
 
 4. Převeďte všechny své `packages.config` závislosti na formát [PackageReference](/nuget/consume-packages/package-references-in-project-files) pomocí nástroje pro [převod v aplikaci Visual Studio](/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
@@ -44,9 +43,11 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
 6. Port vašeho testovacího kódu.
 
-   Vzhledem k tomu, že přenos do .NET Core je podstatnou změnou základu kódu, důrazně doporučujeme, abyste si nadostali své testy, abyste mohli spouštět testy během přenosu kódu. MSTest, xUnit a NUnit všechny fungují na .NET Core.
+   Vzhledem k tomu, že přenos do .NET Core je taková významná změna vašeho základu kódu, důrazně doporučujeme přenést testovací projekty, abyste mohli spustit testy během přenosu kódu. MSTest, xUnit a NUnit všechny fungují na .NET Core.
 
-Kromě toho se můžete pokusit přenést menší řešení nebo jednotlivé projekty do formátu souboru projektu .NET Core pomocí nástroje [dotnet try-Convert](https://github.com/dotnet/try-convert) v jedné operaci. `dotnet try-convert` není zaručená práce pro všechny vaše projekty a může způsobit drobné změny v chování, které byste zjistili, na kterých jste se zapracovali. Měl by se použít jako _výchozí bod_ , který automatizuje základní věci, které je možné automatizovat. Není zaručené řešení pro migraci projektu.
+Kromě toho se můžete pokusit přenést menší řešení nebo jednotlivé projekty v jedné operaci do formátu souboru projektu .NET Core pomocí nástroje [dotnet try-Convert](https://github.com/dotnet/try-convert) . `dotnet try-convert` není zaručená práce pro všechny vaše projekty a může způsobit drobné změny v chování, které jste v závislosti na. Použijte ho jako _výchozí bod_ , který automatizuje základní věci, které je možné automatizovat. Není zaručené řešení pro migraci projektu.
 
->[!div class="step-by-step"]
->[Next](net-framework-tech-unavailable.md)
+## <a name="next-steps"></a>Další kroky
+
+>[!div class="nextstepaction"]
+>[Nedostupné technologie v .NET Core](net-framework-tech-unavailable.md)
