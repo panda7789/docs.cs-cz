@@ -6,31 +6,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d26872fb97551e5392eb3f6a1a0825728046553
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ecbed7e57628b4e140e0f4dbcd600643617b075a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965883"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710892"
 ---
-# <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a><span data-ttu-id="5a9d0-102">Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs</span><span class="sxs-lookup"><span data-stu-id="5a9d0-102">Event Handling in an XML Document Using the XmlNodeChangedEventArgs</span></span>
-<span data-ttu-id="5a9d0-103">**XmlNodeChangedEventArgs** zapouzdřuje argumenty předávané obslužným rutinám událostí registrovaným v objektu **XmlDocument** pro zpracování událostí.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-103">The **XmlNodeChangedEventArgs** encapsulates the arguments passed to the event handlers registered on the **XmlDocument** object for handling events.</span></span> <span data-ttu-id="5a9d0-104">Události a popis, kdy jsou aktivovány, jsou uvedeny v následující tabulce.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-104">The events and a description of when they are fired is given in the following table.</span></span>  
+# <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a><span data-ttu-id="6aaf0-102">Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs</span><span class="sxs-lookup"><span data-stu-id="6aaf0-102">Event Handling in an XML Document Using the XmlNodeChangedEventArgs</span></span>
+<span data-ttu-id="6aaf0-103">**XmlNodeChangedEventArgs** zapouzdřuje argumenty předávané obslužným rutinám událostí registrovaným v objektu **XmlDocument** pro zpracování událostí.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-103">The **XmlNodeChangedEventArgs** encapsulates the arguments passed to the event handlers registered on the **XmlDocument** object for handling events.</span></span> <span data-ttu-id="6aaf0-104">Události a popis, kdy jsou aktivovány, jsou uvedeny v následující tabulce.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-104">The events and a description of when they are fired is given in the following table.</span></span>  
   
-|<span data-ttu-id="5a9d0-105">Událost</span><span class="sxs-lookup"><span data-stu-id="5a9d0-105">Event</span></span>|<span data-ttu-id="5a9d0-106">Aktiv</span><span class="sxs-lookup"><span data-stu-id="5a9d0-106">Fired</span></span>|  
+|<span data-ttu-id="6aaf0-105">Událost</span><span class="sxs-lookup"><span data-stu-id="6aaf0-105">Event</span></span>|<span data-ttu-id="6aaf0-106">Aktivováno</span><span class="sxs-lookup"><span data-stu-id="6aaf0-106">Fired</span></span>|  
 |-----------|-----------|  
-|<xref:System.Xml.XmlDocument.NodeInserting>|<span data-ttu-id="5a9d0-107">V případě, že bude uzel patřící do aktuálního dokumentu vložen do jiného uzlu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-107">When a node belonging to the current document is about to be inserted into another node.</span></span>|  
-|<xref:System.Xml.XmlDocument.NodeInserted>|<span data-ttu-id="5a9d0-108">Pokud byl uzel patřící do aktuálního dokumentu vložen do jiného uzlu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-108">When a node belonging to the current document has been inserted into another node.</span></span>|  
-|<xref:System.Xml.XmlDocument.NodeRemoving>|<span data-ttu-id="5a9d0-109">V případě, že bude uzel patřící do tohoto dokumentu odebrán z dokumentu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-109">When a node belonging to this document is about to be removed from the document.</span></span>|  
-|<xref:System.Xml.XmlDocument.NodeRemoved>|<span data-ttu-id="5a9d0-110">Pokud byl uzel patřící do tohoto dokumentu odebrán z jeho nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-110">When a node belonging to this document has been removed from its parent.</span></span>|  
-|<xref:System.Xml.XmlDocument.NodeChanging>|<span data-ttu-id="5a9d0-111">Když se bude měnit hodnota uzlu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-111">When the value of a node is about to be changed.</span></span>|  
-|<xref:System.Xml.XmlDocument.NodeChanged>|<span data-ttu-id="5a9d0-112">Při změně hodnoty uzlu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-112">When the value of a node has been changed.</span></span>|  
+|<xref:System.Xml.XmlDocument.NodeInserting>|<span data-ttu-id="6aaf0-107">V případě, že bude uzel patřící do aktuálního dokumentu vložen do jiného uzlu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-107">When a node belonging to the current document is about to be inserted into another node.</span></span>|  
+|<xref:System.Xml.XmlDocument.NodeInserted>|<span data-ttu-id="6aaf0-108">Pokud byl uzel patřící do aktuálního dokumentu vložen do jiného uzlu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-108">When a node belonging to the current document has been inserted into another node.</span></span>|  
+|<xref:System.Xml.XmlDocument.NodeRemoving>|<span data-ttu-id="6aaf0-109">V případě, že bude uzel patřící do tohoto dokumentu odebrán z dokumentu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-109">When a node belonging to this document is about to be removed from the document.</span></span>|  
+|<xref:System.Xml.XmlDocument.NodeRemoved>|<span data-ttu-id="6aaf0-110">Pokud byl uzel patřící do tohoto dokumentu odebrán z jeho nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-110">When a node belonging to this document has been removed from its parent.</span></span>|  
+|<xref:System.Xml.XmlDocument.NodeChanging>|<span data-ttu-id="6aaf0-111">Když se bude měnit hodnota uzlu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-111">When the value of a node is about to be changed.</span></span>|  
+|<xref:System.Xml.XmlDocument.NodeChanged>|<span data-ttu-id="6aaf0-112">Při změně hodnoty uzlu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-112">When the value of a node has been changed.</span></span>|  
   
 > [!NOTE]
-> <span data-ttu-id="5a9d0-113">Pokud je využití paměti **objektu XmlDataDocument** plně optimalizované tak, aby používalo úložiště **DataSet** , nemusí **objektu XmlDataDocument** po provedení změn v podkladové **datové sadě**vyvolat žádnou z výše uvedených událostí.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-113">If the **XmlDataDocument** memory usage is fully optimized to use **DataSet** storage, the **XmlDataDocument** might not raise any of the events listed above when changes are made to the underlying **DataSet**.</span></span> <span data-ttu-id="5a9d0-114">Pokud tyto události potřebujete, je nutné projít celým třídou **XmlDocument** , aby bylo využití paměti neplně optimalizované.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-114">If you need these events, you must traverse the whole **XmlDocument** once to make the memory usage non-fully optimized.</span></span>  
+> <span data-ttu-id="6aaf0-113">Pokud je využití paměti **objektu XmlDataDocument** plně optimalizované tak, aby používalo úložiště **DataSet** , nemusí **objektu XmlDataDocument** po provedení změn v podkladové **datové sadě**vyvolat žádnou z výše uvedených událostí.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-113">If the **XmlDataDocument** memory usage is fully optimized to use **DataSet** storage, the **XmlDataDocument** might not raise any of the events listed above when changes are made to the underlying **DataSet**.</span></span> <span data-ttu-id="6aaf0-114">Pokud tyto události potřebujete, je nutné projít celým **třídou XmlDocument** , aby bylo využití paměti neplně optimalizované.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-114">If you need these events, you must traverse the whole **XmlDocument** once to make the memory usage non-fully optimized.</span></span>  
   
- <span data-ttu-id="5a9d0-115">Následující příklad kódu ukazuje, jak definovat obslužnou rutinu události a jak přidat obslužnou rutinu události do události.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-115">The following code example shows how to define an event handler and how to add the event handler to an event.</span></span>  
+ <span data-ttu-id="6aaf0-115">Následující příklad kódu ukazuje, jak definovat obslužnou rutinu události a jak přidat obslužnou rutinu události do události.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-115">The following code example shows how to define an event handler and how to add the event handler to an event.</span></span>  
   
 ```vb  
 ' Attach the event handler, NodeInsertedHandler, to the NodeInserted  
@@ -73,9 +71,9 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
 }  
 ```  
   
- <span data-ttu-id="5a9d0-116">Některé operace XML model DOM (Document Object Model) (DOM) jsou složené operace, které mohou vést k vyvolání více událostí.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-116">Some XML Document Object Model (DOM) operations are compound operations that can result in multiple events being fired.</span></span> <span data-ttu-id="5a9d0-117">Například **AppendChild** může také odebrat uzel, který je připojený z předchozího nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-117">For example, **AppendChild** may also have to remove the node being appended from its previous parent.</span></span> <span data-ttu-id="5a9d0-118">V takovém případě se zobrazí událost **NodeRemoved** , která následuje po události **NodeInserted** .</span><span class="sxs-lookup"><span data-stu-id="5a9d0-118">In this case, you see a **NodeRemoved** event fired first, followed by a **NodeInserted** event.</span></span> <span data-ttu-id="5a9d0-119">Operace, jako je nastavení **InnerXml** , by mohly vést k několika událostem.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-119">Operations like setting **InnerXml** could result in multiple events.</span></span>  
+ <span data-ttu-id="6aaf0-116">Některé operace XML model DOM (Document Object Model) (DOM) jsou složené operace, které mohou vést k vyvolání více událostí.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-116">Some XML Document Object Model (DOM) operations are compound operations that can result in multiple events being fired.</span></span> <span data-ttu-id="6aaf0-117">Například **AppendChild** může také odebrat uzel, který je připojený z předchozího nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-117">For example, **AppendChild** may also have to remove the node being appended from its previous parent.</span></span> <span data-ttu-id="6aaf0-118">V takovém případě se zobrazí událost **NodeRemoved** , která následuje po události **NodeInserted** .</span><span class="sxs-lookup"><span data-stu-id="6aaf0-118">In this case, you see a **NodeRemoved** event fired first, followed by a **NodeInserted** event.</span></span> <span data-ttu-id="6aaf0-119">Operace, jako je nastavení **InnerXml** , by mohly vést k několika událostem.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-119">Operations like setting **InnerXml** could result in multiple events.</span></span>  
   
- <span data-ttu-id="5a9d0-120">Následující příklad kódu ukazuje vytvoření obslužné rutiny události a zpracování události **NodeInserted** .</span><span class="sxs-lookup"><span data-stu-id="5a9d0-120">The following code example shows the creation of the event handler and the handling of the **NodeInserted** event.</span></span>  
+ <span data-ttu-id="6aaf0-120">Následující příklad kódu ukazuje vytvoření obslužné rutiny události a zpracování události **NodeInserted** .</span><span class="sxs-lookup"><span data-stu-id="6aaf0-120">The following code example shows the creation of the event handler and the handling of the **NodeInserted** event.</span></span>  
   
 ```vb  
 Imports System  
@@ -206,8 +204,8 @@ public class Sample
 } // End class   
 ```  
   
- <span data-ttu-id="5a9d0-121">Další informace naleznete v tématu <xref:System.Xml.XmlNodeChangedEventArgs> a <xref:System.Xml.XmlNodeChangedEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="5a9d0-121">For more information, see <xref:System.Xml.XmlNodeChangedEventArgs> and <xref:System.Xml.XmlNodeChangedEventHandler>.</span></span>  
+ <span data-ttu-id="6aaf0-121">Další informace naleznete v tématu <xref:System.Xml.XmlNodeChangedEventArgs> a <xref:System.Xml.XmlNodeChangedEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="6aaf0-121">For more information, see <xref:System.Xml.XmlNodeChangedEventArgs> and <xref:System.Xml.XmlNodeChangedEventHandler>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5a9d0-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5a9d0-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6aaf0-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6aaf0-122">See also</span></span>
 
-- [<span data-ttu-id="5a9d0-123">Model DOM (Document Object Model) dokumentu XML</span><span class="sxs-lookup"><span data-stu-id="5a9d0-123">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [<span data-ttu-id="6aaf0-123">Model DOM (Document Object Model) dokumentu XML</span><span class="sxs-lookup"><span data-stu-id="6aaf0-123">XML Document Object Model (DOM)</span></span>](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

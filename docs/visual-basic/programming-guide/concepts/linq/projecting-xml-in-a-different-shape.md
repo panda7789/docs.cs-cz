@@ -2,24 +2,24 @@
 title: Projektování XML v odlišném tvaru
 ms.date: 07/20/2015
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-ms.openlocfilehash: dd8b95ca442c9f2f17940423dde22f627669cd0b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 400ceafe8ca219efbbb921d573126e0ca80bbb5e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347148"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344499"
 ---
-# <a name="projecting-xml-in-a-different-shape-visual-basic"></a><span data-ttu-id="39bb3-102">Projektování XML v jiném obrazci (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="39bb3-102">Projecting XML in a Different Shape (Visual Basic)</span></span>
-<span data-ttu-id="39bb3-103">Toto téma ukazuje příklad projektu XML, který je v jiném tvaru než zdrojový kód XML.</span><span class="sxs-lookup"><span data-stu-id="39bb3-103">This topic shows an example of projecting XML that is in a different shape than the source XML.</span></span>  
+# <a name="projecting-xml-in-a-different-shape-visual-basic"></a><span data-ttu-id="0fbe9-102">Projektování XML v jiném obrazci (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0fbe9-102">Projecting XML in a Different Shape (Visual Basic)</span></span>
+<span data-ttu-id="0fbe9-103">Toto téma ukazuje příklad projektu XML, který je v jiném tvaru než zdrojový kód XML.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-103">This topic shows an example of projecting XML that is in a different shape than the source XML.</span></span>  
   
- <span data-ttu-id="39bb3-104">Mnoho typických transformací XML sestává z zřetězených dotazů, jako v tomto příkladu.</span><span class="sxs-lookup"><span data-stu-id="39bb3-104">Many typical XML transformations consist of chained queries, as in this example.</span></span> <span data-ttu-id="39bb3-105">Je běžné začít s určitou formou jazyka XML, mezilehlé výsledky projektu jako kolekce anonymních typů nebo pojmenovaných typů a pak nakonec k prohlédnutí výsledků zpět do XML, které jsou v zcela jiném tvaru než zdrojový kód XML.</span><span class="sxs-lookup"><span data-stu-id="39bb3-105">It is common to start with some form of XML, project intermediate results as collections of anonymous types or named types, and then finally to project the results back into XML that is in an entirely different shape than the source XML.</span></span>  
+ <span data-ttu-id="0fbe9-104">Mnoho typických transformací XML sestává z zřetězených dotazů, jako v tomto příkladu.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-104">Many typical XML transformations consist of chained queries, as in this example.</span></span> <span data-ttu-id="0fbe9-105">Je běžné začít s určitou formou jazyka XML, mezilehlé výsledky projektu jako kolekce anonymních typů nebo pojmenovaných typů a pak nakonec k prohlédnutí výsledků zpět do XML, které jsou v zcela jiném tvaru než zdrojový kód XML.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-105">It is common to start with some form of XML, project intermediate results as collections of anonymous types or named types, and then finally to project the results back into XML that is in an entirely different shape than the source XML.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="39bb3-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="39bb3-106">Example</span></span>  
- <span data-ttu-id="39bb3-107">Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="39bb3-107">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="39bb3-108">Také identifikuje styl a text každého odstavce.</span><span class="sxs-lookup"><span data-stu-id="39bb3-108">It also identifies the style and text of each paragraph.</span></span> <span data-ttu-id="39bb3-109">Nakonec ukázkový projekt XML s jiným tvarem.</span><span class="sxs-lookup"><span data-stu-id="39bb3-109">Finally, the example projects XML with a different shape.</span></span> <span data-ttu-id="39bb3-110">Tento příklad sestaví na předchozích příkladech v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="39bb3-110">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="39bb3-111">Nový příkaz, který je projekcí vyvolán v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="39bb3-111">The new statement that does the projection is called out in comments in the code below.</span></span>  
+## <a name="example"></a><span data-ttu-id="0fbe9-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="0fbe9-106">Example</span></span>  
+ <span data-ttu-id="0fbe9-107">Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-107">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="0fbe9-108">Také identifikuje styl a text každého odstavce.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-108">It also identifies the style and text of each paragraph.</span></span> <span data-ttu-id="0fbe9-109">Nakonec ukázkový projekt XML s jiným tvarem.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-109">Finally, the example projects XML with a different shape.</span></span> <span data-ttu-id="0fbe9-110">Tento příklad sestaví na předchozích příkladech v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-110">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="0fbe9-111">Nový příkaz, který je projekcí vyvolán v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-111">The new statement that does the projection is called out in comments in the code below.</span></span>  
   
- <span data-ttu-id="39bb3-112">Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="39bb3-112">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="0fbe9-112">Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="0fbe9-112">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="39bb3-113">Tento příklad používá třídy ze sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="39bb3-113">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="39bb3-114">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="39bb3-114">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="0fbe9-113">Tento příklad používá třídy ze sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-113">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="0fbe9-114">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="0fbe9-114">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -69,7 +69,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))  
     End Function  
   
-    ' Following function is required because VB does not support short circuit evaluation  
+    ' Following function is required because Visual Basic does not support short circuit evaluation  
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, _  
                                          ByVal defaultStyle As String) As String  
         If (styleNode Is Nothing) Then  
@@ -160,7 +160,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="39bb3-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="39bb3-115">This example produces the following output:</span></span>  
+ <span data-ttu-id="0fbe9-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="0fbe9-115">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -227,11 +227,11 @@ End Module
 </Root>  
 ```  
   
-## <a name="next-steps"></a><span data-ttu-id="39bb3-116">Další kroky</span><span class="sxs-lookup"><span data-stu-id="39bb3-116">Next Steps</span></span>  
- <span data-ttu-id="39bb3-117">V dalším příkladu se dotazuje na vyhledání veškerého textu v dokumentu aplikace Word:</span><span class="sxs-lookup"><span data-stu-id="39bb3-117">In the next example, you'll query to find all the text in a Word document:</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="0fbe9-116">Další kroky</span><span class="sxs-lookup"><span data-stu-id="0fbe9-116">Next Steps</span></span>  
+ <span data-ttu-id="0fbe9-117">V dalším příkladu se dotazuje na vyhledání veškerého textu v dokumentu aplikace Word:</span><span class="sxs-lookup"><span data-stu-id="0fbe9-117">In the next example, you'll query to find all the text in a Word document:</span></span>  
   
-- [<span data-ttu-id="39bb3-118">Hledání textu v dokumentech aplikace Word (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="39bb3-118">Finding Text in Word Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+- [<span data-ttu-id="0fbe9-118">Hledání textu v dokumentech aplikace Word (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0fbe9-118">Finding Text in Word Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
-## <a name="see-also"></a><span data-ttu-id="39bb3-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="39bb3-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0fbe9-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0fbe9-119">See also</span></span>
 
-- [<span data-ttu-id="39bb3-120">Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="39bb3-120">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [<span data-ttu-id="0fbe9-120">Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0fbe9-120">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
