@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: cc063eccfafa915908e66815b5b7535c66636716
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: caf12296b208b3d2e57c3a74300cced225e4db66
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636935"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738757"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -115,7 +115,7 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 
     Nicméně existují případy, kdy měření se metrikou přesnosti není dostatečné, zejména v případě, že je popisek (0 a 1 v tomto případě) v testovací datové sadě nevyvážený.
 
-    Další metriky a **podrobnější informace o metrikách** , jako je přesnost, AUC, AUCPR, F1-skore využívané k vyhodnocení různých modelů, si můžete přečíst v tématu [Principy metrik ml.NET](../resources/metrics.md) .
+    Další metriky a **podrobnější informace o metrikách** , jako je přesnost, AUC, AUCPR a F1 – skóre, které slouží k vyhodnocení různých modelů, najdete v tématu [Principy metrik ml.NET](../resources/metrics.md).
 
     > [!NOTE]
     > Můžete vyzkoušet tuto velmi stejnou datovou sadu a zadat pár minut pro `--max-exploration-time` (například tři minuty, abyste zadali 180 sekund), což vám pro tuto datovou sadu vyhledá lepší "nejlepší model", a to s jinou konfigurací školicího kanálu pro tuto datovou sadu (což je hodně malých, 1000 řádků).

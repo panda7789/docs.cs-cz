@@ -2,12 +2,12 @@
 title: Kdy pro kontejnery Dockeru zvolit .NET Framework
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Kdy zvolit .NET Framework pro kontejnery Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: 9e5b18e8e3482eb86c0d9dea5de56fb12f9d6256
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 579e1a475b1ce96d98d7a2c521c1296e17b9f42e
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966896"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740961"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -39,7 +39,7 @@ V následujícím seznamu jsou uvedeny většinu technologií, které nejsou k d
 
 - Služby související s pracovním postupem. Programovací model Windows Workflow Foundation (WF), služby pracovních postupů (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako ADO.NET Data Services) jsou k dispozici pouze na .NET Framework. V současné době nejsou k dispozici žádné plány pro jejich uvedení do .NET Core.
 
-Kromě technologií uvedených v oficiálním plánu [.NET Core](https://github.com/aspnet/Home/wiki/Roadmap)můžou být další funkce přepravované na .NET Core. Úplný seznam najdete v položkách označených jako [port-to-Core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core) na webu GitHubu CoreFX. Všimněte si, že tento seznam nepředstavuje závazek společnosti Microsoft, aby tyto komponenty byly součástí .NET Core – položky jednoduše zachycují žádosti od komunity. Pokud se zajímáte o některou z výše uvedených součástí, zvažte účast v diskusích na GitHubu, aby bylo možné slyšet váš hlas. A pokud si myslíte, že něco chybí, zajistěte prosím [Nový problém v úložišti CoreFX](https://github.com/dotnet/corefx/issues/new).
+Kromě technologií uvedených v oficiálním plánu [.NET Core](https://github.com/aspnet/Home/wiki/Roadmap)můžou být další funkce přepravované na .NET Core. Úplný seznam najdete v položkách označených jako [port-to-Core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core) na webu GitHubu CoreFX. Všimněte si, že tento seznam nepředstavuje závazek společnosti Microsoft, aby tyto komponenty byly součástí .NET Core – položky jednoduše zachycují žádosti od komunity. Pokud se zajímáte o některou z výše uvedených součástí, zvažte účast v diskusích na GitHubu, aby bylo možné slyšet váš hlas. A pokud si myslíte, že něco chybí, zajistěte prosím [Nový problém v běhovém úložišti](https://github.com/dotnet/runtime/issues/new).
 
 I když rozhraní .NET Core 3 (v době psaní tohoto zápisu je v sadě Works), bude zahrnovat podporu pro mnoho existujících .NET Framework rozhraní API. to znamená, že v současné době nejsou k dispozici v kontejneru na světě.
 
