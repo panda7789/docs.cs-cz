@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: b57741ed68b3481ad2c85b1c3d62717f09c7570e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: efb57b4290825be9f21c61c8dee5af073d264d3a
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971590"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899696"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -239,7 +239,7 @@ services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 
 ASP.NET Core MVC také používá konvenci k vyhledání zobrazení. Můžete ho přepsat vlastní konvencí, aby se zobrazily ve složkách funkcí (pomocí názvu funkce poskytnutého FeatureConvention, výše). Další informace o tomto přístupu a stažení Pracovní ukázky najdete v článku na webu MSDN, [řezy funkcí pro ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
-### <a name="cross-cutting-concerns"></a>Otázky pro průřezy
+### <a name="cross-cutting-concerns"></a>Související aspekty
 
 Jak aplikace roste, je stále důležitější, aby bylo možné vyloučit duplicity a zachovat konzistenci. Mezi důležité aspekty průřezů v ASP.NET Core aplikacemi patří ověřování, pravidla ověřování modelů, ukládání výstupu do mezipaměti a zpracování chyb, i když existuje mnoho dalších. ASP.NET Core [filtry](/aspnet/core/mvc/controllers/filters) MVC umožňují spustit kód před nebo za některými kroky v kanálu zpracování požadavků. Filtr může například běžet před a po vazbě modelu, před a po akci, nebo před a po výsledku akce. Pomocí autorizačního filtru můžete také řídit přístup ke zbytku kanálu. Obrázky 7-2 ukazují, jak provádění požadavků prostřednictvím filtrů, pokud je nakonfigurováno.
 
@@ -324,7 +324,7 @@ Můžete si přečíst další informace o implementaci filtrů a stažení Prac
 > - **MSDN – Real World ASP.NET Core filtry MVC**  
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
 
-## <a name="security"></a>Zabezpečení
+## <a name="security"></a>Zabezpečení –
 
 Zabezpečení webových aplikací je velké téma s mnoha důležitými informacemi. Ve své základní úrovni zabezpečení zahrnuje jistotu, že víte, komu daný požadavek pochází, a potom zajistěte, aby žádost měla přístup jenom k prostředkům, které by měl mít. Ověřování je proces porovnávání přihlašovacích údajů dodaných s žádostí v důvěryhodném úložišti dat, aby bylo možné zjistit, jestli by se žádost měla považovat za přicházející ze známé entity. Autorizace je proces omezení přístupu k určitým prostředkům na základě identity uživatele. Třetí problém se zabezpečením chrání žádosti před odposloucháváním třetími stranami, pro které byste měli aspoň [zajistit, aby vaše aplikace používala SSL](/aspnet/core/security/enforcing-ssl).
 
@@ -436,7 +436,7 @@ Buďte obzvláště opatrní při zavádění vlastní implementace kryptografie
 >   <https://docs.microsoft.com/aspnet/core/security/authentication/identity>
 > - **Úvod k autorizaci**  
 >   <https://docs.microsoft.com/aspnet/core/security/authorization/introduction>
-> - **Ověřování a autorizace pro API Apps v Azure App Service**  
+> - **Ověřování a autorizace API Apps ve službě Azure App Service**  
 >   <https://docs.microsoft.com/azure/app-service-api/app-service-api-authentication>
 > - **Server identit**  
 >   <https://github.com/IdentityServer>
@@ -500,7 +500,7 @@ Zvažte způsob, jakým vaše aplikace komunikují přímo s klientskými aplika
 > ### <a name="references--client-communication"></a>Odkazy – komunikace klienta
 >
 > - **ASP.NET Core signál**  
->   <https://github.com/aspnet/SignalR>
+>   <https://github.com/dotnet/aspnetcore/tree/master/src/SignalR>
 > - **Správce WebSocket**  
 >   https://github.com/radu-matei/websocket-manager
 

@@ -2,12 +2,12 @@
 title: Návrh ověřování ve vrstvě doménového modelu
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Princip klíčových konceptů ověřování modelů domén
 ms.date: 10/08/2018
-ms.openlocfilehash: 1d3196d2130df33969ed231bccfe0fc6f0af2ad8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 98ccc5df84c9f6f402ecbee83b077c806d6a76fc
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295962"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899670"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Ověřování návrhu ve vrstvě doménového modelu
 
@@ -53,7 +53,7 @@ Podobný přístup lze použít v konstruktoru entity, vyvolává výjimku, aby 
 
 ### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>Použití atributů ověřování v modelu na základě datových poznámek
 
-Poznámky k datům, jako jsou povinné nebo MaxLength atributy, lze použít ke konfiguraci EF Core vlastností pole databáze, jak je vysvětleno podrobněji v sekci [mapování tabulky](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping) , ale [již nefungují pro ověřování entit v EF Core](https://github.com/aspnet/EntityFrameworkCore/issues/3680) (ani metoda <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), protože od EF 4. x v .NET Framework byly provedeny.
+Poznámky k datům, jako jsou povinné nebo MaxLength atributy, lze použít ke konfiguraci EF Core vlastností pole databáze, jak je vysvětleno podrobněji v sekci [mapování tabulky](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping) , ale [již nefungují pro ověřování entit v EF Core](https://github.com/dotnet/efcore/issues/3680) (ani metoda <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), protože od EF 4. x v .NET Framework byly provedeny.
 
 Datové poznámky a <xref:System.ComponentModel.DataAnnotations.IValidatableObject> rozhraní lze i nadále použít k ověřování modelu během vytváření modelů, před tím, než se akce kontroleru vystaví jako obvykle, ale tento model má být ViewModel nebo DTO, což je MVC nebo rozhraní API, které se netýká doménového modelu.
 
@@ -61,7 +61,7 @@ V případě, že jsou základní rozdíly jasné, můžete i nadále používat
 
 Můžete přesto implementovat vlastní ověřování v třídě entity pomocí datových poznámek a metody `IValidatableObject.Validate`, a to přepsáním metody SaveChanges pro DbContext.
 
-Můžete si prohlédnout ukázkovou implementaci pro ověřování entit `IValidatableObject` v [tomto komentáři na GitHubu](https://github.com/aspnet/EntityFrameworkCore/issues/3680#issuecomment-155502539). Tato ukázka neprovádí ověřování na základě atributů, ale měla by být snadno implementovaná pomocí reflexe ve stejném přepsání.
+Můžete si prohlédnout ukázkovou implementaci pro ověřování entit `IValidatableObject` v [tomto komentáři na GitHubu](https://github.com/dotnet/efcore/issues/3680#issuecomment-155502539). Tato ukázka neprovádí ověřování na základě atributů, ale měla by být snadno implementovaná pomocí reflexe ve stejném přepsání.
 
 Z bodu DDD se však model domény nejlépe udržuje s využitím výjimek v metodách chování vaší entity nebo implementací specifikací a vzorců oznámení k vynucujení ověřovacích pravidel.
 

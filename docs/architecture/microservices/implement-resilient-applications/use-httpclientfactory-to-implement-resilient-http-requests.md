@@ -2,12 +2,12 @@
 title: Použití HttpClientFactory k implementaci odolných požadavků HTTP
 description: Naučte se používat HttpClientFactory, která je k dispozici od .NET Core 2,1, pro vytváření instancí `HttpClient`, což usnadňuje jejich použití ve svých aplikacích.
 ms.date: 08/08/2019
-ms.openlocfilehash: 9eff4a01361b3dc6f7471bc012c945d048b9a276
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 1a6d65509d669166e73ad907b506bae7fa26536d
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737744"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900314"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavků HTTP
 
@@ -37,7 +37,7 @@ Rozhraní .NET Core 2,1 zavedlo nové `HttpClientFactory`, které lze použít t
 - Spravujte dobu života `HttpClientMessageHandlers`, abyste se vyhnuli uvedeným problémům nebo problémům, ke kterým může dojít při správě `HttpClient`ch životních cyklů.
 
 > [!NOTE]
-> `HttpClientFactory` je úzce spjat s implementací (DI) pro vkládání závislostí v balíčku NuGet `Microsoft.Extensions.DependencyInjection`. Další informace o používání dalších kontejnerů vkládání závislostí naleznete v této [diskuzi GitHubu](https://github.com/aspnet/Extensions/issues/1345).
+> `HttpClientFactory` je úzce spjat s implementací (DI) pro vkládání závislostí v balíčku NuGet `Microsoft.Extensions.DependencyInjection`. Další informace o používání dalších kontejnerů vkládání závislostí naleznete v této [diskuzi GitHubu](https://github.com/dotnet/extensions/issues/1345).
 
 ## <a name="multiple-ways-to-use-httpclientfactory"></a>Několik způsobů použití HttpClientFactory
 
@@ -188,14 +188,14 @@ Až do tohoto okamžiku, zobrazený kód provádí pouze běžné požadavky HTT
 - **Používání HttpClientFactory v .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)
 
-- **Zdrojový kód HttpClientFactory v úložišti GitHub `aspnet/Extensions`**  
-  <https://github.com/aspnet/Extensions/tree/master/src/HttpClientFactory>
+- **Zdrojový kód HttpClientFactory v úložišti GitHub `dotnet/extensions`**  
+  <https://github.com/dotnet/extensions/tree/master/src/HttpClientFactory>
 
 - **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  
   <http://www.thepollyproject.org/>
   
 - **Použití HttpClientFactory bez injektáže závislosti (problém GitHubu)**  
-  <https://github.com/aspnet/Extensions/issues/1345>
+  <https://github.com/dotnet/extensions/issues/1345>
 
 >[!div class="step-by-step"]
 >[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)
