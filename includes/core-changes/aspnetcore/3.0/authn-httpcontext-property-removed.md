@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: 2945465bb6a3a362dc640641056712dffd73d559
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 60ebcd9fc9ca18c33d31b82ba5020426d22a7d5a
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394259"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901966"
 ---
 ### <a name="authentication-httpcontextauthentication-property-removed"></a>Ověřování: vlastnost HttpContext. Authentication byla odebrána.
 
-Vystaralá vlastnost `Authentication` u `HttpContext` byla odstraněna.
+Vystaralá vlastnost `Authentication` v `HttpContext` byla odebrána.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-Jako součást [ASPNET/AspNetCore # 6504](https://github.com/aspnet/AspNetCore/pull/6504)byla odebrána vystaralá vlastnost `Authentication` v `HttpContext`. Vlastnost `Authentication` se od 2,0 nepoužívá. [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) byl publikován pro migraci kódu pomocí této zastaralé vlastnosti do nových náhradních rozhraní API. Zbývající nepoužívané třídy/rozhraní API související se starým ASP.NET Core 1. x zásobník ověřování byly v [rámci zápisu aspnet/AspNetCore@d7a7c65](https://github.com/aspnet/AspNetCore/commit/d7a7c65)odebrány.
+Jako součást [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504)byla odebrána vystaralá vlastnost `Authentication` v `HttpContext`. Vlastnost `Authentication` se od 2,0 nepoužívá. [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) byl publikován pro migraci kódu pomocí této zastaralé vlastnosti do nových náhradních rozhraní API. Zbývající nepoužívané třídy/rozhraní API související se starým ASP.NET Core 1. x zásobník ověřování byly v [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)pro zápis odebrány.
 
-Diskuzi najdete v tématu [ASPNET/AspNetCore # 6533](https://github.com/aspnet/AspNetCore/issues/6533).
+Diskuzi najdete v tématu [dotnet/aspnetcore # 6533](https://github.com/dotnet/aspnetcore/issues/6533).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="reason-for-change"></a>Důvod změny
 

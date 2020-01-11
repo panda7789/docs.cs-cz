@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: a56c5fc32b5fd274d5da0d9b295918f5ea3b345e
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: de06825f1031d05bc83183a83bae165e2f9512ff
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394467"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901919"
 ---
 ### <a name="signalr-hubconnection-resetsendping-and-resettimeout-methods-removed"></a>Signál: odebraly se HubConnection ResetSendPing a metody ResetTimeout.
 
-Metody `ResetSendPing` a `ResetTimeout` byly odebrány z rozhraní API pro signalizaci `HubConnection`. Tyto metody byly původně určeny pouze pro interní použití, ale byly zveřejněny v ASP.NET Core 2,2. Tyto metody nebudou dostupné od verze ASP.NET Core 3,0 Preview 4. Diskuzi najdete v tématu [ASPNET/AspNetCore # 8543](https://github.com/aspnet/AspNetCore/issues/8543).
+Metody `ResetSendPing` a `ResetTimeout` se odebraly z rozhraní API pro signalizaci `HubConnection`. Tyto metody byly původně určeny pouze pro interní použití, ale byly zveřejněny v ASP.NET Core 2,2. Tyto metody nebudou dostupné od verze ASP.NET Core 3,0 Preview 4. Diskuzi najdete v tématu [dotnet/aspnetcore # 8543](https://github.com/dotnet/aspnetcore/issues/8543).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 

@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: a916af91670dc9c5ceb2ff759cd8ae308fb2c2dc
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 06d5f48566c239e37355496c3f27163d952602c6
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394368"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901713"
 ---
 ### <a name="kestrel-connection-adapters-removed"></a>Kestrel: odebrané adaptéry připojení
 
-V rámci přesunutí na přesunutí rozhraní API "pubternal" na `public` se koncept `IConnectionAdapter` odebral z Kestrel. Připojovací adaptéry se nahrazují pomocí middleware připojení (podobně jako middleware HTTP v kanálu ASP.NET Core, ale u připojení nižší úrovně). Protokolování HTTPS a připojení se přesunulo z připojovacích adaptérů na middleware připojení. Tyto metody rozšíření by měly nadále fungovat bez problémů, ale podrobnosti implementace se změnily.
+V rámci přesunutí pro přesunutí rozhraní API "pubternal" na `public`se koncept `IConnectionAdapter` odebral z Kestrel. Připojovací adaptéry se nahrazují pomocí middleware připojení (podobně jako middleware HTTP v kanálu ASP.NET Core, ale u připojení nižší úrovně). Protokolování HTTPS a připojení se přesunulo z připojovacích adaptérů na middleware připojení. Tyto metody rozšíření by měly nadále fungovat bez problémů, ale podrobnosti implementace se změnily.
 
-Další informace najdete v tématu [ASPNET/AspNetCore # 11412](https://github.com/aspnet/AspNetCore/pull/11412). Diskuzi najdete v tématu [ASPNET/AspNetCore # 11475](https://github.com/aspnet/AspNetCore/issues/11475).
+Další informace naleznete v tématu [dotnet/aspnetcore # 11412](https://github.com/dotnet/aspnetcore/pull/11412). Diskuzi najdete v tématu [dotnet/aspnetcore # 11475](https://github.com/dotnet/aspnetcore/issues/11475).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
@@ -22,7 +22,7 @@ Komponenty rozšiřitelnosti Kestrel byly vytvořeny pomocí `IConnectionAdapter
 
 #### <a name="new-behavior"></a>Nové chování
 
-Komponenty rozšiřitelnosti Kestrel se vytvářejí jako [middleware](https://github.com/aspnet/AspNetCore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
+Komponenty rozšiřitelnosti Kestrel se vytvářejí jako [middleware](https://github.com/dotnet/aspnetcore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
 
 #### <a name="reason-for-change"></a>Důvod změny
 
@@ -30,7 +30,7 @@ Tato změna je určená k zajištění flexibilní rozšiřitelné architektury.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Převeďte všechny implementace `IConnectionAdapter`, aby používaly nový vzor middlewaru, jak je znázorněno [zde](https://github.com/aspnet/AspNetCore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
+Převeďte všechny implementace `IConnectionAdapter`, aby používaly nový vzor middlewaru, jak je znázorněno [zde](https://github.com/dotnet/aspnetcore/pull/11412/files#diff-89acc06acf1b2e96bbdb811ce523619f).
 
 #### <a name="category"></a>Kategorie
 

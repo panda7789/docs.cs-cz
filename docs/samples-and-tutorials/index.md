@@ -4,12 +4,12 @@ description: Informace o ukázkách a kurzech pro .NET Core, ASP.NET Core a C# j
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 5132415a6be03787111aaed8d027d436bb6820fe
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.openlocfilehash: e64d0fdd02b28a1c9f21f06305f5ef278fb2827b
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884433"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901040"
 ---
 # <a name="net-samples-and-tutorials"></a>Ukázky a kurzy .NET
 
@@ -107,7 +107,7 @@ Mnoho témat zobrazuje zdrojový kód a ukázky, které jsou k dispozici pro zob
 
 1. Stáhněte si úložiště obsahující ukázkový kód pomocí jednoho z následujících postupů:
    * Stáhněte si soubor ZIP úložiště do místního systému. Dekomprimace komprimovaného archivu.
-   * [Rozvětvení](https://help.github.com/articles/fork-a-repo/) úložiště a [klonování](https://help.github.com/articles/cloning-a-repository/) rozvětvení do místního systému. Rozvětvení a klonování vám umožní dělat příspěvky do dokumentace tím, že se potvrdily změny do rozvětvení a pak se vytvoří žádost o přijetí změn pro oficiální úložiště docs. Další informace najdete v příručce [k dokumentaci .NET](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) , která přispívá k Průvodci a [Příručka k ASP.NET docs](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md).
+   * [Rozvětvení](https://help.github.com/articles/fork-a-repo/) úložiště a [klonování](https://help.github.com/articles/cloning-a-repository/) rozvětvení do místního systému. Rozvětvení a klonování vám umožní dělat příspěvky do dokumentace tím, že se potvrdily změny do rozvětvení a pak se vytvoří žádost o přijetí změn pro oficiální úložiště docs. Další informace najdete v [příručce k dokumentaci k rozhraní .NET](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) a v [příručce k ASP.NET Core docs](https://github.com/aspnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
    * Naklonujte úložiště místně. Pokud naklonujte úložiště docs přímo do místního systému, nebudete moci provádět potvrzení přímo proti oficiálnímu úložišti, takže nebudete moci získat příspěvek k dokumentaci později. Použijte postup rozvětvení a klonování, který byl dříve popsán, pokud chcete zachovat příležitost přispět k dokumentaci později.
 1. Přejděte do složek úložiště do umístění ukázky. Relativní cesta k umístění ukázky se zobrazí v adresním řádku prohlížeče, když přejdete na odkaz na ukázku.
 1. Chcete-li spustit ukázku, máte několik možností:

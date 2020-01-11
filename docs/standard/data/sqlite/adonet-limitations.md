@@ -2,12 +2,12 @@
 title: Omezení ADO.NET
 ms.date: 12/13/2019
 description: Popisuje některá omezení ADO.NET, se kterými se můžete setkat.
-ms.openlocfilehash: b58fd3a9ea324e9c17ad21479e53e45f5982db9d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 8664b73071fc859ed30080f549b05e7d6ed020f4
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447088"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901253"
 ---
 # <a name="adonet-limitations"></a>Omezení ADO.NET
 
@@ -25,13 +25,13 @@ Další informace najdete v tématu [metadata](metadata.md).
 
 Microsoft. data. sqlite zatím nepodporuje System. Transactions. Místo toho použijte transakce ADO.NET. Další informace najdete v tématu [transakce](transactions.md).
 
-Poskytněte zpětnou vazbu o nedostatečné podpoře pro System. Transactions při vydávání [#13825](https://github.com/aspnet/EntityFrameworkCore/issues/13825).
+Poskytněte zpětnou vazbu o nedostatečné podpoře pro System. Transactions při vydávání [#13825](https://github.com/dotnet/efcore/issues/13825).
 
 ## <a name="data-adapters"></a>Datové adaptéry
 
 `DbDataAdapter` ještě neimplementuje Microsoft. data. sqlite. To znamená, že můžete použít jenom ADO.NET `DataSet` a `DataTable` načíst data a neaktualizovat je.
 
-K poskytnutí zpětné vazby k implementaci `DbDataAdapter`použijte [#13838](https://github.com/aspnet/EntityFrameworkCore/issues/13838) problému.
+K poskytnutí zpětné vazby k implementaci `DbDataAdapter`použijte [#13838](https://github.com/dotnet/efcore/issues/13838) problému.
 
 ## <a name="output-parameters"></a>Výstupní parametry
 

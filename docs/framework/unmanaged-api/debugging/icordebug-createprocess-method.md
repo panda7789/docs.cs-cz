@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
 topic_type:
 - apiref
-ms.openlocfilehash: 8812a98b0f28dd1336903dc34682f638a291f53b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a69fb861f7c2671a5c26245aa544ee99bcbdb56b
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110998"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901016"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess – metoda
 Spustí proces a jeho primární vlákno pod ovládacím prvkem ladicího programu.  
@@ -61,7 +61,7 @@ HRESULT CreateProcess (
  pro Nastavte na `true` pro indikaci, že je každý dědičný popisovač v volajícím procesu zděděný spuštěným procesem, nebo `false` k označení, že popisovače nejsou děděny. Zděděné popisovače mají stejnou hodnotu a přístupová práva jako původní popisovače.  
   
  `dwCreationFlags`  
- pro Bitová kombinace [příznaků vytvoření procesu Win32](https://go.microsoft.com/fwlink/?linkid=69981) , která řídí třídu priority a chování spuštěného procesu.  
+ pro Bitová kombinace [příznaků vytvoření procesu Win32](/windows/win32/procthread/process-creation-flags) , která řídí třídu priority a chování spuštěného procesu.  
   
  `lpEnvironment`  
  pro Ukazatel na blok prostředí pro nový proces.  

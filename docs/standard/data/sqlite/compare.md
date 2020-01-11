@@ -2,12 +2,12 @@
 title: Porovnání s System. data. SQLite
 ms.date: 12/13/2019
 description: Popisuje některé rozdíly mezi knihovnami Microsoft. data. sqlite a System. data. SQLite.
-ms.openlocfilehash: dee90c132b108f2c876c0d8becc1b02035a47b61
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 076bbc6f746cf9296c96ec73047397a21a3b2558
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447018"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900716"
 ---
 # <a name="comparison-to-systemdatasqlite"></a>Porovnání s System. data. SQLite
 
@@ -63,15 +63,15 @@ Microsoft. data. sqlite má mnoho méně klíčových slov pro [připojovací ř
 
 ## <a name="authorization"></a>Autorizace
 
-Microsoft. data. sqlite nemá žádné rozhraní API k odhalení zpětného volání autorizačního subjektu. K poskytnutí zpětné vazby k této funkci použijte [#13835](https://github.com/aspnet/EntityFrameworkCore/issues/13835) problému.
+Microsoft. data. sqlite nemá žádné rozhraní API k odhalení zpětného volání autorizačního subjektu. K poskytnutí zpětné vazby k této funkci použijte [#13835](https://github.com/dotnet/efcore/issues/13835) problému.
 
 ## <a name="data-change-notifications"></a>Oznámení o změnách dat
 
-Microsoft. data. sqlite nemá žádná rozhraní API, která zveřejňují oznámení o změnách dat SQLite. K poskytnutí zpětné vazby k této funkci použijte [#13827](https://github.com/aspnet/EntityFrameworkCore/issues/13827) problému.
+Microsoft. data. sqlite nemá žádná rozhraní API, která zveřejňují oznámení o změnách dat SQLite. K poskytnutí zpětné vazby k této funkci použijte [#13827](https://github.com/dotnet/efcore/issues/13827) problému.
 
 ## <a name="virtual-table-modules"></a>Moduly virtuálních tabulek
 
-Microsoft. data. sqlite nemá žádné rozhraní API pro vytváření modulů virtuálních tabulek. K poskytnutí zpětné vazby k této funkci použijte [#13823](https://github.com/aspnet/EntityFrameworkCore/issues/13823) problému.
+Microsoft. data. sqlite nemá žádné rozhraní API pro vytváření modulů virtuálních tabulek. K poskytnutí zpětné vazby k této funkci použijte [#13823](https://github.com/dotnet/efcore/issues/13823) problému.
 
 ## <a name="see-also"></a>Viz také:
 

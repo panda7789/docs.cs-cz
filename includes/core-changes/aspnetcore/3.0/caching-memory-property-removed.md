@@ -1,22 +1,22 @@
 ---
-ms.openlocfilehash: 7d40324e6b0bc4afab9dd39b236f0909f360cc9b
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 2c1362d6982206b14475f77700add0bae61da173
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394023"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901756"
 ---
 ### <a name="caching-compactonmemorypressure-property-removed"></a>Ukládání do mezipaměti: byla odebrána vlastnost CompactOnMemoryPressure
 
-Verze ASP.NET Core 3,0 odebrala [zastaralá rozhraní API MemoryCacheOptions](https://github.com/aspnet/Extensions/blob/dc5c593da7b72c82e6fe85abb91d03818f9b700c/src/Caching/Memory/src/MemoryCacheOptions.cs#L17-L18).
+Verze ASP.NET Core 3,0 odebrala [zastaralá rozhraní API MemoryCacheOptions](https://github.com/dotnet/extensions/blob/dc5c593da7b72c82e6fe85abb91d03818f9b700c/src/Caching/Memory/src/MemoryCacheOptions.cs#L17-L18).
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-Tato změna je následná pro [ASPNET/Caching # 221](https://github.com/aspnet/Caching/issues/221). Diskuzi najdete v tématu [ASPNET/Extensions # 1062](https://github.com/aspnet/Extensions/issues/1062).
+Tato změna je následná pro [ASPNET/Caching # 221](https://github.com/aspnet/Caching/issues/221). Diskuzi najdete v tématu [dotnet/Extensions # 1062](https://github.com/dotnet/extensions/issues/1062).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 

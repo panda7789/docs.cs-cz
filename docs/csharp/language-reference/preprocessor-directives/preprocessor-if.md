@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: 656b8d9eb2bda2d01f001748c992958e95387744
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d047b88f202341a795834809d0b601706c30fcb4
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712504"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899855"
 ---
-# <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
+# <a name="if-c-reference"></a>#if (C# Referenční dokumentace)
 
-Když C# kompilátor narazí na direktivu `#if` a následně na něj následuje direktiva [#endif](preprocessor-endif.md) , zkompiluje kód mezi direktivami pouze v případě, že je definován zadaný symbol. Na rozdíl od jazyka C++C a nemůžete přiřadit číselnou hodnotu k symbolu. Příkaz #if v C# je logický a pouze testuje, zda byl symbol definován nebo nikoli. Příklad:
+Když C# kompilátor narazí na direktivu `#if` a následně na něj následuje direktiva [#endif](preprocessor-endif.md) , zkompiluje kód mezi direktivami pouze v případě, že je definován zadaný symbol. Na rozdíl od jazyka C++C a nemůžete přiřadit číselnou hodnotu k symbolu. Příkaz `#if` v C# je logický a pouze testuje, zda byl symbol definován nebo nikoli. Příklad:
 
 ```csharp
 #if DEBUG
@@ -23,7 +23,7 @@ Když C# kompilátor narazí na direktivu `#if` a následně na něj následuje 
 #endif
 ```
 
-Operátory [==](../operators/equality-operators.md#equality-operator-) (rovnost) a [! =](../operators/equality-operators.md#inequality-operator-) (nerovnost) lze použít pouze k testování hodnot [bool](../builtin-types/bool.md) `true` nebo `false`. Hodnota true znamená, že je symbol definován. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [&&](../operators/boolean-logical-operators.md#conditional-logical-and-operator-) (a), [ &#124; ](../operators/boolean-logical-operators.md#conditional-logical-or-operator-) (nebo), a [!](../operators/boolean-logical-operators.md#logical-negation-operator-) (ne) k vyhodnocení, zda bylo definováno více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
+Operátory [==](../operators/equality-operators.md#equality-operator-) (rovnost) a [! =](../operators/equality-operators.md#inequality-operator-) (nerovnost) lze použít pouze k testování hodnot [bool](../builtin-types/bool.md) `true` nebo `false`. `true` znamená, že je symbol definovaný. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít [& & (a)](../operators/boolean-logical-operators.md#conditional-logical-and-operator-), [ &#124; &#124; (nebo)](../operators/boolean-logical-operators.md#conditional-logical-or-operator-), a [! (ne)](../operators/boolean-logical-operators.md#logical-negation-operator-) operátory k vyhodnocení, zda bylo definováno více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
 
 ## <a name="remarks"></a>Poznámky
 

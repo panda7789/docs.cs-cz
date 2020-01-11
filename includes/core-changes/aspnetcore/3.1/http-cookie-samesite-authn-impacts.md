@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: b0d093cc30a09b3248cc57a521b386bf581b5451
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 02602c70689a6d2729e03d3d7230cda5ae7a4994
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552142"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901883"
 ---
 ### <a name="http-browser-samesite-changes-impact-authentication"></a>HTTP: Browser SameSite změny dopadu na ověření
 
 Některé prohlížeče, jako je například Chrome a Firefox, provedly zásadní změny jejich implementace `SameSite` pro soubory cookie. Změny mají vliv na scénáře vzdáleného ověřování, například OpenID Connect a WS-Federation, které se musí odhlásit odesláním `SameSite=None`. Nicméně `SameSite=None` přerušují iOS 12 a některé starší verze jiných prohlížečů. Aplikace potřebuje tyto verze zachytit a vypustit `SameSite`.
 
-Diskuzi o tomto problému najdete v tématu [ASPNET/AspNetCore # 14996](https://github.com/aspnet/AspNetCore/issues/14996).
+Diskuzi o tomto problému najdete v tématu [dotnet/aspnetcore # 14996](https://github.com/dotnet/aspnetcore/issues/14996).
 
 #### <a name="version-introduced"></a>Představená verze
 

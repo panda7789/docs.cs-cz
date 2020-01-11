@@ -2,18 +2,18 @@
 title: Parametry ByRef
 description: Seznamte se s typy ByRef a ByRef jako F#v, které se používají pro programování na nízké úrovni.
 ms.date: 11/04/2019
-ms.openlocfilehash: a6d3d69c4a163be9ecef7e33c284c4a73e800405
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 5aaee1e4eac9ce0d7e9ba89a2ab5f745d31367a0
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545132"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901313"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
 F#má dvě hlavní oblasti funkcí, které se týkají prostoru programování nízké úrovně:
 
-* `byref`/`inref`/typy `outref`, což jsou spravované ukazatele. Mají omezení používání, takže nemůžete zkompilovat program, který je neplatný za běhu.
+* `byref`/`inref`/typy `outref`, což jsou spravované ukazatele. Mají omezení používání, takže nemůžete kompilovat program, který je neplatný v době běhu.
 * Struktura podobná `byref`, což je [Struktura](structures.md) , která má podobnou sémantiku a stejná omezení při kompilaci jako `byref<'T>`. Jedním z příkladů je <xref:System.Span%601>.
 
 ## <a name="syntax"></a>Syntaxe
@@ -175,7 +175,7 @@ Struktura "`byref`jako" v F# je typ hodnoty vázané na zásobník. Nikdy se nep
 
 Tento poslední bod je rozhodující pro F# programování ve stylu kanálu, protože `|>` je obecná funkce, která parameterizes své vstupní typy. Toto omezení může být pro `|>` v budoucnu odlehčené, protože je vložené a neprovádí v těle žádné volání obecných funkcí, které nejsou vloženy.
 
-I když tato pravidla velmi silně omezují využití, jejich účelem je plnit vysoce výkonné výpočetní prostředí bezpečným způsobem.
+I když tato pravidla omezují použití, tak aby mohli bezpečným způsobem plnit vysoce výkonné výpočetní výkon.
 
 ## <a name="byref-returns"></a>ByRef – vrácené hodnoty
 

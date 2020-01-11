@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: e0d0a680915f14c2d33f1864ad5ad05aff3dde5f
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 31e7f84a787d255a474f4c2b1fa3068903dbed52
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394130"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901908"
 ---
 ### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP: HeaderNames konstanty se změnily na static jen pro čtení
 
 Počínaje verzí ASP.NET Core 3,0 Preview 5 se pole v <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> změnila z `const` na `static readonly`.
 
-Diskuzi najdete v tématu [ASPNET/AspNetCore # 9514](https://github.com/aspnet/AspNetCore/issues/9514).
+Diskuzi najdete v tématu [dotnet/aspnetcore # 9514](https://github.com/dotnet/aspnetcore/issues/9514).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Tato pole se používají `const`.
+Tato pole se používají k `const`.
 
 #### <a name="new-behavior"></a>Nové chování
 

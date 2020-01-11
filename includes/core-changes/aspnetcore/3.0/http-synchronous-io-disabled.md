@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: c861d61cbbe8075db4b17a702e863336ea621f2b
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 53d2c989120c92f4e2d18f50ce4b364bd4c9b604
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198399"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901798"
 ---
 ### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP: synchronní v/v – zakázáno na všech serverech
 
 Počínaje ASP.NET Core 3,0 jsou synchronní operace serveru ve výchozím nastavení zakázané.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-`AllowSynchronousIO` je možnost na každém serveru, která povoluje nebo zakazuje synchronní rozhraní API pro vstupně-výstupní operace jako `HttpRequest.Body.Read`, `HttpResponse.Body.Write` a `Stream.Flush`. Tato rozhraní API jsou dlouhodobě zdrojem vláken vyčerpání a aplikace přestane reagovat. Počínaje verzí ASP.NET Core 3,0 Preview 3 jsou tyto synchronní operace ve výchozím nastavení zakázány.
+`AllowSynchronousIO` je možnost na každém serveru, který povoluje nebo zakazuje synchronní rozhraní API pro vstupně-výstupní operace jako `HttpRequest.Body.Read`, `HttpResponse.Body.Write`a `Stream.Flush`. Tato rozhraní API jsou dlouhodobě zdrojem vláken vyčerpání a aplikace přestane reagovat. Počínaje verzí ASP.NET Core 3,0 Preview 3 jsou tyto synchronní operace ve výchozím nastavení zakázány.
 
 Ovlivněné servery:
 
@@ -27,7 +27,7 @@ Očekávat chyby podobné:
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call FlushAsync or set AllowSynchronousIO to true instead.`
 
-Každý server má parametr `AllowSynchronousIO`, který řídí toto chování, přičemž výchozí hodnota pro všechny jsou nyní `false`.
+Každý server má možnost `AllowSynchronousIO`, která řídí toto chování a výchozí hodnota pro všechny jsou nyní `false`.
 
 Chování je také možné přepsat na základě jednotlivých požadavků jako dočasné zmírnění. Příklad:
 
@@ -39,17 +39,17 @@ if (syncIOFeature != null)
 }
 ```
 
-Pokud máte potíže s `TextWriter` nebo jiným datovým proudem, který volá synchronní rozhraní API v `Dispose`, místo toho zavolejte nové rozhraní API `DisposeAsync`.
+Pokud máte potíže s `TextWriter` nebo jiným datovým proudem, který volá synchronní rozhraní API v `Dispose`, zavolejte místo toho nové rozhraní API `DisposeAsync`.
 
-Diskuzi najdete v tématu [ASPNET/AspNetCore # 7644](https://github.com/aspnet/AspNetCore/issues/7644).
+Diskuzi najdete v tématu [dotnet/aspnetcore # 7644](https://github.com/dotnet/aspnetcore/issues/7644).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
-ve výchozím nastavení byly povoleny `HttpRequest.Body.Read`, `HttpResponse.Body.Write` a `Stream.Flush`.
+ve výchozím nastavení jsou povolené `HttpRequest.Body.Read`, `HttpResponse.Body.Write`a `Stream.Flush`.
 
 #### <a name="new-behavior"></a>Nové chování
 

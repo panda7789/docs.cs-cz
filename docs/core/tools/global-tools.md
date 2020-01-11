@@ -3,12 +3,12 @@ title: Globální nástroje .NET Core
 description: Přehled toho, jaké globální nástroje .NET Core jsou a jaké jsou .NET Core CLI příkazy, které jsou pro ně k dispozici.
 author: KathleenDollard
 ms.date: 05/29/2018
-ms.openlocfilehash: 665cee64cb92efd16f5528feb656b377f9f3283c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 0df3c1b615adfeaaf41542dc8252a8f14f49f6f9
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714162"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899869"
 ---
 # <a name="net-core-global-tools-overview"></a>Přehled globálních nástrojů .NET Core
 
@@ -34,7 +34,7 @@ V současné době není v rozhraní příkazového řádku (CLI) .NET Core k di
 
 * Globální nástroje .NET Core najdete na [NuGet](https://www.nuget.org). NuGet ale ještě neumožňuje vyhledávat konkrétně globální nástroje .NET Core.
 * Doporučení k nástrojům můžete najít v blogovém příspěvku nebo v úložišti GitHubu [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
-* Zdrojový kód pro globální nástroje vytvořené týmem ASP.NET můžete zobrazit v úložišti GitHub [/DotNetTools](https://github.com/aspnet/DotNetTools/) .
+* Zdrojový kód pro globální nástroje vytvořené týmem ASP.NET můžete zobrazit v úložišti GitHub [/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools) .
 * Informace o diagnostických nástrojích najdete v [části .NET Core dotnet – globální nástroje diagnostiky](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
 
 ## <a name="check-the-author-and-statistics"></a>Kontrolovat autora a statistiky

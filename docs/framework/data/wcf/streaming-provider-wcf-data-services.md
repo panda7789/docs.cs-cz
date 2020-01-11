@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: a5793eae92ffdfa65872c93273bd7cfefdc6f674
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 1eb1267ae0b08d558d5afc41d03270917473a669
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568810"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900914"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 
@@ -39,7 +39,7 @@ Konfigurace datové služby pro podporu streamování binárních dat vyžaduje 
 
 5. Povolte přístup k binárním prostředkům na serveru nebo ve zdroji dat.
 
-Příklady v tomto tématu jsou založené na ukázkové službě streamování fotek, která je popsaná v hloubkě v rámci [série zprostředkovatelů streamování Data Services: implementace poskytovatele streamování (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989). Zdrojový kód této ukázkové služby je k dispozici na [ukázkové stránce Stream Photo data Service](https://go.microsoft.com/fwlink/?LinkID=198988) na webu MSDN Code.
+Příklady v tomto tématu jsou založené na ukázkové službě streamování fotek, která je popsaná v hloubkě v rámci [série zprostředkovatelů streamování Data Services: implementace poskytovatele streamování (část 1)](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-implementing-a-streaming-provider-part-1). Zdrojový kód pro ukázku datové služby streamování fotek je k dispozici na [GitHubu](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample).
 
 ## <a name="defining-a-media-link-entry-in-the-data-model"></a>Definování položky s odkazem na média v datovém modelu
 
@@ -53,7 +53,7 @@ Chcete-li označit, že entita je položkou Media Link Entry, přidejte atribut 
 
 Také je nutné přidat obor názvů `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` buď k entitě, nebo ke kořenu souboru. edmx nebo. csdl, který definuje datový model.
 
-Příklad datové služby, která používá poskytovatele Entity Framework a zpřístupňuje mediální prostředek, najdete v části post [Data Services poskytovatelé streamování: implementace poskytovatele streamování (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989).
+Příklad datové služby, která používá poskytovatele Entity Framework a zpřístupňuje mediální prostředek, najdete v části post [Data Services poskytovatelé streamování: implementace poskytovatele streamování (část 1)](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-implementing-a-streaming-provider-part-1).
 
 **Zprostředkovatel reflexe**
 

@@ -6,19 +6,19 @@ helpviewer_keywords:
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-ms.openlocfilehash: 74b3e50c36f0b3238b8fb74ca1ea1b336e0983c0
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 556482e3e43460016162dfbdd9b31f9a68c0af46
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568784"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900873"
 ---
 # <a name="wcf-data-services-client-library"></a>Klientská knihovna pro WCF Data Services
 Jakákoli aplikace může komunikovat s datovou službou založenou na protokolu OData (Open Data Protocol), pokud může odeslat požadavek HTTP a zpracovat datový kanál OData, který vrátí datová služba. Tato vzájemná funkční spolupráce umožňuje přístup ke službám založeným na standardu OData z široké škály aplikací s podporou webu. WCF Data Services obsahuje klientské knihovny, které poskytují bohatší programovací prostředí při využívání kanálů OData z .NET Framework nebo aplikací založených na programu Silverlight.  
   
  Dvě hlavní třídy klientské knihovny jsou třída <xref:System.Data.Services.Client.DataServiceContext> a třída <xref:System.Data.Services.Client.DataServiceQuery%601>. Třída <xref:System.Data.Services.Client.DataServiceContext> zapouzdřuje operace, které jsou podporovány pro zadanou datovou službu. I když služba OData je Bezstavová, kontext není. Proto můžete použít třídu <xref:System.Data.Services.Client.DataServiceContext> k údržbě stavu klienta mezi interakcemi s datovou službou, aby bylo možné podporovat funkce, jako je například Správa změn. Tato třída také spravuje identity a sleduje změny. Třída <xref:System.Data.Services.Client.DataServiceQuery%601> představuje dotaz na konkrétní sadu entit.  
   
- Tato část popisuje, jak používat klientské knihovny pro přístup k datům z klientské aplikace .NET Framework a jejich změně. Další informace o použití klientské knihovny WCF Data Services s aplikací založenou na programu Silverlight naleznete v tématu [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=186016). K dispozici jsou další klientské knihovny, které umožňují využívat informační kanál OData v jiných typech aplikací. Další informace najdete v tématu [sada OData SDK](https://go.microsoft.com/fwlink/?LinkID=185796).  
+ Tato část popisuje, jak používat klientské knihovny pro přístup k datům z klientské aplikace .NET Framework a jejich změně. Další informace o použití klientské knihovny WCF Data Services s aplikací založenou na programu Silverlight naleznete v tématu [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v%3dvs.95)). K dispozici jsou další klientské knihovny, které umožňují využívat informační kanál OData v jiných typech aplikací. Další informace o sadě OData SDK naleznete v tématu [sada OData SDK – vzorový kód](https://www.odata.org/ecosystem/#sdk).
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Generování klientské knihovny datové služby](generating-the-data-service-client-library-wcf-data-services.md)  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 8d40091420c29c86f2ebb25f14c17ae4f7a1c44a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 72cf742aae26f9441229b355dc6e70da7a5fc9cd
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974766"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900585"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 
@@ -133,7 +133,7 @@ K fragmentaci vždy dochází v haldě velkých objektů, protože není komprim
 
 Fragmentace se může stát problémem v generaci 1 a generaci 2. Pokud tyto generace mají velké množství volného místa po uvolnění paměti, použití objektu aplikace může vyžadovat úpravu a měli byste zvážit přehodnocení životnosti dlouhodobých objektů.
 
-Nadměrné Připnutí objektů může zvýšit fragmentaci. Pokud je fragmentace vysoká, je možné připnout příliš mnoho objektů.
+Nadměrné Připnutí objektů může zvýšit fragmentaci. Pokud je fragmentace vysoká, je možné, že bylo připnuté příliš mnoho objektů.
 
 Pokud fragmentaci virtuální paměti brání v uvolňování paměti při přidávání segmentů, může to být jedna z následujících příčin:
 
@@ -209,7 +209,7 @@ Pokud nepoužíváte Profiler, budete muset vytvořit jednotný měřicí vzor p
 
 - Pokud měříte těsně před uvolňováním paměti, měříte co nejvíce přidělení, než začne uvolňování paměti.
 
-- Měření během uvolňování paměti je problematické, protože datové struktury uvolňování paměti nejsou v platném stavu pro procházení a nemusí být schopné poskytnout kompletní výsledky. To je záměrné.
+- Měření během uvolňování paměti je problematické, protože datové struktury uvolňování paměti nejsou v platném stavu pro procházení a nemusí být schopné poskytnout kompletní výsledky. Jedná se o účel.
 
 - Pokud používáte uvolňování paměti pracovní stanice s souběžným uvolňováním paměti, uvolněné objekty se nekomprimuje, takže velikost haldy může být stejná nebo větší (fragmentace se může zdát, že je větší).
 
@@ -297,7 +297,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
 2. Pokud výstup neurčuje výjimku, je nutné určit, ze kterého vlákna je výjimka nedostatek paměti. Zadejte následující příkaz v ladicím programu pro zobrazení všech vláken s jejich zásobníky volání:
 
-    **~\*KB**
+    **~\*kb**
 
     Vlákno se zásobníkem, který má volání výjimek, je určeno argumentem `RaiseTheException`. Toto je spravovaný objekt výjimky.
 
@@ -713,7 +713,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
 - V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz pro zobrazení všech vláken s jejich zásobníky volání:
 
-  **~\*KB**
+  **~\*kb**
 
   Tento příkaz zobrazí výstup podobný následujícímu.
 

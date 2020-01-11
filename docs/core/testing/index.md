@@ -4,12 +4,12 @@ description: Tento článek poskytuje stručný přehled testování částí pr
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.openlocfilehash: 776a430868c7a4829e11a2958fb998c11315c43d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 41f4457e636ca495b78109803ca66680e72d007e
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714300"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899889"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování částí v .NET Core a .NET Standard
 
@@ -28,7 +28,7 @@ Automatizované testy jsou skvělým způsobem, jak zajistit, aby softwarová ap
 Pamatujte také na to, že jsou osvědčené postupy pro psaní testů. Například [Vývoj řízený testováním (TDD)](https://deviq.com/test-driven-development/) je při zápisu jednotkového testu před kódem, který je určen ke kontrole. TDD je jako vytvoření osnovy pro knihu předtím, než ji napíšeme. Je určena k tomu, aby vývojářům usnadnil psaní jednodušších, čitelnějších a efektivních kódu. 
 
 > [!NOTE]
-> Tým ASP.NET řídí [tyto konvence](https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests) , které vývojářům pomůžou pocházet s dobrými názvy testovacích tříd a metod.
+> Tým ASP.NET řídí [tyto konvence](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines#unit-tests-and-functional-tests) , které vývojářům pomůžou pocházet s dobrými názvy testovacích tříd a metod.
 
 Při zápisu testů jednotek se nepovedlo zavést závislosti na infrastruktuře. Tyto testy jsou pomaleji a poměrně křehký a měly by být rezervovány pro integrační testy. Pomocí [principu explicitní závislosti](https://deviq.com/explicit-dependencies-principle/) a [vložení závislostí](/aspnet/core/fundamentals/dependency-injection)se můžete vyhnout těmto závislostem ve vaší aplikaci. Testy jednotek můžete také zachovat v samostatném projektu z testů Integration. Tím zajistíte, že projekt testů jednotek nebude mít odkazy na balíčky infrastruktury ani závislosti.
 

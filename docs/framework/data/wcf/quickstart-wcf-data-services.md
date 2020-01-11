@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, quick-start example
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
-ms.openlocfilehash: df3151dfd3628231d84d2d128c61d1c0b6b0d48e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 43cd34ad02f1e2d212ff5e2ff4694591fbed52e5
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800362"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900951"
 ---
 # <a name="quickstart-wcf-data-services"></a>Rychlý Start (WCF Data Services)
 
@@ -45,7 +45,7 @@ K dokončení tohoto rychlého startu je nutné nainstalovat následující komp
  Vytvořte aplikaci WPF, která bude využívat datový kanál OData, svázat data s ovládacími prvky systému Windows, změnit data v vázaných ovládacích prvcích a pak tyto změny odeslat zpět do datové služby.
 
 > [!NOTE]
-> Soubory projektu z dokončené verze rychlého startu lze stáhnout ze stránky [ukázek dokumentace WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=179994) .
+> Soubory projektu z dokončené verze rychlého startu si můžete stáhnout z [GitHubu](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/WCF%20Data%20Services%20Quickstart%20(OData%20Service%20and%20WPF%20Client)).
 
 ## <a name="next-steps"></a>Další kroky
 

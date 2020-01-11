@@ -9,12 +9,12 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: 41f1d1f0ca04dff0faa9eb070882f845ef4827d2
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: f6ff9cf732e11bbf61eeb7e5cff3f1cba2b744e6
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568964"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900987"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Otázky LINQ (WCF Data Services)
 Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití WCF Data Services klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní Open Data Protocol (OData). Další informace o sestavování a spouštění dotazů pro datovou službu založenou na protokolu OData najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
@@ -156,7 +156,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 ## <a name="unsupported-linq-methods"></a>Nepodporované metody LINQ  
  Následující tabulka obsahuje třídy metod LINQ nejsou podporovány a nelze je zahrnout do dotazu spuštěného pro službu OData:  
   
-|Typ operace|Nepodporovaná metoda|  
+|Typ operace|Nepodporovaná – metoda|  
 |--------------------|------------------------|  
 |Nastavit operátory|Všechny nastavené operátory nejsou podporovány proti <xref:System.Data.Services.Client.DataServiceQuery%601>, které zahrnují následující:<br /><br /> -   <xref:System.Linq.Enumerable.All%2A><br />-   <xref:System.Linq.Enumerable.Any%2A><br />-   <xref:System.Linq.Enumerable.Concat%2A><br />-   <xref:System.Linq.Enumerable.DefaultIfEmpty%2A><br />-   <xref:System.Linq.Enumerable.Distinct%2A><br />-   <xref:System.Linq.Enumerable.Except%2A><br />-   <xref:System.Linq.Enumerable.Intersect%2A><br />-   <xref:System.Linq.Enumerable.Union%2A><br />-   <xref:System.Linq.Enumerable.Zip%2A>|  
 |Operátory řazení|Následující operátory řazení, které vyžadují <xref:System.Collections.Generic.IComparer%601>, nejsou pro <xref:System.Data.Services.Client.DataServiceQuery%601>podporované:<br /><br /> -   <xref:System.Linq.Enumerable.OrderBy%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.OrderByDescending%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.ThenBy%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IComparer%7B%60%601%7D%29>|  
@@ -164,7 +164,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |Operátory seskupení|Všechny operátory seskupení nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A><br /><br /> Operace seskupení se musí provádět na klientovi.|  
 |Agregační operátory|Všechny agregované operace nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> Agregační operace musí být provedeny buď na klientovi, nebo musí být zapouzdřeny operací služby.|  
 |Operátory stránkování|Následující operátory stránkování nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Poznámka:** operátory stránkování, které jsou spouštěny v prázdné sekvenci, vrací hodnotu null.|  
-|Jiné operátory|Následující jiné operátory nejsou podporovány pro <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> 1. <xref:System.Linq.Enumerable.Empty%2A><br />2. <xref:System.Linq.Enumerable.Range%2A><br />3. <xref:System.Linq.Enumerable.Repeat%2A><br />4. <xref:System.Linq.Enumerable.ToDictionary%2A><br />5. <xref:System.Linq.Enumerable.ToLookup%2A>|  
+|Jiné operátory|Následující jiné operátory nejsou podporovány pro <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> 1.  <xref:System.Linq.Enumerable.Empty%2A><br />2.  <xref:System.Linq.Enumerable.Range%2A><br />3.  <xref:System.Linq.Enumerable.Repeat%2A><br />4.  <xref:System.Linq.Enumerable.ToDictionary%2A><br />5.  <xref:System.Linq.Enumerable.ToLookup%2A>|  
   
 <a name="supportedExpressions"></a>   
 ## <a name="supported-expression-functions"></a>Podporované funkce výrazu  
@@ -215,4 +215,4 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 - [Dotazování v datové službě](querying-the-data-service-wcf-data-services.md)
 - [Projekce dotazů](query-projections-wcf-data-services.md)
 - [Materializace objektů](object-materialization-wcf-data-services.md)
-- [OData: konvence identifikátoru URI](https://go.microsoft.com/fwlink/?LinkID=185564)
+- [OData: konvence identifikátoru URI](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)

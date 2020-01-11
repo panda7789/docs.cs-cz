@@ -10,16 +10,16 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 03fa40a895d322a8b5ad543f75424ef5b379672b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 764ea6a77ba267e691d48bc72d17c02f6b3c18ca
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568898"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900973"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
 
-Projekce poskytuje mechanismus v protokolu OData (Open Data Protocol) k omezení množství dat v kanálu vrácených dotazem tím, že zadáte, že v odpovědi se vrátí jenom některé vlastnosti entity. Další informace naleznete v tématu [OData: SELECT – možnost dotazu na systém ($Select)](https://go.microsoft.com/fwlink/?LinkId=186076).
+Projekce poskytuje mechanismus v protokolu OData (Open Data Protocol) k omezení množství dat v kanálu vrácených dotazem tím, že zadáte, že v odpovědi se vrátí jenom některé vlastnosti entity. Další informace najdete v části 4,8. V konvencích identifikátoru URI vyberte možnost dotaz na systém ($select) [(OData verze 2,0)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/).
 
 Toto téma popisuje, jak definovat projekci dotazu, jaké jsou požadavky pro entity a typy bez entit, které provádějí aktualizace s plánovanými výsledky, vytváření projektových typů a uvádí některé informace o projekci.
 

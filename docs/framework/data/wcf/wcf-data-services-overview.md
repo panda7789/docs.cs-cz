@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: b3feb2a22fc38c6a2d13d6802b94386d6f7841ac
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: a4121bb10de7bfe51c5fec6bc14a40ad4bdcdaf7
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568794"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900897"
 ---
 # <a name="wcf-data-services-overview"></a>Přehled WCF Data Services
 WCF Data Services umožňuje vytvořit a spotřebovat datové služby pro web nebo intranet pomocí protokolu OData (Open Data Protocol). OData umožňuje vystavit data jako prostředky, které jsou adresovatelné pomocí identifikátorů URI. To vám umožní přístup k datům a jejich změny pomocí sémantiky representational state transfer (REST), konkrétně standardní příkazy HTTP pro GET, PUT, POST a DELETE. V tomto tématu najdete Přehled vzorů a postupů definovaných v rámci služby OData a také o zařízeních poskytovaných WCF Data Services, které využívají OData v aplikacích založených na .NET Framework.  
@@ -25,7 +25,7 @@ WCF Data Services umožňuje vytvořit a spotřebovat datové služby pro web ne
 ## <a name="interoperable-data-access"></a>Přístup k datům vzájemně ovladatelného  
  OData staví na standardních internetových protokolech, aby byly datové služby vzájemně ovladatelné s aplikacemi, které .NET Framework nepoužívají. Vzhledem k tomu, že je možné použít standardní identifikátory URI k adresování dat, může vaše aplikace přistupovat k datům a měnit je pomocí sémantiky representational state transfer (REST), konkrétně standardní příkazy HTTP GET, PUT, POST a DELETE. To vám umožní přístup k těmto službám z libovolného klienta, který může analyzovat a přistupovat k datům přenášeným přes standardní protokoly HTTP.  
   
- OData definuje sadu rozšíření protokolu AtomPub (Atom Publishing Protocol). Podporuje požadavky HTTP a odpovědi ve více než jednom formátu dat, aby se vešly na různé klientské aplikace a platformy. Datový kanál OData může představovat data ve atomech, JavaScript Object Notation (JSON) a jako prostý kód XML. I když je výchozí formát Atom, je formát informačního kanálu určen v hlavičce požadavku HTTP. Další informace najdete v tématu formát [OData: Atom](https://go.microsoft.com/fwlink/?LinkID=185794) a [Formát OData: JSON](https://go.microsoft.com/fwlink/?LinkID=185795).  
+OData definuje sadu rozšíření protokolu AtomPub (Atom Publishing Protocol). Podporuje požadavky HTTP a odpovědi ve více než jednom formátu dat, aby se vešly na různé klientské aplikace a platformy. Datový kanál OData může představovat data ve atomech, JavaScript Object Notation (JSON) a jako prostý kód XML. I když je výchozí formát Atom, je formát informačního kanálu určen v hlavičce požadavku HTTP. Další informace najdete v tématu formát [OData: Atom](https://www.odata.org/documentation/odata-version-2-0/atom-format/) a [Formát OData: JSON](https://www.odata.org/documentation/odata-version-2-0/json-format/).  
   
  Při publikování dat jako datového kanálu OData WCF Data Services spoléhá na další existující Internetová zařízení pro takové operace jako ukládání do mezipaměti a ověřování. K tomu WCF Data Services integrovat s existujícími hostujícími aplikacemi a službami, jako je ASP.NET, Windows Communication Foundation (WCF) a Internetová informační služba (IIS).  
   
@@ -48,7 +48,7 @@ WCF Data Services umožňuje vytvořit a spotřebovat datové služby pro web ne
   
  WCF Data Services obsahuje klientské knihovny pro klientské aplikace založené na .NET Framework a Silverlight. Tyto klientské knihovny umožňují pracovat s datovými službami pomocí .NET Framework objektů. Podporují taky dotazy založené na objektech a dotazy LINQ, načítají se související objekty, sledování změn a rozlišení identity. Další informace najdete v tématu [WCF Data Services Klientská knihovna](wcf-data-services-client-library.md).  
   
- Kromě klientských knihoven OData obsažených v .NET Framework a s programem Silverlight jsou k dispozici další klientské knihovny, které vám umožní využívat v klientských aplikacích kanál OData, jako jsou například aplikace PHP, AJAX a Java. Další informace najdete v tématu [sada OData SDK](https://go.microsoft.com/fwlink/?LinkID=185796).  
+ Kromě klientských knihoven OData obsažených v .NET Framework a s programem Silverlight jsou k dispozici další klientské knihovny, které vám umožní využívat v klientských aplikacích kanál OData, jako jsou například aplikace PHP, AJAX a Java. Další informace o sadě OData SDK naleznete v tématu [sada OData SDK – vzorový kód](https://www.odata.org/ecosystem/#sdk).
   
 ## <a name="architecture-overview"></a>Přehled architektury  
  Následující diagram znázorňuje architekturu WCF Data Services pro vystavení kanálů OData a používání těchto informačních kanálů v knihovnách klienta s povolenou OData:  
@@ -62,4 +62,4 @@ WCF Data Services umožňuje vytvořit a spotřebovat datové služby pro web ne
 - [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)
 - [Přístup k prostředkům datové služby (WCF Data Services)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd728283(v=vs.100))
 - [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)
-- [Převádění stavu reprezentace (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)
+- [Převádění stavu reprezentace (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

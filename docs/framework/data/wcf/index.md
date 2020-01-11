@@ -5,16 +5,16 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: 1ce152b84f17a35982a75f54b5418623ba39210f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 890f0ba25d8320008228c73660753b9899269fd7
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975223"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900990"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
-WCF Data Services (dříve označované jako "ADO.NET Data Services") je součástí .NET Framework, která umožňuje vytvářet služby, které používají protokol OData (Open Data Protocol) k vystavování a využívání dat prostřednictvím webu nebo intranetu, a to pomocí sémantiky opětovného [přenosu stavu (REST)](https://go.microsoft.com/fwlink/?LinkId=113919). OData zpřístupňuje data jako prostředky, které jsou adresovatelné pomocí identifikátorů URI. Data se získávají a mění pomocí standardních příkazů HTTP GET, PUT, POST a DELETE. OData používá konvence vztahů mezi entitami [model EDM (Entity Data Model)](../adonet/entity-data-model.md) k vystavení prostředků jako sady entit, které souvisejí s přidruženími.
+WCF Data Services (dříve označované jako "ADO.NET Data Services") je součástí .NET Framework, která umožňuje vytvářet služby, které používají protokol OData (Open Data Protocol) k vystavování a využívání dat prostřednictvím webu nebo intranetu, a to pomocí sémantiky opětovného [přenosu stavu (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). OData zpřístupňuje data jako prostředky, které jsou adresovatelné pomocí identifikátorů URI. Data se získávají a mění pomocí standardních příkazů HTTP GET, PUT, POST a DELETE. OData používá konvence vztahů mezi entitami [model EDM (Entity Data Model)](../adonet/entity-data-model.md) k vystavení prostředků jako sady entit, které souvisejí s přidruženími.
 
 WCF Data Services používá protokol OData k adresování a aktualizaci prostředků. Tímto způsobem můžete získat přístup k těmto službám z libovolného klienta, který podporuje OData. OData vám umožňuje vyžádat a zapsat data do prostředků pomocí známých formátů přenosu: Atom, sady standardů pro výměnu a aktualizaci dat jako XML a JavaScript Object Notation (JSON). Formát výměny dat založený na textu se v AJAX široce používá. vyrovnání.
 
@@ -32,10 +32,6 @@ Chci se pustit přímo v...
 
 - [Začínáme](getting-started-with-wcf-data-services.md)
 
-- [Rychlý Start pro Silverlight](https://go.microsoft.com/fwlink/?LinkID=192782)
-
-- [Rychlý Start k programu Silverlight pro Windows Phone vývoj](https://go.microsoft.com/fwlink/?LinkID=214535)
-
 Pouze zobrazit kód...
 
 - [Rychlý start](quickstart-wcf-data-services.md)
@@ -46,29 +42,14 @@ Pouze zobrazit kód...
 
 Chci se dozvědět víc o OData...
 
-- [Dokument White Paper: představení OData](https://go.microsoft.com/fwlink/?LinkId=220867)
-
-- [Otevřít web datového protokolu](https://go.microsoft.com/fwlink/?LinkID=184554)
-
-- [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
-
-- [OData: nejčastější dotazy](https://go.microsoft.com/fwlink/?LinkId=185867)
-
-Chci sledovat některá videa...
-
-- [Příručka pro začátečníky k WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220864)
-
-- [Videa pro vývojáře WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220861)
-
-- [OData: web pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=185866)
+- [Dokument White Paper: představení OData](https://download.microsoft.com/download/E/5/A/E5A59052-EE48-4D64-897B-5F7C608165B8/IntroducingOData.pdf)
+- [Otevřít web datového protokolu](https://www.odata.org/)
+- [OData: SDK](https://www.odata.org/ecosystem/)
 
 Chci se podívat na ucelené ukázky...
 
-- [Ukázka dokumentace WCF Data Services v galerii ukázek na webu MSDN](https://go.microsoft.com/fwlink/?LinkID=220865)
-
-- [Další ukázky WCF Data Services v galerii ukázek na webu MSDN](https://go.microsoft.com/fwlink/?LinkId=220866)
-
-- [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
+- [Rychlý Start WCF Data Services](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/WCF%20Data%20Services%20Quickstart%20(OData%20Service%20and%20WPF%20Client))
+- [OData SDK – ukázkový kód](https://www.odata.org/ecosystem/#sdk)
 
 Jak se integruje se sadou Visual Studio?
 
@@ -82,17 +63,7 @@ Co s tím můžu dělat?
 
 - [Přehled](wcf-data-services-overview.md)
 
-- [Dokument White Paper: představení OData](https://go.microsoft.com/fwlink/?LinkId=220867)
-
 - [Scénáře aplikací](application-scenarios-wcf-data-services.md)
-
-Chci použít Silverlight...
-
-- [Rychlý Start pro Silverlight](https://go.microsoft.com/fwlink/?LinkID=192782)
-
-- [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149)
-
-- [Začínáme s Silverlightem](https://go.microsoft.com/fwlink/?LinkId=148366)
 
 Chci použít LINQ...
 
@@ -104,13 +75,9 @@ Chci použít LINQ...
 
 Pořád ještě potřebuji nějaké další informace...
 
-- [Blog týmu WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=150511)
+- [Blog týmu WCF Data Services](https://docs.microsoft.com/archive/blogs/astoriateam/)
 
 - [Prostředky](wcf-data-services-resources.md)
-
-- [Centrum pro vývojáře WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220868)
-
-- [Otevřít web datového protokolu](https://go.microsoft.com/fwlink/?LinkID=184554)
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -136,4 +103,4 @@ Popisuje použití klientských knihoven ke využívání kanálů OData z klien
 
 ## <a name="see-also"></a>Viz také:
 
-- [Převádění stavu reprezentace (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)
+- [Převádění stavu reprezentace (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

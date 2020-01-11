@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 5110cdf53953bebd1a5ccd2781afa5c57175ea54
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 8b86944808aa7a35341f4fdafb3a92c6d9d127ec
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568756"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900858"
 ---
 # <a name="wcf-data-services-resources"></a>Prostředky WCF Data Services
 Úvodní témata WCF Data Services najdete v následujících umístěních. Mnohé z těchto témat obsahují také odkazy na související témata, která obsahují podrobnější informace.  
@@ -29,34 +29,28 @@ ms.locfileid: "74568756"
 ## <a name="external-resources"></a>Externí prostředky  
  Následující externí zdroje poskytují další informace a podporu pro vytváření WCF Data Services aplikací, které zveřejňují a využívají kanály OData.  
   
- [Fórum WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=150512)  
+ [Fórum WCF Data Services](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataservices)  
  Podpora programování dat pro vývojáře WCF Data Services.  
   
- [Blog týmu WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=150511)  
+ [Blog týmu WCF Data Services](https://docs.microsoft.com/archive/blogs/astoriateam/)  
  Blog, který obsahuje aktualizace a diskuzi o funkcích a funkcích WCF Data Services.  
   
- [Web OData](https://go.microsoft.com/fwlink/?LinkID=184554)  
+ [Web OData](https://www.odata.org/)  
  Primární zdroj informací o OData.  
   
- [Sada OData SDK](https://go.microsoft.com/fwlink/?LinkID=185248)  
+ [OData SDK – ukázkový kód](https://www.odata.org/ecosystem/#sdk)  
  Obsahuje ukázkové služby, ukázky a programovací knihovny, které umožňují pracovat s kanály OData.  
   
- [Blog OData](https://go.microsoft.com/fwlink/?LinkId=185868)  
+ [Blog OData](https://www.odata.org/blog/)  
  Blog, který obsahuje diskuze o programování OData.  
   
- [Přístup k datům a centrum pro vývojáře úložiště](https://go.microsoft.com/fwlink/?LinkId=91903)  
- Centrální umístění pro hledání informací a prostředků pro práci s daty  
-  
- [Jak mám datovou platformu? Videa: WCF Data Services řady](https://go.microsoft.com/fwlink/?LinkId=124600)  
- Obsahuje sadu přetypování obrazovky videa, která ukazují, jak vytvářet a přistupovat k datovým službám.  
-  
- [Přehled: WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131074)  
+ [Přehled: WCF Data Services](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cc956153(v=msdn.10))  
  Dokument White Paper, který poskytuje další informace vysoké úrovně o výhodách WCF Data Services.  
   
- [Používání aplikace Microsoft WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131075)  
+ [Používání aplikace Microsoft WCF Data Services](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cc907912(v=msdn.10))  
  Dokument White Paper, který poskytuje další informace a příklady pro vytváření datových služeb a přístup k datovým službám v klientských aplikacích.  
   
- [Model vztahů mezi entitami: směrem k jednotnému zobrazení dat](https://go.microsoft.com/fwlink/?LinkId=91909) prostřednictvím kódu PIN – PII Chen, institutu institutu technologie Massachusetts  
+ [Model vztahů mezi entitami: směrem k jednotnému zobrazení dat](https://dl.acm.org/doi/10.1145/320434.320440) prostřednictvím kódu PIN – PII Chen, institutu institutu technologie Massachusetts  
  Popisuje základ pro model relačního modelu, který je implementován pomocí WCF Data Services. Napsané v 1976, jedná se o jeden z nejčastěji citovaných dokumentů v poli počítač.  
   
 ## <a name="see-also"></a>Viz také:

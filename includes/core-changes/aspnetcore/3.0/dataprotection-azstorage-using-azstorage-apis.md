@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: f103c96588bae167216d09a82973a4a7abfb5cc3
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: db70596552ffd699156e1b7a55cb1e944596f077
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394301"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901594"
 ---
 ### <a name="data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis"></a>Ochrana dat: DataProtection. AzureStorage používá nová rozhraní API Azure Storage.
 
 <xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> závisí na [Azure Storagech knihovnách](https://github.com/Azure/azure-storage-net). Tyto knihovny přejmenovaly jejich sestavení, balíčky a obory názvů. Počínaje ASP.NET Core 3,0 `Microsoft.AspNetCore.DataProtection.AzureStorage` používá nová `Microsoft.Azure.Storage.`ová a předem vydaná rozhraní API a balíčky.
 
-Pro otázky týkající se rozhraní Azure Storage API použijte <https://github.com/Azure/azure-storage-net>. Diskuzi o tomto problému najdete v tématu [ASPNET/AspNetCore # 8472](https://github.com/aspnet/AspNetCore/issues/8472).
+Pro otázky týkající se rozhraní Azure Storage API použijte <https://github.com/Azure/azure-storage-net>. Diskuzi o tomto problému najdete v tématu [dotnet/aspnetcore # 8472](https://github.com/dotnet/aspnetcore/issues/8472).
 
 #### <a name="version-introduced"></a>Představená verze
 

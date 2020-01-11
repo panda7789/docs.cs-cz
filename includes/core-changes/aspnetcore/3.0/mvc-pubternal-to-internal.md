@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 09fd95ba5f3aee59f2abdfbb4e64eb6202e2b873
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 5741e8cdd51e00d5459c4c1032a56682429aab17
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394184"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901833"
 ---
 ### <a name="mvc-pubternal-types-changed-to-internal"></a>MVC: typy "Pubternal" se změnily na interní
 
 V ASP.NET Core 3,0 se všechny typy "pubternal" v MVC aktualizovaly buď jako `public` v podporovaném oboru názvů, nebo v případě potřeby `internal`.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
 V ASP.NET Core jsou typy "pubternal" deklarovány jako `public`, ale nacházejí se v oboru názvů `.Internal`s příponou. I když jsou tyto typy `public`, nemají žádné zásady podpory a podléhají změnám. Omlouváme se, ale náhodné použití těchto typů je běžné, což vedlo k zásadním změnám těchto projektů a omezení schopnosti zachovat rozhraní.
 
@@ -34,7 +34,7 @@ Náhodné použití typů "pubternal" bylo běžné, což vede k zásadním změ
 
 Pokud používáte typy, které se stanou skutečně `public` a byly přesunuty do nového podporovaného oboru názvů, aktualizujte odkazy tak, aby odpovídaly novým oborům názvů.
 
-Pokud používáte typy, které se stanou označenými jako `internal`, budete muset najít alternativu. Předchozí typy "pubternal" nebyly nikdy podporovány pro veřejné použití. Pokud existují konkrétní typy v těchto oborech názvů, které jsou pro vaše aplikace klíčové, zajistěte problém v [ASPNET/AspNetCore](https://github.com/aspnet/AspNetCore/issues). Mohou být provedeny důvody pro vytvoření požadovaných typů `public`.
+Pokud používáte typy, které se stanou označenými jako `internal`, budete muset najít alternativu. Předchozí typy "pubternal" nebyly nikdy podporovány pro veřejné použití. Pokud existují konkrétní typy v těchto oborech názvů, které jsou pro vaše aplikace kritické, zapište problém v [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues). Mohou být provedeny důvody pro vytvoření požadovaných typů `public`.
 
 #### <a name="category"></a>Kategorie
 

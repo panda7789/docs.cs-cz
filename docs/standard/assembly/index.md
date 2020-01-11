@@ -12,12 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: 8e68d2dbb13d226ba738bdf8455418c9e771d6a6
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 9fd0c55294815c191f1e116dd4e16a44693f3565
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733155"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900596"
 ---
 # <a name="assemblies-in-net"></a>Sestavení v .NET
 
@@ -43,7 +43,7 @@ Sestavení poskytují modul CLR (Common Language Runtime) s informacemi, které 
 
 Sestavení definuje následující informace:
 
-- Kód, který modul common language runtime spouští. Všimněte si, že každé sestavení může mít pouze jeden vstupní bod: `DllMain`, `WinMain` nebo `Main`.
+- Kód, který modul common language runtime spouští. Všimněte si, že každé sestavení může mít pouze jeden vstupní bod: `DllMain`, `WinMain`nebo `Main`.
 
 - Hranice zabezpečení. Sestavení je jednotka, ve které jsou požadována a udělována oprávnění. Další informace o hranicích zabezpečení v sestaveních naleznete v tématu [požadavky na zabezpečení sestavení](security-considerations.md).
 
@@ -85,7 +85,7 @@ Vzhledem k tomu, že sestavení obsahují informace o obsahu, správy verzí a z
 Chcete-li použít sestavení v aplikaci, je nutné přidat odkaz na něj. Jakmile je odkazováno na sestavení, všechny dostupné typy, vlastnosti, metody a další členy svých oborů názvů jsou k dispozici pro vaši aplikaci, jako by jejich kód byl součástí zdrojového souboru.
 
 > [!NOTE]
-> Většina sestavení z knihovny tříd .NET je odkazována automaticky. Pokud se na systémové sestavení neodkazuje automaticky, můžete pro .NET Core přidat odkaz na balíček NuGet, který obsahuje sestavení. Buď použijte Správce balíčků NuGet v aplikaci Visual Studio, nebo přidejte [\<PackageReference >](../../core/tools/dependencies.md#the-new-packagereference-element) prvek pro sestavení do projektu *. csproj* nebo *. vbproj* . V .NET Framework můžete přidat odkaz na sestavení pomocí dialogového okna **Přidat odkaz** v aplikaci Visual Studio nebo pomocí možnosti příkazového řádku `-reference` pro kompilátory [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) nebo [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
+> Většina sestavení z knihovny tříd .NET je odkazována automaticky. Pokud se na systémové sestavení neodkazuje automaticky, můžete pro .NET Core přidat odkaz na balíček NuGet, který obsahuje sestavení. Buď použijte Správce balíčků NuGet v aplikaci Visual Studio, nebo přidejte [\<prvek > PackageReference](../../core/tools/dependencies.md#the-new-packagereference-element) pro sestavení do projektu *. csproj* nebo *. vbproj* . V .NET Framework můžete přidat odkaz na sestavení pomocí dialogového okna **Přidat odkaz** v aplikaci Visual Studio nebo pomocí možnosti příkazového řádku `-reference` pro kompilátory [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) nebo [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
 
 V C#nástroji můžete použít dvě verze stejného sestavení v jediné aplikaci. Další informace najdete v tématu [extern alias](../../csharp/language-reference/keywords/extern-alias.md).
 
@@ -111,7 +111,6 @@ V C#nástroji můžete použít dvě verze stejného sestavení v jediné aplika
 ## <a name="see-also"></a>Viz také:
 
 - [Formát souboru sestavení .NET](file-format.md)
-- [Sestavení v .NET](index.md)
 - [Friend – sestavení](friend.md)
 - [Referenční sestavení](reference-assemblies.md)
 - [Postupy: načítání a uvolňování sestavení](load-unload.md)

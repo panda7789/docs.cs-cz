@@ -1,18 +1,18 @@
 ---
-ms.openlocfilehash: 503d61cb86c83e2f32ad40c60a127ae255ef71b0
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 58b1190e3e6a3168d35700eed655f6756e076a29
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198403"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901802"
 ---
 ### <a name="mvc-async-suffix-trimmed-from-controller-action-names"></a>MVC: asynchronní přípona se ořízne z názvů akcí řadiče.
 
-Jako součást adresování [ASPNET/AspNetCore # 4849](https://github.com/aspnet/AspNetCore/issues/4849)ASP.NET Core MVC ořízne příponu `Async` z názvů akcí ve výchozím nastavení. Od ASP.NET Core 3,0 Tato změna ovlivní vytváření směrování i propojení.
+Jako součást adresování [dotnet/aspnetcore # 4849](https://github.com/dotnet/aspnetcore/issues/4849)ASP.NET Core MVC ořízne příponu `Async` z názvů akcí standardně. Od ASP.NET Core 3,0 Tato změna ovlivní vytváření směrování i propojení.
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
@@ -58,7 +58,7 @@ Podle konvence jsou asynchronní metody .NET s příponou `Async`. Pokud však M
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud vaše aplikace závisí na akcích MVC, které zachovávají příponu `Async`, vyberte jednu z následujících rizik:
+Pokud vaše aplikace závisí na akcích MVC, které zachovávají `Async` příponu názvu, vyberte jednu z následujících rizik:
 
 - Použijte atribut `[ActionName]` k zachování původního názvu.
 - Zakažte úplné přejmenování nastavením `MvcOptions.SuppressAsyncSuffixInActionNames` na `false` v `Startup.ConfigureServices`:

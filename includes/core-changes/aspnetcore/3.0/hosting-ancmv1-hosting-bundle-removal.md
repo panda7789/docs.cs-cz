@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 04e5ca41374fc333a31f0422bc2e89f54b3cb049
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 82103d82a6f68c62f3532608718bc71b0ba126bf
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394298"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901958"
 ---
 ### <a name="hosting-aspnetcoremodule-v1-removed-from-windows-hosting-bundle"></a>Hostování: AspNetCoreModule v1 odebrané ze sady hostování Windows
 
@@ -12,11 +12,11 @@ Počínaje ASP.NET Core 3,0 sada hostitelů Windows nebude obsahovat AspNetCoreM
 
 ANCM v2 je zpětně kompatibilní s ANCM OutOfProcess a doporučuje se pro použití s aplikacemi ASP.NET Core 3,0.
 
-Diskuzi najdete v tématu [ASPNET/AspNetCore # 7095](https://github.com/aspnet/AspNetCore/issues/7095).
+Diskuzi najdete v tématu [dotnet/aspnetcore # 7095](https://github.com/dotnet/aspnetcore/issues/7095).
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 
