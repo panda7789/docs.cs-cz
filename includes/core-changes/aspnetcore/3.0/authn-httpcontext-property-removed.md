@@ -1,38 +1,38 @@
 ---
-ms.openlocfilehash: 2945465bb6a3a362dc640641056712dffd73d559
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 60ebcd9fc9ca18c33d31b82ba5020426d22a7d5a
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394259"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901966"
 ---
-### <a name="authentication-httpcontextauthentication-property-removed"></a><span data-ttu-id="6e85b-101">Ověřování: vlastnost HttpContext. Authentication byla odebrána.</span><span class="sxs-lookup"><span data-stu-id="6e85b-101">Authentication: HttpContext.Authentication property removed</span></span>
+### <a name="authentication-httpcontextauthentication-property-removed"></a><span data-ttu-id="b3138-101">Ověřování: vlastnost HttpContext. Authentication byla odebrána.</span><span class="sxs-lookup"><span data-stu-id="b3138-101">Authentication: HttpContext.Authentication property removed</span></span>
 
-<span data-ttu-id="6e85b-102">Vystaralá vlastnost `Authentication` u `HttpContext` byla odstraněna.</span><span class="sxs-lookup"><span data-stu-id="6e85b-102">The deprecated `Authentication` property on `HttpContext` has been removed.</span></span>
+<span data-ttu-id="b3138-102">Vystaralá vlastnost `Authentication` v `HttpContext` byla odebrána.</span><span class="sxs-lookup"><span data-stu-id="b3138-102">The deprecated `Authentication` property on `HttpContext` has been removed.</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="6e85b-103">Změnit popis</span><span class="sxs-lookup"><span data-stu-id="6e85b-103">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="b3138-103">Popis změny</span><span class="sxs-lookup"><span data-stu-id="b3138-103">Change description</span></span>
 
-<span data-ttu-id="6e85b-104">Jako součást [ASPNET/AspNetCore # 6504](https://github.com/aspnet/AspNetCore/pull/6504)byla odebrána vystaralá vlastnost `Authentication` v `HttpContext`.</span><span class="sxs-lookup"><span data-stu-id="6e85b-104">As part of [aspnet/AspNetCore#6504](https://github.com/aspnet/AspNetCore/pull/6504), the deprecated `Authentication` property on `HttpContext` has been removed.</span></span> <span data-ttu-id="6e85b-105">Vlastnost `Authentication` se od 2,0 nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="6e85b-105">The `Authentication` property has been deprecated since 2.0.</span></span> <span data-ttu-id="6e85b-106">[Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) byl publikován pro migraci kódu pomocí této zastaralé vlastnosti do nových náhradních rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="6e85b-106">A [migration guide](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) was published to migrate code using this deprecated property to the new replacement APIs.</span></span> <span data-ttu-id="6e85b-107">Zbývající nepoužívané třídy/rozhraní API související se starým ASP.NET Core 1. x zásobník ověřování byly v [rámci zápisu aspnet/AspNetCore@d7a7c65](https://github.com/aspnet/AspNetCore/commit/d7a7c65)odebrány.</span><span class="sxs-lookup"><span data-stu-id="6e85b-107">The remaining unused classes / APIs related to the old ASP.NET Core 1.x authentication stack were removed in commit [aspnet/AspNetCore@d7a7c65](https://github.com/aspnet/AspNetCore/commit/d7a7c65).</span></span>
+<span data-ttu-id="b3138-104">Jako součást [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504)byla odebrána vystaralá vlastnost `Authentication` v `HttpContext`.</span><span class="sxs-lookup"><span data-stu-id="b3138-104">As part of [dotnet/aspnetcore#6504](https://github.com/dotnet/aspnetcore/pull/6504), the deprecated `Authentication` property on `HttpContext` has been removed.</span></span> <span data-ttu-id="b3138-105">Vlastnost `Authentication` se od 2,0 nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="b3138-105">The `Authentication` property has been deprecated since 2.0.</span></span> <span data-ttu-id="b3138-106">[Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) byl publikován pro migraci kódu pomocí této zastaralé vlastnosti do nových náhradních rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="b3138-106">A [migration guide](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) was published to migrate code using this deprecated property to the new replacement APIs.</span></span> <span data-ttu-id="b3138-107">Zbývající nepoužívané třídy/rozhraní API související se starým ASP.NET Core 1. x zásobník ověřování byly v [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)pro zápis odebrány.</span><span class="sxs-lookup"><span data-stu-id="b3138-107">The remaining unused classes / APIs related to the old ASP.NET Core 1.x authentication stack were removed in commit [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65).</span></span>
 
-<span data-ttu-id="6e85b-108">Diskuzi najdete v tématu [ASPNET/AspNetCore # 6533](https://github.com/aspnet/AspNetCore/issues/6533).</span><span class="sxs-lookup"><span data-stu-id="6e85b-108">For discussion, see [aspnet/AspNetCore#6533](https://github.com/aspnet/AspNetCore/issues/6533).</span></span>
+<span data-ttu-id="b3138-108">Diskuzi najdete v tématu [dotnet/aspnetcore # 6533](https://github.com/dotnet/aspnetcore/issues/6533).</span><span class="sxs-lookup"><span data-stu-id="b3138-108">For discussion, see [dotnet/aspnetcore#6533](https://github.com/dotnet/aspnetcore/issues/6533).</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="6e85b-109">Představená verze</span><span class="sxs-lookup"><span data-stu-id="6e85b-109">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="b3138-109">Představená verze</span><span class="sxs-lookup"><span data-stu-id="b3138-109">Version introduced</span></span>
 
-<span data-ttu-id="6e85b-110">3.0</span><span class="sxs-lookup"><span data-stu-id="6e85b-110">3.0</span></span>
+<span data-ttu-id="b3138-110">3,0</span><span class="sxs-lookup"><span data-stu-id="b3138-110">3.0</span></span>
 
-#### <a name="reason-for-change"></a><span data-ttu-id="6e85b-111">Důvod změny</span><span class="sxs-lookup"><span data-stu-id="6e85b-111">Reason for change</span></span>
+#### <a name="reason-for-change"></a><span data-ttu-id="b3138-111">Důvod změny</span><span class="sxs-lookup"><span data-stu-id="b3138-111">Reason for change</span></span>
 
-<span data-ttu-id="6e85b-112">Rozhraní API ASP.NET Core 1,0 byla nahrazena metodami rozšíření v <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>.</span><span class="sxs-lookup"><span data-stu-id="6e85b-112">ASP.NET Core 1.0 APIs have been replaced by extension methods in <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>.</span></span>
+<span data-ttu-id="b3138-112">Rozhraní API ASP.NET Core 1,0 byla nahrazena metodami rozšíření v <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>.</span><span class="sxs-lookup"><span data-stu-id="b3138-112">ASP.NET Core 1.0 APIs have been replaced by extension methods in <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>.</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="6e85b-113">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="6e85b-113">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="b3138-113">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="b3138-113">Recommended action</span></span>
 
-<span data-ttu-id="6e85b-114">Viz [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).</span><span class="sxs-lookup"><span data-stu-id="6e85b-114">See the [migration guide](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).</span></span>
+<span data-ttu-id="b3138-114">Viz [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).</span><span class="sxs-lookup"><span data-stu-id="b3138-114">See the [migration guide](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).</span></span>
 
-#### <a name="category"></a><span data-ttu-id="6e85b-115">Kategorie</span><span class="sxs-lookup"><span data-stu-id="6e85b-115">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="b3138-115">Kategorie</span><span class="sxs-lookup"><span data-stu-id="b3138-115">Category</span></span>
 
-<span data-ttu-id="6e85b-116">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="6e85b-116">ASP.NET Core</span></span>
+<span data-ttu-id="b3138-116">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b3138-116">ASP.NET Core</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="6e85b-117">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="6e85b-117">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="b3138-117">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="b3138-117">Affected APIs</span></span>
 
 - <xref:Microsoft.AspNetCore.Http.Authentication.AuthenticateInfo?displayProperty=nameWithType>
 - <xref:Microsoft.AspNetCore.Http.Authentication.AuthenticationManager?displayProperty=nameWithType>
