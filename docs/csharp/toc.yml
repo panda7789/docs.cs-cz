@@ -3,12 +3,14 @@
 - name: Začínáme
   items:
     - name: Přehled
+      displayName: get started
       href: getting-started/index.md
     - name: 'Úvod do jazyka C# a rozhraní .NET Framework'
       href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
 - name: Kurzy
   items:
     - name: Přehled
+      displayName: tutorials
       href: tutorials/index.md
     - name: 'Úvod do programování v C#'
       items:
@@ -93,6 +95,7 @@
 - name: 'Co je nového v jazyce C#'
   items:
     - name: 'C# 8.0'
+      displayName: what's new
       href: whats-new/csharp-8.md
     - name: 'C# 7.3'
       href: whats-new/csharp-7-3.md
@@ -238,9 +241,10 @@
       href: codedoc.md
     - name: Správa verzí
       href: versioning.md
-- name: 'Témata s postupy k C#'
+- name: 'Články s postupy k jazyku C#'
   items:
-    - name: Rejstřík témat
+    - name: Rejstřík článků
+      displayName: how to's
       href: how-to/index.md
     - name: Parsování řetězců metodou `String.Split`
       href: how-to/parse-strings-using-split.md
@@ -285,8 +289,9 @@
 - name: "Průvodce programováním v\_C#"
   items:
     - name: Přehled
+      displayName: programming guide
       href: programming-guide/index.md
-    - name: "V\_programu v\_jazyce C#"
+    - name: "V\_programu jazyka C#"
       items:
         - name: "Struktura programu v\_jazyce C#"
           href: programming-guide/inside-a-program/index.md
@@ -298,9 +303,10 @@
           href: programming-guide/inside-a-program/identifier-names.md
         - name: 'Převody kódování C#'
           href: programming-guide/inside-a-program/coding-conventions.md
-    - name: Argumenty Main() a příkazového řádku
+    - name: Main() a argumenty příkazového řádku
       items:
         - name: Přehled
+          displayName: main method
           href: programming-guide/main-and-command-args/index.md
         - name: Argumenty příkazového řádku
           href: programming-guide/main-and-command-args/command-line-arguments.md
@@ -311,10 +317,12 @@
     - name: Koncepty programování
       items:
         - name: Přehled
+          displayName: programming concepts
           href: programming-guide/concepts/index.md
         - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
           items:
             - name: Přehled
+              displayName: asynchronous programming
               href: programming-guide/concepts/async/index.md
             - name: Model asynchronního programování úloh
               href: programming-guide/concepts/async/task-asynchronous-programming-model.md
@@ -347,6 +355,7 @@
         - name: Atributy
           items:
             - name: Přehled
+              displayName: attributes
               href: programming-guide/concepts/attributes/index.md
             - name: Vytváření vlastních atributů
               href: programming-guide/concepts/attributes/creating-custom-attributes.md
@@ -365,24 +374,26 @@
         - name: Kovariance a kontravariance
           items:
             - name: Přehled
+              displayName: covariance and contravariance
               href: programming-guide/concepts/covariance-contravariance/index.md
             - name: Odchylky obecných rozhraní
               href: programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md
               items:
                 - name: Vytváření variantních obecných rozhraní
                   href: programming-guide/concepts/covariance-contravariance/creating-variant-generic-interfaces.md
-                - name: Použití odchylky v rozhraní pro obecné kolekce
+                - name: "Používání odchylek v\_rozhraní pro obecné kolekce"
                   href: programming-guide/concepts/covariance-contravariance/using-variance-in-interfaces-for-generic-collections.md
             - name: Odchylky v delegátech
               href: programming-guide/concepts/covariance-contravariance/variance-in-delegates.md
               items:
-                - name: Použití odchylek v delegátech
+                - name: Používání odchylek v delegátech
                   href: programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md
-                - name: Použití odchylek pro obecné delegáty Func a Action
+                - name: Používání odchylek pro obecné delegáty Func a Action
                   href: programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md
         - name: Stromy výrazů
           items:
             - name: Přehled
+              displayName: expression trees
               href: programming-guide/concepts/expression-trees/index.md
             - name: Jak provádět stromy výrazů
               href: programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md
@@ -399,6 +410,7 @@
         - name: LINQ (Language-Integrated Query)
           items:
             - name: Přehled
+              displayName: LINQ overview
               href: programming-guide/concepts/linq/index.md
             - name: 'Začínáme s dotazy LINQ v jazyce C#'
               items:
@@ -873,6 +885,7 @@
         - name: 'Serializace (C#)'
           items:
             - name: Přehled
+              displayName: serialization
               href: programming-guide/concepts/serialization/index.md
             - name: Jak zapisovat data objektu do souboru XML
               href: programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md
@@ -883,6 +896,7 @@
     - name: 'Příkazy, výrazy a operátory'
       items:
         - name: Přehled
+          displayName: 'statements, expressions, operators'
           href: programming-guide/statements-expressions-operators/index.md
         - name: Příkazy
           href: programming-guide/statements-expressions-operators/statements.md
@@ -927,6 +941,7 @@
     - name: "Třídy a\_struktury"
       items:
         - name: Přehled
+          displayName: classes structs
           href: programming-guide/classes-and-structs/index.md
         - name: Třídy
           href: programming-guide/classes-and-structs/classes.md
@@ -935,14 +950,16 @@
         - name: Struktury
           items:
             - name: Přehled
+              displayName: structs
               href: programming-guide/classes-and-structs/structs.md
-            - name: Použití struktur
+            - name: Používání struktur
               href: programming-guide/classes-and-structs/using-structs.md
         - name: Dědičnost
           href: programming-guide/classes-and-structs/inheritance.md
         - name: Polymorfismus
           items:
             - name: Přehled
+              displayName: polymorphism
               href: programming-guide/classes-and-structs/polymorphism.md
             - name: Správa verzí pomocí klíčových slov override a new
               href: programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md
@@ -1049,6 +1066,7 @@
     - name: Rozhraní
       items:
         - name: Přehled
+          displayName: interfaces
           href: programming-guide/interfaces/index.md
         - name: Implementace explicitního rozhraní
           href: programming-guide/interfaces/explicit-interface-implementation.md
@@ -1059,6 +1077,7 @@
     - name: Delegáty
       items:
         - name: Přehled
+          displayName: delegates
           href: programming-guide/delegates/index.md
         - name: Použití delegátů
           href: programming-guide/delegates/using-delegates.md
@@ -1071,6 +1090,7 @@
     - name: Pole
       items:
         - name: Přehled
+          displayName: arrays
           href: programming-guide/arrays/index.md
         - name: Pole jako objekty
           href: programming-guide/arrays/arrays-as-objects.md
@@ -1095,6 +1115,7 @@
     - name: Indexery
       items:
         - name: Přehled
+          displayName: indexers
           href: programming-guide/indexers/index.md
         - name: Použití indexerů
           href: programming-guide/indexers/using-indexers.md
@@ -1105,6 +1126,7 @@
     - name: Události
       items:
         - name: Přehled
+          displayName: events
           href: programming-guide/events/index.md
         - name: Jak přihlásit a odhlásit odběr událostí
           href: programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md
@@ -1119,6 +1141,7 @@
     - name: Obecné typy
       items:
         - name: Přehled
+          displayName: generics
           href: programming-guide/generics/index.md
         - name: Parametry obecného typu
           href: programming-guide/generics/generic-type-parameters.md
@@ -1145,6 +1168,7 @@
     - name: Jmenné prostory
       items:
         - name: Přehled
+          displayName: namespaces
           href: programming-guide/namespaces/index.md
         - name: Používání oboru názvů
           href: programming-guide/namespaces/using-namespaces.md
@@ -1153,12 +1177,14 @@
     - name: Nezabezpečený kód a ukazatele
       items:
         - name: Přehled a omezení
+          displayName: unsafe code pointers
           href: programming-guide/unsafe-code-pointers/index.md
         - name: Vyrovnávací paměti pevné velikosti
           href: programming-guide/unsafe-code-pointers/fixed-size-buffers.md
         - name: Typy ukazatelů
           items:
             - name: Přehled
+              displayName: pointer types
               href: programming-guide/unsafe-code-pointers/pointer-types.md
             - name: Převody ukazatele
               href: programming-guide/unsafe-code-pointers/pointer-conversions.md
@@ -1167,6 +1193,7 @@
     - name: Dokumentační komentáře XML
       items:
         - name: Přehled
+          displayName: xml documentation comments
           href: programming-guide/xmldoc/index.md
         - name: Doporučené značky pro komentáře dokumentace
           href: programming-guide/xmldoc/recommended-tags-for-documentation-comments.md
@@ -1219,6 +1246,7 @@
     - name: Výjimky a jejich zpracování
       items:
         - name: Přehled
+          displayName: exceptions
           href: programming-guide/exceptions/index.md
         - name: Použití výjimek
           href: programming-guide/exceptions/using-exceptions.md
@@ -1237,6 +1265,7 @@
     - name: Systém souborů a registr
       items:
         - name: Přehled
+          displayName: file system registry
           href: programming-guide/file-system/index.md
         - name: Jak iterovat přes adresářový strom
           href: programming-guide/file-system/how-to-iterate-through-a-directory-tree.md
@@ -1275,12 +1304,14 @@
 - name: Referenční dokumentace jazyka
   items:
     - name: Přehled
+      displayName: language reference
       href: language-reference/index.md
     - name: Konfigurace verze jazyka
       href: language-reference/configure-language-version.md
     - name: 'Klíčová slova jazyka C#'
       items:
         - name: Přehled
+          displayName: keywords
           href: language-reference/keywords/index.md
         - name: Předdefinované typy
           items:
@@ -1435,6 +1466,7 @@
             - name: Zaškrtnuto a nezaškrtnuto
               items:
                 - name: Přehled
+                  displayName: checked unchecked
                   href: language-reference/keywords/checked-and-unchecked.md
                 - name: checked
                   href: language-reference/keywords/checked.md
@@ -1499,6 +1531,7 @@
         - name: Kontextová klíčová slova
           items:
             - name: Stručná referenční dokumentace
+              displayName: contextual keywords
               href: language-reference/keywords/contextual-keywords.md
             - name: add
               href: language-reference/keywords/add.md
@@ -1521,6 +1554,7 @@
         - name: Klíčová slova dotazu
           items:
             - name: Stručná referenční dokumentace
+              displayName: query keywords
               href: language-reference/keywords/query-keywords.md
             - name: from – klauzule
               href: language-reference/keywords/from-clause.md
@@ -1631,6 +1665,7 @@
     - name: 'Speciální znaky jazyka C#'
       items:
         - name: Přehled
+          displayName: special characters
           href: language-reference/tokens/index.md
         - name: $ – interpolace řetězců
           href: language-reference/tokens/interpolated.md
@@ -1639,6 +1674,7 @@
     - name: 'Direktivy preprocesoru jazyka C#'
       items:
         - name: Přehled
+          displayName: preprocessor directives
           href: language-reference/preprocessor-directives/index.md
         - name: '#if'
           href: language-reference/preprocessor-directives/preprocessor-if.md
@@ -1671,6 +1707,7 @@
     - name: 'Možnosti kompilátoru jazyka C#'
       items:
         - name: Přehled
+          displayName: compiler options
           href: language-reference/compiler-options/index.md
         - name: Sestavování pomocí programu csc.exe v příkazovém řádku
           href: language-reference/compiler-options/command-line-building-with-csc-exe.md

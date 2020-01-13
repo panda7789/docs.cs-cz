@@ -1,20 +1,20 @@
 ---
 title: Zápis vlastních převaděčů pro serializaci JSON – .NET
-ms.date: 10/16/2019
+ms.date: 01/10/2020
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: efbaf852f07b2b59111f0e330cf52470e3eca4c3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8a2af76ca64359c12fafce6678def14d11d9f029
+ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705805"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75904570"
 ---
-# <a name="how-to-write-custom-converters-for-json-serialization-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON v .NET
+# <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON (zařazování) v .NET
 
 Tento článek ukazuje, jak vytvořit vlastní převaděče pro třídy serializace JSON, které jsou k dispozici v oboru názvů <xref:System.Text.Json>. Úvod do `System.Text.Json`naleznete [v tématu How to serializovat and deserializovat JSON v rozhraní .NET](system-text-json-how-to.md).
 
@@ -23,7 +23,7 @@ Tento článek ukazuje, jak vytvořit vlastní převaděče pro třídy serializ
 * Chcete-li přepsat výchozí chování vestavěného převaděče. Můžete například chtít, aby byly hodnoty `DateTime` ve formátu mm/dd/rrrr namísto výchozího formátu ISO 8601-1:2019.
 * Pro podporu vlastního typu hodnoty. Například struktura `PhoneNumber`.
 
-Můžete také napsat vlastní převaděče pro rozšiřování `System.Text.Json` s funkcemi, které nejsou součástí aktuální verze. Následující scénáře jsou pokryté dále v tomto článku:
+Můžete také napsat vlastní převaděče pro přizpůsobení nebo rozšiřování `System.Text.Json` s funkcemi, které nejsou součástí aktuální verze. Následující scénáře jsou pokryté dále v tomto článku:
 
 * [Deserializace odvozených typů do vlastností objektu](#deserialize-inferred-types-to-object-properties).
 * [Slovník podpory s jiným neřetězcovým klíčem](#support-dictionary-with-non-string-key)
@@ -68,9 +68,9 @@ Následující postup vysvětluje, jak vytvořit převaděč podle základního 
 * Vytvořte třídu, která je odvozena z <xref:System.Text.Json.Serialization.JsonConverter%601>, kde `T` je typ k serializaci a deserializaci.
 * Přepište metodu `Read` pro deserializaci příchozího JSON a převeďte ji na typ `T`. Použijte <xref:System.Text.Json.Utf8JsonReader>, která je předána metodě pro čtení formátu JSON.
 * Přepište metodu `Write` k serializaci příchozího objektu typu `T`. Použijte <xref:System.Text.Json.Utf8JsonWriter>, která je předána metodě pro zápis formátu JSON.
-* Metodu `CanConvert` popište pouze v případě potřeby. Výchozí implementace vrátí `true`, když typ, který má být převeden, je typ `T`. Proto převaděče, které podporují pouze typ `T`, nemusejí přepsat tuto metodu. Příklad převaděče, který musí přepsat tuto metodu, naleznete v části [polymorfní deserializace](#support-polymorphic-deserialization) dále v tomto článku.
+* Metodu `CanConvert` popište pouze v případě potřeby. Výchozí implementace vrátí `true`, když typ, který má být převeden, je typu `T`. Proto převaděče, které podporují pouze typ `T`, nemusejí přepsat tuto metodu. Příklad převaděče, který musí přepsat tuto metodu, naleznete v části [polymorfní deserializace](#support-polymorphic-deserialization) dále v tomto článku.
 
-Můžete odkazovat na [předdefinovaný zdrojový kód převaděče](https://github.com/dotnet/corefx/tree/master/src/System.Text.Json/src/System/Text/Json/Serialization/Converters/) jako referenční implementace pro psaní vlastních převaděčů.
+Můžete odkazovat na [předdefinovaný zdrojový kód převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters/) jako referenční implementace pro psaní vlastních převaděčů.
 
 ## <a name="steps-to-follow-the-factory-pattern"></a>Postup pro postup pro model výroby
 
@@ -179,14 +179,15 @@ V následujících částech jsou uvedeny ukázky konvertorů, které řeší n�
 
 ### <a name="deserialize-inferred-types-to-object-properties"></a>Deserializace odvozených typů do vlastností objektu
 
-Při deserializaci na vlastnost typu `Object`je vytvořen objekt `JsonElement`. Důvodem je, že deserializátor nezná typ CLR, který se má vytvořit, a nepokusí se odhadnout. Například pokud má vlastnost JSON hodnotu "true", deserializátor neodvodí, že hodnota je `Boolean`a pokud má element "01/01/2019", deserializátor neodvodí, že se jedná o `DateTime`.
+Při deserializaci na vlastnost typu `object`je vytvořen objekt `JsonElement`. Důvodem je, že deserializátor nezná typ CLR, který se má vytvořit, a nepokusí se odhadnout. Například pokud má vlastnost JSON hodnotu "true", deserializátor neodvodí, že hodnota je `Boolean`a pokud má element "01/01/2019", deserializátor neodvodí, že se jedná o `DateTime`.
 
 Odvození typu může být nepřesné. Pokud deserializátor analyzuje číslo JSON, které nemá žádné desetinné místo jako `long`, což může vést k problémům mimo rozsah, pokud byla hodnota původně serializována jako `ulong` nebo `BigInteger`. Analýza čísla s desetinnou čárkou jako `double` může přijít o přesnost, pokud bylo číslo původně serializováno jako `decimal`.
 
-Pro scénáře, které vyžadují odvození typu, ukazuje následující kód vlastní převaděč pro `Object` vlastnosti. Kód převede:
+Pro scénáře, které vyžadují odvození typu, ukazuje následující kód vlastní převaděč pro `object` vlastnosti. Kód převede:
 
 * `true` a `false` na `Boolean`
-* Čísla `long` nebo `double`
+* Čísla bez desítkové hodnoty pro `long`
+* Čísla s desetinnou čárkou pro `double`
 * Kalendářní data `DateTime`
 * Řetězce, které se mají `string`
 * Všechno ostatní `JsonElement`
@@ -195,9 +196,9 @@ Pro scénáře, které vyžadují odvození typu, ukazuje následující kód vl
 
 Následující kód registruje převaděč:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ConvertInferredTypesToObject.cs?name=SnippetRegister)]
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeInferredTypesToObject.cs?name=SnippetRegister)]
 
-Tady je příklad typu s `Object`mi vlastnostmi:
+Tady je příklad typu s `object`mi vlastnostmi:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithObjectProperties)]
 
@@ -213,7 +214,7 @@ Následující příklad JSON pro deserializaci obsahuje hodnoty, které budou d
 
 Bez vlastního převaděče je deserializace v každé vlastnosti `JsonElement`.
 
-[Složka testování částí](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/tests/Serialization/) v oboru názvů `System.Text.Json.Serialization` obsahuje další příklady vlastních převaděčů, které zpracovávají deserializaci na vlastnosti objektu.
+[Složka testování částí](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) v oboru názvů `System.Text.Json.Serialization` obsahuje další příklady vlastních převaděčů, které zpracovávají deserializaci na `object` vlastností.
 
 ### <a name="support-dictionary-with-non-string-key"></a>Slovník podpory s jiným neřetězcovým klíčem
 
@@ -225,7 +226,7 @@ Následující kód ukazuje vlastní převaděč, který spolupracuje s `Diction
 
 Následující kód registruje převaděč:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ConvertDictionaryTkeyEnumTValue.cs?name=SnippetRegister)]
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripDictionaryTkeyEnumTValue.cs?name=SnippetRegister)]
 
 Konvertor může serializovat a deserializovat vlastnost `TemperatureRanges` následující třídy, která používá následující `Enum`:
 
@@ -245,11 +246,11 @@ Výstup JSON z serializace vypadá jako v následujícím příkladu:
 }
 ```
 
-[Složka testování částí](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/tests/Serialization/) v oboru názvů `System.Text.Json.Serialization` obsahuje další příklady vlastních převaděčů, které zpracovávají slovníky neřetězcových klíčů.
+[Složka testování částí](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) v oboru názvů `System.Text.Json.Serialization` obsahuje další příklady vlastních převaděčů, které zpracovávají slovníky neřetězcových klíčů.
 
 ### <a name="support-polymorphic-deserialization"></a>Podpora polymorfního deserializace
 
-[Polymorfní serializace](system-text-json-how-to.md#serialize-properties-of-derived-classes) nevyžaduje vlastní převaděč, ale deserializace vyžaduje vlastní převaděč.
+Integrované funkce poskytují omezený rozsah [polymorfní serializace](system-text-json-how-to.md#serialize-properties-of-derived-classes) , ale vůbec nepodporují deserializaci. Deserializace vyžaduje vlastní převaděč.
 
 Předpokládejme například, že máte abstraktní základní třídu `Person` s `Employee` a `Customer` odvozené třídy. Polymorfní deserializace znamená, že v době návrhu můžete zadat `Person` jako cíl deserializace a `Customer` a `Employee` objekty ve formátu JSON jsou správně deserializovány za běhu. Během deserializace je nutné najít podoby, které identifikují požadovaný typ ve formátu JSON. Typy, které jsou k dispozici, se liší podle jednotlivých scénářů. Například může být k dispozici vlastnost diskriminátoru nebo může být nutné spoléhat na přítomnost určité vlastnosti nebo absence konkrétní vlastnosti. Aktuální verze `System.Text.Json` neposkytuje atributy pro určení způsobu zpracování polymorfních scénářů deserializace, takže jsou vyžadovány vlastní převaděče.
 
@@ -261,7 +262,7 @@ Následující kód ukazuje základní třídu, dvě odvozené třídy a vlastn�
 
 Následující kód registruje převaděč:
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ConvertPolymorphic.cs?name=SnippetRegister)]
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripPolymorphic.cs?name=SnippetRegister)]
 
 Konvertor může deserializovat JSON, který byl vytvořen pomocí stejného převaděče k serializaci, například:
 
@@ -282,22 +283,25 @@ Konvertor může deserializovat JSON, který byl vytvořen pomocí stejného př
 
 ## <a name="other-custom-converter-samples"></a>Další ukázky vlastního převaděče
 
-[Složka testování částí](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/tests/Serialization/) ve zdrojovém kódu `System.Text.Json.Serialization` obsahuje další ukázky vlastního převaděče, jako například:
+Článek [migrace z Newtonsoft. JSON na System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md) obsahuje další ukázky vlastních převaděčů.
 
-* převaděč `Int32`, který při deserializaci převede hodnotu null na 0
-* převaděč `Int32`, který umožňuje v případě deserializace řetězcové i číselné hodnoty
-* převaděč `Enum`
-* převaděč `List<T>`, který přijímá externí data
-* převaděč `Long[]`, který pracuje se seznamem čísel oddělených čárkami 
+[Složka testování částí](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) ve zdrojovém kódu `System.Text.Json.Serialization` obsahuje další ukázky vlastního převaděče, jako například:
+
+* [Konvertor Int32, který při deserializaci převede hodnotu null na 0](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.NullValueType.cs)
+* [Konvertor Int32, který umožňuje řetězcové i číselné hodnoty při deserializaci](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Int32.cs)
+* [Konvertor Enum](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Enum.cs)
+* [Vypíše převaděč >\<T, který přijímá externí data.](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
+* [Long [] převaděč, který funguje se seznamem čísel oddělených čárkami](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs) 
+
+Pokud potřebujete vytvořit převaděč, který upraví chování existujícího integrovaného převaděče, můžete získat [zdrojový kód existujícího převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters) , který slouží jako výchozí bod pro přizpůsobení.
 
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 
+* [Zdrojový kód pro předdefinované převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
+* [Podpora DateTime a DateTimeOffset v System. text. JSON](../datetime/system-text-json-support.md)
 * [Přehled System. text. JSON](system-text-json-overview.md)
-* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
 * [Jak používat System. text. JSON](system-text-json-how-to.md)
-* [Zdrojový kód pro předdefinované převaděče](https://github.com/dotnet/corefx/tree/master/src/System.Text.Json/src/System/Text/Json/Serialization/Converters/)
-* Problémy GitHubu související s vlastními převaděči pro `System.Text.Json`
-  * [36639 Představujeme vlastní převaděče](https://github.com/dotnet/corefx/issues/36639)
-  * [38713 o deserializaci do objektu](https://github.com/dotnet/corefx/issues/38713)
-  * [40120 o slovnících bez řetězcových klíčů](https://github.com/dotnet/corefx/issues/40120)
-  * [37787 o polymorfní deserializaci](https://github.com/dotnet/corefx/issues/37787)
+* [Postup migrace z Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
+* [Reference k rozhraní API System. text. JSON. Serialization](xref:System.Text.Json.Serialization)
+<!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

@@ -1,19 +1,19 @@
 ---
 title: Postup serializace a deserializace JSON C# pomocí-.NET
-ms.date: 09/16/2019
+ms.date: 01/10/2020
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: a9c690e736a08c729a4099d5e7a519ed17ec282c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 047d5b5c6fa339089d2054eb6bfe8b3066c1d00c
+ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705792"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75904661"
 ---
-# <a name="how-to-serialize-and-deserialize-json-in-net"></a>Postup serializace a deserializace JSON v rozhraní .NET
+# <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET
 
 Tento článek ukazuje, jak použít obor názvů <xref:System.Text.Json> k serializaci a deserializaci do a z JavaScript Object Notation (JSON).
 
@@ -109,7 +109,7 @@ Serializace do UTF-8 je přibližně 5-10% rychlejší než použití metod zalo
 * [Výchozí kodér](xref:System.Text.Encodings.Web.JavaScriptEncoder.Default) řídí znaky jiné než ASCII, znaky citlivé na jazyk HTML v rozsahu ASCII a znaky, které musí být uvozeny podle [specifikace JSON RFC 8259](https://tools.ietf.org/html/rfc8259#section-7).
 * Ve výchozím nastavení je JSON minifikovaného. [Kód JSON můžete v podstatě vytisknout](#serialize-to-formatted-json).
 * Ve výchozím nastavení jsou malá a velká písmena názvů JSON shodná s názvy .NET. Můžete [přizpůsobit název a velikost písmen JSON](#customize-json-names-and-values).
-* Byly zjištěny cyklické odkazy a byly vyvolány výjimky. Další informace najdete v tématu [problém 38579 na cyklických odkazech](https://github.com/dotnet/corefx/issues/38579) v úložišti dotnet/Corefx na GitHubu.
+* Byly zjištěny cyklické odkazy a byly vyvolány výjimky.
 * V současné době jsou pole vyloučena.
 
 Mezi podporované typy patří:
@@ -118,7 +118,7 @@ Mezi podporované typy patří:
 * Uživatelsky definované [prosté staré objekty CLR (POCOs)](https://stackoverflow.com/questions/250001/poco-definition).
 * Jednorozměrné a vícenásobná pole (`ArrayName[][]`).
 * `Dictionary<string,TValue>`, kde `TValue` je `object`, `JsonElement`nebo POCO.
-* Kolekce z následujících oborů názvů. Další informace najdete v tématu věnovaném [problému s podporou shromažďování](https://github.com/dotnet/corefx/issues/36643) v úložišti dotnet/Corefx na GitHubu.
+* Kolekce z následujících oborů názvů.
   * <xref:System.Collections>
   * <xref:System.Collections.Generic>
   * <xref:System.Collections.Immutable>
@@ -154,7 +154,7 @@ Chcete-li provést deserializaci ze znakové sady UTF-8, zavolejte <xref:System.
 * Ve výchozím nastavení se při porovnávání názvů vlastností rozlišují velká a malá písmena. Můžete [zadat nerozlišování velkých a malých písmen](#case-insensitive-property-matching).
 * Pokud JSON obsahuje hodnotu vlastnosti jen pro čtení, hodnota je ignorována a není vyvolána žádná výjimka.
 * Deserializace na odkazové typy bez bezparametrového konstruktoru není podporována.
-* Deserializace u neměnných objektů nebo vlastností jen pro čtení není podporována. Další informace najdete v tématu věnovaném [problému GitHub 38569 pro neproměnlivou podporu objektů](https://github.com/dotnet/corefx/issues/38569) a [vydání 38163 v podpoře vlastností jen pro čtení](https://github.com/dotnet/corefx/issues/38163) v úložišti dotnet/corefx na GitHubu.
+* Deserializace u neměnných objektů nebo vlastností jen pro čtení není podporována.
 * Ve výchozím nastavení jsou výčty podporovány jako čísla. [Názvy výčtů můžete serializovat jako řetězce](#enums-as-strings).
 * Pole nejsou podporována.
 * Ve výchozím nastavení komentáře nebo koncové čárky ve formátu JSON vyvolají výjimky. Můžete [povolovat komentáře a koncové čárky](#allow-comments-and-trailing-commas).
@@ -458,7 +458,9 @@ Chcete-li minimalizovat uvozovací znaky, můžete použít <xref:System.Text.En
 
 ## <a name="serialize-properties-of-derived-classes"></a>Serializovat vlastnosti odvozených tříd
 
-Polymorfní serializace není podporována, pokud zadáte v době kompilace typ, který se má serializovat. Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastDerived`:
+Serializace hierarchie polymorfního typu není podporována. Například pokud je vlastnost definována jako rozhraní nebo abstraktní třída, jsou serializovány pouze vlastnosti definované v rozhraní nebo abstraktní třídě, a to i v případě, že typ modulu runtime má další vlastnosti. Výjimky z tohoto chování jsou vysvětleny v této části.
+
+Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastDerived`:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
@@ -480,7 +482,7 @@ V tomto scénáři není vlastnost `WindSpeed` serializována i v případě, ž
 
 Toto chování je určeno k tomu, aby se zabránilo náhodnému úniku dat v odvozeném typu vytvořeném modulem runtime.
 
-Chcete-li serializovat vlastnosti odvozeného typu, použijte jeden z následujících přístupů:
+Chcete-li serializovat vlastnosti odvozeného typu v předchozím příkladu, použijte jeden z následujících přístupů:
 
 * Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které umožňuje určit typ za běhu:
 
@@ -494,14 +496,74 @@ V předchozím ukázkovém scénáři obě přístupy způsobí, že vlastnost `
 
 ```json
 {
+  "WindSpeed": 35,
   "Date": "2019-08-01T00:00:00-07:00",
   "TemperatureCelsius": 25,
-  "Summary": "Hot",
-  "WindSpeed": 35
+  "Summary": "Hot"
 }
 ```
 
-Informace o polymorfní deserializaci naleznete v tématu [Podpora polymorfního deserializace](system-text-json-converters-how-to.md#support-polymorphic-deserialization).
+> [!IMPORTANT]
+> Tyto přístupy poskytují polymorfní serializaci pouze pro kořenový objekt, který má být serializován, nikoli pro vlastnosti daného kořenového objektu. 
+
+Můžete získat polymorfní serializaci pro objekty nižší úrovně, pokud je definujete jako typ `object`. Předpokládejme například, že vaše třída `WeatherForecast` má vlastnost s názvem `PreviousForecast`, kterou lze definovat jako typ `WeatherForecast` nebo `object`:
+
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPrevious)]
+
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPreviousAsObject)]
+
+Pokud vlastnost `PreviousForecast` obsahuje instanci `WeatherForecastDerived`:
+
+* Výstup JSON pro serializaci `WeatherForecastWithPrevious` **nezahrnuje** `WindSpeed`.
+* Výstup JSON pro serializaci `WeatherForecastWithPreviousAsObject` **zahrnuje** `WindSpeed`.
+
+Pro serializaci `WeatherForecastWithPreviousAsObject`není nutné volat `Serialize<object>` nebo `GetType`, protože kořenový objekt není ten, který může být odvozeného typu. Následující příklad kódu nevolá `Serialize<object>` nebo `GetType`:
+
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeSecondLevel)]
+
+Předchozí kód správně serializace `WeatherForecastWithPreviousAsObject`:
+
+```json
+{
+  "Date": "2019-08-01T00:00:00-07:00",
+  "TemperatureCelsius": 25,
+  "Summary": "Hot",
+  "PreviousForecast": {
+    "WindSpeed": 35,
+    "Date": "2019-08-01T00:00:00-07:00",
+    "TemperatureCelsius": 25,
+    "Summary": "Hot"
+  }
+}
+```
+
+Stejný přístup k definování vlastností jako `object` pracuje s rozhraními. Předpokládejme, že máte následující rozhraní a implementaci a chcete serializovat třídu s vlastnostmi, které obsahují instance implementace:
+
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/IForecast.cs)]
+
+Při serializaci instance `Forecasts`pouze `Tuesday` zobrazí vlastnost `WindSpeed`, protože `Tuesday` je definován jako `object`:
+
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeInterface)]
+
+Následující příklad ukazuje kód JSON, který je výsledkem předchozího kódu:
+
+```json
+{
+  "Monday": {
+    "Date": "2020-01-06T00:00:00-08:00",
+    "TemperatureCelsius": 10,
+    "Summary": "Cool"
+  },
+  "Tuesday": {
+    "Date": "2020-01-07T00:00:00-08:00",
+    "TemperatureCelsius": 11,
+    "Summary": "Rainy",
+    "WindSpeed": 10
+  }
+}
+```
+
+Další informace o polymorfní **serializaci**a informace o **deserializaci**naleznete v tématu [How to migruje from Newtonsoft. JSON to System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Povolí komentáře a koncové čárky.
 
@@ -626,11 +688,11 @@ Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializer
 
 Při této možnosti je vlastnost `Summary` objektu `WeatherForecastWithDefault` výchozí hodnotou "No Summary" po deserializaci.
 
-Hodnoty null ve formátu JSON jsou ignorovány pouze v případě, že jsou platné. Hodnoty null pro typy hodnot, které neumožňují hodnotu null, způsobují výjimky. Další informace najdete v tématu [problém 40922 na typech hodnot, které](https://github.com/dotnet/corefx/issues/40922) neumožňují hodnotu null v úložišti dotnet/Corefx na GitHubu.
+Hodnoty null ve formátu JSON jsou ignorovány pouze v případě, že jsou platné. Hodnoty null pro typy hodnot, které neumožňují hodnotu null, způsobují výjimky.
 
 ## <a name="utf8jsonreader-utf8jsonwriter-and-jsondocument"></a>Utf8JsonReader, Utf8JsonWriter a JsonDocument
 
-<xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> je pro text JSON s kódováním UTF-8 s vysokým výkonem, který je určený jen pro čtení, načtený z `ReadOnlySpan<byte>`. `Utf8JsonReader` je typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace. Metoda <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> používá `Utf8JsonReader` v rámci pokrývání.
+<xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> je pro text JSON s kódováním UTF-8 s vysokým výkonem vysoce výkonné, nízké přidělení a je čteno z `ReadOnlySpan<byte>` nebo `ReadOnlySequence<byte>`. `Utf8JsonReader` je typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace. Metoda <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> používá `Utf8JsonReader` v rámci pokrývání.
 
 <xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> je vysoce výkonný způsob, jak psát text JSON kódovaný v kódování UTF-8 ze běžných typů .NET, jako jsou `String`, `Int32`a `DateTime`. Zapisovač je typ nižší úrovně, který lze použít k vytvoření vlastních serializátorů. Metoda <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> používá `Utf8JsonWriter` v rámci pokrývání.
 
@@ -699,14 +761,15 @@ Následující příklad ukazuje, jak číst soubor synchronně a vyhledat hodno
 
 Předchozí kód:
 
+* Předpokládá, že JSON obsahuje pole objektů a každý objekt může obsahovat vlastnost Name typu String.
+* Spočítá hodnoty vlastností Objects a Name, které končí na "University".
 * Předpokládá, že soubor je kódovaný jako UTF-16 a překóduje ho do UTF-8. Soubor kódovaný jako UTF-8 lze číst přímo do `ReadOnlySpan<byte>`pomocí následujícího kódu:
 
   ```csharp
   ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName); 
   ```
 
-* Předpokládá, že JSON obsahuje pole objektů a každý objekt může obsahovat vlastnost Name typu String.
-* Počítá objekty a `name` hodnoty vlastností, které končí na "University".
+  Pokud soubor obsahuje znak pořadí bajtů UTF-8 (BOM), odeberte ho před předáním bajtů do `Utf8JsonReader`, protože čtecí modul očekává text. V opačném případě se kusovník považuje za neplatný kód JSON a čtenář vyvolá výjimku.
 
 Zde je ukázka JSON, kterou může předchozí kód přečíst. Výsledná Souhrnná zpráva je "2 z čtvrtého" má názvy, které končí na "University" ":
 
@@ -715,7 +778,8 @@ Zde je ukázka JSON, kterou může předchozí kód přečíst. Výsledná Souhr
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Přehled System. text. JSON](system-text-json-overview.md)
-* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
-* [Zápis vlastních převaděčů pro System. text. JSON](system-text-json-converters-how-to.md)
+* [Zápis vlastních převaděčů](system-text-json-converters-how-to.md)
+* [Postup migrace z Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
 * [Podpora DateTime a DateTimeOffset v System. text. JSON](../datetime/system-text-json-support.md)
-* [Problémy GitHubu v úložišti dotnet/corefx s označením JSON-funkce-doc](https://github.com/dotnet/corefx/labels/json-functionality-doc) 
+* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
+<!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

@@ -9,6 +9,8 @@
           href: system-text-json-how-to.md
         - name: Postup zápisu vlastních převaděčů
           href: system-text-json-converters-how-to.md
+        - name: Postup migrace z Newtonsoft.Json
+          href: system-text-json-migrate-from-newtonsoft-how-to.md
     - name: Binární serializace
       href: binary-serialization.md
       items:

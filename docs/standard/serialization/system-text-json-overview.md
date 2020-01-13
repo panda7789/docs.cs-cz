@@ -1,19 +1,19 @@
 ---
 title: Serializace a deserializace C# JSON pomocí-.NET
-ms.date: 09/16/2019
+ms.date: 01/10/2020
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 6561d5e1580e1170369622ebc7bb330ff4e0964f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c05783963ba521109fb542f247ec9e62fdb5c2d9
+ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705779"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75904646"
 ---
-# <a name="json-serialization-in-net---overview"></a>Serializace JSON v .NET – přehled
+# <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Serializace a deserializace JSON (zařazení a zrušení zařazení) v .NET – přehled
 
 Obor názvů `System.Text.Json` poskytuje funkce pro serializaci a deserializaci z JavaScript Object Notation (JSON).
 
@@ -26,16 +26,15 @@ Knihovna také poskytuje třídy pro práci s modelem objektů dokumentů v pam�
 * Knihovna je integrovaná jako součást sdíleného rozhraní [.NET Core 3,0](https://aka.ms/netcore3download) .
 * Pro jiná cílová rozhraní nainstalujte balíček NuGet [System. text. JSON](https://www.nuget.org/packages/System.Text.Json) . Balíček podporuje:
   * .NET Standard 2,0 a novější verze
-  * .NET Framework 4.6.1 a novější verze
+  * .NET Framework 4.7.2 a novější verze
   * .NET Core 2,0, 2,1 a 2,2
 
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Jak používat knihovnu](system-text-json-how-to.md)
-* [Zdrojový kód](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Text.Json)
-* [Referenční dokumentace rozhraní API](xref:System.Text.Json)
-* [Plán](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Text.Json/roadmap/README.md)
-* Problémy GitHubu v úložišti dotnet/corefx
-  * [Diskuze o vývoji System. text. JSON](https://github.com/dotnet/corefx/issues/33115) <!-- TODO: Issues are still not moved to the new repo-->
-  * [Všechny problémy System. text. JSON](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json)
-  * [Problémy System. text. JSON s označením JSON – funkce-doc](https://github.com/dotnet/runtime/labels/json-functionality-doc)
+* [Postup migrace z Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Zápis převaděčů](system-text-json-converters-how-to.md)
+* [Zdrojový kód System. text. JSON](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json)
+* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
+* [Reference k rozhraní API System. text. JSON. Serialization](xref:System.Text.Json.Serialization)
+<!-- * [Roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

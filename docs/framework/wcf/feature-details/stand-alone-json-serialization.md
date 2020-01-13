@@ -2,17 +2,17 @@
 title: Samostatná serializace JSON pomocí DataContractJsonSerializer
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 412da71617a8627c47e877a75770271d9a3cf180
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 39d3c0acd75ffd9a54c5e62a15487a2cd8c465cb
+ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976077"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75904608"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>Samostatná serializace JSON pomocí DataContractJsonSerializer
 
 > [!NOTE]
-> Tento článek se týká <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme použít nástroje v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md). 
+> Tento článek se týká <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme rozhraní API v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md). 
 
 JSON (JavaScript Object Notation) je formát dat, který je speciálně navržený tak, aby se používal v kódu JavaScriptu běžícím na webových stránkách v prohlížeči. Je to výchozí formát dat používaný službami ASP.NET AJAX vytvořenými v Windows Communication Foundation (WCF).
 
@@ -28,18 +28,18 @@ Následující tabulka ukazuje korespondenci mezi typy rozhraní .NET a typy JSO
 
 |Typy .NET|JSON/JavaScript|Poznámky|
 |----------------|----------------------|-----------|
-|Všechny číselné typy, například <xref:System.Int32>, <xref:System.Decimal> nebo <xref:System.Double>|Číslo|Speciální hodnoty jako `Double.NaN`, `Double.PositiveInfinity` a `Double.NegativeInfinity` nejsou podporovány a mají za následek neplatný formát JSON.|
-|<xref:System.Enum>|Číslo|Viz část "výčty a JSON" dále v tomto tématu.|
+|Všechny číselné typy, například <xref:System.Int32>, <xref:System.Decimal> nebo <xref:System.Double>|Počet|Speciální hodnoty jako `Double.NaN`, `Double.PositiveInfinity` a `Double.NegativeInfinity` nejsou podporovány a mají za následek neplatný formát JSON.|
+|<xref:System.Enum>|Počet|Viz část "výčty a JSON" dále v tomto tématu.|
 |<xref:System.Boolean>|Boolean|--|
-|<xref:System.String><xref:System.Char>|String|--|
-|<xref:System.TimeSpan>, <xref:System.Guid><xref:System.Uri>|String|Formát těchto typů ve formátu JSON je stejný jako v jazyce XML (v podstatě se jedná o časový interval ve formátu ISO 8601 Duration, identifikátor GUID ve formátu "12345678-ABCD-ABCD-ABCD-1234567890AB" a identifikátor URI ve formě přirozeného řetězce, jako je například "http://www.example.com"). Podrobné informace najdete v tématu [referenční informace o schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).|
+|<xref:System.String>, <xref:System.Char>|String|--|
+|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|String|Formát těchto typů ve formátu JSON je stejný jako v jazyce XML (v podstatě se jedná o časový interval ve formátu ISO 8601 Duration, identifikátor GUID ve formátu "12345678-ABCD-ABCD-ABCD-1234567890AB" a identifikátor URI ve formě přirozeného řetězce, jako je například "http://www.example.com"). Podrobné informace najdete v tématu [referenční informace o schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).|
 |<xref:System.Xml.XmlQualifiedName>|String|Formát je "název: obor názvů" (cokoli před první dvojtečkou je název). Název nebo obor názvů může chybět. Pokud obor názvů neexistuje, může být dvojtečka také vynechána.|
 |<xref:System.Array> typu <xref:System.Byte>|Pole čísel|Každé číslo představuje hodnotu jednoho bajtu.|
 |<xref:System.DateTime>|DateTime nebo String|Viz data a časy a JSON později v tomto tématu.|
 |<xref:System.DateTimeOffset>|Komplexní typ|Viz data a časy a JSON později v tomto tématu.|
 |Typy XML a ADO.NET (<xref:System.Xml.XmlElement>,<br /><br /> <xref:System.Xml.Linq.XElement>. Pole <xref:System.Xml.XmlNode>,<br /><br /> <xref:System.Runtime.Serialization.ISerializable>,<br /><br /> <xref:System.Data.DataSet>).|String|Další informace najdete v části Typy XML a JSON tohoto tématu.|
 |<xref:System.DBNull>|Prázdný komplexní typ|--|
-|Kolekce, slovníky a pole|Skupin|Viz část kolekce, slovníky a pole tohoto tématu.|
+|Kolekce, slovníky a pole|Array|Viz část kolekce, slovníky a pole tohoto tématu.|
 |Komplexní typy (s použitým <xref:System.Runtime.Serialization.DataContractAttribute> nebo <xref:System.SerializableAttribute>)|Komplexní typ|Datové členy se stanou členy komplexního typu JavaScriptu.|
 |Komplexní typy implementující rozhraní <xref:System.Runtime.Serialization.ISerializable>)|Komplexní typ|Stejné jako u jiných složitých typů, ale některé typy <xref:System.Runtime.Serialization.ISerializable> nejsou podporované – Podívejte se na část podpora ISerializable v části Rozšířené informace v tomto tématu.|
 |hodnota `Null` pro jakýkoliv typ|Null|Typy s možnou hodnotou null jsou také podporovány a mapovány na formát JSON stejným způsobem jako typy bez hodnoty null.|
@@ -113,7 +113,7 @@ Při deserializaci odvozeného typu může dojít ke ztrátě informací o typu,
 
 Při deserializaci do typu rozhraní <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> deserializace, jako by byl deklarovaný typ Object.
 
-Při práci s vlastními základními a odvozenými typy pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute>, je obvykle vyžadován <xref:System.ServiceModel.ServiceKnownTypeAttribute> nebo ekvivalentní mechanismus. Například pokud máte operaci, která má návratovou hodnotu `Animal` a ve skutečnosti vrátí instanci `Cat` (odvozenou z `Animal`), měli byste buď použít <xref:System.Runtime.Serialization.KnownTypeAttribute>, na `Animal` typ nebo <xref:System.ServiceModel.ServiceKnownTypeAttribute> na operaci a zadat typ `Cat` v těchto atributech. Další informace najdete v tématu [známé typy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).
+Při práci s vlastními základními a odvozenými typy pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute>, je obvykle vyžadován <xref:System.ServiceModel.ServiceKnownTypeAttribute> nebo ekvivalentní mechanismus. Například pokud máte operaci, která má návratovou hodnotu `Animal` a ve skutečnosti vrátí instanci `Cat` (odvozenou z `Animal`), měli byste buď použít <xref:System.Runtime.Serialization.KnownTypeAttribute>, na `Animal` typ nebo <xref:System.ServiceModel.ServiceKnownTypeAttribute> na operaci a zadat typ `Cat` v těchto atributech. Další informace najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).
 
 Podrobnosti o tom, jak polymorfní serializace funguje a diskuzi o některých omezeních, která musí být při použití dodržena, najdete v části Rozšířené informace dále v tomto tématu.
 
