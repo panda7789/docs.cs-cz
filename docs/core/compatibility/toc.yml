@@ -16,7 +16,11 @@
     - name: Z verze 2.0 do verze 2.1
       href: 2.0-2.1.md
     - name: Z verze .NET Framework do verze .NET Core
-      href: fx-core.md
+      items:
+        - name: Změny způsobující chyby
+          href: fx-core.md
+        - name: Rozhraní API vyvolávající výjimky
+          href: unsupported-apis.md
 - name: Podle oblasti
   expanded: true
   items:

@@ -185,7 +185,7 @@
       items:
         - name: Ladění nevrácené paměti
           href: diagnostics/debug-memory-leak.md
-- name: Testování částí
+- name: Testování jednotek
   href: testing/index.md
   items:
     - name: Osvědčené postupy pro testování částí
@@ -339,8 +339,9 @@
     - name: XML Serializer Generator
       href: additional-tools/xml-serializer-generator.md
 - name: Přenos z rozhraní .NET Framework
-  href: porting/index.md
   items:
+    - name: Přehled
+      href: porting/index.md
     - name: Technologie .NET Framework nedostupné pro .NET Core
       href: porting/net-framework-tech-unavailable.md
     - name: Analýza závislostí třetích stran
