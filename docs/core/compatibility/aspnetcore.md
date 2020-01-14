@@ -1,25 +1,25 @@
 ---
 title: ASP.NET Core zásadní změny – .NET Core
 description: Zobrazí seznam nejnovějších změn v ASP.NET Core.
-ms.date: 12/20/2019
+ms.date: 01/10/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 3eff2e1d292daf9f709b28da0db9d089aeebd464
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 815dfbc217cc486659988dd00840484d6ec03276
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344283"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937275"
 ---
-# <a name="aspnet-core-breaking-changes"></a><span data-ttu-id="9cb84-103">ASP.NET Core přerušující změny</span><span class="sxs-lookup"><span data-stu-id="9cb84-103">ASP.NET Core breaking changes</span></span>
+# <a name="aspnet-core-breaking-changes"></a><span data-ttu-id="69aa7-103">ASP.NET Core přerušující změny</span><span class="sxs-lookup"><span data-stu-id="69aa7-103">ASP.NET Core breaking changes</span></span>
 
-<span data-ttu-id="9cb84-104">Následuje seznam ASP.NET Core zásadní změny ve verzi ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="9cb84-104">The following is a list of ASP.NET Core breaking changes by ASP.NET Core version.</span></span> <span data-ttu-id="9cb84-105">ASP.NET Core poskytuje funkce pro vývoj webových aplikací, které používá .NET Core.</span><span class="sxs-lookup"><span data-stu-id="9cb84-105">ASP.NET Core provides the web app development features used by .NET Core.</span></span>
+<span data-ttu-id="69aa7-104">Následuje seznam ASP.NET Core zásadní změny ve verzi ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="69aa7-104">The following is a list of ASP.NET Core breaking changes by ASP.NET Core version.</span></span> <span data-ttu-id="69aa7-105">ASP.NET Core poskytuje funkce pro vývoj webových aplikací, které používá .NET Core.</span><span class="sxs-lookup"><span data-stu-id="69aa7-105">ASP.NET Core provides the web app development features used by .NET Core.</span></span>
 
-## <a name="aspnet-core-31"></a><span data-ttu-id="9cb84-106">ASP.NET Core 3,1</span><span class="sxs-lookup"><span data-stu-id="9cb84-106">ASP.NET Core 3.1</span></span>
+## <a name="aspnet-core-31"></a><span data-ttu-id="69aa7-106">ASP.NET Core 3,1</span><span class="sxs-lookup"><span data-stu-id="69aa7-106">ASP.NET Core 3.1</span></span>
 
 [!INCLUDE[HTTP: Browser SameSite changes impact authentication](~/includes/core-changes/aspnetcore/3.1/http-cookie-samesite-authn-impacts.md)]
 
-## <a name="aspnet-core-30"></a><span data-ttu-id="9cb84-107">ASP.NET Core 3,0</span><span class="sxs-lookup"><span data-stu-id="9cb84-107">ASP.NET Core 3.0</span></span>
+## <a name="aspnet-core-30"></a><span data-ttu-id="69aa7-107">ASP.NET Core 3,0</span><span class="sxs-lookup"><span data-stu-id="69aa7-107">ASP.NET Core 3.0</span></span>
 
 [!INCLUDE[obsolete Antiforgery, CORS, Diagnostics, MVC, and Routing APIs removed](~/includes/core-changes/aspnetcore/3.0/obsolete-apis-removed.md)]
 
@@ -74,6 +74,10 @@ ms.locfileid: "75344283"
 ***
 
 [!INCLUDE[Hosting: Generic host restriction on Startup constructor injection](~/includes/core-changes/aspnetcore/3.0/hosting-generic-host-startup-ctor-restriction.md)]
+
+***
+
+[!INCLUDE[Hosting: HTTPS redirection enabled for IIS OutOfProcess](~/includes/core-changes/aspnetcore/3.0/hosting-https-redirection-iis-outofprocess.md)]
 
 ***
 
