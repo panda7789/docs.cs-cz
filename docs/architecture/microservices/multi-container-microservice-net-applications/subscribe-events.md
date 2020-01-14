@@ -2,12 +2,12 @@
 title: Přihlášení k odběru událostí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s podrobnostmi o publikování a předplatném integračních událostí.
 ms.date: 10/02/2018
-ms.openlocfilehash: c607f8b980f7dffacf3564688c6c9bb498264d96
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: facbb04d322c5df03498a0313556dd9b5b3161d2
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737061"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937149"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -368,7 +368,7 @@ Pokud je nastaven příznak "", příjemce musí brát v úvahu, protože zpráv
     <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
 - **Rick Saling. CAP věta: Proč "vše je jiné" s cloudem a Internet** \
-    <https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
+    <https://docs.microsoft.com/archive/blogs/rickatmicrosoft/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
 
 - **Eric pivovar. LIMIT 12 let později: způsob, jakým se změnila pravidla** \
     <https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed>

@@ -2,12 +2,12 @@
 title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 description: Přečtěte si postup pro "vnější smyčku" pracovního postupu DevOps.
 ms.date: 02/15/2019
-ms.openlocfilehash: 7c465ab380770441005f7365f53bc585236c31bd
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 735f92c00cd6279649ec3b0c35cfb00543f21a8c
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738334"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936784"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
 
@@ -67,7 +67,7 @@ Zde jsou základní kroky pracovního postupu CI s použitím Docker a Azure Dev
 
 ### <a name="implementing-the-ci-pipeline-with-azure-devops-services-and-the-docker-extension-for-azure-devops-services"></a>Implementace kanálu CI pomocí Azure DevOps Services a rozšíření Docker pro Azure DevOps Services
 
-Visual Studio Azure DevOps Services obsahuje šablony verzí Build &, které můžete použít v kanálu CI/CD, se kterými můžete vytvářet image Docker, image Docker do ověřeného registru Docker, spouštět image Docker nebo spouštět jiné operace, které nabízí. Docker CLI. Přidá taky Docker Compose úkol, který můžete použít k sestavení, vložení a spuštění aplikací Docker pro více kontejnerů, nebo spuštění jiných operací, které nabízí Docker Compose CLI, jak je znázorněno na obrázku 5-3.
+Visual Studio Azure DevOps Services obsahuje šablony verzí Build &, které můžete použít v kanálu CI/CD, pomocí kterých můžete vytvářet image Docker, image Docker do ověřeného registru Docker, spouštět image Docker nebo spouštět jiné operace nabízené rozhraním Docker CLI. Přidá taky Docker Compose úkol, který můžete použít k sestavení, vložení a spuštění aplikací Docker pro více kontejnerů, nebo spuštění jiných operací, které nabízí Docker Compose CLI, jak je znázorněno na obrázku 5-3.
 
 ![Snímek obrazovky s kanálem služby Docker CI v Azure DevOps.](./media/docker-application-outer-loop-devops-workflow/docker-ci-pipeline-azure-devops.png)
 
@@ -75,9 +75,9 @@ Visual Studio Azure DevOps Services obsahuje šablony verzí Build &, které mů
 
 Tyto šablony a úlohy můžete použít k vytvoření a otestování artefaktů CI/CD pro sestavování, testování a nasazení v Azure Service Fabric, službě Azure Kubernetes a podobných nabídek.
 
-Pomocí těchto úloh Visual Studio Team Services, hostitele nebo virtuálního počítače se systémem Linux, který jste zřídili v Azure, a preferovaného registru Docker (Azure Container Registry, Docker Hub, privátního Docker DTR nebo jakéhokoli jiného registru Docker), můžete kanál CI Docker sestavit do velmi konzistentní způsob.
+Pomocí těchto úloh Visual Studio Team Services, hostitele nebo virtuálního počítače se systémem Linux, který jste zřídili v Azure, a preferovaného registru Docker (Azure Container Registry, Docker Hub, privátního Docker DTR nebo jakéhokoli jiného registru Docker), můžete kanál CI Docker sestavit velmi konzistentně.
 
-***Požadavků***
+***Požadavky:***
 
 - Azure DevOps Services nebo pro místní instalace Team Foundation Server 2015 Update 3 nebo novější.
 
@@ -91,7 +91,7 @@ Pomocí těchto úloh Visual Studio Team Services, hostitele nebo virtuálního 
 >   <https://hub.docker.com/_/microsoft-azure-pipelines-vsts-agent>
 >
 > - Sestavování imagí Docker platformy .NET Core Linux pomocí Azure DevOps Services: \
->   <https://blogs.msdn.microsoft.com/stevelasker/2016/06/13/building-net-core-linux-docker-images-with-visual-studio-team-services/>
+>   <https://docs.microsoft.com/archive/blogs/stevelasker/building-net-core-linux-docker-images-with-visual-studio-team-services>
 >
 > - Sestavování počítače se systémem Linux Visual Studio Team Service s podporou Docker: \
 >   <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
