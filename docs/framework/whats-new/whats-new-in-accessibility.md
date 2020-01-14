@@ -7,12 +7,12 @@ dev_langs:
 - vb
 helpviewer_keywords:
 - what's new [.NET Framework]
-ms.openlocfilehash: 681328af3f3624a8398d5125b952593f2c0510c7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6f17cb0fb6e5b0457af745ea0d089f3e51d4706c
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427631"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938145"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v přístupnosti v .NET Framework
 
@@ -22,7 +22,7 @@ ms.locfileid: "74427631"
 
 Aplikaci můžete nakonfigurovat tak, aby se přihlásila k funkcím přístupnosti, pokud cílíte .NET Framework 4,7 nebo starší verzi, ale běží na .NET Framework 4.7.1 nebo novějším. Pokud cílíte .NET Framework 4.7.1 nebo novější, můžete aplikaci nakonfigurovat tak, aby používala starší funkce (a nevyužila výhody funkcí usnadnění). Každá verze .NET Framework, která zahrnuje funkce usnadnění, má přepínač dostupnosti specifický pro verzi, který přidáte do prvku [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) v části [`<runtime>`](../configure-apps/file-schema/runtime/index.md) konfiguračního souboru aplikace. Podporovány jsou následující přepínače:
 
-|Verze|Přepínač|
+|Version|Přepínač|
 |---|---|
 |.NET Framework 4.7.1|"Switch. UseLegacyAccessibilityFeatures"|
 |.NET Framework 4.7.2|"Switch.UseLegacyAccessibilityFeatures.2"|
@@ -136,7 +136,7 @@ namespace WindowsFormsApplication
 
 **Události oznámení UIA**
 
-Událost oznámení UIA zavedená ve Windows 10 vede k aktualizaci Creators Update, umožňuje vaší aplikaci vyvolat událost UIA, která vede k tomu, že v programu Narrator stačí vytvořit oznámení na základě textu, který zadáte do události, aniž by bylo nutné mít odpovídající ovládací prvek v uživatelském rozhraní. V některých scénářích je to jednoduchý způsob, jak výrazně zlepšit přístupnost vaší aplikace. Aplikace může být užitečná také pro oznamování průběhu některých procesů, které mohou trvat dlouhou dobu. Další informace o událostech oznámení UIA najdete v tématu [může vaše desktopová aplikace využít novou událost oznámení uživatelského rozhraní?](https://blogs.msdn.microsoft.com/winuiautomation/2017/11/08/can-your-desktop-app-leverage-the-new-uia-notification-event-in-order-to-have-narrator-say-exactly-what-your-customers-need/).
+Událost oznámení UIA zavedená ve Windows 10 vede k aktualizaci Creators Update, umožňuje vaší aplikaci vyvolat událost UIA, která vede k tomu, že v programu Narrator stačí vytvořit oznámení na základě textu, který zadáte do události, aniž by bylo nutné mít odpovídající ovládací prvek v uživatelském rozhraní. V některých scénářích je to jednoduchý způsob, jak výrazně zlepšit přístupnost vaší aplikace. Aplikace může být užitečná také pro oznamování průběhu některých procesů, které mohou trvat dlouhou dobu. Další informace o událostech oznámení UIA najdete v tématu [může vaše desktopová aplikace využít novou událost oznámení uživatelského rozhraní?](https://docs.microsoft.com/archive/blogs/winuiautomation/can-your-desktop-app-leverage-the-new-uia-notification-event-in-order-to-have-narrator-say-exactly-what-your-customers-need).
 
 Následující příklad vyvolá [událost oznámení](xref:System.Windows.Forms.AccessibleObject.RaiseAutomationNotification%2A):
 
@@ -470,9 +470,9 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 ```
 
-**Vysoký kontrast**
+**High contrast**
 
-Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když je nastaven motiv <xref:System.Windows.SystemParameters.HighContrast%2A>. Mezi ně patří:
+Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedla vylepšení vysokého kontrastu. Jsou nyní viditelné, když je nastaven motiv <xref:System.Windows.SystemParameters.HighContrast%2A>. Zde jsou některé z nich:
 
 - ovládací prvek <xref:System.Windows.Controls.Expander>
 
@@ -482,7 +482,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky ovládacího prvku rozšíření s fokusem a bez vizuálu fokusu](./media/whats-new-in-accessibility/expander-control-before.png)
 
-  Konci 
+  Po: 
 
   ![Snímek obrazovky ovládacího prvku rozšíření se fokusem ukazující tečkovou čáru kolem textu ovládacího prvku](./media/whats-new-in-accessibility/expander-control-after.png)
 
@@ -494,7 +494,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky s přepínači a zaškrtávacím tlačítky s nekvalitní viditelností textu u motivů s vysokým kontrastem](./media/whats-new-in-accessibility/high-contrast-radio-button-before.png)
 
-  Konci 
+  Po: 
 
   ![Snímek obrazovky s přepínači a zaškrtávacím tlačítky s lepší viditelností textu u motivů s vysokým kontrastem](./media/whats-new-in-accessibility/high-contrast-radio-button-after.png)
 
@@ -506,7 +506,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky zakázaného pole se seznamem s textem ohraničení a ovládacího prvku v různých barvách](./media/whats-new-in-accessibility/combo-disabled-before.png)
 
-  Konci   
+  Po:   
 
   ![Snímek obrazovky zakázaného pole se seznamem s ohraničením stejné barvy jako text ovládacího prvku](./media/whats-new-in-accessibility/combo-disabled-after.png)
 
@@ -516,7 +516,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky černého tlačítka se šedým textem, který se zaměřuje na mne](./media/whats-new-in-accessibility/button-theme-colors-before.png) 
 
-  Konci 
+  Po: 
 
   ![Snímek obrazovky s modrým tlačítkem s černým textem, který se zaměřuje na mne](./media/whats-new-in-accessibility/button-theme-colors-after.png) 
 
@@ -526,7 +526,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky ovládacího prvku ComboBox se skrytou šipkou rozevíracího seznamu](./media/whats-new-in-accessibility/combo-box-style-key-before.png) 
 
-  Konci 
+  Po: 
 
   ![Snímek obrazovky ovládacího prvku polem, který zobrazuje šipku rozevíracího seznamu.](./media/whats-new-in-accessibility/combo-box-style-key-after.png) 
 
@@ -538,7 +538,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky se šipkou indikátoru řazení před vylepšeními](./media/whats-new-in-accessibility/sort-indicator-before.png) 
 
-  Konci   
+  Po:   
 
   ![Snímek obrazovky se šipkou indikátoru řazení po vylepšeních](./media/whats-new-in-accessibility/sort-indicator-after.png) 
 
@@ -548,7 +548,7 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   ![Snímek obrazovky s odkazem na něj klikněte červeně.](./media/whats-new-in-accessibility/default-link-style-before.png) 
 
-  Konci    
+  Po:    
 
   ![Snímek obrazovky s odkazem na něj klikněte žlutě.](./media/whats-new-in-accessibility/default-link-style-after.png) 
 
@@ -583,7 +583,7 @@ Mezi tyto změny vysokého kontrastu patří:
 
   ![Snímek obrazovky aplikace, která používá jiné ovládací prvky běžící v režimu s vysokým kontrastem před vylepšeními přístupnosti.](./media/whats-new-in-accessibility/high-contrast-mode-menu-items-before.png) 
 
-  Konci
+  Po:
 
   ![Snímek obrazovky aplikace, která používá jiné ovládací prvky běžící v režimu s vysokým kontrastem po vylepšeních přístupnosti.](./media/whats-new-in-accessibility/high-contrast-mode-menu-items-after.png) 
 

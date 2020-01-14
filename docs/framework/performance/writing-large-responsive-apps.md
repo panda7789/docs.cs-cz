@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 90e57c3d332155d42a38b8a01aba7dbb2c812d62
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: c320d004b05e58fc7c239cd8c1f3bcec84ad8f78
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458033"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937913"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 
@@ -281,7 +281,7 @@ Jazykově integrovaný dotaz (LINQ), ve spojení s lambda výrazy, je příklade
   
  **Příklad 5: výrazy lambda, seznam\<T > a IEnumerable\<T >**  
   
- V tomto příkladu se používá [kód jazyka LINQ a funkčního stylu](https://blogs.msdn.microsoft.com/charlie/2007/01/27/anders-hejlsberg-on-linq-and-functional-programming/) k nalezení symbolu v modelu kompilátoru s daným názvem řetězec:  
+ V tomto příkladu se používá [kód jazyka LINQ a funkčního stylu](https://docs.microsoft.com/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming) k nalezení symbolu v modelu kompilátoru s daným názvem řetězec:  
   
 ```csharp  
 class Symbol {  
@@ -305,7 +305,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- V prvním řádku se [výraz lambda](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [zavře nad](https://blogs.msdn.microsoft.com/ericlippert/2003/09/17/what-are-closures/) místní proměnnou `name`. To znamená, že kromě přidělení objektu [delegáta](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) , který `predicate` drží, kód přiděluje statickou třídu pro uchování prostředí, které zachycuje hodnotu `name`. Kompilátor generuje kód podobný následujícímu:  
+ V prvním řádku se [výraz lambda](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [zavře nad](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures) místní proměnnou `name`. To znamená, že kromě přidělení objektu [delegáta](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type) , který `predicate` drží, kód přiděluje statickou třídu pro uchování prostředí, které zachycuje hodnotu `name`. Kompilátor generuje kód podobný následujícímu:  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  
@@ -437,7 +437,7 @@ class Compilation { /*...*/
   
  Tento kód změní typ `cachedResult` na `Task<SyntaxTree>` a využívá pomocnou funkci `async`, která obsahuje původní kód z `GetSyntaxTreeAsync()`. `GetSyntaxTreeAsync()` nyní používá [slučovací operátor null](../../csharp/language-reference/operators/null-coalescing-operator.md) k vrácení `cachedResult`, pokud není null. Pokud je `cachedResult` null, `GetSyntaxTreeAsync()` volá `GetSyntaxTreeUncachedAsync()` a uloží výsledek do mezipaměti. Všimněte si, že `GetSyntaxTreeAsync()` neočekává volání `GetSyntaxTreeUncachedAsync()`, protože by kód byl normálně. Bez použití operátoru await znamená, že když `GetSyntaxTreeUncachedAsync()` vrátí svůj objekt <xref:System.Threading.Tasks.Task> `GetSyntaxTreeAsync()` okamžitě vrátí <xref:System.Threading.Tasks.Task>. Nyní je výsledkem <xref:System.Threading.Tasks.Task>v mezipaměti, takže neexistují žádné alokace k vrácení výsledku uloženého v mezipaměti. 
   
-### <a name="additional-considerations"></a>Další požadavky  
+### <a name="additional-considerations"></a>Další rozhodnutí  
  Tady je několik dalších bodů, které se týkají potenciálních problémů ve velkých aplikacích nebo aplikacích, které zpracovávají velké množství dat. 
   
  **Slovníky**  
@@ -448,7 +448,7 @@ class Compilation { /*...*/
   
  V takovém případě třídy a struktury poskytují pro optimalizaci vašich aplikací klasický prostor a čas. Třídy účtují 12 bajtů režie na počítači x86 i v případě, že nemají žádná pole, ale mají nenákladné předávat, protože přebírají jenom ukazatel na odkazování na instanci třídy. Struktury neúčtují žádné přidělení haldy, pokud nejsou zabalené, ale pokud předáte velké struktury jako argumenty funkce nebo návratové hodnoty, bere čas procesoru k atomické kopírování všech datových členů struktur. Podívejte se na opakující se volání vlastností, které vracejí struktury, a do mezipaměti hodnoty vlastnosti v místní proměnné, aby nedocházelo k nadměrnému kopírování dat. 
   
- **Mezipaměti**  
+ **Caches**  
   
  Běžným zdvihem výkonu je ukládání výsledků do mezipaměti. Mezipaměť bez omezení velikosti nebo zásad odstraňování ale může být nevracení paměti. Při zpracování velkých objemů dat můžete v případě, že máte v mezipamětech na velké množství paměti, způsobit, že shromažďování paměti přepíše výhody hledání uložených v mezipaměti. 
   

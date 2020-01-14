@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: adba37be-f775-4cdb-8919-5746ce694f33
 topic_type:
 - apiref
-ms.openlocfilehash: 80643187045e7e96b9c18169c5e71287713d711f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9d505b917c343c40c7fa2a7aecf3466578ae0a8d
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73106241"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936643"
 ---
 # <a name="runtime_info_flags-enumeration"></a>RUNTIME_INFO_FLAGS – výčet
 Obsahuje hodnoty, které určují, jaké informace o modulu CLR (Common Language Runtime) by měly být vráceny.  
@@ -48,7 +48,7 @@ typedef enum {
 |`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Označuje, že by neměly být zahrnuty informace o adresáři.|  
 |`RUNTIME_INFO_DONT_RETURN_VERSION`|Určuje, že by neměly být zahrnuty informace o verzi.|  
 |`RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG`|Označuje, že při selhání by se nemělo zobrazovat dialogové okno s chybou.|  
-|`RUNTIME_INFO_IGNORE_ERROR_MODE`|Označuje, že účinky volání funkce [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkId=255242) s příznakem SEM_FAILCRITICALERRORS by měly být přepsány. To znamená, že při selhání by se mělo zobrazit dialogové okno instalace, místo aby se potlačilo.|  
+|`RUNTIME_INFO_IGNORE_ERROR_MODE`|Označuje, že účinky volání funkce [SetErrorMode](/windows/win32/api/errhandlingapi/nf-errhandlingapi-seterrormode) s příznakem SEM_FAILCRITICALERRORS by měly být přepsány. To znamená, že při selhání by se mělo zobrazit dialogové okno instalace, místo aby se potlačilo.|  
 |`RUNTIME_INFO_REQUEST_AMD64`|Označuje požadavek na informace o verzi modulu runtime kompatibilní s technologií AMD-64.|  
 |`RUNTIME_INFO_REQUEST_IA64`|Označuje požadavek na informace o verzi modulu runtime kompatibilního s rozhraním IA-64.|  
 |`RUNTIME_INFO_REQUEST_X86`|Označuje požadavek na informace o verzi modulu runtime kompatibilní s platformou x86.|  

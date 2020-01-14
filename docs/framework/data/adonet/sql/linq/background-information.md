@@ -2,12 +2,12 @@
 title: Základní informace
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: deb4d59dc2fb40b63e0362a9a4ee4b84c08dce49
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: d7d00a0c64c6b25219403e8fd15eae85c09eafa0
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634726"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937547"
 ---
 # <a name="background-information"></a>Základní informace
 Témata v této části se týkají konceptů a postupů, které přesahují základní informace o používání [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -18,7 +18,7 @@ Témata v této části se týkají konceptů a postupů, které přesahují zá
   
 - Zúčastněte se [fóra LINQ](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete podrobněji diskutovat o složitější témata s odborníky.  
   
-- Prostudujte si dokument White Paper s podrobnostmi o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] C# technologii, dokončete s příklady Visual Basic a kódu. Další informace najdete v tématu [LINQ to SQL: dotaz integrovaný na jazyku .NET pro relační data](https://go.microsoft.com/fwlink/?LinkId=93205).  
+- Prostudujte si dokument White Paper s podrobnostmi [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, C# dokončete s příklady Visual Basic a kódu. Další informace najdete v tématu [LINQ to SQL: dotaz integrovaný na jazyku .NET pro relační data](https://go.microsoft.com/fwlink/?LinkId=93205).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ADO.NET a LINQ to SQL](ado-net-and-linq-to-sql.md)  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: 2433d8b8563cace4415fb8fcd2d110f75d7d4304
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: e2f8f1304de587e1bedd8cde60e665971d903183
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196379"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937686"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Osvědčené postupy TLS (Transport Layer Security) s .NET Framework
 
@@ -31,7 +31,7 @@ Tento dokument cílí na vývojáře, kteří jsou:
 - Přímo pomocí služby a klientů WCF pomocí oboru názvů <xref:System.ServiceModel?displayProperty=nameWithType>.
 - Použití webových a pracovních rolí [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) k hostování a spuštění vaší aplikace. Podívejte se na část [Azure Cloud Services](#azure-cloud-services) .
 
-Doporučujeme:
+Doporučený postup:
 
 - Cílová verze .NET Framework 4,7 nebo novější ve vašich aplikacích. Cílová .NET Framework 4.7.1 nebo novější verze v aplikacích WCF.
 - Nezadávejte verzi TLS. Nakonfigurujte kód tak, aby se operační systém mohl rozhodnout o verzi TLS.
@@ -46,7 +46,7 @@ Když aplikace umožňuje operačnímu systému zvolit verzi TLS:
 
 Tento článek vysvětluje, jak povolit nejsilnější zabezpečení, které je k dispozici pro verzi .NET Framework, na které vaše aplikace cílí a běží. Když aplikace explicitně nastaví protokol a verzi zabezpečení, výslovný se z jakékoli jiné alternativy a výslovný z .NET Framework a výchozí chování operačního systému. Pokud chcete, aby aplikace mohla vyjednávat připojení TLS 1,2, explicitní nastavení na nižší verzi TLS brání připojení TLS 1,2.
 
-Pokud se nemůžete vyhnout zakódujeme verze protokolu, důrazně doporučujeme zadat TLS 1,2. Pokyny k identifikaci a odebrání závislostí TLS 1,0 najdete v dokumentu White Paper [k řešení potíží s protokolem tls 1,0](https://www.microsoft.com/download/details.aspx?id=55266) .
+Pokud se nemůžete vyhnout zakódujeme verze protokolu, důrazně doporučujeme zadat TLS 1,2. Pokyny k identifikaci a odebrání závislostí TLS 1,0 najdete v dokumentu White paper o [řešení potíží s protokolem tls 1,0](https://www.microsoft.com/download/details.aspx?id=55266) .
 
 WCF podporuje TLS 1.0, 1,1 a 1,2 jako výchozí v .NET Framework 4,7. Počínaje .NET Framework 4.7.1 se standardně pro WCF používá nakonfigurovaná verze operačního systému. Pokud je aplikace explicitně nakonfigurovaná pomocí `SslProtocols.None`, WCF při použití přenosu v NetTcp použije výchozí nastavení operačního systému.
 
@@ -150,27 +150,27 @@ Přepínače [AppContext](../configure-apps/file-schema/runtime/appcontextswitch
 
 Přepínače mají stejný účinek, ať už provádíte sítě HTTP (<xref:System.Net.ServicePointManager>) nebo TCP Sockets (<xref:System.Net.Security.SslStream>).
 
-### <a name="switchsystemnetdontenableschusestrongcrypto"></a>Switch. System .NET. DontEnableSchUseStrongCrypto
+### <a name="switchsystemnetdontenableschusestrongcrypto"></a>Switch.System.Net.DontEnableSchUseStrongCrypto
 
-Hodnota `false` pro `Switch.System.Net.DontEnableSchUseStrongCrypto` způsobí, že vaše aplikace bude používat silné šifrování. Hodnota `false` pro `DontEnableSchUseStrongCrypto` používá bezpečnější síťové protokoly (TLS 1,2, TLS 1,1 a TLS 1,0) a blokuje protokoly, které nejsou zabezpečené. Další informace najdete v tématu [příznak SCH_USE_STRONG_CRYPTO](#the-sch_use_strong_crypto-flag). Hodnota `true` zakáže silné šifrování vaší aplikace.
+Hodnota `false` pro `Switch.System.Net.DontEnableSchUseStrongCrypto` způsobí, že vaše aplikace bude používat silné šifrování. Hodnota `false` pro `DontEnableSchUseStrongCrypto` používá bezpečnější síťové protokoly (TLS 1,2, TLS 1,1 a TLS 1,0) a blokuje protokoly, které nejsou zabezpečené. Další informace najdete v [příznaku SCH_USE_STRONG_CRYPTO](#the-sch_use_strong_crypto-flag). Hodnota `true` zakáže silné šifrování vaší aplikace.
 
 Pokud se vaše aplikace zaměřuje .NET Framework 4,6 nebo novější verze, přepne tento přepínač na výchozí hodnotu `false`. To je zabezpečené výchozí nastavení, které doporučujeme. Pokud je vaše aplikace spuštěná na .NET Framework 4,6, ale cílí na starší verzi, přepne přepínač na výchozí hodnotu `true`. V takovém případě byste ji měli explicitně nastavit na `false`.
 
 Pokud se potřebujete připojit ke starším službám, které nepodporují silné šifrování a nelze je upgradovat, `DontEnableSchUseStrongCrypto` by měla mít hodnotu `true`.
 
-### <a name="switchsystemnetdontenablesystemdefaulttlsversions"></a>Switch. System .NET. DontEnableSystemDefaultTlsVersions
+### <a name="switchsystemnetdontenablesystemdefaulttlsversions"></a>Switch.System.Net.DontEnableSystemDefaultTlsVersions
 
 Hodnota `false` pro `Switch.System.Net.DontEnableSystemDefaultTlsVersions` způsobí, že aplikace umožní operačnímu systému zvolit protokol. Hodnota `true` způsobí, že vaše aplikace bude používat protokoly vydané .NET Framework.
 
 Pokud se vaše aplikace zaměřuje .NET Framework 4,7 nebo novější verze, přepne tento přepínač na výchozí hodnotu `false`. To je zabezpečené výchozí nastavení, které doporučujeme. Pokud je vaše aplikace spuštěná na .NET Framework 4,7 nebo novějších verzích, ale cílí na starší verzi, přepne přepínač na výchozí hodnotu `true`. V takovém případě byste ji měli explicitně nastavit na `false`.
 
-### <a name="switchsystemservicemodeldisableusingservicepointmanagersecurityprotocols"></a>Switch. System. ServiceModel. DisableUsingServicePointManagerSecurityProtocols
+### <a name="switchsystemservicemodeldisableusingservicepointmanagersecurityprotocols"></a>Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols
 
 Hodnota `false` pro `Switch.System.ServiceModel.DisableUsingServicePointManagerSecurityProtocols` způsobí, že aplikace použije hodnotu definovanou v `ServicePointManager.SecurityProtocols` pro zabezpečení zprávy pomocí přihlašovacích údajů certifikátu. Hodnota `true` používá nejvyšší dostupný protokol, až do TLS 1.0.
 
 Pro aplikace cílené na .NET Framework 4,7 a novějších verzích je tato hodnota standardně `false`. Pro aplikace cílené .NET Framework 4.6.2 a starší je tato hodnota standardně `true`.
 
-### <a name="switchsystemservicemodeldontenablesystemdefaulttlsversions"></a>Switch. System. ServiceModel. DontEnableSystemDefaultTlsVersions
+### <a name="switchsystemservicemodeldontenablesystemdefaulttlsversions"></a>Switch.System.ServiceModel.DontEnableSystemDefaultTlsVersions
 
 Hodnota `false` pro `Switch.System.ServiceModel.DontEnableSystemDefaultTlsVersions` nastaví výchozí nastavení tak, aby operační systém mohl zvolit protokol. Hodnota `true` nastaví výchozí pro nejvyšší dostupný protokol, až do TLS 1.2.
 
@@ -191,9 +191,9 @@ Tyto klíče jsou k dispozici ve všech .NET Framework verzích, pro které je k
 
 Všechny klíče registru popsané níže mají stejný účinek, ať už provádíte sítě HTTP (<xref:System.Net.ServicePointManager>) nebo TCP Sockets (<xref:System.Net.Security.SslStream>).
 
-### <a name="schusestrongcrypto"></a>Do schusestrongcrypto
+### <a name="schusestrongcrypto"></a>SchUseStrongCrypto
 
-Klíč registru `HKEY_LOCAL_MACHINE\SOFTWARE\[Wow6432Node\]Microsoft\.NETFramework\<VERSION>: SchUseStrongCrypto` má hodnotu typu DWORD. Hodnota 1 způsobí, že aplikace bude používat silné šifrování. Silná kryptografie používá bezpečnější síťové protokoly (TLS 1,2, TLS 1,1 a TLS 1,0) a blokuje protokoly, které nejsou zabezpečené. Hodnota 0 zakáže silnou kryptografii. Další informace najdete v tématu [příznak SCH_USE_STRONG_CRYPTO](#the-sch_use_strong_crypto-flag).
+Klíč registru `HKEY_LOCAL_MACHINE\SOFTWARE\[Wow6432Node\]Microsoft\.NETFramework\<VERSION>: SchUseStrongCrypto` má hodnotu typu DWORD. Hodnota 1 způsobí, že aplikace bude používat silné šifrování. Silná kryptografie používá bezpečnější síťové protokoly (TLS 1,2, TLS 1,1 a TLS 1,0) a blokuje protokoly, které nejsou zabezpečené. Hodnota 0 zakáže silnou kryptografii. Další informace najdete v [příznaku SCH_USE_STRONG_CRYPTO](#the-sch_use_strong_crypto-flag).
 
 Pokud se vaše aplikace zaměřuje .NET Framework 4,6 nebo novější verze, tento klíč se nastaví na hodnotu 1. To je zabezpečené výchozí nastavení, které doporučujeme. Pokud je vaše aplikace spuštěná na .NET Framework 4,6, ale zaměřuje se na starší verzi, pak se výchozí klíč nastaví na 0. V takovém případě byste měli explicitně nastavit jeho hodnotu na 1.
 
@@ -241,7 +241,7 @@ Začněte klíčem registru `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control
 
 ## <a name="the-sch_use_strong_crypto-flag"></a>Příznak SCH_USE_STRONG_CRYPTO
 
-Pokud je povolená (ve výchozím nastavení je to `AppContext` přepínačem nebo v registru Windows), používá .NET Framework příznak `SCH_USE_STRONG_CRYPTO`, když vaše aplikace požaduje protokol zabezpečení TLS. Příznak `SCH_USE_STRONG_CRYPTO` může být ve výchozím nastavení povolený s přepínačem `AppContext` nebo s registrem. Operační systém přesměruje příznak, aby `Schannel`pokyn k zakázání známých slabých kryptografických algoritmů, šifrovacích sad a verzí protokolu TLS/SSL, které mohou být jinak povoleny pro lepší interoperabilitu. Další informace naleznete v tématu:
+Pokud je povolená (ve výchozím nastavení je to `AppContext` přepínačem nebo v registru Windows), používá .NET Framework příznak `SCH_USE_STRONG_CRYPTO`, když vaše aplikace požaduje protokol zabezpečení TLS. Příznak `SCH_USE_STRONG_CRYPTO` může být ve výchozím nastavení povolený s přepínačem `AppContext` nebo s registrem. Operační systém přesměruje příznak, aby `Schannel`pokyn k zakázání známých slabých kryptografických algoritmů, šifrovacích sad a verzí protokolu TLS/SSL, které mohou být jinak povoleny pro lepší interoperabilitu. Další informace najdete v části .
 
 - [Zabezpečený kanál](/windows/desktop/SecAuthN/secure-channel)
 - [Struktura SCHANNEL_CRED](/windows/win32/api/schannel/ns-schannel-schannel_cred)
@@ -259,10 +259,10 @@ Chcete-li aktualizovat .NET Framework, aby operační systém mohl zvolit nejlep
 
 Viz také:
 
-- [.NET Framework verze a závislosti](../migration-guide/versions-and-dependencies.md)
+- [Verze a závislosti rozhraní .NET Framework](../migration-guide/versions-and-dependencies.md)
 - [Postupy: určení, které verze .NET Framework jsou nainstalovány](../migration-guide/how-to-determine-which-versions-are-installed.md).
 
-## <a name="support-for-tls-12"></a>Podpora pro TLS 1,2
+## <a name="support-for-tls-12"></a>Podpora protokolu TLS 1.2
 
 Aby mohla aplikace vyjednávat TLS 1,2, musí operační systém a .NET Framework verze podporovat protokol TLS 1,2.
 
@@ -270,12 +270,12 @@ Aby mohla aplikace vyjednávat TLS 1,2, musí operační systém a .NET Framewor
 
 Pokud chcete povolit nebo znovu povolit TLS 1,2 nebo TLS 1,1 v systému, který je podporuje, přečtěte si téma [nastavení registru TLS (Transport Layer Security)](/windows-server/security/tls/tls-registry-settings).
 
-| **JINÉHO** | **Podpora TLS 1,2** |
+| **OS** | **Podpora TLS 1,2** |
 | --- | --- |
-| Windows 10<br>Windows Server 2016 | Podporované a povolené ve výchozím nastavení. |
-| Windows 8.1<br>Windows Server 2012 R2 | Podporované a povolené ve výchozím nastavení. |
-| Systém Windows 8,0<br>Windows Server 2012 | Podporované a povolené ve výchozím nastavení. |
-| Windows 7 SP1<br>Windows Server 2008 R2 SP1 | Podporované, ale nejsou ve výchozím nastavení povolené. Podrobnosti o tom, jak povolit protokol TLS 1,2, najdete na webové stránce [nastavení registru TLS (Transport Layer Security)](/windows-server/security/tls/tls-registry-settings) . |
+| Windows 10<br>Windows Server 2016 | Podporované a ve výchozím nastavení povolená. |
+| Windows 8.1<br>Windows Server 2012 R2 | Podporované a ve výchozím nastavení povolená. |
+| Windows 8.0<br>Windows Server 2012 | Podporované a ve výchozím nastavení povolená. |
+| Windows 7 SP1<br>Windows Server 2008 R2 SP1 | Podporované, ale není ve výchozím nastavení povolená. Podrobnosti o tom, jak povolit protokol TLS 1,2, najdete na webové stránce [nastavení registru TLS (Transport Layer Security)](/windows-server/security/tls/tls-registry-settings) . |
 | Windows Server 2008 | Podpora TLS 1,2 a TLS 1,1 vyžaduje aktualizaci. [V článku aktualizace můžete přidat podporu pro tls 1,1 a tls 1,2 ve Windows serveru 2008 SP2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
 | Windows Vista | Není podporováno. |
 
@@ -285,16 +285,16 @@ Informace o tom, které protokoly TLS/SSL jsou ve výchozím nastavení povolen�
 
 V této tabulce je uvedena aktualizace operačního systému, kterou budete potřebovat pro podporu TLS 1,2 s .NET Framework 3,5. Doporučujeme použít všechny aktualizace operačního systému.
 
-| **JINÉHO** | **Minimální aktualizace nutná pro podporu TLS 1,2 s .NET Framework 3,5** |
+| **OS** | **Minimální aktualizace nutná pro podporu TLS 1,2 s .NET Framework 3,5** |
 | --- | --- |
 | Windows 10<br>Windows Server 2016 | [Kumulativní aktualizace pro Windows 10 verze 1511 a Windows Server 2016 Technical Preview 4:10. května 2016](https://support.microsoft.com/help/3156421/cumulative-update-for-windows-10-version-1511-and-windows-server-2016) |
 | Windows 8.1<br>Windows Server 2012 R2 | [Podpora výchozích verzí systému TLS obsažených v .NET Framework 3,5 v Windows 8.1 a Windows Serveru 2012 R2](https://support.microsoft.com/help/3154520/support-for-tls-system-default-versions-included-in-the--net-framework) |
-| Systém Windows 8,0<br>Windows Server 2012 | [Podpora výchozích verzí systému TLS obsažených v .NET Framework 3,5 ve Windows Serveru 2012](https://support.microsoft.com/help/3154519/support-for-tls-system-default-versions-included-in-the--net-framework) |
+| Windows 8.0<br>Windows Server 2012 | [Podpora výchozích verzí systému TLS obsažených v .NET Framework 3,5 ve Windows Serveru 2012](https://support.microsoft.com/help/3154519/support-for-tls-system-default-versions-included-in-the--net-framework) |
 | Windows 7 SP1<br>Windows Server 2008 R2 SP1 | [Podpora výchozích verzí systému TLS obsažených ve službě .NET Framework 3.5.1 v systému Windows 7 SP1 a Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework) |
 | Windows Server 2008 | [Podpora výchozích verzí systému TLS obsažených v .NET Framework 2,0 SP2 v systému Windows Vista SP2 a Server 2008 SP2](https://support.microsoft.com/help/3154517/support-for-tls-system-default-versions-included-in-the--net-framework) |
 | Windows Vista | Není podporováno |
 
-## <a name="azure-cloud-services"></a>Cloud Services Azure
+## <a name="azure-cloud-services"></a>Azure Cloud Services
 
 Pokud používáte webové a pracovní role [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) k hostování a spuštění vaší aplikace, existuje několik důležitých informací, které je potřeba vzít v úvahu při podpoře TLS 1,2.
 

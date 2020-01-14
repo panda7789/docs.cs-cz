@@ -8,12 +8,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 668bb08526a6eeb1cf640c9ecdac3b8f2c850a99
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c549b9fcc91401aed846afd39e656b60e16afb74
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711945"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937602"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (C# Průvodce programováním)
 
@@ -233,4 +233,4 @@ Další informace naleznete v části [výrazy anonymní funkce](~/_csharplang/s
 - [Místní funkce ve srovnání s lambda výrazy](../../local-functions-vs-lambdas.md)
 - [Implicitně typované výrazy lambda](../../implicitly-typed-lambda-expressions.md)
 - [Ukázky sady Visual C# Studio 2008 (viz soubory ukázkových dotazů LINQ a program XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
-- [Rekurzivní výrazy lambda](https://blogs.msdn.microsoft.com/madst/2007/05/11/recursive-lambda-expressions/)
+- [Rekurzivní výrazy lambda](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)

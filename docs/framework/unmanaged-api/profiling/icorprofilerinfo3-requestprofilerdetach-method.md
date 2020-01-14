@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-ms.openlocfilehash: 3256f6f64e2ee4678b2627eea81e12cb4a02fd1e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 226f24ad8f1636101b283c3cb6662905cbf7eebe
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449621"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938211"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach – metoda
 Instruuje modul runtime o odpojení profileru.  
@@ -42,7 +42,7 @@ HRESULT RequestProfilerDetach(
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Požadavek na odpojení je platný a Postup odpojení nyní pokračuje v jiném vlákně. Po úplném dokončení odpojení dojde k vystavení `ProfilerDetachSucceeded` události.|  
-|E_ CORPROF_E_CALLBACK3_REQUIRED|Profiler selhal při pokusu [IUnknown:: QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pro rozhraní [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) , které musí implementovat pro podporu operace odpojení. Nedošlo k pokusu o odpojení.|  
+|E_ CORPROF_E_CALLBACK3_REQUIRED|Profiler selhal při pokusu [IUnknown:: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pro rozhraní [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) , které musí implementovat pro podporu operace odpojení. Nedošlo k pokusu o odpojení.|  
 |CORPROF_E_IMMUTABLE_FLAGS_SET|Odpojení není možné, protože při spuštění sada profileru nastavila neměnné příznaky. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.|  
 |CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Odpojení není možné, protože Profiler použil instrumentované kód jazyka MSIL (Microsoft Intermediate Language) nebo vložený `enter`/`leave` vidlice. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.<br /><br /> **Poznámka:** Instrumentovaná MSIL je kód, který poskytuje Profiler pomocí metody [SetILFunctionBody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) .|  
 |CORPROF_E_RUNTIME_UNINITIALIZED|Modul runtime ještě není ve spravované aplikaci inicializovaný. (To znamená, že modul runtime nebyl zcela načten.) Tento kód chyby může být vrácen v případě, že je vyžadováno odpojení v rámci metody [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) zpětného volání profileru.|  

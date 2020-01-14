@@ -2,16 +2,16 @@
 title: Nepodporovaná rozhraní API v .NET Core
 description: Seznamte se s rozhraními API z .NET Framework, která vždy vyvolají výjimku pro .NET Core.
 ms.date: 12/23/2019
-ms.openlocfilehash: 0cb533f10d53fd3d287265032e3de13c242a8ae0
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: f27aeca31226a95dacf100813762eedb56876fbd
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901493"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936977"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core"></a>Rozhraní API, která vždy vyvolávají výjimky v .NET Core
 
-Následující rozhraní API se vždycky <xref:System.PlatformNotSupportedException> při spuštění na .NET Core na zadané platformě.
+Následující rozhraní API budou vždycky vyvolávat <xref:System.PlatformNotSupportedException> v .NET Core ve všech nebo v podmnožině platforem.
 
 Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
@@ -22,7 +22,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="system"></a>Systém
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> | Všechny |
 | <xref:System.AppDomain.ExecuteAssembly(System.String,System.String[],System.Byte[],System.Configuration.Assemblies.AssemblyHashAlgorithm)?displayProperty=nameWithType> | Všechny |
@@ -37,7 +37,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemcodedomcompiler"></a>System. CodeDom. Compiler
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom%2A?displayProperty=nameWithType> | Všechny |
 | <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A?displayProperty=nameWithType> | Všechny |
@@ -45,7 +45,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemcollectionsspecialized"></a>System.Collections.Specialized
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Collections.Specialized.NameObjectCollectionBase.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
@@ -53,13 +53,13 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemconfiguration"></a>System. Configuration
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType> (všichni členové) | Všechny |
 
 ## <a name="systemconsole"></a>System. Console
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Console.Beep?displayProperty=nameWithType> | Linux a macOS |
 | <xref:System.Console.BufferHeight?displayProperty=nameWithType> (pouze nastavit) | Linux a macOS |
@@ -77,13 +77,13 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemdatacommon"></a>System. data. Common
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Data.Common.DbDataReader.GetSchemaTable%2A?displayProperty=nameWithType> (vyvolá <xref:System.NotSupportedException>) | Všechny |
 
 ## <a name="systemdiagnosticsprocess"></a>System. Diagnostics. Process
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Diagnostics.Process.MaxWorkingSet?displayProperty=nameWithType> (pouze nastavit) | Linux |
 | <xref:System.Diagnostics.Process.MinWorkingSet?displayProperty=nameWithType> (pouze nastavit) | Linux |
@@ -100,14 +100,14 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemio"></a>System.IO
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.IO.FileSystemInfo.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 | <xref:System.IO.FileSystemInfo.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemiopipes"></a>System. IO. Pipes
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.IO.Pipes.NamedPipeClientStream.NumberOfServerInstances?displayProperty=nameWithType> | Linux a macOS |
 | <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName?displayProperty=nameWithType> | Linux a macOS |
@@ -118,13 +118,13 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemmedia"></a>System. Media
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Media.SoundPlayer.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemnet"></a>System.Net
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Net.AuthenticationManager.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Net.AuthenticationManager.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)?displayProperty=nameWithType> | Všechny |
@@ -146,25 +146,25 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemnetnetworkinformation"></a>System.Net.NetworkInformation
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Net.NetworkInformation.Ping.Send%2A?displayProperty=nameWithType> | Windows (UWP) |
 
 ## <a name="systemnetsockets"></a>System.Net.Sockets
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Net.Sockets.Socket.DuplicateAndClose(System.Int32)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemnetwebsockets"></a>System .NET. WebSockets
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Net.WebSockets.WebSocket.RegisterPrefixes?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemreflection"></a>System. Reflection
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> | Všechny |
 | <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom(System.String)?displayProperty=nameWithType> | Všechny |
@@ -176,13 +176,13 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemruntimecompilerservices"></a>System.Runtime.CompilerServices
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Runtime.CompilerServices.DebugInfoGenerator.CreatePdbGenerator?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemruntimeinteropservices"></a>System.Runtime.InteropServices
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Runtime.InteropServices.Marshal.GetIDispatchForObject(System.Object)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Runtime.InteropServices.RuntimeEnvironment.SystemConfigurationFile?displayProperty=nameWithType> | Všechny |
@@ -194,13 +194,13 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemruntimeserialization"></a>System.Runtime.Serialization
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemsecurity"></a>System. Security
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.CodeAccessPermission.Deny?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.CodeAccessPermission.PermitOnly?displayProperty=nameWithType> | Všechny |
@@ -219,7 +219,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemsecurityclaims"></a>System. Security. Claims
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.Claims.ClaimsPrincipal.%23ctor?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
@@ -229,7 +229,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemsecuritycryptography"></a>System.Security.Cryptography
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create(System.String)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Cryptography.CspKeyContainerInfo.%23ctor%2A?displayProperty=nameWithType> | Linux a macOS |
@@ -263,7 +263,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemsecuritycryptographypkcs"></a>System. Security. Cryptography. PKCS
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.Cryptography.Pkcs.CmsSigner.%23ctor(System.Security.Cryptography.CspParameters)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> | Všechny |
@@ -271,7 +271,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemsecuritycryptographyx509certificates"></a>System. Security. Cryptography. X509Certificates
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.Import%2A?displayProperty=nameWithType> | Všechny |
@@ -280,31 +280,31 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemsecurityauthenticationextendedprotection"></a>System. Security. Authentication. ExtendedProtection
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemsecuritypolicy"></a>System. Security. Policy
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Security.Policy.Hash.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemserviceprocessservicecontroller"></a>System. ServiceProcess. ServiceController
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.ServiceProcess.TimeoutException.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemtextregularexpressions"></a>System.Text.RegularExpressions
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemthreading"></a>System. Threading
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Threading.CompressedStack.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Threading.ExecutionContext.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Všechny |
@@ -315,7 +315,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 ## <a name="systemxml"></a>System.Xml
 
-| Člen | Platforma |
+| Člen | Platformy, které vyvolávají výjimku |
 | - | - |
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.Byte[],System.Int32,System.Int32,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.IO.Stream,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Všechny |

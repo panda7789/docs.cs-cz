@@ -4,12 +4,12 @@ description: Další informace C# o typech hodnot s možnou hodnotou null a jeji
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: b9400cd76eb0430dbe9c278e835a3cec7f9f131e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 661b5e8502cba42588a07d757f056c715c1c82e8
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73741163"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936902"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s možnou hodnotou null (C# Referenční dokumentace)
 
@@ -133,7 +133,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 ## <a name="see-also"></a>Viz také:
 
 - [C#odkaz](../index.md)
-- [Co přesně znamená "vyvoláno"?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)
+- [Co přesně znamená "vyvoláno"?](https://docs.microsoft.com/archive/blogs/ericlippert/what-exactly-does-lifted-mean)
 - <xref:System.Nullable%601?displayProperty=nameWithType>
 - <xref:System.Nullable?displayProperty=nameWithType>
 - <xref:System.Nullable.GetUnderlyingType%2A?displayProperty=nameWithType>

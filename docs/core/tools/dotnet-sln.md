@@ -2,12 +2,12 @@
 title: dotnet sln – příkaz
 description: Příkaz dotnet-sln nabízí pohodlný způsob přidávání, odebírání a vypsání projektů v souboru řešení.
 ms.date: 10/29/2019
-ms.openlocfilehash: 18702c7638798117bd04d5c6a829d64cc6bf18a8
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: c0badfeba1438a795106691a86c09a8b1675829b
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191817"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937255"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -137,38 +137,38 @@ dotnet sln list [-h|--help]
 
 ## <a name="examples"></a>Příklady
 
-Přidání C# projektu do řešení:
+- Přidání C# projektu do řešení:
 
-```dotnetcli
-dotnet sln todo.sln add todo-app/todo-app.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln add todo-app/todo-app.csproj
+  ```
 
-Odebrání C# projektu z řešení:
+- Odebrání C# projektu z řešení:
 
-```dotnetcli
-dotnet sln todo.sln remove todo-app/todo-app.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln remove todo-app/todo-app.csproj
+  ```
 
-Přidání více C# projektů do řešení:
+- Přidání více C# projektů do řešení:
 
-```dotnetcli
-dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
+  ```
 
-Odebrání více C# projektů z řešení:
+- Odebrání více C# projektů z řešení:
 
-```dotnetcli
-dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
+  ```
 
-Přidání více C# projektů do řešení pomocí vzoru expanze názvů (jenom UNIX/Linux):
+- Přidání více C# projektů do řešení pomocí vzoru expanze názvů (jenom UNIX/Linux):
 
-```dotnetcli
-dotnet sln todo.sln add **/*.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln add **/*.csproj
+  ```
 
-Odebrání více C# projektů z řešení pomocí vzoru expanze (pouze systém UNIX/Linux):
+- Odebrání více C# projektů z řešení pomocí vzoru expanze (pouze systém UNIX/Linux):
 
-```dotnetcli
-dotnet sln todo.sln remove **/*.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln remove **/*.csproj
+  ```

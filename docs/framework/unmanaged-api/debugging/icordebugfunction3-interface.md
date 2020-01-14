@@ -10,12 +10,12 @@ api_type:
 ms.assetid: b22717b9-ead5-4eea-887e-789b52d613dc
 topic_type:
 - apiref
-ms.openlocfilehash: fc50fd7180aaf5c1cff2147268d34921eec39e8f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b74008e0a183d46d82c5262209d582537fd155c7
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137766"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938076"
 ---
 # <a name="icordebugfunction3-interface"></a>Rozhraní ICorDebugFunction3
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -43,4 +43,4 @@ ms.locfileid: "73137766"
 
 - [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [ReJIT: Průvodce](https://blogs.msdn.microsoft.com/davbr/2011/10/12/rejit-a-how-to-guide/)
+- [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)

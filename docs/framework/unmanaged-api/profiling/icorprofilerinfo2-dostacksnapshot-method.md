@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 287b11e9-7c52-4a13-ba97-751203fa97f4
 topic_type:
 - apiref
-ms.openlocfilehash: 64bcf6ee58d743a26e31c49a425f36cc808b5080
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5d90f414a945d346ca7721745ea7d86cb24a085c
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426837"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936859"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot – metoda
 Projde spravované snímky v zásobníku pro zadané vlákno a pošle informace do profileru prostřednictvím zpětného volání.  
@@ -71,7 +71,7 @@ HRESULT DoStackSnapshot(
   
  Pořadí, ve kterém je zásobník vás provedl, je opakem způsobu, jakým byly snímky vloženy do zásobníku: první snímek (naposledy vloženo), hlavní snímek (první snímek), který byl naposledy posunut.  
   
- Další informace o tom, jak profiler naprogramovat k procházení spravovaných zásobníků, najdete v tématu prochází [se v zásobníku profileru v .NET Framework 2,0: základy a více](https://go.microsoft.com/fwlink/?LinkId=73638).  
+ Další informace o tom, jak profiler naprogramovat k procházení spravovaných zásobníků, najdete v tématu prochází [se v zásobníku profileru v .NET Framework 2,0: základy a více](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10)).  
   
  Procházení zásobníku může být synchronní nebo asynchronní, jak je vysvětleno v následujících částech.  
   

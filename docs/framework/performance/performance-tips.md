@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 48b62990abf85eac4d4ab30c9a4b891de0875cd7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 12e8d9398a1cf76267f4e8441845007da17949cd
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444542"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937903"
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
 Pojem *výkon* obecně označuje rychlost spuštění programu. V některých základních pravidlech ve zdrojovém kódu můžete někdy zvýšit rychlost provádění. V některých programech je důležité prozkoumávat kód pečlivě a používat profilery k zajištění co nejrychlejšího provozu. V jiných programech není nutné provádět takovou optimalizaci, protože kód je spuštěný přijatelně rychle při zápisu. V tomto článku jsou uvedené některé běžné oblasti, ve kterých výkon může být zhoršený, a také tipy pro jejich vylepšení a odkazy na další témata týkající se výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkon](index.md) .  
@@ -38,12 +38,12 @@ Pojem *výkon* obecně označuje rychlost spuštění programu. V některých z�
   
 - [Tipy a triky pro výkon v aplikacích .NET](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v=msdn.10))  
 
-- [Pikantní výkonu Mariani](https://blogs.msdn.microsoft.com/ricom/)  
+- [Pikantní výkonu Mariani](https://docs.microsoft.com/archive/blogs/ricom/)  
 
-- [Blog Vance Morrison](https://blogs.msdn.microsoft.com/vancem/)
+- [Blog Vance Morrison](https://docs.microsoft.com/archive/blogs/vancem/)
   
 ## <a name="see-also"></a>Viz také:
 
 - [Výkon](index.md)
 - [Průvodce programováním Visual Basic](../../visual-basic/programming-guide/index.md)
-- [Průvodce programováním v C#](../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)

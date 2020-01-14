@@ -2,12 +2,12 @@
 title: Trasování data v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: a6a752a5-d2a9-4335-a382-b58690ccb79f
-ms.openlocfilehash: be82500920ce9d5f8bc7ee979cf8ec5006f4f12b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f92a17374cf3df1281e51d54bae1a1dcf9e5ea03
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347791"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937631"
 ---
 # <a name="data-tracing-in-adonet"></a>Trasování data v ADO.NET
 
@@ -33,7 +33,7 @@ Další informace o nastavení a konfiguraci spravovaného trasování v ADO.NET
 
 V .NET Framework Zprostředkovatel dat pro SQL Server bylo aktualizováno trasování přístupu k datům ([trasování přístupu k datům](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10))), aby bylo snazší korelovat události klienta s diagnostickými informacemi, jako jsou například chyby připojení, z vyrovnávací paměti ring serveru a z informací o výkonu aplikace v protokolu rozšířených událostí. Informace o čtení protokolu rozšířených událostí najdete v tématu [zobrazení dat relace události](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh710068(v=sql.110)).
 
-Pro operace připojení pošle ADO.NET ID připojení klienta. Pokud připojení selže, můžete získat přístup k vyrovnávací paměti vyzvánění připojení ([řešení potíží s připojením v SQL Server 2008 s cyklickou vyrovnávací pamětí připojení](https://blogs.msdn.microsoft.com/sql_protocols/2008/05/20/connectivity-troubleshooting-in-sql-server-2008-with-the-connectivity-ring-buffer/)) a najít `ClientConnectionID` pole a získat diagnostické informace o selhání připojení. ID připojení klienta se zaznamenávají do vyrovnávací paměti prstence pouze v případě, že dojde k chybě. (Pokud připojení selže před odesláním paketu před přihlášením, nebude vygenerováno ID připojení klienta.) ID připojení klienta je 16bitový identifikátor GUID. Pokud je akce `client_connection_id` přidána do událostí v relaci rozšířené události, můžete také vyhledat ID připojení klienta ve výstupu rozšířené události. Pokud potřebujete další diagnostickou pomoc klientského ovladače, můžete povolit trasování přístupu k datům a znovu spustit příkaz pro připojení a sledovat pole `ClientConnectionID` v trasování přístupu k datům.
+Pro operace připojení pošle ADO.NET ID připojení klienta. Pokud připojení selže, můžete získat přístup k vyrovnávací paměti vyzvánění připojení ([řešení potíží s připojením v SQL Server 2008 s cyklickou vyrovnávací pamětí připojení](https://docs.microsoft.com/archive/blogs/sql_protocols/connectivity-troubleshooting-in-sql-server-2008-with-the-connectivity-ring-buffer)) a najít `ClientConnectionID` pole a získat diagnostické informace o selhání připojení. ID připojení klienta se zaznamenávají do vyrovnávací paměti prstence pouze v případě, že dojde k chybě. (Pokud připojení selže před odesláním paketu před přihlášením, nebude vygenerováno ID připojení klienta.) ID připojení klienta je 16bitový identifikátor GUID. Pokud je akce `client_connection_id` přidána do událostí v relaci rozšířené události, můžete také vyhledat ID připojení klienta ve výstupu rozšířené události. Pokud potřebujete další diagnostickou pomoc klientského ovladače, můžete povolit trasování přístupu k datům a znovu spustit příkaz pro připojení a sledovat pole `ClientConnectionID` v trasování přístupu k datům.
 
 ID připojení klienta můžete získat programově pomocí vlastnosti `SqlConnection.ClientConnectionID`.
 

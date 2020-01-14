@@ -12,12 +12,12 @@ helpviewer_keywords:
 - profiling managed code
 - profiling managed code [Windows Store Apps]
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
-ms.openlocfilehash: a3e60f715c4c61e671980e4f36813e864469d28e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1a839c4cd99e21bc2a3ebd90cf3302a475c02e17
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344774"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938127"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR a aplikace pro Windows Store
 
@@ -76,7 +76,7 @@ Zařízení se systémem Windows RT jsou poměrně uzamčena. Profilery třetíc
 
 V několika scénářích popsaných v následujících částech musí vaše aplikace pracovní plochy uživatelského rozhraní profileru spotřebovat některá nová rozhraní prostředí Windows Runtime API. V dokumentaci budete chtít zjistit, které prostředí Windows Runtime rozhraní API se dají použít z desktopových aplikací, a jestli se jejich chování liší od aplikací klasické pracovní plochy a aplikací pro Windows Store.
 
-Pokud je vaše uživatelské rozhraní profileru napsané ve spravovaném kódu, bude potřeba provést několik kroků, abyste tyto prostředí Windows Runtime rozhraní API mohli snadno spotřebovat. Další informace najdete v článku [spravované desktopové aplikace a prostředí Windows Runtime](https://go.microsoft.com/fwlink/?LinkID=271858) .
+Pokud je vaše uživatelské rozhraní profileru napsané ve spravovaném kódu, bude potřeba provést několik kroků, abyste tyto prostředí Windows Runtime rozhraní API mohli snadno spotřebovat. Další informace najdete v článku [spravované aplikace klasické pracovní plochy a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/jj856306(v=win.10)) .
 
 ## <a name="loading-the-profiler-dll"></a>Načtení knihovny DLL profileru
 
@@ -378,11 +378,11 @@ Systém uvolňování paměti a spravovaná halda se v aplikaci pro Windows Stor
 
 Při provádění profilování paměti vaše knihovna DLL profileru obvykle vytvoří samostatné vlákno, ze kterého se má volat metoda [ForceGC – metody](icorprofilerinfo-forcegc-method.md) . Nejedná se o nic nového. Ale to, co může být překvapivé, je, že úkony uvolňování paměti uvnitř aplikace pro Windows Store mohou transformovat vlákno do spravovaného vlákna (například pro toto vlákno bude vytvořeno IDvlákna rozhraní API pro profilování).
 
-Pro pochopení důsledků tohoto je důležité porozumět rozdílům mezi synchronním a asynchronním voláním, jak je definováno rozhraním API profilace CLR. Všimněte si, že se velmi liší od konceptu asynchronních volání v aplikacích pro Windows Store. Další informace najdete v blogovém příspěvku o tom, [Proč máme CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](https://blogs.msdn.microsoft.com/davbr/2008/12/23/why-we-have-corprof_e_unsupported_call_sequence/) .
+Pro pochopení důsledků tohoto je důležité porozumět rozdílům mezi synchronním a asynchronním voláním, jak je definováno rozhraním API profilace CLR. Všimněte si, že se velmi liší od konceptu asynchronních volání v aplikacích pro Windows Store. Další informace najdete v blogovém příspěvku o tom, [Proč máme CORPROF_E_UNSUPPORTED_CALL_SEQUENCE](https://docs.microsoft.com/archive/blogs/davbr/why-we-have-corprof_e_unsupported_call_sequence) .
 
 Relevantním bodem je, že volání prováděná na vláknech vytvořených vaším profilerem jsou vždy považována za synchronní, i když jsou tato volání vytvořena mimo implementaci jedné z metod [ICORPROFILERCALLBACK](icorprofilercallback-interface.md) knihovny profileru. Aspoň, který se používá pro případ. Nyní, když modul CLR přepnul vlákno profileru do spravovaného vlákna kvůli volání [metody ForceGC –](icorprofilerinfo-forcegc-method.md), toto vlákno již není považováno za vlákno profileru. V takovém případě CLR vynutil přísnější definici toho, co je pro vlákno považováno za synchronní – konkrétně to, že volání musí pocházet z jedné z metod [ICorProfilerCallback](icorprofilercallback-interface.md) vašich knihoven DLL profileru, které mají být kvalifikovány jako synchronní.
 
-Co to znamená v praxi? Většinu metod [ICorProfilerInfo](icorprofilerinfo-interface.md) je bezpečné volat pouze synchronně a v opačném případě dojde k chybě okamžitě. Takže pokud vaše knihovna DLL profileru znovu používá vlákno [metody ForceGC –](icorprofilerinfo-forcegc-method.md) pro jiná volání obvykle vytvořená na vláknech vytvořených profilerem (například na [RequestProfilerDetach](icorprofilerinfo3-requestprofilerdetach-method.md), [RequestReJIT –](icorprofilerinfo4-requestrejit-method.md)nebo [RequestRevert –](icorprofilerinfo4-requestrevert-method.md)), budete mít potíže. I funkce asynchronního zabezpečení, jako je [DoStackSnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) , má při volání ze spravovaných vláken zvláštní pravidla. (Další informace najdete v blogovém příspěvku [zásobníku profileru: základy a](https://blogs.msdn.microsoft.com/davbr/2005/10/06/profiler-stack-walking-basics-and-beyond/) více.)
+Co to znamená v praxi? Většinu metod [ICorProfilerInfo](icorprofilerinfo-interface.md) je bezpečné volat pouze synchronně a v opačném případě dojde k chybě okamžitě. Takže pokud vaše knihovna DLL profileru znovu používá vlákno [metody ForceGC –](icorprofilerinfo-forcegc-method.md) pro jiná volání obvykle vytvořená na vláknech vytvořených profilerem (například na [RequestProfilerDetach](icorprofilerinfo3-requestprofilerdetach-method.md), [RequestReJIT –](icorprofilerinfo4-requestrejit-method.md)nebo [RequestRevert –](icorprofilerinfo4-requestrevert-method.md)), budete mít potíže. I funkce asynchronního zabezpečení, jako je [DoStackSnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) , má při volání ze spravovaných vláken zvláštní pravidla. (Další informace najdete v blogovém příspěvku [zásobníku profileru: základy a](https://docs.microsoft.com/archive/blogs/davbr/profiler-stack-walking-basics-and-beyond) více.)
 
 Proto doporučujeme, aby v každém vlákně, které vaše knihovna DLL profileru vytvoří volání [metody ForceGC –](icorprofilerinfo-forcegc-method.md) , měla být použita *pouze* pro účely aktivace GC a přestala reagovat na zpětná volání GC. Neměl by volat rozhraní API profilování, aby prováděl jiné úkoly, jako vzorkování zásobníku nebo odpojení.
 

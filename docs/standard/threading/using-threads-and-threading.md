@@ -6,12 +6,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-ms.openlocfilehash: 863fa565f7c107214273912a6d110b7664bffe6b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d487edff2cdc2e63f81963bfaa1f68a06e5b36e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131502"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936847"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 
@@ -20,7 +20,7 @@ Pomocí technologie .NET můžete psát aplikace, které provádějí více oper
 Aplikace, které používají multithreading, mají větší reakci na uživatelský vstup, protože uživatelské rozhraní zůstává aktivní jako úlohy náročné na procesory spouštěné v samostatných vláknech. Multithreading je také užitečné při vytváření škálovatelných aplikací, protože je možné přidat vlákna při zvýšení zatížení.
 
 > [!NOTE]
-> Pokud potřebujete větší kontrolu nad chováním vláken aplikace, můžete spravovat vlákna sami. Počínaje .NET Framework 4 se však vícevláknové programování značně zjednodušilo pomocí tříd <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, [Paralelní LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md), nové třídy souběžných kolekcí v oboru názvů <xref:System.Collections.Concurrent?displayProperty=nameWithType> a nový programovací model. který je založen na konceptu úkolů, nikoli na vláknech. Další informace naleznete v tématu [paralelní programování](../parallel-programming/index.md) a [Task PARALLEL Library (TPL)](../parallel-programming/task-parallel-library-tpl.md).
+> Pokud potřebujete větší kontrolu nad chováním vláken aplikace, můžete spravovat vlákna sami. Počínaje .NET Framework 4 se však vícevláknové programování značně zjednodušilo s třídami <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, [Paralelní LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md), nové třídy souběžných kolekcí v oboru názvů <xref:System.Collections.Concurrent?displayProperty=nameWithType> a nový programovací model, který je založen na konceptu úkolů, nikoli na vláknech. Další informace naleznete v tématu [paralelní programování](../parallel-programming/index.md) a [Task PARALLEL Library (TPL)](../parallel-programming/task-parallel-library-tpl.md).
 
 ## <a name="how-to-create-and-start-a-new-thread"></a>Postupy: vytvoření a spuštění nového vlákna
 
@@ -28,11 +28,13 @@ Vytvoříte nové vlákno vytvořením nové instance třídy <xref:System.Threa
 
 ## <a name="how-to-stop-a-thread"></a>Postupy: zastavení vlákna
 
-Chcete-li ukončit provádění vlákna, použijte metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Tato metoda vyvolává <xref:System.Threading.ThreadAbortException> ve vlákně, ve kterém je vyvolána. Další informace naleznete v tématu [zničení vláken](destroying-threads.md).
+Chcete-li ukončit provádění vlákna, použijte <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Nabízí jednotný způsob, jak v družstvě zastavit vlákna. Další informace naleznete v tématu [zrušení ve spravovaných vláknech](cancellation-in-managed-threads.md).
 
-Počínaje .NET Framework 4 můžete použít <xref:System.Threading.CancellationToken?displayProperty=nameWithType> k kooperativnímu zrušení vlákna. Další informace naleznete v tématu [zrušení ve spravovaných vláknech](cancellation-in-managed-threads.md).
+V některých případech není možné vlákno zastavovat spolupracuje, protože spouští kód třetí strany, který není navržen pro kooperativní zrušení. V takovém případě může být vhodné ukončit provádění jeho vynuceně. Chcete-li ukončit provádění vlákna nuceně, v .NET Framework můžete použít metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Tato metoda vyvolává <xref:System.Threading.ThreadAbortException> ve vlákně, ve kterém je vyvolána. Další informace naleznete v tématu [zničení vláken](destroying-threads.md). Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není v rozhraní .NET Core podporována. Pokud potřebujete ukončit provádění kódu třetí strany v .NET Core nuceně, spusťte ho v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
 
-Použijte metodu <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> k tomu, aby volající vlákno čekalo na ukončení vlákna, ve kterém je metoda vyvolána.
+<xref:System.Threading.CancellationToken?displayProperty=nameWithType> není k dispozici před .NET Framework 4. Chcete-li zastavit vlákno ve starších verzích .NET Framework, měli byste implementovat kooperativní zrušení ručně pomocí technik synchronizace vláken. Můžete například vytvořit pole volatile Boolean `shouldStop` a použít ho k žádosti o spuštění kódu spuštěného vláknem k zastavení. Další informace naleznete v části [volatile](../../csharp/language-reference/keywords/volatile.md) v C# tématu Reference and <xref:System.Threading.Volatile?displayProperty=nameWithType>.
+
+Použijte metodu <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> k zajištění, aby volající vlákno čekalo na ukončení zastaveného vlákna.
 
 ## <a name="how-to-pause-or-interrupt-a-thread"></a>Postupy: pozastavení nebo přerušení vlákna
 

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: a1c4d165-9bdc-4ca8-940e-292d4ffcc338
 topic_type:
 - apiref
-ms.openlocfilehash: e64a0512e05965b3da2e7486e986ee34ca8a20d6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4f05eb2e6ef31cf1993a623c38bb177f7e3c297e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104306"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935654"
 ---
 # <a name="gettypelibinfo-function"></a>GetTypeLibInfo – funkce
-Vrátí informace o zadané knihovně typů prozkoumáním její struktury [TLIBATTR](https://docs.microsoft.com/windows/win32/api/oaidl/ns-oaidl-tlibattr) .  
+Vrátí informace o zadané knihovně typů prozkoumáním její struktury [TLIBATTR](/windows/win32/api/oaidl/ns-oaidl-tlibattr) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,7 +48,7 @@ HRESULT GetTypeLibInfo(
  mimo ID lokalizace knihovny typů.  
   
  `pTypeLibPlatform`  
- mimo Příznak [SYSKIND](https://docs.microsoft.com/windows/win32/api/oaidl/ne-oaidl-syskind) , který identifikuje cílový operační systém pro knihovnu typů. Běžné hodnoty jsou SYS_WIN32 a SYS_WIN64.  
+ mimo Příznak [SYSKIND](/windows/win32/api/oaidl/ne-oaidl-syskind) , který identifikuje cílový operační systém pro knihovnu typů. Běžné hodnoty jsou SYS_WIN32 a SYS_WIN64.  
   
  `pTypeLibMajorVer`  
  mimo Hlavní číslo verze knihovny typů. Například pro verzi *x. y*je hlavní číslo verze *x*.  

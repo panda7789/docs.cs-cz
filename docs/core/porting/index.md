@@ -3,12 +3,12 @@ title: Port od .NET Framework do .NET Core
 description: Pochopení procesu přenosu a zjišťování nástrojů, které můžete najít užitečné při přenosu .NET Framework projektu do .NET Core.
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: b5b010acbccf134afe800aa5bb98a0ae6e9ffa25
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.openlocfilehash: e483bb6e48dad6c3bf71bfa81e704a137fc02094
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777358"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937324"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>Přehled přenosů z .NET Framework do .NET Core
 
@@ -29,9 +29,9 @@ Při přenosu projektu do .NET Core doporučujeme použít následující postup
 
    Nástroj Analyzátor přenositelnosti API analyzuje kompilovaná sestavení a generuje sestavu. Tato sestava zobrazuje souhrn přenositelnosti na vysoké úrovni a rozdělení každého rozhraní API, které používáte, není k dispozici v rozhraní .NET Core.
 
-3. Nainstalujte [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md) do svých projektů, abyste identifikovali vyvolané <xref:System.PlatformNotSupportedException> na některých platformách a nějaké jiné potenciální problémy s kompatibilitou.
+3. Nainstalujte do svých projektů [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md) a Identifikujte rozhraní API, která vyvolávají <xref:System.PlatformNotSupportedException> na některých platformách a nějaké jiné potenciální problémy s kompatibilitou.
 
-   Tento nástroj je podobný analyzátoru přenositelnosti, ale místo toho, aby se mohly analyzovat věci pro .NET Core, analyzuje, jestli používáte rozhraní API způsobem, který vyvolá <xref:System.PlatformNotSupportedException> v době běhu. I když se nejedná o běžný postup, Pokud přesouváte z .NET Framework 4.7.2 nebo vyšší, je dobré ho kontrolovat.
+   Tento nástroj je podobný analyzátoru přenositelnosti, ale místo analýzy, jestli se kód může sestavovat v .NET Core, analyzuje, jestli používáte rozhraní API způsobem, který v době běhu vyvolá <xref:System.PlatformNotSupportedException>. I když se nejedná o běžný postup, Pokud přesouváte z .NET Framework 4.7.2 nebo vyšší, je dobré ho kontrolovat. Další informace o rozhraních API, která vyvolávají výjimky v rozhraní .NET Core, najdete v tématu [rozhraní API, která vždy vyvolají výjimky v rozhraní .NET Core](../compatibility/unsupported-apis.md).
 
 4. Převeďte všechny své `packages.config` závislosti na formát [PackageReference](/nuget/consume-packages/package-references-in-project-files) pomocí nástroje pro [převod v aplikaci Visual Studio](/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
@@ -50,4 +50,4 @@ Kromě toho se můžete pokusit přenést menší řešení nebo jednotlivé pro
 ## <a name="next-steps"></a>Další kroky
 
 >[!div class="nextstepaction"]
->[Nedostupné technologie v .NET Core](net-framework-tech-unavailable.md)
+>[Analyzovat závislosti](third-party-deps.md)

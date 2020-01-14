@@ -2,12 +2,12 @@
 title: Zpracování výjimek a chyb
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: c28b4420be82562a30873b65113811da06cee761
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2886463510a2237834529e1ec61c73ec7251e621
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975479"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937719"
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
 Výjimky slouží ke sdělování chyb místně v rámci služby nebo implementace klienta. Na druhé straně chyby slouží k sdělování chyb napříč hranicemi služby, například ze serveru do klienta nebo naopak. Kromě chyb využívají přenosové kanály často mechanismy přenosu pro komunikaci s chybami na úrovni přenosu. Například přenos HTTP používá ke komunikaci neexistující adresy URL koncového bodu stavové kódy jako 404 (není k dispozici žádný koncový bod pro odeslání zpětné chyby). Tento dokument se skládá ze tří částí, které poskytují pokyny pro vlastní autory kanálů. První část poskytuje pokyny, kdy a jak definovat a vyvolat výjimky. Druhá část obsahuje pokyny k vytváření a využívání chyb. Třetí část vysvětluje, jak poskytnout trasovací informace pro pomoc uživateli vlastního kanálu při odstraňování potíží se spuštěnými aplikacemi.  
@@ -34,7 +34,7 @@ Výjimky slouží ke sdělování chyb místně v rámci služby nebo implementa
 ### <a name="exception-messages"></a>Zprávy výjimek  
  Zprávy o výjimkách jsou zaměřeny na uživatele, který není programem, takže by měli poskytnout dostatečné informace, které uživateli pomohou pochopit a vyřešit problém. Mezi tři podstatné části dobré zprávy o výjimce patří:  
   
- Co se přihodilo. Zadejte jasný popis problému s použitím podmínek, které se vztahují k uživatelskému prostředí. Zpráva o špatné výjimce by mohla být například "neplatný konfigurační oddíl". Tím se uživateli zajímá, který konfigurační oddíl je nesprávný a proč není správný. Vylepšená zpráva bude "neplatný konfigurační oddíl \<customBinding >". Ještě lepší zpráva by byla "nelze přidat Transport s názvem myTransport do vazby s názvem myBinding, protože vazba již má Transport s názvem myTransport". Toto je velmi specifická zpráva s použitím podmínek a názvů, které může uživatel snadno identifikovat v konfiguračním souboru aplikace. Stále však chybí několik klíčových součástí.  
+ Co se stalo. Zadejte jasný popis problému s použitím podmínek, které se vztahují k uživatelskému prostředí. Zpráva o špatné výjimce by mohla být například "neplatný konfigurační oddíl". Tím se uživateli zajímá, který konfigurační oddíl je nesprávný a proč není správný. Vylepšená zpráva bude "neplatný konfigurační oddíl \<customBinding >". Ještě lepší zpráva by byla "nelze přidat Transport s názvem myTransport do vazby s názvem myBinding, protože vazba již má Transport s názvem myTransport". Toto je velmi specifická zpráva s použitím podmínek a názvů, které může uživatel snadno identifikovat v konfiguračním souboru aplikace. Stále však chybí několik klíčových součástí.  
   
  Význam chyby. Pokud se zpráva nezřetelně nejedná o chybu, uživatel bude pravděpodobně zajímat, zda se jedná o závažnou chybu, nebo zda může být ignorována. Obecně by zprávy měly vést s významem nebo významem chyby. Aby bylo možné vylepšit předchozí příklad, zpráva může být "hostitel ServiceHost se nepodařilo otevřít z důvodu chyby v konfiguraci: nelze přidat Transport s názvem myTransport do vazby s názvem myBinding, protože vazba již má přenos s názvem myTransport".  
   
@@ -68,11 +68,11 @@ public abstract class MessageFault
 }  
 ```  
   
- Vlastnost `Code` odpovídá `env:Code` (nebo `faultCode` v protokolu SOAP 1,1) a identifikuje typ chyby. Protokol SOAP 1,2 definuje pět přípustných hodnot pro `faultCode` (například sender a přijímač) a definuje `Subcode` element, který může obsahovat libovolnou hodnotu podkódu. (Viz [specifikace protokolu SOAP 1,2](https://go.microsoft.com/fwlink/?LinkId=95176) pro seznam povolených kódů chyb a jejich význam) Protokol SOAP 1,1 má mírně odlišný mechanismus: definuje čtyři `faultCode` hodnoty (například klient a Server), které se dají rozšířit tak, že se nadefinují zcela nové nebo pomocí zápisu teček vytvoří konkrétnější `faultCodes`, například Client. Authentication.  
+ Vlastnost `Code` odpovídá `env:Code` (nebo `faultCode` v protokolu SOAP 1,1) a identifikuje typ chyby. Protokol SOAP 1,2 definuje pět přípustných hodnot pro `faultCode` (například sender a přijímač) a definuje `Subcode` element, který může obsahovat libovolnou hodnotu podkódu. (Viz [specifikace protokolu SOAP 1,2](https://www.w3.org/TR/soap12-part1/#tabsoapfaultcodes) pro seznam povolených kódů chyb a jejich význam) Protokol SOAP 1,1 má mírně odlišný mechanismus: definuje čtyři `faultCode` hodnoty (například klient a Server), které se dají rozšířit tak, že se nadefinují zcela nové nebo pomocí zápisu teček vytvoří konkrétnější `faultCodes`, například Client. Authentication.  
   
  Použijete-li parametr MessageFault k programovým chybám, FaultCode.Name a FaultCode. Namespace se mapují na název a obor názvů `env:Code` protokolu SOAP 1,2 nebo `faultCode`SOAP 1,1. FaultCode. Subcode mapuje na `env:Subcode` pro SOAP 1,2 a pro SOAP 1,1 je null.  
   
- Měli byste vytvořit nové podkódy chyb (nebo nové kódy chyb, pokud používáte protokol SOAP 1,1), pokud je to zajímavé pro programové odlišení chyby. To je podobné jako vytvoření nového typu výjimky. Nepoužívejte zápis tečky s kódy chyb SOAP 1,1. ( [Základní profil WS-I](https://go.microsoft.com/fwlink/?LinkId=95177) také nedoporučuje použití zápisu teček v kódu chyby.)  
+ Měli byste vytvořit nové podkódy chyb (nebo nové kódy chyb, pokud používáte protokol SOAP 1,1), pokud je to zajímavé pro programové odlišení chyby. To je podobné jako vytvoření nového typu výjimky. Nepoužívejte zápis tečky s kódy chyb SOAP 1,1. ( [Základní profil WS-I](http://www.ws-i.org/Profiles/BasicProfile-1.1-2004-08-24.html#SOAP_Custom_Fault_Codes) také nedoporučuje použití zápisu teček v kódu chyby.)  
   
 ```csharp
 public class FaultCode  

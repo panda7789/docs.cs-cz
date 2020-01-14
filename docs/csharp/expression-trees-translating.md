@@ -4,12 +4,12 @@ description: Naučte se navštívit jednotlivé uzly ve stromové struktuře vý
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: 5c55ef2141e63462c91f84efab09828fafbff142
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a4cb40e439726e5fff60fe697da70d61bb24cb68
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036625"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937224"
 ---
 # <a name="translating-expression-trees"></a>Překládání stromů výrazů
 
@@ -190,9 +190,9 @@ Computed sum: 10
 
 I když je konečná odpověď stejná, je procházení stromové struktury zcela jiné. Uzly se cestují v jiném pořadí, protože strom byl vytvořen s různými operacemi, které nastaly jako první.
 
-## <a name="learning-more"></a>Učení více
+## <a name="learning-more"></a>Další informace
 
-Tato ukázka ukazuje malou podmnožinu kódu, který byste vytvořili pro procházení a interpretaci algoritmů, které jsou zastoupeny stromem výrazů. Kompletní diskuzi o všech potřebách potřebných k sestavení knihovny pro obecné účely, která překládá stromy výrazů do jiného jazyka, si prosím přečtěte v [této řadě](https://blogs.msdn.microsoft.com/mattwar/2008/11/18/linq-building-an-iqueryable-provider-series/) podkladem Warren. To je velmi podrobné informace o tom, jak přeložit libovolný kód, který můžete najít ve stromu výrazu.
+Tato ukázka ukazuje malou podmnožinu kódu, který byste vytvořili pro procházení a interpretaci algoritmů, které jsou zastoupeny stromem výrazů. Kompletní diskuzi o všech potřebách potřebných k sestavení knihovny pro obecné účely, která překládá stromy výrazů do jiného jazyka, si prosím přečtěte v [této řadě](https://docs.microsoft.com/archive/blogs/mattwar/linq-building-an-iqueryable-provider-series) podkladem Warren. To je velmi podrobné informace o tom, jak přeložit libovolný kód, který můžete najít ve stromu výrazu.
 
 Doufám, že teď jste viděli skutečnou sílu stromů výrazů.
 Můžete zkontrolovat sadu kódu, provést všechny změny, které byste chtěli v kódu, a provést změněnou verzi. Vzhledem k tomu, že stromy výrazů jsou neměnné, můžete vytvořit nové stromy pomocí komponent existujících stromů. Tím se minimalizuje množství paměti potřebné k vytvoření upravených stromů výrazů.

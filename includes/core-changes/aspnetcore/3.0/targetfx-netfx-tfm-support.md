@@ -1,45 +1,45 @@
 ---
-ms.openlocfilehash: 4c676a185ff4a7a825acb059bf0a5842ca3922fc
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: b60f74947a537c602c7bd1a89587b76bd847c82a
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394158"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937281"
 ---
-### <a name="target-framework-net-framework-support-dropped"></a>Cílová architektura: Zahozená podpora .NET Framework
+### <a name="target-framework-net-framework-support-dropped"></a>Target framework: .NET Framework support dropped
 
-Počínaje ASP.NET Core 3,0 .NET Framework je Nepodporovaná Cílová architektura.
+Starting with ASP.NET Core 3.0, .NET Framework is an unsupported target framework.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-.NET Framework 4,8 je poslední hlavní verzí .NET Framework. Nové aplikace ASP.NET Core by měly být postavené na .NET Core. Od verze .NET Core 3,0 můžete si představit ASP.NET Core 3,0 jako součást .NET Core.
+.NET Framework 4.8 is the last major version of .NET Framework. New ASP.NET Core apps should be built on .NET Core. Starting with the .NET Core 3.0 release, you can think of ASP.NET Core 3.0 as being part of .NET Core.
 
-Zákazníci, kteří používají ASP.NET Core s .NET Framework, můžou v plně podporovaném způsobem i nadále používat [LTS vydání verze 2,1](https://www.microsoft.com/net/download/dotnet-core/2.1). Podpora a údržba pro 2,1 pokračuje do 21. srpna 2021. Toto datum je tři roky po deklaraci verze LTS podle [zásady podpory .NET](https://www.microsoft.com/net/platform/support-policy). Podpora pro balíčky ASP.NET Core 2,1 **v .NET Framework** se nebude zobrazovat po neomezenou dobu, podobně jako [zásady údržby pro jiné ASP.NET architektury založené na balíčku](https://dotnet.microsoft.com/platform/support/policy/aspnet).
+Customers using ASP.NET Core with .NET Framework can continue in a fully supported fashion using the [2.1 LTS release](https://www.microsoft.com/net/download/dotnet-core/2.1). Support and servicing for 2.1 continues until at least August 21, 2021. This date is three years after declaration of the LTS release per the [.NET Support Policy](https://www.microsoft.com/net/platform/support-policy). Support for ASP.NET Core 2.1 packages **on .NET Framework** will extend indefinitely, similar to the [servicing policy for other package-based ASP.NET frameworks](https://dotnet.microsoft.com/platform/support/policy/aspnet).
 
-Další informace o přenosech z .NET Framework do .NET Core najdete v tématu [přenos do .NET Core](~/docs/core/porting/index.md).
+For more information about porting from .NET Framework to .NET Core, see [Porting to .NET Core](~/docs/core/porting/index.md).
 
-balíčky `Microsoft.Extensions` (například protokolování, vkládání závislostí a konfigurace) a Entity Framework Core nejsou ovlivněny. Budou dál podporovat .NET Standard.
+`Microsoft.Extensions` packages (such as logging, dependency injection, and configuration) and Entity Framework Core aren't affected. They'll continue to support .NET Standard.
 
-Další informace o motivaci této změny najdete v [původním blogovém příspěvku](https://blogs.msdn.microsoft.com/webdev/2018/10/29/a-first-look-at-changes-coming-in-asp-net-core-3-0).
+For more information on the motivation for this change, see [the original blog post](https://devblogs.microsoft.com/aspnet/a-first-look-at-changes-coming-in-asp-net-core-3-0/).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Version introduced
 
-3.0
+3,0
 
-#### <a name="old-behavior"></a>Staré chování
+#### <a name="old-behavior"></a>Old behavior
 
-Aplikace ASP.NET Core mohou běžet buď na rozhraní .NET Core, nebo v .NET Framework.
+ASP.NET Core apps could run on either .NET Core or .NET Framework.
 
-#### <a name="new-behavior"></a>Nové chování
+#### <a name="new-behavior"></a>New behavior
 
-Aplikace ASP.NET Core lze spustit pouze v .NET Core.
+ASP.NET Core apps can only be run on .NET Core.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
 Proveďte jednu z následujících akcí:
 
-- Udržujte svou aplikaci na ASP.NET Core 2,1.
-- Migrujte svoji aplikaci a závislosti do .NET Core.
+- Keep your app on ASP.NET Core 2.1.
+- Migrate your app and dependencies to .NET Core.
 
 #### <a name="category"></a>Kategorie
 

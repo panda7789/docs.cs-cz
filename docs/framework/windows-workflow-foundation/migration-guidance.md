@@ -2,12 +2,12 @@
 title: Pokyny pro migraci
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: 672ed1a93b4409f491d76ffeeaaac5f67a1c4b6e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: f0c21d32b745a51bada9133230dd0c87be9c915e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802606"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937970"
 ---
 # <a name="migration-guidance"></a>Pokyny pro migraci
 
@@ -21,7 +21,8 @@ V .NET Framework 4 Společnost Microsoft uvolňuje druhou hlavní verzi programo
   
  Proto se rozhodnutí o přijetí .NET Framework 4 oddělí od vašeho rozhodnutí o přesun do WF4 (System. Activities.\*) z WF3 (System. Workflow.\*). Toto téma obsahuje odkazy na pokyny k migraci WF, které poskytují informace o práci s WF3 a WF4.  
   
-## <a name="wf-migration-whitepapers-and-cookbooks"></a>Dokumenty White paper k migraci WF a návody  
+## <a name="wf-migration-white-papers-and-cookbooks"></a>Dokumenty White Paper a návody Migrace WF
+
  Téma [Přehled migrace WF](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10)) poskytuje širokou škálu vztahů mezi WF3 a WF4 a strategiemi migrace. Doprovodná témata se podrobněji přecházení na konkrétní témata.  
   
  [Přehled migrace WF](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))  

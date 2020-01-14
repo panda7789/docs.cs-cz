@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: 843007ac6467584fbe6350b6ea19ef67609d73e2
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: b0c4e9617677cf95e3a059b57f3d50ddfb072f4a
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74643947"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936993"
 ---
-### <a name="controldefaultfont-changed-to-segoe-ui-9pt"></a>`Control.DefaultFont` změněn na `Segoe UI 9pt`
+### <a name="default-control-font-changed-to-segoe-ui-9-pt"></a>Výchozí písmo ovládacího prvku se změnilo na Segoe UI 9 bodů.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V .NET Framework byla vlastnost <xref:System.Windows.Forms.Control.DefaultFont?displayProperty=nameWithType> nastavena na `Microsoft Sans Serif 8pt`. Následující obrázek ukazuje okno, které používá výchozí písmo.
+V .NET Framework byla vlastnost <xref:System.Windows.Forms.Control.DefaultFont?displayProperty=nameWithType> nastavena na `Microsoft Sans Serif 8 pt`. Následující obrázek ukazuje okno, které používá výchozí písmo.
 
-![výchozí písmo ovládacího prvku v .NET Framework](~/docs/images/core-changes/windowsforms/control-defaultfont-changed/defaultfont-framework.png)
+![Výchozí písmo ovládacího prvku v .NET Framework](~/docs/images/core-changes/windowsforms/control-defaultfont-changed/defaultfont-framework.png)
 
-V .NET Core Počínaje rozhraním .NET Core 3,0 je nastavená na `Segoe UI 9pt` (stejné písmo jako <xref:System.Drawing.SystemFonts.MessageBoxFont?displayProperty=nameWithType>). V důsledku této změny budou mít formuláře a ovládací prvky velikost přibližně 27% větší, než je výsledkem větší velikost nového výchozího písma. Příklad:
+Počínaje platformou .NET Core 3,0 je výchozí písmo nastavené na `Segoe UI 9 pt` (stejné písmo jako <xref:System.Drawing.SystemFonts.MessageBoxFont?displayProperty=nameWithType>). V důsledku této změny mají formuláře a ovládací prvky velikost přibližně 27% větší, než je větší velikost nového výchozího písma. Příklad:
 
-![výchozí ovládací prvek Font-in .NET Core](~/docs/images/core-changes/windowsforms/control-defaultfont-changed/defaultfont-core.png)
+![Výchozí písmo ovládacího prvku v .NET Core](~/docs/images/core-changes/windowsforms/control-defaultfont-changed/defaultfont-core.png)
 
-Tato změna byla provedena v souladu s [pokyny pro uživatelské rozhraní Windows](https://docs.microsoft.com/windows/win32/uxguide/vis-fonts#fonts-and-colors).
+Tato změna byla provedena v souladu s [pokyny pro uživatelské prostředí systému Windows (UX)](/windows/win32/uxguide/vis-fonts#fonts-and-colors).
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -28,7 +28,7 @@ Tato změna byla provedena v souladu s [pokyny pro uživatelské rozhraní Windo
 
 Kvůli změně velikosti formulářů a ovládacích prvků se ujistěte, že se vaše aplikace vykresluje správně.
 
-Chcete-li zachovat původní písmo, nastavte výchozí písmo formuláře na `Microsoft Sans Serif 8pt`. Příklad:
+Chcete-li zachovat původní písmo, nastavte výchozí písmo formuláře na `Microsoft Sans Serif 8 pt`. Příklad:
 
 ```csharp
 public MyForm()

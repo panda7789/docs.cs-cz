@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: d3a3539904c5d8b5db23b99ca6128bf5860a1917
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: e34f7c8a0194e3901453923530a5cd07202801f6
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346107"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937461"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení WCF Data Services
 
@@ -70,7 +70,7 @@ Při vývoji datové služby WCF jako aplikace ASP.NET nebo webu ASP.NET pomocí
 
 3. **Vývojové prostředí Windows Azure**
 
-     Nástroje Windows Azure pro Visual Studio obsahují integrovanou sadu nástrojů pro vývoj služeb Windows Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datové služby, které lze nasazovat na platformě Azure, a před nasazením je otestovat v místním počítači. Tyto nástroje použijte při používání sady Visual Studio k vývoji datových služeb, které běží na platformě Windows Azure. Nástroje Windows Azure pro Visual Studio si můžete stáhnout z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=201848). Další informace o vývoji datové služby, která běží na platformě Windows Azure, najdete v příspěvku [nasazení služby OData v systému Windows Azure](https://blogs.msdn.microsoft.com/astoriateam/2010/07/20/deploying-an-odata-service-in-windows-azure/).
+     Nástroje Windows Azure pro Visual Studio obsahují integrovanou sadu nástrojů pro vývoj služeb Windows Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datové služby, které lze nasazovat na platformě Azure, a před nasazením je otestovat v místním počítači. Tyto nástroje použijte při používání sady Visual Studio k vývoji datových služeb, které běží na platformě Windows Azure. Nástroje Windows Azure pro Visual Studio si můžete stáhnout z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=201848). Další informace o vývoji datové služby, která běží na platformě Windows Azure, najdete v příspěvku [nasazení služby OData v systému Windows Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
 ### <a name="development-tips"></a>Tipy pro vývoj
 
@@ -115,7 +115,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 - **Windows Azure**
 
-     Datovou službu můžete nasadit do Windows Azure pomocí nástrojů Windows Azure pro Visual Studio. Nástroje Windows Azure pro Visual Studio si můžete stáhnout z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=201848). Další informace o nasazení datové služby do Windows Azure najdete v příspěvku [nasazení služby OData v Microsoft Azure](https://blogs.msdn.microsoft.com/astoriateam/2010/07/20/deploying-an-odata-service-in-windows-azure/).
+     Datovou službu můžete nasadit do Windows Azure pomocí nástrojů Windows Azure pro Visual Studio. Nástroje Windows Azure pro Visual Studio si můžete stáhnout z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=201848). Další informace o nasazení datové služby do Windows Azure najdete v příspěvku [nasazení služby OData v Microsoft Azure](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure).
 
 ### <a name="deployment-considerations"></a>Důležité informace o nasazení
 
@@ -123,7 +123,7 @@ Při nasazování datových služeb je vhodné zvážit následující faktory:
 
 - Když nasadíte datovou službu, která pro přístup k databázi SQL Server používá poskytovatele Entity Framework, může být také nutné rozšířit datové struktury, data nebo obojí do nasazení datové služby. Sada Visual Studio může automaticky vytvářet skripty (soubory. SQL) k tomu v cílové databázi a tyto skripty lze zahrnout do balíčku pro nasazení webu aplikace ASP.NET. Další informace najdete v tématu [Postup: nasazení databáze pomocí projektu webové aplikace](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100)). Pro web ASP.NET to můžete provést pomocí **Průvodce publikováním databáze** v aplikaci Visual Studio. Další informace najdete v tématu [publikování SQL Database](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
 
-- Vzhledem k tomu, že WCF Data Services zahrnuje základní implementaci služby WCF, můžete použít Windows Server AppFabric k monitorování datové služby nasazené do služby IIS spuštěné v systému Windows Server. Další informace o použití Windows serveru AppFabric ke sledování datové služby najdete v [WCF Data Services příspěvku s Windows serverem AppFabric](https://blogs.msdn.microsoft.com/rjacobs/2010/06/09/tracking-wcf-data-services-with-windows-server-appfabric/).
+- Vzhledem k tomu, že WCF Data Services zahrnuje základní implementaci služby WCF, můžete použít Windows Server AppFabric k monitorování datové služby nasazené do služby IIS spuštěné v systému Windows Server. Další informace o použití Windows serveru AppFabric ke sledování datové služby najdete v [WCF Data Services příspěvku s Windows serverem AppFabric](https://docs.microsoft.com/archive/blogs/rjacobs/tracking-wcf-data-services-with-windows-server-appfabric).
 
 ## <a name="see-also"></a>Viz také:
 

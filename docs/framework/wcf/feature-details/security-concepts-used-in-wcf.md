@@ -2,49 +2,49 @@
 title: Koncepty zabezpečení používané ve službě WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: 3ef2b9c104fa15de17a769c9ca9354e5cef085bf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce6dc6f5cb8680d6228e21206afdc3aa33085e7d
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990870"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938126"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Koncepty zabezpečení používané ve službě WCF
-Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty již používán a nasadit v různých zabezpečení infrastruktury.  
+Zabezpečení Windows Communication Foundation (WCF) je postavené na základě konceptů, které se už používají a nasazují v různých bezpečnostních infrastrukturách.  
   
- WCF podporuje některé z těchto infrastruktury, jako je například vrstvy SSL (Secure Sockets) přes HTTP (HTTPS). Ale WCF jde nad rámec Podpora stávajících infrastruktur zabezpečení implementací novější standardy interoperabilní zabezpečení (jako je WS-Security) za kódováním protokolu SOAP zprávy. Ať používáte existující mechanismy nebo nové interoperabilní standardy, principy zabezpečení obě jsou stejné. Principy Principy stávajících infrastruktur a novější standardy, které je zásadním implementace nejlepší model zabezpečení pro aplikaci.  
+ WCF podporuje některé z těchto infrastruktur, jako je například SSL (Secure Sockets Layer) (SSL) prostřednictvím protokolu HTTP (HTTPS). Nicméně služba WCF překračuje podporu stávajících infrastruktur zabezpečení tím, že implementuje novější standardy zabezpečení vzájemně interoperabilních standardů (například WS-Security) prostřednictvím zpráv kódovaných v protokolu SOAP. Bez ohledu na to, jestli používáte stávající mechanismy nebo nové interoperabilní standardy, jsou koncepce zabezpečení za obou stejných. Princip konceptů za stávajícími infrastrukturami a novějších standardů je centrální pro implementaci nejlepšího modelu zabezpečení pro aplikaci.  
   
 ## <a name="introduction-to-security-for-wcf-web-services"></a>Úvod do zabezpečení pro webové služby WCF  
- Skupina Microsoft Patterns and Practices napsal podrobný dokument White Paper o na doprovodné materiály zabezpečení WCF, která je k dispozici ke stažení zde: [Příručka zabezpečení WCF](https://go.microsoft.com/fwlink/?LinkId=210210). Tento dokument White Paper popisuje základní bezpečnostní principy, jejich vztah k webové služby, klíčové koncepty zabezpečení WCF, scénářích s intranetem aplikace a scénáře aplikací Internetu.  
+ Skupina Microsoft Patterns and Practices vytvořila podrobný dokument white paper o zásadách zabezpečení služby WCF, které je k dispozici ke stažení zde: [Příručka zabezpečení WCF](https://go.microsoft.com/fwlink/?LinkId=210210). Tento dokument white paper popisuje základní koncepty zabezpečení, které se vztahují na webové služby, klíčové koncepty zabezpečení WCF, scénáře intranetové aplikace a scénáře internetových aplikací.  
   
-## <a name="industry-wide-security-specifications"></a>Specifikace globální zabezpečení  
+## <a name="industry-wide-security-specifications"></a>Specifikace zabezpečení v celém oboru  
   
 ### <a name="public-key-infrastructure"></a>Infrastruktura veřejných klíčů  
- Infrastruktura veřejných klíčů (PKI) je systém digitální certifikáty, certifikační autority a další registrační autority, které ověřují jednotlivých účastníků v transakci elektronických prostřednictvím kryptografii využívající veřejného klíče. Další informace najdete v tématu [systému Windows Server 2008 R2 Certificate Services](https://go.microsoft.com/fwlink/?LinkId=210211).  
+ Infrastruktura veřejných klíčů (PKI) je systém digitálních certifikátů, certifikačních autorit a dalších registračních autorit, které ověřují a ověřují každou stranu zapojenou do elektronické transakce pomocí kryptografie s veřejným klíčem. Další informace najdete v tématu [Certifikační služba Windows serveru 2008 R2](https://go.microsoft.com/fwlink/?LinkId=210211).  
   
 ### <a name="kerberos-protocol"></a>Protokol Kerberos  
- *Protokol Kerberos* je specifikace pro vytvoření mechanismus zabezpečení, která ověřuje uživatele v doméně Windows. Umožňuje uživateli vytvořit zabezpečené kontext s jinými entitami v rámci domény. Windows 2000 a novějším platformy pomocí protokolu Kerberos ve výchozím nastavení. Principy mechanismy systému je užitečné, když vytvoření služby, který bude komunikovat s intranetoví klienti. Kromě toho od *webových služeb zabezpečení pomocí protokolu Kerberos vazby* je široce publikováno, můžete použít protokol Kerberos ke komunikaci s klienty v Internetu (to znamená, protokolu Kerberos je interoperabilní). Další informace o tom, jak se implementují protokol Kerberos ve Windows najdete v tématu [Microsoft Kerberos](https://go.microsoft.com/fwlink/?LinkId=210212).  
+ *Protokol Kerberos* je specifikace pro vytvoření mechanismu zabezpečení, který ověřuje uživatele v doméně systému Windows. Umožňuje uživateli vytvořit zabezpečený kontext s jinými entitami v rámci domény. Platformy Windows 2000 a novější používají ve výchozím nastavení protokol Kerberos. Porozumění mechanismům systému je užitečné při vytváření služby, která bude spolupracovat s intranetovým klientem. Kromě toho, vzhledem specifikace Web Services Security k tomu, že je *vazba protokolu Kerberos* v provozu široce publikovaná, můžete k komunikaci s internetovými klienty použít protokol Kerberos (to znamená, že je možné komunikovat s protokolem Kerberos). Další informace o implementaci protokolu Kerberos v systému Windows najdete v tématu [Microsoft Kerberos](https://go.microsoft.com/fwlink/?LinkId=210212).  
   
-### <a name="x509-certificates"></a>Certifikáty X.509  
- Certifikáty X.509 jsou formou primární přihlašovacích údajů používaných pro zabezpečení aplikace. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](https://go.microsoft.com/fwlink/?LinkId=210213). V úložišti certifikátů ukládají certifikáty X.509. Počítač se systémem Windows má několik druhů úložišť certifikátů, každý s jiným způsobem. Další informace o různých úložištích, naleznete v tématu [úložišť certifikátů](https://go.microsoft.com/fwlink/?LinkID=87787).  
+### <a name="x509-certificates"></a>Certifikáty X. 509  
+ Certifikáty X. 509 jsou primárním formulářem přihlašovacích údajů, který se používá v aplikacích zabezpečení. Další informace o certifikátech X. 509 najdete v tématu [certifikáty s veřejným klíčem x. 509](https://go.microsoft.com/fwlink/?LinkId=210213). Certifikáty X. 509 se ukládají v úložišti certifikátů. Počítač se systémem Windows má několik druhů úložišť certifikátů, z nichž každý má jiný účel. Další informace o různých úložištích najdete v tématu [úložiště certifikátů](https://go.microsoft.com/fwlink/?LinkID=87787).  
   
-## <a name="web-services-security-specifications"></a>Webové služby specifikace zabezpečení  
- Mnoho běžně používaných webových služeb zabezpečení specifikace podporu vazeb definovaných systémem. Kompletní seznam systémových vazeb a specifikací webových služeb podporují, najdete v tématu: [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+## <a name="web-services-security-specifications"></a>Specifikace specifikace Web Services Security  
+ Vazby definované systémem podporují mnoho běžně používaných specifikací zabezpečení webových služeb. Úplný seznam vazeb poskytovaných systémem a specifikací pro webové služby, které podporují, najdete v tématu [protokoly webových služeb podporované vazbami interoperability poskytovanými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md) .  
   
 ## <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu  
- WCF poskytuje několik způsobů, jak řídit přístup ke službě nebo operaci. Mezi nimi jsou  
+ Služba WCF nabízí několik způsobů, jak řídit přístup ke službě nebo operaci. Mezi nimi patří  
   
 1. <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
   
-2. Zprostředkovatel členství technologie ASP.NET  
+2. Poskytovatel členství ASP.NET  
   
-3. Zprostředkovatele rolí ASP.NET  
+3. Poskytovatel rolí ASP.NET  
   
 4. Správce autorizací  
   
-5. Modelem identity  
+5. Model identity  
   
- Další informace o těchto tématech naleznete v tématu [mechanismy řízení přístupu](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md)  
+ Další informace o těchto tématech najdete v [Access Controlch mechanismech](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md) .  
   
 ## <a name="see-also"></a>Viz také:
 

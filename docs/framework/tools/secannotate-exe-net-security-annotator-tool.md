@@ -5,12 +5,12 @@ helpviewer_keywords:
 - SecAnnotate.exe
 - Security Annotator tool
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
-ms.openlocfilehash: cc57bd01c5626c889b5d94eac1e7358cafa4ab10
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ffc275c588775fb79da276be904ada90a5a31bad
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447319"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937931"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)
 Nástroj pro anotaci zabezpečení .NET (SecAnnotate. exe) je aplikace příkazového řádku, která identifikuje `SecurityCritical` a `SecuritySafeCritical` části jednoho nebo více sestavení.  
@@ -50,6 +50,6 @@ SecAnnotate.exe [parameters] [assemblies]
 ## <a name="remarks"></a>Poznámky  
  Parametry a sestavení mohou být rovněž poskytnuty v souboru odpovědí, který je zadán v příkazovém řádku a s předponou zavináč (@). Každý řádek v souboru odpovědí by měl obsahovat jediný parametr nebo název sestavení.  
   
- Další informace o nástroji .NET Security anotace najdete v záznamu [pomocí SecAnnotate k analýze vašich sestavení pro porušení transparentnosti](https://blogs.msdn.microsoft.com/shawnfa/2009/11/18/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example/) na blogu zabezpečení .NET.  
+ Další informace o nástroji .NET Security anotace najdete v záznamu [pomocí SecAnnotate k analýze vašich sestavení pro porušení transparentnosti](https://docs.microsoft.com/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example) na blogu zabezpečení .NET.  
   
 ## <a name="examples"></a>Příklady

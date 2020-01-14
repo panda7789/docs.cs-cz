@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c3809c8f-1737-4f0f-9442-0c01ee689871
 topic_type:
 - apiref
-ms.openlocfilehash: 0ce84e1545523302cd47e60b9f047bc470e6bf0f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a4e9268d292004f447b30c82f1db4d0fe58404fe
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443626"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937948"
 ---
 # <a name="corelementtype-enumeration"></a>CorElementType – výčet
 
@@ -121,7 +121,7 @@ typedef enum CorElementType {
 Modifikátory typu tvoří základ pro reprezentace složitějších typů. Hodnota modifikátoru typu `CorElementType` se aplikuje na hodnotu, která se v signatuře typu hned za ní následuje. Hodnota, která následuje za hodnotou modifikátoru typu `CorElementType`, může být `CorElementType` jednoduchá hodnota typu, token metadat nebo jiná hodnota, jak je uvedeno v následující tabulce.
 
 > [!NOTE]
-> Všechna čísla (*číslo*, *počet argumentů*, *token metadat*, *pořadí*, *počet*a *mez*) jsou ukládána jako komprimovaná celá čísla. Podrobnosti najdete v tématu [Standard ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=116487) na webu ECMA.
+> Všechna čísla (*číslo*, *počet argumentů*, *token metadat*, *pořadí*, *počet*a *mez*) jsou ukládána jako komprimovaná celá čísla. Podrobnosti najdete v tématu [Standard ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm) na webu ECMA.
 
 |Modifikátor typu|Formát|
 |-------------------|------------|

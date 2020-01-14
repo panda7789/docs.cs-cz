@@ -3,18 +3,18 @@ title: Technologie .NET Framework nedostupné v .NET Core
 description: Přečtěte si o .NET Framework technologiích, které nejsou k dispozici v .NET Core
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: d474b694b80b2f0e74dd2916106016802f7e0c68
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.openlocfilehash: 89871753fef92a30bf2151a618207a73b40bb402
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777303"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936949"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologie .NET Framework nedostupné v .NET Core
 
 K dispozici je několik technologií .NET Frameworkch knihoven, které se nedají používat s .NET Core, jako jsou AppDomains, Vzdálená komunikace, zabezpečení přístupu kódu (CAS), transparentnost zabezpečení a System. EnterpriseServices. Pokud se vaše knihovny spoléhají na jednu nebo více těchto technologií, vezměte v úvahu alternativní přístupy uvedené níže. Další informace o kompatibilitě rozhraní API najdete v tématu zásadní [změny .NET Core](../compatibility/breaking-changes.md).
 
-Vzhledem k tomu, že rozhraní API nebo technologie není aktuálně implementováno, neznamená, že je záměrně Nepodporovaná. Prohledejte úložiště GitHub pro .NET Core, abyste zjistili, jestli se k určitému problému setkáte podle návrhu. Pokud tento indikátor nenajdete, uveďte problém v [úložišti dotnet/runtime](https://github.com/dotnet/runtime/issues) a požádejte ho o konkrétní rozhraní API a technologie. Problémy, které jsou požadavky na přenos, jsou označeny označením [port-to-Core](https://github.com/dotnet/runtime/labels/port-to-core) .
+Vzhledem k tomu, že rozhraní API nebo technologie není aktuálně implementováno, neznamená, že je záměrně Nepodporovaná. Prohledejte úložiště GitHub pro .NET Core, abyste zjistili, jestli se k určitému problému setkáte podle návrhu. Pokud tento indikátor nenajdete, založte problém do [úložiště dotnet/runtime](https://github.com/dotnet/runtime/issues) a požádejte ho o konkrétní rozhraní API a technologie. Problémy, které jsou požadavky na přenos, jsou označeny označením [port-to-Core](https://github.com/dotnet/runtime/labels/port-to-core) .
 
 ## <a name="appdomains"></a>AppDomains
 
@@ -46,7 +46,6 @@ Pro spouštění procesů s nejmenší sadou oprávnění používejte hranice z
 
 Rozhraní .NET Core nepodporuje System. EnterpriseServices (COM+).
 
-## <a name="next-steps"></a>Další kroky
+## <a name="see-also"></a>Viz také:
 
->[!div class="nextstepaction"]
->[Analyzovat závislosti](third-party-deps.md)
+- [Přehled přenosů z .NET Framework do .NET Core](../porting/index.md)

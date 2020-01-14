@@ -5,18 +5,18 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 30660c2fb89fd3738abb05122a5daf175677265c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 790543118b18b0422f41c3249512b62aae0cfb03
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711243"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938113"
 ---
 # <a name="thread-safe-collections"></a>Kolekce se zabezpečenými vlákny
 .NET Framework 4 zavádí obor názvů <xref:System.Collections.Concurrent?displayProperty=nameWithType>, který obsahuje několik tříd kolekcí, které jsou bezpečné pro přístup z více vláken a jsou škálovatelné. Více vláken může bezpečně a efektivně přidávat nebo odebírat položky z těchto kolekcí, aniž by bylo potřeba provádět další synchronizaci v uživatelském kódu. Při psaní nového kódu, použijte souběžné třídy kolekce vždy, když více vláken bude zapisovat do kolekce současně. Pokud čtete pouze ze sdílené kolekce, pak můžete použít třídy v oboru názvů <xref:System.Collections.Generic?displayProperty=nameWithType>. Doporučujeme, abyste nepoužívali třídy kolekcí 1,0, pokud není nutné cílit na .NET Framework 1,1 nebo starší modul runtime.  
   
 ## <a name="thread-synchronization-in-the-net-framework-10-and-20-collections"></a>Synchronizace vláken v kolekcích .NET Framework 1,0 a 2,0  
- Kolekce představené v .NET Framework 1,0 se nacházejí v oboru názvů <xref:System.Collections?displayProperty=nameWithType>. Tyto kolekce, které zahrnují běžně používané <xref:System.Collections.ArrayList> a <xref:System.Collections.Hashtable>, poskytují určitou bezpečnost vlákna prostřednictvím vlastnosti `Synchronized`, která vrací obálku bezpečnou pro vlákno kolem kolekce. Obálka funguje tak, že při každé operaci přidání nebo odebrání zamkne celou kolekci. Proto musí každé vlákno, které se pokouší o přístup ke kolekci, počkat na jeho vypnutí, aby bylo možné provést jeden zámek. To není škálovatelné a může způsobit výrazné snížení výkonu pro velké kolekce. Návrh také není zcela chráněn před konflikty časování. Další informace najdete v tématu [synchronizace v obecných kolekcích](https://blogs.msdn.microsoft.com/bclteam/2005/03/15/synchronization-in-generic-collections-brian-grunkemeyer/).  
+ Kolekce představené v .NET Framework 1,0 se nacházejí v oboru názvů <xref:System.Collections?displayProperty=nameWithType>. Tyto kolekce, které zahrnují běžně používané <xref:System.Collections.ArrayList> a <xref:System.Collections.Hashtable>, poskytují určitou bezpečnost vlákna prostřednictvím vlastnosti `Synchronized`, která vrací obálku bezpečnou pro vlákno kolem kolekce. Obálka funguje tak, že při každé operaci přidání nebo odebrání zamkne celou kolekci. Proto musí každé vlákno, které se pokouší o přístup ke kolekci, počkat na jeho vypnutí, aby bylo možné provést jeden zámek. To není škálovatelné a může způsobit výrazné snížení výkonu pro velké kolekce. Návrh také není zcela chráněn před konflikty časování. Další informace najdete v tématu [synchronizace v obecných kolekcích](https://docs.microsoft.com/archive/blogs/bclteam/synchronization-in-generic-collections-brian-grunkemeyer).  
   
  Třídy kolekce představené v .NET Framework 2,0 se nacházejí v oboru názvů <xref:System.Collections.Generic?displayProperty=nameWithType>. Mezi ně patří <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>a tak dále. Tyto třídy poskytují lepší bezpečnost typů a výkon v porovnání s třídami .NET Framework 1,0. Třídy kolekce .NET Framework 2,0 však neposkytují žádnou synchronizaci vláken; uživatelský kód musí poskytovat veškerou synchronizaci při přidávání nebo odebírání položek na více vláknech současně.  
   

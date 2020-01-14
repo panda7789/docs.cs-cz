@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 13a1ca2d85be0c61b9d0f09c0c5cb670b49f5625
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1fdfaa833ad32428d341b6f3a61cc7f638036183
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75703218"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937510"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
 Obecné třídy zapouzdřují operace, které nejsou specifické pro konkrétní datový typ. Nejběžnější použití pro obecné třídy je kolekce, jako jsou propojené seznamy, zatřiďovací tabulky, zásobníky, fronty, stromy a tak dále. Operace, jako je přidání a odebrání položek z kolekce, jsou prováděny v podstatě stejným způsobem bez ohledu na typ uložených dat.  
@@ -70,5 +70,5 @@ Obecné třídy zapouzdřují operace, které nejsou specifické pro konkrétní
 - <xref:System.Collections.Generic>
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Obecné typy](./index.md)
-- [Uložení stavu enumerátorů](https://blogs.msdn.microsoft.com/wesdyer/2006/01/13/saving-the-state-of-enumerators/)
-- [Skládanka dědičnosti, první část](https://blogs.msdn.microsoft.com/ericlippert/2007/07/27/an-inheritance-puzzle-part-one/)
+- [Uložení stavu enumerátorů](https://docs.microsoft.com/archive/blogs/wesdyer/saving-the-state-of-enumerators)
+- [Skládanka dědičnosti, první část](https://docs.microsoft.com/archive/blogs/ericlippert/an-inheritance-puzzle-part-one)

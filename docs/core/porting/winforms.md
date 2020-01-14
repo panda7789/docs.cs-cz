@@ -4,12 +4,12 @@ description: Naučíte se, jak portovat .NET Framework model Windows Forms aplik
 author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
-ms.openlocfilehash: 959b506fe23691e160d7e88e0ae61cc71c1f3421
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: b1048c2d725a2bcf8398af1d2d53f40efc36c82e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567278"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936958"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postup při portování model Windows Forms desktopové aplikace do .NET Core
 
@@ -19,10 +19,10 @@ V tomto článku se k identifikaci typů souborů používaných k migraci použ
 
 | Soubor | Popis |
 | ---- | ----------- |
-| **MyApp. sln** | Název souboru řešení |
-| **MyForms. csproj** | Název projektu .NET Framework model Windows Forms na port. |
-| **MyFormsCore. csproj** | Název nového projektu .NET Core, který vytvoříte. |
-| **MyAppCore. exe** | Spustitelný soubor aplikace model Windows Forms .NET Core. |
+| **MyApps.sln** | Název souboru řešení |
+| **MyForms.csproj** | Název projektu .NET Framework model Windows Forms na port. |
+| **MyFormsCore.csproj** | Název nového projektu .NET Core, který vytvoříte. |
+| **MyAppCore.exe** | Spustitelný soubor aplikace model Windows Forms .NET Core. |
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -30,7 +30,7 @@ V tomto článku se k identifikaci typů souborů používaných k migraci použ
 
   Nainstalujte následující úlohy sady Visual Studio:
   - Vývoj desktopových aplikací pomocí .NET
-  - Vývoj pro různé platformy .NET Core
+  - Vývoj pro různé platformy .NET core
 
 - Pracovní model Windows Forms projekt v řešení, které sestaví a spouští bez problémů.
 - Projekt kódovaný v C#.
@@ -106,7 +106,7 @@ SolutionFolder
     └───MyFormsCore.csproj
 ```
 
-Projekt **MyFormsCore. csproj** budete chtít přidat do aplikace **MyApp. sln** pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
+Přidejte projekt **MyFormsCore. csproj** do **MyApp. sln** pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
 ```dotnetcli
 dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
@@ -190,10 +190,10 @@ Pomocí příkladu předchozího kroku umožníte rozbalení projektů a soubor�
 
 | Soubor | Popis |
 | ---- | ----------- |
-| **MyApp. sln** | Název souboru řešení |
-| **MyControls. csproj** | Název .NET Framework model Windows Forms řídí projekt na port. |
-| **MyControlsCore. csproj** | Název nového projektu knihovny .NET Core, který vytvoříte. |
-| **MyCoreControls. dll** | Knihovna ovládacích prvků model Windows Forms .NET Core |
+| **MyApps.sln** | Název souboru řešení |
+| **MyControls.csproj** | Název .NET Framework model Windows Forms řídí projekt na port. |
+| **MyControlsCore.csproj** | Název nového projektu knihovny .NET Core, který vytvoříte. |
+| **MyCoreControls.dll** | Knihovna ovládacích prvků model Windows Forms .NET Core |
 
 ```
 SolutionFolder
@@ -287,7 +287,7 @@ Předchozí příkaz přidá následující do projektu **MyFormsCore. csproj** 
 
 ```xml
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.1.0" />
   </ItemGroup>
 ```
 
@@ -299,6 +299,7 @@ Jakmile aplikace Visual Studio 2019 podporuje Návrhář formulářů, můžete 
 
 ## <a name="next-steps"></a>Další kroky
 
+- Přečtěte si o [nejnovějších změnách z .NET Framework do .NET Core](../compatibility/fx-core.md).
 - Přečtěte si další informace o sadě [Windows Compatibility Pack][compat-pack].
 - Podívejte se [na video o přenosu](https://www.youtube.com/watch?v=upVQEUc_KwU) .NET Framework model Windows Forms projektu do .NET Core.
 

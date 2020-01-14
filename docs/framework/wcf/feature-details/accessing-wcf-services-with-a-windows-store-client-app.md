@@ -2,12 +2,12 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: f5cc18973231f327ee161946a235cb8b8b2ea5a7
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 77dc5d19bc40dc09148a8d2368c56e522bfafc1a
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978187"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938166"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Store. Tyto aplikace jsou navržené kolem rozhraní dotykové obrazovky. .NET Framework 4,5 umožňuje aplikacím pro Windows Store volat služby WCF.  
@@ -16,7 +16,7 @@ Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Sto
  V aplikaci pro Windows Store je k dispozici podmnožina funkcí WCF, další informace najdete v následujících částech.  
   
 > [!IMPORTANT]
-> Místo těch, která služba WCF vystavuje, použijte rozhraní API syndikace WinRT. Další informace najdete v tématu [rozhraní API syndikace WinRT](https://go.microsoft.com/fwlink/?LinkId=236265) .  
+> Místo těch, která služba WCF vystavuje, použijte rozhraní API syndikace WinRT. Další informace najdete v tématu [rozhraní API syndikace WinRT](xref:Windows.Web.Syndication) .  
   
 > [!WARNING]
 > Přidání odkazu webové služby na prostředí Windows Runtime komponentu pomocí Přidat odkaz na službu se nepodporuje.  
@@ -101,12 +101,12 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
   
 2. DataContractJsonSerializer  
   
-3. Objekt  
+3. XmlSerializer  
   
 > [!WARNING]
 > Implementace XmlDictionaryWriter. Write (DateTime) nyní zapisuje objekt DateTime jako řetězec.  
   
-### <a name="security"></a>Zabezpečení  
+### <a name="security"></a>Zabezpečení –  
 
 V aplikacích pro Windows Store jsou podporovány následující režimy zabezpečení:
   
@@ -124,9 +124,9 @@ V aplikacích pro Windows Store jsou podporovány následující typy přihlašo
   
 2. Základní  
   
-3. otisk  
+3. Otisk  
   
-4. Mluví  
+4. Negotiate  
   
 5. NTLM  
   
@@ -176,9 +176,9 @@ void async SomeMethod()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Blog WCF v aplikacích pro Windows Store](https://blogs.msdn.microsoft.com/piyushjo/2011/09/21/wcf-in-windows-8-metro-styled-apps-absolutely-supported/)
-- [Klienti a zabezpečení WCF Windows Store](https://blogs.msdn.microsoft.com/piyushjo/2011/10/11/calling-a-wcf-service-from-a-metro-application-adding-security/)
-- [Aplikace pro Windows Store a volání mezi počítači](https://blogs.msdn.microsoft.com/piyushjo/2011/10/21/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario/)
-- [Volání služby WCF nasazené v Azure z aplikace pro Windows Store](https://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)
+- [Blog WCF v aplikacích pro Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/wcf-in-windows-8-metro-styled-apps-absolutely-supported)
+- [Klienti a zabezpečení WCF Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-adding-security)
+- [Aplikace pro Windows Store a volání mezi počítači](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario)
+- [Volání služby WCF nasazené v Azure z aplikace pro Windows Store](https://docs.microsoft.com/archive/blogs/piyushjo/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario)
 - [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
 - [Vazby](../../../../docs/framework/wcf/bindings.md)

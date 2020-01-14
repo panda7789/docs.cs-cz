@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3bb4b526-0118-42e2-ba59-c95648528ce9
 topic_type:
 - apiref
-ms.openlocfilehash: a028d2a8116de4df79f662ee8b2768e6e070428a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 048286fb9e1af34cd964fb5b21892778f9575d2c
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141395"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938194"
 ---
 # <a name="metahost_policy_flags-enumeration"></a>METAHOST_POLICY_FLAGS – výčet
 Poskytuje zásady vytváření vazeb, které jsou společné pro většinu hostitelů modulu runtime. Tento výčet používá metoda [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) .  
@@ -44,12 +44,12 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`METAHOST_POLICY_HIGHCOMPAT`|Definuje zásadu s vysokou kompatibilitou, která nebere v úvahu žádný modul CLR (Common Language Runtime), který je načten do aktuálního procesu. Místo toho zvažuje pouze nainstalované CLRs a předvolby komponenty, jak je odvozeno od samotného souboru sestavení, deklarované předdefinované verze nebo konfiguračního souboru.|  
-|`METAHOST_POLICY_APPLY_UPGRADE_POLICY`|Aplikuje zásadu upgradu na výsledek vazby na verzi, pokud se nenajde přesná shoda, a to na základě obsahu HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\Policy\Upgrades. To má stejný účinek jako [RUNTIME_INFO_UPGRADE_VERSION](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md).|  
+|`METAHOST_POLICY_APPLY_UPGRADE_POLICY`|Aplikuje zásadu upgradu na výsledek vázání verze, když se nenalezne přesná shoda na základě obsahu HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\. NETFramework\Policy\Upgrades. To má stejný účinek jako [RUNTIME_INFO_UPGRADE_VERSION](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md).|  
 |`METAHOST_POLICY_EMULATE_EXE_LAUNCH`|Výsledky vazby jsou vráceny, jako kdyby byla v novém procesu spuštěna image poskytnutá voláním. V současné době `GetRequestedRuntime` ignoruje sadu běhových prostředí spustitelný a váže se k sadě instalovaných modulů runtime. Tento příznak umožňuje hostiteli určit, ke kterému modulu runtime se připojí EXE při jeho spuštění.|  
 |`METAHOST_POLICY_SHOW_ERROR_DIALOG`|Pokud `GetRequestedRuntime` není schopen najít modul runtime, který je kompatibilní se vstupními parametry, zobrazí se dialogové okno s chybou. Počínaje .NET Framework 4,5 může toto dialogové okno s chybou mít podobu dialogového okna funkce systému Windows, které se zeptá, jestli chce uživatel povolit příslušnou funkci.|  
 |`METAHOST_POLICY_USE_PROCESS_IMAGE_PATH`|`GetRequestedRuntime` používá bitovou kopii procesu (a odpovídající konfigurační soubor) jako další vstup k procesu vazby. Ve výchozím nastavení se `GetRequestedRuntime` nevrátí do cesty k bitové kopii procesu (obvykle se jedná o soubor EXE, který se použil ke spuštění procesu) při určení modulu runtime, ke kterému se má vytvořit vazba.|  
 |`METAHOST_POLICY_ENSURE_SKU_SUPPORTED`|`GetRequestedRuntime` musí ověřit, zda je příslušná SKU nainstalována, když v konfiguračním souboru nejsou k dispozici žádné informace. To umožňuje aplikacím, které nemají konfigurační soubory, řádně selhat na menších SKU, než je výchozí instalace .NET Framework. Ve výchozím nastavení `GetRequestedRuntime` nekontroluje, zda je příslušná SKU nainstalována, pokud není zadán atribut SKU v konfiguračním souboru `<supportedRuntime />` elementu.|  
-|`METAHOST_POLICY_IGNORE_ERROR_MODE`|`GetRequestedRuntime` by měl ignorovat SEM_FAILCRITICALERRORS (což je nastaveno voláním funkce [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkId=255242) ) a zobrazit dialogové okno chyby. Ve výchozím nastavení SEM_FAILCRITICALERRORS potlačí chybové dialogové okno. Mohla být zděděná z jiného procesu a tichá chyba může být ve vašem scénáři nežádoucí.|  
+|`METAHOST_POLICY_IGNORE_ERROR_MODE`|`GetRequestedRuntime` by měl ignorovat SEM_FAILCRITICALERRORS (což je nastaveno voláním funkce [SetErrorMode](/windows/win32/api/errhandlingapi/nf-errhandlingapi-seterrormode) ) a zobrazit dialogové okno chyby. Ve výchozím nastavení SEM_FAILCRITICALERRORS potlačuje dialogové okno chyby. Mohla být zděděná z jiného procesu a tichá chyba může být ve vašem scénáři nežádoucí.|  
   
 ## <a name="remarks"></a>Poznámky  
   

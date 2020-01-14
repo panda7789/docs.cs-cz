@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: 9c57ff6dd9acd8a8bcff6de4fce7d898f1135703
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f435c149f7ec2768ee6c954c1f0ae12a95cc326f
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714970"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937538"
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 
@@ -62,4 +62,4 @@ Další informace a příklady naleznete v tématu [statické konstruktory](./st
 - [Třídy a struktury](./index.md)
 - [Finalizační metody](./destructors.md)
 - [static](../../language-reference/keywords/static.md)
-- [Proč jsou Inicializátory spouštěny v opačném pořadí jako konstruktory? První část](https://blogs.msdn.microsoft.com/ericlippert/2008/02/15/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)
+- [Proč jsou Inicializátory spouštěny v opačném pořadí jako konstruktory? První část](https://docs.microsoft.com/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)

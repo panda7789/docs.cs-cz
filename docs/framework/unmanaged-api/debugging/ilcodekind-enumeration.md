@@ -12,12 +12,12 @@ api_type:
 ms.assetid: b91765e4-82db-46f9-a6dc-6b80610276af
 topic_type:
 - apiref
-ms.openlocfilehash: b59fbc2acefa907bb3f881b7ed183388d2e4c368
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 553a92812f009ca1033f1bdcda0ea3722c5f01e3
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73103371"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937840"
 ---
 # <a name="ilcodekind-enumeration"></a>Výčet ILCodeKind
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -41,7 +41,7 @@ typedef enum ILCodeKind {
 |`ILCODE_REJIT_IL`|Ladicí program má přístup k informacím z instrumentace ReJIT.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen výčtu `ILCodeKind` lze předat metodám [enumeratelocalvariablesex –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md) a [getlocalvariableex –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md) k určení, zda může ladicí program přistupovat k proměnným přidaným do instrumentace ReJIT profileru a k [getcodeex – ](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md)metoda pro určení, zda ladicí program může získat přístup k instrumentované Il  
+ Člen výčtu `ILCodeKind` může být předán metodám [enumeratelocalvariablesex –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md) a [getlocalvariableex –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md) k určení, zda ladicí program může přistupovat k proměnným přidaným do instrumentace ReJIT profileru a k metodě [getcodeex –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md) k určení, zda ladicí program může získat přístup k instrumentované Il.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -56,4 +56,4 @@ typedef enum ILCodeKind {
 
 - [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
 - [ICorDebugILFrame4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)
-- [ReJIT: Průvodce](https://blogs.msdn.microsoft.com/davbr/2011/10/12/rejit-a-how-to-guide/)
+- [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)

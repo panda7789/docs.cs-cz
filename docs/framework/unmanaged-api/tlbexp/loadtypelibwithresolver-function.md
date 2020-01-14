@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7123a89b-eb9b-463a-a552-a081e33b0a3a
 topic_type:
 - apiref
-ms.openlocfilehash: 82fa0903474ee04b767fd9c68812efe7f0cc4fa0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: adbb5eca3b7ffa36d0c963d0dacc3b2afdb664d4
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124163"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935560"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver – funkce
 Načte knihovnu typů a pomocí dodaného [rozhraní ITypeLibResolver –](itypelibresolver-interface.md) vyřeší všechny interně odkazované knihovny typů.  
@@ -39,7 +39,7 @@ HRESULT LoadTypeLibWithResolver(
  pro Cesta k souboru knihovny typů.  
   
  `regkind`  
- pro Příznak [výčtu REGKIND](https://docs.microsoft.com/windows/win32/api/oleauto/ne-oleauto-regkind) , který určuje, jak je knihovna typů registrována. Možné hodnoty jsou:  
+ pro Příznak [výčtu REGKIND](/windows/win32/api/oleauto/ne-oleauto-regkind) , který určuje, jak je knihovna typů registrována. Možné hodnoty jsou:  
   
 - `REGKIND_DEFAULT`: použijte výchozí chování registrace.  
   
@@ -58,7 +58,7 @@ HRESULT LoadTypeLibWithResolver(
   
 |Návratová hodnota|Význam|  
 |------------------|-------------|  
-|`S_OK`|Nástup.|  
+|`S_OK`|Úspěch|  
 |`E_OUTOFMEMORY`|Nedostatek paměti|  
 |`E_POINTER`|Jeden nebo více ukazatelů je neplatných.|  
 |`E_INVALIDARG`|Jeden nebo více argumentů je neplatných.|  

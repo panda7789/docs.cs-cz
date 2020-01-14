@@ -2,12 +2,12 @@
 title: Zajištění zabezpečení pro protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: c5efd2990a00045e920c005f6658d5fdfb858481
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 679975be44244f10232b805a6cc2776b48ed6058
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795941"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935772"
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v protokolech zpráv a také v případě událostí generovaných protokolováním zpráv.  
@@ -23,11 +23,11 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
   
 - Zajistěte, aby byly soubory protokolu chráněné Access Control seznamy (ACL) ve scénářích Web-Host a samoobslužné hostování.  
   
-- Vyberte příponu souboru, kterou nelze snadno zpracovat pomocí webové žádosti. Například Přípona souboru. XML není bezpečná volba. Seznam rozšíření, která je možné zpracovat, najdete v příručce pro správu služby Internetová informační služba (IIS).  
+- Vyberte příponu souboru, kterou nelze snadno zpracovat pomocí webové žádosti. Například Přípona souboru. XML není bezpečná volba. Seznam přípon, které se dají obsluhovat, najdete v příručce pro právu Internetové informační služby (IIS).  
   
 - Zadejte absolutní cestu k umístění souboru protokolu, který by měl být mimo veřejný adresář webového hostitele webhost, aby k němu externí strana nezískala přes webový prohlížeč.  
   
- Ve výchozím nastavení klíče a identifikovatelné osobní údaje (PII), jako je uživatelské jméno a heslo, se v trasování a zprávách protokolu neprotokolují. Správce počítače však může použít `enableLoggingKnownPII` atribut `machineSettings` v prvku souboru Machine. config, aby umožnil aplikacím běžícím na počítači protokolovat známé identifikovatelné osobní údaje (PII). Následující konfigurace ukazuje, jak to provést:  
+ Ve výchozím nastavení klíče a identifikovatelné osobní údaje (PII), jako je uživatelské jméno a heslo, se v trasování a zprávách protokolu neprotokolují. Správce počítače však může použít atribut `enableLoggingKnownPII` v prvku `machineSettings` souboru Machine. config, aby umožnil aplikacím běžícím na počítači protokolovat známé identifikovatelné osobní údaje (PII). Následující konfigurace ukazuje, jak to provést:  
   
 ```xml  
 <configuration>  
@@ -37,7 +37,7 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
 </configuration>   
 ```  
   
- Nástroj pro nasazení aplikace může potom pomocí `logKnownPii` atributu v souboru App. config nebo Web. config povolit protokolování PII následujícím způsobem:  
+ Nástroj pro nasazení aplikace může potom pomocí atributu `logKnownPii` v souboru App. config nebo Web. config povolit protokolování PII následujícím způsobem:  
   
 ```xml  
 <system.diagnostics>  
@@ -54,10 +54,10 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
 </system.diagnostics>  
 ```  
   
- Pouze v případě, že `true` jsou obě nastavení povolena protokolování PII. Kombinace dvou přepínačů umožňuje pružně protokolovat známé PII pro každou aplikaci.  
+ Pouze v případě, že obě nastavení jsou `true` je povoleno protokolování PII. Kombinace dvou přepínačů umožňuje pružně protokolovat známé PII pro každou aplikaci.  
   
 > [!IMPORTANT]
-> [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] `true` V příznacích `logKnownPii` `<system.serviceModel><messageLogging logEntireMessage="true" logKnownPii="true" …`a musí být také nastaveno na hodnotu v souboru Web. config nebo App. config, aby bylo možné povolit protokolování PII, jak je znázorněno v následujícím příkladu. `logEntireMessage`  
+> V [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] musí být příznaky `logEntireMessage` a `logKnownPii` také nastaveny na `true` v souboru Web. config nebo souboru App. config, aby bylo možné povolit protokolování PII, jak je znázorněno v následujícím příkladu `<system.serviceModel><messageLogging logEntireMessage="true" logKnownPii="true" …`.  
   
  Měli byste si uvědomit, že pokud v konfiguračním souboru zadáte dva nebo více vlastních zdrojů, budou čteny pouze atributy prvního zdroje. Ostatní jsou ignorovány. To znamená, že pro následující soubor App. config není k dispozici protokol PII pro oba zdroje, i když je protokolování PII pro druhý zdroj explicitně povoleno.  
   
@@ -84,11 +84,11 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
 </system.diagnostics>  
 ```  
   
- Pokud element existuje mimo soubor Machine. config, <xref:System.Configuration.ConfigurationErrorsException>vyvolá systém. `<machineSettings enableLoggingKnownPii="Boolean"/>`  
+ Pokud `<machineSettings enableLoggingKnownPii="Boolean"/>` element existuje mimo soubor Machine. config, systém vyvolá <xref:System.Configuration.ConfigurationErrorsException>.  
   
- Změny jsou platné pouze v případě, že je aplikace spuštěna nebo restartována. Při spuštění se protokoluje událost, když jsou oba atributy nastavené na `true`. Událost je také zaznamenána v `logKnownPii` případě, že `true` je nastavena `false`na, ale `enableLoggingKnownPii` je.  
+ Změny jsou platné pouze v případě, že je aplikace spuštěna nebo restartována. Při spuštění se protokoluje událost, když jsou oba atributy nastavené na `true`. Pokud je `logKnownPii` nastavená na `true`, ale `enableLoggingKnownPii` je `false`, zaprotokoluje se taky událost.  
   
- Při použití těchto dvou přepínačů by měl správce počítače a nástroj pro nasazení aplikace velmi opatrní. Pokud je povolené protokolování PII, zaprotokolují se bezpečnostní klíče a PII. Pokud je zakázaná, citlivá a data specifická pro aplikaci se pořád přihlásí k hlavičkám a institucím zpráv. Důkladnější diskuzi o ochraně osobních údajů a ochraně PII, které se zveřejňují, najdete v tématu [Ochrana osobních údajů uživatelů](https://go.microsoft.com/fwlink/?LinkID=94647).  
+ Při použití těchto dvou přepínačů by měl správce počítače a nástroj pro nasazení aplikace velmi opatrní. Pokud je povolené protokolování PII, zaprotokolují se bezpečnostní klíče a PII. Pokud je zakázaná, citlivá a data specifická pro aplikaci se pořád přihlásí k hlavičkám a institucím zpráv. Důkladnější diskuzi o ochraně osobních údajů a ochraně PII, které se zveřejňují, najdete v tématu [Ochrana osobních údajů uživatelů](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480490(v=msdn.10)).  
   
 > [!CAUTION]
 > PII není v poškozených zprávách skryté. Taková zpráva se protokoluje bez jakýchkoli úprav. Výše uvedené atributy nemají žádný vliv na tento parametr.  
@@ -99,13 +99,13 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
 ## <a name="events-triggered-by-message-logging"></a>Události aktivované protokolováním zpráv  
  Následující seznam obsahuje všechny události generované protokolováním zpráv.  
   
-- Přihlašování zprávy: Tato událost je generována, pokud je povoleno protokolování zpráv v konfiguraci nebo prostřednictvím rozhraní WMI. Obsah události je zapnutý protokolování zpráv. Citlivé informace mohou být protokolovány ve formě prostého textu, i když byly zašifrovány na lince, například tělo zprávy.  
+- Přihlášení k této zprávě: Tato událost je generována, pokud je povoleno protokolování zpráv v konfiguraci nebo prostřednictvím rozhraní WMI. Obsah události je zapnutý protokolování zpráv. Citlivé informace mohou být protokolovány ve formě prostého textu, i když byly zašifrovány na lince, například tělo zprávy.  
   
-- Odhlášení zprávy: Tato událost je generována, když je protokolování zprávy zakázáno prostřednictvím rozhraní WMI. Obsah události je "protokolování zpráv bylo vypnuto".  
+- Odhlášení z: Tato událost je generována, když je protokolování zpráv zakázáno prostřednictvím rozhraní WMI. Obsah události je "protokolování zpráv bylo vypnuto".  
   
-- Zaprotokolujte známou PII na: Tato událost je generována, když je povoleno protokolování známého PII. K tomu dojde, `enableLoggingKnownPii` když je atribut `machineSettings` v prvku souboru Machine. config `logKnownPii` nastaven na `true`hodnotu a atribut `source` elementu v souboru App. config nebo Web. config je nastaven na hodnotu `true`.  
+- Zaznamená známou PII: Tato událost se vygeneruje, když je povolené protokolování známého PII. K tomu dojde v případě, že atribut `enableLoggingKnownPii` v prvku `machineSettings` souboru Machine. config je nastaven na hodnotu `true`a atribut `logKnownPii` `source` elementu v souboru App. config nebo Web. config je nastaven na hodnotu `true`.  
   
-- Známý PII není povolený: Tato událost je generována, pokud není povoleno protokolování známého PII. K tomu dojde v `logKnownPii` případě, že `source` atribut prvku v souboru App. config nebo Web. config je `enableLoggingKnownPii` nastaven na `true`hodnotu, ale atribut v `machineSettings` prvku souboru Machine. config je nastaven na hodnotu `false`. Není vyvolána žádná výjimka.  
+- Protokolované známé PII nejsou povoleny: Tato událost je generována, pokud není povoleno protokolování známého PII. K tomu dojde, když je atribut `logKnownPii` prvku `source` v souboru App. config nebo Web. config nastaven na hodnotu `true`, ale atribut `enableLoggingKnownPii` v `machineSettings` elementu Machine. config je nastaven na `false`. Žádná výjimka se nevyvolá.  
   
  Tyto události lze zobrazit v nástroji Prohlížeč událostí, který je součástí systému Windows. Další informace najdete v tématu [protokolování událostí](./event-logging/index.md).  
   

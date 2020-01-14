@@ -1,56 +1,56 @@
 ---
-ms.openlocfilehash: 2067ea2a70277d188950c449d3990f4426f69beb
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: a8146db1fb54d63d4716b879ce793f7d817cef59
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901780"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937303"
 ---
-### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>Sdílené rozhraní: sestavení byla z Microsoft. AspNetCore. app odebrána.
+### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>Shared framework: Assemblies removed from Microsoft.AspNetCore.App
 
-Počínaje ASP.NET Core 3,0 obsahuje ASP.NET Core Shared Framework (`Microsoft.AspNetCore.App`) pouze sestavení First stran, která jsou plně vyvinutá, podporovaná a obsluhovaná společností Microsoft.
+Starting in ASP.NET Core 3.0, the ASP.NET Core shared framework (`Microsoft.AspNetCore.App`) only contains first-party assemblies that are fully developed, supported, and serviceable by Microsoft.
 
 #### <a name="change-description"></a>Popis změny
 
-Tuto změnu si můžete představit jako předefinování hranic pro ASP.NET Core platformu. Sdílená architektura bude [sestavená na zdrojovém sestavení prostřednictvím GitHubu](https://github.com/dotnet/source-build) a bude dál nabízet stávající výhody sdílených rozhraní .NET Core pro vaše aplikace. Mezi výhody patří menší velikost nasazení, centralizované opravy a rychlejší doba spuštění.
+Think of the change as the redefining of boundaries for the ASP.NET Core "platform." The shared framework will be [source-buildable by anybody via GitHub](https://github.com/dotnet/source-build) and will continue to offer the existing benefits of .NET Core shared frameworks to your apps. Some benefits include smaller deployment size, centralized patching, and faster startup time.
 
-V rámci změny se v `Microsoft.AspNetCore.App`zavádějí nějaké významné změny.
+As part of the change, some notable breaking changes are introduced in `Microsoft.AspNetCore.App`.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Version introduced
 
 3,0
 
-#### <a name="old-behavior"></a>Staré chování
+#### <a name="old-behavior"></a>Old behavior
 
-Projekty odkazované `Microsoft.AspNetCore.App` prostřednictvím elementu `<PackageReference>` v souboru projektu.
+Projects referenced `Microsoft.AspNetCore.App` via a `<PackageReference>` element in the project file.
 
-Kromě toho `Microsoft.AspNetCore.App` obsahuje následující podsoučásti:
+Additionally, `Microsoft.AspNetCore.App` contained the following subcomponents:
 
 - Json.NET (`Newtonsoft.Json`)
-- Entity Framework Core (sestavení s předponou `Microsoft.EntityFrameworkCore.`)
+- Entity Framework Core (assemblies prefixed with `Microsoft.EntityFrameworkCore.`)
 - Roslyn (`Microsoft.CodeAnalysis`)
 
-#### <a name="new-behavior"></a>Nové chování
+#### <a name="new-behavior"></a>New behavior
 
-Odkaz na `Microsoft.AspNetCore.App` již v souboru projektu nevyžaduje prvek `<PackageReference>`. .NET Core SDK podporuje nový element s názvem `<FrameworkReference>`, který nahrazuje použití `<PackageReference>`.
+A reference to `Microsoft.AspNetCore.App` no longer requires a `<PackageReference>` element in the project file. The .NET Core SDK supports a new element called `<FrameworkReference>`, which replaces the use of `<PackageReference>`.
 
-Další informace naleznete v tématu [dotnet/aspnetcore # 3612](https://github.com/dotnet/aspnetcore/issues/3612).
+For more information, see [dotnet/aspnetcore#3612](https://github.com/dotnet/aspnetcore/issues/3612).
 
-Entity Framework Core se dodává jako balíčky NuGet. Tato změna zarovnává přepravní model se všemi ostatními knihovnami přístupu k datům v .NET. Poskytuje Entity Framework Core nejjednodušší cestu pro pokračování v inovacích a zároveň podporuje různé platformy .NET. Přesunutí Entity Framework Core ze sdíleného rozhraní nemá žádný vliv na svůj stav jako rozvinuté a podporované knihovny Microsoftu. [Zásady podpory .NET Core](https://www.microsoft.com/net/platform/support-policy) se budou i nadále pokrývat.
+Entity Framework Core ships as NuGet packages. This change aligns the shipping model with all other data access libraries on .NET. It provides Entity Framework Core the simplest path to continue innovating while supporting the various .NET platforms. The move of Entity Framework Core out of the shared framework has no impact on its status as a Microsoft-developed, supported, and serviceable library. The [.NET Core support policy](https://www.microsoft.com/net/platform/support-policy) continues to cover it.
 
-Json.NET a Entity Framework Core nadále pracují s ASP.NET Core. Nebudou ale zahrnuty do sdíleného rozhraní.
+Json.NET and Entity Framework Core continue to work with ASP.NET Core. They won't, however, be included in the shared framework.
 
-Další informace najdete [v budoucnosti JSON v .NET Core 3,0](https://github.com/dotnet/announcements/issues/90). Také [se zobrazí úplný seznam binárních souborů](https://github.com/dotnet/aspnetcore/issues/3755) odebraných ze sdíleného rozhraní.
+For more information, see [The future of JSON in .NET Core 3.0](https://github.com/dotnet/announcements/issues/90). Also see [the complete list of binaries](https://github.com/dotnet/aspnetcore/issues/3755) removed from the shared framework.
 
-#### <a name="reason-for-change"></a>Důvod změny
+#### <a name="reason-for-change"></a>Reason for change
 
-Tato změna zjednodušuje spotřebu `Microsoft.AspNetCore.App` a snižuje duplicity mezi balíčky NuGet a sdílenými rozhraními.
+This change simplifies the consumption of `Microsoft.AspNetCore.App` and reduces the duplication between NuGet packages and shared frameworks.
 
-Další informace o motivaci této změny najdete v [tomto blogovém příspěvku](https://blogs.msdn.microsoft.com/webdev/2018/10/29/a-first-look-at-changes-coming-in-asp-net-core-3-0).
+For more information on the motivation for this change, see [this blog post](https://devblogs.microsoft.com/aspnet/a-first-look-at-changes-coming-in-asp-net-core-3-0/).
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Nebude nutné, aby projekty pro využívání sestavení v `Microsoft.AspNetCore.App` jako balíčky NuGet. Aby se zjednodušilo cílení a použití ASP.NET Core sdílené architektury, mnoho balíčků NuGet dodaných od ASP.NET Core 1,0 se už nevyrábí. Rozhraní API, která tyto balíčky poskytují, jsou stále k dispozici aplikacím pomocí `<FrameworkReference>` k `Microsoft.AspNetCore.App`. Mezi běžné příklady rozhraní API patří Kestrel, MVC a Razor.
+It won't be necessary for projects to consume assemblies in `Microsoft.AspNetCore.App` as NuGet packages. Aby se zjednodušilo cílení a použití ASP.NET Core sdílené architektury, mnoho balíčků NuGet dodaných od ASP.NET Core 1,0 se už nevyrábí. Rozhraní API, která tyto balíčky poskytují, jsou stále k dispozici aplikacím pomocí `<FrameworkReference>` k `Microsoft.AspNetCore.App`. Mezi běžné příklady rozhraní API patří Kestrel, MVC a Razor.
 
 Tato změna se nevztahuje na všechny binární soubory, na které se odkazuje pomocí `Microsoft.AspNetCore.App` v ASP.NET Core 2. x. Mezi významné výjimky patří:
 

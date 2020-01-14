@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-ms.openlocfilehash: e96ab3ece6edc36c913a8efc0097ff9c4a1e3c22
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f138f445b8a335c7505e25b34f560c4da40ab2dd
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69607028"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937215"
 ---
 # <a name="-baseaddress-c-compiler-options"></a>-BaseAddress (C# možnosti kompilátoru)
-Možnost **-BaseAddress** umožňuje zadat upřednostňovanou základní adresu, na které se má načíst knihovna DLL. Další informace o tom, kdy a proč použít tuto možnost, najdete v tématu [blog Larry Osterman](https://blogs.msdn.microsoft.com/larryosterman/2004/07/06/why-should-i-even-bother-to-use-dlls-in-my-system/).  
+Možnost **-BaseAddress** umožňuje zadat upřednostňovanou základní adresu, na které se má načíst knihovna DLL. Další informace o tom, kdy a proč použít tuto možnost, najdete v tématu [blog Larry Osterman](https://docs.microsoft.com/archive/blogs/larryosterman/why-should-i-even-bother-to-use-dlls-in-my-system).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +45,7 @@ Možnost **-BaseAddress** umožňuje zadat upřednostňovanou základní adresu,
   
 4. Upravte vlastnost **základní adresy knihovny DLL** .  
   
-     Chcete-li nastavit tuto možnost kompilátoru programově <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A>, přečtěte si téma.  
+     Chcete-li nastavit tuto možnost kompilátoru programově, přečtěte si téma <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

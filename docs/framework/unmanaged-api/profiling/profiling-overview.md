@@ -27,12 +27,12 @@ helpviewer_keywords:
 - security, profiling API considerations
 - stack depth [.NET Framework profiling]
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
-ms.openlocfilehash: 08015e2e5918ca64f601ec912a906cfb6319ed6c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a13470b970b35a2f6f088fd305ba455167c8e107
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427103"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937820"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 
@@ -131,7 +131,7 @@ Ve většině případů vlákno, které generuje událost, také spouští ozn�
 
 Všimněte si, že tato zpětná volání nejsou serializována. Uživatelé musí chránit svůj kód vytvořením datových struktur bezpečných pro přístup z více vláken a uzamknutím kódu profileru, pokud je to nutné, aby se zabránilo paralelnímu přístupu z více vláken Proto v některých případech můžete obdržet neobvyklou posloupnost zpětných volání. Předpokládejme například, že spravovaná aplikace vytváří dvě vlákna, která spouštějí stejný kód. V tomto případě je možné přijmout událost [ICorProfilerCallback:: JITCompilationStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) pro určitou funkci z jednoho vlákna a zpětného volání `FunctionEnter` z druhého vlákna před příjmem zpětného volání [ICorProfilerCallback:: JITCompilationFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) . V takovém případě bude uživatel obdržet `FunctionEnter` zpětného volání pro funkci, která pravděpodobně nebyla dosud plně zkompilována za běhu (just-in-time).
 
-## <a name="security"></a>Zabezpečení
+## <a name="security"></a>Zabezpečení –
 
 Knihovna DLL profileru je nespravovaná knihovna DLL, která se spouští jako součást modulu pro spuštění společného jazykového modulu runtime. V důsledku toho kód v profileru DLL nepodléhá omezením zabezpečení přístupu spravovaného kódu. Jediným omezením v knihovně DLL profileru jsou ta, která je uložená operačním systémem pro uživatele, který používá profilované aplikace.
 
@@ -175,7 +175,7 @@ Rozhraní API profilování poskytuje dva způsoby, jak získat zásobníky vol�
 
 Snímek zásobníku je trasování zásobníku vlákna v okamžitém čase. Rozhraní API profilování podporuje trasování spravovaných funkcí v zásobníku, ale opustí trasování nespravovaných funkcí do vlastního zásobníku prohlížeč profileru.
 
-Další informace o tom, jak profiler naprogramovat, aby provedl spravované zásobníky, najdete v části [ICorProfilerInfo2::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) v této dokumentaci a [v zásobníku profileru v .NET Framework 2,0: základy a mimo ni](https://go.microsoft.com/fwlink/?LinkId=73638).
+Další informace o tom, jak profiler naprogramovat, aby provedl spravované zásobníky, najdete v části [ICorProfilerInfo2::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) v této dokumentaci a [v zásobníku profileru v .NET Framework 2,0: základy a mimo ni](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10)).
 
 ### <a name="shadow-stack"></a>Stínový zásobník
 
