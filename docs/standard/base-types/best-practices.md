@@ -10,13 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.custom: seodec18
-ms.openlocfilehash: 56014469f14280deae5f220da6d786f4363ea98f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 158964d1e04091faaa9b3acf82bf4ce2b5aba797
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105725"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711490"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v .NET
 
@@ -60,7 +59,7 @@ Chcete-li tento problém vyřešit, proveďte následující akce:
 
 ## <a name="handle-object-instantiation-appropriately"></a>Vhodně zpracovat vytváření instancí objektu
 
-Srdce. Model objektu regulárního výrazu netto je třída <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>, která představuje modul regulárních výrazů. Jediný největší faktor, který ovlivňuje výkon regulárních výrazů, je často způsob, jakým se používá modul <xref:System.Text.RegularExpressions.Regex>. Definování regulárního výrazu zahrnuje pevné párování modulu regulárních výrazů se vzorem regulárního výrazu. Tento spojovací proces, ať už zahrnuje vytvoření instance objektu <xref:System.Text.RegularExpressions.Regex> předáním jeho konstruktoru vzor regulárního výrazu nebo voláním statické metody předáním vzoru regulárního výrazu společně s řetězcem, který má být analyzován, je nutností finančně jedna.
+Srdce. Model objektu regulárního výrazu netto je třída <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>, která představuje modul regulárních výrazů. Jediný největší faktor, který ovlivňuje výkon regulárních výrazů, je často způsob, jakým se používá modul <xref:System.Text.RegularExpressions.Regex>. Definování regulárního výrazu zahrnuje pevné párování modulu regulárních výrazů se vzorem regulárního výrazu. Tento spojovací proces, ať už zahrnuje vytvoření instance objektu <xref:System.Text.RegularExpressions.Regex> předáním jeho konstruktoru vzor regulárního výrazu nebo voláním statické metody předáním vzoru regulárního výrazu společně s řetězcem, který má být analyzován, je nezbytnou nákladný.
 
 > [!NOTE]
 > Podrobnější diskuzi o důsledcích výkonu použití interpretovaných a zkompilovaných regulárních výrazů naleznete v tématu [optimalizace výkonu regulárních výrazů, část II: přijetí zpětného navrácení](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) zpět na blogu týmu BCL.
@@ -159,7 +158,7 @@ Když je příklad zkompilován pro spustitelný soubor a spuštění, vytvoří
 
 ## <a name="take-charge-of-backtracking"></a>Odúčtujte si zpětné navrácení
 
-Pro posouvání ve vstupním řetězci a porovnání řetězce se vzorem regulárního výrazu používá regulární výraz většinou lineární posloupnost. Pokud se ale ve vzoru regulárního výrazu používají neurčité kvantifikátory, jako jsou `*`, `+`a `?`, může modul regulárních výrazů zadávat část úspěšných částečných shod a vrátit se do dříve uloženého stavu, aby bylo možné je vyhledat. pro úspěšnou shodu pro celý vzor. Tento proces se označuje jako zpětné navracení.
+Pro posouvání ve vstupním řetězci a porovnání řetězce se vzorem regulárního výrazu používá regulární výraz většinou lineární posloupnost. Pokud se ale ve vzoru regulárního výrazu používají neurčité kvantifikátory, jako jsou `*`, `+`a `?`, může modul regulárních výrazů poskytnout část úspěšných částečných shod a vrátit se do dříve uloženého stavu, aby bylo možné vyhledat úspěšnou shodu pro celý vzor. Tento proces se označuje jako zpětné navracení.
 
 > [!NOTE]
 > Další informace o zpětném navrácení najdete v [podrobnostech o chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) a [zpětném navrácení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Podrobné informace o zpětném navrácení najdete v tématu [optimalizace výkonu regulárních výrazů, část II: přijetí zpětného navrácení](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) zpět na blogu týmu BCL.
@@ -205,7 +204,7 @@ Následující příklad znázorňuje používání tohoto regulárního výrazu
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack4.cs#11)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack4.vb#11)]
 
-Jazyk regulárních výrazů v rozhraní .NET obsahuje následující prvky jazyka, které lze použít k odstranění vnořených kvantifikátorů. Další informace naleznete v tématu [seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+Jazyk regulárních výrazů v rozhraní .NET obsahuje následující prvky jazyka, které lze použít k odstranění vnořených kvantifikátorů. Další informace najdete v tématu [Seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
 |Prvek jazyka|Popis|
 |----------------------|-----------------|
@@ -237,7 +236,7 @@ Následující příklad definuje metodu `GetWordData`, která vytvoří instanc
 
 Regulární výrazy v rozhraní .NET podporují řadu seskupovacích konstrukcí, které umožňují seskupit vzor regulárních výrazů do jednoho nebo více dílčích výrazů. Nejčastěji používané konstrukce seskupení v jazyce regulárních výrazů .NET jsou `(`dílčí *výraz*`)`, který definuje očíslovanou zachytávající skupinu a `(?<`*název*`>`dílčí *výraz*`)`, který definuje pojmenovanou zachytávající skupinu. Seskupovací konstrukce jsou nezbytné pro vytváření a definování dílčího výrazu, pro který je použit kvantifikátor.
 
-Používání těchto prvků jazyka však má svou cenu. Způsobí, že objekt <xref:System.Text.RegularExpressions.GroupCollection> vrácený vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>, který se má naplnit nejnovějšími nepojmenovanými nebo pojmenovanými zachyceními, a pokud jedna seskupovací konstrukce zachytila více podřetězců ve vstupním řetězci, naplní také objekt <xref:System.Text.RegularExpressions.CaptureCollection>. vráceno vlastností <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> konkrétní zachytávající skupiny s více objekty <xref:System.Text.RegularExpressions.Capture>.
+Používání těchto prvků jazyka však má svou cenu. Způsobí, že objekt <xref:System.Text.RegularExpressions.GroupCollection> vrácený vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>, který se má naplnit nejnovějšími nepojmenovanými nebo pojmenovanými zachyceními, a pokud jedna seskupovací konstrukce zachytila více podřetězců ve vstupním řetězci, naplní také objekt <xref:System.Text.RegularExpressions.CaptureCollection> vrácený vlastností <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> konkrétní zachytávající skupiny s více <xref:System.Text.RegularExpressions.Capture> objekty.
 
 Seskupovací konstrukce se v regulárních výrazech používají pouze proto, aby na ně mohly být aplikovány kvantifikátory a aby skupiny zachycené těmito dílčími výrazy nebyly poté používány. Například regulární výraz `\b(\w+[;,]?\s?)+[.?!]` je navržený tak, aby zachytával celou větu. Následující tabulka popisuje prvky jazyka v tomto vzoru regulárního výrazu a jejich vliv na kolekce <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> objektu <xref:System.Text.RegularExpressions.Match>.
 
@@ -270,7 +269,7 @@ Zachytávání lze zakázat jedním z následujících způsobů:
 
 - Použijte možnost `n` v prvku `(?imnsx:subexpression)` jazyka. Tato možnost zakazuje všechna nepojmenovaná nebo implicitní zachycení v `subexpression`. Zachycení nepojmenovanou nebo implicitní vnořenou zachytávající skupinou jsou rovněž zakázána.
 
-## <a name="related-topics"></a>Související témata
+## <a name="related-topics"></a>Příbuzná témata
 
 |Název|Popis|
 |-----------|-----------------|
