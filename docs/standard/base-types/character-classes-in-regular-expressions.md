@@ -12,13 +12,12 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.custom: seodec18
-ms.openlocfilehash: dbfa61077cbfdd7da104dc12f304a4096b3c032d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd9d3f69f8135b608ced91c34f747600352bafe1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120616"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711451"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 
@@ -59,7 +58,7 @@ Třída znaků definuje množinu znaků, přičemž kterýkoli z nich se může
 
 `[*character_group*]`
 
- kde *character_group* je seznam jednotlivých znaků, které se mohou objevit ve vstupním řetězci, aby byla shoda úspěšná. Třída *character_group* se může skládat z jakékoli kombinace jednoho nebo více literálních znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
+ kde *character_group* je seznam jednotlivých znaků, které se mohou objevit ve vstupním řetězci, aby byla shoda úspěšná. *character_group* se může skládat z jakékoli kombinace jednoho nebo více literálních znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
   
  Syntaxe pro zadání rozsahu znaků je následující:  
   
@@ -115,7 +114,7 @@ Syntaxe pro určení seznamu jednotlivých znaků je následující:
 
 `[*^character_group*]`
 
- kde *character_group* je seznam jednotlivých znaků, které nemohou být zobrazeny ve vstupním řetězci, aby byla shoda úspěšná. Třída *character_group* se může skládat z jakékoli kombinace jednoho nebo více literálních znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
+ kde *character_group* je seznam jednotlivých znaků, které se nemohou objevit ve vstupním řetězci, aby byla shoda úspěšná. *character_group* se může skládat z jakékoli kombinace jednoho nebo více literálních znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
   
  Syntaxe pro zadání rozsahu znaků je následující:  
 
@@ -248,7 +247,7 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |Prvek|Popis|  
 |-------------|-----------------|  
 |(\w)|Porovnává znak slova. Toto je první zachytávající skupina.|  
-|\ 1|Porovnává hodnotu prvního zachycení.|  
+|\1|Porovnává hodnotu prvního zachycení.|  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/wordchar1.cs#8)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/wordchar1.vb#8)]  
@@ -527,7 +526,7 @@ Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. M
 |D800 - DB7F|`IsHighSurrogates`|  
 |DB80 - DBFF|`IsHighPrivateUseSurrogates`|  
 |DC00 - DFFF|`IsLowSurrogates`|  
-|E000 - F8FF|`IsPrivateUse` nebo `IsPrivateUseArea`|  
+|E000 - F8FF|`IsPrivateUse` Nebo `IsPrivateUseArea`|  
 |F900 - FAFF|`IsCJKCompatibilityIdeographs`|  
 |FB00 - FB4F|`IsAlphabeticPresentationForms`|  
 |FB50 - FDFF|`IsArabicPresentationForms-A`|  
@@ -540,7 +539,7 @@ Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. M
 |FFF0 - FFFF|`IsSpecials`|  
   
 <a name="CharacterClassSubtraction"></a>   
-## <a name="character-class-subtraction-base_group---excluded_group"></a>Odčítání tříd znaků: [Base_group-[excluded_group]]  
+## <a name="character-class-subtraction-base_group---excluded_group"></a>Odčítání tříd znaků: [base_group-[excluded_group]]  
  Třída znaků definuje množinu znaků. Odčítání třídy znaků získává množinu znaků, která je výsledkem vyloučení znaků jedné třídy znaků, které jsou obsaženy v jiné třídě znaků.  
   
  Výraz odčítání třídy znaků má následující tvar:  
@@ -553,7 +552,7 @@ Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. M
   
  Zvažte výraz odčítání třídy vnořeného znaku `[a-z-[d-w-[m-o]]]`. Výraz je vyhodnocen od nejvnitřnějšího rozsahu znaků ven. Nejdříve se rozsah znaků od „m“ do „o“ odečte od rozsahu znaků „d“ až „w“, který dává množinu znaků od „d“ až „l“ a „p“ až „w“. Tato sada se pak odečte od rozsahu znaků od "a" do "z", což má za důsledek množinu znaků `[abcmnoxyz]`.  
   
- Při odčítání třídy znaků můžete použít libovolnou třídu znaků. Chcete-li definovat sadu znaků, které se skládají ze všech znaků Unicode z \u0000 až \uFFFF s výjimkou prázdných znaků (`\s`), znaky v kategorii interpunkce (`\p{P}`), znaky v `IsGreek` pojmenovaném bloku (`\p{IsGreek}`) a znak ovládacího prvku další řádek (\x85) sady Unicode použijte `[\u0000-\uFFFF-[\s\p{P}\p{IsGreek}\x85]]`.  
+ Při odčítání třídy znaků můžete použít libovolnou třídu znaků. Chcete-li definovat sadu znaků, které se skládají ze všech znaků Unicode z \u0000 až \uFFFF, kromě prázdných znaků (`\s`), znaky v kategorii interpunkce (`\p{P}`), znaky v `IsGreek` pojmenovaném bloku (`\p{IsGreek}`) a znak ovládacího prvku dalšího řádku (\x85) Unicode, použijte `[\u0000-\uFFFF-[\s\p{P}\p{IsGreek}\x85]]`.  
   
  Zvolte třídy znaků pro výraz odčítání třídy znaků, které budou poskytovat užitečné výsledky. Vyhněte se výrazu, jehož výsledkem jsou prázdné množiny znaků, které nemohou odpovídat ničemu, nebo výrazu, který odpovídá původní základní skupině. Například prázdná sada je výsledkem výrazu `[\p{IsBasicLatin}-[\x00-\x7F]]`, který odečte všechny znaky v rozsahu `IsBasicLatin` znaků v kategorii `IsBasicLatin` Obecné. Podobně je původní základní skupina výsledkem `[a-z-[0-9]]`výrazu.  Důvodem je skutečnost, že základní skupina, která je rozsahem znaků písmen od „a“ až do „z“, neobsahuje žádné znaky ve vyloučené skupině, která je rozsahem znaků desítkových číslic od „0“ až po „9“.  
   

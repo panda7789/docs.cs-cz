@@ -15,13 +15,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character escapes
 - constructs, character escapes
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
-ms.custom: seodec18
-ms.openlocfilehash: 0179c4313ebce3cf6f2ad09d527d43aeb627bf77
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 82e60b3cb5eb777d48219209550367642f78d8c3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120579"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711425"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
 Zpětné lomítko (\\) v regulárním výrazu označuje jednu z následujících možností:  
@@ -40,15 +39,15 @@ Zpětné lomítko (\\) v regulárním výrazu označuje jednu z následujících
 |---------------------------|-----------------|  
 |Všechny znaky kromě následujících:<br /><br /> . $ ^ { [ ( &#124; ) * + ? \ |Jiné znaky než ty, které jsou uvedeny ve sloupci **Character nebo Sequence** , nemají v regulárních výrazech žádný zvláštní význam; samy se shodují.<br /><br /> Znaky zahrnuté ve sloupci **Character nebo Sequence** jsou speciální prvky jazyka regulárních výrazů. Aby se shodovaly s regulárním výrazem, musí být uvozeny řídicími znaky nebo zahrnuty do [skupiny pozitivních znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md). Například regulární výraz `\$\d+` nebo `[$]\d+` odpovídá "$1200".|  
 |`\a`|Vyhledá shodu se znakem zvonku (alarm) `\u0007`.|  
-|`\b`|Ve třídě `[`*character_group*`]` znaku se shoduje s znakem backspace, `\u0008`.  (Viz [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Mimo třídu znaků je `\b` ukotvení, které odpovídá hranici slova. (Viz [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md).)|  
+|`\b`|V `[`*character_group*`]` třídy znaků, odpovídá znaku backspace, `\u0008`.  (Viz [třídy znaků](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).) Mimo třídu znaků je `\b` ukotvení, které odpovídá hranici slova. (Viz [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md).)|  
 |`\t`|Odpovídá kartě, `\u0009`.|  
 |`\r`|Odpovídá znaku návratu na začátek řádku, `\u000D`. Všimněte si, že `\r` není ekvivalentní znaku nového řádku, `\n`.|  
 |`\v`|Odpovídá svislé kartě `\u000B`.|  
 |`\f`|Odpovídá informačnímu kanálu formuláře `\u000C`.|  
 |`\n`|Odpovídá novému řádku `\u000A`.|  
 |`\e`|Odpovídá řídicímu znaku `\u001B`.|  
-|`\` *NNN*|Odpovídá znaku ASCII, kde *NNN* sestává ze dvou nebo tří číslic, které reprezentují osmičkový kód znaku. Například `\040` představuje znak mezery. Tato konstrukce je interpretována jako zpětný odkaz, pokud má pouze jednu číslici (například `\2`) nebo, pokud odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
-|`\x` *NN*|Odpovídá znaku ASCII, kde *NN* je dvouciferné hexadecimální kód znaku.|  
+|`\` *nnn*|Odpovídá znaku ASCII, kde *NNN* sestává ze dvou nebo tří číslic, které reprezentují osmičkový kód znaku. Například `\040` představuje znak mezery. Tato konstrukce je interpretována jako zpětný odkaz, pokud má pouze jednu číslici (například `\2`) nebo, pokud odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
+|`\x` *nn*|Odpovídá znaku ASCII, kde *NN* je dvouciferné hexadecimální kód znaku.|  
 |`\c` *X*|Odpovídá řídicímu znaku ASCII, kde X je písmeno řídicího znaku. Například `\cC` je CTRL-C.|  
 |`\u` *nnnn*|Odpovídá jednotce kódu UTF-16, jejíž hodnota je *nnnn* hexadecimální. **Poznámka:**  Rozhraní .NET nepodporuje řídicí znak "Perl 5", který se používá k zadání kódování Unicode. Řídicí znak escape pro Perl 5 má `\x{` *####* `…}`, kde *####* `…` je řada hexadecimálních číslic. Místo toho použijte `\u`*nnnn*.|  
 |`\`|Pokud následuje znak, který není rozpoznán jako řídicí znak, odpovídá tomuto znaku. Například `\*` odpovídá znaku hvězdička (*) a je stejný jako `\x2A`.|  

@@ -17,13 +17,12 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.custom: seodec18
-ms.openlocfilehash: 6504430f94f800bb9f41761ad64c65fefecb68d6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a11e3501aa57fc81a28d27d1280d299f99e1dea1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968261"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711516"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)a modul regulárních výrazů se vrátí do předchozího uloženého stavu, aby bylo možné pokračovat ve vyhledávání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -43,25 +42,25 @@ K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volite
   
 |Operace|Pozice ve vzoru|Pozice v řetězci|Výsledek|  
 |---------------|-------------------------|------------------------|------------|  
-|první|e|"needing a reed" (index 0)|Žádná shoda.|  
-|odst|e|"eeding a reed" (index 1)|Možná shoda.|  
+|1|e|"needing a reed" (index 0)|Žádná shoda.|  
+|2|e|"eeding a reed" (index 1)|Možná shoda.|  
 |3|e{2}|"eding a reed" (index 2)|Možná shoda.|  
 |4|\w|"ding a reed" (index 3)|Možná shoda.|  
 |5|\b|"ing a reed" (index 4)|Možná shoda se nezdaří.|  
 |6|e|"eding a reed" (index 2)|Možná shoda.|  
-|čl|e{2}|"ding a reed" (index 3)|Možná shoda se nezdaří.|  
+|7|e{2}|"ding a reed" (index 3)|Možná shoda se nezdaří.|  
 |8|e|"ding a reed" (index 3)|Shoda se nezdaří.|  
 |9|e|"ing a reed" (index 4)|Žádná shoda.|  
-|10pruhový|e|"ng a reed" (index 5)|Žádná shoda.|  
-|odst|e|"g a reed" (index 6)|Žádná shoda.|  
-|12,5|e|"a Reed" (index 7)|Žádná shoda.|  
-|13,5|e|"a Reed" (index 8)|Žádná shoda.|  
-|čtrnáct|e|"Reed" (index 9)|Žádná shoda.|  
+|10|e|"ng a reed" (index 5)|Žádná shoda.|  
+|11|e|"g a reed" (index 6)|Žádná shoda.|  
+|12|e|"a Reed" (index 7)|Žádná shoda.|  
+|13|e|"a Reed" (index 8)|Žádná shoda.|  
+|14|e|"Reed" (index 9)|Žádná shoda.|  
 |15|e|"Reed" (index 10)|Žádná shoda|  
-|16bitovém|e|"eed" (index 11)|Možná shoda.|  
-|sedmnáct|e{2}|"ed" (index 12)|Možná shoda.|  
-|let|\w|"d" (index 13)|Možná shoda.|  
-|čl|\b|"" (index 14)|Shoda.|  
+|16|e|"eed" (index 11)|Možná shoda.|  
+|17|e{2}|"ed" (index 12)|Možná shoda.|  
+|18|\w|"d" (index 13)|Možná shoda.|  
+|19|\b|"" (index 14)|Shoda.|  
   
  Pokud vzor regulárního výrazu neobsahuje žádné volitelné kvantifikátory nebo konstrukce alternace, musí maximální počet porovnání odpovídající vzoru regulárního výrazu se vstupním řetězcem být zhruba ekvivalentní počtu znaků ve vstupním řetězci. V tomto případě používá modul regulárních výrazů 19 porovnání k identifikaci možných shod v tomto řetězci o 13 znacích.  Jinými slovy to znamená, že modul regulárních výrazů je spuštěn v téměř lineárním čase, pokud neobsahuje žádné volitelné kvantifikátory nebo konstrukce alternace.   
 
@@ -104,7 +103,7 @@ K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volite
  Porovnání vstupního řetězce s regulárním výrazem pokračuje tímto způsobem, dokud se modul regulárních výrazů nepokusí vyhledat všechny možné kombinace shody, a poté dojde k závěru, že neexistuje žádná shoda. Vzhledem k vnořeným kvantifikátorům je toto porovnání typu O (2<sup>n</sup>) nebo exponenciální operace, kde *n* je počet znaků ve vstupním řetězci. To znamená, že v nejhorším případě vyžaduje vstupní znak o délce 30 znaků přibližně 1 073 741 824 porovnání a vstupní znak o délce 40 znaků vyžaduje přibližně 1 099 511 627 776 porovnání. Pokud používáte řetězce o této nebo větší délce, může dokončení metod regulárních výrazů trvat extrémně dlouhou dobu, pokud zpracovávají obsah, který se neshoduje se vzorem regulárního výrazu. 
 
 ## <a name="controlling-backtracking"></a>Řídicí mechanismus navracení  
- Mechanismus navracení umožňuje vytvářet výkonné a pružné regulární výrazy. Jak již však bylo znázorněno v předchozích částech, mohou tyto výhody být vázány na nepřijatelně nízký výkon. Chcete-li zabránit nadměrnému zpětnému navracení, měli byste definovat interval časového limitu při vytváření instance <xref:System.Text.RegularExpressions.Regex>ho objektu nebo volání statické metody pro porovnání regulárního výrazu. Tento postup je popsán v následujícím oddíle. Kromě toho rozhraní .NET podporuje tři prvky regulárního výrazu, které omezují nebo potlačí zpětné navracení a které podporují složité regulární výrazy s minimální nebo žádnou pokutou výkonu: [nemechanismus](#nonbacktracking-subexpression)zpětného navracení zpět. [ kontrolní výrazy](#lookbehind-assertions)a [kontrolní výrazy dopředného vyhledávání](#lookahead-assertions). Další informace o jednotlivých prvcích jazyka naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ Mechanismus navracení umožňuje vytvářet výkonné a pružné regulární výrazy. Jak již však bylo znázorněno v předchozích částech, mohou tyto výhody být vázány na nepřijatelně nízký výkon. Chcete-li zabránit nadměrnému zpětnému navracení, měli byste definovat interval časového limitu při vytváření instance <xref:System.Text.RegularExpressions.Regex>ho objektu nebo volání statické metody pro porovnání regulárního výrazu. Tento postup je popsán v následujícím oddíle. Kromě toho rozhraní .NET podporuje tři prvky regulárního výrazu, které omezují nebo potlačí zpětné navracení a které podporují složité regulární výrazy s minimální nebo žádnou pokutou výkonu: [nemechanismus](#nonbacktracking-subexpression)nevracení zpět, [kontrolní výrazy zpětného vyhledávání](#lookbehind-assertions)a [kontrolní výrazy dopředného vyhledávání](#lookahead-assertions). Další informace o jednotlivých prvcích jazyka naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
 
 ### <a name="defining-a-time-out-interval"></a>Definování intervalu časového limitu  
  Počínaje .NET Framework 4,5 můžete nastavit hodnotu časového limitu, která představuje nejdelší interval, který modul regulárních výrazů vyhledá jednu shodu předtím, než tento pokus opustí a vyvolá výjimku <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Interval časového limitu určíte zadáním <xref:System.TimeSpan> hodnoty do konstruktoru <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pro instance regulárních výrazů. Kromě toho každá statická metoda porovnávání vzorů má přetížení s parametrem <xref:System.TimeSpan>, který umožňuje zadat hodnotu časového limitu. Ve výchozím nastavení je interval časového limitu nastaven na <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> a modul regulárních výrazů nevyprší časový limit.  
