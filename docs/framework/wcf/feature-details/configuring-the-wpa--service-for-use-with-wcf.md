@@ -2,12 +2,12 @@
 title: Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 768674a5cc4b0710e03de8ef1c9fdb2c40a8f314
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 5533393f759408002b83ba8ff485ba8229e921dd
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838036"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964635"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 Toto téma popisuje kroky potřebné k nastavení aktivační služby procesů systému Windows (označované také jako WAS) ve Windows Vista na hostování služeb Windows Communication Foundation (WCF), které nekomunikují přes síťové protokoly HTTP. Následující části popisují kroky pro tuto konfiguraci:  
@@ -99,4 +99,4 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
 ## <a name="see-also"></a>Viz také:
 
 - [Hostování v Aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)
-- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

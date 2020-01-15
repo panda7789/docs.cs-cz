@@ -8,12 +8,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 0ab9b6e089f5add9963ffae73e196643ad999763
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cfa92923ff5c7d5e7e4e2a9a965dc1562c183b74
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712907"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964640"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
 
@@ -33,7 +33,7 @@ Na rozdíl od typů odkazů nemůžete odvodit nový typ z hodnotového typu. Ni
 
 Proměnné typu hodnoty nemohou být ve výchozím nastavení `null`. Proměnné odpovídající [typy hodnot s možnou hodnotou null](../builtin-types/nullable-value-types.md) ale mohou být `null`.
 
-Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializuje výchozí hodnotu tohoto typu. Informace o výchozích hodnotách hodnotových typů najdete v [tabulce s výchozími hodnotami](default-values-table.md).
+Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializuje výchozí hodnotu tohoto typu. Informace o výchozích hodnotách hodnotových typů naleznete v tématu [výchozí hodnoty C# typů](../builtin-types/default-values.md).
 
 ## <a name="simple-types"></a>Jednoduché typy
 
@@ -87,7 +87,7 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-Použití operátoru [New](../operators/new-operator.md) volá konstruktor bez parametrů konkrétního typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřadil hodnotu `0` k `myInt`. Další informace o hodnotách, které jsou přiřazeny voláním konstruktorů bez parametrů, naleznete v [tabulce Default Values](default-values-table.md).
+Použití operátoru [New](../operators/new-operator.md) volá konstruktor bez parametrů konkrétního typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřadil hodnotu `0` k `myInt`. Další informace o hodnotách, které jsou přiřazeny voláním konstruktorů bez parametrů, naleznete v tématu [výchozí hodnoty C# typů](../builtin-types/default-values.md).
 
 S uživatelsky definovanými typy použijte [Nový](../operators/new-operator.md) k vyvolání konstruktoru bez parametrů. Například následující příkaz vyvolá konstruktor bez parametrů `Point` struktury:
 

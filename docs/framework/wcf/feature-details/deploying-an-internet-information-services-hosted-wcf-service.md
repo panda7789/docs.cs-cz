@@ -2,12 +2,12 @@
 title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: e46bcec846fcc8f9455c436bb551564e1cb5b5ea
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 36bdd22ec838af8b1a6b3be8c5636beced9b9132
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053317"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964847"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -23,7 +23,7 @@ Vývoj a nasazení služby Windows Communication Foundation (WCF), která je hos
 
 - Nakonfigurujte službu WCF.
 
-Podrobný návod k vytváření služby WCF hostované službou IIS najdete v tématu [How to: Hostování služby WCF ve službě IIS](how-to-host-a-wcf-service-in-iis.md).
+Podrobný návod k vytváření služby WCF hostované službou IIS najdete v tématu [How to: Host a WCF Service in IIS](how-to-host-a-wcf-service-in-iis.md).
 
 ## <a name="ensure-that-iis-aspnet-and-wcf-are-correctly-installed-and-registered"></a>Zkontrolujte, jestli jsou správně nainstalovaná a registrovaná služba IIS, ASP.NET a WCF.
 
@@ -35,31 +35,31 @@ Pokyny k instalaci služby IIS do jiných operačních systémů najdete v téma
 
 Proces instalace pro .NET Framework automaticky registruje WCF ve službě IIS, pokud je služba IIS na tomto počítači již nainstalována. Pokud je služba IIS nainstalovaná po .NET Framework, vyžaduje se k registraci WCF se službou IIS a ASP.NET další krok. To můžete provést následujícím způsobem v závislosti na vašem operačním systému:
 
-- Windows 7 a Windows Server 2003: Pomocí nástroje pro [registraci ServiceModel (ServiceModelReg. exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md) zaregistrujete WCF se službou IIS. Chcete-li použít tento nástroj, zadejte **ServiceModelReg. exe/i/x** v [Developer Command Prompt pro Visual Studio](../../tools/developer-command-prompt-for-vs.md).
+- Windows 7 a Windows Server 2003: k registraci WCF se službou IIS použijte nástroj pro [registraci ServiceModel (ServiceModelReg. exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md) . Chcete-li použít tento nástroj, zadejte **ServiceModelReg. exe/i/x** v [Developer Command Prompt pro Visual Studio](../../tools/developer-command-prompt-for-vs.md).
 
-- Windows 7: Nakonec musíte ověřit, že je ASP.NET nakonfigurovaný tak, aby používal .NET Framework verzi 4 nebo novější. Provedete to tak, že spustíte nástroj Aspnet_regiis `–i` s možností. Další informace najdete v tématu [Nástroj pro registraci služby IIS ASP.NET](https://go.microsoft.com/fwlink/?LinkId=201186).
+- Windows 7: nakonec musíte ověřit, že je ASP.NET nakonfigurovaný tak, aby používal verzi .NET Framework 4 nebo novější. Provedete to tak, že spustíte nástroj ASPNET_Regiis s možností `–i`. Další informace najdete v tématu [Nástroj pro registraci služby IIS ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)).
 
 ## <a name="create-a-new-iis-application-or-reuse-an-existing-aspnet-application"></a>Vytvoření nové aplikace služby IIS nebo opětovného použití existující aplikace ASP.NET
 
 Služby WCF hostované službou IIS se musí nacházet v rámci aplikace IIS. Můžete vytvořit novou aplikaci služby IIS, která bude hostovat služby WCF výhradně. Případně můžete nasadit službu WCF do existující aplikace, která je již hostitelem obsahu ASP.NET 2,0 (například stránky ASPX a ASP.NET webové služby [ASMX]). Další informace o těchto možnostech najdete v částech "hostování WCF s ASP.NET" a "hostování služeb WCF v režimu kompatibility ASP.NET" v oddílech [WCF Services a ASP.NET](wcf-services-and-aspnet.md).
 
-Upozorňujeme, že služba IIS 6,0 a novější verze pravidelně restartuje izolované objektově orientované programovací aplikace. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71 582 minut. Tento restart je možné zakázat. Další informace o této vlastnosti naleznete v tématu [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
+Upozorňujeme, že služba IIS 6,0 a novější verze pravidelně restartuje izolované objektově orientované programovací aplikace. Výchozí hodnota je 1740 minut. Maximální podporovaná hodnota je 71 582 minut. Tento restart je možné zakázat. Další informace o této vlastnosti naleznete v tématu [PeriodicRestartTime](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms525914(v=vs.90)).
 
 ## <a name="create-an-svc-file-for-the-wcf-service"></a>Vytvoření souboru. svc pro službu WCF
 
-Služby WCF hostované ve službě IIS jsou v rámci aplikace IIS reprezentovány jako speciální soubory obsahu (soubory. svc). Tento model je podobný způsobu, jakým jsou stránky ASMX zastoupeny v aplikaci služby IIS jako soubory. asmx. Soubor. svc obsahuje direktivu zpracování specifickou pro WCF ([\@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)), která umožňuje hostující infrastruktuře WCF aktivovat hostované služby v reakci na příchozí zprávy. Nejběžnější syntaxí souboru. svc je následující příkaz.
+Služby WCF hostované ve službě IIS jsou v rámci aplikace IIS reprezentovány jako speciální soubory obsahu (soubory. svc). Tento model je podobný způsobu, jakým jsou stránky ASMX zastoupeny v aplikaci služby IIS jako soubory. asmx. Soubor. svc obsahuje direktivu zpracování specifickou pro WCF ([\@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)), která umožňuje HOSTUJÍCÍ infrastruktuře WCF aktivovat hostované služby v reakci na příchozí zprávy. Nejběžnější syntaxí souboru. svc je následující příkaz.
 
 `<% @ServiceHost Service="MyNamespace.MyServiceImplementationTypeName" %>`
 
-Skládá se z [ \@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktivy ServiceHost a jediného atributu `Service`. Hodnota `Service` atributu je název typu modulu CLR (Common Language Runtime) pro implementaci služby. Použití této směrnice je v podstatě ekvivalentem vytvoření hostitele služby pomocí následujícího kódu.
+Skládá se z\@direktivy [ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) a jediného atributu `Service`. Hodnota atributu `Service` je název typu modulu CLR (Common Language Runtime) pro implementaci služby. Použití této směrnice je v podstatě ekvivalentem vytvoření hostitele služby pomocí následujícího kódu.
 
 ```csharp
 new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
 ```
 
-Je možné provést i další konfiguraci hostování, například vytvoření seznamu základních adres pro službu. Můžete také použít vlastní <xref:System.ServiceModel.Activation.ServiceHostFactory> pro rozšiřování direktivy pro použití s vlastními řešeními hostování. Aplikace služby IIS, které hostují služby WCF, nejsou zodpovědné za správu vytváření a životnosti <xref:System.ServiceModel.ServiceHost> instancí. Spravovaná infrastruktura hostingu WCF vytváří instanci potřebnou <xref:System.ServiceModel.ServiceHost> dynamicky při přijetí prvního požadavku pro soubor. svc. Instance není uvolněna, dokud není explicitně zavřena kódem nebo při recyklování aplikace.
+Je možné provést i další konfiguraci hostování, například vytvoření seznamu základních adres pro službu. Můžete také použít vlastní <xref:System.ServiceModel.Activation.ServiceHostFactory> k rozšiřování direktivy pro použití s vlastními hostujícími řešeními. Aplikace služby IIS, které hostují služby WCF, nejsou zodpovědné za správu vytváření a životnosti instancí <xref:System.ServiceModel.ServiceHost>. Spravovaná infrastruktura hostování WCF vytváří instanci <xref:System.ServiceModel.ServiceHost> dynamicky při přijetí prvního požadavku pro soubor. svc. Instance není uvolněna, dokud není explicitně zavřena kódem nebo při recyklování aplikace.
 
-Další informace o syntaxi souborů. svc naleznete v tématu [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md).
+Další informace o syntaxi souborů. svc naleznete v tématu [\@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md).
 
 ## <a name="deploy-the-service-implementation-to-the-iis-application"></a>Nasazení implementace služby do aplikace služby IIS
 
@@ -67,11 +67,11 @@ Služby WCF hostované v IIS používají stejný model dynamické kompilace jak
 
 - Jako předkompilovaný soubor dll umístěný v globální mezipaměti sestavení (GAC) nebo v adresáři \Bin aplikace. Předkompilované binární soubory nejsou aktualizovány, dokud není nasazena nová verze knihovny tříd.
 
-- Jako nezkompilované zdrojové soubory nacházející se v adresáři \App_Code aplikace. Zdrojové soubory, které se nacházejí v tomto adresáři, se dynamicky vyžadují při zpracování prvního požadavku aplikace. Jakékoli změny souborů v adresáři \App_Code způsobí, že celá aplikace bude recyklována a znovu zkompilována po přijetí další žádosti.
+- Jako nezkompilované zdrojové soubory umístěné v adresáři aplikace \ App_Code. Zdrojové soubory, které se nacházejí v tomto adresáři, se dynamicky vyžadují při zpracování prvního požadavku aplikace. Jakékoli změny souborů v adresáři \ App_Code způsobí, že se celá aplikace recykluje a znovu zkompiluje po přijetí další žádosti.
 
-- Jako nekompilovaný kód umístěný přímo v souboru. svc. Implementační kód může být také umístěn v souboru. svc služby po \@direktivě ServiceHost. Jakékoli změny vloženého kódu způsobí, že se aplikace recykluje a znovu zkompiluje při přijetí další žádosti.
+- Jako nekompilovaný kód umístěný přímo v souboru. svc. Implementační kód může být také umístěn v souboru. svc služby po \@direktivy ServiceHost. Jakékoli změny vloženého kódu způsobí, že se aplikace recykluje a znovu zkompiluje při přijetí další žádosti.
 
-Další informace o modelu kompilace ASP.NET 2,0 naleznete v tématu [Přehled kompilace ASP.NET](https://go.microsoft.com/fwlink/?LinkId=94773).
+Další informace o modelu kompilace ASP.NET 2,0 naleznete v tématu [Přehled kompilace ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms178466(v=vs.100)).
 
 ## <a name="configure-the-wcf-service"></a>Konfigurace služby WCF
 
@@ -79,19 +79,19 @@ Služby WCF hostované službou IIS ukládají svou konfiguraci do souboru Web. 
 
 - Základní adresy pro služby hostované službou IIS.
 
-- Aplikace hostující služby WCF mimo službu IIS mohou řídit základní adresu služeb, které hostují, předáním sady identifikátorů URI základních adres do <xref:System.ServiceModel.ServiceHost> konstruktoru nebo [ \<poskytnutím > elementu hosta](../../../../docs/framework/configure-apps/file-schema/wcf/host.md) v této službě. rozšířeného. Služby hostované ve službě IIS nemají možnost řídit svou základní adresu. základní adresa služby hostované službou IIS je adresa svého souboru. svc.
+- Aplikace hostující služby WCF mimo službu IIS mohou řídit základní adresu služeb, které hostují, předáním sady identifikátorů URI základních adres do konstruktoru <xref:System.ServiceModel.ServiceHost> nebo poskytnutím [\<> elementu hosta](../../../../docs/framework/configure-apps/file-schema/wcf/host.md) v konfiguraci služby. Služby hostované ve službě IIS nemají možnost řídit svou základní adresu. základní adresa služby hostované službou IIS je adresa svého souboru. svc.
 
 ### <a name="endpoint-addresses-for-iis-hosted-services"></a>Adresy koncových bodů pro služby hostované službou IIS
 
-Pokud je služba IIS hostovaná ve službě IIS, adresy koncových bodů se vždycky považují za relativní k adrese souboru. svc, který představuje službu. Například pokud základní adresa služby WCF je `http://localhost/Application1/MyService.svc` s následující konfigurací koncového bodu:
+Pokud je služba IIS hostovaná ve službě IIS, adresy koncových bodů se vždycky považují za relativní k adrese souboru. svc, který představuje službu. Například pokud je základní adresa služby WCF `http://localhost/Application1/MyService.svc` s následující konfigurací koncového bodu:
 
 ```xml
 <endpoint address="anotherEndpoint" .../>
 ```
 
-To poskytuje koncový bod, na `http://localhost/Application1/MyService.svc/anotherEndpoint`který lze získat přístup.
+To poskytuje koncový bod, na který lze získat `http://localhost/Application1/MyService.svc/anotherEndpoint`.
 
-Podobně, element konfigurace koncového bodu, který používá prázdný řetězec jako relativní adresa, poskytuje koncový bod dostupný v `http://localhost/Application1/MyService.svc`, což je základní adresa.
+Podobně platí, že element konfigurace koncového bodu, který používá prázdný řetězec jako relativní adresa, poskytuje koncový bod dostupný v `http://localhost/Application1/MyService.svc`, což je základní adresa.
 
 ```xml
 <endpoint address="" ... />
@@ -113,4 +113,4 @@ Například koncový bod WCF nakonfigurovaný k použití ověřování pomocí 
 
 - [Hostování v Internetové informační službě](hosting-in-internet-information-services.md)
 - [Osvědčené postupy hostování Internetové informační služby](internet-information-services-hosting-best-practices.md)
-- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

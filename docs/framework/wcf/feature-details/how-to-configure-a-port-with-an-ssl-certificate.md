@@ -9,19 +9,19 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: d56da60f174933af789a6abd7d8aa90f3f29d9c1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1ea7680d092a4270b8c0969c50db8accf7c23d49
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344631"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75963309"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu s certifikátem SSL
 Při vytváření služby Windows Communication Foundation v místním prostředí (WCF) s třídou <xref:System.ServiceModel.WSHttpBinding>, která používá zabezpečení přenosu, je také nutné nakonfigurovat port s certifikátem X. 509. Pokud nevytváříte samoobslužně hostované služby, můžete službu hostovat na Internetová informační služba (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  K nakonfigurování portu závisí nástroj, který použijete, na operačním systému, který běží na vašem počítači.  
   
- Pokud používáte systém Windows Server 2003 nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)], použijte nástroj HttpCfg. exe. V systému Windows Server 2003 je tento nástroj nainstalován. Pomocí [!INCLUDE[wxp](../../../../includes/wxp-md.md)]můžete nástroj stáhnout v [nástroji podpory systému Windows XP Service Pack 2](https://go.microsoft.com/fwlink/?LinkId=88606). Další informace najdete v tématu [Httpcfg Overview](https://go.microsoft.com/fwlink/?LinkId=88605). Dokumentace k nástrojům [podpory systému Windows](https://go.microsoft.com/fwlink/?LinkId=94840) vysvětluje syntaxi nástroje HttpCfg. exe.  
+ Pokud používáte systém Windows Server 2003 nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)], použijte nástroj HttpCfg. exe. V systému Windows Server 2003 je tento nástroj nainstalován. Pomocí [!INCLUDE[wxp](../../../../includes/wxp-md.md)]můžete nástroj stáhnout v [nástroji podpory systému Windows XP Service Pack 2](https://go.microsoft.com/fwlink/?LinkId=88606). Další informace najdete v tématu [Httpcfg Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). Dokumentace k nástrojům [podpory systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) vysvětluje syntaxi nástroje HttpCfg. exe.  
   
  Pokud používáte systém Windows Vista, použijte nástroj Netsh. exe, který je již nainstalován.  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 9363cff913027d491f7df0e0d0dac61638d6f802
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 74e9909fda83c781b5a15727f79ff755e7682b0f
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715128"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75963126"
 ---
 # <a name="struct-c-reference"></a>struct (Referenční dokumentace jazyka C#)
 
@@ -50,7 +50,6 @@ Příklady najdete v tématu [použití struktur](../../programming-guide/classe
 - [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Tabulka výchozích hodnot](default-values-table.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
 - [Typy](/dotnet/csharp/language-reference/keywords)
 - [Typy hodnot](value-types.md)

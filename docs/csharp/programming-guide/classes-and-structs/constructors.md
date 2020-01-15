@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: f435c149f7ec2768ee6c954c1f0ae12a95cc326f
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 465dbb9120e6e81e5ef216c34dc6a92283956033
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937538"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964664"
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 
@@ -19,7 +19,7 @@ Pokaždé, když se vytvoří [Třída](../../language-reference/keywords/class.
 
 ## <a name="parameterless-constructors"></a>Konstruktory bez parametrů
   
-Pokud neposkytnete konstruktor pro třídu, C# vytvoří jeden ve výchozím nastavení, který vytvoří instanci objektu a nastaví proměnné členů na výchozí hodnoty, jak je uvedeno v [tabulce výchozí hodnoty](../../language-reference/keywords/default-values-table.md). Pokud neposkytnete konstruktor pro vaši strukturu, C# spoléhá na *implicitní konstruktor bez parametrů* k automatickému inicializaci každého pole typu hodnoty na jeho výchozí hodnotu, jak je uvedeno v [tabulce výchozích hodnot](../../language-reference/keywords/default-values-table.md). Další informace a příklady naleznete v tématu [konstruktory instancí](./instance-constructors.md).  
+Pokud neposkytnete konstruktor pro třídu, C# vytvoří jeden ve výchozím nastavení, který vytvoří instanci objektu a nastaví proměnné členů na výchozí hodnoty, jak je uvedeno v článku [výchozí hodnoty C# typů](../../language-reference/builtin-types/default-values.md) . Pokud neposkytnete konstruktor pro vaši strukturu, C# spoléhá na *implicitní konstruktor bez parametrů* k automatickému inicializaci každého pole na jeho výchozí hodnotu. Další informace a příklady naleznete v tématu [konstruktory instancí](instance-constructors.md).  
 
 ## <a name="constructor-syntax"></a>Syntaxe konstruktoru
 
@@ -33,13 +33,13 @@ Pokud konstruktor může být implementován jako jediný příkaz, můžete pou
 
 ## <a name="static-constructors"></a>Statické konstruktory
 
-Předchozí příklady mají všechny zobrazené konstruktory instancí, které vytvoří nový objekt. Třída nebo struktura může mít také statický konstruktor, který inicializuje statické členy typu.  Statické konstruktory jsou bez parametrů. Pokud neposkytnete statický konstruktor pro inicializaci statických polí, C# kompilátor inicializuje statická pole na jejich výchozí hodnotu, jak je uvedeno v [tabulce výchozí hodnoty](../../language-reference/keywords/default-values-table.md).
+Předchozí příklady mají všechny zobrazené konstruktory instancí, které vytvoří nový objekt. Třída nebo struktura může mít také statický konstruktor, který inicializuje statické členy typu.  Statické konstruktory jsou bez parametrů. Pokud neposkytnete statický konstruktor pro inicializaci statických polí, C# kompilátor inicializuje statická pole na jejich výchozí hodnotu, jak je uvedeno v článku [výchozí hodnoty C# typů](../../language-reference/builtin-types/default-values.md) .
 
 Následující příklad používá statický konstruktor pro inicializaci statického pole.
 
 [!code-csharp[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#2)]  
 
-Můžete také definovat statický konstruktor pomocí definice těla výrazu, jak ukazuje následující příklad. 
+Můžete také definovat statický konstruktor pomocí definice těla výrazu, jak ukazuje následující příklad.
 
 [!code-csharp[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#3)]  
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: ee3cc30334154ef8aae6d7d26286463c537ff3dd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 621b8ca7510b0b9916c9c46f201ff77402c3c655
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714802"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964740"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory instancí (Průvodce programováním v C#)
 
@@ -31,7 +31,7 @@ Konstruktory instancí slouží k vytvoření a inicializaci všech proměnných
   
  [!code-csharp[csProgGuideObjects#77](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#77)]  
   
- Pokud třída nemá konstruktor, konstruktor bez parametrů se automaticky vygeneruje a k inicializaci polí objektu se použijí výchozí hodnoty. Například hodnota [int](../../language-reference/builtin-types/integral-numeric-types.md) je inicializována na hodnotu 0. Další informace o výchozích hodnotách najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md). Proto vzhledem k tomu, že konstruktor bez parametrů `Coords` inicializuje všechny datové členy na nulu, lze jej odebrat zcela, aniž by bylo nutné měnit způsob fungování třídy. Kompletní příklad použití více konstruktorů je uveden v příkladu 1 dále v tomto tématu a příklad automaticky generovaného konstruktoru je uveden v příkladu 2.  
+ Pokud třída nemá konstruktor, konstruktor bez parametrů se automaticky vygeneruje a k inicializaci polí objektu se použijí výchozí hodnoty. Například hodnota [int](../../language-reference/builtin-types/integral-numeric-types.md) je inicializována na hodnotu 0. Informace o výchozích hodnotách typu naleznete v tématu [výchozí hodnoty C# typů](../../language-reference/builtin-types/default-values.md). Proto vzhledem k tomu, že konstruktor bez parametrů `Coords` inicializuje všechny datové členy na nulu, lze jej odebrat zcela, aniž by bylo nutné měnit způsob fungování třídy. Kompletní příklad použití více konstruktorů je uveden v příkladu 1 dále v tomto tématu a příklad automaticky generovaného konstruktoru je uveden v příkladu 2.  
   
  Konstruktory instancí lze také použít k volání konstruktorů instancí základních tříd. Konstruktor třídy může vyvolat konstruktor základní třídy prostřednictvím inicializátoru následujícím způsobem:  
   
@@ -49,7 +49,7 @@ Konstruktory instancí slouží k vytvoření a inicializaci všech proměnných
   
  [!code-csharp[csProgGuideObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#8)]  
   
- Všimněte si, že výchozí hodnota `age` je `0` a výchozí hodnota `name` je `null`. Další informace o výchozích hodnotách najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md).  
+ Všimněte si, že výchozí hodnota `age` je `0` a výchozí hodnota `name` je `null`.
   
 ## <a name="example-3"></a>Příklad 3  
  Následující příklad ukazuje použití inicializátoru základní třídy. Třída `Circle` je odvozena od obecné `Shape`třídy a třída `Cylinder` je odvozena od třídy `Circle`. Konstruktor u každé odvozené třídy používá svůj inicializátor základní třídy.  

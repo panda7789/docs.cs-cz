@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: d85b11204eb1f1de3a95efc67054cdffc4c219e8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 22d63465c534090a8918348ea5f050739c0cf01c
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714666"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964749"
 ---
 # <a name="using-structs-c-programming-guide"></a>Používání struktur (C# Průvodce programováním)
 
@@ -21,7 +21,7 @@ Pro definování konstruktoru bez parametrů pro strukturu se jedná o chybu. Je
 
 Když vytvoříte objekt struktury pomocí operátoru [New](../../language-reference/operators/new-operator.md) , vytvoří se a příslušný konstruktor se zavolá podle [signatury konstruktoru](constructors.md#constructor-syntax). Na rozdíl od tříd lze vytvořit instanci struktur bez použití operátoru `new`. V takovém případě neexistuje žádné volání konstruktoru, což zajistí efektivnější přidělení. Pole však zůstanou Nepřiřazeno a objekt nelze použít, dokud nebudou všechna pole inicializována. To zahrnuje neschopnost získat nebo nastavit hodnoty prostřednictvím vlastností.
 
-Pokud vytváříte instanci objektu struct pomocí konstruktoru bez parametrů, jsou všichni členové přiřazeni podle jejich [výchozích hodnot](../../language-reference/keywords/default-values-table.md).
+Pokud vytváříte instanci objektu struct pomocí konstruktoru bez parametrů, jsou všichni členové přiřazeni podle jejich [výchozích hodnot](../../language-reference/builtin-types/default-values.md).
 
 Při psaní konstruktoru s parametry pro strukturu musíte explicitně inicializovat všechny členy; jinak jeden nebo více členů zůstává Nepřiřazeno a strukturu nelze použít, což vyprodukuje chybu kompilátoru [CS0171](../../misc/cs0171.md).
 

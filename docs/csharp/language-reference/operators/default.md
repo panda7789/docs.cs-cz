@@ -4,16 +4,16 @@ description: Použití výchozího operátoru k vytvoření výchozí hodnoty ty
 ms.date: 08/01/2019
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 744bdf1ec683ef32bba508c260590c0ed4c6e987
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 651c4698514aee8cf4dab75ea32c98493e19a30b
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712712"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964624"
 ---
 # <a name="default-operator-c-reference"></a>Default – operátorC# (Referenční dokumentace)
 
-Operátor `default` vytváří [výchozí hodnotu](../keywords/default-values-table.md) typu. Argument operátoru `default` musí být název typu nebo parametr typu.
+Operátor `default` vytváří [výchozí hodnotu](../builtin-types/default-values.md) typu. Argument operátoru `default` musí být název typu nebo parametr typu.
 
 Následující příklad ukazuje použití operátoru `default`:
 
@@ -44,5 +44,5 @@ Další informace o `default` literálu naleznete v [poznámkách k návrhu funk
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
-- [Tabulka výchozích hodnot](../keywords/default-values-table.md)
+- [Výchozí hodnoty C# typů](../builtin-types/default-values.md)
 - [Obecné typy v .NET](../../../standard/generics/index.md)

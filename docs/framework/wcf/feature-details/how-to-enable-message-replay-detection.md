@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Povolit zjišťování opakování zpráv'
+title: 'Postupy: Povolení zjišťování opakování zpráv'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,49 +10,49 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: a41c53e87d82452eac8d7535a422b7aa4bd4e270
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 450a99fc6604ccb3fa796e8a73e1ddc3e3adff9e
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626895"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964658"
 ---
-# <a name="how-to-enable-message-replay-detection"></a>Postupy: Povolit zjišťování opakování zpráv
-Opakování útoku nastane, pokud útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehrává datový proud na jeden nebo více stran. Pokud zmírnit, počítače v souladu s útok bude zpracovávat datového proudu jako legitimní zprávy, což vede k celou řadu chybný důsledky, jako je například redundantní objednávky položku.  
+# <a name="how-to-enable-message-replay-detection"></a>Postupy: Povolení zjišťování opakování zpráv
+K útoku opakovaného přehrání dojde, když útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehraje datový proud na jednu nebo více stran. V případě, že počítače, které jsou předmětem útoku, zpracuje datový proud jako legitimní zprávy, což vede k celé řadě špatných důsledků, jako je například redundantní objednávka položky.  
   
- Další informace o zjišťování opakování zpráv najdete v tématu [zjišťování opakování zpráv](https://go.microsoft.com/fwlink/?LinkId=88536).  
+ Další informace o detekci opětovného přehrání zpráv najdete v tématu zjištění opětovného [přehrání zprávy](https://docs.microsoft.com/previous-versions/msp-n-p/ff649371(v=pandp.10)).  
   
- Následující postup ukazuje různé vlastnosti, které můžete použít k řízení rozpoznání opětovného přehrání pomocí Windows Communication Foundation (WCF).  
+ Následující postup ukazuje různé vlastnosti, které lze použít k řízení detekce přehrání pomocí Windows Communication Foundation (WCF).  
   
-### <a name="to-control-replay-detection-on-the-client-using-code"></a>K řízení rozpoznání opětovného přehrání na straně klienta pomocí kódu  
+### <a name="to-control-replay-detection-on-the-client-using-code"></a>Řízení zjišťování opakování v klientovi pomocí kódu  
   
-1. Vytvoření <xref:System.ServiceModel.Channels.SecurityBindingElement> používané <xref:System.ServiceModel.Channels.CustomBinding>. Další informace najdete v tématu [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Následující příklad používá <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vytvořené pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> z <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
+1. Vytvořte <xref:System.ServiceModel.Channels.SecurityBindingElement> pro použití v <xref:System.ServiceModel.Channels.CustomBinding>. Další informace najdete v tématu [Postup: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Následující příklad používá <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> vytvořené pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> třídy <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
-2. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> vlastnost vrací odkaz <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> třídy a nastavte libovolné z následujících vlastností, podle potřeby:  
+2. Pomocí vlastnosti <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> vraťte odkaz na třídu <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> a podle potřeby nastavte některou z následujících vlastností:  
   
-    1. `DetectReplay`. Logická hodnota. To se řídí, zda klient by měl zjistit riziko ze serveru. Výchozí hodnota je `true`.  
+    1. `DetectReplay`. Logická hodnota Tím se určuje, zda má klient detekovat hry ze serveru. Výchozí hodnota je `true`.  
   
-    2. `MaxClockSkew`. A <xref:System.TimeSpan> hodnotu. Řídí, kolik času Nerovnoměrná distribuce mechanismus opakování může tolerovat možnost, mezi klientem a serverem. Mechanismus zabezpečení, který prověří časové razítko odeslání a určuje, zda byl odeslán příliš daleko v minulosti. Výchozí hodnota je 5 minut.  
+    2. `MaxClockSkew`. Hodnota <xref:System.TimeSpan>. Určuje, kolik času se má v případě, že je možné mezi klientem a serverem tolerovat mechanismus opakovaného přehrávání. Mechanismus zabezpečení prověřuje odeslané časové razítko a určí, zda byl v minulosti odeslán příliš daleko zpátky. Výchozí hodnota je 5 minut.  
   
-    3. `ReplayWindow`. A `TimeSpan` hodnotu. To se řídí jak dlouho zpráva může existovat v síti, jakmile server odešle ho (prostřednictvím zprostředkovatelů) před dosažením klienta. Klient sleduje podpisy některé zprávy odeslané v rámci nejnovější `ReplayWindow` za účelem rozpoznání opětovného přehrání.  
+    3. `ReplayWindow`. Hodnota `TimeSpan`. To určuje, jak dlouho může zpráva v síti fungovat poté, co ji server pošle (prostřednictvím zprostředkovatelů) před tím, než se dopustí klientovi. Klient sleduje podpisy zpráv odeslaných v rámci nejnovější `ReplayWindow` pro účely detekce opětovného přehrání.  
   
-    4. `ReplayCacheSize`. Celočíselná hodnota. Klient ukládá do mezipaměti podpisy zprávy. Toto nastavení určuje, kolik podpisy, které můžete ukládat do mezipaměti. Pokud počet zpráv odeslaných v rámci poslední období opakování dosáhne limitu mezipaměti, nové zprávy jsou odmítnuta, až do nejstaršího uložené v mezipaměti podpisy dosažení časový limit. Výchozí hodnota je 500000.  
+    4. `ReplayCacheSize`. Celočíselná hodnota. Klient ukládá podpisy zprávy do mezipaměti. Toto nastavení určuje, kolik podpisů může mezipaměť ukládat. Pokud počet zpráv odeslaných v rámci posledního opětovného přehrávání dosáhne limitu mezipaměti, nové zprávy jsou odmítnuty, dokud nedosáhnou nejstarších podpisů v mezipaměti. Výchozí hodnota je 500000.  
   
-### <a name="to-control-replay-detection-on-the-service-using-code"></a>K řízení rozpoznání opětovného přehrání na služby promocí kódu  
+### <a name="to-control-replay-detection-on-the-service-using-code"></a>Řízení zjišťování opakování u služby pomocí kódu  
   
-1. Vytvoření <xref:System.ServiceModel.Channels.SecurityBindingElement> používané <xref:System.ServiceModel.Channels.CustomBinding>.  
+1. Vytvořte <xref:System.ServiceModel.Channels.SecurityBindingElement> pro použití v <xref:System.ServiceModel.Channels.CustomBinding>.  
   
-2. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> vlastnost vrací odkaz <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> třídy a nastavit vlastnosti, jak je popsáno výše.  
+2. Pomocí vlastnosti <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A> vraťte odkaz na třídu <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> a nastavte vlastnosti tak, jak je popsáno výše.  
   
-### <a name="to-control-replay-detection-in-configuration-for-the-client-or-service"></a>K řízení rozpoznání opětovného přehrání v konfiguraci klienta nebo služby  
+### <a name="to-control-replay-detection-in-configuration-for-the-client-or-service"></a>Řízení zjišťování opětovného přehrání v konfiguraci pro klienta nebo službu  
   
-1. Vytvoření [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+1. Vytvořte [\<CustomBinding](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-2. Vytvoření `<security>` elementu.  
+2. Vytvořte `<security>` element.  
   
-3. Vytvoření [ \<localClientSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md) nebo [ \<localServiceSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md).  
+3. Vytvořte [\<localClientSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md) nebo [\<localServiceSettings >](../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md).  
   
-4. Nastavte následující hodnoty atributu, podle potřeby: `detectReplays`, `maxClockSkew`, `replayWindow`, a `replayCacheSize`. Následující příklad nastaví atributy obou `<localServiceSettings>` a `<localClientSettings>` element:  
+4. Nastavte následující hodnoty atributu podle potřeby: `detectReplays`, `maxClockSkew`, `replayWindow`a `replayCacheSize`. Následující příklad nastaví atributy `<localServiceSettings>` a `<localClientSettings>` elementu:  
   
     ```xml  
     <customBinding>  
@@ -75,26 +75,26 @@ Opakování útoku nastane, pokud útočník zkopíruje datový proud zpráv mez
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> metoda a nastaví vlastnosti opakování vazby.  
+ Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> pomocí metody <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> a nastaví vlastnosti opětovného přehrání vazby.  
   
  [!code-csharp[c_ReplayDetection#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_replaydetection/cs/source.cs#1)]
  [!code-vb[c_ReplayDetection#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_replaydetection/vb/source.vb#1)]  
   
-## <a name="scope-of-replay-message-security-only"></a>Rozsah opakování: Pouze zabezpečení zpráv  
- Všimněte si, že následující postupy platí pouze pro režim zabezpečených zpráv. Pro přenos a dopravu s přihlašovacími údaji zprávy režimy rozpoznat mechanismy přenosu riziko.  
+## <a name="scope-of-replay-message-security-only"></a>Rozsah přehrání: pouze zabezpečení zprávy  
+ Následující postupy platí pouze pro režim zabezpečení zpráv. Pro přenos a přenos s režimem přihlašovacích údajů zpráv zjišťují mechanismy přenosu.  
   
-## <a name="secure-conversation-notes"></a>Zabezpečené konverzace poznámky  
- U vazeb, které umožňují zabezpečené konverzace můžete upravit tato nastavení pro kanál aplikace i pro zaváděcí vazbu zabezpečené konverzace. Můžete například vypnout riziko pro kanál aplikace ale povolit jejich spuštění kanálu, který vytvoří zabezpečené konverzace.  
+## <a name="secure-conversation-notes"></a>Zabezpečené poznámky ke konverzaci  
+ U vazeb, které umožňují zabezpečenou konverzaci, můžete tato nastavení upravit pro kanál aplikace i pro spouštěcí vazby zabezpečené konverzace. Můžete například vypnout přehrávání pro kanál aplikace, ale povolit je pro spouštěcí kanál, který vytváří zabezpečenou konverzaci.  
   
- Pokud nepoužijete relací zabezpečené konverzace, rozpoznání opětovného přehrání nezaručuje zjišťování riziko v scénáře serveru farmy a když se proces recykluje. To platí pro následující vazeb poskytovaných systémem:  
+ Pokud nepoužíváte zabezpečené relace konverzace, detekce opětovného přehrání nezaručuje detekci přehrání ve scénářích serverové farmy a při recyklaci procesu. To platí pro následující vazby poskytované systémem:  
   
 - <xref:System.ServiceModel.BasicHttpBinding>.  
   
-- <xref:System.ServiceModel.WSHttpBinding> s <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> nastavenou na `false`.  
+- <xref:System.ServiceModel.WSHttpBinding> s vlastností <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> nastavenou na `false`.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- Pro zkompilování kódu se vyžaduje následující obory názvů:  
+- Pro zkompilování kódu jsou vyžadovány následující obory názvů:  
   
 - <xref:System>  
   
@@ -108,4 +108,4 @@ Opakování útoku nastane, pokud útočník zkopíruje datový proud zpráv mez
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - [Zabezpečené konverzace a zabezpečené relace](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)
 - [\<localClientSettings>](../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)
-- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

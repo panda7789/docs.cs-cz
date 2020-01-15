@@ -2,56 +2,56 @@
 title: Hledání zjišťování a kritéria hledání
 ms.date: 03/30/2017
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-ms.openlocfilehash: 477edabb5d6fe263db43debc2f1d4f29df862609
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: da4c3c4a1d765e4f91b03f4f8fc1a73c3fea1535
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663361"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964834"
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 
-Operace hledání zjišťování inicializuje klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným zprávy WS-Discovery ProbeMatch odpověď. Další informace o zjišťování zpráv, najdete v článku [specifikace WS-Discovery](https://go.microsoft.com/fwlink/?LinkID=122347).
+Operace hledání zjišťování je iniciována klientem, aby zjistila jednu nebo více služeb a je jednou z hlavních akcí zjišťování. Při provádění funkce Find se přes síť pošle zpráva sondy WS-Discovery. Služby, které odpovídají zadaným kritériím s odpovědí WS-Discovery ProbeMatch Messages. Další informace o zprávách zjišťování najdete v tématu [specifikace WS-Discovery](http://schemas.xmlsoap.org/ws/2004/10/discovery/ws-discovery.pdf).
 
-## <a name="discoveryclient"></a>DiscoveryClient
+## <a name="discoveryclient"></a>Objektem DiscoveryClient zahozena
 
-<xref:System.ServiceModel.Discovery.DiscoveryClient> Třída poskytuje mechanismus k provedení operace hledání a usnadňuje provádění zjišťování klientské operace snadné. Obsahuje <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> metodu, která provádí synchronní hledání (blokování), a <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> metodu, která zahájí asynchronní hledání bez blokování. Obě metody přijímají <xref:System.ServiceModel.Discovery.FindCriteria> parametr a k poskytování výsledků pro uživatele provede <xref:System.ServiceModel.Discovery.FindResponse> objektu.
+Třída <xref:System.ServiceModel.Discovery.DiscoveryClient> poskytuje mechanismus pro provádění operací hledání a usnadňuje provádění operací klienta zjišťování. Obsahuje <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> metodu, která provádí (blokující) synchronní hledání a metodu <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A>, která iniciuje neblokované asynchronní hledání. Obě metody přijímají parametr <xref:System.ServiceModel.Discovery.FindCriteria> a poskytují uživatelům výsledky prostřednictvím objektu <xref:System.ServiceModel.Discovery.FindResponse>.
 
 ## <a name="findcriteria"></a>Kritéria hledání
 
-<xref:System.ServiceModel.Discovery.FindCriteria> má několik vlastností, které mohou být seskupeny do kritéria hledání, které určují, jaké služby, které hledáte, a najít ukončení kritéria (jak dlouho vyhledávání by měl trvat). A <xref:System.ServiceModel.Discovery.FindCriteria> může obsahovat více kritériím hledání. Ve výchozím nastavení, musí odpovídat všechny komponenty služby jinak se neberou v úvahu samotné odpovídající služby. Pokud chcete najít služby, které odpovídá pouze některá kritéria, můžete implementovat vlastní najít logiku na službu nebo můžete použít více dotazů.
+<xref:System.ServiceModel.Discovery.FindCriteria> má několik vlastností, které mohou být seskupeny do vyhledávacích kritérií, které určují, jaké služby hledáte, a najít kritéria ukončení (jak dlouho má hledání trvat). <xref:System.ServiceModel.Discovery.FindCriteria> může obsahovat více kritérií hledání. Ve výchozím nastavení musí služba odpovídat všem součástem, jinak se nepovažuje za odpovídající službu. Pokud chcete najít služby, které odpovídají pouze některým kritériím, můžete implementovat vlastní logiku hledání na službu nebo můžete použít více dotazů.
 
-Zahrnují kritéria vyhledávání:
+Kritéria hledání zahrnují:
 
-- <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> – Volitelné. Název kontraktu služby vyhledaly a kritéria obvykle používá při vyhledávání pro službu. Pokud je zadán více než jeden název smlouvy, jenom koncové body služby odpovídající všechny kontrakty odpovědět. Všimněte si, že ve službě WCF koncový bod podporuje pouze jeden kontrakt.
+- <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> – volitelné. Název kontraktu prohledávané služby a kritéria, která se obvykle používají při hledání služby. Je-li zadán více než jeden název kontraktu, odpovídá pouze koncové body služby odpovídající všem smlouvám. Všimněte si, že v WCF může koncový bod podporovat jenom jednu kontrakt.
 
-- <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> – Volitelné. Obory jsou absolutní URI, které slouží ke kategorizaci koncových bodů jednotlivých služeb. Můžete využít v situacích, kdy několik koncových bodů vystavit stejný kontrakt a chcete, aby způsob, jak hledat pro celou dílčí sadu koncových bodů. Pokud je zadán více než jednoho oboru, odpovědět jenom koncové body služby odpovídající všechny obory.
+- <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> – volitelné. Obory jsou absolutní identifikátory URI, které slouží k kategorizaci jednotlivých koncových bodů služby. Můžete ho chtít použít ve scénářích, kdy více koncových bodů zveřejňuje stejný kontrakt a chcete vyhledat podmnožinu koncových bodů. Je-li zadán více než jeden obor, odpovídá pouze koncovým bodům služby, které odpovídají všem oborům.
 
-- <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchBy%2A> -Určuje porovnávací algoritmus, který bude použit při porovnání rozsahů průzkumné zprávy, která koncového bodu. Existují pravidla pět oboru odpovídajícím podporované:
+- <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchBy%2A> – určuje odpovídající algoritmus, který se použije při porovnání oborů v rámci zprávy sondy s bodem koncového bodu. Existuje pět podporovaných pravidel pro porovnání oboru:
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType> porovnání řetězců základní malá a velká písmena.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType> používá standardní porovnávání řetězců s rozlišováním velkých a malých písmen.
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> shody podle segmentů oddělených pomocí "/". Hledání `http://contoso/building1` odpovídá služby s oborem `http://contoso/building/floor1`. Všimněte si, že neodpovídá `http://contoso/building100` vzhledem k tomu, že poslední dva segmenty se neshodují.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> odpovídá segmentům odděleným znakem "/". Hledání `http://contoso/building1` odpovídá službě s rozsahem `http://contoso/building/floor1`. Všimněte si, že neodpovídá `http://contoso/building100`, protože poslední dva segmenty se neshodují.
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType> Porovná obory podle segmentů pomocí adresy URL protokolu LDAP.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType> odpovídá oborům podle segmentů pomocí adresy URL protokolu LDAP.
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid?displayProperty=nameWithType> odpovídá přesně pomocí řetězce UUID obory.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid?displayProperty=nameWithType> přesně odpovídá rozsahům pomocí řetězce UUID.
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone?displayProperty=nameWithType> odpovídá pouze ty služby, které není zadán obor.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone?displayProperty=nameWithType> odpovídá pouze službám, které neurčují obor.
 
-  Pokud není zadán obor odpovídající pravidlo, <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix> se používá.
+  Pokud není zadáno pravidlo pro porovnání s oborem, je <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix> použito.
 
-Ukončení kritéria patří:
+Mezi kritéria ukončení patří:
 
-1. <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> – Maximální dobu čekání na odpovědi služby v síti. Výchozí doba je 20 sekund.
+1. <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> – maximální doba čekání na odpovědi ze služeb v síti. Výchozí doba trvání je 20 sekund.
 
-2. <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> – Maximální počet odpovědí čekání. Pokud <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> odpovědi jsou obdrženy předtím, než <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> uplynutí skončí operace find.
+2. <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> – maximální počet odpovědí, na které se má čekat. Pokud <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> odpovědi byly přijaty před <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> uplynula, operace hledání skončí.
 
 ## <a name="findresponse"></a>FindResponse
 
-<xref:System.ServiceModel.Discovery.FindResponse> má <xref:System.ServiceModel.Discovery.FindResponse.Endpoints%2A> vlastnost kolekce, která obsahuje veškeré odpovědi odeslané to provede spárováním odpovídajících služby v síti. Pokud příjemce odpovědi žádné služby, kolekce je prázdná. Pokud jeden nebo více služeb odpověděl, každá odpověď je uložené v <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> objektu, který obsahuje adresu, kontrakt a některé další informace o službě.
+<xref:System.ServiceModel.Discovery.FindResponse> má vlastnost kolekce <xref:System.ServiceModel.Discovery.FindResponse.Endpoints%2A>, která obsahuje všechny odpovědi odeslané odpovídajícími službami v síti. Pokud žádné služby neodpoví, je kolekce prázdná. Pokud jedna nebo více služeb odpovědělo, každá odpověď se uloží do objektu <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata>, který obsahuje adresu, kontrakt a další informace o této službě.
 
-Následující příklad ukazuje, jak provádět operace hledání v kódu.
+Následující příklad ukazuje, jak provést operaci Find v kódu.
 
 ```csharp
 // Create DiscoveryClient
