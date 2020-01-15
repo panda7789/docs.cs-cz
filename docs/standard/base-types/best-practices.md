@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 158964d1e04091faaa9b3acf82bf4ce2b5aba797
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cb1764d1a6f363f3011268eae5fbcb2c76d9cc89
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711490"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938002"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v .NET
 
@@ -62,7 +62,7 @@ Chcete-li tento problém vyřešit, proveďte následující akce:
 Srdce. Model objektu regulárního výrazu netto je třída <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>, která představuje modul regulárních výrazů. Jediný největší faktor, který ovlivňuje výkon regulárních výrazů, je často způsob, jakým se používá modul <xref:System.Text.RegularExpressions.Regex>. Definování regulárního výrazu zahrnuje pevné párování modulu regulárních výrazů se vzorem regulárního výrazu. Tento spojovací proces, ať už zahrnuje vytvoření instance objektu <xref:System.Text.RegularExpressions.Regex> předáním jeho konstruktoru vzor regulárního výrazu nebo voláním statické metody předáním vzoru regulárního výrazu společně s řetězcem, který má být analyzován, je nezbytnou nákladný.
 
 > [!NOTE]
-> Podrobnější diskuzi o důsledcích výkonu použití interpretovaných a zkompilovaných regulárních výrazů naleznete v tématu [optimalizace výkonu regulárních výrazů, část II: přijetí zpětného navrácení](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) zpět na blogu týmu BCL.
+> Podrobnější diskuzi o důsledcích výkonu použití interpretovaných a zkompilovaných regulárních výrazů naleznete v tématu [optimalizace výkonu regulárních výrazů, část II: přijetí zpětného navrácení](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) zpět na blogu týmu BCL.
 
 Modul regulárních výrazů lze spárovat s konkrétním vzorem regulárního výrazu a následně modul použít pro porovnání textu několika různými způsoby:
 
@@ -161,7 +161,7 @@ Když je příklad zkompilován pro spustitelný soubor a spuštění, vytvoří
 Pro posouvání ve vstupním řetězci a porovnání řetězce se vzorem regulárního výrazu používá regulární výraz většinou lineární posloupnost. Pokud se ale ve vzoru regulárního výrazu používají neurčité kvantifikátory, jako jsou `*`, `+`a `?`, může modul regulárních výrazů poskytnout část úspěšných částečných shod a vrátit se do dříve uloženého stavu, aby bylo možné vyhledat úspěšnou shodu pro celý vzor. Tento proces se označuje jako zpětné navracení.
 
 > [!NOTE]
-> Další informace o zpětném navrácení najdete v [podrobnostech o chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) a [zpětném navrácení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Podrobné informace o zpětném navrácení najdete v tématu [optimalizace výkonu regulárních výrazů, část II: přijetí zpětného navrácení](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) zpět na blogu týmu BCL.
+> Další informace o zpětném navrácení najdete v [podrobnostech o chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) a [zpětném navrácení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Podrobné informace o zpětném navrácení najdete v tématu [optimalizace výkonu regulárních výrazů, část II: přijetí zpětného navrácení](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) zpět na blogu týmu BCL.
 
 Podpora zpětného navracení zajišťuje regulárním výrazům výkon a flexibilitu. Zároveň přenáší odpovědnost za řízení provozu modulu regulárních výrazů do rukou vývojáře regulárních výrazů. Vzhledem k tomu, že vývojáři si často tuto odpovědnost neuvědomují, jejich špatný způsob používání mechanismu navracení nebo přílišné používání tohoto mechanismu hraje nejdůležitější roli při snížení výkonu regulárních výrazů. V nejhorším případě se doba provádění může s každým dalším znakem ve vstupním řetězci zdvojnásobit. Přílišným používáním mechanismu navracení je vlastně velmi snadné vytvořit programový ekvivalent nekonečné smyčky, pokud se vstup téměř shoduje se vzorem regulárního výrazů; modulu regulárních výrazů může trvat hodiny, nebo dokonce dny, než zpracuje relativně krátký vstupní řetězec.
 
