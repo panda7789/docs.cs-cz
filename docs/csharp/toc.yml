@@ -1358,14 +1358,14 @@
               href: language-reference/keywords/var.md
             - name: Nespravované typy
               href: language-reference/builtin-types/unmanaged-types.md
+            - name: Výchozí hodnoty
+              href: language-reference/builtin-types/default-values.md
             - name: Referenční tabulky pro typy
               items:
                 - name: Tabulka předdefinovaných typů
                   href: language-reference/keywords/built-in-types-table.md
                 - name: Tabulka typů hodnot
                   href: language-reference/keywords/value-types-table.md
-                - name: Tabulka výchozích hodnot
-                  href: language-reference/keywords/default-values-table.md
                 - name: Tabulka formátování číselných výsledků
                   href: language-reference/keywords/formatting-numeric-results-table.md
         - name: Modifikátory

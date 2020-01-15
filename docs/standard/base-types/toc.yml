@@ -38,10 +38,6 @@
               href: how-to-define-and-use-custom-numeric-format-providers.md
             - name: 'Postupy: Hodnoty data a doby odezvy'
               href: how-to-round-trip-date-and-time-values.md
-            - name: 'Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla'
-              href: how-to-convert-numeric-user-input-in-web-controls-to-numbers.md
-            - name: 'Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům'
-              href: how-to-display-localized-date-and-time-information-to-web-users.md
             - name: "Postupy: Zobrazení milisekund v\_hodnotách data a\_času"
               href: how-to-display-milliseconds-in-date-and-time-values.md
             - name: 'Postupy: Zobrazování dat v jiném než gregoriánském kalendáři'
