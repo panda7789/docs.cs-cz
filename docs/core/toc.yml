@@ -358,6 +358,8 @@
       href: porting/winforms.md
     - name: Portování projektů WPF
       href: porting/wpf.md
+    - name: Portování projektů v C++/CLI
+      href: porting/cpp-cli.md
 - name: Načítání závislostí
   items:
     - name: Přehled
