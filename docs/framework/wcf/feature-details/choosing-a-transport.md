@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: 69f2724182f83d507f749a150a8d006a4e0f2192
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: bf1bda5f1a2e1f0dfa0cc034c293f448cca2bd32
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838062"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964470"
 ---
 # <a name="choosing-a-transport"></a>Volba přenosu
 Toto téma popisuje kritéria pro výběr ze tří hlavních přenosů, které jsou součástí Windows Communication Foundation (WCF): HTTP, TCP a pojmenované kanály. Služba WCF zahrnuje také přenos služby Řízení front zpráv (neboli MSMQ), ale tento dokument nepokrývá službu Řízení front zpráv.  
@@ -26,7 +26,7 @@ Toto téma popisuje kritéria pro výběr ze tří hlavních přenosů, které j
  Tato část popisuje hlavní důvody pro výběr jednoho ze tří hlavních přenosů, včetně podrobného rozhodovacího grafu pro výběr z nich.  
   
 ### <a name="when-to-use-http-transport"></a>Kdy použít přenos pomocí protokolu HTTP  
- HTTP je protokol požadavků a odpovědí mezi klienty a servery. Nejběžnější aplikace se skládá z klientů webového prohlížeče, kteří komunikují s webovým serverem. Klient odešle požadavek na server, který naslouchá zprávám požadavků klienta. Když server obdrží požadavek, vrátí odpověď, která obsahuje stav žádosti. V případě úspěchu se vrátí volitelná data, jako je například webová stránka, chybová zpráva nebo jiné informace. Další informace o protokolu HTTP najdete v tématu [http-Hypertext Transfer Protocol](https://go.microsoft.com/fwlink/?LinkId=94858).  
+ HTTP je protokol požadavků a odpovědí mezi klienty a servery. Nejběžnější aplikace se skládá z klientů webového prohlížeče, kteří komunikují s webovým serverem. Klient odešle požadavek na server, který naslouchá zprávám požadavků klienta. Když server obdrží požadavek, vrátí odpověď, která obsahuje stav žádosti. V případě úspěchu se vrátí volitelná data, jako je například webová stránka, chybová zpráva nebo jiné informace. Další informace o protokolu HTTP najdete v tématu [http-Hypertext Transfer Protocol](https://www.w3.org/Protocols/).  
   
  Protokol HTTP není založen na připojení – po odeslání odpovědi se nezachová žádný stav. Aby bylo možné zpracovat transakce s více stránkami, aplikace musí zachovat potřebný stav.  
   
@@ -57,7 +57,7 @@ Toto téma popisuje kritéria pro výběr ze tří hlavních přenosů, které j
 |Určených|Kontrola je schopnost extrahovat a zpracovávat informace ze zpráv během přenosu. Protokol HTTP odděluje informace o směrování a řízení z dat, což usnadňuje vytváření nástrojů, které kontrolují a analyzují zprávy. Přenosy, které se dají snadno kontrolovat, můžou také vyžadovat menší výpočetní výkon u síťových zařízení. Úroveň zabezpečení má vliv na to, zda lze kontrolovat zprávy.|HTTP|  
 |Čekací doba|Latence je minimální doba potřebná k dokončení výměny zpráv. Všechny síťové operace mají více nebo méně latencí v závislosti na výběru přenosů. Použití duplexní nebo jednosměrné komunikace s přenosem, jehož nativní výměna zpráv je požadavek-odpověď, například HTTP, může způsobit další latenci z důvodu vynucené korelace zpráv. V takové situaci zvažte použití přenosu, jehož nativní výměna zpráv je duplexní, jako je například TCP.|TCP s názvem<br /><br /> Příkazem|  
 |Reach|Dosah přenosu vyjadřuje, jak se podporuje přenos v připojení k ostatním systémům. Přenos pojmenovaného kanálu má velmi malý přístup; může se připojit jenom ke službám běžícím na stejném počítači. Přenosy TCP a HTTP mají vynikající dosah a můžou proniknout některé konfigurace NAT a brány firewall. Další informace najdete v tématu [práce s NAT a branami firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md).|HTTP, TCP|  
-|Zabezpečení –|Zabezpečení je schopnost chránit zprávy během přenosu prostřednictvím poskytnutí důvěrnosti, integrity nebo ověřování. Důvěrnost chrání před tím, než se zpráva ověřuje, integrita chrání zprávu před jejich úpravou a ověřování poskytuje informace o odesílateli nebo příjemci zprávy.<br /><br /> WCF podporuje zabezpečení přenosu jak na úrovni zprávy, tak na úrovni přenosu. Pokud přenos podporuje režim přenosu s vyrovnávací pamětí, zavede se zabezpečení zpráv do přenosu. Podpora zabezpečení přenosu se liší v závislosti na zvoleném přenosu. Přenosy HTTP, TCP a Named pipe mají v rámci podpory zabezpečení přenosu rozumnou paritu.|Vše|  
+|Zabezpečení –|Zabezpečení je schopnost chránit zprávy během přenosu prostřednictvím poskytnutí důvěrnosti, integrity nebo ověřování. Důvěrnost chrání před tím, než se zpráva ověřuje, integrita chrání zprávu před jejich úpravou a ověřování poskytuje informace o odesílateli nebo příjemci zprávy.<br /><br /> WCF podporuje zabezpečení přenosu jak na úrovni zprávy, tak na úrovni přenosu. Pokud přenos podporuje režim přenosu s vyrovnávací pamětí, zavede se zabezpečení zpráv do přenosu. Podpora zabezpečení přenosu se liší v závislosti na zvoleném přenosu. Přenosy HTTP, TCP a Named pipe mají v rámci podpory zabezpečení přenosu rozumnou paritu.|Všechny|  
 |Propustnost|Propustnost měří množství dat, která je možné přenést a zpracovat v zadaném časovém období. Podobně jako latence může zvolený přenos ovlivnit propustnost operací služby. Maximalizace propustnosti přenosu vyžaduje minimalizaci režie na přenos obsahu a minimalizaci času stráveného čekáním na vyplňování zpráv. Přenos TCP i pojmenovaného kanálu zvyšuje režijní náklady na tělo zprávy a podporují nativní duplexní tvar, který zkracuje čekání na odpověď na zprávu.|TCP, pojmenovaný kanál|  
 |Nástroje|Nástroje představují podporu aplikací třetích stran pro protokol pro vývoj, diagnostiku, hostování a další činnosti. Vývoj nástrojů a softwaru pro práci s protokolem HTTP znamená obzvláště velkou investici.|HTTP|  
   

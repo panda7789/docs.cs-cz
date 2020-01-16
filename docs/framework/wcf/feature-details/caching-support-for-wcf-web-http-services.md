@@ -2,15 +2,16 @@
 title: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-ms.openlocfilehash: 7c60deab635c29785398a1b50f9cf14c0f688420
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 5964c58ce28f67815774741815bba0fcbe3b2de7
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141784"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964226"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje použít deklarativní mechanizmus ukládání do mezipaměti, který je již k dispozici v ASP.NET ve webových službách HTTP služby WCF. To vám umožní ukládat odpovědi z operací služby HTTP webu WCF do mezipaměti. Když uživatel odešle službě požadavek HTTP GET, která je nakonfigurovaná pro ukládání do mezipaměti, ASP.NET odešle zpět odpověď uloženou v mezipaměti a metoda služby se nevolá. Až mezipaměť vyprší, při příštím odeslání HTTP GET se vaše metoda služby zavolá a odpověď se znovu uloží do mezipaměti. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [Přehled ukládání do mezipaměti ASP.NET](https://go.microsoft.com/fwlink/?LinkId=152534) .  
+
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje použít deklarativní mechanizmus ukládání do mezipaměti, který je již k dispozici v ASP.NET ve webových službách HTTP služby WCF. To vám umožní ukládat odpovědi z operací služby HTTP webu WCF do mezipaměti. Když uživatel odešle službě požadavek HTTP GET, která je nakonfigurovaná pro ukládání do mezipaměti, ASP.NET odešle zpět odpověď uloženou v mezipaměti a metoda služby se nevolá. Až mezipaměť vyprší, při příštím odeslání HTTP GET se vaše metoda služby zavolá a odpověď se znovu uloží do mezipaměti. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [Přehled ukládání do mezipaměti ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms178597(v=vs.100)).  
   
 ## <a name="basic-web-http-service-caching"></a>Mezipaměť základní webové služby HTTP  
  Pokud chcete povolit ukládání webové služby HTTP do mezipaměti, musíte nejdřív povolit kompatibilitu s ASP.NET, a to tak, že použijete <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> pro nastavení služby <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.  
@@ -122,10 +123,10 @@ public class Service
  V tomto případě je doba trvání mezipaměti nastavená na 60 sekund, `varyByParam` je nastavená na hodnotu None a `sqlDependency` je nastavená na seznam dvojic název databáze/tabulka oddělený středníkem. Při změně dat v `MyTable` je odpověď uložená v mezipaměti pro operaci služby odebrána a když je operace vyvolána, je vygenerována nová odpověď (voláním operace služby), uloženou v mezipaměti a vrácena klientovi.  
   
 > [!IMPORTANT]
-> Aby ASP.NET mohl získat přístup ke službě SQL Database, je nutné použít [Nástroj pro registraci nástroje ASP.NET SQL Server](https://go.microsoft.com/fwlink/?LinkId=152536). Kromě toho je nutné, aby měl příslušný uživatelský účet přístup k databázi a tabulce. Další informace najdete v tématu [přístup k SQL Server z webové aplikace](https://go.microsoft.com/fwlink/?LinkId=178988).  
+> Aby ASP.NET mohl získat přístup ke službě SQL Database, je nutné použít [Nástroj pro registraci nástroje ASP.NET SQL Server](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms229862(v=vs.90)). Kromě toho je nutné, aby měl příslušný uživatelský účet přístup k databázi a tabulce. Další informace najdete v tématu [přístup k SQL Server z webové aplikace](https://docs.microsoft.com/previous-versions/aspnet/ht43wsex(v=vs.100)).  
   
 ## <a name="conditional-http-get-based-caching"></a>Podmíněné ukládání do mezipaměti založené na protokolu HTTP  
- Ve scénářích webového protokolu HTTP často využívají podmíněné HTTP GET služby k implementaci inteligentního ukládání do mezipaměti protokolu HTTP, jak je popsáno ve [specifikaci http](https://go.microsoft.com/fwlink/?LinkId=165800). Aby bylo možné tuto službu provést, musí být v odpovědi HTTP nastavena hodnota hlavičky ETag. Také musí v požadavku HTTP zaškrtnout hlavičku If-None-Match, aby bylo možné zjistit, zda některý ze zadaných značek ETag odpovídá aktuálnímu ETag.  
+ Ve scénářích webového protokolu HTTP často využívají podmíněné HTTP GET služby k implementaci inteligentního ukládání do mezipaměti protokolu HTTP, jak je popsáno ve [specifikaci http](https://www.w3.org/Protocols/rfc2616/rfc2616.html). Aby bylo možné tuto službu provést, musí být v odpovědi HTTP nastavena hodnota hlavičky ETag. Také musí v požadavku HTTP zaškrtnout hlavičku If-None-Match, aby bylo možné zjistit, zda některý ze zadaných značek ETag odpovídá aktuálnímu ETag.  
   
  V případě požadavků GET a HEAD <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> přebírá hodnotu ETag a kontroluje ji v hlavičce If-None-Match žádosti. Pokud je hlavička přítomna a existuje shoda, je vyvolána <xref:System.ServiceModel.Web.WebFaultException> se stavovým kódem HTTP 304 (nezměněno) a hlavička ETag je přidána do odpovědi s odpovídající značkou ETag.  
   

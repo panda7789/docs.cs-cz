@@ -5,12 +5,12 @@ helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: c0db75cc502426490d82c369a919079e8f53284c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6e6f14635f47a3bf016ca5aca72ada643ea29f08
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712920"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964452"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (C# Referenční dokumentace)
 
@@ -37,6 +37,6 @@ V následující tabulce jsou uvedeny C# typy hodnot:
 ## <a name="see-also"></a>Viz také:
 
 - [C#odkaz](../index.md)
-- [Tabulka výchozích hodnot](default-values-table.md)
+- [Výchozí hodnoty C# typů](../builtin-types/default-values.md)
 - [Typy hodnot](value-types.md)
 - [Tabulka formátování číselných výsledků](formatting-numeric-results-table.md)

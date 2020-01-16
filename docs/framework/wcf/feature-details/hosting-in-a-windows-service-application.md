@@ -2,45 +2,45 @@
 title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: cc95634745aa0c0246cf139d19e0777fde7e1aba
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: a07aade4619b644dadd1d5acdcb5252b305b94d0
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402172"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964494"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
-Služby Windows (dříve označovaná jako služba systému Windows NT) najdete postup, model zvlášť vhodné pro aplikace, které musí být aktivní ve spustitelném souboru dlouho běžící a nezobrazují žádné formulář, uživatelského rozhraní. Životnosti procesu Windows service aplikaci spravuje správce řízení služeb (SCM), který umožňuje spuštění, zastavení a pozastavení aplikace služby Windows. Můžete nakonfigurovat procesů služeb Windows na automatické spuštění při spuštění počítače, takže vhodný hostitelské prostředí pro aplikace "always on". Další informace o aplikacích pro službu Windows najdete v tématu [aplikace služby Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
+Služby systému Windows (dříve označované jako služby systému Windows NT) poskytují model procesu, zvláště vhodný pro aplikace, které musí být spuštěny v dlouhodobém spustitelném souboru a nezobrazují žádnou formu uživatelského rozhraní. Doba platnosti procesu aplikace služby systému Windows je spravována správcem řízení služeb (SCM), který umožňuje spustit, zastavit a pozastavit aplikace služby systému Windows. Proces služby systému Windows můžete nakonfigurovat tak, aby se spouštěl automaticky při spuštění počítače a aby byl vhodný hostující prostředí pro aplikace "Always On". Další informace o aplikacích služby systému Windows najdete v tématu [aplikace služby systému Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
   
- Aplikace, které hostují služby Windows Communication Foundation (WCF) dlouho běžící sdílet mnoho vlastností se službami Windows. Zejména WCF services jsou dlouhotrvající server spustitelné programy není komunikovat přímo s uživatelem a proto neimplementuje žádnou formu uživatelské rozhraní. Hostování služby WCF v rámci aplikace služby Windows v důsledku toho je jednou z možností pro vytváření aplikací WCF robustní, dlouho probíhající.  
+ Aplikace, které hostují dlouhodobě běžící služby Windows Communication Foundation (WCF), sdílejí mnoho vlastností se službami systému Windows. Konkrétně služby WCF jsou dlouhodobě běžící spustitelné soubory, které nekomunikují přímo s uživatelem, a proto neimplementují žádné formy uživatelského rozhraní. V takovém případě hostující služby WCF uvnitř aplikace služby systému Windows je jednou z možností pro vytváření robustních a dlouhotrvajících aplikací WCF.  
   
- WCF vývojáři často, musíte rozhodnout, zda hostovat svoje aplikace WCF v rámci aplikace služby Windows nebo uvnitř hostitelského prostředí Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS). Měli byste zvážit použití aplikace služeb Windows za následujících podmínek:  
+ Vývojáři WCF se často musí rozhodnout, jestli mají hostovat svoji aplikaci WCF v rámci aplikace služby systému Windows nebo uvnitř hostitelského prostředí služby Internetová informační služba (IIS) nebo aktivační služba procesů systému Windows (WAS). Je vhodné zvážit použití aplikací služby systému Windows za následujících podmínek:  
   
-- Vaše aplikace vyžaduje explicitní aktivace. Například měli byste používat služby Windows, když vaše aplikace musí začínat automaticky při spuštění serveru místo dynamicky se spouští v reakci na první příchozí zprávy.  
+- Vaše aplikace vyžaduje explicitní aktivaci. Například byste měli použít služby systému Windows, pokud se vaše aplikace musí spustit automaticky při spuštění serveru namísto dynamického spuštění v reakci na první příchozí zprávu.  
   
-- Proces, který je hostitelem vaší aplikace musí zůstat spuštěné po spuštění. Po zahájení procesu služby Windows zůstane spuštěný, není-li explicitně vypnutí správce serveru pomocí Správce řízení služeb. Aplikace hostované službou IIS nebo WAS může spuštění a zastavení dynamicky optimální využití systémových prostředků. Aplikace, které vyžadují explicitní kontrolu nad životnost jejich hostitelský proces byste používat služby Windows namísto služby IIS nebo WAS.  
+- Proces, který hostuje vaši aplikaci, musí po spuštění zůstat spuštěný. Po spuštění zůstane proces služby systému Windows spuštěný, pokud explicitně nevypne správce serveru pomocí Správce řízení služeb. Aplikace hostované ve službě IIS nebo byly spouštěny a dynamicky zastaveny, aby bylo možné využívat systémové prostředky k optimálnímu využití. Aplikace, které vyžadují explicitní kontrolu nad životností hostitelského procesu, by měly používat služby systému Windows namísto služby IIS nebo WAS.  
   
-- Služby WCF, musíte spustit na Windows Server 2003 a použít přenosy jiné než HTTP. V systému Windows Server 2003 je omezen na pouze komunikaci pomocí protokolu HTTP služby IIS 6.0 hostitelského prostředí. Aplikace služby Windows se nevztahují tato omezení a můžete použít libovolný přenos WCF podporuje, včetně net.tcp, net.pipe a net.msmq.  
+- Vaše služba WCF musí běžet na Windows serveru 2003 a používat jiné přenosy než HTTP. Ve Windows serveru 2003 je hostitelské prostředí IIS 6,0 omezené jenom na komunikaci HTTP. Aplikacím služeb systému Windows se nevztahují toto omezení a mohou používat přenos přes WCF podporované, včetně NET. TCP, NET. pipe a NET. MSMQ.  
   
-### <a name="to-host-wcf-inside-of-a-windows-service-application"></a>K hostování WCF v rámci aplikace služby Windows  
+### <a name="to-host-wcf-inside-of-a-windows-service-application"></a>Hostování technologie WCF v rámci aplikace služby systému Windows  
   
-1. Vytvoření aplikace služby Windows. Můžete psát aplikace služby Windows ve spravovaném kódu použitím tříd v <xref:System.ServiceProcess> oboru názvů. Tato aplikace musí obsahovat jednu třídu, která dědí z <xref:System.ServiceProcess.ServiceBase>.  
+1. Vytvořte aplikaci služby systému Windows. Můžete psát aplikace služby systému Windows ve spravovaném kódu pomocí tříd v oboru názvů <xref:System.ServiceProcess>. Tato aplikace musí zahrnovat jednu třídu, která dědí z <xref:System.ServiceProcess.ServiceBase>.  
   
-2. Odkaz na životnost aplikace služby Windows životního cyklu služeb WCF. Obvykle je vhodné služby WCF hostované v aplikaci služby Windows aktivuje při spuštění hostitelské služby, zastavil naslouchání pro zprávy, když hostitelská služba je zastavena a vypnout hostitelský proces, když dojde k chybě služby WCF. To lze provést následujícím způsobem:  
+2. Propojte životnost služeb WCF s životností aplikace služby systému Windows. Obvykle chcete, aby služby WCF hostované v aplikaci služby systému Windows byly aktivní při spuštění hostující služby, zastavily naslouchání zpráv při zastavení hostitelské služby a vypnutí hostitelského procesu, když služba WCF narazí na chybu. To lze provést následujícím způsobem:  
   
-    - Přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> otevřít jeden nebo víc instancí <xref:System.ServiceModel.ServiceHost>. Jednu aplikaci služby Windows může hostovat více služeb WCF, které spouští a zastavují jako skupinu.  
+    - Přepište <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> pro otevření jedné nebo více instancí <xref:System.ServiceModel.ServiceHost>. Jedna aplikace služby systému Windows může hostovat několik služeb WCF, které se spouštějí a zastavují jako skupina.  
   
-    - Přepsat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> volat <xref:System.ServiceModel.Channels.CommunicationObject.Closed> na <xref:System.ServiceModel.ServiceHost> všechny spuštěné služby WCF, které se spustily během <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>.  
+    - Přepsat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> pro volání <xref:System.ServiceModel.Channels.CommunicationObject.Closed> na <xref:System.ServiceModel.ServiceHost> všechny spuštěné služby WCF, které byly spuštěny během <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>.  
   
-    - Přihlaste se k odběru <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> událost <xref:System.ServiceModel.ServiceHost> a použít <xref:System.ServiceProcess.ServiceController> třídy pro vypnutí aplikace služby Windows v případě chyby.  
+    - Přihlaste se k odběru události <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> <xref:System.ServiceModel.ServiceHost> a použijte třídu <xref:System.ServiceProcess.ServiceController> k ukončení aplikace služby systému Windows v případě chyby.  
   
-     Aplikace služby Windows, které hostují služby WCF se nasazují a spravují stejným způsobem jako aplikace služby Windows, které Nedovolte, aby byly použijte služby WCF.  
+     Aplikace služby systému Windows, které hostují služby WCF, se nasazují a spravují stejným způsobem jako aplikace služby systému Windows, které nevyužívají WCF.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceProcess>
-- [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](https://go.microsoft.com/fwlink/?LinkId=94875)
-- [Postupy: Hostování služby WCF ve spravované Windows Service](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](https://go.microsoft.com/fwlink/?LinkId=94875)
+- [Postupy: Hostování služby WCF ve spravované službě Windows](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
 - [Hostitel služby Windows](../../../../docs/framework/wcf/samples/windows-service-host.md)
 - [Architektura programování aplikace služby](https://go.microsoft.com/fwlink/?LinkId=94876)
-- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

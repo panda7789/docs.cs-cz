@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Vytváření dočasných certifikátů pro použití během vývoje'
+title: 'Postupy: vytváření dočasných certifikátů pro použití během vývoje'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: e2df35959f9821c65d694079aefa0ae6ba01897f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9e01ccb29ad017a2657ab08b54d7f01ef4564481
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053294"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964540"
 ---
-# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: Vytváření dočasných certifikátů pro použití během vývoje
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití během vývoje
 
 Při vývoji zabezpečené služby nebo klienta pomocí Windows Communication Foundation (WCF) je často nutné dodat certifikát X. 509, který se má použít jako přihlašovací údaje. Certifikát obvykle je součástí řetězce certifikátů s kořenovou autoritou, která se nachází v úložišti důvěryhodných kořenových certifikačních autorit počítače. Řetěz certifikátů vám umožní určit rozsah sady certifikátů, ve kterých je kořenová autorita z vaší organizace nebo organizační jednotky. Chcete-li tuto možnost emulovat v době vývoje, můžete vytvořit dva certifikáty, které splňují požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti důvěryhodných kořenových certifikačních autorit a druhý certifikát je vytvořen z prvního a je umístěn v osobním úložišti umístění místního počítače nebo osobního úložiště Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí rutiny [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) prostředí PowerShell.
 
@@ -21,7 +21,7 @@ Při vývoji zabezpečené služby nebo klienta pomocí Windows Communication Fo
 >
 > Ve výchozím nastavení vytvoří rutina [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) certifikáty, které jsou podepsané svým držitelem, a tyto certifikáty jsou nezabezpečené. Umístění certifikátů podepsaných svým držitelem do úložiště důvěryhodných kořenových certifikačních autorit vám umožní vytvořit vývojové prostředí, které lépe simuluje prostředí nasazení.
 
- Další informace o vytváření a používání certifikátů najdete v tématu [práce s certifikáty](working-with-certificates.md). Další informace o použití certifikátu jako přihlašovacích údajů najdete v tématu [zabezpečení služeb a klientů](securing-services-and-clients.md). Kurz týkající se používání technologie Microsoft Authenticode naleznete v tématu [přehledy technologie Authenticode a kurzy](https://go.microsoft.com/fwlink/?LinkId=88919).
+ Další informace o vytváření a používání certifikátů najdete v tématu [práce s certifikáty](working-with-certificates.md). Další informace o použití certifikátu jako přihlašovacích údajů najdete v tématu [zabezpečení služeb a klientů](securing-services-and-clients.md). Kurz týkající se používání technologie Microsoft Authenticode naleznete v tématu [přehledy technologie Authenticode a kurzy](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85)).
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>Vytvoření certifikátu kořenového úřadu podepsaného svým držitelem a export privátního klíče
 
@@ -31,7 +31,7 @@ Následující příkaz vytvoří certifikát podepsaný svým držitelem s náz
 $rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-Musíme vyexportovat certifikát do souboru PFX, aby se mohl importovat do, kde bude potřeba v pozdějším kroku. Při exportu certifikátu s privátním klíčem je nutné zadat heslo k ochraně. Uložíme heslo do `SecureString` a pomocí rutiny [Export-vybíráte](/powershell/module/pkiclient/export-pfxcertificate) vyexportujete certifikát s přidruženým privátním klíčem do souboru PFX. Do souboru CRT také ukládáme jenom veřejný certifikát pomocí rutiny [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
+Musíme vyexportovat certifikát do souboru PFX, aby se mohl importovat do, kde bude potřeba v pozdějším kroku. Při exportu certifikátu s privátním klíčem je nutné zadat heslo k ochraně. Heslo ukládáme do `SecureString` a pomocí rutiny [Export-vybíráte](/powershell/module/pkiclient/export-pfxcertificate) vyexportujete certifikát s přidruženým privátním klíčem do souboru PFX. Do souboru CRT také ukládáme jenom veřejný certifikát pomocí rutiny [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText
@@ -42,7 +42,7 @@ Export-Certificate -Cert $rootCertPath -FilePath 'RootCA.crt'
 
 ## <a name="to-create-a-new-certificate-signed-by-a-root-authority-certificate"></a>Vytvoření nového certifikátu podepsaného certifikátem kořenové autority
 
-Následující příkaz vytvoří certifikát podepsaný pomocí `RootCA` názvu subjektu "SignedByRootCA" pomocí privátního klíče vystavitele.
+Následující příkaz vytvoří certifikát podepsaný `RootCA`em s názvem subjektu "SignedByRootCA", který používá privátní klíč vystavitele.
 
 ```powershell
 $testCert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "SignedByRootCA" -KeyExportPolicy Exportable -KeyLength 2048 -KeyUsage DigitalSignature,KeyEncipherment -Signer $rootCert
@@ -62,7 +62,7 @@ Po vytvoření certifikátu podepsaného svým držitelem ho můžete nainstalov
 
 ### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>Instalace certifikátu podepsaného svým držitelem do důvěryhodných kořenových certifikačních autorit
 
-1. Otevřete modul snap-in Certifikáty. Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu snap-in](how-to-view-certificates-with-the-mmc-snap-in.md)konzoly MMC.
+1. Otevřete modul snap-in Certifikáty. Další informace najdete v tématu [Postup: zobrazení certifikátů pomocí modulu snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
 
 2. Otevřete složku pro uložení certifikátu, buď **místního počítače** , nebo **aktuálního uživatele**.
 

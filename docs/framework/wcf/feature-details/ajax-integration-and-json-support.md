@@ -4,30 +4,30 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - AJAX integration and JSON support [WCF]
 ms.assetid: 3851a8fc-d861-4ac1-873c-96af0343d3a7
-ms.openlocfilehash: a3d9c29f3223624653f2d568bb351d90334a4318
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb18ca2e3ef25a9e408669db2a58d6314d6e22a1
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781612"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964177"
 ---
 # <a name="ajax-integration-and-json-support"></a>Integrace jazyka AJAX a podpora formátu JSON
-Podpora Windows Communication Foundation (WCF) asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX) a formátu dat JavaScript Object Notation (JSON) povolte službám WCF vystavit operace klientům AJAX. Klienti AJAX jsou webové stránky spuštěním kódu jazyka JavaScript a přístup k těchto služeb WCF pomocí požadavků HTTP. Témata v této části poskytují informace o zprostředkovateli zabezpečení Schannel a způsobu jeho implementace.  
+Podpora Windows Communication Foundation (WCF) pro ASP.NET Asynchronous JavaScript a XML (AJAX) a formát dat JavaScript Object Notation (JSON) umožňují službám WCF vystavovat operace klientům AJAX. Klienti AJAX jsou webové stránky spouštějící kód JavaScriptu a získávají přístup k těmto službám WCF pomocí požadavků HTTP. Témata v této části poskytují informace o této podpoře a o tom, jak je implementovat.  
   
- Další informace o ASP.NET AJAX a její integrace s prostředím ASP.NET 2.0 najdete v tématu [Přehled technologie ASP.NET AJAX](https://go.microsoft.com/fwlink/?LinkId=96725).  
+ Další informace o ASP.NET AJAX a jeho integraci s ASP.NET 2,0 naleznete v tématu [ASP.NET AJAX Overview](https://docs.microsoft.com/previous-versions/aspnet/bb398874(v=vs.100)).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)  
- Popisuje, jak můžou být služby WCF zveřejněné klientům AJAX tak, že přidáte na příslušný koncový bod AJAX buď prostřednictvím konfigurace nebo pomocí vytváření hostitele služby přizpůsobit tak, aby generovat hostitele služby, který automaticky nakonfiguruje koncového bodu AJAX.  
+ Popisuje, jak může být služba WCF vystavena klientům AJAX přidáním příslušného koncového bodu AJAX buď prostřednictvím konfigurace, nebo pomocí objektu pro hostování služby přizpůsobeného pro vygenerování hostitele služby, který automaticky konfiguruje koncový bod AJAX.  
   
  [Vytváření služeb WCF AJAX bez ASP.NET](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md)  
- Popisuje postup vytvoření služby WCF bez použití technologie ASP.NET.  
+ Popisuje, jak vytvořit službu WCF bez použití ASP.NET.  
   
  [Podpora JSON a dalších formátů přenosu dat](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)  
- Popisuje podporu formátu JSON (namísto XML) obvykle používají pro zasílání zpráv pomocí služby technologie ASP.NET AJAX.  
+ Popisuje podporu formátu JSON, který se obvykle používá (místo XML) pro zasílání zpráv se službami ASP.NET AJAX.  
   
- [Postupy: Migrace s povoleným AJAX webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
- Popisuje, jak migrovat s povoleným AJAX technologie ASP.NET webové služby WCF Web service.  
+ [Postupy: Migrace webových služeb ASP.NET s podporou AJAX na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
+ Popisuje, jak migrovat webovou službu ASP.NET s podporou AJAX na webovou službu WCF.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 0956c174f4d5742780baf00a6f2785a9efd1d93f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 27a7cbb1490f42811c79778382063980f3828395
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714679"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964079"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor slouží k inicializaci libovolných [statických](../../language-reference/keywords/static.md) dat nebo k provedení určité akce, kterou je třeba provést pouze jednou. Je volána automaticky před vytvořením první instance nebo odkazem na statické členy.  
@@ -32,7 +32,7 @@ Statické konstruktory mají následující vlastnosti:
   
 - Statický konstruktor se nazývá automaticky pro inicializaci [třídy](../../language-reference/keywords/class.md) před vytvořením první instance nebo odkazováním na všechny statické členy. Statický konstruktor se spustí před konstruktorem instance. Všimněte si, že statický konstruktor typu je volán, když je vyvolána statická metoda přiřazená události nebo delegátu a nikoli při přiřazení. Pokud jsou Inicializátory proměnných statického pole přítomny ve třídě statického konstruktoru, budou spuštěny v textovém pořadí, ve kterém jsou uvedeny v deklaraci třídy bezprostředně před provedením statického konstruktoru.
 
-- Pokud neposkytnete statický konstruktor pro inicializaci statických polí, všechna statická pole jsou inicializována na výchozí hodnotu, jak je uvedeno v [tabulce výchozí hodnoty](../../language-reference/keywords/default-values-table.md). 
+- Pokud neposkytnete statický konstruktor pro inicializaci statických polí, všechna statická pole jsou inicializována na výchozí hodnotu, jak je uvedeno ve [výchozích C# hodnotách typů](../../language-reference/builtin-types/default-values.md).
   
 - Pokud statický konstruktor vyvolá výjimku, modul runtime je nespustí podruhé a typ zůstane Neinicializovaný po dobu života domény aplikace, ve které je program spuštěn. Nejčastěji je výjimka <xref:System.TypeInitializationException> vyvolána, když statický konstruktor není schopen vytvořit instanci typu nebo pro neošetřenou výjimku, ke které dochází v rámci statického konstruktoru. U implicitních statických konstruktorů, které nejsou explicitně definovány ve zdrojovém kódu, může řešení potíží vyžadovat kontrolu kódu zprostředkujícího jazyka (IL).
 

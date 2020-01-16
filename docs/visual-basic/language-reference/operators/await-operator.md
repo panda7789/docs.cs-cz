@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: e0c617ce32f80bdde1bcfda31da40ae610e07452
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: b5943e509bb850abc6c74e1b97ccd5fb0038f1e0
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712352"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964335"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)
 
@@ -58,7 +58,7 @@ Await AsyncMethodThatReturnsTask()
 
 Výraz `Await` nebo příkaz neblokuje vlákno, ve kterém se provádí. Místo toho způsobí, že kompilátor zaregistruje zbytek asynchronní metody za výraz `Await` jako pokračování na očekávaném úkolu. Ovládací prvek se pak vrátí volajícímu asynchronní metody. Po dokončení úkolu vyvolá jeho pokračování a spuštění asynchronní metody pokračuje tam, kde skončila.
 
-Výraz `Await` může nastat pouze v těle bezprostředně ohraničující metody nebo lambda výrazu, který je označen modifikátorem `Async`. Termín *await* slouží jako klíčové slovo pouze v tomto kontextu. Jinde je interpretován jako identifikátor. V rámci asynchronní metody nebo výrazu lambda se nemůže výraz `Await` ve výrazu dotazu vyskytovat v bloku `catch` nebo `finally` [Try... Zachytit... Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) , ve výrazu řídicí proměnné smyčky `For` nebo `For Each` smyčky nebo v těle příkazu [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) .
+Výraz `Await` může nastat pouze v těle bezprostředně ohraničující metody nebo lambda výrazu, který je označen modifikátorem `Async`. Termín *await* slouží jako klíčové slovo pouze v tomto kontextu. Jinde je interpretován jako identifikátor. V rámci metody `Async` nebo lambda výrazu nemůže výraz `Await` ve výrazu dotazu být v `Catch` nebo `Finally` bloku [Try... Zachytit... Finally](../statements/try-catch-finally-statement.md), ve výrazu řídicí proměnné smyčky `For` nebo `For Each` smyčky nebo v těle příkazu [SyncLock](../statements/synclock-statement.md) .
 
 ## <a name="exceptions"></a>Výjimky
 

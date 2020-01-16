@@ -4,58 +4,58 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-ms.openlocfilehash: af58d6b529fba32380bedb9a892a2b1fd4807d96
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 578ec2d7d5abe1285007ad22d8bacd69e695b1d3
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857568"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964281"
 ---
 # <a name="common-security-scenarios"></a>Běžné scénáře zabezpečení
-Témata v této části katalogu počet možných klienta a konfigurace zabezpečení služby. Konfigurace se liší podle počtu faktorů. Například, jestli je služba nebo klient na intranetu, nebo určuje, zda je zabezpečení poskytované Windows nebo přenosu (například HTTPS).  
+Témata v tomto oddílu katalogují několik možných konfigurací zabezpečení klientů a služeb. Konfigurace se liší v závislosti na mnoha faktorech. Například zda je služba nebo klient v intranetu nebo zda je zabezpečení poskytované systémem Windows nebo přenos (například HTTPS).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Nezabezpečený internetový klient a služba](../../../../docs/framework/wcf/feature-details/internet-unsecured-client-and-service.md)  
- Příkladem veřejného, zabezpečená klienta a služby.  
+ Příklad veřejného nezabezpečeného klienta a služby.  
   
  [Nezabezpečený intranetový klient a služba](../../../../docs/framework/wcf/feature-details/intranet-unsecured-client-and-service.md)  
- Základní služby Windows Communication Foundation (WCF) vyvinuta poskytují informace o zabezpečené privátní sítě pro aplikace WCF.  
+ Služba WCF (Basic Windows Communication Foundation) vyvinutá tak, aby poskytovala informace o zabezpečené privátní síti pro aplikaci WCF.  
   
  [Zabezpečení přenosu pomocí základního ověřování](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)  
- Aplikace umožňuje klientům přihlášení pomocí vlastní ověřování.  
+ Aplikace umožňuje klientům přihlašovat se pomocí vlastního ověřování.  
   
  [Zabezpečení přenosu pomocí ověřování Windows](../../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md)  
- Ukazuje klienta a služby zabezpečuje zabezpečení Windows.  
+ Zobrazuje klienta a službu zabezpečený zabezpečením systému Windows.  
   
  [Zabezpečení přenosu pomocí anonymního klienta](../../../../docs/framework/wcf/feature-details/transport-security-with-an-anonymous-client.md)  
- Tento scénář využívá k zajištění důvěrnost a integrita zabezpečení přenosu (například HTTPS).  
+ Tento scénář používá zabezpečení přenosu (například HTTPS) k zajištění důvěrnosti a integrity.  
   
  [Zabezpečení přenosu pomocí ověření certifikátem](../../../../docs/framework/wcf/feature-details/transport-security-with-certificate-authentication.md)  
- Ukazuje klienta a služby zabezpečené pomocí certifikátu.  
+ Zobrazuje klienta a službu zabezpečený certifikátem.  
   
  [Zabezpečení zpráv pomocí anonymního klienta](../../../../docs/framework/wcf/feature-details/message-security-with-an-anonymous-client.md)  
- Ukazuje klienta a služby zabezpečuje zabezpečení zpráv WCF.  
+ Zobrazuje klienta a službu zabezpečený zabezpečením zpráv WCF.  
   
  [Zabezpečení zpráv pomocí klienta uživatelského jména](../../../../docs/framework/wcf/feature-details/message-security-with-a-user-name-client.md)  
- Klient je aplikace Windows Forms, která umožňuje klientům k přihlášení pomocí doménového uživatelského jména a hesla.  
+ Klient je model Windows Forms aplikace, která klientům umožňuje přihlásit se pomocí uživatelského jména a hesla domény.  
   
  [Zabezpečení zpráv pomocí klientských certifikátů](../../../../docs/framework/wcf/feature-details/message-security-with-a-certificate-client.md)  
- Servery mají certifikáty a každý klient má certifikát. Kontext zabezpečení se navazuje prostřednictvím vyjednávání zabezpečení TLS (Transport Layer).  
+ Servery mají certifikáty a každý z klientů má certifikát. Kontext zabezpečení je vytvořen pomocí vyjednávání protokolu TLS (Transport Layer Security).  
   
  [Zabezpečení zprávy pomocí klienta Windows](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client.md)  
- Změna certifikátu klienta. Servery mají certifikáty a každý klient má certifikát. Kontext zabezpečení se navazuje prostřednictvím vyjednávání TLS.  
+ Variace klienta certifikátu. Servery mají certifikáty a každý z klientů má certifikát. Kontext zabezpečení je vytvořen prostřednictvím vyjednávání TLS.  
   
  [Zabezpečení zpráv pomocí klienta Windows bez vyjednávání přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client-without-credential-negotiation.md)  
- Ukazuje klienta a služby zabezpečené pomocí protokolu Kerberos domény.  
+ Zobrazuje klienta a službu zabezpečenou doménou protokolu Kerberos.  
   
  [Zabezpečení zpráv pomocí vzájemných certifikátů](../../../../docs/framework/wcf/feature-details/message-security-with-mutual-certificates.md)  
- Servery mají certifikáty a každý klient má certifikát. Certifikát serveru je distribuován s aplikací a je k dispozici mimo pásmo.  
+ Servery mají certifikáty a každý z klientů má certifikát. Certifikát serveru je distribuován s aplikací a je dostupný mimo IP síť.  
   
  [Zabezpečení zpráv pomocí vystavených tokenů](../../../../docs/framework/wcf/feature-details/message-security-with-issued-tokens.md)  
- Zabezpečení, která umožní navázání vztahu důvěryhodnosti mezi doménami nezávislé.  
+ Federované zabezpečení, které umožňuje vytvoření vztahu důvěryhodnosti mezi nezávislými doménami.  
   
  [Důvěryhodný subsystém](../../../../docs/framework/wcf/feature-details/trusted-subsystem.md)  
- Klient přistupuje k jedné nebo více webových služeb, které jsou distribuovány napříč sítí. Webové služby přístup k dalším prostředkům (jako jsou databáze nebo jiné webové služby), které musí být zabezpečená.  
+ Klient přistupuje k jedné nebo více webovým službám, které jsou distribuovány přes síť. Webové služby mají přístup k dalším prostředkům (jako jsou databáze nebo jiné webové služby), které musí být zabezpečené.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel>  
@@ -82,4 +82,4 @@ Témata v této části katalogu počet možných klienta a konfigurace zabezpe�
 ## <a name="see-also"></a>Viz také:
 
 - [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

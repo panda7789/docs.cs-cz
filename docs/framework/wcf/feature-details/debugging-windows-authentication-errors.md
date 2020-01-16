@@ -8,17 +8,17 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 52e968706ef4ca703a26e613e681cff3c30ba181
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 45e4926905bbf3b5a24af15de153afc7bd2a4823
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838023"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964572"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Při použití ověřování systému Windows jako mechanismu zabezpečení zpracovává rozhraní SSPI (Security Support Provider Interface) procesy zabezpečení. Pokud dojde k chybám zabezpečení ve vrstvě SSPI, jsou umístěny na základě Windows Communication Foundation (WCF). Toto téma poskytuje strukturu a sadu otázek, které vám pomůžou diagnostikovat chyby.  
   
- Přehled protokolu Kerberos najdete v tématu [Vysvětlení protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkID=86946). Přehled rozhraní SSPI naleznete v tématu [SSPI](https://go.microsoft.com/fwlink/?LinkId=88941).  
+ Přehled protokolu Kerberos najdete v tématu [Vysvětlení protokolu Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10)). Přehled rozhraní SSPI naleznete v tématu [SSPI](/windows/win32/secauthn/sspi).  
   
  Pro ověřování systému Windows WCF typicky používá zprostředkovatele *zabezpečení (* SSP), který provádí vzájemné ověřování protokolu Kerberos mezi klientem a službou. Pokud protokol Kerberos není k dispozici, ve výchozím nastavení se služba WCF vrátí do programu NT LAN Manager (NTLM). Můžete ale nakonfigurovat WCF na použití jenom protokolu Kerberos (a vyvolat výjimku, pokud není k dispozici protokol Kerberos). Můžete také nakonfigurovat WCF tak, aby používal omezené formuláře protokolu Kerberos.  
   
@@ -66,7 +66,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
   
  V rámci scénářů vyrovnávání zatížení, jako jsou webové nebo webové zahrady, se v běžné praxi definují jedinečný účet pro každou aplikaci, přiřadíte k tomuto účtu hlavní název služby (SPN) a zajistěte, aby všechny služby aplikace běžely v tomto účtu.  
   
- K získání hlavního názvu služby (SPN) pro účet vaší služby musíte být správcem domény služby Active Directory. Další informace najdete v tématu o [technickém dodatku Kerberos pro Windows](https://go.microsoft.com/fwlink/?LinkID=88330).  
+ K získání hlavního názvu služby (SPN) pro účet vaší služby musíte být správcem domény služby Active Directory. Další informace najdete v tématu o [technickém dodatku Kerberos pro Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)).  
   
 #### <a name="kerberos-protocol-direct-requires-the-service-to-run-under-a-domain-machine-account"></a>Protokol Kerberos Direct vyžaduje, aby služba běžela pod účtem počítače domény.  
  K tomu dochází, je-li vlastnost `ClientCredentialType` nastavena na hodnotu `Windows` a vlastnost <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> je nastavena na `false`, jak je znázorněno v následujícím kódu.  

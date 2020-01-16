@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: 7d027a67e533cb1ed7b2cea38112b4f585bf5fbc
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: faab6ac57629db11c60ee5b563ea95ebb90016dd
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714643"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964360"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
 
@@ -29,7 +29,7 @@ Při vytvoření [třídy](../../language-reference/keywords/class.md) nebo [str
   
  Další informace naleznete v tématu [Soukromé konstruktory](./private-constructors.md).  
   
- Konstruktory pro typy [struktury](../../language-reference/keywords/struct.md) připomínají konstruktory třídy, ale `structs` nesmí obsahovat explicitní konstruktor bez parametrů, protože jeden je poskytnut automaticky kompilátorem. Tento konstruktor inicializuje každé pole v `struct` výchozí hodnoty. Další informace najdete v tématu [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md). Tento konstruktor bez parametrů je však vyvolána pouze v případě, že je vytvořena instance `struct` s `new`. Například tento kód používá konstruktor bez parametrů pro <xref:System.Int32>, takže jste si jisti, že je inicializováno celé číslo:  
+ Konstruktory pro typy [struktury](../../language-reference/keywords/struct.md) připomínají konstruktory třídy, ale `structs` nesmí obsahovat explicitní konstruktor bez parametrů, protože jeden je poskytnut automaticky kompilátorem. Tento konstruktor inicializuje každé pole v `struct` [výchozí hodnotu](../../language-reference/builtin-types/default-values.md). Tento konstruktor bez parametrů je však vyvolána pouze v případě, že je vytvořena instance `struct` s `new`. Například tento kód používá konstruktor bez parametrů pro <xref:System.Int32>, takže jste si jisti, že je inicializováno celé číslo:  
   
 ```csharp  
 int i = new int();  

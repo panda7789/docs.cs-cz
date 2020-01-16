@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: f14b92aba270eab845ca50e5407da3502b5c4087
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4e4dbe085b11751416f69c9fa7f790f18a68f5d7
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345345"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964376"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Operátory bitových a posunutí (C# referenční)
 
@@ -60,7 +60,7 @@ K deklaraci finalizační metody můžete použít také symbol `~`. Další inf
 
 ## <a name="left-shift-operator-"></a>Operátor posunutí doleva \<\<
 
-Operátor `<<` posune levý operand vlevo o počet bitů definovaných operandem na pravé straně.
+Operátor `<<` posune levý operand vlevo o [počet bitů definovaných operandem na pravé straně](#shift-count-of-the-shift-operators).
 
 Operace Left posunutí zahodí horních bitů, které jsou mimo rozsah výsledného typu, a nastavuje prázdné bitové pozice v dolním pořadí na nulu, jak ukazuje následující příklad:
 
@@ -74,7 +74,7 @@ Informace o tom, jak operand pravého operátoru `<<` definuje počet posunutí,
 
 ## <a name="right-shift-operator-"></a>Operátor pravého posunutí > >
 
-Operátor `>>` posune levý operand vpravo o počet bitů definovaných operandem na pravé straně.
+Operátor `>>` posune levý operand vpravo o [počet bitů definovaných operandem na pravé straně](#shift-count-of-the-shift-operators).
 
 Operace pravého posunutí zahodí bity nízkého řádu, jak ukazuje následující příklad:
 
@@ -169,6 +169,9 @@ Pro výrazy `x << count` a `x >> count` závisí skutečný počet posunutí na 
 Následující příklad ukazuje toto chování:
 
 [!code-csharp-interactive[shift count example](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ShiftCount)]
+
+> [!NOTE]
+> Jak ukazuje předchozí příklad, výsledek operace posunutí může být nenulový, i když hodnota operandu na pravé straně je větší než počet bitů v levém operandu.
 
 ## <a name="enumeration-logical-operators"></a>Logické operátory výčtu
 

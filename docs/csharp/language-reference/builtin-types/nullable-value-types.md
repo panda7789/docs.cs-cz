@@ -4,12 +4,12 @@ description: Další informace C# o typech hodnot s možnou hodnotou null a jeji
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 661b5e8502cba42588a07d757f056c715c1c82e8
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 3b9a29e75fe894f7d8a0751feefa9eb0a39baa2c
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936902"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964313"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s možnou hodnotou null (C# Referenční dokumentace)
 
@@ -56,7 +56,7 @@ Pokud chcete přiřadit hodnotu typu hodnoty s možnou hodnotou null na proměnn
 
 [!code-csharp-interactive[?? operator](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#NullCoalescing)]
 
-Pokud chcete použít [výchozí](../keywords/default-values-table.md) hodnotu základního typu hodnoty místo `null`, použijte metodu <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType>.
+Pokud chcete použít [výchozí](default-values.md) hodnotu základního typu hodnoty místo `null`, použijte metodu <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType>.
 
 Typ hodnoty s možnou hodnotou null můžete také explicitně přetypovat na typ, který není null, jak ukazuje následující příklad:
 

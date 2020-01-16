@@ -2,68 +2,68 @@
 title: 'Postupy: Přístup ke službě z aplikace pracovního postupu'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: 178fb04244cb3e5075722877fdd3e2b5a92b8502
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c524dc07106f039d9dc6c17ee6fb966321b6da24
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779589"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964531"
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Postupy: Přístup ke službě z aplikace pracovního postupu
-Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikace pracovního postupu. To závisí na dokončení [jak: Vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje, jak volat z aplikace pracovního postupu služby pracovního postupu, stejně jako je možné volat jakékoli služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.
+Toto téma popisuje, jak volat službu pracovního postupu z konzolové aplikace pracovního postupu. Závisí na dokončení postupu [: vytvoření služby pracovního postupu pomocí aktivity zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) . I když toto téma popisuje, jak volat službu pracovního postupu z aplikace pracovního postupu, stejné metody lze použít k volání libovolné služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.
 
 ### <a name="create-a-workflow-console-application-project"></a>Vytvoření projektu konzolové aplikace pracovního postupu
 
-1. Start Visual Studio 2012.
+1. Spusťte Visual Studio 2012.
 
-2. Načtení projektu MyWFService, kterou jste vytvořili v [jak: Vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu.
+2. Načtěte projekt MyWFService, který jste vytvořili v tématu [Postupy: vytvoření služby pracovního postupu pomocí aktivity zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) .
 
-3. Klikněte pravým tlačítkem myši **MyWFService** řešení **Průzkumníka řešení** a vyberte **přidat**, **nový projekt**. Vyberte **pracovního postupu** v **nainstalované šablony** a **Konzolová aplikace pracovního postupu** ze seznamu typů projektů. Pojmenujte projekt MyWFClient a použijte výchozí umístění, jak je znázorněno na následujícím obrázku.
+3. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení **MyWFService** a vyberte **Přidat**, **Nový projekt**. V seznamu typů projektů vyberte **pracovní postup** v části **Nainstalované šablony** a **Konzolová aplikace pracovního postupu** . Pojmenujte projekt MyWFClient a použijte výchozí umístění, jak je znázorněno na následujícím obrázku.
 
-     ![Přidat dialogové okno nového projektu](./media/how-to-access-a-service-from-a-workflow-application/add-new-project-dialog.jpg)
+     ![Dialogové okno Přidat nový projekt](./media/how-to-access-a-service-from-a-workflow-application/add-new-project-dialog.jpg)
 
-     Klikněte na tlačítko **OK** tlačítka Zavřít **přidat dialogové okno nového projektu**.
+     Kliknutím na tlačítko **OK** zavřete **dialogové okno Přidat nový projekt**.
 
-4. Po vytvoření projektu Workflow1.xaml soubor je otevřen v návrháři. Klikněte na tlačítko **nástrojů** kartě otevřít sadu nástrojů, pokud není již otevřete a klikněte na ikonu připínáčku nechat otevřené okno nástrojů.
+4. Po vytvoření projektu se soubor Workflow1. XAML otevře v návrháři. Kliknutím na kartu **panelu nástrojů** otevřete panel nástrojů, pokud ještě není otevřený, a kliknutím na připínáček zachováte okno sady nástrojů otevřené.
 
-5. Stisknutím klávesy **Ctrl**+**F5** k sestavení a spuštění služby. Stejně jako dříve spustili serveru ASP.NET Development Server a Internet Explorer zobrazí na stránce nápovědy WCF. Všimněte si, že identifikátor URI pro tuto stránku jako je nutné použít v dalším kroku.
+5. Stisknutím **kombinace kláves Ctrl**+**F5** Sestavte a spusťte službu. Stejně jako dřív se spustí vývojový server ASP.NET a Internet Explorer zobrazí stránku s usnadněním pro WCF. Všimněte si identifikátoru URI této stránky, protože je nutné ji použít v dalším kroku.
 
-     ![Zobrazování stránky nápovědy WCF a identifikátor URI aplikace Internet Explorer](./media/how-to-access-a-service-from-a-workflow-application/ie-wcf-help-page-uri.jpg)
+     ![IE zobrazení stránky a identifikátoru URI v nápovědě WCF](./media/how-to-access-a-service-from-a-workflow-application/ie-wcf-help-page-uri.jpg)
 
-6. Klikněte pravým tlačítkem myši **MyWFClient** projekt **Průzkumníka řešení** a vyberte **přidat** > **odkaz na službu**. Klikněte na tlačítko **Discover** tlačítko Prohledat aktuální řešení pro všechny služby. Klikněte na tlačítko trojúhelníku vedle Service1.xamlx v seznamu služeb. Klikněte na tlačítko trojúhelníku vedle Service1 seznamu kontraktů implementovaných službou Service1. Rozbalte **Service1** uzlu **služby** seznamu. Echo operace se zobrazí v **operace** seznamu, jak je znázorněno na následujícím obrázku.
+6. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt **MyWFClient** a vyberte Přidat **odkaz na službu** > . Kliknutím na tlačítko **Vyhledat** můžete vyhledat aktuální řešení pro všechny služby. V seznamu služeb klikněte na trojúhelník vedle Service1. xamlx. Kliknutím na trojúhelník vedle Service1 zobrazíte seznam kontraktů implementovaných službou Service1. Rozbalte uzel **Service1** v seznamu **služby** . Operace ECHO se zobrazí v seznamu **operací** , jak je znázorněno na následujícím obrázku.
 
-     ![Přidat Dialog odkaz na službu](./media/how-to-access-a-service-from-a-workflow-application/add-service-reference.jpg)
+     ![Dialog Přidat odkaz na službu](./media/how-to-access-a-service-from-a-workflow-application/add-service-reference.jpg)
 
-     Ponechte výchozí obor názvů a klikněte na **OK** zrušíte **přidat odkaz na službu** dialogového okna. Zobrazí se následující dialogové okno.
+     Ponechte výchozí obor názvů a kliknutím na tlačítko **OK** zavřete dialogové okno **Přidat odkaz na službu** . Zobrazí se následující dialogové okno.
 
-     ![Přidat odkaz na upozornění služby dialog](./media/how-to-access-a-service-from-a-workflow-application/add-service-reference-dialog.jpg)
+     ![Dialog oznámení Přidat odkaz na službu](./media/how-to-access-a-service-from-a-workflow-application/add-service-reference-dialog.jpg)
 
-     Klikněte na tlačítko **OK** zavřete dialogové okno. Dále stisknutím kombinace kláves CTRL + SHIFT + B, abyste mohli sestavit řešení. Názvem Všimněte si, že na panelu nástrojů byla přidána nová část **MyWFClient.ServiceReference1.Activities**. Rozbalením tohoto oddílu a Všimněte si, že odezvu aktivitu, která byla přidána, jak je znázorněno na následujícím obrázku.
+     Kliknutím na tlačítko **OK** zavřete dialogové okno. Potom stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení. Všimněte si, že v sadě nástrojů byla přidána nová část s názvem **MyWFClient. ServiceReference1. Activities**. Rozbalte tuto část a Všimněte si aktivity ozvěny, která byla přidána, jak je znázorněno na následujícím obrázku.
 
-     ![Echo aktivity v sadě nástrojů](./media/how-to-access-a-service-from-a-workflow-application/echo-activity-toolbox.jpg)
+     ![Aktivita echo v sadě nástrojů](./media/how-to-access-a-service-from-a-workflow-application/echo-activity-toolbox.jpg)
 
-7. Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity na plochu návrháře. Je v části **tok řízení** části panelu nástrojů.
+7. Přetáhněte aktivitu <xref:System.Activities.Statements.Sequence> na plochu návrháře. Je pod částí **tok řízení** v sadě nástrojů.
 
-8. S <xref:System.Activities.Statements.Sequence> aktivity v fokus, klikněte **proměnné** propojit a přidat proměnnou s řetězcem s názvem `inString`. Zadejte výchozí hodnotu proměnné `"Hello, world"` a proměnné řetězce s názvem `outString` jak je znázorněno v následujícím diagramu.
+8. Po výběru aktivity <xref:System.Activities.Statements.Sequence> v rámci fokusu klikněte na odkaz **proměnné** a přidejte řetězcovou proměnnou s názvem `inString`. Poskytněte proměnné výchozí hodnotu `"Hello, world"` a také řetězcovou proměnnou s názvem `outString`, jak je znázorněno v následujícím diagramu.
 
-     ![Přidat proměnnou inString](./media/how-to-access-a-service-from-a-workflow-application/add-instring-variable.jpg)
+     ![Přidání proměnné inString](./media/how-to-access-a-service-from-a-workflow-application/add-instring-variable.jpg)
 
-9. Přetáhnout myší **Echo** aktivitu <xref:System.Activities.Statements.Sequence>. V okně Vlastnosti vytvořit vazbu `inMsg` argument `inString` proměnné a `outMsg` argument `outString` proměnné, jak je znázorněno na následujícím obrázku. Tím se předají hodnotu `inString` proměnné pro operace a přijímá návratovou hodnotu a umístí jej do `outString` proměnné.
+9. Přetáhněte aktivitu **echo** do <xref:System.Activities.Statements.Sequence>. V okně Vlastnosti svažte `inMsg` argumentu proměnné `inString` a argument `outMsg` proměnné `outString`, jak je znázorněno na následujícím obrázku. Tato operace projde hodnotou `inString` proměnné k operaci a poté převezme návratovou hodnotu a umístí ji do proměnné `outString`.
 
-     ![Připojení k proměnné argumenty](./media/how-to-access-a-service-from-a-workflow-application/bind-arguments-variables.jpg)
+     ![Vazba argumentů na proměnné](./media/how-to-access-a-service-from-a-workflow-application/bind-arguments-variables.jpg)
 
-10. Přetáhnout myší **WriteLine** aktivity níže **Echo** aktivita k zobrazení řetězec vrácený voláním služby. **WriteLine** aktivita je umístěna v **primitiv** uzlu v sadě nástrojů. Vytvoření vazby **Text** argument **WriteLine** aktivitu `outString` proměnné tak, že zadáte `outString` do textového pole na **WriteLine** aktivity. Pracovní postup by teď měl vypadat jako na následujícím obrázku.
+10. Přetáhněte aktivitu **WriteLine** pod aktivitu **echo** a zobrazte tak řetězec vrácený voláním služby. Aktivita **WriteLine** se nachází v uzlu **primitivních elementů** v sadě nástrojů. Navažte argument **textu** aktivity **WriteLine** na `outString` proměnnou tak, že do textového pole v aktivitě **WriteLine** zadáte `outString`. Pracovní postup by teď měl vypadat jako na následujícím obrázku.
 
-     ![Pracovní postup klientů](./media/how-to-access-a-service-from-a-workflow-application/complete-client-workflow.jpg)
+     ![Kompletní pracovní postup klienta](./media/how-to-access-a-service-from-a-workflow-application/complete-client-workflow.jpg)
 
-11. Klikněte pravým tlačítkem na řešení MyWFService a vyberte **nastavit projekty po spuštění...** . Vyberte **více projektů po spuštění** přepínací tlačítka a vyberte **Start** pro každý projekt v **akce** sloupce, jak je znázorněno na následujícím obrázku.
+11. Klikněte pravým tlačítkem na řešení MyWFService a vyberte **nastavit projekty po spuštění...** . Vyberte přepínač **více projektů po spuštění** a vyberte **Spustit** pro každý projekt ve sloupci **Akce** , jak je znázorněno na následujícím obrázku.
 
-     ![Možnosti projektů při spuštění](./media/how-to-access-a-service-from-a-workflow-application/startup-project-options.jpg)
+     ![Možnosti projektů po spuštění](./media/how-to-access-a-service-from-a-workflow-application/startup-project-options.jpg)
 
-12. Stiskněte kombinaci kláves Ctrl + F5 spusťte službu a klienta. Vývojový Server ASP.NET je hostitelem služby, aplikace Internet Explorer zobrazí na stránce nápovědy WCF a klientská aplikace pracovního postupu se spustí v okně konzoly a zobrazí řetězec vrácený ze služby ("Hello, world").
+12. Stisknutím kombinace kláves CTRL + F5 spusťte službu i klienta. ASP.NET Development Server hostuje službu, Internet Explorer zobrazí stránku s technickou pomocí WCF a aplikace pracovního postupu klienta se spustí v okně konzoly a zobrazí řetězec vrácený službou ("Hello, World").
 
 ## <a name="see-also"></a>Viz také:
 
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Postupy: Vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)
-- [Z pracovního postupu v projektu webové služby WCF](https://go.microsoft.com/fwlink/?LinkId=207725)
+- [Využívání služby WCF z pracovního postupu ve webovém projektu](https://docs.microsoft.com/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow)

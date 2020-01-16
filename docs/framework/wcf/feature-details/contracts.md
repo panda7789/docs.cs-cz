@@ -6,67 +6,67 @@ helpviewer_keywords:
 - contracts [WCF]
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
-ms.openlocfilehash: 839f7790a5dd300313931672c60e7826af39aeea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9b94feaf0a45edd87b4da25f4969a27136e4fd29
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651091"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964402"
 ---
 # <a name="contracts"></a>Kontrakty
-Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communication Foundation (WCF). Kontrakt služby specifikuje, koncový bod komunikuje s vnějším světem. Konkrétnější úrovni je příkaz o sadě určitých zpráv, které jsou uspořádány do základní zprávy exchange vzory (MEPs), jako je například požadavek/odpověď jednosměrného a duplexní. Pokud kontrakt služby je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musíte samozřejmě přijmout jednu zprávu (aby volající může oznamujeme pozdrav) a může nebo nemusí vrátit zprávu (v závislosti na provedla operaci).  
+V této části se dozvíte, jak definovat a implementovat kontrakty Windows Communication Foundation (WCF). Kontrakt služby určuje, co koncový bod komunikuje s vnějším světem. Na přesnější úrovni je to prohlášení o sadě konkrétních zpráv uspořádaných do základních vzorů výměny zpráv (MEPs), jako je například požadavek/odpověď, jednosměrné a duplexní využití. Je-li kontrakt služby logicky spojenou sadou výměn zpráv, je operace služby jediným výměnou zpráv. Například operace `Hello` musí zjevně akceptovat jednu zprávu (takže volající může oznámení pozdravu) a může nebo nemusí vracet zprávu (v závislosti na povýšení operace).  
   
- Další informace o kontraktech a další základní pojmy WCF najdete v tématu [základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md). Toto téma se zaměřuje na pochopení kontraktů služby. Další informace o tom, jak vytvářet klienty, kteří používají kontraktů služby pro připojení ke službám, naleznete v tématu [přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md). Další informace o klientské kanály, architekturu klienta a další problémy s klientem najdete v tématu [klienti](../../../../docs/framework/wcf/feature-details/clients.md).  
+ Další informace o smlouvách a dalších základních konceptech WCF najdete v tématu [základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md). Toto téma se zaměřuje na porozumění kontraktům služby. Další informace o tom, jak vytvořit klienty, kteří používají kontrakty služeb pro připojení ke službám, najdete v tématu [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md). Další informace o klientských kanálech, architektuře klientů a dalších problémech klienta najdete v tématu [klienti](../../../../docs/framework/wcf/feature-details/clients.md).  
   
 ## <a name="overview"></a>Přehled  
- Toto téma obsahuje podrobný koncepční orientace k navrhování a implementace služeb WCF. Související témata poskytují že podrobnější informace o specifika návrhu a implementace. Doporučujeme před navrhování a implementace aplikace WCF, který jste:  
+ Toto téma obsahuje koncepční koncepční orientaci pro návrh a implementaci služeb WCF. Dílčí témata poskytují podrobnější informace o konkrétních tématech navrhování a implementace. Před návrhem a implementací aplikace WCF doporučujeme:  
   
-- Pochopit, jaký kontrakt služby je, jak to funguje a jak ji vytvořit.  
+- Seznamte se s principem kontraktu služby, jak funguje a jak ho vytvořit.  
   
-- Vysvětlení, že kontrakty stavu minimální požadavky na tuto konfiguraci za běhu nebo hostitelské prostředí nemusí podporovat.  
+- Seznamte se s minimálními požadavky na stav kontraktů, které konfigurace run-time nebo hostitelské prostředí nemusí podporovat.  
   
 ## <a name="service-contracts"></a>Kontrakty služeb  
  Kontrakt služby je příkaz, který poskytuje informace o:  
   
-- Seskupování operací ve službě.  
+- Seskupení operací ve službě.  
   
-- Podpis operace z hlediska si vyměňují zprávy.  
+- Signatura operací v podobě vyměňovaných zpráv.  
   
-- Datové typy z následujících zpráv.  
+- Datové typy těchto zpráv.  
   
 - Umístění operací.  
   
-- Konkrétní protokoly a formáty serializace, které slouží k podpoře úspěšné komunikaci se službou.  
+- Konkrétní protokoly a formáty serializace, které se používají k podpoře úspěšné komunikace se službou.  
   
- Například může mít kontrakt nákupní objednávky `CreateOrder` operace, která přijímá vstup z informací o objednávkách typů a vrátí informace o úspěchu nebo neúspěchu, včetně identifikátor objednávky. Také může mít `GetOrderStatus` operace, která přijímá identifikátor objednávky a vrátí informace o stavu objednávky. Kontrakt služby toto řazení zadáte:  
+ Například kontrakt nákupní objednávky může mít operaci `CreateOrder`, která přijímá vstupní typy informací o objednávkách a vrací informace o úspěchu nebo neúspěchu včetně identifikátoru objednávky. Může mít také operaci `GetOrderStatus`, která přijímá identifikátor objednávky a vrací informace o stavu objednávky. Kontrakt služby tohoto řazení by určoval:  
   
-- Kontrakt nákupní objednávky, které se skládal z `CreateOrder` a `GetOrderStatus` operace.  
+- Tato smlouva o nákupu se skládá z `CreateOrder` a `GetOrderStatus`ch operací.  
   
-- Zda operace zadali zprávy vstupní a výstupní zprávy.  
+- Že operace mají zadané vstupní zprávy a výstupní zprávy.  
   
-- Data, která může obsahovat tyto zprávy.  
+- Data, která tyto zprávy mohou přenášet.  
   
-- Zařazené do kategorií příkazy týkající se komunikace infrastrukturu nezbytnou k úspěšné zpracování zprávy. Například tyto podrobnosti patří, jestli a jaké formuláře zabezpečení požadované k navázání komunikace úspěšná.  
+- Kategorií příkazy týkající se komunikační infrastruktury potřebné k úspěšnému zpracování zpráv. Mezi tyto podrobnosti patří například to, jestli a jaké jsou požadavky na zabezpečení, aby bylo možné navázat úspěšnou komunikaci.  
   
- K předání tento druh informací do aplikací na jiných platformách (včetně jiné platformy než Microsoft), kontrakty služeb XML jsou veřejně vyjádřené v standardní formáty XML, jako například [webové služby WSDL (Description Language)](https://go.microsoft.com/fwlink/?LinkId=87004) a [schématu XML (XSD)](https://go.microsoft.com/fwlink/?LinkId=87005), mimo jiné. Pro mnoho platforem mohou vývojáři tyto informace veřejného kontraktu vytvářet aplikace, které mohou komunikovat se službou, protože porozumí jazykové specifikaci a protože tyto jazyky jsou navržené tak, aby vzájemná spolupráce grafického subsystému Zadáním popisu vašeho nového veřejného formuláře, formátů a protokoly, které služba podporuje. Další informace o zpracování tento druh informací WCF najdete v tématu [metadat](../../../../docs/framework/wcf/feature-details/metadata.md).  
+ Pokud chcete tento druh informací předat aplikacím na jiných platformách (včetně platforem jiných výrobců než Microsoftu), kontrakty služby XML se veřejně vyjadřují ve standardních formátech XML, jako je [WSDL (Web Services Description Language)](https://www.w3.org/TR/2001/NOTE-wsdl-20010315) a [schématu XML (XSD)](https://www.w3.org/XML/Schema), mimo jiné. Vývojáři pro mnoho platforem můžou tyto informace o veřejné smlouvě využít k vytváření aplikací, které můžou komunikovat se službou, protože rozumí jazyk specifikace a protože tyto jazyky jsou navržené tak, aby umožňovaly vzájemnou operaci. popisem veřejných formulářů, formátů a protokolů, které služba podporuje. Další informace o tom, jak WCF zpracovává tento druh informací, najdete v tématu [metadata](../../../../docs/framework/wcf/feature-details/metadata.md).  
   
- Kontrakty lze vyjádřit mnoha způsoby, ale a WSDL a XSD jsou vynikající jazyků k popisu služby přístupné způsobem, ale jsou obtížné jazycích používat přímo – v každém případě jsou pouze popisy kontraktu service, ne služba implementace. Aplikace WCF proto používat spravované atributy, rozhraní a třídy definovat strukturu a implementace služby.  
+ Kontrakty můžou být vyjádřené mnoha způsoby, ale i když je WSDL a XSD Skvělé jazyky k tomu, aby je bylo možné snadno používat, jsou obtížné použít přímo – v každém případě se jedná o pouze popisy služby, nikoli kontrakt služby. implementaci. Proto aplikace WCF používají spravované atributy, rozhraní a třídy k definování struktury a k implementaci služby.  
   
- Výsledný kontrakt definovaný ve spravovaných typů lze převést (také nazývané *exportovat*) jako metadata – WSDL a XSD – v případě potřeby klienty nebo jiné služby implementátory, zvláště na jiných platformách. Výsledkem je jednoduchý programovací model, který lze popsat pomocí veřejného metadata pro všechny klientské aplikace. Podrobnosti o podkladové zprávy protokolu SOAP, jako je například doprava a informace týkající se zabezpečení, můžou zůstat na WCF, která automaticky provádí potřebné převody do a z systém typů kontraktu služby do systému typů XML.  
+ Výsledný kontrakt definovaný ve spravovaných typech lze převést (označovaný také jako *exportovaný*) jako metadata – WSDL a XSD – v případě potřeby klienty nebo jiné implementátory služby, zejména na jiných platformách. Výsledkem je přímočarý programovací model, který lze popsat pomocí veřejných metadat pro jakoukoli klientskou aplikaci. Podrobnosti o podkladových zprávách SOAP, jako jsou informace o přenosech a zabezpečení, mohou být ponechány na WCF, což automaticky provádí nezbytné převody na systém typů servisních smluv a ze systému do systému typů XML.  
   
- Další informace o navrhování kontraktů, naleznete v tématu [navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md). Další informace o implementaci kontrakty, naleznete v tématu [implementace kontraktů služeb](../../../../docs/framework/wcf/implementing-service-contracts.md).  
+ Další informace o návrhu smluv najdete v tématu [Navrhování kontraktů služeb](../../../../docs/framework/wcf/designing-service-contracts.md). Další informace o implementaci smluv najdete v tématu [implementace kontraktů služeb](../../../../docs/framework/wcf/implementing-service-contracts.md).  
   
- Kromě toho WCF také umožňuje vyvíjet kontrakty služeb výhradně na úrovni zprávy. Další informace o vývoji kontraktů služby na úrovni zpráv najdete v tématu [použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md). Další informace o vývoji služeb v protokolu SOAP XML, naleznete v tématu [vzájemná funkční spolupráce s aplikacemi POX](../../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md).  
+ Kromě toho WCF také umožňuje vyvíjet kontrakty služeb zcela na úrovni zprávy. Další informace o vývoji kontraktů služby na úrovni zpráv najdete v tématu [Použití kontraktů zpráv](../../../../docs/framework/wcf/feature-details/using-message-contracts.md). Další informace o vývoji služeb v jiných než SOAP XML najdete v tématu [interoperabilita s aplikacemi POX](../../../../docs/framework/wcf/feature-details/interoperability-with-pox-applications.md).  
   
-### <a name="understanding-the-hierarchy-of-requirements"></a>Principy hierarchie požadavky  
- Kontrakt služby skupiny operace; Určuje MEP typy zpráv a datové typy těchto zpráv carry; a určuje kategorie pro podporu kontrakt musí mít implementaci chování za běhu (například může vyžadovat, že zprávy zašifrovaná a podepsaná). Kontrakt služby samostatně, ale neurčuje, přesně jak jsou tyto požadavky splněny, pouze to, že musí být. Jaký typ šifrování nebo jak podepsanou zprávu je až po implementaci a konfiguraci kompatibilní služby.  
+### <a name="understanding-the-hierarchy-of-requirements"></a>Porozumění hierarchii požadavků  
+ Servisní smlouva seskupuje operace. Určuje MEP, typy zpráv a datové typy, které tyto zprávy obsahují. a označuje kategorie chování modulu runtime, které musí implementace vyžadovat pro podporu kontraktu (například může vyžadovat, aby zprávy byly šifrované a podepsané). Servisní smlouva ale nespecifikuje přesně to, jak jsou tyto požadavky splněné, jenom to, že musí být. Typ šifrování nebo způsob, jakým je zpráva podepsána, je až do implementace a konfigurace kompatibilní služby.  
   
- Všimněte si, že tak, že kontrakt vyžaduje některé aspekty implementace kontraktu služby a konfiguraci spuštění pro přidání chování. Sadu požadavků, které musí být splněny zpřístupnit služby pro použití se navazuje na předchozí sadu požadavků. Pokud kontrakt odešle požadavky na provádění, implementace může ještě vyžadovat další konfiguraci a vazby, které povolí službu spustit. Hostitelská aplikace nakonec musí podporovat všechny požadavky, které aplikacím dodávají konfigurace služby a vazby.  
+ Všimněte si, že smlouva vyžaduje určité věci implementace kontraktu služby a konfiguraci modulu runtime pro přidání chování. Sada požadavků, které je nutné splnit k vystavení služby pro použití sestavení na předchozí sadě požadavků. Pokud kontrakt provede požadavky na implementaci, implementace může vyžadovat ještě více konfigurací a vazeb, které umožňují spuštění služby. Nakonec musí hostitelská aplikace podporovat také všechny požadavky, které konfigurace služby a vazby přidávají.  
   
- Tento proces sčítání požadavek je potřeba vzít v úvahu při navrhování, implementaci, konfiguraci a hostování aplikace služby Windows Communication Foundation (WCF). Kontrakt například můžete určit, že je nutné podporují relace. Pokud ano, musíte nakonfigurovat vazby ke splnění tohoto požadavku smluvní nebo implementace služby nebudou fungovat. Nebo pokud vaše služba vyžaduje ověření integrované Windows a je hostovaná v Internetové informační služby (IIS), webové aplikace, ve kterém se služba nachází musí mít ověření integrované Windows zapnutý a anonymní podporu vypnuté. Další informace o funkcích a vliv těchto typů hostitele jinou službu, naleznete v tématu [Hosting](../../../../docs/framework/wcf/feature-details/hosting.md).  
+ Tento proces požadavku na doplňkovou látku je důležitý při navrhování, implementaci, konfiguraci a hostování aplikace služby Windows Communication Foundation (WCF). Kontrakt může například určit, že musí podporovat relaci. Pokud ano, musíte nakonfigurovat vazbu na podporu tohoto smluvního požadavku, jinak nebude implementace služby fungovat. Nebo pokud vaše služba vyžaduje integrované ověřování systému Windows a hostuje se ve službě Internetová informační služba (IIS), musí být webová aplikace, ve které je služba umístěná, zapnutá, zapnout integrované ověřování systému Windows a vypnout anonymní podporu. Další informace o funkcích a vlivu různých typů hostitelských aplikací služby najdete v tématu [hostování](../../../../docs/framework/wcf/feature-details/hosting.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
 - [Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)
 - [Implementace kontraktů služeb](../../../../docs/framework/wcf/implementing-service-contracts.md)

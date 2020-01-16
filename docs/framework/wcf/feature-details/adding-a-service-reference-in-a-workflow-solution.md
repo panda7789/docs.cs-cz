@@ -2,20 +2,20 @@
 title: Přidání odkazu na službu do řešení pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 83574cf3-9803-49bc-837f-432936dc9c76
-ms.openlocfilehash: 8f1fa4604f1a1873c7063ec3c9dccf08bd0aa0ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7197ae991207efd60ea398794c7c23f427f6b0cc
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669664"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964217"
 ---
 # <a name="adding-a-service-reference-in-a-workflow-solution"></a>Přidání odkazu na službu do řešení pracovního postupu
 
-Přidání odkazu do služby pracovního postupu aplikace funguje trochu jinak, než aplikace v jazyce regulárních WCF. Když vyberete **Přidat > odkaz na službu** a zadejte adresu URL ve službě, se stáhne metadata a vlastní aktivity se vygenerují, které vám umožní volat služby WCF nebo přidat odkaz na služby pracovního postupu WCF. Po přidání odkazu na službu znovu sestavte řešení, jsou integrované generované aktivity. Zobrazí se pak na panelu nástrojů Návrháře pracovního postupu. Všimněte si však, že to bude fungovat jenom v případě přidáte odkaz na službu do řešení pracovního postupu. Následující přetypování webové ukazuje, jak přidat odkaz na službu v ostatních typů projektů: [Volání z pracovního postupu v projektu webové služby WCF](https://go.microsoft.com/fwlink/?LinkId=207725).
+Přidání odkazu na službu v aplikaci pracovního postupu funguje trochu jinak než v běžné aplikaci WCF. Když vyberete možnost **přidat > odkaz na službu** a zadáte adresu URL ke službě, stáhnou se metadata a generují se vlastní aktivity, které vám umožní zavolat službu WCF nebo službu pracovního postupu WCF, na kterou jste přidali odkaz. Po přidání odkazu na službu znovu sestavte řešení, aby byly vytvořeny generované aktivity. Budou se pak zobrazovat v sadě nástrojů návrháře pracovních postupů. Upozorňujeme však, že bude fungovat pouze v případě, že přidáváte odkaz na službu v rámci řešení pracovního postupu. Následující webové přetypování ukazuje, jak přidat odkaz na službu v jiných typech projektů: [volání služby WCF z pracovního postupu ve webovém projektu](https://docs.microsoft.com/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow).
 
-Přidání dvou nebo více odkazů na služby pro služby, které obsahují stejný název operace způsobí, že k potížím. Generované aktivity bude volat pouze první operaci služby. Chcete-li vyřešit tento problém přejmenování operací služby tak, aby se liší nebo změňte název konfigurace koncového bodu v rámci každé vygenerované aktivity.
+Pokud přidáte dva nebo více odkazů na služby, které obsahují stejný název operace, dojde k problému. Generované aktivity budou volat pouze první operaci služby. Pokud chcete tento problém obejít, přejmenujte operace služby tak, aby se lišily, nebo změňte název konfigurace koncového bodu v rámci každé generované aktivity.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
-- [Volání z pracovního postupu v projektu webové služby WCF](https://go.microsoft.com/fwlink/?LinkId=207725)
+- [Volání služby WCF z pracovního postupu ve webovém projektu](https://docs.microsoft.com/archive/blogs/endpoint/how-to-consume-a-wcf-service-from-a-wf4-workflow)
