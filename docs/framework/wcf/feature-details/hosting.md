@@ -2,38 +2,38 @@
 title: Hosting2
 ms.date: 03/30/2017
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
-ms.openlocfilehash: 575b2a3e34246e1082d34545baaf812203a1dde1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7276fda3e5503a431b7de1507a9e5316920ec457
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855839"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75963708"
 ---
-# <a name="hosting"></a>Hostování
-Témata v této sekci popisují hostování služeb. Službě mohou být hostovány Internetové informační služby (IIS), Windows Process Activation Service (WAS), Windows Server AppFabric, služba Windows, nebo spravovaných aplikací – tato možnost se často označuje jako *samoobslužné hostování*.  
+# <a name="hosting"></a>Hosting
+Témata v části popisují hostování služby. Službu může hostovat služba Internetová informační služba (IIS), aktivační služba procesů systému Windows (WAS), Windows Server AppFabric, služba systému Windows nebo spravovaná aplikace – Tato možnost je často označována jako *samoobslužné hostování*.  
   
- Je důležité si uvědomit, že spuštěné služby nebo žádné rozšíření z ohrožení zabezpečení nedůvěryhodného hostitele.  
+ Je důležité si uvědomit, že při používání služby nebo jakéhokoli rozšíření z nedůvěryhodného hostitele dojde k ohrožení zabezpečení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
- Popisuje, jak je v Internetové informační službě hostované služby Windows Communication Foundation (WCF) nebo [Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkId=196496).  
+ Popisuje, jak je služba Windows Communication Foundation (WCF) hostovaná v Internetová informační služba nebo [Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).  
   
  [Hostování v Aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  
- Popisuje, jak ve službě WCF je hostitelem služby Aktivace procesu Windows.  
+ Popisuje způsob, jakým služba WCF hostuje aktivační službu procesů systému Windows.  
   
  [Hostování v aplikaci služby pro Windows](../../../../docs/framework/wcf/feature-details/hosting-in-a-windows-service-application.md)  
- Popisuje, jak ve službě WCF je hostitelem služby Windows.  
+ Popisuje způsob hostování služby WCF službou systému Windows.  
   
  [Hostování ve spravované aplikaci](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)  
- Popisuje, jak je služba WCF hostovaná ve spravované aplikaci.  
+ Popisuje způsob hostování služby WCF ve spravované aplikaci.  
   
  [Aktivace založená na konfiguraci v IIS a WAS](../../../../docs/framework/wcf/feature-details/configuration-based-activation-in-iis-and-was.md)  
- Popisuje, jak je služba WCF hostovaná v rámci služby IIS nebo WAS bez souboru .svc.  
+ Popisuje způsob hostování služby WCF v rámci služby IIS nebo bez použití souboru. svc.  
   
  [Podpora více vazeb webu IIS](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
- Popisuje, jak zadat více bázové adresy pro službu pomocí stejné schéma identifikátoru URI na jeden web.  
+ Popisuje, jak zadat více základních adres pro službu pomocí stejného schématu identifikátoru URI na jednom webu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)
-- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
