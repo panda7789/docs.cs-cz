@@ -5,38 +5,38 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
-ms.openlocfilehash: 613b85e18109faa2a4386090e91aaddcfd8e0b68
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fccdd021e392e6c37615a9091ce13f0e94167246
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038581"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212007"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Zabezpečení zpráv s anonymním klientem
 
-Následující scénář ukazuje klienta a služby zabezpečuje zabezpečení zpráv Windows Communication Foundation (WCF). Cílem návrhu je použijte zabezpečení zpráv, nikoli zabezpečení přenosu, tak, aby v budoucnu může podporovat modelu podrobnější nezaložené na deklaracích. Další informace o použití bohaté deklarací identity pro autorizaci najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).
+V následujícím scénáři vidíte klient a službu zabezpečený službou Windows Communication Foundation (WCF) zabezpečení zpráv. Cílem návrhu je použít zabezpečení zpráv místo zabezpečení přenosu, aby v budoucnu bylo možné podporovat bohatší model založený na deklaracích. Další informace o používání bohatých deklarací pro autorizaci najdete v tématu [Správa deklarací identity a autorizace pomocí modelu identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).
 
-Ukázková aplikace, najdete v části [zprávu zabezpečení anonymní](../../../../docs/framework/wcf/samples/message-security-anonymous.md).
+Ukázkovou aplikaci najdete v tématu [zabezpečení zpráv anonymně](../../../../docs/framework/wcf/samples/message-security-anonymous.md).
 
-![Zabezpečení pomocí anonymního klienta zpráv](../../../../docs/framework/wcf/feature-details/media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
+![Zabezpečení zpráv pomocí anonymního klienta](../../../../docs/framework/wcf/feature-details/media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
 
-|Vlastnost|Popis|
+|Charakteristika|Popis|
 |--------------------|-----------------|
 |Režim zabezpečení|Zpráva|
 |Interoperabilita|Pouze WCF|
-|Ověření (Server)|Počáteční vyjednávání vyžaduje ověřování serveru, ale ne ověření klienta|
-|Ověření (klient)|Žádný|
-|Integrita|Ano, pomocí sdíleného bezpečnostní kontext|
-|Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|
-|Přenos|HTTP|
+|Ověřování (Server)|Počáteční vyjednávání vyžaduje ověření serveru, ale ne ověřování klientů.|
+|Ověřování (klient)|Žádné|
+|Integrita|Ano, použití sdíleného kontextu zabezpečení|
+|Důvěrnost|Ano, použití sdíleného kontextu zabezpečení|
+|Doprava|HTTP|
 
-## <a name="service"></a>Služba
+## <a name="service"></a>Service
 
-Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
 
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.
 
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.
 
 ### <a name="code"></a>Kód
 
@@ -47,7 +47,7 @@ Následující kód ukazuje, jak vytvořit koncový bod služby, který použív
 
 ### <a name="configuration"></a>Konfigurace
 
-Následující konfigurace je možné použít místo kódu. Prvek chování služby slouží k určení certifikát, který se používá k ověření služby ke klientovi. Service element musí být specifikován pomocí chování `behaviorConfiguration` atribut. Element vazby Určuje, jestli je typ přihlašovacích údajů klienta `None`, umožňuje anonymní klientům používání služby.
+Místo kódu lze použít následující konfiguraci. Element chování služby se používá k určení certifikátu, který se používá k ověření služby klientovi. Element Service musí specifikovat chování pomocí atributu `behaviorConfiguration`. Element Binding určuje, že `None`typ přihlašovacích údajů klienta, což umožňuje anonymním klientům používat službu.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -90,25 +90,25 @@ Následující konfigurace je možné použít místo kódu. Prvek chování slu
 
 ## <a name="client"></a>Klient
 
-Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:
+Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:
 
-- Vytvoření samostatného klienta pomocí kódu (a kód klienta).
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).
 
-- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:
 
     [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
     [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
 
 ### <a name="code"></a>Kód
 
-Následující kód vytvoří instanci klienta. Vazba používá režim zabezpečení zpráv a typu pověření klienta je nastavena na hodnotu none.
+Následující kód vytvoří instanci klienta. Vazba používá zabezpečení režimu zprávy a typ přihlašovacích údajů klienta je nastaven na hodnotu None.
 
 [!code-csharp[C_SecurityScenarios#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#15)]
 [!code-vb[C_SecurityScenarios#15](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#15)]
 
 ### <a name="configuration"></a>Konfigurace
 
-Následující kód konfiguruje klienta.
+Následující kód nakonfiguruje klienta.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,4 +144,4 @@ Následující kód konfiguruje klienta.
 - [Zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)
 - [Zabezpečení zpráv s anonymní metodou](../../../../docs/framework/wcf/samples/message-security-anonymous.md)
 - [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

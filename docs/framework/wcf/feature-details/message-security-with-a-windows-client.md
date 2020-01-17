@@ -5,44 +5,44 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-ms.openlocfilehash: 36193090349f5b8ddb07ee7c3c6c663621cc6d06
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d3c1661acf4d4aa2de8b6eca7015c74ba7f80af1
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637853"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212015"
 ---
 # <a name="message-security-with-a-windows-client"></a>Zabezpečení zprávy s klientem Windows
-Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serverem zabezpečené pomocí režim zabezpečených zpráv. Klient a služba ověření pomocí přihlašovacích údajů Windows.  
+Tento scénář ukazuje klienta služby Windows Communication Foundation (WCF) a server zabezpečený režimem zabezpečení zpráv. Klient a služba jsou ověřovány pomocí pověření systému Windows.  
   
- ![Zabezpečení s klientem Windows zpráv](../../../../docs/framework/wcf/feature-details/media/1c8618d4-0005-4022-beb6-32fd087a8c3c.gif "1c8618d4-0005-4022-beb6-32fd087a8c3c")  
+ ![Zabezpečení zpráv pomocí klienta Windows](../../../../docs/framework/wcf/feature-details/media/1c8618d4-0005-4022-beb6-32fd087a8c3c.gif "1c8618d4-0005-4022-beb6-32fd087a8c3c")  
   
-|Vlastnost|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Message|  
+|Režim zabezpečení|Zpráva|  
 |Interoperabilita|Pouze WCF|  
-|Ověření (Server)|Vzájemné ověřování klienta a serveru|  
-|Ověření (klient)|Vzájemné ověřování klienta a serveru|  
-|Integrita|Ano, pomocí sdíleného bezpečnostní kontext|  
-|Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|  
-|Přenos|NET.TCP|  
+|Ověřování (Server)|Vzájemné ověřování serveru a klienta|  
+|Ověřování (klient)|Vzájemné ověřování serveru a klienta|  
+|Integrita|Ano, použití sdíleného kontextu zabezpečení|  
+|Důvěrnost|Ano, použití sdíleného kontextu zabezpečení|  
+|Doprava|NET.TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
   
-## <a name="service"></a>Služba  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+## <a name="service"></a>Service  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení zpráv k navázání zabezpečené kontextu s počítači s Windows.  
+ Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení zpráv k navázání zabezpečeného kontextu s počítačem s Windows.  
   
  [!code-csharp[C_SecurityScenarios#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#11)]
  [!code-vb[C_SecurityScenarios#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#11)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace lze namísto kódu k nastavení služby:  
+ K nastavení služby je možné použít následující konfiguraci:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -73,23 +73,23 @@ Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serve
 ```  
   
 ## <a name="client"></a>Klient  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).  
   
-- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Kód  
- Následující kód vytvoří klienta. Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `Windows`.  
+ Následující kód vytvoří klienta. Vazba je zabezpečení režimu zprávy a typ přihlašovacích údajů klienta je nastaven na `Windows`.  
   
  [!code-csharp[C_SecurityScenarios#18](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#18)]
  [!code-vb[C_SecurityScenarios#18](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#18)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace se používá k nastavení vlastnosti klienta.  
+ Následující konfigurace se používá k nastavení vlastností klienta.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -119,4 +119,4 @@ Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serve
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

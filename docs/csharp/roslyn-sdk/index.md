@@ -3,12 +3,12 @@ title: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
 description: Naučte se používat sadu SDK .NET Compiler Platform (označovanou také jako rozhraní API Roslyn), která vám pomůže pochopit kód .NET, odhalit chyby a opravit tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 3a202d977237ce716e3f8c0cf906894efd02196d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 98984edad3a25daa8b0ea13b903c4e6447b8a22a
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346958"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163134"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Sada .NET Compiler Platform SDK
 
@@ -21,7 +21,7 @@ Sada .NET Compiler Platform SDK výrazně snižuje překážku pro vytvoření k
 
 Sada .NET Compiler Platform SDK umožňuje sestavit ***analyzátory*** a ***opravy kódu*** , které hledají a opravují chyby kódování. ***Analyzátory*** rozumí syntaxi a struktury kódu a zjišťující postupy, které by měly být opraveny. ***Opravy kódu*** poskytují jednu nebo více navrhovaných oprav pro řešení chyb kódování zjištěných analyzátory. Analyzátor a související opravy kódu jsou obvykle zabaleny společně v jednom projektu.
 
-Analyzátory a opravy kódu používají statickou analýzu pro pochopení kódu. Nespouštějí kód ani neposkytují žádné výhody testování. Můžou však Ukázat postupy, které často vedou k chybám, neudržovatelnému kódu nebo standardnímu ověření pokynů.
+Analyzátory a opravy kódu používají statickou analýzu pro pochopení kódu. Nespouštějí kód ani neposkytují žádné výhody testování. Můžou ale Ukázat na postupy, které často vedou k chybám, neudržovatelnému kódu nebo porušení standardních pokynů.
 
 Sada .NET Compiler Platform SDK poskytuje jednu sadu rozhraní API, která vám umožní kontrolovat a pochopit základ kódu C# nebo Visual Basic. Vzhledem k tomu, že můžete použít tento jediný základ kódu, můžete snadněji psát analyzátory a opravy kódu pomocí rozhraní API pro syntaktickou a sémantickou analýzu poskytovanou sadou .NET Compiler Platform SDK. V rámci velkého úkolu replikace analýzy provedené kompilátorem se můžete soustředit na více zaměřenou úlohu hledání a opravování běžných chyb kódování pro váš projekt nebo knihovnu.
 

@@ -2,16 +2,16 @@
 title: Nástroje rozhraní příkazového řádku .NET Core (CLI)
 description: Přehled nástrojů a funkcí rozhraní příkazového řádku (CLI) .NET Core
 ms.date: 08/14/2017
-ms.openlocfilehash: b3bffb47ff973bd0da90e3f943e817756e563138
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f19dcb19fb9d0203b3d3795c3fdc0b026c4c60e3
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714140"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163212"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Nástroje rozhraní příkazového řádku .NET Core (CLI)
 
-Rozhraní příkazového řádku .NET Core (CLI) je nové sada nástrojů pro různé platformy pro vývoj aplikací .NET. Rozhraní příkazového řádku je základ, na kterém můžou REST nástroje, jako jsou například integrovaná vývojová prostředí (IDEs), editory a orchestrace sestavení.
+Rozhraní příkazového řádku .NET Core (CLI) je sada nástrojů pro různé platformy pro vývoj aplikací .NET. Rozhraní příkazového řádku je základ, na kterém můžou REST nástroje, jako jsou například integrovaná vývojová prostředí (IDEs), editory a orchestrace sestavení.
 
 ## <a name="installation"></a>Instalace služby
 
@@ -40,7 +40,7 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [migraci](dotnet-migrate.md)
+- [migrace](dotnet-migrate.md)
 - [Odstranit](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 - [Pomoc](dotnet-help.md)
@@ -74,7 +74,7 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [migraci](dotnet-migrate.md)
+- [migrace](dotnet-migrate.md)
 - [Odstranit](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 

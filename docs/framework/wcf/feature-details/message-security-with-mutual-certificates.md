@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
-ms.openlocfilehash: bd64531116b1588683c2f5c8964e78e41e371ecf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e784e254fb9314e69457d81a70400f7be30d9c13
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955345"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76211995"
 ---
 # <a name="message-security-with-mutual-certificates"></a>Zabezpečení zpráv vzájemnými certifikáty
 Následující scénář ukazuje službu Windows Communication Foundation (WCF) a klienta zabezpečený pomocí režimu zabezpečení zpráv. Klient a služba jsou ověřovány pomocí certifikátů.  
@@ -22,17 +22,17 @@ Následující scénář ukazuje službu Windows Communication Foundation (WCF) 
   
  ![Zabezpečení zpráv pomocí vzájemně vydaných certifikátů](../../../../docs/framework/wcf/feature-details/media/f4157312-b17c-416c-a5ee-fa7b54db211b.gif "f4157312-b17c-416c-a5ee-fa7b54db211b")  
   
-|Charakteristiku|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Message|  
+|Režim zabezpečení|Zpráva|  
 |Interoperabilita|Ano, s klienty a službami kompatibilními s profilem certifikátů WS-Security a X. 509.|  
 |Ověřování|Vzájemné ověřování serveru a klienta.|  
-|Způsobilost|Ano|  
-|Chovávat|Ano|  
-|Přepravu|HTTP|  
+|Integrita|Ano|  
+|Důvěrnost|Ano|  
+|Doprava|HTTP|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## <a name="service"></a>Služba  
+## <a name="service"></a>Service  
  Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
@@ -45,7 +45,7 @@ Následující scénář ukazuje službu Windows Communication Foundation (WCF) 
  [!code-csharp[C_SecurityScenarios#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#13)]
  [!code-vb[C_SecurityScenarios#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#13)]  
   
-### <a name="configuration"></a>Konfiguraci  
+### <a name="configuration"></a>Konfigurace  
  Následující konfiguraci lze použít místo kódu k vytvoření stejné služby.  
   
 ```xml  
@@ -106,8 +106,8 @@ Následující scénář ukazuje službu Windows Communication Foundation (WCF) 
  [!code-csharp[C_SecurityScenarios#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#20)]
  [!code-vb[C_SecurityScenarios#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#20)]  
   
-### <a name="configuration"></a>Konfiguraci  
- Následující nakonfiguruje klienta. Certifikát klienta musí být zadaný pomocí [ \<> ClientCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). Certifikát služby je také určen pomocí [ \<> defaultCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
+### <a name="configuration"></a>Konfigurace  
+ Následující nakonfiguruje klienta. Certifikát klienta musí být zadaný pomocí [\<ClientCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). Certifikát služby je také určen pomocí [\<defaultCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -161,5 +161,5 @@ Následující scénář ukazuje službu Windows Communication Foundation (WCF) 
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
-- [Postupy: Vytvoření a instalace dočasných certifikátů ve službě WCF pro zabezpečení přenosu během vývoje](https://go.microsoft.com/fwlink/?LinkId=244264)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Postupy: vytváření a instalace dočasných certifikátů ve službě WCF pro zabezpečení přenosu během vývoje](https://docs.microsoft.com/previous-versions/msp-n-p/ff648498(v=pandp.10))

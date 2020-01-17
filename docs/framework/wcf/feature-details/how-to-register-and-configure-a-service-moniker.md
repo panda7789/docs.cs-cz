@@ -5,12 +5,12 @@ helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: a73f6333a91cd8018fe8e0c34d44db87938b8058
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: c68ca0f7c95515a0552b7003454dd87804176d3d
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347096"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212218"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: registrace a konfigurace monikeru služby
 Předtím, než použijete moniker služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM se zadaným kontraktem, je nutné zaregistrovat požadované typy s atributem COM a nakonfigurovat aplikaci COM a moniker s požadovanou vazbou. rozšířeného.  
@@ -25,7 +25,7 @@ Předtím, než použijete moniker služby Windows Communication Foundation (WCF
     [assembly: ComVisible(true)]  
     ```  
   
-3. Zkompilujte spravovaný klient služby WCF jako sestavení se silným názvem. To vyžaduje podepisování pomocí páru kryptografických klíčů. Další informace naleznete v tématu [podepisování sestavení silným názvem](https://go.microsoft.com/fwlink/?LinkId=94874) v příručce pro vývojáře na platformě .NET.  
+3. Zkompilujte spravovaný klient služby WCF jako sestavení se silným názvem. To vyžaduje podepisování pomocí páru kryptografických klíčů. Další informace naleznete v tématu [podepisování sestavení silným názvem](../../../standard/assembly/sign-strong-name.md).  
   
 4. Použijte nástroj registrace sestavení (Regasm. exe) s možností `/tlb` k registraci typů v sestavení pomocí modelu COM.  
   

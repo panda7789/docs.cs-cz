@@ -1,18 +1,21 @@
 ---
 title: Zápis vlastních převaděčů pro serializaci JSON – .NET
 ms.date: 01/10/2020
+no-loc:
+- System.Text.Json
+- Newtonsoft.Json
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: 0f8b89ec7d7b1677de085631958b888e154aa4fa
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: f72d2d83d701b20648140900d65c9098a8abb721
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116719"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76164057"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON (zařazování) v .NET
 
@@ -285,7 +288,7 @@ Kód převaděče v předchozím příkladu čte a zapisuje každou vlastnost ru
 
 ## <a name="other-custom-converter-samples"></a>Další ukázky vlastního převaděče
 
-Článek [migrace z Newtonsoft. JSON na System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md) obsahuje další ukázky vlastních převaděčů.
+Článek [migrace z Newtonsoft.Json na System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md) obsahuje další ukázky vlastních převaděčů.
 
 [Složka testování částí](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) ve zdrojovém kódu `System.Text.Json.Serialization` obsahuje další ukázky vlastního převaděče, jako například:
 
@@ -300,10 +303,10 @@ Pokud potřebujete vytvořit převaděč, který upraví chování existujícíh
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Zdrojový kód pro předdefinované převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
-* [Podpora DateTime a DateTimeOffset v System. text. JSON](../datetime/system-text-json-support.md)
-* [Přehled System. text. JSON](system-text-json-overview.md)
-* [Jak používat System. text. JSON](system-text-json-how-to.md)
-* [Postup migrace z Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
-* [Reference k rozhraní API System. text. JSON. Serialization](xref:System.Text.Json.Serialization)
+* [Podpora DateTime a DateTimeOffset v System.Text.Json](../datetime/system-text-json-support.md)
+* [Přehled System.Text.Json](system-text-json-overview.md)
+* [Jak používat System.Text.Json](system-text-json-how-to.md)
+* [Postup migrace z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Reference k rozhraní API System.Text.Json](xref:System.Text.Json)
+* [System.Text.Json. Reference k rozhraní API serializace](xref:System.Text.Json.Serialization)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

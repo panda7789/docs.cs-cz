@@ -1,17 +1,20 @@
 ---
 title: Postup serializace a deserializace JSON C# pomocí-.NET
 ms.date: 01/10/2020
+no-loc:
+- System.Text.Json
+- Newtonsoft.Json
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 047d5b5c6fa339089d2054eb6bfe8b3066c1d00c
-ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
+ms.openlocfilehash: fdca8d957bb2453e90652af1dfe5ef99b33b1b2c
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75904661"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163199"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET
 
@@ -563,7 +566,7 @@ Následující příklad ukazuje kód JSON, který je výsledkem předchozího k
 }
 ```
 
-Další informace o polymorfní **serializaci**a informace o **deserializaci**naleznete v tématu [How to migruje from Newtonsoft. JSON to System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
+Další informace o polymorfní **serializaci**a informace o **deserializaci**najdete v tématu [postup migrace z Newtonsoft.Json na System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Povolí komentáře a koncové čárky.
 
@@ -777,9 +780,9 @@ Zde je ukázka JSON, kterou může předchozí kód přečíst. Výsledná Souhr
 
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 
-* [Přehled System. text. JSON](system-text-json-overview.md)
+* [Přehled System.Text.Json](system-text-json-overview.md)
 * [Zápis vlastních převaděčů](system-text-json-converters-how-to.md)
-* [Postup migrace z Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
-* [Podpora DateTime a DateTimeOffset v System. text. JSON](../datetime/system-text-json-support.md)
-* [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
+* [Postup migrace z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Podpora DateTime a DateTimeOffset v System.Text.Json](../datetime/system-text-json-support.md)
+* [Reference k rozhraní API System.Text.Json](xref:System.Text.Json)
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

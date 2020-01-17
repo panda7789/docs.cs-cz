@@ -5,37 +5,37 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 5ceda5b9c89fdd1770c6573b132c449997fb62b7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4a84b32664c16dad48dd415e430134c5fb98303a
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638635"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76211928"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Nezabezpečený internetový klient a služba
-Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby:  
+Následující ilustrace znázorňuje příklad veřejného, nezabezpečeného klienta a služby Windows Communication Foundation (WCF):  
   
- ![Snímek obrazovky zobrazující nezabezpečené scénáře Internet](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
+ ![Snímek obrazovky, který zobrazuje nezabezpečený internetový scénář](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
   
-|Vlastnost|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Žádné|  
-|Přenos|HTTP|  
-|Vazba|<xref:System.ServiceModel.BasicHttpBinding> v kódu nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element v konfiguraci.|  
-|Interoperabilita|Stávající klienty webové služby a služby|  
+|Doprava|HTTP|  
+|Vazba|<xref:System.ServiceModel.BasicHttpBinding> v kódu, nebo prvek [\<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) v konfiguraci.|  
+|Interoperabilita|S existujícími klienty a službami webové služby|  
 |Ověřování|Žádné|  
 |Integrita|Žádné|  
-|Důvěrnost|Žádný|  
+|Důvěrnost|Žádné|  
   
-## <a name="service"></a>Služba  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+## <a name="service"></a>Service  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod se zabezpečení. Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> má režim zabezpečení nastavený na <xref:System.ServiceModel.BasicHttpSecurityMode.None>.  
+ Následující kód ukazuje, jak vytvořit koncový bod bez zabezpečení. Ve výchozím nastavení má <xref:System.ServiceModel.BasicHttpBinding> režim zabezpečení nastavený na <xref:System.ServiceModel.BasicHttpSecurityMode.None>.  
   
  [!code-csharp[C_UnsecuredService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#1)]
  [!code-vb[C_UnsecuredService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#1)]  
@@ -68,23 +68,23 @@ Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta 
 ```  
   
 ## <a name="client"></a>Klient  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).  
   
-- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje základní klienta WCF, který přistupuje k nezabezpečené koncový bod.  
+ Následující kód ukazuje základního klienta WCF, který přistupuje k nezabezpečenému koncovému bodu.  
   
  [!code-csharp[C_UnsecuredClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#1)]
  [!code-vb[C_UnsecuredClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#1)]  
   
 ### <a name="client-configuration"></a>Konfigurace klienta  
- Následující kód konfiguruje klienta.  
+ Následující kód nakonfiguruje klienta.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -113,4 +113,4 @@ Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta 
 
 - [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

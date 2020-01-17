@@ -5,37 +5,37 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-ms.openlocfilehash: a5e3e96ce8c8bb3304c8abcc93a881998382c6ec
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 547c23509096b66c1fdbd46117a10f4de1692387
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638001"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212050"
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpečení zpráv s klientem uživatelského jména
-Následující obrázek znázorňuje služby Windows Communication Foundation (WCF) a služby klientů, které jsou zabezpečené pomocí zabezpečení na úrovni zprávy. Služba se ověřuje pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  
+Následující ilustrace znázorňuje službu Windows Communication Foundation (WCF) a klienta zabezpečenou pomocí zabezpečení na úrovni zprávy. Služba se ověřuje pomocí certifikátu X. 509. Klient se ověřuje pomocí uživatelského jména a hesla.  
   
- Ukázková aplikace, najdete v části [zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md).  
+ Ukázkovou aplikaci najdete v tématu [zabezpečení zpráv – uživatelské jméno](../../../../docs/framework/wcf/samples/message-security-user-name.md).  
   
- ![Zabezpečení zpráv pomocí uživatelského jména ověřování](../../../../docs/framework/wcf/feature-details/media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
+ ![Zabezpečení zpráv pomocí ověřování uživatelského jména](../../../../docs/framework/wcf/feature-details/media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
   
-|Vlastnost|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Message|  
-|Interoperabilita|Windows Communication Foundation (WCF) pouze|  
-|Ověření (Server)|Počáteční vyjednávání vyžaduje ověření serveru|  
-|Ověření (klient)|Uživatelské jméno/heslo|  
-|Integrita|Ano, pomocí sdíleného bezpečnostní kontext|  
-|Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|  
-|Přenos|HTTP|  
+|Režim zabezpečení|Zpráva|  
+|Interoperabilita|Pouze Windows Communication Foundation (WCF)|  
+|Ověřování (Server)|Počáteční vyjednávání vyžaduje ověření serveru.|  
+|Ověřování (klient)|Uživatelské jméno a heslo|  
+|Integrita|Ano, použití sdíleného kontextu zabezpečení|  
+|Důvěrnost|Ano, použití sdíleného kontextu zabezpečení|  
+|Doprava|HTTP|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## <a name="service"></a>Služba  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+## <a name="service"></a>Service  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení zpráv.  
@@ -44,7 +44,7 @@ Následující obrázek znázorňuje služby Windows Communication Foundation (W
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace je možné použít místo kód:  
+ Místo kódu lze použít následující konfiguraci:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -89,13 +89,13 @@ Následující obrázek znázorňuje služby Windows Communication Foundation (W
 ## <a name="client"></a>Klient  
   
 ### <a name="code"></a>Kód  
- Následující kód vytvoří klienta. Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné). Kód, který vrátí uživatelské jméno a heslo se zde není zobrazen, protože je třeba provést na úrovni aplikace. Například použití dialogového okna Windows Forms k dotazování uživatele pro data.  
+ Následující kód vytvoří klienta. Vazba je zabezpečení režimu zprávy a typ přihlašovacích údajů klienta je nastaven na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není možné je konfigurovat). Kód pro vrácení uživatelského jména a hesla zde není zobrazen, protože musí být proveden na úrovni aplikace. Můžete například použít dialogové okno model Windows Forms k dotazování uživatele na data.  
   
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující kód konfiguruje klienta. Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné).  
+ Následující kód nakonfiguruje klienta. Vazba je zabezpečení režimu zprávy a typ přihlašovacích údajů klienta je nastaven na `UserName`. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není možné je konfigurovat).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -131,4 +131,4 @@ Následující obrázek znázorňuje služby Windows Communication Foundation (W
 - [Zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md)
 - [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
 - [\<identity>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

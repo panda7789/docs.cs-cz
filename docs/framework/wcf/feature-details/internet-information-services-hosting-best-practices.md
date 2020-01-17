@@ -2,12 +2,12 @@
 title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: e09a42f0f4a98728e588961425d8b6f5b50e6ccb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 092e6ab675cf807db44c2085f8b0e7bbf67d7b28
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957218"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76211919"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
@@ -30,24 +30,24 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
 ## <a name="optimizing-performance-in-middle-tier-scenarios"></a>Optimalizace výkonu ve scénářích střední vrstvy  
  Pro zajištění optimálního výkonu ve *scénáři střední vrstvy*– služba, která volá jiné služby v reakci na příchozí zprávy – vytvoří instanci klienta služby WCF pro vzdálenou službu jednou a znovu ji použije v rámci několika příchozích požadavků. Instance klientů služby WCF je náročná operace, která souvisí s tím, že se bude volat služba na stávající instanci klienta, a scénáře střední vrstvy vytvářejí jedinečné nárůsty výkonu ukládáním vzdálených klientů do mezipaměti mezi požadavky. Klienti služby WCF jsou bezpečné pro přístup z více vláken, takže není nutné synchronizovat přístup k klientovi napříč více vlákny.  
   
- Scénáře střední vrstvy také poskytují nárůst výkonu pomocí asynchronních rozhraní API generovaných `svcutil /a` možností. Možnost způsobí, že nástroj pro dodávání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje `BeginXXX/EndXXX` metody pro každou operaci služby, což umožňuje spouštět potenciálně dlouhodobá volání vzdálených služeb na vláknech na pozadí. `/a`  
+ Scénáře střední vrstvy také poskytují nárůst výkonu pomocí asynchronních rozhraní API generovaných možností `svcutil /a`. Možnost `/a` způsobí, že nástroj pro dodávání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygeneruje `BeginXXX/EndXXX` metody pro každou operaci služby, což umožňuje v vláknech na pozadí provádět potenciálně dlouhodobá volání vzdálených služeb.  
   
 ## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>WCF ve scénářích s více adresami nebo s více názvy  
- Služby WCF můžete nasadit v rámci webové farmy služby IIS, kde sada počítačů sdílí společný externí název (například `http://www.contoso.com`), ale jsou jednotlivě adresovány různými názvy hostitelů ( `http://www.contoso.com` například může směrovat provoz do dvou různých počítačů). pojmenované `http://machine1.internal.contoso.com` a`http://machine2.internal.contoso.com`). V tomto scénáři nasazení je služba WCF plně podporovaná, ale vyžaduje speciální konfiguraci webu služby IIS hostující služby WCF, aby se zobrazil správný (externí) název hostitele v metadatech služby (Web Services Description Language).  
+ Služby WCF můžete nasadit v rámci webové farmy služby IIS, kde sada počítačů sdílí společný externí název (například `http://www.contoso.com`), ale jsou jednotlivě adresovány různými názvy hostitelů (například `http://www.contoso.com` mohou směrovat provoz do dvou různých počítačů s názvem `http://machine1.internal.contoso.com` a `http://machine2.internal.contoso.com`). V tomto scénáři nasazení je služba WCF plně podporovaná, ale vyžaduje speciální konfiguraci webu služby IIS hostující služby WCF, aby se zobrazil správný (externí) název hostitele v metadatech služby (Web Services Description Language).  
   
- Aby se zajistilo, že se v metadatech služby vygeneruje správný název hostitele, nakonfigurujte výchozí identitu pro web IIS, který je hostitelem služeb WCF, aby používal explicitní název hostitele. Například počítače, které se nacházejí v rámci `www.contoso.com` farmy, by měly používat vazbu webu IIS *: 80: www. contoso. com pro http a \*: 443: www. contoso. com pro protokol HTTPS.  
+ Aby se zajistilo, že se v metadatech služby vygeneruje správný název hostitele, nakonfigurujte výchozí identitu pro web IIS, který je hostitelem služeb WCF, aby používal explicitní název hostitele. Například počítače, které se nacházejí v `www.contoso.com` farmě, by měly používat vazbu webu IIS *: 80: www. contoso. com pro HTTP a \*: 443: www. contoso. com pro protokol HTTPS.  
   
  Vazby webu služby IIS můžete konfigurovat pomocí modulu snap-in konzoly Microsoft Management Console (MMC) služby IIS.  
   
 ## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>Fondy aplikací běžící v různých kontextech uživatele přepíší sestavení z jiných účtů v dočasné složce.  
  Chcete-li zajistit, aby fondy aplikací běžící v různých kontextech uživatelů nemohly přepsat sestavení z jiných účtů ve složce dočasných souborů ASP.NET, použijte pro různé aplikace různé identity a dočasné složky. Například pokud máte dvě virtuální aplikace/Application1 nebo Application2, můžete vytvořit dva fondy aplikací, a a B, se dvěma různými identitami. Fond aplikací A může běžet pod identitou jednoho uživatele (uživatel1), zatímco fond aplikací B může běžet pod identitou jiné uživatele (uživatel2), a nakonfigurovat/Application1 na použití a/Application2 pro použití B.  
   
- V souboru Web. config můžete dočasnou složku nakonfigurovat pomocí \< system.web/compilation/@tempFolder>. Pro/Application1 může být "c:\tempForUser1" a pro application2 může to být "c:\tempForUser2". Pro tyto dvě identity udělte odpovídající oprávnění k zápisu do těchto složek.  
+ V souboru Web. config můžete dočasnou složku nakonfigurovat pomocí \<system.web/compilation/@tempFolder>. Pro/Application1 může být "c:\tempForUser1" a pro application2 může to být "c:\tempForUser2". Pro tyto dvě identity udělte odpovídající oprávnění k zápisu do těchto složek.  
   
  Uživatel2 nemůže měnit složku pro generování kódu pro/application2 (v c:\tempForUser1).  
   
 ## <a name="enabling-asynchronous-processing"></a>Povolení asynchronního zpracování  
- Ve výchozím nastavení jsou zprávy odesílané službě WCF hostované v rámci služby IIS 6,0 a starší zpracovávány synchronním způsobem. ASP.NET volá do WCF ve vlastním vlákně (pracovní vlákno ASP.NET) a WCF používá jiné vlákno ke zpracování žádosti. WCF drží do pracovního vlákna ASP.NET, dokud nedokončí jeho zpracování. To vede k synchronnímu zpracování požadavků. Asynchronní zpracování požadavků umožňuje větší škálovatelnost, protože snižuje počet vláken potřebných ke zpracování požadavku – technologie WCF není při zpracování žádosti ve vlákně ASP.NET. Pro počítače, na kterých běží služba IIS 6,0, se nedoporučuje používat asynchronní chování, protože neexistuje žádný způsob, jak omezit příchozí požadavky, které otevřou Server na útoky DoS ( *Denial of Service* ). Počínaje službou IIS 7,0 byla zavedena souběžná omezení požadavků: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\2.0.50727.0]"MaxConcurrentRequestsPerCpu`. Díky tomuto novému omezení je bezpečné použít asynchronní zpracování.  Ve výchozím nastavení je ve službě IIS 7,0 registrována asynchronní obslužná rutina a modul. Pokud je tato možnost vypnuta, můžete ručně povolit asynchronní zpracování požadavků v souboru Web. config vaší aplikace. Nastavení, která použijete, závisí `aspNetCompatibilityEnabled` na nastavení. Pokud jste `false` `System.ServiceModel.Activation.ServiceHttpModule` nastavili na, nakonfigurujte, jak je znázorněno v následujícím fragmentu konfigurace. `aspNetCompatibilityEnabled`  
+ Ve výchozím nastavení jsou zprávy odesílané službě WCF hostované v rámci služby IIS 6,0 a starší zpracovávány synchronním způsobem. ASP.NET volá do WCF ve vlastním vlákně (pracovní vlákno ASP.NET) a WCF používá jiné vlákno ke zpracování žádosti. WCF drží do pracovního vlákna ASP.NET, dokud nedokončí jeho zpracování. To vede k synchronnímu zpracování požadavků. Asynchronní zpracování požadavků umožňuje větší škálovatelnost, protože snižuje počet vláken potřebných ke zpracování požadavku – technologie WCF není při zpracování žádosti ve vlákně ASP.NET. Pro počítače, na kterých běží služba IIS 6,0, se nedoporučuje používat asynchronní chování, protože neexistuje žádný způsob, jak omezit příchozí požadavky, které otevřou Server na útoky DoS ( *Denial of Service* ). Počínaje službou IIS 7,0 byla zavedena souběžná omezení požadavků: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\2.0.50727.0]"MaxConcurrentRequestsPerCpu`. Díky tomuto novému omezení je bezpečné použít asynchronní zpracování.  Ve výchozím nastavení je ve službě IIS 7,0 registrována asynchronní obslužná rutina a modul. Pokud je tato možnost vypnuta, můžete ručně povolit asynchronní zpracování požadavků v souboru Web. config vaší aplikace. Nastavení, která použijete, závisí na nastavení `aspNetCompatibilityEnabled`. Pokud máte `aspNetCompatibilityEnabled` nastavené na `false`, nakonfigurujte `System.ServiceModel.Activation.ServiceHttpModule`, jak je znázorněno v následujícím fragmentu konfigurace.  
   
 ```xml  
 <system.serviceModel>  
@@ -63,7 +63,7 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
     </system.webServer>  
 ```  
   
- Pokud jste `true` `System.ServiceModel.Activation.ServiceHttpHandlerFactory` nastavili na, nakonfigurujte, jak je znázorněno v následujícím fragmentu konfigurace. `aspNetCompatibilityEnabled`  
+ Pokud máte `aspNetCompatibilityEnabled` nastavené na `true`, nakonfigurujte `System.ServiceModel.Activation.ServiceHttpHandlerFactory`, jak je znázorněno v následujícím fragmentu konfigurace.  
   
 ```xml  
 <system.serviceModel>  
@@ -84,4 +84,4 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
 ## <a name="see-also"></a>Viz také:
 
 - [Ukázky hostování služeb](../samples/hosting.md)
-- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

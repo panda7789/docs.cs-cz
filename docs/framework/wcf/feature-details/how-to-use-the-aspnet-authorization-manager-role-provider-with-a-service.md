@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Použití zprostředkovatele role Správce autorizací ASP.NET se službou'
+title: 'Postupy: použití zprostředkovatele rolí ASP.NET Authorization Manager se službou'
 ms.date: 03/30/2017
 ms.assetid: f21deb81-91ef-49ef-94d6-494785143271
-ms.openlocfilehash: 778af929b4cfc96ce0683d304be5f8fb87a0e47b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 20955578ce4d344c2057036c0944557edf737389
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880204"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212226"
 ---
-# <a name="how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service"></a>Postupy: Použití zprostředkovatele role Správce autorizací ASP.NET se službou
-Při technologie ASP.NET je hostitelem webové služby, můžete začlenit do aplikace a poskytovalo autorizace ve službě Správce autorizací. Správce autorizací umožňuje vývojář aplikace definovat jednotlivé operace, které mohou být seskupeny do formuláře úlohy. Správce pak může autorizovat role provádět konkrétní úlohy nebo jednotlivé operace. Správce autorizací poskytuje nástroje pro správu jako modul snap-in konzoly Microsoft Management Console (MMC) ke správě rolí, úloh, oddělení a uživatelů. Správci konfigurovat úložiště Správce autorizací zásady v souboru XML, Active Directory, nebo v režimu aplikace Active Directory (ADAM) s aplikacemi.  
+# <a name="how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service"></a>Postupy: použití zprostředkovatele rolí ASP.NET Authorization Manager se službou
+Pokud ASP.NET hostuje webovou službu, můžete do aplikace integrovat Správce autorizací a poskytnout službě autorizaci. Správce autorizací umožňuje vývojářům aplikací definovat jednotlivé operace, které mohou být seskupeny do úloh formuláře. Správce pak může autorizovat role k provádění konkrétních úkolů nebo jednotlivých operací. Správce autorizací poskytuje nástroj pro správu jako modul snap-in konzoly MMC (Microsoft Management Console) ke správě rolí, úloh, operací a uživatelů. Správci konfigurují úložiště zásad Správce autorizací v souboru XML, ve službě Active Directory nebo v úložišti ADAM (Active Directory Application Mode).  
   
- Správce autorizací je integrovaná do aplikace podle konfigurace zprostředkovatele role Správce autorizací ASP.NET pro aplikaci ASP.NET, který je hostitelem webové služby. Stejně jako ostatní zprostředkovatelů rolí prostředí ASP.NET, je nakonfigurován pomocí zprostředkovatele role Správce autorizací ASP.NET <`providers`> element.  
+ Správce autorizací je do aplikace integrován konfigurací zprostředkovatele rolí ASP.NET Správce autorizací pro aplikaci ASP.NET, která je hostitelem webové služby. Stejně jako jiní poskytovatelé rolí ASP.NET je zprostředkovatel rolí ASP.NET Správce autorizací nakonfigurovaný pomocí elementu <`providers`>.  
   
- Následující příklad kódu je část konfigurační soubor pro webovou službu, je integrace Správce autorizací do aplikace.  
+ Následující příklad kódu je část konfiguračního souboru pro webovou službu, která integruje Správce autorizací do aplikace.  
   
 ```xml  
 <system.web>  
@@ -29,7 +29,7 @@ Při technologie ASP.NET je hostitelem webové služby, můžete začlenit do ap
 </system.web>  
 ```  
   
- Další informace o integraci poskytovatele rolí prostředí ASP.NET se službou WCF aplikace najdete v tématu [jak: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md). Další informace o používání Správce autorizací pomocí technologie ASP.NET, naleznete v tématu [jak: Použití Správce autorizací (AzMan) s technologií ASP.NET 2.0](https://go.microsoft.com/fwlink/?LinkId=71303).  
+ Další informace o integraci zprostředkovatele rolí ASP.NET s aplikací WCF najdete v tématu [How to: use the ASP.NET provider role with a Service](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md). Další informace o používání Správce autorizací s ASP.NET najdete v tématu [How to: use Authorization Manager (AzMan) with ASP.NET 2,0](https://docs.microsoft.com/previous-versions/msp-n-p/ff649313(v=pandp.10)).  
   
 ## <a name="see-also"></a>Viz také:
 

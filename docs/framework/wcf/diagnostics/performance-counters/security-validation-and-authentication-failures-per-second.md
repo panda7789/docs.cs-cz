@@ -2,33 +2,33 @@
 title: Ověřování zabezpečení a počet selhání ověření za sekundu
 ms.date: 03/30/2017
 ms.assetid: 266c3bd3-2ffc-4471-94b7-3675443be1ac
-ms.openlocfilehash: 5db8b656b626ea16f89ce432bf4cf1030b87a0b0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 546d81b73e912915d265fb194de4ad9e45d55cea
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664983"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163914"
 ---
 # <a name="security-validation-and-authentication-failures-per-second"></a>Ověřování zabezpečení a počet selhání ověření za sekundu
-Název čítače: Ověřování zabezpečení a počet selhání ověření za sekundu.  
+Název čítače: ověření zabezpečení a počet selhání ověření za sekundu.  
   
 ## <a name="description"></a>Popis  
- Tento čítač se zvyšuje vždy, když zpráva byl odmítnut z důvodu problému zabezpečení se nevztahuje čítač "Zabezpečení volání Neautorizováno". Tyto problémy patří:  
+ Tento čítač se zvyšuje vždy, když je zpráva odmítnuta z důvodu problému se zabezpečením, na který nepokrývá čítač "počet neautorizovaných volání zabezpečení". Mezi takové problémy patří:  
   
-- Token klienta nelze číst ze zprávy.  
+- Z zprávy nelze číst token klienta.  
   
-- Token klienta se nezdařilo ověřování (například špatné heslo).  
+- Token klienta se nezdařil při ověřování (například chybné heslo).  
   
-- Ověření podpisu se nezdařilo (například, zpráva byla změněna).  
+- Ověření podpisu se nezdařilo (například zpráva byla zfalšována).  
   
-- Zprávu je duplicitní v předchozím histogramem, což může dojít během opětovného přehrání útoku.  
+- Zpráva je duplicitní z předchozí verze, ke které může dojít během útoku prostřednictvím opakovaného přehrání.  
   
-- Došlo k selhání dešifrování.  
+- Došlo k chybě dešifrování.  
   
-- Některé prvky (například chybějící časového razítka nebo šifrovaná data blokovat) chybí požadované ze zprávy.  
+- Ve zprávě chybí některé povinné prvky (například chybějící časové razítko nebo šifrovaný blok dat).  
   
-- Při vyjednávání metodou handshake TLSNEGO/SPNEGO došlo k chybám.  
+- Během TLSNEGO/SPNEGO handshake došlo k chybám.  
   
- Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí následujícího vzorce:  
+ Tento čítač má typ čítače výkonu [PERF_COUNTER_COUNTER](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc740048(v=ws.10)), jehož hodnota se počítá pomocí následujícího vzorce:  
   
  (N1-N0)/((D1-D0)/F)

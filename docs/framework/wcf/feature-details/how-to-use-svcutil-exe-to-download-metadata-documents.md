@@ -2,24 +2,24 @@
 title: 'Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe'
 ms.date: 03/30/2017
 ms.assetid: 15524274-3167-4627-b722-d6cedb9fa8c6
-ms.openlocfilehash: 25840247e59b9dd61cadaa2ee94713240d135f88
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 359cdb58ef65c9fb69c0ecfc759f70164a369cce
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991605"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212103"
 ---
 # <a name="how-to-use-svcutilexe-to-download-metadata-documents"></a>Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe
-Pomocí Svcutil. exe můžete stahovat metadata ze spuštěných služeb a ukládat je do místních souborů. V případě schémat URL s protokolem HTTP a HTTPS se Svcutil. exe pokusí načíst metadata pomocí [zjišťování webové služby](https://go.microsoft.com/fwlink/?LinkId=94950)WS-MetadataExchange a XML. Pro všechna ostatní schémata URL používá Svcutil. exe pouze WS-MetadataExchange.  
+Pomocí Svcutil. exe můžete stahovat metadata ze spuštěných služeb a ukládat je do místních souborů. V případě schémat URL s protokolem HTTP a HTTPS se Svcutil. exe pokusí načíst metadata pomocí [zjišťování webové služby](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/fxx6cfx2(v=vs.100))WS-MetadataExchange a XML. Pro všechna ostatní schémata URL používá Svcutil. exe pouze WS-MetadataExchange.  
   
- Ve výchozím nastavení používá Svcutil. exe vazby definované ve <xref:System.ServiceModel.Description.MetadataExchangeBindings> třídě. Pokud chcete nakonfigurovat vazbu použitou pro WS-MetadataExchange, musíte v konfiguračním souboru pro Svcutil. exe (Svcutil. exe. config) definovat koncový bod klienta, který používá `IMetadataExchange` kontrakt a který má stejný název jako identifikátor URI (Uniform Resource Identifier). schéma adresy koncového bodu metadat  
+ Ve výchozím nastavení používá Svcutil. exe vazby definované ve třídě <xref:System.ServiceModel.Description.MetadataExchangeBindings>. Pokud chcete nakonfigurovat vazbu použitou pro WS-MetadataExchange, musíte v konfiguračním souboru pro Svcutil. exe (Svcutil. exe. config) definovat koncový bod klienta, který používá `IMetadataExchange` kontrakt a který má stejný název jako schéma adresy koncového bodu metadat (Uniform Resource Identifier).  
   
 > [!CAUTION]
-> Při spuštění Svcutil. exe za účelem získání metadat pro službu, která zveřejňuje dvě různé kontrakty služby, které obsahují operaci se stejným názvem, Svcutil. exe zobrazí chybu s oznámením, že nelze získat metadata z.... Například pokud máte službu, `ICarService` která zveřejňuje kontrakt služby s názvem, který má operaci `Get(Car c)` , a stejná služba zveřejňuje kontrakt služby s názvem `IBookService` , který má operaci `Get(Book b)`. Chcete-li tento problém obejít, proveďte jednu z následujících akcí:
+> Při spuštění Svcutil. exe za účelem získání metadat pro službu, která zveřejňuje dvě různé kontrakty služby, které obsahují operaci se stejným názvem, Svcutil. exe zobrazí chybu s oznámením, že nelze získat metadata z.... Například pokud máte službu, která zveřejňuje kontrakt služby s názvem `ICarService` s operací `Get(Car c)` a stejná služba zveřejňuje kontrakt služby s názvem `IBookService`, který má `Get(Book b)`operací. Chcete-li tento problém obejít, proveďte jednu z následujících akcí:
 >
 > - Přejmenujte jednu z operací.
-> - <xref:System.ServiceModel.OperationContractAttribute.Name%2A> Nastavte na jiný název.
-> - Nastavte jeden z oborů názvů operací na jiný obor názvů pomocí <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> vlastnosti.
+> - Nastavte <xref:System.ServiceModel.OperationContractAttribute.Name%2A> na jiný název.
+> - Pomocí vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> nastavte jeden z oborů názvů Operations na jiný obor názvů.
   
 ## <a name="to-download-metadata-using-svcutilexe"></a>Stažení metadat pomocí Svcutil. exe  
   
@@ -33,9 +33,9 @@ Pomocí Svcutil. exe můžete stahovat metadata ze spuštěných služeb a uklá
     svcutil.exe /t:metadata  <url>* | <epr>  
     ```  
   
-     Je nutné zadat `/t:metadata` možnost stahovat metadata. V opačném případě se generuje kód klienta a konfigurace.  
+     Je nutné zadat možnost `/t:metadata` pro stažení metadat. V opačném případě se generuje kód klienta a konfigurace.  
   
-3. Argument <`url`> Určuje adresu URL koncového bodu služby, který poskytuje metadata, nebo k dokumentu metadat hostovanému online. Argument <`epr`> Určuje cestu k souboru XML, který obsahuje WS-Addressing `EndpointAddress` pro koncový bod služby podporující WS-MetadataExchange.  
+3. Argument <`url`> Určuje adresu URL koncového bodu služby, který poskytuje metadata, nebo k dokumentu metadat hostovanému online. Argument <`epr`> Určuje cestu k souboru XML, který obsahuje `EndpointAddress` WS-Addressing pro koncový bod služby, který podporuje WS-MetadataExchange.  
   
  Další možnosti o použití tohoto nástroje pro stažení metadat najdete v tématu [Nástroj pro nástroj pro metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   

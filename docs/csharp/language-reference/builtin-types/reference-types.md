@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: d8858acb2743b26cc3a5172edf4765976d81adf4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: d5ca0593d802d331d980cf35c701e0a79d54abee
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973018"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163095"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Předdefinované typy odkazů (C# referenční)
 
@@ -33,7 +33,7 @@ C#má několik předdefinovaných typů odkazů. Mají klíčová slova nebo ope
 
 ## <a name="the-object-type"></a>Typ objektu
 
-`object` typ je alias pro <xref:System.Object?displayProperty=nameWithType> v rozhraní .NET. V rámci sjednoceného typu systému C#jsou všechny typy, předdefinované a uživatelsky definované typy odkazů a typy hodnot děděny přímo nebo nepřímo z <xref:System.Object?displayProperty=nameWithType>. K proměnným typu `object`můžete přiřadit hodnoty libovolného typu. K výchozí hodnotě lze pomocí `null`literálů přiřadit jakoukoli `object` proměnnou. Když je proměnná typu hodnoty převedena na typ Object, je označována jako *zabalená*. Je-li proměnná typu Object převedena na typ hodnoty, je označována jako *nezabaleno*. Další informace naleznete v tématu [zabalení a rozbalení](../../programming-guide/types/boxing-and-unboxing.md). 
+`object` typ je alias pro <xref:System.Object?displayProperty=nameWithType> v rozhraní .NET. V rámci sjednoceného typu systému C#jsou všechny typy, předdefinované a uživatelsky definované typy odkazů a typy hodnot děděny přímo nebo nepřímo z <xref:System.Object?displayProperty=nameWithType>. K proměnným typu `object`můžete přiřadit hodnoty libovolného typu. K výchozí hodnotě lze pomocí `null`literálů přiřadit jakoukoli `object` proměnnou. Když je proměnná typu hodnoty převedena na typ Object, je označována jako *zabalená*. Je-li proměnná typu `object` převedena na typ hodnoty, je označována jako *nezabaleno*. Další informace naleznete v tématu [zabalení a rozbalení](../../programming-guide/types/boxing-and-unboxing.md). 
 
 ## <a name="the-string-type"></a>Typ řetězce
 
@@ -67,14 +67,14 @@ string b = "h";
 b += "ello";
 ```
 
-[Operátor](../operators/member-access-operators.md#indexer-operator-) `[]` lze použít pro přístup jen pro čtení k jednotlivým znakům `string`. Platné hodnoty začínají na `0` a musí být menší než délka `string`:
+[Operátor](../operators/member-access-operators.md#indexer-operator-) `[]` lze použít pro přístup jen pro čtení k jednotlivým znakům řetězce. Platné hodnoty indexu začínají na `0` a musí být menší než délka řetězce:
 
 ```csharp
 string str = "test";
 char x = str[2];  // x = 's';
 ```
 
-Podobným způsobem lze operátor `[]` použít také k iterování každého znaku v `string`:
+Podobným způsobem lze operátor `[]` použít také pro iteraci každého znaku v řetězci:
 
 ```csharp-interactive
 string str = "test";
