@@ -3,12 +3,12 @@ title: Vytvoření klienta REST pomocí .NET Core
 description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 9478966598a9aaa1e9f592b72afce8f878a38abf
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 85a3c8e17e14db86786950380ba745ae286dccca
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964411"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115869"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -42,7 +42,7 @@ Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a v
 dotnet new console --name WebApiClient
 ```
 
-Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World". Název projektu je "WebApiClient". Vzhledem k tomu, že se jedná o nový projekt, není zavedena žádná závislost, takže první spuštění stáhne rozhraní .NET Core Framework, nainstaluje certifikát pro vývoj a spustí Správce balíčků NuGet pro obnovení chybějících závislostí.
+Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World". Název projektu je "WebApiClient". Vzhledem k tomu, že se jedná o nový projekt, není provedena žádná závislost. První spuštění stáhne rozhraní .NET Core Framework, nainstaluje certifikát pro vývoj a spustí Správce balíčků NuGet pro obnovení chybějících závislostí.
 
 Než začnete provádět úpravy, zadejte `dotnet run` ([Viz poznámku](#dotnet-restore-note)) na příkazovém řádku a spusťte tak aplikaci. `dotnet run` automaticky provádí `dotnet restore` v případě chybějících závislostí ve vašem prostředí. Také provádí `dotnet build`, pokud vaše aplikace musí být znovu sestavena.
 Po počáteční instalaci budete muset spustit pouze `dotnet restore` nebo `dotnet build`, pokud to pro váš projekt dává smysl.

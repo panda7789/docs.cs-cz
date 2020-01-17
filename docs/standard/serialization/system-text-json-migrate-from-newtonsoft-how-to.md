@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 8b3ffc885691264548a19f694d159ce07aba7550
-ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
+ms.openlocfilehash: 01f94bcfce97da8c71b1b709baa34c2b7509a5e5
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75904682"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116686"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Postup migrace z Newtonsoft. JSON na System. text. JSON
 
@@ -136,17 +136,6 @@ Chcete-li implementovat odvození typu pro vlastnosti `object`, vytvořte pomoc�
 ### <a name="maximum-depth"></a>Maximální hloubka
 
 ve výchozím nastavení nemá `Newtonsoft.Json` maximální hloubkový limit. Pro <xref:System.Text.Json> existuje výchozí limit 64 a je možné ho nakonfigurovat nastavením <xref:System.Text.Json.JsonSerializerOptions.MaxDepth?displayProperty=nameWithType>.
-
-### <a name="stack-type-handling"></a>Zpracování typu zásobníku
-
-V <xref:System.Text.Json>je pořadí obsahu zásobníku obrácené při jeho serializaci. Toto chování platí pro následující typy a rozhraní a uživatelsky definované typy, které jsou z nich odvozeny:
-
-* <xref:System.Collections.Stack>
-* <xref:System.Collections.Generic.Stack%601>
-* <xref:System.Collections.Immutable.ImmutableStack%601>
-* <xref:System.Collections.Immutable.IImmutableStack%601>
-
-Vlastní převaděč může být implementován tak, aby zachoval obsah zásobníku ve stejném pořadí.
 
 ### <a name="omit-null-value-properties"></a>Vynechat vlastnosti hodnoty null
 

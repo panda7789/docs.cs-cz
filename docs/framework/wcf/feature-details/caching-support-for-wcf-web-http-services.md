@@ -2,19 +2,20 @@
 title: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-ms.openlocfilehash: 5964c58ce28f67815774741815bba0fcbe3b2de7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: b6247dd6c178b355fa4de271415b7cac12f6c629
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964226"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116680"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje použít deklarativní mechanizmus ukládání do mezipaměti, který je již k dispozici v ASP.NET ve webových službách HTTP služby WCF. To vám umožní ukládat odpovědi z operací služby HTTP webu WCF do mezipaměti. Když uživatel odešle službě požadavek HTTP GET, která je nakonfigurovaná pro ukládání do mezipaměti, ASP.NET odešle zpět odpověď uloženou v mezipaměti a metoda služby se nevolá. Až mezipaměť vyprší, při příštím odeslání HTTP GET se vaše metoda služby zavolá a odpověď se znovu uloží do mezipaměti. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [Přehled ukládání do mezipaměti ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/ms178597(v=vs.100)).  
   
 ## <a name="basic-web-http-service-caching"></a>Mezipaměť základní webové služby HTTP  
- Pokud chcete povolit ukládání webové služby HTTP do mezipaměti, musíte nejdřív povolit kompatibilitu s ASP.NET, a to tak, že použijete <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> pro nastavení služby <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.  
+
+  Pokud chcete povolit ukládání služby webového HTTP do mezipaměti, musíte nejdřív povolit kompatibilitu s ASP.NET, a to tak, že použijete <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> pro nastavení služby <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.  
   
  .NET Framework 4 zavádí nový atribut nazvaný <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, který umožňuje zadat název profilu mezipaměti. Tento atribut se aplikuje na operaci služby. Následující příklad aplikuje <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> na službu, aby povolovala kompatibilitu ASP.NET a nakonfiguruje operaci `GetCustomer` pro ukládání do mezipaměti. Atribut <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> určuje profil mezipaměti, který obsahuje nastavení mezipaměti, která se mají použít.  
   
@@ -32,7 +33,7 @@ public class Service
 }
 ```  
   
- Také je nutné zapnout režim kompatibility ASP.NET v souboru Web. config, jak je znázorněno v následujícím příkladu.  
+V souboru Web. config zapněte také režim kompatibility ASP.NET, jak je znázorněno v následujícím příkladu.  
   
 ```xml
 <system.serviceModel>
@@ -62,7 +63,8 @@ public class Service
  Jedná se o stejný prvek konfigurace, který je k dispozici pro ASP.NET aplikace. Další informace o profilech mezipaměti ASP.NET najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. U webových služeb HTTP jsou nejdůležitější atributy v profilu mezipaměti: `cacheDuration` a `varyByParam`. Oba tyto atributy jsou povinné. `cacheDuration` nastaví množství času, po který by měla být odpověď uložená v mezipaměti v sekundách. `varyByParam` umožňuje zadat parametr řetězce dotazu, který se používá k ukládání odpovědí do mezipaměti. Všechny požadavky vytvořené pomocí různých hodnot parametrů řetězce dotazu jsou ukládány do mezipaměti odděleně. Například po provedení prvotní žádosti o `http://MyServer/MyHttpService/MyOperation?param=10`všechny následné požadavky se stejným identifikátorem URI vrátí odpověď uloženou v mezipaměti (Pokud doba trvání mezipaměti neuplynula). Odpovědi na podobný požadavek, který je stejný, ale má jinou hodnotu parametru řetězce dotazu parametru, jsou ukládány do mezipaměti odděleně. Pokud nechcete toto samostatné chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
   
 ## <a name="sql-cache-dependency"></a>Závislost mezipaměti SQL  
- Odpovědi na webové HTTP služby můžou být také uloženy v mezipaměti se závislostí mezipaměti SQL. Je-li služba WCF Web HTTP závislá na datech uložených v databázi SQL, může být vhodné uložit odpověď služby do mezipaměti a zrušit platnost odpovědi uložené v mezipaměti, když dojde ke změně dat v tabulce databáze SQL. Toto chování je zcela nakonfigurované v souboru Web. config. Je nutné nejprve definovat připojovací řetězec v prvku <`connectionStrings`>.  
+
+  Odpovědi na webové HTTP služby můžou být také uloženy v mezipaměti se závislostí mezipaměti SQL. Je-li služba WCF Web HTTP závislá na datech uložených v databázi SQL, může být vhodné uložit odpověď služby do mezipaměti a zrušit platnost odpovědi uložené v mezipaměti, když dojde ke změně dat v tabulce databáze SQL. Toto chování je zcela nakonfigurované v souboru Web. config. Nejprve v <`connectionStrings`> elementu definujte připojovací řetězec.  
   
 ```xml
 <connectionStrings>
@@ -120,13 +122,14 @@ public class Service
 </system.web>
 ```  
   
- V tomto případě je doba trvání mezipaměti nastavená na 60 sekund, `varyByParam` je nastavená na hodnotu None a `sqlDependency` je nastavená na seznam dvojic název databáze/tabulka oddělený středníkem. Při změně dat v `MyTable` je odpověď uložená v mezipaměti pro operaci služby odebrána a když je operace vyvolána, je vygenerována nová odpověď (voláním operace služby), uloženou v mezipaměti a vrácena klientovi.  
+ V tomto případě je doba trvání mezipaměti nastavená na 60 sekund, `varyByParam` je nastavená na None (žádné) a `sqlDependency` je nastavená na seznam dvojic název databáze/tabulka oddělený středníkem. Při změně dat v `MyTable` je odpověď uložená v mezipaměti pro operaci služby odebrána a když je operace vyvolána, je vygenerována nová odpověď (voláním operace služby), uloženou v mezipaměti a vrácena klientovi.  
   
 > [!IMPORTANT]
 > Aby ASP.NET mohl získat přístup ke službě SQL Database, je nutné použít [Nástroj pro registraci nástroje ASP.NET SQL Server](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms229862(v=vs.90)). Kromě toho je nutné, aby měl příslušný uživatelský účet přístup k databázi a tabulce. Další informace najdete v tématu [přístup k SQL Server z webové aplikace](https://docs.microsoft.com/previous-versions/aspnet/ht43wsex(v=vs.100)).  
   
 ## <a name="conditional-http-get-based-caching"></a>Podmíněné ukládání do mezipaměti založené na protokolu HTTP  
- Ve scénářích webového protokolu HTTP často využívají podmíněné HTTP GET služby k implementaci inteligentního ukládání do mezipaměti protokolu HTTP, jak je popsáno ve [specifikaci http](https://www.w3.org/Protocols/rfc2616/rfc2616.html). Aby bylo možné tuto službu provést, musí být v odpovědi HTTP nastavena hodnota hlavičky ETag. Také musí v požadavku HTTP zaškrtnout hlavičku If-None-Match, aby bylo možné zjistit, zda některý ze zadaných značek ETag odpovídá aktuálnímu ETag.  
+
+  Ve scénářích webového protokolu HTTP často využívají podmíněné HTTP GET služby k implementaci inteligentního ukládání do mezipaměti protokolu HTTP, jak je popsáno ve [specifikaci http](https://www.w3.org/Protocols/rfc2616/rfc2616.html). K tomu je potřeba, aby služba v odpovědi HTTP nastavila hodnotu hlavičky ETag. Také musí v požadavku HTTP zaškrtnout hlavičku If-None-Match, aby bylo možné zjistit, zda některý ze zadaných značek ETag odpovídá aktuálnímu ETag.  
   
  V případě požadavků GET a HEAD <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> přebírá hodnotu ETag a kontroluje ji v hlavičce If-None-Match žádosti. Pokud je hlavička přítomna a existuje shoda, je vyvolána <xref:System.ServiceModel.Web.WebFaultException> se stavovým kódem HTTP 304 (nezměněno) a hlavička ETag je přidána do odpovědi s odpovídající značkou ETag.  
   

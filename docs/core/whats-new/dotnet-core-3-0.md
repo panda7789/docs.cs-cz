@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 94284a196030d784909c41aae7fef9a5ad3cb52a
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: eb1815f965e86a6f8f709b32f84f879eb03de447
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937239"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115789"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -497,9 +497,13 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Rychlá integrovaná podpora JSON
 
-Uživatelé rozhraní .NET mají převážně na [**JSON.NET**](https://www.newtonsoft.com/json) a další oblíbené knihovny JSON, které budou mít i nadále dobré možnosti. **JSON.NET** používá řetězce .NET jako základní datový typ, který je v digestoři UTF-16.
+Uživatelé rozhraní .NET mají převážně na [Newtonsoft. JSON](https://www.newtonsoft.com/json) a další oblíbené knihovny JSON, které budou mít i nadále dobré možnosti. `Newtonsoft.Json` používá řetězce .NET jako svůj základní datový typ, což je UTF-16 pod digestoří.
 
-Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a založená na `Span<byte>`. Další informace o <xref:System.Text.Json> obor názvů a typy naleznete v tématu [serializace JSON v rozhraní .NET – přehled](../../standard/serialization/system-text-json-overview.md). Výukové programy k běžným scénářům serializace JSON najdete [v tématu jak serializovat a deserializovat JSON v rozhraní .NET](../../standard/serialization/system-text-json-how-to.md).
+Nová integrovaná podpora JSON je vysoce výkonná, nízká alokace a funguje s textem JSON kódovaným ve formátu UTF-8. Další informace o <xref:System.Text.Json> obor názvů a typy najdete v následujících článcích:
+
+* [Serializace JSON v .NET – přehled](../../standard/serialization/system-text-json-overview.md)
+* [Postup serializace a deserializace JSON v rozhraní .NET](../../standard/serialization/system-text-json-how-to.md).
+* [Postup migrace z Newtonsoft. JSON na System. text. JSON](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
 ### <a name="http2-support"></a>Podpora HTTP/2
 

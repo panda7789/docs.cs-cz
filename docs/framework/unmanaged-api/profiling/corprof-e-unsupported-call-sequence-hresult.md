@@ -6,32 +6,34 @@ f1_keywords:
 helpviewer_keywords:
 - CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
 ms.assetid: f2fc441f-d62e-4f72-a011-354ea13c8c59
-ms.openlocfilehash: a0b117949190bcaffc334c208fff6e04a6a2c5bf
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 0cf3e05a0353a17541ee890f0871d694acac09fd
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964505"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116554"
 ---
 # <a name="corprof_e_unsupported_call_sequence-hresult"></a>CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT
+
 CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT byla představena v .NET Framework verze 2,0. .NET Framework 4 vrátí tuto hodnotu HRESULT ve dvou scénářích:  
   
 - V případě, že napadený Profiler vynuceně obnoví kontext registru vlákna v čase, takže se vlákno pokusí získat přístup ke strukturám, které jsou v nekonzistentním stavu.  
   
 - Když se Profiler pokusí zavolat informační metodu, která spustí uvolňování paměti z metody zpětného volání, která zakazuje uvolňování paměti.  
   
- Tyto dva scénáře jsou popsány v následujících částech.  
+Tyto dva scénáře jsou popsány v následujících částech.  
   
 ## <a name="hijacking-profilers"></a>Napadení profilerů  
- (Tento scénář je primárně problémem se napadením profilerů, i když existují případy, kdy se tato hodnota HRESULT může zobrazit v profilech nenapadení.)  
+
+  (Tento scénář je primárně problémem při napadení profilerů, i když existují případy, kdy se tato hodnota HRESULT může zobrazit v profilech nenapadení.)  
   
  V tomto scénáři Profiler vynuceně resetuje kontext registru vlákna v libovolném čase tak, aby vlákno mohlo zadat kód profileru nebo znovu zadat modul CLR (Common Language Runtime) prostřednictvím metody [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) .  
   
- Mnohé z identifikátorů, které rozhraní API profilování poskytuje, odkazuje na datové struktury v modulu CLR. Mnoho `ICorProfilerInfo` volá pouze čtení informací z těchto datových struktur a převrací je zpět. Modul CLR se však může v těchto strukturách měnit, když je spuštěn, a může k tomu použít zámky. Předpokládejme, že CLR již drží (nebo se pokoušel získat) zámek v době, kdy Profiler napaden vlákno. Pokud vlákno znovu zadá modul CLR a pokusí se o provedení více zámků nebo kontrole struktur, které byly právě upravovány, mohou být tyto struktury v nekonzistentním stavu. V takových situacích se můžou v takových situacích snadno zablokovat a může dojít k narušení přístupu.  
+ Mnohé z identifikátorů, které rozhraní API profilování poskytuje, odkazuje na datové struktury v modulu CLR. Mnoho `ICorProfilerInfo` volá pouze čtení informací z těchto datových struktur a převrací je zpět. Modul CLR se však může v těchto strukturách měnit, když je spuštěn, a může k tomu použít zámky. Předpokládejme, že CLR již drží (nebo se pokoušel získat) zámek v době, kdy Profiler napaden vlákno. Pokud vlákno znovu zadá modul CLR a pokusí se získat více zámků nebo kontrolovat struktury, které byly právě upravovány, mohou být tyto struktury v nekonzistentním stavu. V takových situacích se můžou v takových situacích snadno zablokovat a může dojít k narušení přístupu.  
   
- Obecně platí, že když Profiler bez zneužití spustí kód uvnitř metody [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a zavolá do metody `ICorProfilerInfo` s platnými parametry, neměl by se zablokovat nebo získat porušení přístupu. Například kód profileru, který běží uvnitř metody [ICorProfilerCallback:: ClassLoadFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) , může požádat o informace o třídě voláním metody [ICorProfilerInfo2:: GetClassIDInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) . Kód může obdržet CORPROF_E_DATAINCOMPLETE HRESULT, aby označoval, že informace nejsou k dispozici; Nicméně nebude zablokovat ani přijímat porušení přístupu. Tato třída volání do `ICorProfilerInfo` se nazývá synchronní, protože je vytvořena z metody `ICorProfilerCallback`.  
+ Obecně platí, že když Profiler bez zneužití spustí kód uvnitř metody [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a zavolá do metody `ICorProfilerInfo` s platnými parametry, neměl by se zablokovat nebo získat porušení přístupu. Například kód profileru, který běží uvnitř metody [ICorProfilerCallback:: ClassLoadFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) , může požádat o informace o třídě voláním metody [ICorProfilerInfo2:: GetClassIDInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) . Kód může obdržet CORPROF_E_DATAINCOMPLETE HRESULT, aby označoval, že informace nejsou k dispozici. Nicméně nebude zablokovat ani přijímat porušení přístupu. Tato volání do `ICorProfilerInfo` jsou považována za synchronní, protože jsou vytvořena z metody `ICorProfilerCallback`.  
   
- Nicméně spravované vlákno, které spouští kód, který není v rámci `ICorProfilerCallback` metoda, je považováno za asynchronní volání. Ve .NET Framework verze 1 bylo obtížné určit, co se může stát v asynchronním volání. Volání může zablokovat, selhat nebo poskytnout neplatnou odpověď. .NET Framework verze 2,0 představila několik jednoduchých kontrol, které vám pomůžou se vyhnout tomuto problému. Pokud je v .NET Framework 2,0 volána nebezpečná `ICorProfilerInfo` funkce asynchronně, dojde k chybě s CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  
+ Nicméně spravované vlákno, které spouští kód, který není v rámci `ICorProfilerCallback` metoda, je považováno za asynchronní volání. Ve .NET Framework verze 1 bylo obtížné určit, co se může stát v asynchronním volání. Volání může zablokovat, selhat nebo poskytnout neplatnou odpověď. .NET Framework verze 2,0 představila některé jednoduché kontroly, které vám pomůžou se vyhnout tomuto problému. Pokud je v .NET Framework 2,0 volána nebezpečná `ICorProfilerInfo` funkce asynchronně, dojde k chybě s CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  
   
  Obecně nejsou asynchronní volání bezpečná. Následující metody jsou však bezpečné a konkrétně podporují asynchronní volání:  
   

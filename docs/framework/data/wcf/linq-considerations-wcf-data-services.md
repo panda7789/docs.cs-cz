@@ -9,12 +9,12 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: f6ff9cf732e11bbf61eeb7e5cff3f1cba2b744e6
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: f8ec53323abec7077c69f50fe522338228ceddbb
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900987"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116633"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Otázky LINQ (WCF Data Services)
 Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití WCF Data Services klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní Open Data Protocol (OData). Další informace o sestavování a spouštění dotazů pro datovou službu založenou na protokolu OData najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
@@ -163,8 +163,8 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |Operátory projekce a filtrování|Následující operátory projekce a filtrování, které přijímají poziční argument, nejsou pro <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány:<br /><br /> -   <xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29>|  
 |Operátory seskupení|Všechny operátory seskupení nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A><br /><br /> Operace seskupení se musí provádět na klientovi.|  
 |Agregační operátory|Všechny agregované operace nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> Agregační operace musí být provedeny buď na klientovi, nebo musí být zapouzdřeny operací služby.|  
-|Operátory stránkování|Následující operátory stránkování nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Poznámka:** operátory stránkování, které jsou spouštěny v prázdné sekvenci, vrací hodnotu null.|  
-|Jiné operátory|Následující jiné operátory nejsou podporovány pro <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> 1.  <xref:System.Linq.Enumerable.Empty%2A><br />2.  <xref:System.Linq.Enumerable.Range%2A><br />3.  <xref:System.Linq.Enumerable.Repeat%2A><br />4.  <xref:System.Linq.Enumerable.ToDictionary%2A><br />5.  <xref:System.Linq.Enumerable.ToLookup%2A>|  
+|Operátory stránkování|Následující operátory stránkování nejsou u <xref:System.Data.Services.Client.DataServiceQuery%601>podporovány:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A><br/><br/>**Poznámka:**  Operátory stránkování, které jsou spuštěny v prázdné sekvenci, vrací hodnotu null.|  
+|Jiné operátory|Následující operátory nejsou také podporovány pro <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> - <xref:System.Linq.Enumerable.Empty%2A><br />- <xref:System.Linq.Enumerable.Range%2A><br />- <xref:System.Linq.Enumerable.Repeat%2A><br />- <xref:System.Linq.Enumerable.ToDictionary%2A><br />- <xref:System.Linq.Enumerable.ToLookup%2A>|  
   
 <a name="supportedExpressions"></a>   
 ## <a name="supported-expression-functions"></a>Podporované funkce výrazu  
@@ -193,7 +193,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.DateTime.Second>|`int second(DateTime p0)`|  
 |<xref:System.DateTime.Year>|`int year(DateTime p0)`|  
   
- <sup>1</sup> Jsou podporovány také odpovídající vlastnosti data a času <xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType>a také metoda <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> v Visual Basic.  
+ <sup>1</sup> Jsou podporovány také ekvivalentní vlastnosti data a času <xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType> a metoda <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> v Visual Basic.  
   
 |<xref:System.Math> člen|Podporovaná funkce OData|  
 |---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  

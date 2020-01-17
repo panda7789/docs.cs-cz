@@ -7,12 +7,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: 8a2af76ca64359c12fafce6678def14d11d9f029
-ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
+ms.openlocfilehash: 0f8b89ec7d7b1677de085631958b888e154aa4fa
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75904570"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116719"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON (zařazování) v .NET
 
@@ -280,6 +280,8 @@ Konvertor může deserializovat JSON, který byl vytvořen pomocí stejného př
   }
 ]
 ```
+
+Kód převaděče v předchozím příkladu čte a zapisuje každou vlastnost ručně. Alternativou je volání `Deserialize` nebo `Serialize` k provedení některé práce. Příklad najdete v [tomto příspěvku StackOverflow](https://stackoverflow.com/a/59744873/12509023).
 
 ## <a name="other-custom-converter-samples"></a>Další ukázky vlastního převaděče
 

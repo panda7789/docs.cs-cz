@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7a55641b3673dc4d8d9b328f0de99b7247ca51d4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 47e8e15a64236d8ade2febb1add81fa4e5c030d9
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450882"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116139"
 ---
 
 Balíčky přidané do kanálů správce balíčků jsou pojmenovány ve formátu zneužitelných: `{product}-{type}-{version}`.
@@ -12,7 +12,7 @@ Balíčky přidané do kanálů správce balíčků jsou pojmenovány ve formát
 - \ **produktu**
 Typ produktu .NET, který se má nainstalovat Platné možnosti jsou:
 
-  - DotNet
+  - dotnet
   - aspnetcore
 
 - **zadejte**\
@@ -31,7 +31,7 @@ Verze sady SDK nebo modulu runtime, která má být nainstalována. V tomto čl�
 ### <a name="examples"></a>Příklady
 
 - Instalace sady .NET Core 2,2 SDK: `dotnet-sdk-2.2`
-- Instalace modulu runtime ASP.NET Core 3,0: `aspnetcore-runtime-3.0`
+- Instalace modulu runtime ASP.NET Core 3,1: `aspnetcore-runtime-3.1`
 - Instalace modulu runtime .NET Core 2,1: `dotnet-runtime-2.1`
 
 ### <a name="troubleshoot"></a>Řešení problémů

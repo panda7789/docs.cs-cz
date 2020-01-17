@@ -4,14 +4,14 @@ description: Naučte se navštívit jednotlivé uzly ve stromové struktuře vý
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: a4cb40e439726e5fff60fe697da70d61bb24cb68
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: f60c447d5c89aa83f85073e642e621608131ed8d
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937224"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115772"
 ---
-# <a name="translating-expression-trees"></a>Překládání stromů výrazů
+# <a name="translate-expression-trees"></a>Přeložit stromy výrazů
 
 [Předchozí výrazy sestavení](expression-trees-building.md)
 
@@ -61,7 +61,7 @@ Console.WriteLine(answer);
 Sestavování nového stromu je kombinace návštěvy uzlů v existujícím stromu a vytvoření nových uzlů a jejich vložení do stromu.
 
 Tento příklad ukazuje důležitost stromů výrazů, které jsou neměnné. Všimněte si, že nový strom vytvořený výše obsahuje kombinaci nově vytvořených uzlů a uzlů z existujícího stromu. To je bezpečné, protože uzly ve stávajícím stromu nelze upravovat. To může mít za následek výrazné zvýšení efektivity paměti.
-Stejné uzly lze použít v celém stromu nebo v několika stromech výrazů. Vzhledem k tomu, že uzly nelze upravovat, lze stejný uzel znovu použít vždy, když je to potřeba.
+Stejné uzly lze použít v celém stromu nebo v několika stromech výrazů. Vzhledem k tomu, že uzly nelze upravovat, lze stejný uzel znovu použít vždy, když je potřeba.
 
 ## <a name="traversing-and-executing-an-addition"></a>Procházení a provádění přidání
 
@@ -91,7 +91,7 @@ Console.WriteLine(theSum);
 ```
 
 Tady je trochu kód, ale koncepty jsou velmi dostupné.
-Tento kód po prvním hledání navštíví podřízené objekty. Když narazí na konstantní uzel, návštěvník vrátí hodnotu konstanty. Po navštívení návštěvníka budou tyto podřízené položky vypočítány součtem vypočítaným pro tento dílčí strom. Uzel sčítání teď může vypočítat jeho součet.
+Tento kód po prvním hledání navštíví podřízené objekty. Když narazí na konstantní uzel, návštěvník vrátí hodnotu konstanty. Po navštívení návštěvníka budou tyto podřízené položky vypočítány součtem vypočítaným pro daný podstrom. Uzel sčítání teď může vypočítat jeho součet.
 Po navštívení všech uzlů ve stromu výrazů bude součet vypočítán. Spuštění můžete trasovat spuštěním ukázky v ladicím programu a trasováním provádění.
 
 Podívejme se, jak sledovat, jak se uzly analyzují, a jak se součet vypočítává pomocí procházení stromu. Zde je aktualizovaná verze agregované metody, která obsahuje poměrně bitovou část trasovacích informací:

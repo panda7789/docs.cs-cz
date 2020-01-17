@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 4e4dbe085b11751416f69c9fa7f790f18a68f5d7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: a9f507ecdfced5b044b9d6338f723f53b1b4c4b7
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964376"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115825"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Operátory bitových a posunutí (C# referenční)
 
@@ -171,7 +171,7 @@ Následující příklad ukazuje toto chování:
 [!code-csharp-interactive[shift count example](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ShiftCount)]
 
 > [!NOTE]
-> Jak ukazuje předchozí příklad, výsledek operace posunutí může být nenulový, i když hodnota operandu na pravé straně je větší než počet bitů v levém operandu.
+> Jak ukazuje předchozí příklad, výsledek operace posunutí může být nenulový, i když hodnota operandu na pravé straně je větší než počet bitů v operandu na levé straně.
 
 ## <a name="enumeration-logical-operators"></a>Logické operátory výčtu
 

@@ -3,12 +3,12 @@ title: Balíčky, metabalíčky a architektury – .NET Core
 description: Naučte se terminologie pro balíčky, metabalíčky a rozhraní.
 author: richlander
 ms.date: 06/20/2016
-ms.openlocfilehash: bd40ca603aaa9685fca9934368895bf7e945d962
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6a8e257ebf493365518dd9663fbd2a9cadc83875
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715511"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116063"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metabalíčky a architektury
 
@@ -18,7 +18,7 @@ Každý balíček .NET Core podporuje spouštění na několika implementacích 
 
 ## <a name="packages"></a>Balíčky
 
-.NET Core je rozdělené do sady balíčků, které poskytují primitivní typy, typy dat vyšší úrovně, typy kompozic aplikací a běžné pomůcky. Každý z těchto balíčků představuje jedno sestavení se stejným názvem. Například [System. Runtime](https://www.nuget.org/packages/System.Runtime) obsahuje System. Runtime. dll. 
+.NET Core je rozdělené do sady balíčků, které poskytují primitivní typy, typy dat vyšší úrovně, typy kompozic aplikací a běžné pomůcky. Každý z těchto balíčků představuje jedno sestavení se stejným názvem. Například [balíček System. Runtime](https://www.nuget.org/packages/System.Runtime) obsahuje System. Runtime. dll. 
 
 Je výhodné definovat balíčky v jemně odstupňovaném způsobem:
 
@@ -108,7 +108,7 @@ Mezi dvě primární architektury založené na balíčku, které se používaj�
 
 ### <a name="net-standard"></a>.NET Standard
 
-Rozhraní .NET Standard ([moniker cílového rozhraní Framework](../standard/frameworks.md): `netstandard`) představuje rozhraní API definovaná a postavená nad [.NET Standard](../standard/net-standard.md). Knihovny určené ke spuštění na více modulech runtime by měly cílit na toto rozhraní. Budou podporovány v jakémkoli prostředí runtime kompatibilním .NET Standard, jako je .NET Core, .NET Framework a mono/Xamarin. Každý z těchto modulů runtime podporuje sadu .NET Standard verzí v závislosti na tom, jaká rozhraní API implementují.
+Rozhraní .NET Standard ([moniker cílového rozhraní Framework](../standard/frameworks.md): `netstandard`) představuje rozhraní API definovaná a postavená nad [.NET Standard](../standard/net-standard.md). Knihovny určené ke spuštění na více modulech runtime by měly cílit na toto rozhraní. Budou podporovány v jakémkoli modulu runtime, který je kompatibilní s .NET Standard, jako je .NET Core, .NET Framework a mono/Xamarin. Každý z těchto modulů runtime podporuje sadu .NET Standard verzí v závislosti na tom, jaká rozhraní API implementují.
 
 Rozhraní `netstandard` Framework implicitně odkazuje na [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library) Metapackage. Například následující soubor projektu MSBuild označuje, že projekt cílí na `netstandard1.6`, které odkazují na [`NETStandard.Library` verze 1,6](https://www.nuget.org/packages/NETStandard.Library/1.6.0) Metapackage.
 

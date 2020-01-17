@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d888aba597cb6981828ca67fba04912cbcf7935f
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: d8cc506d60f3c24087ebde8ead345656fea0f484
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567438"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116330"
 ---
 ### <a name="types-in-microsoftvisualbasicapplicationservices-namespace-not-available"></a>Typy v oboru názvů Microsoft. VisualBasic. ApplicationServices nejsou k dispozici.
 
@@ -14,7 +14,7 @@ Typy v oboru názvů <xref:Microsoft.VisualBasic.ApplicationServices?displayProp
 
 .NET Core 3,0 Preview 8
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
 Typy v oboru názvů <xref:Microsoft.VisualBasic.ApplicationServices?displayProperty=fullName> byly k dispozici v některých verzích .NET Core 3,0 Preview. Již nejsou od verze .NET Core 3,0 Preview 9 k dispozici.
 
@@ -38,5 +38,4 @@ Visual Basic
 
 - `N:Microsoft.VisualBasic.ApplicationServices`
 
--- >
-
+-->

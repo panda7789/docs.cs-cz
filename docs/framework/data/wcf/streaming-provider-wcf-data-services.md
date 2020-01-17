@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 1eb1267ae0b08d558d5afc41d03270917473a669
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 83f28c50c53281692e1c3c6d55cc55e8d9304ad9
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900914"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116596"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 
@@ -88,14 +88,14 @@ Obecné informace o tom, jak vytvořit datovou službu, najdete v tématu [konfi
 
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Povolení rozsáhlých binárních proudů v hostitelském prostředí
 
-Při vytváření datové služby ve webové aplikaci v ASP.NET se k poskytování implementace protokolu HTTP používá Windows Communication Foundation (WCF). Ve výchozím nastavení služba WCF omezuje velikost zpráv HTTP pouze na 65 KB pro bajtů. Aby bylo možné streamovat rozsáhlá binární data do a z datové služby, musíte také nakonfigurovat webovou aplikaci tak, aby povolovala velké binární soubory a používala datové proudy k přenosu. Chcete-li to provést, přidejte následující do `<configuration />` element souboru Web. config aplikace:
+Při vytváření datové služby ve webové aplikaci v ASP.NET se k poskytování implementace protokolu HTTP používá Windows Communication Foundation (WCF). Ve výchozím nastavení služba WCF omezuje velikost zpráv HTTP pouze na 65 KB. Aby bylo možné streamovat rozsáhlá binární data do a z datové služby, musíte také nakonfigurovat webovou aplikaci tak, aby povolovala velké binární soubory a používala datové proudy k přenosu. Chcete-li to provést, přidejte následující do `<configuration />` element souboru Web. config aplikace:
 
 > [!NOTE]
 > Je nutné použít režim přenosu <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType>, abyste zajistili, že se binární data v žádostech a zprávách o odezvě streamují do vyrovnávací paměti pomocí služby WCF.
 
 Další informace najdete v tématu [streamování přenosů zpráv](../../wcf/feature-details/streaming-message-transfer.md) a přenosových [kvót](../../wcf/feature-details/transport-quotas.md).
 
-Ve výchozím nastavení omezuje služba Internetová informační služba (IIS) také velikost požadavků na 4 MB. Chcete-li službě Data Service povolit příjem datových proudů větších než 4 MB při spuštění ve službě IIS, je nutné také nastavit atribut `maxRequestLength` [elementu httpRuntime (schéma nastavení ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) v oddílu `<system.web />` konfigurace, jak je znázorněno v následujícím příkladu:
+Ve výchozím nastavení služba Internetová informační služba (IIS) také omezuje velikost požadavků na 4 MB. Chcete-li službě Data Service povolit příjem datových proudů větších než 4 MB při spuštění služby IIS, je nutné také nastavit atribut `maxRequestLength` [elementu httpRuntime (schéma nastavení ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) v oddílu `<system.web />` konfigurace, jak je znázorněno v následujícím příkladu:
 
 ## <a name="using-data-streams-in-a-client-application"></a>Použití datových proudů v klientské aplikaci
 
