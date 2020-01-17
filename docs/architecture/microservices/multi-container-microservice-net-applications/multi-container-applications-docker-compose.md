@@ -2,12 +2,12 @@
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro aplikaci s více kontejnery pomocí Docker-Compose. yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: fa863495c785d89a0b244162e58948ff622e139a
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: f9cab35ac8e11ca89a83f646c29bf72f84e66ef4
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937152"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116551"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -129,7 +129,7 @@ Vzhledem k tomu, že připojovací řetězec je definován proměnnou prostřed�
 
 - Propojí webovou službu s SQL. Data Service (instance SQL Server pro databázi Linux spuštěnou v kontejneru). Když zadáte tuto závislost, kontejner Catalog. API se nespustí, dokud se už nespustí kontejner SQL. data; To je důležité, protože Catalog. API vyžaduje, aby se nejdřív nastavila a běžela databáze SQL Server. Tento druh závislosti kontejneru ale v mnoha případech není dostatečný, protože kontroly Docker jsou jenom na úrovni kontejneru. Někdy může být služba (v tomto případě SQL Server) stále připravená, takže je vhodné implementovat logiku opakování pomocí exponenciálního omezení rychlostiu v klientských mikroslužbách. To znamená, že pokud kontejner závislostí není připravený na krátkou dobu, bude aplikace stále odolná.
 
-- Je nakonfigurovaná tak, aby povolovala přístup k externím serverům: nastavení další\_hostitelé vám umožní přístup k externím serverům nebo počítačům mimo hostitele Docker (to znamená, že se nachází mimo výchozí virtuální počítač Linux, který je hostitelem Docker hosta), jako je například místní instance SQL Server na vývojovém počítači.
+- Je nakonfigurovaná tak, aby povolovala přístup k externím serverům: nastavení další\_hostitelů umožňuje přístup k externím serverům nebo počítačům mimo hostitele Docker (to znamená, že je mimo výchozí virtuální počítač Linux, který je hostitelem hostitele Docker), jako je například místní instance SQL Server na vašem vývojovém počítači.
 
 K dispozici jsou také další pokročilá nastavení Docker-Compose. yml, která budeme projednávat v následujících oddílech.
 
@@ -141,7 +141,7 @@ Proto pomocí příkazu Docker-skládání můžete cílit na následující hla
 
 #### <a name="development-environments"></a>Vývojová prostředí
 
-Při vývoji aplikací je důležité, aby bylo možné spustit aplikaci v izolovaném vývojovém prostředí. K vytvoření prostředí můžete použít příkaz Docker-Create CLI, nebo použít aplikaci Visual Studio, která v rámci pokrývá používá Docker-skládání.
+Při vývoji aplikací je důležité, aby bylo možné spustit aplikaci v izolovaném vývojovém prostředí. K vytvoření prostředí nebo sady Visual Studio, které používá Docker-skládání v rámci pokrývání, můžete použít příkaz Docker-Create CLI.
 
 Soubor Docker-Compose. yml umožňuje konfigurovat a zdokumentovat všechny závislosti služby vaší aplikace (další služby, mezipaměť, databáze, fronty atd.). Pomocí příkazu Docker-Create CLI můžete vytvořit a spustit jeden nebo více kontejnerů pro každou závislost jediným příkazem (Docker – sestavit).
 
@@ -151,7 +151,7 @@ Soubory Docker-Compose. yml jsou konfigurační soubory interpretované modulem 
 
 Důležitou součástí jakéhokoli procesu průběžného nasazování (CD) nebo průběžná integrace (CI) jsou testy jednotek a integrační testy. Tyto automatizované testy vyžadují izolované prostředí, aby na ně neovlivnili uživatelé ani žádné jiné změny v datech aplikace.
 
-Pomocí Docker Compose můžete toto izolované prostředí jednoduše vytvořit a zničit v několika příkazech z příkazového řádku nebo skriptů, podobně jako v následujících příkazech:
+Pomocí Docker Compose můžete toto izolované prostředí snadno vytvořit a zničit v několika příkazech z příkazového řádku nebo skriptů, podobně jako v následujících příkazech:
 
 ```console
 docker-compose -f docker-compose.yml -f docker-compose-test.override.yml up -d
@@ -201,7 +201,7 @@ Typický případ použití je při definování více souborů pro vytváření
 
 **Obrázek 6-12**. Více souborů Docker – skládáním hodnot do základního souboru Docker-Compose. yml
 
-Můžete zkombinovat více souborů Docker-Compose*. yml pro zpracování různých prostředí. Začnete se základním souborem Docker-Compose. yml. Tento základní soubor musí obsahovat základní nebo statické nastavení konfigurace, které se v závislosti na prostředí nemění. EShopOnContainers má například následující soubor Docker-Compose. yml (zjednodušený s méně službami) jako základní soubor.
+Můžete zkombinovat více souborů Docker-Compose*. yml pro zpracování různých prostředí. Začnete se základním souborem Docker-Compose. yml. Tento základní soubor musí obsahovat základní nebo statické nastavení konfigurace, které se v závislosti na prostředí nemění. Například eShopOnContainers má následující soubor Docker-Compose. yml (zjednodušený s menším počtem služeb) jako základní soubor.
 
 ```yml
 #docker-compose.yml (Base)
@@ -422,7 +422,7 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=10.121.122.92
 
 Docker-Format očekává, že každý řádek v souboru. env bude ve formátu \<proměnná\>=\<Value\>.
 
-Všimněte si, že hodnoty nastavené v běhovém prostředí vždy přepisují hodnoty definované v souboru. env. Podobným způsobem hodnoty předané pomocí argumentů příkazu příkazového řádku přepisují také výchozí hodnoty nastavené v souboru. env.
+Hodnoty nastavené v běhovém prostředí vždy přepisují hodnoty definované v souboru. env. Podobným způsobem hodnoty předané pomocí argumentů příkazového řádku přepisují také výchozí hodnoty nastavené v souboru. env.
 
 #### <a name="additional-resources"></a>Další materiály a zdroje informací
 

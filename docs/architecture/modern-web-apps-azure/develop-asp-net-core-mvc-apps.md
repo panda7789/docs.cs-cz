@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: efb57b4290825be9f21c61c8dee5af073d264d3a
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 7bc30db084f361e6c4654b89e69230b379b0136c
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899696"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116526"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -26,15 +26,15 @@ Když vytváříte novou aplikaci ASP.NET Core, měli byste mít na paměti, že
 
 ### <a name="why-razor-pages"></a>Proč Razor Pages?
 
-Razor Pages je výchozím přístupem pro nové webové aplikace v aplikaci Visual Studio. Razor Pages nabízí jednodušší způsob, jak sestavovat funkce aplikace založené na stránkách, jako jsou například formuláře bez hesla. Pomocí řadičů a zobrazení je běžné, že aplikace mají velmi velké řadiče, které pracovaly s mnoha různými závislostmi a zobrazují modely a vracejí mnoho různých zobrazení. To vedlo hodně složitosti a často to vedlo k tomu, že řadiče, které nesledovaly princip jedné zodpovědnosti nebo jsou efektivně otevřené/uzavřené zásady. Tento problém Razor Pages řeší zapouzdřením logiky na straně serveru pro danou logickou "stránku" v rámci webové aplikace pomocí značek Razor. Stránka Razor, která nemá žádnou logiku na straně serveru, může jednoduše sestávat ze souboru Razor (např. index. cshtml). Avšak většina netriviálních Razor Pages bude mít přidruženou třídu modelu stránky, která je podle konvence pojmenována stejně jako soubor Razor s příponou ". cs" (například "Index.cshtml.cs").
+Razor Pages je výchozím přístupem pro nové webové aplikace v aplikaci Visual Studio. Razor Pages nabízí jednodušší způsob, jak sestavovat funkce aplikace založené na stránkách, jako jsou například formuláře bez hesla. Pomocí řadičů a zobrazení je běžné, že aplikace mají velmi velké řadiče, které pracovaly s mnoha různými závislostmi a zobrazují modely a vracejí mnoho různých zobrazení. Výsledkem je mnohem složitost a často vede k tomu, že řadiče, které nesledovaly princip jedné zodpovědnosti nebo jsou efektivně otevřené/uzavřené zásady. Tento problém Razor Pages řeší zapouzdřením logiky na straně serveru pro danou logickou "stránku" v rámci webové aplikace pomocí značek Razor. Stránka Razor, která nemá žádnou logiku na straně serveru, může jednoduše sestávat ze souboru Razor (např. index. cshtml). Avšak většina netriviálních Razor Pages bude mít přidruženou třídu modelu stránky, která je podle konvence pojmenována stejně jako soubor Razor s příponou ". cs" (například "Index.cshtml.cs").
 
 Model stránky stránky Razor kombinuje zodpovědnosti kontroleru MVC a ViewModel. Místo zpracování žádostí s metodami akce kontroleru se spustí obslužné rutiny modelu stránky, jako je například "OnGet ()", vykreslení jejich přidružené stránky ve výchozím nastavení. Razor Pages zjednodušuje proces sestavování jednotlivých stránek v aplikaci ASP.NET Core a zároveň stále poskytuje všechny funkce architektury služby ASP.NET Core MVC. Jsou to dobrá výchozí volba pro nové funkce založené na stránkách.
 
 ### <a name="when-to-use-mvc"></a>Kdy použít MVC
 
-Pokud vytváříte webová rozhraní API, vzor MVC je větší, než se snažíte použít Razor Pages. Pokud váš projekt zveřejňuje koncové body webového rozhraní API, měli byste v ideálním případě začít od šablony projektu webového rozhraní API, ale v opačném případě je snadné přidat řadiče a přidružené koncové body rozhraní API do libovolné ASP.NET Core aplikace. Přístup na základě zobrazení MVC byste měli použít také v případě, že migrujete existující aplikaci z ASP.NET MVC 5 nebo starší na ASP.NET Core MVC a chcete tak učinit s minimálním úsilím. Po provedení prvotní migrace můžete vyhodnotit, jestli má smysl přijmout Razor Pages pro nové funkce nebo dokonce i jako migraci ve velkoobchodu.
+Pokud vytváříte webová rozhraní API, vzor MVC je větší, než se snažíte použít Razor Pages. Pokud váš projekt zveřejňuje koncové body webového rozhraní API, měli byste v ideálním případě začít od šablony projektu webového rozhraní API. V opačném případě je snadné přidat řadiče a přidružené koncové body rozhraní API do libovolné ASP.NET Core aplikace. Použijte přístup ke MVC na základě zobrazení, pokud migrujete existující aplikaci z ASP.NET MVC 5 nebo starší na ASP.NET Core MVC a chcete tak učinit s minimálním úsilím. Po provedení prvotní migrace můžete vyhodnotit, jestli má smysl přijmout Razor Pages pro nové funkce nebo dokonce i jako migraci ve velkoobchodu.
 
-Bez ohledu na to, jestli se rozhodnete vytvořit webovou aplikaci pomocí Razor Pages nebo zobrazení MVC, bude mít aplikace podobný výkon a bude zahrnovat podporu pro vkládání závislostí, filtry, vazbu a ověřování v modelu atd.
+Bez ohledu na to, jestli se rozhodnete vytvořit webovou aplikaci pomocí Razor Pages nebo zobrazení MVC, bude mít aplikace podobný výkon a bude zahrnovat podporu pro vkládání závislostí, filtry, vázání modelů, ověřování atd.
 
 ## <a name="mapping-requests-to-responses"></a>Mapování požadavků na odpovědi
 
