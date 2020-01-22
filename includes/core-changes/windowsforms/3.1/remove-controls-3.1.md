@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 7ff8345fd0a3ca30375cf93d22625f89d5d9a053
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 10811a90887624a731c58d557e1dd196ae2c9207
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567366"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76508647"
 ---
 ### <a name="removed-controls"></a>Odebrané ovládací prvky
 
 Počínaje rozhraním .NET Core 3,1 Některé ovládací prvky model Windows Forms již nejsou k dispozici.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
 Počínaje rozhraním .NET Core 3,1 nejsou k dispozici různé ovládací prvky model Windows Forms. Náhradní ovládací prvky, které mají lepší návrh a podporu, byly zavedeny v .NET Framework 2,0. Zastaralé ovládací prvky byly předtím odebrány z nástrojů návrháře, ale byly stále k dispozici pro použití.
 
@@ -47,7 +47,7 @@ Následující typy již nejsou k dispozici:
 
 #### <a name="version-introduced"></a>Představená verze
 
-3,1
+3.1
 
 #### <a name="recommended-action"></a>Doporučená akce
 
@@ -55,13 +55,13 @@ Každý odebraný ovládací prvek má doporučený ovládací prvek pro nahraze
 
 | Odebraný ovládací prvek (API) | Doporučená náhrada | Přidružená rozhraní API k odebrání |
 |-|-|-|
-| DataGrid | DataGridView | DataGridCell, hodnota DataGridRow, DataGridTableCollection, DataGridColumnCollection, styl DataGridTableStyle, styl DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, funkce DataGridBoolColumn, DataGridTextBox, Kolekce GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
+| DataGrid | Ovládací prvek DataGridView | DataGridCell, hodnota DataGridRow, DataGridTableCollection, DataGridColumnCollection, styl DataGridTableStyle, styl DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, funkce DataGridBoolColumn, DataGridTextBox, Kolekce GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
 | ToolBar | ToolStrip | ToolBarAppearance |
 | ToolBarButton | Prvek ToolStripButton | ToolBarButtonClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
 | ContextMenu | ContextMenuStrip | |
-| Nabídka | Ovládací prvek ToolStripDropDown, ToolstripDropDownMenu | MenuItemcollection |
+| Nabídka | Ovládací prvek ToolStripDropDown, ToolStripDropDownMenu | MenuItemcollection |
 | MainMenu | MenuStrip | |
-| MenuItem | ToolstripMenuItem | |
+| MenuItem | ToolStripMenuItem | |
 
 #### <a name="category"></a>Kategorie
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 610f2a1020cc15f855b3ddfc0917e14aae34fb82
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3f58edf326ab9415d78d7065d74d8c1954fbbf37
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344940"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76315860"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 LINQ (Language-Integrated Query) přidává funkce pro dotazy do Visual Basic a poskytuje jednoduché a výkonné funkce, když pracujete se všemi druhy dat. Místo odeslání dotazu do databáze, která se má zpracovat, nebo práce s jinou syntaxí dotazu pro každý typ vyhledávaných dat, LINQ zavádí dotazy jako součást Visual Basicho jazyka. Používá sjednocenou syntaxi bez ohledu na typ dat.  
@@ -82,7 +82,7 @@ Pro zahájení dotazu je vyžadována buď [klauzule`From`](../../../../visual-b
 
 ### <a name="select-clause"></a>Select – klauzule
 
-Volitelná. [Klauzule`Select`](../../../../visual-basic/language-reference/queries/select-clause.md) deklaruje sadu proměnných iterace pro dotaz. Příklad:
+Volitelné. [Klauzule`Select`](../../../../visual-basic/language-reference/queries/select-clause.md) deklaruje sadu proměnných iterace pro dotaz. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#8)]
 
@@ -90,31 +90,31 @@ Pokud není zadána klauzule `Select`, proměnné iterace pro dotaz se skládaj�
 
 ### <a name="where-clause"></a>Klauzule Where
 
-Volitelná. [Klauzule`Where`](../../../../visual-basic/language-reference/queries/where-clause.md) Určuje podmínku filtrování pro dotaz. Příklad:
+Volitelné. [Klauzule`Where`](../../../../visual-basic/language-reference/queries/where-clause.md) Určuje podmínku filtrování pro dotaz. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#9)]
 
-### <a name="order-by-clause"></a>ORDER by – klauzule]
+### <a name="order-by-clause"></a>Order By – klauzule
 
-| Volitelné. [Klauzule`Order By`](../../../../visual-basic/language-reference/queries/order-by-clause.md) určuje pořadí řazení pro sloupce v dotazu. Příklad:
+Volitelné. [Klauzule`Order By`](../../../../visual-basic/language-reference/queries/order-by-clause.md) určuje pořadí řazení pro sloupce v dotazu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#10)]
 
 ### <a name="join-clause"></a>Join – klauzule
 
-Volitelná. [Klauzule`Join`](../../../../visual-basic/language-reference/queries/join-clause.md) kombinuje dvě kolekce do jedné kolekce. Příklad:
+Volitelné. [Klauzule`Join`](../../../../visual-basic/language-reference/queries/join-clause.md) kombinuje dvě kolekce do jedné kolekce. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#11)]
 
 ### <a name="group-by-clause"></a>Group By – klauzule
 
-Volitelná. [Klauzule`Group By`](../../../../visual-basic/language-reference/queries/group-by-clause.md) seskupí prvky výsledku dotazu. Dá se použít k aplikování agregačních funkcí na každou skupinu. Příklad:
+Volitelné. [Klauzule`Group By`](../../../../visual-basic/language-reference/queries/group-by-clause.md) seskupí prvky výsledku dotazu. Dá se použít k aplikování agregačních funkcí na každou skupinu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#12)]
 
 ### <a name="group-join-clause"></a>Group Join – klauzule
 
-Volitelná. [Klauzule`Group Join`](../../../../visual-basic/language-reference/queries/group-join-clause.md) kombinuje dvě kolekce do jedné hierarchické kolekce. Příklad:
+Volitelné. [Klauzule`Group Join`](../../../../visual-basic/language-reference/queries/group-join-clause.md) kombinuje dvě kolekce do jedné hierarchické kolekce. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#13)]
 
@@ -130,37 +130,37 @@ Můžete také použít klauzuli `Aggregate` pro úpravu dotazu. Například mů
 
 ### <a name="let-clause"></a>Let – klauzule
 
-Volitelná. [Klauzule`Let`](../../../../visual-basic/language-reference/queries/let-clause.md) vypočítá hodnotu a přiřadí ji k nové proměnné v dotazu. Příklad:
+Volitelné. [Klauzule`Let`](../../../../visual-basic/language-reference/queries/let-clause.md) vypočítá hodnotu a přiřadí ji k nové proměnné v dotazu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#16)]
 
 ### <a name="distinct-clause"></a>Distinct – klauzule
 
-Volitelná. Klauzule `Distinct` omezuje hodnoty aktuální proměnné iterace tak, aby se vyloučily duplicitní hodnoty ve výsledcích dotazu. Příklad:
+Volitelné. Klauzule `Distinct` omezuje hodnoty aktuální proměnné iterace tak, aby se vyloučily duplicitní hodnoty ve výsledcích dotazu. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#17)]
 
 ### <a name="skip-clause"></a>Skip – klauzule
 
-Volitelná. [Klauzule`Skip`](../../../../visual-basic/language-reference/queries/skip-clause.md) obchází zadaný počet prvků v kolekci a vrátí zbývající prvky. Příklad:
+Volitelné. [Klauzule`Skip`](../../../../visual-basic/language-reference/queries/skip-clause.md) obchází zadaný počet prvků v kolekci a vrátí zbývající prvky. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#18)]
 
 ### <a name="skip-while-clause"></a>Skip While – klauzule
 
-Volitelná. [Klauzule`Skip While`](../../../../visual-basic/language-reference/queries/skip-while-clause.md) obchází prvky v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající prvky. Příklad:
+Volitelné. [Klauzule`Skip While`](../../../../visual-basic/language-reference/queries/skip-while-clause.md) obchází prvky v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající prvky. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#19)]
 
 ### <a name="take-clause"></a>Take – klauzule
 
-Volitelná. [Klauzule`Take`](../../../../visual-basic/language-reference/queries/take-clause.md) vrací zadaný počet souvislých prvků od začátku kolekce. Příklad:
+Volitelné. [Klauzule`Take`](../../../../visual-basic/language-reference/queries/take-clause.md) vrací zadaný počet souvislých prvků od začátku kolekce. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#20)]
 
 ### <a name="take-while-clause"></a>Take While – klauzule
 
-Volitelná. [Klauzule`Take While`](../../../../visual-basic/language-reference/queries/take-while-clause.md) obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a obchází zbývající prvky. Příklad:
+Volitelné. [Klauzule`Take While`](../../../../visual-basic/language-reference/queries/take-while-clause.md) obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a obchází zbývající prvky. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#21)]
   
@@ -211,7 +211,7 @@ Můžete použít další funkce dotazů LINQ voláním členů výčtových a Q
   
  Další informace najdete v tématu [XML](../xml/index.md).  
   
-## <a name="related-resources"></a>Související prostředky  
+## <a name="related-resources"></a>Související informační zdroje  
   
 |Téma|Popis|  
 |---|---|  
