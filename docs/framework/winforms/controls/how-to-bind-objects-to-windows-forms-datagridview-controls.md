@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vazby objektů k ovládacím prvkům Windows Forms DataGridView'
+title: Vytvoření vazby objektů k ovládacím prvkům DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - data grids [Windows Forms], object binding
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
-ms.openlocfilehash: 8cdfd5d8e5ec3dcd22abb9e4efcec3bb61fee1d9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d5aa5cb64c7fb2b82d69d6c87134ee901b84f5c1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591317"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746699"
 ---
-# <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Vytvoření vazby objektů k ovládacím prvkům Windows Forms DataGridView
-Následující příklad kódu ukazuje, jak vytvořit vazbu na kolekci objektů do <xref:System.Windows.Forms.DataGridView> tak, aby každý objekt zobrazí jako samostatný řádek. Tento příklad také znázorňuje způsob zobrazení vlastností s typem výčtu v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> tak, aby rozevíracího seznamu pole se seznamem obsahuje hodnoty výčtu.  
+# <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Připojení objektů k ovládacím prvkům Windows Forms DataGridView
+Následující příklad kódu ukazuje, jak vytvořit vazby kolekce objektů k ovládacímu prvku <xref:System.Windows.Forms.DataGridView> tak, aby se každý objekt zobrazoval jako samostatný řádek. Tento příklad také ukazuje, jak zobrazit vlastnost s výčtovým typem v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> tak, aby rozevírací seznam pole se seznamem obsahoval hodnoty výčtu.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridView._CollectionBound#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/CS/collectionbound.cs#00)]
@@ -26,10 +26,10 @@ Následující příklad kódu ukazuje, jak vytvořit vazbu na kolekci objektů 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení System a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Přístup k objektům Svázaným Windows Forms DataGridView řádků](how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)
+- [Postupy: Přístup k objektům svázaným s řádky Windows Forms DataGridView](how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)

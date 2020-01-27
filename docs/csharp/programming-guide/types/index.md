@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 0b7c9fc0e9dd0f559c52f692c405a3f9e68814d0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: be2af77f9680ab3285720525638bba8ef2041999
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711880"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745376"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -113,7 +113,7 @@ Klíčové slovo [struct](../../language-reference/keywords/struct.md) můžete 
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 
-Další informace o strukturách naleznete v tématu [structs](../classes-and-structs/structs.md). Další informace o typech hodnot v rozhraní .NET naleznete v tématu [typy hodnot](../../language-reference/keywords/value-types.md).
+Další informace o strukturách naleznete v tématu [structs](../classes-and-structs/structs.md). Další informace o typech hodnot naleznete v tématu [typy hodnot](../../language-reference/builtin-types/value-types.md).
 
 Druhá kategorie typů hodnot je [Enum](../../language-reference/builtin-types/enum.md). Výčet definuje sadu pojmenovaných celočíselných konstant. Například výčet <xref:System.IO.FileMode?displayProperty=nameWithType> v knihovně tříd .NET obsahuje sadu pojmenovaných celých čísel, která určují, jak by měl být soubor otevřen. Je definován tak, jak je znázorněno v následujícím příkladu:
 
@@ -148,7 +148,7 @@ Typy odkazů plně podporují dědičnost. Při vytváření třídy můžete d�
 
 ## <a name="types-of-literal-values"></a>Typy hodnot literálů
 
-V C#rozhraní hodnoty literálu obdrží typ z kompilátoru. Můžete určit, jak se má číselný literál zadat připojením písmene ke konci čísla. Například chcete-li určit, že hodnota 4,56 by měla být považována za float, přidejte "f" nebo "F" za číslo: `4.56f`. Pokud není připojeno žádné písmeno, kompilátor odvodí typ literálu. Další informace o tom, které typy lze zadat s příponami písmen, naleznete v tématu referenční stránky pro jednotlivé typy v [hodnotových typech](../../language-reference/keywords/value-types.md).
+V C#rozhraní hodnoty literálu obdrží typ z kompilátoru. Můžete určit, jak se má číselný literál zadat připojením písmene ke konci čísla. Například chcete-li určit, že hodnota 4,56 by měla být považována za float, přidejte "f" nebo "F" za číslo: `4.56f`. Pokud není připojeno žádné písmeno, kompilátor odvodí typ literálu. Další informace o tom, které typy lze zadat pomocí přípon písmen, naleznete v části [integrální číselné typy](../../language-reference/builtin-types/integral-numeric-types.md) a [číselné typy s plovoucí desetinnou](../../language-reference/builtin-types/floating-point-numeric-types.md)čárkou.
 
 Vzhledem k tomu, že jsou zadány literály a všechny typy jsou odvozeny od <xref:System.Object?displayProperty=nameWithType>, můžete napsat a zkompilovat kód, například následující:
 
@@ -185,7 +185,7 @@ Další informace naleznete v následujících tématech:
 
 - [Použití typu dynamic](./using-type-dynamic.md)
 
-- [Typy hodnot](../../language-reference/keywords/value-types.md)
+- [Typy hodnot](../../language-reference/builtin-types/value-types.md)
 
 - [Odkazové typy](../../language-reference/keywords/reference-types.md)
 

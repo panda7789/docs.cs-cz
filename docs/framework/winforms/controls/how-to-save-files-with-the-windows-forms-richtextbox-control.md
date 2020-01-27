@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox'
+title: Uložení souborů pomocí ovládacího prvku RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,16 +15,16 @@ helpviewer_keywords:
 - .rtf files [Windows Forms], saving in RichTextBox control
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
-ms.openlocfilehash: c5d88e4942d96ee12e8b9f40156090c874386668
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a87b93a53347aeba54f944b0f4c455aa272ea243
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046256"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744816"
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox
 
-Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms může zapisovat informace, které se zobrazí v jednom z několika formátů:
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> může zapisovat informace, které se zobrazí v jednom z několika formátů:
 
 - Prostý text
 
@@ -36,17 +36,17 @@ Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms mů
 
 - Prostý text s textovou reprezentací objektů OLE
 
-Chcete-li uložit soubor, zavolejte <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metodu. Pomocí metody **SaveFile** můžete také ukládat data do datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
+Chcete-li uložit soubor, zavolejte metodu <xref:System.Windows.Forms.RichTextBox.SaveFile%2A>. Pomocí metody **SaveFile** můžete také ukládat data do datového proudu. Další informace najdete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
 
 ### <a name="to-save-the-contents-of-the-control-to-a-file"></a>Uložení obsahu ovládacího prvku do souboru
 
 1. Určete cestu k souboru, který se má uložit.
 
-    K tomu v reálné aplikaci byste obvykle použili <xref:System.Windows.Forms.SaveFileDialog> komponentu. Přehled naleznete v tématu [SaveFileDialog Component Overview](savefiledialog-component-overview-windows-forms.md).
+    K tomu v reálné aplikaci byste obvykle použili součást <xref:System.Windows.Forms.SaveFileDialog>. Přehled naleznete v tématu [SaveFileDialog Component Overview](savefiledialog-component-overview-windows-forms.md).
 
-2. <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> Zavolejte metodu <xref:System.Windows.Forms.RichTextBox> ovládacího prvku, určete soubor, který se má uložit, a volitelně také typ souboru. Pokud voláte metodu s názvem souboru jako s jediným argumentem, soubor bude uložen jako RTF. Chcete-li zadat jiný typ souboru, zavolejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčtu jako svůj druhý argument.
+2. Zavolejte metodu <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> ovládacího prvku <xref:System.Windows.Forms.RichTextBox> a určete soubor, který se má uložit, a volitelně také typ souboru. Pokud voláte metodu s názvem souboru jako s jediným argumentem, soubor bude uložen jako RTF. Chcete-li zadat jiný typ souboru, zavolejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčtu jako svůj druhý argument.
 
-    V následujícím příkladu je cesta nastavená pro umístění souboru s bohatou čárkou ve složce **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tuto složku. Zvolíte-li toto umístění, mohou uživatelé s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s <xref:System.Windows.Forms.RichTextBox> ovládacím prvkem již byl přidán.
+    V následujícím příkladu je cesta nastavená pro umístění souboru s bohatou čárkou ve složce **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tuto složku. Zvolíte-li toto umístění, mohou uživatelé s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s již přidaným ovládacím prvkem <xref:System.Windows.Forms.RichTextBox>.
 
     ```vb
     Public Sub SaveFile()

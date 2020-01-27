@@ -2,12 +2,12 @@
 title: dotnet – příkaz
 description: Přečtěte si o příkazu dotnet (obecný ovladač pro .NET Core CLI nástroje) a jeho využití.
 ms.date: 06/04/2018
-ms.openlocfilehash: a22340c26ca2e483e43857e2ecb31f2ab53b60f4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: fe90968560b58471c279fcd2097741ea476cef0b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117503"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734062"
 ---
 # <a name="dotnet-command"></a>dotnet – příkaz
 
@@ -15,7 +15,7 @@ ms.locfileid: "71117503"
 
 ## <a name="name"></a>Name
 
-`dotnet`– Nástroj pro správu zdrojového kódu a binárních souborů .NET.
+`dotnet` – Nástroj pro správu zdrojového kódu a binárních souborů .NET.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -47,9 +47,9 @@ dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagno
 
 ## <a name="description"></a>Popis
 
-`dotnet`je nástroj pro správu zdrojového kódu a binárních souborů .NET. Zpřístupňuje příkazy, které provádějí konkrétní úkoly, [`dotnet build`](dotnet-build.md) jako například a. [`dotnet run`](dotnet-run.md) Každý příkaz definuje své vlastní argumenty. Typ `--help` za každým příkazem pro přístup k krátké dokumentaci k nápovědě.
+`dotnet` je nástroj pro správu zdrojového kódu a binárních souborů .NET. Zpřístupňuje příkazy, které provádějí konkrétní úkoly, například [`dotnet build`](dotnet-build.md) a [`dotnet run`](dotnet-run.md). Každý příkaz definuje své vlastní argumenty. Zadejte `--help` za každým příkazem pro přístup k krátké dokumentaci k nápovědě.
 
-`dotnet`lze použít ke spouštění aplikací zadáním knihovny DLL aplikace, například `dotnet myapp.dll`. Další informace o možnostech nasazení najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md) .
+`dotnet` lze použít ke spouštění aplikací zadáním knihovny DLL aplikace, jako je například `dotnet myapp.dll`. Další informace o možnostech nasazení najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md) .
 
 ## <a name="options"></a>Možnosti
 
@@ -79,7 +79,7 @@ Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
 
 `-h|--help`
 
-Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help`vytiskne seznam dostupných příkazů.
+Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help` vytiskne seznam dostupných příkazů.
 
 `--info`
 
@@ -97,9 +97,9 @@ Zobrazí nainstalované sady SDK .NET Core.
 
 Definuje chování v případě, že požadovaná sdílená architektura není k dispozici. `N` může být:
 
-- `0`– Zakažte u sebe i menší verzi.
-- `1`– Navýšení se dopředá na podverzi, ale ne na hlavní verzi. Toto je výchozí chování.
-- `2`– Posunutí posunu k dílčím a hlavním verzím
+- `0` – zakažte u sebe i menší verzi.
+- `1` – předejte se k dílčí verzi, ale ne k hlavní verzi. Toto je výchozí chování.
+- `2` – předejte se do menších a hlavních verzí.
 
  Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
@@ -107,11 +107,11 @@ Definuje chování v případě, že požadovaná sdílená architektura není k
 
 Cesta k souboru *runtimeconfig. JSON* .
 
-Soubor *runtimeconfig. JSON* je konfigurační soubor obsahující konfigurační nastavení modulu runtime. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) na GitHubu.
+Soubor *runtimeconfig. JSON* je konfigurační soubor, který obsahuje nastavení runtime. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
 
 `--version`
 
@@ -143,7 +143,7 @@ Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
 
 `-h|--help`
 
-Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help`vytiskne seznam dostupných příkazů.
+Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help` vytiskne seznam dostupných příkazů.
 
 `--info`
 
@@ -151,17 +151,17 @@ Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí
 
 `--roll-forward-on-no-candidate-fx`
 
- Zakáže posunutí dílčí verze, pokud je nastaveno `0`na. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
+ Zakáže posunutí dílčí verze, pokud je nastaveno na `0`. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
 `--runtimeconfig`
 
 Cesta k souboru *runtimeconfig. JSON* .
 
-Soubor *runtimeconfig. JSON* je konfigurační soubor obsahující konfigurační nastavení modulu runtime. Další podrobnosti najdete v tématu [běhové konfigurační soubory na GitHubu](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+Soubor *runtimeconfig. JSON* je konfigurační soubor, který obsahuje nastavení runtime. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
 
 `--version`
 
@@ -189,7 +189,7 @@ Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
 
 `-h|--help`
 
-Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help`vytiskne seznam dostupných příkazů.
+Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dotnet --help` vytiskne seznam dostupných příkazů.
 
 `--info`
 
@@ -199,11 +199,11 @@ Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí
 
 Cesta k souboru *runtimeconfig. JSON* .
 
-Soubor *runtimeconfig. JSON* je konfigurační soubor obsahující konfigurační nastavení modulu runtime. Další podrobnosti najdete v tématu [běhové konfigurační soubory na GitHubu](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+Soubor *runtimeconfig. JSON* je konfigurační soubor, který obsahuje nastavení runtime. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
 
 `--version`
 
@@ -306,7 +306,7 @@ Příkaz | Funkce
 
 ### <a name="additional-tools"></a>Další nástroje
 
-Počínaje .NET Core SDK 2.1.300 je teď k dispozici několik nástrojů, které byly k dispozici pouze pro jednotlivé `DotnetCliToolReference` projekty pomocí, jako součást .NET Core SDK. Tyto nástroje jsou uvedené v následující tabulce:
+Počínaje .NET Core SDK 2.1.300 je teď k dispozici několik nástrojů, které byly k dispozici pouze pro jednotlivé projekty pomocí `DotnetCliToolReference` jsou nyní k dispozici jako součást .NET Core SDK. Tyto nástroje jsou uvedené v následující tabulce:
 
 | Nástroj                                              | Funkce                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
@@ -316,7 +316,7 @@ Počínaje .NET Core SDK 2.1.300 je teď k dispozici několik nástrojů, které
 | [uživatel – tajné klíče](/aspnet/core/security/app-secrets) | Spravuje tajné klíče uživatele.                            |
 | [sledovací](/aspnet/core/tutorials/dotnet-watch)      | Spustí sledovací proces souborů, který spustí příkaz, když se soubory změní. |
 
-Další informace o jednotlivých nástrojích získáte tak `dotnet <tool-name> --help`, že zadáte.
+Další informace o jednotlivých nástrojích získáte, když zadáte `dotnet <tool-name> --help`.
 
 ## <a name="examples"></a>Příklady
 
@@ -344,7 +344,7 @@ Spusťte knihovnu DLL aplikace, například `myapp.dll`:
 
 `DOTNET_PACKAGES`
 
-Složka globálních balíčků. Pokud není nastavená, použije se `~/.nuget/packages` ve výchozím nastavení `%userprofile%\.nuget\packages` v systému UNIX nebo Windows.
+Složka globálních balíčků. Pokud není nastavené, použije se výchozí nastavení `~/.nuget/packages` v systému UNIX nebo `%userprofile%\.nuget\packages` ve Windows.
 
 `DOTNET_SERVICING`
 
@@ -352,21 +352,21 @@ Určuje umístění indexu údržby používaného sdíleným hostitelem při na
 
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
+Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` pro výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijaté). Jinak nastavte `false` tak, aby se přihlásil k funkcím telemetrie (hodnoty `false`, `0`nebo přijaté `no`). Pokud není nastavená, výchozí hodnota je `false` a funkce telemetrie je aktivní.
 
 `DOTNET_MULTILEVEL_LOOKUP`
 
-Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastaven, použije se výchozí `true`hodnota. Nastavte na hodnotu neřešitelné z globálního umístění a používejte izolované instalace rozhraní .NET Core ( `0` hodnoty `false` nebo jsou přijatelné). `false` Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastavená, použije se výchozí hodnota `true`. Nastavte na `false`, aby se nepřeložily z globálního umístění a měly izolované instalace .NET Core (hodnoty `0` nebo `false` jsou přijaté). Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
 `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX`
 
-Zakáže posunutí dílčí verze, pokud je nastaveno `0`na. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
+Zakáže posunutí dílčí verze, pokud je nastaveno na `0`. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `DOTNET_PACKAGES`
 
-Mezipaměť primárního balíčku. Pokud není nastavená, použije se `$HOME/.nuget/packages` ve výchozím nastavení `%userprofile%\.nuget\packages` v systému UNIX nebo Windows.
+Mezipaměť primárního balíčku. Pokud není nastavené, použije se výchozí nastavení `$HOME/.nuget/packages` v systému UNIX nebo `%userprofile%\.nuget\packages` ve Windows.
 
 `DOTNET_SERVICING`
 
@@ -374,17 +374,17 @@ Určuje umístění indexu údržby používaného sdíleným hostitelem při na
 
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
+Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` pro výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijaté). Jinak nastavte `false` tak, aby se přihlásil k funkcím telemetrie (hodnoty `false`, `0`nebo přijaté `no`). Pokud není nastavená, výchozí hodnota je `false` a funkce telemetrie je aktivní.
 
 `DOTNET_MULTILEVEL_LOOKUP`
 
-Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastaven, použije se výchozí `true`hodnota. Nastavte na hodnotu neřešitelné z globálního umístění a používejte izolované instalace rozhraní .NET Core ( `0` hodnoty `false` nebo jsou přijatelné). `false` Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastavená, použije se výchozí hodnota `true`. Nastavte na `false`, aby se nepřeložily z globálního umístění a měly izolované instalace .NET Core (hodnoty `0` nebo `false` jsou přijaté). Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `DOTNET_PACKAGES`
 
-Mezipaměť primárního balíčku. Pokud není nastavená, použije se `$HOME/.nuget/packages` ve výchozím nastavení `%userprofile%\.nuget\packages` v systému UNIX nebo Windows.
+Mezipaměť primárního balíčku. Pokud není nastavené, použije se výchozí nastavení `$HOME/.nuget/packages` v systému UNIX nebo `%userprofile%\.nuget\packages` ve Windows.
 
 `DOTNET_SERVICING`
 
@@ -392,10 +392,11 @@ Určuje umístění indexu údržby používaného sdíleným hostitelem při na
 
 `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
+Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` pro výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijaté). Jinak nastavte `false` tak, aby se přihlásil k funkcím telemetrie (hodnoty `false`, `0`nebo přijaté `no`). Pokud není nastavená, výchozí hodnota je `false` a funkce telemetrie je aktivní.
 
 ---
 
 ## <a name="see-also"></a>Viz také:
 
 - [Běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
+- [Nastavení konfigurace runtime .NET Core](../run-time-config/index.md)

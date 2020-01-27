@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d384aa2daea17581402dc45dc3104a0d97f77f3a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fe99a2ac81b54ae6aa3cb64af9b5995a548c0c2b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035449"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76727884"
 ---
 # <a name="net-docs"></a>Dokumentace .NET
 
@@ -20,9 +20,7 @@ Vítejte v příspěvcích, abychom nám pomohli vylepšit a dokončit dokumenta
 
 Pro přispívání v [projektech pro přispěvatele komunit .NET](https://github.com/dotnet/docs/projects/35) pro nápady. [Příručka pro přispívání](CONTRIBUTING.md) obsahuje pokyny pro postupy, které používáme. 
 
-Pokud máte zájem o pomoc s migrací stávajícího kódu, který cílí na .NET Framework z [Galerie kódu](https://code.msdn.microsoft.com) na aplikace .NET Core uložené v našem [úložišti ukázek](https://github.com/dotnet/samples) a stáhnout z [prohlížeče ukázek](https://docs.microsoft.com/samples/browse), přečtěte si téma [Galerie kódu. projekt migrace](https://github.com/dotnet/docs/projects/88) . 
-
-Předpokládáme, že se tato dokumentace používá i pro [Xamarin](https://docs.microsoft.com/xamarin), [mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) a [Unity](https://docs.unity3d.com/Manual/index.html).
+Pokud máte zájem o pomoc s migrací stávajícího kódu, který cílí na .NET Framework z [vyřazeného webu Galerie kódu](https://docs.microsoft.com/teamblog/msdn-code-gallery-retired) na aplikace .NET Core uložené v našem [úložišti ukázek](https://github.com/dotnet/samples) a stáhnout z [prohlížeče ukázek](https://docs.microsoft.com/samples/browse), přečtěte si článek [migrace Galerie kódu](https://github.com/dotnet/docs/projects/88) . Ukázky pro galerii kódu byly přesunuty do organizace [Microsoft Archive](https://github.com/microsoftarchive?q=msdn-code-gallery) .
 
 Tento projekt přijal kód chování definovaný přispěvatelem Covenant k objasnění očekávaného chování v naší komunitě.
 Další informace najdete v tématu [pravidla chování .NET Foundation](https://dotnetfoundation.org/code-of-conduct).

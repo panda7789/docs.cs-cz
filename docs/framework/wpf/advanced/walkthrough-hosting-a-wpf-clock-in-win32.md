@@ -1,19 +1,20 @@
 ---
-title: 'Návod: Hostování hodin WPF v systému Win32'
+title: 'Návod: hostování hodin WPF v systému Win32'
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interoperability [WPF], tutorials
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 8d1f376a2c5b3f31407af0100d9a4417f7cff34e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 79f79e42652ca51c409fabb12a572485ad734b35
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740248"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744897"
 ---
-# <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Návod: Hostování hodin WPF v systému Win32
+# <a name="walkthrough-host-a-wpf-clock-in-win32"></a>Návod: hostování hodin WPF v systému Win32
 
 Chcete-li umístit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] do aplikací Win32, použijte <xref:System.Windows.Interop.HwndSource>, která poskytuje HWND, který obsahuje váš [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Nejdřív vytvoříte <xref:System.Windows.Interop.HwndSource>, takže parametry pro něj budou podobné funkci CreateWindow. Pak <xref:System.Windows.Interop.HwndSource> informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]m obsahu, který v něm potřebujete. Nakonec obdržíte HWND z <xref:System.Windows.Interop.HwndSource>. Tento návod ukazuje, jak vytvořit smíšený [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci aplikace Win32, která znovu implementuje dialog **vlastností data a času** operačního systému.
 

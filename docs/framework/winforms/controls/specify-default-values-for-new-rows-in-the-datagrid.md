@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView'
+title: Určení výchozích hodnot pro nové řádky v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,17 +10,17 @@ helpviewer_keywords:
 - rows [Windows Forms], specifying default values
 - DataGridView control [Windows Forms], default values for new rows
 ms.assetid: 8d127963-d9f8-4e4e-9f7f-beb66688f1f2
-ms.openlocfilehash: 879c035366c4686ceff3250a63c6ae8d8d3cfec4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 364f922aefc10e57f2ed7f3a0c2a5b25c922d87a
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651949"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742931"
 ---
 # <a name="how-to-specify-default-values-for-new-rows-in-the-windows-forms-datagridview-control"></a>Postupy: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView
-Zadávání dat můžete provést pohodlnější, když aplikace vyplní ve výchozí hodnoty pro nově přidané řádky. S <xref:System.Windows.Forms.DataGridView> třídy, můžete přejít k vyplnění ve výchozí hodnoty <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> událostí. Tato událost je aktivována, když uživatel zadá řádek pro nové záznamy. Když váš kód zpracovává tuto událost, která můžete naplnit požadované buňky s hodnotami, které si vyberete.  
+Když aplikace vyplní výchozí hodnoty pro nově přidané řádky, můžete zadat data lépe. Pomocí třídy <xref:System.Windows.Forms.DataGridView> můžete do události <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> zadat výchozí hodnoty. Tato událost se vyvolá, když uživatel zadá řádek pro nové záznamy. Když kód zpracovává tuto událost, můžete požadované buňky naplnit hodnotami podle vašeho výběru.  
   
- Následující příklad kódu ukazuje, jak určit výchozí hodnoty pro nové řádky pomocí <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded> událostí.  
+ Následující příklad kódu ukazuje, jak zadat výchozí hodnoty pro nové řádky pomocí události <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded>.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridViewMisc#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#120)]
@@ -29,11 +29,11 @@ Zadávání dat můžete provést pohodlnější, když aplikace vyplní ve výc
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
-- A `NewCustomerId` funkce generuje jedinečný `CustomerID` hodnoty.  
+- Funkce `NewCustomerId` pro generování jedinečných `CustomerID`ch hodnot.  
   
-- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

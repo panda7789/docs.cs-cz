@@ -2,12 +2,12 @@
 title: Zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 1098057042c0842161258fd081d3ee63e82b4c5f
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: a6b062d0d6a74ce2a2ff9afa7e8a0a18853dbd22
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395706"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746443"
 ---
 # <a name="securing-messages-using-message-security"></a>Zabezpečení zpráv
 Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.ServiceModel.NetMsmqBinding>.  
@@ -41,7 +41,7 @@ Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.Servic
   
  Vzhledem k odpojené povaze front nemusí být klient a služba online ve stejnou dobu. V takovém případě musí klient a služba vyměňovat certifikáty vzdáleně. Konkrétně je potřeba, aby klient na základě držení certifikátu služby (který může být zřetězený k certifikační autoritě) ve svém důvěryhodném úložišti důvěřoval, že komunikuje se správnou službou. Pro ověřování klienta používá služba k ověření pravosti klienta certifikát X. 509 připojený ke zprávě, aby se shodoval s certifikátem v úložišti. Certifikát musí být znovu zřetězený s certifikační autoritou.  
   
- V počítači se systémem Windows jsou certifikáty uchovávány v několika druzích úložišť. Další informace o různých úložištích najdete v tématu [úložiště certifikátů](https://go.microsoft.com/fwlink/?LinkId=87787).  
+ V počítači se systémem Windows jsou certifikáty uchovávány v několika druzích úložišť. Další informace o různých úložištích najdete v tématu [úložiště certifikátů](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
 ### <a name="windows"></a>Windows  
  Typ přihlašovacích údajů zprávy systému Windows používá protokol Kerberos.  

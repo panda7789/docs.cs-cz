@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF'
+title: Ukládat data aplikací do mezipaměti
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: 922d91466731b331cc409cc362c4ada2c287916a
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: b7d999f94e2f2ae410a16e537d51c0f890def4e1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715888"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728057"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
 Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přístup. Po opětovném přístup k datům mohou aplikace získat data z mezipaměti, nikoli načíst je z původního zdroje. To může zvýšit výkon a škálovatelnost. Ukládání do mezipaměti navíc zpřístupňuje data v případě, že zdroj dat není dočasně k dispozici.
@@ -60,7 +60,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 2. V nabídce **soubor** klikněte na příkaz **Nový**a potom klikněte na **Nový projekt**.
 
-     Zobrazí se dialogové okno **Nový projekt** .
+     **Nový projekt** se zobrazí dialogové okno.
 
 3. V části **Nainstalované šablony**vyberte programovací jazyk, který chcete použít (**Visual Basic** nebo **vizuál C#** ).
 
@@ -101,7 +101,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 5. Klikněte na tlačítko **OK**.
 
-     Zobrazí se dialogové okno **změnit cílovou architekturu** .
+     **Změnit cílový rámec** se zobrazí dialogové okno.
 
 6. V dialogovém okně **změnit cílovou architekturu** klikněte na tlačítko **Ano**.
 

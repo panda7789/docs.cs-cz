@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: eb1815f965e86a6f8f709b32f84f879eb03de447
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 4bf1c4826273535bfe824828f0fad96998b29483
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115789"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742599"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -112,20 +112,20 @@ Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.m
 
 ### <a name="tiered-compilation"></a>Vrstvená kompilace
 
-[Vrstvená kompilace](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) je ve výchozím nastavení zapnuté pomocí .NET Core 3.0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) a získat tak lepší výkon.
+[Vrstvená kompilace](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md) (TC) je ve výchozím nastavení zapnuté pomocí .NET Core 3.0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) k zajištění lepšího výkonu.
 
-Hlavní výhodou TC je povolit (znovu) jitting metody s úrovní nižší kvality, ale rychleji nebo s vyšší kvalitou, ale nižší úrovní. To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu. To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.
+Hlavní výhodou vrstvené kompilace je poskytnout dva způsoby jitting metod: v úrovni nižší kvality, ale rychlejší, nebo na vyšší kvalitu, ale na nižší úrovni. Kvalita odkazuje na to, jak dobře je metoda optimalizovaná. TC pomáhá zlepšit výkon aplikace, když projde různými fázemi provádění, od spuštění po stabilním stavu. Když je vrstvená kompilace zakázána, každá metoda je kompilována jedním způsobem, který je v průběhu spuštění posunut na výkon ustáleného stavu.
 
-Když je povolená TC, při spuštění pro metodu, která je volána:
+Když je povolený TC, platí následující chování pro kompilaci metody při spuštění aplikace:
 
-- Pokud metoda obsahuje kód zkompilovaného kódu AOT (ReadyToRun), bude použit předgenerovaný kód.
-- V opačném případě bude metoda zpracovaných kompilátorem JIT. Tyto metody jsou obvykle Obecné v rámci hodnotových typů.
-  - Rychlá kompilátor JIT rychleji generuje kód nižší kvality. Rychlá kompilátor JIT je ve výchozím nastavení povolen v .NET Core 3,0 pro metody, které neobsahují smyčky a jsou při spuštění upřednostňovány.
-  - Plně optimalizuje JIT vytváří vyšší kvalitu kódu. Pro metody, kde by se nepoužila rychlá JIT (například pokud je metoda s atributem `[MethodImpl(MethodImplOptions.AggressiveOptimization)]`), se používá kompletní optimalizace JIT.
+- Pokud má metoda předem kompilovaný kód nebo [ReadyToRun](#readytorun-images), použije se předgenerovaný kód.
+- V opačném případě je metoda zpracovaných kompilátorem JIT. Tyto metody jsou obvykle Obecné v rámci hodnotových typů.
+  - *Rychlá kompilátor JIT* rychleji generuje kvalitní (nebo méně optimalizovaný) kód. V rozhraní .NET Core 3,0 je rychlá technologie JIT standardně povolena pro metody, které neobsahují smyčky a jsou upřednostňovány při spuštění.
+  - Plně optimalizovatelný kompilátor JIT vytváří vyšší kvalitu (nebo více optimalizovaného) kódu pomaleji. Pro metody, kde by se nepoužila rychlá JIT (například pokud je metoda s atributem <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), se používá kompletní optimalizace JIT.
 
-Nakonec, jakmile jsou metody volány několikrát, jsou znovu zpracovaných kompilátorem JIT s plnou optimalizací JIT na pozadí.
+U často volaných metod kompilátor za běhu nakonec vytvoří plně optimalizovaný kód na pozadí. Optimalizovaný kód pak nahradí předem kompilovaný kód pro danou metodu.
 
-Kód generovaný rychlou JIT může běžet pomaleji, přidělit více paměti nebo použít více místa v zásobníku. V případě problémů může být rychlá JIT zakázána pomocí tohoto nastavení v souboru projektu:
+Kód generovaný rychlou JIT může běžet pomaleji, přidělit více paměti nebo použít více místa v zásobníku. V případě problémů můžete vypnout rychlou JIT pomocí této vlastnosti MSBuild v souboru projektu:
 
 ```xml
 <PropertyGroup>
@@ -133,7 +133,7 @@ Kód generovaný rychlou JIT může běžet pomaleji, přidělit více paměti n
 </PropertyGroup>
 ```
 
-Chcete-li úplně zakázat použití TC, použijte toto nastavení v souboru projektu:
+Chcete-li úplně zakázat použití TC, použijte tuto vlastnost MSBuild v souboru projektu:
 
 ```xml
 <PropertyGroup>
@@ -141,7 +141,10 @@ Chcete-li úplně zakázat použití TC, použijte toto nastavení v souboru pro
 </PropertyGroup>
 ```
 
-Všechny změny výše uvedených nastavení v souboru projektu mohou vyžadovat, aby se vyčistilo čisté sestavení (odstranit `obj` a `bin` adresáře a znovu sestavit).
+> [!TIP]
+> Změníte-li tato nastavení v souboru projektu, bude pravděpodobně nutné provést čisté sestavení, aby se nové nastavení projevilo (odstraňte adresáře `obj` a `bin` a znovu sestavit).
+
+Další informace o konfiguraci kompilace v době běhu naleznete v tématu [Možnosti konfigurace běhu pro kompilaci](../run-time-config/compilation.md).
 
 ### <a name="readytorun-images"></a>ReadyToRun image
 
@@ -182,7 +185,7 @@ Výjimky pro cílení na více platforem:
 .NET Core 3.0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core. Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí. Dá se nakonfigurovat následujícími způsoby:
 
 - Vlastnost souboru projektu: `RollForward`
-- Vlastnost konfiguračního souboru modulu runtime: `rollForward`
+- Vlastnost konfiguračního souboru run-time: `rollForward`
 - Proměnná prostředí: `DOTNET_ROLL_FORWARD`
 - Argument příkazového řádku: `--roll-forward`
 

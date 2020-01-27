@@ -1,5 +1,5 @@
 ---
-title: Přehled událostí (Windows Forms)
+title: Přehled událostí
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, event handling
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: 4abcf20b851f349a2b5df78c1fe1d15f729a5462
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 59085597789d12ce80648efb77859228e4718a3f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345008"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743484"
 ---
 # <a name="events-overview-windows-forms"></a>Přehled událostí (Windows Forms)
 Událost je akce, na kterou můžete reagovat nebo "zpracovat" v kódu. Události mohou být generovány akcí uživatele, jako je například kliknutí myší nebo stisknutí klávesy. podle kódu programu; nebo systémem.

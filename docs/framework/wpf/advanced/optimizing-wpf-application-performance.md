@@ -1,5 +1,5 @@
 ---
-title: Optimalizace výkonu aplikace WPF
+title: Optimalizace výkonu aplikace
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application rendering [WPF], performance
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
-ms.openlocfilehash: 98c7022eab9153808d47d7da69c23349032165c3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: cc6ea051401199a87965565c920068fd55cb05d0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460848"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743944"
 ---
 # <a name="optimizing-wpf-application-performance"></a>Optimalizace výkonu aplikace WPF
 Tato část je určena jako reference pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojářů aplikací, kteří hledají způsoby, jak vylepšit výkon svých aplikací. Pokud jste vývojář, který je od Microsoftu .NET Framework a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nový, měli byste se nejdřív seznámit s oběma platformami. Tato část předpokládá praktickou znalost obou a je určena pro programátory, kteří již znají dostatek, aby mohli své aplikace začít používat.  

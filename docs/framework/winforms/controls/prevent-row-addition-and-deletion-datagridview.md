@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zamezení přidávání a odstraňování řádků v ovládacím prvku Windows Forms DataGridView'
+title: Zabránit přidávání a odstraňování řádků v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,17 +9,17 @@ helpviewer_keywords:
 - data entry [Windows Forms], disabling in grids
 - data grids [Windows Forms], disabling data entry
 ms.assetid: ef9539ce-539b-404e-84b6-ac282b64b88c
-ms.openlocfilehash: d361b0791691fa6a3e1720538c7bf22b14397579
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: de8e0412faf8c3731f9356771b35a4a5d31b6ec7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654472"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728719"
 ---
 # <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control"></a>Postupy: Zamezení přidávání a odstraňování řádků v ovládacím prvku Windows Forms DataGridView
-Někdy budete chtít zabránit uživatelům v nové řádky dat zadávat nebo odstranění existující řádky v vaše <xref:System.Windows.Forms.DataGridView> ovládacího prvku. <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> Vlastnost určuje, zda je k dispozici v dolní části ovládacího prvku řádek pro nové záznamy, zatímco <xref:System.Windows.Forms.DataGridView.AllowUserToDeleteRows%2A> vlastnost určuje, zda je možné odebrat řádky. Následující příklad kódu používá tyto vlastnosti a také se nastaví <xref:System.Windows.Forms.DataGridView.ReadOnly%2A> vlastnost nastavit ovládací prvek zcela jen pro čtení.  
+Někdy budete chtít uživatelům zabránit v zadávání nových řádků dat nebo odstranění existujících řádků v ovládacím prvku <xref:System.Windows.Forms.DataGridView>. Vlastnost <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> označuje, zda je řádek pro nové záznamy přítomen v dolní části ovládacího prvku, zatímco vlastnost <xref:System.Windows.Forms.DataGridView.AllowUserToDeleteRows%2A> označuje, zda lze odebrat řádky. Následující příklad kódu používá tyto vlastnosti a také nastavuje vlastnost <xref:System.Windows.Forms.DataGridView.ReadOnly%2A>, aby byl ovládací prvek zcela určen jen pro čtení.  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio. Viz také [jak: Zamezení přidávání řádků a odstranění v Windows Forms DataGridView pomocí návrháře](prevent-row-addition-and-deletion-in-the-datagrid-using-the-designer.md).  
+ Pro tuto úlohu se v aplikaci Visual Studio podporuje. Viz také [Postupy: zabránění přidávání a odstraňování řádků v ovládacím prvku DataGridView model Windows Forms pomocí návrháře](prevent-row-addition-and-deletion-in-the-datagrid-using-the-designer.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridViewMisc#090](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#090)]
@@ -28,9 +28,9 @@ Někdy budete chtít zabránit uživatelům v nové řádky dat zadávat nebo od
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

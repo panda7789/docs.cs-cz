@@ -1,5 +1,5 @@
 ---
-title: ListBox – ovládací prvek (Windows Forms)
+title: Ovládací prvek ListBox
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ListBox control [Windows Forms]
@@ -9,24 +9,24 @@ helpviewer_keywords:
 - list items [Windows Forms], Windows Forms controls that display
 - list boxes
 ms.assetid: b0172473-c5f2-411e-aaa4-c8f17cb5eed4
-ms.openlocfilehash: 09b58bb0440f8ec187c4fa047e280d802747cd3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36ae8140a2d81aafe983b5f1f56e180a0f91e96c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012812"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745173"
 ---
 # <a name="listbox-control-windows-forms"></a>ListBox – ovládací prvek (Windows Forms)
-Windows Forms `ListBox` ovládací prvek zobrazuje seznam položek, ze kterého může uživatel vybrat jeden nebo více.  
+Ovládací prvek model Windows Forms `ListBox` zobrazí seznam položek, ze kterých může uživatel vybrat jednu nebo více.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku ListBox](listbox-control-overview-windows-forms.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ListBox> Třída  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ <xref:System.Windows.Forms.ListBox> – třída  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)  
- Obsahuje seznam věcí, které vám pomůžou s pole se seznamem, pole se seznamem a pole se seznamem zaškrtnuté.
+ Nabízí seznam věcí, které můžete provádět se seznamy, poli se seznamem a zaškrtnutými seznamy.

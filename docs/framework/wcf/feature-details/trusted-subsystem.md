@@ -5,45 +5,45 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: a0f845ad0d8ca461f8ab0b3188a72e87c589add2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f3166b8f1e59a100f54574ab548f5dae88eb5cd
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918698"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742634"
 ---
 # <a name="trusted-subsystem"></a>Důvěryhodný subsystém
-Klient přistupuje k jedné nebo více webových služeb, které jsou distribuovány napříč sítí. Webové služby jsou navržené tak, aby tento přístup k dalším prostředkům (například databáze nebo jiné webové služby), je zapouzdřena v obchodní logice webové služby. Tyto prostředky musí být chráněný před neoprávněným přístupem. Následující obrázek znázorňuje proces důvěryhodný subsystém.  
+Klient přistupuje k jedné nebo více webovým službám, které jsou distribuovány přes síť. Webové služby jsou navržené tak, aby přístup k dalším prostředkům (jako jsou databáze nebo jiné webové služby) byly zapouzdřeny v obchodní logice webové služby. Tyto prostředky musí být chráněny před neoprávněným přístupem. Následující obrázek znázorňuje proces důvěryhodného subsystému.  
   
- ![Důvěryhodný subsystém](../../../../docs/framework/wcf/feature-details/media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
+ ![Důvěryhodný podsystém](../../../../docs/framework/wcf/feature-details/media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
   
- Následující kroky popisují proces důvěryhodný subsystém, jak je znázorněno:  
+ Následující kroky popisují proces důvěryhodného subsystému, jak je znázorněno níže:  
   
-1. Klient odešle požadavek na důvěryhodný subsystém spolu s přihlašovací údaje.  
+1. Klient odešle požadavek do důvěryhodného subsystému spolu s přihlašovacími údaji.  
   
-2. Důvěryhodný subsystém ověřuje a autorizuje uživatele.  
+2. Důvěryhodný podsystém ověřuje a autorizuje uživatele.  
   
-3. Důvěryhodný subsystém odešle zprávu požadavku vzdáleného prostředku. Této žádosti je přiložený přihlašovací údaje pro důvěryhodného subsystém (nebo účet služby, pod kterým je prováděný procesem důvěryhodný subsystém).  
+3. Důvěryhodný podsystém pošle zprávu požadavku do vzdáleného prostředku. K této žádosti doprovází přihlašovací údaje důvěryhodného subsystému (nebo účtu služby, pod kterým se spouští proces důvěryhodného subsystému).  
   
-4. Prostředek back-end se ověřuje a autorizuje důvěryhodný subsystém. Poté zpracuje požadavek a vydá odpověď na důvěryhodný subsystém.  
+4. Prostředek back-endu ověřuje a autorizuje důvěryhodný podsystém. Poté zpracuje požadavek a vydá odpověď důvěryhodnému subsystému.  
   
-5. Důvěryhodný subsystém zpracuje odpověď a problémy s vlastním odpověď klientovi.  
+5. Důvěryhodný podsystém zpracovává odpověď a vydává svou vlastní odpověď klientovi.  
   
-|Vlastnost|Popis|  
+|Charakteristiku|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Zpráva|  
-|Interoperabilita|Windows Communication Foundation (WCF) pouze.|  
-|Ověřování (služba)|Služba tokenů zabezpečení ověřuje a autorizuje klientů.|  
-|Ověření (klient)|Důvěryhodný subsystém ověřuje klienta a prostředku ověřuje službě důvěryhodný subsystém.|  
-|Integrita|Ano|  
-|Důvěrnost|Ano|  
-|Přenos|HTTP mezi klientem a službou důvěryhodný subsystém.<br /><br /> SÍŤ. TCP mezi důvěryhodný subsystém služeb a prostředků (služba back-end).|  
+|Interoperabilita|Pouze Windows Communication Foundation (WCF).|  
+|Ověřování (služba)|Služba tokenů zabezpečení ověřuje a autorizuje klienty.|  
+|Ověřování (klient)|Důvěryhodný podsystém ověřuje klienta a prostředek ověřuje službu důvěryhodných subsystémů.|  
+|Způsobilost|Ano|  
+|Chovávat|Ano|  
+|Přepravu|HTTP mezi klientem a službou důvěryhodného subsystému.<br /><br /> Pohyby. TCP mezi důvěryhodnou subsystémovou službou a prostředkem (back-end služba).|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding> and <xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
-## <a name="resource-back-end-service"></a>Prostředků (služba Back-End)  
+## <a name="resource-back-end-service"></a>Prostředek (back-end služba)  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod služby pro prostředek, který používá zabezpečení přenosu přenosový protokol TCP.  
+ Následující kód ukazuje, jak vytvořit koncový bod služby pro prostředek, který používá zabezpečení přenosu přes transportní protokol TCP.  
   
  [!code-csharp[TrustedSubSystemsResource#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystemsresource/cs/source.cs#1)]
  [!code-vb[TrustedSubSystemsResource#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystemsresource/vb/source.vb#1)]  
@@ -90,18 +90,18 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
 ## <a name="trusted-subsystem"></a>Důvěryhodný subsystém  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod služby pro důvěryhodného podsystému, který používá zabezpečení zpráv přes protokol HTTP a uživatelské jméno a heslo pro ověřování.  
+ Následující kód ukazuje, jak vytvořit koncový bod služby pro důvěryhodný podsystém, který používá zabezpečení zpráv přes protokol HTTP a uživatelské jméno a heslo pro ověřování.  
   
  [!code-csharp[TrustedSubSystems#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystems/cs/source.cs#1)]
  [!code-vb[TrustedSubSystems#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystems/vb/source.vb#1)]  
   
- Následující kód ukazuje služby v důvěryhodný subsystém, který komunikuje s back-end služby pomocí zabezpečení přenosu přenosový protokol TCP.  
+ Následující kód ukazuje službu v důvěryhodném subsystému, který komunikuje s back-end službou pomocí zabezpečení přenosu přes transportní protokol TCP.  
   
  [!code-csharp[TrustedSubSystems#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystems/cs/source.cs#2)]
  [!code-vb[TrustedSubSystems#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystems/vb/source.vb#2)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace nastaví stejný koncový bod pomocí konfigurace. Všimněte si dvě vazby: Jeden zabezpečuje službu hostovanou v důvěryhodný subsystém a druhý zajišťuje komunikaci mezi důvěryhodný subsystém a back-end služby.  
+ Následující konfigurace nastaví stejný koncový bod pomocí konfigurace. Všimněte si dvou vazeb: jedna zabezpečuje službu hostovanou v důvěryhodném subsystému a druhá komunikuje mezi důvěryhodným subsystémem a back-end službou.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -166,13 +166,13 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
 ## <a name="client"></a>Klient  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit klienta, který komunikuje s důvěryhodný subsystém pomocí zabezpečení zpráv přes protokol HTTP a uživatelské jméno a heslo pro ověření.  
+ Následující kód ukazuje, jak vytvořit klienta, který komunikuje s důvěryhodným subsystémem pomocí zabezpečení zprávy přes protokol HTTP a uživatelské jméno a heslo pro ověřování.  
   
  [!code-csharp[TrustedSubSystemsClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystemsclient/cs/source.cs#1)]
  [!code-vb[TrustedSubSystemsClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystemsclient/vb/source.vb#1)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující kód konfiguruje klienta pro ověřování pomocí zabezpečení zpráv přes protokol HTTP a uživatelské jméno a heslo. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není konfigurovatelné).  
+ Následující kód nakonfiguruje klienta na používání zabezpečení zpráv přes protokol HTTP a uživatelské jméno a heslo pro ověřování. Uživatelské jméno a heslo lze zadat pouze pomocí kódu (není možné je konfigurovat).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -213,4 +213,4 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

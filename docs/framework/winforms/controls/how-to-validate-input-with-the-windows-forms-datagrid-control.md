@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ověřování vstupu s ovládacím prvkem Windows Forms DataGrid'
+title: Ověření vstupu pomocí ovládacího prvku DataGrid
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,25 +11,25 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], validating input
 - validation [Windows Forms], user input
 ms.assetid: f1e9c3a0-d0a1-4893-a615-b4b0db046c63
-ms.openlocfilehash: dc8c8f157e6673c1bddc68bfb511683e6d2b99be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3958089007401d2e977c9c96f07c9196e6216596
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796471"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728294"
 ---
 # <a name="how-to-validate-input-with-the-windows-forms-datagrid-control"></a>Postupy: Ověřování vstupu s ovládacím prvkem Windows Forms DataGrid
 
 > [!NOTE]
-> <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
+> Ovládací prvek <xref:System.Windows.Forms.DataGridView> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.DataGrid>; Nicméně ovládací prvek <xref:System.Windows.Forms.DataGrid> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
 
-Existují dva typy ověřování vstupu dostupná pro formuláře Windows <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Pokud se uživatel pokusí o hodnotu, která je nepřijatelné datového typu pro buňky, například řetězec na celé číslo, zadejte nové neplatná hodnota nahradí se původní hodnota. Tento druh ověření vstupu je prováděno automaticky a nelze je upravovat.
+Pro ovládací prvek model Windows Forms <xref:System.Windows.Forms.DataGrid> jsou k dispozici dva typy ověřování vstupu. Pokud se uživatel pokusí zadat hodnotu, která má nepřijatelný datový typ pro buňku, například řetězec na celé číslo, nová neplatná hodnota je nahrazena starou hodnotou. Tento druh ověření vstupu se provádí automaticky a nedá se přizpůsobit.
 
-Jiný typ ověřování vstupu umožňuje odmítnout nemůže být přijata žádná data, například 0 hodnotu v poli, které musí být větší než nebo rovna 1 nebo nevhodných řetězec. To se provádí v datové sadě napsáním obslužná rutina události <xref:System.Data.DataTable.ColumnChanging> nebo <xref:System.Data.DataTable.RowChanging> událostí. V příkladu níže použití <xref:System.Data.DataTable.ColumnChanging> události protože nepřijatelné hodnota není povolena pro sloupec "Produkt" zejména. Můžete použít <xref:System.Data.DataTable.RowChanging> události zjistíte, že hodnota sloupce "Koncové datum" je novější než sloupec "Datum zahájení" ve stejném řádku.
+Druhý typ ověření vstupu lze použít k zamítnutí všech nepřijatelných dat, například hodnotu 0 v poli, které musí být větší nebo rovno 1 nebo nevhodný řetězec. To se provádí v datové sadě napsáním obslužné rutiny události pro událost <xref:System.Data.DataTable.ColumnChanging> nebo <xref:System.Data.DataTable.RowChanging>. Následující příklad používá událost <xref:System.Data.DataTable.ColumnChanging>, protože nepřijatelná hodnota je pro sloupec "Product" nepovolená. Můžete použít událost <xref:System.Data.DataTable.RowChanging> pro kontrolu, zda je hodnota sloupce "koncové datum" pozdější než sloupec "datum zahájení" na stejném řádku.
 
-## <a name="to-validate-user-input"></a>Pro ověření uživatelského vstupu
+## <a name="to-validate-user-input"></a>Ověření vstupu uživatele
 
-1. Napište kód pro zpracování <xref:System.Data.DataTable.ColumnChanging> událost pro odpovídající tabulky. Při zjištění nevhodný vstup volání <xref:System.Data.DataRow.SetColumnError%2A> metodu <xref:System.Data.DataRow> objektu.
+1. Napište kód pro zpracování události <xref:System.Data.DataTable.ColumnChanging> pro příslušnou tabulku. Při zjištění nevhodného vstupu zavolejte metodu <xref:System.Data.DataRow.SetColumnError%2A> objektu <xref:System.Data.DataRow>.
 
     ```vb
     Private Sub Customers_ColumnChanging(ByVal sender As Object, _
@@ -66,9 +66,9 @@ Jiný typ ověřování vstupu umožňuje odmítnout nemůže být přijata žá
     }
     ```
 
-2. Obslužná rutina události připojení k této události.
+2. Připojte k události obslužnou rutinu události.
 
-    Místo tohoto kódu v rámci buď formuláře <xref:System.Windows.Forms.Form.Load> události nebo konstruktoru.
+    Vložte následující kód do události <xref:System.Windows.Forms.Form.Load> formuláře nebo jeho konstruktoru.
 
     ```vb
     ' Assumes the grid is bound to a dataset called customersDataSet1

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar'
+title: Zobrazení více než jednoho měsíce v ovládacím prvku MonthCalendar
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,19 +11,19 @@ helpviewer_keywords:
 - calendars [Windows Forms], multiple months
 - MonthCalendar control [Windows Forms], formatting display
 ms.assetid: d197caa2-38a5-4cb4-acc3-562130c2ace3
-ms.openlocfilehash: c2252ccf1c8fec0dcaba634e6da093ab976ce1f6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5d3925bc19ddcd67742f0ab8b5b2e45530820f38
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614767"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745897"
 ---
 # <a name="how-to-display-more-than-one-month-in-the-windows-forms-monthcalendar-control"></a>Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar
-Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zobrazit až 12 měsíců po jednom. Ve výchozím nastavení ovládací prvek zobrazuje pouze jeden měsíc, ale můžete určit, kolik měsíců se zobrazí a jak jsou uspořádány v ovládacím prvku. Pokud změníte rozměry kalendáře, ovládací prvek svou velikost, proto ujistěte se, že je dostatek volného místa ve formuláři pro nové dimenze.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.MonthCalendar> se může zobrazit po dobu až 12 měsíců najednou. Ve výchozím nastavení se ovládací prvek zobrazí jenom jeden měsíc, ale můžete zadat, kolik měsíců se zobrazí a jak se uspořádají v rámci ovládacího prvku. Když změníte rozměry kalendáře, změní se velikost ovládacího prvku, takže se ujistěte, že je ve formuláři dostatek místa pro nové rozměry.  
   
-### <a name="to-display-multiple-months"></a>Chcete-li zobrazit více měsíců  
+### <a name="to-display-multiple-months"></a>Zobrazení více měsíců  
   
-- Nastavte <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> na počet měsíců k zobrazení vodorovně a svisle.  
+- Nastavte vlastnost <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> na počet měsíců, které se mají zobrazit vodorovně a svisle.  
   
     ```vb  
     MonthCalendar1.CalendarDimensions = New System.Drawing.Size (3,2)  
@@ -40,5 +40,5 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek mohl zo
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
-- [Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
-- [Postupy: Změna vzhledu Windows Forms MonthCalendar ovládacího prvku](how-to-change-monthcalendar-control-appearance.md)
+- [Postupy: Výběr rozsahu kalendářních dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)
+- [Postupy: Změna vzhledu ovládacího prvku Windows Forms MonthCalendar](how-to-change-monthcalendar-control-appearance.md)

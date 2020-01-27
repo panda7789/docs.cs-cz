@@ -1,5 +1,5 @@
 ---
-title: Sestavení aplikace WPF (WPF)
+title: Kompilace aplikace
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 48536d8fba3f86c2883e48cd4e5cf9a3a8752fcd
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 00c76dfcdcedc7ceaefaaae785368f8b343457a7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636312"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744764"
 ---
-# <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
+# <a name="compile-a-wpf-application"></a>Kompilace aplikace WPF
 
 Aplikace Windows Presentation Foundation (WPF) mohou být sestaveny jako .NET Framework spustitelné soubory (. exe), knihovny (. dll) nebo kombinace obou typů sestavení. Toto téma ukazuje, jak sestavit aplikace WPF a popisuje klíčové kroky v procesu sestavení.
 

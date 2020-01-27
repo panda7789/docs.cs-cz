@@ -1,5 +1,5 @@
 ---
-title: Rozložení v ovládacích prvcích Windows Forms
+title: Rozložení ovládacích prvků
 ms.date: 03/30/2017
 helpviewer_keywords:
 - layout [Windows Forms]
@@ -7,45 +7,45 @@ helpviewer_keywords:
 - Margin property [Windows Forms]
 - Padding property [Windows Forms]
 ms.assetid: 99400e3a-720e-4f56-b68f-89df911a251c
-ms.openlocfilehash: d1a3954c8eda87bdda9fa17df1bd2b3858c43619
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed8603e997e7d0c1ed7a2ebda6dc960726d32f45
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012825"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745245"
 ---
 # <a name="layout-in-windows-forms-controls"></a>Rozložení v ovládacích prvcích Windows Forms
 
-Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů poskytuje celou řadu nástrojů rozložení, jak toho dosáhnout.
+Přesné umístění ovládacích prvků ve formuláři je velmi prioritní pro mnoho aplikací. Obor názvů <xref:System.Windows.Forms?displayProperty=nameWithType> poskytuje celou řadu nástrojů pro rozložení, které vám to umožní.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Přehled vlastnosti AutoSize](autosize-property-overview.md)\
-Popisuje <xref:System.Windows.Forms.Control.AutoSize%2A> vlastností a jejich rolí v rozložení.
+Popisuje vlastnost <xref:System.Windows.Forms.Control.AutoSize%2A> a její roli v rozložení.
 
-[Okraj a odsazení v modelu Windows Forms ovládací prvky](margin-and-padding-in-windows-forms-controls.md)\
-Popisuje <xref:System.Windows.Forms.Control.Margin%2A> a <xref:System.Windows.Forms.Control.Padding%2A> vlastnosti a jejich rolí v rozložení.
+[Okraj a odsazení v ovládacích prvcích model Windows Forms](margin-and-padding-in-windows-forms-controls.md)\
+Popisuje vlastnosti <xref:System.Windows.Forms.Control.Margin%2A> a <xref:System.Windows.Forms.Control.Padding%2A> a jejich role v rozložení.
 
-[Postupy: Zarovnání ovládacího prvku k okrajům formulářů](how-to-align-a-control-to-the-edges-of-forms.md)\
-Popisuje způsob použití <xref:System.Windows.Forms.Control.Dock%2A> vlastnost zarovnání ovládacího prvku na hraničních zařízeních zabírá formuláře.
+[Postupy: zarovnání ovládacího prvku na okraje formulářů](how-to-align-a-control-to-the-edges-of-forms.md)\
+Ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Control.Dock%2A> k zarovnání ovládacího prvku na okraj formuláře, který zabírá.
 
-[Postupy: Vytváření ohraničení okolo prvku Windows Forms pomocí odsazení řízení](how-to-create-a-border-around-a-windows-forms-control-using-padding.md)\
-Popisuje způsob použití <xref:System.Windows.Forms.Control.Padding%2A> vlastnost pro vytváření obrysových ovládacího prvku.
+[Postupy: Vytvoření ohraničení kolem ovládacího prvku model Windows Forms s použitím odsazení](how-to-create-a-border-around-a-windows-forms-control-using-padding.md)\
+Ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Control.Padding%2A> k zobrazení obrysu ovládacího prvku.
 
-[Postupy: Implementace vlastního modulu pro rozložení](how-to-implement-a-custom-layout-engine.md)\
-Ukazuje, jak implementovat <xref:System.Windows.Forms.Layout.LayoutEngine> pro uspořádání ovládacích prvků Windows Forms.
+[Postupy: implementace vlastního modulu pro rozložení](how-to-implement-a-custom-layout-engine.md)\
+Ukazuje, jak implementovat <xref:System.Windows.Forms.Layout.LayoutEngine> pro uspořádání model Windows Formsch ovládacích prvků.
 
 ## <a name="reference"></a>Odkaz
 
 <xref:System.Windows.Forms.TableLayoutPanel>\
-Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.
+Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel>.
 
 <xref:System.Windows.Forms.FlowLayoutPanel>\
-Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel>.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)
-- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
+- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)
+- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
 - [Postupy: Návrh rozložení Windows Forms, jež odpovídá lokalizaci](how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)
 - [Chování AutoSize v ovládacím prvku TableLayoutPanel](autosize-behavior-in-the-tablelayoutpanel-control.md)

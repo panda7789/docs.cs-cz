@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření ovládacích prvků pro Windows Forms'
+title: 'Postupy: vytváření ovládacích prvků'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], creating
@@ -9,12 +9,12 @@ ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 3776e47191d9b10431acbb9a2a7257996e531ba8
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 169104f51898f9bda08efa08685207e50406a7ff
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459422"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746717"
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>Postupy: vytváření ovládacích prvků pro model Windows Forms
 

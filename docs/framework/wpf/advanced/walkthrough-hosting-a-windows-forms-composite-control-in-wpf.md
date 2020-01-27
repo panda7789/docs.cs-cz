@@ -1,5 +1,6 @@
 ---
-title: 'Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF'
+title: Hostování složeného ovládacího prvku model Windows Forms v subsystému WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 - composite controls [WPF], hosting in WPF
 ms.assetid: 96fcd78d-1c77-4206-8928-3a0579476ef4
-ms.openlocfilehash: e42737b9fccd3b91dee2c446dfb0653e57f9dd1b
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 16c09b4bb393fa830412385b4b405dd1fae9878b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197947"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745006"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-composite-control-in-wpf"></a>Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohatou prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být efektivnější znovu použít alespoň část kódu v aplikaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a nemusíte ho přepsat od nuly. Nejběžnějším scénářem je, když máte existující model Windows Forms ovládací prvky. V některých případech nemusíte mít ani přístup ke zdrojovému kódu pro tyto ovládací prvky. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý postup pro hostování takových ovládacích prvků v aplikaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Můžete například použít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pro většinu programování a při hostování specializovaných <xref:System.Windows.Forms.DataGridView>ch ovládacích prvků.  
@@ -64,7 +65,7 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
   
 - System. Drawing  
   
-- System. Windows. Forms  
+- System.Windows.Forms  
   
 - System.Xml  
   

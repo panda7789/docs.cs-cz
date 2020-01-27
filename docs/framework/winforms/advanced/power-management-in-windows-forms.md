@@ -1,5 +1,5 @@
 ---
-title: Správa výkonu ve Windows Forms
+title: Řízení spotřeby
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,26 +8,26 @@ helpviewer_keywords:
 - battery states
 - power states
 ms.assetid: ad04a801-5682-4d88-92c5-26eb9cdb209a
-ms.openlocfilehash: 36c152a9e388fe61b1c82a8783bf74bbe6c8f123
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 9ac39df43a08f62e50116c61c4bdeda4cd1c8281
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592515"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746865"
 ---
 # <a name="power-management-in-windows-forms"></a>Správa výkonu ve Windows Forms
-Aplikace Windows Forms můžete využít výhod funkce řízení spotřeby v operačním systému Windows. Aplikace můžete monitorovat stav napájení počítače a provést akci, když dojde ke změně stavu. Pokud vaše aplikace běží na přenosný počítač, můžete chtít zakázat některé funkce ve vaší aplikaci, když baterie počítače klesne pod určitou úroveň.  
+Vaše aplikace model Windows Forms můžou využít výhod funkcí řízení spotřeby v operačním systému Windows. Vaše aplikace mohou monitorovat stav napájení počítače a provádět akce, když dojde ke změně stavu. Například pokud vaše aplikace běží na přenosném počítači, možná budete chtít zakázat některé funkce v aplikaci, když je poplatek za baterii počítače mimo určitou úroveň.  
   
- Poskytuje rozhraní .NET Framework <xref:Microsoft.Win32.SystemEvents.PowerModeChanged> události, ke kterému dochází pokaždé, když dojde ke změně stavu napájení, například když uživatel pozastaví nebo obnoví operačního systému, nebo při změně stavu napájení AC nebo stav baterie. <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> Vlastnost <xref:System.Windows.Forms.SystemInformation> třída může být použito pro dotaz na aktuální stav, jak je znázorněno v následujícím příkladu kódu.  
+ .NET Framework poskytuje událost <xref:Microsoft.Win32.SystemEvents.PowerModeChanged>, ke které dochází, když dojde ke změně stavu napájení, například když uživatel pozastaví nebo obnoví operační systém nebo když se změní stav napájení nebo stav baterie. Vlastnost <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> třídy <xref:System.Windows.Forms.SystemInformation> lze použít k dotazování na aktuální stav, jak je znázorněno v následujícím příkladu kódu.  
   
  [!code-csharp[PowerMode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#1)]
  [!code-vb[PowerMode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#1)]  
   
- Kromě <xref:System.Windows.Forms.BatteryChargeStatus> výčty, <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> vlastnost už obsahuje výčty pro zjištění kapacity baterií (<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>) a účtovat procento baterie (<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>, <xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>).  
+ Kromě výčtu <xref:System.Windows.Forms.BatteryChargeStatus> obsahuje vlastnost <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A> také výčty pro určení kapacity baterie (<xref:System.Windows.Forms.PowerStatus.BatteryFullLifetime%2A>) a procento nabití baterie (<xref:System.Windows.Forms.PowerStatus.BatteryLifePercent%2A>, <xref:System.Windows.Forms.PowerStatus.BatteryLifeRemaining%2A>).  
   
- Můžete použít <xref:System.Windows.Forms.Application.SetSuspendState%2A> metodu <xref:System.Windows.Forms.Application> k přepnutí do počítače do režimu spánku nebo režimu spánku. Pokud `force` argument je nastaven na `false`, operačního systému bude vysílat události do všech aplikací, které si vyžádá oprávnění k pozastavení. Pokud `disableWakeEvent` argument je nastaven na `true`, operační systém zakáže všechny funkce události.  
+ K uvedení počítače do režimu hibernace nebo režimu spánku můžete použít metodu <xref:System.Windows.Forms.Application.SetSuspendState%2A> <xref:System.Windows.Forms.Application>. Je-li argument `force` nastaven na hodnotu `false`, bude operační systém vysílat událost všem aplikacím požadujícím oprávnění k pozastavení. Je-li argument `disableWakeEvent` nastaven na hodnotu `true`, operační systém zakáže všechny události probuzení.  
   
- Následující příklad kódu ukazuje, jak převést počítač do režimu spánku.  
+ Následující příklad kódu ukazuje, jak převést počítač do režimu hibernace.  
   
  [!code-csharp[PowerMode#2](~/samples/snippets/csharp/VS_Snippets_Winforms/powermode/cs/form1.cs#2)]
  [!code-vb[PowerMode#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/powermode/vb/form1.vb#2)]  

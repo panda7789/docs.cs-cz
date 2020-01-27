@@ -1,34 +1,34 @@
 ---
-title: Usnadnění v produktu Windows Forms
+title: Usnadnění
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls, accessibility
 - accessibility [Windows Forms], Windows Forms controls
 ms.assetid: 23a3f168-ebc0-4f23-9efc-799109aa4a2d
-ms.openlocfilehash: 0a01a0456dfef6e89f0cf1b3608a07cb359d4497
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab497976b67bea4418b92706c7d74a69fb33f58f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748054"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746372"
 ---
 # <a name="windows-forms-accessibility"></a>Usnadnění v produktu Windows Forms
-Funkce usnadnění formulářů Windows umožňuje vaší aplikaci zpřístupnit širokou škálu uživatelů.  
+Funkce usnadnění model Windows Forms umožňuje zpřístupnit aplikaci široké škále uživatelů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Návod: Vytvoření přístupné aplikace založené na Windows](walkthrough-creating-an-accessible-windows-based-application.md)  
- Popisuje všechny funkce by měly podporovat zvýšit přístupnost.  
+ [Návod: Vytvoření přístupné aplikace Windows](walkthrough-creating-an-accessible-windows-based-application.md)  
+ Popisuje všechny funkce, které byste měli podporovat pro zvýšení dostupnosti.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:Accessibility>  
- Obor názvů obsahující počet třídy související s usnadnění přístupu.  
+ Obor názvů obsahující řadu tříd souvisejících s přístupností.  
   
  <xref:System.Windows.Forms.AccessibleObject>  
- Poskytuje informace, které aplikace použít k úpravě aplikace uživatelského rozhraní (UI) pro uživatele s postižením.  
+ Poskytuje informace, které aplikace usnadnění přístupu používají k úpravě uživatelského rozhraní (UI) aplikace pro uživatele s postižením.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows Forms](../controls/providing-accessibility-information-for-controls-on-a-windows-form.md)  
- Popisuje, jak poskytnout informace, které můžete použít ovládací prvky Windows Forms jako pomoc uživatelům s postižením.  
+ Popisuje, jak zadat informace, které model Windows Forms ovládací prvky můžou použít pro pomoc uživatelům s postižením.  
   
  [Automatická změna měřítka ve Windows Forms](../automatic-scaling-in-windows-forms.md)  
- Popisuje, jak vytvořit aplikaci reagovat na změny v systému velikost písma formulářů Windows.
+ Popisuje, jak nastavit, aby vaše aplikace model Windows Forms reagovala na změny v systémové velikosti písma.

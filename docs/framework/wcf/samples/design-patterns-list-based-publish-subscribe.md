@@ -2,12 +2,12 @@
 title: 'Vzory návrhu: publikování a odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 831e6947c0919e8112627ff0a0697592f598561b
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 3a62b09a29ec0b7e241bf2fdc09df6eaba5420c7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716344"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728823"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: publikování a odběr založený na seznamu
 Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu, který je implementovaný jako program Windows Communication Foundation (WCF).  
@@ -15,7 +15,7 @@ Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu,
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- Vzor návrhu pro publikování a odběr založený na seznamu je popsaný v tématu publikace Microsoft Patterns & Practices – [vzory pro integraci](https://go.microsoft.com/fwlink/?LinkId=95894). Vzor publikování a odběru předává informace do kolekce příjemců, kteří se přihlásili k odběru informačního tématu. Publikování na základě seznamu – odběr uchovává seznam předplatitelů. Pokud jsou k dispozici informace, které je potřeba sdílet, pošle se každému odběrateli v seznamu kopie. Tato ukázka předvádí dynamický vzor pro publikování a odběr založený na seznamu, ve kterém se klienti můžou přihlásit k odběru nebo odhlásit, jak často potřebujete.  
+ Vzor návrhu pro publikování a odběr založený na seznamu je popsaný v tématu publikace Microsoft Patterns & Practices – [vzory pro integraci](https://docs.microsoft.com/previous-versions/msp-n-p/ff647309(v=pandp.10)). Vzor publikování a odběru předává informace do kolekce příjemců, kteří se přihlásili k odběru informačního tématu. Publikování na základě seznamu – odběr uchovává seznam předplatitelů. Pokud jsou k dispozici informace, které je potřeba sdílet, pošle se každému odběrateli v seznamu kopie. Tato ukázka předvádí dynamický vzor pro publikování a odběr založený na seznamu, ve kterém se klienti můžou přihlásit k odběru nebo odhlásit, jak často potřebujete.  
   
  Ukázka publikovat a odběr založený na seznamu se skládá z klienta, služby a programu zdroje dat. Může existovat více než jeden klient a je spuštěn více než jeden program zdroje dat. Klienti se přihlásí k odběru služby, dostanou oznámení a zruší odběr. Programy zdroje dat odesílají informace službě, aby se sdílely se všemi aktuálními předplatiteli.  
   

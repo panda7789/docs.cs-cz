@@ -1,5 +1,5 @@
 ---
-title: MaskedTextBox – ovládací prvek (Windows Forms)
+title: Ovládací prvek MaskedTextBox
 ms.date: 03/30/2017
 f1_keywords:
 - MaskedTextBox
@@ -9,27 +9,27 @@ helpviewer_keywords:
 - validating user input [Windows Forms], Windows Forms
 - text boxes [Windows Forms], validating user input
 ms.assetid: 235d6121-027d-481d-8d59-4f6794d15d0c
-ms.openlocfilehash: af699875f6f3dea2f384574c85d85bd77a4507af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e46c5b5ec670a58b571703e9920cb3ee90a13aa
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780637"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744960"
 ---
 # <a name="maskedtextbox-control-windows-forms"></a>MaskedTextBox – ovládací prvek (Windows Forms)
-Toto téma obsahuje odkazy na další informace o `MaskedTextBox` ovládacího prvku.  
+Toto téma obsahuje odkazy na Další informace o ovládacím prvku `MaskedTextBox`.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Návod: Práce s ovládacím prvkem MaskedTextBox](walkthrough-working-with-the-maskedtextbox-control.md)  
- Ukazuje klíčové funkce `MaskedTextBox` ovládacího prvku.  
+ Ukazuje klíčové funkce ovládacího prvku `MaskedTextBox`.  
   
  [Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox](how-to-bind-data-to-the-maskedtextbox-control.md)  
- Ukazuje, jak opakovaně formátovat data, když data v databázi se neshoduje s formátu očekávaném definicí masky.  
+ Ukazuje, jak přeformátovat data v případě, že data v databázi neodpovídají formátu očekávanému definicí masky.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.MaskedTextBox>  
- Primární třída pro implementace maskované textové pole.  
+ Primární třída pro implementaci ovládacího prvku maskovaná textová pole.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.

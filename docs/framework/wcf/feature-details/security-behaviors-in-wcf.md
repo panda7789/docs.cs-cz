@@ -2,32 +2,32 @@
 title: Chování zabezpečení ve WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: 378edb6ddd7a66249a0c7548a3d9465475f670a8
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 12ae9bb90752fe3ee76404948693c501fc42efe6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487752"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76730953"
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
-Ve Windows Communication Foundation (WCF), chování změnit chování za běhu na úrovni služby, nebo na úrovni koncového bodu. (Další informace o chování obecné naleznete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* povolit kontrolu nad přihlašovacími údaji, ověřování, autorizace a auditování protokoly. Můžete použít chování programování nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcemi zabezpečení:  
+V Windows Communication Foundation (WCF) chování upraví chování za běhu na úrovni služby nebo na úrovni koncového bodu. (Další informace o chování obecně najdete v tématu [Určení chování služby za běhu](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* umožňuje řídit protokoly přihlašovacích údajů, ověřování, autorizace a auditování. Chování můžete použít buď programováním, nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování souvisejících s funkcemi zabezpečení:  
   
-- [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
+- [\<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
-- [\<třídu clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).  
+- [\<ClientCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).  
   
 - [\<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md).  
   
 - [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md).  
   
-- [\<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md), který také umožňuje určit zabezpečení koncového bodu, který klienti mají přístup k pro metadata.  
+- [\<oddílu servicemetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md), což také umožňuje zadat zabezpečený koncový bod, ke kterému mají klienti přístup pro metadata.  
   
 ## <a name="setting-credentials-with-behaviors"></a>Nastavení přihlašovacích údajů s chováním  
- Použití [ \<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) a [ \<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) k nastavení hodnot přihlašovacích údajů pro službu nebo klienta. Základní vazby konfigurace určuje, zda pověření musí být nastavena. Například, pokud je režim zabezpečení nastavený na `None`, klientů a služeb nejsou navzájem ověří a vyžadují žádné přihlašovací údaje libovolného typu.  
+ Pomocí [\<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) a [\<ClientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) nastavte hodnoty přihlašovacích údajů pro službu nebo klienta. Základní konfigurace vazby Určuje, jestli musí být nastavené přihlašovací údaje. Pokud je například režim zabezpečení nastaven na `None`, klienti a služby se vzájemně neověřují a nevyžadují žádné přihlašovací údaje žádného typu.  
   
- Vazby služby na druhé straně může vyžadovat typu pověření klienta. V takovém případě budete muset nastavit hodnotu přihlašovacích údajů pomocí chování. (Další informace o možných typů přihlašovacích údajů najdete v tématu [výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md).) V některých případech, například když se používají přihlašovací údaje Windows k ověření prostředí automaticky vytvoří hodnotu skutečné přihlašovací údaje a není potřeba explicitně nastavit hodnoty přihlašovacích údajů (Pokud chcete zadat jinou sadu přihlašovacích údajů).  
+ Na druhé straně vazba služby může vyžadovat typ přihlašovacích údajů klienta. V takovém případě může být nutné nastavit hodnotu přihlašovacích údajů pomocí chování. (Další informace o možných typech přihlašovacích údajů najdete v tématu [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md).) V některých případech, například když se k ověřování použijí přihlašovací údaje Windows, prostředí automaticky vytvoří skutečnou hodnotu přihlašovacích údajů a nemusíte explicitně nastavit hodnotu přihlašovacích údajů (Pokud nechcete zadat jinou sadu přihlašovacích údajů).  
   
- Všechny přihlašovací údaje služby jsou dostupné jako podřízené prvky [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). Následující příklad ukazuje certifikát, který slouží jako pověření služby.  
+ Všechny přihlašovací údaje služby se našly jako podřízené elementy [\<serviceBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). Následující příklad ukazuje certifikát použitý jako pověření služby.  
   
 ```xml  
 <configuration>  
@@ -47,22 +47,22 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 </configuration>  
 ```  
   
-## <a name="service-credentials"></a>Pověření služby  
- [ \<ServiceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) obsahuje čtyři podřízené prvky. V následujících částech jsou uvedeny prvky a jejich použití.  
+## <a name="service-credentials"></a>Přihlašovací údaje služby  
+ [\<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) obsahuje čtyři podřízené prvky. Prvky a jejich použití jsou popsány v následujících částech.  
   
-### <a name="servicecertificate-element"></a>\<serviceCertificate > – Element  
- Tento element slouží k určení certifikát X.509, který se používá k ověření služby klientů, kteří používají režim zabezpečených zpráv. Pokud používáte certifikát, který je pravidelně obnovovat, pak změny jeho kryptografický otisk. V takovém případě použijte název subjektu, jako `X509FindType` vzhledem k tomu, že certifikát můžete opakováno se stejným názvem subjektu.  
+### <a name="servicecertificate-element"></a>\<element > serviceCertificate  
+ Pomocí tohoto prvku můžete zadat certifikát X. 509, který se používá k ověření služby klientům pomocí režimu zabezpečení zpráv. Pokud používáte certifikát, který se pravidelně obnovuje, pak se jeho kryptografický otisk změní. V takovém případě použijte název subjektu jako `X509FindType`, protože certifikát je možné vystavit znovu se stejným názvem subjektu.  
   
- Další informace o používání elementu najdete v tématu [jak: Zadání hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ Další informace o použití prvku naleznete v tématu [How to: zadat hodnoty přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
-### <a name="certificate-of-clientcertificate-element"></a>\<certifikát > z \<clientCertificate > – Element  
- Použití [ \<certifikátu >](../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md) prvku, když služba musí mít certifikát klienta předem k bezpečné komunikaci s klientem. Vyvolá se při použití vzoru duplexní komunikaci. Ve vzoru obvyklejší požadavek odpověď klient zahrne svůj certifikát v požadavku, který službu používá k zabezpečení odpověď zpět klientovi. Vzor duplexní komunikaci, ale nemá žádné požadavky a odpovědi. Službu nelze odvodit certifikát klienta z komunikace a proto služba vyžaduje, aby klientský certifikát předem pro zabezpečené zprávy do klienta. Musíte získat certifikát klienta způsobem out-of-band a vyberte certifikát pro použití tohoto prvku. Další informace o duplexní služby najdete v tématu [jak: Vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).  
+### <a name="certificate-of-clientcertificate-element"></a>\<> certifikátu > elementu \<clientCertificate  
+ > Element [\<certifikátu](../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md) použijte v případě, že služba musí mít certifikát klienta předem, aby mohl bezpečně komunikovat s klientem. K tomu dochází při použití duplexního způsobu komunikace. V typickém vzoru požadavek-odpověď klient zahrne svůj certifikát do žádosti, kterou služba používá k zabezpečení své odezvy zpátky klientovi. Duplexní způsob komunikace ale nemá žádné požadavky a odpovědi. Služba nemůže odvodit certifikát klienta od komunikace, a proto služba vyžaduje předem certifikát klienta, aby bylo možné zprávy zabezpečit klientovi. Certifikát klienta je nutné získat v rámci vzdáleného počítače a zadat certifikát pomocí tohoto prvku. Další informace o duplexních službách najdete v tématu [Postupy: Vytvoření duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).  
   
-### <a name="authentication-of-clientcertificate-element"></a>\<ověřování > z \<clientCertificate > – Element  
- [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) element umožňuje přizpůsobit, jak se budou ověřovat klienti. Můžete nastavit `CertificateValidationMode` atribut `None`, `ChainTrust`, `PeerOrChainTrust`, `PeerTrust`, nebo `Custom`. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`, která určuje, že každý certifikát musí být nalezena v hierarchii certifikátů končí na *kořenová autorita* na začátku řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu `PeerOrChainTrust`, která určuje, že jsou přijímány samostatně vydané certifikáty (peer vztahu důvěryhodnosti) a také certifikáty, které jsou v důvěryhodným řetězem. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samostatně vydané certifikáty nemusí být zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte `ChainTrust` místo hodnoty. Můžete také nastavit hodnotu `Custom`. Pokud je nastavena na `Custom` hodnotu, je nutné nastavit také `CustomCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
+### <a name="authentication-of-clientcertificate-element"></a>\<ověřování > elementu \<clientCertificate >  
+ [> Prvek\<ověřování](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) umožňuje přizpůsobit způsob ověřování klientů. Atribut `CertificateValidationMode` můžete nastavit na `None`, `ChainTrust`, `PeerOrChainTrust`, `PeerTrust`nebo `Custom`. Ve výchozím nastavení je úroveň nastavená na `ChainTrust`, která určuje, že se každý certifikát musí najít v hierarchii certifikátů, které končí *kořenovou autoritou* v horní části řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu na `PeerOrChainTrust`, která určuje, že se přijímají certifikáty, které jsou držitelem licence, a také certifikáty, které jsou v důvěryhodném řetězci. Tato hodnota se používá při vývoji a ladění klientů a služeb vzhledem k tomu, že certifikáty vystavené svým držitelem nemusejí být zakoupeny důvěryhodnou autoritou. Při nasazování klienta použijte místo toho `ChainTrust`ovou hodnotu. Můžete také nastavit hodnotu na `Custom`. Pokud je nastavená hodnota `Custom`, musíte také nastavit atribut `CustomCertificateValidatorType` na sestavení a typ, který se používá k ověření certifikátu. Chcete-li vytvořit vlastní validátor, je nutné dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
   
-### <a name="issuedtokenauthentication-element"></a>\<issuedTokenAuthentication> Element  
- Vydaný token scénář má tři fáze. V první fázi se klient pokouší o přístup ke službě označuje *služby tokenů zabezpečení* (STS). Služba tokenů zabezpečení pak ověří klienta a následně vydá klienta token, obvykle token zabezpečení kontrolní výrazy SAML (Markup Language). Klient pak vrátí ke službě s tokenem. Služba zkontroluje token pro data, která umožňuje službě ověření tokenu a proto klienta. Pokud chcete ověřit token, musí být známo certifikát, který používá služba tokenů zabezpečení ve službě. [ \<IssuedTokenAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) element je úložiště pro tyto certifikáty služba tokenů zabezpečení. Chcete-li přidat certifikáty použít [ \<knownCertificates >](../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md). Vložit [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md) pro každý certifikát, jak je znázorněno v následujícím příkladu.  
+### <a name="issuedtokenauthentication-element"></a>\<element > issuedTokenAuthentication  
+ Scénář vydaného tokenu má tři fáze. V první fázi se klientovi, který se pokouší o přístup ke službě, říká *služba tokenů zabezpečení* (STS). Služba STS potom ověří klienta a následně vydá token klienta, obvykle token SAML (Security Assert Markup Language). Klient se pak vrátí ke službě s tokenem. Služba prověřuje token pro data, která umožňují službě ověřit token, a tedy klienta. K ověření tokenu musí služba znát certifikát, který používá služba Secure token Service. [\<prvek > IssuedTokenAuthentication](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) je úložiště pro jakékoli takové certifikáty služby Secure token Service. K přidání certifikátů použijte [\<knownCertificates >](../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md). Vložte [\<přidejte >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md) pro každý certifikát, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <issuedTokenAuthentication>  
@@ -74,25 +74,25 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 </issuedTokenAuthentication>  
 ```  
   
- Ve výchozím nastavení certifikáty musí pocházet od Služba tokenů zabezpečení. Tyto certifikáty, ujistěte se, že, který klientům pouze bezpečných "známé" můžete přístup ke službě.  
+ Ve výchozím nastavení se certifikáty musí získat ze služby zabezpečeného tokenu. Tyto "známé" certifikáty zajistí, že ke službě budou mít přístup jenom legitimní klienti.  
   
- Byste měli použít [ \<allowedAudienceUris >](../../../../docs/framework/configure-apps/file-schema/wcf/allowedaudienceuris.md) kolekce ve federovaných aplikací, které využívá *služby tokenů zabezpečení* (STS), který vystavuje `SamlSecurityToken` tokeny zabezpečení. Když služba tokenů zabezpečení vydá token zabezpečení, můžete určit identifikátor URI webové služby, pro které je určen token zabezpečení tak, že přidáte `SamlAudienceRestrictionCondition` do tokenu zabezpečení. Umožňuje `SamlSecurityTokenAuthenticator` pro příjemce webovou službu, chcete-li ověřit, že token vydaný zabezpečení je určený pro tuto webovou službu tak, že určíte, že tato kontrola se stane při následujícím způsobem:  
+ V federované aplikaci byste měli použít kolekci [\<allowedAudienceUris >](../../../../docs/framework/configure-apps/file-schema/wcf/allowedaudienceuris.md) , která využívá *službu Secure token Service* (STS), která vydává `SamlSecurityToken` tokeny zabezpečení. Pokud služba STS vydá token zabezpečení, může zadat identifikátor URI webových služeb, pro které je token zabezpečení určen přidáním `SamlAudienceRestrictionCondition` do tokenu zabezpečení. To umožňuje `SamlSecurityTokenAuthenticator` pro webovou službu příjemce ověřit, jestli je vydaný token zabezpečení určený pro tuto webovou službu tím, že určíte, že se tato kontrola provede následujícím způsobem:  
   
-- Nastavte `audienceUriMode` atribut [ \<issuedTokenAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) k `Always` nebo `BearerKeyOnly`.  
+- Nastavte atribut `audienceUriMode` [\<issuedTokenAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) na `Always` nebo `BearerKeyOnly`.  
   
-- Zadejte sadu platné identifikátory URI, tak, že přidáte identifikátory URI do této kolekce. Chcete-li to provést, vložte [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md) pro každého identifikátoru URI  
+- Zadejte sadu platných identifikátorů URI přidáním identifikátorů URI do této kolekce. Pokud to chcete provést, vložte [\<přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowedaudienceuris.md) pro každý identifikátor URI.  
   
- Další informace naleznete v tématu <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
+ Další informace najdete v tématu <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>.  
   
- Další informace o používání tento prvek konfigurace, najdete v části [jak: Konfigurace pověření ve službě Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
+ Další informace o použití tohoto konfiguračního prvku naleznete v tématu [How to: Configure a Credentials on a služba FS (Federation Service)](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
-#### <a name="allowing-anonymous-cardspace-users"></a>Povolení služby CardSpace anonymní uživatelé  
- Nastavení `AllowUntrustedRsaIssuers` atribut `<IssuedTokenAuthentication>` elementu `true` explicitně povoluje libovolného klienta předložit vystavený token podepsán pomocí libovolného pár klíče RSA. Vystavitel je *nedůvěryhodné* vzhledem k tomu, že klíč nemá žádná data vystavitele s ním spojená. Služba CardSpace uživatel může vytvořit samostatně vydané karty, která zahrnuje svým zadaná deklarací identity. Tuto možnost používejte s opatrností. Pokud chcete používat tuto funkci, přemýšlejte veřejný klíč RSA zabezpečenějším heslem, které by měla být uložena v databázi spolu s uživatelským jménem. Před povolením přístupu klientů ke službě, ověření klienta zobrazí veřejný klíč RSA porovnáním se souborem veřejného klíče uložené pro zobrazené uživatelské jméno. Předpokládá se, že jste zavedli proces registrace, kterým uživatelé mohou zaregistrovat svá uživatelská jména a přidružit samostatně vydané veřejné klíče RSA.  
+#### <a name="allowing-anonymous-cardspace-users"></a>Povolení uživatelů anonymních CardSpace  
+ Nastavením atributu `AllowUntrustedRsaIssuers` prvku `<IssuedTokenAuthentication>` na `true` explicitně umožníte každému klientovi zobrazit token, který je podepsaný libovolným párem klíčů RSA. Vystavitel není *důvěryhodný* , protože k tomuto klíči nejsou přidružená žádná data vystavitele. Uživatel karty CardSpace může vytvořit samoobslužnou kartu, která obsahuje deklarace identity, které jsou samoobslužné. Tuto možnost používejte opatrně. Chcete-li použít tuto funkci, zamyslete se s veřejným klíčem RSA jako s bezpečnějším heslem, které by mělo být uloženo v databázi společně s uživatelským jménem. Předtím, než povolíte klientskému přístupu ke službě, ověřte, že klient předložil veřejný klíč RSA pomocí porovnání s uloženým veřejným klíčem pro prezentované uživatelské jméno. To předpokládá, že jste zavedli proces registrace, kdy si uživatelé můžou zaregistrovat svá uživatelská jména a přidružit je k veřejným klíčům RSA vystaveným svým držitelem.  
   
-## <a name="client-credentials"></a>Přihlašovací údaje klienta  
- Přihlašovací údaje pro klienta se používají k ověření klienta ke službám v případech, kdy je vyžaduje vzájemné ověřování. V části můžete použít k určení certifikáty služby pro scénáře, kde klient musí zabezpečené zprávy do služby pomocí certifikátu služby.  
+## <a name="client-credentials"></a>Pověření klienta  
+ Pověření klienta slouží k ověřování klienta se službami v případech, kdy je nutné vzájemné ověřování. V části můžete zadat certifikáty služeb pro scénáře, ve kterých musí klient zabezpečit zprávy do služby s certifikátem služby.  
   
- Klienta můžete také nakonfigurovat jako součást Federační scénář použití vydané tokeny z Služba tokenů zabezpečení nebo místního vystavitele tokenů. Další informace o federovaných scénářích najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md). Všechny přihlašovací údaje pro klienta se nacházejí v rámci [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md), jak je znázorněno v následujícím kódu.  
+ Klienta můžete také nakonfigurovat jako součást scénáře federace pro použití vydaných tokenů ze služby tokenu zabezpečení nebo místního vystavitele tokenů. Další informace o federovaných scénářích najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md). Všechna pověření klienta se nacházejí v [\<endpointBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md), jak je znázorněno v následujícím kódu.  
   
 ```xml  
 <behaviors>  
@@ -114,20 +114,20 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
  </endpointBehaviors>  
 ```  
   
-#### <a name="clientcertificate-element"></a>\<clientCertificate > – Element  
- Nastavte certifikát používaný k ověření klienta s tímto elementem. Další informace najdete v tématu [jak: Zadání hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+#### <a name="clientcertificate-element"></a>\<> elementu clientCertificate  
+ Nastavte certifikát použitý k ověření klienta s tímto elementem. Další informace najdete v tématu [Postupy: určení hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
 #### <a name="httpdigest"></a>\<httpDigest>  
- Musí být povolena tato funkce se službou Active Directory na Windows a Internetové informační služby (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88443).  
+ Tato funkce musí být povolená se službou Active Directory ve Windows a Internetová informační služba (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6,0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10)).  
   
-#### <a name="issuedtoken-element"></a>\<třídy issuedToken > – Element  
- [ \<Třídy issuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md) obsahuje prvků, které slouží ke konfiguraci místního vystavitele tokeny nebo chování používaná službou tokenu zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele, naleznete v tématu [jak: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
+#### <a name="issuedtoken-element"></a>\<element > třídy IssuedToken  
+ [\<třídy IssuedToken](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md) obsahuje prvky, které slouží ke konfiguraci místního vystavitele tokenů nebo chování používaného se službou tokenu zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele najdete v tématu [Postupy: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
 #### <a name="localissueraddress"></a>\<localIssuerAddress>  
- Určuje výchozí adresu služby tokenů zabezpečení. Používá se při <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL pro službu tokenů zabezpečení, nebo když je adresa vystavitele federované vazby `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` nebo `null`. V takovém případě <xref:System.ServiceModel.Description.ClientCredentials> musí mít nakonfigurovanou adresu místního vystavitele a vazbu používají ke komunikaci s tohoto vydavatele.  
+ Určuje výchozí adresu služby tokenu zabezpečení. Tato část se používá, když <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL pro službu tokenu zabezpečení nebo pokud je adresa vydavatele federované vazby `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` nebo `null`. V takových případech musí být <xref:System.ServiceModel.Description.ClientCredentials> nakonfigurovaný s adresou místního vystavitele a vazbou, která se má použít ke komunikaci s tímto vystavitelem.  
   
 #### <a name="issuerchannelbehaviors"></a>\<issuerChannelBehaviors>  
- Použití [ \<issuerChannelBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md) přidat chování klienta WCF pro komunikaci se službou tokenu zabezpečení. Definování chování klienta v [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) oddílu. Chcete-li použít chování definované, přidejte <`add`> element `<issuerChannelBehaviors>` element s dva atributy. Nastavte `issuerAddress` na adresu URL služby tokenů zabezpečení a nastavte `behaviorConfiguration` atribut název chování definované koncového bodu, jak je znázorněno v následujícím příkladu.  
+ [\<issuerChannelBehaviors](../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md) můžete použít k přidání chování klienta WCF používaného při komunikaci se službou tokenu zabezpečení. V části [\<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) definujte chování klienta. Chcete-li použít definované chování, přidejte <`add`> elementu do prvku `<issuerChannelBehaviors>` se dvěma atributy. Nastavte `issuerAddress` na adresu URL služby tokenu zabezpečení a nastavte atribut `behaviorConfiguration` na název definovaného chování koncového bodu, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <clientCredentials>  
@@ -137,21 +137,21 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
                behaviorConfiguration="clientBehavior1" />     
 ```  
   
-#### <a name="servicecertificate-element"></a>\<serviceCertificate > – Element  
- Pomocí tohoto elementu k řízení ověřování certifikáty služeb.  
+#### <a name="servicecertificate-element"></a>\<element > serviceCertificate  
+ Tento prvek použijte k řízení ověřování certifikátů služby.  
   
- [ \<DefaultCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md) element můžete ukládat jeden certifikát použít při služba určuje žádný certifikát.  
+ Element [\<defaultCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md) může ukládat jeden certifikát, který se používá, když služba neurčuje žádný certifikát.  
   
- Použití [ \<scopedCertificates >](../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md) a [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-scopedcertificates-element.md) nastavit certifikáty služby, které jsou spojeny s konkrétní služby. `<add>` Obsahuje element `targetUri` atribut, který slouží k přidružení certifikátu služby.  
+ Pomocí [\<scopedCertificates >](../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md) a [\<přidejte >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-scopedcertificates-element.md) pro nastavení certifikátů služby, které jsou přidruženy k určitým službám. Element `<add>` obsahuje atribut `targetUri`, který se používá k přidružení certifikátu ke službě.  
   
- [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) prvek určuje úroveň vztahu důvěryhodnosti používá k ověřování certifikátů. Ve výchozím nastavení je úroveň nastavena na "ChainTrust", která určuje, že každý certifikát musí být nalezena v hierarchii certifikátů důvěryhodné certifikační autority v horní části řetězce s koncovkou. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu "PeerOrChainTrust", která určuje, že jsou přijímány samostatně vydané certifikáty (peer vztahu důvěryhodnosti), stejně jako certifikáty, které jsou v důvěryhodným řetězem. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samostatně vydané certifikáty nemusí být zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte hodnotu "ChainTrust". Můžete také nastavit hodnotu "Vlastní" nebo "None". Pokud chcete použít hodnotu "Vlastní", musíte taky nastavit `CustomCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Další informace najdete v tématu [jak: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
+ Prvek [\<authentication >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) určuje úroveň důvěryhodnosti použitou k ověřování certifikátů. Ve výchozím nastavení je úroveň nastavena na "ChainTrust", která určuje, že každý certifikát musí být nalezen v hierarchii certifikátů, které končí důvěryhodnou certifikační autoritou v horní části řetězce. Toto je nejbezpečnější režim. Tuto hodnotu můžete také nastavit na "PeerOrChainTrust", která určuje, že se přijímají certifikáty s certifikátem (Trust peer) a také certifikáty, které jsou v důvěryhodném řetězci. Tato hodnota se používá při vývoji a ladění klientů a služeb vzhledem k tomu, že certifikáty vystavené svým držitelem nemusejí být zakoupeny důvěryhodnou autoritou. Při nasazování klienta použijte místo toho hodnotu "ChainTrust". Můžete také nastavit hodnotu "vlastní" nebo "none". Chcete-li použít hodnotu Custom (vlastní), musíte také nastavit atribut `CustomCertificateValidatorType` na sestavení a typ použitý k ověření certifikátu. Chcete-li vytvořit vlastní validátor, je nutné dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Další informace najdete v tématu [Postup: vytvoření služby, která využívá vlastní validátor certifikátů](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
   
- [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) obsahuje element `RevocationMode` atribut, který určuje, jak kontroluje odvolání certifikátů. Výchozí hodnota je "online", což znamená, že certifikáty automaticky kontroluje odvolání. Další informace najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Element [\<authentication >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) obsahuje atribut `RevocationMode`, který určuje, jak se kontrolují certifikáty pro odvolání. Výchozí hodnota je "online", což znamená, že se certifikáty automaticky kontrolují pro odvolání. Další informace najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="serviceauthorization"></a>ServiceAuthorization  
- [ \<ServiceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) prvek obsahuje prvky, které mají vliv na ověřování, vlastní roli zprostředkovatele a zosobnění.  
+ Element [\<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) obsahuje prvky, které mají vliv na autorizaci, vlastní poskytovatele rolí a zosobnění.  
   
- <xref:System.Security.Permissions.PrincipalPermissionAttribute> Třídy je použít pro metodu služby. Atribut určuje skupiny uživatelů, kteří mají používat při autorizaci použití chráněné metody. Výchozí hodnota je "UseWindowsGroups" a určuje, že skupin Windows, jako je například "Administrators" nebo "Uživatelé," se vyhledávají identitu při pokusu o přístup k prostředku. Můžete také zadat "UseAspNetRoles" používat vlastní role poskytovatele, který je nakonfigurovaný pod <`system.web` > element, jak je znázorněno v následujícím kódu.  
+ Třída <xref:System.Security.Permissions.PrincipalPermissionAttribute> se aplikuje na metodu služby. Atribut určuje skupiny uživatelů, které se mají použít při autorizaci použití chráněné metody. Výchozí hodnota je "UseWindowsGroups" a určí, že se skupiny systému Windows, například "Administrators" nebo "uživatelé", prohledávají identity, která se pokouší o přístup k prostředku. Můžete také zadat "UseAspNetRoles", chcete-li použít vlastního poskytovatele rolí, který je nakonfigurován pod <`system.web` > prvek, jak je znázorněno v následujícím kódu.  
   
 ```xml  
 <system.web>  
@@ -175,7 +175,7 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 </system.web>  
 ```  
   
- Následující kód ukazuje `roleProviderName` použít s `principalPermissionMode` atribut.  
+ Následující kód ukazuje `roleProviderName` použit s atributem `principalPermissionMode`.  
   
 ```xml  
 <behaviors>  
@@ -187,8 +187,8 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 </behaviors>  
 ```  
   
-## <a name="configuring-security-audits"></a>Konfigurace auditování zabezpečení  
- Použití [ \<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) k určení zapisují do protokolu a jaké typy událostí do protokolu. Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+## <a name="configuring-security-audits"></a>Konfigurace auditů zabezpečení  
+ Pomocí [\<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) určete protokol, na který se zapisuje zápis, a typy událostí, které se mají protokolovat. Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ```xml  
 <system.serviceModel>  
@@ -203,8 +203,8 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 </behaviors>  
 ```  
   
-## <a name="secure-metadata-exchange"></a>Zabezpečené výměny metadat  
- Export metadat klientů je vhodné pro klienta a služby vývojářů, protože umožňuje soubory ke stažení kódu, konfigurace a klienta. Aby se snížila zranitelnost služby k uživateli se zlými úmysly, je možné na vyžádání bezpečného přenosu pomocí protokolu SSL přes HTTP (HTTPS) mechanismus. Uděláte to tak, musíte nejprve vytvořit vazbu vhodný certifikát X.509, na konkrétní port na počítači, který je hostitelem služby. (Další informace najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).) Za druhé, přidejte [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) do konfigurace služby a nastavte `HttpsGetEnabled` atribut `true`. Nastavte `HttpsGetUrl` atribut na adresu URL koncového bodu metadat služby, jak je znázorněno v následujícím příkladu.  
+## <a name="secure-metadata-exchange"></a>Zabezpečená výměna metadat  
+ Export metadat do klientů je pohodlný pro vývojáře služeb a klientů, protože umožňuje stažení konfigurace a kódu klienta. Aby se snížila pravděpodobnost, že se služba vystavuje uživatelům se zlými úmysly, je možné zabezpečit přenos pomocí mechanismu SSL přes protokol HTTP (HTTPS). K tomu je nutné nejdřív navazovat vhodný certifikát X. 509 na konkrétní port v počítači, který je hostitelem služby. (Další informace najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).) Potom do konfigurace služby přidejte [\<oddílu servicemetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) a nastavte atribut `HttpsGetEnabled` na `true`. Nakonec nastavte atribut `HttpsGetUrl` na adresu URL koncového bodu metadat služby, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <behaviors>  
@@ -220,4 +220,4 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 ## <a name="see-also"></a>Viz také:
 
 - [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView'
+title: Nastavení výchozích stylů buňky pro ovládací prvek DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,31 +9,31 @@ helpviewer_keywords:
 - cells [Windows Forms], styles
 - data grids [Windows Forms], cell styles
 ms.assetid: 1aaaca43-5340-447e-99c0-9177d9776aa1
-ms.openlocfilehash: de939051b613a0622f60178a566fd19dbca53694
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b2d7de671e48ae8f55987c262e15717138b3fb4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638163"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744865"
 ---
 # <a name="how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control"></a>Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView
-S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, můžete zadat výchozích stylů buňky pro celý ovládací prvek a pro určité sloupce a řádky. Tyto výchozí hodnoty vyfiltrovat z úrovně ovládacího prvku na úrovni sloupce pak na úrovni řádků a pak na úrovni buněk. Pokud konkrétní <xref:System.Windows.Forms.DataGridViewCellStyle> vlastnost není nastavená na úrovni buňky, bude použito výchozí nastavení vlastnosti na úrovni řádků. Pokud není vlastnost také nastavit na úrovni řádků, sloupců ve výchozím nastavení se používá. Nakonec pokud není vlastnost také nastavit na úrovni sloupce, výchozí <xref:System.Windows.Forms.DataGridView> nastavení se používá. Při tomto nastavení se vyhnete nutnosti mít duplicitní nastavení vlastnosti na více úrovních. Na každé úrovni zadejte jednoduše styly, které se liší od úrovně nad ním. Další informace najdete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md).  
+Pomocí ovládacího prvku <xref:System.Windows.Forms.DataGridView> můžete určit výchozí styly buněk pro celý ovládací prvek a pro konkrétní sloupce a řádky. Tyto výchozí hodnoty se filtrují z úrovně ovládacího prvku na úroveň sloupce a pak na úroveň řádku a na úroveň buňky. Pokud není nastavená určitá vlastnost <xref:System.Windows.Forms.DataGridViewCellStyle> na úrovni buňky, použije se výchozí nastavení vlastnosti na úrovni řádku. Pokud vlastnost není nastavena i na úrovni řádku, použije se výchozí nastavení sloupce. Nakonec, pokud vlastnost není nastavena také na úrovni sloupce, je použita výchozí hodnota <xref:System.Windows.Forms.DataGridView>. Pomocí tohoto nastavení můžete zabránit duplikaci nastavení vlastností na více úrovních. Na každé úrovni jednoduše určete styly, které se liší od úrovní nad ní. Další informace naleznete v tématu [styly buněk v ovládacím prvku DataGridView model Windows Forms](cell-styles-in-the-windows-forms-datagridview-control.md).  
   
- Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Nastavení výchozích stylů buňky a datových formátů pro Windows Forms DataGridView pomocí návrháře](default-cell-styles-datagridview.md).  
+ Existuje Rozsáhlá podpora pro tento úkol v aplikaci Visual Studio.  Viz také [Postupy: nastavení výchozích stylů buňky a datových formátů pro ovládací prvek DataGridView model Windows Forms pomocí návrháře](default-cell-styles-datagridview.md).  
   
-### <a name="to-set-the-default-cell-styles-programmatically"></a>Nastavení výchozích stylů buňky prostřednictvím kódu programu  
+### <a name="to-set-the-default-cell-styles-programmatically"></a>Chcete-li nastavit výchozí styly buněk programově  
   
-1. Nastavte vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle> získat pomocí <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> vlastnost.  
+1. Nastavte vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle> načtené prostřednictvím vlastnosti <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#141](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#141)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#141](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#141)]  
   
-2. Vytváření a inicializace nového <xref:System.Windows.Forms.DataGridViewCellStyle> objekty používají více řádků a sloupců.  
+2. Umožňuje vytvořit a inicializovat nové objekty <xref:System.Windows.Forms.DataGridViewCellStyle> pro použití více řádků a sloupců.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#142](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#142)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#142](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#142)]  
   
-3. Nastavte `DefaultCellStyle` vlastnost konkrétní řádků a sloupců.  
+3. Nastavte vlastnost `DefaultCellStyle` pro určité řádky a sloupce.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#143](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#143)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#143](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#143)]  
@@ -45,12 +45,12 @@ S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, můžete zadat v�
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na sestavení <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>a <xref:System.Windows.Forms?displayProperty=nameWithType>.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Pro dosažení maximální škálovatelnosti při práci s velmi velkými datovými sadami, by měly sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objektů mezi více řádky, sloupce nebo buňky, které použijte stejné styly, nikoli samostatně nastavte vlastnosti stylu pro jednotlivé prvky. Kromě toho by měl vytvořit sdílené řádky a k nim přistupovat pomocí <xref:System.Windows.Forms.DataGridViewRowCollection.SharedRow%2A?displayProperty=nameWithType> vlastnost. Další informace najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
+ Chcete-li dosáhnout maximální škálovatelnosti při práci s velmi velkými datovými sadami, měli byste sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objekty napříč více řádky, sloupci nebo buňkami, které používají stejné styly, nikoli nastavit vlastnosti stylu pro jednotlivé prvky samostatně. Kromě toho byste měli vytvořit sdílené řádky a přistupovat k nim pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRowCollection.SharedRow%2A?displayProperty=nameWithType>. Další informace najdete v tématu [osvědčené postupy pro škálování ovládacího prvku DataGridView model Windows Forms](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -61,4 +61,4 @@ S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, můžete zadat v�
 - [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)
 - [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)
 - [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md)
-- [Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView](how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení střídavých stylů řádků pro ovládací prvek Windows Forms DataGridView](how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)

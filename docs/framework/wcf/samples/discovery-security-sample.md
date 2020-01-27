@@ -2,15 +2,16 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: 8469b69baabcd2ba9185956c276554b4bb929d85
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: cfee226f52bc5f001b2952b76b40ce0eb8aebceb
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712058"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728849"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
-Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součástí procesu zjišťování, byly zabezpečené. Zvýšením počtu zpráv zjišťování se zabezpečením sníží riziko různých typů útoků (Změna zprávy, odmítnutí služby, opětovné přehrání, falšování identity). Tato ukázka implementuje vlastní kanály, které počítají a ověřují signatury zpráv pomocí formátu kompaktního podpisu (popsaného v části 8,2 specifikace WS-Discovery). Ukázka podporuje [specifikaci zjišťování 2005](https://go.microsoft.com/fwlink/?LinkId=177912) i [verzi 1,1](https://go.microsoft.com/fwlink/?LinkId=179677).  
+
+Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součástí procesu zjišťování, byly zabezpečené. Zvýšením počtu zpráv zjišťování se zabezpečením sníží riziko různých typů útoků (Změna zprávy, odmítnutí služby, opětovné přehrání, falšování identity). Tato ukázka implementuje vlastní kanály, které počítají a ověřují signatury zpráv pomocí formátu kompaktního podpisu (popsaného v části 8,2 specifikace WS-Discovery). Ukázka podporuje [specifikaci zjišťování 2005](http://specs.xmlsoap.org/ws/2005/04/discovery/ws-discovery.pdf) i [verzi 1,1](http://docs.oasis-open.org/ws-dd/discovery/1.1/cs-01/wsdd-discovery-1.1-spec-cs-01.pdf).  
   
  Vlastní kanál se použije na začátku existujícího zásobníku kanálů pro zjišťování a koncové body oznámení. Tímto způsobem se pro každou odeslanou zprávu použije záhlaví podpisu. Podpis se ověřuje u přijatých zpráv, a pokud se neshoduje nebo pokud zprávy nemají podpis, zprávy se zahozeny. Ukázka používá certifikáty, aby bylo možné podepsat a ověřit zprávy.  
   

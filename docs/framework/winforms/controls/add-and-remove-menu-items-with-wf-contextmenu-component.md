@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání a odebrání položek nabídky s komponentou Windows Forms ContextMenu'
+title: Přidání a odebrání položek nabídky s komponentou v nabídce
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,26 +16,26 @@ helpviewer_keywords:
 - context menus [Windows Forms], examples
 - examples [Windows Forms], context menus
 ms.assetid: 426d1eaf-7fb8-4b0b-8a33-5e8721786ea4
-ms.openlocfilehash: 5d1862b1fc1398f0f8c2217b51c4efb93db639af
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 989ab6d47ec761930a32f542b5fa1136e831f73d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957022"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746279"
 ---
-# <a name="how-to-add-and-remove-menu-items-with-the-windows-forms-contextmenu-component"></a>Postupy: Přidání a odebrání položek nabídky s komponentou Windows Forms ContextMenu
+# <a name="how-to-add-and-remove-menu-items-with-the-windows-forms-contextmenu-component"></a>Postupy: Přidání a odebrání položek nabídky se součástí Windows Forms ContextMenu
 Vysvětluje, jak přidat a odebrat položky místní nabídky v model Windows Forms.  
   
- Komponenta model Windows Forms <xref:System.Windows.Forms.ContextMenu> poskytuje nabídku často používaných příkazů, které jsou relevantní pro vybraný objekt. Do místní nabídky můžete přidat položky přidáním <xref:System.Windows.Forms.MenuItem> objektů <xref:System.Windows.Forms.Menu.MenuItems%2A> do kolekce.  
+ Komponenta model Windows Forms <xref:System.Windows.Forms.ContextMenu> poskytuje nabídku často používaných příkazů, které jsou relevantní pro vybraný objekt. Do místní nabídky můžete přidat položky přidáním <xref:System.Windows.Forms.MenuItem> objektů do kolekce <xref:System.Windows.Forms.Menu.MenuItems%2A>.  
   
  Položky můžete z místní nabídky odebrat trvale; v době běhu však může být vhodnější položky místo toho skrýt nebo zakázat.  
   
 > [!IMPORTANT]
-> I <xref:System.Windows.Forms.MenuStrip> když <xref:System.Windows.Forms.ContextMenuStrip> a <xref:System.Windows.Forms.ContextMenu> v <xref:System.Windows.Forms.MainMenu> případě potřeby nahrazují a přidávají funkce do ovládacích prvků <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> v předchozích verzích a jsou zachované pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+> I když <xref:System.Windows.Forms.MenuStrip> a <xref:System.Windows.Forms.ContextMenuStrip> nahrazují a přidává funkce do <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu>ových ovládacích prvků předchozích verzí, <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> se uchovávají pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
 ### <a name="to-remove-items-from-a-shortcut-menu"></a>Odebrání položek z místní nabídky  
   
-1. Pomocí metody <xref:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt%2A> nebokolekce<xref:System.Windows.Forms.ContextMenu>komponenty odeberte konkrétní položku nabídky. <xref:System.Windows.Forms.Menu.MenuItems%2A> <xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A>  
+1. Chcete-li odebrat konkrétní položku nabídky, použijte metodu <xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A> nebo <xref:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt%2A> kolekce <xref:System.Windows.Forms.Menu.MenuItems%2A> součásti <xref:System.Windows.Forms.ContextMenu>.  
   
     ```vb  
     ' Removes the first item in the shortcut menu.  
@@ -60,7 +60,7 @@ Vysvětluje, jak přidat a odebrat položky místní nabídky v model Windows Fo
   
      -nebo-  
   
-2. `Clear` Použijte metodu `MenuItems` kolekce komponentykodebránívšechpoložekznabídky.<xref:System.Windows.Forms.ContextMenu>  
+2. K odebrání všech položek z nabídky použijte metodu `Clear` kolekce `MenuItems` <xref:System.Windows.Forms.ContextMenu> komponenty.  
   
     ```vb  
     ContextMenu1.MenuItems.Clear()  

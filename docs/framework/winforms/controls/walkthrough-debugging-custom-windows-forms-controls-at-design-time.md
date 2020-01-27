@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu'
+title: Ladit vlastní ovládací prvky v době návrhu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +18,12 @@ ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: a8572c1e70e36faf3a179de7a69e88e9cf1e781b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d9e292a1219c24571bcb35db2fe357b0197c8812
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460614"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740195"
 ---
 # <a name="walkthrough-debug-custom-windows-forms-controls-at-design-time"></a>Návod: ladění vlastních ovládacích prvků model Windows Forms v době návrhu
 
@@ -47,7 +47,7 @@ V aplikaci Visual Studio vytvořte projekt aplikace pro systém Windows a pojmen
 
 4. Sestavte řešení.
 
-## <a name="checkpoint"></a>Kontrolní bod
+## <a name="checkpoint"></a>CheckPoint
 
 V tomto okamžiku budete moci zobrazit vlastní ovládací prvek v sadě **nástrojů**.
 

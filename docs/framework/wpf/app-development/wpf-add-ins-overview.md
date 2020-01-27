@@ -1,5 +1,5 @@
 ---
-title: Přehled doplňků WPF
+title: Přehled doplňků
 ms.date: 03/30/2017
 helpviewer_keywords:
 - add-ins and XAML browser applications [WPF]
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 319f8b8c0225c7730112b1db073884b391945ac8
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 93904e308932ea41c736ca849ce0efb200502a7e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421089"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738939"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 
@@ -252,7 +252,7 @@ Podle jeho povahy <xref:System.Windows.Interop.HwndHost> má určitá omezení, 
 
 ## <a name="wpf-add-in-benefits"></a>Výhody doplňku WPF
 
-Vzhledem k tomu, že jsou uživatelská rozhraní doplňku WPF zobrazena z hostitelských aplikací pomocí interní třídy, která je odvozena od <xref:System.Windows.Interop.HwndHost>, jsou tato uživatelská rozhraní omezená funkcemi <xref:System.Windows.Interop.HwndHost> s ohledem na služby uživatelského rozhraní WPF, jako je například rozložení, vykreslování, data vytváření vazeb, stylů, šablon a prostředků. WPF ale rozšiřuje svou interní podtřídu <xref:System.Windows.Interop.HwndHost> o další možnosti, které zahrnují následující:
+Vzhledem k tomu, že jsou uživatelská rozhraní doplňku WPF zobrazena z hostitelských aplikací pomocí interní třídy, která je odvozena od <xref:System.Windows.Interop.HwndHost>, jsou tato uživatelská rozhraní omezená funkcemi <xref:System.Windows.Interop.HwndHost> s ohledem na služby uživatelského rozhraní WPF, jako je rozložení, vykreslování, datové vazby, styly, šablony a prostředky. WPF ale rozšiřuje svou interní podtřídu <xref:System.Windows.Interop.HwndHost> o další možnosti, které zahrnují následující:
 
 - Procházení mezi uživatelským rozhraním hostitelské aplikace a uživatelským rozhraním doplňku Všimněte si, že "doplněk je programovací model uživatelského rozhraní, který vyžaduje, aby adaptér doplňky přepsal <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>, aby bylo možné povolit přidávání na kartách, bez ohledu na to, zda je doplněk plně důvěryhodný nebo částečně důvěryhodný.
 
@@ -315,4 +315,4 @@ Ve výchozím nastavení platí, že při použití více domén aplikace jsou v
 - [Aplikační domény](../../app-domains/application-domains.md)
 - [Přehled vzdálené komunikace .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Vytváření objektů – vzdáleně](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
-- [Témata s postupy](how-to-topics.md)
+- [Postupy](how-to-topics.md)

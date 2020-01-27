@@ -2,12 +2,12 @@
 title: Vlastní verze SQLite
 ms.date: 12/13/2019
 description: Naučte se používat vlastní verzi nativní knihovny SQLite.
-ms.openlocfilehash: 8a2646138ea9dbecf412a2e8e0e347e2d71a5b0b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: dd27278c1dbe17b12e5067d04d19043bf259b1e8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447144"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746988"
 ---
 # <a name="custom-sqlite-versions"></a>Vlastní verze SQLite
 
@@ -23,7 +23,7 @@ Pokud chcete použít jinou sadu prostředků, nainstalujte místo toho balíče
 
 | Nabídky | Popis |
 | --- | --- |
-| SQLitePCLRaw. bundle_e_sqlite3 | Poskytuje konzistentní verzi SQLite na všech platformách. Zahrnuje FTS4, FTS5, JSON1 a | Stromová rozšíření R *. Toto nastavení je výchozí. |
+| SQLitePCLRaw. bundle_e_sqlite3 | Poskytuje konzistentní verzi SQLite na všech platformách. Zahrnuje rozšíření stromu FTS4, FTS5, JSON1 a R *. Toto nastavení je výchozí. |
 | SQLitePCLRaw. bundle_green | Stejné jako bundle_e_sqlite3, s výjimkou iOS, kde používá systémovou knihovnu SQLite. |
 | SQLitePCLRaw. bundle_zetetic | Používá oficiální SQLCipher buildy z Zetetic (Nezahrnuto). |
 | SQLitePCLRaw. bundle_winsqlite3 | Používá winsqlite3. dll, systémovou knihovnu SQLite ve Windows 10. |

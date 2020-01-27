@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider'
+title: Zobrazení chyb v rámci datové sady pomocí komponenty ErrorProvider
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - error messages [Windows Forms], viewing in datasets
 - ErrorProvider component [Windows Forms], dataset errors
 ms.assetid: cbae023f-d651-4210-bdea-bcc5f037e321
-ms.openlocfilehash: 3dbd2ccca607869a6f28bc5b3bd1c9f0769db9f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8c2155bf288db89b5d53567738fd399b915d50b6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950085"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745450"
 ---
-# <a name="how-to-view-errors-within-a-dataset-with-the-windows-forms-errorprovider-component"></a>Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider
-Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> lze použít k zobrazení chyb ve sloupcích v rámci datové sady nebo jiného zdroje dat. <xref:System.Windows.Forms.ErrorProvider> Aby součást zobrazovala chyby dat ve formuláři, nemusí být přímo přidružena k ovládacímu prvku. Jakmile je svázán se zdrojem dat, může zobrazit ikonu chyby vedle libovolného ovládacího prvku vázaného na stejný zdroj dat.  
+# <a name="how-to-view-errors-within-a-dataset-with-the-windows-forms-errorprovider-component"></a>Postupy: Zobrazování chyb v prvku DataSet pomocí součásti Windows Forms ErrorProvider
+Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> můžete použít k zobrazení chyb ve sloupcích v rámci datové sady nebo jiného zdroje dat. Aby součást <xref:System.Windows.Forms.ErrorProvider> zobrazovala chyby dat ve formuláři, nemusí být přímo přidružena k ovládacímu prvku. Jakmile je svázán se zdrojem dat, může zobrazit ikonu chyby vedle libovolného ovládacího prvku vázaného na stejný zdroj dat.  
   
 > [!NOTE]
-> Pokud změníte poskytovatele <xref:System.Windows.Forms.ErrorProvider.DataSource%2A> chyb a <xref:System.Windows.Forms.ErrorProvider.DataMember%2A> vlastnosti za běhu <xref:System.Windows.Forms.ErrorProvider.BindToDataAndErrors%2A> , měli byste použít metodu, aby nedocházelo ke konfliktům.  
+> Pokud změníte <xref:System.Windows.Forms.ErrorProvider.DataSource%2A> poskytovatele chyb a <xref:System.Windows.Forms.ErrorProvider.DataMember%2A> vlastnosti za běhu, měli byste použít metodu <xref:System.Windows.Forms.ErrorProvider.BindToDataAndErrors%2A>, aby nedocházelo ke konfliktům.  
   
 ### <a name="to-display-data-errors"></a>Zobrazení chyb dat  
   
@@ -40,7 +40,7 @@ Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> lze pou
     errorProvider1.DataMember = "Customers";  
     ```  
   
-2. <xref:System.Windows.Forms.ErrorProvider.ContainerControl%2A> Nastavte vlastnost na formu.  
+2. Vlastnost <xref:System.Windows.Forms.ErrorProvider.ContainerControl%2A> nastavte na formu.  
   
     ```vb  
     ErrorProvider1.ContainerControl = Me  
@@ -65,4 +65,4 @@ Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> lze pou
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled komponenty ErrorProvider](errorprovider-component-overview-windows-forms.md)
-- [Postupy: Zobrazit chybové ikony pro ověření formuláře pomocí součásti model Windows Forms ErrorProvider](display-error-icons-for-form-validation-with-wf-errorprovider.md)
+- [Postupy: Zobrazení ikon chyb pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider](display-error-icons-for-form-validation-with-wf-errorprovider.md)

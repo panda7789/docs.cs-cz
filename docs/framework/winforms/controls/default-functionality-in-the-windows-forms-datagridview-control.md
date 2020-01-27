@@ -1,50 +1,50 @@
 ---
-title: Výchozí funkce v ovládacím prvku Windows Forms DataGridView
+title: Výchozí funkce v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data grids [Windows Forms], default functionality in DataGridView control
 - DataGridView control [Windows Forms], default functionality
 ms.assetid: 4405f697-cad1-4839-9bcd-8ddb09d9f00e
-ms.openlocfilehash: b84d5a279bfe7cd99262ca904daeceabc9d0355d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b695883ac7ec3fb0c459adb66214b0eceab3a128
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648073"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746130"
 ---
 # <a name="default-functionality-in-the-windows-forms-datagridview-control"></a>Výchozí funkce v ovládacím prvku Windows Forms DataGridView
-Windows Forms <xref:System.Windows.Forms.DataGridView> řízení poskytuje uživatelům značné množství výchozí funkce.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DataGridView> poskytuje uživatelům významné množství výchozích funkcí.  
   
 ## <a name="default-functionality"></a>Výchozí funkce  
- Ve výchozím nastavení <xref:System.Windows.Forms.DataGridView> ovládacího prvku:  
+ Ve výchozím nastavení <xref:System.Windows.Forms.DataGridView> ovládací prvek:  
   
-- Automaticky zobrazí záhlaví sloupců a záhlaví řádků, které zůstávají viditelné jako tabulka posune svisle.  
+- Automaticky zobrazí záhlaví sloupců a záhlaví řádků, která zůstávají viditelná, když se tabulka posouvá svisle.  
   
-- Má záhlaví řádku, který obsahuje indikátor výběru pro aktuální řádek.  
+- Má záhlaví řádku, které obsahuje indikátor výběru pro aktuální řádek.  
   
-- V první buňky má obdélníku výběru.  
+- Má v první buňce obdélník výběru.  
   
-- Má sloupce, které mohou být automaticky nastavena velikost při poklepání oddělovače sloupců.  
+- Má sloupce, u kterých se dá automaticky změnit velikost, když uživatel dvakrát klikne na oddělovače sloupců.  
   
-- Automaticky podporuje vizuálních stylů Windows XP a Windows Server 2003 při <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda je volána z aplikace `Main` metody.  
+- Automaticky podporuje vizuální styly v systémech Windows XP a Windows Server 2003 při volání metody <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> z metody `Main` aplikace.  
   
- Kromě toho obsah <xref:System.Windows.Forms.DataGridView> ovládací prvek lze upravovat ve výchozím nastavení:  
+ Kromě toho je možné upravit obsah <xref:System.Windows.Forms.DataGridView>ho ovládacího prvku ve výchozím nastavení:  
   
-- Pokud uživatel dvakrát klikne nebo použije klávesu F2 v buňce, ovládací prvek automaticky umístí do režimu úprav buňku a aktualizuje obsah buňky jako zadaného uživatelem.  
+- Pokud uživatel dvakrát klikne nebo stiskne F2 v buňce, ovládací prvek automaticky vloží buňku do režimu úprav a aktualizuje obsah buňky jako uživatelské typy.  
   
-- Pokud uživatel přesune na konec objektu mřížky, uživateli se zobrazí, že řádek pro přidávání nových záznamů je k dispozici. Po kliknutí na tento řádek, na přidání nového řádku <xref:System.Windows.Forms.DataGridView> ovládacího prvku s výchozími hodnotami. Když uživatel stiskne klávesu ESC, tento nový řádek zmizí.  
+- Pokud se uživatel posune na konec mřížky, uživatel uvidí, že je k dispozici řádek pro přidávání nových záznamů. Když uživatel klikne na tento řádek, přidá se do ovládacího prvku <xref:System.Windows.Forms.DataGridView> nový řádek s výchozími hodnotami. Když uživatel stiskne klávesu ESC, tento nový řádek zmizí.  
   
-- Pokud uživatel klikne záhlaví řádku, je vybrán celý řádek.  
+- Pokud uživatel klikne na záhlaví řádku, je vybrán celý řádek.  
   
- Po vytvoření vazby <xref:System.Windows.Forms.DataGridView> ovládacího prvku do zdroje dat tím, že nastavíte její <xref:System.Windows.Forms.DataGridView.DataSource%2A> vlastností, ovládacího prvku:  
+ Při vázání ovládacího prvku <xref:System.Windows.Forms.DataGridView> ke zdroji dat nastavením jeho vlastnosti <xref:System.Windows.Forms.DataGridView.DataSource%2A> ovládací prvek:  
   
-- Automaticky použije názvy sloupců zdroj dat jako text záhlaví sloupce.  
+- Automaticky používá názvy sloupců datového zdroje jako text záhlaví sloupce.  
   
-- Je vyplněno obsahem datového zdroje. <xref:System.Windows.Forms.DataGridView> pro každý sloupec ve zdroji dat jsou automaticky vytvořeny sloupce.  
+- Se naplní obsahem zdroje dat. <xref:System.Windows.Forms.DataGridView> sloupce jsou automaticky vytvořeny pro každý sloupec ve zdroji dat.  
   
-- Vytvoří řádek pro každý viditelných řádků v tabulce.  
+- Vytvoří řádek pro každý viditelný řádek v tabulce.  
   
-- Automaticky řadí řádky založené na podkladová data, když uživatel klikne na záhlaví sloupce.  
+- Když uživatel klikne na záhlaví sloupce, automaticky seřadí řádky na základě podkladových dat.  
   
 ## <a name="see-also"></a>Viz také:
 

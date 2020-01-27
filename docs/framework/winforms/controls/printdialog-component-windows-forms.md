@@ -1,5 +1,5 @@
 ---
-title: PrintDialog – komponenta (Windows Forms)
+title: Komponenta PrintDialog
 ms.date: 03/30/2017
 helpviewer_keywords:
 - print options [Windows Forms], PrintDialog component (using designer)
@@ -8,27 +8,27 @@ helpviewer_keywords:
 - printing [Windows Forms], PrintDialog component (using designer)
 - printing [Windows Forms], print options
 ms.assetid: 09b54db1-d7c7-42fa-b98a-840e6b80a9ad
-ms.openlocfilehash: 35bc465b70d9e92f427a70590af45613555380cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 544cdcd7c07e12a7da9812432c0761fe3d3b21bf
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795481"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728640"
 ---
 # <a name="printdialog-component-windows-forms"></a>PrintDialog – komponenta (Windows Forms)
-Windows Forms `PrintDialog` komponenta je předem nakonfigurované dialogové okno umožňuje vybrat tiskárnu, zvolte stránky k tisku a určit další nastavení související s tiskem v aplikacích založených na Windows. Použijte jako jednoduchým řešením pro tiskárnu a výběr nastavení související s tiskem namísto dialogové okno Vlastní konfigurace. Můžete povolit uživatelům tisknout mnoho částí své dokumenty: vytisknout všechny zadanou stránku rozsah tisku a Tisk výběru. Pomocí standardní dialogová okna Windows, můžete vytvořit aplikace, jejichž základní funkce je okamžitě uživatelé znají.  
+Součást model Windows Forms `PrintDialog` je předem nakonfigurovaným dialogovým oknem použitým k výběru tiskárny, výběru stránek k tisku a určení dalších nastavení souvisejících s tiskem v aplikacích založených na systému Windows. Použijte ji jako jednoduché řešení pro výběr nastavení tiskárny a tisku místo konfigurace vlastního dialogového okna. Uživatelům můžete umožnit tisk mnoha částí jejich dokumentů: tisk všech, tisk zadaného rozsahu stránky nebo tisk výběru. Když se spoléháte na standardní dialogová okna systému Windows, vytvoříte aplikace, jejichž základní funkce je pro uživatele okamžitě známa.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty PrintDialog](printdialog-component-overview-windows-forms.md)  
- Představuje obecné koncepty `PrintDialog` komponenta, která umožňuje zobrazit předem nakonfigurované dialogové okno, které mohou uživatelé vybrat tiskárnu, zvolte stránky k tisku a určit nastavení související s tiskem.  
+ Zavádí obecné koncepty `PrintDialog` komponenty, které umožňují zobrazit předem nakonfigurované dialogové okno, které mohou uživatelé použít k výběru tiskárny, výběru stránek k tisku a určení nastavení souvisejících s tiskem.  
   
  [Postupy: Zobrazení komponenty PrintDialog](how-to-display-the-printdialog-component.md)  
- Vysvětluje, jak zobrazit dialogové okno a kam je uloží vlastnosti.  
+ Vysvětluje, jak zobrazit dialog a kde ukládá vlastnosti.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.PrintDialog>  
- Poskytuje referenční informace o třídě a její členy.  
+ Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.

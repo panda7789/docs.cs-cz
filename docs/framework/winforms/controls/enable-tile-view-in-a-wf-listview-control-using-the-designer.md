@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView pomocí Návrháře'
+title: Povolit zobrazení dlaždic v ovládacím prvku ListView pomocí návrháře
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tile view feature
 - ListView control [Windows Forms], tile view
 - tiling [Windows Forms], Windows Forms, controls
 ms.assetid: 12f0816a-52b8-41ee-a6d9-ded3a8a5817a
-ms.openlocfilehash: 4f51d3a596bc3358942cdfd654b3e4515d96cd07
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: a0429efaab14995ab1e3f3b0dfd91db61de72fbf
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960095"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745801"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control-using-the-designer"></a>Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView pomocí Návrháře
 Funkce zobrazení dlaždice ovládacího prvku <xref:System.Windows.Forms.ListView> umožňuje zadat vizuální vyvážení mezi grafickými a textovými informacemi. Textové informace zobrazené pro položku v zobrazení dlaždic jsou stejné jako informace o sloupci definované pro zobrazení podrobností. Funkce zobrazení dlaždic v kombinaci s funkcemi seskupení nebo vložení v ovládacím prvku <xref:System.Windows.Forms.ListView>.

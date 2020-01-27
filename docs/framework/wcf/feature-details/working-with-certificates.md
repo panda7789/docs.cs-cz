@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 0764ca29fc959092e77629ff3888e65f0d68d70c
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: e38ead0d378092af086218277fd2e85b4a6396c3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938056"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746884"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 
@@ -164,9 +164,9 @@ Můžete také nastavit certifikáty pomocí konfigurace. Pokud vytváříte slu
 
 ## <a name="mapping-a-certificate-to-a-user-account"></a>Mapování certifikátu na uživatelský účet
 
-Funkce služby IIS a Active Directory umožňuje mapovat certifikát na uživatelský účet systému Windows. Další informace o této funkci najdete v tématu [mapování certifikátů na uživatelské účty](https://go.microsoft.com/fwlink/?LinkId=88917).
+Funkce služby IIS a Active Directory umožňuje mapovat certifikát na uživatelský účet systému Windows. Další informace o této funkci najdete v tématu [mapování certifikátů na uživatelské účty](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10)).
 
-Další informace o použití mapování služby Active Directory najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](https://go.microsoft.com/fwlink/?LinkId=88918).
+Další informace o použití mapování služby Active Directory najdete v tématu [mapování klientských certifikátů pomocí mapování adresářových služeb](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10)).
 
 Když je tato funkce povolená, můžete nastavit vlastnost <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> třídy <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> na `true`. V části konfigurace můžete nastavit atribut `mapClientCertificateToWindowsAccount` elementu [\<authentication >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) na `true`, jak je znázorněno v následujícím kódu.
 

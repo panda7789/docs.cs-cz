@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView'
+title: Nastavení režimů řazení pro sloupce v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], sort mode
 - data grids [Windows Forms], sorting data
 ms.assetid: 57dfed60-a608-40d5-86f9-d65686ffb325
-ms.openlocfilehash: fd627e3aaed7330a05c46b9e2ca0a213404e0bfe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 45ee1e7d82f826cddbd3492fed0f63e7a9c2cf1d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625752"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742995"
 ---
-# <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView
-V <xref:System.Windows.Forms.DataGridView> ovládací prvek textové pole sloupce použijte automatické řazení ve výchozím nastavení, zatímco jiné typy sloupců nejsou seřazené automaticky. Někdy budete chtít přepsat tyto výchozí hodnoty. Například můžete zobrazit obrázky místo hodnoty text, čísla nebo výčet buňky. Zatímco nemohou být řazeny obrázky, lze je řadit podkladové hodnoty, které představují.  
+# <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Nastavení režimů třídění pro sloupce v ovládacím prvku Windows Forms DataGridView
+V ovládacím prvku <xref:System.Windows.Forms.DataGridView> sloupce textového pole používají automatické řazení ve výchozím nastavení, zatímco jiné typy sloupců se neřadí automaticky. Někdy budete chtít přepsat tato výchozí nastavení. Například můžete zobrazit obrázky místo textu, čísel nebo hodnot buněk výčtu. I když obrázky nelze seřadit, lze seřadit základní hodnoty, které představují.  
   
- V <xref:System.Windows.Forms.DataGridView> ovládací prvek, <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> hodnota vlastnosti sloupce určuje jeho chování řazení.  
+ V ovládacím prvku <xref:System.Windows.Forms.DataGridView> určuje hodnota vlastnosti <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> sloupce jeho chování při řazení.  
   
- Následující postup ukazuje `Priority` sloupec z [jak: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md). Tento sloupec je sloupec image a není ve výchozím nastavení řazení. Obsahuje hodnoty skutečné buněk, které jsou řetězce, ale tak lze seřadit automaticky.  
+ Následující postup ukazuje sloupec `Priority` z tématu [Postupy: Přizpůsobení formátování dat v ovládacím prvku DataGridView model Windows Forms](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md). Tento sloupec je sloupcem obrázku a ve výchozím nastavení není standardně zařadit. Obsahuje skutečné hodnoty buňky, které jsou řetězce, ale lze je seřadit automaticky.  
   
-### <a name="to-set-the-sort-mode-for-a-column"></a>Chcete-li nastavit režim řazení pro sloupce  
+### <a name="to-set-the-sort-mode-for-a-column"></a>Nastavení režimu řazení pro sloupec  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType> vlastnost.  
+- Nastavte vlastnost <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#066](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#066)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#066](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#066)]  
@@ -33,9 +33,9 @@ V <xref:System.Windows.Forms.DataGridView> ovládací prvek textové pole sloupc
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` , která obsahuje sloupec s názvem `Priority`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`, který obsahuje sloupec s názvem `Priority`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -43,4 +43,4 @@ V <xref:System.Windows.Forms.DataGridView> ovládací prvek textové pole sloupc
 - <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>
 - [Řazení dat v ovládacím prvku Windows Forms DataGridView](sorting-data-in-the-windows-forms-datagridview-control.md)
 - [Režimy řazení sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)

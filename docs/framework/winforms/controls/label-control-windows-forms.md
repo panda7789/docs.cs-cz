@@ -1,35 +1,35 @@
 ---
-title: Ovládací prvek Popisek (Windows Forms)
+title: Ovládací prvek Label
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Label control [Windows Forms]
 - labels
 - LinkLabel control [Windows Forms]
 ms.assetid: 2028bbe3-ffe2-43e8-8ae3-dec759d2ecec
-ms.openlocfilehash: a66eda1236a751daa87c67dae8311c9aaf71ae24
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8450e32f131921dca0335f66b75905a4b01c9454
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962561"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745279"
 ---
 # <a name="label-control-windows-forms"></a>Ovládací prvek Popisek (Windows Forms)
 > [!IMPORTANT]
-> Ovládací prvek nahradí a přidá <xref:System.Windows.Forms.Label> do ovládacího prvku funkce. <xref:System.Windows.Forms.ToolStripLabel> Můžete použít <xref:System.Windows.Forms.ToolStripLabel> s jinými novými ovládacími prvky, jako je <xref:System.Windows.Forms.ToolStripDropDown>například. <xref:System.Windows.Forms.Label> Nicméně ovládací prvek se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+> Ovládací prvek <xref:System.Windows.Forms.ToolStripLabel> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.Label>. <xref:System.Windows.Forms.ToolStripLabel> můžete použít s jinými novými ovládacími prvky, jako je například <xref:System.Windows.Forms.ToolStripDropDown>. Nicméně ovládací prvek <xref:System.Windows.Forms.Label> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
- Ovládací <xref:System.Windows.Forms.Label> prvky model Windows Forms slouží k zobrazení textu nebo obrázků, které uživatel nemůže upravit. Slouží k identifikaci objektů na formuláři – k zadání popisu toho, co určitý ovládací prvek provede, pokud kliknete například nebo zobrazíte informace jako odpověď na událost nebo proces v aplikaci v době běhu. Vzhledem k tomu, že ovládacíprveknemůžezískatfokus,lzejejtaképoužítkvytvořenípřístupovýchklíčůprojinéovládacíprvky.<xref:System.Windows.Forms.Label>  
+ Ovládací prvky <xref:System.Windows.Forms.Label> model Windows Forms slouží k zobrazení textu nebo obrázků, které uživatel nemůže upravit. Slouží k identifikaci objektů na formuláři – k zadání popisu toho, co určitý ovládací prvek provede, pokud kliknete například nebo zobrazíte informace jako odpověď na událost nebo proces v aplikaci v době běhu. Vzhledem k tomu, že ovládací prvek <xref:System.Windows.Forms.Label> nemůže získat fokus, lze jej také použít k vytvoření přístupových klíčů pro jiné ovládací prvky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
- [Postupy: Vytvoření přístupových klíčů pomocí model Windows Forms ovládacích prvků popisek](how-to-create-access-keys-with-windows-forms-label-controls.md)  
+ [Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label](how-to-create-access-keys-with-windows-forms-label-controls.md)  
  Popisuje, jak použít popisek k definování přístupového klíče pro jiný ovládací prvek.  
   
- [Postupy: Velikost ovládacího prvku popisku model Windows Forms podle jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
+ [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
  Vysvětluje úpravu velikosti ovládacího prvku popisek jeho titulku.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.Label>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

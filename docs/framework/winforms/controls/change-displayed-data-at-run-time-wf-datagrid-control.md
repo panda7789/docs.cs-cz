@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid DataGrid'
+title: Změna zobrazených dat v době běhu v ovládacím prvku DataGrid
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,27 +10,27 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], data binding
 - cells [Windows Forms], changing DataGrid cell values
 ms.assetid: 0c7a6d00-30de-416e-8223-0a81ddb4c1f8
-ms.openlocfilehash: c7bf70a67729744f4cf96318f6b270a5ea81b812
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f91e2ea01ef4a52dd649efed70319017efb8368a
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917729"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740590"
 ---
 # <a name="how-to-change-displayed-data-at-run-time-in-the-windows-forms-datagrid-control"></a>Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid DataGrid
 > [!NOTE]
-> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek <xref:System.Windows.Forms.DataGridView> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.DataGrid>; Nicméně ovládací prvek <xref:System.Windows.Forms.DataGrid> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Po vytvoření model Windows Forms <xref:System.Windows.Forms.DataGrid> pomocí funkcí v době návrhu lze také dynamicky měnit prvky <xref:System.Data.DataSet> objektu mřížky v době běhu. To může zahrnovat změny buď na jednotlivé hodnoty tabulky, nebo změnit, který zdroj dat je svázán s <xref:System.Windows.Forms.DataGrid> ovládacím prvkem. Změny jednotlivých hodnot jsou prováděny prostřednictvím <xref:System.Data.DataSet> objektu, <xref:System.Windows.Forms.DataGrid> nikoli ovládacího prvku.  
+ Po vytvoření model Windows Forms <xref:System.Windows.Forms.DataGrid> pomocí funkcí v době návrhu můžete také v době běhu chtít dynamicky měnit prvky <xref:System.Data.DataSet> objektu mřížky. To může zahrnovat změny buď v jednotlivých hodnotách tabulky, nebo měnit, který zdroj dat je svázán s ovládacím prvkem <xref:System.Windows.Forms.DataGrid>. Změny jednotlivých hodnot se provádí prostřednictvím objektu <xref:System.Data.DataSet>, nikoli pomocí ovládacího prvku <xref:System.Windows.Forms.DataGrid>.  
   
 ### <a name="to-change-data-programmatically"></a>Programové změny dat  
   
-1. Určete požadovanou tabulku z <xref:System.Data.DataSet> objektu a požadovaný řádek a pole z tabulky a nastavte buňku rovnou na novou hodnotu.  
+1. Určete požadovanou tabulku z objektu <xref:System.Data.DataSet> a požadovaný řádek a pole z tabulky a nastavte buňku rovnou na novou hodnotu.  
   
     > [!NOTE]
     > Chcete-li zadat první tabulku <xref:System.Data.DataSet> nebo první řádek tabulky, použijte hodnotu 0.  
   
-     Následující příklad ukazuje, jak změnit druhý záznam prvního řádku v první tabulce datové sady kliknutím na `Button1`. Dříve <xref:System.Data.DataSet> se`ds`vytvořily ()`0` a `1`tabulky (a).  
+     Následující příklad ukazuje, jak změnit druhý záznam prvního řádku v první tabulce datové sady kliknutím na `Button1`. Již byly vytvořeny <xref:System.Data.DataSet> (`ds`) a tabulky (`0` a `1`).  
   
     ```vb  
     Protected Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -64,13 +64,13 @@ ms.locfileid: "69917729"
        gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-     V době spuštění můžete použít <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu k <xref:System.Windows.Forms.DataGrid> navázání ovládacího prvku na jiný zdroj dat. Můžete mít například několik ovládacích prvků ADO.NET data, které jsou připojené k jiné databázi.  
+     V době spuštění můžete použít metodu <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> k navázání ovládacího prvku <xref:System.Windows.Forms.DataGrid> na jiný zdroj dat. Můžete mít například několik ovládacích prvků ADO.NET data, které jsou připojené k jiné databázi.  
   
 ### <a name="to-change-the-datasource-programmatically"></a>Chcete-li změnit zdroj dat programově  
   
-1. <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> Nastavte metodu na název zdroje dat a tabulky, ke které chcete vytvořit propojení.  
+1. Nastavte metodu <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> na název zdroje dat a tabulky, ke které chcete vytvořit propojení.  
   
-     Následující příklad ukazuje, jak změnit zdroj dat pomocí <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metody na ovládací prvek ADO.NET data (adoPubsAuthors), který je připojen k tabulce Autoři v databázi pubs.  
+     Následující příklad ukazuje, jak změnit zdroj dat pomocí metody <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> k ovládacímu prvku ADO.NET data (adoPubsAuthors), který je připojen k tabulce Autoři v databázi pubs.  
   
     ```vb  
     Private Sub ResetSource()  
@@ -96,6 +96,6 @@ ms.locfileid: "69917729"
 ## <a name="see-also"></a>Viz také:
 
 - [Datové sady ADO.NET](../../data/adonet/ado-net-datasets.md)
-- [Postupy: Odstranění nebo skrytí sloupců v model Windows Forms ovládacím prvku DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
-- [Postupy: Přidání tabulek a sloupců do model Windows Forms ovládacího prvku DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
-- [Postupy: Navázání model Windows Forms ovládacího prvku DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
+- [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Postupy: Vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)

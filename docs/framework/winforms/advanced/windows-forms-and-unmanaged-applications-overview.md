@@ -1,5 +1,5 @@
 ---
-title: Windows Forms a přehled nespravovaných aplikací
+title: Přehled nespravovaných aplikací
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [Windows Forms]
@@ -8,59 +8,59 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], about ActiveX controls
 - Windows Forms, interop
 ms.assetid: 0a26d99d-8135-4895-8760-c9a2b5f67f14
-ms.openlocfilehash: 02f3224a8069fd091833bb09744389592c769818
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0b4c3e738848be1ead2adeb1945e168c9db60071
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592498"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732532"
 ---
 # <a name="windows-forms-and-unmanaged-applications-overview"></a>Windows Forms a přehled nespravovaných aplikací
-Aplikace Windows Forms a ovládacích prvků můžete spolupracovat s nespravované aplikace, se některé upozornění. Následující části popisují scénáře a konfigurace, které podporují aplikace a ovládací prvky Windows Forms a ty, které nepodporují.  
+Model Windows Forms aplikace a ovládací prvky mohou spolupracovat s nespravovanými aplikacemi, s některými upozorněními. V následujících částech najdete popis scénářů a konfigurací, které model Windows Forms aplikace a ovládací prvky podporují, a ty, které nepodporují.  
   
-## <a name="windows-forms-controls-and-activex-applications"></a>Windows Forms, ovládací prvky a aplikací ActiveX  
- S výjimkou Microsoft Internet Explorer a Microsoft Foundation Classes (MFC) nejsou podporovány ovládacích prvků Windows Forms v aplikacích, které jsou navržené tak, aby hostitelské ovládací prvky ActiveX. Ostatní aplikace a nástroje pro vývoj, které podporují hostování ovládacích prvků ActiveX, včetně testovacích kontejnerech ActiveX z verze sady Visual Studio, které jsou starší než Visual Studio .NET 2003, nejsou podporované hostitele pro ovládací prvky Windows Forms.  
+## <a name="windows-forms-controls-and-activex-applications"></a>model Windows Forms ovládací prvky a aplikace ActiveX  
+ S výjimkou aplikací Microsoft Internet Explorer a Microsoft Foundation Classes (MFC) nejsou ovládací prvky model Windows Forms podporovány v aplikacích navržených pro hostování ovládacích prvků ActiveX. Jiné aplikace a vývojové nástroje, které jsou schopné hostovat ovládací prvky ActiveX, včetně kontejnerů testů ActiveX z verzí sady Visual Studio, které jsou starší než Visual Studio .NET 2003, nejsou pro ovládací prvky model Windows Forms podporovány.  
   
- Tato omezení platí také pro použití ovládacích prvků Windows Forms pomocí zprostředkovatele komunikace s objekty Component Object Model COM. Použití ovládacího prvku Windows Forms prostřednictvím obálka volatelná aplikacemi COM (CCW) je podporováno pouze v aplikaci Internet Explorer. Další informace o spolupráci s COM naleznete v tématu  
+ Tato omezení platí také pro použití model Windows Formsch ovládacích prvků prostřednictvím zprostředkovatele komunikace s objekty COM komponent modelu COM. Použití ovládacího prvku model Windows Forms přes obálku s podporou modelu COM (doleva) je podporováno pouze v aplikaci Internet Explorer. Další informace o zprostředkovateli komunikace s objekty COM naleznete v tématu.  
   
- [Komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md).  
+ [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md).  
   
- V následující tabulce jsou uvedeny dostupné ActiveX hostování podpora pro ovládací prvky Windows Forms.  
+ V následující tabulce je uvedena dostupná podpora hostování ActiveX pro ovládací prvky model Windows Forms.  
   
-|Verze Windows Forms|Podpora|  
+|Verze model Windows Forms|Podpora|  
 |---------------------------|-------------|  
-|Rozhraní .NET framework verze 1.0|Internet Explorer 5.01 a novější verze|  
-|Rozhraní .NET framework verze 1.1 nebo novější|Internet Explorer 5.01 a novější verze<br /><br /> Microsoft Foundation Classes (MFC) 7.0 nebo novější|  
+|.NET Framework verze 1,0|Internet Explorer 5,01 a novější verze|  
+|.NET Framework verze 1,1 a novější|Internet Explorer 5,01 a novější verze<br /><br /> Microsoft Foundation Classes (MFC) 7,0 a novější|  
   
-## <a name="hosting-windows-forms-components-as-activex-controls"></a>Hostování součásti Windows Forms jako ovládací prvky ActiveX  
- V rozhraní .NET Framework 1.1 se rozšířilo podporu knihovny MFC 7.0 a novější verze. Tato podpora zahrnuje jakýkoli kontejner, který je plně kompatibilní s MFC 7.0 a novější kontejneru ovládacího prvku ActiveX.  
+## <a name="hosting-windows-forms-components-as-activex-controls"></a>Hostování komponent model Windows Forms jako ovládacích prvků ActiveX  
+ V .NET Framework 1,1 byla podpora rozšířena tak, aby zahrnovala knihovnu MFC 7,0 a novější verze. Tato podpora zahrnuje libovolný kontejner, který je plně kompatibilní s kontejnerem ovládacích prvků ActiveX MFC 7,0 a novějším.  
   
- Registrace ovládacích prvků Windows Forms jako ovládací prvky ActiveX, ale není podporován. Také, volání `com.ms.win32.Ole32.CoCreateInstance` nepodporuje metodu pro ovládací prvky Windows Forms. Je podporován pouze spravované aktivace ovládacích prvků Windows Forms. Po vytvoření ovládacího prvku Windows Forms, můžete ho hostovat v aplikacích MFC stejně jako u ovládacího prvku ActiveX.  
+ Nicméně registrace ovládacích prvků model Windows Forms jako ovládacích prvků ActiveX není podporována. Také volání metody `com.ms.win32.Ole32.CoCreateInstance` pro ovládací prvky model Windows Forms není podporováno. Podporovaná je jenom spravovaná aktivace model Windows Formsch ovládacích prvků. Po vytvoření ovládacího prvku model Windows Forms jej můžete hostovat v aplikaci knihovny MFC stejně jako s ovládacím prvkem ActiveX.  
   
- Použití ovládacích prvků Windows Forms v nespravované aplikaci, musíte buď hostování CLR pomocí nespravovaného rozhraní API pro hostování CLR nebo pomocí funkcí interoperability C++. Pomocí funkcí interoperability C++ je doporučené řešení.  
+ Chcete-li použít ovládací prvky model Windows Forms v nespravované aplikaci, je nutné buď hostovat modul CLR pomocí nespravovaného rozhraní API C++ pro hostování CLR, nebo použít funkce spolupráce. Doporučené řešení C++ je použití funkcí spolupráce.  
   
-## <a name="windows-forms-in-com-client-applications"></a>Windows Forms v klientské aplikace modelu COM  
- Když otevřete formulář Windows z klientské aplikace modelu COM, jako je například aplikace v jazyce Visual Basic 6.0 nebo aplikace knihovny MFC může formuláři neočekávané chování. Například když stisknete klávesu TAB, zaměřuje nezmění z jednoho ovládacího prvku k jinému ovládacímu prvku. Když stisknutím klávesy ENTER při příkazové tlačítko má fokus, na tlačítko pro <xref:System.Windows.Forms.Control.Click> není vyvolána událost. Může také nastat, neočekávané chování úhozy na klávesnici nebo myš aktivity.  
+## <a name="windows-forms-in-com-client-applications"></a>model Windows Forms v klientských aplikacích modelu COM  
+ Při otevření formuláře Windows z klientské aplikace modelu COM, jako je například aplikace Visual Basic 6,0 nebo aplikace MFC, se formulář může chovat neočekávaně. Například při stisknutí klávesy TAB se fokus nemění z jednoho ovládacího prvku na jiný ovládací prvek. Když stisknete klávesu ENTER, zatímco příkazové tlačítko má fokus, není vyvolána událost <xref:System.Windows.Forms.Control.Click> tlačítka. Můžete také zaznamenat neočekávané chování pro stisknutí kláves nebo aktivitu myši.  
   
- K tomuto chování dochází, protože nespravovaná aplikace neimplementuje podporu smyčky zpráv vyžadující fungování formulářů Windows. Smyčky zpráv poskytuje klientské aplikace modelu COM je zásadně liší od smyčky zpráv Windows Forms.  
+ K tomuto chování dochází, protože nespravované aplikace neimplementuje podporu smyčky zpráv, kterou model Windows Forms vyžaduje, aby správně fungovala. Smyčka zprávy, kterou poskytuje klientská aplikace modelu COM, se od smyčky zpráv model Windows Forms liší.  
   
- Aplikace zprávu, že je smyčka do interního programu smyčky, která načítá zprávy z fronty zpráv vlákna, přeloží je a potom je odešle do aplikace ke zpracování. Smyčky zpráv pro formulář Windows nemá stejnou architekturu jako smyčky zpráv, které poskytují starší aplikace, jako je aplikace Visual Basic 6.0 a aplikace knihovny MFC. Okno zpráv, které jsou odeslány do smyčky zpráv může zpracovány jinak, než se očekává, že formulář Windows. Proto může dojít k neočekávanému chování. Některé kombinací kláves nemusí fungovat, nemusí fungovat některé aktivity myši nebo některé události nemusí být vyvolány podle očekávání.  
+ Smyčka zpráv aplikace je interní smyčka programu, která načítá zprávy z fronty zpráv vlákna, překládá je a odesílá do aplikace, aby ji bylo možné zpracovat. Smyčka zpráv pro formulář Windows nemá stejnou architekturu jako smyčka zpráv, kterou používají dřívější aplikace, jako jsou například aplikace Visual Basic 6,0 a aplikace MFC. Zprávy oken, které jsou publikovány do smyčky zpráv, mohou být zpracovány odlišně, než systém Windows Form očekává. Proto může dojít k neočekávanému chování. Některé kombinace klávesových úhozů nemusí fungovat, některé aktivity myši nemusí fungovat nebo některé události nemusejí být vyvolány podle očekávání.  
   
-## <a name="resolving-interoperability-issues"></a>Řešení potíží s interoperabilitou  
- Tyto problémy můžete vyřešit zobrazením formuláře ve smyčce zprávy rozhraní .NET Framework, která je vytvořena pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
+## <a name="resolving-interoperability-issues"></a>Řešení problémů s interoperabilitou  
+ Tyto problémy můžete vyřešit zobrazením formuláře ve smyčce zprávy .NET Framework, která je vytvořena pomocí metody <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>.  
   
- Chcete-li pracovní formulář Windows správně z klientské aplikace modelu COM, musíte ho spustit na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
+ Chcete-li, aby formulář Windows pracoval správně z klientské aplikace modelu COM, je nutné jej spustit ve smyčce model Windows Forms zpráv. K tomu použijte jeden z následujících přístupů:  
   
-- Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláře Windows. Další informace najdete v tématu [jak: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
+- K zobrazení formuláře Windows použijte metodu <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType>. Další informace najdete v tématu [Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
   
-- Každý formulář Windows pro zobrazení v novém vláknu. Další informace najdete v tématu [jak: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
+- Zobrazí každý formulář Windows na novém vlákně. Další informace najdete v tématu [Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Model Windows Forms a nespravované aplikace](windows-forms-and-unmanaged-applications.md)
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)
-- [Ukázky vzájemná funkční spolupráce modelu COM](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cxcz83xf(v=vs.90))
+- [Ukázky vzájemné funkční spolupráce modelu COM](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cxcz83xf(v=vs.90))
 - [Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)](../../tools/aximp-exe-windows-forms-activex-control-importer.md)
 - [Vystavení komponent architektury .NET Framework pro COM](../../interop/exposing-dotnet-components-to-com.md)
 - [Zabalení sestavení pro model COM](../../interop/packaging-an-assembly-for-com.md)

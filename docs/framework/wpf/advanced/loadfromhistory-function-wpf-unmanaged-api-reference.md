@@ -1,5 +1,6 @@
 ---
-title: Funkce LoadFromHistory (WPF nespravovaná referenční dokumentace rozhraní API)
+title: Funkce LoadFromHistory – reference nespravovaného rozhraní API WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,17 +9,17 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: d037c062-a911-4949-b251-ccd3e48b1d17
-ms.openlocfilehash: a4480d54390aea2771e2939b0a0825f6c49c3564
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7807e073d1f09ac6a6213aee6d86d53cc75a3c56
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766129"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76727927"
 ---
-# <a name="loadfromhistory-function-wpf-unmanaged-api-reference"></a>Funkce LoadFromHistory (WPF nespravovaná referenční dokumentace rozhraní API)
-Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
+# <a name="loadfromhistory-function-wpf-unmanaged-api-reference"></a>LoadFromHistory – funkce (Referenční dokumentace rozhraní API nespravovaného subsystému WPF)
+Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno pro použití přímo v kódu.  
   
- Používá infrastrukturu Windows Presentation Foundation (WPF) pro správu systému windows.  
+ Používá se v infrastruktuře Windows Presentation Foundation (WPF) pro správu systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,21 +32,21 @@ HRESULT LoadFromHistory_export(
   
 ## <a name="parameters"></a>Parametry  
  pHistoryStream  
- Ukazatel na datový proud informace o historii.  
+ Ukazatel na datový proud informací o historii.  
   
  pBindCtx  
- Ukazatel do kontextu vazby.  
+ Ukazatel na kontext vazby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém .NET Framework](../../get-started/system-requirements.md).  
   
- **DLL:**  
+ **DLL**  
   
- V rozhraní .NET Framework 3.0 a 3.5: PresentationHostDLL.dll  
+ V .NET Framework 3,0 a 3,5: PresentationHostDLL. dll  
   
- V rozhraní .NET Framework 4 a novější: PresentationHost_v0400.dll  
+ V .NET Framework 4 a novější: PresentationHost_v0400. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

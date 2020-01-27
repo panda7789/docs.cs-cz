@@ -1,15 +1,16 @@
 ---
-title: 'Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms'
+title: Hostování složeného ovládacího prvku WPF v model Windows Forms
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: 39124b03b21fe1bc2a5dce3d8fb90ff372ab4853
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 59243e1810757ff0ff58a60ac3eb007bbc227be0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458930"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742682"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohatou prostředí pro vytváření aplikací. Pokud ale v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu máte významnou investici, může být efektivnější rozlišit vaši stávající aplikaci [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] místo toho, aby se přepsala od začátku. Běžným scénářem je, že chcete vložit jeden nebo více ovládacích prvků implementovaných pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci aplikace model Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF naleznete v tématu [Control Customizing](../controls/control-customization.md).  
@@ -213,7 +214,7 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
   
     - PresentationFramework  
   
-    - System. XAML  
+    - System.Xaml  
   
     - WindowsBase  
   
@@ -232,7 +233,7 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
   
     |Name|Text|  
     |----------|----------|  
-    |Skupinový rámeček 1|Barva pozadí|  
+    |groupBox1|Barva pozadí|  
     |groupBox2|Barva popředí|  
     |groupBox3|Velikost písma|  
     |groupBox4|Rodina písem|  
@@ -244,19 +245,19 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
   
     |GroupBox|Name|Text|  
     |--------------|----------|----------|  
-    |Skupinový rámeček 1|radioBackgroundOriginal|Původně|  
-    |Skupinový rámeček 1|radioBackgroundLightGreen|LightGreen|  
-    |Skupinový rámeček 1|radioBackgroundLightSalmon|LightSalmon|  
+    |groupBox1|radioBackgroundOriginal|Původně|  
+    |groupBox1|radioBackgroundLightGreen|LightGreen|  
+    |groupBox1|radioBackgroundLightSalmon|LightSalmon|  
     |groupBox2|radioForegroundOriginal|Původně|  
-    |groupBox2|radioForegroundRed|erytrocyty|  
-    |groupBox2|radioForegroundYellow|opatřen|  
+    |groupBox2|radioForegroundRed|Červená|  
+    |groupBox2|radioForegroundYellow|Opatřen|  
     |groupBox3|radioSizeOriginal|Původně|  
-    |groupBox3|radioSizeTen|10pruhový|  
-    |groupBox3|radioSizeTwelve|12,5|  
+    |groupBox3|radioSizeTen|10|  
+    |groupBox3|radioSizeTwelve|12|  
     |groupBox4|radioFamilyOriginal|Původně|  
     |groupBox4|radioFamilyTimes|Times New Roman|  
     |groupBox4|radioFamilyWingDings|Písm|  
-    |groupBox5|radioStyleOriginal|Běžnou|  
+    |groupBox5|radioStyleOriginal|Normální|  
     |groupBox5|radioStyleItalic|Kurzíva|  
     |groupBox6|radioWeightOriginal|Původně|  
     |groupBox6|radioWeightBold|Psaného|  
@@ -265,11 +266,11 @@ Následující obrázek ukazuje složený ovládací prvek WPF hostovaný v apli
   
     |GroupBox|Name|Text|  
     |--------------|----------|----------|  
-    |groupBox7|lblName|Jméno:|  
+    |groupBox7|lblName|Název:|  
     |groupBox7|lblAddress|Adresa ulice:|  
-    |groupBox7|lblCity|Vatikán|  
-    |groupBox7|lblState|Státech|  
-    |groupBox7|lblZip|Věřitel|  
+    |groupBox7|lblCity|Město:|  
+    |groupBox7|lblState|Stav:|  
+    |groupBox7|lblZip|Zip:|  
   
 ### <a name="initializing-the-form"></a>Inicializuje se formulář.  
  Obecně implementujete hostující kód v obslužné rutině události <xref:System.Windows.Forms.Form.Load> formuláře. Následující kód ukazuje obslužnou rutinu události <xref:System.Windows.Forms.Form.Load>, obslužná rutina pro <xref:System.Windows.FrameworkElement.Loaded> událost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku a deklarace pro několik globálních proměnných, které jsou používány později.  

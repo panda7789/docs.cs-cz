@@ -1,5 +1,6 @@
 ---
-title: Vzájemná spolupráce grafického subsystému WPF a systému Win32
+title: Interoperabilita WPF a Win32
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
-ms.openlocfilehash: d7e63c30040a90e29a9fb4acd0ecc897ca328c1f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 7b7c3ed8f9833094ce1e836c11f84132ae84def2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740203"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735228"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Win32
 

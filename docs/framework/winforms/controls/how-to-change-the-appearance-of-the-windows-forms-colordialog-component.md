@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna vzhledu komponenty Windows Forms ColorDialog'
+title: Změna vzhledu součásti ColorDialog
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,23 +10,23 @@ helpviewer_keywords:
 - ColorDialog component [Windows Forms], formatting appearance
 - color dialog box [Windows Forms], configuring appearance
 ms.assetid: bba4e262-1cd7-4f63-89cf-330a36f7b539
-ms.openlocfilehash: d2bb9e06d9d84a9b61c67510e9c012066f69d55e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0402d7f3c03a0771512a03ac54e1b093c9fe6e9b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61595449"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746637"
 ---
-# <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Postupy: Změna vzhledu komponenty Windows Forms ColorDialog
-Můžete nakonfigurovat vzhledu Windows Forms <xref:System.Windows.Forms.ColorDialog> komponentu s celou řadou její vlastnosti. Dialogové okno obsahuje dvě části – ten, který zobrazuje základní barvy a ten, který umožňuje uživateli definovat vlastní barvy.  
+# <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Postupy: Změna vzhledu součásti Windows Forms ColorDialog
+Můžete nakonfigurovat vzhled součásti model Windows Forms <xref:System.Windows.Forms.ColorDialog> s řadou vlastností. Dialogové okno obsahuje dvě části, které zobrazují základní barvy a jeden, který uživateli umožňuje definovat vlastní barvy.  
   
- Většina vlastností omezení jaké barev, může uživatel vybrat z dialogového okna. Pokud <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A> je nastavena na `true`, uživatel může definovat vlastní barvy. <xref:System.Windows.Forms.ColorDialog.FullOpen%2A> Vlastnost `true` Pokud dialogovém rozbalen a definovat vlastní barvy; jinak uživatel musí kliknout na tlačítko "Definovat vlastní barvy". Když <xref:System.Windows.Forms.ColorDialog.AnyColor%2A> je nastavena na `true`, zobrazí dialogové okno v sadě základních barev všechny barvy k dispozici. Pokud <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A> je nastavena na `true`, uživatel nemůže vybrat dithered pro bitové barvy, jsou k dispozici k výběru pouze plné barvy.  
+ Většina vlastností omezuje barvy, které uživatel může vybrat z dialogového okna. Pokud je vlastnost <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A> nastavena na hodnotu `true`, uživatel může definovat vlastní barvy. Vlastnost <xref:System.Windows.Forms.ColorDialog.FullOpen%2A> je `true`, pokud je dialogové okno rozbaleno pro definování vlastních barev; v opačném případě musí uživatel kliknout na tlačítko "definovat vlastní barvy". Pokud je vlastnost <xref:System.Windows.Forms.ColorDialog.AnyColor%2A> nastavena na hodnotu `true`, dialogové okno zobrazí všechny dostupné barvy v sadě základních barev. Pokud je vlastnost <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A> nastavena na hodnotu `true`, uživatel nemůže vybrat rozdané barvy; pro výběr jsou k dispozici pouze plné barvy.  
   
- Pokud <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> je nastavena na `true`, v dialogovém okně se zobrazí tlačítko Nápověda. Když uživatel klikne na tlačítko Nápověda <xref:System.Windows.Forms.ColorDialog> komponenty <xref:System.Windows.Forms.CommonDialog.HelpRequest> událost se vyvolá.  
+ Pokud je vlastnost <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> nastavena na hodnotu `true`, zobrazí se v dialogovém okně tlačítko Help. Když uživatel klikne na tlačítko Help, vyvolá se událost <xref:System.Windows.Forms.CommonDialog.HelpRequest> <xref:System.Windows.Forms.ColorDialog> komponenty.  
   
-### <a name="to-configure-the-appearance-of-the-color-dialog-box"></a>Konfigurace vzhledu dialogové okno barev  
+### <a name="to-configure-the-appearance-of-the-color-dialog-box"></a>Konfigurace vzhledu dialogového okna Barva  
   
-1. Nastavte <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>, <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>, <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>, a <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> vlastnosti na požadované hodnoty.  
+1. Nastavte vlastnosti <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>, <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>, <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>a <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> na požadované hodnoty.  
   
     ```vb  
     ColorDialog1.AllowFullOpen = True  

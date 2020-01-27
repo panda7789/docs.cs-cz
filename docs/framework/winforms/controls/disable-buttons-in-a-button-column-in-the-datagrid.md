@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zákaz tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView'
+title: Zakázání tlačítek ve sloupci tlačítka v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - buttons [Windows Forms], disabling in button columns
 - DataGridView control [Windows Forms], disabling button cells
 ms.assetid: 5c344d01-013a-4a6b-8f8d-62ec9321d81e
-ms.openlocfilehash: b8bb503186e41c682b0685e4c9c4bf0bb3adcbe8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 691781a43005d66e13029ab8110eb7f9daacc35f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967387"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745945"
 ---
 # <a name="how-to-disable-buttons-in-a-button-column-in-the-windows-forms-datagridview-control"></a>Postupy: Zákaz tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Ovládací prvek <xref:System.Windows.Forms.DataGridViewButtonCell> obsahuje třídu pro zobrazení buněk s uživatelským rozhraním (UI) jako tlačítko. <xref:System.Windows.Forms.DataGridViewButtonCell> Ale neposkytuje způsob, jak zakázat vzhled tlačítka zobrazovaného buňkou.  
+Ovládací prvek <xref:System.Windows.Forms.DataGridView> obsahuje třídu <xref:System.Windows.Forms.DataGridViewButtonCell> pro zobrazení buněk s uživatelským rozhraním (UI) jako tlačítko. <xref:System.Windows.Forms.DataGridViewButtonCell> ale neposkytuje způsob, jak zakázat vzhled tlačítka zobrazovaného buňkou.  
   
- Následující příklad kódu ukazuje, jak přizpůsobit <xref:System.Windows.Forms.DataGridViewButtonCell> třídu pro zobrazení tlačítek, která se mohou zobrazit zakázané. Příklad definuje nový typ `DataGridViewDisableButtonCell`buňky,, který je odvozen z. <xref:System.Windows.Forms.DataGridViewButtonCell> Tento typ buňky poskytuje novou `Enabled` vlastnost, kterou lze `false` nastavit na vykreslení zakázaného tlačítka v buňce. V příkladu je také definován nový typ `DataGridViewDisableButtonColumn`sloupce, který zobrazuje `DataGridViewDisableButtonCell` objekty. Pro ukázku tohoto nového typu buňky a sloupce určuje aktuální <xref:System.Windows.Forms.DataGridViewCheckBoxCell> hodnota každého v nadřazeném objektu <xref:System.Windows.Forms.DataGridView> , `DataGridViewDisableButtonCell` zda `Enabled` je `true` vlastnost ve stejném řádku nebo `false`.  
+ Následující příklad kódu ukazuje, jak přizpůsobit třídu <xref:System.Windows.Forms.DataGridViewButtonCell> pro zobrazení tlačítek, která se mohou zobrazit zakázané. Příklad definuje nový typ buňky `DataGridViewDisableButtonCell`, který je odvozen z <xref:System.Windows.Forms.DataGridViewButtonCell>. Tento typ buňky poskytuje novou vlastnost `Enabled`, kterou lze nastavit tak, aby `false` vykreslila zakázané tlačítko v buňce. V příkladu je také definován nový typ sloupce `DataGridViewDisableButtonColumn`, který zobrazí `DataGridViewDisableButtonCell` objekty. Chcete-li Ukázat tento nový typ buňky a sloupce, aktuální hodnota každé <xref:System.Windows.Forms.DataGridViewCheckBoxCell> v nadřazené <xref:System.Windows.Forms.DataGridView> určuje, zda je vlastnost `Enabled` `DataGridViewDisableButtonCell` na stejném řádku `true` nebo `false`.  
   
 > [!NOTE]
-> Při odvozování z <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewColumn> a přidání nových vlastností na odvozenou třídu nezapomeňte přepsat `Clone` metodu pro kopírování nových vlastností během operací klonování. Měli byste také zavolat `Clone` metodu základní třídy tak, aby byly vlastnosti základní třídy zkopírovány do nové buňky nebo sloupce.  
+> Při odvozování z <xref:System.Windows.Forms.DataGridViewCell> nebo <xref:System.Windows.Forms.DataGridViewColumn> a přidání nových vlastností do odvozené třídy nezapomeňte přepsat metodu `Clone` pro kopírování nových vlastností během operací klonování. Měli byste také zavolat metodu `Clone` základní třídy tak, aby byly vlastnosti základní třídy zkopírovány do nové buňky nebo sloupce.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridView.DisabledButtons#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.DisabledButtons/CS/form1.cs#0)]

@@ -2,12 +2,12 @@
 title: Režim kompatibility ASP.NET
 ms.date: 03/30/2017
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-ms.openlocfilehash: 0938075464a0f2739bdb2a9d8ed1f16f61edff2b
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 1f1690cdd1a880c852abc04ea8e4958bae2c5432
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716161"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728018"
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
 
@@ -130,4 +130,4 @@ Press <ENTER> to terminate client.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Hostování technologie AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+- [Hostování technologie AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

@@ -1,5 +1,6 @@
 ---
-title: 'Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms'
+title: Reakce na změny schématu písem v aplikaci model Windows Forms
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,62 +8,62 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, font scheme changes
 ms.assetid: 4db27702-22e7-43bf-a07d-9a004549853c
-ms.openlocfilehash: 9fd7f99b35730cf867bfad5da24bc3f223e9a0f8
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: e3b96139a7cfd4b268d81b1da58229527e2beb87
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425337"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739225"
 ---
 # <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms
-V operačních systémech Windows uživatel může změnit nastavení systémová písma a ujistěte se zobrazí výchozí písmo větší nebo menší. Změna těchto písmo nastavení je velmi důležité pro uživatele, kteří jsou slabozraké a vyžadují větší typ čtení textu na obrazovce. Můžete upravit aplikaci Windows Forms k reagovat na tyto změny zvýšením nebo snížením velikosti formuláře a veškerý text při každé změně schématu písem. Pokud chcete formuláře dynamicky přizpůsobí změny velikosti písma, můžete přidat kód do formuláře.  
+V operačních systémech Windows může uživatel změnit nastavení písem v rámci systému tak, aby výchozí písmo bylo větší nebo menší. Změna těchto nastavení písma je zásadní pro uživatele, kteří jsou vizuálně poškozeni a vyžadují větší typ pro čtení textu na svých obrazovkách. Aplikaci model Windows Forms můžete upravit tak, aby reagovala na tyto změny tím, že se zvětší nebo zmenší velikost formuláře a veškerý text, kdykoli se změní schéma písem. Pokud chcete, aby formulář přizpůsobil změny velikosti písma dynamicky, můžete do formuláře přidat kód.  
   
- Obvykle je výchozí písmo použité ve Windows Forms písma vrácené <xref:Microsoft.Win32> obor názvů volání `GetStockObject(DEFAULT_GUI_FONT)`. Pokud se rozlišení změní pouze změní písmo vrácený toto volání. Jak je znázorněno v následujícím postupu, musí váš kód změnit výchozí písmo na <xref:System.Drawing.SystemFonts.IconTitleFont%2A> reakce na změny velikosti písma.  
+ Výchozí písmo, které používá model Windows Forms, je obvykle písmo, které je vráceno voláním <xref:Microsoft.Win32> oboru názvů do `GetStockObject(DEFAULT_GUI_FONT)`. Písmo vrácené tímto voláním se změní pouze při změně rozlišení obrazovky. Jak je znázorněno v následujícím postupu, váš kód musí změnit výchozí písmo, aby <xref:System.Drawing.SystemFonts.IconTitleFont%2A> reagovat na změny velikosti písma.  
   
-### <a name="to-use-the-desktop-font-and-respond-to-font-scheme-changes"></a>Písmo plochy pomocí a reagovat na změny schématu písem  
+### <a name="to-use-the-desktop-font-and-respond-to-font-scheme-changes"></a>Použití písma desktopu a reakce na změny schématu písem  
   
-1. Vytvoření formuláře a ovládací prvky, které chcete přidat do ní. Další informace najdete v tématu [jak: Vytvoření aplikace Windows Forms z příkazového řádku](how-to-create-a-windows-forms-application-from-the-command-line.md) a [ovládací prvky používané ve formulářích Windows](./controls/controls-to-use-on-windows-forms.md).  
+1. Vytvořte formulář a přidejte do něj ovládací prvky, které chcete do něj přidat. Další informace najdete v tématu [Postup: Vytvoření aplikace model Windows Forms z příkazového řádku](how-to-create-a-windows-forms-application-from-the-command-line.md) a [ovládací prvky pro použití v model Windows Forms](./controls/controls-to-use-on-windows-forms.md).  
   
-2. Přidejte odkaz na <xref:Microsoft.Win32> oboru názvů do vašeho kódu.  
+2. Přidejte odkaz na obor názvů <xref:Microsoft.Win32> do kódu.  
   
      [!code-csharp[WinFormsAutoScaling#2](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#2)]
      [!code-vb[WinFormsAutoScaling#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#2)]  
   
-3. Přidejte následující kód do konstruktoru formuláře k obslužné rutiny události požadované připojení a chcete-li změnit výchozí písmo používané pro daný formulář.  
+3. Přidejte následující kód do konstruktoru formuláře pro zapojení požadovaných obslužných rutin událostí a pro změnu výchozího písma používaného pro formulář.  
   
      [!code-csharp[WinFormsAutoScaling#3](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#3)]
      [!code-vb[WinFormsAutoScaling#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#3)]  
   
-4. Implementujte obslužnou rutinu pro <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> událost, která způsobí, že formulář pro automatické škálování při <xref:Microsoft.Win32.UserPreferenceCategory.Window> změny kategorií.  
+4. Implementujte obslužnou rutinu pro událost <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>, která způsobuje automatické škálování formuláře při změně kategorie <xref:Microsoft.Win32.UserPreferenceCategory.Window>.  
   
      [!code-csharp[WinFormsAutoScaling#4](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#4)]
      [!code-vb[WinFormsAutoScaling#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#4)]  
   
-5. A konečně, implementujte obslužnou rutinu pro <xref:System.Windows.Forms.Form.FormClosing> událost, která se odpojí <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> obslužné rutiny události.  
+5. Nakonec Implementujte obslužnou rutinu pro událost <xref:System.Windows.Forms.Form.FormClosing>, která odpojí obslužnou rutinu události <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>.  
   
      > [!IMPORTANT]
-     > Nepodařilo se přidat tento kód způsobí aplikace únik paměti.  
+     > Pokud nechcete tento kód zahrnout do paměti, může vaše aplikace nevrácená paměť.  
   
      [!code-csharp[WinFormsAutoScaling#5](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#5)]
      [!code-vb[WinFormsAutoScaling#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#5)]  
   
-6. Kompilace a spuštění kódu.  
+6. Zkompilujte a spusťte kód.  
   
-### <a name="to-manually-change-the-font-scheme-in-windows-xp"></a>Ruční změny schématu písem ve Windows XP  
+### <a name="to-manually-change-the-font-scheme-in-windows-xp"></a>Ruční změna schématu písem v systému Windows XP  
   
-1. Když je spuštěna aplikace Windows Forms, klikněte pravým tlačítkem na plochu Windows a zvolte **vlastnosti** z místní nabídky.  
+1. Když je vaše aplikace model Windows Forms spuštěná, klikněte pravým tlačítkem myši na plochu Windows a v místní nabídce vyberte **vlastnosti** .  
   
-2. V **vlastnosti zobrazení** dialogové okno, klikněte na tlačítko **vzhled** kartu.  
+2. V dialogovém okně **zobrazení vlastností** klikněte na kartu **vzhled** .  
   
-3. Z **velikost písma** rozevíracího seznamu vyberte novou velikost písma.  
+3. V rozevíracím seznamu **Velikost písma** vyberte novou velikost písma.  
   
-     Můžete si všimnout, že formulář nyní reaguje na změny za běhu v režimu plochy písma. Když uživatel změní mezi **normální**, **velká písma**, a **další velký písma**, formulář se změní písmo a škáluje správně.  
+     Všimněte si, že formulář nyní reaguje na změny za běhu ve schématu písem pro stolní počítače. Když se uživatel změní mezi **normálním**, **velkým písmem**a **dalšími velkými**písmy, změní formulář písmo a správně škáluje.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[WinFormsAutoScaling#1](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#1)]
  [!code-vb[WinFormsAutoScaling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#1)]  
   
- Konstruktor v tomto příkladu kód obsahuje volání `InitializeComponent`, který je definován při vytváření nového projektu Windows Forms v sadě Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
+ Konstruktor v tomto příkladu kódu obsahuje volání `InitializeComponent`, které je definováno při vytváření nového projektu model Windows Forms v aplikaci Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
   
 ## <a name="see-also"></a>Viz také:
 

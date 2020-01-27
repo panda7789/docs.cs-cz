@@ -1,5 +1,6 @@
 ---
-title: Funkce CreateIDispatchSTAForwarder (WPF nespravovaná referenční dokumentace rozhraní API)
+title: Funkce CreateIDispatchSTAForwarder – reference nespravovaného rozhraní API WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,17 +9,17 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: 57a02dfa-f091-4ace-9c06-1f4ab52b3527
-ms.openlocfilehash: a89b29cd459060c93d5ca77bb2154e1a10b02d03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67f2542733fb9c6af197c99ede2bd097ce876b5d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926448"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738031"
 ---
-# <a name="createidispatchstaforwarder-function-wpf-unmanaged-api-reference"></a>Funkce CreateIDispatchSTAForwarder (WPF nespravovaná referenční dokumentace rozhraní API)
-Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
+# <a name="createidispatchstaforwarder-function-wpf-unmanaged-api-reference"></a>CreateIDispatchSTAForwarder – funkce (Referenční dokumentace rozhraní API nespravovaného subsystému WPF)
+Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno pro použití přímo v kódu.  
   
- Používá infrastrukturu Windows Presentation Foundation (WPF) pro správu vlákna a windows.  
+ Používáno infrastrukturou Windows Presentation Foundation (WPF) pro vlákna a správu systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,21 +34,21 @@ HRESULT CreateIDispatchSTAForwarder(
   
 ## <a name="property-valuereturn-value"></a>Hodnota vlastnosti / návratová hodnota  
  pDispatchDelegate  
- Ukazatel `IDispatch` rozhraní.  
+ Ukazatel na rozhraní `IDispatch`.  
   
  ppForwarder  
- Ukazatel na adresu `IDispatch` rozhraní.  
+ Ukazatel na adresu `IDispatch`ho rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém .NET Framework](../../get-started/system-requirements.md).  
   
- **DLL:**  
+ **DLL**  
   
- V rozhraní .NET Framework 3.0 a 3.5: PresentationHostDLL.dll  
+ V .NET Framework 3,0 a 3,5: PresentationHostDLL. dll  
   
- V rozhraní .NET Framework 4 a novější: PresentationHost_v0400.dll  
+ V .NET Framework 4 a novější: PresentationHost_v0400. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

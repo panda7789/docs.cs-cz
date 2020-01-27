@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox'
+title: Výběr textu v ovládacím prvku TextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,31 +10,31 @@ helpviewer_keywords:
 - text boxes [Windows Forms], selecting text programmatically
 - text [Windows Forms], selecting in text boxes programmatically
 ms.assetid: 8c591546-6a01-45c7-8e03-f78431f903b1
-ms.openlocfilehash: 3bb1245cd47084935d632ff345a32058db6074e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a32e40f14ddae6f8ddcaa6d62337329df6fde26
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013293"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745316"
 ---
 # <a name="how-to-select-text-in-the-windows-forms-textbox-control"></a>Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox
-Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.Forms.TextBox> ovládacího prvku. Pokud vytvoříte funkci, která hledá text pro určitý řetězec, můžete vybrat text, který má vizuální upozornění čtečky nalezený řetězec pozici.  
+Můžete vybrat text programově v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.TextBox>. Například pokud vytvoříte funkci, která vyhledává text konkrétního řetězce, můžete vybrat text, který vizuálně upozorní čtenáře nalezené pozice řetězce.  
   
-### <a name="to-select-text-programmatically"></a>Chcete-li vybrat text prostřednictvím kódu programu  
+### <a name="to-select-text-programmatically"></a>Výběr textu prostřednictvím kódu programu  
   
-1. Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> vlastnost na začátek textu, který chcete vybrat.  
+1. Vlastnost <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> nastavte na začátek textu, který chcete vybrat.  
   
-     <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> Vlastnost je číslo, které označuje kurzor do textového řetězce, s 0 se pozice nejvíce vlevo. Pokud <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> je nastavena na hodnotu roven nebo větší než počet znaků v textovém poli, kurzor je umístěn za posledním znakem.  
+     Vlastnost <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> je číslo, které označuje pozici kurzoru v řetězci textu, přičemž 0 je největší pozice vlevo. Pokud je vlastnost <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> nastavena na hodnotu větší nebo rovna počtu znaků v textovém poli, je kurzor umístěn za posledním znakem.  
   
-2. Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnost Délka textu, kterou chcete vybrat.  
+2. Vlastnost <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> nastavte na délku textu, který chcete vybrat.  
   
-     <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> Vlastnost má číselnou hodnotu, která nastavuje šířku kurzor. Nastavení <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> na číslo větší než 0 způsobí, že se tento počet znaků, které mají být vybrán, od z do aktuálního místa vložení.  
+     Vlastnost <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> je číselná hodnota, která nastavuje šířku bodu vložení. Nastavení <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> na číslo větší než 0 způsobí, že počet znaků, které mají být vybrány, počínaje aktuálním místem vložení.  
   
-3. (Volitelné) Přístup prostřednictvím vybraný text <xref:System.Windows.Forms.TextBoxBase.SelectedText%2A> vlastnost.  
+3. Volitelné Přístup k vybranému textu prostřednictvím vlastnosti <xref:System.Windows.Forms.TextBoxBase.SelectedText%2A>.  
   
-     Kód uvedený níže vybere obsah textového pole, když ovládací prvek <xref:System.Windows.Forms.Control.Enter> dojde k události. Tento příklad kontroluje, jestli do textového pole má hodnotu <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost, která není `null` nebo prázdný řetězec. Když bude vybrán, do textového pole, je vybrána aktuální text v textovém poli. `TextBox1_Enter` Obslužné rutiny události musí být vázán na ovládací prvek; další informace naleznete v tématu [jak: Vytváření obslužných rutin událostí pro Windows Forms v době běhu](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
+     Následující kód vybírá obsah textového pole, když dojde k události <xref:System.Windows.Forms.Control.Enter> ovládacího prvku. Tento příklad kontroluje, zda má textové pole hodnotu vlastnosti <xref:System.Windows.Forms.TextBox.Text%2A>, která není `null` nebo prázdný řetězec. Když textové pole dostane fokus, je vybrán aktuální text v textovém poli. Obslužná rutina události `TextBox1_Enter` musí být svázána s ovládacím prvkem. Další informace naleznete v tématu [Postupy: vytváření obslužných rutin událostí v době běhu pro model Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
   
-     K otestování v tomto příkladu, stiskněte klávesu Tab, dokud do textového pole má fokus. Pokud kliknete do textového pole, text byl zrušen výběr cesty.  
+     Chcete-li otestovat tento příklad, stiskněte klávesu TAB, dokud textové pole nemá fokus. Pokud kliknete na textové pole, text nebude vybrán.  
   
     ```vb  
     Private Sub TextBox1_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox1.Enter  
@@ -73,7 +73,7 @@ Text můžete vybrat programově v rozhraní Windows Forms <xref:System.Windows.
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)
 - [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
 - [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
-- [Postupy: Vytvoření pole jen pro čtení textu](how-to-create-a-read-only-text-box-windows-forms.md)
+- [Postupy: Vytvoření textového pole určeného jen pro čtení](how-to-create-a-read-only-text-box-windows-forms.md)
 - [Postupy: Vkládání uvozovek do řetězce](how-to-put-quotation-marks-in-a-string-windows-forms.md)
-- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
 - [Ovládací prvek TextBox](textbox-control-windows-forms.md)

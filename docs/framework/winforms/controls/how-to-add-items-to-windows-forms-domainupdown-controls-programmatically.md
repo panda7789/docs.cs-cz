@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Programové přidávání položek do ovládacích prvků Windows Forms DomainUpDown'
+title: Programové přidávání položek do ovládacích prvků DomainUpDown
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +9,19 @@ helpviewer_keywords:
 - spin button control [Windows Forms], adding items
 - DomainUpDown control [Windows Forms], adding items to
 ms.assetid: fd31d314-33eb-4181-90f8-d32ed0c4e072
-ms.openlocfilehash: ef44a9e68b8007d57fc7442a178ae98322747c99
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 2e9f51fa051bf9b62e95f289db97bffd83450036
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343672"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745591"
 ---
 # <a name="how-to-add-items-to-windows-forms-domainupdown-controls-programmatically"></a>Postupy: Programové přidávání položek do ovládacích prvků Windows Forms DomainUpDown
-Můžete přidat položky do formulářů Windows <xref:System.Windows.Forms.DomainUpDown> ovládacího prvku v kódu. Volání <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> nebo <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> třídy k přidání položek do ovládacího prvku <xref:System.Windows.Forms.DomainUpDown.Items%2A> vlastnost. <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> Metoda přidá položku na konec kolekce, zatímco <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metoda přidá položku na určené pozici.  
+Do ovládacího prvku model Windows Forms <xref:System.Windows.Forms.DomainUpDown> lze přidat položky v kódu. Chcete-li přidat položky do vlastnosti <xref:System.Windows.Forms.DomainUpDown.Items%2A> ovládacího prvku, zavolejte metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> nebo <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> třídy <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection>. Metoda <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> přidá položku na konec kolekce, zatímco metoda <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> přidá položku na určenou pozici.  
   
-### <a name="to-add-a-new-item"></a>Chcete-li přidat novou položku  
+### <a name="to-add-a-new-item"></a>Přidání nové položky  
   
-1. Použití <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> způsob, jak přidat položku na konec seznamu položek.  
+1. Chcete-li přidat položku na konec seznamu položek, použijte metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A>.  
   
     ```vb  
     DomainUpDown1.Items.Add("noodles")  
@@ -37,7 +37,7 @@ Můžete přidat položky do formulářů Windows <xref:System.Windows.Forms.Dom
   
      -nebo-  
   
-2. Použití <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> metodu pro vložení položky do seznamu na zadané pozici.  
+2. Použijte metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> pro vložení položky do seznamu na zadané pozici.  
   
     ```vb  
     ' Inserts an item at the third position in the list  

@@ -2,12 +2,12 @@
 title: Úkoly strojového učení
 description: Prozkoumejte různé úlohy strojového učení a související úlohy, které jsou podporované v ML.NET.
 ms.date: 12/23/2019
-ms.openlocfilehash: badb096ab3e7fbd575d8594b4fbd0e2ebaf63820
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 6cd41065e668375537b9816ef7a208a65e0a523b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75739636"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745098"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Úlohy strojového učení v ML.NET
 
@@ -85,6 +85,7 @@ Model klasifikace s více třídami můžete proškolit pomocí následujících
 * <xref:Microsoft.ML.Trainers.NaiveBayesMulticlassTrainer>
 * <xref:Microsoft.ML.Trainers.OneVersusAllTrainer>
 * <xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer>
+* <xref:Microsoft.ML.Vision.ImageClassificationTrainer>
 
 ### <a name="multiclass-classification-inputs-and-outputs"></a>Vstupy a výstupy s více třídami klasifikace
 
@@ -187,7 +188,7 @@ Tento Trainer má následující výstup:
 | `Score` | <xref:System.Single> | Nezáporné, neohraničené skóre, které bylo vypočítáno modelem detekce anomálií |
 | `PredictedLabel` | <xref:System.Boolean> | Hodnota true nebo false, která představuje, zda je vstup anomálií (PredictedLabel = true) nebo ne (PredictedLabel = false) |
 
-## <a name="ranking"></a>Nejlepší hodnocení
+## <a name="ranking"></a>Pořadí
 
 Úkol hodnocení sestaví seřazení ze sady popisných příkladů. Tato ukázková sada se skládá ze skupin instancí, jejichž skóre se dá vyhodnotit pomocí daných kritérií. Popisky hodnocení jsou pro každou instanci {0, 1, 2, 3, 4}.  Klasifikátor je vyškolen pro řazení nových skupin instancí s neznámým skóre pro každou instanci. Seznámení s ML.NETm řazením [počítačů se seznámili podle hodnocení](https://en.wikipedia.org/wiki/Learning_to_rank) .
 
@@ -219,3 +220,13 @@ Tento Trainer má následující výstup:
 Model doporučení můžete vyškolit pomocí následujícího algoritmu:
 
 * <xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer>
+
+## <a name="forecasting"></a>Prognózování
+
+Úkol prognózy používá data v minulosti v rámci časových řad k předpovědií o budoucím chování. Scénáře, které se týkají předpovědi, zahrnují předpověď počasí, sezónní prodej předpovědi a prediktivní údržba.
+
+### <a name="forecasting-trainers"></a>Předpověď školitelů
+
+Prognózový model můžete proškolit pomocí následujícího algoritmu:
+
+<xref:Microsoft.ML.TimeSeriesCatalog.ForecastBySsa*>

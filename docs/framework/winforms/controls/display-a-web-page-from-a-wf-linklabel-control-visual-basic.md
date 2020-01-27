@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení webové stránky z ovládacího prvku Windows Forms LinkLabel (Visual Basic)'
+title: Zobrazení webové stránky z ovládacího prvku LinkLabel (Visual Basic)
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Windows Forms, linking to Web pages
 - LinkLabel control [Windows Forms], examples
 ms.assetid: 477a7398-5971-4de3-b24c-f49f32bdb28a
-ms.openlocfilehash: f36f5bbaaf28963fc95440a4f3a174b8b48f6276
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 75373d55b7bc5ef11e39d5b9546996cb1c4f6f7c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651804"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745929"
 ---
 # <a name="how-to-display-a-web-page-from-a-windows-forms-linklabel-control-visual-basic"></a>Postupy: Zobrazení webové stránky z ovládacího prvku Windows Forms LinkLabel (Visual Basic)
-Tento příklad zobrazuje webovou stránku ve výchozím prohlížeči, když uživatel klikne na tlačítko Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládacího prvku.  
+Tento příklad zobrazí webovou stránku ve výchozím prohlížeči, když uživatel klikne na ovládací prvek <xref:System.Windows.Forms.LinkLabel> model Windows Forms.  
   
 ## <a name="example"></a>Příklad  
   
@@ -40,14 +40,14 @@ End Sub
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Formuláře Windows s názvem `Form1`.  
+- Formulář Windows s názvem `Form1`.  
   
-- A <xref:System.Windows.Forms.LinkLabel> ovládací prvek s názvem `LinkLabel1`.  
+- <xref:System.Windows.Forms.LinkLabel> ovládací prvek s názvem `LinkLabel1`.  
   
 - Aktivní připojení k Internetu.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Volání <xref:System.Diagnostics.Process.Start%2A> metoda vyžaduje úplný vztah důvěryhodnosti. Další informace naleznete v tématu <xref:System.Security.SecurityException>.  
+ Volání metody <xref:System.Diagnostics.Process.Start%2A> vyžaduje úplný vztah důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.SecurityException>.  
   
 ## <a name="see-also"></a>Viz také:
 

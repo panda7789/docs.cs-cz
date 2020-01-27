@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření seznamu okna MDI pomocí MenuStrip (Windows Forms)'
+title: 'Postupy: Vytvoření seznamu okna MDI pomocí MenuStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,35 +8,35 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating window lists
 - MenuStrip control [Windows Forms], creating window lists
 ms.assetid: 04fb414b-811f-4a83-aab6-b4a24646dec5
-ms.openlocfilehash: 229afc879be6407340e2fca6c3b2474475bcb5a6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f013c3df2ab5783a22fe2c34402dc53a328cafa2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611973"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731018"
 ---
 # <a name="how-to-create-an-mdi-window-list-with-menustrip-windows-forms"></a>Postupy: Vytvoření seznamu okna MDI pomocí MenuStrip (Windows Forms)
-Můžete vytvářet aplikace, které můžete otevřít několik dokumentů ve stejný čas a zkopírujte a vložte obsah z jednoho dokumentu do jiné rozhraní více dokumentů (MDI).  
+Rozhraní MDI (Multiple Document Interface) slouží k vytváření aplikací, které mohou současně otevřít několik dokumentů a kopírovat a vkládat obsah z jednoho dokumentu na druhý.  
   
- Tento postup ukazuje, jak vytvořit seznam všech aktivních podřízených formulářů v nabídce okno nadřazeného objektu.  
+ Tento postup ukazuje, jak vytvořit seznam všech aktivních podřízených formulářů v nabídce nadřazeného okna.  
   
-### <a name="to-create-an-mdi-window-list-on-a-menustrip"></a>Vytvoření seznamu okna MDI v prvku MenuStrip  
+### <a name="to-create-an-mdi-window-list-on-a-menustrip"></a>Vytvoření seznamu oken MDI na ovládacím prvku MenuStrip  
   
-1. Vytvořit formulář a nastavte jeho <xref:System.Windows.Forms.Form.IsMdiContainer%2A> vlastnost `true`.  
+1. Vytvořte formulář a nastavte jeho vlastnost <xref:System.Windows.Forms.Form.IsMdiContainer%2A> na `true`.  
   
-2. Přidat <xref:System.Windows.Forms.MenuStrip> do formuláře.  
+2. Přidejte <xref:System.Windows.Forms.MenuStrip> do formuláře.  
   
-3. Přidání dvou položek nabídek nejvyšší úrovně na <xref:System.Windows.Forms.MenuStrip> a nastavte jejich <xref:System.Windows.Forms.Control.Text%2A> vlastností `&File` a `&Window`.  
+3. Přidejte dvě položky nabídky nejvyšší úrovně do <xref:System.Windows.Forms.MenuStrip> a nastavte jejich vlastnosti <xref:System.Windows.Forms.Control.Text%2A> na `&File` a `&Window`.  
   
-4. Přidat podnabídku položku `&File` položky nabídky a nastavte jeho <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost `&Open`.  
+4. Přidejte položku podnabídky do položky nabídky `&File` a nastavte její vlastnost <xref:System.Windows.Forms.ToolStripItem.Text%2A> na `&Open`.  
   
-5. Nastavte <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> vlastnost <xref:System.Windows.Forms.MenuStrip> k `&Window` <xref:System.Windows.Forms.ToolStripMenuItem>.  
+5. Nastavte vlastnost <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> <xref:System.Windows.Forms.MenuStrip> na <xref:System.Windows.Forms.ToolStripMenuItem>`&Window`.  
   
-6. Přidat formuláře do projektu a přidejte ovládací prvek, například jiného <xref:System.Windows.Forms.MenuStrip>.  
+6. Přidejte do projektu formulář a přidejte do něj požadovaný ovládací prvek, jako je například jiný <xref:System.Windows.Forms.MenuStrip>.  
   
-7. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&New` <xref:System.Windows.Forms.ToolStripMenuItem>.  
+7. Vytvořte obslužnou rutinu události pro událost <xref:System.Windows.Forms.Control.Click> `&New`<xref:System.Windows.Forms.ToolStripMenuItem>.  
   
-8. V rámci obslužné rutiny události, vložte kód podobný následujícímu k vytváření a zobrazování nových instancí `Form2` jako podřízený objekt MDI `Form1`.  
+8. V rámci obslužné rutiny události vložte kód podobný následujícímu pro vytvoření a zobrazení nových instancí `Form2` jako podřízených objektů MDI `Form1`.  
   
     ```vb  
     Private Sub openToolStripMenuItem_Click(ByVal sender As _  
@@ -61,7 +61,7 @@ Můžete vytvářet aplikace, které můžete otevřít několik dokumentů ve s
     }  
     ```  
   
-9. Umístěte kód v následujícím postupem `&New` <xref:System.Windows.Forms.ToolStripMenuItem> zaregistrovat obslužnou rutinu události.  
+9. Umístěte kód podobný následujícímu v <xref:System.Windows.Forms.ToolStripMenuItem> `&New`k registraci obslužné rutiny události.  
   
     ```vb  
     Private Sub newToolStripMenuItem_Click(sender As Object, e As _  
@@ -75,11 +75,11 @@ Můžete vytvářet aplikace, které můžete otevřít několik dokumentů ve s
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Dvě <xref:System.Windows.Forms.Form> ovládací prvky s názvem `Form1` a `Form2`.  
+- Dva <xref:System.Windows.Forms.Form> ovládací prvky s názvem `Form1` a `Form2`.  
   
-- A <xref:System.Windows.Forms.MenuStrip> ovládání na `Form1` s názvem `menuStrip1`a <xref:System.Windows.Forms.MenuStrip> ovládání na `Form2` s názvem `menuStrip2`.  
+- <xref:System.Windows.Forms.MenuStrip> ovládací prvek `Form1` s názvem `menuStrip1`a ovládací prvek <xref:System.Windows.Forms.MenuStrip> na `Form2` s názvem `menuStrip2`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

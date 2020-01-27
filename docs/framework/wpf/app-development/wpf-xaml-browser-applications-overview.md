@@ -1,5 +1,5 @@
 ---
-title: Přehled aplikací Prohlížeče WPF XAML
+title: Přehled aplikací prohlížeče XAML
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: a4d3b808aee14d5d2f29053b0c60798f9f626e8c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: bec7e14ceed867e89c3117efbc245938356b9d78
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636325"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742279"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>Aplikace prohlížeče XAML (XBAP) spojují funkce webových aplikací a aplikací s bohatou funkční verzí. Podobně jako webové aplikace mohou být aplikace XBAP nasazeny na webový server a spouštěny z aplikace Internet Explorer nebo Firefox. Podobně jako aplikace s bohatou platností můžou aplikace XBAP využívat možnosti WPF. Vývoj aplikací XBAP je také podobný vývoji s bohatou podporou klientů. Toto téma poskytuje jednoduchý, vysoce základní Úvod k vývoji XBAP a popisuje, kde se vývoj v XBAP liší od standardního vysoce výkonného vývoje klienta.
@@ -101,9 +101,9 @@ ms.locfileid: "75636325"
 
 1. V aplikaci Visual Studio otevřete vlastnosti projektu.
 
-2. Na kartě **Zabezpečení** klikněte na **Upřesnit**.
+2. Na kartě **zabezpečení** klikněte na **Upřesnit**.
 
-     Zobrazí se dialog Upřesnit nastavení zabezpečení.
+     Zobrazí se dialogové okno Upřesnit nastavení zabezpečení.
 
 3. Ujistěte se, že je zaškrtnuté políčko **udělit aplikaci přístup ke svému webu** , a pak klikněte na **OK**.
 

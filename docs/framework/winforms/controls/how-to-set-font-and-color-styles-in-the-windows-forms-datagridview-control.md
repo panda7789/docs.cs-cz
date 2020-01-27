@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView'
+title: Nastavení stylů písma a barev v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,37 +10,37 @@ helpviewer_keywords:
 - data grids [Windows Forms], font styles
 - data grids [Windows Forms], color styles
 ms.assetid: 588f2c57-d963-41b1-9c1d-d02d71818113
-ms.openlocfilehash: ad2426ed9643fd46927c4f8b6373fedbec372d38
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f1ee9131cfc0b28a5f6263dcd6254d27a092cc62
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638097"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746755"
 ---
 # <a name="how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control"></a>Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView
-Můžete zadat vizuálního vzhledu buněk v rámci <xref:System.Windows.Forms.DataGridView> nastavením vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle> třídy. Instance této třídy můžete načíst z různých vlastností <xref:System.Windows.Forms.DataGridView> třídy a jejich doprovodné třídy nebo můžete vytvořit instanci <xref:System.Windows.Forms.DataGridViewCellStyle> objekty pro přiřazení těchto vlastností.  
+Můžete určit vizuální vzhled buněk v ovládacím prvku <xref:System.Windows.Forms.DataGridView> nastavením vlastností <xref:System.Windows.Forms.DataGridViewCellStyle> třídy. Můžete načíst instance této třídy z různých vlastností třídy <xref:System.Windows.Forms.DataGridView> a jejích doprovodných tříd, nebo můžete vytvořit instanci <xref:System.Windows.Forms.DataGridViewCellStyle> objektů pro přiřazení k těmto vlastnostem.  
   
- Následující postupy ukazují základní přizpůsobení pomocí vzhledu buněk <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A> vlastnost. Všechny buňky v ovládacím prvku dědí zadaná pomocí tato vlastnost přepsána na úrovni buňky sloupce, řádku nebo styly. Příklad dědičnost stylů, najdete v části [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md). Informace o další způsoby použití <xref:System.Windows.Forms.DataGridViewCellStyle> naleznete v tématech uvedených v části Viz také.  
+ Následující postupy ukazují základní přizpůsobení vzhledu buňky pomocí vlastnosti <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>. Každá buňka v ovládacím prvku dědí styly zadané přes tuto vlastnost, pokud nejsou přepsány na úrovni sloupce, řádku nebo buňky. Příklad dědičnosti stylu naleznete v tématu [How to: set pro výchozí styly buněk pro ovládací prvek DataGridView model Windows Forms](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md). Informace o dalších použitích třídy <xref:System.Windows.Forms.DataGridViewCellStyle> naleznete v tématech uvedených v části Viz také.  
   
- Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Nastavení výchozích stylů buňky a datových formátů pro Windows Forms DataGridView pomocí návrháře](default-cell-styles-datagridview.md).  
+ Existuje Rozsáhlá podpora pro tento úkol v aplikaci Visual Studio.  Viz také [Postupy: nastavení výchozích stylů buňky a datových formátů pro ovládací prvek DataGridView model Windows Forms pomocí návrháře](default-cell-styles-datagridview.md).  
   
-### <a name="to-specify-the-font-used-by-datagridview-cells"></a>Chcete-li určit písmo použité buněk DataGridView  
+### <a name="to-specify-the-font-used-by-datagridview-cells"></a>Určení písma používaného buňkami DataGridView  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellStyle>. Následující příklad kódu používá <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> vlastnosti chcete nastavit písmo pro celý ovládací prvek.  
+- Nastavte vlastnost <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A> <xref:System.Windows.Forms.DataGridViewCellStyle>. Následující příklad kódu používá vlastnost <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> k nastavení písma pro celý ovládací prvek.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#101](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#101)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#101](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#101)]  
   
-### <a name="to-specify-the-foreground-and-background-colors-of-datagridview-cells"></a>K určení barvy popředí a pozadí buněk DataGridView  
+### <a name="to-specify-the-foreground-and-background-colors-of-datagridview-cells"></a>Určení barvy popředí a pozadí buněk DataGridView  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle>. Následující příklad kódu používá <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> vlastnosti chcete nastavit tyto styly pro celý ovládací prvek.  
+- Nastavení vlastností <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> <xref:System.Windows.Forms.DataGridViewCellStyle>. Následující příklad kódu používá vlastnost <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> k nastavení těchto stylů pro celý ovládací prvek.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#102](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#102)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#102](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#102)]  
   
-### <a name="to-specify-the-foreground-and-background-colors-of-selected-datagridview-cells"></a>K určení barvy popředí a pozadí vybraných buněk DataGridView  
+### <a name="to-specify-the-foreground-and-background-colors-of-selected-datagridview-cells"></a>Chcete-li určit barvy popředí a pozadí vybraných buněk DataGridView  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> vlastnosti <xref:System.Windows.Forms.DataGridViewCellStyle>. Následující příklad kódu používá <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> vlastnosti chcete nastavit tyto styly pro celý ovládací prvek.  
+- Nastavení vlastností <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> <xref:System.Windows.Forms.DataGridViewCellStyle>. Následující příklad kódu používá vlastnost <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType> k nastavení těchto stylů pro celý ovládací prvek.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#103](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#103)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#103](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#103)]  
@@ -52,12 +52,12 @@ Můžete zadat vizuálního vzhledu buněk v rámci <xref:System.Windows.Forms.D
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na sestavení <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>a <xref:System.Windows.Forms?displayProperty=nameWithType>.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Pro maximální rozšiřitelnost, by měly sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objektů mezi více řádky, sloupce nebo buňky, které používají stejné styly, spíše než nastavení vlastnosti stylu pro každý prvek samostatně. Další informace najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
+ Pro zajištění maximální škálovatelnosti byste měli sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objekty napříč více řádky, sloupci nebo buňkami, které používají stejné styly, nikoli nastavovat vlastnosti stylu pro každý prvek samostatně. Další informace najdete v tématu [osvědčené postupy pro škálování ovládacího prvku DataGridView model Windows Forms](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 

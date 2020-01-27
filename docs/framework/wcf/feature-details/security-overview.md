@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: 58057709e2d5c5e34d0aa37158ea9b033840f840
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1e551572fa6d94e9fd1170eb7e3b258f2e8fb926
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344707"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728891"
 ---
 # <a name="windows-communication-foundation-security-overview"></a>Přehled zabezpečení Windows Communication Foundation
 Windows Communication Foundation (WCF) je distribuovaná programovací platforma založená na zprávách SOAP a zabezpečení zpráv mezi klienty a službami je nezbytné pro ochranu dat. WCF poskytuje všestrannou a interoperabilní platformu pro výměnu zabezpečených zpráv na základě stávající bezpečnostní infrastruktury a uznávaných standardů zabezpečení pro zprávy SOAP.  
   
 > [!NOTE]
-> Komplexní průvodce zabezpečením služby WCF najdete v tématu [pokyny pro zabezpečení WCF](https://go.microsoft.com/fwlink/?LinkID=158912).  
+> Komplexní průvodce zabezpečením služby WCF najdete v tématu [pokyny pro zabezpečení WCF](https://archive.codeplex.com/?p=WCFSecurity).  
   
  WCF používá koncepty, které jsou známé, pokud jste vytvořili zabezpečené a distribuované aplikace se stávajícími technologiemi, jako je například HTTPS, integrované zabezpečení systému Windows nebo uživatelská jména a hesla pro ověřování uživatelů. Služba WCF není integrována pouze se stávajícími bezpečnostními infrastrukturami, ale také rozšiřuje distribuované zabezpečení nad doménami pouze Windows pomocí zabezpečených zpráv SOAP. Zvažte technologii WCF implementaci stávajících mechanismů zabezpečení s významnou výhodou použití protokolu SOAP jako protokolu spolu s existujícími protokoly. Například přihlašovací údaje, které identifikují klienta nebo službu, například uživatelské jméno a heslo nebo certifikáty X. 509, mají interoperabilní profily SOAP založené na XML. Pomocí těchto profilů se zprávy vyměňují bezpečně tím, že využívají otevřené specifikace, jako jsou digitální podpisy XML a šifrování XML. Seznam specifikací najdete v tématu [protokoly webových služeb podporované vazbami interoperability poskytovanými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).  
   
@@ -113,4 +113,4 @@ Windows Communication Foundation (WCF) je distribuovaná programovací platforma
 - [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
 - [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)
 - [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

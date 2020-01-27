@@ -1,5 +1,5 @@
 ---
-title: Okraj a odsazení v ovládacích prvcích Windows Forms
+title: Okraj a odsazení v ovládacích prvcích
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Padding property [Windows Forms]
@@ -7,25 +7,25 @@ helpviewer_keywords:
 - Windows Forms, layout
 - Margin property [Windows Forms]
 ms.assetid: 3781b5a1-3085-4072-bed0-44670c23ffdc
-ms.openlocfilehash: bf1f88f6efcedd740bff92dda391470391f16ce5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02cabccd0d51a3501a8aafb8733a5273deef6c49
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61752511"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728572"
 ---
 # <a name="margin-and-padding-in-windows-forms-controls"></a>Okraj a odsazení v ovládacích prvcích Windows Forms
-Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů poskytuje mnoho funkcí rozložení, jak toho dosáhnout. Dva nejdůležitější jsou <xref:System.Windows.Forms.Control.Margin%2A> a <xref:System.Windows.Forms.Control.Padding%2A> vlastnosti.  
+Přesné umístění ovládacích prvků ve formuláři je velmi prioritní pro mnoho aplikací. Obor názvů <xref:System.Windows.Forms?displayProperty=nameWithType> poskytuje mnoho funkcí rozložení k tomu, aby to bylo možné. Dvěma nejdůležitějšími jsou vlastnosti <xref:System.Windows.Forms.Control.Margin%2A> a <xref:System.Windows.Forms.Control.Padding%2A>.  
   
- <xref:System.Windows.Forms.Control.Margin%2A> Vlastnost definuje místa kolem ovládacího prvku, který udržuje další ovládací prvky určené vzdálenosti od ohraničení ovládacího prvku.  
+ Vlastnost <xref:System.Windows.Forms.Control.Margin%2A> definuje prostor kolem ovládacího prvku, který uchovává jiné ovládací prvky o určenou vzdálenost od ohraničení ovládacího prvku.  
   
- <xref:System.Windows.Forms.Control.Padding%2A> Vlastnost definuje pole uvnitř ovládacího prvku, který uchovává obsah ovládacího prvku (například, hodnota jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnosti) určené vzdálenosti od ohraničení ovládacího prvku.  
+ Vlastnost <xref:System.Windows.Forms.Control.Padding%2A> definuje prostor uvnitř ovládacího prvku, který udržuje obsah ovládacího prvku (například hodnotu vlastnosti <xref:System.Windows.Forms.Control.Text%2A>) o určenou vzdálenost od ohraničení ovládacího prvku.  
   
- Je vidět na následujícím obrázku <xref:System.Windows.Forms.Control.Padding%2A> a <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti na ovládacím prvku.  
+ Následující obrázek ukazuje vlastnosti <xref:System.Windows.Forms.Control.Padding%2A> a <xref:System.Windows.Forms.Control.Margin%2A> ovládacího prvku.  
   
- ![Odsazení a okraj Windows Forms ovládací prvky](./media/vs-winformpadmargin.gif "VS_WinFormPadMargin")  
+ ![Odsazení a okraj pro ovládací prvky model Windows Forms](./media/vs-winformpadmargin.gif "VS_WinFormPadMargin")  
   
- Není poskytována podpora návrhu pro tuto funkci v sadě Visual Studio. Viz také [názorný postup: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md).  
+ Pro tuto funkci v aplikaci Visual Studio je podporována podpora v době návrhu. Viz také [Návod: rozvržení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností AutoSize](windows-forms-controls-padding-autosize.md).  
   
 ## <a name="see-also"></a>Viz také:
 

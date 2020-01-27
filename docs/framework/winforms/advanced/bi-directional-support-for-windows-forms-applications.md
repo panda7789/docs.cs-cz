@@ -1,5 +1,5 @@
 ---
-title: Obousměrná podpora pro formulářové aplikace Windows
+title: Obousměrná podpora
 ms.date: 09/30/2017
 helpviewer_keywords:
 - globalization [Windows Forms], bi-directional support in Windows
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - localization [Windows Forms], bi-directional support in Windows
 - bi-directional language support [Windows Forms], Windows applications
 - Windows Forms, bi-directional support
-ms.openlocfilehash: 0b99dcdb9549a2319efe8a78eb4bca33f40f2cb0
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 8b2e842fc08be78b74cede85927352fafca7bc8f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197489"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742076"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Pomocí sady Visual Studio můžete vytvářet aplikace pro systém Windows, které podporují obousměrné (zprava doleva) jazyky, jako je arabština a hebrejština. To zahrnuje standardní formuláře, dialogová okna, formuláře MDI a všechny ovládací prvky, se kterými můžete pracovat v těchto formulářích – to znamená všechny objekty v oboru názvů <xref:System.Windows.Forms.Control>.

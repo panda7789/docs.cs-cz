@@ -1,5 +1,5 @@
 ---
-title: OpenFileDialog – přehled komponenty (Windows Forms)
+title: OpenFileDialog – přehled komponenty
 ms.date: 03/30/2017
 f1_keywords:
 - OpenFileDialog
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - OpenFileDialog component [Windows Forms], about OpenFileDialog
 - Open File dialog box [Windows Forms], displaying in Windows Forms
 ms.assetid: cd717300-46b6-4f82-8207-b218fa7fa407
-ms.openlocfilehash: 24327ded50ac927642e2687b40b1f10de9bdf41e
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: c519b373150a49ee41dbb0c503f7d5a4862477d5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211708"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728433"
 ---
 # <a name="openfiledialog-component-overview-windows-forms"></a>OpenFileDialog – přehled komponenty (Windows Forms)
 
-Windows Forms <xref:System.Windows.Forms.OpenFileDialog> komponenta je předem nakonfigurované dialogového okna. Jde o stejný **otevřít soubor** dialogové okno vystavené operačního systému Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.
+Součást model Windows Forms <xref:System.Windows.Forms.OpenFileDialog> je předem nakonfigurovaným dialogovým oknem. Jedná se o stejný dialog **otevřeného souboru** , který je vystavený operačním systémem Windows. Dědí z třídy <xref:System.Windows.Forms.CommonDialog>.
 
-## <a name="use-this-component"></a>Použití této komponenty
+## <a name="use-this-component"></a>Použít tuto součást
 
-Použití této komponenty v rámci vaší aplikace pro systém Windows jako jednoduchým řešením pro výběr souboru namísto dialogové okno Vlastní konfigurace. Pomocí standardní dialogová okna Windows, můžete vytvořit aplikace, jejichž základní funkce je okamžitě uživatelé znají. Mějte na paměti, ale, že pomocí <xref:System.Windows.Forms.OpenFileDialog> komponenty, je nutné napsat vlastní logikou otevření souboru.
+Tuto součást použijte v aplikaci pro Windows jako jednoduché řešení pro výběr souborů namísto konfigurace vlastního dialogového okna. Když se spoléháte na standardní dialogová okna systému Windows, vytvoříte aplikace, jejichž základní funkce je pro uživatele okamžitě známa. Mějte ale na paměti, že při použití <xref:System.Windows.Forms.OpenFileDialog> komponenty musíte napsat vlastní logiku otevírání souborů.
 
-Použití <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogového okna v době běhu. Můžete umožnit uživatelům si vybrat víc souborů otevíraly pomocí <xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A> vlastnost. Kromě toho můžete použít <xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A> a určí, pokud se v dialogovém okně zobrazí zaškrtávací políčko jen pro čtení. <xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A> Vlastnost určuje, zda je zaškrtnuto zaškrtávací políčko jen pro čtení. Nakonec <xref:System.Windows.Forms.FileDialog.Filter%2A> nastaví aktuální soubor název řetězec filtru, který určuje možnosti, které se zobrazí v poli "Soubory typu" v dialogovém okně Vlastnosti.
+Použijte metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> k zobrazení dialogového okna v době běhu. Uživatelům můžete umožnit otevírání souborů s více výběry s vlastností <xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A>. Kromě toho můžete použít vlastnost <xref:System.Windows.Forms.OpenFileDialog.ShowReadOnly%2A> k určení, zda se v dialogovém okně zobrazí zaškrtávací políčko jen pro čtení. Vlastnost <xref:System.Windows.Forms.OpenFileDialog.ReadOnlyChecked%2A> určuje, zda je zaškrtnuto políčko jen pro čtení. Nakonec vlastnost <xref:System.Windows.Forms.FileDialog.Filter%2A> nastaví aktuální řetězec filtru názvu souboru, který určuje možnosti, které se zobrazí v poli "soubory typu" v dialogovém okně.
 
-Když se přidá do formuláře, <xref:System.Windows.Forms.OpenFileDialog> součást se zobrazí v hlavním panelu v dolní části Návrháře formulářů Windows v sadě Visual Studio.
+Při přidání do formuláře se komponenta <xref:System.Windows.Forms.OpenFileDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
 ## <a name="see-also"></a>Viz také:
 

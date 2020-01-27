@@ -1,22 +1,22 @@
 ---
-title: Klávesové zkratky pro ovládací prvek Windows Forms DataGrid
+title: Klávesové zkratky pro ovládací prvek DataGrid
 ms.date: 03/30/2017
 helpviewer_keywords:
 - keyboard shortcuts [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], navigation keys
 ms.assetid: a01780f9-20d5-4f5f-808f-c790c9a007a5
-ms.openlocfilehash: 6b4d566d377a3cda73bf8422caa798134d356f63
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6693531b8d0e820a68d75bf5da40f4169fd244f2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962572"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745035"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-forms-datagrid-control"></a>Klávesové zkratky pro ovládací prvek Windows Forms DataGrid
 > [!NOTE]
-> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek <xref:System.Windows.Forms.DataGridView> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.DataGrid>; Nicméně ovládací prvek <xref:System.Windows.Forms.DataGrid> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- V následující tabulce jsou uvedeny klávesové zkratky, které lze použít pro navigaci v rámci ovládacího <xref:System.Windows.Forms.DataGrid> prvku model Windows Forms:  
+ V následující tabulce jsou uvedeny klávesové zkratky, které lze použít pro navigaci v rámci ovládacího prvku model Windows Forms <xref:System.Windows.Forms.DataGrid>:  
   
 |Akce|Zástupce|  
 |------------|--------------|  
@@ -24,11 +24,11 @@ ms.locfileid: "69962572"
 |Zruší úpravu buňky, pokud je v režimu úprav buňky.<br /><br /> Pokud je výběr v rámečku, zrušte úpravy na řádku.|ESC|  
 |Odstraní znak před kurzorem při úpravě buňky.|BACKSPACE|  
 |Odstraní znak za vloženým bodem při úpravě buňky.|DELETE|  
-|Přesune se na první buňku aktuálního řádku.|DOMOVSKÉ|  
+|Přesune se na první buňku aktuálního řádku.|DOMOVSKÁ STRÁNKA|  
 |Přesune se do poslední buňky na aktuálním řádku.|END|  
 |Zvýrazněte znaky v aktuální buňce a umístěte kurzor na konec řádku. Stejné chování jako při dvojitém kliknutí na buňku.|F2|  
-|Pokud je fokus na buňce, přejděte na další buňku na řádku.<br /><br /> Pokud je fokus na poslední buňce v řádku, přejděte na odkaz první podřízené tabulky řádku a rozbalte ho.<br /><br /> Pokud je fokus na podřízeném odkazu, přejděte na další podřízený odkaz.<br /><br /> Pokud se fokus zaměřuje na poslední podřízený odkaz, přejdete na první buňku dalšího řádku.|RÁŽKY|  
-|Pokud je fokus na buňce, přejděte na předchozí buňku na řádku.<br /><br /> Pokud je fokus v první buňce řádku, přejděte na poslední rozbalenou podřízenou tabulku předchozího řádku nebo přejděte na poslední buňku předchozího řádku.<br /><br /> Pokud je fokus na podřízeném odkazu, přejděte na předchozí podřízený odkaz.<br /><br /> Pokud se fokus zaměřuje na první podřízený odkaz, přejdete na poslední buňku předchozího řádku.|SHIFT + TAB|  
+|Pokud je fokus na buňce, přejděte na další buňku na řádku.<br /><br /> Pokud je fokus na poslední buňce v řádku, přejděte na odkaz první podřízené tabulky řádku a rozbalte ho.<br /><br /> Pokud je fokus na podřízeném odkazu, přejděte na další podřízený odkaz.<br /><br /> Pokud se fokus zaměřuje na poslední podřízený odkaz, přejdete na první buňku dalšího řádku.|TAB|  
+|Pokud je fokus na buňce, přejděte na předchozí buňku na řádku.<br /><br /> Pokud je fokus v první buňce řádku, přejděte na poslední rozbalenou podřízenou tabulku předchozího řádku nebo přejděte na poslední buňku předchozího řádku.<br /><br /> Pokud je fokus na podřízeném odkazu, přejděte na předchozí podřízený odkaz.<br /><br /> Pokud se fokus zaměřuje na první podřízený odkaz, přejdete na poslední buňku předchozího řádku.|SHIFT+TAB|  
 |Přesune se na další ovládací prvek v pořadí prvků.|CTRL+TAB|  
 |Přesune se na předchozí ovládací prvek v pořadí prvků.|CTRL+SHIFT+TAB|  
 |Pokud je v podřízené tabulce, přesuňte se k nadřazené tabulce. Stejné chování jako při kliknutí na tlačítko zpět.|ALT + ŠIPKA VLEVO|  
@@ -47,8 +47,8 @@ ms.locfileid: "69962572"
 |Skryje nadřazený řádek, pokud je v podřízené tabulce.|CTRL + PAGE UP|  
 |Rozšíří výběr o jednu obrazovku dolů (Kromě odkazů na podřízenou tabulku).|SHIFT + PAGEDOWN|  
 |Rozšíří výběr o jednu obrazovku nahoru (Kromě odkazů na podřízenou tabulku).|SHIFT + PAGE UP|  
-|<xref:System.Windows.Forms.DataGrid.EndEdit%2A> Volejte metodu pro aktuální řádek.|CTRL + ENTER|  
-|<xref:System.DBNull.Value?displayProperty=nameWithType> Zadejte hodnotu do buňky v režimu úprav.|CTRL + 0|  
+|Pro aktuální řádek volejte metodu <xref:System.Windows.Forms.DataGrid.EndEdit%2A>.|CTRL + ENTER|  
+|Zadejte hodnotu <xref:System.DBNull.Value?displayProperty=nameWithType> v buňce v režimu úprav.|CTRL + 0|  
   
 ## <a name="see-also"></a>Viz také:
 

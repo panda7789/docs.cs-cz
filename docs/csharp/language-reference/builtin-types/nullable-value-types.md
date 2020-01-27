@@ -4,16 +4,16 @@ description: Další informace C# o typech hodnot s možnou hodnotou null a jeji
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 3b9a29e75fe894f7d8a0751feefa9eb0a39baa2c
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 42673d16ac68bbf119e57e4c357b1b2b2a0b5c51
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964313"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740943"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s možnou hodnotou null (C# Referenční dokumentace)
 
-Typ hodnoty s možnou hodnotou null `T?` představuje všechny hodnoty svého základního [typu hodnoty](../keywords/value-types.md) `T` a další hodnotu [null](../keywords/null.md) . Můžete například přiřadit libovolné z následujících tří hodnot `bool?` proměnné: `true`, `false`nebo `null`. Základní typ hodnoty `T` nemůže být typ hodnoty s možnou hodnotou null.
+Typ hodnoty s možnou hodnotou null `T?` představuje všechny hodnoty svého základního [typu hodnoty](value-types.md) `T` a další hodnotu [null](../keywords/null.md) . Můžete například přiřadit libovolné z následujících tří hodnot `bool?` proměnné: `true`, `false`nebo `null`. Základní typ hodnoty `T` nemůže být typ hodnoty s možnou hodnotou null.
 
 > [!NOTE]
 > C#8,0 zavádí funkci typů odkazů s možnou hodnotou null. Další informace naleznete v tématu [typy odkazů s možnou hodnotou null](../../nullable-references.md). Typy s C# možnou hodnotou null jsou k dispozici od 2.

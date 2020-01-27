@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel'
+title: Uspořádání ovládacích prvků pomocí FlowLayoutPanel
 ms.date: 03/30/2017
 helpviewer_keywords:
 - FlowLayoutPanel control [Windows Forms], walkthroughs
@@ -7,189 +7,188 @@ helpviewer_keywords:
 - controls [Windows Forms], arranging with FlowLayoutPanel
 - layout [Windows Forms], walkthroughs
 ms.assetid: a1744323-0316-49c2-992e-ebfc0a976b85
-ms.openlocfilehash: c9ee615a610c383c97b5d4f0de195cfc7422d3ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6df0a910ee346f319fbee835e5e632808630a99e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67771660"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745401"
 ---
-# <a name="walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel"></a>Návod: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel
+# <a name="walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel"></a>Postupy: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel
 
-Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.
+Některé aplikace vyžadují formulář s rozložením, které je uspořádáno správně, protože se změní velikost formuláře nebo se změní velikost obsahu. Pokud potřebujete dynamické rozložení a nechcete zpracovávat události <xref:System.Windows.Forms.Control.Layout> explicitně ve vašem kódu, zvažte použití panelu rozložení.
 
-<xref:System.Windows.Forms.FlowLayoutPanel> Ovládacího prvku a <xref:System.Windows.Forms.TableLayoutPanel> řízení poskytují intuitivní způsoby, jak uspořádat ovládací prvky na formuláři. Umožňují automatické, konfigurovatelné možnosti řízení relativní pozice podřízených ovládacích prvků v nich obsažené, a obě získáte funkce dynamické rozložení v době běhu, aby jejich velikost a umístění podřízených ovládacích prvků jako dimenze nadřazený formulář Změňte. Panely rozložení může být vnořena do panely rozložení, aby realizace propracovaná uživatelská rozhraní.
+Ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> a ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> poskytují intuitivní způsoby uspořádání ovládacích prvků ve formuláři. Obě poskytují automatickou, konfigurovatelný možnost pro řízení relativních pozic podřízených ovládacích prvků, které jsou v nich obsažené, a zároveň poskytují funkce dynamického rozložení za běhu, takže mohou změnit velikost a umístění podřízených ovládacích prvků jako rozměry nadřazeného formuláře. mění. Panely rozložení lze vnořovat do panelů rozložení, aby bylo možné provádět realizace sofistikovaných uživatelských rozhraní.
 
-<xref:System.Windows.Forms.TableLayoutPanel> Uspořádá její obsah do mřížky, poskytuje funkce podobné HTML \<tabulky > element. Jeho buňky jsou uspořádány do řádků a sloupců, a ty mají různé velikosti. Další informace najdete v tématu [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
+<xref:System.Windows.Forms.TableLayoutPanel> uspořádá jeho obsah do mřížky a poskytne funkce podobné prvku \<tabulky > HTML. Buňky se uspořádají do řádků a sloupců a můžou mít různé velikosti. Další informace naleznete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí kontejneru TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
 
-<xref:System.Windows.Forms.FlowLayoutPanel> Uspořádá jeho obsah v konkrétní směr: vodorovný nebo svislý. Dá zabalit obsah z jednoho řádku na další nebo z jednoho sloupce na další. Alternativně můžete místo oříznutí jeho obsah zabalena. Úlohy v tomto návodu zahrnují:
+<xref:System.Windows.Forms.FlowLayoutPanel> uspořádá jeho obsah v určitém směru toku: Horizontal nebo Vertical. Jeho obsah lze zabalit z jednoho řádku na další, nebo z jednoho sloupce na další. Alternativně lze jeho obsah oříznout místo zabalení. Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
-- Vytvoření projektu Windows Forms
+- Vytvoření projektu model Windows Forms
 
 - Uspořádání ovládacích prvků vodorovně a svisle
 
 - Změna směru toku
 
-- Vložení toku konce
+- Vkládání konců toků
 
-- Uspořádání ovládacích prvků pomocí odsazení a okraje
+- Uspořádání ovládacích prvků pomocí odsazení a okrajů
 
-- Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů
+- Vložení ovládacích prvků dvojitým kliknutím na ně v sadě nástrojů
 
-- Vložení ovládacího prvku kreslením obrysu
+- Vložení ovládacího prvku kreslením jeho obrysu
 
-- Vkládání ovládacích prvků pomocí kurzoru
+- Vložení ovládacích prvků pomocí stříšky
 
-- Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku
+- Změna přiřazení existujících ovládacích prvků jinému nadřazenému prvku
 
-Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.
+Až budete hotovi, budete obeznámeni s tím, že role hraje tyto důležité funkce rozložení.
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
-1. V sadě Visual Studio vytvořte projekt aplikace pro systém Windows s názvem "FlowLayoutPanelExample" (**souboru** > **nový** > **projektu**  >  **Visual C#**  nebo **jazyka Visual Basic** > **klasický desktopový** > **aplikaciWindowsForms**).
+1. V aplikaci Visual Studio vytvořte projekt aplikace pro Windows s názvem "FlowLayoutPanelExample" (**soubor** > **New** > **Project** > **Visual C#**  nebo **Visual Basic** > **Classic Desktop** > **model Windows Forms aplikace**).
 
-2. Vyberte formulář v nástrojích pro **Návrháře formulářů**.
+2. V **Návrháři formulářů**vyberte formulář.
 
 ## <a name="arranging-controls-horizontally-and-vertically"></a>Uspořádání ovládacích prvků vodorovně a svisle
- <xref:System.Windows.Forms.FlowLayoutPanel> Ovládací prvek umožňuje umístit ovládací prvky řádky nebo sloupce, aniž by bylo potřeba přesně určit umístění jednotlivých ovládacích prvků.
+ Ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> umožňuje umístit ovládací prvky do řádků nebo sloupců bez nutnosti přesně zadat polohu každého jednotlivého ovládacího prvku.
 
- <xref:System.Windows.Forms.FlowLayoutPanel> Ovládací prvek můžete změnit velikost nebo přeformátování jeho podřízených ovládacích prvků jako dimenze změnou nadřazené formuláře.
+ Ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> může změnit velikost nebo přesměrovat své podřízené ovládací prvky jako rozměry změny nadřazeného formuláře.
 
-### <a name="to-arrange-controls-horizontally-and-vertically-using-a-flowlayoutpanel"></a>Chcete-li uspořádat ovládací prvky vodorovně a svisle pomocí ovládacího prvku FlowLayoutPanel
+### <a name="to-arrange-controls-horizontally-and-vertically-using-a-flowlayoutpanel"></a>Uspořádání ovládacích prvků vodorovně a svisle pomocí FlowLayoutPanel
 
-1. Přetáhněte <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku **nástrojů** do formuláře.
+1. Přetáhněte ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> z **panelu nástrojů** do formuláře.
 
-2. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel>. Všimněte si, že se automaticky přesune do levého horního rohu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+2. Přetáhněte ovládací prvek <xref:System.Windows.Forms.Button> ze **sady nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel>. Všimněte si, že je automaticky přesunut do levého horního rohu ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-3. Přetáhněte další <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel>. Všimněte si, že <xref:System.Windows.Forms.Button> ovládací prvek automaticky přesunut do polohy vedle první <xref:System.Windows.Forms.Button> ovládacího prvku. Pokud vaše <xref:System.Windows.Forms.FlowLayoutPanel> je příliš úzký, aby se vešel dvou ovládacích prvků na stejném řádku, nové <xref:System.Windows.Forms.Button> ovládací prvek automaticky přesunut do dalšího řádku.
+3. Přetáhněte jiný ovládací prvek <xref:System.Windows.Forms.Button> ze **sady nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel>. Všimněte si, že <xref:System.Windows.Forms.Button> ovládací prvek je automaticky přesunut na pozici vedle prvního ovládacího prvku <xref:System.Windows.Forms.Button>. Pokud je <xref:System.Windows.Forms.FlowLayoutPanel> příliš úzký, aby se vešly dva ovládací prvky na stejný řádek, nový ovládací prvek <xref:System.Windows.Forms.Button> se automaticky přesune na další řádek.
 
-4. Přetáhněte několik dalších <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel>. Pokračovat v umístění <xref:System.Windows.Forms.Button> dokud jeden zalamuje na další řádek.
+4. Přetáhněte několik dalších <xref:System.Windows.Forms.Button> ovládacích prvků ze **sady nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel>. Pokračujte v umísťování <xref:System.Windows.Forms.Button> ovládacích prvků až do jednoho zalomení na další řádek.
 
-5. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel.WrapContents%2A> vlastnost `false`. Všimněte si, že podřízené ovládací prvky už tok na další řádek. Místo toho se přesunout na první řádek a oříznut.
+5. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.FlowLayoutPanel.WrapContents%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> na `false`. Všimněte si, že podřízené ovládací prvky již nejsou předávány dalšímu řádku. Místo toho jsou přesunuty do prvního řádku a oříznuty.
 
-6. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel.WrapContents%2A> vlastnost `true`. Všimněte si, že podřízené ovládací prvky znovu wrap na dalším řádku.
+6. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.FlowLayoutPanel.WrapContents%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> na `true`. Všimněte si, že podřízené ovládací prvky se znovu zalomí na další řádek.
 
-7. Zúžení <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku, dokud všichni <xref:System.Windows.Forms.Button> ovládací prvky, které jsou přesunuty do prvního sloupce.
+7. Zmenšete šířku ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>, dokud nebudou všechny ovládací prvky <xref:System.Windows.Forms.Button> přesunuty do prvního sloupce.
 
-8. Zvětšete šířku <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku, dokud všichni <xref:System.Windows.Forms.Button> ovládací prvky se přesouvají do prvního řádku. Budete muset změnit velikost formuláře tak, aby vyhovovaly větší šířku.
+8. Zvětšete šířku ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>, dokud nebudou všechny ovládací prvky <xref:System.Windows.Forms.Button> přesunuty do prvního řádku. Možná budete muset změnit velikost formuláře, aby odpovídal větší šířce.
 
 ## <a name="changing-flow-direction"></a>Změna směru toku
- <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> Vlastnost vám umožní změnit směr, ve kterém jsou uspořádány ovládací prvky. Z můžete uspořádat podřízené ovládací prvky zleva doprava, zprava doleva, shora dolů nebo zdola nahoru.
+ Vlastnost <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> umožňuje změnit směr, ve kterém jsou ovládací prvky uspořádány. Můžete uspořádat podřízené ovládací prvky zleva doprava, zprava doleva, shora dolů nebo zdola nahoru.
 
-### <a name="to-change-the-flow-direction-in-a-flowlayoutpanel"></a>Chcete-li změnit směr toku do ovládacího prvku FlowLayoutPanel
+### <a name="to-change-the-flow-direction-in-a-flowlayoutpanel"></a>Změna směru toku v kontejneru FlowLayoutPanel
 
-1. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> vlastnost <xref:System.Windows.Forms.FlowDirection.TopDown>. Všimněte si, že jsou podřízené ovládací prvky změnit jejich uspořádání do jednoho nebo více sloupců, v závislosti na výšku ovládacího prvku.
+1. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> na <xref:System.Windows.Forms.FlowDirection.TopDown>. Všimněte si, že podřízené ovládací prvky jsou přeuspořádány do jednoho nebo více sloupců v závislosti na výšce ovládacího prvku.
 
-2. Změnit velikost <xref:System.Windows.Forms.FlowLayoutPanel> tak jeho výška je kratší než sloupec <xref:System.Windows.Forms.Button> ovládacích prvků. Všimněte si, že <xref:System.Windows.Forms.FlowLayoutPanel> znovu uspořádá podřízené ovládací prvky, které jsou předávány do dalšího sloupce. Pokračovat, snížení výšky a Všimněte si, že podřízené řídí tok do po sobě jdoucích sloupcích. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> vlastnost <xref:System.Windows.Forms.FlowDirection.RightToLeft>. Všimněte si, že jsou v obráceném pořadí pozice podřízených ovládacích prvků. Sledujte rozložení při změně hodnoty <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> vlastnost <xref:System.Windows.Forms.FlowDirection.BottomUp>.
+2. Změňte velikost <xref:System.Windows.Forms.FlowLayoutPanel> tak, aby její výška byla kratší než sloupec <xref:System.Windows.Forms.Button> ovládací prvky. Všimněte si, že <xref:System.Windows.Forms.FlowLayoutPanel> mění uspořádání podřízených ovládacích prvků na tok do dalšího sloupce. Pokračujte v Zmenšení výšky a Všimněte si, že podřízené ovládací prvky přecházejí do po sobě jdoucích sloupců. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> na <xref:System.Windows.Forms.FlowDirection.RightToLeft>. Všimněte si, že pozice podřízených ovládacích prvků jsou obráceny. Sledujte rozložení při změně hodnoty vlastnosti <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> na <xref:System.Windows.Forms.FlowDirection.BottomUp>.
 
-## <a name="inserting-flow-breaks"></a>Vložení toku konce
- <xref:System.Windows.Forms.FlowLayoutPanel> Ovládací prvek obsahuje vlastnosti FlowBreak a jeho podřízených ovládacích prvků. Nastavení hodnoty vlastnosti FlowBreak k `true` způsobí, že <xref:System.Windows.Forms.FlowLayoutPanel> ovládací prvek zastavit rozvrhování ovládacích prvků v aktuální směr toku a zalomení na další řádek nebo sloupec.
+## <a name="inserting-flow-breaks"></a>Vkládání konců toků
+ Ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> poskytuje svým podřízeným ovládacím prvkům vlastnost FlowBreak. Nastavením hodnoty vlastnosti FlowBreak na `true` dojde k tomu, že ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> zastavil rozložení ovládacích prvků v aktuálním směru toku a zalomení na další řádek nebo sloupec.
 
-### <a name="to-insert-flow-breaks"></a>Vložit zalomení toku
+### <a name="to-insert-flow-breaks"></a>Vložení konců toků
 
-1. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> vlastnost <xref:System.Windows.Forms.FlowDirection.TopDown>.
+1. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> na <xref:System.Windows.Forms.FlowDirection.TopDown>.
 
-2. Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky průběhu sloupci nejvíce vlevo.
+2. Vyberte jeden z ovládacích prvků <xref:System.Windows.Forms.Button> uprostřed sloupce úplně vlevo.
 
-3. Nastavte hodnotu <xref:System.Windows.Forms.Button> FlowBreak vlastnosti ovládacího prvku na `true`. Všimněte si, že sloupec je poškozený a ovládací prvky podle vybraného <xref:System.Windows.Forms.Button> řídit tok do dalšího sloupce. Nastavte hodnotu <xref:System.Windows.Forms.Button> FlowBreak vlastnosti ovládacího prvku na `false` se vraťte k původní chování.
+3. Nastavte hodnotu vlastnosti FlowBreak ovládacího prvku <xref:System.Windows.Forms.Button> na `true`. Všimněte si, že sloupec je přerušen a ovládací prvky, které následují pod vybraným ovládacím prvkem <xref:System.Windows.Forms.Button>, přesměrují do dalšího sloupce. Nastavte hodnotu vlastnosti FlowBreak ovládacího prvku <xref:System.Windows.Forms.Button> na `false` pro návrat k původnímu chování.
 
 ## <a name="positioning-controls-using-docking-and-anchoring"></a>Umístění ovládacích prvků pomocí ukotvení a ukotvení
- Ukotvitelné a chování podřízených ovládacích prvků ukotvení se liší od chování v další ovládací prvky kontejneru. Ukotvení i ukotvení jsou relativní vzhledem k největší ovládacího prvku ve směru toku.
+ Chování při ukotvení a ukotvení podřízených ovládacích prvků se liší od chování v jiných ovládacích prvcích kontejneru. Ukotvení i ukotvení jsou relativní vzhledem k největšímu ovládacímu prvku ve směru toku.
 
-### <a name="to-position-controls-using-docking-and-anchoring"></a>Pokud chcete umístit ovládací prvky pomocí ukotvení a ukotvení
+### <a name="to-position-controls-using-docking-and-anchoring"></a>Chcete-li umístit ovládací prvky pomocí ukotvení a ukotvení
 
-1. Zvětšete velikost <xref:System.Windows.Forms.FlowLayoutPanel> až <xref:System.Windows.Forms.Button> ovládací prvky jsou uspořádány ve sloupci.
+1. Zvětšete velikost <xref:System.Windows.Forms.FlowLayoutPanel>, dokud nejsou všechny ovládací prvky <xref:System.Windows.Forms.Button> uspořádány do sloupce.
 
-2. Vyberte horní <xref:System.Windows.Forms.Button> ovládacího prvku. Zvyšte jeho šířku tak, aby se o dvakrát stejně široká jako druhý <xref:System.Windows.Forms.Button> ovládacích prvků.
+2. Vyberte horní <xref:System.Windows.Forms.Button> ovládací prvek. Zvětšete svou šířku tak, aby byla přibližně dvojnásobná, jako ostatní ovládací prvky <xref:System.Windows.Forms.Button>.
 
-3. Vyberte druhou <xref:System.Windows.Forms.Button> ovládacího prvku. Změňte hodnotu vlastnosti jeho <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost <xref:System.Windows.Forms.AnchorStyles.Right>. Všimněte si, že se přesune tak, aby jeho pravého ohraničení zarovnán s prvním <xref:System.Windows.Forms.Button> pravého ohraničení ovládacího prvku.
+3. Vyberte druhý ovládací prvek <xref:System.Windows.Forms.Button>. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Anchor%2A> na <xref:System.Windows.Forms.AnchorStyles.Right>. Všimněte si, že je přesunutý, takže jeho pravé ohraničení je zarovnáno s prvním pravým okrajem ovládacího prvku <xref:System.Windows.Forms.Button>.
 
-4. Změňte hodnotu vlastnosti jeho <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost <xref:System.Windows.Forms.AnchorStyles.Right> a <xref:System.Windows.Forms.AnchorStyles.Left>. Všimněte si, že je velikost na stejnou šířku jako první <xref:System.Windows.Forms.Button> ovládacího prvku.
+4. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Anchor%2A> na <xref:System.Windows.Forms.AnchorStyles.Right> a <xref:System.Windows.Forms.AnchorStyles.Left>. Všimněte si, že má velikost na stejnou šířku jako první ovládací prvek <xref:System.Windows.Forms.Button>.
 
-5. Vyberte třetí <xref:System.Windows.Forms.Button> ovládacího prvku. Změňte hodnotu vlastnosti jeho <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. Všimněte si, že je velikost na stejnou šířku jako první <xref:System.Windows.Forms.Button> ovládacího prvku.
+5. Vyberte třetí ovládací prvek <xref:System.Windows.Forms.Button>. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> na <xref:System.Windows.Forms.DockStyle.Fill>. Všimněte si, že má velikost na stejnou šířku jako první ovládací prvek <xref:System.Windows.Forms.Button>.
 
-## <a name="arranging-controls-using-padding-and-margins"></a>Uspořádání ovládacích prvků pomocí odsazení a okraje
- Můžete také uspořádat ovládací prvky ve vašich <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku tak, že změníte <xref:System.Windows.Forms.Control.Padding%2A> a <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti.
+## <a name="arranging-controls-using-padding-and-margins"></a>Uspořádání ovládacích prvků pomocí odsazení a okrajů
+ Můžete také uspořádat ovládací prvky v ovládacím prvku <xref:System.Windows.Forms.FlowLayoutPanel> změnou vlastností <xref:System.Windows.Forms.Control.Padding%2A> a <xref:System.Windows.Forms.Control.Margin%2A>.
 
- <xref:System.Windows.Forms.Control.Padding%2A> Vlastnost umožňuje řídit umístění ovládacích prvků v rámci <xref:System.Windows.Forms.FlowLayoutPanel> buňky ovládacího prvku. Určuje mezery mezi podřízených ovládacích prvků a <xref:System.Windows.Forms.FlowLayoutPanel> ohraničení ovládacího prvku.
+ Vlastnost <xref:System.Windows.Forms.Control.Padding%2A> umožňuje řídit umístění ovládacích prvků v buňce ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Určuje mezery mezi podřízenými ovládacími prvky a ohraničením ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
- <xref:System.Windows.Forms.Control.Margin%2A> Vlastnost umožňuje řídit mezer mezi ovládacími prvky.
+ Vlastnost <xref:System.Windows.Forms.Control.Margin%2A> umožňuje řídit mezery mezi ovládacími prvky.
 
-### <a name="to-arrange-controls-using-the-padding-and-margin-properties"></a>Chcete-li uspořádat ovládací prvky pomocí vlastnosti odsazení a okraj
+### <a name="to-arrange-controls-using-the-padding-and-margin-properties"></a>Uspořádání ovládacích prvků pomocí vlastností odsazení a okraj
 
-1. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>. Pokud formuláře je příliš velká, <xref:System.Windows.Forms.Button> ovládací prvky se přesunou na první sloupec <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+1. Změňte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Dock%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> na <xref:System.Windows.Forms.DockStyle.Fill>. Je-li formulář dostatečně velký, ovládací prvky <xref:System.Windows.Forms.Button> budou přesunuty do prvního sloupce ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-2. Změňte hodnotu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> vlastnost **20**. Další informace najdete v tématu [názorný postup: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md). Všimněte si, že podřízené ovládací prvky se přesouvají směrem k středu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Vyšší hodnota <xref:System.Windows.Forms.Control.Padding%2A> vlastnost nabízených oznámení podřízených ovládacích prvků ze <xref:System.Windows.Forms.FlowLayoutPanel> ohraničení ovládacího prvku.
+2. Rozbalením položky <xref:System.Windows.Forms.Control.Padding%2A> v okně **vlastnosti** změňte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Padding%2A> ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> a nastavte vlastnost <xref:System.Windows.Forms.Padding.All%2A> na hodnotu **20**. Další informace naleznete v tématu [Návod: rozvržení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností AutoSize](windows-forms-controls-padding-autosize.md). Všimněte si, že podřízené ovládací prvky jsou přesunuty směrem ke středu ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Zvýšená hodnota vlastnosti <xref:System.Windows.Forms.Control.Padding%2A> přenáší podřízené ovládací prvky mimo hranice ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-3. Vyberte všechny <xref:System.Windows.Forms.Button> ovládacích prvků v <xref:System.Windows.Forms.FlowLayoutPanel> a nastavte hodnotu <xref:System.Windows.Forms.Control.Margin%2A> vlastnost **20**. Všimněte si, že mezery mezi <xref:System.Windows.Forms.Button> řídí zvyšuje, aby se přesunuly další od sebe. Možná budete muset změnit velikost <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku větší, aby se zobrazily všechny podřízené ovládací prvky.
+3. Vyberte všechny ovládací prvky <xref:System.Windows.Forms.Button> v <xref:System.Windows.Forms.FlowLayoutPanel> a nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.Margin%2A> na **20**. Všimněte si, že mezery mezi ovládacími prvky <xref:System.Windows.Forms.Button> se zvyšují, takže se od sebe přesunou dál. Možná budete muset změnit velikost ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> tak, aby bylo větší, aby se zobrazily všechny podřízené ovládací prvky.
 
-## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a>Vkládání ovládacích prvků na něj poklikejte na panelu nástrojů
- Můžete naplnit vaše <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku na něj poklikejte ovládacích prvků v **nástrojů**.
+## <a name="inserting-controls-by-double-clicking-them-in-the-toolbox"></a>Vložení ovládacích prvků dvojitým kliknutím na ně v sadě nástrojů
+ Ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> lze naplnit dvojitým kliknutím na ovládací prvky v **sadě nástrojů**.
 
-### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a>Chcete-li vložit ovládací prvky na něj poklikejte na panelu nástrojů
+### <a name="to-insert-controls-by-double-clicking-in-the-toolbox"></a>Vložení ovládacích prvků dvojitým kliknutím na panel nástrojů
 
-1. Dvakrát klikněte <xref:System.Windows.Forms.Button> ikonu ovládacího prvku v **nástrojů**. Všimněte si, že nový <xref:System.Windows.Forms.Button> ovládací prvek zobrazí <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+1. Dvakrát klikněte na ikonu ovládacího prvku <xref:System.Windows.Forms.Button> v **sadě nástrojů**. Všimněte si, že v ovládacím prvku <xref:System.Windows.Forms.FlowLayoutPanel> se zobrazí nový ovládací prvek <xref:System.Windows.Forms.Button>.
 
-2. Klikněte dvakrát na několik dalších ovládacích prvků v **nástrojů**. Všimněte si, že nové ovládací prvky zobrazí postupně v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+2. Dvakrát klikněte na více ovládacích prvků v **sadě nástrojů**. Všimněte si, že nové ovládací prvky se zobrazí postupně v ovládacím prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-## <a name="inserting-a-control-by-drawing-its-outline"></a>Vložení ovládacího prvku kreslením obrysu
- Můžete vložit do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> řídit a určit jeho velikost kreslením obrysu v buňce.
+## <a name="inserting-a-control-by-drawing-its-outline"></a>Vložení ovládacího prvku kreslením jeho obrysu
+ Ovládací prvek můžete vložit do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> a zadat jeho velikost vykreslením jeho obrysu v buňce.
 
-### <a name="to-insert-a-control-by-drawing-its-outline"></a>Chcete-li vložit ovládací prvek kreslením obrysu
+### <a name="to-insert-a-control-by-drawing-its-outline"></a>Vložení ovládacího prvku kreslením jeho obrysu
 
-1. V **nástrojů**, klikněte na tlačítko <xref:System.Windows.Forms.Button> ikonu ovládacího prvku. Přetáhněte není ji na formuláři.
+1. Na **panelu nástrojů**klikněte na ikonu ovládacího prvku <xref:System.Windows.Forms.Button>. Nepřetáhněte ho do formuláře.
 
-2. Přesuňte ukazatel myši <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Všimněte si, že se ukazatel změní na křížek s <xref:System.Windows.Forms.Button> ikonu ovládací prvek připojen.
+2. Přesuňte ukazatel myši nad ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel>. Všimněte si, že se ukazatel změní na vlasovou čáru s připojenou ikonou ovládacího prvku <xref:System.Windows.Forms.Button>.
 
-3. Klepněte a podržte tlačítko myši.
+3. Klikněte a podržte tlačítko myši.
 
-4. Přetažením ukazatele myši nakreslete obrysu <xref:System.Windows.Forms.Button> ovládacího prvku. Pokud jste spokojeni s velikostí, uvolněte tlačítko myši. Všimněte si, že <xref:System.Windows.Forms.Button> ovládací prvek je vytvořen v dalším Otevřít umístění <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+4. Přetažením ukazatele myši nakreslete obrys ovládacího prvku <xref:System.Windows.Forms.Button>. Až budete s velikostí spokojeni, uvolněte tlačítko myši. Všimněte si, že <xref:System.Windows.Forms.Button> ovládací prvek je vytvořen v dalším otevřeném umístění ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-## <a name="inserting-controls-using-the-insertion-bar"></a>Vkládání ovládacích prvků pomocí vložení řádku
- Ovládací prvky můžete vložit na konkrétní pozici v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Při přetažení do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> klientské oblasti ovládacího prvku, vložení panelu se zobrazí označení vloženy ovládacího prvku.
+## <a name="inserting-controls-using-the-insertion-bar"></a>Vložení ovládacích prvků pomocí panelu vložení
+ Ovládací prvky lze vložit na konkrétní pozici v ovládacím prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Při přetažení ovládacího prvku do klientské oblasti ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> se zobrazí panel vložení, který označuje, kam bude ovládací prvek vložen.
 
-### <a name="to-insert-a-control-using-the-caret"></a>Chcete-li vložit ovládací prvek pomocí kurzoru
+### <a name="to-insert-a-control-using-the-caret"></a>Vložení ovládacího prvku pomocí stříšky
 
-1. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.FlowLayoutPanel> řídit a přejděte do prostoru mezi dvěma <xref:System.Windows.Forms.Button> ovládacích prvků. Mějte na paměti, že je vykreslován indikátor vložení, udává, odkud <xref:System.Windows.Forms.Button> bude umístěn, když je přetáhnout do <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Před vyřazením nové <xref:System.Windows.Forms.Button> ovládací prvek do <xref:System.Windows.Forms.FlowLayoutPanel> řídit, přesuňte ukazatel myši přibližně chcete sledovat, jak Přesune panel vložení.
+1. Přetáhněte ovládací prvek <xref:System.Windows.Forms.Button> z **panelu nástrojů** do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> a nastavte ukazatel na místo mezi dvěma ovládacími prvky <xref:System.Windows.Forms.Button>. Všimněte si, že je vykreslen panel vložení, který označuje, kam bude <xref:System.Windows.Forms.Button> umístěn při jeho přetažení do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Před vyřazením nového ovládacího prvku <xref:System.Windows.Forms.Button> do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> přesunutím ukazatele myši v rozevíracím seznamu Sledujte, jak se panel vložení přesouvá.
 
-2. Vyřadit nové <xref:System.Windows.Forms.Button> ovládací prvek do <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Všimněte si, že nový <xref:System.Windows.Forms.Button> ovládací prvek není zarovnána s jinými uživateli, protože jeho <xref:System.Windows.Forms.Control.Margin%2A> vlastnost má jinou hodnotu.
+2. Nový ovládací prvek <xref:System.Windows.Forms.Button> přetáhněte do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Všimněte si, že nový ovládací prvek <xref:System.Windows.Forms.Button> není zarovnán s ostatními, protože jeho vlastnost <xref:System.Windows.Forms.Control.Margin%2A> má jinou hodnotu.
 
-## <a name="reassigning-existing-controls-to-a-different-parent"></a>Opětovné přiřazení existujících ovládacích prvků jinému nadřazenému prvku
- Můžete přiřadit ovládací prvky, které existují ve formuláři na nový <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+## <a name="reassigning-existing-controls-to-a-different-parent"></a>Změna přiřazení existujících ovládacích prvků jinému nadřazenému prvku
+ Ovládací prvky, které existují na formuláři, můžete přiřadit novému ovládacímu prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-### <a name="to-reparent-existing-controls"></a>Chcete-li změnit nadřazenou položku existující ovládací prvky
+### <a name="to-reparent-existing-controls"></a>Jak znovu zařadit existující ovládací prvky
 
-1. Přetáhněte tři <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** do formuláře. Umístěte blízko sobě navzájem, ale nechat nezarovnaných.
+1. Přetáhněte ze **sady nástrojů** do formuláře tři ovládací prvky <xref:System.Windows.Forms.Button>. Umístěte je blízko k sobě, ale nechte je nezarovnané.
 
-2. V **nástrojů**, klikněte na tlačítko <xref:System.Windows.Forms.FlowLayoutPanel> ikonu ovládacího prvku. Přetáhněte není ji na formuláři.
+2. Na **panelu nástrojů**klikněte na ikonu ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Nepřetáhněte ho do formuláře.
 
-3. Přesuňte ukazatel myši blízko tři <xref:System.Windows.Forms.Button> ovládacích prvků. Všimněte si, že se ukazatel změní na křížek s <xref:System.Windows.Forms.FlowLayoutPanel> ikonu ovládací prvek připojen.
+3. Přesuňte ukazatel myši blízko k třem ovládacím prvkům <xref:System.Windows.Forms.Button>. Všimněte si, že se ukazatel změní na vlasovou čáru s připojenou ikonou ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-4. Klepněte a podržte tlačítko myši.
+4. Klikněte a podržte tlačítko myši.
 
-5. Přetažením ukazatele myši nakreslete obrysu <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku. Nakreslit obrys kolem tři <xref:System.Windows.Forms.Button> ovládacích prvků.
+5. Přetažením ukazatele myši nakreslete obrys ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel>. Vykreslete obrys kolem tří <xref:System.Windows.Forms.Button>ch ovládacích prvků.
 
-6. Uvolněte tlačítko myši. Všimněte si, že tři <xref:System.Windows.Forms.Button> ovládací prvky jsou vloženy do <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.
+6. Uvolněte tlačítko myši. Všimněte si, že do ovládacího prvku <xref:System.Windows.Forms.FlowLayoutPanel> jsou vloženy tři <xref:System.Windows.Forms.Button> ovládací prvky.
 
 ## <a name="next-steps"></a>Další kroky
- Složitá rozložení pomocí kombinace panely rozložení a ovládacích prvků můžete dosáhnout. Návrhy pro další zkoumání patří:
+ Můžete dosáhnout složitých rozložení pomocí kombinace panelů rozložení a ovládacích prvků. Mezi návrhy pro další zkoumání patří:
 
-- Změna velikosti mezi <xref:System.Windows.Forms.Button> ovládacích prvků pro větší velikost a Všimněte si vliv na rozložení.
+- Změňte velikost jednoho z <xref:System.Windows.Forms.Button> ovládacích prvků na větší velikost a poznamenejte si efekt v rozložení.
 
-- Panely rozložení může obsahovat jiné panely rozložení. Experimentu se vyřazování <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku do existujícího ovládacího prvku.
+- Panely rozložení mohou obsahovat další panely rozložení. Experimentujte s vyřazením ovládacího prvku <xref:System.Windows.Forms.TableLayoutPanel> do existujícího ovládacího prvku.
 
-- Ukotvit <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku na nadřazený formulář. Změnit velikost formuláře a sledujte vliv na rozložení.
+- Ukotvěte ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel> do nadřazeného formuláře. Změňte velikost formuláře a poznamenejte si efekt v rozložení.
 
-- Nastavte <xref:System.Windows.Forms.Control.Visible%2A> vlastnost ovládací prvky pro `false` a Všimněte si, jak <xref:System.Windows.Forms.FlowLayoutPanel> přeformátuje v odpovědi.
+- Nastavte vlastnost <xref:System.Windows.Forms.Control.Visible%2A> jednoho z ovládacích prvků na `false` a Všimněte si, jak <xref:System.Windows.Forms.FlowLayoutPanel> přetéká v reakci.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.FlowLayoutPanel>
 - <xref:System.Windows.Forms.TableLayoutPanel>
-- [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
+- [Postupy: Uspořádání ovládacích prvků na Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
 - [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
-- [Microsoft Windows uživatelské prostředí, oficiální pokyny pro uživatelské rozhraní vývojářů a návrhářů. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)](https://www.microsoft.com/mspress/southpacific/books/book11588.htm)
 - [Přehled vlastnosti AutoSize](autosize-property-overview.md)
-- [Postupy: Ukotvování ovládacích prvků ve Windows Forms](how-to-dock-controls-on-windows-forms.md)
+- [Postupy: Vložení ovládacích prvků ve Windows Forms do doku](how-to-dock-controls-on-windows-forms.md)
 - [Postupy: Ukotvení ovládacích prvků ve Windows Forms](how-to-anchor-controls-on-windows-forms.md)
-- [Návod: Vytváření rozložení Windows Forms ovládací prvky s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md)
+- [Návod: Rozvrhování ovládacích prvků Windows Forms s odsazením, okraji a s vlastností AutoSize](windows-forms-controls-padding-autosize.md)

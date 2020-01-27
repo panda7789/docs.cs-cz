@@ -1,5 +1,5 @@
 ---
-title: Přehled štětců WPF
+title: Brushes overview
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,39 +7,39 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-ms.openlocfilehash: 8a1d05ad48ce75ce67d21d5a4d508015fea879b2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 18ca9b79a6ee801638a54fcb227c44e9aea21fd0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458623"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746206"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
-Vše viditelné na obrazovce je viditelné, protože bylo vykresleno štětcem. Například štětce se používá k popisu pozadí tlačítka, popředí textu a výplně tvaru. Toto téma představuje koncepty malování pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce a obsahuje příklady. Štětce umožňují malovat [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty s cokoli od jednoduchých, plných barev až po složité sady vzorů a imagí.  
+Everything visible on your screen is visible because it was painted by a brush. For example, a brush is used to describe the background of a button, the foreground of text, and the fill of a shape. This topic introduces the concepts of painting with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes and provides examples. Brushes enable you to paint [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objects with anything from simple, solid colors to complex sets of patterns and images.  
   
 <a name="paintingwithbrush"></a>   
-## <a name="painting-with-a-brush"></a>Malování pomocí štětce  
- <xref:System.Windows.Media.Brush> "vykreslí" oblast s jejími výstupy. Různé štětce mají různé typy výstupu. Některé štětce vykreslí oblast s plnou barvou, ostatními pomocí přechodu, vzorku, obrázku nebo kresby. Následující ilustrace ukazuje příklady každého z různých typů <xref:System.Windows.Media.Brush>.  
+## <a name="painting-with-a-brush"></a>Painting with a Brush  
+ A <xref:System.Windows.Media.Brush> "paints" an area with its output. Different brushes have different types of output. Some brushes paint an area with a solid color, others with a gradient, pattern, image, or drawing. The following illustration shows examples of each of the different <xref:System.Windows.Media.Brush> types.  
   
- ![Typy štětců](./media/graphicsmm-brushtypes.jpg "graphicsmm_brushtypes")  
-Příklady štětce  
+ ![Brush types](./media/graphicsmm-brushtypes.jpg "graphicsmm_brushtypes")  
+Brush examples  
   
- Většina vizuálních objektů vám umožní určit, jak se mají vykreslit. V následující tabulce jsou uvedeny některé běžné objekty a vlastnosti, se kterými můžete použít <xref:System.Windows.Media.Brush>.  
+ Most visual objects enable you to specify how they are painted. The following table lists some common objects and properties with which you can use a <xref:System.Windows.Media.Brush>.  
   
 |Třída|Vlastnosti štětce|  
 |-----------|----------------------|  
-|<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A><xref:System.Windows.Controls.Border.Background%2A>|  
-|<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A><xref:System.Windows.Controls.Control.Foreground%2A>|  
+|<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>, <xref:System.Windows.Controls.Border.Background%2A>|  
+|<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>|  
 |<xref:System.Windows.Controls.Panel>|<xref:System.Windows.Controls.Panel.Background%2A>|  
 |<xref:System.Windows.Media.Pen>|<xref:System.Windows.Media.Pen.Brush%2A>|  
-|<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A><xref:System.Windows.Shapes.Shape.Stroke%2A>|  
+|<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A>, <xref:System.Windows.Shapes.Shape.Stroke%2A>|  
 |<xref:System.Windows.Controls.TextBlock>|<xref:System.Windows.Controls.TextBlock.Background%2A>|  
   
- Následující části popisují různé typy <xref:System.Windows.Media.Brush> a poskytují příklad každého z nich.  
+ The following sections describe the different <xref:System.Windows.Media.Brush> types and provide an example of each.  
   
 <a name="paintwithsolidcolorbrush"></a>   
-## <a name="paint-with-a-solid-color"></a>Malování plnou barvou  
- <xref:System.Windows.Media.SolidColorBrush> vykreslí oblast s plným <xref:System.Windows.Media.Color>. Existuje mnoho způsobů, jak určit <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush>: můžete například zadat alfa, červené, modré a zelené kanály nebo použít jednu z předdefinovaných barev, kterou poskytuje třída <xref:System.Windows.Media.Colors>.  
+## <a name="paint-with-a-solid-color"></a>Paint with a Solid Color  
+ A <xref:System.Windows.Media.SolidColorBrush> paints an area with a solid <xref:System.Windows.Media.Color>. There are a variety of ways to specify the <xref:System.Windows.Media.SolidColorBrush.Color%2A> of a <xref:System.Windows.Media.SolidColorBrush>: for example, you can specify its alpha, red, blue, and green channels or use one of the predefined color provided by the <xref:System.Windows.Media.Colors> class.  
   
  Následující příklad používá <xref:System.Windows.Media.SolidColorBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
   
@@ -170,5 +170,5 @@ Obdélník vykreslený pomocí VisualBrush
 - [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
-- [Témata s postupy](brushes-how-to-topics.md)
+- [Postupy](brushes-how-to-topics.md)
 - [Další výkonnostní doporučení](../advanced/optimizing-performance-other-recommendations.md)

@@ -1,5 +1,5 @@
 ---
-title: PictureBox – přehled ovládacího prvku (Windows Forms)
+title: PictureBox – přehled ovládacího prvku
 ms.date: 03/30/2017
 f1_keywords:
 - PictureBox
@@ -8,23 +8,23 @@ helpviewer_keywords:
 - picture controls [Windows Forms], about picture controls
 - image controls [Windows Forms], about image controls
 ms.assetid: e5befee7-dc29-4888-a7c4-3b177e394112
-ms.openlocfilehash: 54ae01789f972381304480c9faf28d084ac3f1db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c911e0190b5a1b063d84e589a7f39285358cbd22
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012630"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744251"
 ---
 # <a name="picturebox-control-overview-windows-forms"></a>PictureBox – přehled ovládacího prvku (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku se používá k zobrazení grafiky ve formátu rastrový obrázek, GIF, JPEG, metafile nebo ikonu.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.PictureBox> slouží k zobrazení grafiky ve formátu rastrového obrázku, formátu GIF, JPEG, metasouboru nebo ikony.  
   
 ## <a name="key-properties-and-methods"></a>Klíčové vlastnosti a metody  
- Určuje obrázek, který se zobrazí <xref:System.Windows.Forms.PictureBox.Image%2A> vlastnost, která je možné nastavit v době běhu, nebo v době návrhu. Můžete alternativně zadat image tak, že nastavíte <xref:System.Windows.Forms.PictureBox.ImageLocation%2A> vlastnosti a pak načíst image synchronně pomocí <xref:System.Windows.Forms.PictureBox.Load%2A> metody nebo asynchronně pomocí <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> metody. <xref:System.Windows.Forms.PictureBox.SizeMode%2A> Vlastnost určuje, jaká je na obrázku a ovládací prvek spolupráce mezi sebou. Další informace najdete v tématu [jak: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md).  
+ Obrázek, který se zobrazí, je určen vlastností <xref:System.Windows.Forms.PictureBox.Image%2A>, kterou lze nastavit v době běhu nebo v době návrhu. Můžete také zadat bitovou kopii nastavením vlastnosti <xref:System.Windows.Forms.PictureBox.ImageLocation%2A> a následným načtením bitové kopie pomocí metody <xref:System.Windows.Forms.PictureBox.Load%2A> nebo asynchronně pomocí metody <xref:System.Windows.Forms.PictureBox.LoadAsync%2A>. Vlastnost <xref:System.Windows.Forms.PictureBox.SizeMode%2A> určuje, jak se má obrázek a ovládací prvek přizpůsobit sobě. Další informace najdete v tématu [Postup: Změna velikosti nebo umístění obrázku v době běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.PictureBox>
-- [Postupy: Načtení obrázku pomocí návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Postupy: Načtení obrázku pomocí Návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
 - [Postupy: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
 - [Postupy: Nastavení obrázků za běhu](how-to-set-pictures-at-run-time-windows-forms.md)
 - [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)

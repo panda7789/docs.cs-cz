@@ -2,12 +2,12 @@
 title: IdentityServer pro nativní cloudové aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | IdentityServer
 ms.date: 06/30/2019
-ms.openlocfilehash: e96395766d1a4b63815c10c2c90e35a8f7f9159d
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 48d0b95a40682f3127127851781b4d0e26e44630
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568469"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728575"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pro cloudové nativní aplikace
 
@@ -96,13 +96,13 @@ IdentityServer také hostuje veřejnou ukázkovou lokalitu, která se dá použ�
 
 ## <a name="javascript-clients"></a>Klienti JavaScriptu
 
-Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](http://docs.identityserver.io/en/latest/quickstarts/6_javascript_client.html) (`oidc-client.js`) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
+Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) (`oidc-client.js`) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
 
 ## <a name="references"></a>Reference
 
 - [Dokumentace k IdentityServer](http://docs.identityserver.io/en/latest/)
 - [Typy aplikací](https://docs.microsoft.com/azure/active-directory/develop/app-types)
-- [Klient OIDC JavaScript](http://docs.identityserver.io/en/latest/quickstarts/6_javascript_client.html)
+- [Klient OIDC JavaScript](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html)
 
 >[!div class="step-by-step"]
 >[Předchozí](azure-active-directory.md)

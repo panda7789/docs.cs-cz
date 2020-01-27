@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms Panel pomocí Návrháře'
+title: Seskupení ovládacích prvků pomocí ovládacího prvku panel pomocí návrháře
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Panel control [Windows Forms], grouping controls
 - controls [Windows Forms], grouping
 - Windows Forms controls, grouping
 ms.assetid: 7e1cd708-fdb1-49d8-9ca2-5640b276bf2e
-ms.openlocfilehash: cadfa715b140c63b216ec0ca2e6d6a6589ae3458
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 927aeb5b51bc1ac4e22a45e487b49424b4e67b71
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040391"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745651"
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-panel-control-using-the-designer"></a>Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms Panel pomocí Návrháře
-Ovládací <xref:System.Windows.Forms.Panel> prvky model Windows Forms slouží k seskupení dalších ovládacích prvků. Existují tři důvody pro seskupení ovládacích prvků. Jedním z nich je vizuální seskupení souvisejících prvků formuláře pro jasné uživatelské rozhraní; Další je programové seskupení přepínačů, například. Poslední je pro přesunutí ovládacích prvků jako jednotky v době návrhu.
+Ovládací prvky <xref:System.Windows.Forms.Panel> model Windows Forms slouží k seskupení dalších ovládacích prvků. Existují tři důvody pro seskupení ovládacích prvků. Jedním z nich je vizuální seskupení souvisejících prvků formuláře pro jasné uživatelské rozhraní; Další je programové seskupení přepínačů, například. Poslední je pro přesunutí ovládacích prvků jako jednotky v době návrhu.
 
 ## <a name="to-create-a-group-of-controls"></a>Vytvoření skupiny ovládacích prvků
 
-1. Přetáhněte ovládací prvek z karty model Windows Forms panelu nástrojů na formulář. <xref:System.Windows.Forms.Panel>
+1. Přetáhněte ovládací prvek <xref:System.Windows.Forms.Panel> z karty **model Windows Forms** panelu nástrojů na formulář.
 
 2. Do panelu přidejte další ovládací prvky, nakreslením každé dovnitř panelu.
 
-     Pokud máte ovládací prvky, které chcete uzavřít na panelu, můžete vybrat všechny ovládací prvky, vyjmout je do schránky, vybrat <xref:System.Windows.Forms.Panel> ovládací prvek a pak je vložit do panelu. Můžete je také přetáhnout na panel.
+     Pokud máte ovládací prvky, které chcete uzavřít na panelu, můžete vybrat všechny ovládací prvky, vyjmout je do schránky, vybrat ovládací prvek <xref:System.Windows.Forms.Panel> a pak je vložit do panelu. Můžete je také přetáhnout na panel.
 
-3. Volitelné Chcete-li přidat ohraničení panelu, nastavte jeho <xref:System.Windows.Forms.BorderStyle> vlastnost. Existují tři možnosti: <xref:System.Windows.Forms.BorderStyle.Fixed3D>, <xref:System.Windows.Forms.BorderStyle.FixedSingle> <xref:System.Windows.Forms.BorderStyle.None>a.
+3. Volitelné Chcete-li přidat ohraničení panelu, nastavte jeho vlastnost <xref:System.Windows.Forms.BorderStyle>. Existují tři možnosti: <xref:System.Windows.Forms.BorderStyle.Fixed3D>, <xref:System.Windows.Forms.BorderStyle.FixedSingle>a <xref:System.Windows.Forms.BorderStyle.None>.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 6096bd3aa35a27c97862089d09d537bdc5b1fff0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 82c9815abdd5140340f9a8ea39be23496d433889
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971531"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738379"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
@@ -94,7 +94,7 @@ Variace tohoto přístupu končí každý název třídy testu pomocí "by" měl
 
 - `CatalogControllerGetImage`**by měl**`.`**protokol**`WarningGivenImageMissingException`
 
-Někteří týmy hledají druhý jasný přístup k pojmenování, i když mírně podrobnější. V každém případě se pokuste použít konvenci pojmenování, která poskytuje přehled o chování testu, aby při selhání jednoho nebo více testů bylo zřejmé, že se nezdařily jejich názvy. Vyhněte se pojmenovávání testů Vaguely, jako je ControllerTests. test1, protože při jejich zobrazení ve výsledcích testů nejsou k dispozici žádná hodnota.
+Někteří týmy hledají druhý jasný přístup k pojmenování, i když mírně podrobnější. V každém případě se pokuste použít konvenci pojmenování, která poskytuje přehled o chování testu, aby při selhání jednoho nebo více testů bylo zřejmé, že se nezdařily jejich názvy. Vyhněte se pojmenovávání testů Vaguely, jako je například ControllerTests. test1, protože při jejich zobrazení ve výsledcích testů nejsou k dispozici žádná hodnota.
 
 Pokud budete postupovat podle konvence pojmenování, jako je ta výše, která vytváří mnoho malých testovacích tříd, je vhodné lépe uspořádat testy pomocí složek a oborů názvů. Obrázek 9-4 ukazuje jeden z přístupů k organizování testů podle složky v rámci několika testovacích projektů.
 

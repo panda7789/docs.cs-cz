@@ -1,44 +1,44 @@
 ---
-title: Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView
+title: Změna velikosti sloupců a řádků v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], sizing rows and columns
 - columns [Windows Forms], resizing in grids
 - data grids [Windows Forms], resizing columns and rows
 ms.assetid: 7532764d-e5c1-4943-a08b-6377a722d3b6
-ms.openlocfilehash: e1fa2d57cfb2cd374d691fe03a0e0bdbd3ad7141
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8f8394a837ccc11c469f9ad4feeb60464d0014fe
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903185"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742409"
 ---
 # <a name="resizing-columns-and-rows-in-the-windows-forms-datagridview-control"></a>Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView
-`DataGridView` Řízení poskytuje mnoho možností pro přizpůsobení chování nastavení velikosti řádků a sloupců. Obvykle `DataGridView` buněk nelze změnit velikost na základě jejich obsahu. Místo toho galerie zobrazit hodnotu, která je větší než buňku. Pokud obsah může být zobrazena jako řetězec, zobrazí se buňku v popisku.  
+Ovládací prvek `DataGridView` poskytuje mnoho možností přizpůsobení chování při změně velikosti sloupců a řádků. Obvykle `DataGridView` buňky nemění velikost na základě jejich obsahu. Místo toho vystřihnout libovolnou zobrazovanou hodnotu, která je větší než buňka. Pokud se obsah může zobrazit jako řetězec, buňka ho zobrazí v popisu tlačítka.  
   
- Ve výchozím nastavení můžete přetáhnout uživatelé řádků, sloupců a oddělovače záhlaví pomocí myši zobrazíte další informace. Uživatele můžete také dvakrát kliknout na oddělovač automaticky změní velikost přidružené řádek, sloupec nebo záhlaví obsluhy vzdálené správy na základě jeho obsahu.  
+ Ve výchozím nastavení mohou uživatelé zobrazit další informace přetažením řádku, sloupce a oddělovače záhlaví pomocí myši. Uživatelé také mohou dvakrát kliknout na oddělovač, aby automaticky změnil velikost přidruženého řádku, sloupce nebo záhlaví na základě jeho obsahu.  
   
- `DataGridView` Ovládací prvek obsahuje vlastnosti, metody a události, které vám umožní přizpůsobit nebo vypnout všechny z těchto projevů se uživatel přesměruje. Kromě toho můžete programově změnit velikost řádky, sloupce a záhlaví podle jejich obsahu, nebo můžete nakonfigurovat, je automaticky změní velikost sami při každé změně jejich obsah. Můžete také nakonfigurovat sloupce, které chcete automaticky dělit dostupná šířka ovládacího prvku v proporcích, které zadáte.  
+ Ovládací prvek `DataGridView` poskytuje vlastnosti, metody a události, které vám umožní přizpůsobit nebo zakázat všechna tato chování zaměřené na uživatele. Kromě toho můžete programově měnit velikost řádků, sloupců a záhlaví, které odpovídají jejich obsahu, nebo je můžete nakonfigurovat tak, aby se při změně jejich obsahu automaticky změnila velikost. Můžete také nakonfigurovat sloupce pro automatické rozdělení dostupné šířky ovládacího prvku v poměrech, které zadáte.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md)  
- Popisuje možnosti pro nastavení velikosti řádků, sloupců a záhlaví. Také poskytuje podrobné informace o určení velikosti související vlastnosti a metody a popisuje běžné scénáře použití.  
+ Popisuje možnosti pro změnu velikosti řádků, sloupců a záhlaví. Poskytuje také podrobné informace o vlastnostech a metodách souvisejících s určením velikosti a popisuje běžné scénáře použití.  
   
  [Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView](column-fill-mode-in-the-windows-forms-datagridview-control.md)  
- Režim vyplnění sloupce podrobně popisuje a obsahuje ukázky kódu, který vám pomůže experimentovat s režim vyplnění sloupce a jiné režimy.  
+ Popisuje režim výplně sloupce podrobně a poskytuje ukázku kódu, který můžete použít k experimentování s režimem výplně sloupců a dalšími režimy.  
   
  [Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView](how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
- Popisuje postup konfigurace režimů změny velikosti pro běžné účely.  
+ V této části najdete popis postupu konfigurace režimů změny velikosti pro běžné účely.  
   
  [Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView](programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
- Obsahuje ukázku kódu, který vám pomůže experimentovat s Programová změna velikosti.  
+ Poskytuje ukázku kódu, který můžete použít k experimentování s programovou změnou velikosti.  
   
  [Postupy: Automatická změna velikosti buněk při změně obsahu v ovládacím prvku Windows Forms DataGridView](automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
- Obsahuje ukázku kódu, který vám pomůže experimentovat s režim automatické velikosti.  
+ Poskytuje ukázku kódu, který můžete použít k experimentování s automatickými režimy velikosti.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.DataGridView>  
- Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+ Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
 ## <a name="see-also"></a>Viz také:
 

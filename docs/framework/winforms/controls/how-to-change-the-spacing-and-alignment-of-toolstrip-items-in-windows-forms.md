@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms'
+title: 'Postupy: Změna mezer a zarovnání položek ToolStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,21 +9,21 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - toolbars [Windows Forms], aligning items
 ms.assetid: cd483466-0f49-43df-addf-e2b5fcd64027
-ms.openlocfilehash: c7a874659be8dbaec66b78e1e065bcbec21da3b4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 805fbac5fe33071006f29692d503e5c57eacd765
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650879"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746561"
 ---
 # <a name="how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms"></a>Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms
-<xref:System.Windows.Forms.ToolStrip> Ovládací prvek plně podporuje rozložení funkce jako je například změna velikosti, mezery mezi <xref:System.Windows.Forms.ToolStripItem> řídí relativně vůči sobě navzájem, uspořádání ovládacích prvků na <xref:System.Windows.Forms.ToolStrip>a mezery ovládacích prvků vzhledem k <xref:System.Windows.Forms.ToolStrip>.  
+Ovládací prvek <xref:System.Windows.Forms.ToolStrip> plně podporuje funkce rozložení, jako je například velikost, rozestup <xref:System.Windows.Forms.ToolStripItem>ch ovládacích prvků, které jsou vzájemně relativní, uspořádání ovládacích prvků na <xref:System.Windows.Forms.ToolStrip>a mezery mezi ovládacími prvky relativními k <xref:System.Windows.Forms.ToolStrip>.  
   
- Protože výchozí hodnotu <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `true`, ovládací prvky se velikost automaticky, pokud nenastavíte <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `false`.  
+ Vzhledem k tomu, že je výchozí hodnota vlastnosti <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> `true`, mají ovládací prvky velikost automaticky, pokud nenastavíte vlastnost <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> na `false`.  
   
-### <a name="to-manually-size-a-toolstripitem"></a>Chcete-li ručně změnit velikost prvku ToolStripItem  
+### <a name="to-manually-size-a-toolstripitem"></a>Ruční změna velikosti prvku ToolStripItem  
   
-1. Nastavte <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `false` pro přidružený ovládací prvek.  
+1. Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> na `false` pro přidružený ovládací prvek.  
   
     ```vb  
     ToolStripButton1.AutoSize = False  
@@ -33,13 +33,13 @@ ms.locfileid: "64650879"
     toolStripButton1.AutoSize = false;  
     ```  
   
-2. Nastavte <xref:System.Windows.Forms.ToolStripItem.Size%2A> vlastnost tak, jak chcete, aby pro přidružený <xref:System.Windows.Forms.ToolStripItem>.  
+2. Vlastnost <xref:System.Windows.Forms.ToolStripItem.Size%2A> nastavte tak, jak chcete pro související <xref:System.Windows.Forms.ToolStripItem>.  
   
-### <a name="to-set-the-spacing-of-a-toolstripitem"></a>Nastavit mezery mezi ovládacího prvku ToolStripItem  
+### <a name="to-set-the-spacing-of-a-toolstripitem"></a>Nastavení mezer ovládacího prvku ToolStripItem  
   
-1. Vložit do požadované hodnoty v pixelech <xref:System.Windows.Forms.ToolStripItem.Margin%2A> vlastnost přidružený ovládací prvek.  
+1. Vložte požadované hodnoty (v pixelech) do vlastnosti <xref:System.Windows.Forms.ToolStripItem.Margin%2A> přidruženého ovládacího prvku.  
   
-     Hodnoty <xref:System.Windows.Forms.ToolStripItem.Margin%2A> vlastnost určovat mezery mezi položkou a sousední položky v tomto pořadí: Vlevo, nahoře, vpravo a dole.  
+     Hodnoty vlastnosti <xref:System.Windows.Forms.ToolStripItem.Margin%2A> určují mezery mezi položkou a sousedními položkami v tomto pořadí: vlevo, nahoře, vpravo a dole.  
   
     ```vb  
     ToolStripTextBox1.Margin = New System.Windows.Forms.Padding _  
@@ -51,9 +51,9 @@ ms.locfileid: "64650879"
         (3, 0, 3, 0);  
     ```  
   
-### <a name="to-align-a-toolstripitem-to-the-right-side-of-the-toolstrip"></a>Chcete-li zarovnat ToolStripItem na pravé straně ovládacího prvku ToolStrip  
+### <a name="to-align-a-toolstripitem-to-the-right-side-of-the-toolstrip"></a>Zarovnání prvku ToolStripItem na pravou stranu ovládacího prvku ToolStrip  
   
-1. Nastavte <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemAlignment.Right> pro přidružený ovládací prvek. Ve výchozím nastavení <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> je nastavena na <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, který odpovídá ovládacích prvků na levé straně <xref:System.Windows.Forms.ToolStrip>.  
+1. Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> na <xref:System.Windows.Forms.ToolStripItemAlignment.Right> pro přidružený ovládací prvek. Ve výchozím nastavení je <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> nastavena na <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, která zarovnává ovládací prvky na levou stranu <xref:System.Windows.Forms.ToolStrip>.  
   
     ```vb  
     ToolStripSplitButton1.Alignment = _  
@@ -65,9 +65,9 @@ ms.locfileid: "64650879"
         System.Windows.Forms.ToolStripItemAlignment.Right;  
     ```  
   
-### <a name="to-arrange-toolstrip-items-on-the-toolstrip"></a>Chcete-li uspořádat ovládací prvek ToolStrip položek na ovládacím prvku ToolStrip  
+### <a name="to-arrange-toolstrip-items-on-the-toolstrip"></a>Uspořádání položek ToolStrip na ovládacím prvku ToolStrip  
   
-- Nastavte <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> vlastnost na hodnotu <xref:System.Windows.Forms.ToolStripLayoutStyle> , který chcete.  
+- Vlastnost <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> nastavte na hodnotu <xref:System.Windows.Forms.ToolStripLayoutStyle>, kterou požadujete.  
   
     ```vb  
     ToolStripDropDown1.LayoutStyle = _  

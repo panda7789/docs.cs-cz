@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Automatické generování sloupců v ovládacím prvku Windows Forms DataGridView s datovou vazbou'
+title: Vygeneruje sloupce v ovládacím prvku DataGridView vázaného na data.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,17 +9,17 @@ helpviewer_keywords:
 - columns [Windows Forms], autogenerating
 - DataGridView control [Windows Forms], data-bound columns
 ms.assetid: 699f6f9e-6aa5-4811-902b-6a2c57dec7d6
-ms.openlocfilehash: eb74c1ef1661fc8bd7a57f079f10d24a7eef8187
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 860e640e095537358d2f8778c810aa577e9d7ff0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639764"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746230"
 ---
-# <a name="how-to-autogenerate-columns-in-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Automatické generování sloupců v ovládacím prvku Windows Forms DataGridView s datovou vazbou
-Následující příklad kódu ukazuje, jak zobrazit sloupce ze zdroje vázaných dat v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Když <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> hodnota vlastnosti je `true` (výchozí), <xref:System.Windows.Forms.DataGridViewColumn> se vytvoří pro každý sloupec v tabulce zdroje dat.  
+# <a name="how-to-autogenerate-columns-in-a-data-bound-windows-forms-datagridview-control"></a>Postupy: Automatické generování sloupců v daty připojeném ovládacím prvku Windows Forms DataGridView
+Následující příklad kódu ukazuje, jak zobrazit sloupce z vázaného zdroje dat v ovládacím prvku <xref:System.Windows.Forms.DataGridView>. Pokud je hodnota vlastnosti <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> `true` (výchozí), vytvoří se <xref:System.Windows.Forms.DataGridViewColumn> pro každý sloupec v tabulce zdroje dat.  
   
- Pokud <xref:System.Windows.Forms.DataGridView> ovládací prvek již má sloupce při nastavení <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> vlastnost, je mez existující sloupce jsou ve srovnání s sloupce ve zdroji dat a zachovají pokaždé, když je nalezena shoda. Nevázaných sloupců se vždy zachovají. Svázané sloupce, pro které není nalezena žádná shoda ve zdroji dat, se odeberou. Sloupce ve zdroji dat, pro který není nalezena žádná shoda v ovládacím prvku generovat nový <xref:System.Windows.Forms.DataGridViewColumn> objekty, které jsou přidány na konec objektu <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce.  
+ Pokud ovládací prvek <xref:System.Windows.Forms.DataGridView> už má při nastavování vlastnosti <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> sloupce, existující vázané sloupce se porovnají se sloupci ve zdroji dat a zachovají se, kdykoli dojde ke shodě. Nevázané sloupce se vždycky zachovají. Z vázaných sloupců, pro které se neshodují žádné shody ve zdroji dat, se odeberou. Sloupce ve zdroji dat, pro které neexistuje žádná shoda v ovládacím prvku generují nové <xref:System.Windows.Forms.DataGridViewColumn> objekty, které jsou přidány na konec <xref:System.Windows.Forms.DataGridView.Columns%2A> kolekce.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridViewMisc#020](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#020)]
@@ -28,11 +28,11 @@ Následující příklad kódu ukazuje, jak zobrazit sloupce ze zdroje vázanýc
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `customersDataGridView`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `customersDataGridView`.  
   
-- A <xref:System.Data.DataSet> objekt s názvem `customersDataSet` , který obsahuje tabulku s názvem `Customers`.  
+- Objekt <xref:System.Data.DataSet> s názvem `customersDataSet` obsahující tabulku s názvem `Customers`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, <xref:System.Data?displayProperty=nameWithType>, a <xref:System.Xml?displayProperty=nameWithType> sestavení.  
+- Odkazy na sestavení <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, <xref:System.Data?displayProperty=nameWithType>a <xref:System.Xml?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

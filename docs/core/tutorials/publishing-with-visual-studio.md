@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 12/10/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 485d62ce67f284fe1bbe931dcaa00671be154f35
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a82934fd2ea9568681a3bec82c3b15513decc926
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715373"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741562"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio"></a>Publikování aplikace Hello World .NET Core pomocí sady Visual Studio
 
@@ -68,7 +68,7 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
       * *HelloWorld.runtimeconfig.json*
 
-         Toto je konfigurační soubor modulu runtime aplikace. Identifikuje verzi .NET Core, na které byla aplikace sestavena. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md).
+         Toto je konfigurační soubor modulu runtime aplikace. Identifikuje verzi .NET Core, na které byla aplikace sestavena. Můžete také přidat možnosti konfigurace. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 

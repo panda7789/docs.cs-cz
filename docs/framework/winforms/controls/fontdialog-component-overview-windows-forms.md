@@ -1,5 +1,5 @@
 ---
-title: FontDialog – přehled komponenty (Windows Forms)
+title: FontDialog – přehled komponenty
 ms.date: 03/30/2017
 f1_keywords:
 - FontDialog
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - Font dialog box
 - FontDialog component [Windows Forms], about FontDialog component
 ms.assetid: daf46e57-1b4b-4b7a-bad0-b50ca7ba75dc
-ms.openlocfilehash: 7f140807bf4b42e530302190042e729c59248e7f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 664b756dc068ca283e4f43edbdd0f3266f5d1142
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789308"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745701"
 ---
 # <a name="fontdialog-component-overview-windows-forms"></a>FontDialog – přehled komponenty (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.FontDialog> komponenta je předem nakonfigurované dialogovému oknu, což je standardní Windows **písmo** dialogové okno používá k vystavení písma, které jsou nainstalovány v systému. Použití v rámci vaší aplikace založené na Windows jako jednoduchým řešením pro výběr písma namísto dialogové okno Vlastní konfigurace.  
+Komponenta model Windows Forms <xref:System.Windows.Forms.FontDialog> je předem nakonfigurovaným dialogovým oknem, které je standardním dialogovým oknem **písma** systému Windows, které slouží k vystavení písem, která jsou aktuálně nainstalována v systému. Použijte ho v rámci aplikace pro Windows jako jednoduché řešení pro výběr písem namísto konfigurace vlastního dialogového okna.  
   
- Ve výchozím nastavení, dialogové okno zobrazuje pole se seznamem pro písmo, styl písma a velikosti. Zaškrtněte políčka pro efekty, jako jsou přeškrtnutí a podtržení; rozevírací seznam pro skript PowerShell workflow a vzorky vzhled písma. (Skript odkazuje na jiný znak skripty, které jsou k dispozici pro dané písmo, například hebrejštinu a japonština.) Chcete-li zobrazit dialogové okno písmo, zavolejte <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody.  
+ Ve výchozím nastavení se v dialogovém okně zobrazují pole pro písmo, styl písma a velikost; zaškrtávací políčka pro efekty jako přeškrtnutí a podtržení; rozevírací seznam pro skript; a ukázku, jak se písmo zobrazí. (Skript odkazuje na jiné znakové skripty, které jsou k dispozici pro dané písmo, například hebrejština nebo japonština.) Chcete-li zobrazit dialogové okno písmo, zavolejte metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>.  
   
-## <a name="key-properties"></a>Vlastnosti klíče  
- Komponenta má několik vlastností, které konfigurace její vzhled. Vlastnosti nastavené možnosti dialogového okna jsou <xref:System.Windows.Forms.FontDialog.Font%2A> a <xref:System.Windows.Forms.FontDialog.Color%2A>. <xref:System.Windows.Forms.FontDialog.Font%2A> Vlastnost nastaví písmo, styl, velikost, skriptů a efekty; například `Arial, 10pt, style=Italic, Strikeout`.  
+## <a name="key-properties"></a>Klíčové vlastnosti  
+ Komponenta má několik vlastností, které konfigurují její vzhled. Vlastnosti, které nastavují výběry dialogových oken, jsou <xref:System.Windows.Forms.FontDialog.Font%2A> a <xref:System.Windows.Forms.FontDialog.Color%2A>. Vlastnost <xref:System.Windows.Forms.FontDialog.Font%2A> nastaví písmo, styl, velikost, skript a efekty; například `Arial, 10pt, style=Italic, Strikeout`.  
   
 ## <a name="see-also"></a>Viz také:
 

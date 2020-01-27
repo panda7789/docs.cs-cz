@@ -1,57 +1,57 @@
 ---
-title: Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip
+title: Sloučení položek nabídky v ovládacím prvku MenuStrip
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MenuStrip [Windows Forms], merging
 - merging [Windows Forms], general concepts
 ms.assetid: 95e113ba-f362-4dda-8a76-6d95ddc45cee
-ms.openlocfilehash: 9a1f59a065faaa3a08a9d8a68973adb1faa5ed09
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9fc2b40ef23d72db51853c124095b734a7646cda
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64582923"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739051"
 ---
 # <a name="merging-menu-items-in-the-windows-forms-menustrip-control"></a>Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip
-Pokud máte aplikace rozhraní více dokumentů (MDI), můžete sloučit položky nabídky nebo celý nabídek z podřízeného formuláře do nabídky nadřazeného formuláře.  
+Máte-li aplikaci MDI (Multiple Document Interface), můžete sloučit položky nabídky nebo celé nabídky z podřízeného formuláře do nabídek nadřazeného formuláře.  
   
- Toto téma popisuje základní koncepty přidružených ke slučování položek nabídky v aplikaci MDI.  
+ Toto téma popisuje základní koncepty spojené s slučováním položek nabídky v aplikaci MDI.  
   
 ## <a name="general-concepts"></a>Obecné koncepty  
- Sloučení postupy zahrnují cíl a správy zdrojového kódu:  
+ Sloučení procedur zahrnuje cíl i správu zdrojového kódu:  
   
-- Cílem <xref:System.Windows.Forms.MenuStrip> ovládací prvek na hlavní nebo nadřazený formulář MDI, do které provádíte sloučení položek nabídky.  
+- Cílem je ovládací prvek <xref:System.Windows.Forms.MenuStrip> v nadřazeném nebo nadřazeném formuláři MDI, do kterého slučujete položky nabídky.  
   
-- Zdroj je <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízený formulář MDI, která obsahuje položky nabídky, které chcete sloučit do nabídky Cíl.  
+- Zdroj je ovládací prvek <xref:System.Windows.Forms.MenuStrip> v podřízeném formuláři MDI, který obsahuje položky nabídky, které chcete sloučit do cílové nabídky.  
   
- <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> Vlastnost identifikuje položku nabídky, jehož rozevíracího seznamu naplníte názvy aktuální MDI nadřazené podřízené formuláře MDI. Například můžete obvykle podřízený objekt MDI, které jsou právě otevřeny na seznam **okno** nabídky.  
+ Vlastnost <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> identifikuje položku nabídky, jejíž rozevírací seznam se naplní názvy aktuálních podřízených objektů MDI nadřazeného formuláře MDI. Například obvykle vypíšete podřízené položky MDI, které jsou aktuálně otevřeny v nabídce **okna** .  
   
- <xref:System.Windows.Forms.ToolStripMenuItem.IsMdiWindowListEntry%2A> Vlastnost určuje, které pochází položky nabídky <xref:System.Windows.Forms.MenuStrip> na podřízený formulář MDI.  
+ Vlastnost <xref:System.Windows.Forms.ToolStripMenuItem.IsMdiWindowListEntry%2A> určuje, které položky nabídky pocházejí z <xref:System.Windows.Forms.MenuStrip> v podřízeném formuláři MDI.  
   
- Položky nabídky můžete sloučit ručně nebo automaticky. Sloučení položek nabídky, stejně jako u obou metod, ale sloučení se aktivuje jiným způsobem, jak je popsáno v části "Ruční sloučení" a "Automatického sloučení" dále v tomto tématu. V ručního a automatického sloučení, ovlivňuje všechny akce sloučení další akce sloučení.  
+ Položky nabídky můžete sloučit ručně nebo automaticky. Položky nabídky se sloučí stejným způsobem jak u obou metod, ale sloučení se aktivuje odlišně, jak je popsáno v části Ruční sloučení a automatické slučování dále v tomto tématu. V ručním i automatickém sloučení má každá akce sloučení vliv na další akci sloučení.  
   
- <xref:System.Windows.Forms.MenuStrip> Slučování položek nabídky přesune z jedné <xref:System.Windows.Forms.ToolStrip> na jiné místo, klonování, stejně jako v případě s <xref:System.Windows.Forms.MainMenu>.  
+ <xref:System.Windows.Forms.MenuStrip> slučuje položky nabídky z jednoho <xref:System.Windows.Forms.ToolStrip> na jinou namísto klonování, stejně jako v případě <xref:System.Windows.Forms.MainMenu>.  
   
-## <a name="mergeaction-values"></a>MergeAction hodnoty  
- Nastavte akci sloučení položek nabídky ve zdroji <xref:System.Windows.Forms.MenuStrip> pomocí <xref:System.Windows.Forms.MergeAction> vlastnost.  
+## <a name="mergeaction-values"></a>Hodnoty MergeAction  
+ Akci sloučení pro položky nabídky ve zdrojovém <xref:System.Windows.Forms.MenuStrip> nastavíte pomocí vlastnosti <xref:System.Windows.Forms.MergeAction>.  
   
- Následující tabulka popisuje význam a typické použití akce k dispozici sloučení.  
+ Následující tabulka popisuje význam a typické použití dostupných akcí sloučení.  
   
 |Hodnota MergeAction|Popis|Typické použití|  
 |-----------------------|-----------------|-----------------|  
-|<xref:System.Windows.Forms.MergeAction.Append>|(Výchozí) Zdrojová položka přidá na konec cílové položky kolekce.|Přidání položky nabídky na konec objektu v nabídce při aktivaci některé části tohoto programu.|  
-|<xref:System.Windows.Forms.MergeAction.Insert>|Přidá položku zdrojové do cílové položky kolekce, v místě určeném <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> nastavenou na zdroj položky.|Přidání položek nabídky do středu nebo na začátku nabídce při aktivaci některé části tohoto programu.<br /><br /> Pokud hodnota <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> je stejný pro obě položky nabídky, se přidají v obráceném pořadí. Nastavte <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> správně zachovat původní pořadí.|  
-|<xref:System.Windows.Forms.MergeAction.Replace>|Najde shodu text nebo používá <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> hodnotu, pokud žádná shoda text nenajde a pak nahradí odpovídající cílové položky nabídky Zdroj položky nabídky.|Cílová položka nabídky nahradíte zdroj položky nabídky se stejným názvem, který provede něco jiného.|  
-|<xref:System.Windows.Forms.MergeAction.MatchOnly>|Najde shodu text nebo používá <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> hodnotu, pokud neodpovídá text nenajde a pak přidá všechny rozevírací položky ze zdroje do cíle.|Sestavování struktura nabídky, která vloží přidá položky nabídky do podnabídky nebo odebere položky nabídky z podnabídky. Například můžete přidat položku nabídky z podřízeného MDI do hlavního <xref:System.Windows.Forms.MenuStrip> **uložit jako** nabídky.<br /><br /> <xref:System.Windows.Forms.MergeAction.MatchOnly> Umožňuje procházet struktura nabídky bez nutnosti přepínat žádnou akci. Poskytuje způsob, jak vyhodnotit následující položky.|  
-|<xref:System.Windows.Forms.MergeAction.Remove>|Najde shodu text nebo používá <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> hodnotu, pokud neodpovídá text nachází a pak taky odebere položku z cíle.|Odebrání položky nabídky z cíle <xref:System.Windows.Forms.MenuStrip>.|  
+|<xref:System.Windows.Forms.MergeAction.Append>|Výchozí Přidá zdrojovou položku na konec kolekce cílové položky.|Přidání položek nabídky na konec nabídky, je-li některá část programu aktivována.|  
+|<xref:System.Windows.Forms.MergeAction.Insert>|Přidá zdrojovou položku do kolekce cílové položky v umístění určeném vlastností <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> nastavenou na zdrojové položce.|Přidání položek nabídky do středu nebo začátek nabídky, je-li některá část programu aktivována.<br /><br /> Pokud je hodnota <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> pro obě položky nabídky stejná, budou přidány v obráceném pořadí. Nastavte <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> odpovídajícím způsobem zachovat původní pořadí.|  
+|<xref:System.Windows.Forms.MergeAction.Replace>|Vyhledá shodu textu nebo použije <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> hodnotu, pokud není nalezena shoda textu, a poté nahradí odpovídající položku cílové nabídky položkou nabídky zdroje.|Výměna položky cílové nabídky se zdrojovou položkou nabídky se stejným názvem, která má něco jiného.|  
+|<xref:System.Windows.Forms.MergeAction.MatchOnly>|Vyhledá shodu textu nebo použije <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> hodnotu, pokud není nalezena shoda textu, a pak přidá všechny rozevírací nabídky ze zdroje do cíle.|Vytvoření struktury nabídky, která vloží nebo přidá položky nabídky do podnabídky nebo odebere položky nabídky z podnabídky. Například můžete přidat položku nabídky z podřízeného objektu MDI do hlavní nabídky <xref:System.Windows.Forms.MenuStrip>**Uložit jako** .<br /><br /> <xref:System.Windows.Forms.MergeAction.MatchOnly> umožňuje procházet strukturu nabídky bez provedení jakékoli akce. Poskytuje způsob, jak vyhodnotit následné položky.|  
+|<xref:System.Windows.Forms.MergeAction.Remove>|Vyhledá shodu textu nebo použije <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> hodnotu, pokud se nenajde shoda textu, a pak položku z cíle odebere.|Odebrání položky nabídky z cílového <xref:System.Windows.Forms.MenuStrip>.|  
   
 ## <a name="manual-merging"></a>Ruční sloučení  
- Pouze <xref:System.Windows.Forms.MenuStrip> ovládací prvky, které jsou součástí automatického sloučení. Ke sloučení položky další ovládací prvky, jako například <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.StatusStrip> ovládací prvky, musíte sloučit je ručně, voláním <xref:System.Windows.Forms.ToolStripManager.Merge%2A> a <xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A> metody v kódu podle potřeby.  
+ Automatické sloučení se účastní jenom <xref:System.Windows.Forms.MenuStrip>ch ovládacích prvků. Pro kombinování položek jiných ovládacích prvků, například <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.StatusStrip> ovládací prvky je nutné je sloučit ručně, voláním <xref:System.Windows.Forms.ToolStripManager.Merge%2A> a <xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A> metod v kódu podle potřeby.  
   
-## <a name="automatic-merging"></a>Automatické sloučení  
- Můžete použít automatické sloučení pro aplikace MDI aktivací zdrojové formě. Použití <xref:System.Windows.Forms.MenuStrip> v aplikaci MDI, nastavte <xref:System.Windows.Forms.Form.MainMenuStrip%2A> vlastnost k cíli <xref:System.Windows.Forms.MenuStrip> tak, aby sloučení akce provedené na zdroji <xref:System.Windows.Forms.MenuStrip> se odrazí v cílové <xref:System.Windows.Forms.MenuStrip>.  
+## <a name="automatic-merging"></a>Automatické slučování  
+ Automatické slučování pro aplikace MDI lze použít aktivací zdrojového formuláře. Chcete-li použít <xref:System.Windows.Forms.MenuStrip> v aplikaci MDI, nastavte vlastnost <xref:System.Windows.Forms.Form.MainMenuStrip%2A> na cílový <xref:System.Windows.Forms.MenuStrip> tak, aby se akce sloučení provedené na zdrojovém <xref:System.Windows.Forms.MenuStrip> projevily v cílovém <xref:System.Windows.Forms.MenuStrip>.  
   
- Můžete aktivovat pomocí aktivace automatického sloučení <xref:System.Windows.Forms.MenuStrip> ve zdroji MDI. Po aktivaci, zdroj <xref:System.Windows.Forms.MenuStrip> se sloučí do cílové MDI. Po aktivaci nového formuláře, sloučení je vrátit zpět na poslední formulář a aktivovat na nový formulář. Toto chování můžete ovládat nastavením <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> vlastnosti podle potřeby v každém <xref:System.Windows.Forms.ToolStripItem>a tím, že nastavíte <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> vlastnost na každém <xref:System.Windows.Forms.MenuStrip>.  
+ Automatické slučování můžete aktivovat aktivací <xref:System.Windows.Forms.MenuStrip> ve zdroji MDI. Při aktivaci se zdrojový <xref:System.Windows.Forms.MenuStrip> sloučí do cíle MDI. Když se nový formulář stane aktivní, sloučení se vrátí v posledním formuláři a aktivuje se v novém formuláři. Toto chování můžete řídit nastavením vlastnosti <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> podle potřeby u každého <xref:System.Windows.Forms.ToolStripItem>a nastavením vlastnosti <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> u každého <xref:System.Windows.Forms.MenuStrip>.  
   
 ## <a name="see-also"></a>Viz také:
 
