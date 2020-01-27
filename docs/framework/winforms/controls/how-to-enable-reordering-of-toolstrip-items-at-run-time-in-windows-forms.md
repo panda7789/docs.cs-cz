@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Povolení změny pořadí položek ToolStrip za běhu ve Windows Forms'
+title: 'Postupy: Povolení změny pořadí položek ToolStrip za běhu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,21 +10,21 @@ helpviewer_keywords:
 - toolbars [Windows Forms], rearranging controls
 - ToolStrip control [Windows Forms], reordering items
 ms.assetid: 8480b69a-379f-4dc2-8dcf-365ed93692b2
-ms.openlocfilehash: 46a5a70206e7620341a484912c7fada82d64747a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 44b52bf997819f090569d08eb395d8af18f61370
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609852"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745486"
 ---
-# <a name="how-to-enable-reordering-of-toolstrip-items-at-run-time-in-windows-forms"></a><span data-ttu-id="78145-102">Postupy: Povolení změny pořadí položek ToolStrip za běhu ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="78145-102">How to: Enable Reordering of ToolStrip Items at Run Time in Windows Forms</span></span>
-<span data-ttu-id="78145-103">Můžete povolit uživatelům změnit uspořádání <xref:System.Windows.Forms.ToolStripItem> ovládací prvky na <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="78145-103">You can enable the user to rearrange <xref:System.Windows.Forms.ToolStripItem> controls on the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
+# <a name="how-to-enable-reordering-of-toolstrip-items-at-run-time-in-windows-forms"></a><span data-ttu-id="ccf02-102">Postupy: Povolení změny pořadí položek ToolStrip za běhu ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="ccf02-102">How to: Enable Reordering of ToolStrip Items at Run Time in Windows Forms</span></span>
+<span data-ttu-id="ccf02-103">Můžete uživateli povolit změnu uspořádání <xref:System.Windows.Forms.ToolStripItem> ovládacích prvků na <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="ccf02-103">You can enable the user to rearrange <xref:System.Windows.Forms.ToolStripItem> controls on the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
-### <a name="to-enable-toolstripitem-rearrangement-at-run-time"></a><span data-ttu-id="78145-104">Aby ovládací prvek ToolStripItem změny uspořádání v době běhu</span><span class="sxs-lookup"><span data-stu-id="78145-104">To enable ToolStripItem rearrangement at run time</span></span>  
+### <a name="to-enable-toolstripitem-rearrangement-at-run-time"></a><span data-ttu-id="ccf02-104">Povolení změny uspořádání ToolStripItem v době běhu</span><span class="sxs-lookup"><span data-stu-id="ccf02-104">To enable ToolStripItem rearrangement at run time</span></span>  
   
-- <span data-ttu-id="78145-105">Nastavte <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> vlastnost `true`.</span><span class="sxs-lookup"><span data-stu-id="78145-105">Set the <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> property to `true`.</span></span> <span data-ttu-id="78145-106">Ve výchozím nastavení <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> je `false`.</span><span class="sxs-lookup"><span data-stu-id="78145-106">By default, <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> is `false`.</span></span>  
+- <span data-ttu-id="ccf02-105">Nastavte <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> vlastnost `true`.</span><span class="sxs-lookup"><span data-stu-id="ccf02-105">Set the <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> property to `true`.</span></span> <span data-ttu-id="ccf02-106">Ve výchozím nastavení je <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> `false`.</span><span class="sxs-lookup"><span data-stu-id="ccf02-106">By default, <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> is `false`.</span></span>  
   
-     <span data-ttu-id="78145-107">V době běhu uživatele obsahuje stisknutou klávesu ALT a levé tlačítko myši přetáhněte <xref:System.Windows.Forms.ToolStripItem> do jiného umístění v <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="78145-107">At run time, the user holds down the ALT key and the left mouse button to drag a <xref:System.Windows.Forms.ToolStripItem> to a different location on the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
+     <span data-ttu-id="ccf02-107">V době běhu uživatel drží klávesu ALT a levé tlačítko myši k přetažení <xref:System.Windows.Forms.ToolStripItem> do jiného umístění v <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="ccf02-107">At run time, the user holds down the ALT key and the left mouse button to drag a <xref:System.Windows.Forms.ToolStripItem> to a different location on the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
     ```vb  
     toolStrip1.AllowItemReorder = True  
@@ -34,10 +34,10 @@ ms.locfileid: "64609852"
     toolStrip1.AllowItemReorder = true;  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="78145-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="78145-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ccf02-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ccf02-108">See also</span></span>
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>
-- [<span data-ttu-id="78145-109">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="78145-109">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
-- [<span data-ttu-id="78145-110">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="78145-110">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
-- [<span data-ttu-id="78145-111">Shrnutí technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="78145-111">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)
+- [<span data-ttu-id="ccf02-109">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="ccf02-109">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
+- [<span data-ttu-id="ccf02-110">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="ccf02-110">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
+- [<span data-ttu-id="ccf02-111">Shrnutí technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="ccf02-111">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)

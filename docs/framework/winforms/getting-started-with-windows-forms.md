@@ -1,5 +1,5 @@
 ---
-title: Začínáme s Windows Forms
+title: Začínáme
 ms.date: 03/30/2017
 f1_keywords:
 - Designer_System.Windows.Forms.Design.FormDocumentDesigner
@@ -8,53 +8,53 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - getting started [Windows Forms], Windows Forms
 ms.assetid: a031aa58-5027-4082-b590-df7c12c77dec
-ms.openlocfilehash: 27c26d3575c2a931f407a475c655f29d042a8653
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5ea75bf826aa658269ec983b60e9dd2eb520ce0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966905"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743480"
 ---
-# <a name="getting-started-with-windows-forms"></a><span data-ttu-id="4c7f4-102">Začínáme s Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-102">Getting Started with Windows Forms</span></span>
-<span data-ttu-id="4c7f4-103">Pomocí Windows Forms můžete vytvořit výkonné aplikace pro systém Windows.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-103">With Windows Forms, you can create powerful Windows-based applications.</span></span> <span data-ttu-id="4c7f4-104">Následující témata popisují podrobné postupy Využijte sílu Windows Forms k zobrazení dat, zpracování vstupu uživatele a nasadit vaše aplikace snadno a s rozšířeným zabezpečením.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-104">The following topics describe in-depth how to harness the power of Windows Forms to display data, handle user input, and deploy your applications easily and with enhanced security.</span></span>  
+# <a name="getting-started-with-windows-forms"></a><span data-ttu-id="1feba-102">Začínáme s Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-102">Getting Started with Windows Forms</span></span>
+<span data-ttu-id="1feba-103">Pomocí model Windows Forms můžete vytvářet výkonné aplikace založené na systému Windows.</span><span class="sxs-lookup"><span data-stu-id="1feba-103">With Windows Forms, you can create powerful Windows-based applications.</span></span> <span data-ttu-id="1feba-104">Následující témata popisují podrobnější informace o tom, jak využít sílu model Windows Forms k zobrazení dat, zpracování vstupu uživatele a snadnému nasazení aplikací a s vyšším zabezpečením.</span><span class="sxs-lookup"><span data-stu-id="1feba-104">The following topics describe in-depth how to harness the power of Windows Forms to display data, handle user input, and deploy your applications easily and with enhanced security.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4c7f4-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4c7f4-105">In This Section</span></span>  
- [<span data-ttu-id="4c7f4-106">Přehled produktu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-106">Windows Forms Overview</span></span>](windows-forms-overview.md)  
- <span data-ttu-id="4c7f4-107">Obsahuje přehled o Windows Forms a inteligentní klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-107">Contains an overview of Windows Forms and smart client applications.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="1feba-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1feba-105">In This Section</span></span>  
+ [<span data-ttu-id="1feba-106">Přehled produktu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-106">Windows Forms Overview</span></span>](windows-forms-overview.md)  
+ <span data-ttu-id="1feba-107">Obsahuje přehled model Windows Forms a inteligentních klientských aplikací.</span><span class="sxs-lookup"><span data-stu-id="1feba-107">Contains an overview of Windows Forms and smart client applications.</span></span>  
   
- [<span data-ttu-id="4c7f4-108">Vytvoření nového formuláře Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-108">Creating a New Windows Form</span></span>](creating-a-new-windows-form.md)  
- <span data-ttu-id="4c7f4-109">Obsahuje odkazy na témata, která popisují základní koncepty pro vytváření aplikací pro Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-109">Contains links to topics that describe basic concepts for creating Windows Forms applications.</span></span>  
+ [<span data-ttu-id="1feba-108">Vytvoření nového formuláře Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-108">Creating a New Windows Form</span></span>](creating-a-new-windows-form.md)  
+ <span data-ttu-id="1feba-109">Obsahuje odkazy na témata, která popisují základní koncepty pro vytváření model Windows Formsch aplikací.</span><span class="sxs-lookup"><span data-stu-id="1feba-109">Contains links to topics that describe basic concepts for creating Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="4c7f4-110">Vytváření obslužných rutin událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-110">Creating Event Handlers in Windows Forms</span></span>](creating-event-handlers-in-windows-forms.md)  
- <span data-ttu-id="4c7f4-111">Obsahuje odkazy na témata popisující vytváření obslužných rutin událostí Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-111">Contains links to topics that describe how to create Windows Forms event handlers.</span></span>  
+ [<span data-ttu-id="1feba-110">Vytváření obslužných rutin událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-110">Creating Event Handlers in Windows Forms</span></span>](creating-event-handlers-in-windows-forms.md)  
+ <span data-ttu-id="1feba-111">Obsahuje odkazy na témata, která popisují, jak vytvářet obslužné rutiny událostí model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="1feba-111">Contains links to topics that describe how to create Windows Forms event handlers.</span></span>  
   
- [<span data-ttu-id="4c7f4-112">Úprava velikosti a měřítka Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-112">Adjusting the Size and Scale of Windows Forms</span></span>](adjusting-the-size-and-scale-of-windows-forms.md)  
- <span data-ttu-id="4c7f4-113">Obsahuje odkazy na témata, která ukazují postupy nastavení velikosti a měřítka Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-113">Contains links to topics that show how to adjust the size and scale of Windows Forms.</span></span>  
+ [<span data-ttu-id="1feba-112">Úprava velikosti a měřítka Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-112">Adjusting the Size and Scale of Windows Forms</span></span>](adjusting-the-size-and-scale-of-windows-forms.md)  
+ <span data-ttu-id="1feba-113">Obsahuje odkazy na témata, která ukazují, jak upravit velikost a měřítko model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="1feba-113">Contains links to topics that show how to adjust the size and scale of Windows Forms.</span></span>  
   
- [<span data-ttu-id="4c7f4-114">Změna vzhledu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-114">Changing the Appearance of Windows Forms</span></span>](changing-the-appearance-of-windows-forms.md)  
- <span data-ttu-id="4c7f4-115">Obsahuje odkazy na témata, která ukazují, jak změnit vzhled aplikace Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-115">Contains links to topics that show how to change the appearance of Windows Forms applications.</span></span>  
+ [<span data-ttu-id="1feba-114">Změna vzhledu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-114">Changing the Appearance of Windows Forms</span></span>](changing-the-appearance-of-windows-forms.md)  
+ <span data-ttu-id="1feba-115">Obsahuje odkazy na témata, která ukazují, jak změnit vzhled model Windows Formsch aplikací.</span><span class="sxs-lookup"><span data-stu-id="1feba-115">Contains links to topics that show how to change the appearance of Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="4c7f4-116">Windows Forms – ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="4c7f4-116">Windows Forms Controls</span></span>](./controls/index.md)  
- <span data-ttu-id="4c7f4-117">Obsahuje odkazy na témata, které popisují a ukazují, jak používat ovládací prvky Windows Forms a komponenty.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-117">Contains links to topics that describe and show how to use Windows Forms controls and components.</span></span>  
+ [<span data-ttu-id="1feba-116">Windows Forms – ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="1feba-116">Windows Forms Controls</span></span>](./controls/index.md)  
+ <span data-ttu-id="1feba-117">Obsahuje odkazy na témata, která popisují a ukazují, jak používat model Windows Forms ovládací prvky a komponenty.</span><span class="sxs-lookup"><span data-stu-id="1feba-117">Contains links to topics that describe and show how to use Windows Forms controls and components.</span></span>  
   
- [<span data-ttu-id="4c7f4-118">Uživatelský vstup ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-118">User Input in Windows Forms</span></span>](user-input-in-windows-forms.md)  
- <span data-ttu-id="4c7f4-119">Obsahuje odkazy na témata, které popisují a ukazují, jak zpracovat vstup od uživatele v aplikacích Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-119">Contains links to topics that describe and show how to handle input from the user in Windows Forms applications.</span></span>  
+ [<span data-ttu-id="1feba-118">Uživatelský vstup ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-118">User Input in Windows Forms</span></span>](user-input-in-windows-forms.md)  
+ <span data-ttu-id="1feba-119">Obsahuje odkazy na témata, která popisují a ukazují, jak zpracovávat vstup od uživatele v model Windows Formsch aplikacích.</span><span class="sxs-lookup"><span data-stu-id="1feba-119">Contains links to topics that describe and show how to handle input from the user in Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="4c7f4-120">Dialogová okna ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-120">Dialog Boxes in Windows Forms</span></span>](dialog-boxes-in-windows-forms.md)  
- <span data-ttu-id="4c7f4-121">Obsahuje odkazy na témata popisující různé dialogových oknech pro použití v modelu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-121">Contains links to topics that describe the different dialog boxes for use in Windows Forms.</span></span>  
+ [<span data-ttu-id="1feba-120">Dialogová okna ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-120">Dialog Boxes in Windows Forms</span></span>](dialog-boxes-in-windows-forms.md)  
+ <span data-ttu-id="1feba-121">Obsahuje odkazy na témata, která popisují různá dialogová okna pro použití v model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="1feba-121">Contains links to topics that describe the different dialog boxes for use in Windows Forms.</span></span>  
   
- [<span data-ttu-id="4c7f4-122">Windows Forms – datová vazba</span><span class="sxs-lookup"><span data-stu-id="4c7f4-122">Windows Forms Data Binding</span></span>](windows-forms-data-binding.md)  
- <span data-ttu-id="4c7f4-123">Obsahuje odkazy na témata popisující architektura vazby dat Windows Forms a jak ji používat v aplikacích Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-123">Contains links to topics that describe the Windows Forms data binding architecture and how to use it in Windows Forms applications.</span></span>  
+ [<span data-ttu-id="1feba-122">Windows Forms – datová vazba</span><span class="sxs-lookup"><span data-stu-id="1feba-122">Windows Forms Data Binding</span></span>](windows-forms-data-binding.md)  
+ <span data-ttu-id="1feba-123">Obsahuje odkazy na témata, která popisují architekturu datových vazeb model Windows Forms a jejich použití v model Windows Formsch aplikacích.</span><span class="sxs-lookup"><span data-stu-id="1feba-123">Contains links to topics that describe the Windows Forms data binding architecture and how to use it in Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="4c7f4-124">Windows Forms – zabezpečení</span><span class="sxs-lookup"><span data-stu-id="4c7f4-124">Windows Forms Security</span></span>](windows-forms-security.md)  
- <span data-ttu-id="4c7f4-125">Obsahuje odkazy na témata, která popisují, jak vytvářet aplikace Windows Forms, které mají zvýšené zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-125">Contains links to topics that describe how to build Windows Forms applications that have enhanced security.</span></span>  
+ [<span data-ttu-id="1feba-124">Windows Forms – zabezpečení</span><span class="sxs-lookup"><span data-stu-id="1feba-124">Windows Forms Security</span></span>](windows-forms-security.md)  
+ <span data-ttu-id="1feba-125">Obsahuje odkazy na témata, která popisují, jak sestavovat model Windows Forms aplikace s vyšším zabezpečením.</span><span class="sxs-lookup"><span data-stu-id="1feba-125">Contains links to topics that describe how to build Windows Forms applications that have enhanced security.</span></span>  
   
- [<span data-ttu-id="4c7f4-126">ClickOnce – nasazení pro Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-126">ClickOnce Deployment for Windows Forms</span></span>](clickonce-deployment-for-windows-forms.md)  
- <span data-ttu-id="4c7f4-127">Obsahuje odkazy na témata, která popisují, jak nasazovat aplikace Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-127">Contains links to topics that describe how to easily deploy Windows Forms applications.</span></span>  
+ [<span data-ttu-id="1feba-126">ClickOnce – nasazení pro Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-126">ClickOnce Deployment for Windows Forms</span></span>](clickonce-deployment-for-windows-forms.md)  
+ <span data-ttu-id="1feba-127">Obsahuje odkazy na témata, která popisují, jak snadno nasazovat aplikace model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="1feba-127">Contains links to topics that describe how to easily deploy Windows Forms applications.</span></span>  
   
- [<span data-ttu-id="4c7f4-128">Postupy: Přístup kolekcím s klíči ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-128">How to: Access Keyed Collections in Windows Forms</span></span>](how-to-access-keyed-collections-in-windows-forms.md)  
- <span data-ttu-id="4c7f4-129">Ukazuje, jak pro přístup ke kolekci pomocí klíčů, nikoli indexy.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-129">Demonstrates how to access collections with keys rather than indexes.</span></span>  
+ [<span data-ttu-id="1feba-128">Postupy: Přístup ke kolekcím s klíči ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-128">How to: Access Keyed Collections in Windows Forms</span></span>](how-to-access-keyed-collections-in-windows-forms.md)  
+ <span data-ttu-id="1feba-129">Ukazuje, jak získat přístup ke kolekcím s klíči, nikoli k indexům.</span><span class="sxs-lookup"><span data-stu-id="1feba-129">Demonstrates how to access collections with keys rather than indexes.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="4c7f4-130">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4c7f4-130">Related Sections</span></span>  
- [<span data-ttu-id="4c7f4-131">Rozšiřování aplikací Windows Forms</span><span class="sxs-lookup"><span data-stu-id="4c7f4-131">Enhancing Windows Forms Applications</span></span>](./advanced/index.md)  
- <span data-ttu-id="4c7f4-132">Obsahuje odkazy na témata popisující pokročilejších pojmech pro vytváření aplikací pro Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="4c7f4-132">Contains links to topics that describe more advanced concepts for creating Windows Forms applications.</span></span>
+## <a name="related-sections"></a><span data-ttu-id="1feba-130">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1feba-130">Related Sections</span></span>  
+ [<span data-ttu-id="1feba-131">Rozšiřování aplikací Windows Forms</span><span class="sxs-lookup"><span data-stu-id="1feba-131">Enhancing Windows Forms Applications</span></span>](./advanced/index.md)  
+ <span data-ttu-id="1feba-132">Obsahuje odkazy na témata, která popisují pokročilejší koncepty pro vytváření model Windows Formsch aplikací.</span><span class="sxs-lookup"><span data-stu-id="1feba-132">Contains links to topics that describe more advanced concepts for creating Windows Forms applications.</span></span>

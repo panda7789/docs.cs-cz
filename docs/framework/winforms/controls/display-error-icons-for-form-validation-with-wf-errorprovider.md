@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider'
+title: Zobrazit chybové ikony pro ověření formuláře pomocí součásti ErrorProvider
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,25 +11,25 @@ helpviewer_keywords:
 - ErrorProvider component [Windows Forms], displaying error icons
 - error messages [Windows Forms], displaying icons
 ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
-ms.openlocfilehash: 2af8d3b9ea97b678c493de8a58d439b62f448387
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: a1e346e332db489351f59c9a0c03ae731baf3dc3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053702"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745911"
 ---
-# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a><span data-ttu-id="ac8ad-102">Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="ac8ad-102">How to: Display Error Icons for Form Validation with the Windows Forms ErrorProvider Component</span></span>
-<span data-ttu-id="ac8ad-103">Můžete použít Windows Forms <xref:System.Windows.Forms.ErrorProvider> komponenty mají zobrazovat ikona chyby, když uživatel zadá neplatná data.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-103">You can use a Windows Forms <xref:System.Windows.Forms.ErrorProvider> component to display an error icon when the user enters invalid data.</span></span> <span data-ttu-id="ac8ad-104">Musí mít aspoň dva ovládací prvky ve formuláři, aby bylo možné kartě mezi nimi a tím vyvolat kód pro ověření.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-104">You must have at least two controls on the form in order to tab between them and thereby invoke the validation code.</span></span>  
+# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a><span data-ttu-id="f613d-102">Postupy: Zobrazení ikon chyby pro ověřování formuláře pomocí součásti Windows Forms ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="f613d-102">How to: Display Error Icons for Form Validation with the Windows Forms ErrorProvider Component</span></span>
+<span data-ttu-id="f613d-103">Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> můžete použít k zobrazení chybové ikony, když uživatel zadá neplatná data.</span><span class="sxs-lookup"><span data-stu-id="f613d-103">You can use a Windows Forms <xref:System.Windows.Forms.ErrorProvider> component to display an error icon when the user enters invalid data.</span></span> <span data-ttu-id="f613d-104">Musíte mít alespoň dva ovládací prvky ve formuláři, aby bylo možné kartu mezi nimi a následně vyvolat ověřovací kód.</span><span class="sxs-lookup"><span data-stu-id="f613d-104">You must have at least two controls on the form in order to tab between them and thereby invoke the validation code.</span></span>  
   
-### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a><span data-ttu-id="ac8ad-105">Chcete-li zobrazit ikona chyby při hodnota ovládacího prvku není platná.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-105">To display an error icon when a control's value is invalid</span></span>  
+### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a><span data-ttu-id="f613d-105">Zobrazení ikony chyby, pokud je hodnota ovládacího prvku neplatná</span><span class="sxs-lookup"><span data-stu-id="f613d-105">To display an error icon when a control's value is invalid</span></span>  
   
-1. <span data-ttu-id="ac8ad-106">Přidejte dva ovládací prvky – například textová pole, do formuláře Windows.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-106">Add two controls — for example, text boxes — to a Windows Form.</span></span>  
+1. <span data-ttu-id="f613d-106">Přidejte dva ovládací prvky, například textová pole, do formuláře Windows.</span><span class="sxs-lookup"><span data-stu-id="f613d-106">Add two controls — for example, text boxes — to a Windows Form.</span></span>  
   
-2. <span data-ttu-id="ac8ad-107">Přidat <xref:System.Windows.Forms.ErrorProvider> komponentu do formuláře.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-107">Add an <xref:System.Windows.Forms.ErrorProvider> component to the form.</span></span>  
+2. <span data-ttu-id="f613d-107">Přidejte do formuláře komponentu <xref:System.Windows.Forms.ErrorProvider>.</span><span class="sxs-lookup"><span data-stu-id="f613d-107">Add an <xref:System.Windows.Forms.ErrorProvider> component to the form.</span></span>  
   
-3. <span data-ttu-id="ac8ad-108">Vyberte první ovládací prvek a přidat kód pro jeho <xref:System.Windows.Forms.Control.Validating> obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-108">Select the first control and add code to its <xref:System.Windows.Forms.Control.Validating> event handler.</span></span> <span data-ttu-id="ac8ad-109">Aby tento kód, aby běžel bez problémů procedura musí být připojen k události.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-109">In order for this code to run properly, the procedure must be connected to the event.</span></span> <span data-ttu-id="ac8ad-110">Další informace najdete v tématu [jak: Vytváření obslužných rutin událostí pro Windows Forms v době běhu](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="ac8ad-110">For more information, see [How to: Create Event Handlers at Run Time for Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span></span>  
+3. <span data-ttu-id="f613d-108">Vyberte první ovládací prvek a přidejte kód do obslužné rutiny události <xref:System.Windows.Forms.Control.Validating>.</span><span class="sxs-lookup"><span data-stu-id="f613d-108">Select the first control and add code to its <xref:System.Windows.Forms.Control.Validating> event handler.</span></span> <span data-ttu-id="f613d-109">Aby tento kód běžel správně, musí být procedura připojena k události.</span><span class="sxs-lookup"><span data-stu-id="f613d-109">In order for this code to run properly, the procedure must be connected to the event.</span></span> <span data-ttu-id="f613d-110">Další informace naleznete v tématu [Postupy: vytváření obslužných rutin událostí v době běhu pro model Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="f613d-110">For more information, see [How to: Create Event Handlers at Run Time for Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span></span>  
   
-     <span data-ttu-id="ac8ad-111">Následující kód ověřuje platnost sady dat, která uživatel zadal; Pokud jsou data neplatná, <xref:System.Windows.Forms.ErrorProvider.SetError%2A> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-111">The following code tests the validity of the data the user has entered; if the data is invalid, the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method is called.</span></span> <span data-ttu-id="ac8ad-112">Prvním argumentem funkce <xref:System.Windows.Forms.ErrorProvider.SetError%2A> metody Určuje, který ovládací prvek zobrazuje ikona vedle položky.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-112">The first argument of the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method specifies which control to display the icon next to.</span></span> <span data-ttu-id="ac8ad-113">Druhý argument je zobrazený text chyby.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-113">The second argument is the error text to display.</span></span>  
+     <span data-ttu-id="f613d-111">Následující kód testuje platnost dat, která uživatel zadal; Pokud jsou data neplatná, je volána metoda <xref:System.Windows.Forms.ErrorProvider.SetError%2A>.</span><span class="sxs-lookup"><span data-stu-id="f613d-111">The following code tests the validity of the data the user has entered; if the data is invalid, the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method is called.</span></span> <span data-ttu-id="f613d-112">První argument metody <xref:System.Windows.Forms.ErrorProvider.SetError%2A> určuje, který ovládací prvek má zobrazit ikonu vedle.</span><span class="sxs-lookup"><span data-stu-id="f613d-112">The first argument of the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method specifies which control to display the icon next to.</span></span> <span data-ttu-id="f613d-113">Druhý argument je chybový text, který se má zobrazit.</span><span class="sxs-lookup"><span data-stu-id="f613d-113">The second argument is the error text to display.</span></span>  
   
     ```vb  
     Private Sub TextBox1_Validating(ByVal Sender As Object, _  
@@ -77,7 +77,7 @@ ms.locfileid: "66053702"
        }  
     ```  
   
-     <span data-ttu-id="ac8ad-114">(Visual C#, Visual C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-114">(Visual C#, Visual C++) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="f613d-114">(Vizuál C#, vizuál C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="f613d-114">(Visual C#, Visual C++) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.textBox1.Validating += new  
@@ -90,10 +90,10 @@ ms.locfileid: "66053702"
        (this, &Form1::textBox1_Validating);  
     ```  
   
-4. <span data-ttu-id="ac8ad-115">Spusťte projekt.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-115">Run the project.</span></span> <span data-ttu-id="ac8ad-116">Zadejte (v tomto příkladu nečíselné) neplatná data na první ovládací prvek a potom karty na druhou.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-116">Type invalid (in this example, non-numeric) data into the first control, and then tab to the second.</span></span> <span data-ttu-id="ac8ad-117">Pokud se zobrazuje ikona chyby, přejděte na něj s ukazatelem myši zobrazíte text chyby.</span><span class="sxs-lookup"><span data-stu-id="ac8ad-117">When the error icon is displayed, point at it with the mouse pointer to see the error text.</span></span>  
+4. <span data-ttu-id="f613d-115">Spusťte projekt.</span><span class="sxs-lookup"><span data-stu-id="f613d-115">Run the project.</span></span> <span data-ttu-id="f613d-116">Typ je neplatný (v tomto příkladu nejsou číselná) data do prvního ovládacího prvku a potom na druhou.</span><span class="sxs-lookup"><span data-stu-id="f613d-116">Type invalid (in this example, non-numeric) data into the first control, and then tab to the second.</span></span> <span data-ttu-id="f613d-117">Když se zobrazí ikona chyby, najeďte na ni ukazatelem myši, aby se zobrazil text chyby.</span><span class="sxs-lookup"><span data-stu-id="f613d-117">When the error icon is displayed, point at it with the mouse pointer to see the error text.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ac8ad-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ac8ad-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f613d-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f613d-118">See also</span></span>
 
 - <xref:System.Windows.Forms.ErrorProvider.SetError%2A>
-- [<span data-ttu-id="ac8ad-119">Přehled komponenty ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="ac8ad-119">ErrorProvider Component Overview</span></span>](errorprovider-component-overview-windows-forms.md)
-- [<span data-ttu-id="ac8ad-120">Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="ac8ad-120">How to: View Errors Within a DataSet with the Windows Forms ErrorProvider Component</span></span>](view-errors-within-a-dataset-with-wf-errorprovider-component.md)
+- [<span data-ttu-id="f613d-119">Přehled komponenty ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="f613d-119">ErrorProvider Component Overview</span></span>](errorprovider-component-overview-windows-forms.md)
+- [<span data-ttu-id="f613d-120">Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="f613d-120">How to: View Errors Within a DataSet with the Windows Forms ErrorProvider Component</span></span>](view-errors-within-a-dataset-with-wf-errorprovider-component.md)

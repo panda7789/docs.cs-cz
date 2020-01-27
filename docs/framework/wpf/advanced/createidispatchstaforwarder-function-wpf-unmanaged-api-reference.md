@@ -1,5 +1,6 @@
 ---
-title: Funkce CreateIDispatchSTAForwarder (WPF nespravovaná referenční dokumentace rozhraní API)
+title: Funkce CreateIDispatchSTAForwarder – reference nespravovaného rozhraní API WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,19 +9,19 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: 57a02dfa-f091-4ace-9c06-1f4ab52b3527
-ms.openlocfilehash: a89b29cd459060c93d5ca77bb2154e1a10b02d03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67f2542733fb9c6af197c99ede2bd097ce876b5d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926448"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738031"
 ---
-# <a name="createidispatchstaforwarder-function-wpf-unmanaged-api-reference"></a><span data-ttu-id="08b5c-102">Funkce CreateIDispatchSTAForwarder (WPF nespravovaná referenční dokumentace rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="08b5c-102">CreateIDispatchSTAForwarder Function (WPF Unmanaged API Reference)</span></span>
-<span data-ttu-id="08b5c-103">Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="08b5c-103">This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="createidispatchstaforwarder-function-wpf-unmanaged-api-reference"></a><span data-ttu-id="e7fe3-102">CreateIDispatchSTAForwarder – funkce (Referenční dokumentace rozhraní API nespravovaného subsystému WPF)</span><span class="sxs-lookup"><span data-stu-id="e7fe3-102">CreateIDispatchSTAForwarder Function (WPF Unmanaged API Reference)</span></span>
+<span data-ttu-id="e7fe3-103">Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="e7fe3-103">This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.</span></span>  
   
- <span data-ttu-id="08b5c-104">Používá infrastrukturu Windows Presentation Foundation (WPF) pro správu vlákna a windows.</span><span class="sxs-lookup"><span data-stu-id="08b5c-104">Used by the Windows Presentation Foundation (WPF) infrastructure for thread and windows management.</span></span>  
+ <span data-ttu-id="e7fe3-104">Používáno infrastrukturou Windows Presentation Foundation (WPF) pro vlákna a správu systému Windows.</span><span class="sxs-lookup"><span data-stu-id="e7fe3-104">Used by the Windows Presentation Foundation (WPF) infrastructure for thread and windows management.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="08b5c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08b5c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e7fe3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e7fe3-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateIDispatchSTAForwarder(  
@@ -29,26 +30,26 @@ HRESULT CreateIDispatchSTAForwarder(
 )  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="08b5c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="08b5c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e7fe3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e7fe3-106">Parameters</span></span>  
   
-## <a name="property-valuereturn-value"></a><span data-ttu-id="08b5c-107">Hodnota vlastnosti / návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="08b5c-107">Property Value/Return Value</span></span>  
- <span data-ttu-id="08b5c-108">pDispatchDelegate</span><span class="sxs-lookup"><span data-stu-id="08b5c-108">pDispatchDelegate</span></span>  
- <span data-ttu-id="08b5c-109">Ukazatel `IDispatch` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="08b5c-109">A pointer to an `IDispatch` interface.</span></span>  
+## <a name="property-valuereturn-value"></a><span data-ttu-id="e7fe3-107">Hodnota vlastnosti / návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e7fe3-107">Property Value/Return Value</span></span>  
+ <span data-ttu-id="e7fe3-108">pDispatchDelegate</span><span class="sxs-lookup"><span data-stu-id="e7fe3-108">pDispatchDelegate</span></span>  
+ <span data-ttu-id="e7fe3-109">Ukazatel na rozhraní `IDispatch`.</span><span class="sxs-lookup"><span data-stu-id="e7fe3-109">A pointer to an `IDispatch` interface.</span></span>  
   
- <span data-ttu-id="08b5c-110">ppForwarder</span><span class="sxs-lookup"><span data-stu-id="08b5c-110">ppForwarder</span></span>  
- <span data-ttu-id="08b5c-111">Ukazatel na adresu `IDispatch` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="08b5c-111">A pointer to the address of an `IDispatch` interface.</span></span>  
+ <span data-ttu-id="e7fe3-110">ppForwarder</span><span class="sxs-lookup"><span data-stu-id="e7fe3-110">ppForwarder</span></span>  
+ <span data-ttu-id="e7fe3-111">Ukazatel na adresu `IDispatch`ho rozhraní.</span><span class="sxs-lookup"><span data-stu-id="e7fe3-111">A pointer to the address of an `IDispatch` interface.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="08b5c-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="08b5c-112">Requirements</span></span>  
- <span data-ttu-id="08b5c-113">**Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="08b5c-113">**Platforms:** See [.NET Framework System Requirements](../../get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e7fe3-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e7fe3-112">Requirements</span></span>  
+ <span data-ttu-id="e7fe3-113">**Platformy:** Viz [požadavky na systém .NET Framework](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e7fe3-113">**Platforms:** See [.NET Framework System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="08b5c-114">**DLL:**</span><span class="sxs-lookup"><span data-stu-id="08b5c-114">**DLL:**</span></span>  
+ <span data-ttu-id="e7fe3-114">**DLL**</span><span class="sxs-lookup"><span data-stu-id="e7fe3-114">**DLL:**</span></span>  
   
- <span data-ttu-id="08b5c-115">V rozhraní .NET Framework 3.0 a 3.5: PresentationHostDLL.dll</span><span class="sxs-lookup"><span data-stu-id="08b5c-115">In the .NET Framework 3.0 and 3.5: PresentationHostDLL.dll</span></span>  
+ <span data-ttu-id="e7fe3-115">V .NET Framework 3,0 a 3,5: PresentationHostDLL. dll</span><span class="sxs-lookup"><span data-stu-id="e7fe3-115">In the .NET Framework 3.0 and 3.5: PresentationHostDLL.dll</span></span>  
   
- <span data-ttu-id="08b5c-116">V rozhraní .NET Framework 4 a novější: PresentationHost_v0400.dll</span><span class="sxs-lookup"><span data-stu-id="08b5c-116">In the .NET Framework 4 and later: PresentationHost_v0400.dll</span></span>  
+ <span data-ttu-id="e7fe3-116">V .NET Framework 4 a novější: PresentationHost_v0400. dll</span><span class="sxs-lookup"><span data-stu-id="e7fe3-116">In the .NET Framework 4 and later: PresentationHost_v0400.dll</span></span>  
   
- <span data-ttu-id="08b5c-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="08b5c-117">**.NET Framework Version:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span></span>  
+ <span data-ttu-id="e7fe3-117">**Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e7fe3-117">**.NET Framework Version:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="08b5c-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="08b5c-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7fe3-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e7fe3-118">See also</span></span>
 
-- [<span data-ttu-id="08b5c-119">Odkaz na nespravované rozhraní API subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="08b5c-119">WPF Unmanaged API Reference</span></span>](wpf-unmanaged-api-reference.md)
+- [<span data-ttu-id="e7fe3-119">Odkaz na nespravované rozhraní API subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="e7fe3-119">WPF Unmanaged API Reference</span></span>](wpf-unmanaged-api-reference.md)
