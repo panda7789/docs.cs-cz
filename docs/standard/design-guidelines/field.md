@@ -7,41 +7,41 @@ helpviewer_keywords:
 - read-only fields
 - member design guidelines, fields
 ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
-ms.openlocfilehash: d39c9b95d759902d6d523b028f3db8b8da954336
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c00929ca499e39bd4e24d482c9413beb9cccddc1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709345"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741610"
 ---
-# <a name="field-design"></a><span data-ttu-id="63668-102">Návrh pole</span><span class="sxs-lookup"><span data-stu-id="63668-102">Field Design</span></span>
-<span data-ttu-id="63668-103">Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově orientovaném návrhu.</span><span class="sxs-lookup"><span data-stu-id="63668-103">The principle of encapsulation is one of the most important notions in object-oriented design.</span></span> <span data-ttu-id="63668-104">Tato zásada uvádí, že data uložená v objektu by měla být přístupná pouze k tomuto objektu.</span><span class="sxs-lookup"><span data-stu-id="63668-104">This principle states that data stored inside an object should be accessible only to that object.</span></span>  
-  
- <span data-ttu-id="63668-105">Užitečný způsob, jak interpretovat princip, je říci, že by měl být navržen typ tak, aby bylo možné provést změny v polích daného typu (změny názvu nebo typu) bez narušení kódu, který je jiný než pro členy typu.</span><span class="sxs-lookup"><span data-stu-id="63668-105">A useful way to interpret the principle is to say that a type should be designed so that changes to fields of that type (name or type changes) can be made without breaking code other than for members of the type.</span></span> <span data-ttu-id="63668-106">Tato interpretace okamžitě znamená, že všechna pole musí být soukromá.</span><span class="sxs-lookup"><span data-stu-id="63668-106">This interpretation immediately implies that all fields must be private.</span></span>  
-  
- <span data-ttu-id="63668-107">Z tohoto striktního omezení vyloučíme pole s konstantním a statickým oprávněním jen pro čtení, protože taková pole, která jsou skoro podle definice, se nikdy nevyžadují ke změně.</span><span class="sxs-lookup"><span data-stu-id="63668-107">We exclude constant and static read-only fields from this strict restriction, because such fields, almost by definition, are never required to change.</span></span>  
-  
- <span data-ttu-id="63668-108">**X DO NOT** zadejte pole instance, která jsou veřejných nebo chráněný.</span><span class="sxs-lookup"><span data-stu-id="63668-108">**X DO NOT** provide instance fields that are public or protected.</span></span>  
-  
- <span data-ttu-id="63668-109">Měli byste poskytnout vlastnosti pro přístup k polím místo jejich veřejné nebo chráněné.</span><span class="sxs-lookup"><span data-stu-id="63668-109">You should provide properties for accessing fields instead of making them public or protected.</span></span>  
-  
- <span data-ttu-id="63668-110">**✓ DO** pro konstanty, které se budou měnit nikdy používat konstantní pole.</span><span class="sxs-lookup"><span data-stu-id="63668-110">**✓ DO** use constant fields for constants that will never change.</span></span>  
-  
- <span data-ttu-id="63668-111">Kompilátor vypálí hodnoty konstantních polí přímo na volání kódu.</span><span class="sxs-lookup"><span data-stu-id="63668-111">The compiler burns the values of const fields directly into calling code.</span></span> <span data-ttu-id="63668-112">Proto hodnoty const nelze nikdy změnit bez rizika přerušení kompatibility.</span><span class="sxs-lookup"><span data-stu-id="63668-112">Therefore, const values can never be changed without the risk of breaking compatibility.</span></span>  
-  
- <span data-ttu-id="63668-113">**✓ DO** použít veřejné statické `readonly` pole pro instance předdefinovaných objektů.</span><span class="sxs-lookup"><span data-stu-id="63668-113">**✓ DO** use public static `readonly` fields for predefined object instances.</span></span>  
-  
- <span data-ttu-id="63668-114">Pokud existují předdefinované instance typu, deklarujte je jako veřejná pole pouze pro čtení samotného typu.</span><span class="sxs-lookup"><span data-stu-id="63668-114">If there are predefined instances of the type, declare them as public read-only static fields of the type itself.</span></span>  
-  
- <span data-ttu-id="63668-115">**X DO NOT** přiřadit instancí měnitelný typy `readonly` pole.</span><span class="sxs-lookup"><span data-stu-id="63668-115">**X DO NOT** assign instances of mutable types to `readonly` fields.</span></span>  
-  
- <span data-ttu-id="63668-116">Proměnlivý typ je typ s instancemi, které lze změnit po vytvoření instance.</span><span class="sxs-lookup"><span data-stu-id="63668-116">A mutable type is a type with instances that can be modified after they are instantiated.</span></span> <span data-ttu-id="63668-117">Například pole, většina kolekcí a datové proudy jsou proměnlivé typy, ale <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné.</span><span class="sxs-lookup"><span data-stu-id="63668-117">For example, arrays, most collections, and streams are mutable types, but <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>, and <xref:System.String?displayProperty=nameWithType> are all immutable.</span></span> <span data-ttu-id="63668-118">Modifikátor jen pro čtení v poli typu odkazu brání instanci, která je uložena v poli, aby byla měněna, ale nezabrání v tom, aby byla data instance pole upravována voláním členů, kteří mění instanci.</span><span class="sxs-lookup"><span data-stu-id="63668-118">The read-only modifier on a reference type field prevents the instance stored in the field from being replaced, but it does not prevent the field’s instance data from being modified by calling members changing the instance.</span></span>  
-  
- <span data-ttu-id="63668-119">*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*</span><span class="sxs-lookup"><span data-stu-id="63668-119">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
-  
- <span data-ttu-id="63668-120">*Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*</span><span class="sxs-lookup"><span data-stu-id="63668-120">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="63668-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="63668-121">See also</span></span>
+# <a name="field-design"></a><span data-ttu-id="b758e-102">Návrh pole</span><span class="sxs-lookup"><span data-stu-id="b758e-102">Field Design</span></span>
+<span data-ttu-id="b758e-103">Principem zapouzdření je jeden z nejdůležitějších pojmů v objektově orientovaném návrhu.</span><span class="sxs-lookup"><span data-stu-id="b758e-103">The principle of encapsulation is one of the most important notions in object-oriented design.</span></span> <span data-ttu-id="b758e-104">Tato zásada uvádí, že data uložená v objektu by měla být přístupná pouze k tomuto objektu.</span><span class="sxs-lookup"><span data-stu-id="b758e-104">This principle states that data stored inside an object should be accessible only to that object.</span></span>
 
-- [<span data-ttu-id="63668-122">Pokyny k návrhu člena</span><span class="sxs-lookup"><span data-stu-id="63668-122">Member Design Guidelines</span></span>](../../../docs/standard/design-guidelines/member.md)
-- [<span data-ttu-id="63668-123">Pokyny k návrhu architektury</span><span class="sxs-lookup"><span data-stu-id="63668-123">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)
+ <span data-ttu-id="b758e-105">Užitečný způsob, jak interpretovat princip, je říci, že by měl být navržen typ tak, aby bylo možné provést změny v polích daného typu (změny názvu nebo typu) bez narušení kódu, který je jiný než pro členy typu.</span><span class="sxs-lookup"><span data-stu-id="b758e-105">A useful way to interpret the principle is to say that a type should be designed so that changes to fields of that type (name or type changes) can be made without breaking code other than for members of the type.</span></span> <span data-ttu-id="b758e-106">Tato interpretace okamžitě znamená, že všechna pole musí být soukromá.</span><span class="sxs-lookup"><span data-stu-id="b758e-106">This interpretation immediately implies that all fields must be private.</span></span>
+
+ <span data-ttu-id="b758e-107">Z tohoto striktního omezení vyloučíme pole s konstantním a statickým oprávněním jen pro čtení, protože taková pole, která jsou skoro podle definice, se nikdy nevyžadují ke změně.</span><span class="sxs-lookup"><span data-stu-id="b758e-107">We exclude constant and static read-only fields from this strict restriction, because such fields, almost by definition, are never required to change.</span></span>
+
+ <span data-ttu-id="b758e-108">❌ neposkytují pole instance, která jsou veřejná nebo chráněná.</span><span class="sxs-lookup"><span data-stu-id="b758e-108">❌ DO NOT provide instance fields that are public or protected.</span></span>
+
+ <span data-ttu-id="b758e-109">Měli byste poskytnout vlastnosti pro přístup k polím místo jejich veřejné nebo chráněné.</span><span class="sxs-lookup"><span data-stu-id="b758e-109">You should provide properties for accessing fields instead of making them public or protected.</span></span>
+
+ <span data-ttu-id="b758e-110">✔️ použít konstantní pole pro konstanty, které se nikdy nezmění.</span><span class="sxs-lookup"><span data-stu-id="b758e-110">✔️ DO use constant fields for constants that will never change.</span></span>
+
+ <span data-ttu-id="b758e-111">Kompilátor vypálí hodnoty konstantních polí přímo na volání kódu.</span><span class="sxs-lookup"><span data-stu-id="b758e-111">The compiler burns the values of const fields directly into calling code.</span></span> <span data-ttu-id="b758e-112">Proto hodnoty const nelze nikdy změnit bez rizika přerušení kompatibility.</span><span class="sxs-lookup"><span data-stu-id="b758e-112">Therefore, const values can never be changed without the risk of breaking compatibility.</span></span>
+
+ <span data-ttu-id="b758e-113">✔️ použít veřejné statické `readonly` pole pro předdefinované instance objektů.</span><span class="sxs-lookup"><span data-stu-id="b758e-113">✔️ DO use public static `readonly` fields for predefined object instances.</span></span>
+
+ <span data-ttu-id="b758e-114">Pokud existují předdefinované instance typu, deklarujte je jako veřejná pole pouze pro čtení samotného typu.</span><span class="sxs-lookup"><span data-stu-id="b758e-114">If there are predefined instances of the type, declare them as public read-only static fields of the type itself.</span></span>
+
+ <span data-ttu-id="b758e-115">❌ nepřiřazovat instance proměnlivých typů do polí `readonly`.</span><span class="sxs-lookup"><span data-stu-id="b758e-115">❌ DO NOT assign instances of mutable types to `readonly` fields.</span></span>
+
+ <span data-ttu-id="b758e-116">Proměnlivý typ je typ s instancemi, které lze změnit po vytvoření instance.</span><span class="sxs-lookup"><span data-stu-id="b758e-116">A mutable type is a type with instances that can be modified after they are instantiated.</span></span> <span data-ttu-id="b758e-117">Například pole, většina kolekcí a datové proudy jsou proměnlivé typy, ale <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>a <xref:System.String?displayProperty=nameWithType> jsou všechny neměnné.</span><span class="sxs-lookup"><span data-stu-id="b758e-117">For example, arrays, most collections, and streams are mutable types, but <xref:System.Int32?displayProperty=nameWithType>, <xref:System.Uri?displayProperty=nameWithType>, and <xref:System.String?displayProperty=nameWithType> are all immutable.</span></span> <span data-ttu-id="b758e-118">Modifikátor jen pro čtení v poli typu odkazu brání instanci, která je uložena v poli, aby byla měněna, ale nezabrání v tom, aby byla data instance pole upravována voláním členů, kteří mění instanci.</span><span class="sxs-lookup"><span data-stu-id="b758e-118">The read-only modifier on a reference type field prevents the instance stored in the field from being replaced, but it does not prevent the field’s instance data from being modified by calling members changing the instance.</span></span>
+
+ <span data-ttu-id="b758e-119">*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*</span><span class="sxs-lookup"><span data-stu-id="b758e-119">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>
+
+ <span data-ttu-id="b758e-120">*Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*</span><span class="sxs-lookup"><span data-stu-id="b758e-120">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="b758e-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b758e-121">See also</span></span>
+
+- [<span data-ttu-id="b758e-122">Pokyny k návrhu člena</span><span class="sxs-lookup"><span data-stu-id="b758e-122">Member Design Guidelines</span></span>](../../../docs/standard/design-guidelines/member.md)
+- [<span data-ttu-id="b758e-123">Pokyny k návrhu architektury</span><span class="sxs-lookup"><span data-stu-id="b758e-123">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)
