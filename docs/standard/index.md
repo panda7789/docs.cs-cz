@@ -1,66 +1,62 @@
 ---
 title: Průvodce technologií .NET
-description: Přečtěte si o .NET.
+description: Přečtěte si o .NET a .NET Standard.
 author: cartermp
-ms.date: 05/02/2017
+ms.date: 12/27/2019
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 8a989ed4ff0d670296fc255733d01ddd5b5a8f1e
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: ce76448b69a002216125192f75d24b38e7582260
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838101"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76730777"
 ---
-# <a name="net-guide"></a><span data-ttu-id="beb73-103">Průvodce technologií .NET</span><span class="sxs-lookup"><span data-stu-id="beb73-103">.NET Guide</span></span>
+# <a name="net-guide"></a><span data-ttu-id="1256c-103">Průvodce technologií .NET</span><span class="sxs-lookup"><span data-stu-id="1256c-103">.NET guide</span></span>
 
-<span data-ttu-id="beb73-104">Průvodce rozhraním .NET poskytuje velké množství informací o .NET.</span><span class="sxs-lookup"><span data-stu-id="beb73-104">The .NET Guide provides a large amount of information about .NET.</span></span>  <span data-ttu-id="beb73-105">V závislosti na vaší znalosti s .NET je vhodné prozkoumat různé části tohoto průvodce a další části dokumentace k rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="beb73-105">Depending on your familiarity with .NET, you may wish to explore different sections of this guide and other sections of the .NET documentation.</span></span>
+<span data-ttu-id="1256c-104">Průvodce rozhraním .NET poskytuje informace o .NET.</span><span class="sxs-lookup"><span data-stu-id="1256c-104">The .NET guide provides information about .NET.</span></span> <span data-ttu-id="1256c-105">V závislosti na vaší znalosti s .NET můžete chtít prozkoumat různé části tohoto průvodce a další příručky, jako je například [.NET Core](../core/index.md) nebo [.NET Framework](../framework/index.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-105">Depending on your familiarity with .NET, you may wish to explore different sections of this guide and other guides such as [.NET Core](../core/index.md) or [.NET Framework](../framework/index.md).</span></span>
 
-## <a name="new-to-net"></a><span data-ttu-id="beb73-106">Novinka do .NET</span><span class="sxs-lookup"><span data-stu-id="beb73-106">New to .NET</span></span>
+## <a name="new-to-net"></a><span data-ttu-id="1256c-106">Novinka do .NET</span><span class="sxs-lookup"><span data-stu-id="1256c-106">New to .NET</span></span>
 
-<span data-ttu-id="beb73-107">Pokud chcete mít přehled o .NET, podívejte [se na to, co je .NET?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet).</span><span class="sxs-lookup"><span data-stu-id="beb73-107">If you want a high-level overview about .NET, check out [What is .NET?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet).</span></span>
+<span data-ttu-id="1256c-107">Pokud chcete základní přehled .NET, přečtěte si téma [co je .NET?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet).</span><span class="sxs-lookup"><span data-stu-id="1256c-107">If you want a high-level overview of .NET, see [What is .NET?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet).</span></span>
 
-<span data-ttu-id="beb73-108">Pokud s .NET začínáte, přečtěte si článek [Začínáme](get-started.md) .</span><span class="sxs-lookup"><span data-stu-id="beb73-108">If you're new to .NET, check out the [Get Started](get-started.md) article.</span></span>
+<span data-ttu-id="1256c-108">Pokud s .NET začínáte, [Přečtěte si téma Začínáme](get-started.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-108">If you're new to .NET, see [Get started](get-started.md).</span></span>
 
-<span data-ttu-id="beb73-109">Pokud dáváte přednost průvodci hlavními funkcemi .NET, podívejte se na [prohlídku rozhraní .NET](tour.md).</span><span class="sxs-lookup"><span data-stu-id="beb73-109">If you prefer to have a guided tour through major features of .NET, check out the [Tour of .NET](tour.md).</span></span>
+<span data-ttu-id="1256c-109">Pokud dáváte přednost průvodci hlavními funkcemi .NET, přečtěte si téma [prohlídky .NET](tour.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-109">If you prefer to have a guided tour through major features of .NET, see [Tour of .NET](tour.md).</span></span>
 
-<span data-ttu-id="beb73-110">Můžete si také přečíst o [komponentách architektury .NET](components.md) a získat přehled o různých "částech" rozhraní .NET a o tom, jak se vejdou do sebe.</span><span class="sxs-lookup"><span data-stu-id="beb73-110">You can also read about [.NET Architectural Components](components.md) to get an overview of the various "pieces" of .NET and how they fit together.</span></span>
+<span data-ttu-id="1256c-110">Přehled různých částí rozhraní .NET a o tom, jak se vejdou do společné, najdete v tématu [komponenty architektury .NET](components.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-110">For an overview of the various pieces of .NET and how they fit together, see [.NET architectural components](components.md).</span></span>
 
-## <a name="new-to-net-core"></a><span data-ttu-id="beb73-111">Novinka pro .NET Core</span><span class="sxs-lookup"><span data-stu-id="beb73-111">New to .NET Core</span></span>
+## <a name="new-to-net-core"></a><span data-ttu-id="1256c-111">Novinka pro .NET Core</span><span class="sxs-lookup"><span data-stu-id="1256c-111">New to .NET Core</span></span>
 
-<span data-ttu-id="beb73-112">Pokud s .NET Core začínáte, podívejte se na [Začínáme s .NET Core](../core/get-started.md).</span><span class="sxs-lookup"><span data-stu-id="beb73-112">If you're new to .NET Core, check out [Get Started with .NET Core](../core/get-started.md).</span></span>
+<span data-ttu-id="1256c-112">Pokud s .NET Core začínáte, podívejte se na [Začínáme s .NET Core](../core/get-started.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-112">If you're new to .NET Core, check out [Get started with .NET Core](../core/get-started.md).</span></span>
 
-## <a name="new-to-net-standard"></a><span data-ttu-id="beb73-113">Novinka .NET Standard</span><span class="sxs-lookup"><span data-stu-id="beb73-113">New to .NET Standard</span></span>
+## <a name="new-to-net-standard"></a><span data-ttu-id="1256c-113">Novinka .NET Standard</span><span class="sxs-lookup"><span data-stu-id="1256c-113">New to .NET Standard</span></span>
 
-<span data-ttu-id="beb73-114">Pokud .NET Standard, přečtěte si [.NET Standard](net-standard.md).</span><span class="sxs-lookup"><span data-stu-id="beb73-114">If you're new to .NET Standard, check out [.NET Standard](net-standard.md).</span></span>
+<span data-ttu-id="1256c-114">Pokud .NET Standard, přečtěte si [.NET Standard](net-standard.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-114">If you're new to .NET Standard, check out [.NET Standard](net-standard.md).</span></span>
 
-## <a name="porting-net-framework-code-to-net-core"></a><span data-ttu-id="beb73-115">Přenos kódu .NET Framework do .NET Core</span><span class="sxs-lookup"><span data-stu-id="beb73-115">Porting .NET Framework Code to .NET Core</span></span>
+## <a name="port-net-framework-code-to-net-standard-or-net-core"></a><span data-ttu-id="1256c-115">Port .NET Framework kódu pro .NET Standard nebo .NET Core</span><span class="sxs-lookup"><span data-stu-id="1256c-115">Port .NET Framework code to .NET Standard or .NET Core</span></span>
 
-<span data-ttu-id="beb73-116">Pokud se chystáte portovat aplikaci, službu nebo některé součásti systému na .NET Core, přečtěte si část [přenos do .NET Core z .NET Framework](../core/porting/index.md).</span><span class="sxs-lookup"><span data-stu-id="beb73-116">If you're looking to port an application, service, or some component of a system to .NET Core, check out [Porting to .NET Core from .NET Framework](../core/porting/index.md).</span></span>
+<span data-ttu-id="1256c-116">Informace o portech aplikace, služby, součásti nebo balíčku NuGet pro .NET Standard nebo .NET Core najdete v tématu [port pro .NET Core z .NET Framework](../core/porting/index.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-116">To port an application, service, component, or NuGet package to .NET Standard or .NET Core, see [Port to .NET Core from .NET Framework](../core/porting/index.md).</span></span> <span data-ttu-id="1256c-117">Nástroje pro .NET Standard a .NET Core jsou sdílené, takže obsah je relevantní pro přenos do obou platforem.</span><span class="sxs-lookup"><span data-stu-id="1256c-117">Tooling for .NET Standard and .NET Core is shared, so the content is relevant for porting to both frameworks.</span></span>
 
-## <a name="porting-a-nuget-package-from-net-framework-to-net-standard-or-net-core"></a><span data-ttu-id="beb73-117">Přenos balíčku NuGet z .NET Framework do .NET Standard nebo .NET Core</span><span class="sxs-lookup"><span data-stu-id="beb73-117">Porting a NuGet package from .NET Framework to .NET Standard or .NET Core</span></span>
+## <a name="net-concepts"></a><span data-ttu-id="1256c-118">Koncepce .NET</span><span class="sxs-lookup"><span data-stu-id="1256c-118">.NET concepts</span></span>
 
-<span data-ttu-id="beb73-118">Pokud chcete, aby balíček NuGet byl .NET Standard, přečtěte si [od .NET Framework přenos do .NET Core](../core/porting/index.md).</span><span class="sxs-lookup"><span data-stu-id="beb73-118">If you're looking to port a NuGet package to .NET Standard, check out [Porting to .NET Core from .NET Framework](../core/porting/index.md).</span></span>  <span data-ttu-id="beb73-119">Nástroje pro .NET Standard a .NET Core jsou sdílené, takže obsah bude relevantní pro přenos do .NET Standard a také pro .NET Core.</span><span class="sxs-lookup"><span data-stu-id="beb73-119">Tooling for .NET Standard and .NET Core are shared, so the content will be relevant for porting to .NET Standard as well as .NET Core.</span></span>
+<span data-ttu-id="1256c-119">Další informace o hlavních konceptech rozhraní .NET najdete v tématech:</span><span class="sxs-lookup"><span data-stu-id="1256c-119">For more information about the major concepts of .NET, see:</span></span>
 
-## <a name="interested-in-major-net-concepts"></a><span data-ttu-id="beb73-120">Zajímá Vás o hlavní koncepty .NET</span><span class="sxs-lookup"><span data-stu-id="beb73-120">Interested in Major .NET Concepts</span></span>
+* [<span data-ttu-id="1256c-120">Komponenty architektury .NET</span><span class="sxs-lookup"><span data-stu-id="1256c-120">.NET architectural components</span></span>](components.md)
+* [<span data-ttu-id="1256c-121">.NET Standard</span><span class="sxs-lookup"><span data-stu-id="1256c-121">.NET Standard</span></span>](net-standard.md)
+* [<span data-ttu-id="1256c-122">Nativní interoperabilita</span><span class="sxs-lookup"><span data-stu-id="1256c-122">Native interoperability</span></span>](native-interop/index.md)
+* [<span data-ttu-id="1256c-123">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="1256c-123">Garbage collection</span></span>](garbage-collection/index.md)
+* [<span data-ttu-id="1256c-124">Základní typy v .NET</span><span class="sxs-lookup"><span data-stu-id="1256c-124">Base types in .NET</span></span>](base-types/index.md)
+* [<span data-ttu-id="1256c-125">Kolekce</span><span class="sxs-lookup"><span data-stu-id="1256c-125">Collections</span></span>](collections/index.md)
+* [<span data-ttu-id="1256c-126">Data, časy a časová pásma</span><span class="sxs-lookup"><span data-stu-id="1256c-126">Dates, times, and time zones</span></span>](datetime/index.md)
+* [<span data-ttu-id="1256c-127">Asynchronní programování</span><span class="sxs-lookup"><span data-stu-id="1256c-127">Asynchronous programming</span></span>](async.md)
 
-<span data-ttu-id="beb73-121">Pokud vás zajímá některé z hlavních konceptů .NET, prostudujte si:</span><span class="sxs-lookup"><span data-stu-id="beb73-121">If you're interested in some of the major concepts of .NET, check out:</span></span>
+<span data-ttu-id="1256c-128">Informace o třech hlavních jazycích .NET najdete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="1256c-128">For information about the three major .NET languages, see:</span></span>
 
-* [<span data-ttu-id="beb73-122">Architektonické součásti technologie .NET</span><span class="sxs-lookup"><span data-stu-id="beb73-122">.NET Architectural Components</span></span>](components.md)
-* [<span data-ttu-id="beb73-123">.NET Standard</span><span class="sxs-lookup"><span data-stu-id="beb73-123">.NET Standard</span></span>](net-standard.md)
-* [<span data-ttu-id="beb73-124">Nativní interoperabilita</span><span class="sxs-lookup"><span data-stu-id="beb73-124">Native Interoperability</span></span>](native-interop/index.md)
-* [<span data-ttu-id="beb73-125">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="beb73-125">Garbage Collection</span></span>](garbage-collection/index.md)
-* [<span data-ttu-id="beb73-126">Základní typy v .NET</span><span class="sxs-lookup"><span data-stu-id="beb73-126">Base Types in .NET</span></span>](base-types/index.md)
-* [<span data-ttu-id="beb73-127">Kolekce</span><span class="sxs-lookup"><span data-stu-id="beb73-127">Collections</span></span>](collections/index.md)
-* [<span data-ttu-id="beb73-128">Data, časy a časová pásma</span><span class="sxs-lookup"><span data-stu-id="beb73-128">Dates, times, and time zones</span></span>](datetime/index.md)
-* [<span data-ttu-id="beb73-129">Asynchronní programování</span><span class="sxs-lookup"><span data-stu-id="beb73-129">Asynchronous Programming</span></span>](async.md)
+* [<span data-ttu-id="1256c-129">C#program</span><span class="sxs-lookup"><span data-stu-id="1256c-129">C# guide</span></span>](../csharp/index.yml)
+* [<span data-ttu-id="1256c-130">F#program</span><span class="sxs-lookup"><span data-stu-id="1256c-130">F# guide</span></span>](../fsharp/index.yml)
+* [<span data-ttu-id="1256c-131">Průvodce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="1256c-131">Visual Basic guide</span></span>](../visual-basic/index.yml)
 
-<span data-ttu-id="beb73-130">Kromě toho si přečtěte jednotlivé jazykové příručky a seznamte se se třemi hlavními jazyky .NET:</span><span class="sxs-lookup"><span data-stu-id="beb73-130">Additionally, check out each language guide to learn about the three major .NET languages:</span></span>
+## <a name="api-reference"></a><span data-ttu-id="1256c-132">referenční dokumentace k rozhraní API</span><span class="sxs-lookup"><span data-stu-id="1256c-132">API reference</span></span>
 
-* [<span data-ttu-id="beb73-131">Průvodce jazykem C#</span><span class="sxs-lookup"><span data-stu-id="beb73-131">C# Guide</span></span>](../csharp/index.yml)
-* [<span data-ttu-id="beb73-132">Průvodce jazykem F#</span><span class="sxs-lookup"><span data-stu-id="beb73-132">F# Guide</span></span>](../fsharp/index.yml)
-* [<span data-ttu-id="beb73-133">Průvodce jazykem Visual Basic</span><span class="sxs-lookup"><span data-stu-id="beb73-133">Visual Basic Guide</span></span>](../visual-basic/index.yml)
-
-## <a name="api-reference"></a><span data-ttu-id="beb73-134">Referenční dokumentace ke knihovně API</span><span class="sxs-lookup"><span data-stu-id="beb73-134">API Reference</span></span>
-
-<span data-ttu-id="beb73-135">Podívejte se na [Reference k rozhraní .NET API](../../api/index.md) , abyste viděli, jaká šířka rozhraní API je dostupná.</span><span class="sxs-lookup"><span data-stu-id="beb73-135">Check out the [.NET API Reference](../../api/index.md) to see the breadth of APIs available.</span></span>
+<span data-ttu-id="1256c-133">Podrobné informace o všech rozhraních API, která jsou k dispozici v rozhraní .NET, najdete v tématu Reference k rozhraní [.NET API](../../api/index.md).</span><span class="sxs-lookup"><span data-stu-id="1256c-133">For detailed information about all of the APIs that are available in .NET, see [.NET API reference](../../api/index.md).</span></span>

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms'
+title: Přidání možností webového prohlížeče do aplikace
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,29 +12,29 @@ helpviewer_keywords:
 - examples [Windows Forms], WebBrowser control
 - Windows Forms, adding Web browser functionality
 ms.assetid: 3871f072-b57a-435b-9976-e5da28df04a7
-ms.openlocfilehash: 60b544c630fc5c7c876293b27a5c5e159e57a797
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5feecd975700745541103e81fd09bfc5e788c729
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65588888"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747223"
 ---
-# <a name="how-to-add-web-browser-capabilities-to-a-windows-forms-application"></a><span data-ttu-id="099ba-102">Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms</span><span class="sxs-lookup"><span data-stu-id="099ba-102">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>
-<span data-ttu-id="099ba-103">S <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, můžete přidat funkce webového prohlížeče do vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="099ba-103">With the <xref:System.Windows.Forms.WebBrowser> control, you can add Web browser functionality to your application.</span></span> <span data-ttu-id="099ba-104">Ovládací prvek funguje jako webového prohlížeče ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="099ba-104">The control works like a Web browser by default.</span></span> <span data-ttu-id="099ba-105">Po načtení počáteční adresu URL tak, že nastavíte <xref:System.Windows.Forms.WebBrowser.Url%2A> vlastností, můžete přejít klepnutím na hypertextové odkazy nebo pomocí klávesové zkratky přejít zpět a vpřed mezi historii navigace.</span><span class="sxs-lookup"><span data-stu-id="099ba-105">After you load an initial URL by setting the <xref:System.Windows.Forms.WebBrowser.Url%2A> property, you can navigate by clicking hyperlinks or by using keyboard shortcuts to move backward and forward through navigation history.</span></span> <span data-ttu-id="099ba-106">Ve výchozím nastavení můžete přístup k funkcím Další prohlížeče prostřednictvím klikněte pravým tlačítkem na nabídku.</span><span class="sxs-lookup"><span data-stu-id="099ba-106">By default, you can access additional browser functionality through the right-click shortcut menu.</span></span> <span data-ttu-id="099ba-107">Můžete také otevřít nové dokumenty přetažením na ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="099ba-107">You can also open new documents by dropping them onto the control.</span></span> <span data-ttu-id="099ba-108"><xref:System.Windows.Forms.WebBrowser> Ovládací prvek má také několik vlastnosti, metody a události, které můžete použít k implementaci funkce uživatelského rozhraní, podobné těm v aplikaci Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="099ba-108">The <xref:System.Windows.Forms.WebBrowser> control also has several properties, methods, and events that you can use to implement user interface features similar to those found in Internet Explorer.</span></span>  
+# <a name="how-to-add-web-browser-capabilities-to-a-windows-forms-application"></a><span data-ttu-id="91aa3-102">Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms</span><span class="sxs-lookup"><span data-stu-id="91aa3-102">How to: Add Web Browser Capabilities to a Windows Forms Application</span></span>
+<span data-ttu-id="91aa3-103">Pomocí ovládacího prvku <xref:System.Windows.Forms.WebBrowser> můžete do aplikace přidat funkce webového prohlížeče.</span><span class="sxs-lookup"><span data-stu-id="91aa3-103">With the <xref:System.Windows.Forms.WebBrowser> control, you can add Web browser functionality to your application.</span></span> <span data-ttu-id="91aa3-104">Ve výchozím nastavení funguje ovládací prvek jako webový prohlížeč.</span><span class="sxs-lookup"><span data-stu-id="91aa3-104">The control works like a Web browser by default.</span></span> <span data-ttu-id="91aa3-105">Po načtení počáteční adresy URL nastavením vlastnosti <xref:System.Windows.Forms.WebBrowser.Url%2A> můžete přejít kliknutím na hypertextové odkazy nebo pomocí klávesových zkratek pro přechod zpět a vpřed v historii navigace.</span><span class="sxs-lookup"><span data-stu-id="91aa3-105">After you load an initial URL by setting the <xref:System.Windows.Forms.WebBrowser.Url%2A> property, you can navigate by clicking hyperlinks or by using keyboard shortcuts to move backward and forward through navigation history.</span></span> <span data-ttu-id="91aa3-106">Ve výchozím nastavení máte přístup k dalším funkcím prohlížeče pomocí místní nabídky klikněte pravým tlačítkem myši.</span><span class="sxs-lookup"><span data-stu-id="91aa3-106">By default, you can access additional browser functionality through the right-click shortcut menu.</span></span> <span data-ttu-id="91aa3-107">Nové dokumenty můžete otevřít také tak, že je vyřadíte do ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="91aa3-107">You can also open new documents by dropping them onto the control.</span></span> <span data-ttu-id="91aa3-108">Ovládací prvek <xref:System.Windows.Forms.WebBrowser> také obsahuje několik vlastností, metod a událostí, které lze použít k implementaci funkcí uživatelského rozhraní, které jsou podobné těm, které jsou k dispozici v aplikaci Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="91aa3-108">The <xref:System.Windows.Forms.WebBrowser> control also has several properties, methods, and events that you can use to implement user interface features similar to those found in Internet Explorer.</span></span>  
   
- <span data-ttu-id="099ba-109">Následující příklad kódu se implementuje adresním řádku, typické prohlížeče tlačítka, **souboru** nabídka stavového řádku a záhlaví okna, která zobrazí aktuální název stránky.</span><span class="sxs-lookup"><span data-stu-id="099ba-109">The following code example implements an address bar, typical browser buttons, a **File** menu, a status bar, and a title bar that displays the current page title.</span></span>  
+ <span data-ttu-id="91aa3-109">Následující příklad kódu implementuje panel Adresa, typické tlačítka prohlížeče, nabídku **soubor** , stavový řádek a záhlaví, které zobrazuje název aktuální stránky.</span><span class="sxs-lookup"><span data-stu-id="91aa3-109">The following code example implements an address bar, typical browser buttons, a **File** menu, a status bar, and a title bar that displays the current page title.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="099ba-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="099ba-110">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="91aa3-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="91aa3-110">Example</span></span>  
  [!code-cpp[System.Windows.Forms.WebBrowser#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser/CPP/form1.cpp#0)]
  [!code-csharp[System.Windows.Forms.WebBrowser#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser/CS/form1.cs#0)]
  [!code-vb[System.Windows.Forms.WebBrowser#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser/VB/form1.vb#0)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="099ba-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="099ba-111">Compiling the Code</span></span>  
- <span data-ttu-id="099ba-112">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="099ba-112">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="91aa3-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="91aa3-111">Compiling the Code</span></span>  
+ <span data-ttu-id="91aa3-112">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="91aa3-112">This example requires:</span></span>  
   
-- <span data-ttu-id="099ba-113">Odkazy `System`, `System.Drawing`, a `System.Windows.Forms` sestavení.</span><span class="sxs-lookup"><span data-stu-id="099ba-113">References to the `System`, `System.Drawing`, and `System.Windows.Forms` assemblies.</span></span>  
+- <span data-ttu-id="91aa3-113">Odkazy na sestavení `System`, `System.Drawing`a `System.Windows.Forms`.</span><span class="sxs-lookup"><span data-stu-id="91aa3-113">References to the `System`, `System.Drawing`, and `System.Windows.Forms` assemblies.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="099ba-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="099ba-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="91aa3-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91aa3-114">See also</span></span>
 
 - <xref:System.Windows.Forms.WebBrowser>
-- [<span data-ttu-id="099ba-115">Ovládací prvek WebBrowser</span><span class="sxs-lookup"><span data-stu-id="099ba-115">WebBrowser Control</span></span>](webbrowser-control-windows-forms.md)
+- [<span data-ttu-id="91aa3-115">Ovládací prvek WebBrowser</span><span class="sxs-lookup"><span data-stu-id="91aa3-115">WebBrowser Control</span></span>](webbrowser-control-windows-forms.md)
