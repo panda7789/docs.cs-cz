@@ -2,12 +2,12 @@
 title: Využívání kanálů OData z pracovního postupu – WF
 ms.date: 03/30/2017
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
-ms.openlocfilehash: c9780200d9b7c7bc89797b3c16b22bc38440fccc
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ceac2c2d07351fcb79e2345068f07fa22f356411
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802658"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743790"
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využívání kanálů OData z pracovního postupu
 
@@ -15,7 +15,7 @@ WCF Data Services je součást .NET Framework, která umožňuje vytvořit služ
 
 ## <a name="using-the-sample-northwind-odata-service"></a>Použití ukázkové služby OData Northwind
 
-Příklady v tomto tématu používají ukázkovou datovou službu Northwind, která se nachází na <https://services.odata.org/Northwind/Northwind.svc/>. Tato služba je k dispozici jako součást [sady OData SDK](https://www.odata.org/wp-content/uploads/sites/21/odatasdkcodesamples.zip) a poskytuje přístup jen pro čtení k ukázkové databázi Northwind. Pokud je požadován přístup pro zápis nebo pokud potřebujete místní datovou službu WCF, můžete postupovat podle kroků v [rychlém startu WCF Data Services](../data/wcf/quickstart-wcf-data-services.md) a vytvořit místní službu OData, která poskytuje přístup k databázi Northwind. Pokud budete postupovat podle pokynů v rychlém startu, nahraďte místní identifikátor URI pro ten, který je uveden v příkladu kódu v tomto tématu.
+Příklady v tomto tématu používají ukázkovou datovou službu Northwind, která se nachází na <https://services.odata.org/Northwind/Northwind.svc/>. Tato služba je k dispozici jako součást [sady OData SDK](https://www.odata.org/ecosystem/#sdk) a poskytuje přístup jen pro čtení k ukázkové databázi Northwind. Pokud je požadován přístup pro zápis nebo pokud potřebujete místní datovou službu WCF, můžete postupovat podle kroků v [rychlém startu WCF Data Services](../data/wcf/quickstart-wcf-data-services.md) a vytvořit místní službu OData, která poskytuje přístup k databázi Northwind. Pokud budete postupovat podle pokynů v rychlém startu, nahraďte místní identifikátor URI pro ten, který je uveden v příkladu kódu v tomto tématu.
 
 ## <a name="consuming-an-odata-feed-using-the-client-libraries"></a>Spotřebovávání datového kanálu OData pomocí klientských knihoven
 

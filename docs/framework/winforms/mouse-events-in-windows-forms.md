@@ -1,5 +1,5 @@
 ---
-title: Události myši ve Windows Forms
+title: Události myši
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MouseLeave event [Windows Forms]
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: a61f4eedde611cfb7598d55465103924516e06c6
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 4909f56fc3935848fd18bc35c1cb56b5407a24c8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834599"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740976"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Události myši ve Windows Forms
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení souborů do ovládacího prvku Windows Forms RichTextBox'
+title: Načtení souborů do ovládacího prvku RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,24 +15,24 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], opening files
 - RTF files [Windows Forms], displaying in RichTextBox control
 ms.assetid: c03451be-f285-4428-a71a-c41e002cc919
-ms.openlocfilehash: 0f52b4ff869d7a2220dd2d40e0ab90bbfb7d24ae
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c31e004ea4cd0821b5f18f0ab0fe2708e6ac4b59
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046171"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736296"
 ---
 # <a name="how-to-load-files-into-the-windows-forms-richtextbox-control"></a>Postupy: Načtení souborů do ovládacího prvku Windows Forms RichTextBox
 
-Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms může zobrazit prostý text, kódování Unicode nebo soubor RTF (Rich-Text-Format). Uděláte to tak, že <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> zavoláte metodu. K načtení dat z datového <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> proudu můžete použít také metodu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> může zobrazit prostý text, prostý text v kódování Unicode nebo soubor RTF (Rich-Text-Format). Uděláte to tak, že zavoláte metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>. K načtení dat z datového proudu můžete použít také metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>. Další informace najdete v tématu <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
 
 ### <a name="to-load-a-file-into-the-richtextbox-control"></a>Načtení souboru do ovládacího prvku RichTextBox
 
-1. Určete cestu k souboru, který má být otevřen pomocí <xref:System.Windows.Forms.OpenFileDialog> součásti. Přehled naleznete v tématu [OpenFileDialog Component Overview](openfiledialog-component-overview-windows-forms.md).
+1. Určete cestu k souboru, který se má otevřít, pomocí <xref:System.Windows.Forms.OpenFileDialog> komponenty. Přehled naleznete v tématu [OpenFileDialog Component Overview](openfiledialog-component-overview-windows-forms.md).
 
-2. <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> Zavolejte metodu <xref:System.Windows.Forms.RichTextBox> ovládacího prvku, určete soubor, který se má načíst, a volitelně také typ souboru. V následujícím příkladu se soubor, který se má načíst, převezme <xref:System.Windows.Forms.OpenFileDialog> z <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnosti komponenty. Pokud zavoláte metodu s názvem souboru jako jeho jediným argumentem, typ souboru se bude považovat za RTF. Chcete-li zadat jiný typ souboru, zavolejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčtu jako svůj druhý argument.
+2. Zavolejte metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> ovládacího prvku <xref:System.Windows.Forms.RichTextBox>, určete soubor, který se má načíst, a volitelně také typ souboru. V následujícím příkladu se soubor, který se má načíst, převezme z vlastnosti <xref:System.Windows.Forms.FileDialog.FileName%2A> <xref:System.Windows.Forms.OpenFileDialog> součásti. Pokud zavoláte metodu s názvem souboru jako jeho jediným argumentem, typ souboru se bude považovat za RTF. Chcete-li zadat jiný typ souboru, zavolejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčtu jako svůj druhý argument.
 
-    V následujícím <xref:System.Windows.Forms.OpenFileDialog> příkladu se komponenta zobrazí při kliknutí na tlačítko. Vybraný soubor se pak otevře a zobrazí v <xref:System.Windows.Forms.RichTextBox> ovládacím prvku. Tento příklad předpokládá, že formulář má tlačítko,`btnOpenFile`.
+    V následujícím příkladu je po kliknutí na tlačítko zobrazena součást <xref:System.Windows.Forms.OpenFileDialog>. Vybraný soubor je pak otevřen a zobrazen v ovládacím prvku <xref:System.Windows.Forms.RichTextBox>. Tento příklad předpokládá, že formulář obsahuje tlačítko,`btnOpenFile`.
 
     ```vb
     Private Sub btnOpenFile_Click(ByVal sender As System.Object, _
@@ -79,7 +79,7 @@ Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms mů
     ```
 
     > [!IMPORTANT]
-    > Chcete-li spustit tento proces, vaše sestavení může vyžadovat úroveň oprávnění udělené <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídou. Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../misc/code-access-security-basics.md).
+    > Pro spuštění tohoto procesu vaše sestavení může vyžadovat úroveň oprávnění udělené třídou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>. Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../misc/code-access-security-basics.md).
 
 ## <a name="see-also"></a>Viz také:
 

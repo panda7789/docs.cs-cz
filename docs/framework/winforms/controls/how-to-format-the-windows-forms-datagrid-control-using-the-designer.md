@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Formátování ovládacího prvku Windows Forms DataGrid pomocí Návrháře'
+title: Formátování ovládacího prvku DataGrid pomocí návrháře
 ms.date: 03/30/2017
 helpviewer_keywords:
 - columns [Windows Forms], DataGrid controls
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-ms.openlocfilehash: b3a85f5f9e51dae50a40058b8f07f92976da66f2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 548acac0fc7724490bfe89927ec0662b3488c230
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "69666159"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736794"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid pomocí Návrháře
 
@@ -45,7 +45,7 @@ Následující postup vyžaduje projekt **aplikace systému Windows** s formulá
     |--------------|-----------------|
     |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|Vlastnost `BackColor` definuje barvu sudého číslování řádků mřížky. Když nastavíte vlastnost <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> na jinou barvu, každý další řádek je nastaven na tuto novou barvu (řádky 1, 3, 5 atd.).|
     |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|Barva pozadí sudého číslování řádků mřížky (řádky 0, 2, 4, 6 a tak dále).|
-    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|Vzhledem k tomu, že vlastnosti <xref:System.Windows.Forms.DataGrid.BackColor%2A> a <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> určují barvu řádků v mřížce, vlastnost <xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> Určuje barvu oblasti mimo oblast řádku, která je viditelná pouze v případě, že se mřížka posouvá do dolní části, nebo pokud je v seznamu uveden pouze pár řádků. mřížky.|
+    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|Vzhledem k tomu, že vlastnosti <xref:System.Windows.Forms.DataGrid.BackColor%2A> a <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> určují barvu řádků v mřížce, vlastnost <xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> Určuje barvu oblasti mimo oblast řádku, která je viditelná pouze v případě, že se mřížka posouvá do dolní části, nebo pokud je v mřížce obsažen pouze pár řádků.|
     |<xref:System.Windows.Forms.DataGrid.BorderStyle%2A>|Styl ohraničení mřížky, jedna z hodnot <xref:System.Windows.Forms.BorderStyle> výčtu.|
     |<xref:System.Windows.Forms.DataGrid.CaptionBackColor%2A>|Barva pozadí nadpisu okna mřížky, která se zobrazuje hned nad mřížkou|
     |<xref:System.Windows.Forms.DataGrid.CaptionFont%2A>|Písmo popisku v horní části mřížky|

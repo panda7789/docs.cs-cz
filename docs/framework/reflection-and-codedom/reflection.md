@@ -21,16 +21,16 @@ helpviewer_keywords:
 - discovering type information at run time
 - type system, reflection
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
-ms.openlocfilehash: 1768acd65b738af068cf98a8b8340c3179e9b885
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 42944d8267d2e99fd9eb1a2cb28c0c81d3e9af75
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130051"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744565"
 ---
 # <a name="reflection-in-net"></a>Odraz v .NET
 
-Třídy v oboru názvů <xref:System.Reflection> společně s <xref:System.Type?displayProperty=nameWithType>umožňují získat informace o načtených [sestaveních](../../standard/assembly/index.md) a typech definovaných v nich, jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a [typy hodnot](../../csharp/language-reference/keywords/value-types.md). Reflexe můžete také použít k vytvoření instancí typu za běhu a k jejich vyvolání a přístup k nim. Témata týkající se konkrétních aspektů reflexe najdete v části [Příbuzná témata](#related_topics) na konci tohoto přehledu.
+Třídy v oboru názvů <xref:System.Reflection> společně s <xref:System.Type?displayProperty=nameWithType>umožňují získat informace o načtených [sestaveních](../../standard/assembly/index.md) a typech definovaných v nich, jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a typy hodnot (tj. [struktury](../../standard/base-types/common-type-system.md#structures) a [výčty](../../standard/base-types/common-type-system.md#enumerations)). Reflexe můžete také použít k vytvoření instancí typu za běhu a k jejich vyvolání a přístup k nim. Témata týkající se konkrétních aspektů reflexe najdete v části [Příbuzná témata](#related_topics) na konci tohoto přehledu.
   
 Modul [CLR (Common Language Runtime)](../../standard/clr.md) spravuje [aplikační domény](../app-domains/application-domains.md), které tvoří hranice kolem objektů, které mají stejný obor aplikace. Tato Správa zahrnuje načtení každého sestavení do příslušné aplikační domény a řízení rozložení paměti hierarchie typů v rámci každého sestavení.  
   

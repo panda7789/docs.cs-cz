@@ -1,5 +1,5 @@
 ---
-title: Vykreslení ovládacího prvku Windows Forms
+title: Vykreslení ovládacího prvku
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,19 +10,19 @@ helpviewer_keywords:
 - custom controls [Windows Forms], graphics resources
 - custom controls [Windows Forms], invalidation and painting
 ms.assetid: aae8e1e6-4786-432b-a15e-f4c44760d302
-ms.openlocfilehash: b24fbefac0dcfb666e25ad1d1726ef2cf8a5d84e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0e1a7ca5dc0414d518c081b1db2dca5477d4f743
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968278"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742383"
 ---
 # <a name="rendering-a-windows-forms-control"></a>Vykreslení ovládacího prvku Windows Forms
-Vykreslování odkazuje na proces vytvoření vizuální reprezentace na obrazovce uživatele. Model Windows Forms pro vykreslování používá GDI (novou knihovnu Windows Graphics Library). Spravované třídy, které poskytují přístup k rozhraní GDI, jsou <xref:System.Drawing?displayProperty=nameWithType> v oboru názvů a v jeho podřízených oborech názvů.  
+Vykreslování odkazuje na proces vytvoření vizuální reprezentace na obrazovce uživatele. Model Windows Forms pro vykreslování používá GDI (novou knihovnu Windows Graphics Library). Spravované třídy, které poskytují přístup k rozhraní GDI, jsou v oboru názvů <xref:System.Drawing?displayProperty=nameWithType> a jeho podobory názvů.  
   
  Následující prvky jsou zapojeny do vykreslování ovládacích prvků:  
   
-- Funkce kreslení poskytovaná základní třídou <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.  
+- Funkce kreslení poskytnutá základní třídou <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.  
   
 - Základní prvky knihovny grafiky GDI.  
   
@@ -31,9 +31,9 @@ Vykreslování odkazuje na proces vytvoření vizuální reprezentace na obrazov
 - Postup pro uvolnění grafických prostředků  
   
 ## <a name="drawing-functionality-provided-by-control"></a>Funkce kreslení poskytované ovládacím prvkem  
- Základní třída <xref:System.Windows.Forms.Control> poskytuje funkce kreslení prostřednictvím své <xref:System.Windows.Forms.Control.Paint> události. Ovládací prvek vyvolá <xref:System.Windows.Forms.Control.Paint> událost vždy, když je potřeba aktualizovat svůj displej. Další informace o událostech v .NET Framework naleznete v tématu [manipulace a vyvolávání událostí](../../../standard/events/index.md).  
+ Základní třída <xref:System.Windows.Forms.Control> poskytuje funkce kreslení prostřednictvím události <xref:System.Windows.Forms.Control.Paint>. Ovládací prvek vyvolá událost <xref:System.Windows.Forms.Control.Paint> vždy, když je potřeba aktualizovat svůj displej. Další informace o událostech v .NET Framework naleznete v tématu [manipulace a vyvolávání událostí](../../../standard/events/index.md).  
   
- Třída dat události pro <xref:System.Windows.Forms.Control.Paint> <xref:System.Windows.Forms.PaintEventArgs>událost, obsahuje data potřebná pro vykreslení ovládacího prvku – popisovač objektu grafiky a obdélníkový objekt, který představuje oblast pro vykreslení. Tyto objekty jsou v následujícím fragmentu kódu zobrazeny tučně.  
+ Třída dat události pro událost <xref:System.Windows.Forms.Control.Paint>, <xref:System.Windows.Forms.PaintEventArgs>, obsahuje data potřebná pro vykreslení ovládacího prvku – popisovač objektu grafiky a obdélníkový objekt, který představuje oblast pro vykreslení. Tyto objekty jsou v následujícím fragmentu kódu zobrazeny tučně.  
   
 ```vb  
 Public Class PaintEventArgs  
@@ -61,9 +61,9 @@ public System.Drawing.Graphics Graphics {get;}
 }  
 ```  
   
- <xref:System.Drawing.Graphics>je spravovaná třída, která zapouzdřuje funkce kreslení, jak je popsáno v diskuzi o GDI dále v tomto tématu. <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> Je instancí<xref:System.Drawing.Rectangle> struktury a definuje oblast k dispozici, ve které může ovládací prvek vykreslovat. Vývojář ovládacího prvku může vypočítat <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> pomocí vlastnosti ovládacího prvku, jak je popsáno v diskuzi o geometrii dále v tomto tématu.  
+ <xref:System.Drawing.Graphics> je spravovaná třída, která zapouzdřuje funkce kreslení, jak je popsáno dále v tomto tématu v diskuzi o GDI. <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> je instance <xref:System.Drawing.Rectangle> struktury a definuje dostupnou oblast, ve které může ovládací prvek vykreslovat. Vývojář ovládacího prvku může vypočítat <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> pomocí vlastnosti <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> ovládacího prvku, jak je popsáno v diskuzi o geometrii dále v tomto tématu.  
   
- Ovládací prvek musí poskytovat logiku vykreslování přepsáním <xref:System.Windows.Forms.Control.OnPaint%2A> metody, ze <xref:System.Windows.Forms.Control>které dědí. <xref:System.Windows.Forms.Control.OnPaint%2A>Získá přístup k objektu grafiky a obdélník, který se nakreslí přes <xref:System.Drawing.Design.PaintValueEventArgs.Graphics%2A> <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> a vlastnosti <xref:System.Windows.Forms.PaintEventArgs> instance, která je předána.  
+ Ovládací prvek musí poskytovat logiku vykreslování přepsáním metody <xref:System.Windows.Forms.Control.OnPaint%2A>, kterou dědí z <xref:System.Windows.Forms.Control>. <xref:System.Windows.Forms.Control.OnPaint%2A> získá přístup k objektu grafiky a obdélník, který se nakreslí přes <xref:System.Drawing.Design.PaintValueEventArgs.Graphics%2A> a <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastnosti předané instance <xref:System.Windows.Forms.PaintEventArgs>.  
   
 ```vb  
 Protected Overridable Sub OnPaint(pe As PaintEventArgs)  
@@ -73,12 +73,12 @@ Protected Overridable Sub OnPaint(pe As PaintEventArgs)
 protected virtual void OnPaint(PaintEventArgs pe);  
 ```  
   
- Metoda základní <xref:System.Windows.Forms.Control> třídy neimplementuje žádné funkce kreslení <xref:System.Windows.Forms.Control.Paint> , ale vyvolá pouze delegáty událostí, které jsou zaregistrovány s událostí. <xref:System.Windows.Forms.Control.OnPaint%2A> Při přepsání <xref:System.Windows.Forms.Control.OnPaint%2A>byste měli obvykle <xref:System.Windows.Forms.Control.OnPaint%2A> vyvolat metodu základní třídy <xref:System.Windows.Forms.Control.Paint> , aby registrovaní delegáti obdrželi událost. Nicméně ovládací prvky, které vykreslí celý povrch <xref:System.Windows.Forms.Control.OnPaint%2A>, by neměly vyvolat základní třídu, protože to představuje blikání. Příklad přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> události [naleznete v tématu How to: Vytvoří ovládací prvek model Windows Forms, který zobrazuje](how-to-create-a-windows-forms-control-that-shows-progress.md)průběh.  
+ Metoda <xref:System.Windows.Forms.Control.OnPaint%2A> základní <xref:System.Windows.Forms.Control> třídy neimplementuje žádné funkce kreslení, ale pouze vyvolá delegáty událostí, které jsou zaregistrovány v události <xref:System.Windows.Forms.Control.Paint>. Pokud přepíšete <xref:System.Windows.Forms.Control.OnPaint%2A>, měli byste obvykle vyvolat metodu <xref:System.Windows.Forms.Control.OnPaint%2A> základní třídy, aby registrovaní delegáti obdrželi událost <xref:System.Windows.Forms.Control.Paint>. Nicméně ovládací prvky, které malují celou plochu, by neměly vyvolat <xref:System.Windows.Forms.Control.OnPaint%2A>základní třídy, protože to představuje blikání. Příklad přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> události naleznete v tématu [How to: Create a model Windows Forms Control, který zobrazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
 > [!NOTE]
-> Nevolejte <xref:System.Windows.Forms.Control.OnPaint%2A> přímo z vašeho ovládacího prvku. místo toho <xref:System.Windows.Forms.Control.Invalidate%2A> volejte metodu (zděděnou od <xref:System.Windows.Forms.Control> <xref:System.Windows.Forms.Control.Invalidate%2A>) nebo jinou metodu, která vyvolá. <xref:System.Windows.Forms.Control.Invalidate%2A> Metoda zase vyvolá metodu <xref:System.Windows.Forms.Control.OnPaint%2A>. Metoda je přetížena a v závislosti na argumentech dodaných do <xref:System.Windows.Forms.Control.Invalidate%2A> `e`ovládací prvek překreslí buď jednu nebo celou jeho oblast obrazovky. <xref:System.Windows.Forms.Control.Invalidate%2A>  
+> Nevolejte <xref:System.Windows.Forms.Control.OnPaint%2A> přímo z vašeho ovládacího prvku; místo toho volejte metodu <xref:System.Windows.Forms.Control.Invalidate%2A> (zděděná z <xref:System.Windows.Forms.Control>) nebo jinou metodu, která vyvolá <xref:System.Windows.Forms.Control.Invalidate%2A>. Metoda <xref:System.Windows.Forms.Control.Invalidate%2A> zase vyvolá <xref:System.Windows.Forms.Control.OnPaint%2A>. Metoda <xref:System.Windows.Forms.Control.Invalidate%2A> je přetížena a v závislosti na argumentech dodaných <xref:System.Windows.Forms.Control.Invalidate%2A> `e`ovládací prvek překreslí buď jednu nebo celou jeho oblast obrazovky.  
   
- Základní <xref:System.Windows.Forms.Control> třída definuje další metodu, která je užitečná pro kreslení <xref:System.Windows.Forms.Control.OnPaintBackground%2A> – metoda.  
+ Základní třída <xref:System.Windows.Forms.Control> definuje další metodu, která je užitečná pro kreslení – metodou <xref:System.Windows.Forms.Control.OnPaintBackground%2A>.  
   
 ```vb  
 Protected Overridable Sub OnPaintBackground(pevent As PaintEventArgs)  
@@ -88,25 +88,25 @@ Protected Overridable Sub OnPaintBackground(pevent As PaintEventArgs)
 protected virtual void OnPaintBackground(PaintEventArgs pevent);  
 ```  
   
- <xref:System.Windows.Forms.Control.OnPaintBackground%2A>vykreslí pozadí (a tím i tvar) okna a zaručuje, že bude rychlá, zatímco <xref:System.Windows.Forms.Control.OnPaint%2A> jednotlivé požadavky na malování jsou zkombinovány do jedné <xref:System.Windows.Forms.Control.Paint> události, která se vztahuje na všechny oblasti, které musí být překreslit. Může být vhodné vyvolat <xref:System.Windows.Forms.Control.OnPaintBackground%2A> if, například, chcete-li nakreslit barevné pozadí pro ovládací prvek.  
+ <xref:System.Windows.Forms.Control.OnPaintBackground%2A> vykreslí pozadí (a tím i tvar) okna a zaručuje, že bude rychlá, zatímco <xref:System.Windows.Forms.Control.OnPaint%2A> vykreslí podrobnosti a může být pomalejší, protože jednotlivé požadavky na malování jsou zkombinovány do jedné <xref:System.Windows.Forms.Control.Paint> události, která se vztahuje na všechny oblasti, které je nutné překreslit. Můžete chtít vyvolat <xref:System.Windows.Forms.Control.OnPaintBackground%2A>, pokud například chcete nakreslit barevné pozadí pro ovládací prvek.  
   
- I <xref:System.Windows.Forms.Control.OnPaintBackground%2A> když má klasifikaci typu událost a přebírá stejný argument `OnPaint` jako metoda, <xref:System.Windows.Forms.Control.OnPaintBackground%2A> není metodou skutečné události. Neexistuje žádná `PaintBackground` událost a <xref:System.Windows.Forms.Control.OnPaintBackground%2A> nevyvolává delegáty událostí. Při přepsání <xref:System.Windows.Forms.Control.OnPaintBackground%2A> metody není k <xref:System.Windows.Forms.Control.OnPaintBackground%2A> vyvolání metody základní třídy nutné použít odvozenou třídu.  
+ I když <xref:System.Windows.Forms.Control.OnPaintBackground%2A> má klasifikaci podobné událostem a přebírá stejný argument jako metoda `OnPaint`, <xref:System.Windows.Forms.Control.OnPaintBackground%2A> není pravdivá metoda události. Neexistuje žádná `PaintBackground` událost a <xref:System.Windows.Forms.Control.OnPaintBackground%2A> nevyvolává delegáty událostí. Při přepsání metody <xref:System.Windows.Forms.Control.OnPaintBackground%2A> není k vyvolání metody <xref:System.Windows.Forms.Control.OnPaintBackground%2A> její základní třídy nutné použít odvozenou třídu.  
   
 ## <a name="gdi-basics"></a>Základy GDI+  
- <xref:System.Drawing.Graphics> Třída poskytuje metody pro kreslení různých tvarů, jako jsou kruhy, trojúhelníky, elipsy a elipsy, a také metody pro zobrazení textu. <xref:System.Drawing?displayProperty=nameWithType> Obor názvů a jeho podobory názvů obsahují třídy, které zapouzdřují grafické prvky, jako jsou tvary (kružnice, obdélníky, elipsy a další), barvy, písma, štětce atd. Další informace o rozhraní GDI najdete v tématu [použití spravovaných grafických tříd](../advanced/using-managed-graphics-classes.md). Základy GDI jsou také popsány v [tématu How to: Vytvoří ovládací prvek model Windows Forms, který zobrazuje](how-to-create-a-windows-forms-control-that-shows-progress.md)průběh.  
+ Třída <xref:System.Drawing.Graphics> poskytuje metody pro kreslení různých tvarů, jako jsou kruhy, trojúhelníky, elipsy a elipsy, a také metody pro zobrazení textu. Obor názvů <xref:System.Drawing?displayProperty=nameWithType> a jeho podobory názvů obsahují třídy, které zapouzdřují grafické prvky, jako jsou například tvary (kružnice, obdélníky, elipsy a další), barvy, písma, štětce atd. Další informace o rozhraní GDI najdete v tématu [použití spravovaných grafických tříd](../advanced/using-managed-graphics-classes.md). Základy GDI jsou také popsány v tématu [Postupy: vytvoření model Windows Formsho ovládacího prvku, který zobrazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
 ## <a name="geometry-of-the-drawing-region"></a>Geometrie oblasti kreslení  
- Vlastnost ovládacího prvku určuje obdélníkovou oblast dostupnou ovládacímu prvku na obrazovce uživatele, <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> zatímco vlastnost <xref:System.Windows.Forms.PaintEventArgs> určuje oblast, která je ve skutečnosti vykreslena. <xref:System.Windows.Forms.Control.ClientRectangle%2A> (Nezapomeňte, že Malování je provedeno v <xref:System.Windows.Forms.Control.Paint> metodě Event, která jako <xref:System.Windows.Forms.PaintEventArgs> Argument přijímá instanci). Ovládací prvek může být nutné malovat pouze část dostupné oblasti, jak je v případě, že se změní malá část zobrazení ovládacího prvku. V těchto situacích musí vývojář ovládacího prvku vypočítat skutečný obdélník, který se má vykreslit a předat do <xref:System.Windows.Forms.Control.Invalidate%2A>. Přetížené <xref:System.Windows.Forms.Control.Invalidate%2A> verze, které <xref:System.Drawing.Region> <xref:System.Drawing.Rectangle> přebírají nebo jako argument <xref:System.Windows.Forms.PaintEventArgs>používají tento argument pro vygenerování <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastnosti.  
+ Vlastnost <xref:System.Windows.Forms.Control.ClientRectangle%2A> ovládacího prvku určuje obdélníkovou oblast dostupnou ovládacímu prvku na obrazovce uživatele, zatímco vlastnost <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> <xref:System.Windows.Forms.PaintEventArgs> určuje oblast, která je skutečně vykreslena. (Nezapomeňte, že Malování je provedeno v metodě <xref:System.Windows.Forms.Control.Paint> události, která přebírá instanci <xref:System.Windows.Forms.PaintEventArgs> jako argument). Ovládací prvek může být nutné malovat pouze část dostupné oblasti, jak je v případě, že se změní malá část zobrazení ovládacího prvku. V těchto situacích musí vývojář ovládacího prvku vypočítat skutečný obdélník pro vykreslování a předat <xref:System.Windows.Forms.Control.Invalidate%2A>. Přetížené verze <xref:System.Windows.Forms.Control.Invalidate%2A>, které přebírají <xref:System.Drawing.Rectangle> nebo <xref:System.Drawing.Region> jako argument, používají tento argument pro vygenerování vlastnosti <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> <xref:System.Windows.Forms.PaintEventArgs>.  
   
- Následující fragment kódu ukazuje, jak `FlashTrackBar` vlastní ovládací prvek vypočítá obdélníkovou oblast pro vykreslení. `client` Proměnná označuje<xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> vlastnost. Úplnou ukázku najdete v tématu [How to: Vytvoří ovládací prvek model Windows Forms, který zobrazuje](how-to-create-a-windows-forms-control-that-shows-progress.md)průběh.  
+ Následující fragment kódu ukazuje, jak `FlashTrackBar` vlastní ovládací prvek vypočítá obdélníkovou oblast, do které se má kreslit. Proměnná `client` označuje vlastnost <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A>. Úplnou ukázku naleznete v tématu [How to: Create a model Windows Forms Control, který zobrazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#6)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#6)]  
   
 ## <a name="freeing-graphics-resources"></a>Uvolnění grafických prostředků  
- Grafické objekty jsou nákladné, protože využívají systémové prostředky. Takové objekty zahrnují instance <xref:System.Drawing.Graphics?displayProperty=nameWithType> třídy a také <xref:System.Drawing.Brush?displayProperty=nameWithType>instance, <xref:System.Drawing.Pen?displayProperty=nameWithType>a další grafické třídy. Je důležité, abyste vytvořili prostředek grafiky, jenom když ho potřebujete, a vydáte ho hned po jeho použití. Pokud vytvoříte typ, který implementuje <xref:System.IDisposable> rozhraní, zavolejte jeho <xref:System.IDisposable.Dispose%2A> metodu, jakmile se dokončíte, aby se uvolnily prostředky.  
+ Grafické objekty jsou nákladné, protože využívají systémové prostředky. Takové objekty zahrnují instance <xref:System.Drawing.Graphics?displayProperty=nameWithType> třídy a také instance <xref:System.Drawing.Brush?displayProperty=nameWithType>, <xref:System.Drawing.Pen?displayProperty=nameWithType>a další třídy grafiky. Je důležité, abyste vytvořili prostředek grafiky, jenom když ho potřebujete, a vydáte ho hned po jeho použití. Pokud vytvoříte typ, který implementuje rozhraní <xref:System.IDisposable>, zavolejte jeho metodu <xref:System.IDisposable.Dispose%2A>, jakmile se s ním dokončíte, aby se uvolnily prostředky.  
   
- Následující fragment kódu ukazuje, jak `FlashTrackBar` vlastní ovládací prvek vytvoří a <xref:System.Drawing.Brush> uvolní prostředek. Úplný zdrojový kód naleznete v tématu [How to: Vytvoří ovládací prvek model Windows Forms, který zobrazuje](how-to-create-a-windows-forms-control-that-shows-progress.md)průběh.  
+ Následující fragment kódu ukazuje, jak `FlashTrackBar` vlastní ovládací prvek vytvoří a uvolní prostředek <xref:System.Drawing.Brush>. Úplný zdrojový kód naleznete v tématu [How to: Create a model Windows Forms Control, který zobrazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#5)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#5)]  
@@ -119,4 +119,4 @@ protected virtual void OnPaintBackground(PaintEventArgs pevent);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření ovládacího prvku model Windows Forms, který zobrazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md)
+- [Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh](how-to-create-a-windows-forms-control-that-shows-progress.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Reakce na kliknutí na tlačítko Windows Forms'
+title: Reakce na kliknutí na ovládací prvek Button
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,23 +15,23 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 - Click event [Windows Forms], responding to
 ms.assetid: 7a4951bd-369c-4662-b246-28ad83eda484
-ms.openlocfilehash: ebcde2b5e749c5a3621c623a864578b2a654ce63
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dd6cf75a316257c86a23b44a818422336c12aa67
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638358"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735714"
 ---
 # <a name="how-to-respond-to-windows-forms-button-clicks"></a>Postupy: Reakce na kliknutí na tlačítko Windows Forms
-Základní použití prvku Windows Forms <xref:System.Windows.Forms.Button> ovládací prvek je ke spuštění kódu po kliknutí na tlačítko.  
+Nejzákladnější použití ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Button> je spuštění kódu při kliknutí na tlačítko.  
   
- Kliknutím <xref:System.Windows.Forms.Button> ovládací prvek také vygeneruje celou řadou dalších událostí, jako <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>, a <xref:System.Windows.Forms.Control.MouseUp> události. Pokud máte v úmyslu připojte obslužné rutiny událostí pro tyto související události, ujistěte se, že jejich akce není v konfliktu. Například pokud kliknutím na tlačítko vymaže informace, které uživatel zadal do textového pole, pak umístěním ukazatele myši nad tlačítkem by neměl zobrazení popisu tlačítka s touto nyní neexistující informací.  
+ Kliknutím na <xref:System.Windows.Forms.Button> ovládací prvek vygenerujete také řadu dalších událostí, jako jsou události <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseDown>a <xref:System.Windows.Forms.Control.MouseUp>. Pokud máte v úmyslu připojit obslužné rutiny událostí pro tyto související události, ujistěte se, že jejich akce nejsou v konfliktu. Pokud například kliknutím na tlačítko zrušíte informace, které uživatel zadal v textovém poli, pak se při pozastavení ukazatele myši na tlačítko nezobrazí popis tlačítka s aktuálně neexistujícími informacemi.  
   
- Pokud se uživatel pokusí dvakrát klikněte <xref:System.Windows.Forms.Button> ovládacího prvku, každé klikněte na tlačítko se zpracovávají odděleně; to znamená, ovládací prvek nepodporuje dvakrát klikněte na událost.  
+ Pokud se uživatel pokusí dvakrát kliknout na ovládací prvek <xref:System.Windows.Forms.Button>, každé kliknutí se zpracuje samostatně; To znamená, že ovládací prvek nepodporuje událost dvojitého kliknutí.  
   
 ### <a name="to-respond-to-a-button-click"></a>Reakce na kliknutí na tlačítko  
   
-- Na tlačítku `Click` <xref:System.EventHandler> napsat kód ke spuštění. `Button1_Click` musí být vázán na ovládacím prvku. Další informace najdete v tématu [jak: Vytváření obslužných rutin událostí pro Windows Forms v době běhu](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
+- V `Click` tlačítka <xref:System.EventHandler> napište kód, který se má spustit. `Button1_Click` musí být svázány s ovládacím prvkem. Další informace naleznete v tématu [Postupy: vytváření obslužných rutin událostí v době běhu pro model Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  

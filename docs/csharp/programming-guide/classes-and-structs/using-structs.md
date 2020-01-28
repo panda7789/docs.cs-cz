@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 22d63465c534090a8918348ea5f050739c0cf01c
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 47a1da4982d22c63cb762a27313590c8ec0c5dd4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964749"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743974"
 ---
 # <a name="using-structs-c-programming-guide"></a>Používání struktur (C# Průvodce programováním)
 
@@ -27,7 +27,7 @@ Při psaní konstruktoru s parametry pro strukturu musíte explicitně inicializ
 
 Pro struktury neexistuje žádná dědičnost, protože pro třídy existují třídy. Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Struktury však dědí ze základní třídy <xref:System.Object>. Struktura může implementovat rozhraní a funguje stejně jako třídy.
 
-Třídu nelze deklarovat pomocí klíčového slova `struct`. V C#, třídy a struktury jsou sémanticky odlišné. Struktura je hodnotový typ, zatímco třída je odkazový typ. Další informace naleznete v tématu [typy hodnot](../../language-reference/keywords/value-types.md) a [typy odkazů](../../language-reference/keywords/reference-types.md).
+Třídu nelze deklarovat pomocí klíčového slova `struct`. V C#, třídy a struktury jsou sémanticky odlišné. Struktura je hodnotový typ, zatímco třída je odkazový typ. Další informace naleznete v tématu [typy hodnot](../../language-reference/builtin-types/value-types.md) a [typy odkazů](../../language-reference/keywords/reference-types.md).
 
 Pokud nepotřebujete sémantiku typu reference, malá třída může být efektivnějším způsobem zpracována systémem, pokud ji deklarujete jako strukturu.
 

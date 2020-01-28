@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView'
+title: Přizpůsobení vzhledu buněk v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,17 +9,17 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], customizing cells
 - cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 478b20c9-625c-4116-9c5c-5a16e6f4ec67
-ms.openlocfilehash: 9b07c139689a9776f6f901c0f9fbe9d2d0303d56
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 754932427a365a7b032c1ac9627d3237d1f7d0c6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648148"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744050"
 ---
 # <a name="how-to-customize-the-appearance-of-cells-in-the-windows-forms-datagridview-control"></a>Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView
-Můžete přizpůsobit vzhled libovolnou buňku ve zpracování <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.CellPainting> událostí. Můžete rozbalit <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Drawing.Graphics> z <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>. S tímto <xref:System.Drawing.Graphics>, může mít vliv na vzhled celý <xref:System.Windows.Forms.DataGridView> ovládacího prvku, ale bude obvykle chcete ovlivnit pouze vzhled buňky, která je právě překreslit. <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> Vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> umožňuje omezit vaše operace Malování na buňku, která je právě překreslit.  
+Můžete přizpůsobit vzhled libovolné buňky zpracováním události <xref:System.Windows.Forms.DataGridView.CellPainting> ovládacího prvku <xref:System.Windows.Forms.DataGridView>. <xref:System.Drawing.Graphics> ovládacího prvku <xref:System.Windows.Forms.DataGridView> můžete extrahovat z vlastnosti <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.Graphics%2A> <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs>. V tomto <xref:System.Drawing.Graphics>můžete ovlivnit vzhled celého ovládacího prvku <xref:System.Windows.Forms.DataGridView>, ale obvykle budete chtít mít vliv pouze na vzhled buňky, která je právě vykreslena. Vlastnost <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs.ClipBounds%2A> <xref:System.Windows.Forms.DataGridViewCellPaintingEventArgs> umožňuje omezit operace malování na buňku, která je právě vykreslena.  
   
- V následujícím příkladu kódu, bude kreslit všechny buňky v `ContactName` pomocí sloupce <xref:System.Windows.Forms.DataGridView> ovládacího prvku barevném schématu. Každá buňka textový obsah vymalováním v <xref:System.Drawing.Color.Crimson%2A>, a inset obdélníku je vykreslen v stejnou barvu jako <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.GridColor%2A> vlastnost.  
+ V následujícím příkladu kódu budete malovat všechny buňky ve sloupci `ContactName` pomocí barevného schématu ovládacího prvku <xref:System.Windows.Forms.DataGridView>. Textový obsah každé buňky se vykresluje <xref:System.Drawing.Color.Crimson%2A>a vsazený obdélník se vykreslí stejnou barvou jako vlastnost <xref:System.Windows.Forms.DataGridView.GridColor%2A> ovládacího prvku <xref:System.Windows.Forms.DataGridView>.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridViewCellPainting#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCellPainting/CS/form1.cs#10)]
@@ -28,9 +28,9 @@ Můžete přizpůsobit vzhled libovolnou buňku ve zpracování <xref:System.Win
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` s `ContactName` sloupců, jako je třeba v tabulce Zákazníci v ukázkové databázi Northwind.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` se sloupcem `ContactName`, jako je například ten v tabulce Customers v ukázkové databázi Northwind.  
   
-- Odkazy na sestavení systému, System.Windows.Forms a System.Drawing.  
+- Odkazy na sestavení System, System. Windows. Forms a System. Drawing.  
   
 ## <a name="see-also"></a>Viz také:
 

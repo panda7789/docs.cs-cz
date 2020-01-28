@@ -2,16 +2,16 @@
 title: dotnet – příkaz Vyčištění
 description: Příkaz dotnet Cleanup vyčistí aktuální adresář.
 ms.date: 06/26/2019
-ms.openlocfilehash: 982232833b460b4ea4181acebee74dcef54d3131
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 736c0bba5d156e919534f1ad811641e815b3ffac
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117747"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734250"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
-**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -19,19 +19,19 @@ ms.locfileid: "71117747"
 
 ## <a name="name"></a>Name
 
-`dotnet clean`– Vyčistí výstup projektu.
+`dotnet clean` – vyčistí výstup projektu.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] 
+dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive]
     [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
 
 ## <a name="description"></a>Popis
 
-`dotnet clean` Příkaz vyčistí výstup předchozího buildu. Je implementována jako [cíl nástroje MSBuild](/visualstudio/msbuild/msbuild-targets), takže projekt je vyhodnocen při spuštění příkazu. Vyčištěny jsou pouze výstupy vytvořené během sestavení. Jsou vyčištěny mezilehlé složky (*obj*) i finální výstupní složky (*bin*).
+Příkaz `dotnet clean` vyčistí výstup předchozího buildu. Je implementována jako [cíl nástroje MSBuild](/visualstudio/msbuild/msbuild-targets), takže projekt je vyhodnocen při spuštění příkazu. Vyčištěny jsou pouze výstupy vytvořené během sestavení. Jsou vyčištěny mezilehlé složky (*obj*) i finální výstupní složky (*bin*).
 
 ## <a name="arguments"></a>Arguments
 
@@ -63,7 +63,7 @@ Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubo
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář obsahující artefakty sestavení, které mají být vyčištěny. `-f|--framework <FRAMEWORK>` Zadejte přepínač s přepínačem výstupní adresář, pokud jste zadali rozhraní při sestavení projektu.
+  Adresář obsahující artefakty sestavení, které mají být vyčištěny. Zadejte `-f|--framework <FRAMEWORK>` přepínač s přepínačem výstupní adresář, pokud jste zadali rozhraní při sestavení projektu.
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -71,7 +71,7 @@ Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubo
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `normal`.
 
 ## <a name="examples"></a>Příklady
 

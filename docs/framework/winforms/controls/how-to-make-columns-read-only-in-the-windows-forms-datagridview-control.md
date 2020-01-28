@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přepnutí sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView'
+title: Nastavit sloupce jen pro čtení v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - data grids [Windows Forms], read-only columns
 - DataGridView control [Windows Forms], read-only columns
 ms.assetid: 2bb73ebb-1a55-4362-9fda-e50574c087d5
-ms.openlocfilehash: c865db5caf33b34f12c7acf8078995b12db3c970
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 11d008d47ec5edb594d3d862c68ff3b9920e0e25
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649272"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736181"
 ---
 # <a name="how-to-make-columns-read-only-in-the-windows-forms-datagridview-control"></a>Postupy: Přepnutí sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView
-Všechna data je určena pro úpravy. V <xref:System.Windows.Forms.DataGridView> ovládací prvek sloupec <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> vlastnost hodnota určuje, zda uživatelé mohou upravovat buňky ve sloupci. Informace o tom, jak nastavit ovládací prvek zcela jen pro čtení najdete v tématu [jak: Zamezení přidávání řádků a odstranění v Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md).  
+Ne všechna data jsou určena pro úpravy. V ovládacím prvku <xref:System.Windows.Forms.DataGridView> vlastnost <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A> sloupce určuje, zda uživatelé mohou upravovat buňky v tomto sloupci. Informace o tom, jak nastavit ovládací prvek jen pro čtení, naleznete [v tématu How to: prevence a Dissčítání řádků v ovládacím prvku DataGridView model Windows Forms](prevent-row-addition-and-deletion-datagridview.md).  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Přepnutí sloupců jen pro čtení v Windows Forms DataGridView pomocí návrháře](make-columns-read-only-in-the-datagrid-using-the-designer.md).  
+ Pro tuto úlohu se v aplikaci Visual Studio podporuje.  Přečtěte si také téma [How to: zpřístupnit sloupce jen pro čtení v ovládacím prvku DataGridView model Windows Forms pomocí návrháře](make-columns-read-only-in-the-datagrid-using-the-designer.md).  
   
-### <a name="to-make-a-column-read-only-programmatically"></a>Chcete-li sloupec jen pro čtení prostřednictvím kódu programu  
+### <a name="to-make-a-column-read-only-programmatically"></a>Zpřístupnění sloupce pouze pro čtení prostřednictvím kódu programu  
   
 - Nastavte <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A?displayProperty=nameWithType> vlastnost `true`.  
   
@@ -30,9 +30,9 @@ Všechna data je určena pro úpravy. V <xref:System.Windows.Forms.DataGridView>
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` sloupec s názvem `CompanyName`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` se sloupcem s názvem `CompanyName`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -40,4 +40,4 @@ Všechna data je určena pro úpravy. V <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A?displayProperty=nameWithType>
 - [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](basic-column-row-and-cell-features-wf-datagridview-control.md)
-- [Postupy: Zabránit řádku přidání a odstranění v ovládacím prvku Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md)
+- [Postupy: Zamezení přidávání a odstraňování řádků v ovládacím prvku Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md)

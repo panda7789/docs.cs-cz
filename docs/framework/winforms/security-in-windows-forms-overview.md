@@ -1,5 +1,5 @@
 ---
-title: Přehled zabezpečení ve Windows Forms
+title: Přehled zabezpečení
 ms.date: 03/30/2017
 helpviewer_keywords:
 - code access security [Windows Forms], Windows Forms
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 08c80eccee395d9141978a7d4594205af1a51ed9
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 9010b45383f856079661359fdf82180526d96dde
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972135"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734853"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 
@@ -46,11 +46,11 @@ Dále rozhodněte, zda aplikace musí běžet v úplném vztahu důvěryhodnosti
 
 Pokud zvolíte možnost částečná důvěryhodnost (tj. buď sady oprávnění Internet nebo místní intranet), rozhodněte se, jak se má aplikace chovat v tomto prostředí. Model Windows Forms poskytuje alternativní a bezpečnější způsoby implementace funkcí v případě částečně důvěryhodného prostředí. Některé části vaší aplikace, jako je například přístup k datům, lze navrhovat a zapisovat odlišně pro prostředí s částečným i úplným vztahem důvěryhodnosti. Některé funkce model Windows Forms, jako je nastavení aplikace, jsou navržené tak, aby fungovaly v částečném vztahu důvěryhodnosti. Další informace najdete v tématu [Přehled nastavení aplikace](./advanced/application-settings-overview.md).
 
-Pokud vaše aplikace potřebuje více oprávnění, než umožňuje částečná důvěryhodnost, ale nechcete spouštět v úplném vztahu důvěryhodnosti, můžete spustit v částečném vztahu důvěryhodnosti a vyhodnotit jenom ta další oprávnění, která potřebujete. Například pokud chcete spustit v částečném vztahu důvěryhodnosti, ale musíte aplikaci udělit přístup jen pro čtení k adresáři v systému souborů uživatele, můžete požádat <xref:System.Security.Permissions.FileIOPermission> pouze o tento adresář. Pomocí tohoto přístupu můžou vaše aplikace zvyšovat funkčnost a minimalizovat rizika zabezpečení pro vaše uživatele.
+Pokud vaše aplikace potřebuje více oprávnění, než umožňuje částečná důvěryhodnost, ale nechcete spouštět v úplném vztahu důvěryhodnosti, můžete spustit v částečném vztahu důvěryhodnosti a vyhodnotit jenom ta další oprávnění, která potřebujete. Například pokud chcete spustit v částečném vztahu důvěryhodnosti, ale musíte aplikaci udělit přístup jen pro čtení k adresáři v systému souborů uživatele, můžete požadovat <xref:System.Security.Permissions.FileIOPermission> pouze pro tento adresář. Pomocí tohoto přístupu můžou vaše aplikace zvyšovat funkčnost a minimalizovat rizika zabezpečení pro vaše uživatele.
 
 Když vyvíjíte aplikaci, která se spustí v částečném vztahu důvěryhodnosti, udržujte si přehled o tom, jaká oprávnění vaše aplikace musí spouštět a jaká oprávnění může vaše aplikace volitelně použít. Pokud jsou všechna oprávnění známa, měli byste vytvořit deklarativní požadavek na oprávnění na úrovni aplikace. Žádost o oprávnění informuje .NET Framework dobu běhu o tom, která oprávnění vaše aplikace potřebuje a jaká oprávnění výslovně nechce. Další informace o vyžádání oprávnění najdete v tématu [vyžádání oprávnění](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/yd267cce(v=vs.100)).
 
-Když vyžádáte volitelná oprávnění, musíte zpracovat výjimky zabezpečení, které se vygenerují, pokud vaše aplikace provede akci, která vyžaduje, aby k ní nebyla udělená oprávnění. Vhodné zacházení s tím <xref:System.Security.SecurityException> zajistí, že vaše aplikace bude moci i nadále fungovat. Vaše aplikace může výjimku použít k určení, zda má být funkce pro uživatele zakázána. Například aplikace může zakázat možnost nabídky **Uložit** , pokud není uděleno požadované oprávnění souboru.
+Když vyžádáte volitelná oprávnění, musíte zpracovat výjimky zabezpečení, které se vygenerují, pokud vaše aplikace provede akci, která vyžaduje, aby k ní nebyla udělená oprávnění. Vhodným zpracováním <xref:System.Security.SecurityException> se zajistí, že vaše aplikace bude moci i nadále fungovat. Vaše aplikace může výjimku použít k určení, zda má být funkce pro uživatele zakázána. Například aplikace může zakázat možnost nabídky **Uložit** , pokud není uděleno požadované oprávnění souboru.
 
 V některých případech je obtížné zjistit, zda jste vystavili všechna příslušná oprávnění. Volání metody, které vypadá neškodného na povrchu, může například v určitém okamžiku během jejího provádění získat přístup k systému souborů. Pokud neprovedete nasazení aplikace se všemi požadovanými oprávněními, může testování fungovat při ladění na ploše, ale při nasazení dojde k chybě. .NET Framework 2,0 SDK i sada Visual Studio 2005 obsahují nástroje pro výpočet oprávnění, která aplikace potřebuje: nástroj příkazového řádku MT. exe a funkce vypočítat oprávnění v sadě Visual Studio, v uvedeném pořadí.
 
@@ -58,8 +58,8 @@ Následující témata popisují další model Windows Forms funkce zabezpečen�
 
 |Téma|Popis|
 |-----------|-----------------|
-|- [Bezpečnější přístup k souborům a datům v model Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)|Popisuje, jak získat přístup k souborům a datům v prostředí s částečným vztahem důvěryhodnosti.|
-|- [Bezpečnější tisk v model Windows Forms](more-secure-printing-in-windows-forms.md)|Popisuje, jak získat přístup k funkcím tisku v prostředí s částečným vztahem důvěryhodnosti.|
+|- bezpečnější [přístup k souborům a datům v model Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)|Popisuje, jak získat přístup k souborům a datům v prostředí s částečným vztahem důvěryhodnosti.|
+|- bezpečnější [Tisk v model Windows Forms](more-secure-printing-in-windows-forms.md)|Popisuje, jak získat přístup k funkcím tisku v prostředí s částečným vztahem důvěryhodnosti.|
 |- [Další bezpečnostní opatření v model Windows Forms](additional-security-considerations-in-windows-forms.md)|Popisuje provádění manipulace s oknem, použití schránky a volání nespravovaného kódu v prostředí s částečným vztahem důvěryhodnosti.|
 
 ### <a name="deploying-an-application-with-the-appropriate-permissions"></a>Nasazení aplikace s příslušnými oprávněními
@@ -77,13 +77,13 @@ Tyto technologie jsou popsány v následující tabulce.
 
 Jakou technologii zvolíte, bude záviset na vašem prostředí nasazení. Další informace najdete v tématu [Výběr strategie nasazení ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Ve výchozím nastavení jsou aplikace ClickOnce nasazené pomocí sady Visual Studio nebo nástrojů .NET Framework SDK (Mage. exe a MageUI. exe) nakonfigurované tak, aby běžely v klientském počítači s úplným vztahem důvěryhodnosti. Pokud nasazujete aplikaci pomocí částečné důvěryhodnosti nebo pomocí pouze některých dodatečných oprávnění, bude nutné změnit toto výchozí nastavení. To lze provést buď pomocí sady Visual Studio, nebo nástroje .NET Framework SDK nástroje MageUI. exe při konfiguraci nasazení. Další informace o použití nástroje MageUI. exe naleznete v tématu [Návod: Ruční nasazení aplikace](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)ClickOnce  Podívejte [se také na postupy: Nastavte vlastní oprávnění pro aplikaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) ClickOnce nebo [postup: Nastavení vlastních oprávnění pro aplikaci](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application)ClickOnce.
+Ve výchozím nastavení jsou aplikace ClickOnce nasazené pomocí sady Visual Studio nebo nástrojů .NET Framework SDK (Mage. exe a MageUI. exe) nakonfigurované tak, aby běžely v klientském počítači s úplným vztahem důvěryhodnosti. Pokud nasazujete aplikaci pomocí částečné důvěryhodnosti nebo pomocí pouze některých dodatečných oprávnění, bude nutné změnit toto výchozí nastavení. To lze provést buď pomocí sady Visual Studio, nebo nástroje .NET Framework SDK nástroje MageUI. exe při konfiguraci nasazení. Další informace o použití nástroje MageUI. exe naleznete v tématu [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application).  Viz také [Postupy: nastavení vlastních oprávnění pro aplikaci ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) nebo [Postup: nastavení vlastních oprávnění pro aplikaci ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
 Další informace o aspektech zabezpečení ClickOnce a zvýšení oprávnění naleznete v tématu [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Další informace o nasazení důvěryhodných aplikací naleznete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview).
 
 ### <a name="testing-the-application"></a>Testování aplikace
 
-Pokud jste nasadili aplikaci model Windows Forms pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo v sadě s omezeným oprávněním z vývojového prostředí.  Podívejte [se také na postupy: Ladění aplikace ClickOnce s omezenými oprávněními](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions).
+Pokud jste nasadili aplikaci model Windows Forms pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo v sadě s omezeným oprávněním z vývojového prostředí.  Viz také [Postupy: ladění aplikace ClickOnce s omezenými oprávněními](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions).
 
 ## <a name="see-also"></a>Viz také:
 

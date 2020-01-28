@@ -3,12 +3,12 @@ title: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
 description: Naučte se používat sadu SDK .NET Compiler Platform (označovanou také jako rozhraní API Roslyn), která vám pomůže pochopit kód .NET, odhalit chyby a opravit tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 98984edad3a25daa8b0ea13b903c4e6447b8a22a
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: a1ceb1d11cf846e67be2c6558978e01133e591da
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163134"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742740"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Sada .NET Compiler Platform SDK
 
@@ -58,7 +58,7 @@ Tyto analyzátory je možné odeslat do [Visual Studio Marketplace](https://mark
 
 ## <a name="next-steps"></a>Další kroky
 
-Sada .NET Compiler Platform SDK obsahuje nejnovější jazykové modely pro generování kódu, analýzu a refaktoring. Tato část obsahuje koncepční přehled .NET Compiler Platform SDK. Další podrobnosti najdete v částech rychlé starty, ukázky a kurzy.
+Sada .NET Compiler Platform SDK obsahuje nejnovější jazykové modely pro generování kódu, analýzu a refaktoring. Tato část obsahuje koncepční přehled .NET Compiler Platform SDK. Další podrobnosti najdete v částech šablony pro rychlé starty, ukázky a kurzy.
 
 Další informace o konceptech v sadě .NET Compiler Platform SDK najdete v těchto pěti tématech:
 

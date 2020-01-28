@@ -3,16 +3,16 @@ title: dotnet – příkaz odstranění NuGet
 description: Příkaz dotnet-NuGet-delete odstraní nebo zruší výpis balíčku ze serveru.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: 79634baa9d6d7ff1f388f6a794ffd816687be105
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 0950f03c0986bde17ae3e2e7170d402ea8222853
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117632"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733119"
 ---
 # <a name="dotnet-nuget-delete"></a>dotnet nuget delete
 
-**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -20,7 +20,7 @@ ms.locfileid: "71117632"
 
 ## <a name="name"></a>Name
 
-`dotnet nuget delete`-Odstraní nebo zruší výpis balíčku ze serveru.
+`dotnet nuget delete` – odstraní nebo zruší výpis balíčku ze serveru.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -32,7 +32,7 @@ dotnet nuget delete [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet nuget delete` Příkaz odstraní nebo zruší výpis balíčku ze serveru. V případě [NuGet.org](https://www.nuget.org/)je akce odpisovat balíček.
+Příkaz `dotnet nuget delete` odstraní nebo zruší výpis balíčku ze serveru. V případě [NuGet.org](https://www.nuget.org/)je akce odpisovat balíček.
 
 ## <a name="arguments"></a>Arguments
 
@@ -72,7 +72,7 @@ dotnet nuget delete [-h|--help]
 
 * **`-s|--source <SOURCE>`**
 
-  Určuje adresu URL serveru. Podporované adresy URL pro NuGet.org `https://www.nuget.org`zahrnují `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. V případě privátních informačních kanálů nahraďte název hostitele (například `%hostname%/api/v3`).
+  Určuje adresu URL serveru. Podporované adresy URL pro nuget.org zahrnují `https://www.nuget.org`, `https://www.nuget.org/api/v3`a `https://www.nuget.org/api/v2/package`. V případě privátních informačních kanálů nahraďte název hostitele (například `%hostname%/api/v3`).
 
 ## <a name="examples"></a>Příklady
 
@@ -82,7 +82,7 @@ dotnet nuget delete [-h|--help]
   dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0
   ```
 
-* Odstraní verzi 1,0 balíčku `Microsoft.AspNetCore.Mvc`, nezobrazuje výzvu k zadání přihlašovacích údajů uživatele nebo jiný vstup:
+* Odstraní verzi 1,0 balíčku `Microsoft.AspNetCore.Mvc`, nezobrazuje výzvu k zadání přihlašovacích údajů nebo jiného vstupu:
 
   ```dotnetcli
   dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive

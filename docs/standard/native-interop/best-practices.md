@@ -2,12 +2,12 @@
 title: Nativní osvědčené postupy interoperability – .NET
 description: Seznamte se s osvědčenými postupy pro propojení s nativními komponentami v .NET.
 ms.date: 01/18/2019
-ms.openlocfilehash: 7fe0dd0545f8ba800174f8be18bb2f11f39463f9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9486256b815856c0c283f5fe231be3d35d6e8f00
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706397"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742747"
 ---
 # <a name="native-interoperability-best-practices"></a>Nativní osvědčené postupy interoperability
 
@@ -17,12 +17,12 @@ ms.locfileid: "75706397"
 
 Pokyny v této části se vztahují na všechny scénáře spolupráce.
 
-- **✔️** použít stejné názvy a velká písmena pro vaše metody a parametry jako nativní metodu, kterou chcete volat.
-- **✔️ zvažte** použití stejných názvů a velkých a malých písmen pro konstantní hodnoty.
-- **✔️** použít typy .NET, které jsou mapovány nejblíže k nativnímu typu. Například v C#nástroji použijte `uint`, pokud je nativní typ `unsigned int`.
-- **✔️** použít pouze atributy `[In]` a `[Out]`, pokud se chování, které požadujete, se liší od výchozího chování.
-- **✔️ zvažte** použití <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> pro fond vašich nativních vyrovnávacích pamětí polí.
-- **✔️ zvažte** zabalení deklarací volání nespravovaného kódu ve třídě se stejným názvem a velkými písmeny jako vaše nativní knihovna.
+- ✔️ použít stejné názvy a velká písmena pro vaše metody a parametry jako nativní metodu, kterou chcete volat.
+- ✔️ Zvažte použití stejných názvů a velkých a malých písmen pro konstantní hodnoty.
+- ✔️ použít typy .NET, které jsou mapovány nejblíže k nativnímu typu. Například v C#nástroji použijte `uint`, pokud je nativní typ `unsigned int`.
+- ✔️ použít pouze atributy `[In]` a `[Out]`, pokud se chování, které požadujete, se liší od výchozího chování.
+- ✔️ Zvažte použití <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> pro fond vašich nativních vyrovnávacích pamětí polí.
+- ✔️ Zvažte zabalení deklarací volání nespravovaného kódu ve třídě se stejným názvem a velkými písmeny jako vaše nativní knihovna.
   - To umožňuje, aby atributy `[DllImport]` používaly C# funkci jazyka `nameof` k předání názvu nativní knihovny a zajistila, že jste nezadali název nativní knihovny.
 
 ## <a name="dllimport-attribute-settings"></a>Nastavení atributu DllImport
@@ -40,15 +40,15 @@ Pokud je znaková sada Unicode nebo je argument explicitně označen jako `[Mars
 
 Nezapomeňte označit `[DllImport]` jako `Charset.Unicode`, pokud nechcete, aby byly řetězce explicitně vhodné pro zpracování ANSI.
 
-**❌** nepoužívat parametry `[Out] string`. Řetězcové parametry předávané hodnotou s atributem `[Out]` mohou destabilizovat modul runtime, pokud je řetězec interně řetězec. Další informace o přehlašování řetězců najdete v dokumentaci k <xref:System.String.Intern%2A?displayProperty=nameWithType>.
+❌ nepoužívat parametry `[Out] string`. Řetězcové parametry předávané hodnotou s atributem `[Out]` mohou destabilizovat modul runtime, pokud je řetězec interně řetězec. Další informace o přehlašování řetězců najdete v dokumentaci k <xref:System.String.Intern%2A?displayProperty=nameWithType>.
 
-**❌ se vyhnout** parametrům `StringBuilder`. `StringBuilder` zařazování *vždy* vytvoří nativní kopii vyrovnávací paměti. V takovém případě může být mimořádně neefektivní. Vyjistěte si Typický scénář volání rozhraní API systému Windows, které přijímá řetězec:
+❌ se vyhnout parametrům `StringBuilder`. `StringBuilder` zařazování *vždy* vytvoří nativní kopii vyrovnávací paměti. V takovém případě může být mimořádně neefektivní. Vyjistěte si Typický scénář volání rozhraní API systému Windows, které přijímá řetězec:
 
 1. Vytvořte SB požadované kapacity (přidělení spravované kapacity) **{1}**
 2. Vyvolání
-   1. Přidělí nativní vyrovnávací paměť **{2}**  
-   2. Zkopíruje obsah, pokud je `[In]` _(výchozí hodnota pro `StringBuilder` parametr)_ .  
-   3. Zkopíruje nativní vyrovnávací paměť do nově přiděleného spravovaného pole, pokud `[Out]` **{3}** _(také výchozí `StringBuilder`)_ .  
+   1. Přidělí nativní vyrovnávací paměť **{2}**
+   2. Zkopíruje obsah, pokud je `[In]` _(výchozí hodnota pro `StringBuilder` parametr)_ .
+   3. Zkopíruje nativní vyrovnávací paměť do nově přiděleného spravovaného pole, pokud `[Out]` **{3}** _(také výchozí `StringBuilder`)_ .
 3. `ToString()` přiděluje ještě jiné spravované pole **{4}**
 
 To je *{4}* přidělení pro získání řetězce z nativního kódu. To nejlepší můžete udělat tak, že tento `StringBuilder` znovu použijete při jiném volání, ale bude se dál ukládat jenom *1* přidělení. Je mnohem lepší použít a ukládat do mezipaměti znaková vyrovnávací paměť z `ArrayPool`. pak se můžete dostat až do přidělení `ToString()` při dalších voláních.
@@ -57,17 +57,15 @@ Dalším problémem s `StringBuilder` je, že se vždy zkopíruje návratovou vy
 
 Pokud *použijete* `StringBuilder`, jedna poslední gotcha je, že **kapacita neobsahuje skrytý** znak null, který je vždycky zavedený pro v interoperabilitě. Je běžné, že lidé mají špatný přístup, protože většina rozhraní API má velikost vyrovnávací paměti, *včetně* hodnoty null. To může vést k plýtvání/zbytečným přidělením. Kromě toho tento gotcha brání modulu runtime v optimalizaci `StringBuilder` zařazování pro minimalizaci kopií.
 
-**✔️ zvažte** použití `char[]`s z `ArrayPool`.
+✔️ Zvažte použití `char[]`s z `ArrayPool`.
 
 Další informace o zařazování řetězců naleznete v tématu [Výchozí zařazování pro řetězce](../../framework/interop/default-marshaling-for-strings.md) a [přizpůsobení zařazování řetězců](customize-parameter-marshaling.md#customizing-string-parameters).
 
-> __Specifické pro systém Windows__  
-> U `[Out]` řetězců bude CLR standardně používat `CoTaskMemFree` k uvolnění řetězců nebo `SysStringFree` pro řetězce, které jsou označeny jako `UnmanagedType.BSTR`.  
-**Pro většinu rozhraní API výstupní vyrovnávací paměť řetězců:**  
-> Počet předaných znaků musí obsahovat hodnotu null. Pokud je vrácená hodnota menší než předaný počet znaků, volání bylo úspěšné a hodnota je počet znaků *bez* koncové hodnoty null. V opačném případě je požadovaná velikost vyrovnávací paměti, *včetně* znaku null.  
+> __Specifické pro systém Windows__ U `[Out]` řetězců bude CLR standardně používat `CoTaskMemFree` k uvolnění řetězců nebo `SysStringFree` pro řetězce, které jsou označeny jako `UnmanagedType.BSTR`.
+> **Pro většinu rozhraní API výstupní vyrovnávací paměť řetězců:** Počet předaných znaků musí obsahovat hodnotu null. Pokud je vrácená hodnota menší než předaný počet znaků, volání bylo úspěšné a hodnota je počet znaků *bez* koncové hodnoty null. V opačném případě je požadovaná velikost vyrovnávací paměti, *včetně* znaku null.
 >
 > - Průchod 5, Get 4: řetězec má 4 znaky dlouhé s koncovou hodnotou null.
-> - Průchod 5, Get 6: řetězec má délku 5 znaků, pro uložení hodnoty null je zapotřebí vyrovnávací paměť 6 znaků.  
+> - Průchod 5, Get 6: řetězec má délku 5 znaků, pro uložení hodnoty null je zapotřebí vyrovnávací paměť 6 znaků.
 > [Datové typy Windows pro řetězce](/windows/desktop/Intl/windows-data-types-for-strings)
 
 ## <a name="boolean-parameters-and-fields"></a>Logické parametry a pole
@@ -82,7 +80,7 @@ Identifikátory GUID lze použít přímo v signaturách. Mnoho rozhraní API sy
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-**❌** Použijte `[MarshalAs(UnmanagedType.LPStruct)]` pro jinou hodnotu než `ref` parametry GUID.
+❌ nepoužívejte `[MarshalAs(UnmanagedType.LPStruct)]` pro jinou hodnotu než `ref` parametry GUID.
 
 ## <a name="blittable-types"></a>Typy přenosit
 
@@ -120,11 +118,11 @@ public struct UnicodeCharStruct
 
 Když se pokusíte vytvořit připnutý `GCHandle`, můžete zjistit, jestli je typ přenositelný. Pokud typ není řetězec nebo se považuje za Nepřenositelný, `GCHandle.Alloc` vyvolá `ArgumentException`.
 
-**✔️ proveďte** přenositeli struktury, pokud je to možné.
+✔️ PROVEĎTE přenositeli struktury, pokud je to možné.
 
 Další informace najdete v části .
 
-- [Přenositelné a nepřenositelné typy](../../framework/interop/blittable-and-non-blittable-types.md)  
+- [Přenositelné a nepřenositelné typy](../../framework/interop/blittable-and-non-blittable-types.md)
 - [Zařazování typů](type-marshaling.md)
 
 ## <a name="keeping-managed-objects-alive"></a>Udržování spravovaných objektů
@@ -133,7 +131,7 @@ Další informace najdete v části .
 
 [`HandleRef`](xref:System.Runtime.InteropServices.HandleRef) umožňuje zařazování zachovat objekt aktivní po dobu trvání volání nespravovaného objektu. Dá se použít místo `IntPtr` v signaturách metody. `SafeHandle` efektivně nahrazuje tuto třídu a měla by se používat místo toho.
 
-[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) umožňuje připnutí spravovaného objektu a získání nativního ukazatele na něj. Základní vzor je:  
+[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) umožňuje připnutí spravovaného objektu a získání nativního ukazatele na něj. Základní vzor je:
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj, GCHandleType.Pinned);
@@ -215,7 +213,7 @@ Přenositelné struktury jsou mnohem větší, protože je lze jednoduše použ�
 
 Ukazatele na struktury v definicích musí být buď předány `ref`, nebo používat `unsafe` a `*`.
 
-**✔️** podle tvaru a názvů, které se používají v dokumentaci k oficiální platformě nebo v hlavičce, co nejvíce porovnává se spravovanou strukturou.
+✔️ podle tvaru a názvů, které se používají v dokumentaci k oficiální platformě nebo v hlavičce, co nejvíce porovnává se spravovanou strukturou.
 
 pro zvýšení výkonu ✔️ C# použít `sizeof()` místo `Marshal.SizeOf<MyStruct>()` pro přenositelné struktury.
 

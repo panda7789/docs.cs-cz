@@ -1,5 +1,6 @@
 ---
-title: Funkce ProcessUnhandledException (WPF nespravovaná referenční dokumentace rozhraní API)
+title: Funkce ProcessUnhandledException – reference nespravovaného rozhraní API WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,17 +9,17 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: 495ce5f6-bb4d-4b30-807a-c3c35f1ca95c
-ms.openlocfilehash: 0c8751454be6e0eed547c38e9d0bc7931abaec3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 757e5ac3aa2dc4c87b210b026998523bd82045c1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62030347"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743917"
 ---
-# <a name="processunhandledexception-function-wpf-unmanaged-api-reference"></a>Funkce ProcessUnhandledException (WPF nespravovaná referenční dokumentace rozhraní API)
-Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
+# <a name="processunhandledexception-function-wpf-unmanaged-api-reference"></a>ProcessUnhandledException – funkce (Referenční dokumentace rozhraní API nespravovaného subsystému WPF)
+Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno pro použití přímo v kódu.  
   
- Používá infrastrukturu Windows Presentation Foundation (WPF) pro zpracování výjimek.  
+ Používá se v infrastruktuře Windows Presentation Foundation (WPF) pro zpracování výjimek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,15 +34,15 @@ void __stdcall ProcessUnhandledException(
  Chybová zpráva  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém .NET Framework](../../get-started/system-requirements.md).  
   
- **DLL:**  
+ **DLL**  
   
- V rozhraní .NET Framework 3.0 a 3.5: PresentationHostDLL.dll  
+ V .NET Framework 3,0 a 3,5: PresentationHostDLL. dll  
   
- V rozhraní .NET Framework 4 a novější: PresentationHost_v0400.dll  
+ V .NET Framework 4 a novější: PresentationHost_v0400. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

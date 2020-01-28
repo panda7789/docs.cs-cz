@@ -1,13 +1,13 @@
 ---
-title: Datová vazba WPF s LINQ to XML
+title: Datová vazba s LINQ to XML
 ms.date: 10/22/2019
 ms.topic: conceptual
-ms.openlocfilehash: 53aba3295b98ae4a476b321cb585e1bbbdd45dad
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 3c5567c81d2097a1524f5bbbf9010836ca8c0646
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197387"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733817"
 ---
 # <a name="overview-of-wpf-data-binding-with-linq-to-xml"></a>Přehled datové vazby WPF pomocí LINQ to XML
 

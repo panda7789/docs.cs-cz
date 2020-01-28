@@ -2,16 +2,16 @@
 title: dotnet – příkaz Add Reference
 description: Příkaz dotnet Add Reference poskytuje pohodlný způsob, jak přidat projekt do odkazů projektu.
 ms.date: 06/26/2019
-ms.openlocfilehash: c97975e11410cfaad18ca68832957d75a4a2fd09
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dc8bc01a2bff4f2cf3a8af9efb233448d7de337f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100818"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733268"
 ---
 # <a name="dotnet-add-reference"></a>dotnet add reference
 
-**Tento článek se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]

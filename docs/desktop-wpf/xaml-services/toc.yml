@@ -76,7 +76,7 @@
           href: service-contexts-with-type-converters-and-markup-extensions.md
     - name: "Obecné typy v\_jazyku XAML"
       href: generics.md
-    - name: "Definování vlastních typů pro práci s\_technologií .NET Framework XAML Services"
+    - name: Definování vlastních typů pro použití s .NET XAML Services
       href: define-custom-types.md
       items:
         - name: "Atributy CLR související s\_jazykem XAML pro vlastní typy a knihovny"

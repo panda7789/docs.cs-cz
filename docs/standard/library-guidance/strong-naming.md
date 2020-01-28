@@ -2,12 +2,12 @@
 title: Silné názvy a knihovny .NET
 description: Doporučení osvědčených postupů pro silné pojmenovávání knihoven .NET.
 ms.date: 10/16/2018
-ms.openlocfilehash: 0c2dba06413bc6435e3350bf6cc48f1b5882a261
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: db268093b07a2ece7cdb8329fd789b52da9c5c32
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706423"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744534"
 ---
 # <a name="strong-naming"></a>Vytváření silných názvů
 
@@ -45,26 +45,26 @@ Měli byste silně pojmenovat open source knihovny .NET. Silné pojmenování se
 > [!NOTE]
 > Tyto doprovodné materiály jsou specifické pro veřejně distribuované knihovny .NET, jako jsou knihovny .NET publikované v NuGet.org. Pro většinu aplikací .NET není vyžadováno silné pojmenování a ve výchozím nastavení by se nemělo provádět.
 
-**✔️ zvažte** silné pojmenovávání sestavení vaší knihovny.
+✔️ Zvažte silné pojmenovávání sestavení vaší knihovny.
 
-**✔️ zvažte** přidání klíče silného pojmenování do systému správy zdrojů.
+✔️ Zvažte přidání klíče silného pojmenování do systému správy zdrojů.
 
 > Veřejně dostupný klíč umožňuje vývojářům změnit a znovu zkompilovat zdrojový kód knihovny se stejným klíčem.
-> 
+>
 > Silný klíč pro pojmenovávání by neměl být veřejný, pokud byl v minulosti použit k udělení zvláštních oprávnění ve [scénářích s částečnou důvěryhodností](../../framework/misc/using-libraries-from-partially-trusted-code.md). V opačném případě může dojít k ohrožení stávajících prostředí.
 
 > [!IMPORTANT]
 > Pokud je požadována identita vydavatele kódu, doporučujeme podepisování prostřednictvím [technologie Authenticode](/windows-hardware/drivers/install/authenticode) a [balíčku NuGet](/nuget/create-packages/sign-a-package) . Zabezpečení přístupu kódu (CAS) by nemělo být použito jako zmírnění zabezpečení.
 
-**✔️ zvažte** zvýšení verze sestavení pouze při změnách hlavní verze, které uživatelům pomůžou snížit přesměrování vazby a jak často se aktualizují.
+✔️ Zvažte zvýšení verze sestavení pouze při změnách hlavní verze, které uživatelům pomůžou snížit přesměrování vazby a jak často se aktualizují.
 
 > Přečtěte si další informace o způsobu [správy verzí a verzi sestavení](./versioning.md#assembly-version).
 
-**❌** Nepřidávat, odebírat ani měnit silný názvový klíč.
+❌ Nepřidávat, odebírat ani měnit silný názvový klíč.
 
 > Úprava silného klíče pro pojmenování sestavení změní identitu sestavení a přeruší zkompilovaný kód, který ho používá. Další informace najdete v tématu [binární změny v binárním souboru](./breaking-changes.md#binary-breaking-change).
 
-**❌** nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
+❌ nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
 
 > Publikování dvou balíčků rozvětvení ekosystém pro vývojáře. Také Pokud aplikace skončí v závislosti na obou balíčcích, může vývojář zaznamenat konflikty názvů typů. V případě, že se týká .NET, jsou různými typy v různých sestaveních.
 

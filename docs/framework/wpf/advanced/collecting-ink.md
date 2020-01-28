@@ -1,5 +1,5 @@
 ---
-title: Shromažďování rukopisu v aplikacích WPF
+title: Shromažďovat digitální inkoust
 ms.date: 08/15/2018
 dev_langs:
 - csharp
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - properties [WPF], DefaultDrawingAttributes
 - DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
-ms.openlocfilehash: 8109e0d6a746d6ca23c25643c510014c1a1e656c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 813a5313a6fbf83c36cdbed1f64ce69a217ad788
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740875"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747023"
 ---
 # <a name="collect-ink"></a>Shromáždit rukopis
 

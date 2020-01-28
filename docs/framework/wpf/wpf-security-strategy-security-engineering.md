@@ -1,5 +1,5 @@
 ---
-title: Strategie zabezpečení WPF – engineering zabezpečení
+title: Strategie a strojírenství zabezpečení
 ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WPF], testing techniques
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: 5dd80cff7675a7d3236c7409fd882ebf3a3cd7b1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 57ee0c8242c0bca1b2c76e7751ed25f6a889c264
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424920"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741846"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Důvěryhodná výpočetní aplikace je iniciativa Microsoftu pro zajištění výroby zabezpečeného kódu. Klíčovým prvkem pro nedůvěryhodný výpočetní iniciativou je Microsoft Security Development Lifecycle (SDL). SDL je technický postup, který se používá společně se standardními technickými procesy pro usnadnění poskytování zabezpečeného kódu. SDL se skládá z deseti fází, které kombinují osvědčené postupy s formalitou, měřitelnou a další strukturou, včetně těchto:  
@@ -87,7 +87,7 @@ Důvěryhodná výpočetní aplikace je iniciativa Microsoftu pro zajištění v
   
 <a name="critical_code"></a>   
 ### <a name="critical-code-management"></a>Správa kritického kódu  
- Pro aplikace prohlížeče XAML (XBAP) [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] vytvoří izolovaný prostor zabezpečení pomocí .NET Framework podpory pro označování a sledování kódu kritického pro zabezpečení, který zvyšuje oprávnění (viz **metodika kritické pro** zabezpečení v [strategii zabezpečení WPF- Zabezpečení platformy](wpf-security-strategy-platform-security.md)). S ohledem na požadavky na kvalitu vysokého zabezpečení u kódu kritického pro zabezpečení tento kód obdrží další úroveň řízení správy zdrojů a auditu zabezpečení. Přibližně 5% až 10% [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] se skládá z kódu kritického pro zabezpečení, který je přezkoumán vyhrazeným týmem revize. Zdrojový kód a proces vrácení se změnami jsou spravovány sledováním kódu kritického pro zabezpečení a mapováním jednotlivých důležitých entit (tj. metoda, která obsahuje kritický kód) do svého stavu odhlášení. Stav odhlášení zahrnuje jména jednoho nebo více revidujících. Každý denní Build [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] porovnává kritický kód s tímto kódem v předchozích sestaveních a kontroluje neschválené změny. Pokud inženýr mění kritický kód bez schválení od týmu revize, je identifikován a opraven okamžitě. Tento proces umožňuje aplikaci a údržbu obzvláště vysoké úrovně kontroly nad [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kódem izolovaného prostoru (sandboxu).  
+ Pro aplikace prohlížeče XAML (XBAP) [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] vytvoří izolovaný prostor zabezpečení pomocí .NET Framework podpory pro označování a sledování kódu kritického pro zabezpečení, který zvyšuje oprávnění (viz **metodika kritické pro zabezpečení** v tématu řešení [zabezpečení pro WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). S ohledem na požadavky na kvalitu vysokého zabezpečení u kódu kritického pro zabezpečení tento kód obdrží další úroveň řízení správy zdrojů a auditu zabezpečení. Přibližně 5% až 10% [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] se skládá z kódu kritického pro zabezpečení, který je přezkoumán vyhrazeným týmem revize. Zdrojový kód a proces vrácení se změnami jsou spravovány sledováním kódu kritického pro zabezpečení a mapováním jednotlivých důležitých entit (tj. metoda, která obsahuje kritický kód) do svého stavu odhlášení. Stav odhlášení zahrnuje jména jednoho nebo více revidujících. Každý denní Build [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] porovnává kritický kód s tímto kódem v předchozích sestaveních a kontroluje neschválené změny. Pokud inženýr mění kritický kód bez schválení od týmu revize, je identifikován a opraven okamžitě. Tento proces umožňuje aplikaci a údržbu obzvláště vysoké úrovně kontroly nad [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kódem izolovaného prostoru (sandboxu).  
   
 ## <a name="see-also"></a>Viz také:
 

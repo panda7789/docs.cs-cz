@@ -1,5 +1,6 @@
 ---
-title: 'Návod: Hostování ovládacího prvku Win32 v subsystému WPF'
+title: Hostování ovládacího prvku Win32 v subsystému WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +9,14 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 56f096dd7ba4feb677394cd26be9858a33842018
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: eb497a88c119dece85d61d6a32e7b86fb03b44b5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040819"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744929"
 ---
-# <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 v subsystému WPF
+# <a name="walkthrough-host-a-win32-control-in-wpf"></a>Návod: hostování ovládacího prvku Win32 v subsystému WPF
 Windows Presentation Foundation (WPF) poskytuje bohatou prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do kódu Win32, může být efektivnější znovu použít alespoň část kódu v aplikaci WPF, nikoli úplně přepsat. WPF poskytuje jednoduchý mechanismus pro hostování okna Win32 na stránce WPF.  
   
  Toto téma vás provede aplikací a [hostitelem ovládacího prvku seznamu Win32 v UKÁZCE WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control), který je hostitelem ovládacího prvku seznam Win32. Tento obecný postup lze rozšířit na hostování jakéhokoli okna systému Win32.  
@@ -61,7 +62,7 @@ Windows Presentation Foundation (WPF) poskytuje bohatou prostředí pro vytvář
 ## <a name="implement-the-page-layout"></a>Implementace rozložení stránky  
  Rozložení stránky WPF, která je hostitelem ovládacího prvku ListBox, se skládá ze dvou oblastí. Levá strana stránky je hostitelem několika ovládacích prvků WPF, které poskytují [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], které umožňují manipulaci s ovládacím prvkem Win32. V pravém horním rohu stránky je čtvercová oblast pro hostovaný ovládací prvek seznamu.  
   
- Kód pro implementaci tohoto rozložení je poměrně jednoduchý. Kořenový prvek je <xref:System.Windows.Controls.DockPanel>, který má dva podřízené elementy. První je <xref:System.Windows.Controls.Border> prvek, který je hostitelem ovládacího prvku ListBox. Zabírá v pravém horním rohu stránky 200x200 čtverec. Druhým je <xref:System.Windows.Controls.StackPanel> prvek, který obsahuje sadu ovládacích prvků WPF, které zobrazují informace a umožňují manipulaci s ovládacím prvkem seznamu nastavením vlastností zpřístupněných operací. Pro každý element, který je podřízených prvků <xref:System.Windows.Controls.StackPanel>, přečtěte si referenční materiál pro různé prvky, které se používají pro podrobnosti o tom, co jsou tyto prvky nebo co dělají, jsou uvedeny v následujícím příkladu kódu, ale nebudete je vysvětlit (základní Model interakce nevyžaduje žádné z nich, je k dispozici pro přidání některé interaktivity k ukázce.  
+ Kód pro implementaci tohoto rozložení je poměrně jednoduchý. Kořenový prvek je <xref:System.Windows.Controls.DockPanel>, který má dva podřízené elementy. První je <xref:System.Windows.Controls.Border> prvek, který je hostitelem ovládacího prvku ListBox. Zabírá v pravém horním rohu stránky 200x200 čtverec. Druhým je <xref:System.Windows.Controls.StackPanel> prvek, který obsahuje sadu ovládacích prvků WPF, které zobrazují informace a umožňují manipulaci s ovládacím prvkem seznamu nastavením vlastností zpřístupněných operací. Pro každý element, který je podřízených prvků <xref:System.Windows.Controls.StackPanel>, přečtěte si referenční materiál pro různé prvky, které se používají k podrobnostem o tom, jaké jsou tyto prvky nebo co dělají, jsou uvedeny v níže uvedeném příkladu kódu, ale nebudete je vysvětlit (základní model vzájemné operace nevyžaduje žádný z nich, je k dispozici pro přidání některé interaktivity k ukázce).  
   
  [!code-xaml[WPFHostingWin32Control#WPFUI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml#wpfui)]  
   

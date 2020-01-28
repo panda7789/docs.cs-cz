@@ -1,37 +1,37 @@
 ---
-title: SaveFileDialog – komponenta (Windows Forms)
+title: Komponenta SaveFileDialog
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Save File dialog box
 - SaveFileDialog component
 ms.assetid: 6f5d9321-37d7-4448-ac4c-a33c42b2a766
-ms.openlocfilehash: 552e6cae64ab3b30279e04512a87b18c2f2b068a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 920816c648f5dbdd50f869e58769655e8be8e1a1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947976"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743094"
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog – komponenta (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.SaveFileDialog> komponenta je předem nakonfigurované dialogového okna. Je stejný jako standardní uložit soubor dialogové okno používá Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.  
+Součást model Windows Forms <xref:System.Windows.Forms.SaveFileDialog> je předem nakonfigurovaným dialogovým oknem. Je stejný jako dialogové okno standardní Uložit soubor používaný v systému Windows. Dědí z třídy <xref:System.Windows.Forms.CommonDialog>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty SaveFileDialog](savefiledialog-component-overview-windows-forms.md)  
- Představuje obecné koncepty <xref:System.Windows.Forms.SaveFileDialog> součásti, která umožňuje zobrazit předem nakonfigurované dialogové okno, které uživatelé můžete použít k uložení souboru do zadaného umístění.  
+ Zavádí obecné koncepty <xref:System.Windows.Forms.SaveFileDialog> komponenty, které umožňují zobrazit předem nakonfigurovaný dialog, který mohou uživatelé použít k uložení souboru do zadaného umístění.  
   
  [Postupy: Ukládání souborů pomocí komponenty SaveFileDialog](how-to-save-files-using-the-savefiledialog-component.md)  
- Vysvětluje, jak uložit soubor prostřednictvím instance <xref:System.Windows.Forms.SaveFileDialog> komponentu v době běhu.  
+ Vysvětluje, jak uložit soubor pomocí instance komponenty <xref:System.Windows.Forms.SaveFileDialog> v době běhu.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.SaveFileDialog> Třída  
- Poskytuje referenční informace o třídě a její členy.  
+ <xref:System.Windows.Forms.SaveFileDialog> – třída  
+ Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
   
  [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)  
- Popisuje sadu ovládacích prvků a komponent, které umožňují uživatelům provádět standardní interakce s aplikací nebo systému.  
+ Popisuje sadu ovládacích prvků a komponent, které uživatelům umožňují provádět standardní interakce s aplikací nebo systémem.  
   
- [Základní kód pro Windows Forms dialogová okna](https://go.microsoft.com/fwlink/?LinkID=102575)  
- Tento článek popisuje ovládací prvky Windows Forms dialogového okna pole a komponent a kódu potřebného pro spouštěním svých základních funkcí. (Technického článku MSDN Online Library)
+ [Základní kód pro dialogová okna model Windows Forms](https://go.microsoft.com/fwlink/?LinkID=102575)  
+ Popisuje ovládací prvky a součásti dialogového okna model Windows Forms a kód potřebný ke spouštění jejich základních funkcí. (Technický článek o knihovně MSDN online)

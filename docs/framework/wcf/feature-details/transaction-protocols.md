@@ -2,146 +2,146 @@
 title: Protokoly transakcí
 ms.date: 03/30/2017
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
-ms.openlocfilehash: 31fa6a776cc69c09f030c4de857085b30bf2edba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 32c5da24eb7b23145d79c33a9ca1f5e5bcc22c06
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585764"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742726"
 ---
 # <a name="transaction-protocols"></a>Protokoly transakcí
-Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Transactions protokoly.  
+Windows Communication Foundation (WCF) implementuje WS-Atomic transakce a protokoly WS-koordinační.  
   
-|Specifikace/dokumentu|Version|Odkaz|  
+|Specifikace/dokument|Version|Odkaz|  
 |-----------------------------|-------------|----------|  
-|Koordinace WS|1.0<br /><br /> 1.1|<https://go.microsoft.com/fwlink/?LinkId=96104><br /><br /> [https://go.microsoft.com/fwlink/?LinkId=96079](https://go.microsoft.com/fwlink/?LinkId=96079)|  
-|WS-AtomicTransaction|1.0<br /><br /> 1.1|<https://go.microsoft.com/fwlink/?LinkId=96080><br /><br /> https://go.microsoft.com/fwlink/?LinkId=96081|  
+|WS-koordinace|1.0<br /><br /> 1.1|<http://schemas.xmlsoap.org/ws/2004/10/wscoor/><br /><br /> <https://docs.oasis-open.org/ws-tx/wscoor/2006/06>|  
+|WS-AtomicTransaction|1.0<br /><br /> 1.1|<http://schemas.xmlsoap.org/ws/2004/10/wsat/><br /><br /> <https://docs.oasis-open.org/ws-tx/wsat/2006/06>|  
   
- Vzájemná funkční spolupráce na této specifikaci protokolu vyžádáním ve dvou úrovních: mezi aplikacemi a mezi správci transakcí (viz následující obrázek). Specifikace podrobnému popisu, skvělé formáty zpráv a zpráv exchange pro obě úrovně interoperability. Některé zabezpečení, spolehlivost a kódování aplikace aplikace exchange platí, jako je tomu u aplikace regulární systému exchange. Úspěšné vzájemná funkční spolupráce mezi správci transakcí však vyžaduje smlouvou pro konkrétní vazbu, protože není obvykle nakonfigurovaná uživatelem.  
+ Interoperabilita těchto specifikací protokolu je povinná na dvou úrovních: mezi aplikacemi a mezi správci transakcí (viz následující obrázek). Specifikace popisují Skvělé údaje o formátech zpráv a výměně zpráv pro obě úrovně interoperability. Určité zabezpečení, spolehlivost a kódování pro Exchange mezi aplikacemi platí jako při běžném výměně aplikací. Úspěšná interoperabilita mezi správci transakcí ale vyžaduje souhlas s konkrétní vazbou, protože obvykle není nakonfigurovaná uživatelem.  
   
- Toto téma popisuje složení specifikaci WS-Atomic Transactions (WS-AT) se zabezpečením a popisuje zabezpečené vazby používaný ke komunikace mezi správci transakcí. Postup popsaný v tomto dokumentu se úspěšně testoval se systémem jiným implementacím WS-AT a WS-koordinace včetně IBM, IONA, Sun Microsystems a dalších.  
+ Toto téma popisuje složení specifikace WS-Atomic Transaction (WS-AT) se zabezpečením a popisuje zabezpečenou vazbu použitou pro komunikaci mezi správci transakcí. Přístup popsaný v tomto dokumentu byl úspěšně testován s ostatními implementacemi WS-AT a WS-koordinace, včetně IBM, IONA, Sun Microsystems a dalších.  
   
- Následující obrázek znázorňuje interoperabilitu mezi dvěma vedoucími transakce, transakce Manager 1 a 2 správce transakcí a dvě aplikace, aplikace 1 a 2 aplikace:  
+ Následující obrázek znázorňuje interoperabilitu mezi dvěma správci transakcí, správce transakcí 1 a správce transakcí 2 a dvěma aplikacemi, aplikací 1 a aplikací 2:  
   
- ![Snímek obrazovky, který ukazuje interakce mezi transakcí správce.](./media/transaction-protocols/transaction-managers-flow.gif)  
+ ![Snímek obrazovky zobrazující interakci mezi správci transakcí.](./media/transaction-protocols/transaction-managers-flow.gif)  
   
- Vezměte v úvahu Typický scénář WS-koordinace/WS-Atomic Transactions jednoho iniciátoru (I) a jeden účastník (P). Iniciátor i účastníka mají správci transakcí (ITM a druh, v uvedeném pořadí). Dvoufázového potvrzení se označuje jako 2PC v tomto tématu.  
+ Zvažte Typický scénář transakce WS-koordinační/WS-Atomic s jedním iniciátorem (I) a jedním účastníkem (P). Iniciátor i účastník mají správce transakcí (v uvedeném pořadí) (ITM a PTM). Dvoufázové potvrzení se v tomto tématu označuje jako 2PC.  
   
 |||  
 |-|-|  
-|1. CreateCoordinationContext|12. Zpráva odpovědi aplikace|  
-|2. CreateCoordinationContextResponse|13. Potvrzení změn (dokončení)|  
-|3. Registr (dokončení)|14. Příprava (2PC)|  
+|1. CreateCoordinationContext|12. odpověď na zprávu aplikace|  
+|2. CreateCoordinationContextResponse|13. potvrzení změn (dokončení)|  
+|3. Register (dokončení)|14. Prepare (2PC)|  
 |4. RegisterResponse|15. Příprava (2PC)|  
-|5. Zprávy aplikace.|16. Připravené (2PC)|  
-|6. CreateCoordinationContext s kontextem|17. Připravené (2PC)|  
-|7. Registr (trvale)|18. Potvrdit (dokončení)|  
-|8. RegisterResponse|19. Potvrzení (2PC)|  
-|9. CreateCoordinationContextResponse|20. Potvrzení (2PC)|  
-|10. Registr (trvale)|21. Potvrdit (2PC)|  
-|11. RegisterResponse|22. Potvrdit (2PC)|  
+|5. zpráva aplikace|16. připraveno (2PC)|  
+|6. CreateCoordinationContext s kontextem|17. připraveno (2PC)|  
+|7. Register (trvanlivé)|18. potvrzeno (dokončení)|  
+|8. RegisterResponse|19. Commit (2PC)|  
+|9. CreateCoordinationContextResponse|20. Commit (2PC)|  
+|10. Register (trvalý)|21. potvrzeno (2PC)|  
+|11. RegisterResponse|22. potvrzeno (2PC)|  
   
- Tento dokument popisuje složení specifikaci WS-AtomicTransaction se zabezpečením a zabezpečené vazby používaný ke komunikace mezi správci transakcí. Postup popsaný v tomto dokumentu bylo úspěšně otestovat s jinými implementacemi WS-AT a WS-koordinace.  
+ Tento dokument popisuje složení specifikace WS-AtomicTransaction se zabezpečením a popisuje zabezpečenou vazbu použitou pro komunikaci mezi správci transakcí. Přístup popsaný v tomto dokumentu byl úspěšně testován s jinými implementacemi WS-AT a WS-koordinace.  
   
- Obrázek a tabulka ukazuje čtyři třídy zpráv z hlediska zabezpečení:  
+ Obrázek a tabulka znázorňují čtyři třídy zpráv z hlediska zabezpečení:  
   
-- Aktivace zprávy (CreateCoordinationContext a CreateCoordinationContextResponse).  
+- Aktivační zprávy (CreateCoordinationContext a CreateCoordinationContextResponse).  
   
 - Registrační zprávy (registr a RegisterResponse)  
   
-- Protokol zprávy (připravit, vrácení změn, potvrzení, přerušeno a tak dále).  
+- Zprávy protokolu (příprava, vrácení zpět, potvrzení, přerušení a tak dále).  
   
 - Zprávy aplikace.  
   
- První tři zpráva třídy jsou považovány za správce transakcí zpráv a jejich vazbu konfigurace je popsaná v "Aplikace zpráv Exchange" dále v tomto tématu. Čtvrtý třída zprávy zprávy do aplikací a je popsaný v části "Zpráva příklady" dále v tomto tématu. Tato část popisuje protokol vazby používá pro každou z těchto tříd WCF.  
+ První tři třídy zpráv jsou považovány za zprávy správce transakcí a jejich konfigurace vazeb je popsána v části výměna zpráv aplikace dále v tomto tématu. Čtvrtá třída zprávy je aplikace na zprávy aplikace a je popsána v části Příklady zpráv dále v tomto tématu. Tato část popisuje vazby protokolu používané pro každou z těchto tříd pomocí služby WCF.  
   
- V tomto dokumentu se používá následující obory názvů XML a přidružené předpony.  
+ V celém tomto dokumentu se používají následující obory názvů XML a přidružené předpony.  
   
-|Předpona|Version|Identifikátor URI Namespace|  
+|Směr|Version|Identifikátor URI oboru názvů|  
 |------------|-------------|-------------------|  
-|s11||<https://go.microsoft.com/fwlink/?LinkId=96014>|  
-|wsa|Pre-1.0<br /><br /> 1.0|http://www.w3.org/2004/08/addressing<br /><br /> <https://go.microsoft.com/fwlink/?LinkId=96022>|  
-|wscoor|1.0<br /><br /> 1.1|<https://go.microsoft.com/fwlink/?LinkId=96078><br /><br /> [https://go.microsoft.com/fwlink/?LinkId=96079](https://go.microsoft.com/fwlink/?LinkId=96079)|  
-|WSAT|1.0<br /><br /> 1.1|<https://go.microsoft.com/fwlink/?LinkId=96080><br /><br /> [https://go.microsoft.com/fwlink/?LinkId=96081](https://go.microsoft.com/fwlink/?LinkId=96081)|  
-|t|1.3 předem<br /><br /> 1.3|<https://go.microsoft.com/fwlink/?LinkId=96082><br /><br /> [https://go.microsoft.com/fwlink/?LinkId=96100](https://go.microsoft.com/fwlink/?LinkId=96100)|  
-|o||<https://go.microsoft.com/fwlink/?LinkId=96101>|  
-|XSD||<https://go.microsoft.com/fwlink/?LinkId=96102>|  
+|s11||<https://schemas.xmlsoap.org/soap/envelope/>|  
+|wsa|Před 1,0<br /><br /> 1.0|`http://www.w3.org/2004/08/addressing`<br /><br /> <https://www.w3.org/2005/08/addressing/>|  
+|wscoor|1.0<br /><br /> 1.1|<http://schemas.xmlsoap.org/ws/2004/10/wscoor/><br /><br /> <https://docs.oasis-open.org/ws-tx/wscoor/2006/06>|  
+|WSAT|1.0<br /><br /> 1.1|<http://schemas.xmlsoap.org/ws/2004/10/wsat/><br /><br /> <https://docs.oasis-open.org/ws-tx/wsat/2006/06>|  
+|t|Před 1,3<br /><br /> 1.3|<http://schemas.xmlsoap.org/ws/2005/02/trust/><br /><br /> <https://docs.oasis-open.org/ws-sx/ws-trust/200512>|  
+|o||<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd>|  
+|XSD||<https://www.w3.org/2001/XMLSchema>|  
   
-## <a name="transaction-manager-bindings"></a>Správce transakcí vazby  
- R1001: Správci transakcí účasti na transakci WS-AT 1.0 musí používat protokol SOAP 1.1 a WS-Addressing 2004/08 protokolu WS-AtomicTransaction a výměny zpráv WS-koordinace.  
+## <a name="transaction-manager-bindings"></a>Vazby správce transakcí  
+ R1001: Správci transakcí účastnící se transakce WS-AT 1,0 musí používat SOAP 1,1 a WS-addresses 2004/08 pro WS-Atomic transakce a výměny zpráv WS-koordinační.  
   
- R1002: Správci transakcí účasti na transakci WS-AT 1.1 musí používat protokol SOAP 1.1 a WS-Addressing 2005/08 protokolu WS-AtomicTransaction a výměny zpráv WS-koordinace.  
+ R1002: Správci transakcí účastnící se transakce WS-AT 1,1 musí používat SOAP 1,1 a WS-addresses 2005/08 pro WS-Atomic transakce a výměny zpráv WS-koordinační.  
   
- Zprávy aplikace nejsou omezeny na těchto vazeb a jsou popsané dále.  
+ Zprávy aplikací nejsou omezeny na tyto vazby a jsou popsány později.  
   
 ### <a name="transaction-manager-https-binding"></a>Vazba HTTPS správce transakcí  
- Vazba HTTPS správce transakcí spoléhá výhradně na zabezpečení přenosu k zajištění zabezpečení a navázání vztahu důvěryhodnosti mezi každý pár odesílatele příjemce ve stromové struktuře transakce.  
+ Vazba HTTPS správce transakcí spoléhá výhradně na zabezpečení přenosu, aby dosáhla zabezpečení a navázala důvěryhodnost mezi jednotlivými páry odesílatele ve stromu transakcí.  
   
-#### <a name="https-transport-configuration"></a>Konfigurace protokolu HTTPS přenosu  
- Zřízení správce transakcí Identity se používají certifikáty X.509. Je požadováno ověření klient/server a klient/server autorizace je ponechané jako podrobnost implementace:  
+#### <a name="https-transport-configuration"></a>Konfigurace přenosu HTTPS  
+ K navázání identity správce transakcí se používají certifikáty X. 509. Ověření klienta a serveru je povinné a autorizace klienta/serveru je popsána jako podrobnosti implementace:  
   
-- R1111: Certifikáty X.509 zobrazí přenosu musí mít název subjektu, který odpovídá plně kvalifikovaný název domény (FQDN) počítači původce.  
+- R1111: certifikáty X. 509 prezentované přes síťový kabel musí mít název subjektu, který odpovídá plně kvalifikovanému názvu domény (FQDN) původního počítače.  
   
-- B1112: DNS musí být funkční mezi každý pár odesílatele příjemce v systému pro kontroly název subjektu X.509 proběhla úspěšně.  
+- B1112: Služba DNS musí být funkční mezi jednotlivými páry odesílatel-přijímač v systému, aby kontrola názvů subjektu X. 509 byla úspěšná.  
   
-#### <a name="activation-and-registration-binding-configuration"></a>Aktivace a konfigurace vazby registrace  
- WCF vyžaduje požadavek nebo odpověď duplexní vazby s korelací přes protokol HTTPS. (Další informace o korelaci a popisy vzorů exchange zpráv žádost odpověď, najdete v protokolu WS-AtomicTransaction, část 8.)  
+#### <a name="activation-and-registration-binding-configuration"></a>Konfigurace aktivace a registrace vazby  
+ WCF vyžaduje vazbu mezi požadavkem a odpovědí s korelace přes protokol HTTPS. (Další informace o korelaci a popisech vzorů pro výměnu zpráv požadavků a odpovědí najdete v tématu WS-Atomic Transaction, Section 8.)  
   
-#### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazeb protokolu 2PC  
- WCF podporuje zprávy jednosměrné (datagram) přes protokol HTTPS. Korelace mezi zprávy je ponechané jako podrobnost implementace.  
+#### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazby protokolu 2PC  
+ WCF podporuje jednosměrné (Datagram) zprávy přes protokol HTTPS. Korelace mezi zprávami je ponechána jako podrobnosti implementace.  
   
- B1131: Implementace musí podporovat `wsa:ReferenceParameters` jak je popsáno v WS-Addressing k dosažení korelace zpráv WCF vaší 2PC.  
+ B1131: implementace musí podporovat `wsa:ReferenceParameters`, jak je popsáno v tématu Specifikace WS-Addressing, aby bylo možné dosáhnout korelace 2PC zpráv WCF.  
   
-### <a name="transaction-manager-mixed-security-binding"></a>Správce transakcí ve smíšeném vazby zabezpečení  
- Toto je alternativní (ve smíšeném režimu) vazby zabezpečení přenosu používá v kombinaci s modelem WS-koordinace vystavený Token pro účely identity zařízení. Aktivace a registrace jsou pouze prvky, které se liší mezi dvě vazby.  
+### <a name="transaction-manager-mixed-security-binding"></a>Kombinovaná vazba zabezpečení správce transakcí  
+ Toto je alternativní (smíšený režim) vazby, která používá zabezpečení přenosu v kombinaci s modelem tokenu WS-koordinace vydaným pro účely vytvoření identity. Aktivace a registrace jsou jediné prvky, které se mezi těmito dvěma vazbami liší.  
   
-#### <a name="https-transport-configuration"></a>Konfigurace protokolu HTTPS přenosu  
- Zřízení správce transakcí Identity se používají certifikáty X.509. Vyžaduje se klientem a serverem ověřování a autorizace klienta nebo serveru je ponecháno jako podrobnost implementace.  
+#### <a name="https-transport-configuration"></a>Konfigurace přenosu HTTPS  
+ K navázání identity správce transakcí se používají certifikáty X. 509. Ověřování klienta a serveru je povinné a ověřování klienta/serveru je ponecháno jako podrobnosti implementace.  
   
-#### <a name="activation-message-binding-configuration"></a>Konfigurace vazby zprávy aktivace  
- Aktivace zprávy obvykle nejsou součástí interoperability vzhledem k tomu obvykle dochází mezi aplikací a její místní správce transakcí.  
+#### <a name="activation-message-binding-configuration"></a>Konfigurace vazby aktivační zprávy  
+ Aktivační zprávy obvykle nejsou zapojeny do interoperability, protože se obvykle vyskytují mezi aplikací a jejím místním správcem transakcí.  
   
- B1221: WCF používá duplexní vazbu HTTPS (popsané v [protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pro aktivaci zprávy. Žádost a odpověď zprávy se korelují pomocí WS-Addressing 2004/08 WS-AT 1.0 a WS-Addressing 2005/08 WS-AT 1.1.  
+ B1221: WCF používá duplexní vazbu HTTPS (popsanou v [protokolech zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)) pro aktivační zprávy. Zprávy žádosti a odpovědi se korelují pomocí WS-Addressing 2004/08 pro WS-AT 1,0 a WS-Addressing 2005/08 pro WS-AT 1,1.  
   
- Specifikace WS-Atomic Transactions, 8 část popisuje další podrobnosti o korelaci a vzory zpráv exchange.  
+ Specifikace WS-Atomic transakce, oddíl 8, popisuje další podrobnosti o korelaci a vzorech výměny zpráv.  
   
-- R1222: Po přijetí `CreateCoordinationContext`, musíte vydat koordinátor `SecurityContextToken` s tajným klíčem přidružené `STx`. Tento token se vrátí uvnitř `t:IssuedTokens` záhlaví podle specifikace WS-Trust.  
+- R1222: po přijetí `CreateCoordinationContext`musí koordinátor vystavit `SecurityContextToken` s přidruženým tajným `STx`. Tento token se vrátí v hlavičce `t:IssuedTokens` následující po specifikaci WS-Trust.  
   
-- R1223: Pokud dojde k aktivaci v rámci existující kontext koordinace `t:IssuedTokens` záhlaví s `SecurityContextToken` spojené s existujícím kontextu toku na `CreateCoordinationContext` zprávy.  
+- R1223: Pokud k aktivaci dojde v rámci existujícího koordinačního kontextu, musí `t:IssuedTokens` záhlaví s `SecurityContextToken` přidruženou ke stávajícímu kontextu přesměrovat na zprávu `CreateCoordinationContext`.  
   
- Nový `t:IssuedTokens` záhlaví by měl být vygenerován pro připojení k odchozích dat `wscoor:CreateCoordinationContextResponse` zprávy.  
+ Pro připojení k odchozí `wscoor:CreateCoordinationContextResponse` zprávě by se měla vygenerovat nové záhlaví `t:IssuedTokens`.  
   
-#### <a name="registration-message-binding-configuration"></a>Konfigurace vazby zpráva registrace  
- B1231: WCF používá duplexní vazbu HTTPS (popsané v [protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)). Žádost a odpověď zprávy se korelují pomocí WS-Addressing 2004/08 WS-AT 1.0 a WS-Addressing 2005/08 WS-AT 1.1.  
+#### <a name="registration-message-binding-configuration"></a>Konfigurace vazby registrační zprávy  
+ B1231: WCF používá duplexní vazbu HTTPS (popsané v [protokolech zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)). Zprávy žádosti a odpovědi se korelují pomocí WS-Addressing 2004/08 pro WS-AT 1,0 a WS-Addressing 2005/08 pro WS-AT 1,1.  
   
- WS-AtomicTransaction, část 8, popisuje další podrobnosti o korelaci a popisy vzorů zprávy exchange.  
+ WS-AtomicTransaction, část 8, popisuje další podrobnosti o korelaci a popisy schémat výměny zpráv.  
   
- R1232: Odchozí `wscoor:Register` musí používat zprávy `IssuedTokenOverTransport` režim ověřování je popsáno v [protokoly zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md).  
+ R1232: odchozí zprávy `wscoor:Register` musí používat režim ověřování `IssuedTokenOverTransport` popsaný v [protokolech zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md).  
   
- `wsse:Timestamp` Elementu musí být podepsané pomocí `SecurityContextToken STx` vydané. Tento podpis je doklad o vlastnictví tokenu přidružený k konkrétní transakce a slouží k ověřování účastníka uvedení v transakci. RegistrationResponse zpráva se pošle zpět prostřednictvím protokolu HTTPS.  
+ Element `wsse:Timestamp` musí být podepsán pomocí `SecurityContextToken STx` vydaných. Tento podpis je důkazem vlastnictví tokenu přidruženého k konkrétní transakci a slouží k ověření účastníka, který v transakci zařadí. Zpráva RegistrationResponse se pošle zpátky přes HTTPS.  
   
-#### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazeb protokolu 2PC  
- WCF podporuje zprávy jednosměrné (datagram) přes protokol HTTPS. Korelace mezi zprávy je ponechané jako podrobnost implementace.  
+#### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazby protokolu 2PC  
+ WCF podporuje jednosměrné (Datagram) zprávy přes protokol HTTPS. Korelace mezi zprávami je ponechána jako podrobnosti implementace.  
   
- B1241: Implementace musí podporovat `wsa:ReferenceParameters` jak je popsáno v WS-Addressing k dosažení korelace zpráv WCF vaší 2PC.  
+ B1241: implementace musí podporovat `wsa:ReferenceParameters`, jak je popsáno v tématu Specifikace WS-Addressing, aby bylo možné dosáhnout korelace 2PC zpráv WCF.  
   
-## <a name="application-message-exchange"></a>Aplikace zprávy Exchange  
- Aplikace se můžete používat konkrétní vazbu pro zprávy aplikace do aplikace, tak dlouho, dokud vazbu splňuje následující požadavky na zabezpečení:  
+## <a name="application-message-exchange"></a>Výměna zpráv aplikace  
+ Aplikace jsou zdarma pro použití jakékoli konkrétní vazby pro zprávy aplikace a aplikace, pokud vazba splňuje následující požadavky na zabezpečení:  
   
-- R2001: Toku aplikace aplikace zprávy `t:IssuedTokens` záhlaví spolu s `CoordinationContext` v záhlaví zprávy.  
+- R2001: zprávy typu aplikace a aplikace musí přesměrovat hlavičku `t:IssuedTokens` spolu s `CoordinationContext` v hlavičce zprávy.  
   
-- R2002: Integritu a důvěrnost `t:IssuedToken` musí být zadaná.  
+- R2002: musí být zadána integrita a důvěrnost `t:IssuedToken`.  
   
- `CoordinationContext` Obsahuje záhlaví `wscoor:Identifier`. Při definici `xsd:AnyURI` umožňuje použít absolutní a relativní identifikátory URI, WCF podporuje pouze `wscoor:Identifiers`, které jsou absolutní URI.  
+ Hlavička `CoordinationContext` obsahuje `wscoor:Identifier`. I když definice `xsd:AnyURI` umožňuje použití absolutních i relativních identifikátorů URI, podporuje WCF pouze `wscoor:Identifiers`, což jsou absolutní identifikátory URI.  
   
- B2003: Pokud `wscoor:Identifier` z `wscoor:CoordinationContext` je relativní identifikátor URI, vrátí se chyby z transakční služeb WCF.  
+ B2003: Pokud `wscoor:Identifier` `wscoor:CoordinationContext` je relativní identifikátor URI, vrátí se chyby z transakční služby WCF.  
   
-## <a name="message-examples"></a>Příklady zprávy  
+## <a name="message-examples"></a>Příklady zpráv  
   
-### <a name="createcoordinationcontext-requestresponse-messages"></a>Zprávy požadavků/odpovědí CreateCoordinationContext  
- Tyto zprávy se řídí vzorem žádostí a odpovědí.  
+### <a name="createcoordinationcontext-requestresponse-messages"></a>Zprávy o žádostech a odpovědích CreateCoordinationContext  
+ Následující zprávy následují jako vzor požadavků a odpovědí.  
   
-#### <a name="createcoordinationcontext-with-wscoor-10"></a>CreateCoordinationContext s WSCoor 1.0  
+#### <a name="createcoordinationcontext-with-wscoor-10"></a>CreateCoordinationContext s WSCoor 1,0  
   
 ```xml  
 <s:Envelope>  
@@ -167,7 +167,7 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
 </s11:Envelope>  
 ```  
   
-#### <a name="createcoordinationcontext-with-wscoor-11"></a>CreateCoordinationContext s WSCoor 1.1  
+#### <a name="createcoordinationcontext-with-wscoor-11"></a>CreateCoordinationContext s WSCoor 1,1  
   
 ```xml  
 <s:Envelope>   
@@ -193,7 +193,7 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
 </s11:Envelope>  
 ```  
   
-#### <a name="createcoordinationcontextresponse-with-trust-pre-13-and-wscoor-10"></a>CreateCoordinationContextResponse důvěryhodnosti Pre-1.3 a WSCoor 1.0  
+#### <a name="createcoordinationcontextresponse-with-trust-pre-13-and-wscoor-10"></a>CreateCoordinationContextResponse s důvěryhodností pre-1,3 a WSCoor 1,0  
   
 ```xml  
 <s:Envelope>  
@@ -275,7 +275,7 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
 </s:Envelope>  
 ```  
   
-#### <a name="createcoordinationcontextresponse-with-trust-13-and-wscoor-11"></a>CreateCoordinationContextResponse s Trust 1.3 a WSCoor 1.1  
+#### <a name="createcoordinationcontextresponse-with-trust-13-and-wscoor-11"></a>CreateCoordinationContextResponse s důvěryhodností 1,3 a WSCoor 1,1  
   
 ```xml  
 <s:Envelope>  
@@ -352,9 +352,9 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
 ```  
   
 ### <a name="registration-messages"></a>Registrační zprávy  
- Tyto zprávy jsou zprávy registrace.  
+ Následující zprávy jsou registrační zprávy.  
   
-#### <a name="register-with-wscoor-10"></a>Zaregistrovat s WSCoor 1.0  
+#### <a name="register-with-wscoor-10"></a>Zaregistrovat v WSCoor 1,0  
   
 ```xml  
 <s:Envelope>  
@@ -415,7 +415,7 @@ xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
 </s:Envelope>  
 ```  
   
-#### <a name="register-with-wscoor-11"></a>Zaregistrovat s WSCoor 1.1  
+#### <a name="register-with-wscoor-11"></a>Zaregistrovat v WSCoor 1,1  
   
 ```xml  
 <s:Envelope>  
@@ -474,7 +474,7 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
 </s:Envelope>  
 ```  
   
-#### <a name="register-response-with-wscoor-10"></a>Registrovat odpovědi s WSCoor 1.0  
+#### <a name="register-response-with-wscoor-10"></a>Registrovat odpověď pomocí WSCoor 1,0  
   
 ```xml  
 <s:Envelope>  
@@ -510,7 +510,7 @@ Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
 </s:Envelope>  
 ```  
   
-#### <a name="register-response-with-wscoor-11"></a>Registrovat odpovědi s WSCoor 1.1  
+#### <a name="register-response-with-wscoor-11"></a>Registrovat odpověď pomocí WSCoor 1,1  
   
 ```xml  
 <s:Envelope>  
@@ -541,10 +541,10 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 </s:Envelope>  
 ```  
   
-### <a name="two-phase-commit-protocol-messages"></a>Dvě fáze potvrzení protokolu zpráv  
- Tato zpráva má vztah k protokol dvoufázového potvrzení (2PC).  
+### <a name="two-phase-commit-protocol-messages"></a>Zprávy protokolu dvou fází potvrzení  
+ Následující zpráva se týká protokolu dvoufázového potvrzení (2PC).  
   
-#### <a name="commit-with-wsat-10"></a>Potvrzení s WSAT 1.0  
+#### <a name="commit-with-wsat-10"></a>Potvrzení pomocí WSAT 1,0  
   
 ```xml  
 <s:Envelope>  
@@ -567,7 +567,7 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 </s:Envelope>  
 ```  
   
-#### <a name="commit-with-wsat-11"></a>Potvrzení s WSAT 1.1  
+#### <a name="commit-with-wsat-11"></a>Potvrzení pomocí WSAT 1,1  
   
 ```xml  
 <s:Envelope>  
@@ -590,10 +590,10 @@ xmlns:wssu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-u
 </s:Envelope>  
 ```  
   
-### <a name="application-messages"></a>Aplikace zprávy  
- Tyto zprávy jsou zprávy aplikace.  
+### <a name="application-messages"></a>Zprávy aplikace  
+ Následující zprávy jsou zprávy aplikace.  
   
-#### <a name="application-message-request"></a>Zpráva žádosti  
+#### <a name="application-message-request"></a>Zpráva aplikace – požadavek  
   
 ```xml  
 <s:Envelope>  

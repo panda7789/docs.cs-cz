@@ -1,5 +1,5 @@
 ---
-title: Bezpečnější tisk ve Windows Forms
+title: Bezpečnější tisk
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, printing
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - printing [Windows Forms], security
 - security [Windows Forms], printing
 ms.assetid: 48fd36ac-872f-4de0-902a-e52969cd4367
-ms.openlocfilehash: b0387a82f142fb32912dad1370d6ac0c784e8894
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6285b76d01660bfa761ea606421f264bdc0c0af5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592651"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734889"
 ---
 # <a name="more-secure-printing-in-windows-forms"></a>Bezpečnější tisk ve Windows Forms
-Aplikace Windows Forms často přinášejí tisk schopnosti. Rozhraní .NET Framework používá <xref:System.Drawing.Printing.PrintingPermission> třídy pro řízení přístupu k funkcím, tisk a přidružené <xref:System.Drawing.Printing.PrintingPermissionLevel> hodnota výčtu označující úroveň přístupu. Ve výchozím nastavení je ve výchozím nastavení do zóny místního intranetu a Internetu; povolené tisk úroveň přístupu je však omezeny v obou oblastech. Zda lze vytisknout vaší aplikace, vyžaduje zásah uživatele, nebo nelze tisk závisí na hodnotě oprávnění udělených aplikaci. Ve výchozím nastavení, obdrží zóny místního intranetu <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> přístup a zóny intranetu obdrží <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> přístup.  
+Mezi aplikace model Windows Forms často patří možnosti tisku. .NET Framework používá <xref:System.Drawing.Printing.PrintingPermission> třídu pro řízení přístupu k funkcím tisku a související hodnotu výčtu <xref:System.Drawing.Printing.PrintingPermissionLevel> k označení úrovně přístupu. Ve výchozím nastavení je tisk povolený ve výchozím nastavení v zóně Místní intranet a Internet. úroveň přístupu je však omezená v obou zónách. Bez ohledu na to, jestli vaše aplikace může tisknout, vyžaduje zásah uživatele nebo nemůže tisknout, závisí na hodnotě oprávnění udělené aplikaci. Ve výchozím nastavení obdrží zóna místního intranetu přístup <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> a intranetová zóna obdrží přístup <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>.  
   
- V následující tabulce jsou uvedeny funkce, která je dostupná na všech úrovních tisk oprávnění.  
+ V následující tabulce jsou uvedeny funkce, které jsou k dispozici na každé úrovni oprávnění k tisku.  
   
 |PrintingPermissionLevel|Popis|  
 |-----------------------------|-----------------|  
-|<xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>|Poskytuje úplný přístup ke všem nainstalovaných tiskáren.|  
-|<xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>|Umožňuje tisk prostřednictvím kódu programu, použije se výchozí tiskárna a bezpečnější tisk přes omezující tisk dialogového okna. <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>.|  
-|<xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>|Poskytuje pouze z více omezený dialogové okno Tisk. <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>.|  
-|<xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting>|Brání v přístupu k tiskárny. <xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>.|  
+|<xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>|Poskytuje úplný přístup ke všem nainstalovaným tiskárnám.|  
+|<xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>|Povolí programové tisk na výchozí tiskárně a bezpečnější tisk pomocí dialogového okna omezujícího tisku. <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>.|  
+|<xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>|Poskytuje tisk pouze z dialogového okna s více omezeními. <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>.|  
+|<xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting>|Znemožní přístup k tiskárnám. <xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>.|  
   
 ## <a name="see-also"></a>Viz také:
 
