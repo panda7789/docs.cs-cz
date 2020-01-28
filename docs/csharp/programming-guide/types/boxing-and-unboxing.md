@@ -9,16 +9,16 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 32156ad0fe4b3dce4371fe757d15f5b8040aaf19
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 62df08bf4ae3580e9b8d5b3aab0697d396674ca1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115862"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745410"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Zabalení a rozbalení (Průvodce programováním v C#)
 
-Zabalení je proces převodu [typu hodnoty](../../language-reference/keywords/value-types.md) na typ `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Když pole modulu CLR (Common Language Runtime) obsahuje typ hodnoty, zabalí hodnotu uvnitř <xref:System.Object?displayProperty=nameWithType> instance a uloží ji na spravovanou haldu. Rozbalení extrahuje typ hodnoty z objektu. Zabalení je implicitní; rozbalení je explicitní. Pojem zabalení a rozbalení představuje C# sjednocený pohled na systém typů, ve kterém může být hodnota libovolného typu považována za objekt.
+Zabalení je proces převodu [typu hodnoty](../../language-reference/builtin-types/value-types.md) na typ `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Když pole modulu CLR (Common Language Runtime) obsahuje typ hodnoty, zabalí hodnotu uvnitř <xref:System.Object?displayProperty=nameWithType> instance a uloží ji na spravovanou haldu. Rozbalení extrahuje typ hodnoty z objektu. Zabalení je implicitní; rozbalení je explicitní. Pojem zabalení a rozbalení představuje C# sjednocený pohled na systém typů, ve kterém může být hodnota libovolného typu považována za objekt.
 
 V následujícím příkladu je proměnná typu Integer `i` *zabalená* a přiřazená k objektu `o`.
 
@@ -38,7 +38,7 @@ Ve vztahu k jednoduchým přiřazením se zabalení a rozbalení počítají jak
 
 ## <a name="boxing"></a>Zabalení
 
-Zabalení se používá k ukládání typů hodnot v haldě uvolňování paměti. Zabalení je implicitní převod [typu hodnoty](../../language-reference/keywords/value-types.md) na typ `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Zabalení typu hodnoty přiděluje instanci objektu na haldě a zkopíruje hodnotu do nového objektu.
+Zabalení se používá k ukládání typů hodnot v haldě uvolňování paměti. Zabalení je implicitní převod [typu hodnoty](../../language-reference/builtin-types/value-types.md) na typ `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Zabalení typu hodnoty přiděluje instanci objektu na haldě a zkopíruje hodnotu do nového objektu.
 
 Zvažte následující deklaraci proměnné typu hodnoty:
 
@@ -66,7 +66,7 @@ Tento příklad převede proměnnou typu Integer `i` na objekt `o` pomocí zabal
 
 ## <a name="unboxing"></a>Rozbalení
 
-Rozbalení je explicitní převod z typu `object` na [typ hodnoty](../../language-reference/keywords/value-types.md) nebo z typu rozhraní na typ hodnoty, který implementuje rozhraní. Rozbalení operace se skládá z těchto:
+Rozbalení je explicitní převod z typu `object` na [typ hodnoty](../../language-reference/builtin-types/value-types.md) nebo z typu rozhraní na typ hodnoty, který implementuje rozhraní. Rozbalení operace se skládá z těchto:
 
 - Kontrola instance objektu, aby se zajistilo, že se jedná o zabalenou hodnotu daného typu hodnoty.
 
@@ -112,14 +112,8 @@ provede se převod a zobrazí se výstup:
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="related-sections"></a>Související oddíly
-
-Další informace:
-
-- [Odkazové typy](../../language-reference/keywords/reference-types.md)
-
-- [Typy hodnot](../../language-reference/keywords/value-types.md)
-
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [C#Průvodce programováním](../index.md)
+- [Typy odkazů](../../language-reference/keywords/reference-types.md)
+- [Typy hodnot](../../language-reference/builtin-types/value-types.md)

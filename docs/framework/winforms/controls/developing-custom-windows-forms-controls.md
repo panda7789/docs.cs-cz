@@ -1,63 +1,63 @@
 ---
-title: Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework
+title: Vývoj vlastních ovládacích prvků
 ms.date: 03/30/2017
 helpviewer_keywords:
 - custom controls [Windows Forms], developing using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 236cebc0-bd71-4f18-9fd6-5d0e592375df
-ms.openlocfilehash: 3d628d75b75c311c266648886b3b971c4833d172
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9dbc1c4530b3a0f4e579ca67c7ae88c1685222ea
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972247"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745995"
 ---
 # <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework
-Ovládací prvky Windows Forms jsou opakovaně použitelné komponenty, které zapouzdřují funkce uživatelského rozhraní a se používají v aplikacích založených na Windows na straně klienta. Nejen Windows Forms poskytuje mnoho ovládacích prvků připravené k použití, navíc poskytuje infrastrukturu pro vývoj vlastních ovládacích prvků. Můžete kombinovat existující ovládací prvky, rozšířit existující ovládací prvky nebo vytvořit vlastní ovládací prvky. Tato část obsahuje základní informace a ukázky, které vám pomůžou s vývojem ovládacích prvků Windows Forms.  
+Ovládací prvky model Windows Forms jsou opakovaně použitelné komponenty, které zapouzdřují funkce uživatelského rozhraní a používají se v aplikacích pro Windows na straně klienta. Pouze model Windows Forms poskytuje mnoho ovládacích prvků připravených k použití, poskytuje také infrastrukturu pro vývoj vlastních ovládacích prvků. Můžete zkombinovat existující ovládací prvky, roztáhnout stávající ovládací prvky nebo vytvořit vlastní ovládací prvky. V této části najdete základní informace a ukázky, které vám pomůžou s vývojem model Windows Formsch ovládacích prvků.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled používání ovládacích prvků ve Windows Forms](overview-of-using-controls-in-windows-forms.md)  
- Popisuje základní prvky pomocí ovládacích prvků v aplikacích Windows Forms.  
+ Zvýrazní základní prvky používání ovládacích prvků v aplikacích model Windows Forms.  
   
  [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)  
- Popisuje různé druhy můžete vytvořit pomocí vlastních ovládacích prvků <xref:System.Windows.Forms?displayProperty=nameWithType> oboru názvů.  
+ Popisuje různé druhy vlastních ovládacích prvků, které můžete vytvořit pomocí oboru názvů <xref:System.Windows.Forms?displayProperty=nameWithType>.  
   
  [Základní informace o vývoji ovládacích prvků Windows Forms](windows-forms-control-development-basics.md)  
- Tento článek popisuje první kroky ve vývoji ovládacího prvku Windows Forms.  
+ Popisuje první kroky při vývoji model Windows Formsho ovládacího prvku.  
   
  [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)  
- Ukazuje, jak přidat do vlastností ovládacích prvků Windows Forms.  
+ Ukazuje, jak přidat do vlastností model Windows Forms ovládacími prvky.  
   
  [Události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md)  
- Ukazuje, jak zpracovat a definovat události v ovládacích prvcích Windows Forms.  
+ Ukazuje, jak zpracovávat a definovat události v ovládacích prvcích model Windows Forms.  
   
  [Atributy v ovládacích prvcích Windows Forms](attributes-in-windows-forms-controls.md)  
- Popisuje atributy, které můžete provést u vlastnosti nebo další členové vaší vlastní ovládací prvky a součásti.  
+ Popisuje atributy, které lze použít pro vlastnosti nebo jiné členy vašich vlastních ovládacích prvků a komponent.  
   
  [Malování a vykreslování vlastního ovládacího prvku](custom-control-painting-and-rendering.md)  
  Ukazuje, jak přizpůsobit vzhled ovládacích prvků.  
   
  [Rozložení v ovládacích prvcích Windows Forms](layout-in-windows-forms-controls.md)  
- Ukazuje, jak vytvářet sofistikované rozložení pro ovládací prvky a formuláře.  
+ Ukazuje, jak vytvořit sofistikovaná rozložení pro ovládací prvky a formuláře.  
   
  [Multithreading v ovládacích prvcích Windows Forms](multithreading-in-windows-forms-controls.md)  
  Ukazuje, jak implementovat ovládací prvky s více vlákny.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Atributy doby návrhu pro komponenty](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120))  
- Obsahuje seznam atributy metadat použít na komponent a ovládacích prvků tak, aby se správně zobrazí v době návrhu v vizuální návrhářské nástroje.  
+ [Atributy pro dobu návrhu pro součásti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120))  
+ Seznam atributů metadat, které se mají použít u komponent a ovládacích prvků tak, aby se v době návrhu v vizuálních návrhářích zobrazovaly správně.  
   
- [Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))  
- Popisuje, jak implementovat třídy například editorů a návrhářů, které poskytují podpory během návrhu.  
+ [Rozšíření podpory pro dobu návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))  
+ Popisuje, jak implementovat třídy, jako jsou editory a návrháři, které poskytují podporu při návrhu.  
   
- [Postupy: Licence komponent a ovládacích prvků](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))  
- Popisuje, jak implementovat licencování ovládacího prvku nebo komponenty.  
+ [Postupy: licenční komponenty a ovládací prvky](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))  
+ Popisuje, jak implementovat licencování ve vašem ovládacím prvku nebo komponentě.  
   
- Viz také [vývoj prvky Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md).
+ Viz také [vývoj model Windows Formsch ovládacích prvků v době návrhu](developing-windows-forms-controls-at-design-time.md).

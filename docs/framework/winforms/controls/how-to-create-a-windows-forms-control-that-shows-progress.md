@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh'
+title: Vytvoří ovládací prvek, který zobrazuje průběh.
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,27 +10,27 @@ helpviewer_keywords:
 - progress [Windows Forms], reporting [Windows Forms]
 - FlashTrackBar custom control
 ms.assetid: 24c5a2e3-058c-4b8d-a217-c06e6a130c2f
-ms.openlocfilehash: 84f0caace70f9877e84fdd01dc69216dc10fe485
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9d2cf353ba2309380221bb51733baaca1b81a5d5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950576"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731187"
 ---
 # <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a>Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh
-Následující příklad kódu ukazuje vlastní ovládací prvek s názvem `FlashTrackBar` , který lze použít k zobrazení úrovně nebo průběhu aplikace na úrovni uživatele. Pomocí přechodu vizuálně reprezentuje průběh.  
+Následující příklad kódu ukazuje vlastní ovládací prvek s názvem `FlashTrackBar`, který lze použít k zobrazení úrovně nebo průběhu aplikace na úrovni uživatele. Pomocí přechodu vizuálně reprezentuje průběh.  
   
- `FlashTrackBar` Ovládací prvek znázorňuje následující koncepty:  
+ Ovládací prvek `FlashTrackBar` ilustruje následující koncepty:  
   
 - Definování vlastních vlastností.  
   
-- Definování vlastních událostí. `FlashTrackBar` (`ValueChanged` definuje událost.)  
+- Definování vlastních událostí. (`FlashTrackBar` definuje událost `ValueChanged`.)  
   
-- <xref:System.Windows.Forms.Control.OnPaint%2A> Přepsání metody k poskytnutí logiky pro vykreslení ovládacího prvku.  
+- Přepsání metody <xref:System.Windows.Forms.Control.OnPaint%2A> k poskytnutí logiky pro vykreslení ovládacího prvku.  
   
-- Výpočet oblasti, která je k dispozici pro vykreslení ovládacího <xref:System.Windows.Forms.Control.ClientRectangle%2A> prvku pomocí jeho vlastnosti. `FlashTrackBar`provede tuto `OptimizedInvalidate` metodu.  
+- Výpočet oblasti, která je k dispozici pro vykreslení ovládacího prvku pomocí vlastnosti <xref:System.Windows.Forms.Control.ClientRectangle%2A>. `FlashTrackBar` to dělá v metodě `OptimizedInvalidate`.  
   
-- Implementace serializace nebo trvalosti vlastnosti při změně v Návrhář formulářů. `FlashTrackBar`Definuje metody a `ShouldSerializeEndColor` pro serializaci vlastností `EndColor` a.`StartColor` `ShouldSerializeStartColor`  
+- Implementace serializace nebo trvalosti vlastnosti při změně v Návrhář formulářů. `FlashTrackBar` definuje metody `ShouldSerializeStartColor` a `ShouldSerializeEndColor` pro serializaci vlastností `StartColor` a `EndColor`.  
   
  V následující tabulce jsou uvedeny vlastní vlastnosti definované `FlashTrackBar`.  
   
@@ -47,17 +47,17 @@ Následující příklad kódu ukazuje vlastní ovládací prvek s názvem `Flas
 |`ShowGradient`|Určuje, zda se má na panelu sledování zobrazit barevný přechod znázorňující aktuální hodnotu.|  
 |-   `Value`|Určuje aktuální hodnotu panelu sledování.|  
   
- V následující tabulce jsou uvedeny další členy, `FlashTrackBar:` které jsou definovány událostí změny vlastností a metoda, která událost vyvolává.  
+ Následující tabulka ukazuje další členy definované `FlashTrackBar:` události změněné vlastností a metody, která událost vyvolá.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ValueChanged`|Událost, která je vyvolána při `Value` změně vlastnosti panelu sledování.|  
-|`OnValueChanged`|Metoda, která vyvolá `ValueChanged` událost.|  
+|`ValueChanged`|Událost, která je vyvolána při změně vlastnosti `Value` panelu sledování.|  
+|`OnValueChanged`|Metoda, která vyvolá událost `ValueChanged`.|  
   
 > [!NOTE]
-> `FlashTrackBar`používá třídu pro data události a <xref:System.EventHandler> delegáta události. <xref:System.EventArgs>  
+> `FlashTrackBar` používá <xref:System.EventArgs> třídu pro data události a <xref:System.EventHandler> pro delegáta události.  
   
- Pro zpracování odpovídajících `FlashTrackBar` událostí *EventName* přepíše následující metody, které dědí z: <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
+ Pro zpracování odpovídajících událostí *EventName* `FlashTrackBar` Přepisuje následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
   
 - <xref:System.Windows.Forms.Control.OnPaint%2A>  
   
@@ -69,7 +69,7 @@ Následující příklad kódu ukazuje vlastní ovládací prvek s názvem `Flas
   
 - <xref:System.Windows.Forms.Control.OnResize%2A>  
   
- Chcete-li zpracovat odpovídající události změněné vlastností, `FlashTrackBar` potlačí následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
+ Pro zpracování odpovídajících událostí změněných vlastností `FlashTrackBar` Přepisuje následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
   
 - <xref:System.Windows.Forms.Control.OnBackColorChanged%2A>  
   
@@ -78,7 +78,7 @@ Následující příklad kódu ukazuje vlastní ovládací prvek s názvem `Flas
 - <xref:System.Windows.Forms.Control.OnTextChanged%2A>  
   
 ## <a name="example"></a>Příklad  
- Ovládací prvek definuje dva `FlashTrackBarValueEditor` editory typů uživatelského rozhraní `FlashTrackBarDarkenByEditor`a, které jsou uvedeny v následujících výpisech kódu. `FlashTrackBar` `HostApp` Třída`FlashTrackBar` používá ovládací prvek ve formuláři Windows.  
+ Ovládací prvek `FlashTrackBar` definuje dva editory typů uživatelského rozhraní, `FlashTrackBarValueEditor` a `FlashTrackBarDarkenByEditor`, které jsou uvedeny v následujících výpisech kódu. Třída `HostApp` používá ovládací prvek `FlashTrackBar` ve formuláři Windows.  
   
  [!code-csharp[System.Windows.Forms.FlashTrackBar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/CS/FlashTrackBar.cs#1)]
  [!code-vb[System.Windows.Forms.FlashTrackBar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlashTrackBar/VB/FlashTrackBar.vb#1)]  

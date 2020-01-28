@@ -3,20 +3,18 @@ title: Použití sady Compatibility Pack systému Windows k portu kódu .NET Cor
 description: Přečtěte si o sadě Windows Compatibility Pack a o tom, jak ji můžete použít k portování existujícího kódu .NET Framework do .NET Core.
 author: terrajobst
 ms.date: 12/07/2018
-ms.openlocfilehash: 65530987a3cded941b6a292118ed9bfdb6f5b86c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 91a653b2345d414c18ebdb6e8b7d6d49bbdbb83e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715471"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733608"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Compatibility Pack systému Windows k portu kódu .NET Core
 
 Některé nejběžnější problémy nalezené při přenosu stávajícího kódu do .NET Core jsou závislosti na rozhraních API a technologiích, které se nacházejí pouze v .NET Framework. *Sada Windows Compatibility Pack* poskytuje mnoho z těchto technologií, takže je mnohem snazší sestavovat aplikace .NET Core a knihovny .NET Standard.
 
-Tento balíček je logickým [rozšířením .NET Standard 2,0](../whats-new/dotnet-core-2-0.md#api-changes-and-library-support) , které významně zvyšuje sadu rozhraní API a zkompiluje existující kód s téměř bez úprav. Aby se zajistila snaha o .NET Standard ("je to sada rozhraní API, která poskytuje všechny implementace rozhraní .NET"), sada neobsahuje technologie, které nemůžou fungovat na všech platformách, jako je registr, rozhraní WMI (Windows Management Instrumentation) (WMI) nebo generování reflexe. Třídy.
-
-Sada Compatibility Pack systému Windows je umístěna na .NET Standard a poskytuje přístup pouze k technologiím, které jsou v systému Windows. Je zvláště užitečné pro zákazníky, kteří se chtějí přesunout do .NET Core, ale naplánovat, aby v systému Windows zůstali jako první krok. V takovém případě není možné používat technologie jenom pro Windows, ale jenom migrační systém bez výhod architektury.
+Sada Compatibility Pack je logické [rozšíření .NET Standard 2,0](../whats-new/dotnet-core-2-0.md#api-changes-and-library-support) , které významně zvyšuje sadu rozhraní API. Existující kód se zkompiluje téměř bez úprav. Aby se zajistilo, že se jedná o sadu rozhraní API, která poskytují všechny implementace rozhraní .NET, .NET Standard nezahrnuje technologie, které nemůžou fungovat na všech platformách, jako je registr, rozhraní WMI (Windows Management Instrumentation) (WMI) nebo rozhraní API pro vygenerování reflexe. Sada Compatibility Pack systému Windows je umístěna na .NET Standard a poskytuje přístup k těmto technologiím, které jsou výhradně pro Windows. To je zvlášť užitečné pro zákazníky, kteří se chtějí přesunout do .NET Core, ale naplánovat, aby se v systému Windows naplánovaly, a to aspoň jako první krok. V takovém případě je možné použít technologie jenom pro Windows k odebrání prahu migrace.
 
 ## <a name="package-contents"></a>Obsah balíčku
 
@@ -28,7 +26,7 @@ Poskytuje informace o rozhraních API 20 000, včetně pouze Windows, stejně ja
 - CodeDom
 - Konfigurace
 - Adresářové služby
-- Kreslení
+- Tažné
 - ODBC
 - Oprávnění
 - Porty
@@ -38,7 +36,7 @@ Poskytuje informace o rozhraních API 20 000, včetně pouze Windows, stejně ja
 - Windows EventLog
 - Služba WMI (Windows Management Instrumentation)
 - Čítače výkonu Windows
-- Registr Windows
+- Registr systému Windows
 - Ukládání prostředí Windows Runtime do mezipaměti
 - Služby systému Windows
 

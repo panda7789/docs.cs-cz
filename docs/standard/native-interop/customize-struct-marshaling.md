@@ -5,12 +5,12 @@ ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: e69746e03cefa2444d4c34b582730824ff357858
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7f8d1ad93633d6feef9c3c6f5d19aad52105968c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706345"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741528"
 ---
 # <a name="customizing-structure-marshaling"></a>Přizpůsobení zařazování struktur
 
@@ -20,11 +20,11 @@ Někdy výchozí pravidla zařazování pro struktury nejsou přesně to, co pot
 
 Rozhraní .NET poskytuje atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> a výčet <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType>, který umožňuje přizpůsobit, jak jsou pole umístěna v paměti. Následující pokyny vám pomůžou vyhnout se běžným problémům.
 
-**✔️ zvažte** použití `LayoutKind.Sequential`, kdykoli to bude možné.
+✔️ Zvažte použití `LayoutKind.Sequential`, kdykoli to bude možné.
 
-**✔️** použít `LayoutKind.Explicit` v zařazování pouze v případě, že nativní struktura má také explicitní rozložení, jako je například sjednocení.
+✔️ použít `LayoutKind.Explicit` v zařazování pouze v případě, že nativní struktura má také explicitní rozložení, jako je například sjednocení.
 
-**❌ se vyhnout** použití `LayoutKind.Explicit` při zařazování struktur na platformách jiných než Windows, pokud potřebujete cílit na modul runtime před .net Core 3,0. Modul runtime .NET Core před 3,0 nepodporuje předávání explicitních struktur podle hodnot nativním funkcím na systémy, které nepoužívají procesory Intel nebo AMD 64. Modul runtime však podporuje předávání explicitních struktur odkazem na všechny platformy.
+❌ se vyhnout použití `LayoutKind.Explicit` při zařazování struktur na platformách jiných než Windows, pokud potřebujete cílit na modul runtime před .NET Core 3,0. Modul runtime .NET Core před 3,0 nepodporuje předávání explicitních struktur podle hodnot nativním funkcím na systémy, které nepoužívají procesory Intel nebo AMD 64. Modul runtime však podporuje předávání explicitních struktur odkazem na všechny platformy.
 
 ## <a name="customizing-boolean-field-marshaling"></a>Přizpůsobení zařazování logických polí
 

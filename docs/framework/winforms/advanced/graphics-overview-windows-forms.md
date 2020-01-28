@@ -1,5 +1,5 @@
 ---
-title: Přehled grafiky (Windows Forms)
+title: Přehled grafiky
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, graphics
@@ -8,41 +8,41 @@ helpviewer_keywords:
 - GDI+, Windows Forms
 - graphics
 ms.assetid: 94084509-2c6f-477d-923b-d25d37a36b1c
-ms.openlocfilehash: e14d60e5b77fab8490c373ad76ee2d829aad7c74
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: cc99f0fda4625b278b2bea56e7d8642edb0a63d9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505388"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742276"
 ---
 # <a name="graphics-overview-windows-forms"></a>Přehled grafiky (Windows Forms)
-Rozhraní GDI + je Graphics Device Interface, která umožňuje programátorům vytvářet aplikace nezávislých na zařízení. Služby rozhraní GDI + jsou přístupné prostřednictvím sady spravované třídy.  
+GDI+ je GDI, který umožňuje programátorům psát aplikace nezávislé na zařízení. Služby GDI+ se zveřejňují prostřednictvím sady spravovaných tříd.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled grafiky](overview-of-graphics.md)  
- Poskytuje obecný úvod k rozhraní GDI +.  
+ Poskytuje obecný úvod k GDI+.  
   
  [Tři kategorie grafických služeb](three-categories-of-graphics-services.md)  
- Popisuje tři kategorie, které tvoří programování pomocí GDI +.  
+ Popisuje tři kategorie, které tvoří programování pomocí rozhraní GDI+.  
   
  [Struktura rozhraní grafiky](structure-of-the-graphics-interface.md)  
- Popisuje spravovanou třídu rozhraní GDI +.  
+ Popisuje spravované rozhraní třídy GDI+.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing>  
- Poskytuje přístup k základní grafické funkce rozhraní GDI +.  
+ Poskytuje přístup k funkci GDI+ Basic Graphics.  
   
  <xref:System.Drawing.Drawing2D>  
- Poskytuje vyspělé 2D a vektorové grafické funkce.  
+ Poskytuje pokročilé funkce dvourozměrné a vektorové grafiky.  
   
  <xref:System.Drawing.Imaging>  
- Poskytuje pokročilé rozhraní GDI + funkce pro zpracování obrázků.  
+ Poskytuje pokročilé funkce pro vytváření bitových kopií rozhraní GDI+.  
   
  <xref:System.Drawing.Text>  
- Poskytuje pokročilé funkce Typografie rozhraní GDI +.  
+ Poskytuje pokročilé funkce typografie rozhraní GDI+.  
   
  <xref:System.Drawing.Printing>  
  Poskytuje služby související s tiskem.  
   
  <xref:System.Windows.Forms.TextRenderer>  
- Poskytuje rozhraní GDI kreslení textu a měření funkce.
+ Poskytuje funkce vykreslování textu a měření GDI.

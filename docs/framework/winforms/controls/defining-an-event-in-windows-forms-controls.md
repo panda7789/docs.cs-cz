@@ -1,5 +1,5 @@
 ---
-title: Definování události v ovládacím prvku Windows Forms
+title: Definování události v ovládacích prvcích
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - events [Windows Forms], defining within Windows Forms custom controls
 - custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
-ms.openlocfilehash: 4235c8b3c513509023388112071e78cfd079ec6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d45c369e1fc82ee009a85b5b35fe6aa754873436
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972338"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746078"
 ---
 # <a name="defining-an-event-in-windows-forms-controls"></a>Definování události v ovládacím prvku Windows Forms
-Další informace o definování vlastních událostí, naleznete v tématu [události](../../../standard/events/index.md). Pokud definujete událost, která nemá všechna související data, použijte základní typ pro data události <xref:System.EventArgs>a použijte <xref:System.EventHandler> jako delegát události. Provedete to už jen zbývá definovat člen události a chráněnou `On` *EventName* metodu, která vyvolává událost.  
+Podrobnosti o definování vlastních událostí najdete v tématu [události](../../../standard/events/index.md). Pokud definujete událost, která nemá žádná přidružená data, použijte základní typ pro data události <xref:System.EventArgs>a jako delegáta události použijte <xref:System.EventHandler>. Vše, co je potřeba udělat, je definovat člena události a metodu Protected `On`*EventName* , která událost vyvolá.  
   
- Následující kód fragmentu ukazuje jak `FlashTrackBar` vlastní ovládací prvek definuje vlastní událost, `ValueChanged`. Pro kompletní kód `FlashTrackBar` ukázkový, najdete v článku [jak: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
+ Následující fragment kódu ukazuje, jak `FlashTrackBar` vlastní ovládací prvek definuje vlastní událost, `ValueChanged`. Úplný kód pro `FlashTrackBar` Sample naleznete v tématu [How to: Create a model Windows Forms Control, který zobrazuje průběh](how-to-create-a-windows-forms-control-that-shows-progress.md).  
   
 ```vb  
 Option Explicit  

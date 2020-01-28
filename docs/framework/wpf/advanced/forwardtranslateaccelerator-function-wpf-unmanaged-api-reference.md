@@ -1,5 +1,6 @@
 ---
-title: Funkce ForwardTranslateAccelerator (WPF nespravovaná referenční dokumentace rozhraní API)
+title: Funkce ForwardTranslateAccelerator – reference nespravovaného rozhraní API WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,17 +9,17 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: fff47a86-9d9f-4176-9530-10e1876e393f
-ms.openlocfilehash: 4bb7e665bb836dc5f95b14f39179f1d4b9f8173d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6e8208ffe2c186234f30f31e346ca6b1d0be4c0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960911"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747046"
 ---
-# <a name="forwardtranslateaccelerator-function-wpf-unmanaged-api-reference"></a>Funkce ForwardTranslateAccelerator (WPF nespravovaná referenční dokumentace rozhraní API)
-Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
+# <a name="forwardtranslateaccelerator-function-wpf-unmanaged-api-reference"></a>ForwardTranslateAccelerator – funkce (Referenční dokumentace rozhraní API nespravovaného subsystému WPF)
+Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určeno pro použití přímo v kódu.  
   
- Používá infrastrukturu Windows Presentation Foundation (WPF) pro správu systému windows.  
+ Používá se v infrastruktuře Windows Presentation Foundation (WPF) pro správu systému Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,18 +35,18 @@ HRESULT ForwardTranslateAccelerator(
  Ukazatel na zprávu.  
   
  appUnhandled  
- `true` Pokud už je zadaná příležitost dobře se zpracovala zpráva vstupní aplikace, ale nebyla zpracována. v opačném případě `false`.  
+ `true` v případě, že se aplikaci již dostala možnost zpracovat vstupní zprávu, ale ji nezpracovala; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém .NET Framework](../../get-started/system-requirements.md).  
   
- **DLL:**  
+ **DLL**  
   
- V rozhraní .NET Framework 3.0 a 3.5: PresentationHostDLL.dll  
+ V .NET Framework 3,0 a 3,5: PresentationHostDLL. dll  
   
- V rozhraní .NET Framework 4 a novější: PresentationHost_v0400.dll  
+ V .NET Framework 4 a novější: PresentationHost_v0400. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

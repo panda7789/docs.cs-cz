@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid'
+title: Reakce na kliknutí v ovládacím prvku DataGrid
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,22 +12,22 @@ helpviewer_keywords:
 - examples [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-ms.openlocfilehash: 54e41c6960c24f68cb27a6f6fb859b4b9223ed27
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9aa1331116cd3f2f8050ff9f8cc8cc52d25726d1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914998"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735762"
 ---
 # <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>Postupy: Reakce na kliknutí v ovládacím prvku Windows Forms DataGrid
 > [!NOTE]
-> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Ovládací prvek <xref:System.Windows.Forms.DataGridView> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.DataGrid>; Nicméně ovládací prvek <xref:System.Windows.Forms.DataGrid> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Po připojení model Windows Forms <xref:System.Windows.Forms.DataGrid> k databázi můžete monitorovat, na kterou buňku uživatel kliknul.  
+ Jakmile je <xref:System.Windows.Forms.DataGrid> model Windows Forms připojená k databázi, můžete monitorovat, na kterou buňku uživatel kliknul.  
   
 ### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a>Zjištění, že uživatel ovládacího prvku DataGrid vybere jinou buňku  
   
-- V obslužné rutině události napište kód pro správné reakce. <xref:System.Windows.Forms.DataGrid.CurrentCellChanged>  
+- V obslužné rutině události <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> napište kód, který reaguje správně.  
   
     ```vb  
     Private Sub myDataGrid_CurrentCellChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles myDataGrid.CurrentCellChanged  
@@ -56,9 +56,9 @@ ms.locfileid: "69914998"
   
 ### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a>Určení části ovládacího prvku DataGrid, na kterou uživatel kliknul  
   
-- Volejte metodu v příslušné obslužné rutině události, například <xref:System.Windows.Forms.Control.MouseDown> pro událost nebo <xref:System.Windows.Forms.Control.Click>. <xref:System.Windows.Forms.DataGrid.HitTest%2A>  
+- Volejte metodu <xref:System.Windows.Forms.DataGrid.HitTest%2A> v příslušné obslužné rutině události, například pro událost <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.Click>.  
   
-     <xref:System.Windows.Forms.DataGrid.HitTest%2A> Metoda<xref:System.Windows.Forms.DataGrid.HitTestInfo> vrátí objekt, který obsahuje řádek a sloupec kliknutí na oblast.  
+     Metoda <xref:System.Windows.Forms.DataGrid.HitTest%2A> vrátí objekt <xref:System.Windows.Forms.DataGrid.HitTestInfo>, který obsahuje řádek a sloupec kliknutí na oblast.  
   
     ```vb  
     Private Sub myDataGrid_MouseDown(ByVal sender As Object, _  
@@ -143,4 +143,4 @@ ms.locfileid: "69914998"
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
-- [Postupy: Změna zobrazených dat v době běhu v ovládacím prvku model Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)
+- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](change-displayed-data-at-run-time-wf-datagrid-control.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (Windows Forms)'
+title: 'Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding custom information
 - TreeView control [Windows Forms], adding custom information
 ms.assetid: 68be11de-1d5b-430e-901f-cfbe48d14b19
-ms.openlocfilehash: f588a00c430eb1ae1f0cdcde6b7dd22f0c8671c5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fe507c41de97e9332f3f27e453a476d992f86627
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956990"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732227"
 ---
 # <a name="how-to-add-custom-information-to-a-treeview-or-listview-control-windows-forms"></a>Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (Windows Forms)
-Můžete vytvořit odvozený uzel v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.TreeView> nebo <xref:System.Windows.Forms.ListView> v odvozené položce v ovládacím prvku. Odvození umožňuje přidat libovolná pole, která požadujete, a také vlastní metody a konstruktory pro jejich zpracování. Jedním z použití této funkce je připojení objektu zákazníka ke každému uzlu stromu nebo položce seznamu. Příklady jsou určeny pro <xref:System.Windows.Forms.TreeView> ovládací prvek, ale stejný přístup lze použít <xref:System.Windows.Forms.ListView> pro ovládací prvek.  
+Můžete vytvořit odvozený uzel v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.TreeView> nebo v odvozené položce v ovládacím prvku <xref:System.Windows.Forms.ListView>. Odvození umožňuje přidat libovolná pole, která požadujete, a také vlastní metody a konstruktory pro jejich zpracování. Jedním z použití této funkce je připojení objektu zákazníka ke každému uzlu stromu nebo položce seznamu. Příklady pro ovládací prvek <xref:System.Windows.Forms.TreeView>, ale stejný přístup lze použít pro ovládací prvek <xref:System.Windows.Forms.ListView>.  
   
 ### <a name="to-derive-a-tree-node"></a>Odvození uzlu stromu  
   
-- Vytvořte novou třídu uzlu odvozenou ze <xref:System.Windows.Forms.TreeNode> třídy, která má vlastní pole pro záznam cesty k souboru.  
+- Vytvořte novou třídu uzlu odvozenou z třídy <xref:System.Windows.Forms.TreeNode>, která má vlastní pole pro záznam cesty k souboru.  
   
     ```vb  
     Class myTreeNode  
@@ -100,7 +100,7 @@ Můžete vytvořit odvozený uzel v ovládacím prvku model Windows Forms <xref:
        "\\TextFile.txt")));  
     ```  
   
-2. Pokud jste předali uzel stromu a zadáte ho jako <xref:System.Windows.Forms.TreeNode> třídu, budete muset přetypovat na odvozenou třídu. Přetypování je explicitní převod z jednoho typu objektu na jiný. Další informace o přetypování naleznete v tématu [implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) (Visual Basic), přetypování [a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md) (Visual C#) nebo operátor přetypování [: ()](/cpp/cpp/cast-operator-parens) (vizuál C++).  
+2. Pokud jste předali uzel stromu a zadáte ho jako třídu <xref:System.Windows.Forms.TreeNode>, budete muset přetypovat na svou odvozenou třídu. Přetypování je explicitní převod z jednoho typu objektu na jiný. Další informace o přetypování naleznete v [tématu Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) (Visual Basic), [přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md) ( C#Visual) nebo [operátor přetypování: ()](/cpp/cpp/cast-operator-parens) (vizuál C++).  
   
     ```vb  
     Public Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect  

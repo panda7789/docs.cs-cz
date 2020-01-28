@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView'
+title: Implementace virtuálního režimu v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,17 +11,17 @@ helpviewer_keywords:
 - virtual mode
 - DataGridView control [Windows Forms], large data sets
 ms.assetid: 98236267-f08e-4918-bcf9-77acf050a3ca
-ms.openlocfilehash: 064b58b64e0a9f55e3ef7d15b4962cfec514eff3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f8612a808ac5c9facee55d820529945f481a2cea
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592405"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736505"
 ---
 # <a name="how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control"></a>Postupy: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView
-Následující příklad kódu ukazuje, jak spravovat velké sady dat pomocí <xref:System.Windows.Forms.DataGridView> ovládacím prvkem jeho <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> nastavenou na `true`.  
+Následující příklad kódu ukazuje, jak spravovat velké sady dat pomocí ovládacího prvku <xref:System.Windows.Forms.DataGridView> s vlastností <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> nastavenou na `true`.  
   
- Úplné vysvětlení tento příklad kódu naleznete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](implementing-virtual-mode-wf-datagridview-control.md).  
+ Úplný popis tohoto příkladu kódu naleznete v tématu [Návod: implementace virtuálního režimu v ovládacím prvku DataGridView model Windows Forms](implementing-virtual-mode-wf-datagridview-control.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#000](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#000)]
@@ -31,7 +31,7 @@ Následující příklad kódu ukazuje, jak spravovat velké sady dat pomocí <x
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení System a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

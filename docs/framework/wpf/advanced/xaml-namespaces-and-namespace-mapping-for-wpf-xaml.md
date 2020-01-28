@@ -1,5 +1,5 @@
 ---
-title: Obor názvů XAML mapování oboru názvů pro WPF XAML
+title: Obory názvů XAML a mapování oboru názvů
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 5cce8ff04dbf163aba95346447f0557da14197da
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 85f35c29cdd1d9e4ea9776b756245a75af58e912
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976780"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741834"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Toto téma dále vysvětluje přítomnost a účel dvou mapování oboru názvů XAML, jak se často nacházejí v kořenové značce souboru XAML WPF. Popisuje také, jak vydávat podobná mapování pro použití elementů, které jsou definovány ve vlastním kódu, a/nebo v samostatných sestaveních.  

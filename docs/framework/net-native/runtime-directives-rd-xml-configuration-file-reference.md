@@ -2,12 +2,12 @@
 title: Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
-ms.openlocfilehash: f4c51dc269775d14d395cb464b3787cc987e086d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e74d34693446cca645003a9f93bc1777849e3182
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128131"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738405"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 
@@ -39,27 +39,69 @@ Kořenový element je element [direktivy](directives-element-net-native.md) . M�
 
 Pro referenční informace vyberte prvky z následující struktury nebo si prohlédněte [elementy direktivy modulu runtime](runtime-directive-elements.md). V následující hierarchii se tři tečky označí rekurzivní strukturu. Informace v závorkách označují, zda je tento prvek volitelný nebo vyžadovaný, a pokud je použit, kolik instancí (jedna nebo mnoho) je povoleno.
 
-[Direktivy](directives-element-net-native.md) [1:1] [aplikace](application-element-net-native.md) [0:1] [sestavení](assembly-element-net-native.md) [0: M] [obor názvů](namespace-element-net-native.md) [0: m]. . .
-[Zadejte](type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Obor názvů](namespace-element-net-native.md) [0: m] [obor názvů](namespace-element-net-native.md) [0: m]. . .
-[Zadejte](type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Typ](type-element-net-native.md) [0: m] [podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [typ](type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: m] [Metoda](method-element-net-native.md) [0: M] [parametr](parameter-element-net-native.md) [0: m] [TypeParameter](typeparameter-element-net-native.md) [0: m] [GenericParameter](genericparameter-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) ( konstruované obecné metody) [0: M] [vlastnost](property-element-net-native.md) [[0: m] [](field-element-net-native.md) 0: m] [událost](event-element-net-native.md) [0: m] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: m] [typ](type-element-net-native.md) [0: m]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Metoda](method-element-net-native.md) [0: m] [parametr](parameter-element-net-native.md) [0: m] [TypeParameter](typeparameter-element-net-native.md) [0: M] [GenericParameter](genericparameter-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: m] [Property](property-element-net-native.md) [0: M] [pole](field-element-net-native.md) [0: m] [událost](event-element-net-native.md) [0: m] [ Knihovna](library-element-net-native.md) [0: m] [sestavení](assembly-element-net-native.md) [0: m] [obor názvů](namespace-element-net-native.md) [0: m]. . .
-[Zadejte](type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Obor názvů](namespace-element-net-native.md) [0: m] [obor názvů](namespace-element-net-native.md) [0: m]. . .
-[Zadejte](type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Typ](type-element-net-native.md) [0: m] [podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [typ](type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: m] [Metoda](method-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) (vytvořená obecná metoda) [0: m] [vlastnost](property-element-net-native.md) [0: m] [0: [m]](field-element-net-native.md) [Event](event-element-net-native.md) [0 : M] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: m] [typ](type-element-net-native.md) [0: m]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Metoda](method-element-net-native.md) [0: m] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: m] [vlastnost](property-element-net-native.md) [0: M] [pole](field-element-net-native.md) [0: m] [událost](event-element-net-native.md) [0: m]
+- [Direktivy](directives-element-net-native.md) [1:1]
+  - [Aplikace](application-element-net-native.md) [0:1]
+    - [Sestavení](assembly-element-net-native.md) [0: M]
+      - [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+    - [Obor názvů](namespace-element-net-native.md) [0: M]
+      - [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+    - [Typ](type-element-net-native.md) [0: M]
+      - [Podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1]
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+      - [AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1]
+      - [GenericParameter](genericparameter-element-net-native.md) [0: M]
+      - [Metoda](method-element-net-native.md) [0: M]
+        - [Parametr](parameter-element-net-native.md) [0: M]
+        - [TypeParameter](typeparameter-element-net-native.md) [0: M]
+        - [GenericParameter](genericparameter-element-net-native.md) [0: M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M]
+      - [Vlastnost](property-element-net-native.md) [0: M]
+      - [Pole](field-element-net-native.md) [0: M]
+      - [Událost](event-element-net-native.md) [0: M]
+    - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+      - [Metoda](method-element-net-native.md) [0: M]
+        - [Parametr](parameter-element-net-native.md) [0: M]
+        - [TypeParameter](typeparameter-element-net-native.md) [0: M]
+        - [GenericParameter](genericparameter-element-net-native.md) [0: M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M]
+      - [Vlastnost](property-element-net-native.md) [0: M]
+      - [Pole](field-element-net-native.md) [0: M]
+      - [Událost](event-element-net-native.md) [0: M]
+  - [Knihovna](library-element-net-native.md) [0: M]
+    - [Sestavení](assembly-element-net-native.md) [0: M]
+      - [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+    - [Obor názvů](namespace-element-net-native.md) [0: M]
+      - [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+    - [Typ](type-element-net-native.md) [0: M]
+      - [Podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1]
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+      - [AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1]
+      - [GenericParameter](genericparameter-element-net-native.md) [0: M]
+      - [Metoda](method-element-net-native.md) [0: M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M]
+      - [Vlastnost](property-element-net-native.md) [0: M]
+      - [Pole](field-element-net-native.md) [0: M]
+      - [Událost](event-element-net-native.md) [0: M]
+    - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]
+      - [Zadejte](type-element-net-native.md) [0: M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+      - [Metoda](method-element-net-native.md) [0: M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M]
+      - [Vlastnost](property-element-net-native.md) [0: M]
+      - [Pole](field-element-net-native.md) [0: M]
+      - [Událost](event-element-net-native.md) [0: M]
 
 Element [aplikace](application-element-net-native.md) nemůže mít žádné atributy, nebo může mít atributy zásad popsané v [části direktiva a zásady modulu runtime](#Directives).
 
@@ -84,7 +126,7 @@ Samotný prvek [aplikace](application-element-net-native.md) a podřízené prvk
 
 Všechny zásady určené atributem elementu se vztahují na všechny podřízené prvky, které neurčují hodnotu pro tuto zásadu. Například pokud je zásada určena prvkem [typu](type-element-net-native.md) , tato zásada platí pro všechny obsažené typy a členy, pro které není explicitně určena zásada.
 
-Zásady, které může vyjádřit [aplikace](application-element-net-native.md), [sestavení](assembly-element-net-native.md), [AttributeImplies](attributeimplies-element-net-native.md), [obor názvů](namespace-element-net-native.md), [podtypy](subtypes-element-net-native.md)a elementy [typu](type-element-net-native.md) , se liší od zásad, které je možné vyjádřit pro jednotlivé členy ( [Metody](method-element-net-native.md), [vlastnosti](property-element-net-native.md), [pole](field-element-net-native.md)a prvky [události](event-element-net-native.md) ).
+Zásady, které může vyjádřit [aplikace](application-element-net-native.md), [sestavení](assembly-element-net-native.md), [AttributeImplies](attributeimplies-element-net-native.md), [obor názvů](namespace-element-net-native.md), [podtypy](subtypes-element-net-native.md)a elementy [typu](type-element-net-native.md) , se liší od zásad, které je možné vyjádřit pro jednotlivé členy ( [metodou](method-element-net-native.md), [vlastností](property-element-net-native.md), [polem](field-element-net-native.md)a [událostmi](event-element-net-native.md) ).
 
 ### <a name="specifying-policy-for-assemblies-namespaces-and-types"></a>Určení zásad pro sestavení, obory názvů a typy
 
@@ -108,7 +150,7 @@ Zásady, které může vyjádřit [aplikace](application-element-net-native.md),
 
 - `MarshalDelegate`. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.
 
-- `MarshalStructure`. Řídí zásady pro zařazování struktur do nativního kódu.
+- `MarshalStructure` . Řídí zásady pro zařazování struktur do nativního kódu.
 
 Nastavení přidružená k těmto typům zásad jsou:
 

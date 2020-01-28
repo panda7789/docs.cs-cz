@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#'
+title: Dědění z ovládacího prvku
 ms.date: 03/30/2017
 helpviewer_keywords:
 - inheritance [Windows Forms], custom controls
@@ -11,16 +11,16 @@ ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: c54733a340b1855b3fc7b90ff2b5178fad8c5303
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 713ccf97a73ce9684b9124a121369f22751861d0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460590"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740135"
 ---
 # <a name="walkthrough-inherit-from-a-windows-forms-control-with-c"></a>Návod: dědění z ovládacího prvku model Windows Forms pomocí jazyka C\#
 
-Pomocí vizuálu C#můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti můžete vytvářet ovládací prvky, které budou uchovávat veškerou základní funkci standardních model Windows Formsch ovládacích prvků, ale také zahrnovat vlastní funkce. V tomto návodu vytvoříte jednoduchý Zděděný ovládací prvek s názvem `ValueButton`. Toto tlačítko zdědí funkce ze standardního ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Button> a zpřístupní vlastní vlastnost s názvem `ButtonValue`.
+Pomocí C#můžete vytvořit výkonné vlastní ovládací prvky prostřednictvím *dědičnosti*. Prostřednictvím dědičnosti můžete vytvářet ovládací prvky, které budou uchovávat veškerou základní funkci standardních model Windows Formsch ovládacích prvků, ale také zahrnovat vlastní funkce. V tomto návodu vytvoříte jednoduchý Zděděný ovládací prvek s názvem `ValueButton`. Toto tlačítko zdědí funkce ze standardního ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Button> a zpřístupní vlastní vlastnost s názvem `ButtonValue`.
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
@@ -87,7 +87,7 @@ Ovládací prvky nejsou samostatné projekty; musí být hostovány v kontejneru
 
 ### <a name="to-build-your-control"></a>Sestavení ovládacího prvku
 
-V nabídce **sestavení** klikněte na **Sestavit řešení**. Sestavení by mělo být úspěšné bez chyb nebo upozornění kompilátoru.
+Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**. Sestavení by mělo být úspěšné bez chyb nebo upozornění kompilátoru.
 
 ### <a name="to-create-a-test-project"></a>Vytvoření testovacího projektu
 

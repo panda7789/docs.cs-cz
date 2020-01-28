@@ -8,16 +8,18 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: 5eb1aaf96097d2c00cb04e24e65e01464f5f00c6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8c911dc1d0aa36ab8e57fb8a77a52d9cec20743c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711971"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745391"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Definování rovnosti hodnoty pro typ (C# Průvodce programováním)
 
-Při definování třídy nebo struktury se rozhodujete, zda má smysl vytvořit vlastní definici hodnoty rovnosti (nebo ekvivalence) pro daný typ. Obvykle implementujete rovnost hodnot, pokud se očekává, že se objekty typu přidají do kolekce nějakého řazení, nebo když jejich primární účel ukládá sadu polí nebo vlastností. Definici rovnosti hodnot můžete založit na porovnání všech polí a vlastností v typu nebo můžete založit definici u podmnožiny. Ale v obou případech a v obou třídách i strukturách by vaše implementace měla dodržovat pět záruk rovnocennosti:  
+Při definování třídy nebo struktury se rozhodujete, zda má smysl vytvořit vlastní definici hodnoty rovnosti (nebo ekvivalence) pro daný typ. Obvykle implementujete rovnost hodnot, pokud se očekává, že se objekty typu přidají do kolekce nějakého řazení, nebo když jejich primární účel ukládá sadu polí nebo vlastností. Definici rovnosti hodnot můžete založit na porovnání všech polí a vlastností v typu nebo můžete založit definici u podmnožiny. 
+
+V obou případech a v obou třídách i strukturách by vaše implementace měla dodržovat pět záruk ekvivalence (pro následující pravidla předpokládají, že `x`, `y` a `z` nejsou null):  
   
 1. `x.Equals(x)` vrátí `true`. Tato vlastnost se nazývá reflexivní.  
   
@@ -27,8 +29,8 @@ Při definování třídy nebo struktury se rozhodujete, zda má smysl vytvořit
   
 4. Po sobě jdoucí volání `x.Equals(y)` vracet stejnou hodnotu, pokud se objekty odkazované x a y nezmění.  
   
-5. `x.Equals(null)` vrátí `false`. `null.Equals(null)` ale vyvolá výjimku. nedodržuje číslo pravidla druhé výše.  
-  
+5. Libovolná hodnota, která není null, se nerovná hodnotě null. Modul CLR však kontroluje hodnotu null u všech volání metody a vyvolá `NullReferenceException`, pokud by odkaz `this` null. Proto `x.Equals(y)` vyvolá výjimku, pokud `x` má hodnotu null. Který přerušuje pravidla 1 nebo 2 v závislosti na argumentu pro `Equals`.
+ 
  Libovolná struktura, kterou definujete, již má výchozí implementaci rovnosti hodnot, kterou dědí z <xref:System.ValueType?displayProperty=nameWithType> přepsání <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> metody. Tato implementace používá reflexi k prohlédnutí všech polí a vlastností v typu. I když tato implementace přináší správné výsledky, je poměrně pomalé ve srovnání s vlastní implementací, kterou zapisujete konkrétně pro daný typ.  
   
  Podrobnosti implementace pro rovnost hodnot se liší pro třídy a struktury. Nicméně třídy a struktury vyžadují stejný základní postup pro implementaci rovnosti:  
@@ -68,4 +70,4 @@ Při definování třídy nebo struktury se rozhodujete, zda má smysl vytvořit
 ## <a name="see-also"></a>Viz také:
 
 - [Porovnání rovnosti](equality-comparisons.md)
-- [Průvodce programováním v jazyce C#](../index.md)
+- [C#Průvodce programováním](../index.md)

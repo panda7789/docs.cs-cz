@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna vzhledu textu a obrázků ToolStrip ve Windows Forms'
+title: 'Postupy: Změna vzhledu textu a obrázků ToolStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], text
 - toolbars [Windows Forms], text
 ms.assetid: d62dc9d1-2edd-4dfa-aed7-1335d6e13d86
-ms.openlocfilehash: cf2f332b17bf6ff5b6ffb7cbc2d5777649728ec6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7816e138e44554683c201895ece1f886ace8bfa6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650847"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746605"
 ---
 # <a name="how-to-change-the-appearance-of-toolstrip-text-and-images-in-windows-forms"></a>Postupy: Změna vzhledu textu a obrázků ToolStrip ve Windows Forms
-Můžete řídit, zda text a obrázky jsou zobrazeny na <xref:System.Windows.Forms.ToolStripItem> a jak jsou zarovnány relativně vůči sobě navzájem a <xref:System.Windows.Forms.ToolStrip>.  
+Můžete určit, zda se text a obrázky zobrazí na <xref:System.Windows.Forms.ToolStripItem> a jak jsou zarovnány relativně k sobě navzájem a <xref:System.Windows.Forms.ToolStrip>.  
   
-### <a name="to-define-what-is-displayed-on-a-toolstripitem"></a>Chcete-li definovat, co se zobrazí na prvku ToolStripItem  
+### <a name="to-define-what-is-displayed-on-a-toolstripitem"></a>Definování obsahu zobrazeného na ToolStripItem  
   
-- Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost na požadovanou hodnotu. Možnosti jsou `Image`, `ImageAndText`, `None`, a `Text`. Výchozí hodnota je `ImageAndText`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na požadovanou hodnotu. Možnosti jsou `Image`, `ImageAndText`, `None`a `Text`. Výchozí hodnota je `ImageAndText`.  
   
     ```vb  
     ToolStripButton2.DisplayStyle = _  
@@ -38,7 +38,7 @@ Můžete řídit, zda text a obrázky jsou zobrazeny na <xref:System.Windows.For
   
 ### <a name="to-align-text-on-a-toolstripitem"></a>Zarovnání textu v prvku ToolStripItem  
   
-- Nastavte <xref:System.Windows.Forms.ToolStripItem.TextAlign%2A> vlastnost na požadovanou hodnotu. Možnosti jsou kombinací nejvyšší, střední a dolní část s vlevo, na střed a doprava. Výchozí hodnota je `MiddleCenter`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.TextAlign%2A> na požadovanou hodnotu. Možnosti jsou jakékoli kombinace horní, prostřední a dolní části s levou, střední a pravou. Výchozí hodnota je `MiddleCenter`.  
   
     ```vb  
     ToolStripSplitButton1.TextAlign = _  
@@ -49,9 +49,9 @@ Můžete řídit, zda text a obrázky jsou zobrazeny na <xref:System.Windows.For
     toolStripSplitButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;  
     ```  
   
-### <a name="to-align-an-image-on-a-toolstripitem"></a>Chcete-li Zarovnat obrázek na prvku ToolStripItem  
+### <a name="to-align-an-image-on-a-toolstripitem"></a>Zarovnání obrázku v prvku ToolStripItem  
   
-- Nastavte <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A> vlastnost na požadovanou hodnotu. Možnosti jsou kombinací nejvyšší, střední a dolní část s vlevo, na střed a doprava. Výchozí hodnota je `MiddleLeft`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A> na požadovanou hodnotu. Možnosti jsou jakékoli kombinace horní, prostřední a dolní části s levou, střední a pravou. Výchozí hodnota je `MiddleLeft`.  
   
     ```vb  
     ToolStripSplitButton1.ImageAlign = _  
@@ -62,9 +62,9 @@ Můžete řídit, zda text a obrázky jsou zobrazeny na <xref:System.Windows.For
     toolStripSplitButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;  
     ```  
   
-### <a name="to-define-how-toolstripitem-text-and-images-are-displayed-relative-to-each-other"></a>Chcete-li definovat, jak ovládací prvek ToolStripItem text a obrázky se zobrazí relativně vůči sobě navzájem  
+### <a name="to-define-how-toolstripitem-text-and-images-are-displayed-relative-to-each-other"></a>Definování způsobu vzájemného zobrazení textu a obrázků prvku ToolStripItem  
   
-- Nastavte <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> vlastnost na požadovanou hodnotu. Možnosti jsou `ImageAboveText`, `ImageBeforeText`, `Overlay`, `TextAboveImage`, a `TextBeforeImage`. Výchozí hodnota je `ImageBeforeText`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> na požadovanou hodnotu. Tyto možnosti jsou `ImageAboveText`, `ImageBeforeText`, `Overlay`, `TextAboveImage`a `TextBeforeImage`. Výchozí hodnota je `ImageBeforeText`.  
   
     ```vb  
     ToolStripButton1.TextImageRelation = _  

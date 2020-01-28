@@ -1,5 +1,5 @@
 ---
-title: Vývoj ovládacích prvků Windows Forms v době návrhu
+title: Vývoj ovládacích prvků v době návrhu
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls [Windows Forms]
@@ -12,12 +12,12 @@ ms.assetid: e5a8e088-7ec8-4fd9-bcb3-9078fd134829
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: f6afb13a01075d3aa2d101100a0c3bfe31c6ee29
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: dac049ea6a51037daa0e23dc93476e4410b2df06
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460079"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745994"
 ---
 # <a name="develop-windows-forms-controls-at-design-time"></a>Vývoj ovládacích prvků model Windows Forms v době návrhu
 

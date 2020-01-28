@@ -2,12 +2,12 @@
 title: Knihovny NuGet a .NET
 description: Doporučení osvědčených postupů pro balení s NuGet pro knihovny .NET
 ms.date: 01/15/2019
-ms.openlocfilehash: 71c380f6062c09a8951769009b29b567fddfddfc
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f1e8d39fe2988f11ce7fd351a4d6bee6d322f2b5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706475"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731370"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -34,7 +34,7 @@ Existují dva hlavní způsoby, jak vytvořit balíček NuGet. Novější a dopo
 
 Starší způsob vytváření balíčku NuGet je soubor `*.nuspec` a nástroj `nuget.exe` příkazového řádku. Soubor nuspec vám dává Skvělé řízení, ale musíte pečlivě určit, jaká sestavení a cíle se mají zahrnout do finálního balíčku NuGet. Je snadné vytvořit chybu nebo někoho, aby se při provádění změn aktualizoval nuspec. Výhodou nuspec je, že můžete použít vytvoření balíčků NuGet pro architektury, které ještě nepodporují soubor projektu ve stylu sady SDK.
 
-**✔️ zvažte** použití souboru projektu ve stylu sady SDK k vytvoření balíčku NuGet.
+✔️ Zvažte použití souboru projektu ve stylu sady SDK k vytvoření balíčku NuGet.
 
 ## <a name="package-dependencies"></a>Závislosti balíčků
 
@@ -59,15 +59,15 @@ Balíček NuGet podporuje mnoho [vlastností metadat](/nuget/reference/nuspec). 
 > [!IMPORTANT]
 > Projekt bez licence se standardně [vylučuje na výhradní Copyright](https://choosealicense.com/no-permission/), což umožňuje, aby ho jiní uživatelé mohli používat.
 
-**✔️ zvažte** možnost zvolit název balíčku NuGet s předponou, která splňuje [kritéria](/nuget/reference/id-prefix-reservation)rezervace předpon NuGet.
+✔️ Zvažte možnost zvolit název balíčku NuGet s předponou, která splňuje [kritéria](/nuget/reference/id-prefix-reservation)rezervace předpon NuGet.
 
-**✔️** použijte odkaz HTTPS href na ikonu balíčku.
+✔️ použijte odkaz HTTPS href na ikonu balíčku.
 
 > Weby, jako je NuGet.org spuštěná s povoleným protokolem HTTPS a zobrazením image bez HTTPS, vytvoří upozornění na smíšený obsah.
 
-**✔️** použít obrázek ikony balíčku, který je 64 × 64 a má transparentní pozadí pro nejlepší výsledky zobrazení.
+✔️ použít obrázek ikony balíčku, který je 64 × 64 a má transparentní pozadí pro nejlepší výsledky zobrazení.
 
-**✔️ zvažte** nastavení [zdrojového odkazu](./sourcelink.md) pro přidání metadat správy zdrojů do sestavení a balíčku NuGet.
+✔️ Zvažte nastavení [zdrojového odkazu](./sourcelink.md) pro přidání metadat správy zdrojů do sestavení a balíčku NuGet.
 
 > Odkaz na zdroj automaticky přidá do balíčku NuGet metadata `RepositoryUrl` a `RepositoryType`. Odkaz na zdroj také přidá informace o přesném zdrojovém kódu, ze kterého byl balíček sestaven. Například balíček vytvořený z úložiště Git bude obsahovat hodnotu hash potvrzení přidané jako metadata.
 
@@ -84,9 +84,9 @@ Balíčky NuGet s příponou verze se považují za [předběžné verze](/nuget
 
 ![Závislost předběžné verze balíčku NuGet](./media/nuget/nuget-prerelease-package.png "Závislost předběžné verze balíčku NuGet")
 
-**✔️** publikovat předběžnou verzi balíčku při testování, náhledu nebo experimentování.
+✔️ publikovat předběžnou verzi balíčku při testování, náhledu nebo experimentování.
 
-**✔️** po jeho přípravě publikovat stabilní balíček, aby na něj mohli odkazovat další stabilní balíčky.
+✔️ po jeho přípravě publikovat stabilní balíček, aby na něj mohli odkazovat další stabilní balíčky.
 
 ## <a name="symbol-packages"></a>Balíčky symbolů
 
@@ -112,7 +112,7 @@ Alternativou k vytvoření balíčku symbolů je vkládání souborů symbolů d
 
 Nevýhodou soubory symbolů vkládání je to, že zvyšují velikost balíčku o přibližně 30% pro knihovny .NET zkompilované pomocí projektů ve stylu sady SDK. Pokud je velikost balíčku obavou, místo toho byste měli publikovat symboly v balíčku symbolů.
 
-**✔️ zvažte** publikování symbolů jako balíčku symbolů (`*.snupkg`) do NuGet.org
+✔️ Zvažte publikování symbolů jako balíčku symbolů (`*.snupkg`) do NuGet.org
 
 > Balíčky symbolů (`*.snupkg`) poskytují vývojářům kvalitní možnosti ladění na vyžádání, aniž by bloating hlavní velikost balíčku a ovlivnily výkon obnovení pro uživatele, kteří nemají v úmyslu ladit balíček NuGet.
 >

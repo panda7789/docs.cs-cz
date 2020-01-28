@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup ke konkrétním položkám v ovládacím prvku Windows Forms ComboBox, ListBox nebo CheckedListBox'
+title: Přístup ke konkrétním položkám v ovládacím prvku ComboBox, ListBox nebo CheckedListBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], accessing items
 - CheckedListBox control [Windows Forms], accessing items
 ms.assetid: 1216742f-bcf9-4ff8-8a62-d7c9053c2b96
-ms.openlocfilehash: fbdd9168fe286823db7cf066ae0f821b8db88ecb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67673ec7f136f1466d4fd091e691324c53e7de06
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62011824"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746320"
 ---
 # <a name="how-to-access-specific-items-in-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Přístup ke konkrétním položkám v ovládacím prvku Windows Forms ComboBox, ListBox nebo CheckedListBox
-Přístup k určité položky ve Windows Forms – pole se seznamem, pole se seznamem nebo pole se seznamem checked je základní úlohy. Umožňuje programově určit, co je v seznamu na dané pozici.  
+Základní úloha je přístup k určitým položkám v model Windows Forms pole se seznamem, seznamem nebo zaškrtnutým seznamem. Umožňuje programově určit, co je v seznamu, na kterékoli dané pozici.  
   
-### <a name="to-access-a-specific-item"></a>Pro přístup k určité položce  
+### <a name="to-access-a-specific-item"></a>Přístup ke konkrétní položce  
   
-1. Dotaz `Items` kolekce pomocí indexu určitou položku:  
+1. Dotazování kolekce `Items` pomocí indexu konkrétní položky:  
   
     ```vb  
     Private Function GetItemText(i As Integer) As String  

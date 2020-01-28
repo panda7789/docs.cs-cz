@@ -2,12 +2,12 @@
 title: Katalog identifikátorů runtime .NET Core (RID)
 description: Přečtěte si o identifikátoru modulu runtime (RID) a způsobu použití identifikátorů RID v .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: d401cf3a8a147a16c1aea0ba7d5e799cf182583e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
-ms.translationtype: MT
+ms.openlocfilehash: b4e0226afa3f68d7c0d17b19e66489d70b759cf8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740574"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733552"
 ---
 # <a name="net-core-rid-catalog"></a>Katalog identifikátorů RID .NET Core
 
@@ -39,7 +39,7 @@ Identifikátorů RID, které reprezentují konkrétní operační systémy, se o
 
 ## <a name="rid-graph"></a>Graf RID
 
-Graf RID nebo modul runtime Fallback za běhu je seznam identifikátorů ridů, které jsou vzájemně kompatibilní. Identifikátorů RID jsou definované v balíčku [Microsoft. NETCore. Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) . Můžete se podívat na seznam podporovaných identifikátorů RID a grafu RID v souboru [*runtime. JSON*](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) , který se nachází v úložišti CoreFX. V tomto souboru vidíte, že všechny identifikátorů RID, s výjimkou základní třídy, obsahují příkaz `"#import"`. Tyto příkazy označují kompatibilní identifikátorů RID.
+Graf RID nebo modul runtime Fallback za běhu je seznam identifikátorů ridů, které jsou vzájemně kompatibilní. Identifikátorů RID jsou definované v balíčku [Microsoft. NETCore. Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) . Můžete se podívat na seznam podporovaných identifikátorů RID a grafu RID v souboru [*runtime. JSON*](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) , který se nachází v úložišti `dotnet/runtime`. V tomto souboru vidíte, že všechny identifikátorů RID, s výjimkou základní třídy, obsahují příkaz `"#import"`. Tyto příkazy označují kompatibilní identifikátorů RID.
 
 Když NuGet obnoví balíčky, pokusí se najít přesnou shodu pro zadaný modul runtime.
 Pokud se nenajde přesná shoda, NuGet se vrátí do grafu, dokud nenajde nejbližší kompatibilní systém podle grafu RID.
@@ -80,7 +80,7 @@ Existují některé okolnosti týkající se identifikátorů RID, které je tř
 ## <a name="using-rids"></a>Použití identifikátorů RID
 
 Aby bylo možné používat identifikátorů RID, musíte zjistit, které identifikátorů RID existují. K platformě se pravidelně přidávají nové hodnoty.
-Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX.
+Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti `dotnet/runtime`.
 
 Sada .NET Core 2,0 SDK zavádí koncept přenosných identifikátorů RID. Jsou to nové hodnoty přidané do grafu RID, které nejsou vázané na konkrétní verzi nebo distribuci operačního systému, a jsou upřednostňovanou volbou při použití .NET Core 2,0 a vyšší. Jsou zvláště užitečné při práci s více Linux distribuce, protože většina distribučních identifikátorů RID je mapována na přenosné identifikátorů RID.
 
@@ -88,7 +88,7 @@ Následující seznam obsahuje malou podmnožinu nejběžnějších identifikát
 
 ## <a name="windows-rids"></a>Identifikátorů RID Windows
 
-Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX.
+Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti `dotnet/runtime`.
 
 - Přenosná verze (.NET Core 2,0 nebo novější)
   - `win-x64`
@@ -112,7 +112,7 @@ Další informace najdete v tématu [závislosti a požadavky .NET Core](install
 
 ## <a name="linux-rids"></a>Linux identifikátorů RID
 
-Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX. Zařízení s distribucí, která nejsou uvedená níže, můžou fungovat s jedním z přenosných identifikátorů RID. Například zařízení maliny PI, na kterých běží distribuce systému Linux, nejsou uvedená v seznamu mohou být cílem `linux-arm`.
+Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti `dotnet/runtime`. Zařízení s distribucí, která nejsou uvedená níže, můžou fungovat s jedním z přenosných identifikátorů RID. Například zařízení maliny PI, na kterých běží distribuce systému Linux, nejsou uvedená v seznamu mohou být cílem `linux-arm`.
 
 - Přenosná verze (.NET Core 2,0 nebo novější)
   - `linux-x64` (Většina distribucí počítačů, jako jsou CentOS, Debian, Fedora, Ubuntu a deriváty)
@@ -130,7 +130,7 @@ Další informace najdete v tématu [závislosti a požadavky .NET Core](install
 
 ## <a name="macos-rids"></a>macOS identifikátorů RID
 
-macOS identifikátorů RID používá starší značku "OSX". Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti CoreFX.
+macOS identifikátorů RID používá starší značku "OSX". Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v souboru [runtime. JSON](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) v úložišti `dotnet/runtime`.
 
 - Přenosná verze (.NET Core 2,0 nebo novější)
   - `osx-x64` (minimální verze operačního systému je macOS 10,12 Sierra)

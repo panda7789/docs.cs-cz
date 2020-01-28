@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení webových odkazů pomocí ovládacího prvku Windows Forms RichTextBox'
+title: Zobrazení odkazů ve stylu webu pomocí ovládacího prvku RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,31 +10,31 @@ helpviewer_keywords:
 - examples [Windows Forms], text boxes
 - RichTextBox control [Windows Forms], linking to Web pages
 ms.assetid: 95089a37-a202-4f7a-94ee-6ee312908851
-ms.openlocfilehash: ce71981f7b233d3e168689c766128646eed3e981
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 78a07a250744018f121b03f2973b1661ed6bf764
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046189"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745538"
 ---
 # <a name="how-to-display-web-style-links-with-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení webových odkazů pomocí ovládacího prvku Windows Forms RichTextBox
 
-Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms může zobrazovat webové odkazy jako barevné a podtržené. Můžete napsat kód, který otevře okno prohlížeče znázorňující web zadaný v textu odkazu po kliknutí na odkaz.
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> může zobrazovat webové odkazy jako barevné a podtržené. Můžete napsat kód, který otevře okno prohlížeče znázorňující web zadaný v textu odkazu po kliknutí na odkaz.
 
 ### <a name="to-link-to-a-web-page-with-the-richtextbox-control"></a>Odkazování na webovou stránku pomocí ovládacího prvku RichTextBox
 
-1. Nastavte vlastnost na řetězec, který obsahuje platnou adresu URL (například "http://www.microsoft.com/"). <xref:System.Windows.Forms.RichTextBox.Text%2A>
+1. Vlastnost <xref:System.Windows.Forms.RichTextBox.Text%2A> nastavte na řetězec, který obsahuje platnou adresu URL (například "http://www.microsoft.com/").
 
-2. Ujistěte se, <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> že je vlastnost nastavena `true` na hodnotu (výchozí).
+2. Ujistěte se, že je vlastnost <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> nastavena na hodnotu `true` (výchozí).
 
-3. Vytvořte novou globální instanci <xref:System.Diagnostics.Process> objektu.
+3. Vytvořte novou globální instanci objektu <xref:System.Diagnostics.Process>.
 
-4. Napište obslužnou rutinu události pro <xref:System.Windows.Forms.RichTextBox.LinkClicked> událost, která odešle prohlížeči požadovaný text.
+4. Napište obslužnou rutinu události pro událost <xref:System.Windows.Forms.RichTextBox.LinkClicked>, která odešle prohlížeči požadovaný text.
 
-    V následujícím <xref:System.Windows.Forms.RichTextBox.LinkClicked> příkladu událost otevře instanci aplikace Internet Explorer na adresu URL zadanou <xref:System.Windows.Forms.RichTextBox.Text%2A> ve vlastnosti <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládacím prvkem.
+    V následujícím příkladu událost <xref:System.Windows.Forms.RichTextBox.LinkClicked> otevírá instanci aplikace Internet Explorer na adresu URL zadanou ve vlastnosti <xref:System.Windows.Forms.RichTextBox.Text%2A> ovládacího prvku <xref:System.Windows.Forms.RichTextBox>. Tento příklad předpokládá formulář s ovládacím prvkem <xref:System.Windows.Forms.RichTextBox>.
 
     > [!IMPORTANT]
-    > Při volání <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> metody dojde k <xref:System.Security.SecurityException> výjimce, pokud kód spouštíte v kontextu částečného vztahu důvěryhodnosti z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../misc/code-access-security-basics.md).
+    > Při volání metody <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> narazíte na výjimku <xref:System.Security.SecurityException>, pokud kód spouštíte v kontextu částečného vztahu důvěryhodnosti z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../misc/code-access-security-basics.md).
 
     ```vb
     Public p As New System.Diagnostics.Process
@@ -75,7 +75,7 @@ Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms mů
        }
     ```
 
-    (Vizuální C++) Je nutné inicializovat proces `p`, který můžete provést zahrnutím následujícího příkazu do konstruktoru formuláře:
+    (Vizuální C++) Je nutné inicializovat `p`procesu, což lze provést vložením následujícího příkazu do konstruktoru formuláře:
 
     ```cpp
     p = gcnew System::Diagnostics::Process();

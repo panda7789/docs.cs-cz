@@ -1,27 +1,28 @@
 ---
-title: 'Postupy: Určení nainstalované verze WPF'
+title: Určení nainstalované verze WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - version [WPF], finding
 ms.assetid: 99971cef-e218-4f9f-a4c1-350332741860
-ms.openlocfilehash: ffbd9a4c7f66dff9c8773dff4259551e20aa963d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8fc5c380779891b44b7c4f7f8aeb5ed119d8b768
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052453"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735691"
 ---
-# <a name="how-to-determine-the-installed-version-of-wpf"></a>Postupy: Určení nainstalované verze WPF
-Číslo verze pro aktuální nainstalovaná verze [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] se nachází v **registru**.  
+# <a name="how-to-determine-the-installed-version-of-wpf"></a>Postupy: Určení instalovatelné verze WPF
+Číslo verze pro aktuálně nainstalovanou verzi [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] se nachází v **registru**.  
   
- Najít číslo verze:  
+ Číslo verze zjistíte takto:  
   
-1. Na **Start** nabídky, klikněte na tlačítko **spustit**.  
+1. V nabídce **Start** klikněte na **Spustit**.  
   
-2. V **otevřít**, typ **regedit.exe**.  
+2. V **otevřeném**zadejte **Regedit. exe**.  
   
 3. Otevřete následující klíč:  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.0\Setup\Windows Presentation Foundation`  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Číslo verze je uloženo v **verze** hodnotu.
+ Číslo verze [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je uloženo v hodnotě **verze** .

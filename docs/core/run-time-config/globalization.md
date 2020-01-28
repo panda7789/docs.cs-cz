@@ -3,12 +3,12 @@ title: Nastavení konfigurace globalizace
 description: Přečtěte si o nastaveních prostředí runtime, která konfigurují aspekty globalizace aplikace .NET Core, například jak analyzuje data v japonštině.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 76cd4a0a0f93f4df3ff243c6024b952576e8e6cb
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 3764d0eb714c094b44ae843a1e626073ff8d82e4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740541"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733463"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Možnosti konfigurace běhového běhu pro globalizaci
 
@@ -21,7 +21,34 @@ ms.locfileid: "75740541"
 | | Název nastavení | Hodnoty |
 | - | - | - |
 | **runtimeconfig. JSON** | `System.Globalization.Invariant` | `false` – přístup k kulturním datům<br/>`true`-spustit v režimu invariantování |
+| **Vlastnost MSBuild** | `InvariantGlobalization` | `false` – přístup k kulturním datům<br/>`true`-spustit v režimu invariantování |
 | **Proměnná prostředí** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0` – přístup k kulturním datům<br/>`1`-spustit v režimu invariantování |
+
+### <a name="examples"></a>Příklady
+
+soubor *runtimeconfig. JSON* :
+
+```json
+{
+   "runtimeOptions": {
+      "configProperties": {
+         "System.Globalization.Invariant": true
+      }
+   }
+}
+```
+
+Soubor projektu:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+</Project>
+```
 
 ## <a name="era-year-ranges"></a>Rozsahy roků období
 

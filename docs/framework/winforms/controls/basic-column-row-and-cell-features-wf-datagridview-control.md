@@ -1,5 +1,5 @@
 ---
-title: Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView
+title: Základní funkce sloupce, řádku a buňky v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], basic features
@@ -7,51 +7,51 @@ helpviewer_keywords:
 - data grids [Windows Forms], examples
 - DataGridView control [Windows Forms], examples
 ms.assetid: 78085f26-d5d2-4b75-813e-e932b72fd06f
-ms.openlocfilehash: 4c755d5f0c2e134b83beb27ebbd06080bad620b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02f8ad7e11a61e9434748a8b3b2f853f98b013d1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942851"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746228"
 ---
 # <a name="basic-column-row-and-cell-features-in-the-windows-forms-datagridview-control"></a>Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView
-Mnoho základní chování `DataGridView` buněk, řádků a sloupců je možné upravovat prostřednictvím jedné vlastnosti nastavení. Témata v této části popisují některé z nejčastěji používaných z těchto funkcí.  
+Nastavení jednoduchých vlastností může upravit mnoho základních chování `DataGridView` buněk, řádků a sloupců. Témata v této části popisují některé z nejčastěji používaných funkcí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView](how-to-hide-columns-in-the-windows-forms-datagridview-control.md)  
- Popisuje, jak zabránit určité sloupce v ovládacím prvku.  
+ Popisuje, jak zabránit zobrazení určitých sloupců v ovládacím prvku.  
   
  [Postupy: Skrytí záhlaví sloupců v ovládacím prvku Windows Forms DataGridView](how-to-hide-column-headers-in-the-windows-forms-datagridview-control.md)  
- Popisuje, jak zabránit záhlaví sloupců v ovládacím prvku.  
+ Popisuje, jak zabránit zobrazení záhlaví sloupců v ovládacím prvku.  
   
- [Postupy: Povolení změny pořadí sloupců v ovládacím prvku Windows Forms DataGridView](how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)  
- Popisuje, jak povolit uživatelům změnit uspořádání sloupců v ovládacím prvku.  
+ [Postupy: Povolení změny pořadí v ovládacím prvku Windows Forms DataGridView](how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)  
+ Popisuje, jak uživatelům umožnit změnu uspořádání sloupců v ovládacím prvku.  
   
- [Postupy: Ukotvit sloupce v ovládacím prvku Windows Forms DataGridView](how-to-freeze-columns-in-the-windows-forms-datagridview-control.md)  
- Popisuje, jak zabránit v jedné nebo více sousedící sloupce posouvání.  
+ [Postupy: Zablokování sloupců v ovládacím prvku Windows Forms DataGridView](how-to-freeze-columns-in-the-windows-forms-datagridview-control.md)  
+ Popisuje, jak zabránit posouvání jednoho nebo více sousedících sloupců.  
   
- [Postupy: Nastavení sloupců jen pro čtení v ovládacím prvku Windows Forms DataGridView](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)  
- Popisuje, jak zabránit uživatelům v úpravách určitými sloupci v ovládacím prvku.  
+ [Postupy: Přepnutí sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)  
+ Popisuje, jak zabránit uživatelům v úpravách konkrétních sloupců v ovládacím prvku.  
   
- [Postupy: Zabránit řádku přidání a odstranění v ovládacím prvku Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md)  
- Popisuje postup odstranění řádku pro nové záznamy v dolní části ovládacího prvku na zabrání uživatelům přidávat řádky. Také popisuje, jak uživatelům zabránit v odstranění řádků.  
+ [Postupy: Zamezení přidávání a odstraňování řádků v ovládacím prvku Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md)  
+ Popisuje, jak odebrat řádek pro nové záznamy v dolní části ovládacího prvku a zabránit tak uživatelům v přidávání řádků. Popisuje také, jak zabránit uživatelům v odstraňování řádků.  
   
  [Postupy: Získání a nastavení aktuální buňky v ovládacím prvku Windows Forms DataGridView](get-and-set-the-current-cell-wf-datagridview-control.md)  
- Popisuje, jak získat přístup k na buňku, která má právě fokus v ovládacím prvku.  
+ Popisuje, jak získat přístup k buňce, která aktuálně má fokus v ovládacím prvku.  
   
  [Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView](how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)  
- Popisuje, jak vytvořit image sloupec, který zobrazuje ikony v každé buňce.  
+ Popisuje, jak vytvořit sloupec obrázku, který v každé buňce zobrazuje ikonu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.DataGridView>  
- Poskytuje referenční dokumentaci pro ovládací prvek.  
+ Poskytuje referenční dokumentaci k ovládacímu prvku.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)  
- Obsahuje témata, které popisují, jak změnit základní vzhled ovládacího prvku a formátování zobrazení dat v buňce.  
+ Poskytuje témata, které popisují, jak upravit základní vzhled ovládacího prvku a formátování zobrazení dat buněk.  
   
  [Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView](programming-with-cells-rows-and-columns-in-the-datagrid.md)  
- Obsahuje témata, které popisují, jak programovat s buňky, řádku a sloupci objekty.  
+ Poskytuje témata, která popisují, jak programovat s objekty buňky, řádku a sloupce.  
   
 ## <a name="see-also"></a>Viz také:
 

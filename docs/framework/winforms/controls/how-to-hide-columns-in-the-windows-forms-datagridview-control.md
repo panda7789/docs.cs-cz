@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView'
+title: Skrýt sloupce v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - data grids [Windows Forms], hiding columns
 - columns [Windows Forms], hiding
 ms.assetid: 3f94143a-2ef0-49a5-a22a-b2e6f9289642
-ms.openlocfilehash: d991f3e6a2d70631c2a904bc5952a9c8e03f7949
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7ac6ccac5c02f014d5aa629956e51675cc60fddc
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651697"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736557"
 ---
 # <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView
-Někdy budete chtít zobrazit jenom některé sloupce, které jsou k dispozici ve Windows Forms <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Například můžete chtít zobrazit zaměstnanec salary sloupec uživatelů pomocí přihlašovacích údajů pro správu při skrytí od jiných uživatelů. Alternativně můžete chtít vytvořit vazbu ovládacího prvku do zdroje dat, který obsahuje mnoho sloupců, jenom některé z nich, které chcete zobrazit. V takovém případě bude obvykle odebrat sloupce, které vás nezajímají zobrazení spíše než je skrýt.  
+Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.DataGridView>. Například můžete chtít zobrazit mzdový sloupec zaměstnanců uživatelům s přihlašovacími údaji pro správu při jejich skrývání od jiných uživatelů. Alternativně můžete chtít navazovat ovládací prvek na zdroj dat, který obsahuje mnoho sloupců, pouze některé z nich chcete zobrazit. V takovém případě obvykle odeberete sloupce, které nemají zájem o zobrazení, a ne jejich skrytí.  
   
- V <xref:System.Windows.Forms.DataGridView> ovládací prvek, <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A> hodnota vlastnosti sloupce určuje, zda je zobrazen tento sloupec.  
+ V ovládacím prvku <xref:System.Windows.Forms.DataGridView> určuje hodnota vlastnosti <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A> sloupce, zda je tento sloupec zobrazen.  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Skrytí sloupců v Windows Forms DataGridView pomocí návrháře](hide-columns-in-the-datagrid-using-the-designer.md).  
+ Pro tuto úlohu se v aplikaci Visual Studio podporuje.  Viz také [Postupy: skrytí sloupců v ovládacím prvku DataGridView model Windows Forms pomocí návrháře](hide-columns-in-the-datagrid-using-the-designer.md).  
   
-### <a name="to-hide-a-column-programmatically"></a>Chcete-li skrýt sloupec prostřednictvím kódu programu  
+### <a name="to-hide-a-column-programmatically"></a>Postup pro skrytí sloupce prostřednictvím kódu programu  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType> vlastnost `false`. Chcete-li skrýt `CustomerID` sloupec, který není automaticky vygenerován při vazbě dat vložte následující příklad kódu v <xref:System.Windows.Forms.DataGridView.DataBindingComplete> obslužné rutiny události.  
+- Nastavte <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType> vlastnost `false`. Chcete-li skrýt `CustomerID` sloupec, který je automaticky generován během vytváření datové vazby, umístěte následující příklad kódu do obslužné rutiny události <xref:System.Windows.Forms.DataGridView.DataBindingComplete>.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#063](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#063)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#063](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#063)]  
@@ -33,9 +33,9 @@ Někdy budete chtít zobrazit jenom některé sloupce, které jsou k dispozici v
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` , která obsahuje sloupec s názvem `CustomerID`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`, který obsahuje sloupec s názvem `CustomerID`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Grafika a kreslení v rozhraní Windows Forms
+title: Grafika a kreslení
 ms.date: 03/30/2017
 helpviewer_keywords:
 - graphics [Windows Forms]
@@ -7,46 +7,46 @@ helpviewer_keywords:
 - GDI+, using in managed code
 - drawing [Windows Forms]
 ms.assetid: 362532c5-1a06-4257-bdc8-723461009ede
-ms.openlocfilehash: e110203605c31f90f71c949f81c18ebf464d52eb
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 10ad18d38c84f6e447601ab6c8bf1a953dabb7cf
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505541"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746400"
 ---
 # <a name="graphics-and-drawing-in-windows-forms"></a>Grafika a kreslení v rozhraní Windows Forms
-Modul common language runtime používá pokročilé implementace systému Windows rozhraní GDI (Graphics Device) volá rozhraní GDI +. Pomocí GDI + můžete vytvořit grafiky, kreslení textu a manipulaci s grafické obrázky jako objekty. Rozhraní GDI + je určená k výkonu a snadnost použití. Můžete použijete GDI + k vykreslení grafické obrázky ve Windows Forms a ovládacích prvků. I když nelze použijete GDI + přímo na webové formuláře, můžete zobrazit grafické obrázky prostřednictvím ovládacího prvku obrázek Webový Server.  
+Modul CLR (Common Language Runtime) používá pokročilou implementaci Windows GDI (GDI) s názvem GDI+. Pomocí nástroje GDI+ můžete vytvářet grafiky, kreslit text a manipulovat s grafickými obrázky jako objekty. GDI+ je navržený tak, aby poskytoval výkon a snadné použití. Pomocí rozhraní GDI+ můžete vykreslit grafické obrázky na model Windows Forms a ovládací prvky. I když nemůžete použít rozhraní GDI+ přímo na webových formulářích, můžete zobrazit grafické obrázky pomocí ovládacího prvku webového serveru imagí.  
   
- V této části najdete témata, která představí základy programování v rozhraní GDI +. I když nemají být komplexní referenční informace, tato část obsahuje informace o <xref:System.Drawing.Graphics>, <xref:System.Drawing.Pen>, <xref:System.Drawing.Brush>, a <xref:System.Drawing.Color> objekty a vysvětluje, jak provádět úkoly, jako je kreslení tvarů, textu, kreslení nebo zobrazení obrázků. Další informace najdete v tématu [referenční dokumentace rozhraní GDI +](/windows/desktop/gdiplus/-gdiplus-class-gdi-reference).  
+ V této části najdete témata, která zavádějí základy programování v rozhraní GDI+. I když se nejedná o ucelený odkaz, obsahuje tato část informace o <xref:System.Drawing.Graphics>, <xref:System.Drawing.Pen>, <xref:System.Drawing.Brush>a <xref:System.Drawing.Color>ch objektech a vysvětluje, jak provádět takové úkoly jako kreslení tvarů, kreslení textu nebo zobrazování obrázků. Další informace najdete v tématu [Reference k rozhraní GDI+](/windows/desktop/gdiplus/-gdiplus-class-gdi-reference).  
   
- Pokud byste chtěli přidejte se k nám a rovnou začít, najdete v článku [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md). Obsahuje témata o tom, jak použít kód kreslení čar, tvary, text a informace o Windows forms.  
+ Pokud byste chtěli přejít na začátek a hned začít, přečtěte si téma [Začínáme with Graphics Programming](getting-started-with-graphics-programming.md). Obsahuje témata týkající se použití kódu k vykreslování čar, tvarů, textu a dalších v modelu Windows Forms.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled grafiky](graphics-overview-windows-forms.md)  
- Poskytuje úvod ke spravovaným třídám související grafiky.  
+ Poskytuje Úvod do spravovaných tříd souvisejících s grafikou.  
   
  [Informace o spravovaném kódu GDI+](about-gdi-managed-code.md)  
- Poskytuje informace o spravovaných třídách rozhraní GDI +.  
+ Poskytuje informace o spravovaných třídách rozhraní GDI+.  
   
  [Použití spravovaných grafických tříd](using-managed-graphics-classes.md)  
- Ukazuje, jak na kompletní širokou škálu úloh s použitím rozhraní GDI + spravované třídy.  
+ Ukazuje, jak provést různé úlohy pomocí spravovaných tříd rozhraní GDI+.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Drawing>  
- Poskytuje přístup k základní grafické funkce rozhraní GDI +.  
+ Poskytuje přístup k funkci GDI+ Basic Graphics.  
   
  <xref:System.Drawing.Drawing2D>  
- Poskytuje vyspělé 2D a vektorové grafické funkce.  
+ Poskytuje pokročilé funkce dvourozměrné a vektorové grafiky.  
   
  <xref:System.Drawing.Imaging>  
- Poskytuje pokročilé rozhraní GDI + funkce pro zpracování obrázků.  
+ Poskytuje pokročilé funkce pro vytváření bitových kopií rozhraní GDI+.  
   
  <xref:System.Drawing.Text>  
- Poskytuje pokročilé funkce Typografie rozhraní GDI +. Třídy v tomto oboru názvů lze použít k vytvoření a použití kolekce písem.  
+ Poskytuje pokročilé funkce typografie rozhraní GDI+. Třídy v tomto oboru názvů lze použít k vytvoření a použití kolekcí písem.  
   
  <xref:System.Drawing.Printing>  
  Poskytuje funkce tisku.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Malování a vykreslování vlastního ovládacího prvku](../controls/custom-control-painting-and-rendering.md)  
- Podrobně popisuje, jak poskytnout kód pro vykreslování ovládacích prvků.
+ Obsahuje podrobnosti o tom, jak poskytnout kód pro vykreslování ovládacích prvků.

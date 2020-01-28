@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid'
+title: Přidání tabulek a sloupců do ovládacího prvku DataGrid
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,26 +10,26 @@ helpviewer_keywords:
 - tables [Windows Forms], adding to DataGrid control
 - DataGrid control [Windows Forms], adding tables and columns
 ms.assetid: 2fe661b9-aa06-49b9-a314-a0d3cbfdcb4d
-ms.openlocfilehash: bfb0296566fecc2029df16d91c9c04d7daa4b4b5
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 2db2e38c326cbcd78c58ee4fe00cd9ed20ae0e8a
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046158"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747207"
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control"></a>Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid
 
 > [!NOTE]
-> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.DataGrid> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.DataGridView> Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
+> Ovládací prvek <xref:System.Windows.Forms.DataGridView> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.DataGrid>; Nicméně ovládací prvek <xref:System.Windows.Forms.DataGrid> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
 
-Můžete zobrazit data v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.DataGrid> v tabulkách a sloupcích vytvořením objektů **Styl DataGridTableStyle** a jejich přidáním do objektu **GridTableStylesCollection** <xref:System.Windows.Forms.DataGrid> , který je k dispozici prostřednictvím ovládacího prvku Vlastnost **TableStyles** Každý styl tabulky zobrazuje obsah libovolné tabulky dat, která je zadána ve vlastnosti **Mapping** **Styl DataGridTableStyle** objektu. Ve výchozím nastavení zobrazí styl tabulky bez zadaných stylů sloupců všechny sloupce v této tabulce dat. Můžete omezit, které sloupce z tabulky se zobrazí přidáním objektů **styl DataGridColumnStyle** do objektu **kolekce GridColumnStylesCollection** , který je k dispozici prostřednictvím vlastnosti **GridColumnStyles** každého **Styl DataGridTableStyle** předmětů.
+Data můžete zobrazit v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.DataGrid> v tabulkách a sloupcích vytvořením objektů **Styl DataGridTableStyle** a jejich přidáním do objektu **GridTableStylesCollection** , který je k dispozici prostřednictvím vlastnosti **TableStyles** ovládacího prvku <xref:System.Windows.Forms.DataGrid>. Každý styl tabulky zobrazuje obsah libovolné tabulky dat, která je zadána ve vlastnosti **Mapping** **Styl DataGridTableStyle** objektu. Ve výchozím nastavení zobrazí styl tabulky bez zadaných stylů sloupců všechny sloupce v této tabulce dat. Můžete omezit, které sloupce z tabulky se zobrazí přidáním objektů **styl DataGridColumnStyle** do objektu **kolekce GridColumnStylesCollection** , který je k dispozici prostřednictvím vlastnosti **GridColumnStyles** každého objektu **Styl DataGridTableStyle** .
 
 ### <a name="to-add-a-table-and-column-to-a-datagrid-programmatically"></a>Přidání tabulky a sloupce do DataGrid programově
 
-1. Aby bylo možné zobrazit data v tabulce, je nutné nejprve navazovat <xref:System.Windows.Forms.DataGrid> ovládací prvek na datovou sadu. Další informace najdete v tématu [jak: Navažte model Windows Forms ovládací prvek DataGrid na zdroj](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)dat.
+1. Aby bylo možné zobrazit data v tabulce, musíte nejprve vytvořit vazby ovládacího prvku <xref:System.Windows.Forms.DataGrid> k datové sadě. Další informace naleznete v tématu [How to: bind the model Windows Forms DataGrid Control to a Source (zdroj dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)).
 
     > [!CAUTION]
-    > Při programovém zadání stylů sloupců vždy vytvořit objekty **styl DataGridColumnStyle** a přidat je do objektu **kolekce GridColumnStylesCollection** před přidáním objektů **Styl DataGridTableStyle** do  **Objekt GridTableStylesCollection** Když do kolekce přidáte prázdný objekt **Styl DataGridTableStyle** , automaticky se vygenerují objekty **styl DataGridColumnStyle** . V důsledku toho bude vyvolána výjimka, pokud se pokusíte přidat nové objekty **styl DataGridColumnStyle** s duplicitními hodnotami **mapování** na objekt **kolekce GridColumnStylesCollection** .
+    > Při programovém zadání stylů sloupců vždy vytvořte objekty **styl DataGridColumnStyle** a přidejte je do objektu **kolekce GridColumnStylesCollection** před přidáním objektů **Styl DataGridTableStyle** do objektu **GridTableStylesCollection** . Když do kolekce přidáte prázdný objekt **Styl DataGridTableStyle** , automaticky se vygenerují objekty **styl DataGridColumnStyle** . V důsledku toho bude vyvolána výjimka, pokud se pokusíte přidat nové objekty **styl DataGridColumnStyle** s duplicitními hodnotami **mapování** na objekt **kolekce GridColumnStylesCollection** .
 
 2. Deklarujete nový styl tabulky a nastavte jeho název mapování.
 
@@ -99,4 +99,4 @@ Můžete zobrazit data v ovládacím prvku model Windows Forms <xref:System.Wind
 ## <a name="see-also"></a>Viz také:
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
-- [Postupy: Odstranění nebo skrytí sloupců v model Windows Forms ovládacím prvku DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

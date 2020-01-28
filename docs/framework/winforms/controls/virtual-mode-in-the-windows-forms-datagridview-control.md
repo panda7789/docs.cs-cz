@@ -1,66 +1,66 @@
 ---
-title: Virtuální režim v ovládacím prvku Windows Forms DataGridView
+title: Virtuální režim v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], virtual mode
 ms.assetid: feae5d43-2848-4b1a-8ea7-77085dc415b5
-ms.openlocfilehash: f284835578221ad1fe859f260e37bb829cd64b2d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d82f0fc9946e5b61ea171f2f5d2ab5690db0c71
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009133"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745442"
 ---
 # <a name="virtual-mode-in-the-windows-forms-datagridview-control"></a>Virtuální režim v ovládacím prvku Windows Forms DataGridView
-Virtuální režim, můžete spravovat interakce mezi <xref:System.Windows.Forms.DataGridView> ovládacího prvku a vlastní datové mezipaměti. Implementace virtuálního režimu, nastavte <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a zpracovat jeden nebo více událostí, které jsou popsané v tomto tématu. Obvykle budete zpracovávat alespoň `CellValueNeeded` událost, která umožňuje vyhledat ovládací prvek hodnoty v datové mezipaměti.  
+Ve virtuálním režimu můžete spravovat interakci mezi ovládacími prvky <xref:System.Windows.Forms.DataGridView> a vlastní datovou mezipamětí. Chcete-li implementovat virtuální režim, nastavte vlastnost <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> na `true` a zpracujte jednu nebo více událostí popsaných v tomto tématu. Obvykle budete zpracovávat aspoň `CellValueNeeded` událost, která umožňuje ovládacímu prvku vyhledat hodnoty v mezipaměti dat.  
   
-## <a name="bound-mode-and-virtual-mode"></a>Vazby a virtuálního režimu  
- Virtuální režim je nezbytné pouze v případě, že budete muset doplněk nebo nahradit vázané režimu. Ve vázané režimu, můžete nastavit <xref:System.Windows.Forms.DataGridView.DataSource%2A> vlastností a ovládací prvek automaticky načte data ze zadaného zdroje a odešle změnu zpět do něj. Můžete řídit, které svázané sloupce se zobrazí a zdroj dat, samotný obvykle zpracovává operace, jako je řazení.  
+## <a name="bound-mode-and-virtual-mode"></a>Vázaný režim a virtuální režim  
+ Virtuální režim je nutný jenom v případě, že je potřeba doplnit nebo nahradit vázaný režim. V vázaném režimu nastavíte vlastnost <xref:System.Windows.Forms.DataGridView.DataSource%2A> a ovládací prvek automaticky načte data ze zadaného zdroje a odešlete do něj změny uživatele. Můžete určit, které z vázaných sloupců se zobrazí, a samotný zdroj dat obvykle zpracovává operace, jako je například řazení.  
   
-## <a name="supplementing-bound-mode"></a>Doplňující vázané režimu  
- Vázané režimu můžete doplnit zobrazení nevázaných sloupců spolu s svázané sloupce. To se někdy označuje jako "ve smíšeném režimu" a je vhodný pro zobrazování záležitostmi, jako je vypočítané hodnoty nebo uživatelského rozhraní (UI) ovládací prvky.  
+## <a name="supplementing-bound-mode"></a>Doplňování vázaného režimu  
+ Můžete doplnit vázaný režim zobrazením nevázaných sloupců spolu s vázanými sloupci. To se někdy označuje jako "smíšený režim" a je užitečné pro zobrazení podobných hodnot nebo ovládacích prvků uživatelského rozhraní (UI).  
   
- Vzhledem k tomu nevázaného sloupce mimo zdroj dat, jsou ignorovány ve zdroji dat operace řazení. Proto když povolíte řazení ve smíšeném režimu, musíte spravovat nevázaných dat v místní mezipaměti a implementace virtuálního režimu chcete, aby <xref:System.Windows.Forms.DataGridView> ovládacího prvku s ní pracovat.  
+ Vzhledem k tomu, že nevázané sloupce jsou mimo zdroj dat, jsou ignorovány operacemi řazení zdroje dat. Proto pokud povolíte řazení ve smíšeném režimu, je nutné spravovat nevázaná data v místní mezipaměti a implementovat virtuální režim, aby mohl ovládací prvek <xref:System.Windows.Forms.DataGridView> pracovat s ním.  
   
- Další informace o použití virtuální režimu pro zachování hodnot v nevázaných sloupců, podívejte se na příklady v <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A?displayProperty=nameWithType> vlastnost a <xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType> třídy referenční témata.  
+ Další informace o použití virtuálního režimu k údržbě hodnot v nevázaných sloupcích naleznete v příkladech v tématech <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A?displayProperty=nameWithType> vlastností a <xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType> třídy odkazu.  
   
-## <a name="replacing-bound-mode"></a>Nahrazení vázané režimu  
- Pokud vázané režim nesplňuje vašim požadavkům na výkon, můžete spravovat všechna data na vlastní mezipaměti prostřednictvím obslužné rutiny událostí virtuálním režimu. Například můžete použít virtuální režim implementovat just-in-time data načítání mechanismus, který načte pouze tolik dat z databáze síti je nezbytné k zajištění optimálního výkonu. Tento scénář je zvlášť užitečné při práci s velkými objemy dat přes pomalé připojení k síti nebo s klientskými počítači, které mají omezenou velikost paměti RAM nebo prostor úložiště.  
+## <a name="replacing-bound-mode"></a>Výměna vázaného režimu  
+ Pokud vázaný režim nevyhovuje vašim požadavkům na výkon, můžete spravovat všechna vaše data ve vlastní mezipaměti prostřednictvím obslužných rutin událostí ve virtuálním režimu. Můžete například použít virtuální režim k implementaci mechanismu načítání dat za běhu, který načte jenom tolik dat z databáze v síti, který je nutný k zajištění optimálního výkonu. Tento scénář je zvláště užitečný, když pracujete s velkým objemem dat v případě pomalého síťového připojení nebo s klientskými počítači, které mají omezené množství paměti RAM nebo úložného prostoru.  
   
- Další informace o používání virtuálního režimu v případě just-in-time najdete v tématu [implementace virtuálního režimu s načítáním dat k za běhu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md).  
+ Další informace o použití virtuálního režimu v rámci scénáře za běhu naleznete [v tématu Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku DataGridView model Windows Forms](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md).  
   
-## <a name="virtual-mode-events"></a>Virtuální režim události  
- Pokud vaše data jsou jen pro čtení, `CellValueNeeded` události může být pouze události, je potřeba zpracovat. Další události virtuálního režimu umožňují povolit konkrétní funkce, jako jsou uživatelské úpravy, přidávání řádků a odstranění a transakce na úrovni řádků.  
+## <a name="virtual-mode-events"></a>Události ve virtuálním režimu  
+ Pokud jsou vaše data jen pro čtení, může být událost `CellValueNeeded` jedinou událostí, kterou budete muset zpracovat. Další události ve virtuálním režimu umožňují povolit konkrétní funkce, jako jsou uživatelské úpravy, přidávání a odstraňování řádků a transakce na úrovni řádků.  
   
- Některé standardní <xref:System.Windows.Forms.DataGridView> události (například události, ke které dochází, když uživatelé přidat nebo odstranit řádky nebo když buňky hodnoty jsou upravovat, analyzovat, ověřit nebo ve formátu) jsou užitečné ve virtuálním režimu, také. Můžete také zpracovávat události, které vám umožňují udržovat hodnoty obvykle nejsou uložené ve zdroji vazby dat, například text popisu buňky, buňky a text řádku chyby, buňky a dat místní nabídku řádku a data výšku řádku.  
+ Některé standardní <xref:System.Windows.Forms.DataGridView> události (například události, ke kterým dochází, když uživatelé přidají nebo odstraňují řádky nebo když se upraví, analyzují, ověří nebo naformátují), jsou užitečné i ve virtuálním režimu. Můžete také zpracovávat události, které umožňují udržovat hodnoty, které nejsou obvykle uloženy ve vázaném zdroji dat, jako je text popisku buňky, text chyby buňky a řádku, data nabídky pro místní a řádek a data výšky řádku.  
   
- Další informace o implementace virtuálního režimu pro správu dat pro čtení a zápisu s rozsahem potvrzení změn na úrovni řádků, naleznete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](implementing-virtual-mode-wf-datagridview-control.md).  
+ Další informace o implementaci virtuálního režimu pro správu dat pro čtení a zápis s rozsahem potvrzení na úrovni řádku naleznete v tématu [Návod: implementace virtuálního režimu v ovládacím prvku DataGridView model Windows Forms](implementing-virtual-mode-wf-datagridview-control.md).  
   
- Příklad, který implementuje virtuálního režimu s rozsahem potvrzení na úrovni buněk, najdete v článku <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost referenční téma.  
+ Příklad, který implementuje virtuální režim s rozsahem potvrzení na úrovni buňky, najdete v tématu informace o vlastnosti <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>.  
   
- Pouze dojde k následujícím událostem při <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> je nastavena na `true`.  
+ K následujícím událostem dojde pouze v případě, že je vlastnost <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> nastavena na hodnotu `true`.  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Windows.Forms.DataGridView.CellValueNeeded>|K načtení hodnoty buňky z mezipaměti dat pro zobrazení používá ovládací prvek. Pouze u buněk v nevázaných sloupců dojde k této události.|  
-|<xref:System.Windows.Forms.DataGridView.CellValuePushed>|Potvrdit uživatelský vstup pro buňku mezipaměť dat používané ovládací prvek. Pouze u buněk v nevázaných sloupců dojde k této události.<br /><br /> Volání <xref:System.Windows.Forms.DataGridView.UpdateCellValue%2A> metoda při změně hodnotu uloženou v mezipaměti mimo <xref:System.Windows.Forms.DataGridView.CellValuePushed> obslužná rutina události, ujistěte se, že aktuální hodnota se zobrazí v ovládacím prvku a aplikovat všechny režimy automatické velikosti aktuálně používána.|  
-|<xref:System.Windows.Forms.DataGridView.NewRowNeeded>|Používá ovládací prvek k označení potřebu nový řádek v datové mezipaměti.|  
-|<xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>|Ovládací prvek používá k určení, zda řádek obsahuje všechny nepotvrzené změny.|  
-|<xref:System.Windows.Forms.DataGridView.CancelRowEdit>|Ovládací prvek se používá k označení, že řádek by měl vrátit k její hodnoty uložené v mezipaměti.|  
+|<xref:System.Windows.Forms.DataGridView.CellValueNeeded>|Používá se ovládacím prvkem k načtení hodnoty buňky z datové mezipaměti pro zobrazení. Tato událost se vyskytuje pouze u buněk v nevázaných sloupcích.|  
+|<xref:System.Windows.Forms.DataGridView.CellValuePushed>|Používá se v ovládacím prvku k potvrzení vstupu uživatele pro buňku do mezipaměti dat. Tato událost se vyskytuje pouze u buněk v nevázaných sloupcích.<br /><br /> Zavolejte metodu <xref:System.Windows.Forms.DataGridView.UpdateCellValue%2A> při změně hodnoty uložené v mezipaměti mimo obslužnou rutinu události <xref:System.Windows.Forms.DataGridView.CellValuePushed>, aby se zajistilo, že se aktuální hodnota zobrazuje v ovládacím prvku a aby se použily všechny režimy automatického přizpůsobení velikosti, které jsou aktuálně platné.|  
+|<xref:System.Windows.Forms.DataGridView.NewRowNeeded>|Používá se ovládacím prvkem k označení potřeby nového řádku v mezipaměti dat.|  
+|<xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>|Používáno ovládacím prvkem k určení, zda řádek obsahuje nějaké nepotvrzené změny.|  
+|<xref:System.Windows.Forms.DataGridView.CancelRowEdit>|Používá se ovládacím prvkem k označení toho, že by se měl řádek vrátit do hodnot uložených v mezipaměti.|  
   
- Tyto události jsou užitečné ve virtuálním režimu, ale je možné bez ohledu na to <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> nastavení vlastnosti.  
+ Ve virtuálním režimu jsou užitečné následující události, ale dají se použít bez ohledu na nastavení vlastnosti <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>.  
   
 |Události|Popis|  
 |------------|-----------------|  
-|<xref:System.Windows.Forms.DataGridView.UserDeletingRow><br /><br /> <xref:System.Windows.Forms.DataGridView.UserDeletedRow><br /><br /> <xref:System.Windows.Forms.DataGridView.RowsRemoved><br /><br /> <xref:System.Windows.Forms.DataGridView.RowsAdded>|Používá ovládací prvek k označení při řádky budou odstraněny nebo přidání, takže můžete aktualizovat datové mezipaměti odpovídajícím způsobem.|  
-|<xref:System.Windows.Forms.DataGridView.CellFormatting><br /><br /> <xref:System.Windows.Forms.DataGridView.CellParsing><br /><br /> <xref:System.Windows.Forms.DataGridView.CellValidating><br /><br /> <xref:System.Windows.Forms.DataGridView.CellValidated><br /><br /> <xref:System.Windows.Forms.DataGridView.RowValidating><br /><br /> <xref:System.Windows.Forms.DataGridView.RowValidated>|Pomocí ovládacího prvku, aby formát hodnoty buněk pro zobrazení a analýza a ověření vstupu uživatele.|  
-|<xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>|Používá k načtení text popisu buňky v ovládacím prvku při <xref:System.Windows.Forms.DataGridView.DataSource%2A> je nastavena nebo <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true`.<br /><br /> Popisy tlačítek buňky se zobrazují pouze tehdy, když <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A> hodnota vlastnosti je `true`.|  
-|<xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>|Použit v ovládacím prvku pro načtení buňku nebo řádek text chyby při <xref:System.Windows.Forms.DataGridView.DataSource%2A> je nastavena nebo <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true`.<br /><br /> Volání <xref:System.Windows.Forms.DataGridView.UpdateCellErrorText%2A> metoda nebo <xref:System.Windows.Forms.DataGridView.UpdateRowErrorText%2A> metoda při změně buňku nebo řádek text chyby k zajištění, že aktuální hodnota se zobrazí v ovládacím prvku.<br /><br /> Piktogramy řádků a buňky se zobrazují při <xref:System.Windows.Forms.DataGridView.ShowCellErrors%2A> a <xref:System.Windows.Forms.DataGridView.ShowRowErrors%2A> hodnoty vlastností jsou `true`.|  
-|<xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>|Použit v ovládacím prvku pro načtení buňku nebo řádek <xref:System.Windows.Forms.ContextMenuStrip> při ovládací prvek <xref:System.Windows.Forms.DataGridView.DataSource%2A> je nastavena nebo <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true`.|  
-|<xref:System.Windows.Forms.DataGridView.RowHeightInfoNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowHeightInfoPushed>|Používá k načtení nebo uložení informace výšku řádků v datové mezipaměti ovládacího prvku. Volání <xref:System.Windows.Forms.DataGridView.UpdateRowHeightInfo%2A> metoda při změně výška informace uložené v mezipaměti řádek mimo <xref:System.Windows.Forms.DataGridView.RowHeightInfoPushed> obslužná rutina události, chcete-li zajistit, aby používal aktuální hodnotu v zobrazení ovládacího prvku.|  
+|<xref:System.Windows.Forms.DataGridView.UserDeletingRow><br /><br /> <xref:System.Windows.Forms.DataGridView.UserDeletedRow><br /><br /> <xref:System.Windows.Forms.DataGridView.RowsRemoved><br /><br /> <xref:System.Windows.Forms.DataGridView.RowsAdded>|Používá se ovládacím prvkem k označení, kdy se mají odstranit nebo přidat řádky, a umožní vám aktualizovat datovou mezipaměť odpovídajícím způsobem.|  
+|<xref:System.Windows.Forms.DataGridView.CellFormatting><br /><br /> <xref:System.Windows.Forms.DataGridView.CellParsing><br /><br /> <xref:System.Windows.Forms.DataGridView.CellValidating><br /><br /> <xref:System.Windows.Forms.DataGridView.CellValidated><br /><br /> <xref:System.Windows.Forms.DataGridView.RowValidating><br /><br /> <xref:System.Windows.Forms.DataGridView.RowValidated>|Používá se ovládacím prvkem k formátování hodnot buněk pro zobrazení a k analýze a ověření vstupu uživatele.|  
+|<xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded>|Používá se ovládacím prvkem k načtení textu popisku buňky, když je nastavená vlastnost <xref:System.Windows.Forms.DataGridView.DataSource%2A> nebo vlastnost <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> `true`.<br /><br /> Popisky buněk jsou zobrazeny pouze v případě, že je hodnota vlastnosti <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A> `true`.|  
+|<xref:System.Windows.Forms.DataGridView.CellErrorTextNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowErrorTextNeeded>|Používá se ovládacím prvkem k načtení textu chyby buňky nebo řádku, pokud je nastavena vlastnost <xref:System.Windows.Forms.DataGridView.DataSource%2A> nebo vlastnost <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> `true`.<br /><br /> Když změníte text chyby buňky nebo řádku, zavolejte metodu <xref:System.Windows.Forms.DataGridView.UpdateCellErrorText%2A> nebo metodu <xref:System.Windows.Forms.DataGridView.UpdateRowErrorText%2A>, aby se zajistilo, že se v ovládacím prvku zobrazí aktuální hodnota.<br /><br /> Glyfy chyb buňky a řádku se zobrazí, když jsou `true`hodnoty vlastností <xref:System.Windows.Forms.DataGridView.ShowCellErrors%2A> a <xref:System.Windows.Forms.DataGridView.ShowRowErrors%2A>.|  
+|<xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>|Používá se ovládacím prvkem k načtení buňky nebo řádku <xref:System.Windows.Forms.ContextMenuStrip>, když je nastavena vlastnost <xref:System.Windows.Forms.DataGridView.DataSource%2A> ovládacího prvku nebo vlastnost <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> `true`.|  
+|<xref:System.Windows.Forms.DataGridView.RowHeightInfoNeeded><br /><br /> <xref:System.Windows.Forms.DataGridView.RowHeightInfoPushed>|Používá se ovládacím prvkem k načtení nebo uložení informací o výšce řádku v mezipaměti dat. Zavolejte metodu <xref:System.Windows.Forms.DataGridView.UpdateRowHeightInfo%2A> při změně informací o výšce řádku v mezipaměti mimo obslužnou rutinu události <xref:System.Windows.Forms.DataGridView.RowHeightInfoPushed>, aby se zajistilo, že se aktuální hodnota používá při zobrazení ovládacího prvku.|  
   
 ## <a name="best-practices-in-virtual-mode"></a>Osvědčené postupy ve virtuálním režimu  
- Pokud chcete-li efektivně pracovat s velkými objemy dat jsou implementace virtuálního režimu, bude také chcete zajistit, že pracujete efektivně <xref:System.Windows.Forms.DataGridView> samotného ovládacího prvku. Další informace o efektivní využití stylů buňky, automatické velikosti, výběr a řádků pro sdílení obsahu najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
+ Pokud implementujete virtuální režim, aby bylo možné efektivně pracovat s velkým objemem dat, budete mít také jistotu, že budete efektivně pracovat s <xref:System.Windows.Forms.DataGridView> sám. Další informace o efektivním použití stylů buněk, automatické velikosti, výběrech a sdílení řádků naleznete v tématu [osvědčené postupy pro škálování ovládacího prvku model Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 

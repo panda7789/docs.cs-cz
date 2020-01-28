@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavit obrázky v době běhu (model Windows Forms)'
+title: 'Postupy: Nastavení obrázků za běhu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,21 +13,21 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-ms.openlocfilehash: 99d78a275c8ad8f55d9b0832a794545b65da7e20
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bd0509c05fd9c1cfc0c631fcd613c64d20296f6b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917531"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746747"
 ---
-# <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavit obrázky v době běhu (model Windows Forms)
-Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.PictureBox> můžete programově nastavit.  
+# <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavení obrázků za běhu (Windows Forms)
+Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.PictureBox> lze programově nastavit.  
   
 ### <a name="to-set-a-picture-programmatically"></a>Postup při nastavování obrázku prostřednictvím kódu programu  
   
-- <xref:System.Windows.Forms.PictureBox.Image%2A> Nastavte vlastnost<xref:System.Drawing.Image.FromFile%2A> pomocí metody<xref:System.Drawing.Image> třídy.  
+- Nastavte vlastnost <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí metody <xref:System.Drawing.Image.FromFile%2A> třídy <xref:System.Drawing.Image>.  
   
-     V následujícím příkladu je cesta nastavená pro umístění obrázku složkou Dokumenty. To se provádí, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s <xref:System.Windows.Forms.PictureBox> ovládacím prvkem již byl přidán.  
+     V následujícím příkladu je cesta nastavená pro umístění obrázku složkou Dokumenty. To se provádí, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows, bude obsahovat tento adresář. To také umožňuje uživatelům s minimálními úrovněmi přístupu k systému bezpečně spustit aplikaci. Následující příklad předpokládá, že formulář s již přidaným ovládacím prvkem <xref:System.Windows.Forms.PictureBox>.  
   
     ```vb  
     Private Sub LoadNewPict()  
@@ -93,7 +93,7 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
     ```  
   
     > [!NOTE]
-    > Další informace o tom, proč byste měli <xref:System.Drawing.Image.Dispose%2A> metodu použít tímto způsobem, najdete v tématu Vymazání nespravovaných [prostředků](../../../standard/garbage-collection/unmanaged.md).  
+    > Další informace o tom, proč byste měli použít metodu <xref:System.Drawing.Image.Dispose%2A> tímto způsobem, najdete v tématu [Vymazání nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md).  
   
      Tento kód vymaže obrázek, i když byl obrázek načten do ovládacího prvku v době návrhu.  
   
@@ -102,6 +102,6 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
 - <xref:System.Windows.Forms.PictureBox>
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
 - [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
-- [Postupy: Načtení obrázku pomocí návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
-- [Postupy: Změna velikosti nebo umístění obrázku v době běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [Postupy: Načtení obrázku pomocí Návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Postupy: Změna velikosti či umístění obrázku za běhu](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
 - [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)

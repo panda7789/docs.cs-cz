@@ -2,16 +2,16 @@
 title: příkaz dotnet Pack
 description: Příkaz dotnet Pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 08/08/2019
-ms.openlocfilehash: 99dd8e35601f82adf2a3101121028f191a4c3da4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 057d1029e5c933912c43c178b6db8a8498f2ed57
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117652"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734122"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
-**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -19,31 +19,31 @@ ms.locfileid: "71117652"
 
 ## <a name="name"></a>Name
 
-`dotnet pack`– Zabalí kód do balíčku NuGet.
+`dotnet pack` – zabalí kód do balíčku NuGet.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive] 
-    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable] 
+dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive]
+    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable]
     [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 
 ## <a name="description"></a>Popis
 
-`dotnet pack` Příkaz sestaví projekt a vytvoří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet (to znamená soubor *. nupkg* ). 
+Příkaz `dotnet pack` vytvoří projekt a vytvoří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet (to znamená soubor *. nupkg* ).
 
 Pokud chcete vygenerovat balíček, který obsahuje symboly ladění, máte k dispozici dvě možnosti:
 
-- `--include-symbols`– vytvoří balíček symbolů.
-- `--include-source`– vytvoří balíček symbolů se `src` složkou uvnitř obsahující zdrojové soubory.
+- `--include-symbols` – vytvoří balíček symbolů.
+- `--include-source` – vytvoří balíček symbolů se složkou `src` uvnitř obsahující zdrojové soubory.
 
 Do souboru *. nuspec* jsou přidány závislosti NuGet zkomprimovaného projektu, aby byly po instalaci balíčku správně vyřešeny. Odkazy z projektu na projekt nejsou zabaleny do projektu. V současné době je nutné mít balíček na projekt, pokud máte závislosti typu projekt-projekt.
 
-Ve výchozím nastavení `dotnet pack` sestaví projekt jako první. Pokud se chcete tomuto chování vyhnout, předejte `--no-build` možnost. Tato možnost je často užitečná ve scénářích průběžné integrace (CI), kde víte, že kód byl dříve sestaven.
+Ve výchozím nastavení `dotnet pack` sestavit projekt jako první. Pokud se chcete tomuto chování vyhnout, předejte možnost `--no-build`. Tato možnost je často užitečná ve scénářích průběžné integrace (CI), kde víte, že kód byl dříve sestaven.
 
-Vlastnosti nástroje MSBuild můžete zadat pro `dotnet pack` příkaz pro proces balení. Další informace najdete v tématu [vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). V části s [Příklady](#examples) se dozvíte, jak použít přepínač MSBuild-p pro několik různých scénářů.
+Vlastnosti nástroje MSBuild můžete zadat pro příkaz `dotnet pack` pro proces balení. Další informace najdete v tématu [vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). V části s [Příklady](#examples) se dozvíte, jak použít přepínač MSBuild-p pro několik různých scénářů.
 
 Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat výchozí chování, přidejte do souboru *. csproj* následující vlastnost:
 
@@ -77,7 +77,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - **`--include-source`**
 
-  Obsahuje kromě běžných balíčků NuGet ve výstupním adresáři také balíčky NuGet pro ladicí symboly. Zdrojové soubory jsou zahrnuty ve `src` složce v rámci balíčku symbolů.
+  Obsahuje kromě běžných balíčků NuGet ve výstupním adresáři také balíčky NuGet pro ladicí symboly. Zdrojové soubory jsou obsaženy ve složce `src` v rámci balíčku symbolů.
 
 - **`--include-symbols`**
 
@@ -89,7 +89,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - **`--no-build`**
 
-  Nevytvoří projekt před balením. Také implicitně nastaví `--no-restore` příznak.
+  Nevytvoří projekt před balením. Také implicitně nastaví příznak `--no-restore`.
 
 - **`--no-dependencies`**
 
@@ -117,11 +117,11 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 
-  Definuje hodnotu `$(VersionSuffix)` vlastnosti MSBuild v projektu.
+  Definuje hodnotu vlastnosti `$(VersionSuffix)` MSBuild v projektu.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
 
 ## <a name="examples"></a>Příklady
 
@@ -131,19 +131,19 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
   dotnet pack
   ```
 
-- `app1` Sbalit projekt:
+- Sbalení `app1` projektu:
 
   ```dotnetcli
   dotnet pack ~/projects/app1/project.csproj
   ```
 
-- Sbalení projektu v aktuálním adresáři a umístění výsledných balíčků do `nupkgs` složky:
+- Sbalení projektu v aktuálním adresáři a umístění výsledných balíčků do složky `nupkgs`:
 
   ```dotnetcli
   dotnet pack --output nupkgs
   ```
 
-- Sbalení projektu v aktuálním adresáři do `nupkgs` složky a přeskočení kroku sestavení:
+- Sbalení projektu v aktuálním adresáři do složky `nupkgs` a přeskočení kroku sestavení:
 
   ```dotnetcli
   dotnet pack --no-build --output nupkgs
@@ -155,7 +155,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
   dotnet pack --version-suffix "ci-1234"
   ```
 
-- Nastavte na verzi `2.1.0` `PackageVersion` balíčku vlastnost MSBuild:
+- Nastavte verzi balíčku na `2.1.0` s vlastností `PackageVersion` MSBuild:
 
   ```dotnetcli
   dotnet pack -p:PackageVersion=2.1.0

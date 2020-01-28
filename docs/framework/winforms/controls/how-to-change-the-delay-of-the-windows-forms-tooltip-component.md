@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna zpoždění komponenty Windows Forms ToolTip'
+title: Změna zpoždění součásti ToolTip
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,19 +10,19 @@ helpviewer_keywords:
 - tooltips [Windows Forms], delay values
 - examples [Windows Forms], tooltips
 ms.assetid: 08979ba7-dd84-477b-ab17-8d06e759be99
-ms.openlocfilehash: cf257cccd272c16c3d7c3d403456265444fc8ac8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ab0b0760e8c82d752eaada19f14cae57fa63fdc
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781235"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746585"
 ---
-# <a name="how-to-change-the-delay-of-the-windows-forms-tooltip-component"></a>Postupy: Změna zpoždění komponenty Windows Forms ToolTip
-Existuje více hodnot zpoždění, které můžete nastavit pro Windows Forms <xref:System.Windows.Forms.ToolTip> komponenty. Jednotka měření pro všechny tyto vlastnosti je milisekund. <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> Vlastnost určuje, jak dlouho musí odkazovat uživatele na přidružený ovládací prvek pro řetězec popisku se zobrazí. <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> Vlastnost nastaví dobu v milisekundách, která je potřebná pro následující řetězce popis se zobrazí jako ukazatel myši přesune z jednoho ovládacího prvku ToolTip přidružené do jiného. <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> Vlastnost určuje dobu řetězec popisku se zobrazí. Tyto hodnoty můžete nastavit samostatně, nebo tak, že nastavíte hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost; zpoždění, které jsou nastaveny vlastnosti závislosti na hodnotě přiřazené k <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost. Například, když <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> je nastavena na hodnotu N, <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> je nastavena na N, <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> je nastavena na hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> rozdělené podle pět (nebo N/5), a <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> je nastavena na hodnotu, která je pětkrát hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnosti (nebo 5N).  
+# <a name="how-to-change-the-delay-of-the-windows-forms-tooltip-component"></a>Postupy: Změna zpoždění součásti Windows Forms ToolTip
+Existuje více hodnot zpoždění, které lze nastavit pro komponentu model Windows Forms <xref:System.Windows.Forms.ToolTip>. Jednotka měření všech těchto vlastností je milisekund. Vlastnost <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> určuje, jak dlouho musí uživatel ukazovat na přidružený ovládací prvek, aby se zobrazil řetězec s popisem tlačítka. Vlastnost <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> nastaví počet milisekund, které bude trvat, než se při přesunutí ukazatele myši z jednoho ovládacího prvku přidruženého k popisku na jiný ovládací prvek s popisem tlačítka zobrazí v milisekundách. Vlastnost <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> určuje dobu, po kterou je zobrazen řetězec s popisem tlačítka. Tyto hodnoty můžete nastavit individuálně nebo nastavením hodnoty vlastnosti <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A>; Ostatní vlastnosti zpoždění jsou nastaveny na základě hodnoty přiřazené vlastnosti <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A>. Pokud je například <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> nastaveno na hodnotu N, <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> je nastavena na hodnotu N, <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> je nastavena na hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> dělenou pěti (nebo N/5) a <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> je nastavena na hodnotu, která je pětkrát hodnotou <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnosti (nebo 5N).  
   
-### <a name="to-set-the-delay"></a>Chcete-li nastavit zpoždění  
+### <a name="to-set-the-delay"></a>Nastavení zpoždění  
   
-1. Jak je znázorněno v tomto příkladu, nastavte následující vlastnosti.  
+1. Nastavte následující vlastnosti, jak je znázorněno v tomto příkladu.  
   
     ```vb  
     ToolTip1.InitialDelay = 500  
