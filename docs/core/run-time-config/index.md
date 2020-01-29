@@ -1,74 +1,120 @@
 ---
-title: Konfigurace run-time
+title: Možnosti konfigurace běhového běhu
 description: Naučte se konfigurovat aplikace .NET Core pomocí nastavení konfigurace za běhu.
-ms.date: 11/13/2019
-ms.openlocfilehash: 2665026347e94d26026821beb2bfcf8441f755f6
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.date: 01/21/2020
+ms.openlocfilehash: ddf68c30e620a06856f65e71bd050e1b77618f20
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801913"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733447"
 ---
-# <a name="net-core-run-time-configuration-settings"></a><span data-ttu-id="b1bd8-103">Nastavení konfigurace runtime .NET Core</span><span class="sxs-lookup"><span data-stu-id="b1bd8-103">.NET Core run-time configuration settings</span></span>
+# <a name="net-core-run-time-configuration-settings"></a><span data-ttu-id="17f45-103">Nastavení konfigurace runtime .NET Core</span><span class="sxs-lookup"><span data-stu-id="17f45-103">.NET Core run-time configuration settings</span></span>
 
-<span data-ttu-id="b1bd8-104">.NET Core podporuje použití konfiguračních souborů a proměnných prostředí ke konfiguraci chování aplikací .NET Core v době běhu.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-104">.NET Core supports the use of configuration files and environment variables to configure the behavior of .NET Core applications at run time.</span></span> <span data-ttu-id="b1bd8-105">Konfigurace běhového běhu je atraktivní možnost, pokud:</span><span class="sxs-lookup"><span data-stu-id="b1bd8-105">Run-time configuration is an attractive option if:</span></span>
+<span data-ttu-id="17f45-104">.NET Core podporuje použití konfiguračních souborů a proměnných prostředí ke konfiguraci chování aplikací .NET Core v době běhu.</span><span class="sxs-lookup"><span data-stu-id="17f45-104">.NET Core supports the use of configuration files and environment variables to configure the behavior of .NET Core applications at run time.</span></span> <span data-ttu-id="17f45-105">Konfigurace běhového běhu je atraktivní možnost, pokud:</span><span class="sxs-lookup"><span data-stu-id="17f45-105">Run-time configuration is an attractive option if:</span></span>
 
-- <span data-ttu-id="b1bd8-106">Zdrojový kód aplikace nevlastníte nebo neovládáte, a proto ji nelze programově nakonfigurovat.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-106">You don't own or control the source code for an application and therefore are unable to configure it programmatically.</span></span>
+- <span data-ttu-id="17f45-106">Zdrojový kód aplikace nevlastníte nebo neovládáte, a proto ji nelze programově nakonfigurovat.</span><span class="sxs-lookup"><span data-stu-id="17f45-106">You don't own or control the source code for an application and therefore are unable to configure it programmatically.</span></span>
 
-- <span data-ttu-id="b1bd8-107">V jednom systému se spouští více instancí aplikace současně a chcete je nakonfigurovat pro optimální výkon.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-107">Multiple instances of your application run at the same time on a single system, and you want to configure each for optimum performance.</span></span>
+- <span data-ttu-id="17f45-107">V jednom systému se spouští více instancí aplikace současně a chcete je nakonfigurovat pro optimální výkon.</span><span class="sxs-lookup"><span data-stu-id="17f45-107">Multiple instances of your application run at the same time on a single system, and you want to configure each for optimum performance.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b1bd8-108">Tato dokumentace je probíhající práce.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-108">This documentation is a work in progress.</span></span> <span data-ttu-id="b1bd8-109">Pokud si všimnete, že zde uvedené informace jsou buď neúplné, nebo nepřesné, buď [otevřete problém](https://github.com/dotnet/docs/issues) , abychom nás věděli, nebo [odešlete žádost](https://github.com/dotnet/docs/pulls) o přijetí změn k vyřešení problému.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-109">If you notice that the information presented here is either incomplete or inaccurate, either [open an issue](https://github.com/dotnet/docs/issues) to let us know about it, or [submit a pull request](https://github.com/dotnet/docs/pulls) to address the issue.</span></span> <span data-ttu-id="b1bd8-110">Informace o odesílání žádostí o přijetí změn pro úložiště dotnet/docs najdete v [příručce pro přispěvatele](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span><span class="sxs-lookup"><span data-stu-id="b1bd8-110">For information on submitting pull requests for the dotnet/docs repository, see the [contributor's guide](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span></span>
+> <span data-ttu-id="17f45-108">Tato dokumentace je probíhající práce.</span><span class="sxs-lookup"><span data-stu-id="17f45-108">This documentation is a work in progress.</span></span> <span data-ttu-id="17f45-109">Pokud si všimnete, že zde uvedené informace jsou buď neúplné, nebo nepřesné, buď [otevřete problém](https://github.com/dotnet/docs/issues) , abychom nás věděli, nebo [odešlete žádost](https://github.com/dotnet/docs/pulls) o přijetí změn k vyřešení problému.</span><span class="sxs-lookup"><span data-stu-id="17f45-109">If you notice that the information presented here is either incomplete or inaccurate, either [open an issue](https://github.com/dotnet/docs/issues) to let us know about it, or [submit a pull request](https://github.com/dotnet/docs/pulls) to address the issue.</span></span> <span data-ttu-id="17f45-110">Informace o odesílání žádostí o přijetí změn pro úložiště dotnet/docs najdete v [příručce pro přispěvatele](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span><span class="sxs-lookup"><span data-stu-id="17f45-110">For information about submitting pull requests for the dotnet/docs repository, see the [contributor's guide](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md).</span></span>
 
-<span data-ttu-id="b1bd8-111">.NET Core poskytuje následující mechanismy pro konfiguraci aplikací v době běhu:</span><span class="sxs-lookup"><span data-stu-id="b1bd8-111">.NET Core provides the following mechanisms for configuring applications at run time:</span></span>
+<span data-ttu-id="17f45-111">.NET Core poskytuje následující mechanismy pro konfiguraci chování aplikace za běhu:</span><span class="sxs-lookup"><span data-stu-id="17f45-111">.NET Core provides the following mechanisms for configuring run-time application behavior:</span></span>
 
-- <span data-ttu-id="b1bd8-112">[Soubor runtimeconfig. JSON](#runtimeconfigjson)</span><span class="sxs-lookup"><span data-stu-id="b1bd8-112">The [runtimeconfig.json file](#runtimeconfigjson)</span></span>
+- <span data-ttu-id="17f45-112">[Soubor runtimeconfig. JSON](#runtimeconfigjson)</span><span class="sxs-lookup"><span data-stu-id="17f45-112">The [runtimeconfig.json file](#runtimeconfigjson)</span></span>
 
-- [<span data-ttu-id="b1bd8-113">Proměnné prostředí</span><span class="sxs-lookup"><span data-stu-id="b1bd8-113">Environment variables</span></span>](#environment-variables)
+- [<span data-ttu-id="17f45-113">Vlastnosti nástroje MSBuild</span><span class="sxs-lookup"><span data-stu-id="17f45-113">MSBuild properties</span></span>](#msbuild-properties)
 
-<span data-ttu-id="b1bd8-114">Články v této části dokumentace jsou uspořádány podle kategorie, například ladění a uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-114">The articles in this section of the documentation include are organized by category, for example, debugging and garbage collection.</span></span> <span data-ttu-id="b1bd8-115">V případě potřeby se pro *runtimeconfig. JSON* zobrazí možnosti konfigurace (jenom .NET Core), *App. config* (jenom .NET Framework) a proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-115">Where applicable, configuration options are shown for *runtimeconfig.json* (.NET Core only), *app.config* (.NET Framework only), and environment variables.</span></span>
+- [<span data-ttu-id="17f45-114">Proměnné prostředí</span><span class="sxs-lookup"><span data-stu-id="17f45-114">Environment variables</span></span>](#environment-variables)
 
-## <a name="runtimeconfigjson"></a><span data-ttu-id="b1bd8-116">runtimeconfig. JSON</span><span class="sxs-lookup"><span data-stu-id="b1bd8-116">runtimeconfig.json</span></span>
+<span data-ttu-id="17f45-115">Některé hodnoty konfigurace lze také nastavit programově voláním metody <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="17f45-115">Some configuration values can also be set programmatically by calling the <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> method.</span></span>
 
-<span data-ttu-id="b1bd8-117">Zadejte možnosti konfigurace modulu runtime v části **configProperties** souboru *runtimeconfig. JSON* aplikace.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-117">Specify run-time configuration options in the **configProperties** section of the app's *runtimeconfig.json* file.</span></span> <span data-ttu-id="b1bd8-118">Tato část obsahuje formulář:</span><span class="sxs-lookup"><span data-stu-id="b1bd8-118">This section has the form:</span></span>
+<span data-ttu-id="17f45-116">Články v této části dokumentace jsou uspořádány podle kategorie, například [ladění](debugging-profiling.md) a [uvolňování paměti](garbage-collector.md).</span><span class="sxs-lookup"><span data-stu-id="17f45-116">The articles in this section of the documentation are organized by category, for example, [debugging](debugging-profiling.md) and [garbage collection](garbage-collector.md).</span></span> <span data-ttu-id="17f45-117">Pokud je to možné, zobrazí se možnosti konfigurace pro soubory *runtimeconfig. JSON* , vlastnosti MSBuild, proměnné prostředí a, pro křížové odkazy, soubory *App. config* pro .NET Framework projekty.</span><span class="sxs-lookup"><span data-stu-id="17f45-117">Where applicable, configuration options are shown for *runtimeconfig.json* files, MSBuild properties, environment variables, and, for cross-reference, *app.config* files for .NET Framework projects.</span></span>
+
+## <a name="runtimeconfigjson"></a><span data-ttu-id="17f45-118">runtimeconfig. JSON</span><span class="sxs-lookup"><span data-stu-id="17f45-118">runtimeconfig.json</span></span>
+
+<span data-ttu-id="17f45-119">Při [sestavení](../tools/dotnet-build.md)projektu se ve výstupním adresáři vygeneruje soubor *[AppName]. runtimeconfig. JSON* .</span><span class="sxs-lookup"><span data-stu-id="17f45-119">When a project is [built](../tools/dotnet-build.md), an *[appname].runtimeconfig.json* file is generated in the output directory.</span></span> <span data-ttu-id="17f45-120">Pokud soubor *runtimeconfig. template. JSON* existuje ve stejné složce jako soubor projektu, všechny možnosti konfigurace, které obsahuje, jsou sloučeny do souboru *[název_aplikace]. runtimeconfig. JSON* .</span><span class="sxs-lookup"><span data-stu-id="17f45-120">If a *runtimeconfig.template.json* file exists in the same folder as the project file, any configuration options it contains are merged into the *[appname].runtimeconfig.json* file.</span></span> <span data-ttu-id="17f45-121">Pokud vytváříte aplikaci sami, vložte do souboru *runtimeconfig. template. JSON* všechny možnosti konfigurace.</span><span class="sxs-lookup"><span data-stu-id="17f45-121">If you're building the app yourself, put any configuration options in the *runtimeconfig.template.json* file.</span></span> <span data-ttu-id="17f45-122">Pokud jste právě spustili aplikaci, vložte ji přímo do souboru *[název_aplikace]. runtimeconfig. JSON* .</span><span class="sxs-lookup"><span data-stu-id="17f45-122">If you're just running the app, insert them directly into the *[appname].runtimeconfig.json* file.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="17f45-123">Soubor *[AppName]. runtimeconfig. JSON* se přepíše v následných sestaveních.</span><span class="sxs-lookup"><span data-stu-id="17f45-123">The *[appname].runtimeconfig.json* file will get overwritten on subsequent builds.</span></span>
+
+<span data-ttu-id="17f45-124">Zadejte možnosti konfigurace modulu runtime v části **configProperties** souborů *runtimeconfig. JSON* .</span><span class="sxs-lookup"><span data-stu-id="17f45-124">Specify run-time configuration options in the **configProperties** section of the *runtimeconfig.json* files.</span></span> <span data-ttu-id="17f45-125">Tato část obsahuje formulář:</span><span class="sxs-lookup"><span data-stu-id="17f45-125">This section has the form:</span></span>
 
 ```json
-{
-   "runtimeOptions": {
-      "configProperties": {
-         "config-property-name1": "config-value1",
-         "config-property-name2": "config-value2"
-      }
-   }
+"configProperties": {
+  "config-property-name1": "config-value1",
+  "config-property-name2": "config-value2"
 }
 ```
 
-<span data-ttu-id="b1bd8-119">Tady je příklad souboru:</span><span class="sxs-lookup"><span data-stu-id="b1bd8-119">Here is an example file:</span></span>
+### <a name="example-appnameruntimeconfigjson-file"></a><span data-ttu-id="17f45-126">Příklad souboru [AppName]. runtimeconfig. JSON</span><span class="sxs-lookup"><span data-stu-id="17f45-126">Example [appname].runtimeconfig.json file</span></span>
+
+<span data-ttu-id="17f45-127">Pokud umístíte možnosti do výstupního souboru JSON, zanořit je do vlastnosti `runtimeOptions`.</span><span class="sxs-lookup"><span data-stu-id="17f45-127">If you're placing the options in the output JSON file, nest them under the `runtimeOptions` property.</span></span>
 
 ```json
 {
-   "runtimeOptions": {
-      "configProperties": {
-         "System.GC.Concurrent": true,
-         "System.GC.RetainVM": true,
-         "System.Threading.ThreadPool.MinThreads": "4",
-         "System.Threading.ThreadPool.MaxThreads": "25"
-      }
-   }
+  "runtimeOptions": {
+    "tfm": "netcoreapp3.1",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "3.1.0"
+    },
+    "configProperties": {
+      "System.GC.Concurrent": false,
+      "System.Threading.ThreadPool.MinThreads": 4,
+      "System.Threading.ThreadPool.MaxThreads": 25
+    }
+  }
 }
 ```
 
-<span data-ttu-id="b1bd8-120">Soubor *runtimeconfig. JSON* se automaticky vytvoří v adresáři buildu pomocí příkazu [dotnet Build](../tools/dotnet-build.md) .</span><span class="sxs-lookup"><span data-stu-id="b1bd8-120">The *runtimeconfig.json* file is automatically created in the build directory by the [dotnet build](../tools/dotnet-build.md) command.</span></span> <span data-ttu-id="b1bd8-121">Vytvoří se také při výběru možnosti nabídky **sestavení** v aplikaci Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-121">It's also created when you select the **Build** menu option in Visual Studio.</span></span> <span data-ttu-id="b1bd8-122">Po vytvoření můžete soubor upravit.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-122">You can then edit the file once it's created.</span></span>
+### <a name="example-runtimeconfigtemplatejson-file"></a><span data-ttu-id="17f45-128">Příklad souboru runtimeconfig. template. JSON</span><span class="sxs-lookup"><span data-stu-id="17f45-128">Example runtimeconfig.template.json file</span></span>
 
-<span data-ttu-id="b1bd8-123">Některé hodnoty konfigurace lze také nastavit programově voláním metody <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-123">Some configuration values can also be set programmatically by calling the <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> method.</span></span>
+<span data-ttu-id="17f45-129">Pokud umístíte možnosti do souboru JSON šablony, vynechejte vlastnost `runtimeOptions`.</span><span class="sxs-lookup"><span data-stu-id="17f45-129">If you're placing the options in the template JSON file, omit the `runtimeOptions` property.</span></span>
 
-## <a name="environment-variables"></a><span data-ttu-id="b1bd8-124">Proměnné prostředí</span><span class="sxs-lookup"><span data-stu-id="b1bd8-124">Environment variables</span></span>
+```json
+{
+  "configProperties": {
+    "System.GC.Concurrent": false,
+    "System.Threading.ThreadPool.MinThreads": "4",
+    "System.Threading.ThreadPool.MaxThreads": "25"
+  }
+}
+```
 
-<span data-ttu-id="b1bd8-125">Proměnné prostředí lze použít k poskytnutí některých informací o konfiguraci run-time.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-125">Environment variables can be used to supply some run-time configuration information.</span></span> <span data-ttu-id="b1bd8-126">Konfigurační ovladače zadané jako proměnné prostředí mají obecně předponu **COMPlus_** .</span><span class="sxs-lookup"><span data-stu-id="b1bd8-126">Configuration knobs specified as environment variables generally have the prefix **COMPlus_**.</span></span>
+## <a name="msbuild-properties"></a><span data-ttu-id="17f45-130">vlastnosti nástroje MSBuild</span><span class="sxs-lookup"><span data-stu-id="17f45-130">MSBuild properties</span></span>
 
-<span data-ttu-id="b1bd8-127">Můžete definovat proměnné prostředí z ovládacích panelů systému Windows, na příkazovém řádku nebo programově voláním metody <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> v systémech Windows a UNIX.</span><span class="sxs-lookup"><span data-stu-id="b1bd8-127">You can define environment variables from the Windows Control Panel, at the command line, or programmatically by calling the <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> method on both Windows and Unix-based systems.</span></span>
+<span data-ttu-id="17f45-131">Některé možnosti konfigurace modulu runtime lze nastavit pomocí vlastností nástroje MSBuild v souboru *. csproj* nebo *. vbproj* v projektech .NET Core ve stylu sady SDK.</span><span class="sxs-lookup"><span data-stu-id="17f45-131">Some run-time configuration options can be set using MSBuild properties in the *.csproj* or *.vbproj* file of SDK-style .NET Core projects.</span></span> <span data-ttu-id="17f45-132">Vlastnosti nástroje MSBuild mají přednost před možnostmi nastavenými v souboru *runtimeconfig. template. JSON* .</span><span class="sxs-lookup"><span data-stu-id="17f45-132">MSBuild properties take precedence over options set in the *runtimeconfig.template.json* file.</span></span> <span data-ttu-id="17f45-133">Přepíší také všechny možnosti, které jste nastavili v souboru *[název_aplikace]. runtimeconfig. JSON* v době sestavení.</span><span class="sxs-lookup"><span data-stu-id="17f45-133">They also overwrite any options you set in the *[appname].runtimeconfig.json* file at build time.</span></span>
 
-<span data-ttu-id="b1bd8-128">Následující příklady ukazují, jak nastavit proměnnou prostředí na příkazovém řádku:</span><span class="sxs-lookup"><span data-stu-id="b1bd8-128">The following examples show how to set an environment variable at the command line:</span></span>
+<span data-ttu-id="17f45-134">Zde je příklad souboru projektu ve stylu sady SDK s vlastnostmi MSBuild pro konfiguraci chování za běhu:</span><span class="sxs-lookup"><span data-stu-id="17f45-134">Here is an example SDK-style project file with MSBuild properties for configuring run-time behavior:</span></span>
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <ThreadPoolMinThreads>4</ThreadPoolMinThreads>
+    <ThreadPoolMaxThreads>25</ThreadPoolMaxThreads>
+  </PropertyGroup>
+
+</Project>
+```
+
+<span data-ttu-id="17f45-135">Vlastnosti nástroje MSBuild pro konfiguraci chování za běhu jsou uvedeny v jednotlivých článcích pro každou oblast, například [uvolňování paměti](garbage-collector.md).</span><span class="sxs-lookup"><span data-stu-id="17f45-135">MSBuild properties for configuring run-time behavior are noted in the individual articles for each area, for example, [garbage collection](garbage-collector.md).</span></span>
+
+## <a name="environment-variables"></a><span data-ttu-id="17f45-136">Proměnné prostředí</span><span class="sxs-lookup"><span data-stu-id="17f45-136">Environment variables</span></span>
+
+<span data-ttu-id="17f45-137">Proměnné prostředí lze použít k poskytnutí některých informací o konfiguraci run-time.</span><span class="sxs-lookup"><span data-stu-id="17f45-137">Environment variables can be used to supply some run-time configuration information.</span></span> <span data-ttu-id="17f45-138">Konfigurační ovladače zadané jako proměnné prostředí mají obecně předponu **COMPlus_** .</span><span class="sxs-lookup"><span data-stu-id="17f45-138">Configuration knobs specified as environment variables generally have the prefix **COMPlus_**.</span></span>
+
+<span data-ttu-id="17f45-139">Můžete definovat proměnné prostředí z ovládacích panelů systému Windows, na příkazovém řádku nebo programově voláním metody <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> v systémech Windows a UNIX.</span><span class="sxs-lookup"><span data-stu-id="17f45-139">You can define environment variables from the Windows Control Panel, at the command line, or programmatically by calling the <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> method on both Windows and Unix-based systems.</span></span>
+
+<span data-ttu-id="17f45-140">Následující příklady ukazují, jak nastavit proměnnou prostředí na příkazovém řádku:</span><span class="sxs-lookup"><span data-stu-id="17f45-140">The following examples show how to set an environment variable at the command line:</span></span>
 
 ```shell
 # Windows

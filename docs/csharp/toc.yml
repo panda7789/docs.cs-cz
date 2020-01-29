@@ -1317,14 +1317,15 @@
           items:
             - name: Typy hodnot
               items:
-                - name: Funkce typů hodnot
-                  href: language-reference/keywords/value-types.md
+                - name: Přehled
+                  href: language-reference/builtin-types/value-types.md
+                  displayName: 'value types, simple types'
                 - name: Celočíselné typy
-                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer, literal'
                   href: language-reference/builtin-types/integral-numeric-types.md
+                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer, literal'
                 - name: "Číselné typy s\_plovoucí desetinnou čárkou"
-                  displayName: 'float, decimal, double, rational, real, literal'
                   href: language-reference/builtin-types/floating-point-numeric-types.md
+                  displayName: 'float, decimal, double, rational, real, literal'
                 - name: Předdefinované číselné převody
                   href: language-reference/builtin-types/numeric-conversions.md
                 - name: bool
@@ -1364,8 +1365,6 @@
               items:
                 - name: Tabulka předdefinovaných typů
                   href: language-reference/keywords/built-in-types-table.md
-                - name: Tabulka typů hodnot
-                  href: language-reference/keywords/value-types-table.md
                 - name: Tabulka formátování číselných výsledků
                   href: language-reference/keywords/formatting-numeric-results-table.md
         - name: Modifikátory
