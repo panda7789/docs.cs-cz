@@ -6,12 +6,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: f5d709a35e160a8b03ac59e52f7bcb46196a3ce4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b883012cf8f72247ff4e0b47a46eee1854e2d534
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705285"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735658"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 
@@ -25,7 +25,7 @@ V tomto příkladu metoda Testuje dělení nulou a zachytí chybu. Bez zpracová
 
 ## <a name="exceptions-overview"></a>Přehled výjimek
 
-Výjimky mají následující vlastnosti:  
+Výjimky mají následující vlastnosti:
 
 - Výjimky jsou typy, které nakonec jsou odvozeny z `System.Exception`.
 - Použijte `try` blok kolem příkazů, které mohou vyvolat výjimky.
@@ -36,7 +36,7 @@ Výjimky mají následující vlastnosti:
 - Výjimky mohou být explicitně generovány programem pomocí klíčového slova `throw`.
 - Objekty výjimek obsahují podrobné informace o chybě, jako je například stav zásobníku volání a textový popis chyby.
 - Kód v `finally` bloku je proveden i v případě, že je vyvolána výjimka. K uvolnění prostředků použijte `finally` blok, například pro zavření všech datových proudů nebo souborů, které byly otevřeny v bloku `try`.
-- Spravované výjimky v .NET Framework jsou implementovány nad mechanismem zpracování strukturované výjimky Win32. Další informace naleznete v tématu [strukturované zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [průběh selhání na hloubkách zpracování strukturované výjimky Win32](https://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).
+- Spravované výjimky v .NET Framework jsou implementovány nad mechanismem zpracování strukturované výjimky Win32. Další informace naleznete v tématu [strukturované zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [průběh selhání na hloubkách zpracování strukturované výjimky Win32](http://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).
 
 ## <a name="related-sections"></a>Související oddíly
 

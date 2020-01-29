@@ -1,63 +1,71 @@
 ---
 title: dotnet-install scripts
-description: Přečtěte si o dotnet – instalace skriptů pro instalaci nástrojů .NET Core CLI a sdíleného modulu runtime.
-ms.date: 01/16/2019
-ms.openlocfilehash: 765141ae92645db448ac7c9c3448a79b895faac6
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
+ms.date: 01/23/2020
+ms.openlocfilehash: 169991ac4cd24ccab90634ff265c3ae5b603f8e9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964351"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734215"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
 ## <a name="name"></a>Name
 
-`dotnet-install.ps1` | `dotnet-install.sh`-skript používaný k instalaci nástrojů .NET Core CLI a sdíleného modulu runtime.
+`dotnet-install.ps1` | `dotnet-install.sh`-skript používaný k instalaci .NET Core SDK a sdíleného modulu runtime.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 Windows:
 
-`dotnet-install.ps1 [-Channel] [-Version] [-InstallDir] [-Architecture] [-SharedRuntime] [-Runtime] [-DryRun] [-NoPath] [-Verbose] [-AzureFeed] [-UncachedFeed] [-NoCdn] [-FeedCredential] [-ProxyAddress] [-ProxyUseDefaultCredentials] [-SkipNonVersionedFiles] [-Help]`
+```powershell
+dotnet-install.ps1 [-Channel] [-Version] [-JSonFile] [-InstallDir] [-Architecture]
+    [-Runtime] [-DryRun] [-NoPath] [-Verbose] [-AzureFeed] [-UncachedFeed] [-NoCdn] [-FeedCredential]
+    [-ProxyAddress] [-ProxyUseDefaultCredentials] [-SkipNonVersionedFiles] [-Help]
+```
 
-macOS/Linux:
+Linux/macOs:
 
-`dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--runtime] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--uncached-feed] [--no-cdn] [--feed-credential] [--runtime-id] [--skip-non-versioned-files] [--help]`
+```bash
+dotnet-install.sh [--channel] [--version] [--jsonfile] [--install-dir] [--architecture]
+    [--runtime] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--uncached-feed] [--no-cdn] [--feed-credential]
+    [--runtime-id] [--skip-non-versioned-files] [--help]
+```
 
 ## <a name="description"></a>Popis
 
 Skripty `dotnet-install` slouží k provedení instalace .NET Core SDK bez správy, která zahrnuje nástroje .NET Core CLI a sdílený modul runtime.
 
-Doporučujeme používat stabilní verzi, která je hostována na [hlavním webu .NET Core](https://dot.net). K přímým cestám ke skriptům patří:
+Doporučujeme používat stabilní verzi skriptů:
 
-- <https://dot.net/v1/dotnet-install.sh> (bash, UNIX)
-- <https://dot.net/v1/dotnet-install.ps1> (PowerShell, Windows)
+- Bash (Linux/macOS): <https://dot.net/v1/dotnet-install.sh>
+- PowerShell (Windows): <https://dot.net/v1/dotnet-install.ps1>
 
 Hlavní užitečnost těchto skriptů je ve scénářích automatizace a v instalacích bez správy. Existují dva skripty: jeden je PowerShellový skript, který funguje ve Windows, a druhý je bash skript, který funguje na Linux/macOS. Oba skripty mají stejné chování. Skript bash také čte přepínače prostředí PowerShell, takže můžete použít přepínače prostředí PowerShell se skriptem v systémech Linux/macOS.
 
-Instalační skripty stáhnou soubor ZIP/tarballu z buildu CLI a budou pokračovat v jeho instalaci buď ve výchozím umístění, nebo v umístění určeném parametrem `-InstallDir|--install-dir`. Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji. Pokud chcete získat pouze sdílený modul runtime, zadejte argument `--runtime`.
+Instalační skripty stáhnou soubor ZIP/tarballu z buildu CLI a budou pokračovat v jeho instalaci buď ve výchozím umístění, nebo v umístění určeném parametrem `-InstallDir|--install-dir`. Ve výchozím nastavení stáhnou instalační skripty sadu SDK a nainstaluje ji. Pokud chcete získat pouze sdílený modul runtime, zadejte argument `-Runtime|--runtime`.
 
-Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním argumentu `--no-path`.
+Ve výchozím nastavení skript přidá umístění instalace do $PATH pro aktuální relaci. Přepsat toto výchozí chování zadáním argumentu `-NoPath|--no-path`.
 
-Před spuštěním skriptu nainstalujte požadované [závislosti](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md).
+Před spuštěním skriptu nainstalujte požadované [závislosti](../install/dependencies.md).
 
-Konkrétní verzi můžete nainstalovat pomocí argumentu `--version`. Verze musí být zadaná jako verze se třemi částmi (například 1.0.0-13232). Pokud není k dispozici, používá `latest` verzi.
+Konkrétní verzi můžete nainstalovat pomocí argumentu `-Version|--version`. Verze musí být zadána jako verze se třemi částmi (například `2.1.0`). Pokud není k dispozici, používá `latest` verzi.
 
 ## <a name="options"></a>Možnosti
 
-- **`-Channel <CHANNEL>`**
+- **`-Channel|--channel <CHANNEL>`**
 
   Určuje zdrojový kanál pro instalaci. Možné hodnoty jsou:
 
   - `Current` – aktuální verze.
   - `LTS` – kanál dlouhodobé podpory (aktuálně podporovaná verze).
-  - Verze se dvěma částmi ve formátu X. Y představující specifickou verzi (například `2.0` nebo `1.0`).
-  - Název větve Například `release/2.0.0`, `release/2.0.0-preview2`nebo `master` (pro noční vydání).
+  - Verze se dvěma částmi ve formátu X. Y představující specifickou verzi (například `2.1` nebo `3.0`).
+  - Název větve: například `release/3.1.1xx` nebo `master` (pro noční vydání). Tuto možnost použijte, pokud chcete nainstalovat verzi z kanálu verze Preview. Použijte název kanálu, který je uvedený v části [instalátory a binární soubory](https://github.com/dotnet/core-sdk#installers-and-binaries).
 
   Výchozí hodnota je `LTS`. Další informace o kanálech podpory rozhraní .NET najdete na stránce [zásady podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) .
 
-- **`-Version <VERSION>`**
+- **`-Version|--version <VERSION>`**
 
   Představuje konkrétní verzi buildu. Možné hodnoty jsou:
 
@@ -67,55 +75,64 @@ Konkrétní verzi můžete nainstalovat pomocí argumentu `--version`. Verze mus
 
   Pokud není zadaný, `-Version` výchozí nastavení `latest`.
 
-- **`-InstallDir <DIRECTORY>`**
+- **`-JSonFile|--jsonfile <JSONFILE>`**
+
+  Určuje cestu k souboru [Global. JSON](global-json.md) , který se použije k určení verze sady SDK. Soubor *Global. JSON* musí mít hodnotu pro `sdk:version`.
+
+- **`-InstallDir|--install-dir <DIRECTORY>`**
 
   Určuje instalační cestu. Adresář se vytvoří, pokud neexistuje. Výchozí hodnota je *%localappdata%\Microsoft\dotnet*. Binární soubory jsou umístěny přímo v tomto adresáři.
 
-- **`-Architecture <ARCHITECTURE>`**
+- **`-Architecture|--architecture <ARCHITECTURE>`**
 
   Architektura binárních souborů .NET Core, které se mají nainstalovat Možné hodnoty jsou `<auto>`, `amd64`, `x64`, `x86`, `arm64`a `arm`. Výchozí hodnota je `<auto>`, která představuje aktuálně běžící architekturu OS.
 
-- **`-SharedRuntime`**
+- **`-SharedRuntime|--shared-runtime`**
 
   > [!NOTE]
-  > Tento parametr je zastaralý a v budoucí verzi skriptu ho můžete odebrat. Doporučená alternativa je `Runtime` možnost.
+  > Tento parametr je zastaralý a v budoucí verzi skriptu ho můžete odebrat. Doporučená alternativa je `-Runtime|--runtime` možnost.
 
-  Nainstaluje jenom sdílené běhové bity, ne celou sadu SDK. Jedná se o ekvivalent určení `-Runtime dotnet`.
+  Nainstaluje jenom sdílené běhové bity, ne celou sadu SDK. Tato možnost je ekvivalentní s určením `-Runtime|--runtime dotnet`.
 
-- **`-Runtime <RUNTIME>`**
+- **`-Runtime|--runtime <RUNTIME>`**
 
   Nainstaluje pouze sdílený modul runtime, nikoli celou sadu SDK. Možné hodnoty jsou:
 
   - `dotnet` – `Microsoft.NETCore.App` sdílený modul runtime.
   - `aspnetcore` – `Microsoft.AspNetCore.App` sdílený modul runtime.
+  - `windowsdesktop` – `Microsoft.WindowsDesktop.App` sdílený modul runtime.
 
-- **`-DryRun`**
+- **`-DryRun|--dry-run`**
 
   Když se tato nastavení nastaví, skript neprovede instalaci. Místo toho zobrazí příkazový řádek, který se má použít k konzistentně instalaci požadované verze .NET Core CLI. Například pokud zadáte `latest`verze, zobrazí se odkaz s konkrétní verzí, aby tento příkaz bylo možné použít ve skriptu sestavení deterministické. Také se zobrazí umístění binárního souboru, pokud dáváte přednost instalaci nebo stažení.
 
-- **`-NoPath`**
+- **`-NoPath|--no-path`**
 
   Je-li nastavena, instalační složka není exportována do cesty pro aktuální relaci. Ve výchozím nastavení skript upraví cestu, která zpřístupňuje nástroje rozhraní příkazového řádku hned po instalaci.
 
-- **`-Verbose`**
+- **`-Verbose|--verbose`**
 
   Zobrazí diagnostické informace.
 
-- **`-AzureFeed`**
+- **`-AzureFeed|--azure-feed`**
 
   Určuje adresu URL pro instalační službu Azure feed. Doporučujeme, abyste tuto hodnotu nezměnili. Výchozí hodnota je `https://dotnetcli.azureedge.net/dotnet`.
 
-- **`-UncachedFeed`**
+- **`-UncachedFeed|--uncached-feed`**
 
   Umožňuje změnit adresu URL informačního kanálu neuloženého v mezipaměti, který používá tento instalační program. Doporučujeme, abyste tuto hodnotu nezměnili.
 
-- **`-NoCdn`**
+- **`-NoCdn|--no-cdn`**
 
   Zakáže stahování z [Azure Content Delivery Network (CDN)](https://docs.microsoft.com/azure/cdn/cdn-overview) a používá neuložené kanály přímo.
 
-- **`-FeedCredential`**
+- **`-FeedCredential|--feed-credential`**
 
   Slouží jako řetězec dotazu, který se má připojit k datovému kanálu Azure. Umožňuje změnit adresu URL tak, aby používala neveřejné účty úložiště BLOB.
+
+- **`--runtime-id`**
+
+  Určuje [identifikátor modulu runtime](../rid-catalog.md) , pro který jsou nástroje nainstalovány. Pro přenosné Linuxy použijte `linux-x64`. (Platí jenom pro Linux/macOS)
 
 - **`-ProxyAddress`**
 
@@ -125,11 +142,11 @@ Konkrétní verzi můžete nainstalovat pomocí argumentu `--version`. Verze mus
 
   Pokud je nastaveno, instalační program při použití adresy proxy používá přihlašovací údaje aktuálního uživatele. (Platí jenom pro Windows)
 
-- **`-SkipNonVersionedFiles`**
+- **`-SkipNonVersionedFiles|--skip-non-versioned-files`**
 
   Přeskočí instalaci souborů bez verze, jako je například *dotnet. exe*, pokud již existují.
 
-- **`-Help`**
+- **`-Help|--help`**
 
   Vytiskne nápovědu pro skript.
 
@@ -149,32 +166,32 @@ Konkrétní verzi můžete nainstalovat pomocí argumentu `--version`. Verze mus
   ./dotnet-install.sh --channel LTS
   ```
 
-- Nainstalujte nejnovější verzi z kanálu 2,0 do zadaného umístění:
+- Nainstalujte nejnovější verzi z kanálu 3,1 do zadaného umístění:
 
   Windows:
 
   ```powershell
-  ./dotnet-install.ps1 -Channel 2.0 -InstallDir C:\cli
+  ./dotnet-install.ps1 -Channel 3.1 -InstallDir C:\cli
   ```
 
   macOS/Linux:
 
   ```bash
-  ./dotnet-install.sh --channel 2.0 --install-dir ~/cli
+  ./dotnet-install.sh --channel 3.1 --install-dir ~/cli
   ```
 
-- Instalace verze 1.1.0 sdíleného modulu runtime:
+- Instalace verze 3.0.0 sdíleného modulu runtime:
 
   Windows:
 
   ```powershell
-  ./dotnet-install.ps1 -Runtime dotnet -Version 1.1.0
+  ./dotnet-install.ps1 -Runtime dotnet -Version 3.0.0
   ```
 
   macOS/Linux:
 
   ```bash
-  ./dotnet-install.sh --runtime dotnet --version 1.1.0
+  ./dotnet-install.sh --runtime dotnet --version 3.0.0
   ```
 
 - Získání skriptu a instalace verze 2.1.2 za podnikovým proxy serverem (pouze Windows):

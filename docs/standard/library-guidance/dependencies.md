@@ -2,12 +2,12 @@
 title: Závislosti a knihovny .NET
 description: Doporučení osvědčených postupů pro správu závislostí NuGet v knihovnách .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: b5742bf4724c4aff4beb4ca40a543bd096528a00
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6a260b54c45a0cd231059ab3bc6f2707ef7fb20e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706501"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731475"
 ---
 # <a name="dependencies"></a>Závislosti
 
@@ -29,7 +29,7 @@ Většinu diamantových závislostí lze snadno vyřešit. můžou se ale v urč
 
 Není možné zjistit, jaké balíčky se budou používat společně s vašimi vlastními. Dobrým způsobem, jak snížit pravděpodobnost přerušení vaší knihovny, je minimalizovat počet balíčků, na kterých jste závislí.
 
-**✔️** Projděte si knihovnu .NET, abyste měli zbytečné závislosti.
+✔️ Projděte si knihovnu .NET, abyste měli zbytečné závislosti.
 
 ## <a name="nuget-dependency-version-ranges"></a>Rozsahy verzí závislosti NuGet
 
@@ -56,11 +56,11 @@ Omezení horní verze způsobí selhání NuGet v případě konfliktu. Napřík
 
 ![Konflikt závislosti v kosočtverec](./media/dependencies/diamond-dependency-conflict.png "Konflikt závislosti v kosočtverec")
 
-**❌** nemáte odkazy na balíček NuGet bez minimální verze.
+❌ nemáte odkazy na balíček NuGet bez minimální verze.
 
-**❌ se vyhnout** Balíček NuGet odkazuje na přesnou verzi.
+❌ se vyhnout odkazům na balíček NuGet, které vyžadují přesnou verzi.
 
-**❌ se vyhnout** Balíček NuGet odkazuje na horní limit verze.
+❌ se vyhnout odkazům na balíček NuGet s horním limitem verze.
 
 ## <a name="nuget-shared-source-packages"></a>Sdílené zdrojové balíčky NuGet
 
@@ -78,19 +78,19 @@ Sdílené zdrojové balíčky jsou skvělé pro zahrnutí malých kousků funkc�
 
 Sdílené zdrojové balíčky mají určitá omezení. Můžou na ně odkazovat jenom `PackageReference`, aby se vyloučily starší `packages.config` projekty. Sdílené zdrojové balíčky jsou také použitelné pouze v projektech se stejným typem jazyka. Z důvodu těchto omezení jsou sdílené zdrojové balíčky nejlépe používány pro sdílení funkcí v rámci open source projektu.
 
-**✔️ zvažte** odkazování na sdílené zdrojové balíčky pro malé, interní funkce.
+✔️ Zvažte odkazování na sdílené zdrojové balíčky pro malé, interní funkce.
 
-**✔️ zvažte** vytvoření balíčku sdíleného zdrojového kódu, pokud poskytuje malé, interní funkce.
+✔️ Zvažte vytvoření balíčku sdíleného zdrojového kódu, pokud poskytuje malé, interní funkce.
 
-**✔️** odkazují na sdílené zdrojové balíčky pomocí `PrivateAssets="All"`.
+✔️ odkazují na sdílené zdrojové balíčky pomocí `PrivateAssets="All"`.
 
 > Toto nastavení říká NuGet, že balíček se má použít jenom v době vývoje a neměl by být vystavený jako veřejná závislost.
 
-ve veřejném rozhraní API **není❌** sdílené zdrojové typy balíčků.
+ve veřejném rozhraní API není ❌ sdílené zdrojové typy balíčků.
 
 > Sdílené zdrojové typy jsou kompilovány do odkazujícího sestavení a nelze je vyměňovat přes hranice sestavení. Například typ Shared-Source `IRepository` v jednom projektu je samostatný typ ze stejného `IRepository` Shared Source v jiném projektu. Typy ve sdílených zdrojových balíčcích by měly mít `internal` viditelnost.
 
-**❌** nepublikujte sdílené zdrojové balíčky do NuGet.org.
+❌ nepublikujte sdílené zdrojové balíčky do NuGet.org.
 
 > Sdílené zdrojové balíčky obsahují zdrojový kód a mohou být použity pouze v projektech se stejným typem jazyka. Například C# sdílený zdrojový balíček nemůže používat F# aplikace.
 >

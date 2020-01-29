@@ -1,16 +1,16 @@
 ---
-title: Ovládací prvky používané ve Windows Forms
+title: Ovládací prvky, které se mají použít
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: bedfaef9a3d0cc81641006d254926f7bf9861c10
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2bcefd2ee2c9533d9f0afa2d12cd2e7437fc3d37
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930209"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737443"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje Abecední seznam ovládacích prvků a komponent, které lze použít na model Windows Forms. Kromě model Windows Formsch ovládacích prvků popsaných v této části můžete přidat ovládací prvky ActiveX a vlastní ovládací prvky do model Windows Forms. Pokud zde požadovaný ovládací prvek nenajdete, můžete si také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj model Windows Formsch ovládacích prvků v době návrhu](developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku, který potřebujete, najdete v tématu [model Windows Forms Controls by Function](windows-forms-controls-by-function.md).  
@@ -50,10 +50,10 @@ Následuje Abecední seznam ovládacích prvků a komponent, které lze použít
  Zobrazí data v rozevíracím poli se seznamem.  
   
  [Komponenta ContextMenu](contextmenu-component-windows-forms.md)  
- Poskytuje uživatelům snadno dostupnou nabídku často používaných příkazů, které jsou přidruženy k vybranému objektu. I <xref:System.Windows.Forms.ContextMenuStrip> když nahrazuje a přidává funkce <xref:System.Windows.Forms.ContextMenu> do kontroly nad předchozími verzemi <xref:System.Windows.Forms.ContextMenu> , je ponechána pro zpětnou kompatibilitu i pro budoucí použití, pokud je to žádoucí.  
+ Poskytuje uživatelům snadno dostupnou nabídku často používaných příkazů, které jsou přidruženy k vybranému objektu. I když <xref:System.Windows.Forms.ContextMenuStrip> nahrazuje a přidává funkce pro <xref:System.Windows.Forms.ContextMenu> kontrolu nad předchozími verzemi, <xref:System.Windows.Forms.ContextMenu> se zachová jak pro zpětnou kompatibilitu, tak i pro budoucí použití, pokud to bude potřeba.  
   
  [Ovládací prvek ContextMenuStrip](contextmenustrip-control.md)  
- Představuje místní nabídku. I <xref:System.Windows.Forms.ContextMenuStrip> když nahrazuje a přidává funkce <xref:System.Windows.Forms.ContextMenu> do kontroly nad předchozími verzemi <xref:System.Windows.Forms.ContextMenu> , je ponechána pro zpětnou kompatibilitu i pro budoucí použití, pokud je to žádoucí.  
+ Představuje místní nabídku. I když <xref:System.Windows.Forms.ContextMenuStrip> nahrazuje a přidává funkce pro <xref:System.Windows.Forms.ContextMenu> kontrolu nad předchozími verzemi, <xref:System.Windows.Forms.ContextMenu> se zachová jak pro zpětnou kompatibilitu, tak i pro budoucí použití, pokud to bude potřeba.  
   
  [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)  
  Zobrazí tabulková data z datové sady a umožňuje aktualizace zdroje dat.  
@@ -109,13 +109,13 @@ Následuje Abecední seznam ovládacích prvků a komponent, které lze použít
  Zobrazí seznam položek s ikonami ve formě Průzkumníka Windows.  
   
  [Komponenta MainMenu](mainmenu-component-windows-forms.md)  
- Zobrazí nabídku v době běhu. I <xref:System.Windows.Forms.MenuStrip> když nahrazuje a přidává funkce <xref:System.Windows.Forms.MainMenu> do kontroly nad předchozími verzemi <xref:System.Windows.Forms.MainMenu> , je uchována pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+ Zobrazí nabídku v době běhu. I když <xref:System.Windows.Forms.MenuStrip> nahrazuje a přidává funkce pro <xref:System.Windows.Forms.MainMenu> kontrolu nad předchozími verzemi, <xref:System.Windows.Forms.MainMenu> se zachová pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  [Ovládací prvek MaskedTextBox](maskedtextbox-control-windows-forms.md)  
  Omezí formát vstupu uživatele ve formuláři.  
   
  [Ovládací prvek MenuStrip](menustrip-control-windows-forms.md)  
- Poskytuje systém nabídek pro formulář. I <xref:System.Windows.Forms.MenuStrip> když nahrazuje a přidává funkce <xref:System.Windows.Forms.MainMenu> do kontroly nad předchozími verzemi <xref:System.Windows.Forms.MainMenu> , je uchována pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+ Poskytuje systém nabídek pro formulář. I když <xref:System.Windows.Forms.MenuStrip> nahrazuje a přidává funkce pro <xref:System.Windows.Forms.MainMenu> kontrolu nad předchozími verzemi, <xref:System.Windows.Forms.MainMenu> se zachová pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)  
  Prezentuje intuitivní grafické rozhraní, které uživatelům umožní zobrazit a nastavit informace o datu.  
@@ -145,7 +145,7 @@ Následuje Abecední seznam ovládacích prvků a komponent, které lze použít
  Nastaví vlastnosti, které popisují tisk, a vytiskne dokument v aplikacích založených na systému Windows.  
   
  [Ovládací prvek PrintPreviewControl](printpreviewcontrol-control-windows-forms.md)  
- Umožňuje vytvořit vlastní `PrintPreview` komponentu nebo dialogové okno namísto použití předem nakonfigurované verze.  
+ Umožňuje vytvořit vlastní komponentu `PrintPreview` nebo dialogové okno namísto použití předem nakonfigurované verze.  
   
  [Ovládací prvek PrintPreviewDialog](printpreviewdialog-control-windows-forms.md)  
  Zobrazí dokument tak, jak se zobrazí při tisku.  
@@ -171,10 +171,10 @@ Následuje Abecední seznam ovládacích prvků a komponent, které lze použít
  Umožňuje uživateli změnit velikost ukotveného ovládacího prvku (.NET Framework verze 1. x).  
   
  [Ovládací prvek StatusBar](statusbar-control-windows-forms.md)  
- Zobrazí informace o stavu související s ovládacím prvkem, který má fokus. I <xref:System.Windows.Forms.StatusStrip> když nahradí a <xref:System.Windows.Forms.StatusBar> rozšiřuje kontrolu nad předchozí verzí, <xref:System.Windows.Forms.StatusBar> je uchována pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+ Zobrazí informace o stavu související s ovládacím prvkem, který má fokus. I když <xref:System.Windows.Forms.StatusStrip> nahrazuje a rozšiřuje kontrolu <xref:System.Windows.Forms.StatusBar> předchozích verzí, <xref:System.Windows.Forms.StatusBar> se zachová pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  [Ovládací prvek StatusStrip](statusstrip-control.md)  
- Představuje ovládací prvek stavového řádku systému Windows. I <xref:System.Windows.Forms.StatusStrip> když nahradí a <xref:System.Windows.Forms.StatusBar> rozšiřuje kontrolu nad předchozí verzí, <xref:System.Windows.Forms.StatusBar> je uchována pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+ Představuje ovládací prvek stavového řádku systému Windows. I když <xref:System.Windows.Forms.StatusStrip> nahrazuje a rozšiřuje kontrolu <xref:System.Windows.Forms.StatusBar> předchozích verzí, <xref:System.Windows.Forms.StatusBar> se zachová pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)  
  Zobrazí více karet, které mohou obsahovat obrázky nebo jiné ovládací prvky.  
@@ -189,22 +189,22 @@ Následuje Abecední seznam ovládacích prvků a komponent, které lze použít
  Vyvolá událost v pravidelných intervalech.  
   
  [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)  
- Zobrazí nabídky a tlačítka s rastrovými obrázky, které aktivují příkazy. Můžete roztáhnout funkce ovládacího prvku a upravit jeho vzhled a chování. I <xref:System.Windows.Forms.ToolStrip> když nahrazuje a přidává funkce <xref:System.Windows.Forms.ToolBar> do kontroly nad předchozími verzemi <xref:System.Windows.Forms.ToolBar> , je uchována pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+ Zobrazí nabídky a tlačítka s rastrovými obrázky, které aktivují příkazy. Můžete roztáhnout funkce ovládacího prvku a upravit jeho vzhled a chování. I když <xref:System.Windows.Forms.ToolStrip> nahrazuje a přidává funkce pro <xref:System.Windows.Forms.ToolBar> kontrolu nad předchozími verzemi, <xref:System.Windows.Forms.ToolBar> se zachová pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)  
- Vytvoří vlastní panely nástrojů a nabídky v aplikacích model Windows Forms. I <xref:System.Windows.Forms.ToolStrip> když nahrazuje a přidává funkce <xref:System.Windows.Forms.ToolBar> do kontroly nad předchozími verzemi <xref:System.Windows.Forms.ToolBar> , je uchována pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
+ Vytvoří vlastní panely nástrojů a nabídky v aplikacích model Windows Forms. I když <xref:System.Windows.Forms.ToolStrip> nahrazuje a přidává funkce pro <xref:System.Windows.Forms.ToolBar> kontrolu nad předchozími verzemi, <xref:System.Windows.Forms.ToolBar> se zachová pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  [Ovládací prvek ToolStripContainer](toolstripcontainer-control.md)  
- Poskytuje panely na každé straně formuláře pro docking, vory a uspořádání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků a centrální <xref:System.Windows.Forms.ToolStripContentPanel> pro tradiční ovládací prvky.  
+ Poskytuje panely na každé straně formuláře pro ukotvení, vory a uspořádání <xref:System.Windows.Forms.ToolStrip>ch ovládacích prvků a centrální <xref:System.Windows.Forms.ToolStripContentPanel> pro tradiční ovládací prvky.  
   
  [Ovládací prvek ToolStripPanel](toolstrippanel-control.md)  
- Poskytuje jeden panel pro docking, vory a uspořádání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
+ Poskytuje jeden panel pro ukotvení, vory a uspořádání <xref:System.Windows.Forms.ToolStrip>ch ovládacích prvků.  
   
  [Přehled ovládacího prvku ToolStripProgressBar](toolstripprogressbar-control-overview.md)  
- Graficky indikuje průběh akce směrem k dokončení. Je obvykle obsažen <xref:System.Windows.Forms.StatusStrip>v. <xref:System.Windows.Forms.ToolStripProgressBar>  
+ Graficky indikuje průběh akce směrem k dokončení. <xref:System.Windows.Forms.ToolStripProgressBar> se obvykle nachází v <xref:System.Windows.Forms.StatusStrip>.  
   
  [Ovládací prvek ToolStripStatusLabel](toolstripstatuslabel-control.md)  
- Představuje panel v <xref:System.Windows.Forms.StatusStrip> ovládacím prvku.  
+ Představuje panel v ovládacím prvku <xref:System.Windows.Forms.StatusStrip>.  
   
  [Komponenta ToolTip](tooltip-component-windows-forms.md)  
  Zobrazí text, když uživatel ukáže jiné ovládací prvky.  
@@ -231,5 +231,5 @@ Následuje Abecední seznam ovládacích prvků a komponent, které lze použít
  [Ovládací prvky a programovatelné objekty v porovnání s různými jazyky a knihovnami](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0061wezk(v=vs.100))  
  Poskytuje tabulku, která mapuje ovládací prvky v Visual Basic 6,0 na odpovídající ovládací prvek v Visual Basic .NET. Všimněte si, že ovládací prvky jsou nyní třídy v .NET Framework.  
   
- [Postupy: Přidat ovládací prvky ActiveX do model Windows Forms](how-to-add-activex-controls-to-windows-forms.md)  
+ [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](how-to-add-activex-controls-to-windows-forms.md)  
  Popisuje, jak používat ovládací prvky ActiveX na model Windows Forms.

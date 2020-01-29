@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vrstvení objektů ve formulářích Windows'
+title: Uspořádání objektů ve vrstvách
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,12 +15,12 @@ ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 5b8f6c00e70df94ae3a82c2c195fa781f0840a53
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 1615b9c4df222edd95cda9bceae622ba6f1d8d78
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458352"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736336"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Postupy: vrstvení objektů na model Windows Forms
 

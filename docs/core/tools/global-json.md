@@ -3,18 +3,18 @@ title: global.json – přehled
 description: Naučte se používat soubor Global. JSON k nastavení verze .NET Core SDK při spouštění příkazů .NET Core CLI.
 ms.date: 01/14/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: fedfe168e2c1a0555c2d4499ba02d270033e0d1a
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: f02c9129a707ddddb2c5e1975b75cc35abc5cd55
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115788"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733975"
 ---
 # <a name="globaljson-overview"></a>global.json – přehled
 
-**Tento článek se týká: ✓** .net Core 2,0 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .net Core 2,0 SDK a novějších verzí
 
-Soubor *Global. JSON* umožňuje definovat, která verze .NET Core SDK se používá při spuštění příkazů .NET Core CLI. Výběr .NET Core SDK je nezávislý na určení modulu runtime, který cílí na projekt. Verze .NET Core SDK označuje, které verze .NET Core CLIch nástrojů se používají. 
+Soubor *Global. JSON* umožňuje definovat, která verze .NET Core SDK se používá při spuštění příkazů .NET Core CLI. Výběr .NET Core SDK je nezávislý na určení modulu runtime, který cílí na projekt. Verze .NET Core SDK označuje, které verze .NET Core CLIch nástrojů se používají.
 
 Obecně platí, že chcete použít nejnovější verzi nástrojů SDK, takže není potřeba žádný soubor *Global. JSON* . V některých pokročilých scénářích můžete chtít řídit verzi nástrojů sady SDK a tento článek vysvětluje, jak to provést.
 
@@ -62,7 +62,7 @@ Pokud tuto hodnotu nenastavíte explicitně, bude výchozí hodnota záviset na 
 
 - Dostupné od verze: .NET Core 3,0 SDK.
 
-Zásada pro převzetí služeb při obnovení, která se má použít při výběru verze sady SDK, a to buď jako záložní, pokud konkrétní verze sady SDK chybí, nebo jako direktiva pro použití vyšší verze. Pokud nenastavujete `latestMajor`, je nutné zadat [verzi](#version) s `rollForward` hodnotou. 
+Zásada pro převzetí služeb při obnovení, která se má použít při výběru verze sady SDK, a to buď jako záložní, pokud konkrétní verze sady SDK chybí, nebo jako direktiva pro použití vyšší verze. Pokud nenastavujete `latestMajor`, je nutné zadat [verzi](#version) s `rollForward` hodnotou.
 
 Pro pochopení dostupných zásad a jejich chování zvažte následující definice verze sady SDK ve formátu `x.y.znn`:
 

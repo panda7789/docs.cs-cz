@@ -2,12 +2,12 @@
 title: Implementace odolných Entity Framework Core připojení SQL
 description: Naučte se implementovat odolná Entity Framework Core připojení SQL. Tato technika je obzvláště důležitá při použití Azure SQL Database v cloudu.
 ms.date: 10/16/2018
-ms.openlocfilehash: 3128cf1be7f2dc8804a002556db232f4e0fc8c33
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 7899fc263ab3cde6ac2410ca614a7e5fa285576b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094052"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732724"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implementace odolných Entity Framework Core připojení SQL
 
@@ -88,7 +88,7 @@ public async Task<IActionResult> UpdateProduct(
 }
 ```
 
-První <xref:Microsoft.EntityFrameworkCore.DbContext> je `_catalogContext` a druhý `DbContext` v rámci objektu `_integrationEventLogService`. Akce potvrzení se provádí napříč všemi `DbContext` objekty pomocí strategie provádění EF.
+První <xref:Microsoft.EntityFrameworkCore.DbContext> je `_catalogContext` a druhý `DbContext` v rámci objektu `_catalogIntegrationEventService`. Akce potvrzení se provádí napříč všemi `DbContext` objekty pomocí strategie provádění EF.
 
 Chcete-li dosáhnout tohoto vícenásobného potvrzení `DbContext`, `SaveEventAndCatalogContextChangesAsync` používá třídu `ResilientTransaction`, jak je znázorněno v následujícím kódu:
 

@@ -3,16 +3,16 @@ title: dotnet – příkaz push NuGet
 description: Příkaz dotnet NuGet push odešle balíček na server a publikuje ho.
 author: karann-msft
 ms.date: 12/04/2019
-ms.openlocfilehash: 5e80295a570adc30a06d86b6735cb0387e39d5a3
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
-ms.translationtype: MT
+ms.openlocfilehash: a483c559dee8b4a82cc2c792f5c2c5e4a8ff3f87
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835516"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733106"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
-**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -77,7 +77,7 @@ Příkaz `dotnet nuget push` odešle balíček na server a publikuje ho. Příka
 * **`--skip-duplicate`**
 
   Při nahrávání více balíčků na server HTTP (S) zachází s každou odpovědí na 409 konfliktů jako s upozorněním, aby bylo možné pokračovat v nabízení. K dispozici od verze .NET Core 3,1 SDK.
-                                 
+
 * **`-sk|--symbol-api-key <API_KEY>`**
 
   Klíč rozhraní API pro server symbolů.
@@ -127,11 +127,11 @@ Příkaz `dotnet nuget push` odešle balíček na server a publikuje ho. Příka
   ```dotnetcli
   dotnet nuget push *.nupkg
   ```
-  
+
   > [!NOTE]
   > Pokud tento příkaz nefunguje, může to být způsobeno chybou, která existovala ve starších verzích sady SDK (.NET Core 2,1 SDK a starších verzích).
   > Pokud to chcete opravit, upgradujte verzi sady SDK nebo spusťte následující příkaz: `dotnet nuget push **/*.nupkg`
-  
+
 * Vloží všechny soubory *. nupkg* i v případě, že server http (S) vrátí odpověď na konflikt 409:
 
   ```dotnetcli

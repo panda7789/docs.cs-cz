@@ -1,38 +1,38 @@
 ---
-title: Součást Časovač (Windows Forms)
+title: Komponenta Timer
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Timer component [Windows Forms]
 - timers
 - timers [Windows Forms], creating
 ms.assetid: 6700e534-6382-43d5-98ed-14205435fff7
-ms.openlocfilehash: 52a6b006b78856c9e14e13ce3e7a4dd2f1d2809e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c6e42675567935f08ea7246e14cb7ac5abde23ee
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009575"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735492"
 ---
 # <a name="timer-component-windows-forms"></a>Součást Časovač (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.Timer> je komponenta, která vyvolává událost v pravidelných intervalech. Tato součást je určená pro prostředí Windows Forms.  
+<xref:System.Windows.Forms.Timer> model Windows Forms je komponenta, která vyvolává událost v pravidelných intervalech. Tato součást je navržená pro model Windows Forms prostředí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty Timer](timer-component-overview-windows-forms.md)  
- Představuje obecné koncepty <xref:System.Windows.Forms.Timer> součásti, která vám umožní nastavit si vaše aplikace reaguje na opakované události.  
+ Zavádí obecné koncepty <xref:System.Windows.Forms.Timer> komponenty, které vám umožní nastavit aplikaci tak, aby odpovídala pravidelným událostem.  
   
  [Omezení vlastnosti intervalu komponenty Windows Forms Timer](limitations-of-the-timer-component-interval-property.md)  
- Popisuje známé omezení intervalu časovače, který může mít vliv na tom, jak můžete použít.  
+ Popisuje známá omezení intervalu časovače, který může mít vliv na to, jak ho můžete použít.  
   
  [Postupy: Spouštění procedur v nastavených intervalech pomocí komponenty Windows Forms Timer](run-procedures-at-set-intervals-with-wf-timer-component.md)  
- Popisuje, jak reagovat na vypršení časového intervalu ve svých aplikacích založených na Windows.  
+ Popisuje, jak reagovat na časované intervaly v aplikacích založených na systému Windows.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> Třída  
- Poskytuje referenční informace ve třídě, používá pro Windows Forms časovačů a její členy.  
+ <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> – třída  
+ Poskytuje referenční informace o třídě, která se používá pro model Windows Forms časovače a její členy.  
   
- <xref:System.Timers.Timer?displayProperty=nameWithType> Třída  
- Poskytuje referenční informace o <xref:System.Timers.Timer?displayProperty=nameWithType> třídu, která používá časovačů založené na serveru.  
+ <xref:System.Timers.Timer?displayProperty=nameWithType> – třída  
+ Poskytuje referenční informace o třídě <xref:System.Timers.Timer?displayProperty=nameWithType>, kterou používají časovače založené na serveru.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  

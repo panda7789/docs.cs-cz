@@ -1,17 +1,18 @@
 ---
 title: Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms [WPF], interoperability with
 - Windows Forms [WPF], WPF interoperation
 - interoperability [WPF], Windows Forms
 ms.assetid: 8a157e6b-8054-46db-a5cf-a78966acc7a1
-ms.openlocfilehash: e80379700b43ed5d0e74ea890c2a0eafe67159e6
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
-ms.translationtype: MT
+ms.openlocfilehash: 7f531b60d8b31181688f3d0a6753b234ffc6c7dd
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740223"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735216"
 ---
 # <a name="windows-forms-controls-and-equivalent-wpf-controls"></a>Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF
 Mnoho ovládacích prvků [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] má ekvivalentní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky, ale některé ovládací prvky [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nemají v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]žádné ekvivalenty. Toto téma porovnává typy ovládacích prvků poskytované těmito dvěma technologiemi.  

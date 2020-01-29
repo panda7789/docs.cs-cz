@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl'
+title: Přidání a odebrání karet pomocí TabControl
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,19 +12,19 @@ helpviewer_keywords:
 - tabs [Windows Forms], adding to pages
 - tab pages
 ms.assetid: 66d4dfca-41e8-44e3-9c80-fb7ac4cb1619
-ms.openlocfilehash: 938f1210eaa3479822e752327123737a3286fe9a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8292d8441f9b47334b98736cf3282c846673dbb4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624062"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732714"
 ---
-# <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol"></a>Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl
-Ve výchozím nastavení <xref:System.Windows.Forms.TabControl> ovládací prvek obsahuje dva <xref:System.Windows.Forms.TabPage> ovládacích prvků. Můžete přistupovat prostřednictvím těchto karet <xref:System.Windows.Forms.TabControl.TabPages%2A> vlastnost.  
+# <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol"></a>Postupy: Přidání a odebrání karet s prvkem Windows Forms TabControl
+Ve výchozím nastavení obsahuje ovládací prvek <xref:System.Windows.Forms.TabControl> dva ovládací prvky <xref:System.Windows.Forms.TabPage>. K těmto kartám máte přístup pomocí vlastnosti <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
   
-### <a name="to-add-a-tab-programmatically"></a>Chcete-li přidat na kartě prostřednictvím kódu programu  
+### <a name="to-add-a-tab-programmatically"></a>Chcete-li přidat kartu programově  
   
-- Použití <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> metodu <xref:System.Windows.Forms.TabControl.TabPages%2A> vlastnost.  
+- Použijte metodu <xref:System.Windows.Forms.TabControl.TabPageCollection.Add%2A> vlastnosti <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
   
     ```vb  
     Dim myTabPage As New TabPage()  
@@ -45,13 +45,13 @@ Ve výchozím nastavení <xref:System.Windows.Forms.TabControl> ovládací prvek
     tabControl1->TabPages->Add(myTabPage);  
     ```  
   
-### <a name="to-remove-a-tab-programmatically"></a>Chcete-li odebrat kartu prostřednictvím kódu programu  
+### <a name="to-remove-a-tab-programmatically"></a>Postup při programovém odebrání karty  
   
-- Pokud chcete odebrat vybrané karty, použijte <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> metodu <xref:System.Windows.Forms.TabControl.TabPages%2A> vlastnost.  
+- Chcete-li odebrat vybrané karty, použijte metodu <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> vlastnosti <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
   
      -nebo-  
   
-- Chcete-li odebrat všechny karty, použijte <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> metodu <xref:System.Windows.Forms.TabControl.TabPages%2A> vlastnost.  
+- Chcete-li odebrat všechny karty, použijte metodu <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> vlastnosti <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
   
     ```vb  
     ' Removes the selected tab:  
@@ -77,6 +77,6 @@ Ve výchozím nastavení <xref:System.Windows.Forms.TabControl> ovládací prvek
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
-- [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+- [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Zákaz karet](how-to-disable-tab-pages.md)
+- [Postupy: Změna vzhledu Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

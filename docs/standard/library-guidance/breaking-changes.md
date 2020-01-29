@@ -2,12 +2,12 @@
 title: Přerušující změny a knihovny .NET
 description: Doporučení osvědčených postupů pro navigaci při zásadních změnách při vytváření knihoven .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 8536662ae1cd9733efbcc0c6526bd69d34a13177
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 2cbd9e0a818b52aede6c9b1f60fdf52dcbd7b96f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740980"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731465"
 ---
 # <a name="breaking-changes"></a>Změny způsobující chyby
 
@@ -25,11 +25,11 @@ Způsob, jakým komunita rozhraní .NET používá knihovnu, mění vliv na zás
 
   Knihovny vysoké úrovně jsou přímo odkazovány v aplikaci koncového uživatele. V případě, že dojde k zásadním změnám, může vývojář zvolit aktualizaci na nejnovější verzi nebo může upravit svou aplikaci tak, aby fungovala s průlomovou změnou.
 
-**✔️** se zamyslete nad tím, jak se vaše knihovna bude používat. Jaký vliv budou tyto změny u aplikací a knihoven, které ji používají?
+✔️ se zamyslete nad tím, jak se vaše knihovna bude používat. Jaký vliv budou tyto změny u aplikací a knihoven, které ji používají?
 
-Při vývoji knihovny .NET nízké úrovně je **✔️** minimalizovat zásadní změny.
+Při vývoji knihovny .NET nízké úrovně je ✔️ minimalizovat zásadní změny.
 
-**✔️ zvažte** publikování většího přepsání knihovny jako nového balíčku NuGet.
+✔️ Zvažte publikování většího přepsání knihovny jako nového balíčku NuGet.
 
 ## <a name="types-of-breaking-changes"></a>Typy přerušujících změn
 
@@ -56,7 +56,7 @@ Přidání funkcí a vylepšení špatného chování je vhodné, ale bez péče
 
 ASP.NET Core MVC má například koncept [verze kompatibility](/aspnet/core/mvc/compatibility-version) , který upravuje Funkce povolené a zakázané v `MvcOptions`.
 
-**✔️ zvažte** , že se ve výchozím nastavení vypnou nové funkce, pokud mají vliv na existující uživatele a umožní vývojářům, aby se k této funkci přihlásili pomocí nastavení.
+✔️ Zvažte, že se ve výchozím nastavení vypnou nové funkce, pokud mají vliv na existující uživatele a umožní vývojářům, aby se k této funkci přihlásili pomocí nastavení.
 
 ### <a name="binary-breaking-change"></a>Změna binárního poškození
 
@@ -64,15 +64,15 @@ K binárnímu poškození dojde, když změníte veřejné rozhraní API vaší 
 
 Binární zásadní změna může také poškodit **celé sestavení**. Přejmenováním sestavení pomocí `AssemblyName` dojde ke změně identity sestavení, protože se přidá, odebere nebo změní silný klíč pojmenování sestavení. Změna identity sestavení způsobí přerušení veškerého zkompilovaného kódu, který ho používá.
 
-**❌** neměňte název sestavení.
+❌ neměňte název sestavení.
 
-**❌** Nepřidávat, odebírat ani měnit silný názvový klíč.
+❌ Nepřidávat, odebírat ani měnit silný názvový klíč.
 
-**✔️ zvažte** použití abstraktních základních tříd namísto rozhraní.
+✔️ Zvažte použití abstraktních základních tříd namísto rozhraní.
 
 > Přidání cokoli do rozhraní způsobí, že existující typy, které ji implementují, selžou. Abstraktní základní třída umožňuje přidat výchozí virtuální implementaci.
 
-**✔️ zvažte** umístění <xref:System.ObsoleteAttribute> na typy a členy, které chcete odebrat. Atribut by měl obsahovat pokyny pro aktualizaci kódu, aby již nepoužíval zastaralé rozhraní API.
+✔️ Zvažte umístění <xref:System.ObsoleteAttribute> na typy a členy, které chcete odebrat. Atribut by měl obsahovat pokyny pro aktualizaci kódu, aby již nepoužíval zastaralé rozhraní API.
 
 > Kód, který volá typy a metody s <xref:System.ObsoleteAttribute>, vygeneruje upozornění sestavení se zprávou poskytnutou atributu. Upozornění dávají uživatelům, kteří používají zastaralý čas na ploše rozhraní API k migraci, takže po odebrání zastaralého rozhraní API už ho nepoužívají.
 
@@ -92,7 +92,7 @@ public class Document
 }
 ```
 
-**✔️** zajistěte, aby byly typy a metody s <xref:System.ObsoleteAttribute> po dobu neurčitou v knihovnách nízké úrovně a střední úrovně.
+✔️ Zajistěte, aby byly typy a metody s <xref:System.ObsoleteAttribute> po dobu neurčitou v knihovnách nízké úrovně a střední úrovně.
 
 > Odebrání rozhraní API je binární zásadní změna. Vzhledem k tomu, že udržování zastaralých typů a metod, pokud je zachování nízkých nákladů, nepřidává do knihovny velké množství technického dluhu. Neodebrání typů a metod může přispět k tomu, abyste se vyhnuli nejhorším scénářům uvedeným výše.
 

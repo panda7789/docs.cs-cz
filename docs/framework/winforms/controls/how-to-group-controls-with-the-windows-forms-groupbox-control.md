@@ -1,36 +1,36 @@
 ---
-title: 'Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms GroupBox'
+title: Seskupení ovládacích prvků s ovládacím prvkem skupinový rámeček
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], grouping
 - GroupBox control [Windows Forms], grouping controls
 - Windows Forms controls, grouping
 ms.assetid: 0bda316d-bd2a-43aa-ac73-342453303169
-ms.openlocfilehash: f5b8c5ef47063663d5f8fcd2f80317e6cf6c91e6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bb7476c410d2802b5d32cc9842a778f290765e32
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609484"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736653"
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a>Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms GroupBox
-Windows Forms <xref:System.Windows.Forms.GroupBox> ovládací prvky se používají k seskupování další ovládací prvky. Existují tři hlavní důvody k seskupování ovládacích prvků:  
+Ovládací prvky <xref:System.Windows.Forms.GroupBox> model Windows Forms slouží k seskupení dalších ovládacích prvků. Existují tři důvody pro seskupení ovládacích prvků:  
   
-- Chcete-li vytvořit vizuální seskupení elementů související formuláře pro jasné uživatelské rozhraní.  
+- Chcete-li vytvořit vizuální seskupení souvisejících prvků formuláře pro jasné uživatelské rozhraní.  
   
-- Chcete-li vytvořit programový seskupení (přepínačů, například).  
+- Vytvoření programového seskupení (například přepínačů).  
   
-- K přesunutí ovládacích prvků jako jednotka v době návrhu.  
+- Pro přesunutí ovládacích prvků jako jednotky v době návrhu.  
   
-### <a name="to-create-a-group-of-controls"></a>Chcete-li vytvořit skupinu ovládacích prvků  
+### <a name="to-create-a-group-of-controls"></a>Vytvoření skupiny ovládacích prvků  
   
-1. Vykreslení <xref:System.Windows.Forms.GroupBox> ovládací prvek na formuláři.  
+1. Nakreslete ovládací prvek <xref:System.Windows.Forms.GroupBox> na formuláři.  
   
-2. Přidejte další ovládací prvky do pole skupiny, kreslení každý uvnitř skupinového rámečku.  
+2. Do pole skupiny přidejte další ovládací prvky, které vykreslí do skupinového pole.  
   
-     Pokud máte existující ovládací prvky, které chcete uzavřít do skupinového rámečku, můžete vybrat všechny ovládací prvky, vyjmout data do schránky, vyberte <xref:System.Windows.Forms.GroupBox> ovládací prvek a pak je vložte do pole pro skupiny. Můžete také přetáhnout do pole skupiny.  
+     Pokud máte ovládací prvky, které chcete zahrnout do skupinového pole, můžete vybrat všechny ovládací prvky, vyjmout je do schránky, vybrat ovládací prvek <xref:System.Windows.Forms.GroupBox> a pak je vložit do skupinového pole. Můžete je také přetáhnout do pole skupiny.  
   
-3. Nastavte <xref:System.Windows.Forms.GroupBox.Text%2A> vlastnost skupinový rámeček pro příslušný popisek.  
+3. Nastavte vlastnost <xref:System.Windows.Forms.GroupBox.Text%2A> skupinového pole na příslušný titulek.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: CheckedListBox – ovládací prvek (Windows Forms)
+title: Ovládací prvek CheckedListBox
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CheckedListBox control [Windows Forms], reference
@@ -13,30 +13,30 @@ helpviewer_keywords:
 - list items [Windows Forms], Windows Forms controls that display
 - list boxes
 ms.assetid: 2a525f72-0245-41d7-94e9-b9c971dc4484
-ms.openlocfilehash: 4d24a25a0b033caeb165566eb0dc5a2e189a8d4a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 069c0a2332f7035ce59f17058f388f9fb452b720
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956452"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736992"
 ---
 # <a name="checkedlistbox-control-windows-forms"></a>CheckedListBox – ovládací prvek (Windows Forms)
-Windows Forms `CheckedListBox` ovládací prvek zobrazuje seznam položek, jako je třeba <xref:System.Windows.Forms.ListBox> řízení a také můžete zobrazit zaškrtávací políčko vedle položky v seznamu.  
+Ovládací prvek model Windows Forms `CheckedListBox` zobrazí seznam položek, jako je například ovládací prvek <xref:System.Windows.Forms.ListBox>, a také může zobrazit značku zaškrtnutí vedle položky v seznamu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku CheckedListBox](checkedlistbox-control-overview-windows-forms.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
  [Postupy: Určení zaškrtnutých položek v ovládacím prvku Windows Forms CheckedListBox](how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control.md)  
- Popisuje, jak projít seznam určit položky, které nebyly zvoleny.  
+ Popisuje, jak procházet seznam, abyste zjistili, které položky jsou zaškrtnuté.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.CheckedListBox> Třída  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ <xref:System.Windows.Forms.CheckedListBox> – třída  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)  
- Obsahuje seznam věcí, které vám pomůžou s pole se seznamem, pole se seznamem a pole se seznamem zaškrtnuté.  
+ Nabízí seznam věcí, které můžete provádět se seznamy, poli se seznamem a zaškrtnutými seznamy.  
   
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.

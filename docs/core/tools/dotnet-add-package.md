@@ -2,16 +2,16 @@
 title: dotnet – přidat balíček – příkaz
 description: Příkaz dotnet Add Package nabízí pohodlný možnost přidat do projektu odkaz na balíček NuGet.
 ms.date: 06/26/2019
-ms.openlocfilehash: 9445cf686ec1733f5a8b3403b7efea3a544fbc99
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 210dcf0efe06672264ebfa297589bdb387591a42
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117790"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733326"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
-**Tento článek se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -19,7 +19,7 @@ ms.locfileid: "71117790"
 
 ## <a name="name"></a>Name
 
-`dotnet add package`-Přidá odkaz na balíček do souboru projektu.
+`dotnet add package` – přidá odkaz na balíček do souboru projektu.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -27,11 +27,11 @@ ms.locfileid: "71117790"
 
 ## <a name="description"></a>Popis
 
-`dotnet add package` Příkaz nabízí pohodlný možnost Přidat odkaz na balíček do souboru projektu. Po spuštění příkazu je k dispozici kontrola kompatibility, aby bylo zajištěno, že balíček je kompatibilní s rozhraními v projektu. Pokud se tato kontrolu projde, `<PackageReference>` do souboru projektu se přidá element a [dotnet Restore](dotnet-restore.md) se spustí.
+Příkaz `dotnet add package` poskytuje pohodlný způsob, jak přidat odkaz na balíček do souboru projektu. Po spuštění příkazu je k dispozici kontrola kompatibility, aby bylo zajištěno, že balíček je kompatibilní s rozhraními v projektu. Pokud se tato kontrolu projde, do souboru projektu se přidá prvek `<PackageReference>` a [dotnet Restore](dotnet-restore.md) se spustí.
 
 [!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
 
-Například přidání `Newtonsoft.Json` do *todo. csproj* vytvoří výstup podobný následujícímu příkladu:
+Například přidání `Newtonsoft.Json` k *todo. csproj* vytvoří výstup podobný následujícímu příkladu:
 
 ```console
   Writing C:\Users\mairaw\AppData\Local\Temp\tmp95A8.tmp
@@ -46,7 +46,7 @@ info : Package 'Newtonsoft.Json' is compatible with all the specified frameworks
 info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to file 'C:\projects\ToDo\ToDo.csproj'.
 ```
 
-Soubor *todo. csproj* nyní obsahuje [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) element pro odkazovaný balíček.
+Soubor *todo. csproj* nyní obsahuje element [`<PackageReference>`](/nuget/consume-packages/package-references-in-project-files) pro odkazovaný balíček.
 
 ```xml
 <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
@@ -82,7 +82,7 @@ Soubor *todo. csproj* nyní obsahuje [`<PackageReference>`](/nuget/consume-packa
 
 - **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  Adresář, do kterého se mají balíčky obnovit Výchozí umístění pro obnovení balíčků je `%userprofile%\.nuget\packages` ve Windows a `~/.nuget/packages` na MacOS a Linux. Další informace najdete v tématu [Správa globálních balíčků, mezipaměti a dočasných složek v NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
+  Adresář, do kterého se mají balíčky obnovit Výchozí umístění pro obnovení balíčku je `%userprofile%\.nuget\packages` ve Windows a `~/.nuget/packages` na macOS a Linux. Další informace najdete v tématu [Správa globálních balíčků, mezipaměti a dočasných složek v NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
 - **`-s|--source <SOURCE>`**
 

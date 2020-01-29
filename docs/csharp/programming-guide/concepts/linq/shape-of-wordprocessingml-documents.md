@@ -2,12 +2,12 @@
 title: Tvar WordprocessingML dokumentů (C#)
 ms.date: 07/20/2015
 ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
-ms.openlocfilehash: 84d893267c37ecf99a457ebb683d0451e2b4b68f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 58c028fed465f45fdcf8f63f2119eb8e8b201e32
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591056"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732670"
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>Tvar WordprocessingML dokumentů (C#)
 Toto téma představuje tvar XML dokumentu WordprocessingML.  
@@ -18,7 +18,7 @@ Toto téma představuje tvar XML dokumentu WordprocessingML.
  Pokud používáte systém Microsoft Office 2003, můžete dokumenty ukládat ve formátu Office Open XML, pokud jste nainstalovali sadu systém Microsoft Office Compatibility Pack pro formáty souborů Word, Excel a PowerPoint 2007.  
   
 ## <a name="the-shape-of-wordprocessingml-documents"></a>Tvar dokumentů WordprocessingML  
- První věc, kterou je třeba pochopit, je tvar dokumentů WordprocessingML. WordprocessingML dokument obsahuje element tělo (pojmenovaný `w:body`), který obsahuje odstavce v dokumentu. Každý odstavec obsahuje jedno nebo více textových běhů (s `w:r`názvem). Každý běh textu obsahuje jednu nebo více textových částí (s `w:t`názvem).  
+ První věc, kterou je třeba pochopit, je tvar dokumentů WordprocessingML. WordprocessingML dokument obsahuje element tělo (nazvaný `w:body`), který obsahuje odstavce v dokumentu. Každý odstavec obsahuje jedno nebo více textových běhů (s názvem `w:r`). Každý běh textu obsahuje jednu nebo více textových částí (s názvem `w:t`).  
   
  Následuje velmi jednoduchý dokument WordprocessingML:  
   
@@ -55,7 +55,7 @@ xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
   
  Nejjednodušší způsob, jak zobrazit obsah dokumentu WordprocessingML ve formátu XML, je vytvořit ho pomocí Microsoft Wordu, uložit ho a pak spustit následující program, který vytiskne XML do konzoly.  
   
- Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```csharp  
 const string documentRelationshipType =  
@@ -87,13 +87,13 @@ using (Package wdPackage = Package.Open("SampleDoc.docx", FileMode.Open, FileAcc
 }  
 ```  
   
-## <a name="external-resources"></a>Externí zdroje  
- [Představení formátů souborů XML sady Office (2007)](https://docs.microsoft.com/previous-versions/office/developer/office-2007/aa338205%28v=office.12%29)  
- [Přehled WordprocessingML](https://docs.microsoft.com/previous-versions/office/developer/office-2003/aa212812%28v=office.11%29)  
- [Anatomie souboru WordProcessingML](http://officeopenxml.com/anatomyofOOXML.php)  
- [Úvod do WordprocessingML](https://ericwhite.com/blog/introduction-to-wordprocessingml-series/)  
- [Office 2003: Stránka pro stažení referenčních schémat XML](https://www.microsoft.com/download/details.aspx?id=101)  
-  
+## <a name="external-resources"></a>Externí zdroje
+
+- [Představení formátů souborů XML sady Office (2007)](https://docs.microsoft.com/previous-versions/office/developer/office-2007/aa338205%28v=office.12%29)
+- [Přehled WordprocessingML](https://docs.microsoft.com/previous-versions/office/developer/office-2003/aa212812%28v=office.11%29)
+- [Anatomie souboru WordProcessingML](http://officeopenxml.com/anatomyofOOXML.php)
+- [Úvod do WordprocessingML](https://ericwhite.com/blog/introduction-to-wordprocessingml-series/)
+
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)

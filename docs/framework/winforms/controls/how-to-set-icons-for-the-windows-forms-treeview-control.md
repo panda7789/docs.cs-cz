@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení ikon pro ovládací prvek Windows Forms TreeView'
+title: Nastavení ikon pro ovládací prvek TreeView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,22 +12,22 @@ helpviewer_keywords:
 - icons [Windows Forms], setting for TreeView control
 - tree nodes in TreeView control [Windows Forms], icons
 ms.assetid: c14ddcc0-e5a6-4c21-a2d5-6799fd491781
-ms.openlocfilehash: 451f9ab2b35ad1fbbe9401dacbc8aab44e302701
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e3d7fc35c6d9f70822cdd0b69dd12f3d469f4ffa
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69909813"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737264"
 ---
 # <a name="how-to-set-icons-for-the-windows-forms-treeview-control"></a>Postupy: Nastavení ikon pro ovládací prvek Windows Forms TreeView
-Ovládací prvek <xref:System.Windows.Forms.TreeView> model Windows Forms může zobrazit ikony vedle každého uzlu. Ikony jsou umístěny na nejbližší levé straně textu uzlu. Chcete-li zobrazit tyto ikony, je nutné přidružit stromové <xref:System.Windows.Forms.ImageList> zobrazení k ovládacímu prvku. Další informace o seznamech obrázků naleznete v tématu [Komponenta ImageList](imagelist-component-windows-forms.md) a [postupy: Přidejte nebo odeberte obrázky s komponentou](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)model Windows Forms ImageList.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.TreeView> může zobrazit ikony vedle každého uzlu. Ikony jsou umístěny na nejbližší levé straně textu uzlu. Chcete-li zobrazit tyto ikony, je nutné přidružit stromové zobrazení k ovládacímu prvku <xref:System.Windows.Forms.ImageList>. Další informace o seznamech obrázků naleznete v tématu [Komponenta ImageList](imagelist-component-windows-forms.md) a [Postupy: Přidání nebo odebrání obrázků s komponentou model Windows Forms ImageList](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md).  
   
 > [!NOTE]
-> Chyba ve službě Microsoft .NET Framework verze 1,1 zabraňuje zobrazování obrázků v <xref:System.Windows.Forms.TreeView> uzlech při volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>aplikace. Chcete-li tuto chybu obejít <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> , zavolejte `Main` metodu hned po volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>. Tato chyba je opravena v .NET Framework 2,0.  
+> Chyba ve službě Microsoft .NET Framework verze 1,1 zabraňuje zobrazování obrázků v <xref:System.Windows.Forms.TreeView> uzlech, pokud vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType>. Chcete-li tuto chybu obejít, zavolejte <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> v metodě `Main` hned po volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>. Tato chyba je opravena v .NET Framework 2,0.  
   
 ### <a name="to-display-images-in-a-tree-view"></a>Zobrazení obrázků ve stromovém zobrazení  
   
-1. <xref:System.Windows.Forms.TreeView> Nastavte vlastnost<xref:System.Windows.Forms.TreeView.ImageList%2A> ovládacího prvku na existující <xref:System.Windows.Forms.ImageList> ovládací prvek, který chcete použít.  
+1. Nastavte vlastnost <xref:System.Windows.Forms.TreeView.ImageList%2A> ovládacího prvku <xref:System.Windows.Forms.TreeView> na existující ovládací prvek <xref:System.Windows.Forms.ImageList>, který chcete použít.  
   
      Tyto vlastnosti lze nastavit v Návrháři pomocí okno Vlastnosti nebo v kódu.  
   
@@ -43,9 +43,9 @@ Ovládací prvek <xref:System.Windows.Forms.TreeView> model Windows Forms může
     treeView1->ImageList = imageList1;  
     ```  
   
-2. Nastavte vlastnosti uzlu <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> a <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> . Vlastnost určuje obrázek zobrazený pro normální a rozbalené stavy uzlu <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> a vlastnost určuje obrázek zobrazený pro vybraný stav uzlu. <xref:System.Windows.Forms.TreeNode.ImageIndex%2A>  
+2. Nastavte vlastnosti <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> a <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> uzlu. Vlastnost <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> určuje obrázek zobrazený pro normální a rozbalený stav uzlu a vlastnost <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> určuje obrázek zobrazený pro vybraný stav uzlu.  
   
-     Tyto vlastnosti lze nastavit v kódu nebo v editoru prvku TreeNode. Chcete-li otevřít Editor TreeNode, klikněte na tlačítko se ![třemi tečkami (tlačítko se třemi tečkami (...) v](./media/visual-studio-ellipsis-button.png)okno Vlastnosti sady Visual Studio <xref:System.Windows.Forms.TreeView.Nodes%2A> ) vedle vlastnosti v okno Vlastnosti.  
+     Tyto vlastnosti lze nastavit v kódu nebo v editoru prvku TreeNode. Chcete-li otevřít Editor TreeNode, klikněte na tlačítko se třemi tečkami (![tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) vedle vlastnosti <xref:System.Windows.Forms.TreeView.Nodes%2A> na okno Vlastnosti.  
   
     ```vb  
     ' (Assumes that ImageList1 contains at least two images and  
@@ -71,7 +71,7 @@ Ovládací prvek <xref:System.Windows.Forms.TreeView> model Windows Forms může
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ovládacího prvku TreeView](treeview-control-overview-windows-forms.md)
-- [Postupy: Přidání a odebrání uzlů pomocí ovládacího prvku model Windows Forms TreeView](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)
-- [Postupy: Iterovat všemi uzly model Windows Forms ovládacího prvku TreeView](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)
-- [Postupy: Zjistit, který uzel TreeView byl kliknuto](how-to-determine-which-treeview-node-was-clicked-windows-forms.md)
-- [Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (model Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)
+- [Postupy: Přidání a odebrání uzlů s ovládacím prvkem Windows Forms TreeView](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)
+- [Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)
+- [Postupy: Určení uzlu TreeView označeného kliknutím](how-to-determine-which-treeview-node-was-clicked-windows-forms.md)
+- [Postupy: Přidání vlastních informací do ovládacího prvku TreeView nebo ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)

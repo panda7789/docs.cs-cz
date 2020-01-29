@@ -1,5 +1,5 @@
 ---
-title: Ověřování uživatelského vstupu ve Windows Forms
+title: Ověřování vstupu uživatele
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, validating user input
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-ms.openlocfilehash: 2b83e94f188f46d0cedc9fed9e9c5a946ada59c5
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: dc56c09677d1054e8f264169b78638fa83bd7d9e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960430"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734687"
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Když uživatelé zadávají do aplikace data, možná budete chtít ověřit, že jsou data platná, než je aplikace použije. Můžete vyžadovat, aby určitá textová pole nebyla nulová, aby pole bylo formátováno jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo aby řetězec neobsahoval žádné nezabezpečené znaky, které by bylo možné použít k ohrožení zabezpečení databáze. Model Windows Forms poskytuje několik způsobů, jak ověřit vstup ve vaší aplikaci.  

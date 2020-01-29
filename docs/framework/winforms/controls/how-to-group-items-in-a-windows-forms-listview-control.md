@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView'
+title: Seskupení položek v ovládacím prvku ListView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - groups
 - groups [Windows Forms], in Windows Forms controls
 ms.assetid: 610416a1-8da4-436c-af19-5f19e654769b
-ms.openlocfilehash: 1b716498ec5a45fbde499a1f53b2bdccd28a7176
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 45846751780f433c29b186fe8b9a908f5d295ab3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960172"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736627"
 ---
 # <a name="how-to-group-items-in-a-windows-forms-listview-control"></a>Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView
 Pomocí funkce seskupení ovládacího prvku <xref:System.Windows.Forms.ListView> můžete zobrazit související sady položek ve skupinách. Tyto skupiny jsou oddělené na obrazovce vodorovnými záhlavími skupin, která obsahují názvy skupin. Skupiny <xref:System.Windows.Forms.ListView> můžete použít k jednoduššímu procházení rozsáhlých seznamů tím, že položky seskupíte podle abecedy, podle data nebo do jiného logického seskupení. Následující obrázek znázorňuje některé seskupené položky.  

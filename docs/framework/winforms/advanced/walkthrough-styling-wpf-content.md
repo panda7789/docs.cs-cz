@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Určení stylu obsahu WPF'
+title: 'Návod: styl obsahu WPF'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF Designer [Windows Forms], styling WPF content
@@ -9,12 +9,12 @@ ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: d0aa2c54f05cea658c95dc2c23b7ba4bb78835c9
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: e52297f51c74fc3dba93c987fd5b9bd5b6801777
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138926"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732540"
 ---
 # <a name="walkthrough-style-wpf-content"></a>Návod: styl obsahu WPF
 

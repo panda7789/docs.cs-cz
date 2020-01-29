@@ -1,5 +1,5 @@
 ---
-title: Architektura WPF
+title: Architektura
 ms.date: 03/30/2017
 helpviewer_keywords:
 - properties [WPF], attached
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 382facef15e79c4ce49fdedaeb1a072b7591e4a0
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
-ms.translationtype: MT
+ms.openlocfilehash: db9938f26f31506737eb0395fa389da01a1ee444
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740214"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735062"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů WPF a popisuje, jak jejich interakce funguje. Také podrobně popisuje některé z možností provedených architekty WPF.  

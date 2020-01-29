@@ -1,15 +1,13 @@
 ---
 title: Nainstalovat lokalizované soubory IntelliSense
 description: Naučte se, jak nastavit vývojový počítač tak, aby používal lokalizované soubory IntelliSense pro projekty .NET Core v sadě Visual Studio.
-author: mairaw
-ms.author: mairaw
-ms.date: 12/18/2019
-ms.openlocfilehash: 98d75544ab853e75c175dd2919991b250cfaa3b0
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.date: 01/23/2020
+ms.openlocfilehash: 58b462507edf953a6c28aadbb9e3239a5cbe05b2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443475"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733648"
 ---
 # <a name="how-to-install-localized-intellisense-files-for-net-core"></a>Jak nainstalovat lokalizované soubory IntelliSense pro .NET Core
 
@@ -34,9 +32,10 @@ ms.locfileid: "75443475"
 
 1. Extrahujte obsah souboru ZIP.
 
-1. Přejděte do instalační složky rozhraní .NET Core. Ve výchozím nastavení je to pod *%ProgramFiles%\dotnet\packs*.
+1. Přejděte do složky .NET Core IntelliSense.
 
-   - Vyberte sadu SDK, pro kterou chcete technologii IntelliSense nainstalovat, a přejděte k související cestě. Máte následující možnosti:
+   1. Přejděte do instalační složky rozhraní .NET Core. Ve výchozím nastavení je to pod *%ProgramFiles%\dotnet\packs*.
+   1. Vyberte sadu SDK, pro kterou chcete technologii IntelliSense nainstalovat, a přejděte k související cestě. Máte následující možnosti:
 
       | Typ sady SDK        | Cesta                               |
       | --------------- | ---------------------------------- |
@@ -44,9 +43,9 @@ ms.locfileid: "75443475"
       | Windows Desktop | *Microsoft. WindowsDesktop. app. ref* |
       | .NET Standard   | *NETStandard. Library. ref*          |
    
-   - Přejděte do verze, pro kterou chcete nainstalovat lokalizovanou technologii IntelliSense. Například *3.1.0*.
-   - Otevřete složku *ref* .
-   - Otevřete složku moniker. Například *netcoreapp 3.1*.
+   1. Přejděte do verze, pro kterou chcete nainstalovat lokalizovanou technologii IntelliSense. Například *3.1.0*.
+   1. Otevřete složku *ref* .
+   1. Otevřete složku moniker. Například *netcoreapp 3.1*.
 
    Úplná cesta, na kterou byste chtěli přejít, by tak vypadala podobně jako *C:\Program Files\dotnet\packs\Microsoft.NETCore.app.Ref\3.1.0\ref\netcoreapp3.1*.
 
@@ -76,7 +75,7 @@ Aby sada Visual Studio používala pro technologii IntelliSense jiný jazyk, nai
 Pokud jste požadovanou jazykovou sadu neinstalovali během instalace, aktualizujte sadu Visual Studio podle následujících pokynů k instalaci jazykové sady:
 
 > [!IMPORTANT]
-> Instalovat, aktualizovat nebo upravit sadu Visual Studio, musíte se přihlásit pomocí účtu, který má oprávnění správce. Další informace naleznete v tématu [uživatelská oprávnění a aplikace Visual Studio](/visualstudio/ide/user-permissions-and-visual-studio).
+> Chcete-li nainstalovat, aktualizovat nebo upravit aplikaci Visual Studio, je nutné se přihlásit pomocí účtu, který má oprávnění správce. Další informace naleznete v tématu [uživatelská oprávnění a aplikace Visual Studio](/visualstudio/ide/user-permissions-and-visual-studio).
 
 1. Najdete instalační program sady Visual Studio v počítači.
 
@@ -113,9 +112,9 @@ Jakmile nainstalujete požadované jazykové sady, upravte nastavení aplikace V
 
 1. V okně Start vyberte možnost **pokračovat bez kódu**.
 
-1. V hlavní nabídce vyberte **nástroje** > **Možnosti**. Otevře se dialogové okno Možnosti.
+1. Na panelu nabídek vyberte možnost **nástroje** > **Možnosti**. Otevře se dialogové okno Možnosti.
 
-1. Ve složce **prostředí** vyberte možnost **mezinárodní nastavení**.
+1. V uzlu **prostředí** vyberte možnost **mezinárodní nastavení**.
 
 1. V rozevíracím seznamu **jazyk** vyberte požadovaný jazyk. Vyberte **OK**. 
 

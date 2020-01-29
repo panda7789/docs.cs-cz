@@ -3,12 +3,12 @@ title: Nastavení konfigurace pro kolektor paměti
 description: Přečtěte si o nastaveních modulu runtime pro konfiguraci způsobu, jakým systém uvolňování paměti spravuje paměť pro aplikace .NET Core.
 ms.date: 01/09/2020
 ms.topic: reference
-ms.openlocfilehash: 24e5c47de781e7eed5f76d2c551cac2dce1e8f05
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 044083d69601f5092724a46d358b2ee5673d428d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900100"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733515"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace běhu pro uvolňování paměti
 
@@ -38,10 +38,13 @@ Pro výběr charakteru uvolňování paměti použijte následující nastavení
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | `System.GC.Server` | `false` – pracovní stanice<br/>`true` – Server | .NET Core 1,0 |
+| **Vlastnost MSBuild** | `ServerGarbageCollection` | `false` – pracovní stanice<br/>`true` – Server | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_gcServer` | `0` – pracovní stanice<br/>`1` – Server | .NET Core 1,0 |
 | **App. config pro .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false` – pracovní stanice<br/>`true` – Server |  |
 
-Příklad:
+### <a name="examples"></a>Příklady
+
+soubor *runtimeconfig. JSON* :
 
 ```json
 {
@@ -53,6 +56,18 @@ Příklad:
 }
 ```
 
+Soubor projektu:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+  </PropertyGroup>
+
+</Project>
+```
+
 ### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System. GC. souběžné/COMPlus_gcConcurrent
 
 - Konfiguruje, zda je povoleno uvolňování paměti na pozadí (souběžně).
@@ -62,10 +77,13 @@ Příklad:
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | `System.GC.Concurrent` | `true` – GC na pozadí<br/>`false` – nesouběžný GC | .NET Core 1,0 |
+| **Vlastnost MSBuild** | `ConcurrentGarbageCollection` | `true` – GC na pozadí<br/>`false` – nesouběžný GC | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_gcConcurrent` | `true` – GC na pozadí<br/>`false` – nesouběžný GC | .NET Core 1,0 |
 | **App. config pro .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true` – GC na pozadí<br/>`false` – nesouběžný GC |  |
 
-Příklad:
+### <a name="examples"></a>Příklady
+
+soubor *runtimeconfig. JSON* :
 
 ```json
 {
@@ -75,6 +93,18 @@ Příklad:
       }
    }
 }
+```
+
+Soubor projektu:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+  </PropertyGroup>
+
+</Project>
 ```
 
 ## <a name="manage-resource-usage"></a>Správa využití prostředků
@@ -261,10 +291,13 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | `System.GC.RetainVM` | `false` – vydání na operační systém<br/>`true` – vložit do úsporného režimu| .NET Core 1,0 |
+| **runtimeconfig. JSON** | `System.GC.RetainVM` | `false` – vydání na operační systém<br/>`true` – vložit do úsporného režimu | .NET Core 1,0 |
+| **Vlastnost MSBuild** | `RetainVMGarbageCollection` | `false` – vydání na operační systém<br/>`true` – vložit do úsporného režimu | .NET Core 1,0 |
 | **Proměnná prostředí** | `COMPlus_GCRetainVM` | `0` – vydání na operační systém<br/>`1` – vložit do úsporného režimu | .NET Core 1,0 |
 
-Příklad:
+### <a name="examples"></a>Příklady
+
+soubor *runtimeconfig. JSON* :
 
 ```json
 {
@@ -274,6 +307,18 @@ Příklad:
       }
    }
 }
+```
+
+Soubor projektu:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RetainVMGarbageCollection>true</RetainVMGarbageCollection>
+  </PropertyGroup>
+
+</Project>
 ```
 
 ## <a name="large-pages"></a>Velké stránky

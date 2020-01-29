@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource'
+title: Vytvoření vyhledávací tabulky pomocí komponenty BindingSource
 ms.date: 03/30/2017
 helpviewer_keywords:
 - lookup tables
@@ -7,89 +7,89 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], creating a lookup table
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
-ms.openlocfilehash: 33b9e4e98a8a3f8c0d5dd6433ebbf15c049b608e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ccf2bfa6cf3f56a38b55f8c87004c42a46172891
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643064"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736810"
 ---
-# <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource
-Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data ze záznamů v související tabulce. V následujících postupech <xref:System.Windows.Forms.ComboBox> ovládacího prvku se používá k zobrazení pole relace cizího klíče z nadřazené do podřízené tabulky.  
+# <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytváření vyhledávacích tabulek s komponentou Windows Forms BindingSource
+Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data ze záznamů v tabulce v relaci. V následujících postupech se pro zobrazení pole s relací cizího klíče z nadřazeného objektu na podřízenou tabulku používá ovládací prvek <xref:System.Windows.Forms.ComboBox>.  
   
- Pomáhají vizualizovat tyto dvě tabulky a tento vztah, tady je příklad nadřazené a podřízené tabulky:  
+ Tady je příklad nadřazené a podřízené tabulky, která vám umožní vizualizovat tyto dvě tabulky a tuto relaci:  
   
- CustomersTable (nadřazené tabulky)  
+ Zákazníci (nadřazená tabulka)  
   
-|ID zákazníka|Zákazníka|  
+|ID|customerName|  
 |----------------|------------------|  
 |712|Paul Koch|  
 |713|Tamara Johnston|  
   
- OrdersTable (podřízenou tabulku)  
+ Orders (podřízená tabulka)  
   
-|ID objednávky|OrderDate|ID zákazníka|  
+|Seskup|OrderDate|ID|  
 |-------------|---------------|----------------|  
 |903|12. února 2004|712|  
 |904|13. února 2004|713|  
   
- V tomto scénáři jedné tabulky, CustomersTable, ukládá informace, které chcete zobrazit a uložte. Ale pro úsporu místa, v tabulce ponechá si data, která se přidá na srozumitelnosti. Dalších table OrdersTable, obsahuje pouze vzhled související informace o zákazníkovi, který je ekvivalentní k které data objednávky a pořadí ID. identifikační číslo Není k dispozici žádnou zmínku o názvy zákazníků.  
+ V tomto scénáři jedna tabulka, zákazníci, ukládá skutečné informace, které chcete zobrazit a uložit. Pokud ale chcete ušetřit místo, tabulka opustí data, která zvyšují přehlednost. Druhá tabulka, Orders, obsahuje jenom informace o tom, které ID zákazníka jsou ekvivalentní k tomuto datu a ID objednávky. Neexistují žádné zmínky o názvech zákazníků.  
   
- Čtyři důležité vlastnosti jsou nastaveny na [ovládacího prvku ComboBox](combobox-control-windows-forms.md) ovládacího prvku k vytvoření vyhledávací tabulky.  
+ V ovládacím prvku [ComboBox](combobox-control-windows-forms.md) jsou nastaveny čtyři důležité vlastnosti pro vytvoření vyhledávací tabulky.  
   
-- <xref:System.Windows.Forms.ComboBox.DataSource%2A> Vlastnosti obsahuje název tabulky.  
+- Vlastnost <xref:System.Windows.Forms.ComboBox.DataSource%2A> obsahuje název tabulky.  
   
-- <xref:System.Windows.Forms.ListControl.DisplayMember%2A> Vlastnost obsahuje sloupce dat této tabulky, kterou chcete zobrazit pro ovládací prvek text (jméno zákazníka).  
+- Vlastnost <xref:System.Windows.Forms.ListControl.DisplayMember%2A> obsahuje datový sloupec této tabulky, který chcete zobrazit pro text ovládacího prvku (jméno zákazníka).  
   
-- <xref:System.Windows.Forms.ListControl.ValueMember%2A> Vlastnost obsahuje sloupce dat této tabulky s uložené informace (číslo ID nadřazené tabulky).  
+- Vlastnost <xref:System.Windows.Forms.ListControl.ValueMember%2A> obsahuje datový sloupec v tabulce s uloženými informacemi (číslo ID v nadřazené tabulce).  
   
-- <xref:System.Windows.Forms.ListControl.SelectedValue%2A> Vlastnost obsahuje hodnotu vyhledávání pro podřízené tabulky, na základě <xref:System.Windows.Forms.ListControl.ValueMember%2A>.  
+- Vlastnost <xref:System.Windows.Forms.ListControl.SelectedValue%2A> poskytuje hodnotu vyhledávání pro podřízenou tabulku na základě <xref:System.Windows.Forms.ListControl.ValueMember%2A>.  
   
- Následující postupy ukazují, jak Rozvrhněte svůj formulář jako vyhledávací tabulky a vytvoření vazby dat k ovládacím prvkům v něm. Pro úspěšné dokončení procedury, musí mít zdroj dat s nadřazenými a podřízenými tabulkami, které existuje vztah cizího klíče, jak již bylo zmíněno dříve.  
+ Níže uvedené postupy vám ukážou, jak rozvrhnout formulář jako vyhledávací tabulku a vytvořit z nich data s ovládacími prvky. Aby bylo možné úspěšně dokončit postupy, musíte mít zdroj dat s nadřazenými a podřízenými tabulkami, které mají relaci cizího klíče, jak je uvedeno výše.  
   
 ### <a name="to-create-the-user-interface"></a>Vytvoření uživatelského rozhraní  
   
-1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ComboBox> ovládací prvek na formuláři.  
+1. Z **panelu nástrojů**přetáhněte ovládací prvek <xref:System.Windows.Forms.ComboBox> do formuláře.  
   
      Tento ovládací prvek zobrazí sloupec z nadřazené tabulky.  
   
-2. Přetáhněte jiných ovládacích prvků pro zobrazení podrobností z podřízené tabulky. Formát dat v tabulce byste určit, jaké ovládací prvky, které zvolíte. Další informace najdete v tématu [ovládacích prvků Windows Forms podle funkce](windows-forms-controls-by-function.md).  
+2. Přetáhněte další ovládací prvky pro zobrazení podrobností z podřízené tabulky. Formát dat v tabulce by měl určovat, které ovládací prvky si zvolíte. Další informace naleznete v tématu [model Windows Forms Controls by Function](windows-forms-controls-by-function.md).  
   
-3. Přetáhněte <xref:System.Windows.Forms.BindingNavigator> ovládací prvek do formuláře; to vám umožní procházet data v podřízené tabulce.  
+3. Přetáhněte ovládací prvek <xref:System.Windows.Forms.BindingNavigator> do formuláře. To vám umožní procházet data v podřízené tabulce.  
   
-### <a name="to-connect-to-the-data-and-bind-it-to-controls"></a>Připojte se k datům a svázat ovládací prvky  
+### <a name="to-connect-to-the-data-and-bind-it-to-controls"></a>Připojení k datům a jejich svázání s ovládacími prvky  
   
-1. Vyberte <xref:System.Windows.Forms.ComboBox> a klikněte na inteligentní úloh glyfů pro zobrazení dialogového okna inteligentních úlohu.  
+1. Vyberte <xref:System.Windows.Forms.ComboBox> a kliknutím na Inteligentní panel glyf zobrazíte dialogové okno Inteligentní panel.  
   
-2. Vyberte **položky vázané na data použijte**.  
+2. Vyberte možnost **použít položky vázané na data**.  
   
-3. Klikněte na šipku vedle položky **zdroj dat** rozevíracího seznamu. Pokud zdroj dat byl dříve nakonfigurován pro projekt nebo formuláře, zobrazí se; v opačném případě proveďte následující kroky (Tento příklad používá tabulky Zákazníci a objednávky v ukázkové databázi Northwind a odkazuje na ně v závorkách).  
+3. Klikněte na šipku vedle rozevíracího seznamu **zdroj dat** . Pokud byl zdroj dat dříve nakonfigurován pro projekt nebo formulář, zobrazí se. v opačném případě proveďte následující kroky (Tento příklad používá tabulky Zákazníci a objednávky ukázkové databáze Northwind a odkazuje na ně v závorkách).  
   
-    1. Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
+    1. Kliknutím na **Přidat zdroj dat projektu** se můžete připojit k datům a vytvořit zdroj dat.  
   
-    2. Na **Průvodce konfigurací zdroje dat** úvodní stránka, klikněte na tlačítko **Další**.  
+    2. Na úvodní stránce **Průvodce konfigurací zdroje dat** klikněte na tlačítko **Další**.  
   
-    3. Vyberte **databáze** na **zvolte typ zdroje dat** stránky.  
+    3. Vyberte možnost **databáze** na stránce **Vybrat typ zdroje dat** .  
   
-    4. Vybrat datové připojení ze seznamu dostupných připojení na **vyberte datové připojení** stránky. Pokud požadované datové připojení není k dispozici, vyberte **nové připojení** k vytvoření nové datové připojení.  
+    4. Vyberte datové připojení ze seznamu dostupných připojení na stránce **Vyberte datové připojení** . Pokud požadované datové připojení není k dispozici, vyberte **nové připojení** a vytvořte nové datové připojení.  
   
-    5. Klikněte na tlačítko **Ano, uložit připojení** uložit připojovací řetězec do konfiguračního souboru aplikace.  
+    5. Klikněte na tlačítko **Ano, uložit připojení** pro uložení připojovacího řetězce do konfiguračního souboru aplikace.  
   
-    6. Vyberte databázové objekty do vaší aplikace. V tomto případě vyberte tabulky nadřazené a podřízené tabulky (například Zákazníci a objednávky) se vztahu cizího klíče.  
+    6. Vyberte databázové objekty, které chcete přenést do aplikace. V takovém případě vyberte nadřazenou tabulku a podřízenou tabulku (například zákazníci a objednávky) se vztahem cizího klíče.  
   
-    7. Nahraďte výchozí název datové sady, chcete-li.  
+    7. Pokud chcete, nahraďte výchozí název datové sady.  
   
-    8. Klikněte na tlačítko **Dokončit**.  
+    8. Klikněte na **Dokončit**.  
   
-4. V **členem zobrazení** rozevíracího seznamu vyberte název sloupce (například jméno kontaktu) který se má zobrazit v poli se seznamem.  
+4. V rozevíracím seznamu **Zobrazit člena** vyberte název sloupce (například kontakt), který se má zobrazit v poli se seznamem.  
   
-5. V **člen s hodnotou** rozevíracího seznamu vyberte sloupce (například ID zákazníka) k provedení této operace vyhledávání v podřízené tabulce.  
+5. V rozevíracím seznamu **člen hodnoty** vyberte sloupec (například CustomerID) k provedení operace vyhledávání v podřízené tabulce.  
   
-6. V **vybraná hodnota** rozevíracího seznamu, přejděte na **zdroje dat projektu** a datovou sadu jste právě vytvořili, který obsahuje nadřazené a podřízené tabulky. Vyberte stejnou vlastnost u podřízené tabulky, který je členem hodnotu nadřazené tabulky (například Orders.CustomerID). Odpovídající <xref:System.Windows.Forms.BindingSource> sadu dat a tabulka adaptér součásti bude vytvořen a přidán do formuláře.  
+6. V rozevíracím seznamu **Vybraná hodnota** přejděte na **zdroje dat projektu** a datovou sadu, kterou jste právě vytvořili, která obsahuje nadřazené a podřízené tabulky. Vyberte stejnou vlastnost podřízené tabulky, která je členem hodnoty nadřazené tabulky (například Orders. CustomerID). Budou vytvořeny příslušné <xref:System.Windows.Forms.BindingSource>, datové sady a součásti adaptéru tabulky a přidány do formuláře.  
   
-7. Vytvoření vazby <xref:System.Windows.Forms.BindingNavigator> ovládací prvek <xref:System.Windows.Forms.BindingSource> podřízené tabulky (například `OrdersBindingSource`).  
+7. Navažte ovládací prvek <xref:System.Windows.Forms.BindingNavigator> na <xref:System.Windows.Forms.BindingSource> podřízené tabulky (například `OrdersBindingSource`).  
   
-8. Jiné než vytvoření vazby ovládacích prvků <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku pro pole podrobnosti z podřízené tabulky <xref:System.Windows.Forms.BindingSource> (například `OrdersBindingSource`), který chcete zobrazit.  
+8. Navažte ovládací prvky kromě <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.BindingNavigator> řízení na pole podrobností z <xref:System.Windows.Forms.BindingSource> podřízené tabulky (například `OrdersBindingSource`), kterou chcete zobrazit.  
   
 ## <a name="see-also"></a>Viz také:
 

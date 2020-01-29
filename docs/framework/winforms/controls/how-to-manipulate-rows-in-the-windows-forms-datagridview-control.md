@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView'
+title: Manipulace s řádky v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - data grids [Windows Forms], manipulating rows
 - rows [Windows Forms], manipulating on Windows Forms
 ms.assetid: 522d8944-e073-4488-9673-923f0a8d7214
-ms.openlocfilehash: ebf434b7ab813c729b48075107cdd3b2a20fcd24
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f6942c4d74269348e7758b335a6fd93bed3ffa53
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592326"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736042"
 ---
 # <a name="how-to-manipulate-rows-in-the-windows-forms-datagridview-control"></a>Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView
-Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> řádky pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRow> třídy.  
+Následující příklad kódu ukazuje různé způsoby manipulace s <xref:System.Windows.Forms.DataGridView> řádky pomocí vlastností <xref:System.Windows.Forms.DataGridViewRow> třídy.  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#200](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewRowDemo.cpp#200)]
@@ -28,7 +28,7 @@ Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

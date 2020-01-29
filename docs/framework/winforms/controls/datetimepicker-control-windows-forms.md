@@ -1,5 +1,5 @@
 ---
-title: DateTimePicker – ovládací prvek (Windows Forms)
+title: Ovládací prvek DateTimePicker
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dates [Windows Forms], choosing from a list
@@ -7,39 +7,39 @@ helpviewer_keywords:
 - DateTimePicker control [Windows Forms]
 - date and time picker controls
 ms.assetid: 1dac1fbd-8f67-4910-9ccb-2c5462d0d855
-ms.openlocfilehash: 236017834f3a965ee0ddfc1a74121679f086050b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 22883da5dec58a6272e611b50671a8b1341d92e4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971337"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731972"
 ---
 # <a name="datetimepicker-control-windows-forms"></a>DateTimePicker – ovládací prvek (Windows Forms)
-Windows Forms `DateTimePicker` ovládací prvek umožňuje uživateli vybrat jednu položku ze seznamu data nebo časy. Při použití představující datum, zobrazí se ve dvou částech: rozevírací seznam datum v textu a mřížka, která se zobrazí, když kliknete na šipku dolů vedle seznamu.  
+Ovládací prvek model Windows Forms `DateTimePicker` umožňuje uživateli vybrat jednu položku ze seznamu kalendářních dat nebo časů. Když se používá k reprezentaci data, zobrazí se ve dvou částech: rozevírací seznam s datem, který je reprezentován textem, a mřížku, která se zobrazí po kliknutí na šipku dolů vedle seznamu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku DateTimePicker](datetimepicker-control-overview-windows-forms.md)  
- Představuje obecné koncepty `DateTimePicker` ovládací prvek, který umožňuje uživatelům vybrat jednu položku ze seznamu data nebo časy.  
+ Zavádí obecné koncepty ovládacího prvku `DateTimePicker`, který umožňuje uživatelům vybrat jednu položku ze seznamu kalendářních dat nebo časů.  
   
  [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)  
- Vysvětluje způsob používání řetězců formátu pro zobrazování dat v preferovaném formátu.  
+ Vysvětluje, jak použít řetězce formátu k zobrazení dat v upřednostňovaném formátu.  
   
- [Postupy: Nastavení a vrácení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)  
- Popisuje kroky, chcete-li nastavit datum v ovládacím prvku a pro přístup k data, kdy uživatel vybral.  
+ [Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)  
+ Obsahuje kroky pro nastavení data v ovládacím prvku a pro přístup k datu, které uživatel vybral.  
   
  [Postupy: Zobrazení času pomocí ovládacího prvku DateTimePicker](how-to-display-time-with-the-datetimepicker-control.md)  
- Ukazuje postup pro `DateTimePicker` k zobrazení pouze časy.  
+ Zobrazí postup, který `DateTimePicker` jenom zobrazovat časy.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.DateTimePicker>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.MonthCalendar>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
   
  [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)  
- Uvede počet intuitivní grafické rozhraní pro uživatele k zobrazení a nastavit informace o datu.
+ Prezentuje intuitivní grafické rozhraní, které uživatelům umožní zobrazit a nastavit informace o datu.

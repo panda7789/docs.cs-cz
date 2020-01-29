@@ -3,16 +3,16 @@ title: dotnet – místní příkazy NuGet
 description: Příkaz dotnet NuGet Locals vymaže nebo vypíše místní prostředky NuGet, jako je mezipaměť požadavků HTTP, dočasná mezipaměť nebo složka globálních balíčků v celém počítači.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: cb5747636aa9d04f1ef6a6ff9309ba29c0630dd6
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: b57c127650555e412af08df6656fb62d75c8ed7c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74087408"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734078"
 ---
 # <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
-**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -94,6 +94,6 @@ Příkaz `dotnet nuget locals` vymaže nebo vypíše místní prostředky NuGet 
   dotnet nuget locals temp -c
   ```
 
-## <a name="troubleshooting"></a>Poradce při potížích
+## <a name="troubleshooting"></a>Odstraňování problémů
 
 Informace o běžných problémech a chybách při použití příkazu `dotnet nuget locals` najdete v tématu [Správa mezipaměti NuGet](/nuget/consume-packages/managing-the-nuget-cache).
