@@ -1,13 +1,13 @@
 ---
 title: Zásady kódování jazyka F#
 description: Seznamte se s obecnými pokyny F# a idiomy při psaní kódu.
-ms.date: 11/04/2019
-ms.openlocfilehash: 60eff6392d71caa54eeb438f2f6ba9db910f1bc1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.date: 01/15/2020
+ms.openlocfilehash: ca86bcf714d2fb4ee5f173ee54ba12c317f9abe7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978227"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737821"
 ---
 # <a name="f-coding-conventions"></a>Zásady kódování jazyka F#
 
@@ -36,7 +36,7 @@ type MyClass() =
     ...
 ```
 
-Použití modulu nejvyšší úrovně se nemusí zobrazovat jinak, když se volá jenom z F#, ale u C# spotřebitelů můžou být volající, protože musí kvalifikovat`MyClass`s modulem`MyCode`.
+Použití modulu nejvyšší úrovně se nemusí zobrazovat jinak, když se volá jenom z F#, ale u C# spotřebitelů můžou být volající, protože musí kvalifikovat `MyClass` s modulem `MyCode`.
 
 ```fsharp
 // Bad!
@@ -48,7 +48,7 @@ type MyClass() =
 
 ### <a name="carefully-apply-autoopen"></a>Pečlivě použít `[<AutoOpen>]`
 
-Konstrukce `[<AutoOpen>]` může znehodnotit rozsah toho, co je k dispozici volajícím, a odpověď na místo, kde je něco z nich "Magic". Většinou to není dobré. Výjimkou z tohoto pravidla je F# základní knihovna samotná (i když je to také bit kontroverzním).
+Konstrukce `[<AutoOpen>]` může znehodnotit rozsah toho, co je k dispozici volajícím, a odpověď na místo, kde je něco z nich "Magic". Nejedná se o dobrou věc. Výjimkou z tohoto pravidla je F# základní knihovna samotná (i když je to také bit kontroverzním).
 
 Je to ale pohodlí, pokud máte pomocnou funkci pro veřejné rozhraní API, které chcete uspořádat odděleně od tohoto veřejného rozhraní API.
 
@@ -89,9 +89,9 @@ let parsed = StringTokenization.parse s // Must qualify to use 'parse'
 
 ### <a name="sort-open-statements-topologically"></a>Topologické řazení příkazů `open`
 
-V F#nástroji se jedná o pořadí deklarací, včetně příkazů `open`. To je na rozdíl C#od, kde účinek`using`a`using static`je nezávislý na řazení těchto příkazů v souboru.
+V F#nástroji se jedná o pořadí deklarací, včetně příkazů `open`. To je na rozdíl C#od, kde účinek `using` a `using static` je nezávislý na řazení těchto příkazů v souboru.
 
-V F#nástroji můžou prvky otevřené do oboru stínové kopie, které už jsou přítomné, jiné. To znamená, že změna pořadí `open`ch příkazů by mohla změnit význam kódu. V důsledku toho se obecně nedoporučuje žádné libovolné řazení všech příkazů `open` (například alfanumerické), lest vygenerujete různé chování, které byste mohli očekávat.
+V F#nástroji můžou prvky otevřené do oboru stínové kopie, které už jsou přítomné, jiné. To znamená, že změna pořadí `open`ch příkazů by mohla změnit význam kódu. V důsledku toho se nedoporučuje žádné libovolné řazení všech příkazů `open` (například alfanumerické), lest vygenerujete různé chování, které byste mohli očekávat.
 
 Místo toho doporučujeme, abyste je seřadili [Topologicky](https://en.wikipedia.org/wiki/Topological_sorting). To znamená, že příkazy `open` v pořadí, ve kterém jsou definovány _vrstvy_ systému. Je také možné zvážit alfanumerické řazení v různých topologických vrstvách.
 
@@ -239,7 +239,7 @@ Funkce `failwith` a `failwithf` by se měly obecně vyhnout, protože vyvolávaj
 
 ### <a name="using-exception-handling-syntax"></a>Použití syntaxe pro zpracování výjimek
 
-F#podporuje vzory výjimek pomocí syntaxe`try...with`:
+F#podporuje vzory výjimek pomocí syntaxe `try...with`:
 
 ```fsharp
 try
@@ -320,7 +320,7 @@ Typy, jako je například `Result<'Success, 'Error>`, jsou vhodné pro základn�
 
 ## <a name="partial-application-and-point-free-programming"></a>Částečné a bezplatné programování aplikací a koncových bodů
 
-F#podporuje částečnou aplikaci, a proto různé způsoby programování ve stylu bez bodu. To může být užitečné pro opětovné použití kódu v rámci modulu nebo implementace nějakého, ale obecně není něco k veřejně vystavení. Obecně platí, že programování bez koncových bodů není v a samo samé a může přidat významnou bariéru rozpoznávání pro lidi, kteří nejsou ve stylu ponořeni.
+F#podporuje částečnou aplikaci, a proto různé způsoby programování ve stylu bez bodu. To může být užitečné pro opětovné použití kódu v rámci modulu nebo implementace nějakého, ale není něco k tomu, abyste veřejně zveřejnili. Obecně platí, že programování bez koncových bodů není v a samo samé a může přidat významnou bariéru rozpoznávání pro lidi, kteří nejsou ve stylu ponořeni.
 
 ### <a name="do-not-use-partial-application-and-currying-in-public-apis"></a>Nepoužívejte částečné aplikace a procesu curryfikace ve veřejných rozhraních API.
 
@@ -443,11 +443,118 @@ Kromě toho automatické generalizace není vždy Boon pro uživatele, kteří j
 
 ## <a name="performance"></a>Výkon
 
-F#hodnoty jsou ve výchozím nastavení neměnné, což umožňuje vyhnout se určitým třídám chyb (zejména ty, které se týkají souběžnosti a paralelismu). Nicméně v některých případech, aby bylo dosaženo optimální (nebo ještě rozumně) efektivity času spuštění nebo přidělení paměti, je možné, že je možné využít rozsah práce pomocí místní mutace stavu. To je možné na základě výslovného souhlasu s F# klíčovým slovem`mutable`.
+### <a name="prefer-structs-for-small-data-types"></a>Preferovat struktury pro malé datové typy
 
-Použití `mutable` v F# se však může cítit na lichá s funkcí čistoty. To je v pořádku, pokud upravíte očekávání z čistoty na [referenční transparentnost](https://en.wikipedia.org/wiki/Referential_transparency). Referenční transparentnost – nečistota – je koncovým cílem při F# psaní funkcí. To vám umožní napsat funkční rozhraní přes implementaci na základě mutací pro kód kritický pro výkon.
+Použití struktur (označovaných také jako typy hodnot) může často vést k vyššímu výkonu pro určitý kód, protože obvykle brání přidělení objektů. Nicméně struktury nejsou vždy tlačítko "Přejít rychleji": Pokud velikost dat ve struktuře překročí 16 bajtů, může kopírování dat často vést k většímu množství času procesoru než při použití typu odkazu.
 
-### <a name="wrap-mutable-code-in-immutable-interfaces"></a>Zalamování měnitelného kódu v neměnných rozhraních
+Pokud chcete zjistit, jestli byste měli použít strukturu, vezměte v úvahu následující podmínky:
+
+- Pokud velikost dat je 16 bajtů nebo menší.
+- Pokud pravděpodobně máte mnoho z těchto datových typů, které jsou rezidentem v paměti v běžícím programu.
+
+Pokud se použije první podmínka, měli byste obecně použít strukturu. Pokud platí obě, měli byste téměř vždy používat strukturu. Můžou nastat případy, kdy platí předchozí podmínky, ale použití struktury není lepší nebo horší než použití typu odkazu, ale je pravděpodobné, že budou výjimečné. Při provádění změn, jako je to třeba, i když nefungují na předpokladu nebo Intuition, je důležité vždy změřit.
+
+#### <a name="prefer-struct-tuples-when-grouping-small-value-types"></a>Preferovat řazené kolekce členů struktur při seskupování malých hodnotových typů
+
+Vezměte v úvahu tyto dvě funkce:
+
+```fsharp
+let rec runWithTuple t offset times =
+    let offsetValues x y z offset =
+        (x + offset, y + offset, z + offset)
+
+    if times <= 0 then
+        t
+    else
+        let (x, y, z) = t
+        let r = offsetValues x y z offset
+        runWithTuple r offset (times - 1)
+
+let rec runWithStructTuple t offset times =
+    let offsetValues x y z offset =
+        struct(x + offset, y + offset, z + offset)
+
+    if times <= 0 then
+        t
+    else
+        let struct(x, y, z) = t
+        let r = offsetValues x y z offset
+        runWithStructTuple r offset (times - 1)
+```
+
+Při testování těchto funkcí pomocí nástroje statistického srovnávacího testu, jako je [BenchmarkDotNet](https://benchmarkdotnet.org/), zjistíte, že funkce `runWithStructTuple`, která používá řazené kolekce členů, spouští 40% rychleji a nepřiřazuje žádnou paměť.
+
+Tyto výsledky ale neplatí vždy v případě vlastního kódu. Pokud označíte funkci jako `inline`, kód, který používá řazené kolekce členů, může získat některé další optimalizace nebo by kód, který by se měl přidělit, mohl být optimalizován. Měli byste vždycky měřit výsledky vždy, když je dotčen výkon, a nikdy nefungovat na základě předpokladů nebo Intuition.
+
+#### <a name="prefer-struct-records-when-the-data-type-is-small"></a>Preferovat záznamy struktury, když je datový typ malý
+
+Pro [ F# typy záznamů](../language-reference/records.md)je také uvedeno pravidlo povýšení. Vezměte v úvahu následující datové typy a funkce, které je zpracovávají:
+
+```fsharp
+type Point = { X: float; Y: float; Z: float }
+
+[<Struct>]
+type SPoint = { X: float; Y: float; Z: float }
+
+let rec processPoint (p: Point) offset times =
+    let inline offsetValues (p: Point) offset =
+        { p with X = p.X + offset; Y = p.Y + offset; Z = p.Z + offset }
+
+    if times <= 0 then
+        p
+    else
+        let r = offsetValues p offset
+        processPoint r offset (times - 1)
+
+let rec processStructPoint (p: SPoint) offset times =
+    let inline offsetValues (p: SPoint) offset =
+        { p with X = p.X + offset; Y = p.Y + offset; Z = p.Z + offset }
+
+    if times <= 0 then
+        p
+    else
+        let r = offsetValues p offset
+        processStructPoint r offset (times - 1)
+```
+
+To se podobá předchozímu kódu řazené kolekce členů, ale tentokrát v příkladu používá záznamy a vloženou vnitřní funkci.
+
+Při srovnávacích testech těchto funkcí se statistickým nástrojem pro srovnávací testy, jako je [BenchmarkDotNet](https://benchmarkdotnet.org/), zjistíte, že `processStructPoint` spouští téměř 60% rychleji a přiděluje nic na spravované haldě.
+
+#### <a name="prefer-struct-discriminated-unions-when-the-data-type-is-small"></a>Preferovat struktury rozlišené sjednocení, když je datový typ malý
+
+Předchozí poznámky o výkonu s řazenými kolekcemi členů struktury a záznamy také uchovávají pro [ F# rozlišené sjednocení](../language-reference/discriminated-unions.md). Vezměte v úvahu následující kód:
+
+```fsharp
+    type Name = Name of string
+    
+    [<Struct>]
+    type SName = SName of string
+
+    let reverseName (Name s) =
+        s.ToCharArray()
+        |> Array.rev
+        |> string
+        |> Name
+
+    let structReverseName (SName s) =
+        s.ToCharArray()
+        |> Array.rev
+        |> string
+        |> SName
+```
+
+Je běžné definovat jednotně rozlišené sjednocení jako v případě modelování domén. Při srovnávacích testech těchto funkcí se statistickým nástrojem pro srovnávací testy, jako je [BenchmarkDotNet](https://benchmarkdotnet.org/), zjistíte, že `structReverseName` spouští přibližně 25% rychlejší než `reverseName` malých řetězců. U velkých řetězců provede obě stejnou operaci. Takže v tomto případě je vždy vhodnější použít strukturu. Jak už bylo uvedeno výše, vždy změřte a nespouštějte na základě předpokladů nebo Intuition.
+
+I když předchozí příklad ukázal, že se strukturou rozlišené sjednocení vrátilo lepší výkon, je běžné mít při modelování domény větší rozlišené sjednocení. Větší datové typy, jako třeba, se nemusí provádět, i když se jedná o struktury v závislosti na operacích, které by mohly být součástí dalších kopírování.
+
+### <a name="functional-programming-and-mutation"></a>Funkční programování a mutace
+
+F#hodnoty jsou ve výchozím nastavení neměnné, což umožňuje vyhnout se určitým třídám chyb (zejména ty, které se týkají souběžnosti a paralelismu). Nicméně v některých případech, aby bylo dosaženo optimální (nebo ještě rozumně) efektivity času spuštění nebo přidělení paměti, je možné, že je možné využít rozsah práce pomocí místní mutace stavu. To je možné na základě výslovného souhlasu s F# klíčovým slovem `mutable`.
+
+Použití `mutable` v F# se může cítit na lichá s funkcí čistoty. To je srozumitelnější, ale funkční čistota všude může být v lichá s cíli výkonu. Ohrožením je zapouzdření mutací tak, že volající nemusí dbát na to, co se stane při volání funkce. To umožňuje napsat funkční rozhraní přes implementaci na základě mutací pro kód kritický pro výkon.
+
+#### <a name="wrap-mutable-code-in-immutable-interfaces"></a>Zalamování měnitelného kódu v neměnných rozhraních
 
 V případě referenční transparentnosti jako cíle je velmi důležité napsat kód, který nezveřejňuje proměnlivou podšpičku funkcí kritických pro výkon. Například následující kód implementuje funkci `Array.contains` v F# základní knihovně:
 
@@ -465,7 +572,7 @@ let inline contains value (array:'T[]) =
 
 Vícenásobné volání této funkce nemění podkladové pole, ani nevyžaduje, abyste zachovali proměnlivý stav, který je v tom, že ho budete spotřebovávat. Je tak transparentní, i když skoro každý řádek kódu v něm používá mutace.
 
-### <a name="consider-encapsulating-mutable-data-in-classes"></a>Zvažte zapouzdření proměnlivých dat ve třídách
+#### <a name="consider-encapsulating-mutable-data-in-classes"></a>Zvažte zapouzdření proměnlivých dat ve třídách
 
 Předchozí příklad používal jednu funkci k zapouzdření operací pomocí proměnlivých dat. To není vždy dostačující pro složitější sady dat. Vezměte v úvahu následující sady funkcí:
 
@@ -511,9 +618,9 @@ type Closure1Table() =
 
 `Closure1Table` zapouzdřuje základní datovou strukturu založenou na mutacích, a proto nenutí volajícím udržovat podkladovou strukturu dat. Třídy představují účinný způsob, jak zapouzdřit data a rutiny, které jsou založené na mutacích bez odhalení podrobností volajícím.
 
-### <a name="prefer-let-mutable-to-reference-cells"></a>Preferovat `let mutable` k odkazování na buňky
+#### <a name="prefer-let-mutable-to-reference-cells"></a>Preferovat `let mutable` k odkazování na buňky
 
-Odkazové buňky představují způsob, jak znázornit odkaz na hodnotu namísto samotné hodnoty. I když je lze použít pro kód kritický pro výkon, obecně se nedoporučuje. Vezměte v úvahu následující příklad:
+Odkazové buňky představují způsob, jak znázornit odkaz na hodnotu namísto samotné hodnoty. I když je lze použít pro kód kritický pro výkon, nejsou doporučovány. Vezměte v úvahu v následujícím příkladu:
 
 ```fsharp
 let kernels =
@@ -567,7 +674,7 @@ F#má plnou podporu pro objekty a koncepty orientované na objekt (ó). I když 
 * Rozšíření typů
 * Události
 * Struktury
-* Delegáty
+* Delegáti
 * Výčty
 
 **Obecně se vyhnete těmto funkcím, pokud je nemusíte používat:**

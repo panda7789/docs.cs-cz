@@ -2,16 +2,16 @@
 title: dotnet – nástroj trasování – .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-Trace.
 ms.date: 11/21/2019
-ms.openlocfilehash: 64c931db5a18659707e832aaca910cfbbd6823c0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b19b159636fbf57fa2d461b398fcf9234aab491c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714425"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737642"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>dotnet – Nástroj pro analýzu výkonu trasování
 
-**Tento článek se týká:** ✓ .net Core 3,0 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .net Core 3,0 SDK a novějších verzí
 
 ## <a name="install-dotnet-trace"></a>Instalace dotnet – trasování
 
@@ -38,7 +38,7 @@ Nástroj `dotnet-trace`:
 
 ## <a name="options"></a>Možnosti
 
-- **`--version`**  
+- **`--version`**
 
   Zobrazí verzi nástroje dotnet-Counters.
 

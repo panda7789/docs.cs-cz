@@ -3,12 +3,12 @@ title: Vytvoření klienta REST pomocí .NET Core
 description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 85a3c8e17e14db86786950380ba745ae286dccca
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
-ms.translationtype: MT
+ms.openlocfilehash: 09eda08f82490070c66d0b290359872c1043b0c2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115869"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737572"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -71,7 +71,7 @@ private static async Task ProcessRepositories()
 }
 ```
 
-V horní části metody `Main` budete muset přidat příkaz `using`, aby C# kompilátor rozpoznal typ <xref:System.Threading.Tasks.Task>:
+V horní části metody `Main` budete muset přidat direktivu `using`, aby C# kompilátor rozpoznal typ <xref:System.Threading.Tasks.Task>:
 
 ```csharp
 using System.Threading.Tasks;
@@ -81,10 +81,10 @@ Pokud v tomto okamžiku sestavíte projekt, zobrazí se pro tuto metodu upozorn�
 
 Dále přejmenujte obor názvů definovaný v příkazu `namespace` z jeho výchozího `ConsoleApp` na `WebAPIClient`. Později v tomto oboru názvů definujeme třídu `repo`.
 
-Dále aktualizujte metodu `Main` pro volání této metody. Metoda `ProcessRepositories` vrátí úlohu a neukončí program před dokončením této úlohy. Proto je nutné změnit signaturu `Main`. Přidejte modifikátor `async` a změňte návratový typ na `Task`. Pak v těle metody přidejte volání `ProcessRepositories`. Přidejte klíčové slovo `await` při volání této metody:
+Dále aktualizujte metodu `Main` pro volání této metody. Metoda `ProcessRepositories` vrátí úlohu a neukončí program před dokončením této úlohy. Proto je nutné změnit signaturu `Main`. Přidejte modifikátor `async` a změňte návratový typ na `Task`. Pak v těle metody přidejte volání `ProcessRepositories`. Do tohoto volání metody přidejte klíčové slovo `await`:
 
 ```csharp
-static Task Main(string[] args)
+static async Task Main(string[] args)
 {
     await ProcessRepositories();
 }
@@ -92,7 +92,7 @@ static Task Main(string[] args)
 
 Nyní máte program, který nic nedělá, ale asynchronně ho provede. Pojďme to vylepšit.
 
-Nejprve potřebujete objekt, který je schopný načíst data z webu. k tomu můžete použít <xref:System.Net.Http.HttpClient>. Tento objekt zpracovává požadavek a odpovědi. Vytvořte instanci jedné instance daného typu ve třídě `Program` v souboru Program.cs.
+Nejprve potřebujete objekt, který je schopný načíst data z webu. k tomu můžete použít <xref:System.Net.Http.HttpClient>. Tento objekt zpracovává požadavek a odpovědi. Vytvořte instanci jedné instance daného typu ve třídě `Program` v souboru *program.cs* .
 
 ```csharp
 namespace WebAPIClient
@@ -101,7 +101,7 @@ namespace WebAPIClient
     {
         private static readonly HttpClient client = new HttpClient();
 
-        static Task Main(string[] args)
+        static async Task Main(string[] args)
         {
             //...
         }
@@ -126,7 +126,7 @@ private static async Task ProcessRepositories()
 }
 ```
 
-V horní části souboru budete muset přidat také dvě nové příkazy using, aby se mohla kompilovat:
+V horní části souboru budete muset přidat také dvě nové direktivy `using`, aby se tato kompilace mohla kompilovat:
 
 ```csharp
 using System.Net.Http;
@@ -206,6 +206,12 @@ Než přidáte další funkce, předejte adresu `name` vlastnosti pomocí atribu
 public string Name { get; set; }
 ```
 
+Chcete-li použít atribut `[JsonPropertyName]`, budete muset přidat <xref:System.Text.Json.Serialization> oboru názvů do direktiv `using`:
+
+```csharp
+using System.Text.Json.Serialization;
+```
+
 Tato změna znamená, že potřebujete změnit kód, který zapisuje název každého úložiště v program.cs:
 
 ```csharp
@@ -233,7 +239,7 @@ Kompilátor vygeneruje objekt `Task<T>` pro návrat, protože jste tuto metodu o
 Pak upravíte metodu `Main` tak, aby zachytit tyto výsledky a zapsala jednotlivé názvy úložišť do konzoly. Vaše metoda `Main` nyní vypadá takto:
 
 ```csharp
-public static Task Main(string[] args)
+public static async Task Main(string[] args)
 {
     var repositories = await ProcessRepositories();
 
@@ -296,7 +302,7 @@ public DateTime LastPush =>
 
 Pojďme přecházet na nové konstrukce, které jsme právě definovali. Vlastnost `LastPush` je definována pomocí *člena Expression-těle* pro přistupující objekt `get`. Neexistuje žádný přistupující objekt `set`. Vynechání přístupového objektu `set` je způsob, jakým definujete vlastnost C# *jen pro čtení* v. (Ano, můžete vytvořit vlastnosti *pouze pro zápis* v C#, ale jejich hodnota je omezená.) Metoda <xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)> analyzuje řetězec a vytvoří objekt <xref:System.DateTime> pomocí poskytnutého formátu data a přidá další metadata do `DateTime` pomocí objektu `CultureInfo`. Pokud operace analýzy není úspěšná, přistupující objekt vlastnosti vyvolá výjimku.
 
-Chcete-li použít <xref:System.Globalization.CultureInfo.InvariantCulture>, bude nutné přidat <xref:System.Globalization> oboru názvů do příkazů `using` v `repo.cs`:
+Chcete-li použít <xref:System.Globalization.CultureInfo.InvariantCulture>, bude nutné přidat obor názvů <xref:System.Globalization> do direktiv `using` v `repo.cs`:
 
 ```csharp
 using System.Globalization;

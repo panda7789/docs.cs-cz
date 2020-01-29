@@ -1,5 +1,5 @@
 ---
-title: Vytvoření InkCanvas v aplikaci WPF v aplikaci Visual Studio
+title: Vytvoření InkCanvas v aplikaci Visual Studio
 ms.date: 08/15/2018
 dev_langs:
 - csharp
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XAML [WPF], procedural code in lieu of
 - InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-ms.openlocfilehash: ebbf25037921e7802b2bfcb6ffa562d16a849ffa
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: b8087d6db04f7024b9ee48f28002bee04045a14b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920254"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737885"
 ---
 # <a name="get-started-with-ink-in-wpf"></a>Začínáme s rukopisem v subsystému WPF
 
@@ -24,7 +24,7 @@ Windows Presentation Foundation (WPF) má funkci rukopisu, která usnadňuje za�
 
 Chcete-li použít následující příklady, nejprve nainstalujte [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Pomáhá také zjistit, jak psát základní aplikace WPF. Nápovědu Začínáme s WPF naleznete v tématu [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="quick-start"></a>rychlé zprovoznění
+## <a name="quick-start"></a>Rychlé zprovoznění
 
 Tato část vám pomůže napsat jednoduchou aplikaci WPF, která shromažďuje rukopis.
 
@@ -32,7 +32,7 @@ Tato část vám pomůže napsat jednoduchou aplikaci WPF, která shromažďuje 
 
 Vytvoření aplikace WPF podporující rukopis:
 
-1. Otevřete Visual Studio.
+1. Otevřít Visual Studio.
 
 2. Vytvořte novou **aplikaci WPF**.
 

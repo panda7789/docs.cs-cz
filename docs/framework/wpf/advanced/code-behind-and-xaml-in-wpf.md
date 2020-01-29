@@ -1,23 +1,23 @@
 ---
-title: Podkladový kód a kód XAML v subsystému WPF
+title: Kód na pozadí a XAML
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-ms.openlocfilehash: 00427004448997aa234b335b397390f9fabe1bd5
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 212a37fb7fbcb7e66a669d96671333be793956df
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559908"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738102"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Podkladový kód a kód XAML v subsystému WPF
 <a name="introduction"></a>Kód na pozadí je termín, který se používá k popisu kódu, který je spojen s objekty definovanými značkou, když [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka je kompilována kódu. Toto téma popisuje požadavky na pozadí kódu a také alternativní mechanismus vloženého kódu pro kód v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  Toto téma obsahuje následující oddíly:  
   
-- [Požadované součásti](#Prerequisites)  
+- [Požadavky](#Prerequisites)  
   
 - [Kód na pozadí a jazyk XAML](#codebehind_and_the_xaml_language)  
   

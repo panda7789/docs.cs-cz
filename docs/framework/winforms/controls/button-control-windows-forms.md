@@ -1,19 +1,19 @@
 ---
-title: Ovládací prvek Tlačítko (Windows Forms)
+title: Ovládací prvek Button
 ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons
 - Button control [Windows Forms]
 ms.assetid: d38bc40c-8040-4f19-9e88-2c665b0ab80b
-ms.openlocfilehash: a71079b45259aab54480a5b97c09844b73be1661
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 20ef3126cd2234bc8daa42ceaca91223794f3522
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961587"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738016"
 ---
 # <a name="button-control-windows-forms"></a>Ovládací prvek Tlačítko (Windows Forms)
-Windows Forms `Button` ovládací prvek umožňuje uživateli klikněte na něj k provedení akce. `Button` Ovládací prvek mohl zobrazit text a obrázky. Při kliknutí na tlačítko vypadat jako v případě, že je se vložil do a všeobecně dostupné.  
+Ovládací prvek model Windows Forms `Button` umožňuje uživateli kliknout na něj a provést akci. Ovládací prvek `Button` může zobrazovat text i obrázky. Po kliknutí na tlačítko vypadá jako při vložení a vydání.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)  
@@ -22,23 +22,23 @@ Windows Forms `Button` ovládací prvek umožňuje uživateli klikněte na něj 
  [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)  
  Vysvětluje základní použití tlačítka ve formuláři Windows.  
   
- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout](how-to-designate-a-windows-forms-button-as-the-accept-button.md)  
- Vysvětluje, jak určit `Button` ovládacího prvku tlačítko Přijmout, označované také jako výchozího tlačítka.  
+ [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout](how-to-designate-a-windows-forms-button-as-the-accept-button.md)  
+ Vysvětluje, jak určit `Button` ovládací prvek jako tlačítko přijmout, označované také jako výchozí tlačítko.  
   
- [Postupy: Určení tlačítka Windows Forms jako tlačítko Storno](how-to-designate-a-windows-forms-button-as-the-cancel-button.md)  
- Vysvětluje, jak určit `Button` ovládacího prvku tlačítko Storno, který po kliknutí na vždy, když uživatel stiskne klávesu ESC.  
+ [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit](how-to-designate-a-windows-forms-button-as-the-cancel-button.md)  
+ Vysvětluje, jak určit `Button` ovládací prvek jako tlačítko Storno, na které se klikne vždy, když uživatel stiskne klávesu ESC.  
   
  [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)  
- Jsou uvedeny metody objektu klepnutí na tlačítko.  
+ Zobrazí seznam metod výběru tlačítka.  
   
- Viz také [jak: Určení tlačítka Windows Forms pro funkci tlačítka přijmout pomocí návrháře](designate-a-wf-button-as-the-accept-button-using-the-designer.md) a [jak: Určení tlačítka Windows Forms pro funkci tlačítka Storno pomocí návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md).  
+ Viz také [Postupy: určení model Windows Forms tlačítka jako tlačítka přijmout pomocí návrháře](designate-a-wf-button-as-the-accept-button-using-the-designer.md) a [postupy: určení model Windows Forms tlačítka jako tlačítka Storno pomocí návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md).  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Button> Třída  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ <xref:System.Windows.Forms.Button> – třída  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
   
- Viz také [uživatelský vstup do dialogových oken](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1s9ws53w(v=vs.100)) a [jak: Zavřete dialogová okna a zachování dat zadaných uživatelem](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/65ad5907(v=vs.100)).
+ Podívejte [se také na vstup uživatele do dialogových oken](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1s9ws53w(v=vs.100)) a [Postupy: zavření dialogových oken a uchování vstupu uživatele](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/65ad5907(v=vs.100)).

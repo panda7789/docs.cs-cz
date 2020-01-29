@@ -1,5 +1,5 @@
 ---
-title: Dokumenty v platformě WPF
+title: Dokumenty
 ms.date: 03/30/2017
 helpviewer_keywords:
 - documents [WPF], packaging
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: 36704d56b66de977ac7f63fd7e766c925ef9023b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: eccb333b8e9a71ea30454f8bdf9fd2bf6dc90b9b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974688"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737967"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí široké spektrum funkcí dokumentu, které umožňují vytvářet obsah s vysokou přesností, který je navržený tak, aby byl snadněji přistupný a čtený než v předchozích generacích systému Windows. Kromě rozšířených možností a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] taky nabízí integrované služby pro zobrazení dokumentů, balení a zabezpečení. Toto téma poskytuje Úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  
@@ -46,7 +46,7 @@ ms.locfileid: "73974688"
  Zobrazení obsahu dokumentu toku je podporováno třemi ovládacími prvky: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>a <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
 #### <a name="flowdocumentreader"></a>FlowDocumentReader  
- <xref:System.Windows.Controls.FlowDocumentReader> obsahuje funkce, které umožňují uživateli dynamicky volit mezi různými režimy zobrazení, včetně jednostránkového režimu pro zobrazení na stránce (na úrovni stránky), režimu zobrazení na dvě stránky (formát pro čtení knih) a průběžného posouvání (bez dolního okraje). režim zobrazení.  Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  Pokud nepotřebujete, aby bylo možné dynamicky přepínat mezi různými režimy zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují velmi náročné prohlížeče obsahu toku, které jsou opraveny v určitém režimu zobrazení.  
+ <xref:System.Windows.Controls.FlowDocumentReader> obsahuje funkce, které umožňují uživateli dynamicky volit mezi různými režimy zobrazení, včetně jednostránkového režimu pro zobrazení na stránce (na úrovni stránky), režimu zobrazení na dvou stránkách (ve formátu knihy pro čtení) a průběžného posouvání (v dolním) režimu.  Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  Pokud nepotřebujete, aby bylo možné dynamicky přepínat mezi různými režimy zobrazení, <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují velmi náročné prohlížeče obsahu toku, které jsou opraveny v určitém režimu zobrazení.  
   
 #### <a name="flowdocumentpageviewer-and-flowdocumentscrollviewer"></a>Prohlížeč FlowDocumentPageViewer a FlowDocumentScrollViewer  
  <xref:System.Windows.Controls.FlowDocumentPageViewer> zobrazuje obsah v režimu zobrazení stránky v čase, zatímco <xref:System.Windows.Controls.FlowDocumentScrollViewer> zobrazuje obsah v režimu nepřetržitého posouvání.  <xref:System.Windows.Controls.FlowDocumentPageViewer> i <xref:System.Windows.Controls.FlowDocumentScrollViewer> jsou pevně dané pro určitý režim zobrazení. Porovnejte <xref:System.Windows.Controls.FlowDocumentReader>, které zahrnují funkce, které umožňují uživateli dynamicky volit mezi různými režimy zobrazení (poskytované <xref:System.Windows.Controls.FlowDocumentReaderViewingMode> výčtu), a to za cenu většího množství prostředků než <xref:System.Windows.Controls.FlowDocumentPageViewer> nebo <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  

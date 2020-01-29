@@ -2,16 +2,16 @@
 title: dotnet – výpis paměti – .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-dump.
 ms.date: 10/14/2019
-ms.openlocfilehash: dcd5dd42620010c1a9b6dffd3365fc1b777c0eeb
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 3c0e28d4efc96ae53ec7dfae243725ab400e6b8f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740774"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737670"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Výpis kolekce a analytického nástroje (`dotnet-dump`)
 
-**Tento článek se týká: ✓** .net Core 3,0 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .net Core 3,0 SDK a novějších verzí
 
 > [!NOTE]
 > `dotnet-dump` není v macOS podporován.
@@ -156,7 +156,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `syncblk <arguments>`               | Zobrazí informace o držiteli SyncBlock.                                                           |
 | `threads|setthread <threadid>`      | Nastaví nebo zobrazí aktuální ID vlákna pro příkazy SOS.                                  |
 
-## <a name="using-dotnet-dump"></a>Použití metody `dotnet-dump`
+## <a name="using-dotnet-dump"></a>Použití `dotnet-dump`
 
 Prvním krokem je shromáždění výpisu paměti. Tento krok lze přeskočit, pokud již byl vygenerován základní Výpis paměti. Pro každý operační systém nebo integrovanou [funkci generování výpisu](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) modulu runtime .NET Core můžete vytvořit základní výpisy.
 

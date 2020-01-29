@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 7e84da784d34be1646df982fa2594764d43d99dd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: fa30deb16be323f059aa0ec12df08793598a6da2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966874"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738359"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -385,10 +385,9 @@ Při implementaci ukládání do mezipaměti je důležité mít na paměti odd�
 ASP.NET Core podporuje dvě úrovně ukládání odpovědí do mezipaměti. První úroveň neukládá do mezipaměti cokoli na serveru, ale přidává hlavičky HTTP, které instruují klienty a proxy servery k ukládání odpovědí do mezipaměti. To je implementováno přidáním atributu ResponseCache na jednotlivé řadiče nebo akce:
 
 ```csharp
-    [ResponseCache(Duration = 60)]
-    public IActionResult Contact()
-    { }
-
+[ResponseCache(Duration = 60)]
+public IActionResult Contact()
+{
     ViewData["Message"] = "Your contact page.";
     return View();
 }

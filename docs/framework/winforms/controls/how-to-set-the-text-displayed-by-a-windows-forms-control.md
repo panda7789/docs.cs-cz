@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms'
+title: Nastavení textu zobrazovaného ovládacím prvkem
 ms.date: 08/20/2019
 dev_langs:
 - csharp
@@ -21,26 +21,26 @@ helpviewer_keywords:
 - controls [Windows Forms], captions
 - forms [Windows Forms], captions
 ms.assetid: 36b95bff-8780-479d-b86a-f1a0673653aa
-ms.openlocfilehash: 887aa5ec9b97770903cd87459d6df5adc3f7ddf0
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: eb02cbc3b335b0d5856f786b21d1d202cf444211
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666158"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738419"
 ---
-# <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení textu zobrazovaného ovládacím prvkem model Windows Forms
+# <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: nastavení textu zobrazovaného ovládacím prvkem model Windows Forms
 
-Ovládací prvky model Windows Forms obvykle zobrazují nějaký text, který souvisí s primární funkcí ovládacího prvku. Například <xref:System.Windows.Forms.Button> ovládací prvek obvykle zobrazuje titulek označující akci, která bude provedena při kliknutí na tlačítko. Pro všechny ovládací prvky můžete nastavit nebo vrátit text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnosti. Písmo můžete změnit pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnosti.
+Ovládací prvky model Windows Forms obvykle zobrazují nějaký text, který souvisí s primární funkcí ovládacího prvku. Například ovládací prvek <xref:System.Windows.Forms.Button> obvykle zobrazuje titulek, který indikuje, jakou akci bude proveden při kliknutí na tlačítko. Pro všechny ovládací prvky můžete nastavit nebo vrátit text pomocí vlastnosti <xref:System.Windows.Forms.Control.Text%2A>. Písmo můžete změnit pomocí vlastnosti <xref:System.Windows.Forms.Control.Font%2A>.
 
 Text můžete také nastavit pomocí [Návrháře](#designer).
 
 ## <a name="programmatic"></a>Blokují
 
-1. <xref:System.Windows.Forms.Control.Text%2A> Nastavte vlastnost na řetězec.
+1. Vlastnost <xref:System.Windows.Forms.Control.Text%2A> nastavte na řetězec.
 
    K vytvoření podtrženého přístupového klíče obsahuje ampersand (&) před písmenem, který bude přístupovým klíčem.
 
-2. Nastavte vlastnost na objekt typu <xref:System.Drawing.Font>. <xref:System.Windows.Forms.Control.Font%2A>
+2. Nastavte vlastnost <xref:System.Windows.Forms.Control.Font%2A> na objekt typu <xref:System.Drawing.Font>.
 
     ```vb
     Button1.Text = "Click here to save changes"
@@ -78,12 +78,12 @@ Text můžete také nastavit pomocí [Návrháře](#designer).
 
    Chcete-li vytvořit podtrženou klávesovou zkratku, zahrnuje ampersand (&) před písmenem, které bude klávesovou zkratkou.
 
-2. V okně **vlastnosti** vyberte tlačítko se třemi tečkami (![tlačítko se třemi tečkami (...) v okno Vlastnosti sady](./media/visual-studio-ellipsis-button.png)Visual Studio) vedle vlastnosti **Font** .
+2. V okně **vlastnosti** vyberte tlačítko se třemi tečkami (![tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio](./media/visual-studio-ellipsis-button.png)) vedle vlastnosti **Font** .
 
    V dialogovém okně standardní písmo vyberte písmo, styl písma, velikost, efekty (například přeškrtnutí nebo podtržení) a požadovaný skript.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>
-- [Postupy: Vytvoření přístupových klíčů pro ovládací prvky model Windows Forms](how-to-create-access-keys-for-windows-forms-controls.md)
-- [Postupy: Reakce na model Windows Forms kliknutí na tlačítko](how-to-respond-to-windows-forms-button-clicks.md)
+- [Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms](how-to-create-access-keys-for-windows-forms-controls.md)
+- [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
