@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a7b50175-2bf1-40be-8f65-64aec7aa1247
 topic_type:
 - apiref
-ms.openlocfilehash: 3c57021061c1566b369cdd43847e3994cf54e2da
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 66d544bbc0511ea76565376c8f10294f1758026b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139671"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792575"
 ---
 # <a name="icordebugprocesssetthreadcontext-method"></a>ICorDebugProcess::SetThreadContext – metoda
 Nastaví kontext pro dané vlákno v tomto procesu.  
@@ -48,7 +48,7 @@ HRESULT SetThreadContext(
  Kontext určuje architekturu procesoru, ve kterém je vlákno spuštěno.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program by měl volat tuto metodu namísto funkce Win32 `SetThreadContext`, protože vlákno může být ve skutečnosti ve stavu "napadeno", ve kterém byl jeho kontext dočasně změněn. Tato metoda by měla být použita pouze v případě, že vlákno je v nativním kódu. Použijte [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu. Nikdy byste neměli muset změnit kontext vlákna během události ladění OOB (out-of-band).  
+ Ladicí program by měl volat tuto metodu namísto funkce Win32 `SetThreadContext`, protože vlákno může být ve skutečnosti ve stavu "napadeno", ve kterém byl jeho kontext dočasně změněn. Tato metoda by měla být použita pouze v případě, že vlákno je v nativním kódu. Použijte [ICorDebugRegisterSet](icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu. Nikdy byste neměli muset změnit kontext vlákna během události ladění OOB (out-of-band).  
   
  Předaná data musí být kontextové struktury pro aktuální platformu.  
   

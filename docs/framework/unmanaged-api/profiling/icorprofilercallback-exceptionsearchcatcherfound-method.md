@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 190f424d-5e37-4163-a191-0895686e9476
 topic_type:
 - apiref
-ms.openlocfilehash: 080777b656e1c3df1cc4170fe1dff6de6ddb41fc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8f5997dddf78dd75d482bc45d2ee730b20d9ab16
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445390"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866467"
 ---
 # <a name="icorprofilercallbackexceptionsearchcatcherfound-method"></a>ICorProfilerCallback::ExceptionSearchCatcherFound – metoda
 Upozorní profileru, že ve fázi hledání výjimek byla nalezena obslužná rutina pro vyvolanou výjimku.  
@@ -32,10 +32,12 @@ RESULT ExceptionSearchCatcherFound(
     [in] FunctionID functionId);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `functionId`  
- pro ID funkce, která obsahuje obslužnou rutinu výjimky.  
-  
+## <a name="parameters"></a>Parametry
+
+- `functionId`
+
+  \[in] ID funkce, která obsahuje obslužnou rutinu výjimky.
+
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
@@ -47,4 +49,4 @@ RESULT ExceptionSearchCatcherFound(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

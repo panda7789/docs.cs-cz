@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 62ec65e3-3e9d-400b-ae61-d24b8963995b
 topic_type:
 - apiref
-ms.openlocfilehash: 5ccd90e92e83d7f9f6f19a082fb84dc1f1c35f4c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8a21f1c0018e99b94a1b9910b6f266bdca84b7fe
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447815"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76864554"
 ---
 # <a name="icorprofilerfunctionenumgetcount-method"></a>ICorProfilerFunctionEnum::GetCount – metoda
 Získá počet funkcí, které byly načteny aplikací nebo vynuceně načteny profilerem.  
@@ -46,5 +46,5 @@ HRESULT GetCount([out] ULONG * pcelt);
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerFunctionEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerFunctionEnum – rozhraní](icorprofilerfunctionenum-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)

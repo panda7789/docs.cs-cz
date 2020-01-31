@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cca0f799-09b8-4689-a33c-6d6537943a9b
 topic_type:
 - apiref
-ms.openlocfilehash: 1d8aa231f65bad88806ee9b1d3c5df978c9740a2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6514606290bf006443d7011c1a428bebb4cca0f6
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446922"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865826"
 ---
 # <a name="icorprofilercallbackthreadcreated-method"></a>ICorProfilerCallback::ThreadCreated – metoda
 Upozorní profileru, že bylo vytvořeno vlákno.  
@@ -50,5 +50,5 @@ HRESULT ThreadCreated(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ThreadDestroyed – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ThreadDestroyed – metoda](icorprofilercallback-threaddestroyed-method.md)

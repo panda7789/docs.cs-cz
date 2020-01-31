@@ -8,16 +8,16 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-ms.openlocfilehash: 7d1cf353f7e6c4b87c13598e7e6029960cd0f715
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7ff4ff607ab70b55cda1e2c4736ff773d4907a22
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197812"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794121"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Návod: Mapování vlastností použitím ovládacího prvku ElementHost
 
-V tomto návodu se dozvíte, jak použít vlastnost <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> k mapování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastností na odpovídající vlastnosti u hostovaného [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementu.
+V tomto návodu se dozvíte, jak použít vlastnost <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> k mapování model Windows Forms vlastností na odpovídající vlastnosti u hostovaného [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementu.
 
 Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
@@ -31,7 +31,7 @@ V tomto návodu se dozvíte, jak použít vlastnost <xref:System.Windows.Forms.I
 
 Úplný výpis kódu úloh, které jsou znázorněny v tomto návodu, najdete v tématu [mapování vlastností pomocí ukázky ovládacího prvku ElementHost](https://go.microsoft.com/fwlink/?LinkID=160018).
 
-Až budete hotovi, budete moci mapovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti na odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti v hostovaném elementu.
+Až budete hotovi, budete moci mapovat model Windows Forms vlastnosti na odpovídající [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti v hostovaném elementu.
 
 ## <a name="prerequisites"></a>Požadavky
 

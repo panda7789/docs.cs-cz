@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bed097b3-6d52-46c9-bee7-ac7910b6fc3f
 topic_type:
 - apiref
-ms.openlocfilehash: 047516574595f9ffcd61360f51823da73a2f9733
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d0219751987b1f2d78ee37a1553b323014c1ccfe
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439517"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865685"
 ---
 # <a name="icorprofilercallback3initializeforattach-method"></a>ICorProfilerCallback3::InitializeForAttach – metoda
 Volá se modulem CLR (Common Language Runtime), aby Profiler mohl po operaci připojení inicializovat svůj stav.  
@@ -39,7 +39,7 @@ HRESULT InitializeForAttach(
  pro Ukazatel rozhraní pro rozhraní `ICorProfilerInfo*`.  
   
  `pvClientData`  
- pro Ukazatel na data předaná metodě [IClrProfiling:: AttachProfiler –](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) ve svém parametru `pvClientData`. Pokud má tento parametr hodnotu null, `cbClientData` bude 0 (nula). Modul CLR uvolní tuto paměť při návratu z `InitializeForAttach`.  
+ pro Ukazatel na data předaná metodě [IClrProfiling:: AttachProfiler –](iclrprofiling-attachprofiler-method.md) ve svém parametru `pvClientData`. Pokud má tento parametr hodnotu null, `cbClientData` bude 0 (nula). Modul CLR uvolní tuto paměť při návratu z `InitializeForAttach`.  
   
  `cbClientData`  
  pro Velikost dat, která `pvClientData` odkazuje, v bajtech.  
@@ -58,7 +58,7 @@ HRESULT InitializeForAttach(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

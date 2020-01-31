@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f31185e0-f01d-463a-b392-42163e39bfe9
 topic_type:
 - apiref
-ms.openlocfilehash: 728e8bdbce7f93176324d8f80261030f8cbae283
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4cc6bbde2c7367c1109ca73e66f2670a56b2cdbe
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140419"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790560"
 ---
 # <a name="icorpublishprocessgetprocessid-method"></a>ICorPublishProcess::GetProcessID – metoda
 Získá identifikátor operačního systému pro tento proces.  
@@ -35,7 +35,7 @@ HRESULT GetProcessID (
   
 ## <a name="parameters"></a>Parametry  
  `pid`  
- mimo Ukazatel na identifikátor procesu reprezentovaného tímto objektem [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) .  
+ mimo Ukazatel na identifikátor procesu reprezentovaného tímto objektem [ICorPublishProcess](icorpublishprocess-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -48,4 +48,4 @@ HRESULT GetProcessID (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorPublishProcess – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)
+- [ICorPublishProcess – rozhraní](icorpublishprocess-interface.md)

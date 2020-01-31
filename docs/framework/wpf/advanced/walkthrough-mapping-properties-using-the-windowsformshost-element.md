@@ -8,16 +8,16 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
-ms.openlocfilehash: 94d175ec58f35b7e807786c221437d05c605c0bc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c076937d6431adf1750793d47ece88dc82edf95c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974215"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794105"
 ---
 # <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Návod: Mapování vlastností použitím elementu WindowsFormsHost
 
-Tento návod ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> k mapování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastností na odpovídající vlastnosti v hostovaném ovládacím prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+Tento návod ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> k mapování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastností na odpovídající vlastnosti v hostovaném ovládacím prvku model Windows Forms.
 
 Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
@@ -35,7 +35,7 @@ Tento návod ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Integrat
 
 Úplný výpis kódu úloh, které jsou znázorněny v tomto návodu, najdete v tématu [mapování vlastností pomocí ukázky elementu WindowsFormsHost](https://go.microsoft.com/fwlink/?LinkID=160019).
 
-Až budete hotovi, budete moci mapovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti na odpovídající vlastnosti v hostovaném ovládacím prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+Až budete hotovi, budete moci mapovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti na odpovídající vlastnosti v hostovaném ovládacím prvku model Windows Forms.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -53,7 +53,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ## <a name="defining-the-application-layout"></a>Definování rozložení aplikace
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace používá <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek pro hostování ovládacího prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace používá <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek pro hostování ovládacího prvku model Windows Forms.
 
 ### <a name="to-define-the-application-layout"></a>Definování rozložení aplikace
 
@@ -83,7 +83,7 @@ Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> poskytuje něko
 
      Metoda `AddClipMapping` přidá nové mapování pro vlastnost <xref:System.Windows.UIElement.Clip%2A>.
 
-     Metoda `OnClipChange` překládá vlastnost <xref:System.Windows.UIElement.Clip%2A> na vlastnost [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.Control.Region%2A>.
+     Metoda `OnClipChange` překládá vlastnost <xref:System.Windows.UIElement.Clip%2A> na vlastnost model Windows Forms<xref:System.Windows.Forms.Control.Region%2A>.
 
      Metoda `Window1_SizeChanged` zpracovává událost <xref:System.Windows.FrameworkElement.SizeChanged> okna a velikost oblasti oříznutí tak, aby odpovídala oknu aplikace.
 
@@ -113,7 +113,7 @@ Nahraďte výchozí mapování vlastností odebráním výchozího mapování a 
 
      Metoda `ReplaceFlowDirectionMapping` nahrazuje výchozí mapování pro vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A>.
 
-     Metoda `OnFlowDirectionChange` překládá vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A> na vlastnost [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.Control.RightToLeft%2A>.
+     Metoda `OnFlowDirectionChange` překládá vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A> na vlastnost model Windows Forms<xref:System.Windows.Forms.Control.RightToLeft%2A>.
 
      Metoda `cb_CheckedChanged` zpracovává událost <xref:System.Windows.Forms.CheckBox.CheckedChanged> v ovládacím prvku <xref:System.Windows.Forms.CheckBox>. Přiřadí vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A> na základě hodnoty vlastnosti <xref:System.Windows.Forms.CheckBox.CheckState%2A>
 
@@ -145,7 +145,7 @@ Nastavte mapování vlastností voláním dříve popsaných metod v obslužné 
 
      Metoda `WindowLoaded` zpracovává událost <xref:System.Windows.FrameworkElement.Loaded> a provádí následující inicializaci.
 
-    - Vytvoří ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.CheckBox>.
+    - Vytvoří ovládací prvek model Windows Forms<xref:System.Windows.Forms.CheckBox>.
 
     - Volá metody, které jste definovali dříve v návodu, aby se nastavilo mapování vlastností.
 

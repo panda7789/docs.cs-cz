@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule Interface
+title: IXCLRDataModule – rozhraní
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule Interface
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: c8d6e36687fd43bbc59304eee64dd42eb78101e3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8757642db6c4375cf55d1f7288669c4c8a752a38
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676520"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790397"
 ---
-# <a name="ixclrdatamodule-interface"></a>IXCLRDataModule Interface
+# <a name="ixclrdatamodule-interface"></a>IXCLRDataModule – rozhraní
 
-Poskytuje metody pro dotazování na informace o u načteného modulu.
+Poskytuje metody pro dotazování na informace o načteném modulu.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -32,22 +32,22 @@ Poskytuje metody pro dotazování na informace o u načteného modulu.
 
 | Metoda                                                                                                                                | Popis                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [GetMethodDefinitionByToken](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamodule-getmethoddefinitionbytoken-method.md) | Získá definici metody odpovídající token daná metadata. |
-| [Požadavek](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamodule-request-method.md)                                       | Požadavky k naplnění vyrovnávací paměť přidělená s daty modulu.       |
-| [GetVersionId](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamodule-getversionid-method.md)                             | Získá ID modulu verze.                                       |
+| [GetMethodDefinitionByToken](ixclrdatamodule-getmethoddefinitionbytoken-method.md) | Získá definici metody odpovídající danému tokenu metadat. |
+| [Požadavek](ixclrdatamodule-request-method.md)                                       | Žádosti o naplnění vyrovnávací paměti dané daty modulu.       |
+| [GetVersionId](ixclrdatamodule-getversionid-method.md)                             | Získá ID verze modulu.                                       |
 
 ## <a name="remarks"></a>Poznámky
 
-Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Je však rozhraní modelu COM, která je odvozena z `IUnknown` s identifikátorem GUID `88E32849-0A0A-4cb0-9022-7CD2E9E139E2` , který můžete získat prostřednictvím obvykle COM mechanismů.
+Toto rozhraní je v modulu runtime a není zveřejněné prostřednictvím hlaviček nebo souborů knihoven. Jedná se však o rozhraní modelu COM, které je odvozeno od `IUnknown` s identifikátorem GUID `88E32849-0A0A-4cb0-9022-7CD2E9E139E2`, které lze získat prostřednictvím obvyklých mechanismů modelu COM.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádná  
-**Knihovna:** Žádná  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

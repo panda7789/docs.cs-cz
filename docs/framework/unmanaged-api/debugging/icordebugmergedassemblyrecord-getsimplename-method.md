@@ -2,12 +2,12 @@
 title: 'ICorDebugMergedAssemblyRecord:: getssdp – metoda'
 ms.date: 03/30/2017
 ms.assetid: bc3410f6-ebca-4bca-9b45-fc38c74fa9cb
-ms.openlocfilehash: 565e27b47f2454dec1e4c2b89ee46ac5279b08b7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 21e8ebeabd3b082361ca3307240cfca58835b066
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130553"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793085"
 ---
 # <a name="icordebugmergedassemblyrecordgetsimplename-method"></a>ICorDebugMergedAssemblyRecord:: getssdp – metoda
 Získá jednoduchý název sestavení.  
@@ -49,5 +49,5 @@ HRESULT GetSimpleName(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugMergedAssemblyRecord – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugMergedAssemblyRecord – rozhraní](icordebugmergedassemblyrecord-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

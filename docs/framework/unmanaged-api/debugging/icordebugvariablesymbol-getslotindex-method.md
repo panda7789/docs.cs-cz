@@ -2,12 +2,12 @@
 title: 'ICorDebugVariableSymbol:: GetSlotIndex – metoda'
 ms.date: 03/30/2017
 ms.assetid: 09c19f5f-afc4-4e0c-bffe-cd7147bc7a43
-ms.openlocfilehash: a7a7ecf7d3e3d0d2125b03d3604c44138a2be0cc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3510daffb55bdb22aa5f835bf27157e7c8428509
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120975"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790896"
 ---
 # <a name="icordebugvariablesymbolgetslotindex-method"></a>ICorDebugVariableSymbol:: GetSlotIndex – metoda
 Načte index spravovaného slotu místní proměnné.  
@@ -44,5 +44,5 @@ HRESULT GetSlotIndex(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugVariableSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugVariableSymbol – rozhraní](icordebugvariablesymbol-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
