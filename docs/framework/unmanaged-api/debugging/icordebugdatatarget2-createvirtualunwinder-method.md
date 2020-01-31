@@ -2,12 +2,12 @@
 title: ICorDebugDataTarget2::CreateVirtualUnwinder – metoda
 ms.date: 03/30/2017
 ms.assetid: 354c8b4c-7d23-45c6-a7d7-3be4c2a5b772
-ms.openlocfilehash: f9a9038bd0d268e09d8518fa50534a9959b456de
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9fc4facda6253d0c68dcf89b2a1b06e639734efe
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122189"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788853"
 ---
 # <a name="icordebugdatatarget2createvirtualunwinder-method"></a>ICorDebugDataTarget2::CreateVirtualUnwinder – metoda
 Vytvoří novou odvinoutho zásobníku, který spustí odvinutí z počátečního kontextu (což není nutně listem vlákna).  
@@ -41,7 +41,7 @@ HRESULT CreateVirtualUnwinder(
  mimo Ukazatel na adresu objektu rozhraní ICorDebugVirtualUnwinder.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`, pokud bylo úspěšné. Všechny ostatní `HRESULT` označují selhání. Jakákoli neúspěšná `HRESULT` přijatá nástrojem mscordbi se považuje za závažnou a způsobí, že metody [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) vrátí `CORDBG_E_DATA_TARGET_ERROR`.  
+ `S_OK`, pokud bylo úspěšné. Všechny ostatní `HRESULT` označují selhání. Jakákoli neúspěšná `HRESULT` přijatá nástrojem mscordbi se považuje za závažnou a způsobí, že metody [ICorDebug](icordebug-interface.md) vrátí `CORDBG_E_DATA_TARGET_ERROR`.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -59,5 +59,5 @@ HRESULT CreateVirtualUnwinder(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget2 – rozhraní](icordebugdatatarget2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

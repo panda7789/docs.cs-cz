@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8cdac941-8b94-4497-b874-4e571785f3fe
 topic_type:
 - apiref
-ms.openlocfilehash: e40687f7f843dc563801bb01b503d2ae94a094fc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0b1ecd1266528f8a08ef114de2f111dd0f71ca8b
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446012"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866928"
 ---
 # <a name="functionleave2-function"></a>FunctionLeave2 – funkce
 Upozorní profileru, že se chystá návrat funkce k volajícímu a poskytuje informace o bloku zásobníku a návratové hodnotě funkce.  
@@ -35,23 +35,28 @@ void __stdcall FunctionLeave2 (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `funcId`  
- pro Identifikátor funkce, která vrací.  
+## <a name="parameters"></a>Parametry
+
+- `funcId`
+
+  \[in] identifikátor funkce, která vrací.
+
+- `clientData`
+
+  \[v] identifikátor přemapované funkce, který Profiler dříve zadal prostřednictvím funkce [FunctionIDMapper –](functionidmapper-function.md) .
+
+- `func`
+
+  \[in] `COR_PRF_FRAME_INFO` hodnota, která odkazuje na informace o snímku zásobníku.
+
+  Profiler by měl považovat za neprůhledný popisovač, který lze předat zpět spouštěcímu modulu v metodě [ICorProfilerInfo2:: GetFunctionInfo2 –](icorprofilerinfo2-getfunctioninfo2-method.md) .  
   
- `clientData`  
- pro Znovu namapovaný identifikátor funkce, který Profiler dříve zadal prostřednictvím funkce [FunctionIDMapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md)  
-  
- `func`  
- pro Hodnota `COR_PRF_FRAME_INFO`, která odkazuje na informace o snímku zásobníku.  
-  
- Profiler by měl považovat za neprůhledný popisovač, který lze předat zpět spouštěcímu modulu v metodě [ICorProfilerInfo2:: GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) .  
-  
- `retvalRange`  
- pro Ukazatel na [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) strukturu, která určuje umístění paměti návratové hodnoty funkce.  
-  
- Aby bylo možné získat přístup k informacím o vrácených hodnotách, musí být nastaven příznak `COR_PRF_ENABLE_FUNCTION_RETVAL`. Profiler může použít metodu [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) k nastavení příznaků událostí.  
-  
+- `retvalRange`
+
+  \[in] ukazatel na strukturu [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) , která určuje umístění paměti návratové hodnoty funkce.
+
+  Aby bylo možné získat přístup k informacím o vrácených hodnotách, musí být nastaven příznak `COR_PRF_ENABLE_FUNCTION_RETVAL`. Profiler může použít metodu [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) k nastavení příznaků událostí.
+
 ## <a name="remarks"></a>Poznámky  
  Hodnoty parametrů `func` a `retvalRange` nejsou po vrácení `FunctionLeave2` funkce platné, protože hodnoty se mohou změnit nebo zničit.  
   
@@ -78,7 +83,7 @@ void __stdcall FunctionLeave2 (
   
 ## <a name="see-also"></a>Viz také:
 
-- [FunctionEnter2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionTailcall2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
-- [SetEnterLeaveFunctionHooks2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2 – funkce](functionenter2-function.md)
+- [FunctionTailcall2 – funkce](functiontailcall2-function.md)
+- [SetEnterLeaveFunctionHooks2 – metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)

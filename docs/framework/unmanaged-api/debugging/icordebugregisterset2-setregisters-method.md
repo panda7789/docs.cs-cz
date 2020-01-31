@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: fe0ac7e7-c9e1-4ec1-9f4e-1c56d63d73ac
 topic_type:
 - apiref
-ms.openlocfilehash: 66c10e5ecdd1610ee170b412c2778b8117d6c407
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2dce97db3d209c51270a51ae92e9dce0b6861998
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131307"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792002"
 ---
 # <a name="icordebugregisterset2setregisters-method"></a>ICorDebugRegisterSet2::SetRegisters – metoda
 `SetRegisters` není implementována v .NET Framework verze 2,0. Nevolejte tuto metodu.  
   
 > [!NOTE]
-> Použijte operace vyšší úrovně, například [ICorDebugILFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) nebo [ICorDebugNativeFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md).  
+> Použijte operace vyšší úrovně, například [ICorDebugILFrame:: SetIP](icordebugilframe-setip-method.md) nebo [ICorDebugNativeFrame:: SetIP](icordebugnativeframe-setip-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,5 +50,5 @@ HRESULT SetRegisters (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
-- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 – rozhraní](icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet – rozhraní](icordebugregisterset-interface.md)

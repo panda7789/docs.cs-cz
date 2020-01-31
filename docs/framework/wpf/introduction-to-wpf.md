@@ -1,17 +1,18 @@
 ---
 title: Úvod do WPF
+titleSuffix: ''
 ms.date: 11/04/2016
 ms.topic: conceptual
 ms.assetid: b8d7cf43-d1f2-4f3d-adb0-4f3a6428edc0
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: d8ea49bbe400c5ec478a94ad7c1adb759af28abb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ecdd3b3c24b71917efb0d982d1f23737673622f9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454191"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744719"
 ---
 # <a name="wpf-overview"></a>Přehled grafického subsystému WPF (Windows Presentation Foundation)
 
@@ -156,25 +157,25 @@ Tady jsou uvedené předdefinované ovládací prvky WPF:
 
 - **Zobrazení data a výběr**: <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>.
 
-- **Dialogová okna**: <xref:Microsoft.Win32.OpenFileDialog>, <xref:System.Windows.Controls.PrintDialog> a <xref:Microsoft.Win32.SaveFileDialog>.
+- **Dialogová okna**: <xref:Microsoft.Win32.OpenFileDialog>, <xref:System.Windows.Controls.PrintDialog>a <xref:Microsoft.Win32.SaveFileDialog>.
 
 - **Digitální inkoust**: <xref:System.Windows.Controls.InkCanvas> a <xref:System.Windows.Controls.InkPresenter>.
 
-- **Documents**: <xref:System.Windows.Controls.DocumentViewer>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentScrollViewer> a <xref:System.Windows.Controls.StickyNoteControl>.
+- **Documents**: <xref:System.Windows.Controls.DocumentViewer>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentScrollViewer>a <xref:System.Windows.Controls.StickyNoteControl>.
 
-- **Input**: <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox> a <xref:System.Windows.Controls.PasswordBox>.
+- **Input**: <xref:System.Windows.Controls.TextBox>, <xref:System.Windows.Controls.RichTextBox>a <xref:System.Windows.Controls.PasswordBox>.
 
 - **Rozložení**: <xref:System.Windows.Controls.Border>, <xref:System.Windows.Controls.Primitives.BulletDecorator>, <xref:System.Windows.Controls.Canvas>, <xref:System.Windows.Controls.DockPanel>, <xref:System.Windows.Controls.Expander>, <xref:System.Windows.Controls.Grid>, <xref:System.Windows.Controls.GridView>, <xref:System.Windows.Controls.GridSplitter>, <xref:System.Windows.Controls.GroupBox>, <xref:System.Windows.Controls.Panel>, <xref:System.Windows.Controls.Primitives.ResizeGrip>, <xref:System.Windows.Controls.Separator>, <xref:System.Windows.Controls.Primitives.ScrollBar>, <xref:System.Windows.Controls.ScrollViewer>, <xref:System.Windows.Controls.StackPanel>, <xref:System.Windows.Controls.Primitives.Thumb>, <xref:System.Windows.Controls.Viewbox>, <xref:System.Windows.Controls.VirtualizingStackPanel>, <xref:System.Windows.Window>a <xref:System.Windows.Controls.WrapPanel>.
 
-- **Media**: <xref:System.Windows.Controls.Image>, <xref:System.Windows.Controls.MediaElement> a <xref:System.Windows.Controls.SoundPlayerAction>.
+- **Media**: <xref:System.Windows.Controls.Image>, <xref:System.Windows.Controls.MediaElement>a <xref:System.Windows.Controls.SoundPlayerAction>.
 
-- **Nabídky**: <xref:System.Windows.Controls.ContextMenu>, <xref:System.Windows.Controls.Menu> a <xref:System.Windows.Controls.ToolBar>.
+- **Nabídky**: <xref:System.Windows.Controls.ContextMenu>, <xref:System.Windows.Controls.Menu>a <xref:System.Windows.Controls.ToolBar>.
 
-- **Navigace**: <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow> a <xref:System.Windows.Controls.TabControl>.
+- **Navigace**: <xref:System.Windows.Controls.Frame>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>a <xref:System.Windows.Controls.TabControl>.
 
-- **Výběr**: <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.RadioButton> a <xref:System.Windows.Controls.Slider>.
+- **Výběr**: <xref:System.Windows.Controls.CheckBox>, <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.RadioButton>a <xref:System.Windows.Controls.Slider>.
 
-- **Informace o uživateli**: <xref:System.Windows.Controls.AccessText>, <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Primitives.Popup>, <xref:System.Windows.Controls.ProgressBar>, <xref:System.Windows.Controls.Primitives.StatusBar>, <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Controls.ToolTip>.
+- **Informace o uživateli**: <xref:System.Windows.Controls.AccessText>, <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Primitives.Popup>, <xref:System.Windows.Controls.ProgressBar>, <xref:System.Windows.Controls.Primitives.StatusBar>, <xref:System.Windows.Controls.TextBlock>a <xref:System.Windows.Controls.ToolTip>.
 
 ## <a name="input-and-commands"></a>Vstupní příkazy a
 
@@ -322,7 +323,7 @@ Podpora animace WPF umožňuje řídit, protřepání, otočení a zmizení ovl�
 
 Další informace najdete v tématu [Přehled animací](graphics-multimedia/animation-overview.md).
 
-## <a name="media"></a>Média
+## <a name="media"></a>Médium
 
 Jedním ze způsobů, jak vyjádřit bohatou část obsahu, je použití audiovizuálních médií. WPF poskytuje speciální podporu pro obrázky, video a zvuk.
 
@@ -438,7 +439,7 @@ Následující příklad ukazuje, jak změnit vzhled <xref:System.Windows.Contro
 [!code-csharp[IntroToWPFSnippets#ButtonControlTemplateWindowCODEBEHIND](~/samples/snippets/csharp/wpf/introduction-to-wpf/introduction-to-wpf_17.cs)]
 [!code-vb[IntroToWPFSnippets#ButtonControlTemplateWindowCODEBEHIND](~/samples/snippets/visualbasic/wpf/introduction-to-wpf/introduction-to-wpf_17.vb)]
 
-V tomto příkladu bylo tlačítko výchozí uživatelské rozhraní nahrazeno <xref:System.Windows.Shapes.Ellipse>, které má tmavě modré ohraničení a je vyplněno pomocí <xref:System.Windows.Media.RadialGradientBrush>. Ovládací prvek <xref:System.Windows.Controls.ContentPresenter> zobrazí obsah <xref:System.Windows.Controls.Button> "klikněte na mě!". Při kliknutí na <xref:System.Windows.Controls.Button> je událost <xref:System.Windows.Controls.Primitives.ButtonBase.Click> stále vyvolána jako součást výchozího chování ovládacího prvku <xref:System.Windows.Controls.Button>. Výsledek je znázorněn na následujícím obrázku:
+V tomto příkladu bylo tlačítko výchozí uživatelské rozhraní nahrazeno <xref:System.Windows.Shapes.Ellipse>, které má tmavě modré ohraničení a je vyplněno pomocí <xref:System.Windows.Media.RadialGradientBrush>. Ovládací prvek <xref:System.Windows.Controls.ContentPresenter> zobrazí obsah <xref:System.Windows.Controls.Button>"klikněte na mě!". Při kliknutí na <xref:System.Windows.Controls.Button> je událost <xref:System.Windows.Controls.Primitives.ButtonBase.Click> stále vyvolána jako součást výchozího chování ovládacího prvku <xref:System.Windows.Controls.Button>. Výsledek je znázorněn na následujícím obrázku:
 
 ![Eliptické tlačítko a druhé okno](media/introduction-to-wpf/wpfintrofigure2.png)
 
@@ -649,7 +650,7 @@ Další informace o vlastních ovládacích prvcích najdete v tématu [Přehled
 
 ## <a name="wpf-best-practices"></a>Osvědčené postupy pro WPF
 
-Stejně jako u jakékoli vývojové platformy je možné WPF použít různými způsoby, abyste dosáhli požadovaného výsledku. Jako způsob, jak zajistit, aby vaše aplikace WPF poskytovaly požadované uživatelské prostředí a splňovaly požadavky cílové skupiny obecně, existují Doporučené osvědčené postupy pro přístupnost, globalizaci a lokalizaci a výkon. Další informace naleznete v tématu:
+Stejně jako u jakékoli vývojové platformy je možné WPF použít různými způsoby, abyste dosáhli požadovaného výsledku. Jako způsob, jak zajistit, aby vaše aplikace WPF poskytovaly požadované uživatelské prostředí a splňovaly požadavky cílové skupiny obecně, existují Doporučené osvědčené postupy pro přístupnost, globalizaci a lokalizaci a výkon. Další informace najdete v části .
 
 - [Usnadnění](../ui-automation/accessibility-best-practices.md)
 - [Globalizace a lokalizace WPF](advanced/wpf-globalization-and-localization-overview.md)

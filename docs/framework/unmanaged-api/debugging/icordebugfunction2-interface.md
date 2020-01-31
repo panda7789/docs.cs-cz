@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2b936bef-9b75-48bf-859f-42e419c65f1c
 topic_type:
 - apiref
-ms.openlocfilehash: da440b7d2da57511545d3b63700662eb544660fd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5364e39f7e0a9b6c9cd10cd8f17bab4a03a4b7af
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137782"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794485"
 ---
 # <a name="icordebugfunction2-interface"></a>ICorDebugFunction2 – rozhraní
 
@@ -29,10 +29,10 @@ Logicky rozšiřuje rozhraní ICorDebugFunction, aby poskytovala podporu pro Pou
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateNativeCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-enumeratenativecode-method.md)|(Ještě není implementováno.) Získá ukazatel rozhraní na ICorDebugCodeEnum, který obsahuje příkazy nativního kódu ve funkci, na kterou odkazuje tento objekt ICorDebugFunction2.|  
-|[GetJMCStatus – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getjmcstatus-method.md)|Získá hodnotu, která označuje, zda je tato funkce označena jako uživatelský kód.|  
-|[GetVersionNumber – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md)|Získá verzi této funkce pro úpravu a pokračování.|  
-|[SetJMCStatus – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-setjmcstatus-method.md)|Označuje tuto funkci pro Pouze můj kód krokování.|  
+|[EnumerateNativeCode – metoda](icordebugfunction2-enumeratenativecode-method.md)|(Ještě není implementováno.) Získá ukazatel rozhraní na ICorDebugCodeEnum, který obsahuje příkazy nativního kódu ve funkci, na kterou odkazuje tento objekt ICorDebugFunction2.|  
+|[GetJMCStatus – metoda](icordebugfunction2-getjmcstatus-method.md)|Získá hodnotu, která označuje, zda je tato funkce označena jako uživatelský kód.|  
+|[GetVersionNumber – metoda](icordebugfunction2-getversionnumber-method.md)|Získá verzi této funkce pro úpravu a pokračování.|  
+|[SetJMCStatus – metoda](icordebugfunction2-setjmcstatus-method.md)|Označuje tuto funkci pro Pouze můj kód krokování.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -50,4 +50,4 @@ Logicky rozšiřuje rozhraní ICorDebugFunction, aby poskytovala podporu pro Pou
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

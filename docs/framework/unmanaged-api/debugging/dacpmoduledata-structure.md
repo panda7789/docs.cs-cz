@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 2e27082ba4c35bc10eb65139b2af6c81c10d79a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b46a04d67f59c5031b5bd195cef4cc2275e1e5e0
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739118"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793800"
 ---
 # <a name="dacpmoduledata-structure"></a>DacpModuleData – struktura
 
-Definuje přenos vyrovnávací paměť pro informace o modulu runtime.
+Definuje přenosovou vyrovnávací paměť pro běhové informace modulu.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -45,21 +45,21 @@ struct DacpModuleData
 | Člen    | Popis                                                             |
 | --------- | ----------------------------------------------------------------------- |
 | `Address` | Adresa objektu modulu.                                           |
-| `File`    | Ukazatel na soubor (PE portable executable).                       |
-| `ilBase`  | Je základní adresa načíst obrázek.                                 |
-| `payLoad` | Vyrovnávací paměť datové části pro informace o dalších modulu se používají modulem runtime. |
+| `File`    | Ukazatel na soubor přenositelného spustitelného souboru (PE).                       |
+| `ilBase`  | Adresa základu načteného obrázku                                 |
+| `payLoad` | Vyrovnávací paměť datové části pro další informace o modulu používané modulem runtime. |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Pro použití je třeba definujte strukturu jak je uvedeno výše.
+Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven. Pokud ho chcete použít, definujte strukturu, jak je uvedeno výše.
 
 ## <a name="requirements"></a>Požadavky
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
-**Knihovna:** Žádné  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](index.md)
+- [Struktury pro ladění](debugging-structures.md)

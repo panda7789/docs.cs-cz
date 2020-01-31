@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 90140b0f-a926-4a7e-b6fa-23e05f703cce
 topic_type:
 - apiref
-ms.openlocfilehash: 2393468f78312511d11cbe0ab422c26c710e25d8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 583189cd667af142ab7d0934be34411644dac936
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439237"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863917"
 ---
 # <a name="icorprofilerinfogetcodeinfo-method"></a>ICorProfilerInfo::GetCodeInfo – metoda
 Získá rozsah nativního kódu přidruženého k zadanému ID funkce.  
   
- Tato metoda je zastaralá. Místo toho použijte metodu [ICorProfilerInfo2:: GetCodeInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) .  
+ Tato metoda je zastaralá. Místo toho použijte metodu [ICorProfilerInfo2:: GetCodeInfo2 –](icorprofilerinfo2-getcodeinfo2-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,6 +62,6 @@ HRESULT GetCodeInfo(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

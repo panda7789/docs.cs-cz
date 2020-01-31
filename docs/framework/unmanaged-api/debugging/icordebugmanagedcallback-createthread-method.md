@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6b961728-21c4-4e8d-ae81-197458be62f4
 topic_type:
 - apiref
-ms.openlocfilehash: 401cb41d8231e78b8657513e1a755a50814e463b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0dcd6b2efea0e96a341962315bb5c631acef8a10
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137396"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781950"
 ---
 # <a name="icordebugmanagedcallbackcreatethread-method"></a>ICorDebugManagedCallback::CreateThread – metoda
 Oznamuje ladicímu programu, že vlákno zahájilo provádění spravovaného kódu.  
@@ -55,4 +55,4 @@ HRESULT CreateThread (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 4b1e8cb1cf34bb1c5ade1353351aab953e2b734a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 708c681a98113a406249a360c2fc81087e5b97f8
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670088"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790423"
 ---
 # <a name="ixclrdatamethoddefinition-interface"></a>IXCLRDataMethodDefinition – rozhraní
 
@@ -30,26 +30,26 @@ Poskytuje metody pro dotazování na informace o definici metody.
 
 ## <a name="methods"></a>Metody
 
-Některé metody, která je k dispozici v rozhraní jsou tyto metody.
+Následující metody jsou některé z metod, které jsou k dispozici v rozhraní.
 
 | Metoda                                                                                                                          | Popis                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [StartEnumInstances](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamethoddefinition-startenuminstances-method.md) | Poskytuje popisovač pro výčet metodu instance danou `IXCLRDataAppDomain`. |
-| [EnumInstance](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamethoddefinition-enuminstance-method.md)             | Vytvoří výčet instancí definici této metody.                                         |
-| [EndEnumInstances](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamethoddefinition-endenuminstances-method.md)     | Uvolní prostředky využívané třídou interní iterátory využitých instance výčtu.         |
+| [StartEnumInstances](ixclrdatamethoddefinition-startenuminstances-method.md) | Poskytuje popisovač pro výčet instancí metody pro daný `IXCLRDataAppDomain`. |
+| [EnumInstance](ixclrdatamethoddefinition-enuminstance-method.md)             | Vytvoří výčet instancí této definice metody.                                         |
+| [EndEnumInstances](ixclrdatamethoddefinition-endenuminstances-method.md)     | Uvolní prostředky používané interními iterátory použitými během výčtu instance.         |
 
 ## <a name="remarks"></a>Poznámky
 
-Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Je však rozhraní modelu COM, která je odvozena z `IUnknown` s identifikátorem GUID `AAF60008-FB2C-420b-8FB1-42D244A54A97` , který můžete získat prostřednictvím obvykle COM mechanismů.
+Toto rozhraní je v modulu runtime a není zveřejněné prostřednictvím hlaviček nebo souborů knihoven. Jedná se však o rozhraní modelu COM, které je odvozeno od `IUnknown` s identifikátorem GUID `AAF60008-FB2C-420b-8FB1-42D244A54A97`, které lze získat prostřednictvím obvyklých mechanismů modelu COM.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádné  
-**Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

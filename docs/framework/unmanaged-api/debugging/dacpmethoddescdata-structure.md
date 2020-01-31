@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 97079b824dbd0e056374af4173e49304babd6c32
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc54664ea8ad61005de3f3fae7407946d1c861b2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739129"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793848"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData – struktura
 
-Definuje přenos vyrovnávací paměť pro informace o modulu runtime metody.
+Definuje přenosovou vyrovnávací paměť pro běhové informace metody.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -56,35 +56,35 @@ struct DacpMethodDescData
 
 | Člen                       | Popis                                                                                     |
 | ---------------------------- | ----------------------------------------------------------------------------------------------- |
-| `bHasNativeCode`             | Uvádí, zda modul runtime má nativní kód je k dispozici pro danou instanci metody. |
-| `bIsDynamic`                 | Označuje, pokud je metoda dynamicky generované prostřednictvím generování lehký kód.           |
-| `wSlotNumber`                | Číslo pozice metody v tabulce – metoda                                                   |
-| `NativeCodeAddr`             | Počáteční adresa nativní metody.                                                            |
-| `data`                       | Ukazatel do vyrovnávací paměti interně modulem runtime.                                             |
-| `MethodDescPtr`              | Ukazatel `MethodDesc` v modulu runtime.                                                     |
-| `nativeCodeInfo`             | Ukazatel do vyrovnávací paměti modulem runtime interně používá ke sledování metody.                            |
-| `moduleInfo`                 | Ukazatel do vyrovnávací paměti interně modulem runtime pro informace o modulu.                      |
-| `MDToken`                    | Token přidružený k dané metody.                                                         |
-| `payloadGC`                  | Ukazatel do vyrovnávací paměti, uvolňování paměti kolekce interně modulem runtime.                          |
-| `payloadGC2`                 | Ukazatel do vyrovnávací paměti, uvolňování paměti kolekce interně modulem runtime.                          |
-| `managedDynamicMethodObject` | Pokud je dynamická metoda, modul runtime této vyrovnávací paměti interně používá pro informace o sledování.     |
-| `requestedIP`                | Použít k naplnění struktura každý požadavek při adresu nativní kód.                    |
-| `rejitDataCurrent`           | Informace o instrumentovanou verzí metody.                                   |
-| `rejitDataRequested`         | Informace o Rejit pro požadovanou nativní adresu.                                             |
-| `cJittedRejitVersions`       | Počet pokusů, které metoda byla rejitted prostřednictvím instrumentace.                           |
+| `bHasNativeCode`             | Určuje, zda má modul runtime pro danou instanci metody k dispozici nativní kód. |
+| `bIsDynamic`                 | Určuje, zda je metoda generována dynamicky prostřednictvím zjednodušeného generování kódu.           |
+| `wSlotNumber`                | Číslo pozice metody v tabulce metod.                                                   |
+| `NativeCodeAddr`             | Počáteční nativní adresa metody                                                            |
+| `data`                       | Ukazatel na vyrovnávací paměť použitou interně modulem runtime.                                             |
+| `MethodDescPtr`              | Ukazatel na `MethodDesc` v modulu runtime.                                                     |
+| `nativeCodeInfo`             | Ukazatel na vyrovnávací paměť použitou interně modulem runtime ke sledování metod.                            |
+| `moduleInfo`                 | Ukazatel na vyrovnávací paměť použitou interně modulem runtime pro informace o modulu.                      |
+| `MDToken`                    | Token přidružený k dané metodě                                                         |
+| `payloadGC`                  | Ukazatel na vyrovnávací paměť pro uvolňování paměti, která se používá interně modulem runtime.                          |
+| `payloadGC2`                 | Ukazatel na vyrovnávací paměť pro uvolňování paměti, která se používá interně modulem runtime.                          |
+| `managedDynamicMethodObject` | Pokud je metoda dynamická, modul runtime tuto vyrovnávací paměť interně používá ke sledování informací.     |
+| `requestedIP`                | Používá se k naplnění struktury na požadavek v případě, že se předává adresa nativního kódu.                    |
+| `rejitDataCurrent`           | Informace o nejnovější instrumentované verzi metody.                                   |
+| `rejitDataRequested`         | ReJIT informace o požadované nativní adrese.                                             |
+| `cJittedRejitVersions`       | Počet pokusů, kolikrát se metoda rejitted prostřednictvím instrumentace.                           |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Pro použití je třeba definujte strukturu jak je uvedeno výše.
+Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven. Pokud ho chcete použít, definujte strukturu, jak je uvedeno výše.
 
 ## <a name="requirements"></a>Požadavky
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
-**Knihovna:** Žádné  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](index.md)
+- [Struktury pro ladění](debugging-structures.md)
 - [Běžné typy dat](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)

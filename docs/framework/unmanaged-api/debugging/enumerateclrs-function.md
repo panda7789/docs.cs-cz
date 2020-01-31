@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: f8d50cb3-ec4f-4529-8fe3-bd61fd28e13c
 topic_type:
 - apiref
-ms.openlocfilehash: 69288e995ec789091bf089368cd9a60f003df86e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cdf88ef193df71a638fff43add1a9648d8631731
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122978"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789119"
 ---
 # <a name="enumerateclrs-function"></a>EnumerateCLRs – funkce
 Poskytuje mechanismus pro vytváření výčtu CLRs v procesu.  
@@ -68,7 +68,7 @@ HRESULT EnumerateCLRs (
   
  V operačním systému Windows `debuggeePID` mapuje identifikátor procesu operačního systému.  
   
- Tato funkce přiděluje paměť pro `ppHandleArrayOut` a `ppStringArrayOut`. Chcete-li uvolnit přidělenou paměť, je nutné volat [funkci CloseCLREnumeration –](../../../../docs/framework/unmanaged-api/debugging/closeclrenumeration-function.md).  
+ Tato funkce přiděluje paměť pro `ppHandleArrayOut` a `ppStringArrayOut`. Chcete-li uvolnit přidělenou paměť, je nutné volat [funkci CloseCLREnumeration –](closeclrenumeration-function.md).  
   
  Tuto funkci lze volat s parametrem pole nastaveným na hodnotu null, aby bylo možné vrátit počet CLRs v cílovém procesu. Od tohoto počtu může volající odvodit velikost vyrovnávací paměti, která se vytvoří: `(sizeof(HANDLE) * count) + (sizeof(LPWSTR) * count) + (sizeof(WCHAR*) * count * MAX_PATH)`.  
   

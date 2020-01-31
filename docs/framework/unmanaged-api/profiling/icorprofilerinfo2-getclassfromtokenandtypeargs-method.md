@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b25c88f0-71b9-443b-8eea-1c94db0a44b9
 topic_type:
 - apiref
-ms.openlocfilehash: 5b6c0159b432d2a70f583357bbcf714b27399633
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e0663ff122397ba639a0a219e513be2f3f0cbbef
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447181"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862760"
 ---
 # <a name="icorprofilerinfo2getclassfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetClassFromTokenAndTypeArgs – metoda
 Získá `ClassID` typu pomocí zadaného tokenu metadat a hodnot `ClassID` jakýchkoli argumentů typu.  
@@ -57,7 +57,7 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
  Pokud tento typ ještě není načtený, volání `GetClassFromTokenAndTypeArgs` spustí načítání, což je nebezpečná operace v mnoha kontextech. Například volání této metody během načítání modulů nebo jiných typů může vést k nekonečné smyčce, protože modul runtime se pokusí cyklicky načíst věci.  
   
- Obecně platí, že použití `GetClassFromTokenAndTypeArgs` se nedoporučuje. Pokud jsou profilery zajímat události pro určitý typ, měly by uložit `ModuleID` a `mdTypeDef` tohoto typu a pomocí [ICorProfilerInfo2:: GetClassIDInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) ověřit, zda je daný `ClassID`, který je požadovaného typu.  
+ Obecně platí, že použití `GetClassFromTokenAndTypeArgs` se nedoporučuje. Pokud jsou profilery zajímat události pro určitý typ, měly by uložit `ModuleID` a `mdTypeDef` tohoto typu a pomocí [ICorProfilerInfo2:: GetClassIDInfo2 –](icorprofilerinfo2-getclassidinfo2-method.md) ověřit, zda je daný `ClassID`, který je požadovaného typu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -70,5 +70,5 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)

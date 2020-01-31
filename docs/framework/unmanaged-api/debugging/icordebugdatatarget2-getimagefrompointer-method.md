@@ -2,12 +2,12 @@
 title: ICorDebugDataTarget2::GetImageFromPointer – metoda
 ms.date: 03/30/2017
 ms.assetid: 939cabe1-b647-4090-b662-eeec23c6c58d
-ms.openlocfilehash: 58ad041b1243fabdc1948342730c81c5b8ff0991
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 55c87731399cf1e7a6747720b8bb33de7e01906c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122145"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788833"
 ---
 # <a name="icordebugdatatarget2getimagefrompointer-method"></a>ICorDebugDataTarget2::GetImageFromPointer – metoda
 Vrátí základní adresu modulu a velikost z adresy v tomto modulu.  
@@ -48,5 +48,5 @@ HRESULT GetImageFromPointer(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget2 – rozhraní](icordebugdatatarget2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

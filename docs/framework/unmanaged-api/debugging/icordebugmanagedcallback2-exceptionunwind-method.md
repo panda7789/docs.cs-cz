@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: aaf5938d-179c-4eaa-8d35-8523a4fadded
 topic_type:
 - apiref
-ms.openlocfilehash: fa317e1217ac0a9ca46bfeb312446534b1fca63a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 482afd09ce370fb1247864b9ac2032ee7e3a1dca
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131567"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788280"
 ---
 # <a name="icordebugmanagedcallback2exceptionunwind-method"></a>ICorDebugManagedCallback2::ExceptionUnwind – metoda
 Poskytuje oznámení o stavu během procesu odvíjení výjimky.  
@@ -47,7 +47,7 @@ HRESULT ExceptionUnwind (
  pro Hodnota výčtu CorDebugExceptionUnwindCallbackType –, která určuje událost, která je signálem zpětného volání během fáze unwind.  
   
  `dwFlags`  
- pro Hodnota výčtu [CorDebugExceptionFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) , která určuje další informace o výjimce.  
+ pro Hodnota výčtu [CorDebugExceptionFlags –](cordebugexceptionflags-enumeration.md) , která určuje další informace o výjimce.  
   
 ## <a name="remarks"></a>Poznámky  
  `ExceptionUnwind` je volána v různých bodech během fáze unwind v procesu zpracování výjimek. `ExceptionUnwind` lze volat více než jednou při odvíjení jedné výjimky.  
@@ -65,5 +65,5 @@ HRESULT ExceptionUnwind (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

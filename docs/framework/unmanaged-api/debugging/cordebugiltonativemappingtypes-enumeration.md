@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: c35e2919-42c3-4ba0-ae28-443c35f66f93
 topic_type:
 - apiref
-ms.openlocfilehash: 949d04fe8d9ce492fb320fb4732677ffb35302ef
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ddb5af486ab6fb1c8c4fabf3ccf7b43d037e1eeb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132830"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789324"
 ---
 # <a name="cordebugiltonativemappingtypes-enumeration"></a>CorDebugIlToNativeMappingTypes – výčet
-Označuje, zda konkrétní rozsah nativních instrukcí reprezentovaných instancí struktury COR_DEBUG_IL_TO_NATIVE_MAP odpovídá zvláštní oblasti kódu.  
+Označuje, zda určitý rozsah nativních instrukcí, reprezentovaných instancí COR_DEBUG_IL_TO_NATIVE_MAP struktury, odpovídá zvláštní oblasti kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,5 +53,5 @@ typedef enum CorDebugIlToNativeMappingTypes {
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetILToNativeMapping – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getiltonativemapping-method.md)
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [GetILToNativeMapping – metoda](icordebugcode-getiltonativemapping-method.md)
+- [Výčty pro ladění](debugging-enumerations.md)

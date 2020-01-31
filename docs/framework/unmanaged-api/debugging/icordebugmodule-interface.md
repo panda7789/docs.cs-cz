@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 32e4d6fa-e5a3-413e-9166-d5e2871d3114
 topic_type:
 - apiref
-ms.openlocfilehash: 971d6a6a2157c48dcb9105e9f523b1f077098479
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c573e6b768aee1e8b681dcf2e828dc24d409025b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129485"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793018"
 ---
 # <a name="icordebugmodule-interface"></a>ICorDebugModule – rozhraní
 
@@ -29,23 +29,23 @@ Představuje modul modulu CLR (Common Language Runtime), což je spustitelný so
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-createbreakpoint-method.md)|Není implementováno.|  
-|[EnableClassLoadCallbacks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-enableclassloadcallbacks-method.md)|Určuje, zda jsou pro tento modul volána zpětná volání [ICorDebugManagedCallback:: LoadClass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) a [ICorDebugManagedCallback:: UnloadClass –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) .|  
-|[EnableJITDebugging – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-enablejitdebugging-method.md)|Určuje, zda kompilátor JIT (just-in-time) zachovává ladicí informace pro metody v rámci tohoto modulu.|  
-|[GetAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md)|Získá nadřazené sestavení pro tento modul.|  
-|[GetBaseAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getbaseaddress-method.md)|Získá základní adresu modulu.|  
-|[GetClassFromToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md)|Získá ICorDebugClass z metadat.|  
-|[GetEditAndContinueSnapshot – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-geteditandcontinuesnapshot-method.md)|Zastaralé|  
-|[GetFunctionFromRVA – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getfunctionfromrva-method.md)|Není implementováno.|  
-|[GetFunctionFromToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getfunctionfromtoken-method.md)|Získá funkci, která je určena tokenem metadat.|  
-|[GetGlobalVariableValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getglobalvariablevalue-method.md)|Získá objekt hodnoty pro zadanou globální proměnnou.|  
-|[GetMetaDataInterface – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getmetadatainterface-method.md)|Získá ukazatel rozhraní metadat, který lze použít k prohlédnutí metadat pro modul.|  
-|[GetName – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md)|Získá název souboru modulu.|  
-|[GetProcess – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getprocess-method.md)|Získá obsahující proces pro tento modul.|  
-|[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md)|Získá velikost modulu v bajtech.|  
-|[GetToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-gettoken-method.md)|Získá token pro položku tabulky pro tento modul.|  
-|[IsDynamic – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-isdynamic-method.md)|Určuje, zda je modul dynamický.|  
-|[IsInMemory – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-isinmemory-method.md)|Určuje, zda tento modul existuje pouze v paměti.|  
+|[CreateBreakpoint – metoda](icordebugmodule-createbreakpoint-method.md)|Není implementováno.|  
+|[EnableClassLoadCallbacks – metoda](icordebugmodule-enableclassloadcallbacks-method.md)|Určuje, zda jsou pro tento modul volána zpětná volání [ICorDebugManagedCallback:: LoadClass –](icordebugmanagedcallback-loadclass-method.md) a [ICorDebugManagedCallback:: UnloadClass –](icordebugmanagedcallback-unloadclass-method.md) .|  
+|[EnableJITDebugging – metoda](icordebugmodule-enablejitdebugging-method.md)|Určuje, zda kompilátor JIT (just-in-time) zachovává ladicí informace pro metody v rámci tohoto modulu.|  
+|[GetAssembly – metoda](icordebugmodule-getassembly-method.md)|Získá nadřazené sestavení pro tento modul.|  
+|[GetBaseAddress – metoda](icordebugmodule-getbaseaddress-method.md)|Získá základní adresu modulu.|  
+|[GetClassFromToken – metoda](icordebugmodule-getclassfromtoken-method.md)|Získá ICorDebugClass z metadat.|  
+|[GetEditAndContinueSnapshot – metoda](icordebugmodule-geteditandcontinuesnapshot-method.md)|Zastaralé|  
+|[GetFunctionFromRVA – metoda](icordebugmodule-getfunctionfromrva-method.md)|Není implementováno.|  
+|[GetFunctionFromToken – metoda](icordebugmodule-getfunctionfromtoken-method.md)|Získá funkci, která je určena tokenem metadat.|  
+|[GetGlobalVariableValue – metoda](icordebugmodule-getglobalvariablevalue-method.md)|Získá objekt hodnoty pro zadanou globální proměnnou.|  
+|[GetMetaDataInterface – metoda](icordebugmodule-getmetadatainterface-method.md)|Získá ukazatel rozhraní metadat, který lze použít k prohlédnutí metadat pro modul.|  
+|[GetName – metoda](icordebugmodule-getname-method.md)|Získá název souboru modulu.|  
+|[GetProcess – metoda](icordebugmodule-getprocess-method.md)|Získá obsahující proces pro tento modul.|  
+|[GetSize – metoda](icordebugmodule-getsize-method.md)|Získá velikost modulu v bajtech.|  
+|[GetToken – metoda](icordebugmodule-gettoken-method.md)|Získá token pro položku tabulky pro tento modul.|  
+|[IsDynamic – metoda](icordebugmodule-isdynamic-method.md)|Určuje, zda je modul dynamický.|  
+|[IsInMemory – metoda](icordebugmodule-isinmemory-method.md)|Určuje, zda tento modul existuje pouze v paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -63,5 +63,5 @@ Představuje modul modulu CLR (Common Language Runtime), což je spustitelný so
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebug – rozhraní](icordebug-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

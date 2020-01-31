@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider2:: GetGenericDictionaryInfo – metoda'
+title: ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method
 ms.date: 03/30/2017
 ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
-ms.openlocfilehash: c9f7206cac54d64c28eb50d81fea00a6f3c494d4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 02ecaf56e845680472f42c04f3978e54e7a69272
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133636"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791498"
 ---
-# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2:: GetGenericDictionaryInfo – metoda
+# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method
 
 Načte mapu obecného slovníku.
 
@@ -24,7 +24,7 @@ HRESULT GetGenericDictionaryInfo(
 ## <a name="parameters"></a>Parametry
 
 `ppMemoryBuffer`\
-mimo Ukazatel na adresu objektu [ICorDebugMemoryBuffer](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) obsahující mapu obecného slovníku. Další informace naleznete v části Poznámky.
+mimo Ukazatel na adresu objektu [ICorDebugMemoryBuffer](icordebugmemorybuffer-interface.md) obsahující mapu obecného slovníku. Další informace naleznete v části Poznámky.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -87,5 +87,5 @@ Zahrnutí délky pro každý prvek haldy umožňuje jednoduché řazení oddílu
 
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugSymbolProvider2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider2 – rozhraní](icordebugsymbolprovider2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

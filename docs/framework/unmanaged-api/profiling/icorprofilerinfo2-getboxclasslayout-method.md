@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 624672b5-1189-488a-85d2-3e12b49617c1
 topic_type:
 - apiref
-ms.openlocfilehash: 5f98c35f77fdb200be2e96364c9ac06c386faa62
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 500cf74c320438fc1b78f0aac737b418716e1a11
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436017"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862825"
 ---
 # <a name="icorprofilerinfo2getboxclasslayout-method"></a>ICorProfilerInfo2::GetBoxClassLayout – metoda
 Získá informace o tom, kde je zadaný typ hodnoty umístěný, když je zabalený.  
@@ -54,5 +54,5 @@ HRESULT GetBoxClassLayout(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)

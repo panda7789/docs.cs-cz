@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 307d6ac7-4a86-45f3-999d-6b47004a68f2
 topic_type:
 - apiref
-ms.openlocfilehash: 5e7fd2f277a9c3d8410020a53d348456ef9deffb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 961e74551ae7fc170e443c632ca11598f1494a39
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111909"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785209"
 ---
 # <a name="iclrdatatarget3getexceptionthreadid-method"></a>ICLRDataTarget3::GetExceptionThreadID – metoda
 Voláno pomocí služby Common Language Runtime (CLR) pro získání ID vlákna, které vyvolalo výjimku.  
@@ -56,6 +56,6 @@ HRESULT GetExceptionThreadID(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICLRDataTarget3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)
-- [GetExceptionContextRecord – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)
-- [GetExceptionRecord – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionrecord-method.md)
+- [ICLRDataTarget3 – rozhraní](iclrdatatarget3-interface.md)
+- [GetExceptionContextRecord – metoda](iclrdatatarget3-getexceptioncontextrecord-method.md)
+- [GetExceptionRecord – metoda](iclrdatatarget3-getexceptionrecord-method.md)

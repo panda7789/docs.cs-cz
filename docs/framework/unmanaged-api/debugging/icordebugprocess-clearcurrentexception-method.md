@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9e02ee1a-e495-4578-bfb5-b946274bede7
 topic_type:
 - apiref
-ms.openlocfilehash: 37a7d8fa4439d52db3cddfff22ac6580b19af58a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4cfacb7f3303947ec8b11362fde82649687889d8
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128917"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792655"
 ---
 # <a name="icordebugprocessclearcurrentexception-method"></a>ICorDebugProcess::ClearCurrentException – metoda
 Vymaže aktuální nespravovanou výjimku na daném vlákně.  
@@ -36,9 +36,9 @@ HRESULT ClearCurrentException([in] DWORD threadID);
  pro ID vlákna, na kterém bude vymazána aktuální nespravovanou výjimka.  
   
 ## <a name="remarks"></a>Poznámky  
- Před voláním metody [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) volejte tuto metodu, pokud vlákno oznámilo nespravovanou výjimku, kterou by měl ignorovat laděného procesu. Tím se v daném vláknu vymažou nedokončené události v pásmu (IB) i mimo pásmo (OOB). Všechny zarážky OOB a výjimky s jedním krokem se automaticky vymažou.  
+ Před voláním metody [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) volejte tuto metodu, pokud vlákno oznámilo nespravovanou výjimku, kterou by měl ignorovat laděného procesu. Tím se v daném vláknu vymažou nedokončené události v pásmu (IB) i mimo pásmo (OOB). Všechny zarážky OOB a výjimky s jedním krokem se automaticky vymažou.  
   
- K zachycení aktuální spravované výjimky ve vlákně použijte [ICorDebugThread2:: InterceptCurrentException –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md) .  
+ K zachycení aktuální spravované výjimky ve vlákně použijte [ICorDebugThread2:: InterceptCurrentException –](icordebugthread2-interceptcurrentexception-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

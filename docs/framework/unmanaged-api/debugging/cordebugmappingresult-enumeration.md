@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 701281dd-2936-45c8-a1f0-3bf7332b093b
 topic_type:
 - apiref
-ms.openlocfilehash: fc3f77adf33502bfbc3d65ff5131420093fbbec8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 317dc2fe8403ae25949410423f1a28ad365caf6a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73097938"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789312"
 ---
 # <a name="cordebugmappingresult-enumeration"></a>CorDebugMappingResult – výčet
 Poskytuje podrobné informace o tom, jak byla získána hodnota ukazatele na instrukce (IP).  
@@ -49,7 +49,7 @@ typedef enum CorDebugMappingResult {
 |`MAPPING_APPROXIMATE`|Metoda byla úspěšně namapována, ale hodnota IP adresy může být přibližná.|  
   
 ## <a name="remarks"></a>Poznámky  
- K získání hodnoty ukazatele na instrukci můžete použít metodu [ICorDebugILFrame:: getip –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) .  
+ K získání hodnoty ukazatele na instrukci můžete použít metodu [ICorDebugILFrame:: getip –](icordebugilframe-getip-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -62,4 +62,4 @@ typedef enum CorDebugMappingResult {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)

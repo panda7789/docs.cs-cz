@@ -2,12 +2,12 @@
 title: Katalog identifikátorů runtime .NET Core (RID)
 description: Přečtěte si o identifikátoru modulu runtime (RID) a způsobu použití identifikátorů RID v .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: b4e0226afa3f68d7c0d17b19e66489d70b759cf8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 4369e263f1f46c73f04c65e4124f63c68d133520
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733552"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789911"
 ---
 # <a name="net-core-rid-catalog"></a>Katalog identifikátorů RID .NET Core
 
@@ -108,7 +108,7 @@ Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v 
   - `win10-arm`
   - `win10-arm64`
 
-Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-windows) .
+Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
 ## <a name="linux-rids"></a>Linux identifikátorů RID
 
@@ -126,7 +126,7 @@ Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v 
   - `tizen.4.0.0`
   - `tizen.5.0.0`
 
-Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-linux) .
+Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-linux).
 
 ## <a name="macos-rids"></a>macOS identifikátorů RID
 
@@ -145,7 +145,7 @@ macOS identifikátorů RID používá starší značku "OSX". Jsou uvedeny pouze
 - macOS 10,14 Mojave (.NET Core 1,1 nebo novější verze)
   - `osx.10.14-x64`
 
-Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-macos) .
+Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-macos).
 
 ## <a name="see-also"></a>Viz také:
 

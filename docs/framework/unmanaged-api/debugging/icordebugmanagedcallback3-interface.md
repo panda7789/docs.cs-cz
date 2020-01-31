@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a95389d3-cf2e-47a4-9805-61426acc6b65
 topic_type:
 - apiref
-ms.openlocfilehash: 8da04b0c620404e0dad8227c7a627f75507389a7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b97f29b94ed4fad6892697ca1c7ed4a20c99c03e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128027"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793269"
 ---
 # <a name="icordebugmanagedcallback3-interface"></a>ICorDebugManagedCallback3 – rozhraní
 Poskytuje metodu zpětného volání, která určuje, že povolené vlastní oznámení ladicího programu bylo vyvoláno.  
@@ -28,10 +28,10 @@ Poskytuje metodu zpětného volání, která určuje, že povolené vlastní ozn
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CustomNotification – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md)|Indikuje, že se aktivovalo oznámení o povoleném vlastním ladicím programu.|  
+|[CustomNotification – metoda](icordebugmanagedcallback3-customnotification-method.md)|Indikuje, že se aktivovalo oznámení o povoleném vlastním ladicím programu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto rozhraní je logické rozšíření rozhraní [ICorDebugManagedCallback](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md) a [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .  
+ Toto rozhraní je logické rozšíření rozhraní [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) a [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
@@ -47,7 +47,7 @@ Poskytuje metodu zpětného volání, která určuje, že povolené vlastní ozn
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
-- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

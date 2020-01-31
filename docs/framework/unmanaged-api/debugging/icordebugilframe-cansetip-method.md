@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 16caf02f-c71e-486c-90b0-f0e54357d8f0
 topic_type:
 - apiref
-ms.openlocfilehash: 57d83d1f301cbfd43f8f553d9aef4beb3baf95f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c6a02b080739d00667893008be4a19b4fa9a6ef2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131086"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788596"
 ---
 # <a name="icordebugilframecansetip-method"></a>ICorDebugILFrame::CanSetIP – metoda
 Získá hodnotu HRESULT, která označuje, zda je bezpečné nastavit ukazatel na instrukci na zadané místo posunutí v kódu jazyka MSIL (Microsoft Intermediate Language).  
@@ -38,7 +38,7 @@ HRESULT CanSetIP (
  pro Požadované nastavení pro ukazatel na instrukci.  
   
 ## <a name="remarks"></a>Poznámky  
- Před voláním metody [ICorDebugILFrame:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) použijte metodu `CanSetIP`. Pokud `CanSetIP` vrátí jakýkoli HRESULT jiný než S_OK, můžete přesto vyvolat `ICorDebugILFrame::SetIP`, ale není nijak zaručeno, že ladicí program bude pokračovat v bezpečném a správného spuštění kódu, který je právě laděn.  
+ Před voláním metody [ICorDebugILFrame:: SetIP](icordebugilframe-setip-method.md) použijte metodu `CanSetIP`. Pokud `CanSetIP` vrátí jakýkoli HRESULT jiný než S_OK, můžete přesto vyvolat `ICorDebugILFrame::SetIP`, ale není nijak zaručeno, že ladicí program bude pokračovat v bezpečném a správném spuštění kódu, který je právě laděn.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

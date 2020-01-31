@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 35bc1188-9767-4141-8038-60ea015b99ac
 topic_type:
 - apiref
-ms.openlocfilehash: 09b1b81bde486db67acede99e0d67ff85cb01bae
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8a15843e9169442d89996375ee85f62b38f92e30
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447765"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76864255"
 ---
 # <a name="icorprofilerinfoendinprocdebugging-method"></a>ICorProfilerInfo::EndInprocDebugging – metoda
 Ukončí relaci ladění v procesu. Tato metoda je zastaralá ve verzi .NET Framework 2,0.  
@@ -34,10 +34,10 @@ HRESULT EndInprocDebugging(
   
 ## <a name="parameters"></a>Parametry  
  `dwProfilerContext`  
- pro Hodnota, která identifikuje relaci ladění. Tato hodnota musí být stejná jako ta, která byla přijata v metodě [ICorProfilerInfo:: BeginInprocDebugging](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-begininprocdebugging-method.md) .  
+ pro Hodnota, která identifikuje relaci ladění. Tato hodnota musí být stejná jako ta, která byla přijata v metodě [ICorProfilerInfo:: BeginInprocDebugging](icorprofilerinfo-begininprocdebugging-method.md) .  
   
 ## <a name="remarks"></a>Poznámky  
- Je nutné volat [ICorProfilerInfo:: BeginInprocDebugging](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-begininprocdebugging-method.md) a `EndInprocDebugging` v rámci stejné metody zpětného volání.  
+ Je nutné volat [ICorProfilerInfo:: BeginInprocDebugging](icorprofilerinfo-begininprocdebugging-method.md) a `EndInprocDebugging` v rámci stejné metody zpětného volání.  
   
  Služba ladění CLR podporuje omezené vnitroprocesové ladění v .NET Framework verzích 1,0 a 1,1. Ladění v rámci procesu povolilo profiler pro použití kontrolních částí rozhraní API pro ladění. Z důvodu zpětné vazby od zákazníků jsme ale vnitroprocesové ladění odebrali z .NET Framework ve verzi 2,0 a nahradili sadu funkcí, která je v souladu s rozhraním API profilování.  
   
@@ -52,4 +52,4 @@ HRESULT EndInprocDebugging(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)

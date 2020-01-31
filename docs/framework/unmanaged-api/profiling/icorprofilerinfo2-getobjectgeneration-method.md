@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b0d25f76-0bd5-4aa6-96cf-bfec0e1de28b
 topic_type:
 - apiref
-ms.openlocfilehash: fdfd3715220785a1fa5285b19e677bf0dc190719
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b75de955e3b6857c9cc1b5411df4b0f262c4cb9a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433077"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862695"
 ---
 # <a name="icorprofilerinfo2getobjectgeneration-method"></a>ICorProfilerInfo2::GetObjectGeneration – metoda
 Načte segment haldy, která obsahuje zadaný objekt.  
@@ -38,10 +38,10 @@ HRESULT GetObjectGeneration(
  pro ID objektu  
   
  `range`  
- mimo Ukazatel na strukturu [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) , která popisuje rozsah (tj. blok) paměti v rámci generace, která je podchází uvolňování paměti. Tento rozsah obsahuje zadaný objekt.  
+ mimo Ukazatel na strukturu [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) , která popisuje rozsah (tj. blok) paměti v rámci generace, která je podchází uvolňování paměti. Tento rozsah obsahuje zadaný objekt.  
   
 ## <a name="remarks"></a>Poznámky  
- Metodu `GetObjectGeneration` lze volat z jakéhokoliv zpětného volání profileru za předpokladu, že uvolňování paměti neprobíhá. To znamená, že může být volána z libovolného zpětného volání s výjimkou těch, ke kterým dochází mezi [ICorProfilerCallback2:: GarbageCollectionStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md) a [ICorProfilerCallback2:: GarbageCollectionFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md).  
+ Metodu `GetObjectGeneration` lze volat z jakéhokoliv zpětného volání profileru za předpokladu, že uvolňování paměti neprobíhá. To znamená, že může být volána z libovolného zpětného volání s výjimkou těch, ke kterým dochází mezi [ICorProfilerCallback2:: GarbageCollectionStarted –](icorprofilercallback2-garbagecollectionstarted-method.md) a [ICorProfilerCallback2:: GarbageCollectionFinished –](icorprofilercallback2-garbagecollectionfinished-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -54,5 +54,5 @@ HRESULT GetObjectGeneration(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)

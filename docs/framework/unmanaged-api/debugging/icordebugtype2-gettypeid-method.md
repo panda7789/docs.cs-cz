@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b933686-226e-4373-92b7-fac579ee7b1a
 topic_type:
 - apiref
-ms.openlocfilehash: 944313893d88b8eff97291d2517e4863a5ae958a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 631f605fd18559b36071964e35a15761cd4c8228
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092766"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791232"
 ---
 # <a name="icordebugtype2gettypeid-method"></a>ICorDebugType2:: GetTypeId. – metoda
-Načte [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) pro tento typ.  
+Získá [COR_TYPEID](cor-typeid-structure.md) pro tento typ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT GetTypeID(
   
 ## <a name="parameters"></a>Parametry  
  `id`  
- mimo Ukazatel na [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) pro tento ICorDebugType.  
+ mimo Ukazatel na [COR_TYPEID](cor-typeid-structure.md) pro tento ICorDebugType.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrácená hodnota je `S_OK` při úspěchu nebo selhání `HRESULT` kódu při selhání. Mezi kódy `HRESULT` patří následující:  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
-|`S_OK`|Metoda byla úspěšná. Metoda načetla platný [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md).|  
+|`S_OK`|Metoda byla úspěšná. Metoda načetla platný [COR_TYPEID](cor-typeid-structure.md).|  
 |`CORDBG_E_CLASS_NOT_LOADED`|Typ nebyl načten.|  
 |`CORDBG_E_UNSUPPORTED`|Typ není podporován.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda poskytuje mapování z ICorDebugType, který představuje typ, který může nebo nemusí být načten do modulu runtime, do [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md), který slouží jako neprůhledný popisovač, který identifikuje typ načtený do modulu runtime.  
+ Tato metoda poskytuje mapování z ICorDebugType, který představuje typ, který může nebo nemusí být načten do modulu runtime, do [COR_TYPEID](cor-typeid-structure.md), který slouží jako neprůhledný popisovač, který identifikuje typ načtený do modulu runtime.  
   
  Pokud typ, který ICorDebugType představuje, ještě nebyl načten, vrátí tato metoda `CORDBG_E_CLASS_NOT_LOADED`.  Pokud typ není podporován, vrátí `CORDBG_E_UNSUPPORTED`.  
   
@@ -62,4 +62,4 @@ HRESULT GetTypeID(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugType2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-interface.md)
+- [ICorDebugType2 – rozhraní](icordebugtype2-interface.md)

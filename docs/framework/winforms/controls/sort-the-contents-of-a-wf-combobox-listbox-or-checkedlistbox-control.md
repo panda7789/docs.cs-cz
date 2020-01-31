@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Řazení obsahu ovládacího prvku Windows Forms ComboBox, ListBox nebo CheckedListBox'
+title: Řazení obsahu ovládacího prvku ComboBox, ListBox nebo CheckedListBox
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CheckedListBox control [Windows Forms], sorting
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - list boxes [Windows Forms], sorting contents
 - ListBox control [Windows Forms], sorting contents
 ms.assetid: c268e387-3d1d-4d86-a940-19f6673c8d06
-ms.openlocfilehash: bd26d396c238bfc53858320b8f4487df84b3436a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dee969d777edf76434622fe632f7e934987a1dc3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902990"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742963"
 ---
 # <a name="how-to-sort-the-contents-of-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Řazení obsahu ovládacího prvku Windows Forms ComboBox, ListBox nebo CheckedListBox
-Ovládací prvky Windows Forms řazení, když jsou vázané na data. Seřazená data zobrazíte pomocí zdroje dat, který podporuje řazení a pak je mít zdroj dat seřadit. Zdroje dat, které podporují řazení jsou data zobrazení, data zobrazení správci a seřadit pole.  
+Model Windows Forms ovládací prvky nelze seřadit, jsou-li vázány na data. Chcete-li zobrazit seřazená data, použijte zdroj dat, který podporuje řazení a potom zdroj dat seřaďte. Zdroje dat, které podporují řazení, jsou zobrazení dat, manažeři zobrazení dat a seřazená pole.  
   
- Pokud ovládací prvek není vázaný na data, můžete je seřadit.  
+ Pokud ovládací prvek není vázán na data, můžete jej seřadit.  
   
 ### <a name="to-sort-the-list"></a>Řazení seznamu  
   
@@ -32,6 +32,6 @@ Ovládací prvky Windows Forms řazení, když jsou vázané na data. Seřazená
 - <xref:System.Windows.Forms.ListBox>
 - <xref:System.Windows.Forms.CheckedListBox>
 - [Windows Forms – datová vazba](../windows-forms-data-binding.md)
-- [Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](add-and-remove-items-from-a-wf-combobox.md)
+- [Postupy: Přidání a odebrání položek z ovládacích prvků ComboBox, ListBox nebo CheckedListBox z Windows Forms](add-and-remove-items-from-a-wf-combobox.md)
 - [Kdy použít prvek Windows Forms ComboBox místo prvku ListBox](when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)
 - [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)

@@ -7,36 +7,36 @@ helpviewer_keywords:
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-ms.openlocfilehash: 2c1e6d9aeafa1c9d7ee4b0c2c626b6fd7be6cf99
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8ed519a01162056151d8ae6398c0d06495911afd
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708968"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743525"
 ---
 # <a name="virtual-members"></a>Virtuální členové
-Virtuální členy lze přepsat, čímž se mění chování podtřídy. Jsou poměrně podobné zpětným voláním z důvodu rozšiřitelnosti, kterou poskytují, ale jsou lepší v souvislosti s výkonem spuštění a spotřebou paměti. Virtuální členové také ve scénářích, které vyžadují vytvoření speciálního druhu stávajícího typu (specializace), mají větší přirozený charakter.  
-  
- Virtuální členové provádějí lepší než zpětná volání a události, ale neprovádějí lepší než virtuální metody.  
-  
- Hlavní nevýhodou virtuálních členů je, že chování virtuálního člena lze upravit pouze v době kompilace. Chování zpětného volání lze upravit za běhu.  
-  
- Virtuální členové, například zpětná volání (a možná více než zpětná volání), jsou nákladné pro návrh, testování a údržbu, protože jakékoli volání virtuálního člena lze přepsat nepředvídatelným způsobem a může spustit libovolný kód. K jasnému definování kontraktů virtuálních členů se obvykle vyžaduje mnohem více úsilí, takže náklady na jejich navrhování a dokumentaci jsou vyšší.  
-  
- **X DO NOT** zkontrolujte virtuální členy, pokud máte dobrý důvod k tomu a jste si vědomi veškeré náklady související s návrh, testování a údržbě virtuální členy.  
-  
- Virtuální členové jsou méně striktní z hlediska změn, které je možné v nich provést bez narušení kompatibility. Jsou také pomalejší než nevirtuální členové, většinou protože volání virtuálních členů nejsou vložena.  
-  
- **✓ CONSIDER** omezení rozšiřitelnost pouze co je to nezbytně nutné.  
-  
- **✓ DO** raději chráněné usnadnění přes veřejnou dostupnost pro virtuální členy. Veřejné členy by měli poskytnout rozšíření (v případě potřeby) voláním do chráněného virtuálního člena.  
-  
- Veřejné členy třídy by měli poskytnout správnou sadu funkcí pro přímé spotřebitele této třídy. Virtuální členové jsou navrženi pro přepsání v podtříd a chráněná přístupnost je skvělým způsobem pro vymezení všech virtuálních bodů rozšiřitelnosti na místo, kde je lze použít.  
-  
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
-  
- *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*  
-  
+Virtual members can be overridden, thus changing the behavior of the subclass. They are quite similar to callbacks in terms of the extensibility they provide, but they are better in terms of execution performance and memory consumption. Also, virtual members feel more natural in scenarios that require creating a special kind of an existing type (specialization).
+
+ Virtual members perform better than callbacks and events, but do not perform better than non-virtual methods.
+
+ The main disadvantage of virtual members is that the behavior of a virtual member can only be modified at the time of compilation. The behavior of a callback can be modified at runtime.
+
+ Virtual members, like callbacks (and maybe more than callbacks), are costly to design, test, and maintain because any call to a virtual member can be overridden in unpredictable ways and can execute arbitrary code. Also, much more effort is usually required to clearly define the contract of virtual members, so the cost of designing and documenting them is higher.
+
+ ❌ DO NOT make members virtual unless you have a good reason to do so and you are aware of all the costs related to designing, testing, and maintaining virtual members.
+
+ Virtual members are less forgiving in terms of changes that can be made to them without breaking compatibility. Also, they are slower than non-virtual members, mostly because calls to virtual members are not inlined.
+
+ ✔️ CONSIDER limiting extensibility to only what is absolutely necessary.
+
+ ✔️ DO prefer protected accessibility over public accessibility for virtual members. Public members should provide extensibility (if required) by calling into a protected virtual member.
+
+ The public members of a class should provide the right set of functionality for direct consumers of that class. Virtual members are designed to be overridden in subclasses, and protected accessibility is a great way to scope all virtual extensibility points to where they can be used.
+
+ *Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*
+
+ *Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*
+
 ## <a name="see-also"></a>Viz také:
 
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - debugging API [Silverlight]
 - Silverlight, debugging
 ms.assetid: 35c7a18f-133a-4584-bd25-bb338568b0c6
-ms.openlocfilehash: 438af9f191f48a86207c3b343ba428eef2c1fabc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 85b5a5a630f399d0e036de434365e2e4f8f02dea
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132206"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793830"
 ---
 # <a name="createdebugginginterfacefromversion-function-for-silverlight"></a>CreateDebuggingInterfaceFromVersion – funkce pro technologii Silverlight
-Přijímá řetězec verze modulu CLR (Common Language Runtime), který je vrácen [funkcí CreateVersionStringFromModule –](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md)a vrací odpovídající rozhraní ladicího programu (obvykle [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)).  
+Přijímá řetězec verze modulu CLR (Common Language Runtime), který je vrácen [funkcí CreateVersionStringFromModule –](createversionstringfrommodule-function.md)a vrací odpovídající rozhraní ladicího programu (obvykle [ICorDebug](icordebug-interface.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,14 +29,14 @@ HRESULT CreateDebuggingInterfaceFromVersion (
   
 ## <a name="parameters"></a>Parametry  
  `szDebuggeeVersion`  
- pro Řetězec verze modulu CLR v cílovém laděného procesu, který je vrácen [funkcí CreateVersionStringFromModule –](../../../../docs/framework/unmanaged-api/debugging/createversionstringfrommodule-function.md).  
+ pro Řetězec verze modulu CLR v cílovém laděného procesu, který je vrácen [funkcí CreateVersionStringFromModule –](createversionstringfrommodule-function.md).  
   
  `ppCordb`  
- mimo Ukazatel na ukazatel na objekt modelu COM (`IUnknown`). Tento objekt bude převeden na objekt [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) před jeho vrácením.  
+ mimo Ukazatel na ukazatel na objekt modelu COM (`IUnknown`). Tento objekt bude převeden na objekt [ICorDebug](icordebug-interface.md) před jeho vrácením.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- `ppCordb` odkazuje na platný objekt, který implementuje rozhraní [rozhraní ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) .  
+ `ppCordb` odkazuje na platný objekt, který implementuje rozhraní [rozhraní ICorDebug](icordebug-interface.md) .  
   
  E_INVALIDARG  
  Buď `szDebuggeeVersion`, nebo `ppCordb` je null.  
@@ -48,7 +48,7 @@ HRESULT CreateDebuggingInterfaceFromVersion (
  Mscordbi. dll nebo mscordaccore. dll není stejná jako verze cílového CoreCLR. dll.  
   
  E_FAIL (nebo jiné návratové kódy E_)  
- Nelze vrátit [rozhraní ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md).  
+ Nelze vrátit [rozhraní ICorDebug](icordebug-interface.md).  
   
 ## <a name="remarks"></a>Poznámky  
  Rozhraní, které je vráceno, poskytuje zařízení pro připojení k CLR v cílovém procesu a ladění spravovaného kódu, který je spuštěn modul CLR.  

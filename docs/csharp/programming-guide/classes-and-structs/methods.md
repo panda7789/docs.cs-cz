@@ -5,12 +5,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 5955228d51d2f6845a363bcaf32581b6598273f6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8c90f06bfadc528bd9575ead30e6b01263055fe8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714768"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743902"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 
@@ -44,7 +44,7 @@ Definice metody určuje názvy a typy parametrů, které jsou požadovány. Kdy�
 
 ## <a name="passing-by-reference-vs-passing-by-value"></a>Předávání odkazem vs. předání podle hodnoty
 
-Ve výchozím nastavení, když je typ hodnoty předán metodě, je předána kopie namísto samotného objektu. Proto změny argumentu nemají žádný vliv na původní kopii v volání metody. Pomocí klíčového slova ref můžete předat typ hodnoty odkazem. Další informace naleznete v tématu [předávání parametrů typu hodnoty](./passing-value-type-parameters.md). Seznam předdefinovaných typů hodnot naleznete v tématu [Tabulka typů hodnot](../../language-reference/keywords/value-types-table.md).
+Ve výchozím nastavení, když je instance [hodnotového typu](../../language-reference/builtin-types/value-types.md) předána metodě, je její kopie předána namísto samotné instance. Proto změny argumentu nemají žádný vliv na původní instanci v volání metody. Chcete-li předat instanci typu hodnoty odkazem, použijte klíčové slovo `ref`. Další informace naleznete v tématu [předávání parametrů typu hodnoty](./passing-value-type-parameters.md).
 
 Je-li objekt typu odkazu předán metodě, odkaz na objekt je předán. To znamená, že metoda nepřijímá samotný objekt, ale argument, který označuje umístění objektu. Pokud změníte člena objektu pomocí tohoto odkazu, změna se projeví v argumentu volající metody, a to i v případě, že předáte objekt podle hodnoty.
 

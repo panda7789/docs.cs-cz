@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea38ae20-7e0a-427a-be77-d78fae719d82
 topic_type:
 - apiref
-ms.openlocfilehash: 20315dfc426b63f2d526f3481756e165b388b41e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8632799b68ae8f92835d1774472bc1432d886f3b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137601"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793475"
 ---
 # <a name="icordebugeval2createvaluefortype-method"></a>ICorDebugEval2::CreateValueForType – metoda
 Získá ukazatel na nový ICorDebugValue zadaného typu s počáteční hodnotou 0 nebo null.  
@@ -42,7 +42,7 @@ HRESULT CreateValueForType (
  mimo Ukazatel na adresu `ICorDebugValue`ho objektu, který představuje hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateValueForType` generalizace [ICorDebugEval:: CreateValue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) umožňuje určit libovolný typ objektu, včetně konstruovaných typů, jako je například `List<int>`. Jediným účelem této metody je generovat hodnotu, která může být předána vyhodnocení funkce.  
+ `CreateValueForType` generalizace [ICorDebugEval:: CreateValue –](icordebugeval-createvalue-method.md) umožňuje určit libovolný typ objektu, včetně konstruovaných typů, jako je například `List<int>`. Jediným účelem této metody je generovat hodnotu, která může být předána vyhodnocení funkce.  
   
  Typ musí být typ třída nebo hodnota. Tuto metodu nelze použít k vytvoření hodnot pole nebo hodnot řetězců.  
   

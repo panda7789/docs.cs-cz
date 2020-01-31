@@ -6,22 +6,22 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: 9002b508602a219fac80770a27f628bb24150a6b
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: ec56d9b9dd4e7582f41aae0089d7be6f2b611031
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741762"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789645"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]
 > Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- V operačních systémech Microsoftu se používá několik různých [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] platforem, včetně Win32, [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]a [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zpřístupňuje klientům informace o prvcích uživatelského rozhraní. Nicméně [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sám o sobě nepovědomí o různých typech ovládacích prvků, které existují v těchto rozhraních, a metodách, které jsou potřebné k extrakci informací z nich. Místo toho tento úkol opustí objekty označované jako zprostředkovatelé. Zprostředkovatel extrahuje informace z konkrétního ovládacího prvku a zavolá tyto informace pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], které je následně prezentuje klientovi konzistentním způsobem.  
+ V operačních systémech Microsoftu se používá několik různých [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] platforem, včetně Win32, model Windows Forms a [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zpřístupňuje klientům informace o prvcích uživatelského rozhraní. Nicméně [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sám o sobě nepovědomí o různých typech ovládacích prvků, které existují v těchto rozhraních, a metodách, které jsou potřebné k extrakci informací z nich. Místo toho tento úkol opustí objekty označované jako zprostředkovatelé. Zprostředkovatel extrahuje informace z konkrétního ovládacího prvku a zavolá tyto informace pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], které je následně prezentuje klientovi konzistentním způsobem.  
   
  Poskytovatelé můžou existovat buď na straně serveru, nebo na straně klienta. Poskytovatel na straně serveru je implementovaný samotným ovládacím prvkem. prvky [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] implementují poskytovatele, stejně jako mohou jakékoli ovládací prvky třetích stran zapsané s [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
- Starší ovládací prvky, jako jsou například v systémech Win32 a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)], přímo nepodporují [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Tyto ovládací prvky se místo toho obsluhují poskytovateli, kteří existují v procesu klienta, a získávají informace o ovládacích prvcích pomocí komunikace mezi procesy. například monitorováním zpráv systému Windows do a z ovládacích prvků. Tito poskytovatelé na straně klienta jsou někdy označováni jako proxy.  
+ Starší ovládací prvky, jako jsou například v systémech Win32 a model Windows Forms, přímo nepodporují [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Tyto ovládací prvky se místo toho obsluhují poskytovateli, kteří existují v procesu klienta, a získávají informace o ovládacích prvcích pomocí komunikace mezi procesy. například monitorováním zpráv systému Windows do a z ovládacích prvků. Tito poskytovatelé na straně klienta jsou někdy označováni jako proxy.  
   
  Systém Windows Vista dodává poskytovatele pro standardní ovládací prvky Win32 a model Windows Forms. Záložní zprostředkovatel navíc poskytuje částečnou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro jakýkoli ovládací prvek, který není obsluhován jiným poskytovatelem na straně serveru nebo proxy serverem, ale má implementaci Microsoft Active Accessibility. Všichni tito poskytovatelé jsou automaticky načítáni a k dispozici pro klientské aplikace.  
   

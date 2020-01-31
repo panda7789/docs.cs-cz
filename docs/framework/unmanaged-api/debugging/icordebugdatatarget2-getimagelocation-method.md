@@ -2,12 +2,12 @@
 title: ICorDebugDataTarget2::GetImageLocation – metoda
 ms.date: 03/30/2017
 ms.assetid: 696afe71-5852-478d-a33f-b2d2dbc4b91f
-ms.openlocfilehash: 8b873e28bfab31ea18924f471f916475efd345d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ba1cc8c91c53547c6ed4025ee67a69e253f3596d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122128"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783584"
 ---
 # <a name="icordebugdatatarget2getimagelocation-method"></a>ICorDebugDataTarget2::GetImageLocation – metoda
 Vrátí cestu modulu ze základní adresy modulu.  
@@ -51,5 +51,5 @@ HRESULT GetImageLocation(    [in] CORDB_ADDRESS baseAddress,
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget2 – rozhraní](icordebugdatatarget2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

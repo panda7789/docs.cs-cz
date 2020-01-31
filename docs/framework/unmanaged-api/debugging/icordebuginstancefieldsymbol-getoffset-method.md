@@ -2,12 +2,12 @@
 title: 'ICorDebugInstanceFieldSymbol:: GetOffset – metoda'
 ms.date: 03/30/2017
 ms.assetid: 7e470150-2b92-4425-989c-315f48964fd2
-ms.openlocfilehash: 3886e29a1c2fd44fbe50d1eef722f99da7abdbe5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f7c13d397b39698bdf1a22f14820680e1fd0a25f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139005"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782290"
 ---
 # <a name="icordebuginstancefieldsymbolgetoffset-method"></a>ICorDebugInstanceFieldSymbol:: GetOffset – metoda
 Získá posun v bajtech tohoto pole instance v nadřazené třídě.  
@@ -40,5 +40,5 @@ HRESULT GetOffset(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugInstanceFieldSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugInstanceFieldSymbol – rozhraní](icordebuginstancefieldsymbol-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

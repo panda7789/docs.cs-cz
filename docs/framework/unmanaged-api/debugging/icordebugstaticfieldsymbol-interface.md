@@ -2,12 +2,12 @@
 title: ICorDebugStaticFieldSymbol – rozhraní
 ms.date: 03/30/2017
 ms.assetid: c0b93609-631e-4b15-878a-189ede922631
-ms.openlocfilehash: 0891df1fc0528ff485605b2c4168fcff0adff990
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b50b9c8435f19e1a77229f01dc85514f5f75c9f5
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131710"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791806"
 ---
 # <a name="icordebugstaticfieldsymbol-interface"></a>ICorDebugStaticFieldSymbol – rozhraní
 Představuje informace o symbolech ladění pro statické pole.  
@@ -16,9 +16,9 @@ Představuje informace o symbolech ladění pro statické pole.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-getaddress-method.md)|Získá adresu statického pole.|  
-|[GetName – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-getname-method.md)|Získá název statického pole.|  
-|[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-getsize-method.md)|Získá velikost statického pole v bajtech.|  
+|[GetAddress – metoda](icordebugstaticfieldsymbol-getaddress-method.md)|Získá adresu statického pole.|  
+|[GetName – metoda](icordebugstaticfieldsymbol-getname-method.md)|Získá název statického pole.|  
+|[GetSize – metoda](icordebugstaticfieldsymbol-getsize-method.md)|Získá velikost statického pole v bajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
  Rozhraní `ICorDebugStaticFieldSymbol` slouží k načtení informací o ladicím symbolu pro statické pole.  
@@ -37,6 +37,6 @@ Představuje informace o symbolech ladění pro statické pole.
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugInstanceFieldSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugInstanceFieldSymbol – rozhraní](icordebuginstancefieldsymbol-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

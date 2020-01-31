@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a684f7d7-d0c2-4690-b721-639e613f11f8
 topic_type:
 - apiref
-ms.openlocfilehash: cc02f63808b1929b93777c8bbc67c47000b0b424
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 23e168b0f322a580917c3fcfcb767a7d4d4628f6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132749"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793884"
 ---
 # <a name="cordebugunmappedstop-enumeration"></a>CorDebugUnmappedStop – výčet
 Určuje typ nemapovaného kódu, který může aktivovat zastavení při provádění kódu stepper.  
@@ -51,7 +51,7 @@ typedef enum CorDebugUnmappedStop {
 |`STOP_ALL`|Zastavte všechny typy nemapovaného kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použijte metodu [ICorDebugStepper:: SetUnmappedStopMask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) pro nastavení příznaků, které určují Nemapovaný kód, ve kterém se stepper zastaví.  
+ Použijte metodu [ICorDebugStepper:: SetUnmappedStopMask –](icordebugstepper-setunmappedstopmask-method.md) pro nastavení příznaků, které určují Nemapovaný kód, ve kterém se stepper zastaví.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -64,4 +64,4 @@ typedef enum CorDebugUnmappedStop {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)

@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: 9d6a7a388cb51bf08996adc654db5722a5ef1303
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 126f5b10999e65d9715e9b52cb54a2bf1dbd3933
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733336"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787883"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -15,7 +15,7 @@ Tento dokument popisuje změny, které byly přidány do souborů projektu jako 
 
 ## <a name="implicit-package-references"></a>Odkazy na implicitní balíčky
 
-Na metabalíčky se implicitně odkazuje na základě cílových rozhraní .NET Framework určených ve vlastnosti `<TargetFramework>` nebo `<TargetFrameworks>` souboru projektu. `<TargetFrameworks>` se ignoruje, pokud je zadána `<TargetFramework>`, nezávisle na pořadí. Další informace najdete v tématech [balíčky, metabalíčky a rozhraní](../packages.md). 
+Na metabalíčky se implicitně odkazuje na základě cílových rozhraní .NET Framework určených ve vlastnosti `<TargetFramework>` nebo `<TargetFrameworks>` souboru projektu. `<TargetFrameworks>` se ignoruje, pokud je zadána `<TargetFramework>`, nezávisle na pořadí. Další informace najdete v tématech [balíčky, metabalíčky a rozhraní](../packages.md).
 
 ```xml
  <PropertyGroup>
@@ -248,7 +248,7 @@ V projektech se styly sady SDK použijte cíl MSBuild s názvem `PreBuild` nebo 
 ```
 
 > [!NOTE]
->Můžete použít libovolný název pro cíle nástroje MSBuild, ale rozhraní IDE sady Visual Studio rozpozná `PreBuild` a `PostBuild` cíle, proto doporučujeme použít tyto názvy, abyste mohli upravovat příkazy v integrovaném vývojovém prostředí sady Visual Studio. 
+>Můžete použít libovolný název pro cíle nástroje MSBuild, ale rozhraní IDE sady Visual Studio rozpozná `PreBuild` a `PostBuild` cíle, proto doporučujeme použít tyto názvy, abyste mohli upravovat příkazy v integrovaném vývojovém prostředí sady Visual Studio.
 
 ## <a name="nuget-metadata-properties"></a>Vlastnosti metadat NuGet
 
@@ -321,7 +321,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 Cesta k souboru s licencí v rámci balíčku, pokud používáte licenci, ke které se nepřiřadil identifikátor SPDX, nebo se jedná o vlastní licenci (jinak `PackageLicenseExpression` upřednostňovaná)
 
-Nahrazuje `PackageLicenseUrl`, nejde kombinovat s `PackageLicenseExpression` a vyžaduje Visual Studio 15.9.4, .NET SDK 2.1.502 nebo 2.2.101 nebo novější.
+Nahrazuje `PackageLicenseUrl`, nelze kombinovat s `PackageLicenseExpression`a vyžaduje Visual Studio verze 15.9.4 a .NET SDK 2.1.502 nebo 2.2.101 nebo novější.
 
 Je potřeba zajistit, aby byl soubor s licencí zabalený tak, že ho do projektu přidáte explicitně, jako příklad použití:
 
@@ -427,7 +427,7 @@ Seznam párů klíč = hodnota oddělený středníkem.
 
 ### <a name="properties-per-attribute"></a>Vlastnosti na atribut
 
-Každý atribut má vlastnost, která řídí svůj obsah a druhý pro zakázání jeho generování, jak je znázorněno v následující tabulce:
+Jak je znázorněno v následující tabulce, každý atribut má vlastnost, která řídí svůj obsah a druhý, který zakazuje jeho generaci:
 
 | Atribut                                                      | Vlastnost               | Vlastnost, která se má zakázat                             |
 |----------------------------------------------------------------|------------------------|-------------------------------------------------|

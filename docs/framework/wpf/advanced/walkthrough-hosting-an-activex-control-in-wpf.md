@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ActiveX controls [WPF interoperability]
 - hosting ActiveX controls [WPF]
 ms.assetid: 1931d292-0dd1-434f-963c-dcda7638d75a
-ms.openlocfilehash: f2d9345eaaba7b85a217e6b230ae202f27ad3af8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 4ca40c0f6e62fd413e7f305649c5c01ddc152b2a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742622"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794138"
 ---
 # <a name="walkthrough-hosting-an-activex-control-in-wpf"></a>Návod: Hostování ovládacího prvku ActiveX v objektu WPF
 Chcete-li povolit vylepšenou interakci s prohlížeči, můžete v aplikaci založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]použít ovládací prvky Microsoft ActiveX. Tento návod ukazuje, jak můžete hostovat Microsoft Windows Media Player jako ovládací prvek na stránce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
@@ -83,7 +83,7 @@ Když je ovládací prvek přidán na návrhovou plochu, Visual Studio automatic
 
 2. Přidejte odkaz na sestavení WindowsFormsIntegration, které má název WindowsFormsIntegration. dll.
 
-3. Přidejte odkaz na sestavení [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], které má název System. Windows. Forms. dll.
+3. Přidejte odkaz na sestavení model Windows Forms, které má název System. Windows. Forms. dll.
 
 4. Otevřete MainWindow. XAML v Návrháři WPF.
 

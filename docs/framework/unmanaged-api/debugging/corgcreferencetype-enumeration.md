@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d9f16439-5a36-4474-8ffd-4f0b2c2bb686
 topic_type:
 - apiref
-ms.openlocfilehash: eafae181c74d9f3842f7f0d547bcccbbb28c09e6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 17d47b6242bb12ff5ca3cfbde3e4ec183b9c19fc
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132125"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793867"
 ---
 # <a name="corgcreferencetype-enumeration"></a>CorGCReferenceType – výčet
 Určuje zdroj objektu, který má být shromážděn do paměti.  
@@ -60,16 +60,16 @@ typedef enum {
 |`CorHandleStrongSizedByref`|Silný popisovač, který při uvolňování paměti udržuje přibližnou velikost souhrnu všech objektů a kořenových objektů.|  
 |`CorReferenceStack`|Odkaz ze spravovaného zásobníku.|  
 |`CorReferenceFinalizer`|Odkaz z fronty finalizační metody.|  
-|CorHandleStrongOnly|Vrátí pouze silné odkazy z tabulky popisovače. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) .|  
-|`CorHandleWeakOnly`|Vrátí pouze slabé odkazy z tabulky popisovačů. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) .|  
-|`CorHandleAll`|Vrátí všechny odkazy z tabulky popisovače. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) .|  
+|CorHandleStrongOnly|Vrátí pouze silné odkazy z tabulky popisovače. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](icordebugprocess5-enumeratehandles-method.md) .|  
+|`CorHandleWeakOnly`|Vrátí pouze slabé odkazy z tabulky popisovačů. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](icordebugprocess5-enumeratehandles-method.md) .|  
+|`CorHandleAll`|Vrátí všechny odkazy z tabulky popisovače. Tuto hodnotu používá pouze metoda [ICorDebugProcess5:: EnumerateHandles –](icordebugprocess5-enumeratehandles-method.md) .|  
   
 ## <a name="remarks"></a>Poznámky  
  `CorGCReferenceType` výčet se používá následujícím způsobem:  
   
-- Jako hodnota pole `type` struktury [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) označuje zdroj odkazu nebo popisovače.  
+- Jako hodnota pole `type` struktury [COR_GC_REFERENCE](cor-gc-reference-structure.md) označuje zdroj odkazu nebo popisovače.  
   
-- Jako argument `types` pro metodu [ICorDebugProcess5:: EnumerateHandles –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumeratehandles-method.md) určuje typy popisovačů, které mají být zahrnuty do výčtu.  
+- Jako argument `types` pro metodu [ICorDebugProcess5:: EnumerateHandles –](icordebugprocess5-enumeratehandles-method.md) určuje typy popisovačů, které mají být zahrnuty do výčtu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -82,4 +82,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)

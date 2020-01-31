@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b63a507a-ca97-4be0-8e4f-401cce2125f6
 topic_type:
 - apiref
-ms.openlocfilehash: 9f5406c35915e447831d233804413034a429e8a1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c11e286d8c33d6823127d9a6d5989064e2299bc4
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139774"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792146"
 ---
 # <a name="icordebugprocessenum-interface"></a>ICorDebugProcessEnum – rozhraní
 Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugProcess.  
@@ -28,7 +28,7 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugProcess.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocessenum-next-method.md)|Získá zadaný počet instancí `ICorDebugProcess` z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](icordebugprocessenum-next-method.md)|Získá zadaný počet instancí `ICorDebugProcess` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -46,4 +46,4 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugProcess.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
