@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-ms.openlocfilehash: f41fc102dfbe24d47e194da7477791a46f8d712d
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 98208f1e1fa1b540bf3880e33478854128505233
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741746"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778786"
 ---
 # <a name="ui-automation-providers-overview"></a>Přehled zprostředkovatelů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -18,9 +18,9 @@ ms.locfileid: "75741746"
   
  Zprostředkovatelé automatizace uživatelského rozhraní umožňují ovládacím prvkům komunikovat s klientskými aplikacemi pro automatizaci uživatelského rozhraní. Obecně platí, že každý ovládací prvek nebo jiný jedinečný prvek v [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] představuje poskytovatel. Zprostředkovatel zpřístupňuje informace o elementu a volitelně implementuje vzory ovládacích prvků, které umožňují klientské aplikaci pracovat s ovládacím prvkem.  
   
- Klientské aplikace obvykle nepotřebují pracovat přímo s poskytovateli. Většina standardních ovládacích prvků v aplikacích, které používají rozhraní Win32, [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]nebo [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], je automaticky vystavena [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] systému. Aplikace, které implementují vlastní ovládací prvky, mohou také implementovat poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pro tyto ovládací prvky a klientské aplikace nemusí provádět žádné zvláštní kroky, aby k nim měli přístup.  
+ Klientské aplikace obvykle nepotřebují pracovat přímo s poskytovateli. Většina standardních ovládacích prvků v aplikacích, které používají rozhraní Win32, model Windows Forms nebo [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], je automaticky vystavena [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] systému. Aplikace, které implementují vlastní ovládací prvky, mohou také implementovat poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pro tyto ovládací prvky a klientské aplikace nemusí provádět žádné zvláštní kroky, aby k nim měli přístup.  
   
- Toto téma poskytuje přehled o tom, jak vývojáři řízení implementují poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], zejména pro ovládací prvky v [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] a v systému Win32.  
+ Toto téma poskytuje přehled o tom, jak vývojáři řízení implementují poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], zejména pro ovládací prvky v model Windows Forms a v systému Win32.  
   
 <a name="Types_of_Providers"></a>   
 ## <a name="types-of-providers"></a>Typy zprostředkovatelů  

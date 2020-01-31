@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ab18a509-dff3-4930-b585-bd15e0414176
 topic_type:
 - apiref
-ms.openlocfilehash: af2dab65629093401219f1016538b912bee4d067
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 328c10c1895f65b43dc365b1be6b4ec5ef01e720
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130816"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777351"
 ---
 # <a name="icordebugmanagedcallbackexception-method"></a>ICorDebugManagedCallback::Exception – metoda
 Oznamuje ladicímu programu, že byla vyvolána výjimka ze spravovaného kódu.  
@@ -59,4 +59,4 @@ HRESULT Exception (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

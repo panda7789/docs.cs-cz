@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4275af0c-b5a7-4e4c-97c9-7e41f36b2dd8
 topic_type:
 - apiref
-ms.openlocfilehash: fb8cfb2d1c5902ecd0d5858ef21ba48b65b12506
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 851a127c117b826c271dd021c41cfdb36045a1ff
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125331"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783746"
 ---
 # <a name="icordebugcontrollerterminate-method"></a>ICorDebugController::Terminate – metoda
 Ukončí proces se zadaným ukončovacím kódem.  
@@ -41,7 +41,7 @@ HRESULT Terminate (
  pro Číselná hodnota, která je ukončovacím kódem. Platné číselné hodnoty jsou definovány v Winbase. h.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je proces zastaven při volání `Terminate`, proces by měl pokračovat pomocí metody [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) , aby ladicí program přijal potvrzení ukončení prostřednictvím [ICorDebugManagedCallback:: ExitProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) nebo [ICorDebugManagedCallback:: ExitAppDomain –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) zpětné volání.  
+ Pokud je proces zastaven při volání `Terminate`, proces by měl pokračovat pomocí metody [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) , aby ladicí program přijal potvrzení ukončení prostřednictvím zpětného volání [ICorDebugManagedCallback:: ExitProcess –](icordebugmanagedcallback-exitprocess-method.md) nebo [ICorDebugManagedCallback:: ExitAppDomain –](icordebugmanagedcallback-exitappdomain-method.md) .  
   
 > [!NOTE]
 > Tato metoda není implementována doménou aplikace. To znamená, že není implementován na úrovni <xref:System.AppDomain>.  

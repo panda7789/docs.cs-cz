@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna ohraničení Windows Forms'
+title: Změnit ohraničení formuláře
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,23 +8,23 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, changing the borders
 ms.assetid: b3d5fa56-80c6-4b10-b505-f9672307ed55
-ms.openlocfilehash: 036bef79e83350801ce45e6b77691339c6548d15
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2c8eb25b44c7406e4312f432f2d69524346f94d6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665254"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739562"
 ---
 # <a name="how-to-change-the-borders-of-windows-forms"></a>Postupy: Změna ohraničení Windows Forms
-Máte několik stylů ohraničení lze vybírat při určování vzhled a chování formulářů Windows. Pomocí změny <xref:System.Windows.Forms.Form.FormBorderStyle%2A> vlastnost, můžete řídit chování změny velikosti ve formuláři. Kromě toho nastavení <xref:System.Windows.Forms.Form.FormBorderStyle%2A> má vliv na způsob zobrazení záhlaví a co tlačítka se může zobrazit na to. Další informace naleznete v tématu <xref:System.Windows.Forms.FormBorderStyle>.  
+Máte několik stylů ohraničení, ze kterých si můžete vybrat, když určíte vzhled a chování model Windows Forms. Změnou vlastnosti <xref:System.Windows.Forms.Form.FormBorderStyle%2A> můžete řídit chování formuláře při změně velikosti. Kromě toho nastavení <xref:System.Windows.Forms.Form.FormBorderStyle%2A> ovlivňuje způsob zobrazení záhlaví a také to, jaká tlačítka se na něm mohou zobrazovat. Další informace najdete v tématu <xref:System.Windows.Forms.FormBorderStyle>.  
   
- Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  
+ Existuje Rozsáhlá podpora pro tento úkol v aplikaci Visual Studio.  
   
- Viz také [jak: Změna ohraničení Windows Forms pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/yettzh3e(v=vs.100)).  
+ Viz také [Postupy: Změna ohraničení model Windows Forms pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/yettzh3e(v=vs.100)).  
   
-### <a name="to-set-the-border-style-of-windows-forms-programmatically"></a>Chcete-li nastavit styl ohraničení Windows Forms prostřednictvím kódu programu  
+### <a name="to-set-the-border-style-of-windows-forms-programmatically"></a>Nastavení stylu ohraničení model Windows Forms programově  
   
-- Nastavte <xref:System.Windows.Forms.Form.FormBorderStyle%2A> nastavte požadovaný styl. Následující příklad kódu nastaví styl ohraničení tvaru `DlgBx1` k <xref:System.Windows.Forms.FormBorderStyle.FixedDialog>.  
+- Vlastnost <xref:System.Windows.Forms.Form.FormBorderStyle%2A> nastavte na styl, který chcete. Následující příklad kódu nastaví styl ohraničení formuláře `DlgBx1` na <xref:System.Windows.Forms.FormBorderStyle.FixedDialog>.  
   
     ```vb  
     DlgBx1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog  
@@ -39,9 +39,9 @@ Máte několik stylů ohraničení lze vybírat při určování vzhled a chová
        System::Windows::Forms::FormBorderStyle::FixedDialog;  
     ```  
   
-     Viz také [jak: Vytváření dialogových oken během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/55cz5x2c(v=vs.100)).  
+     Viz také [Postupy: vytváření dialogových oken v době návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/55cz5x2c(v=vs.100)).  
   
-     Kromě toho pokud jste zvolili styl ohraničení pro formulář, který obsahuje volitelné **minimalizovat** a **Maximalizovat** tlačítka, můžete zadat, jestli má jeden nebo oba z těchto tlačítek funkční. Tato tlačítka jsou užitečné, pokud chcete přesně řídit činnost koncového uživatele. **Minimalizovat** a **Maximalizovat** tlačítka jsou ve výchozím nastavení povolené, a jejich funkce je zpracováván prostřednictvím **vlastnosti** okna.  
+     Pokud jste navíc vybrali styl ohraničení formuláře, který poskytuje Volitelná tlačítka **minimalizovat** a **maximalizovat** , můžete určit, zda chcete, aby obě tato tlačítka byla funkční. Tato tlačítka jsou užitečná, když chcete přesně řídit činnost koncového uživatele. Tlačítka **minimalizovat** a **maximalizovat** jsou ve výchozím nastavení povolena a jejich funkce jsou zpracovávány prostřednictvím okna **vlastnosti** .  
   
 ## <a name="see-also"></a>Viz také:
 

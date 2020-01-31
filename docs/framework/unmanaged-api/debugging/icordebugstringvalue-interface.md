@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bf84d0af-53e1-4c04-bc5b-7e5f81ba2cc2
 topic_type:
 - apiref
-ms.openlocfilehash: d1d3a5eb6e0b24b40a35c13a99465dd3c7032a91
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c232163f7c18086804eca7990a0890a507ef00b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138947"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791689"
 ---
 # <a name="icordebugstringvalue-interface"></a>ICorDebugStringValue – rozhraní
 Podtřída ICorDebugHeapValue, která se vztahuje na řetězcové hodnoty.  
@@ -28,8 +28,8 @@ Podtřída ICorDebugHeapValue, která se vztahuje na řetězcové hodnoty.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetLength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Vrátí počet znaků v řetězci, na který odkazuje tento `ICorDebugStringValue`.|  
-|[GetString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Získá řetězec, na který odkazuje tento `ICorDebugStringValue`.|  
+|[GetLength – metoda](icordebugstringvalue-getlength-method.md)|Vrátí počet znaků v řetězci, na který odkazuje tento `ICorDebugStringValue`.|  
+|[GetString – metoda](icordebugstringvalue-getstring-method.md)|Získá řetězec, na který odkazuje tento `ICorDebugStringValue`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -47,4 +47,4 @@ Podtřída ICorDebugHeapValue, která se vztahuje na řetězcové hodnoty.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

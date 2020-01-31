@@ -1,5 +1,5 @@
 ---
-title: TrackBar – přehled ovládacího prvku (Windows Forms)
+title: TrackBar – přehled ovládacího prvku
 ms.date: 03/30/2017
 f1_keywords:
 - TrackBar
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - TrackBar control [Windows Forms], about TrackBar control
 - slider controls [Windows Forms], about slider controls
 ms.assetid: 95910ecb-8a4c-4776-89fa-206c89ed6973
-ms.openlocfilehash: 1606db73485944f3dfa8b9c084bffda817520c7c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6901405100df4633c84850757f55b756bc9a0199
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009263"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741468"
 ---
 # <a name="trackbar-control-overview-windows-forms"></a>TrackBar – přehled ovládacího prvku (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.TrackBar> ovládací prvek (někdy také nazývané "posuvník") se používá pro procházení velkých množství informací nebo pro úpravu vizuálně číselné nastavení. <xref:System.Windows.Forms.TrackBar> Ovládací prvek má dvě části: thumb, označované také jako ovládací prvek posuvník a osové značky. Jezdce je část, kterou je možné upravit. Jeho pozice koresponduje <xref:System.Windows.Forms.TrackBar.Value%2A> vlastnost. Značky jsou visual indikátory, které jsou rozmístěné v pravidelných intervalech. Pozice přesune v krocích, které zadáte a může být zarovnaný vodorovně nebo svisle. Pruh sledování může například použít k řízení rychlost blikání kurzoru rychlost nebo myši pro systém.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.TrackBar> (někdy označovaný také jako "ovládací prvek" posuvníku) se používá k procházení velkého množství informací nebo k vizuální úpravě číselného nastavení. Ovládací prvek <xref:System.Windows.Forms.TrackBar> má dvě části: palec, označované také jako posuvník, a značky. Palec je součást, kterou lze upravit. Jeho poloha odpovídá vlastnosti <xref:System.Windows.Forms.TrackBar.Value%2A>. Značky jsou vizuální indikátory, které jsou rozmístěny v pravidelných intervalech. TrackBar se přesune v přírůstcích, které zadáte, a dá se Zarovnat vodorovně nebo svisle. Například můžete použít panel sledování k řízení rychlosti blikání kurzoru nebo rychlosti myši pro systém.  
   
-## <a name="key-properties"></a>Vlastnosti klíče  
- Klíčové vlastnosti <xref:System.Windows.Forms.TrackBar> řízení, představují <xref:System.Windows.Forms.TrackBar.Value%2A>, <xref:System.Windows.Forms.TrackBar.TickFrequency%2A>, <xref:System.Windows.Forms.TrackBar.Minimum%2A>, a <xref:System.Windows.Forms.TrackBar.Maximum%2A>. <xref:System.Windows.Forms.TrackBar.TickFrequency%2A> je mezery dílků. <xref:System.Windows.Forms.TrackBar.Minimum%2A> a <xref:System.Windows.Forms.TrackBar.Maximum%2A> jsou nejnižší a nejvyšší hodnoty, které lze znázornit na pruh sledování.  
+## <a name="key-properties"></a>Klíčové vlastnosti  
+ Klíčové vlastnosti ovládacího prvku <xref:System.Windows.Forms.TrackBar> jsou <xref:System.Windows.Forms.TrackBar.Value%2A>, <xref:System.Windows.Forms.TrackBar.TickFrequency%2A>, <xref:System.Windows.Forms.TrackBar.Minimum%2A>a <xref:System.Windows.Forms.TrackBar.Maximum%2A>. <xref:System.Windows.Forms.TrackBar.TickFrequency%2A> je mezery mezi značkami. <xref:System.Windows.Forms.TrackBar.Minimum%2A> a <xref:System.Windows.Forms.TrackBar.Maximum%2A> jsou nejmenší a největší hodnoty, které lze znázornit na panelu sledování.  
   
- Jsou dva důležité vlastnosti <xref:System.Windows.Forms.TrackBar.SmallChange%2A> a <xref:System.Windows.Forms.TrackBar.LargeChange%2A>. Hodnota <xref:System.Windows.Forms.TrackBar.SmallChange%2A> vlastnost je počet pozic jezdce posune s tím, že stisknuta klávesa vlevo nebo šipka vpravo. Hodnota <xref:System.Windows.Forms.TrackBar.LargeChange%2A> vlastnost je počet pozic jezdce posune s tím, že stisknuté klávese PAGE UP nebo PAGE DOWN nebo v reakci na myši klikne na pruh sledování na obou stranách jezdce.  
+ Existují dvě další důležité vlastnosti <xref:System.Windows.Forms.TrackBar.SmallChange%2A> a <xref:System.Windows.Forms.TrackBar.LargeChange%2A>. Hodnota vlastnosti <xref:System.Windows.Forms.TrackBar.SmallChange%2A> je počet pozic, po které se posune pohyb v reakci na stisknutí klávesy šipka vlevo nebo vpravo. Hodnota vlastnosti <xref:System.Windows.Forms.TrackBar.LargeChange%2A> je počet pozic, o které se posune Miniatura v reakci na stisknutí klávesy PAGE UP nebo PAGE DOWN, nebo v reakci na tlačítko myši na panelu sledování na kterékoli straně jezdce.  
   
 ## <a name="see-also"></a>Viz také:
 

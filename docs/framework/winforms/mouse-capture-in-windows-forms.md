@@ -1,25 +1,25 @@
 ---
-title: Zachycení myši ve Windows Forms
+title: Zachycení myši
 ms.date: 03/30/2017
 helpviewer_keywords:
 - mouse [Windows Forms], capture
 ms.assetid: 8911d4b0-a4f8-4f93-8246-371aebd27d0c
-ms.openlocfilehash: 30432c6978f60cc9ad47d5df5dafc7aa45229f3b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10583f074831b16dce3c713b4ac9a76c7005c9f5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61800955"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741016"
 ---
 # <a name="mouse-capture-in-windows-forms"></a>Zachycení myši ve Windows Forms
-*Zachycení myši* odkazuje na příkaz všechny vstup myši pořízením ovládacího prvku. Když ovládací prvek zachytí myš, zda ukazatel je v rámci jeho okrajů přijímá vstup z myši.  
+*Zachycení myši* odkazuje na to, že ovládací prvek provede příkaz pro všechny vstupy myši. Když ovládací prvek zachytí myš, dostane vstup z myši bez ohledu na to, zda je ukazatel v rámci jeho ohraničení.  
   
-## <a name="setting-mouse-capture"></a>Zachycení myši nastavení  
- Ve Windows Forms myši nezachytává ovládacího prvku, když uživatel stiskne tlačítko myši v ovládacím prvku a uvolní se ukazatel myši ovládacím prvkem, když uživatel uvolní tlačítko myši.  
+## <a name="setting-mouse-capture"></a>Nastavení zachycení myši  
+ V model Windows Forms je myš zachycena ovládacím prvkem, když uživatel stiskne tlačítko myši na ovládacím prvku a myš je uvolněna ovládacím prvkem, když uživatel uvolní tlačítko myši.  
   
- <xref:System.Windows.Forms.Control.Capture%2A> Vlastnost <xref:System.Windows.Forms.Control> třída určuje, zda ovládací prvek zachytí myš. Pokud chcete zjistit, kdy ovládací prvek ztratí zachycení myši, zpracovat <xref:System.Windows.Forms.Control.MouseCaptureChanged> událostí.  
+ Vlastnost <xref:System.Windows.Forms.Control.Capture%2A> třídy <xref:System.Windows.Forms.Control> určuje, zda ovládací prvek zachytil myš. Chcete-li zjistit, kdy ovládací prvek ztratí zachycení myši, zpracujte událost <xref:System.Windows.Forms.Control.MouseCaptureChanged>.  
   
- Pouze okno v popředí, můžete zachytit ukazatel myši. Když se pokusí oknem v pozadí pro zachycení myši, v okně přijímá zprávy pouze pro události myši, ke kterým dochází, když ukazatel myši nachází v viditelnou část okna. Navíc i v případě, že okno v popředí zachytí myš, stále kliknutí další okno, přináší na popředí. Když ukazatel myši je zachycena, nebude fungovat klávesové zkratky.  
+ Myš může zachytit pouze okno v popředí. Když se okno na pozadí pokusí zachytit myš, okno obdrží zprávy pouze pro události myši, ke kterým dojde, když je ukazatel myši v viditelné části okna. I když je v okně popředí zachycena myš, uživatel může stále kliknout na jiné okno a přemístit ho do popředí. Když je myš zachycena, klávesové zkratky nefungují.  
   
 ## <a name="see-also"></a>Viz také:
 

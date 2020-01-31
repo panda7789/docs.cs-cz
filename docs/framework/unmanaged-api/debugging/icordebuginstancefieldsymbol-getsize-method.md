@@ -2,12 +2,12 @@
 title: 'ICorDebugInstanceFieldSymbol:: GetSize – metoda'
 ms.date: 03/30/2017
 ms.assetid: a4af1e3b-6a9f-4855-95ba-5317565c8e2b
-ms.openlocfilehash: 71828cd8486e2ff09190d23473dbab303b92f933
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: eb70c441441954e2ffce6ca832c58369c606b128
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139020"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782284"
 ---
 # <a name="icordebuginstancefieldsymbolgetsize-method"></a>ICorDebugInstanceFieldSymbol:: GetSize – metoda
 Získá velikost pole instance v bajtech.  
@@ -40,5 +40,5 @@ HRESULT GetSize(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugInstanceFieldSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugInstanceFieldSymbol – rozhraní](icordebuginstancefieldsymbol-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

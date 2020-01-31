@@ -2,12 +2,12 @@
 title: Mapování aplikace eShopOnContainers ke službám Azure
 description: Mapování eShopOnContainers na služby Azure, jako je služba Azure Kubernetes, brána API a Azure Service Bus.
 ms.date: 06/30/2019
-ms.openlocfilehash: 67430da18c0a12c694426214de33e85c2113e454
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: eb37be94461a5373afe328572a94892dec50432d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275814"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781219"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>Mapování aplikace eShopOnContainers ke službám Azure
 
@@ -44,7 +44,7 @@ Pomocí APIM můžou aplikace vystavovat několik různých skupin služeb, z ni
 
 Další možností, pokud vaše aplikace používá AKS, je nasazení řadiče pro příchozí přenos dat služby Azure Gateway jako pod clusterem AKS. To umožňuje, aby se cluster integroval s Application Gateway Azure, což umožňuje, aby brána vyrovnala zatížení v AKS luskech. [Přečtěte si další informace o řadiči Azure Gateway pro příchozí přenosy pro AKS](https://github.com/Azure/application-gateway-kubernetes-ingress).
 
-## <a name="data"></a>Data
+## <a name="data"></a>Datové
 
 Různé back-endové služby, které používá eShopOnContainers, mají různé požadavky na úložiště. SQL Server databází používá několik mikroslužeb. Mikroslužba košíku využívá pro svůj trvalost mezipaměť Redis Cache. Mikroslužba umístění očekává pro svá data rozhraní MongoDB API. Azure podporuje jednotlivé formáty dat.
 
@@ -54,7 +54,7 @@ Aplikace eShopOnContainers ukládá aktuální nákupní košík uživatele mezi
 
 Mikroslužba umístění používá pro svůj trvalost databázi MongoDB NoSQL. Během vývoje se databáze dá nasadit do vlastního kontejneru, zatímco v produkčním prostředí může využít [rozhraní API Azure Cosmos DB pro MongoDB](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction). Jednou z výhod Azure Cosmos DB je schopnost využít více různých komunikačních protokolů, včetně rozhraní SQL API a běžných rozhraní NoSQL API, včetně MongoDB, Cassandra, Gremlin a Azure Table Storage. Azure Cosmos DB nabízí plně spravovanou a globálně distribuovanou databázi jako službu, která se může škálovat tak, aby splňovala potřeby služeb, které ji používají.
 
-Distribuovaná data v nativních aplikacích cloudu jsou podrobněji popsaná v [kapitole 5](distributed-data.md).
+Distribuovaná data v nativních aplikacích cloudu jsou podrobněji popsaná v [kapitole 5](database-per-microservice.md).
 
 ## <a name="event-bus"></a>Sběrnice událostí
 

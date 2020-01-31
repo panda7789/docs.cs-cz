@@ -1,76 +1,76 @@
 ---
-title: WebBrowser – ovládací prvek (Windows Forms)
+title: WebBrowser – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WebBrowser control [Windows Forms]
 - Web pages [Windows Forms], hosting in applications
 - Web pages [Windows Forms], Windows Forms controls
 ms.assetid: 12667861-5b5b-46bc-8fb5-675e25264c9f
-ms.openlocfilehash: 34194bf707cd309768b00fd903d1f46aff7dd170
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b2dc9d124623d8018356c147c34ac6bc8da82209
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61759892"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739991"
 ---
 # <a name="webbrowser-control-windows-forms"></a>WebBrowser – ovládací prvek (Windows Forms)
-Windows Forms `WebBrowser` ovládací prvek hostuje webové stránky a poskytuje funkce pro vaše aplikace na procházení webu.  
+Ovládací prvek model Windows Forms `WebBrowser` hostuje webové stránky a poskytuje možnosti procházení webu pro vaši aplikaci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku WebBrowser](webbrowser-control-overview.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
  [WebBrowser – zabezpečení](webbrowser-security.md)  
- Popisuje problémy se zabezpečením související s ovládacího prvku.  
+ Vysvětluje problémy se zabezpečením, které souvisí s ovládacím prvkem.  
   
- [Postupy: Přejděte na adresu URL pomocí ovládacího prvku WebBrowser](how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
- Ukazuje, jak přejít na konkrétní adresu URL pomocí ovládacího prvku.  
+ [Postupy: Přechod na adresu URL pomocí ovládacího prvku WebBrowser](how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ Ukazuje, jak použít ovládací prvek k přechodu na konkrétní adresu URL.  
   
  [Postupy: Tisk pomocí ovládacího prvku WebBrowser](how-to-print-with-a-webbrowser-control.md)  
- Ukazuje, jak vytisknout bez zobrazení webové stránky.  
+ Ukazuje, jak tisknout webovou stránku bez zobrazení.  
   
- [Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows](how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
- Popisuje, jak inicializovat ovládací prvek pro použití jako webový prohlížeč.  
+ [Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms](how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
+ Popisuje inicializaci ovládacího prvku pro použití jako webového prohlížeče.  
   
- [Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows](how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
- Popisuje, jak inicializovat ovládací prvek pro použití jako prohlížeč formátu HTML.  
+ [Postupy: Vytvoření prohlížeče dokumentu HTML v aplikaci Windows Forms](how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
+ Popisuje inicializaci ovládacího prvku pro použití jako prohlížeče HTML.  
   
  [Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace](implement-two-way-com-between-dhtml-and-client.md)  
- Popisuje, jak nastavit obousměrnou komunikaci mezi kódu aplikace a DHTML ve webové stránky hostované v ovládacím prvku.  
+ Popisuje, jak nastavit obousměrnou komunikaci mezi kódem aplikace a DHTML na webové stránce hostované ovládacím prvkem.  
   
  [Použití spravovaného modelu DOM (Document Object Model) HTML](using-the-managed-html-document-object-model.md)  
- Obsahuje témata, které popisují, jak pracovat s nebo vytvoření stránky HTML, které jsou hostovány <xref:System.Windows.Forms.WebBrowser> ovládacího prvku.  
+ Poskytuje témata, které popisují, jak manipulovat nebo vytvářet stránky HTML hostované ovládacím prvkem <xref:System.Windows.Forms.WebBrowser>.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.WebBrowser> Třída  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ <xref:System.Windows.Forms.WebBrowser> – třída  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  
- Popisuje tento delegát.  
+ Popisuje tohoto delegáta.  
   
  <xref:System.Windows.Forms.WebBrowserEncryptionLevel>  
  Popisuje tento výčet a všechny jeho hodnoty.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>  
- Popisuje tento delegát.  
+ Popisuje tohoto delegáta.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>  
- Popisuje tento delegát.  
+ Popisuje tohoto delegáta.  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>  
- Tato třída popisuje a obsahuje odkazy na všechny její členy.  
+ Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventHandler>  
- Popisuje tento delegát.  
+ Popisuje tohoto delegáta.  
   
  <xref:System.Windows.Forms.WebBrowserReadyState>  
  Popisuje tento výčet a všechny jeho hodnoty.  

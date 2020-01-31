@@ -1,5 +1,5 @@
 ---
-title: Strategie zabezpečení WPF – zabezpečení platformy
+title: Strategie zabezpečení platformy
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: b2fd923de165c0926e6f812764c71127b7c27691
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 1ef705fcf046af1f4136ddcf1b29f417c0d72c83
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636234"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741850"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují tak, aby poskytovaly vysoce zabezpečený model zabezpečení s vysokou ochranou, který se pokusí vyhnout jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
@@ -53,7 +53,7 @@ Jádro systému Windows poskytuje několik funkcí zabezpečení, které tvoří
 ### <a name="windows-vista"></a>Windows Vista  
 Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení zabezpečení operačního systému, včetně přístupu uživatelů s minimálními oprávněními, kontroly integrity kódu a izolace oprávnění.  
   
-#### <a name="user-account-control-uac"></a>Řízení uživatelských účtů  
+#### <a name="user-account-control-uac"></a>Řízení uživatelských účtů (UAC)  
  V současné době se uživatelé systému Windows spouštějí s oprávněními správce, protože mnoho aplikací vyžaduje tyto požadavky buď k instalaci, nebo k provedení. Jedním z příkladů je možnost psát výchozí nastavení aplikace do registru.  
   
  Spuštění s oprávněními správce ve skutečnosti znamená, že aplikace se spouštějí z procesů, kterým jsou udělena oprávnění správce. Dopad tohoto zabezpečení je takový, že veškerý škodlivý kód, který by napadený procesem spuštěným s oprávněními správce, automaticky zdědí tato oprávnění, včetně přístupu k důležitým systémovým prostředkům.  
@@ -103,7 +103,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
 - **Místní intranet**. Aplikace spouštěné z intranetu. (Poněkud důvěryhodné).  
   
-- **Internet.** Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
+- **Internet**. Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
   
 - **Důvěryhodné servery**. Aplikace identifikované uživatelem jako důvěryhodné (Nejméně důvěryhodné).  
   
@@ -115,7 +115,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
 - **LocalIntranet**. Pro aplikace spouštěné z **místní zóny intranetu** . K poskytnutí středního přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, neomezeného přístupu k uživatelskému rozhraní, neomezených dialogových oken, omezených reflexe a omezeného přístupu k proměnným prostředí, je udělená podmnožina oprávnění. Nejsou k dispozici oprávnění pro kritické prostředky, jako je registr.  
   
-- **Internet.** Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
+- **Internet**. Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
   
  Aplikacím identifikovaným jako **nedůvěryhodné servery** nejsou vůbec udělena oprávnění CAS. V důsledku toho pro ně neexistuje předdefinovaná sada oprávnění.  
   

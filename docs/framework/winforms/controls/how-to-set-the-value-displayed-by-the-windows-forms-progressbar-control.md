@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení hodnoty zobrazované ovládacím prvkem Windows Forms ProgressBar'
+title: Nastavení hodnoty zobrazované ovládacím prvkem ProgressBar
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,37 +8,37 @@ helpviewer_keywords:
 - ProgressBar control [Windows Forms], setting value displayed
 - progress controls [Windows Forms], setting value displayed
 ms.assetid: 0e5010ad-1e9a-4271-895e-5a3d24d37a26
-ms.openlocfilehash: 2e0134206ba3ebdce35f5374cbad575e34483d58
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 79ce1e576652d00b323d31dfc6551e168ea0a9a0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956081"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743801"
 ---
 # <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a>Postupy: Nastavení hodnoty zobrazované ovládacím prvkem Windows Forms ProgressBar
 > [!IMPORTANT]
-> Ovládací prvek nahrazuje a přidává funkce <xref:System.Windows.Forms.ProgressBar> <xref:System.Windows.Forms.ProgressBar> ovládacímu prvku. ovládací prvek je však ponechán pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. <xref:System.Windows.Forms.ToolStripProgressBar>  
+> Ovládací prvek <xref:System.Windows.Forms.ToolStripProgressBar> nahrazuje a přidává funkce do ovládacího prvku <xref:System.Windows.Forms.ProgressBar>; Nicméně ovládací prvek <xref:System.Windows.Forms.ProgressBar> se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
  .NET Framework poskytuje několik různých způsobů zobrazení dané hodnoty v rámci <xref:System.Windows.Forms.ProgressBar> ovládacího prvku. Jaký přístup zvolíte, bude záviset na úloze nebo na problému, který řešíte. Následující tabulka uvádí přístupy, které můžete zvolit.  
   
 |Přístup|Popis|  
 |--------------|-----------------|  
-|Nastavte hodnotu <xref:System.Windows.Forms.ProgressBar> ovládacího prvku přímo.|Tento přístup je užitečný pro úlohy, u kterých víte, že celkový počet měřených položek, které budou zahrnuty, jako je například čtení záznamů ze zdroje dat. Kromě toho, pokud potřebujete pouze nastavit hodnotu pouze jednou nebo dvakrát, je to jednoduchý způsob, jak to provést. Nakonec tento postup použijte v případě, že potřebujete snížit hodnotu zobrazenou indikátorem průběhu.|  
-|<xref:System.Windows.Forms.ProgressBar> Zvětšit zobrazení na pevnou hodnotu.|Tento přístup je užitečný, když zobrazujete jednoduchý počet mezi minimální a maximální, například uplynulý čas nebo počet souborů, které byly zpracovány ze známého celku.|  
-|<xref:System.Windows.Forms.ProgressBar> Zvětšit zobrazení o hodnotu, která se liší.|Tento přístup je užitečný v případě, že potřebujete změnit zobrazenou hodnotu v různých částkách. V příkladu se zobrazilo množství místa na pevném disku, které se spotřebovává při zápisu řady souborů na disk.|  
+|Nastavte hodnotu ovládacího prvku <xref:System.Windows.Forms.ProgressBar> přímo.|Tento přístup je užitečný pro úlohy, u kterých víte, že celkový počet měřených položek, které budou zahrnuty, jako je například čtení záznamů ze zdroje dat. Kromě toho, pokud potřebujete pouze nastavit hodnotu pouze jednou nebo dvakrát, je to jednoduchý způsob, jak to provést. Nakonec tento postup použijte v případě, že potřebujete snížit hodnotu zobrazenou indikátorem průběhu.|  
+|Zvětšete <xref:System.Windows.Forms.ProgressBar> zobrazení o pevnou hodnotu.|Tento přístup je užitečný, když zobrazujete jednoduchý počet mezi minimální a maximální, například uplynulý čas nebo počet souborů, které byly zpracovány ze známého celku.|  
+|Zvětšete <xref:System.Windows.Forms.ProgressBar> zobrazení podle hodnoty, která se liší.|Tento přístup je užitečný v případě, že potřebujete změnit zobrazenou hodnotu v různých částkách. V příkladu se zobrazilo množství místa na pevném disku, které se spotřebovává při zápisu řady souborů na disk.|  
   
- Nejpřímější způsob, jak nastavit hodnotu zobrazenou indikátorem průběhu, je nastavením <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnosti. To lze provést buď v době návrhu, nebo v době běhu.  
+ Nejpřímější způsob, jak nastavit hodnotu zobrazenou indikátorem průběhu, je nastavením vlastnosti <xref:System.Windows.Forms.ProgressBar.Value%2A>. To lze provést buď v době návrhu, nebo v době běhu.  
   
 ### <a name="to-set-the-progressbar-value-directly"></a>Nastavení hodnoty ProgressBar přímo  
   
-1. <xref:System.Windows.Forms.ProgressBar> Nastavte ovládacíprvek<xref:System.Windows.Forms.ProgressBar.Maximum%2A>ahodnoty. <xref:System.Windows.Forms.ProgressBar.Minimum%2A>  
+1. Nastavte <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a hodnoty <xref:System.Windows.Forms.ProgressBar.Maximum%2A> ovládacího prvku <xref:System.Windows.Forms.ProgressBar>.  
   
-2. V kódu nastavte <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost ovládacího prvku na celočíselnou hodnotu mezi minimální a maximální hodnotou, kterou jste nastavili.  
+2. V kódu nastavte vlastnost <xref:System.Windows.Forms.ProgressBar.Value%2A> ovládacího prvku na celočíselnou hodnotu mezi minimální a maximální hodnotou, kterou jste nastavili.  
   
     > [!NOTE]
-    > Pokud nastavíte <xref:System.Windows.Forms.ProgressBar.Value%2A> vlastnost mimo hranice zřízené <xref:System.Windows.Forms.ProgressBar.Minimum%2A> vlastnostmi a <xref:System.Windows.Forms.ProgressBar.Maximum%2A> , vyvolá <xref:System.ArgumentException> ovládací prvek výjimku.  
+    > Nastavíte-li vlastnost <xref:System.Windows.Forms.ProgressBar.Value%2A> mimo hranice stanovené vlastností <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a <xref:System.Windows.Forms.ProgressBar.Maximum%2A>, vyvolá ovládací prvek výjimku <xref:System.ArgumentException>.  
   
-     Následující příklad kódu ukazuje, jak nastavit <xref:System.Windows.Forms.ProgressBar> hodnotu přímo. Kód přečte záznamy ze zdroje dat a při každém čtení záznamu dat aktualizuje indikátor průběhu a popisek. Tento příklad vyžaduje <xref:System.Windows.Forms.Label> , aby formulář měl ovládací prvek <xref:System.Windows.Forms.ProgressBar> , ovládací prvek a tabulku dat, která má řádek s názvem `CustomerRow` `FirstName` a `LastName` pole.  
+     Následující příklad kódu ukazuje, jak nastavit hodnotu <xref:System.Windows.Forms.ProgressBar> přímo. Kód přečte záznamy ze zdroje dat a při každém čtení záznamu dat aktualizuje indikátor průběhu a popisek. Tento příklad vyžaduje, aby formulář měl ovládací prvek <xref:System.Windows.Forms.Label>, ovládací prvek <xref:System.Windows.Forms.ProgressBar> a tabulku dat s řádkem s názvem `CustomerRow` s poli `FirstName` a `LastName`.  
   
     ```vb  
     Public Sub CreateNewRecords()  
@@ -83,19 +83,19 @@ ms.locfileid: "69956081"
     }  
     ```  
   
-     Pokud zobrazujete průběh, který pokračuje pevným intervalem, můžete nastavit hodnotu a pak zavolat metodu, která zvýší <xref:System.Windows.Forms.ProgressBar> hodnotu ovládacího prvku o tento interval. To je užitečné pro časovače a další scénáře, kdy neměříte průběh jako procento celého celku.  
+     Pokud zobrazujete průběh, který pokračuje pevným intervalem, můžete nastavit hodnotu a pak zavolat metodu, která zvýší hodnotu <xref:System.Windows.Forms.ProgressBar> ovládacího prvku o tento interval. To je užitečné pro časovače a další scénáře, kdy neměříte průběh jako procento celého celku.  
   
 ### <a name="to-increase-the-progress-bar-by-a-fixed-value"></a>Postup zvýšení hodnoty indikátoru průběhu na pevnou hodnotu  
   
-1. <xref:System.Windows.Forms.ProgressBar> Nastavte ovládacíprvek<xref:System.Windows.Forms.ProgressBar.Maximum%2A>ahodnoty. <xref:System.Windows.Forms.ProgressBar.Minimum%2A>  
+1. Nastavte <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a hodnoty <xref:System.Windows.Forms.ProgressBar.Maximum%2A> ovládacího prvku <xref:System.Windows.Forms.ProgressBar>.  
   
-2. Nastavte <xref:System.Windows.Forms.ProgressBar.Step%2A> vlastnost ovládacího prvku na celé číslo představující množství pro zvýšení zobrazené hodnoty indikátoru průběhu.  
+2. Nastavte vlastnost <xref:System.Windows.Forms.ProgressBar.Step%2A> ovládacího prvku na celé číslo představující množství pro zvýšení zobrazené hodnoty indikátoru průběhu.  
   
-3. Zavolejte metodu pro změnu hodnoty zobrazené <xref:System.Windows.Forms.ProgressBar.Step%2A> v rámci nastaveného množství ve vlastnosti. <xref:System.Windows.Forms.ProgressBar.PerformStep%2A>  
+3. Zavolejte metodu <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> pro změnu hodnoty zobrazené v rámci nastaveného množství ve vlastnosti <xref:System.Windows.Forms.ProgressBar.Step%2A>.  
   
      Následující příklad kódu ukazuje, jak může indikátor průběhu udržovat počet souborů v operaci kopírování.  
   
-     V následujícím příkladu jsou jednotlivé soubory čteny do paměti, indikátor průběhu a popisek jsou aktualizovány tak, aby odrážely celkový počet čtených souborů. Tento příklad vyžaduje, aby formulář měl <xref:System.Windows.Forms.Label> ovládací prvek <xref:System.Windows.Forms.ProgressBar> a ovládací prvek.  
+     V následujícím příkladu jsou jednotlivé soubory čteny do paměti, indikátor průběhu a popisek jsou aktualizovány tak, aby odrážely celkový počet čtených souborů. Tento příklad vyžaduje, aby formulář měl ovládací prvek <xref:System.Windows.Forms.Label> a ovládací prvek <xref:System.Windows.Forms.ProgressBar>.  
   
     ```vb  
     Public Sub LoadFiles()  
@@ -153,13 +153,13 @@ ms.locfileid: "69956081"
   
 ### <a name="to-increase-the-progress-bar-by-a-dynamic-value"></a>Postup při zvýšení hodnoty indikátoru průběhu dynamickou hodnotou  
   
-1. <xref:System.Windows.Forms.ProgressBar> Nastavte ovládacíprvek<xref:System.Windows.Forms.ProgressBar.Maximum%2A>ahodnoty. <xref:System.Windows.Forms.ProgressBar.Minimum%2A>  
+1. Nastavte <xref:System.Windows.Forms.ProgressBar.Minimum%2A> a hodnoty <xref:System.Windows.Forms.ProgressBar.Maximum%2A> ovládacího prvku <xref:System.Windows.Forms.ProgressBar>.  
   
-2. <xref:System.Windows.Forms.ProgressBar.Increment%2A> Zavolejte metodu pro změnu hodnoty zobrazené podle celého čísla, které zadáte.  
+2. Zavolejte metodu <xref:System.Windows.Forms.ProgressBar.Increment%2A> pro změnu hodnoty zobrazené podle celého čísla, které zadáte.  
   
      Následující příklad kódu ukazuje, jak může indikátor průběhu vypočítat, kolik místa na disku bylo během operace kopírování použito.  
   
-     V následujícím příkladu se při zápisu jednotlivých souborů na pevný disk aktualizuje indikátor průběhu a popisek tak, aby odráželo množství dostupného místa na pevném disku. Tento příklad vyžaduje, aby formulář měl <xref:System.Windows.Forms.Label> ovládací prvek <xref:System.Windows.Forms.ProgressBar> a ovládací prvek.  
+     V následujícím příkladu se při zápisu jednotlivých souborů na pevný disk aktualizuje indikátor průběhu a popisek tak, aby odráželo množství dostupného místa na pevném disku. Tento příklad vyžaduje, aby formulář měl ovládací prvek <xref:System.Windows.Forms.Label> a ovládací prvek <xref:System.Windows.Forms.ProgressBar>.  
   
     ```vb  
     Public Sub ReadFiles()  

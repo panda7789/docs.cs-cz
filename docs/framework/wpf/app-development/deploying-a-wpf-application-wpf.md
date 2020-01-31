@@ -1,19 +1,20 @@
 ---
-title: Nasazení aplikace WPF (WPF)
+title: Nasazení aplikace
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: d67919ba38c2e306672966ddc2f62140ef92b638
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 9d4b7dd0464960441410d8ff2a196f0912354e5f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636299"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741941"
 ---
-# <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
-Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace WPF, závisí na typu aplikace. Toto téma poskytuje stručný přehled každé technologie nasazení a způsobu jejich použití ve spojení s požadavky nasazení každého typu aplikace WPF.  
+# <a name="deploy-a-wpf-application"></a>Nasazení aplikace WPF
+
+Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace WPF, závisí na typu aplikace. Toto téma poskytuje stručný přehled každé technologie nasazení a způsobu jejich použití ve spojení s požadavky nasazení každého typu aplikace WPF.
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologie nasazení  

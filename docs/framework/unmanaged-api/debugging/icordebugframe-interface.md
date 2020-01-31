@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0c48f764-3c64-4602-b2f4-4ffc60eb2c65
 topic_type:
 - apiref
-ms.openlocfilehash: 5aeea11b7e61869968aafe3425e27d6004f495ea
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ba138e79e0d6fb6f9c5e9c3efe3466f3c88cccae
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124064"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782620"
 ---
 # <a name="icordebugframe-interface"></a>ICorDebugFrame – rozhraní
 
@@ -29,14 +29,14 @@ Představuje snímek aktuálního zásobníku.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateStepper – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-createstepper-method.md)|Získá ICorDebugStepper, který provede operace krokování vzhledem k tomuto `ICorDebugFrame`.|  
-|[GetCallee – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcallee-method.md)|Získá ukazatel na `ICorDebugFrame` v aktuálním řetězu, který tento rámec volal, nebo vrátí hodnotu null, pokud se jedná o nejvnitřnější rámec v řetězci.|  
-|[GetCaller – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcaller-method.md)|Získá ukazatel na `ICorDebugFrame` v aktuálním řetězci, který volal tento rámec, nebo vrátí hodnotu null, pokud se jedná o nejvzdálenější rámec v řetězci.|  
-|[GetChain – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getchain-method.md)|Získá ukazatel na ICorDebugChain, který je součástí tohoto `ICorDebugFrame`.|  
-|[GetCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md)|Získá ukazatel na ICorDebugCode spojený s tímto rámcem zásobníku.|  
-|[GetFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getfunction-method.md)|Získá ukazatel na ICorDebugFunction, který obsahuje kód spojený s tímto rámcem zásobníku.|  
-|[GetFunctionToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getfunctiontoken-method.md)|Získá token metadat pro funkci, která obsahuje kód spojený s tímto rámcem zásobníku.|  
-|[GetStackRange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getstackrange-method.md)|Získá absolutní rozsah adres rámce zásobníku reprezentovaného tímto `ICorDebugFrame`.|  
+|[CreateStepper – metoda](icordebugframe-createstepper-method.md)|Získá ICorDebugStepper, který provede operace krokování vzhledem k tomuto `ICorDebugFrame`.|  
+|[GetCallee – metoda](icordebugframe-getcallee-method.md)|Získá ukazatel na `ICorDebugFrame` v aktuálním řetězu, který tento rámec volal, nebo vrátí hodnotu null, pokud se jedná o nejvnitřnější rámec v řetězci.|  
+|[GetCaller – metoda](icordebugframe-getcaller-method.md)|Získá ukazatel na `ICorDebugFrame` v aktuálním řetězci, který volal tento rámec, nebo vrátí hodnotu null, pokud se jedná o nejvzdálenější rámec v řetězci.|  
+|[GetChain – metoda](icordebugframe-getchain-method.md)|Získá ukazatel na ICorDebugChain, který je součástí tohoto `ICorDebugFrame`.|  
+|[GetCode – metoda](icordebugframe-getcode-method.md)|Získá ukazatel na ICorDebugCode spojený s tímto rámcem zásobníku.|  
+|[GetFunction – metoda](icordebugframe-getfunction-method.md)|Získá ukazatel na ICorDebugFunction, který obsahuje kód spojený s tímto rámcem zásobníku.|  
+|[GetFunctionToken – metoda](icordebugframe-getfunctiontoken-method.md)|Získá token metadat pro funkci, která obsahuje kód spojený s tímto rámcem zásobníku.|  
+|[GetStackRange – metoda](icordebugframe-getstackrange-method.md)|Získá absolutní rozsah adres rámce zásobníku reprezentovaného tímto `ICorDebugFrame`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -54,4 +54,4 @@ Představuje snímek aktuálního zásobníku.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

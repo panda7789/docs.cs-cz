@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Dědění v modelu Windows Forms'
+title: Dědičnost formulářů
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - inheritance [Windows Forms], forms
 - Windows Forms, inheritance
 ms.assetid: cb3e1c0f-3d2a-4cdc-b0d1-c92eae567ffb
-ms.openlocfilehash: 402386e16687162e25e16e5c30c787f7e721fbba
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: cc3a4cc75fd13e8f193a6920ed5b4a9bc8fd5d74
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306364"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743319"
 ---
-# <a name="how-to-inherit-windows-forms"></a>Postupy: Dědění v modelu Windows Forms
+# <a name="how-to-inherit-windows-forms"></a>Postupy: Dědění formulářů Windows
 
 Vytváření nových model Windows Forms děděním ze základních formulářů je praktický způsob, jak duplikovat vaše nejlepší úsilí, aniž byste museli projít celým procesem zcela znovu vytvořit formulář pokaždé, když ho budete potřebovat.
 
-Další informace o dědění formulářů v době návrhu pomocí dialogového okna **Výběr dědičnosti** a o tom, jak vizuálně odlišit úrovně zabezpečení u zděděných ovládacích prvků [, naleznete v tématu How to: Dědění formulářů pomocí dialogového okna](how-to-inherit-forms-using-the-inheritance-picker-dialog-box.md)Výběr dědičnosti.
+Další informace o dědění formulářů v době návrhu pomocí dialogového okna **Výběr dědičnosti** a o tom, jak vizuálně odlišit úrovně zabezpečení u zděděných ovládacích prvků, naleznete v tématu [How to: dědění Forms pomocí dialogového okna Výběr dědičnosti](how-to-inherit-forms-using-the-inheritance-picker-dialog-box.md).
 
 > [!NOTE]
 > Aby bylo možné dědit z formuláře, soubor nebo obor názvů obsahující tento formulář musí být integrovány do spustitelného souboru nebo knihovny DLL. Chcete-li sestavit projekt, v nabídce **sestavení** klikněte na příkaz **sestavit** . Také odkaz na obor názvů musí být přidán do třídy dědění formuláře.

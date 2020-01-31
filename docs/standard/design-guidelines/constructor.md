@@ -12,12 +12,12 @@ helpviewer_keywords:
 - parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
-ms.openlocfilehash: 823bc893c9384bb687e5f9a196abe497db14f4db
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7ab795cd4c6e0ff5e1451c05987848c41bd69577
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709475"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741734"
 ---
 # <a name="constructor-design"></a>Návrh konstruktoru
 
@@ -29,51 +29,51 @@ Konstruktory typů nemůžou mít žádné parametry. Konstruktory instancí mů
 
 Konstruktory představují nejpřirozený způsob, jak vytvořit instance typu. Většina vývojářů hledá a pokusí se použít konstruktor předtím, než uvažují alternativní způsoby vytváření instancí (například metody výroby).
 
-**✓ CONSIDER** poskytuje jednoduchý, v ideálním případě výchozí, konstruktory.
+✔️ Zvažte poskytování jednoduchých, ideálních, ideálních konstruktorů.
 
 Jednoduchý konstruktor má velmi malý počet parametrů a všechny parametry jsou primitivní nebo výčty. Takové jednoduché konstruktory zvyšují použitelnost rozhraní.
 
-**✓ CONSIDER** pomocí metody statické factory místo konstruktoru, pokud sémantiku požadovaná operace se nemapují přímo do vytváření nové instance, nebo pokud následující pokyny pro návrh konstruktor funguje nepřirozené.
+✔️ Zvažte použití statické metody Factory namísto konstruktoru, pokud sémantika požadované operace není mapována přímo na konstrukci nové instance, nebo pokud podle pokynů pro návrh konstruktoru nevidíte nepřirozeně.
 
-**✓ DO** použít konstruktor parametry jako zástupce pro nastavení hlavní vlastností.
+✔️ použít parametry konstruktoru jako zkratky pro nastavení hlavních vlastností.
 
 V sémantikě by neměl být žádný rozdíl mezi použitím prázdného konstruktoru následovanýho některými sadami vlastností a použitím konstruktoru s více argumenty.
 
-**✓ DO** používají stejný název pro konstruktor parametry a vlastnosti, pokud se parametry konstruktor používají se jednoduše nastavit vlastnost.
+✔️ použít stejný název pro parametry konstruktoru a vlastnost, pokud jsou parametry konstruktoru použity pro jednoduše nastavení vlastnosti.
 
 Jediný rozdíl mezi takovými parametry a vlastnostmi musí být velká a malá písmena.
 
-**✓ DO** minimálním úsilím v konstruktoru.
+✔️ UDĚLAT v konstruktoru minimální práci.
 
 Konstruktory by neměly dělat mnohem více práce než zachycení parametrů konstruktoru. Náklady na jakékoli jiné zpracování by měly být zpožděny, dokud není vyžadováno.
 
-**✓ DO** vyvolat výjimky z konstruktory instancí, podle potřeby.
+Pokud je to vhodné, ✔️ vyvolat výjimky z konstruktorů instance.
 
-**✓** Explicitně deklaruje veřejný konstruktor bez parametrů ve třídách, pokud je takový konstruktor požadován.
+✔️ explicitně deklarovat veřejný konstruktor bez parametrů ve třídách, pokud je takový konstruktor požadován.
 
 Pokud nedeklarujete explicitně žádné konstruktory typu, mnoho jazyků (například C#) bude automaticky přidávat veřejný konstruktor bez parametrů. (Abstraktní třídy získávají chráněný konstruktor.)
 
 Přidání parametrizovaného konstruktoru do třídy znemožní kompilátoru přidat konstruktor bez parametrů. To často způsobí nechtěné změny.
 
-**X Vyhněte se** explicitnímu definování konstruktorů bez parametrů u struktur.
+❌ se vyhnout explicitnímu definování konstruktorů bez parametrů u struktur.
 
 Díky tomu je vytvoření pole rychlejší, protože pokud konstruktor bez parametrů není definován, nemusí být spuštěn na všech slotech v poli. Všimněte si, že mnoho kompilátorů C#, včetně, neumožňuje strukturám mít z tohoto důvodu konstruktory bez parametrů.
 
-**X AVOID** volání virtuální členové objektu uvnitř jeho konstruktoru.
+❌ Vyhněte se volání virtuálních členů u objektu uvnitř jeho konstruktoru.
 
 Volání virtuálního členu způsobí volání nejvíce odvozeného přepsání, a to i v případě, že konstruktor nejvíce odvozeného typu nebyl dosud zcela spuštěn.
 
 ## <a name="type-constructor-guidelines"></a>Pokyny k konstruktoru typu
 
-**✓ DO** soukromá statické konstruktory.
+✔️ UDĚLAT statické konstruktory jako soukromé.
 
 Pro inicializaci typu se používá statický konstruktor, označovaný také jako konstruktor třídy. Modul CLR volá statický konstruktor před vytvořením první instance typu nebo se zavoláním všech statických členů tohoto typu. Uživatel nemá žádné řízení při volání statického konstruktoru. Pokud statický konstruktor není privátní, může být volán jiným kódem než CLR. V závislosti na operacích provedených v konstruktoru to může způsobit neočekávané chování. C# Kompilátor vynutí, aby statické konstruktory byly privátní.
 
-**X DO NOT** generování výjimek ze statické konstruktory.
+❌ nevyvolávat výjimky ze statických konstruktorů.
 
 Je-li výjimka vyvolána z konstruktoru typu, nelze typ použít v aktuální doméně aplikace.
 
-**✓ CONSIDER** inicializace statického pole vloženě než explicitně pomocí statické konstruktory, protože modul runtime je schopen optimalizovat výkon typy, které nemají explicitně definovaných statického konstruktoru.
+✔️ Zvažte inicializaci statických polí namísto explicitního použití statických konstruktorů, protože modul runtime může optimalizovat výkon typů, které nemají explicitně definovaný statický konstruktor.
 
 *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 

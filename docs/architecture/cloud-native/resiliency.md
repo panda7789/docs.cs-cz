@@ -2,12 +2,12 @@
 title: Odolnost nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Nativní odolnost cloudu
 ms.date: 06/30/2019
-ms.openlocfilehash: 680542abc5d8c43c577321d5ae834f0a13290da3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 427405d95534c4467ab519c2188fe88e2f18e2b2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184839"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781088"
 ---
 # <a name="cloud-native-resiliency"></a>Odolnost nativní pro cloud
 
@@ -41,5 +41,5 @@ V malém distribuovaném systému bude selhání méně časté, ale při horizo
 Proto musí být vaše aplikace a infrastruktura odolné. V následujících částech si probereme techniky obrannou linií, které můžete přidat do své aplikace a integrované funkce cloudu, které vám pomůžou s odrážkami v uživatelském prostředí.
 
 >[!div class="step-by-step"]
->[Předchozí](azure-data-storage.md)
+>[Předchozí](elastic-search-in-azure.md)
 >[Další](application-resiliency-patterns.md)

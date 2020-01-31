@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0121753f-ebea-48d0-aeb2-ed7fda76dc60
 topic_type:
 - apiref
-ms.openlocfilehash: 3a1c4a931a61186c4737aada47ceb861e7848e7b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c25f26bb0f1f34e3799bab4bec7e697d393cccb4
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122834"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784518"
 ---
 # <a name="icordebugblockingobjectenumnext-method"></a>ICorDebugBlockingObjectEnum::Next – metoda
-Získá zadaný počet objektů [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) z výčtu počínaje aktuální pozicí.  
+Získá zadaný počet objektů [CorDebugBlockingObject –](cordebugblockingobject-structure.md) z výčtu počínaje aktuální pozicí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ HRESULT Next([in] ULONG  celt,
  pro Počet objektů, které se mají načíst.  
   
  `values`  
- mimo Pole ukazatelů na [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) objekty.  
+ mimo Pole ukazatelů na [CorDebugBlockingObject –](cordebugblockingobject-structure.md) objekty.  
   
  `pceltFetched`  
  mimo Ukazatel na počet objektů, které byly načteny.  
@@ -58,7 +58,7 @@ HRESULT Next([in] ULONG  celt,
  Hodnoty vstupního pole musí mít velikost alespoň `celt`. Pole bude vyplněno buď další `celt` hodnoty ve výčtu, nebo všechny zbývající hodnoty, pokud méně než `celt` zůstane. Když se tato metoda vrátí, `pceltFetched` vyplní počet hodnot, které se načetly. Pokud `values` obsahuje neplatné ukazatele nebo odkazuje na vyrovnávací paměť, která je menší než `celt`, nebo pokud je `pceltFetched` neplatný ukazatel, výsledek není definován.  
   
 > [!NOTE]
-> I když struktura [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) nemusí být uvolněna, je nutné uvolnit rozhraní "ICorDebugValue" uvnitř této struktury.  
+> I když struktura [CorDebugBlockingObject –](cordebugblockingobject-structure.md) nemusí být uvolněna, je nutné uvolnit rozhraní "ICorDebugValue" uvnitř této struktury.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -71,6 +71,6 @@ HRESULT Next([in] ULONG  celt,
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget – rozhraní](icordebugdatatarget-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7263f9a9-4c0b-4d82-a181-288873fb2b18
 topic_type:
 - apiref
-ms.openlocfilehash: 4558074bc23334bd697461a00ccb31db3e3fe397
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d60644d54373dfb3d1d191900df71d3e5f6547a6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130596"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788297"
 ---
 # <a name="icordebugmanagedcallback2changeconnection-method"></a>ICorDebugManagedCallback2::ChangeConnection – metoda
 Oznamuje ladicímu programu, že se změnila sada úloh přidružených k zadanému připojení.  
@@ -44,7 +44,7 @@ HRESULT ChangeConnection (
 ## <a name="remarks"></a>Poznámky  
  Zpětné volání `ChangeConnection` se spustí v jednom z následujících případů:  
   
-- Když se ladicí program připojí k procesu, který obsahuje připojení. V tomto případě modul runtime vygeneruje a odešle událost [ICorDebugManagedCallback2:: CreateConnection](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-createconnection-method.md) a událost `ChangeConnection` pro každé připojení v procesu. Událost `ChangeConnection` se vygeneruje pro každé existující připojení, bez ohledu na to, jestli se od jejího vytvoření změnila sada úkolů daného připojení.  
+- Když se ladicí program připojí k procesu, který obsahuje připojení. V tomto případě modul runtime vygeneruje a odešle událost [ICorDebugManagedCallback2:: CreateConnection](icordebugmanagedcallback2-createconnection-method.md) a událost `ChangeConnection` pro každé připojení v procesu. Událost `ChangeConnection` se vygeneruje pro každé existující připojení, bez ohledu na to, jestli se od jejího vytvoření změnila sada úkolů daného připojení.  
   
 - Když hostitel volá [ICLRDebugManager:: SetConnectionTasks –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setconnectiontasks-method.md) v [rozhraní API hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).  
   
@@ -61,5 +61,5 @@ HRESULT ChangeConnection (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

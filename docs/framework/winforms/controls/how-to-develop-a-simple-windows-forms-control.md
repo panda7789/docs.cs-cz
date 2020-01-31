@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms'
+title: Vývoj jednoduchého ovládacího prvku
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating simple controls using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 86cbe435-45b7-4cb4-9b5a-47418369758d
-ms.openlocfilehash: a190d86f5ebe258427ac4a73c16c7f271462b69c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5383cee5358dbd260fc6c023d3db607da6b10ea4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753235"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742254"
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms
 
-Tato část vás provede základní kroky pro vytváření vlastního ovládacího prvku Windows Forms. Jednoduché ovládací prvek vytvořili v tomto návodu umožňuje zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost změnit. Nelze vyvolat nebo zpracování událostí.
+V této části se seznámíte se základními kroky při vytváření vlastního ovládacího prvku model Windows Forms. Jednoduchý ovládací prvek vyvinutý v tomto návodu umožňuje změnit zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastností. Nevyvolává ani nezpracovává události.
 
-### <a name="to-create-a-simple-custom-control"></a>Chcete-li vytvořit jednoduché vlastního ovládacího prvku
+### <a name="to-create-a-simple-custom-control"></a>Vytvoření jednoduchého vlastního ovládacího prvku
 
 1. Definujte třídu, která je odvozena z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.
 
@@ -35,30 +35,30 @@ Tato část vás provede základní kroky pro vytváření vlastního ovládací
     public class FirstControl:Control {}
     ```
 
-2. Definujte vlastnosti. (Není nutné definovat vlastnosti, protože dědí mnoho vlastnosti z ovládacího prvku <xref:System.Windows.Forms.Control> třídy, ale většina vlastních ovládacích prvků obecně definovat další vlastnosti.) Následující fragment kódu definuje vlastnost s názvem `TextAlignment` , který `FirstControl` používá k formátování zobrazení <xref:System.Windows.Forms.Control.Text%2A> dědí vlastnosti z <xref:System.Windows.Forms.Control>. Další informace o definování vlastností najdete v tématu [přehled vlastností](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v%3dvs.120)).
+2. Definujte vlastnosti. (Nemusíte definovat vlastnosti, protože ovládací prvek dědí mnoho vlastností z <xref:System.Windows.Forms.Control> třídy, ale většina vlastních ovládacích prvků obecně definuje další vlastnosti.) Následující fragment kódu definuje vlastnost s názvem `TextAlignment`, kterou `FirstControl` používá k formátování zobrazení vlastnosti <xref:System.Windows.Forms.Control.Text%2A> zděděné ze <xref:System.Windows.Forms.Control>. Další informace o definování vlastností najdete v tématu [Přehled vlastností](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v%3dvs.120)).
 
      [!code-csharp[System.Windows.Forms.FirstControl#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#3)]
      [!code-vb[System.Windows.Forms.FirstControl#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#3)]
 
-     Když nastavíte vlastnost, která změní visual zobrazení ovládacího prvku, je nutné vyvolat <xref:System.Windows.Forms.Control.Invalidate%2A> metoda překreslení ovládacího prvku. <xref:System.Windows.Forms.Control.Invalidate%2A> je definován v základní třídě <xref:System.Windows.Forms.Control>.
+     Když nastavíte vlastnost, která změní vizuální zobrazení ovládacího prvku, je nutné vyvolat metodu <xref:System.Windows.Forms.Control.Invalidate%2A> pro překreslení ovládacího prvku. <xref:System.Windows.Forms.Control.Invalidate%2A> je definována v základní třídě <xref:System.Windows.Forms.Control>.
 
-3. Přepsat chráněnou <xref:System.Windows.Forms.Control.OnPaint%2A> metody zděděné z <xref:System.Windows.Forms.Control> k poskytování logiky vykreslování do ovládacího prvku. Pokud jste nesmí být přepsána <xref:System.Windows.Forms.Control.OnPaint%2A>, nebude možné vykreslit ovládací prvek. V následující fragment kódu <xref:System.Windows.Forms.Control.OnPaint%2A> metoda zobrazí <xref:System.Windows.Forms.Control.Text%2A> dědí vlastnosti z <xref:System.Windows.Forms.Control> se zarovnáním určené `alignmentValue` pole.
+3. Přepsat chráněnou <xref:System.Windows.Forms.Control.OnPaint%2A> metodu zděděnou z <xref:System.Windows.Forms.Control> a poskytnout tak pro svůj ovládací prvek logiku vykreslování. Pokud nepřepisujete <xref:System.Windows.Forms.Control.OnPaint%2A>, ovládací prvek nebude moci nakreslit sám sebe. V následujícím fragmentu kódu <xref:System.Windows.Forms.Control.OnPaint%2A> Metoda zobrazuje vlastnost <xref:System.Windows.Forms.Control.Text%2A> zděděná z <xref:System.Windows.Forms.Control> s zarovnáním zadaným v poli `alignmentValue`.
 
      [!code-csharp[System.Windows.Forms.FirstControl#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#4)]
      [!code-vb[System.Windows.Forms.FirstControl#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#4)]
 
-4. Zadejte atributy pro ovládací prvek. Atributy umožňují vizuálního návrháře pro zobrazení ovládacího prvku a jeho vlastnosti a události odpovídajícím způsobem v době návrhu. Následující fragment kódu se vztahuje atributů, které mají `TextAlignment` vlastnost. V návrháři, jako je Visual Studio <xref:System.ComponentModel.CategoryAttribute.Category%2A> atribut (viz část kódu) způsobí, že vlastnost má být zobrazen v rámci logických kategorií. <xref:System.ComponentModel.DescriptionAttribute.Description%2A> Atribut způsobí, že popisný řetězec, který se zobrazí v dolní části **vlastnosti** okno při `TextAlignment` vybrána vlastnost. Další informace o atributech najdete v tématu [atributy doby návrhu pro komponenty](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120)).
+4. Zadejte atributy pro svůj ovládací prvek. Atributy umožňují vizuálnímu návrháři zobrazit ovládací prvek a jeho vlastnosti a události odpovídajícím způsobem v době návrhu. Následující fragment kódu používá atributy na vlastnost `TextAlignment`. V návrháři, jako je například Visual Studio, atribut <xref:System.ComponentModel.CategoryAttribute.Category%2A> (zobrazený v fragmentu kódu) způsobí, že se vlastnost zobrazí v rámci logické kategorie. Atribut <xref:System.ComponentModel.DescriptionAttribute.Description%2A> způsobí, že se popisný řetězec zobrazí v dolní části okna **vlastnosti** , když je vybrána vlastnost `TextAlignment`. Další informace o atributech naleznete v tématu [atributy doby návrhu pro součásti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120)).
 
      [!code-csharp[System.Windows.Forms.FirstControl#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#5)]
      [!code-vb[System.Windows.Forms.FirstControl#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#5)]
 
-5. (volitelné) Poskytněte zdroje informací pro ovládací prvek. Prostředek, jako je například rastrový obrázek, můžete zadat pro ovládací prvek pomocí možnosti kompilátoru (`/res` pro jazyk C#) pro balíček prostředků pomocí ovládacího prvku. V době běhu, prostředek se dá načíst pomocí metody <xref:System.Resources.ResourceManager> třídy. Další informace o vytváření a používání prostředků najdete v článku [prostředky v desktopových aplikací](../../resources/index.md).
+5. volitelné Poskytněte prostředky pro váš ovládací prvek. Můžete poskytnout prostředek, jako je rastrový obrázek, pro váš ovládací prvek pomocí možnosti kompilátoru (`/res` pro C#) k balíčku prostředků s vaším ovládacím prvkem. V době spuštění lze prostředek načíst pomocí metod třídy <xref:System.Resources.ResourceManager>. Další informace o vytváření a používání prostředků najdete v tématu [prostředky v aplikacích klasické pracovní plochy](../../resources/index.md).
 
-6. Zkompilujte a nasaďte svůj ovládací prvek. Ke kompilaci a nasazení `FirstControl,` proveďte následující kroky:
+6. Zkompilujte a nasaďte svůj ovládací prvek. Pro zkompilování a nasazení `FirstControl,` proveďte následující kroky:
 
-    1. Uložte kód v následujícím příkladu do zdrojového souboru (například FirstControl.cs nebo FirstControl.vb).
+    1. Uložte kód v následující ukázce do zdrojového souboru (například FirstControl.cs nebo FirstControl. vb).
 
-    2. Zdrojový kód zkompilovat do sestavení a uložte ho v adresáři vaší aplikace. K tomu, že spustíte následující příkaz z adresáře, který obsahuje zdrojový soubor.
+    2. Zkompilujte zdrojový kód do sestavení a uložte ho do adresáře vaší aplikace. Chcete-li to provést, spusťte následující příkaz z adresáře, který obsahuje zdrojový soubor.
 
         ```console
         vbc -t:library -out:[path to your application's directory]/CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll FirstControl.vb
@@ -68,22 +68,22 @@ Tato část vás provede základní kroky pro vytváření vlastního ovládací
         csc -t:library -out:[path to your application's directory]/CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll FirstControl.cs
         ```
 
-         `/t:library` – Možnost kompilátoru instruuje kompilátor, že je sestavení při vytváření knihovny (a ne spustitelného souboru). `/out` Možnost určuje cestu a název sestavení. `/r` Možnost poskytuje název sestavení, na které odkazuje váš kód. V tomto příkladu vytvoříte privátní sestavení, které můžete použít jenom vaše aplikace. Proto budete muset uložit v adresáři vaší aplikace. Další informace o vytváření balíčků a nasazení ovládacího prvku pro distribuci, naleznete v tématu [nasazení](../../deployment/index.md).
+         Možnost kompilátoru `/t:library` instruuje kompilátor, že sestavení, které vytváříte, je knihovna (a ne spustitelný soubor). Možnost `/out` Určuje cestu a název sestavení. Možnost`/r` poskytuje název sestavení, na které odkazuje váš kód. V tomto příkladu vytvoříte soukromé sestavení, které může používat pouze vaše aplikace. Proto je nutné jej uložit v adresáři aplikace. Další informace o balení a nasazení ovládacího prvku pro distribuci najdete v tématu [nasazení](../../deployment/index.md).
 
-Následující příklad ukazuje kód pro `FirstControl`. Ovládací prvek je uzavřena v oboru názvů `CustomWinControls`. Obor názvů poskytuje logické seskupení souvisejících typů. Můžete vytvořit ovládací prvek v nové nebo existující obor názvů. V jazyce C# `using` deklarace (v jazyce Visual Basic `Imports`) umožňuje typů přístupný z oboru názvů bez použití plně kvalifikovaný název typu. V následujícím příkladu `using` deklarace umožňuje kódu ke třídě přistupovat <xref:System.Windows.Forms.Control> z <xref:System.Windows.Forms?displayProperty=nameWithType> stručně <xref:System.Windows.Forms.Control> místo nutnosti použít plně kvalifikovaný název <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.
+Následující příklad ukazuje kód pro `FirstControl`. Ovládací prvek je uzavřený v oboru názvů `CustomWinControls`. Obor názvů poskytuje logické seskupení souvisejících typů. Svůj ovládací prvek lze vytvořit v novém nebo existujícím oboru názvů. V C#, deklarace `using` (v Visual Basic, `Imports`) umožňuje k typům pøístup z oboru názvů bez použití plně kvalifikovaného názvu typu. V následujícím příkladu deklarace `using` umožňuje kódu přistupovat ke třídě <xref:System.Windows.Forms.Control> z <xref:System.Windows.Forms?displayProperty=nameWithType>, jako jednoduše <xref:System.Windows.Forms.Control> namísto použití plně kvalifikovaného názvu <xref:System.Windows.Forms.Control?displayProperty=nameWithType>.
 
 [!code-csharp[System.Windows.Forms.FirstControl#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#1)]
 [!code-vb[System.Windows.Forms.FirstControl#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#1)]
 
-## <a name="using-the-custom-control-on-a-form"></a>Použití vlastního ovládacího prvku ve formuláři
+## <a name="using-the-custom-control-on-a-form"></a>Používání vlastního ovládacího prvku na formuláři
 
-Následující příklad ukazuje jednoduchý formulář, který používá `FirstControl`. Vytvoří tři instance `FirstControl`, každý s jinou hodnotou `TextAlignment` vlastnost.
+Následující příklad ukazuje jednoduchý formulář, který používá `FirstControl`. Vytvoří tři instance `FirstControl`, každé s jinou hodnotou pro vlastnost `TextAlignment`.
 
-#### <a name="to-compile-and-run-this-sample"></a>Kompilace a spuštění této ukázky
+#### <a name="to-compile-and-run-this-sample"></a>Pro zkompilování a spuštění této ukázky
 
-1. Uložte kód v následujícím příkladu do zdrojového souboru (SimpleForm.cs nebo SimpleForms.vb).
+1. Uložte kód v následujícím příkladu do zdrojového souboru (SimpleForm.cs nebo SimpleForms. vb).
 
-2. Spuštěním následujícího příkazu z adresáře, který obsahuje zdrojový soubor Zkompilujte zdrojový kód do spustitelného souboru sestavení.
+2. Zkompilujte zdrojový kód do spustitelného sestavení spuštěním následujícího příkazu z adresáře, který obsahuje zdrojový soubor.
 
     ```console
     vbc -r:CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll SimpleForm.vb
@@ -93,9 +93,9 @@ Následující příklad ukazuje jednoduchý formulář, který používá `Firs
     csc -r:CustomWinControls.dll -r:System.dll -r:System.Windows.Forms.dll -r:System.Drawing.dll SimpleForm.cs
     ```
 
-     CustomWinControls.dll je sestavení, které obsahuje třídu `FirstControl`. Toto sestavení musí být ve stejném adresáři jako zdrojový soubor pro formulář k přístupu (SimpleForm.cs nebo SimpleForms.vb).
+     CustomWinControls. dll je sestavení, které obsahuje třídu `FirstControl`. Toto sestavení musí být ve stejném adresáři jako zdrojový soubor pro formulář, který k němu přistupuje (SimpleForm.cs nebo SimpleForms. vb).
 
-3. Spusťte SimpleForm.exe pomocí následujícího příkazu.
+3. Spusťte SimpleForm. exe pomocí následujícího příkazu.
 
     ```console
     SimpleForm

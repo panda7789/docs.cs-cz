@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 103c8502-81fe-40d7-9c1e-9008d8fb19e1
 topic_type:
 - apiref
-ms.openlocfilehash: cceafc8358ce2b0eafa62a3855c4eb1e96adae11
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cdf5776e1ac9907e63aba0e0d400e48aff683d51
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73113318"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785303"
 ---
 # <a name="iclrdatatargetsetthreadcontext-method"></a>ICLRDataTarget::SetThreadContext – metoda
 Nastaví aktuální kontext zadaného vlákna v cílovém procesu. Tato metoda je volána službou Common Language Runtime (CLR) pro přístup k datům.  
@@ -62,4 +62,4 @@ HRESULT SetThreadContext (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [ICLRDataTarget – rozhraní](iclrdatatarget-interface.md)

@@ -5,45 +5,45 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: 38f425e50b7981c17a96a78e1e28bafb2cf258fc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6392ea0f17596406a8671a039bd78777d9e11e42
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635127"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742644"
 ---
 # <a name="transport-security-with-windows-authentication"></a>Zabezpečení přenosu pomocí ověřování systému Windows
-Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečuje zabezpečení Windows. Další informace o programování naleznete v tématu [jak: Zabezpečení služby pomocí pověření Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
+V následujícím scénáři se zobrazuje klient a služba Windows Communication Foundation (WCF) zabezpečené zabezpečením systému Windows. Další informace o programování najdete v tématu [Postup: zabezpečení služby pomocí pověření systému Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
   
- Intranet webové služby zobrazí informace o lidských zdrojů. Klient je aplikace Windows Form. Aplikace je nasazená v doméně pomocí protokolu Kerberos řadiče domény zabezpečení.  
+ Intranetová webová služba zobrazuje informace o lidských zdrojích. Klient je aplikace formuláře Windows. Aplikace je nasazena v doméně s řadičem protokolu Kerberos zabezpečení domény.  
   
- ![Zabezpečení přenosu pomocí ověřování Windows](./media/transport-security-with-windows-authentication/secured-windows-authentication.gif)  
+ ![Zabezpečení přenosu s ověřováním systému Windows](./media/transport-security-with-windows-authentication/secured-windows-authentication.gif)  
   
-|Vlastnost|Popis|  
+|Charakteristiku|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Přenos|  
+|Režim zabezpečení|Přepravu|  
 |Interoperabilita|Pouze WCF|  
-|Ověření (Server)<br /><br /> Ověření (klient)|Ano (s použitím integrované ověřování Windows)<br /><br /> Ano (s použitím integrované ověřování Windows)|  
-|Integrita|Ano|  
-|Důvěrnost|Ano|  
-|Přenos|NET.TCP|  
+|Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí integrovaného ověřování systému Windows)<br /><br /> Ano (pomocí integrovaného ověřování systému Windows)|  
+|Způsobilost|Ano|  
+|Chovávat|Ano|  
+|Přepravu|NET.TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
   
-## <a name="service"></a>Služba  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+## <a name="service"></a>Service  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
   
-- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvořte službu pomocí zadané konfigurace, ale nedefinujte žádné koncové body.  
   
 ### <a name="code"></a>Kód  
- Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení Windows.  
+ Následující kód ukazuje, jak vytvořit koncový bod služby, který používá zabezpečení systému Windows.  
   
  [!code-csharp[C_SecurityScenarios#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#3)]
  [!code-vb[C_SecurityScenarios#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#3)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace lze namísto kódu k nastavení koncového bodu služby:  
+ K nastavení koncového bodu služby se dá použít následující konfigurace:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -74,23 +74,23 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 ```  
   
 ## <a name="client"></a>Klient  
- Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
+ Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
-- Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
+- Vytvořte samostatného klienta pomocí kódu (a kódu klienta).  
   
-- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Kód  
- Následující kód vytvoří klienta. Je vazba konfigurována pro použití režimu zabezpečení přenosu, s přenosu protokolu TCP s typu pověření klienta, nastavte na Windows.  
+ Následující kód vytvoří klienta. Vazba je nakonfigurovaná tak, aby používala zabezpečení transportního režimu s přenosem TCP s typem přihlašovacích údajů klienta nastaveným na Windows.  
   
  [!code-csharp[C_SecurityScenarios#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#4)]
  [!code-vb[C_SecurityScenarios#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#4)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace je použít místo kód pro vytvoření klienta.  
+ Následující konfiguraci lze použít místo kódu k vytvoření klienta.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -121,4 +121,4 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

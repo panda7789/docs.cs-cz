@@ -3,12 +3,12 @@ title: Komunikační infrastruktura Service Mesh
 description: Přečtěte si, jak technologie sítě sítě zefektivňují komunikaci mikroslužeb v cloudu.
 author: robvet
 ms.date: 09/10/2019
-ms.openlocfilehash: a9192bf9f5827d05b2453c796c72e11782f9f911
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 66bc69580cc56efe725683c16a047aeb07e7e840
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771029"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76780923"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Komunikační infrastruktura Service Mesh
 
@@ -36,7 +36,7 @@ Síť zajišťuje provoz, komunikaci a problémy se sítí na úrovni aplikace. 
 
 V kapitole 6 jsme podrobně na technologie sítě, včetně diskuzí o architektuře a dostupných Open Source implementací.
 
-## <a name="summary"></a>Souhrn
+## <a name="summary"></a>Přehled
 
 V této kapitole jsme probrali vzory komunikace v cloudu Native. Začali jsme zkoumat, jak klienti front-end komunikují s back-end mikroslužbami. Mluvili se na platformě rozhraní API Gateway a na komunikaci v reálném čase. Pak jsme si prohlédli, jak mikroslužby komunikují s jinými back-endové službami. Vyhledali jsme synchronní komunikaci HTTP i asynchronní zasílání zpráv napříč službami. Pokryli jsme gRPC, nadcházející technologii v cloudu Native World. Nakonec jsme zavedli novou a rychle se vyvíjející technologii, která může zjednodušit komunikaci mikroslužeb.
 
@@ -74,4 +74,4 @@ Dál jsme přešli na distribuovaná data v systémech nativních pro Cloud a na
 
 >[!div class="step-by-step"]
 >[Předchozí](rest-grpc.md)
->[Další](distributed-data.md)
+>[Další](Database-per-microservice.md)

@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6c394ad2721bcdd91fb750fe93c03f16ca9f799f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4285ed3c0488ea615ca89b0b771bf09c8c29b318
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714080"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739124"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -22,7 +22,7 @@ Pokud nejste obeznámeni se sadou nástrojů .NET Core CLI, přečtěte si [pře
 ## <a name="prerequisites"></a>Požadavky
 
 - [.NET Core SDK 3,1](https://dotnet.microsoft.com/download) nebo novější verze.
-- Textový editor nebo editor kódu podle vašeho výběru.
+- Textový editor nebo Editor kódu dle vašeho výběru.
 
 ## <a name="hello-console-app"></a>Hello, konzolová aplikace!
 
@@ -56,7 +56,7 @@ Podívejme se na stručný návod:
     
     Program se spustí `using System`, což znamená "přenést vše do oboru názvů `System` do rozsahu pro tento soubor". Obor názvů `System` obsahuje třídu `Console`.
     
-    Pak definujeme obor názvů s názvem `Hello`. Můžete to změnit na cokoli, co potřebujete. Třída s názvem `Program` je definována v rámci tohoto oboru názvů s metodou `Main`, která přebírá pole řetězců s názvem `args`. Toto pole obsahuje seznam argumentů předaných při spuštění programu. V takovém případě se toto pole nepoužívá a program jednoduše zapisuje text "Hello World!". „Hello, World!“. Později provedeme změny kódu, který tento argument využije.
+    Pak definujeme obor názvů s názvem `Hello`. Můžete to změnit na cokoli, co potřebujete. Třída s názvem `Program` je definována v rámci tohoto oboru názvů s metodou `Main`, která přebírá pole řetězců s názvem `args`. Toto pole obsahuje seznam argumentů předaných při spuštění programu. V takovém případě se toto pole nepoužívá a program jednoduše zapisuje text "Hello World!". do konzoly. Později provedeme změny kódu, který tento argument využije.
     
     `dotnet new` volá implicitně [dotnet Restore](../tools/dotnet-restore.md) . `dotnet restore` volání [NuGet](https://www.nuget.org/) (Správce balíčků .NET) pro obnovení stromu závislostí. NuGet analyzuje soubor *Hello. csproj* , stáhne závislosti definované v souboru (nebo je z mezipaměti v počítači převede) a zapíše soubor *obj/Project. assets. JSON* , který je nezbytný pro zkompilování a spuštění ukázky.
 
@@ -183,7 +183,7 @@ Hello World!
 Jak je uvedeno na začátku tohoto článku, byl společně s `Hello.dll`vytvořen spustitelný soubor specifický pro operační systém. V systému Windows to bude `Hello.exe`. v systému Linux nebo macOS by to bylo `hello`. S výše uvedeným příkladem je soubor pojmenován pomocí `Hello.exe` nebo `Hello`. Tento publikovaný spustitelný soubor můžete spustit přímo.
 
 ```console
-.\bin\Debug\netcoreapp3.1\Hello.exe
+.\bin\Debug\netcoreapp3.1\publish\Hello.exe
 
 Hello World!
 ```

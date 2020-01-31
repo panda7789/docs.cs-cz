@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: df5f05be-bed7-4f3c-bc89-dbb435d79a0b
 topic_type:
 - apiref
-ms.openlocfilehash: f8b216d370f7278f6d2a4beed5bab88afa666200
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9029d53872108bc1953fd22c584b6e01a6f3c7ab
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122204"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788859"
 ---
 # <a name="icordebugdatatarget-interface"></a>ICorDebugDataTarget – rozhraní
 Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétnímu cílovému procesu.  
@@ -28,9 +28,9 @@ Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétn
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetPlatform – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md)|Obsahuje informace o platformě, včetně architektury procesoru a operačního systému, na kterých je spuštěn cílový proces.|  
-|[ReadVirtual – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-readvirtual-method.md)|Načte blok souvislé paměti začínající na zadané adrese a vrátí ji do zadané vyrovnávací paměti.|  
-|[GetThreadContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getthreadcontext-method.md)|Vyžádá aktuální kontext vlákna pro zadané vlákno.|  
+|[GetPlatform – metoda](icordebugdatatarget-getplatform-method.md)|Obsahuje informace o platformě, včetně architektury procesoru a operačního systému, na kterých je spuštěn cílový proces.|  
+|[ReadVirtual – metoda](icordebugdatatarget-readvirtual-method.md)|Načte blok souvislé paměti začínající na zadané adrese a vrátí ji do zadané vyrovnávací paměti.|  
+|[GetThreadContext – metoda](icordebugdatatarget-getthreadcontext-method.md)|Vyžádá aktuální kontext vlákna pro zadané vlákno.|  
   
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugDataTarget` a jeho metody mají následující vlastnosti:  
@@ -43,7 +43,7 @@ Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétn
   
 - Implementace `ICorDebugDataTarget` musí vždycky vracet aktuální informace o cíli.  
   
- Při `ICorDebug*` rozhraních (a proto `ICorDebugDataTarget` metody) by se měl cílový proces zastavit a žádným způsobem beze změny. Pokud je cílem živý proces a jeho změny stavu, metoda [ICLRDebugging:: OpenVirtualProcess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) musí být znovu volána, aby poskytovala náhradní instanci ICorDebugProcess.  
+ Při `ICorDebug*` rozhraních (a proto `ICorDebugDataTarget` metody) by se měl cílový proces zastavit a žádným způsobem beze změny. Pokud je cílem živý proces a jeho změny stavu, metoda [ICLRDebugging:: OpenVirtualProcess –](iclrdebugging-openvirtualprocess-method.md) musí být znovu volána, aby poskytovala náhradní instanci ICorDebugProcess.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
@@ -59,5 +59,5 @@ Poskytuje rozhraní zpětného volání, které poskytuje přístup ke konkrétn
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: fa30deb16be323f059aa0ec12df08793598a6da2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: d3c91f594eedd2636cbf08285f0dee352bc4835a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738359"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777120"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -55,7 +55,7 @@ public class CatalogContext : DbContext
 }
 ```
 
-Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předávat tento argument základnímu konstruktoru DbContext. Všimněte si, že pokud máte ve své aplikaci pouze jeden DbContext, můžete předat instanci DbContextOptions, ale pokud máte více než jednu, musíte použít > typu Generic DbContextOptions\<T a předat jako obecný parametr typ DbContext.
+Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předávat tento argument základnímu konstruktoru DbContext. Máte-li ve své aplikaci pouze jeden DbContext, můžete předat instanci DbContextOptions, ale pokud máte více než jeden, musíte použít > typu Generic DbContextOptions\<T a předat jako obecný parametr typ DbContext.
 
 ### <a name="configuring-ef-core"></a>Konfigurace EF Core
 
@@ -127,7 +127,7 @@ var brandsWithItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Můžete zahrnout více relací a můžete také zahrnout dílčí relace pomocí ThenInclude. EF Core spustí jeden dotaz, který načte výslednou sadu entit. Alternativně můžete zahrnout navigační vlastnosti navigačních vlastností předáním ".". -řetězec oddělený řetězcem metody rozšíření `.Include()`, například:
+Můžete zahrnout více relací a můžete také zahrnout podrelace pomocí ThenInclude. EF Core spustí jeden dotaz, který načte výslednou sadu entit. Alternativně můžete zahrnout navigační vlastnosti navigačních vlastností předáním ".". -řetězec oddělený řetězcem metody rozšíření `.Include()`, například:
 
 ```csharp
     .Include(“Items.Products”)
@@ -180,7 +180,7 @@ public class Basket : BaseEntity
 }
 ```
 
-Všimněte si, že tento typ entity nevystavuje vlastnost Public `List` nebo `ICollection`, ale místo toho zpřístupňuje typ `IReadOnlyCollection`, který zabalí základní typ seznamu. Při použití tohoto modelu můžete určit, že se má Entity Framework Core použít pole pro zálohování, například:
+Tento typ entity nevystavuje vlastnost Public `List` nebo `ICollection`, ale místo toho zpřístupňuje typ `IReadOnlyCollection`, který zabalí základní typ seznamu. Při použití tohoto modelu můžete určit, že se má Entity Framework Core použít pole pro zálohování, například:
 
 ```csharp
 private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
@@ -236,11 +236,11 @@ public class Startup
 
 #### <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie provádění a explicitní transakce pomocí BeginTransaction a více DbContexts
 
-Když jsou v EF Core připojení povolené opakované pokusy, každá operace, kterou provedete pomocí EF Core, se stal svou vlastní operací vyvolaly. Každý dotaz a každé volání metody SaveChanges se bude opakovat jako jednotka, pokud dojde k přechodnému selhání.
+Když jsou v EF Core připojení povolené opakované pokusy, každá operace, kterou provádíte pomocí EF Core, se stal svou vlastní opakovanou operací. Každý dotaz a každé volání metody SaveChanges se bude opakovat jako jednotka, pokud dojde k přechodnému selhání.
 
 Nicméně pokud váš kód inicializuje transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je třeba považovat za jednotku. vše uvnitř transakce se musí vrátit zpátky, pokud dojde k selhání. Pokud se pokusíte provést tuto transakci při použití strategie provádění EF (opakování zásad) a zahrnete do něj několik DbContexts, zobrazí se výjimka podobná následující.
 
-System. InvalidOperationException: nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
+System. InvalidOperationException: nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako opakované jednotky použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
 
 Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Následující kód ukazuje, jak implementovat tento přístup:
 
@@ -271,11 +271,11 @@ První DbContext je \_catalogContext a druhá DbContext je v objektu \_integrati
 
 > ### <a name="references--entity-framework-core"></a>Odkazy – Entity Framework Core
 >
-> - **EF Core docs**  
+> - **EF Core Docs**
 >   <https://docs.microsoft.com/ef/>
-> - **EF Core: související data**  
->   <https://docs.microsoft.com/ef/core/querying/related-data>
-> - **Vyhněte se entitám opožděného načítání v aplikacích ASPNET**  
+> - **EF Core: související
+>   dat** <https://docs.microsoft.com/ef/core/querying/related-data>
+> - **Vyhněte se entitám opožděného načítání v aplikacích ASPNET**
 >   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
 ## <a name="ef-core-or-micro-orm"></a>EF Core nebo mikroorm?
@@ -326,13 +326,13 @@ var data = connection.Query<Post, User, Post>(sql,
 (post, user) => { post.Owner = user; return post;});
 ```
 
-Vzhledem k tomu, že nabízí méně zapouzdření, Dapperem vyžaduje, aby si vývojáři dozvěděli více o tom, jak jsou jejich data uložená, jak je efektivně dotazovat, a zapsali další kód pro jeho načtení. Při změně modelu místo pouhého vytvoření nové migrace (jiné funkce EF Core) a aktualizace informací o mapování na jednom místě v DbContext musí být všechny ovlivněné dotazy aktualizované. Tyto dotazy neposkytují žádné záruky při kompilaci, takže se můžou za běhu poškodit v reakci na změny modelu nebo databáze. díky tomu se chyby detekuje rychleji. V systému Exchange pro tyto kompromisy nabízí Dapperem extrémně vysoký výkon.
+Vzhledem k tomu, že nabízí méně zapouzdření, Dapperem vyžaduje, aby si vývojáři dozvěděli více o tom, jak jsou jejich data uložená, jak je efektivně dotazovat, a zapsali další kód pro jeho načtení. Při změně modelu místo pouhého vytvoření nové migrace (jiné funkce EF Core) a aktualizace informací o mapování na jednom místě v DbContext musí být všechny ovlivněné dotazy aktualizované. Tyto dotazy nemají žádné záruky v době kompilace, takže můžou v reakci na změny modelu nebo databáze přerušit za běhu. díky tomu je obtížné detekovat chyby rychleji. V systému Exchange pro tyto kompromisy nabízí Dapperem extrémně vysoký výkon.
 
 Pro většinu aplikací a pro většinu částí téměř všech aplikací nabízí EF Core přijatelný výkon. Proto se přínosy pro produktivitu vývojářů můžou snížit na výkon. V případě dotazů, které mohou využívat ukládání do mezipaměti, může být samotný dotaz proveden pouze v malém procentu času, což vede k poměrně malým rozdílům ve výkonu dotazů moot.
 
 ## <a name="sql-or-nosql"></a>SQL nebo NoSQL
 
-Tradičně jsou relační databáze, jako je SQL Server, na webu Marketplace pro trvalé úložiště dat, ale nejedná se o jediné dostupné řešení. Databáze NoSQL, jako je [MongoDB](https://www.mongodb.com/what-is-mongodb) , nabízejí odlišný přístup k ukládání objektů. Místo mapování objektů na tabulky a řádky je další možností serializace celého grafu objektů a uložení výsledku. Nejnižšími výhodami tohoto přístupu je jednoduchost a výkon. Je velmi jednodušší uložit jeden serializovaný objekt s klíčem, než aby bylo možné objekt rozložit na mnoho tabulek se vztahy a aktualizacemi a řádky, které se mohly změnit od posledního načtení objektu z databáze. Podobně načítání a deserializace jednoho objektu z úložiště založeného na klíčích je obvykle mnohem rychlejší a jednodušší než složitá spojení nebo více databázových dotazů, které jsou nutné k úplnému vytvoření stejného objektu z relační databáze. Chybějící zámky, transakce nebo pevné schéma také usnadňují NoSQL databází snadněji škálování napříč mnoha počítači a podporují velmi velké datové sady.
+Tradičně jsou relační databáze, jako je SQL Server, na webu Marketplace pro trvalé úložiště dat, ale nejedná se o jediné dostupné řešení. Databáze NoSQL, jako je [MongoDB](https://www.mongodb.com/what-is-mongodb) , nabízejí odlišný přístup k ukládání objektů. Místo mapování objektů na tabulky a řádky je další možností serializace celého grafu objektů a uložení výsledku. Nejnižšími výhodami tohoto přístupu je jednoduchost a výkon. Je jednodušší uložit jeden serializovaný objekt s klíčem, než aby bylo možné objekt rozložit na mnoho tabulek se vztahy a aktualizacemi a řádky, které se mohly změnit od posledního načtení objektu z databáze. Podobně načítání a deserializace jednoho objektu z úložiště založeného na klíčích je obvykle mnohem rychlejší a jednodušší než složitá spojení nebo více databázových dotazů, které jsou nutné k úplnému vytvoření stejného objektu z relační databáze. Chybějící zámky nebo transakce nebo pevné schéma také zpřístupňuje NoSQL databází snadněji škálování napříč mnoha počítači a podporují velmi velké datové sady.
 
 Na druhé straně databáze NoSQL (jak jsou obvykle volány) mají své nevýhody. Relační databáze používají normalizaci k vymáhání konzistence a vyhnout se duplikaci dat. Tím se zmenší celková velikost databáze a zajistí, že aktualizace sdílených dat budou k dispozici okamžitě v rámci databáze. V relační databázi může tabulka adres odkazovat na tabulku zemí podle ID, takže pokud se změnil název země nebo oblasti, budou se záznamy adres těžit z této aktualizace, aniž by bylo nutné je aktualizovat. V databázi NoSQL se ale adresa a přidružená země můžou serializovat jako součást mnoha uložených objektů. Aktualizace názvu země nebo oblasti by vyžadovala aktualizaci všech takových objektů, nikoli jednoho řádku. Relační databáze mohou také zajistit relační integritu vynucením pravidel, jako jsou cizí klíče. Databáze NoSQL obvykle nenabízejí taková omezení pro svá data.
 
@@ -354,8 +354,7 @@ Dotazovací jazyk Azure Cosmos DB je jednoduché, ale výkonné rozhraní pro do
 
 **Odkazy – Azure Cosmos DB**
 
-- Azure Cosmos DB Úvod  
-  <https://docs.microsoft.com/azure/cosmos-db/introduction>
+- Azure Cosmos DB Úvod <https://docs.microsoft.com/azure/cosmos-db/introduction>
 
 ## <a name="other-persistence-options"></a>Další možnosti trvalosti
 
@@ -371,8 +370,7 @@ Kromě možností relačního a NoSQL úložiště mohou aplikace ASP.NET Core p
 
 **Odkazy – Azure Storage**
 
-- Azure Storage Úvod  
-  <https://docs.microsoft.com/azure/storage/storage-introduction>
+- Azure Storage Úvod <https://docs.microsoft.com/azure/storage/storage-introduction>
 
 ## <a name="caching"></a>Ukládání do mezipaměti
 
@@ -484,9 +482,9 @@ services.AddScoped<ICatalogService, CachedCatalogService>();
 services.AddScoped<CatalogService>();
 ```
 
-V takovém případě se databáze volá do načtení dat katalogu pouze jednou za minutu, nikoli u všech požadavků. V závislosti na provozu na lokalitu může to mít velký dopad na počet dotazů provedených v databázi a na průměrnou dobu načítání stránky pro domovskou stránku, která v současné době závisí na všech třech dotazech vystavených touto službou.
+V takovém případě se databáze volá do načtení dat katalogu pouze jednou za minutu, nikoli u všech požadavků. V závislosti na provozu na lokalitu to může mít výrazný vliv na počet dotazů provedených v databázi a na průměrnou dobu načítání stránky pro domovskou stránku, která v současné době závisí na všech třech dotazech vystavených touto službou.
 
-K problému, který nastane při implementaci ukládání do mezipaměti, je _zastaralá data_ – to znamená, že data, která se změnila ve zdroji, ale zastaralá verze zůstávají v mezipaměti. Jednoduchým způsobem, jak tento problém zmírnit, je použití malých mezipamětí, protože u zaneprázdněné aplikace je k rozšíření dat délky v mezipaměti omezená další výhoda. Představte si například stránku, která vytváří jeden databázový dotaz a je požadována desetkrát za sekundu. Pokud se tato stránka ukládá do mezipaměti po dobu jedné minuty, bude se počet dotazů databáze za minutu odpustit z 600 na 1, což snižuje 99,8%. Pokud místo toho jste udělali dobu trvání mezipaměti, celkové snížení by bylo 99,997%, ale teď je pravděpodobnost výrazně větší i potenciální stáří zastaralých dat.
+K problému, který nastane při implementaci ukládání do mezipaměti, je _zastaralá data_ – to znamená, že data, která se změnila ve zdroji, ale zastaralá verze, zůstanou v mezipaměti. Jednoduchým způsobem, jak tento problém zmírnit, je použití malých mezipamětí, protože u zaneprázdněné aplikace je k rozšíření dat délky v mezipaměti omezená další výhoda. Představte si například stránku, která vytváří jeden databázový dotaz a je požadována desetkrát za sekundu. Pokud se tato stránka ukládá do mezipaměti po dobu jedné minuty, bude se počet dotazů databáze za minutu odpustit z 600 na 1, což snižuje 99,8%. Pokud místo toho jste udělali dobu trvání mezipaměti, celkové snížení by bylo 99,997%, ale teď je pravděpodobnost výrazně větší i potenciální stáří zastaralých dat.
 
 Další možností je proaktivně odebrat položky mezipaměti, když jsou data, která obsahují, aktualizována. Jednotlivé položky lze odebrat, pokud je její klíč znám:
 

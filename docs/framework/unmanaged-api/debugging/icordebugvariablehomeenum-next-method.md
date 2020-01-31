@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: eb9ea96c-5b58-4655-8104-094fc8b393b8
 topic_type:
 - apiref
-ms.openlocfilehash: 9c2c16789fb61099c9b7c58154810739d225af1f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2bb6fee00bb99555bc19f35e1250880cc3985f7f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121924"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790931"
 ---
 # <a name="icordebugvariablehomeenumnext-method"></a>ICorDebugVariableHomeEnum:: Next – metoda
-Získá zadaný počet instancí [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) , které obsahují informace o místních proměnných a argumentech ve funkci.  
+Získá zadaný počet instancí [ICorDebugVariableHome](icordebugvariablehome-interface.md) , které obsahují informace o místních proměnných a argumentech ve funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ HRESULT Next(
  pro Počet objektů, které mají být načteny.  
   
  `homes`  
- Pole ukazatelů, z nichž každý odkazuje na objekt [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) , který poskytuje informace o lokální proměnné nebo argumentu funkce.  
+ Pole ukazatelů, z nichž každý odkazuje na objekt [ICorDebugVariableHome](icordebugvariablehome-interface.md) , který poskytuje informace o lokální proměnné nebo argumentu funkce.  
   
  `pceltFetched`  
  mimo Počet instancí skutečně vrácených v objektech.  
@@ -54,7 +54,7 @@ HRESULT Next(
 |`S_FALSE`|Skutečný počet načtených instancí, jak se odráží v `pceltFetched`, je menší než počet požadovaných instancí.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICorDebugVariableHomeEnum:: Next](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-next-method.md) načte maximálně `celt` objektů počínaje aktuální pozicí čítače. Když se metoda vrátí, `pceltFetched` obsahuje skutečný počet načtených objektů.  
+ Metoda [ICorDebugVariableHomeEnum:: Next](icordebugvariablehomeenum-next-method.md) načte maximálně `celt` objektů počínaje aktuální pozicí čítače. Když se metoda vrátí, `pceltFetched` obsahuje skutečný počet načtených objektů.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -67,5 +67,5 @@ HRESULT Next(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugVariableHomeEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)
-- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [ICorDebugVariableHomeEnum – rozhraní](icordebugvariablehomeenum-interface.md)
+- [ICorDebugVariableHome – rozhraní](icordebugvariablehome-interface.md)

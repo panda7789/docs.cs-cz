@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c0766e29-e573-4f9a-a928-167d1de5aa7e
 topic_type:
 - apiref
-ms.openlocfilehash: a0482ff451b05ec50c199a75a3c3fabd68c28e21
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0a56a943efd43c1ace766669dea8747024b00917
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133996"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784687"
 ---
 # <a name="icordebugassembly2-interface"></a>ICorDebugAssembly2 – rozhraní
 
@@ -29,7 +29,7 @@ Představuje sestavení. Toto rozhraní je rozšířením rozhraní ICorDebugAss
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[IsFullyTrusted – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly2-isfullytrusted-method.md)|Získá hodnotu, která označuje, zda bylo sestavení uděleno úplnému vztahu důvěryhodnosti systémem zabezpečení modulu runtime.|  
+|[IsFullyTrusted – metoda](icordebugassembly2-isfullytrusted-method.md)|Získá hodnotu, která označuje, zda bylo sestavení uděleno úplnému vztahu důvěryhodnosti systémem zabezpečení modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -47,4 +47,4 @@ Představuje sestavení. Toto rozhraní je rozšířením rozhraní ICorDebugAss
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

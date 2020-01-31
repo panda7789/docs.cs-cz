@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 875ef5be-c1e7-4d95-97e9-d3a667aeaba0
 topic_type:
 - apiref
-ms.openlocfilehash: 0b238a953fa5cd57c8b7af9a0643bfc36ee1032e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1aaccb37ec61ed1ba6a7e6e1f508704973117cca
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088852"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784887"
 ---
 # <a name="icordebugappdomain3-interface"></a>ICorDebugAppDomain3 – rozhraní
 Poskytuje metody pro načtení informací o spravovaných reprezentace prostředí Windows Runtime typů, které jsou aktuálně načteny v doméně aplikace. Toto rozhraní je rozšířením rozhraní ICorDebugAppDomain a ICorDebugAppDomain2.  
@@ -28,8 +28,8 @@ Poskytuje metody pro načtení informací o spravovaných reprezentace prostřed
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ICorDebugAppDomain3:: GetCachedWinRTTypes –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypes-method.md)|Získá enumerátor pro všechny typy prostředí Windows Runtime v mezipaměti.|  
-|[ICorDebugAppDomain3:: Getcachedwinrttypesforiids –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Načte enumerátor pro prostředí Windows Runtime typy v mezipaměti aplikace na základě jejich identifikátorů rozhraní.|  
+|[ICorDebugAppDomain3::GetCachedWinRTTypes](icordebugappdomain3-getcachedwinrttypes-method.md)|Získá enumerátor pro všechny typy prostředí Windows Runtime v mezipaměti.|  
+|[ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs](icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Načte enumerátor pro prostředí Windows Runtime typy v mezipaměti aplikace na základě jejich identifikátorů rozhraní.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní je určeno pro použití ladicím programem ve spojení se voláním vyhodnocení funkce pro `M:System.Runtime.InteropServices.Marshal.GetInspectableIIDs(System.Object)`. Když metoda načte identifikátory rozhraní podporované objektem prostředí Windows Runtime serveru, ladicí program může použít metody definované v tomto rozhraní k namapování na spravované typy, které odpovídají těmto rozhraním.  
@@ -50,4 +50,4 @@ Poskytuje metody pro načtení informací o spravovaných reprezentace prostřed
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 66ec04e9-87cb-42ce-9720-81522abb5d5a
 topic_type:
 - apiref
-ms.openlocfilehash: d13c5be314dc39f3e7b42a8d6b13f6a25751067d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 21a97f140a41f8f380c1334652bc2417e19659c6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130717"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777139"
 ---
 # <a name="icordebugmanagedcallbackloadmodule-method"></a>ICorDebugManagedCallback::LoadModule – metoda
 Oznamuje ladicímu programu, že modul CLR (Common Language Runtime) byl úspěšně načten.  
@@ -55,5 +55,5 @@ HRESULT LoadModule (
   
 ## <a name="see-also"></a>Viz také:
 
-- [UnloadModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadmodule-method.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [UnloadModule – metoda](icordebugmanagedcallback-unloadmodule-method.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

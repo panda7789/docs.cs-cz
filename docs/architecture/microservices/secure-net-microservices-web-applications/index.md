@@ -4,12 +4,12 @@ description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získej
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: b25f02140915ce87c5c478d8a8a5fe28ba7693b3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 6d318f4efc6958610947f164d6ca63634f3d7db5
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736943"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777217"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
@@ -121,7 +121,7 @@ else
 }
 ```
 
-Pokud zvolíte možnost ověřování **individuálního uživatelského účtu** při vytváření projektu webové aplikace ASP.NET code v aplikaci Visual Studio, veškerý kód nezbytný pro přihlášení k externímu poskytovateli je již v projektu obsažen, jak je znázorněno na obrázku 9-3.
+Pokud při vytváření projektu webové aplikace ASP.NET Core v aplikaci Visual Studio zvolíte možnost ověřování **individuálního uživatelského účtu** , veškerý kód nezbytný k přihlášení pomocí externího zprostředkovatele je již v projektu, jak je znázorněno na obrázku 9-3.
 
 ![Snímek obrazovky dialogového okna Nový ASP.NET Core webové aplikace](./media/index/select-external-authentication-option.png)
 

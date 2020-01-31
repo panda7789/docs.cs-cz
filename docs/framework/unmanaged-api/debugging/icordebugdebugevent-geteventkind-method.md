@@ -2,12 +2,12 @@
 title: ICorDebugDebugEvent::GetEventKind – metoda
 ms.date: 03/30/2017
 ms.assetid: c37aaceb-c948-46bd-a943-08be4cbb76f4
-ms.openlocfilehash: 92606d7bd0a277dd327ce4fd430ce963a260206d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0c67f8bdce49b4e9200b501aaf00ae293cced7d7
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136661"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783416"
 ---
 # <a name="icordebugdebugeventgeteventkind-method"></a>ICorDebugDebugEvent::GetEventKind – metoda
 Určuje, jaký typ události tento objekt `ICorDebugDebugEvent` představuje.  
@@ -22,7 +22,7 @@ HRESULT GetEventKind(
   
 ## <a name="parameters"></a>Parametry  
  pDebugEventKind  
- Ukazatel na člen výčtu [CorDebugDebugEventKind](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md) , který určuje typ události.  
+ Ukazatel na člen výčtu [CorDebugDebugEventKind](cordebugdebugeventkind-enumeration.md) , který určuje typ události.  
   
 ## <a name="remarks"></a>Poznámky  
  Na základě hodnoty `pDebugEventKind`můžete volat `QueryInterface` a získat tak přesnější rozhraní události ladění, které obsahuje další data.  
@@ -41,5 +41,5 @@ HRESULT GetEventKind(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugDebugEvent – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDebugEvent – rozhraní](icordebugdebugevent-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

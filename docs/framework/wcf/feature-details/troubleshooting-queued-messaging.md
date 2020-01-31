@@ -2,12 +2,12 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: ed114cc9a37fff549e8bfc874765252fd18893a9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3d2d48076fafe44687546ca27e4d8670b81ce433
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345581"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742679"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 
@@ -91,7 +91,7 @@ Pokud jsou záruky žádné (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOn
 
 A. Podívejte se na kontrakt služby. Možná jste zapomněli do všech operací služby umístit "IsOneWay =`true`". Fronty podporují pouze jednosměrné operace služby.
 
-**Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. V čem je problém?
+**Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. Jaký je problém?
 
 **A:** Zjistěte, jestli hostitel služby selhal. Můžete se podívat na trasování nebo implementaci `IErrorHandler`. Selhání hostitele služby ve výchozím nastavení, pokud je zjištěna nezpracovatelná zpráva.
 
@@ -112,10 +112,6 @@ Problémy webového hostitele nesouvisející se zabezpečením odkazují na: [w
 **Otázka:** Jaký je nejjednodušší způsob, jak získat přístup k relacím?
 
 **A:** Nastavte AutoComplete =`true` u operace, která odpovídá poslední zprávě v relaci, a nastavte automatické dokončování =`false` u všech zbývajících operací služby.
-
-**Otázka:** Kde najdu odpovědi na běžné dotazy týkající se služby MSMQ?
-
-**A:** Další informace o službě MSMQ najdete v tématu [Služba Řízení front zpráv společnosti Microsoft](https://go.microsoft.com/fwlink/?LinkId=87810).
 
 **Otázka:** Proč moje služba při čtení z fronty, která obsahuje obě zprávy relace ve frontě a zprávy datagram zařazená do fronty, vyvolá `ProtocolException`?
 
@@ -154,11 +150,11 @@ Dalším řešením je získat <xref:System.ServiceModel.MsmqTransportSecurity> 
 
 Ještě dalším řešením je instalace služby MSMQ s integrací služby Active Directory.
 
-**Otázka:** Když pošlu zprávu s výchozí vazbou (zapnuté zabezpečení přenosu) ve službě Active Directory do fronty, zobrazí se zpráva "interní certifikát nebyl nalezen". Jak to vyřeším?
+**Otázka:** Když pošlu zprávu s výchozí vazbou (zapnuté zabezpečení přenosu) ve službě Active Directory do fronty, zobrazí se zpráva "interní certifikát nebyl nalezen". Návody opravit?
 
 **A:** To znamená, že certifikát ve službě Active Directory pro odesílatele musí být obnoven. Provedete to tak, že otevřete **Ovládací panely**, **Nástroje pro správu**, **Správa počítače**, kliknete pravým tlačítkem myši na položku **MSMQ**a vyberete možnost **vlastnosti**. Vyberte kartu **certifikát uživatele** a klikněte na tlačítko **obnovit** .
 
-**Otázka:** Když pošlu zprávu pomocí <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> a určíte certifikát, který se má použít, zobrazí se zpráva "Neplatný certifikát". Jak to vyřeším?
+**Otázka:** Když pošlu zprávu pomocí <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> a určíte certifikát, který se má použít, zobrazí se zpráva "Neplatný certifikát". Návody opravit?
 
 **A:** Nemůžete použít úložiště certifikátů místního počítače s režimem certifikátu. Je nutné zkopírovat certifikát z úložiště certifikátů počítače do úložiště s aktuálním uživatelem pomocí modulu snap-in Certifikáty. Získání modulu snap-in certifikáty:
 
@@ -180,7 +176,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 **A:** V režimu pracovní skupiny, aby Vzdálená aplikace získala přístup do fronty, aplikace musí mít oprávnění pro přístup do fronty. Přidejte do seznamu řízení přístupu (ACL) fronty možnost anonymní přihlášení a udělte jí oprávnění ke čtení.
 
-**Otázka:** Když klient síťové služby (nebo jakýkoli klient, který nemá účet domény) odešle zprávu ve frontě, odeslání se nezdařila s neplatným certifikátem. Jak to vyřeším?
+**Otázka:** Když klient síťové služby (nebo jakýkoli klient, který nemá účet domény) odešle zprávu ve frontě, odeslání se nezdařila s neplatným certifikátem. Návody opravit?
 
 **A:** Ověřte konfiguraci vazby. Výchozí vazba má zapnuté zabezpečení přenosu MSMQ pro podepsání zprávy. Vypnout.
 

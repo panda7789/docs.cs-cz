@@ -2,12 +2,12 @@
 title: Koncové body služby a adresování front
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: 6bdd3b0966f85ff456e0e2ed0b6da773046201dc
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: ec932e83a2b37330f54be545a45358a5ab055423
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837984"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744629"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak se mapují koncové body služby na fronty. Jako připomenutí znázorňuje následující ilustrace nasazení aplikace ve frontě Windows Communication Foundation (WCF).  
@@ -21,7 +21,7 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
  Názvy cest jsou namapovány na "FormatNames" k určení dalších aspektů adresy, včetně směrování a přenosového protokolu pro správce fronty. Správce fronty podporuje dva protokoly přenosů: nativní protokol MSMQ a protokol SRMP (SOAP Reliable Messaging Protocol).  
   
- Další informace o cestách a názvech formátu MSMQ najdete v tématu [o službě Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94837).  
+ Další informace o cestách a názvech formátu MSMQ najdete v tématu [o službě Řízení front zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms706032(v=vs.85)).  
   
 ## <a name="netmsmqbinding-and-service-addressing"></a>NetMsmqBinding a adresování služeb  
  Při adresování zprávy službě se vybere schéma v identifikátoru URI na základě přenosu používaného pro komunikaci. Každý přenos v rámci WCF má jedinečné schéma. Schéma musí odrážet povahu přenosu používaného pro komunikaci. Například NET. TCP, NET. pipe, HTTP atd.  
@@ -96,7 +96,7 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
  MSMQ. FormatName:\<*MSMQ-Format-name*>>  
   
- Služba MSMQ-Format-Name má formu určenou službou MSMQ v části [o službě Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94837).  
+ Služba MSMQ-Format-Name má formu určenou službou MSMQ v části [o službě Řízení front zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms706032(v=vs.85)).  
   
  Všimněte si, že při přijímání zpráv z fronty pomocí `MsmqIntegrationBinding`můžete použít pouze přímé názvy formátů a názvy veřejného a privátního formátu (vyžaduje integraci služby Active Directory). Doporučuje se ale používat přímé názvy formátů. Například v systému Windows Vista může použití jiného názvu formátu způsobit chybu, protože systém se pokusí otevřít dílčí frontu, která se dá otevřít jenom s přímými názvy formátu.  
   

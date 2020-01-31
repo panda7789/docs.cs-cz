@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
 topic_type:
 - apiref
-ms.openlocfilehash: 1571ff796a10c5ddcd85cc2ce130e62eab2ed8f2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 609d6e47c951aa104cb23084b65e98827a6851f1
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132088"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789181"
 ---
 # <a name="createversionstringfrommodule-function"></a>CreateVersionStringFromModule – funkce
 Vytvoří řetězec verze z cesty modulu CLR (Common Language Runtime) v cílovém procesu.  
@@ -72,7 +72,7 @@ HRESULT CreateVersionStringFromModule (
  `pidDebuggee` neodkazuje na platný proces nebo jiné selhání.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce přijímá proces CLR identifikovaný `pidDebuggee` a cestu k řetězci, která je určena `szModuleName`. Řetězec verze je vrácen do vyrovnávací paměti, na kterou `pBuffer` odkazuje. Tento řetězec je neprůhledný pro uživatele funkce. To znamená, že v samotném řetězci verze není žádný vnitřní význam. Používá se výhradně v kontextu této funkce a [funkci CreateDebuggingInterfaceFromVersion –](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
+ Tato funkce přijímá proces CLR identifikovaný `pidDebuggee` a cestu k řetězci, která je určena `szModuleName`. Řetězec verze je vrácen do vyrovnávací paměti, na kterou `pBuffer` odkazuje. Tento řetězec je neprůhledný pro uživatele funkce. To znamená, že v samotném řetězci verze není žádný vnitřní význam. Používá se výhradně v kontextu této funkce a [funkci CreateDebuggingInterfaceFromVersion –](createdebugginginterfacefromversion-function-for-silverlight.md).  
   
  Tato funkce by měla být volána dvakrát. Při prvním volání předejte hodnotu null pro `pBuffer` i `cchBuffer`. Když to uděláte, v `pdwLength`se vrátí velikost vyrovnávací paměti nutné pro `pBuffer`. Potom můžete zavolat funkci podruhé a předat vyrovnávací paměť v `pBuffer` a její velikosti v `cchBuffer`.  
   

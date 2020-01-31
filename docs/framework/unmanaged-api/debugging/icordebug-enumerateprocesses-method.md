@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ba25d166-1d28-4f1d-aca2-de298bbca669
 topic_type:
 - apiref
-ms.openlocfilehash: 09a8a2bb38378f5d4a32d7b00b68d02f1aa4c054
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c2a176764332eed6affda704c8bfaf546ef70880
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110715"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788990"
 ---
 # <a name="icordebugenumerateprocesses-method"></a>ICorDebug::EnumerateProcesses – metoda
 Získá enumerátor pro procesy, které jsou laděny.  
@@ -48,4 +48,4 @@ HRESULT EnumerateProcesses (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug – rozhraní](icordebug-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e86fcc72-388d-4009-ab21-8f9c3323e9a3
 topic_type:
 - apiref
-ms.openlocfilehash: 86b2815c6f95c674c49bba7455e8497192bd8bac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12d4e63480f03bfad613f30362ddaeaf12b57a88
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125143"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791052"
 ---
 # <a name="icordebugvariablehomegetargumentindex-method"></a>ICorDebugVariableHome:: GetArgumentIndex – metoda
 
@@ -46,7 +46,7 @@ Metoda vrací následující hodnoty.
 |Hodnota|Popis|
 |-----------|-----------------|
 |`S_OK`|Volání metody vrátilo platný index argumentu.|
-|`E_FAIL`|Aktuální instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) představuje místní proměnnou.|
+|`E_FAIL`|Aktuální instance [ICorDebugVariableHome](icordebugvariablehome-interface.md) představuje místní proměnnou.|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -64,4 +64,4 @@ Index argumentu lze použít k načtení metadat pro tento argument.
 
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [ICorDebugVariableHome – rozhraní](icordebugvariablehome-interface.md)

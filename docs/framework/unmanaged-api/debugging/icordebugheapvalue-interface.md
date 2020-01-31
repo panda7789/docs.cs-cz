@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1bca66db-0359-4ae8-846e-e35f7e547e8b
 topic_type:
 - apiref
-ms.openlocfilehash: 4f87065fc4a3d80a8363f3ae2fbb76c29f3d9b96
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fa31b8a6cc96935319e9bef3e561790b65e33a87
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138407"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777594"
 ---
 # <a name="icordebugheapvalue-interface"></a>ICorDebugHeapValue – rozhraní
 
@@ -29,8 +29,8 @@ Podtřída "ICorDebugValue", která představuje objekt, který byl shromáždě
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateRelocBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-createrelocbreakpoint-method.md)|Není implementováno.|  
-|[IsValid – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-isvalid-method.md)|Získá hodnotu, která označuje, zda je objekt reprezentovaný tímto `ICorDebugHeapValue` platný, nebo byl uvolněn systémem uvolňování paměti. Tato metoda je zastaralá ve verzi .NET Framework 2,0.|  
+|[CreateRelocBreakpoint – metoda](icordebugheapvalue-createrelocbreakpoint-method.md)|Není implementováno.|  
+|[IsValid – metoda](icordebugheapvalue-isvalid-method.md)|Získá hodnotu, která označuje, zda je objekt reprezentovaný tímto `ICorDebugHeapValue` platný, nebo byl uvolněn systémem uvolňování paměti. Tato metoda je zastaralá ve verzi .NET Framework 2,0.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -48,4 +48,4 @@ Podtřída "ICorDebugValue", která představuje objekt, který byl shromáždě
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

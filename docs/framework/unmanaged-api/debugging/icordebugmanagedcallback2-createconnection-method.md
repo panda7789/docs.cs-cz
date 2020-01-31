@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 49e647be-9d63-4250-9d11-704e2a400d1b
 topic_type:
 - apiref
-ms.openlocfilehash: d83ad530c8a61c2bfc38fb46ad2a33ef8d5077d3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e98748b523b948dc002f2ebc4e2e79fc7d659918
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130593"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781592"
 ---
 # <a name="icordebugmanagedcallback2createconnection-method"></a>ICorDebugManagedCallback2::CreateConnection – metoda
 Oznamuje ladicímu programu, že bylo vytvořeno nové připojení.  
@@ -48,7 +48,7 @@ HRESULT CreateConnection (
 ## <a name="remarks"></a>Poznámky  
  Zpětné volání `CreateConnection` se spustí v jednom z následujících případů:  
   
-- Když se ladicí program připojí k procesu, který obsahuje připojení. V tomto případě modul runtime vygeneruje a odešle událost `CreateConnection` a událost [ICorDebugManagedCallback2:: ChangeConnection –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-changeconnection-method.md) pro každé připojení v procesu.  
+- Když se ladicí program připojí k procesu, který obsahuje připojení. V tomto případě modul runtime vygeneruje a odešle událost `CreateConnection` a událost [ICorDebugManagedCallback2:: ChangeConnection –](icordebugmanagedcallback2-changeconnection-method.md) pro každé připojení v procesu.  
   
 - Když hostitel volá [ICLRDebugManager:: BeginConnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md) v [rozhraní API hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).  
   
@@ -63,5 +63,5 @@ HRESULT CreateConnection (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

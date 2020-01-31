@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu'
+title: Vytvoření ovládacího prvku, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +13,12 @@ ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 64f637b232cf21701185e7b87d86f63fdece5127
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 7166b4203c54ab31f1d929c85cf1e6481ff120f8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459523"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744074"
 ---
 # <a name="walkthrough-create-a-control-that-takes-advantage-of-design-time-features"></a>Návod: vytvoření ovládacího prvku, který bude využívat funkce pro dobu návrhu
 
@@ -142,7 +142,7 @@ Při vývoji vlastního prostředí v době návrhu bude nutné ladit ovládací
 
 5. Klikněte pravým tlačítkem na projekt MarqueeControlLibrary a vyberte **nastavit jako spouštěný projekt** , abyste mohli tuto konfiguraci ladění povolit.
 
-## <a name="checkpoint"></a>Kontrolní bod
+## <a name="checkpoint"></a>CheckPoint
 
 Nyní jste připraveni ladit chování vlastního ovládacího prvku v době návrhu. Jakmile zjistíte, že je prostředí ladění správně nastavené, otestujete přidružení mezi vlastním ovládacím prvkem a vlastním návrhářem.
 
@@ -177,7 +177,7 @@ Toto je rozsah přizpůsobení `MarqueeControl`. Běhové funkce jsou implemento
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#260](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrol.cs#260)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#260](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrol.vb#260)]
 
-2. Přepsat metodu <xref:System.Windows.Forms.Control.OnLayout%2A>.
+2. Přepsat <xref:System.Windows.Forms.Control.OnLayout%2A> metody.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#270](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrol.cs#270)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#270](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrol.vb#270)]
@@ -233,7 +233,7 @@ K implementaci funkce periodické animace budete používat <xref:System.Compone
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#140](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueetext.cs#140)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#140](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueetext.vb#140)]
 
-10. Implementujte rozhraní `IMarqueeWidget`.
+10. Implementace `IMarqueeWidget` rozhraní.
 
     Metody `StartMarquee` a `StopMarquee` vyvolají <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A> metody komponenty <xref:System.ComponentModel.BackgroundWorker> ke spuštění a zastavení animace.
 
@@ -299,7 +299,7 @@ Vzhledem k tomu, že ovládací prvek `MarqueeBorder` může mít podřízené o
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#40)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#40)]
 
-9. Implementujte rozhraní `IMarqueeWidget`.
+9. Implementace `IMarqueeWidget` rozhraní.
 
     Metody `StartMarquee` a `StopMarquee` vyvolají <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A> metody komponenty <xref:System.ComponentModel.BackgroundWorker> ke spuštění a zastavení animace.
 
@@ -468,12 +468,12 @@ Ovládací prvek `MarqueeBorder` zpřístupňuje v okno Vlastnosti několik vlas
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#92](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#92)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#92](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#92)]
 
-4. Přepsat metodu <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A>. Tato implementace vrací <xref:System.Drawing.Design.UITypeEditorEditStyle.DropDown>, která oznamuje vývojovému prostředí, jak zobrazit `LightShapeEditor`.
+4. Přepsat <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A> metody. Tato implementace vrací <xref:System.Drawing.Design.UITypeEditorEditStyle.DropDown>, která oznamuje vývojovému prostředí, jak zobrazit `LightShapeEditor`.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#93](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#93)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#93](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#93)]
 
-5. Přepsat metodu <xref:System.Drawing.Design.UITypeEditor.EditValue%2A>. Tato implementace se dotazuje návrhového prostředí pro objekt <xref:System.Windows.Forms.Design.IWindowsFormsEditorService>. V případě úspěchu vytvoří `LightShapeSelectionControl`. Metoda <xref:System.Windows.Forms.Design.IWindowsFormsEditorService.DropDownControl%2A> je vyvolána pro spuštění `LightShapeEditor`. Návratová hodnota z tohoto vyvolání se vrátí do prostředí návrhu.
+5. Přepsat <xref:System.Drawing.Design.UITypeEditor.EditValue%2A> metody. Tato implementace se dotazuje návrhového prostředí pro objekt <xref:System.Windows.Forms.Design.IWindowsFormsEditorService>. V případě úspěchu vytvoří `LightShapeSelectionControl`. Metoda <xref:System.Windows.Forms.Design.IWindowsFormsEditorService.DropDownControl%2A> je vyvolána pro spuštění `LightShapeEditor`. Návratová hodnota z tohoto vyvolání se vrátí do prostředí návrhu.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#94](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#94)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#94](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#94)]
@@ -535,7 +535,7 @@ Vlastnost `MarqueeLightShape` podporuje dva typy lehkých tvarů: `Square` a `Ci
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#360](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#360)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#360](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#360)]
 
-11. Přepsat metodu <xref:System.Windows.Forms.Control.OnPaint%2A>. Tato implementace Vykreslí vyplněný čtverec a kruh. Tím se také zvýrazní vybraná hodnota vykreslením ohraničení kolem jednoho obrazce nebo druhého.
+11. Přepsat <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Tato implementace Vykreslí vyplněný čtverec a kruh. Tím se také zvýrazní vybraná hodnota vykreslením ohraničení kolem jednoho obrazce nebo druhého.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#380](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#380)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#380](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#380)]

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bc4288b6-3331-4ae3-990d-e1d6e62ecb67
 topic_type:
 - apiref
-ms.openlocfilehash: d6ee36ac4d4510637e5f8240c3b8930a9bec7970
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1a435226fca775d7dd38a4c5dd35eac3078b092b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123836"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784290"
 ---
 # <a name="icordebugchaingetregisterset-method"></a>ICorDebugChain::GetRegisterSet – metoda
 Načte sadu registrů pro aktivní část tohoto řetězu.  
@@ -35,7 +35,7 @@ HRESULT GetRegisterSet (
   
 ## <a name="parameters"></a>Parametry  
  `ppRegisters`  
- mimo Ukazatel na adresu objektu [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) , který představuje sadu registrů pro aktivní část tohoto řetězce.  
+ mimo Ukazatel na adresu objektu [ICorDebugRegisterSet](icordebugregisterset-interface.md) , který představuje sadu registrů pro aktivní část tohoto řetězce.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

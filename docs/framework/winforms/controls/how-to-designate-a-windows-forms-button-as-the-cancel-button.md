@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit'
+title: Označit tlačítko jako tlačítko Storno
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +9,19 @@ helpviewer_keywords:
 - buttons [Windows Forms], cancel buttons
 - Button control [Windows Forms], designating as cancel button
 ms.assetid: 252f0834-e54b-44d9-96f7-ee5f50e94f2c
-ms.openlocfilehash: 8170190145e76a86f5343bc42b39be7fb9d61a0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 123b3e275065efadd24815320ea7d855808e60b9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010719"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743257"
 ---
-# <a name="how-to-designate-a-windows-forms-button-as-the-cancel-button"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit
-Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovládacího prvku tlačítko Storno. Pokaždé, když uživatel stiskne klávesu ESC, bez ohledu na to, který má jiný ovládací prvek ve formuláři fokus, je kliknutí na tlačítko Storno. Toto tlačítko je obvykle naprogramovaný tak, aby uživateli umožňuje rychle operaci ukončit bez potvrzení na každou akci.  
+# <a name="how-to-designate-a-windows-forms-button-as-the-cancel-button"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Storno
+V jakémkoli formuláři Windows můžete určit <xref:System.Windows.Forms.Button> ovládací prvek pro tlačítko Storno. Kliknutím na tlačítko Storno dojde vždy, když uživatel stiskne klávesu ESC bez ohledu na to, který jiný ovládací prvek ve formuláři má fokus. Toto tlačítko je obvykle naprogramováno, aby uživatel mohl rychle ukončit operaci bez nutnosti potvrzení akce.  
   
-### <a name="to-designate-the-cancel-button"></a>Chcete-li určit tlačítka Storno  
+### <a name="to-designate-the-cancel-button"></a>Chcete-li určit tlačítko Storno  
   
-1. Vlastnost formuláře <xref:System.Windows.Forms.Form.CancelButton%2A> vlastnosti na příslušné <xref:System.Windows.Forms.Button> ovládacího prvku.  
+1. Nastavte vlastnost <xref:System.Windows.Forms.Form.CancelButton%2A> formuláře na příslušný ovládací prvek <xref:System.Windows.Forms.Button>.  
   
     ```vb  
     Private Sub SetCancelButton(ByVal myCancelBtn As Button)  
@@ -50,5 +50,5 @@ Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovlá
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
-- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout](how-to-designate-a-windows-forms-button-as-the-accept-button.md)
+- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout](how-to-designate-a-windows-forms-button-as-the-accept-button.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: SaveFileDialog – přehled komponenty (Windows Forms)
+title: Přehled komponenty SaveFileDialog
 ms.date: 03/30/2017
 f1_keywords:
 - SaveFileDialog
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - Save File dialog box [Windows Forms], displaying
 - SaveFileDialog component [Windows Forms], about SaveFileDialog
 ms.assetid: be7a625f-46fd-4d06-9985-b613dcbf9bd2
-ms.openlocfilehash: 1e4269129f17c10056af2765c7a0e74537918ae5
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 7609c29b7e932ecee7dc8a289617094bd8d480e2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211612"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743096"
 ---
 # <a name="savefiledialog-component-overview-windows-forms"></a>SaveFileDialog – přehled komponenty (Windows Forms)
 
-Windows Forms <xref:System.Windows.Forms.SaveFileDialog> komponenta je předem nakonfigurované dialogového okna. Je stejný jako standardní **uložit soubor** dialogové okno používá Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.
+Součást model Windows Forms <xref:System.Windows.Forms.SaveFileDialog> je předem nakonfigurovaným dialogovým oknem. Je stejný jako dialogové okno standardní **Uložit soubor** používaný v systému Windows. Dědí z třídy <xref:System.Windows.Forms.CommonDialog>.
 
-## <a name="working-with-the-savefiledialog-component"></a>Práce s SaveFileDialog – komponenta
+## <a name="working-with-the-savefiledialog-component"></a>Práce s komponentou SaveFileDialog
 
-Použijte jako jednoduché řešení umožňující uživatelům ukládat soubory místo dialogové okno Vlastní konfigurace. Základní funkce aplikací, které vytvoříte je pomocí standardní dialogová okna Windows, okamžitě uživatelé znají. Mějte na paměti, ale, že pomocí <xref:System.Windows.Forms.SaveFileDialog> komponenty, je nutné napsat vlastní logikou ukládání souborů.
+Použijte ji jako jednoduché řešení, které umožňuje uživatelům ukládat soubory místo konfigurace vlastního dialogového okna. Když se spoléháte na standardní dialogová okna systému Windows, jsou základní funkce aplikací, které vytvoříte, okamžitě známé uživatelům. Mějte ale na paměti, že při použití komponenty <xref:System.Windows.Forms.SaveFileDialog> musíte napsat vlastní logiku pro ukládání souborů.
 
-Můžete použít <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogového okna v době běhu. Můžete otevřít soubor pomocí režimu pro čtení a zápis <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> metody.
+Můžete použít metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> k zobrazení dialogového okna v době běhu. Pomocí metody <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> můžete otevřít soubor v režimu pro čtení i zápis.
 
-Když se přidá do formuláře, <xref:System.Windows.Forms.SaveFileDialog> součást se zobrazí v hlavním panelu v dolní části Návrháře formulářů Windows v sadě Visual Studio.
+Při přidání do formuláře se komponenta <xref:System.Windows.Forms.SaveFileDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,12 +2,12 @@
 title: Síť rovnocenných počítačů
 ms.date: 03/30/2017
 ms.assetid: ad6cb67b-fd1c-4ca1-a767-b410da2e16ca
-ms.openlocfilehash: 74566d7bc7c8d817cedb0ff6f64590ba827ed4c4
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 2905a429e907f7e97c482c22229a6bc928c52243
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837360"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744671"
 ---
 # <a name="peer-to-peer-networking"></a>Síť rovnocenných počítačů
 Rovnocenný kanál je v Windows Communication Foundation (WCF) s více částmi komunikační technologie peer-to-peer (P2P). Pro vývojáře aplikací poskytuje zabezpečený a škálovatelný komunikační kanál P2P založený na zprávách. Jeden běžný příklad aplikace s více částmi, která může využívat rovnocenným kanálem, je aplikace pro spolupráci, jako je například chat, kde skupina osob v rámci peer-to-peer bez serverů navzájem spolupracuje. Partnerský kanál umožňuje spolupráci v P2P, distribuci obsahu, Vyrovnávání zatížení a distribuované zpracování pro scénáře uživatelů i podnikových scénářů.  
@@ -27,4 +27,4 @@ Rovnocenný kanál je v Windows Communication Foundation (WCF) s více částmi 
  [Vlastní překladač rovnocenných kanálů](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90))  
   
 ## <a name="peer-channel-team-blog"></a>Blog týmu partnerského kanálu  
- [Blog týmu partnerského kanálu](https://go.microsoft.com/fwlink/?LinkID=114530)
+ [Blog týmu partnerského kanálu](https://docs.microsoft.com/archive/blogs/peerchan/)

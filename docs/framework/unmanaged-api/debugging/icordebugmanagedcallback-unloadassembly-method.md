@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6734321c-c8a9-401f-a558-cad715ec4a77
 topic_type:
 - apiref
-ms.openlocfilehash: 4ae4856eca2c1441ea53df0d9ed3648700b39b24
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 06c08499298656c8314d72667d9dac88c8d11e6a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130657"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788346"
 ---
 # <a name="icordebugmanagedcallbackunloadassembly-method"></a>ICorDebugManagedCallback::UnloadAssembly – metoda
 Oznamuje ladicímu programu, že bylo uvolněno sestavení společného jazykového modulu runtime.  
@@ -55,5 +55,5 @@ HRESULT UnloadAssembly (
   
 ## <a name="see-also"></a>Viz také:
 
-- [LoadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadassembly-method.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [LoadAssembly – metoda](icordebugmanagedcallback-loadassembly-method.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

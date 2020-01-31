@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1ee1f6e6-1bd7-4ebb-83b8-ff9a08ca03de
 topic_type:
 - apiref
-ms.openlocfilehash: 57a82e4ec106fead105cc7f200e7e56026004328
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b2c381d093069f5ee86be1b19d75f5c2d69ad9fa
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122385"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791314"
 ---
 # <a name="icordebugtypeenumeratetypeparameters-method"></a>ICorDebugType::EnumerateTypeParameters – metoda
 Získá ukazatel rozhraní na ICorDebugTypeEnum, který obsahuje parametry <xref:System.Type> třídy, na kterou odkazuje tento ICorDebugType.  
@@ -38,11 +38,11 @@ HRESULT EnumerateTypeParameters (
  mimo Ukazatel na adresu `ICorDebugTypeEnum`, která obsahuje parametry typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `EnumerateTypeParameters`, pokud hodnota CorElementType – vrácená funkcí [ICorDebugType:: GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) je ELEMENT_TYPE_CLASS, ELEMENT_TYPE_VALUETYPE, ELEMENT_TYPE_ARRAY, ELEMENT_TYPE_SZARRAY, ELEMENT_TYPE_BYREF, ELEMENT_TYPE_PTR nebo ELEMENT_TYPE_FNPTR. Počet parametrů a jejich pořadí závisí na typu:  
+ Pokud je hodnota CorElementType – vrácená funkcí [ICorDebugType:: GetType](icordebugtype-gettype-method.md) ELEMENT_TYPE_CLASS, ELEMENT_TYPE_VALUETYPE, ELEMENT_TYPE_ARRAY, ELEMENT_TYPE_SZARRAY, ELEMENT_TYPE_BYREF, ELEMENT_TYPE_PTR nebo ELEMENT_TYPE_FNPTR, můžete použít `EnumerateTypeParameters`. Počet parametrů a jejich pořadí závisí na typu:  
   
 - ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE: počet parametrů typu obsažených v `ICorDebugTypeEnum`, které tato metoda vrátí, bude záviset na počtu formálních parametrů typu pro odpovídající třídu. Například pokud je typ `class Dict<String,int32>`, `EnumerateTypeParameters` vrátí `ICorDebugTypeEnum`, který obsahuje objekty reprezentující `String` a `int32` v sekvenci.  
   
-- ELEMENT_TYPE_FNPTR: počet parametrů typu obsažených v `ICorDebugTypeEnum` bude větší než počet argumentů přijatých funkcí. První parametr typu obsažený v `ICorDebugTypeEnum` je návratový typ pro funkci a následné parametry typu jsou parametry funkce.  
+- ELEMENT_TYPE_FNPTR: počet parametrů typu obsažených v `ICorDebugTypeEnum` bude o jeden větší než počet argumentů přijatých funkcí. První parametr typu obsažený v `ICorDebugTypeEnum` je návratový typ pro funkci a následné parametry typu jsou parametry funkce.  
   
 - ELEMENT_TYPE_ARRAY, ELEMENT_TYPE_SZARRAY, ELEMENT_TYPE_BYREF nebo ELEMENT_TYPE_PTR: vrátí se jeden parametr typu. Například pokud je typ pole typ, například `int32[]`,`EnumerateTypeParameters` vrátí `ICorDebugTypeEnum` obsahující objekt reprezentující `int32`.  
   

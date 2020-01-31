@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dbb1c4dc-269a-459b-ab1d-6c70788782ce
 topic_type:
 - apiref
-ms.openlocfilehash: 27f991c12ea7786d6146b5731848ca5ad3a37e21
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d6c923f03309da3ad8092ea6119e7d850120ee2c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125373"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783807"
 ---
 # <a name="icordebugcontroller-interface"></a>ICorDebugController – rozhraní
 
@@ -31,14 +31,14 @@ Představuje obor, buď <xref:System.Diagnostics.Process>, nebo <xref:System.App
 |------------|-----------------|  
 |`ICorDebugController::CanCommitChanges`|Tato metoda je zastaralá.|  
 |`ICorDebugController::CommitChanges`|Tato metoda je zastaralá.|  
-|[Continue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md)|Obnoví provádění spravovaných vláken po volání metody [ICorDebugController:: stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).|  
-|[Detach – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-detach-method.md)|Odpojí ladicí program od domény procesu nebo aplikace.|  
-|[EnumerateThreads – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-enumeratethreads-method.md)|Získá enumerátor pro aktivní spravovaná vlákna v procesu.|  
-|[HasQueuedCallbacks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)|Získá hodnotu, která označuje, zda jsou pro zadané vlákno aktuálně zařazena všechna spravovaná zpětná volání.|  
-|[IsRunning – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-isrunning-method.md)|Získá hodnotu, která označuje, zda jsou vlákna v procesu aktuálně spuštěna volně.|  
-|[SetAllThreadsDebugState – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md)|Nastaví stav ladění pro všechna spravovaná vlákna v procesu.|  
-|[Stop – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md)|Provede kooperativní zastavení na všech vláknech, na kterých běží spravovaný kód v procesu.|  
-|[Terminate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-terminate-method.md)|Ukončí proces se zadaným ukončovacím kódem.|  
+|[Continue – metoda](icordebugcontroller-continue-method.md)|Obnoví provádění spravovaných vláken po volání metody [ICorDebugController:: stop](icordebugcontroller-stop-method.md).|  
+|[Detach – metoda](icordebugcontroller-detach-method.md)|Odpojí ladicí program od domény procesu nebo aplikace.|  
+|[EnumerateThreads – metoda](icordebugcontroller-enumeratethreads-method.md)|Získá enumerátor pro aktivní spravovaná vlákna v procesu.|  
+|[HasQueuedCallbacks – metoda](icordebugcontroller-hasqueuedcallbacks-method.md)|Získá hodnotu, která označuje, zda jsou pro zadané vlákno aktuálně zařazena všechna spravovaná zpětná volání.|  
+|[IsRunning – metoda](icordebugcontroller-isrunning-method.md)|Získá hodnotu, která označuje, zda jsou vlákna v procesu aktuálně spuštěna volně.|  
+|[SetAllThreadsDebugState – metoda](icordebugcontroller-setallthreadsdebugstate-method.md)|Nastaví stav ladění pro všechna spravovaná vlákna v procesu.|  
+|[Stop – metoda](icordebugcontroller-stop-method.md)|Provede kooperativní zastavení na všech vláknech, na kterých běží spravovaný kód v procesu.|  
+|[Terminate – metoda](icordebugcontroller-terminate-method.md)|Ukončí proces se zadaným ukončovacím kódem.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud `ICorDebugController` řídí proces, zahrnuje obor všechny podprocesy procesu. Pokud `ICorDebugController` řídí doménu aplikace, obor obsahuje pouze vlákna této konkrétní aplikační domény.  
@@ -57,4 +57,4 @@ Představuje obor, buď <xref:System.Diagnostics.Process>, nebo <xref:System.App
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

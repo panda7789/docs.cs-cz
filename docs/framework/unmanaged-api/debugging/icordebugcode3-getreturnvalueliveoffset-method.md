@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8c2ff5d8-8c04-4423-b1e1-e1c8764b36d3
 topic_type:
 - apiref
-ms.openlocfilehash: 77cda2c3d30b5926da219a38b762295818ca54a1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dc03365b72a5f3613402faf1aed44b5683e9892c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121196"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777841"
 ---
 # <a name="icordebugcode3getreturnvalueliveoffset-method"></a>ICorDebugCode3::GetReturnValueLiveOffset – metoda
 U zadaného posunu IL Získá nativní posuny, kde by měla být umístěna zarážka, aby ladicí program mohl získat návratovou hodnotu z funkce.  
@@ -52,10 +52,10 @@ HRESULT GetReturnValueLiveOffset(
  Pole nativních posunů. `pOffsets` obvykle obsahuje jeden posun, i když jedna instrukce IL může být mapována na více mapování na více `CALL`ch instrukcí sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda se používá společně s metodou [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) k získání návratové hodnoty metody, která vrací typ odkazu. Předání posunu IL k webu volání funkce této metodě vrátí jedno nebo více nativních posunů. Ladicí program pak může nastavit zarážky na těchto nativních posunech ve funkci. Když ladicí program narazí na jednu ze zarážek, můžete předat stejný posun IL, který jste předali do této metody, do metody [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) pro získání návratové hodnoty. Ladicí program by pak měl vymazat všechny zarážky, které nastavily.  
+ Tato metoda se používá společně s metodou [ICorDebugILFrame3:: GetReturnValueForILOffset –](icordebugilframe3-getreturnvalueforiloffset-method.md) k získání návratové hodnoty metody, která vrací typ odkazu. Předání posunu IL k webu volání funkce této metodě vrátí jedno nebo více nativních posunů. Ladicí program pak může nastavit zarážky na těchto nativních posunech ve funkci. Když ladicí program narazí na jednu ze zarážek, můžete předat stejný posun IL, který jste předali do této metody, do metody [ICorDebugILFrame3:: GetReturnValueForILOffset –](icordebugilframe3-getreturnvalueforiloffset-method.md) pro získání návratové hodnoty. Ladicí program by pak měl vymazat všechny zarážky, které nastavily.  
   
 > [!WARNING]
-> Metody `ICorDebugCode3::GetReturnValueLiveOffset` a [ICorDebugILFrame3:: GetReturnValueForILOffset –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) umožňují získat informace o vrácených hodnotách pouze pro typy odkazů. Načítání informací o vrácených hodnotách z typů hodnot (tj. všechny typy, které jsou odvozeny z <xref:System.ValueType>) nejsou podporovány.  
+> Metody `ICorDebugCode3::GetReturnValueLiveOffset` a [ICorDebugILFrame3:: GetReturnValueForILOffset –](icordebugilframe3-getreturnvalueforiloffset-method.md) umožňují získat informace o vrácených hodnotách pouze pro typy odkazů. Načítání informací o vrácených hodnotách z typů hodnot (tj. všechny typy, které jsou odvozeny z <xref:System.ValueType>) nejsou podporovány.  
   
  Funkce vrátí `HRESULT` hodnoty uvedené v následující tabulce.  
   
@@ -78,5 +78,5 @@ HRESULT GetReturnValueLiveOffset(
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetReturnValueForILOffset – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md)
-- [ICorDebugCode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)
+- [GetReturnValueForILOffset – metoda](icordebugilframe3-getreturnvalueforiloffset-method.md)
+- [ICorDebugCode3 – rozhraní](icordebugcode3-interface.md)

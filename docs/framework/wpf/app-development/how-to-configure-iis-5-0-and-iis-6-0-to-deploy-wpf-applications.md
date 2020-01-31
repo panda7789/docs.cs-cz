@@ -1,5 +1,6 @@
 ---
 title: 'Postupy: Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF'
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MIME types [WPF], registering
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - file extensions [WPF], registering
 - registering MIME types [WPF]
 ms.assetid: c6e8c2cb-9ba2-4e75-a0d5-180ec9639433
-ms.openlocfilehash: a731dc49556a73c585c6201a80ea3ea77c15cb11
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d557ac6cd380edcbc93b5315f6356697817274bf
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124415"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740416"
 ---
 # <a name="how-to-configure-iis-50-and-iis-60-to-deploy-wpf-applications"></a>Postupy: Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF
 
@@ -51,14 +52,14 @@ Nastavení vypršení platnosti obsahu byste měli upravit na 1 minutu. Následu
 
 Je nutné zaregistrovat několik typů MIME a přípon souborů, aby prohlížeč v systému klienta mohl načíst správnou obslužnou rutinu. Je nutné přidat následující typy:
 
-|klapk|Typ MIME|
+|Linka|Typ MIME|
 |---------------|---------------|
-|. manifest|Aplikace/manifest|
+|.manifest|Aplikace/manifest|
 |. XAML|Application/XAML + XML|
 |. Application|aplikace/x-MS-aplikace|
-|. XBAP|aplikace/x-MS-XBAP|
+|.xbap|application/x-ms-xbap|
 |. deploy|aplikace/oktet – Stream|
-|. XPS|application/vnd. MS-XpsDocument|
+|. XPS|application/vnd.ms-xpsdocument|
 
 > [!NOTE]
 > V klientských systémech nemusíte registrovat typy MIME ani přípony souborů. Jsou zaregistrovány automaticky při instalaci aplikace Microsoft .NET Framework.

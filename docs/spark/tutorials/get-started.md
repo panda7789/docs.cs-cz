@@ -4,12 +4,12 @@ description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pom
 ms.date: 11/04/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 934b91a258937a976804109c71df232b8ce6d6d7
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 679ee7660e96504768a781e1e384acab80362736
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337591"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743212"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Kurz: Začínáme s .NET pro Apache Spark
 
@@ -94,7 +94,7 @@ Pokud se zobrazí chyba `'spark-submit' is not recognized as an internal or exte
 
 ### <a name="5-install-net-for-apache-spark"></a>5. Nainstalujte rozhraní .NET pro Apache Spark
 
-Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub. Například pokud jste na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 2.1](https://github.com/dotnet/spark/releases/download/v0.5.0/Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip).
+Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub. Například pokud jste na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 2.1](https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip).
 
 Extrakce Microsoft. spark. Worker:
 
