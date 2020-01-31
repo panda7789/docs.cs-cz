@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 43c944f4-406a-4df6-981e-0eabb33dd5d0
 topic_type:
 - apiref
-ms.openlocfilehash: ec92214e33cd1acda8b2702d93deba1f0fb2aaa2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 642391bce99328f3700d1783054943b6a450b22b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111019"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789022"
 ---
 # <a name="iclrmetadatalocator-interface"></a>ICLRMetadataLocator – rozhraní
 Používá se ve vrstvě služeb Data Access k vyhledání metadat sestavení v cílovém procesu.  
@@ -28,7 +28,7 @@ Používá se ve vrstvě služeb Data Access k vyhledání metadat sestavení v 
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetMetadata – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-getmetadata-method.md)|Načte metadata obrázku z cílového procesu.|  
+|[GetMetadata – metoda](iclrmetadatalocator-getmetadata-method.md)|Načte metadata obrázku z cílového procesu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Klient API (tzn. ladicí program) musí implementovat toto rozhraní v závislosti na konkrétním cílovém procesu. Například implementace pro živý proces se liší od výpisu paměti.  
@@ -44,4 +44,4 @@ Používá se ve vrstvě služeb Data Access k vyhledání metadat sestavení v 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

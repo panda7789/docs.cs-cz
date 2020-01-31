@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4083b505-5b59-44fb-8c5d-129db6a96c10
 topic_type:
 - apiref
-ms.openlocfilehash: 77210edfdc954f38ff06bc43a8b41a6abe8dc3d6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 89576e2b3d5fb4df0cccfdd28c80a5cb67331597
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131842"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791889"
 ---
 # <a name="icordebugstackwalkgetframe-method"></a>ICorDebugStackWalk::GetFrame – metoda
-Načte aktuální rámec v objektu [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) .  
+Načte aktuální rámec v objektu [ICorDebugStackWalk](icordebugstackwalk-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +49,7 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugStackWalk` vrátí pouze skutečné rámce zásobníku. K vrácení vnitřních rámců použijte metodu [ICorDebugThread3:: GetActiveInternalFrames –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) . (Interní snímky jsou datové struktury vložené do zásobníku modulem runtime k ukládání dočasných dat.)  
+ `ICorDebugStackWalk` vrátí pouze skutečné rámce zásobníku. K vrácení vnitřních rámců použijte metodu [ICorDebugThread3:: GetActiveInternalFrames –](icordebugthread3-getactiveinternalframes-method.md) . (Interní snímky jsou datové struktury vložené do zásobníku modulem runtime k ukládání dočasných dat.)  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -62,6 +62,6 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugStackWalk – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugStackWalk – rozhraní](icordebugstackwalk-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

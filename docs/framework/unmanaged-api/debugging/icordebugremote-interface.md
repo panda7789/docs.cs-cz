@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 53d073c6-fa02-40d2-82e1-b9452bb6abaa
 topic_type:
 - apiref
-ms.openlocfilehash: a7eb2796de060b3a5dc8e8c08d07e6aeeb3daecb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0cc79c0a93fa4f05b8c793a8b7fb0b9b3f031b1a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131269"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791955"
 ---
 # <a name="icordebugremote-interface"></a>ICorDebugRemote – rozhraní
 Umožňuje spustit nebo připojit spravovaný ladicí program ke vzdálenému cílovému procesu.  
@@ -60,8 +60,8 @@ interface ICorDebugRemote : IUnknown
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ICorDebugRemote::CreateProcessEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-createprocessex-method.md)|Vytvoří proces na vzdáleném počítači pro spravované ladění.|  
-|[ICorDebugRemote::DebugActiveProcessEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-debugactiveprocessex-method.md)|Spustí proces na vzdáleném počítači v rámci ladicího programu.|  
+|[ICorDebugRemote::CreateProcessEx – metoda](icordebugremote-createprocessex-method.md)|Vytvoří proces na vzdáleném počítači pro spravované ladění.|  
+|[ICorDebugRemote::DebugActiveProcessEx – metoda](icordebugremote-debugactiveprocessex-method.md)|Spustí proces na vzdáleném počítači v rámci ladicího programu.|  
   
 ## <a name="remarks"></a>Poznámky  
  V současné době je tato funkce podporována pouze pro ladění cíle aplikace založeného na programu Silverlight, který je spuštěn na vzdáleném počítači se systémem Macintosh.  
@@ -77,7 +77,7 @@ interface ICorDebugRemote : IUnknown
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugRemoteTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)
-- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebugRemoteTarget – rozhraní](icordebugremotetarget-interface.md)
+- [ICorDebug – rozhraní](icordebug-interface.md)
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

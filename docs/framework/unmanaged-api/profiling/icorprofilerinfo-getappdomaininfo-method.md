@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a6bf5a04-e03e-44f0-917a-96f6a6d3cc96
 topic_type:
 - apiref
-ms.openlocfilehash: 8c13ce443037d706f9eba49760ba76f47c5a6538
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0407b7057753f7fdee6ea6b1d05144b135b6378a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448182"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76864086"
 ---
 # <a name="icorprofilerinfogetappdomaininfo-method"></a>ICorProfilerInfo::GetAppDomainInfo – metoda
 Přijímá ID domény aplikace. Vrátí název domény aplikace a ID procesu, který jej obsahuje.  
@@ -69,6 +69,6 @@ HRESULT GetAppDomainInfo(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

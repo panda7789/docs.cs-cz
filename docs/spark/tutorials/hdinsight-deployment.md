@@ -1,15 +1,15 @@
 ---
 title: Nasazení aplikace .NET pro Apache Spark do Azure HDInsight
 description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do HDInsight.
-ms.date: 05/17/2019
+ms.date: 01/23/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3604aff5d1f138071c941ea85546af03185d722d
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 76a150879324640352aa36f753ec3d6e7342bcaf
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460716"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76860775"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Kurz: nasazení aplikace .NET pro Apache Spark do Azure HDInsight
 
@@ -29,8 +29,8 @@ V tomto kurzu se naučíte:
 
 Než začnete, proveďte následující úlohy:
 
-* Pokud nemáte předplatné Azure, vytvořte si [bezplatný účet](https://azure.microsoft.com/free/).
-* Přihlaste se k [Azure Portal](https://portal.azure.com/).
+* Pokud ještě nemáte předplatné Azure, vytvořte si [bezplatný účet](https://azure.microsoft.com/free/).
+* Přihlaste se k [Portálu Azure](https://portal.azure.com/).
 * Nainstalujte Průzkumník služby Azure Storage na počítač se [systémem Windows](https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x409), [Linux](https://go.microsoft.com/fwlink/?LinkId=722418&clcid=0x409)nebo [MacOS](https://go.microsoft.com/fwlink/?LinkId=708342&clcid=0x409) .
 * Dokončete kurz [k rozhraní .NET pro Apache Spark – Začínáme během 10 minut](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro) .
 
@@ -51,7 +51,7 @@ Než začnete, proveďte následující úlohy:
 
 1. Navštivte [Azure Portal](https://portal.azure.com).
 
-2. Vyberte **+ vytvořit prostředek**. Pak z kategorie **Analytics** vyberte **HDInsight** .
+2. Vyberte **+ Vytvořit prostředek**. Pak z kategorie **Analytics** vyberte **HDInsight** .
 
     ![Vytvořit prostředek HDInsight z Azure Portal](./media/hdinsight-deployment/create-hdinsight-resource.png)
 
@@ -59,14 +59,14 @@ Než začnete, proveďte následující úlohy:
 
     |Vlastnost  |Popis  |
     |---------|---------|
-    |Formě  | V rozevíracím seznamu vyberte jedno z aktivních předplatných Azure. |
-    |Skupina prostředků | Určete, zda chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který obsahuje související prostředky pro řešení Azure. |
+    |Předplatné služby  | V rozevíracím seznamu vyberte jedno z aktivních předplatných Azure. |
+    |Skupina prostředků | Určete, jestli chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který uchovává související prostředky pro řešení Azure. |
     |Název clusteru | Zadejte název clusteru HDInsight Spark.|
     |Umístění   | Vyberte umístění pro skupinu prostředků. Šablona používá toto umístění pro vytvoření clusteru i pro výchozí úložiště clusteru. |
     |Typ clusteru| Jako typ clusteru vyberte **Spark** .|
     |Verze clusteru|Po výběru typu clusteru bude toto pole automaticky vyplněno výchozí verzí. Vyberte verzi Sparku 2,3 nebo 2,4.|
     |Uživatelské jméno přihlášení clusteru| Zadejte uživatelské jméno pro přihlášení ke clusteru.  Výchozí název je *admin*. |
-    |Heslo pro přihlášení ke clusteru| Zadejte libovolné přihlašovací heslo. |
+    |Heslo přihlášení clusteru| Zadejte libovolné přihlašovací heslo. |
     |Uživatelské jméno Secure Shell (SSH)| Zadejte uživatelské jméno SSH. Ve výchozím nastavení tento účet sdílí stejné heslo jako účet *přihlášení ke clusteru* . |
 
 4. Kliknutím na tlačítko **Další: úložiště > >** pokračujte na stránku **úložiště** . V části **Storage (úložiště**) zadejte následující hodnoty:
@@ -76,7 +76,7 @@ Než začnete, proveďte následující úlohy:
     |Typ primárního úložiště|Použijte výchozí hodnotu **Azure Storage**.|
     |Metoda výběru|Použijte výchozí hodnotu **vybrat ze seznamu**.|
     |Primární účet úložiště|Vyberte své předplatné a jeden z aktivních účtů úložiště v rámci tohoto předplatného.|
-    |vnitřního|Tento kontejner je specifickým kontejnerem objektů BLOB ve vašem účtu úložiště, ve kterém váš cluster hledá soubory ke spuštění vaší aplikace v cloudu. Můžete mu dát libovolný dostupný název.|
+    |Kontejner|Tento kontejner je specifickým kontejnerem objektů BLOB ve vašem účtu úložiště, ve kterém váš cluster hledá soubory ke spuštění vaší aplikace v cloudu. Můžete mu dát libovolný dostupný název.|
 
 5. V nabídce **Revize + vytvořit**vyberte **vytvořit**. Vytvoření clusteru trvá přibližně 20 minut. Aby bylo možné pokračovat k dalšímu kroku, musí být cluster vytvořen.
 
@@ -150,10 +150,10 @@ Po spuštění clusteru a nahrání souborů do Azure spustíte skript **install
 
    |Vlastnost  |Popis  |
    |---------|---------|
-   | Typ skriptu |Uživatelská|
+   | Typ skriptu |Vlastní|
    | Name | Instalace pracovního procesu|
    | Identifikátor URI skriptu bash |https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh </br> Pokud chcete tento identifikátor URI potvrdit, klikněte pravým tlačítkem na install-worker.sh v Průzkumník služby Azure Storage a vyberte vlastnosti. |
-   | Typ (typy) uzlů| Zaměstnanec|
+   | Typ (typy) uzlů| Pracovní|
    | Parametry | Azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
 
 3. Vyberte **vytvořit** a odešlete skript.
@@ -169,7 +169,7 @@ Po spuštění clusteru a nahrání souborů do Azure spustíte skript **install
    ```bash
    $SPARK_HOME/bin/spark-submit \
    --master yarn \
-   --class org.apache.spark.deploy.DotnetRunner \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/microsoft-spark-2.3.x-0.6.0.jar \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/publish.zip mySparkApp
    ```

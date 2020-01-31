@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 6643c2af-2ee6-4789-aa25-1d8eaf500c94
 topic_type:
 - apiref
-ms.openlocfilehash: d5e7841844c8fa500935eb9cba06f4e2fe95d2d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 037e216cb93e3aa6fce28966fc724498024abd52
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111986"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789059"
 ---
 # <a name="iclrdatatarget3getexceptionrecord-method"></a>ICLRDataTarget3::GetExceptionRecord – metoda
 Je volána službami modulu Common Language Runtime (CLR) pro přístup k datům za účelem získání záznamu o výjimce související s cílovým procesem. Například pro cíl výpisu paměti by to byl ekvivalentem záznamu výjimky předaného prostřednictvím argumentu `ExceptionParam` do funkce [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) v knihovně dbghelp (Windows ladění Help Library).  
@@ -40,7 +40,7 @@ HRESULT GetExceptionRecord(
  mimo Ukazatel na typ `ULONG32`, který přijímá počet bajtů, které jsou ve skutečnosti zapisovány do vyrovnávací paměti.  
   
  `buffer`  
- mimo Ukazatel na vyrovnávací paměť, která obdrží kopii záznamu výjimky. Záznam výjimky je vrácen jako [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) typ.  
+ mimo Ukazatel na vyrovnávací paměť, která obdrží kopii záznamu výjimky. Záznam výjimky je vrácen jako typ [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrácená hodnota je `S_OK` při úspěchu nebo selhání `HRESULT` kódu při selhání. Kódy `HRESULT` mohou zahrnovat, ale nejsou omezeny na následující:  
@@ -52,7 +52,7 @@ HRESULT GetExceptionRecord(
 |`HRESULT_FROM_WIN32(ERROR_BAD_LENGTH)`|Velikost vstupní vyrovnávací paměti se nerovná `sizeof(MINIDUMP_EXCEPTION)`.|  
   
 ## <a name="remarks"></a>Poznámky  
- [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) je struktura definovaná v dbghelp. h a Imagehlp. h v Windows SDK.  
+ [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) je struktura definovaná v rámci Windows SDK dbghelp. h a Imagehlp. h.  
   
  Tato metoda je implementována modulem pro ladění aplikace.  
   
@@ -67,6 +67,6 @@ HRESULT GetExceptionRecord(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICLRDataTarget3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)
-- [GetExceptionContextRecord – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)
-- [GetExceptionThreadID – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionthreadid-method.md)
+- [ICLRDataTarget3 – rozhraní](iclrdatatarget3-interface.md)
+- [GetExceptionContextRecord – metoda](iclrdatatarget3-getexceptioncontextrecord-method.md)
+- [GetExceptionThreadID – metoda](iclrdatatarget3-getexceptionthreadid-method.md)

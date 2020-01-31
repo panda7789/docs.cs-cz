@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9c421bb0-e647-4b2d-a986-f3d578cc7f20
 topic_type:
 - apiref
-ms.openlocfilehash: b062faffc22e444bd4d3b4a0c67f2a08d7af3560
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ddfe8cee8fdbca910ffa4f6989b1359ae5f7b11f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131112"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794373"
 ---
 # <a name="icordebugheapvalue3-interface"></a>ICorDebugHeapValue3 – rozhraní
 Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozšiřuje rozhraní ICorDebugHeapValue a ICorDebugHeapValue2.  
@@ -28,8 +28,8 @@ Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozši�
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetThreadOwningMonitorLock – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-getthreadowningmonitorlock-method.md)|Vrátí spravované vlákno, které vlastní zámek monitorování tohoto objektu.|  
-|[GetMonitorEventWaitList – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-getmonitoreventwaitlist-method.md)|Poskytuje uspořádaný seznam vláken, která jsou zařazená do fronty pro událost přidruženou ke zámku monitoru.|  
+|[GetThreadOwningMonitorLock – metoda](icordebugheapvalue3-getthreadowningmonitorlock-method.md)|Vrátí spravované vlákno, které vlastní zámek monitorování tohoto objektu.|  
+|[GetMonitorEventWaitList – metoda](icordebugheapvalue3-getmonitoreventwaitlist-method.md)|Poskytuje uspořádaný seznam vláken, která jsou zařazená do fronty pro událost přidruženou ke zámku monitoru.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -47,5 +47,5 @@ Zpřístupní vlastnosti uzamčení sledování objektů. Toto rozhraní rozši�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

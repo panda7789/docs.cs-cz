@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 52a80838-af36-4399-bc97-d8a4c6d76df2
 topic_type:
 - apiref
-ms.openlocfilehash: bff6dea0e870cf62734fa583eefa481c594481b1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 22a3f39bc1f9b4e6cad1db4fd0a6480b7c04e8fa
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096525"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792757"
 ---
 # <a name="icordebugnativeframe2-interface"></a>ICorDebugNativeFrame2 – rozhraní
 Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.  
@@ -28,9 +28,9 @@ Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[IsChild – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Určuje, zda je aktuální rámec podřízeným rámcem.|  
-|[IsMatchingParentFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Určuje, zda je určený rámec nadřazeným prvkem aktuálního rámce.|  
-|[GetStackParameterSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Vrátí kumulativní velikost parametrů v zásobníku v operačních systémech x86.|  
+|[IsChild – metoda](icordebugnativeframe2-ischild-method.md)|Určuje, zda je aktuální rámec podřízeným rámcem.|  
+|[IsMatchingParentFrame – metoda](icordebugnativeframe2-ismatchingparentframe-method.md)|Určuje, zda je určený rámec nadřazeným prvkem aktuálního rámce.|  
+|[GetStackParameterSize – metoda](icordebugnativeframe2-getstackparametersize-method.md)|Vrátí kumulativní velikost parametrů v zásobníku v operačních systémech x86.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní logicky rozšiřuje rozhraní "ICorDebugNativeFrame".  
@@ -49,5 +49,5 @@ Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

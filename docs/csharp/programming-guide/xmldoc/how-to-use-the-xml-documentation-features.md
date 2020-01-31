@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 5de94b1f1ab44f954b5bab9f8b5212c33325c19d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 57034fb835d4c82b5bf658e61ec78ef226c2551e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75696711"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789774"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Jak používat funkce dokumentace XML
 
@@ -20,7 +20,7 @@ Následující příklad obsahuje základní přehled o typu, který je dokument
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
-Příklad vygeneruje soubor. XML s následujícím obsahem:
+Příklad vygeneruje soubor *. XML* s následujícím obsahem.
 
 ```xml
 <?xml version="1.0"?>
@@ -106,7 +106,7 @@ Příklad vygeneruje soubor. XML s následujícím obsahem:
 </doc>
 ```
 
-## <a name="compiling-the-code"></a>Zkompilování kódu
+## <a name="compiling-the-code"></a>Kompilování kódu
 
 Chcete-li zkompilovat příklad, zadejte následující příkazový řádek:
 
@@ -120,7 +120,7 @@ Dokumentace XML začíná na///. Při vytváření nového projektu Průvodce vl
 
 - Dokumentace musí být ve správném formátu XML. Pokud XML není ve správném formátu, je vygenerováno upozornění a soubor dokumentace bude obsahovat komentář, který říká, že došlo k chybě.
 
-- Vývojářům je zdarma vytvořit vlastní sadu značek. Je doporučena sada značek (viz téma [Doporučené značky pro dokumentační komentáře](recommended-tags-for-documentation-comments.md)). Některé z doporučených značek mají zvláštní význam:
+- Vývojářům je zdarma vytvořit vlastní sadu značek. Je [doporučena sada značek](recommended-tags-for-documentation-comments.md). Některé z doporučených značek mají zvláštní význam:
 
   - K popisu parametrů se používá značka \<param >. Pokud je tento parametr použit, kompilátor ověří, zda existuje parametr a zda jsou všechny parametry popsány v dokumentaci. Pokud se ověření nepovedlo, kompilátor vydá upozornění.
 
@@ -133,7 +133,7 @@ Dokumentace XML začíná na///. Při vytváření nového projektu Průvodce vl
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [C#Průvodce programováním](../index.md)
 - [-doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Dokumentační komentáře XML](./index.md)
 - [Procesor dokumentace DocFX](https://dotnet.github.io/docfx/)

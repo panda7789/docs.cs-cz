@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 250021c9eb475d0cbcb1bd14c8515b969fc9d30b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b6dabefceba038a129148f7ba36d4ffcfc425c80
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449821"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790029"
 ---
 # <a name="icorprofilerinfo10isfrozenobject-method"></a>ICorProfilerInfo10:: IsFrozenObject – metoda
 
@@ -29,13 +29,15 @@ HRESULT IsFrozenObject( [in]  ObjectID objectId,
                         [out] BOOL *pbFrozen);
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`objectId` \
-pro Objekt, který chcete prošetřit.
+- `objectId`
 
-`pbFrozen` \
-mimo `BOOL` označující, zda je objekt v segmentu určeném jen pro čtení.
+  \[v] objektu, který chcete prošetřit.
+
+- `pbFrozen`
+
+  \[] `BOOL` označující, zda je objekt v segmentu určeném jen pro čtení.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -49,4 +51,4 @@ mimo `BOOL` označující, zda je objekt v segmentu určeném jen pro čtení.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [Rozhraní ICorProfilerInfo10](icorprofilerinfo10-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
 topic_type:
 - apiref
-ms.openlocfilehash: 7edf0065fa7eb39dada167a682f2b634a438f1f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7685d1b6d5458a4405fc5a4abdb2f3134618f01c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138401"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794403"
 ---
 # <a name="icordebugheapvalueisvalid-method"></a>ICorDebugHeapValue::IsValid – metoda
 Získá hodnotu, která označuje, zda je objekt reprezentovaný tímto ICorDebugHeapValue platný.  
@@ -42,7 +42,7 @@ HRESULT IsValid (
 ## <a name="remarks"></a>Poznámky  
  Hodnota je neplatná, pokud byla uvolněna systémem uvolňování paměti.  
   
- Tato metoda je zastaralá. V .NET Framework 2,0 jsou všechny hodnoty platné, dokud je volána metoda [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) , v níž je čas zrušení platnosti hodnot.  
+ Tato metoda je zastaralá. V .NET Framework 2,0 jsou všechny hodnoty platné, dokud je volána metoda [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) , v níž je čas zrušení platnosti hodnot.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

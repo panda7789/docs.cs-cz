@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5fd30875-555e-4e96-877b-5dd266cde7c4
 topic_type:
 - apiref
-ms.openlocfilehash: 86b8737577bdb5f61f1061cb217620fae03ebd0c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 27e13e298c1be61018a92e53a0ee82c786729c7d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139369"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792587"
 ---
 # <a name="icordebugprocessmodifylogswitch-method"></a>ICorDebugProcess::ModifyLogSwitch – metoda
 Nastaví úroveň závažnosti určeného přepínače protokolu.  
@@ -41,7 +41,7 @@ HRESULT ModifyLogSwitch(
  pro Úroveň závažnosti, která se má nastavit pro zadaný přepínač protokolu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je platná až po výskytu zpětného volání [ICorDebugManagedCallback:: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) .  
+ Tato metoda je platná až po výskytu zpětného volání [ICorDebugManagedCallback:: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

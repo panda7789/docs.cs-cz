@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: d6518612c213d21c2dc7d80878121ccd3b7e2abb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7fd62e0d3d9173f3b75882131e57126075c0677f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449849"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863306"
 ---
 # <a name="icorprofilerinfo10enumerateobjectreferences-method"></a>ICorProfilerInfo10:: EnumerateObjectReferences – metoda
 
@@ -30,20 +30,23 @@ HRESULT EnumerateObjectReferences( [in] ObjectID objectId,
                                    [in] void* clientData);
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`objectId` \
-pro Objekt, na kterém se mají vytvořit výčet odkazů
+- `objectId`
 
-`callback` \
-pro Funkce, která bude volána s odkazy pro objekt.
+  \[v] objekt pro zobrazení výčtu odkazů.
 
-`clientData` \
-pro Data poskytnutá profilerem, která se mají předat funkci `callback`
+- `callback`
+
+  \[v] funkce, která bude volána s odkazy pro objekt.
+
+- `clientData`
+
+  \[v] data poskytnutá profilerem, která se mají předat funkci `callback`.
 
 ## <a name="remarks"></a>Poznámky
 
-Metoda `EnumerateObjectReferences` je podobná [objectReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md), s tím rozdílem, že prochází odkazy na vyžádání pro Profiler místo předběžného přidělení pole pro uložení odkazů.
+Metoda `EnumerateObjectReferences` je podobná [objectReferences –](icorprofilercallback-objectreferences-method.md), s tím rozdílem, že prochází odkazy na vyžádání pro Profiler místo předběžného přidělení pole pro uložení odkazů.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -57,4 +60,4 @@ Metoda `EnumerateObjectReferences` je podobná [objectReferences –](../../../.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [Rozhraní ICorProfilerInfo10](icorprofilerinfo10-interface.md)

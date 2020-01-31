@@ -2,23 +2,23 @@
 title: Rozhraní ICorDebugProcess8
 ms.date: 03/30/2017
 ms.assetid: 7ab1a70f-ec11-46ff-8869-cd8ca679cc51
-ms.openlocfilehash: dc7de361386b9ee21d6cf05c36a7f63c3e1c25f7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 813afc047f9fda060f1cf1af780336ff8b7c18be
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123373"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792153"
 ---
 # <a name="icordebugprocess8-interface"></a>Rozhraní ICorDebugProcess8
 [Podporováno v .NET Framework 4,6 a novějších verzích]  
   
- Logicky rozšiřuje rozhraní ICorDebugProcess a povoluje nebo zakazuje určité typy zpětných volání výjimek [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .  
+ Logicky rozšiřuje rozhraní ICorDebugProcess a povoluje nebo zakazuje určité typy zpětných volání výjimek [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnableExceptionCallbacksOutsideOfMyCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md)|Povolí nebo zakáže určité typy zpětných volání výjimek [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .|  
+|[EnableExceptionCallbacksOutsideOfMyCode – metoda](icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md)|Povolí nebo zakáže určité typy zpětných volání výjimek [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -33,5 +33,5 @@ ms.locfileid: "73123373"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

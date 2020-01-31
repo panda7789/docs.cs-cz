@@ -12,49 +12,55 @@ helpviewer_keywords:
 - <item> C# XML tag
 - <list> C# XML tag
 ms.assetid: c9620b1b-c2e6-43f1-ab88-8ab47308ffec
-ms.openlocfilehash: 6e6f3a3399f2bffe84b5cec733833c974a0bb51b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cb289b26e9bc12d561892c421fb40da18d8c3513
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711750"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789743"
 ---
 # <a name="list-c-programming-guide"></a>> seznam \<(C# Průvodce programováním)
-## <a name="syntax"></a>Syntaxe  
+
+## <a name="syntax"></a>Syntaxe
+
+```xml
+<list type="bullet|number|table">
+    <listheader>
+        <term>term</term>
+        <description>description</description>
+    </listheader>
+    <item>
+        <term>term</term>
+        <description>description</description>
+    </item>
+</list>
+```
+
+## <a name="parameters"></a>Parametry
+
+- `term`
+
+  Pojem, který definuje, který bude definován v `description`.
+
+- `description`
+
+  Buď položka v seznamu odrážek nebo číslovaný seznam, nebo definice `term`.
   
-```xml  
-<list type="bullet" | "number" | "table">  
-    <listheader>  
-        <term>term</term>  
-        <description>description</description>  
-    </listheader>  
-    <item>  
-        <term>term</term>  
-        <description>description</description>  
-    </item>  
-</list>  
-```  
-  
-## <a name="parameters"></a>Parametry  
- `term`  
- Pojem, který definuje, který bude definován v `description`.  
-  
- `description`  
- Buď položka v seznamu odrážek nebo číslovaný seznam, nebo definice `term`.  
-  
-## <a name="remarks"></a>Poznámky  
- Blok > \<listheader – se používá k definování řádku záhlaví v seznamu tabulek nebo definic. Při definování tabulky stačí zadat položku pro termín v záhlaví.  
-  
- Každá položka v seznamu je určena položkou \<> bloku. Při vytváření seznamu definic bude nutné zadat jak `term`, tak `description`. U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description`.  
-  
- Seznam nebo tabulka může v případě potřeby obsahovat tolik \<položek >.  
-  
- Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csProgGuideDocComments#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#6)]  
-  
+## <a name="remarks"></a>Poznámky
+
+Blok > \<listheader – se používá k definování řádku záhlaví v seznamu tabulek nebo definic. Při definování tabulky stačí zadat položku pro termín v záhlaví.
+
+Každá položka v seznamu je určena položkou \<> bloku. Při vytváření seznamu definic bude nutné zadat jak `term`, tak `description`. U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description`.
+
+Seznam nebo tabulka může v případě potřeby obsahovat tolik \<položek >.
+
+Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
+
+## <a name="example"></a>Příklad
+
+[!code-csharp[csProgGuideDocComments#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#6)]
+
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)
-- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)
+- [C#Průvodce programováním](../index.md)
+- [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)

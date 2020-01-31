@@ -2,12 +2,12 @@
 title: 'ICorDebugExceptionDebugEvent:: GetStackPointer – metoda'
 ms.date: 03/30/2017
 ms.assetid: d8f66a1c-16be-4264-afc5-bc2dfbb4a682
-ms.openlocfilehash: 688f5aec457298a43d95a35fdbc6e04e29a306a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 657649b97262a12639117defe7a9c546f08cfef5
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084674"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782858"
 ---
 # <a name="icordebugexceptiondebugeventgetstackpointer-method"></a>ICorDebugExceptionDebugEvent:: GetStackPointer – metoda
 Získá ukazatel zásobníku pro tuto událost ladění výjimky.  
@@ -29,15 +29,15 @@ HRESULT GetStackPointer(
   
 |Typ události|Význam `pStackPointer` hodnoty|  
 |----------------|--------------------------------------|  
-|[MANAGED_EXCEPTION_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|Ukazatel zásobníku pro rámec, který vyvolal výjimku.|  
-|[MANAGED_EXCEPTION_USER_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|Ukazatel zásobníku pro rámec uživatelského kódu nejblíže k bodu vyvolané výjimky.|  
-|[MANAGED_EXCEPTION_CATCH_HANDLER_FOUND](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|Ukazatel zásobníku pro rámec, který obsahuje obslužnou rutinu catch.|  
-|[MANAGED_EXCEPTION_UNHANDLED](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|`pStackPointer` je **null**.|  
+|[MANAGED_EXCEPTION_FIRST_CHANCE](cordebugrecordformat-enumeration.md)|Ukazatel zásobníku pro rámec, který vyvolal výjimku.|  
+|[MANAGED_EXCEPTION_USER_FIRST_CHANCE](cordebugrecordformat-enumeration.md)|Ukazatel zásobníku pro rámec uživatelského kódu nejblíže k bodu vyvolané výjimky.|  
+|[MANAGED_EXCEPTION_CATCH_HANDLER_FOUND](cordebugrecordformat-enumeration.md)|Ukazatel zásobníku pro rámec, který obsahuje obslužnou rutinu catch.|  
+|[MANAGED_EXCEPTION_UNHANDLED](cordebugrecordformat-enumeration.md)|`pStackPointer` je **null**.|  
   
 > [!NOTE]
 > Tato metoda je k dispozici pouze s .NET Native.  
   
- Typ události je k dispozici z metody [ICorDebugDebugEvent:: GetEventKind –](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) .  
+ Typ události je k dispozici z metody [ICorDebugDebugEvent:: GetEventKind –](icordebugdebugevent-geteventkind-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -50,5 +50,5 @@ HRESULT GetStackPointer(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugExceptionDebugEvent – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugExceptionDebugEvent – rozhraní](icordebugexceptiondebugevent-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

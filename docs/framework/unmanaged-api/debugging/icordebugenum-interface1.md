@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 80be7efe-2c32-4b9f-8c52-40c6f6268219
 topic_type:
 - apiref
-ms.openlocfilehash: 59dcb7ae6f27f8d049cd4dc2d313f7f1130fc503
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cc5598f9cbec4b97bb75f83fb18ccf8742904272
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085266"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783010"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum – rozhraní
 
@@ -29,19 +29,19 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které použív
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Clone – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-clone-method.md)|Vytvoří kopii tohoto objektu `ICorDebugEnum`.|  
-|[GetCount – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-getcount-method.md)|Získá počet položek ve výčtu.|  
-|[Reset – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-reset-method.md)|Přesune kurzor na začátek výčtu.|  
-|[Skip – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-skip-method.md)|Přesune kurzor do výčtu směrem nahoru podle zadaného počtu položek.|  
+|[Clone – metoda](icordebugenum-clone-method.md)|Vytvoří kopii tohoto objektu `ICorDebugEnum`.|  
+|[GetCount – metoda](icordebugenum-getcount-method.md)|Získá počet položek ve výčtu.|  
+|[Reset – metoda](icordebugenum-reset-method.md)|Přesune kurzor na začátek výčtu.|  
+|[Skip – metoda](icordebugenum-skip-method.md)|Přesune kurzor do výčtu směrem nahoru podle zadaného počtu položek.|  
   
 ## <a name="remarks"></a>Poznámky  
  Následující enumerátory jsou odvozeny z `ICorDebugEnum`:  
   
-- ICorDebugAppDomainEnum  
+- "ICorDebugAppDomainEnum"  
   
 - ICorDebugAssemblyEnum  
   
-- [ICorDebugBlockingObjectEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-interface.md)  
+- [ICorDebugBlockingObjectEnum –](icordebugblockingobjectenum-interface.md)  
   
 - ICorDebugBreakpointEnum  
   
@@ -51,17 +51,17 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které použív
   
 - ICorDebugErrorInfoEnum  
   
-- [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md)  
+- [ICorDebugExceptionObjectCallStackEnum](icordebugexceptionobjectcallstackenum-interface.md)  
   
 - ICorDebugFrameEnum  
   
-- [ICorDebugGCReferenceEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md)  
+- [ICorDebugGCReferenceEnum –](icordebuggcreferenceenum-interface.md)  
   
-- [ICorDebugGuidToTypeEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)  
+- [ICorDebugGuidToTypeEnum –](icordebugguidtotypeenum-interface.md)  
   
-- [ICorDebugHeapEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
+- [ICorDebugHeapEnum –](icordebugheapenum-interface.md)  
   
-- [ICorDebugHeapSegmentEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)  
+- [ICorDebugHeapSegmentEnum –](icordebugheapsegmentenum-interface.md)  
   
 - ICorDebugModuleEnum  
   
@@ -77,7 +77,7 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které použív
   
 - ICorDebugValueEnum  
   
-- [ICorDebugVariableHomeEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)  
+- [ICorDebugVariableHomeEnum](icordebugvariablehomeenum-interface.md)  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
@@ -93,4 +93,4 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které použív
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

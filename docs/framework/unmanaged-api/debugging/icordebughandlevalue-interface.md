@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66fcd2b8-ac66-414b-83a8-75a925e17772
 topic_type:
 - apiref
-ms.openlocfilehash: 94472e84b73cdffe09505088b1e7fbc20a209bc3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 406468fc6e2b68e8c8e1dfbd0f0f18cce3f013ab
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138479"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794461"
 ---
 # <a name="icordebughandlevalue-interface"></a>ICorDebugHandleValue – rozhraní
 
@@ -29,8 +29,8 @@ Podtřída ICorDebugReferenceValue, která představuje referenční hodnotu, do
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Dispose – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebughandlevalue-dispose-method.md)|Uvolňuje popisovač, na který odkazuje tento objekt `ICorDebugHandleValue`, bez explicitního uvolnění ukazatele rozhraní.|  
-|[GetHandleType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebughandlevalue-gethandletype-method.md)|Získá hodnotu CorDebugHandleType –, která popisuje druh popisovače, na který odkazuje tento `ICorDebugHandleValue`.|  
+|[Dispose – metoda](icordebughandlevalue-dispose-method.md)|Uvolňuje popisovač, na který odkazuje tento objekt `ICorDebugHandleValue`, bez explicitního uvolnění ukazatele rozhraní.|  
+|[GetHandleType – metoda](icordebughandlevalue-gethandletype-method.md)|Získá hodnotu CorDebugHandleType –, která popisuje druh popisovače, na který odkazuje tento `ICorDebugHandleValue`.|  
   
 ## <a name="remarks"></a>Poznámky  
  Objekt `ICorDebugReferenceValue` je po přerušení v provádění laděného kódu neplatný. `ICorDebugHandleValue` udržuje svůj odkaz prostřednictvím přerušení a pokračování, dokud není explicitně uvolněn.  
@@ -49,4 +49,4 @@ Podtřída ICorDebugReferenceValue, která představuje referenční hodnotu, do
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

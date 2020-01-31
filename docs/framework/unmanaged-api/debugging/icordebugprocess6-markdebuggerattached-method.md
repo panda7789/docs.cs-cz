@@ -2,12 +2,12 @@
 title: ICorDebugProcess6::MarkDebuggerAttached – metoda
 ms.date: 03/30/2017
 ms.assetid: bf94f090-5265-4112-8e57-5b4e20e070d0
-ms.openlocfilehash: 48bab20a71144b28f24951556eb36210d7b6aebf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b2ecd6da11bffb156826fa0c31b5f32abb54ff4a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123436"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792225"
 ---
 # <a name="icordebugprocess6markdebuggerattached-method"></a>ICorDebugProcess6::MarkDebuggerAttached – metoda
 Změní vnitřní stav laděného objektu tak, aby metoda <xref:System.Diagnostics.Debugger.IsAttached%2A?displayProperty=nameWithType> v knihovně tříd .NET Framework vrátila `true`.  
@@ -49,5 +49,5 @@ HRESULT MarkDebuggerAttached(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess6 – rozhraní](icordebugprocess6-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

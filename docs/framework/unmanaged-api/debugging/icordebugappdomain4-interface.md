@@ -2,12 +2,12 @@
 title: Rozhraní ICorDebugAppDomain4
 ms.date: 03/30/2017
 ms.assetid: c536b9dc-148e-4924-bde1-1daa98d49d90
-ms.openlocfilehash: db5c08f74795026d7c6f3b5872fb6fdabf88ee5d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2965b43a25d016e9773ec3893661af4580e6007b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088810"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784706"
 ---
 # <a name="icordebugappdomain4-interface"></a>Rozhraní ICorDebugAppDomain4
 Logicky rozšiřuje rozhraní ICorDebugAppDomain, aby získala spravovaný objekt z obálky s přípravnou modelem COM.  
@@ -16,7 +16,7 @@ Logicky rozšiřuje rozhraní ICorDebugAppDomain, aby získala spravovaný objek
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetObjectForCCW – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain4-getobjectforccw-method.md)|Načte spravovaný objekt z ukazatele na obálku s přívolatelné v modelu COM.|  
+|[GetObjectForCCW – metoda](icordebugappdomain4-getobjectforccw-method.md)|Načte spravovaný objekt z ukazatele na obálku s přívolatelné v modelu COM.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -31,5 +31,5 @@ Logicky rozšiřuje rozhraní ICorDebugAppDomain, aby získala spravovaný objek
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

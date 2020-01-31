@@ -2,25 +2,25 @@
 title: Rozhraní ICorDebugDataTarget2
 ms.date: 03/30/2017
 ms.assetid: 13f11388-2f91-48d8-98d6-6a4a63cb5746
-ms.openlocfilehash: 3c59752949ca29cbd0ed5a34ec7aeb3d98b6f9b6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 472ea0b3d54c025cdd69957765ad2663c7288b15
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136485"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783562"
 ---
 # <a name="icordebugdatatarget2-interface"></a>Rozhraní ICorDebugDataTarget2
-Logicky rozšiřuje rozhraní [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md).  
+Logicky rozšiřuje rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md).  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateVirtualUnwinder – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-createvirtualunwinder-method.md)|Vytvoří novou odvinoutho zásobníku, který spustí odvinutí z počátečního kontextu (což není nutně listem vlákna).|  
-|[EnumerateThreadIDs – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-enumeratethreadids-method.md)|Vrátí seznam identifikátorů aktivních vláken.|  
-|[GetImageFromPointer – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-getimagefrompointer-method.md)|Vrátí základní adresu modulu a velikost z adresy v tomto modulu.|  
-|[GetImageLocation – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-getimagelocation-method.md)|Vrátí cestu modulu ze základní adresy modulu.|  
-|[GetSymbolProviderForImage – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-getsymbolproviderforimage-method.md)|Vrátí poskytovatele symbolů pro modul ze základní adresy tohoto modulu.|  
+|[CreateVirtualUnwinder – metoda](icordebugdatatarget2-createvirtualunwinder-method.md)|Vytvoří novou odvinoutho zásobníku, který spustí odvinutí z počátečního kontextu (což není nutně listem vlákna).|  
+|[EnumerateThreadIDs – metoda](icordebugdatatarget2-enumeratethreadids-method.md)|Vrátí seznam identifikátorů aktivních vláken.|  
+|[GetImageFromPointer – metoda](icordebugdatatarget2-getimagefrompointer-method.md)|Vrátí základní adresu modulu a velikost z adresy v tomto modulu.|  
+|[GetImageLocation – metoda](icordebugdatatarget2-getimagelocation-method.md)|Vrátí cestu modulu ze základní adresy modulu.|  
+|[GetSymbolProviderForImage – metoda](icordebugdatatarget2-getsymbolproviderforimage-method.md)|Vrátí poskytovatele symbolů pro modul ze základní adresy tohoto modulu.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -38,5 +38,5 @@ Logicky rozšiřuje rozhraní [ICorDebugDataTarget](../../../../docs/framework/u
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

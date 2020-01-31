@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 25f22d5e8caacc69643f6d79e109ebaa94159d80
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8a52d84f7152b9cb431ad0aa97c88b143463be2d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75632308"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789615"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 
@@ -20,7 +20,7 @@ ms.locfileid: "75632308"
 
 Tato část popisuje, jak implementovat zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek.
 
-Implementace pro prvky Windows Presentation Foundation (WPF) a non-WPF elementy (například ty, které jsou navrženy pro [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]), jsou zásadním rozdílem. Prvky WPF poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím třídy odvozené z <xref:System.Windows.Automation.Peers.AutomationPeer>. Prvky jiného typu než WPF poskytují podporu prostřednictvím implementací rozhraní poskytovatele.
+Implementace pro prvky Windows Presentation Foundation (WPF) a non-WPF elementy (například ty, které jsou navrženy pro model Windows Forms), jsou zásadním rozdílem. Prvky WPF poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím třídy odvozené z <xref:System.Windows.Automation.Peers.AutomationPeer>. Prvky jiného typu než WPF poskytují podporu prostřednictvím implementací rozhraní poskytovatele.
 
 <a name="Security_Considerations"></a>
 
@@ -40,7 +40,7 @@ Další informace o tomto tématu naleznete v tématu [automatizace uživatelsk�
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>Implementace poskytovatele pomocí elementů, které nejsou WPF
 
-Vlastní ovládací prvky, které nejsou součástí architektury WPF, ale které jsou napsány ve spravovaném kódu (nejčastěji se jedná o [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků), poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] implementací rozhraní. Každý prvek musí implementovat alespoň jedno rozhraní uvedené v první tabulce v následující části. Kromě toho, pokud prvek podporuje jeden nebo více vzorů ovládacích prvků, musí implementovat příslušné rozhraní pro každý model ovládacího prvku.
+Vlastní ovládací prvky, které nejsou součástí architektury WPF, ale které jsou napsány ve spravovaném kódu (nejčastěji se jedná o model Windows Forms ovládacích prvků), poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] implementací rozhraní. Každý prvek musí implementovat alespoň jedno rozhraní uvedené v první tabulce v následující části. Kromě toho, pokud prvek podporuje jeden nebo více vzorů ovládacích prvků, musí implementovat příslušné rozhraní pro každý model ovládacího prvku.
 
 Váš projekt poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] musí odkazovat na následující sestavení:
 
@@ -117,7 +117,7 @@ Zprostředkovatelé pro ovládací prvky na bázi HWND nemusejí obvykle zadáva
 > [!NOTE]
 > Z okna se získá <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> jednoduchého prvku nebo kořen fragmentu, který je hostovaný v okně. prvky fragmentů pod kořenem (například položky seznamu v poli seznam) však musí poskytovat své vlastní identifikátory. Další informace najdete v tématu <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
 >
-> <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> by měl být vrácen pro poskytovatele hostované v ovládacím prvku [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. V takovém případě nemůže být ve výchozím zprostředkovateli Windows načtena správná hodnota.
+> <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> by měl být vrácen pro poskytovatele hostované v ovládacím prvku model Windows Forms. V takovém případě nemůže být ve výchozím zprostředkovateli Windows načtena správná hodnota.
 >
 > <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> obvykle dodává poskytovatel hostitele. Například pokud je vlastní ovládací prvek odvozen od <xref:System.Windows.Forms.Control>, název je odvozen z vlastnosti `Text` ovládacího prvku.
 

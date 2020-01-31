@@ -2,12 +2,12 @@
 title: ICorDebugMergedAssemblyRecord – rozhraní
 ms.date: 03/30/2017
 ms.assetid: fe280b11-9479-4e34-a07c-0d1ea8088422
-ms.openlocfilehash: 8dc07cb8c2f57ee6f9598c727cbd6de38bf4625f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6d5d862110cd91e8ac81c96e50486be10c579903
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139194"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793059"
 ---
 # <a name="icordebugmergedassemblyrecord-interface"></a>ICorDebugMergedAssemblyRecord – rozhraní
 Poskytuje informace o sloučeném sestavení.  
@@ -16,12 +16,12 @@ Poskytuje informace o sloučeném sestavení.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetCulture – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-getculture-method.md)|Získá řetězec názvu jazykové verze sestavení.|  
-|[GetIndex – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-getindex-method.md)|Získá index předpony sestavení.|  
-|[GetPublicKey – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-getpublickey-method.md)|Získá veřejný klíč sestavení.|  
-|[GetPublicKeyToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-getpublickeytoken-method.md)|Získá token veřejného klíče sestavení.|  
-|[GetSimpleName – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-getsimplename-method.md)|Získá jednoduchý název sestavení.|  
-|[GetVersion – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-getversion-method.md)|Získá informace o verzi sestavení.|  
+|[GetCulture – metoda](icordebugmergedassemblyrecord-getculture-method.md)|Získá řetězec názvu jazykové verze sestavení.|  
+|[GetIndex – metoda](icordebugmergedassemblyrecord-getindex-method.md)|Získá index předpony sestavení.|  
+|[GetPublicKey – metoda](icordebugmergedassemblyrecord-getpublickey-method.md)|Získá veřejný klíč sestavení.|  
+|[GetPublicKeyToken – metoda](icordebugmergedassemblyrecord-getpublickeytoken-method.md)|Získá token veřejného klíče sestavení.|  
+|[GetSimpleName – metoda](icordebugmergedassemblyrecord-getsimplename-method.md)|Získá jednoduchý název sestavení.|  
+|[GetVersion – metoda](icordebugmergedassemblyrecord-getversion-method.md)|Získá informace o verzi sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -39,5 +39,5 @@ Poskytuje informace o sloučeném sestavení.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

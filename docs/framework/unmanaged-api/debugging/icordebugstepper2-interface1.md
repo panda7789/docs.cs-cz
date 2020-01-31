@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7a191c2a-95ea-4d47-83b0-44de2b632d63
 topic_type:
 - apiref
-ms.openlocfilehash: 28ec18864158641a337ebdea189080ba4247a7c4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d154cf10e60935d12653c70875323079f92ae288
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120522"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791734"
 ---
 # <a name="icordebugstepper2-interface"></a>ICorDebugStepper2 – rozhraní
 Poskytuje podporu pro ladění pouze můj kód (JMC).  
@@ -28,7 +28,7 @@ Poskytuje podporu pro ladění pouze můj kód (JMC).
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[SetJMC – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper2-setjmc-method.md)|Nastaví hodnotu, která určuje, zda jsou tyto ICorDebugStepper kroky pouze prostřednictvím kódu, který je vytvořen vývojářem aplikace.|  
+|[SetJMC – metoda](icordebugstepper2-setjmc-method.md)|Nastaví hodnotu, která určuje, zda jsou tyto ICorDebugStepper kroky pouze prostřednictvím kódu, který je vytvořen vývojářem aplikace.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -46,4 +46,4 @@ Poskytuje podporu pro ladění pouze můj kód (JMC).
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

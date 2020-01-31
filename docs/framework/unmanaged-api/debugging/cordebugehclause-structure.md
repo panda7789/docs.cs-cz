@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 0e350a1b-6997-46d0-bfc5-962a5011ef43
 topic_type:
 - apiref
-ms.openlocfilehash: f35e979a5107064d2987a385a989075ef71283ff
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 197c33511a474eb8291e4361ebb3c21fb3720cae
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73098862"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789429"
 ---
 # <a name="cordebugehclause-structure"></a>Struktura CorDebugEHClause
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -51,13 +51,13 @@ typedef struct _CorDebugEHClause {
 |`FilterOffset`|Posun v bajtech od začátku těla metody pro obslužnou rutinu výjimky na základě filtru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [GetEHClauses –](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) vrací pole hodnot `CoreDebugEHClause`.  
+ Metoda [GetEHClauses –](icordebugilcode-getehclauses-method.md) vrací pole hodnot `CoreDebugEHClause`.  
   
  Informace o klauzuli EH jsou definovány specifikací CLI. Další informace naleznete v tématu [Standard ECMA-355: Common Language Infrastructure (CLI), 6. verze](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
  Pole `flags` může obsahovat následující příznaky. Všimněte si, že nejsou definovány v CorDebug. idl nebo CorDebug. h.  
   
-|příznaků|Hodnota|Popis|  
+|Příznak|Hodnota|Popis|  
 |----------|-----------|-----------------|  
 |`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Typová klauzule Exception|  
 |`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|Filtr výjimky a klauzule obslužné rutiny.|  
@@ -75,5 +75,5 @@ typedef struct _CorDebugEHClause {
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetEHClauses – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [GetEHClauses – metoda](icordebugilcode-getehclauses-method.md)
+- [Struktury pro ladění](debugging-structures.md)

@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 9a1c0b47-6f10-4fcb-844a-4ab2d7990140
 topic_type:
 - apiref
-ms.openlocfilehash: 4bb04ba090be9cab551bc39d8d9f1be974c747d3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bd6f1b2153404ba4567ef8348ff128b5d475c6fe
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085139"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793493"
 ---
 # <a name="icordebugevalcreatevalue-method"></a>ICorDebugEval::CreateValue – metoda
 Vytvoří hodnotu zadaného typu s počáteční hodnotou 0 nebo null.  
   
- Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorDebugEval2:: createvaluefortype –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) .  
+ Tato metoda je zastaralá ve verzi .NET Framework 2,0. Místo toho použijte [ICorDebugEval2:: createvaluefortype –](icordebugeval2-createvaluefortype-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ HRESULT CreateValue (
  pro Hodnota výčtu [CorElementType –](../../../../docs/framework/unmanaged-api/metadata/corelementtype-enumeration.md) , která určuje typ hodnoty.  
   
  `pElementClass`  
- pro Ukazatel na objekt [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-interface.md) , který určuje třídu hodnoty, pokud typ není primitivní typ.  
+ pro Ukazatel na objekt [ICorDebugClass](icordebugclass-interface.md) , který určuje třídu hodnoty, pokud typ není primitivní typ.  
   
  `ppValue`  
  mimo Ukazatel na adresu objektu "ICorDebugValue", který představuje hodnotu.  
@@ -50,9 +50,9 @@ HRESULT CreateValue (
 ## <a name="remarks"></a>Poznámky  
  `CreateValue` vytvoří objekt `ICorDebugValue` daného typu pro výhradní účely jeho použití ve vyhodnocení funkce. Tento objekt hodnoty lze použít k předání konstant uživatele jako parametrů.  
   
- Pokud je typ hodnoty primitivní typ, jeho počáteční hodnota je nula nebo null. Pomocí [ICorDebugGenericValue:: SetValue](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md) nastavte hodnotu primitivního typu.  
+ Pokud je typ hodnoty primitivní typ, jeho počáteční hodnota je nula nebo null. Pomocí [ICorDebugGenericValue:: SetValue](icordebuggenericvalue-setvalue-method.md) nastavte hodnotu primitivního typu.  
   
- Pokud je hodnota `elementType` ELEMENT_TYPE_CLASS, získáte "ICorDebugReferenceValue" (vrácený v `ppValue`) představující odkaz na objekt null. Tento objekt lze použít k předání hodnoty null do vyhodnocení funkce, které má parametry objektu reference. Nemůžete nastavit `ICorDebugValue` na cokoli. vždycky zůstane null.  
+ Pokud je hodnota `elementType` ELEMENT_TYPE_CLASS, získáte "ICorDebugReferenceValue" (vrácený v `ppValue`) reprezentující odkaz na objekt null. Tento objekt lze použít k předání hodnoty null do vyhodnocení funkce, které má parametry objektu reference. Nemůžete nastavit `ICorDebugValue` na cokoli. vždycky zůstane null.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -65,5 +65,5 @@ HRESULT CreateValue (
   
 ## <a name="see-also"></a>Viz také:
 
-- [CreateValueForType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md)
+- [CreateValueForType – metoda](icordebugeval2-createvaluefortype-method.md)
 - [Rozhraní ICorDebugEval](icordebugeval-interface.md)

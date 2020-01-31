@@ -6,108 +6,108 @@ helpviewer_keywords:
 - unmanaged enumerations [.NET Framework], debugging
 - enumerations [.NET Framework debugging]
 ms.assetid: 3af9f584-f1b4-4154-aeaa-8fce7c9f8b50
-ms.openlocfilehash: 7948b78da1db5267ce53364af1e4a26ff73801e0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a83b1aa0b2cc068ed2f73dca04083b1085d45201
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124334"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789158"
 ---
 # <a name="debugging-enumerations"></a>Ladění výčtů
 Tato část popisuje nespravované výčty, které používá rozhraní API pro ladění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [CLR_DEBUGGING_PROCESS_FLAGS – výčet](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-process-flags-enumeration.md)  
- Poskytuje hodnoty, které jsou používány metodou [ICLRDebugging:: OpenVirtualProcess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) .  
+ [CLR_DEBUGGING_PROCESS_FLAGS – výčet](clr-debugging-process-flags-enumeration.md)  
+ Poskytuje hodnoty, které jsou používány metodou [ICLRDebugging:: OpenVirtualProcess –](iclrdebugging-openvirtualprocess-method.md) .  
   
- [CLRDataEnumMemoryFlags – výčet](../../../../docs/framework/unmanaged-api/debugging/clrdataenummemoryflags-enumeration.md)  
- Určuje, které oblasti paměti musí volání metody [ICLRDataEnumMemoryRegions –:: EnumMemoryRegions –](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) zahrnovat.  
+ [CLRDataEnumMemoryFlags – výčet](clrdataenummemoryflags-enumeration.md)  
+ Určuje, které oblasti paměti musí volání metody [ICLRDataEnumMemoryRegions –:: EnumMemoryRegions –](iclrdataenummemoryregions-enummemoryregions-method.md) zahrnovat.  
   
- [COR_PUB_ENUMPROCESS – výčet](../../../../docs/framework/unmanaged-api/debugging/cor-pub-enumprocess-enumeration.md)  
+ [COR_PUB_ENUMPROCESS – výčet](cor-pub-enumprocess-enumeration.md)  
  Určuje typ procesu, který se má vyčíslit.  
   
- [CorDebugBlockingReason – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingreason-enumeration.md)  
+ [CorDebugBlockingReason – výčet](cordebugblockingreason-enumeration.md)  
  Určuje důvody, proč se vlákno může v daném objektu zablokovat.  
   
  CorDebugChainReason –  
  Určuje důvod nebo důvody pro zahájení řetězu volání.  
   
- [CorDebugCodeInvokeKind – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md)  
+ [CorDebugCodeInvokeKind – výčet](cordebugcodeinvokekind-enumeration.md)  
  Popisuje, jak exportovaný funkce vyvolá spravovaný kód.  
   
- [CorDebugCodeInvokePurpose – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md)  
+ [CorDebugCodeInvokePurpose – výčet](cordebugcodeinvokepurpose-enumeration.md)  
  Popisuje, proč exportovaná funkce volá spravovaný kód.  
   
- CorDebugCreateProcessFlags –  
- Poskytuje další možnosti ladění, které lze použít při volání metody [ICorDebug:: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) .  
+ CorDebugCreateProcessFlags  
+ Poskytuje další možnosti ladění, které lze použít při volání metody [ICorDebug:: CreateProcess](icordebug-createprocess-method.md) .  
   
- [CorDebugDebugEventKind – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugdebugeventkind-enumeration.md)  
- Určuje typ události, jejíž informace je dekódovat metodou [DecodeEvent –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) .  
+ [CorDebugDebugEventKind – výčet](cordebugdebugeventkind-enumeration.md)  
+ Určuje typ události, jejíž informace je dekódovat metodou [DecodeEvent –](icordebugprocess6-decodeevent-method.md) .  
   
- [CorDebugDecodeEventFlagsWindows – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md)  
+ [CorDebugDecodeEventFlagsWindows – výčet](cordebugdecodeeventflagswindows-enumeration.md)  
  Poskytuje další informace o událostech ladění na platformě Windows.  
   
- CorDebugExceptionCallbackType –  
- Určuje typ zpětného volání, které je provedeno z události [ICorDebugManagedCallback2:: Exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) .  
+ CorDebugExceptionCallbackType  
+ Určuje typ zpětného volání, které je provedeno z události [ICorDebugManagedCallback2:: Exception](icordebugmanagedcallback2-exception-method.md) .  
   
- [CorDebugExceptionFlags – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md)  
+ [CorDebugExceptionFlags – výčet](cordebugexceptionflags-enumeration.md)  
  Poskytuje další informace o výjimce.  
   
- CorDebugExceptionUnwindCallbackType –  
+ CorDebugExceptionUnwindCallbackType  
  Určuje událost, která je během fáze unwind signalizována signálem zpětného volání.  
   
- [CorDebugGCType – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebuggctype-enumeration.md)  
+ [CorDebugGCType – výčet](cordebuggctype-enumeration.md)  
  Označuje, zda systém uvolňování paměti běží na pracovní stanici nebo serveru.  
   
- [CorDebugGenerationTypes – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebuggenerationtypes-enumeration.md)  
+ [CorDebugGenerationTypes – výčet](cordebuggenerationtypes-enumeration.md)  
  Určuje generaci oblasti paměti na spravované haldě.  
   
  CorDebugHandleType –  
  Určuje typ popisovače.  
   
- [CorDebugIlToNativeMappingTypes – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugiltonativemappingtypes-enumeration.md)  
+ [CorDebugIlToNativeMappingTypes – výčet](cordebugiltonativemappingtypes-enumeration.md)  
  Označuje, zda určitý rozsah nativních instrukcí odpovídá zvláštnímu regionu kódu.  
   
  CorDebugIntercept –  
  Určuje typy kódu, které mohou být na začátku.  
   
- [CorDebugInterfaceVersion – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebuginterfaceversion-enumeration.md)  
+ [CorDebugInterfaceVersion – výčet](cordebuginterfaceversion-enumeration.md)  
  Určuje buď verzi .NET Framework, nebo verzi .NET Framework, ve které bylo rozhraní zavedeno.  
   
- CorDebugInternalFrameType –  
+ CorDebugInternalFrameType  
  Určuje typ rámce zásobníku.  
   
- [CorDebugJITCompilerFlags – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md)  
+ [CorDebugJITCompilerFlags – výčet](cordebugjitcompilerflags-enumeration.md)  
  Obsahuje hodnoty, které mají vliv na chování spravovaného kompilátoru JIT (just-in-time).  
   
- [CorDebugJITCompilerFlagsDeprecated – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflagsdeprecated-enumeration.md)  
- Zastaralé. Místo toho použijte `CORDEBUG_JIT_DEFAULT` člen výčtu [CorDebugJITCompilerFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) .  
+ [CorDebugJITCompilerFlagsDeprecated – výčet](cordebugjitcompilerflagsdeprecated-enumeration.md)  
+ Zastaralé. Místo toho použijte `CORDEBUG_JIT_DEFAULT` člen výčtu [CorDebugJITCompilerFlags –](cordebugjitcompilerflags-enumeration.md) .  
   
- CorDebugMappingResult –  
+ CorDebugMappingResult  
  Poskytuje podrobné informace o tom, jak byla získána hodnota ukazatele na instrukce (IP).  
   
- [CorDebugMDAFlags – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugmdaflags-enumeration.md)  
+ [CorDebugMDAFlags – výčet](cordebugmdaflags-enumeration.md)  
  Určuje stav vlákna, ve kterém je aktivován pomocník spravovaného ladění (MDA).  
   
- [CorDebugNGenPolicy – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md)  
+ [CorDebugNGenPolicy – výčet](cordebugngenpolicy-enumeration.md)  
  Poskytuje hodnotu, která určuje, zda ladicí program načte nativní bitové kopie (NGen) z mezipaměti nativních imagí.  
   
- [CorDebugPlatform – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugplatform-enumeration.md)  
- Poskytuje hodnoty cílové platformy, které jsou používány metodou [ICorDebugDataTarget:: GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) .  
+ [CorDebugPlatform – výčet](cordebugplatform-enumeration.md)  
+ Poskytuje hodnoty cílové platformy, které jsou používány metodou [ICorDebugDataTarget:: GetPlatform](icordebugdatatarget-getplatform-method.md) .  
   
- [CorDebugRecordFormat – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+ [CorDebugRecordFormat – výčet](cordebugrecordformat-enumeration.md)  
  Popisuje formát dat v bajtovém poli, které obsahuje informace o nativní události ladění výjimky.  
   
  CorDebugRegister –  
  Určuje Registry přidružené k dané architektuře procesoru.  
   
- [CorDebugSetContextFlag – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugsetcontextflag-enumeration.md)  
+ [CorDebugSetContextFlag – výčet](cordebugsetcontextflag-enumeration.md)  
  Označuje, zda je kontext z aktivního (nebo koncového) rámce v zásobníku nebo byl vypočítán odvinutím z jiného rámce.  
   
- [CorDebugStateChange – výčet](../../../../docs/framework/unmanaged-api/debugging/cordebugstatechange-enumeration.md)  
+ [CorDebugStateChange – výčet](cordebugstatechange-enumeration.md)  
  Popisuje množství dat uložených v mezipaměti, které je nutné zahodit na základě změn procesu.  
   
- CorDebugStepReason –  
+ CorDebugStepReason  
  Označuje výsledek jednotlivého kroku.  
   
  CorDebugThreadState –  
@@ -119,31 +119,31 @@ Tato část popisuje nespravované výčty, které používá rozhraní API pro 
  CorDebugUserState –  
  Určuje stav uživatele vlákna.  
   
- [CorGCReferenceType – výčet](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md)  
+ [CorGCReferenceType – výčet](corgcreferencetype-enumeration.md)  
  Určuje zdroj objektu, který má být shromážděn do paměti.  
   
- [ILCodeKind – výčet](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md)  
+ [ILCodeKind – výčet](ilcodekind-enumeration.md)  
  Poskytuje hodnoty, které určují, jestli má ladicí program přístup k místním proměnným nebo kódu přidanému v profileru ReJIT instrumentace.  
   
- [LoggingLevelEnum – výčet](../../../../docs/framework/unmanaged-api/debugging/logginglevelenum-enumeration.md)  
+ [LoggingLevelEnum – výčet](logginglevelenum-enumeration.md)  
  Označuje úroveň závažnosti popisné zprávy, která je zapsána do protokolu událostí, když spravované vlákno zaznamená událost.  
   
- [LogSwitchCallReason – výčet](../../../../docs/framework/unmanaged-api/debugging/logswitchcallreason-enumeration.md)  
+ [LogSwitchCallReason – výčet](logswitchcallreason-enumeration.md)  
  Určuje operaci, která byla provedena na přepínači ladění/trasování.  
   
- [VariableLocationType – výčet](../../../../docs/framework/unmanaged-api/debugging/variablelocationtype-enumeration.md)  
+ [VariableLocationType – výčet](variablelocationtype-enumeration.md)  
  Označuje typ nativního umístění proměnné.  
   
- [WriteableMetadataUpdateMode – výčet](../../../../docs/framework/unmanaged-api/debugging/writeablemetadataupdatemode-enumeration.md)  
+ [WriteableMetadataUpdateMode – výčet](writeablemetadataupdatemode-enumeration.md)  
  Poskytuje hodnoty, které určují, zda mají být aktualizace metadat v paměti viditelné ladicímu programu. 
 
- [Výčet ClrDataSourceType](../../../../docs/framework/unmanaged-api/debugging/clrdatasourcetype-enumeration.md) Poskytuje hodnoty, které jsou používány strukturou CLRDATA_IL_ADDRESS_MAP.
+ [Výčet ClrDataSourceType](clrdatasourcetype-enumeration.md) Poskytuje hodnoty, které jsou používány CLRDATA_IL_ADDRESS_MAP strukturou.
 
 ## <a name="related-sections"></a>Související oddíly  
- [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
+ [Třídy typu coclass pro ladění](debugging-coclasses.md)  
   
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](debugging-interfaces.md)  
   
- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)  
+ [Globální statické funkce pro ladění](debugging-global-static-functions.md)  
   
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+ [Struktury pro ladění](debugging-structures.md)

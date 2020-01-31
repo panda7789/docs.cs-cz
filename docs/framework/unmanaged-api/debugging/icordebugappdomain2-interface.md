@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 314d29f3-feb0-4a92-9530-b569c280cc31
 topic_type:
 - apiref
-ms.openlocfilehash: bff270ff774692d058a36c7f47ab474b08bceb35
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6f9bcec66ff613d19c1198ac9849ca28c978f537
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088963"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788947"
 ---
 # <a name="icordebugappdomain2-interface"></a>ICorDebugAppDomain2 – rozhraní
 
@@ -29,8 +29,8 @@ Poskytuje metody pro práci s poli, ukazateli, ukazateli na funkci a typy odkaz�
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetArrayOrPointerType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getarrayorpointertype-method.md)|Získá pole zadaného typu nebo ukazatel nebo odkaz na zadaný typ.|  
-|[GetFunctionPointerType](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-getfunctionpointertype-method.md)|Získá ukazatel na funkci, která má daný podpis.|  
+|[GetArrayOrPointerType – metoda](icordebugappdomain2-getarrayorpointertype-method.md)|Získá pole zadaného typu nebo ukazatel nebo odkaz na zadaný typ.|  
+|[GetFunctionPointerType](icordebugappdomain2-getfunctionpointertype-method.md)|Získá ukazatel na funkci, která má daný podpis.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -48,4 +48,4 @@ Poskytuje metody pro práci s poli, ukazateli, ukazateli na funkci a typy odkaz�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

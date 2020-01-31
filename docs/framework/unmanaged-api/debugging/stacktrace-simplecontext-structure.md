@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d4cef11f-a8ca-49bc-a1b8-6631f9e28f3e
 topic_type:
 - apiref
-ms.openlocfilehash: 1cd3c34fc292e4a050fa8a75078283e34425fc8f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c81a5787eb06971e3d52aff5d1c1154a72564daf
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139132"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790338"
 ---
 # <a name="stacktrace_simplecontext-structure"></a>StackTrace_SimpleContext – struktura
 Poskytuje jednoduchý kontext, který lze použít místo úplné `CONTEXT` struktury.  
@@ -56,5 +56,5 @@ struct StackTrace_SimpleContext
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

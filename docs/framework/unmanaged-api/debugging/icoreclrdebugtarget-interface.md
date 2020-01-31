@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 7cfaee76-e284-4a66-a431-8e33f0f60038
 topic_type:
 - apiref
-ms.openlocfilehash: 83afe121b6bf0de3c5542695e38b6605db7a8b6d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 190671b4f690f8c2cad43cf446a1196985ec5a42
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121820"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790754"
 ---
 # <a name="icoreclrdebugtarget-interface"></a>ICoreClrDebugTarget – rozhraní
 Poskytuje metody, které řídí počty odkazů, vytváří výčet procesů a uvolňuje paměť přidruženou k ladicímu programu, který je připojen ke vzdálenému počítači se službou Silverlight.  
@@ -51,9 +51,9 @@ class ICoreClrDebugTarget {
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ICoreClrDebugTarget::EnumProcesses – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumprocesses-method.md)|Vytvoří výčet procesů, které jsou spuštěny na vzdáleném počítači.|  
-|[ICoreClrDebugTarget::EnumRuntimes – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-enumruntimes-method.md)|Vytvoří výčet modulu CLR (Common Language Runtime) (CLRs) v zadaném procesu na vzdáleném počítači.|  
-|[ICoreClrDebugTarget::FreeMemory – metoda](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md)|Uvolní paměť, která je přidělena metodami výčtu v této třídě.|  
+|[ICoreClrDebugTarget::EnumProcesses – metoda](icoreclrdebugtarget-enumprocesses-method.md)|Vytvoří výčet procesů, které jsou spuštěny na vzdáleném počítači.|  
+|[ICoreClrDebugTarget::EnumRuntimes – metoda](icoreclrdebugtarget-enumruntimes-method.md)|Vytvoří výčet modulu CLR (Common Language Runtime) (CLRs) v zadaném procesu na vzdáleném počítači.|  
+|[ICoreClrDebugTarget::FreeMemory – metoda](icoreclrdebugtarget-freememory-method.md)|Uvolní paměť, která je přidělena metodami výčtu v této třídě.|  
   
 ## <a name="remarks"></a>Poznámky  
  V současné době je tato funkce podporována pouze pro ladění cíle aplikace založeného na programu Silverlight, který je spuštěn ve vzdáleném počítači se systémem Macintosh.  
@@ -63,13 +63,13 @@ class ICoreClrDebugTarget {
   
  **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Knihovna:** mscordbi_macx86. dll  
+ **Library:** mscordbi_macx86.dll  
   
  **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugRemoteTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)
-- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebugRemoteTarget – rozhraní](icordebugremotetarget-interface.md)
+- [ICorDebug – rozhraní](icordebug-interface.md)
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

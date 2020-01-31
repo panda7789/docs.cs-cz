@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 04d7dedf9f882d9f0e0396949c71e4941c207fe3
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 6aaf5acc605067f378ff5d42f713fe1c63d91e46
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345023"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794630"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: zjištění objektů pomocí ONNX v ML.NET
 
@@ -213,7 +213,7 @@ Výstup dat modelu obsahuje souřadnice a rozměry ohraničujících polí objek
 
     [!code-csharp [DimensionsBaseClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/DimensionsBase.cs#L3-L9)]
 
-    `DimensionsBase` má následující `float` pole:
+    `DimensionsBase` má následující vlastnosti `float`:
 
     - `X` obsahuje pozici objektu podél osy x.
     - `Y` obsahuje pozici objektu podél osy y.
@@ -237,7 +237,7 @@ Dále vytvořte třídu pro vaše ohraničovací rámečky.
 
     [!code-csharp [YoloBoundingBoxClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloBoundingBox.cs#L7-L21)]
 
-    `YoloBoundingBox` má následující pole:
+    `YoloBoundingBox` má následující vlastnosti:
 
     - `Dimensions` obsahuje rozměry ohraničovacího rámečku.
     - `Label` obsahuje třídu objektu zjištěnou v ohraničujícím poli.
@@ -260,7 +260,7 @@ Nyní, když jsou vytvořeny třídy dimenzí a ohraničujících polí, je čas
 
     [!code-csharp [YoloParserUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L10)]
 
-1. Uvnitř definice `YoloOutputParser` třídy přidejte následující konstantu a pole.
+1. Do definice `YoloOutputParser` třídy přidejte následující konstanty a pole.
 
     [!code-csharp [ParserVarDefinitions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L12-L21)]
 

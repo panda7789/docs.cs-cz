@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 05558daa-39e2-4c38-aeaf-e2aec4a09468
 topic_type:
 - apiref
-ms.openlocfilehash: d9f0eff35dbe0058398d2d1c851ef85effa9cd28
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f558a4c94afeb69f58605958ddcb91e4be772c39
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122413"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791354"
 ---
 # <a name="icordebugthread4hadunhandledexception-method"></a>ICorDebugThread4::HadUnhandledException – metoda
 Označuje, zda má vlákno někdy neošetřenou výjimku.  
@@ -35,7 +35,7 @@ HRESULT GetBlockingObjects (
   
 ## <a name="parameters"></a>Parametry  
  `ppBlockingObjectEnum`  
- mimo Ukazatel na adresu seřazeného výčtu struktur [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) .  
+ mimo Ukazatel na adresu seřazeného výčtu struktur [CorDebugBlockingObject –](cordebugblockingobject-structure.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
@@ -46,7 +46,7 @@ HRESULT GetBlockingObjects (
 |S_FALSE|Vlákno nikdy nemá neošetřenou výjimku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda označuje, zda vlákno má někdy neošetřenou výjimku. V době spuštění neošetřeného zpětného volání výjimky nebo při zahájení nativního připojení JIT je zaručeno, že tato metoda vrátí hodnotu S_OK. Není zaručeno, že metoda [ICorDebugThread. GetCurrentException –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getcurrentexception-method.md) vrátí neošetřenou výjimku; Nicméně pokud proces ještě nepokračoval po získání neošetřeného zpětného volání výjimky nebo po nativním připojení JIT. Kromě toho je možné (i když nepravděpodobné), aby měl více než jedno vlákno s neošetřenou výjimkou v době, kdy se spustí nativní JIT – připojit. V takovém případě neexistuje způsob, jak určit, která výjimka aktivovala připojení JIT.  
+ Tato metoda označuje, zda vlákno má někdy neošetřenou výjimku. V době spuštění neošetřeného zpětného volání výjimky nebo zahájení inicializace nativní JIT-připojení je zaručena, že tato metoda vrátí S_OK. Není zaručeno, že metoda [ICorDebugThread. GetCurrentException –](icordebugthread-getcurrentexception-method.md) vrátí neošetřenou výjimku; Nicméně pokud proces ještě nepokračoval po získání neošetřeného zpětného volání výjimky nebo po nativním připojení JIT. Kromě toho je možné (i když nepravděpodobné), aby měl více než jedno vlákno s neošetřenou výjimkou v době, kdy se spustí nativní JIT – připojit. V takovém případě neexistuje způsob, jak určit, která výjimka aktivovala připojení JIT.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -59,6 +59,6 @@ HRESULT GetBlockingObjects (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugThread4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugThread4 – rozhraní](icordebugthread4-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

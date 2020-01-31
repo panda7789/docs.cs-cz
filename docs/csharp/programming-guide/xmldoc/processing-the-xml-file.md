@@ -5,14 +5,14 @@ helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: 2c3ba0e12d0d7e6a568c4c3741d99b901fca2722
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: bc72cade9ce6edddb88d741a3424405bba0a7ad8
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75696516"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793383"
 ---
-# <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (Průvodce programováním v C#)
+# <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (C# Průvodce programováním)
 
 Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je označen pro generování dokumentace. (Informace o tom, jak označit svůj kód, naleznete v tématu [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md).) Řetězec ID jednoznačně identifikuje konstrukci. Programy, které zpracovávají soubor XML, mohou použít řetězec ID k identifikaci odpovídající .NET Framework metadat nebo položek reflexe, na které se dokumentace vztahuje.
 
@@ -27,7 +27,7 @@ Kompilátor při generování řetězců ID sleduje následující pravidla:
     |Znak|Popis|
     |---------------|-----------------|
     |N|Obor názvů<br /><br /> Do oboru názvů nemůžete přidávat komentáře k dokumentaci, ale můžete na ně cref odkazy, kde se podporují.|
-    |T|Typ: třída, rozhraní, struktura, výčet, delegát|
+    |T|Type: Class, Interface, struct, enum nebo Delegate|
     |F|pole|
     |P|vlastnost (včetně indexerů nebo jiných indexovaných vlastností)|
     |M|Metoda (včetně takových speciálních metod jako konstruktory, operátory a tak dále)|
@@ -84,6 +84,6 @@ Následující příklady znázorňují, jak se generují řetězce ID pro tří
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [C#Průvodce programováním](../index.md)
 - [-doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
 - [Dokumentační komentáře XML](./index.md)

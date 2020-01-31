@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ab14e6cb7d9bd4c1571040280dc35233e9b89d43
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 538806627a31366d4b8597eb010a4bbe3f8f9202
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937982"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76860956"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Novinky v rozhraní .NET Framework
 
@@ -28,7 +28,7 @@ Tento článek shrnuje klíčové nové funkce a vylepšení v následujících 
 - [.NET 2015 a .NET Framework 4,6](#v46)
 - [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
-- [.NET Framework 4.5](#v45)
+- [.NET Framework 4,5](#v45)
 
 Tento článek neposkytuje úplné informace o každé nové funkci a může se změnit. Obecné informace o .NET Framework najdete v tématu [Začínáme](../get-started/index.md). Podporované platformy najdete v tématu [požadavky na systém](../get-started/system-requirements.md). Odkazy na stažení a pokyny k instalaci najdete v [Průvodci instalací](../install/guide-for-developers.md)nástroje.
 
@@ -352,7 +352,7 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 .NET Framework 4.7.2 přidá do <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> typů mnoho nových rozhraní API. Zde jsou některé z nich:
 
-- `TryGetValue` metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Existují tyto metody:
+- `TryGetValue` metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Metody jsou:
 
   - [veřejné bool HashSet –\<T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
   - [veřejné bool SortedSet\<T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
@@ -438,7 +438,7 @@ Můžete přidat SameSite pro soubory cookie <xref:System.Web.Security.FormsAuth
 
 **Implementace vlastností HttpClientHandler**
 
-.NET Framework 4.7.1 přidal do <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> třídy osm vlastností. Nicméně dvě vyvolaly <xref:System.PlatformNotSupportedException>. .NET Framework 4.7.2 nyní poskytuje implementaci těchto vlastností. Mezi vlastnosti patří:
+.NET Framework 4.7.1 přidal do <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> třídy osm vlastností. Nicméně dvě vyvolaly <xref:System.PlatformNotSupportedException>. .NET Framework 4.7.2 nyní poskytuje implementaci těchto vlastností. Vlastnosti jsou:
 
 - <xref:System.Net.Http.HttpClientHandler.CheckCertificateRevocationList>
 - <xref:System.Net.Http.HttpClientHandler.SslProtocols>
@@ -600,7 +600,7 @@ Navíc je hlavní fokus v .NET Framework 4.7.1 vylepšený přístupnost, což a
 
 **Podpora pro .NET Standard 2,0**
 
-[.NET Standard](../../standard/net-standard.md) definuje sadu rozhraní API, která musí být k dispozici v každé implementaci rozhraní .NET, která podporuje tuto verzi standardu. .NET Framework 4.7.1 plně podporuje .NET Standard 2,0 a přidává [asi 200 rozhraní API](https://github.com/dotnet/standard/blob/master/netstandard/src/ApiCompatBaseline.net461.txt) , která jsou definována v .NET Standard 2,0 a chybí v .NET Framework 4.6.1, 4.6.2 a 4,7. (Upozorňujeme, že tyto verze .NET Framework podporují .NET Standard 2,0 pouze v případě, že jsou do cílového systému nasazeny také další .NET Standard podpůrné soubory.) Další informace najdete v příspěvku na blogu o podpoře BCL-.NET Standard 2,0 v tématu [.NET Framework 4.7.1 runtime a funkce kompilátoru](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
+[.NET Standard](../../standard/net-standard.md) definuje sadu rozhraní API, která musí být k dispozici v každé implementaci rozhraní .NET, která podporuje tuto verzi standardu. .NET Framework 4.7.1 plně podporuje .NET Standard 2,0 a přidává [asi 200 rozhraní API](https://github.com/dotnet/standard/blob/master/src/netstandard/src/ApiCompatBaseline.net461.txt) , která jsou definována v .NET Standard 2,0 a chybí v .NET Framework 4.6.1, 4.6.2 a 4,7. (Upozorňujeme, že tyto verze .NET Framework podporují .NET Standard 2,0 pouze v případě, že jsou do cílového systému nasazeny také další .NET Standard podpůrné soubory.) Další informace najdete v příspěvku na blogu o podpoře BCL-.NET Standard 2,0 v tématu [.NET Framework 4.7.1 runtime a funkce kompilátoru](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
 
 **Podpora pro sestavovatele konfigurace**
 
@@ -622,7 +622,7 @@ Počínaje .NET Framework 4.7.1, <xref:System.ValueTuple?displayProperty=nameWit
 
 <a name="clr" />
 
-#### <a name="common-language-runtime-clr"></a>Common language runtime (CLR)
+#### <a name="common-language-runtime-clr"></a>Modul CLR (Common Language Runtime)
 
 **Vylepšení výkonu shromažďování paměti**
 
@@ -784,7 +784,7 @@ Rozhraní API pro tisk v WPF ve třídě <xref:System.Printing.PrintQueue?displa
 
 - [Kategorie znaků](#Strings)
 
-- [Kryptografie](#Crypto462)
+- [Kryptografick](#Crypto462)
 
 - [SqlClient](#SQLClient)
 
@@ -1033,7 +1033,7 @@ Je-li povoleno sdružování připojení a dojde k vypršení časového limitu 
 
 Toto chování není vhodné při připojování k databázím Azure SQL, protože pokusy o připojení mohou selhat s přechodem k přechodným chybám, které se obvykle obnovují rychle. Pro lepší optimalizaci možností opakovaného pokusu o připojení se při selhání připojení k databázím Azure SQL odstraní chování při blokování fondu připojení.
 
-Přidání nového klíčového slova `PoolBlockingPeriod` umožňuje vybrat dobu blokování, která nejlépe vyhovuje vaší aplikaci. Mezi tyto hodnoty patří:
+Přidání nového klíčového slova `PoolBlockingPeriod` umožňuje vybrat dobu blokování, která nejlépe vyhovuje vaší aplikaci. Mezi hodnoty patří:
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
@@ -1095,7 +1095,7 @@ AppContext.SetSwitch(disableCngCertificates, False)
 
 **Lepší podpora více pravidel úprav více letního času pomocí třídy DataContractJsonSerializer**
 
-Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda třída <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více pravidel úprav pro jedno časové pásmo. Tato funkce je dostupná na vyžádání. Pokud ho chcete povolit, přidejte do souboru App. config následující nastavení:
+Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda třída <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více pravidel úprav pro jedno časové pásmo. Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, přidejte do souboru App. config následující nastavení:
 
 ```xml
 <runtime>
@@ -1248,7 +1248,7 @@ Převedená aplikace klasické pracovní plochy získala identitu aplikace podob
 
 .NET Framework 4.6.1 zahrnuje nové funkce v následujících oblastech:
 
-- [Kryptografie](#Crypto)
+- [Kryptografick](#Crypto)
 
 - [ADO.NET](#ADO.NET461)
 
@@ -1468,7 +1468,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Vylepšení zavaděče sestavení**
 
-  Zavaděč sestavení teď využívá efektivněji paměť, protože po zavedení odpovídající image NGEN uvolňuje sestavení IL. Tato změna snižuje využití virtuální paměti, což je obzvlášť přínosné pro velké 32bitové aplikace (jako je Visual Studio), a šetří taky fyzickou paměť.
+  Zavaděč sestavení nyní používá paměť efektivněji uvolněním sestavení IL po načtení odpovídající image NGEN. Tato změna snižuje virtuální paměť, což je zvláště užitečné pro velké 32ové aplikace (jako je například Visual Studio), a také šetří fyzickou paměť.
 
 - **Změny knihovny základních tříd**
 
@@ -1733,7 +1733,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   Tato funkce se rozšířila v .NET Framework 4,6, aby zahrnovala typy <xref:System.Windows.Forms.DomainUpDown>, <xref:System.Windows.Forms.NumericUpDown>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, <xref:System.Windows.Forms.DataGridViewColumn> a <xref:System.Windows.Forms.ToolStripSplitButton> a obdélník určený <xref:System.Drawing.Design.PaintValueEventArgs.Bounds%2A> vlastností, který se používá při kreslení <xref:System.Drawing.Design.UITypeEditor>.
 
-  Tato funkce je dostupná na vyžádání. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
+  Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
 
   ```xml
   <appSettings>
@@ -1776,7 +1776,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
   - <xref:System.Windows.Forms.DataGridView>
   - <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
 
-  Tato funkce je dostupná na vyžádání. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
+  Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
 
   ```xml
   <appSettings>

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-ms.openlocfilehash: 59c4076712823faa1602448653680a31b8cd8c69
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 5668e14cd0aed33a29fd43661363131879419e61
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741078"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793924"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
@@ -37,7 +37,7 @@ ms.locfileid: "75741078"
 > S jinými modely usnadnění musí vývojáři shromažďovat informace přímo z jednotlivých tlačítek, nabídek nebo jiných ovládacích prvků. Každý typ ovládacího prvku bohužel přichází v desítkách malých variant. Jinými slovy, i když deset variací (pushbutton) může fungovat stejným způsobem a provádět stejnou funkci, musí být všechny zpracovány jako jedinečné ovládací prvky. Neexistuje žádný způsob, jak zjistit, že tyto ovládací prvky jsou funkčně ekvivalentní. Byly vyvinuty vzory ovládacích prvků, které by představovaly toto chování obecného ovládacího prvku. Další informace najdete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-patterns-overview.md).  
   
 ### <a name="implementing-ui-automation"></a>Implementace automatizace uživatelského rozhraní  
- Jak bylo zmíněno dříve, bez sjednocení modelu, který poskytuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], musí testovací nástroje a vývojáři znát informace specifické pro rozhraní, aby bylo možné vystavit vlastnosti a chování ovládacích prvků v daném rozhraní. Vzhledem k tomu, že v operačních systémech Windows může být v jednom okamžiku k dispozici několik různých rozhraní uživatelského rozhraní, včetně Win32, [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]a Windows Presentation Foundation (WPF), může se jednat o úlohu těžké k otestování více aplikací s ovládacími prvky, které vypadají podobně. Například následující tabulka popisuje názvy vlastností specifické pro rozhraní, které jsou vyžadovány k načtení názvu (nebo textu) přidruženého k ovládacímu prvku tlačítko a zobrazení jedné ekvivalentní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti.  
+ Jak bylo zmíněno dříve, bez sjednocení modelu, který poskytuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], musí testovací nástroje a vývojáři znát informace specifické pro rozhraní, aby bylo možné vystavit vlastnosti a chování ovládacích prvků v daném rozhraní. Vzhledem k tomu, že v operačních systémech Windows může být v jednom okamžiku k dispozici několik různých rozhraní uživatelského rozhraní, včetně Win32, model Windows Forms a Windows Presentation Foundation (WPF), může se jednat o úlohu těžké k otestování více aplikací s ovládacími prvky, které vypadá podobně. Například následující tabulka popisuje názvy vlastností specifické pro rozhraní, které jsou vyžadovány k načtení názvu (nebo textu) přidruženého k ovládacímu prvku tlačítko a zobrazení jedné ekvivalentní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti.  
   
 |Typ ovládacího prvku automatizace uživatelského rozhraní|Architektura uživatelského rozhraní|Vlastnost specifická pro rozhraní|Vlastnost automatizace uživatelského rozhraní|  
 |--------------------------------|------------------|---------------------------------|----------------------------|  

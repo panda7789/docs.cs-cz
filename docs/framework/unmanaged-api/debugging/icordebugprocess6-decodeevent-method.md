@@ -2,12 +2,12 @@
 title: ICorDebugProcess6::DecodeEvent – metoda
 ms.date: 03/30/2017
 ms.assetid: 1453bc0c-6e0d-4d5a-b176-22607f8a3e6c
-ms.openlocfilehash: fd0fba04fe3df0ada8b0b56280906beefb26bb26
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: be30b1ff79c2aceb97eb4ad42052da7dd162f5d3
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123499"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792289"
 ---
 # <a name="icordebugprocess6decodeevent-method"></a>ICorDebugProcess6::DecodeEvent – metoda
 Dekóduje spravované události ladění, které byly zapouzdřeny v datové části speciálně vytvořené nativní výjimky ladění.  
@@ -33,16 +33,16 @@ HRESULT DecodeEvent(
  pro Počet prvků v poli `pRecord` bajtů.  
   
  `format`  
- pro Člen výčtu [CorDebugRecordFormat](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md) , který určuje formát nespravované události ladění.  
+ pro Člen výčtu [CorDebugRecordFormat](cordebugrecordformat-enumeration.md) , který určuje formát nespravované události ladění.  
   
  `dwFlags`  
- pro Bitové pole, které závisí na cílové architektuře a které určuje další informace o události ladění. Pro systémy Windows může být členem výčtu [CorDebugDecodeEventFlagsWindows](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md) .  
+ pro Bitové pole, které závisí na cílové architektuře a které určuje další informace o události ladění. Pro systémy Windows může být členem výčtu [CorDebugDecodeEventFlagsWindows](cordebugdecodeeventflagswindows-enumeration.md) .  
   
  `dwThreadId`  
  pro Identifikátor operačního systému vlákna, na kterém byla výjimka vyvolána.  
   
  `ppEvent`  
- mimo Ukazatel na adresu objektu [ICorDebugDebugEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-interface.md) , který představuje dekódovou spravovanou událost ladění.  
+ mimo Ukazatel na adresu objektu [ICorDebugDebugEvent](icordebugdebugevent-interface.md) , který představuje dekódovou spravovanou událost ladění.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -60,5 +60,5 @@ HRESULT DecodeEvent(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess6 – rozhraní](icordebugprocess6-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

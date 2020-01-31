@@ -2,26 +2,26 @@
 title: ICorDebugMutableDataTarget – rozhraní
 ms.date: 03/30/2017
 ms.assetid: 14aad5b3-84ab-4bbc-94e3-1eb92e258d10
-ms.openlocfilehash: 682e927388d3392d970338314f97d46c9e57e760
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e4601c24194404f943c8de8f320bf704efcc553e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139339"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792860"
 ---
 # <a name="icordebugmutabledatatarget-interface"></a>ICorDebugMutableDataTarget – rozhraní
-Rozšiřuje rozhraní [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) pro podporu proměnlivých datových cílů.  
+Rozšiřuje rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md) pro podporu proměnlivých datových cílů.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ContinueStatusChanged – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmutabledatatarget-continuestatuschanged-method.md)|Změní stav pokračování pro nedokončenou událost ladění v zadaném vlákně.|  
-|[SetThreadContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmutabledatatarget-setthreadcontext-method.md)|Nastaví kontext (hodnoty registru) pro vlákno.|  
-|[WriteVirtual – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmutabledatatarget-writevirtual-method.md)|Zapíše paměť do cílového adresního prostoru procesu.|  
+|[ContinueStatusChanged – metoda](icordebugmutabledatatarget-continuestatuschanged-method.md)|Změní stav pokračování pro nedokončenou událost ladění v zadaném vlákně.|  
+|[SetThreadContext – metoda](icordebugmutabledatatarget-setthreadcontext-method.md)|Nastaví kontext (hodnoty registru) pro vlákno.|  
+|[WriteVirtual – metoda](icordebugmutabledatatarget-writevirtual-method.md)|Zapíše paměť do cílového adresního prostoru procesu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto rozšíření rozhraní [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) může být implementováno pomocí ladicích nástrojů, které chtějí upravit cílový proces (například pro provádění živých invazivních ladění).  
+ Toto rozšíření rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md) může být implementováno pomocí ladicích nástrojů, které chtějí upravit cílový proces (například pro provádění živých invazivních ladění).  
   
  Všechny tyto metody jsou nepovinné v tom smyslu, že nedojde ke ztrátě žádné základní funkce ladění založené na kontrole tím, že neimplementuje toto rozhraní nebo nezpůsobí volání těchto metod.  Jakékoli selhání `HRESULT` z těchto metod bude rozšířeno jako `HRESULT` z volání metody ICorDebug.  
   
@@ -38,5 +38,5 @@ Rozšiřuje rozhraní [ICorDebugDataTarget](../../../../docs/framework/unmanaged
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

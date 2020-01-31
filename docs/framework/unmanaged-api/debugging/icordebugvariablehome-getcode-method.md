@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ef002890-4a7b-4a5d-abbf-16c60083f794
 topic_type:
 - apiref
-ms.openlocfilehash: 4770eb3e93104dd3862eb2163faf1dc7fe9008ba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fdfa38a4cdbbaad2fc2c987a10a122af4a1fc9a9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125140"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791042"
 ---
 # <a name="icordebugvariablehomegetcode-method"></a>ICorDebugVariableHome:: GetCode – metoda
-Získá instanci "ICorDebugCode", která obsahuje tento objekt [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) .  
+Získá instanci "ICorDebugCode", která obsahuje tento objekt [ICorDebugVariableHome](icordebugvariablehome-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT GetCode(
   
 ## <a name="parameters"></a>Parametry  
  `ppCode`  
- mimo Ukazatel na adresu instance "ICorDebugCode", která obsahuje tento objekt [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) .  
+ mimo Ukazatel na adresu instance "ICorDebugCode", která obsahuje tento objekt [ICorDebugVariableHome](icordebugvariablehome-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -48,4 +48,4 @@ HRESULT GetCode(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [ICorDebugVariableHome – rozhraní](icordebugvariablehome-interface.md)

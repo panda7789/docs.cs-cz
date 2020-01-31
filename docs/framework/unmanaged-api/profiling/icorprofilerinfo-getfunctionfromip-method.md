@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f069802a-198f-46dd-9f09-4f77adffc9ba
 topic_type:
 - apiref
-ms.openlocfilehash: 14b152474cd71dc3ff7b59c94b6ec4fa0cd7ce0c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cd1f3982fe1439135bf96579370a5a798c61dd2e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439212"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863774"
 ---
 # <a name="icorprofilerinfogetfunctionfromip-method"></a>ICorProfilerInfo::GetFunctionFromIP – metoda
 Mapuje ukazatel na instrukci spravovaného kódu na `FunctionID`.  
@@ -33,13 +33,16 @@ HRESULT GetFunctionFromIP(
     [out] FunctionID *pFunctionId);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `ip`  
- pro Ukazatel na instrukci ve spravovaném kódu.  
-  
- `pFunctionId`  
- mimo ID vrácené funkce  
-  
+## <a name="parameters"></a>Parametry
+
+- `ip`
+
+  \[in] ukazatel na instrukci ve spravovaném kódu.
+
+- `pFunctionId`
+
+  \[] vráceno ID funkce.
+
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
@@ -51,4 +54,4 @@ HRESULT GetFunctionFromIP(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)

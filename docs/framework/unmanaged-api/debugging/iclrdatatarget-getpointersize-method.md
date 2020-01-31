@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 51d9f4a4-81a7-4527-8537-5212bdb05c70
 topic_type:
 - apiref
-ms.openlocfilehash: 1b4741b71521ab91152ce71d5b1b4a4c3fbd3629
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7a274aaec4919b86f32f98e4d8278dc12748fb2b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73113759"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785483"
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize – metoda
 Získá velikost typu ukazatele, který cílový proces používá, v bajtech. Tato metoda je volána službou Common Language Runtime Data Access Services.  
@@ -51,4 +51,4 @@ HRESULT GetPointerSize (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [ICLRDataTarget – rozhraní](iclrdatatarget-interface.md)

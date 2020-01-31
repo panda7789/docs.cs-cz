@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7da621fc-e7d0-4c00-9439-5c93619d7414
 topic_type:
 - apiref
-ms.openlocfilehash: aa76bf511ff1e1710a7ff86ad2ac97665969f2bf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4799c1d04e8172c604eeec50f2b841a6db063949
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140437"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790586"
 ---
 # <a name="icorpublishprocessenumappdomains-method"></a>ICorPublishProcess::EnumAppDomains – metoda
-Získá enumerátor pro domény aplikace v procesu, na který odkazuje tento [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
+Získá enumerátor pro domény aplikace v procesu, na který odkazuje tento [ICorPublishProcess](icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ HRESULT EnumAppDomains (
   
 ## <a name="parameters"></a>Parametry  
  `ppEnum`  
- mimo Ukazatel na adresu instance [ICorPublishAppDomainEnum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md) , která umožňuje iteraci v kolekci aplikačních domén v tomto procesu.  
+ mimo Ukazatel na adresu instance [ICorPublishAppDomainEnum –](icorpublishappdomainenum-interface.md) , která umožňuje iteraci v kolekci aplikačních domén v tomto procesu.  
   
 ## <a name="remarks"></a>Poznámky  
  Seznam domén aplikace je založen na snímku domén aplikace, které existují při volání metody `EnumAppDomains`. Tato metoda může být volána více než jednou pro vytvoření nového seznamu v aktuálním stavu. Existující seznamy nebudou ovlivněny následnými voláními této metody.  
@@ -53,4 +53,4 @@ HRESULT EnumAppDomains (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorPublishProcess – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)
+- [ICorPublishProcess – rozhraní](icorpublishprocess-interface.md)

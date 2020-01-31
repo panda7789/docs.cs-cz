@@ -2,12 +2,12 @@
 title: ICorDebugProcess6::GetExportStepInfo – metoda
 ms.date: 03/30/2017
 ms.assetid: a927e0ac-f110-426d-bbec-9377a29c8f17
-ms.openlocfilehash: d92b05e3d84a230e87901378f34ed27ac38286b2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 118f52db63464b4c9355ba9ee7f330b996c5bf71
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123464"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792246"
 ---
 # <a name="icordebugprocess6getexportstepinfo-method"></a>ICorDebugProcess6::GetExportStepInfo – metoda
 Poskytuje informace o exportovaných funkcích modulu runtime, které vám pomůžou krokovat se spravovaným kódem.  
@@ -26,10 +26,10 @@ HRESULT GetExportStepInfo(
  pro Název běhové funkce exportu, jak je zapsán v exportní tabulce PE.  
   
  invokeKind  
- mimo Ukazatel na člen výčtu [CorDebugCodeInvokeKind](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md) , který popisuje, jak vyexportovaná funkce bude vyvolávat spravovaný kód.  
+ mimo Ukazatel na člen výčtu [CorDebugCodeInvokeKind](cordebugcodeinvokekind-enumeration.md) , který popisuje, jak vyexportovaná funkce bude vyvolávat spravovaný kód.  
   
  invokePurpose  
- mimo Ukazatel na člen výčtu [CorDebugCodeInvokePurpose](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md) , který popisuje, proč exportovaná funkce bude volat spravovaný kód.  
+ mimo Ukazatel na člen výčtu [CorDebugCodeInvokePurpose](cordebugcodeinvokepurpose-enumeration.md) , který popisuje, proč exportovaná funkce bude volat spravovaný kód.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Metoda může vracet hodnoty uvedené v následující tabulce.  
@@ -56,5 +56,5 @@ HRESULT GetExportStepInfo(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess6 – rozhraní](icordebugprocess6-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

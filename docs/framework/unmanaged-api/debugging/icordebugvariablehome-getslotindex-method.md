@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 966da50d-5665-4fff-bf7b-1c72bbadd9a4
 topic_type:
 - apiref
-ms.openlocfilehash: dfc2e91599e7f05d90d56af07b71313e9eecaa51
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 542bfa05c55ef224d1b9111f9af6c069e9e23542
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121057"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790975"
 ---
 # <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome:: GetSlotIndex – metoda
 Získá spravovaný index slotu místní proměnné.  
@@ -43,7 +43,7 @@ HRESULT GetSlotIndex(
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |`S_OK`|Volání metody vrátilo hodnotu indexu slotu v `pSlotIndex`.|  
-|`E_FAIL`|Aktuální instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) představuje argument funkce.|  
+|`E_FAIL`|Aktuální instance [ICorDebugVariableHome](icordebugvariablehome-interface.md) představuje argument funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
  Index slotu lze použít k načtení metadat pro tuto místní proměnnou.  
@@ -59,4 +59,4 @@ HRESULT GetSlotIndex(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [ICorDebugVariableHome – rozhraní](icordebugvariablehome-interface.md)

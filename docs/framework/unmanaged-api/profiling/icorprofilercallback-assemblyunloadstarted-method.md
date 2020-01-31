@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6e47b7e5-0335-4dd3-8c42-d3c07d62b102
 topic_type:
 - apiref
-ms.openlocfilehash: 3abf944df3619256791882bf61dfc4072b642c54
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0a677e33950f178b916a5e9e9cbb7bd918c1349b
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445140"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866608"
 ---
 # <a name="icorprofilercallbackassemblyunloadstarted-method"></a>ICorProfilerCallback::AssemblyUnloadStarted – metoda
 Upozorní profileru, že probíhá uvolňování sestavení.  
@@ -32,10 +32,12 @@ HRESULT AssemblyUnloadStarted(
     [in] AssemblyID assemblyId);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `assemblyId`  
- pro Identifikuje sestavení, které je uvolňováno.  
-  
+## <a name="parameters"></a>Parametry
+
+- `assemblyId`
+
+  \[v] identifikuje sestavení, které se uvolní.
+
 ## <a name="remarks"></a>Poznámky  
  Hodnota `assemblyId` není platná pro požadavek na informace po návratu metody `AssemblyUnloadStarted` – jedná se o poslední možnost profileru k získání informací o tomto sestavení.  
   
@@ -50,5 +52,5 @@ HRESULT AssemblyUnloadStarted(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [AssemblyUnloadFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadfinished-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [AssemblyUnloadFinished – metoda](icorprofilercallback-assemblyunloadfinished-method.md)

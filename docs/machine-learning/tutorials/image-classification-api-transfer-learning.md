@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4781e39a0c8827adb6ab0155d5215645242208a5
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: eb61ad85580310c7becc2a1a2237efe188fbecf0
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348156"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794579"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Kurz: automatizované vizuální prověřování pomocí přenosu přenosu s rozhraním API pro klasifikaci imagí ML.NET
 
@@ -84,7 +84,7 @@ Teď, když máte obecné znalosti o učení přenosů a rozhraní API klasifika
 1. Nainstalujte balíček NuGet verze **Microsoft.ml** **1.4.0** :
     1. V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
     1. Jako zdroj balíčku vyberte "nuget.org".
-    1. Vyberte kartu **Procházet**.
+    1. Vyberte kartu **Procházet** .
     1. Zaškrtněte políčko **zahrnout předběžné verze** .
     1. Vyhledejte **Microsoft.ml**.
     1. Vyberte tlačítko **instalovat** .
@@ -140,10 +140,10 @@ V tomto kurzu se používají jenom balíčky balíčku mostu.
 
         `ModelInput` obsahuje následující vlastnosti:
 
-        - `ImagePath` je plně kvalifikovaná cesta, kde je obrázek uložený.
-        - `Label` je kategorie, do které patří obrázek. Toto je hodnota, která se má předpovědět.
         - `Image` je `byte[]` reprezentace obrázku. Model očekává, že budou data obrázku tohoto typu pro účely školení.
         - `LabelAsKey` je numerická reprezentace `Label`.
+        - `ImagePath` je plně kvalifikovaná cesta, kde je obrázek uložený.
+        - `Label` je kategorie, do které patří obrázek. Toto je hodnota, která se má předpovědět.
 
         Pro výuku modelu a předpovědi se používají jenom `Image` a `LabelAsKey`. Vlastnosti `ImagePath` a `Label` jsou pro usnadnění přístupu k původnímu názvu souboru bitové kopie a kategorii zachovány.
 
@@ -171,7 +171,7 @@ Když se data o školení a ověřování často nemění, je vhodné při dalš
 
     [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L15-L17)]
 
-1. Pak inicializujte `mlContext` proměnnou novou instancí třídy [MLContext](xref:Microsoft.ML.MLContext).
+1. Inicializujte `mlContext` proměnnou novou instancí třídy [MLContext](xref:Microsoft.ML.MLContext).
 
     [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L19)]
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea3dc625-5650-4bf4-8e67-01e42be065b1
 topic_type:
 - apiref
-ms.openlocfilehash: 3f6320d6d962e40acf494acbb5c95adda62d1461
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 367584a01e368dc591c2e93acfcc6574f2fa1ec0
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445285"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866317"
 ---
 # <a name="icorprofilercallbackexceptionunwindfunctionenter-method"></a>ICorProfilerCallback::ExceptionUnwindFunctionEnter – metoda
 Upozorní profileru, že zpětná fáze zpracování výjimek začala odvinout funkci.  
@@ -32,10 +32,12 @@ HRESULT ExceptionUnwindFunctionEnter(
     [in] FunctionID functionId);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `functionId`  
- pro ID funkce, která se má oddělit  
-  
+## <a name="parameters"></a>Parametry
+
+- `functionId`
+
+  \[v] ID funkce, která se má oddělit.
+
 ## <a name="remarks"></a>Poznámky  
  Profiler by neměl při implementaci této metody blokovat, protože zásobník pravděpodobně není ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit bezstavové uvolňování paměti. Pokud se tady zablokuje Profiler a dojde k pokusu o uvolnění paměti, modul runtime se zablokuje, dokud toto zpětné volání nevrátí.  
   
@@ -52,5 +54,5 @@ HRESULT ExceptionUnwindFunctionEnter(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionUnwindFunctionLeave – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfunctionleave-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ExceptionUnwindFunctionLeave – metoda](icorprofilercallback-exceptionunwindfunctionleave-method.md)

@@ -2,12 +2,12 @@
 title: 'ICorDebugSymbolProvider:: GetMergedAssemblyRecords – metoda'
 ms.date: 03/30/2017
 ms.assetid: cc4c510d-550d-4941-af34-81987caf3425
-ms.openlocfilehash: 6faf8960c06488c8fff5a076aae375529e1d0260
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6a537a88bd4ab666eff8b5dda994da96bfcc5e52
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138884"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791615"
 ---
 # <a name="icordebugsymbolprovidergetmergedassemblyrecords-method"></a>ICorDebugSymbolProvider:: GetMergedAssemblyRecords – metoda
 Získá záznamy symbolů pro všechna Sloučená sestavení.  
@@ -30,7 +30,7 @@ HRESULT GetMergedAssemblyRecords(
  mimo Ukazatel na počet záznamů symbolů načtených metodou.  
   
  `pRecords`  
- Ukazatel na pole objektů [ICorDebugMergedAssemblyRecord](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md) .  
+ Ukazatel na pole objektů [ICorDebugMergedAssemblyRecord](icordebugmergedassemblyrecord-interface.md) .  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -48,5 +48,5 @@ HRESULT GetMergedAssemblyRecords(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider – rozhraní](icordebugsymbolprovider-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

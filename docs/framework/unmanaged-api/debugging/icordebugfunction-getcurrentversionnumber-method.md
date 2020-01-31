@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c3af1575-cbe6-457a-bc08-c53460edcbc8
 topic_type:
 - apiref
-ms.openlocfilehash: 0530ba742a739003bfa33079ad75cb1e6f5f5e59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e080e9aa89816b24aa2eb1b6b1be823922e86fb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124020"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794523"
 ---
 # <a name="icordebugfunctiongetcurrentversionnumber-method"></a>ICorDebugFunction::GetCurrentVersionNumber – metoda
 Získá číslo verze nejnovější úpravy provedené na funkci reprezentované tímto objektem ICorDebugFunction.  
@@ -38,7 +38,7 @@ HRESULT GetCurrentVersionNumber (
  mimo Ukazatel na celočíselnou hodnotu, která je číslo verze poslední úpravy provedené u této funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Číslo verze nejnovější úpravy provedené v této funkci může být větší než číslo verze samotné funkce. Pomocí metody [ICorDebugFunction2:: getčíslo_verze](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md) nebo [ICorDebugCode:: getčíslo_verze](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getversionnumber-method.md) načtěte číslo verze funkce.  
+ Číslo verze nejnovější úpravy provedené v této funkci může být větší než číslo verze samotné funkce. Pomocí metody [ICorDebugFunction2:: getčíslo_verze](icordebugfunction2-getversionnumber-method.md) nebo [ICorDebugCode:: getčíslo_verze](icordebugcode-getversionnumber-method.md) načtěte číslo verze funkce.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f6a449c8-a941-43ba-9a90-c98b29ae3c36
 topic_type:
 - apiref
-ms.openlocfilehash: 4dd9760c347bbc23f3e8225c1ff748c6b7b8bfe1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca742ba9e89e1d189cfa38dead314df0d8b4e9d1
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096529"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792766"
 ---
 # <a name="icordebugnativeframe2getstackparametersize-method"></a>ICorDebugNativeFrame2::GetStackParameterSize – metoda
 Vrátí kumulativní velikost parametrů v zásobníku v operačních systémech x86.  
@@ -48,7 +48,7 @@ HRESULT GetStackParameterSize([out] ULONG32 * pSize)
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- Metody [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) neupravují ukazatel zásobníku pro parametry, které jsou vloženy do zásobníku. Místo toho můžete použít hodnotu vrácenou `GetStackParameterSize` k úpravě ukazatele zásobníku na počáteční hodnotu nativního unwind, který pro parametry upraví.  
+ Metody [ICorDebugStackWalk](icordebugstackwalk-interface.md) neupravují ukazatel zásobníku pro parametry, které jsou vloženy do zásobníku. Místo toho můžete použít hodnotu vrácenou `GetStackParameterSize` k úpravě ukazatele zásobníku na počáteční hodnotu nativního unwind, který pro parametry upraví.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -61,6 +61,6 @@ HRESULT GetStackParameterSize([out] ULONG32 * pSize)
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugNativeFrame2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugNativeFrame2 – rozhraní](icordebugnativeframe2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

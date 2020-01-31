@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: db9938f26f31506737eb0395fa389da01a1ee444
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 6d8dedafd4ffc582b529289d3583f90d81779762
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76735062"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794041"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundation (WPF). Pokrývá většinu hlavních subsystémů WPF a popisuje, jak jejich interakce funguje. Také podrobně popisuje některé z možností provedených architekty WPF.  
@@ -116,7 +116,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Dvě nejdůležitější věci, které <xref:System.Windows.FrameworkElement> zavádí, jsou datové vazby a styly.  
   
- Podsystém datových vazeb v subsystému WPF by měl být poměrně obeznámen s kýmkoli, kdo používal [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo ASP.NET pro vytvoření [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]aplikace. V každém z těchto systémů existuje jednoduchý způsob, jak vyjádřit, že chcete, aby jedna nebo více vlastností z daného prvku bylo vázáno na určitou část dat. WPF má plnou podporu pro vazby vlastností, transformaci a vazby seznamu.  
+ Podsystém datových vazeb v subsystému WPF by měl být poměrně obeznámen s kýmkoli, kdo používal model Windows Forms nebo ASP.NET pro vytvoření [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]aplikace. V každém z těchto systémů existuje jednoduchý způsob, jak vyjádřit, že chcete, aby jedna nebo více vlastností z daného prvku bylo vázáno na určitou část dat. WPF má plnou podporu pro vazby vlastností, transformaci a vazby seznamu.  
   
  Jednou z nejzajímavějších funkcí datové vazby v subsystému WPF je zavedení šablon dat. Šablony dat umožňují deklarativní určení způsobu vizuálního zobrazení části dat. Místo vytvoření vlastního uživatelského rozhraní, které může být vázáno na data, můžete místo toho problém vyřešit a nechat data určit zobrazení, které bude vytvořeno.  
   
@@ -130,7 +130,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Tento rozdělení mezi datovým modelem (vlastnosti), modelem interakce (příkazy a události) a modelem zobrazení (šablony) umožňuje kompletní přizpůsobení vzhledu a chování ovládacího prvku.  
   
- Běžný aspekt datového modelu ovládacího prvku je model obsahu. Pokud se podíváte na ovládací prvek, jako je <xref:System.Windows.Controls.Button>, uvidíte, že má vlastnost s názvem "obsah" typu <xref:System.Object>. V [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a ASP.NET by tato vlastnost byla obvykle řetězec – ale omezuje typ obsahu, který lze vložit do tlačítka. Obsah pro tlačítko může být buď jednoduchý řetězec, komplexní datový objekt, nebo celý strom elementu. V případě datového objektu se k sestavení zobrazení použije šablona dat.  
+ Běžný aspekt datového modelu ovládacího prvku je model obsahu. Pokud se podíváte na ovládací prvek, jako je <xref:System.Windows.Controls.Button>, uvidíte, že má vlastnost s názvem "obsah" typu <xref:System.Object>. V model Windows Forms a ASP.NET by tato vlastnost byla obvykle řetězec – ale omezuje typ obsahu, který lze vložit do tlačítka. Obsah pro tlačítko může být buď jednoduchý řetězec, komplexní datový objekt, nebo celý strom elementu. V případě datového objektu se k sestavení zobrazení použije šablona dat.  
   
 <a name="Summary"></a>   
 ## <a name="summary"></a>Přehled  
@@ -138,7 +138,7 @@ Toto téma poskytuje vodítko v hierarchii tříd Windows Presentation Foundatio
   
  Tradiční aplikace vytvoří zobrazení a pak vytvoří vazby k některým datům. V WPF je vše o ovládacím prvku, každý aspekt zobrazení, vygenerováno nějakým typem datové vazby. Text, který se nachází uvnitř tlačítka, se zobrazí tak, že se vytvoří složený ovládací prvek uvnitř tlačítka a vazba jeho zobrazení na vlastnost obsahu tlačítka.  
   
- Když začnete vyvíjet aplikace založené na WPF, měla by se velmi seznámit. Můžete nastavit vlastnosti, použít objekty a vytvořit datovou vazby podobným způsobem, jakým můžete použít [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo ASP.NET. Díky hlubšímu šetření architektury WPF zjistíte, že existuje možnost pro vytváření mnohem rozsáhlejších aplikací, které v podstatě považují data za základní ovladač aplikace.  
+ Když začnete vyvíjet aplikace založené na WPF, měla by se velmi seznámit. Můžete nastavit vlastnosti, použít objekty a vytvořit datovou vazby podobným způsobem, jakým můžete použít model Windows Forms nebo ASP.NET. Díky hlubšímu šetření architektury WPF zjistíte, že existuje možnost pro vytváření mnohem rozsáhlejších aplikací, které v podstatě považují data za základní ovladač aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

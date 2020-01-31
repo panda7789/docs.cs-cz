@@ -5,20 +5,20 @@ helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: 281afad0c0de856ca67abc74c65aff0e7afc3e01
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b406d539f2446824027e9462c8ecbe20c18cfb27
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976506"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794131"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
 
-V tomto návodu se dozvíte, jak lokalizovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky do [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]hybridní aplikace založené na.
+V tomto návodu se dozvíte, jak lokalizovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky do model Windows Forms hybridní aplikace založené na.
 
 Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
-- Vytváří se projekt hostitele [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+- Vytváří se projekt hostitele model Windows Forms.
 
 - Přidává se Lokalizovatelný obsah.
 
@@ -40,7 +40,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ## <a name="creating-the-windows-forms-host-project"></a>Vytváří se projekt hostitele model Windows Forms.
 
-Prvním krokem je vytvoření projektu [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a přidání prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] s obsahem, který budete lokalizovat.
+Prvním krokem je vytvoření projektu model Windows Forms aplikace a přidání prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] s obsahem, který budete lokalizovat.
 
 ### <a name="to-create-the-host-project"></a>Vytvoření hostitelského projektu
 
@@ -52,7 +52,7 @@ Prvním krokem je vytvoření projektu [!INCLUDE[TLA#tla_winforms](../../../../i
 
 ## <a name="adding-localizable-content"></a>Přidávání Lokalizovatelnýho obsahu
 
-Dále přidáte ovládací prvek popisek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a nastavíte obsah elementu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na Lokalizovatelný řetězec.
+Dále přidáte ovládací prvek popisek model Windows Forms a nastavíte obsah elementu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na Lokalizovatelný řetězec.
 
 ### <a name="to-add-localizable-content"></a>Přidání lokalizovatelné obsahu
 

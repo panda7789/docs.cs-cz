@@ -9,100 +9,100 @@ helpviewer_keywords:
 - dynamic layout [WPF interoperability]
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-ms.openlocfilehash: 67698a0a45bdf84d36603cd1309a8dd5bce2f895
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9f97639447284b792d52cf4aa25b81f584d7291a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598851"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787906"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
-Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> element komunikuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
+Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek komunikuje se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] layout.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] podporují jiné, ale podobné, logiku pro velikost a umístění prvků na formuláři nebo na stránce. Při vytváření hybridního uživatelského rozhraní (UI), který je hostitelem [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], <xref:System.Windows.Forms.Integration.WindowsFormsHost> element integruje schémata dvě rozložení.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a model Windows Forms podporují různé, ale podobné logiky pro určení velikosti a umístění prvků na formuláři nebo na stránce. Při vytváření hybridního uživatelského rozhraní (UI), které je hostitelem model Windows Forms ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> integruje dvě schémata rozložení.  
   
-## <a name="differences-in-layout-between-wpf-and-windows-forms"></a>Rozdíly v rozložení mezi rozhraními WPF a Windows Forms  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá nezávislé na překladu rozložení. Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozložení dimenze jsou určeny pomocí *pixelech nezávislých na zařízení*. Pixel nezávislých na zařízení je jedna devadesát čtvrtinu, šestinu palce velikost a nezávislé na rozlišení, proto zobrazí podobné výsledky bez ohledu na to, jestli jsou vykreslování 72 dpi monitorování nebo tiskárnu 19 200 dpi.  
+## <a name="differences-in-layout-between-wpf-and-windows-forms"></a>Rozdíly v rozložení mezi WPF a model Windows Forms  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá rozložení nezávislé na rozlišení. Všechny rozměry [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozložení se zadává v *pixelech nezávislých na zařízení*. Pixel nezávislý na zařízení je o jednu devadesátou velikost palce a nezávisle na rozlišení, takže získáte podobné výsledky bez ohledu na to, jestli vykreslujete na monitor 72-dpi nebo na tiskárnu 19 200-dpi.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také je založená na *dynamické rozložení*. To znamená, že prvek uživatelského rozhraní samotného uspořádá ve formuláři nebo na stránku podle její obsah, jeho nadřazeného kontejneru rozložení a obrazovku k dispozici. Dynamické rozložení usnadňuje lokalizaci úpravou automaticky velikost a umístění prvků uživatelského rozhraní při změně délku řetězce, které obsahují.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je také založen na *dynamickém rozložení*. To znamená, že se prvek uživatelského rozhraní uspořádá sám na formuláři nebo na stránce podle jeho obsahu, nadřazeného kontejneru rozložení a dostupné velikosti obrazovky. Dynamické rozložení usnadňuje lokalizaci tím, že automaticky upraví velikost a polohu prvků uživatelského rozhraní, když řetězce obsahují změnu délky.  
   
- Rozložení v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] je závislé na zařízení a pravděpodobně být statické. Obvykle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky jsou absolutně na formulář pomocí dimenze zadaný v pixelech hardwaru. Ale [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nepodporuje některé funkce dynamické rozložení dle souhrnu v následující tabulce.  
+ Rozložení v model Windows Forms je závislé na zařízení a pravděpodobně je statické. Obvykle jsou ovládací prvky model Windows Forms umístěny absolutně na formuláři pomocí dimenzí zadaných v pixelech hardwaru. Model Windows Forms však podporuje některé funkce dynamického rozložení, které jsou shrnuty v následující tabulce.  
   
 |Funkce rozložení|Popis|  
 |--------------------|-----------------|  
-|Automatické přizpůsobení velikosti|Některé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] Změna velikosti ovládacích prvků samy o sobě správně zobrazit jejich obsah. Další informace najdete v tématu [přehled vlastnosti AutoSize](../../winforms/controls/autosize-property-overview.md).|  
-|Ukotvení a dokování|[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu umístění a velikosti podle nadřazeného kontejneru. Další informace naleznete v tématu <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
-|Automatické škálování|Ovládací prvky kontejneru velikost sami sebe i jejich podřízené prvky podle rozlišení výstupní zařízení nebo velikost v pixelech výchozí písmo kontejneru. Další informace najdete v tématu [automatické změně měřítka ve Windows Forms](../../winforms/automatic-scaling-in-windows-forms.md).|  
-|Kontejnery rozložení|<xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvky uspořádejte jejich podřízených ovládacích prvků a nastavení velikosti sami podle jejich obsah.|  
+|Automatické přizpůsobení velikosti|Některé model Windows Forms řídí změnu velikosti sebe sama tak, aby se jejich obsah správně zobrazoval. Další informace naleznete v tématu [Přehled vlastností AutoSize](../../winforms/controls/autosize-property-overview.md).|  
+|Ukotvení a ukotvení|Model Windows Forms ovládací prvky podporují umístění a velikost na základě nadřazeného kontejneru. Další informace naleznete v tématu <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
+|Automatické škálování|Ovládací prvky kontejneru mění velikost sebe sama a jejich podřízené položky na základě rozlišení výstupního zařízení nebo velikosti (v pixelech) výchozího písma kontejneru. Další informace najdete v tématu [Automatické škálování v model Windows Forms](../../winforms/automatic-scaling-in-windows-forms.md).|  
+|Kontejnery rozložení|Ovládací prvky <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel> uspořádají své podřízené ovládací prvky a velikost samy na základě jejich obsahu.|  
   
 ## <a name="layout-limitations"></a>Omezení rozložení  
- Obecně platí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze škálovat a transformovat možném v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Následující seznam popisuje známých omezeních při <xref:System.Windows.Forms.Integration.WindowsFormsHost> element pokusí integrovat své prostředí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
+ Obecně model Windows Forms ovládací prvky nelze škálovat a transformovat v rozsahu možném [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Následující seznam popisuje známá omezení, když se <xref:System.Windows.Forms.Integration.WindowsFormsHost> element pokusí integrovat svůj hostovaný model Windows Forms ovládací prvek do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ho systému rozložení.  
   
-- V některých případech [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze změnit velikost nebo můžou mít velikost pouze na určité dimenze. Například [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.ComboBox> ovládací prvek podporuje pouze jeden výšku, které jsou definovány pomocí ovládacího prvku velikost písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dynamického rozložení, kde prvky můžete roztáhnout svisle, hostovaný <xref:System.Windows.Forms.ComboBox> ovládací prvek nebude roztáhnout podle očekávání.  
+- V některých případech nelze změnit velikost model Windows Forms ovládacích prvků, nebo může být velikost nastavena pouze na konkrétní rozměry. Například ovládací prvek model Windows Forms <xref:System.Windows.Forms.ComboBox> podporuje pouze jednu výšku, která je definována velikostí písma ovládacího prvku. Ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dynamické rozložení, kde lze prvky roztáhnout svisle, se hostovaný <xref:System.Windows.Forms.ComboBox> ovládací prvek nebude roztahovat podle očekávání.  
   
-- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nelze otáčet nebo zešikmená. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Element vyvolává <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> událost, když je použijete transformace zkosení nebo otočení. Pokud jste ke zpracování <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError> události, <xref:System.InvalidOperationException> je vyvolána.  
+- Ovládací prvky model Windows Forms nelze otáčet ani zkosit. <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek vyvolá událost <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError>, pokud použijete transformaci zkosení nebo otočení. Pokud nezpracováváte událost <xref:System.Windows.Forms.Integration.WindowsFormsHost.LayoutError>, je vyvolána <xref:System.InvalidOperationException>.  
   
-- Ve většině případů [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků nepodporují proporcionální škálování. I když bude možné škálovat celkové rozměry ovládacího prvku podřízených ovládacích prvků a komponent ovládacího prvku nemusí měnit velikost podle očekávání. Toto omezení závisí na tom, jak dobře se každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek podporuje škálování. Kromě toho už nebude možné škálovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků na velikost 0 v pixelech.  
+- Ve většině případů ovládací prvky model Windows Forms nepodporují proporcionální škálování. I když budou celkové rozměry ovládacího prvku škálované, podřízené ovládací prvky a prvky komponenty ovládacího prvku se nemusí měnit podle očekávání. Toto omezení závisí na tom, jak dobře každý ovládací prvek model Windows Forms podporuje škálování. Navíc nemůžete škálovat model Windows Forms ovládací prvky na velikost 0 pixelů.  
   
-- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu automatického škálování, ve kterém formuláři automaticky změní velikost sebe sama a jejích ovládacích prvků na základě velikosti písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelské rozhraní, změna velikosti písma se velikost celé rozložení, i když může dynamicky velikost jednotlivých prvků.  
+- Model Windows Forms ovládací prvky podporují automatické škálování, ve kterém se formulář automaticky změní na sebe sama a jeho ovládací prvky na základě velikosti písma. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]m uživatelském rozhraní změna velikosti písma nemění velikost celého rozložení, i když jednotlivé prvky mohou dynamicky měnit velikost.  
   
 ### <a name="z-order"></a>Pořadí vykreslování  
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uživatelského rozhraní, můžete změnit pořadí vykreslování prvků překrývající se chování ovládacího prvku. Hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek vykreslen v samostatných HWND, takže je vždy vykreslován nad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementy.  
+ V uživatelském rozhraní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] můžete změnit pořadí vykreslování prvků pro řízení překrývajících se chování. Hostovaný model Windows Forms ovládací prvek je vykreslen v samostatném elementu HWND, takže je vždy vykreslen nad [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky.  
   
- Hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] také ovládací prvek vykreslen na libovolné <xref:System.Windows.Documents.Adorner> elementy.  
+ Hostovaný model Windows Forms ovládací prvek je také vykreslen nad všemi <xref:System.Windows.Documents.Adorner> prvky.  
   
 ## <a name="layout-behavior"></a>Chování rozložení  
- Následující části popisují konkrétní aspekty chování rozložení, při hostování za nástrojem [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ V následujících částech jsou popsány konkrétní aspekty chování rozložení při hostování model Windows Forms ovládacích prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-### <a name="scaling-unit-conversion-and-device-independence"></a>Změna velikosti, převod jednotek a nezávislost zařízení  
- Pokaždé, když <xref:System.Windows.Forms.Integration.WindowsFormsHost> element provádí operace týkající se [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dimenze, dvěma systémy souřadnic souvisejí: pixelech nezávislých na zařízení pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a hardware pixelů pro [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Proto je nutné použít správné jednotky a škálování převody zajištění konzistentního rozložení.  
+### <a name="scaling-unit-conversion-and-device-independence"></a>Škálování, Konverze jednotek a nezávislost zařízení  
+ Vždy, když <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek provádí operace zahrnující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a model Windows Forms dimenze, jsou zapojeny dva systémy souřadnic: pixely nezávislé na zařízení pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a hardwarové pixely pro model Windows Forms. Proto je nutné použít správné rozvržení jednotek a škálování, aby bylo dosaženo konzistentního rozložení.  
   
- Převod mezi systémy souřadnic závisí na aktuální řešení zařízení a libovolný rozložení nebo vykreslování transformací použitá na <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu a jeho nadřazenými prvky.  
+ Převod mezi systémy souřadnic závisí na aktuálním rozlišení zařízení a všech transformacích rozložení nebo vykreslování použitých u <xref:System.Windows.Forms.Integration.WindowsFormsHost>ho prvku nebo na jeho nadřazených prvcích.  
   
- Pokud výstupní zařízení je 96 dpi a bez škálování byl použit <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu, jeden pixel nezávislých na zařízení se rovná na jeden pixel hardwaru.  
+ Pokud je výstupní zařízení 96 dpi a pro <xref:System.Windows.Forms.Integration.WindowsFormsHost> element není použité žádné škálování, jeden pixel nezávislý na zařízení se rovná jednomu hardwarovému pixelu.  
   
- Všech ostatních případech vyžadovat škálování systém souřadnic. Hostovaného ovládacího prvku se změněnou velikostí. Místo toho <xref:System.Windows.Forms.Integration.WindowsFormsHost> element pokusí škálování hostovaného ovládacího prvku a všechny jeho podřízené ovládací prvky. Protože [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] plně nepodporuje škálování, <xref:System.Windows.Forms.Integration.WindowsFormsHost> element se škáluje, aby do jaké míry podporuje konkrétní ovládací prvky.  
+ Všechny ostatní případy vyžadují souřadnicový systém pro škálování. U hostovaného ovládacího prvku není změněna velikost. Místo toho se prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> pokusí škálovat hostovaný ovládací prvek a všechny jeho podřízené ovládací prvky. Vzhledem k tomu, že model Windows Forms plně nepodporuje škálování, <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek se škáluje na míru podporovanou konkrétními ovládacími prvky.  
   
- Přepsat <xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A> metodu k dispozici vlastní chování škálování pro hostované ovládací prvek Windows Forms.  
+ Přepište metodu <xref:System.Windows.Forms.Integration.WindowsFormsHost.ScaleChild%2A>, aby poskytovala vlastní chování škálování pro hostovaný model Windows Forms ovládací prvek.  
   
- Kromě škálování, <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek zpracovává zaokrouhlení a přetečení případy, jak je popsáno v následující tabulce.  
+ Kromě škálování, <xref:System.Windows.Forms.Integration.WindowsFormsHost> element zpracovává případy zaokrouhlování a přetečení, jak je popsáno v následující tabulce.  
   
-|Převod problém|Popis|  
+|Problém s převodem|Popis|  
 |----------------------|-----------------|  
-|Zaokrouhlení|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v pixelech nezávislých na zařízení jsou zadané jako `double`, a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hardwaru v pixelech, které jsou určeny jako `int`. V případech, kde `double`– na základě rozměry jsou převedeny na `int`– na základě dimenze, <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek používá standardní zaokrouhlení tak, aby desetinné hodnoty menší než 0,5 zaokrouhlená dolů na 0.|  
-|přetečení|Když <xref:System.Windows.Forms.Integration.WindowsFormsHost> element převede z `double` hodnoty `int` hodnoty, je možné přetečení. Hodnoty, které jsou větší než <xref:System.Int32.MaxValue> jsou nastaveny na <xref:System.Int32.MaxValue>.|  
+|Kusov|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dimenze v pixelech nezávislých na zařízení se zadává jako `double`a model Windows Forms velikosti hardwarových pixelů se zadává jako `int`. V případech, kdy jsou dimenze založené na `double`převedeny na dimenze založené na `int`, <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek používá standardní zaokrouhlování, aby desetinné hodnoty menší než 0,5 byly zaokrouhleny dolů na 0.|  
+|Plně|Když <xref:System.Windows.Forms.Integration.WindowsFormsHost> element převede z hodnot `double` na hodnoty `int`, je možné přetečení. Hodnoty větší než <xref:System.Int32.MaxValue> jsou nastaveny na <xref:System.Int32.MaxValue>.|  
   
 ### <a name="layout-related-properties"></a>Vlastnosti související s rozložením  
- Vlastnosti, které řídí chování rozložení v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky jsou odpovídajícím způsobem podle mapovány <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu. Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](windows-forms-and-wpf-property-mapping.md).  
+ Vlastnosti, které řídí chování rozložení v ovládacích prvcích model Windows Forms a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky jsou mapovány vhodně pomocí elementu <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Další informace najdete v tématu [mapování vlastností model Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md).  
   
-### <a name="layout-changes-in-the-hosted-control"></a>Změny rozložení v hostovaného ovládacího prvku  
- Změny rozložení v hostovanou [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek se rozšíří na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aktivovat aktualizaci rozložení. <xref:System.Windows.UIElement.InvalidateMeasure%2A> Metoda <xref:System.Windows.Forms.Integration.WindowsFormsHost> zajistí, že způsobit změny rozložení v ovládacím prvku hostované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modul rozložení pro spuštění.  
+### <a name="layout-changes-in-the-hosted-control"></a>Změny rozložení v hostovaném ovládacím prvku  
+ Změny rozložení v hostovaném ovládacím prvku model Windows Forms jsou rozšířeny, aby [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mohly aktivovat aktualizace rozložení. Metoda <xref:System.Windows.UIElement.InvalidateMeasure%2A> v <xref:System.Windows.Forms.Integration.WindowsFormsHost> zajišťuje, aby změny rozložení v hostovaném ovládacím prvku způsobily spuštění modulu rozložení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-### <a name="continuously-sized-windows-forms-controls"></a>Průběžně velikosti ovládacích prvků Windows Forms  
- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, které podporují průběžné škálování plně pracovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Prvek používá <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metody jako obvykle pro velikost a uspořádání hostovanou [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku.  
+### <a name="continuously-sized-windows-forms-controls"></a>Průběžně měnit velikost model Windows Formsch ovládacích prvků  
+ Model Windows Forms ovládací prvky, které podporují nepřetržité škálování plně spolupracuje se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] layout. <xref:System.Windows.Forms.Integration.WindowsFormsHost> element používá metody <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> jako obvykle pro velikost a uspořádání hostovaného model Windows Formsho ovládacího prvku.  
   
-### <a name="sizing-algorithm"></a>Nastavení velikosti algoritmus  
- <xref:System.Windows.Forms.Integration.WindowsFormsHost> Prvek používá následující postup pro nastavení velikosti hostovaného ovládacího prvku:  
+### <a name="sizing-algorithm"></a>Algoritmus velikosti  
+ Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> používá následující postup pro nastavení velikosti hostovaného ovládacího prvku:  
   
-1. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Přepíše element <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> metody.  
+1. Element <xref:System.Windows.Forms.Integration.WindowsFormsHost> Přepisuje metody <xref:System.Windows.FrameworkElement.MeasureOverride%2A> a <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>.  
   
-2. K určení velikosti hostované ovládací prvek, <xref:System.Windows.FrameworkElement.MeasureOverride%2A> hostovaného ovládacího prvku volá metodu <xref:System.Windows.Forms.Control.GetPreferredSize%2A> metodu s omezením přeložit z omezení předán <xref:System.Windows.FrameworkElement.MeasureOverride%2A> metoda.  
+2. Chcete-li určit velikost hostovaného ovládacího prvku, metoda <xref:System.Windows.FrameworkElement.MeasureOverride%2A> volá metodu <xref:System.Windows.Forms.Control.GetPreferredSize%2A> hostovaného ovládacího prvku s omezením přeloženým z omezení předaného metodě <xref:System.Windows.FrameworkElement.MeasureOverride%2A>.  
   
-3. <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> Metoda se pokusí hostovaného ovládacího prvku nastavte na danou velikost omezení.  
+3. Metoda <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> se pokusí nastavit hostovaný ovládací prvek na dané omezení velikosti.  
   
-4. Pokud hostovaného ovládacího prvku <xref:System.Windows.Forms.Control.Size%2A> vlastnosti odpovídají zadané omezení, omezení velikostí hostovaného ovládacího prvku.  
+4. Pokud vlastnost <xref:System.Windows.Forms.Control.Size%2A> hostovaného ovládacího prvku odpovídá zadanému omezení, má hostovaný ovládací prvek velikost omezení.  
   
- Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost neodpovídá zadané omezení, hostované ovládací prvek nepodporuje průběžné velikosti. Například <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožňuje pouze diskrétní velikosti. Povolené velikosti pro tento ovládací prvek se skládá z celých čísel (představující počet měsíců) pro výšku a šířku. V případech, jako je například to <xref:System.Windows.Forms.Integration.WindowsFormsHost> element se chová takto:  
+ Pokud vlastnost <xref:System.Windows.Forms.Control.Size%2A> neodpovídá zadanému omezení, hostovaný ovládací prvek nepodporuje průběžnou změnu velikosti. Například ovládací prvek <xref:System.Windows.Forms.MonthCalendar> povoluje pouze diskrétní velikosti. Povolené velikosti pro tento ovládací prvek se skládají z celých čísel (představujících počet měsíců) pro výšku i šířku. V takových případech se <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek chová takto:  
   
-- Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací větší velikost než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> element klipy hostovaného ovládacího prvku. Výška a šířka jsou zpracovány samostatně, takže hostovaného ovládacího prvku může být oříznut v obou směrech.  
+- Pokud vlastnost <xref:System.Windows.Forms.Control.Size%2A> vrací větší velikost, než je zadané omezení, element <xref:System.Windows.Forms.Integration.WindowsFormsHost> vynechání hostovaného ovládacího prvku. Výška a šířka se zpracovává samostatně, takže hostovaný ovládací prvek může být oříznut v obou směrech.  
   
-- Pokud <xref:System.Windows.Forms.Control.Size%2A> vlastnost vrací menší než zadaná omezení <xref:System.Windows.Forms.Integration.WindowsFormsHost> přijme tuto hodnotu velikosti a vrátí hodnotu, která [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
+- Pokud vlastnost <xref:System.Windows.Forms.Control.Size%2A> vrací menší velikost než zadané omezení, <xref:System.Windows.Forms.Integration.WindowsFormsHost> akceptuje tuto hodnotu velikosti a vrátí hodnotu do systému [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ho rozložení.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návod: Ovládací prvky uspořádání Windows Forms v subsystému WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
-- [Uspořádání Windows Forms ovládací prvky v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
+- [Návod: Uspořádání ovládacích prvků Windows Forms v subsystému WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
+- [Uspořádání ovládacích prvků model Windows Forms v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)

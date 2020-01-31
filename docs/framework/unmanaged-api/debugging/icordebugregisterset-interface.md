@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d3d9676d-0b87-4bc3-b679-7bbc7a186c88
 topic_type:
 - apiref
-ms.openlocfilehash: 1ea0274adc12f3a99df0422bfc0b5180f0ef5596
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f435db28d5c85d576f69e7612841fc46ae142332
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131382"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792074"
 ---
 # <a name="icordebugregisterset-interface"></a>ICorDebugRegisterSet – rozhraní
 Představuje sadu registrů, které jsou k dispozici v počítači, který aktuálně spouští kód.  
@@ -28,14 +28,14 @@ Představuje sadu registrů, které jsou k dispozici v počítači, který aktu�
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetRegisters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregisters-method.md)|Získá hodnotu každého registru (na počítači, který právě spouští kód), který je určen bitovou maskou.|  
-|[GetRegistersAvailable – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregistersavailable-method.md)|Načte bitovou masku, která označuje, které Registry v tomto `ICorDebugRegisterSet` jsou aktuálně k dispozici.|  
-|[GetThreadContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getthreadcontext-method.md)|Získá kontext aktuálního vlákna.|  
-|[SetRegisters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-setregisters-method.md)|Není implementováno pro .NET Framework verze 2,0.|  
-|[SetThreadContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-setthreadcontext-method.md)|Není implementováno pro .NET Framework 2,0.|  
+|[GetRegisters – metoda](icordebugregisterset-getregisters-method.md)|Získá hodnotu každého registru (na počítači, který právě spouští kód), který je určen bitovou maskou.|  
+|[GetRegistersAvailable – metoda](icordebugregisterset-getregistersavailable-method.md)|Načte bitovou masku, která označuje, které Registry v tomto `ICorDebugRegisterSet` jsou aktuálně k dispozici.|  
+|[GetThreadContext – metoda](icordebugregisterset-getthreadcontext-method.md)|Získá kontext aktuálního vlákna.|  
+|[SetRegisters – metoda](icordebugregisterset-setregisters-method.md)|Není implementováno pro .NET Framework verze 2,0.|  
+|[SetThreadContext – metoda](icordebugregisterset-setthreadcontext-method.md)|Není implementováno pro .NET Framework 2,0.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní `ICorDebugRegisterSet` podporuje pouze 32 bitové Registry. Použijte rozhraní [ICorDebugRegisterSet2](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md) na platformách, jako je IA-64, které vyžadují další registry.  
+ Rozhraní `ICorDebugRegisterSet` podporuje pouze 32 bitové Registry. Použijte rozhraní [ICorDebugRegisterSet2](icordebugregisterset2-interface.md) na platformách, jako je IA-64, které vyžadují další registry.  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
@@ -51,5 +51,5 @@ Představuje sadu registrů, které jsou k dispozici v počítači, který aktu�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [ICorDebugRegisterSet2 – rozhraní](icordebugregisterset2-interface.md)

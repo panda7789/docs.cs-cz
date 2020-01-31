@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 05164966-16ce-4cc9-a530-43a640c00711
 topic_type:
 - apiref
-ms.openlocfilehash: b044c493649b73566a2e70db2e19977a6a7b877d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b96a8930c24275546b0aac9fa650cf5447ef4ef2
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439456"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865412"
 ---
 # <a name="icorprofilercallback3profilerdetachsucceeded-method"></a>ICorProfilerCallback3::ProfilerDetachSucceeded – metoda
 Upozorní profileru, že modul CLR (Common Language Runtime) chystá uvolnění knihovny DLL profileru.  
@@ -35,7 +35,7 @@ HRESULT ProfilerDetachSucceeded();
  Návratová hodnota z tohoto zpětného volání je ignorována.  
   
 ## <a name="remarks"></a>Poznámky  
- Zpětné volání `ProfilerDetachSucceeded` je vystaveno po ukončení všech vláken v kódu profileru. Při volání této metody by Profiler měl provést všechny poslední minutové úkoly, které nejsou vhodné pro svůj destruktor, jako je například oznamování jeho uživatelského rozhraní nebo komponenty protokolování. Profiler však nesmí volat funkce v rozhraních, která jsou poskytována modulem CLR během tohoto zpětného volání (například rozhraní [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo `IMetaData*`).  
+ Zpětné volání `ProfilerDetachSucceeded` je vystaveno po ukončení všech vláken v kódu profileru. Při volání této metody by Profiler měl provést všechny poslední minutové úkoly, které nejsou vhodné pro svůj destruktor, jako je například oznamování jeho uživatelského rozhraní nebo komponenty protokolování. Profiler však nesmí volat funkce v rozhraních, která jsou poskytována modulem CLR během tohoto zpětného volání (například rozhraní [ICorProfilerInfo](icorprofilerinfo-interface.md) nebo `IMetaData*`).  
   
  Modul CLR vytvoří položku v protokolu událostí aplikace systému Windows, která indikuje, že operace odpojení je úspěšná.  
   
@@ -53,6 +53,6 @@ HRESULT ProfilerDetachSucceeded();
 ## <a name="see-also"></a>Viz také:
 
 - [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
-- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)
