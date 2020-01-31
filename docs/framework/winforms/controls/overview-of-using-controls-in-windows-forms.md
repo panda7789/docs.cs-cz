@@ -1,5 +1,5 @@
 ---
-title: Přehled používání ovládacích prvků ve Windows Forms
+title: Přehled používání ovládacích prvků
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,24 +9,24 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - custom controls [Windows Forms]
 ms.assetid: fddbe951-4485-459d-a5fd-665ea346dbc1
-ms.openlocfilehash: 16a28db6477ea86a8bc853fbf506cf6d6d4fa5e0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca8b9fab3c53e256792faf0969b5066d5e35f6c7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654592"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744344"
 ---
-# <a name="overview-of-using-controls-in-windows-forms"></a><span data-ttu-id="f4340-102">Přehled používání ovládacích prvků ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f4340-102">Overview of Using Controls in Windows Forms</span></span>
-<span data-ttu-id="f4340-103">Toto téma popisuje základní prvky aplikace modelu Windows Forms a nabízí jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="f4340-103">This topic describes the essential elements of a Windows Forms application and provides a simple example that uses controls and handles events in a Windows Forms application.</span></span>  
+# <a name="overview-of-using-controls-in-windows-forms"></a><span data-ttu-id="cd8d1-102">Přehled používání ovládacích prvků ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cd8d1-102">Overview of Using Controls in Windows Forms</span></span>
+<span data-ttu-id="cd8d1-103">Toto téma popisuje základní prvky aplikace model Windows Forms a poskytuje jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-103">This topic describes the essential elements of a Windows Forms application and provides a simple example that uses controls and handles events in a Windows Forms application.</span></span>  
   
-## <a name="simple-windows-forms-applications"></a><span data-ttu-id="f4340-104">Aplikací jednoduché Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f4340-104">Simple Windows Forms Applications</span></span>  
- <span data-ttu-id="f4340-105">Minimálně aplikace modelu Windows Forms obsahuje následující prvky:</span><span class="sxs-lookup"><span data-stu-id="f4340-105">At a minimum, a Windows Forms application consists of the following elements:</span></span>  
+## <a name="simple-windows-forms-applications"></a><span data-ttu-id="cd8d1-104">Jednoduché aplikace model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cd8d1-104">Simple Windows Forms Applications</span></span>  
+ <span data-ttu-id="cd8d1-105">Minimálně model Windows Forms aplikace sestávají z následujících prvků:</span><span class="sxs-lookup"><span data-stu-id="cd8d1-105">At a minimum, a Windows Forms application consists of the following elements:</span></span>  
   
-- <span data-ttu-id="f4340-106">Jeden nebo více tříd, které jsou odvozeny z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="f4340-106">One or more classes that derive from <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.</span></span>  
+- <span data-ttu-id="cd8d1-106">Jedna nebo více tříd, které jsou odvozeny z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-106">One or more classes that derive from <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.</span></span>  
   
-- <span data-ttu-id="f4340-107">A `Main` metody, která vyvolá `static` (`shared` v jazyce Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> metoda a předá <xref:System.Windows.Forms.Form> instance k němu.</span><span class="sxs-lookup"><span data-stu-id="f4340-107">A `Main` method that invokes the `static` (`shared` in Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> method and passes a <xref:System.Windows.Forms.Form> instance to it.</span></span> <span data-ttu-id="f4340-108"><xref:System.Windows.Forms.Application.Run%2A> Metoda zpracovává zprávy z operačního systému do aplikace.</span><span class="sxs-lookup"><span data-stu-id="f4340-108">The <xref:System.Windows.Forms.Application.Run%2A> method processes messages from the operating system to the application.</span></span>  
+- <span data-ttu-id="cd8d1-107">`Main` metoda, která vyvolá metodu <xref:System.Windows.Forms.Application.Run%2A> `static` (`shared` v Visual Basic) a předá do ní instanci <xref:System.Windows.Forms.Form>.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-107">A `Main` method that invokes the `static` (`shared` in Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> method and passes a <xref:System.Windows.Forms.Form> instance to it.</span></span> <span data-ttu-id="cd8d1-108">Metoda <xref:System.Windows.Forms.Application.Run%2A> zpracovává zprávy z operačního systému do aplikace.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-108">The <xref:System.Windows.Forms.Application.Run%2A> method processes messages from the operating system to the application.</span></span>  
   
- <span data-ttu-id="f4340-109">Následující příklad kódu ukazuje základní prvky aplikace modelu Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="f4340-109">The following code example shows the essential elements of a Windows Forms application.</span></span>  
+ <span data-ttu-id="cd8d1-109">Následující příklad kódu ukazuje základní prvky aplikace model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-109">The following code example shows the essential elements of a Windows Forms application.</span></span>  
   
 ```vb  
 Option Explicit  
@@ -74,8 +74,8 @@ public class MyForm : Form {
 }  
 ```  
   
-## <a name="using-controls-in-a-windows-forms-application"></a><span data-ttu-id="f4340-110">Použití ovládacích prvků ve formulářové aplikaci Windows</span><span class="sxs-lookup"><span data-stu-id="f4340-110">Using Controls in a Windows Forms Application</span></span>  
- <span data-ttu-id="f4340-111">Následující příklad kódu ukazuje jednoduchou aplikaci, která ukazuje, jak aplikace Windows Forms pomocí ovládacích prvků a zpracování událostí.</span><span class="sxs-lookup"><span data-stu-id="f4340-111">The following code example shows a simple application that illustrates how Windows Forms applications use controls and handle events.</span></span> <span data-ttu-id="f4340-112">V příkladu se skládá ze tří tlačítek na formuláři; každé tlačítko změní barvu pozadí při kliknutí na.</span><span class="sxs-lookup"><span data-stu-id="f4340-112">The example consists of three buttons on a form; each button changes the background color when clicked.</span></span>  
+## <a name="using-controls-in-a-windows-forms-application"></a><span data-ttu-id="cd8d1-110">Používání ovládacích prvků v model Windows Forms aplikaci</span><span class="sxs-lookup"><span data-stu-id="cd8d1-110">Using Controls in a Windows Forms Application</span></span>  
+ <span data-ttu-id="cd8d1-111">Následující příklad kódu ukazuje jednoduchou aplikaci, která ukazuje, jak model Windows Forms aplikace používají ovládací prvky a zpracovávající události.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-111">The following code example shows a simple application that illustrates how Windows Forms applications use controls and handle events.</span></span> <span data-ttu-id="cd8d1-112">Příklad se skládá ze tří tlačítek na formuláři; každé tlačítko změní barvu pozadí po kliknutí.</span><span class="sxs-lookup"><span data-stu-id="cd8d1-112">The example consists of three buttons on a form; each button changes the background color when clicked.</span></span>  
   
 ```vb  
 Option Explicit  
@@ -223,7 +223,7 @@ public class MyForm : Form {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f4340-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f4340-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cd8d1-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cd8d1-113">See also</span></span>
 
-- [<span data-ttu-id="f4340-114">Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="f4340-114">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](developing-custom-windows-forms-controls.md)
-- [<span data-ttu-id="f4340-115">Základní informace o vývoji ovládacích prvků Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f4340-115">Windows Forms Control Development Basics</span></span>](windows-forms-control-development-basics.md)
+- [<span data-ttu-id="cd8d1-114">Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="cd8d1-114">Developing Custom Windows Forms Controls with the .NET Framework</span></span>](developing-custom-windows-forms-controls.md)
+- [<span data-ttu-id="cd8d1-115">Základní informace o vývoji ovládacích prvků Windows Forms</span><span class="sxs-lookup"><span data-stu-id="cd8d1-115">Windows Forms Control Development Basics</span></span>](windows-forms-control-development-basics.md)

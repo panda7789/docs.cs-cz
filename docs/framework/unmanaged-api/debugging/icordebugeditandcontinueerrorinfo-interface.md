@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: 6ae0204c-6bb2-4bda-b13e-94507203bc68
 topic_type:
 - apiref
-ms.openlocfilehash: f6d6a2bf006d5efdc862dc7d5800694709ea3d3e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 28d5a486f51aa81c56683f51da19c2636c320929
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120693"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783275"
 ---
-# <a name="icordebugeditandcontinueerrorinfo-interface"></a><span data-ttu-id="b6604-102">ICorDebugEditAndContinueErrorInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b6604-102">ICorDebugEditAndContinueErrorInfo Interface</span></span>
-<span data-ttu-id="b6604-103">`ICorDebugEditAndContinueErrorInfo` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="b6604-103">`ICorDebugEditAndContinueErrorInfo` is obsolete.</span></span> <span data-ttu-id="b6604-104">Toto rozhraní nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="b6604-104">Do not use this interface.</span></span>  
+# <a name="icordebugeditandcontinueerrorinfo-interface"></a><span data-ttu-id="4ff94-102">ICorDebugEditAndContinueErrorInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4ff94-102">ICorDebugEditAndContinueErrorInfo Interface</span></span>
+<span data-ttu-id="4ff94-103">`ICorDebugEditAndContinueErrorInfo` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="4ff94-103">`ICorDebugEditAndContinueErrorInfo` is obsolete.</span></span> <span data-ttu-id="4ff94-104">Toto rozhraní nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="4ff94-104">Do not use this interface.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b6604-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6604-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4ff94-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4ff94-105">See also</span></span>
 
-- [<span data-ttu-id="b6604-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="b6604-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="4ff94-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="4ff94-106">Debugging Interfaces</span></span>](debugging-interfaces.md)

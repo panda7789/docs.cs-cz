@@ -111,6 +111,8 @@
           href: native-interop/qualify-net-types-for-interoperation.md
     - name: Použití atributů spolupráce
       href: native-interop/apply-interop-attributes.md
+    - name: Výjimky
+      href: native-interop/exceptions-interoperability.md
 - name: Kolekce a datové struktury
   href: collections/
 - name: Číslovky v technologii .NET
