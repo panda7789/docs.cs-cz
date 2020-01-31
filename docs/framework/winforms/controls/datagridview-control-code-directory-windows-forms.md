@@ -1,5 +1,5 @@
 ---
-title: Adresář kódu ovládacího prvku DataGridView (Windows Forms)
+title: Adresář kódu ovládacího prvku DataGridView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data grids [Windows Forms], examples
@@ -7,152 +7,152 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], examples
 - DataGridView control [Windows Forms], code directory
 ms.assetid: ea8bd66a-5ed6-491b-b9da-63873e275a0a
-ms.openlocfilehash: e77a5e6efa769503e45aaf68380acdca79a7bfd5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: abc4dad66ef2c89fe7937cbfffd047bc1f6a9811
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969176"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742509"
 ---
-# <a name="datagridview-control-code-directory-windows-forms"></a><span data-ttu-id="e6202-102">Adresář kódu ovládacího prvku DataGridView (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="e6202-102">DataGridView Control Code Directory (Windows Forms)</span></span>
-<span data-ttu-id="e6202-103">Toto téma obsahuje odkazy na <xref:System.Windows.Forms.DataGridView>příklady kódu, které jsou k dispozici v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="e6202-103">This topic provides links to <xref:System.Windows.Forms.DataGridView>-related code examples available in the documentation.</span></span>  
+# <a name="datagridview-control-code-directory-windows-forms"></a><span data-ttu-id="f1bbf-102">Adresář kódu ovládacího prvku DataGridView (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="f1bbf-102">DataGridView Control Code Directory (Windows Forms)</span></span>
+<span data-ttu-id="f1bbf-103">Toto téma obsahuje odkazy na příklady kódu, které jsou k dispozici v dokumentaci, <xref:System.Windows.Forms.DataGridView>související.</span><span class="sxs-lookup"><span data-stu-id="f1bbf-103">This topic provides links to <xref:System.Windows.Forms.DataGridView>-related code examples available in the documentation.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="e6202-104">Odkaz vždy odkazuje na začátek tématu, ve kterém byl nalezen příklad kódu.</span><span class="sxs-lookup"><span data-stu-id="e6202-104">A link always jumps to the top of the topic in which the code example is found.</span></span>  
+> <span data-ttu-id="f1bbf-104">Odkaz vždy odkazuje na začátek tématu, ve kterém byl nalezen příklad kódu.</span><span class="sxs-lookup"><span data-stu-id="f1bbf-104">A link always jumps to the top of the topic in which the code example is found.</span></span>  
   
- <span data-ttu-id="e6202-105">Další příklady kódu jsou k dispozici v referenční dokumentaci knihovny tříd.</span><span class="sxs-lookup"><span data-stu-id="e6202-105">Additional code examples are available in the class library reference documentation.</span></span> <span data-ttu-id="e6202-106">Seznam hlavních tříd a rozhraní přidružených <xref:System.Windows.Forms.DataGridView> k ovládacímu prvku naleznete v tabulce v souhrnu [technologie ovládacího prvku DataGridView](datagridview-control-technology-summary-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="e6202-106">For a list of the principal classes and interfaces associated with the <xref:System.Windows.Forms.DataGridView> control, see the table in [DataGridView Control Technology Summary](datagridview-control-technology-summary-windows-forms.md).</span></span>  
+ <span data-ttu-id="f1bbf-105">Další příklady kódu jsou k dispozici v referenční dokumentaci knihovny tříd.</span><span class="sxs-lookup"><span data-stu-id="f1bbf-105">Additional code examples are available in the class library reference documentation.</span></span> <span data-ttu-id="f1bbf-106">Seznam hlavních tříd a rozhraní přidružených k ovládacímu prvku <xref:System.Windows.Forms.DataGridView> naleznete v tabulce v [souhrnu technologie ovládacího prvku DataGridView](datagridview-control-technology-summary-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="f1bbf-106">For a list of the principal classes and interfaces associated with the <xref:System.Windows.Forms.DataGridView> control, see the table in [DataGridView Control Technology Summary](datagridview-control-technology-summary-windows-forms.md).</span></span>  
   
-## <a name="codelist"></a><span data-ttu-id="e6202-107">Seznam kódu</span><span class="sxs-lookup"><span data-stu-id="e6202-107">CodeList</span></span>  
+## <a name="codelist"></a><span data-ttu-id="f1bbf-107">CodeList</span><span class="sxs-lookup"><span data-stu-id="f1bbf-107">CodeList</span></span>  
   
-## <a name="unbound-data-examples"></a><span data-ttu-id="e6202-108">Příklady nevázaných dat</span><span class="sxs-lookup"><span data-stu-id="e6202-108">Unbound Data Examples</span></span>  
+## <a name="unbound-data-examples"></a><span data-ttu-id="f1bbf-108">Příklady nevázaných dat</span><span class="sxs-lookup"><span data-stu-id="f1bbf-108">Unbound Data Examples</span></span>  
   
-- [<span data-ttu-id="e6202-109">Postupy: Přidání nevázaného sloupce k ovládacímu prvku DataGridView vázanému na datovou model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-109">How to: Add an Unbound Column to a Data-Bound Windows Forms DataGridView Control</span></span>](unbound-column-to-a-data-bound-datagridview.md)  
+- [<span data-ttu-id="f1bbf-109">Postupy: Přidání nepřipojeného sloupce do ovládacího prvku Windows Forms DataGridView s datovou vazbou</span><span class="sxs-lookup"><span data-stu-id="f1bbf-109">How to: Add an Unbound Column to a Data-Bound Windows Forms DataGridView Control</span></span>](unbound-column-to-a-data-bound-datagridview.md)  
   
-- [<span data-ttu-id="e6202-110">Postupy: Vytvoření ovládacího prvku nevázané model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-110">How to: Create an Unbound Windows Forms DataGridView Control</span></span>](how-to-create-an-unbound-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-110">Postupy: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-110">How to: Create an Unbound Windows Forms DataGridView Control</span></span>](how-to-create-an-unbound-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-111">Návod: Vytvoření ovládacího prvku nevázané model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-111">Walkthrough: Creating an Unbound Windows Forms DataGridView Control</span></span>](walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-111">Návod: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-111">Walkthrough: Creating an Unbound Windows Forms DataGridView Control</span></span>](walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)  
   
-## <a name="data-binding-examples"></a><span data-ttu-id="e6202-112">Příklady datové vazby</span><span class="sxs-lookup"><span data-stu-id="e6202-112">Data Binding Examples</span></span>  
+## <a name="data-binding-examples"></a><span data-ttu-id="f1bbf-112">Příklady datové vazby</span><span class="sxs-lookup"><span data-stu-id="f1bbf-112">Data Binding Examples</span></span>  
   
-- [<span data-ttu-id="e6202-113">Postupy: Vytvoření vazby dat k ovládacímu prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-113">How to: Bind Data to the Windows Forms DataGridView Control</span></span>](how-to-bind-data-to-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-113">Postupy: Vytvoření vazby dat k ovládacímu prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-113">How to: Bind Data to the Windows Forms DataGridView Control</span></span>](how-to-bind-data-to-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-114">Postupy: Generuje sloupce v ovládacím prvku DataGridView vázaného na data model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-114">How to: Autogenerate Columns in a Data-Bound Windows Forms DataGridView Control</span></span>](autogenerate-columns-in-a-data-bound-wf-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-114">Postupy: Automatické generování sloupců v ovládacím prvku Windows Forms DataGridView s datovou vazbou</span><span class="sxs-lookup"><span data-stu-id="f1bbf-114">How to: Autogenerate Columns in a Data-Bound Windows Forms DataGridView Control</span></span>](autogenerate-columns-in-a-data-bound-wf-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-115">Postupy: Odebrání automaticky vygenerovaných sloupců z ovládacího prvku model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-115">How to: Remove Autogenerated Columns from a Windows Forms DataGridView Control</span></span>](remove-autogenerated-columns-from-a-wf-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-115">Postupy: Odebrání automaticky vygenerovaných sloupců z ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-115">How to: Remove Autogenerated Columns from a Windows Forms DataGridView Control</span></span>](remove-autogenerated-columns-from-a-wf-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-116">Postupy: Vázání objektů k ovládacím prvkům model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-116">How to: Bind Objects to Windows Forms DataGridView Controls</span></span>](how-to-bind-objects-to-windows-forms-datagridview-controls.md)  
+- [<span data-ttu-id="f1bbf-116">Postupy: Vytvoření vazby objektů k ovládacím prvkům Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-116">How to: Bind Objects to Windows Forms DataGridView Controls</span></span>](how-to-bind-objects-to-windows-forms-datagridview-controls.md)  
   
-- [<span data-ttu-id="e6202-117">Postupy: Přístup k objektům vázaným na řádky model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-117">How to: Access Objects Bound to Windows Forms DataGridView Rows</span></span>](how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)  
+- [<span data-ttu-id="f1bbf-117">Postupy: Přístup k objektům svázaným s řádky Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-117">How to: Access Objects Bound to Windows Forms DataGridView Rows</span></span>](how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)  
   
-- [<span data-ttu-id="e6202-118">Postupy: Vytvoření hlavního a podrobného formuláře pomocí dvou ovládacích prvků model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-118">How to: Create a Master/Detail Form Using Two Windows Forms DataGridView Controls</span></span>](create-a-master-detail-form-using-two-datagridviews.md)  
+- [<span data-ttu-id="f1bbf-118">Postupy: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-118">How to: Create a Master/Detail Form Using Two Windows Forms DataGridView Controls</span></span>](create-a-master-detail-form-using-two-datagridviews.md)  
   
-- [<span data-ttu-id="e6202-119">Návod: Vytvoření hlavního a podrobného formuláře pomocí dvou ovládacích prvků model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-119">Walkthrough: Creating a Master/Detail Form Using Two Windows Forms DataGridView Controls</span></span>](creating-a-master-detail-form-using-two-datagridviews.md)  
+- [<span data-ttu-id="f1bbf-119">Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-119">Walkthrough: Creating a Master/Detail Form Using Two Windows Forms DataGridView Controls</span></span>](creating-a-master-detail-form-using-two-datagridviews.md)  
   
-## <a name="data-formatting-examples"></a><span data-ttu-id="e6202-120">Příklady formátování dat</span><span class="sxs-lookup"><span data-stu-id="e6202-120">Data Formatting Examples</span></span>  
+## <a name="data-formatting-examples"></a><span data-ttu-id="f1bbf-120">Příklady formátování dat</span><span class="sxs-lookup"><span data-stu-id="f1bbf-120">Data Formatting Examples</span></span>  
   
-- [<span data-ttu-id="e6202-121">Postupy: Formátování dat v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-121">How to: Format Data in the Windows Forms DataGridView Control</span></span>](how-to-format-data-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-121">Postupy: Formátování dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-121">How to: Format Data in the Windows Forms DataGridView Control</span></span>](how-to-format-data-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-122">Postupy: Přizpůsobení formátování dat v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-122">How to: Customize Data Formatting in the Windows Forms DataGridView Control</span></span>](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-122">Postupy: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-122">How to: Customize Data Formatting in the Windows Forms DataGridView Control</span></span>](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)  
   
-## <a name="data-validation-examples"></a><span data-ttu-id="e6202-123">Příklady ověření dat</span><span class="sxs-lookup"><span data-stu-id="e6202-123">Data Validation Examples</span></span>  
+## <a name="data-validation-examples"></a><span data-ttu-id="f1bbf-123">Příklady ověření dat</span><span class="sxs-lookup"><span data-stu-id="f1bbf-123">Data Validation Examples</span></span>  
   
-- [<span data-ttu-id="e6202-124">Postupy: Ověřit data v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-124">How to: Validate Data in the Windows Forms DataGridView Control</span></span>](how-to-validate-data-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-124">Postupy: Ověřování dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-124">How to: Validate Data in the Windows Forms DataGridView Control</span></span>](how-to-validate-data-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-125">Návod: Ověřování dat v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-125">Walkthrough: Validating Data in the Windows Forms DataGridView Control</span></span>](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-125">Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-125">Walkthrough: Validating Data in the Windows Forms DataGridView Control</span></span>](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-126">Postupy: Zpracování chyb, ke kterým došlo při zadávání dat v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-126">How to: Handle Errors That Occur During Data Entry in the Windows Forms DataGridView Control</span></span>](handle-errors-that-occur-during-data-entry-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-126">Postupy: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-126">How to: Handle Errors That Occur During Data Entry in the Windows Forms DataGridView Control</span></span>](handle-errors-that-occur-during-data-entry-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-127">Návod: Zpracování chyb, ke kterým došlo při zadávání dat v ovládacím prvku model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-127">Walkthrough: Handling Errors that Occur During Data Entry in the Windows Forms DataGridView Control</span></span>](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-127">Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-127">Walkthrough: Handling Errors that Occur During Data Entry in the Windows Forms DataGridView Control</span></span>](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
   
-## <a name="appearance-customization-examples"></a><span data-ttu-id="e6202-128">Příklady přizpůsobení vzhledu</span><span class="sxs-lookup"><span data-stu-id="e6202-128">Appearance Customization Examples</span></span>  
+## <a name="appearance-customization-examples"></a><span data-ttu-id="f1bbf-128">Příklady přizpůsobení vzhledu</span><span class="sxs-lookup"><span data-stu-id="f1bbf-128">Appearance Customization Examples</span></span>  
   
-- [<span data-ttu-id="e6202-129">Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-129">How to: Change the Border and Gridline Styles in the Windows Forms DataGridView Control</span></span>](change-the-border-and-gridline-styles-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-129">Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-129">How to: Change the Border and Gridline Styles in the Windows Forms DataGridView Control</span></span>](change-the-border-and-gridline-styles-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-130">Postupy: Nastavení stylů písma a barev v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-130">How to: Set Font and Color Styles in the Windows Forms DataGridView Control</span></span>](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-130">Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-130">How to: Set Font and Color Styles in the Windows Forms DataGridView Control</span></span>](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-131">Postupy: Nastavení výchozích stylů buňky pro ovládací prvek DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-131">How to: Set Default Cell Styles for the Windows Forms DataGridView Control</span></span>](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-131">Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-131">How to: Set Default Cell Styles for the Windows Forms DataGridView Control</span></span>](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-132">Postupy: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-132">How to: Use the Row Template to Customize Rows in the Windows Forms DataGridView Control</span></span>](use-the-row-template-to-customize-rows-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-132">Postupy: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-132">How to: Use the Row Template to Customize Rows in the Windows Forms DataGridView Control</span></span>](use-the-row-template-to-customize-rows-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-133">Postupy: Nastavení střídavých stylů řádků pro ovládací prvek DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-133">How to: Set Alternating Row Styles for the Windows Forms DataGridView Control</span></span>](how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-133">Postupy: Nastavení střídavých stylů řádků pro ovládací prvek Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-133">How to: Set Alternating Row Styles for the Windows Forms DataGridView Control</span></span>](how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)  
   
-## <a name="behavior-customization-examples"></a><span data-ttu-id="e6202-134">Příklady přizpůsobení chování</span><span class="sxs-lookup"><span data-stu-id="e6202-134">Behavior Customization Examples</span></span>  
+## <a name="behavior-customization-examples"></a><span data-ttu-id="f1bbf-134">Příklady přizpůsobení chování</span><span class="sxs-lookup"><span data-stu-id="f1bbf-134">Behavior Customization Examples</span></span>  
   
-- [<span data-ttu-id="e6202-135">Postupy: Určení režimu úprav pro ovládací prvek DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-135">How to: Specify the Edit Mode for the Windows Forms DataGridView Control</span></span>](how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-135">Postupy: Určení režimu úprav pro ovládací prvek Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-135">How to: Specify the Edit Mode for the Windows Forms DataGridView Control</span></span>](how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-136">Postupy: Zadání výchozích hodnot pro nové řádky v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-136">How to: Specify Default Values for New Rows in the Windows Forms DataGridView Control</span></span>](specify-default-values-for-new-rows-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-136">Postupy: Určení výchozích hodnot pro nové řádky v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-136">How to: Specify Default Values for New Rows in the Windows Forms DataGridView Control</span></span>](specify-default-values-for-new-rows-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-137">Postupy: Zabránit přidávání a odstraňování řádků v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-137">How to: Prevent Row Addition and Deletion in the Windows Forms DataGridView Control</span></span>](prevent-row-addition-and-deletion-datagridview.md)  
+- [<span data-ttu-id="f1bbf-137">Postupy: Zamezení přidávání a odstraňování řádků v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-137">How to: Prevent Row Addition and Deletion in the Windows Forms DataGridView Control</span></span>](prevent-row-addition-and-deletion-datagridview.md)  
   
-- [<span data-ttu-id="e6202-138">Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-138">How to: Perform a Custom Action Based on Changes in a Cell of a Windows Forms DataGridView Control</span></span>](perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
+- [<span data-ttu-id="f1bbf-138">Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-138">How to: Perform a Custom Action Based on Changes in a Cell of a Windows Forms DataGridView Control</span></span>](perform-a-custom-action-based-on-changes-in-a-cell-of-a-datagrid.md)  
   
-- [<span data-ttu-id="e6202-139">Postupy: Povolit uživatelům kopírovat více buněk do schránky z ovládacího prvku model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-139">How to: Enable Users to Copy Multiple Cells to the Clipboard from the Windows Forms DataGridView Control</span></span>](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
+- [<span data-ttu-id="f1bbf-139">Postupy: Povolení kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-139">How to: Enable Users to Copy Multiple Cells to the Clipboard from the Windows Forms DataGridView Control</span></span>](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
   
-- [<span data-ttu-id="e6202-140">Postupy: Přidání popisů do jednotlivých buněk v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-140">How to: Add ToolTips to Individual Cells in a Windows Forms DataGridView Control</span></span>](add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-140">Postupy: Přidání popisů tlačítek do jednotlivých buněk v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-140">How to: Add ToolTips to Individual Cells in a Windows Forms DataGridView Control</span></span>](add-tooltips-to-individual-cells-in-a-wf-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-141">Postupy: Zobrazení obrázků v buňkách ovládacího prvku model Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-141">How to: Display Images in Cells of the Windows Forms DataGridView Control</span></span>](how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-141">Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-141">How to: Display Images in Cells of the Windows Forms DataGridView Control</span></span>](how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-142">Postupy: Přizpůsobení řazení v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-142">How to: Customize Sorting in the Windows Forms DataGridView Control</span></span>](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-142">Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-142">How to: Customize Sorting in the Windows Forms DataGridView Control</span></span>](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)  
   
-## <a name="column-manipulation-examples"></a><span data-ttu-id="e6202-143">Příklady manipulace s sloupci</span><span class="sxs-lookup"><span data-stu-id="e6202-143">Column Manipulation Examples</span></span>  
+## <a name="column-manipulation-examples"></a><span data-ttu-id="f1bbf-143">Příklady manipulace s sloupci</span><span class="sxs-lookup"><span data-stu-id="f1bbf-143">Column Manipulation Examples</span></span>  
   
-- [<span data-ttu-id="e6202-144">Postupy: Ukotvit sloupce v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-144">How to: Freeze Columns in the Windows Forms DataGridView Control</span></span>](how-to-freeze-columns-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-144">Postupy: Zablokování sloupců v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-144">How to: Freeze Columns in the Windows Forms DataGridView Control</span></span>](how-to-freeze-columns-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-145">Postupy: Povolit změnu pořadí sloupců v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-145">How to: Enable Column Reordering in the Windows Forms DataGridView Control</span></span>](how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-145">Postupy: Povolení změny pořadí v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-145">How to: Enable Column Reordering in the Windows Forms DataGridView Control</span></span>](how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-146">Postupy: Změna pořadí sloupců v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-146">How to: Change the Order of Columns in the Windows Forms DataGridView Control</span></span>](how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-146">Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-146">How to: Change the Order of Columns in the Windows Forms DataGridView Control</span></span>](how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-147">Postupy: Skrýt sloupce v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-147">How to: Hide Columns in the Windows Forms DataGridView Control</span></span>](how-to-hide-columns-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-147">Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-147">How to: Hide Columns in the Windows Forms DataGridView Control</span></span>](how-to-hide-columns-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-148">Postupy: Skrýt záhlaví sloupců v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-148">How to: Hide Column Headers in the Windows Forms DataGridView Control</span></span>](how-to-hide-column-headers-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-148">Postupy: Skrytí záhlaví sloupců v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-148">How to: Hide Column Headers in the Windows Forms DataGridView Control</span></span>](how-to-hide-column-headers-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-149">Postupy: Nastavit sloupce jen pro čtení v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-149">How to: Make Columns Read-Only in the Windows Forms DataGridView Control</span></span>](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-149">Postupy: Přepnutí sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-149">How to: Make Columns Read-Only in the Windows Forms DataGridView Control</span></span>](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-150">Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-150">How to: Set the Sort Modes for Columns in the Windows Forms DataGridView Control</span></span>](set-the-sort-modes-for-columns-wf-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-150">Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-150">How to: Set the Sort Modes for Columns in the Windows Forms DataGridView Control</span></span>](set-the-sort-modes-for-columns-wf-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-151">Postupy: Práce se sloupci obrázků v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-151">How to: Work with Image Columns in the Windows Forms DataGridView Control</span></span>](how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-151">Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-151">How to: Work with Image Columns in the Windows Forms DataGridView Control</span></span>](how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-152">Postupy: Manipulace se sloupci v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-152">How to: Manipulate Columns in the Windows Forms DataGridView Control</span></span>](how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-152">Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-152">How to: Manipulate Columns in the Windows Forms DataGridView Control</span></span>](how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)  
   
-## <a name="row-and-column-sizing-examples"></a><span data-ttu-id="e6202-153">Příklady pro změny velikosti řádků a sloupců</span><span class="sxs-lookup"><span data-stu-id="e6202-153">Row and Column Sizing Examples</span></span>  
+## <a name="row-and-column-sizing-examples"></a><span data-ttu-id="f1bbf-153">Příklady pro změny velikosti řádků a sloupců</span><span class="sxs-lookup"><span data-stu-id="f1bbf-153">Row and Column Sizing Examples</span></span>  
   
-- [<span data-ttu-id="e6202-154">Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-154">Column Fill Mode in the Windows Forms DataGridView Control</span></span>](column-fill-mode-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-154">Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-154">Column Fill Mode in the Windows Forms DataGridView Control</span></span>](column-fill-mode-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-155">Postupy: Nastavení režimů změny velikosti ovládacího prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-155">How to: Set the Sizing Modes of the Windows Forms DataGridView Control</span></span>](how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-155">Postupy: Nastavení režimů změny velikosti ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-155">How to: Set the Sizing Modes of the Windows Forms DataGridView Control</span></span>](how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-156">Postupy: Programové přizpůsobení velikosti buněk pro přizpůsobení obsahu v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-156">How to: Programmatically Resize Cells to Fit Content in the Windows Forms DataGridView Control</span></span>](programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-156">Postupy: Programová změna velikosti buněk k zobrazení celého obsahu v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-156">How to: Programmatically Resize Cells to Fit Content in the Windows Forms DataGridView Control</span></span>](programmatically-resize-cells-to-fit-content-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-157">Postupy: Automaticky měnit velikost buněk při změně obsahu v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-157">How to: Automatically Resize Cells When Content Changes in the Windows Forms DataGridView Control</span></span>](automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-157">Postupy: Automatická změna velikosti buněk při změně obsahu v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-157">How to: Automatically Resize Cells When Content Changes in the Windows Forms DataGridView Control</span></span>](automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
   
-## <a name="selection-examples"></a><span data-ttu-id="e6202-158">Příklady výběru</span><span class="sxs-lookup"><span data-stu-id="e6202-158">Selection Examples</span></span>  
+## <a name="selection-examples"></a><span data-ttu-id="f1bbf-158">Příklady výběru</span><span class="sxs-lookup"><span data-stu-id="f1bbf-158">Selection Examples</span></span>  
   
-- [<span data-ttu-id="e6202-159">Postupy: Nastavení režimu výběru ovládacího prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-159">How to: Set the Selection Mode of the Windows Forms DataGridView Control</span></span>](how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-159">Postupy: Nastavení režimu výběru ovládacího prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-159">How to: Set the Selection Mode of the Windows Forms DataGridView Control</span></span>](how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-160">Postupy: Získání vybraných buněk, řádků a sloupců v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-160">How to: Get the Selected Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](selected-cells-rows-and-columns-datagridview.md)  
+- [<span data-ttu-id="f1bbf-160">Postupy: Získání vybraných buněk, řádků a sloupců v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-160">How to: Get the Selected Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](selected-cells-rows-and-columns-datagridview.md)  
   
-- [<span data-ttu-id="e6202-161">Postupy: Získá a nastaví aktuální buňku v ovládacím prvku DataGridView model Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="e6202-161">How to: Get and Set the Current Cell in the Windows Forms DataGridView Control</span></span>](get-and-set-the-current-cell-wf-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-161">Postupy: Získání a nastavení aktuální buňky v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-161">How to: Get and Set the Current Cell in the Windows Forms DataGridView Control</span></span>](get-and-set-the-current-cell-wf-datagridview-control.md)  
   
-## <a name="advanced-customization-examples"></a><span data-ttu-id="e6202-162">Příklady pokročilých úprav</span><span class="sxs-lookup"><span data-stu-id="e6202-162">Advanced Customization Examples</span></span>  
+## <a name="advanced-customization-examples"></a><span data-ttu-id="f1bbf-162">Příklady pokročilých úprav</span><span class="sxs-lookup"><span data-stu-id="f1bbf-162">Advanced Customization Examples</span></span>  
   
-- [<span data-ttu-id="e6202-163">Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-163">How to: Customize the Appearance of Cells in the Windows Forms DataGridView Control</span></span>](customize-the-appearance-of-cells-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-163">Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-163">How to: Customize the Appearance of Cells in the Windows Forms DataGridView Control</span></span>](customize-the-appearance-of-cells-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-164">Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-164">How to: Customize the Appearance of Rows in the Windows Forms DataGridView Control</span></span>](customize-the-appearance-of-rows-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-164">Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-164">How to: Customize the Appearance of Rows in the Windows Forms DataGridView Control</span></span>](customize-the-appearance-of-rows-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-165">Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku DataGridView model Windows Forms rozšířením jejich chování a vzhledu</span><span class="sxs-lookup"><span data-stu-id="e6202-165">How to: Customize Cells and Columns in the Windows Forms DataGridView Control by Extending Their Behavior and Appearance</span></span>](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)  
+- [<span data-ttu-id="f1bbf-165">Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu</span><span class="sxs-lookup"><span data-stu-id="f1bbf-165">How to: Customize Cells and Columns in the Windows Forms DataGridView Control by Extending Their Behavior and Appearance</span></span>](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)  
   
-- [<span data-ttu-id="e6202-166">Postupy: Zakázání tlačítek ve sloupci tlačítka v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-166">How to: Disable Buttons in a Button Column in the Windows Forms DataGridView Control</span></span>](disable-buttons-in-a-button-column-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-166">Postupy: Zákaz tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-166">How to: Disable Buttons in a Button Column in the Windows Forms DataGridView Control</span></span>](disable-buttons-in-a-button-column-in-the-datagrid.md)  
   
-- [<span data-ttu-id="e6202-167">Postupy: Ovládací prvky hostitele v model Windows Formsch buňkách DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-167">How to: Host Controls in Windows Forms DataGridView Cells</span></span>](how-to-host-controls-in-windows-forms-datagridview-cells.md)  
+- [<span data-ttu-id="f1bbf-167">Postupy: Hostování ovládacích prvků v buňkách Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-167">How to: Host Controls in Windows Forms DataGridView Cells</span></span>](how-to-host-controls-in-windows-forms-datagridview-cells.md)  
   
-## <a name="advanced-data-examples"></a><span data-ttu-id="e6202-168">Příklady rozšířených dat</span><span class="sxs-lookup"><span data-stu-id="e6202-168">Advanced Data Examples</span></span>  
+## <a name="advanced-data-examples"></a><span data-ttu-id="f1bbf-168">Příklady rozšířených dat</span><span class="sxs-lookup"><span data-stu-id="f1bbf-168">Advanced Data Examples</span></span>  
   
-- [<span data-ttu-id="e6202-169">Postupy: Implementace virtuálního režimu v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-169">How to: Implement Virtual Mode in the Windows Forms DataGridView Control</span></span>](how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-169">Postupy: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-169">How to: Implement Virtual Mode in the Windows Forms DataGridView Control</span></span>](how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-170">Návod: Implementace virtuálního režimu v ovládacím prvku DataGridView model Windows Forms</span><span class="sxs-lookup"><span data-stu-id="e6202-170">Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control</span></span>](implementing-virtual-mode-wf-datagridview-control.md)  
+- [<span data-ttu-id="f1bbf-170">Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-170">Walkthrough: Implementing Virtual Mode in the Windows Forms DataGridView Control</span></span>](implementing-virtual-mode-wf-datagridview-control.md)  
   
-- [<span data-ttu-id="e6202-171">Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-171">Implementing Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control</span></span>](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
+- [<span data-ttu-id="f1bbf-171">Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-171">Implementing Virtual Mode with Just-In-Time Data Loading in the Windows Forms DataGridView Control</span></span>](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
   
-## <a name="see-also"></a><span data-ttu-id="e6202-172">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e6202-172">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f1bbf-172">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f1bbf-172">See also</span></span>
 
 - <xref:System.Windows.Forms.DataGridView>
-- [<span data-ttu-id="e6202-173">Přehled ovládacího prvku DataGridView</span><span class="sxs-lookup"><span data-stu-id="e6202-173">DataGridView Control Overview</span></span>](datagridview-control-overview-windows-forms.md)
+- [<span data-ttu-id="f1bbf-173">Přehled ovládacího prvku DataGridView</span><span class="sxs-lookup"><span data-stu-id="f1bbf-173">DataGridView Control Overview</span></span>](datagridview-control-overview-windows-forms.md)
