@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 1a5a259e6604d906e55166b3fcb770bc37d346c5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5c49d75432980d2f3af77ee040bc6eb20886b027
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444732"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861668"
 ---
 # <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9:: GetILToNativeMapping3 – metoda
 
@@ -31,23 +31,27 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
                                [out] COR_DEBUG_IL_TO_NATIVE_MAP map[]);
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`pNativeCodeStartAddress` \
-pro Ukazatel na začátek nativní funkce.
+- `pNativeCodeStartAddress`
 
-`cMap` \
-pro Maximální velikost `map` pole
+  \[in] ukazatel na začátek nativní funkce.
 
-`pcMap` \
-mimo Celkový počet dostupných COR_DEBUG_IL_TO_NATIVE_MAP struktur.
+- `cMap`
 
-`map` \
-mimo Pole struktur [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) , z nichž každý Určuje posun. Po návratu metody `GetILToNativeMapping3` bude `map` obsahovat některé nebo všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.
+  \[v] maximální velikost pole `map`.
+
+- `pcMap`
+
+  \[) celkový počet dostupných COR_DEBUG_IL_TO_NATIVE_MAP struktur.
+
+- `map`
+
+  \[) pole [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) struktury, z nichž každý určuje posuny. Po návratu metody `GetILToNativeMapping3` bude `map` obsahovat některé nebo všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud je povolená vrstvená kompilace, může mít metoda více než jeden tělo nativního kódu. [ICorProfilerInfo9:: GetNativeCodeStartAddresses](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-getnativecodestartaddresses-method.md) vrátí počáteční adresy pro všechny tělo nativního kódu.
+Pokud je povolená vrstvená kompilace, může mít metoda více než jeden tělo nativního kódu. [ICorProfilerInfo9:: GetNativeCodeStartAddresses](icorprofilerinfo9-getnativecodestartaddresses-method.md) vrátí počáteční adresy pro všechny tělo nativního kódu.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -61,4 +65,4 @@ Pokud je povolená vrstvená kompilace, může mít metoda více než jeden těl
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)
+- [Rozhraní ICorProfilerInfo9](icorprofilerinfo9-interface.md)

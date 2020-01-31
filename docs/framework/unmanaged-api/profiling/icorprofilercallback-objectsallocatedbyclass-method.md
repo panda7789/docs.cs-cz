@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 91d688f3-a80e-419d-9755-ff94bc04188a
 topic_type:
 - apiref
-ms.openlocfilehash: 9ba021ec223d00e57081567b76f70f59768e6b9a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 028207486f43e35086ed2e515eb3ae6bca304491
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445866"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866070"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass – metoda
 Upozorňuje Profiler o počtu instancí každé zadané třídy, které byly vytvořeny od posledního uvolňování paměti.  
@@ -47,7 +47,7 @@ HRESULT ObjectsAllocatedByClass(
 ## <a name="remarks"></a>Poznámky  
  Pole `classIds` a `cObjects` jsou paralelní pole. Například `classIds[i]` a `cObjects[i]` odkazují na stejnou třídu. Pokud nebyla od předchozího uvolňování paměti vytvořena žádná instance třídy, je třída vynechána. `ObjectsAllocatedByClass` zpětné volání nebude hlásit objekty přidělené v haldě velkých objektů.  
   
- Čísla uvedená `ObjectsAllocatedByClass` jsou pouze odhady. Pro přesné počty použijte [ICorProfilerCallback:: ObjectAllocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ Čísla uvedená `ObjectsAllocatedByClass` jsou pouze odhady. Pro přesné počty použijte [ICorProfilerCallback:: ObjectAllocated –](icorprofilercallback-objectallocated-method.md).  
   
  Pole `classIds` může obsahovat jednu nebo více položek s hodnotou null, pokud odpovídající pole `cObjects` obsahuje typy, které jsou uvolňovány.  
   
@@ -62,4 +62,4 @@ HRESULT ObjectsAllocatedByClass(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

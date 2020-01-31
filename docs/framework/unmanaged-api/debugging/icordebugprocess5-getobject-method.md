@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8111502-5a20-447f-9dc2-76e8acd7ed5a
 topic_type:
 - apiref
-ms.openlocfilehash: e4d297023d96de83965c3d04ca9efe2613fd54d0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 540ca78c5548d4fbdd3338671ea02314736f15cd
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084449"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792364"
 ---
 # <a name="icordebugprocess5getobject-method"></a>ICorDebugProcess5::GetObject – metoda
 Převede adresu objektu na objekt "ICorDebugObjectValue".  
@@ -55,5 +55,5 @@ HRESULT GetObject(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5 – rozhraní](icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

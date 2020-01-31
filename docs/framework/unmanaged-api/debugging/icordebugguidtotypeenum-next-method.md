@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c9937666-8e18-484d-9fe0-b9ac95199530
 topic_type:
 - apiref
-ms.openlocfilehash: f6f190cd5b2f208df5a4ed88b650af671f2e6c5c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 76cab0b8b5f16f24c62e31be2707c95c7e557034
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138517"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777642"
 ---
 # <a name="icordebugguidtotypeenumnext-method"></a>ICorDebugGuidToTypeEnum::Next – metoda
-Získá zadaný počet instancí [CorDebugGuidToTypeMapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) , které mapují identifikátory GUID na informace typu.  
+Získá zadaný počet instancí [CorDebugGuidToTypeMapping –](cordebugguidtotypemapping-structure.md) , které mapují identifikátory GUID na informace typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,10 +40,10 @@ HRESULT Next(
  pro Počet objektů mapování typu GUID na typ, které mají být načteny.  
   
  `values`  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt [CorDebugGuidToTypeMapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) , který MAPUJE prostředí Windows Runtime GUID na odpovídající objekt ICorDebugType.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [CorDebugGuidToTypeMapping –](cordebugguidtotypemapping-structure.md) , který MAPUJE prostředí Windows Runtime GUID na odpovídající objekt ICorDebugType.  
   
  `pceltFetched`  
- mimo Ukazatel na počet [CorDebugGuidToTypeMapping –ch](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objektů, které jsou ve skutečnosti vráceny v `values`.  
+ mimo Ukazatel na počet [CorDebugGuidToTypeMapping –ch](cordebugguidtotypemapping-structure.md) objektů, které jsou ve skutečnosti vráceny v `values`.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -58,5 +58,5 @@ HRESULT Next(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugGuidToTypeEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugGuidToTypeEnum – rozhraní](icordebugguidtotypeenum-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

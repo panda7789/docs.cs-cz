@@ -2,18 +2,18 @@
 title: Použití WorkflowIdentity a správy verzí
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 66ef4fed682554d9fab2a7b0f85bb9cfaf8e8a29
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 97224caa24b38a00a1cbb4fa76781eea3a10faaf
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74142043"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787919"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Použití WorkflowIdentity a správy verzí
 
 <xref:System.Activities.WorkflowIdentity> poskytuje vývojářům aplikací pracovních postupů přidružení názvu a <xref:System.Version> k definici pracovního postupu a k tomu, aby tyto informace byly přidružené k trvalé instanci pracovního postupu. Tyto informace o identitě mohou vývojáři aplikací pracovních postupů použít k povolení scénářů, jako je souběžné spouštění více verzí definice pracovního postupu, a poskytuje základní kámen pro jiné funkce, jako je například dynamická aktualizace. Toto téma poskytuje přehled o použití <xref:System.Activities.WorkflowIdentity> s hostováním <xref:System.Activities.WorkflowApplication>. Informace o souběžném spouštění definic pracovních postupů ve službě pracovního postupu najdete v tématu [Správa verzí vedle sebe v hostiteli WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizaci najdete v tématu [Dynamická aktualizace](dynamic-update.md).
 
-## <a name="in-this-topic"></a>V tomto tématu
+## <a name="in-this-topic"></a>V tomto tématu
 
 - [Použití identita WorkflowIdentity](using-workflowidentity-and-versioning.md#UsingWorkflowIdentity)
 
@@ -78,7 +78,7 @@ wfApp.Load(instanceId);
 
 Při spuštění předchozího kódu je vyvolána následující <xref:System.Activities.VersionMismatchException>.
 
-```
+```output
 The WorkflowIdentity ('MortgageWorkflow v1; Version=1.0.0.0') of the loaded instance does not match the WorkflowIdentity ('MortgageWorkflow v2; Version=2.0.0.0') of the provided workflow definition. The instance can be loaded using a different definition, or updated using Dynamic Update.
 ```
 
@@ -150,7 +150,7 @@ K upgradu databáze trvalosti vytvořené pomocí databázových skriptů .NET F
 
 Pokud se v rámci aplikace .NET Framework 4,5 pracovního postupu pokusí nějaké operace trvalého uložení, které používají nové funkce správy verzí u databáze trvalosti, která nebyla upgradována pomocí zadaného skriptu, je vyvolána <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> zpráva podobná následující zprávě.
 
-```
+```output
 The SqlWorkflowInstanceStore has a database version of '4.0.0.0'. InstancePersistenceCommand 'System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand' cannot be run against this database version.  Please upgrade the database to '4.5.0.0'.
 ```
 

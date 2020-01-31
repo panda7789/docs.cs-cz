@@ -11,23 +11,23 @@ api_type:
 ms.assetid: edc420b7-96d1-4dec-ace0-36d907f644bc
 topic_type:
 - apiref
-ms.openlocfilehash: 0009d935e2e3b2abf590aca270113717ceb7e2d8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 90071121411b706052e1cbb4cb647536dae2835a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127483"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76864866"
 ---
 # <a name="icorprofilercallback6-interface"></a>Rozhraní ICorProfilerCallback6
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Podtřída [ICorProfilerCallback5 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md) , která poskytuje metodu zpětného volání, kterou modul CLR (Common Language Runtime) používá pro upozornění profileru, že se načítá sestavení.  
+ Podtřída [ICorProfilerCallback5 –](icorprofilercallback5-interface.md) , která poskytuje metodu zpětného volání, kterou modul CLR (Common Language Runtime) používá pro upozornění profileru, že se načítá sestavení.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetAssemblyReferences – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md)|Upozorní profileru, že sestavení je ve fázi brzkého nasazování, pokud modul CLR provádí procházení zavřením odkazu na sestavení.|  
+|[GetAssemblyReferences – metoda](icorprofilercallback6-getassemblyreferences-method.md)|Upozorní profileru, že sestavení je ve fázi brzkého nasazování, pokud modul CLR provádí procházení zavřením odkazu na sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -40,4 +40,4 @@ ms.locfileid: "73127483"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)

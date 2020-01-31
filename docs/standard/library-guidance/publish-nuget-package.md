@@ -2,12 +2,12 @@
 title: Publikování balíčku NuGet
 description: Doporučení osvědčených postupů pro publikování knihoven .NET do NuGet.
 ms.date: 10/02/2018
-ms.openlocfilehash: e567fe3f7e00bf322cdd50786e50128961107469
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 089c660bc51252c6295858b1462ae59bde968564
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706462"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744553"
 ---
 # <a name="publishing-a-nuget-package"></a>Publikování balíčku NuGet
 
@@ -22,11 +22,11 @@ Balíčky NuGet se zveřejňují a spotřebovávají z úložišť balíčků. I
 > [!NOTE]
 > NuGet.org [neumožňuje odstranění balíčku](/nuget/policies/deleting-packages) po jeho nahrání. Balíček může být nezobrazený, aby nebyl veřejně viditelný v uživatelském rozhraní, ale `*.nupkg` se pořád dá stáhnout při obnovení. Nuget.org také nepovoluje duplicitní verze balíčků. Chcete-li opravit balíček NuGet s chybou, je třeba zrušit seznam nesprávného balíčku, zvýšit číslo verze a publikovat novou verzi balíčku.
 
-**✔️** [publikovat stabilní balíčky a předběžné verze balíčků](/nuget/create-packages/publish-a-package) , ve kterých chcete, aby se komunitní názory na NuGet.org.
+✔️ [publikovat stabilní balíčky a předběžné verze balíčků](/nuget/create-packages/publish-a-package) , ve kterých chcete, aby se komunitní názory na NuGet.org.
 
-**✔️ zvažte** publikování předběžných verzí balíčků do MyGet kanálu ze sestavení průběžné integrace.
+✔️ Zvažte publikování předběžných verzí balíčků do MyGet kanálu ze sestavení průběžné integrace.
 
-**✔️ zvažte** testování balíčků ve vývojovém prostředí pomocí místního informačního kanálu nebo MyGet. Zkontrolujte, jestli balíček funguje, a pak ho publikujte na NuGet.org.
+✔️ Zvažte testování balíčků ve vývojovém prostředí pomocí místního informačního kanálu nebo MyGet. Zkontrolujte, jestli balíček funguje, a pak ho publikujte na NuGet.org.
 
 ## <a name="nugetorg-security"></a>Zabezpečení NuGet.org
 
@@ -34,11 +34,11 @@ Je důležité, aby chybné objekty actor měly přístup k vašemu účtu NuGet
 
 ![alternativní text](./media/publish-nuget-package/nuget-2fa.png "Zabezpečení účtu NuGet")
 
-k přihlášení do NuGet se **✔️** použít účet Microsoft.
+k přihlášení do NuGet se ✔️ použít účet Microsoft.
 
-**✔️** povolit dvojúrovňové ověřování pro přístup k nugetu.
+✔️ Povolit dvojúrovňové ověřování pro přístup k NuGetu.
 
-Při publikování balíčku **✔️** povolit e-mailová oznámení.
+Při publikování balíčku ✔️ povolit e-mailová oznámení.
 
 >[!div class="step-by-step"]
 >[Předchozí](sourcelink.md)

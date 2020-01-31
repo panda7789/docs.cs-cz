@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1ea194f0-a331-4855-a2ce-37393b8e5f84
 topic_type:
 - apiref
-ms.openlocfilehash: 63e41df8af85d94df068526ef69708687b341e78
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 490f9dd5446a51bd07881cdb9825d737e380a63e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446940"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865854"
 ---
 # <a name="icorprofilercallbackshutdown-method"></a>ICorProfilerCallback::Shutdown – metoda
 Oznamuje profileru, že se aplikace vypíná.  
@@ -32,7 +32,7 @@ HRESULT Shutdown();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Kód profileru nemůže bezpečně volat metody rozhraní [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) po volání metody `Shutdown`. Jakákoli volání metod `ICorProfilerInfo` způsobí nedefinované chování po návratu metody `Shutdown`. K určitým neměnným událostem může docházet i po vypnutí. Profiler by měl být při výskytu okamžitě vrácen.  
+ Kód profileru nemůže bezpečně volat metody rozhraní [ICorProfilerInfo](icorprofilerinfo-interface.md) po volání metody `Shutdown`. Jakákoli volání metod `ICorProfilerInfo` způsobí nedefinované chování po návratu metody `Shutdown`. K určitým neměnným událostem může docházet i po vypnutí. Profiler by měl být při výskytu okamžitě vrácen.  
   
  Metoda `Shutdown` bude volána pouze v případě, že je spravovaná aplikace, která je profilovaná, spuštěná jako spravovaný kód (tj. počáteční rámec na zásobníku procesu je spravovaný). Pokud se aplikace spustila jako nespravovaný kód, ale později se přeskočí do spravovaného kódu, vytvoří se instance modulu CLR (Common Language Runtime), a poté `Shutdown` nebude volána. V těchto případech by měl Profiler ve své knihovně zahrnovat `DllMain` rutinu, která používá hodnotu DLL_PROCESS_DETACH k uvolnění prostředků a k vyčištění zpracování dat, jako je například vyprazdňování trasování na disk a tak dále.  
   
@@ -49,5 +49,5 @@ HRESULT Shutdown();
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [Initialize – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [Initialize – metoda](icorprofilercallback-initialize-method.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dbab7d90-d515-4dc9-8195-294d5d04bab6
 topic_type:
 - apiref
-ms.openlocfilehash: eaf0ae2a1b86234495c1804cff8b74331b3e8021
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1cf3f2b62b388b6c2d6fcd75b1b07a67d5b2e49f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445272"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866699"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished – metoda
 Oznamuje profileru, že byla vytvořena doména aplikace.  
@@ -33,13 +33,16 @@ HRESULT AppDomainCreationFinished(
     [in] HRESULT     hrStatus);   
 ```  
   
-## <a name="parameters"></a>Parametry  
- `appDomainId`  
- pro Určuje doménu, která byla vytvořena.  
-  
- `hrStatus`  
- pro Hodnota HRESULT, která označuje, zda bylo úspěšné vytvoření domény aplikace.  
-  
+## <a name="parameters"></a>Parametry
+
+- `appDomainId`
+
+  \[v] identifikuje doménu, která byla vytvořena.
+
+- `hrStatus`
+
+  \[in] hodnota HRESULT, která indikuje, jestli se úspěšně dokončilo vytváření domény aplikace.
+
 ## <a name="remarks"></a>Poznámky  
  ID aplikace není platné pro žádnou žádost o informace, dokud není volána metoda `AppDomainCreationFinished`.  
   
@@ -56,4 +59,4 @@ HRESULT AppDomainCreationFinished(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

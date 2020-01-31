@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 45a40d49cea2dd5f881fbd47cc2fb4bd96e8f9ff
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9b5059d9e4bf9b79dc67664c7a7971041d1cf35b
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243986"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861681"
 ---
 # <a name="icorprofilerinfo8getdynamicfunctioninfo-method"></a>ICorProfilerInfo8:: GetDynamicFunctionInfo – metoda
 
@@ -34,28 +34,35 @@ HRESULT GetDynamicFunctionInfo( [in]  FunctionID              functionId,
                                 [out] WCHAR                   wszName[]);
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`functionId` \
-pro ID funkce, pro kterou mají být načteny informace
+- `functionId`
 
-`moduleId` \
-pro Ukazatel na modul, ve kterém je definována nadřazená třída funkce.
+  \[v] ID funkce, pro kterou mají být načteny informace.
 
-`ppvSig` \
-mimo Ukazatel na signaturu funkce.
+- `moduleId`
 
-`pbSig` \
-mimo Ukazatel na počet bajtů pro podpis funkce.
+  \[in] ukazatel na modul, ve kterém je definovaná nadřazená třída funkce.
 
-`cchName` \
-pro Maximální velikost `wszName` pole.
+- `ppvSig`
 
-`pcchName` \
-mimo Počet znaků v `wszName` poli.
+  \[] ukazatel na signaturu funkce.
 
-`wszName` \
-mimo Pole `WCHAR` , které je názvem funkce, pokud existuje.
+- `pbSig`
+
+  \[] ukazatel na počet bajtů pro podpis funkce.
+
+- `cchName`
+
+  \[v] maximální velikost pole `wszName`.
+
+- `pcchName`
+
+  \[] počet znaků v poli `wszName`.
+
+- `wszName`
+
+  \[out] pole `WCHAR`, což je název funkce, pokud jedna existuje.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -65,14 +72,14 @@ Toto rozhraní API je možné použít k načtení informací o dynamických met
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Hlaviček** CorProf.idl, CorProf.h
+**Hlavička:** CorProf. idl, CorProf. h
 
-**Knihovna** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
 **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo8](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo8-interface.md)
+- [Rozhraní ICorProfilerInfo8](icorprofilerinfo8-interface.md)

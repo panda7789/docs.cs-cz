@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 988718c1-1a4a-40f2-a04c-7d67e5cfe1e2
 topic_type:
 - apiref
-ms.openlocfilehash: feaf5bd25e276bb93c076f200912965c612af453
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aa0ff0ff7c8fe32f181fb86ee5b778ea618df3b2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139001"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791693"
 ---
 # <a name="icordebugstepperenum-interface"></a>ICorDebugStepperEnum – rozhraní
 Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugStepper.  
@@ -28,7 +28,7 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugStepper.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-next-method.md)|Získá zadaný počet instancí `ICorDebugStepper` z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](icordebugstepperenum-next-method.md)|Získá zadaný počet instancí `ICorDebugStepper` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -46,4 +46,4 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugStepper.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

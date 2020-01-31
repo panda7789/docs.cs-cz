@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7bc3a938-0df1-4739-9ff1-89cff454b704
 topic_type:
 - apiref
-ms.openlocfilehash: bdbf93ba4df50cf26538f0e527fdc3c982bb274e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0f6fb469aa9d6d40b762bfd2feec28c28299732f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447331"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867110"
 ---
 # <a name="cor_prf_module_flags-enumeration"></a>COR_PRF_MODULE_FLAGS – výčet
 Určuje vlastnosti modulu.  
@@ -39,7 +39,7 @@ typedef enum
 }   COR_PRF_MODULE_FLAGS;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
 |Člen|Popis|  
 |------------|-----------------|  
@@ -52,7 +52,7 @@ typedef enum
 |COR_PRF_MODULE_WINDOWS_RUNTIME|Příznak typu prostředí Windows Runtime obsahu je nastaven v metadatech pro sestavení tohoto modulu. Toto je případ pro všechny moduly metadat systému Windows (. winmd).|  
   
 ## <a name="remarks"></a>Poznámky  
- Bity z COR_PRF_MODULE_FLAGS jsou vráceny do profileru v parametru `pdwModuleFlags` Output metody [ICorProfilerInfo3:: GetModuleInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md) . Některé kombinace dvou nebo více příznaků jsou možné, ale ne všechny kombinace jsou možné.  
+ Bity z COR_PRF_MODULE_FLAGS jsou vráceny do profileru v parametru `pdwModuleFlags` Output metody [ICorProfilerInfo3:: GetModuleInfo2 –](icorprofilerinfo3-getmoduleinfo2-method.md) . Některé kombinace dvou nebo více příznaků jsou možné, ale ne všechny kombinace jsou možné.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -65,4 +65,4 @@ typedef enum
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Výčty pro profilaci](profiling-enumerations.md)

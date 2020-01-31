@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 29da20ca-bf39-4356-8099-d9c3ac3423a9
 topic_type:
 - apiref
-ms.openlocfilehash: 0b0683d43778c4733b476e9feef459207b9d1ee6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 98d5dcf3b691f16f63390851e207f518bf26ab11
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445025"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866517"
 ---
 # <a name="icorprofilercallbackcomclassicvtabledestroyed-method"></a>ICorProfilerCallback::COMClassicVTableDestroyed – metoda
 Upozorní profileru, že je zničena tabulka zprostředkovatele komunikace s objekty COM.  
@@ -37,16 +37,20 @@ HRESULT COMClassicVTableDestroyed(
     [in] void    *pVTable);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `wrappedClassId`  
- pro ID třídy, pro kterou se vytvořila tabulka vtable  
-  
- `implementedIID`  
- pro IDENTIFIKÁTOR rozhraní implementovaného třídou Tato hodnota může být NULL, pokud je rozhraní pouze interní.  
-  
- `pVTable`  
- pro Ukazatel na začátek vtable.  
-  
+## <a name="parameters"></a>Parametry
+
+- `wrappedClassId`
+
+  \[v] ID třídy, pro kterou se vytvořila Tato tabulka vtable.
+
+- `implementedIID`
+
+  \[v] ID rozhraní implementovaného třídou. Tato hodnota může být NULL, pokud je rozhraní pouze interní.
+
+- `pVTable`
+
+  \[in] ukazatel na začátek vtable.
+
 ## <a name="remarks"></a>Poznámky  
  Profiler by neměl při implementaci této metody blokovat, protože zásobník pravděpodobně není ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit bezstavové uvolňování paměti. Pokud se tady zablokuje Profiler a dojde k pokusu o uvolnění paměti, modul runtime se zablokuje, dokud toto zpětné volání nevrátí.  
   
@@ -63,5 +67,5 @@ HRESULT COMClassicVTableDestroyed(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [COMClassicVTableCreated – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-comclassicvtablecreated-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [COMClassicVTableCreated – metoda](icorprofilercallback-comclassicvtablecreated-method.md)

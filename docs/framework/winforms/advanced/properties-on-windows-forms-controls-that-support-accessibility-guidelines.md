@@ -1,35 +1,35 @@
 ---
-title: Vlastnosti v ovládacích prvcích Windows Forms, jež podporují pokyny pro usnadnění přístupu
+title: Vlastnosti přístupnosti ovládacích prvků
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, accessibility properties of controls
 - accessibility [Windows Forms], Windows Forms control properties
 ms.assetid: ad3567a6-313b-4708-9e15-f487a831f049
-ms.openlocfilehash: b3f10fe472e449d39385facdbc716cba9b3f7382
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73d81f5b5f656ed5ef90bdd9b6fe1b3293123f97
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640492"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743433"
 ---
 # <a name="properties-on-windows-forms-controls-that-support-accessibility-guidelines"></a>Vlastnosti v ovládacích prvcích Windows Forms, jež podporují pokyny pro usnadnění přístupu
-Ovládací prvky na standardní panel nástrojů pro Windows Forms podporují řadu přístupnosti včetně vystavení fokus klávesnice a jestli vystavuje prvky na obrazovce.  
+Ovládací prvky standardní sady nástrojů pro model Windows Forms podporují řadu pokynů pro usnadnění, včetně zpřístupnění fokusu klávesnice a vystavení prvků obrazovky.  
   
-## <a name="planning-ahead-for-accessibility"></a>Pro usnadnění přístupu budete plánovat předem  
- Ovládací prvky vlastnosti slouží k podpoře jiných přístupnosti, jak je znázorněno v následující tabulce. Kromě toho používejte nabídky a zajistit tak přístup k funkcím programu.  
+## <a name="planning-ahead-for-accessibility"></a>Plánování před přístupností  
+ Vlastnosti ovládacích prvků lze použít k podpoře dalších pokynů pro usnadnění, jak je znázorněno v následující tabulce. Kromě toho byste měli použít nabídky k poskytnutí přístupu k funkcím programu.  
   
-|Vlastnosti ovládacího prvku|Důležité informace týkající se usnadnění přístupu|  
+|Vlastnost ovládacího prvku|Pokyny pro usnadnění přístupu|  
 |----------------------|--------------------------------------|  
-|AccessibleDescription|Popis se hlásí k usnadnění například čtečky obrazovky. Usnadnění jsou specializované programy a zařízení, která pomůže uživatelům s postižením používání počítačů efektivněji.|  
-|AccessibleName|Název, který se ohlásí usnadnění.|  
+|AccessibleDescription|Popis je hlášený jako pomůcky pro usnadnění přístupu, jako jsou čtečky obrazovky. Pomůcky pro usnadnění přístupu jsou specializované programy a zařízení, které lidem s postižením můžou efektivněji používat počítače.|  
+|Přístupný|Název, který bude hlášen k pomůckám přístupnosti.|  
 |AccessibleRole|Popisuje použití prvku v uživatelském rozhraní.|  
-|TabIndex|Vytvoří navigační cestu rozumné pomocí formuláře. Je důležité pro ovládací prvky bez vnitřní popisky, jako je například textová pole, jejich přidružené popisek bezprostředně předcházet je v pořadí.|  
-|Text|Vytváření přístupových klíčů pomocí znaku "&". Pomocí přístupových klíčů je součástí poskytuje zdokumentovaných klávesnici přístup k funkcím.|  
-|Velikost písma|Pokud není měnitelné velikost písma, pak ho měli byste nastavit 10 bodů nebo větší. Jakmile je nastavit velikost písma formuláře, všechny ovládací prvky do formuláře přidán po tomto datu bude mít stejnou velikost.|  
-|Barva popředí|Pokud je tato vlastnost nastavena na výchozí hodnotu, se barva předvolby uživatele používat ve formuláři.|  
-|Barva pozadí|Pokud je tato vlastnost nastavena na výchozí hodnotu, se barva předvolby uživatele používat ve formuláři.|  
-|BackgroundImage|Tuto vlastnost nechte prázdnou čitelnost textu.|  
+|TabIndex|Vytvoří navigační cestu rozumné prostřednictvím formuláře. Je důležité, aby ovládací prvky bez vnitřních popisků, jako jsou textová pole, měly jejich přidružené popisky přímo před nimi v pořadí prvků.|  
+|Text|K vytvoření přístupových klíčů použijte znak "&". Používání přístupových klíčů je součástí poskytování dokumentovaného přístupu k funkcím na klávesnici.|  
+|Velikost písma|Pokud velikost písma není přizpůsobitelná, měla by být nastavena na 10 bodů nebo větší. Jakmile je nastavena velikost písma formuláře, budou mít všechny ovládací prvky přidané do formuláře stejnou velikost.|  
+|ForeColor|Pokud je tato vlastnost nastavená na výchozí hodnotu, použijí se ve formuláři předvolby pro barvy uživatele.|  
+|BackColor|Pokud je tato vlastnost nastavená na výchozí hodnotu, použijí se ve formuláři předvolby pro barvy uživatele.|  
+|BackgroundImage|Pokud chcete, aby byl text čitelnější, nechte tuto vlastnost prázdnou.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Vytvoření přístupné aplikace založené na Windows](walkthrough-creating-an-accessible-windows-based-application.md)
+- [Návod: Vytvoření přístupné aplikace Windows](walkthrough-creating-an-accessible-windows-based-application.md)

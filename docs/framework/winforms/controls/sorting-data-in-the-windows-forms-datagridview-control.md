@@ -1,21 +1,21 @@
 ---
-title: Řazení dat v ovládacím prvku Windows Forms DataGridView
+title: Řazení dat v ovládacím prvku DataGridView
 ms.date: 02/13/2018
 helpviewer_keywords:
 - data [Windows Forms], sorting in grids
 - data grids [Windows Forms], sorting data
 - DataGridView control [Windows Forms], sorting data
 ms.assetid: c1d4f24c-d961-4181-809d-5a5caa6122e4
-ms.openlocfilehash: 606ffc7bd6136b775adaaaa79cf5042cf1e2dd70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1fcd5a5f5c6d690c573c4c2c5fa7c32aa0292441
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012144"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742942"
 ---
-# <a name="sorting-data-in-the-windows-forms-datagridview-control"></a>Řazení dat v ovládacím prvku Windows Forms DataGridView
+# <a name="sorting-data-in-the-windows-forms-datagridview-control"></a>Řazení dat v ovládacím prvku DataGridView model Windows Forms
 
-Ve výchozím nastavení, mohou uživatelé řadit data <xref:System.Windows.Forms.DataGridView> řízení kliknutím na záhlaví sloupce, pole textu (nebo stisknutím klávesy F3 při textového pole buňky se zaměřuje na rozhraní .NET Framework 4.7.2 a novějších verzí). Můžete upravit <xref:System.Windows.Forms.DataGridViewColumn.SortMode> vlastnost konkrétní sloupce do mřížek uživatelům řazení pomocí jiných typů sloupce při je vhodné tak učinit. Data můžete také řadit programově podle libovolného sloupce, nebo více sloupců.
+Ve výchozím nastavení mohou uživatelé řadit data v ovládacím prvku <xref:System.Windows.Forms.DataGridView> kliknutím na záhlaví sloupce textového pole (nebo stisknutím klávesy F3, když se buňka textového pole zaměřuje na .NET Framework 4.7.2 a novějších verzích). Můžete upravit vlastnost <xref:System.Windows.Forms.DataGridViewColumn.SortMode> určitých sloupců a umožnit tak uživatelům řazení podle jiných typů sloupců, když to bude mít smysl. Data můžete také seřadit programově pomocí libovolného sloupce nebo více sloupců.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -23,24 +23,24 @@ Ve výchozím nastavení, mohou uživatelé řadit data <xref:System.Windows.For
 Popisuje možnosti pro řazení dat v ovládacím prvku.
 
 [Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView](set-the-sort-modes-for-columns-wf-datagridview-control.md)  
-Popisuje, jak povolit uživatelům seřadit podle sloupce, které nejsou ve výchozím nastavení řazení.
+Popisuje, jak uživatelům umožnit řazení podle sloupců, které ve výchozím nastavení neodpovídají.
 
-[Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)  
-Popisuje způsob řazení dat prostřednictvím kódu programu a tom, jak přizpůsobit pomocí řazení <xref:System.Windows.Forms.DataGridView.SortCompare?displayProperty=nameWithType> události nebo implementací <xref:System.Collections.IComparer> rozhraní.
+[Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)  
+Popisuje, jak řadit data programově a jak přizpůsobit řazení pomocí události <xref:System.Windows.Forms.DataGridView.SortCompare?displayProperty=nameWithType> nebo implementací rozhraní <xref:System.Collections.IComparer>.
 
 ## <a name="reference"></a>Odkaz
 
 <xref:System.Windows.Forms.DataGridView>  
-Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
 
 <xref:System.Windows.Forms.DataGridView.Sort%2A?displayProperty=nameWithType>  
-Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridView.Sort%2A> metody.
+Poskytuje referenční dokumentaci pro metodu <xref:System.Windows.Forms.DataGridView.Sort%2A>.
 
 <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>  
-Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> vlastnost.
+Poskytuje referenční dokumentaci pro vlastnost <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A>.
 
 <xref:System.Windows.Forms.DataGridViewColumnSortMode>  
-Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.DataGridViewColumnSortMode> výčtu.
+Poskytuje referenční dokumentaci pro výčet <xref:System.Windows.Forms.DataGridViewColumnSortMode>.
 
 ## <a name="see-also"></a>Viz také:
 

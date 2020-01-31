@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: ce7a21f9-0ca3-4b92-bc4b-bb803cae3f51
 topic_type:
 - apiref
-ms.openlocfilehash: f4deec3e2b49b5cd6a924af8024e775c5c549f97
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6cd35c180b8a322b3402b050c6d6840073010b1f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440858"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866980"
 ---
 # <a name="functionenter2-function"></a>FunctionEnter2 – funkce
-Upozorňuje profileru, že řízení je předáno funkci a poskytuje informace o bloku zásobníku a argumentech funkce. Tato funkce nahrazuje funkci [FunctionEnter –](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) .  
+Upozorňuje profileru, že řízení je předáno funkci a poskytuje informace o bloku zásobníku a argumentech funkce. Tato funkce nahrazuje funkci [FunctionEnter –](functionenter-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,23 +35,28 @@ void __stdcall FunctionEnter2 (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `funcId`  
- pro Identifikátor funkce, do které je ovládací prvek předán.  
+## <a name="parameters"></a>Parametry
+
+- `funcId`
+
+  \[in] je identifikátor funkce, do které byl ovládací prvek předán.
+
+- `clientData`
+
+  \[in] identifikátor přemapované funkce, který Profiler předtím zadal pomocí funkce [FunctionIDMapper –](functionidmapper-function.md) .
   
- `clientData`  
- pro Identifikátor přemapované funkce, který dříve zadal Profiler pomocí funkce [FunctionIDMapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md)  
+- `func`
+
+  \[in] `COR_PRF_FRAME_INFO` hodnota, která odkazuje na informace o snímku zásobníku.
   
- `func`  
- pro Hodnota `COR_PRF_FRAME_INFO`, která odkazuje na informace o snímku zásobníku.  
+  Profiler by měl považovat za neprůhledný popisovač, který lze předat zpět spouštěcímu modulu v metodě [ICorProfilerInfo2:: GetFunctionInfo2 –](icorprofilerinfo2-getfunctioninfo2-method.md) .  
   
- Profiler by měl považovat za neprůhledný popisovač, který lze předat zpět spouštěcímu modulu v metodě [ICorProfilerInfo2:: GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) .  
-  
- `argumentInfo`  
- pro Ukazatel na [COR_PRF_FUNCTION_ARGUMENT_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) strukturu, která určuje umístění v paměti argumentů funkce.  
-  
- Aby bylo možné získat přístup k informacím o argumentech, musí být nastaven příznak `COR_PRF_ENABLE_FUNCTION_ARGS`. Profiler může použít metodu [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) k nastavení příznaků událostí.  
-  
+- `argumentInfo`
+
+  \[in] ukazatel na strukturu [COR_PRF_FUNCTION_ARGUMENT_INFO](cor-prf-function-argument-info-structure.md) , která určuje umístění v paměti argumentů funkce.
+
+  Aby bylo možné získat přístup k informacím o argumentech, musí být nastaven příznak `COR_PRF_ENABLE_FUNCTION_ARGS`. Profiler může použít metodu [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) k nastavení příznaků událostí.
+
 ## <a name="remarks"></a>Poznámky  
  Hodnoty parametrů `func` a `argumentInfo` nejsou po vrácení `FunctionEnter2` funkce platné, protože hodnoty se mohou změnit nebo zničit.  
   
@@ -78,7 +83,7 @@ void __stdcall FunctionEnter2 (
   
 ## <a name="see-also"></a>Viz také:
 
-- [FunctionLeave2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [FunctionTailcall2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
-- [SetEnterLeaveFunctionHooks2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionLeave2 – funkce](functionleave2-function.md)
+- [FunctionTailcall2 – funkce](functiontailcall2-function.md)
+- [SetEnterLeaveFunctionHooks2 – metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)

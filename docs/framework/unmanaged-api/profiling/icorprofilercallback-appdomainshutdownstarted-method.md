@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d23a3408-b525-4aec-a186-2ac7ca65d7a4
 topic_type:
 - apiref
-ms.openlocfilehash: 6bbb41f8fd3ac37f1c21fe8b4f6159e3d303777c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d280b008b34befce04159d02dfbb3de37b262c3c
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445192"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866660"
 ---
 # <a name="icorprofilercallbackappdomainshutdownstarted-method"></a>ICorProfilerCallback::AppDomainShutdownStarted – metoda
 Upozorní profileru, že doména aplikace je uvolněna z procesu.  
@@ -32,10 +32,12 @@ HRESULT AppDomainShutdownStarted(
     [in] AppDomainID appDomainId);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `appDomainId`  
- pro Určuje doménu, ve které jsou uložena sestavení aplikace.  
-  
+## <a name="parameters"></a>Parametry
+
+- `appDomainId`
+
+  \[v] identifikuje doménu, ve které jsou uložena sestavení aplikace.
+
 ## <a name="remarks"></a>Poznámky  
  Hodnota `appDomainId` není platná pro žádnou žádost o informace po návratu metody `AppDomainShutdownStarted` – jedná se o poslední možnost profileru k získání informací o této doméně aplikace.  
   
@@ -50,4 +52,4 @@ HRESULT AppDomainShutdownStarted(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

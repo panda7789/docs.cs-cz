@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-ms.openlocfilehash: 226f24ad8f1636101b283c3cb6662905cbf7eebe
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 8520f5fc0a6ff7e71f40cd7fbb1caf68aab63197
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938211"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868509"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach – metoda
 Instruuje modul runtime o odpojení profileru.  
@@ -42,11 +42,11 @@ HRESULT RequestProfilerDetach(
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Požadavek na odpojení je platný a Postup odpojení nyní pokračuje v jiném vlákně. Po úplném dokončení odpojení dojde k vystavení `ProfilerDetachSucceeded` události.|  
-|E_ CORPROF_E_CALLBACK3_REQUIRED|Profiler selhal při pokusu [IUnknown:: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pro rozhraní [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) , které musí implementovat pro podporu operace odpojení. Nedošlo k pokusu o odpojení.|  
+|E_ CORPROF_E_CALLBACK3_REQUIRED|Profiler selhal při pokusu [IUnknown:: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pro rozhraní [ICorProfilerCallback3](icorprofilercallback3-interface.md) , které musí implementovat pro podporu operace odpojení. Nedošlo k pokusu o odpojení.|  
 |CORPROF_E_IMMUTABLE_FLAGS_SET|Odpojení není možné, protože při spuštění sada profileru nastavila neměnné příznaky. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.|  
-|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Odpojení není možné, protože Profiler použil instrumentované kód jazyka MSIL (Microsoft Intermediate Language) nebo vložený `enter`/`leave` vidlice. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.<br /><br /> **Poznámka:** Instrumentovaná MSIL je kód, který poskytuje Profiler pomocí metody [SetILFunctionBody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) .|  
-|CORPROF_E_RUNTIME_UNINITIALIZED|Modul runtime ještě není ve spravované aplikaci inicializovaný. (To znamená, že modul runtime nebyl zcela načten.) Tento kód chyby může být vrácen v případě, že je vyžadováno odpojení v rámci metody [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) zpětného volání profileru.|  
-|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` byla volána v nepodporovaném čase. K tomu dochází, pokud je metoda volána ve spravovaném vlákně, ale ne v rámci metody [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) nebo v rámci metody [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) , která nemůže tolerovat uvolňování paměti. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
+|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Odpojení není možné, protože Profiler použil instrumentované kód jazyka MSIL (Microsoft Intermediate Language) nebo vložený `enter`/`leave` vidlice. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.<br /><br /> **Poznámka:** Instrumentovaná MSIL je kód, který poskytuje Profiler pomocí metody [SetILFunctionBody –](icorprofilerinfo-setilfunctionbody-method.md) .|  
+|CORPROF_E_RUNTIME_UNINITIALIZED|Modul runtime ještě není ve spravované aplikaci inicializovaný. (To znamená, že modul runtime nebyl zcela načten.) Tento kód chyby může být vrácen v případě, že je vyžadováno odpojení v rámci metody [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md) zpětného volání profileru.|  
+|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` byla volána v nepodporovaném čase. K tomu dochází, pokud je metoda volána ve spravovaném vlákně, ale ne v rámci metody [ICorProfilerCallback](icorprofilercallback-interface.md) nebo v rámci metody [ICorProfilerCallback](icorprofilercallback-interface.md) , která nemůže tolerovat uvolňování paměti. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).|  
   
 ## <a name="remarks"></a>Poznámky  
  Během procesu odpojení se vlákno odpojení (vlákno vytvořené speciálně pro odpojení profileru) občas kontroluje, jestli všechna vlákna ukončila kód profileru. Profiler by měl poskytnout odhad toho, jak dlouho by měl tento parametr `dwExpectedCompletionMilliseconds` trvat. Dobrá hodnota, která se má použít, je obvyklá doba, kterou Profiler stráví v rámci určité `ICorProfilerCallback*` metody; Tato hodnota by neměla být menší než polovina maximálního množství času, po který profiler očekává útratu.  
@@ -66,6 +66,6 @@ HRESULT RequestProfilerDetach(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

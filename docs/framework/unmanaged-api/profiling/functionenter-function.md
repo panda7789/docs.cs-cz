@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
 topic_type:
 - apiref
-ms.openlocfilehash: ad34592223433f0bf541c390674bcf96839b6ca8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: caea1d3d526017c0118f95bb138ee4ac45d2c137
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440814"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866993"
 ---
 # <a name="functionenter-function"></a>FunctionEnter – funkce
 Upozorňuje profileru, že řízení je předáno funkci.  
   
 > [!NOTE]
-> Funkce `FunctionEnter` je v .NET Framework verze 2,0 zastaralá a její použití bude mít za následek snížení výkonu. Místo toho použijte funkci [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) .  
+> Funkce `FunctionEnter` je v .NET Framework verze 2,0 zastaralá a její použití bude mít za následek snížení výkonu. Místo toho použijte funkci [FunctionEnter2](functionenter2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,10 +35,12 @@ void __stdcall FunctionEnter (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `funcID`  
- pro Identifikátor funkce, do které je ovládací prvek předán.  
-  
+## <a name="parameters"></a>Parametry
+
+- `funcID`
+
+  \[in] je identifikátor funkce, do které byl ovládací prvek předán.
+
 ## <a name="remarks"></a>Poznámky  
  Funkce `FunctionEnter` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec`(`naked`).  
   
@@ -63,8 +65,8 @@ void __stdcall FunctionEnter (
   
 ## <a name="see-also"></a>Viz také:
 
-- [FunctionEnter2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionLeave2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [FunctionTailcall2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)
-- [SetEnterLeaveFunctionHooks2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2 – funkce](functionenter2-function.md)
+- [FunctionLeave2 – funkce](functionleave2-function.md)
+- [FunctionTailcall2 – funkce](functiontailcall2-function.md)
+- [SetEnterLeaveFunctionHooks2 – metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)

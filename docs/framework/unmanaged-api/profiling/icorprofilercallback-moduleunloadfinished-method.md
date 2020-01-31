@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 185e3327-9f9c-44bc-8a5c-febea9a6bb5b
 topic_type:
 - apiref
-ms.openlocfilehash: 40cb666c47c690dc930ec2cb7f6c89662464780e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b13573d19ab4d8bb655c1e153530dc70173abe82
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445920"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866140"
 ---
 # <a name="icorprofilercallbackmoduleunloadfinished-method"></a>ICorProfilerCallback::ModuleUnloadFinished – metoda
 Upozorní profileru, že se dokončilo uvolňování modulu.  
@@ -41,7 +41,7 @@ HRESULT ModuleUnloadFinished(
  pro Hodnota HRESULT, která označuje, zda byl modul úspěšně uvolněn.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `moduleId` není platná pro požadavek na informace po návratu metody [ICorProfilerCallback:: moduleunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleunloadstarted-method.md) .  
+ Hodnota `moduleId` není platná pro požadavek na informace po návratu metody [ICorProfilerCallback:: moduleunloadstarted –](icorprofilercallback-moduleunloadstarted-method.md) .  
   
  Některé části uvolňování třídy mohou pokračovat po `ModuleUnloadFinished` zpětného volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část uvolňování modulu byla úspěšná.  
   
@@ -56,4 +56,4 @@ HRESULT ModuleUnloadFinished(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

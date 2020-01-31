@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 7593e8873c2714df85146903c0052a9909a95ccd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8412020fb98fde245b873a2f0c6a355f6436f712
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444712"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868275"
 ---
 # <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9:: GetNativeCodeStartAddresses – metoda
 
@@ -32,22 +32,27 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
                                      [out] UINT_PTR codeStartAddresses[]);
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`functionId` \
-pro Mělo by se vrátit ID funkce, jejíž počáteční adresy nativního kódu by měly být vráceny.
+- `functionId`
 
-`reJitId` \
-pro Identita funkce Rekompilované JIT.
+  \[in] ID funkce, jejíž počáteční adresy nativního kódu by měly být vráceny.
 
-`cCodeStartAddresses` \
-pro Maximální velikost `codeStartAddresses` pole
+- `reJitId`
 
-`pcCodeStartAddresses` \
-mimo Počet dostupných adres.
+  \[in] identita funkce Rekompilované JIT.
 
-`codeStartAddresses` \
-mimo Pole `UINT_PTR`, z nichž každá z nich představuje počáteční adresu pro nativní tělo pro určenou funkci.
+- `cCodeStartAddresses`
+
+  \[v] maximální velikost pole `codeStartAddresses`.
+
+- `pcCodeStartAddresses`
+
+  \[] počet dostupných adres.
+
+- `codeStartAddresses`
+
+  \[) pole `UINT_PTR`, z nichž každá z nich představuje počáteční adresu pro nativní tělo zadané funkce.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -65,4 +70,4 @@ Pokud je povolená vrstvená kompilace, funkce může mít více než jeden těl
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)
+- [Rozhraní ICorProfilerInfo9](icorprofilerinfo9-interface.md)

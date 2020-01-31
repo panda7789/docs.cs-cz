@@ -2,12 +2,12 @@
 title: 'ICorDebugMutableDataTarget:: SetThreadContext – – metoda'
 ms.date: 03/30/2017
 ms.assetid: 8c0d01d5-67e5-4522-9ccf-c8f3a78cb4fd
-ms.openlocfilehash: 2c9e508c7a4059fee4e1cce6eb28e6de7b2fff6d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 063c7954543174caece6f3dcbe005a4b2d059c64
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132708"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792845"
 ---
 # <a name="icordebugmutabledatatargetsetthreadcontext-method"></a>ICorDebugMutableDataTarget:: SetThreadContext – – metoda
 Nastaví kontext (hodnoty registru) pro vlákno.  
@@ -31,7 +31,7 @@ HRESULT SetThreadContext(
  pro Ukazatel na bajty, které mají být zapsány.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda `SetThreadContext` aktualizuje aktuální kontext pro vlákno určené `dwThreadID` argumentem definovaným operačním systémem. Formát záznamu kontextu je určen platformou určenou metodou [ICorDebugDataTarget:: GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) . Ve Windows je to [kontextová](/windows/win32/api/winnt/ns-winnt-arm64_nt_context) struktura.  
+ Metoda `SetThreadContext` aktualizuje aktuální kontext pro vlákno určené `dwThreadID` argumentem definovaným operačním systémem. Formát záznamu kontextu je určen platformou určenou metodou [ICorDebugDataTarget:: GetPlatform](icordebugdatatarget-getplatform-method.md) . Ve Windows je to [kontextová](/windows/win32/api/winnt/ns-winnt-arm64_nt_context) struktura.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -44,5 +44,5 @@ HRESULT SetThreadContext(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugMutableDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmutabledatatarget-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugMutableDataTarget – rozhraní](icordebugmutabledatatarget-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

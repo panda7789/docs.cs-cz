@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 66347e03-9a97-41e8-8f9d-89b80803f7b5
 topic_type:
 - apiref
-ms.openlocfilehash: c83a55a74542d94559b50b89ef784de0bd55d0db
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bd03eccc923049c4a49062d18bd11659f3316e8a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427343"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866820"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall – funkce
 Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést volání funkce tail do jiné funkce.  
   
 > [!NOTE]
-> Funkce `FunctionTailcall` je v .NET Framework verze 2,0 zastaralá. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionTailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) .  
+> Funkce `FunctionTailcall` je v .NET Framework verze 2,0 zastaralá. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionTailcall2 –](functiontailcall2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,14 @@ void __stdcall FunctionTailcall (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `funcID`  
- pro Identifikátor aktuálně vykonávané funkce, která má být volána pro volání funkce tail.  
-  
+## <a name="parameters"></a>Parametry
+
+- `funcID`
+
+  \[in] identifikátor aktuálně vykonávané funkce, která se chystá udělat volání funkce tail.
+
 ## <a name="remarks"></a>Poznámky  
- Cílová funkce volání Tail bude používat aktuální rámec zásobníku a vrátí se přímo volajícímu funkce, která provedla volání funkce tail. To znamená, že zpětné volání [FunctionLeave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) nebude vystaveno pro funkci, která je cílem volání funkce tail.  
+ Cílová funkce volání Tail bude používat aktuální rámec zásobníku a vrátí se přímo volajícímu funkce, která provedla volání funkce tail. To znamená, že zpětné volání [FunctionLeave –](functionleave-function.md) nebude vystaveno pro funkci, která je cílem volání funkce tail.  
   
  Funkce `FunctionTailcall` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec`(`naked`).  
   
@@ -65,7 +67,7 @@ void __stdcall FunctionTailcall (
   
 ## <a name="see-also"></a>Viz také:
 
-- [FunctionEnter2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionLeave2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [SetEnterLeaveFunctionHooks2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2 – funkce](functionenter2-function.md)
+- [FunctionLeave2 – funkce](functionleave2-function.md)
+- [SetEnterLeaveFunctionHooks2 – metoda](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Globální statické funkce pro profilaci](profiling-global-static-functions.md)

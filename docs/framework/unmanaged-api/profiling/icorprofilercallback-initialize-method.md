@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dc5fab2a-4b45-4b12-8727-b89c9915f23e
 topic_type:
 - apiref
-ms.openlocfilehash: 64df6a81eb23c20537238c702fd0c204d64d14bc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e4a003b30c495852a3a68d44d92bef35c3ed7812
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434552"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866292"
 ---
 # <a name="icorprofilercallbackinitialize-method"></a>ICorProfilerCallback::Initialize – metoda
 Volá se, aby se inicializoval Profiler kódu, když se spustí nová aplikace Common Language Runtime (CLR).  
@@ -32,12 +32,14 @@ HRESULT Initialize(
     [in] IUnknown     *pICorProfilerInfoUnk);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `pICorProfilerInfoUnk`  
- [v](/cpp/atl/iunknown) rozhraní, které musí Profiler zadat dotaz na ukazatel rozhraní [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) .  
-  
+## <a name="parameters"></a>Parametry
+
+- `pICorProfilerInfoUnk`
+
+  \[in] ukazatel na rozhraní [IUnknown](/cpp/atl/iunknown) , které musí Profiler dotazovat na ukazatel rozhraní [ICorProfilerInfo](icorprofilerinfo-interface.md) .  
+
 ## <a name="remarks"></a>Poznámky  
- `Initialize` volání je jediná možnost Povolit (nebo zakázat) zpětná volání, která jsou neměnná. Jakmile je zpětné volání povoleno voláním `Initialize`, nelze jej později zakázat pomocí [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md). Hodnota COR_PRF_MONITOR_IMMUTABLE výčtu [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) označuje, které události jsou neměnné.  
+ `Initialize` volání je jediná možnost Povolit (nebo zakázat) zpětná volání, která jsou neměnná. Jakmile je zpětné volání povoleno voláním `Initialize`, nelze jej později zakázat pomocí [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md). Hodnota COR_PRF_MONITOR_IMMUTABLE výčtu [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) označuje, které události jsou neměnné.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -50,5 +52,5 @@ HRESULT Initialize(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [Shutdown – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-shutdown-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [Shutdown – metoda](icorprofilercallback-shutdown-method.md)

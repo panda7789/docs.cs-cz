@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1a5758ea-2354-43c0-92a3-32c9909d64e1
 topic_type:
 - apiref
-ms.openlocfilehash: 1217bb30be8b88f8ba1cf21f03f2531778358d4b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 30f2e675532848c2dbb1f055a0f1489cf3b2baa1
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439839"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865789"
 ---
 # <a name="icorprofilercallback2garbagecollectionfinished-method"></a>ICorProfilerCallback2::GarbageCollectionFinished – metoda
 Upozorní profileru, že uvolňování paměti bylo dokončeno a že pro něj byly vydány všechna zpětná volání uvolňování paměti.  
@@ -45,5 +45,5 @@ HRESULT GarbageCollectionFinished();
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 – rozhraní](icorprofilercallback2-interface.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: 0c262d8b5460f236ef0429154ae337c7adf96714
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: e9e85729b10d1c992a22f6c0bea65dfd1e21e7e4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338705"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742550"
 ---
 # <a name="impersonating-the-client"></a>Zosobnění klienta
 Ukázka zosobnění ukazuje, jak zosobnit volající aplikaci ve službě, aby služba mohla přistupovat k systémovým prostředkům jménem volajícího.  
@@ -102,7 +102,7 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  Při spuštění ukázky se požadavky na operace a odpovědi zobrazí v oknech služba i klientská konzola. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta.  
   
 > [!NOTE]
-> Služba musí běžet buď pod účtem správce, nebo účtem, ve kterém je spuštěný, musí mít udělena práva k registraci identifikátoru URI `http://localhost:8000/ServiceModelSamples` pomocí vrstvy HTTP. Taková práva je možné udělit nastavením [rezervace oboru názvů](https://go.microsoft.com/fwlink/?LinkId=95012) pomocí [nástroje HttpCfg. exe](https://go.microsoft.com/fwlink/?LinkId=95010).  
+> Služba musí běžet buď pod účtem správce, nebo účtem, ve kterém je spuštěný, musí mít udělena práva k registraci identifikátoru URI `http://localhost:8000/ServiceModelSamples` pomocí vrstvy HTTP. Taková práva je možné udělit nastavením [rezervace oboru názvů](/windows/win32/http/namespace-reservations-registrations-and-routing) pomocí [nástroje HttpCfg. exe](/windows/win32/http/httpcfg-exe).  
   
 > [!NOTE]
 > V počítačích se systémem Windows Server 2003 se zosobnění podporuje pouze v případě, že má aplikace Host. exe oprávnění k zosobnění. (Ve výchozím nastavení mají toto oprávnění pouze správci.) Pokud chcete toto oprávnění přidat k účtu, ve kterém je služba spuštěná, přejděte do části **Nástroje pro správu**, otevřete **místní zásady zabezpečení**, otevřete **místní zásady**, klikněte na **přiřazení uživatelských práv**a vyberte možnost **zosobnit klienta po ověření** a dvakrát klikněte na **vlastnosti** a přidejte uživatele nebo skupinu.  

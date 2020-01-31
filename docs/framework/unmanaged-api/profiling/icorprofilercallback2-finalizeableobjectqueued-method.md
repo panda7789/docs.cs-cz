@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 92d76893-683c-475d-9996-5bff03cdb10f
 topic_type:
 - apiref
-ms.openlocfilehash: ade0ba0517e47e9500683836b87d7a8ac1dfcfdb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b9093f920a8c14247bc51471da3682c7e500afa4
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439857"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865802"
 ---
 # <a name="icorprofilercallback2finalizeableobjectqueued-method"></a>ICorProfilerCallback2::FinalizeableObjectQueued – metoda
 Upozorňuje profileru kódu, že objekt s finalizační metodou byl zařazen do finalizačního vlákna ke spuštění metody `Finalize`.  
@@ -35,7 +35,7 @@ HRESULT FinalizeableObjectQueued(
   
 ## <a name="parameters"></a>Parametry  
  `finalizerFlags`  
- pro Hodnota výčtu [COR_PRF_FINALIZER_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-finalizer-flags-enumeration.md) , která popisuje aspekty finalizační metody.  
+ pro Hodnota výčtu [COR_PRF_FINALIZER_FLAGS](cor-prf-finalizer-flags-enumeration.md) , která popisuje aspekty finalizační metody.  
   
  `objectID`  
  pro ID objektu, který byl zařazen do fronty.  
@@ -51,5 +51,5 @@ HRESULT FinalizeableObjectQueued(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 – rozhraní](icorprofilercallback2-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9294d702-b4e5-441c-a930-e63d27b86bfd
 topic_type:
 - apiref
-ms.openlocfilehash: 321ad53ca5f773191c5b5d1084b36caa6aeae4dc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2d7984ce109fb2bac5a36ab5e4c83f386de5a488
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137049"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867097"
 ---
 # <a name="cor_prf_monitor-enumeration"></a>COR_PRF_MONITOR – výčet
 Obsahuje hodnoty, které slouží k určení chování, schopností nebo událostí, ke kterým se chce Profiler přihlásit k odběru.  
@@ -123,39 +123,39 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`COR_PRF_MONITOR_ALL`|Povolí všechny události zpětného volání.|  
-|`COR_PRF_MONITOR_APPDOMAIN_LOADS`|Řídí `AppDomainCreation*` a `AppDomainShutdown*` zpětná volání v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_ASSEMBLY_LOADS`|Řídí `AssemblyLoad*` a `AssemblyUnload*` zpětná volání v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_CACHE_SEARCHES`|Řídí zpětná volání `JITCachedFunctionSearch*` v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .<br /><br /> Chování tohoto příznaku se změní v .NET Framework verze 2,0.|  
-|`COR_PRF_MONITOR_CCW`|Řídí zpětná volání `COMClassicVTable*` v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_CLASS_LOADS`|Řídí `ClassLoad*` a `ClassUnload*` zpětná volání v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_CLR_EXCEPTIONS`|Řídí zpětná volání `ExceptionCLRCatcher*` v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_CODE_TRANSITIONS`|Řídí zpětná volání [UnmanagedToManagedTransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-unmanagedtomanagedtransition-method.md) a [ManagedToUnmanagedTransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md) v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_ENTERLEAVE`|Řídí [globální statické funkce profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)`FunctionEnter*`, `FunctionLeave*`a `FunctionTailCall*`.|  
-|`COR_PRF_MONITOR_EXCEPTIONS`|Řídí zpětné volání [exceptionthrown –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionthrown-method.md) a `ExceptionSearch*`, `ExceptionOSHandler*`, `ExceptionUnwind*`a `ExceptionCatcher*` zpětných volání v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_FUNCTION_UNLOADS`|Řídí zpětné volání [functionunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-functionunloadstarted-method.md) v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_GC`|Řídí [GarbageCollectionStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md), [GarbageCollectionFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md), [MovedReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md), [MovedReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md), [SurvivingReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-survivingreferences-method.md), [SurvivingReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md), [objectReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md), [ Objectsallocatedbyclass –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectsallocatedbyclass-method.md), [RootReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md), [RootReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md), [HandleCreated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handlecreated-method.md), [HandleDestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handledestroyed-method.md)a zpětná volání [FinalizeableObjectQueued –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-finalizeableobjectqueued-method.md) v rozhraních `ICorProfilerCallback*`. Při přidělení `COR_PRF_MONITOR_GC` je souběžné uvolňování paměti vypnuto.|  
-|`COR_PRF_MONITOR_JIT_COMPILATION`|Řídí zpětná volání `JITCompilation*`, [jitfunctionpitched –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitfunctionpitched-method.md)a [JITInlining –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitinlining-method.md) v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_MODULE_LOADS`|Řídí `ModuleLoad*`, `ModuleUnload*`a zpětná volání [ModuleAttachedToAssembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_OBJECT_ALLOCATED`|Řídí zpětné volání [ObjectAllocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md) v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_REMOTING`|Řídí zpětná volání `Remoting*` v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_APPDOMAIN_LOADS`|Řídí `AppDomainCreation*` a `AppDomainShutdown*` zpětná volání v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_ASSEMBLY_LOADS`|Řídí `AssemblyLoad*` a `AssemblyUnload*` zpětná volání v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_CACHE_SEARCHES`|Řídí zpětná volání `JITCachedFunctionSearch*` v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .<br /><br /> Chování tohoto příznaku se změní v .NET Framework verze 2,0.|  
+|`COR_PRF_MONITOR_CCW`|Řídí zpětná volání `COMClassicVTable*` v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_CLASS_LOADS`|Řídí `ClassLoad*` a `ClassUnload*` zpětná volání v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_CLR_EXCEPTIONS`|Řídí zpětná volání `ExceptionCLRCatcher*` v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_CODE_TRANSITIONS`|Řídí zpětná volání [UnmanagedToManagedTransition –](icorprofilercallback-unmanagedtomanagedtransition-method.md) a [ManagedToUnmanagedTransition –](icorprofilercallback-managedtounmanagedtransition-method.md) v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_ENTERLEAVE`|Řídí [globální statické funkce profilace](profiling-global-static-functions.md)`FunctionEnter*`, `FunctionLeave*`a `FunctionTailCall*`.|  
+|`COR_PRF_MONITOR_EXCEPTIONS`|Řídí zpětné volání [exceptionthrown –](icorprofilercallback-exceptionthrown-method.md) a `ExceptionSearch*`, `ExceptionOSHandler*`, `ExceptionUnwind*`a `ExceptionCatcher*` zpětných volání v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_FUNCTION_UNLOADS`|Řídí zpětné volání [functionunloadstarted –](icorprofilercallback-functionunloadstarted-method.md) v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_GC`|Řídí [GarbageCollectionStarted –](icorprofilercallback2-garbagecollectionstarted-method.md), [GarbageCollectionFinished –](icorprofilercallback2-garbagecollectionfinished-method.md), [MovedReferences –](icorprofilercallback-movedreferences-method.md), [MovedReferences2 –](icorprofilercallback4-movedreferences2-method.md), [SurvivingReferences –](icorprofilercallback2-survivingreferences-method.md), [SurvivingReferences2 –](icorprofilercallback4-survivingreferences2-method.md), [objectReferences –](icorprofilercallback-objectreferences-method.md), [objectsallocatedbyclass –](icorprofilercallback-objectsallocatedbyclass-method.md), [RootReferences –](icorprofilercallback-rootreferences-method.md), [RootReferences2 –](icorprofilercallback2-rootreferences2-method.md), [HandleCreated –](icorprofilercallback2-handlecreated-method.md), [HandleDestroyed –](icorprofilercallback2-handledestroyed-method.md)a zpětná volání [FinalizeableObjectQueued –](icorprofilercallback2-finalizeableobjectqueued-method.md) v rozhraních `ICorProfilerCallback*`. Při přidělení `COR_PRF_MONITOR_GC` je souběžné uvolňování paměti vypnuto.|  
+|`COR_PRF_MONITOR_JIT_COMPILATION`|Řídí zpětná volání `JITCompilation*`, [jitfunctionpitched –](icorprofilercallback-jitfunctionpitched-method.md)a [JITInlining –](icorprofilercallback-jitinlining-method.md) v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_MODULE_LOADS`|Řídí `ModuleLoad*`, `ModuleUnload*`a zpětná volání [ModuleAttachedToAssembly –](icorprofilercallback-moduleattachedtoassembly-method.md) v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_OBJECT_ALLOCATED`|Řídí zpětné volání [ObjectAllocated –](icorprofilercallback-objectallocated-method.md) v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_REMOTING`|Řídí zpětná volání `Remoting*` v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
 |`COR_PRF_MONITOR_REMOTING_ASYNC`|Určuje, zda `Remoting*` zpětná volání budou monitorovat asynchronní události.|  
 |`COR_PRF_MONITOR_REMOTING_COOKIE`|Určuje, zda je soubor cookie předán `Remoting*`ovým zpětným voláním.|  
-|`COR_PRF_MONITOR_SUSPENDS`|Řídí zpětná volání `RuntimeSuspend*`, `RuntimeResume*`, [runtimethreadsuspended –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadsuspended-method.md)a [Runtimethreadresumed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadresumed-method.md) v rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) .|  
-|`COR_PRF_MONITOR_THREADS`|Řídí zpětná volání [ThreadCreated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadcreated-method.md), [ThreadDestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md), [threadassignedtoosthread –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadassignedtoosthread-method.md)a [threadnamechanged –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-threadnamechanged-method.md) v rozhraních [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) .|  
+|`COR_PRF_MONITOR_SUSPENDS`|Řídí zpětná volání `RuntimeSuspend*`, `RuntimeResume*`, [runtimethreadsuspended –](icorprofilercallback-runtimethreadsuspended-method.md)a [Runtimethreadresumed –](icorprofilercallback-runtimethreadresumed-method.md) v rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) .|  
+|`COR_PRF_MONITOR_THREADS`|Řídí zpětná volání [ThreadCreated –](icorprofilercallback-threadcreated-method.md), [ThreadDestroyed –](icorprofilercallback-threaddestroyed-method.md), [threadassignedtoosthread –](icorprofilercallback-threadassignedtoosthread-method.md)a [threadnamechanged –](icorprofilercallback2-threadnamechanged-method.md) v rozhraních [ICorProfilerCallback](icorprofilercallback-interface.md) a [ICorProfilerCallback2](icorprofilercallback2-interface.md) .|  
   
 <a name="Feature"></a>   
 ### <a name="feature-enabling-flags"></a>Funkce – aktivace příznaků  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_ENABLE_FRAME_INFO`|Umožňuje načtení přesného `ClassID` pro obecnou funkci voláním metody [GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) s hodnotou `COR_PRF_FRAME_INFO` vrácenou zpětným voláním [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) .|  
-|`COR_PRF_ENABLE_FUNCTION_ARGS`|Povolí trasování argumentů pomocí zpětného volání [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) nebo zpětného volání [Functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md) a metody [GetFunctionEnter3Info –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md) .|  
-|`COR_PRF_ENABLE_FUNCTION_RETVAL`|Umožňuje trasování vrácených hodnot pomocí zpětného volání [FunctionLeave2 –](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) nebo metody zpětného volání [FunctionLeave3WithInfo –](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md) a [GetFunctionLeave3Info –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionleave3info-method.md) .|  
+|`COR_PRF_ENABLE_FRAME_INFO`|Umožňuje načtení přesného `ClassID` pro obecnou funkci voláním metody [GetFunctionInfo2 –](icorprofilerinfo2-getfunctioninfo2-method.md) s hodnotou `COR_PRF_FRAME_INFO` vrácenou zpětným voláním [FunctionEnter2](functionenter2-function.md) .|  
+|`COR_PRF_ENABLE_FUNCTION_ARGS`|Povolí trasování argumentů pomocí zpětného volání [FunctionEnter2](functionenter2-function.md) nebo zpětného volání [Functionenter3withinfo –](functionenter3withinfo-function.md) a metody [GetFunctionEnter3Info –](icorprofilerinfo3-getfunctionenter3info-method.md) .|  
+|`COR_PRF_ENABLE_FUNCTION_RETVAL`|Umožňuje trasování vrácených hodnot pomocí zpětného volání [FunctionLeave2 –](functionleave2-function.md) nebo metody zpětného volání [FunctionLeave3WithInfo –](functionleave3withinfo-function.md) a [GetFunctionLeave3Info –](icorprofilerinfo3-getfunctionleave3info-method.md) .|  
 |`COR_PRF_ENABLE_INPROC_DEBUGGING`|Zastaralé<br /><br /> V procesu ladění není podporováno. Tento příznak nemá žádný vliv.|  
-|`COR_PRF_ENABLE_JIT_MAPS`|Zastaralé<br /><br /> Umožňuje profileru získat pomocí [GetILToNativeMapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md)mapy Il-to-Native. Počínaje .NET Framework 2,0, modul runtime vždycky sleduje mapy IL-to-Native; Proto je tento příznak vždy považován za nastavený.|  
-|`COR_PRF_ENABLE_OBJECT_ALLOCATED`|Informuje modul runtime o tom, že Profiler může chtít oznámení o přidělení objektů. Tento příznak musí být nastaven během inicializace. Umožňuje profileru později použít příznak `COR_PRF_MONITOR_OBJECT_ALLOCATED` pro příjem zpětných volání [ObjectAllocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md) .|  
-|`COR_PRF_ENABLE_REJIT`|Povoluje volání metod [RequestReJIT –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrejit-method.md) a [RequestRevert –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrevert-method.md) . Profiler musí při spuštění tento příznak nastavit.  Pokud profiler tento příznak určuje, musí také zadat `COR_PRF_DISABLE_ALL_NGEN_IMAGES`.|  
-|`COR_PRF_ENABLE_STACK_SNAPSHOT`|Povoluje volání metody [DoStackSnapshot –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) .|  
+|`COR_PRF_ENABLE_JIT_MAPS`|Zastaralé<br /><br /> Umožňuje profileru získat pomocí [GetILToNativeMapping –](icorprofilerinfo-getiltonativemapping-method.md)mapy Il-to-Native. Počínaje .NET Framework 2,0, modul runtime vždycky sleduje mapy IL-to-Native; Proto je tento příznak vždy považován za nastavený.|  
+|`COR_PRF_ENABLE_OBJECT_ALLOCATED`|Informuje modul runtime o tom, že Profiler může chtít oznámení o přidělení objektů. Tento příznak musí být nastaven během inicializace. Umožňuje profileru později použít příznak `COR_PRF_MONITOR_OBJECT_ALLOCATED` pro příjem zpětných volání [ObjectAllocated –](icorprofilercallback-objectallocated-method.md) .|  
+|`COR_PRF_ENABLE_REJIT`|Povoluje volání metod [RequestReJIT –](icorprofilerinfo4-requestrejit-method.md) a [RequestRevert –](icorprofilerinfo4-requestrevert-method.md) . Profiler musí při spuštění tento příznak nastavit.  Pokud profiler tento příznak určuje, musí také zadat `COR_PRF_DISABLE_ALL_NGEN_IMAGES`.|  
+|`COR_PRF_ENABLE_STACK_SNAPSHOT`|Povoluje volání metody [DoStackSnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) .|  
   
 <a name="Config"></a>   
 ### <a name="configuration-flags"></a>Příznaky konfigurace  
@@ -180,7 +180,7 @@ typedef enum {
 |`COR_PRF_REQUIRE_PROFILE_IMAGE`|Představuje všechny příznaky `COR_PRF_MONITOR`, které vyžadují image s rozšířeným profilem.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `COR_PRF_MONITOR` se používá s metodami [ICorProfilerInfo:: GetEventMask –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md) a [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) k definování oznámení události, které modul CLR (Common Language Runtime) provede v profileru.  
+ Hodnota `COR_PRF_MONITOR` se používá s metodami [ICorProfilerInfo:: GetEventMask –](icorprofilerinfo-geteventmask-method.md) a [ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md) k definování oznámení události, které modul CLR (Common Language Runtime) provede v profileru.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -193,6 +193,6 @@ typedef enum {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
-- [GetEventMask – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)
-- [SetEventMask – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)
+- [Výčty pro profilaci](profiling-enumerations.md)
+- [GetEventMask – metoda](icorprofilerinfo-geteventmask-method.md)
+- [SetEventMask – metoda](icorprofilerinfo-seteventmask-method.md)

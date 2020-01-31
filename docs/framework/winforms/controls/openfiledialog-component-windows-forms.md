@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Open File dialog box
 - OpenFileDialog component
 ms.assetid: d2efa832-a272-42ff-aa26-c4ac13ff59ba
-ms.openlocfilehash: ef6b69a90a048caf7924b00ddd0b79a0a7efaeb9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1f831297ec9d34cbf0c3c55390abd8be0f5013ee
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744361"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868093"
 ---
 # <a name="openfiledialog-component-windows-forms"></a>OpenFileDialog – komponenta (Windows Forms)
 Součást model Windows Forms <xref:System.Windows.Forms.OpenFileDialog> je předem nakonfigurovaným dialogovým oknem. Jedná se o stejný dialog **otevřeného souboru** , který je vystavený operačním systémem Windows. Dědí z třídy <xref:System.Windows.Forms.CommonDialog>.  
@@ -31,7 +31,4 @@ Součást model Windows Forms <xref:System.Windows.Forms.OpenFileDialog> je pře
  Popisuje sadu ovládacích prvků a komponent, které uživatelům umožňují provádět standardní interakce s aplikací nebo systémem.  
   
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
-  
- [Základní kód pro dialogová okna model Windows Forms](https://go.microsoft.com/fwlink/?LinkID=102575)  
- Popisuje ovládací prvky a součásti dialogového okna model Windows Forms a kód potřebný ke spouštění jejich základních funkcí. (Technický článek o knihovně MSDN online)
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.

@@ -10,12 +10,12 @@ api_location:
 api_type:
 - COM
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
-ms.openlocfilehash: ae51490be96f3eb6524831c93739c3befbc30b37
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 53c01d2db44f4d0adf1ba5b9cc225ab49581aa5d
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132028"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868340"
 ---
 # <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7::ReadInMemorySymbols
 [Podporováno v .NET Framework 4.6.1 a novějších verzích]  
@@ -72,4 +72,4 @@ HRESULT ReadInMemorySymbols(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md)
+- [ICorProfilerInfo7 – rozhraní](icorprofilerinfo7-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6d1dc41b-8aa2-4889-bb00-1cbccc00c123
 topic_type:
 - apiref
-ms.openlocfilehash: 04f6a088c5bbe96e3909ba600aa8ffab937abe2d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3ae48df9e66890161c1aef944d37b0a279939d56
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140397"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790545"
 ---
 # <a name="icorpublishprocess-interface"></a>ICorPublishProcess – rozhraní
 Poskytuje metody, které mají přístup k informacím, které se mají zobrazit o procesu.  
@@ -28,10 +28,10 @@ Poskytuje metody, které mají přístup k informacím, které se mají zobrazit
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumAppDomains – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-enumappdomains-method.md)|Získá instanci [ICorPublishAppDomainEnum –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md) , která obsahuje domény aplikace v procesu, na který odkazuje tento `ICorPublishProcess`.|  
-|[GetDisplayName – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-getdisplayname-method.md)|Získá úplnou cestu ke spustitelnému souboru pro proces, na který odkazuje tento `ICorPublishProcess`.|  
-|[GetProcessID – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-getprocessid-method.md)|Získá identifikátor operačního systému pro proces, na který odkazuje tento `ICorPublishProcess`.|  
-|[IsManaged – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-ismanaged-method.md)|Získá hodnotu, která označuje, zda je v procesu odkazovaném tímto `ICorPublishProcess` spuštěn spravovaný kód.|  
+|[EnumAppDomains – metoda](icorpublishprocess-enumappdomains-method.md)|Získá instanci [ICorPublishAppDomainEnum –](icorpublishappdomainenum-interface.md) , která obsahuje domény aplikace v procesu, na který odkazuje tento `ICorPublishProcess`.|  
+|[GetDisplayName – metoda](icorpublishprocess-getdisplayname-method.md)|Získá úplnou cestu ke spustitelnému souboru pro proces, na který odkazuje tento `ICorPublishProcess`.|  
+|[GetProcessID – metoda](icorpublishprocess-getprocessid-method.md)|Získá identifikátor operačního systému pro proces, na který odkazuje tento `ICorPublishProcess`.|  
+|[IsManaged – metoda](icorpublishprocess-ismanaged-method.md)|Získá hodnotu, která označuje, zda je v procesu odkazovaném tímto `ICorPublishProcess` spuštěn spravovaný kód.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -44,5 +44,5 @@ Poskytuje metody, které mají přístup k informacím, které se mají zobrazit
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [CorpubPublish – třída typu coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [CorpubPublish – třída typu coclass](corpubpublish-coclass.md)

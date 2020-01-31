@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Save File dialog box
 - SaveFileDialog component
 ms.assetid: 6f5d9321-37d7-4448-ac4c-a33c42b2a766
-ms.openlocfilehash: 920816c648f5dbdd50f869e58769655e8be8e1a1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8490261068684385678ccb830ee179015a0644f4
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743094"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867396"
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog – komponenta (Windows Forms)
 Součást model Windows Forms <xref:System.Windows.Forms.SaveFileDialog> je předem nakonfigurovaným dialogovým oknem. Je stejný jako dialogové okno standardní Uložit soubor používaný v systému Windows. Dědí z třídy <xref:System.Windows.Forms.CommonDialog>.  
@@ -31,7 +31,4 @@ Součást model Windows Forms <xref:System.Windows.Forms.SaveFileDialog> je pře
  Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
   
  [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)  
- Popisuje sadu ovládacích prvků a komponent, které uživatelům umožňují provádět standardní interakce s aplikací nebo systémem.  
-  
- [Základní kód pro dialogová okna model Windows Forms](https://go.microsoft.com/fwlink/?LinkID=102575)  
- Popisuje ovládací prvky a součásti dialogového okna model Windows Forms a kód potřebný ke spouštění jejich základních funkcí. (Technický článek o knihovně MSDN online)
+ Popisuje sadu ovládacích prvků a komponent, které uživatelům umožňují provádět standardní interakce s aplikací nebo systémem.

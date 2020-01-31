@@ -6,51 +6,51 @@ helpviewer_keywords:
 - security [WCF]
 - Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-ms.openlocfilehash: 58bec40f197dd1f2b104607a65c3ad456b95f69d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f79ac28af45e8c05922373955c5317095d2c682
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748459"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744631"
 ---
 # <a name="windows-communication-foundation-security"></a>Zabezpečení WCF
-Témata v této části popisují funkce zabezpečení Windows Communication Foundation (WCF) a pomocí nich můžete pomoct zabezpečených zpráv.  
+Témata v této části popisují funkce zabezpečení služby Windows Communication Foundation (WCF) a jejich použití k zabezpečení zpráv.  
   
- Další informace o systému Windows Server AppFabric a zabezpečení najdete v tématu [Model zabezpečení pro Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
+ Další informace o Windows Server AppFabric a zabezpečení najdete v tématu [model zabezpečení pro Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10)) .  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  Popisuje funkce zabezpečení ve službě WCF.  
   
  [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
- Popisuje základní terminologie a koncepty používané v zabezpečení WCF.  
+ Popisuje základní terminologii a koncepty používané v zabezpečení služby WCF.  
   
  [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
- Popisuje scénářů a topologií, které můžete nakonfigurovat s použitím technologie WCF.  
+ Popisuje scénáře a topologie, které můžete konfigurovat pomocí WCF.  
   
  [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- Poskytuje přehled o chování WCF, které mají vliv na zabezpečení, jako je například nastavení přihlašovacích údajů.  
+ Poskytuje přehled o chováních služby WCF, která mají vliv na zabezpečení, jako je například nastavení přihlašovacích údajů.  
   
  [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
- Zobrazení vazeb, včetně témata, která ukazují, jak vytvořit vlastní zabezpečení vazby týkající se zabezpečení.  
+ Zobrazení vazeb orientované na zabezpečení, včetně témat, která ukazují, jak vytvářet vlastní vazby zabezpečení.  
   
  [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- Popisuje postup zabezpečení zpráv pomocí funkce zabezpečení WCF.  
+ Popisuje, jak zabezpečit zprávy pomocí funkcí zabezpečení služby WCF.  
   
  [Ověřování](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
  Ukazuje běžné úlohy ověřování.  
   
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
- Popisuje běžné scénáře ověření s implementacemi zabezpečení.  
+ Popisuje běžné autorizační scénáře s implementacemi zabezpečení.  
   
  [Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
- Popisuje základní informace o federaci a jak vytvořit klienty, kteří komunikují se servery pro federované.  
+ Popisuje základy federace a vytváření klientů, kteří komunikují s federované servery.  
   
  [Částečná důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust.md)  
- Popisuje způsob spuštění částečně důvěryhodné scénářích a omezeních WCF při spuštění částečně důvěryhodné.  
+ Popisuje spuštění částečně důvěryhodných scénářů a omezení WCF při spuštění částečně důvěryhodného.  
   
  [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- Popisuje, jak auditování událostí zabezpečení.  
+ Popisuje, jak auditovat události zabezpečení.  
   
  [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  Pokyny pro vytváření zabezpečených aplikací WCF.  

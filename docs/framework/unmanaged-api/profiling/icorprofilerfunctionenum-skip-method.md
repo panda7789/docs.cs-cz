@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 051465b9-e479-494a-804b-c880323b4cbe
 topic_type:
 - apiref
-ms.openlocfilehash: d2a0bff0d3d93ab8542699cffd3d0ecc032246ad
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5f4ef55561c23997fca51dc7d463e2eefdba7d65
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448208"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76864307"
 ---
 # <a name="icorprofilerfunctionenumskip-method"></a>ICorProfilerFunctionEnum::Skip – metoda
 Posune kurzor čítače výčtu z aktuální pozice tak, aby byl zadaný počet prvků vynechán.  
@@ -57,5 +57,5 @@ HRESULT Skip([in] ULONG celt);
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerFunctionEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerFunctionEnum – rozhraní](icorprofilerfunctionenum-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)

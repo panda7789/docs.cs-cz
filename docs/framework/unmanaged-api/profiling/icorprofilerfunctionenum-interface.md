@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0a1d4a38-cd0b-4231-91df-13646218ae72
 topic_type:
 - apiref
-ms.openlocfilehash: 17f7243096b7ac18e456f8f31196055492015346
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: add30952588ace0cbc80191617c37d7222cffee7
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447805"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76864489"
 ---
 # <a name="icorprofilerfunctionenum-interface"></a>ICorProfilerFunctionEnum – rozhraní
 Poskytuje metody pro sekvenční iteraci kolekcí funkcí v modulu CLR (Common Language Runtime).  
@@ -28,11 +28,11 @@ Poskytuje metody pro sekvenční iteraci kolekcí funkcí v modulu CLR (Common L
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Clone – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-clone-method.md)|Získá ukazatel rozhraní na kopii tohoto `ICorProfilerFunctionEnum`ho rozhraní.|  
-|[GetCount – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-getcount-method.md)|Získá počet funkcí, které byly načteny aplikací nebo vynuceně načteny profilerem.|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-next-method.md)|Získá zadaný počet souvislých funkcí z sekvenční kolekce funkcí počínaje aktuální pozicí čítače výčtu v sekvenci.|  
-|[Reset – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-reset-method.md)|Přesune kurzor enumerátoru na počáteční pozici sekvence.|  
-|[Skip – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-skip-method.md)|Posune kurzor čítače výčtu z aktuální pozice tak, aby byl zadaný počet prvků vynechán.|  
+|[Clone – metoda](icorprofilerfunctionenum-clone-method.md)|Získá ukazatel rozhraní na kopii tohoto `ICorProfilerFunctionEnum`ho rozhraní.|  
+|[GetCount – metoda](icorprofilerfunctionenum-getcount-method.md)|Získá počet funkcí, které byly načteny aplikací nebo vynuceně načteny profilerem.|  
+|[Next – metoda](icorprofilerfunctionenum-next-method.md)|Získá zadaný počet souvislých funkcí z sekvenční kolekce funkcí počínaje aktuální pozicí čítače výčtu v sekvenci.|  
+|[Reset – metoda](icorprofilerfunctionenum-reset-method.md)|Přesune kurzor enumerátoru na počáteční pozici sekvence.|  
+|[Skip – metoda](icorprofilerfunctionenum-skip-method.md)|Posune kurzor čítače výčtu z aktuální pozice tak, aby byl zadaný počet prvků vynechán.|  
   
 ## <a name="remarks"></a>Poznámky  
  Rozhraní `ICorProfilerFunctionEnum` je enumerátor. Umožňuje přijímači pole vyžádat si prvky od odesilatele v sazbě, která je vhodná pro příjemce. Jinými slovy, přijímač je schopný explicitně řídit tok prvků pole, čímž se vyhnete problémům souvisejícím s předáváním velkých polí jako parametrů metody.  
@@ -50,6 +50,6 @@ Poskytuje metody pro sekvenční iteraci kolekcí funkcí v modulu CLR (Common L
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [EnumJITedFunctions – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enumjitedfunctions-method.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [EnumJITedFunctions – metoda](icorprofilerinfo3-enumjitedfunctions-method.md)

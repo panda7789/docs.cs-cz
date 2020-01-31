@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: c0bf92c9b6046d531e75771a9205e6dffe0fd367
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 9f61a5a60b2ba1305158d1ab570079fe6aac19ac
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458479"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76870737"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdrojům událostí, nebudou zničeny v koordinaci s objektem naslouchacího procesu, který připojil obslužnou rutinu ke zdroji. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí vzor návrhu, který lze použít k vyřešení tohoto problému, poskytnutím vyhrazené třídy správce pro konkrétní události a implementací rozhraní na naslouchací proces pro danou událost. Tento vzor návrhu je známý jako *slabý vzorek události*.  
@@ -36,7 +36,7 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdroj
 |Použít stávající slabší třídu správce událostí|Pokud má událost, k jejímuž odběru se chcete přihlásit, odpovídající <xref:System.Windows.WeakEventManager>, použijte stávající správce slabé události. Seznam slabých správců událostí, které jsou součástí WPF, naleznete v hierarchii dědičnosti ve třídě <xref:System.Windows.WeakEventManager>. Vzhledem k tomu, že jsou zahrnuté slabé správce událostí omezené, budete pravděpodobně muset zvolit jeden z dalších přístupů.|  
 |Použití obecné třídy slabého správce událostí|Použijte obecné <xref:System.Windows.WeakEventManager%602>, když existující <xref:System.Windows.WeakEventManager> není k dispozici, chcete snadno implementovat a nemáte obavy o efektivitu. Obecné <xref:System.Windows.WeakEventManager%602> je méně efektivní než stávající nebo vlastní slabý správce událostí. Například obecná třída má větší odraz pro zjištění události s ohledem na název události. Také kód pro registraci události pomocí obecného <xref:System.Windows.WeakEventManager%602> je podrobnější než použití existujícího nebo vlastního <xref:System.Windows.WeakEventManager>.|  
 |Vytvoření vlastní slabé třídy správce událostí|Pokud není k dispozici existující <xref:System.Windows.WeakEventManager> a chcete nejlepší efektivitu, vytvořte vlastní <xref:System.Windows.WeakEventManager>. Použití vlastního <xref:System.Windows.WeakEventManager> k přihlášení k odběru události bude efektivnější, ale získáte náklady na zápis více kódů na začátku.|  
-|Použití slabého správce událostí třetí strany|NuGet má [několik slabých správců událostí](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) a řada platforem WPF také podporuje vzor (například [dokumentaci Prism o volně vázaných odběrech událostí](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/Communication.md#subscribing-to-events)).|
+|Použití slabého správce událostí třetí strany|NuGet má [několik slabých správců událostí](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) a řada platforem WPF také podporuje vzor (například [dokumentaci Prism o volně vázaných odběrech událostí](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/legacy/Communication.md#subscribing-to-events)).|
 
  Následující části popisují, jak implementovat slabý vzorek události.  Pro účely této diskuze má událost pro přihlášení k odběru následující charakteristiky.  
   

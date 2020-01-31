@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 7a38ee4ae74ca5b96dd082e752fc733eb85fca3f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 95473a8ce8d5fd7540228ecd9767448e51b5b326
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427018"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868981"
 ---
 # <a name="icorprofilerinfo10getlohobjectsizethreshold-method"></a>ICorProfilerInfo10:: GetLOHObjectSizeThreshold – metoda
 
@@ -28,10 +28,11 @@ Získá hodnotu nakonfigurované prahové hodnoty haldy velkého objektu (LOH).
 HRESULT GetLOHObjectSizeThreshold( [out] DWORD *pThreshold );
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`pThreshold` \
-mimo Prahová hodnota haldy pro velké objekty v bajtech.
+- `pThreshold`
+
+  \[] prahová hodnota haldy pro velké objekty v bajtech.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -49,4 +50,4 @@ Objekty větší než prahová hodnota haldy pro velké objekty budou přidělen
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [Rozhraní ICorProfilerInfo10](icorprofilerinfo10-interface.md)

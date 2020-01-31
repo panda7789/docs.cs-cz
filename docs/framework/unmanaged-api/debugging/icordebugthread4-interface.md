@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a8c7719a-322b-4133-8566-4c27218dc104
 topic_type:
 - apiref
-ms.openlocfilehash: 8779dbc95a8bef13d45605295bd68b1d3f16851d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0bb25d060853abb20316a344bae3755b2f8b4dc7
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122433"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791339"
 ---
 # <a name="icordebugthread4-interface"></a>ICorDebugThread4 – rozhraní
 Poskytuje informace o blokování vlákna.  
@@ -28,12 +28,12 @@ Poskytuje informace o blokování vlákna.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetBlockingObjects – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-getblockingobjects-method.md)|Poskytuje seřazený výčet struktur [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) , které poskytují informace o blokování vláken.|  
-|[HadUnhandledException – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-hadunhandledexception-method.md)|Označuje, zda má vlákno někdy neošetřenou výjimku.|  
-|[GetCurrentCustomDebuggerNotification – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-getcurrentcustomdebuggernotification-method.md)|Získá aktuální objekt [ICorDebugManagedCallback3 –:: CustomNotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) v aktuálním vlákně.|  
+|[GetBlockingObjects – metoda](icordebugthread4-getblockingobjects-method.md)|Poskytuje seřazený výčet struktur [CorDebugBlockingObject –](cordebugblockingobject-structure.md) , které poskytují informace o blokování vláken.|  
+|[HadUnhandledException – metoda](icordebugthread4-hadunhandledexception-method.md)|Označuje, zda má vlákno někdy neošetřenou výjimku.|  
+|[GetCurrentCustomDebuggerNotification – metoda](icordebugthread4-getcurrentcustomdebuggernotification-method.md)|Získá aktuální objekt [ICorDebugManagedCallback3 –:: CustomNotification –](icordebugmanagedcallback3-customnotification-method.md) v aktuálním vlákně.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto rozhraní je logické rozšíření rozhraní ICorDebugThread, ICorDebugThread2 a [ICorDebugThread3](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-interface.md) .  
+ Toto rozhraní je logické rozšíření rozhraní ICorDebugThread, ICorDebugThread2 a [ICorDebugThread3](icordebugthread3-interface.md) .  
   
 > [!NOTE]
 > Toto rozhraní nepodporuje vzdálené volání, a to buď mezi počítačem, nebo mezi procesy.  
@@ -49,5 +49,5 @@ Poskytuje informace o blokování vlákna.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

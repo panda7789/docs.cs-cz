@@ -4,12 +4,12 @@ description: Přístup k ukázkám, které jsou v rozsahu od zpracování obrazu
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 8a2301b3c7a5f4a1f465677f31371d5b94783692
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5f0d7a4c5cd736d1168ec76c1c0ea19627505f15
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72522387"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787884"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
 
@@ -33,7 +33,7 @@ Samostatná aplikace s jednou stránkou (SPA) volá funkci bez serveru, která u
 
 Podívejte se, jak implementovat jednoduchou službu Azure bez serveru na webovém portálu Azure nebo v aplikaci Visual Studio. Sestavte klienta pomocí Xamarin. Forms, který běží v Androidu, iOS a Windows. Aplikace se pak rozpraví na použití JavaScript Object Notation (JSON) jako komunikačního média mezi serverem a mobilními klienty pomocí back-endu bez serveru.
 
-Další informace najdete v tématu [implementace jednoduché funkce Azure pomocí klienta Xamarin. Forms](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/).
+Další informace najdete v tématu [implementace jednoduché funkce Azure pomocí klienta Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/).
 
 ## <a name="generate-a-photo-mosaic-with-serverless-image-recognition"></a>Generování fotky s rozpoznáváním imagí bez serveru
 
@@ -43,7 +43,7 @@ Ukázka používá Azure Functions a Microsoft Cognitive Services Custom Vision 
 
 Model můžete například proškolit pomocí Orlanduch orientačních bodů, jako je Orlandu oči. Custom Vision rozpozná obrázek oka Orlandu a funkce vytvoří fotografii složenou z výsledků hledání obrázků Bingu pro "Orlandu oči".
 
-Další informace najdete v tématu [Azure Functionse generátoru Photo Mosaic](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/).
+Další informace najdete v tématu [Azure Functionse generátoru Photo Mosaic](https://github.com/Azure-Samples/functions-dotnet-photo-mosaic).
 
 ## <a name="migrate-an-existing-application-to-the-cloud"></a>Migrace stávající aplikace do cloudu
 
@@ -83,17 +83,17 @@ Pak můžete vytvořit řídicí panel Power BI, abyste získali přehled o shro
 
 Ukázka se skládá z IoT Hub Azure a funkce Azure Functions. Nová zpráva v IoT Hub aktivuje funkci Azure Functions. Kód bez serveru odesílá stejný obsah zprávy zpátky do zařízení, které ho odeslalo. Projekt má veškerý kód a konfiguraci nasazení potřebné pro řešení.
 
-Další informace najdete v tématu věnovaném nástroji [Azure IoT Hub příkazového testu](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/).
+Další informace najdete v tématu věnovaném nástroji [Azure IoT Hub příkazového testu](https://github.com/Azure-Samples/iot-hub-node-ping).
 
 ## <a name="recommended-resources"></a>Doporučené prostředky
 
-- [Generátor Azure Functions Photo Mosaic](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)
-- [Azure IoT Hub – příkazy pro odesílání](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/)
+- [Generátor Azure Functions Photo Mosaic](https://github.com/Azure-Samples/functions-dotnet-photo-mosaic)
+- [Azure IoT Hub – příkazy pro odesílání](https://github.com/Azure-Samples/iot-hub-node-ping)
 - [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/)
 - [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17)
 - [Import testovacího prostředí CSV](https://github.com/JeremyLikness/azure-fn-file-process-hol)
 - [Připevnit Event gridu](https://github.com/JeremyLikness/Event-Grid-Glue)
-- [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+- [Implementace jednoduché funkce Azure Functions s klientem Xamarin. Forms](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
 - [Přezvednutí a posunutí s využitím Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102)
 - [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener)
 

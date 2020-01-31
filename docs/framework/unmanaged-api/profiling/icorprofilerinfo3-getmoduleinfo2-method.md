@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f1f6b8f3-dcfc-49e8-be76-ea50ea90d5a7
 topic_type:
 - apiref
-ms.openlocfilehash: e2a4df262e076c960640977bea0d22be19802140
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 96cde35c7151bb7ce58715f2826feaa59b30efab
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449665"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862305"
 ---
 # <a name="icorprofilerinfo3getmoduleinfo2-method"></a>ICorProfilerInfo3::GetModuleInfo2 – metoda
 Po předaném ID modulu vrátí název souboru modulu, ID nadřazeného sestavení modulu a bitovou masku, která popisuje vlastnosti modulu.  
@@ -59,12 +59,12 @@ HRESULT GetModuleInfo2(
  mimo Ukazatel na ID nadřazeného sestavení modulu.  
   
  `pdwModuleFlags`  
- mimo Bitová maska hodnot z výčtu [COR_PRF_MODULE_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) , které určují vlastnosti modulu.  
+ mimo Bitová maska hodnot z výčtu [COR_PRF_MODULE_FLAGS](cor-prf-module-flags-enumeration.md) , které určují vlastnosti modulu.  
   
 ## <a name="remarks"></a>Poznámky  
  Pro dynamické moduly je parametr `szName` názvem metadat modulu a základní adresa je 0 (nula). Název metadat je hodnota ve sloupci název z tabulky modulů v metadatech. To je také zveřejněné jako vlastnost <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> pro spravovaný kód a jako parametr `szName` metody [IMetaDataImport:: GetScopeProps –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) na nespravovaný kód klienta metadat.  
   
- I když může být metoda `GetModuleInfo2` volána, jakmile existuje ID modulu, ID nadřazeného sestavení nebude k dispozici, dokud Profiler neobdrží zpětné volání [ICorProfilerCallback:: ModuleAttachedToAssembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) .  
+ I když může být metoda `GetModuleInfo2` volána, jakmile existuje ID modulu, ID nadřazeného sestavení nebude k dispozici, dokud Profiler neobdrží zpětné volání [ICorProfilerCallback:: ModuleAttachedToAssembly –](icorprofilercallback-moduleattachedtoassembly-method.md) .  
   
  Když `GetModuleInfo2` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `szName` dostatečně velká, aby obsahovala úplný název souboru modulu. To provedete tak, že porovnáte hodnotu, na kterou `pcchName` odkazuje, hodnotou `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší vyrovnávací paměť `szName`, aktualizujte `cchName` novou, větší velikostí a zavolejte `GetModuleInfo2` znovu.  
   
@@ -81,6 +81,6 @@ HRESULT GetModuleInfo2(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

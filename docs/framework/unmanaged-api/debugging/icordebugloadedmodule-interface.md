@@ -2,12 +2,12 @@
 title: Rozhraní ICorDebugLoadedModule
 ms.date: 03/30/2017
 ms.assetid: 34be6369-2e75-4a95-a538-3b29ac97cf6d
-ms.openlocfilehash: 9fe36497844b9c33cefcf8c63711941196847525
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9d3bdcec9e90dab337b595294d114de4bd3d531f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122607"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781989"
 ---
 # <a name="icordebugloadedmodule-interface"></a>Rozhraní ICorDebugLoadedModule
 Poskytuje informace o načteném modulu.  
@@ -16,9 +16,9 @@ Poskytuje informace o načteném modulu.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetBaseAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-getbaseaddress-method.md)|Načte základní adresu načteného modulu.|  
-|[GetName – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-getname-method.md)|Získá název načteného modulu.|  
-|[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-getsize-method.md)|Získá velikost načteného modulu v bajtech.|  
+|[GetBaseAddress – metoda](icordebugloadedmodule-getbaseaddress-method.md)|Načte základní adresu načteného modulu.|  
+|[GetName – metoda](icordebugloadedmodule-getname-method.md)|Získá název načteného modulu.|  
+|[GetSize – metoda](icordebugloadedmodule-getsize-method.md)|Získá velikost načteného modulu v bajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
  Rozhraní `ICorDebugLoadedModule` je implementováno pomocí ladicího programu a používá rozhraní ladění CLR k získání informací o načteném modulu z ladicího programu.  
@@ -37,5 +37,5 @@ Poskytuje informace o načteném modulu.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

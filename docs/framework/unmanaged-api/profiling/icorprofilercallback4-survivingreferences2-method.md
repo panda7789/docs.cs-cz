@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 02b51888-5d89-4e50-a915-45b7e329aad9
 topic_type:
 - apiref
-ms.openlocfilehash: 3178d099db96d52f0238cfcf7e055e761687ce30
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bec50183e6a8690cb02f3dc06d32b7449e055cea
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430092"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865165"
 ---
 # <a name="icorprofilercallback4survivingreferences2-method"></a>ICorProfilerCallback4::SurvivingReferences2 – metoda
-Oznamuje rozložení objektů v haldě v důsledku nekomprimace uvolňování paměti. Tato metoda je volána, pokud profiler implementoval rozhraní [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) . Toto zpětné volání nahrazuje metodu [ICorProfilerCallback2:: SurvivingReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-survivingreferences-method.md) , protože může vykazovat větší rozsahy objektů, jejichž délka překračuje, co může být vyjádřeno v ulong.  
+Oznamuje rozložení objektů v haldě v důsledku nekomprimace uvolňování paměti. Tato metoda je volána, pokud profiler implementoval rozhraní [ICorProfilerCallback4](icorprofilercallback4-interface.md) . Toto zpětné volání nahrazuje metodu [ICorProfilerCallback2:: SurvivingReferences –](icorprofilercallback2-survivingreferences-method.md) , protože může vykazovat větší rozsahy objektů, jejichž délka překračuje, co může být vyjádřeno v ulong.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -57,15 +57,15 @@ HRESULT SurvivingReferences2(
   
  Pro libovolnou hodnotu `i`, která je v následujícím rozsahu, objekt předržel uvolňování paměti:  
   
- 0 < = `i` < `cSurvivingObjectIDRanges`  
+ 0 <= `i` < `cSurvivingObjectIDRanges`  
   
  Nekomprimace uvolňování paměti znovu uvolňuje paměť obsazenou "nemrtvými" objekty, ale nekomprimuje volné místo. V důsledku toho se do haldy vrátí paměť, ale nebudou přesunuty žádné "živé" objekty.  
   
- Modul common language runtime (CLR) volá `SurvivingReferences2` pro nekomprimaci uvolňování paměti. Pro komprimaci uvolňování paměti je místo toho volána metoda [MovedReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) . Jedno uvolnění paměti může být zkomprimováno pro jednu generaci a nekomprimaci pro jiné. Pro uvolňování paměti v jakékoli konkrétní generaci bude Profiler obdržet buď zpětné volání `SurvivingReferences2`, nebo [MovedReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) zpětné volání, ale ne obojí.  
+ Modul common language runtime (CLR) volá `SurvivingReferences2` pro nekomprimaci uvolňování paměti. Pro komprimaci uvolňování paměti je místo toho volána metoda [MovedReferences2 –](icorprofilercallback4-movedreferences2-method.md) . Jedno uvolnění paměti může být zkomprimováno pro jednu generaci a nekomprimaci pro jiné. Pro uvolňování paměti v jakékoli konkrétní generaci bude Profiler obdržet buď zpětné volání `SurvivingReferences2`, nebo [MovedReferences2 –](icorprofilercallback4-movedreferences2-method.md) zpětné volání, ale ne obojí.  
   
  V průběhu konkrétního uvolňování paměti může být přijato více `SurvivingReferences2`ch zpětného volání, z důvodu omezeného interního ukládání do vyrovnávací paměti, více zpětných volání během uvolňování paměti serveru a z jiných důvodů. V případě více zpětných volání během uvolňování paměti jsou informace kumulativní; všechny odkazy, které jsou hlášeny v jakémkoli zpětném volání `SurvivingReferences2`, jsou zachovány uvolňováním paměti.  
   
- Pokud profiler implementuje rozhraní [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) i [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) , je metoda `SurvivingReferences2` volána před metodou [ICorProfilerCallback2:: SurvivingReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-survivingreferences-method.md) , ale pouze v případě, že se `SurvivingReferences2` vrátí úspěšně. Profilery mohou vracet hodnotu HRESULT, která označuje selhání metody `SurvivingReferences2`, aby se předešlo volání druhé metody.  
+ Pokud profiler implementuje rozhraní [ICorProfilerCallback](icorprofilercallback-interface.md) i [ICorProfilerCallback4](icorprofilercallback4-interface.md) , je metoda `SurvivingReferences2` volána před metodou [ICorProfilerCallback2:: SurvivingReferences –](icorprofilercallback2-survivingreferences-method.md) , ale pouze v případě, že se `SurvivingReferences2` vrátí úspěšně. Profilery mohou vracet hodnotu HRESULT, která označuje selhání metody `SurvivingReferences2`, aby se předešlo volání druhé metody.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -78,6 +78,6 @@ HRESULT SurvivingReferences2(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
-- [ICorProfilerCallback4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 – rozhraní](icorprofilercallback2-interface.md)
+- [ICorProfilerCallback4 – rozhraní](icorprofilercallback4-interface.md)
