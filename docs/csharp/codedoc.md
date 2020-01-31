@@ -1,15 +1,15 @@
 ---
 title: Dokumentace kódu s komentáři XML
 description: Naučte se dokumentovat kód pomocí dokumentačních komentářů XML a generovat soubor dokumentace XML v době kompilace.
-ms.date: 02/14/2017
+ms.date: 01/21/2020
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 6aa52030e20f61b26311347a57629658ebe0e609
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ef0d22e0ee7faa3ba51da6b44cf1827f19baf4f1
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713943"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787826"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Dokumentování kódu pomocí komentářů XML
 
@@ -169,6 +169,12 @@ Vytvořte neuspořádaný seznam každé matematické operace, kterou podporuje 
 [!code-csharp[List Tag](~/samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
 Seřazený seznam nebo tabulku můžete vytvořit tak, že změníte atribut `type` na `number` nebo `table`, v uvedeném pořadí.
+
+## <a name="inheritdoc"></a>\<inheritdoc >
+
+Můžete použít značku `<inheritdoc>` k dědění komentářů XML ze základních tříd, rozhraní a podobných metod. Tím se eliminuje nechtěné kopírování a vkládání duplicitních komentářů XML a automaticky se synchronizují komentáře XML.
+
+[!code-csharp-interactive[InheritDoc Tag](~/samples/snippets/csharp/concepts/codedoc/inheritdoc-tag.cs)]
 
 ### <a name="put-it-all-together"></a>Spojení všech součástí dohromady
 

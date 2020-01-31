@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 86d98f39-52e6-4c61-a625-9760f695ff12
 topic_type:
 - apiref
-ms.openlocfilehash: 33b72c8d089e5b335069fe465987086dfa1243bc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 15ce195af0c0e8f8777f6e5d02043e17e32308da
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445167"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866644"
 ---
 # <a name="icorprofilercallbackassemblyloadfinished-method"></a>ICorProfilerCallback::AssemblyLoadFinished – metoda
 Upozorní profileru, že bylo dokončeno načítání sestavení.  
@@ -33,13 +33,16 @@ HRESULT AssemblyLoadFinished(
     [in] HRESULT    hrStatus);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `assemblyId`  
- pro Identifikuje sestavení, které bylo načteno.  
-  
- `hrStatus`  
- pro Hodnota HRESULT, která označuje, zda bylo sestavení úspěšně načteno.  
-  
+## <a name="parameters"></a>Parametry
+
+- `assemblyId`
+
+  \[v] identifikuje načtené sestavení.
+
+- `hrStatus`
+
+  \[in] hodnota HRESULT, která označuje, zda bylo sestavení úspěšně načteno.
+
 ## <a name="remarks"></a>Poznámky  
  Hodnota `assemblyId` není platná pro požadavek na informace, dokud není volána metoda `AssemblyLoadFinished`.  
   
@@ -56,4 +59,4 @@ HRESULT AssemblyLoadFinished(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)

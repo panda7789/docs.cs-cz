@@ -1,5 +1,5 @@
 ---
-title: DacpReJitData Structure
+title: DacpReJitData – struktura
 ms.date: 02/01/2019
 api.name:
 - DacpReJitData Structure
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 77ef2c65157df4a033700bb8d0295875ede46554
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 46031f29da6916eeaeea863ebef6924a720d7155
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739110"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793819"
 ---
-# <a name="dacprejitdata-structure"></a>DacpReJitData Structure
+# <a name="dacprejitdata-structure"></a>DacpReJitData – struktura
 
-Definuje základní informace o dané metody instrumentována profileru.
+Definuje základní informace o dané metodě instrumentace profileru.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -52,20 +52,20 @@ struct MSLAYOUT DacpReJitData
 | Člen           | Popis                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------ |
 | `rejitID`        | Číslo revize ReJit pro metodu.                                                          |
-| `flags`          | Příznak označující aktuální stav metody instrumentace ReJit pro danou verzi. |
-| `NativeCodeAddr` | Základní adresa rejitted implementaci metody.                                         |
+| `flags`          | Příznak označující aktuální stav instrumentace ReJit metody pro danou verzi. |
+| `NativeCodeAddr` | Základní adresa implementace rejitted metody.                                         |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Pro použití je třeba definujte strukturu jak je uvedeno výše. Struktura musí být také definován pomocí `ms_struct` balení, není-li pomocí kompilátorů Microsoft.
+Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven. Pokud ho chcete použít, definujte strukturu, jak je uvedeno výše. Pokud nepoužíváte kompilátory od Microsoftu, musí být struktura také definovaná pomocí `ms_struct` balení.
 
 ## <a name="requirements"></a>Požadavky
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
-**Knihovna:** Žádný  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Hlavička:** NTato  
+**Knihovna:** NTato  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](index.md)
+- [Struktury pro ladění](debugging-structures.md)

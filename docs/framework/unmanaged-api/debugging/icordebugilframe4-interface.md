@@ -10,12 +10,12 @@ api_type:
 ms.assetid: 1e739183-3e05-49e5-846f-4075256e41de
 topic_type:
 - apiref
-ms.openlocfilehash: 010d73309ae21f9a593f72533691bdd95fbd4132
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7f1c5d7a6fdae3e4c5a66c9aa4a82911105f4597
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130853"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788495"
 ---
 # <a name="icordebugilframe4-interface"></a>Rozhraní ICorDebugILFrame4
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
@@ -26,12 +26,12 @@ ms.locfileid: "73130853"
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateLocalVariablesEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md)|Vrátí seznam místních proměnných dostupných v aktuálním rámci.|  
-|[GetCodeEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md)|Vrátí kód, na kterém je spuštěn tento rámec zásobníku.|  
-|[GetLocalVariableEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md)|Vrátí hodnotu lokální proměnné v rámci rámce IL.|  
+|[EnumerateLocalVariablesEx – metoda](icordebugilframe4-enumeratelocalvariablesex-method.md)|Vrátí seznam místních proměnných dostupných v aktuálním rámci.|  
+|[GetCodeEx – metoda](icordebugilframe4-getcodeex-method.md)|Vrátí kód, na kterém je spuštěn tento rámec zásobníku.|  
+|[GetLocalVariableEx – metoda](icordebugilframe4-getlocalvariableex-method.md)|Vrátí hodnotu lokální proměnné v rámci rámce IL.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tyto metody nabízejí funkce kromě těch, které poskytují metody [EnumerateLocalVariables –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-enumeratelocalvariables-method.md), [GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md)a [GetLocalVariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) . Každá metoda zahrnuje `flags` parametr, který určuje, zda jsou viditelné další lokální proměnné nebo kód definované žádostí ReJIT profileru.  
+ Tyto metody nabízejí funkce kromě těch, které poskytují metody [EnumerateLocalVariables –](icordebugilframe-enumeratelocalvariables-method.md), [GetCode](icordebugframe-getcode-method.md)a [GetLocalVariable –](icordebugilframe-getlocalvariable-method.md) . Každá metoda zahrnuje `flags` parametr, který určuje, zda jsou viditelné další lokální proměnné nebo kód definované žádostí ReJIT profileru.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -44,5 +44,5 @@ ms.locfileid: "73130853"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

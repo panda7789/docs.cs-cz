@@ -2,12 +2,12 @@
 title: 'ICorDebugSymbolProvider:: GetInstanceFieldSymbols – metoda'
 ms.date: 03/30/2017
 ms.assetid: a29b9233-ee67-4b53-b8bc-c00b281e7edb
-ms.openlocfilehash: 0ad8ddd78d963681c0b2f69bf0f211ad464dc7b7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9c55ce4d36681e173047cfb51515a74899c5a9fe
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138873"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791637"
 ---
 # <a name="icordebugsymbolprovidergetinstancefieldsymbols-method"></a>ICorDebugSymbolProvider:: GetInstanceFieldSymbols – metoda
 Načte symboly pole instance, které odpovídají token TypeSpec podpisu.  
@@ -38,7 +38,7 @@ HRESULT GetInstanceFieldSymbols(
  mimo Ukazatel na počet symbolů načtených metodou.  
   
  `pSymbols`  
- mimo Ukazatel na pole [ICorDebugStaticFieldSymbol](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md) , které obsahuje symboly pole požadované instance.  
+ mimo Ukazatel na pole [ICorDebugStaticFieldSymbol](icordebugstaticfieldsymbol-interface.md) , které obsahuje symboly pole požadované instance.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -56,6 +56,6 @@ HRESULT GetInstanceFieldSymbols(
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetStaticFieldSymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getstaticfieldsymbols-method.md)
-- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [GetStaticFieldSymbols – metoda](icordebugsymbolprovider-getstaticfieldsymbols-method.md)
+- [ICorDebugSymbolProvider – rozhraní](icordebugsymbolprovider-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 86c397c3-81d8-463e-a248-3cbe06c44d9d
 topic_type:
 - apiref
-ms.openlocfilehash: 84b5da043f9bd437ee9099135ba865c1ab23bb9d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 81993f108ae9b59300b5d29402d7a423c3657757
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129659"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792438"
 ---
 # <a name="icordebugprocess5enumerategcreferences-method"></a>ICorDebugProcess5::EnumerateGCReferences – metoda
 Získá enumerátor pro všechny objekty, které mají být v procesu shromažďovány jako uvolňování paměti.  
@@ -39,7 +39,7 @@ HRESULT EnumerateGCReferences(
  pro Logická hodnota, která určuje, zda mají být také vyčísleny slabé odkazy. Pokud je `enumerateWeakReferences` `true`, enumerátor `ppEnum` zahrnuje silné odkazy i slabé odkazy. Pokud je `enumerateWeakReferences` `false`, enumerátor zahrnuje pouze silné odkazy.  
   
  `ppEnum`  
- mimo Ukazatel na adresu [ICorDebugGCReferenceEnum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , která je enumerátorem pro objekty, které mají být shromážděny z paměti.  
+ mimo Ukazatel na adresu [ICorDebugGCReferenceEnum –](icordebuggcreferenceenum-interface.md) , která je enumerátorem pro objekty, které mají být shromážděny z paměti.  
   
 ## <a name="remarks"></a>Poznámky  
  Tato metoda poskytuje způsob, jak určit úplný kořenový řetězec pro jakýkoli spravovaný objekt v procesu a který lze použít k určení, proč je objekt stále aktivní.  
@@ -55,5 +55,5 @@ HRESULT EnumerateGCReferences(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5 – rozhraní](icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

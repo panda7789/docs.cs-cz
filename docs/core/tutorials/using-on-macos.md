@@ -2,12 +2,12 @@
 title: 'Kurz: vytvoření řešení .NET Core v macOS pomocí Visual Studio Code'
 description: Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pomocí Visual Studio Code.
 ms.date: 12/19/2019
-ms.openlocfilehash: 4dc44a0aa155dca3c106a7da68cf100ef644b58b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e3c210d4391c0e3c9c3455ecf23dd138abdb4363
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715305"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741542"
 ---
 # <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Kurz: vytvoření řešení .NET Core v macOS pomocí Visual Studio Code
 
@@ -28,7 +28,7 @@ Nainstalujte Visual Studio Code C# rozšíření otevřením Visual Studio Code 
 
 V tomto kurzu vytvoříte tři projekty: projekt knihovny, testy pro daný projekt knihovny a konzolovou aplikaci, která využívá knihovnu. Zdroj pro tento článek můžete [Zobrazit nebo stáhnout](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) v úložišti dotnet/Samples na GitHubu. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Spusťte Visual Studio Code. Stiskněte <kbd>Ctrl</kbd>+<kbd>\`</kbd> (znaková uvozovka nebo znak počátečního znaku) nebo vyberte **Zobrazit > terminálu** z nabídky a otevřete vložený terminál v Visual Studio Code. Můžete otevřít externí prostředí pomocí Průzkumníka **otevřít v příkazu příkazového řádku** (**otevřít v terminálu** na Macu nebo Linux), pokud dáváte přednost práci mimo Visual Studio Code.
+Spusťte Visual Studio Code. Stisknutím <kbd>kombinace kláves Ctrl</kbd> <kbd>\`</kbd> (znaková uvozovka nebo počáteční značka) nebo výběrem **Zobrazit** > **terminálu** z nabídky otevřete vložený terminál v Visual Studio Code. Můžete otevřít externí prostředí pomocí Průzkumníka **otevřít v příkazu příkazového řádku** (**otevřít v terminálu** na MacOS nebo Linux), pokud upřednostňujete práci mimo Visual Studio Code.
 
 Začněte vytvořením souboru řešení, který slouží jako kontejner pro jeden nebo více projektů .NET Core. V terminálu spusťte příkaz [`dotnet new`](../tools/dotnet-new.md) a vytvořte nový řešení *zlatý. sln* uvnitř nové složky s názvem *zlatá*:
 
@@ -142,7 +142,8 @@ namespace TestApp
     public class LibraryTests
     {
         [Fact]
-        public void TestThing() {
+        public void TestThing()
+        {
             Assert.NotEqual(42, new Thing().Get(19, 23));
         }
     }
@@ -211,7 +212,7 @@ dotnet run -p app/app.csproj
 
 Nastavte zarážku na příkaz `WriteLine` v metodě `Main`. Provedete to tak, že stisknete klávesu <kbd>Fn</kbd>+<kbd>F9</kbd> , když se ukazatel myši nachází na `WriteLine` řádku, nebo kliknutím na myš v levém okraji na řádku, kde chcete nastavit zarážku. Na okraji vedle řádku kódu se zobrazí červené kolečko. Při dosažení zarážky se spuštění kódu zastaví *před* provedením řádku zarážky.
 
-Otevřete kartu ladicí program výběrem ikony ladění na panelu nástrojů Visual Studio Code, výběrem možnosti **zobrazit > ladění** na panelu nabídek nebo pomocí <kbd>příkazu</kbd> klávesové zkratky+<kbd>SHIFT</kbd>+<kbd>D</kbd>:
+Otevřete kartu ladicí program výběrem ikony ladění na panelu nástrojů Visual Studio Code a výběrem možnosti **Zobrazit** > **ladění** z řádku nabídek nebo pomocí klávesové zkratky <kbd>&#8679;</kbd> <kbd>&#8984;</kbd> <kbd>D</kbd>:
 
 ![Ladicí program Visual Studio Code](./media/using-on-macos/visual-studio-code-debugger.png)
 

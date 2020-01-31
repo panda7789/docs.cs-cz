@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
 topic_type:
 - apiref
-ms.openlocfilehash: 0fbff178efd4d0dff3593907b3d40e946be2ff6e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 15900fab59d172ada67d8aefeab698e1b44f808e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121295"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794393"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList – metoda
 Poskytuje uspořádaný seznam vláken, která jsou zařazená do fronty pro událost přidruženou ke zámku monitoru.  
@@ -50,7 +50,7 @@ HRESULT GetMonitorEventWaitList (
 ## <a name="remarks"></a>Poznámky  
  Prvním vláknem v seznamu je první vlákno, které je vydané při příštím volání <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Další vlákno v seznamu se uvolní při následujícím volání, a tak dále.  
   
- Pokud seznam není prázdný, vrátí tato metoda hodnotu S_OK. Pokud je seznam prázdný, vrátí metoda S_FALSE; v tomto případě je výčet stále platný, i když je prázdný.  
+ Pokud seznam není prázdný, vrátí tato metoda S_OK. Pokud je seznam prázdný, metoda vrátí S_FALSE; v tomto případě je výčet stále platný, i když je prázdný.  
   
  V obou případech je rozhraní výčtu použitelné pouze pro dobu trvání aktuálního synchronizovaného stavu. Nicméně rozhraní vlákna, která jsou z něj, jsou platná až do ukončení vlákna.  
   
@@ -69,5 +69,5 @@ HRESULT GetMonitorEventWaitList (
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

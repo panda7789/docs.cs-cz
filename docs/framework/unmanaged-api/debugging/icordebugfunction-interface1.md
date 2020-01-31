@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 783faea9-8083-41c1-b04a-51a81ac4c8f3
 topic_type:
 - apiref
-ms.openlocfilehash: eb2b1e218314be01898ce90c4378fb713f9bf6ba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ba0e0b1b2bac785e28f41e09dda74841121a748d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137855"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794507"
 ---
 # <a name="icordebugfunction-interface"></a>ICorDebugFunction – rozhraní
 
@@ -29,17 +29,17 @@ Představuje spravovanou funkci nebo metodu.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-createbreakpoint-method.md)|Vytvoří zarážku na začátku této funkce.|  
-|[GetClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getclass-method.md)|Získá objekt ICorDebugClass, který představuje třídu, na kterou je tato funkce členem.|  
-|[GetCurrentVersionNumber – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getcurrentversionnumber-method.md)|Získá číslo verze poslední úpravy provedené u této funkce.|  
-|[GetILCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getilcode-method.md)|Získá kód jazyka MSIL (Microsoft Intermediate Language) pro tuto funkci.|  
-|[GetLocalVarSigToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getlocalvarsigtoken-method.md)|Získá token metadat pro místní proměnnou signaturu funkce, která je reprezentovaná touto instancí `ICorDebugFunction`.|  
-|[GetModule – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getmodule-method.md)|Získá modul, ve kterém je tato funkce definovaná.|  
-|[GetNativeCode – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getnativecode-method.md)|Získá nativní kód pro tuto funkci.|  
-|[GetToken – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-gettoken-method.md)|Získá token metadat pro tuto funkci.|  
+|[CreateBreakpoint – metoda](icordebugfunction-createbreakpoint-method.md)|Vytvoří zarážku na začátku této funkce.|  
+|[GetClass – metoda](icordebugfunction-getclass-method.md)|Získá objekt ICorDebugClass, který představuje třídu, na kterou je tato funkce členem.|  
+|[GetCurrentVersionNumber – metoda](icordebugfunction-getcurrentversionnumber-method.md)|Získá číslo verze poslední úpravy provedené u této funkce.|  
+|[GetILCode – metoda](icordebugfunction-getilcode-method.md)|Získá kód jazyka MSIL (Microsoft Intermediate Language) pro tuto funkci.|  
+|[GetLocalVarSigToken – metoda](icordebugfunction-getlocalvarsigtoken-method.md)|Získá token metadat pro místní proměnnou signaturu funkce, která je reprezentovaná touto instancí `ICorDebugFunction`.|  
+|[GetModule – metoda](icordebugfunction-getmodule-method.md)|Získá modul, ve kterém je tato funkce definovaná.|  
+|[GetNativeCode – metoda](icordebugfunction-getnativecode-method.md)|Získá nativní kód pro tuto funkci.|  
+|[GetToken – metoda](icordebugfunction-gettoken-method.md)|Získá token metadat pro tuto funkci.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní `ICorDebugFunction` nepředstavuje funkci s parametry obecného typu. Například instance `ICorDebugFunction` by představovala `Func<T>`, ale ne `Func<string>`. Chcete-li získat parametry obecného typu, zavolejte [ICorDebugILFrame2:: EnumerateTypeParameters –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md) .  
+ Rozhraní `ICorDebugFunction` nepředstavuje funkci s parametry obecného typu. Například instance `ICorDebugFunction` by představovala `Func<T>`, ale ne `Func<string>`. Chcete-li získat parametry obecného typu, zavolejte [ICorDebugILFrame2:: EnumerateTypeParameters –](icordebugilframe2-enumeratetypeparameters-method.md) .  
   
  Vztah mezi tokenem metadat metody, `mdMethodDef`a objektem `ICorDebugFunction` metody je závislý na tom, zda je povolena funkce upravit a pokračovat pro funkci:  
   
@@ -61,4 +61,4 @@ Představuje spravovanou funkci nebo metodu.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

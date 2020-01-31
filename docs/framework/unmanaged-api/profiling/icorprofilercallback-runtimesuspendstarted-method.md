@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8461cac-e31b-4efa-ad2c-26598173eb96
 topic_type:
 - apiref
-ms.openlocfilehash: 1777fa1f2537b6d28d771661ca463564d74d8550
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e88f6356c2e29a1d8a9e49527c5921e8155c3ce4
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433510"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865880"
 ---
 # <a name="icorprofilercallbackruntimesuspendstarted-method"></a>ICorProfilerCallback::RuntimeSuspendStarted – metoda
 Upozorní profileru, že modul runtime chystá pozastavit všechny běhové vlákna.  
@@ -34,7 +34,7 @@ HRESULT RuntimeSuspendStarted(
   
 ## <a name="parameters"></a>Parametry  
  `suspendReason`  
- pro Hodnota výčtu [COR_PRF_SUSPEND_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md) , která označuje důvod pro pozastavení.  
+ pro Hodnota výčtu [COR_PRF_SUSPEND_REASON](cor-prf-suspend-reason-enumeration.md) , která označuje důvod pro pozastavení.  
   
 ## <a name="remarks"></a>Poznámky  
  Všechna vlákna modulu runtime, která jsou v nespravovaném kódu, mohou pokračovat v běhu, dokud se nepokusí znovu zadat modul runtime. V tomto okamžiku se také pozastaví, dokud modul runtime nebude pokračovat. To platí také pro nová vlákna, která vstupují do modulu runtime. Všechna vlákna v modulu runtime jsou buď okamžitě pozastavena, pokud jsou již v kódu přerušitelné, nebo jsou požádány o pozastavení, když dosáhnou přerušitelné kódu.  
@@ -50,6 +50,6 @@ HRESULT RuntimeSuspendStarted(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [RuntimeSuspendAborted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendaborted-method.md)
-- [RuntimeSuspendFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [RuntimeSuspendAborted – metoda](icorprofilercallback-runtimesuspendaborted-method.md)
+- [RuntimeSuspendFinished – metoda](icorprofilercallback-runtimesuspendfinished-method.md)

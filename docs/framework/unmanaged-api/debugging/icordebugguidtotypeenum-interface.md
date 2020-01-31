@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa32b12b-05fc-4ea8-a904-adae25034269
 topic_type:
 - apiref
-ms.openlocfilehash: da921644c4d967efb0d88060ada0332c5eb63965
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2663e5604cdd55472cc148b2d2b38599df81f11e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138535"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794443"
 ---
 # <a name="icordebugguidtotypeenum-interface"></a>ICorDebugGuidToTypeEnum – rozhraní
 Poskytuje enumerátor definující mapování mezi sadou identifikátorů GUID a jejich odpovídajícími typy, které jsou reprezentovány instancemi ICorDebugType. Toto rozhraní dědí metody z rozhraní ICorDebugEnum.  
@@ -28,10 +28,10 @@ Poskytuje enumerátor definující mapování mezi sadou identifikátorů GUID a
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ICorDebugGuidToTypeEnum –:: Next](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-next-method.md)|Získá zadaný počet instancí [CorDebugGuidToTypeMapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) , které mapují identifikátory GUID na informace typu.|  
+|[ICorDebugGuidToTypeEnum –:: Next](icordebugguidtotypeenum-next-method.md)|Získá zadaný počet instancí [CorDebugGuidToTypeMapping –](cordebugguidtotypemapping-structure.md) , které mapují identifikátory GUID na informace typu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Objekt rozhraní `ICorDebugGuidToTypeEnum` lze načíst voláním metody [ICorDebugAppDomain3:: GetCachedWinRTTypes –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypes-method.md) . Ladicí program může zavolat [následující](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-next-method.md) metodu rozhraní k načtení objektů [CorDebugGuidToTypeMapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) , které představují mapování spravovaných typů prostředí Windows Runtimeů načtených v doméně aplikace používané pro volání [ ICorDebugAppDomain3:: GetCachedWinRTTypes – –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypes-method.md) metoda  
+ Objekt rozhraní `ICorDebugGuidToTypeEnum` lze načíst voláním metody [ICorDebugAppDomain3:: GetCachedWinRTTypes –](icordebugappdomain3-getcachedwinrttypes-method.md) . Ladicí program může zavolat metodu [Next](icordebugguidtotypeenum-next-method.md) tohoto rozhraní k načtení objektů [CorDebugGuidToTypeMapping –](cordebugguidtotypemapping-structure.md) , které představují mapování spravovaných typů prostředí Windows Runtimeů načtených v doméně aplikace používané pro volání metody [ICorDebugAppDomain3:: GetCachedWinRTTypes –](icordebugappdomain3-getcachedwinrttypes-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** prostředí Windows Runtime  
@@ -44,4 +44,4 @@ Poskytuje enumerátor definující mapování mezi sadou identifikátorů GUID a
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

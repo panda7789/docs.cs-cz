@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bce1dcf8-b4ec-4e73-a917-f2df1ad49c8a
 topic_type:
 - apiref
-ms.openlocfilehash: 32e63a6d2b6f739025d4c5558c16fe2d74fde73c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 99e473268fd0d5bb8ce120b97576277949b86508
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449861"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868994"
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
 
@@ -55,7 +55,7 @@ pro Pole struktur COR_IL_MAP, z nichž každý Určuje posun MSIL.
 
 ## <a name="remarks"></a>Poznámky
 
-Profiler často vkládá příkazy v rámci zdrojového kódu metody pro instrumentaci této metody (například pro oznámení, když je dosaženo daného řádku zdroje). `SetILInstrumentedCodeMap` umožňuje profileru mapovat původní instrukce MSIL na jejich nová umístění. Profiler může pomocí metody [ICorProfilerInfo:: GetILToNativeMapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) získat původní posun MSIL pro daný nativní posun.
+Profiler často vkládá příkazy v rámci zdrojového kódu metody pro instrumentaci této metody (například pro oznámení, když je dosaženo daného řádku zdroje). `SetILInstrumentedCodeMap` umožňuje profileru mapovat původní instrukce MSIL na jejich nová umístění. Profiler může pomocí metody [ICorProfilerInfo:: GetILToNativeMapping –](icorprofilerinfo-getiltonativemapping-method.md) získat původní posun MSIL pro daný nativní posun.
 
 Ladicí program předpokládá, že každý starý posun odkazuje na posun MSIL v rámci původního, neupraveného kódu MSIL a že každý nový posun odkazuje na posun MSIL v rámci nového, instrumentované kódu. Mapa by se měla seřadit ve vzestupném pořadí. Chcete-li, aby krokování fungovalo správně, postupujte podle těchto pokynů:
 
@@ -97,4 +97,4 @@ V .NET Framework 3,5 a předchozích verzích přidělíte `rgILMapEntries` pole
 
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)

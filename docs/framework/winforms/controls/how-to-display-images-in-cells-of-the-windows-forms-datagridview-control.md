@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView'
+title: Zobrazení obrázků v buňkách ovládacího prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,21 +10,21 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], displaying images
 - data grids [Windows Forms], displaying images in cells
 ms.assetid: 53b13d31-1b56-476d-9ab4-18bfac138a22
-ms.openlocfilehash: e3a4c395e86e4091d8344bebcf99ee04474f3295
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e0e125c816877875b80e0f20887d9beee443577a
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609934"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740287"
 ---
 # <a name="how-to-display-images-in-cells-of-the-windows-forms-datagridview-control"></a>Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView
-Obrázek nebo obrázek je jedna z hodnot zobrazených dat za sebou. Často tyto grafiky podobu zaměstnance fotografie nebo logo společnosti.  
+Obrázek nebo obrázek je jednou z hodnot, které lze zobrazit v řádku dat. Tyto grafiky mají často formu fotografie zaměstnance nebo loga společnosti.  
   
- Zahrnutí obrázky je jednoduché, pokud zobrazení dat v rámci <xref:System.Windows.Forms.DataGridView> ovládacího prvku. <xref:System.Windows.Forms.DataGridView> Nativně zpracovává všechny formát obrázku, který podporuje ovládací prvek <xref:System.Drawing.Image> třídy, jakož i OLE obrázek formát používaný některé databáze.  
+ Zahrnutí obrázků je jednoduché při zobrazení dat v ovládacím prvku <xref:System.Windows.Forms.DataGridView>. Ovládací prvek <xref:System.Windows.Forms.DataGridView> nativně zpracovává libovolný formát obrázku podporovaný <xref:System.Drawing.Image> třídou a také formát obrázku OLE používaný některými databázemi.  
   
- Pokud <xref:System.Windows.Forms.DataGridView> zdroj dat ovládacího prvku má sloupec bitových kopií, budou automaticky zobrazeny <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+ Pokud zdroj dat ovládacího prvku <xref:System.Windows.Forms.DataGridView> obsahuje sloupec obrázků, bude automaticky zobrazen pomocí ovládacího prvku <xref:System.Windows.Forms.DataGridView>.  
   
- Následující příklad kódu ukazuje, jak extrahovat ikonu ze vloženého prostředku a převod na rastrový obrázek pro zobrazení v každé buňce sloupce obrázku. Další příklad, který nahradí hodnoty textovou buňky odpovídající Image, najdete v části [jak: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
+ Následující příklad kódu ukazuje, jak extrahovat ikonu z vloženého zdroje a převést ji na rastrový obrázek pro zobrazení v každé buňce sloupce obrázku. Další příklad, který nahradí hodnoty textové buňky odpovídajícími obrázky, naleznete v tématu [How to: Customizing Data Formatting in model Windows Forms DataGridView Control](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridViewMisc#050](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#050)]
@@ -33,11 +33,11 @@ Obrázek nebo obrázek je jedna z hodnot zobrazených dat za sebou. Často tyto 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
-- Na ikonu vloženého prostředek s názvem `tree.ico`.  
+- Vložený prostředek ikony s názvem `tree.ico`.  
   
-- Odkazy <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, a <xref:System.Drawing?displayProperty=nameWithType> sestavení.  
+- Odkazy na sestavení <xref:System?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>a <xref:System.Drawing?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

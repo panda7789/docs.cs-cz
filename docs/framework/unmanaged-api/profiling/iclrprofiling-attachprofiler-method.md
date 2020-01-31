@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-ms.openlocfilehash: 25c208c98802be540bde7532c53798e6f7b35446
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 29aecd530d18b931420467e9127bcbf96d3a4a5f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445948"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866761"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler – metoda
 Připojí zadaný profiler k zadanému procesu.  
@@ -37,25 +37,32 @@ HRESULT AttachProfiler(
   [in] UINT cbClientData);                          // optional  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `dwProfileeProcessID`  
- pro ID procesu procesu, ke kterému má být profiler připojen. Na 64ovém počítači musí bitová verze procesu profilace odpovídat bitová verze procesu triggeru, který volá `AttachProfiler`. Pokud uživatelský účet, pod kterým je `AttachProfiler` volána, má oprávnění správce, cílový proces může být jakýkoli proces v systému. Jinak cílový proces musí být vlastněn stejným uživatelským účtem.  
+## <a name="parameters"></a>Parametry
+
+- `dwProfileeProcessID`
+
+  \[v] ID procesu procesu, ke kterému se má profiler připojit. Na 64ovém počítači musí bitová verze procesu profilace odpovídat bitová verze procesu triggeru, který volá `AttachProfiler`. Pokud uživatelský účet, pod kterým je `AttachProfiler` volána, má oprávnění správce, cílový proces může být jakýkoli proces v systému. Jinak cílový proces musí být vlastněn stejným uživatelským účtem.
+
+- `dwMillisecondsMax`
+
+  \[] časový interval pro `AttachProfiler` dokončení v milisekundách. Proces triggeru by měl projít časovým limitem, který by měl být dostatečný pro konkrétní profiler k dokončení inicializace.
   
- `dwMillisecondsMax`  
- pro Doba, po kterou se `AttachProfiler` dokončí v milisekundách. Proces triggeru by měl projít časovým limitem, který by měl být dostatečný pro konkrétní profiler k dokončení inicializace.  
-  
- `pClsidProfiler`  
- pro Ukazatel na identifikátor CLSID profileru, který má být načten. Proces triggeru může tuto paměť znovu použít po vrácení `AttachProfiler`.  
-  
- `wszProfilerPath`  
- pro Úplná cesta k souboru DLL profileru, který se má načíst. Řetězec nesmí obsahovat více než 260 znaků, včetně ukončovacího znaku null. Pokud je `wszProfilerPath` null nebo prázdný řetězec, modul CLR (Common Language Runtime) se pokusí najít umístění souboru DLL profileru hledáním v registru pro identifikátor CLSID, na který `pClsidProfiler` odkazuje.  
-  
- `pvClientData`  
- pro Ukazatel na data, která mají být předána do profileru metodou [ICorProfilerCallback3:: InitializeForAttach –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) . Proces triggeru může tuto paměť znovu použít po vrácení `AttachProfiler`. Pokud je `pvClientData` null, `cbClientData` musí mít hodnotu 0 (nula).  
-  
- `cbClientData`  
- pro Velikost dat, která `pvClientData` odkazuje, v bajtech.  
-  
+- `pClsidProfiler`
+
+  \[in] ukazatel na identifikátor CLSID profileru, který se má načíst. Proces triggeru může tuto paměť znovu použít po vrácení `AttachProfiler`.
+
+- `wszProfilerPath`
+
+  \[v] Úplná cesta k souboru DLL profileru, který se má načíst. Řetězec nesmí obsahovat více než 260 znaků, včetně ukončovacího znaku null. Pokud je `wszProfilerPath` null nebo prázdný řetězec, modul CLR (Common Language Runtime) se pokusí najít umístění souboru DLL profileru hledáním v registru pro identifikátor CLSID, na který `pClsidProfiler` odkazuje.
+
+- `pvClientData`
+
+  \[in] ukazatel na data, která mají být předána do profileru metodou [ICorProfilerCallback3:: InitializeForAttach –](icorprofilercallback3-initializeforattach-method.md) . Proces triggeru může tuto paměť znovu použít po vrácení `AttachProfiler`. Pokud je `pvClientData` null, `cbClientData` musí mít hodnotu 0 (nula).
+
+- `cbClientData`
+
+  \[] velikost dat, která `pvClientData` odkazuje, v bajtech.
+
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrací následující hodnoty HRESULT.  
   
@@ -72,7 +79,7 @@ HRESULT AttachProfiler(
 |HRESULT_FROM_WIN32(ERROR_TIMEOUT)|Vypršel časový limit bez začátku načítání profileru. Operaci připojení můžete opakovat. K vypršení časového limitu dojde, když finalizační metoda v cílovém procesu běží delší dobu než hodnota časového limitu.|  
 |E_INVALIDARG|Jeden nebo více parametrů má neplatné hodnoty.|  
 |E_FAIL|V některých případech došlo k nespecifikovanému selhání.|  
-|Další kódy chyb|Pokud metoda [ICorProfilerCallback3:: InitializeForAttach –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) profileru vrátí hodnotu HRESULT, která indikuje chybu, `AttachProfiler` vrátí stejnou hodnotu HRESULT. V tomto případě je E_NOTIMPL převést na CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
+|Další kódy chyb|Pokud metoda [ICorProfilerCallback3:: InitializeForAttach –](icorprofilercallback3-initializeforattach-method.md) profileru vrátí hodnotu HRESULT, která indikuje chybu, `AttachProfiler` vrátí stejnou hodnotu HRESULT. V tomto případě je E_NOTIMPL převést na CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -90,7 +97,7 @@ HRESULT AttachProfiler(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ICorProfilerInfo3 – rozhraní](icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

@@ -2,21 +2,21 @@
 title: Rozhraní ICorDebugDataTarget3
 ms.date: 03/30/2017
 ms.assetid: f477af85-994f-4df0-ae78-404ed252bf49
-ms.openlocfilehash: 5f91db291396589a916933bdc7c2a2390dd61a5d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 04e7b9a064d4a06a06b8a1518f06092ba79a3561
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136671"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783493"
 ---
 # <a name="icordebugdatatarget3-interface"></a>Rozhraní ICorDebugDataTarget3
-Logicky rozšiřuje rozhraní [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) , aby poskytovala informace o načtených modulech.  
+Logicky rozšiřuje rozhraní [ICorDebugDataTarget](icordebugdatatarget-interface.md) , aby poskytovala informace o načtených modulech.  
   
 ## <a name="method"></a>Metoda  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetLoadedModules – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-getloadedmodules-method.md)|Načte seznam modulů, které byly doposud načteny.|  
+|[GetLoadedModules – metoda](icordebugdatatarget3-getloadedmodules-method.md)|Načte seznam modulů, které byly doposud načteny.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -34,5 +34,5 @@ Logicky rozšiřuje rozhraní [ICorDebugDataTarget](../../../../docs/framework/u
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

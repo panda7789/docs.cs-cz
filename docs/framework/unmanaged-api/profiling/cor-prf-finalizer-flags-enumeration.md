@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 297d7721-3911-4f36-9e34-d9da0c33e22a
 topic_type:
 - apiref
-ms.openlocfilehash: 5e718d05f033cc46fa460a81f6816a13ec32476d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: daca2849908a7798b588ff06f6e117d412db1b33
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428344"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867266"
 ---
 # <a name="cor_prf_finalizer_flags-enumeration"></a>COR_PRF_FINALIZER_FLAGS – výčet
 Popisuje finalizační metodu objektu.  
@@ -32,14 +32,14 @@ typedef enum {
 } COR_PRF_FINALIZER_FLAGS;  
 ```  
   
-## <a name="members"></a>Members  
+## <a name="members"></a>Členové  
   
 |Člen|Popis|  
 |------------|-----------------|  
 |`COR_PRF_FINALIZER_CRITICAL`|Finalizační metoda je kritická.|  
   
 ## <a name="remarks"></a>Poznámky  
- Výčet `COR_PRF_FINALIZER_FLAGS` používá metoda [ICorProfilerCallback2:: FinalizeableObjectQueued –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-finalizeableobjectqueued-method.md) k popisu finalizační metody objektu.  
+ Výčet `COR_PRF_FINALIZER_FLAGS` používá metoda [ICorProfilerCallback2:: FinalizeableObjectQueued –](icorprofilercallback2-finalizeableobjectqueued-method.md) k popisu finalizační metody objektu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -52,4 +52,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Výčty pro profilaci](profiling-enumerations.md)

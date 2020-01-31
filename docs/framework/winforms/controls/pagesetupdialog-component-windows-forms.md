@@ -1,5 +1,5 @@
 ---
-title: PageSetupDialog – komponenta (Windows Forms)
+title: Komponenta PageSetupDialog
 ms.date: 03/30/2017
 helpviewer_keywords:
 - printing [Windows Forms], page setup
@@ -19,33 +19,31 @@ helpviewer_keywords:
 - page header
 - printing [Windows Forms], headers and footers
 ms.assetid: 1c7ccb02-ac62-4fc8-8e4f-c67b01a86802
-ms.openlocfilehash: 93d5466c1f528ea3c8fa360222f046b0c2672fa6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 59c5599aa5d36e61b89e1a67ac3064d2c8358206
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012695"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868067"
 ---
 # <a name="pagesetupdialog-component-windows-forms"></a>PageSetupDialog – komponenta (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.PageSetupDialog> komponenta je předem nakonfigurované dialogové okno používá k nastavení stránky podrobností pro tisk v aplikacích založených na Windows. Použití v rámci aplikace založené na Windows jako jednoduché řešení pro uživatele nastavit předvolby stránky namísto dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí a na výšku a šířku. Pomocí standardní dialogová okna Windows, můžete vytvořit aplikace, jejichž základní funkce je okamžitě uživatelé znají.  
+Součást model Windows Forms <xref:System.Windows.Forms.PageSetupDialog> je předem nakonfigurovaným dialogovým oknem použitým k nastavení podrobností o tisku v aplikacích založených na systému Windows. Použijte ji v aplikaci pro Windows jako jednoduché řešení pro uživatele, aby se místo konfigurace vlastního dialogového okna nastavily předvolby stránky. Uživatelům můžete umožnit, aby nastavili úpravy okrajů a okrajů, záhlaví a zápatí a orientaci na výšku vs. Když se spoléháte na standardní dialogová okna systému Windows, vytvoříte aplikace, jejichž základní funkce je pro uživatele okamžitě známa.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty PageSetupDialog](pagesetupdialog-component-overview-windows-forms.md)  
- Představuje obecné koncepty <xref:System.Windows.Forms.PageSetupDialog> součást, kterou můžete použít k zobrazení předem nakonfigurované dialogové okno, které mohou uživatelé použít k manipulaci s nastavení stránky.  
+ Zavádí obecné koncepty <xref:System.Windows.Forms.PageSetupDialog> komponenty, které lze použít k zobrazení předem nakonfigurovaného dialogového okna, které mohou uživatelé použít k manipulaci s nastavením stránky.  
   
  [Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog](how-to-determine-page-properties-using-the-pagesetupdialog-component.md)  
- Vysvětluje, jak nastavit vlastnosti stránky pomocí instance <xref:System.Windows.Forms.PageSetupDialog> komponentu v době běhu.  
+ Vysvětluje, jak nastavit vlastnosti stránky pomocí instance komponenty <xref:System.Windows.Forms.PageSetupDialog> v době běhu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.PageSetupDialog>  
- Poskytuje referenční informace o třídě a její členy.  
+ Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
+ Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
   
  [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)  
- Popisuje sadu ovládacích prvků a komponent, které umožňují uživatelům provádět standardní interakce s aplikací nebo systému.  
-  
- [Základní kód pro Windows Forms dialogová okna](https://go.microsoft.com/fwlink/?LinkID=102575)  
- Tento článek popisuje ovládací prvky Windows Forms dialogového okna pole a komponent a kódu potřebného pro spouštěním svých základních funkcí. (Technického článku MSDN Online Library)
+ Popisuje sadu ovládacích prvků a komponent, které uživatelům umožňují provádět standardní interakce s aplikací nebo systémem.
+ 

@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 47dbaea4-8857-462e-93ba-fff880fc9e50
 topic_type:
 - apiref
-ms.openlocfilehash: 6c159780b9019127d166e8437ea4ed214284011f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9153503fc114b0e4052265fca7c9399510d687ef
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121267"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792324"
 ---
 # <a name="icordebugprocess5gettypeid-method"></a>ICorDebugProcess5::GetTypeID – metoda
-Převede adresu objektu na identifikátor [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) .  
+Převede adresu objektu na identifikátor [COR_TYPEID](cor-typeid-structure.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ HRESULT GetTypeID(
  pro Adresa objektu.  
   
  `pId`  
- Ukazatel na hodnotu [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) , která identifikuje objekt.  
+ Ukazatel na hodnotu [COR_TYPEID](cor-typeid-structure.md) , která identifikuje objekt.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -56,5 +56,5 @@ HRESULT GetTypeID(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5 – rozhraní](icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

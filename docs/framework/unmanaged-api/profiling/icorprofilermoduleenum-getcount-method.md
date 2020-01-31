@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f0a4a5e0-4689-474b-b0f4-37ca0639c918
 topic_type:
 - apiref
-ms.openlocfilehash: 9aaf1a282435e3f52b2c2d8f3d17254b877e61cc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 772a7c08c934fda59a2764e1fbe22d3d2b08a620
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442765"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861499"
 ---
 # <a name="icorprofilermoduleenumgetcount-method"></a>ICorProfilerModuleEnum::GetCount – metoda
 Získá počet spravovaných modulů, které byly načteny do aplikace.  
@@ -46,5 +46,5 @@ HRESULT GetCount([out] ULONG * pcelt);
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerModuleEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerModuleEnum – rozhraní](icorprofilermoduleenum-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)

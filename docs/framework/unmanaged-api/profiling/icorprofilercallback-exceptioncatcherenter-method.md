@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 41462329-a648-46f0-ae6d-728b94c31aa9
 topic_type:
 - apiref
-ms.openlocfilehash: 9c9cd0b042dc22f35c38e349ab8881dafc602731
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 534e0672820cc2509f32765274ad970fda69ec5d
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445017"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866504"
 ---
 # <a name="icorprofilercallbackexceptioncatcherenter-method"></a>ICorProfilerCallback::ExceptionCatcherEnter – metoda
 Upozorní profiler, že řízení probíhá předává příslušnému `catch`mu bloku.  
@@ -33,13 +33,16 @@ HRESULT ExceptionCatcherEnter(
     [in] ObjectID   objectId);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `functionId`  
- pro Identifikátor funkce obsahující blok `catch`.  
+## <a name="parameters"></a>Parametry
+
+- `functionId`
+
+  \[in] identifikátor funkce obsahující `catch` bloku.
   
- `objectId`  
- pro Identifikátor zpracovávané výjimky.  
-  
+- `objectId`
+
+  \[in] identifikátor zpracovávané výjimky.
+
 ## <a name="remarks"></a>Poznámky  
  Metoda `ExceptionCatcherEnter` je volána pouze v případě, že je bod catch v kódu kompilován s kompilátorem JIT (just-in-time). Výjimka, která je zachycena v nespravovaném kódu nebo v interním kódu modulu runtime, nebude volat toto oznámení. Hodnota `objectId` je znovu předána, protože uvolňování paměti mohlo přesunout objekt od posledního oznámení `ExceptionThrown`.  
   
@@ -58,5 +61,5 @@ HRESULT ExceptionCatcherEnter(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionCatcherLeave – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [ExceptionCatcherLeave – metoda](icorprofilercallback-exceptioncatcherleave-method.md)

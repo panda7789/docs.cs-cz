@@ -5,16 +5,16 @@ author: thraka
 ms.date: 12/10/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: a4723d6d63c5739123fad774bc75fae7c9fd6703
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3a72f68f5634c9ee5b137baf12a279130861e61a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340179"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787842"
 ---
 # <a name="tutorial-create-a-template-pack"></a>Kurz: vytvoření balíčku šablon
 
-Pomocí .NET Core můžete vytvářet a nasazovat šablony, které generují projekty, soubory i prostředky. Tento kurz je třetí částí série, která vás seznámí s postupem vytvoření, instalace a odinstalace, šablon pro použití s příkazem `dotnet new`.
+Pomocí .NET Core můžete vytvářet a nasazovat šablony, které generují projekty, soubory i prostředky. Tento kurz je třetí částí série, která vás seznámí s postupem vytvoření, instalace a odinstalace šablon pro použití s příkazem `dotnet new`.
 
 V této části série se naučíte:
 
@@ -49,7 +49,7 @@ V terminálu přejděte do _pracovní_ složky. Vytvořte nový projekt a nastav
 dotnet new console -n templatepack -o .
 ```
 
-Parametr `-n` nastaví soubor _. csproj_ filename na _templatepack. csproj_ a parametry `-o` vytvoří soubory v aktuálním adresáři. Měl by se zobrazit výsledek podobný následujícímu výstupu.
+Parametr `-n` nastaví název souboru _. csproj_ na _templatepack. csproj_. Parametr `-o` vytvoří soubory v aktuálním adresáři. Měl by se zobrazit výsledek podobný následujícímu výstupu.
 
 ```console
 C:\working> dotnet new console -n templatepack -o .
@@ -91,7 +91,7 @@ Potom v oblíbeném editoru otevřete soubor _templatepack. csproj_ a nahraďte 
 </Project>
 ```
 
-Nastavení `<PropertyGroup>` v souboru XML výše je rozděleno do tří skupin. První skupina se zabývá vlastnostmi vyžadovanými pro balíček NuGet. Tři `<Package` nastavení musí udělat s vlastnostmi balíčku NuGet k identifikaci balíčku na informačním kanálu NuGet. Konkrétně hodnota `<PacakgeId>` slouží k odinstalování sady šablon s jedním názvem, nikoli cestou k adresáři. Dá se použít taky k instalaci balíčku šablon z informačního kanálu NuGet. Zbývající nastavení, například `<Title>` a `<Tags>` musí dělat s metadaty zobrazenými v informačním kanálu NuGet. Další informace o nastaveních NuGet naleznete v tématu [vlastnosti NuGet a MSBuild](/nuget/reference/msbuild-targets).
+Nastavení `<PropertyGroup>` v souboru XML výše je rozděleno do tří skupin. První skupina se zabývá vlastnostmi vyžadovanými pro balíček NuGet. Tři `<Package` nastavení musí udělat s vlastnostmi balíčku NuGet k identifikaci balíčku na informačním kanálu NuGet. Konkrétně hodnota `<PackageId>` slouží k odinstalování sady šablon s jedním názvem, nikoli cestou k adresáři. Dá se použít taky k instalaci balíčku šablon z informačního kanálu NuGet. Zbývající nastavení, například `<Title>` a `<PackageTags>` musí dělat s metadaty zobrazenými v informačním kanálu NuGet. Další informace o nastaveních NuGet naleznete v tématu [vlastnosti NuGet a MSBuild](/nuget/reference/msbuild-targets).
 
 Nastavení `<TargetFramework>` musí být nastavené tak, aby nástroj MSBuild běžel správně při spuštění příkazu Pack pro zkompilování a sbalení projektu.
 
@@ -178,7 +178,7 @@ Currently installed items:
 
 K odinstalaci šablony spusťte `dotnet new -u AdatumCorporation.Utility.Templates`. Příkaz `dotnet new` zobrazí výstup informací o nápovědě, které by měly vynechat šablony, které jste nainstalovali dříve.
 
-Blahopřejeme! nainstalovali jste a odinstalovali balíček šablon. 
+Blahopřejeme! nainstalovali jste a odinstalovali balíček šablon.
 
 ## <a name="next-steps"></a>Další kroky
 

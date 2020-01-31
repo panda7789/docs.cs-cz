@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9c37185f-d1e0-4a6e-8b99-707f7df61d88
 topic_type:
 - apiref
-ms.openlocfilehash: 11157bca2d0f0be2b9b9bc36c382188a43db22a9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3cdc185408576f5679daacef4dde438d66e490ff
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433124"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862747"
 ---
 # <a name="icorprofilerinfo2getgenerationbounds-method"></a>ICorProfilerInfo2::GetGenerationBounds – metoda
 Získá oblasti paměti, které jsou segmenty haldy, které tvoří různé generace uvolňování paměti.  
@@ -42,7 +42,7 @@ HRESULT GetGenerationBounds(
  mimo Ukazatel na celé číslo, které určuje celkový počet rozsahů, některé nebo všechny, které budou vráceny v poli `ranges`.  
   
  `ranges`  
- mimo Pole struktur [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) , z nichž každý popisuje rozsah (tj. blok) paměti v rámci generace, která je podchází uvolňování paměti.  
+ mimo Pole struktur [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) , z nichž každý popisuje rozsah (tj. blok) paměti v rámci generace, která je podchází uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
  Metodu `GetGenerationBounds` lze volat z jakéhokoli zpětného volání profileru za předpokladu, že uvolňování paměti neprobíhá.
@@ -64,7 +64,7 @@ HRESULT GetGenerationBounds(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 78b0f14f-2fae-4e63-8412-4df119ee8468
 topic_type:
 - apiref
-ms.openlocfilehash: f40030a2034057e83de51a21655a686f30b9ee88
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e7125d923fb1d3757bb4ca53f5a7db806b241dd9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137445"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781533"
 ---
 # <a name="icordebugmanagedcallback2exception-method"></a>ICorDebugManagedCallback2::Exception – metoda
 Oznamuje ladicímu programu, že bylo zahájeno hledání obslužné rutiny výjimky.  
@@ -55,7 +55,7 @@ HRESULT Exception (
  pro Hodnota výčtu CorDebugExceptionCallbackType –, která určuje typ zpětného volání výjimky.  
   
  `dwFlags`  
- pro Hodnota výčtu [CorDebugExceptionFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) , která určuje další informace o výjimce  
+ pro Hodnota výčtu [CorDebugExceptionFlags –](cordebugexceptionflags-enumeration.md) , která určuje další informace o výjimce  
   
 ## <a name="remarks"></a>Poznámky  
  `Exception` zpětné volání se volá v různých bodech ve fázi hledání v procesu zpracování výjimek. To znamená, že může být voláno více než jednou při odvíjení výjimky.  
@@ -82,5 +82,5 @@ HRESULT Exception (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

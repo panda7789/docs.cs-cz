@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Thumb control type
 - Thumb control type
 ms.assetid: 13636338-e320-4355-b071-ede20a3fb1de
-ms.openlocfilehash: b795a216d0f32b3bd4014c884a061c0c2d4558a8
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 7b7e2a8f65d76548a93b47688f2dbe2661cd6693
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741460"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793980"
 ---
 # <a name="ui-automation-support-for-the-thumb-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku jezdec
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741460"
   
  Ovládací prvky posuvníku poskytují funkcionalitu, která umožňuje přesunout ovládací prvek (nebo přetáhnout), jako je například tlačítko posuvníku nebo změnit jeho velikost, například okno pro změnu velikosti okna. Ovládací prvky jezdce lze také implementovat jako pohyblivá ohraničení podoken. Všimněte si, že není k dispozici funkce přetažení myší. Ovládací prvky s jezdcem mohou obdržet fokus myši, ale obvykle ne fokus klávesnice. Vývojář ovládacího prvku musí implementovat ovládací prvek tak, aby správně vyjednal (lze jej přetáhnout nebo změnit jeho velikost).  
   
- V následujících částech je definována požadovaná [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku ovládací prvek palec. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ V následujících částech je definována požadovaná [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku ovládací prvek palec. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo model Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  

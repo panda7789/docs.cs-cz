@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 159ccfcf-b37c-4ad9-8e0d-a9a443262472
 topic_type:
 - apiref
-ms.openlocfilehash: a8fa4f2fbe576083658a934e30177bb7a48be06d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ed7bceec9bf6ea0cf69cbb57fff83a91093ba6c4
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110235"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791200"
 ---
 # <a name="icordebugtypeenum-interface"></a>ICorDebugTypeEnum – rozhraní
 Implementuje metody "ICorDebugEnum" a vytvoří výčet polí "ICorDebugType".  
@@ -28,7 +28,7 @@ Implementuje metody "ICorDebugEnum" a vytvoří výčet polí "ICorDebugType".
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugtypeenum-next-method.md)|Získá zadaný počet instancí `ICorDebugType` z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](icordebugtypeenum-next-method.md)|Získá zadaný počet instancí `ICorDebugType` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -46,4 +46,4 @@ Implementuje metody "ICorDebugEnum" a vytvoří výčet polí "ICorDebugType".
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

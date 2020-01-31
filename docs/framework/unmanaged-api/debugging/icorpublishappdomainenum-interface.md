@@ -14,24 +14,24 @@ helpviewer_keywords:
 ms.assetid: bb798c56-042e-475d-a245-b6fac36d0c07
 topic_type:
 - apiref
-ms.openlocfilehash: cbe2aa48a8b67b0b6e88f7b5267bc70848fe3cec
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 61cac0922423acabef3d47618d98ddf082d071da
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140324"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790667"
 ---
 # <a name="icorpublishappdomainenum-interface"></a>ICorPublishAppDomainEnum – rozhraní
-Podtřída rozhraní [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) , která poskytuje metody pro procházení kolekce objektů [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) , které aktuálně existují v rámci procesu.  
+Podtřída rozhraní [ICorPublishEnum](icorpublishenum-interface.md) , která poskytuje metody pro procházení kolekce objektů [ICorPublishAppDomain](icorpublishappdomain-interface.md) , které aktuálně existují v rámci procesu.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-next-method.md)|Získá zadaný počet instancí `ICorPublishAppDomain` z kolekce počínaje aktuální pozicí.|  
+|[Next – metoda](icorpublishappdomainenum-next-method.md)|Získá zadaný počet instancí `ICorPublishAppDomain` z kolekce počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
- Rozhraní `ICorPublishAppDomainEnum` implementuje metody abstraktního rozhraní [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).  
+ Rozhraní `ICorPublishAppDomainEnum` implementuje metody abstraktního rozhraní [ICorPublishEnum](icorpublishenum-interface.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -44,5 +44,5 @@ Podtřída rozhraní [ICorPublishEnum](../../../../docs/framework/unmanaged-api/
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [CorpubPublish – třída typu coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [CorpubPublish – třída typu coclass](corpubpublish-coclass.md)

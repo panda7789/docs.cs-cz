@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7d5385d3-f4a5-47c4-8478-a3513b5e9406
 topic_type:
 - apiref
-ms.openlocfilehash: 1f46866a1b975455acd294221e38ef3b4c358660
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5fa042223e47961dad0a6799ab8ca999ef76e285
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140203"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791082"
 ---
 # <a name="icordebugvalue3-interface"></a>ICorDebugValue3 – rozhraní
 Rozšiřuje rozhraní "ICorDebugValue" a "ICorDebugValue2" tak, aby poskytovala podporu pro pole, která jsou větší než 2 GB.  
@@ -28,10 +28,10 @@ Rozšiřuje rozhraní "ICorDebugValue" a "ICorDebugValue2" tak, aby poskytovala 
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetSize64 – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Získá velikost objektu `ICorDebugValue3` v bajtech.|  
+|[GetSize64 – metoda](icordebugvalue3-getsize64-method.md)|Získá velikost objektu `ICorDebugValue3` v bajtech.|  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda [ICorDebugValue:: GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) vrátí velikost objektu, který je v rozsahu od 0 do 2 147 483 647 bajtů. V .NET Framework 4,5 může velikost polí překročit 2 GB. Rozhraní `ICorDebugValue3` umožňuje určit velikost těchto polí.  
+ Metoda [ICorDebugValue:: GetSize](icordebugvalue3-getsize64-method.md) vrátí velikost objektu, který je v rozsahu od 0 do 2 147 483 647 bajtů. V .NET Framework 4,5 může velikost polí překročit 2 GB. Rozhraní `ICorDebugValue3` umožňuje určit velikost těchto polí.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -44,5 +44,5 @@ Rozšiřuje rozhraní "ICorDebugValue" a "ICorDebugValue2" tak, aby poskytovala 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

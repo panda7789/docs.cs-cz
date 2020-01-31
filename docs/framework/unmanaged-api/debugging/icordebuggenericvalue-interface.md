@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc14f408-b359-4c8c-ade2-888ccdf7261b
 topic_type:
 - apiref
-ms.openlocfilehash: 312b8b005998da44feb5ae24ab4a0a17bb948a3f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e60d4b128bf03ff81863e0c95815b2c204807583
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138573"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794474"
 ---
 # <a name="icordebuggenericvalue-interface"></a>ICorDebugGenericValue – rozhraní
 
@@ -29,8 +29,8 @@ Podtřída "ICorDebugValue", která se vztahuje na všechny hodnoty. Toto rozhra
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-getvalue-method.md)|Zkopíruje hodnotu do zadané vyrovnávací paměti.|  
-|[SetValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md)|Zkopíruje novou hodnotu ze zadané vyrovnávací paměti.|  
+|[GetValue – metoda](icordebuggenericvalue-getvalue-method.md)|Zkopíruje hodnotu do zadané vyrovnávací paměti.|  
+|[SetValue – metoda](icordebuggenericvalue-setvalue-method.md)|Zkopíruje novou hodnotu ze zadané vyrovnávací paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugGenericValue` je dílčí rozhraní, protože se nejedná o nevzdáleněu.  
@@ -53,4 +53,4 @@ Podtřída "ICorDebugValue", která se vztahuje na všechny hodnoty. Toto rozhra
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-ms.openlocfilehash: 4d1404e3f7565ee26edd94e059b7f01f8edd4dd6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 11b1072b3467f7d0a3f223fbc2151ec9ccf461ad
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121847"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790807"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>ICoreClrDebugTarget::EnumProcesses – metoda
 Vytvoří výčet procesů, které jsou spuštěny na vzdáleném počítači.  
@@ -41,7 +41,7 @@ HRESULT EnumProcesses (
  mimo Počet procesů vrácených v `ppProcs`. Tato hodnota může být 0 (nula).  
   
  `ppProcs`  
- mimo Pole struktur [coreclrdebugprocinfo –](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md) , které reprezentují procesy běžící na vzdáleném počítači.  
+ mimo Pole struktur [coreclrdebugprocinfo –](coreclrdebugprocinfo-structure.md) , které reprezentují procesy běžící na vzdáleném počítači.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
@@ -54,17 +54,17 @@ HRESULT EnumProcesses (
  Další chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget:: FreeMemory –](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) .  
+ Chcete-li uvolnit paměť, která byla přidělena touto metodou, zavolejte metodu [ICoreClrDebugTarget:: FreeMemory –](icoreclrdebugtarget-freememory-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Hlavička:** CoreClrRemoteDebuggingInterfaces. h  
   
- **Knihovna:** mscordbi_macx86. dll  
+ **Library:** mscordbi_macx86.dll  
   
  **Verze .NET Framework:** 3,5 SP1  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICoreClrDebugTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)
+- [ICoreClrDebugTarget – rozhraní](icoreclrdebugtarget-interface.md)

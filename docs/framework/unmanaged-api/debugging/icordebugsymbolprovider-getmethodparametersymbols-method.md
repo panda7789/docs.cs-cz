@@ -2,12 +2,12 @@
 title: 'ICorDebugSymbolProvider:: GetMethodParameterSymbols – metoda'
 ms.date: 03/30/2017
 ms.assetid: 58b7c0b9-f6ad-4b49-b92d-0e421cfd0ec6
-ms.openlocfilehash: 1f7da156e5a164dc753e2283bc7ab24d18983173
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a940077e50ff251111ca6eedaee49401775644d3
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138846"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791599"
 ---
 # <a name="icordebugsymbolprovidergetmethodparametersymbols-method"></a>ICorDebugSymbolProvider:: GetMethodParameterSymbols – metoda
 Načte symboly parametrů metody vzhledem k relativní virtuální adrese (RVA) dané metody.  
@@ -34,7 +34,7 @@ HRESULT GetMethodParameterSymbols(
  mimo Ukazatel na počet symbolů načtených metodou.  
   
  `pcFetchedSymbols`  
- mimo Ukazatel na pole [ICorDebugVariableSymbol](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md) , které obsahuje místní symboly metody.  
+ mimo Ukazatel na pole [ICorDebugVariableSymbol](icordebugvariablesymbol-interface.md) , které obsahuje místní symboly metody.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -52,6 +52,6 @@ HRESULT GetMethodParameterSymbols(
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetMethodLocalSymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodlocalsymbols-method.md)
-- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [GetMethodLocalSymbols – metoda](icordebugsymbolprovider-getmethodlocalsymbols-method.md)
+- [ICorDebugSymbolProvider – rozhraní](icordebugsymbolprovider-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

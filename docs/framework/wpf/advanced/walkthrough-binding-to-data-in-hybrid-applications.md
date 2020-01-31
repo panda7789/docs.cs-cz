@@ -8,16 +8,16 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-ms.openlocfilehash: 92d267ee9e87e9d204fe76172ca7e0fe33cf1a1b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 1bb38436049e338ab6033ae3b6370732a457d520
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976584"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794227"
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 
-Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytování přístupu uživatelům s přístupem k podkladovým datům, ať už používáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete použít datovou vazbu v hybridních aplikacích, které zahrnují ovládací prvky [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] i [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytování přístupu uživatelům s přístupem k podkladovým datům, ať už používáte model Windows Forms nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete použít datovou vazbu v hybridních aplikacích, které zahrnují ovládací prvky model Windows Forms i [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
 Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
 
@@ -57,11 +57,11 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
     - WindowsFormsIntegration
 
-    - System. Windows. Forms
+    - System.Windows.Forms
 
 3. Otevřete MainWindow. XAML v Návrháři WPF.
 
-4. V elementu <xref:System.Windows.Window> přidejte následující mapování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] obory názvů.
+4. V elementu <xref:System.Windows.Window> přidejte následující mapování model Windows Forms obory názvů.
 
     ```xaml
     xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
@@ -113,7 +113,7 @@ Podrobnosti o jednotlivých záznamech zákazníka se zobrazí v několika ovlá
 
 ## <a name="displaying-data-by-using-interoperation"></a>Zobrazení dat pomocí spolupráce
 
-Objednávky odpovídající vybranému zákazníkovi se zobrazí v ovládacím prvku <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> s názvem `dataGridView1`. `dataGridView1` ovládací prvek je svázán se zdrojem dat v souboru kódu na pozadí. Ovládací prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> je nadřazeným prvkem tohoto [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]ho ovládacího prvku.
+Objednávky odpovídající vybranému zákazníkovi se zobrazí v ovládacím prvku <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> s názvem `dataGridView1`. `dataGridView1` ovládací prvek je svázán se zdrojem dat v souboru kódu na pozadí. Ovládací prvek <xref:System.Windows.Forms.Integration.WindowsFormsHost> je nadřazeným prvkem tohoto model Windows Formsho ovládacího prvku.
 
 ### <a name="to-display-data-in-the-datagridview-control"></a>Zobrazení dat v ovládacím prvku DataGridView
 

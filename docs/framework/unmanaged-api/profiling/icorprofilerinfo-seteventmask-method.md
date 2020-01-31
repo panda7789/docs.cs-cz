@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 44bc0f56-32fa-491e-a62d-52fc96d48125
 topic_type:
 - apiref
-ms.openlocfilehash: b79668130570dc69a580fbf7da4dc122389d9ef0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ed39411fa88c38da58e8a881c47d19b3b8c9ff8d
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136701"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76869275"
 ---
 # <a name="icorprofilerinfoseteventmask-method"></a>ICorProfilerInfo::SetEventMask – metoda
 Nastaví hodnotu, která určuje typy událostí, pro které profiler chce dostávat oznámení z modulu CLR (Common Language Runtime).  
@@ -34,12 +34,12 @@ HRESULT SetEventMask(
   
 ## <a name="parameters"></a>Parametry  
  `dwEvents`  
- pro Hodnota 4 bajtu, která určuje kategorie událostí. Každý bit ovládá jinou schopnost, chování nebo typ události. Bity jsou popsány ve výčtu [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) .  
+ pro Hodnota 4 bajtu, která určuje kategorie událostí. Každý bit ovládá jinou schopnost, chování nebo typ události. Bity jsou popsány v [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) výčtu.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> Místo této metody byste měli zavolat metodu [SetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) . I když je nadále podporována metoda `SetEventMask`, [SetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) poskytuje další funkce.  
+> Místo této metody byste měli zavolat metodu [SetEventMask2 –](icorprofilerinfo5-seteventmask2-method.md) . I když je nadále podporována metoda `SetEventMask`, [SetEventMask2 –](icorprofilerinfo5-seteventmask2-method.md) poskytuje další funkce.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -52,5 +52,5 @@ HRESULT SetEventMask(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [SetEventMask2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [SetEventMask2 – metoda](icorprofilerinfo5-seteventmask2-method.md)

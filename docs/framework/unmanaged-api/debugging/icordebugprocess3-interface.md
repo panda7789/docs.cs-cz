@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ced9c82e-d7b0-4806-a151-98b6611d3097
 topic_type:
 - apiref
-ms.openlocfilehash: 5e2d68d1e2dcaa656df4e35b135eeaf522878c6d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 28d1d426276e9654c2122f03fb64735b7e67f44f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137132"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792473"
 ---
 # <a name="icordebugprocess3-interface"></a>ICorDebugProcess3 – rozhraní
 Řídí vlastní oznámení ladicího programu.  
@@ -28,7 +28,7 @@ ms.locfileid: "73137132"
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[SetEnableCustomNotification – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-setenablecustomnotification-method.md)|Povolí nebo zakáže oznámení vlastního ladicího programu určeného typu.|  
+|[SetEnableCustomNotification – metoda](icordebugprocess3-setenablecustomnotification-method.md)|Povolí nebo zakáže oznámení vlastního ladicího programu určeného typu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozhraní logicky rozšiřuje rozhraní ICorDebugProcess a ICorDebugProcess2.  
@@ -47,5 +47,5 @@ ms.locfileid: "73137132"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

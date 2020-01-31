@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8dcd7537-d0c6-498c-8a56-2c060310ef65
 topic_type:
 - apiref
-ms.openlocfilehash: 1bbdfa93913b9fdf8aa164c8ca6c35cd33a228df
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f1cfef464569b577923fbb16624c99358998d29c
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449917"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866244"
 ---
 # <a name="icorprofilercallbackjitcompilationfinished-method"></a>ICorProfilerCallback::JITCompilationFinished – metoda
 Upozorní profileru, že kompilátor JIT (just-in-time) dokončil kompilaci funkce.  
@@ -34,18 +34,22 @@ HRESULT JITCompilationFinished(
     [in] BOOL       fIsSafeToBlock);  
 ```  
   
-## <a name="parameters"></a>Parametry  
- `functionId`  
- pro ID funkce, která byla zkompilována.  
-  
- `hrStatus`  
- pro Hodnota, která označuje, zda byla kompilace úspěšná.  
-  
- `fIsSafeToBlock`  
- pro Hodnota, která označuje Profiler, zda blokování bude mít vliv na operaci modulu runtime. Hodnota je `true` Pokud blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání. v opačném případě `false`.  
-  
- I když hodnota `true` neškodí modul runtime, může to mít za následek zkosení výsledků profilace.  
-  
+## <a name="parameters"></a>Parametry
+
+- `functionId`
+
+  \[v] ID kompilované funkce.
+
+- `hrStatus`
+
+  \[in] hodnota označující, zda byla kompilace úspěšná.
+
+- `fIsSafeToBlock`
+
+  \[in] hodnota, která označuje Profiler bez ohledu na to, zda bude blokování ovlivněno operací modulu runtime. Hodnota je `true` Pokud blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání. v opačném případě `false`.
+
+  I když hodnota `true` neškodí modul runtime, může to mít za následek zkosení výsledků profilace.
+
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
@@ -57,5 +61,5 @@ HRESULT JITCompilationFinished(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [JITCompilationStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)
+- [ICorProfilerCallback – rozhraní](icorprofilercallback-interface.md)
+- [JITCompilationStarted – metoda](icorprofilercallback-jitcompilationstarted-method.md)

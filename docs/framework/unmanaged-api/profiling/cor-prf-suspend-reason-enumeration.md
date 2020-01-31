@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 75594833-bed3-47b2-a426-b75c5fe6fbcf
 topic_type:
 - apiref
-ms.openlocfilehash: d2d9ca77e764fe439753f1174a42af5ef80faa59
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1036ecbdb735b95c0ad6897c1545e3bd8cb6c3a9
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447704"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867071"
 ---
 # <a name="cor_prf_suspend_reason-enumeration"></a>COR_PRF_SUSPEND_REASON – výčet
 Označuje důvod, proč je modul runtime pozastaven.  
@@ -43,7 +43,7 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`COR_PRF_FIELD_SUSPEND_OTHER`|Modul runtime je pozastaven z nespecifikovaného důvodu.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC`|Modul runtime je pozastaven na obsluhu žádosti o uvolnění paměti.<br /><br /> Zpětná volání související s uvolňováním paměti nastávají mezi zpětnými voláními [ICorProfilerCallback:: RuntimeSuspendFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) a [ICorProfilerCallback:: RuntimeResumeStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) .|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC`|Modul runtime je pozastaven na obsluhu žádosti o uvolnění paměti.<br /><br /> Zpětná volání související s uvolňováním paměti nastávají mezi zpětnými voláními [ICorProfilerCallback:: RuntimeSuspendFinished –](icorprofilercallback-runtimesuspendfinished-method.md) a [ICorProfilerCallback:: RuntimeResumeStarted –](icorprofilercallback-runtimeresumestarted-method.md) .|  
 |`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|Modul runtime je pozastaven, aby bylo možné vypnout `AppDomain`.<br /><br /> I když je modul runtime pozastaven, modul runtime určí, která vlákna jsou v `AppDomain`, která se vypíná a která se nastaví pro přerušení při obnovení. Během tohoto pozastavení neexistují žádná zpětná volání specifická pro `AppDomain`.|  
 |`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|Modul runtime je pozastaven, aby mohlo dojít k rozteči kódu.<br /><br /> Rozteč kódu platí pouze v případě, že je kompilátor JIT (just-in-time) aktivní se zapnutým příznakem pro rozteč kódu. Zpětná volání pro rozteč kódu se vyskytují mezi `ICorProfilerCallback::RuntimeSuspendFinished` a `ICorProfilerCallback::RuntimeResumeStarted` zpětná volání. **Poznámka:**  Kompilátor JIT CLR nemění funkce v .NET Framework verze 2,0, takže se tato hodnota nepoužívá v 2,0.|  
 |`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|Modul runtime je pozastaven, aby mohl být vypnut. Aby bylo možné operaci dokončit, je nutné pozastavit všechna vlákna.|  
@@ -65,4 +65,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Výčty pro profilaci](profiling-enumerations.md)

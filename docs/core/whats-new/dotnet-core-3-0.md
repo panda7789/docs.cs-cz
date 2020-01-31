@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 4bf1c4826273535bfe824828f0fad96998b29483
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: b8aa19a1d422fe7d6accd2b095f15843446599cd
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742599"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789893"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -121,7 +121,7 @@ Když je povolený TC, platí následující chování pro kompilaci metody při
 - Pokud má metoda předem kompilovaný kód nebo [ReadyToRun](#readytorun-images), použije se předgenerovaný kód.
 - V opačném případě je metoda zpracovaných kompilátorem JIT. Tyto metody jsou obvykle Obecné v rámci hodnotových typů.
   - *Rychlá kompilátor JIT* rychleji generuje kvalitní (nebo méně optimalizovaný) kód. V rozhraní .NET Core 3,0 je rychlá technologie JIT standardně povolena pro metody, které neobsahují smyčky a jsou upřednostňovány při spuštění.
-  - Plně optimalizovatelný kompilátor JIT vytváří vyšší kvalitu (nebo více optimalizovaného) kódu pomaleji. Pro metody, kde by se nepoužila rychlá JIT (například pokud je metoda s atributem <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), se používá kompletní optimalizace JIT.
+  - Plně optimalizovatelný kompilátor JIT vytváří vyšší kvalitu (nebo více optimalizovaného) kódu pomaleji. Pro metody, kde by se nepoužila rychlá JIT (například pokud je metoda s atributem <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), se používá plně optimalizující kompilátor JIT.
 
 U často volaných metod kompilátor za běhu nakonec vytvoří plně optimalizovaný kód na pozadí. Optimalizovaný kód pak nahradí předem kompilovaný kód pro danou metodu.
 
@@ -458,7 +458,7 @@ Odpovídá `scaleB` operace IEEE, která přebírá celočíselnou hodnotu, vrá
 Odpovídá `log2` operace IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
 
 - <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-Odpovídá `fma` operace IEEE, provádí přidaný násobek. To znamená, že se `(x * y) + z` jako jediná operace, čímž se minimalizuje chyba zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrací `1e308`. Regulární `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
+Odpovídá `fma` operace IEEE, provádí přidaný násobek. To znamená, že se `(x * y) + z` jako jediná operace, čímž se minimalizuje chyba zaokrouhlování. Příklad je `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrací `1e308`. Regulární `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
 
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
 Odpovídá `copySign` operace IEEE, vrátí hodnotu `x`, ale s znaménkem `y`.

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 937de6a0-6fbf-4ddc-80ea-a6217b73e62b
 topic_type:
 - apiref
-ms.openlocfilehash: b782207503a2c3f739a30f68d509e6b481d2b6a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e104f8c522af2ee4cd42332b7459f4a2fd185511
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129756"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792691"
 ---
 # <a name="icordebugobjectvalue-interface"></a>ICorDebugObjectValue – rozhraní
 
@@ -29,13 +29,13 @@ Podtřída "ICorDebugValue", která představuje hodnotu, která obsahuje objekt
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getclass-method.md)|Získá ukazatel rozhraní modulu CLR (Common Language Runtime) <xref:System.Type> objektu, na který odkazuje tento `ICorDebugObjectValue`.|  
-|[GetContext – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getcontext-method.md)|Není implementováno.|  
-|[GetFieldValue – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getfieldvalue-method.md)|Získá ukazatel rozhraní na [ICorDebugValue](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-interface.md) , který představuje hodnotu zadaného pole zadané třídy.|  
-|[GetManagedCopy – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getmanagedcopy-method.md)|Zastaralé. Nevolejte tuto metodu.|  
-|[GetVirtualMethod – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-getvirtualmethod-method.md)|Není implementováno.|  
-|[IsValueClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-isvalueclass-method.md)|Získá hodnotu, která označuje, zda je objekt, na který odkazuje tento `ICorDebugObjectValue` hodnotový typ.|  
-|[SetFromManagedCopy – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-setfrommanagedcopy-method.md)|Zastaralé. Nevolejte tuto metodu.|  
+|[GetClass – metoda](icordebugobjectvalue-getclass-method.md)|Získá ukazatel rozhraní modulu CLR (Common Language Runtime) <xref:System.Type> objektu, na který odkazuje tento `ICorDebugObjectValue`.|  
+|[GetContext – metoda](icordebugobjectvalue-getcontext-method.md)|Není implementováno.|  
+|[GetFieldValue – metoda](icordebugobjectvalue-getfieldvalue-method.md)|Získá ukazatel rozhraní na [ICorDebugValue](icordebugvalue-interface.md) , který představuje hodnotu zadaného pole zadané třídy.|  
+|[GetManagedCopy – metoda](icordebugobjectvalue-getmanagedcopy-method.md)|Zastaralé. Nevolejte tuto metodu.|  
+|[GetVirtualMethod – metoda](icordebugobjectvalue-getvirtualmethod-method.md)|Není implementováno.|  
+|[IsValueClass – metoda](icordebugobjectvalue-isvalueclass-method.md)|Získá hodnotu, která označuje, zda je objekt, na který odkazuje tento `ICorDebugObjectValue` hodnotový typ.|  
+|[SetFromManagedCopy – metoda](icordebugobjectvalue-setfrommanagedcopy-method.md)|Zastaralé. Nevolejte tuto metodu.|  
   
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugObjectValue` zůstává platný, dokud proces, který se právě ladí, nebude pokračovat.  
@@ -54,4 +54,4 @@ Podtřída "ICorDebugValue", která představuje hodnotu, která obsahuje objekt
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

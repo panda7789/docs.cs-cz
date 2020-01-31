@@ -4,16 +4,16 @@ description: ML.NET poskytuje možnost Přidat strojové učení do aplikací .N
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 98251c39a4bdaba8203c26c6a781a86efc46efa4
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: bc157b22201c66bceecf78aaa36b9c653fe6a131
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740092"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794578"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
-ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci.
+ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci. Aplikace Machine Learning využívají vzory v datech, aby předpovědi místo nutnosti výslovně programovat.
 
 Central to ML.NET je **model**strojového učení. Model určuje kroky potřebné k transformaci vstupních dat do předpovědi. Pomocí ML.NET můžete vytvořit vlastní model zadáním algoritmu, nebo můžete importovat předem připravené modely TensorFlow a ONNX.
 
@@ -30,7 +30,7 @@ Příklady typů předpovědi, které můžete vytvořit pomocí ML.NET:
 |Detekce anomálií|Rozpoznat podvodné bankovní transakce |
 |Doporučení|Návrhy produktů, které online nakupující může chtít koupit, na základě jejich předchozích nákupů|
 |Časová řada/sekvenční data|Předpověď počasí nebo prodeje produktů|
-|Klasifikace obrázků|Kategorizace pathologies v lékařských imagích|
+|Klasifikace obrázku|Kategorizace pathologies v lékařských imagích|
 
 ## <a name="hello-mlnet-world"></a>Hello ML.NET World
 
@@ -179,7 +179,7 @@ Aplikace ML.NET začíná objektem <xref:Microsoft.ML.MLContext>. Tento objekt t
 ||Detekce anomálií|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
 ||Clustering|<xref:Microsoft.ML.ClusteringCatalog>||
 ||Prognózování|<xref:Microsoft.ML.ForecastingCatalog>||
-||Nejlepší hodnocení|<xref:Microsoft.ML.RankingCatalog>||
+||Pořadí|<xref:Microsoft.ML.RankingCatalog>||
 ||Regrese|<xref:Microsoft.ML.RegressionCatalog>||
 ||Doporučení|<xref:Microsoft.ML.RecommendationCatalog>|Přidat `Microsoft.ML.Recommender` balíček NuGet|
 ||Časové řady|<xref:Microsoft.ML.TimeSeriesCatalog>|Přidat `Microsoft.ML.TimeSeries` balíček NuGet|

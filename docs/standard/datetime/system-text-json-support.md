@@ -13,12 +13,12 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 8198359e2c54c4ed098703fbcc070f7469b3362a
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fb8836d9c556b317c50b6b34a9dde4e42c6486b5
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344656"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867344"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Podpora DateTime a DateTimeOffset v System.Text.Json
 
@@ -68,7 +68,7 @@ Při pokusu o čtení nekompatibilních formátů pomocí <xref:System.Text.Json
 ### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>Při použití <xref:System.Text.Json.JsonSerializer>
 
 Pokud chcete, aby serializátor prováděl vlastní analýzu nebo formátování, můžete implementovat [vlastní převaděče](xref:System.Text.Json.Serialization.JsonConverter%601).
-Tady je pár příkladů:
+Tady je několik příkladů:
 
 #### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Používání `DateTime(Offset).Parse` a `DateTime(Offset).ToString`
 
@@ -126,7 +126,7 @@ Rozšířený profil ISO 8601-1:2019 implementovaný v <xref:System.Text.Json> d
 | Součást       | Formát                      | Popis                                                                     |
 |-----------------|-----------------------------|---------------------------------------------------------------------------------|
 | Rok            | "yyyy"                      | 0001-9999                                                                       |
-| Month           | "MM"                        | 01-12                                                                           |
+| Měsíčně           | "MM"                        | 01-12                                                                           |
 | Den             | "dd"                        | 01-28, 01-29, 01-30, 01-31 v závislosti na měsíci/roce                                  |
 | hod            | "HH"                        | 00-23                                                                           |
 | min          | "mm"                        | 00-59                                                                           |
@@ -199,4 +199,12 @@ Pro formátování jsou definovány následující úrovně členitosti:
 
         Slouží k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> se zlomky sekund a s místním posunem.
 
-Je-li k dispozici, je zapsána maximálně 7 zlomkových číslic. Tím se zarovnává s implementací <xref:System.DateTime>, která je omezena na toto řešení.
+Pokud se ve [formátu Round-Trip](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) reprezentace <xref:System.DateTime> nebo instance <xref:System.DateTimeOffset> na konci zlomků sekund odvolala nula, pak <xref:System.Text.Json.JsonSerializer> a <xref:System.Text.Json.Utf8JsonWriter> naformátují reprezentace instance bez koncových nul.
+Například <xref:System.DateTime> instance, jejíž reprezentace [formátu Round-Trip](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) je `2019-04-24T14:50:17.1010000Z`, bude naformátována jako `2019-04-24T14:50:17.101Z` <xref:System.Text.Json.JsonSerializer> a <xref:System.Text.Json.Utf8JsonWriter>.
+
+Pokud je ve [formátu Round-Trip](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) reprezentace <xref:System.DateTime> nebo <xref:System.DateTimeOffset> instance má ve zlomcích sekundách všechny nuly, pak <xref:System.Text.Json.JsonSerializer> a <xref:System.Text.Json.Utf8JsonWriter> naformátují reprezentace instance bez zlomků sekund.
+Například <xref:System.DateTime> instance, jejíž reprezentace [formátu Round-Trip](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) je `2019-04-24T14:50:17.0000000+02:00`, bude naformátována jako `2019-04-24T14:50:17+02:00` <xref:System.Text.Json.JsonSerializer> a <xref:System.Text.Json.Utf8JsonWriter>.
+
+Zkrácení nul ve zlomkových číslicích umožňuje psát nejmenší výstup potřebný k zapsání informací o zpátečním přenosu.
+
+Zapisuje se maximálně 7 číslic za desetinnou čárkou. Tím se zarovnává s implementací <xref:System.DateTime>, která je omezena na toto řešení.
