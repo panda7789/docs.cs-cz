@@ -6,40 +6,40 @@ helpviewer_keywords:
 - debugging global static functions [.NET Framework]
 - unmanaged global static functions [.NET Framework], debugging
 ms.assetid: efc64414-77c3-48d0-881a-8594ed416aad
-ms.openlocfilehash: 965724c1e937fa62f05c33b0dcf8a5c8b9e1b029
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c20d8719b63cb40074dc740506ae4a3c0fc3a251
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124320"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793784"
 ---
 # <a name="debugging-global-static-functions"></a>Globální statické funkce ladění
 Tato část popisuje nespravované globální statické funkce, které používá rozhraní API pro ladění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [_EFN_GetManagedExcepStack – funkce](../../../../docs/framework/unmanaged-api/debugging/efn-getmanagedexcepstack-function.md)  
+ [_EFN_GetManagedExcepStack – funkce](efn-getmanagedexcepstack-function.md)  
  Pokud je zadána adresa spravovaného objektu výjimky, vrátí verzi řetězce trasování zásobníku obsaženého v rámci.  
   
- [_EFN_GetManagedObjectFieldInfo – funkce](../../../../docs/framework/unmanaged-api/debugging/efn-getmanagedobjectfieldinfo-function.md)  
+ [_EFN_GetManagedObjectFieldInfo – funkce](efn-getmanagedobjectfieldinfo-function.md)  
  Získá posun od začátku objektu k poli a hodnotu pole pomocí zadaného ukazatele objektu a názvu pole.  
   
- [_EFN_GetManagedObjectName – funkce](../../../../docs/framework/unmanaged-api/debugging/efn-getmanagedobjectname-function.md)  
+ [_EFN_GetManagedObjectName – funkce](efn-getmanagedobjectname-function.md)  
  Získá název typu pomocí zadaného ukazatele spravovaného objektu.  
   
- [_EFN_StackTrace – funkce](../../../../docs/framework/unmanaged-api/debugging/efn-stacktrace-function.md)  
+ [_EFN_StackTrace – funkce](efn-stacktrace-function.md)  
  Poskytuje textovou reprezentaci spravovaného trasování zásobníku a pole `CONTEXT` záznamů, jednu pro každý přechod mezi nespravovaným a spravovaným kódem.  
   
- [CLRDataCreateInstance – funkce](../../../../docs/framework/unmanaged-api/debugging/clrdatacreateinstance-function.md)  
+ [CLRDataCreateInstance – funkce](clrdatacreateinstance-function.md)  
  Volá se službami CLR (Common Language Runtime) k vytvoření zadaného objektu rozhraní pro zadaný cílový proces.  
   
- [PFN_CLRDataCreateInstance – ukazatel na funkci](../../../../docs/framework/unmanaged-api/debugging/pfn-clrdatacreateinstance-function-pointer.md)  
+ [PFN_CLRDataCreateInstance – ukazatel na funkci](pfn-clrdatacreateinstance-function-pointer.md)  
  Odkazuje na funkci, která je volána službami CLR Data Access, k vytvoření zadaného objektu rozhraní pro zadaný cílový proces.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  
+ [Třídy typu coclass pro ladění](debugging-coclasses.md)  
   
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Rozhraní pro ladění](debugging-interfaces.md)  
   
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
+ [Výčty pro ladění](debugging-enumerations.md)  
   
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+ [Struktury pro ladění](debugging-structures.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, reference types
 - types [C#], reference types
 ms.assetid: 801cf030-6e2d-4a0d-9daf-1431b0c31f47
-ms.openlocfilehash: 16e7cdc624979f9a35e287ea5274bd9398c83132
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b2d6cc94c11ca6305a75e9ee489af53ad957201e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715167"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744513"
 ---
 # <a name="reference-types-c-reference"></a>Typy odkazů (C# referenční)
 
@@ -38,7 +38,6 @@ V jazyce C# existují dva druhy typů: typy odkazu a typy hodnoty. Proměnné
 ## <a name="see-also"></a>Viz také:
 
 - [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Typy hodnot](value-types.md)
+- [Typy hodnot](../builtin-types/value-types.md)

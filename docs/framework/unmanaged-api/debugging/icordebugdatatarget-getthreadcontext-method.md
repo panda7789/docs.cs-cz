@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8954268-1821-4b23-b665-dbb55f2af31b
 topic_type:
 - apiref
-ms.openlocfilehash: 278320391615eddaa8ba878ef87f802f30cddb95
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3eace2d91b3bb6e637a659b8b49a31450ebc2c42
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122028"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783718"
 ---
 # <a name="icordebugdatatargetgetthreadcontext-method"></a>ICorDebugDataTarget::GetThreadContext – metoda
 Vrátí aktuální kontext vlákna pro zadané vlákno.  
@@ -49,7 +49,7 @@ HRESULT GetThreadContext(
  mimo Vyrovnávací paměť, kde bude uložen kontext vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- Na platformách systému Windows musí být `pContext` `CONTEXT` struktuře (definované v souboru WinNT. h), která je vhodná pro typ počítače určený metodou [ICorDebugDataTarget:: GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) . `contextFlags` musí mít stejné hodnoty jako pole `ContextFlags` struktury `CONTEXT`. Struktura `CONTEXT` je specifická pro procesor; Podrobnosti najdete v souboru WinNT. h.  
+ Na platformách systému Windows musí být `pContext` `CONTEXT` struktuře (definované v souboru WinNT. h), která je vhodná pro typ počítače určený metodou [ICorDebugDataTarget:: GetPlatform](icordebugdatatarget-getplatform-method.md) . `contextFlags` musí mít stejné hodnoty jako pole `ContextFlags` struktury `CONTEXT`. Struktura `CONTEXT` je specifická pro procesor; Podrobnosti najdete v souboru WinNT. h.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -62,6 +62,6 @@ HRESULT GetThreadContext(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget – rozhraní](icordebugdatatarget-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

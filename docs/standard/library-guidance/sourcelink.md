@@ -2,12 +2,12 @@
 title: Zdrojový odkaz a knihovny .NET
 description: Doporučení osvědčených postupů pro použití odkazu na zdroj ke zlepšení ladění pro knihovny .NET.
 ms.date: 01/15/2019
-ms.openlocfilehash: 0ebc7601f1ad92b0fc6ab4c7599b010cb42feb5d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3d768ae6e79efa23a8402ea37bc34cd58cd52c8c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706436"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744550"
 ---
 # <a name="source-link"></a>Odkaz na zdroj
 
@@ -25,7 +25,7 @@ Pomocí [Průzkumníka balíčků NuGet](https://github.com/NuGetPackageExplorer
 
 ![Odkaz na zdroj v Průzkumníkovi balíčků NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "Odkaz na zdroj v Průzkumníkovi balíčků NuGet")
 
-**✔️ zvažte** použití odkazu na zdroj k přidání metadat správy zdrojového kódu do sestavení a balíčků NuGet.
+✔️ Zvažte použití odkazu na zdroj k přidání metadat správy zdrojového kódu do sestavení a balíčků NuGet.
 
 > [!TIP]
 > Můžete dál vylepšit možnosti ladění vývojářů přidáním atributů ladicího programu do vašich typů.
@@ -34,7 +34,7 @@ Pomocí [Průzkumníka balíčků NuGet](https://github.com/NuGetPackageExplorer
 > * <xref:System.Diagnostics.DebuggerStepThroughAttribute> instruuje ladicí program, aby procházel kód místo krokování s kódem.
 > * <xref:System.Diagnostics.DebuggerBrowsableAttribute> určuje, zda je člen zobrazen v oknech proměnných ladicího programu.
 
-**✔️ zvažte** publikování souborů symbolů (`*.pdb`).
+✔️ Zvažte publikování souborů symbolů (`*.pdb`).
 
 > Pro nejlepší prostředí ladění by knihovna měla publikovat soubory symbolů a také odkaz použít zdroj. Další informace o souborech symbolů a balíčcích symbolů najdete v tématu [balíčky symbolů](./nuget.md#symbol-packages).
 

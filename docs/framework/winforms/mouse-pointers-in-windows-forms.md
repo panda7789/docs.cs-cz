@@ -1,5 +1,5 @@
 ---
-title: Ukazatele myši ve Windows Forms
+title: Ukazatele myši
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pointers [Windows Forms], setting
@@ -9,26 +9,26 @@ helpviewer_keywords:
 - cursors [Windows Forms], setting
 - mouse [Windows Forms], cursors
 ms.assetid: c3400d85-de5b-42e8-abc3-d6088d69ee53
-ms.openlocfilehash: e9b572ba40618a72b8db58917008ebd61a23de79
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e8349effcd9b59045e39b763b4cb8b7d2fceb91
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61800773"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740954"
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Ukazatele myši ve Windows Forms
-Myši *ukazatel*, které se někdy označuje jako ukazatel, je rastrový obrázek, který určuje zaměření na obrazovce pro uživatelský vstup pomocí myši. Toto téma obsahuje základní informace o umístění ukazatele myši ve Windows Forms a popisuje některé ze způsobů, jak upravit a řízení umístění ukazatele myši.  
+*Ukazatel*myši, který se někdy označuje jako ukazatel, je rastrový obrázek, který určuje fokus na obrazovce pro vstup uživatele pomocí myši. Toto téma poskytuje přehled ukazatele myši v model Windows Forms a popisuje některé způsoby, jak upravit a ovládat ukazatel myši.  
   
-## <a name="accessing-the-mouse-pointer"></a>Přístup k umístění ukazatele myši  
- Je reprezentován ukazatel myši <xref:System.Windows.Forms.Cursor> třídy a každý <xref:System.Windows.Forms.Control> má <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> vlastnost, která určuje ukazatele pro tento ovládací prvek. <xref:System.Windows.Forms.Cursor> Třída obsahuje vlastnosti, které popisují ukazatel, jako <xref:System.Windows.Forms.Cursor.Position%2A> a <xref:System.Windows.Forms.Cursor.HotSpot%2A> vlastnosti a metody, které lze změnit vzhled ukazatele, například <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A>, a <xref:System.Windows.Forms.Cursor.DrawStretched%2A> metody.  
+## <a name="accessing-the-mouse-pointer"></a>Přístup k ukazateli myši  
+ Ukazatel myši je reprezentován třídou <xref:System.Windows.Forms.Cursor> a každý <xref:System.Windows.Forms.Control> má vlastnost <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType>, která určuje ukazatel pro daný ovládací prvek. Třída <xref:System.Windows.Forms.Cursor> obsahuje vlastnosti, které popisují ukazatel, jako jsou vlastnosti <xref:System.Windows.Forms.Cursor.Position%2A> a <xref:System.Windows.Forms.Cursor.HotSpot%2A>, a metody, které mohou upravovat vzhled ukazatele, například <xref:System.Windows.Forms.Cursor.Show%2A>, <xref:System.Windows.Forms.Cursor.Hide%2A>a <xref:System.Windows.Forms.Cursor.DrawStretched%2A> metody.  
   
-## <a name="controlling-the-mouse-pointer"></a>Řízení umístění ukazatele myši  
- Někdy můžete chtít omezit oblasti, ve kterém ukazatel myši lze použít nebo změně pozice myši. Můžete získat nebo nastavit aktuální umístění pomocí myši <xref:System.Windows.Forms.Cursor.Position%2A> vlastnost <xref:System.Windows.Forms.Cursor>. Kromě toho můžete omezit oblasti, lze ukazatel myši se nastavení <xref:System.Windows.Forms.Cursor.Clip%2A> vlastnost. Galerie oblast, ve výchozím nastavení, je na celé obrazovce.  
+## <a name="controlling-the-mouse-pointer"></a>Řízení ukazatele myši  
+ Někdy možná budete chtít omezit oblast, ve které se dá ukazatel myši použít, nebo změnit polohu myši. Aktuální polohu myši můžete získat nebo nastavit pomocí vlastnosti <xref:System.Windows.Forms.Cursor.Position%2A> <xref:System.Windows.Forms.Cursor>. Kromě toho můžete omezit oblast, kterou lze použít ukazatel myši k nastavení vlastnosti <xref:System.Windows.Forms.Cursor.Clip%2A>. Oblast klipu je ve výchozím nastavení celá obrazovka.  
   
-## <a name="changing-the-mouse-pointer"></a>Změna umístění ukazatele myši  
- Změna umístění ukazatele myši je to důležité způsob poskytnutí zpětné vazby pro uživatele. Například lze upravit umístění ukazatele myši v obslužné rutině z <xref:System.Windows.Forms.Control.MouseEnter> a <xref:System.Windows.Forms.Control.MouseLeave> události říct uživatelům, že dochází k výpočtům a omezit interakce s uživatelem v ovládacím prvku. V některých případech ukazatel myši se změní z důvodu systémové události, například když je aplikace součástí operace přetažení myší.  
+## <a name="changing-the-mouse-pointer"></a>Změna ukazatele myši  
+ Změna ukazatele myši je důležitým způsobem, jak poskytnout uživateli zpětnou vazbu. Ukazatel myši lze například upravit v obslužných rutinách <xref:System.Windows.Forms.Control.MouseEnter> a <xref:System.Windows.Forms.Control.MouseLeave> události, aby uživateli informovali, že k výpočtům dochází a omezení interakce uživatele v ovládacím prvku. V některých případech se ukazatel myši změní z důvodu systémových událostí, například když je vaše aplikace součástí operace přetažení.  
   
- Primárním způsob, jak změnit ukazatel myši je tak, že nastavíte <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.Control.DefaultCursor%2A> vlastnost ovládacího prvku do nového <xref:System.Windows.Forms.Cursor>. Příklady změnu ukazatele myši, naleznete v příkladu kódu v <xref:System.Windows.Forms.Cursor> třídy. Kromě toho <xref:System.Windows.Forms.Cursors> třída zveřejňuje sadu <xref:System.Windows.Forms.Cursor> objekty pro mnoho různých typů ukazatelů, jako je ukazatel, který vypadá podobně jako na tvar ruky. Chcete-li zobrazení ukazatele čekání, který se podobá přesýpací hodiny, pokaždé, když je ukazatel myši na ovládací prvek, použijte <xref:System.Windows.Forms.Control.UseWaitCursor%2A> vlastnost <xref:System.Windows.Forms.Control> třídy.  
+ Hlavní způsob, jak změnit ukazatel myši, je nastavením vlastnosti <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.Control.DefaultCursor%2A> ovládacího prvku na nový <xref:System.Windows.Forms.Cursor>. Příklady, jak změnit ukazatel myši, naleznete v příkladu kódu ve třídě <xref:System.Windows.Forms.Cursor>. Kromě toho třída <xref:System.Windows.Forms.Cursors> zpřístupňuje sadu <xref:System.Windows.Forms.Cursor> objektů pro mnoho různých typů ukazatelů, jako je ukazatel, který se podobá ruky. Chcete-li zobrazit ukazatel čekání, který se podobá přesýpacích hodin, pokaždé, když je ukazatel myši na ovládacím prvku, použijte vlastnost <xref:System.Windows.Forms.Control.UseWaitCursor%2A> třídy <xref:System.Windows.Forms.Control>.  
   
 ## <a name="see-also"></a>Viz také:
 

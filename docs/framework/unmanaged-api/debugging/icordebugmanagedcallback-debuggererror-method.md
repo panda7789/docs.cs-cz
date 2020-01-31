@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9e983d11-eaf3-4741-b936-29ec456384a3
 topic_type:
 - apiref
-ms.openlocfilehash: c03be2405e1ab0287a2921b6e2e293862c67a193
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9b96c0a2eca543b9e01ccf92b271b1aa7003c5c9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137376"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781939"
 ---
 # <a name="icordebugmanagedcallbackdebuggererror-method"></a>ICorDebugManagedCallback::DebuggerError – metoda
 Oznamuje ladicímu programu, že došlo k chybě při pokusu o zpracování události ze společného jazykového modulu runtime (CLR).  
@@ -48,7 +48,7 @@ HRESULT DebuggerError (
 ## <a name="remarks"></a>Poznámky  
  Tento proces může být umístěn do předávacího režimu v závislosti na povaze chyby.  
   
- `DebugError` zpětné volání indikuje, že služby ladění byly kvůli chybě zakázané, takže ladicí program by měl uživatelům zpřístupnit chybovou zprávu. [ICorDebugProcess:: getId –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getid-method.md) bude bezpečné volat, ale žádné jiné metody, včetně [ICorDebug:: Terminate](../../../../docs/framework/unmanaged-api/debugging/icordebug-terminate-method.md), by neměly být volány. Ladicí program by měl pro ukončení procesů používat zařízení s operačním systémem.  
+ `DebugError` zpětné volání indikuje, že služby ladění byly kvůli chybě zakázané, takže ladicí program by měl uživatelům zpřístupnit chybovou zprávu. [ICorDebugProcess:: getId –](icordebugprocess-getid-method.md) bude bezpečné volat, ale žádné jiné metody, včetně [ICorDebug:: Terminate](icordebug-terminate-method.md), by neměly být volány. Ladicí program by měl pro ukončení procesů používat zařízení s operačním systémem.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -61,4 +61,4 @@ HRESULT DebuggerError (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

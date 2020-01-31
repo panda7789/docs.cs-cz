@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení odsazení, předsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox'
+title: Nastavení odsazení, předsazení a odstavců s odrážkami pomocí ovládacího prvku RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], setting indents and bullets
 - text boxes [Windows Forms], bullets
 ms.assetid: abfb40e6-5642-4691-8ec1-9d9ae91688dc
-ms.openlocfilehash: 9d095e3561cd346e6dbd99d1be7468f6ad5725a6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4dcd5691f328eac6d94675c50ed41a7d7cc36596
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960457"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743015"
 ---
-# <a name="how-to-set-indents-hanging-indents-and-bulleted-paragraphs-with-the-windows-forms-richtextbox-control"></a>Postupy: Nastavení odsazení, předsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox
-Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms má mnoho možností formátování textu, který zobrazuje. Vybrané odstavce můžete formátovat jako seznamy s odrážkami nastavením <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> vlastnosti. Pomocí <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>vlastností, <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>a <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> můžete také nastavit odsazení odstavců vzhledem k levému a pravému okraji ovládacího prvku a levý okraj dalších řádků textu.  
+# <a name="how-to-set-indents-hanging-indents-and-bulleted-paragraphs-with-the-windows-forms-richtextbox-control"></a>Postupy: Nastavení odsazení, ukotvených odsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> má mnoho možností formátování textu, který zobrazuje. Vybrané odstavce můžete formátovat jako seznamy s odrážkami nastavením vlastnosti <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>. Pomocí vlastností <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>, <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>a <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> můžete také nastavit odsazení odstavců vzhledem k levému a pravému okraji ovládacího prvku a levý okraj dalších řádků textu.  
   
 ### <a name="to-format-a-paragraph-as-a-bulleted-list"></a>Formátování odstavce jako seznamu s odrážkami  
   
@@ -41,11 +41,11 @@ Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms má
   
 ### <a name="to-indent-a-paragraph"></a>Odsazení odstavce  
   
-1. <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> Nastavte vlastnost na celé číslo představující vzdálenost v pixelech mezi levým okrajem ovládacího prvku a levým okrajem textu.  
+1. Nastavte vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> na celé číslo představující vzdálenost v pixelech mezi levým okrajem ovládacího prvku a levým okrajem textu.  
   
-2. <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> Nastavte vlastnost na celé číslo představující vzdálenost v pixelech mezi levým okrajem prvního řádku textu v odstavci a levým okrajem dalších řádků ve stejném odstavci. Hodnota <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnosti se vztahuje pouze na řádky v odstavci, které jsou zabaleny pod prvním řádkem.  
+2. Nastavte vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> na celé číslo představující vzdálenost v pixelech mezi levým okrajem prvního řádku textu v odstavci a levým okrajem dalších řádků ve stejném odstavci. Hodnota vlastnosti <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> se vztahuje pouze na řádky v odstavci, které jsou zabaleny pod prvním řádkem.  
   
-3. <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> Nastavte vlastnost na celé číslo představující vzdálenost v pixelech mezi pravým okrajem ovládacího prvku a pravým okrajem textu.  
+3. Nastavte vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> na celé číslo představující vzdálenost v pixelech mezi pravým okrajem ovládacího prvku a pravým okrajem textu.  
   
     ```vb  
     RichTextBox1.SelectionIndent = 8  
@@ -66,7 +66,7 @@ Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms má
     ```  
   
     > [!NOTE]
-    > Všechny tyto vlastnosti mají vliv na všechny odstavce obsahující vybraný text a také na text, který je zadán po aktuálním místě vložení. Když třeba uživatel vybere slovo v rámci odstavce a pak upraví odsazení, bude se nové nastavení vztahovat na celý odstavec, který obsahuje toto slovo, a také na jakékoli odstavce, které se následně zadaly po vybraném odstavci. Informace o tom, jak text programově vybírat <xref:System.Windows.Forms.TextBoxBase.Select%2A>, najdete v tématu.  
+    > Všechny tyto vlastnosti mají vliv na všechny odstavce obsahující vybraný text a také na text, který je zadán po aktuálním místě vložení. Když třeba uživatel vybere slovo v rámci odstavce a pak upraví odsazení, bude se nové nastavení vztahovat na celý odstavec, který obsahuje toto slovo, a také na jakékoli odstavce, které se následně zadaly po vybraném odstavci. Informace o tom, jak text programově vybírat, najdete v tématu <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

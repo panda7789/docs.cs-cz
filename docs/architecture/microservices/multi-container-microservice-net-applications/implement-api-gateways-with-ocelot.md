@@ -2,12 +2,12 @@
 title: Implementace bran rozhraní API s Ocelotem
 description: Naučte se implementovat brány API pomocí Ocelot a jak používat Ocelot v prostředí založeném na kontejnerech.
 ms.date: 10/02/2018
-ms.openlocfilehash: 1ade05cc6935ce6a1bc74e6d6e4cdd5ef9fc6873
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: c0bcd240b6bd190dd02266c7faaf9fd668eb23bb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734606"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777297"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace bran API pomocí Ocelot
 
@@ -414,7 +414,7 @@ Ocelot však podporuje i podřízení identity/auth mikroslužby v rámci hranic
 
 **Obrázek 6-40**. Ověřování v Ocelot
 
-Jak ukazuje předchozí diagram, když je mikroslužba identity pod bránou API (AG): 1) AG vyžádá ověřovací token od mikroslužby identity, 2) mikroslužba identity vrátí token do AG, 3-4) žádosti AG z mikroslužeb pomocí ověřovacího tokenu. Vzhledem k tomu, že aplikace eShopOnContainers rozdělila bránu API na více BFF (back-end pro front-end) a brány rozhraní API obchodních oblastí, měla by být další možnost vytvoření další brány rozhraní API pro různé průřezy. Tato volba by byla poctivá v komplexnější architektuře založené na mikroslužbách s více aspekty, které se na mikroslužby týkají. Vzhledem k tomu, že v eShopOnContainers existuje pouze jeden problém pro průřez, bylo rozhodnuto pouze zpracovat službu zabezpečení ze sféry brány rozhraní API, a to z důvodu zjednodušení.
+Jak ukazuje předchozí diagram, když je mikroslužba identity pod bránou API (AG): 1) AG vyžádá ověřovací token od mikroslužby identity, 2) mikroslužba identity vrátí token do AG, 3-4) žádosti AG z mikroslužeb pomocí ověřovacího tokenu. Vzhledem k tomu, že aplikace eShopOnContainers rozdělila bránu API na více BFF (back-end pro front-end) a brány rozhraní API obchodních oblastí, měla by být další možnost vytvoření další brány API pro různé průřezy. Tato volba by byla poctivá v komplexnější architektuře založené na mikroslužbách s více aspekty, které se na mikroslužby týkají. Vzhledem k tomu, že v eShopOnContainers existuje pouze jeden problém pro průřez, bylo rozhodnuto pouze zpracovat službu zabezpečení ze sféry brány rozhraní API, a to z důvodu zjednodušení.
 
 V každém případě platí, že pokud je aplikace zabezpečená na úrovni brány rozhraní API, při pokusu o použití zabezpečené mikroslužby se nejdřív navštíví modul ověřování brány API Ocelot. Tím přesměruje požadavek HTTP na návštěvu identity nebo auth mikroslužeb, aby získal přístupový token, takže můžete přejít k chráněným službám pomocí access_token.
 

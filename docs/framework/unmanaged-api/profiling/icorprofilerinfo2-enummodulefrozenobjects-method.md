@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 920b6483-7064-4d64-8613-fcc38ccf9b1e
 topic_type:
 - apiref
-ms.openlocfilehash: 51e0c5b08b8a2ac3b8eaf38cdabd682078ba70c8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 27b3037459ac4f995e37515f6e96c28449c80a4f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436047"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862942"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects – metoda
 Získá enumerátor, který umožňuje iteraci přes zmrazené objekty v zadaném modulu. Tato metoda je zastaralá.  
@@ -38,7 +38,7 @@ HRESULT EnumModuleFrozenObjects(
  pro ID modulu obsahujícího zmrazené objekty, které mají být vyčísleny  
   
  `ppEnum`  
- mimo Ukazatel na adresu rozhraní [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) , které vyčísluje zmrazené objekty.  
+ mimo Ukazatel na adresu rozhraní [ICorProfilerObjectEnum](icorprofilerobjectenum-interface.md) , které vyčísluje zmrazené objekty.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -51,5 +51,5 @@ HRESULT EnumModuleFrozenObjects(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)

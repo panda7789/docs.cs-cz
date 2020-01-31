@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Tisk grafiky v modelu Windows Forms'
+title: 'Postupy: tisk grafiky'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - graphics [Windows Forms], printing
 - printing [Windows Forms], graphics
 ms.assetid: 32b891e6-52ff-4fea-a9ff-2ce5db20a4c6
-ms.openlocfilehash: 347c7064c199e953b496c9505f08c9e12c1ae670
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 2435b3bc14747a00d2a0fc03a9ebd21ae43c5369
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052805"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740639"
 ---
-# <a name="how-to-print-graphics-in-windows-forms"></a>Postupy: Tisk grafiky v modelu Windows Forms
-Často bude chtít tisk grafiky v aplikaci založené na Windows. <xref:System.Drawing.Graphics> Třída poskytuje metody pro vykreslení objektů do zařízení, jako je obrazovka nebo tiskárny.  
+# <a name="how-to-print-graphics-in-windows-forms"></a>Postupy: Tisk grafiky ve Windows Forms
+V aplikaci pro Windows často budete chtít vytisknout grafiky. Třída <xref:System.Drawing.Graphics> poskytuje metody pro kreslení objektů do zařízení, jako je například obrazovka nebo tiskárna.  
   
 ### <a name="to-print-graphics"></a>Tisk grafiky  
   
-1. Přidat <xref:System.Drawing.Printing.PrintDocument> komponentu do formuláře.  
+1. Přidejte do formuláře komponentu <xref:System.Drawing.Printing.PrintDocument>.  
   
-2. V <xref:System.Drawing.Printing.PrintDocument.PrintPage> obslužná rutina události, použijte <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> třídy dáte pokyn, aby tiskárny, na jaký typ grafiky k vytištění.  
+2. V obslužné rutině události <xref:System.Drawing.Printing.PrintDocument.PrintPage> použijte vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> třídy <xref:System.Drawing.Printing.PrintPageEventArgs> k tomu, abyste si vydávali informace o tom, jaký druh grafiky chcete tisknout.  
   
-     Následující příklad kódu ukazuje obslužné rutiny události použít k vytvoření modré tři tečky v rámci ohraničující obdélník. Obdélník má následující umístění a dimenze: začínající na 100, 150 šířka 250 a výška 250.  
+     Následující příklad kódu ukazuje obslužnou rutinu události použitou k vytvoření modré elipsy v ohraničujícím obdélníku. Obdélník má následující umístění a rozměry: od 100.150 s šířkou 250 a výškou 250.  
   
     ```vb  
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
@@ -52,7 +52,7 @@ ms.locfileid: "66052805"
        }  
     ```  
   
-     (Visual C# a vizuální C++) Umístěte následující kód do konstruktoru formuláře k registraci obslužné rutiny události.  
+     (Vizuální C# a vizuální C++) Vložte následující kód do konstruktoru formuláře pro registraci obslužné rutiny události.  
   
     ```csharp  
     this.printDocument1.PrintPage += new  

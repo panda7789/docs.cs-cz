@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8ecbb854-295c-4dd4-b9fc-01ebeac46e06
 topic_type:
 - apiref
-ms.openlocfilehash: 4201fe23bf54388510088e21471edce91809e94c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a147aee1ebba57b86dbbf8a7648456b8d7494936
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129790"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793188"
 ---
 # <a name="icordebugmda-interface"></a>ICorDebugMDA – rozhraní
 Představuje zprávu pomocníka spravovaného ladění (MDA).  
@@ -28,11 +28,11 @@ Představuje zprávu pomocníka spravovaného ladění (MDA).
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetDescription – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getdescription-method.md)|Získá řetězec obsahující popis tohoto typu MDA.|  
-|[GetFlags – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getflags-method.md)|Získá příznaky přidružené k tomuto MDA.|  
-|[GetName – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getname-method.md)|Získá řetězec obsahující název této aplikace MDA.|  
-|[GetOSThreadId – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getosthreadid-method.md)|Získá identifikátor vlákna operačního systému, na kterém je tento MDA spuštěn.|  
-|[GetXML – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-getxml-method.md)|Získá úplný datový proud XML přidružený k tomuto MDA.|  
+|[GetDescription – metoda](icordebugmda-getdescription-method.md)|Získá řetězec obsahující popis tohoto typu MDA.|  
+|[GetFlags – metoda](icordebugmda-getflags-method.md)|Získá příznaky přidružené k tomuto MDA.|  
+|[GetName – metoda](icordebugmda-getname-method.md)|Získá řetězec obsahující název této aplikace MDA.|  
+|[GetOSThreadId – metoda](icordebugmda-getosthreadid-method.md)|Získá identifikátor vlákna operačního systému, na kterém je tento MDA spuštěn.|  
+|[GetXML – metoda](icordebugmda-getxml-method.md)|Získá úplný datový proud XML přidružený k tomuto MDA.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -50,5 +50,5 @@ Představuje zprávu pomocníka spravovaného ladění (MDA).
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

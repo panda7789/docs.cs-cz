@@ -2,12 +2,12 @@
 title: ICorDebugAssembly3::GetContainerAssembly – metoda
 ms.date: 03/30/2017
 ms.assetid: f5fddeb6-b82e-4ebb-b432-849ce8513c77
-ms.openlocfilehash: 39f8dd042ea785258dfe5c048ebc348852be6892
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 969cca6d5613670fc4b26fc973785b4874c3684c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73095396"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778075"
 ---
 # <a name="icordebugassembly3getcontainerassembly-method"></a>ICorDebugAssembly3::GetContainerAssembly – metoda
 Vrátí sestavení kontejneru tohoto objektu `ICorDebugAssembly3`.  
@@ -28,7 +28,7 @@ HRESULT GetContainerAssembly(
  `S_OK`, pokud je volání metody úspěšné; v opačném případě jsou `S_FALSE`a `ppAssembly` **null**.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud bylo toto sestavení sloučeno s ostatními v rámci jednoho sestavení kontejneru, vrátí tato metoda sestavení kontejneru. Další informace a terminologii naleznete v tématu [ICorDebugProcess6:: EnableVirtualModuleSplitting](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-enablevirtualmodulesplitting-method.md) .  
+ Pokud bylo toto sestavení sloučeno s ostatními v rámci jednoho sestavení kontejneru, vrátí tato metoda sestavení kontejneru. Další informace a terminologii naleznete v tématu [ICorDebugProcess6:: EnableVirtualModuleSplitting](icordebugprocess6-enablevirtualmodulesplitting-method.md) .  
   
 > [!NOTE]
 > Tato metoda je k dispozici pouze s .NET Native.  
@@ -44,5 +44,5 @@ HRESULT GetContainerAssembly(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugAssembly3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly3-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugAssembly3 – rozhraní](icordebugassembly3-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

@@ -2,12 +2,12 @@
 title: Metoda ICorDebugLoadedModule::GetName
 ms.date: 03/30/2017
 ms.assetid: 88c304d5-edaa-4c0e-a8e1-144e8a76877e
-ms.openlocfilehash: 4cf2c5c099de3d66878f09ff702a1cad6ddb8f57
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 628f85f3045533ead7ace47b11573a0b1a46df46
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122626"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782052"
 ---
 # <a name="icordebugloadedmodulegetname-method"></a>Metoda ICorDebugLoadedModule::GetName
 Získá název načteného modulu.  
@@ -49,5 +49,5 @@ HRESULT GetName(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugLoadedModule – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugLoadedModule – rozhraní](icordebugloadedmodule-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

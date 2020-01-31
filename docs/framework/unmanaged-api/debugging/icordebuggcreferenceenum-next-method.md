@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91b1345c-a94f-4ef8-9696-3823d06c6d05
 topic_type:
 - apiref
-ms.openlocfilehash: 43408486fec9cd50222eed08ec2d3397bc11bc18
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3a8e967a3ecc452ebda08872d8bcd9e9d08c766f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134623"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777695"
 ---
 # <a name="icordebuggcreferenceenumnext-method"></a>ICorDebugGCReferenceEnum::Next – metoda
-Získá zadaný počet instancí [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) , které obsahují informace o objektech, které budou uvolněny z paměti.  
+Získá zadaný počet instancí [COR_GC_REFERENCE](cor-gc-reference-structure.md) , které obsahují informace o objektech, které budou uvolněny z paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ HRESULT Next(
  pro Počet kořenových adresářů, které mají být načteny.  
   
  autorit  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) , který představuje kořen objektu, který má být shromážděn z paměti.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_GC_REFERENCE](cor-gc-reference-structure.md) , který představuje kořen objektu, který má být shromážděn z paměti.  
   
  pceltFetched  
- mimo Ukazatel na počet [COR_GC_REFERENCEch](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) objektů, které jsou ve skutečnosti vráceny v `roots`. Tato hodnota může být `null`, pokud `celt` 1.  
+ mimo Ukazatel na počet objektů [COR_GC_REFERENCE](cor-gc-reference-structure.md) ve skutečnosti vrácených v `roots`. Tato hodnota může být `null`, pokud `celt` 1.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -57,5 +57,5 @@ HRESULT Next(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugGCReferenceEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugGCReferenceEnum – rozhraní](icordebuggcreferenceenum-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

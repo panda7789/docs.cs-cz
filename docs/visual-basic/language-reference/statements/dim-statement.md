@@ -29,12 +29,12 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-ms.openlocfilehash: ac66ffdba622673ef42017d147c05b2a2733dede
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1b0c3089c366c417af926c8c0703cea021674432
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343759"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744725"
 ---
 # <a name="dim-statement-visual-basic"></a>Dim – příkaz (Visual Basic)
 
@@ -51,45 +51,45 @@ Dim [ WithEvents ] variablelist
 
 - `attributelist`
 
-  Volitelná. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).
+  Volitelné. Viz [seznam atributů](attribute-list.md).
 
 - `accessmodifier`
 
-  Volitelná. Může být jedna z následujících akcí:
+  Volitelné. Může být jedna z následujících akcí:
 
-  - [Public](../../../visual-basic/language-reference/modifiers/public.md)
+  - [Public](../modifiers/public.md)
 
-  - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
+  - [Protected](../modifiers/protected.md)
 
-  - [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
+  - [Friend](../modifiers/friend.md)
 
-  - [Private](../../../visual-basic/language-reference/modifiers/private.md)
+  - [Private](../modifiers/private.md)
 
-  - [Protected Friend](../../language-reference/modifiers/protected-friend.md)
+  - [Protected Friend](../modifiers/protected-friend.md)
 
-  - [Private Protected](../../language-reference/modifiers/private-protected.md)
+  - [Private Protected](../modifiers/private-protected.md)
 
-  Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+  Podívejte [se na úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
 - `Shared`
 
-  Volitelná. Viz [Shared](../../../visual-basic/language-reference/modifiers/shared.md).
+  Volitelné. Viz [Shared](../modifiers/shared.md).
 
 - `Shadows`
 
-  Volitelná. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
+  Volitelné. Viz [Shadows](../modifiers/shadows.md).
 
 - `Static`
 
-  Volitelná. Viz [static](../../../visual-basic/language-reference/modifiers/static.md).
+  Volitelné. Viz [static](../modifiers/static.md).
 
 - `ReadOnly`
 
-  Volitelná. Zobrazit [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).
+  Volitelné. Zobrazit [jen pro čtení](../modifiers/readonly.md).
 
 - `WithEvents`
 
-Volitelná. Určuje, že se jedná o objektové proměnné, které odkazují na instance třídy, které mohou vyvolat události. Viz [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md).
+  Volitelné. Určuje, že se jedná o objektové proměnné, které odkazují na instance třídy, které mohou vyvolat události. Viz [WithEvents](../modifiers/withevents.md).
 
 - `variablelist`
 
@@ -103,12 +103,12 @@ Volitelná. Určuje, že se jedná o objektové proměnné, které odkazují na 
 
   |Částí|Popis|
   |---|---|
-  |`variablename`|Požadováno. Název proměnné Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
-  |`boundslist`|Volitelná. Seznam mezí jednotlivých dimenzí proměnné pole|
-  |`New`|Volitelná. Vytvoří novou instanci třídy při spuštění příkazu `Dim`.|
-  |`datatype`|Volitelná. Datový typ proměnné|
-  |`With`|Volitelná. Zavádí seznam inicializátorů objektů.|
-  |`propertyname`|Volitelná. Název vlastnosti ve třídě, pro kterou vytváříte instanci.|
+  |`variablename`|Požadováno. Název proměnné Viz [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
+  |`boundslist`|Volitelné. Seznam mezí jednotlivých dimenzí proměnné pole|
+  |`New`|Volitelné. Vytvoří novou instanci třídy při spuštění příkazu `Dim`.|
+  |`datatype`|Volitelné. Datový typ proměnné|
+  |`With`|Volitelné. Zavádí seznam inicializátorů objektů.|
+  |`propertyname`|Volitelné. Název vlastnosti ve třídě, pro kterou vytváříte instanci.|
   |`propinitializer`|Vyžadováno po `propertyname` =. Výraz, který je vyhodnocen a přiřazen k názvu vlastnosti.|
   |`initializer`|Volitelné, pokud není zadán `New`. Výraz, který je vyhodnocen a přiřazen k proměnné při jejím vytvoření.|
 
@@ -133,11 +133,11 @@ Pro typ odkazu použijete klíčové slovo `New` k vytvoření nové instance t�
 Dim bottomLabel As New System.Windows.Forms.Label
 ```
 
-Proměnnou lze deklarovat v proceduře, bloku, třídě, struktuře nebo modulu. Nelze deklarovat proměnnou ve zdrojovém souboru, oboru názvů nebo rozhraní. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+Proměnnou lze deklarovat v proceduře, bloku, třídě, struktuře nebo modulu. Nelze deklarovat proměnnou ve zdrojovém souboru, oboru názvů nebo rozhraní. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](declaration-contexts-and-default-access-levels.md).
 
 Proměnná deklarovaná na úrovni modulu, mimo jakoukoli proceduru, je *členskou proměnnou* nebo *polem*. Členské proměnné jsou v oboru v rámci své třídy, struktury nebo modulu. Proměnná, která je deklarována na úrovni procedury, je *místní proměnná*. Lokální proměnné jsou v oboru pouze v rámci jejich procedury nebo bloku.
 
-Následující modifikátory přístupu se používají k deklarování proměnných mimo proceduru: `Public`, `Protected`, `Friend`, `Protected Friend`a `Private`. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+Následující modifikátory přístupu se používají k deklarování proměnných mimo proceduru: `Public`, `Protected`, `Friend`, `Protected Friend`a `Private`. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
 Klíčové slovo `Dim` je nepovinné a obvykle se vynechává, pokud zadáte některý z následujících modifikátorů: `Public`, `Protected`, `Friend`, `Protected Friend`, `Private`, `Shared`, `Shadows`, `Static`, `ReadOnly`nebo `WithEvents`.
 
@@ -148,7 +148,7 @@ Private salary As Decimal
 Static runningTotal As Integer
 ```
 
-Pokud je `Option Explicit` zapnuto (výchozí), kompilátor vyžaduje deklaraci pro každou proměnnou, kterou používáte. Další informace naleznete v tématu [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md).
+Pokud je `Option Explicit` zapnuto (výchozí), kompilátor vyžaduje deklaraci pro každou proměnnou, kterou používáte. Další informace naleznete v tématu [Option Explicit – příkaz](option-explicit-statement.md).
 
 ## <a name="specifying-an-initial-value"></a>Určení počáteční hodnoty
 
@@ -169,9 +169,9 @@ Dim num1 As Integer = 3
 Dim num2 = 3
 ```
 
-Odvození typu se vztahuje na úroveň procedury. Nevztahuje se mimo proceduru ve třídě, struktuře, modulu nebo rozhraní. Další informace o odvození typu naleznete v tématu [Option include Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md) a [místní typ odvození](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
+Odvození typu se vztahuje na úroveň procedury. Nevztahuje se mimo proceduru ve třídě, struktuře, modulu nebo rozhraní. Další informace o odvození typu naleznete v tématu [Option include Statement](option-infer-statement.md) a [místní typ odvození](../../programming-guide/language-features/variables/local-type-inference.md).
 
-Informace o tom, co se stane, když není zadán datový typ nebo inicializátor, naleznete v části [výchozí datové typy a hodnoty](../../../visual-basic/language-reference/statements/dim-statement.md#default) dále v tomto tématu.
+Informace o tom, co se stane, když není zadán datový typ nebo inicializátor, naleznete v části [výchozí datové typy a hodnoty](dim-statement.md#default) dále v tomto tématu.
 
 Můžete použít *inicializátor objektu* pro deklaraci instancí pojmenovaného a anonymního typu. Následující kód vytvoří instanci třídy `Student` a k inicializaci vlastností používá inicializátor objektu.
 
@@ -180,7 +180,7 @@ Dim student1 As New Student With {.First = "Michael",
                                   .Last = "Tucker"}
 ```
 
-Další informace o inicializátorech objektů naleznete v tématu [How to: Declare a Object Using](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)a inicializátor Object, [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)a [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+Další informace o inicializátorech objektů naleznete v tématu [How to: Declare a Object Using](../../programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)a inicializátor Object, [Inicializátory objektů: pojmenované a anonymní typy](../../programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)a [anonymní typy](../../programming-guide/language-features/objects-and-classes/anonymous-types.md).
 
 ## <a name="declaring-multiple-variables"></a>Deklarace více proměnných
 
@@ -201,7 +201,7 @@ Dim a, b, c As Single, x, y As Double, i As Integer
 
 ## <a name="arrays"></a>Pole
 
-Můžete deklarovat proměnnou pro uchování *pole*, které může obsahovat více hodnot. Chcete-li určit, že proměnná obsahuje pole, postupujte podle `variablename` hned pomocí závorek. Další informace o polích naleznete v tématu [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+Můžete deklarovat proměnnou pro uchování *pole*, které může obsahovat více hodnot. Chcete-li určit, že proměnná obsahuje pole, postupujte podle `variablename` hned pomocí závorek. Další informace o polích naleznete v tématu [Arrays](../../programming-guide/language-features/arrays/index.md).
 
 Můžete zadat dolní a horní mez každého rozměru pole. Chcete-li to provést, zahrňte `boundslist` do závorek. Pro každou dimenzi `boundslist` určuje horní mez a volitelně i dolní mez. Dolní mez je vždycky nulová, ať už ji zadáte, nebo ne. Každý index se může od nuly pohybovat od hodnoty horní meze.
 
@@ -235,7 +235,7 @@ Pokud má pole více než jednu dimenzi, je nutné zahrnout čárky mezi závork
 Dim oneDimension(), twoDimensions(,), threeDimensions(,,) As Byte
 ```
 
-*Pole s nulovou délkou* můžete deklarovat deklarováním jednoho z dimenzí pole, které je-1. Proměnná, která obsahuje pole s nulovou délkou, nemá hodnotu `Nothing`. Pole s nulovou délkou jsou vyžadovány některými funkcemi modulu CLR (Common Language Runtime). Pokud se pokusíte o přístup k takovému poli, dojde k výjimce modulu runtime. Další informace naleznete v tématu [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+*Pole s nulovou délkou* můžete deklarovat deklarováním jednoho z dimenzí pole, které je-1. Proměnná, která obsahuje pole s nulovou délkou, nemá hodnotu `Nothing`. Pole s nulovou délkou jsou vyžadovány některými funkcemi modulu CLR (Common Language Runtime). Pokud se pokusíte o přístup k takovému poli, dojde k výjimce modulu runtime. Další informace naleznete v tématu [pole](../../programming-guide/language-features/arrays/index.md).
 
 Hodnoty pole lze inicializovat pomocí literálu pole. Provedete to tak, že tyto inicializační hodnoty uzavřete do složených závorek (`{}`).
 
@@ -249,7 +249,7 @@ Pro multidimenzionální pole je inicializace pro každou samostatnou dimenzi uz
 Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 ```
 
-Další informace o literálech pole naleznete v tématu [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+Další informace o literálech pole naleznete v tématu [Arrays](../../programming-guide/language-features/arrays/index.md).
 
 ## <a name="default"></a>Výchozí datové typy a hodnoty
 
@@ -257,14 +257,14 @@ Následující tabulka popisuje výsledky různých kombinací určení datovéh
 
 |Byl zadán datový typ?|Byl určen inicializátor?|Příklad|Výsledek|
 |---|---|---|---|
-|Ne|Ne|`Dim qty`|Pokud je [možnost Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md) vypnutá (výchozí nastavení), proměnná je nastavená na `Nothing`.<br /><br /> Pokud je `Option Strict` zapnutý, dojde k chybě při kompilaci.|
-|Ne|Ano|`Dim qty = 5`|Pokud je nastavená [možnost odvodit](../../../visual-basic/language-reference/statements/option-infer-statement.md) (výchozí), proměnná vezme datový typ inicializátoru. Viz [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je vypnutý, proměnná převezme datový typ `Object`.<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je zapnutá, dojde k chybě při kompilaci.|
+|Ne|Ne|`Dim qty`|Pokud je [možnost Option Strict](option-strict-statement.md) vypnutá (výchozí nastavení), proměnná je nastavená na `Nothing`.<br /><br /> Pokud je `Option Strict` zapnutý, dojde k chybě při kompilaci.|
+|Ne|Ano|`Dim qty = 5`|Pokud je nastavená [možnost odvodit](option-infer-statement.md) (výchozí), proměnná vezme datový typ inicializátoru. Viz [odvození místního typu](../../programming-guide/language-features/variables/local-type-inference.md).<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je vypnutý, proměnná převezme datový typ `Object`.<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je zapnutá, dojde k chybě při kompilaci.|
 |Ano|Ne|`Dim qty As Integer`|Proměnná je inicializována na výchozí hodnotu pro datový typ. Další informace najdete v tabulce dále v této části.|
 |Ano|Ano|`Dim qty  As Integer = 5`|Pokud datový typ inicializátoru nelze převést na zadaný datový typ, dojde k chybě při kompilaci.|
 
 Zadáte-li datový typ, ale nezadáte inicializátor, Visual Basic inicializuje proměnnou na výchozí hodnotu pro svůj datový typ. V následující tabulce jsou uvedeny výchozí inicializační hodnoty.
 
-|Typ dat|Výchozí hodnota|
+|Datový typ|Výchozí hodnota|
 |---|---|
 |Všechny číselné typy (včetně `Byte` a `SByte`)|0|
 |`Char`|Binární hodnota 0|
@@ -292,7 +292,7 @@ Na úrovni modulu nemůžete použít modifikátor `Static` k deklaraci proměnn
 
 Můžete určit, který kód má přístup k proměnné, zadáním `accessmodifier`. Proměnné členů třídy a modulu (mimo všechny procedury) výchozí pro privátní přístup a proměnné členů struktury jako výchozí pro veřejný přístup. Můžete upravit jejich úrovně přístupu modifikátory přístupu. Modifikátory přístupu nemůžete použít u místních proměnných (uvnitř procedury).
 
-`WithEvents` lze zadat pouze pro členské proměnné, nikoli pro lokální proměnné v rámci procedury. Pokud zadáte `WithEvents`, datový typ proměnné musí být konkrétní typ třídy, ne `Object`. Pole nelze deklarovat pomocí `WithEvents`. Další informace o událostech najdete v tématu [události](../../../visual-basic/programming-guide/language-features/events/index.md).
+`WithEvents` lze zadat pouze pro členské proměnné, nikoli pro lokální proměnné v rámci procedury. Pokud zadáte `WithEvents`, datový typ proměnné musí být konkrétní typ třídy, ne `Object`. Pole nelze deklarovat pomocí `WithEvents`. Další informace o událostech najdete v tématu [události](../../programming-guide/language-features/events/index.md).
 
 > [!NOTE]
 > Kód mimo třídu, strukturu nebo modul musí kvalifikovat název členské proměnné s názvem této třídy, struktury nebo modulu. Kód mimo proceduru nebo blok nemůže odkazovat na žádné místní proměnné v rámci tohoto postupu nebo bloku.
@@ -303,7 +303,7 @@ Systém uvolňování paměti .NET Framework uvolní spravované prostředky bez
 
 Pokud třída obsahuje obzvláště cenný a omezených prostředek (například připojení k databázi nebo popisovač souboru), nebudete chtít počkat do dalšího uvolňování paměti, aby se vyčistila instance třídy, která se už nepoužívá. Třída může implementovat rozhraní <xref:System.IDisposable>, aby poskytovala způsob, jak uvolnit prostředky před uvolňováním paměti. Třída, která implementuje toto rozhraní, zpřístupňuje `Dispose` metodu, která může být volána, aby vynutila okamžité vydání cenných prostředků.
 
-Příkaz `Using` automatizuje proces získání prostředku, spuštění sady příkazů a následné likvidaci prostředku. Prostředek však musí implementovat rozhraní <xref:System.IDisposable>. Další informace naleznete v tématu [using – příkaz](../../../visual-basic/language-reference/statements/using-statement.md).
+Příkaz `Using` automatizuje proces získání prostředku, spuštění sady příkazů a následné likvidaci prostředku. Prostředek však musí implementovat rozhraní <xref:System.IDisposable>. Další informace naleznete v tématu [using – příkaz](using-statement.md).
 
 ## <a name="example"></a>Příklad
 
@@ -327,16 +327,16 @@ V následujícím příkladu je proměnná `speedValue` deklarována na úrovni 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)
-- [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)
-- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
-- [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Příkaz Const](const-statement.md)
+- [Příkaz ReDim](redim-statement.md)
+- [Příkaz Option Explicit](option-explicit-statement.md)
+- [Příkaz Option Infer](option-infer-statement.md)
+- [Příkaz Option Strict](option-strict-statement.md)
 - [Stránka Kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
-- [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
-- [Anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
-- [Postupy: Deklarace objektu pomocí inicializátoru objektu](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)
-- [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Deklarace proměnné](../../programming-guide/language-features/variables/variable-declaration.md)
+- [Pole](../../programming-guide/language-features/arrays/index.md)
+- [Inicializátory objektů: pojmenované a anonymní typy](../../programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Anonymní typy](../../programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [Inicializátory objektů: pojmenované a anonymní typy](../../programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Postupy: Deklarace objektu pomocí inicializátoru objektu](../../programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)
+- [Odvození místního typu](../../programming-guide/language-features/variables/local-type-inference.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 93f79627-bd31-4f4f-b95d-46a032a52fe4
 topic_type:
 - apiref
-ms.openlocfilehash: ab3819d5c33f090fda1ca9c3dccb5d08ab8f84cc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bf9ea40cc81be37499e6729006e7177a8000c000
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131463"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793300"
 ---
 # <a name="icordebugmanagedcallback2mdanotification-method"></a>ICorDebugManagedCallback2::MDANotification – metoda
 Poskytuje oznámení o tom, že provádění kódu zjistilo v aplikaci, která je laděna, pomocníka spravovaného ladění (MDA).  
@@ -49,10 +49,10 @@ HRESULT MDANotification(
  Musíte získat ID vlákna operačního systému (OS) z samotného objektu MDA.  
   
  `pMDA`  
- pro Ukazatel na rozhraní [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) , které zpřístupňuje informace MDA.  
+ pro Ukazatel na rozhraní [ICorDebugMDA](icordebugmda-interface.md) , které zpřístupňuje informace MDA.  
   
 ## <a name="remarks"></a>Poznámky  
- MDA je heuristické upozornění a nevyžaduje žádnou explicitní akci ladicího programu s výjimkou volání [ICorDebugController:: Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pro pokračování v provádění aplikace, která se právě ladí.  
+ MDA je heuristické upozornění a nevyžaduje žádnou explicitní akci ladicího programu s výjimkou volání [ICorDebugController:: Continue](icordebugcontroller-continue-method.md) pro pokračování v provádění aplikace, která se právě ladí.  
   
  Modul CLR (Common Language Runtime) může určit, které MDA jsou vyvolány a která data jsou v jakémkoli okamžiku v daném bodě. Proto by ladicí program neměl vytvářet žádné funkce vyžadující konkrétní vzory MDA.  
   
@@ -72,5 +72,5 @@ HRESULT MDANotification(
 ## <a name="see-also"></a>Viz také:
 
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2 – rozhraní](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

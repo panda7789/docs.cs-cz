@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3d5b642e-7ef2-428b-a5ae-509c35ed461a
 topic_type:
 - apiref
-ms.openlocfilehash: 144bdb1b4e479c1e75f89911ad5002e2650e405d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8ce48b63a92e84ce92da0dcf35a6242744c1a8c3
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73098113"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778421"
 ---
 # <a name="cordebugintercept-enumeration"></a>CorDebugIntercept – výčet
 Určuje typy kódu, které mohou být zachyceny (to je od-steped do).  
@@ -51,7 +51,7 @@ typedef enum CorDebugIntercept {
 |`INTERCEPT_ALL`|Veškerý kód může být zachycen.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použijte metodu [ICorDebugStepper:: SetInterceptMask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) pro vytvoření typů kódu, který lze zachytit.  
+ Použijte metodu [ICorDebugStepper:: SetInterceptMask –](icordebugstepper-setinterceptmask-method.md) pro vytvoření typů kódu, který lze zachytit.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -64,4 +64,4 @@ typedef enum CorDebugIntercept {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)

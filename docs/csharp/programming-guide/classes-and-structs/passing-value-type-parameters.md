@@ -5,15 +5,15 @@ helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-ms.openlocfilehash: b6999c90bbe254542419232ab719a2754018d295
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 670af18d4b2b356aa33a0a03a29c05f5ba9bf78f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705454"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744492"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Předávání parametrů typu hodnoty (Průvodce programováním v C#)
-Proměnná [typu hodnoty](../../language-reference/keywords/value-types.md) obsahuje svá data přímo na rozdíl od proměnné [typu odkazu](../../language-reference/keywords/reference-types.md) , která obsahuje odkaz na její data. Předání proměnné typu hodnoty metodě podle hodnoty znamená předání kopie proměnné metodě. Jakékoli změny parametru, které probíhají v metodě, nemají žádný vliv na původní data uložená v proměnné argumentu. Chcete-li, aby volaná metoda změnila hodnotu argumentu, je nutné ji předat odkazem pomocí klíčového slova [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) . Můžete také použít klíčové slovo [in](../../language-reference/keywords/in-parameter-modifier.md) k předání parametru hodnoty odkazem k tomu, aby se zabránilo kopírování a zároveň zaručeno, že hodnota nebude změněna. Pro zjednodušení následující příklady používají `ref`.  
+Proměnná [typu hodnoty](../../language-reference/builtin-types/value-types.md) obsahuje svá data přímo na rozdíl od proměnné [typu odkazu](../../language-reference/keywords/reference-types.md) , která obsahuje odkaz na její data. Předání proměnné typu hodnoty metodě podle hodnoty znamená předání kopie proměnné metodě. Jakékoli změny parametru, které probíhají v metodě, nemají žádný vliv na původní data uložená v proměnné argumentu. Chcete-li, aby volaná metoda změnila hodnotu argumentu, je nutné ji předat odkazem pomocí klíčového slova [ref](../../language-reference/keywords/ref.md) nebo [out](../../language-reference/keywords/out-parameter-modifier.md) . Můžete také použít klíčové slovo [in](../../language-reference/keywords/in-parameter-modifier.md) k předání parametru hodnoty odkazem k tomu, aby se zabránilo kopírování a zároveň zaručeno, že hodnota nebude změněna. Pro zjednodušení následující příklady používají `ref`.  
   
 ## <a name="passing-value-types-by-value"></a>Předávání typů hodnot podle hodnoty  
  Následující příklad ukazuje předání parametrů typu hodnoty podle hodnoty. Proměnná `n` je předána hodnotou do metody `SquareIt`. Všechny změny, které probíhají v metodě, nemají žádný vliv na původní hodnotu proměnné.  

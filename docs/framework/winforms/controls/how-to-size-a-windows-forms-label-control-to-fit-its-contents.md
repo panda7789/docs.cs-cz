@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu'
+title: Velikost ovládacího prvku popisek podle jeho obsahu
 ms.date: 03/30/2017
 helpviewer_keywords:
 - captions [Windows Forms], sizing
@@ -8,21 +8,21 @@ helpviewer_keywords:
 - labels [Windows Forms], sizing to fit contents
 - Label control [Windows Forms], sizing to fit contents
 ms.assetid: 99648964-63b2-438c-980e-d24103ad602b
-ms.openlocfilehash: 110aab0c0826bb4b06e22158afd6af37b5406be4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6a563693feaa5074f5d13f0b82cc4d0305a79c23
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971194"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743782"
 ---
-# <a name="how-to-size-a-windows-forms-label-control-to-fit-its-contents"></a>Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu
-Windows Forms <xref:System.Windows.Forms.Label> ovládací prvek může být jednořádkové nebo víceřádkové, a může být buď pevnou velikost nebo můžete automaticky měnit velikost tak, aby vyhovovaly titulek. <xref:System.Windows.Forms.Label.AutoSize%2A> Vlastnost umožňuje velikost ovládacích prvků podle větší nebo menší popisky, které je zvláště užitečný, pokud popisek se změní za běhu.  
+# <a name="how-to-size-a-windows-forms-label-control-to-fit-its-contents"></a>Postupy: Určení velikosti ovládacího prvku popisku Windows Forms k zobrazení jeho obsahu
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.Label> může být jednořádkový nebo víceřádkový a může být buď pevně stanovený, nebo se může automaticky změnit jeho velikost tak, aby odpovídala jeho titulku. Vlastnost <xref:System.Windows.Forms.Label.AutoSize%2A> pomáhá nastavit velikost ovládacích prvků tak, aby vyhovovala větším nebo menším titulkům, což je zvláště užitečné, pokud se titulek v době běhu změní.  
   
-### <a name="to-make-a-label-control-resize-dynamically-to-fit-its-contents"></a>Chcete-li změnit dynamicky velikost podle svého obsahu ovládacího prvku popisek  
+### <a name="to-make-a-label-control-resize-dynamically-to-fit-its-contents"></a>Chcete-li změnit velikost ovládacího prvku popisku dynamicky tak, aby odpovídal jeho obsahu  
   
-1. Nastavte jeho <xref:System.Windows.Forms.Label.AutoSize%2A> vlastnost `true`.  
+1. Vlastnost <xref:System.Windows.Forms.Label.AutoSize%2A> nastavte na `true`.  
   
- Pokud <xref:System.Windows.Forms.Label.AutoSize%2A> je nastavena na `false`, v zadaných slov <xref:System.Windows.Forms.Label.Text%2A> vlastnost se zalomí na další řádek Pokud je to možné, ale nebude zvětšovat ovládacího prvku.  
+ Pokud je <xref:System.Windows.Forms.Label.AutoSize%2A> nastaveno na hodnotu `false`, slova zadaná ve vlastnosti <xref:System.Windows.Forms.Label.Text%2A> budou zabalena do dalšího řádku, pokud je to možné, ale ovládací prvek se nebude zvětšovat.  
   
 ## <a name="see-also"></a>Viz také:
 

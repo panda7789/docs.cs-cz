@@ -1,84 +1,84 @@
 ---
-title: Typy sloupců v ovládacím prvku Windows Forms DataGridView
+title: Typy sloupců v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - columns [Windows Forms], types
 - DataGridView control [Windows Forms], column types
 - data grids [Windows Forms], columns
 ms.assetid: f0a0a9f1-8757-4bfd-891f-d7d12870dbed
-ms.openlocfilehash: a33cf4cd865921c04ef10c7fccf3a67c3d22de73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e918394cca6350854074d4c1567890138b2a1462
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61956244"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743851"
 ---
 # <a name="column-types-in-the-windows-forms-datagridview-control"></a>Typy sloupců v ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Ovládací prvek používá několik typů sloupce k zobrazení jeho informace a umožňují uživatelům změnit nebo přidat informace.  
+Ovládací prvek <xref:System.Windows.Forms.DataGridView> pro zobrazení informací používá několik typů sloupců a umožňuje uživatelům upravovat nebo přidávat informace.  
   
- Po vytvoření vazby <xref:System.Windows.Forms.DataGridView> ovládací prvek a nastavit <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> vlastnost `true`, sloupce jsou automaticky generovány pomocí vhodné pro datové typy obsažené ve zdroji vazby dat typy sloupců výchozí.  
+ Když vytvoříte vazbu ovládacího prvku <xref:System.Windows.Forms.DataGridView> a nastavíte vlastnost <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> na `true`, automaticky se vygenerují sloupce s použitím výchozích typů sloupců odpovídajících datovým typům obsaženým ve vázaném zdroji dat.  
   
- Můžete také vytvořit instance kteréhokoli sloupce tříd sami a přidat je do kolekce vrácené <xref:System.Windows.Forms.DataGridView.Columns%2A> vlastnost. Můžete vytvořit tyto instance pro použití jako nevázaného sloupce, nebo můžete ručně vytvořit vazbu je. Ručně svázané sloupce jsou užitečné, například když chcete nahradit automaticky generované sloupce jednoho typu. sloupec jiného typu.  
+ Můžete také vytvořit instance libovolné třídy sloupce sami a přidat je do kolekce vrácené vlastností <xref:System.Windows.Forms.DataGridView.Columns%2A>. Tyto instance můžete vytvořit pro použití jako nevázané sloupce nebo je můžete svázat ručně. Ručně vázané sloupce jsou užitečné, například když chcete nahradit automaticky generovaný sloupec jednoho typu sloupcem jiného typu.  
   
- Následující tabulka popisuje různé třídy sloupce k dispozici pro použití v <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+ Následující tabulka popisuje různé třídy sloupců, které jsou k dispozici pro použití v ovládacím prvku <xref:System.Windows.Forms.DataGridView>.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.Windows.Forms.DataGridViewTextBoxColumn>|Použít s textové hodnoty. Automaticky generovat při vytváření vazby na čísly a textovými řetězci.|  
-|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>|Použít s <xref:System.Boolean> a <xref:System.Windows.Forms.CheckState> hodnoty. Automaticky generovat při vytváření vazby hodnoty těchto typů.|  
-|<xref:System.Windows.Forms.DataGridViewImageColumn>|Slouží k zobrazení obrázků. Automaticky generovat při vytváření vazby na pole bajtů <xref:System.Drawing.Image> objektů, nebo <xref:System.Drawing.Icon> objekty.|  
-|<xref:System.Windows.Forms.DataGridViewButtonColumn>|Slouží k zobrazení tlačítka v buňkách. Nelze automaticky generovat při vytváření vazby. Obvykle se používá jako nevázaných sloupců.|  
-|<xref:System.Windows.Forms.DataGridViewComboBoxColumn>|Slouží k zobrazení v buňkách rozevírací seznamy. Nelze automaticky generovat při vytváření vazby. Obvykle vázané na data ručně.|  
-|<xref:System.Windows.Forms.DataGridViewLinkColumn>|Slouží k zobrazení odkazů v buňkách. Nelze automaticky generovat při vytváření vazby. Obvykle vázané na data ručně.|  
-|Typ vlastního sloupce|Můžete vytvořit vlastní třídu sloupec děděním <xref:System.Windows.Forms.DataGridViewColumn> třída nebo některý z jeho odvozené třídy, které poskytují vlastní vzhled, chování nebo hostované ovládací prvky. Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)|  
+|<xref:System.Windows.Forms.DataGridViewTextBoxColumn>|Používá se s hodnotami založenými na textu. Generuje se automaticky při vazbě na čísla a řetězce.|  
+|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>|Používá se s hodnotami <xref:System.Boolean> a <xref:System.Windows.Forms.CheckState>. Generuje se automaticky při vytváření vazby na hodnoty těchto typů.|  
+|<xref:System.Windows.Forms.DataGridViewImageColumn>|Slouží k zobrazení obrázků. Generováno automaticky při vázání na pole bajtů, <xref:System.Drawing.Image> objektů nebo objektů <xref:System.Drawing.Icon>.|  
+|<xref:System.Windows.Forms.DataGridViewButtonColumn>|Slouží k zobrazení tlačítek v buňkách. Negeneruje se automaticky při vazbě. Obvykle se používá jako nevázané sloupce.|  
+|<xref:System.Windows.Forms.DataGridViewComboBoxColumn>|Slouží k zobrazení rozevíracích seznamů v buňkách. Negeneruje se automaticky při vazbě. Obvykle se datově sváže ručně.|  
+|<xref:System.Windows.Forms.DataGridViewLinkColumn>|Slouží k zobrazení odkazů v buňkách. Negeneruje se automaticky při vazbě. Obvykle se datově sváže ručně.|  
+|Vlastní typ sloupce|Můžete vytvořit vlastní třídu sloupce děděním <xref:System.Windows.Forms.DataGridViewColumn> třídy nebo kterékoli z jeho odvozených tříd, a poskytnout tak vlastní vzhled, chování nebo hostované ovládací prvky. Další informace najdete v tématu [Postup: přizpůsobení buněk a sloupců v ovládacím prvku DataGridView model Windows Forms rozšířením jejich chování a vzhledu.](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)|  
   
- Tyto typy sloupců jsou popsány podrobněji v následujících částech.  
+ Tyto typy sloupců jsou podrobněji popsány v následujících částech.  
   
 ## <a name="datagridviewtextboxcolumn"></a>DataGridViewTextBoxColumn  
- <xref:System.Windows.Forms.DataGridViewTextBoxColumn> Je typ sloupce pro obecné účely pro použití s textové hodnoty, jako je čísly a textovými řetězci. V režimu úprav <xref:System.Windows.Forms.TextBox> ovládacího prvku se zobrazí v aktivní buňky, povolíte uživatelům upravit její hodnotu.  
+ <xref:System.Windows.Forms.DataGridViewTextBoxColumn> je typ sloupce pro obecné účely pro použití s textovými hodnotami, jako jsou čísla a řetězce. V režimu úprav je ovládací prvek <xref:System.Windows.Forms.TextBox> zobrazen v aktivní buňce a umožňuje uživatelům změnit hodnotu buňky.  
   
- Hodnoty buněk se automaticky převedou na řetězce k zobrazení. Vytvořit hodnotu buňky odpovídající typ dat se automaticky Parsuje hodnoty zadané nebo upravil uživatel. Tyto převody můžete upravit tak, že zpracování <xref:System.Windows.Forms.DataGridView.CellFormatting> a <xref:System.Windows.Forms.DataGridView.CellParsing> události <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+ Hodnoty buněk jsou automaticky převedeny na řetězce pro zobrazení. Hodnoty zadané nebo upravené uživatelem se automaticky analyzují, aby se vytvořila hodnota buňky příslušného datového typu. Tyto převody lze přizpůsobit zpracováním <xref:System.Windows.Forms.DataGridView.CellFormatting> a <xref:System.Windows.Forms.DataGridView.CellParsing> událostí ovládacího prvku <xref:System.Windows.Forms.DataGridView>.  
   
- Typ dat hodnoty buňky sloupce je zadaný v <xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A> vlastnost sloupce.  
+ Datový typ hodnota buňky sloupce je zadán ve vlastnosti <xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A> sloupce.  
   
 ## <a name="datagridviewcheckboxcolumn"></a>DataGridViewCheckBoxColumn  
- <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> Se používá s <xref:System.Boolean> a <xref:System.Windows.Forms.CheckState> hodnoty. <xref:System.Boolean> Zobrazí hodnoty jako stav dvou nebo tří stavů zaškrtávací políčka, závisí na hodnotě <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> vlastnost. Sloupec je vázána k <xref:System.Windows.Forms.CheckState> hodnot, <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> hodnota vlastnosti je `true` ve výchozím nastavení.  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> se používá s hodnotami <xref:System.Boolean> a <xref:System.Windows.Forms.CheckState>. hodnoty <xref:System.Boolean> se v závislosti na hodnotě vlastnosti <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> zobrazují jako dvě nebo tři stavy. Když je sloupec vázaný na <xref:System.Windows.Forms.CheckState> hodnoty, ve výchozím nastavení je hodnota vlastnosti <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> `true`.  
   
- Obvykle hodnot v buňkách zaškrtávací políčko slouží pro úložiště, jako jsou všechna data, nebo pro provádění hromadné operace. Pokud chcete reagovat okamžitě, když uživatelé kliknou na zaškrtávací políčko buňky, můžete zpracovávat <xref:System.Windows.Forms.DataGridView.CellClick> události, ale tato událost se vyvolá, předtím, než se aktualizuje její hodnotu. Pokud potřebujete nové hodnoty v době, klepněte na tlačítko, jednou z možností je k výpočtu co očekávaná hodnota bude na základě aktuální hodnoty. Další možností je okamžitě potvrďte změnu a zpracovat <xref:System.Windows.Forms.DataGridView.CellValueChanged> události a reagovat na něj. K provedení změn, při kliknutí na buňku, je nutné zpracovat <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged> událostí. V obslužné rutině, pokud aktuální buňka nachází zaškrtávací políčko, zavolejte <xref:System.Windows.Forms.DataGridView.CommitEdit%2A> metoda a předejte jí <xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit> hodnotu.  
+ Hodnoty buněk zaškrtávacího políčka jsou obvykle určené pro úložiště, stejně jako jakákoli jiná data nebo pro provádění hromadných operací. Pokud chcete ihned reagovat, když uživatel klikne na buňku zaškrtávacího políčka, můžete zpracovat událost <xref:System.Windows.Forms.DataGridView.CellClick>, ale tato událost nastane před aktualizací hodnoty buňky. Pokud potřebujete novou hodnotu v okamžiku kliknutí, jednou z možností je vypočítat, co očekávaná hodnota bude založena na aktuální hodnotě. Dalším přístupem je okamžité potvrzení změny a zpracování události <xref:System.Windows.Forms.DataGridView.CellValueChanged>, která na ni reaguje. Chcete-li změnu potvrdit při kliknutí na buňku, je nutné zpracovat událost <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged>. Pokud je aktuální buňka v obslužné rutině buňka zaškrtávací políčko, zavolejte metodu <xref:System.Windows.Forms.DataGridView.CommitEdit%2A> a předejte hodnotu <xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit>.  
   
 ## <a name="datagridviewimagecolumn"></a>DataGridViewImageColumn  
- <xref:System.Windows.Forms.DataGridViewImageColumn> Slouží k zobrazení obrázků. Obrázek sloupce můžete vyplní automaticky ze zdroje dat, vyplní ručně pro nevázaných sloupců nebo vložené dynamicky obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellFormatting> událostí.  
+ <xref:System.Windows.Forms.DataGridViewImageColumn> slouží k zobrazení obrázků. Sloupce obrázku mohou být naplněny automaticky ze zdroje dat, vyplněné pro nevázané sloupce nebo dynamicky naplněny v obslužné rutině pro událost <xref:System.Windows.Forms.DataGridView.CellFormatting>.  
   
- Automatické naplnění sloupce obrázku ze zdroje dat funguje s bajtových polí v různých formátech obrázků, včetně všech formátů podporovaných <xref:System.Drawing.Image> třídy a obrázek OLE formát používaný čtečkou Microsoft® Access a ukázkové databáze Northwind.  
+ Automatické naplnění sloupce obrázku ze zdroje dat funguje s poli bajtů v nejrůznějších formátech obrázků, včetně všech formátů podporovaných <xref:System.Drawing.Image> třídou a formátu obrázků OLE, který používá Microsoft® Access a ukázkové databáze Northwind.  
   
- Ručně naplnění sloupce obrázku je užitečné, když chcete poskytovat funkce <xref:System.Windows.Forms.DataGridViewButtonColumn>, ale s přizpůsobený vzhled. Dokáže zpracovat <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> události a reakce na kliknutí v rámci na buňku bitové kopie.  
+ Ruční naplnění sloupce obrázku je užitečné, pokud chcete poskytnout funkce <xref:System.Windows.Forms.DataGridViewButtonColumn>, ale s přizpůsobeným vzhledem. Událost <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> můžete zpracovat tak, aby reagovala na kliknutí v rámci buňky obrázku.  
   
- Naplnění buňky sloupce obrázku v obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellFormatting> událostí je užitečné, když chcete poskytovat imagí pro počítané hodnoty nebo ve formátech,-bitové kopie. Například může obsahovat sloupec "Riziko" s řetězcové hodnoty jako `"high"`, `"middle"`, a `"low"` , kterou chcete zobrazit jako ikony. Alternativně můžete mít sloupec "Image", který obsahuje umístění bitové kopie, které musí být načteny místo binární obsah obrázků.  
+ Naplnění buněk sloupce obrázku v obslužné rutině pro událost <xref:System.Windows.Forms.DataGridView.CellFormatting> je užitečné, pokud chcete poskytnout obrázky pro počítané hodnoty nebo hodnoty v neobrazovém formátu. Například můžete mít sloupec "rizik" s řetězcovými hodnotami, například `"high"`, `"middle"`a `"low"`, které chcete zobrazit jako ikony. Alternativně můžete mít sloupec "image", který obsahuje umístění obrázků, která musí být načtena místo binárního obsahu imagí.  
   
 ## <a name="datagridviewbuttoncolumn"></a>DataGridViewButtonColumn  
- S <xref:System.Windows.Forms.DataGridViewButtonColumn>, můžete zobrazit sloupec buňky, které obsahují tlačítka. To je užitečné, když chcete usnadníte uživatelům provádět akce na konkrétní záznamy, jako je například zadání objednávky nebo zobrazení podřízené záznamy v samostatném okně.  
+ Pomocí <xref:System.Windows.Forms.DataGridViewButtonColumn>můžete zobrazit sloupec buněk obsahující tlačítka. To je užitečné, když chcete uživatelům poskytnout snadný způsob, jak provádět akce s konkrétními záznamy, jako je například umístění objednávky nebo zobrazení podřízených záznamů v samostatném okně.  
   
- Tlačítko sloupce nejsou generovány při vázání dat <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Použijte tlačítko sloupce, můžete je vytvořit ručně a přidat je do kolekci vrácené poskytovatelem <xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType> vlastnost.  
+ Sloupce tlačítek nejsou generovány automaticky při datové vazbě ovládacího prvku <xref:System.Windows.Forms.DataGridView>. Chcete-li použít sloupce tlačítek, je nutné je vytvořit ručně a přidat je do kolekce vrácené vlastností <xref:System.Windows.Forms.DataGridView.Columns%2A?displayProperty=nameWithType>.  
   
- Můžete reagovat na kliknutí v buňkách tlačítko pomocí manipulace <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> událostí.  
+ Můžete reagovat na kliknutí uživatele v buňkách tlačítek, a to zpracováním události <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>.  
   
 ## <a name="datagridviewcomboboxcolumn"></a>DataGridViewComboBoxColumn  
- S <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, můžete zobrazit sloupec buňky, které obsahují pole se seznamem rozevíracího seznamu. To je užitečné pro zadávání dat v polích, která mohou obsahovat pouze konkrétní hodnoty, jako je například sloupec kategorie produktů tabulky v ukázkové databázi Northwind.  
+ Pomocí <xref:System.Windows.Forms.DataGridViewComboBoxColumn>můžete zobrazit sloupec buněk, které obsahují rozevírací seznamy. To je užitečné pro zadávání dat v polích, která mohou obsahovat pouze konkrétní hodnoty, jako je například sloupec kategorie v tabulce Products v ukázkové databázi Northwind.  
   
- Můžete naplnit rozevíracího seznamu, použít pro všechny buňky stejným způsobem by naplnit <xref:System.Windows.Forms.ComboBox> rozevíracího seznamu, buď ručně přes kolekci vrácené poskytovatelem <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> vlastnost, nebo pomocí vazby ke zdroji dat prostřednictvím <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>, a <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> vlastnosti. Další informace najdete v tématu [ovládacího prvku ComboBox](combobox-control-windows-forms.md).  
+ Rozevírací seznam, který se používá pro všechny buňky, můžete naplnit stejným způsobem jako rozevírací seznam <xref:System.Windows.Forms.ComboBox>, a to buď ručně prostřednictvím kolekce vrácené vlastností <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>, nebo tak, že ji navážete na zdroj dat prostřednictvím vlastností <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>a <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>. Další informace naleznete v tématu [ovládací prvek ComboBox](combobox-control-windows-forms.md).  
   
- Buňka skutečné hodnoty lze svázat zdroj dat používaný <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, že nastavíte <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> vlastnost <xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType>.  
+ Skutečné hodnoty buněk lze navazovat na zdroj dat používaný ovládacím prvkem <xref:System.Windows.Forms.DataGridView> nastavením vlastnosti <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> <xref:System.Windows.Forms.DataGridViewComboBoxColumn?displayProperty=nameWithType>.  
   
- Sloupce pole se seznamem nejsou generovány při vázání dat <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Použití sloupce pole se seznamem, musíte je vytvořit ručně a přidat je do kolekci vrácené poskytovatelem <xref:System.Windows.Forms.DataGridView.Columns%2A> vlastnost.  
+ Sloupce pole se seznamem nejsou generovány automaticky při vytváření datových vazeb ovládacího prvku <xref:System.Windows.Forms.DataGridView>. Chcete-li použít sloupce pole se seznamem, je nutné je vytvořit ručně a přidat je do kolekce vrácené vlastností <xref:System.Windows.Forms.DataGridView.Columns%2A>.  
   
 ## <a name="datagridviewlinkcolumn"></a>DataGridViewLinkColumn  
- S <xref:System.Windows.Forms.DataGridViewLinkColumn>, můžete zobrazit sloupec buňky, které obsahují hypertextové odkazy. To je užitečné pro hodnoty adresy URL ve zdroji dat nebo jako alternativu ke sloupci tlačítek pro zvláštní chování, jako je například otevřete okno s podřízené záznamy.  
+ Pomocí <xref:System.Windows.Forms.DataGridViewLinkColumn>můžete zobrazit sloupec buněk obsahující hypertextové odkazy. To je užitečné pro hodnoty URL ve zdroji dat nebo jako alternativu k sloupci tlačítko pro zvláštní chování, jako je například otevření okna s podřízenými záznamy.  
   
- Odkaz sloupce nejsou generovány při vázání dat <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Použijte odkaz sloupce, můžete je vytvořit ručně a přidat je do kolekci vrácené poskytovatelem <xref:System.Windows.Forms.DataGridView.Columns%2A> vlastnost.  
+ Sloupce odkazů nejsou generovány automaticky při vytváření datových vazeb ovládacího prvku <xref:System.Windows.Forms.DataGridView>. Chcete-li použít sloupce odkazů, je nutné je vytvořit ručně a přidat je do kolekce vrácené vlastností <xref:System.Windows.Forms.DataGridView.Columns%2A>.  
   
- Můžete reagovat na kliknutí na odkazy ve zpracování <xref:System.Windows.Forms.DataGridView.CellContentClick> událostí. Tato událost se liší od <xref:System.Windows.Forms.DataGridView.CellClick> a <xref:System.Windows.Forms.DataGridView.CellMouseClick> události, ke kterým dochází, když uživatel klikne na tlačítko kdekoli v buňce.  
+ Můžete reagovat na kliknutí na odkazy, které se zpracovávají <xref:System.Windows.Forms.DataGridView.CellContentClick> události. Tato událost se liší od událostí <xref:System.Windows.Forms.DataGridView.CellClick> a <xref:System.Windows.Forms.DataGridView.CellMouseClick>, ke kterým dochází, když uživatel klikne kamkoli v buňce.  
   
- <xref:System.Windows.Forms.DataGridViewLinkColumn> Třída poskytuje několik vlastností pro úpravu vzhledu odkazů před, během a po kliknutí.  
+ Třída <xref:System.Windows.Forms.DataGridViewLinkColumn> poskytuje několik vlastností pro úpravu vzhledu odkazů před, během a po kliknutí.  
   
 ## <a name="see-also"></a>Viz také:
 

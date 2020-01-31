@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6639335c-48e1-4e74-a4f3-70a6a0f54af1
 topic_type:
 - apiref
-ms.openlocfilehash: 63588a3d33577ff58c99e796e8e5453d2a6a9381
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1f94e2e1f6b376a1998ba4fbcc940147eb16272a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123803"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784211"
 ---
 # <a name="icordebugchainenum-interface"></a>ICorDebugChainEnum – rozhraní
 
@@ -29,7 +29,7 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugChain.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugchainenum-next-method.md)|Získá zadaný počet instancí `ICorDebugChain` z výčtu počínaje aktuální pozicí.|  
+|[Next – metoda](icordebugchainenum-next-method.md)|Získá zadaný počet instancí `ICorDebugChain` z výčtu počínaje aktuální pozicí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -47,4 +47,4 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugChain.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

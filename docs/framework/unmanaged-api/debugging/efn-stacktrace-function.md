@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: caea7754-867c-4360-a65c-5ced4408fd9d
 topic_type:
 - apiref
-ms.openlocfilehash: 272856c7eedbdc577158edcc463535a7946bb060
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cc5093a5ba0afcccaf960e9b8776f93a061cc2f5
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122993"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785671"
 ---
 # <a name="_efn_stacktrace-function"></a>\_EFN\_funkce trasování zásobníku
 Poskytuje textovou reprezentaci spravovaného trasování zásobníku a pole `CONTEXT` záznamů, jednu pro každý přechod mezi nespravovaným a spravovaným kódem.  
@@ -58,20 +58,20 @@ HRESULT CALLBACK _EFN_StackTrace(
  pro Velikost struktury kontextu.  
   
  `Flags`  
- pro Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01), abyste zobrazili registr EBP a zadáte ukazatel zásobníku (ESP) před každým `module!functionname` řádkem.  
+ pro Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01), aby se zobrazil registr EBP a jako ukazatel na vložení zásobníku (ESP) před každou `module!functionname`ovou čáru.  
   
 ## <a name="remarks"></a>Poznámky  
  Strukturu `_EFN_StackTrace` lze volat z programového programu WinDbg. Parametry se používají takto:  
   
 - Pokud je `wszTextOut` null a `puiTextLength` není null, funkce vrátí délku řetězce v `puiTextLength`.  
   
-- Pokud `wszTextOut` není null, funkce ukládá text v `wszTextOut` až do umístění označeného `puiTextLength`. Pokud byla ve vyrovnávací paměti dostatek místa, vrátí se úspěšně, nebo pokud vyrovnávací paměť není dost velká, vrátí E_OUTOFMEMORY.  
+- Pokud `wszTextOut` není null, funkce ukládá text v `wszTextOut` až do umístění označeného `puiTextLength`. Pokud byla ve vyrovnávací paměti dostatek místa, vrátí se úspěšně, nebo pokud vyrovnávací paměť není dost velká, vrátí se E_OUTOFMEMORY.  
   
 - Přechodová část funkce je ignorována, pokud `pTransitionContexts` a `puiTransitionContextCount` jsou obě hodnoty null. V tomto případě funkce poskytuje volajícím textový výstup pouze názvů funkcí.  
   
 - Pokud je `pTransitionContexts` null a `puiTransitionContextCount` není null, funkce vrátí potřebný počet kontextových položek v `puiTransitionContextCount`.  
   
-- Pokud `pTransitionContexts` není null, funkce ji zpracuje jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dána `uiSizeOfContext`a musí se jednat o velikost [SimpleContext](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` architektury.  
+- Pokud `pTransitionContexts` není null, funkce ji zpracuje jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dána `uiSizeOfContext`a musí se jednat o velikost [SimpleContext](stacktrace-simplecontext-structure.md) nebo `CONTEXT` architektury.  
   
 - `wszTextOut` je zapsán v následujícím formátu:  
   
@@ -86,7 +86,7 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 - Pokud není ve vlákně aktuálně v kontextu žádný spravovaný kód, funkce vrátí SOS_E_NOMANAGEDCODE.  
   
-- Parametr `Flags` je buď 0, nebo SOS_STACKTRACE_SHOWADDRESSES, aby se zobrazily EBP a ESP před každým řádkem `module!functionname`. Ve výchozím nastavení má hodnotu 0.  
+- Parametr `Flags` je buď 0, nebo SOS_STACKTRACE_SHOWADDRESSES pro zobrazení EBP a ESP před každým řádkem `module!functionname`. Ve výchozím nastavení má hodnotu 0.  
   
     ```cpp  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
@@ -101,4 +101,4 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [Globální statické funkce pro ladění](debugging-global-static-functions.md)

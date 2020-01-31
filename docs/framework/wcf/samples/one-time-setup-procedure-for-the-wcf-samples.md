@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: b0f452ba7aabcaa5ea995acba1873029c67f0f5d
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: b75dd523d4c88eae70f8d21ac8b3c9f72ae055ed
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75544664"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744783"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 
@@ -24,7 +24,7 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
 
 2. Ujistěte se, že je nainstalovaná .NET Framework 4. V tomto adresáři vyhledejte v 4.0 (nebo novějším): **\WINDOWS\Microsoft.NET\Framework**
 
-3. Pokud není nainstalováno Visual Studio 2012 a váš operační systém není Windows Server 2008 SP2 nebo novější, nainstalujte [opravu Hotfix 251798](https://go.microsoft.com/fwlink/?LinkId=184693).
+3. Ujistěte se, že máte nainstalovanou aplikaci Visual Studio 2012 nebo novější, nebo máte operační systém Windows Server 2008 SP2 nebo novější.
 
 4. Spusťte následující příkazy. Další informace o tom, proč je nutné tyto příkazy spustit, najdete v tématu [služba hostovaná službou IIS se nezdařila](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752252(v=vs.90)).
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení atributů písma pro ovládací prvek Windows Forms RichTextBox'
+title: Nastavení atributů písma pro ovládací prvek RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,25 +14,25 @@ helpviewer_keywords:
 - text boxes [Windows Forms], formatting text
 - formatting [Windows Forms]
 ms.assetid: 2bc23ddb-0529-4489-a1a2-ad253cb43f9a
-ms.openlocfilehash: 4919e94c23b1a67680ea0f360304ee0f75c7f425
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f27256c155223df576ee3c42e6bf65270c870b0f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963226"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744863"
 ---
 # <a name="how-to-set-font-attributes-for-the-windows-forms-richtextbox-control"></a>Postupy: Nastavení atributů písma pro ovládací prvek Windows Forms RichTextBox
-Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms má mnoho možností formátování textu, který zobrazuje. Můžete nastavit vybrané znaky tučně, podtržené nebo kurzívou pomocí <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> vlastnosti. Tuto vlastnost můžete také použít ke změně velikosti a řezu písma vybraných znaků. <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> Vlastnost umožňuje změnit barvu vybraných znaků.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> má mnoho možností formátování textu, který zobrazuje. Vybrané znaky můžete nastavit jako tučné, podtržené nebo kurzívu pomocí vlastnosti <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>. Tuto vlastnost můžete také použít ke změně velikosti a řezu písma vybraných znaků. Vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> umožňuje změnit barvu vybraných znaků.  
   
 ### <a name="to-change-the-appearance-of-characters"></a>Změna vzhledu znaků  
   
-1. <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> Nastavte vlastnost na příslušné písmo.  
+1. Vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> nastavte na příslušné písmo.  
   
-     Pokud chcete uživatelům umožnit, aby v aplikaci nastavili rodinu písem, velikost a řez písma, obvykle tuto <xref:System.Windows.Forms.FontDialog> komponentu použijete. Přehled naleznete v tématu [FontDialog Component Overview](fontdialog-component-overview-windows-forms.md).  
+     Pokud chcete uživatelům umožnit, aby v aplikaci nastavili rodinu písem, velikost a řez písma, obvykle byste použili komponentu <xref:System.Windows.Forms.FontDialog>. Přehled naleznete v tématu [FontDialog Component Overview](fontdialog-component-overview-windows-forms.md).  
   
-2. <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> Nastavte vlastnost na vhodnou barvu.  
+2. Vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> nastavte na odpovídající barvu.  
   
-     Chcete-li uživatelům povolit nastavení barev v aplikaci, obvykle byste tuto <xref:System.Windows.Forms.ColorDialog> komponentu používali. Přehled naleznete v tématu [ColorDialog Component Overview](colordialog-component-overview-windows-forms.md).  
+     Chcete-li uživatelům umožnit nastavení barev v aplikaci, obvykle byste použili komponentu <xref:System.Windows.Forms.ColorDialog>. Přehled naleznete v tématu [ColorDialog Component Overview](colordialog-component-overview-windows-forms.md).  
   
     ```vb  
     RichTextBox1.SelectionFont = New Font("Tahoma", 12, FontStyle.Bold)  
@@ -51,7 +51,7 @@ Ovládací prvek <xref:System.Windows.Forms.RichTextBox> model Windows Forms má
     ```  
   
     > [!NOTE]
-    > Tyto vlastnosti ovlivní pouze vybraný text, nebo, pokud není vybrán žádný text, text, který je zadán v aktuálním umístění bodu vložení. Informace o tom, jak text programově vybírat <xref:System.Windows.Forms.TextBoxBase.Select%2A>, najdete v tématu.  
+    > Tyto vlastnosti ovlivní pouze vybraný text, nebo, pokud není vybrán žádný text, text, který je zadán v aktuálním umístění bodu vložení. Informace o tom, jak text programově vybírat, najdete v tématu <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

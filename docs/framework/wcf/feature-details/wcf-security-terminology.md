@@ -6,12 +6,12 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: e1194a8e340504ce02c0a5daec7074fc34d962f3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6751513b72f732bd7392de11a203467a9ead1bce
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951640"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743355"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Některá z terminologie, která se používá, když je diskuze o zabezpečení možná neznámá. Toto téma obsahuje krátká vysvětlení některých bezpečnostních podmínek, ale není určena k poskytnutí komplexní dokumentace pro každou položku.  
@@ -31,7 +31,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  Identifikuje certifikační autoritu, která vydává certifikáty pro ověřování serveru a klienta, na servery a klienty, kteří požadují tyto certifikáty. Protože obsahuje veřejný klíč, který se používá v digitálních podpisech, označuje se také jako *certifikát podpisu*. Pokud je certifikační autorita kořenovou autoritou, může se certifikát certifikační autority označovat jako *kořenový certifikát*. Někdy se také označuje jako *certifikát webu*.  
   
  Hierarchie certifikační autority  
- Hierarchie certifikační autority obsahuje několik certifikačních autorit. Je uspořádána tak, že je dosaženo maximálního počtu CERTIFIKAČNÍch autorit jiné certifikační autority v vyšší úrovni hierarchie až do nejvyšší úrovně v hierarchii, kteráse označuje také jako kořenová autorita.  
+ Hierarchie certifikační autority obsahuje několik certifikačních autorit. Je uspořádána tak, že je dosaženo maximálního počtu CERTIFIKAČNÍch autorit jiné certifikační autority v vyšší úrovni hierarchie až do nejvyšší úrovně v hierarchii, která se označuje také jako *Kořenová autorita*.  
   
  certificate  
  Digitálně podepsaný příkaz, který obsahuje informace o entitě a veřejném klíči entity, takže tyto dva druhy informací propojuje. Certifikát je vydán důvěryhodnou organizací (neboli entitou), která se označuje jako certifikační autorita, poté, co autorita ověří, že se jedná o subjekt, který je vyjadřuje.  
@@ -90,7 +90,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  Standard syntaxe kryptografických zpráv. Obecná syntaxe pro data, na která lze použít kryptografii, například digitální podpisy a šifrování. Obsahuje také syntaxi pro rozšiřování certifikátů nebo seznamů odvolaných certifikátů a dalších atributů zpráv, jako jsou například časová razítka, do zprávy.  
   
  prostý  
- Zpráva, která není zašifrována. Zprávy ve formátu prostého textu jsou někdy označovány jako zprávy nešifrovaných zpráv.  
+ Zpráva, která není zašifrována. Zprávy ve formátu prostého textu jsou někdy označovány jako zprávy *nešifrovaných* zpráv.  
   
  Privilege  
  Právo uživatele provádět různé operace související se systémem, jako je vypnutí systému, načítání ovladačů zařízení nebo změna systémového času. Přístupový token uživatele obsahuje seznam oprávnění, která uživatel nebo skupiny uživatelů drží.  
@@ -98,7 +98,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  privátní klíč  
  Tajná polovina páru klíčů použitého v algoritmu veřejného klíče. Privátní klíče se obvykle používají k šifrování symetrického klíče relace, k digitálnímu podepisování zprávy nebo k dešifrování zprávy, která byla zašifrována s odpovídajícím veřejným klíčem. Viz také "veřejný klíč".  
   
- zpracování  
+ migrace.  
  Kontext zabezpečení, pod nímž je aplikace spuštěna. Kontext zabezpečení je obvykle přidružen k uživateli, takže všechny aplikace spuštěné v rámci daného procesu přebírají oprávnění a oprávnění vlastnícího uživatele.  
   
  pár veřejného a privátního klíče  
@@ -120,7 +120,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  CA v horní části hierarchie certifikační autority. Kořenová autorita potvrzuje certifikační autority v další úrovni hierarchie.  
   
  Algoritmus SHA (Secure Hash Algorithm)  
- Algoritmus hash, který generuje výtah zprávy. SHA se používá společně s algoritmem DSA (Digital Signature) v standardu DSS (Digital Signature Standard), a to mimo jiné. Existují čtyři varianty SHA: SHA-1, SHA-256, SHA-384 a SHA-512. SHA-1 generuje 160 zpráv. SHA-256, SHA-384 a SHA-512 256 generují v uvedeném pořadí 16bitové, 384 a 512 bitů zpráv. Služba SHA byla vyvinuta národním institutem standardů a technologií (NIST) a národním bezpečnostním úřadem (National Security Agency).  
+ Algoritmus hash, který generuje výtah zprávy. SHA se používá společně s algoritmem DSA (Digital Signature) v standardu DSS (Digital Signature Standard), a to mimo jiné. Existují čtyři odrůdy algoritmu SHA: SHA-1, SHA-256, SHA-384 a SHA-512. SHA-1 generuje 160 zpráv. SHA-256, SHA-384 a SHA-512 256 generují v uvedeném pořadí 16bitové, 384 a 512 bitů zpráv. Služba SHA byla vyvinuta národním institutem standardů a technologií (NIST) a národním bezpečnostním úřadem (National Security Agency).  
   
  SSL (Secure Sockets Layer) (SSL)  
  Protokol pro zabezpečenou síťovou komunikaci pomocí kombinace technologie veřejného a tajného klíče.  
@@ -173,16 +173,16 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  Software, který rozhoduje, zda je daný soubor důvěryhodný Toto rozhodnutí vychází z certifikátu přidruženého k souboru.  
   
  hlavní název uživatele (UPN)  
- Název uživatelského účtu (někdy označovaný jako *přihlašovací jméno uživatele*) a název domény identifikující doménu, ve které se uživatelský účet nachází. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je následující: someone@example.com (jako pro e-mailovou adresu).  
+ Název uživatelského účtu (někdy označovaný jako *přihlašovací jméno uživatele*) a název domény identifikující doménu, ve které se uživatelský účet nachází. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je: someone@example.com (jako u e-mailové adresy).  
   
 > [!NOTE]
 > Kromě standardního formuláře hlavního názvu uživatele (UPN) WCF přijímá hlavní názvy uživatelů (UPN) ve formě nižší úrovně, například cohowinery. com\someone.  
   
- X. 509  
+ X.509  
  Mezinárodní uznávaný standard pro certifikáty, které definují jejich požadované části.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)
 - [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

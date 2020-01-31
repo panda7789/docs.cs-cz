@@ -14,21 +14,21 @@ helpviewer_keywords:
 ms.assetid: 208e5c2d-3f3f-404e-8b3c-7cccc14ddb16
 topic_type:
 - apiref
-ms.openlocfilehash: bfd61d985eac3ab56d8a5df9474b2b1a9f641f3e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: be1e1cd0d38ad71de43478af5565bb1ac98a8c0d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122848"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778005"
 ---
 # <a name="icordebugblockingobjectenum-interface"></a>ICorDebugBlockingObjectEnum – rozhraní
-Poskytuje enumerátor pro seznam struktur [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) . Toto rozhraní je podtřídou rozhraní ICorDebugEnum.  
+Poskytuje enumerátor pro seznam struktur [CorDebugBlockingObject –](cordebugblockingobject-structure.md) . Toto rozhraní je podtřídou rozhraní ICorDebugEnum.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-next-method.md)|Provede výčet ze seznamu [CorDebugBlockingObject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktur.|  
+|[Next – metoda](icordebugblockingobjectenum-next-method.md)|Provede výčet ze seznamu [CorDebugBlockingObject –](cordebugblockingobject-structure.md) struktur.|  
   
 ## <a name="remarks"></a>Poznámky  
  Každá struktura `CorDebugBlockingObject` představuje objekt, který blokuje vlákno.  
@@ -47,5 +47,5 @@ Poskytuje enumerátor pro seznam struktur [CorDebugBlockingObject –](../../../
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

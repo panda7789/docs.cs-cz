@@ -2,34 +2,34 @@
 title: Rozhraní ICorDebugExceptionDebugEvent
 ms.date: 03/30/2017
 ms.assetid: f9ba60d8-b54d-417e-bb3e-fde4b41ca44c
-ms.openlocfilehash: 985edaa14510b7ca03399ae17cf1d89f28fd04c3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 168ba2945608a5b26432c5a0f583e5d406f6ce9b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084655"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782833"
 ---
 # <a name="icordebugexceptiondebugevent-interface"></a>Rozhraní ICorDebugExceptionDebugEvent
-Rozšiřuje rozhraní [ICorDebugDebugEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-interface.md) pro podporu událostí výjimek.  
+Rozšiřuje rozhraní [ICorDebugDebugEvent](icordebugdebugevent-interface.md) pro podporu událostí výjimek.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetFlags – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-getflags-method.md)|Získá příznak, který označuje, zda lze výjimku zachytit.|  
-|[GetNativeIP – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-getnativeip-method.md)|Získá ukazatel nativního rozhraní pro tuto událost ladění výjimky.|  
-|[GetStackPointer – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-getstackpointer-method.md)|Získá ukazatel zásobníku pro tuto událost ladění výjimky.|  
+|[GetFlags – metoda](icordebugexceptiondebugevent-getflags-method.md)|Získá příznak, který označuje, zda lze výjimku zachytit.|  
+|[GetNativeIP – metoda](icordebugexceptiondebugevent-getnativeip-method.md)|Získá ukazatel nativního rozhraní pro tuto událost ladění výjimky.|  
+|[GetStackPointer – metoda](icordebugexceptiondebugevent-getstackpointer-method.md)|Získá ukazatel zásobníku pro tuto událost ladění výjimky.|  
   
 ## <a name="remarks"></a>Poznámky  
  Rozhraní `ICorDebugExceptionDebugEvent` je implementováno následujícími typy událostí:  
   
-- [MANAGED_EXCEPTION_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+- [MANAGED_EXCEPTION_FIRST_CHANCE](cordebugrecordformat-enumeration.md)  
   
-- [MANAGED_EXCEPTION_USER_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+- [MANAGED_EXCEPTION_USER_FIRST_CHANCE](cordebugrecordformat-enumeration.md)  
   
-- [MANAGED_EXCEPTION_CATCH_HANDLER_FOUND](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+- [MANAGED_EXCEPTION_CATCH_HANDLER_FOUND](cordebugrecordformat-enumeration.md)  
   
-- [MANAGED_EXCEPTION_UNHANDLED](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)  
+- [MANAGED_EXCEPTION_UNHANDLED](cordebugrecordformat-enumeration.md)  
   
 > [!NOTE]
 > Rozhraní je k dispozici pouze s .NET Native. Pokus o volání `QueryInterface` pro načtení ukazatele rozhraní vrátí `E_NOINTERFACE` pro scénáře ICorDebug mimo .NET Native.  
@@ -45,5 +45,5 @@ Rozšiřuje rozhraní [ICorDebugDebugEvent](../../../../docs/framework/unmanaged
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

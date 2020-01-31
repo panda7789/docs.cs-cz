@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fce34531-2687-406d-9131-d6ad94f2ce0e
 topic_type:
 - apiref
-ms.openlocfilehash: 49c1b97540644fb48509be3bb988c51c5d11fd8b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e69b32430651edd0222db874e2659bd959f89549
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084862"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788713"
 ---
 # <a name="icordebugeval2-interface"></a>ICorDebugEval2 – rozhraní
 
@@ -29,13 +29,13 @@ Rozšiřuje "ICorDebugEval", aby poskytovala podporu pro obecné typy.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CallParameterizedFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)|Nastaví volání zadaného "ICorDebugFunction", která může být vnořena do typu, jehož konstruktor přijímá parametry typu, nebo může sám převzít parametry typu.|  
-|[CreateValueForType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md)|Získá ukazatel na nový "ICorDebugValue" zadaného typu s počáteční hodnotou null nebo nula.|  
-|[NewParameterizedArray – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md)|Přidělí nové pole zadaného typu a dimenzí prvku.|  
-|[NewParameterizedObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)|Vytvoří instanci nového parametrizovaného typu objektu a zavolá metodu konstruktoru objektu.|  
-|[NewParameterizedObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md)|Vytvoří instanci nového parametrizovaného typu objektu zadané třídy bez pokusu o volání metody konstruktoru.|  
-|[NewStringWithLength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newstringwithlength-method.md)|Vytvoří nový řetězec o zadané délce se zadaným obsahem.|  
-|[RudeAbort – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-rudeabort-method.md)|Přeruší výpočet, který tato `ICorDebugEval2` v tuto chvíli provádí.|  
+|[CallParameterizedFunction – metoda](icordebugeval2-callparameterizedfunction-method.md)|Nastaví volání zadaného "ICorDebugFunction", která může být vnořena do typu, jehož konstruktor přijímá parametry typu, nebo může sám převzít parametry typu.|  
+|[CreateValueForType – metoda](icordebugeval2-createvaluefortype-method.md)|Získá ukazatel na nový "ICorDebugValue" zadaného typu s počáteční hodnotou null nebo nula.|  
+|[NewParameterizedArray – metoda](icordebugeval2-newparameterizedarray-method.md)|Přidělí nové pole zadaného typu a dimenzí prvku.|  
+|[NewParameterizedObject – metoda](icordebugeval2-newparameterizedobject-method.md)|Vytvoří instanci nového parametrizovaného typu objektu a zavolá metodu konstruktoru objektu.|  
+|[NewParameterizedObjectNoConstructor – metoda](icordebugeval2-newparameterizedobjectnoconstructor-method.md)|Vytvoří instanci nového parametrizovaného typu objektu zadané třídy bez pokusu o volání metody konstruktoru.|  
+|[NewStringWithLength – metoda](icordebugeval2-newstringwithlength-method.md)|Vytvoří nový řetězec o zadané délce se zadaným obsahem.|  
+|[RudeAbort – metoda](icordebugeval2-rudeabort-method.md)|Přeruší výpočet, který tato `ICorDebugEval2` v tuto chvíli provádí.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -53,4 +53,4 @@ Rozšiřuje "ICorDebugEval", aby poskytovala podporu pro obecné typy.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

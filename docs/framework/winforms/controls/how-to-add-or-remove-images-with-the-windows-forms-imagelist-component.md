@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList'
+title: Přidání nebo odebrání obrázků s komponentou ImageList
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,24 +13,24 @@ helpviewer_keywords:
 - images [Windows Forms], adding to ImageList component
 - images [Windows Forms], displaying with controls
 ms.assetid: c5eacc56-f769-4e2e-bfb7-f756620913db
-ms.openlocfilehash: 430b7f573b115c21b9e2fa87f0ace74205717285
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f531003377395bf219775e5ddb48ceb0822ff0ea
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925124"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741497"
 ---
-# <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a>Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList
-Komponenta model Windows Forms <xref:System.Windows.Forms.ImageList> obvykle vyplní obrázky předtím, než je přidružena k ovládacímu prvku. Po přidružení seznamu obrázků k ovládacímu prvku však můžete přidat a odebrat obrázky.  
+# <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a>Postupy: Přidání a odebrání obrázků se součástí Windows Forms ImageList
+Komponenta model Windows Forms <xref:System.Windows.Forms.ImageList> je obvykle naplněna obrázky, než je přidružena k ovládacímu prvku. Po přidružení seznamu obrázků k ovládacímu prvku však můžete přidat a odebrat obrázky.  
   
 > [!NOTE]
-> Při odebírání imagí ověřte, zda <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> je vlastnost všech přidružených ovládacích prvků stále platná.  
+> Při odebírání imagí ověřte, zda je vlastnost <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> všech přidružených ovládacích prvků stále platná.  
   
 ### <a name="to-add-images-programmatically"></a>Postup při přidávání imagí prostřednictvím kódu programu  
   
-- <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> Použijte metodu <xref:System.Windows.Forms.ImageList.Images%2A> vlastnosti seznamu obrázků.  
+- Použijte metodu <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> vlastnosti <xref:System.Windows.Forms.ImageList.Images%2A> seznamu obrázků.  
   
-     V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, ve kterých běží operační systém Windows, bude obsahovat tuto složku. Když zvolíte toto umístění, umožníte uživatelům, kteří mají minimální úrovně přístupu k systému, bezpečněji spustit aplikaci. Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> již přidaným ovládacím prvkem.  
+     V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, ve kterých běží operační systém Windows, bude obsahovat tuto složku. Když zvolíte toto umístění, umožníte uživatelům, kteří mají minimální úrovně přístupu k systému, bezpečněji spustit aplikaci. Následující příklad kódu vyžaduje, abyste měli formulář s již přidaným ovládacím prvkem <xref:System.Windows.Forms.ImageList>.  
   
     ```vb  
     Public Sub LoadImage()  
@@ -78,7 +78,7 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.ImageList> obvykle vyp
   
 - Použijte jednu z <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metod <xref:System.Windows.Forms.ImageList.Images%2A> vlastnosti seznamu obrázků, která přebírá klíčovou hodnotu.  
   
-     V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, ve kterých běží operační systém Windows, bude obsahovat tuto složku. Když zvolíte toto umístění, umožníte uživatelům, kteří mají minimální úrovně přístupu k systému, bezpečněji spustit aplikaci. Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> již přidaným ovládacím prvkem.  
+     V následujícím příkladu kódu je cesta nastavená pro umístění obrázku složka **dokumenty** . Toto umístění se používá, protože můžete předpokládat, že většina počítačů, ve kterých běží operační systém Windows, bude obsahovat tuto složku. Když zvolíte toto umístění, umožníte uživatelům, kteří mají minimální úrovně přístupu k systému, bezpečněji spustit aplikaci. Následující příklad kódu vyžaduje, abyste měli formulář s již přidaným ovládacím prvkem <xref:System.Windows.Forms.ImageList>.  
   
     ```vb  
     Public Sub LoadImage()  
@@ -107,11 +107,11 @@ public void addImage()
   
 ### <a name="to-remove-all-images-programmatically"></a>Chcete-li odebrat všechny bitové kopie programově  
   
-- <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> Použití metody k odebrání jednoho obrázku  
+- Použití metody <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> k odebrání jednoho obrázku  
   
      ,-nebo-  
   
-     <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> Pomocí metody vymažte všechny obrázky v seznamu obrázků.  
+     Pomocí metody <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> vymažte všechny obrázky v seznamu obrázků.  
   
     ```vb  
     ' Removes the first image in the image list  
@@ -129,7 +129,7 @@ imageList1.Images.Clear();
   
 ### <a name="to-remove-images-by-key"></a>Postup odebrání imagí podle klíče  
   
-- <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> Pomocí metody odeberte jednu Image pomocí jejího klíče.  
+- Pomocí metody <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> můžete odebrat jednu Image pomocí jejího klíče.  
   
     ```vb  
     ' Removes the image named "myPhoto" from the list.  

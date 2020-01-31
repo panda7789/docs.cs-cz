@@ -1,5 +1,5 @@
 ---
-title: Částečné zabezpečení důvěryhodnosti WPF
+title: Zabezpečení částečné důvěryhodnosti
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,12 +15,12 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: ce9341a45b43c4af4543cf473597c273c33701fc
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 0d9bbcc32eea49afc6ecc713b0cf005b4434a67d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636546"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743339"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
 <a name="introduction"></a>Obecně platí, že internetové aplikace by měly mít přímý přístup k důležitým systémovým prostředkům, aby se zabránilo škodlivým škodám. Ve výchozím nastavení nemůžou skriptovací jazyky HTML a na straně klienta přistupovat k důležitým systémovým prostředkům. Vzhledem k tomu, že aplikace hostované v prohlížeči Windows Presentation Foundation (WPF) mohou být spouštěny z prohlížeče, měly by odpovídat podobné sadě omezení. Pro vymáhání těchto omezení WPF spoléhá jak na zabezpečení přístupu kódu (CAS), tak i na ClickOnce (viz téma [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení aplikace hostované v prohlížeči požadují sadu oprávnění CAS Internet Zone, bez ohledu na to, jestli se spouští z Internetu, místního intranetu nebo místního počítače. U aplikací, které běží s méně než úplnými oprávněními, se říká, že mají běžet s částečným vztahem důvěryhodnosti.  
@@ -133,7 +133,7 @@ ms.locfileid: "75636546"
 |DNS|Přístup k serverům DNS|Ano|Ne|  
 |Proměnné prostředí|Číst|Ano|Ne|  
 |Dialogy souborů|Otevřené|Ano|Ano|  
-|Dialogy souborů|Neomezené|Ano|Ne|  
+|Dialogy souborů|Neomezený|Ano|Ne|  
 |Izolované úložiště|Izolace sestavení podle uživatele|Ano|Ne|  
 |Izolované úložiště|Neznámá izolace|Ano|Ano|  
 |Izolované úložiště|Neomezená kvóta uživatelů|Ano|Ne|  
@@ -143,7 +143,7 @@ ms.locfileid: "75636546"
 |Reflexe|Obor|Ano|Ne|  
 |Zabezpečení –|Spuštění spravovaného kódu|Ano|Ano|  
 |Zabezpečení –|Vyhodnocení udělených oprávnění|Ano|Ne|  
-|Uživatelské rozhraní|Neomezené|Ano|Ne|  
+|Uživatelské rozhraní|Neomezený|Ano|Ne|  
 |Uživatelské rozhraní|Bezpečná okna nejvyšší úrovně|Ano|Ano|  
 |Uživatelské rozhraní|Vlastní schránka|Ano|Ano|  
 |Webový prohlížeč|Bezpečná navigace mezi snímky a HTML|Ano|Ano|  

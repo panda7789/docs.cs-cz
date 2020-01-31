@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2221fd06-9e27-4113-972e-2530db8c3594
 topic_type:
 - apiref
-ms.openlocfilehash: 1beb69bfaad9acb9c269ad8becb81bea64edb6a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2c84112984e9cb7dec2a492ac16af00e14770806
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138460"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782485"
 ---
 # <a name="icordebugheapenumnext-method"></a>ICorDebugHeapEnum::Next – metoda
-Získá zadaný počet instancí [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) , které obsahují informace o objektech na spravované haldě.  
+Získá zadaný počet instancí [COR_HEAPOBJECT](cor-heapobject-structure.md) , které obsahují informace o objektech na spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ HRESULT Next(
  pro Počet objektů, které mají být načteny.  
   
  – objekty  
- mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) , který poskytuje informace o objektu na spravované haldě.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [COR_HEAPOBJECT](cor-heapobject-structure.md) , který poskytuje informace o objektu na spravované haldě.  
   
  pceltFetched  
- mimo Ukazatel na počet [COR_HEAPOBJECTch](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objektů, které jsou ve skutečnosti vráceny v `objects`. Tato hodnota může být `null`, pokud `celt` 1.  
+ mimo Ukazatel na počet objektů [COR_HEAPOBJECT](cor-heapobject-structure.md) ve skutečnosti vrácených v `objects`. Tato hodnota může být `null`, pokud `celt` 1.  
   
 ## <a name="remarks"></a>Poznámky  
  Pole `COR_HEAPOBJECT.type` je identifikátor vnořeného rozhraní COM s vypočítaným odkazem. Tento odkaz musí být vydaný volajícím `ICorDebugHeapEnum::Next`.  
@@ -58,5 +58,5 @@ HRESULT Next(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugHeapEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugHeapEnum – rozhraní](icordebugheapenum-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

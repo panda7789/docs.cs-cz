@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 66a59b18-ce9a-41f4-b23b-4dd6753d6d36
 topic_type:
 - apiref
-ms.openlocfilehash: e2550320494b9ba43947c3176788042f5c2e6ad5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f2f19987d22502acbe06bd5e5c14b0d6c17cbe24
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130621"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781574"
 ---
 # <a name="icordebugmanagedcallbackunloadclass-method"></a>ICorDebugManagedCallback::UnloadClass – metoda
 Oznamuje ladicímu programu, že je třída uvolňována.  
@@ -55,5 +55,5 @@ HRESULT UnloadClass (
   
 ## <a name="see-also"></a>Viz také:
 
-- [LoadClass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md)
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [LoadClass – metoda](icordebugmanagedcallback-loadclass-method.md)
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

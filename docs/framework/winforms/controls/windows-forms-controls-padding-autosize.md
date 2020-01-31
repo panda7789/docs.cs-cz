@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Rozvrhování ovládacích prvků Windows Forms s odsazením, okraji a s vlastností AutoSize'
+title: Rozvrhnout ovládací prvky s odsazením, okraji a vlastností AutoSize
 ms.date: 03/30/2017
 f1_keywords:
 - Margin.Bottom
@@ -18,12 +18,12 @@ ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 76c880c208355b01d0fbaf46cf58091ad147846b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ca7942c04434592f2541252c47ac3dd17e03dbac
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460609"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742372"
 ---
 # <a name="walkthrough-lay-out-controls-with-padding-margins-and-the-autosize-property"></a>Návod: rozvrhnout ovládací prvky s odsazením, okraji a vlastností AutoSize
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení pozadí panelu Windows Forms'
+title: Nastavení pozadí panelu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Panel control [Windows Forms], background
 - colors [Windows Forms], Windows Forms Panel controls
 ms.assetid: 096cbd8d-45cc-47b8-b1ef-a27f60ea8be0
-ms.openlocfilehash: 9336be2aebb10e5c0bd0bf4648cae34a3b5fe7c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ba2619354403793aea7ca15d43649da9637079a6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013176"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744740"
 ---
 # <a name="how-to-set-the-background-of-a-windows-forms-panel"></a>Postupy: Nastavení pozadí panelu Windows Forms
-Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvek mohl zobrazit barvu pozadí a obrázek na pozadí. <xref:System.Windows.Forms.Control.BackColor%2A> Vlastnost nastaví barvu pozadí pro obsažené ovládací prvky, například s popisky a přepínače. Pokud <xref:System.Windows.Forms.Control.BackgroundImage%2A> vlastnost není nastavená, <xref:System.Windows.Forms.Control.BackColor%2A> výběr vyplní celý panelu. Pokud <xref:System.Windows.Forms.Control.BackgroundImage%2A> je hodnota nastavena, zobrazí se na obrázku za obsažené ovládací prvky.  
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.Panel> může zobrazit barvu pozadí i obrázek pozadí. Vlastnost <xref:System.Windows.Forms.Control.BackColor%2A> nastaví barvu pozadí pro obsažené ovládací prvky, například popisky a přepínače. Pokud vlastnost <xref:System.Windows.Forms.Control.BackgroundImage%2A> není nastavena, <xref:System.Windows.Forms.Control.BackColor%2A> výběr vyplní celý panel. Pokud je nastavena vlastnost <xref:System.Windows.Forms.Control.BackgroundImage%2A>, obrázek se zobrazí za obsažených ovládací prvky.  
   
-### <a name="to-set-the-background-programmatically"></a>Programové nastavení na pozadí  
+### <a name="to-set-the-background-programmatically"></a>Programové nastavení pozadí  
   
-1. Nastavení panelu <xref:System.Windows.Forms.Control.BackColor%2A> vlastnost na hodnotu typu <xref:System.Drawing.Color?displayProperty=nameWithType>.  
+1. Nastavte vlastnost <xref:System.Windows.Forms.Control.BackColor%2A> panelu na hodnotu typu <xref:System.Drawing.Color?displayProperty=nameWithType>.  
   
     ```vb  
     Panel1.BackColor = Color.AliceBlue  
@@ -37,7 +37,7 @@ Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvek mohl zobrazit b
     panel1->BackColor = Color::AliceBlue;  
     ```  
   
-2. Nastavení panelu <xref:System.Windows.Forms.Control.BackgroundImage%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image?displayProperty=nameWithType> třídy.  
+2. Nastavte vlastnost <xref:System.Windows.Forms.Control.BackgroundImage%2A> panelu pomocí metody <xref:System.Drawing.Image.FromFile%2A> třídy <xref:System.Drawing.Image?displayProperty=nameWithType>.  
   
     ```vb  
     ' You should replace the bolded image   

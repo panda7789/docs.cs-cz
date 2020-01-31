@@ -1,5 +1,5 @@
 ---
-title: Přehled obslužných rutin událostí (Windows Forms)
+title: Přehled obslužných rutin událostí
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - event handling [Windows Forms], Windows Forms
 - event handlers [Windows Forms], about event handlers
 ms.assetid: 228112e1-1711-42ee-8ffa-ff3555bffe66
-ms.openlocfilehash: 05acbfaf427060d015c2445360a7d73ebe97d070
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10ba458197973ede35849a86fec35003f139b8d2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966826"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743493"
 ---
 # <a name="event-handlers-overview-windows-forms"></a>Přehled obslužných rutin událostí (Windows Forms)
-Obslužná rutina události je metoda, která je vázána na událost. Když se vyvolá událost, je proveden kód v obslužné rutině události. Každá obslužná rutina události poskytuje dva parametry, které umožňují zpracovat událost správně. Následující příklad ukazuje obslužná rutina události <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> událostí.  
+Obslužná rutina události je metoda, která je svázána s událostí. Při vyvolání události je proveden kód v rámci obslužné rutiny události. Každá obslužná rutina události poskytuje dva parametry, které umožňují správné zpracování události. Následující příklad ukazuje obslužnou rutinu události pro událost <xref:System.Windows.Forms.Control.Click> ovládacího prvku <xref:System.Windows.Forms.Button>.  
   
 ```vb  
 Private Sub button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles button1.Click  
@@ -42,11 +42,11 @@ private:
   }  
 ```  
   
- První parametr`sender`, poskytuje odkaz na objekt, který vyvolal událost. Druhý parametr `e`, v příkladu výše, předá objekt konkrétní událost, která se právě zpracovává. Pomocí odkazu na vlastnosti objektu (a v některých případech její metody), můžete získat informace, jako je poloha myši pro události myši nebo dat přenášených v událostech a přetažení.  
+ První parametr,`sender`, poskytuje odkaz na objekt, který vyvolal událost. Druhý parametr `e`, v příkladu výše, předává objekt specifický pro událost, která je zpracovávána. Odkazem na vlastnosti objektu (a někdy na jeho metody) můžete získat informace, jako je například umístění myši pro události myši nebo přenášená data v událostech přetažení.  
   
- Každá událost obvykle vytvoří obslužnou rutinu události s typem objektu na různé události pro druhý parametr. Některé obslužné rutiny událostí, třeba kroky týkající <xref:System.Windows.Forms.Control.MouseDown> a <xref:System.Windows.Forms.Control.MouseUp> události, mají stejný typ objektu pro jejich druhý parametr. Pro tyto typy událostí, které můžete použít stejný ovladač událostí zpracování obou událostí.  
+ Každá událost obvykle vytváří obslužnou rutinu události s jiným typem objektu Event pro druhý parametr. Některé obslužné rutiny událostí, jako jsou například pro události <xref:System.Windows.Forms.Control.MouseDown> a <xref:System.Windows.Forms.Control.MouseUp>, mají stejný typ objektu pro svůj druhý parametr. Pro tyto typy událostí můžete použít stejnou obslužnou rutinu události pro zpracování obou událostí.  
   
- Stejný ovladač událostí můžete použít také pro zpracování stejné události pro různé ovládací prvky. Například, pokud máte skupinu <xref:System.Windows.Forms.RadioButton> ovládací prvky ve formuláři, můžete vytvořit obslužnou rutinu pro jednu událost <xref:System.Windows.Forms.Control.Click> událostí a mít každý ovládací prvek <xref:System.Windows.Forms.Control.Click> událost vázána jedné obslužné rutině událostí. Další informace najdete v tématu [jak: Připojení více událostí jedné obslužné rutině událostí ve Windows Forms](how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md).  
+ Můžete také použít stejnou obslužnou rutinu události pro zpracování stejné události pro různé ovládací prvky. Například pokud máte ve formuláři skupinu <xref:System.Windows.Forms.RadioButton> ovládací prvky, můžete vytvořit jedinou obslužnou rutinu události pro událost <xref:System.Windows.Forms.Control.Click> a nechat událost <xref:System.Windows.Forms.Control.Click> každého ovládacího prvku svázat s jednou obslužnou rutinou události. Další informace najdete v tématu [Postup: připojení více událostí k jedné obslužné rutině události v model Windows Forms](how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md).  
   
 ## <a name="see-also"></a>Viz také:
 

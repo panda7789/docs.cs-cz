@@ -1,5 +1,5 @@
 ---
-title: Přehled vykreslování grafiky WPF
+title: Přehled vykreslování grafiky
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-ms.openlocfilehash: 09f5f026ed320aaa253d8cdf6e0b271235aff604
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 103d086857bce8ae0960452bb92a69b68dc49dfa
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004165"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744805"
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma poskytuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro podporu vykreslování v modelu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -162,7 +162,7 @@ Pořadí operací vykreslování
   
  Pokud jste chtěli vytvořit výčet logických objektů, které tvoří prvek <xref:System.Windows.Controls.DockPanel> v příkladu kódu, měli byste najít hierarchii logických objektů, které jsou zobrazeny níže:  
   
- (./media/tree1-wcp.gif "Tree1_wcp") ![stromového diagramu]  
+ ![Stromový diagram](./media/tree1-wcp.gif "Tree1_wcp")  
 Diagram logického stromu  
   
  Vizuální strom i logický strom jsou synchronizovány s aktuální sadou prvků aplikace a odráží jakékoli přidání, odstranění nebo úpravu prvků. Stromy ale obsahují různá zobrazení aplikace. Na rozdíl od vizuálního stromu, logický strom nerozšíří prvek <xref:System.Windows.Controls.ContentPresenter> ovládacího prvku. To znamená, že mezi logickým stromem a vizuální stromovou strukturou pro stejnou sadu objektů není přímá korespondence 1:1. Ve skutečnosti voláním metody <xref:System.Windows.LogicalTreeHelper.GetChildren%2A> objektu **LogicalTreeHelper** a metody <xref:System.Windows.Media.VisualTreeHelper.GetChild%2A> objektu **VisualTreeHelper** pomocí stejného prvku, který je výsledkem parametru, se liší výsledky.  
@@ -179,7 +179,7 @@ Diagram logického stromu
 ### <a name="profiling-visual-performance"></a>Profilace vizuálního výkonu  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje sadu nástrojů pro profilaci výkonu, které umožňují analyzovat chování aplikace za běhu a určují typy optimalizací výkonu, které můžete použít. Nástroj vizuálního profileru poskytuje bohatě a grafické zobrazení údajů o výkonu mapováním přímo na vizuální strom aplikace. V tomto snímku obrazovky nabízí část **využití CPU** ve vizuálním profileru přesný rozpis [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ch služeb, jako je například vykreslování a rozložení, pomocí nástroje.  
   
- (./media/wpfperf-visualprofiler-04.png "WPFPerf_VisualProfiler_04") ![výstup zobrazení vizuálního profileru]  
+ ![Výstup zobrazení vizuálního profileru](./media/wpfperf-visualprofiler-04.png "WPFPerf_VisualProfiler_04")  
 Výstup zobrazení vizuálního profileru  
   
 <a name="visual_rendering_behavior"></a>   

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: af15e2ca-6be1-472b-bd36-03644a1e3ddd
 topic_type:
 - apiref
-ms.openlocfilehash: d731b12ddf195137ff38d32ab0ca52aa90f48d4e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 39b90ba35510a5eda7b34e0a80b0e889e5804ca7
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132783"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778230"
 ---
 # <a name="cordebugjitcompilerflagsdeprecated-enumeration"></a>CorDebugJITCompilerFlagsDeprecated – výčet
-Tento výčet je zastaralý. Místo toho použijte `CORDEBUG_JIT_DEFAULT` člen výčtu [CorDebugJITCompilerFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) .  
+Tento výčet je zastaralý. Místo toho použijte `CORDEBUG_JIT_DEFAULT` člen výčtu [CorDebugJITCompilerFlags –](cordebugjitcompilerflags-enumeration.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,4 +49,4 @@ typedef enum CorDebugJITCompilerFlagsDeprecated {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)

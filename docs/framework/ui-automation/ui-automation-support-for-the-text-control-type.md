@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Text control type
 - control types, Text
 ms.assetid: ab0d0ada-8a71-4547-9c03-aadf675938f2
-ms.openlocfilehash: 5703f5236cd8347b2c6947f9988c9da4ef31b1e7
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 857606bd0b759bd1283b5abcb3f70914a48014a7
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741464"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785838"
 ---
 # <a name="ui-automation-support-for-the-text-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku text
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741464"
   
  Textové ovládací prvky představují základní položku uživatelského rozhraní, která představuje část textu na obrazovce.  
   
- Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku text. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se vztahují na všechny textové ovládací prvky, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku text. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] se vztahují na všechny textové ovládací prvky, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 nebo model Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  

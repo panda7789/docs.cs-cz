@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView'
+title: Přizpůsobení vzhledu řádků v ovládacím prvku DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,17 +9,17 @@ helpviewer_keywords:
 - rows [Windows Forms], customizing in DataGridView control
 - DataGridView control [Windows Forms], customizing rows
 ms.assetid: d40b53d2-7e7c-48c5-8570-6e79d15c3bbb
-ms.openlocfilehash: f7dcb3d949182efee3538174909b0f856dceedee
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 099b2104e7a4887aa846c4d65273db2dd4f60559
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589483"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744037"
 ---
 # <a name="how-to-customize-the-appearance-of-rows-in-the-windows-forms-datagridview-control"></a>Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView
-Můžete řídit vzhled <xref:System.Windows.Forms.DataGridView> řádky podle jednoho nebo obou zpracování <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType> a <xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType> události. Tyto události jsou navržené tak, aby můžete vykreslení pouze co byste chtěli while s informacemi <xref:System.Windows.Forms.DataGridView> zbývající vykreslení ovládacího prvku. Například pokud chcete vykreslení vlastní pozadí, můžete zpracovávat <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType> událostí a umožňují jednotlivých buněk vykreslení vlastní obsah popředí. Alternativně můžete nechat buněk se a přidat vlastní popředí obsah v obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType> událostí. Můžete také zakázat vykreslení obsahu buňky a malovat všechno sami <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType> obslužné rutiny události.  
+Můžete ovládat vzhled <xref:System.Windows.Forms.DataGridView> řádků tím, že zpracujete jednu nebo obě události <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType> a <xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>. Tyto události jsou navržené tak, aby bylo možné malovat pouze ty, které chcete, a současně umožnit ovládacímu prvku <xref:System.Windows.Forms.DataGridView> malovat zbytek. Například pokud chcete malovat vlastní pozadí, můžete zpracovat událost <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType> a nechat jednotlivé buňky malovat vlastní obsah v popředí. Alternativně můžete nechat buňky malovat sami a přidat vlastní obsah v popředí obslužné rutiny pro událost <xref:System.Windows.Forms.DataGridView.RowPostPaint?displayProperty=nameWithType>. V obslužné rutině události <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType> můžete také zakázat Malování buněk a malovat všechno sami.  
   
- Následující příklad kódu implementuje obslužné rutiny pro obě události negace Výběr barevného přechodu pozadí a některé vlastní popředí obsahu, která zahrnuje více sloupců.  
+ Následující příklad kódu implementuje obslužné rutiny pro obě události, aby bylo možné poskytnout pozadí výběru barevného přechodu a určitý vlastní obsah v popředí, který pokrývá více sloupců.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#00)]
@@ -28,7 +28,7 @@ Můžete řídit vzhled <xref:System.Windows.Forms.DataGridView> řádky podle j
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

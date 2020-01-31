@@ -1,5 +1,5 @@
 ---
-title: Přehled WPF Windows
+title: Přehled systému Windows
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 3bc31391d30b0724a480152aa7f1d0dc93380b8c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 17582192fabf85777bba250f6f53047a84f264b9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636403"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742355"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation (WPF) prostřednictvím systému Windows. Hlavním účelem okna je hostování obsahu, který vizualizuje data a umožňuje uživatelům pracovat s daty. Samostatné aplikace WPF poskytují vlastní okna pomocí <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před tím, než se seznámíte se základy vytváření a správy oken v samostatných aplikacích.  
@@ -262,7 +262,7 @@ Uživatelé pracují se samostatnými aplikacemi Windows Presentation Foundation
  Pokud se <xref:System.Windows.Window.Closing> nezpracovává nebo se zpracovává, ale neruší se, okno se zavře. Těsně před tím, než se okno skutečně zavře, <xref:System.Windows.Window.Closed> je vyvolána. V tuto chvíli není možné zabránit zavření okna.  
   
 > [!NOTE]
-> Aplikaci lze nakonfigurovat tak, aby se automaticky vypnula při zavření okna hlavní aplikace (viz <xref:System.Windows.Application.MainWindow%2A>) nebo po zavření posledního okna. Podrobnosti najdete v tématu <xref:System.Windows.Application.ShutdownMode%2A>.  
+> Aplikaci lze nakonfigurovat tak, aby se automaticky vypnula při zavření okna hlavní aplikace (viz <xref:System.Windows.Application.MainWindow%2A>) nebo po zavření posledního okna. Podrobnosti najdete v tématu <xref:System.Windows.Application.ShutdownMode%2A>.  
   
  I když může být okno explicitně uzavřeno prostřednictvím mechanismů, které jsou k dispozici v klientských a klientských oblastech, může být okno také implicitně uzavřeno v důsledku chování v jiných částech aplikace nebo Windows, včetně následujících:  
   

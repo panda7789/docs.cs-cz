@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 72f54a45-dbe6-4bb4-8c99-e879a27368e5
 topic_type:
 - apiref
-ms.openlocfilehash: b521c96d26202119dad6fedb61cbd9da8b3c2e52
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ab31ab8f83a71372c8e12b460458a26996f65ff5
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137628"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782978"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction – metoda
 Nastaví volání na zadaný ICorDebugFunction, který může být vnořen do třídy, jejíž konstruktor přebírá parametry <xref:System.Type>, nebo může přebírat <xref:System.Type> parametry.  
@@ -54,7 +54,7 @@ HRESULT CallParameterizedFunction (
  pro Pole ukazatelů, z nichž každý odkazuje na objekt ICorDebugValue, který představuje hodnotu předanou v argumentu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `CallParameterizedFunction` jako [ICorDebugEval:: CallFunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) s tím rozdílem, že funkce může být uvnitř třídy s parametry typu, může sám převzít parametry typu nebo obojí. Argumenty typu by měly být zadány jako první pro třídu a potom pro funkci.  
+ `CallParameterizedFunction` jako [ICorDebugEval:: CallFunction –](icordebugeval-callfunction-method.md) s tím rozdílem, že funkce může být uvnitř třídy s parametry typu, může sám převzít parametry typu nebo obojí. Argumenty typu by měly být zadány jako první pro třídu a potom pro funkci.  
   
  Pokud je funkce v jiné doméně aplikace, dojde k přechodu. Všechny argumenty Type a Value však musí být v cílové doméně aplikace.  
   

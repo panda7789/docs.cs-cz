@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu'
+title: Vázání ovládacího prvku na typ
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], binding to a type
 - types [Windows Forms], binding controls to
 ms.assetid: 94faeebb-d2bc-45d6-86d7-96a42661b43d
-ms.openlocfilehash: ab088e3f34f3f03be2073864a440006259fe5679
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0bc1f92ee8922990bd0e461655168f5618ba39a6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591339"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744987"
 ---
-# <a name="how-to-bind-a-windows-forms-control-to-a-type"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu
-Při vytváření ovládacích prvků, které pracují s daty, někdy najdete je nezbytné pro vytvoření vazby ovládacího prvku do typu, nikoli objekt. K této situaci dochází především v době návrhu, když dat nemusí být k dispozici, ale své ovládací prvky vázané na data potřebují k zobrazení informací z veřejného rozhraní typu. Například může vytvořit vazbu <xref:System.Windows.Forms.DataGridView> ovládací prvek na objekt zveřejněné jako webová služba a chcete <xref:System.Windows.Forms.DataGridView> ovládací prvek popisek její sloupce v době návrhu s členem názvů vlastního typu.  
+# <a name="how-to-bind-a-windows-forms-control-to-a-type"></a>Postupy: Vázání ovládacího prvku Windows Forms k typu
+Při vytváření ovládacích prvků, které komunikují s daty, někdy je nutné pro svázání ovládacího prvku s typem namísto objektu. Tato situace nastane hlavně v době návrhu, pokud data nemusí být k dispozici, ale ovládací prvky vázané na data stále potřebují zobrazovat informace z veřejného rozhraní typu. Například můžete navazovat ovládací prvek <xref:System.Windows.Forms.DataGridView> k objektu, který je vystavený webovou službou a chcete, aby ovládací prvek <xref:System.Windows.Forms.DataGridView> v době návrhu pokryl své sloupce s názvy členů vlastního typu.  
   
- Můžete snadno vytvoření vazby ovládacího prvku na typ s <xref:System.Windows.Forms.BindingSource> komponenty.  
+ Ovládací prvek lze snadno navazovat na typ pomocí komponenty <xref:System.Windows.Forms.BindingSource>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak vytvořit vazbu <xref:System.Windows.Forms.DataGridView> ovládacího prvku pomocí vlastního typu <xref:System.Windows.Forms.BindingSource> komponenty. Při spuštění v příkladu, můžete si všimnout <xref:System.Windows.Forms.DataGridView> je označené jako sloupce, které odpovídají vlastnosti `Customer` objektu před ovládací prvek naplněný daty. V příkladu má tlačítko Přidat zákazníka k přidání dat <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Když kliknete na tlačítko Nový `Customer` přidán <xref:System.Windows.Forms.BindingSource>. Ve skutečném scénáři může být volání webové služby nebo jiného zdroje dat získat data.  
+ Následující příklad kódu ukazuje, jak vytvořit vazbu ovládacího prvku <xref:System.Windows.Forms.DataGridView> k vlastnímu typu pomocí komponenty <xref:System.Windows.Forms.BindingSource>. Když spustíte příklad, všimnete si, že <xref:System.Windows.Forms.DataGridView> má označené sloupce, které odráží vlastnosti objektu `Customer`, před tím, než se ovládací prvek naplní daty. V příkladu je tlačítko Přidat zákazníka, které přidá data do ovládacího prvku <xref:System.Windows.Forms.DataGridView>. Po kliknutí na tlačítko se do <xref:System.Windows.Forms.BindingSource>přidá nový objekt `Customer`. Ve scénáři reálného světa může být data získána voláním webové služby nebo jiného zdroje dat.  
   
  [!code-csharp[System.Windows.Forms.DataConnector.BindingToType#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.BindingToType/CS/form1.cs#1)]
  [!code-vb[System.Windows.Forms.DataConnector.BindingToType#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.BindingToType/VB/form1.vb#1)]  
@@ -30,7 +30,7 @@ Při vytváření ovládacích prvků, které pracují s daty, někdy najdete je
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení System a System. Windows. Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

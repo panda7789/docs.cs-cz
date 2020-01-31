@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 23f38dc1-85e4-4263-9235-2d05bbb6a833
 topic_type:
 - apiref
-ms.openlocfilehash: 60273d7cf91be04c5fc3041260e4bb146ce9a45e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 466fe421f4ff3f8983159ccb38503b75551c87bd
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73095434"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788547"
 ---
 # <a name="icordebugilframesetip-method"></a>ICorDebugILFrame::SetIP – metoda
 Nastaví ukazatel na instrukci na zadané místo posunutí v kódu jazyka MSIL (Microsoft Intermediate Language).  
@@ -40,7 +40,7 @@ HRESULT SetIP (
 ## <a name="remarks"></a>Poznámky  
  Volání `SetIP` okamžitě zruší platnost všech rámců a řetězů pro aktuální vlákno. Pokud ladicí program potřebuje informace o snímku po volání `SetIP`, musí provést nové trasování zásobníku.  
   
- [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) se pokusí zachovat rámec zásobníku v platném stavu. Nicméně i v případě, že je rámec v platném stavu, mohou být stále problémy, jako například neinicializované místní proměnné. Volající je zodpovědný za zajištění návaznosti běžícího programu.  
+ [ICorDebug](icordebug-interface.md) se pokusí zachovat rámec zásobníku v platném stavu. Nicméně i v případě, že je rámec v platném stavu, mohou být stále problémy, jako například neinicializované místní proměnné. Volající je zodpovědný za zajištění návaznosti běžícího programu.  
   
  Na 64-bitových platformách nelze ukazatel na instrukci přesunout z `catch` nebo `finally` bloku. Pokud je volána `SetIP` k provedení tohoto přesunu na 64 platformě, vrátí HRESULT indikující selhání.  
   

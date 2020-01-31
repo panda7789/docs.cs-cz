@@ -7,12 +7,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 74e9909fda83c781b5a15727f79ff755e7682b0f
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 8d9a23a0813423571c894758257b284ad67a72e2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75963126"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744644"
 ---
 # <a name="struct-c-reference"></a>struct (Referenční dokumentace jazyka C#)
 
@@ -47,12 +47,10 @@ Příklady najdete v tématu [použití struktur](../../programming-guide/classe
 
 ## <a name="see-also"></a>Viz také:
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
-- [Typy](/dotnet/csharp/language-reference/keywords)
-- [Typy hodnot](value-types.md)
+- [Typy hodnot](../builtin-types/value-types.md)
 - [class](class.md)
 - [interface](interface.md)
-- [Třídy a struktury](../../programming-guide/classes-and-structs/index.md)
+- [Třídy a struktury](../../programming-guide/classes-and-structs/index.md)

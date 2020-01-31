@@ -6,20 +6,20 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: eba3d21cfc787c5d388de31f988b835522118151
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 0905cbebb2d966570be4ac3aefb40f4377b97061
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936930"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742587"
 ---
 # <a name="whats-new-in-net-core-31"></a>Co je nového v .NET Core 3.1
 
 Tento článek popisuje, co je v .NET Core 3,1 novinkou. Tato verze obsahuje menší vylepšení .NET Core 3,0 a zaměřuje se na malé, ale důležité opravy. Nejdůležitější funkcí pro .NET Core 3,1 je, že se jedná o [dlouhodobou podporu (LTS)](#long-term-support) .
 
-Pokud používáte Visual Studio 2019, musíte aktualizovat na [Visual studio 2019 verze 16,4](https://visualstudio.microsoft.com/downloads/) pro práci s projekty .net Core 3,1. Další informace o tom, co je nového v aplikaci Visual Studio, naleznete v [blogu sady Visual Studio](https://devblogs.microsoft.com/visualstudio/tis-the-season-visual-studio-2019/).
+Pokud používáte Visual Studio 2019, musíte aktualizovat na [Visual studio 2019 verze 16,4](https://visualstudio.microsoft.com/downloads/) pro práci s projekty .net Core 3,1. Další informace o tom, co je nového v aplikaci Visual Studio, naleznete v tématu [novinky v aplikaci Visual studio 2019 verze 16,4](/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019-version-164).
 
-Visual Studio pro Mac také podporuje a zahrnuje .NET Core 3,1 v kanálu Visual Studio pro Mac 8,4 Preview. Aby bylo možné používat .NET Core 3,1, musíte se přihlásit k kanálu verze Preview.
+Visual Studio pro Mac také podporuje a zahrnuje .NET Core 3,1 v Visual Studio pro Mac 8,4.
 
 Další informace o této verzi najdete v tématu [oznámení .NET Core 3,1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
@@ -32,8 +32,8 @@ Další informace o této verzi najdete v tématu [oznámení .NET Core 3,1](htt
 | Vydaná verze | Poznámka |
 | ------- | ---- |
 | .NET Core 3.0 | Konec životnosti 3. března 2020.     |
-| .NET Core 2.2 | Konec životnosti 23. prosince 2019. |
-| .NET Core 2.1 | Konec životnosti 21. srpna 2021.    |
+| .NET Core 2,2 | Konec životnosti 23. prosince 2019. |
+| .NET Core 2,1 | Konec životnosti 21. srpna 2021.    |
 
 Další informace najdete v tématu [zásady podpory pro .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
 
@@ -64,7 +64,7 @@ Doporučujeme aktualizovat aplikace na .NET Core 3,1 a přejít na ovládací pr
 
 Přidala se podpora pro vytváření C++projektů/CLI (označovaných také jako C++"spravované"). Binární soubory vytvořené z těchto projektů jsou kompatibilní s .NET Core 3,0 a novějšími verzemi.
 
-Pokud chcete přidat podporu C++pro/CLI v aplikaci Visual Studio 2019 16,4, nainstalujte [desktopový C++ vývoj s](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019#step-4---choose-workloads)využitím úlohy. Tato úloha přidá dvě šablony do sady Visual Studio:
+Pokud chcete přidat podporu C++pro/CLI v aplikaci Visual Studio 2019 verze 16,4, nainstalujte [desktopový C++ vývoj s](/cpp/build/vscpp-step-0-installation?view=vs-2019#step-4---choose-workloads)využitím úlohy. Tato úloha přidá dvě šablony do sady Visual Studio:
 
 - Knihovna tříd CLR (.NET Core)
 - Prázdný projekt CLR (.NET Core)
@@ -72,4 +72,4 @@ Pokud chcete přidat podporu C++pro/CLI v aplikaci Visual Studio 2019 16,4, nain
 ## <a name="next-steps"></a>Další kroky
 
 - [Přečtěte si o nejnovějších změnách mezi .NET Core 3,0 a 3,1.](../compatibility/3.0-3.1.md)
-- [Přečtěte si o nejnovějších změnách mezi v .NET Core 3,1 pro aplikace model Windows Forms.](../compatibility/winforms.md#net-core-31)
+- [Přečtěte si o nejnovějších změnách v .NET Core 3,1 pro aplikace model Windows Forms.](../compatibility/winforms.md#net-core-31)

@@ -4,23 +4,23 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 82c9815abdd5140340f9a8ea39be23496d433889
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0cb5c5c604d4a82798d4af736ff278b096621588
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738379"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777110"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
 > *"Pokud si nejste spokojeni s testováním částí vašeho produktu, pravděpodobně ho vaši zákazníci nechtějí testovat, buď."*
  > \_– anonymní –
 
-Software jakékoli složitosti může při reakci na změny selhat neočekávaným způsobem. Proto se testování po provedení změn vyžaduje pro všechny, ale nejvíce triviální (nebo nejméně kritické) aplikace. Manuální testování je nejpomalejší, nejméně spolehlivý a nejnákladný způsob testování softwaru. Pokud aplikace není navržena tak, aby se testovatelné, může to být pouze to, co je k dispozici. Aplikace napsané podle principů architektury, které jsou uvedeny v [kapitole 4](architectural-principles.md) , by měly být jednotky testovatelné a aplikace ASP.NET Core podporují také automatickou integraci a funkční testování.
+Software jakékoli složitosti může při reakci na změny selhat neočekávaným způsobem. Proto se testování po provedení změn vyžaduje pro všechny, ale nejvíce triviální (nebo nejméně kritické) aplikace. Manuální testování je nejpomalejší, nejméně spolehlivý a nejnákladný způsob testování softwaru. Pokud aplikace není navržena tak, aby se testovatelné, může to být pouze to, co je k dispozici. Aplikace napsané pro sledování principů architektury stanovených v [kapitole 4](architectural-principles.md) by měly být jednotky testovatelné. ASP.NET Core aplikace podporují automatizovanou integraci a funkční testování.
 
 ## <a name="kinds-of-automated-tests"></a>Druhy automatizovaných testů
 
-Existuje mnoho druhů automatizovaných testů pro softwarové aplikace. Nejjednodušším, nejnižším testem úrovně je test jednotky. Na poněkud vyšší úrovni existují integrační testy a funkční testy. Jiné druhy testů, jako jsou testy uživatelského rozhraní, zátěžové testy, zátěžové testy a testy kouře, jsou nad rámec tohoto dokumentu.
+Existuje mnoho druhů automatizovaných testů pro softwarové aplikace. Nejjednodušším, nejnižším testem úrovně je test jednotky. Na poněkud vyšší úrovni jsou integrační testy a funkční testy. Jiné druhy testů, jako jsou například testy uživatelského rozhraní, zátěžové testy, zátěžové testy a testy kouře, jsou nad rámec tohoto dokumentu.
 
 ### <a name="unit-tests"></a>Testování částí
 
@@ -58,7 +58,7 @@ Různé vrstvy pyramidy a jejich relativní velikosti, reprezentují různé dru
 
 ### <a name="what-to-test"></a>Co testovat
 
-Běžný problém pro vývojáře, kteří mají zkušenosti s psaním automatizovaných testů, se blíží k testování. Dobrým výchozím bodem je testování podmíněné logiky. Kdekoli máte metodu s chováním, které se mění v závislosti na podmíněném příkazu (if-else, Switch atd.), měli byste být schopni vytvořit alespoň několik testů, které pro určité podmínky potvrzují správné chování. Pokud má váš kód chybové podmínky, je vhodné napsat alespoň jeden test pro "příjemné" cestu prostřednictvím kódu (bez chyb) a alespoň jeden test pro "cestu JSD" (s chybami nebo netypickými výsledky) k potvrzení, že se aplikace chová jako očekávaná na výskytu chyb. Nakonec se snažte soustředit na testování věcí, které mohou selhat, a nemusíte se zaměřit na metriky, jako je pokrytí kódu. Větší pokrytí kódu je lepší než méně, obecně. Nicméně zápis několika dalších testů pro velmi složitou a nepostradatelnou metodu je obvykle vhodnější než při psaní testů pro automatické vlastnosti, a to jenom pro zlepšení metriky pokrytí testovacího kódu.
+Běžný problém pro vývojáře, kteří mají zkušenosti s psaním automatizovaných testů, se blíží k testování. Dobrým výchozím bodem je testování podmíněné logiky. Kdekoli máte metodu s chováním, které se mění v závislosti na podmíněném příkazu (Pokud-else, přepínač a tak dále), měli byste být schopni se připojit alespoň k několika testům, které pro určité podmínky potvrzují správné chování. Pokud má váš kód chybové podmínky, je vhodné napsat alespoň jeden test pro "příjemné" cestu prostřednictvím kódu (bez chyb) a alespoň jeden test pro "cestu JSD" (s chybami nebo netypickými výsledky) k potvrzení, že se aplikace chová jako očekávaná na výskytu chyb. Nakonec se snažte soustředit na testování věcí, které mohou selhat, a nemusíte se zaměřit na metriky, jako je pokrytí kódu. Větší pokrytí kódu je lepší než méně, obecně. Nicméně psaní několika dalších testů složitých a podnikových metod je obvykle vhodnější než při psaní testů pro automatické vlastnosti, a to jenom pro zlepšení metrik pokrytí testovacího kódu.
 
 ## <a name="organizing-test-projects"></a>Uspořádání projektů testů
 
@@ -102,7 +102,7 @@ Pokud budete postupovat podle konvence pojmenování, jako je ta výše, která 
 
 **Obrázek 9-4.** Uspořádání tříd testu podle složky na základě testované třídy.
 
-Samozřejmě platí, že pokud konkrétní třída aplikace má testovat mnoho metod (a tedy mnoho testovacích tříd), může být vhodné umístit je do složky, která odpovídá třídě aplikace. Tato organizace se neliší od způsobu, jakým můžete soubory uspořádat do složek jinde. Pokud máte ve složce obsahující mnoho dalších souborů více než tři nebo čtyři související soubory, je často vhodné je přesunout do své vlastní podsložky.
+Pokud má určitá třída aplikace testovat mnoho metod (a tedy mnoho testovacích tříd), může to mít smysl umístit je do složky, která odpovídá třídě aplikace. Tato organizace se neliší od způsobu, jakým můžete soubory uspořádat do složek jinde. Pokud máte ve složce obsahující mnoho dalších souborů více než tři nebo čtyři související soubory, je často vhodné je přesunout do své vlastní podsložky.
 
 ## <a name="unit-testing-aspnet-core-apps"></a>Testování částí ASP.NET Core aplikací
 

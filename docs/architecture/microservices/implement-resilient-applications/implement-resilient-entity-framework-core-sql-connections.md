@@ -2,12 +2,12 @@
 title: Implementace odolných Entity Framework Core připojení SQL
 description: Naučte se implementovat odolná Entity Framework Core připojení SQL. Tato technika je obzvláště důležitá při použití Azure SQL Database v cloudu.
 ms.date: 10/16/2018
-ms.openlocfilehash: 7899fc263ab3cde6ac2410ca614a7e5fa285576b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 0ded30469bb4985fed7b60938756046531c8feea
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732724"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777052"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implementace odolných Entity Framework Core připojení SQL
 
@@ -41,7 +41,7 @@ public class Startup
 
 ## <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie provádění a explicitní transakce pomocí BeginTransaction a více DbContexts
 
-Když jsou v EF Core připojení povolené opakované pokusy, každá operace, kterou provedete pomocí EF Core, se stal svou vlastní operací vyvolaly. Každý dotaz a každé volání `SaveChanges` se bude opakovat jako jednotka, pokud dojde k přechodnému selhání.
+Když jsou v EF Core připojení povolené opakované pokusy, každá operace, kterou provádíte pomocí EF Core, se stal svou vlastní opakovanou operací. Každý dotaz a každé volání `SaveChanges` se bude opakovat jako jednotka, pokud dojde k přechodnému selhání.
 
 Nicméně pokud váš kód inicializuje transakci pomocí `BeginTransaction`, definujete vlastní skupinu operací, které je třeba považovat za jednotku. Vše uvnitř transakce se musí vrátit zpátky, pokud dojde k selhání.
 

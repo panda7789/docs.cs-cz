@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 22a92d1d-8849-4af6-8304-ecc53dd1d289
 topic_type:
 - apiref
-ms.openlocfilehash: d3fcd859fb11f6a0c660751f16fa175e19e9d03b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5c9258126c872bd501b4eebc4698b4dded402dfe
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439004"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863358"
 ---
 # <a name="icorprofilerinfogetinprocinspectioninterface-method"></a>ICorProfilerInfo::GetInprocInspectionInterface – metoda
 Získá objekt, na který lze zadat dotaz na rozhraní "ICorDebugProcess". Tato metoda je zastaralá ve verzi .NET Framework 2,0.  
@@ -50,4 +50,4 @@ HRESULT GetInprocInspectionInterface(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)

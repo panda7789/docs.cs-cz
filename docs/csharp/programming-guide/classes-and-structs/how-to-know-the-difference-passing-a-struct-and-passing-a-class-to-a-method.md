@@ -6,17 +6,17 @@ helpviewer_keywords:
 - passing parameters [C#], structs vs. classes
 - methods [C#], passing classes vs. structs
 ms.assetid: 9c1313a6-32a8-4ea7-a59f-450f66af628b
-ms.openlocfilehash: 953b2edf23530dfdf9ea96c1ac49fe455306c542
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 2f0e7a187dfd9ed4622155317cd39b352ecf6e45
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714891"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743725"
 ---
 # <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>Jak zjistit rozdíl mezi předáním struktury a předáním odkazu na třídu metodě (C# Průvodce programováním)
 Následující příklad ukazuje, jak se předávání [struktury](../../language-reference/keywords/struct.md) do metody liší od předání instance [třídy](../../language-reference/keywords/class.md) metodě. V příkladu jsou oba argumenty (struktura a instance třídy) předány hodnotou a obě metody mění hodnotu jednoho pole argumentu. Nicméně výsledky těchto dvou metod nejsou stejné, protože to, co je předáno při předávání struktury, se liší od toho, co je předáno při předání instance třídy.  
   
- Vzhledem k tomu, že struktura je [typ hodnoty](../../language-reference/keywords/value-types.md), při [předání struktury hodnotou](./passing-value-type-parameters.md) metody, metoda přijímá a pracuje na kopii argumentu struktury. Metoda nemá přístup k původní struktuře v volající metodě, takže ji nemůže nijak změnit. Metoda může změnit pouze kopii.  
+ Vzhledem k tomu, že struktura je [typ hodnoty](../../language-reference/builtin-types/value-types.md), při [předání struktury hodnotou](./passing-value-type-parameters.md) metody, metoda přijímá a pracuje na kopii argumentu struktury. Metoda nemá přístup k původní struktuře v volající metodě, takže ji nemůže nijak změnit. Metoda může změnit pouze kopii.  
   
  Instance třídy je [odkazový typ](../../language-reference/keywords/reference-types.md), nikoli hodnotový typ. Pokud [je odkazový typ předán pomocí hodnoty](./passing-reference-type-parameters.md) metodě, metoda obdrží kopii odkazu na instanci třídy. To znamená, že volaná metoda obdrží kopii adresy instance a metoda volání zachová původní adresu instance. Instance třídy v metodě volání má adresu, parametr v volané metodě má kopii adresy a obě adresy odkazují na stejný objekt. Protože parametr obsahuje pouze kopii adresy, volaná metoda nemůže změnit adresu instance třídy v volání metody. Volaná metoda však může použít kopii adresy pro přístup ke členům třídy, které mají původní adresu i kopii odkazu na adresu. Pokud volaná metoda změní člen třídy, změní se také instance původní třídy v volající metodě.  
   

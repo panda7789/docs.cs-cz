@@ -1,39 +1,39 @@
 ---
-title: Knihovna tříd (WPF)
+title: Knihovna tříd
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF class library [WPF]
 - Windows Presentation Foundation class library [WPF]
 ms.assetid: dcb35927-00ad-4141-a1ab-a7a524dd3f10
-ms.openlocfilehash: d43b46be2e05561eadcba12c744368db056a3ce5
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: bd099cbbbf96c71749375dab0aadfe84412ca103
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859710"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742292"
 ---
 # <a name="class-library-wpf"></a>Knihovna tříd (WPF)
-Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] rozhraní API.  
+Následující odkazy odkazují na obory názvů, které obsahují rozhraní API [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
   
 - <xref:Microsoft.Build.Tasks.Windows>  
   
-- <xref:Microsoft.Win32> (sdílené)  
+- <xref:Microsoft.Win32> (sdílená)  
   
 - <xref:Microsoft.Windows.Themes>  
   
-- <xref:System.Collections.ObjectModel> (sdílené)  
+- <xref:System.Collections.ObjectModel> (sdílená)  
   
-- <xref:System.Collections.Specialized> (sdílené)  
+- <xref:System.Collections.Specialized> (sdílená)  
   
-- <xref:System.ComponentModel> (sdílené)  
+- <xref:System.ComponentModel> (sdílená)  
   
-- <xref:System.Diagnostics> (sdílené)  
+- <xref:System.Diagnostics> (sdílená)  
   
-- <xref:System.IO> (sdílené)  
+- <xref:System.IO> (sdílená)  
   
 - <xref:System.IO.Packaging>  
   
@@ -43,7 +43,7 @@ Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA
   
 - <xref:System.Printing.Interop>  
   
-- <xref:System.Security.Permissions> (sdílené)  
+- <xref:System.Security.Permissions> (sdílená)  
   
 - <xref:System.Security.RightsManagement>  
   
@@ -85,7 +85,7 @@ Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA
   
 - <xref:System.Windows.Interop>  
   
-- <xref:System.Windows.Markup> (sdílené)  
+- <xref:System.Windows.Markup> (sdílená)  
   
 - <xref:System.Windows.Markup.Localizer>  
   
@@ -123,10 +123,10 @@ Následující odkazy odkazují na obory názvů, které obsahují [!INCLUDE[TLA
   
 - <xref:UIAutomationClientsideProviders>  
   
-## <a name="xaml-support-in-net-4"></a>Podpora XAML v rozhraní .NET 4  
- Následující obory názvů obsahují typy v oboru názvů System.Xaml sestavení. System.Xaml poskytuje běžné podpora jazyka XAML pro architektury, jako jsou WPF, které jsou založené na rozhraní .NET Framework 4.  
+## <a name="xaml-support-in-net-4"></a>Podpora jazyka XAML v rozhraní .NET 4  
+ Následující obory názvů obsahují typy ze sestavení System. XAML. System. XAML poskytuje běžnou podporu jazyka XAML pro architektury, jako je WPF, které jsou postavené na .NET Framework 4.  
   
-- <xref:System.Windows.Markup> (sdílené)  
+- <xref:System.Windows.Markup> (sdílená)  
   
 - <xref:System.Xaml>  
   

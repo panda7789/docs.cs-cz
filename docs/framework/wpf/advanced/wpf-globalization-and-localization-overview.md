@@ -1,16 +1,16 @@
 ---
-title: Přehled globalizace a lokalizace WPF
+title: Přehled globalizace a lokalizace
 ms.date: 03/30/2017
 helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: c2b78b990969fb5bc9814ebda8ffcf38efa458b1
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 9be6245d7429466490d9dac93c5b94d70bde30bd
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559921"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744486"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
@@ -184,8 +184,8 @@ Pro úpravu tohoto souboru použijte oblíbený editor CSV, který podporuje kó
 |Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Zrušit|
 |Button_3:System.Windows.Controls.Button.$Content|Tlačítko|Procházet...|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Zadejte název programu, složky, dokumentu nebo zdroje v internetu a systém Windows jej otevře.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Open (Otevřený):|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Zadejte název programu, složky, dokumentu nebo internetového prostředku a otevře se vám Windows.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Otevírají|
 |Window_1:System.Windows.Window.Title|Název|Spustit|
 
 Lokalizace aplikace do němčiny by vyžadovala následující překlady:

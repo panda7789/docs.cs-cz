@@ -2,12 +2,12 @@
 title: Rozhraní ICorDebugAssembly3
 ms.date: 03/30/2017
 ms.assetid: 17fc5d76-75a9-4933-83f0-594de7f973f3
-ms.openlocfilehash: 930101f6cd4ebb9215d6420f774b8e066c54a4f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: deb300ced2ff7a116bd443c9a7b10dcc0b7955ac
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73095370"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784534"
 ---
 # <a name="icordebugassembly3-interface"></a>Rozhraní ICorDebugAssembly3
 Logicky rozšiřuje rozhraní ICorDebugAssembly, aby poskytovala podporu pro sestavení kontejneru a jejich obsažená sestavení.  
@@ -16,8 +16,8 @@ Logicky rozšiřuje rozhraní ICorDebugAssembly, aby poskytovala podporu pro ses
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateContainedAssemblies – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly3-enumeratecontainedassemblies-method.md)|Získá enumerátor pro sestavení obsažená v tomto sestavení.|  
-|[GetContainerAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly3-getcontainerassembly-method.md)|Vrátí sestavení kontejneru tohoto objektu `ICorDebugAssembly3`.|  
+|[EnumerateContainedAssemblies – metoda](icordebugassembly3-enumeratecontainedassemblies-method.md)|Získá enumerátor pro sestavení obsažená v tomto sestavení.|  
+|[GetContainerAssembly – metoda](icordebugassembly3-getcontainerassembly-method.md)|Vrátí sestavení kontejneru tohoto objektu `ICorDebugAssembly3`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -35,5 +35,5 @@ Logicky rozšiřuje rozhraní ICorDebugAssembly, aby poskytovala podporu pro ses
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
+- [Ladění](index.md)

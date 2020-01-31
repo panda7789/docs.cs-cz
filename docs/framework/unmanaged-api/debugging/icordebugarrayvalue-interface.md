@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dc437751-7093-44e2-bfdc-191d9ce3c192
 topic_type:
 - apiref
-ms.openlocfilehash: e41bb5ca0fdd999692395239304f50a6f745a4f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0944f3379c18cba56ab65fe40a5b94a64d8a8991
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088269"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778193"
 ---
 # <a name="icordebugarrayvalue-interface"></a>ICorDebugArrayValue – rozhraní
 
@@ -29,14 +29,14 @@ Podtřída ICorDebugHeapValue, která představuje jednorozměrné nebo multidim
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetBaseIndicies – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getbaseindicies-method.md)|Získá základní index každé dimenze v poli.|  
-|[GetCount – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getcount-method.md)|Získá celkový počet prvků v poli.|  
-|[GetDimensions – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getdimensions-method.md)|Získá rozměry pole.|  
-|[GetElement – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelement-method.md)|Získá hodnotu reprezentující daný prvek v poli.|  
-|[GetElementAtPosition – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelementatposition-method.md)|Získá prvek na dané pozici, což zpracuje pole jako jednorozměrné jednorozměrné pole s nulovým základem.|  
-|[GetElementType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelementtype-method.md)|Získá jednoduchý typ prvků v poli.|  
-|[GetRank – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getrank-method.md)|Získá počet rozměrů v poli.|  
-|[HasBaseIndicies – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-hasbaseindicies-method.md)|Určuje, zda pole obsahuje základní indexy.|  
+|[GetBaseIndicies – metoda](icordebugarrayvalue-getbaseindicies-method.md)|Získá základní index každé dimenze v poli.|  
+|[GetCount – metoda](icordebugarrayvalue-getcount-method.md)|Získá celkový počet prvků v poli.|  
+|[GetDimensions – metoda](icordebugarrayvalue-getdimensions-method.md)|Získá rozměry pole.|  
+|[GetElement – metoda](icordebugarrayvalue-getelement-method.md)|Získá hodnotu reprezentující daný prvek v poli.|  
+|[GetElementAtPosition – metoda](icordebugarrayvalue-getelementatposition-method.md)|Získá prvek na dané pozici, což zpracuje pole jako jednorozměrné jednorozměrné pole s nulovým základem.|  
+|[GetElementType – metoda](icordebugarrayvalue-getelementtype-method.md)|Získá jednoduchý typ prvků v poli.|  
+|[GetRank – metoda](icordebugarrayvalue-getrank-method.md)|Získá počet rozměrů v poli.|  
+|[HasBaseIndicies – metoda](icordebugarrayvalue-hasbaseindicies-method.md)|Určuje, zda pole obsahuje základní indexy.|  
   
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugArrayValue` podporuje jak jednorozměrná, tak multidimenzionální pole.  
@@ -55,4 +55,4 @@ Podtřída ICorDebugHeapValue, která představuje jednorozměrné nebo multidim
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)

@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: 6e7c6bee-7ced-495f-bf6c-2a5f0c716f7e
 topic_type:
 - apiref
-ms.openlocfilehash: c7333f8f7b95655ac821e9a2977d5db3794486a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9230e1fcba7c0492e50773e7ca13fb16f07238a2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123007"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789139"
 ---
-# <a name="_efn_getmanagedobjectname-function"></a>\_EFN\_funkce GetManagedObjectName
+# <a name="_efn_getmanagedobjectname-function"></a>\_EFN\_GetManagedObjectName Function
 Získá název typu pomocí zadaného ukazatele spravovaného objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,7 +49,7 @@ HRESULT _EFN_GetManagedObjectName(
  mimo Počet znaků, které jsou k dispozici v bufferu řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud ve vlákně, které je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
+ Pokud ve vlákně, který je aktuálně v kontextu, není žádný spravovaný kód, funkce vrátí hodnotu HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a kódem chyby 0x1000.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -60,4 +60,4 @@ HRESULT _EFN_GetManagedObjectName(
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [Globální statické funkce pro ladění](debugging-global-static-functions.md)

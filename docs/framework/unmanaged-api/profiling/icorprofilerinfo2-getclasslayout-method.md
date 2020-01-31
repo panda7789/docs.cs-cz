@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a3a36987-5666-4e2f-95b5-d0cb246502ec
 topic_type:
 - apiref
-ms.openlocfilehash: 37400e3b69b3884e31479fd7cdfccb473408bfbf
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 85319a45861b2b48f7690f69bb8f9f9469af014c
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433389"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862799"
 ---
 # <a name="icorprofilerinfo2getclasslayout-method"></a>ICorProfilerInfo2::GetClassLayout – metoda
 Načte informace o rozložení v paměti polí definovaných specifikovanou třídou. To znamená, že tato metoda získá posuny polí třídy.  
@@ -55,7 +55,7 @@ HRESULT GetClassLayout(
 ## <a name="remarks"></a>Poznámky  
  Metoda `GetClassLayout` vrátí pouze pole, která jsou definována samotný třídou. Pokud má nadřazená třída třídy definována také pole, musí Profiler volat `GetClassLayout` v nadřazené třídě, aby tato pole získal.  
   
- Použijete-li `GetClassLayout` s řetězcovými třídami, metoda bude neúspěšná s kódem chyby E_INVALIDARG. K získání informací o rozložení řetězce použijte [ICorProfilerInfo2:: GetStringLayout –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) . `GetClassLayout` také selže při volání s třídou Array.  
+ Použijete-li `GetClassLayout` s řetězcovými třídami, metoda bude neúspěšná s kódem chyby E_INVALIDARG. K získání informací o rozložení řetězce použijte [ICorProfilerInfo2:: GetStringLayout –](icorprofilerinfo2-getstringlayout-method.md) . `GetClassLayout` také selže při volání s třídou Array.  
   
  Jakmile `GetClassLayout` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `rFieldOffset` dostatečně velká, aby obsahovala všechny dostupné `COR_FIELD_OFFSET` struktury. Provedete to tak, že porovnáte hodnotu, na kterou `pcFieldOffset` odkazuje, na velikost `rFieldOffset` dělenou velikostí `COR_FIELD_OFFSET` struktury. Pokud `rFieldOffset` není dostatečně velká, přidělte větší vyrovnávací paměť `rFieldOffset`, aktualizujte `cFieldOffset` o novou, větší velikost a zavolejte `GetClassLayout` znovu.  
   
@@ -72,7 +72,7 @@ HRESULT GetClassLayout(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
-- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo – rozhraní](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](icorprofilerinfo2-interface.md)
+- [Rozhraní pro profilaci](profiling-interfaces.md)
+- [Profilace](index.md)

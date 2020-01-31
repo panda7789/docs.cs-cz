@@ -12,17 +12,17 @@ api_type:
 ms.assetid: 88584574-ade5-45b2-9778-489ed5c4dd7f
 topic_type:
 - apiref
-ms.openlocfilehash: 53fedde028c7551e929cb583d38a4ec6937f2a8c
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 70a55b833acb7fa946c694a63e1e8b51562938bc
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938097"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777728"
 ---
 # <a name="icordebugfunction3getactiverejitrequestilcode-method"></a>ICorDebugFunction3::GetActiveReJitRequestILCode – metoda
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Získá ukazatel rozhraní na [ICorDebugILCode](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-interface.md) , který obsahuje Il z aktivní žádosti ReJIT.  
+ Získá ukazatel rozhraní na [ICorDebugILCode](icordebugilcode-interface.md) , který obsahuje Il z aktivní žádosti ReJIT.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,6 +52,6 @@ HRESULT GetActiveReJitRequestILCode(
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugFunction3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction3-interface.md)
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugFunction3 – rozhraní](icordebugfunction3-interface.md)
+- [Rozhraní pro ladění](debugging-interfaces.md)
 - [ReJIT: Průvodce](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
