@@ -128,11 +128,9 @@
           items:
             - name: Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF
               href: how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md
-            - name: Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby
+            - name: Konfigurace aplikace Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby
               href: configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md
-            - name: Určení nainstalované verze WPF
-              href: how-to-determine-the-installed-version-of-wpf.md
-            - name: 'Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0'
+            - name: 'Zjištění, zda je instalována platforma .NET Framework 3.0'
               href: how-to-detect-whether-the-net-framework-3-0-is-installed.md
             - name: 'Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5'
               href: how-to-detect-whether-the-net-framework-3-5-is-installed.md
