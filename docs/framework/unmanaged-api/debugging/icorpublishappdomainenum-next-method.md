@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: ad37cd10-0339-4d08-9b0e-4b3428bb4dc3
 topic_type:
 - apiref
-ms.openlocfilehash: 0553d8b07e3a16dc31474b5470ba2dd8ba365cb2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c8866e98be0dd064138acdf5e0f6fb9c339fb3d2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140512"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790649"
 ---
-# <a name="icorpublishappdomainenumnext-method"></a><span data-ttu-id="caf5c-102">ICorPublishAppDomainEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="caf5c-102">ICorPublishAppDomainEnum::Next Method</span></span>
-<span data-ttu-id="caf5c-103">Načte zadaný počet aplikačních domén, které aktuálně existují v procesu, počínaje aktuální pozicí.</span><span class="sxs-lookup"><span data-stu-id="caf5c-103">Gets the specified number of application domains that currently exist in the process, starting at the current position.</span></span>  
+# <a name="icorpublishappdomainenumnext-method"></a><span data-ttu-id="162bc-102">ICorPublishAppDomainEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="162bc-102">ICorPublishAppDomainEnum::Next Method</span></span>
+<span data-ttu-id="162bc-103">Načte zadaný počet aplikačních domén, které aktuálně existují v procesu, počínaje aktuální pozicí.</span><span class="sxs-lookup"><span data-stu-id="162bc-103">Gets the specified number of application domains that currently exist in the process, starting at the current position.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="caf5c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="caf5c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="162bc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="162bc-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Next (  
@@ -36,25 +36,25 @@ HRESULT Next (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="caf5c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="caf5c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="162bc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="162bc-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="caf5c-106">pro Počet prvků, které mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="caf5c-106">[in] The number of elements to be retrieved.</span></span>  
+ <span data-ttu-id="162bc-106">pro Počet prvků, které mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="162bc-106">[in] The number of elements to be retrieved.</span></span>  
   
  `objects`  
- <span data-ttu-id="caf5c-107">mimo Ukazatel na pole načtených objektů [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) , z nichž každý představuje doménu aplikace.</span><span class="sxs-lookup"><span data-stu-id="caf5c-107">[out] A pointer to the array of retrieved [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) objects, each of which represents an application domain.</span></span>  
+ <span data-ttu-id="162bc-107">mimo Ukazatel na pole načtených objektů [ICorPublishAppDomain](icorpublishappdomain-interface.md) , z nichž každý představuje doménu aplikace.</span><span class="sxs-lookup"><span data-stu-id="162bc-107">[out] A pointer to the array of retrieved [ICorPublishAppDomain](icorpublishappdomain-interface.md) objects, each of which represents an application domain.</span></span>  
   
  `pceltFetched`  
- <span data-ttu-id="caf5c-108">mimo Ukazatel na počet skutečně vrácených aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="caf5c-108">[out] Pointer to the number of application domains actually returned.</span></span> <span data-ttu-id="caf5c-109">Tato hodnota může být null, pokud `celt` je jedna.</span><span class="sxs-lookup"><span data-stu-id="caf5c-109">This value may be null if `celt` is one.</span></span>  
+ <span data-ttu-id="162bc-108">mimo Ukazatel na počet skutečně vrácených aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="162bc-108">[out] Pointer to the number of application domains actually returned.</span></span> <span data-ttu-id="162bc-109">Tato hodnota může být null, pokud je `celt` jedna.</span><span class="sxs-lookup"><span data-stu-id="162bc-109">This value may be null if `celt` is one.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="caf5c-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="caf5c-110">Requirements</span></span>  
- <span data-ttu-id="caf5c-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="caf5c-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="162bc-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="162bc-110">Requirements</span></span>  
+ <span data-ttu-id="162bc-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="162bc-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="caf5c-112">**Hlavička:** CorPub. idl, CorPub. h</span><span class="sxs-lookup"><span data-stu-id="caf5c-112">**Header:** CorPub.idl, CorPub.h</span></span>  
+ <span data-ttu-id="162bc-112">**Hlavička:** CorPub. idl, CorPub. h</span><span class="sxs-lookup"><span data-stu-id="162bc-112">**Header:** CorPub.idl, CorPub.h</span></span>  
   
- <span data-ttu-id="caf5c-113">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="caf5c-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="162bc-113">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="162bc-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="caf5c-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="caf5c-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="162bc-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="162bc-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="caf5c-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="caf5c-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="162bc-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="162bc-115">See also</span></span>
 
-- [<span data-ttu-id="caf5c-116">ICorPublishAppDomainEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="caf5c-116">ICorPublishAppDomainEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md)
+- [<span data-ttu-id="162bc-116">ICorPublishAppDomainEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="162bc-116">ICorPublishAppDomainEnum Interface</span></span>](icorpublishappdomainenum-interface.md)

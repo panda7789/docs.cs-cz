@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 2f82fb2c-a42e-48bf-af41-a15e40f636c6
 topic_type:
 - apiref
-ms.openlocfilehash: 7aff0c5dfce033bf4c55019b38546e39223850a0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d3eafd9ca8df71a6644905e5abe6b15b7f180ed
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137025"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793515"
 ---
-# <a name="icordebugeditandcontinueerrorinfogeterrorcode-method"></a><span data-ttu-id="b5779-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode – metoda</span><span class="sxs-lookup"><span data-stu-id="b5779-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode Method</span></span>
-<span data-ttu-id="b5779-103">`GetErrorCode` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="b5779-103">`GetErrorCode` is obsolete.</span></span> <span data-ttu-id="b5779-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="b5779-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinueerrorinfogeterrorcode-method"></a><span data-ttu-id="ac84f-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode – metoda</span><span class="sxs-lookup"><span data-stu-id="ac84f-102">ICorDebugEditAndContinueErrorInfo::GetErrorCode Method</span></span>
+<span data-ttu-id="ac84f-103">`GetErrorCode` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="ac84f-103">`GetErrorCode` is obsolete.</span></span> <span data-ttu-id="ac84f-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="ac84f-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5779-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5779-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ac84f-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ac84f-105">See also</span></span>
 
-- [<span data-ttu-id="b5779-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="b5779-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="ac84f-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="ac84f-106">Debugging Interfaces</span></span>](debugging-interfaces.md)

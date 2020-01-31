@@ -15,20 +15,20 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 145b06f89b45b165b9d6329a4c16ac5739406113
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1e3a62de3259c012438c64ece26e696682ec96e6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739193"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789205"
 ---
-# <a name="dacpgetmoduleaddress-structure"></a><span data-ttu-id="62fee-102">Struktura DacpGetModuleAddress</span><span class="sxs-lookup"><span data-stu-id="62fee-102">DacpGetModuleAddress Structure</span></span>
+# <a name="dacpgetmoduleaddress-structure"></a><span data-ttu-id="a282c-102">Struktura DacpGetModuleAddress</span><span class="sxs-lookup"><span data-stu-id="a282c-102">DacpGetModuleAddress Structure</span></span>
 
-<span data-ttu-id="62fee-103">Definuje kontejner pro žádost o adresu modulu.</span><span class="sxs-lookup"><span data-stu-id="62fee-103">Defines the container for a module address request.</span></span>
+<span data-ttu-id="a282c-103">Definuje kontejner pro požadavek na adresu modulu.</span><span class="sxs-lookup"><span data-stu-id="a282c-103">Defines the container for a module address request.</span></span>
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
-## <a name="syntax"></a><span data-ttu-id="62fee-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="62fee-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a282c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a282c-104">Syntax</span></span>
 
 ```cpp
 struct DacpGetModuleAddress
@@ -37,29 +37,29 @@ struct DacpGetModuleAddress
 };
 ```
 
-## <a name="members"></a><span data-ttu-id="62fee-105">Členové</span><span class="sxs-lookup"><span data-stu-id="62fee-105">Members</span></span>
+## <a name="members"></a><span data-ttu-id="a282c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="a282c-105">Members</span></span>
 
-| <span data-ttu-id="62fee-106">Člen</span><span class="sxs-lookup"><span data-stu-id="62fee-106">Member</span></span>      | <span data-ttu-id="62fee-107">Popis</span><span class="sxs-lookup"><span data-stu-id="62fee-107">Description</span></span>                |
+| <span data-ttu-id="a282c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="a282c-106">Member</span></span>      | <span data-ttu-id="a282c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="a282c-107">Description</span></span>                |
 | ----------- | -------------------------- |
-| `ModulePtr` | <span data-ttu-id="62fee-108">Ukazatel na modul.</span><span class="sxs-lookup"><span data-stu-id="62fee-108">The pointer to the module.</span></span> |
+| `ModulePtr` | <span data-ttu-id="a282c-108">Ukazatel na modul.</span><span class="sxs-lookup"><span data-stu-id="a282c-108">The pointer to the module.</span></span> |
 
-## <a name="methods"></a><span data-ttu-id="62fee-109">Metody</span><span class="sxs-lookup"><span data-stu-id="62fee-109">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="a282c-109">Metody</span><span class="sxs-lookup"><span data-stu-id="a282c-109">Methods</span></span>
 
-| <span data-ttu-id="62fee-110">Metoda</span><span class="sxs-lookup"><span data-stu-id="62fee-110">Method</span></span>                                                                                               | <span data-ttu-id="62fee-111">Popis</span><span class="sxs-lookup"><span data-stu-id="62fee-111">Description</span></span>                                                                    |
+| <span data-ttu-id="a282c-110">Metoda</span><span class="sxs-lookup"><span data-stu-id="a282c-110">Method</span></span>                                                                                               | <span data-ttu-id="a282c-111">Popis</span><span class="sxs-lookup"><span data-stu-id="a282c-111">Description</span></span>                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [<span data-ttu-id="62fee-112">Požadavek</span><span class="sxs-lookup"><span data-stu-id="62fee-112">Request</span></span>](../../../../docs/framework/unmanaged-api/debugging/dacpgetmoduleaddress-request-method.md) | <span data-ttu-id="62fee-113">Provede požadavek na naplnit struktura ze struktury daného modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="62fee-113">Performs a request to populate the structure from the given runtime structure.</span></span> |
+| [<span data-ttu-id="a282c-112">Požadavek</span><span class="sxs-lookup"><span data-stu-id="a282c-112">Request</span></span>](dacpgetmoduleaddress-request-method.md) | <span data-ttu-id="a282c-113">Provede požadavek na naplnění struktury z dané běhové struktury.</span><span class="sxs-lookup"><span data-stu-id="a282c-113">Performs a request to populate the structure from the given runtime structure.</span></span> |
 
-## <a name="remarks"></a><span data-ttu-id="62fee-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="62fee-114">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a282c-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a282c-114">Remarks</span></span>
 
-<span data-ttu-id="62fee-115">Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven.</span><span class="sxs-lookup"><span data-stu-id="62fee-115">This structure lives inside the runtime and is not exposed through any headers or library files.</span></span> <span data-ttu-id="62fee-116">Pro použití je třeba definovat strukturu jak je uvedeno výše, kde `CLRDATA_ADDRESS` je 64-bit znaménka.</span><span class="sxs-lookup"><span data-stu-id="62fee-116">To use it, define the structure as specified above, where `CLRDATA_ADDRESS` is a 64-bit unsigned integer.</span></span>
+<span data-ttu-id="a282c-115">Tato struktura žije v modulu runtime a není vystavena prostřednictvím žádné hlavičky nebo souborů knihoven.</span><span class="sxs-lookup"><span data-stu-id="a282c-115">This structure lives inside the runtime and is not exposed through any headers or library files.</span></span> <span data-ttu-id="a282c-116">Pokud ho chcete použít, definujte strukturu, jak je uvedeno výše, kde `CLRDATA_ADDRESS` je 64-bit unsigned integer.</span><span class="sxs-lookup"><span data-stu-id="a282c-116">To use it, define the structure as specified above, where `CLRDATA_ADDRESS` is a 64-bit unsigned integer.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="62fee-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="62fee-117">Requirements</span></span>
-<span data-ttu-id="62fee-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="62fee-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
-<span data-ttu-id="62fee-119">**Záhlaví:** Žádný</span><span class="sxs-lookup"><span data-stu-id="62fee-119">**Header:** None</span></span>  
-<span data-ttu-id="62fee-120">**Knihovna:** Žádné</span><span class="sxs-lookup"><span data-stu-id="62fee-120">**Library:** None</span></span>  
-<span data-ttu-id="62fee-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span><span class="sxs-lookup"><span data-stu-id="62fee-121">**.NET Framework Versions:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a282c-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a282c-117">Requirements</span></span>
+<span data-ttu-id="a282c-118">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a282c-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+<span data-ttu-id="a282c-119">**Hlavička:** NTato</span><span class="sxs-lookup"><span data-stu-id="a282c-119">**Header:** None</span></span>  
+<span data-ttu-id="a282c-120">**Knihovna:** NTato</span><span class="sxs-lookup"><span data-stu-id="a282c-120">**Library:** None</span></span>  
+<span data-ttu-id="a282c-121">**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span><span class="sxs-lookup"><span data-stu-id="a282c-121">**.NET Framework Versions:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span></span>  
 
-## <a name="see-also"></a><span data-ttu-id="62fee-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="62fee-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a282c-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a282c-122">See also</span></span>
 
-- [<span data-ttu-id="62fee-123">Ladění</span><span class="sxs-lookup"><span data-stu-id="62fee-123">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [<span data-ttu-id="62fee-124">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="62fee-124">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [<span data-ttu-id="a282c-123">Ladění</span><span class="sxs-lookup"><span data-stu-id="a282c-123">Debugging</span></span>](index.md)
+- [<span data-ttu-id="a282c-124">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="a282c-124">Debugging Structures</span></span>](debugging-structures.md)

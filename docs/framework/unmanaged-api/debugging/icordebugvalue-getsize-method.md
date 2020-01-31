@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 445a9ee3-e050-4f3a-931a-96b0efb00110
 topic_type:
 - apiref
-ms.openlocfilehash: 3d6caa02333229bcd49f4c6ccf8b93265181a0b3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3d26ddb6d89af60acf6dc1214b0423ba75e488ff
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137083"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791168"
 ---
-# <a name="icordebugvaluegetsize-method"></a><span data-ttu-id="795ac-102">ICorDebugValue::GetSize – metoda</span><span class="sxs-lookup"><span data-stu-id="795ac-102">ICorDebugValue::GetSize Method</span></span>
-<span data-ttu-id="795ac-103">Získá velikost objektu "ICorDebugValue" v bajtech.</span><span class="sxs-lookup"><span data-stu-id="795ac-103">Gets the size, in bytes, of this "ICorDebugValue" object.</span></span>  
+# <a name="icordebugvaluegetsize-method"></a><span data-ttu-id="b2eb9-102">ICorDebugValue::GetSize – metoda</span><span class="sxs-lookup"><span data-stu-id="b2eb9-102">ICorDebugValue::GetSize Method</span></span>
+<span data-ttu-id="b2eb9-103">Získá velikost objektu "ICorDebugValue" v bajtech.</span><span class="sxs-lookup"><span data-stu-id="b2eb9-103">Gets the size, in bytes, of this "ICorDebugValue" object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="795ac-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="795ac-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b2eb9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b2eb9-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetSize (  
@@ -33,24 +33,24 @@ HRESULT GetSize (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="795ac-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="795ac-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b2eb9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b2eb9-105">Parameters</span></span>  
  `pSize`  
- <span data-ttu-id="795ac-106">mimo Velikost objektu Value (v bajtech).</span><span class="sxs-lookup"><span data-stu-id="795ac-106">[out] The size, in bytes, of this value object.</span></span>  
+ <span data-ttu-id="b2eb9-106">mimo Velikost objektu Value (v bajtech).</span><span class="sxs-lookup"><span data-stu-id="b2eb9-106">[out] The size, in bytes, of this value object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="795ac-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="795ac-107">Remarks</span></span>  
- <span data-ttu-id="795ac-108">Pokud je typ hodnoty odkazový typ, tato metoda vrátí velikost ukazatele místo velikosti objektu.</span><span class="sxs-lookup"><span data-stu-id="795ac-108">If the value's type is a reference type, this method returns the size of the pointer rather than the size of the object.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b2eb9-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b2eb9-107">Remarks</span></span>  
+ <span data-ttu-id="b2eb9-108">Pokud je typ hodnoty odkazový typ, tato metoda vrátí velikost ukazatele místo velikosti objektu.</span><span class="sxs-lookup"><span data-stu-id="b2eb9-108">If the value's type is a reference type, this method returns the size of the pointer rather than the size of the object.</span></span>  
   
- <span data-ttu-id="795ac-109">Metoda `ICorDebugValue::GetSize` vrátí `COR_E_OVERFLOW` pro objekty, které jsou větší než 4 GB na 64 – bitové platformy.</span><span class="sxs-lookup"><span data-stu-id="795ac-109">The `ICorDebugValue::GetSize` method returns `COR_E_OVERFLOW` for objects that are larger than 4 GB on 64-bit platforms.</span></span> <span data-ttu-id="795ac-110">Použijte raději metodu [ICorDebugValue3 –:: GetSize64 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) pro objekty, které jsou větší než 4 GB.</span><span class="sxs-lookup"><span data-stu-id="795ac-110">Use the [ICorDebugValue3::GetSize64](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) method instead for objects that are larger than 4 GB.</span></span>  
+ <span data-ttu-id="b2eb9-109">Metoda `ICorDebugValue::GetSize` vrátí `COR_E_OVERFLOW` pro objekty, které jsou větší než 4 GB na 64 – bitové platformy.</span><span class="sxs-lookup"><span data-stu-id="b2eb9-109">The `ICorDebugValue::GetSize` method returns `COR_E_OVERFLOW` for objects that are larger than 4 GB on 64-bit platforms.</span></span> <span data-ttu-id="b2eb9-110">Použijte raději metodu [ICorDebugValue3 –:: GetSize64 –](icordebugvalue3-getsize64-method.md) pro objekty, které jsou větší než 4 GB.</span><span class="sxs-lookup"><span data-stu-id="b2eb9-110">Use the [ICorDebugValue3::GetSize64](icordebugvalue3-getsize64-method.md) method instead for objects that are larger than 4 GB.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="795ac-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="795ac-111">Requirements</span></span>  
- <span data-ttu-id="795ac-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="795ac-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b2eb9-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b2eb9-111">Requirements</span></span>  
+ <span data-ttu-id="b2eb9-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b2eb9-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="795ac-113">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="795ac-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b2eb9-113">**Hlavička:** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="b2eb9-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="795ac-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="795ac-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b2eb9-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="b2eb9-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="795ac-115">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="795ac-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="b2eb9-115">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b2eb9-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="795ac-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="795ac-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b2eb9-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b2eb9-116">See also</span></span>
 
-- [<span data-ttu-id="795ac-117">GetSize64 – metoda</span><span class="sxs-lookup"><span data-stu-id="795ac-117">GetSize64 Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)
+- [<span data-ttu-id="b2eb9-117">GetSize64 – metoda</span><span class="sxs-lookup"><span data-stu-id="b2eb9-117">GetSize64 Method</span></span>](icordebugvalue3-getsize64-method.md)
