@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: da941118-01b7-4197-ae5b-9f2f8adcd623
 topic_type:
 - apiref
-ms.openlocfilehash: 6d8b408675127cde399a8346f2b9734a0e038cb5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1c3c311fd431b6c0b18af3d6516973b2471cfabd
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427140"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867043"
 ---
-# <a name="cor_prf_transition_reason-enumeration"></a><span data-ttu-id="def29-102">COR_PRF_TRANSITION_REASON – výčet</span><span class="sxs-lookup"><span data-stu-id="def29-102">COR_PRF_TRANSITION_REASON Enumeration</span></span>
-<span data-ttu-id="def29-103">Označuje důvod přechodu ze spravovaného do nespravovaného kódu nebo naopak.</span><span class="sxs-lookup"><span data-stu-id="def29-103">Indicates the reason for a transition from managed to unmanaged code, or vice versa.</span></span>  
+# <a name="cor_prf_transition_reason-enumeration"></a><span data-ttu-id="f7d65-102">COR_PRF_TRANSITION_REASON – výčet</span><span class="sxs-lookup"><span data-stu-id="f7d65-102">COR_PRF_TRANSITION_REASON Enumeration</span></span>
+<span data-ttu-id="f7d65-103">Označuje důvod přechodu ze spravovaného do nespravovaného kódu nebo naopak.</span><span class="sxs-lookup"><span data-stu-id="f7d65-103">Indicates the reason for a transition from managed to unmanaged code, or vice versa.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="def29-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="def29-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f7d65-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7d65-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum {  
@@ -33,21 +33,21 @@ typedef enum {
 } COR_PRF_TRANSITION_REASON;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="def29-105">Členové</span><span class="sxs-lookup"><span data-stu-id="def29-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="f7d65-105">Členové</span><span class="sxs-lookup"><span data-stu-id="f7d65-105">Members</span></span>  
   
-|<span data-ttu-id="def29-106">Člen</span><span class="sxs-lookup"><span data-stu-id="def29-106">Member</span></span>|<span data-ttu-id="def29-107">Popis</span><span class="sxs-lookup"><span data-stu-id="def29-107">Description</span></span>|  
+|<span data-ttu-id="f7d65-106">Člen</span><span class="sxs-lookup"><span data-stu-id="f7d65-106">Member</span></span>|<span data-ttu-id="f7d65-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f7d65-107">Description</span></span>|  
 |------------|-----------------|  
-|`COR_PRF_TRANSITION_CALL`|<span data-ttu-id="def29-108">Přechod je způsoben voláním funkce.</span><span class="sxs-lookup"><span data-stu-id="def29-108">The transition is due to a call into a function.</span></span>|  
-|`COR_PRF_TRANSITION_RETURN`|<span data-ttu-id="def29-109">Přechod je způsoben návratem z funkce.</span><span class="sxs-lookup"><span data-stu-id="def29-109">The transition is due to a return from a function.</span></span>|  
+|`COR_PRF_TRANSITION_CALL`|<span data-ttu-id="f7d65-108">Přechod je způsoben voláním funkce.</span><span class="sxs-lookup"><span data-stu-id="f7d65-108">The transition is due to a call into a function.</span></span>|  
+|`COR_PRF_TRANSITION_RETURN`|<span data-ttu-id="f7d65-109">Přechod je způsoben návratem z funkce.</span><span class="sxs-lookup"><span data-stu-id="f7d65-109">The transition is due to a return from a function.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="def29-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="def29-110">Remarks</span></span>  
- <span data-ttu-id="def29-111">Když dojde k přechodu, Profiler obdrží zpětné volání [ICorProfilerCallback:: ManagedToUnmanagedTransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md) nebo [ICorProfilerCallback:: UnmanagedToManagedTransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-unmanagedtomanagedtransition-method.md) , které poskytuje hodnotu výčtu `COR_PRF_TRANSITION_REASON` k označení důvodu přechodu.</span><span class="sxs-lookup"><span data-stu-id="def29-111">When a transition occurs, the profiler receives an [ICorProfilerCallback::ManagedToUnmanagedTransition](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md) or [ICorProfilerCallback::UnmanagedToManagedTransition](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-unmanagedtomanagedtransition-method.md) callback, either of which provides a value of the `COR_PRF_TRANSITION_REASON` enumeration to indicate the reason for the transition.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f7d65-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f7d65-110">Remarks</span></span>  
+ <span data-ttu-id="f7d65-111">Když dojde k přechodu, Profiler obdrží zpětné volání [ICorProfilerCallback:: ManagedToUnmanagedTransition –](icorprofilercallback-managedtounmanagedtransition-method.md) nebo [ICorProfilerCallback:: UnmanagedToManagedTransition –](icorprofilercallback-unmanagedtomanagedtransition-method.md) , které poskytuje hodnotu výčtu `COR_PRF_TRANSITION_REASON` k označení důvodu přechodu.</span><span class="sxs-lookup"><span data-stu-id="f7d65-111">When a transition occurs, the profiler receives an [ICorProfilerCallback::ManagedToUnmanagedTransition](icorprofilercallback-managedtounmanagedtransition-method.md) or [ICorProfilerCallback::UnmanagedToManagedTransition](icorprofilercallback-unmanagedtomanagedtransition-method.md) callback, either of which provides a value of the `COR_PRF_TRANSITION_REASON` enumeration to indicate the reason for the transition.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="def29-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="def29-112">Requirements</span></span>  
- <span data-ttu-id="def29-113">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="def29-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f7d65-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f7d65-112">Requirements</span></span>  
+ <span data-ttu-id="f7d65-113">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f7d65-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="def29-114">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="def29-114">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="f7d65-114">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="f7d65-114">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="def29-115">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="def29-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f7d65-115">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="f7d65-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="def29-116">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="def29-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="f7d65-116">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f7d65-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
