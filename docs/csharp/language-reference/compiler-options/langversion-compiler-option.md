@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 9588ec73250e8745426f6f6020c8d555a174d627
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 007b10f6f27233c43caad4c1910e3d1158682950
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422962"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920370"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion – (C# možnosti kompilátoru)
 
@@ -27,19 +27,20 @@ Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena ve C# zvol
 
 ## <a name="arguments"></a>Arguments
 
- `option`  
- Platné jsou následující hodnoty:
+`option`
+
+Platné jsou následující hodnoty:
 
 |Možnost|Význam|
 |------------|-------------|
-|Tisk|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze Preview, kterou může podporovat.|
+|preview|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze Preview, kterou může podporovat.|
 |nejnovější|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze (včetně dílčích verzí), které může podporovat.|
 |latestMajor|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější hlavní verze, kterou může podporovat.|
 |8.0|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 8,0 nebo nižší.|
-|7,3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší.|
-|7,2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší.|
+|7.3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší.|
+|7.2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší.|
 |7,1|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,1 nebo nižší.|
-|čl|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší.|
+|7|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší.|
 |6|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 6,0 nebo nižší.|
 |5|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 5,0 nebo nižší.|
 |4|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 4,0 nebo nižší.|
@@ -52,12 +53,12 @@ Výchozí jazyková verze závisí na cílové architektuře vaší aplikace a n
 ## <a name="remarks"></a>Poznámky
 
 Metadata, na která C# odkazuje vaše aplikace, nepodléhají možnosti kompilátoru **-langversion –** .
-  
+
 Vzhledem k tomu, že C# každá verze kompilátoru obsahuje rozšíření jazykové specifikace, **-langversion –** neposkytuje ekvivalentní funkce starší verze kompilátoru.
 
-Kromě toho i C# když se aktualizace verze obecně shodují s hlavními .NET Framework verzemi, Nová syntaxe a funkce nejsou nutně vázané na konkrétní verzi Frameworku. I když nové funkce budou jednoznačně vyžadovat novou aktualizaci kompilátoru, která se také vydává C# společně s revizí, každá konkrétní funkce má své vlastní minimální požadavky na rozhraní .NET API nebo modul CLR (Common Language Runtime), které by mohly umožňovat jeho spuštění v rámci architektury nižší verze včetně balíčků NuGet nebo jiných knihoven.
+Kromě toho i C# když se aktualizace verze obecně shodují s hlavními .NET Framework verzemi, Nová syntaxe a funkce nejsou nutně vázané na konkrétní verzi Frameworku. I když nové funkce budou jednoznačně vyžadovat novou aktualizaci kompilátoru, která se také vydává C# společně s revizí, každá konkrétní funkce má své vlastní minimální požadavky na rozhraní .NET API nebo modul CLR (Common Language Runtime), které by mohly umožňovat jeho spuštění v rozhraních se starší verzí, včetně balíčků NuGet nebo jiných knihoven.
 
-Bez ohledu na to, který parametr **-langversion –** použijete, použijete aktuální verzi modulu CLR (Common Language Runtime) k vytvoření souboru. exe nebo. dll. Jedinou výjimkou jsou Friend sestavení a [-moduleassemblyname –C# (možnost kompilátoru)](./moduleassemblyname-compiler-option.md), která funguje v rámci **-langversion –: ISO-1**.  
+Bez ohledu na to, který parametr **-langversion –** použijete, použijte aktuální verzi modulu CLR (Common Language Runtime) k vytvoření souboru. exe nebo. dll. Jedinou výjimkou jsou Friend sestavení a [-moduleassemblyname –C# (možnost kompilátoru)](./moduleassemblyname-compiler-option.md), která funguje v rámci **-langversion –: ISO-1**.
 
 Další způsoby, jak určit C# jazykovou verzi, najdete v článku věnovaném [ C# jazykové verzi](../configure-language-version.md) .
 
@@ -65,10 +66,10 @@ Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v 
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-|Version|Propojit|Popis|
+|Version|Odkaz|Popis|
 |-------|----|-----------|
-|C#7,0 a novější||momentálně není k dispozici|
-|C#6,0|[Propojit](/dotnet/csharp/language-reference/language-specification/introduction)|C#Specifikace jazyka verze 6 – neoficiální koncept: .NET Foundation|
+|C#7,0 a novější||Momentálně není k dispozici|
+|C#6,0|[Odkaz](/dotnet/csharp/language-reference/language-specification/introduction)|C#Specifikace jazyka verze 6 – neoficiální koncept: .NET Foundation|
 |C#5,0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)|Standard ECMA-334 5. edice|
 |C#3,0|[Stáhnout dokument](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|C#Specifikace jazyka verze 3,0: Microsoft Corporation|
 |C#2,0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%204th%20edition%20June%202006.pdf)|Standard ECMA – 334 4. edice|
@@ -88,7 +89,7 @@ V následující tabulce jsou uvedeny minimální verze sady SDK s C# kompiláto
 |C# 7.0| Microsoft Visual Studio/Build Tools 2017 |
 |C# 6| Microsoft Visual Studio/Build Tools 2015 |
 |C#čl| Microsoft Visual Studio/Build Tools 2012 nebo .NET Framework 4,5 kompilátor |
-|C#4| Microsoft Visual Studio/Build Tools 2010 nebo .NET Framework 4,0 kompilátor |
+|C# 4| Microsoft Visual Studio/Build Tools 2010 nebo .NET Framework 4,0 kompilátor |
 |C#1| Microsoft Visual Studio/Build Tools 2008 nebo .NET Framework 3,5 kompilátor |
 |C#odst| Microsoft Visual Studio/Build Tools 2005 nebo .NET Framework 2,0 kompilátor |
 |C#1,0/1.2 | Microsoft Visual Studio/Build Tools .NET 2002 nebo kompilátor .NET Framework 1,0 |

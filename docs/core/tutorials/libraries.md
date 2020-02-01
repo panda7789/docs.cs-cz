@@ -1,18 +1,18 @@
 ---
-title: Vývoj knihoven pomocí nástrojů pro různé platformy
-description: Naučte se vytvářet knihovny .NET Core pomocí nástrojů .NET Core CLI. Vytvoříte knihovnu, která podporuje více rozhraní.
+title: Vývoj knihoven pomocí .NET Core CLI
+description: Naučte se vytvářet knihovny .NET Core pomocí .NET Core CLI. Vytvoříte knihovnu, která podporuje více rozhraní.
 author: cartermp
 ms.date: 05/01/2017
-ms.openlocfilehash: 4132113037e6c5ec555d2d1859b8217a1a53d07f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a7c0175d29f483571578b58d698dd790cf66f7f4
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714032"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920448"
 ---
-# <a name="develop-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
+# <a name="develop-libraries-with-the-net-core-cli"></a>Vývoj knihoven pomocí .NET Core CLI
 
-Tento článek popisuje, jak psát knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku pro různé platformy. Rozhraní příkazového řádku poskytuje efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. Knihovny můžete vytvářet i v aplikaci Visual Studio a pokud je vaše preferované prostředí, [Přečtěte si průvodce sadou Visual Studio](library-with-visual-studio.md).
+Tento článek popisuje, jak psát knihovny pro .NET pomocí .NET Core CLI. Rozhraní příkazového řádku poskytuje efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. Knihovny můžete vytvářet i v aplikaci Visual Studio a pokud je vaše preferované prostředí, [Přečtěte si průvodce sadou Visual Studio](library-with-visual-studio.md).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -76,7 +76,7 @@ Pokud chcete dosáhnout maximálního počtu vývojářů a projektů, použijte
 | .NET Framework 2.0     | `net20`  |
 | .NET Framework 3.0     | `net30`  |
 | .NET Framework 3.5     | `net35`  |
-| .NET Framework 4.0     | `net40`  |
+| .NET Framework 4,0     | `net40`  |
 | .NET Framework 4.5     | `net45`  |
 | .NET Framework 4.5.1   | `net451` |
 | .NET Framework 4.5.2   | `net452` |
@@ -216,7 +216,7 @@ Každá z nich obsahuje soubory `.dll` pro každý cíl.
 Je důležité, abyste mohli testovat napříč platformami. V poli můžete použít buď [xUnit](https://xunit.github.io/) nebo MSTest. Obě jsou dokonale vhodné pro testování částí knihovny v .NET Core. Způsob nastavení řešení pomocí testovacích projektů bude záviset na [struktuře řešení](#structuring-a-solution). Následující příklad předpokládá, že testovací a zdrojové adresáře jsou ve stejném adresáři nejvyšší úrovně v provozu.
 
 > [!NOTE]
-> Používá se k tomu několik [příkazů .NET Core CLI](../tools/index.md). Další informace naleznete v tématu [dotnet New](../tools/dotnet-new.md) a [dotnet sln](../tools/dotnet-sln.md) .
+> Používá se k tomu několik příkazů [.NET Core CLI](../tools/index.md) . Další informace naleznete v tématu [dotnet New](../tools/dotnet-new.md) a [dotnet sln](../tools/dotnet-sln.md) .
 
 1. Nastavte své řešení. Můžete to udělat pomocí následujících příkazů:
 

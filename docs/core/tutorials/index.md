@@ -4,12 +4,12 @@ description: Při vytváření aplikací a knihoven v počítačích Mac, Linux 
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 7039d5877ecbd4477d64991321a7fc46cadc2848
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4e0acc357453d3bd3fb877e357264cc1aa715e4c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714046"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920431"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
@@ -35,10 +35,10 @@ Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 - [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](using-on-mac-vs.md)
 - [Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac](using-on-mac-vs-full-solution.md)
 
-## <a name="build-applications-with-the-net-core-cli-tools"></a>Sestavování aplikací pomocí nástrojů pro .NET Core CLI
+## <a name="build-applications-with-the-net-core-cli"></a>Sestavování aplikací pomocí .NET Core CLI
 
-- [Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí nástrojů pro .NET Core CLI](cli-create-console-app.md)
-- [Organizování a testování projektů pomocí .NET Core CLIch nástrojů](testing-with-cli.md)
+- [Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí .NET Core CLI](cli-create-console-app.md)
+- [Organizování a testování projektů pomocí .NET Core CLI](testing-with-cli.md)
 - [Začínáme sF#](../../fsharp/get-started/get-started-command-line.md)
 
 ## <a name="other"></a>Další

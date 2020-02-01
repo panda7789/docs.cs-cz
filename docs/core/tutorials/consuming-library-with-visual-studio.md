@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: ec9c6f992bcd4a76e2f70018f3facca42b7b660c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4eb75f23359334ea483cba1498f1804c4b24c80c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714069"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920460"
 ---
 # <a name="consume-a-net-standard-library-in-visual-studio"></a>Využití knihovny .NET Standard v sadě Visual Studio
 
@@ -86,4 +86,4 @@ Vaše knihovna tříd může být široce dostupná, když ji publikujete jako b
    > [!TIP]
    > Pokud adresář, který obsahuje *dotnet. exe* , není ve vaší cestě, můžete najít jeho umístění zadáním `where dotnet.exe` v okně konzoly.
 
-Další informace o vytváření balíčků NuGet najdete v tématu [Postup vytvoření balíčku NuGet s nástroji pro různé platformy](../deploying/creating-nuget-packages.md).
+Další informace o vytváření balíčků NuGet najdete v tématu [Postup vytvoření balíčku NuGet pomocí .NET Core CLI](../deploying/creating-nuget-packages.md).

@@ -1,26 +1,20 @@
 ---
-title: Nástroje rozhraní příkazového řádku .NET Core (CLI)
-description: Přehled nástrojů a funkcí rozhraní příkazového řádku (CLI) .NET Core
+title: Rozhraní příkazového řádku .NET Core
+titleSuffix: ''
+description: Přehled .NET Core CLI a jeho funkcí.
 ms.date: 08/14/2017
-ms.openlocfilehash: f19dcb19fb9d0203b3d3795c3fdc0b026c4c60e3
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: b0a8e0dd8cf77bb6f7567c27e9972f62515ec0f2
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163212"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920481"
 ---
-# <a name="net-core-command-line-interface-cli-tools"></a>Nástroje rozhraní příkazového řádku .NET Core (CLI)
+# <a name="net-core-cli-overview"></a>Přehled .NET Core CLI
 
-Rozhraní příkazového řádku .NET Core (CLI) je sada nástrojů pro různé platformy pro vývoj aplikací .NET. Rozhraní příkazového řádku je základ, na kterém můžou REST nástroje, jako jsou například integrovaná vývojová prostředí (IDEs), editory a orchestrace sestavení.
+Rozhraní příkazového řádku .NET Core (CLI) je sada nástrojů pro různé platformy pro vývoj, sestavování, spouštění a publikování aplikací .NET Core.
 
-## <a name="installation"></a>Instalace služby
-
-Buď použijte nativní instalační programy, nebo použijte skripty instalačního prostředí:
-
-- Nativní instalační programy se primárně používají na počítačích vývojáře a používají nativní mechanizmus instalace každého podporované platformy, například balíčky DEB na Ubuntu nebo sady MSI v systému Windows. Tyto instalační programy instalují a konfigurují prostředí pro okamžité použití vývojářem, ale vyžadují na počítači oprávnění správce. Pokyny k instalaci si můžete zobrazit v [Průvodci instalací .NET Core](https://aka.ms/dotnetcoregs).
-- Skripty prostředí se primárně používají k nastavení serverů sestavení nebo k instalaci nástrojů bez oprávnění správce. Nainstalovat skripty neinstalují požadavky na počítač, který je nutné nainstalovat ručně. Další informace naleznete v [tématu Install Script reference](dotnet-install-script.md). Informace o tom, jak nastavit rozhraní příkazového řádku pro server sestavení kontinuální integrace (CI), najdete v tématu [použití .NET Core SDK a nástrojů v rámci kontinuální integrace (CI)](using-ci-with-cli.md).
-
-Ve výchozím nastavení se rozhraní příkazového řádku instaluje souběžně (SxS), takže v jednom počítači může existovat více verzí nástrojů rozhraní příkazového řádku. Určení verze používané na počítači, kde je nainstalováno více verzí, je podrobněji vysvětleno v části [ovladače](#driver) .
+.NET Core CLI je součástí [.NET Core SDK](../sdk.md). Informace o tom, jak nainstalovat .NET Core SDK, najdete v tématu [instalace .NET Core SDK](../install/sdk.md).
 
 ## <a name="cli-commands"></a>Příkazy rozhraní příkazového řádku
 
@@ -35,12 +29,12 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [new](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [budování](dotnet-build.md)
-- [publikování](dotnet-publish.md)
+- [opětovn](dotnet-publish.md)
 - [spouštěl](dotnet-run.md)
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [migrace](dotnet-migrate.md)
+- [Přenes](dotnet-migrate.md)
 - [Odstranit](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 - [Pomoc](dotnet-help.md)
@@ -69,12 +63,12 @@ Ve výchozím nastavení jsou nainstalovány následující příkazy:
 - [new](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [budování](dotnet-build.md)
-- [publikování](dotnet-publish.md)
+- [opětovn](dotnet-publish.md)
 - [spouštěl](dotnet-run.md)
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [migrace](dotnet-migrate.md)
+- [Přenes](dotnet-migrate.md)
 - [Odstranit](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 
@@ -121,7 +115,7 @@ dotnet /build_output/my_app.dll
 
 ---
 
-### <a name="driver"></a>kartu Ovladač
+### <a name="driver"></a>Faktorů
 
 Ovladač má název [dotnet](dotnet.md) a má dvě zodpovědnosti, buď spuštění [aplikace závislé na rozhraní](../deploying/index.md) , nebo spuštění příkazu. 
 
@@ -153,5 +147,5 @@ Pokud jste použili nástroj Preview 2 pro vytváření projektů založených n
 
 ## <a name="see-also"></a>Viz také:
 
-- [dotnet/CLI – úložiště GitHub](https://github.com/dotnet/cli/)
+- [dotnet/úložiště GitHub SDK](https://github.com/dotnet/sdk/)
 - [Průvodce instalací .NET Core](https://aka.ms/dotnetcoregs)

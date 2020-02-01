@@ -5,13 +5,13 @@ dev_langs:
 - csharp
 author: thraka
 ms.author: adegeo
-ms.date: 10/22/2019
-ms.openlocfilehash: b8aa19a1d422fe7d6accd2b095f15843446599cd
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 01/27/2020
+ms.openlocfilehash: 92d97ca3efe761c879d0940a02342edb5a8180f0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789893"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920382"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -180,7 +180,7 @@ Výjimky pro cílení na více platforem:
 
 ## <a name="runtimesdk"></a>Modul runtime/sada SDK
 
-### <a name="major-version-roll-forward"></a>Hlavní verze – posunutí – posun
+### <a name="major-version-runtime-roll-forward"></a>Nasazení hlavní verze – předejte
 
 .NET Core 3.0 zavádí funkci pro výslovný souhlas, která umožňuje aplikaci přejít na nejnovější hlavní verzi .NET Core. Kromě toho bylo přidáno nové nastavení, které řídí, jak se ve vaší aplikaci aplikuje posunutí. Dá se nakonfigurovat následujícími způsoby:
 
@@ -226,6 +226,15 @@ Existují některé operace, jako je propojování a publikování stránek Razo
 Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v aktuálním adresáři. Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže. Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.
 
 U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime. Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2.1. Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+
+### <a name="new-globaljson-options"></a>Nové možnosti Global. JSON
+
+Soubor *Global. JSON* má nové možnosti, které poskytují větší flexibilitu při pokusu o definování používané verze .NET Core SDK. Nové možnosti jsou:
+
+- `allowPrerelease`: Určuje, zda má Řešitel sady SDK zvážit předprodejní verze při výběru verze sady SDK, která se má použít.
+- `rollForward`: Určuje zásadu předávaného předem, která se má použít při výběru verze sady SDK, a to buď jako záložní, pokud konkrétní verze sady SDK chybí, nebo jako direktiva pro použití vyšší verze.
+
+Další informace o změnách, včetně výchozích hodnot, podporovaných hodnot a nových pravidel pro porovnání, najdete v tématu [Přehled globálního formátu JSON](../tools/global-json.md).
 
 ### <a name="smaller-garbage-collection-heap-sizes"></a>Menší velikosti haldy uvolňování paměti
 

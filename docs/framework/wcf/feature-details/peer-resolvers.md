@@ -2,12 +2,12 @@
 title: Překladače partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-ms.openlocfilehash: 33afffcbf11d757dfd003d1fd2bc9a17a3047a69
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 3bcdeffac3673c1c464a35d8b6e089efd7394907
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837373"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919245"
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
 Aby bylo možné se připojit k síti, partnerský uzel vyžaduje IP adresy jiných uzlů. IP adresy se získávají kontaktováním služby překladače, která přijímá ID sítě a vrací seznam adres odpovídajících uzlům zaregistrovaným s tímto ID sítě. Překladač uchovává seznam registrovaných adres, které vytvoří tak, že se všechny uzly v síti registrují spolu se službou.  
@@ -20,7 +20,7 @@ Aby bylo možné se připojit k síti, partnerský uzel vyžaduje IP adresy jin�
  Ve výchozím nastavení používá rovnocenný kanál službu překladače PNRP peering pro zjišťování partnerských vztahů a sousedů v síti. V situacích a platformách, kde PNRP není k dispozici nebo je možné, Windows Communication Foundation (WCF) poskytuje alternativní službu zjišťování na základě serverů – <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>. Můžete také explicitně definovat vlastní službu překladače, a to tak, že zapíšete třídu, která implementuje rozhraní <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract>.  
   
 ### <a name="peer-name-resolution-protocol-pnrp"></a>Protokol PNRP (Peer Name Resolution Protocol)  
- Protokol PNRP je výchozím překladačem pro systém Windows Vista distribuovaná služba pro překládání názvů bez serveru. Protokol PNRP se dá použít taky na [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] instalací pokročilého síťového balíčku. Každý ze dvou klientů, na kterých běží stejná verze PNRP, může každý jiný tento protokol najít za předpokladu, že splňují určité podmínky (například nedostatek používané podnikové brány firewall). Všimněte si, že verze PNRP, která je dodávána s Windows Vista, je novější než verze zahrnutá v sadě Advanced Networking Pack. Aktualizace protokolu PNRP pro [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]najdete na webu Microsoft Download Center.  
+ Protokol PNRP je výchozím překladačem pro systém Windows Vista distribuovaná služba pro překládání názvů bez serveru. Protokol PNRP lze také použít v systému Windows XP SP2 instalací pokročilého síťového balíčku. Každý ze dvou klientů, na kterých běží stejná verze PNRP, může každý jiný tento protokol najít za předpokladu, že splňují určité podmínky (například nedostatek používané podnikové brány firewall). Všimněte si, že verze PNRP, která je dodávána s Windows Vista, je novější než verze zahrnutá v sadě Advanced Networking Pack. Aktualizace protokolu PNRP pro systém Windows XP SP2 najdete na webu služby Stažení softwaru společnosti Microsoft.  
   
 ### <a name="custom-resolver-services"></a>Vlastní služby překladače  
  Pokud není Služba PNRP k dispozici nebo chcete plnou kontrolu nad mřížkou, můžete použít vlastní službu překladače založené na serveru. Tuto službu můžete explicitně definovat tak, že napíšete třídu překladače implementující rozhraní <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract>, nebo pomocí výchozí implementace in-box <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>.  

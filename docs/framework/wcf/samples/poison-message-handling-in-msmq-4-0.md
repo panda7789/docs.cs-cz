@@ -2,12 +2,12 @@
 title: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 71ce6d3df69164aa0d565539bad5e843a7ed6a47
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: cc4da0deea0de2cd8b3bb8e8f2ba9b8a17e3cc60
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337504"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919400"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 Tato ukázka předvádí, jak ve službě provádět zpracování nezpracovatelných zpráv. Tato ukázka je založená na ukázce s [transakčními vazbami služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Tato ukázka používá `netMsmqBinding`. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
@@ -18,7 +18,7 @@ Tato ukázka předvádí, jak ve službě provádět zpracování nezpracovateln
 
  V závislosti na verzi služby MSMQ podporuje NetMsmqBinding omezené zjišťování na úplnou detekci nezpracovatelných zpráv. Jakmile je zpráva zjištěna jako poškozená, může být zpracována několika způsoby. Na základě verze služby MSMQ podporuje NetMsmqBinding omezené zpracování na plné zpracování nezpracovatelných zpráv.
 
- V této ukázce se zobrazuje omezená nepoškozená zařízení, která jsou k dispozici na Windows serveru 2003 a na platformě [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a plná poškození poskytovaná v systému Windows Vista. V obou ukázkách je cílem přesunout nezpracovatelnou zprávu z fronty do jiné fronty, kterou pak může obsluhovat nezpracovatelná zpráva.
+ Tato ukázka znázorňuje omezená poškození zařízení, která jsou k dispozici na platformě Windows Server 2003 a Windows XP a na zařízeních s úplnými poškozeními, které jsou k dispozici v systému V obou ukázkách je cílem přesunout nezpracovatelnou zprávu z fronty do jiné fronty, kterou pak může obsluhovat nezpracovatelná zpráva.
 
 ## <a name="msmq-v40-poison-handling-sample"></a>Ukázka zpracování poškození služby MSMQ v 4.0
  V systému Windows Vista nabízí služba MSMQ zařízení s podfrontou nezpracovatele, které se dá použít k ukládání nezpracovatelných zpráv. Tato ukázka předvádí osvědčené postupy při práci s nepoškozenými zprávami pomocí systému Windows Vista.

@@ -1,23 +1,23 @@
 ---
-title: Začínáme s .NET Core s využitím rozhraní příkazového řádku .NET Core CLI
-description: Podrobný kurz ukazující, jak začít s .NET Core v systému Windows, Linux nebo macOS pomocí rozhraní příkazového řádku (CLI) .NET Core.
+title: Začínáme s .NET Core s využitím rozhraní příkazového řádku
+description: Podrobný kurz ukazující, jak začít s .NET Core v systému Windows, Linux nebo macOS pomocí .NET Core CLI.
 author: thraka
 ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 4285ed3c0488ea615ca89b0b771bf09c8c29b318
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 6e1c7881aa415ea54307d80214001a2f0fe5b4a6
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739124"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920469"
 ---
-# <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí příkazového řádku
+# <a name="get-started-with-net-core-using-the-net-core-cli"></a>Začínáme s .NET Core s využitím .NET Core CLI
 
-V tomto článku se dozvíte, jak na svém počítači začít vyvíjet aplikace pro různé platformy pomocí nástrojů pro .NET Core CLI.
+V tomto článku se dozvíte, jak začít s vývojem aplikací .NET Core, které fungují na Windows, Linux a macOS, pomocí .NET Core CLI.
 
-Pokud nejste obeznámeni se sadou nástrojů .NET Core CLI, přečtěte si [přehled .NET Core SDK](../tools/index.md).
+Pokud .NET Core CLI neznáte, přečtěte si [přehled .NET Core CLI](../tools/index.md).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -194,6 +194,6 @@ A je to! Teď můžete začít používat základní koncepty, které jste zde z
 
 ## <a name="see-also"></a>Viz také:
 
-- [Organizování a testování projektů pomocí .NET Core CLIch nástrojů](testing-with-cli.md)
-- [Publikování aplikací .NET Core pomocí rozhraní příkazového řádku](../deploying/deploy-with-cli.md)
-- [Další informace o nasazení aplikace](../deploying/index.md)
+- [Organizování a testování projektů pomocí .NET Core CLI](testing-with-cli.md)
+- [Publikování aplikací .NET Core pomocí .NET Core CLI](../deploying/deploy-with-cli.md)
+- [Nasazení aplikace .NET core](../deploying/index.md)

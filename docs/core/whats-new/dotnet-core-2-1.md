@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 603e7ae4ffb9e6a4bb477af9597d6948bd63f55e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 32784f7d4b9e3a93eb7f81b4829b39c1a06ef949
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100753"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920386"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -35,7 +35,7 @@ Hlavní zaměření rozhraní .NET Core 2,1 zvyšuje výkon při sestavování, 
 
 - Ukládání odkazů na sestavení do mezipaměti.
 
-- Použití dlouhotrvajících serverů sestavení sady SDK, které jsou procesy, které jsou rozloženy na jednotlivé `dotnet build` volání. Eliminují nutnost kompilátoru JIT kompilovat velké bloky kódu pokaždé, když `dotnet build` se spustí. Procesy sestavení serveru mohou být automaticky ukončeny pomocí následujícího příkazu:
+- Použití dlouhotrvajících serverů sestavení sady SDK, což jsou procesy, které jsou rozloženy mezi jednotlivá `dotnet build` volání. Eliminují potřebu JIT zkompilovat velké bloky kódu při každém spuštění `dotnet build`. Procesy sestavení serveru mohou být automaticky ukončeny pomocí následujícího příkazu:
 
    ```dotnetcli
    dotnet buildserver shutdown
@@ -51,7 +51,7 @@ Hlavní zaměření rozhraní .NET Core 2,1 zvyšuje výkon při sestavování, 
    dotnet watch -- --verbose build
    ```
 
-   Poznamenejte si možnost `--`, která předchází možnosti `--verbose`. Omezuje možnosti předané přímo na příkaz `dotnet watch` z argumentů předaných podřízenému procesu `dotnet`. Bez této možnosti se možnost `--verbose` vztahuje na příkaz `dotnet watch`, nikoli na příkaz `dotnet build`.
+   Poznamenejte si možnost `--`, která předchází možnosti `--verbose`. Omezuje možnosti předané přímo na `dotnet watch` příkaz z argumentů předaných podřízenému procesu `dotnet`. Bez ní se možnost `--verbose` vztahuje na příkaz `dotnet watch`, nikoli na příkaz `dotnet build`.
   
    Další informace najdete v tématu [vývoj aplikací ASP.NET Core pomocí příkazu dotnet Watch](/aspnet/core/tutorials/dotnet-watch).
 
@@ -59,13 +59,13 @@ Hlavní zaměření rozhraní .NET Core 2,1 zvyšuje výkon při sestavování, 
 
 - `dotnet user-secrets` spravuje tajné klíče v úložišti tajného uživatele v ASP.NET Corech aplikacích.
 
-- `dotnet sql-cache` vytvoří tabulku a indexy v databázi Microsoft SQL Server, která se bude používat pro distribuované ukládání do mezipaměti.
+- `dotnet sql-cache` vytvoří tabulku a indexy v databázi Microsoft SQL Server, která se má použít pro distribuované ukládání do mezipaměti.
 
 - `dotnet ef` je nástroj pro správu databází, objektů <xref:Microsoft.EntityFrameworkCore.DbContext> a migrace v aplikacích Entity Framework Core. Další informace najdete v tématu [EF Core nástroje příkazového řádku .NET](/ef/core/miscellaneous/cli/dotnet).
 
 ### <a name="global-tools"></a>Globální nástroje
 
-.NET Core 2,1 podporuje *globální nástroje* – tedy vlastní nástroje, které jsou k dispozici globálně z příkazového řádku. Model rozšiřitelnosti v předchozích verzích rozhraní .NET Core, které jsou k dispozici na základě jednotlivých projektů, pouze pomocí [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
+.NET Core 2,1 podporuje *globální nástroje* – tedy vlastní nástroje, které jsou k dispozici globálně z příkazového řádku. Model rozšiřitelnosti v předchozích verzích rozhraní .NET Core, které jsou k dispozici na základě jednotlivých projektů, lze použít pouze pomocí [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
 
 K instalaci globálního nástroje použijte příkaz [dotnet Tool Install](../tools/dotnet-tool-install.md) . Příklad:
 
@@ -81,11 +81,11 @@ V sadě .NET Core 2,1 SDK všechny operace nástrojů používají příkaz `dot
 
 - [`dotnet tool install`](../tools/dotnet-tool-install.md) pro instalaci nástroje.
 
-- [`dotnet tool update`](../tools/dotnet-tool-update.md) pro odinstalaci a opětovnou instalaci nástroje, který ji efektivně aktualizuje.
+- [`dotnet tool update`](../tools/dotnet-tool-update.md) odinstalujte a znovu nainstalujte nástroj, který ji efektivně aktualizuje.
 
-- [`dotnet tool list`](../tools/dotnet-tool-list.md) pro výpis aktuálně nainstalovaných nástrojů.
+- [`dotnet tool list`](../tools/dotnet-tool-list.md) k vypsání aktuálně nainstalovaných nástrojů.
 
-- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md) pro odinstalaci aktuálně nainstalovaných nástrojů.
+- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md) k odinstalaci aktuálně nainstalovaných nástrojů.
 
 ## <a name="roll-forward"></a>Posunout nahoru
 
@@ -98,7 +98,7 @@ Od verze .NET Core 2,0 platí, že pokud není k dispozici verze .NET Core, se k
 
 Toto chování můžete upravit tak, že změníte nastavení pro přeposílání na žádné kandidátské sdílené rozhraní. K dispozici jsou následující nastavení:
 
-- `0` – zakažte chování při přeposílání dílčí verze. S tímto nastavením bude aplikace vytvořená pro .NET Core 2.0.0 předána do .NET Core 2.0.1, ale ne do .NET Core 2.2.0 nebo .NET Core 3.0.0.
+- `0` – zakáže chování při přeposílání dílčí verze. S tímto nastavením bude aplikace vytvořená pro .NET Core 2.0.0 předána do .NET Core 2.0.1, ale ne do .NET Core 2.2.0 nebo .NET Core 3.0.0.
 - `1` – povolí chování při přeposílání dílčí verze. Toto je výchozí hodnota pro nastavení. S tímto nastavením se aplikace sestavená pro .NET Core 2.0.0 bude převádět na rozhraní .NET Core 2.0.1 nebo .NET Core 2.2.0, podle toho, která z nich je nainstalovaná, ale nebude se převádět do .NET Core 3.0.0.
 - `2` – umožní vám dopředné chování při přeposílání menší a hlavní verze. V případě, že je nastavena i jiná hlavní verze, bude aplikace vytvořená pro .NET Core 2.0.0 předána do .NET Core 3.0.0.
 
@@ -112,7 +112,7 @@ Toto nastavení můžete upravit některým ze tří způsobů:
    "rollForwardOnNoCandidateFx" : 0
    ```
 
-- Při použití [.NET Core CLIch nástrojů](../tools/index.md)přidejte následující možnost s požadovanou hodnotou do příkazu .NET Core, jako je například `run`:
+- Při použití [.NET Core CLI](../tools/index.md)přidejte následující možnost s požadovanou hodnotou do příkazu .NET Core, jako je například `run`:
 
    ```dotnetcli
    dotnet run --rollForwardOnNoCandidateFx=0
@@ -133,7 +133,7 @@ Pomocí sady .NET Core 2,0 SDK jsou samostatně obsažené aplikace publikovány
 Další informace najdete v tématu implementace [modulu runtime pro samostatné nasazení](../deploying/runtime-patch-selection.md).
 ## <a name="windows-compatibility-pack"></a>Sada Compatibility Pack pro Windows
 
-Při portování existujícího kódu z .NET Framework do .NET Core můžete použít [sadu Windows Compatibility Pack](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Poskytuje přístup k 20 000 více rozhraním API, než je k dispozici v .NET Core. Tato rozhraní API zahrnují typy v oboru názvů <xref:System.Drawing?displayProperty=nameWithType>, třídy <xref:System.Diagnostics.EventLog>, rozhraní WMI, čítače výkonu, služby systému Windows a typy a členy registru systému Windows.
+Při portování existujícího kódu z .NET Framework do .NET Core můžete použít [sadu Windows Compatibility Pack](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Poskytuje přístup k 20 000 více rozhraním API, než je k dispozici v .NET Core. Tato rozhraní API zahrnují typy v oboru názvů <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Diagnostics.EventLog> třídy, rozhraní WMI, čítače výkonu, služby systému Windows a typy a členy registru systému Windows.
 
 ## <a name="jit-compiler-improvements"></a>Vylepšení kompilátoru JIT
 
@@ -183,13 +183,13 @@ Následující příklad používá instanci <xref:System.Span%601> a <xref:Syst
 
 ### <a name="brotli-compression"></a>Komprese Brotli
 
-.NET Core 2,1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátová kompresní algoritmus, který je definovaný v [dokumentu RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a který podporuje většina webových prohlížečů a hlavních webových serverů. Můžete použít třídu <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> založenou na streamech nebo vysoce výkonné <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> a <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> třídy. Následující příklad ukazuje kompresi s třídou <xref:System.IO.Compression.BrotliStream>:
+.NET Core 2,1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátová kompresní algoritmus, který je definovaný v [dokumentu RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a který podporuje většina webových prohlížečů a hlavních webových serverů. Můžete použít třídu <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> založenou na streamech nebo vysoce výkonné <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> a třídy <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> založené na rozsahu. Následující příklad ukazuje kompresi pomocí <xref:System.IO.Compression.BrotliStream> třídy:
 
 [!code-csharp[Brotli compression](~/samples/core/whats-new/whats-new-in-21/cs/brotli.cs#1)]
 
 [!code-vb[Brotli compression](~/samples/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
 
-Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System.IO.Compression.DeflateStream> a <xref:System.IO.Compression.GZipStream>, což usnadňuje převod kódu, který volá tato rozhraní API, do <xref:System.IO.Compression.BrotliStream>.
+Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System.IO.Compression.DeflateStream> a <xref:System.IO.Compression.GZipStream>, což usnadňuje převod kódu, který volá tato rozhraní API na <xref:System.IO.Compression.BrotliStream>.
 
 ### <a name="new-cryptography-apis-and-cryptography-improvements"></a>Nová kryptografická rozhraní API a kryptografická vylepšení
 
@@ -203,7 +203,7 @@ Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System
 
 - Výkon <xref:System.Security.Cryptography.Rfc2898DeriveBytes?displayProperty=nameWithType> se zlepšil o 15% pomocí implementace založené na <xref:System.Span%601>.
 
-- Nová třída <xref:System.Security.Cryptography.CryptographicOperations?displayProperty=nameWithType> zahrnuje dvě nové metody:
+- Nová třída <xref:System.Security.Cryptography.CryptographicOperations?displayProperty=nameWithType> obsahuje dvě nové metody:
 
   - <xref:System.Security.Cryptography.CryptographicOperations.FixedTimeEquals%2A> trvat pevně stanovenou dobu pro všechny dva vstupy stejné délky, což usnadňuje použití v kryptografickém ověřování, aby se zabránilo přispívat k časování informací o kanálu na straně.
 
@@ -213,13 +213,13 @@ Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System
 
 - <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> se teď podporuje v systémech Linux a macOS.
 
-- Eliptická Vlnová hodnota Diffie-Hellman (ECDH) je teď dostupná v rodině tříd <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType>. Oblast Surface je stejná jako v .NET Framework.
+- Eliptická Vlnová třída Diffie-Hellman (ECDH) je teď dostupná v <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType> rodině tříd. Oblast Surface je stejná jako v .NET Framework.
 
 - Instance vrácená pomocí <xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType> může šifrovat nebo dešifrovat pomocí výplně OAEP s využitím algoritmu SHA-2 a generovat nebo ověřovat podpisy pomocí technologie RSA-PSS.
 
 ### <a name="sockets-improvements"></a>Vylepšení soketů
 
-.NET Core zahrnuje nový typ <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType> a přepsané <xref:System.Net.Http.HttpMessageHandler?displayProperty=nameWithType>, které tvoří základ rozhraní API sítě vyšší úrovně.  <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>je například základem implementace <xref:System.Net.Http.HttpClient>. V předchozích verzích rozhraní .NET Core rozhraní API na vyšší úrovni byly založeny na nativních implementacích sítě.
+.NET Core zahrnuje nový typ, <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>a přepsanou <xref:System.Net.Http.HttpMessageHandler?displayProperty=nameWithType>, které tvoří základ rozhraní API pro sítě vyšší úrovně.  <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>je například základem implementace <xref:System.Net.Http.HttpClient>. V předchozích verzích rozhraní .NET Core rozhraní API na vyšší úrovni byly založeny na nativních implementacích sítě.
 
 Implementace soketů představená v .NET Core 2,1 má několik výhod:
 
@@ -229,7 +229,7 @@ Implementace soketů představená v .NET Core 2,1 má několik výhod:
 
 - Konzistentní chování napříč všemi platformami .NET Core.
 
-<xref:System.Net.Http.SocketsHttpHandler> je výchozí implementací v .NET Core 2,1. Můžete však nakonfigurovat aplikaci tak, aby používala starší třídu <xref:System.Net.Http.HttpClientHandler> voláním metody <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>:
+<xref:System.Net.Http.SocketsHttpHandler> je výchozí implementací v rozhraní .NET Core 2,1. Můžete však nakonfigurovat aplikaci tak, aby používala starší třídu <xref:System.Net.Http.HttpClientHandler> voláním metody <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>:
 
 ```csharp
 AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
@@ -239,11 +239,11 @@ AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
 AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", False)
 ```
 
-Můžete také použít proměnnou prostředí pro odsouhlasení s používáním implementací soketů na základě <xref:System.Net.Http.SocketsHttpHandler>. To provedete tak, že nastavíte `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` buď na `false`, nebo na 0.
+Můžete také použít proměnnou prostředí pro odsouhlasení s používáním implementací soketů založených na <xref:System.Net.Http.SocketsHttpHandler>. To provedete tak, že nastavíte `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` buď na `false`, nebo na 0.
 
-V systému Windows můžete také zvolit použití <xref:System.Net.Http.WinHttpHandler?displayProperty=nameWithType>, která spoléhá na nativní implementaci, nebo na třídu <xref:System.Net.Http.SocketsHttpHandler> předáním instance třídy do konstruktoru <xref:System.Net.Http.HttpClient>.
+V systému Windows můžete také zvolit použití <xref:System.Net.Http.WinHttpHandler?displayProperty=nameWithType>, která spoléhá na nativní implementaci, nebo na <xref:System.Net.Http.SocketsHttpHandler> třídy předáním instance třídy do konstruktoru <xref:System.Net.Http.HttpClient>.
 
-V systémech Linux a macOS můžete pro jednotlivé procesy nakonfigurovat pouze <xref:System.Net.Http.HttpClient>. V systému Linux je nutné nasadit [libcurl](https://curl.haxx.se/libcurl/) , pokud chcete použít starou implementaci <xref:System.Net.Http.HttpClient>. (Instaluje se s .NET Core 2,0.)
+V systémech Linux a macOS můžete nakonfigurovat <xref:System.Net.Http.HttpClient> jenom pro jednotlivé procesy. V systému Linux je nutné nasadit [libcurl](https://curl.haxx.se/libcurl/) , pokud chcete použít starou implementaci <xref:System.Net.Http.HttpClient>. (Instaluje se s .NET Core 2,0.)
 
 ## <a name="see-also"></a>Viz také:
 

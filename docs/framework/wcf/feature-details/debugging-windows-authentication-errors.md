@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 45e4926905bbf3b5a24af15de153afc7bd2a4823
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 9dbf9eee6e4222f899d77a4457bc78132ec7f092
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964572"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920222"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Při použití ověřování systému Windows jako mechanismu zabezpečení zpracovává rozhraní SSPI (Security Support Provider Interface) procesy zabezpečení. Pokud dojde k chybám zabezpečení ve vrstvě SSPI, jsou umístěny na základě Windows Communication Foundation (WCF). Toto téma poskytuje strukturu a sadu otázek, které vám pomůžou diagnostikovat chyby.  
@@ -40,8 +40,8 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
 |-|----------------|------------------|-----------------|--------------------|  
 |Místní uživatel|NTLM|NTLM|NTLM|NTLM|  
 |Místní systém|Anonymní protokol NTLM|Anonymní protokol NTLM|Anonymní protokol NTLM|Anonymní protokol NTLM|  
-|Uživatel domény|NTLM|NTLM|Kerberos|Kerberos|  
-|Počítač domény|NTLM|NTLM|Kerberos|Kerberos|  
+|Uživatel domény|NTLM|NTLM|Sdílené|Sdílené|  
+|Počítač domény|NTLM|NTLM|Sdílené|Sdílené|  
   
  Mezi ně patří konkrétně tyto čtyři typy účtů:  
   
@@ -139,7 +139,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
  [!code-vb[C_DebuggingWindowsAuth#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#3)]  
   
 #### <a name="sspi-is-not-available"></a>Rozhraní SSPI není k dispozici.  
- Následující operační systémy nepodporují ověřování Windows, když se používají jako server: [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Media Center Edition a Windows Vista Home Edition.  
+ Následující operační systémy nepodporují ověřování systému Windows, pokud se používají jako server: Windows XP Home Edition, Windows XP Media Center Edition a Windows Vista Home Edition.  
   
 #### <a name="developing-and-deploying-with-different-identities"></a>Vývoj a nasazení s různými identitami  
  Pokud vyvíjíte aplikaci na jednom počítači a nasadíte ji na jiný počítač a použijete k ověřování na každém počítači různé typy účtů, může docházet k různým chování. Předpokládejme například, že vyvíjíte aplikaci na počítači se systémem Windows XP pro pomocí režimu ověřování `SSPI Negotiated`. Použijete-li k ověřování pomocí místní uživatelský účet, bude použit protokol NTLM. Po dokončení vývoje aplikace službu nasadíte na počítač s Windows serverem 2003, na kterém běží pod účtem domény. V tomto okamžiku klient nebude moci ověřit službu, protože bude používat protokol Kerberos a řadič domény.  

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 068ddcab5cfb7bfb5f37a1858820195a5a05269f
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 6399d64746db158ba0569eaf0137127603973513
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964578"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919348"
 ---
 # <a name="configure-ws-atomic-transaction-support"></a>Konfigurace podpory transakcí WS-Atomic
 
@@ -25,7 +25,7 @@ Okno příkazového řádku je k dispozici v umístění instalace Windows SDK "
 
 Další informace o nástroji příkazového řádku najdete v tématu [konfigurační nástroj WS-AtomicTransaction (WsatConfig. exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md).
 
-Pokud používáte [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nebo Windows Server 2003, získáte přístup k modulu snap-in konzoly MMC tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent**, kliknete pravým tlačítkem na položku **Tento počítač**a vyberete **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat Microsoft DTC (Distributed Transaction Coordinator) (MSDTC). Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** . Pokud používáte systém Windows Vista nebo Windows Server 2008, modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .
+Pokud používáte systém Windows XP nebo Windows Server 2003, získáte přístup k modulu snap-in konzoly MMC tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent**, kliknete pravým tlačítkem na položku **Tento počítač**a vyberete **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat Microsoft DTC (Distributed Transaction Coordinator) (MSDTC). Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** . Pokud používáte systém Windows Vista nebo Windows Server 2008, modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .
 
 Další informace o modulu snap-in najdete v [modulu snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md).
 

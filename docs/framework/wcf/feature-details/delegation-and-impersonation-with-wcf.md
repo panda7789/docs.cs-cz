@@ -8,12 +8,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 578957888daf7be20ab7418a46c533a011b3d2ac
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 3fd90cde16afdfe32b9bd0533ba04e35928d2706
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964167"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920204"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, kterou služby používají k omezení přístupu klientů k prostředkům domény služby. Prostředky domény služby můžou být prostředky počítače, například místní soubory (zosobnění), nebo prostředek na jiném počítači, například sdílená složka (delegování). Ukázkovou aplikaci najdete v tématu [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění najdete v tématu [Postup: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -71,7 +71,7 @@ ms.locfileid: "75964167"
  Infrastruktura WCF může zosobnit volajícího pouze v případě, že je volající ověřen s přihlašovacími údaji, které lze namapovat na uživatelský účet systému Windows. Pokud je služba nakonfigurovaná k ověřování pomocí přihlašovacích údajů, které se nedají namapovat na účet systému Windows, metoda služby se neprovede.  
   
 > [!NOTE]
-> Při [!INCLUDE[wxp](../../../../includes/wxp-md.md)]se zosobnění nezdařilo, pokud je vytvořen stavový SCT, což vede k <xref:System.InvalidOperationException>. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
+> V systému Windows XP zosobnění nefunguje, pokud je vytvořen stavový SCT a výsledkem je <xref:System.InvalidOperationException>. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
 ## <a name="impersonation-in-a-service-method-imperative-model"></a>Zosobnění v metodě služby: imperativní model  
  V některých případech volající nepotřebuje zosobnit celou metodu služby, aby fungoval, ale jenom pro její část. V takovém případě Získejte identitu volajícího volajícího v rámci metody služby a imperativně proveďte zosobnění. Použijte k tomu vlastnost <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> <xref:System.ServiceModel.ServiceSecurityContext> k vrácení instance třídy <xref:System.Security.Principal.WindowsIdentity> a volání metody <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> před použitím instance.  

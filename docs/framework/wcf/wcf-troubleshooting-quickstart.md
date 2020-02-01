@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: dfbf5a9b437d0acea16a75236fd3d2861c0f2e06
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 2fef4c7b00fd6a1ed8f85a8bfa01ef9cfffa1bbb
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802365"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919941"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma obsahuje seznam známých problémů, se kterými se zákazníci v průběhu vývoje služeb a klientů WCF spouštěli. Pokud problém, který používáte, není v tomto seznamu, doporučujeme vám nakonfigurovat trasování pro vaši službu. Tím se vygeneruje trasovací soubor, který můžete zobrazit pomocí prohlížeče trasovacích souborů a získat podrobné informace o výjimkách, ke kterým může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Configure Tracing](./diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči trasovacích souborů naleznete v tématu: [nástroj Service Trace Viewer (SvcTraceViewer. exe)](service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -158,7 +158,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q77"></a>   
 ## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>Používám certifikát X. 509 s mojí službou a získám System. Security. Cryptography. CryptographicException –. Co se děje?  
- K tomu obvykle dochází po změně uživatelského účtu, pod kterým běží pracovní proces služby IIS. Například pokud změníte výchozí uživatelský účet, který používá soubor Aspnet_wp. exe v části z ASPNET na vlastní uživatelský účet, může se tato chyba zobrazit v [!INCLUDE[wxp](../../../includes/wxp-md.md)]. Pokud používáte privátní klíč, bude mít proces, který ho používá, oprávnění pro přístup k souboru, který tento klíč ukládá.  
+ K tomu obvykle dochází po změně uživatelského účtu, pod kterým běží pracovní proces služby IIS. Pokud například v systému Windows XP změníte výchozí uživatelský účet, který Aspnet_wp. exe spustí v rámci z ASPNET na vlastní uživatelský účet, může se zobrazit tato chyba. Pokud používáte privátní klíč, bude mít proces, který ho používá, oprávnění pro přístup k souboru, který tento klíč ukládá.  
   
  V takovém případě je nutné udělit účtu procesu oprávnění ke čtení pro soubor, který obsahuje privátní klíč. Pokud například pracovní proces služby IIS běží pod účtem Bob, budete muset uživateli udělit přístup pro čtení k souboru, který obsahuje soukromý klíč.  
   

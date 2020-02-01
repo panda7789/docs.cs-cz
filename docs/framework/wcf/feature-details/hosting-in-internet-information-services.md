@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: 108048f6bdd2c02a67e331bd7b07b724d0e86527
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 2e0fb579897797b732859692092665225a0d6168
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75963805"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919357"
 ---
 # <a name="host-in-internet-information-services"></a>Hostitel v Internetová informační služba
 
@@ -19,7 +19,7 @@ Jedna možnost pro hostování služby Windows Communication Foundation (WCF) je
 
 Služba WCF může být hostována v následujících verzích služby IIS v následujících operačních systémech:
 
-- Služba IIS 5,1 na [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]. Toto prostředí je užitečné pro návrh a vývoj aplikací hostovaných službou IIS, které jsou později nasazené na serverovém operačním systému, jako je Windows Server 2003.
+- Služba IIS 5,1 v systému Windows XP SP2. Toto prostředí je užitečné pro návrh a vývoj aplikací hostovaných službou IIS, které jsou později nasazené na serverovém operačním systému, jako je Windows Server 2003.
 
 - Služba IIS 6,0 v systému Windows Server 2003. Služba IIS 6,0 poskytuje pokročilý model procesu, který nabízí vylepšenou škálovatelnost, spolehlivost a izolaci aplikací. Toto prostředí je vhodné pro produkční nasazení služeb WCF, které používají výhradně komunikaci pomocí protokolu HTTP.
 

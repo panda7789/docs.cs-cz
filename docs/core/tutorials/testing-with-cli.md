@@ -1,16 +1,16 @@
 ---
-title: Uspořádání a testování projektů pomocí příkazového řádku .NET Core
+title: Organizování a testování projektů pomocí .NET Core CLI
 description: V tomto kurzu se dozvíte, jak organizovat a testovat projekty .NET Core z příkazového řádku.
 author: cartermp
 ms.date: 09/10/2018
-ms.openlocfilehash: fdaa42be4d3b8872a3119f97f253ce277564339e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 11d13ad1d74c69cdfe0626bda8823dd0609da85f
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715343"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920419"
 ---
-# <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
+# <a name="organizing-and-testing-projects-with-the-net-core-cli"></a>Organizování a testování projektů pomocí .NET Core CLI
 
 V tomto kurzu [se seznámíte s .NET Core v systému Windows, Linux nebo MacOS pomocí příkazového řádku](cli-create-console-app.md), který vám přesáhne vytvoření jednoduché aplikace konzoly pro vývoj aplikací pro pokročilé a dobře uspořádané aplikace. Po zobrazení, jak používat složky k uspořádání kódu, se v tomto kurzu dozvíte, jak roztáhnout konzolovou aplikaci pomocí testovacího rozhraní [xUnit](https://xunit.github.io/) .
 
