@@ -2,12 +2,12 @@
 title: Co je Docker?
 description: Podrobnější informace najdete v tématu o tom, jak vám to může porozumět.
 ms.date: 02/15/2019
-ms.openlocfilehash: 8636ae3b1ad32158e10ce2aa58423f9c9824d8c0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e3b3685f2fc6d5a9d33bb176d04ca910f0289344
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738151"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919879"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -19,7 +19,7 @@ ms.locfileid: "73738151"
 
 Jak je znázorněno na výše uvedeném diagramu, kontejnery Docker můžou běžet kdekoli, místně v datacentru zákazníka, v externím poskytovateli služeb nebo v cloudu v Azure. Kontejnery imagí Docker mohou také běžet nativně v systémech Linux a Windows. Image Windows ale můžou běžet jenom na hostitelích s Windows a image Linux můžou běžet na hostitelích Linux a na hostitelích se systémem Windows (s využitím virtuálního počítače Hyper-V Linux), kde hostitel znamená Server nebo virtuální počítač.
 
-Vývojáři můžou používat vývojová prostředí v systému Windows, Linux nebo macOS. Ve vývojovém počítači Vývojář spustí hostitele Docker, ve kterém jsou nasazené image Docker, včetně aplikace a jejích závislostí. Vývojáři, kteří pracují se systémem Linux nebo na Macu, používají hostitele Docker se systémem Linux a mohou vytvářet pouze image pro kontejnery Linux. (Vývojáři pracující na Macu můžou upravovat kód nebo spouštět rozhraní příkazového řádku Docker (CLI) z macOS, ale v tomto zápisu se kontejnery nespouštějí přímo v macOS.) Vývojáři, kteří pracují v systému Windows, mohou vytvářet bitové kopie pro kontejnery systému Linux nebo Windows.
+Vývojáři můžou používat vývojová prostředí v systému Windows, Linux nebo macOS. Ve vývojovém počítači Vývojář spustí hostitele Docker, ve kterém jsou nasazené image Docker, včetně aplikace a jejích závislostí. Vývojáři, kteří pracují se systémem Linux nebo na Macu, používají hostitele Docker se systémem Linux a mohou vytvářet pouze image pro kontejnery Linux. (Vývojáři pracující na Macu můžou upravovat kód nebo spouštět Docker CLI z macOS, ale při psaní tohoto textu se kontejnery nespouštějí přímo v macOS.) Vývojáři, kteří pracují v systému Windows, mohou vytvářet bitové kopie pro kontejnery systému Linux nebo Windows.
 
 Pro hostování kontejnerů ve vývojových prostředích a poskytování dalších vývojářských nástrojů nabízejí Docker dodávané [komunity Docker Edition (CE)](https://www.docker.com/community-edition) pro Windows nebo pro MacOS. Tyto produkty pro hostování kontejnerů nainstalují potřebný virtuální počítač (hostitel Docker). Docker také zpřístupňuje [verzi Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), která je navržená pro podnikový vývoj a je používána týmy IT, které vytvářejí, dodávají a spouštějí rozsáhlé podnikové aplikace v produkčním prostředí.
 

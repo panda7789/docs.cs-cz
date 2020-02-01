@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Reálné provozní aplikace musí být nasazeny a spravovány pomocí orchestrace, které zpracovávají stav, zatížení a životní cyklus všech kontejnerů.
 ms.date: 02/15/2019
-ms.openlocfilehash: eb02a89a58b7df449edc05461e11fbeeec86b4a1
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: e548e6b3816dec1e56c273c53c9fd052443eb09b
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771089"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919540"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -21,7 +21,7 @@ Obrázek 4-6 znázorňuje nasazení do clusteru aplikace tvořené několika mik
 
 Vypadá to, že se jedná o logický přístup. Ale jak zpracováváte vyrovnávání zatížení, směrování a orchestraci těchto složených aplikací?
 
-Rozhraní příkazového řádku Docker (CLI) splňuje požadavky na správu jednoho kontejneru na jednom hostiteli, ale v případě, že se jedná o správu více kontejnerů nasazených na více hostitelích pro složitější distribuované aplikace, dojde k jejich krátkému. Ve většině případů potřebujete platformu pro správu, která bude automaticky spouštět kontejnery, škálovat kontejnery s více instancemi na jeden obrázek, pozastavit je nebo je v případě potřeby vypne, a v ideálním případě také řídit, jak přistupují k prostředkům, jako jsou síť a data. pamì.
+Docker CLI splňuje požadavky na správu jednoho kontejneru na jednom hostiteli, ale jeho platnost je krátká, pokud se jedná o správu více kontejnerů nasazených na více hostitelích pro složitější distribuované aplikace. Ve většině případů potřebujete platformu pro správu, která bude automaticky spouštět kontejnery, škálovat kontejnery s více instancemi na jeden obrázek, pozastavit je nebo je v případě potřeby vypne, a v ideálním případě také řídit, jak přistupují k prostředkům, jako jsou síť a data. pamì.
 
 Aby bylo možné nad rámec správy jednotlivých kontejnerů nebo jednoduchých složených aplikací a přecházet k většímu počtu podnikových aplikací pomocí mikroslužeb, je nutné přepínat na orchestraci a clusteringu platforem.
 

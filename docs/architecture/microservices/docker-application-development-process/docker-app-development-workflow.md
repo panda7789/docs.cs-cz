@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje aplikací Dockeru
 description: Pochopte podrobnosti pracovního postupu pro vývoj aplikací založených na Docker. Zahajte krok za krokem a získejte do některých podrobností, abyste mohli optimalizovat fázemi a skončit s zjednodušeným pracovním postupem, který je dostupný při používání sady Visual Studio.
 ms.date: 01/07/2019
-ms.openlocfilehash: 0c2789377bc388b8ac7373ee7fa46e3141f1b518
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5df646ffaba67a016d2b18959b9873b52c3d5e4c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "73740360"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920329"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -409,7 +409,7 @@ Až budeme pokrývat, jak implementovat mikroslužby a aplikace pro více kontej
 
 ### <a name="working-with-docker-composeyml-in-visual-studio-2017"></a>Práce s Docker-Compose. yml v aplikaci Visual Studio 2017
 
-Kromě přidání souboru Dockerfile do projektu může Visual Studio 2017 (od 15,8) přidat do řešení podporu nástroje Orchestrator pro Docker Compose.
+Kromě přidání souboru Dockerfile do projektu, jak je uvedeno dříve, může Visual Studio 2017 (ze verze 15,8 on) přidat do řešení podporu nástroje Orchestrator pro Docker Compose.
 
 Když přidáte podporu nástroje Orchestrator pro kontejner, jak je znázorněno na obrázku 5-7, Visual Studio vytvoří souboru Dockerfile pro projekt a vytvoří nový projekt (oddíl služby) ve vašem řešení s několika globálními `docker-compose*.yml` soubory a potom do těchto souborů přidá projekt. Pak můžete otevřít soubory Docker-Compose. yml a aktualizovat je pomocí dalších funkcí.
 
@@ -574,7 +574,7 @@ RUN powershell add-windowsfeature web-asp-net45
 
 ### <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **ASPNET-Docker/souboru Dockerfile.** Příklady příkazů PowerShellu, které se mají spustit z fázemi a zahrnutí funkcí Windows. \
+- **aspnet-docker/Dockerfile.** Příklady příkazů PowerShellu, které se mají spustit z fázemi a zahrnutí funkcí Windows. \
   <https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile>
 
 >[!div class="step-by-step"]

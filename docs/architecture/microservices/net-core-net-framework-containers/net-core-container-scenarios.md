@@ -2,12 +2,12 @@
 title: Kdy pro kontejnery Dockeru zvolit .NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Kdy zvolit .NET Core pro kontejnery Docker
 ms.date: 09/11/2018
-ms.openlocfilehash: 54ed1b4bbb16352b8c99204383f85ffb25d62be7
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d17b6b7620f485f09f8f18ac792418a48ae40037
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296500"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920982"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Core
 
@@ -27,9 +27,9 @@ Jasně platí, že pokud je vaším cílem aplikace (webová aplikace nebo služ
 
 [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/) je rozhraní IDE, vývoj Xamarin Studio, který běží na MacOS a podporuje vývoj aplikací na bázi Docker. To by mělo být Upřednostňovaná volba pro vývojáře pracující v počítačích Mac, kteří chtějí také používat výkonné integrované vývojové prostředí (IDE).
 
-Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (vs Code) v systémech MacOS, Linux a Windows. VS Code plně podporuje rozhraní .NET Core, včetně technologie IntelliSense a ladění. Vzhledem k tomu, že VS Code je odlehčený editor, můžete ho použít k vývoji kontejnerových aplikací na Macu ve spojení s [rozhraním příkazového řádku Docker CLI a .NET Core (CLI)](../../../core/tools/index.md). .NET Core můžete také cílit pomocí většiny editorů třetích stran, jako je například (Emacs), VI a open-source projekt OmniSharp, který také poskytuje podporu technologie IntelliSense.
+[Visual Studio Code](https://code.visualstudio.com/) můžete použít také v systémech MacOS, Linux a Windows. Visual Studio Code plně podporuje rozhraní .NET Core, včetně technologie IntelliSense a ladění. Vzhledem k tomu, že VS Code je jednoduchý editor, můžete ho použít k vývoji kontejnerových aplikací na Macu ve spojení s rozhraním Docker CLI a [.NET Core CLI](../../../core/tools/index.md). .NET Core můžete také cílit pomocí většiny editorů třetích stran, jako je například (Emacs), VI a open-source projekt OmniSharp, který také poskytuje podporu technologie IntelliSense.
 
-Kromě platforem a editorů můžete použít nástroje [.NET Core CLI](../../../core/tools/index.md) pro všechny podporované platformy.
+Kromě platforem a editorů můžete [.NET Core CLI](../../../core/tools/index.md) použít pro všechny podporované platformy.
 
 ## <a name="using-containers-for-new-green-field-projects"></a>Použití kontejnerů pro nové projekty ("zelená pole")
 

@@ -2,12 +2,12 @@
 title: Terminologie Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Terminologie Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: 2735188c508a7bbb0101946429faec122b13a17b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 33f2918df5b63cc4bd54ddb84900c6bd91e9f77e
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73090057"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921010"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 
@@ -47,7 +47,7 @@ V této části jsou uvedeny pojmy a definice, se kterými byste se měli sezná
 
 **Cluster**: kolekce hostitelů Docker, která byla vystavena jako jeden virtuální hostitel Docker, aby se aplikace mohla škálovat na víc instancí služeb, které jsou rozloženy mezi více hostitelů v rámci clusteru. Clustery Docker je možné vytvořit pomocí Kubernetes, Azure Service Fabric, Docker Swarm a Mesosphere DC/OS.
 
-**Orchestrator**: nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Orchestrace umožňují spravovat jejich image, kontejnery a hostitele prostřednictvím rozhraní příkazového řádku (CLI) nebo grafického uživatelského rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služeb, vysokou dostupnost, konfiguraci hostitele Docker a další. Produkt Orchestrator zodpovídá za spouštění, distribuci, škálování a retušovaní úloh napříč kolekcí uzlů. Produkty Orchestrator jsou obvykle stejné produkty, které poskytují infrastrukturu clusteru, jako je Kubernetes a Azure Service Fabric, mimo jiné nabídky na trhu.
+**Orchestrator**: nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Orchestrace umožňují spravovat jejich image, kontejnery a hostitele prostřednictvím rozhraní příkazového řádku nebo grafického uživatelského rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služeb, vysokou dostupnost, konfiguraci hostitele Docker a další. Produkt Orchestrator zodpovídá za spouštění, distribuci, škálování a retušovaní úloh napříč kolekcí uzlů. Produkty Orchestrator jsou obvykle stejné produkty, které poskytují infrastrukturu clusteru, jako je Kubernetes a Azure Service Fabric, mimo jiné nabídky na trhu.
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-defined.md)

@@ -4,12 +4,12 @@ description: Azure Functions poskytuje možnosti bez serveru napříč různými
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 5e8187b3752a0f0d0bcf8e15f2ce440dc5a64e45
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 8764e6a33f3fdd53e60fa767d0fb584a9c07de7e
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72522877"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920966"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
@@ -37,10 +37,10 @@ Následující jazyky jsou podporovány buď v obecné dostupnosti (GA), ve verz
 
 |Jazyk      |verze         |2.x      |
 |--------------|------------|---------|
-|**C#**        |GA          |Preview  |
-|**JavaScript**|GA          |Preview  |
+|**C#**        |GA          |Náhled  |
+|**JavaScript**|GA          |Náhled  |
 |**F#**        |GA          |         |
-|**Java**      |            |Preview  |
+|**Java**      |            |Náhled  |
 |**Python**    |Experimentální|         |
 |**PHP**       |Experimentální|         |
 |**TypeScript**|Experimentální|         |
@@ -61,7 +61,7 @@ Další informace najdete v tématu [plány služby App Service](https://docs.mi
 Existují tři běžné způsoby, jak můžete vytvářet aplikace Function App.
 
 - Funkce skriptu na portálu.
-- Vytvořte potřebné prostředky pomocí rozhraní příkazového řádku Azure (CLI).
+- Vytvořte potřebné prostředky pomocí Azure CLI.
 - Vytvářejte funkce místně pomocí svého oblíbeného integrovaného vývojového prostředí a publikujte je do Azure.
 
 Další informace o vytvoření skriptované funkce na portálu najdete v tématu [Vytvoření první funkce v Azure Portal](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).

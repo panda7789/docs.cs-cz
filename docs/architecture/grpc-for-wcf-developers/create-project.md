@@ -2,12 +2,12 @@
 title: Vytvoření nového projektu ASP.NET Core gRPC – gRPC pro vývojáře WCF
 description: Naučte se vytvořit projekt gRPC pomocí sady Visual Studio nebo příkazového řádku.
 ms.date: 09/02/2019
-ms.openlocfilehash: ea6d7658404f61fedb25d7de7ddedb7c51437383
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: fbcc598cf503a5baeca941803ff8fa0d5fc99671
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711437"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919402"
 ---
 # <a name="create-a-new-aspnet-core-grpc-project"></a>Vytvoření nového projektu gRPC ASP.NET Core
 
@@ -16,13 +16,13 @@ ms.locfileid: "74711437"
 ## <a name="create-the-project-by-using-visual-studio"></a>Vytvoření projektu pomocí sady Visual Studio
 
 > [!IMPORTANT]
-> K vývoji jakékoli aplikace ASP.NET Core 3,0 budete potřebovat Visual Studio 2019 16,3 nebo novější s nainstalovanou úlohou **vývoj pro ASP.NET a web** .
+> K vývoji jakékoli aplikace ASP.NET Core 3,0 budete potřebovat Visual Studio 2019 verze 16,3 nebo novější s nainstalovanou úlohou **vývoj ASP.NET a webu** .
 
 Vytvoří prázdné řešení s názvem **TraderSys** ze šablony *prázdného řešení* . Přidejte složku řešení s názvem `src`. Potom klikněte pravým tlačítkem na složku a zvolte **přidat** > **Nový projekt**. Do vyhledávacího pole šablony zadejte `grpc` a měli byste vidět šablonu projektu s názvem `gRPC Service`.
 
 ![Snímek obrazovky s dialogovým oknem přidat nový projekt](media/create-project/new-grpc-project.png)
 
-Kliknutím na tlačítko **Další** pokračujte v dialogovém okně **Konfigurovat nový projekt** . Pojmenujte projekt `TraderSys.Portfolios`a přidejte podadresář `src` do **umístění**.
+Kliknutím na tlačítko **Další** pokračujte v dialogovém okně **Konfigurovat nový projekt** . Pojmenujte projekt `TraderSys.Portfolios` a přidejte podadresář `src` do **umístění**.
 
 ![Snímek obrazovky s dialogem Konfigurovat nový projekt](media/create-project/configure-project.png)
 

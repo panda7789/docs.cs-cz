@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 4dd747293fba4c18c2d10738d36f4d98cfd3f5b9
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: bf346825c7e29831111fc11c836ca6b4a05a18ce
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926504"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921002"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 
@@ -98,7 +98,7 @@ Komponenty jsou definovány pomocí funkce @Component dekoratér, která přebí
 
 Díky práci s komponentami a šablonami namísto elementů modelu DOM mohou úhlové aplikace pracovat na vyšší úrovni abstrakce a s menším celkovým kódem než aplikace napsané pomocí JavaScriptu (označované také jako "Vanilla JS") nebo pomocí jQuery. Úhlová také některá pořadí uspořádání souborů skriptu na straně klienta. V rámci konvence používají úhlové aplikace společnou strukturu složek se soubory skriptu modulu a komponenty umístěnými ve složce aplikace. Mezi zabývající se skripty se sestavou, nasazením a testováním aplikace obvykle nachází ve složce vyšší úrovně.
 
-Úhlová i vhodná použití nástrojů rozhraní příkazového řádku (CLI). Začínáme s úhlovým vývojem v místním prostředí (za předpokladu, že už máte nainstalované Git a npm), obsahuje jednoduše klonování úložiště z GitHubu a spouštění `npm install` a `npm start`. Kromě toho úhlové dodává svůj vlastní nástroj CLI, který může vytvářet projekty, přidávat soubory a pomáhat s úlohami testování, sdružování a nasazení. Tento nástroj rozhraní příkazového řádku (přívětivost) pro rozhraní příkazového řádku vydává hlavně obzvláště kompatibilní s ASP.NET Core, což také přináší skvělé podpoře CLI
+Můžete vyvíjet úhlové aplikace pomocí rozhraní příkazového řádku. Začínáme s úhlovým vývojem v místním prostředí (za předpokladu, že už máte nainstalované Git a npm), obsahuje jednoduše klonování úložiště z GitHubu a spouštění `npm install` a `npm start`. Kromě toho úhlové dodává své vlastní rozhraní příkazového řádku, které může vytvářet projekty, přidávat soubory a pomáhat s úlohami testování, sdružování a nasazení. Toto rozhraní příkazového řádku přívětivost vydává hlavně obzvlášť kompatibilní s ASP.NET Core, což také přináší skvělou podporu CLI.
 
 Společnost Microsoft vyvinula referenční aplikaci [eShopOnContainers](https://aka.ms/MicroservicesArchitecture), která zahrnuje úhlovou implementaci. Tato aplikace zahrnuje úhlové moduly pro správu nákupních košíků online obchodů, načítání a zobrazování položek ze svého katalogu a vytváření objednávek při zpracování. Ukázkovou aplikaci můžete zobrazit a stáhnout z [GitHubu](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebSPA).
 
