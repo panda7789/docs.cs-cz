@@ -4,12 +4,12 @@ description: Průvodce implementací rozhraní .NET, který byste měli zvážit
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: b2b9e15cfdfd63d070ae94c29a9f2d1a5b5c87b2
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: c280e22341a45260a816a36c1148dc8c4f76db09
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738666"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921423"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -38,7 +38,7 @@ V následujících částech najdete podrobnější vysvětlení výše uvedený
 
 Pokud vaše aplikace (Web/služba) potřebuje běžet na více platformách (Windows, Linux a macOS), použijte .NET Core.
 
-.NET Core podporuje dříve zmíněné operační systémy jako pracovní stanici pro vývoj. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro Windows a macOS. Můžete také použít Visual Studio Code, která běží na macOS, Linux a Windows. Visual Studio Code podporuje rozhraní .NET Core, včetně technologie IntelliSense a ladění. Většina editorů třetích stran, jako např. (Emacs), a VI, fungují s .NET Core. Tyto editory třetích stran získávají IntelliSense editoru pomocí [omnisharp](https://www.omnisharp.net/). Můžete se také vyhnout jakémukoli editoru kódu a přímo používat [Nástroje pro .NET Core CLI](../core/tools/index.md), které jsou dostupné pro všechny podporované platformy.
+.NET Core podporuje dříve zmíněné operační systémy jako pracovní stanici pro vývoj. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro Windows a macOS. Můžete také použít Visual Studio Code, která běží na macOS, Linux a Windows. Visual Studio Code podporuje rozhraní .NET Core, včetně technologie IntelliSense a ladění. Většina editorů třetích stran, jako např. (Emacs), a VI, fungují s .NET Core. Tyto editory třetích stran získávají IntelliSense editoru pomocí [omnisharp](https://www.omnisharp.net/). Můžete také zabránit jakémukoli editoru kódu a přímo použít [.NET Core CLI](../core/tools/index.md), k dispozici pro všechny podporované platformy.
 
 ### <a name="microservices-architecture"></a>Architektura mikroslužeb
 

@@ -2,12 +2,12 @@
 title: dotnet-install scripts
 description: Přečtěte si o příkazu dotnet – instalace skriptů pro instalaci .NET Core SDK a sdíleného modulu runtime.
 ms.date: 01/23/2020
-ms.openlocfilehash: 169991ac4cd24ccab90634ff265c3ae5b603f8e9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 76055627c6b2016396209c9594dba36e56eb841c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734215"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920578"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
@@ -35,7 +35,7 @@ dotnet-install.sh [--channel] [--version] [--jsonfile] [--install-dir] [--archit
 
 ## <a name="description"></a>Popis
 
-Skripty `dotnet-install` slouží k provedení instalace .NET Core SDK bez správy, která zahrnuje nástroje .NET Core CLI a sdílený modul runtime.
+Skripty `dotnet-install` slouží k provedení instalace .NET Core SDK bez správy, která zahrnuje .NET Core CLI a sdílený modul runtime.
 
 Doporučujeme používat stabilní verzi skriptů:
 
@@ -108,7 +108,7 @@ Konkrétní verzi můžete nainstalovat pomocí argumentu `-Version|--version`. 
 
 - **`-NoPath|--no-path`**
 
-  Je-li nastavena, instalační složka není exportována do cesty pro aktuální relaci. Ve výchozím nastavení skript upraví cestu, která zpřístupňuje nástroje rozhraní příkazového řádku hned po instalaci.
+  Je-li nastavena, instalační složka není exportována do cesty pro aktuální relaci. Ve výchozím nastavení skript upraví cestu, která zpřístupní .NET Core CLI hned po instalaci.
 
 - **`-Verbose|--verbose`**
 

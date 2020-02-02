@@ -4,18 +4,18 @@ description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 921c8fc7824bdb48f08e4d9f5a276bf2284f8a17
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 09ce36e7a61f576dc4449976ce676701dc57c9cd
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714606"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921120"
 ---
 # <a name="console-app"></a>Konzolová aplikace
 
 V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce. Dozvíte se:
 
-- Základní informace o rozhraní příkazového řádku .NET Core (CLI)
+- Základy .NET Core CLI
 - Struktura C# konzolové aplikace
 - I/O konzoly
 - Základy vstupně-výstupních rozhraní API souborů v .NET
@@ -311,6 +311,6 @@ RunTeleprompter().Wait();
 
 ## <a name="conclusion"></a>Závěr
 
-V tomto kurzu jste si ukázali, kolik funkcí kolem C# jazyka a knihoven .NET Core souvisí s prací v konzolových aplikacích. Na základě těchto znalostí můžete prozkoumat další informace o jazyce a třídách, které jsou zde zavedeny. Seznámili jste se se základy pro vstupně-výstupní operace se soubory a konzolou, blokování a neblokování použití asynchronního programování založeného na úlohách C# , prohlídku C# jazyka a způsobu uspořádání programů a rozhraní příkazového řádku .NET Core a nástroje.
+V tomto kurzu jste si ukázali, kolik funkcí kolem C# jazyka a knihoven .NET Core souvisí s prací v konzolových aplikacích. Na základě těchto znalostí můžete prozkoumat další informace o jazyce a třídách, které jsou zde zavedeny. Seznámili jste se se základy vstupně-výstupních operací se soubory a konzolou, blokování a neblokování použití asynchronního programování založeného na úlohách C# , prohlídky C# jazyka a způsobu, jakým jsou programy uspořádány, a .NET Core CLI.
 
 Další informace o vstupně-výstupních operacích souborů najdete v tématu [vstupně-výstupní operace se soubory a datovým proudem](../../standard/io/index.md) . Další informace o modelu asynchronního programování používaném v tomto kurzu naleznete v tématu [asynchronní programování založené na úlohách](../..//standard/parallel-programming/task-based-asynchronous-programming.md) a v tématu věnovaném [asynchronnímu programování](../async.md) .

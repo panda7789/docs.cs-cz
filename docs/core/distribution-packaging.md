@@ -3,12 +3,12 @@ title: Vytváření distribučních balíčků .NET Core
 description: Naučte se, jak zabalit, pojmenovat a verze .NET Core pro distribuci.
 author: tmds
 ms.date: 10/09/2019
-ms.openlocfilehash: 1b5adf761a51e006f8309e1f326fc0a9c12aab7a
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a345aeded29b3058c6c56abbff439ea26cbc7afb
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748501"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920871"
 ---
 # <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET Core
 
@@ -69,7 +69,7 @@ I když existuje jeden hostitel, většina ostatních komponent je v adresáří
 
 - (2) **hostitel/FXR/\<FXR verze >** obsahuje logiku překladu rozhraní, kterou používá hostitel. Hostitel používá nejnovější hostfxr, která je nainstalována. Hostfxr zodpovídá za výběr vhodného modulu runtime při spouštění aplikace .NET Core. Například aplikace sestavená pro .NET Core 2.0.0 používá modul runtime 2.0.5, pokud je k dispozici. Podobně hostfxr vybere vhodnou sadu SDK během vývoje.
 
-- (3) sada SDK **/\<SDK verze >** sada SDK (označovaná také jako "nástroje") je sada spravovaných nástrojů, které se používají k psaní a vytváření knihoven a aplikací .NET Core. Sada SDK obsahuje rozhraní příkazového řádku (CLI) .NET Core, kompilátory spravovaných jazyků, MSBuild a přidružené úlohy a cíle sestavení, NuGet, nové šablony projektů a tak dále.
+- (3) sada SDK **/\<SDK verze >** sada SDK (označovaná také jako "nástroje") je sada spravovaných nástrojů, které se používají k psaní a vytváření knihoven a aplikací .NET Core. Sada SDK obsahuje .NET Core CLI, kompilátory spravovaných jazyků, MSBuild a přidružené úlohy a cíle sestavení, NuGet, nové šablony projektů a tak dále.
 
 - (4) **sada SDK/NuGetFallbackFolder** obsahuje mezipaměť balíčků NuGet, které sada SDK používá během operace obnovení, například při spuštění `dotnet restore` nebo `dotnet build`. Tato složka se používá pouze před rozhraním .NET Core 3,0. Nemůže být sestaven ze zdroje, protože obsahuje předem sestavené binární prostředky z `nuget.org`.
 

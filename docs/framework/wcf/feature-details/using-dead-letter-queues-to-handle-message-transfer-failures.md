@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
-ms.openlocfilehash: 0be22fa1e81c85d82494bc4b93468a18f05d6423
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 48e3a080097aae2e539c238bfe33c3e107f81bf0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345562"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921151"
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
 Zprávy ve frontě můžou neúspěšné doručení. Tyto neúspěšné zprávy se zaznamenávají do fronty nedoručených zpráv. Neúspěšné doručení může být způsobeno důvody, například selhání sítě, odstraněnou frontou, úplnou frontou, selháním ověřování nebo selháním doručení včas.  
@@ -23,7 +23,7 @@ Zprávy ve frontě můžou neúspěšné doručení. Tyto neúspěšné zprávy 
   
  Vlastní fronta nedoručených zpráv poskytuje izolaci mezi klienty, kteří sdílejí stejnou službu MSMQ a odesílají zprávy.  
   
- V systému Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]Windows Communication Foundation (WCF) poskytuje frontu nedoručených zpráv v celém systému pro všechny klientské aplikace ve frontě. V systému Windows Vista nabízí služba WCF nedoručenou frontu pro každou klientskou aplikaci ve frontě.  
+ V systémech Windows Server 2003 a Windows XP poskytuje Windows Communication Foundation (WCF) nedoručenou frontu nedoručených zpráv pro všechny klientské aplikace zařazené do fronty. V systému Windows Vista nabízí služba WCF nedoručenou frontu pro každou klientskou aplikaci ve frontě.  
   
 ## <a name="specifying-use-of-the-dead-letter-queue"></a>Určení použití fronty nedoručených zpráv  
  Fronta nedoručených zpráv je ve Správci fronty odesílající aplikace. Ukládá zprávy, jejichž platnost vypršela, nebo se nezdařil přenos nebo doručení.  

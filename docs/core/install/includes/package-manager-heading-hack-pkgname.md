@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 47e8e15a64236d8ade2febb1add81fa4e5c030d9
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: ef3e4f9f8145677732b9d2e66d416be277697f55
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116139"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920638"
 ---
 
 Balíčky přidané do kanálů správce balíčků jsou pojmenovány ve formátu zneužitelných: `{product}-{type}-{version}`.
@@ -34,6 +34,6 @@ Verze sady SDK nebo modulu runtime, která má být nainstalována. V tomto čl�
 - Instalace modulu runtime ASP.NET Core 3,1: `aspnetcore-runtime-3.1`
 - Instalace modulu runtime .NET Core 2,1: `dotnet-runtime-2.1`
 
-### <a name="troubleshoot"></a>Řešení problémů
+### <a name="package-missing"></a>Chybějící balíček
 
-Pokud kombinace balíčku nefunguje, není k dispozici. Například sada SDK není ASP.NET Core, součásti sady SDK jsou součástí .NET Core SDK. Hodnota `aspnetcore-sdk-2.2` není správná a měla by být `dotnet-sdk-2.2`
+Pokud kombinace verze balíčku nefunguje, není k dispozici. Například sada SDK není ASP.NET Core, součásti sady SDK jsou součástí .NET Core SDK. Hodnota `aspnetcore-sdk-2.2` není správná a měla by být `dotnet-sdk-2.2`.

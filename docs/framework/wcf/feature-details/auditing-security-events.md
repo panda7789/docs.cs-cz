@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: 6505cc027b2983fd61ae53ca7ae43319024c74f7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: e1c3e3d7697bf9a85cf0ab7df35a4755939d1df0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964703"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921415"
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou protokolovat události zabezpečení (buď úspěšné, neúspěšné nebo oboje) pomocí funkce auditování. Události se zapisují do protokolu událostí systému Windows a dají se prozkoumat pomocí Prohlížeč událostí.  
@@ -32,7 +32,7 @@ Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou prot
   
  Pro zápis do protokolu zabezpečení vyžaduje `SeAuditPrivilege`. Ve výchozím nastavení mají toto oprávnění pouze účty místní systém a síťová služba. Chcete-li spravovat funkce protokolu zabezpečení `read` a `delete` vyžaduje `SeSecurityPrivilege`. Ve výchozím nastavení mají toto oprávnění pouze správci.  
   
- Naopak ověření uživatelé mohou číst a zapisovat do protokolu aplikace. ve výchozím nastavení [!INCLUDE[wxp](../../../../includes/wxp-md.md)] zapisuje události auditu do protokolu aplikace. Protokol může obsahovat také osobní údaje, které jsou viditelné všem ověřeným uživatelům.  
+ Naopak ověření uživatelé mohou číst a zapisovat do protokolu aplikace. Systém Windows XP ve výchozím nastavení zapisuje události auditu do protokolu aplikace. Protokol může obsahovat také osobní údaje, které jsou viditelné všem ověřeným uživatelům.  
   
 ## <a name="suppressing-audit-failures"></a>Potlačení selhání auditu  
  Další možností při auditování je to, jestli se má potlačit chyba auditu. Ve výchozím nastavení nemá chyba auditu vliv na aplikaci. V případě potřeby však můžete nastavit možnost `false`, což způsobí, že bude vyvolána výjimka.  
@@ -78,7 +78,7 @@ Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou prot
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení  
  Pokud uživatel se zlými úmysly ví, že je povolené auditování, může útočník odeslat neplatné zprávy, které způsobí zápis položek auditu. Pokud se tento způsob vyplní protokolem auditu, systém auditování se nezdařil. Pokud to chcete zmírnit, nastavte vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> na `true` a použijte vlastnosti Prohlížeč událostí k řízení chování auditování.  
   
- Události auditu, které jsou zapsány do aplikačního protokolu [!INCLUDE[wxp](../../../../includes/wxp-md.md)], jsou viditelné pro všechny ověřené uživatele.  
+ Události auditu, které jsou zapsány do protokolu aplikace v systému Windows XP, jsou viditelné pro všechny ověřené uživatele.  
   
 ## <a name="choosing-between-application-and-security-event-logs"></a>Volba mezi protokoly událostí aplikace a zabezpečení  
  Následující tabulky obsahují informace, které vám pomůžou vybrat, jestli se chcete přihlásit k aplikaci nebo protokolu událostí zabezpečení.  
@@ -87,7 +87,7 @@ Aplikace vytvořené pomocí Windows Communication Foundation (WCF) můžou prot
   
 |Systém|Protokol aplikace|Protokol zabezpečení|  
 |------------|---------------------|------------------|  
-|[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] nebo novější|Podporované|Není podporováno|  
+|Windows XP SP2 nebo novější|Podporované|Není podporováno|  
 |Windows Server 2003 SP1 a Windows Vista|Podporované|Kontext vlákna musí mít `SeAuditPrivilege`|  
   
 #### <a name="other-factors"></a>Jiné faktory  

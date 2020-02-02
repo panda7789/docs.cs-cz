@@ -11,32 +11,32 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 588a36c70d31883f79a4449d69cb4ba3b4239b9f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 221d19ee6441614324d375b66e8b13a90f683890
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741549"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921280"
 ---
-# <a name="how-to-migrate-from-opno-locnewtonsoftjson-to-opno-locsystemtextjson"></a>Postup migrace z [!OP.NO-LOC(Newtonsoft.Json)] na [!OP.NO-LOC(System.Text.Json)]
+# <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Postup migrace z Newtonsoft. JSON na System. text. JSON
 
-V tomto článku se dozvíte, jak migrovat z [[!OP.NO-LOC(Newtonsoft.Json)]](https://www.newtonsoft.com/json) na <xref:[!OP.NO-LOC(System.Text.Json)]>.
+Tento článek ukazuje, jak migrovat z [Newtonsoft. JSON](https://www.newtonsoft.com/json) na <xref:System.Text.Json>.
 
-`[!OP.NO-LOC(System.Text.Json)]` se soustředí hlavně na dodržování předpisů pro výkon, zabezpečení a standardy. Obsahuje některé klíčové rozdíly ve výchozím chování a nebrání tomu, aby se `[!OP.NO-LOC(Newtonsoft.Json)]`. V některých scénářích `[!OP.NO-LOC(System.Text.Json)]` nemá žádnou vestavěnou funkci, ale existují doporučená řešení. Pro jiné scénáře jsou alternativní řešení nepraktická. Pokud vaše aplikace závisí na chybějící funkci, zvažte možnost nahlásit [problém](https://github.com/dotnet/runtime/issues/new) , abyste zjistili, jestli je možné přidat podporu pro váš scénář.
+`System.Text.Json` se soustředí hlavně na dodržování předpisů pro výkon, zabezpečení a standardy. Obsahuje některé klíčové rozdíly ve výchozím chování a nebrání tomu, aby se `Newtonsoft.Json`. V některých scénářích `System.Text.Json` nemá žádnou vestavěnou funkci, ale existují doporučená řešení. Pro jiné scénáře jsou alternativní řešení nepraktická. Pokud vaše aplikace závisí na chybějící funkci, zvažte možnost nahlásit [problém](https://github.com/dotnet/runtime/issues/new) , abyste zjistili, jestli je možné přidat podporu pro váš scénář.
 
-<!-- For information about which features might be added in future releases, see the [Roadmap](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/[!OP.NO-LOC(System.Text.Json)]/roadmap/README.md). [Restore this when the roadmap is updated.]-->
+<!-- For information about which features might be added in future releases, see the [Roadmap](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md). [Restore this when the roadmap is updated.]-->
 
-Většinou tohoto článku se dozvíte, jak používat rozhraní <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializer> API, ale obsahuje také pokyny k použití <xref:[!OP.NO-LOC(System.Text.Json)].JsonDocument> (který představuje model DOM (Document Object Model) nebo DOM), <xref:[!OP.NO-LOC(System.Text.Json)].Utf8JsonReader>a <xref:[!OP.NO-LOC(System.Text.Json)].Utf8JsonWriter> typů.
+Většinou tohoto článku se dozvíte, jak používat rozhraní <xref:System.Text.Json.JsonSerializer> API, ale obsahuje také pokyny k použití <xref:System.Text.Json.JsonDocument> (který představuje model DOM (Document Object Model) nebo DOM), <xref:System.Text.Json.Utf8JsonReader>a <xref:System.Text.Json.Utf8JsonWriter> typů.
 
-## <a name="table-of-differences-between-opno-locnewtonsoftjson-and-opno-locsystemtextjson"></a>Tabulka rozdílů mezi [!OP.NO-LOC(Newtonsoft.Json)] a [!OP.NO-LOC(System.Text.Json)]
+## <a name="table-of-differences-between-newtonsoftjson-and-systemtextjson"></a>Tabulka rozdílů mezi Newtonsoft. JSON a System. text. JSON
 
-V následující tabulce jsou uvedeny `[!OP.NO-LOC(Newtonsoft.Json)]` funkce a `[!OP.NO-LOC(System.Text.Json)]` ekvivalenty. Ekvivalenty spadají do následujících kategorií:
+V následující tabulce jsou uvedeny `Newtonsoft.Json` funkce a `System.Text.Json` ekvivalenty. Ekvivalenty spadají do následujících kategorií:
 
-* Podporováno integrovanou funkcí. Získání podobného chování z `[!OP.NO-LOC(System.Text.Json)]` může vyžadovat použití atributu nebo globální možnosti.
-* Nepodporováno, alternativní řešení je možné. Alternativní řešení jsou [vlastními převaděči](system-text-json-converters-how-to.md), které neposkytují kompletní paritu funkcí `[!OP.NO-LOC(Newtonsoft.Json)]`. Pro některé z nich vzorový kód je k dispozici jako příklad. Pokud spoléháte na tyto funkce `[!OP.NO-LOC(Newtonsoft.Json)]`, migrace bude vyžadovat úpravy vašich modelů objektů .NET nebo jiné změny kódu.
-* Nepodporováno, alternativní řešení není praktické nebo možné. Pokud spoléháte na tyto funkce `[!OP.NO-LOC(Newtonsoft.Json)]`, migrace nebude možná bez významných změn.
+* Podporováno integrovanou funkcí. Získání podobného chování z `System.Text.Json` může vyžadovat použití atributu nebo globální možnosti.
+* Nepodporováno, alternativní řešení je možné. Alternativní řešení jsou [vlastními převaděči](system-text-json-converters-how-to.md), které neposkytují kompletní paritu funkcí `Newtonsoft.Json`. Pro některé z nich vzorový kód je k dispozici jako příklad. Pokud spoléháte na tyto funkce `Newtonsoft.Json`, migrace bude vyžadovat úpravy vašich modelů objektů .NET nebo jiné změny kódu.
+* Nepodporováno, alternativní řešení není praktické nebo možné. Pokud spoléháte na tyto funkce `Newtonsoft.Json`, migrace nebude možná bez významných změn.
 
-| [!OP.NO-LOC(Newtonsoft.Json)] funkce                               | ekvivalent [!OP.NO-LOC(System.Text.Json)] |
+| Newtonsoft. JSON – funkce                               | Ekvivalent System. text. JSON |
 |-------------------------------------------------------|-----------------------------|
 | Deserializace bez rozlišování velkých a malých písmen ve výchozím nastavení           | [globální nastavení ✔️ PropertyNameCaseInsensitive](#case-insensitive-deserialization) |
 | Ve stylu CamelCase – názvy vlastností případu                             | [globální nastavení ✔️ PropertyNamingPolicy](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) |
@@ -75,33 +75,33 @@ V následující tabulce jsou uvedeny `[!OP.NO-LOC(Newtonsoft.Json)]` funkce a `
 | Povolení jednoduchých uvozovek kolem řetězcových hodnot              | ❌ [se](#json-strings-property-names-and-string-values) nepodporuje. |
 | Povoluje neřetězcové hodnoty JSON pro vlastnosti řetězce.    | ❌ [se](#non-string-values-for-string-properties) nepodporuje. |
 
-Nejedná se o vyčerpávající seznam funkcí `[!OP.NO-LOC(Newtonsoft.Json)]`. Seznam obsahuje mnoho scénářů, které byly vyžádány v rámci [problémů GitHubu](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-[!OP.NO-LOC(System.Text.Json)]) nebo [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) příspěvky. Pokud implementujete alternativní řešení pro jeden z uvedených scénářů, který aktuálně nemá vzorový kód, a pokud chcete své řešení sdílet, vyberte **tuto stránku** v [části zpětná vazba](/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to#feedback) na této stránce. Tím se vytvoří problém GitHubu a zobrazí se v dolní části této stránky.
+Nejedná se o vyčerpávající seznam funkcí `Newtonsoft.Json`. Seznam obsahuje mnoho scénářů, které byly vyžádány v rámci [problémů GitHubu](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json) nebo [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) příspěvky. Pokud implementujete alternativní řešení pro jeden z uvedených scénářů, který aktuálně nemá vzorový kód, a pokud chcete své řešení sdílet, vyberte **tuto stránku** v [části zpětná vazba](/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to#feedback) na této stránce. Tím se vytvoří problém GitHubu a zobrazí se v dolní části této stránky.
 
-## <a name="differences-in-default-jsonserializer-behavior-compared-to-opno-locnewtonsoftjson"></a>Rozdíly ve výchozím chování JsonSerializer ve srovnání s [!OP.NO-LOC(Newtonsoft.Json)]
+## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>Rozdíly ve výchozím chování JsonSerializer ve srovnání s Newtonsoft. JSON
 
-ve výchozím nastavení je <xref:[!OP.NO-LOC(System.Text.Json)]> striktní a vyhnout se případnému odhadu nebo výkladu jménem volajícího a zdůraznění deterministického chování. Knihovna je záměrně navržena tak, aby způsobila výkon a zabezpečení. ve výchozím nastavení je `[!OP.NO-LOC(Newtonsoft.Json)]` flexibilní. Tento základní rozdíl v návrhu je za mnoho z následujících specifických rozdílů ve výchozím chování.
+ve výchozím nastavení je <xref:System.Text.Json> striktní a vyhnout se případnému odhadu nebo výkladu jménem volajícího a zdůraznění deterministického chování. Knihovna je záměrně navržena tak, aby způsobila výkon a zabezpečení. ve výchozím nastavení je `Newtonsoft.Json` flexibilní. Tento základní rozdíl v návrhu je za mnoho z následujících specifických rozdílů ve výchozím chování.
 
 ### <a name="case-insensitive-deserialization"></a>Deserializace bez rozlišování velkých a malých písmen 
 
-Při deserializaci `[!OP.NO-LOC(Newtonsoft.Json)]` ve výchozím nastavení rozlišovat velikost písmen bez rozlišení velkých a malých písmen. Ve výchozím nastavení <xref:[!OP.NO-LOC(System.Text.Json)]> rozlišuje velká a malá písmena, což dává lepší výkon, protože se jedná o přesnou shodu. Informace o tom, jak rozlišovat velká a malá písmena, naleznete v tématu [porovnávání vlastností](system-text-json-how-to.md#case-insensitive-property-matching)bez rozlišování velkých a malých písmen.
+Při deserializaci `Newtonsoft.Json` ve výchozím nastavení rozlišovat velikost písmen bez rozlišení velkých a malých písmen. Ve výchozím nastavení <xref:System.Text.Json> rozlišuje velká a malá písmena, což dává lepší výkon, protože se jedná o přesnou shodu. Informace o tom, jak rozlišovat velká a malá písmena, naleznete v tématu [porovnávání vlastností](system-text-json-how-to.md#case-insensitive-property-matching)bez rozlišování velkých a malých písmen.
 
-Pokud používáte `[!OP.NO-LOC(System.Text.Json)]` nepřímo pomocí ASP.NET Core, nemusíte nic dělat, abyste získali chování jako `[!OP.NO-LOC(Newtonsoft.Json)]`. ASP.NET Core určuje nastavení [názvů vlastností ve stylu CamelCase-střev](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) a porovnávání bez rozlišení velkých a malých písmen při použití `[!OP.NO-LOC(System.Text.Json)]`.
+Pokud používáte `System.Text.Json` nepřímo pomocí ASP.NET Core, nemusíte nic dělat, abyste získali chování jako `Newtonsoft.Json`. ASP.NET Core určuje nastavení [názvů vlastností ve stylu CamelCase-střev](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) a porovnávání bez rozlišení velkých a malých písmen při použití `System.Text.Json`.
 
 ### <a name="minimal-character-escaping"></a>Minimální znaková řídicí znaky
 
-Během serializace je `[!OP.NO-LOC(Newtonsoft.Json)]` relativně opravňující k tomu, aby bylo umožněno použití znaků bez uvozovacích znaků. To znamená, že je nenahrazuje pomocí `\uxxxx`, kde `xxxx` je znakový bod znaku. Tam, kde je řídí, vygeneruje `\` před znakem (například `"` se bude `\"`). ve výchozím nastavení <xref:[!OP.NO-LOC(System.Text.Json)]> sekvence více znaků, aby bylo zajištěno důkladné ochrany proti skriptování mezi weby (XSS) nebo útokům prostřednictvím odhalení informací a k tomu využívá sekvenci šesti znaků. `[!OP.NO-LOC(System.Text.Json)]` ve výchozím nastavení zařídí všechny znaky jiné než ASCII, takže nemusíte nic dělat, pokud používáte `StringEscapeHandling.EscapeNonAscii` v `[!OP.NO-LOC(Newtonsoft.Json)]`. ve výchozím nastavení `[!OP.NO-LOC(System.Text.Json)]` také řídí znaky citlivé na kód HTML. Informace o tom, jak přepsat výchozí chování `[!OP.NO-LOC(System.Text.Json)]`, naleznete v tématu [přizpůsobení kódování znaků](system-text-json-how-to.md#customize-character-encoding).
+Během serializace je `Newtonsoft.Json` relativně opravňující k tomu, aby bylo umožněno použití znaků bez uvozovacích znaků. To znamená, že je nenahrazuje pomocí `\uxxxx`, kde `xxxx` je znakový bod znaku. Tam, kde je řídí, vygeneruje `\` před znakem (například `"` se bude `\"`). ve výchozím nastavení <xref:System.Text.Json> sekvence více znaků, aby bylo zajištěno důkladné ochrany proti skriptování mezi weby (XSS) nebo útokům prostřednictvím odhalení informací a k tomu využívá sekvenci šesti znaků. `System.Text.Json` ve výchozím nastavení zařídí všechny znaky jiné než ASCII, takže nemusíte nic dělat, pokud používáte `StringEscapeHandling.EscapeNonAscii` v `Newtonsoft.Json`. ve výchozím nastavení `System.Text.Json` také řídí znaky citlivé na kód HTML. Informace o tom, jak přepsat výchozí chování `System.Text.Json`, naleznete v tématu [přizpůsobení kódování znaků](system-text-json-how-to.md#customize-character-encoding).
 
 ### <a name="comments"></a>Komentáře
 
-Při deserializaci `[!OP.NO-LOC(Newtonsoft.Json)]` ve výchozím nastavení ignorovat komentáře ve formátu JSON. <xref:[!OP.NO-LOC(System.Text.Json)]> výchozím nastavení je vyvolat výjimky pro komentáře, protože specifikace [RFC 8259](https://tools.ietf.org/html/rfc8259) je neobsahuje. Informace o povolení komentářů najdete v tématu [Povolení komentářů a koncových čárek](system-text-json-how-to.md#allow-comments-and-trailing-commas).
+Při deserializaci `Newtonsoft.Json` ve výchozím nastavení ignorovat komentáře ve formátu JSON. <xref:System.Text.Json> výchozím nastavení je vyvolat výjimky pro komentáře, protože specifikace [RFC 8259](https://tools.ietf.org/html/rfc8259) je neobsahuje. Informace o povolení komentářů najdete v tématu [Povolení komentářů a koncových čárek](system-text-json-how-to.md#allow-comments-and-trailing-commas).
 
 ### <a name="trailing-commas"></a>Čárky na konci
 
-Při deserializaci `[!OP.NO-LOC(Newtonsoft.Json)]` ve výchozím nastavení ignorovat koncové čárky. Ignoruje také více koncových čárek (například `[{"Color":"Red"},{"Color":"Green"},,]`). <xref:[!OP.NO-LOC(System.Text.Json)]> výchozím nastavení je vyvolat výjimky pro koncové čárky, protože specifikace [RFC 8259](https://tools.ietf.org/html/rfc8259) je nepovoluje. Informace o tom, jak `[!OP.NO-LOC(System.Text.Json)]` přijmout, najdete v tématu [Povolení komentářů a koncových čárek](system-text-json-how-to.md#allow-comments-and-trailing-commas). Neexistuje žádný způsob, jak povoluje více koncových čárek.
+Při deserializaci `Newtonsoft.Json` ve výchozím nastavení ignorovat koncové čárky. Ignoruje také více koncových čárek (například `[{"Color":"Red"},{"Color":"Green"},,]`). <xref:System.Text.Json> výchozím nastavení je vyvolat výjimky pro koncové čárky, protože specifikace [RFC 8259](https://tools.ietf.org/html/rfc8259) je nepovoluje. Informace o tom, jak `System.Text.Json` přijmout, najdete v tématu [Povolení komentářů a koncových čárek](system-text-json-how-to.md#allow-comments-and-trailing-commas). Neexistuje žádný způsob, jak povoluje více koncových čárek.
 
 ### <a name="converter-registration-precedence"></a>Priorita registrace převaděče
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` priorita registrace pro vlastní převaděče je následující:
+`Newtonsoft.Json` priorita registrace pro vlastní převaděče je následující:
 
 * Atribut u vlastnosti
 * Atribut u typu
@@ -109,10 +109,10 @@ Při deserializaci `[!OP.NO-LOC(Newtonsoft.Json)]` ve výchozím nastavení igno
 
 Toto pořadí znamená, že vlastní převaděč v kolekci `Converters` je přepsán převaděčem, který je zaregistrován použitím atributu na úrovni typu. Oba tyto registrace jsou přepsány atributem na úrovni vlastnosti.
 
-<xref:[!OP.NO-LOC(System.Text.Json)]> priorita registrace pro vlastní převaděče se liší:
+<xref:System.Text.Json> priorita registrace pro vlastní převaděče se liší:
 
 * Atribut u vlastnosti
-* kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters>
+* kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>
 * Atribut u typu
 
 Rozdíl je v tom, že vlastní převaděč v kolekci `Converters` Přepisuje atribut na úrovni typu. Záměrem na základě tohoto pořadí priorit je provést změny v době návrhu v době běhu. Neexistuje žádný způsob, jak změnit prioritu.
@@ -121,11 +121,11 @@ Další informace o registraci vlastního převaděče najdete v tématu [regist
 
 ### <a name="maximum-depth"></a>Maximální hloubka
 
-ve výchozím nastavení nemá `[!OP.NO-LOC(Newtonsoft.Json)]` maximální hloubkový limit. Pro <xref:[!OP.NO-LOC(System.Text.Json)]> existuje výchozí limit 64 a je možné ho nakonfigurovat nastavením <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.MaxDepth?displayProperty=nameWithType>.
+ve výchozím nastavení nemá `Newtonsoft.Json` maximální hloubkový limit. Pro <xref:System.Text.Json> existuje výchozí limit 64 a je možné ho nakonfigurovat nastavením <xref:System.Text.Json.JsonSerializerOptions.MaxDepth?displayProperty=nameWithType>.
 
 ### <a name="json-strings-property-names-and-string-values"></a>Řetězce JSON (názvy vlastností a řetězcové hodnoty)
 
-Při deserializaci `[!OP.NO-LOC(Newtonsoft.Json)]` akceptuje názvy vlastností, které jsou obklopeny dvojitými uvozovkami, jednoduchými uvozovkami nebo bez uvozovek. Přijímá řetězcové hodnoty obklopené dvojitými uvozovkami nebo jednoduchými uvozovkami. `[!OP.NO-LOC(Newtonsoft.Json)]` například akceptuje následující kód JSON:
+Při deserializaci `Newtonsoft.Json` akceptuje názvy vlastností, které jsou obklopeny dvojitými uvozovkami, jednoduchými uvozovkami nebo bez uvozovek. Přijímá řetězcové hodnoty obklopené dvojitými uvozovkami nebo jednoduchými uvozovkami. `Newtonsoft.Json` například akceptuje následující kód JSON:
 
 ```json
 {
@@ -135,9 +135,9 @@ Při deserializaci `[!OP.NO-LOC(Newtonsoft.Json)]` akceptuje názvy vlastností,
 }
 ```
 
-`[!OP.NO-LOC(System.Text.Json)]` do dvojitých uvozovek akceptují pouze názvy vlastností a řetězcové hodnoty, protože tento formát je vyžadován specifikací [RFC 8259](https://tools.ietf.org/html/rfc8259) a je jediným formátem, který se považuje za platný kód JSON.
+`System.Text.Json` do dvojitých uvozovek akceptují pouze názvy vlastností a řetězcové hodnoty, protože tento formát je vyžadován specifikací [RFC 8259](https://tools.ietf.org/html/rfc8259) a je jediným formátem, který se považuje za platný kód JSON.
 
-Hodnota uzavřená v jednoduchých uvozovkách má za následek [JsonException](xref:[!OP.NO-LOC(System.Text.Json)].JsonException) s následující zprávou:
+Hodnota uzavřená v jednoduchých uvozovkách má za následek [JsonException](xref:System.Text.Json.JsonException) s následující zprávou:
 
 ```
 ''' is an invalid start of a value.
@@ -145,7 +145,7 @@ Hodnota uzavřená v jednoduchých uvozovkách má za následek [JsonException](
 
 ### <a name="non-string-values-for-string-properties"></a>Hodnoty nepatřící do řetězce pro vlastnosti řetězce
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` přijímá hodnoty, které nejsou řetězcem, jako je číslo nebo literály `true` a `false`pro deserializaci vlastností typu String. Tady je příklad JSON, který `[!OP.NO-LOC(Newtonsoft.Json)]` úspěšně deserializovat do následující třídy:
+`Newtonsoft.Json` přijímá hodnoty, které nejsou řetězcem, jako je číslo nebo literály `true` a `false`pro deserializaci vlastností typu String. Tady je příklad JSON, který `Newtonsoft.Json` úspěšně deserializovat do následující třídy:
 
 ```json
 {
@@ -164,7 +164,7 @@ public class ExampleClass
 }
 ```
 
-`[!OP.NO-LOC(System.Text.Json)]` neprovádí deserializaci hodnot, které nejsou řetězcové, do vlastností řetězce. Neřetězcová hodnota přijatá pro pole typu String má za následek [JsonException](xref:[!OP.NO-LOC(System.Text.Json)].JsonException) s následující zprávou:
+`System.Text.Json` neprovádí deserializaci hodnot, které nejsou řetězcové, do vlastností řetězce. Neřetězcová hodnota přijatá pro pole typu String má za následek [JsonException](xref:System.Text.Json.JsonException) s následující zprávou:
 
 ```
 The JSON value could not be converted to System.String.
@@ -172,11 +172,11 @@ The JSON value could not be converted to System.String.
 
 ## <a name="scenarios-using-jsonserializer-that-require-workarounds"></a>Scénáře využívající JsonSerializer, které vyžadují alternativní řešení
 
-V těchto scénářích nejsou integrované funkce podporované, ale alternativní řešení jsou možná. Alternativní řešení jsou [vlastními převaděči](system-text-json-converters-how-to.md), které neposkytují kompletní paritu funkcí `[!OP.NO-LOC(Newtonsoft.Json)]`. Pro některé z nich vzorový kód je k dispozici jako příklad. Pokud spoléháte na tyto funkce `[!OP.NO-LOC(Newtonsoft.Json)]`, migrace bude vyžadovat úpravy vašich modelů objektů .NET nebo jiné změny kódu.
+V těchto scénářích nejsou integrované funkce podporované, ale alternativní řešení jsou možná. Alternativní řešení jsou [vlastními převaděči](system-text-json-converters-how-to.md), které neposkytují kompletní paritu funkcí `Newtonsoft.Json`. Pro některé z nich vzorový kód je k dispozici jako příklad. Pokud spoléháte na tyto funkce `Newtonsoft.Json`, migrace bude vyžadovat úpravy vašich modelů objektů .NET nebo jiné změny kódu.
 
 ### <a name="types-without-built-in-support"></a>Typy bez integrované podpory
 
-<xref:[!OP.NO-LOC(System.Text.Json)]> nenabízí integrovanou podporu pro následující typy:
+<xref:System.Text.Json> nenabízí integrovanou podporu pro následující typy:
 
 * <xref:System.Data.DataTable> a související typy
 * F#typy, například [rozlišené sjednocení](../../fsharp/language-reference/discriminated-unions.md), [typy záznamů](../../fsharp/language-reference/records.md)a [anonymní typy záznamů](../../fsharp/language-reference/anonymous-records.md).
@@ -192,53 +192,60 @@ Vlastní převaděče lze implementovat pro typy, které nemají vestavěnou pod
 
 ### <a name="quoted-numbers"></a>Čísla v uvozovkách
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` mohou serializovat nebo deserializovat čísla reprezentovaná řetězci JSON (obklopenými uvozovkami). Například může přijmout: `{"DegreesCelsius":"23"}` místo `{"DegreesCelsius":23}`. Chcete-li toto chování povolit v <xref:[!OP.NO-LOC(System.Text.Json)]>, implementujte vlastní převaděč podobný následujícímu příkladu. Převaděč zpracovává vlastnosti definované jako `long`:
+`Newtonsoft.Json` mohou serializovat nebo deserializovat čísla reprezentovaná řetězci JSON (obklopenými uvozovkami). Například může přijmout: `{"DegreesCelsius":"23"}` místo `{"DegreesCelsius":23}`. Chcete-li toto chování povolit v <xref:System.Text.Json>, implementujte vlastní převaděč podobný následujícímu příkladu. Převaděč zpracovává vlastnosti definované jako `long`:
 
 * Jejich serializace jako řetězce JSON. 
 * Při deserializaci přijímá čísla a čísla JSON v rámci uvozovek.
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/LongToStringConverter.cs)]
 
-Tento vlastní převaděč Zaregistrujte [pomocí atributu](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-property) u jednotlivých vlastností `long` nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters>.
+Tento vlastní převaděč Zaregistrujte [pomocí atributu](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-property) u jednotlivých vlastností `long` nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>.
 
 ### <a name="dictionary-with-non-string-key"></a>Slovník s jiným než řetězcovým klíčem
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` podporuje kolekce typu `Dictionary<TKey, TValue>`. Integrovaná podpora kolekcí slovníků v <xref:[!OP.NO-LOC(System.Text.Json)]> je omezená na `Dictionary<string, TValue>`. To znamená, že klíč musí být řetězec.
+`Newtonsoft.Json` podporuje kolekce typu `Dictionary<TKey, TValue>`. Integrovaná podpora kolekcí slovníků v <xref:System.Text.Json> je omezená na `Dictionary<string, TValue>`. To znamená, že klíč musí být řetězec.
 
 Pro podporu slovníku s celým číslem nebo jiným typem jako klíč vytvořte konvertor jako příklad v tématu [jak psát vlastní převaděče](system-text-json-converters-how-to.md#support-dictionary-with-non-string-key).
 
 ### <a name="polymorphic-serialization"></a>Polymorfní serializace
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` automaticky provede polymorfní serializaci. Informace o možnostech omezeného polymorfní serializace <xref:[!OP.NO-LOC(System.Text.Json)]>najdete v tématu [serializace properties of Derived Classes](system-text-json-how-to.md#serialize-properties-of-derived-classes).
+`Newtonsoft.Json` automaticky provede polymorfní serializaci. Informace o možnostech omezeného polymorfní serializace <xref:System.Text.Json>najdete v tématu [serializace properties of Derived Classes](system-text-json-how-to.md#serialize-properties-of-derived-classes).
 
 Alternativní řešení je popsáno pro definování vlastností, které mohou obsahovat odvozené třídy jako typ `object`. Pokud to není možné, je další možností vytvoření převaděče s `Write` metodou pro celou hierarchii typu dědičnosti, jako je například příklad [psaní vlastních převaděčů](system-text-json-converters-how-to.md#support-polymorphic-deserialization).
 
 ### <a name="polymorphic-deserialization"></a>Polymorfní deserializace
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` má `TypeNameHandling` nastavení, které při serializaci přidá do formátu JSON metadata typu Type. Používá metadata při deserializaci k provedení polymorfního deserializace. <xref:[!OP.NO-LOC(System.Text.Json)]> může provádět omezený rozsah [polymorfní serializace](system-text-json-how-to.md#serialize-properties-of-derived-classes) , ale ne polymorfní deserializace.
+`Newtonsoft.Json` má `TypeNameHandling` nastavení, které při serializaci přidá do formátu JSON metadata typu Type. Používá metadata při deserializaci k provedení polymorfního deserializace. <xref:System.Text.Json> může provádět omezený rozsah [polymorfní serializace](system-text-json-how-to.md#serialize-properties-of-derived-classes) , ale ne polymorfní deserializace.
 
 Pro podporu polymorfního deserializace vytvořte jako příklad v [postupu psaní vlastních převaděčů](system-text-json-converters-how-to.md#support-polymorphic-deserialization)převaděč.
 
 ### <a name="deserialization-of-object-properties"></a>Deserializace vlastností objektu
 
-Když `[!OP.NO-LOC(Newtonsoft.Json)]` deserializace pro `object` vlastnosti v POCOs nebo ve slovnících typu `Dictionary<string, object>`, je:
+Když `Newtonsoft.Json` deserializace <xref:System.Object>,:
 
 * Odvodí typ primitivních hodnot v datové části JSON (jiné než `null`) a vrátí uložené `string`, `long`, `double`, `boolean`nebo `DateTime` jako zabalený objekt. *Primitivní hodnoty* jsou jednoduché hodnoty JSON, jako je číslo JSON, řetězec, `true`, `false`nebo `null`.
 * Vrátí `JObject` nebo `JArray` pro komplexní hodnoty v datové části JSON. *Komplexní hodnoty* jsou kolekce párů klíč-hodnota JSON v rámci složených závorek (`{}`) nebo seznamů hodnot v závorkách (`[]`). Vlastnosti a hodnoty v závorkách nebo závorkách mohou mít další vlastnosti nebo hodnoty.
 * Vrátí odkaz s hodnotou null, pokud má datová část literál `null` JSON.
 
-<xref:[!OP.NO-LOC(System.Text.Json)]> ukládá zabalenou `JsonElement` pro primitivní i komplexní hodnoty v rámci vlastnosti `System.Object` nebo hodnoty slovníku. Zpracovává se ale `null` stejné jako `[!OP.NO-LOC(Newtonsoft.Json)]` a vrátí odkaz s hodnotou null, pokud je v datové části obsažený `null` literál JSON.
+<xref:System.Text.Json> ukládá zabalenou `JsonElement` pro primitivní i komplexní hodnoty při každém deserializaci do <xref:System.Object>, například:
+
+* Vlastnost `object`.
+* Hodnota `object` slovníku
+* Hodnota pole `object`.
+* Kořenový `object`.
+
+`System.Text.Json` však používá `null` stejné jako `Newtonsoft.Json` a vrátí odkaz s hodnotou null, pokud je v datové části obsažen literál `null` JSON.
 
 Chcete-li implementovat odvození typu pro vlastnosti `object`, vytvořte pomocí převaděče jako příklad [psaní vlastních převaděčů](system-text-json-converters-how-to.md#deserialize-inferred-types-to-object-properties).
 
 ### <a name="deserialize-null-to-non-nullable-type"></a>Deserializovat hodnotu null na typ, který není možnou hodnotou null 
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` nevyvolá výjimku v následujícím scénáři:
+`Newtonsoft.Json` nevyvolá výjimku v následujícím scénáři:
 
 * `NullValueHandling` je nastavené na `Ignore`a
 * Při deserializaci obsahuje JSON hodnotu null pro typ, který nemůže mít hodnotu null.
 
-Ve stejném scénáři <xref:[!OP.NO-LOC(System.Text.Json)]> vyvolá výjimku. (Odpovídající nastavení zpracování hodnoty null je <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType>.)
+Ve stejném scénáři <xref:System.Text.Json> vyvolá výjimku. (Odpovídající nastavení zpracování hodnoty null je <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType>.)
 
 Pokud vlastníte cílový typ, nejlepším řešením je učinit vlastnost dotazovat se na hodnotu null (například změnit `int` na `int?`).
 
@@ -246,9 +253,9 @@ Dalším řešením je vytvořit převaděč pro typ, například následující
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DateTimeOffsetNullHandlingConverter.cs)]
 
-Tento vlastní převaděč Zaregistrujte [pomocí atributu u vlastnosti](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-property) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters>.
+Tento vlastní převaděč Zaregistrujte [pomocí atributu u vlastnosti](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-property) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>.
 
-**Poznámka:** Předchozí převaděč **zpracovává hodnoty null jinak** než `[!OP.NO-LOC(Newtonsoft.Json)]` pro POCOs, které určují výchozí hodnoty. Předpokládejme například, že následující kód představuje cílový objekt:
+**Poznámka:** Předchozí převaděč **zpracovává hodnoty null jinak** než `Newtonsoft.Json` pro POCOs, které určují výchozí hodnoty. Předpokládejme například, že následující kód představuje cílový objekt:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithDefault)]
 
@@ -262,11 +269,11 @@ A Předpokládejme, že následující JSON je deserializovat pomocí předchoz�
 }
 ```
 
-Po deserializaci má vlastnost `Date` hodnotu 1/1/0001 (`default(DateTimeOffset)`), což znamená, že hodnota nastavená v konstruktoru je přepsána. Pro stejné POCO a JSON `[!OP.NO-LOC(Newtonsoft.Json)]` deserializace ponechá 1/1/2001 ve vlastnosti `Date`.
+Po deserializaci má vlastnost `Date` hodnotu 1/1/0001 (`default(DateTimeOffset)`), což znamená, že hodnota nastavená v konstruktoru je přepsána. Pro stejné POCO a JSON `Newtonsoft.Json` deserializace ponechá 1/1/2001 ve vlastnosti `Date`.
 
 ### <a name="deserialize-to-immutable-classes-and-structs"></a>Deserializace pro neměnné třídy a struktury
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` může deserializovat pro neměnné třídy a struktury, protože může používat konstruktory s parametry. <xref:[!OP.NO-LOC(System.Text.Json)]> podporuje pouze veřejné konstruktory bez parametrů. Jako alternativní řešení můžete volat konstruktor s parametry ve vlastním převaděči.
+`Newtonsoft.Json` může deserializovat pro neměnné třídy a struktury, protože může používat konstruktory s parametry. <xref:System.Text.Json> podporuje pouze veřejné konstruktory bez parametrů. Jako alternativní řešení můžete volat konstruktor s parametry ve vlastním převaděči.
 
 Tady je neproměnlivá struktura s více parametry konstruktoru:
 
@@ -276,19 +283,19 @@ A zde je převaděč, který serializace a deserializace této struktury:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ImmutablePointConverter.cs)]
 
-Zaregistrujte tento vlastní převaděč [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters>.
+Zaregistrujte tento vlastní převaděč [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>.
 
-Příklad podobného převaděče, který zpracovává otevřené generické vlastnosti, naleznete v [integrovaném převaděči pro páry klíč-hodnota](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/[!OP.NO-LOC(System.Text.Json)]/src/[!OP.NO-LOC(System/Text/Json)]/Serialization/Converters/JsonValueConverterKeyValuePair.cs).
+Příklad podobného převaděče, který zpracovává otevřené generické vlastnosti, naleznete v [integrovaném převaděči pro páry klíč-hodnota](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters/JsonValueConverterKeyValuePair.cs).
 
 ### <a name="specify-constructor-to-use"></a>Zadejte konstruktor, který se má použít.
 
-Atribut `[!OP.NO-LOC(Newtonsoft.Json)]` `[JsonConstructor]` umožňuje určit, který konstruktor se má volat při deserializaci do POCO. <xref:[!OP.NO-LOC(System.Text.Json)]> podporuje pouze konstruktory bez parametrů. Jako alternativní řešení můžete zavolat libovolný konstruktor, který potřebujete, ve vlastním převaděči. Podívejte se na příklad pro [deserializaci pro neměnné třídy a struktury](#deserialize-to-immutable-classes-and-structs).
+Atribut `Newtonsoft.Json` `[JsonConstructor]` umožňuje určit, který konstruktor se má volat při deserializaci do POCO. <xref:System.Text.Json> podporuje pouze konstruktory bez parametrů. Jako alternativní řešení můžete zavolat libovolný konstruktor, který potřebujete, ve vlastním převaděči. Podívejte se na příklad pro [deserializaci pro neměnné třídy a struktury](#deserialize-to-immutable-classes-and-structs).
 
 ### <a name="required-properties"></a>Požadované vlastnosti
 
-V `[!OP.NO-LOC(Newtonsoft.Json)]`určíte, že je vlastnost požadována nastavením `Required` v atributu `[JsonProperty]`. `[!OP.NO-LOC(Newtonsoft.Json)]` vyvolá výjimku, pokud není ve formátu JSON přijata žádná hodnota pro vlastnost označenou jako Required.
+V `Newtonsoft.Json`určíte, že je vlastnost požadována nastavením `Required` v atributu `[JsonProperty]`. `Newtonsoft.Json` vyvolá výjimku, pokud není ve formátu JSON přijata žádná hodnota pro vlastnost označenou jako Required.
 
-<xref:[!OP.NO-LOC(System.Text.Json)]> nevyvolá výjimku, pokud není přijata žádná hodnota pro jednu z vlastností cílového typu. Například pokud máte třídu `WeatherForecast`:
+<xref:System.Text.Json> nevyvolá výjimku, pokud není přijata žádná hodnota pro jednu z vlastností cílového typu. Například pokud máte třídu `WeatherForecast`:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
@@ -305,11 +312,11 @@ Chcete-li, aby deserializace selhala v případě, že ve formátu JSON není ž
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecastRequiredPropertyConverter.cs)]
 
-Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě POCO](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters>.
+Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě POCO](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>.
 
-Pokud budete postupovat podle tohoto vzoru, nepředávejte objekt Options při rekurzivním volání <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializer.Serialize%2A> nebo <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializer.Deserialize%2A>. Objekt Options obsahuje kolekci <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters%2A>. Pokud ho předáte do `Serialize` nebo `Deserialize`, vlastní převaděč zavolá sám sebe a vytvoří nekonečnou smyčku, která způsobí výjimku přetečení zásobníku. Pokud výchozí možnosti nejsou proveditelné, vytvořte novou instanci možností s nastavením, které potřebujete. Tento přístup bude pomalý, protože každá nová instance mezipamětí nezávisle.
+Pokud budete postupovat podle tohoto vzoru, nepředávejte objekt Options při rekurzivním volání <xref:System.Text.Json.JsonSerializer.Serialize%2A> nebo <xref:System.Text.Json.JsonSerializer.Deserialize%2A>. Objekt Options obsahuje kolekci <xref:System.Text.Json.JsonSerializerOptions.Converters%2A>. Pokud ho předáte do `Serialize` nebo `Deserialize`, vlastní převaděč zavolá sám sebe a vytvoří nekonečnou smyčku, která způsobí výjimku přetečení zásobníku. Pokud výchozí možnosti nejsou proveditelné, vytvořte novou instanci možností s nastavením, které potřebujete. Tento přístup bude pomalý, protože každá nová instance mezipamětí nezávisle.
 
-Předchozí kód převaděče je zjednodušený příklad. Pokud potřebujete zpracovat atributy (například [[JsonIgnore]](xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonIgnoreAttribute) nebo jiné možnosti (například vlastní kodéry), bude nutné další logiku. Kromě toho ukázkový kód nezpracovává vlastnosti, pro které je v konstruktoru nastavena výchozí hodnota. A tento přístup nerozlišuje mezi následujícími scénáři:
+Předchozí kód převaděče je zjednodušený příklad. Pokud potřebujete zpracovat atributy (například [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) nebo jiné možnosti (například vlastní kodéry), bude nutné další logiku. Kromě toho ukázkový kód nezpracovává vlastnosti, pro které je v konstruktoru nastavena výchozí hodnota. A tento přístup nerozlišuje mezi následujícími scénáři:
 
 * Ve formátu JSON chybí vlastnost.
 * Vlastnost pro typ, který nepovoluje hodnotu null, je přítomna ve formátu JSON, ale hodnota je výchozím typem pro typ, například nula pro `int`.
@@ -317,13 +324,13 @@ Předchozí kód převaděče je zjednodušený příklad. Pokud potřebujete zp
 
 ### <a name="conditionally-ignore-a-property"></a>Podmíněně ignorovat vlastnost
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` má několik způsobů, jak podmíněně ignorovat vlastnost při serializaci nebo deserializaci:
+`Newtonsoft.Json` má několik způsobů, jak podmíněně ignorovat vlastnost při serializaci nebo deserializaci:
 
 * `DefaultContractResolver` umožňuje vybrat vlastnosti, které se mají zahrnout nebo vyloučit, na základě libovolného kritéria. 
 * Nastavení `NullValueHandling` a `DefaultValueHandling` na `JsonSerializerSettings` umožňují určit, že všechny vlastnosti null-Value nebo Default-value by měly být ignorovány.
 * Nastavení `NullValueHandling` a `DefaultValueHandling` na atributu `[JsonProperty]` umožňují zadat jednotlivé vlastnosti, které by měly být ignorovány, pokud je nastavena hodnota null nebo výchozí hodnota.
 
-<xref:[!OP.NO-LOC(System.Text.Json)]> poskytuje následující způsoby, jak vynechat vlastnosti při serializaci:
+<xref:System.Text.Json> poskytuje následující způsoby, jak vynechat vlastnosti při serializaci:
 
 * Atribut [[JsonIgnore]](system-text-json-how-to.md#exclude-individual-properties) u vlastnosti způsobí, že vlastnost bude při serializaci vynechána ve formátu JSON.
 * Globální možnost [IgnoreNullValues](system-text-json-how-to.md#exclude-all-null-value-properties) umožňuje vyloučit všechny vlastnosti s hodnotou null.
@@ -344,7 +351,7 @@ Pro tuto funkci můžete napsat vlastní převaděč. Tady je ukázkový POCO a 
 
 Převaděč způsobí, že vlastnost `Summary` bude vynechána z serializace, je-li její hodnota null, prázdný řetězec nebo "N/A". 
 
-Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters>.
+Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>.
 
 Tento přístup vyžaduje další logiku v těchto případech:
 
@@ -353,23 +360,23 @@ Tento přístup vyžaduje další logiku v těchto případech:
 
 ### <a name="specify-date-format"></a>Zadat formát data
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` poskytuje několik způsobů, jak řídit, jak vlastnosti `DateTime` a `DateTimeOffset` typy jsou serializovány a deserializovány:
+`Newtonsoft.Json` poskytuje několik způsobů, jak řídit, jak vlastnosti `DateTime` a `DateTimeOffset` typy jsou serializovány a deserializovány:
 
 * Nastavení `DateTimeZoneHandling` lze použít k serializaci všech `DateTime`ch hodnot jako data UTC.
 * Nastavení `DateFormatString` a převaděče `DateTime` lze použít k přizpůsobení formátu řetězce data.
 
-V <xref:[!OP.NO-LOC(System.Text.Json)]>je jediným formátem, který má integrovanou podporu, ISO 8601-1:2019, protože je široce přijatý, jednoznačně nejednoznačný a způsobuje přesné zpoždění. Pokud chcete použít jiný formát, vytvořte vlastní převaděč. Další informace najdete v tématu [Podpora DateTime a DateTimeOffset v [!OP.NO-LOC(System.Text.Json)]](../datetime/system-text-json-support.md).
+V <xref:System.Text.Json>je jediným formátem, který má integrovanou podporu, ISO 8601-1:2019, protože je široce přijatý, jednoznačně nejednoznačný a způsobuje přesné zpoždění. Pokud chcete použít jiný formát, vytvořte vlastní převaděč. Další informace najdete v tématu [Podpora DateTime a DateTimeOffset v System. text. JSON](../datetime/system-text-json-support.md).
 
 ### <a name="callbacks"></a>Zpětná volání
 
-`[!OP.NO-LOC(Newtonsoft.Json)]` umožňuje spustit vlastní kód v několika bodech v procesu serializace nebo deserializace:
+`Newtonsoft.Json` umožňuje spustit vlastní kód v několika bodech v procesu serializace nebo deserializace:
 
 * OnDeserializing (při zahájení deserializace objektu)
 * OnDeserialized (po dokončení deserializace objektu)
 * Probíhá serializace (při zahájení serializace objektu)
 * V-deserializovat (po dokončení serializace objektu)
 
-V <xref:[!OP.NO-LOC(System.Text.Json)]>můžete volání simulovat pomocí vlastního převaděče. Následující příklad ukazuje vlastní převaděč pro POCO. Převaděč obsahuje kód, který zobrazí zprávu v každém bodě, který odpovídá zpětnému volání `[!OP.NO-LOC(Newtonsoft.Json)]`.
+V <xref:System.Text.Json>můžete volání simulovat pomocí vlastního převaděče. Následující příklad ukazuje vlastní převaděč pro POCO. Převaděč obsahuje kód, který zobrazí zprávu v každém bodě, který odpovídá zpětnému volání `Newtonsoft.Json`.
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecastCallbacksConverter.cs)]
 

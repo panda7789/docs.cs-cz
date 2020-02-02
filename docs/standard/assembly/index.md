@@ -12,12 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: 9fd0c55294815c191f1e116dd4e16a44693f3565
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 968eaf2befb44eb893699d1114b315a4f5df3097
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900596"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921372"
 ---
 # <a name="assemblies-in-net"></a>Sestavení v .NET
 
@@ -63,7 +63,7 @@ Sestavení mohou být statická nebo dynamická. Statická sestavení jsou ulož
 
 Existuje několik způsobů vytváření sestavení. Můžete použít vývojové nástroje, jako je například Visual Studio, které mohou vytvářet soubory *. dll* nebo *. exe* . Pomocí nástrojů v Windows SDK můžete vytvářet sestavení s moduly z jiných vývojových prostředí. Pro vytváření dynamických sestavení můžete také použít rozhraní API modulu CLR (Common Language Runtime), jako je například <xref:System.Reflection.Emit?displayProperty=nameWithType>.
 
-Zkompilujte sestavení jejich sestavením v aplikaci Visual Studio, Sestavujte je pomocí nástrojů rozhraní příkazového řádku .NET Core nebo Sestavujte .NET Framework sestavení pomocí kompilátoru příkazového řádku. Další informace o vytváření sestavení pomocí nástrojů rozhraní příkazového řádku .NET Core naleznete v tématu [.NET Core Command-line interface Tools](../../core/tools/index.md). Pro vytváření sestavení pomocí kompilátorů příkazového řádku, přečtěte si [sestavení příkazového řádku s CSc. exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) pro C#nebo [Sestavte z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) pro Visual Basic.
+Zkompilujte sestavení jejich sestavením v aplikaci Visual Studio, Sestavujte je pomocí nástrojů rozhraní příkazového řádku .NET Core nebo Sestavujte .NET Framework sestavení pomocí kompilátoru příkazového řádku. Další informace o vytváření sestavení pomocí .NET Core CLI naleznete v tématu [.NET Core CLI Overview](../../core/tools/index.md). Pro vytváření sestavení pomocí kompilátorů příkazového řádku, přečtěte si [sestavení příkazového řádku s CSc. exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) pro C#nebo [Sestavte z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) pro Visual Basic.
 
 > [!NOTE]
 > Chcete-li sestavit sestavení v aplikaci Visual Studio, vyberte v nabídce **sestavení** položku **sestavit**.

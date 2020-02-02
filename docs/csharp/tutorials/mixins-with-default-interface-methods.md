@@ -3,12 +3,12 @@ title: Vytváření Mixin typů pomocí výchozích metod rozhraní
 description: Pomocí výchozích členů rozhraní můžete roztáhnout rozhraní s nepovinnými výchozími implementacemi pro implementátory.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: fb8fc1f432bdf909bae4f54bb76d10d7619f71a3
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f97410124a4ca5bbb10972ab5e7942fa4af68d72
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140842"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921449"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Kurz: kombinace funkcí při vytváření tříd pomocí rozhraní s výchozími metodami rozhraní
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici počínaje verzí [Visual Studio 2019, 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější.
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější.
 
 ## <a name="limitations-of-extension-methods"></a>Omezení metod rozšíření
 
@@ -45,7 +45,7 @@ Zvažte možnost domácí aplikace automatizace. Pravděpodobně máte mnoho rů
 
 Některé z těchto rozšířených funkcí by mohly být emulované v zařízeních, která podporují minimální sadu. Který označuje, že je zajištěna výchozí implementace. Pro ta zařízení, která mají integrované další možnosti, používá software zařízení nativní možnosti. Pro ostatní světla by mohli zvolit implementaci rozhraní a použití výchozí implementace.
 
-Výchozí členy rozhraní představují lepší řešení pro tento scénář než metody rozšíření. Autoři tříd mohou řídit, která rozhraní budou chtít implementovat. Tato rozhraní, která zvolí, jsou k dispozici jako metody. Kromě toho, protože výchozí metody rozhraní jsou ve výchozím nastavení virtuální, metoda odeslání vždy zvolí implementaci ve třídě. 
+Výchozí členy rozhraní představují lepší řešení pro tento scénář než metody rozšíření. Autoři tříd mohou řídit, která rozhraní budou chtít implementovat. Tato rozhraní, která zvolí, jsou k dispozici jako metody. Kromě toho, protože výchozí metody rozhraní jsou ve výchozím nastavení virtuální, metoda odeslání vždy zvolí implementaci ve třídě.
 
 Pojďme vytvořit kód, abychom předvedli tyto rozdíly.
 
@@ -79,7 +79,7 @@ Jiný typ světla může podporovat propracovanější protokol. Může poskytno
 
 [!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
 
-Na rozdíl od přepisu metod virtuální třídy nepoužívá deklarace `TurnOnFor` ve třídě `HalogenLight` klíčové slovo `override`. 
+Na rozdíl od přepisu metod virtuální třídy nepoužívá deklarace `TurnOnFor` ve třídě `HalogenLight` klíčové slovo `override`.
 
 ## <a name="mix-and-match-capabilities"></a>Možnosti kombinace a shody
 

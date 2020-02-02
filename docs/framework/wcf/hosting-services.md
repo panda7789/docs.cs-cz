@@ -4,14 +4,14 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 7a77f7d11bbd2b685bdcf53a3992b4e04b3691b8
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 9608f9cc55bbba29686440be529659c6606b0eb8
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901229"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921054"
 ---
-# <a name="hosting-services"></a>Hostingové služby
+# <a name="hosting-services"></a>Služby hostování
 
 Aby bylo možné stát aktivní, musí být služba hostována v prostředí runtime, které je vytvoří a řídí její kontext a dobu života. Služba Windows Communication Foundation (WCF) je navržena tak, aby běžela v jakémkoli procesu systému Windows, který podporuje spravovaný kód.
 
@@ -32,9 +32,9 @@ Tato možnost hostování se skládá z registrace domény aplikace (AppDomain),
 
 ### <a name="internet-information-services-iis"></a>Internet Information Services (IIS)
 
-Možnost hostování služby IIS je integrovaná s ASP.NET a používá funkce, které nabízejí tyto technologie, jako je recyklace procesů, nečinné vypnutí, monitorování stavu procesu a aktivace na základě zpráv. V operačních systémech [!INCLUDE[wxp](../../../includes/wxp-md.md)] a Windows Server 2003 je toto upřednostňované řešení pro hostování aplikací webové služby, které musí být vysoce dostupné a vysoce škálovatelné. Služba IIS také nabízí integrovanou spravovatelnost, kterou zákazníci očekávají od produktového serveru podnikové třídy. Tato možnost hostování vyžaduje, aby služba IIS byla správně nakonfigurovaná, ale nevyžaduje, aby se veškerý hostitelský kód napsal jako součást aplikace. Další informace o tom, jak nakonfigurovat hostování služby IIS pro službu WCF, najdete v tématu [How to: Host a WCF Service in IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md).
+Možnost hostování služby IIS je integrovaná s ASP.NET a používá funkce, které nabízejí tyto technologie, jako je recyklace procesů, nečinné vypnutí, monitorování stavu procesu a aktivace na základě zpráv. V operačních systémech Windows XP a Windows Server 2003 je toto preferované řešení pro hostování aplikací webové služby, které musí být vysoce dostupné a vysoce škálovatelné. Služba IIS také nabízí integrovanou spravovatelnost, kterou zákazníci očekávají od produktového serveru podnikové třídy. Tato možnost hostování vyžaduje, aby služba IIS byla správně nakonfigurovaná, ale nevyžaduje, aby se veškerý hostitelský kód napsal jako součást aplikace. Další informace o tom, jak nakonfigurovat hostování služby IIS pro službu WCF, najdete v tématu [How to: Host a WCF Service in IIS](./feature-details/how-to-host-a-wcf-service-in-iis.md).
 
- Služby hostované službou IIS můžou používat jenom přenos HTTP. Jeho implementace ve službě IIS 5,1 zavedla určitá omezení [!INCLUDE[wxp](../../../includes/wxp-md.md)]. Aktivace založená na zprávách poskytovaná službou WCF 5,1 na [!INCLUDE[wxp](../../../includes/wxp-md.md)] blokuje všechny ostatní samoobslužné služby WCF ve stejném počítači, aby komunikovaly pomocí portu 80. Služby WCF lze spustit ve stejné doméně nebo fondu aplikací nebo pracovním procesu jako jiné aplikace, pokud jsou hostovány službou IIS 6,0 v systému Windows Server 2003. Vzhledem k tomu, že WCF a IIS 6,0 obě používají zásobník HTTP v režimu jádra (HTTP. sys), služba IIS 6,0 může sdílet port 80 s ostatními místně hostovanými službami WCF běžícími na stejném počítači, na rozdíl od služby IIS 5,1.
+ Služby hostované službou IIS můžou používat jenom přenos HTTP. Jeho implementace ve službě IIS 5,1 zavedla určitá omezení v systému Windows XP. Aktivace založená na zprávách poskytovaná službou IIS 5,1 v systému Windows XP blokuje všechny ostatní samoobslužné služby WCF ve stejném počítači, aby komunikovaly pomocí portu 80. Služby WCF lze spustit ve stejné doméně nebo fondu aplikací nebo pracovním procesu jako jiné aplikace, pokud jsou hostovány službou IIS 6,0 v systému Windows Server 2003. Vzhledem k tomu, že WCF a IIS 6,0 obě používají zásobník HTTP v režimu jádra (HTTP. sys), služba IIS 6,0 může sdílet port 80 s ostatními místně hostovanými službami WCF běžícími na stejném počítači, na rozdíl od služby IIS 5,1.
 
 ### <a name="windows-process-activation-service-was"></a>Aktivační služba procesů systému Windows (WAS)
 
@@ -57,9 +57,9 @@ Aktivační služba procesů systému Windows (WAS) je nový mechanismus aktivac
 
 |Hostitelské prostředí|Dostupnost platformy|Podporované přenosy|Recyklace procesů a AppDomain|
 |-------------------------|---------------------------|--------------------------|-------------------------------------|
-|Spravované aplikace (místní hostování)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
-|Služby systému Windows (dřív označované jako služby NT)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
-|IIS 5.1|[!INCLUDE[wxp](../../../includes/wxp-md.md)]|HTTP|Ano|
+|Spravované aplikace (místní hostování)|Windows XP, Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
+|Služby systému Windows (dřív označované jako služby NT)|Windows XP, Windows Server 2003, Windows Vista,<br /><br /> Windows Server 2008|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
+|IIS 5.1|Windows XP|HTTP|Ano|
 |Internetová informační služba 6.0|Windows Server 2003|HTTP|Ano|
 |Aktivační služba procesů systému Windows (WAS)|Windows Vista, Windows Server 2008|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ano|
 

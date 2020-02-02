@@ -2,12 +2,12 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 45b710c3b2d1647e1bf7e57b30a96192abb9d788
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7101719f77a03909d9a38dca93100ec90c1add13
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345053"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921378"
 ---
 # <a name="tcptransport"></a>\<tcpTransport>
 Definuje přenos TCP, který může kanál použít k přenosu zpráv pro vlastní vazbu.  
@@ -62,7 +62,7 @@ Definuje přenos TCP, který může kanál použít k přenosu zpráv pro vlastn
 |maxPendingConnections|Získá nebo nastaví maximální počet připojení čekajících na odeslání ve službě.|  
 |maxReceivedMessageSize|Získá a nastaví maximální povolenou velikost zprávy, kterou lze přijmout.|  
 |portSharingEnabled|Logická hodnota, která určuje, zda je pro toto připojení povoleno sdílení portu TCP. Pokud je toto `false`, bude každá vazba používat vlastní výhradní port. Výchozí hodnota je `false`.<br /><br /> Toto nastavení je relevantní pouze pro služby. Klienti nejsou ovlivněni.<br /><br /> Použití tohoto nastavení vyžaduje povolení služby sdílení portů služby Windows Communication Foundation (WCF) TCP změnou typu spuštění na ruční nebo automatické.|  
-|teredoEnabled|Logická hodnota určující, zda je povolena Teredo (technologie pro oslovování klientů, kteří jsou za branami firewall). Výchozí hodnota je `false`.<br /><br /> Tato vlastnost umožňuje technologii Teredo pro základní soket TCP. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Tato vlastnost se vztahuje pouze na [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] a Windows Server 2003. Systém Windows Vista má pro Teredo možnost konfigurace na úrovni počítače, takže při spuštění systému Vista se tato vlastnost ignoruje. Teredo vyžaduje, aby v počítačích klientů a služeb byla nainstalovaná služba Microsoft IPv6 stack a správně nakonfigurovaná pro použití Teredo. Další informace o konfiguraci Teredo najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Další informace najdete v tématu věnovaném [technologickým centrům Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
+|teredoEnabled|Logická hodnota určující, zda je povolena Teredo (technologie pro oslovování klientů, kteří jsou za branami firewall). Výchozí hodnota je `false`.<br /><br /> Tato vlastnost umožňuje technologii Teredo pro základní soket TCP. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Tato vlastnost se vztahuje pouze na systémy Windows XP SP2 a Windows Server 2003. Systém Windows Vista má pro Teredo možnost konfigurace na úrovni počítače, takže při spuštění systému Vista se tato vlastnost ignoruje. Teredo vyžaduje, aby v počítačích klientů a služeb byla nainstalovaná služba Microsoft IPv6 stack a správně nakonfigurovaná pro použití Teredo. Další informace o konfiguraci Teredo najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Další informace najdete v tématu věnovaném [technologickým centrům Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
 |transferMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se zprávy ukládají do vyrovnávací paměti nebo streamují s přenosem orientovaným na připojení.|  
 |connectionPoolSettings|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   

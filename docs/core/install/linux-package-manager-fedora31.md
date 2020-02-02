@@ -4,12 +4,12 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 12/17/2019
-ms.openlocfilehash: 25c670694ed2d9e89fe37cedf0b06efd8bc93293
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 28bda3676f99037e565080e1ff3f9d89a67d0d69
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116964"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920785"
 ---
 # <a name="fedora-31-package-manager---install-net-core"></a>Správce balíčků Fedora 31 – instalace .NET Core
 
@@ -17,7 +17,7 @@ ms.locfileid: "76116964"
 
 Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na Fedora 31. Pokud instalujete modul runtime, doporučujeme nainstalovat modul [runtime ASP.NET Core](#install-the-aspnet-core-runtime), protože zahrnuje modul runtime .NET Core i ASP.NET Core.
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
+## <a name="register-microsoft-key-and-feed"></a>Registrace klíče a kanálu Microsoft
 
 Před instalací .NET budete potřebovat:
 
@@ -25,7 +25,7 @@ Před instalací .NET budete potřebovat:
 - Zaregistrujte úložiště produktu.
 - Nainstalujte požadované závislosti.
 
-Stačí to provést jednou na jednom počítači.
+Tento postup je třeba provést pouze jednou pro každý počítač.
 
 Otevřete terminál a spusťte následující příkazy.
 
@@ -61,3 +61,11 @@ sudo dnf install dotnet-runtime-3.1
 ## <a name="how-to-install-other-versions"></a>Jak nainstalovat další verze
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
+## <a name="troubleshoot-the-package-manager"></a>Řešení potíží se správcem balíčků
+
+V této části najdete informace o běžných chybách, ke kterým může dojít při použití Správce balíčků k instalaci .NET Core.
+
+### <a name="failed-to-fetch"></a>Nepovedlo se načíst
+
+[!INCLUDE [package-manager-failed-to-fetch-rpm](includes/package-manager-failed-to-fetch-rpm.md)]

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: 12568b2bb86257ed7075f2dc83b8077714a1318e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7bfef2c3fa5d0d3c6dafad5a6015eb9f5ca2b5c6
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347041"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921322"
 ---
 # <a name="getting-started-sample"></a>Ukázky Začínáme
 
@@ -34,7 +34,7 @@ Služba popisuje operace, které provádí v kontraktu služby, který zveřejň
 
 Klient obsahuje definici kontraktu služby a proxy třídy pro přístup ke službě. Proxy kód se generuje z metadat služby pomocí nástroje pro nástroj pro [metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).
 
-V systému Windows Vista je služba hostována v aktivační službě systému Windows (WAS). V [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a Windows serveru 2003 je hostovaný pomocí Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
+V systému Windows Vista je služba hostována v aktivační službě systému Windows (WAS). V systému Windows XP a Windows Server 2003 je hostovaný pomocí Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
 
 > [!NOTE]
 > Pokud byste chtěli začít s ukázkou, která hostuje službu v konzolové aplikaci namísto služby IIS, přečtěte si ukázku pro [sebe v samostatném hostiteli](../../../../docs/framework/wcf/samples/self-host.md) .

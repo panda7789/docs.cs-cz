@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 2482709abfadad0505a40f4c37fd58cee4a2634c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 026421d7b1b2a0e39118ae712780ca7fc8f6e444
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978205"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921258"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: odhadování poptávky po nájemce kol s využitím analýzy časových řad a ML.NET
 
@@ -29,7 +29,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+- [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 
 ## <a name="time-series-forecasting-sample-overview"></a>Ukázka prognózy časových řad – přehled
 
@@ -43,7 +43,7 @@ Technika analýzy dat používaných v tomto kurzu je univariate analýza časov
 
 Algoritmus použitý v tomto kurzu je [Analýza s jedním spektrem (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). SSA funguje tak, že rozdělí časovou řadu do sady základních komponent. Tyto komponenty lze interpretovat jako části signálu, který odpovídá trendům, hluku, sezónnost a mnoha dalším faktorům. Poté jsou tyto komponenty znovu sestaveny a použity k předpovědi hodnot v budoucnu.
 
-## <a name="create-console-application"></a>Vytvořit konzolovou aplikaci
+## <a name="create-console-application"></a>Vytvoření konzolové aplikace
 
 1. Vytvořte novou  **C# konzolovou aplikaci .NET Core** nazvanou "BikeDemandForecasting".
 1. Balíček NuGet pro instalaci **Microsoft.ml** verze **1.4.0**
@@ -82,9 +82,9 @@ Následuje ukázka dat:
 
 | RentalDate | Rok | TotalRentals |
 | --- | --- | --- |
-|1/1/2011|0,8|985|
-|1/2/2011|0,8|801|
-|1/3/2011|0,8|1349|
+|1/1/2011|0|985|
+|1/2/2011|0|801|
+|1/3/2011|0|1349|
 
 ### <a name="create-input-and-output-classes"></a>Vytvoření vstupní a výstupní třídy
 
@@ -122,7 +122,7 @@ Následuje ukázka dat:
 
     [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L21)]
 
-    Třída [`MLContext`](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializace mlContext vytvoří nové prostředí ml.NET, které se dá sdílet napříč objekty pracovního postupu pro vytváření modelů. Je podobné, koncepčně, `DBContext` v Entity Framework.
+    Třída [`MLContext`](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializace mlContext vytvoří nové prostředí ml.NET, které se dá sdílet napříč objekty pracovního postupu pro vytváření modelů. Je podobný a koncepčně `DBContext` v Entity Framework.
 
 ## <a name="load-the-data"></a>Načtení dat
 

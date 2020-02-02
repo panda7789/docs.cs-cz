@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 6116b2322ed2071b78bcd77de7c38ad07c327aa6
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 23dc0f691c8a8d80a0bd2a5d301ace0d129007af
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740835"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920895"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -28,7 +28,7 @@ Informace o použití sady Visual Studio pro vývoj aplikací .NET Core najdete 
 
 ## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
 
-Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestavování, testování a publikování aplikace. Jednoduchý příklad napsaný v C# tomto příkladu znázorňuje proces.  
+Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestavování, testování a publikování aplikace. Jednoduchý příklad napsaný v C# tomto příkladu znázorňuje proces.
 
 1. Vytvořte projekt.
 
@@ -189,7 +189,7 @@ Pro každou platformu, na kterou vaše aplikace cílí, udělejte toto:
    Pokud jste už profil vytvořili, klikněte pravým tlačítkem na projekt a otevřete dialog **publikovat** , pokud už není otevřený. Pak vyberte **Nový profil**.
 
    Otevře se dialogové okno **vybrat cíl publikování** .
-  
+
 1. Vyberte umístění, kde aplikace Visual Studio publikuje vaši aplikaci.
 
    Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se publikuje nasazení aplikace závislé na rozhraní do adresáře *\<projekt-adresář > \bin\Release\netcoreapp2.1\publish* .
@@ -244,7 +244,7 @@ Kromě toho Visual Studio vytvoří samostatný profil publikování (\*. pubxml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-https://go.microsoft.com/fwlink/?LinkID=208121. 
+https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>

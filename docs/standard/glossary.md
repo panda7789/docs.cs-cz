@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 9bca68753a93721e48d1ff90aa7baf3a147da0ee
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 822d6c9513d49dcc6bc57421003441d9bcc7c281
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708201"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921114"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -100,7 +100,7 @@ Systém uvolňování paměti je implementace automatické správy paměti.  GC 
 
 Viz [shromažďování paměti](garbage-collection/index.md).
 
-## <a name="il"></a>IL
+## <a name="il"></a>KÓDU
 
 Převodní jazyk.
 
@@ -167,7 +167,7 @@ Viz [.NET Core](../core/index.md).
 
 Sada nástrojů pro více platforem pro vývoj aplikací .NET Core.
 
-Viz [nástroje rozhraní příkazového řádku (CLI) .NET Core](../core/tools/index.md).
+Viz [.NET Core CLI](../core/tools/index.md).
 
 ## <a name="net-core-sdk"></a>.NET Core SDK
 

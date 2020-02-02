@@ -2,12 +2,12 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 82dd85e340a4cb520f781d977b0798b0f532a088
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: dc73b7b2482d25872be922e68103fb86067146f7
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340439"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920564"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -45,7 +45,7 @@ Příkaz `dotnet restore` používá NuGet pro obnovení závislostí a také n�
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* . Výchozí konfigurační soubor se poskytne při instalaci nástrojů rozhraní příkazového řádku. Další kanály určíte tak, že vytvoříte vlastní soubor *NuGet. config* v adresáři projektu. Informační kanály *NuGet. config* můžete přepsat pomocí možnosti `-s`.
+Pro obnovení závislostí potřebuje NuGet informační kanály, ve kterých se balíčky nacházejí. Informační kanály jsou obvykle poskytovány prostřednictvím konfiguračního souboru *NuGet. config* . Výchozí konfigurační soubor se poskytne při instalaci .NET Core SDK. Další kanály určíte tak, že vytvoříte vlastní soubor *NuGet. config* v adresáři projektu. Informační kanály *NuGet. config* můžete přepsat pomocí možnosti `-s`.
 
 U závislostí určíte, kde se obnovené balíčky umístí během operace obnovení pomocí argumentu `--packages`. Pokud není zadaný, použije se výchozí mezipaměť balíčků NuGet, která se nachází v adresáři `.nuget/packages` v domovském adresáři uživatele ve všech operačních systémech. Například */Home/user1* v systému Linux nebo *C:\Users\user1* ve Windows.
 

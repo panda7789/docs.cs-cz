@@ -2,12 +2,12 @@
 title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 9b6c7ecf112309b6c10414bfe506559e153911c2
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 0bcd08f9a3450c850ead941df6313526d076df2d
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900717"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921349"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction
 
@@ -15,11 +15,11 @@ Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction se používá ke 
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo Windows Server 2003, modul snap-in konzoly MMC můžete najít tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent/** , kliknete pravým tlačítkem na položku **Tento počítač**a vyberete **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat MSDTC. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .
+Pokud používáte systém Windows XP nebo Windows Server 2003, modul snap-in konzoly MMC lze najít tak, že přejdete do **části Ovládací panely/nástroje pro správu/služby komponent/** , kliknete pravým tlačítkem na položku **Tento počítač**a vyberete možnost **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat MSDTC. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .
 
  Pokud používáte systém Windows Vista nebo Windows Server 2008, modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .
 
- Pomocí předchozích kroků můžete spustit modul snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, měli byste najít název vzdáleného počítače v **Ovládacích panelech/nástrojích pro správu/služby komponent/** a provést podobný postup, pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo Windows Server 2003. Pokud používáte systém Windows Vista nebo Windows Server 2008, postupujte podle předchozích kroků pro Vista a Windows Server 2008, ale použijte uzel **DTC (Distributed Transaction Coordinator\Local DTC** ) pod uzlem vzdáleného počítače.
+ Pomocí předchozích kroků můžete spustit modul snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, měli byste najít název vzdáleného počítače v **Ovládacích panelech/nástrojích pro správu/služby komponent/** a provést podobný postup, pokud používáte systém Windows XP nebo windows Server 2003. Pokud používáte systém Windows Vista nebo Windows Server 2008, postupujte podle předchozích kroků pro Vista a Windows Server 2008, ale použijte uzel **DTC (Distributed Transaction Coordinator\Local DTC** ) pod uzlem vzdáleného počítače.
 
  Chcete-li použít uživatelské rozhraní poskytované nástrojem, je nutné zaregistrovat soubor WsatUI. dll, který je umístěn v následující cestě.
 

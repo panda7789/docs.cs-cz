@@ -3,12 +3,12 @@ title: Úvod do Docker
 description: Tento článek poskytuje úvodní informace a přehled pro Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc
-ms.openlocfilehash: 278c921de83282d61b25f4d44e91535981285e83
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 40c8a3c8d81d23c621ccb83a283f49aa34a58ac1
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715550"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920825"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -18,7 +18,7 @@ Další informace o tom, jak nainstalovat Docker, najdete na stránce pro staže
 
 ## <a name="docker-basics"></a>Základy Docker
 
-Existuje několik konceptů, které byste měli znát. Klient Docker má program rozhraní příkazového řádku, který používáte ke správě imagí a kontejnerů. Jak už bylo uvedeno výše, měli byste si projít čas, abyste si přečetli dokumentaci k dokumentaci s [přehledem Docker](https://docs.docker.com/engine/docker-overview/) . 
+Existuje několik konceptů, které byste měli znát. Klient Docker má rozhraní příkazového řádku, které můžete použít ke správě imagí a kontejnerů. Jak už bylo uvedeno výše, měli byste si projít čas, abyste si přečetli dokumentaci k dokumentaci s [přehledem Docker](https://docs.docker.com/engine/docker-overview/) . 
 
 ### <a name="images"></a>Obrázky
 
@@ -30,7 +30,7 @@ Vzhledem k tomu, že kontejnery jsou vytvořeny z imagí, mají image sadu param
 
 Kontejner je instance spustitelný obrázku. Při sestavování image nasadíte svoji aplikaci a závislosti. Potom lze vytvořit instanci více kontejnerů, z nichž každá je izolována od sebe. Každá instance kontejneru má vlastní systém souborů, paměť a síťové rozhraní.
 
-### <a name="registries"></a>Registry
+### <a name="registries"></a>Registr
 
 Registry kontejnerů jsou kolekcí úložišť imagí. Obrázky můžete založit na imagi registru. Kontejnery můžete vytvořit přímo z image v registru. [Vztah mezi kontejnery Docker, obrázky a Registry](../../architecture/microservices/container-docker-introduction/docker-containers-images-registries.md) je důležitý koncept při [navrhování a sestavování kontejnerových aplikací nebo mikroslužeb](../../architecture/microservices/architect-microservice-container-applications/index.md). Tento přístup značně zkracuje dobu mezi vývojem a nasazením.
 
@@ -68,7 +68,7 @@ Spusťte opakované výpočetní úlohy s využitím kontejnerů.
 Namodernizovat aplikace .NET do mikroslužeb pomocí kontejnerů Windows serveru.
 
 - [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)\
-Ukládejte a spravujte image kontejnerů napříč všemi typy nasazení Azure.
+Ukládání a Správa imagí kontejnerů napříč všemi typy nasazení Azure
 
 ## <a name="next-steps"></a>Další kroky
 

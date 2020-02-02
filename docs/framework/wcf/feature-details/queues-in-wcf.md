@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-ms.openlocfilehash: fbe3a546fd431beb5ddf1d71153d38580a19ecc9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 92bd3a6809386764251c4a69c6bc583ed745205d
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348337"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921361"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Fronty ve službě Windows Communication Foundation
 Témata v této části popisují podporu Windows Communication Foundation (WCF) pro fronty. Služba WCF poskytuje podporu pro řazení do fronty tím, že využije služby Řízení front zpráv (dříve označované jako MSMQ) jako přenos a umožňuje následující scénáře:  
@@ -18,7 +18,7 @@ Témata v této části popisují podporu Windows Communication Foundation (WCF)
   
 - Izolace selhání. Aplikace, které odesílají nebo přijímají zprávy do fronty, můžou selhat, aniž by to mělo vliv na sebe. Pokud například přijímající aplikace nebude úspěšná, odesílající aplikace může dál odesílat zprávy do fronty. Po opětovném přihlášení může příjemce zpracovat zprávy z fronty. Při izolaci selhání se zvyšuje celková spolehlivost a dostupnost systému.  
   
-- Vyrovnávání zátěže. Posílání aplikací může obdržet nenáročný příjem aplikací se zprávami. Fronty mohou spravovat neshodné provozní nároky a sazby za spotřebu, takže příjemce není zahlcený.  
+- Vyrovnávání zatížení. Posílání aplikací může obdržet nenáročný příjem aplikací se zprávami. Fronty mohou spravovat neshodné provozní nároky a sazby za spotřebu, takže příjemce není zahlcený.  
   
 - Odpojené operace. Operace odesílání, přijímání a zpracování se můžou odpojit při komunikaci v sítích s vysokou latencí nebo v sítích s omezeným dostupností, jako třeba v případě mobilních zařízení. Fronty umožňují, aby tyto operace pokračovaly i po odpojení koncových bodů. Když se připojení znovu naváže, zařadí se zprávy do přijímající aplikace.  
   
@@ -50,7 +50,7 @@ Témata v této části popisují podporu Windows Communication Foundation (WCF)
  Vysvětluje, jak zpracovávat poškozené zprávy (zprávy, které překročily maximální počet pokusů o doručení do přijímající aplikace).  
   
  [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
- Shrnuje rozdíly ve funkci fronty WCF mezi systémy Windows Vista, Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+ Shrnuje rozdíly ve funkci fronty WCF mezi systémy Windows Vista, Windows Server 2003 a Windows XP.  
   
  [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  Popisuje, jak používat zabezpečení přenosu k zabezpečení zpráv ve frontě.  

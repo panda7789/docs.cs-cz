@@ -2,12 +2,12 @@
 title: Migrace z DNX na .NET Core CLI
 description: Migrujte z použití nástrojů DNX k .NET Core CLI nástrojů.
 ms.date: 06/20/2016
-ms.openlocfilehash: 91a43ffda31b34332d2e545a90c857221aa162c4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e15e7ce10bb7a36deb2acd2abb9a0bd4ec8cd4a9
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715525"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920628"
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX na .NET Core CLI (Project. JSON)
 
@@ -30,9 +30,9 @@ Existují některé obecné změny v nástrojích, které by měly být nejprve 
 ### <a name="no-more-dnvm"></a>Žádné další DNVM
 DNVM, short pro *dotnet Version Manager* , byl skript bash/PowerShellu, který se používá k instalaci DNX na vašem počítači. Pomohl uživatelům získat DNX, které potřebují z informačního kanálu, které zadal (nebo ve výchozím nastavení), a označit konkrétní DNX "aktivní", která by byla vložena do $PATH pro danou relaci. To vám umožní používat různé nástroje.
 
-DNVM byla přerušena, protože její sada funkcí byla redundantní pomocí změn přicházejících v nástrojích .NET Core CLI.
+DNVM byla přerušena, protože její sada funkcí byla redundantní, protože změny přicházejí v .NET Core CLI.
 
-Nástroje rozhraní příkazového řádku jsou dodávány dvěma hlavními způsoby:
+CLI se vloží do balíčku dvěma hlavními způsoby:
 
 1. Nativní instalační programy pro danou platformu
 2. Nainstalovat skript pro jiné situace (například servery CI)
@@ -69,7 +69,7 @@ DNU byl dodán s konceptem s názvem "globální příkazy". V podstatě byly ko
 Rozhraní příkazového řádku nepodporuje tento koncept. Nicméně podporuje koncept přidávání příkazů pro projekt, které lze vyvolat pomocí známé `dotnet <command>` syntaxe.
 
 ### <a name="installing-dependencies"></a>Instalace závislostí
-Od verze V1 nástroje pro .NET Core CLI nemají `install` příkaz pro instalaci závislostí. Aby bylo možné nainstalovat balíček z nástroje NuGet, je nutné jej přidat jako závislost do souboru `project.json` a potom spustit `dotnet restore` ([Viz poznámku](#dotnet-restore-note)).
+Od verze V1 nemá .NET Core CLI k dispozici `install` příkaz pro instalaci závislostí. Aby bylo možné nainstalovat balíček z nástroje NuGet, je nutné jej přidat jako závislost do souboru `project.json` a potom spustit `dotnet restore` ([Viz poznámku](#dotnet-restore-note)).
 
 ### <a name="running-your-code"></a>Spuštění kódu
 Existují dva hlavní způsoby, jak kód spustit. Jedna je ze zdroje, s `dotnet run`. Na rozdíl od `dnx run`to neprovede žádnou kompilaci v paměti. Ve skutečnosti vyvolá `dotnet build` sestavení kódu a potom spustí sestavený binární soubor.
@@ -84,7 +84,7 @@ Kromě použití nových příkazů při práci s vaším kódem jsou v migraci 
 3. Migrace všech DNX rozhraní API na své BCL protějšky.
 
 ### <a name="changing-the-globaljson-file"></a>Změna souboru Global. JSON
-Soubor `global.json` funguje jako soubor řešení pro projekty RC1 a RC2 (nebo novější). Aby nástroje CLI (stejně jako Visual Studio) rozlišily mezi verzí RC1 a novějšími, používají vlastnost `"sdk": { "version" }` k tomu, aby byl rozlišený, který projekt je RC1 nebo novější. Pokud `global.json` nemá tento uzel vůbec, předpokládá se to jako poslední.
+Soubor `global.json` funguje jako soubor řešení pro projekty RC1 a RC2 (nebo novější). Aby se .NET Core CLI (stejně jako aplikace Visual Studio) rozlišila mezi RC1 a novějšími verzemi, používají vlastnost `"sdk": { "version" }` k tomu, aby byl rozlišený, který projekt je RC1 nebo novější. Pokud `global.json` nemá tento uzel vůbec, předpokládá se to jako poslední.
 
 Chcete-li aktualizovat soubor `global.json`, buď odeberte vlastnost nebo ji nastavte na přesnou verzi nástrojů, které chcete použít, v tomto případě **1.0.0-preview2-003121**:
 

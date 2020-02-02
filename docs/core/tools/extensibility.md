@@ -1,21 +1,21 @@
 ---
 title: Model rozšiřitelnosti .NET Core CLI
-description: Přečtěte si, jak můžete nástroje rozhraní příkazového řádku (CLI) zvětšit.
+description: Přečtěte si, jak můžete .NET Core CLI rozšiřuje.
 ms.date: 04/12/2017
-ms.openlocfilehash: 4f49735fa94b2a7ee32e0d80590f9e680edeff16
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 74da895fb3a3f6c77640a2b9a64acdb2894a954b
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714183"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920518"
 ---
-# <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů pro .NET Core CLI
+# <a name="net-core-cli-extensibility-model"></a>Model rozšiřitelnosti .NET Core CLI
 
-Tento dokument popisuje různé způsoby, jak můžete roztáhnout nástroje rozhraní příkazového řádku (CLI) .NET Core a vysvětlit scénáře, které každý z nich zabírají.
+Tento článek popisuje různé způsoby, jak .NET Core CLI můžete roztáhnout a vysvětlit scénáře, které jednotlivé jednotky na nich zabírají.
 Uvidíte, jak tyto nástroje používat a jak vytvořit různé typy nástrojů.
 
-## <a name="how-to-extend-cli-tools"></a>Postup rozšiřování nástrojů rozhraní příkazového řádku
-Nástroje rozhraní příkazového řádku lze rozšířit třemi hlavními způsoby:
+## <a name="how-to-extend-the-cli"></a>Postup rozšiřování rozhraní příkazového řádku
+Rozhraní příkazového řádku lze rozšířit třemi hlavními způsoby:
 
 1. [Přes balíčky NuGet na jednotlivých projektech](#per-project-based-extensibility)
 
@@ -79,7 +79,7 @@ Můžete také zobrazit [implementaci nástrojů používaných](https://github.
 
 ## <a name="custom-targets"></a>Vlastní cíle
 
-Balíčky NuGet mají možnost [zabalit vlastní cíle a soubory props nástroje MSBuild](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Když přesunete .NET Core CLI nástrojů pro použití nástroje MSBuild, stejný mechanismus rozšíření teď platí pro projekty .NET Core. Tento typ rozšiřitelnosti byste měli použít, pokud chcete rozšíření procesu sestavení, nebo když chcete získat přístup k jakémukoli artefaktům v procesu sestavení, jako jsou například generované soubory nebo chcete zkontrolovat konfiguraci, pod kterou je vyvoláno sestavení. a tak dále.
+Balíčky NuGet mají možnost [zabalit vlastní cíle a soubory props nástroje MSBuild](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Když přesunete .NET Core pro použití nástroje MSBuild, stejný mechanismus rozšíření teď platí pro projekty .NET Core. Tento typ rozšiřitelnosti byste měli použít, pokud chcete rozšíření procesu sestavení, nebo když chcete získat přístup k jakémukoli artefaktům v procesu sestavení, jako jsou například generované soubory nebo chcete zkontrolovat konfiguraci, pod kterou je vyvoláno sestavení. a tak dále.
 
 V následujícím příkladu se můžete podívat na soubor projektu cíle pomocí syntaxe `csproj`. Tím se dá pokyn [`dotnet pack`](dotnet-pack.md) příkazu, který se má zabalit, umístit soubory cílů i sestavení do složky *sestavení* uvnitř balíčku. Všimněte si `<ItemGroup>` elementu, který má vlastnost `Label` nastavenou na `dotnet pack instructions`a cíl definovaný pod ním.
 

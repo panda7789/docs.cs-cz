@@ -2,16 +2,16 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: a963b46d22f2103cddcc8fd080feefc39070690c
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: b643e6df8a877860ce36fc6ee34c4e4ca08ec748
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901264"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921162"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 
-Z různých důvodů nepodporuje Windows Communication Foundation (WCF) některé konkrétní scénáře zabezpečení. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním systému Windows na této platformě. Další mechanismy ověřování, jako je uživatelské jméno/heslo a integrované ověřování HTTP/HTTPS, se podporují při použití WCF v systému Windows XP Home Edition.
+Z různých důvodů nepodporuje Windows Communication Foundation (WCF) některé konkrétní scénáře zabezpečení. Například Windows XP Home Edition neimplementuje ověřovací protokoly SSPI nebo Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním systému Windows na této platformě. Další mechanismy ověřování, jako je uživatelské jméno/heslo a integrované ověřování HTTP/HTTPS, se podporují při použití WCF v systému Windows XP Home Edition.
 
 ## <a name="impersonation-scenarios"></a>Scénáře zosobnění
 
@@ -22,7 +22,7 @@ Z různých důvodů nepodporuje Windows Communication Foundation (WCF) někter�
 
 WCF nepodporuje zosobnění a <xref:System.InvalidOperationException> je vyvolána, pokud existují následující podmínky:
 
-- Operační systém je [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+- Operační systém je Windows XP.
 
 - Režim ověřování má za následek identitu Windows.
 
@@ -35,7 +35,7 @@ WCF nepodporuje zosobnění a <xref:System.InvalidOperationException> je vyvolá
  Alternativně je v konfiguraci povolen token vytvořením <`customBinding`> a poté přidáním <`security`> elementu a nastavením atributu `authenticationMode` na hodnotu SecureConversation a `requireSecurityContextCancellation` atribut `true`.
 
 > [!NOTE]
-> Předchozí požadavky jsou specifické. Například <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> vytvoří prvek vazby, který má za následek identitu Windows, ale nevytvoří SCT. Proto ji můžete použít s možností `Required` v [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+> Předchozí požadavky jsou specifické. Například <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> vytvoří prvek vazby, který má za následek identitu Windows, ale nevytvoří SCT. Proto ji můžete použít s možností `Required` v systému Windows XP.
 
 ### <a name="possible-aspnet-conflict"></a>Možný konflikt ASP.NET
 

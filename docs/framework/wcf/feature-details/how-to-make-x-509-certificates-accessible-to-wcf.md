@@ -9,12 +9,12 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: 7f24966f06730e62ea7a8967c3930f05ca78f50e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 71dbf395f43c8028a703a342c032f2b8d022a61c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347085"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921298"
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Postupy: Zpřístupnění certifikátů X.509 pro WCF
 Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), kód aplikace musí určovat název a umístění úložiště certifikátů. V určitých případech musí mít identita procesu přístup k souboru, který obsahuje privátní klíč přidružený k certifikátu X. 509. K získání privátního klíče přidruženého k certifikátu X. 509 v úložišti certifikátů musí mít WCF oprávnění k tomu. Ve výchozím nastavení má přístup k privátnímu klíči certifikátu pouze vlastník a systémový účet.  
@@ -60,7 +60,7 @@ Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), 
         |Klient (aplikace konzoly nebo WinForms).|Aktuálně přihlášený uživatel.|  
         |Služba, která je samostatně hostována.|Aktuálně přihlášený uživatel.|  
         |Služba, která je hostována ve službě IIS 6,0 (Windows Server 2003) nebo IIS 7,0 (Windows Vista).|SÍŤOVÁ SLUŽBA|  
-        |Služba, která je hostována ve službě IIS 5. X ([!INCLUDE[wxp](../../../../includes/wxp-md.md)]).|Ovládáno `<processModel>` prvkem v souboru Machine. config. Výchozí účet je ASPNET.|  
+        |Služba, která je hostována ve službě IIS 5. X (Windows XP).|Ovládáno `<processModel>` prvkem v souboru Machine. config. Výchozí účet je ASPNET.|  
   
     5. Udělte oprávnění ke čtení souboru, který obsahuje privátní klíč, k účtu, pod kterým běží WCF, pomocí nástroje, jako je Icacls. exe.  
   

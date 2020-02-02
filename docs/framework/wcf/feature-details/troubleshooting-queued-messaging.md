@@ -2,12 +2,12 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 3d2d48076fafe44687546ca27e4d8670b81ce433
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 5c039c34983647884561f33645f26e4a89280248
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742679"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921272"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 
@@ -25,7 +25,7 @@ Tato část obsahuje nejčastější dotazy a pomoc při odstraňování potíž
 
 **Otázka:** Je potřeba upgradovat službu MSMQ, aby používala vazby <xref:System.ServiceModel.NetMsmqBinding> a `MsmqIntegration`?
 
-**Odpověď:** Ne. Obě vazby fungují s MSMQ 3,0 na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a ve Windows serveru 2003. Při upgradu na službu MSMQ 4,0 v systému Windows Vista budou některé funkce vazeb dostupné.
+**Odpověď:** Ne. Obě vazby fungují s MSMQ 3,0 v systémech Windows XP a Windows Server 2003. Při upgradu na službu MSMQ 4,0 v systému Windows Vista budou některé funkce vazeb dostupné.
 
 **Otázka:** Jaké funkce <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> vazby jsou k dispozici ve službě MSMQ 4,0, ale ne v MSMQ 3,0?
 

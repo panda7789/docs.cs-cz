@@ -4,14 +4,14 @@ description: V tomto článku se naučíte, jak povolit dokončování karet pro
 author: thraka
 ms.author: adegeo
 ms.date: 11/03/2019
-ms.openlocfilehash: 8c5d6a254db5ba21417ba45122ed0d7cb093c7c3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 649b723c2abfa74443a16914594284a77e0eafc0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739310"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920538"
 ---
-# <a name="how-to-enable-tab-completion-for-net-core-cli"></a>Jak povolit dokončování karet pro .NET Core CLI
+# <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Jak povolit dokončování karet pro .NET Core CLI
 
 Počínaje rozhraním .NET Core 2,0 SDK .NET Core CLI podporuje dokončování karet. Tento článek popisuje, jak nakonfigurovat dokončování karet pro tři prostředí, PowerShell, bash a zsh. Další prostředí můžou podporovat automatické dokončování. Informace o tom, jak nakonfigurovat automatické dokončování, najdete v dokumentaci, jak postupovat podle kroků popsaných v tomto článku.
 

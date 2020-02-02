@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: b75dd523d4c88eae70f8d21ac8b3c9f72ae055ed
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1d7b5f6cb5922bde4b002611209ea3464f8e457c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744783"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921173"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 
@@ -63,7 +63,7 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
     > [!NOTE]
     > Pokud tento krok není dokončený, všechny ukázky hostované službou IIS při sestavování nebudou úspěšné. Ujistěte se, že jste správně nastavili oprávnění, nebo spusťte příkazový řádek sady SDK a příkazový řádek sady Visual Studio (2012) jako správce.
 
-11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. U systémů Windows 7, Windows Vista a Windows Server 2008 R2 je tento účet **síťovou službou**. Pro Windows Server 2008 je tento účet NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a Windows Server 2003 je účet ASPNET.
+11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. U systémů Windows 7, Windows Vista a Windows Server 2008 R2 je tento účet **síťovou službou**. Pro Windows Server 2008 je tento účet NT Authority\Network Service. Pro systémy Windows XP a Windows Server 2003 je účet ASPNET.
 
 12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve složce \<InstallPath > \ WF_WCF_Samples \WCF\Setup\.  Tento skript provede následující úlohy:
 

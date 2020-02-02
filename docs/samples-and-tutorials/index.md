@@ -4,12 +4,12 @@ description: Informace o ukázkách a kurzech pro .NET Core, ASP.NET Core a C# j
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: e64d0fdd02b28a1c9f21f06305f5ef278fb2827b
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 9a161d5325125fba8d4f4e53a0a306c989ed6bc5
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901040"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921394"
 ---
 # <a name="net-samples-and-tutorials"></a>Ukázky a kurzy .NET
 
@@ -25,13 +25,13 @@ V této příručce se dozvíte, jak vytvořit webovou aplikaci ASP.NET Core a s
 
 ### <a name="tutorials"></a>Kurzy
 
-**[Psaní konzolových aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku: podrobný průvodce](../core/tutorials/cli-create-console-app.md)**
+**[Psaní konzolových aplikací .NET Core pomocí .NET Core CLI: podrobný průvodce](../core/tutorials/cli-create-console-app.md)**
 
 V této příručce se dozvíte, jak používat nástroje .NET Core CLI k vytváření konzolových aplikací pro různé platformy. Začíná základní konzolovou aplikací a nakonec zahrnuje více projektů, včetně testování. Pomocí těchto funkcí můžete postupně sestavovat své znalosti. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/core/console-apps) je k dispozici v úložišti dotnet/Samples na GitHubu.
 
 **[Psaní knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)**
 
-Tato ukázka popisuje, jak psát knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku pro různé platformy. Tyto nástroje poskytují efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library) je k dispozici v úložišti dotnet/Samples na GitHubu.
+Tato ukázka popisuje, jak psát knihovny pro .NET pomocí .NET Core CLI. Tyto nástroje poskytují efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library) je k dispozici v úložišti dotnet/Samples na GitHubu.
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
@@ -111,7 +111,7 @@ Mnoho témat zobrazuje zdrojový kód a ukázky, které jsou k dispozici pro zob
    * Naklonujte úložiště místně. Pokud naklonujte úložiště docs přímo do místního systému, nebudete moci provádět potvrzení přímo proti oficiálnímu úložišti, takže nebudete moci získat příspěvek k dokumentaci později. Použijte postup rozvětvení a klonování, který byl dříve popsán, pokud chcete zachovat příležitost přispět k dokumentaci později.
 1. Přejděte do složek úložiště do umístění ukázky. Relativní cesta k umístění ukázky se zobrazí v adresním řádku prohlížeče, když přejdete na odkaz na ukázku.
 1. Chcete-li spustit ukázku, máte několik možností:
-   * Použijte příkaz [DOTNET CLI Tools](../core/tools/index.md): v okně konzoly přejděte do složky ukázky a použijte příkazy dotnet CLI.
+   * Použijte [.NET Core CLI](../core/tools/index.md): v okně konzoly přejděte do složky ukázky a použijte příkazy dotnet CLI.
    * Použijte [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) nebo [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link): Otevřete ukázku tak, že vyberete **soubor > otevřít > projekt/řešení** z řádku nabídek, přejdete do ukázkové složky projektu a vyberete soubor projektu ( *. csproj* nebo *. fsproj*).
    * Použít [Visual Studio Code](https://code.visualstudio.com/): Otevřete ukázku tak, že v řádku nabídek vyberete **soubor > otevřít složku** a vyberete složku projektu ukázky.
    * Použijte jiné integrované vývojové prostředí (IDE), které podporuje projekty .NET Core.

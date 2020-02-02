@@ -3,20 +3,18 @@ title: Vytvoření klienta REST pomocí .NET Core
 description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 1b85a03919ea057cda4526ac1c873bf058c9a825
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: eb7946d669de60c3469ca8098e40b159082ea270
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867357"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921092"
 ---
 # <a name="rest-client"></a>Klient REST
 
-## <a name="introduction"></a>Úvod
-
 V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce. Naučíte se:
 
-* Základní informace o rozhraní příkazového řádku (CLI) .NET Core
+* Základy .NET Core CLI.
 * Přehled funkcí C# jazyka.
 * Správa závislostí pomocí NuGet
 * Komunikace HTTP

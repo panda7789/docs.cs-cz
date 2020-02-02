@@ -2,12 +2,12 @@
 title: Nasazení aplikace .NET Core
 description: Přečtěte si o způsobech nasazení aplikace .NET Core.
 ms.date: 12/03/2018
-ms.openlocfilehash: 41c5285f2a9ddf38e4be7326bd5cba1c58370fe7
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 425f0d5bf11fd0572825d2025005aacf65d7d2cd
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740820"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920880"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET Core
 
@@ -91,11 +91,11 @@ K dispozici je také několik nevýhody:
 
 ## <a name="step-by-step-examples"></a>Podrobné příklady
 
-Podrobné příklady nasazení aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku najdete v tématu [nasazení aplikací .NET Core pomocí nástrojů rozhraní](deploy-with-cli.md)příkazového řádku. Podrobné příklady nasazení aplikací .NET Core pomocí sady Visual Studio najdete v tématu [nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md). 
+Podrobné příklady nasazení aplikací .NET Core pomocí .NET Core CLI najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md). Podrobné příklady nasazení aplikací .NET Core pomocí sady Visual Studio najdete v tématu [nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md). 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nasazení aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku](deploy-with-cli.md)
+- [Publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md)
 - [Nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)
 - [Balíčky, metabalíčky a architektury](../packages.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)

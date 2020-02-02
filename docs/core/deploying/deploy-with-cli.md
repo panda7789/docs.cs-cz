@@ -1,20 +1,20 @@
 ---
-title: Publikování aplikací .NET Core pomocí rozhraní příkazového řádku
-description: Naučte se publikovat aplikaci .NET Core pomocí nástrojů rozhraní příkazového řádku .NET Core SDK (CLI).
+title: Publikování aplikací pomocí .NET Core CLI
+description: Naučte se publikovat aplikaci .NET Core pomocí příkazů .NET Core CLI.
 author: thraka
 ms.author: adegeo
 ms.date: 12/12/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 98f1e96ac087727e711f9ebf3d3eaf86c4d4eec9
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: f4c2a4ccf551c53e4aa4e125cb5720d6f1cc9601
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740852"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920901"
 ---
-# <a name="publish-net-core-apps-with-the-cli"></a>Publikování aplikací .NET Core pomocí rozhraní příkazového řádku
+# <a name="publish-net-core-apps-with-the-net-core-cli"></a>Publikování aplikací .NET Core pomocí .NET Core CLI
 
 Tento článek ukazuje, jak můžete publikovat aplikaci .NET Core z příkazového řádku. .NET Core nabízí tři způsoby, jak publikovat aplikace. Nasazení závislé na rozhraní vytvoří soubor. dll pro více platforem, který používá místně instalovaný modul runtime .NET Core. Spustitelný soubor závislý na rozhraní vytvoří spustitelný soubor specifický pro platformu, který používá místně instalovaný modul runtime .NET Core. Samostatně obsažený spustitelný soubor vytvoří spustitelný soubor specifický pro platformu a obsahuje místní kopii modulu runtime .NET Core.
 
@@ -22,7 +22,7 @@ Přehled těchto režimů publikování najdete v tématu [nasazení aplikace .N
 
 Hledáte nějakou rychlou nápovědu k používání rozhraní příkazového řádku? V následující tabulce jsou uvedeny některé příklady publikování aplikace. Můžete zadat cílovou architekturu s parametrem `-f <TFM>` nebo úpravou souboru projektu. Další informace najdete v tématu [základy publikování](#publishing-basics).
 
-| Režim publikování | Verze SDK | Příkaz |
+| Režim publikování | Verze sady SDK | Příkaz |
 | ------------ | ----------- | ------- |
 | Nasazení závisí na architektuře | 2.x | `dotnet publish -c Release` |
 | Spustitelný soubor závislý na rozhraní | 2.2 | `dotnet publish -c Release -r <RID> --self-contained false` |

@@ -4,12 +4,12 @@ description: Tento článek shrnuje nové funkce a vylepšení, které najdete v
 ms.custom: updateeachrelease
 ms.date: 04/12/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: ebf656c4a5499fff54cb5a70a93c4e8cc9c82d0a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a90df0360211c3b02f4f2d8697890180099c5807
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101755"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921062"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Novinky v rozhraní .NET Standard
 
@@ -63,7 +63,7 @@ Nyní můžete vyvíjet knihovny .NET Standard v Visual Basic. Pro Visual Basic 
 
 ### <a name="tooling-support-for-net-standard-libraries"></a>Podpora nástrojů pro knihovny .NET Standard
 
-S vydáním .NET Core 2,0 a .NET Standard 2,0, Visual Studio 2017 i [rozhraní příkazového řádku .NET Core (CLI)](../../core/tools/index.md) obsahují podporu nástrojů pro vytváření .NET Standardch knihoven.
+S vydáním .NET Core 2,0 a .NET Standard 2,0 aplikace Visual Studio 2017 i [.NET Core CLI](../../core/tools/index.md) zahrnují podporu nástrojů pro vytváření knihoven .NET Standard.
 
 Pokud nainstalujete Visual Studio s úlohou **vývoje .NET Core pro různé platformy** , můžete vytvořit projekt knihovny .NET Standard 2,0 pomocí šablony projektu, jak ukazuje následující obrázek:
 

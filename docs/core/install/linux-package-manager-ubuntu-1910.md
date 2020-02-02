@@ -4,12 +4,12 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 01/16/2020
-ms.openlocfilehash: afba761e2237ed84528157841e538a9b44d9a966
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: b8fec2afa6f03e3dabbf1ff449431759087163ba
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76164082"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920653"
 ---
 # <a name="ubuntu-1910-package-manager---install-net-core"></a>Správce balíčků Ubuntu 19,10 – instalace .NET Core
 
@@ -17,7 +17,7 @@ ms.locfileid: "76164082"
 
 Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na Ubuntu 19,10. Pokud instalujete modul runtime, doporučujeme nainstalovat modul [runtime ASP.NET Core](#install-the-aspnet-core-runtime), protože zahrnuje modul runtime .NET Core i ASP.NET Core.
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
+## <a name="register-microsoft-key-and-feed"></a>Registrace klíče a kanálu Microsoft
 
 Před instalací .NET budete potřebovat:
 
@@ -25,7 +25,7 @@ Před instalací .NET budete potřebovat:
 - Zaregistrujte úložiště produktu.
 - Nainstalujte požadované závislosti.
 
-Stačí to provést jednou na jednom počítači.
+Tento postup je třeba provést pouze jednou pro každý počítač.
 
 Otevřete terminál a spusťte následující příkazy.
 
@@ -82,6 +82,10 @@ sudo apt-get install dotnet-runtime-3.1
 
 ## <a name="troubleshoot-the-package-manager"></a>Řešení potíží se správcem balíčků
 
+V této části najdete informace o běžných chybách, ke kterým může dojít při použití Správce balíčků k instalaci .NET Core.
+
+### <a name="unable-to-locate"></a>Nejde najít.
+
 Pokud se zobrazí chybová zpráva podobná té, že se **nepovedlo najít balíček {Package .NET Core}** , spusťte následující příkazy.
 
 ```bash
@@ -104,3 +108,7 @@ sudo apt-get install -y apt-transport-https
 sudo apt-get update
 sudo apt-get install {the .NET Core package}
 ```
+
+### <a name="failed-to-fetch"></a>Nepovedlo se načíst
+
+[!INCLUDE [package-manager-failed-to-fetch-deb](includes/package-manager-failed-to-fetch-deb.md)]

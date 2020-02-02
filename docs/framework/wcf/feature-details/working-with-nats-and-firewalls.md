@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: b8be10740c8e92d3dac7094f07b3372e8d78a3d9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 28360b8b5b07c7c532dd2406ca98604870b8335f
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743869"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921079"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server síťového připojení často nemají přímou a otevřenou cestu pro komunikaci. Pakety se filtrují, směrují, analyzují a transformují na počítačích koncových bodů a na zprostředkujících počítačích v síti. Překlad síťových adres (NAT) a bran firewall jsou běžné příklady mezilehlých aplikací, které se můžou účastnit síťové komunikace.  
@@ -25,7 +25,7 @@ Klient a server síťového připojení často nemají přímou a otevřenou ces
  Některá zařízení NAT podporují konfiguraci pravidel předávání a umožňují tak externím počítačům připojit se k určitému internímu počítači. Pokyny pro konfiguraci pravidel předávání se liší v různých protokolech NAT a vyžadují, aby koncoví uživatelé změnili konfiguraci překladu adres (NAT) pro většinu aplikací. Mnoho koncových uživatelů buď nemůže, nebo nechce měnit konfiguraci překladu adres (NAT) pro konkrétní aplikaci.  
   
 ## <a name="how-firewalls-affect-communication"></a>Vliv bran firewall na komunikaci  
- *Brána firewall* je softwarové nebo hardwarové zařízení, které používá pravidla pro provoz procházející při rozhodování o tom, jestli se má povolit nebo odepřít pasáž. Můžete nakonfigurovat brány firewall pro kontrolu příchozích a/nebo odchozích datových proudů provozu. Brána firewall poskytuje hranici zabezpečení sítě na hraniční síti nebo hostiteli koncového bodu. Obchodní uživatelé tradičně udržují své servery za bránou firewall, aby nedocházelo k škodlivým útokům. Vzhledem k tomu, že zavedení osobní brány firewall v [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)]se významně zvýšilo i počet domácích uživatelů za bránou firewall. To je pravděpodobně tím, že jeden nebo oba konce připojení mají bránu firewall prověřování paketů.  
+ *Brána firewall* je softwarové nebo hardwarové zařízení, které používá pravidla pro provoz procházející při rozhodování o tom, jestli se má povolit nebo odepřít pasáž. Můžete nakonfigurovat brány firewall pro kontrolu příchozích a/nebo odchozích datových proudů provozu. Brána firewall poskytuje hranici zabezpečení sítě na hraniční síti nebo hostiteli koncového bodu. Obchodní uživatelé tradičně udržují své servery za bránou firewall, aby nedocházelo k škodlivým útokům. Vzhledem k tomu, že zavedení osobní brány firewall v systému Windows XP SP2 se významně zvýšilo i počet domácích uživatelů za bránou firewall. To je pravděpodobně tím, že jeden nebo oba konce připojení mají bránu firewall prověřování paketů.  
   
  Brány firewall se výrazně liší v souvislosti s jejich složitostí a schopností při prověřování paketů. Jednoduché brány firewall používají pravidla založená na zdrojových a cílových adresách a portech v paketech. Inteligentní brány firewall také prozkoumají obsah paketů, aby bylo možné provést rozhodnutí. Tyto brány firewall přicházejí v mnoha různých konfiguracích a často se používají pro specializované aplikace.  
   
@@ -33,7 +33,7 @@ Klient a server síťového připojení často nemají přímou a otevřenou ces
   
 ## <a name="using-teredo"></a>Pomocí Teredo  
 
- Teredo je přechodová technologie IPv6, která umožňuje přímou adresovatelnost počítačů za překladem adres (NAT). Teredo spoléhá na použití serveru, který může být veřejně a globálně směrován pro inzerování potenciálních připojení. Server Teredo uděluje klientovi aplikace a serveru společný bod schůzky, na kterém mohou informace o připojení systému Exchange. Počítače pak vyžádají dočasnou adresu Teredo a pakety se procházejí tunelem přes stávající síť. Podpora Teredo v rámci WCF vyžaduje povolení podpory IPv6 a Teredo v operačním systému. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a novější operační systémy podporují technologii Teredo. Systém Windows Vista a novější operační systémy podporují protokol IPv6 ve výchozím nastavení a vyžadují, aby uživatel povolil technologii Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] a Windows Server 2003 vyžadují, aby uživatel povolil protokol IPv6 i Teredo. Další informace najdete v tématu [Přehled technologie Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10)).  
+ Teredo je přechodová technologie IPv6, která umožňuje přímou adresovatelnost počítačů za překladem adres (NAT). Teredo spoléhá na použití serveru, který může být veřejně a globálně směrován pro inzerování potenciálních připojení. Server Teredo uděluje klientovi aplikace a serveru společný bod schůzky, na kterém mohou informace o připojení systému Exchange. Počítače pak vyžádají dočasnou adresu Teredo a pakety se procházejí tunelem přes stávající síť. Podpora Teredo v rámci WCF vyžaduje povolení podpory IPv6 a Teredo v operačním systému. Systém Windows XP a novější operační systémy podporují technologii Teredo. Systém Windows Vista a novější operační systémy podporují protokol IPv6 ve výchozím nastavení a vyžadují, aby uživatel povolil technologii Teredo. Windows XP SP2 a Windows Server 2003 vyžadují, aby uživatel povolil protokol IPv6 i Teredo. Další informace najdete v tématu [Přehled technologie Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10)).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Výběr modelu přenosu a výměny zpráv  
  Výběr přenosu a MEP je proces se třemi kroky:  

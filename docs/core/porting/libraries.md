@@ -3,12 +3,12 @@ title: Knihovny portů do .NET Core
 description: Naučte se, jak přenést projekty knihovny z .NET Framework do .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 6ff38647f77bbe1d25dd1d0065c4b32c60f87fcd
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.openlocfilehash: 646587120de2e51280c2af4de36bf3a6b0f60c2d
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777351"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920611"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Port .NET Framework knihovny do .NET Core
 
@@ -31,7 +31,7 @@ Tento článek popisuje formální specifikaci rozhraní API .NET, která jsou u
 Tento článek popisuje, jak .NET Core definuje a používá balíčky a jak balíčky podporují kód běžící na více implementacích rozhraní .NET.
 
 [Vývoj knihoven pomocí nástrojů pro různé platformy](../tutorials/libraries.md)\
-Tento článek vysvětluje, jak psát knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku pro různé platformy.
+Tento článek vysvětluje, jak psát knihovny pomocí .NET Core CLI.
 
 [Přidání do formátu *csproj* pro .NET Core](../tools/csproj.md)\
 Tento článek popisuje změny, které byly přidány do souboru projektu v rámci přesunutí do *csproj* a MSBuild.
