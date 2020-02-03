@@ -44,12 +44,16 @@
         - name: Komunikační infrastruktura Service Mesh
           href: service-mesh-communication-infrastructure.md
     - name: Distribuovaná data
-      href: distributed-data.md
+      href: null
       items:
-        - name: Vzorky dat nativní pro cloud
-          href: data-patterns.md
-        - name: Úložiště dat v Azure
-          href: azure-data-storage.md
+        - name: Samostatná databáze pro každou mikroslužbu
+          href: database-per-microservice.md
+        - name: Relační data vs. data NoSQL
+          href: relational-vs-nosql-data.md
+        - name: Ukládání do mezipaměti v nativní cloudové aplikaci
+          href: azure-caching.md
+        - name: Elasticsearch v Azure
+          href: elastic-search-in-azure.md
     - name: Odolnost nativní pro cloud
       href: resiliency.md
       items:
