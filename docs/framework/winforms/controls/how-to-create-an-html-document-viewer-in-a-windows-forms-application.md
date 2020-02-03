@@ -39,7 +39,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.WebBrowser> můžete zobra
   
 - Odkazy na `System` a `System.Windows.Forms` sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.WebBrowser>
 - <xref:System.Windows.Forms.WebBrowser.AllowWebBrowserDrop%2A>

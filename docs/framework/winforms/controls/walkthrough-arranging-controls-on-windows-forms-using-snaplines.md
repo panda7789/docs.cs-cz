@@ -188,7 +188,7 @@ Zarovnávacím čárám nabízí intuitivní způsob zarovnání ovládacích pr
 
 - Vytvoření sloupce <xref:System.Windows.Forms.TextBox> ovládacích prvků a odpovídajícího sloupce <xref:System.Windows.Forms.Label> ovládacích prvků. Nastavte hodnotu vlastnosti <xref:System.Windows.Forms.Control.AutoSize%2A> <xref:System.Windows.Forms.Label> Controls na `true`. Použijte zarovnávacím čárám k přesunutí ovládacích prvků <xref:System.Windows.Forms.Label> tak, aby byl zobrazený text zarovnán s textem v ovládacích prvcích <xref:System.Windows.Forms.TextBox>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Design.Behavior.SnapLine>
 - [Postupy: Uspořádání ovládacích prvků na formuláři Windows Forms s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)

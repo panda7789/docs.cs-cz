@@ -24,7 +24,7 @@ ms.locfileid: "76745111"
 ## <a name="key-properties"></a>Klíčové vlastnosti  
  Položka nabídky se dá určit jako výchozí položka nastavením vlastnosti <xref:System.Windows.Forms.MenuItem.DefaultItem%2A> na `true`. Výchozí položka se při kliknutí na nabídku zobrazí tučným textem. Vlastnost <xref:System.Windows.Forms.MenuItem.Checked%2A> položky nabídky je buď `true` nebo `false`, a označuje, zda je vybrána položka nabídky. Vlastnost <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> položky nabídky přizpůsobí vzhled vybrané položky: je-li <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> nastavena na `true`, zobrazí se vedle položky přepínač. Pokud je <xref:System.Windows.Forms.MenuItem.RadioCheck%2A> nastaveno na `false`, vedle položky se zobrazí označení zaškrtnutí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.MainMenu>
 - <xref:System.Windows.Forms.Menu>

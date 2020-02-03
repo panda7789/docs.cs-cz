@@ -49,7 +49,7 @@ ms.locfileid: "76743382"
 
     2. Vyberte vztah (například Customers. CustOrd) mezi hlavní tabulkou a tabulkami podrobností z rozevíracího seznamu ve vlastnosti <xref:System.Windows.Forms.DataGrid.DataMember%2A>. Chcete-li zobrazit vztah, rozbalte uzel kliknutím na symbol plus ( **+** ) vedle položky hlavní tabulka v rozevíracím seznamu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)

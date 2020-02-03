@@ -89,7 +89,7 @@ Windows Communication Foundation (WCF) je distribuovaná programovací platforma
   
  Třetí režim zabezpečení používá předchozí režimy a přináší výhody obou. Tento režim se nazývá `TransportWithMessageCredential`. V tomto režimu se k ověřování serveru používá zabezpečení zprávy a zabezpečení přenosu se používá k ověření serveru a zajištění důvěrnosti a integrity zpráv. Díky tomu je režim zabezpečení `TransportWithMessageCredential` skoro stejně rychlý jako režim zabezpečení přenosu a poskytuje rozšiřitelné ověřování klientů stejným způsobem jako zabezpečení zpráv. Na rozdíl od režimu zabezpečení zpráv ale neposkytuje kompletní zabezpečení.  
   
-### <a name="access-control"></a>Access Control  
+### <a name="access-control"></a>Řízení přístupu  
  *Řízení přístupu* se také označuje jako autorizace. *Autorizace* umožňuje různým uživatelům mít různá oprávnění k zobrazení dat. Například protože soubory lidských zdrojů společnosti obsahují citlivá data zaměstnanců, smějí zobrazovat data zaměstnanců pouze manažeři. Kromě toho mohou manažeři zobrazit pouze data pro své přímé sestavy. V tomto případě je řízení přístupu založeno jak na roli ("správce"), tak i na konkrétní identitě správce (aby se zabránilo jednomu manažerovi v prohlížení záznamů zaměstnanců jiného manažera).  
   
  Ve službě WCF jsou funkce řízení přístupu poskytovány prostřednictvím integrace s modulem CLR (Common Language Runtime) <xref:System.Security.Permissions.PrincipalPermissionAttribute> a prostřednictvím sady rozhraní API, které se označují jako *model identity*. Podrobnosti o řízení přístupu a autorizaci na základě deklarací najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
@@ -97,7 +97,7 @@ Windows Communication Foundation (WCF) je distribuovaná programovací platforma
 ### <a name="auditing"></a>Auditování  
  *Auditování* je protokolování událostí zabezpečení do protokolu událostí systému Windows. Můžete protokolovat události související se zabezpečením, jako jsou například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Podrobnosti o programování najdete v tématu [Postupy: Auditovat události zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.Permissions.PrincipalPermissionAttribute>
 - [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)

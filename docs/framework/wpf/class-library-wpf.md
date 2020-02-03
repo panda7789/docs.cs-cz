@@ -17,7 +17,7 @@ Následující odkazy odkazují na obory názvů, které obsahují rozhraní API
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
   
 - <xref:Microsoft.Build.Tasks.Windows>  
   

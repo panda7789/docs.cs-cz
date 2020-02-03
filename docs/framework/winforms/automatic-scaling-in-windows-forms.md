@@ -98,7 +98,7 @@ Model Windows Forms teď používá následující logiku k automatickému šká
 
     - Metodu <xref:System.Windows.Forms.Control.ScaleControl%2A> lze přepsat, chcete-li změnit logiku škálování pro aktuální ovládací prvek.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A>
 - <xref:System.Windows.Forms.Control.Scale%2A>

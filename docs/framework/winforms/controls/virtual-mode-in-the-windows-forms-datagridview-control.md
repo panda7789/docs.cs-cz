@@ -62,7 +62,7 @@ Ve virtuálním režimu můžete spravovat interakci mezi ovládacími prvky <xr
 ## <a name="best-practices-in-virtual-mode"></a>Osvědčené postupy ve virtuálním režimu  
  Pokud implementujete virtuální režim, aby bylo možné efektivně pracovat s velkým objemem dat, budete mít také jistotu, že budete efektivně pracovat s <xref:System.Windows.Forms.DataGridView> sám. Další informace o efektivním použití stylů buněk, automatické velikosti, výběrech a sdílení řádků naleznete v tématu [osvědčené postupy pro škálování ovládacího prvku model Windows Forms DataGridView](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>

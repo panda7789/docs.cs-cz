@@ -35,7 +35,7 @@ Při sestavování ovládacích prvků, které komunikují s daty, někdy budete
   
 - Odkazy na sestavení System, System. data, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.DataGridView>

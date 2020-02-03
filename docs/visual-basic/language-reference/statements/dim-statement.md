@@ -93,7 +93,7 @@ Dim [ WithEvents ] variablelist
 
 - `variablelist`
 
-  Požadováno. Seznam proměnných, které jsou deklarovány v tomto příkazu.
+  Povinná hodnota. Seznam proměnných, které jsou deklarovány v tomto příkazu.
 
   `variable [ , variable ... ]`
 
@@ -103,7 +103,7 @@ Dim [ WithEvents ] variablelist
 
   |Částí|Popis|
   |---|---|
-  |`variablename`|Požadováno. Název proměnné Viz [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
+  |`variablename`|Povinná hodnota. Název proměnné Viz [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
   |`boundslist`|Volitelné. Seznam mezí jednotlivých dimenzí proměnné pole|
   |`New`|Volitelné. Vytvoří novou instanci třídy při spuštění příkazu `Dim`.|
   |`datatype`|Volitelné. Datový typ proměnné|
@@ -325,7 +325,7 @@ V následujícím příkladu je proměnná `speedValue` deklarována na úrovni 
 
 [!code-vb[VbVbalrStatements#145](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class11.vb#145)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Příkaz Const](const-statement.md)
 - [Příkaz ReDim](redim-statement.md)

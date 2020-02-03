@@ -176,7 +176,7 @@ V následujícím postupu vytvoříte uživatelské rozhraní s více podokny, k
     createOutlookUI();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.SplitContainer>
 - [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

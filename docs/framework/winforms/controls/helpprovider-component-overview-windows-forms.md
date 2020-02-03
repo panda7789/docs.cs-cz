@@ -1,5 +1,5 @@
 ---
-title: HelpProvider – přehled komponenty
+title: Přehled komponenty HelpProvider
 ms.date: 03/30/2017
 f1_keywords:
 - HelpProvider
@@ -36,6 +36,6 @@ Komponenta model Windows Forms [HelpProvider –](helpprovider-component-windows
 > [!NOTE]
 > Při zadávání cesty k souboru Help v metodě <xref:System.Windows.Forms.Help.ShowHelp%2A> nebo vlastnosti <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> ovládacího prvku <xref:System.Windows.Forms.HelpProvider> můžete narazit na problémy s použitím relativní cesty. V takovém případě nezapomeňte použít absolutní cestu k souboru pro zadání souboru s příponou.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Systémy nápovědy ve formulářových aplikacích Windows](../advanced/help-systems-in-windows-forms-applications.md)

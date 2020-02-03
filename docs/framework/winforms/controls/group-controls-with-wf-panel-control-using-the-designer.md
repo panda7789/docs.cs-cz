@@ -26,7 +26,7 @@ Ovládací prvky <xref:System.Windows.Forms.Panel> model Windows Forms slouží 
 
 3. Volitelné Chcete-li přidat ohraničení panelu, nastavte jeho vlastnost <xref:System.Windows.Forms.BorderStyle>. Existují tři možnosti: <xref:System.Windows.Forms.BorderStyle.Fixed3D>, <xref:System.Windows.Forms.BorderStyle.FixedSingle>a <xref:System.Windows.Forms.BorderStyle.None>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek Panel](panel-control-windows-forms.md)
 - [Přehled ovládacího prvku Panel](panel-control-overview-windows-forms.md)

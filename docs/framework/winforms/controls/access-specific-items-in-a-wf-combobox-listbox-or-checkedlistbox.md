@@ -51,7 +51,7 @@ Základní úloha je přístup k určitým položkám v model Windows Forms pole
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>

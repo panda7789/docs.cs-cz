@@ -17,7 +17,7 @@ ms.locfileid: "76734122"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet pack` – zabalí kód do balíčku NuGet.
 
@@ -55,7 +55,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT | SOLUTION`
 

@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek RadioButton
+title: RadioButton – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - checked list items [Windows Forms], Windows Forms controls
@@ -25,8 +25,8 @@ Model Windows Forms `RadioButton` ovládací prvky představují sadu dvou nebo 
  [Postupy: Seskupení ovládacích prvků Windows Forms RadioButton do funkce v podobě sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)  
  Vysvětluje, jak seskupit přepínače jako sadu, z nichž lze vybrat pouze jednu.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.RadioButton> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.RadioButton>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

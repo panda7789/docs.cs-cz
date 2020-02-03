@@ -121,7 +121,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
  Další informace najdete v tématu [nasazení .NET Framework a aplikací](../../deployment/index.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)
 - [Zabezpečení](../security-wpf.md)

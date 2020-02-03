@@ -1,5 +1,5 @@
 ---
-title: DataGrid – přehled ovládacího prvku
+title: Přehled ovládacího prvku DataGrid
 ms.date: 03/30/2017
 f1_keywords:
 - DataGrid
@@ -59,13 +59,13 @@ V <xref:System.Windows.Forms.DataGrid> může v jednom okamžiku zobrazit pouze 
 
 Platné zdroje dat pro <xref:System.Windows.Forms.DataGrid> zahrnují:
 
-- <xref:System.Data.DataTable> – třída
+- Třída <xref:System.Data.DataTable>
 
-- <xref:System.Data.DataView> – třída
+- Třída <xref:System.Data.DataView>
 
-- <xref:System.Data.DataSet> – třída
+- Třída <xref:System.Data.DataSet>
 
-- <xref:System.Data.DataViewManager> – třída
+- Třída <xref:System.Data.DataViewManager>
 
 Pokud je zdrojem datová sada, může se jednat o objekt ve formuláři nebo o objekt předaný formuláři pomocí webové služby XML. Můžete vytvořit vazby na buď typové, nebo netypové datové sady.
 
@@ -146,7 +146,7 @@ Formátování, které lze použít pro ovládací prvek <xref:System.Windows.Fo
 
 Kromě běžných událostí ovládacích prvků, jako jsou <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.Enter>a <xref:System.Windows.Forms.DataGrid.Scroll>, ovládací prvek <xref:System.Windows.Forms.DataGrid> podporuje události spojené s úpravami a navigací v mřížce. Vlastnost <xref:System.Windows.Forms.DataGrid.CurrentCell%2A> určuje, která buňka je vybrána. Událost <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> se vyvolá, když uživatel přejde na novou buňku. Když uživatel přejde na novou tabulku prostřednictvím vztahů nadřazených a podřízených, vyvolá se událost <xref:System.Windows.Forms.DataGrid.Navigate>. Událost <xref:System.Windows.Forms.DataGrid.BackButtonClick> je vyvolána, když uživatel klikne na tlačítko zpět, když uživatel zobrazuje podřízenou tabulku a událost <xref:System.Windows.Forms.DataGrid.ShowParentDetailsButtonClick> je vyvolána při kliknutí na ikonu Zobrazit/skrýt nadřazené řádky.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Postupy: Vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)

@@ -28,7 +28,7 @@ K provádění operací přetažení v rámci aplikací pro Windows musíte zpra
   
 #### <a name="to-start-a-drag-operation"></a>Spuštění operace přetažení  
   
-1. V události <xref:System.Windows.Forms.Control.MouseDown> ovládacího prvku, kde začne přetahování, použijte metodu `DoDragDrop` k nastavení přetáhnutí dat a povolené přetahování efektů. Další informace naleznete v tématu <xref:System.Windows.Forms.DragEventArgs.Data%2A> a <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.  
+1. V události <xref:System.Windows.Forms.Control.MouseDown> ovládacího prvku, kde začne přetahování, použijte metodu `DoDragDrop` k nastavení přetáhnutí dat a povolené přetahování efektů. Další informace naleznete v tématech <xref:System.Windows.Forms.DragEventArgs.Data%2A> a <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.  
   
      Následující příklad ukazuje, jak iniciovat operaci přetažení. Ovládací prvek, kde je zahájeno přetažení, je ovládací prvek <xref:System.Windows.Forms.Button>, přetažená data jsou řetězcem představujícím vlastnost <xref:System.Windows.Forms.Control.Text%2A> ovládacího prvku <xref:System.Windows.Forms.Button> a povolené účinky jsou buď zkopírovány nebo přesunuty.  
   
@@ -59,7 +59,7 @@ K provádění operací přetažení v rámci aplikací pro Windows musíte zpra
   
 1. Vlastnost <xref:System.Windows.Forms.Control.AllowDrop%2A> nastavte na hodnotu true.  
   
-2. V události `DragEnter` pro ovládací prvek, kde dojde k vyřazení, se ujistěte, že přetažená data jsou přijatelného typu (v tomto případě <xref:System.Windows.Forms.Control.Text%2A>). Kód pak nastaví efekt, který se stane, když dojde k zapuštění na hodnotu ve výčtu <xref:System.Windows.Forms.DragDropEffects>. Další informace najdete v tématu <xref:System.Windows.Forms.DragEventArgs.Effect%2A>.  
+2. V události `DragEnter` pro ovládací prvek, kde dojde k vyřazení, se ujistěte, že přetažená data jsou přijatelného typu (v tomto případě <xref:System.Windows.Forms.Control.Text%2A>). Kód pak nastaví efekt, který se stane, když dojde k zapuštění na hodnotu ve výčtu <xref:System.Windows.Forms.DragDropEffects>. Další informace naleznete v tématu <xref:System.Windows.Forms.DragEventArgs.Effect%2A>.  
   
     ```vb  
     Private Sub TextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragEnter  
@@ -83,9 +83,9 @@ K provádění operací přetažení v rámci aplikací pro Windows musíte zpra
     ```  
   
     > [!NOTE]
-    > Vlastní <xref:System.Windows.Forms.DataFormats> můžete definovat zadáním vlastního objektu jako parametru <xref:System.Object> metody <xref:System.Windows.Forms.DataObject.SetData%2A>. Ujistěte se, že v takovém případě je zadaný objekt serializovatelný. Další informace najdete v tématu <xref:System.Runtime.Serialization.ISerializable>.  
+    > Vlastní <xref:System.Windows.Forms.DataFormats> můžete definovat zadáním vlastního objektu jako parametru <xref:System.Object> metody <xref:System.Windows.Forms.DataObject.SetData%2A>. Ujistěte se, že v takovém případě je zadaný objekt serializovatelný. Další informace naleznete v tématu <xref:System.Runtime.Serialization.ISerializable>.  
   
-3. V události <xref:System.Windows.Forms.Control.DragDrop> ovládacího prvku, kde dojde k vyřazení, použijte metodu <xref:System.Windows.Forms.DataObject.GetData%2A> k načtení přetažených dat. Další informace najdete v tématu <xref:System.Security.Cryptography.Xml.DataObject.Data%2A>.  
+3. V události <xref:System.Windows.Forms.Control.DragDrop> ovládacího prvku, kde dojde k vyřazení, použijte metodu <xref:System.Windows.Forms.DataObject.GetData%2A> k načtení přetažených dat. Další informace naleznete v tématu <xref:System.Security.Cryptography.Xml.DataObject.Data%2A>.  
   
      V následujícím příkladu je ovládací prvek <xref:System.Windows.Forms.TextBox> přetažen do (kde dojde k přetažení). Kód nastaví vlastnost <xref:System.Windows.Forms.Control.Text%2A> ovládacího prvku <xref:System.Windows.Forms.TextBox>, která se rovná přetahování dat.  
   
@@ -106,7 +106,7 @@ K provádění operací přetažení v rámci aplikací pro Windows musíte zpra
     > [!NOTE]
     > Kromě toho můžete pracovat s vlastností <xref:System.Windows.Forms.DragEventArgs.KeyState%2A>, takže v závislosti na stisknutých klávesách během operace přetažení se vyskytnou určité účinky (například je standardně kopírovat přetažená data při stisknutí klávesy CTRL).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Přidání dat do schránky](how-to-add-data-to-the-clipboard.md)
 - [Postupy: Načtení dat ze schránky](how-to-retrieve-data-from-the-clipboard.md)

@@ -95,7 +95,7 @@ Následující postup vyžaduje projekt **aplikace systému Windows** s formulá
     > [!NOTE]
     > Další informace o formátování řetězců naleznete v tématu [Formatting Types](../../../standard/base-types/formatting-types.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.GridTableStylesCollection>
 - <xref:System.Windows.Forms.GridColumnStylesCollection>

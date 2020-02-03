@@ -32,7 +32,7 @@ Mnoho souborů má vložené ikony, které poskytují vizuální znázornění p
   
      Bude nutné zajistit, aby formulář naimportoval <xref:System.IO> obor názvů.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Obrázky, rastrové obrázky a metasoubory](images-bitmaps-and-metafiles.md)
 - [Ovládací prvek ListView](../controls/listview-control-windows-forms.md)

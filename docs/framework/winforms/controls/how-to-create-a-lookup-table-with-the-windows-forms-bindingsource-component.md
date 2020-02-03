@@ -79,7 +79,7 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
     7. Pokud chcete, nahraďte výchozí název datové sady.  
   
-    8. Klikněte na **Dokončit**.  
+    8. Klikněte na **Finish** (Dokončit).  
   
 4. V rozevíracím seznamu **Zobrazit člena** vyberte název sloupce (například kontakt), který se má zobrazit v poli se seznamem.  
   
@@ -91,7 +91,7 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
 8. Navažte ovládací prvky kromě <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.BindingNavigator> řízení na pole podrobností z <xref:System.Windows.Forms.BindingSource> podřízené tabulky (například `OrdersBindingSource`), kterou chcete zobrazit.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingSource>
 - [Komponenta BindingSource](bindingsource-component.md)

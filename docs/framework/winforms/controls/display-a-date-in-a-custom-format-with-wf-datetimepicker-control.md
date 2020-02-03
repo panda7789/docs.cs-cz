@@ -22,7 +22,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DateTimePicker> 
   
 ### <a name="to-display-a-custom-format"></a>Zobrazení vlastního formátu  
   
-1. Nastavte <xref:System.Windows.Forms.DateTimePicker.Format%2A> vlastnost `DateTimePickerFormat.Custom`.  
+1. Vlastnost <xref:System.Windows.Forms.DateTimePicker.Format%2A> nastavte na hodnotu `DateTimePickerFormat.Custom`.  
   
 2. Nastavte vlastnost <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> na řetězec formátu.  
   
@@ -63,7 +63,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DateTimePicker> 
   
      V závislosti na nastavení jazykové verze se může změnit libovolný znak, který není uzavřen v jednoduchých uvozovkách. Například řetězec formátu uvedený výše zobrazuje aktuální datum ve formátu "dnes je: 05:30:31 pátek, březen 02, 2012" v jazykové verzi anglické (USA). Všimněte si, že první dvojtečka je uzavřena v jednoduchých uvozovkách, protože není určena jako znak odložení, protože je v "hh: mm: SS". V jiné jazykové verzi se formát může zobrazit jako "dnes je: 05.30.31 pátek, březen 02, 2012".  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DateTimePicker](datetimepicker-control-windows-forms.md)
 - [Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)

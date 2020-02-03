@@ -125,7 +125,7 @@ Pokud chcete zobrazit velmi velké množství tabulkových dat v ovládacím prv
   
  Další informace o ukládání hodnot do mezipaměti z externí databáze naleznete v tématu [How to: Implementing Virtual Mode with just-in-time načítání dat v ovládacím prvku model Windows Forms DataGridView](virtual-mode-with-just-in-time-data-loading-in-the-datagrid.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>

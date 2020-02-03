@@ -22,7 +22,7 @@ Ovládací prvky posuvníku model Windows Forms slouží k zajištění snadné 
  [Přehled ovládacích prvků HScrollBar a VScrollBar](hscrollbar-and-vscrollbar-controls-overview-windows-forms.md)  
  Zavádí obecné koncepty <xref:System.Windows.Forms.HScrollBar> a <xref:System.Windows.Forms.VScrollBar> ovládací prvky, které umožňují uživatelům procházet vodorovně a svisle prostřednictvím velkých objemů informací.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.HScrollBar>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

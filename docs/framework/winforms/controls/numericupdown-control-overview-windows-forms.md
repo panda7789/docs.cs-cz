@@ -23,7 +23,7 @@ Ovládací prvek <xref:System.Windows.Forms.NumericUpDown> vypadá jako kombinac
 ## <a name="key-properties-and-methods"></a>Klíčové vlastnosti a metody  
  Čísla zobrazená v textovém poli ovládacího prvku mohou být v nejrůznějších formátech, včetně hexadecimálního formátu. Další informace naleznete v tématu [How to: set a Format for model Windows Forms NumericUpDown Control](how-to-set-the-format-for-the-windows-forms-numericupdown-control.md). Klíčové vlastnosti ovládacího prvku jsou <xref:System.Windows.Forms.NumericUpDown.Value%2A>, <xref:System.Windows.Forms.NumericUpDown.Maximum%2A> (výchozí hodnota 100), <xref:System.Windows.Forms.NumericUpDown.Minimum%2A> (výchozí hodnota 0) a <xref:System.Windows.Forms.NumericUpDown.Increment%2A> (výchozí hodnota 1). Vlastnost <xref:System.Windows.Forms.NumericUpDown.Value%2A> nastaví aktuální číslo vybrané v ovládacím prvku. Vlastnost <xref:System.Windows.Forms.NumericUpDown.Increment%2A> nastaví množství, podle kterého je číslo upraveno, když uživatel klikne na šipku nahoru nebo dolů. Když se fokus přesune mimo ovládací prvek, všechny zadané vstupy se ověří podle minimální a maximální číselné hodnoty. Můžete zvýšit rychlost, kterou ovládací prvek přesouvá pomocí čísel, když uživatel nepřetržitě stiskne šipku nahoru nebo dolů s vlastností <xref:System.Windows.Forms.NumericUpDown.Accelerations%2A>. Klíčové metody ovládacího prvku jsou <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> a <xref:System.Windows.Forms.NumericUpDown.DownButton%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.NumericUpDown>
 - [Ovládací prvek NumericUpDown](numericupdown-control-windows-forms.md)

@@ -19,13 +19,13 @@ ms.locfileid: "76728915"
  [Osvědčené postupy pro zabezpečení](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)  
  Doporučení, která vám pomůžou zabezpečit aplikace  
   
- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
  Položky, které je třeba vzít v úvahu při vytváření aplikace WCF.  
   
- [Faktory ovlivňující výkon](../../../../docs/framework/wcf/feature-details/performance-considerations.md)  
+ [Důležité informace o výkonu](../../../../docs/framework/wcf/feature-details/performance-considerations.md)  
  Obsahuje položky týkající se výkonu a zabezpečení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -41,7 +41,7 @@ Ve výchozím nastavení se pro zobrazení jejich celého obsahu používají po
 ## <a name="robust-programming"></a>Robustní programování  
  Při vázání ovládacího prvku <xref:System.Windows.Forms.DataGridView> k externímu zdroji dat nebo poskytnutí vlastního zdroje dat implementací virtuálního režimu může dojít k problémům s výkonem. Aby se zabránilo snížení výkonu při práci s velkým množstvím dat, zpracujte <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded> událost namísto nastavení vlastnosti <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A> více buněk. Při zpracování této události, získání hodnoty vlastnosti <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A> buňky vyvolá událost a vrátí hodnotu vlastnosti <xref:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventArgs.ToolTipText%2A?displayProperty=nameWithType>, jak je uvedeno v obslužné rutině události.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.ShowCellToolTips%2A?displayProperty=nameWithType>

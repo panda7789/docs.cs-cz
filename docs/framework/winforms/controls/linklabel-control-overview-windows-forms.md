@@ -23,7 +23,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.LinkLabel> umož
   
  Nejjednodušší způsob použití ovládacího prvku <xref:System.Windows.Forms.LinkLabel> je zobrazit jediný odkaz pomocí vlastnosti <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>, ale můžete také zobrazit více hypertextových odkazů pomocí vlastnosti <xref:System.Windows.Forms.LinkLabel.Links%2A>. Vlastnost <xref:System.Windows.Forms.LinkLabel.Links%2A> umožňuje přístup ke kolekci odkazů. Můžete také zadat data ve vlastnosti <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A> každého objektu <xref:System.Windows.Forms.LinkLabel.Link>. Hodnotu vlastnosti <xref:System.Windows.Forms.LinkLabel.Link.LinkData%2A> lze použít k uložení umístění souboru, který se má zobrazit, nebo adresy webu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.LinkLabel>
 - [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)

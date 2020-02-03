@@ -25,7 +25,7 @@ Implementace hlavního a podrobného formuláře pomocí interakce mezi ovládac
 
 Chcete-li zkopírovat kód v tomto tématu jako jeden výpis, přečtěte si téma [Postup: Vytvoření hlavního a podrobného formuláře pomocí dvou ovládacích prvků model Windows Forms DataGridView](create-a-master-detail-form-using-two-datagridviews.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Aby bylo možné dokončit tento návod, budete potřebovat:
 
@@ -79,7 +79,7 @@ Tato aplikace vám poskytne základní informace o možnostech ovládacího prvk
 
 - Přizpůsobení vzhledu buněk Další informace naleznete v tématu [Postupy: přizpůsobení vzhledu buněk v ovládacím prvku model Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [Postup: nastavení výchozích stylů buňky pro ovládací prvek DataGridView model Windows Forms](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>

@@ -189,7 +189,7 @@ Správa chyb ve velkých systémech je složitá a odlišitá Endeavor a neexist
 
 ### <a name="represent-error-cases-and-illegal-state-in-types-intrinsic-to-your-domain"></a>Reprezentuje chybové případy a neplatný stav ve vnitřních typech pro vaši doménu.
 
-Díky [rozlišeným sjednocením](../language-reference/discriminated-unions.md) F# poskytuje možnost vyjádřit v systému typů chybný stav programu. Příklad:
+Díky [rozlišeným sjednocením](../language-reference/discriminated-unions.md) F# poskytuje možnost vyjádřit v systému typů chybný stav programu. Například:
 
 ```fsharp
 type MoneyWithdrawalResult =
@@ -674,7 +674,7 @@ F#má plnou podporu pro objekty a koncepty orientované na objekt (ó). I když 
 * Rozšíření typů
 * Události
 * Struktury
-* Delegáti
+* Delegáty
 * Výčty
 
 **Obecně se vyhnete těmto funkcím, pokud je nemusíte používat:**

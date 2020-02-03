@@ -1,5 +1,5 @@
 ---
-title: TrackBar – ovládací prvek
+title: Ovládací prvek TrackBar
 ms.date: 03/30/2017
 helpviewer_keywords:
 - sliders
@@ -20,8 +20,8 @@ Ovládací prvek model Windows Forms `TrackBar` (někdy označovaný také jako 
  [Přehled ovládacího prvku TrackBar](trackbar-control-overview-windows-forms.md)  
  Zavádí obecné koncepty ovládacího prvku `TrackBar`, který uživatelům umožňuje procházet informace vizuálně úpravou číselného nastavení.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.TrackBar> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.TrackBar>  
  Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  

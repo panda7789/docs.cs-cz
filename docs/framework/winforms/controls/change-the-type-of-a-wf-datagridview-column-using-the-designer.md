@@ -30,7 +30,7 @@ Někdy budete chtít změnit typ sloupce, který již byl přidán do ovládací
     > [!NOTE]
     > Vlastnost `ColumnType` je vlastnost pouze pro dobu návrhu, která označuje třídu reprezentující typ sloupce. Nejedná se o skutečnou vlastnost definovanou ve třídě Column.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn>

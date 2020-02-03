@@ -62,7 +62,7 @@ Kromě tiskových služeb je velmi běžné, že model Windows Forms programová
   
 - Odkazy na sestavení System, System. Windows. Forms, System. Drawing.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
 - [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)

@@ -23,7 +23,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> může zobrazit data v
   
  Příklad, který používá nevázaný <xref:System.Windows.Forms.DataGridView>jen pro čtení, naleznete v tématu [How to: Create a unbounded model Windows Forms DataGridView Control](how-to-create-an-unbound-windows-forms-datagridview-control.md).  
   
-## <a name="bound"></a>Vázaný  
+## <a name="bound"></a>Bound  
  Vázaný režim je vhodný pro správu dat pomocí automatické interakce s úložištěm dat. Ovládací prvek <xref:System.Windows.Forms.DataGridView> lze připojit přímo ke zdroji dat nastavením vlastnosti <xref:System.Windows.Forms.DataGridView.DataSource%2A>. Když je ovládací prvek vázaný na data, jsou řádky dat vloženy a vyžádány bez nutnosti explicitní správy na vaší straně. Pokud je vlastnost <xref:System.Windows.Forms.DataGridView.AutoGenerateColumns%2A> `true`, každý sloupec ve zdroji dat způsobí, že v ovládacím prvku bude vytvořen odpovídající sloupec. Pokud dáváte přednost vytváření vlastních sloupců, můžete tuto vlastnost nastavit na `false` a použít vlastnost <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> k navázání každého sloupce při jeho konfiguraci. To je užitečné, pokud chcete použít jiný typ sloupce než typy, které jsou generovány ve výchozím nastavení. Další informace naleznete v tématu [typy sloupců v ovládacím prvku DataGridView model Windows Forms](column-types-in-the-windows-forms-datagridview-control.md).  
   
  Příklad, který používá ovládací prvek vázané <xref:System.Windows.Forms.DataGridView>, naleznete v tématu [Návod: ověřování dat v ovládacím prvku DataGridView model Windows Forms](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md).  
@@ -41,7 +41,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> může zobrazit data v
   
  Další informace o virtuálním režimu najdete v tématu [virtuální režim v ovládacím prvku DataGridView model Windows Forms](virtual-mode-in-the-windows-forms-datagridview-control.md). Příklad, který ukazuje, jak použít události virtuálního režimu, naleznete v tématu [Návod: implementace virtuálního režimu v ovládacím prvku DataGridView model Windows Forms](implementing-virtual-mode-wf-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>

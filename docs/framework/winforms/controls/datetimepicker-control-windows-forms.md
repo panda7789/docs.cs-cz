@@ -30,7 +30,7 @@ Ovládací prvek model Windows Forms `DateTimePicker` umožňuje uživateli vybr
  [Postupy: Zobrazení času pomocí ovládacího prvku DateTimePicker](how-to-display-time-with-the-datetimepicker-control.md)  
  Zobrazí postup, který `DateTimePicker` jenom zobrazovat časy.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DateTimePicker>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

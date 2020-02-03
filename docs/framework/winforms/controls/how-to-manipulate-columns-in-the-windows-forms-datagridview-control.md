@@ -33,7 +33,7 @@ Tento příklad vyžaduje:
 
 - Odkazy na sestavení System, System. Drawing a System. Windows. Forms.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewBand>

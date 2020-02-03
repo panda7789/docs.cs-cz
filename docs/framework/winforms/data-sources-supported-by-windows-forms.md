@@ -57,7 +57,7 @@ V rámci aplikací se tradičně používaly datové vazby, které využívají 
   
 - <xref:System.Data.DataViewManager>. <xref:System.Data.DataViewManager> je přizpůsobené zobrazení celého <xref:System.Data.DataSet>, které je podobné <xref:System.Data.DataView>, ale včetně zahrnutých vztahů. Pomocí kolekce <xref:System.Data.DataViewManager.DataViewSettings%2A> můžete nastavit výchozí filtry a možnosti řazení pro všechna zobrazení, která má <xref:System.Data.DataViewManager> pro danou tabulku.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
 - [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)

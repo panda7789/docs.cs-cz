@@ -102,7 +102,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> se automaticky pokusí
 
 - Ujistěte se, že řádek zadaný ve vlastnosti <xref:System.Windows.Forms.DataGridView.RowTemplate%2A?displayProperty=nameWithType> lze sdílet v následujících případech:
 
-  - Při volání `Add()` nebo `Add(Int32)` přetížení metody <xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A> nebo přetížení `Insert(Int32,Int32)` metody <xref:System.Windows.Forms.DataGridViewRowCollection.Insert%2A> kolekce.
+  - Při volání `Add()` nebo `Add(Int32)` přetížení metody <xref:System.Windows.Forms.DataGridViewRowCollection.Add%2A> nebo přetížení `Insert(Int32,Int32)` metody <xref:System.Windows.Forms.DataGridViewRowCollection.Insert%2A> kolekce.<xref:System.Windows.Forms.DataGridView.Rows%2A?displayProperty=nameWithType>
 
   - Při zvýšení hodnoty vlastnosti <xref:System.Windows.Forms.DataGridView.RowCount%2A?displayProperty=nameWithType>.
 
@@ -142,7 +142,7 @@ Pokud nechcete, aby se řádky staly nesdílenými, postupujte podle následují
 
 - Nevolejte `Sort(IComparer)` přetížení metody <xref:System.Windows.Forms.DataGridView.Sort%2A>. Řazení s vlastními porovnávacími způsobí, že se všechny řádky stanou nesdílenými.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)

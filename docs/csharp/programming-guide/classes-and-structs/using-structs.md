@@ -47,8 +47,8 @@ Tento příklad ukazuje funkci, která je jedinečná pro struktury. Vytvoří o
 
 [!code-csharp[csProgGuideObjects#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#3)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](index.md)
 - [Struktury](structs.md)

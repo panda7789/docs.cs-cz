@@ -187,7 +187,7 @@ Můžete dosáhnout složitých rozložení pomocí kombinace panelů rozložen�
 
 - Ukotvěte ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> do nadřazeného formuláře. Změňte velikost formuláře a poznamenejte si efekt v rozložení.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.FlowLayoutPanel>
 - <xref:System.Windows.Forms.TableLayoutPanel>

@@ -17,7 +17,7 @@ ms.locfileid: "76734250"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet clean` – vyčistí výstup projektu.
 
@@ -33,7 +33,7 @@ dotnet clean [-h|--help]
 
 Příkaz `dotnet clean` vyčistí výstup předchozího buildu. Je implementována jako [cíl nástroje MSBuild](/visualstudio/msbuild/msbuild-targets), takže projekt je vyhodnocen při spuštění příkazu. Vyčištěny jsou pouze výstupy vytvořené během sestavení. Jsou vyčištěny mezilehlé složky (*obj*) i finální výstupní složky (*bin*).
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT | SOLUTION`
 
@@ -71,7 +71,7 @@ Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubo
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí formát je `normal`.
 
 ## <a name="examples"></a>Příklady
 

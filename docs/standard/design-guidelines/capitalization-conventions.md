@@ -47,17 +47,17 @@ Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití 
 
  Následující tabulka popisuje pravidla psaní velkých a malých písmen pro různé typy identifikátorů.
 
-|identifikátor|Velikost písmen|Příklad|
+|Identifikátor|Velikost písmen|Příklad|
 |----------------|------------|-------------|
-|Názvový prostor|Jazyce|`namespace System.Security { ... }`|
-|Type|Jazyce|`public class StreamReader { ... }`|
+|Obor názvů|Jazyce|`namespace System.Security { ... }`|
+|Typ|Jazyce|`public class StreamReader { ... }`|
 |Rozhraní|Jazyce|`public interface IEnumerable { ... }`|
 |Metoda|Jazyce|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|
 |Vlastnost|Jazyce|`public class String {` <br />  `public int Length { get; }` <br /> `}`|
 |Událost|Jazyce|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|
 |Pole|Jazyce|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|
 |Hodnota výčtu|Jazyce|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|
-|Parametr|Ve stylu CamelCase|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|
+|Parametr|CamelCase|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|
 
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Složená slova na velkých písmen a běžné výrazy
  Většina složených výrazů se považuje za jednotlivá slova pro účely velkých a malých písmen.
@@ -66,7 +66,7 @@ Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití 
 
  Jedná se o složená slova zapsaná jako jedno slovo, například koncový bod. Pro účely pokynů pro používání malých a velkých písmen považovat uzavřený složený Word jako jedno slovo. Pomocí aktuálního slovníku určíte, zda je v zavřeném formuláři napsán složený text.
 
-|Jazyce|Ve stylu CamelCase|Not|
+|Jazyce|CamelCase|Not|
 |------------|-----------|---------|
 |`BitFlag`|`bitFlag`|`Bitflag`|
 |`Callback`|`callback`|`CallBack`|
@@ -103,7 +103,7 @@ Pokyny v této kapitole vám pomohou vytvořit jednoduchou metodu pro použití 
 
  *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

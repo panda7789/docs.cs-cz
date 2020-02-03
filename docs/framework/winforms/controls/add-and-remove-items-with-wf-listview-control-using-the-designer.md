@@ -30,7 +30,7 @@ Následující postup vyžaduje projekt **aplikace systému Windows** s formulá
 
 4. Pokud chcete položku odebrat, vyberte ji a klikněte na tlačítko **Odebrat** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)
 - [Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView](how-to-add-columns-to-the-windows-forms-listview-control.md)

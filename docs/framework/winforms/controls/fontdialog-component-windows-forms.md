@@ -23,7 +23,7 @@ Součást model Windows Forms <xref:System.Windows.Forms.FontDialog> je předem 
  [Postupy: Zobrazení seznamu písem pomocí komponenty FontDialog](how-to-show-a-font-list-with-the-fontdialog-component.md)  
  Vysvětluje, jak zvolit písmo v době běhu prostřednictvím instance komponenty <xref:System.Windows.Forms.FontDialog>.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.FontDialog>  
  Poskytuje referenční informace o třídě <xref:System.Windows.Forms.FontDialog> a jejích členech.  
   

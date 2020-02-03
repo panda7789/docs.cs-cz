@@ -35,7 +35,7 @@ Model Windows Forms <xref:System.Windows.Forms.ScrollBar> ovládací prvky slou�
   
  Když uživatel stiskne jednu z kláves se šipkami nebo klikne na jedno z tlačítek posuvníku, vlastnost <xref:System.Windows.Forms.ScrollBar.Value%2A> se změní podle hodnoty nastavené ve vlastnosti <xref:System.Windows.Forms.ScrollBar.SmallChange%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.HScrollBar>
 - <xref:System.Windows.Forms.VScrollBar>

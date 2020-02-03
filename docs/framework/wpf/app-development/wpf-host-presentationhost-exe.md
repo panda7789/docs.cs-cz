@@ -30,7 +30,7 @@ Hostitel Windows Presentation Foundation (WPF) (PresentationHost. exe) je aplika
   
  Toto téma popisuje parametry příkazového řádku, které lze použít s PresentationHost. exe.  
   
-## <a name="usage"></a>Použití  
+## <a name="usage"></a>Využití  
  `PresentationHost.exe [parameters] uri|filename`  
   
 ## <a name="parameters"></a>Parametry  
@@ -39,7 +39,7 @@ Hostitel Windows Presentation Foundation (WPF) (PresentationHost. exe) je aplika
 |---------------|-----------------|  
 |filename|Cesta k souboru, který se má aktivovat Může to být také identifikátor URI.|  
 |-debug|Při aktivaci aplikace ji nepotvrdí ani nespustí ze Storu. Tato funkce funguje pouze v případě, že je aktivován místní soubor.|  
-|-debugSecurityZoneURL \<url>|Používá se s hodnotou adresy URL k označení PresentationHost. exe, že by měla být aplikace Laděna, jako kdyby byla nasazena ze zadané adresy URL. Tím se určuje jak zóna nasazení, tak původní lokalita.|  
+|– debugSecurityZoneURL \<adresa URL >|Používá se s hodnotou adresy URL k označení PresentationHost. exe, že by měla být aplikace Laděna, jako kdyby byla nasazena ze zadané adresy URL. Tím se určuje jak zóna nasazení, tak původní lokalita.|  
 |– vkládání|Požadováno OLE. Je-li zadán parametr `-event` nebo `-debug`, není nutné zadávat parametr `-embedding`, protože tento parametr je nastaven interně.|  
 |-Event \<EventName >|Otevřete událost s tímto názvem a nazvěte ji, když se PresentationHost. exe inicializuje a je připravený na hostování obsahu WPF. PresentationHost. exe skončí, pokud došlo k chybě při otevírání události, například pokud ještě nebyla vytvořena.|  
 |– launchApplication \<adresa URL >|Spustí samostatnou aplikaci ClickOnce ze zadané adresy URL. Aplikují se zásady zabezpečení Internet Exploreru a WinINet týkající se aplikací .NET.|  
@@ -58,6 +58,6 @@ Hostitel Windows Presentation Foundation (WPF) (PresentationHost. exe) je aplika
 ### <a name="visual-studio-debugging-in-zone"></a>Ladění sady Visual Studio v zóně  
  `PresentationHost.exe -debug -debugSecurityZoneURL http://www.example.com c:\folderpath\example.xbap`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení](../security-wpf.md)

@@ -1,5 +1,5 @@
 ---
-title: ProgressBar – přehled ovládacího prvku
+title: Přehled ovládacího prvku ProgressBar
 ms.date: 03/30/2017
 f1_keywords:
 - ProgressBar
@@ -35,7 +35,7 @@ ms.locfileid: "76741277"
 > [!IMPORTANT]
 > Ovládací prvky <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> nahrazují a přidávají funkce ovládacím prvkům <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel>; ovládací prvky <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> se však uchovávají pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ProgressBar>
 - [Ovládací prvek ProgressBar](progressbar-control-windows-forms.md)

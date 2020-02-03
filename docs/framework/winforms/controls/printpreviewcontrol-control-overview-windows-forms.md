@@ -20,7 +20,7 @@ ms.locfileid: "76741437"
 ## <a name="key-properties"></a>Klíčové vlastnosti  
  Vlastnost klíče ovládacího prvku je <xref:System.Windows.Forms.PrintPreviewControl.Document%2A>, ve kterém se nastaví náhled dokumentu. Dokument musí být objekt <xref:System.Drawing.Printing.PrintDocument>. Přehled vytváření dokumentů pro tisk najdete v tématu [Přehled komponent PrintDocument](printdocument-component-overview-windows-forms.md) a [Podpora tisku model Windows Forms](../advanced/windows-forms-print-support.md). Vlastnosti <xref:System.Windows.Forms.PrintPreviewControl.Columns%2A> a <xref:System.Windows.Forms.PrintPreviewControl.Rows%2A> určují počet stránek zobrazených vodorovně a svisle na ovládacím prvku. Antialiasing může zobrazit hladší text, ale může také zpomalit zobrazení. Pokud ho chcete použít, nastavte vlastnost <xref:System.Windows.Forms.PrintPreviewControl.UseAntiAlias%2A> na `true`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PrintPreviewControl>
 - [Přehled ovládacího prvku PrintPreviewDialog](printpreviewdialog-control-overview-windows-forms.md)

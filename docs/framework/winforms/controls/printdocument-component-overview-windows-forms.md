@@ -28,7 +28,7 @@ Existují dva z hlavních scénářů, které zahrnují komponentu <xref:System.
 
 Při přidání do formuláře se komponenta <xref:System.Drawing.Printing.PrintDocument> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Graphics>
 - <xref:System.Drawing.Printing.PrintDocument>

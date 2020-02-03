@@ -1,5 +1,5 @@
 ---
-title: ComboBox – ovládací prvek
+title: Ovládací prvek ComboBox
 ms.date: 03/30/2017
 helpviewer_keywords:
 - drop-down lists [Windows Forms], Windows Forms
@@ -27,14 +27,14 @@ Ovládací prvek model Windows Forms `ComboBox` slouží k zobrazení dat v roze
  [Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox](how-to-create-variable-sized-text-in-a-combobox-control.md)  
  Ukazuje vlastní vykreslování textu v ovládacím prvku `ComboBox`.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ComboBox> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.ComboBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)  
  Nabízí seznam věcí, které můžete provádět se seznamy, poli se seznamem a zaškrtnutými seznamy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

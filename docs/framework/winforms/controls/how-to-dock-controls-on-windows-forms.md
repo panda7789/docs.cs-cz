@@ -40,7 +40,7 @@ Vlastnost <xref:System.Windows.Forms.Control.Dock%2A> komunikuje s vlastností <
    > [!NOTE]
    > Zděděné ovládací prvky musí být `Protected`, aby je bylo možné ukotvit. Chcete-li změnit úroveň přístupu ovládacího prvku, nastavte jeho vlastnost **modifikátoru** v okně **vlastnosti** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

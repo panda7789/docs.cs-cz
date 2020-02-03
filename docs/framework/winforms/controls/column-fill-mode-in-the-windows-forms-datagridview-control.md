@@ -60,7 +60,7 @@ V režimu vyplnění sloupce mění ovládací prvek <xref:System.Windows.Forms.
   
 - Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A?displayProperty=nameWithType>

@@ -180,7 +180,7 @@ Ovládací prvek <xref:System.Windows.Forms.LinkLabel> lze také použít k zobr
        }
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>
 - [Přehled ovládacího prvku LinkLabel](linklabel-control-overview-windows-forms.md)

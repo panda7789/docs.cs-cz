@@ -72,7 +72,7 @@ Pole pro heslo je model Windows Forms textové pole, které zobrazuje zástupné
        }
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)

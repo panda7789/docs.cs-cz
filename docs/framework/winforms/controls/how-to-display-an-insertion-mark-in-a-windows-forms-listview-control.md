@@ -37,7 +37,7 @@ Značka vložení v ovládacím prvku <xref:System.Windows.Forms.ListView> zobra
   
 - Odkazy na sestavení System a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.InsertionMark%2A?displayProperty=nameWithType>

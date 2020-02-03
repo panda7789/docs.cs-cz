@@ -57,7 +57,7 @@ Následující postupy vyžadují projekt **aplikace systému Windows** s formul
 
 4. Pokud vytváříte vazbu ovládacího prvku <xref:System.Windows.Forms.DataGridView> ke zdroji dat, který pravděpodobně obsahuje hodnoty null, zadejte do textového pole **hodnota null** . Tato hodnota se zobrazí, pokud je hodnota buňky rovna nulovému odkazu (`Nothing` v Visual Basic) nebo v <xref:System.DBNull.Value?displayProperty=nameWithType>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewCellStyle>

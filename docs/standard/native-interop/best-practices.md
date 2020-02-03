@@ -45,7 +45,7 @@ Nezapomeňte označit `[DllImport]` jako `Charset.Unicode`, pokud nechcete, aby 
 ❌ se vyhnout parametrům `StringBuilder`. `StringBuilder` zařazování *vždy* vytvoří nativní kopii vyrovnávací paměti. V takovém případě může být mimořádně neefektivní. Vyjistěte si Typický scénář volání rozhraní API systému Windows, které přijímá řetězec:
 
 1. Vytvořte SB požadované kapacity (přidělení spravované kapacity) **{1}**
-2. Vyvolání
+2. Invoke
    1. Přidělí nativní vyrovnávací paměť **{2}**
    2. Zkopíruje obsah, pokud je `[In]` _(výchozí hodnota pro `StringBuilder` parametr)_ .
    3. Zkopíruje nativní vyrovnávací paměť do nově přiděleného spravovaného pole, pokud `[Out]` **{3}** _(také výchozí `StringBuilder`)_ .
@@ -120,7 +120,7 @@ Když se pokusíte vytvořit připnutý `GCHandle`, můžete zjistit, jestli je 
 
 ✔️ PROVEĎTE přenositeli struktury, pokud je to možné.
 
-Další informace najdete v části .
+Další informace naleznete v tématu:
 
 - [Přenositelné a nepřenositelné typy](../../framework/interop/blittable-and-non-blittable-types.md)
 - [Zařazování typů](type-marshaling.md)

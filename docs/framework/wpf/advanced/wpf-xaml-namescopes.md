@@ -94,7 +94,7 @@ XAML obory názvů WPF jsou koncept, který identifikuje objekty, které jsou de
   
 - <xref:System.Windows.FrameworkContentElement>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Obory názvů XAML a mapování oboru názvů pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)
 - [x:Name – direktiva](../../../desktop-wpf/xaml-services/xname-directive.md)

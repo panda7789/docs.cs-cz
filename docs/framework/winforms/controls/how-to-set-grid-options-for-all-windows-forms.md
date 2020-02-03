@@ -30,6 +30,6 @@ Jak se budete používat pro práci ve vývojovém prostředí sady Visual Studi
 
    V pravém podokně v záhlaví **nastavení rozložení** můžete nastavit výchozí nastavení mřížky pro všechny nové formuláře, které vytvoříte. Tato nastavení zahrnují velikost mřížky, zda se ovládací prvky přichytí k ní a zda je ve výchozím nastavení zapnutá. Kromě toho můžete vybrat mezi režimy rozložení **SnapToGrid** a **zarovnávacím čárám** . Další informace o zarovnávacím čárám najdete v tématu [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí zarovnávacím čárám](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Možnosti: Návrhář formulářů](/visualstudio/ide/reference/options-windows-forms-designer)

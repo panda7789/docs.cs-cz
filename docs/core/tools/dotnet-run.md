@@ -17,7 +17,7 @@ ms.locfileid: "76734100"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet run` – spustí zdrojový kód bez explicitních příkazů Compile nebo Launch.
 
@@ -49,7 +49,7 @@ dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [-
 dotnet run [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet run [-c|--configuration] [-f|--framework] [-p|--project] [[--] [application arguments]]
@@ -242,7 +242,7 @@ Určuje cestu k souboru projektu, který se má spustit (název složky nebo úp
 
 Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 `--`
 

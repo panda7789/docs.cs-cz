@@ -1,5 +1,5 @@
 ---
-title: ColorDialog – přehled komponenty
+title: Přehled komponenty ColorDialog
 ms.date: 03/30/2017
 f1_keywords:
 - ColorDialog
@@ -19,7 +19,7 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.ColorDialog> je přede
   
  Barva vybraná v dialogovém okně se vrátí do vlastnosti <xref:System.Windows.Forms.ColorDialog.Color%2A>. Je-li vlastnost <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A> nastavena na hodnotu `false`, je tlačítko "definovat vlastní barvy" zakázáno a uživatel je omezen na předdefinované barvy v paletě. Pokud je vlastnost <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A> nastavena na hodnotu `true`, uživatel nemůže vybrat rozdané barvy. Chcete-li zobrazit dialogové okno, je nutné zavolat jeho metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ColorDialog>
 - [Komponenta ColorDialog](colordialog-component-windows-forms.md)

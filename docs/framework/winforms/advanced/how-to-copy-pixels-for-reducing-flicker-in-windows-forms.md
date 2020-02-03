@@ -62,7 +62,7 @@ private void Form1_Paint(System.Object sender,
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Výše uvedený kód je spuštěn v obslužné rutině události <xref:System.Windows.Forms.Control.Paint> formuláře, aby grafika zůstala při překreslení formuláře zachovaná. V takovém případě Nevolejte metody související s grafikou v obslužné rutině <xref:System.Windows.Forms.Form.Load> události, protože vykreslený obsah nebude překreslen, pokud je tvar změněna na velikost nebo zakrytý jiným formulářem.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.CopyPixelOperation>
 - <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>

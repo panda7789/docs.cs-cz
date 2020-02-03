@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek SplitContainer
+title: SplitContainer – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - splitter windows
@@ -35,8 +35,8 @@ Ovládací prvek model Windows Forms `SplitContainer` lze představit jako slož
   
  Viz také [Postupy: rozdělení okna vodorovně pomocí návrháře](how-to-split-a-window-horizontally-using-the-designer.md), [Postupy: vytvoření rozhraní ve stylu Průzkumníka Windows na formuláři Windows](how-to-create-a-windows-explorer-style-interface-on-a-windows-form.md)Forms, [Postupy: vytvoření uživatelského rozhraní s více podokny s model Windows Forms pomocí návrháře](create-a-multipane-user-interface-with-wf-using-the-designer.md).  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.SplitContainer> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.SplitContainer>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

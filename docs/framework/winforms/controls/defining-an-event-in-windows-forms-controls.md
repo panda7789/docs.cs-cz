@@ -76,7 +76,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md)
 - [Události](../../../standard/events/index.md)

@@ -29,7 +29,7 @@ Když nastavíte vlastnost <xref:System.Windows.Forms.ToolStrip.Stretch%2A> ovl�
   
 - Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStrip.Stretch%2A?displayProperty=nameWithType>

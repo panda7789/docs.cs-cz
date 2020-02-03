@@ -96,7 +96,7 @@ button1->Left += 200;
 > [!NOTE]
 > Vlastnost <xref:System.Windows.Forms.Control.Location%2A> použijte k nastavení polohy X a Y ovládacího prvku současně. Chcete-li nastavit pozici jednotlivě, použijte podvlastnost <xref:System.Windows.Forms.Control.Left%2A> (**X**) nebo <xref:System.Windows.Forms.Control.Top%2A> (**Y**) ovládacího prvku. Nepokoušejte se implicitně nastavit souřadnice X a Y <xref:System.Drawing.Point> struktury, která představuje umístění tlačítka, protože tato struktura obsahuje kopii souřadnic tlačítka.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)

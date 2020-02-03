@@ -17,7 +17,7 @@ ms.locfileid: "76733084"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet sln` – upraví soubor řešení .NET Core.
 
@@ -37,7 +37,7 @@ Chcete-li použít příkaz `dotnet sln`, soubor řešení již musí existovat.
 dotnet new sln
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 - **`SOLUTION_FILE`**
 
@@ -62,7 +62,7 @@ dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PAT
 dotnet sln add [-h|--help]
 ```
 
-#### <a name="arguments"></a>Arguments
+#### <a name="arguments"></a>Argumenty
 
 - **`SOLUTION_FILE`**
 
@@ -97,7 +97,7 @@ dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH>
 dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 ```
 
-#### <a name="arguments"></a>Arguments
+#### <a name="arguments"></a>Argumenty
 
 - **`SOLUTION_FILE`**
 
@@ -123,7 +123,7 @@ Zobrazí seznam všech projektů v souboru řešení.
 dotnet sln list [-h|--help]
 ```
 
-#### <a name="arguments"></a>Arguments
+#### <a name="arguments"></a>Argumenty
 
 - **`SOLUTION_FILE`**
 

@@ -67,7 +67,7 @@ V rámci aplikací systému Windows, které vytvoříte, budete často muset vyz
 
 Informace o tom, jak ukládat soubory, najdete v tématu [Postupy: ukládání souborů pomocí součásti SaveFileDialog](how-to-save-files-using-the-savefiledialog-component.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.FolderBrowserDialog>
 - [Přehled komponenty FolderBrowserDialog (Windows Forms)](folderbrowserdialog-component-overview-windows-forms.md)

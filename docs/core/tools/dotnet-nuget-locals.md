@@ -18,7 +18,7 @@ ms.locfileid: "76734078"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet nuget locals` – vymaže nebo vypíše místní prostředky NuGet.
 
@@ -33,7 +33,7 @@ dotnet nuget locals [-h|--help]
 
 Příkaz `dotnet nuget locals` vymaže nebo vypíše místní prostředky NuGet v mezipaměti požadavku HTTP, dočasné mezipaměti nebo v rámci globální složky balíčků v celém počítači.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 * **`CACHE_LOCATION`**
 
@@ -94,6 +94,6 @@ Příkaz `dotnet nuget locals` vymaže nebo vypíše místní prostředky NuGet 
   dotnet nuget locals temp -c
   ```
 
-## <a name="troubleshooting"></a>Odstraňování problémů
+## <a name="troubleshooting"></a>Řešení potíží
 
 Informace o běžných problémech a chybách při použití příkazu `dotnet nuget locals` najdete v tématu [Správa mezipaměti NuGet](/nuget/consume-packages/managing-the-nuget-cache).

@@ -130,7 +130,7 @@ Můžete vytvořit odvozený uzel v ovládacím prvku model Windows Forms <xref:
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)
 - [Ovládací prvek ListView](listview-control-windows-forms.md)

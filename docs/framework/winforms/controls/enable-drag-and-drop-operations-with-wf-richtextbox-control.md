@@ -164,7 +164,7 @@ Operace přetažení pomocí ovládacího prvku model Windows Forms <xref:System
   
      Po uvolnění tlačítka myši je vybraný text vyřazen (to znamená, <xref:System.Windows.Forms.RichTextBox.DragDrop> událost je aktivována) a je vložen do <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox>
 - [Postupy: Provádění operací přetažení mezi aplikacemi](../advanced/how-to-perform-drag-and-drop-operations-between-applications.md)

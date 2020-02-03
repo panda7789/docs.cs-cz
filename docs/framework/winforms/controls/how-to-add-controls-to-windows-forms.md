@@ -87,7 +87,7 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
     > [!IMPORTANT]
     > Místní počítač můžete vystavit bezpečnostnímu riziku prostřednictvím sítě odkazem na škodlivý `UserControl`. To by mělo být obavy jenom v případě, že by škodlivá osoba vytvořila škodlivý vlastní ovládací prvek, a pak ji nepřidali do projektu omylem.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Postupy: Změna velikosti ovládacích prvků ve Windows Forms](how-to-resize-controls-on-windows-forms.md)

@@ -54,7 +54,7 @@ Když je formulář zobrazen v době běhu, změní se velikost ovládacího prv
 
 Zděděné ovládací prvky musí být `Protected`, aby je bylo možné ukotvit. Chcete-li změnit úroveň přístupu ovládacího prvku, nastavte jeho vlastnost `Modifiers` v okně **vlastnosti** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Přehled vlastnosti AutoSize](autosize-property-overview.md)

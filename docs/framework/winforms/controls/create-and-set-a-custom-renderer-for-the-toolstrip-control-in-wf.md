@@ -29,7 +29,7 @@ ovládací prvky <xref:System.Windows.Forms.ToolStrip> poskytují snadnou podpor
   
 1. Rozšíří třídu <xref:System.Windows.Forms.ToolStripRenderer>.  
   
-2. Implementujte požadované vlastní vykreslování přepsáním vhodného *na...* členové  
+2. Implementujte požadované vlastní vykreslování přepsáním vhodného *na...* členy  
   
     ```vb  
     Public Class RedTextRenderer  
@@ -81,7 +81,7 @@ ovládací prvky <xref:System.Windows.Forms.ToolStrip> poskytují snadnou podpor
     ToolStripManager.Renderer = new RedTextRenderer();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStripManager.Renderer%2A>
 - <xref:System.Windows.Forms.ToolStripRenderer>

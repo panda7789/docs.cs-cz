@@ -24,7 +24,7 @@ ms.locfileid: "76747023"
 
 Platforma [Windows Presentation Foundation](../index.md) shromažďuje digitální inkoust jako základní součást jeho funkcí. Toto téma popisuje metody pro kolekci rukopisu v Windows Presentation Foundation (WPF).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Chcete-li použít následující příklady, je nutné nejprve nainstalovat aplikaci Visual Studio a Windows SDK. Měli byste také pochopit, jak psát aplikace pro WPF. Další informace o tom, jak začít používat WPF, najdete v tématu [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
@@ -88,7 +88,7 @@ Po zkopírování tohoto kódu stiskněte klávesu **F5** v aplikaci Visual Stud
 
 Všimněte si, jak <xref:System.Windows.Controls.StackPanel> umístí tlačítka nad <xref:System.Windows.Controls.InkCanvas>. Pokud se pokusíte použít rukopis v horní části tlačítek, <xref:System.Windows.Controls.InkCanvas> shromažďuje a vykresluje rukopis za tlačítky. Důvodem je to, že tlačítka jsou na stejné <xref:System.Windows.Controls.InkCanvas> na rozdíl od podřízených. Tlačítka jsou také vyšší v pořadí vykreslování, takže rukopis je vykreslen za sebou.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Ink.DrawingAttributes>
 - <xref:System.Windows.Controls.InkCanvas.DefaultDrawingAttributes%2A>

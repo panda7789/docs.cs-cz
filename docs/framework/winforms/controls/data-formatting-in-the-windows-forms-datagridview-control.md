@@ -31,7 +31,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> poskytuje automatický
   
  Pokud výchozí analýza hodnot zadaných uživatelem nevyhovuje vašim potřebám, můžete zpracovat událost <xref:System.Windows.Forms.DataGridView.CellParsing> ovládacího prvku <xref:System.Windows.Forms.DataGridView> a poskytnout tak vlastní analýzu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewCellStyle>

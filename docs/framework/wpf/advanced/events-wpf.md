@@ -27,9 +27,9 @@ ms.locfileid: "76737924"
  [Události změny vlastnosti](property-change-events.md)  
  [Zpracování událostí v jazyku Visual Basic a WPF](visual-basic-and-wpf-event-handling.md)  
  [Slabé vzory událostí](weak-event-patterns.md)  
- [Postupy](events-how-to-topics.md)  
+ [Témata s postupy](events-how-to-topics.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.RoutedEvent>  
   
  <xref:System.Windows.EventManager>  
@@ -42,7 +42,7 @@ ms.locfileid: "76737924"
   [Základní elementy](base-elements.md)  
   [Strom elementu a serializace](element-tree-and-serialization.md)  
   [Vlastnosti](properties-wpf.md)  
-  [Vstup](input-wpf.md)  
+  [Input](input-wpf.md) (Vstup)  
   [Prostředky](resources-wpf.md)  
   [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   [Model obsahu WPF](../controls/wpf-content-model.md)  

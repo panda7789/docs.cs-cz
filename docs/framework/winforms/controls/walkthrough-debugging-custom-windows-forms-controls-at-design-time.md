@@ -149,6 +149,6 @@ Nyní, když můžete ladit vlastní ovládací prvky v době návrhu, existuje 
 
 - Můžete napsat vlastní Návrhář pro vlastní ovládací prvek. Díky tomu máte plnou kontrolu nad prostředím pro návrh pomocí rozšiřitelné infrastruktury návrháře zveřejněné v rámci sady Visual Studio. Podrobnosti najdete v tématu [Návod: vytváření model Windows Forms ovládacího prvku, který využívá výhod funkcí Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)

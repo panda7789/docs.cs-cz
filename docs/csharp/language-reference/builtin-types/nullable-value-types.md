@@ -24,7 +24,7 @@ Pokud potřebujete reprezentovat nedefinovanou hodnotu základního typu hodnoty
 
 ## <a name="declaration-and-assignment"></a>Deklarace a přiřazení
 
-Typ hodnoty je implicitně převoditelný na odpovídající typ hodnoty s možnou hodnotou null, takže můžete přiřadit hodnotu proměnné typu hodnoty s možnou hodnotou null, jako byste to proznamenali pro svůj základní typ hodnoty. Můžete také přiřadit hodnotu `null`. Příklad:
+Typ hodnoty je implicitně převoditelný na odpovídající typ hodnoty s možnou hodnotou null, takže můžete přiřadit hodnotu proměnné typu hodnoty s možnou hodnotou null, jako byste to proznamenali pro svůj základní typ hodnoty. Můžete také přiřadit hodnotu `null`. Například:
 
 [!code-csharp[declare and assign](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#Declaration)]
 
@@ -68,7 +68,7 @@ Typ hodnoty, která není null, `T`, se implicitně převodit na odpovídající
 
 ## <a name="lifted-operators"></a>Zrušené operátory
 
-Předdefinované unární a binární operátory nebo jakékoli přetížené operátory, které jsou podporovány hodnotou typu `T`, jsou podporovány také odpovídajícím typem hodnoty s možnou hodnotou null `T?`. Tyto operátory, označované také jako přenesené *operátory*, vyvolávají `null`, pokud jsou jeden nebo oba operandy `null`; v opačném případě operátor používá k výpočtu výsledku obsažené hodnoty operandů. Příklad:
+Předdefinované unární a binární operátory nebo jakékoli přetížené operátory, které jsou podporovány hodnotou typu `T`, jsou podporovány také odpovídajícím typem hodnoty s možnou hodnotou null `T?`. Tyto operátory, označované také jako přenesené *operátory*, vyvolávají `null`, pokud jsou jeden nebo oba operandy `null`; v opačném případě operátor používá k výpočtu výsledku obsažené hodnoty operandů. Například:
 
 [!code-csharp[lifted operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
 
@@ -130,7 +130,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Explicitní převody s možnou hodnotou null](~/_csharplang/spec/conversions.md#explicit-nullable-conversions)
 - [Zrušené operátory převodu](~/_csharplang/spec/conversions.md#lifted-conversion-operators)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Co přesně znamená "vyvoláno"?](https://docs.microsoft.com/archive/blogs/ericlippert/what-exactly-does-lifted-mean)

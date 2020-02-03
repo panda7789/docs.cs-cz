@@ -50,7 +50,7 @@ Ovládací prvek představuje grafické propojení mezi uživatelem a programem.
 
 10. Zabalení a nasazení ovládacího prvku Podrobnosti najdete v tématu [první pohled na nasazení v aplikaci Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
 - [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)

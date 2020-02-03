@@ -242,7 +242,7 @@ private:
    }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Timer>
 - [Komponenta Timer](timer-component-windows-forms.md)

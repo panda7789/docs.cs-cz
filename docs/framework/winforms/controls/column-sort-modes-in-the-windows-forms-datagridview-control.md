@@ -58,7 +58,7 @@ ms.locfileid: "76744190"
 > [!NOTE]
 > K události <xref:System.Windows.Forms.DataGridView.SortCompare> nedojde, je-li nastavena vlastnost <xref:System.Windows.Forms.DataGridView.DataSource%2A> nebo je-li hodnota vlastnosti <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> `true`a.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.Sort%2A?displayProperty=nameWithType>

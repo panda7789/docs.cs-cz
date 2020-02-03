@@ -26,7 +26,7 @@ Následující příklad ukazuje některé chování klíčového slova `null`:
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)

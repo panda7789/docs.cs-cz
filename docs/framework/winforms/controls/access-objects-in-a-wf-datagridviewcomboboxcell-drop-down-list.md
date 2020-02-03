@@ -68,7 +68,7 @@ Stejně jako ovládací prvek <xref:System.Windows.Forms.ComboBox>, <xref:System
   
 - Odkazy na sestavení System a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewComboBoxColumn>

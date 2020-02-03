@@ -63,7 +63,7 @@ Ovládací prvky model Windows Forms <xref:System.Windows.Forms.Label> lze použ
     label2->Text = "&Copy && Paste";  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)
 - [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)

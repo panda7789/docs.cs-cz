@@ -62,7 +62,7 @@ Následující témata popisují technologii ClickOnce, která se používá k s
  [Postupy: Zahrnutí datového souboru do aplikace ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
  Ukazuje, jak označit soubor tak, aby byl k dispozici v adresáři dat ClickOnce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled nastavení aplikace](./advanced/application-settings-overview.md)
 - [Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)

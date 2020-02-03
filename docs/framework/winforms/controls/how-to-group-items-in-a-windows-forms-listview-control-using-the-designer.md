@@ -41,7 +41,7 @@ Chcete-li povolit seskupování, je nutné nejprve vytvořit jeden nebo více <x
 
 3. Vyberte vlastnost <xref:System.Windows.Forms.ListViewItem.Group%2A> a v rozevíracím seznamu vyberte skupinu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.Groups%2A>

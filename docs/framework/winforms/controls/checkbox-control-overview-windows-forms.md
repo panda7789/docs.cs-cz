@@ -24,7 +24,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.CheckBox> označ
   
  Ovládací prvek <xref:System.Windows.Forms.CheckBox> má dvě důležité vlastnosti, <xref:System.Windows.Forms.CheckBox.Checked%2A> a <xref:System.Windows.Forms.CheckBox.CheckState%2A>. Vlastnost <xref:System.Windows.Forms.CheckBox.Checked%2A> vrací buď hodnotu `true` nebo `false`. Vlastnost <xref:System.Windows.Forms.CheckBox.CheckState%2A> vrací buď hodnotu <xref:System.Windows.Forms.CheckState.Checked> nebo <xref:System.Windows.Forms.CheckState.Unchecked>; nebo, pokud je vlastnost <xref:System.Windows.Forms.CheckBox.ThreeState%2A> nastavena na hodnotu `true`, <xref:System.Windows.Forms.CheckBox.CheckState%2A> může také vrátit <xref:System.Windows.Forms.CheckState.Indeterminate>. V neurčitém stavu se pole zobrazí s ztlumeným vzhledem k označení možnosti není k dispozici.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.CheckBox>
 - [Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox](how-to-set-options-with-windows-forms-checkbox-controls.md)

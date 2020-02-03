@@ -119,7 +119,7 @@ Druhá kategorie typů hodnot je [Enum](../../language-reference/builtin-types/e
 
 [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]
 
-`System.IO.FileMode.Create` konstanta má hodnotu 2. Název je však mnohem smysluplnější pro lidi, kteří čtou zdrojový kód, a z tohoto důvodu je lepší používat výčty namísto konstantních literálových čísel. Další informace najdete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.
+`System.IO.FileMode.Create` konstanta má hodnotu 2. Název je však mnohem smysluplnější pro lidi, kteří čtou zdrojový kód, a z tohoto důvodu je lepší používat výčty namísto konstantních literálových čísel. Další informace naleznete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.
 
 Všechny výčty dědí z <xref:System.Enum?displayProperty=nameWithType>, které dědí z <xref:System.ValueType?displayProperty=nameWithType>. Všechna pravidla, která platí pro struktury, platí také pro výčty. Další informace o výčtech naleznete v tématu [výčtové typy](../../language-reference/builtin-types/enum.md).
 
@@ -177,7 +177,7 @@ Typy běžných hodnot nemohou mít hodnotu [null](../../language-reference/keyw
 
 ## <a name="related-sections"></a>Související oddíly
 
-Další informace naleznete v následujících tématech:
+Další informace najdete v následujících tématech:
 
 - [Přetypování a převody typů](./casting-and-type-conversions.md)
 
@@ -199,9 +199,9 @@ Další informace naleznete v následujících tématech:
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../../language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)
 - [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)

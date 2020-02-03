@@ -57,7 +57,7 @@ Můžete nakonfigurovat, jak se mají hodnoty zobrazovat v ovládacím prvku mod
     > [!NOTE]
     > I v případě, že se hodnota ve formuláři zobrazí jako šestnáctková, všechny testy, které provedete u vlastnosti <xref:System.Windows.Forms.NumericUpDown.Value%2A>, budou testovat svou desítkovou hodnotu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.NumericUpDown>
 - [Ovládací prvek NumericUpDown](numericupdown-control-windows-forms.md)

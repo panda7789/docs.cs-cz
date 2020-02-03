@@ -77,7 +77,7 @@ Chcete-li vyvíjet komponenty a ovládací prvky, které pracují správně s n�
   
 - Formulář, který je hostitelem `AttributesDemoControl`, vyžaduje odkaz na sestavení `AttributesDemoControl`, aby bylo možné ho sestavit.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IComparable>
 - <xref:System.Windows.Forms.DataGridView>

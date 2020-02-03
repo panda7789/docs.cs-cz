@@ -22,7 +22,7 @@ Tato část stručně vysvětluje koncepty spojené se zabezpečením Windows Co
  [Terminologie zabezpečení](../../../../docs/framework/wcf/feature-details/wcf-security-terminology.md)  
  Glosář termínů používaných při projednávání zabezpečení WCF.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -36,7 +36,7 @@ Tato část stručně vysvětluje koncepty spojené se zabezpečením Windows Co
 ## <a name="related-sections"></a>Související oddíly  
  [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)

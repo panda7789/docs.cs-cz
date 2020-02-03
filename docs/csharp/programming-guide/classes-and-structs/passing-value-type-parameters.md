@@ -38,8 +38,8 @@ Proměnná [typu hodnoty](../../language-reference/builtin-types/value-types.md)
   
  [!code-csharp[csProgGuideParameters#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#6)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Předávání parametrů](./passing-parameters.md)
 - [Předávání parametrů typu odkazu](./passing-reference-type-parameters.md)

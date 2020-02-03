@@ -23,10 +23,10 @@ Windows Presentation Foundation (WPF) zahrnuje podporu pro několik typů vstupu
  [Přehled fokusu](focus-overview.md)  
  [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](styling-for-focus-in-controls-and-focusvisualstyle.md)  
  [Návod: Vytvoření první dotykové aplikace](walkthrough-creating-your-first-touch-application.md)  
- [Postupy](input-and-commands-how-to-topics.md)  
+ [Témata s postupy](input-and-commands-how-to-topics.md)  
  [Rukopis](digital-ink.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  

@@ -18,7 +18,7 @@ ms.locfileid: "76733119"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet nuget delete` – odstraní nebo zruší výpis balíčku ze serveru.
 
@@ -34,7 +34,7 @@ dotnet nuget delete [-h|--help]
 
 Příkaz `dotnet nuget delete` odstraní nebo zruší výpis balíčku ze serveru. V případě [NuGet.org](https://www.nuget.org/)je akce odpisovat balíček.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 * **`PACKAGE_NAME`**
 

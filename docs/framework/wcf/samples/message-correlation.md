@@ -11,7 +11,7 @@ ms.locfileid: "76747166"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 
-Tato ukázka předvádí, jak může aplikace služby Řízení front zpráv (MSMQ) odesílat zprávy MSMQ službě Windows Communication Foundation (WCF) a jak se dají mezi aplikacemi odesílatele a přijímače sladit zprávy ve scénáři požadavků a odpovědí. V této ukázce se používá vazba msmqIntegrationBinding. Tato služba je v tomto případě samoobslužná Konzolová aplikace, která umožňuje sledovat službu, která přijímá zprávy ve frontě. tis.
+Tato ukázka předvádí, jak může aplikace služby Řízení front zpráv (MSMQ) odesílat zprávy MSMQ službě Windows Communication Foundation (WCF) a jak se dají mezi aplikacemi odesílatele a přijímače sladit zprávy ve scénáři požadavků a odpovědí. V této ukázce se používá vazba msmqIntegrationBinding. Tato služba je v tomto případě samoobslužná Konzolová aplikace, která umožňuje sledovat službu, která přijímá zprávy ve frontě. k
 
  Služba zpracuje zprávu přijatou od odesílatele a pošle zprávu odpovědi zpět odesilateli. Odesilatel koreluje odpověď, kterou obdržel, na žádost, kterou odeslal původně. Vlastnosti `MessageID` a `CorrelationID` zprávy slouží ke korelaci požadavků a zpráv odpovědí.
 
@@ -313,7 +313,7 @@ static void DisplayOrderStatus()
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
 - [Řízení front zpráv](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

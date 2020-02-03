@@ -56,5 +56,5 @@ Pomocí model Windows Forms můžete vytvářet výkonné aplikace založené na
  Ukazuje, jak získat přístup ke kolekcím s klíči, nikoli k indexům.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozšiřování aplikací Windows Forms](./advanced/index.md)  
+ [Rozšiřování formulářových aplikací Windows](./advanced/index.md)  
  Obsahuje odkazy na témata, která popisují pokročilejší koncepty pro vytváření model Windows Formsch aplikací.

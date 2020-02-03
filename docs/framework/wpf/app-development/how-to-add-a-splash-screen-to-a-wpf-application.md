@@ -44,7 +44,7 @@ Toto téma ukazuje, jak přidat spouštěcí okno nebo *úvodní obrazovku*do ap
 
 V **Průzkumník řešení**odstraňte obrázek úvodní obrazovky.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.SplashScreen>
 - [Postupy: Přidání existujících položek do projektu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))

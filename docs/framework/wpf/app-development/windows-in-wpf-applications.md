@@ -21,9 +21,9 @@ Uživatelé komunikují s aplikacemi prostřednictvím Windows. Základním úč
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled Windows ve WPF](wpf-windows-overview.md)  
  [Přehled dialogových oken](dialog-boxes-overview.md)  
- [Postupy](window-management-how-to-topics.md)  
+ [Témata s postupy](window-management-how-to-topics.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Window>  
   
  <xref:System.Windows.Navigation.NavigationWindow>  

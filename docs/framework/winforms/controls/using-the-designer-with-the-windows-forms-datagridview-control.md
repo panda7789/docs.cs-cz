@@ -50,10 +50,10 @@ Visual Studio poskytuje podporu návrháře pro ovládací prvek `DataGridView`,
  [Postupy: Nastavení výchozích stylů buňky a datových formátů pro ovládací prvek Windows Forms DataGridView pomocí Návrháře](default-cell-styles-datagridview.md)  
  Popisuje, jak použít dialogové okno **Tvůrce CellStyle** k nastavení základního vzhledu a formátů zobrazení dat pro ovládací prvek.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)

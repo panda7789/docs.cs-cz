@@ -34,9 +34,9 @@ ms.locfileid: "76731846"
 - [Zabezpečené vzory konstruktoru pro DependencyObjects](safe-constructor-patterns-for-dependencyobjects.md)
 - [Vlastnosti závislostí typu kolekce](collection-type-dependency-properties.md)
 - [Vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)
-- [Postupy](properties-how-to-topics.md)
+- [Témata s postupy](properties-how-to-topics.md)
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  
@@ -51,7 +51,7 @@ ms.locfileid: "76731846"
   [Základní elementy](base-elements.md)  
   [Strom elementu a serializace](element-tree-and-serialization.md)  
   [Události](events-wpf.md)  
-  [Vstup](input-wpf.md)  
+  [Input](input-wpf.md) (Vstup)  
   [Prostředky](resources-wpf.md)  
   [Model obsahu WPF](../controls/wpf-content-model.md)  
   [Model vláken](threading-model.md)

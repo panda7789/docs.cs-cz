@@ -69,7 +69,7 @@ Tento ovládací prvek seskupuje příkazy aplikace a umožňuje snadný příst
   
 - [MenuStrip – dialogové okno úloh](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233645(v=vs.100))  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.MenuStrip>  
  Popisuje funkce třídy <xref:System.Windows.Forms.MenuStrip>, která poskytuje systém nabídek pro formulář.  
   

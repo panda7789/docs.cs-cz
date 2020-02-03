@@ -30,7 +30,7 @@ Můžete ovládat vzhled <xref:System.Windows.Forms.DataGridView> řádků tím,
   
 - Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.RowPrePaint?displayProperty=nameWithType>

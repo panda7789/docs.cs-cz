@@ -81,8 +81,8 @@ ovládací prvky <xref:System.Windows.Forms.ToolStrip> jsou panely nástrojů, k
   
 - [Návod: Vytvoření formuláře MDI se slučováním nabídek a s ovládacími prvky ToolStrip](walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ToolStrip> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.ToolStrip>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.ToolStrip>  

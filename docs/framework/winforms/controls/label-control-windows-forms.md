@@ -29,7 +29,7 @@ ms.locfileid: "76745279"
  [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
  Vysvětluje úpravu velikosti ovládacího prvku popisek jeho titulku.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.Label>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

@@ -1,5 +1,5 @@
 ---
-title: TrackBar – přehled ovládacího prvku
+title: Přehled ovládacího prvku TrackBar
 ms.date: 03/30/2017
 f1_keywords:
 - TrackBar
@@ -23,7 +23,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.TrackBar> (někd
   
  Existují dvě další důležité vlastnosti <xref:System.Windows.Forms.TrackBar.SmallChange%2A> a <xref:System.Windows.Forms.TrackBar.LargeChange%2A>. Hodnota vlastnosti <xref:System.Windows.Forms.TrackBar.SmallChange%2A> je počet pozic, po které se posune pohyb v reakci na stisknutí klávesy šipka vlevo nebo vpravo. Hodnota vlastnosti <xref:System.Windows.Forms.TrackBar.LargeChange%2A> je počet pozic, o které se posune Miniatura v reakci na stisknutí klávesy PAGE UP nebo PAGE DOWN, nebo v reakci na tlačítko myši na panelu sledování na kterékoli straně jezdce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TrackBar>
 - [Ovládací prvek TrackBar](trackbar-control-windows-forms.md)

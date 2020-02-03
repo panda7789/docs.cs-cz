@@ -270,7 +270,7 @@ Změny v této kategorii upravují oblast veřejného povrchu typu. Většina zm
 
   Ve většině případů je odebrání atributu (například <xref:System.NonSerializedAttribute>) zásadní změnou.
 
-## <a name="platform-support"></a>Podpora platforem
+## <a name="platform-support"></a>Podpora platformy
 
 - ✔️ **povoleno: podpora operace na platformě, která nebyla dříve podporována**
 

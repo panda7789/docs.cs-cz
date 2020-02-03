@@ -20,7 +20,7 @@ ms.locfileid: "76732540"
 
 V tomto článku se dozvíte, jak použít styly pro řízení Windows Presentation Foundation (WPF) hostovaného ve formuláři Windows.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 
@@ -134,7 +134,7 @@ Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a
 
 1. Klikněte na tlačítko **OK** a tlačítka **Storno** a zobrazte rozdíly.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

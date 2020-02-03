@@ -1,5 +1,5 @@
 ---
-title: Komponenta PrintDialog
+title: PrintDialog – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - print options [Windows Forms], PrintDialog component (using designer)
@@ -25,7 +25,7 @@ Součást model Windows Forms `PrintDialog` je předem nakonfigurovaným dialogo
  [Postupy: Zobrazení komponenty PrintDialog](how-to-display-the-printdialog-component.md)  
  Vysvětluje, jak zobrazit dialog a kde ukládá vlastnosti.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.PrintDialog>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

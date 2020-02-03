@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek PrintPreviewControl
+title: PrintPreviewControl – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - printing [Windows Forms], print preview
@@ -21,7 +21,7 @@ ms.locfileid: "76741424"
  [Přehled ovládacího prvku PrintPreviewControl](printpreviewcontrol-control-overview-windows-forms.md)  
  Zavádí obecné koncepce `PrintPreviewControl`, pomocí kterých můžete navrhovat vlastní dialog nebo komponentu pro náhled tisku.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.PrintPreviewControl>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

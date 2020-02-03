@@ -23,7 +23,7 @@ ms.locfileid: "76746385"
 
 V tomto článku se dozvíte, jak vytvořit ovládací prvek Windows Presentation Foundation (WPF) pro použití v aplikacích založených na model Windows Forms.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 
@@ -102,7 +102,7 @@ Model Windows Forms a WPF jsou různé technologie, ale jsou navržené tak, aby
 
 - Změňte styl obsahu WPF. Další informace najdete v tématu [Návod: určení stylu obsahu WPF](walkthrough-styling-wpf-content.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

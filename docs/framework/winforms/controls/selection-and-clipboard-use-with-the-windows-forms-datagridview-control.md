@@ -32,7 +32,7 @@ Ovládací prvek `DataGridView` poskytuje celou řadu možností pro konfiguraci
  [Postupy: Povolení kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
  Popisuje, jak povolit podporu schránky v ovládacím prvku.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
@@ -51,7 +51,7 @@ Ovládací prvek `DataGridView` poskytuje celou řadu možností pro konfiguraci
  <xref:System.Windows.Forms.DataGridViewSelectedColumnCollection>  
  Poskytuje referenční dokumentaci pro třídu <xref:System.Windows.Forms.DataGridViewSelectedColumnCollection>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

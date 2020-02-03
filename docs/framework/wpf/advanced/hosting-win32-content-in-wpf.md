@@ -15,7 +15,7 @@ ms.locfileid: "76747009"
 ---
 # <a name="hosting-win32-content-in-wpf"></a>Hostování obsahu Win32 v platformě WPF
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Viz [spolupráce WPF a Win32](wpf-and-win32-interoperation.md).
 
@@ -368,6 +368,6 @@ Díky tomu máte následující:
 
 ![Snímek obrazovky aplikace WPF spuštěné.](./media/hosting-win32-content-in-wpf/windows-presentation-foundation-application.png)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)

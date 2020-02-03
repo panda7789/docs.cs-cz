@@ -23,7 +23,7 @@ Když uživatelé budou zobrazovat data zobrazená v ovládacím prvku model Win
 
 - Klikněte na glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) v pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> a pak vyberte **Povolit změnu pořadí sloupců**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType>

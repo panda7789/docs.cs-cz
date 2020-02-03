@@ -20,11 +20,11 @@ ms.locfileid: "76737885"
 
 Windows Presentation Foundation (WPF) má funkci rukopisu, která usnadňuje začleňování digitálního inkoustu do vaší aplikace.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Chcete-li použít následující příklady, nejprve nainstalujte [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Pomáhá také zjistit, jak psát základní aplikace WPF. Nápovědu Začínáme s WPF naleznete v tématu [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="quick-start"></a>Rychlé zprovoznění
+## <a name="quick-start"></a>Rychlý start
 
 Tato část vám pomůže napsat jednoduchou aplikaci WPF, která shromažďuje rukopis.
 
@@ -32,7 +32,7 @@ Tato část vám pomůže napsat jednoduchou aplikaci WPF, která shromažďuje 
 
 Vytvoření aplikace WPF podporující rukopis:
 
-1. Otevřít Visual Studio.
+1. Otevřete sadu Visual Studio.
 
 2. Vytvořte novou **aplikaci WPF**.
 
@@ -108,7 +108,7 @@ Ke všem funkcím WPF můžete přistupovat z procedurálního kódu. Pomocí t�
 
 1. Sestavte aplikaci stisknutím klávesy **F5**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rukopis](digital-ink.md)
 - [Shromáždění rukopisu](collecting-ink.md)

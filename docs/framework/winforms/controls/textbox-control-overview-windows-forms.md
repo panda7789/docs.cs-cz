@@ -1,5 +1,5 @@
 ---
-title: TextBox – přehled ovládacího prvku
+title: Přehled ovládacího prvku TextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -49,7 +49,7 @@ private:
    }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)

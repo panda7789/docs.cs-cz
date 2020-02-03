@@ -96,6 +96,6 @@ Předtím, než použijete moniker služby Windows Communication Foundation (WCF
 
      Tím se upraví importované definice rozhraní, aby všechny metody vracely `HResult`. Jakékoli jiné návratové hodnoty jsou převedeny na výstupní parametry. Celkové provedení metod zůstává stejné. To umožňuje určit příčinu výjimky při volání metody na proxy serveru. Tato funkce je k dispozici C++ pouze z kódu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nástroj metadat modelu služby (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)

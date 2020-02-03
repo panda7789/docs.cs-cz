@@ -55,7 +55,7 @@ Model Windows Forms aplikace a ovládací prvky mohou spolupracovat s nespravova
   
 - Zobrazí každý formulář Windows na novém vlákně. Další informace najdete v tématu [Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Model Windows Forms a nespravované aplikace](windows-forms-and-unmanaged-applications.md)
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)

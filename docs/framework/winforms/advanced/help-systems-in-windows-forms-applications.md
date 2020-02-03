@@ -23,7 +23,7 @@ Jedním z nejdůležitějších courtesies, jako vývojář aplikací, je poskyt
   
  Můžete generovat soubory HTML Help 1. x pomocí HTML Help Workshop. Další informace o nápovědě HTML naleznete v tématu "HTML Help Workshop" nebo v jiných tématech nápovědy "HTML" na webu MSDN.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Integrace uživatelské nápovědy v modelu Windows Forms](integrating-user-help-in-windows-forms.md)
 - [Komponenta HelpProvider](../controls/helpprovider-component-windows-forms.md)

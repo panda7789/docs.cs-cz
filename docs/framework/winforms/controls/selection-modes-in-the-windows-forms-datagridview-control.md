@@ -46,7 +46,7 @@ Kolekci aktuálně vybraných buněk, řádků nebo sloupců můžete načíst p
 > [!TIP]
 > Příklad kódu, který ukazuje programové použití vybraných buněk, najdete v přehledu třídy <xref:System.Windows.Forms.DataGridView>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>

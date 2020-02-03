@@ -30,7 +30,7 @@ Informace v této části se zaměřují na zabezpečení programování v Windo
  [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  Vysvětlení některých běžných úloh, které jsou vyžadovány při použití certifikátů X. 509.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -52,7 +52,7 @@ Informace v této části se zaměřují na zabezpečení programování v Windo
   
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -18,7 +18,7 @@ Tento kurz demonstruje nástroje pro analýzu nevracení paměti .NET Core.
 
 V tomto kurzu se používá ukázková aplikace, která je navržená pro úmyslně nevracení paměti. Ukázka je poskytována jako cvičení. Můžete analyzovat aplikaci, která neúmyslně nevrací paměť.
 
-V tomto kurzu se naučíte:
+V tomto kurzu provedete následující:
 
 > [!div class="checklist"]
 >
@@ -26,7 +26,7 @@ V tomto kurzu se naučíte:
 > - Vygenerujte soubor s výpisem paměti.
 > - Analyzujte využití paměti pomocí souboru s výpisem paměti.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 V tomto kurzu se používá:
 

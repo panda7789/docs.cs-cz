@@ -37,7 +37,7 @@ V této části najdete témata, která ukazují různé programovací úkoly za
  [Postupy: Práce se sloupci obrázků v ovládacím prvku Windows Forms DataGridView](how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
  Popisuje, jak programovat pomocí třídy `DataGridViewImageColumn`.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
@@ -54,7 +54,7 @@ V této části najdete témata, která ukazují různé programovací úkoly za
  [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](basic-column-row-and-cell-features-wf-datagridview-control.md)  
  Poskytuje témata, která popisují běžně používané vlastnosti buňky, řádku a sloupce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

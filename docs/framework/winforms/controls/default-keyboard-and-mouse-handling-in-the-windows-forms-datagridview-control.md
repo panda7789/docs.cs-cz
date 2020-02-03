@@ -114,7 +114,7 @@ Následující tabulky popisují, jak mohou uživatelé pracovat s ovládacím p
   
  Pokud je <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> nastavená na `true` a <xref:System.Windows.Forms.DataGridView.SelectionMode%2A> je nastavená na <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> nebo <xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>, klikne na buňku, zatímco stisknutí klávesy SHIFT nebo CTRL se chová stejným způsobem s tím rozdílem, že jsou ovlivněné jenom celé řádky a sloupce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)

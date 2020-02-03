@@ -1,5 +1,5 @@
 ---
-title: RadioButton – přehled ovládacího prvku
+title: Přehled ovládacího prvku RadioButton
 ms.date: 03/30/2017
 f1_keywords:
 - RadioButton
@@ -24,7 +24,7 @@ Model Windows Forms <xref:System.Windows.Forms.RadioButton> ovládací prvky př
   
  Ovládací prvek <xref:System.Windows.Forms.RadioButton> se může zobrazit jako příkazové tlačítko, které se zobrazí, pokud je zaškrtnuto, pokud je vlastnost <xref:System.Windows.Forms.RadioButton.Appearance%2A> nastavená na <xref:System.Windows.Forms.Appearance.Button>. Přepínače mohou také zobrazovat obrázky pomocí vlastností <xref:System.Windows.Forms.ButtonBase.Image%2A> a <xref:System.Windows.Forms.ButtonBase.ImageList%2A>. Další informace najdete v tématu [Postup: nastavení obrázku zobrazovaného ovládacím prvkem model Windows Forms](how-to-set-the-image-displayed-by-a-windows-forms-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RadioButton>
 - [Přehled ovládacího prvku Panel](panel-control-overview-windows-forms.md)

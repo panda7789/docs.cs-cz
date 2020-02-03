@@ -63,7 +63,7 @@ Tento příklad vyžaduje:
   
 - Odkazy na sestavení System a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStripControlHost>
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)

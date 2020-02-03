@@ -17,7 +17,7 @@ ms.locfileid: "76733220"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet list reference` – vypíše odkazy z projektu na projekt.
 
@@ -29,7 +29,7 @@ ms.locfileid: "76733220"
 
 Příkaz `dotnet list reference` poskytuje pohodlný způsob pro výpis odkazů projektu pro daný projekt nebo řešení.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 * **`PROJECT | SOLUTION`**
 

@@ -56,7 +56,7 @@ Témata v této části popisují, jak pomocí datové vazby svázat prvky s dat
 - [Hledání elementů generovaných šablonou DataTemplate](how-to-find-datatemplate-generated-elements.md)
 - [Vytvoření vazby k webové službě](how-to-bind-to-a-web-service.md)
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 - <xref:System.Windows.Data>
 - <xref:System.Windows.Data.Binding>

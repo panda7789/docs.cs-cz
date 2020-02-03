@@ -57,7 +57,7 @@ Když použijete <xref:System.Windows.Forms.DataGridView> pro úpravu dat v apli
 ## <a name="virtual-mode"></a>Virtuální režim  
  Pokud implementujete virtuální režim, budete muset sledovat, kdy je v datovém modelu potřeba řádek pro nové záznamy a kdy se má vrátit zpět přidání řádku. Přesná implementace této funkce závisí na implementaci datového modelu a jeho sémantikě transakce, například zda je rozsah potvrzení na úrovni buňky nebo řádku. Další informace naleznete v tématu [virtuální režim v ovládacím prvku DataGridView model Windows Forms](virtual-mode-in-the-windows-forms-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.DefaultValuesNeeded?displayProperty=nameWithType>

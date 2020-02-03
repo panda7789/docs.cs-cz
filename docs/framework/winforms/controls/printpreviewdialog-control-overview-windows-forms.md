@@ -1,5 +1,5 @@
 ---
-title: PrintPreviewDialog – přehled ovládacího prvku
+title: Přehled ovládacího prvku PrintPreviewDialog
 ms.date: 01/08/2018
 f1_keywords:
 - PrintPreviewDialog
@@ -53,7 +53,7 @@ Pokud přepínač není přítomen nebo pokud je nastaven na jinou hodnotu, opti
 
 Použijete-li událost <xref:System.Drawing.Printing.PrintDocument.QueryPageSettings> pro úpravu nastavení tiskárny, výkon ovládacího prvku <xref:System.Windows.Forms.PrintPreviewDialog> nebude vylepšen ani v případě, že je nastaven přepínač konfigurace optimalizace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PrintPreviewDialog>
 - [Přehled ovládacího prvku PrintPreviewControl](printpreviewcontrol-control-overview-windows-forms.md)

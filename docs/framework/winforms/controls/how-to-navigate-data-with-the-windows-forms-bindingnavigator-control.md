@@ -51,7 +51,7 @@ Nástupem ovládacího prvku <xref:System.Windows.Forms.BindingNavigator> v mode
   
 - Odkazy na sestavení System, System. data, System. Drawing, System. Windows. Forms a System. XML.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingNavigator>
 - [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)

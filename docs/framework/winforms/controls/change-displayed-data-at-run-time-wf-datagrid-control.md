@@ -93,7 +93,7 @@ ms.locfileid: "76740590"
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Datové sady ADO.NET](../../data/adonet/ado-net-datasets.md)
 - [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

@@ -32,7 +32,7 @@ Toto téma rozepisuje a popisuje komponenty aktivační služby procesů systém
 ### <a name="listener-adapters"></a>Adaptéry naslouchacího procesu  
  Adaptéry naslouchacího procesu jsou jednotlivé služby systému Windows, které implementují logiku síťové komunikace používané pro příjem zpráv pomocí síťového protokolu, na kterém naslouchá. V následující tabulce jsou uvedeny adaptéry naslouchacího procesu pro protokoly Windows Communication Foundation (WCF).  
   
-|Název služby adaptéru naslouchacího procesu|Protokol|Poznámky|  
+|Název služby adaptéru naslouchacího procesu|Protocol (Protokol)|Poznámky:|  
 |-----------------------------------|--------------|-----------|  
 |W3SVC|http|Společná součást, která poskytuje aktivaci protokolem HTTP pro IIS 7,0 a WCF.|  
 |NetTcpActivator|net.tcp|Závisí na službě NetTcpPortSharing.|  
@@ -85,7 +85,7 @@ Toto téma rozepisuje a popisuje komponenty aktivační služby procesů systém
 </system.web>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
 - [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

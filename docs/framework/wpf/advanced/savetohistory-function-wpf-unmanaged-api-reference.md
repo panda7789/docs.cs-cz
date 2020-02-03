@@ -46,6 +46,6 @@ HRESULT SaveToHistory(
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Odkaz na nespravované rozhraní API subsystému WPF](wpf-unmanaged-api-reference.md)

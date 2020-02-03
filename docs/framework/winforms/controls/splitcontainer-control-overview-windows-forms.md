@@ -38,7 +38,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.SplitContainer> 
   
 ## <a name="commonly-used-properties-methods-and-events"></a>Běžně používané vlastnosti, metody a události  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A> – vlastnost|Určuje, která paleta zůstane po změně velikosti <xref:System.Windows.Forms.SplitContainer> ovládacího prvku stejná velikost.|  
 |<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> – vlastnost|Určuje, zda lze příčku přesunout pomocí klávesnice nebo myši.|  
@@ -49,7 +49,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.SplitContainer> 
 |událost <xref:System.Windows.Forms.SplitContainer.SplitterMoving>|Vyvolá se při přesunutí příčky.|  
 |událost <xref:System.Windows.Forms.SplitContainer.SplitterMoved>|Vyvolá se v případě, že došlo k přesunutí příčky.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.SplitContainer>
 - [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

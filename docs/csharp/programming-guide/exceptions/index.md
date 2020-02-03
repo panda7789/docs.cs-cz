@@ -50,14 +50,14 @@ Další informace o zpracování výjimek a výjimek naleznete v následujícíc
 - [Jak spustit čistící kód pomocí příkazu finally](how-to-execute-cleanup-code-using-finally.md)
 - [Jak zachytit výjimku, která není CLS](how-to-catch-a-non-cls-exception.md)
 
-## <a name="c-language-specification"></a>C# – jazyková specifikace
+## <a name="c-language-specification"></a>Specifikace jazyka C#
 
 Další informace naleznete v tématu [výjimky](~/_csharplang/spec/exceptions.md) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.SystemException>
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Klíčová slova jazyka C#](../../language-reference/keywords/index.md)
 - [throw](../../language-reference/keywords/throw.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)

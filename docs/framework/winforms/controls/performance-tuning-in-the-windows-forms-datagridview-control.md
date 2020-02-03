@@ -29,14 +29,14 @@ Při práci s velkým objemem dat může ovládací prvek `DataGridView` spotře
  [Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
  Popisuje, jak načíst data na vyžádání, což je užitečné v případě, že máte větší množství dat, než kolik jich může být dostupných pro klientské úložiště.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
  <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>  
  Poskytuje referenční dokumentaci pro vlastnost <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md)

@@ -43,7 +43,7 @@ Ovládací prvky model Windows Forms jsou opakovaně použitelné komponenty, kt
  [Multithreading v ovládacích prvcích Windows Forms](multithreading-in-windows-forms-controls.md)  
  Ukazuje, jak implementovat ovládací prvky s více vlákny.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

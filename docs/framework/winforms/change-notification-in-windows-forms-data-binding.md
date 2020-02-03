@@ -32,7 +32,7 @@ Jedním z nejdůležitějších konceptů model Windows Forms datové vazby je *
 ## <a name="change-notification-for-custom-controls"></a>Změna oznámení pro vlastní ovládací prvky  
  Nakonec je třeba ze strany ovládacího prvku zveřejnit událost *PropertyName*změněné pro každou vlastnost navrženou tak, aby byla vázána na data. Změny vlastnosti ovládacího prvku jsou následně šířeny do vázaného zdroje dat. Další informace najdete v tématu [Postupy: použití vzoru PropertyNameChanged.](how-to-apply-the-propertynamechanged-pattern.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.ComponentModel.INotifyPropertyChanged>

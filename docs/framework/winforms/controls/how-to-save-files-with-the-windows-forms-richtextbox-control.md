@@ -36,7 +36,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> mů
 
 - Prostý text s textovou reprezentací objektů OLE
 
-Chcete-li uložit soubor, zavolejte metodu <xref:System.Windows.Forms.RichTextBox.SaveFile%2A>. Pomocí metody **SaveFile** můžete také ukládat data do datového proudu. Další informace najdete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
+Chcete-li uložit soubor, zavolejte metodu <xref:System.Windows.Forms.RichTextBox.SaveFile%2A>. Pomocí metody **SaveFile** můžete také ukládat data do datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
 
 ### <a name="to-save-the-contents-of-the-control-to-a-file"></a>Uložení obsahu ovládacího prvku do souboru
 
@@ -88,7 +88,7 @@ Chcete-li uložit soubor, zavolejte metodu <xref:System.Windows.Forms.RichTextBo
     > [!IMPORTANT]
     > Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace potřebuje vytvořit soubor, musí tato aplikace pro složku vytvořit přístup. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor už existuje, aplikace potřebuje jenom přístup pro zápis, což je menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a místo toho udělit přístup ke složce jenom přístup pro čtení jenom pro jeden soubor. Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky Program Files.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.RichTextBox>

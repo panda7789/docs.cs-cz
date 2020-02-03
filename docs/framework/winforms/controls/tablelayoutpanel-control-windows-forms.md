@@ -46,7 +46,7 @@ Ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel> uspořádá svůj 
   
 4. [Postupy: Uspořádání ovládacích prvků na Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.TableLayoutPanel>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel>.  
   

@@ -42,7 +42,7 @@ Pro jazyk Microsoft Visual Basic .NET konkrétně můžete použít klíčové s
 > [!NOTE]
 > V rámci sady Visual Studio může IntelliSense zobrazit dokončení, pro které prvky jsou k dispozici pro `Handles` odkaz na stránku. To však může trvat jeden průchod kompilace, aby zprostředkující soubor mohl naplnit všechny `Friends` odkazy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.UIElement.AddHandler%2A>
 - [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)

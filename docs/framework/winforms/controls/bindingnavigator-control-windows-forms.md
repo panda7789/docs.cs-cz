@@ -1,5 +1,5 @@
 ---
-title: BindingNavigator – ovládací prvek
+title: Ovládací prvek BindingNavigator
 ms.date: 03/30/2017
 helpviewer_keywords:
 - BindingNavigator control [Windows Forms]
@@ -30,7 +30,7 @@ ms.locfileid: "76744382"
   
  Viz také [Postupy: Přidání tlačítek Load, Save a Cancel do ovládacího prvku BindingNavigator model Windows Forms](load-save-and-cancel-bindingnavigator.md).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.BindingNavigator>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.BindingNavigator>.  
   

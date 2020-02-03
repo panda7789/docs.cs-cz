@@ -213,7 +213,7 @@ myPolygon.StrokeThickness = 2;
   
  V předchozích příkladech se u každého objektu Shape použila jedna transformace. Chcete-li použít více transformací na tvar (nebo jakýkoli jiný prvek uživatelského rozhraní), použijte <xref:System.Windows.Media.TransformGroup>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)

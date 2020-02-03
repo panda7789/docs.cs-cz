@@ -66,7 +66,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Jednoduché typy](~/_csharplang/spec/types.md#simple-types)
 - [Proměnné](~/_csharplang/spec/variables.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - <xref:System.ValueType?displayProperty=nameWithType>

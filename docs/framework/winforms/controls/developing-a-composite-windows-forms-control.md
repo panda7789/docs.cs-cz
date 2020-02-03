@@ -50,7 +50,7 @@ Návrhář model Windows Forms v aplikaci Visual Studio poskytuje bohatou podpor
 
 - [Postupy: vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí v době návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md)
 - [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)

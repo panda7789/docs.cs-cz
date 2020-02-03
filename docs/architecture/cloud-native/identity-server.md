@@ -98,7 +98,7 @@ IdentityServer také hostuje veřejnou ukázkovou lokalitu, která se dá použ�
 
 Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na straně serveru a bohatých klientských aplikacích (jednostránkové). IdentityServer dodává [JavaScriptový klient](http://docs.identityserver.io/en/latest/quickstarts/4_javascript_client.html) (`oidc-client.js`) prostřednictvím NPM, který se dá přidat do jednostránkové a povolit tak použití IdentityServer pro přihlášení, odhlášení a ověřování webových rozhraní API na základě tokenu.
 
-## <a name="references"></a>Reference
+## <a name="references"></a>Odkazy
 
 - [Dokumentace k IdentityServer](http://docs.identityserver.io/en/latest/)
 - [Typy aplikací](https://docs.microsoft.com/azure/active-directory/develop/app-types)

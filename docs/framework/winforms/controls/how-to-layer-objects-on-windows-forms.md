@@ -53,7 +53,7 @@ txtFirstName->BringToFront();
 > [!NOTE]
 > Model Windows Forms podporuje *omezení ovládacího prvku*. Ovládací prvek zahrnutí zahrnuje umístění řady ovládacích prvků v rámci obsahujícího ovládacího prvku, jako je například počet ovládacích prvků <xref:System.Windows.Forms.RadioButton> v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Ovládací prvky lze následně rozvrstvit v rámci nadřazeného ovládacího prvku. Přesunutím skupinového pole se přesunou i ovládací prvky, protože jsou uvnitř ní obsažené.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

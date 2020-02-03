@@ -35,7 +35,7 @@ Ukazuje, jak použít vlastnost <xref:System.Windows.Forms.Control.Padding%2A> k
 [Postupy: implementace vlastního modulu pro rozložení](how-to-implement-a-custom-layout-engine.md)\
 Ukazuje, jak implementovat <xref:System.Windows.Forms.Layout.LayoutEngine> pro uspořádání model Windows Formsch ovládacích prvků.
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 <xref:System.Windows.Forms.TableLayoutPanel>\
 Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.TableLayoutPanel>.
@@ -43,7 +43,7 @@ Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.For
 <xref:System.Windows.Forms.FlowLayoutPanel>\
 Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)
 - [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)

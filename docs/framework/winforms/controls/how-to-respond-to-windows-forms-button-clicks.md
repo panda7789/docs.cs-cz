@@ -55,7 +55,7 @@ Nejzákladnější použití ovládacího prvku model Windows Forms <xref:System
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)

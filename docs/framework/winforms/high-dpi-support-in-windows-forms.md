@@ -16,7 +16,7 @@ ms.locfileid: "76741899"
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Podpora vysokého rozlišení DPI v model Windows Forms
 
-Počínaje .NET Framework 4,7 obsahuje model Windows Forms vylepšení běžných scénářů s vysokým rozlišením DPI a dynamickým DPI. Zde jsou některé z nich:
+Počínaje .NET Framework 4,7 obsahuje model Windows Forms vylepšení běžných scénářů s vysokým rozlišením DPI a dynamickým DPI. Mezi ně patří:
 
 - Vylepšení škálování a rozložení řady model Windows Formsch ovládacích prvků, jako je <xref:System.Windows.Forms.MonthCalendar> ovládací prvek a ovládací prvek <xref:System.Windows.Forms.CheckedListBox>.
 
@@ -60,7 +60,7 @@ K nakonfigurování podpory vysokého rozlišení DPI v aplikaci model Windows F
 
 - Zavolejte statickou metodu <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>.
 
-  Mělo by se jednat o první volání metody v vstupním bodě vaší aplikace. Příklad:
+  Mělo by se jednat o první volání metody v vstupním bodě vaší aplikace. Například:
 
   ```csharp
   static void Main()
@@ -94,7 +94,7 @@ Počínaje .NET Framework 4,7, tři nové události umožňují programově zpra
 
 ## <a name="new-helper-methods-and-properties"></a>Nové pomocné metody a vlastnosti
 
-.NET Framework 4,7 také přidává řadu nových pomocných metod a vlastností, které poskytují informace o škálování DPI a umožňují provádět škálování DPI. Zde jsou některé z nich:
+.NET Framework 4,7 také přidává řadu nových pomocných metod a vlastností, které poskytují informace o škálování DPI a umožňují provádět škálování DPI. Mezi ně patří:
 
 - <xref:System.Windows.Forms.Control.LogicalToDeviceUnits%2A>, která převede hodnotu z logického na pixely zařízení.
 
@@ -128,7 +128,7 @@ Můžete také ověřit verzi .NET Framework, na které byla aplikace vytvořena
 Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName);
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [model Windows Forms přidat element konfigurace](../configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md)
 - [Úprava velikosti a měřítka Windows Forms](adjusting-the-size-and-scale-of-windows-forms.md)

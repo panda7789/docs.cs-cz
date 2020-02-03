@@ -1,5 +1,5 @@
 ---
-title: Usnadnění
+title: Přístupnost
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls, accessibility
@@ -19,7 +19,7 @@ Funkce usnadnění model Windows Forms umožňuje zpřístupnit aplikaci širok�
  [Návod: Vytvoření přístupné aplikace Windows](walkthrough-creating-an-accessible-windows-based-application.md)  
  Popisuje všechny funkce, které byste měli podporovat pro zvýšení dostupnosti.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:Accessibility>  
  Obor názvů obsahující řadu tříd souvisejících s přístupností.  
   

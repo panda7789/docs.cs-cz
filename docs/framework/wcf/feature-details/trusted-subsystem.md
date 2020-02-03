@@ -29,16 +29,16 @@ Klient přistupuje k jedné nebo více webovým službám, které jsou distribuo
   
 5. Důvěryhodný podsystém zpracovává odpověď a vydává svou vlastní odpověď klientovi.  
   
-|Charakteristiku|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Zpráva|  
-|Interoperabilita|Pouze Windows Communication Foundation (WCF).|  
+|Vzájemná funkční spolupráce|Pouze Windows Communication Foundation (WCF).|  
 |Ověřování (služba)|Služba tokenů zabezpečení ověřuje a autorizuje klienty.|  
 |Ověřování (klient)|Důvěryhodný podsystém ověřuje klienta a prostředek ověřuje službu důvěryhodných subsystémů.|  
-|Způsobilost|Ano|  
+|Integrita|Ano|  
 |Chovávat|Ano|  
-|Přepravu|HTTP mezi klientem a službou důvěryhodného subsystému.<br /><br /> Pohyby. TCP mezi důvěryhodnou subsystémovou službou a prostředkem (back-end služba).|  
-|Vazba|<xref:System.ServiceModel.WSHttpBinding> and <xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
+|Přenos|HTTP mezi klientem a službou důvěryhodného subsystému.<br /><br /> Pohyby. TCP mezi důvěryhodnou subsystémovou službou a prostředkem (back-end služba).|  
+|Vazba|<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>Prostředek (back-end služba)  
   
@@ -210,7 +210,7 @@ Klient přistupuje k jedné nebo více webovým službám, které jsou distribuo
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

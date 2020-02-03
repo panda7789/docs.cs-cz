@@ -53,7 +53,7 @@ Datová vazba v model Windows Forms poskytuje prostředky pro zobrazení a prov�
   
  Viz také [rozhraní související s datovou vazbou](interfaces-related-to-data-binding.md), [Postupy: navigace mezi daty v model Windows Forms](how-to-navigate-data-in-windows-forms.md)a [Postup: vytvoření jednoduchého ovládacího prvku na formuláři Windows](how-to-create-a-simple-bound-control-on-a-windows-form.md).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.Binding?displayProperty=nameWithType>  
  Popisuje třídu, která představuje vazbu mezi komponentou s možností vazby a zdrojem dat.  
   

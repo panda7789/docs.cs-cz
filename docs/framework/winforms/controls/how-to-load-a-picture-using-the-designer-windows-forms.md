@@ -19,7 +19,7 @@ ms.locfileid: "76736328"
 
 Pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.PictureBox> můžete načíst a zobrazit obrázek ve formuláři v době návrhu nastavením vlastnosti <xref:System.Windows.Forms.PictureBox.Image%2A> na platný obrázek. V následující tabulce jsou uvedeny přijatelné typy souborů.
 
-|Type|Přípona názvu souboru|
+|Typ|Přípona názvu souboru|
 |---|---|
 |Monochromatick|. bmp|
 |Ikona|.ico|
@@ -41,7 +41,7 @@ Pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.Pictur
 
 1. V okně **vlastnosti** vyberte vlastnost <xref:System.Windows.Forms.PictureBox.Image%2A>. Klikněte pravým tlačítkem myši na miniaturu malého obrázku, který se zobrazí nalevo od názvu objektu obrázku, a pak zvolte možnost **obnovit**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PictureBox>
 - [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)

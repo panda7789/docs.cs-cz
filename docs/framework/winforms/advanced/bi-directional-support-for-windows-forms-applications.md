@@ -27,54 +27,54 @@ Pomocí sady Visual Studio můžete vytvářet aplikace pro systém Windows, kte
 
 |Ovládací prvek/součást|Účinek vlastnosti RightToLeft|Účinek vlastnosti RightToLeftLayout|Vyžaduje zrcadlení?|
 |------------------------|------------------------------------|------------------------------------------|-------------------------|
-|<xref:System.Windows.Forms.Button>|Nastaví směr čtení zprava doleva. Obrátí <xref:System.Windows.Forms.ButtonBase.TextAlign%2A>, <xref:System.Windows.Forms.ButtonBase.ImageAlign%2A>a <xref:System.Windows.Forms.ButtonBase.TextImageRelation%2A>|Bez efektu|Ne|
-|<xref:System.Windows.Forms.CheckBox>|Zaškrtávací políčko se zobrazí na pravé straně textu.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.CheckedListBox>|Všechna zaškrtávací políčka se zobrazí na pravé straně textu.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.ColorDialog>|Neovlivněno; závisí na jazyku operačního systému.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.ComboBox>|Položky v ovládacím prvku pole se seznamem jsou zarovnané vpravo|Bez efektu|Ne|
-|<xref:System.Windows.Forms.ContextMenu>|Zobrazí zarovnání vpravo se stejným pořadím čtení zprava doleva.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.DataGrid>|Zobrazí zarovnání vpravo se stejným pořadím čtení zprava doleva.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.DataGridView>|Ovlivňuje pořadí čtení zprava doleva a rozložení ovládacích prvků.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.Button>|Nastaví směr čtení zprava doleva. Obrátí <xref:System.Windows.Forms.ButtonBase.TextAlign%2A>, <xref:System.Windows.Forms.ButtonBase.ImageAlign%2A>a <xref:System.Windows.Forms.ButtonBase.TextImageRelation%2A>|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.CheckBox>|Zaškrtávací políčko se zobrazí na pravé straně textu.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.CheckedListBox>|Všechna zaškrtávací políčka se zobrazí na pravé straně textu.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.ColorDialog>|Neovlivněno; závisí na jazyku operačního systému.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.ComboBox>|Položky v ovládacím prvku pole se seznamem jsou zarovnané vpravo|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.ContextMenu>|Zobrazí zarovnání vpravo se stejným pořadím čtení zprava doleva.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.DataGrid>|Zobrazí zarovnání vpravo se stejným pořadím čtení zprava doleva.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.DataGridView>|Ovlivňuje pořadí čtení zprava doleva a rozložení ovládacích prvků.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.DateTimePicker>|Neovlivněno; závisí na jazyku operačního systému.|Zrcadlit ovládací prvek|Ano|
-|<xref:System.Windows.Forms.DomainUpDown>|Tlačítka nahoru a dolů zarovnané doleva|Bez efektu|Ne|
-|<xref:System.Windows.Forms.ErrorProvider>|Není podporováno|Bez efektu|Ne|
-|<xref:System.Windows.Forms.FontDialog>|Závisí na jazyku operačního systému.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.DomainUpDown>|Tlačítka nahoru a dolů zarovnané doleva|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.ErrorProvider>|Nepodporuje se|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.FontDialog>|Závisí na jazyku operačního systému.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.Form>|Nastaví směr čtení zprava doleva a obrátí posuvníky.|Zrcadlí formulář|Ano|
 |<xref:System.Windows.Forms.GroupBox>|Popisek se zobrazí zarovnané vpravo. Podřízené ovládací prvky mohou dědit tuto vlastnost.|Použití <xref:System.Windows.Forms.TableLayoutPanel> v rámci ovládacího prvku pro podporu zrcadlení zprava doleva|Ne|
-|<xref:System.Windows.Forms.HScrollBar>|Začíná na posuvníku (palec) zarovnané vpravo.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.ImageList>|Nepožadováno|Bez efektu|Ne|
-|<xref:System.Windows.Forms.Label>|Zobrazeno zarovnané doprava Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a <xref:System.Windows.Forms.Label.ImageAlign%2A>|Bez efektu|Ne|
-|<xref:System.Windows.Forms.LinkLabel>|Zobrazeno zarovnané doprava Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a <xref:System.Windows.Forms.Label.ImageAlign%2A>|Bez efektu|Ne|
-|<xref:System.Windows.Forms.ListBox>|Položky jsou zarovnány vpravo.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.HScrollBar>|Začíná na posuvníku (palec) zarovnané vpravo.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.ImageList>|Nepožadováno|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.Label>|Zobrazeno zarovnané doprava Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a <xref:System.Windows.Forms.Label.ImageAlign%2A>|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.LinkLabel>|Zobrazeno zarovnané doprava Obrátí <xref:System.Windows.Forms.Label.TextAlign%2A> a <xref:System.Windows.Forms.Label.ImageAlign%2A>|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.ListBox>|Položky jsou zarovnány vpravo.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.ListView>|Nastaví pořadí čtení zprava doleva. prvky zůstávají zarovnané vlevo|Zrcadlit ovládací prvek|Ano|
-|<xref:System.Windows.Forms.MainMenu>|Zobrazeno v době běhu zarovnané doprava s pořadím čtení zprava doleva (ne v době návrhu)|Bez efektu|Ne|
-|<xref:System.Windows.Forms.MaskedTextBox>|Zobrazí text zprava doleva.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.MainMenu>|Zobrazeno v době běhu zarovnané doprava s pořadím čtení zprava doleva (ne v době návrhu)|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.MaskedTextBox>|Zobrazí text zprava doleva.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.MonthCalendar>|Neovlivněno; závisí na jazyku operačního systému.|Zrcadlit ovládací prvek|Ano|
-|<xref:System.Windows.Forms.NotifyIcon>|Není podporováno|Není podporováno|Ne|
-|<xref:System.Windows.Forms.NumericUpDown>|Tlačítka nahoru a dolů jsou zarovnána doleva.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.OpenFileDialog>|U operačních systémů, které jsou zprava doleva, nastavení vlastnosti <xref:System.Windows.Forms.Control.RightToLeft> obsahujícího formuláře na <xref:System.Windows.Forms.RightToLeft.Yes?displayProperty=nameWithType> lokalizaci dialogového okna |Bez efektu|Ne|
-|<xref:System.Windows.Forms.PageSetupDialog>|Neovlivněno; závisí na jazyku operačního systému.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.NotifyIcon>|Nepodporuje se|Nepodporuje se|Ne|
+|<xref:System.Windows.Forms.NumericUpDown>|Tlačítka nahoru a dolů jsou zarovnána doleva.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.OpenFileDialog>|U operačních systémů, které jsou zprava doleva, nastavení vlastnosti <xref:System.Windows.Forms.Control.RightToLeft> obsahujícího formuláře na <xref:System.Windows.Forms.RightToLeft.Yes?displayProperty=nameWithType> lokalizaci dialogového okna |Žádný vliv|Ne|
+|<xref:System.Windows.Forms.PageSetupDialog>|Neovlivněno; závisí na jazyku operačního systému.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.Panel>|Podřízené ovládací prvky mohou dědit tuto vlastnost.|Použití <xref:System.Windows.Forms.TableLayoutPanel> v rámci ovládacího prvku zprava doleva|Ano|
-|<xref:System.Windows.Forms.PictureBox>|Není podporováno|Bez efektu|Ne|
-|<xref:System.Windows.Forms.PrintDialog>|Neovlivněno; závisí na jazyku operačního systému.|Bez efektu|Ne|
-|<xref:System.Drawing.Printing.PrintDocument>|Svislý posuvník zůstane zarovnaný doleva a vodorovný posuvník začne od levého sloupce.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.PrintPreviewDialog>|Není podporováno|Není podporováno|Ne|
+|<xref:System.Windows.Forms.PictureBox>|Nepodporuje se|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.PrintDialog>|Neovlivněno; závisí na jazyku operačního systému.|Žádný vliv|Ne|
+|<xref:System.Drawing.Printing.PrintDocument>|Svislý posuvník zůstane zarovnaný doleva a vodorovný posuvník začne od levého sloupce.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.PrintPreviewDialog>|Nepodporuje se|Nepodporuje se|Ne|
 |<xref:System.Windows.Forms.ProgressBar>|Nemá vliv na tuto vlastnost|Zrcadlit ovládací prvek|Ano|
-|<xref:System.Windows.Forms.RadioButton>|Přepínač se zobrazí na pravé straně textu.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.RichTextBox>|Prvky ovládacího prvku, které obsahují text, jsou zobrazeny zprava doleva s pořadím čtení ZPRAVa doleva.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.SaveFileDialog>|Neovlivněno; závisí na jazyku operačního systému.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.RadioButton>|Přepínač se zobrazí na pravé straně textu.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.RichTextBox>|Prvky ovládacího prvku, které obsahují text, jsou zobrazeny zprava doleva s pořadím čtení ZPRAVa doleva.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.SaveFileDialog>|Neovlivněno; závisí na jazyku operačního systému.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.SplitContainer>|Rozložení panelu je obrácené; na levé straně se zobrazí svislý posuvník. vodorovný posuvník začíná vpravo|Použití <xref:System.Windows.Forms.TableLayoutPanel> k zrcadlení pořadí podřízených ovládacích prvků|Ne|
-|<xref:System.Windows.Forms.Splitter>|Není podporováno|Bez efektu|Ne|
+|<xref:System.Windows.Forms.Splitter>|Nepodporuje se|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.StatusBar>|Nepodporováno; místo toho použít <xref:System.Windows.Forms.StatusStrip>|Bez účinku; místo toho použít <xref:System.Windows.Forms.StatusStrip>|Ne|
 |<xref:System.Windows.Forms.TabControl>|Tato vlastnost nemá vliv.|Zrcadlit ovládací prvek|Ano|
-|<xref:System.Windows.Forms.TextBox>|Zobrazí text zprava doleva s pořadím čtení ZPRAVa doleva.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.TextBox>|Zobrazí text zprava doleva s pořadím čtení ZPRAVa doleva.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.Timer>|Nepožadováno|Nepožadováno|Ne|
 |<xref:System.Windows.Forms.ToolBar>|Není ovlivněna touto vlastností; místo toho použít <xref:System.Windows.Forms.ToolStrip>|Bez účinku; místo toho použít <xref:System.Windows.Forms.ToolStrip>|Ano|
-|<xref:System.Windows.Forms.ToolTip>|Nastaví směr čtení zprava doleva.|Bez efektu|Ne|
-|<xref:System.Windows.Forms.TrackBar>|Posun nebo sledování začíná vpravo; Když je <xref:System.Windows.Forms.TrackBar.Orientation%2A> svislé, objeví se na pravé straně.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.ToolTip>|Nastaví směr čtení zprava doleva.|Žádný vliv|Ne|
+|<xref:System.Windows.Forms.TrackBar>|Posun nebo sledování začíná vpravo; Když je <xref:System.Windows.Forms.TrackBar.Orientation%2A> svislé, objeví se na pravé straně.|Žádný vliv|Ne|
 |<xref:System.Windows.Forms.TreeView>|Nastaví pouze směr čtení zprava doleva.|Zrcadlit ovládací prvek|Ano|
 |<xref:System.Windows.Forms.UserControl>|Na levé straně se zobrazí svislý posuvník. vodorovný posuvník má na pravé straně palec|Žádná přímá podpora; použít <xref:System.Windows.Forms.TableLayoutPanel>|Ne|
-|<xref:System.Windows.Forms.VScrollBar>|Zobrazuje se na levé straně místo pravé strany ovládacích prvků s posuvníky.|Bez efektu|Ne|
+|<xref:System.Windows.Forms.VScrollBar>|Zobrazuje se na levé straně místo pravé strany ovládacích prvků s posuvníky.|Žádný vliv|Ne|
 
 ## <a name="encoding"></a>Kódování
  Model Windows Forms podporuje kódování Unicode, takže při vytváření obousměrných aplikací můžete zahrnout libovolnou znakovou sadu. Ne všechny ovládací prvky model Windows Forms ale podporují Unicode na všech platformách.
@@ -115,6 +115,6 @@ Pomocí sady Visual Studio můžete vytvářet aplikace pro systém Windows, kte
 
  Některé ovládací prvky jsou zapečetěné. Proto nemůžete z nich odvodit nový ovládací prvek. Mezi ně patří ovládací prvky <xref:System.Windows.Forms.ImageList> a <xref:System.Windows.Forms.ProgressBar>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Obousměrná podpora pro webové aplikace v ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/6eedwbtt(v=vs.100))

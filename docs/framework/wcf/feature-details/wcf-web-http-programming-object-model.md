@@ -96,11 +96,11 @@ Programovací model webového HTTP WCF umožňuje vývojářům vystavit webové
 ## <a name="compatibility"></a>Kompatibilita  
  Model programování webových služeb HTTP WCF nepoužívá zprávy založené na protokolu SOAP, a proto nepodporuje protokoly WS-*. Stejný kontrakt ale můžete zveřejnit pomocí dvou různých koncových bodů: jednoho pomocí protokolu SOAP a jiného bez použití protokolu SOAP. Příklad najdete v tématu [How to: Diszveřejňuje kontrakt pro SOAP a webové klienty](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) .  
   
-## <a name="security"></a>Zabezpečení –  
+## <a name="security"></a>Zabezpečení  
 
 Vzhledem k tomu, že model programování webového HTTP WCF nepodporuje protokoly WS-*, jediným způsobem, jak zabezpečit webovou službu založenou na programovacím modelu webového HTTP WCF, je vystavení vaší služby pomocí protokolu SSL. Další informace o nastavení SSL se službou IIS 7,0 najdete v tématu [implementace protokolu SSL ve službě IIS](https://support.microsoft.com/help/299875/how-to-implement-ssl-in-iis).
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.WebHttpBinding>
 - <xref:System.ServiceModel.Web.WebGetAttribute>

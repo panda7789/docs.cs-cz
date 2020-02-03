@@ -17,7 +17,7 @@ ms.locfileid: "76734311"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet build` – sestavení projektu a všech jeho závislostí.
 
@@ -67,7 +67,7 @@ Kromě možností příkaz `dotnet build` přijímá možnosti nástroje MSBuild
 
 Spuštění `dotnet build` je ekvivalentem spuštění `dotnet msbuild -restore`; výchozí podrobnost výstupu se ale liší.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT | SOLUTION`
 
@@ -121,7 +121,7 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `minimal`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí formát je `minimal`.
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 

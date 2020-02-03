@@ -150,6 +150,6 @@ Přepínací ovládací prvky, jako jsou například ovládací prvky odvozené 
     > [!NOTE]
     > Pokud uživatel přesune ukazatel myši na ovládací prvek přepínacího tlačítka, když je vypnuté tlačítko myši (například přesunutí myši na ovládací prvek <xref:System.Windows.Forms.Button> při stisknutí klávesy), přepínací ovládací prvek se vykreslí do vyvolaného stavu a dojde pouze k události <xref:System.Windows.Forms.Control.MouseUp>. V této situaci se neobjevují události <xref:System.Windows.Forms.Control.Click> nebo <xref:System.Windows.Forms.Control.MouseClick>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

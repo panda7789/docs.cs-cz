@@ -60,7 +60,7 @@ Pro aplikace založené na systému Windows je velmi běžné tisknout text. Tř
   
 - Informace o tom, jak tento příklad sestavit z příkazového řádku pro Visual Basic C#nebo vizuál, najdete v tématu [sestavování z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo při [sestavování z příkazového řádku pomocí CSc. exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad můžete vytvořit také v aplikaci Visual Studio vložením kódu do nového projektu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Graphics>
 - <xref:System.Drawing.Brush>

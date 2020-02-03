@@ -16,7 +16,7 @@ V této ukázce se dozvíte, jak nastavit službu jako zjistitelnou a jak hledat
 > [!NOTE]
 > Tato ukázka implementuje zjišťování v kódu.  Ukázku, která implementuje zjišťování v konfiguraci, najdete v tématu [Configuration](../../../../docs/framework/wcf/samples/configuration-sample.md).
 
-## <a name="service"></a>Service
+## <a name="service"></a>Služba
 
 Toto je jednoduchá implementace služby Kalkulačka. Kód související se zjišťováním najdete v `Main`, kde se do hostitele služby přidá <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a přidá se <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, jak je znázorněno v následujícím kódu.
 

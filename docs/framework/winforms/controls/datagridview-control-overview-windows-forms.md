@@ -1,5 +1,5 @@
 ---
-title: DataGridView – přehled ovládacího prvku
+title: Přehled ovládacího prvku DataGridView
 ms.date: 03/30/2017
 f1_keywords:
 - DataGridView
@@ -78,7 +78,7 @@ ms.locfileid: "76742491"
  [Ladění výkonu v ovládacím prvku Windows Forms DataGridView](performance-tuning-in-the-windows-forms-datagridview-control.md)  
  Poskytuje témata, které popisují, jak efektivně používat ovládací prvek, aby se zabránilo problémům s výkonem při práci s velkým objemem dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>

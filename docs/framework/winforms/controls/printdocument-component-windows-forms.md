@@ -1,5 +1,5 @@
 ---
-title: Komponenta PrintDocument
+title: PrintDocument – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - PrintDocument component [Windows Forms]
@@ -19,7 +19,7 @@ Komponenta model Windows Forms `PrintDocument` se používá k nastavení vlastn
  [Přehled komponenty PrintDocument](printdocument-component-overview-windows-forms.md)  
  Zavádí obecné koncepty `PrintDocument` komponenty, které vám umožní nastavit vlastnosti, které popisují, jak tisknout a spustit tisk v aplikaci pro Windows.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Drawing.Printing.PrintDocument>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

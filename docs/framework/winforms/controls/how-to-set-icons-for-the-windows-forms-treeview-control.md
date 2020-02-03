@@ -68,7 +68,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.TreeView> může
     treeView1->SelectedNode->SelectedImageIndex = 1;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku TreeView](treeview-control-overview-windows-forms.md)
 - [Postupy: Přidání a odebrání uzlů s ovládacím prvkem Windows Forms TreeView](how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control.md)

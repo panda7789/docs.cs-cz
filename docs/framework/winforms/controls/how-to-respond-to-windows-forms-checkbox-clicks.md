@@ -135,7 +135,7 @@ Vždy, když uživatel klikne na ovládací prvek model Windows Forms <xref:Syst
     > [!NOTE]
     > Pokud je vlastnost <xref:System.Windows.Forms.CheckBox.ThreeState%2A> nastavena na hodnotu `true`, vrátí <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnost `true` pro <xref:System.Windows.Forms.CheckState.Checked> i <xref:System.Windows.Forms.CheckState.Indeterminate>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.CheckBox>
 - [Přehled ovládacího prvku CheckBox](checkbox-control-overview-windows-forms.md)

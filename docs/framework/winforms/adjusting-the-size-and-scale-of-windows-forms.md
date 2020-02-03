@@ -26,7 +26,7 @@ Toto téma obsahuje odkazy na informace o změně velikosti model Windows Forms.
  [Podpora vysokého rozlišení DPI v model Windows Forms](high-dpi-support-in-windows-forms.md)    
  Popisuje podporu model Windows Forms s vysokým rozlišením DPI a dynamickým škálováním. 
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Drawing.Size>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

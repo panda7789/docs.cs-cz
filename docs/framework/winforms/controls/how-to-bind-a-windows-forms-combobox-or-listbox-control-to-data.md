@@ -31,7 +31,7 @@ Můžete navazovat <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.F
   
 2. Pokud vytváříte vazbu na tabulku, nastavte vlastnost `DisplayMember` na název sloupce ve zdroji dat.  
   
-     \- nebo –  
+     \- nebo-  
   
      Pokud vytváříte vazbu na <xref:System.Collections.IList>, nastavte člena zobrazení na veřejnou vlastnost typu v seznamu.  
   
@@ -53,7 +53,7 @@ Můžete navazovat <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.F
     > [!NOTE]
     > Pokud jste vázáni na zdroj dat, který neimplementuje rozhraní <xref:System.ComponentModel.IBindingList>, například <xref:System.Collections.ArrayList>, data vázaného ovládacího prvku nebudou aktualizována při aktualizaci zdroje dat. Například pokud máte pole se seznamem vázané na <xref:System.Collections.ArrayList> a data jsou přidána do <xref:System.Collections.ArrayList>, tyto nové položky se nezobrazí v poli se seznamem. Můžete však vynutit aktualizaci pole se seznamem voláním <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> a <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A>ch metod na instanci třídy <xref:System.Windows.Forms.BindingContext>, ke které je ovládací prvek vázán.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>

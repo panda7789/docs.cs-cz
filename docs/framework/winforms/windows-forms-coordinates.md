@@ -28,7 +28,7 @@ Systém souřadnic pro formulář Windows je založen na souřadnicích zaříze
 ## <a name="mapping-from-one-type-of-coordinate-to-another"></a>Mapování z jednoho typu souřadnice na jiný  
  V některých případech může být nutné mapovat souřadnice obrazovky na souřadnice klientů. K tomu lze snadno využít metody <xref:System.Windows.Forms.Control.PointToClient%2A> a <xref:System.Windows.Forms.Control.PointToScreen%2A> dostupné ve třídě <xref:System.Windows.Forms.Control>. Například vlastnost <xref:System.Windows.Forms.Control.MousePosition%2A> <xref:System.Windows.Forms.Control> je uvedena v souřadnicích obrazovky, ale pravděpodobně je budete chtít převést na souřadnice klienta.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.PointToClient%2A>
 - <xref:System.Windows.Forms.Control.PointToScreen%2A>

@@ -1,5 +1,5 @@
 ---
-title: ToolBar – přehled ovládacího prvku
+title: Přehled ovládacího prvku ToolBar
 ms.date: 03/30/2017
 f1_keywords:
 - ToolBar
@@ -30,7 +30,7 @@ ms.locfileid: "76735481"
   
  Ovládací prvek <xref:System.Windows.Forms.ToolBar> umožňuje vytvořit panely nástrojů přidáním objektů <xref:System.Windows.Forms.Button> do kolekce <xref:System.Windows.Forms.ToolBar.Buttons%2A>. Editor kolekce lze použít k přidání tlačítek do ovládacího prvku <xref:System.Windows.Forms.ToolBar>; Každý objekt <xref:System.Windows.Forms.Button> by měl mít přiřazený text nebo obrázek, i když můžete oba přiřadit obojí. Obrázek je dodán přidruženou komponentou [ImageList](imagelist-component-windows-forms.md) . V době běhu můžete přidat nebo odebrat tlačítka z <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection> pomocí metod <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Add%2A> a <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection.Remove%2A>. Chcete-li programovat tlačítka <xref:System.Windows.Forms.ToolBar>, přidejte kód do události <xref:System.Windows.Forms.ToolBar.ButtonClick> <xref:System.Windows.Forms.ToolBar>pomocí vlastnosti <xref:System.Windows.Forms.ToolBarButtonClickEventArgs.Button%2A> třídy <xref:System.Windows.Forms.ToolBarButtonClickEventArgs>, abyste určili, na které tlačítko bylo kliknuto.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolBar>
 - [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)

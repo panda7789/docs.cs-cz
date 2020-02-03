@@ -186,7 +186,7 @@ Pro úpravu tohoto souboru použijte oblíbený editor CSV, který podporuje kó
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Zadejte název programu, složky, dokumentu nebo internetového prostředku a otevře se vám Windows.|
 |TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Otevírají|
-|Window_1:System.Windows.Window.Title|Název|Spustit|
+|Window_1:System.Windows.Window.Title|Název|Spusťte|
 
 Lokalizace aplikace do němčiny by vyžadovala následující překlady:
 
@@ -198,13 +198,13 @@ Lokalizace aplikace do němčiny by vyžadovala následující překlady:
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Geben Sie den Namen eines, Ordners, dokumenty oder einer Internetresource a.|
 |TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Öffnen:|
-|Window_1:System.Windows.Window.Title|Název|Spustit|
+|Window_1:System.Windows.Window.Title|Název|Spusťte|
 
 **Vytváří**
 
 Poslední krok lokalizace zahrnuje vytvoření nově lokalizovaného satelitního sestavení. To lze provést pomocí následujícího příkazu LocBaml:
 
-**LocBaml.exe /generate RunDialog.resources.dll /trans:RunDialog.resources.dll.CSV /out: . /cul:de-DE**
+**LocBaml. exe/Generate RunDialog. Resources. dll/trans: RunDialog. Resources. dll. CSV/out:. /CUL: de-DE DE**
 
 V případě německého okna platí, že pokud je tento soubor. dll umístěný ve složce de-DE vedle hlavního sestavení, tento prostředek se automaticky načte místo do složky en-US. Pokud nemáte verzi Windows k otestování, nastavte jazykovou verzi na libovolnou jazykovou verzi Windows, kterou používáte (například `en-US`), a nahraďte původní knihovny DLL prostředků.
 
@@ -247,7 +247,7 @@ Všimněte si vlastnosti <xref:System.Windows.FrameworkElement.FlowDirection%2A>
 
 Všimněte si, že i když se změní kořenový <xref:System.Windows.FrameworkElement.FlowDirection%2A>, jsou štětce barevného přechodu pozadí převráceny správně:
 
-**FlowDirection="LeftToRight"**
+**FlowDirection = "LeftToRight"**
 
 ![Snímek obrazovky zobrazující tok přechodu zleva doprava](./media/wpf-globalization-and-localization-overview/gradient-flow-left-right.png)
 
@@ -267,7 +267,7 @@ Existuje mnoho případů, kdy může být obsah dvojznačný a obtížné ho p�
 
 Tento komentář se bude přidružit k obsahu TextBlock_1 a v případě nástroje LocBaml (viz [lokalizace aplikace](how-to-localize-an-application.md)), může se zobrazit v šesté sloupci TextBlock_1 řádku ve výstupním souboru. CSV:
 
-|Klíč prostředku|Kategorie|Čitelný|Upravitelná|Komentář|Hodnota|
+|Klíč prostředku|Kategorie|Čitelný|Upravitelná|Poznámka|Hodnota|
 |-|-|-|-|-|-|
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|PRAVDA|PRAVDA|Tento znak se používá jako ozdobné pravidlo.|&#124;|
 
@@ -277,7 +277,7 @@ Komentáře lze umístit na obsah nebo vlastnost libovolného elementu pomocí n
 
 **Atributy lokalizace**
 
-Vývojář nebo Správce lokalizace často potřebuje kontrolu nad tím, co můžou lokalizovat mohou číst a upravovat. Například nebudete chtít, aby lokalizátora přeložil název vaší společnosti nebo právní slovo. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje atributy, které umožňují nastavit čitelnost, upravitelnost a kategorii obsahu nebo vlastnosti prvku, který může nástroj pro lokalizaci použít k uzamknutí, skrytí nebo řazení prvků. Další informace najdete v tématu <xref:System.Windows.Localization.Attributes%2A>. Pro účely této ukázky nástroj LocBaml pouze vytvoří výstup hodnot těchto atributů. ovládací prvky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mají pro tyto atributy výchozí hodnoty, ale můžete je přepsat. Například následující příklad přepisuje výchozí atributy lokalizace pro `TextBlock_1` a nastaví obsah tak, aby byl čitelný, ale nedá se nastavit jako neupravitelný pro lokalizovatelné.
+Vývojář nebo Správce lokalizace často potřebuje kontrolu nad tím, co můžou lokalizovat mohou číst a upravovat. Například nebudete chtít, aby lokalizátora přeložil název vaší společnosti nebo právní slovo. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje atributy, které umožňují nastavit čitelnost, upravitelnost a kategorii obsahu nebo vlastnosti prvku, který může nástroj pro lokalizaci použít k uzamknutí, skrytí nebo řazení prvků. Další informace naleznete v tématu <xref:System.Windows.Localization.Attributes%2A>. Pro účely této ukázky nástroj LocBaml pouze vytvoří výstup hodnot těchto atributů. ovládací prvky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mají pro tyto atributy výchozí hodnoty, ale můžete je přepsat. Například následující příklad přepisuje výchozí atributy lokalizace pro `TextBlock_1` a nastaví obsah tak, aby byl čitelný, ale nedá se nastavit jako neupravitelný pro lokalizovatelné.
 
 [!code-xaml[LocalizationComAtt#LocalizationAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributes)]
 
@@ -285,7 +285,7 @@ Kromě atributů čitelnosti a upravitelnost [!INCLUDE[TLA2#tla_winclient](../..
 
 [!code-xaml[LocalizationComAtt#LocalizationAttributesOverridden](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributesoverridden)]
 
-Výchozí atributy lokalizace, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytují, lze také přepsat prostřednictvím kódu, takže můžete správně nastavit správné výchozí hodnoty pro vlastní ovládací prvky. Příklad:
+Výchozí atributy lokalizace, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytují, lze také přepsat prostřednictvím kódu, takže můžete správně nastavit správné výchozí hodnoty pro vlastní ovládací prvky. Například:
 
 ```csharp
 [Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)]

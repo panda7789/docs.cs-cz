@@ -36,7 +36,7 @@ Následující postup vyžaduje projekt **aplikace systému Windows** s formulá
     > [!NOTE]
     > Buňky se zobrazují pomocí stylů děděných z více vlastností. Další informace o dědičnosti stylu naleznete v tématu [styly buněk v ovládacím prvku DataGridView model Windows Forms](cell-styles-in-the-windows-forms-datagridview-control.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)

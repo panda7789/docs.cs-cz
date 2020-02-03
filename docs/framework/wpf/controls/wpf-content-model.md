@@ -137,9 +137,9 @@ ms.locfileid: "76738279"
   
 - Řetězec.  
   
-- A <xref:System.DateTime> objektu.  
+- Objekt <xref:System.DateTime>.  
   
-- A <xref:System.Windows.UIElement>.  
+- Úloha <xref:System.Windows.UIElement>.  
   
 - <xref:System.Windows.Controls.Panel> obsahující <xref:System.Windows.Shapes.Ellipse> a <xref:System.Windows.Controls.TextBlock>.  
   
@@ -221,7 +221,7 @@ TextBlock s ohraničením
 ## <a name="classes-that-enable-users-to-enter-text"></a>Třídy, které umožňují uživatelům zadat text  
  WPF poskytuje tři primární ovládací prvky, které umožňují uživatelům zadat text. Každý ovládací prvek zobrazuje text odlišně. Následující tabulka uvádí tyto tři ovládací prvky související s textem, jejich možnosti, když zobrazují text a jejich vlastnosti, které obsahují text ovládacího prvku.  
   
-|Control|Text se zobrazí jako|Vlastnost obsahu|  
+|Řízení|Text se zobrazí jako|Vlastnost obsahu|  
 |-------------|--------------------------|----------------------|  
 |<xref:System.Windows.Controls.TextBox>|Prostý text|<xref:System.Windows.Controls.TextBox.Text%2A>|  
 |<xref:System.Windows.Controls.RichTextBox>|Formátovaný text|<xref:System.Windows.Controls.RichTextBox.Document%2A>|  
@@ -235,7 +235,7 @@ TextBlock s ohraničením
   
  V následující tabulce je uveden seznam vlastností obsahu pro třídy <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>a <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
-|Control|Vlastnost obsahu|Typ vlastnosti obsahu|  
+|Řízení|Vlastnost obsahu|Typ vlastnosti obsahu|  
 |-------------|----------------------|---------------------------|  
 |<xref:System.Windows.Controls.FlowDocumentPageViewer>|Dokument|<xref:System.Windows.Documents.IDocumentPaginatorSource>|  
 |<xref:System.Windows.Controls.FlowDocumentReader>|Dokument|<xref:System.Windows.Documents.FlowDocument>|  
@@ -247,6 +247,6 @@ TextBlock s ohraničením
 ## <a name="classes-that-format-your-text"></a>Třídy, které naformátují text  
  <xref:System.Windows.Documents.TextElement> a související třídy umožňují formátovat text. <xref:System.Windows.Documents.TextElement> objekty obsahují a naformátují text v objektech <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Documents.FlowDocument>. Dva primární typy objektů <xref:System.Windows.Documents.TextElement> jsou <xref:System.Windows.Documents.Block> elementy a prvky <xref:System.Windows.Documents.Inline>. Element <xref:System.Windows.Documents.Block> představuje blok textu, jako je například odstavec nebo seznam. Element <xref:System.Windows.Documents.Inline> představuje část textu v bloku. Mnoho tříd <xref:System.Windows.Documents.Inline> určuje formátování textu, na který jsou aplikovány. Každý <xref:System.Windows.Documents.TextElement> má svůj vlastní model obsahu. Další informace najdete v tématu [Přehled modelu obsahu TextElement](../advanced/textelement-content-model-overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokročilé](../advanced/index.md)

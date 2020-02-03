@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: bf346825c7e29831111fc11c836ca6b4a05a18ce
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 0e5f3578edc723e2e2a32b9b3a1d8a7dcabd2909
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921002"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965747"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 
@@ -18,7 +18,7 @@ ms.locfileid: "76921002"
 
 Aplikace ASP.NET Core jsou webové aplikace a obvykle spoléhají na webové technologie klienta, jako je HTML, CSS a JavaScript. Díky oddělení obsahu stránky (HTML) od jejího rozložení a stylů (CSS) a jeho chování (prostřednictvím JavaScriptu) můžou komplexní webové aplikace využít oddělení zásad, které se týkají. Budoucí změny struktury, návrhu nebo chování aplikace je možné snadněji, pokud tyto otázky nejsou provázány.
 
-I když jsou HTML a CSS relativně stabilní, JavaScript, pomocí aplikačních architektur a vývojářů nástrojů pracujících s nástrojem k vytváření webových aplikací se vyvíjí při Breakneck rychlosti. Tato kapitola si vyhledá několik způsobů, jak je jazyk JavaScript používán webovými vývojáři jako součást vývoje aplikací, jak poskytuje podrobný přehled o úhlových a reagujících knihovnách na straně klienta.
+I když jsou HTML a CSS relativně stabilní, JavaScript, pomocí aplikačních architektur a vývojářů nástrojů pracujících s nástrojem k vytváření webových aplikací se vyvíjí při Breakneck rychlosti. Tato kapitola si vyhledá několik způsobů, jak je jazyk JavaScript používán webovými vývojáři jako součást vývoje aplikací, jak poskytuje podrobný přehled úhlů a reakci na klientské knihovny.
 
 ## <a name="html"></a>HTML
 
@@ -58,9 +58,9 @@ Všechny tyto úlohy můžete provádět pouze pomocí JavaScriptu, ale existuje
 
 ### <a name="legacy-web-apps-with-jquery"></a>Starší verze Web Apps s jQuery
 
-I když Ancient podle standardů rozhraní JavaScript Framework, jQuery bude i nadále používána jako velmi běžně používaná knihovna pro práci s HTML/CSS a sestavování aplikací, které vytvářejí volání rozhraní API pro Web API. JQuery ale funguje na úrovni modelu DOM (Document Object Model) prohlížeče a ve výchozím nastavení nabízí pouze imperativní, spíše než deklarativní model.
+I když Ancient podle standardů rozhraní JavaScript Framework, jQuery bude i nadále běžně používaná knihovna pro práci s HTML/CSS a sestavování aplikací, které volají rozhraní API pro web. JQuery ale funguje na úrovni modelu DOM (Document Object Model) prohlížeče a ve výchozím nastavení nabízí pouze imperativní, spíše než deklarativní model.
 
-Představte si například, že pokud hodnota v textovém poli přesáhne 10, element na stránce by měl být viditelný. V jQuery by to bylo obvykle implementováno zápisem obslužné rutiny události pomocí kódu, který by zkontroloval hodnotu TextBox a nastavil viditelnost cílového prvku na základě této hodnoty. Toto je nepodmíněný přístup založený na kódu. Jiné rozhraní může místo toho použít datovou vazbu pro svázání viditelnosti prvku s hodnotou textového pole deklarativně. To by nevyžadovalo zápis kódu, ale místo toho vyžaduje pouze upravení prvků, které jsou součástí atributů vazby dat. Vzhledem k tomu, že chování na straně klienta přirůstá složitější, přístupy k vazbám mezi daty často vedou k jednodušším řešením s menším množstvím kódu a
+Představte si například, že pokud hodnota v textovém poli přesáhne 10, element na stránce by měl být viditelný. V jQuery by to bylo obvykle implementováno zápisem obslužné rutiny události pomocí kódu, který by zkontroloval hodnotu TextBox a nastavil viditelnost cílového prvku na základě této hodnoty. Toto je nepodmíněný přístup založený na kódu. Jiné rozhraní může místo toho použít datovou vazbu pro svázání viditelnosti prvku s hodnotou textového pole deklarativně. To by nevyžadovalo zápis kódu, ale místo toho vyžaduje pouze upravení prvků, které jsou součástí atributů vazby dat. Vzhledem k tomu, že chování na straně klienta podrobněji roste, jsou přístupy k vazbě dat často výsledkem jednodušších řešení s méně kódem a podmíněnou složitostí.
 
 ### <a name="jquery-vs-a-spa-framework"></a>jQuery vs – architektura SPA
 
@@ -73,7 +73,7 @@ Představte si například, že pokud hodnota v textovém poli přesáhne 10, el
 | Šablonování | **Ne** | **Ano** |
 | Směrování s přímým odkazem | **Ne** | **Ano** |
 
-Většina funkcí jQuery, které chybí, je možné přidat s přidáním dalších knihoven. Architektura SPA, jako je úhlová, ale poskytuje tyto funkce lépe integrovaným způsobem, protože je navržená se všemi z nich na začátku. JQuery je také velmi imperativní knihovna, což znamená, že je třeba volat funkce jQuery, aby cokoli s jQuery bylo možné dělat. Většina práce a funkcí, které poskytují architektury SPA, se dají provádět deklarativně, takže není potřeba zapisovat žádný skutečný kód.
+Většina funkcí jQuery, které chybí, je možné přidat s přidáním dalších knihoven. Architektura SPA, jako je úhlová, ale poskytuje tyto funkce lépe integrovaným způsobem, protože je navržená se všemi z nich na začátku. JQuery je také imperativní knihovna, což znamená, že je třeba volat funkce jQuery, aby cokoli s jQuery bylo možné dělat. Většina práce a funkcí, které poskytují architektury SPA, se dají provádět deklarativně, takže není potřeba zapisovat žádný skutečný kód.
 
 Vazba dat je skvělým příkladem. V jQuery obvykle pouze jeden řádek kódu pro získání hodnoty prvku modelu DOM nebo pro nastavení hodnoty elementu. Tento kód však musíte napsat kdykoli, když potřebujete změnit hodnotu prvku a někdy k tomu dojde ve více funkcích na stránce. Dalším běžným příkladem je viditelnost prvku. V jQuery může existovat mnoho různých míst, kde byste měli napsat kód pro řízení, zda byly určité prvky viditelné. V každém z těchto případů platí, že při použití datové vazby není nutné zapisovat kód. Stačí vytvořit vazbu hodnoty nebo viditelnosti prvků v dotazu na *ViewModel* na stránce a změny tohoto ViewModel by se automaticky projevily ve vázaných prvcích.
 
@@ -134,7 +134,7 @@ Při zvažování, které rozhraní JavaScript Framework bude fungovat nejlépe 
 
 - Je dobře dokumentováná?
 
-- Jak aktivní je jeho komunita? Jsou vytvořeny nové projekty, které s ní sestavují?
+- Jak aktivní je jeho komunita? Jsou s ní vytvořeny nové projekty?
 
 - Jak aktivní je hlavní tým? Jsou vyřešené problémy a pravidelně se odesílají nové verze?
 

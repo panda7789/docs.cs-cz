@@ -41,7 +41,7 @@ Následující příklad kódu ukazuje, jak implementovat obslužnou rutinu pro 
   
 - <xref:System.Drawing.Bitmap> image s názvem `highPri.bmp`, `mediumPri.bmp`a `lowPri.bmp` nacházející se ve stejném adresáři jako spustitelný soubor.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridViewBand.DefaultCellStyle%2A?displayProperty=nameWithType>

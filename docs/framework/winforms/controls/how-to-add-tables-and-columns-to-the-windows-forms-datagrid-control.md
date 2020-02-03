@@ -96,7 +96,7 @@ Data můžete zobrazit v ovládacím prvku model Windows Forms <xref:System.Wind
     dataGrid1->TableStyles->Add(ts1);
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

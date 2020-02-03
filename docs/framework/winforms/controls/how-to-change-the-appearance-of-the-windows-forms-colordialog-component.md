@@ -49,7 +49,7 @@ Můžete nakonfigurovat vzhled součásti model Windows Forms <xref:System.Windo
     colorDialog1->ShowHelp = true;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ColorDialog>
 - [Komponenta ColorDialog](colordialog-component-windows-forms.md)

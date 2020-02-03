@@ -27,7 +27,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.BindingNavigator> můžete
   
  Následující tabulka uvádí ovládací prvky a popisuje jejich funkce.  
   
-|Control|Funkce|  
+|Řízení|Funkce|  
 |-------------|--------------|  
 |<xref:System.Windows.Forms.BindingNavigator.AddNewItem%2A> – tlačítko|Vloží nový řádek do podkladového zdroje dat.|  
 |<xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A> – tlačítko|Odstraní aktuální řádek z podkladového zdroje dat.|  
@@ -42,7 +42,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.BindingNavigator> můžete
   
  Pokud výchozí tlačítka nejsou vhodná pro vaši aplikaci nebo pokud požadujete další tlačítka pro podporu jiných typů funkcí, můžete vlastní <xref:System.Windows.Forms.ToolStrip> tlačítka. Viz také [Postupy: Přidání tlačítek Load, Save a Cancel do ovládacího prvku BindingNavigator model Windows Forms](load-save-and-cancel-bindingnavigator.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.BindingSource>

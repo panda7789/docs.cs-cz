@@ -96,7 +96,7 @@ public class Document
 
 > Odebrání rozhraní API je binární zásadní změna. Vzhledem k tomu, že udržování zastaralých typů a metod, pokud je zachování nízkých nákladů, nepřidává do knihovny velké množství technického dluhu. Neodebrání typů a metod může přispět k tomu, abyste se vyhnuli nejhorším scénářům uvedeným výše.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Požadavky na verzi a aktualizace C# pro vývojáře](../../csharp/whats-new/version-update-considerations.md)
 - [Konečný průvodce pro změny v .NET v rozhraní API](https://stackoverflow.com/questions/1456785/a-definitive-guide-to-api-breaking-changes-in-net)

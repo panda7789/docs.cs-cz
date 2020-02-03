@@ -47,7 +47,7 @@ Všechny dříve uzamčené ovládací prvky ve formuláři jsou nyní odemčeny
 
 V okně **vlastnosti** vyberte vlastnost **Uzamčeno** a pak vyberte **hodnotu false**. (Dvojitým kliknutím na název přepínáte nastavení vlastnosti.)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

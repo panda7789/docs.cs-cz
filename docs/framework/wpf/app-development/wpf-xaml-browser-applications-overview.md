@@ -45,7 +45,7 @@ ms.locfileid: "76742279"
 ## <a name="deploying-an-xbap"></a>Nasazení aplikace XBAP
  Při sestavování aplikace XBAP obsahuje výstup následující tři soubory:
 
-|Soubor|Popis|
+|File|Popis|
 |----------|-----------------|
 |Spustitelný soubor (. exe)|Obsahuje zkompilovaný kód a má příponu. exe.|
 |Manifest aplikace (. manifest)|Obsahuje metadata přidružená k aplikaci a má příponu. manifest.|
@@ -101,7 +101,7 @@ ms.locfileid: "76742279"
 
 1. V aplikaci Visual Studio otevřete vlastnosti projektu.
 
-2. Na kartě **zabezpečení** klikněte na **Upřesnit**.
+2. Na kartě **Zabezpečení** klikněte na **Upřesnit**.
 
      Zobrazí se dialogové okno Upřesnit nastavení zabezpečení.
 
@@ -113,7 +113,7 @@ ms.locfileid: "76742279"
 
      Zobrazí se dialogové okno Možnosti Internetu.
 
-6. Klikněte na tlačítko **Upřesnit** kartu.
+6. Klikněte na kartu **Upřesnit** .
 
 7. V seznamu **Nastavení** v části **zabezpečení**zaškrtněte políčko **povolený aktivní obsah, který se má v souborech v mém počítači spustit** .
 
@@ -185,7 +185,7 @@ ms.locfileid: "76742279"
 
  Vylepšená souběžnost sekvence stahování ClickOnce vylepšuje čas zahájení až o deset procent. Jakmile ClickOnce stáhne a ověří manifesty, spustí se stahování aplikace a indikátor průběhu se začne aktualizovat.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby](configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)
 - [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)

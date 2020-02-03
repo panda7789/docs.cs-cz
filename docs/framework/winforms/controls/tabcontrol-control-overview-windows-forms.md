@@ -1,5 +1,5 @@
 ---
-title: TabControl – přehled ovládacího prvku
+title: Přehled ovládacího prvku TabControl
 ms.date: 03/30/2017
 f1_keywords:
 - TabControl
@@ -22,7 +22,7 @@ ms.locfileid: "76742825"
 ## <a name="working-with-tabcontrol"></a>Práce s TabControl  
  Nejdůležitější vlastností <xref:System.Windows.Forms.TabControl> je <xref:System.Windows.Forms.TabControl.TabPages%2A>, které obsahují jednotlivé karty. Každá jednotlivá karta je objekt <xref:System.Windows.Forms.TabPage>. Po kliknutí na kartu vyvolá událost <xref:System.Windows.Forms.Control.Click> pro daný objekt <xref:System.Windows.Forms.TabPage>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TabControl>
 - [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)

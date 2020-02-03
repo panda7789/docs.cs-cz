@@ -25,7 +25,7 @@ ms.locfileid: "76739926"
   
  Kromě toho pole se seznamem šetří místo na formuláři. Vzhledem k tomu, že se úplný seznam nezobrazí, dokud uživatel neklikne na šipku dolů, pole se seznamem se dá snadno přizpůsobit na malé místo, kde se seznam nevejde. Výjimkou je, že vlastnost <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A> je nastavena na hodnotu <xref:System.Windows.Forms.ComboBoxStyle.Simple>: zobrazí se úplný seznam a pole se seznamem bude trvat více místa, než je pole seznamu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>

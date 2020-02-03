@@ -18,7 +18,7 @@ Vzhled model Windows Formsch aplikací můžete přizpůsobit mnoha různými zp
  [Postupy: Změna ohraničení Windows Forms](how-to-change-the-borders-of-windows-forms.md)  
  Ukazuje, jak změnit styl ohraničení formuláře.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.Form>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

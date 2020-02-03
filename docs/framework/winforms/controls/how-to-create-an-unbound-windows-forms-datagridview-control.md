@@ -30,7 +30,7 @@ Následující příklad kódu ukazuje, jak naplnit ovládací prvek <xref:Syste
   
 - Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Návod: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView](walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)

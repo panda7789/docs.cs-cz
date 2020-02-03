@@ -57,6 +57,6 @@ Informace o třech hlavních jazycích .NET najdete v následujících tématech
 * [F#program](../fsharp/index.yml)
 * [Průvodce Visual Basic](../visual-basic/index.yml)
 
-## <a name="api-reference"></a>referenční dokumentace k rozhraní API
+## <a name="api-reference"></a>API – referenční informace
 
 Podrobné informace o všech rozhraních API, která jsou k dispozici v rozhraní .NET, najdete v tématu Reference k rozhraní [.NET API](../../api/index.md).

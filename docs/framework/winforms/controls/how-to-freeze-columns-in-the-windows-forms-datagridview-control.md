@@ -30,7 +30,7 @@ Když uživatelé zobrazují data zobrazená v model Windows Forms <xref:System.
   
 ### <a name="to-freeze-a-column-programmatically"></a>Postup zmrazení sloupce prostřednictvím kódu programu  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType> vlastnost `true`.  
+- Vlastnost <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType> nastavte na hodnotu `true`.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#061](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#061)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#061](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#061)]  
@@ -42,7 +42,7 @@ Když uživatelé zobrazují data zobrazená v model Windows Forms <xref:System.
   
 - Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView>

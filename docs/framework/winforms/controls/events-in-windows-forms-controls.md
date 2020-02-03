@@ -17,7 +17,7 @@ Ovládací prvek model Windows Forms dědí více než 60 událostí od <xref:Sy
   
  Pokud váš vlastní ovládací prvek potřebuje přepsat zděděné funkce události, přepište zděděnou metodu `On`*EventName* namísto připojení delegáta. Pokud nejste obeznámeni s modelem událostí v .NET Framework, přečtěte si téma [vyvolání událostí ze součásti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/sh2e3k5z(v=vs.120)).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přepsání metody OnPaint](overriding-the-onpaint-method.md)
 - [Zpracování uživatelského vstupu](handling-user-input.md)

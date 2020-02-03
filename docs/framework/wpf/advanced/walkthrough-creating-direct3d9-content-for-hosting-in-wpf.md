@@ -25,7 +25,7 @@ Tento návod ukazuje, jak vytvořit Direct3D9 obsah, který je vhodný pro hosto
 
  Po dokončení budete mít knihovnu DLL, která obsahuje obsah Direct3D9 pro použití v aplikaci WPF.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
  K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 - Visual Studio 2010.
@@ -47,7 +47,7 @@ Tento návod ukazuje, jak vytvořit Direct3D9 obsah, který je vhodný pro hosto
 
 3. V části **Typ aplikace:** vyberte možnost **DLL** .
 
-4. Klikněte na **Dokončit**.
+4. Klikněte na **Finish** (Dokončit).
 
      Vygeneruje se projekt D3DContent.
 
@@ -139,7 +139,7 @@ Tento návod ukazuje, jak vytvořit Direct3D9 obsah, který je vhodný pro hosto
 
 - Hostování obsahu Direct3D9 v aplikaci WPF. Další informace najdete v tématu [Návod: hostování Direct3D9 obsahu v](walkthrough-hosting-direct3d9-content-in-wpf.md)subsystému WPF.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.D3DImage>
 - [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)

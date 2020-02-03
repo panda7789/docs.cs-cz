@@ -17,7 +17,7 @@ ms.locfileid: "76745974"
 # <a name="dialog-box-controls-and-components-windows-forms"></a>Ovládací prvky a součásti dialogového okna (Windows Forms)
 Následující model Windows Forms ovládací prvky a komponenty existují standardní dialogová okna. Pokud chcete získat další informace o funkcích dostupných v jednotlivých dialogových oknech, postupujte podle odkazů.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.ColorDialog>  
  Poskytuje referenční informace o třídě <xref:System.Windows.Forms.ColorDialog> a jejích členech.  
   

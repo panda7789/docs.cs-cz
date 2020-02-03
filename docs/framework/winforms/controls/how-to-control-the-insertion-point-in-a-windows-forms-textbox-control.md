@@ -61,7 +61,7 @@ Když ovládací prvek model Windows Forms <xref:System.Windows.Forms.TextBox> p
   
 - Nastavte vlastnost <xref:System.Windows.Forms.Control.TabIndex%2A> <xref:System.Windows.Forms.TextBox>ho ovládacího prvku na hodnotu `0`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)

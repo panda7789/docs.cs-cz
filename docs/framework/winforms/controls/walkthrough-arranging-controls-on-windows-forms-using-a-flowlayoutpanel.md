@@ -182,7 +182,7 @@ Až budete hotovi, budete obeznámeni s tím, že role hraje tyto důležité fu
 
 - Nastavte vlastnost <xref:System.Windows.Forms.Control.Visible%2A> jednoho z ovládacích prvků na `false` a Všimněte si, jak <xref:System.Windows.Forms.FlowLayoutPanel> přetéká v reakci.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.FlowLayoutPanel>
 - <xref:System.Windows.Forms.TableLayoutPanel>

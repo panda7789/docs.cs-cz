@@ -60,7 +60,7 @@ ms.locfileid: "76732129"
 |<xref:System.ComponentModel.ToolboxItemAttribute>|Představuje atribut položky sady nástrojů.|  
 |<xref:System.ComponentModel.ToolboxItemFilterAttribute>|Určuje řetězec filtru a typ filtru, který se má použít pro položku panelu nástrojů.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Attribute>
 - [Postupy: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md)

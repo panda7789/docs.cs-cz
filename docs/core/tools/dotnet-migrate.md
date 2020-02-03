@@ -13,7 +13,7 @@ ms.locfileid: "76734151"
 
 **Tento článek se týká:** ✔️ .NET Core 1. x SDK ✔️ .NET Core 2. x SDK
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet migrate` – migruje projekt .NET Core ve verzi Preview 2 na projekt ve stylu .NET Core SDK.
 
@@ -43,7 +43,7 @@ Ve výchozím nastavení operace migrace vypíše stav procesu migrace do standa
 
 Příkaz `dotnet migrate` podporuje pouze platná verze Preview 2 projekty založené na *projektu. JSON*. To znamená, že ho nemůžete použít k migraci DNX nebo Preview 1 projektů založených na *Project. JSON*přímo do projektů MSBuild/csproj. Nejprve je třeba ručně migrovat projekt do projektu verze Preview 2 *Project. JSON*a potom použít příkaz `dotnet migrate` pro migraci projektu.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT_JSON/GLOBAL_JSON/SOLUTION_FILE/PROJECT_DIR`
 

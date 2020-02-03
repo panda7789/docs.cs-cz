@@ -17,7 +17,7 @@ ms.locfileid: "76733326"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet add package` – přidá odkaz na balíček do souboru projektu.
 
@@ -52,7 +52,7 @@ Soubor *todo. csproj* nyní obsahuje element [`<PackageReference>`](/nuget/consu
 <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 - **`PROJECT`**
 
@@ -112,7 +112,7 @@ Soubor *todo. csproj* nyní obsahuje element [`<PackageReference>`](/nuget/consu
   dotnet add package Microsoft.AspNetCore.StaticFiles -s https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
   ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Správa globálních balíčků, mezipaměti a dočasných složek v NuGetu](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
 - [Správa verzí balíčků NuGet](https://docs.microsoft.com/nuget/reference/package-versioning)

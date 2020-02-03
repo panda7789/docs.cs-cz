@@ -41,8 +41,8 @@ Ovládací prvek model Windows Forms `WebBrowser` hostuje webové stránky a pos
  [Použití spravovaného modelu DOM (Document Object Model) HTML](using-the-managed-html-document-object-model.md)  
  Poskytuje témata, které popisují, jak manipulovat nebo vytvářet stránky HTML hostované ovládacím prvkem <xref:System.Windows.Forms.WebBrowser>.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.WebBrowser> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.WebBrowser>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
@@ -78,6 +78,6 @@ Ovládací prvek model Windows Forms `WebBrowser` hostuje webové stránky a pos
  <xref:System.Windows.Forms.WebBrowserRefreshOption>  
  Popisuje tento výčet a všechny jeho hodnoty.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

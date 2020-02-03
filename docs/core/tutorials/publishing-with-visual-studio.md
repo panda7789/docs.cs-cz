@@ -50,11 +50,11 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
    Jak ukazuje obrázek, publikovaný výstup obsahuje následující soubory:
 
-      * *HelloWorld.deps.json*
+      * *HelloWorld. DEPS. JSON*
 
          Toto je soubor závislostí modulu runtime aplikace. Definuje komponenty .NET Core a knihovny (včetně knihovny DLL, která obsahuje vaši aplikaci) potřebnou ke spuštění aplikace. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md).
 
-      * *HelloWorld.dll*
+      * *HelloWorld. dll*
 
          Toto je verze [nasazení závislá na rozhraní](../deploying/deploy-with-cli.md#framework-dependent-deployment) aplikace. Chcete-li spustit tuto dynamickou knihovnu, zadejte `dotnet HelloWorld.dll` do příkazového řádku.
 
@@ -66,10 +66,10 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
 
          Toto je soubor se symboly ladění. Nemusíte tento soubor nasazovat společně s vaší aplikací, i když byste ho měli uložit v události, kterou potřebujete k ladění publikované verze vaší aplikace.
 
-      * *HelloWorld.runtimeconfig.json*
+      * *HelloWorld. runtimeconfig. JSON*
 
          Toto je konfigurační soubor modulu runtime aplikace. Identifikuje verzi .NET Core, na které byla aplikace sestavena. Můžete také přidat možnosti konfigurace. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-- [Nasazení aplikace .NET core](../deploying/index.md)
+- [Nasazení aplikace .NET Core](../deploying/index.md)

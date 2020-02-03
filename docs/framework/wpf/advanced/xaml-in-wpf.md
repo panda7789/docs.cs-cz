@@ -42,7 +42,7 @@ ms.locfileid: "76741878"
 [Strom elementu a serializace](element-tree-and-serialization.md)  
 [Vlastnosti](properties-wpf.md)  
 [Události](events-wpf.md)  
-[Vstup](input-wpf.md)  
+[Input](input-wpf.md) (Vstup)  
 [Prostředky](resources-wpf.md)  
 [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
 [Model vláken](threading-model.md)

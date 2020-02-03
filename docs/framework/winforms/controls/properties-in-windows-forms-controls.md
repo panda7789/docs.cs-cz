@@ -34,7 +34,7 @@ Ovládací prvek model Windows Forms zdědí mnoho vlastností <xref:System.Wind
  [Implementace metody ve vlastních ovládacích prvcích](method-implementation-in-custom-controls.md)  
  Popisuje, jak implementovat metody ve vlastních ovládacích prvcích a komponentách.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.UserControl>  
  Dokumentuje základní třídu pro implementaci složených ovládacích prvků.  
   

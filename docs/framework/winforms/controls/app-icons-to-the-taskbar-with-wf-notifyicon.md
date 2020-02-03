@@ -31,7 +31,7 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.NotifyIcon> zobrazí v
 
 1. Přiřaďte hodnotu k vlastnosti <xref:System.Windows.Forms.NotifyIcon.Icon%2A>. Hodnota musí být typu `System.Drawing.Icon` a může být načtena ze souboru. ico. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) vedle vlastnosti <xref:System.Windows.Forms.NotifyIcon.Icon%2A> v okně **vlastnosti** a pak tento soubor vybrat v dialogovém okně **otevřít** , které se zobrazí.
 
-2. Nastavte <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnost `true`.
+2. Vlastnost <xref:System.Windows.Forms.NotifyIcon.Visible%2A> nastavte na hodnotu `true`.
 
 3. Vlastnost <xref:System.Windows.Forms.NotifyIcon.Text%2A> nastavte na odpovídající řetězec popisu tlačítka.
 
@@ -72,7 +72,7 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.NotifyIcon> zobrazí v
     notifyIcon1->Text = "Antivirus program";
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.NotifyIcon>
 - <xref:System.Windows.Forms.NotifyIcon.Icon%2A>

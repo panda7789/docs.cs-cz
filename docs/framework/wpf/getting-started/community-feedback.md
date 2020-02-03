@@ -22,7 +22,7 @@ Microsoft zveřejňuje celou řadu prostředků komunity, abyste se dozvěděli,
 > [!NOTE]
 > Nepoužívejte část zpětné vazby nacházející se v dolní části každé stránky k odeslání zpětné vazby produktu. Tyto odkazy jsou k diskladně pouze pro názory na dokumentaci.
 
-## <a name="forums"></a>Diskuzní fóra
+## <a name="forums"></a>Fóra
 
 [Fórum WPF](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wpf) je primární komunitní prostředek pro diskuzi a řešení problémů. Fóra usnadňují řešení diskusí a problémů tím, že nabízí ucelenou sadu podpůrných funkcí, které zahrnují:
 
@@ -118,6 +118,6 @@ Poskytněte informace o scénáři, který manifestuje chybu a její dopad. Tyto
 
 Scénáře selhání a ztráty dat jsou obvykle vysokým dopadem a proto je nejjednodušší upřednostnit. Některé chyby se ale zobrazují jenom v neobvyklých scénářích, které můžou být v některých případech taky hlavní scénáře. Poskytnutí kontextu kolem scénáře a dopadu pomáhá týmu WPF dělat správné rozhodnutí.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nahlášení problému se sadou Visual Studio](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)

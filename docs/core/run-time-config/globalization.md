@@ -59,7 +59,7 @@ Soubor projektu:
 | | Název nastavení | Hodnoty |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false` – Neuvolněné kontroly rozsahu<br/>`true` – přetečení způsobují výjimku. |
-| **Proměnná prostředí** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | Není k dispozici | Není k dispozici |
 
 ## <a name="japanese-date-parsing"></a>Analýza data v japonštině
 
@@ -70,7 +70,7 @@ Soubor projektu:
 | | Název nastavení | Hodnoty |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false` – podpora "Gannen" nebo "1" je podporována<br/>`true` – podporuje se jenom 1. |
-| **Proměnná prostředí** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | Není k dispozici | Není k dispozici |
 
 ## <a name="japanese-year-format"></a>Formát japonského roku
 
@@ -81,4 +81,4 @@ Soubor projektu:
 | | Název nastavení | Hodnoty |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | `false`-Format jako "Gannen"<br/>`true` – formát jako číslo |
-| **Proměnná prostředí** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | Není k dispozici | Není k dispozici |

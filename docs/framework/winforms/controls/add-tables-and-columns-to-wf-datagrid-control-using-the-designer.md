@@ -54,7 +54,7 @@ Následující postupy vyžadují projekt **aplikace systému Windows** s formul
 
 5. V poli **vlastnosti** editoru kolekce vyberte hodnotu <xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A> pro sloupec, který chcete zobrazit.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

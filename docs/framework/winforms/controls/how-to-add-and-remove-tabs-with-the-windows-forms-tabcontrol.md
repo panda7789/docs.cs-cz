@@ -74,7 +74,7 @@ Ve výchozím nastavení obsahuje ovládací prvek <xref:System.Windows.Forms.Ta
     tabControl1->TabPages->Clear();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
 - [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)

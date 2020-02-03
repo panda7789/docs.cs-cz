@@ -24,7 +24,7 @@ ms.locfileid: "76736296"
 ---
 # <a name="how-to-load-files-into-the-windows-forms-richtextbox-control"></a>Postupy: Načtení souborů do ovládacího prvku Windows Forms RichTextBox
 
-Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> může zobrazit prostý text, prostý text v kódování Unicode nebo soubor RTF (Rich-Text-Format). Uděláte to tak, že zavoláte metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>. K načtení dat z datového proudu můžete použít také metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>. Další informace najdete v tématu <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
+Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> může zobrazit prostý text, prostý text v kódování Unicode nebo soubor RTF (Rich-Text-Format). Uděláte to tak, že zavoláte metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>. K načtení dat z datového proudu můžete použít také metodu <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.
 
 ### <a name="to-load-a-file-into-the-richtextbox-control"></a>Načtení souboru do ovládacího prvku RichTextBox
 
@@ -81,7 +81,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> mů
     > [!IMPORTANT]
     > Pro spuštění tohoto procesu vaše sestavení může vyžadovat úroveň oprávnění udělené třídou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>. Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../misc/code-access-security-basics.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.RichTextBox>

@@ -44,7 +44,7 @@ V některých aplikacích se může v nadřazeném okně MDI lišit druh podří
   
     |Položka nabídky Form2|Hodnota MergeAction|Hodnota MergeIndex|  
     |---------------------|-----------------------|----------------------|  
-    |Soubor|MatchOnly|-1|  
+    |File|MatchOnly|-1|  
     |Importovat z|MatchOnly|-1|  
     |Word|Odebrat|-1|  
   
@@ -94,7 +94,7 @@ V některých aplikacích se může v nadřazeném okně MDI lišit druh podří
   
 - Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Vytváření nadřazených formulářů MDI](../advanced/how-to-create-mdi-parent-forms.md)
 - [Postupy: Vytváření podřízených formulářů MDI](../advanced/how-to-create-mdi-child-forms.md)

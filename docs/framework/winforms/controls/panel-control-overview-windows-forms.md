@@ -23,7 +23,7 @@ Ovládací prvky <xref:System.Windows.Forms.Panel> model Windows Forms slouží 
 ## <a name="key-properties"></a>Klíčové vlastnosti  
  Chcete-li zobrazit posuvníky, nastavte vlastnost <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> na hodnotu `true`. Můžete také přizpůsobit vzhled panelu nastavením vlastností <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.BackgroundImage%2A>a <xref:System.Windows.Forms.Panel.BorderStyle%2A>. Další informace o vlastnostech <xref:System.Windows.Forms.Control.BackColor%2A> a <xref:System.Windows.Forms.Control.BackgroundImage%2A> naleznete v tématu [How to: set a background of the panel](how-to-set-the-background-of-a-windows-forms-panel.md). Vlastnost <xref:System.Windows.Forms.Panel.BorderStyle%2A> určuje, zda je panel ohraničený bez viditelného ohraničení (<xref:System.Windows.Forms.BorderStyle.None>), jednoduché čáry (<xref:System.Windows.Forms.BorderStyle.FixedSingle>) nebo stínové čáry (<xref:System.Windows.Forms.BorderStyle.Fixed3D>).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Panel>
 - [Ovládací prvek GroupBox](groupbox-control-windows-forms.md)

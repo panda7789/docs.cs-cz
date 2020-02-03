@@ -96,7 +96,7 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
 
 - **`--format {NetTrace|Speedscope}`**
 
-  Nastaví výstupní formát pro převod trasovacího souboru. Výchozí hodnota je `NetTrace`.
+  Nastaví výstupní formát pro převod trasovacího souboru. Výchozí formát je `NetTrace`.
 
 ## <a name="dotnet-trace-convert"></a>dotnet – trasovat převod
 
@@ -108,7 +108,7 @@ Převede `nettrace` trasování na alternativní formáty pro použití s altern
 dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 ```
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>Argumenty
 
 - **`<input-filename>`**
 
@@ -208,7 +208,7 @@ Předchozí příkaz zakáže běhové události a spravovaný Profiler zásobn�
 
 Modul runtime .NET Core podporuje následující poskytovatele rozhraní .NET. .NET Core používá stejná klíčová slova k povolení trasování `Event Tracing for Windows (ETW)` i `EventPipe`.
 
-| Název zprostředkovatele                            | Informace o nástroji |
+| Název zprostředkovatele                            | Informace |
 |------------------------------------------|-------------|
 | `Microsoft-Windows-DotNETRuntime`        | [Zprostředkovatel modulu runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Běhová klíčová slova CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
 | `Microsoft-Windows-DotNETRuntimeRundown` | [Poskytovatel doběhu](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Doběhuá klíčová slova CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |

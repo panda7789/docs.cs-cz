@@ -24,7 +24,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> slo
   
  Většinu operací úprav v ovládacím prvku <xref:System.Windows.Forms.RichTextBox> můžete vrátit zpět a znovu zavoláním metod <xref:System.Windows.Forms.TextBoxBase.Undo%2A> a <xref:System.Windows.Forms.RichTextBox.Redo%2A>. Metoda <xref:System.Windows.Forms.RichTextBox.CanRedo%2A> umožňuje určit, zda poslední operace, kterou byl uživatel vrácen zpět, lze znovu použít u ovládacího prvku.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox>
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)

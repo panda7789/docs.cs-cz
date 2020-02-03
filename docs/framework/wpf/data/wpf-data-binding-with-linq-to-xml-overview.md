@@ -29,7 +29,7 @@ Tato dokumentace popisuje druhý scénář.
 
 Datová vazba WPF umožňuje prvku uživatelského rozhraní přidružit jednu z jejích vlastností ke zdroji dat. Jednoduchým příkladem je <xref:System.Windows.Controls.Label>, jehož text prezentuje hodnotu veřejné vlastnosti v uživatelsky definovaném objektu. Datová vazba WPF spoléhá na následující komponenty:
 
-|Součást|Popis|
+|Komponenta|Popis|
 |---------------|-----------------|
 |Cíl vazby|Prvek uživatelského rozhraní, který má být přidružen ke zdroji dat. Vizuální prvky v subsystému WPF jsou odvozeny z třídy <xref:System.Windows.UIElement>.|
 |Cílová vlastnost|*Vlastnost závislosti* cíle vazby, která odráží hodnotu zdroje vazby dat. Vlastnosti závislosti jsou přímo podporovány třídou <xref:System.Windows.DependencyObject>, která <xref:System.Windows.UIElement> je odvozena z.|
@@ -85,7 +85,7 @@ Další informace najdete v tématu [LINQ to XML dynamické vlastnosti](linq-to-
 
 Chcete-li implementovat dynamickou vazbu WPF, budou dynamické vlastnosti použity v zařízeních poskytovaných oborem názvů <xref:System.Windows.Data>, zejména v <xref:System.Windows.Data.Binding> třídě.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Datová vazba WPF s LINQ to XML](wpf-data-binding-with-linq-to-xml-overview.md)
 - [Dynamické vlastnosti LINQ to XML](linq-to-xml-dynamic-properties.md)

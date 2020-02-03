@@ -85,7 +85,7 @@ Další informace o aspektech zabezpečení ClickOnce a zvýšení oprávnění 
 
 Pokud jste nasadili aplikaci model Windows Forms pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo v sadě s omezeným oprávněním z vývojového prostředí.  Viz také [Postupy: ladění aplikace ClickOnce s omezenými oprávněními](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – zabezpečení](windows-forms-security.md)
 - [Základy zabezpečení přístupu ke kódu](../misc/code-access-security-basics.md)

@@ -70,7 +70,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.TreeView> uklád
     treeView1->Nodes->Clear();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)
 - [Přehled ovládacího prvku TreeView](treeview-control-overview-windows-forms.md)

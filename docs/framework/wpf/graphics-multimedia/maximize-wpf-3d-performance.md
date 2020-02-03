@@ -59,6 +59,6 @@ Při použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-win
 |Hlediska|Černé indikátory nebudou viditelné, ale budou přidány do času vykreslování; Zvažte jejich vynechání.|  
 |<xref:System.Windows.Media.Media3D.MeshGeometry3D>|Aby se minimalizovala doba vytváření velkých kolekcí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], jako je například MeshGeometry3D's <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A>, <xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>, <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>a <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>, před naplnění hodnot kolekcí před hodnotou. Pokud je to možné, předejte konstruktory Collections předem vyplněné datové struktury, jako jsou pole nebo seznamy.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled 3D grafiky](3-d-graphics-overview.md)

@@ -21,7 +21,7 @@ Model Windows Forms nabízí ovládací prvky a komponenty, které provádějí 
   
 ## <a name="recommended-controls-and-components-by-function"></a>Doporučené ovládací prvky a komponenty podle funkcí  
   
-|Funkce|Control|Popis|  
+|Funkce|Řízení|Popis|  
 |--------------|-------------|-----------------|  
 |Zobrazení dat|ovládací prvek <xref:System.Windows.Forms.DataGridView>|Ovládací prvek <xref:System.Windows.Forms.DataGridView> poskytuje přizpůsobitelnou tabulku pro zobrazení dat. Třída <xref:System.Windows.Forms.DataGridView> umožňuje přizpůsobit buňky, řádky, sloupce a ohraničení. **Poznámka:**  Ovládací prvek <xref:System.Windows.Forms.DataGridView> poskytuje mnoho základních a rozšířených funkcí, které v ovládacím prvku <xref:System.Windows.Forms.DataGrid> chybí. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md) .|  
 |Datová vazba a navigace|komponenta <xref:System.Windows.Forms.BindingSource>|Zjednodušuje ovládací prvky vazby na formuláři na data tím, že poskytuje správu měn, oznamování změn a další služby.|  
@@ -62,7 +62,7 @@ Model Windows Forms nabízí ovládací prvky a komponenty, které provádějí 
 ||ovládací prvek <xref:System.Windows.Forms.LinkLabel>|Zobrazí text jako odkaz na webový styl a aktivuje událost, když uživatel klikne na speciální text. Obvykle je text odkazem na jiné okno nebo Web.|  
 ||ovládací prvek <xref:System.Windows.Forms.NotifyIcon>|Zobrazí ikonu v oznamovací oblasti pro stav hlavního panelu, která představuje aplikaci spuštěnou na pozadí.|  
 ||ovládací prvek <xref:System.Windows.Forms.ToolStrip>|Vytvoří panely nástrojů, které mohou mít Microsoft Windows XP, systém Microsoft Office, Microsoft Internet Explorer nebo vlastní vzhled a chování, s motivy nebo bez motivů, a s podporou přeřazení položek při přetečení a za běhu. **Poznámka:**  <xref:System.Windows.Forms.ToolStrip> ovládací prvek je navržen tak, aby nahradil ovládací prvek <xref:System.Windows.Forms.ToolBar>.|  
-|Uživatelská informace|komponenta <xref:System.Windows.Forms.HelpProvider>|Poskytuje místní nebo online nápovědu k ovládacím prvkům.|  
+|Uživatelská nápověda|komponenta <xref:System.Windows.Forms.HelpProvider>|Poskytuje místní nebo online nápovědu k ovládacím prvkům.|  
 ||komponenta <xref:System.Windows.Forms.ToolTip>|Poskytuje automaticky otevírané okno, které zobrazuje stručný popis účelu ovládacího prvku, když uživatel umístí ukazatel na ovládací prvek.|  
 |Seskupení dalších ovládacích prvků|ovládací prvek <xref:System.Windows.Forms.Panel>|Seskupí sadu ovládacích prvků na neoznačený, posuvný rámeček.|  
 ||ovládací prvek <xref:System.Windows.Forms.GroupBox>|Seskupí sadu ovládacích prvků (například přepínačů) na označený, neposuvný rámeček.|  
@@ -84,7 +84,7 @@ Model Windows Forms nabízí ovládací prvky a komponenty, které provádějí 
 ||<xref:System.Windows.Forms.StatusBar>|<xref:System.Windows.Forms.StatusStrip>|  
 |Rozložení formuláře|<xref:System.Windows.Forms.Splitter>|<xref:System.Windows.Forms.SplitContainer>|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)

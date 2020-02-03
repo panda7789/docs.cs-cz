@@ -72,9 +72,9 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
 |Adresa fronty na základě identifikátoru URI WCF|Použít vlastnost služby Active Directory|Vlastnost protokolu přenosu fronty|Výsledné názvy formátu MSMQ|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|Net.msmq://\<machine-name>/private/abc|False (výchozí)|Nativní (výchozí)|DIRECT=OS:machine-name\private$\abc|  
-|Net.msmq://\<machine-name>/private/abc|Nepravda|SRMP|DIRECT=http://machine/msmq/private $/abc|  
-|Net.msmq://\<machine-name>/private/abc|Pravda|Nativní|PUBLIC = nějaký identifikátor GUID (identifikátor GUID fronty)|  
+|NET. MSMQ://\<název počítače >/Private/ABC|False (výchozí)|Nativní (výchozí)|DIRECT=OS:machine-name\private$\abc|  
+|NET. MSMQ://\<název počítače >/Private/ABC|False|SRMP|DIRECT =http://machine/msmq/private$/ABC|  
+|NET. MSMQ://\<název počítače >/Private/ABC|True|Nativní|PUBLIC = nějaký identifikátor GUID (identifikátor GUID fronty)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Načítají se zprávy z fronty nedoručených zpráv nebo z fronty pro nepoškozené zprávy.  
  Chcete-li číst zprávy z fronty nezpracovatelných zpráv, která je podfrontou cílové fronty, otevřete `ServiceHost` s adresou podfronty.  
@@ -100,10 +100,10 @@ Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak s
   
  Všimněte si, že při přijímání zpráv z fronty pomocí `MsmqIntegrationBinding`můžete použít pouze přímé názvy formátů a názvy veřejného a privátního formátu (vyžaduje integraci služby Active Directory). Doporučuje se ale používat přímé názvy formátů. Například v systému Windows Vista může použití jiného názvu formátu způsobit chybu, protože systém se pokusí otevřít dílčí frontu, která se dá otevřít jenom s přímými názvy formátu.  
   
- Při adresování SRMP pomocí `MsmqIntegrationBinding`neexistuje žádný požadavek na přidání/MSMQ/v přímém názvu formátu tak, aby se Internetová informační služba (IIS) s odesíláním usnadnil. Příklad: při adresování fronty ABC pomocí protokolu SRMP místo DIRECT =http://adatum.com/msmq/private $/ABC byste měli použít DIRECT =http://adatum.com/private $/ABC.  
+ Při adresování SRMP pomocí `MsmqIntegrationBinding`neexistuje žádný požadavek na přidání/MSMQ/v přímém názvu formátu tak, aby se Internetová informační služba (IIS) s odesíláním usnadnil. Příklad: při adresování fronty ABC pomocí protokolu SRMP místo DIRECT =http://adatum.com/msmq/private$/ABC byste měli použít DIRECT =http://adatum.com/private$/ABC.  
   
  Všimněte si, že nemůžete použít NET. MSMQ://Addressing with `MsmqIntegrationBinding`. Vzhledem k tomu, že `MsmqIntegrationBinding` podporuje adresování názvů ve formátu MSMQ, můžete použít službu WCF, která pomocí této vazby používá funkce vícesměrového a distribučního seznamu ve službě MSMQ. Jedna výjimka určuje `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí mít formát NET. MSMQ://, podobně jako jeho zadání pomocí `NetMsmqBinding`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

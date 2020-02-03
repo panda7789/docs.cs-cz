@@ -46,7 +46,7 @@ Windows Presentation Foundation (WPF) poskytuje bohatou prostředí pro vytvář
   
 5. Po vytvoření hostitelského okna vraťte HWND hostovaného okna. Chcete-li hostovat jeden nebo více ovládacích prvků Win32, obvykle vytvoříte hostitelské okno jako podřízený prvek HWND a nastavíte podřízené prvky tohoto hostitelského okna. Zabalení ovládacích prvků v hostitelském okně poskytuje jednoduchý způsob, jak může vaše stránka WPF přijímat oznámení z ovládacích prvků, což se zabývá konkrétními problémy Win32 s oznámeními v rámci hranice HWND.  
   
-6. Zpracuje vybrané zprávy odeslané do hostitelského okna, například oznámení z podřízených ovládacích prvků. To můžete provést dvěma způsoby.  
+6. Zpracuje vybrané zprávy odeslané do hostitelského okna, například oznámení z podřízených ovládacích prvků. Můžete to provést dvěma způsoby.  
   
     - Pokud dáváte přednost zpracování zpráv ve vaší hostující třídě, přepište metodu <xref:System.Windows.Interop.HwndHost.WndProc%2A> třídy <xref:System.Windows.Interop.HwndHost>.  
   
@@ -153,7 +153,7 @@ Windows Presentation Foundation (WPF) poskytuje bohatou prostředí pro vytvář
   
  Nakonec nastavte `handled` na `true`, aby označovala, že zpráva byla zpracována.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.HwndHost>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)

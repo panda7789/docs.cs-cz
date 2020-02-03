@@ -106,6 +106,6 @@ Uživatelé chtějí často zvolit jinou tiskárnu než výchozí tiskárnu, do 
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)

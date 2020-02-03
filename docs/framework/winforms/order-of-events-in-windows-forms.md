@@ -80,6 +80,6 @@ Pořadí, ve kterém jsou události vyvolány v aplikacích model Windows Forms,
   
 - <xref:System.Windows.Forms.Control.Validated>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)

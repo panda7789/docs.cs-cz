@@ -36,8 +36,8 @@ ms.locfileid: "76735464"
   
  Viz také [Postupy: definování ikony pro tlačítko panelu nástrojů pomocí návrháře](how-to-define-an-icon-for-a-toolbar-button-using-the-designer.md), [Postupy: Přidání tlačítek do ovládacího prvku panelu nástrojů pomocí návrháře](how-to-add-buttons-to-a-toolbar-control-using-the-designer.md).  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ToolBar> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.ToolBar>  
  Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -33,8 +33,8 @@ Ovládací prvek model Windows Forms `Button` umožňuje uživateli kliknout na 
   
  Viz také [Postupy: určení model Windows Forms tlačítka jako tlačítka přijmout pomocí návrháře](designate-a-wf-button-as-the-accept-button-using-the-designer.md) a [postupy: určení model Windows Forms tlačítka jako tlačítka Storno pomocí návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md).  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Button> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.Button>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

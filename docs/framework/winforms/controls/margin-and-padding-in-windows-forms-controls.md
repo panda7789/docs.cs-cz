@@ -27,7 +27,7 @@ Přesné umístění ovládacích prvků ve formuláři je velmi prioritní pro 
   
  Pro tuto funkci v aplikaci Visual Studio je podporována podpora v době návrhu. Viz také [Návod: rozvržení model Windows Forms ovládacích prvků s odsazením, okraji a vlastností AutoSize](windows-forms-controls-padding-autosize.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.AutoSize%2A>
 - <xref:System.Windows.Forms.Control.Margin%2A>

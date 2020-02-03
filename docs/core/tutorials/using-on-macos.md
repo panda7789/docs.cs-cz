@@ -16,7 +16,7 @@ Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET 
 > [!NOTE]
 > Tento článek používá [Visual Studio Code](https://code.visualstudio.com) v MacOS.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download). .NET Core SDK zahrnuje nejnovější verzi rozhraní .NET Core Framework a modulu runtime.
 

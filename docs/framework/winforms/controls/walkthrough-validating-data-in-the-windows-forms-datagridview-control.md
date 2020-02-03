@@ -27,7 +27,7 @@ V tomto návodu načtete řádky z tabulky `Customers` v ukázkové databázi No
 
 Chcete-li zkopírovat kód v tomto tématu jako jeden výpis, přečtěte si téma [How to: Validate data v ovládacím prvku DataGridView model Windows Forms](how-to-validate-data-in-the-windows-forms-datagridview-control.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Aby bylo možné dokončit tento návod, budete potřebovat:
 
@@ -92,7 +92,7 @@ Tato aplikace vám poskytne základní informace o možnostech ovládacího prvk
 
 - Přizpůsobení vzhledu buněk Další informace naleznete v tématu [Postupy: přizpůsobení vzhledu buněk v ovládacím prvku model Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [Postupy: nastavení písma a barevných stylů v ovládacím prvku DataGridView model Windows Forms](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>

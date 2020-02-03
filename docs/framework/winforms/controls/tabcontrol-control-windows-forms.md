@@ -38,8 +38,8 @@ ms.locfileid: "76742814"
   
  Viz také [Postupy: Přidání a odebrání karet pomocí model Windows Forms TabControl pomocí návrháře](add-and-remove-tabs-with-wf-tabcontrol-using-the-designer.md), [Postupy: Přidání ovládacího prvku na stránku karty pomocí návrháře](how-to-add-a-control-to-a-tab-page-using-the-designer.md)  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.TabControl> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.TabControl>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -62,7 +62,7 @@ Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> můžet
     this.BindingContext [DataTable1].Position = 5;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled komponenty ErrorProvider](errorprovider-component-overview-windows-forms.md)
 - [Postupy: Zobrazení ikon chyb pro ověřování formuláře pomocí komponenty Windows Forms ErrorProvider](display-error-icons-for-form-validation-with-wf-errorprovider.md)

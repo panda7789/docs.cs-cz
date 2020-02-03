@@ -30,7 +30,7 @@ Model Windows Forms aplikace a ovládací prvky mohou spolupracovat s nespravova
   
  Viz také [Návod: Podpora zprostředkovatele komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233639(v=vs.100)).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType>  
  Slouží k vytvoření samostatného vlákna pro formulář Windows.  
   

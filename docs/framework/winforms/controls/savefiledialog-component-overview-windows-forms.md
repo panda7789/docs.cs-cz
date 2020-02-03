@@ -26,7 +26,7 @@ Můžete použít metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> 
 
 Při přidání do formuláře se komponenta <xref:System.Windows.Forms.SaveFileDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.SaveFileDialog>
 - [Komponenta SaveFileDialog](savefiledialog-component-windows-forms.md)

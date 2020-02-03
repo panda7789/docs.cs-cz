@@ -80,7 +80,7 @@ Běžné použití ovládacího prvku model Windows Forms <xref:System.Windows.F
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox.SelectionChanged>
 - <xref:System.Windows.Forms.RichTextBox>

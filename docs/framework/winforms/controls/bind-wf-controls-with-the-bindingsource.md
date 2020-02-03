@@ -50,13 +50,13 @@ Po přidání ovládacích prvků do formuláře a určení uživatelského rozh
 
 9. Pokud chcete, nahraďte výchozí název datové sady.
 
-10. Klikněte na **Dokončit**.
+10. Klikněte na **Finish** (Dokončit).
 
 11. V okně **vlastnosti** klikněte znovu na šipku vedle vlastnosti <xref:System.Windows.Forms.TextBox.Text%2A>. V editoru typu uživatelského rozhraní **zdroje dat** vyberte název pole, ke kterému se má <xref:System.Windows.Forms.TextBox> navazovat.
 
      Editor typu uživatelského rozhraní **DataSource** se zavře a do formuláře se přidají datová sada, <xref:System.Windows.Forms.BindingSource> a adaptér tabulky specifický pro toto datové připojení.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.Windows.Forms.BindingNavigator>

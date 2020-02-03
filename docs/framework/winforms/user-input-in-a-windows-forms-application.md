@@ -21,7 +21,7 @@ V model Windows Forms se vstup uživatele odesílá do aplikací ve formě zprá
 ## <a name="methods-that-process-user-input-messages"></a>Metody, které zpracovávají zprávy vstupu uživatele  
  Formuláře a ovládací prvky mají přístup k rozhraní <xref:System.Windows.Forms.IMessageFilter> a sadě přepsatelné metody, které zpracovávají zprávy systému Windows v různých bodech fronty zpráv. Všechny tyto metody mají parametr <xref:System.Windows.Forms.Message>, který zapouzdřuje podrobnosti nízké úrovně zpráv Windows. Můžete implementovat nebo přepsat tyto metody pro kontrolu zprávy a potom buď tuto zprávu spotřebovat, nebo předat dalšímu příjemci ve frontě zpráv. Následující tabulka uvádí metody, které zpracovávají všechny zprávy systému Windows v model Windows Forms.  
   
-|Metoda|Poznámky|  
+|Metoda|Poznámky:|  
 |------------|-----------|  
 |<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>|Tato metoda zachycuje zprávy ve frontě (známé také jako zaslané) zprávy systému Windows na úrovni aplikace.|  
 |<xref:System.Windows.Forms.Control.PreProcessMessage%2A>|Tato metoda zachycuje zprávy systému Windows na úrovni formuláře a ovládacího prvku před zpracováním.|  
@@ -31,7 +31,7 @@ V model Windows Forms se vstup uživatele odesílá do aplikací ve formě zprá
   
  Zprávy klávesnice a myši jsou zpracovávány také pomocí další sady přepsatelné metody, které jsou specifické pro tyto typy zpráv. Další informace najdete v tématu [Jak funguje vstup z klávesnice](how-keyboard-input-works.md) a [Jak funguje vstup z myši v model Windows Forms](how-mouse-input-works-in-windows-forms.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Uživatelský vstup ve Windows Forms](user-input-in-windows-forms.md)
 - [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)

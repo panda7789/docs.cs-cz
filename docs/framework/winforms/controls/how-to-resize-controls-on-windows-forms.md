@@ -36,7 +36,7 @@ V aplikaci Visual Studio vyberte ovládací prvek, jehož velikost má být změ
 
 2. V nabídce **Formát** zvolte možnost **nastavit stejnou velikost**a vyberte jednu ze čtyř možností. První tři příkazy změní rozměry ovládacích prvků tak, aby odpovídaly prvnímu vybranému ovládacímu prvku.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

@@ -52,7 +52,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.DataGridView> můžete ur�
 ## <a name="robust-programming"></a>Robustní programování  
  Chcete-li dosáhnout maximální škálovatelnosti při práci s velmi velkými datovými sadami, měli byste sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objekty napříč více řádky, sloupci nebo buňkami, které používají stejné styly, nikoli nastavit vlastnosti stylu pro jednotlivé prvky samostatně. Kromě toho byste měli vytvořit sdílené řádky a přistupovat k nim pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRowCollection.SharedRow%2A?displayProperty=nameWithType>. Další informace najdete v tématu [osvědčené postupy pro škálování ovládacího prvku DataGridView model Windows Forms](best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewCellStyle>

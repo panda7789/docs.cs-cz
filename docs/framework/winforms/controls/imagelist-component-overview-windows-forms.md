@@ -1,5 +1,5 @@
 ---
-title: Přehled komponenty ImageList
+title: ImageList – přehled komponenty
 ms.date: 03/30/2017
 f1_keywords:
 - ImageList
@@ -27,7 +27,7 @@ Seznam obrázků můžete použít s libovolným ovládacím prvkem, který má 
 
 Klíčovou vlastností součásti <xref:System.Windows.Forms.ImageList> je <xref:System.Windows.Forms.ImageList.Images%2A>, která obsahuje obrázky používané přidruženým ovládacím prvkem. Ke každému jednotlivému obrázku může být přistupovaná jeho hodnota indexu nebo jeho klíčem. Vlastnost <xref:System.Windows.Forms.ImageList.ColorDepth%2A> určuje počet barev, pomocí kterých jsou obrázky vykresleny. Obrázek se zobrazí ve stejné velikosti, kterou nastaví vlastnost <xref:System.Windows.Forms.ImageList.ImageSize%2A>. Obrázky, které jsou větší, se škálují tak, aby se vešly.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ImageList>
 - [Postupy: Přidání a odebrání obrázků pomocí komponenty Windows Forms ImageList](how-to-add-or-remove-images-with-the-windows-forms-imagelist-component.md)

@@ -103,19 +103,19 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
 - **Místní intranet**. Aplikace spouštěné z intranetu. (Poněkud důvěryhodné).  
   
-- **Internet**. Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
+- **Internet.** Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
   
 - **Důvěryhodné servery**. Aplikace identifikované uživatelem jako důvěryhodné (Nejméně důvěryhodné).  
   
 - **Nedůvěryhodné lokality**. Aplikace identifikované uživatelem jako nedůvěryhodné. (Nedůvěryhodné).  
   
- Pro každou z těchto zón poskytuje CAS sadu předdefinovaných oprávnění, která zahrnuje oprávnění, která odpovídají úrovni důvěry přidružené k jednotlivým. Zde jsou některé z nich:  
+ Pro každou z těchto zón poskytuje CAS sadu předdefinovaných oprávnění, která zahrnuje oprávnění, která odpovídají úrovni důvěry přidružené k jednotlivým. Mezi ně patří:  
   
 - **FullTrust**. Pro aplikace spouštěné ze zóny **můj počítač** . Všechna možná oprávnění jsou udělena.  
   
 - **LocalIntranet**. Pro aplikace spouštěné z **místní zóny intranetu** . K poskytnutí středního přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, neomezeného přístupu k uživatelskému rozhraní, neomezených dialogových oken, omezených reflexe a omezeného přístupu k proměnným prostředí, je udělená podmnožina oprávnění. Nejsou k dispozici oprávnění pro kritické prostředky, jako je registr.  
   
-- **Internet**. Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
+- **Internet.** Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
   
  Aplikacím identifikovaným jako **nedůvěryhodné servery** nejsou vůbec udělena oprávnění CAS. V důsledku toho pro ně neexistuje předdefinovaná sada oprávnění.  
   
@@ -186,7 +186,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Internet Explorer 7 zahrnuje a rozšiřuje možnosti zabezpečení aplikace IE6 SP2 jako součást trvalého závazku na zabezpečení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [Zabezpečení](security-wpf.md)

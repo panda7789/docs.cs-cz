@@ -63,7 +63,7 @@ Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.Servic
 ## <a name="using-transport-and-message-security"></a>Použití přenosu a zabezpečení zpráv  
  Při použití zabezpečení přenosů a zabezpečení zpráv musí být certifikát použitý k zabezpečení zprávy jak v přenosu, tak i v úrovni zprávy protokolu SOAP.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
 - [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

@@ -36,11 +36,11 @@ Funkce nastavení aplikací v model Windows Forms usnadňuje vytváření, uklá
  [Postupy: Ověření nastavení aplikace](how-to-validate-application-settings.md)  
  Ukazuje ověřování nastavení aplikace před tím, než budou trvalá.  
   
-## <a name="related-topics"></a>Příbuzná témata
+## <a name="related-topics"></a>Související témata
 
 [Konfigurační oddíl model Windows Forms](../../configure-apps/file-schema/winforms/index.md)    
 Dokumentuje nastavení pro povolení podpory vysokého rozlišení DPI v aplikaci model Windows Forms počínaje .NET Framework 4,7.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms](../index.md)

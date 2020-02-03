@@ -77,7 +77,7 @@ ms.locfileid: "76746929"
   
 <a name="INotifyDataErrorInfo"></a>   
 ## <a name="synchronously-and-asynchronously-validating-data"></a>Synchronní a asynchronní ověřování dat  
- Rozhraní <xref:System.ComponentModel.INotifyDataErrorInfo> umožňuje třídám datových entit implementovat vlastní ověřovací pravidla a asynchronně zobrazit výsledky ověřování. Toto rozhraní také podporuje vlastní chybové objekty, více chyb na vlastnost, chyby křížových vlastností a chyby na úrovni entit.  Další informace najdete v tématu <xref:System.ComponentModel.INotifyDataErrorInfo>.  
+ Rozhraní <xref:System.ComponentModel.INotifyDataErrorInfo> umožňuje třídám datových entit implementovat vlastní ověřovací pravidla a asynchronně zobrazit výsledky ověřování. Toto rozhraní také podporuje vlastní chybové objekty, více chyb na vlastnost, chyby křížových vlastností a chyby na úrovni entit.  Další informace naleznete v tématu <xref:System.ComponentModel.INotifyDataErrorInfo>.  
   
 <a name="delay"></a>   
 ## <a name="automatically-updating-the-source-of-a-data-binding"></a>Automatická aktualizace zdroje datové vazby  
@@ -126,6 +126,6 @@ ms.locfileid: "76746929"
 ## <a name="markup-extensions-for-events"></a>Rozšíření značek pro události  
  WPF 4,5 podporuje rozšíření značek pro události.  I když WPF nedefinuje rozšíření značek, které se má použít pro události, třetí strany mohou vytvořit rozšíření značek, které lze použít s událostmi.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Novinky v rozhraní .NET Framework](../../whats-new/index.md)

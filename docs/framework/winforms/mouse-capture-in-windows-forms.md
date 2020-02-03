@@ -21,6 +21,6 @@ ms.locfileid: "76741016"
   
  Myš může zachytit pouze okno v popředí. Když se okno na pozadí pokusí zachytit myš, okno obdrží zprávy pouze pro události myši, ke kterým dojde, když je ukazatel myši v viditelné části okna. I když je v okně popředí zachycena myš, uživatel může stále kliknout na jiné okno a přemístit ho do popředí. Když je myš zachycena, klávesové zkratky nefungují.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

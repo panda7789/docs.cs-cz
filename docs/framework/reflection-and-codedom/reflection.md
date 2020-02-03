@@ -83,7 +83,7 @@ Tyto běhové třídy jsou `internal` (`Friend` v Visual Basic). Nejsou dokument
 |[Postupy: Připojení delegáta pomocí reflexe](how-to-hook-up-a-delegate-using-reflection.md)|Vysvětluje, jak vytvořit delegáta pro metodu a zapojit delegáta do události. Vysvětluje, jak vytvořit metodu zpracování událostí v době běhu pomocí <xref:System.Reflection.Emit.DynamicMethod>.|  
 |[Generování dynamických metod a sestavení](emitting-dynamic-methods-and-assemblies.md)|Vysvětluje, jak generovat dynamická sestavení a dynamické metody.|  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
 
 <xref:System.Type?displayProperty=nameWithType>  
   

@@ -25,7 +25,7 @@ ms.locfileid: "76738939"
 
 <a name="Requirements"></a>
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Je požadována znalost .NET Framework Model doplňku. Další informace najdete v tématu [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
@@ -308,11 +308,11 @@ Kromě výhod, které WPF přidává k výchozímu chování dodanému pomocí <
 
 Ve výchozím nastavení platí, že při použití více domén aplikace jsou všechna .NET Framework sestavení požadovaná každou aplikací načtena do domény této aplikace. V důsledku toho může mít vliv na výkon čas potřebný k vytvoření nových aplikačních domén a spouštění aplikací v nich. .NET Framework však poskytuje způsob, jak můžete zkrátit dobu spouštění tím, že dáte pokyn ke sdílení sestavení napříč doménami aplikace v případě, že jsou již načteny. To provedete pomocí atributu <xref:System.LoaderOptimizationAttribute>, který musí být použit pro metodu vstupního bodu (`Main`). V takovém případě je nutné použít pouze kód k implementaci definice vaší aplikace (viz [Přehled správy aplikací](application-management-overview.md)).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.LoaderOptimizationAttribute>
 - [Doplňky a rozšíření](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Aplikační domény](../../app-domains/application-domains.md)
 - [Přehled vzdálené komunikace .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Vytváření objektů – vzdáleně](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
-- [Postupy](how-to-topics.md)
+- [Témata s postupy](how-to-topics.md)

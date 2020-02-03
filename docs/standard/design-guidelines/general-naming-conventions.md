@@ -63,16 +63,16 @@ Tato část popisuje obecné konvence vytváření názvů, které se týkají v
 |**byte**|**Bytové**|**znak bez znaménka**|**Bytové**|
 |**short**|**Dostatečná**|**short**|**Int16**|
 |**ushort**|**UInt16**|**krátký unsigned**|**UInt16**|
-|**int**|**Čísla**|**int**|**Int32**|
+|**int**|**Čísla**|**int**|**Uvedena**|
 |**uint**|**UInt32**|**unsigned int**|**UInt32**|
 |**long**|**Dlouhou**|**__int64**|**Int64**|
 |**ulong**|**UInt64**|**Nepodepsaný __int64**|**UInt64**|
 |**float**|**Konkrétní**|**float**|**Konkrétní**|
 |**double**|**Klepat**|**double**|**Klepat**|
-|**bool**|**Datový typ Boolean**|**bool**|**Datový typ Boolean**|
+|**bool**|**Datového**|**bool**|**Datového**|
 |**char**|**Char**|**wchar_t**|**Char**|
 |**string**|**Řetězec**|**Řetězec**|**Řetězec**|
-|**object**|**objekt**|**objekt**|**objekt**|
+|**object**|**Předmětů**|**Předmětů**|**Předmětů**|
 
  ✔️ použít běžný název, jako je například `value` nebo `item`, namísto opakování názvu typu, ve výjimečných případech, kdy identifikátor nemá sémantický význam a typ parametru není důležitý.
 
@@ -97,7 +97,7 @@ Tato část popisuje obecné konvence vytváření názvů, které se týkají v
 
  *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

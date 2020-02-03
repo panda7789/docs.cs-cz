@@ -60,7 +60,7 @@ V návrhu aplikace může být nutné použít jednu obslužnou rutinu události
   
      Kód se přidá do formuláře, aby se událost navázala na existující obslužnou rutinu události.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

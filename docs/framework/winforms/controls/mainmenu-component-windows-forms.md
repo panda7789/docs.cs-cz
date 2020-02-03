@@ -1,5 +1,5 @@
 ---
-title: Komponenta MainMenu
+title: MainMenu – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MainMenu control [Windows Forms]
@@ -21,11 +21,11 @@ ms.locfileid: "76747151"
  [Přehled komponenty MainMenu](mainmenu-component-overview-windows-forms.md)  
  Vysvětluje, co je tato součást a její klíčové funkce a vlastnosti.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.MainMenu>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ContextMenuStrip>

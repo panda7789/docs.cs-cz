@@ -148,7 +148,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
   
  Další informace o vytváření vlastního rozložení textu najdete v tématu [Rozšířené formátování textu](advanced-text-formatting.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.FormattedText>
 - <xref:System.Windows.Media.TextFormatting.TextFormatter>
@@ -157,4 +157,4 @@ Text pomocí technologie ClearType y-Direction antialiasing
 - [Kreslení formátovaného textu](drawing-formatted-text.md)
 - [Pokročilé formátování textu](advanced-text-formatting.md)
 - [Text](optimizing-performance-text.md)
-- [Microsoft Typography](https://docs.microsoft.com/typography/)
+- [Typografie Microsoftu](https://docs.microsoft.com/typography/)

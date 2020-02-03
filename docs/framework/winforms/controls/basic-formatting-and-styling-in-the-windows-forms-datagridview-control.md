@@ -37,7 +37,7 @@ Ovládací prvek `DataGridView` umožňuje snadno definovat základní vzhled bu
  [Postupy: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku Windows Forms DataGridView](use-the-row-template-to-customize-rows-in-the-datagrid.md)  
  Popisuje, jak použít vlastnost `RowTemplate` k nastavení vlastností řádku, které budou použity pro všechny řádky ovládacího prvku.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
@@ -57,6 +57,6 @@ Ovládací prvek `DataGridView` umožňuje snadno definovat základní vzhled bu
  [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](basic-column-row-and-cell-features-wf-datagridview-control.md)  
  Poskytuje témata, která popisují běžně používané vlastnosti buňky, řádku a sloupce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)

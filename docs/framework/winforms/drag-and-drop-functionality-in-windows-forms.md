@@ -43,6 +43,6 @@ Model Windows Forms obsahuje sadu metod, událostí a tříd, které implementuj
   
  Třída <xref:System.Windows.Forms.QueryContinueDragEventArgs> poskytuje aktuální stav tlačítek myši a modifikační klávesy klávesnice, hodnotu určující, zda byla stisknuta klávesa ESC, a hodnotu <xref:System.Windows.Forms.DragAction>, která může být nastavena k určení, zda má být operace přetažení pokračovat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

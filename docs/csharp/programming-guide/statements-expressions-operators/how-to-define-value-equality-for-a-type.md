@@ -67,7 +67,7 @@ V obou případech a v obou třídách i strukturách by vaše implementace měl
   
  Operátory [==](../../language-reference/operators/equality-operators.md#equality-operator-) a [! =](../../language-reference/operators/equality-operators.md#inequality-operator-) nemohou pracovat na struktuře, pokud je struktura explicitně nenačítá.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Porovnání rovnosti](equality-comparisons.md)
 - [C#Průvodce programováním](../index.md)

@@ -60,7 +60,7 @@ Direct3D9 obsah můžete hostovat pomocí třídy <xref:System.Windows.Interop.D
 |D3DFMT_A8R8G8B8 (není uzamykatelný)|**Aktualizace hardwaru**|Aktualizace softwaru|Aktualizace softwaru|Aktualizace softwaru|  
 |D3DFMT_A8R8G8B8 (lockable)|**Aktualizace hardwaru**|Aktualizace softwaru|**Aktualizace hardwaru**|Aktualizace softwaru|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.D3DImage>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](wpf-and-direct3d9-interoperation.md)

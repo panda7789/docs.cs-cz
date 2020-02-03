@@ -48,7 +48,7 @@ Infrastruktura veřejných klíčů (PKI) je systém digitálních certifikátů
   
  Další informace o těchto tématech najdete v [Access Controlch mechanismech](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md) .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

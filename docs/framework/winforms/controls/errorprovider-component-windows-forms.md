@@ -26,7 +26,7 @@ Komponenta model Windows Forms `ErrorProvider` se používá k zobrazení uživa
  [Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider](view-errors-within-a-dataset-with-wf-errorprovider-component.md)  
  Poskytuje pokyny pro použití komponenty poskytovatele chyb pro zobrazení chyb dat.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.ErrorProvider>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

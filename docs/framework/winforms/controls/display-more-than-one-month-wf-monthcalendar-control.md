@@ -37,7 +37,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.MonthCalendar> s
     monthCalendar1->CalendarDimensions = System::Drawing::Size (3,2);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
 - [Postupy: Výběr rozsahu kalendářních dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)

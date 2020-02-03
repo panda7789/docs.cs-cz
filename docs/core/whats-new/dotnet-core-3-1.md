@@ -29,11 +29,11 @@ Další informace o této verzi najdete v tématu [oznámení .NET Core 3,1](htt
 
 .NET Core 3,1 je LTS verze s podporou Microsoftu pro následující tři roky. Důrazně doporučujeme přesunout své aplikace do .NET Core 3,1. Aktuální životní cyklus dalších hlavních vydání je následující:
 
-| Vydaná verze | Poznámka |
+| Vydat | Poznámka |
 | ------- | ---- |
 | .NET Core 3.0 | Konec životnosti 3. března 2020.     |
-| .NET Core 2,2 | Konec životnosti 23. prosince 2019. |
-| .NET Core 2,1 | Konec životnosti 21. srpna 2021.    |
+| .NET Core 2.2 | Konec životnosti 23. prosince 2019. |
+| .NET Core 2.1 | Konec životnosti 21. srpna 2021.    |
 
 Další informace najdete v tématu [zásady podpory pro .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
 

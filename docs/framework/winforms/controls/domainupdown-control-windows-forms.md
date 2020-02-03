@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek DomainUpDown
+title: DomainUpDown – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DomainUpDown control [Windows Forms]
@@ -32,7 +32,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DomainUpDown> vy
  [Postupy: Odebrání položek z ovládacích prvků Windows Forms DomainUpDown](how-to-remove-items-from-windows-forms-domainupdown-controls.md)  
  Popisuje, jak odstranit položky z ovládacího prvku <xref:System.Windows.Forms.DomainUpDown> v kódu.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DomainUpDown>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

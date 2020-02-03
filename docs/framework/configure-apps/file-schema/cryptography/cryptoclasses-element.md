@@ -18,7 +18,7 @@ ms.locfileid: "76732886"
 # <a name="cryptoclasses-element"></a>\<element > cryptoClasses
 Obsahuje seznam tříd kryptografie, které mají mapování na popisný název v prvku [\<nameEntry >](nameentry-element.md) .  
   
-[**Konfigurace \<** ](../configuration-element.md)  
+[**Konfigurace \<>** ](../configuration-element.md)  
 &nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
@@ -35,13 +35,13 @@ Obsahuje seznam tříd kryptografie, které mají mapování na popisný název 
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádné.  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cryptoClass>](cryptoclass-element.md)|Obsahuje třídu kryptografie, která má mapování na popisný název v prvku **\<nameEntry >** .|  
+|[\<cryptoClass >](cryptoclass-element.md)|Obsahuje třídu kryptografie, která má mapování na popisný název v prvku **\<nameEntry >** .|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -76,11 +76,11 @@ Obsahuje seznam tříd kryptografie, které mají mapování na popisný název 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Security.Cryptography>
 - [Schéma konfiguračního souboru](../index.md)
 - [Schéma nastavení šifrování](index.md)
 - [Kryptografické služby](../../../../standard/security/cryptographic-services.md)
-- [System.Security.Cryptography.CryptoConfig.CreateFromName](xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A)
+- [System. Security. Cryptography. objektu CryptoConfig. CreateFromName](xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A)
 - [Konfigurace šifrovacích tříd](../../configure-cryptography-classes.md)

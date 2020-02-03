@@ -26,7 +26,7 @@ Toto téma obsahuje odkazy na Další informace o ovládacím prvku `MaskedTextB
  [Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox](how-to-bind-data-to-the-maskedtextbox-control.md)  
  Ukazuje, jak přeformátovat data v případě, že data v databázi neodpovídají formátu očekávanému definicí masky.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.MaskedTextBox>  
  Primární třída pro implementaci ovládacího prvku maskovaná textová pole.  
   

@@ -22,7 +22,7 @@ ms.locfileid: "76742898"
 ## <a name="working-with-the-splitter-control"></a>Práce s ovládacím prvkem rozdělovač  
  Když uživatel přejde ukazatelem myši na neukotvený okraj ovládacího prvku, jehož velikost může být změněna rozdělovačem, ukazatel změní jeho vzhled, aby označoval, že lze změnit velikost ovládacího prvku. V ovládacím prvku Rozdělovač může uživatel změnit velikost ukotveného ovládacího prvku, který je těsně před ním. Proto, aby uživatel mohl změnit velikost ukotveného ovládacího prvku za běhu, ukotvit ovládací prvek pro změnu velikosti na okraji kontejneru a potom ukotvit ovládací prvek rozdělovače na stejnou stranu tohoto kontejneru.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.SplitContainer>
 - [Postupy: Vložení ovládacích prvků ve Windows Forms do doku](how-to-dock-controls-on-windows-forms.md)

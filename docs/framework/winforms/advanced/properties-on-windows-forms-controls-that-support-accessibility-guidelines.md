@@ -30,6 +30,6 @@ Ovládací prvky standardní sady nástrojů pro model Windows Forms podporují 
 |BackColor|Pokud je tato vlastnost nastavená na výchozí hodnotu, použijí se ve formuláři předvolby pro barvy uživatele.|  
 |BackgroundImage|Pokud chcete, aby byl text čitelnější, nechte tuto vlastnost prázdnou.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: Vytvoření přístupné aplikace Windows](walkthrough-creating-an-accessible-windows-based-application.md)

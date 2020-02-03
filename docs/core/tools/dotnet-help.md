@@ -17,7 +17,7 @@ ms.locfileid: "76734230"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet help` – Zobrazí podrobnější dokumentaci k určitému příkazu online.
 
@@ -29,7 +29,7 @@ ms.locfileid: "76734230"
 
 Příkaz `dotnet help` otevře referenční stránku, kde najdete podrobnější informace o zadaném příkazu na adrese docs.microsoft.com.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 * **`COMMAND_NAME`**
 

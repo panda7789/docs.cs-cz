@@ -16,7 +16,7 @@ Funkce Windows Communication Foundation (WCF) je schopnost vytvářet zabezpeče
   
  Další informace o relacích najdete v tématu [použití relací](../../../../docs/framework/wcf/using-sessions.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Relace, vytváření instancí a souběžnost](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)
 - [Postupy: Vytvoření služby vyžadující relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)

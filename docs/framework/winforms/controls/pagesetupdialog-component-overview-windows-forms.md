@@ -1,5 +1,5 @@
 ---
-title: PageSetupDialog – přehled komponenty
+title: Přehled komponenty PageSetupDialog
 ms.date: 03/30/2017
 f1_keywords:
 - PageSetupDialog
@@ -24,7 +24,7 @@ Použijte metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> k zobraz
 
 Při přidání do formuláře se komponenta <xref:System.Windows.Forms.PageSetupDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PageSetupDialog>
 - [Komponenta PageSetupDialog](pagesetupdialog-component-windows-forms.md)

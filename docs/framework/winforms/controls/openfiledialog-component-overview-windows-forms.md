@@ -1,5 +1,5 @@
 ---
-title: OpenFileDialog – přehled komponenty
+title: Přehled komponenty OpenFileDialog
 ms.date: 03/30/2017
 f1_keywords:
 - OpenFileDialog
@@ -26,7 +26,7 @@ Použijte metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> k zobraz
 
 Při přidání do formuláře se komponenta <xref:System.Windows.Forms.OpenFileDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.OpenFileDialog>
 - [Komponenta OpenFileDialog](openfiledialog-component-windows-forms.md)

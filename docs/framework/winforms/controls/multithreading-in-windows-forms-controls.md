@@ -25,7 +25,7 @@ V mnoha aplikacích můžete své uživatelské rozhraní (UI) lépe reagovat t�
  [Postupy: Použití vlákna na pozadí k vyhledávání souborů](how-to-use-a-background-thread-to-search-for-files.md)  
  Ukazuje, jak použít <xref:System.Threading> obor názvů a metodu <xref:System.Windows.Forms.Control.BeginInvoke%2A> pro asynchronní hledání souborů.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.ComponentModel.BackgroundWorker>  
  Dokumentuje komponentu, která zapouzdřuje pracovní vlákno pro asynchronní operace.  
   

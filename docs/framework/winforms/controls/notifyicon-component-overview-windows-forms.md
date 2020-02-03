@@ -1,5 +1,5 @@
 ---
-title: NotifyIcon – přehled komponenty
+title: Přehled komponenty NotifyIcon
 ms.date: 03/30/2017
 f1_keywords:
 - NotifyIcon
@@ -29,7 +29,7 @@ Pomocí <xref:System.Windows.Forms.NotifyIcon> můžete přidružit tipy k bubli
 
 Můžete zobrazit tipy v bublinách pro <xref:System.Windows.Forms.NotifyIcon> voláním metody <xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A> určující časový rozsah, ve kterém chcete zobrazit tip v bublině. Můžete také zadat text, ikonu a název tipu v bublině s <xref:System.Windows.Forms.NotifyIcon.BalloonTipText%2A>, <xref:System.Windows.Forms.NotifyIcon.BalloonTipIcon%2A> a <xref:System.Windows.Forms.NotifyIcon.BalloonTipTitle%2A>, v uvedeném pořadí. komponenty <xref:System.Windows.Forms.NotifyIcon> mohou mít také přidružené popisy a místní nabídky. Další informace najdete v tématu [Přehled komponent popisu](tooltip-component-overview-windows-forms.md) a informování [komponent](contextmenu-component-overview-windows-forms.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.NotifyIcon>
 - [Komponenta NotifyIcon](notifyicon-component-windows-forms.md)

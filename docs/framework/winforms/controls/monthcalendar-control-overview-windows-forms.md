@@ -1,5 +1,5 @@
 ---
-title: MonthCalendar – přehled ovládacího prvku
+title: Přehled ovládacího prvku MonthCalendar
 ms.date: 03/30/2017
 f1_keywords:
 - MonthCalendar
@@ -25,7 +25,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.MonthCalendar> p
   
  Klíčovou vlastností ovládacího prvku <xref:System.Windows.Forms.MonthCalendar> je <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>, rozsah dat vybraný v ovládacím prvku. Hodnota <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> nemůže překročit maximální počet dní, které je možné vybrat, a nastavte vlastnost <xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A>. Nejstarší a poslední datum, které může uživatel vybrat, jsou určena vlastnostmi <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A> a <xref:System.Windows.Forms.MonthCalendar.MinDate%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.MonthCalendar>
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)

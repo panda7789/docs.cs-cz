@@ -68,7 +68,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> poskytuje několik zp�
   
 - Odkazy na sestavení System, System. Windows. Forms a System. Drawing.  
  
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewCell>

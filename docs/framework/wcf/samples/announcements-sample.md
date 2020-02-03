@@ -13,7 +13,7 @@ ms.locfileid: "76747000"
 
 V této ukázce se dozvíte, jak používat funkci oznámení funkce zjišťování. Oznámení umožňují službám posílat zprávy oznámení, které obsahují metadata o službě. Ve výchozím nastavení se při spuštění služby pošle oznámení o signálu Hello a pošle se oznámení bye při ukončení služby. Tato oznámení můžou být vícesměrové vysílání nebo se můžou poslat Point-to-Point. Tato ukázka se skládá ze dvou projektů služby a klienta.
 
-## <a name="service"></a>Service
+## <a name="service"></a>Služba
 
 Tento projekt obsahuje službu kalkulačky s místním hostováním. V metodě `Main` se vytvoří hostitel služby a do něj se přidá koncový bod služby. V dalším kroku se vytvoří <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>. Aby bylo možné povolit oznámení, musí být do <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>přidán koncový bod oznámení. V tomto případě se jako koncový bod oznámení přidá standardní koncový bod pomocí vícesměrového vysílání UDP. Vysílá oznámení přes dobře známou adresu UDP.
 

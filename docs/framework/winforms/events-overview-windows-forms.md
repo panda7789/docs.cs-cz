@@ -43,7 +43,7 @@ Delegáty mohou být vázány na jedinou metodu nebo na více metod, označovan�
 
  Mechanizmus vazby, který se používá s delegáty, je dynamický: delegát může být vázán v době běhu na jakoukoli metodu, jejíž signatura odpovídá obslužné rutině události. Pomocí této funkce můžete nastavit nebo změnit metodu vazby v závislosti na podmínce a dynamicky připojit obslužnou rutinu události k ovládacímu prvku.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

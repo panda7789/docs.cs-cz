@@ -123,7 +123,7 @@ Někdy je vhodné prostudovat všechny uzly v model Windows Forms <xref:System.W
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)
 - [Rekurzivní procedury](../../../visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)

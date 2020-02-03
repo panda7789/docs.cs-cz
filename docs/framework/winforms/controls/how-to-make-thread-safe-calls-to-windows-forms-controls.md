@@ -90,7 +90,7 @@ V příkladu se používá obslužná rutina události <xref:System.ComponentMod
  [!code-csharp[ThreadSafeCalls#2](~/samples/snippets/winforms/thread-safe/example2/cs/Form1.cs)]
  [!code-vb[ThreadSafeCalls#2](~/samples/snippets/winforms/thread-safe/example2/vb/Form1.vb)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ComponentModel.BackgroundWorker>
 - [Postupy: spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)

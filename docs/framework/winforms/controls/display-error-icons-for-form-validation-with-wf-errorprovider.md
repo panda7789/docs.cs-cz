@@ -92,7 +92,7 @@ Komponentu model Windows Forms <xref:System.Windows.Forms.ErrorProvider> můžet
   
 4. Spusťte projekt. Typ je neplatný (v tomto příkladu nejsou číselná) data do prvního ovládacího prvku a potom na druhou. Když se zobrazí ikona chyby, najeďte na ni ukazatelem myši, aby se zobrazil text chyby.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ErrorProvider.SetError%2A>
 - [Přehled komponenty ErrorProvider](errorprovider-component-overview-windows-forms.md)

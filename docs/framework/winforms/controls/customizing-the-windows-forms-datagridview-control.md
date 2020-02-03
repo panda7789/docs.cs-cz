@@ -33,7 +33,7 @@ Ovládací prvek `DataGridView` poskytuje několik vlastností, které lze použ
  [Postupy: Hostování ovládacích prvků v buňkách Windows Forms DataGridView](how-to-host-controls-in-windows-forms-datagridview-cells.md)  
  Popisuje, jak implementovat rozhraní `IDataGridViewEditingControl` a vytvořit vlastní typy odvozené z `DataGridViewCell` a `DataGridViewColumn`, aby bylo možné zobrazit ovládací prvek <xref:System.Windows.Forms.DateTimePicker>, pokud je buňka v režimu úprav.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
@@ -53,7 +53,7 @@ Ovládací prvek `DataGridView` poskytuje několik vlastností, které lze použ
  [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)  
  Poskytuje témata, které popisují, jak upravit základní vzhled ovládacího prvku a formátování zobrazení dat buněk.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

@@ -26,7 +26,7 @@ ms.locfileid: "76746197"
   
  Klíčovou vlastností součásti <xref:System.Windows.Forms.ContextMenu> je vlastnost <xref:System.Windows.Forms.Menu.MenuItems%2A>. Položky nabídky můžete přidat programově vytvářením <xref:System.Windows.Forms.MenuItem> objektů a jejich přidáním do <xref:System.Windows.Forms.Menu.MenuItemCollection> místní nabídky. Vzhledem k tomu, že se položky v místní nabídce obvykle vykreslí z jiných nabídek, budete nejčastěji přidávat položky do místní nabídky tak, že je zkopírujete.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ContextMenu>
 - <xref:System.Windows.Forms.MenuStrip>

@@ -46,7 +46,7 @@ Nastavení zabezpečení .NET Framework může způsobit, že vaše aplikace bud
   
  oprávnění <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows> omezuje akce uvedené v následující tabulce.  
   
-|Součást|Omezené akce|  
+|Komponenta|Omezené akce|  
 |---------------|------------------------|  
 |<xref:System.Windows.Forms.Application>|-Nastavení vlastnosti <xref:System.Windows.Forms.Application.SafeTopLevelCaptionFormat%2A>.|  
 |<xref:System.Windows.Forms.Control>|– Získávání vlastnosti <xref:System.Windows.Forms.Control.Parent%2A>.<br />-Nastavení vlastnosti `Region`.<br />– Voláním metody <xref:System.Windows.Forms.Control.FindForm%2A>, <xref:System.Windows.Forms.Control.Focus%2A>, <xref:System.Windows.Forms.Control.FromChildHandle%2A> a <xref:System.Windows.Forms.Control.FromHandle%2A>, <xref:System.Windows.Forms.Control.PreProcessMessage%2A>, <xref:System.Windows.Forms.Control.ReflectMessage%2A>nebo <xref:System.Windows.Forms.Control.SetTopLevel%2A>.<br />– Volání metody <xref:System.Windows.Forms.Control.GetChildAtPoint%2A>, pokud ovládací prvek není podřízený ovládacímu prvku volání.<br />-Změnit fokus ovládacího prvku uvnitř ovládacího prvku kontejneru.|  
@@ -57,7 +57,7 @@ Nastavení zabezpečení .NET Framework může způsobit, že vaše aplikace bud
   
  Hodnota <xref:System.Security.Permissions.UIPermissionWindow.SafeSubWindows> omezuje akce uvedené v následující tabulce Kromě omezení zadaných <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows> hodnotou.  
   
-|Součást|Omezené akce|  
+|Komponenta|Omezené akce|  
 |---------------|------------------------|  
 |<xref:System.Windows.Forms.CommonDialog>|-Zobrazení dialogového okna odvozeného od <xref:System.Windows.Forms.CommonDialog> třídy.|  
 |<xref:System.Windows.Forms.Control>|– Volání metody <xref:System.Windows.Forms.Control.CreateGraphics%2A>.<br />-Nastavení vlastnosti <xref:System.Windows.Forms.Control.Cursor%2A>.|  
@@ -74,7 +74,7 @@ Nastavení zabezpečení .NET Framework může způsobit, že vaše aplikace bud
   
  Někteří model Windows Forms členové poskytují nespravovaný přístup, který vyžaduje oprávnění <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode>. V následující tabulce je uveden seznam členů v oboru názvů <xref:System.Windows.Forms>, který vyžaduje oprávnění. Další informace o oprávněních, která jsou vyžadována pro člena, naleznete v dokumentaci knihovny tříd .NET Framework.  
   
-|Součást|Člen|  
+|Komponenta|Člen|  
 |---------------|------------|  
 |<xref:System.Windows.Forms.Application>|Metoda -   <xref:System.Windows.Forms.Application.AddMessageFilter%2A><br />vlastnost -   <xref:System.Windows.Forms.Application.CurrentInputLanguage%2A><br />Metoda -   `Exit`<br />Metoda -   <xref:System.Windows.Forms.Application.ExitThread%2A><br />událost <xref:System.Windows.Forms.Application.ThreadException> -   |  
 |<xref:System.Windows.Forms.CommonDialog>|Metoda -   <xref:System.Windows.Forms.CommonDialog.HookProc%2A><br />-   <xref:System.Windows.Forms.CommonDialog.OwnerWndProc%2A>\ metoda<br />Metoda -   <xref:System.Windows.Forms.CommonDialog.Reset%2A><br />Metoda -   <xref:System.Windows.Forms.CommonDialog.RunDialog%2A>|  
@@ -88,7 +88,7 @@ Nastavení zabezpečení .NET Framework může způsobit, že vaše aplikace bud
   
  Oprávnění k volání nespravovaného kódu umožňuje aplikaci provést většinu všeho. Proto oprávnění k volání nespravovaného kódu by měla být udělena pouze aplikacím, které pocházejí z důvěryhodného zdroje. Alternativně, v závislosti na aplikaci, může být část funkce aplikace, která volá nespravovaný kód, volitelná nebo povolená jenom v prostředí s plnou důvěryhodností. Další informace o nebezpečných oprávněních najdete v tématu [Správa nebezpečných oprávnění a zásad](../misc/dangerous-permissions-and-policy-administration.md). Další informace o oprávněních ke zvýšení oprávnění najdete v tématu [Obecná Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ed5htz45(v=vs.100)).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečenější přístup k souborům a datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)
 - [Zabezpečenější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)

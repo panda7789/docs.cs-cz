@@ -1,5 +1,5 @@
 ---
-title: MenuStrip – přehled ovládacího prvku
+title: Přehled ovládacího prvku MenuStrip
 ms.date: 03/30/2017
 f1_keywords:
 - MenuStrip
@@ -54,7 +54,7 @@ Nabídky pro uživatele zpřístupňují funkce, které jsou seskupeny podle spo
 |<xref:System.Windows.Forms.ToolStripDropDown>|Představuje ovládací prvek, který umožňuje uživateli vybrat jednu položku ze seznamu, který se zobrazí, když uživatel klikne na <xref:System.Windows.Forms.ToolStripDropDownButton> nebo na položku nabídky vyšší úrovně.|  
 |<xref:System.Windows.Forms.ToolStripDropDownItem>|Poskytuje základní funkce pro ovládací prvky odvozené od <xref:System.Windows.Forms.ToolStripItem>, které při kliknutí zobrazují rozevírací položky.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.MenuStrip>

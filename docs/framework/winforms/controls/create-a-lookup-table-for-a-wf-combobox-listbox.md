@@ -33,7 +33,7 @@ Někdy je užitečné zobrazit data v uživatelsky přívětivém formátu formu
   
 ### <a name="itemtable"></a>Položkace  
   
-|ID|Name|  
+|ID|Název|  
 |--------|----------|  
 |12|Hlíz|  
 |13|Nainstalováním|  
@@ -70,7 +70,7 @@ Někdy je užitečné zobrazit data v uživatelsky přívětivém formátu formu
     listBox1.DataBindings.Add("SelectedValue", OrderDetailsTable, "ItemID");  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Datové vazby a Windows Forms](../data-binding-and-windows-forms.md)
 - [Přehled ovládacího prvku ListBox](listbox-control-overview-windows-forms.md)

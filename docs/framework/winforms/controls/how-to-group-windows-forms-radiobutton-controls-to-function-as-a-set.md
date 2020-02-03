@@ -25,7 +25,7 @@ Ovládací prvky model Windows Forms <xref:System.Windows.Forms.RadioButton> jso
   
 2. Nakreslete ovládací prvky <xref:System.Windows.Forms.RadioButton> ovládacího prvku <xref:System.Windows.Forms.GroupBox> nebo <xref:System.Windows.Forms.Panel>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RadioButton>
 - [Přehled ovládacího prvku RadioButton](radiobutton-control-overview-windows-forms.md)

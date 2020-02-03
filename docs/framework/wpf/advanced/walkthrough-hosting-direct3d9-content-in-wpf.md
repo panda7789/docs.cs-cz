@@ -27,7 +27,7 @@ V tomto návodu provedete následující úlohy:
 
  Po dokončení budete znát způsob hostování Direct3D9 obsahu v aplikaci WPF.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
@@ -77,7 +77,7 @@ Nakonec použijte třídu <xref:System.Windows.Interop.D3DImage> pro hostování
 
     Obsah Direct3D9 se zobrazí v aplikaci WPF.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.D3DImage>
 - [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)

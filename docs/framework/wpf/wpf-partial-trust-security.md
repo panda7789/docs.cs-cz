@@ -47,7 +47,7 @@ ms.locfileid: "76743339"
 |Integrace webu|Dialogové okno pro stažení prohlížeče<br /><br /> Navigace iniciovaná uživatelem na nejvyšší úrovni<br /><br /> mailto: odkazy<br /><br /> Parametry identifikátoru Uniform prostředků<br /><br /> HTTPWebRequest<br /><br /> Obsah WPF hostovaný v prvku IFRAME<br /><br /> Hostování stránek HTML stejné lokality pomocí rámce<br /><br /> Hostování stejných stránek HTML webu pomocí ovládacího prvku WebBrowser<br /><br /> Webové služby (ASMX)<br /><br /> Webové služby (pomocí Windows Communication Foundation)<br /><br /> Skriptování<br /><br /> model DOM (Document Object Model)|  
 |Vizuály|2D a 3D<br /><br /> Animace<br /><br /> Médium (lokalita původu a mezi doménami)<br /><br /> Imaging/audio/video|  
 |Čtení|FlowDocuments<br /><br /> Dokumenty XPS<br /><br /> Vložená & systémová písma<br /><br /> CFF & písma TrueType|  
-|Úpravy|Kontrola pravopisu<br /><br /> RichTextBox<br /><br /> Podpora schránky ve formátu prostého textu a rukopisu<br /><br /> Vložení iniciované uživatelem<br /><br /> Kopírování vybraného obsahu|  
+|Úprava|Kontrola pravopisu<br /><br /> RichTextBox<br /><br /> Podpora schránky ve formátu prostého textu a rukopisu<br /><br /> Vložení iniciované uživatelem<br /><br /> Kopírování vybraného obsahu|  
 |Ovládací prvky|Obecné ovládací prvky|  
   
  Tato tabulka obsahuje funkce WPF na vysoké úrovni. Pro podrobnější informace Windows SDK dokumentuje oprávnění, která jsou vyžadována každým členem v subsystému WPF. Kromě toho následující funkce obsahují podrobnější informace týkající se provádění částečné důvěryhodnosti, včetně zvláštních otázek.  
@@ -74,7 +74,7 @@ ms.locfileid: "76743339"
 |------------------|-------------|  
 |Obecné|Okno (okna definovaná aplikací a dialogová okna)<br /><br /> SaveFileDialog<br /><br /> Systém souborů<br /><br /> Přístup k registru<br /><br /> Přetažení<br /><br /> Serializace XAML (přes XamlWriter. Save)<br /><br /> UIAutomation klienti<br /><br /> Přístup ke zdrojovému oknu (HwndHost)<br /><br /> Plná podpora řeči<br /><br /> Spolupráce model Windows Forms|  
 |Vizuály|Bitmapové efekty<br /><br /> Kódování obrázku|  
-|Úpravy|Schránka formátu RTF (Rich Text Format)<br /><br /> Plná podpora jazyka XAML|  
+|Úprava|Schránka formátu RTF (Rich Text Format)<br /><br /> Plná podpora jazyka XAML|  
   
 <a name="Partial_Trust_Programming"></a>   
 ## <a name="partial-trust-programming"></a>Programování s částečným vztahem důvěryhodnosti  
@@ -131,18 +131,18 @@ ms.locfileid: "76743339"
 |Oprávnění|Atribut|LocalIntranet|Internet|  
 |----------------|---------------|-------------------|--------------|  
 |DNS|Přístup k serverům DNS|Ano|Ne|  
-|Proměnné prostředí|Číst|Ano|Ne|  
-|Dialogy souborů|Otevřené|Ano|Ano|  
+|Proměnné prostředí|Čtení|Ano|Ne|  
+|Dialogy souborů|Otevřít|Ano|Ano|  
 |Dialogy souborů|Neomezený|Ano|Ne|  
 |Izolované úložiště|Izolace sestavení podle uživatele|Ano|Ne|  
 |Izolované úložiště|Neznámá izolace|Ano|Ano|  
 |Izolované úložiště|Neomezená kvóta uživatelů|Ano|Ne|  
-|Médium|Bezpečný zvuk, video a obrázky|Ano|Ano|  
+|Média|Bezpečný zvuk, video a obrázky|Ano|Ano|  
 |Tisk|Výchozí tisk|Ano|Ne|  
 |Tisk|Bezpečný tisk|Ano|Ano|  
 |Reflexe|Obor|Ano|Ne|  
-|Zabezpečení –|Spuštění spravovaného kódu|Ano|Ano|  
-|Zabezpečení –|Vyhodnocení udělených oprávnění|Ano|Ne|  
+|Zabezpečení|Spuštění spravovaného kódu|Ano|Ano|  
+|Zabezpečení|Vyhodnocení udělených oprávnění|Ano|Ne|  
 |Uživatelské rozhraní|Neomezený|Ano|Ne|  
 |Uživatelské rozhraní|Bezpečná okna nejvyšší úrovně|Ano|Ano|  
 |Uživatelské rozhraní|Vlastní schránka|Ano|Ano|  
@@ -163,7 +163,7 @@ ms.locfileid: "76743339"
   
  Alternativně můžete použít model důvěryhodných nasazení ClickOnce pro nasazení s úplným vztahem důvěryhodnosti z jakékoli zóny zabezpečení. Další informace najdete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview) a [zabezpečení](security-wpf.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení](security-wpf.md)
 - [Strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)

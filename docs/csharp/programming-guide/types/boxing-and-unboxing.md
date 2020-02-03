@@ -98,7 +98,7 @@ Pokud změníte příkaz:
 int j = (short) o;
 ```
 
-na
+na:
 
 ```csharp
 int j = (int) o;
@@ -112,7 +112,7 @@ provede se převod a zobrazí se výstup:
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Průvodce programováním](../index.md)
 - [Typy odkazů](../../language-reference/keywords/reference-types.md)

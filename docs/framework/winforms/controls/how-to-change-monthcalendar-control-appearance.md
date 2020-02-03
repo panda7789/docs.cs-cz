@@ -46,7 +46,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.MonthCalendar> u
   
 ### <a name="to-display-the-current-date-at-the-bottom-of-the-control"></a>Zobrazení aktuálního data v dolní části ovládacího prvku  
   
-- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> vlastnost `true`. Následující příklad přepíná mezi zobrazením a vynecháním dnešního data při dvojitém kliknutí na formulář.  
+- Vlastnost <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> nastavte na hodnotu `true`. Následující příklad přepíná mezi zobrazením a vynecháním dnešního data při dvojitém kliknutí na formulář.  
   
     ```vb  
     Private Sub Form1_DoubleClick(ByVal sender As Object, _  
@@ -87,7 +87,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.MonthCalendar> u
   
 ### <a name="to-display-week-numbers"></a>Zobrazení čísel týdnů  
   
-- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Tuto vlastnost lze nastavit buď v kódu, nebo v okno Vlastnosti.  
+- Vlastnost <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> nastavte na hodnotu `true`. Tuto vlastnost lze nastavit buď v kódu, nebo v okno Vlastnosti.  
   
      Čísla týdnů se zobrazí v samostatném sloupci nalevo od prvního dne v týdnu.  
   
@@ -103,7 +103,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.MonthCalendar> u
     monthCalendar1->ShowWeekNumbers = true;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
 - [Postupy: Výběr rozsahu kalendářních dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)

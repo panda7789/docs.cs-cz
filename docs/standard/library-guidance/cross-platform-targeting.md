@@ -117,7 +117,7 @@ Pokud je váš zdrojový kód pro všechny cíle stejný, ❌ se vyhnout cílen�
 
 Rozhraní .NET podporuje cílení na verze .NET Framework, které nejsou podporované, i platformy, které se už běžně nepoužívají. I když existuje hodnota, aby vaše knihovna fungovala s co možná nejvíce cíli, může dopracovat s chybějícími rozhraními API a zvýšit tak značnou režii. Domníváme se, že některá rozhraní už necílí na cílení a berou v úvahách jejich dosah a omezení.
 
-❌ neobsahují cíl knihovny přenosných tříd (PCL). Například `portable-net45+win8+wpa81+wp8`.
+❌ neobsahují cíl knihovny přenosných tříd (PCL). například `portable-net45+win8+wpa81+wp8`.
 
 > .NET Standard je moderní způsob, jak podporovat knihovny .NET pro různé platformy a nahrazuje PCLs.
 

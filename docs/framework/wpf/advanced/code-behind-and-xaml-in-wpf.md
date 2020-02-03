@@ -28,7 +28,7 @@ ms.locfileid: "76738102"
 - [Omezení vloženého kódu](#Inline_Code_Limitations)  
   
 <a name="Prerequisites"></a>   
-## <a name="prerequisites"></a>Požadavky  
+## <a name="prerequisites"></a>Předpoklady  
  Toto téma předpokládá, že jste si přečetli [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) a máte základní znalosti CLR a objektově orientovaného programování.  
   
 <a name="codebehind_and_the_xaml_language"></a>   
@@ -58,7 +58,7 @@ ms.locfileid: "76738102"
 ## <a name="inline-code-limitations"></a>Omezení vloženého kódu  
  Měli byste zvážit vyloučení nebo omezení použití vloženého kódu. V souvislosti s architekturou a kódováním filozofie udržování oddělení značek a kódu na pozadí udržuje role návrháře a vývojářů mnohem obecnější. Na pokročilejší úrovni může být kód, který píšete pro vložený kód, nevhodný pro zápis, protože jste vždy zapsáni do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vygenerované částečné třídy a lze použít pouze výchozí mapování oboru názvů XML. Vzhledem k tomu, že nemůžete přidat příkazy `using`, je nutné plně kvalifikovat mnoho volání rozhraní API, které provedete. Výchozí mapování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnují většinu, ale ne všechny obory názvů CLR, které jsou k dispozici v sestaveních [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]; budete muset plně kvalifikovat volání typů a členů obsažených v jiných oborech názvů CLR. Nemůžete také definovat cokoli nad částečnou třídou ve vloženém kódu a všechny entity uživatelského kódu, na které odkazujete, musí existovat jako člen nebo proměnná v rámci generované částečné třídy. Jiné funkce programování specifické pro konkrétní jazyk, například makra nebo `#ifdef` proti globálním proměnným nebo proměnným sestavení, nejsou k dispozici ani. Další informace najdete v tématu [vnitřní typ XAML x:Code](../../../desktop-wpf/xaml-services/xcode-intrinsic-xaml-type.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [x:Code – vnitřní typ jazyka XAML](../../../desktop-wpf/xaml-services/xcode-intrinsic-xaml-type.md)

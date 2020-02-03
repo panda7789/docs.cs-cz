@@ -25,7 +25,7 @@ Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v
   
 ### <a name="to-hide-a-column-programmatically"></a>Postup pro skrytí sloupce prostřednictvím kódu programu  
   
-- Nastavte <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType> vlastnost `false`. Chcete-li skrýt `CustomerID` sloupec, který je automaticky generován během vytváření datové vazby, umístěte následující příklad kódu do obslužné rutiny události <xref:System.Windows.Forms.DataGridView.DataBindingComplete>.  
+- Vlastnost <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType> nastavte na hodnotu `false`. Chcete-li skrýt `CustomerID` sloupec, který je automaticky generován během vytváření datové vazby, umístěte následující příklad kódu do obslužné rutiny události <xref:System.Windows.Forms.DataGridView.DataBindingComplete>.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#063](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#063)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#063](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#063)]  
@@ -37,7 +37,7 @@ Někdy budete chtít zobrazit pouze některé sloupce, které jsou k dispozici v
   
 - Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A?displayProperty=nameWithType>

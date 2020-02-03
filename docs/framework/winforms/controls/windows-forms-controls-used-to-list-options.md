@@ -34,7 +34,7 @@ Do formuláře Windows můžete přidat různé ovládací prvky, pokud chcete u
  [Postupy: Řazení obsahu ovládacího prvku ComboBox, ListBox nebo CheckedListBox z Windows Forms](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
  Vysvětluje, jak řadit data ze seznamu na zdroj dat.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.CheckedListBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

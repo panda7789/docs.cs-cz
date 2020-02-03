@@ -43,7 +43,7 @@ Pokud stahujete a spouštíte kód z nedůvěryhodných internetových serverů,
 
 WCF lze použít ke komunikaci se vzdálenými servery v rámci částečně důvěryhodných aplikací nasazených buď [nasazením ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) , nebo XBAP. Sada oprávnění pro internetovou zónu zahrnuje <xref:System.Net.WebPermission> pro zdrojového hostitele, což umožňuje těmto aplikacím komunikovat s původním serverem pomocí kterékoli z podporovaných vazeb WCF popsaných v tématu [Kompatibilita funkcí částečné důvěryhodnosti](partial-trust-feature-compatibility.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení přístupu kódu](../../misc/code-access-security.md)
 - [Přehled aplikací Windows Presentation Foundation hostovaných v prohlížeči](../../wpf/app-development/wpf-xaml-browser-applications-overview.md)

@@ -205,7 +205,7 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **runtimeconfig. JSON** | Není k dispozici | Není k dispozici | Není k dispozici |
 | **Proměnná prostředí** | `COMPlus_GCCpuGroup` | `0` – zakázáno<br/>`1` – povoleno | .NET Core 1,0 |
 | **App. config pro .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false` – zakázáno<br/>`true` – povoleno |  |
 
@@ -331,7 +331,7 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **runtimeconfig. JSON** | Není k dispozici | Není k dispozici | Není k dispozici |
 | **Proměnná prostředí** | `COMPlus_GCLargePages` | `0` – zakázáno<br/>`1` – povoleno | .NET Core 3.0 |
 
 ## <a name="large-objects"></a>Velké objekty
@@ -344,7 +344,7 @@ Soubor projektu:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **runtimeconfig. JSON** | Není k dispozici | Není k dispozici | Není k dispozici |
 | **Proměnná prostředí** | `COMPlus_gcAllowVeryLargeObjects` | `1` – povoleno<br/> `0` – zakázáno | .NET Core 1,0 |
 | **App. config pro .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1` – povoleno<br/> `0` – zakázáno | .NET Framework 4.5 |
 
@@ -386,5 +386,5 @@ Příklad:
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **runtimeconfig. JSON** | Není k dispozici | Není k dispozici | Není k dispozici |
 | **Proměnná prostředí** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

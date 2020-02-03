@@ -40,6 +40,6 @@ void __stdcall SetFakeActiveWindow(
   
  **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Odkaz na nespravované rozhraní API subsystému WPF](wpf-unmanaged-api-reference.md)

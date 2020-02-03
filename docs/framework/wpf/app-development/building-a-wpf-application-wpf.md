@@ -186,7 +186,7 @@ Je možné provést následující scénáře překompilování:
 
 - Nic se nezkompiluje (Pokud se nic v projektu nezměnilo).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)
 - [Referenční dokumentace WPF MSBuild](/visualstudio/msbuild/wpf-msbuild-reference)

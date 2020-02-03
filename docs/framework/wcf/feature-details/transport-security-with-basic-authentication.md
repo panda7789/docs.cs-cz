@@ -17,17 +17,17 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
   
  ![Snímek obrazovky, který zobrazuje zabezpečení přenosu pomocí základního ověřování.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
   
-|Charakteristiku|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Přepravu|  
-|Interoperabilita|S existujícími klienty a službami webové služby|  
+|Režim zabezpečení|Přenos|  
+|Vzájemná funkční spolupráce|S existujícími klienty a službami webové služby|  
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí HTTPS)<br /><br /> Ano (pomocí uživatelského jména a hesla)|  
-|Způsobilost|Ano|  
+|Integrita|Ano|  
 |Chovávat|Ano|  
-|Přepravu|HTTPS|  
+|Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## <a name="service"></a>Service  
+## <a name="service"></a>Služba  
  Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
@@ -110,12 +110,12 @@ Následující ilustrace znázorňuje službu Windows Communication Foundation (
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>
 - <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
 - [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [\<clientCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
+- [\<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

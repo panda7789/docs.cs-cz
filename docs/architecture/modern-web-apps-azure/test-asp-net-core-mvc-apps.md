@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 0cb5c5c604d4a82798d4af736ff278b096621588
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5f63e350e2f1ba8699bb002a54492cbf9501948e
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777110"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965773"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
@@ -78,7 +78,7 @@ Můžete použít jakékoli testovací rozhraní, které dáváte přednost. XUn
 
 ### <a name="test-naming"></a>Pojmenování testů
 
-Testy byste měli pojmenovat konzistentním způsobem s názvy, které určují, co každý test dělá. Jedním z přístupů, které mám skvělou úspěšnost, je pojmenovat třídy testu podle třídy a metody, které testuje. Výsledkem je mnoho malých testovacích tříd, ale je velmi jasné, co každý test zodpovídá za. S názvem třídy testu nastaveným k identifikaci třídy a metody, která má být testována, lze název testovací metody použít k určení testovaného chování. To by mělo zahrnovat očekávané chování a všechny vstupy nebo předpoklady, které by měly toto chování vracet. Příklady názvů testů:
+Pojmenujte své testy konzistentním způsobem s názvy, které určují, co každý test dělá. Jedním z přístupů, které mám skvělou úspěšnost, je pojmenovat třídy testu podle třídy a metody, které testuje. Výsledkem je mnoho malých testovacích tříd, ale je velmi jasné, co každý test zodpovídá za. S názvem třídy testu nastaveným k identifikaci třídy a metody, která má být testována, lze název testovací metody použít k určení testovaného chování. To by mělo zahrnovat očekávané chování a všechny vstupy nebo předpoklady, které by měly toto chování vracet. Příklady názvů testů:
 
 - `CatalogControllerGetImage.CallsImageServiceWithId`
 
@@ -143,7 +143,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Protokolovací nástroj \_a \_imageService jsou vloženy jako závislosti. Nyní můžete testovat, zda stejné ID, které je předáno metodě Action, je předáno \_imageService a že výsledné bajty jsou vráceny jako součást výsledku. Můžete také otestovat, že protokolování chyb probíhá podle očekávání, a že se vrátí výsledek NotFound v případě, že chybí obrázek. za předpokladu, že se jedná o důležité chování aplikace (ne pouze dočasný kód, který vývojář přidal k diagnostice problému). Skutečná logika souboru se přesunula do samostatné implementační služby a rozšířila se, aby vracela výjimku specifickou pro danou aplikaci pro případ chybějícího souboru. Tuto implementaci můžete testovat nezávisle pomocí testu integrace.
+`_logger` a `_imageService` jsou vloženy jako závislosti. Nyní můžete testovat, že stejné ID, které je předáno metodě Action, je předáno do `_imageService`a že výsledné bajty jsou vráceny jako součást výsledku. Můžete také otestovat, že protokolování chyb probíhá podle očekávání, a že se vrátí výsledek `NotFound` v případě, že chybí obrázek. za předpokladu, že se jedná o důležité chování aplikace (ne pouze dočasný kód, který vývojář přidal k diagnostice problému). Skutečná logika souboru se přesunula do samostatné implementační služby a rozšířila se, aby vracela výjimku specifickou pro danou aplikaci pro případ chybějícího souboru. Tuto implementaci můžete testovat nezávisle pomocí testu integrace.
 
 Ve většině případů budete chtít použít globální obslužné rutiny výjimek v řadičích, takže v nich by měla být velikost logiky minimální a pravděpodobně nebude znamenat testování částí. Většinu testování akcí kontroleru byste měli provést pomocí funkčních testů a `TestServer` třídy popsané níže.
 
@@ -153,7 +153,7 @@ Většina testů integrace v aplikacích ASP.NET Core by měla být testovací s
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Funkční testování ASP.NET Core aplikací
 
-U ASP.NET Corech aplikací poskytuje třída `TestServer` funkční testy poměrně snadného zápisu. `TestServer` můžete nakonfigurovat pomocí `WebHostBuilder` přímo (obvykle pro aplikaci) nebo s typem `WebApplicationFactory` (k dispozici od verze 2,1). Měli byste se pokusit přesně vyhledat svého testovacího hostitele na produkčního hostitele, aby testy mohly postupovat podobně jako v případě, že aplikace provede v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci ContentRootu TestServer, která je používána ASP.NET Core k nalezení statických prostředků, jako jsou zobrazení.
+U ASP.NET Corech aplikací poskytuje třída `TestServer` funkční testy poměrně snadného zápisu. `TestServer` pomocí `WebHostBuilder` můžete nakonfigurovat přímo (normálně pro aplikaci) nebo s typem `WebApplicationFactory` (k dispozici od verze 2,1). Zkuste považovat svého testovacího hostitele na svého produkčního hostitele co nejpřesněji, takže testy budou fungovat podobně jako u aplikace v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci ContentRootu TestServer, která je používána ASP.NET Core k nalezení statických prostředků, jako jsou zobrazení.
 
 Jednoduché funkční testy můžete vytvořit vytvořením třídy testu, která implementuje IClassFixture\<WebApplicationFactory\<TEntry > >, kde TEntry je třída Startup vaší webové aplikace. Na tomto místě testovací přípravek může vytvořit klienta pomocí metody CreateClient objektu pro vytváření:
 

@@ -34,7 +34,7 @@ Ovládací prvky model Windows Forms obvykle zobrazují nějaký text, který so
 
 Text můžete také nastavit pomocí [Návrháře](#designer).
 
-## <a name="programmatic"></a>Blokují
+## <a name="programmatic"></a>Programová
 
 1. Vlastnost <xref:System.Windows.Forms.Control.Text%2A> nastavte na řetězec.
 
@@ -72,7 +72,7 @@ Text můžete také nastavit pomocí [Návrháře](#designer).
     mpMenuItem->Text = "&& Now For Something Completely Different";
     ```
 
-## <a name="designer"></a>Návrhář
+## <a name="designer"></a>Designer
 
 1. V okně **vlastnosti** v sadě Visual Studio nastavte vlastnost **text** ovládacího prvku na příslušný řetězec.
 
@@ -82,7 +82,7 @@ Text můžete také nastavit pomocí [Návrháře](#designer).
 
    V dialogovém okně standardní písmo vyberte písmo, styl písma, velikost, efekty (například přeškrtnutí nebo podtržení) a požadovaný skript.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>
 - [Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms](how-to-create-access-keys-for-windows-forms-controls.md)

@@ -26,7 +26,7 @@ Mezi aplikace model Windows Forms často patří možnosti tisku. .NET Framework
 |<xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>|Poskytuje tisk pouze z dialogového okna s více omezeními. <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>.|  
 |<xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting>|Znemožní přístup k tiskárnám. <xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting> je podmnožinou <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečenější přístup k souborům a datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)
 - [Dodatečné informace o zabezpečení ve Windows Forms](additional-security-considerations-in-windows-forms.md)

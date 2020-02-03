@@ -24,7 +24,7 @@ Můžete transformovat upravitelný model Windows Forms textové pole na ovláda
     > [!NOTE]
     > Vlastnost <xref:System.Windows.Forms.TextBoxBase.ReadOnly%2A> má vliv na interakci uživatele v době běhu. Změnou vlastnosti <xref:System.Windows.Forms.TextBox.Text%2A> v textovém poli můžete i nadále měnit obsah textového pole programově v době běhu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)

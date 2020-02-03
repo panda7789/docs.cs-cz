@@ -110,7 +110,7 @@ XAML, jak je implementováno v architekturách modulu CLR (Common Language Runti
 ## <a name="serializing-xaml"></a>Serializace XAML  
  V některých případech, například pokud jste autorem ovládacího prvku, můžete také zajistit, aby všechny reprezentace objektů, které lze vytvořit v jazyce XAML, mohla být také serializována zpět na ekvivalentní kód XAML. Požadavky na serializaci nejsou popsány v tomto tématu. Viz téma [Přehled vytváření](../controls/control-authoring-overview.md) a [strom elementů a serializace prvku](element-tree-and-serialization.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

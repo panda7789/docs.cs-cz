@@ -18,7 +18,7 @@ ms.lasthandoff: 01/24/2020
 ms.locfileid: "76735894"
 ---
 # <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a>Postupy: Vkládání uvozovek do řetězce (Windows Forms)
-Někdy je vhodné umístit uvozovky ("") do textového řetězce. Příklad:  
+Někdy je vhodné umístit uvozovky ("") do textového řetězce. Například:  
   
  Uvedli jsme, že poslouží jako "považovat za".  
   
@@ -88,7 +88,7 @@ Někdy je vhodné umístit uvozovky ("") do textového řetězce. Příklad:
        const_cast<String^>(quote));  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - <xref:Microsoft.VisualBasic.ControlChars.Quote>

@@ -35,8 +35,8 @@ Poskytuje informace o rozhraních API 20 000, včetně pouze Windows, stejně ja
 - Kryptografie systému Windows
 - Windows EventLog
 - Služba WMI (Windows Management Instrumentation)
-- Čítače výkonu Windows
-- Registr systému Windows
+- Čítače výkonu systému Windows
+- Registr Windows
 - Ukládání prostředí Windows Runtime do mezipaměti
 - Služby systému Windows
 

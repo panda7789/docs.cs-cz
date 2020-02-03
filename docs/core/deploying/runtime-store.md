@@ -143,7 +143,7 @@ Verze závislosti uvedená v manifestu se musí shodovat s verzí závislosti v 
 
 Pokud je při publikování *oříznuto* nasazení, jsou z publikovaného výstupu zadrženy pouze konkrétní verze balíčků manifestů, které označíte. Aby bylo možné aplikaci spustit, musí být balíčky na zmíněných verzích přítomny na hostiteli.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [dotnet – publikování](../tools/dotnet-publish.md)
-- [dotnet-store](../tools/dotnet-store.md)
+- [dotnet – úložiště](../tools/dotnet-store.md)

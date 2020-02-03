@@ -28,7 +28,7 @@ Následující příklad kódu ukazuje, jak vytvořit vazby kolekce objektů k o
   
 - Odkazy na sestavení System a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)

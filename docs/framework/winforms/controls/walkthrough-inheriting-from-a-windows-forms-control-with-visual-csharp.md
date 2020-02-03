@@ -87,7 +87,7 @@ Ovládací prvky nejsou samostatné projekty; musí být hostovány v kontejneru
 
 ### <a name="to-build-your-control"></a>Sestavení ovládacího prvku
 
-Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**. Sestavení by mělo být úspěšné bez chyb nebo upozornění kompilátoru.
+V nabídce **Sestavení** klikněte na **Sestavit řešení**. Sestavení by mělo být úspěšné bez chyb nebo upozornění kompilátoru.
 
 ### <a name="to-create-a-test-project"></a>Vytvoření testovacího projektu
 
@@ -137,11 +137,11 @@ Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**. Sest
 
      zobrazí se `Form1`.
 
-12. Klikněte na `valueButton1`.
+12. Klikněte na `valueButton1` (Další).
 
      V `label1`se zobrazí číslice 5, které demonstruje, že vlastnost `ButtonValue` zděděného ovládacího prvku byla předána `label1` prostřednictvím metody `valueButton1_Click`. Proto váš ovládací prvek `ValueButton` dědí všechny funkce standardního model Windows Formsho tlačítka, ale zpřístupňuje další vlastní vlastnost.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 - [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)

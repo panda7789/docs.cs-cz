@@ -44,7 +44,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> poskytuje automatické
   
 - Odkazy na sestavení System, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Řazení dat v ovládacím prvku Windows Forms DataGridView](sorting-data-in-the-windows-forms-datagridview-control.md)

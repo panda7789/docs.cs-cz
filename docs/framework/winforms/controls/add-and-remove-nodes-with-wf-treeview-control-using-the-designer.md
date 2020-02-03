@@ -32,7 +32,7 @@ Následující postup vyžaduje projekt **aplikace systému Windows** s formulá
 
 4. Chcete-li odstranit uzly, vyberte uzel, který chcete odstranit, a klikněte na tlačítko **Odstranit** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)
 - [Přehled ovládacího prvku TreeView](treeview-control-overview-windows-forms.md)

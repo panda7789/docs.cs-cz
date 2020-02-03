@@ -111,10 +111,10 @@ Následující příklad kódu je kompletní příklad z předchozích postupů:
  [!code-csharp[System.Windows.Forms.FormWithButton#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.FormWithButton#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/VB/Form1.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Form>
 - <xref:System.Windows.Forms.Control>
 - [Změna vzhledu Windows Forms](changing-the-appearance-of-windows-forms.md)
-- [Rozšiřování aplikací Windows Forms](./advanced/index.md)
+- [Rozšiřování formulářových aplikací Windows](./advanced/index.md)
 - [Začínáme s Windows Forms](getting-started-with-windows-forms.md)

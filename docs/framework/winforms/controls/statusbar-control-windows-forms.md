@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek StatusBar
+title: StatusBar – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - StatusBar control [Windows Forms]
@@ -34,7 +34,7 @@ ms.locfileid: "76742861"
  [Návod: Aktualizace informací stavového řádku za běhu](walkthrough-updating-status-bar-information-at-run-time.md)  
  Vysvětluje, jak programově řídit data v panelu stavového řádku.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.StatusBar>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

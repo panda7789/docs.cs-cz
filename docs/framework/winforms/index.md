@@ -21,7 +21,7 @@ Vzhledem k tomu, že jsou formuláře základní jednotkou aplikace, je důleži
  [Začínáme s Windows Forms](getting-started-with-windows-forms.md)  
  Obsahuje odkazy na témata týkající se způsobu využití síly model Windows Forms k zobrazení dat, zpracování vstupu uživatele a snadnému nasazení aplikací a zajištění většího zabezpečení.  
   
- [Rozšiřování aplikací Windows Forms](./advanced/index.md)  
+ [Rozšiřování formulářových aplikací Windows](./advanced/index.md)  
  Obsahuje odkazy na témata týkající se toho, jak vylepšit model Windows Forms pomocí nejrůznějších funkcí.  
   
 ## <a name="related-sections"></a>Související oddíly  

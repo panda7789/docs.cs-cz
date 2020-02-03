@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek Splitter
+title: Rozdělovač – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - multiple views
@@ -23,8 +23,8 @@ Ovládací prvky model Windows Forms `Splitter` slouží k změně velikosti uko
  [Přehled ovládacího prvku Splitter](splitter-control-overview-windows-forms.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Splitter> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.Splitter>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

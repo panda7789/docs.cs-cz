@@ -39,7 +39,7 @@ Následující obrázek ukazuje vlastnosti <xref:System.Windows.Forms.Control.Pa
 
 Vlastnost <xref:System.Windows.Forms.Control.AutoSize%2A> dává ovládacím prvkům automatickou velikost obsahu. Velikost se nemění tak, aby byla menší než hodnota původní <xref:System.Windows.Forms.Control.Size%2A> vlastnosti a bude se považovat za hodnotu její vlastnosti <xref:System.Windows.Forms.Control.Padding%2A>.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 K dokončení tohoto Názorného postupu budete potřebovat Visual Studio.
 
@@ -174,7 +174,7 @@ Pro uspořádání ovládacích prvků v aplikacích model Windows Forms je k di
 
 - Experimentujte s ukotvením podřízených ovládacích prvků v ovládacím prvku <xref:System.Windows.Forms.Panel>. Vlastnost <xref:System.Windows.Forms.Control.Padding%2A> je obecnější realizace vlastnosti <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A> a můžete se ujistit, že se jedná o tento případ tím, že umístíte podřízený ovládací prvek do ovládacího prvku <xref:System.Windows.Forms.Panel> a nastavíte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost podřízeného ovládacího prvku na hodnotu <xref:System.Windows.Forms.DockStyle.Fill>. Nastavte vlastnost <xref:System.Windows.Forms.Control.Padding%2A> ovládacího prvku <xref:System.Windows.Forms.Panel> na různé hodnoty a poznamenejte si účinek.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.AutoSize%2A>
 - <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>

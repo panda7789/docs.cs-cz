@@ -48,7 +48,7 @@ private:
   
  Můžete také použít stejnou obslužnou rutinu události pro zpracování stejné události pro různé ovládací prvky. Například pokud máte ve formuláři skupinu <xref:System.Windows.Forms.RadioButton> ovládací prvky, můžete vytvořit jedinou obslužnou rutinu události pro událost <xref:System.Windows.Forms.Control.Click> a nechat událost <xref:System.Windows.Forms.Control.Click> každého ovládacího prvku svázat s jednou obslužnou rutinou události. Další informace najdete v tématu [Postup: připojení více událostí k jedné obslužné rutině události v model Windows Forms](how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Přehled událostí](events-overview-windows-forms.md)

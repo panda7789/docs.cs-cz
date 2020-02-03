@@ -36,7 +36,7 @@ Použijete-li <xref:System.Windows.Forms.BindingSource> komponentu k navázání
   
 - Odkazy na sestavení System, System. data, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.DataGridView>

@@ -17,7 +17,7 @@ ms.locfileid: "76733268"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet add reference` – přidá odkazy z projektu na projekt (P2P).
 
@@ -37,7 +37,7 @@ Příkaz `dotnet add reference` poskytuje pohodlný způsob, jak přidat odkazy 
 </ItemGroup>
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 - **`PROJECT`**
 

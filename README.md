@@ -11,7 +11,7 @@ ms.locfileid: "76727884"
 Toto úložiště obsahuje koncepční dokumentaci pro .NET. Kromě tohoto nástroje je [Web dokumentace .NET](https://docs.microsoft.com/dotnet) sestaven z více úložišť:
 
 - [Ukázky kódu a fragmenty kódu](https://github.com/dotnet/samples)
-- [Referenční dokumentace rozhraní API](https://github.com/dotnet/dotnet-api-docs)
+- [Referenční informace k rozhraní API](https://github.com/dotnet/dotnet-api-docs)
 - [Referenční informace k sadě .NET Compiler Platform SDK](https://github.com/dotnet/roslyn-api-docs)
 
 Tady jsou sledované problémy a úlohy pro všechny, ale úložiště referencí rozhraní API. Pomocí těchto prostředků máme rozsáhlou komunitu. Díky naší snaze reagovat na problémy včas. Můžete si přečíst další informace o našich postupech pro klasifikaci a řešení problémů v tématu [zásady problémů](issues-policy.md) .

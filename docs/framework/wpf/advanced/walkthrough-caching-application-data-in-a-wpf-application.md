@@ -40,7 +40,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 - Monitorování cesty k souboru uloženého v mezipaměti a oznamování instance mezipaměti o změnách monitorované položky.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
  Aby bylo možné dokončit tento návod, budete potřebovat:
 
 - Visual Studio 2010.
@@ -60,7 +60,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 2. V nabídce **soubor** klikněte na příkaz **Nový**a potom klikněte na **Nový projekt**.
 
-     **Nový projekt** se zobrazí dialogové okno.
+     Zobrazí se dialogové okno **Nový projekt** .
 
 3. V části **Nainstalované šablony**vyberte programovací jazyk, který chcete použít (**Visual Basic** nebo **vizuál C#** ).
 
@@ -101,7 +101,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 5. Klikněte na tlačítko **OK**.
 
-     **Změnit cílový rámec** se zobrazí dialogové okno.
+     Zobrazí se dialogové okno **změnit cílovou architekturu** .
 
 6. V dialogovém okně **změnit cílovou architekturu** klikněte na tlačítko **Ano**.
 
@@ -288,7 +288,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 #### <a name="to-test-caching-in-the-wpf-application"></a>Testování ukládání do mezipaměti v aplikaci WPF
 
-1. Stisknutím kombinace kláves CTRL + F5 spusťte aplikaci.
+1. Stiskněte klávesy CTRL+F5 a spusťte aplikaci.
 
      Zobrazí se okno `MainWindow`.
 
@@ -325,7 +325,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
  [!code-csharp[CachingWPFApplications#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
  [!code-vb[CachingWPFApplications#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Caching.MemoryCache>
 - <xref:System.Runtime.Caching.ObjectCache>

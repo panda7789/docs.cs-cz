@@ -28,7 +28,7 @@ Tlačítko model Windows Forms může být vybráno následujícími způsoby:
   
 - Chcete-li vybrat tlačítko programově, zavolejte metodu <xref:System.Windows.Forms.Button.PerformClick%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)

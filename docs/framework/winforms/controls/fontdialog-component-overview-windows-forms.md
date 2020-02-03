@@ -1,5 +1,5 @@
 ---
-title: FontDialog – přehled komponenty
+title: Přehled komponenty FontDialog
 ms.date: 03/30/2017
 f1_keywords:
 - FontDialog
@@ -23,7 +23,7 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.FontDialog> je předem
 ## <a name="key-properties"></a>Klíčové vlastnosti  
  Komponenta má několik vlastností, které konfigurují její vzhled. Vlastnosti, které nastavují výběry dialogových oken, jsou <xref:System.Windows.Forms.FontDialog.Font%2A> a <xref:System.Windows.Forms.FontDialog.Color%2A>. Vlastnost <xref:System.Windows.Forms.FontDialog.Font%2A> nastaví písmo, styl, velikost, skript a efekty; například `Arial, 10pt, style=Italic, Strikeout`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.FontDialog>
 - [Komponenta FontDialog](fontdialog-component-windows-forms.md)

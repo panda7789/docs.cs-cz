@@ -62,7 +62,7 @@ Toto téma popisuje, jak implementovat smyčku zpráv pro spoluprovozování s [
   
  Zpráva, která se dostane do jímky klávesnice, nemusí být odeslána do HWND, pokud jste přidali háky pro tuto zprávu pomocí metody <xref:System.Windows.Interop.HwndSource.AddHook%2A>. Zpráva mohla být zpracována přímo na úrovni čerpadla zpráv a nebyla odeslána do funkce `DispatchMessage`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.ComponentDispatcher>
 - <xref:System.Windows.Interop.IKeyboardInputSink>

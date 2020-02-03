@@ -16,7 +16,7 @@ ms.locfileid: "76733648"
 - Jak nainstalovat lokalizované verze těchto souborů.
 - Jak změnit instalaci sady Visual Studio tak, aby používala jiný jazyk.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější verze.
 - [Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější verze.
@@ -79,7 +79,7 @@ Pokud jste požadovanou jazykovou sadu neinstalovali během instalace, aktualizu
 
 1. Najdete instalační program sady Visual Studio v počítači.
 
-   Například v počítači se systémem Windows 10, vyberte **Start**a poté přejděte k označení **V**, kde je hodnota uvedena jako **instalační program sady Visual Studio**.
+   Například na počítači se systémem Windows 10 vyberte možnost **Start**a potom přejděte k písmenu **v**, kde je uveden jako **instalační program pro Visual Studio**.
 
    ![Otevřete Instalační program pro Visual Studio z Windows](./media/localized-intellisense/vs-installer-windows-start.png)
 
@@ -108,7 +108,7 @@ Pokud jste požadovanou jazykovou sadu neinstalovali během instalace, aktualizu
 
 Jakmile nainstalujete požadované jazykové sady, upravte nastavení aplikace Visual Studio tak, aby používalo jiný jazyk:
 
-1. Otevřít Visual Studio.
+1. Otevřete sadu Visual Studio.
 
 1. V okně Start vyberte možnost **pokračovat bez kódu**.
 
@@ -116,14 +116,14 @@ Jakmile nainstalujete požadované jazykové sady, upravte nastavení aplikace V
 
 1. V uzlu **prostředí** vyberte možnost **mezinárodní nastavení**.
 
-1. V rozevíracím seznamu **jazyk** vyberte požadovaný jazyk. Vyberte **OK**. 
+1. V rozevíracím seznamu **jazyk** vyberte požadovaný jazyk. Zvolte **OK**. 
 
-1. Dialog vás informuje o tom, že je nutné restartovat aplikaci Visual Studio, aby se změny projevily. Vyberte **OK**.
+1. Dialog vás informuje o tom, že je nutné restartovat aplikaci Visual Studio, aby se změny projevily. Zvolte **OK**.
 
 1. Restartujte sadu Visual Studio.
 
 Poté by měla technologie IntelliSense fungovat podle očekávání, když otevřete projekt .NET Core, který cílí na verzi souborů technologie IntelliSense, které jste právě nainstalovali.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [IntelliSense v aplikaci Visual Studio](/visualstudio/ide/using-intellisense)

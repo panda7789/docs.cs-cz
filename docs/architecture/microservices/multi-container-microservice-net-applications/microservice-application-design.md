@@ -2,14 +2,14 @@
 title: Návrh aplikace orientované na mikroslužby
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s výhodami a downsides aplikací orientovaných na mikroslužby, abyste mohli vzít v úvahu své rozhodnutí.
 ms.date: 10/02/2018
-ms.openlocfilehash: 63c93f237172d80704c00472ef2d4cbf7c787ab0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 619440c02c1a82e05adb2cec9ddba933cd3e0a65
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921024"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965760"
 ---
-# <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace orientované na mikroslužby
+# <a name="design-a-microservice-oriented-application"></a>Návrh aplikace orientované na mikroslužby
 
 Tato část se zaměřuje na vývoj hypotetické podnikové aplikace na straně serveru.
 
@@ -180,7 +180,7 @@ Multi-architektonické vzory a Polyglot mikroslužby znamená, že můžete komb
 
 Například pro jednoduchou aplikaci údržby CRUD nemusí mít smysl navrhovat a implementovat vzory DDD. Ale pro vaši základní doménu nebo základní firmu možná budete muset použít pokročilejší vzory pro řešení složitých obchodních pravidel s neustále se měnícími obchodními pravidly.
 
-Zejména při práci s velkými aplikacemi, které se skládají z více podsystémů, byste neměli používat jednu architekturu nejvyšší úrovně založenou na jednom vzoru architektury. Například CQRS by neměl být použit jako architektura nejvyšší úrovně pro celou aplikaci, ale může být užitečný pro konkrétní sadu služeb.
+Zejména při práci s velkými aplikacemi, které se skládají z více subsystémů, byste neměli používat jednu architekturu nejvyšší úrovně založenou na jednom vzoru architektury. Například CQRS by neměl být použit jako architektura nejvyšší úrovně pro celou aplikaci, ale může být užitečný pro konkrétní sadu služeb.
 
 U každého daného případu není k dispozici žádný stříbrný nebo správný vzor architektury. Nemůžete mít žádný vzor architektury, který by je měl pokaždé. V závislosti na prioritách každé mikroslužby musíte pro každý z nich zvolit jiný přístup, jak je vysvětleno v následujících oddílech.
 

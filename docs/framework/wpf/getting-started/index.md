@@ -26,7 +26,7 @@ Windows Presentation Foundation (WPF) je architektura uživatelského rozhraní,
 |Řekněte mi více o WPF...|[Úvod k použití WPF v sadě Visual Studio](introduction-to-wpf-in-vs.md)<br /><br /> [Přehled XAML (WPF)](../advanced/xaml-overview-wpf.md)<br /><br /> [Ovládací prvky](../controls/index.md)<br /><br /> [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)|  
 |Jste vývojář model Windows Forms?|[Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF](../advanced/windows-forms-controls-and-equivalent-wpf-controls.md)<br /><br /> [Vzájemná spolupráce subsystémů WPF a Windows Forms](../advanced/wpf-and-windows-forms-interoperation.md)|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Knihovna tříd](../class-library-wpf.md)
 - [Vývoj aplikací](../app-development/index.md)

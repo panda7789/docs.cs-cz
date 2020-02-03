@@ -1,5 +1,5 @@
 ---
-title: Komponenta ImageList
+title: ImageList – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ImageList component [Windows Forms]
@@ -24,7 +24,7 @@ Komponenta model Windows Forms `ImageList` se používá k ukládání obrázků
   
  Viz také [Postupy: přidávání a odebírání obrázků ImageList pomocí návrháře](how-to-add-or-remove-imagelist-images-with-the-designer.md).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.ImageList>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

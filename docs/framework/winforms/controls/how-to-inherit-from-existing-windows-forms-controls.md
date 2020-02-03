@@ -28,7 +28,7 @@ Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit
 
 1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    **Přidat novou položku** zobrazí se dialogové okno.
+    Zobrazí se dialogové okno **Přidat novou položku**.
 
 1. V dialogovém okně **Přidat novou položku** dvakrát klikněte na možnost **vlastní ovládací prvek**.
 
@@ -85,7 +85,7 @@ Chcete-li zvětšit funkce stávajícího ovládacího prvku, můžete vytvořit
 
 1. Uložte a otestujte svůj ovládací prvek.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
 - [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)

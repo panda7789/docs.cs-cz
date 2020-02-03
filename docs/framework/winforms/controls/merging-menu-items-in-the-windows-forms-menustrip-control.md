@@ -53,7 +53,7 @@ Máte-li aplikaci MDI (Multiple Document Interface), můžete sloučit položky 
   
  Automatické slučování můžete aktivovat aktivací <xref:System.Windows.Forms.MenuStrip> ve zdroji MDI. Při aktivaci se zdrojový <xref:System.Windows.Forms.MenuStrip> sloučí do cíle MDI. Když se nový formulář stane aktivní, sloučení se vrátí v posledním formuláři a aktivuje se v novém formuláři. Toto chování můžete řídit nastavením vlastnosti <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> podle potřeby u každého <xref:System.Windows.Forms.ToolStripItem>a nastavením vlastnosti <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> u každého <xref:System.Windows.Forms.MenuStrip>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStripManager>
 - <xref:System.Windows.Forms.MenuStrip>

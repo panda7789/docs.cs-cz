@@ -53,7 +53,7 @@ Pomocí vlastností <xref:System.Windows.Forms.BindingSource.Sort%2A> a <xref:Sy
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Chcete-li spustit tento příklad, vložte kód do formuláře obsahujícího <xref:System.Windows.Forms.BindingSource> s názvem `BindingSource1` a <xref:System.Windows.Forms.DataGridView> s názvem `dataGridView1`. Zpracujte událost <xref:System.Windows.Forms.Form.Load> pro formulář a volejte `InitializeSortedFilteredBindingSource` v metodě obslužné rutiny události Load.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingSource.Sort%2A>
 - <xref:System.Windows.Forms.BindingSource.Filter%2A>

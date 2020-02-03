@@ -134,7 +134,7 @@ Následující příklad nakreslí <xref:System.Windows.FlowDirection.RightToLef
 
 V některých případech se <xref:System.Windows.FlowDirection> nechová podle očekávání. Tato část se zabývá dvěma výjimkami.
 
-**Obrázek**
+**Image**
 
 <xref:System.Windows.Controls.Image> představuje ovládací prvek, který zobrazuje obrázek. V jazyce XAML je možné použít s vlastností <xref:System.Windows.Controls.Image.Source%2A> definující identifikátor URI <xref:System.Windows.Controls.Image>, který se má zobrazit.
 
@@ -226,7 +226,7 @@ Pokud chcete provádět změny v závislosti na stavu aplikace, využijte jiné 
 
 Nejprve nastavte `NumberSubstitution.CultureSource="Text"`součásti aplikace. Pomocí tohoto nastavení je zajištěno, že nastavení nepochází z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pro textové prvky, které mají jako výchozí hodnotu "uživatel", například <xref:System.Windows.Controls.TextBlock>.
 
-Příklad:
+Například:
 
 ```xaml
 <TextBlock

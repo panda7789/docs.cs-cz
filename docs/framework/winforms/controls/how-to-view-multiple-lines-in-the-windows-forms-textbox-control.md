@@ -29,7 +29,7 @@ Ve výchozím nastavení ovládací prvek model Windows Forms <xref:System.Windo
   
 ### <a name="to-view-multiple-lines-in-the-textbox-control"></a>Zobrazení více řádků v ovládacím prvku TextBox  
   
-1. Nastavte <xref:System.Windows.Forms.TextBox.Multiline%2A> vlastnost `true`. Pokud je <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> `true` (výchozí), pak se text v ovládacím prvku zobrazí jako jeden nebo více odstavců. v opačném případě se zobrazí jako seznam, ve kterém mohou být některé řádky oříznuty na okraji ovládacího prvku.  
+1. Vlastnost <xref:System.Windows.Forms.TextBox.Multiline%2A> nastavte na hodnotu `true`. Pokud je <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> `true` (výchozí), pak se text v ovládacím prvku zobrazí jako jeden nebo více odstavců. v opačném případě se zobrazí jako seznam, ve kterém mohou být některé řádky oříznuty na okraji ovládacího prvku.  
   
 2. Vlastnost <xref:System.Windows.Forms.TextBox.ScrollBars%2A> nastavte na odpovídající hodnotu.  
   
@@ -46,7 +46,7 @@ Ve výchozím nastavení ovládací prvek model Windows Forms <xref:System.Windo
     |`false`|Text v ovládacím prvku nebude automaticky zabalen, takže se posune doprava, dokud není dosaženo konce řádku. Tuto hodnotu použijte, pokud jste zvolili <xref:System.Windows.Forms.ScrollBars.Horizontal> posuvníky nebo <xref:System.Windows.Forms.ScrollBars.Both>.|  
     |`true` (výchozí)|Vodorovný posuvník se nezobrazí. Tuto hodnotu použijte, pokud jste zvolili <xref:System.Windows.Forms.ScrollBars.Vertical> posuvníky nebo <xref:System.Windows.Forms.ScrollBars.None>výše, aby se zobrazil jeden nebo více odstavců.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)

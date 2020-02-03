@@ -82,7 +82,7 @@ Použijete-li ovládací prvek model Windows Forms <xref:System.Windows.Forms.Pi
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PictureBox>
 - [Postupy: Načtení obrázku pomocí Návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)

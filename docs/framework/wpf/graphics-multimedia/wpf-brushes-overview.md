@@ -1,5 +1,5 @@
 ---
-title: Brushes overview
+title: Přehled štětců
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,16 +15,16 @@ ms.lasthandoff: 01/24/2020
 ms.locfileid: "76746206"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
-Everything visible on your screen is visible because it was painted by a brush. For example, a brush is used to describe the background of a button, the foreground of text, and the fill of a shape. This topic introduces the concepts of painting with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes and provides examples. Brushes enable you to paint [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objects with anything from simple, solid colors to complex sets of patterns and images.  
+Vše viditelné na obrazovce je viditelné, protože bylo vykresleno štětcem. Například štětce se používá k popisu pozadí tlačítka, popředí textu a výplně tvaru. Toto téma představuje koncepty malování pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce a obsahuje příklady. Štětce umožňují malovat [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty s cokoli od jednoduchých, plných barev až po složité sady vzorů a imagí.  
   
 <a name="paintingwithbrush"></a>   
-## <a name="painting-with-a-brush"></a>Painting with a Brush  
- A <xref:System.Windows.Media.Brush> "paints" an area with its output. Different brushes have different types of output. Some brushes paint an area with a solid color, others with a gradient, pattern, image, or drawing. The following illustration shows examples of each of the different <xref:System.Windows.Media.Brush> types.  
+## <a name="painting-with-a-brush"></a>Malování pomocí štětce  
+ <xref:System.Windows.Media.Brush> "vykreslí" oblast s jejími výstupy. Různé štětce mají různé typy výstupu. Některé štětce vykreslí oblast s plnou barvou, ostatními pomocí přechodu, vzorku, obrázku nebo kresby. Následující ilustrace ukazuje příklady každého z různých typů <xref:System.Windows.Media.Brush>.  
   
- ![Brush types](./media/graphicsmm-brushtypes.jpg "graphicsmm_brushtypes")  
-Brush examples  
+ ![Typy štětců](./media/graphicsmm-brushtypes.jpg "graphicsmm_brushtypes")  
+Příklady štětce  
   
- Most visual objects enable you to specify how they are painted. The following table lists some common objects and properties with which you can use a <xref:System.Windows.Media.Brush>.  
+ Většina vizuálních objektů vám umožní určit, jak se mají vykreslit. V následující tabulce jsou uvedeny některé běžné objekty a vlastnosti, se kterými můžete použít <xref:System.Windows.Media.Brush>.  
   
 |Třída|Vlastnosti štětce|  
 |-----------|----------------------|  
@@ -35,11 +35,11 @@ Brush examples
 |<xref:System.Windows.Shapes.Shape>|<xref:System.Windows.Shapes.Shape.Fill%2A>, <xref:System.Windows.Shapes.Shape.Stroke%2A>|  
 |<xref:System.Windows.Controls.TextBlock>|<xref:System.Windows.Controls.TextBlock.Background%2A>|  
   
- The following sections describe the different <xref:System.Windows.Media.Brush> types and provide an example of each.  
+ Následující části popisují různé typy <xref:System.Windows.Media.Brush> a poskytují příklad každého z nich.  
   
 <a name="paintwithsolidcolorbrush"></a>   
-## <a name="paint-with-a-solid-color"></a>Paint with a Solid Color  
- A <xref:System.Windows.Media.SolidColorBrush> paints an area with a solid <xref:System.Windows.Media.Color>. There are a variety of ways to specify the <xref:System.Windows.Media.SolidColorBrush.Color%2A> of a <xref:System.Windows.Media.SolidColorBrush>: for example, you can specify its alpha, red, blue, and green channels or use one of the predefined color provided by the <xref:System.Windows.Media.Colors> class.  
+## <a name="paint-with-a-solid-color"></a>Malování plnou barvou  
+ <xref:System.Windows.Media.SolidColorBrush> vykreslí oblast s plným <xref:System.Windows.Media.Color>. Existuje mnoho způsobů, jak určit <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush>: můžete například zadat alfa, červené, modré a zelené kanály nebo použít jednu z předdefinovaných barev, kterou poskytuje třída <xref:System.Windows.Media.Colors>.  
   
  Následující příklad používá <xref:System.Windows.Media.SolidColorBrush> k vykreslování <xref:System.Windows.Shapes.Shape.Fill%2A> <xref:System.Windows.Shapes.Rectangle>. Následující ilustrace znázorňuje namalované obdélník.  
   
@@ -160,7 +160,7 @@ Obdélník vykreslený pomocí VisualBrush
   
  Další informace o tom, proč <xref:System.Windows.Media.VisualBrush> objekty nemůžou být zmrazené, najdete na stránce typu <xref:System.Windows.Media.VisualBrush>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.Brushes>
@@ -170,5 +170,5 @@ Obdélník vykreslený pomocí VisualBrush
 - [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
-- [Postupy](brushes-how-to-topics.md)
+- [Témata s postupy](brushes-how-to-topics.md)
 - [Další výkonnostní doporučení](../advanced/optimizing-performance-other-recommendations.md)

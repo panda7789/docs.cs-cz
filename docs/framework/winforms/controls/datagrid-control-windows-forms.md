@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek DataGrid
+title: DataGrid – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - datasets [Windows Forms], user interface
@@ -66,7 +66,7 @@ ms.locfileid: "76742516"
  [Postupy: Ověřování vstupu s ovládacím prvkem Windows Forms DataGrid](how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
  Popisuje, jak ověřit vstup v datové sadě svázané s ovládacím prvkem `DataGrid`.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGrid>  
  Poskytuje přehled <xref:System.Windows.Forms.DataGrid> třídy.  
   
@@ -77,7 +77,7 @@ ms.locfileid: "76742516"
  [Windows Forms – datová vazba](../windows-forms-data-binding.md)  
  Obsahuje odkazy na témata týkající se datových vazeb v model Windows Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Rozdíly mezi ovládacími prvky Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)

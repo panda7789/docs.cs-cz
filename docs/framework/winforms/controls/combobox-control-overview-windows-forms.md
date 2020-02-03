@@ -1,5 +1,5 @@
 ---
-title: ComboBox – přehled ovládacího prvku
+title: Přehled ovládacího prvku ComboBox
 ms.date: 03/30/2017
 f1_keywords:
 - ComboBox
@@ -23,7 +23,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ComboBox> slouž
   
  Chcete-li přidat nebo odstranit položky v ovládacím prvku <xref:System.Windows.Forms.ComboBox>, použijte metodu <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Insert%2A>, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A> nebo <xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>. Alternativně můžete přidat položky do seznamu pomocí vlastnosti <xref:System.Windows.Forms.ComboBox.Items%2A> v návrháři.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ComboBox>
 - [Přehled ovládacího prvku ListBox](listbox-control-overview-windows-forms.md)

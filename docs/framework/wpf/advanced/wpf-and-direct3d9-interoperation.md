@@ -148,7 +148,7 @@ Obsah Direct3D9 můžete zahrnout do aplikace Windows Presentation Foundation (W
 > [!NOTE]
 > Pokud WPF vykresluje zcela v softwaru, <xref:System.Windows.Interop.D3DImage> není zobrazeno, protože WPF nemá frontu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.D3DImage>
 - [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)

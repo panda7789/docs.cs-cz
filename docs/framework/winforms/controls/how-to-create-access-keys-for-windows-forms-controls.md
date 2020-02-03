@@ -33,7 +33,7 @@ ms.locfileid: "76731169"
 
 Ovládací prvky, které nemůžou získat fokus, nemůžou mít přístupové klíče.
 
-## <a name="programmatic"></a>Blokují
+## <a name="programmatic"></a>Programová
 
 Nastavte vlastnost `Text` na řetězec, který obsahuje ampersand (&) před písmenem, které bude zástupcem.
 
@@ -55,11 +55,11 @@ button1->Text = "&Print";
 > [!NOTE]
 > Chcete-li v titulku použít ampersand bez vytvoření přístupového klíče, přidejte dva ampersandy (& &). V titulku se zobrazí jeden ampersand a žádné znaky nejsou podtržené.
 
-## <a name="designer"></a>Návrhář
+## <a name="designer"></a>Designer
 
 V okně **vlastnosti** sady Visual Studio nastavte vlastnost **text** na řetězec, který obsahuje ampersand (' & ') před písmenem, které bude přístupový klíč. Chcete-li například nastavit písmeno "P" jako přístupový klíč, zadejte **& tisk**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Button>
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)

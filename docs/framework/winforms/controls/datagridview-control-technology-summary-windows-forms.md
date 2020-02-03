@@ -20,7 +20,7 @@ Toto téma shrnuje informace o ovládacím prvku `DataGridView` a třídách, kt
 ## <a name="keywords"></a>Klíčová slova  
  DataGridView, BindingSource, tabulka, buňka, datová vazba, virtuální režim  
   
-## <a name="namespaces"></a>Jmenné prostory  
+## <a name="namespaces"></a>Obory názvů  
  <xref:System.Windows.Forms?displayProperty=nameWithType>  
   
  <xref:System.Data?displayProperty=nameWithType>  
@@ -28,7 +28,7 @@ Toto téma shrnuje informace o ovládacím prvku `DataGridView` a třídách, kt
 ## <a name="related-technologies"></a>Související technologie  
  `BindingSource`  
   
-## <a name="background"></a>Podrobnosti  
+## <a name="background"></a>Pozadí  
  Návrháři uživatelského rozhraní (UI) často hledají, že je potřeba zobrazit tabulková data pro uživatele. .NET Framework poskytuje několik způsobů, jak zobrazit data v tabulce nebo mřížce. Ovládací prvek `DataGridView` představuje nejnovější vývoj této technologie pro model Windows Forms aplikace.  
   
  Ovládací prvek `DataGridView` může zobrazit řádky dat z úložiště dat. Je podporováno mnoho typů úložišť dat. Úložiště dat může obsahovat jednoduché, netypové údaje, jako je jednorozměrné pole, nebo může uchovávat zadaná data, například <xref:System.Data.DataSet>. Další informace najdete v tématu [Postup: vytvoření vazby dat k ovládacímu prvku DataGridView model Windows Forms](how-to-bind-data-to-the-windows-forms-datagridview-control.md).  
@@ -55,12 +55,12 @@ Toto téma shrnuje informace o ovládacím prvku `DataGridView` a třídách, kt
 |Prezentace dat|<xref:System.Windows.Forms.DataGridView><br /><br /> <xref:System.Windows.Forms.DataGridViewCell> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.DataGridViewRow> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.DataGridViewCellStyle>|  
 |Rozšiřitelnost <xref:System.Windows.Forms.DataGridView>|<xref:System.Windows.Forms.DataGridViewCell> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.DataGridViewColumn> a odvozené třídy<br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingCell><br /><br /> <xref:System.Windows.Forms.IDataGridViewEditingControl>|  
   
-## <a name="whats-new"></a>Co je nového  
+## <a name="whats-new"></a>Co je nového?  
  <xref:System.Windows.Forms.DataGridView> ovládací prvek je navržen jako kompletní řešení pro zobrazování tabulkových dat pomocí model Windows Forms. Při vytváření nové aplikace byste měli zvážit použití ovládacího prvku <xref:System.Windows.Forms.DataGridView> před dalšími řešeními, jako je například <xref:System.Windows.Forms.DataGrid>. Další informace naleznete v tématu [rozdíly mezi ovládacími prvky model Windows Forms DataGridView a DataGrid](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
  Ovládací prvek <xref:System.Windows.Forms.DataGridView> může pracovat v těsné spolupráci s komponentou <xref:System.Windows.Forms.BindingSource>. Tato součást je navržena jako primární zdroj dat formuláře. Může spravovat interakci mezi ovládacím prvkem <xref:System.Windows.Forms.DataGridView> a jeho zdrojem dat bez ohledu na typ zdroje dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)
 - [Architektura ovládacího prvku DataGridView](datagridview-control-architecture-windows-forms.md)

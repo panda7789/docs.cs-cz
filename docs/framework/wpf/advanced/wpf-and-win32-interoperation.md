@@ -169,7 +169,7 @@ Třídy <xref:System.Windows.Interop.HwndHost> a <xref:System.Windows.Interop.Hw
 
 Rozhraní poskytují podporu pouze pro to, co se stane s přechodem mezi oblastmi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a Win32. V oblasti Win32 je chování tabulátoru zcela řízeno logikou implementované systémem Win32 pro procházení tabulátorem, pokud existuje.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.HwndHost>
 - <xref:System.Windows.Interop.HwndSource>

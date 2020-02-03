@@ -79,7 +79,7 @@ Ovládací prvek <xref:System.Windows.Forms.ToolStrip> plně podporuje funkce ro
         System.Windows.Forms.ToolStripLayoutStyle.Flow;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.Control.Layout>

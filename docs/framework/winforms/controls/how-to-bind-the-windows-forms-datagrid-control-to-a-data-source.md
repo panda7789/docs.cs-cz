@@ -103,7 +103,7 @@ ms.locfileid: "76746689"
   
 3. Volitelné Přidejte do mřížky vhodné styly tabulek a sloupců. Pokud neexistují žádné styly tabulek, zobrazí se tabulka, ale s minimálním formátováním a všemi zobrazenými sloupci.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
 - [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)

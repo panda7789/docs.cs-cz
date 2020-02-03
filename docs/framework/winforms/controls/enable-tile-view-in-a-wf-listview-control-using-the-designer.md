@@ -30,7 +30,7 @@ Funkce zobrazení dlaždice ovládacího prvku <xref:System.Windows.Forms.ListVi
 
 2. V okně **vlastnosti** vyberte vlastnost <xref:System.Windows.Forms.ListView.View%2A> a zvolte možnost **dlaždice**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListView.TileSize%2A>
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)

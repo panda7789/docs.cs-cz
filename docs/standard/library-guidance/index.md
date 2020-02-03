@@ -30,7 +30,7 @@ Aspekty vysoce kvalitních Open Source knihoven .NET:
 
 Každý článek nabízí čtyři typy doporučení: **udělejte**, **zvažte**, **Vyhněte**se a **nepoužívejte.** Typ doporučení indikuje, jak by měl následovat.
 
-Měli byste téměř **vždy postupovat podle doporučení do** . Příklad:
+Měli byste téměř **vždy postupovat podle doporučení do** . Například:
 
 ✔️ k distribuci knihovny pomocí balíčku NuGet.
 

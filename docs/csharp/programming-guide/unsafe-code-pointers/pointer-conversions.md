@@ -16,7 +16,7 @@ V následující tabulce jsou uvedeny předdefinované implicitní převody ukaz
   
 ## <a name="implicit-pointer-conversions"></a>Implicitní převody ukazatelů  
   
-|Od|Pro|  
+|From|Akce|  
 |----------|--------|  
 |Libovolný typ ukazatele|šekem|  
 |null|Libovolný typ ukazatele|  
@@ -25,7 +25,7 @@ V následující tabulce jsou uvedeny předdefinované implicitní převody ukaz
   
 ## <a name="explicit-pointer-conversions"></a>Explicitní převody ukazatelů  
   
-|Od|Pro|  
+|From|Akce|  
 |----------|--------|  
 |Libovolný typ ukazatele|Jakýkoli jiný typ ukazatele|  
 |SByte, Byte, Short, UShort, int, uint, Long nebo ulong|Libovolný typ ukazatele|  
@@ -38,9 +38,9 @@ V následující tabulce jsou uvedeny předdefinované implicitní převody ukaz
   
  [!code-csharp[csProgGuidePointers#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers.cs#4)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Typy ukazatelů](pointer-types.md)
 - [Typy odkazů](../../language-reference/keywords/reference-types.md)
 - [Typy hodnot](../../language-reference/builtin-types/value-types.md)

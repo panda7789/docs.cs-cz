@@ -42,7 +42,7 @@ MessageBox.Show("Good morning " + User + ". You are connected to "
   
  Některé z užitečnějších členů třídy <xref:System.Windows.Forms.SystemInformation> zahrnují <xref:System.Windows.Forms.SystemInformation.ComputerName%2A>, <xref:System.Windows.Forms.SystemInformation.DbcsEnabled%2A>, <xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>a <xref:System.Windows.Forms.SystemInformation.TerminalServerSession%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.SystemInformation>
 - [Správa výkonu v modelu Windows Forms](power-management-in-windows-forms.md)

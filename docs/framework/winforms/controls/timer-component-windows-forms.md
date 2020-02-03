@@ -1,5 +1,5 @@
 ---
-title: Komponenta Timer
+title: Součást Časovač
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Timer component [Windows Forms]
@@ -26,11 +26,11 @@ ms.locfileid: "76735492"
  [Postupy: Spouštění procedur v nastavených intervalech pomocí komponenty Windows Forms Timer](run-procedures-at-set-intervals-with-wf-timer-component.md)  
  Popisuje, jak reagovat na časované intervaly v aplikacích založených na systému Windows.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>  
  Poskytuje referenční informace o třídě, která se používá pro model Windows Forms časovače a její členy.  
   
- <xref:System.Timers.Timer?displayProperty=nameWithType> – třída  
+ Třída <xref:System.Timers.Timer?displayProperty=nameWithType>  
  Poskytuje referenční informace o třídě <xref:System.Timers.Timer?displayProperty=nameWithType>, kterou používají časovače založené na serveru.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -93,7 +93,7 @@ sw.Stop()
 Console.WriteLine($"Time to construct: {sw.ElapsedMilliseconds} milliseconds")
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výkon (LINQ to XML) (Visual Basic)](performance-linq-to-xml.md)
 - [Atomované XName a objekty XNamespace (LINQ to XML) (Visual Basic)](atomized-xname-and-xnamespace-objects-linq-to-xml.md)

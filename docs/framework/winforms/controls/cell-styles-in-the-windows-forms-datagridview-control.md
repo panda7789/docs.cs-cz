@@ -81,7 +81,7 @@ Každá buňka v ovládacím prvku <xref:System.Windows.Forms.DataGridView> mů�
   
 1. <xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType>  
   
-2. <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A?displayProperty=nameWithType> Nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A?displayProperty=nameWithType>  
+2. <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A?displayProperty=nameWithType>  
   
 3. <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>  
   
@@ -144,7 +144,7 @@ Každá buňka v ovládacím prvku <xref:System.Windows.Forms.DataGridView> mů�
 > [!NOTE]
 > Ukládání hodnot uložených v vlastnosti <xref:System.Windows.Forms.DataGridViewCell.Style%2A> buňky je důležité bez ohledu na to, jestli je nastavená hodnota konkrétního stylu. Pokud dočasně nahradíte nastavení stylu a obnovíte ho do původního stavu Nenastaveno, zajistíte tak, že se buňka vrátí k dědění nastavení stylu z vyšší úrovně. Pokud potřebujete určit skutečný styl platný pro buňku bez ohledu na to, zda je styl zděděn, použijte vlastnost <xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A> buňky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewCellStyle>

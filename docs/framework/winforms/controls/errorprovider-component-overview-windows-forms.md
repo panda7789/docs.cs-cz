@@ -1,5 +1,5 @@
 ---
-title: ErrorProvider – přehled komponenty
+title: Přehled komponenty ErrorProvider
 ms.date: 03/30/2017
 f1_keywords:
 - ErrorProvider
@@ -26,7 +26,7 @@ Komponenta model Windows Forms [ErrorProvider](errorprovider-component-windows-f
 > [!NOTE]
 > Součást <xref:System.Windows.Forms.ErrorProvider> neposkytuje integrovanou podporu pro klienty přístupnosti. Aby byla aplikace přístupná při použití této součásti, je nutné poskytnout další, přístupný mechanismus zpětné vazby.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ErrorProvider>
 - [Postupy: Zobrazování chyb v prvku DataSet pomocí komponenty Windows Forms ErrorProvider](view-errors-within-a-dataset-with-wf-errorprovider-component.md)

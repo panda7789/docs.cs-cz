@@ -31,7 +31,7 @@ Tento příklad ukazuje, jak programově vybrat položku v ovládacím prvku mod
   
 - Odkazy na obory názvů <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListViewItem.Selected%2A?displayProperty=nameWithType>

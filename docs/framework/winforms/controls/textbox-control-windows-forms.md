@@ -1,5 +1,5 @@
 ---
-title: TextBox – ovládací prvek
+title: Ovládací prvek TextBox
 ms.date: 03/30/2017
 helpviewer_keywords:
 - text boxes
@@ -37,8 +37,8 @@ Textová pole model Windows Forms slouží k získání vstupu od uživatele neb
  [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
  Popisuje, jak nastavit procházení textového pole.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.TextBox> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.TextBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

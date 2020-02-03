@@ -1,5 +1,5 @@
 ---
-title: ToolStrip – přehled ovládacího prvku
+title: Přehled ovládacího prvku ToolStrip
 ms.date: 03/30/2017
 f1_keywords:
 - Toolstrip
@@ -46,7 +46,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ToolStrip> a jeh
   
 ### <a name="important-toolstrip-members"></a>Důležité členové prvku ToolStrip  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStrip.Dock%2A>|Získá nebo nastaví, který okraj nadřazeného kontejneru je <xref:System.Windows.Forms.ToolStrip> ukotvený k.|  
 |<xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>|Získává nebo nastavuje hodnotu, která označuje, jestli se přemístění pomocí přetažení a přeřazení položek provádí soukromě <xref:System.Windows.Forms.ToolStrip> třídou.|  
@@ -62,7 +62,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ToolStrip> a jeh
   
 ### <a name="important-toolstrip-companion-classes"></a>Důležité doprovodné třídy ToolStrip  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip>|Nahrazuje a přidává funkce do <xref:System.Windows.Forms.MainMenu> třídy.|  
 |<xref:System.Windows.Forms.StatusStrip>|Nahrazuje a přidává funkce do <xref:System.Windows.Forms.StatusBar> třídy.|  
@@ -79,7 +79,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ToolStrip> a jeh
   
  Další informace naleznete v tématu [Přehled technologie ToolStrip](toolstrip-technology-summary.md) a [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.MenuStrip>

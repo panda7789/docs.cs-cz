@@ -67,7 +67,7 @@ Když uživatelé zadávají do aplikace data, možná budete chtít ověřit, �
 #### <a name="default-implicit-validation-behavior-for-windows-forms-controls"></a>Výchozí implicitní chování ověřování pro model Windows Forms ovládací prvky  
  Různé ovládací prvky model Windows Forms mají pro svou vlastnost <xref:System.Windows.Forms.ContainerControl.AutoValidate%2A> různé výchozí hodnoty. Následující tabulka uvádí nejběžnější ovládací prvky a jejich výchozí nastavení.  
   
-|Control|Výchozí chování ověřování|  
+|Řízení|Výchozí chování ověřování|  
 |-------------|---------------------------------|  
 |<xref:System.Windows.Forms.ContainerControl>|<xref:System.Windows.Forms.AutoValidate.Inherit>|  
 |<xref:System.Windows.Forms.Form>|<xref:System.Windows.Forms.AutoValidate.EnableAllowFocusChange>|  
@@ -90,7 +90,7 @@ Když uživatelé zadávají do aplikace data, možná budete chtít ověřit, �
 > [!NOTE]
 > Pokud vynutíte zavření formuláře tímto způsobem, ztratí se všechna data v ovládacích prvcích formuláře, které ještě nebyly uloženy. Kromě toho modální formuláře neověřují obsah ovládacích prvků, když jsou zavřeny. K uzamknutí fokusu na ovládací prvek můžete stále používat ověřování ovládacího prvku, ale nemusíte mít obavy o chování spojené s zavřením formuláře.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>

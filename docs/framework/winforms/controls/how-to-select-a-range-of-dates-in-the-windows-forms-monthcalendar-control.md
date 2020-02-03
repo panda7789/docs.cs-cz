@@ -74,7 +74,7 @@ Důležitou funkcí ovládacího prvku model Windows Forms <xref:System.Windows.
     monthCalendar1->SelectionEnd = projectEnd;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek MonthCalendar](monthcalendar-control-windows-forms.md)
 - [Postupy: Změna vzhledu ovládacího prvku Windows Forms MonthCalendar](how-to-change-monthcalendar-control-appearance.md)
