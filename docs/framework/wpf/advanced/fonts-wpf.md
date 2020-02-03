@@ -13,18 +13,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76737920"
 ---
-# <a name="fonts-wpf"></a><span data-ttu-id="e4610-102">Písma (WPF)</span><span class="sxs-lookup"><span data-stu-id="e4610-102">Fonts (WPF)</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="e4610-103">zahrnuje podporu pro bohatou prezentaci textu pomocí písem OpenType.</span><span class="sxs-lookup"><span data-stu-id="e4610-103">includes support for rich presentation of text using OpenType fonts.</span></span> <span data-ttu-id="e4610-104">K dispozici je ukázkový balíček písem typu OpenType s Windows SDK.</span><span class="sxs-lookup"><span data-stu-id="e4610-104">A sample pack of OpenType fonts is included with the Windows SDK.</span></span>  
+# <a name="fonts-wpf"></a><span data-ttu-id="d9fd1-102">Písma (WPF)</span><span class="sxs-lookup"><span data-stu-id="d9fd1-102">Fonts (WPF)</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="d9fd1-103">zahrnuje podporu pro bohatou prezentaci textu pomocí písem OpenType.</span><span class="sxs-lookup"><span data-stu-id="d9fd1-103">includes support for rich presentation of text using OpenType fonts.</span></span> <span data-ttu-id="d9fd1-104">K dispozici je ukázkový balíček písem typu OpenType s Windows SDK.</span><span class="sxs-lookup"><span data-stu-id="d9fd1-104">A sample pack of OpenType fonts is included with the Windows SDK.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="e4610-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e4610-105">In This Section</span></span>  
- [<span data-ttu-id="e4610-106">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="e4610-106">OpenType Font Features</span></span>](opentype-font-features.md)  
- [<span data-ttu-id="e4610-107">Balení písem s aplikacemi</span><span class="sxs-lookup"><span data-stu-id="e4610-107">Packaging Fonts with Applications</span></span>](packaging-fonts-with-applications.md)  
- [<span data-ttu-id="e4610-108">Ukázková sada písem OpenType</span><span class="sxs-lookup"><span data-stu-id="e4610-108">Sample OpenType Font Pack</span></span>](sample-opentype-font-pack.md)  
- [<span data-ttu-id="e4610-109">Postupy</span><span class="sxs-lookup"><span data-stu-id="e4610-109">How-to Topics</span></span>](fonts-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d9fd1-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d9fd1-105">In This Section</span></span>  
+ [<span data-ttu-id="d9fd1-106">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="d9fd1-106">OpenType Font Features</span></span>](opentype-font-features.md)  
+ [<span data-ttu-id="d9fd1-107">Balení písem s aplikacemi</span><span class="sxs-lookup"><span data-stu-id="d9fd1-107">Packaging Fonts with Applications</span></span>](packaging-fonts-with-applications.md)  
+ [<span data-ttu-id="d9fd1-108">Ukázková sada písem OpenType</span><span class="sxs-lookup"><span data-stu-id="d9fd1-108">Sample OpenType Font Pack</span></span>](sample-opentype-font-pack.md)  
+ [<span data-ttu-id="d9fd1-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="d9fd1-109">How-to Topics</span></span>](fonts-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="e4610-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e4610-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d9fd1-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="d9fd1-110">See also</span></span>
 
 - <xref:System.Windows.FontStyle>
 - <xref:System.Windows.SystemFonts>
-- [<span data-ttu-id="e4610-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="e4610-111">Documents in WPF</span></span>](documents-in-wpf.md)
-- [<span data-ttu-id="e4610-112">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="e4610-112">Typography in WPF</span></span>](typography-in-wpf.md)
+- [<span data-ttu-id="d9fd1-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="d9fd1-111">Documents in WPF</span></span>](documents-in-wpf.md)
+- [<span data-ttu-id="d9fd1-112">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="d9fd1-112">Typography in WPF</span></span>](typography-in-wpf.md)

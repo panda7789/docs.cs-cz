@@ -15,26 +15,26 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76742096"
 ---
-# <a name="building-and-deploying-wpf-applications"></a><span data-ttu-id="11576-102">Sestavení a nasazení aplikací WPF</span><span class="sxs-lookup"><span data-stu-id="11576-102">Building and Deploying WPF Applications</span></span>
-<span data-ttu-id="11576-103">Model sestavení a nasazení poskytuje možnost vytvářet a nasazovat aplikace místně a vzdáleně, včetně následujících:</span><span class="sxs-lookup"><span data-stu-id="11576-103">The build and deployment model provides the capability to build and deploy applications locally and remotely, including the following:</span></span>  
+# <a name="building-and-deploying-wpf-applications"></a><span data-ttu-id="eb38b-102">Sestavení a nasazení aplikací WPF</span><span class="sxs-lookup"><span data-stu-id="eb38b-102">Building and Deploying WPF Applications</span></span>
+<span data-ttu-id="eb38b-103">Model sestavení a nasazení poskytuje možnost vytvářet a nasazovat aplikace místně a vzdáleně, včetně následujících:</span><span class="sxs-lookup"><span data-stu-id="eb38b-103">The build and deployment model provides the capability to build and deploy applications locally and remotely, including the following:</span></span>  
   
-- <span data-ttu-id="11576-104">MSBuild: systém sestavení .NET umístěný v oboru názvů Microsoft. Build. Tasks. Windows.</span><span class="sxs-lookup"><span data-stu-id="11576-104">MSBuild: the .NET build system located in the Microsoft.Build.Tasks.Windows namespace.</span></span>  
+- <span data-ttu-id="eb38b-104">MSBuild: systém sestavení .NET umístěný v oboru názvů Microsoft. Build. Tasks. Windows.</span><span class="sxs-lookup"><span data-stu-id="eb38b-104">MSBuild: the .NET build system located in the Microsoft.Build.Tasks.Windows namespace.</span></span>  
   
-- <span data-ttu-id="11576-105">Prostředky: práce s prostředky uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="11576-105">Resources: working with UI resources.</span></span>  
+- <span data-ttu-id="eb38b-105">Prostředky: práce s prostředky uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="eb38b-105">Resources: working with UI resources.</span></span>  
   
-- <span data-ttu-id="11576-106">Nasazení ClickOnce: systém publikování a nasazení .NET.</span><span class="sxs-lookup"><span data-stu-id="11576-106">ClickOnce Deployment: the .NET publishing and deployment system.</span></span>  
+- <span data-ttu-id="eb38b-106">Nasazení ClickOnce: systém publikování a nasazení .NET.</span><span class="sxs-lookup"><span data-stu-id="eb38b-106">ClickOnce Deployment: the .NET publishing and deployment system.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="11576-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="11576-107">In This Section</span></span>  
- [<span data-ttu-id="11576-108">Sestavení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="11576-108">Building a WPF Application</span></span>](building-a-wpf-application-wpf.md)  
- [<span data-ttu-id="11576-109">Nasazení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="11576-109">Deploying a WPF Application</span></span>](deploying-a-wpf-application-wpf.md)  
- [<span data-ttu-id="11576-110">Postupy</span><span class="sxs-lookup"><span data-stu-id="11576-110">How-to Topics</span></span>](build-and-deploy-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="eb38b-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="eb38b-107">In This Section</span></span>  
+ [<span data-ttu-id="eb38b-108">Sestavení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="eb38b-108">Building a WPF Application</span></span>](building-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="eb38b-109">Nasazení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="eb38b-109">Deploying a WPF Application</span></span>](deploying-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="eb38b-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="eb38b-110">How-to Topics</span></span>](build-and-deploy-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="11576-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="11576-111">Reference</span></span>  
- <span data-ttu-id="11576-112">MSBuild</span><span class="sxs-lookup"><span data-stu-id="11576-112">MSBuild</span></span>  
+## <a name="reference"></a><span data-ttu-id="eb38b-111">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="eb38b-111">Reference</span></span>  
+ <span data-ttu-id="eb38b-112">MSBuild</span><span class="sxs-lookup"><span data-stu-id="eb38b-112">MSBuild</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="11576-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="11576-113">Related Sections</span></span>  
- [<span data-ttu-id="11576-114">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="11576-114">Application Management Overview</span></span>](application-management-overview.md)  
-  [<span data-ttu-id="11576-115">Windows ve WPF</span><span class="sxs-lookup"><span data-stu-id="11576-115">Windows in WPF</span></span>](windows-in-wpf-applications.md)  
-  [<span data-ttu-id="11576-116">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="11576-116">Navigation Overview</span></span>](navigation-overview.md)  
-  [<span data-ttu-id="11576-117">Přehled aplikací Prohlížeče WPF XAML</span><span class="sxs-lookup"><span data-stu-id="11576-117">WPF XAML Browser Applications Overview</span></span>](wpf-xaml-browser-applications-overview.md)  
-  [<span data-ttu-id="11576-118">Hostování</span><span class="sxs-lookup"><span data-stu-id="11576-118">Hosting</span></span>](hosting-wpf-applications.md)
+## <a name="related-sections"></a><span data-ttu-id="eb38b-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="eb38b-113">Related Sections</span></span>  
+ [<span data-ttu-id="eb38b-114">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="eb38b-114">Application Management Overview</span></span>](application-management-overview.md)  
+  [<span data-ttu-id="eb38b-115">Windows ve WPF</span><span class="sxs-lookup"><span data-stu-id="eb38b-115">Windows in WPF</span></span>](windows-in-wpf-applications.md)  
+  [<span data-ttu-id="eb38b-116">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="eb38b-116">Navigation Overview</span></span>](navigation-overview.md)  
+  [<span data-ttu-id="eb38b-117">Přehled aplikací Prohlížeče WPF XAML</span><span class="sxs-lookup"><span data-stu-id="eb38b-117">WPF XAML Browser Applications Overview</span></span>](wpf-xaml-browser-applications-overview.md)  
+  [<span data-ttu-id="eb38b-118">Hostování</span><span class="sxs-lookup"><span data-stu-id="eb38b-118">Hosting</span></span>](hosting-wpf-applications.md)
