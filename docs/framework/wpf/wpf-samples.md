@@ -12,6 +12,6 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76743304"
 ---
-# <a name="wpf-samples"></a><span data-ttu-id="ff6b5-102">Ukázky WPF</span><span class="sxs-lookup"><span data-stu-id="ff6b5-102">WPF Samples</span></span>
+# <a name="wpf-samples"></a><span data-ttu-id="051a5-102">Ukázky WPF</span><span class="sxs-lookup"><span data-stu-id="051a5-102">WPF Samples</span></span>
 
-<span data-ttu-id="ff6b5-103">Ukázky, které ukazují Windows Presentation Foundation (WPF), najdete v části [úložiště Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples) na GitHubu.</span><span class="sxs-lookup"><span data-stu-id="ff6b5-103">For samples that demonstrate Windows Presentation Foundation (WPF), see the [Microsoft/WPF-Samples repo](https://github.com/Microsoft/WPF-Samples) on GitHub.</span></span>
+<span data-ttu-id="051a5-103">Ukázky, které ukazují Windows Presentation Foundation (WPF), najdete v části [úložiště Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples) na GitHubu.</span><span class="sxs-lookup"><span data-stu-id="051a5-103">For samples that demonstrate Windows Presentation Foundation (WPF), see the [Microsoft/WPF-Samples repo](https://github.com/Microsoft/WPF-Samples) on GitHub.</span></span>

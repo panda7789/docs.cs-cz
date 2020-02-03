@@ -17,16 +17,16 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76735894"
 ---
-# <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a><span data-ttu-id="38173-102">Postupy: Vkládání uvozovek do řetězce (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="38173-102">How to: Put Quotation Marks in a String (Windows Forms)</span></span>
-<span data-ttu-id="38173-103">Někdy je vhodné umístit uvozovky ("") do textového řetězce.</span><span class="sxs-lookup"><span data-stu-id="38173-103">Sometimes you might want to place quotation marks (" ") in a string of text.</span></span> <span data-ttu-id="38173-104">Příklad:</span><span class="sxs-lookup"><span data-stu-id="38173-104">For example:</span></span>  
+# <a name="how-to-put-quotation-marks-in-a-string-windows-forms"></a><span data-ttu-id="da9f6-102">Postupy: Vkládání uvozovek do řetězce (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="da9f6-102">How to: Put Quotation Marks in a String (Windows Forms)</span></span>
+<span data-ttu-id="da9f6-103">Někdy je vhodné umístit uvozovky ("") do textového řetězce.</span><span class="sxs-lookup"><span data-stu-id="da9f6-103">Sometimes you might want to place quotation marks (" ") in a string of text.</span></span> <span data-ttu-id="da9f6-104">Například:</span><span class="sxs-lookup"><span data-stu-id="da9f6-104">For example:</span></span>  
   
- <span data-ttu-id="38173-105">Uvedli jsme, že poslouží jako "považovat za".</span><span class="sxs-lookup"><span data-stu-id="38173-105">She said, "You deserve a treat!"</span></span>  
+ <span data-ttu-id="da9f6-105">Uvedli jsme, že poslouží jako "považovat za".</span><span class="sxs-lookup"><span data-stu-id="da9f6-105">She said, "You deserve a treat!"</span></span>  
   
- <span data-ttu-id="38173-106">Jako alternativu můžete také použít pole <xref:Microsoft.VisualBasic.ControlChars.Quote> jako konstantu.</span><span class="sxs-lookup"><span data-stu-id="38173-106">As an alternative, you can also use the <xref:Microsoft.VisualBasic.ControlChars.Quote> field as a constant.</span></span>  
+ <span data-ttu-id="da9f6-106">Jako alternativu můžete také použít pole <xref:Microsoft.VisualBasic.ControlChars.Quote> jako konstantu.</span><span class="sxs-lookup"><span data-stu-id="da9f6-106">As an alternative, you can also use the <xref:Microsoft.VisualBasic.ControlChars.Quote> field as a constant.</span></span>  
   
-### <a name="to-place-quotation-marks-in-a-string-in-your-code"></a><span data-ttu-id="38173-107">Vložení uvozovek do řetězce v kódu</span><span class="sxs-lookup"><span data-stu-id="38173-107">To place quotation marks in a string in your code</span></span>  
+### <a name="to-place-quotation-marks-in-a-string-in-your-code"></a><span data-ttu-id="da9f6-107">Vložení uvozovek do řetězce v kódu</span><span class="sxs-lookup"><span data-stu-id="da9f6-107">To place quotation marks in a string in your code</span></span>  
   
-1. <span data-ttu-id="38173-108">V Visual Basic vložte do řádku dvě uvozovky jako vložený znak uvozovek.</span><span class="sxs-lookup"><span data-stu-id="38173-108">In Visual Basic, insert two quotation marks in a row as an embedded quotation mark.</span></span> <span data-ttu-id="38173-109">V vizuálu C# a vizuálu C++vložte řídicí sekvenci \\"jako vložený znak uvozovek.</span><span class="sxs-lookup"><span data-stu-id="38173-109">In Visual C# and Visual C++, insert the escape sequence \\" as an embedded quotation mark.</span></span> <span data-ttu-id="38173-110">Chcete-li například vytvořit předchozí řetězec, použijte následující kód.</span><span class="sxs-lookup"><span data-stu-id="38173-110">For example, to create the preceding string, use the following code.</span></span>  
+1. <span data-ttu-id="da9f6-108">V Visual Basic vložte do řádku dvě uvozovky jako vložený znak uvozovek.</span><span class="sxs-lookup"><span data-stu-id="da9f6-108">In Visual Basic, insert two quotation marks in a row as an embedded quotation mark.</span></span> <span data-ttu-id="da9f6-109">V vizuálu C# a vizuálu C++vložte řídicí sekvenci \\"jako vložený znak uvozovek.</span><span class="sxs-lookup"><span data-stu-id="da9f6-109">In Visual C# and Visual C++, insert the escape sequence \\" as an embedded quotation mark.</span></span> <span data-ttu-id="da9f6-110">Chcete-li například vytvořit předchozí řetězec, použijte následující kód.</span><span class="sxs-lookup"><span data-stu-id="da9f6-110">For example, to create the preceding string, use the following code.</span></span>  
   
     ```vb  
     Private Sub InsertQuote()  
@@ -48,9 +48,9 @@ ms.locfileid: "76735894"
        }  
     ```  
   
-     <span data-ttu-id="38173-111">-nebo-</span><span class="sxs-lookup"><span data-stu-id="38173-111">-or-</span></span>  
+     <span data-ttu-id="da9f6-111">-nebo-</span><span class="sxs-lookup"><span data-stu-id="da9f6-111">-or-</span></span>  
   
-2. <span data-ttu-id="38173-112">Vložte znak ASCII nebo Unicode pro uvozovky.</span><span class="sxs-lookup"><span data-stu-id="38173-112">Insert the ASCII or Unicode character for a quotation mark.</span></span> <span data-ttu-id="38173-113">V Visual Basic použijte znak ASCII (34).</span><span class="sxs-lookup"><span data-stu-id="38173-113">In Visual Basic, use the ASCII character (34).</span></span> <span data-ttu-id="38173-114">V vizuálu C#použijte znak Unicode (\u0022).</span><span class="sxs-lookup"><span data-stu-id="38173-114">In Visual C#, use the Unicode character (\u0022).</span></span>  
+2. <span data-ttu-id="da9f6-112">Vložte znak ASCII nebo Unicode pro uvozovky.</span><span class="sxs-lookup"><span data-stu-id="da9f6-112">Insert the ASCII or Unicode character for a quotation mark.</span></span> <span data-ttu-id="da9f6-113">V Visual Basic použijte znak ASCII (34).</span><span class="sxs-lookup"><span data-stu-id="da9f6-113">In Visual Basic, use the ASCII character (34).</span></span> <span data-ttu-id="da9f6-114">V vizuálu C#použijte znak Unicode (\u0022).</span><span class="sxs-lookup"><span data-stu-id="da9f6-114">In Visual C#, use the Unicode character (\u0022).</span></span>  
   
     ```vb  
     Private Sub InsertAscii()  
@@ -65,11 +65,11 @@ ms.locfileid: "76735894"
     ```  
   
     > [!NOTE]
-    > <span data-ttu-id="38173-115">V tomto příkladu nelze použít \u0022, protože nemůžete použít univerzální název znaku, který určuje znak v základní znakové sadě.</span><span class="sxs-lookup"><span data-stu-id="38173-115">In this example, you cannot use \u0022 because you cannot use a universal character name that designates a character in the basic character set.</span></span> <span data-ttu-id="38173-116">V opačném případě budete mít C3851.</span><span class="sxs-lookup"><span data-stu-id="38173-116">Otherwise, you produce C3851.</span></span> <span data-ttu-id="38173-117">Další informace najdete v tématu [Chyba kompilátoru C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).</span><span class="sxs-lookup"><span data-stu-id="38173-117">For more information, see [Compiler Error C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).</span></span>  
+    > <span data-ttu-id="da9f6-115">V tomto příkladu nelze použít \u0022, protože nemůžete použít univerzální název znaku, který určuje znak v základní znakové sadě.</span><span class="sxs-lookup"><span data-stu-id="da9f6-115">In this example, you cannot use \u0022 because you cannot use a universal character name that designates a character in the basic character set.</span></span> <span data-ttu-id="da9f6-116">V opačném případě budete mít C3851.</span><span class="sxs-lookup"><span data-stu-id="da9f6-116">Otherwise, you produce C3851.</span></span> <span data-ttu-id="da9f6-117">Další informace najdete v tématu [Chyba kompilátoru C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).</span><span class="sxs-lookup"><span data-stu-id="da9f6-117">For more information, see [Compiler Error C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).</span></span>  
   
-     <span data-ttu-id="38173-118">-nebo-</span><span class="sxs-lookup"><span data-stu-id="38173-118">-or-</span></span>  
+     <span data-ttu-id="da9f6-118">-nebo-</span><span class="sxs-lookup"><span data-stu-id="da9f6-118">-or-</span></span>  
   
-3. <span data-ttu-id="38173-119">Můžete také definovat konstantu pro znak a použít ho tam, kde je to potřeba.</span><span class="sxs-lookup"><span data-stu-id="38173-119">You can also define a constant for the character, and use it where needed.</span></span>  
+3. <span data-ttu-id="da9f6-119">Můžete také definovat konstantu pro znak a použít ho tam, kde je to potřeba.</span><span class="sxs-lookup"><span data-stu-id="da9f6-119">You can also define a constant for the character, and use it where needed.</span></span>  
   
     ```vb  
     Const quote As String = """"  
@@ -88,14 +88,14 @@ ms.locfileid: "76735894"
        const_cast<String^>(quote));  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="38173-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="38173-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da9f6-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="da9f6-120">See also</span></span>
 
 - <xref:System.Windows.Forms.TextBox>
 - <xref:Microsoft.VisualBasic.ControlChars.Quote>
-- [<span data-ttu-id="38173-121">Přehled ovládacího prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="38173-121">TextBox Control Overview</span></span>](textbox-control-overview-windows-forms.md)
-- [<span data-ttu-id="38173-122">Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="38173-122">How to: Control the Insertion Point in a Windows Forms TextBox Control</span></span>](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
-- [<span data-ttu-id="38173-123">Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="38173-123">How to: Create a Password Text Box with the Windows Forms TextBox Control</span></span>](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
-- [<span data-ttu-id="38173-124">Postupy: Vytvoření textového pole určeného jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="38173-124">How to: Create a Read-Only Text Box</span></span>](how-to-create-a-read-only-text-box-windows-forms.md)
-- [<span data-ttu-id="38173-125">Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="38173-125">How to: Select Text in the Windows Forms TextBox Control</span></span>](how-to-select-text-in-the-windows-forms-textbox-control.md)
-- [<span data-ttu-id="38173-126">Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="38173-126">How to: View Multiple Lines in the Windows Forms TextBox Control</span></span>](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
-- [<span data-ttu-id="38173-127">Ovládací prvek TextBox</span><span class="sxs-lookup"><span data-stu-id="38173-127">TextBox Control</span></span>](textbox-control-windows-forms.md)
+- [<span data-ttu-id="da9f6-121">Přehled ovládacího prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="da9f6-121">TextBox Control Overview</span></span>](textbox-control-overview-windows-forms.md)
+- [<span data-ttu-id="da9f6-122">Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="da9f6-122">How to: Control the Insertion Point in a Windows Forms TextBox Control</span></span>](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
+- [<span data-ttu-id="da9f6-123">Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="da9f6-123">How to: Create a Password Text Box with the Windows Forms TextBox Control</span></span>](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
+- [<span data-ttu-id="da9f6-124">Postupy: Vytvoření textového pole určeného jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="da9f6-124">How to: Create a Read-Only Text Box</span></span>](how-to-create-a-read-only-text-box-windows-forms.md)
+- [<span data-ttu-id="da9f6-125">Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="da9f6-125">How to: Select Text in the Windows Forms TextBox Control</span></span>](how-to-select-text-in-the-windows-forms-textbox-control.md)
+- [<span data-ttu-id="da9f6-126">Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox</span><span class="sxs-lookup"><span data-stu-id="da9f6-126">How to: View Multiple Lines in the Windows Forms TextBox Control</span></span>](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [<span data-ttu-id="da9f6-127">Ovládací prvek TextBox</span><span class="sxs-lookup"><span data-stu-id="da9f6-127">TextBox Control</span></span>](textbox-control-windows-forms.md)

@@ -14,19 +14,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76727853"
 ---
-# <a name="input-wpf"></a><span data-ttu-id="a2cf9-102">Vstup (WPF)</span><span class="sxs-lookup"><span data-stu-id="a2cf9-102">Input (WPF)</span></span>
-<span data-ttu-id="a2cf9-103">Windows Presentation Foundation (WPF) zahrnuje podporu pro několik typů vstupu.</span><span class="sxs-lookup"><span data-stu-id="a2cf9-103">Windows Presentation Foundation (WPF) includes support for several types of input.</span></span> <span data-ttu-id="a2cf9-104">Tento vstup zahrnuje text, dotykové ovládání, myš, příkazy, fokus, dotykové ovládání, přetahování a digitální inkoust.</span><span class="sxs-lookup"><span data-stu-id="a2cf9-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="a2cf9-105">V této části jsou popsána témata týkající se vstupu v subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="a2cf9-105">This section describes topics related to input in WPF.</span></span>  
+# <a name="input-wpf"></a><span data-ttu-id="1870f-102">Vstup (WPF)</span><span class="sxs-lookup"><span data-stu-id="1870f-102">Input (WPF)</span></span>
+<span data-ttu-id="1870f-103">Windows Presentation Foundation (WPF) zahrnuje podporu pro několik typů vstupu.</span><span class="sxs-lookup"><span data-stu-id="1870f-103">Windows Presentation Foundation (WPF) includes support for several types of input.</span></span> <span data-ttu-id="1870f-104">Tento vstup zahrnuje text, dotykové ovládání, myš, příkazy, fokus, dotykové ovládání, přetahování a digitální inkoust.</span><span class="sxs-lookup"><span data-stu-id="1870f-104">This input includes text, touch, mouse, commands, focus, touch, drag-and-drop, and digital ink.</span></span> <span data-ttu-id="1870f-105">V této části jsou popsána témata týkající se vstupu v subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="1870f-105">This section describes topics related to input in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="a2cf9-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a2cf9-106">In This Section</span></span>  
- [<span data-ttu-id="a2cf9-107">Přehled vstupu</span><span class="sxs-lookup"><span data-stu-id="a2cf9-107">Input Overview</span></span>](input-overview.md)  
- [<span data-ttu-id="a2cf9-108">Přehled příkazů</span><span class="sxs-lookup"><span data-stu-id="a2cf9-108">Commanding Overview</span></span>](commanding-overview.md)  
- [<span data-ttu-id="a2cf9-109">Přehled fokusu</span><span class="sxs-lookup"><span data-stu-id="a2cf9-109">Focus Overview</span></span>](focus-overview.md)  
- [<span data-ttu-id="a2cf9-110">Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="a2cf9-110">Styling for Focus in Controls, and FocusVisualStyle</span></span>](styling-for-focus-in-controls-and-focusvisualstyle.md)  
- [<span data-ttu-id="a2cf9-111">Návod: Vytvoření první dotykové aplikace</span><span class="sxs-lookup"><span data-stu-id="a2cf9-111">Walkthrough: Creating Your First Touch Application</span></span>](walkthrough-creating-your-first-touch-application.md)  
- [<span data-ttu-id="a2cf9-112">Postupy</span><span class="sxs-lookup"><span data-stu-id="a2cf9-112">How-to Topics</span></span>](input-and-commands-how-to-topics.md)  
- [<span data-ttu-id="a2cf9-113">Rukopis</span><span class="sxs-lookup"><span data-stu-id="a2cf9-113">Digital Ink</span></span>](digital-ink.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1870f-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1870f-106">In This Section</span></span>  
+ [<span data-ttu-id="1870f-107">Přehled vstupu</span><span class="sxs-lookup"><span data-stu-id="1870f-107">Input Overview</span></span>](input-overview.md)  
+ [<span data-ttu-id="1870f-108">Přehled příkazů</span><span class="sxs-lookup"><span data-stu-id="1870f-108">Commanding Overview</span></span>](commanding-overview.md)  
+ [<span data-ttu-id="1870f-109">Přehled fokusu</span><span class="sxs-lookup"><span data-stu-id="1870f-109">Focus Overview</span></span>](focus-overview.md)  
+ [<span data-ttu-id="1870f-110">Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle</span><span class="sxs-lookup"><span data-stu-id="1870f-110">Styling for Focus in Controls, and FocusVisualStyle</span></span>](styling-for-focus-in-controls-and-focusvisualstyle.md)  
+ [<span data-ttu-id="1870f-111">Návod: Vytvoření první dotykové aplikace</span><span class="sxs-lookup"><span data-stu-id="1870f-111">Walkthrough: Creating Your First Touch Application</span></span>](walkthrough-creating-your-first-touch-application.md)  
+ [<span data-ttu-id="1870f-112">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="1870f-112">How-to Topics</span></span>](input-and-commands-how-to-topics.md)  
+ [<span data-ttu-id="1870f-113">Rukopis</span><span class="sxs-lookup"><span data-stu-id="1870f-113">Digital Ink</span></span>](digital-ink.md)  
   
-## <a name="reference"></a><span data-ttu-id="a2cf9-114">Odkaz</span><span class="sxs-lookup"><span data-stu-id="a2cf9-114">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="1870f-114">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="1870f-114">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  
@@ -41,6 +41,6 @@ ms.locfileid: "76727853"
   
  <xref:System.Windows.Input.FocusManager>  
   
-## <a name="related-sections"></a><span data-ttu-id="a2cf9-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a2cf9-115">Related Sections</span></span>  
- [<span data-ttu-id="a2cf9-116">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="a2cf9-116">Controls</span></span>](../controls/index.md)  
-  [<span data-ttu-id="a2cf9-117">Události</span><span class="sxs-lookup"><span data-stu-id="a2cf9-117">Events</span></span>](events-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="1870f-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1870f-115">Related Sections</span></span>  
+ [<span data-ttu-id="1870f-116">Ovládací prvky</span><span class="sxs-lookup"><span data-stu-id="1870f-116">Controls</span></span>](../controls/index.md)  
+  [<span data-ttu-id="1870f-117">Události</span><span class="sxs-lookup"><span data-stu-id="1870f-117">Events</span></span>](events-wpf.md)

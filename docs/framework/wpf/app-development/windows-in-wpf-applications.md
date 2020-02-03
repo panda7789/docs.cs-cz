@@ -15,21 +15,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76739007"
 ---
-# <a name="windows-in-wpf-applications"></a><span data-ttu-id="fcc72-102">Systém Windows v aplikacích WPF</span><span class="sxs-lookup"><span data-stu-id="fcc72-102">Windows in WPF Applications</span></span>
-<span data-ttu-id="fcc72-103">Uživatelé komunikují s aplikacemi prostřednictvím Windows.</span><span class="sxs-lookup"><span data-stu-id="fcc72-103">Users interact with applications through windows.</span></span> <span data-ttu-id="fcc72-104">Základním účelem okna je hostování a zobrazení obsahu.</span><span class="sxs-lookup"><span data-stu-id="fcc72-104">The fundamental purpose of a window is to host and display content.</span></span> <span data-ttu-id="fcc72-105">Typ obsahu, který je hostitelem okna, závisí na typu dat, která aplikace pracuje, což může zahrnovat média, stránky jazyk Extensible Application Markup Language (XAML) (XAML), webové stránky, dokumenty, databázové tabulky a záznamy a systémové informace.</span><span class="sxs-lookup"><span data-stu-id="fcc72-105">The type of content that a window hosts depends on the type of data that an application operates over, which can include media, Extensible Application Markup Language (XAML) pages, Web pages, documents, database tables and records, and system information.</span></span>  
+# <a name="windows-in-wpf-applications"></a><span data-ttu-id="b4c6d-102">Systém Windows v aplikacích WPF</span><span class="sxs-lookup"><span data-stu-id="b4c6d-102">Windows in WPF Applications</span></span>
+<span data-ttu-id="b4c6d-103">Uživatelé komunikují s aplikacemi prostřednictvím Windows.</span><span class="sxs-lookup"><span data-stu-id="b4c6d-103">Users interact with applications through windows.</span></span> <span data-ttu-id="b4c6d-104">Základním účelem okna je hostování a zobrazení obsahu.</span><span class="sxs-lookup"><span data-stu-id="b4c6d-104">The fundamental purpose of a window is to host and display content.</span></span> <span data-ttu-id="b4c6d-105">Typ obsahu, který je hostitelem okna, závisí na typu dat, která aplikace pracuje, což může zahrnovat média, stránky jazyk Extensible Application Markup Language (XAML) (XAML), webové stránky, dokumenty, databázové tabulky a záznamy a systémové informace.</span><span class="sxs-lookup"><span data-stu-id="b4c6d-105">The type of content that a window hosts depends on the type of data that an application operates over, which can include media, Extensible Application Markup Language (XAML) pages, Web pages, documents, database tables and records, and system information.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="fcc72-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="fcc72-106">In This Section</span></span>  
- [<span data-ttu-id="fcc72-107">Přehled Windows ve WPF</span><span class="sxs-lookup"><span data-stu-id="fcc72-107">WPF Windows Overview</span></span>](wpf-windows-overview.md)  
- [<span data-ttu-id="fcc72-108">Přehled dialogových oken</span><span class="sxs-lookup"><span data-stu-id="fcc72-108">Dialog Boxes Overview</span></span>](dialog-boxes-overview.md)  
- [<span data-ttu-id="fcc72-109">Postupy</span><span class="sxs-lookup"><span data-stu-id="fcc72-109">How-to Topics</span></span>](window-management-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="b4c6d-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b4c6d-106">In This Section</span></span>  
+ [<span data-ttu-id="b4c6d-107">Přehled Windows ve WPF</span><span class="sxs-lookup"><span data-stu-id="b4c6d-107">WPF Windows Overview</span></span>](wpf-windows-overview.md)  
+ [<span data-ttu-id="b4c6d-108">Přehled dialogových oken</span><span class="sxs-lookup"><span data-stu-id="b4c6d-108">Dialog Boxes Overview</span></span>](dialog-boxes-overview.md)  
+ [<span data-ttu-id="b4c6d-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="b4c6d-109">How-to Topics</span></span>](window-management-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="fcc72-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="fcc72-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="b4c6d-110">Referenční informace</span><span class="sxs-lookup"><span data-stu-id="b4c6d-110">Reference</span></span>  
  <xref:System.Windows.Window>  
   
  <xref:System.Windows.Navigation.NavigationWindow>  
   
-## <a name="related-sections"></a><span data-ttu-id="fcc72-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="fcc72-111">Related Sections</span></span>  
- [<span data-ttu-id="fcc72-112">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="fcc72-112">Application Management Overview</span></span>](application-management-overview.md)  
-  [<span data-ttu-id="fcc72-113">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="fcc72-113">Navigation Overview</span></span>](navigation-overview.md)  
-  [<span data-ttu-id="fcc72-114">Hostování</span><span class="sxs-lookup"><span data-stu-id="fcc72-114">Hosting</span></span>](hosting-wpf-applications.md)  
-  [<span data-ttu-id="fcc72-115">Sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="fcc72-115">Build and Deploy</span></span>](building-and-deploying-wpf-applications.md)
+## <a name="related-sections"></a><span data-ttu-id="b4c6d-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="b4c6d-111">Related Sections</span></span>  
+ [<span data-ttu-id="b4c6d-112">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="b4c6d-112">Application Management Overview</span></span>](application-management-overview.md)  
+  [<span data-ttu-id="b4c6d-113">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="b4c6d-113">Navigation Overview</span></span>](navigation-overview.md)  
+  [<span data-ttu-id="b4c6d-114">Hostování</span><span class="sxs-lookup"><span data-stu-id="b4c6d-114">Hosting</span></span>](hosting-wpf-applications.md)  
+  [<span data-ttu-id="b4c6d-115">Sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="b4c6d-115">Build and Deploy</span></span>](building-and-deploying-wpf-applications.md)

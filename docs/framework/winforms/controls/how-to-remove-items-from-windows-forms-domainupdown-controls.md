@@ -16,12 +16,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76735767"
 ---
-# <a name="how-to-remove-items-from-windows-forms-domainupdown-controls"></a><span data-ttu-id="71c8e-102">Postupy: Odebrání položek z ovládacích prvků Windows Forms DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="71c8e-102">How to: Remove Items from Windows Forms DomainUpDown Controls</span></span>
-<span data-ttu-id="71c8e-103">Můžete odebrat položky z ovládacího prvku model Windows Forms <xref:System.Windows.Forms.DomainUpDown> voláním metody <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> nebo <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> třídy <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection>.</span><span class="sxs-lookup"><span data-stu-id="71c8e-103">You can remove items from the Windows Forms <xref:System.Windows.Forms.DomainUpDown> control by calling the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> or <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class.</span></span> <span data-ttu-id="71c8e-104">Metoda <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> odstraní konkrétní položku, zatímco metoda <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> odstraní položku podle její pozice.</span><span class="sxs-lookup"><span data-stu-id="71c8e-104">The <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> method removes a specific item, while the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method removes an item by its position.</span></span>  
+# <a name="how-to-remove-items-from-windows-forms-domainupdown-controls"></a><span data-ttu-id="f9b9a-102">Postupy: Odebrání položek z ovládacích prvků Windows Forms DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="f9b9a-102">How to: Remove Items from Windows Forms DomainUpDown Controls</span></span>
+<span data-ttu-id="f9b9a-103">Můžete odebrat položky z ovládacího prvku model Windows Forms <xref:System.Windows.Forms.DomainUpDown> voláním metody <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> nebo <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> třídy <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection>.</span><span class="sxs-lookup"><span data-stu-id="f9b9a-103">You can remove items from the Windows Forms <xref:System.Windows.Forms.DomainUpDown> control by calling the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> or <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class.</span></span> <span data-ttu-id="f9b9a-104">Metoda <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> odstraní konkrétní položku, zatímco metoda <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> odstraní položku podle její pozice.</span><span class="sxs-lookup"><span data-stu-id="f9b9a-104">The <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> method removes a specific item, while the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method removes an item by its position.</span></span>  
   
-### <a name="to-remove-an-item"></a><span data-ttu-id="71c8e-105">Odebrání položky</span><span class="sxs-lookup"><span data-stu-id="71c8e-105">To remove an item</span></span>  
+### <a name="to-remove-an-item"></a><span data-ttu-id="f9b9a-105">Odebrání položky</span><span class="sxs-lookup"><span data-stu-id="f9b9a-105">To remove an item</span></span>  
   
-- <span data-ttu-id="71c8e-106">Pro odebrání položky podle názvu použijte metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> třídy <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection>.</span><span class="sxs-lookup"><span data-stu-id="71c8e-106">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to remove an item by name.</span></span>  
+- <span data-ttu-id="f9b9a-106">Pro odebrání položky podle názvu použijte metodu <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> třídy <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection>.</span><span class="sxs-lookup"><span data-stu-id="f9b9a-106">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to remove an item by name.</span></span>  
   
     ```vb  
     DomainUpDown1.Items.Remove("noodles")  
@@ -35,9 +35,9 @@ ms.locfileid: "76735767"
     domainUpDown1->Items->Remove("noodles");  
     ```  
   
-     <span data-ttu-id="71c8e-107">-nebo-</span><span class="sxs-lookup"><span data-stu-id="71c8e-107">-or-</span></span>  
+     <span data-ttu-id="f9b9a-107">-nebo-</span><span class="sxs-lookup"><span data-stu-id="f9b9a-107">-or-</span></span>  
   
-- <span data-ttu-id="71c8e-108">Pomocí metody <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> odeberte položku podle její pozice.</span><span class="sxs-lookup"><span data-stu-id="71c8e-108">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method to remove an item by its position.</span></span>  
+- <span data-ttu-id="f9b9a-108">Pomocí metody <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> odeberte položku podle její pozice.</span><span class="sxs-lookup"><span data-stu-id="f9b9a-108">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method to remove an item by its position.</span></span>  
   
     ```vb  
     ' Removes the first item in the list.  
@@ -54,10 +54,10 @@ ms.locfileid: "76735767"
     domainUpDown1->Items->RemoveAt(0);  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="71c8e-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="71c8e-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f9b9a-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="f9b9a-109">See also</span></span>
 
 - <xref:System.Windows.Forms.DomainUpDown>
 - <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="71c8e-110">Ovládací prvek DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="71c8e-110">DomainUpDown Control</span></span>](domainupdown-control-windows-forms.md)
-- [<span data-ttu-id="71c8e-111">Přehled ovládacího prvku DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="71c8e-111">DomainUpDown Control Overview</span></span>](domainupdown-control-overview-windows-forms.md)
+- [<span data-ttu-id="f9b9a-110">Ovládací prvek DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="f9b9a-110">DomainUpDown Control</span></span>](domainupdown-control-windows-forms.md)
+- [<span data-ttu-id="f9b9a-111">Přehled ovládacího prvku DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="f9b9a-111">DomainUpDown Control Overview</span></span>](domainupdown-control-overview-windows-forms.md)
