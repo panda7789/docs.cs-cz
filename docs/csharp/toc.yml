@@ -1190,7 +1190,7 @@
               href: programming-guide/unsafe-code-pointers/pointer-conversions.md
             - name: Jak používat ukazatele ke kopírování pole bajtů
               href: programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md
-    - name: Dokumentační komentáře XML
+    - name: Komentáře dokumentace XML
       items:
         - name: Přehled
           displayName: xml documentation comments
@@ -1209,7 +1209,7 @@
               href: programming-guide/xmldoc/code-inline.md
             - name: <code>
               href: programming-guide/xmldoc/code.md
-            - name: cref – atribut
+            - name: Atribut cref
               href: programming-guide/xmldoc/cref-attribute.md
             - name: <example>
               href: programming-guide/xmldoc/example.md
