@@ -26,7 +26,7 @@ Komponenta <xref:System.Windows.Forms.FolderBrowserDialog> se zobrazuje za běhu
 
 Při přidání do formuláře se komponenta <xref:System.Windows.Forms.FolderBrowserDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.FolderBrowserDialog>
 - [Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog](how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)

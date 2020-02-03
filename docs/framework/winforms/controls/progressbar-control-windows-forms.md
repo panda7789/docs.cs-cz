@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek ProgressBar
+title: ProgressBar – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - progress controls
@@ -25,7 +25,7 @@ ms.locfileid: "76741212"
  [Postupy: Nastavení hodnoty zobrazované ovládacím prvkem Windows Forms ProgressBar](how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control.md)  
  Popisuje několik různých způsobů, jak zvýšit hodnotu zobrazenou ovládacím prvkem <xref:System.Windows.Forms.ProgressBar>.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.ProgressBar>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

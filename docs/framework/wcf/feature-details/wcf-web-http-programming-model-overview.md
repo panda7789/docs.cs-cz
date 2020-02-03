@@ -101,7 +101,7 @@ interface ICustomer
 ## <a name="uritemplate-query-string-parameters-and-urls"></a>Parametry řetězce dotazu UriTemplate a adresy URL  
  Služby webového stylu je možné volat z webového prohlížeče zadáním adresy URL, která je přidružena k operaci služby. Tyto operace služby můžou přijímat parametry řetězce dotazu, které se musí zadat ve formě řetězce v rámci adresy URL. V následující tabulce jsou uvedeny typy, které mohou být předány v rámci adresy URL a používaného formátu.  
   
-|Type|Formát|  
+|Typ|Formát|  
 |----------|------------|  
 |<xref:System.Byte>|0 - 255|  
 |<xref:System.SByte>|-128 - 127|  
@@ -129,7 +129,7 @@ interface ICustomer
   
 - XML  
   
-- FORMÁT JSON  
+- JSON  
   
 - Neprůhledné binární proudy  
   
@@ -144,7 +144,7 @@ Vzhledem k tomu, že model programování webových služeb HTTP WCF nepodporuje
 ## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>Řešení potíží s programovacím modelem HTTP webu WCF  
  Při volání služby WCF WEB HTTP pomocí <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> pro vytvoření kanálu používá <xref:System.ServiceModel.Description.WebHttpBehavior> <xref:System.ServiceModel.EndpointAddress> sadu v konfiguračním souboru i v případě, že <xref:System.ServiceModel.Channels.ChannelFactoryBase%601>předává jiný <xref:System.ServiceModel.EndpointAddress>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)
 - [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)

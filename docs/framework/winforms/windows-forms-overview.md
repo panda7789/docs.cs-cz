@@ -26,7 +26,7 @@ Následující přehled popisuje výhody inteligentních klientských aplikací,
 
  V model Windows Forms je *formulář* vizuálním povrchem, na kterém se zobrazují informace pro uživatele. Můžete vytvářet aplikace model Windows Forms, a to přidáním ovládacích prvků do formulářů a vývojem reakcí na akce uživatelů, jako je kliknutí myší nebo stisknutí klávesových zkratek. *Ovládací prvek* je diskrétní prvky uživatelského rozhraní (UI), které zobrazuje data nebo přijímá vstupní data.
 
- Když uživatel provede nějaký formulář nebo některý z jeho ovládacích prvků, akce vygeneruje událost. Vaše aplikace reaguje na tyto události pomocí kódu a zpracovává události, když k nim dojde. Další informace najdete v tématu [vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md).
+ Když uživatel provede nějaký formulář nebo některý z jeho ovládacích prvků, akce vygeneruje událost. Vaše aplikace reaguje na tyto události pomocí kódu a zpracovává události, když k nim dojde. Další informace naleznete v tématu [vytváření obslužných rutin událostí v model Windows Forms](creating-event-handlers-in-windows-forms.md).
 
  Model Windows Forms obsahuje různé ovládací prvky, které lze přidat do formulářů: ovládací prvky, které zobrazují textová pole, tlačítka, rozevírací seznamy, přepínače a dokonce i webové stránky. Seznam všech ovládacích prvků, které lze použít na formuláři, naleznete v tématu [ovládací prvky pro použití v model Windows Forms](./controls/controls-to-use-on-windows-forms.md). Pokud existující ovládací prvek nevyhovuje vašim potřebám, model Windows Forms také podporuje vytváření vlastních ovládacích prvků pomocí <xref:System.Windows.Forms.UserControl> třídy.
 
@@ -101,7 +101,7 @@ Podrobné informace o tom, jak tyto funkce používat, najdete v následujícíc
 |Tisk obsahu formuláře|[Postupy: Tisk grafiky v modelu Windows Forms](./advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](./advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|
 |Další informace o model Windows Forms zabezpečení|[Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Začínáme s Windows Forms](getting-started-with-windows-forms.md)
 - [Vytvoření nového formuláře Windows Forms](creating-a-new-windows-form.md)

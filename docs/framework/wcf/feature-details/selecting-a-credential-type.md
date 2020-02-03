@@ -25,8 +25,8 @@ ms.locfileid: "76746150"
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádné|Určuje, že klient nemusí prezentovat žádné přihlašovací údaje. To se týká anonymního klienta.|  
-|Základní|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu http: základní a ověřování algoritmem Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
+|Žádný|Určuje, že klient nemusí prezentovat žádné přihlašovací údaje. To se týká anonymního klienta.|  
+|Basic|Určuje základní ověřování pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu http: základní a ověřování algoritmem Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
 |Otisk|Určuje ověřování algoritmem Digest pro klienta. Další informace najdete v tématu RFC2617 –[ověřování protokolu http: základní a ověřování algoritmem Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
 |NTLM|Určuje ověřování v systému NT LAN Manager (NTLM). Tato část se používá, pokud z nějakého důvodu nemůžete použít ověřování pomocí protokolu Kerberos. Můžete ji také zakázat jako zálohu nastavením vlastnosti <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> na `false`, což způsobí, že služba WCF vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí bránit posílání přihlašovacích údajů protokolu NTLM po drátě.|  
 |Windows|Určuje ověřování systému Windows. Chcete-li zadat pouze protokol Kerberos v doméně systému Windows, nastavte vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> na hodnotu `false` (výchozí hodnota je `true`).|  
@@ -38,7 +38,7 @@ ms.locfileid: "76746150"
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádné|Určuje, že klient nemusí prezentovat přihlašovací údaje. To se týká anonymního klienta.|  
+|Žádný|Určuje, že klient nemusí prezentovat přihlašovací údaje. To se týká anonymního klienta.|  
 |Windows|Umožňuje výměnu zpráv SOAP v rámci kontextu zabezpečení vytvořeného pomocí pověření systému Windows.|  
 |Uživatelské jméno|Umožňuje službě, aby vyžadovala ověření klienta pomocí přihlašovacích údajů uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelskými jmény, jako je například generování podpisu nebo šifrování dat. WCF zajišťuje zabezpečený přenos při použití přihlašovacích údajů uživatelského jména.|  
 |Certifikát|Umožňuje službě, aby vyžadovala ověření klienta pomocí certifikátu X. 509.|  
@@ -97,7 +97,7 @@ ms.locfileid: "76746150"
   
  Další informace o přihlašovacích údajích a zabezpečených relacích najdete v tématu [požadavky na zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A?displayProperty=nameWithType>

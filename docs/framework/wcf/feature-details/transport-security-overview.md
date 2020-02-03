@@ -46,7 +46,7 @@ Mechanismy zabezpečení přenosu v Windows Communication Foundation (WCF) závi
   
  Následující části popisují další typy přihlašovacích údajů klienta.  
   
-#### <a name="basic"></a>Základní  
+#### <a name="basic"></a>Basic  
  To odpovídá metodě základního ověřování ve službě IIS. Při použití tohoto režimu musí být server IIS nakonfigurovaný pomocí uživatelských účtů Windows a odpovídajících oprávnění systému souborů NTFS. Další informace o službě IIS 6,0 najdete v tématu [Povolení základního ověřování a konfigurace názvu sféry](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785293(v=ws.10)). Další informace o službě IIS 7,0 najdete v tématu [Konfigurace základního ověřování (IIS 7)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772009(v=ws.10)).  
   
 #### <a name="certificate"></a>Certifikát  
@@ -120,6 +120,6 @@ Mechanismy zabezpečení přenosu v Windows Communication Foundation (WCF) závi
 ## <a name="msmqintegrationbinding-and-netmsmqbinding"></a>MsmqIntegrationBinding a NetMsmqBinding  
  Kompletní diskuzi o zabezpečení přenosu pomocí služby Řízení front zpráv (dříve nazývané služby MSMQ) najdete v tématu [zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)

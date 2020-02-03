@@ -364,7 +364,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), backupList);
 
 Následující tabulka popisuje vzory, které jsou kompatibilní s používáním seznamů záložních koncových bodů, spolu s poznámkami popisujícími podrobnosti zpracování chyb pro konkrétní vzory.
 
-|Vzor|Relace|Transakce|Kontext příjmu|Seznam zálohování je podporovaný.|Poznámky|
+|Vzor|Relace|Transakce|Kontext příjmu|Seznam zálohování je podporovaný.|Poznámky:|
 |-------------|-------------|-----------------|---------------------|---------------------------|-----------|
 |Jednosměrný||||Ano|Pokusí se znovu odeslat zprávu na koncový bod zálohy. Pokud je tato zpráva vícesměrové vysílání, do svého cílového umístění zálohy se přesune jenom zpráva v neúspěšném kanálu.|
 |Jednosměrný||✔️||Ne|Je vyvolána výjimka a transakce je vrácena zpět.|
@@ -381,7 +381,7 @@ Následující tabulka popisuje vzory, které jsou kompatibilní s používání
 |Duplex||||Ne|Komunikace bez relací není v současné době podporovaná.|
 |Duplex|✔️|||Ano|Odeslat do cílového umístění zálohy.|
 
-## <a name="hosting"></a>Hosting
+## <a name="hosting"></a>Hostování
 
 Vzhledem k tomu, že je služba Směrování implementována jako služba WCF, musí být buď v rámci aplikace, nebo hostovaná službou IIS, nebo WAS. Doporučuje se, aby směrovací služba byla hostována buď ve službě IIS, WAS, nebo v aplikaci služby systému Windows, která umožňuje využívat funkce automatické správy spuštění a životního cyklu, které jsou k dispozici v těchto hostitelských prostředích.
 
@@ -413,7 +413,7 @@ Pokud chcete používat zosobnění ASP.NET se službou směrování, povolte v 
 
 Pokud chcete používat zosobnění přihlašovacích údajů systému Windows se službou směrování, je nutné nakonfigurovat pověření i službu. Objekt přihlašovacích údajů klienta (<xref:System.ServiceModel.Security.WindowsClientCredential>přístupný z <xref:System.ServiceModel.ChannelFactory>) definuje vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A>, která musí být nastavena tak, aby povolovala zosobnění. Nakonec ve službě potřebujete nakonfigurovat chování <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> pro nastavení `ImpersonateCallerForAllOperations` na `true`. Směrovací služba používá tento příznak k rozhodnutí, jestli se mají vytvořit klienti pro předávání zpráv s povoleným zosobněním.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Filtry zpráv](message-filters.md)
 - [Kontrakty pro směrování](routing-contracts.md)

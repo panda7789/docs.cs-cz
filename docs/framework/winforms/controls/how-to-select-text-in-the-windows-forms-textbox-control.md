@@ -67,7 +67,7 @@ Můžete vybrat text programově v ovládacím prvku model Windows Forms <xref:S
     }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)

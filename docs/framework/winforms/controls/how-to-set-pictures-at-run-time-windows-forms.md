@@ -97,7 +97,7 @@ Obrázek zobrazený pomocí ovládacího prvku model Windows Forms <xref:System.
   
      Tento kód vymaže obrázek, i když byl obrázek načten do ovládacího prvku v době návrhu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PictureBox>
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>

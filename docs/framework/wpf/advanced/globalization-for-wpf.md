@@ -87,7 +87,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Grafické skripty
 
-- Kannadština
+- Kannada
 
 - Lao
 
@@ -119,7 +119,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Korejština – staré hangul
 
-- Le
+- Myanmar
 
 - Sinhala
 
@@ -178,6 +178,6 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
     "de" , UltimateResourceFallbackLocation.Satellite)]
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled globalizace a lokalizace WPF](wpf-globalization-and-localization-overview.md)

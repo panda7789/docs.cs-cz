@@ -1,5 +1,5 @@
 ---
-title: Přehled ovládacího prvku Tlačítko
+title: Přehled ovládacího prvku Button
 ms.date: 03/30/2017
 f1_keywords:
 - Button
@@ -21,7 +21,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.Button> umožňu
   
  <xref:System.Windows.Forms.Button> ovládací prvek lze také použít k zobrazení obrázků pomocí vlastností <xref:System.Windows.Forms.ButtonBase.Image%2A> a <xref:System.Windows.Forms.ButtonBase.ImageList%2A>. Další informace najdete v tématu [Postup: nastavení obrázku zobrazovaného ovládacím prvkem model Windows Forms](how-to-set-the-image-displayed-by-a-windows-forms-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Button>
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)

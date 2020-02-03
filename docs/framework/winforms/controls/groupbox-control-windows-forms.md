@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek GroupBox
+title: GroupBox – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], grouping
@@ -23,7 +23,7 @@ Ovládací prvky <xref:System.Windows.Forms.GroupBox> model Windows Forms slouž
  [Postupy: Seskupování ovládacích prvků pomocí ovládacího prvku Windows Forms GroupBox](how-to-group-controls-with-the-windows-forms-groupbox-control.md)  
  Popisuje, jak použít tento ovládací prvek k seskupení ovládacích prvků.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.GroupBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

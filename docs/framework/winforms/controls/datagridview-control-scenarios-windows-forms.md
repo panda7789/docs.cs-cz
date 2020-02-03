@@ -86,7 +86,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.DataGridView> můžete zob
   
 - Můžete implementovat vlastní třídy buněk a sloupců pro jiné hostitelské ovládací prvky než ty, které jsou k dispozici v předdefinovaných typech sloupců. Další informace naleznete v tématu [How to: Host Controls in model Windows Forms DataGridView Cells](how-to-host-controls-in-windows-forms-datagridview-cells.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)

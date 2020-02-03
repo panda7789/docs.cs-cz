@@ -1,5 +1,5 @@
 ---
-title: ToolTip – přehled komponenty
+title: Přehled komponenty ToolTip
 ms.date: 03/30/2017
 f1_keywords:
 - ToolTip
@@ -22,7 +22,7 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.ToolTip> zobrazí text
   
  Klíčové metody součásti <xref:System.Windows.Forms.ToolTip> jsou <xref:System.Windows.Forms.ToolTip.SetToolTip%2A> a <xref:System.Windows.Forms.ToolTip.GetToolTip%2A>. Pomocí metody <xref:System.Windows.Forms.ToolTip.SetToolTip%2A> lze nastavit popisy tlačítek zobrazených pro ovládací prvky. Další informace najdete v tématu [Postup: nastavení popisů ovládacích prvků pro ovládací prvky ve formuláři Windows v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md). Klíčové vlastnosti jsou <xref:System.Windows.Forms.ToolTip.Active%2A>, které musí být nastavené na `true` pro zobrazení popisu tlačítka, a <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A>, která nastavuje dobu, po kterou je zobrazen řetězec s popisem, jak dlouho musí uživatel ukazovat na ovládací prvek ToolTip a jak dlouho se má zobrazit další okna s popisem tlačítka. Další informace najdete v tématu [Postup: Změna zpoždění součásti model Windows Forms ToolTip](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolTip>
 - [Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows Forms v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)

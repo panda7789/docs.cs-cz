@@ -21,14 +21,14 @@ Tento článek popisuje použití certifikátů X. 509 pro ověřování server�
   
  Další informace o používání certifikátu se službou najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md). V následující tabulce jsou popsány různé charakteristiky scénáře.  
   
-|Charakteristiku|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Přepravu|  
-|Interoperabilita|Se stávajícími klienty a službami webové služby.|  
+|Režim zabezpečení|Přenos|  
+|Vzájemná funkční spolupráce|Se stávajícími klienty a službami webové služby.|  
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí certifikátu SSL)<br /><br /> Ano (pomocí certifikátu X. 509)|  
 |Integrita dat|Ano|  
 |Důvěrnost dat|Ano|  
-|Přepravu|HTTPS|  
+|Přenos|HTTPS|  
 |Vazba|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>Konfigurace služby  
@@ -138,7 +138,7 @@ cc.Close();
 <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

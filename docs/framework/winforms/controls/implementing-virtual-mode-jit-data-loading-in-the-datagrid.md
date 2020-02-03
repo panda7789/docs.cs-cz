@@ -70,7 +70,7 @@ Jedním z důvodů implementace virtuálního režimu v ovládacím prvku <xref:
   
  Chcete-li zlepšit výkon při posouvání aplikace, můžete zvýšit množství uložených dat v místním prostředí. Pokud ale chcete zlepšit čas spuštění, musíte se nejdřív vyhnout načtení příliš velkého množství dat. Možná budete chtít upravit třídu `Cache`, aby se zvýšil počet datových stránek, které může uložit. Použití více datových stránek může zlepšit efektivitu posouvání, ale v závislosti na dostupné šířce pásma a latenci serveru je třeba určit ideální počet řádků na datové stránce. S menšími stránkami bude k serveru k dispozici častěji, ale bude trvat kratší dobu, než budou požadovaná data vrácena. Pokud je latence větší než šířka pásma, možná budete chtít použít stránky s větším množstvím dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>

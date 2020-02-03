@@ -105,7 +105,7 @@ Spustí interaktivní prostředí pro zkoumání výpisu paměti. Prostředí ak
 dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 ```
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>Argumenty
 
 - **`<dump_path>`**
 

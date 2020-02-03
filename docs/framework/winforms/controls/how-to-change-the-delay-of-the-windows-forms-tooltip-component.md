@@ -42,7 +42,7 @@ Existuje více hodnot zpoždění, které lze nastavit pro komponentu model Wind
     toolTip1->AutoPopDelay = 5000;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled komponenty ToolTip](tooltip-component-overview-windows-forms.md)
 - [Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows Forms v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)

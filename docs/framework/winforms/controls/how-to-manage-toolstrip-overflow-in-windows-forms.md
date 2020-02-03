@@ -25,13 +25,13 @@ Když přidáte <xref:System.Windows.Forms.ToolStripItem>s, které vyžadují v�
 
 ## <a name="to-enable-overflow-on-a-toolstrip-control"></a>Povolení přetečení ovládacího prvku ToolStrip
 
-- Ujistěte se, že vlastnost <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> není nastavena na `false` pro <xref:System.Windows.Forms.ToolStrip>. Výchozí hodnota je `True`.
+- Ujistěte se, že vlastnost <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> není nastavena na `false` pro <xref:System.Windows.Forms.ToolStrip>. Výchozí formát je `True`.
 
      Pokud je <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> `True` (výchozí nastavení), do rozevírací nabídky přetečení se pošle <xref:System.Windows.Forms.ToolStripItem>, když obsah <xref:System.Windows.Forms.ToolStripItem> překračuje šířku vodorovného <xref:System.Windows.Forms.ToolStrip>u nebo výšku vertikálního <xref:System.Windows.Forms.ToolStrip>.
 
 ## <a name="to-specify-overflow-behavior-of-a-specific-toolstripitem"></a>Určení chování přetečení konkrétního prvku ToolStripItem
 
-- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> <xref:System.Windows.Forms.ToolStripItem> na požadovanou hodnotu. Možnosti jsou `Always`, `Never`a `AsNeeded`. Výchozí hodnota je `AsNeeded`.
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> <xref:System.Windows.Forms.ToolStripItem> na požadovanou hodnotu. Možnosti jsou `Always`, `Never`a `AsNeeded`. Výchozí formát je `AsNeeded`.
 
     ```vb
     toolStripTextBox1.Overflow = _
@@ -43,7 +43,7 @@ Když přidáte <xref:System.Windows.Forms.ToolStripItem>s, které vyžadují v�
     System.Windows.Forms.ToolStripItemOverflow.Never;
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStripOverflowButton>

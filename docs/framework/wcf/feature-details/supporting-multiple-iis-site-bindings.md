@@ -10,7 +10,7 @@ ms.lasthandoff: 01/24/2020
 ms.locfileid: "76743440"
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Podpora víc vazeb webu IIS
-Při hostování služby Windows Communication Foundation (WCF) pod Internetová informační služba (IIS) 7,0 možná budete chtít poskytnout více základních adres, které používají stejný protokol na stejné lokalitě. To umožňuje stejné službě reagovat na několik různých identifikátorů URI. To je užitečné, když chcete hostovat službu, která naslouchá na `http://www.contoso.com` a `http://contoso.com`. Také je užitečné vytvořit službu, která má základní adresu pro interní uživatele a samostatnou základní adresu pro externí uživatele. Například: `http://internal.contoso.com` a `http://www.contoso.com`.  
+Při hostování služby Windows Communication Foundation (WCF) pod Internetová informační služba (IIS) 7,0 možná budete chtít poskytnout více základních adres, které používají stejný protokol na stejné lokalitě. To umožňuje stejné službě reagovat na několik různých identifikátorů URI. To je užitečné, když chcete hostovat službu, která naslouchá na `http://www.contoso.com` a `http://contoso.com`. Také je užitečné vytvořit službu, která má základní adresu pro interní uživatele a samostatnou základní adresu pro externí uživatele. Například: `http://internal.contoso.com` a `http://www.contoso.com`  
   
 > [!NOTE]
 > Tato funkce je k dispozici pouze pomocí protokolu HTTP.  

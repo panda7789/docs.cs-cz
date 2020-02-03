@@ -94,6 +94,6 @@ Press <ENTER> to terminate client.
 
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Příklad, jak vytvořit klientskou aplikaci, která může zavolat tuto službu, naleznete v tématu [How to: Create a Client](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Hostování technologie AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

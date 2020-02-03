@@ -75,13 +75,13 @@ Ovládací prvek `DataGridView` poskytuje výkonný a flexibilní způsob zobraz
   
  Viz také téma [použití návrháře s ovládacím prvkem model Windows Forms DataGridView](using-the-designer-with-the-windows-forms-datagridview-control.md).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
  <xref:System.Windows.Forms.BindingSource>  
  Poskytuje referenční dokumentaci pro součást <xref:System.Windows.Forms.BindingSource>. Ovládací prvek <xref:System.Windows.Forms.DataGridView> a komponenta <xref:System.Windows.Forms.BindingSource> jsou navržené tak, aby úzce spolupracovaly.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

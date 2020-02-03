@@ -54,7 +54,7 @@ Inteligentní značky jsou vždy k dispozici v době návrhu u ovládacích prvk
 
 6. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **orientace vodorovné příčky** . Všimněte si, že příčka ovládacího prvku <xref:System.Windows.Forms.SplitContainer> je nyní orientována vodorovně.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TextBox>
 - <xref:System.Windows.Forms.TabControl>

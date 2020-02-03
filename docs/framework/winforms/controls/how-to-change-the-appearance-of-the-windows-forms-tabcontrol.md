@@ -65,7 +65,7 @@ Můžete změnit vzhled karet v model Windows Forms pomocí vlastností <xref:Sy
   
 - Vlastnost <xref:System.Windows.Forms.TabControl.Appearance%2A> <xref:System.Windows.Forms.TabControl> nastavte na <xref:System.Windows.Forms.TabAppearance.Buttons> nebo <xref:System.Windows.Forms.TabAppearance.FlatButtons>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)

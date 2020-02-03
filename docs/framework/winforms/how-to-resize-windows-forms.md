@@ -113,7 +113,7 @@ Form^ f = gcnew Form();
 f->Size->X += 100;
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Začínáme s Windows Forms](getting-started-with-windows-forms.md)
-- [Rozšiřování aplikací Windows Forms](./advanced/index.md)
+- [Rozšiřování formulářových aplikací Windows](./advanced/index.md)

@@ -70,7 +70,7 @@ Chcete-li navazovat ovládací prvek Windows Form na výsledky získané z volá
   
 - Odkazy na sestavení System, System. Drawing, System. Web. Services, System. Windows. Forms a System. XML.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Komponenta BindingSource](bindingsource-component.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md)

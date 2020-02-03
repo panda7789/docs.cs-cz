@@ -150,7 +150,7 @@ Zásady, které může vyjádřit [aplikace](application-element-net-native.md),
 
 - `MarshalDelegate`. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.
 
-- `MarshalStructure` . Řídí zásady pro zařazování struktur do nativního kódu.
+- `MarshalStructure`. Řídí zásady pro zařazování struktur do nativního kódu.
 
 Nastavení přidružená k těmto typům zásad jsou:
 
@@ -453,7 +453,7 @@ Tyto zásady nemají žádný vliv na metody nebo pole.
 
 Další informace najdete v části "rozdíly v Serializacích" v tématu [migrace aplikace pro Windows Store na .NET Native](migrating-your-windows-store-app-to-net-native.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Elementy direktivy modulu runtime](runtime-directive-elements.md)
 - [Reflexe a .NET Native](reflection-and-net-native.md)

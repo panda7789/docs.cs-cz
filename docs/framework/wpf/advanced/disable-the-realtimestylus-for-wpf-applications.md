@@ -53,6 +53,6 @@ public static void DisableWPFTabletSupport()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přijetí vstupu z pera](intercepting-input-from-the-stylus.md)

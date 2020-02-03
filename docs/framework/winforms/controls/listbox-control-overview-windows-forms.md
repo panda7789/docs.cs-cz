@@ -1,5 +1,5 @@
 ---
-title: ListBox – přehled ovládacího prvku
+title: Přehled ovládacího prvku ListBox
 ms.date: 03/30/2017
 f1_keywords:
 - ListBox
@@ -22,7 +22,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ListBox> zobraz�
   
  Chcete-li přidat nebo odstranit položky v ovládacím prvku <xref:System.Windows.Forms.ListBox>, použijte metodu <xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A>, <xref:System.Windows.Forms.ListBox.ObjectCollection.Insert%2A>, <xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A> nebo <xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>. Alternativně můžete přidat položky do seznamu pomocí vlastnosti <xref:System.Windows.Forms.ListBox.Items%2A> v době návrhu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListBox>
 - [Postupy: Přidání a odebrání položek z ovládacích prvků ComboBox, ListBox nebo CheckedListBox z Windows Forms](add-and-remove-items-from-a-wf-combobox.md)

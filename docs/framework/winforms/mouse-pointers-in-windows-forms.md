@@ -30,7 +30,7 @@ ms.locfileid: "76740954"
   
  Hlavní způsob, jak změnit ukazatel myši, je nastavením vlastnosti <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Forms.Control.DefaultCursor%2A> ovládacího prvku na nový <xref:System.Windows.Forms.Cursor>. Příklady, jak změnit ukazatel myši, naleznete v příkladu kódu ve třídě <xref:System.Windows.Forms.Cursor>. Kromě toho třída <xref:System.Windows.Forms.Cursors> zpřístupňuje sadu <xref:System.Windows.Forms.Cursor> objektů pro mnoho různých typů ukazatelů, jako je ukazatel, který se podobá ruky. Chcete-li zobrazit ukazatel čekání, který se podobá přesýpacích hodin, pokaždé, když je ukazatel myši na ovládacím prvku, použijte vlastnost <xref:System.Windows.Forms.Control.UseWaitCursor%2A> třídy <xref:System.Windows.Forms.Control>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Cursor>
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)

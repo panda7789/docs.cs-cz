@@ -20,9 +20,9 @@ ms.locfileid: "76737920"
  [Funkce písma OpenType](opentype-font-features.md)  
  [Balení písem s aplikacemi](packaging-fonts-with-applications.md)  
  [Ukázková sada písem OpenType](sample-opentype-font-pack.md)  
- [Postupy](fonts-how-to-topics.md)  
+ [Témata s postupy](fonts-how-to-topics.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.FontStyle>
 - <xref:System.Windows.SystemFonts>

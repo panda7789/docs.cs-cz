@@ -23,7 +23,7 @@ ms.locfileid: "76746809"
 
 Tento článek ukazuje, jak vybrat typy ovládacích prvků Windows Presentation Foundation (WPF), které chcete zobrazit ve formuláři. Můžete vybrat jakýkoli typ ovládacího prvku WPF, který je součástí projektu.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 
@@ -85,7 +85,7 @@ Můžete přiřadit jiný obsah WPF k ovládacímu prvku <xref:System.Windows.Fo
 
 9. Ovládací prvek `elementHost2` nyní hostuje instanci typu `UserControl1`.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

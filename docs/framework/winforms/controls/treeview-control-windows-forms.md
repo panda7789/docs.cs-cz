@@ -41,8 +41,8 @@ Ovládací prvek model Windows Forms `TreeView` zobrazí hierarchii uzlů, jako 
 
 Viz také [Postupy: Přidání a odebrání uzlů s ovládacím prvkem model Windows Forms TreeView pomocí návrháře](add-and-remove-nodes-with-wf-treeview-control-using-the-designer.md)a [Postupy: připojení místní nabídky k prvku TreeNode pomocí návrháře](how-to-attach-a-shortcut-menu-to-a-treenode-using-the-designer.md).  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.TreeView> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.TreeView>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -33,7 +33,7 @@ Při sestavování aplikací založených na datech budete často potřebovat zo
   
 - Odkazy na sestavení System, System. data, System. Drawing, System. Windows. Forms a System. XML.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.Windows.Forms.DataGridView>

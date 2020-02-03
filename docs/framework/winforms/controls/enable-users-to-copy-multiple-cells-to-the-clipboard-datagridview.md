@@ -42,7 +42,7 @@ Když povolíte kopírování buněk, zpřístupníte data v ovládacím prvku <
   
 - Odkazy na sestavení N:System a N:System.Windows.Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.ClipboardCopyMode%2A>

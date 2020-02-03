@@ -32,7 +32,7 @@ Ovládací prvek `DataGridView` poskytuje několik funkcí, které umožňují z
  [Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
  Popisuje způsob zpracování chyb při zadávání dat, které pocházejí ze zdroje dat, když se uživatel pokusí o potvrzení nové hodnoty.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
   
@@ -52,7 +52,7 @@ Ovládací prvek `DataGridView` poskytuje několik funkcí, které umožňují z
  [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)  
  Poskytuje témata, která popisují, jak naplnit ovládací prvek daty buď ručně, nebo z externího zdroje dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

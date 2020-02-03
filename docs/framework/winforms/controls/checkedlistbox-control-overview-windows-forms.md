@@ -20,7 +20,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.CheckedListBox> 
   
  Zaškrtnutá pole seznamu mohou mít položky přidané v době návrhu pomocí **editoru kolekce řetězců** nebo jejich položky lze dynamicky přidat z kolekce v době běhu pomocí vlastnosti <xref:System.Windows.Forms.CheckedListBox.Items%2A>. Další informace naleznete v tématu [How to: Add and Remove Items from model Windows Forms ComboBox, ListBox nebo CheckedListBox Control](add-and-remove-items-from-a-wf-combobox.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.CheckedListBox>
 - <xref:System.Windows.Forms.CheckedListBox.Items%2A?displayProperty=nameWithType>

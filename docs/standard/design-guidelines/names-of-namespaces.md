@@ -81,7 +81,7 @@ Stejně jako u jiných pokynů pro pojmenování je cílem při pojmenovávání
 
  *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

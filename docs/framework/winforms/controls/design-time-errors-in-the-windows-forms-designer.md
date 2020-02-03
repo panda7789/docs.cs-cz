@@ -304,7 +304,7 @@ Chybová zpráva: vyžaduje se název služby\<Service >, ale nepovedlo se ho na
 
 Služba vyžadovaná v rámci sady Visual Studio není k dispozici. Pokud jste se pokoušeli načíst projekt, který nepodporuje tohoto návrháře, použijte Editor kódu k provedení změn, které požadujete. Jinak, pokud se zobrazí tato chyba, Zaprotokolujte prosím problém pomocí [nahlásit problém](/visualstudio/ide/how-to-report-a-problem-with-visual-studio).
 
-### <a name="the-service-instance-must-derive-from-or-implement-interface-name"></a>Instance služby musí být odvozena z nebo implementovat název rozhraní\<
+### <a name="the-service-instance-must-derive-from-or-implement-interface-name"></a>Instance služby musí být odvozena z nebo implementovat název rozhraní\<>
 
 Tato chyba označuje, že komponenta nebo Návrhář komponent volala metodu **AddService** , která vyžaduje rozhraní a objekt, ale zadaný objekt neimplementuje zadané rozhraní. Obraťte se na dodavatele součásti.
 
@@ -406,7 +406,7 @@ Tato chyba označuje, že jazyk projektu nepodporuje návrháře a nastane při 
 
 Aplikace Visual Studio načetla třídu, ale třídu nelze navrhnout. Místo toho upravte třídu v zobrazení kódu tak, že kliknete pravým tlačítkem na třídu a zvolíte **Zobrazit kód**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vývoj model Windows Formsch ovládacích prvků pomocí návrháře](developing-windows-forms-controls-at-design-time.md)
 - [Fórum Návrhář formulářů](https://social.msdn.microsoft.com/Forums/windows/home?forum=winformsdesigner)

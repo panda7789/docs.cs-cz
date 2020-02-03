@@ -1,5 +1,5 @@
 ---
-title: Postupy
+title: Názorné postupy
 ms.date: 03/30/2017
 helpviewer_keywords:
 - walkthroughs [WPF]

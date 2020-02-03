@@ -16,7 +16,7 @@ ms.locfileid: "76738502"
 
 Nastavení zásad direktivy modulu runtime pro .NET Native určení dostupnosti metadat pro typy a členy typu v době běhu. Bez nezbytných metadat se operace, které spoléhají na reflexi, serializaci a deserializaci nebo zařazování typů .NET Framework do modelu COM nebo prostředí Windows Runtime mohou selhat a vyvolat výjimku. Nejběžnější výjimky jsou [MissingMetadataException](missingmetadataexception-class-net-native.md) a (v případě spolupráce) [MissingInteropDataException](missinginteropdataexception-class-net-native.md).
 
-Nastavení zásad modulu runtime se řídí souborem direktiv modulu runtime (. Rd. XML). Každá direktiva modulu runtime definuje zásadu pro konkrétní prvek programu, jako je například sestavení ( [\<](assembly-element-net-native.md) element), typ ( [\<typ >](type-element-net-native.md) prvek) nebo metoda ( [\<metoda >](method-element-net-native.md) elementu). Direktiva obsahuje jeden nebo více atributů, které definují typy zásad reflexe, typy zásad serializace a typy zásad interoperability, které jsou popsány v následující části. Hodnota atributu definuje nastavení zásad.
+Nastavení zásad modulu runtime se řídí souborem direktiv modulu runtime (. Rd. XML). Každá direktiva modulu runtime definuje zásadu pro konkrétní prvek programu, jako je například sestavení ( [\<>](assembly-element-net-native.md) element), typ ( [\<typ >](type-element-net-native.md) prvek) nebo metoda ( [\<metoda >](method-element-net-native.md) elementu). Direktiva obsahuje jeden nebo více atributů, které definují typy zásad reflexe, typy zásad serializace a typy zásad interoperability, které jsou popsány v následující části. Hodnota atributu definuje nastavení zásad.
 
 ## <a name="policy-types"></a>Typy zásad
 
@@ -32,7 +32,7 @@ Soubory direktiv modulu runtime rozpoznávají tři kategorie typů zásad: refl
 
   V následující tabulce jsou uvedeny typy zásad odrazů a prvky programu, se kterými se dají použít.
 
-  |Prvek|Activate|Procházet|Dynamické|
+  |Prvek|Aktivovat|Procházet|Dynamická|
   |-------------|--------------|------------|-------------|
   |[\<> aplikace](application-element-net-native.md)|✔️|✔️|✔️|
   |[\<> sestavení](assembly-element-net-native.md)|✔️|✔️|✔️|
@@ -40,15 +40,15 @@ Soubory direktiv modulu runtime rozpoznávají tři kategorie typů zásad: refl
   |[> události \<](event-element-net-native.md)||✔️|✔️|
   |[\<pole >](field-element-net-native.md)||✔️|✔️|
   |[\<GenericParameter >](genericparameter-element-net-native.md)|✔️|✔️|✔️|
-  |[\<ImpliesType>](impliestype-element-net-native.md)|✔️|✔️|✔️|
-  |[\<Method>](method-element-net-native.md)||✔️|✔️|
-  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||✔️|✔️|
-  |[\<Namespace>](namespace-element-net-native.md)|✔️|✔️|✔️|
-  |[Parametr \<](parameter-element-net-native.md)|✔️|✔️|✔️|
-  |[Vlastnost \<](property-element-net-native.md)||✔️|✔️|
+  |[\<ImpliesType >](impliestype-element-net-native.md)|✔️|✔️|✔️|
+  |[Metoda \<>](method-element-net-native.md)||✔️|✔️|
+  |[\<MethodInstantiation >](methodinstantiation-element-net-native.md)||✔️|✔️|
+  |[Obor názvů \<>](namespace-element-net-native.md)|✔️|✔️|✔️|
+  |[Parametr \<>](parameter-element-net-native.md)|✔️|✔️|✔️|
+  |[Vlastnost \<>](property-element-net-native.md)||✔️|✔️|
   |[\<podtypy >](subtypes-element-net-native.md)|✔️|✔️|✔️|
-  |[Typ \<](type-element-net-native.md)|✔️|✔️|✔️|
-  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|
+  |[Typ \<>](type-element-net-native.md)|✔️|✔️|✔️|
+  |[\<TypeInstantiation >](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|
   |[\<TypeParameter >](typeparameter-element-net-native.md)|✔️|✔️|✔️|
 
 - Typy zásad serializace určují, která metadata jsou v době spuštění k dispozici pro serializaci a deserializaci:
@@ -71,15 +71,15 @@ Soubory direktiv modulu runtime rozpoznávají tři kategorie typů zásad: refl
   |[> události \<](event-element-net-native.md)|||||
   |[\<pole >](field-element-net-native.md)|✔️||||
   |[\<GenericParameter >](genericparameter-element-net-native.md)|✔️|✔️|✔️|✔️|
-  |[\<ImpliesType>](impliestype-element-net-native.md)|✔️|✔️|✔️|✔️|
-  |[\<Method>](method-element-net-native.md)|||||
-  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)|||||
-  |[\<Namespace>](namespace-element-net-native.md)|✔️|✔️|✔️|✔️|
-  |[Parametr \<](parameter-element-net-native.md)|✔️|✔️|✔️|✔️|
-  |[Vlastnost \<](property-element-net-native.md)|✔️||||
+  |[\<ImpliesType >](impliestype-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[Metoda \<>](method-element-net-native.md)|||||
+  |[\<MethodInstantiation >](methodinstantiation-element-net-native.md)|||||
+  |[Obor názvů \<>](namespace-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[Parametr \<>](parameter-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[Vlastnost \<>](property-element-net-native.md)|✔️||||
   |[\<podtypy >](subtypes-element-net-native.md)|✔️|✔️|✔️|✔️|
-  |[Typ \<](type-element-net-native.md)|✔️|✔️|✔️|✔️|
-  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[Typ \<>](type-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<TypeInstantiation >](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|✔️|
   |[\<TypeParameter >](typeparameter-element-net-native.md)|✔️|✔️|✔️|✔️|
 
 - Typy zásad spolupráce určují, která metadata jsou k dispozici v době běhu, aby předávala odkazy typy, typy hodnot a ukazatele na funkce do modelu COM a prostředí Windows Runtime:
@@ -100,15 +100,15 @@ Soubory direktiv modulu runtime rozpoznávají tři kategorie typů zásad: refl
   |[> události \<](event-element-net-native.md)||||
   |[\<pole >](field-element-net-native.md)||||
   |[\<GenericParameter >](genericparameter-element-net-native.md)|✔️|✔️|✔️|
-  |[\<ImpliesType>](impliestype-element-net-native.md)|✔️|✔️|✔️|
-  |[\<Method>](method-element-net-native.md)||||
-  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||||
-  |[\<Namespace>](namespace-element-net-native.md)|✔️|✔️|✔️|
-  |[Parametr \<](parameter-element-net-native.md)|✔️|✔️|✔️|
-  |[Vlastnost \<](property-element-net-native.md)||||
+  |[\<ImpliesType >](impliestype-element-net-native.md)|✔️|✔️|✔️|
+  |[Metoda \<>](method-element-net-native.md)||||
+  |[\<MethodInstantiation >](methodinstantiation-element-net-native.md)||||
+  |[Obor názvů \<>](namespace-element-net-native.md)|✔️|✔️|✔️|
+  |[Parametr \<>](parameter-element-net-native.md)|✔️|✔️|✔️|
+  |[Vlastnost \<>](property-element-net-native.md)||||
   |[\<podtypy >](subtypes-element-net-native.md)|✔️|✔️|✔️|
-  |[Typ \<](type-element-net-native.md)|✔️|✔️|✔️|
-  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|
+  |[Typ \<>](type-element-net-native.md)|✔️|✔️|✔️|
+  |[\<TypeInstantiation >](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|
   |[\<TypeParameter >](typeparameter-element-net-native.md)|✔️|✔️|✔️|
 
 ## <a name="policy-settings"></a>Nastavení zásad
@@ -128,7 +128,7 @@ Každý typ zásad může být nastaven na jednu z hodnot uvedených v následuj
 |`Required PublicAndInternal`|Povoluje zásady pro veřejné a interní typy nebo členy a zajišťuje, že metadata pro veřejné a interní typy a členy jsou vždy k dispozici. Toto nastavení se liší od `PublicAndInternal`, které zpřístupňuje metadata pro veřejné a interní typy a členy pouze v případě, že je řetězec nástroje určen k tomu, aby byl nezbytný.|✔️||
 |`Required All`|Vyžaduje, aby řetězec nástroje zachoval všechny typy a členy bez ohledu na to, jestli se používají, a pro ně povoluje zásady.|✔️||
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](runtime-directive-elements.md)

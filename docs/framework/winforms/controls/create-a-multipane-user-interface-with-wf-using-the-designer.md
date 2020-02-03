@@ -43,7 +43,7 @@ V následujícím postupu vytvoříte uživatelské rozhraní s více podokny, k
 
 V tomto okamžiku vývoje aplikací jste si vystavili sofistikované uživatelské rozhraní. Dalším krokem je pokračování v programování samotné aplikace, třeba propojením ovládacího prvku <xref:System.Windows.Forms.TreeView> a <xref:System.Windows.Forms.ListView> ovládací prvky s nějakým druhem zdroje dat. Další informace o připojení ovládacích prvků k datům naleznete v tématu [datové vazby a model Windows Forms](../data-binding-and-windows-forms.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.SplitContainer>
 - [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)

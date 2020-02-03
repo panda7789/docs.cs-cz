@@ -38,7 +38,7 @@ Volání metody v objektu se podobá přístupu k poli. Za název objektu přide
 
 ## <a name="method-parameters-vs-arguments"></a>Parametry metody vs. argumenty
 
-Definice metody určuje názvy a typy parametrů, které jsou požadovány. Když volání kódu volá metodu, poskytuje konkrétní hodnoty nazvané argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale název argumentu (pokud existuje) použitý v volajícím kódu nemusí být stejný jako parametr s názvem definovaným v metodě. Příklad:
+Definice metody určuje názvy a typy parametrů, které jsou požadovány. Když volání kódu volá metodu, poskytuje konkrétní hodnoty nazvané argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale název argumentu (pokud existuje) použitý v volajícím kódu nemusí být stejný jako parametr s názvem definovaným v metodě. Například:
 
 [!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]
 
@@ -165,9 +165,9 @@ Další informace najdete v tématu [iterátory](../concepts/iterators.md).
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Statické třídy a jejich členové](static-classes-and-static-class-members.md)

@@ -74,7 +74,7 @@ Vysvětluje, jak přidat a odebrat položky místní nabídky v model Windows Fo
     contextMenu1->MenuItems->Clear();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ContextMenu>
 - [Komponenta ContextMenu](contextmenu-component-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: Přehled ovládacího prvku Popisek
+title: Přehled ovládacího prvku Label
 ms.date: 03/30/2017
 f1_keywords:
 - Label
@@ -23,7 +23,7 @@ Ovládací prvky <xref:System.Windows.Forms.Label> model Windows Forms slouží 
   
  Titulek zobrazený v popisku je obsažený ve vlastnosti <xref:System.Windows.Forms.Label.Text%2A>. Vlastnost <xref:System.Windows.Forms.Label.TextAlign%2A> umožňuje nastavit zarovnání textu v rámci popisku. Další informace naleznete v tématu [How to: set a text zobrazený ovládacím prvkem model Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Label>
 - [Postupy: Určení velikosti ovládacího prvku Windows Forms Label k zobrazení jeho obsahu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)

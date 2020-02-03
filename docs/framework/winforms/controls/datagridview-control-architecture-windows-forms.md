@@ -24,7 +24,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> a jeho související t
  Následující části popisují <xref:System.Windows.Forms.DataGridView> doprovodné třídy podrobněji.  
   
 ### <a name="datagridviewelementstates"></a>DataGridViewElementStates  
- <xref:System.Windows.Forms.DataGridViewElementStates> Výčet obsahuje následující hodnoty:  
+ Výčet <xref:System.Windows.Forms.DataGridViewElementStates> obsahuje následující hodnoty:  
   
 - <xref:System.Windows.Forms.DataGridViewElementStates.None>  
   
@@ -120,11 +120,11 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> a jeho související t
   
 |Typ buňky|Hostovaný ovládací prvek|Typ sloupce|  
 |---------------|--------------------|-----------------|  
-|<xref:System.Windows.Forms.DataGridViewButtonCell>|není k dispozici|<xref:System.Windows.Forms.DataGridViewButtonColumn>|  
-|<xref:System.Windows.Forms.DataGridViewCheckBoxCell>|není k dispozici|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>|  
+|<xref:System.Windows.Forms.DataGridViewButtonCell>|neuvedeno|<xref:System.Windows.Forms.DataGridViewButtonColumn>|  
+|<xref:System.Windows.Forms.DataGridViewCheckBoxCell>|neuvedeno|<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>|  
 |<xref:System.Windows.Forms.DataGridViewComboBoxCell>|<xref:System.Windows.Forms.DataGridViewComboBoxEditingControl>|<xref:System.Windows.Forms.DataGridViewComboBoxColumn>|  
-|<xref:System.Windows.Forms.DataGridViewImageCell>|není k dispozici|<xref:System.Windows.Forms.DataGridViewImageColumn>|  
-|<xref:System.Windows.Forms.DataGridViewLinkCell>|není k dispozici|<xref:System.Windows.Forms.DataGridViewLinkColumn>|  
+|<xref:System.Windows.Forms.DataGridViewImageCell>|neuvedeno|<xref:System.Windows.Forms.DataGridViewImageColumn>|  
+|<xref:System.Windows.Forms.DataGridViewLinkCell>|neuvedeno|<xref:System.Windows.Forms.DataGridViewLinkColumn>|  
 |<xref:System.Windows.Forms.DataGridViewTextBoxCell>|<xref:System.Windows.Forms.DataGridViewTextBoxEditingControl>|<xref:System.Windows.Forms.DataGridViewTextBoxColumn>|  
   
 ### <a name="datagridviewrow"></a>DataGridViewRow  
@@ -136,7 +136,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> a jeho související t
   
  Pokud povolíte vlastnost <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> ovládacího prvku <xref:System.Windows.Forms.DataGridView>, zobrazí se speciální řádek pro přidání nových řádků jako poslední řádek. Tento řádek je součástí kolekce <xref:System.Windows.Forms.DataGridView.Rows%2A>, ale má speciální funkce, které mohou vyžadovat vaši pozornost. Další informace najdete v tématu [použití řádku pro nové záznamy v ovládacím prvku DataGridView model Windows Forms](using-the-row-for-new-records-in-the-windows-forms-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)

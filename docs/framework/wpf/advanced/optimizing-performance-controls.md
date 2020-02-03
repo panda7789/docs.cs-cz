@@ -61,20 +61,20 @@ K implementaci odloženého posouvání nastavte vlastnost <xref:System.Windows.
 
 V následující tabulce jsou uvedeny běžné ovládací prvky pro zobrazování dat a jejich podporu funkcí výkonu. V předchozích částech najdete informace o tom, jak tyto funkce povolit.
 
-|Control|Virtualizace|Recyklace kontejneru|Odložené posouvání|
+|Řízení|Virtualizace|Recyklace kontejneru|Odložené posouvání|
 |-------------|--------------------|-------------------------|------------------------|
 |<xref:System.Windows.Controls.ComboBox>|Dá se povolit|Dá se povolit|Dá se povolit|
 |<xref:System.Windows.Controls.ContextMenu>|Dá se povolit|Dá se povolit|Dá se povolit|
-|<xref:System.Windows.Controls.DocumentViewer>|Není k dispozici|Není k dispozici|Dá se povolit|
+|<xref:System.Windows.Controls.DocumentViewer>|Není k dispozici.|Není k dispozici.|Dá se povolit|
 |<xref:System.Windows.Controls.ListBox>|Výchozí|Dá se povolit|Dá se povolit|
 |<xref:System.Windows.Controls.ListView>|Výchozí|Dá se povolit|Dá se povolit|
 |<xref:System.Windows.Controls.TreeView>|Dá se povolit|Dá se povolit|Dá se povolit|
-|<xref:System.Windows.Controls.ToolBar>|Není k dispozici|Není k dispozici|Dá se povolit|
+|<xref:System.Windows.Controls.ToolBar>|Není k dispozici.|Není k dispozici.|Dá se povolit|
 
 > [!NOTE]
 > Příklad toho, jak povolit virtualizaci a recyklaci kontejneru na <xref:System.Windows.Controls.TreeView>, najdete v tématu [zlepšení výkonu prvku TreeView](../controls/how-to-improve-the-performance-of-a-treeview.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozložení](layout.md)
 - [Rozložení a návrh](optimizing-performance-layout-and-design.md)

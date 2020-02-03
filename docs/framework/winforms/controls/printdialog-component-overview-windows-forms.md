@@ -24,7 +24,7 @@ Použijte metodu <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> k zobraz
 
 Při přidání do formuláře se komponenta <xref:System.Windows.Forms.PrintDialog> zobrazí v zásobníku v dolní části Návrhář formulářů v aplikaci Visual Studio.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.PrintDialog>
 - [Komponenta PrintDialog](printdialog-component-windows-forms.md)

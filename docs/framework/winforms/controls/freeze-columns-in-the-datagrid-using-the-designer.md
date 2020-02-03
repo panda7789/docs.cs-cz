@@ -32,7 +32,7 @@ Když uživatelé zobrazují data zobrazená v model Windows Forms <xref:System.
     > [!NOTE]
     > Sloupec můžete také při přidávání ukotvit tak, že vyberete políčko **zmrazené** v dialogovém okně **Přidat sloupec** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType>

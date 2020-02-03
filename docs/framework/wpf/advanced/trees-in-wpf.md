@@ -84,7 +84,7 @@ V mnoha technologiích jsou prvky a komponenty uspořádány ve stromové strukt
   
  Vyhledávání prostředků ale může také překračovat rámec bezprostředního logického stromu. Pro označení aplikace může vyhledávání prostředků dále pokračovat ve slovnících prostředků na úrovni aplikace a následně na podporu motivů a systémové hodnoty, na které se odkazuje jako na statické vlastnosti nebo klíče. Pokud jsou odkazy na prostředky dynamické, mohou vlastní motivy také odkazovat na systémové hodnoty mimo logický strom motivů. Další informace o slovnících Resource a logikě vyhledávání najdete v tématu [prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled vstupu](input-overview.md)
 - [Přehled vykreslování grafiky WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)

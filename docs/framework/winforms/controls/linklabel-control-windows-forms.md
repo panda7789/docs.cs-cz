@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek LinkLabel
+title: LinkLabel – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Label control [Windows Forms]
@@ -31,8 +31,8 @@ Ovládací prvek model Windows Forms `LinkLabel` umožňuje přidat odkazy na we
  [Postupy: Zobrazení webové stránky z ovládacího prvku Windows Forms LinkLabel (Visual Basic)](display-a-web-page-from-a-wf-linklabel-control-visual-basic.md)  
  Ukazuje, jak zobrazit webovou stránku ve výchozím prohlížeči, když uživatel klikne na ovládací prvek `LinkLabel` model Windows Forms.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.LinkLabel> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.LinkLabel>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

@@ -1,5 +1,5 @@
 ---
-title: DomainUpDown – přehled ovládacího prvku
+title: Přehled ovládacího prvku DomainUpDown
 ms.date: 03/30/2017
 f1_keywords:
 - DomainUpDown
@@ -27,7 +27,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DomainUpDown> je
   
  Tento ovládací prvek zobrazí pouze textové řetězce. Pokud chcete ovládací prvek, který zobrazuje číselné hodnoty, použijte ovládací prvek <xref:System.Windows.Forms.NumericUpDown>. Další informace naleznete v tématu [Přehled ovládacího prvku NumericUpDown](numericupdown-control-overview-windows-forms.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DomainUpDown>
 - [Ovládací prvek DomainUpDown](domainupdown-control-windows-forms.md)

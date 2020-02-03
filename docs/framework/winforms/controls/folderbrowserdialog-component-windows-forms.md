@@ -1,5 +1,5 @@
 ---
-title: Komponenta FolderBrowserDialog
+title: FolderBrowserDialog – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - folders [Windows Forms], browsing
@@ -24,7 +24,7 @@ Komponenta model Windows Forms `FolderBrowserDialog` zobrazí rozhraní, se kter
  [Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog](how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)  
  Vysvětluje, jak programově extrahovat vybranou složku z dialogového okna a také pracovat s některými jinými volitelnými vlastnostmi komponenty.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.FolderBrowserDialog>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

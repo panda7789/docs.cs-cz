@@ -93,7 +93,7 @@ Existuje několik druhů *proměnných* v C#, včetně polí, prvků pole, míst
   - Hodnota, která má přesný typ
 - Typ hodnoty s možnou hodnotou null
   - `null` hodnota nebo hodnota daného přesného typu
-- Objekt nástroje
+- objekt
   - Odkaz na `null`, odkaz na objekt libovolného typu odkazu, nebo odkaz na zabalenou hodnotu libovolného typu hodnoty
 - Typ třídy
   - Odkaz na `null`, odkaz na instanci tohoto typu třídy nebo odkaz na instanci třídy odvozené z tohoto typu třídy

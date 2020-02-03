@@ -117,7 +117,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> mů
     }
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>
 - <xref:System.Windows.Forms.RichTextBox.LinkClicked>

@@ -33,7 +33,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  Hierarchie certifikační autority  
  Hierarchie certifikační autority obsahuje několik certifikačních autorit. Je uspořádána tak, že je dosaženo maximálního počtu CERTIFIKAČNÍch autorit jiné certifikační autority v vyšší úrovni hierarchie až do nejvyšší úrovně v hierarchii, která se označuje také jako *Kořenová autorita*.  
   
- certificate  
+ certifikát  
  Digitálně podepsaný příkaz, který obsahuje informace o entitě a veřejném klíči entity, takže tyto dva druhy informací propojuje. Certifikát je vydán důvěryhodnou organizací (neboli entitou), která se označuje jako certifikační autorita, poté, co autorita ověří, že se jedná o subjekt, který je vyjadřuje.  
   
  Certifikáty mohou obsahovat různé typy dat. Například certifikát X. 509 zahrnuje formát certifikátu, sériové číslo certifikátu, algoritmus použitý k podepsání certifikátu, název certifikační autority, která certifikát vystavila, název a veřejný klíč entity požadující certifikát. a podpis certifikační autority.  
@@ -98,7 +98,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  privátní klíč  
  Tajná polovina páru klíčů použitého v algoritmu veřejného klíče. Privátní klíče se obvykle používají k šifrování symetrického klíče relace, k digitálnímu podepisování zprávy nebo k dešifrování zprávy, která byla zašifrována s odpovídajícím veřejným klíčem. Viz také "veřejný klíč".  
   
- migrace.  
+ process  
  Kontext zabezpečení, pod nímž je aplikace spuštěna. Kontext zabezpečení je obvykle přidružen k uživateli, takže všechny aplikace spuštěné v rámci daného procesu přebírají oprávnění a oprávnění vlastnícího uživatele.  
   
  pár veřejného a privátního klíče  
@@ -181,7 +181,7 @@ Některá z terminologie, která se používá, když je diskuze o zabezpečení
  X.509  
  Mezinárodní uznávaný standard pro certifikáty, které definují jejich požadované části.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základní koncepty Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)
 - [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)

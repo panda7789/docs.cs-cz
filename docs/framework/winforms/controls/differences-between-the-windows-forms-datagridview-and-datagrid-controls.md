@@ -32,7 +32,7 @@ ms.locfileid: "76745968"
   
  Vzhledem k tomu, že ovládací prvek <xref:System.Windows.Forms.DataGridView> má zcela novou architekturu, neexistuje žádná jednoduchá cesta pro převod, která vám umožní používat <xref:System.Windows.Forms.DataGrid> přizpůsobení s ovládacím prvkem <xref:System.Windows.Forms.DataGridView>. Mnoho <xref:System.Windows.Forms.DataGrid> přizpůsobení není u ovládacího prvku <xref:System.Windows.Forms.DataGridView> nutné, protože z důvodu integrovaných funkcí, které jsou k dispozici v novém ovládacím prvku. Pokud jste vytvořili vlastní typy sloupců pro ovládací prvek <xref:System.Windows.Forms.DataGrid>, který chcete použít s ovládacím prvkem <xref:System.Windows.Forms.DataGridView>, budete je muset implementovat znovu pomocí nové architektury. Další informace naleznete v tématu [přizpůsobení ovládacího prvku DataGridView model Windows Forms](customizing-the-windows-forms-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGrid>

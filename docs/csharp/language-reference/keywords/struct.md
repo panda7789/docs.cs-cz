@@ -45,7 +45,7 @@ Příklady a další informace najdete v tématu [použití struktur](../../prog
 
 Příklady najdete v tématu [použití struktur](../../programming-guide/classes-and-structs/using-structs.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)

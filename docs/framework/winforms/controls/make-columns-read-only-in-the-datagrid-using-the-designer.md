@@ -30,7 +30,7 @@ Ve výchozím nastavení mohou uživatelé upravovat text a číselná data zobr
     > [!NOTE]
     > Sloupec můžete také nastavit jen pro čtení, když ho přidáte výběrem zaškrtávacího políčka jen **pro čtení** v dialogovém okně **Přidat sloupec** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.ReadOnly%2A?displayProperty=nameWithType>

@@ -22,11 +22,11 @@ Model Windows Forms ovládací prvky nelze seřadit, jsou-li vázány na data. C
   
 ### <a name="to-sort-the-list"></a>Řazení seznamu  
   
-1. Nastavte `Sorted` vlastnost `true`.  
+1. Vlastnost `Sorted` nastavte na hodnotu `true`.  
   
      Toto nastavení přemístí všechny existující položky seznamu v seřazeném pořadí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>

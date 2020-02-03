@@ -81,7 +81,7 @@ Vysvětluje význam a použití Seznam chyb v době návrhu, která se zobrazí 
 [Řešení potíží s řízením a vytvářením komponent](troubleshooting-control-and-component-authoring.md)\
 Ukazuje, jak diagnostikovat a opravovat běžné problémy, ke kterým může dojít při vytváření vlastní komponenty nebo ovládacího prvku.
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 - <xref:System.Windows.Forms.Control?displayProperty=nameWithType>
 

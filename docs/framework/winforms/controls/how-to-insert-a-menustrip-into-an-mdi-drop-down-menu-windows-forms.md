@@ -43,11 +43,11 @@ V některých aplikacích se může v nadřazeném okně MDI lišit druh podří
   
     |Položka nabídky Form2|Hodnota MergeAction|Hodnota MergeIndex|  
     |---------------------|-----------------------|----------------------|  
-    |Soubor|MatchOnly|-1|  
-    |Oddělovač|Insert|2|  
-    |Uložit|Insert|3|  
-    |Uložit a zavřít|Insert|4|  
-    |Oddělovač|Insert|5|  
+    |File|MatchOnly|-1|  
+    |Oddělovač|Vložit|2|  
+    |Uložení|Vložit|3|  
+    |Uložit a zavřít|Vložit|4|  
+    |Oddělovač|Vložit|5|  
   
 10. Vytvořte obslužnou rutinu události pro událost <xref:System.Windows.Forms.Control.Click> `&Open`<xref:System.Windows.Forms.ToolStripMenuItem>.  
   
@@ -95,7 +95,7 @@ V některých aplikacích se může v nadřazeném okně MDI lišit druh podří
   
 - Odkazy na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Vytváření nadřazených formulářů MDI](../advanced/how-to-create-mdi-parent-forms.md)
 - [Postupy: Vytváření podřízených formulářů MDI](../advanced/how-to-create-mdi-child-forms.md)

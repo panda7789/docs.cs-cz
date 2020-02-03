@@ -323,11 +323,11 @@ Podpora animace WPF umožňuje řídit, protřepání, otočení a zmizení ovl�
 
 Další informace najdete v tématu [Přehled animací](graphics-multimedia/animation-overview.md).
 
-## <a name="media"></a>Médium
+## <a name="media"></a>Média
 
 Jedním ze způsobů, jak vyjádřit bohatou část obsahu, je použití audiovizuálních médií. WPF poskytuje speciální podporu pro obrázky, video a zvuk.
 
-### <a name="images"></a>Obrázky
+### <a name="images"></a>Image
 
 Obrázky jsou společné pro většinu aplikací a WPF nabízí několik způsobů jejich použití. Následující obrázek ukazuje uživatelské rozhraní se seznamem, které obsahuje miniatury obrázků. Když je vybraná Miniatura, zobrazí se obrázek v plné velikosti.
 
@@ -422,7 +422,7 @@ Následující obrázek ukazuje obsah tohoto tlačítka:
 
 Další informace o typech obsahu, které jsou podporovány různými ovládacími prvky, naleznete v tématu [model obsahu WPF](controls/wpf-content-model.md).
 
-### <a name="triggers"></a>Aktivační procedury
+### <a name="triggers"></a>Triggery
 
 I když hlavní účel kódu XAML je implementovat vzhled aplikace, můžete také použít XAML k implementaci některých aspektů chování aplikace. Jedním z příkladů je použití triggerů ke změně vzhledu aplikace na základě interakcí uživatelů. Další informace najdete v tématu [styly a šablony](../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
@@ -543,7 +543,7 @@ Vzhledem k tomu, že tento styl cílí na všechny <xref:System.Windows.Controls
 
 Další informace najdete v tématu [styly a šablony](../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
-### <a name="resources"></a>Prostředky
+### <a name="resources"></a>Zdroje a prostředky
 
 Ovládací prvky v aplikaci by měly sdílet stejný vzhled, který může obsahovat cokoli z písma a barev pozadí pro řízení šablon, šablon dat a stylů. Můžete použít podporu WPF pro prostředky uživatelského rozhraní k zapouzdření těchto prostředků v jednom umístění pro opakované použití.
 
@@ -650,7 +650,7 @@ Další informace o vlastních ovládacích prvcích najdete v tématu [Přehled
 
 ## <a name="wpf-best-practices"></a>Osvědčené postupy pro WPF
 
-Stejně jako u jakékoli vývojové platformy je možné WPF použít různými způsoby, abyste dosáhli požadovaného výsledku. Jako způsob, jak zajistit, aby vaše aplikace WPF poskytovaly požadované uživatelské prostředí a splňovaly požadavky cílové skupiny obecně, existují Doporučené osvědčené postupy pro přístupnost, globalizaci a lokalizaci a výkon. Další informace najdete v části .
+Stejně jako u jakékoli vývojové platformy je možné WPF použít různými způsoby, abyste dosáhli požadovaného výsledku. Jako způsob, jak zajistit, aby vaše aplikace WPF poskytovaly požadované uživatelské prostředí a splňovaly požadavky cílové skupiny obecně, existují Doporučené osvědčené postupy pro přístupnost, globalizaci a lokalizaci a výkon. Další informace naleznete v tématu:
 
 - [Usnadnění](../ui-automation/accessibility-best-practices.md)
 - [Globalizace a lokalizace WPF](advanced/wpf-globalization-and-localization-overview.md)
@@ -664,7 +664,7 @@ Prohlédli jsme si klíčové funkce WPF. Nyní je čas vytvořit svou první ap
 > [!div class="nextstepaction"]
 > [Návod: Moje první desktopová aplikace WPF](getting-started/walkthrough-my-first-wpf-desktop-application.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Začínáme s WPF (Windows Presentation Foundation)](getting-started/index.md)
 - [Windows Presentation Foundation](index.md)

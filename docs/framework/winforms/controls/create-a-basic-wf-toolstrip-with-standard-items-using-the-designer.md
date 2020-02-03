@@ -25,7 +25,7 @@ Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStri
 
 3. V podokně **úlohy ToolStrip** vyberte možnost **Vložit standardní položky**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)

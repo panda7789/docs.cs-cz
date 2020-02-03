@@ -25,7 +25,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> má
   
 ### <a name="to-format-a-paragraph-as-a-bulleted-list"></a>Formátování odstavce jako seznamu s odrážkami  
   
-1. Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> vlastnost `true`.  
+1. Vlastnost <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> nastavte na hodnotu `true`.  
   
     ```vb  
     RichTextBox1.SelectionBullet = True  
@@ -68,7 +68,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> má
     > [!NOTE]
     > Všechny tyto vlastnosti mají vliv na všechny odstavce obsahující vybraný text a také na text, který je zadán po aktuálním místě vložení. Když třeba uživatel vybere slovo v rámci odstavce a pak upraví odsazení, bude se nové nastavení vztahovat na celý odstavec, který obsahuje toto slovo, a také na jakékoli odstavce, které se následně zadaly po vybraném odstavci. Informace o tom, jak text programově vybírat, najdete v tématu <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox>
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)

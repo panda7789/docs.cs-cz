@@ -27,6 +27,6 @@ Ovládací prvek `FlowLayoutPanel` uspořádá svůj obsah ve směru vodorovnéh
   
  Viz také [Návod: uspořádání ovládacích prvků na model Windows Forms pomocí FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.FlowLayoutPanel>  
  Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.FlowLayoutPanel>.

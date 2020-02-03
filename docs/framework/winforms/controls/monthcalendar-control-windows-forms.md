@@ -33,7 +33,7 @@ Ovládací prvek model Windows Forms `MonthCalendar` prezentuje intuitivní graf
  [Postupy: Výběr rozsahu kalendářních dat v ovládacím prvku Windows Forms MonthCalendar](how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control.md)  
  Vysvětluje, jak programově vybrat rozsah dat z ovládacího prvku `MonthCalendar`.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.MonthCalendar>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

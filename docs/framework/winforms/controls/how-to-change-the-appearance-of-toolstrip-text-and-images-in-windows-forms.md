@@ -25,7 +25,7 @@ Můžete určit, zda se text a obrázky zobrazí na <xref:System.Windows.Forms.T
   
 ### <a name="to-define-what-is-displayed-on-a-toolstripitem"></a>Definování obsahu zobrazeného na ToolStripItem  
   
-- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na požadovanou hodnotu. Možnosti jsou `Image`, `ImageAndText`, `None`a `Text`. Výchozí hodnota je `ImageAndText`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> na požadovanou hodnotu. Možnosti jsou `Image`, `ImageAndText`, `None`a `Text`. Výchozí formát je `ImageAndText`.  
   
     ```vb  
     ToolStripButton2.DisplayStyle = _  
@@ -38,7 +38,7 @@ Můžete určit, zda se text a obrázky zobrazí na <xref:System.Windows.Forms.T
   
 ### <a name="to-align-text-on-a-toolstripitem"></a>Zarovnání textu v prvku ToolStripItem  
   
-- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.TextAlign%2A> na požadovanou hodnotu. Možnosti jsou jakékoli kombinace horní, prostřední a dolní části s levou, střední a pravou. Výchozí hodnota je `MiddleCenter`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.TextAlign%2A> na požadovanou hodnotu. Možnosti jsou jakékoli kombinace horní, prostřední a dolní části s levou, střední a pravou. Výchozí formát je `MiddleCenter`.  
   
     ```vb  
     ToolStripSplitButton1.TextAlign = _  
@@ -51,7 +51,7 @@ Můžete určit, zda se text a obrázky zobrazí na <xref:System.Windows.Forms.T
   
 ### <a name="to-align-an-image-on-a-toolstripitem"></a>Zarovnání obrázku v prvku ToolStripItem  
   
-- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A> na požadovanou hodnotu. Možnosti jsou jakékoli kombinace horní, prostřední a dolní části s levou, střední a pravou. Výchozí hodnota je `MiddleLeft`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.ImageAlign%2A> na požadovanou hodnotu. Možnosti jsou jakékoli kombinace horní, prostřední a dolní části s levou, střední a pravou. Výchozí formát je `MiddleLeft`.  
   
     ```vb  
     ToolStripSplitButton1.ImageAlign = _  
@@ -64,7 +64,7 @@ Můžete určit, zda se text a obrázky zobrazí na <xref:System.Windows.Forms.T
   
 ### <a name="to-define-how-toolstripitem-text-and-images-are-displayed-relative-to-each-other"></a>Definování způsobu vzájemného zobrazení textu a obrázků prvku ToolStripItem  
   
-- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> na požadovanou hodnotu. Tyto možnosti jsou `ImageAboveText`, `ImageBeforeText`, `Overlay`, `TextAboveImage`a `TextBeforeImage`. Výchozí hodnota je `ImageBeforeText`.  
+- Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A> na požadovanou hodnotu. Tyto možnosti jsou `ImageAboveText`, `ImageBeforeText`, `Overlay`, `TextAboveImage`a `TextBeforeImage`. Výchozí formát je `ImageBeforeText`.  
   
     ```vb  
     ToolStripButton1.TextImageRelation = _  
@@ -75,7 +75,7 @@ Můžete určit, zda se text a obrázky zobrazí na <xref:System.Windows.Forms.T
     toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)

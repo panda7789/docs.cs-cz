@@ -297,7 +297,7 @@ Tyto vlastnosti lze nastavit z kódu i kódu. Tato část ukazuje základní kon
 
 ### <a name="using-pack-uris-in-markup"></a>Použití identifikátorů URI Pack v kódu
 
-Identifikátor URI balíku je zadán v označení nastavením elementu atributu s identifikátorem URI balíčku. Příklad:
+Identifikátor URI balíku je zadán v označení nastavením elementu atributu s identifikátorem URI balíčku. Například:
 
 `<element attribute="pack://application:,,,/File.xaml" />`
 
@@ -305,7 +305,7 @@ Tabulka 1 znázorňuje různé identifikátory URI absolutních balíčků, kter
 
 Tabulka 1: identifikátory URI absolutních balíčků v kódu
 
-|Soubor|Identifikátor URI absolutního balíčku|
+|File|Identifikátor URI absolutního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Místní sestavení souboru prostředků|`"pack://application:,,,/ResourceFile.xaml"`|
 |Soubor prostředků v sestavení místních podsložek|`"pack://application:,,,/Subfolder/ResourceFile.xaml"`|
@@ -321,7 +321,7 @@ Tabulka 2 znázorňuje různé identifikátory URI pro relativní balíčky, kte
 
 Tabulka 2: identifikátory URI relativních balíčků v kódu
 
-|Soubor|Identifikátor URI relativního balíčku|
+|File|Identifikátor URI relativního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Soubor prostředků v místním sestavení|`"/ResourceFile.xaml"`|
 |Soubor prostředků v podsložce místního sestavení|`"/Subfolder/ResourceFile.xaml"`|
@@ -368,7 +368,7 @@ Tabulka 3 znázorňuje různé identifikátory URI relativních balíčků, kter
 
 Tabulka 3: identifikátory URI absolutních balíčků v kódu
 
-|Soubor|Identifikátor URI absolutního balíčku|
+|File|Identifikátor URI absolutního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Místní sestavení souboru prostředků|`Uri uri = new Uri("pack://application:,,,/ResourceFile.xaml", UriKind.Absolute);`|
 |Soubor prostředků v sestavení místních podsložek|`Uri uri = new Uri("pack://application:,,,/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
@@ -384,7 +384,7 @@ Tabulka 4 znázorňuje různé identifikátory URI relativních balíčků, kter
 
 Tabulka 4: identifikátory URI relativních balíčků v kódu
 
-|Soubor|Identifikátor URI relativního balíčku|
+|File|Identifikátor URI relativního balíčku|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Místní sestavení souboru prostředků|`Uri uri = new Uri("/ResourceFile.xaml", UriKind.Relative);`|
 |Soubor prostředků v sestavení místních podsložek|`Uri uri = new Uri("/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
@@ -433,7 +433,7 @@ Následující příklad ukazuje, jak použít identifikátor URI k určení iko
 
 [!code-xaml[WindowIconSnippets#WindowIconSetXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/WindowIconSnippets/XAML/MainWindow.xaml#windowiconsetxaml)]
 
-Další informace najdete v tématu <xref:System.Windows.Window.Icon%2A>.
+Další informace naleznete v tématu <xref:System.Windows.Window.Icon%2A>.
 
 <a name="Loading_Image__Audio__and_Video_Files"></a>
 
@@ -459,6 +459,6 @@ Slovníky prostředků (<xref:System.Windows.ResourceDictionary>) lze použít k
 
 Přehled motivů v WPF naleznete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Prostředek, obsah a datové soubory aplikace WPF](wpf-application-resource-content-and-data-files.md)

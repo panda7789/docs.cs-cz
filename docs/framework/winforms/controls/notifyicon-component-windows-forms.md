@@ -1,5 +1,5 @@
 ---
-title: Komponenta NotifyIcon
+title: NotifyIcon – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application icons [Windows Forms], background processes
@@ -31,7 +31,7 @@ Komponenta model Windows Forms `NotifyIcon` zobrazí ikony v oznamovací oblasti
  [Postupy: Přidružení místní nabídky ke komponentě Windows Forms NotifyIcon](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
  Popisuje postup přidání místní nabídky do součásti `NotifyIcon`.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.NotifyIcon>  
  Poskytuje referenční informace o třídě a jejích členech.  
   

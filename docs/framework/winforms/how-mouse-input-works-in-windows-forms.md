@@ -52,7 +52,7 @@ Přijímání a zpracování vstupu myši je důležitou součástí každé apl
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollDelta%2A>|Získá velikost rozdílové hodnoty přírůstku jednoduchého otočení myši.|  
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>|Získá počet řádků, které se mají posunout při otočení kolečka myši.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)
 - [Zachycení myši ve Windows Forms](mouse-capture-in-windows-forms.md)

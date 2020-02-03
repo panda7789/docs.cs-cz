@@ -1,5 +1,5 @@
 ---
-title: Komponenta ContextMenu
+title: ContextMenu – komponenta
 ms.date: 03/30/2017
 helpviewer_keywords:
 - menus [Windows Forms], shortcut menus
@@ -30,7 +30,7 @@ ms.locfileid: "76746165"
  [Postupy: Přidání a odebrání položek nabídky s komponentou Windows Forms ContextMenu](add-and-remove-menu-items-with-wf-contextmenu-component.md)  
  Vysvětluje, jak přidat a odebrat položky místní nabídky v model Windows Forms.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.ContextMenu>  
  Poskytuje referenční informace o třídě <xref:System.Windows.Forms.ContextMenu> a jejích členech.  
   
@@ -38,7 +38,7 @@ ms.locfileid: "76746165"
  [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
  Obsahuje úplný seznam model Windows Formsch ovládacích prvků s odkazy na informace o jejich použití.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ContextMenuStrip>

@@ -18,7 +18,7 @@ Ve výchozím nastavení ovládací prvek model Windows Forms <xref:System.Windo
   
 ### <a name="to-display-scroll-bars-in-a-richtextbox-control"></a>Zobrazení posuvníků v ovládacím prvku RichTextBox  
   
-1. Nastavte <xref:System.Windows.Forms.RichTextBox.Multiline%2A> vlastnost `true`. Pokud je vlastnost <xref:System.Windows.Forms.RichTextBox.Multiline%2A> nastavená na `false`, zobrazí se žádný typ posuvníku, včetně vodorovné čáry.  
+1. Vlastnost <xref:System.Windows.Forms.RichTextBox.Multiline%2A> nastavte na hodnotu `true`. Pokud je vlastnost <xref:System.Windows.Forms.RichTextBox.Multiline%2A> nastavená na `false`, zobrazí se žádný typ posuvníku, včetně vodorovné čáry.  
   
 2. Nastavte vlastnost <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> na odpovídající hodnotu výčtu <xref:System.Windows.Forms.RichTextBoxScrollBars>.  
   
@@ -39,7 +39,7 @@ Ve výchozím nastavení ovládací prvek model Windows Forms <xref:System.Windo
     |`false`|Text v ovládacím prvku není automaticky upravován tak, aby odpovídal šířce ovládacího prvku, takže se posune napravo, dokud se nedosáhne konce řádku. Tuto hodnotu použijte, pokud jste vybrali vodorovné posuvníky nebo obě.|  
     |`true` (výchozí)|Text v ovládacím prvku se automaticky upraví tak, aby odpovídal šířce ovládacího prvku. Vodorovný posuvník se nezobrazí. Tuto hodnotu použijte, pokud jste vybrali svislé posuvníky nebo žádné, nahoře, aby se zobrazil jeden nebo více odstavců.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBoxScrollBars>
 - <xref:System.Windows.Forms.RichTextBox>

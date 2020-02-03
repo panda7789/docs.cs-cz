@@ -65,7 +65,7 @@ Model Windows Forms <xref:System.Windows.Forms.CheckBox> ovládací prvek slouž
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.CheckBox>
 - [Přehled ovládacího prvku CheckBox](checkbox-control-overview-windows-forms.md)

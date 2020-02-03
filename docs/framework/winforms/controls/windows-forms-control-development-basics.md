@@ -30,7 +30,7 @@ Model Windows Forms ovládací prvek je třída, která je odvozena přímo nebo
   
  Základní třída pro ovládací prvky model Windows Forms, <xref:System.Windows.Forms.Control>, poskytuje instalace, která je nutná pro vizuální zobrazení v aplikacích pro systém Windows na straně klienta. <xref:System.Windows.Forms.Control> poskytuje popisovač okna, zpracovává směrování zpráv a poskytuje události myši a klávesnice a také mnoho dalších událostí uživatelského rozhraní. Poskytuje pokročilé rozložení a obsahuje vlastnosti, které jsou specifické pro vizuální zobrazení, například <xref:System.Windows.Forms.Control.ForeColor%2A>, <xref:System.Windows.Forms.Control.BackColor%2A>, <xref:System.Windows.Forms.Control.Height%2A>, <xref:System.Windows.Forms.Control.Width%2A>a mnoho dalších. Navíc poskytuje zabezpečení, podporu vláken a interoperabilitu s ovládacími prvky ActiveX. Vzhledem k tomu, že velká část infrastruktury je poskytována základní třídou, je poměrně snadné vyvíjet vlastní ovládací prvky model Windows Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms](how-to-develop-a-simple-windows-forms-control.md)
 - [Vývoj složeného ovládacího prvku Windows Forms](developing-a-composite-windows-forms-control.md)

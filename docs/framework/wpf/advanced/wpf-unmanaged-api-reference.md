@@ -22,6 +22,6 @@ Knihovny Windows Presentation Foundation (WPF) zveřejňují množství nespravo
  [Funkce SaveToHistory](savetohistory-function-wpf-unmanaged-api-reference.md)  
  [Funkce SetFakeActiveWindow](setfakeactivewindow-function-wpf-unmanaged-api-reference.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokročilé](index.md)

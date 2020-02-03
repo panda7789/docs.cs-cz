@@ -16,7 +16,7 @@ ms.lasthandoff: 01/24/2020
 ms.locfileid: "76739562"
 ---
 # <a name="how-to-change-the-borders-of-windows-forms"></a>Postupy: Změna ohraničení Windows Forms
-Máte několik stylů ohraničení, ze kterých si můžete vybrat, když určíte vzhled a chování model Windows Forms. Změnou vlastnosti <xref:System.Windows.Forms.Form.FormBorderStyle%2A> můžete řídit chování formuláře při změně velikosti. Kromě toho nastavení <xref:System.Windows.Forms.Form.FormBorderStyle%2A> ovlivňuje způsob zobrazení záhlaví a také to, jaká tlačítka se na něm mohou zobrazovat. Další informace najdete v tématu <xref:System.Windows.Forms.FormBorderStyle>.  
+Máte několik stylů ohraničení, ze kterých si můžete vybrat, když určíte vzhled a chování model Windows Forms. Změnou vlastnosti <xref:System.Windows.Forms.Form.FormBorderStyle%2A> můžete řídit chování formuláře při změně velikosti. Kromě toho nastavení <xref:System.Windows.Forms.Form.FormBorderStyle%2A> ovlivňuje způsob zobrazení záhlaví a také to, jaká tlačítka se na něm mohou zobrazovat. Další informace naleznete v tématu <xref:System.Windows.Forms.FormBorderStyle>.  
   
  Existuje Rozsáhlá podpora pro tento úkol v aplikaci Visual Studio.  
   
@@ -43,7 +43,7 @@ Máte několik stylů ohraničení, ze kterých si můžete vybrat, když určí
   
      Pokud jste navíc vybrali styl ohraničení formuláře, který poskytuje Volitelná tlačítka **minimalizovat** a **maximalizovat** , můžete určit, zda chcete, aby obě tato tlačítka byla funkční. Tato tlačítka jsou užitečná, když chcete přesně řídit činnost koncového uživatele. Tlačítka **minimalizovat** a **maximalizovat** jsou ve výchozím nastavení povolena a jejich funkce jsou zpracovávány prostřednictvím okna **vlastnosti** .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.FormBorderStyle>
 - <xref:System.Windows.Forms.FormBorderStyle.FixedDialog>

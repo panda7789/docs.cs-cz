@@ -32,7 +32,7 @@ Ovládací prvky <xref:System.Windows.Forms.GroupBox> model Windows Forms slouž
   
 3. Nastavte vlastnost <xref:System.Windows.Forms.GroupBox.Text%2A> skupinového pole na příslušný titulek.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.GroupBox>
 - [Ovládací prvek GroupBox](groupbox-control-windows-forms.md)

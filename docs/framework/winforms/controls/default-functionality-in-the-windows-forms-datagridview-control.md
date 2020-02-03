@@ -46,7 +46,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DataGridView> po
   
 - Když uživatel klikne na záhlaví sloupce, automaticky seřadí řádky na základě podkladových dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)

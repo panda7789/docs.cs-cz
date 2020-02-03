@@ -135,7 +135,7 @@ End Namespace
   
  Kompilovaný BAML (generovaný přes PresentationBuildTask) používá všechny kroky, i když BAML by neměl obsahovat také nekvalifikované názvy sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Porozumění oborům názvů XML](https://go.microsoft.com/fwlink/?LinkId=98069)
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

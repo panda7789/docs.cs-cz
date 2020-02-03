@@ -466,7 +466,7 @@ Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobně jako na n
  [!code-xaml[WindowsOverviewSnippets#ShowInTaskbarWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ShowInTaskbarWindow.xaml#showintaskbarwindowmarkup1)]  
   
 <a name="SecurityConsiderations"></a>   
-## <a name="security-considerations"></a>Důležité informace o zabezpečení  
+## <a name="security-considerations"></a>Aspekty zabezpečení  
  <xref:System.Windows.Window> vyžaduje vytvoření instance `UnmanagedCode` oprávnění zabezpečení. Pro aplikace nainstalované a spouštěné z místního počítače spadá do sady oprávnění udělených aplikaci.  
   
  To však spadá mimo sadu oprávnění udělených aplikacím, které jsou spouštěny z Internetu nebo místního intranetu pomocí technologie ClickOnce. V důsledku toho se uživatelům zobrazí upozornění zabezpečení ClickOnce a bude muset zvýšit úroveň oprávnění pro aplikaci na úplný vztah důvěryhodnosti.  
@@ -479,7 +479,7 @@ Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobně jako na n
   
  Dialogová okna jsou okna, která se často používají k získání informací z uživatele k dokončení funkce. Například když chce uživatel otevřít soubor, dialogové okno **otevřít soubor** se obvykle zobrazí v aplikaci k získání názvu souboru od uživatele. Další informace najdete v tématu [Přehled dialogových oken](dialog-boxes-overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Window>
 - <xref:System.Windows.MessageBox>

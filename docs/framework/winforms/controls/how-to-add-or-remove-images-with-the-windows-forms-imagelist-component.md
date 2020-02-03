@@ -141,7 +141,7 @@ imageList1.Images.Clear();
 imageList1.Images.RemoveByKey("myPhoto");  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Komponenta ImageList](imagelist-component-windows-forms.md)
 - [Přehled komponenty ImageList](imagelist-component-overview-windows-forms.md)

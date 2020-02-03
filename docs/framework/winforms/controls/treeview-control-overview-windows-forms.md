@@ -1,5 +1,5 @@
 ---
-title: Přehled ovládacího prvku TreeView
+title: TreeView – přehled ovládacího prvku
 ms.date: 03/30/2017
 f1_keywords:
 - TreeView
@@ -21,7 +21,7 @@ Pomocí ovládacího prvku model Windows Forms <xref:System.Windows.Forms.TreeVi
 
 Klíčové vlastnosti ovládacího prvku <xref:System.Windows.Forms.TreeView> jsou <xref:System.Windows.Forms.TreeView.Nodes%2A> a <xref:System.Windows.Forms.TreeView.SelectedNode%2A>. Vlastnost <xref:System.Windows.Forms.TreeView.Nodes%2A> obsahuje seznam uzlů nejvyšší úrovně ve stromovém zobrazení. Vlastnost <xref:System.Windows.Forms.TreeView.SelectedNode%2A> nastaví aktuálně vybraný uzel. Vedle uzlů lze zobrazit ikony. Ovládací prvek používá obrázky z <xref:System.Windows.Forms.ImageList> pojmenované ve vlastnosti <xref:System.Windows.Forms.TreeView.ImageList%2A> stromového zobrazení. Vlastnost <xref:System.Windows.Forms.TreeView.ImageIndex%2A> nastaví výchozí obrázek pro uzly ve stromovém zobrazení. Další informace o zobrazení obrázků najdete v tématu [Postup: nastavení ikon pro ovládací prvek model Windows Forms TreeView](how-to-set-icons-for-the-windows-forms-treeview-control.md). Pokud používáte sadu Visual Studio 2005, máte přístup k velké knihovně standardních imagí, které lze použít s ovládacím prvkem <xref:System.Windows.Forms.TreeView>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.TreeView>
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)

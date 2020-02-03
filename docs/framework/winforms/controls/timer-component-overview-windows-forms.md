@@ -1,5 +1,5 @@
 ---
-title: Přehled součásti Časovač
+title: Přehled komponenty Timer
 ms.date: 03/30/2017
 f1_keywords:
 - Timer
@@ -20,7 +20,7 @@ ms.locfileid: "76742783"
 ## <a name="key-properties-methods-and-events"></a>Klíčové vlastnosti, metody a události  
  Délka intervalu je definována vlastností <xref:System.Windows.Forms.Timer.Interval%2A>, jejíž hodnota je v milisekundách. Je-li povolena komponenta, událost <xref:System.Windows.Forms.Timer.Tick> je vyvolána každý interval. Tady byste měli přidat kód, který se má spustit. Další informace najdete v tématu Postupy [: spouštění procedur v nastavených intervalech pomocí komponenty časovače model Windows Forms](run-procedures-at-set-intervals-with-wf-timer-component.md). Klíčové metody součásti <xref:System.Windows.Forms.Timer> jsou <xref:System.Windows.Forms.Timer.Start%2A> a <xref:System.Windows.Forms.Timer.Stop%2A>, které zapínají a vypínají časovač. Při vypnutí časovače je obnovena; neexistuje žádný způsob, jak pozastavit komponentu <xref:System.Windows.Forms.Timer>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Timer>
 - [Komponenta Timer](timer-component-windows-forms.md)

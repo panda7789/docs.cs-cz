@@ -23,7 +23,7 @@ ms.locfileid: "76746868"
 
 Obrázek může zobrazit několik ovládacích prvků model Windows Forms. Tyto obrázky mohou být ikony, které objasňují účel ovládacího prvku, jako je například ikona diskety na tlačítku, které označuje příkaz Save. Alternativně mohou být ikony obrázky na pozadí, aby ovládací prvek poskytoval vzhled a chování, které chcete.
 
-## <a name="programmatic"></a>Blokují
+## <a name="programmatic"></a>Programová
 
 Nastavte vlastnost `Image` nebo `BackgroundImage` ovládacího prvku na objekt typu <xref:System.Drawing.Image>. Obecně se načítá obrázek ze souboru pomocí metody <xref:System.Drawing.Image.FromFile%2A>.
 
@@ -54,13 +54,13 @@ pictureBox1->Image = Image::FromFile(String::Concat
    "\\Image.gif"));
 ```
 
-## <a name="designer"></a>Návrhář
+## <a name="designer"></a>Designer
 
 1. V okně **vlastnosti** sady Visual Studio vyberte vlastnost **Image** nebo **BackgroundImage** ovládacího prvku a potom vyberte tlačítko se třemi tečkami (![se třemi tečkami v aplikaci Visual Studio](./media/visual-studio-ellipsis-button.png)), aby se zobrazilo dialogové okno **Vybrat prostředek** .
 
 2. Vyberte obrázek, který chcete zobrazit.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Image.FromFile%2A>
 - <xref:System.Drawing.Image>

@@ -53,7 +53,7 @@ Pomocí funkce zobrazení dlaždice ovládacího prvku <xref:System.Windows.Form
   
 - Soubor ikony s názvem book. ico ve stejném adresáři jako spustitelný soubor.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.TileSize%2A>

@@ -237,6 +237,6 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 ## <a name="rebuilding-after-changing-build-type"></a>Opětovné sestavení po změně typu sestavení  
  Po změně typu sestavení datového souboru aplikace je nutné znovu sestavit celou aplikaci, abyste zajistili, že tyto změny budou provedeny. Pokud sestavíte pouze aplikaci, změny se neprojeví.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)

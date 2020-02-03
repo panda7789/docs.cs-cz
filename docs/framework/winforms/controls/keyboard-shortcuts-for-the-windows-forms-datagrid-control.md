@@ -50,7 +50,7 @@ ms.locfileid: "76745035"
 |Pro aktuální řádek volejte metodu <xref:System.Windows.Forms.DataGrid.EndEdit%2A>.|CTRL + ENTER|  
 |Zadejte hodnotu <xref:System.DBNull.Value?displayProperty=nameWithType> v buňce v režimu úprav.|CTRL + 0|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)

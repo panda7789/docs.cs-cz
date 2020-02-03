@@ -27,9 +27,9 @@ Model sestavení a nasazení poskytuje možnost vytvářet a nasazovat aplikace 
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)  
  [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)  
- [Postupy](build-and-deploy-how-to-topics.md)  
+ [Témata s postupy](build-and-deploy-how-to-topics.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  MSBuild  
   
 ## <a name="related-sections"></a>Související oddíly  

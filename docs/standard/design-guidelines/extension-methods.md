@@ -1,5 +1,5 @@
 ---
-title: Rozšiřující metody
+title: Metody rozšíření
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
@@ -10,7 +10,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76741620"
 ---
-# <a name="extension-methods"></a>Rozšiřující metody
+# <a name="extension-methods"></a>Metody rozšíření
 Rozšiřující metody jsou funkce jazyka, která umožňuje volání statických metod pomocí syntaxe volání metody instance. Tyto metody musí mít alespoň jeden parametr, který představuje instanci, na které je metoda provozována.
 
  Třída, která definuje takové metody rozšíření, je označována jako třída "sponzor" a musí být deklarována jako statická. Chcete-li použít rozšiřující metody, musí jedna importovat obor názvů definující třídu sponzor.
@@ -45,7 +45,7 @@ Rozšiřující metody jsou funkce jazyka, která umožňuje volání statickýc
 
  *Přetištěno oprávněním Pearsonova vzdělávání, Inc. z [pokynů pro návrh rozhraní: konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) od Krzysztof Cwalina a Brad Abrams, publikovaly 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series.*
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

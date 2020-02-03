@@ -30,8 +30,8 @@ Ovládací prvek model Windows Forms `CheckedListBox` zobrazí seznam položek, 
  [Postupy: Určení zaškrtnutých položek v ovládacím prvku Windows Forms CheckedListBox](how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control.md)  
  Popisuje, jak procházet seznam, abyste zjistili, které položky jsou zaškrtnuté.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.CheckedListBox> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.CheckedListBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

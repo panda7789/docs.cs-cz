@@ -29,8 +29,8 @@ Ovládací prvek model Windows Forms `CheckBox` označuje, zda je konkrétní po
  [Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox](how-to-set-options-with-windows-forms-checkbox-controls.md)  
  Popisuje, jak použít zaškrtávací políčko k nastavení možností, jako jsou vlastnosti objektu.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.CheckBox> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.CheckBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

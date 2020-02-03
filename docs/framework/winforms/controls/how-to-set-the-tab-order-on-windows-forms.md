@@ -55,7 +55,7 @@ Ovládací prvek, jehož vlastnost <xref:System.Windows.Forms.Control.TabStop%2A
 > [!NOTE]
 > Skupina přepínačů má v době běhu jednu zarážku tabulátoru. Vybrané tlačítko (to znamená, že tlačítko s vlastností <xref:System.Windows.Forms.RadioButton.Checked%2A> nastavenou na hodnotu `true`) má vlastnost <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavenou na `true`, zatímco ostatní tlačítka mají svou <xref:System.Windows.Forms.Control.TabStop%2A> vlastnost nastavenou na `false`. Další informace o seskupení <xref:System.Windows.Forms.RadioButton> ovládacích prvků naleznete v tématu [seskupení model Windows Forms ovládací prvky RadioButton pro fungování jako sady](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

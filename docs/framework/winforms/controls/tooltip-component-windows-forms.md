@@ -25,8 +25,8 @@ Komponenta model Windows Forms <xref:System.Windows.Forms.ToolTip> zobrazí text
  [Postupy: Změna zpoždění komponenty Windows Forms ToolTip](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)  
  Vysvětluje, jak nastavit hodnoty, které řídí, jak dlouho se má popis zobrazit, a délka času, pro který je zobrazen.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ToolTip> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.ToolTip>  
  Poskytuje referenční informace o třídě a jejích členech.  
   
 ## <a name="related-sections"></a>Související oddíly  

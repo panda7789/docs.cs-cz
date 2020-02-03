@@ -34,7 +34,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.WebBrowser> můžete do ap
   
 - Odkazy na sestavení `System`, `System.Drawing`a `System.Windows.Forms`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.WebBrowser>
 - [Ovládací prvek WebBrowser](webbrowser-control-windows-forms.md)

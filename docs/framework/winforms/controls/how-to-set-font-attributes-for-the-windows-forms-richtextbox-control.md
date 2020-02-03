@@ -53,7 +53,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.RichTextBox> má
     > [!NOTE]
     > Tyto vlastnosti ovlivní pouze vybraný text, nebo, pokud není vybrán žádný text, text, který je zadán v aktuálním umístění bodu vložení. Informace o tom, jak text programově vybírat, najdete v tématu <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.RichTextBox>
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)

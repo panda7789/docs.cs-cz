@@ -13,7 +13,7 @@ ms.locfileid: "76733048"
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet store` – uloží zadaná sestavení do [úložiště balíčků modulu runtime](../deploying/runtime-store.md).
 
@@ -79,6 +79,6 @@ Uložit balíčky zadané v *balíčku. csproj* bez optimalizace:
 
 `dotnet store --manifest packages.csproj --skip-optimization`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Úložiště balíčků modulu runtime](../deploying/runtime-store.md)

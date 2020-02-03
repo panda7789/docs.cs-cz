@@ -31,7 +31,7 @@ Visual Studio přidá všechny odkazy na ovládací prvek v projektu. Další in
 > [!NOTE]
 > Nástroj pro import ovládacího prvku ActiveX (AxImp. exe) vytvoří argumenty události jiného typu, než model Windows Forms se čekalo při dovozu dynamických knihoven ActiveX. Argumenty vytvořené nástrojem AxImp. exe jsou podobné následujícímu: `Invoke(object sender, DWebBrowserEvents2_ProgressChangeEvent e)`, když se `Invoke(object sender, DWebBrowserEvents2_ProgressChangeEventArgs e)` očekává. Mějte na paměti, že tato nepravidelnost nebrání v normálním fungování kódu. Podrobnosti najdete v tématu [model Windows Forms Importéru ovládacího prvku ActiveX (Aximp. exe)](../../tools/aximp-exe-windows-forms-activex-control-importer.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Ovládací prvky a programovatelné objekty v porovnání s různými jazyky a knihovnami](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0061wezk(v=vs.100))

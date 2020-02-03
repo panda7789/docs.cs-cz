@@ -33,7 +33,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> obsahuje třídu <xref
   
 - Odkazy na sestavení System, System. Drawing, System. Windows. Forms a System. Windows. Forms. VisualStyles.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)
 - [Architektura ovládacího prvku DataGridView](datagridview-control-architecture-windows-forms.md)

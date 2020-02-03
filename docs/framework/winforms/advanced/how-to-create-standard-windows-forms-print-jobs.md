@@ -76,7 +76,7 @@ Základem tisku v model Windows Forms je <xref:System.Drawing.Printing.PrintDocu
   
      Další informace o konkrétních model Windows Forms tiskových úlohách, včetně postupu při programovém vytvoření tiskové úlohy, najdete v tématu <xref:System.Drawing.Printing.PrintPageEventArgs>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Printing.PrintDocument>
 - [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)

@@ -111,6 +111,6 @@ Při prezentaci dat v ovládacím prvku model Windows Forms <xref:System.Windows
     MessageBox::Show(s);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)

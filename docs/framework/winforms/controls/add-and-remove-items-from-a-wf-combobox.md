@@ -136,7 +136,7 @@ Položky lze přidat do model Windows Forms pole se seznamem, seznam nebo zaškr
     listBox1->Items->Clear();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>

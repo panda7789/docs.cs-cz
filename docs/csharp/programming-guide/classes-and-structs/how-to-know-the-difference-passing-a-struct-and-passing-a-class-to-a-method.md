@@ -25,9 +25,9 @@ Následující příklad ukazuje, jak se předávání [struktury](../../languag
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideObjects#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#32)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy](./classes.md)
 - [Struktury](./structs.md)
 - [Předávání parametrů](./passing-parameters.md)

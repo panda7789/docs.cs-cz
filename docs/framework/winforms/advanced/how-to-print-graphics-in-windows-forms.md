@@ -66,7 +66,7 @@ V aplikaci pro Windows často budete chtít vytisknout grafiky. Třída <xref:Sy
        (this, &Form1::printDocument1_PrintPage);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Drawing.Graphics>
 - <xref:System.Drawing.Brush>

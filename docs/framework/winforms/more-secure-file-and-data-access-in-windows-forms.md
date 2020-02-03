@@ -358,7 +358,7 @@ public void Write()
   
  Vzhledem k tomu, že nemůžete získat přístup k registru s částečnou důvěryhodností, možná budete muset najít další metody ukládání dat. Při ukládání nastavení aplikace použijte místo registru izolované úložiště. Izolované úložiště lze také použít k ukládání jiných souborů specifických pro aplikaci. Můžete také uložit globální informace o aplikaci o serveru nebo webu původu, protože ve výchozím nastavení je aplikaci uděleno právo na přístup k webu svého původu.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečenější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
 - [Dodatečné informace o zabezpečení ve Windows Forms](additional-security-considerations-in-windows-forms.md)

@@ -62,8 +62,8 @@ Ovládací prvek model Windows Forms `ListView` zobrazí seznam položek s ikona
   
 - [Návod: Vytváření rozhraní ve stylu Průzkumníka s ovládacími prvky ListView a TreeView pomocí Návrháře](creating-an-explorer-style-interface-with-the-listview-and-treeview.md)  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.ListView> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.ListView>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
@@ -76,6 +76,6 @@ Ovládací prvek model Windows Forms `ListView` zobrazí seznam položek s ikona
  [Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Poskytuje pokyny pro rozložení formuláře Windows s více podokny.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

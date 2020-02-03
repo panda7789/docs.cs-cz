@@ -66,7 +66,7 @@ ms.locfileid: "76744085"
 
 3. Zadejte kód, který bude datovou sadu vyplnit.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku DataGrid](datagrid-control-overview-windows-forms.md)
 - [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)

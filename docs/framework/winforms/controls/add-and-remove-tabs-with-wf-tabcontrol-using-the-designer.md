@@ -28,7 +28,7 @@ Když umístíte ovládací prvek <xref:System.Windows.Forms.TabControl> do form
 
      V okně **vlastnosti** klikněte na tlačítko se **třemi tečkami** (![tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) vedle vlastnosti <xref:System.Windows.Forms.TabControl.TabPages%2A> otevřete **Editor kolekce TabPage**. Klikněte na tlačítko **Přidat** nebo **Odebrat** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)

@@ -36,7 +36,7 @@ Až budete s tímto návodem hotový, váš vlastní ovládací prvek bude vypad
 
 Úplný výpis kódu naleznete v tématu [How to: Create a model Windows Forms Control, který využívá funkce pro dobu návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120)).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Aby bylo možné dokončit tento návod, budete potřebovat aplikaci Visual Studio.
 
@@ -177,7 +177,7 @@ Toto je rozsah přizpůsobení `MarqueeControl`. Běhové funkce jsou implemento
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#260](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrol.cs#260)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#260](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrol.vb#260)]
 
-2. Přepsat <xref:System.Windows.Forms.Control.OnLayout%2A> metody.
+2. Přepsat metodu <xref:System.Windows.Forms.Control.OnLayout%2A>.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#270](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrol.cs#270)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#270](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrol.vb#270)]
@@ -233,7 +233,7 @@ K implementaci funkce periodické animace budete používat <xref:System.Compone
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#140](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueetext.cs#140)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#140](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueetext.vb#140)]
 
-10. Implementace `IMarqueeWidget` rozhraní.
+10. Implementujte rozhraní `IMarqueeWidget`.
 
     Metody `StartMarquee` a `StopMarquee` vyvolají <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A> metody komponenty <xref:System.ComponentModel.BackgroundWorker> ke spuštění a zastavení animace.
 
@@ -299,7 +299,7 @@ Vzhledem k tomu, že ovládací prvek `MarqueeBorder` může mít podřízené o
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#40)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#40)]
 
-9. Implementace `IMarqueeWidget` rozhraní.
+9. Implementujte rozhraní `IMarqueeWidget`.
 
     Metody `StartMarquee` a `StopMarquee` vyvolají <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> a <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A> metody komponenty <xref:System.ComponentModel.BackgroundWorker> ke spuštění a zastavení animace.
 
@@ -430,7 +430,7 @@ V případě `MarqueeControlRootDesigner` třídy zavoláte metodu <xref:System.
 
 ## <a name="add-designer-verbs-to-your-custom-designer"></a>Přidání příkazů návrháře do vlastního návrháře
 
-Příkaz návrháře je příkaz nabídky propojený s obslužnou rutinou události. Příkazy návrháře jsou přidány do místní nabídky součásti v době návrhu. Další informace najdete v tématu <xref:System.ComponentModel.Design.DesignerVerb>.
+Příkaz návrháře je příkaz nabídky propojený s obslužnou rutinou události. Příkazy návrháře jsou přidány do místní nabídky součásti v době návrhu. Další informace naleznete v tématu <xref:System.ComponentModel.Design.DesignerVerb>.
 
 Do návrháře přidáte dva příkazy návrháře: **Spusťte test** a **zastavte test**. Tyto příkazy vám umožní zobrazit v době návrhu chování `MarqueeControl` v době běhu. Tyto operace budou přidány do `MarqueeControlRootDesigner`.
 
@@ -468,12 +468,12 @@ Ovládací prvek `MarqueeBorder` zpřístupňuje v okno Vlastnosti několik vlas
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#92](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#92)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#92](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#92)]
 
-4. Přepsat <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A> metody. Tato implementace vrací <xref:System.Drawing.Design.UITypeEditorEditStyle.DropDown>, která oznamuje vývojovému prostředí, jak zobrazit `LightShapeEditor`.
+4. Přepsat metodu <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A>. Tato implementace vrací <xref:System.Drawing.Design.UITypeEditorEditStyle.DropDown>, která oznamuje vývojovému prostředí, jak zobrazit `LightShapeEditor`.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#93](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#93)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#93](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#93)]
 
-5. Přepsat <xref:System.Drawing.Design.UITypeEditor.EditValue%2A> metody. Tato implementace se dotazuje návrhového prostředí pro objekt <xref:System.Windows.Forms.Design.IWindowsFormsEditorService>. V případě úspěchu vytvoří `LightShapeSelectionControl`. Metoda <xref:System.Windows.Forms.Design.IWindowsFormsEditorService.DropDownControl%2A> je vyvolána pro spuštění `LightShapeEditor`. Návratová hodnota z tohoto vyvolání se vrátí do prostředí návrhu.
+5. Přepsat metodu <xref:System.Drawing.Design.UITypeEditor.EditValue%2A>. Tato implementace se dotazuje návrhového prostředí pro objekt <xref:System.Windows.Forms.Design.IWindowsFormsEditorService>. V případě úspěchu vytvoří `LightShapeSelectionControl`. Metoda <xref:System.Windows.Forms.Design.IWindowsFormsEditorService.DropDownControl%2A> je vyvolána pro spuštění `LightShapeEditor`. Návratová hodnota z tohoto vyvolání se vrátí do prostředí návrhu.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#94](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#94)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#94](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#94)]
@@ -535,7 +535,7 @@ Vlastnost `MarqueeLightShape` podporuje dva typy lehkých tvarů: `Square` a `Ci
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#360](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#360)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#360](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#360)]
 
-11. Přepsat <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Tato implementace Vykreslí vyplněný čtverec a kruh. Tím se také zvýrazní vybraná hodnota vykreslením ohraničení kolem jednoho obrazce nebo druhého.
+11. Přepsat metodu <xref:System.Windows.Forms.Control.OnPaint%2A>. Tato implementace Vykreslí vyplněný čtverec a kruh. Tím se také zvýrazní vybraná hodnota vykreslením ohraničení kolem jednoho obrazce nebo druhého.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#380](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#380)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#380](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#380)]
@@ -608,7 +608,7 @@ V tomto okamžiku můžete sestavit `MarqueeControlLibrary` projekt. Otestujte i
 
 - Určuje, jak jsou ovládací prvky serializovány a jak jsou pro ně generovány kódy. Další informace naleznete v tématu [generování a kompilace dynamického zdrojového kódu](../../reflection-and-codedom/dynamic-source-code-generation-and-compilation.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.UserControl>
 - <xref:System.Windows.Forms.Design.ParentControlDesigner>

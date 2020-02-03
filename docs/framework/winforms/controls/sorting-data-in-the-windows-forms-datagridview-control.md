@@ -28,7 +28,7 @@ Popisuje, jak uživatelům umožnit řazení podle sloupců, které ve výchozí
 [Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)  
 Popisuje, jak řadit data programově a jak přizpůsobit řazení pomocí události <xref:System.Windows.Forms.DataGridView.SortCompare?displayProperty=nameWithType> nebo implementací rozhraní <xref:System.Collections.IComparer>.
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 <xref:System.Windows.Forms.DataGridView>  
 Poskytuje referenční dokumentaci pro ovládací prvek <xref:System.Windows.Forms.DataGridView>.  
@@ -42,7 +42,7 @@ Poskytuje referenční dokumentaci pro vlastnost <xref:System.Windows.Forms.Data
 <xref:System.Windows.Forms.DataGridViewColumnSortMode>  
 Poskytuje referenční dokumentaci pro výčet <xref:System.Windows.Forms.DataGridViewColumnSortMode>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

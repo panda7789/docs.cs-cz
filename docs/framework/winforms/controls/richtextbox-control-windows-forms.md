@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvek RichTextBox
+title: RichTextBox – ovládací prvek
 ms.date: 03/30/2017
 helpviewer_keywords:
 - text boxes
@@ -44,8 +44,8 @@ Ovládací prvek model Windows Forms `RichTextBox` slouží k zobrazení, zadán
  [Postupy: Nastavení odsazení, předsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox](set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md)  
  Popisuje, jak formátovat odstavce v ovládacím prvku `RichTextBox`.  
   
-## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.RichTextBox> – třída  
+## <a name="reference"></a>Referenční informace  
+ Třída <xref:System.Windows.Forms.RichTextBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  

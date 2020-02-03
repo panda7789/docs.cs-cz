@@ -34,7 +34,7 @@ Jakmile je aplikace Spark připojená do [balíčku](https://spark.apache.org/do
 | :---------------------| :---------- 
 | --Třída               | Vstupní bod pro vaši aplikaci.</br>_například org. Apache. spark. deploy. dotnet. DotnetRunner_
 | – hlavní              | <a href="https://spark.apache.org/docs/latest/submitting-applications.html#master-urls">Hlavní adresa URL</a> clusteru</br>_např. příze_
-| --Deploy-Mode         | Určuje, jestli se má ovladač nasadit na pracovní uzly (<code>cluster</code>) nebo lokálně jako externí klient (<code>client</code>).</br>Výchozí hodnota: <code>client</code>
+| --Deploy-Mode         | Určuje, jestli se má ovladač nasadit na pracovní uzly (<code>cluster</code>) nebo lokálně jako externí klient (<code>client</code>).</br>Výchozí: <code>client</code>
 | --conf                | Libovolná vlastnost konfigurace Sparku ve formátu <code>key=value</code>.</br>_například Spark. příze. appMasterEnv. DOTNET_WORKER_DIR = .\worker\Microsoft.Spark.Worker_
 | --soubory               | Čárkami oddělený seznam souborů, které se umístí do pracovního adresáře každého prováděcího modulu.<br/><ul><li>Upozorňujeme, že tato možnost je platná pouze pro režim příze.</li><li>Podporuje zadání názvů souborů s # podobným Hadoop.</br></ul>_např. <code>myLocalSparkApp.dll#appSeen.dll</code>. Vaše aplikace by měla používat název jako <code>appSeen.dll</code> k odkazování <code>myLocalSparkApp.dll</code> při spuštění na VLÁKNě._</li>
 | --archivy          | Čárkami oddělený seznam archivů, které se mají extrahovat do pracovního adresáře každého prováděcího modulu.</br><ul><li>Upozorňujeme, že tato možnost je platná pouze pro režim příze.</li><li>Podporuje zadání názvů souborů s # podobným Hadoop.</br></ul>_např. <code>hdfs://&lt;path to your worker file&gt;/Microsoft.Spark.Worker.zip#worker</code>. Tato akce zkopíruje a extrahuje soubor zip do složky <code>worker</code>._</li>
@@ -45,7 +45,7 @@ Jakmile je aplikace Spark připojená do [balíčku](https://spark.apache.org/do
 > Zadejte všechny `--options` před `application-jar` při spouštění aplikací pomocí `spark-submit`, jinak budou ignorovány. Další informace najdete v tématu [možnosti`spark-submit`](https://spark.apache.org/docs/latest/submitting-applications.html) a [spuštění Sparku v PODROBNOSTech o přízi](https://spark.apache.org/docs/latest/running-on-yarn.html).
 
 ## <a name="frequently-asked-questions"></a>Nejčastější dotazy
-### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Při spuštění aplikace Spark s UDF se zobrazí chyba "FileNotFoundException". Co mám dělat?
+### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Při spuštění aplikace Spark s UDF se zobrazí chyba "FileNotFoundException". Co bych měl/a dělat?
 > **Chyba:** [Chyba] [TaskRunner] [0] ProcessStream () se nezdařilo. výjimka: System. IO. FileNotFoundException: sestavení ' MySparkApp, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null ' nebyl nalezen: ' mySparkApp. dll '
 
 **Odpověď:** Ověřte, že je správně nastavená proměnná prostředí `DOTNET_ASSEMBLY_SEARCH_PATHS`. Měla by to být cesta, která obsahuje vaše `mySparkApp.dll`.

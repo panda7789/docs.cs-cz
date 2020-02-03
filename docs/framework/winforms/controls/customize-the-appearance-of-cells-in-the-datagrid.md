@@ -32,7 +32,7 @@ Můžete přizpůsobit vzhled libovolné buňky zpracováním události <xref:Sy
   
 - Odkazy na sestavení System, System. Windows. Forms a System. Drawing.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.CellPainting>

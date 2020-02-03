@@ -65,7 +65,7 @@ V operačních systémech Windows může uživatel změnit nastavení písem v r
   
  Konstruktor v tomto příkladu kódu obsahuje volání `InitializeComponent`, které je definováno při vytváření nového projektu model Windows Forms v aplikaci Visual Studio. Odeberte tento řádek kódu, pokud vytváříte aplikaci na příkazovém řádku.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>
 - [Automatická změna měřítka ve Windows Forms](automatic-scaling-in-windows-forms.md)

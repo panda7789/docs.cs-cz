@@ -94,9 +94,9 @@ Sloupec funkce musí být vektorem pevné velikosti <xref:System.Single>.
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | Type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
-| `Score` | Vektor <xref:System.Single> | Skóre všech tříd. Vyšší hodnota znamená vyšší pravděpodobnost pro přechod do přidružené třídy. Pokud má i-th největší hodnotu, index předpokládaného popisku by byl i. Všimněte si, že je index založený na nule. |
+| `Score` | vektor <xref:System.Single> | Skóre všech tříd. Vyšší hodnota znamená vyšší pravděpodobnost pro přechod do přidružené třídy. Pokud má i-th největší hodnotu, index předpokládaného popisku by byl i. Všimněte si, že je index založený na nule. |
 | `PredictedLabel` | typ [klíče](xref:Microsoft.ML.Data.KeyDataViewType) | Index předpokládaného popisku. Pokud je jeho hodnota, vlastní popisek bude i-th kategorie v typu vstupního popisku s hodnotou klíče. |
 
 ## <a name="regression"></a>Regrese
@@ -127,7 +127,7 @@ Data sloupce vstupního popisku musí být <xref:System.Single>.
 
 Školitel pro tento úkol má následující výstup:
 
-| Název výstupu | Type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Nezpracované skóre, které model předpovídá |
 
@@ -151,9 +151,9 @@ Data funkcí input musí být <xref:System.Single>. Nejsou nutné žádné popis
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | Type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
-| `Score` | Vektor <xref:System.Single> | Vzdálenosti daného datového bodu ke všem clusterům ' centriods |
+| `Score` | vektor <xref:System.Single> | Vzdálenosti daného datového bodu ke všem clusterům ' centriods |
 | `PredictedLabel` | typ [klíče](xref:Microsoft.ML.Data.KeyDataViewType) | Index nejbližšího clusteru předpokládaný modelem. |
 
 ## <a name="anomaly-detection"></a>Detekce anomálií
@@ -183,7 +183,7 @@ Vstupní funkce musí být vektor <xref:System.Single>pevné velikosti.
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | Type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Nezáporné, neohraničené skóre, které bylo vypočítáno modelem detekce anomálií |
 | `PredictedLabel` | <xref:System.Boolean> | Hodnota true nebo false, která představuje, zda je vstup anomálií (PredictedLabel = true) nebo ne (PredictedLabel = false) |
@@ -207,7 +207,7 @@ Data funkce musí být vektorem pevné velikosti <xref:System.Single> a sloupec 
 
 Tento Trainer má následující výstup:
 
-| Název výstupu | Type | Popis|
+| Název výstupu | Typ | Popis|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Neohraničené skóre, které bylo vypočítáno modelem k určení předpovědi |
 

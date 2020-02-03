@@ -42,7 +42,7 @@ Nastavení jednoduchých vlastností může upravit mnoho základních chování
  [Postupy: Zobrazení obrázků v buňkách ovládacího prvku Windows Forms DataGridView](how-to-display-images-in-cells-of-the-windows-forms-datagridview-control.md)  
  Popisuje, jak vytvořit sloupec obrázku, který v každé buňce zobrazuje ikonu.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.DataGridView>  
  Poskytuje referenční dokumentaci k ovládacímu prvku.  
   
@@ -53,7 +53,7 @@ Nastavení jednoduchých vlastností může upravit mnoho základních chování
  [Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView](programming-with-cells-rows-and-columns-in-the-datagrid.md)  
  Poskytuje témata, která popisují, jak programovat s objekty buňky, řádku a sloupce.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

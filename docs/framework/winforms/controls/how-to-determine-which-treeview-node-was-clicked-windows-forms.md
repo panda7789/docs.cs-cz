@@ -58,6 +58,6 @@ Při práci s ovládacím prvkem model Windows Forms <xref:System.Windows.Forms.
     > [!NOTE]
     > Jako alternativu můžete použít <xref:System.Windows.Forms.MouseEventArgs> události <xref:System.Windows.Forms.Control.MouseDown> nebo <xref:System.Windows.Forms.Control.MouseUp> a získat tak <xref:System.Drawing.Point.X%2A> a <xref:System.Drawing.Point.Y%2A> hodnoty souřadnic <xref:System.Drawing.Point>, na kterých došlo k kliknutí. Poté pomocí <xref:System.Windows.Forms.TreeView.GetNodeAt%2A> metody <xref:System.Windows.Forms.TreeView> ovládacího prvku určete, který uzel byl kliknuto.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek TreeView](treeview-control-windows-forms.md)

@@ -82,7 +82,7 @@ Pomocí ovládacího prvku <xref:System.Windows.Forms.PrintPreviewDialog> může
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Komponenta PrintDocument](printdocument-component-windows-forms.md)
 - [Ovládací prvek PrintPreviewDialog](printpreviewdialog-control-windows-forms.md)

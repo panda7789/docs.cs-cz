@@ -20,13 +20,13 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
  Toto pole obsahuje prvky z `array[0]` k `array[4]`. Operátor [New](../../language-reference/operators/new-operator.md) slouží k vytvoření pole a inicializaci prvků pole na jejich výchozí hodnoty. V tomto příkladu jsou všechny prvky pole inicializovány na nulu.  
   
- Pole, které ukládá prvky řetězce, lze deklarovat stejným způsobem. Příklad:  
+ Pole, které ukládá prvky řetězce, lze deklarovat stejným způsobem. Například:  
   
  [!code-csharp[csProgGuideArrays#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#5)]  
   
 ## <a name="array-initialization"></a>Inicializace pole
 
- Je možné inicializovat pole po deklaraci, v takovém případě není specifikátor délky nutný, protože je již poskytnutý počtem prvků v seznamu inicializace. Příklad:  
+ Je možné inicializovat pole po deklaraci, v takovém případě není specifikátor délky nutný, protože je již poskytnutý počtem prvků v seznamu inicializace. Například:  
   
  [!code-csharp[csProgGuideArrays#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#6)]  
   
@@ -40,7 +40,7 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
  [!code-csharp[csProgGuideArrays#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#8)]  
   
- Je možné deklarovat proměnnou pole bez inicializace, ale je nutné použít operátor `new`, když přiřadíte pole k této proměnné. Příklad:  
+ Je možné deklarovat proměnnou pole bez inicializace, ale je nutné použít operátor `new`, když přiřadíte pole k této proměnné. Například:  
   
  [!code-csharp[csProgGuideArrays#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#9)]  
   
@@ -56,10 +56,10 @@ Můžete deklarovat jednorozměrné pole pěti celých čísel, jak je znázorn�
   
 Další informace o typech hodnot a odkazových typech naleznete v tématu [typy hodnot](../../language-reference/builtin-types/value-types.md) a [odkazové typy](../../language-reference/keywords/reference-types.md).
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Array>
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Pole](./index.md)
 - [Vícerozměrná pole](./multidimensional-arrays.md)
 - [Vícenásobná pole](./jagged-arrays.md)

@@ -121,7 +121,7 @@ Text zobrazený ovládacím prvkem <xref:System.Windows.Forms.LinkLabel> můžet
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>
 - <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>

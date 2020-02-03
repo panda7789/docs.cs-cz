@@ -42,7 +42,7 @@ Na konci kurzu budete mít vytvořenou samostatnou aplikaci pro Windows, která 
 >
 > Můžete přepínat jazyk kódu ukázkového kódu mezi C# a Visual Basic pomocí selektoru jazyka v horní části této stránky.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou **vývoj desktopových aplikací .NET** .
 
@@ -495,7 +495,7 @@ Další informace o vytváření aplikací naleznete v následujících tématec
 - [Grafika a multimédia](../graphics-multimedia/index.md)
 - [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled panelů](../controls/panels-overview.md)
 - [Přehled šablonování dat](../data/data-templating-overview.md)

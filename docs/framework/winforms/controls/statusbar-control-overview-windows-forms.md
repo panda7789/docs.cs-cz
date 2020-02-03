@@ -1,5 +1,5 @@
 ---
-title: StatusBar – přehled ovládacího prvku
+title: Přehled ovládacího prvku StatusBar
 ms.date: 03/30/2017
 f1_keywords:
 - StatusBar
@@ -25,7 +25,7 @@ ms.locfileid: "76742874"
   
  Můžete zobrazit jednu zprávu na stavovém řádku nastavením vlastnosti <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> na `false` (výchozí nastavení) a nastavením vlastnosti <xref:System.Windows.Forms.StatusBar.Text%2A> stavového řádku na text, který se má zobrazit ve stavovém řádku. Stavový řádek můžete rozdělit na panely a zobrazit tak více než jeden typ informací nastavením vlastnosti <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> na `true` a pomocí metody <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A> <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.StatusBar>
 - <xref:System.Windows.Forms.ToolStripStatusLabel>

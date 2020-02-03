@@ -1,5 +1,5 @@
 ---
-title: PictureBox – ovládací prvek
+title: Ovládací prvek PictureBox
 ms.date: 03/30/2017
 helpviewer_keywords:
 - PictureBox control [Windows Forms]
@@ -29,7 +29,7 @@ Ovládací prvek model Windows Forms `PictureBox` slouží k zobrazení grafiky 
  [Postupy: Načtení obrázku pomocí Návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)  
  Popisuje, jak načíst a zobrazit obrázek ve formuláři v době návrhu.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.PictureBox>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

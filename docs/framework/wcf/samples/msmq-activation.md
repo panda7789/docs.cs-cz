@@ -19,11 +19,11 @@ Tato ukázka předvádí, jak hostovat aplikace v aktivační službě procesů 
 > [!NOTE]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
-> \<InstallDrive>:\WF_WCF_Samples
+> \<InstallDrive >: \ WF_WCF_Samples
 >
 > Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech ukázek WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Tato ukázka se nachází v následujícím adresáři.
 >
-> \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
+> \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
 Aktivační služba procesů systému Windows (WAS) nový mechanismus aktivace procesu pro Windows Server 2008 poskytuje funkce, které byly dříve dostupné jenom pro aplikace založené na protokolu HTTP, do aplikací, které používají protokoly jiného typu než HTTP. Windows Communication Foundation (WCF) používá rozhraní naslouchacího adaptéru k sdělování požadavků na aktivaci přijatých přes protokoly jiného typu než HTTP podporované službou WCF, jako je například TCP, pojmenované kanály a služba MSMQ. Funkce pro příjem požadavků přes protokoly jiné než HTTP je hostována spravovanými službami systému Windows, které jsou spuštěny v SMSvcHost. exe.
 
@@ -269,7 +269,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
         Tento příkaz umožňuje, aby aplikace/ServiceModelSamples byla dostupná pomocí `http://localhost/servicemodelsamples` a `net.msmq://localhost/servicemodelsamples`.
 
-7. Pokud jste tak dosud neučinili, ujistěte se, že je povolená aktivační služba MSMQ. V nabídce **Start** klikněte na **spustit**a zadejte `Services.msc`. Vyhledejte v seznamu služeb **adaptér naslouchání NET. MSMQ**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **Typ spouštění** na **automaticky**, klikněte na **použít** a klikněte na tlačítko **Spustit** . Tento krok je potřeba provést jenom jednou před prvním použitím služby NET. MSMQ Listener Adapter.
+7. Pokud jste tak dosud neučinili, ujistěte se, že je povolená aktivační služba MSMQ. V nabídce **Start** klikněte na **spustit**a zadejte `Services.msc`. Vyhledejte v seznamu služeb **adaptér naslouchání NET. MSMQ**. Klikněte pravým tlačítkem a vyberte **Vlastnosti**. Nastavte **Typ spouštění** na **automaticky**, klikněte na **použít** a klikněte na tlačítko **Spustit** . Tento krok je potřeba provést jenom jednou před prvním použitím služby NET. MSMQ Listener Adapter.
 
 8. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Navíc můžete změnit kód v klientovi, který odešle nákupní objednávku tak, aby odrážel název počítače v identifikátoru URI fronty při odeslání nákupní objednávky. Použijte následující kód:
 
@@ -347,6 +347,6 @@ Ve výchozím nastavení se u `netMsmqBinding` vazby vazeb povoluje zabezpečen�
     sc sidtype netmsmqactivator unrestricted
     ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Hostování technologie AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

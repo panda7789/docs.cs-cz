@@ -47,9 +47,9 @@ End Sub
 - Aktivní připojení k Internetu.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Volání metody <xref:System.Diagnostics.Process.Start%2A> vyžaduje úplný vztah důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.SecurityException>.  
+ Volání metody <xref:System.Diagnostics.Process.Start%2A> vyžaduje úplný vztah důvěryhodnosti. Další informace naleznete v tématu <xref:System.Security.SecurityException>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.LinkLabel>
 - [Ovládací prvek LinkLabel](linklabel-control-windows-forms.md)

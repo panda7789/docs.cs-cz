@@ -80,7 +80,7 @@ Ovládací prvek <xref:System.Windows.Forms.DataGridView> pro zobrazení informa
   
  Třída <xref:System.Windows.Forms.DataGridViewLinkColumn> poskytuje několik vlastností pro úpravu vzhledu odkazů před, během a po kliknutí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn>

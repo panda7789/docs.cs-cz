@@ -49,7 +49,7 @@ V následujícím postupu je ovládací prvek <xref:System.Windows.Forms.TextBox
 
     4. Nastavte vlastnost <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> pro každé z tlačítek na **text**. Alternativně můžete tuto vlastnost nastavit na hodnotu **Image** nebo **ImageAndText**a nastavit obrázek, který se má zobrazit ve vlastnosti <xref:System.Windows.Forms.ToolStripItem.Image%2A>.
 
-    5. Dialogové okno zavřete kliknutím na tlačítko **OK** . Tlačítka jsou přidána do <xref:System.Windows.Forms.ToolStrip>.
+    5. Kliknutím na **OK** zavřete dialogové okno. Tlačítka jsou přidána do <xref:System.Windows.Forms.ToolStrip>.
 
 8. Klikněte pravým tlačítkem na formulář a vyberte **Zobrazit kód**.
 
@@ -110,7 +110,7 @@ V následujícím postupu je ovládací prvek <xref:System.Windows.Forms.TextBox
     > [!NOTE]
     > Metoda <xref:System.Windows.Forms.BindingSource.CancelEdit%2A> je vymezena na řádek dat. Před přechodem na další záznam uložte všechny změny, které provedete při prohlížení tohoto jednotlivého záznamu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.BindingSource>

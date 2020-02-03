@@ -29,7 +29,7 @@ Ovládací prvek model Windows Forms `NumericUpDown` vypadá jako kombinace text
  [Postupy: Nastavení formátu pro ovládací prvek Windows Forms NumericUpDown](how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
  V této části najdete popis postupu konfigurace zobrazení hodnot v ovládacím prvku.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.NumericUpDown>  
  Poskytuje referenční informace o třídě <xref:System.Windows.Forms.NumericUpDown> a jejích členech.  
   

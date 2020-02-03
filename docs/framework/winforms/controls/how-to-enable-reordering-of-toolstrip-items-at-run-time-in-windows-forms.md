@@ -22,7 +22,7 @@ Můžete uživateli povolit změnu uspořádání <xref:System.Windows.Forms.Too
   
 ### <a name="to-enable-toolstripitem-rearrangement-at-run-time"></a>Povolení změny uspořádání ToolStripItem v době běhu  
   
-- Nastavte <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> vlastnost `true`. Ve výchozím nastavení je <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> `false`.  
+- Vlastnost <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> nastavte na hodnotu `true`. Ve výchozím nastavení je <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A> `false`.  
   
      V době běhu uživatel drží klávesu ALT a levé tlačítko myši k přetažení <xref:System.Windows.Forms.ToolStripItem> do jiného umístění v <xref:System.Windows.Forms.ToolStrip>.  
   
@@ -34,7 +34,7 @@ Můžete uživateli povolit změnu uspořádání <xref:System.Windows.Forms.Too
     toolStrip1.AllowItemReorder = true;  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>

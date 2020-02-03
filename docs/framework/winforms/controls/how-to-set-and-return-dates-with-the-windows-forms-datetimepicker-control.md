@@ -72,7 +72,7 @@ Aktuálně vybrané datum nebo čas v ovládacím prvku model Windows Forms <xre
        dateTimePicker1->Value.Millisecond.ToString()));  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek DateTimePicker](datetimepicker-control-windows-forms.md)
 - [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)

@@ -52,7 +52,7 @@ Při vytváření ovládacích prvků, které komunikují s daty, někdy je nutn
 
 4. V **editoru typu uživatelského rozhraní DataSource**rozbalte uzel pro <xref:System.Windows.Forms.BindingSource> přidané dříve a vyberte vlastnost vázaného typu, který chcete svázat s vlastností <xref:System.Windows.Forms.TextBox.Text%2A> <xref:System.Windows.Forms.TextBox>.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Komponenta BindingSource](bindingsource-component.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md)

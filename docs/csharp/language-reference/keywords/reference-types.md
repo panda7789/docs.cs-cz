@@ -35,7 +35,7 @@ V jazyce C# existují dva druhy typů: typy odkazu a typy hodnoty. Proměnné
 
 - [string](../builtin-types/reference-types.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)

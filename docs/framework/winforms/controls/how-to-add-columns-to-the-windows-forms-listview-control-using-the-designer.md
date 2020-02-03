@@ -28,7 +28,7 @@ Následující postup vyžaduje projekt **aplikace systému Windows** s formulá
 
 3. Pomocí tlačítka **Přidat** přidejte nové sloupce. Pak můžete vybrat záhlaví sloupce a nastavit jeho text (titulek sloupce), zarovnání textu a šířku.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)
 - [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)

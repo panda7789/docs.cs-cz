@@ -22,7 +22,7 @@ Komponenta model Windows Forms `HelpProvider` se používá k přidružení soub
   
  Seznamte [se s dalšími systémy v model Windows Forms aplikacích](../advanced/help-systems-in-windows-forms-applications.md).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.HelpProvider>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

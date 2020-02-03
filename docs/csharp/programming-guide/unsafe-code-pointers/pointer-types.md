@@ -24,7 +24,7 @@ Typ zadaný před `*` v typu ukazatele se nazývá **typ referenční**. Typ ref
 
 Typy ukazatelů nedědí z [objektu](../../language-reference/builtin-types/reference-types.md) a neexistují žádné převody mezi typy ukazatelů a `object`. Dále není pro ukazatele k dispozici podpora zabalení a rozbalení. Můžete však převádět mezi různými typy ukazatele, nebo mezi různými typy ukazatele a integrálními typy.
 
-Při deklaraci většího počtu ukazatelů ve stejné deklaraci je spolu se základním typem zapsán pouze symbol hvězdičky (*). Nepoužívá se jako předpona u názvů jednotlivých ukazatelů. Příklad:
+Při deklaraci většího počtu ukazatelů ve stejné deklaraci je spolu se základním typem zapsán pouze symbol hvězdičky (*). Nepoužívá se jako předpona u názvů jednotlivých ukazatelů. Například:
 
 ```csharp
 int* p1, p2, p3;   // Ok
@@ -81,9 +81,9 @@ Další informace o operátorech souvisejících s ukazateli naleznete v tématu
 
 Další informace naleznete v části [typy ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-types) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Nebezpečný kód a ukazatele](index.md)
 - [Převody ukazatele](pointer-conversions.md)
 - [Typy odkazů](../../language-reference/keywords/reference-types.md)

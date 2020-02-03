@@ -73,7 +73,7 @@ Kromě vytváření událostí pomocí Návrhář formulářů v aplikaci Visual
 
      Metoda <xref:System.ComponentModel.EventHandlerList.AddHandler%2A> znázorněná ve výše uvedeném kódu Visual Basic vytvoří obslužnou rutinu události Click pro tlačítko.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md)

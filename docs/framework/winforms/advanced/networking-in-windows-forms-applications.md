@@ -1,5 +1,5 @@
 ---
-title: Síťové služby
+title: Sítě
 ms.date: 03/30/2017
 helpviewer_keywords:
 - networking [Windows Forms], Windows Forms
@@ -15,7 +15,7 @@ ms.locfileid: "76745007"
 # <a name="networking-in-windows-forms-applications"></a>Použití sítě ve formulářových aplikacích Windows
 .NET Framework poskytuje třídy pro zobrazování webových stránek, stahování webového obsahu, interakci s weby FTP (File Transfer Protocol) a využívání webových služeb, což usnadňuje vytváření síťových funkcí do aplikace. Následující zdroje vám pomohou pochopit síťové technologie .NET Framework a jejich integraci do model Windows Forms.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Net>  
  Kořenový obor názvů pro třídy v .NET Framework, které zpracovávají síťové připojení.  
   

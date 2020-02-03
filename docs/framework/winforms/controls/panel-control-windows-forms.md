@@ -29,7 +29,7 @@ Ovládací prvky `Panel` model Windows Forms slouží k poskytnutí identifikova
  [Postupy: Nastavení pozadí panelu](how-to-set-the-background-of-a-windows-forms-panel.md)  
  Popisuje způsob zobrazení barvy pozadí a obrázku pozadí na panelu.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Forms.Panel>  
  Popisuje tuto třídu a má odkazy na všechny její členy.  
   

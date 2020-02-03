@@ -13,7 +13,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76745294"
 ---
-# <a name="windows-forms-controls"></a>Windows Forms – ovládací prvky
+# <a name="windows-forms-controls"></a>Ovládací prvky Windows Forms
 
 Při návrhu a úpravách uživatelského rozhraní aplikací model Windows Forms budete muset ovládací prvky přidat, Zarovnat a umístit. Ovládací prvky jsou objekty, které jsou obsaženy v objektech formuláře. Každý typ ovládacího prvku má svou vlastní sadu vlastností, metod a událostí, které je vhodné pro určitý účel. Můžete manipulovat s ovládacími prvky v návrháři a napsat kód pro dynamické přidávání ovládacích prvků v době běhu.
 

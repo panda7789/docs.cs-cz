@@ -55,7 +55,7 @@ Témata v této části popisují funkce zabezpečení služby Windows Communica
  [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  Pokyny pro vytváření zabezpečených aplikací WCF.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Security>  
@@ -69,6 +69,6 @@ Témata v této části popisují funkce zabezpečení služby Windows Communica
   
  [Koncepční přehled](../../../../docs/framework/wcf/conceptual-overview.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Konfigurace vaší aplikace](../../../../docs/framework/wcf/diagnostics/configuring-your-application.md)

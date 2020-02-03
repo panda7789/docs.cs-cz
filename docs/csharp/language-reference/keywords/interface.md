@@ -69,10 +69,10 @@ Následující příklad ukazuje implementaci rozhraní. V tomto příkladu obsa
 
 Další informace naleznete v části [rozhraní](~/_csharplang/spec/interfaces.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md) a specifikace funkce pro [výchozí C# členy rozhraní – 8,0](~/_csharplang/proposals/csharp-8.0/default-interface-methods.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Odkazové typy](reference-types.md)
 - [Rozhraní](../../programming-guide/interfaces/index.md)

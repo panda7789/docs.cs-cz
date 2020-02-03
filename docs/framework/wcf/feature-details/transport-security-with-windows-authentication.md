@@ -19,17 +19,17 @@ V následujícím scénáři se zobrazuje klient a služba Windows Communication
   
  ![Zabezpečení přenosu s ověřováním systému Windows](./media/transport-security-with-windows-authentication/secured-windows-authentication.gif)  
   
-|Charakteristiku|Popis|  
+|Charakteristika|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Přepravu|  
-|Interoperabilita|Pouze WCF|  
+|Režim zabezpečení|Přenos|  
+|Vzájemná funkční spolupráce|Pouze WCF|  
 |Ověřování (Server)<br /><br /> Ověřování (klient)|Ano (pomocí integrovaného ověřování systému Windows)<br /><br /> Ano (pomocí integrovaného ověřování systému Windows)|  
-|Způsobilost|Ano|  
+|Integrita|Ano|  
 |Chovávat|Ano|  
-|Přepravu|NET.TCP|  
+|Přenos|NET.TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
   
-## <a name="service"></a>Service  
+## <a name="service"></a>Služba  
  Následující kód a konfigurace jsou určeny ke spuštění nezávisle. Proveďte jednu z těchto akcí:  
   
 - Vytvořte samostatnou službu pomocí kódu bez konfigurace.  
@@ -78,7 +78,7 @@ V následujícím scénáři se zobrazuje klient a služba Windows Communication
   
 - Vytvořte samostatného klienta pomocí kódu (a kódu klienta).  
   
-- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Příklad:  
+- Vytvořte klienta, který nedefinuje žádné adresy koncových bodů. Místo toho použijte konstruktor klienta, který převezme název konfigurace jako argument. Například:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
@@ -117,7 +117,7 @@ V následujícím scénáři se zobrazuje klient a služba Windows Communication
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)

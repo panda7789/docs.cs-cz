@@ -44,7 +44,7 @@ Ve výchozím nastavení mohou uživatelé upravovat obsah aktuální <xref:Syst
   
 - Odkazy na <xref:System> a <xref:System.Windows.Forms> sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType>

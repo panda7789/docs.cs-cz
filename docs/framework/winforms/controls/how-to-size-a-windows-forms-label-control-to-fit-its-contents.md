@@ -24,7 +24,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.Label> může b�
   
  Pokud je <xref:System.Windows.Forms.Label.AutoSize%2A> nastaveno na hodnotu `false`, slova zadaná ve vlastnosti <xref:System.Windows.Forms.Label.Text%2A> budou zabalena do dalšího řádku, pokud je to možné, ale ovládací prvek se nebude zvětšovat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postupy: Vytváření přístupových klíčů pomocí ovládacích prvků Windows Forms Label](how-to-create-access-keys-with-windows-forms-label-controls.md)
 - [Přehled ovládacího prvku Label](label-control-overview-windows-forms.md)

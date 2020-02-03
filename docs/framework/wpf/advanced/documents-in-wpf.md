@@ -135,7 +135,7 @@ ms.locfileid: "76737967"
   
 - Směrování dokumentů přímo do tiskárny kompatibilní s XPS.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Documents.FixedDocument>
 - <xref:System.Windows.Documents.FlowDocument>

@@ -29,7 +29,7 @@ Pro standardizaci rozložení uživatelského rozhraní (UI) aplikace založené
 
 3. V nabídce **Formát** vyberte **Zarovnat**a pak vyberte jednu z sedmi dostupných možností.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Forms – ovládací prvky](index.md)
 - [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)

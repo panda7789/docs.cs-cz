@@ -150,7 +150,7 @@ Následující obrázek znázorňuje skleněný rámec rozšířený do aplikace
 
 ![Snímek obrazovky znázorňující skleněný rámec rozšířený do aplikace WPF](./media/extend-glass-frame-into-a-wpf-application/glass-frame-extended-wpf-application.png)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled Správce oken plochy](/windows/desktop/dwm/dwm-overview)
 - [Přehled rozostření Správce oken plochy](/windows/desktop/dwm/blur-ovw)

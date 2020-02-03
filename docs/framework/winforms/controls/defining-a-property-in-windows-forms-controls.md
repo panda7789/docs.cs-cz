@@ -120,7 +120,7 @@ public int Value {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vlastnosti v ovládacích prvcích Windows Forms](properties-in-windows-forms-controls.md)
 - [Definování výchozích hodnot pomocí metod ShouldSerialize a Reset](defining-default-values-with-the-shouldserialize-and-reset-methods.md)

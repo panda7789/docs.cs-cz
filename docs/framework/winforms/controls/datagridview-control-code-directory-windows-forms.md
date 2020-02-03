@@ -22,7 +22,7 @@ Toto téma obsahuje odkazy na příklady kódu, které jsou k dispozici v dokume
   
  Další příklady kódu jsou k dispozici v referenční dokumentaci knihovny tříd. Seznam hlavních tříd a rozhraní přidružených k ovládacímu prvku <xref:System.Windows.Forms.DataGridView> naleznete v tabulce v [souhrnu technologie ovládacího prvku DataGridView](datagridview-control-technology-summary-windows-forms.md).  
   
-## <a name="codelist"></a>CodeList  
+## <a name="codelist"></a>Seznam kódu  
   
 ## <a name="unbound-data-examples"></a>Příklady nevázaných dat  
   
@@ -152,7 +152,7 @@ Toto téma obsahuje odkazy na příklady kódu, které jsou k dispozici v dokume
   
 - [Implementace virtuálního režimu s načítáním dat za běhu v ovládacím prvku Windows Forms DataGridView](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Přehled ovládacího prvku DataGridView](datagridview-control-overview-windows-forms.md)

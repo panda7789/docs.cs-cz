@@ -31,7 +31,7 @@ Modul CLR (Common Language Runtime) používá pokročilou implementaci Windows 
  [Použití spravovaných grafických tříd](using-managed-graphics-classes.md)  
  Ukazuje, jak provést různé úlohy pomocí spravovaných tříd rozhraní GDI+.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Drawing>  
  Poskytuje přístup k funkci GDI+ Basic Graphics.  
   

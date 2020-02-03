@@ -1,5 +1,5 @@
 ---
-title: ListView – přehled ovládacího prvku
+title: Přehled ovládacího prvku ListView
 ms.date: 03/30/2017
 f1_keywords:
 - ListView
@@ -27,16 +27,16 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ListView> zobraz
   
  Následující tabulka uvádí některé z <xref:System.Windows.Forms.ListView> členů a zobrazení, která jsou platná v.  
   
-|Člen ListView|Podívejte se na téma .|  
+|Člen ListView|Zobrazení|  
 |---------------------|----------|  
-|<xref:System.Windows.Forms.ListView.Alignment%2A> – vlastnost|<xref:System.Windows.Forms.View.SmallIcon> Nebo <xref:System.Windows.Forms.View.LargeIcon>|  
-|<xref:System.Windows.Forms.ListView.AutoArrange%2A> – vlastnost|<xref:System.Windows.Forms.View.SmallIcon> Nebo <xref:System.Windows.Forms.View.LargeIcon>|  
+|<xref:System.Windows.Forms.ListView.Alignment%2A> – vlastnost|<xref:System.Windows.Forms.View.SmallIcon> nebo <xref:System.Windows.Forms.View.LargeIcon>|  
+|<xref:System.Windows.Forms.ListView.AutoArrange%2A> – vlastnost|<xref:System.Windows.Forms.View.SmallIcon> nebo <xref:System.Windows.Forms.View.LargeIcon>|  
 |<xref:System.Windows.Forms.ListView.AutoResizeColumn%2A> – metoda|<xref:System.Windows.Forms.View.Details>|  
-|<xref:System.Windows.Forms.ListView.Columns%2A> – vlastnost|<xref:System.Windows.Forms.View.Details> Nebo <xref:System.Windows.Forms.View.Tile>|  
+|<xref:System.Windows.Forms.ListView.Columns%2A> – vlastnost|<xref:System.Windows.Forms.View.Details> nebo <xref:System.Windows.Forms.View.Tile>|  
 |událost <xref:System.Windows.Forms.ListView.DrawSubItem>|<xref:System.Windows.Forms.View.Details>|  
 |<xref:System.Windows.Forms.ListView.FindItemWithText%2A> – metoda|<xref:System.Windows.Forms.View.Details>, <xref:System.Windows.Forms.View.List>nebo <xref:System.Windows.Forms.View.Tile>|  
-|<xref:System.Windows.Forms.ListView.FindNearestItem%2A> – metoda|<xref:System.Windows.Forms.View.SmallIcon> Nebo <xref:System.Windows.Forms.View.LargeIcon>|  
-|<xref:System.Windows.Forms.ListView.GetItemAt%2A> – metoda|<xref:System.Windows.Forms.View.Details> Nebo <xref:System.Windows.Forms.View.Tile>|  
+|<xref:System.Windows.Forms.ListView.FindNearestItem%2A> – metoda|<xref:System.Windows.Forms.View.SmallIcon> nebo <xref:System.Windows.Forms.View.LargeIcon>|  
+|<xref:System.Windows.Forms.ListView.GetItemAt%2A> – metoda|<xref:System.Windows.Forms.View.Details> nebo <xref:System.Windows.Forms.View.Tile>|  
 |<xref:System.Windows.Forms.ListView.Groups%2A> – vlastnost|Všechna zobrazení kromě <xref:System.Windows.Forms.View.List>|  
 |<xref:System.Windows.Forms.ListView.HeaderStyle%2A> – vlastnost|<xref:System.Windows.Forms.View.Details>.|  
 |<xref:System.Windows.Forms.ListView.InsertionMark%2A> – vlastnost|<xref:System.Windows.Forms.View.LargeIcon>, <xref:System.Windows.Forms.View.SmallIcon>nebo <xref:System.Windows.Forms.View.Tile>|  
@@ -47,7 +47,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.ListView> zobraz
   
  Ovládací prvek <xref:System.Windows.Forms.ListView> také podporuje vizuální styly a další funkce, které jsou k dispozici na platformě Windows XP, včetně seskupení, zobrazení dlaždic a značek vložení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.ListView>
 - [Ovládací prvek ListView](listview-control-windows-forms.md)

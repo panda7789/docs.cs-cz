@@ -41,7 +41,7 @@ Pomocí návrháře můžete propojit ovládací prvek <xref:System.Windows.Form
     > [!NOTE]
     > Pokud projekt již obsahuje zdroj dat, můžete také použít okno **zdroje dat** k vytvoření datového formuláře. Další informace naleznete v tématu [okno zdroje dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/6ckyxa83(v=vs.120)).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>

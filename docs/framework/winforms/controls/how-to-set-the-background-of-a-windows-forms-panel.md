@@ -67,7 +67,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.Panel> může zo
        "\\Image.gif"));  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Control.BackColor%2A>
 - <xref:System.Windows.Forms.Control.BackgroundImage%2A>

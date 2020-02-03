@@ -1,5 +1,5 @@
 ---
-title: GroupBox – přehled ovládacího prvku
+title: Přehled ovládacího prvku GroupBox
 ms.date: 03/30/2017
 f1_keywords:
 - GroupBox
@@ -22,6 +22,6 @@ Ovládací prvky <xref:System.Windows.Forms.GroupBox> model Windows Forms slouž
 ## <a name="groupbox-and-panel"></a>Skupinový rámeček a panel  
  Ovládací prvek <xref:System.Windows.Forms.GroupBox> je podobný ovládacímu prvku <xref:System.Windows.Forms.Panel>; pouze ovládací prvek <xref:System.Windows.Forms.GroupBox> však zobrazuje titulek a pouze ovládací prvek <xref:System.Windows.Forms.Panel> může mít posuvníky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ovládací prvek GroupBox](groupbox-control-windows-forms.md)

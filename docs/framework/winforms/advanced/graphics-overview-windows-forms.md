@@ -28,7 +28,7 @@ GDI+ je GDI, který umožňuje programátorům psát aplikace nezávislé na za�
  [Struktura rozhraní grafiky](structure-of-the-graphics-interface.md)  
  Popisuje spravované rozhraní třídy GDI+.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Drawing>  
  Poskytuje přístup k funkci GDI+ Basic Graphics.  
   

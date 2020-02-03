@@ -44,7 +44,7 @@ V jakémkoli formuláři Windows můžete určit <xref:System.Windows.Forms.Butt
        }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Form.CancelButton%2A>
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)

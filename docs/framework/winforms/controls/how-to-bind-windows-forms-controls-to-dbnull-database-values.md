@@ -32,7 +32,7 @@ Když svážete model Windows Forms ovládací prvky ke zdroji dat a zdroj dat v
   
 - Odkazy na sestavení System, System. data, System. Drawing a System. Windows. Forms.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Komponenta BindingSource](bindingsource-component.md)
 - [Postupy: Zpracování chyb a výjimek, k nimž došlo v souvislosti s datovou vazbou](how-to-handle-errors-and-exceptions-that-occur-with-databinding.md)
