@@ -2,18 +2,18 @@
 title: C#jazykové verze – C# Průvodce
 description: Přečtěte si informace C# o tom, jak je jazyková verze určena na základě vašeho projektu, a v různých hodnotách, na které lze ručně upravit.
 ms.date: 07/10/2019
-ms.openlocfilehash: 90624816a68de694cacd0017c6d3162f6a89431c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3c1035d983660ea0a945e4d4b7b72c69736c90cb
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713877"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980129"
 ---
 # <a name="c-language-versioning"></a>C#jazykové verze
 
 Nejnovější C# kompilátor určuje výchozí jazykovou verzi v závislosti na cílovém rozhraní architektury vašeho projektu nebo rozhraní. Důvodem je, že C# jazyk může obsahovat funkce, které spoléhají na typy nebo běhové komponenty, které nejsou k dispozici v každé implementaci rozhraní .NET. Tím se také zajistí, že pro jakýkoliv cíl, na který je projekt sestaven, získáte ve výchozím nastavení nejvyšší kompatibilní jazykovou verzi.
 
-Pravidla v tomto článku se vztahují na kompilátor dodaný se sadou Visual Studio 2019 nebo sadu .NET Core 3,0 SDK. C# Kompilátory, které jsou součástí instalace sady Visual Studio 2017 nebo starší verze .NET Core SDK v cíli C# 7,0 ve výchozím nastavení. 
+Pravidla v tomto článku se vztahují na kompilátor dodaný se sadou Visual Studio 2019 nebo .NET Core 3,0 SDK. C# Kompilátory, které jsou součástí instalace sady Visual Studio 2017 nebo starší verze .NET Core SDK v cíli C# 7,0 ve výchozím nastavení. 
 
 ## <a name="defaults"></a>Ve výchozím nastavení
 
@@ -54,7 +54,7 @@ Hodnota `preview` používá nejnovější dostupnou jazykovou verzi C# Preview,
 
 ### <a name="configure-multiple-projects"></a>Konfigurace více projektů
 
-Můžete vytvořit soubor **Directory. Build. props** , který obsahuje prvek `<LangVersion>` pro konfiguraci více adresářů. Obvykle to provedete v adresáři řešení. Přidejte následující do souboru **Directory. Build. props** v adresáři řešení:
+Chcete-li konfigurovat více projektů, můžete vytvořit soubor **Directory. Build. props** , který obsahuje prvek `<LangVersion>`. Obvykle to provedete v adresáři řešení. Přidejte následující do souboru **Directory. Build. props** v adresáři řešení:
 
 ```xml
 <Project>
@@ -84,5 +84,5 @@ V následující tabulce jsou uvedeny všechny C# aktuální jazykové verze. Ko
 |5|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 5,0 nebo nižší.|
 |4|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 4,0 nebo nižší.|
 |3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 3,0 nebo nižší.|
-|ISO-2|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2006 (2,0) |
-|ISO-1|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2003 (1.0/1.2) |
+|ISO-2|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2006 (2,0). |
+|ISO-1|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2003 (1.0/1.2). |

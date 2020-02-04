@@ -1,13 +1,13 @@
 ---
-title: Architektura ADO.NET
+title: Architektura
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-ms.openlocfilehash: 2692959d5a3e12d503d91b55e19f744bb9abd112
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: de33c9964f3c03b18593b0df0607f941d2117be0
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568449"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980311"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat se tradičně spoléhalo hlavně na vícevrstvý model založený na připojení. Protože zpracování dat stále používá vícevrstvé architektury, programátoři přepínají na odpojený přístup, aby zajistil lepší škálovatelnost svých aplikací.  
@@ -49,7 +49,7 @@ Architektura ADO.NET
  Entity Framework ADO.NET je navržená tak, aby vývojářům umožnila vytvářet aplikace pro přístup k datům pomocí programování na koncepčním modelu aplikace namísto programování přímo proti schématu relačního úložiště. Cílem je snížit množství kódu a potřebnou údržbu pro aplikace orientované na data. Další informace najdete v tématu [ADO.NET Entity Framework](./ef/index.md).  
   
 ## <a name="wcf-data-services"></a>WCF Data Services  
- WCF Data Services slouží k nasazení datových služeb na webu nebo v intranetu. Data jsou strukturovaná jako entity a vztahy podle specifikací model EDM (Entity Data Model). Data nasazená v tomto modelu jsou adresovatelné pomocí standardního protokolu HTTP. Další informace najdete v tématu [WCF Data Services 4,5](../wcf/index.md).  
+ WCF Data Services slouží k nasazení datových služeb na webu nebo v intranetu. Data jsou strukturovaná jako entity a vztahy podle specifikací model EDM (Entity Data Model). Data nasazená v tomto modelu jsou adresovatelné pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../wcf/index.md).  
   
 ## <a name="xml-and-adonet"></a>XML a ADO.NET  
  ADO.NET využívá sílu XML k poskytování odpojeného přístupu k datům. ADO.NET byla navržena ručně s třídami XML v .NET Framework; Obě jsou komponenty jedné architektury.  

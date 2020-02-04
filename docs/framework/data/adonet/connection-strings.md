@@ -1,13 +1,13 @@
 ---
-title: Připojovací řetězce v ADO.NET
+title: Připojovací řetězce
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: bf053c7c26435bea5b2368c81c89b73e8949b74a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: cb0b2831a22f3fe51dd7c5bfbe51e72f266a0003
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040139"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980233"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 

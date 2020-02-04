@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 1ef705fcf046af1f4136ddcf1b29f417c0d72c83
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 4fa01922c5c3097adb124d67272b9f449b70ada3
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741850"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76979869"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují tak, aby poskytovaly vysoce zabezpečený model zabezpečení s vysokou ochranou, který se pokusí vyhnout jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
@@ -35,14 +35,14 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
 Jádro systému Windows poskytuje několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace systému Windows, včetně těch, které jsou vytvořeny pomocí WPF. Toto téma popisuje širokou škálu těchto funkcí zabezpečení, které jsou důležité pro WPF, a také způsob, jakým se WPF integruje s nimi za účelem zajištění další ochrany.  
   
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
- Kromě obecného přezkoumání a posílení systému Windows jsou k dispozici tři klíčové funkce [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)], které probereme v tomto tématu:  
+ Kromě obecného přezkoumání a posílení systému Windows jsou k dispozici tři klíčové funkce z Windows XP SP2, které budeme pojednávat v tomto tématu:  
   
 - Kompilace/GS  
   
 - Microsoft web Windows Update.  
   
 #### <a name="gs-compilation"></a>Kompilace/GS  
- [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] poskytuje ochranu tím, že znovu zkompiluje mnoho základních systémových knihoven, včetně všech závislostí WPF, jako je například CLR, které pomáhají zmírnit přetečení vyrovnávací paměti. Toho dosáhnete použitím parametru/GS s kompilátorem C/C++ Command-line. I když by se přetečení vyrovnávací paměti mělo výslovně vyhnout, kompilace/GS poskytuje příklad ochrany proti potenciálním ohrožením zabezpečení, která jsou neúmyslně nebo škodlivě vytvořená v nich.  
+ Systém Windows XP SP2 poskytuje ochranu tím, že znovu zkompiluje mnoho základních systémových knihoven, včetně všech závislostí WPF, jako je například CLR, což umožňuje zmírnit přetečení vyrovnávací paměti. Toho dosáhnete použitím parametru/GS s kompilátorem C/C++ Command-line. I když by se přetečení vyrovnávací paměti mělo výslovně vyhnout, kompilace/GS poskytuje příklad ochrany proti potenciálním ohrožením zabezpečení, která jsou neúmyslně nebo škodlivě vytvořená v nich.  
   
  V minulosti bylo přetečení vyrovnávací paměti příčinou mnoha vysoce ovlivněných zneužití zabezpečení. K přetečení vyrovnávací paměti dojde v případě, že útočník využívá chybu zabezpečení kódu, která umožňuje vkládání škodlivého kódu, který zapisuje za hranice vyrovnávací paměti. To pak umožňuje útočníkovi napadení procesu, ve kterém je kód spuštěn, přepsáním zpáteční adresy funkce, která způsobí spuštění kódu útočníka. Výsledkem je škodlivý kód, který spouští libovolný kód se stejnými oprávněními jako napadený proces.  
   
@@ -103,19 +103,19 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
 - **Místní intranet**. Aplikace spouštěné z intranetu. (Poněkud důvěryhodné).  
   
-- **Internet.** Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
+- **Internet**. Aplikace spouštěné z Internetu (Nejméně důvěryhodné).  
   
 - **Důvěryhodné servery**. Aplikace identifikované uživatelem jako důvěryhodné (Nejméně důvěryhodné).  
   
 - **Nedůvěryhodné lokality**. Aplikace identifikované uživatelem jako nedůvěryhodné. (Nedůvěryhodné).  
   
- Pro každou z těchto zón poskytuje CAS sadu předdefinovaných oprávnění, která zahrnuje oprávnění, která odpovídají úrovni důvěry přidružené k jednotlivým. Mezi ně patří:  
+ Pro každou z těchto zón poskytuje CAS sadu předdefinovaných oprávnění, která zahrnuje oprávnění, která odpovídají úrovni důvěry přidružené k jednotlivým. Zde jsou některé z nich:  
   
 - **FullTrust**. Pro aplikace spouštěné ze zóny **můj počítač** . Všechna možná oprávnění jsou udělena.  
   
 - **LocalIntranet**. Pro aplikace spouštěné z **místní zóny intranetu** . K poskytnutí středního přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, neomezeného přístupu k uživatelskému rozhraní, neomezených dialogových oken, omezených reflexe a omezeného přístupu k proměnným prostředí, je udělená podmnožina oprávnění. Nejsou k dispozici oprávnění pro kritické prostředky, jako je registr.  
   
-- **Internet.** Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
+- **Internet**. Pro aplikace spouštěné ze zóny **Internet** nebo **Důvěryhodné servery** . K poskytnutí omezeného přístupu k prostředkům klientského počítače, včetně izolovaného úložiště, jenom otevřeného souboru a omezeného uživatelského rozhraní, se udělí podmnožina oprávnění. V podstatě Tato sada oprávnění izoluje aplikace od klientského počítače.  
   
  Aplikacím identifikovaným jako **nedůvěryhodné servery** nejsou vůbec udělena oprávnění CAS. V důsledku toho pro ně neexistuje předdefinovaná sada oprávnění.  
   
@@ -186,7 +186,7 @@ Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení z
   
  Internet Explorer 7 zahrnuje a rozšiřuje možnosti zabezpečení aplikace IE6 SP2 jako součást trvalého závazku na zabezpečení.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [Zabezpečení](security-wpf.md)

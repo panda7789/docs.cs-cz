@@ -1,18 +1,18 @@
 ---
-title: Připojení ke zdroji dat v ADO.NET
+title: Připojení ke zdroji dat
 ms.date: 03/30/2017
 ms.assetid: 9abc3f92-1be3-4e1a-b360-762dc689650e
-ms.openlocfilehash: 01e4048fb9c7b53b1b1907d1965f822b9a4644a4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 84dc15c0965b7ac8209bd9115d611162e57d6dda
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786760"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980246"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>Připojení ke zdroji dat v ADO.NET
 V ADO.NET použijete objekt **připojení** pro připojení ke konkrétnímu zdroji dat zadáním potřebných ověřovacích informací v připojovacím řetězci. Použitý objekt **připojení** závisí na typu zdroje dat.  
   
- Každý .NET Framework poskytovatel dat, který je součástí .NET Framework, <xref:System.Data.Common.DbConnection> má objekt: .NET Framework Zprostředkovatel dat pro OLE DB <xref:System.Data.OleDb.OleDbConnection> obsahuje objekt, .NET Framework Zprostředkovatel dat pro SQL Server obsahuje <xref:System.Data.SqlClient.SqlConnection> objekt,. Rozhraní .NET Framework Zprostředkovatel dat pro rozhraní ODBC <xref:System.Data.Odbc.OdbcConnection> zahrnuje objekt a .NET Framework Zprostředkovatel dat pro Oracle <xref:System.Data.OracleClient.OracleConnection> obsahuje objekt.  
+ Každý .NET Framework poskytovatel dat, který je součástí .NET Framework, má <xref:System.Data.Common.DbConnection> objekt: .NET Framework Zprostředkovatel dat pro OLE DB obsahuje objekt <xref:System.Data.OleDb.OleDbConnection>, .NET Framework Zprostředkovatel dat pro SQL Server obsahuje objekt <xref:System.Data.SqlClient.SqlConnection>, .NET Framework Zprostředkovatel dat pro rozhraní ODBC zahrnuje <xref:System.Data.Odbc.OdbcConnection> objekt a .NET Framework Zprostředkovatel dat pro Oracle zahrnuje objekt <xref:System.Data.OracleClient.OracleConnection>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Navazování připojení](establishing-the-connection.md)  

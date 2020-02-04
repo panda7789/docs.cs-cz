@@ -1,13 +1,13 @@
 ---
-title: Datové sady ADO.NET
+title: Datové sady
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
-ms.openlocfilehash: 85c0df88d7e919649eae8d2b4e551b26cc684dd8
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 86c14f516ff82e4d9acf7cc3078e04590971a8a1
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634934"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980298"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET
 Objekt <xref:System.Data.DataSet> je centrální pro podporu odpojených a distribuovaných datových scénářů pomocí ADO.NET. **Datová sada** je reprezentace dat rezidentního v paměti, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat. Dá se použít s více a různými zdroji dat, s daty XML nebo pro správu místních dat do aplikace. **Datová sada** představuje kompletní sadu dat, včetně souvisejících tabulek, omezení a vztahů mezi tabulkami. Na následujícím obrázku je znázorněn objektový model **DataSet** .  
@@ -37,7 +37,7 @@ Objektový model DataSet
 ## <a name="xml"></a>XML  
  **Datovou sadu** můžete vyplnit z datového proudu XML nebo dokumentu. Pomocí datového proudu nebo dokumentu XML můžete zadat **datovou sadu** , údaje o schématu nebo obojí. Informace předávané z datového proudu XML nebo dokumentu lze kombinovat s existujícími informacemi nebo schématy, které jsou již v **datové sadě**přítomny. Další informace naleznete v tématu [using XML in a DataSet](./dataset-datatable-dataview/using-xml-in-a-dataset.md).  
   
-## <a name="extendedproperties"></a>extendedProperties  
+## <a name="extendedproperties"></a>ExtendedProperties  
  Všechny **datové sady**, **DataTable**a **DataColumn** mají vlastnost **ExtendedProperties** . **ExtendedProperties** je **vlastnostcollection** , kde lze umístit vlastní informace, například příkaz SELECT, který byl použit k vygenerování sady výsledků, nebo čas, kdy byla data vygenerována. Kolekce **ExtendedProperties** je trvale uložena s informacemi o schématu pro **datovou sadu**.  
   
 ## <a name="linq-to-dataset"></a>LINQ to DataSet  

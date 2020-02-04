@@ -1,16 +1,16 @@
 ---
-title: Zabezpečení přístupu ke kódu a ADO.NET
+title: Zabezpečení přístupu kódu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: e83c10d6d7b66723d8347f98c1f7b118d7a2f963
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c2b6be79855955887988378b9fcffe1891520d68
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040168"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980259"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET
 .NET Framework nabízí zabezpečení na základě rolí a také zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí běžné infrastruktury dodávané modulem CLR (Common Language Runtime). V celém světě nespravovaného kódu je většina aplikací spouštěna s oprávněními uživatele nebo objektu zabezpečení. V důsledku toho může dojít k poškození počítačových systémů a ohrožení bezpečnosti osobních dat, když uživatel se zvýšenými oprávněními spustí škodlivý software nebo chybně vyplněný software.  
@@ -136,7 +136,7 @@ ms.locfileid: "73040168"
 ```  
   
 ### <a name="enabling-partial-trust-with-a-custom-permission-set"></a>Povolení částečné důvěryhodnosti s vlastní sadou oprávnění  
- Aby bylo možné povolit použití <xref:System.Data.SqlClient> oprávnění pro konkrétní zónu, správce systému musí vytvořit vlastní sadu oprávnění a nastavit ji jako sadu oprávnění pro konkrétní zónu. Výchozí sady oprávnění, jako je například `LocalIntranet`, nelze upravovat. Pokud například chcete zahrnout <xref:System.Data.SqlClient> oprávnění pro kód, který má <xref:System.Security.Policy.Zone> `LocalIntranet`, může správce systému zkopírovat sadu oprávnění pro `LocalIntranet`, přejmenovat ji na "CustomLocalIntranet", přidat <xref:System.Data.SqlClient> oprávnění, importovat CustomLocalIntranet sada oprávnění pomocí [nástroje Caspol. exe (nástroj Code Access Security Policy Tool)](../../tools/caspol-exe-code-access-security-policy-tool.md)a nastavte sadu oprávnění `LocalIntranet_Zone` na CustomLocalIntranet.  
+ Aby bylo možné povolit použití <xref:System.Data.SqlClient> oprávnění pro konkrétní zónu, správce systému musí vytvořit vlastní sadu oprávnění a nastavit ji jako sadu oprávnění pro konkrétní zónu. Výchozí sady oprávnění, jako je například `LocalIntranet`, nelze upravovat. Například pokud chcete zahrnout <xref:System.Data.SqlClient> oprávnění pro kód, který má <xref:System.Security.Policy.Zone> `LocalIntranet`, může správce systému zkopírovat sadu oprávnění pro `LocalIntranet`, přejmenovat ji na "CustomLocalIntranet", přidat oprávnění <xref:System.Data.SqlClient>, importovat sadu oprávnění CustomLocalIntranet pomocí [nástroje Caspol. exe (Nástroj pro zásady zabezpečení přístupu kódu)](../../tools/caspol-exe-code-access-security-policy-tool.md)a nastavit sadu oprávnění `LocalIntranet_Zone` na CustomLocalIntranet.  
   
 ### <a name="sample-permission-set"></a>Sada ukázkových oprávnění  
  Toto je ukázková sada oprávnění pro .NET Framework Zprostředkovatel dat pro SQL Server v částečně důvěryhodném scénáři. Informace o vytváření vlastních sad oprávnění najdete v tématu [konfigurace sad oprávnění pomocí nástroje Caspol. exe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4ybs46y6(v=vs.100)).  

@@ -4,18 +4,18 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 12/03/2019
-ms.openlocfilehash: bcc41bfcd7c6d03038952e3faaf07952c3deb69d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4f85ed3da8a434fcd5b6ee88491daf623c3c8b31
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715540"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980181"
 ---
 # <a name="rhel-7-package-manager---install-net-core"></a>Správce balíčků RHEL 7 – instalace .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
-Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na RHEL 7. .NET Core 3,1 není zatím k dispozici pro RHEL 7.
+Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na RHEL 7.
 
 ## <a name="register-your-red-hat-subscription"></a>Zaregistrujte si předplatné Red Hat
 
@@ -27,8 +27,8 @@ Po registraci pomocí Správce předplatného můžete nainstalovat a povolit .N
 
 ```bash
 subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-yum install rh-dotnet30 -y
-scl enable rh-dotnet30 bash
+yum install rh-dotnet31 -y
+scl enable rh-dotnet31 bash
 ```
 
 ## <a name="install-the-aspnet-core-runtime"></a>Instalace modulu runtime ASP.NET Core
@@ -37,8 +37,8 @@ Po registraci pomocí Správce předplatného můžete nainstalovat a povolit mo
 
 ```bash
 subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-yum install rh-dotnet30-aspnetcore-runtime-3.0 -y
-scl enable rh-dotnet30 bash
+yum install rh-dotnet31-aspnetcore-runtime-3.1 -y
+scl enable rh-dotnet31 bash
 ```
 
 ## <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
@@ -47,10 +47,10 @@ Po registraci pomocí Správce předplatného můžete nainstalovat a povolit mo
 
 ```bash
 subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-yum install rh-dotnet30-dotnet-runtime-3.0 -y
-scl enable rh-dotnet30 bash
+yum install rh-dotnet31-dotnet-runtime-3.1 -y
+scl enable rh-dotnet31 bash
 ```
 
 ## <a name="see-also"></a>Viz také:
 
-- [Použití .NET Core 3,0 na Red Hat Enterprise Linux 7](https://access.redhat.com/documentation/en-us/net_core/3.0/html/getting_started_guide/gs_install_dotnet)
+- [Použití .NET Core 3,1 na Red Hat Enterprise Linux 7](https://access.redhat.com/documentation/en-us/net_core/3.1/html/getting_started_guide/gs_install_dotnet)

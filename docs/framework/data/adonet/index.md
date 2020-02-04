@@ -1,13 +1,14 @@
 ---
 title: ADO.NET
+titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 5b7246350478bbc8907bb9f52e425821402f8806
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: a803c0592cd44801c55a699b56a9a498781a6593
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346218"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980103"
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET je sada tříd, které zpřístupňují služby pro přístup k datům pro .NET Framework programátory. ADO.NET poskytuje bohatou sadu komponent pro vytváření distribuovaných aplikací pro sdílení dat. Je nedílnou součástí .NET Framework a poskytuje přístup k datům relačních, XML a aplikací. ADO.NET podporuje nejrůznější potřeby vývoje, včetně vytváření front-endové klientů databáze a obchodních objektů střední vrstvy používaných aplikacemi, nástroji, jazyky nebo internetovými prohlížeči.  

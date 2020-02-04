@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 058e75c81c18f0ec73140f6fc13a91f4e0012a61
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2fb4d7185ac85b29f2cc2d2e7a29e192f91a0868
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036362"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980142"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Integrální číselné typy (C# Referenční dokumentace)
 
@@ -89,18 +89,18 @@ Předchozí příklad také ukazuje použití `_` jako *oddělovač číslic*, k
 
 Typ celočíselného literálu je určen jeho příponou takto:
 
-- Pokud literál nemá žádnou příponu, je jeho typ prvním z následujících typů, ve kterém může být jeho hodnota reprezentovaná: `int`, `uint`, `long` `ulong`.
+- Pokud literál nemá žádnou příponu, je jeho typ prvním z následujících typů, ve kterém může být jeho hodnota reprezentovaná: `int`, `uint`, `long``ulong`.
 - Je-li literál určen `U` nebo `u`, je jeho typ prvním z následujících typů, ve kterém lze jeho hodnotu reprezentovat: `uint`, `ulong`.
 - Je-li literál určen `L` nebo `l`, je jeho typ prvním z následujících typů, ve kterém lze jeho hodnotu reprezentovat: `long`, `ulong`.
 
   > [!NOTE]
   > Jako příponu můžete použít malé písmeno `l`. Tím se však vygeneruje upozornění kompilátoru, protože písmeno `l` může být zaměněno pomocí číslice `1`. Pro přehlednost použijte `L`.
 
-- Pokud má literál příponu `UL`, `Ul`, `uL`, `ul`, `LU`, `Lu`, `lU` nebo `lu`, jeho typ je `ulong`.
+- Pokud má literál příponu `UL`, `Ul`, `uL`, `ul`, `LU`, `Lu`, `lU`nebo `lu`, jeho typ je `ulong`.
 
 Pokud hodnota reprezentovaná celočíselným literálem překračuje <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilátoru [CS1021](../../misc/cs1021.md) .
 
-Pokud je určen typ celočíselného literálu `int` a hodnota reprezentovaná literálem je v rozsahu cílového typu, hodnota může být implicitně převedena na `sbyte`, `byte``short`, `ushort`, `uint`nebo `ulong`:
+Pokud je určen typ celočíselného literálu `int` a hodnota reprezentovaná literálem je v rámci rozsahu cílového typu, hodnota může být implicitně převedena na `sbyte`, `byte`, `short`, `ushort`, `uint`nebo `ulong`:
 
 ```csharp
 byte a = 17;
@@ -132,5 +132,5 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [C#odkaz](../index.md)
 - [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
 - [Typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
-- [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
+- [Řetězce standardního číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)

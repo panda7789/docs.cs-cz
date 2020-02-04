@@ -1,16 +1,16 @@
 ---
-title: Příklady kódu ADO.NET
+title: Příklady kódu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-ms.openlocfilehash: a66ae2b2b8bed95fd38b71a39682a2a7f42be218
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4f0cbc06c03c0d122fc69b8a396570919ac14970
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430803"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980285"
 ---
 # <a name="adonet-code-examples"></a>Příklady kódu ADO.NET
 Výpisy kódu v tomto tématu demonstrují, jak načíst data z databáze pomocí následujících ADO.NET technologií:
@@ -21,7 +21,7 @@ Výpisy kódu v tomto tématu demonstrují, jak načíst data z databáze pomoc�
 
   - [OLEDB](#oledb) (`System.Data.OleDb`)
 
-  - [ODBC](#odbc) (`System.Data.Odbc`)
+  - [Odbc](#odbc) (`System.Data.Odbc`)
 
   - [OracleClient](#oracleclient) (`System.Data.OracleClient`)
 
@@ -31,7 +31,7 @@ Výpisy kódu v tomto tématu demonstrují, jak načíst data z databáze pomoc�
 
   - [Typové ObjectQuery](#typed-objectquery)
 
-  - [Zprostředkovatel EntityClient](#entityclient) (`System.Data.EntityClient`)
+  - [EntityClient](#entityclient) (`System.Data.EntityClient`)
 
 - [LINQ to SQL](#linq-to-sql)
 

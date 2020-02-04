@@ -1,16 +1,17 @@
 ---
 title: Oracle a ADO.NET
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: a49634f712e32f873df8e47fbcb0c91dbe33fa94
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 5683f2b4ba57021ff6dda3a51baca016f886b605
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039827"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980077"
 ---
 # <a name="oracle-and-adonet"></a>Oracle a ADO.NET
 > [!NOTE]

@@ -2,12 +2,12 @@
 title: Řezy
 description: Naučte se, jak používat řezy F# pro existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
 ms.date: 12/23/2019
-ms.openlocfilehash: 3f16c71b071bab7de5b1fb90a2075e351e83cfb4
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 928005f2c63ffe099bb64e11ed29bb625e0a54c6
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901246"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980376"
 ---
 # <a name="slices"></a>Řezy
 
@@ -139,7 +139,7 @@ let sp = [| 1; 2; 3; 4; 5 |].AsSpan()
 printSpan sp.[0..] // [|1; 2; 3; 4; 5|]
 printSpan sp.[..5] // [|1; 2; 3; 4; 5|]
 printSpan sp.[0..3] // [|1; 2; 3|]
-printSpan sp.[1..2] // |2; 3|]
+printSpan sp.[1..3] // |2; 3|]
 ```
 
 ## <a name="built-in-f-slices-are-end-inclusive"></a>Předdefinované řezy jsou F# na konci včetně.

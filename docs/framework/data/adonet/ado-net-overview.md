@@ -1,18 +1,18 @@
 ---
-title: Přehled ADO.NET
+title: Přehled
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 2d21e5b73757280b679a9c5cd04a56339e7e967e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d5dc9cf7081c6876118914a0b95853a5a7ca5e57
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785105"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980337"
 ---
 # <a name="adonet-overview"></a>Přehled ADO.NET
 ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server a XML, a zdrojům dat, které jsou zpřístupněny prostřednictvím OLE DB a rozhraní ODBC. Aplikace příjemce pro sdílení dat můžou pomocí ADO.NET se připojit k těmto zdrojům dat a načítat, zpracovávat a aktualizovat data, která obsahují.  
   
- ADO.NET odděluje přístup k datům z manipulace s daty do diskrétních součástí, které lze použít samostatně nebo společně. ADO.NET zahrnuje .NET Framework poskytovatelé dat pro připojení k databázi, spouštění příkazů a načítání výsledků. Tyto výsledky se buď zpracovávají přímo, umístěné v objektu ADO.NET <xref:System.Data.DataSet> , aby je bylo možné uživatelům zpřístupnit ad hoc způsobem, v kombinaci s daty z více zdrojů nebo mezi vrstvami. `DataSet` Objekt lze také použít nezávisle .NET Framework poskytovatel dat ke správě dat v místní aplikaci nebo zdroji z XML.  
+ ADO.NET odděluje přístup k datům z manipulace s daty do diskrétních součástí, které lze použít samostatně nebo společně. ADO.NET zahrnuje .NET Framework poskytovatelé dat pro připojení k databázi, spouštění příkazů a načítání výsledků. Tyto výsledky se buď zpracovávají přímo, a jsou umístěné v objektu ADO.NET <xref:System.Data.DataSet>, aby je mohl uživatel zveřejnit v rámci ad hoc, a to v kombinaci s daty z více zdrojů nebo předanými mezi úrovněmi. Objekt `DataSet` lze také použít nezávisle na .NET Framework poskytovateli dat pro správu místních dat do aplikace nebo zdroje z XML.  
   
  Třídy ADO.NET se nacházejí v System. data. dll a jsou integrovány s třídami XML nalezenými v souboru System. XML. dll. Pro vzorový kód, který se připojuje k databázi, načte z něj data a pak tato data zobrazí v okně konzoly, viz [Příklady kódu ADO.NET](ado-net-code-examples.md).  
   
@@ -20,7 +20,7 @@ ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server 
   
  ADO.NET poskytuje nejpřímější způsob přístupu k datům v rámci .NET Framework. Pro abstrakci vyšší úrovně, která umožňuje aplikacím pracovat s koncepčním modelem namísto základního modelu úložiště, se podívejte na [ADO.NET Entity Framework](./ef/index.md).  
   
- **Prohlášení o zásadách ochrany osobních údajů**: System. data. dll, System. data. Design. dll, System. data. OracleClient. dll, System. data. SqlXml. dll, System. data. Linq. dll, System. data. SqlServerCe. dll a System. data. DataSetExtensions. dll nerozlišuje mezi sestaveními uživatele soukromá data a nesoukromá data.  Tato sestavení neshromažďují, neukládají ani nepřenosují soukromá data uživatele. Aplikace třetích stran však mohou pomocí těchto sestavení shromažďovat, ukládat nebo přenášet privátní data uživatele.  
+ **Prohlášení o zásadách ochrany osobních údajů**: System. data. dll, System. data. Design. dll, System. data. OracleClient. dll, System. data. SqlXml. dll, System. data. Linq. dll, System. data. SqlServerCe. dll a System. data. DataSetExtensions. dll nerozlišuje mezi soukromými daty uživatele a nesoukromými daty.  Tato sestavení neshromažďují, neukládají ani nepřenosují soukromá data uživatele. Aplikace třetích stran však mohou pomocí těchto sestavení shromažďovat, ukládat nebo přenášet privátní data uživatele.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Architektura ADO.NET](ado-net-architecture.md)  
@@ -36,7 +36,7 @@ ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server 
  Poskytuje přehled návrhu .NET Frameworkho poskytovatele dat a .NET Framework zprostředkovatelů dat, které jsou součástí ADO.NET.  
   
  [Datové sady ADO.NET](ado-net-datasets.md)  
- Poskytuje přehled `DataSet` návrhu a součástí.  
+ Poskytuje přehled `DataSet` návrh a součásti.  
   
  [Souběžné spouštění v ADO.NET](side-by-side-execution.md)  
  Popisuje rozdíly ve verzích ADO.NET a jejich vlivu na souběžné spouštění a kompatibilitu aplikací.  

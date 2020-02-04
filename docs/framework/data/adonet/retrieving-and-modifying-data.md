@@ -1,16 +1,16 @@
 ---
-title: Načítání a úpravy dat v ADO.NET
+title: Načítání a úpravy dat
 ms.date: 03/30/2017
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
-ms.openlocfilehash: 78012a6a5ecdfac0e4cd7c4939ae3ab0036ab716
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 65c373ecff004e219527754bf2e9cc56837dc305
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782847"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980051"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Načítání a úpravy dat v ADO.NET
-Primární funkce libovolné databázové aplikace se připojuje ke zdroji dat a načítá data, která obsahuje. Poskytovatelé dat .NET Framework ADO.NET slouží jako most mezi aplikací a zdrojem dat, což umožňuje provádět příkazy a také načítat data pomocí datového typu **DataReader** nebo **DataAdapter**. Klíčovou funkcí libovolné databázové aplikace je možnost aktualizovat data uložená v databázi. V ADO.NET aktualizace dat zahrnuje použití objektů **příkazového řádku** **DataAdapter** a <xref:System.Data.DataSet>a a může také zahrnovat použití transakcí.  
+Primární funkce libovolné databázové aplikace se připojuje ke zdroji dat a načítá data, která obsahuje. Poskytovatelé dat .NET Framework ADO.NET slouží jako most mezi aplikací a zdrojem dat, což umožňuje provádět příkazy a také načítat data pomocí datového typu **DataReader** nebo **DataAdapter**. Klíčovou funkcí libovolné databázové aplikace je možnost aktualizovat data uložená v databázi. Aktualizace dat v ADO.NET zahrnuje použití příkazů **DataAdapter** a <xref:System.Data.DataSet>a objektů **příkazu** ; a může také zahrnovat použití transakcí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Připojení ke zdroji dat](connecting-to-a-data-source.md)  
@@ -44,7 +44,7 @@ Primární funkce libovolné databázové aplikace se připojuje ke zdroji dat a
  Popisuje, jak získat dostupné databáze nebo katalogy, tabulky a zobrazení v databázi, omezeních, která existují pro tabulky, a další informace o schématu ze zdroje dat.  
   
  [DbProviderFactories](dbproviderfactories.md)  
- Popisuje model továrny poskytovatele a ukazuje, jak používat základní třídy v `System.Data.Common` oboru názvů.  
+ Popisuje model továrny poskytovatele a ukazuje, jak používat základní třídy v oboru názvů `System.Data.Common`.  
   
  [Trasování data v ADO.NET](data-tracing.md)  
  Popisuje, jak ADO.NET poskytuje integrovanou funkci pro trasování dat.  

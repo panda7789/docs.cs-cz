@@ -2,12 +2,12 @@
 title: Začínáme s jazykem F# v editoru Visual Studio Code
 description: Naučte se používat F# s Visual Studio Code a sadou modulů plug-in Ionide.
 ms.date: 12/23/2018
-ms.openlocfilehash: 91265303c2954387df0f500940c9af68b3c97dac
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 2aa62bb1afc220348f884865e55c4d7de4359b7f
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559661"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980350"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s jazykem F# v editoru Visual Studio Code
 
@@ -121,7 +121,7 @@ Tok `toPigLatin` je tedy:
 
 Zkontroluje, jestli je první znak vstupního slova samohláskou. Pokud je, připojte k konci slova "yay". V opačném případě přesuňte tento první znak na konec slova a přidejte do něj "Ay".
 
-K dispozici je jedno konečné oznámení: neexistuje žádná explicitní instrukce pro návrat z funkce, na rozdíl od mnoha dalších jazyků. Důvodem je, F# že je založen na výrazu a poslední výraz v těle funkce je návratová hodnota. Vzhledem k tomu, že `if..then..else` je sama o sobě výraz, v závislosti na vstupní hodnotě se vrátí tělo bloku `then` nebo tělo `else` bloku.
+K dispozici je jedno konečné oznámení: v F#nástroji neexistuje žádná explicitní instrukce pro návrat z funkce. Důvodem je, F# že je založen na výrazu a poslední výraz vyhodnocený v těle funkce určuje návratovou hodnotu této funkce. Vzhledem k tomu, že `if..then..else` je sám o sobě výraz, vyhodnocování těla bloku `then` nebo tělo `else`ho bloku Určuje hodnotu vrácenou `toPigLatin` funkcí.
 
 ## <a name="turn-the-console-app-into-a-pig-latin-generator"></a>Vypnutí konzolové aplikace na prasečí generátor v latince
 

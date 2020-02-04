@@ -1,21 +1,22 @@
 ---
 title: SQL Server a ADO.NET
+titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: b54725fa8dbff7db82ed197f4961e773a06895e4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6e88c35936de72f0d426c23493bbe5a08e707ee1
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782327"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76979973"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server a ADO.NET
 Tato část popisuje funkce a chování, které jsou specifické pro .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient>).  
   
- <xref:System.Data.SqlClient>poskytuje přístup k verzím SQL Server, které zapouzdřují protokoly pro konkrétní databáze. Funkce poskytovatele dat je navržena tak, aby byla podobná poskytovateli .NET Framework dat pro OLE DB, ODBC a Oracle. <xref:System.Data.SqlClient>zahrnuje analyzátor TDS (Tabular data Stream), který komunikuje přímo s SQL Server.  
+ <xref:System.Data.SqlClient> poskytuje přístup k verzím SQL Server, které zapouzdřují protokoly pro konkrétní databáze. Funkce poskytovatele dat je navržena tak, aby byla podobná poskytovateli .NET Framework dat pro OLE DB, ODBC a Oracle. <xref:System.Data.SqlClient> obsahuje analyzátor TDS (Tabular data Stream), který komunikuje přímo s SQL Server.  
   
 > [!NOTE]
-> Chcete-li použít Zprostředkovatel dat .NET Framework pro SQL Server, aplikace musí odkazovat na <xref:System.Data.SqlClient> obor názvů.  
+> Chcete-li použít Zprostředkovatel dat .NET Framework pro SQL Server, musí aplikace odkazovat na obor názvů <xref:System.Data.SqlClient>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [SQL Server – zabezpečení](sql-server-security.md)  
