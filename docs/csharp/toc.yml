@@ -1337,7 +1337,7 @@
                 - name: Výčtové typy
                   href: language-reference/builtin-types/enum.md
                   displayName: 'enum, bit flags, bit field'
-                - name: struct
+                - name: 'struct '
                   href: language-reference/keywords/struct.md
                 - name: Typy hodnot s povolenou hodnotou Null
                   href: language-reference/builtin-types/nullable-value-types.md
@@ -1430,7 +1430,7 @@
               items:
                 - name: if-else
                   href: language-reference/keywords/if-else.md
-                - name: – přepínač
+                - name: switch
                   href: language-reference/keywords/switch.md
             - name: Příkazy iterace
               items:
@@ -1462,7 +1462,7 @@
                   href: language-reference/keywords/try-finally.md
                 - name: try-catch-finally
                   href: language-reference/keywords/try-catch-finally.md
-            - name: Zaškrtnuto a nezaškrtnuto
+            - name: Checked a Unchecked
               items:
                 - name: Přehled
                   displayName: checked unchecked
@@ -1489,9 +1489,9 @@
               href: language-reference/keywords/out-parameter-modifier.md
         - name: Klíčová slova oboru názvů
           items:
-            - name: – obor názvů
+            - name: namespace
               href: language-reference/keywords/namespace.md
-            - name: používání
+            - name: using
               items:
                 - name: using – kontexty
                   href: language-reference/keywords/using.md
@@ -1511,7 +1511,7 @@
           items:
             - name: nové omezení
               href: language-reference/keywords/new-constraint.md
-            - name: kde
+            - name: where
               href: language-reference/keywords/where-generic-type-constraint.md
         - name: Klíčová slova přístupu
           items:
@@ -1642,7 +1642,7 @@
         - name: await – operátor
           href: language-reference/operators/await.md
           displayName: async
-        - name: výchozí operátor
+        - name: default – operátor
           href: language-reference/operators/default.md
           displayName: 'default value, default literal, type default'
         - name: delegate – operátor
