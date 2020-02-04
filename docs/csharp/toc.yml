@@ -1365,8 +1365,6 @@
               items:
                 - name: Tabulka předdefinovaných typů
                   href: language-reference/keywords/built-in-types-table.md
-                - name: Tabulka formátování číselných výsledků
-                  href: language-reference/keywords/formatting-numeric-results-table.md
         - name: Modifikátory
           items:
             - name: Modifikátory přístupu
