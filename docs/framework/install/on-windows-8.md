@@ -3,12 +3,12 @@ title: Instalace .NET Framework ve Windows 8
 ms.custom: updateeachrelease
 description: Informace o tom, jak nainstalovat .NET Framework ve Windows 8
 ms.date: 04/18/2019
-ms.openlocfilehash: 0d9afb30088256b6c5c1fd8c0b2c99e3a9760b89
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1db8ac9837821eb7111b9d0015787509bc27b398
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716732"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965994"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Instalace rozhraní .NET Framework v systému Windows 8 a Windows Server 2012
 
@@ -21,7 +21,7 @@ Tyto pokyny vám pomůžou nainstalovat .NET Frameworké verze, které potřebuj
 ## <a name="net-framework-48"></a>.NET Framework 4,8
 
 > [!div class="button"]
-> [Stáhnout .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Stáhnout .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 .NET Framework 4,8 se podporuje v systému Windows Server 2012. Ve Windows 8 to není podporováno.
 
@@ -29,7 +29,7 @@ Tyto pokyny vám pomůžou nainstalovat .NET Frameworké verze, které potřebuj
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 
-[.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=48130) je nejnovější podporovaná verze .NET Framework ve Windows 8.
+[.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46) je nejnovější podporovaná verze .NET Framework ve Windows 8.
 
 .NET Framework 4,6 podporuje aplikace sestavené pro .NET Framework 4,0 až 4,6.
 

@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: 126f5b10999e65d9715e9b52cb54a2bf1dbd3933
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 202c1867ae6404db074e6196b28ffe5f453ef5bf
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787883"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965604"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -145,7 +145,7 @@ Element `<PackageReference>` Item Určuje [závislost NuGet v projektu](/nuget/c
 
 #### <a name="version"></a>Version
 
-Atribut Required `Version` určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/reference/package-versioning#version-ranges-and-wildcards) . Výchozí chování je přesné porovnávání verzí. Například zadání `Version="1.2.3"` je ekvivalentní `[1.2.3]` notace NuGet pro přesný balíček verze balíčku.
+Atribut Required `Version` určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/reference/package-versioning#version-ranges-and-wildcards) . Výchozí chování je minimální verze (včetně shody). Například zadání `Version="1.2.3"` odpovídá zápisu NuGet `[1.2.3, )` a znamená, že vyřešený balíček bude mít verzi 1.2.3, je-li k dispozici, nebo více jinak.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets a PrivateAssets
 
@@ -184,7 +184,7 @@ Všimněte si, že `DotNetCliToolReference` se [teď už nepoužívá](https://g
 
 #### <a name="version"></a>Version
 
-`Version` určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je přesné porovnávání verzí. Například zadání `Version="1.2.3"` je ekvivalentní `[1.2.3]` notace NuGet pro přesný balíček verze balíčku.
+`Version` určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je minimální verze (včetně shody). Například zadání `Version="1.2.3"` odpovídá zápisu NuGet `[1.2.3, )` a znamená, že vyřešený balíček bude mít verzi 1.2.3, je-li k dispozici, nebo více jinak.
 
 ### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
 

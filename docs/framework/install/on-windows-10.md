@@ -3,12 +3,12 @@ title: Instalace .NET Framework ve Windows 10
 description: Naučte se, jak nainstalovat .NET Framework ve Windows 10 nebo Windows serveru 2016.
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: c2b274bb85b6d4c496e7b6b6b62f05aa932202dd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: eed15b9088d6ba46d8f5bc6d16ba779dd6115b0d
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716369"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965968"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace .NET Framework ve Windows 10 a Windows serveru 2016 a novějších verzích
 
@@ -25,7 +25,7 @@ Po pokusu o spuštění aplikace a zobrazení dialogu na počítači, který bud
 - [Windows 10 Květen 2019 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
 > [!div class="button"]
-> [Stáhnout .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+> [Stáhnout .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 [.NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48) lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 až 4.7.2.
 
@@ -50,7 +50,7 @@ Pokud používáte Windows 10 1507 nebo 1511 a chcete nainstalovat .NET Framewor
 
 ## <a name="net-framework-462"></a>.NET Framework 4.6.2
 
-[.NET Framework 4.6.2](https://www.microsoft.com/download/details.aspx?id=53345) je nejnovější podporovaná verze .NET Framework ve Windows 10 1507 a 1511.
+[.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462) je nejnovější podporovaná verze .NET Framework ve Windows 10 1507 a 1511.
 
 .NET Framework 4.6.2 podporuje aplikace sestavené pro .NET Framework 4,0 až 4.6.2.
 

@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: e5460fd1d968a49478a1bdc5f18962de2c7cbbe0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 7908cf70e91dcd68668008c2c3082dc293330ec1
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920960"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965838"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -73,7 +73,7 @@ Tyto součásti jsou distribuovány následujícími způsoby:
 
 ### <a name="designed-for-adaptability"></a>Navrženo pro zajištění přizpůsobivosti
 
-.NET Core se v porovnání s jinými produkty .NET sestavil jako velmi podobný, ale jedinečný produkt. Byla navržena tak, aby umožňovala širokou škálu nových platforem a úloh a má k dispozici několik operačních systémů a portů procesoru (a je možné ji přenést na mnoho dalších).
+.NET Core se vytvořil jako podobný, ale jedinečný produkt v porovnání s jinými produkty .NET. Byla navržena tak, aby umožňovala širokou škálu nových platforem a úloh a má k dispozici několik operačních systémů a portů procesoru (a je možné ji přenést na mnoho dalších).
 
 Produkt je rozdělen do několika částí a umožňuje v různých časech přizpůsobení různých částí novým platformám. Základní knihovny pro modul runtime a specifické pro platformu musí být přeportované jako jednotka. Nezávislá knihovny platforem by měly fungovat tak, jak jsou na všech platformách, podle konstrukce. Existuje posun projektu pro snížení implementace specifických pro konkrétní platformu, aby se zvýšila efektivita vývojářů, přičemž se C# kód neutrální pro platformu musí považovat za plný nebo nějakým způsobem implementovat rozhraní API.
 

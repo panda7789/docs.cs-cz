@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 538806627a31366d4b8597eb010a4bbe3f8f9202
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: c38127281139d0c85b54a5d5077034804f1102a8
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76860956"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76966007"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Novinky v rozhraní .NET Framework
 
@@ -46,9 +46,9 @@ Tento článek neposkytuje úplné informace o každé nové funkci a může se 
 
 .NET Framework 4,8 si můžete stáhnout z těchto umístění:
 
-- [Webová instalační služba .NET Framework 4,8](https://go.microsoft.com/fwlink/?LinkId=2085155)
+- [Webová instalační služba .NET Framework 4,8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
-- [.NET Framework 4,8 – offline instalační program](https://go.microsoft.com/fwlink/?linkid=2088631)
+- [.NET Framework 4,8 – offline instalační program](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
 .NET Framework 4,8 lze nainstalovat do systému Windows 10, Windows 8.1, Windows 7 SP1 a odpovídajících serverových platforem od verze Windows Server 2008 R2 SP1. .NET Framework 4,8 můžete nainstalovat buď pomocí webové instalační služby, nebo v offline instalačním programu. Doporučeným způsobem pro většinu uživatelů je použití webové instalační služby.
 
@@ -2132,3 +2132,4 @@ Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějšíc
 - [Co je nového v aplikaci Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Co je nového C++ v aplikaci Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)
+ 

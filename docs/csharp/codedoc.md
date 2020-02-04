@@ -4,12 +4,12 @@ description: Naučte se dokumentovat kód pomocí dokumentačních komentářů 
 ms.date: 01/21/2020
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: ef0d22e0ee7faa3ba51da6b44cf1827f19baf4f1
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1ec088db1de7c953bdb20b1129c5fd40f9e31454
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787826"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965929"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Dokumentování kódu pomocí komentářů XML
 
@@ -49,7 +49,7 @@ Tady je kód pro jednoduchou knihovnu Math:
 
 [!code-csharp[Sample Library](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
-Ukázková knihovna podporuje čtyři hlavní aritmetické operace `add`, `subtract`, `multiply` a `divide` na `int` a `double` datových typech.
+Ukázková knihovna podporuje čtyři hlavní aritmetické operace (`add`, `subtract`, `multiply`a `divide`) na `int` a `double` datových typech.
 
 Nyní chcete být schopni vytvořit referenční dokument rozhraní API z kódu pro vývojáře třetích stran, kteří používají vaši knihovnu, ale nemají přístup ke zdrojovému kódu.
 Jak bylo zmíněno dříve, můžete k tomuto účelu použít Tagy dokumentace XML. Nyní budete zavedeni do standardních značek XML, které C# podporuje kompilátor.
@@ -61,7 +61,7 @@ Ukážeme jeho použití tím, že ho přidáte do definice `Math` třídy a prv
 
 [!code-csharp[Summary Tag](~/samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
-Značka `<summary>` je velmi důležitá a doporučujeme, abyste ji zahrnuli, protože její obsah je primárním zdrojem informací o typu nebo členu v IntelliSense nebo referenčním dokumentu rozhraní API.
+Značka `<summary>` je důležitá a doporučujeme, abyste ji zahrnuli, protože její obsah je primárním zdrojem informací o typu nebo členu v IntelliSense nebo dokumentu Reference k rozhraním API.
 
 ## <a name="remarks"></a>\<poznámky >
 
@@ -150,7 +150,7 @@ Přidejte rychlou obecnou metodu do třídy `Math`, abyste zkontrolovali, jestli
 
 ## <a name="paramref"></a>\<paramref >
 
-Někdy se může stát, že popíšete, co metoda v co by mohla být značka `<summary>` a můžete chtít vytvořit odkaz na parametr. Označení `<paramref>` je skvělé jenom pro tento. Pojďme aktualizovat souhrn naší metody s dvojitou přesností `Add`. Podobně jako u značky `<param>` je název parametru zadán v atributu **required** `name`.
+Někdy se může stát, že popíšete, co metoda v co by mohla být značka `<summary>` a můžete chtít vytvořit odkaz na parametr. Označení `<paramref>` je skvělé jenom pro tento. Pojďme aktualizovat souhrn naší metody s dvojitou přesností `Add`. Podobně jako značka `<param>` je název parametru zadán v atributu **required** `name`.
 
 [!code-csharp[Paramref Tag](~/samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
@@ -163,8 +163,7 @@ Můžete použít stejnou obecnou metodu, kterou jste vytvořili dříve.
 
 ## <a name="list"></a>seznam \<
 
-Pomocí značky `<list>` můžete formátovat informace o dokumentaci jako seřazený seznam, neuspořádaný seznam nebo tabulku.
-Vytvořte neuspořádaný seznam každé matematické operace, kterou podporuje knihovna `Math`.
+Pomocí značky `<list>` můžete formátovat informace o dokumentaci jako seřazený seznam, neuspořádaný seznam nebo tabulku. Vytvořte neuspořádaný seznam každé matematické operace, kterou podporuje knihovna `Math`.
 
 [!code-csharp[List Tag](~/samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
@@ -207,7 +206,7 @@ Atribut `path` představuje dotaz [XPath](../standard/data/xml/xpath-queries-and
 
 Atribut `name` představuje specifikátor názvu ve značce, která předchází komentář.
 
-Atribut `id`, který lze použít místo `name` představuje ID značky, která předchází komentář.
+Atribut `id`, který lze použít místo `name`, představuje ID značky, která předchází komentář.
 
 ### <a name="user-defined-tags"></a>Uživatelsky definované značky
 

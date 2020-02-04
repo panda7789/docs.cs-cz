@@ -2,12 +2,12 @@
 title: Parametry ByRef
 description: Seznamte se s typy ByRef a ByRef jako F#v, které se používají pro programování na nízké úrovni.
 ms.date: 11/04/2019
-ms.openlocfilehash: 5aaee1e4eac9ce0d7e9ba89a2ab5f745d31367a0
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 05a40059ad5b72829233b0c4135c76eb1cff4da5
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901313"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965812"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
@@ -82,7 +82,7 @@ Pokud pouze píšete ukazatel namísto čtení, zvažte použití `outref<'T>` m
 
 ### <a name="inref-semantics"></a>Sémantika Inref
 
-Uvažujte následující kód:
+Vezměte v úvahu následující kód:
 
 ```fsharp
 let f (x: inref<SomeStruct>) = x.SomeField
@@ -182,14 +182,20 @@ I když tato pravidla omezují použití, tak aby mohli bezpečným způsobem pl
 Návratové hodnoty F# ByRef z funkcí nebo členů lze vytvářet a spotřebovat. Při zpracování metody vracené `byref`se hodnota implicitně odkázat. Příklad:
 
 ```fsharp
-let safeSum(bytes: Span<byte>) =
-    let mutable sum = 0
+let squareAndPrint (data : byref<int>) = 
+    let squared = data*data    // data is implicitly dereferenced
+    printfn "%d" squared
+```
+
+Chcete-li vrátit hodnotu ByRef, proměnná, která obsahuje hodnotu, musí být živá déle než aktuální obor.
+Také pro návrat typu ByRef použijte & Value (kde value je proměnná, která je větší než aktuální rozsah).
+
+```fsharp
+let mutable sum = 0
+let safeSum (bytes: Span<byte>) =
     for i in 0 .. bytes.Length - 1 do
         sum <- sum + int bytes.[i]
-    sum
-
-let sum = safeSum(mySpanOfBytes)
-printfn "%d" sum // 'sum' is of type 'int'
+    &sum  // sum lives longer than the scope of this function.
 ```
 
 Chcete-li se vyhnout implicitnímu odkázání, jako je například předání odkazu prostřednictvím více zřetězených volání, použijte `&x` (kde `x` je hodnota).
