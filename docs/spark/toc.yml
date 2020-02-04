@@ -31,6 +31,10 @@
       href: how-to-guides/databricks-deploy-methods.md
     - name: Nasazení pracovních procesů a binárních souborů UDF
       href: how-to-guides/deploy-worker-udf-binaries.md
+    - name: Sestavení aplikace v Ubuntu
+      href: how-to-guides/ubuntu-instructions.md
+    - name: Sestavení aplikace ve Windows
+      href: how-to-guides/windows-instructions.md
 - name: Odkaz
   items:
     - name: Referenční dokumentace ke knihovně API

@@ -97,7 +97,7 @@
       href: tutorials/using-on-mac-vs.md
     - name: Sestavení kompletního řešení .NET Core v macOS
       href: tutorials/using-on-mac-vs-full-solution.md
-    - name: Začínáme s .NET pomocí nástrojů CLI
+    - name: Začínáme s .NET Core v rozhraní příkazového řádku
       href: tutorials/cli-create-console-app.md
     - name: Uspořádání a testování projektů pomocí .NET Core CLI
       href: tutorials/testing-with-cli.md
@@ -151,11 +151,11 @@
 - name: Nasazení aplikací
   href: deploying/index.md
   items:
-    - name: Nasazení aplikací pomocí nástrojů CLI
+    - name: Publikování aplikací v rozhraní příkazového řádku
       href: deploying/deploy-with-cli.md
     - name: Nasazení aplikací pomocí sady Visual Studio
       href: deploying/deploy-with-vs.md
-    - name: Vytvoření balíčku NuGet pomocí nástrojů pro různé platformy
+    - name: Vytvoření balíčku NuGet v rozhraní příkazového řádku
       href: deploying/creating-nuget-packages.md
     - name: Samostatné nasazení – dopředné posunutí modulu runtime
       href: deploying/runtime-patch-selection.md

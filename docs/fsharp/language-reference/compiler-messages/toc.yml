@@ -1,0 +1,15 @@
+- name: Chyby a upozornění kompilátoru
+  href: index.md
+  items:
+    - name: FS0001 – Chyba při přidávání rovnice typu
+      href: ./fs0001.md
+    - name: FS0002 – Neočekávaná funkce
+      href: ./fs0002.md
+    - name: FS0003 – Tato hodnota není funkcí a nedá se použít.
+      href: ./fs0003.md
+    - name: FS0005 –Toto pole není měnitelné.
+      href: ./fs0005.md
+    - name: FS0008 – Neurčité přetypování za běhu
+      href: ./fs0008.md
+    - name: FS0009 – Možný neověřitelný kód
+      href: ./fs0009.md

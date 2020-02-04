@@ -256,6 +256,8 @@
       href: language-reference/caller-information.md
     - name: Podrobná syntaxe
       href: language-reference/verbose-syntax.md
+    - name: Chyby a upozornění kompilátoru
+      href: language-reference/compiler-messages/index.md
 - name: 'Příručka stylu jazyka F#'
   href: style-guide/index.md
   items:
