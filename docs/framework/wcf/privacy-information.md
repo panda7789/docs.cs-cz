@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 7bd56d44eeb6af70b94cdde77d48e917ef8afb9a
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 30ea92f09bc655796b6bc268212b6d9e0e05bd9b
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347785"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919332"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových uživatelů. Když sestavíte aplikaci pomocí Windows Communication Foundation (WCF), verze 3,0, může vaše aplikace ovlivnit ochranu osobních údajů koncových uživatelů. Vaše aplikace může například explicitně shromažďovat kontaktní údaje uživatele nebo může vyžádat nebo odeslat informace prostřednictvím internetu na web. Pokud do své aplikace vložíte technologii Microsoftu, může mít tato technologie vlastní chování, které může mít vliv na ochranu osobních údajů. WCF neodesílá žádné informace společnosti Microsoft z vaší aplikace, pokud jste vy nebo koncový uživatel nezvolili odeslání na nás.  
@@ -28,7 +28,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Vrstva zasílání zpráv WCF nepíše žádné osobní údaje do místního počítače. Může však šířit osobní údaje na úrovni sítě, pokud vývojář služby vytvořil službu, která tyto informace zpřístupňuje (například pomocí názvu osoby v názvu koncového bodu nebo včetně osobních údajů na webu koncového bodu). Služba Description Language, ale nevyžaduje, aby klienti k přístupu ke WSDL používali https. Pokud vývojář spustí nástroj pro dodané [metadata (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) v rámci koncového bodu, který zveřejňuje osobní údaje, může také výstup tohoto nástroje obsahovat tyto informace a výstupní soubor je zapsán na místní pevný disk.  
   
-## <a name="hosting"></a>Hostování  
+## <a name="hosting"></a>Hosting  
  Funkce hostování v rámci WCF umožňuje aplikacím spouštět na vyžádání nebo povolit sdílení portů mezi několika aplikacemi. Aplikace WCF může být hostována ve službě Internetová informační služba (IIS), podobně jako ASP.NET.  
   
  Hostování nezveřejňuje žádné konkrétní informace v síti a neuchovává data v počítači.  
@@ -44,7 +44,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Ověřování může mít za následek zabezpečenou relaci vytvořenou mezi komunikujícími koncovými body. Relace je identifikována identifikátorem GUID, který vydrží životnost relace zabezpečení. Následující tabulka ukazuje, co se zachová a kde.  
   
-|Data|Storage|  
+|Datové|Storage|  
 |----------|-------------|  
 |Přihlašovací údaje pro prezentace, jako je uživatelské jméno, certifikáty X. 509, tokeny Kerberos a odkazy na přihlašovací údaje.|Standardní mechanismy správy přihlašovacích údajů systému Windows, jako je například úložiště certifikátů systému Windows.|  
 |Informace o členství uživatele, například uživatelská jména a hesla.|ASP.NET poskytovatelé členství.|  
@@ -54,7 +54,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
 ## <a name="auditing"></a>Auditování  
  Auditování zaznamenává úspěšné a neúspěšné události ověřování a autorizace. Záznamy auditu obsahují následující data: identifikátor URI služby, identifikátor URI akce a identifikaci volajícího.  
   
- Auditování také zaznamenává, když správce změní konfiguraci protokolování zpráv (zapnutí nebo vypnutí), protože protokolování zpráv může protokolovat data specifická pro aplikaci v záhlavích a subjektech. V případě [!INCLUDE[wxp](../../../includes/wxp-md.md)]záznam se zaznamená do protokolu událostí aplikace. V případě systémů Windows Vista a Windows Server 2003 se záznam zaznamená do protokolu událostí zabezpečení.  
+ Auditování také zaznamenává, když správce změní konfiguraci protokolování zpráv (zapnutí nebo vypnutí), protože protokolování zpráv může protokolovat data specifická pro aplikaci v záhlavích a subjektech. V systému Windows XP se záznam zaznamená do protokolu událostí aplikace. V případě systémů Windows Vista a Windows Server 2003 se záznam zaznamená do protokolu událostí zabezpečení.  
   
 ## <a name="transactions"></a>Transakce  
  Funkce transakcí poskytuje transakční služby pro aplikaci WCF.  
@@ -95,7 +95,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
 ### <a name="tracing"></a>Trasování  
  Funkce diagnostiky infrastruktury WCF protokoluje zprávy, které procházejí prostřednictvím vrstev přenosu a modelu služby, a aktivit a událostí přidružených k těmto zprávám. Tato funkce je ve výchozím nastavení vypnutá. Je povolená pomocí konfiguračního souboru aplikace a chování trasování se dá v době běhu upravit pomocí zprostředkovatele WMI WCF. Pokud je tato možnost povolena, trasovací infrastruktura vygeneruje diagnostické trasování, které obsahuje zprávy, aktivity a zpracování událostí pro nakonfigurované naslouchací procesy. Formát a umístění výstupu jsou určeny volbami konfigurace naslouchacího procesu správce, ale obvykle se jedná o soubor ve formátu XML. Správce zodpovídá za nastavení seznamu řízení přístupu (ACL) na trasovacích souborech. Zejména pokud je hostovaný systémem Windows Activation System (WAS), správce by měl zajistit, aby soubory nebyly obsluhovány z veřejného virtuálního kořenového adresáře, pokud to není žádoucí.  
   
- Existují dva typy trasování: Trasování diagnostiky zpráv a modelů služby, které jsou popsané v následující části. Každý typ je nakonfigurován prostřednictvím vlastního zdroje trasování: <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> a <xref:System.ServiceModel>. Oba tyto zdroje trasování protokolování zachytí data, která jsou místní pro aplikaci.  
+ Existují dva typy trasování: protokolování zpráv a trasování diagnostiky modelu služby, které jsou popsány v následující části. Každý typ je nakonfigurován prostřednictvím vlastního zdroje trasování: <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> a <xref:System.ServiceModel>. Oba tyto zdroje trasování protokolování zachytí data, která jsou místní pro aplikaci.  
   
 ### <a name="message-logging"></a>Protokolování zpráv  
  Zdroj trasování protokolování zpráv (<xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>) umožňuje správci Protokolovat zprávy, které procházejí systémem. Uživatel může prostřednictvím konfigurace zaprotokolovat pouze celé zprávy nebo hlavičky zpráv, zda se mají protokolovat na vrstvy přenosu nebo modelu služby a zda mají být zahrnuty poškozené zprávy. Uživatel taky může nakonfigurovat filtrování, aby se omezilo protokolování zpráv.  
@@ -127,13 +127,13 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Odebrané klíče:  
   
- \- pro xmlns: wst = "http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns: wst = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- pro xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst: BinarySecret  
   
  wst: entropie  
   
- \- pro xmlns: wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns: wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pro xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse: heslo  
   
@@ -141,7 +141,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Potenciálně odstraněné osobní informace:  
   
- \- pro xmlns: wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns: wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pro xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse: username  
   
@@ -304,7 +304,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Pro následující obory názvů:  
   
- xmlns: wst = "http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns: wst = "http://schemas.xmlsoap.org/ws/2005/02/trust" (například pokud není k dispozici žádná akce)  
+ xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" (například pokud není k dispozici žádná akce)  
   
  Odeberou se informace pro tyto prvky těla, které zahrnují výměnu klíčů:  
   
