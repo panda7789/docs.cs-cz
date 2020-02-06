@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ce0777ba71e5433b42b51ef1530e7a1a46905b25
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: c1383dbb5419eadbfb7c07f288ee46b1ca11cf5c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957019"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709995"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Ověření XDR s třídou XmlSchemaCollection
 
@@ -22,7 +20,7 @@ Pokud je schéma XDR (XML-data redukované), proti kterému ověřujete, Uložen
 > [!IMPORTANT]
 > Třída <xref:System.Xml.Schema.XmlSchemaCollection> je nyní zastaralá a byla nahrazena třídou <xref:System.Xml.Schema.XmlSchemaSet>. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaSet> naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).
 
-Například pokud je kořenový prvek dokumentu XML `<bookstore xmlns="urn:newbooks-schema">`, pokud je schéma přidáno do rozhraní **XmlSchemaCollection** , odkazuje na stejný obor názvů následujícím způsobem:
+Například pokud je kořenový prvek dokumentu XML `<bookstore xmlns="urn:newbooks-schema">`, když je schéma přidáno do rozhraní **XmlSchemaCollection** , odkazuje na stejný obor názvů následujícím způsobem:
 
 ```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
