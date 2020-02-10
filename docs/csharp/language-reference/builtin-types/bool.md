@@ -8,12 +8,12 @@ helpviewer_keywords:
 - bool data type [C#]
 - Boolean [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 577ccd3bb9a20964dcdfc79ef2028854e4a55dc6
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 720ece2f7f47961e0ab6ebf03c8afeb5fa3a6271
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342702"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093263"
 ---
 # <a name="bool-c-reference"></a>bool (C# Referenční dokumentace)
 
@@ -43,8 +43,8 @@ C#poskytuje pouze dva převody, které zahrnují `bool` typ. Jedná se o implici
 
 Další informace naleznete v části [typ bool](~/_csharplang/spec/types.md#the-bool-type) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
-- [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
+- [Typy hodnot](value-types.md)
 - [operátory true a false](../operators/true-false-operators.md)

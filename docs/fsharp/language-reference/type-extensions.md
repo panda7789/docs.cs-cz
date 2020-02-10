@@ -1,13 +1,13 @@
 ---
 title: Rozšíření typů
 description: Přečtěte F# si, jak rozšíření typu umožňují přidat nové členy do dříve definovaného typu objektu.
-ms.date: 11/04/2019
-ms.openlocfilehash: 3e2c6971156bd562ed5d5428e6b7ffdc520c4cf5
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.date: 02/05/2020
+ms.openlocfilehash: 9ab3a007783f67fd8d80cff840ac3085fdcd60f7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341574"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092678"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
@@ -33,7 +33,8 @@ open System.Runtime.CompilerServices
 
 [<Extension>]
 type Extensions() =
-    [static] member self-identifier.extension-name (ty: typename, [args]) =
+    [<Extension>]
+    static member self-identifier.extension-name (ty: typename, [args]) =
         body
     ...
 ```
@@ -78,7 +79,7 @@ Rozšíření vnitřních typů jsou kompilována jako členové typu, které ro
 
 Volitelné rozšíření typu je rozšíření, které se zobrazí mimo původní modul, obor názvů nebo sestavení typu, který se rozšiřuje.
 
-Volitelná rozšíření typu jsou užitečná pro rozšíření typu, který jste nedefinovali sami. Příklad:
+Volitelná rozšíření typu jsou užitečná pro rozšíření typu, který jste nedefinovali sami. Například:
 
 ```fsharp
 module Extensions
@@ -104,7 +105,7 @@ Nepovinní členové rozšíření C# ani nemohou Visual Basic zákazníky. Moho
 
 Je možné deklarovat rozšíření typu u obecného typu, kde je proměnná typu omezená. Požadavek znamená, že omezení deklarace rozšíření odpovídá omezení deklarovaného typu.
 
-Nicméně i v případě, že se omezení shodují mezi deklarovaným typem a rozšířením typu, je možné, že je omezení odvozeno v těle rozšířeného člena, který ukládá jiný požadavek na parametr typu než deklarovaný typ. Příklad:
+Nicméně i v případě, že se omezení shodují mezi deklarovaným typem a rozšířením typu, je možné, že je omezení odvozeno v těle rozšířeného člena, který ukládá jiný požadavek na parametr typu než deklarovaný typ. Například:
 
 ```fsharp
 open System.Collections.Generic
@@ -128,7 +129,7 @@ Co je žádoucí, jsou statické metody, které jsou "float in Space" a mohou b�
 
 Nakonec metody rozšíření (někdy označované jakoC# "členy rozšíření stylu") lze deklarovat F# jako statické členské metody pro třídu.
 
-Rozšiřující metody jsou užitečné, pokud chcete definovat rozšíření u obecného typu, který omezí proměnnou typu. Příklad:
+Rozšiřující metody jsou užitečné, pokud chcete definovat rozšíření u obecného typu, který omezí proměnnou typu. Například:
 
 ```fsharp
 namespace Extensions
@@ -136,12 +137,21 @@ namespace Extensions
 open System.Runtime.CompilerServices
 
 [<Extension>]
-type IEnumerableExtensions() =
+type IEnumerableExtensions =
     [<Extension>]
     static member inline Sum(xs: IEnumerable<'T>) = Seq.sum xs
 ```
 
 Při použití tohoto kódu se tento kód zobrazí, jako by byla `Sum` definovaná <xref:System.Collections.Generic.IEnumerable%601>, pokud je `Extensions` otevřený nebo je v rozsahu.
+
+Aby bylo rozšíření k dispozici pro VB.NET kód, je na úrovni sestavení vyžadován další `ExtensionAttribute`:
+
+```fsharp
+module AssemblyInfo
+open System.Runtime.CompilerServices
+[<assembly:Extension>]
+do ()
+```
 
 ## <a name="other-remarks"></a>Další poznámky
 
@@ -166,7 +176,7 @@ Pro přípony typů existují taky tato omezení:
 
 Nakonec, pokud existuje více rozšíření vnitřního typu pro jeden typ, všechny členy musí být jedinečné. Pro volitelná rozšíření typu můžou mít členové v různých typech rozšíření stejného typu stejné názvy. K chybám nejednoznačnosti dochází pouze v případě, že klientský kód otevírá dva různé obory, které definují stejné názvy členů.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace jazyka F#](index.md)
 - [Členové](./members/index.md)

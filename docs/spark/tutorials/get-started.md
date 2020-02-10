@@ -1,25 +1,25 @@
 ---
 title: Začínáme s .NET pro Apache Spark
-description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows.
-ms.date: 11/04/2019
+description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, MacOS a Ubuntu.
+ms.date: 01/31/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 679ee7660e96504768a781e1e384acab80362736
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 018c21804bf942233e07039281d7ec22a6bef763
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743212"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092314"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Kurz: Začínáme s .NET pro Apache Spark
 
-V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows.
+V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, MacOS a Ubuntu.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 >
-> * Příprava prostředí Windows pro rozhraní .NET pro Apache Spark
+> * Příprava prostředí pro .NET pro Apache Spark
 > * Zápis prvního rozhraní .NET pro Apache Spark aplikaci
 > * Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci
 
@@ -31,29 +31,23 @@ Než začnete psát aplikaci, musíte nastavit některé závislosti požadavků
 
 Chcete-li začít sestavovat aplikace .NET, je nutné stáhnout a nainstalovat sadu .NET SDK (Software Development Kit).
 
-Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Instalace sady SDK přidá do vaší cesty `dotnet` sada nástrojů.
+Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1). Instalace sady SDK přidá do vaší cesty `dotnet` sada nástrojů.
 
-Po instalaci .NET Core SDK otevřete nový příkazový řádek a spusťte `dotnet`.
+Po instalaci .NET Core SDK otevřete nový příkazový řádek nebo terminál a spusťte `dotnet`.
 
-Pokud se příkaz spustí a vytiskne informace o použití dotnet, může přejít k dalšímu kroku. Pokud se zobrazí chyba `'dotnet' is not recognized as an internal or external command`, před spuštěním příkazu se ujistěte, že jste otevřeli **Nový** příkazový řádek.
+Pokud se příkaz spustí a vytiskne informace o použití dotnet, může přejít k dalšímu kroku. Pokud se zobrazí chyba `'dotnet' is not recognized as an internal or external command`, před spuštěním příkazu se ujistěte, že jste otevřeli **Nový** příkazový řádek nebo terminál.
 
 ### <a name="2-install-java"></a>2. instalace Java
 
-Nainstalujte [Java 8,1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+Nainstalujte [Java 8,1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) pro Windows a MacOS nebo [OpenJDK 8](https://openjdk.java.net/install/) pro Ubuntu.
 
-Vyberte odpovídající verzi pro váš operační systém. Vyberte například **JDK-8u201-Windows-x64. exe** pro počítač se systémem Windows x64. Pak pomocí příkazového `java` Ověřte instalaci.
+Vyberte odpovídající verzi pro váš operační systém. Například vyberte **JDK-8u201-Windows-x64. exe** pro počítač s Windows x64 (jak je vidět níže) nebo **JDK-8u231-MacOSX-x64. dmg** pro MacOS. Pak pomocí příkazového `java` Ověřte instalaci.
 
 ![Stažení Java](https://dotnet.microsoft.com/static/images/java-jdk-downloads-windows.png?v=6BbJHoNyDO-PyYVciImr5wzh2AW_YHNcyb3p093AwPA)
 
-### <a name="3-install-7-zip"></a>3. instalace 7 – zip
+### <a name="3-install-compression-software"></a>3. instalace kompresního softwaru
 
-Apache Spark se stáhl jako komprimovaný soubor. tgz. K extrakci souboru použijte program pro extrakci, například 7 – zip.
-
-* Navštivte [soubory ke stažení pro 7 – zip](https://www.7-zip.org/).
-* V první tabulce na stránce vyberte 32 stažení x86 nebo 64-bit x64, v závislosti na vašem operačním systému.
-* Po dokončení stahování spusťte instalační program.
-
-![Stažení 7Zip](https://dotnet.microsoft.com/static/images/7-zip-downloads.png?v=W6qWtFC1tTMKv3YGXz7lBa9F3M22uWyTvkMmunyroNk)
+Apache Spark se stáhl jako komprimovaný soubor. tgz. K extrakci souboru použijte program pro extrakci, například [7-zip](https://www.7-zip.org/) nebo [WinZip](https://www.winzip.com/).
 
 ### <a name="4-install-apache-spark"></a>4. instalace Apache Spark
 
@@ -77,14 +71,22 @@ Extrahování Apache Spark souborů:
 
 ![Instalace Sparku](https://dotnet.microsoft.com/static/images/spark-extract-with-7-zip.png?v=YvjUv54LIxI9FbALPC3h8zSQdyMtK2-NKbFOliG-f8M)
 
-Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark:
+Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark ve **Windows**:
 
 ```console
 setx HADOOP_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 setx SPARK_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 ```
 
-Jakmile nainstalujete vše a nastavíte proměnné prostředí, otevřete **Nový** příkazový řádek a spusťte následující příkaz:
+Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark v **MacOS** a **Ubuntu**:
+
+```bash
+export SPARK_HOME=~/bin/spark-2.4.1-bin-hadoop2.7/
+export PATH="$SPARK_HOME/bin:$PATH"
+source ~/.bashrc
+```
+
+Jakmile nainstalujete vše a nastavíte proměnné prostředí, otevřete **Nový** příkazový řádek nebo terminál a spusťte následující příkaz:
 
 `%SPARK_HOME%\bin\spark-submit --version`
 
@@ -94,11 +96,11 @@ Pokud se zobrazí chyba `'spark-submit' is not recognized as an internal or exte
 
 ### <a name="5-install-net-for-apache-spark"></a>5. Nainstalujte rozhraní .NET pro Apache Spark
 
-Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub. Například pokud jste na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 2.1](https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip).
+Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub. Pokud jste například na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 3.1](https://github.com/dotnet/spark/releases/download/v0.8.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.8.0.zip).
 
 Extrakce Microsoft. spark. Worker:
 
-* Vyhledejte soubor **Microsoft. spark. work. netcoreapp 2.1. Win-x64-0.6.0. zip** , který jste stáhli.
+* Vyhledejte soubor **Microsoft. spark. work. netcoreapp 3.1. Win-x64-0.8.0. zip** , který jste stáhli.
 * Klikněte pravým tlačítkem a vyberte **7-zip-> extrahování souborů...** .
 * Do pole **extrahovat do** zadejte **C:\Bin** .
 * Zrušte zaškrtnutí políčka pod polem **extrahovat do** .
@@ -106,7 +108,7 @@ Extrakce Microsoft. spark. Worker:
 
 ![Instalace .NET Spark](https://dotnet.microsoft.com/static/images/dotnet-for-spark-extract-with-7-zip.png?v=jwCyum9mL0mGIi4V5zC7yuvLfcj1_nL-QFFD8TClhZk)
 
-### <a name="6-install-winutils"></a>6. instalace WinUtils
+### <a name="6-install-winutils-windows-only"></a>6. instalace WinUtils (jenom Windows)
 
 Rozhraní .NET pro Apache Spark vyžaduje, aby se WinUtils nainstalovaly společně s Apache Spark. [Stáhněte si winutils. exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe). Pak zkopírujte WinUtils do **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.
 
@@ -115,9 +117,13 @@ Rozhraní .NET pro Apache Spark vyžaduje, aby se WinUtils nainstalovaly společ
 
 ### <a name="7-set-dotnet_worker_dir-and-check-dependencies"></a>7. Nastavte DOTNET_WORKER_DIR a ověřte závislosti.
 
-Spuštěním následujícího příkazu nastavte proměnnou prostředí `DOTNET_WORKER_DIR`, kterou aplikace .NET používá k vyhledání rozhraní .NET pro Apache Spark:
+Spusťte jeden z následujících příkazů, abyste nastavili proměnnou prostředí `DOTNET_WORKER_DIR`, kterou aplikace .NET používá k vyhledání rozhraní .NET pro Apache Spark.
 
-`setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker-0.6.0"`
+V **systému Windows**vytvořte [novou proměnnou prostředí](https://www.java.com/en/download/help/path.xml) `DOTNET_WORKER_DIR` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali Microsoft. spark. worker (například `C:\bin\Microsoft.Spark.Worker\`).
+
+V **MacOS**vytvořte novou proměnnou prostředí pomocí `export DOTNET_WORKER_DIR <your_path>` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali Microsoft. spark. Worker (například *~/bin/Microsoft.spark.Worker/* ). 
+
+V **Ubuntu**vytvořte [novou proměnnou prostředí](https://help.ubuntu.com/community/EnvironmentVariables) `DOTNET_WORKER_DIR` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali Microsoft. spark. Worker (například *~/bin/Microsoft.spark.Worker*).
 
 Nakonec před přechodem na další oddíl dvakrát ověřte, že je možné spustit `dotnet`, `java`, `mvn``spark-shell` z příkazového řádku.
 
@@ -125,9 +131,9 @@ Nakonec před přechodem na další oddíl dvakrát ověřte, že je možné spu
 
 ### <a name="1-create-a-console-app"></a>1. vytvoření konzolové aplikace
 
-Na příkazovém řádku spusťte následující příkazy k vytvoření nové konzolové aplikace:
+V příkazovém řádku nebo terminálu spusťte následující příkazy k vytvoření nové konzolové aplikace:
 
-```console
+```dotnetcli
 dotnet new console -o mySparkApp
 cd mySparkApp
 ```
@@ -136,9 +142,9 @@ Příkaz `dotnet` vytvoří pro vás `new`ou aplikaci typu `console`. Parametr `
 
 ### <a name="2-install-nuget-package"></a>2. instalace balíčku NuGet
 
-Pokud chcete použít .NET pro Apache Spark v aplikaci, nainstalujte balíček Microsoft. spark. Na příkazovém řádku spusťte následující příkaz:
+Pokud chcete použít .NET pro Apache Spark v aplikaci, nainstalujte balíček Microsoft. spark. V příkazovém řádku nebo terminálu spusťte následující příkaz:
 
-`dotnet add package Microsoft.Spark --version 0.6.0`
+`dotnet add package Microsoft.Spark --version 0.8.0`
 
 ### <a name="3-code-your-app"></a>3. kódování aplikace
 
@@ -154,7 +160,7 @@ namespace MySparkApp
         static void Main(string[] args)
         {
             // Create a Spark session.
-            var spark = SparkSession
+            SparkSession spark = SparkSession
                 .Builder()
                 .AppName("word_count_sample")
                 .GetOrCreate();
@@ -163,7 +169,7 @@ namespace MySparkApp
             DataFrame dataFrame = spark.Read().Text("input.txt");
 
             // Count words.
-            var words = dataFrame
+            DataFrame words = dataFrame
                 .Select(Functions.Split(Functions.Col("value"), " ").Alias("words"))
                 .Select(Functions.Explode(Functions.Col("words"))
                 .Alias("word"))
@@ -181,7 +187,13 @@ namespace MySparkApp
 }
 ```
 
-### <a name="4-add-data-file"></a>4. Přidejte datový soubor.
+### <a name="4-create-and-add-a-data-file"></a>4. vytvoření a přidání datového souboru
+
+Otevřete příkazový řádek nebo terminál a přejděte do složky aplikace.
+
+```bash
+cd <your-app-output-directory>
+```
 
 Vaše aplikace zpracovává soubor obsahující řádky textu. Vytvořte ve svém adresáři *mySparkApp* soubor *input. txt* s následujícím textem:
 
@@ -201,9 +213,16 @@ This .NET app counts words with Apache Spark
 
 2. Spuštěním následujícího příkazu odešlete aplikaci, která se má spustit na Apache Spark:
 
-   ```powershell
-   %SPARK_HOME%\bin\spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local bin\Debug\netcoreapp3.0\microsoft-spark-2.4.x-0.6.0.jar dotnet bin\Debug\netcoreapp3.0\mySparkApp.dll
+   ```console
+   spark-submit \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
+   --master local \
+   microsoft-spark-2.4.x-<version>.jar \
+   dotnet HelloSpark.dll
    ```
+
+   > [!NOTE]
+   > Tento příkaz předpokládá, že jste stáhli Apache Spark a přidali ho do proměnné prostředí PATH, aby bylo možné používat `spark-submit`. V opačném případě byste měli použít úplnou cestu (například *C:\bin\apache-spark\bin\spark-Submit* nebo *~/Spark/bin/Spark-Submit*).
 
 3. Po spuštění aplikace se do konzoly zapíše data počtu slov ve *vstupním souboru. txt* .
 

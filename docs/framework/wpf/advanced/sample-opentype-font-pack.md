@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fonts [WPF], OpenType font pack
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-ms.openlocfilehash: a5b49e2a1f7536fb9d8e8f4dbfc53494dcd1f1ac
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: be9bc6e0cddc0581b9acb319f7d1fc1c81dae268
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740766"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095109"
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
 Toto téma poskytuje přehled ukázkových písem OpenType, která jsou distribuována s Windows SDK. Ukázková písma podporují rozšířené funkce OpenType, které mohou používat aplikace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -20,7 +20,7 @@ Toto téma poskytuje přehled ukázkových písem OpenType, která jsou distribu
 ## <a name="fonts-in-the-opentype-font-pack"></a>Písma v sadě Font Pack OpenType  
  Windows SDK poskytuje sadu ukázkových písem OpenType, které můžete použít při vytváření aplikací [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Ukázková písma se dodávají v rámci licence od společnosti Ascend Corporation. Tato písma implementují pouze podmnožinu celkových funkcí definovaných ve formátu OpenType. V následující tabulce jsou uvedeny názvy ukázkových písem OpenType.  
   
-|**Jméno**|**Souborů**|  
+|**Název**|**File**|  
 |--------------|--------------|  
 |Kootenay|Kooten.ttf|  
 |Lindsey|Linds.ttf|  
@@ -35,7 +35,7 @@ Toto téma poskytuje přehled ukázkových písem OpenType, která jsou distribu
   
  ![Seznam názvů písem v ukázkové sadě písem](./media/sample-opentype-font-pack/font-names-sample-pack.gif)  
   
- Ukázková písma se dodávají v rámci licence od společnosti Ascend Corporation. Ascend je poskytovatel pokročilých produktů s písmy. Licence na rozšířené nebo vlastní verze ukázkových písem najdete na webu [společnosti Ascend 's Corporation](https://go.microsoft.com/fwlink/?LinkId=182627).  
+ Ukázková písma se dodávají v rámci licence od společnosti Ascend Corporation. Ascend je poskytovatel pokročilých produktů s písmy. Licence na rozšířené nebo vlastní verze ukázkových písem najdete na webu [společnosti Ascend 's Corporation](https://www.monotype.com/).  
   
 > [!NOTE]
 > Jako vývojář je vaše zodpovědnost za to, že máte požadovaná licenční práva pro všechna vložená písma do aplikace nebo jinak znovu distribuovat.  
@@ -51,7 +51,7 @@ Zobrazení písma Lindsey
 ## <a name="using-the-fonts"></a>Používání písem  
  Existují dva způsoby, jak můžete v aplikaci používat písma. Do aplikace můžete přidat písma jako položky obsahu projektu, které nejsou vloženy jako prostředky v rámci sestavení. Alternativně můžete do aplikace přidat písma jako položky prostředků projektu, které jsou vloženy do souborů sestavení aplikace. Další informace najdete v tématu [balení písem s aplikacemi](packaging-fonts-with-applications.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Documents.Typography>
 - [Funkce písma OpenType](opentype-font-features.md)

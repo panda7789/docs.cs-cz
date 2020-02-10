@@ -2,12 +2,12 @@
 title: Sada nástrojů pro externí sadu pravidel
 ms.date: 03/30/2017
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-ms.openlocfilehash: b07d2b63d9f3d98b8f08eb697a8d688d8fac1962
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: eb59b02d469788b23126f4e02c5b7ae5a63081f0
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710902"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094667"
 ---
 # <a name="external-ruleset-toolkit"></a>Sada nástrojů pro externí sadu pravidel
 
@@ -16,7 +16,7 @@ Normálně při použití pravidel v rámci aplikace pracovního postupu jsou ta
 Ukázka externí sady nástrojů RuleSet obsahuje nástroj založený na model Windows Forms, který můžete použít ke správě a úpravám RuleSet verzí v databázi. Zahrnuje také aktivitu a hostitelskou službu pro spouštění těchto pravidel.
 
 > [!NOTE]
-> Tato ukázka vyžaduje [Microsoft SQL Server](https://go.microsoft.com/fwlink/?LinkId=96181).
+> Tato ukázka vyžaduje [Microsoft SQL Server](/sql).
 
 Visual Studio poskytuje editor RuleSet jako součást programovací model Windows Workflow Foundation (WF). Tento editor můžete spustit dvojitým kliknutím na aktivitu `Policy` v pracovním postupu. serializace definovaného objektu RuleSet do souboru. Rules přidruženého k pracovnímu postupu (aktivita `Policy` spouští instanci RuleSet v rámci pracovního postupu). Soubor. Rules je zkompilován do sestavení jako prostředek při sestavování projektu pracovního postupu.
 

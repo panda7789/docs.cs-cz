@@ -2,12 +2,12 @@
 title: Sledování událostí ve službě Event Tracking ve Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: fe50476eedef505258c2e6818e75a32c06ed6fa6
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 2c397bcfa809a1306e9c31bf3f652b055d997f38
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715929"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094576"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí ve službě Event Tracking ve Windows
 
@@ -19,7 +19,7 @@ Pracovní postup v ukázce obdrží požadavek, přiřadí převrácenou vstupn�
 
 Programovací model Windows Workflow Foundation poskytuje sledovací infrastrukturu pro sledování provádění instance pracovního postupu. Modul runtime sledování vytvoří instanci pracovního postupu pro vygenerování událostí souvisejících s životním cyklem pracovního postupu, událostí z aktivit pracovního postupu a vlastními událostmi. Následující tabulka podrobně popisuje primární součásti infrastruktury sledování.
 
-|Součást|Popis|
+|Komponenta|Popis|
 |---------------|-----------------|
 |Sledování – modul runtime|Poskytuje infrastrukturu pro vygenerování záznamů sledování.|
 |Sledování účastníků|Přistupuje k záznamům sledování. [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] lodí se sledováním účastníka, který zapisuje záznamy sledování jako události trasování událostí pro Windows (ETW).|
@@ -57,9 +57,9 @@ Následující tabulka podrobně popisuje záznamy sledování, které modul run
 
 5. V testovacím klientovi WCF vyberte **Přidat službu** z nabídky **soubor** .
 
-    Do vstupního pole přidejte adresu koncového bodu. Výchozí hodnota je `http://localhost:53797/SampleWorkflowService.xamlx`.
+    Do vstupního pole přidejte adresu koncového bodu. Výchozí formát je `http://localhost:53797/SampleWorkflowService.xamlx`.
 
-6. Otevřete aplikaci Prohlížeč událostí.
+6. Otevřete Prohlížeč událostí aplikace.
 
     Před vyvoláním služby spusťte Prohlížeč událostí v nabídce **Start** vyberte **spustit** a zadejte `eventvwr.exe`. Zajistěte, aby protokol událostí naslouchal sledování událostí vydaných ze služby pracovního postupu.
 
@@ -151,6 +151,6 @@ Profil sledování stavu vygeneruje záznamy instancí pracovního postupu a zá
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\EtwTracking`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

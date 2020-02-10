@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
-ms.openlocfilehash: db23c250014006655fa51ee5a2e5b54e15e4f964
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 781934e9ab27f761e71841c2edc509f9b8022aa7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714590"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094745"
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
 Tato ukázka demonstruje použití transakce s koordinovaným klientem a možností klienta a serveru pro tok transakce pomocí protokolu WS-Atomic nebo protokolu OleTransactions. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky, ale operace jsou popsány k předvedení použití `TransactionFlowAttribute` s výčtem **TransactionFlowOption** k určení toho, jakým způsobem je tok transakcí povolen. V rámci rozsahu transakce toku se do databáze zapíše protokol požadovaných operací, dokud se nedokončila koordinovaný transakce klienta – Pokud se transakce klienta nedokončila, transakce webové služby zajistí, že příslušné aktualizace databáze nejsou potvrzeny.  
@@ -230,7 +230,7 @@ Press <ENTER> to terminate the service.
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    > V případě konfigurace mezi počítači povolte DTC (Distributed Transaction Coordinator) podle níže uvedených pokynů a pomocí nástroje WsatConfig. exe z Windows SDK povolte podporu transakcí WCF v síti. Informace o nastavení WsatConfig. exe najdete v tématu [Konfigurace podpory transakcí WS-Atomic](https://go.microsoft.com/fwlink/?LinkId=190370) .  
+    > V případě konfigurace mezi počítači povolte DTC (Distributed Transaction Coordinator) podle níže uvedených pokynů a pomocí nástroje WsatConfig. exe z Windows SDK povolte podporu transakcí WCF v síti. Informace o nastavení WsatConfig. exe najdete v tématu [Konfigurace podpory transakcí WS-Atomic](../feature-details/configuring-ws-atomic-transaction-support.md).  
   
  Bez ohledu na to, jestli spouštíte ukázku na stejném počítači nebo na různých počítačích, musíte nakonfigurovat Microsoft DTC (Distributed Transaction Coordinator) (MSDTC), aby se povolil tok síťových transakcí, a pomocí nástroje WsatConfig. exe povolit podporu sítě WCF Transactions.  
   
@@ -250,7 +250,7 @@ Press <ENTER> to terminate the service.
   
     6. Klikněte na tlačítko **OK**a potom kliknutím na tlačítko **Ano** restartujte službu MSDTC.  
   
-    7. Kliknutím na tlačítko **OK** zavřete dialogové okno.  
+    7. Kliknutím na **OK** zavřete dialogové okno.  
   
 2. V počítači služby se systémem Windows Server 2008 nebo Windows Vista nakonfigurujte službu MSDTC tak, aby povolovala příchozí síťové transakce pomocí následujících pokynů.  
   
@@ -264,7 +264,7 @@ Press <ENTER> to terminate the service.
   
     5. Klikněte na tlačítko **OK**a potom kliknutím na tlačítko **Ano** restartujte službu MSDTC.  
   
-    6. Kliknutím na tlačítko **OK** zavřete dialogové okno.  
+    6. Kliknutím na **OK** zavřete dialogové okno.  
   
 3. Na klientském počítači nakonfigurujte koordinátor MSDTC tak, aby povoloval odchozí síťové transakce:  
   
@@ -278,7 +278,7 @@ Press <ENTER> to terminate the service.
   
     5. Klikněte na tlačítko **OK**a potom kliknutím na tlačítko **Ano** restartujte službu MSDTC.  
   
-    6. Kliknutím na tlačítko **OK** zavřete dialogové okno.  
+    6. Kliknutím na **OK** zavřete dialogové okno.  
   
 > [!IMPORTANT]
 > Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  

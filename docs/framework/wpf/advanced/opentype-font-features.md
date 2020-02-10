@@ -9,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: da8f3e592e47c9482d4395b81627c1582e2354f7
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 65ecfc4269ff894d45c9b4ee15e349b1a7ddbb73
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72005247"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094511"
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 
@@ -39,7 +39,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
 > [!NOTE]
 > Windows SDK obsahuje sadu ukázkových písem OpenType, která můžete použít s aplikacemi [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Tato písma poskytují většinu funkcí, které jsou znázorněné ve zbývající části tohoto tématu. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
- Podrobnosti o formátu písma OpenType najdete v tématu [specifikace OpenType](https://go.microsoft.com/fwlink/?LinkId=96731) .  
+Podrobnosti o formátu písma OpenType naleznete v tématu [specifikace OpenType](https://docs.microsoft.com/typography/opentype/spec/).  
   
 ### <a name="advanced-typographic-extensions"></a>Pokročilá typografická rozšíření  
  Pokročilé typografické tabulky (tabulky rozložení OpenType) zvyšují funkčnost písem pomocí obrysů TrueType nebo CFF. Písma rozložení OpenType obsahují další informace, které rozšiřují možnosti písem, aby podporovaly vysoce kvalitní mezinárodní typografie. Většina písem OpenType zveřejňuje pouze podmnožinu celkových dostupných funkcí OpenType. Písma OpenType poskytují následující funkce.  
@@ -52,7 +52,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
   
  Tabulky rozložení OpenType jsou podrobněji popsané v oddílu [tabulky souborů písem](https://www.microsoft.com/typography/otspec/otff.htm) specifikace OpenType.  
   
- Zbývající část tohoto přehledu zavádí širokou škálu a flexibilitu některých vizuálně zajímavých funkcí OpenType, které jsou vystaveny vlastnostmi objektu <xref:System.Windows.Documents.Typography>. Další informace o tomto objektu naleznete v tématu [Typografie třídy](#typography_class).  
+ Zbývající část tohoto přehledu zavádí širokou škálu a flexibilitu některých vizuálně zajímavých funkcí OpenType, které jsou zpřístupněny vlastnostmi objektu <xref:System.Windows.Documents.Typography>. Další informace o tomto objektu naleznete v tématu [Typografie třídy](#typography_class).  
   
 <a name="variants"></a>   
 ## <a name="variants"></a>Varianty  
@@ -65,7 +65,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
   
  ![Text používající horní indexy OpenType](./media/opentype-font-features/opentype-superscripts.gif "Text používající horní indexy OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat horní indexy pro písmo Palatino Linotype s použitím vlastností objektu <xref:System.Windows.Documents.Typography>.  
+ Následující příklad kódu ukazuje, jak definovat horní indexy pro písmo Palatino Linotype pomocí vlastností objektu <xref:System.Windows.Documents.Typography>.  
   
  [!code-xaml[OpenTypeFontSamples#12](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#12)]  
   
@@ -140,7 +140,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
   
  ![Text používající volitelné ligatury OpenType](./media/opentype-font-features/opentype-discretionary-ligatures.gif "Text používající volitelné ligatury OpenType")  
   
- Následující příklad kódu ukazuje, jak definovat glyfy nezávazných ligatur pro písmo Pericles pomocí vlastností objektu <xref:System.Windows.Documents.Typography>.  
+ Následující příklad kódu ukazuje, jak definovat nepoužitelné glyfy ligatur pro písmo Pericles pomocí vlastností objektu <xref:System.Windows.Documents.Typography>.  
   
  [!code-xaml[OpenTypeFontSamples#5](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#5)]  
   
@@ -230,7 +230,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
   
  ![Text používající lomítka a skládané zlomky písma OpenType](./media/opentype-font-features/opentype-slashed-stacked-fractions.gif "Text používající lomítka a skládané zlomky písma OpenType")  
    
- Následující příklad kódu ukazuje, jak definovat styly zlomků pro písmo Palatino Linotype s použitím vlastností objektu <xref:System.Windows.Documents.Typography>.  
+ Následující příklad kódu ukazuje, jak definovat styly zlomků pro písmo Palatino Linotype pomocí vlastností objektu <xref:System.Windows.Documents.Typography>.  
   
  [!code-xaml[OpenTypeFontSamples#10](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#10)]  
   
@@ -265,7 +265,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
   
  ![Text používající číslice písma OpenType s lomítkem (0)](./media/opentype-font-features/opentype-slashed-zero-numerals.gif "Text používající číslice písma OpenType s lomítkem (0)")  
     
- Následující příklad kódu ukazuje, jak definovat nuly s lomítkem pro písmo Miramonte pomocí vlastností objektu <xref:System.Windows.Documents.Typography>.  
+ Následující příklad kódu ukazuje, jak definovat čísla s lomítkem (0) pro písmo Miramonte pomocí vlastností objektu <xref:System.Windows.Documents.Typography>.  
   
  [!code-xaml[OpenTypeFontSamples#OpenTypeFontSnippet15](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#opentypefontsnippet15)]  
   
@@ -287,21 +287,21 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
  [!code-vb[TypographyCodeSnippets#TypographyCodeSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TypographyCodeSnippets/visualbasic/page1.xaml.vb#typographycodesnippet1)]  
   
 ### <a name="typography-class-properties"></a>Typografické vlastnosti třídy  
- Následující tabulka obsahuje seznam vlastností, hodnot a výchozích nastavení objektu <xref:System.Windows.Documents.Typography>.  
+ V následující tabulce jsou uvedeny vlastnosti, hodnoty a výchozí nastavení objektu <xref:System.Windows.Documents.Typography>.  
   
 |Vlastnost|Hodnota (y)|Výchozí hodnota|  
 |--------------|----------------|-------------------|  
-|<xref:System.Windows.Documents.Typography.AnnotationAlternates%2A>|Číselná hodnota – Byte|0,8|  
-|<xref:System.Windows.Documents.Typography.Capitals%2A>|<xref:System.Windows.FontCapitals.AllPetiteCaps> &#124; <xref:System.Windows.FontCapitals.AllSmallCaps> &#124; <xref:System.Windows.FontCapitals.Normal> &#124; <xref:System.Windows.FontCapitals.PetiteCaps> &#124; <xref:System.Windows.FontCapitals.SmallCaps> &#124; 0 &#124; 2|<xref:System.Windows.FontCapitals.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.AnnotationAlternates%2A>|Číselná hodnota – Byte|0|  
+|<xref:System.Windows.Documents.Typography.Capitals%2A>|<xref:System.Windows.FontCapitals.AllPetiteCaps> &#124; <xref:System.Windows.FontCapitals.AllSmallCaps> &#124; <xref:System.Windows.FontCapitals.Normal> &#124; <xref:System.Windows.FontCapitals.PetiteCaps> &#124; <xref:System.Windows.FontCapitals.SmallCaps> &#124; <xref:System.Windows.FontCapitals.Titling> &#124; <xref:System.Windows.FontCapitals.Unicase>|<xref:System.Windows.FontCapitals.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.CapitalSpacing%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.CaseSensitiveForms%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.ContextualAlternates%2A>|<xref:System.Boolean>|`true`|  
 |<xref:System.Windows.Documents.Typography.ContextualLigatures%2A>|<xref:System.Boolean>|`true`|  
-|<xref:System.Windows.Documents.Typography.ContextualSwashes%2A>|Číselná hodnota – Byte|0,8|  
+|<xref:System.Windows.Documents.Typography.ContextualSwashes%2A>|Číselná hodnota – Byte|0|  
 |<xref:System.Windows.Documents.Typography.DiscretionaryLigatures%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.EastAsianExpertForms%2A>|<xref:System.Boolean>|`false`|  
-|<xref:System.Windows.Documents.Typography.EastAsianLanguage%2A>|<xref:System.Windows.FontEastAsianLanguage.HojoKanji> &#124;<xref:System.Windows.FontEastAsianLanguage.Jis04>&#124;<xref:System.Windows.FontEastAsianLanguage.Jis78>&#124;<xref:System.Windows.FontEastAsianLanguage.Jis83>&#124;<xref:System.Windows.FontEastAsianLanguage.Jis90>&#124;<xref:System.Windows.FontEastAsianLanguage.NlcKanji>&#124;<xref:System.Windows.FontEastAsianLanguage.Normal>&#124;<xref:System.Windows.FontEastAsianLanguage.Simplified>&#124;<xref:System.Windows.FontEastAsianLanguage.Traditional>&#124;<xref:System.Windows.FontEastAsianLanguage.TraditionalNames>|<xref:System.Windows.FontEastAsianLanguage.Normal?displayProperty=nameWithType>|  
-|<xref:System.Windows.Documents.Typography.EastAsianWidths%2A>|<xref:System.Windows.FontEastAsianWidths.Full> &#124; <xref:System.Windows.FontEastAsianWidths.Half> &#124; <xref:System.Windows.FontEastAsianWidths.Normal> &#124; <xref:System.Windows.FontEastAsianWidths.Proportional> &#124; <xref:System.Windows.FontEastAsianWidths.Quarter> &#124; 0|<xref:System.Windows.FontEastAsianWidths.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.EastAsianLanguage%2A>|<xref:System.Windows.FontEastAsianLanguage.HojoKanji> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis04> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis78> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis83> &#124; <xref:System.Windows.FontEastAsianLanguage.Jis90> &#124; <xref:System.Windows.FontEastAsianLanguage.NlcKanji> &#124; <xref:System.Windows.FontEastAsianLanguage.Normal> &#124; <xref:System.Windows.FontEastAsianLanguage.Simplified> &#124; <xref:System.Windows.FontEastAsianLanguage.Traditional> &#124; <xref:System.Windows.FontEastAsianLanguage.TraditionalNames>|<xref:System.Windows.FontEastAsianLanguage.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.EastAsianWidths%2A>|<xref:System.Windows.FontEastAsianWidths.Full> &#124; <xref:System.Windows.FontEastAsianWidths.Half> &#124; <xref:System.Windows.FontEastAsianWidths.Normal> &#124; <xref:System.Windows.FontEastAsianWidths.Proportional> &#124; <xref:System.Windows.FontEastAsianWidths.Quarter> &#124; <xref:System.Windows.FontEastAsianWidths.Third>|<xref:System.Windows.FontEastAsianWidths.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.Fraction%2A>|<xref:System.Windows.FontFraction.Normal> &#124; <xref:System.Windows.FontFraction.Slashed> &#124; <xref:System.Windows.FontFraction.Stacked>|<xref:System.Windows.FontFraction.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.HistoricalForms%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.HistoricalLigatures%2A>|<xref:System.Boolean>|`false`|  
@@ -311,8 +311,8 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
 |<xref:System.Windows.Documents.Typography.NumeralStyle%2A>|<xref:System.Boolean>|<xref:System.Windows.FontNumeralStyle.Normal?displayProperty=nameWithType>|  
 |<xref:System.Windows.Documents.Typography.SlashedZero%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StandardLigatures%2A>|<xref:System.Boolean>|`true`|  
-|<xref:System.Windows.Documents.Typography.StandardSwashes%2A>|Číselná hodnota – Byte|0,8|  
-|<xref:System.Windows.Documents.Typography.StylisticAlternates%2A>|Číselná hodnota – Byte|0,8|  
+|<xref:System.Windows.Documents.Typography.StandardSwashes%2A>|Číselná hodnota – Byte|0|  
+|<xref:System.Windows.Documents.Typography.StylisticAlternates%2A>|Číselná hodnota – Byte|0|  
 |<xref:System.Windows.Documents.Typography.StylisticSet1%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet2%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet3%2A>|<xref:System.Boolean>|`false`|  
@@ -333,12 +333,12 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
 |<xref:System.Windows.Documents.Typography.StylisticSet18%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet19%2A>|<xref:System.Boolean>|`false`|  
 |<xref:System.Windows.Documents.Typography.StylisticSet20%2A>|<xref:System.Boolean>|`false`|  
-|<xref:System.Windows.Documents.Typography.Variants%2A>|<xref:System.Windows.FontVariants.Inferior> &#124; <xref:System.Windows.FontVariants.Normal> &#124; <xref:System.Windows.FontVariants.Ordinal> &#124; <xref:System.Windows.FontVariants.Ruby> &#124; <xref:System.Windows.FontVariants.Subscript> &#124; 0|<xref:System.Windows.FontVariants.Normal?displayProperty=nameWithType>|  
+|<xref:System.Windows.Documents.Typography.Variants%2A>|<xref:System.Windows.FontVariants.Inferior> &#124; <xref:System.Windows.FontVariants.Normal> &#124; <xref:System.Windows.FontVariants.Ordinal> &#124; <xref:System.Windows.FontVariants.Ruby> &#124; <xref:System.Windows.FontVariants.Subscript> &#124; <xref:System.Windows.FontVariants.Superscript>|<xref:System.Windows.FontVariants.Normal?displayProperty=nameWithType>|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Documents.Typography>
-- [Specifikace OpenType](https://go.microsoft.com/fwlink/?LinkId=96731)
+- [Specifikace OpenType](https://docs.microsoft.com/typography/opentype/spec/)
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
 - [Ukázková sada písem OpenType](sample-opentype-font-pack.md)
 - [Balení písem s aplikacemi](packaging-fonts-with-applications.md)

@@ -6,29 +6,29 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 30ea92f09bc655796b6bc268212b6d9e0e05bd9b
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: b724ff1ce85442f64980fdc972188705992d5a4f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919332"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094979"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
-Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových uživatelů. Když sestavíte aplikaci pomocí Windows Communication Foundation (WCF), verze 3,0, může vaše aplikace ovlivnit ochranu osobních údajů koncových uživatelů. Vaše aplikace může například explicitně shromažďovat kontaktní údaje uživatele nebo může vyžádat nebo odeslat informace prostřednictvím internetu na web. Pokud do své aplikace vložíte technologii Microsoftu, může mít tato technologie vlastní chování, které může mít vliv na ochranu osobních údajů. WCF neodesílá žádné informace společnosti Microsoft z vaší aplikace, pokud jste vy nebo koncový uživatel nezvolili odeslání na nás.  
+Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncového uživatele. Při sestavování aplikace pomocí Windows Communication Foundation (WCF) verze 3,0 může vaše aplikace ovlivnit ochranu osobních údajů koncových uživatelů. Vaše aplikace může například explicitně shromažďovat kontaktní údaje uživatele nebo může vyžádat nebo odeslat informace prostřednictvím internetu na web. Pokud do své aplikace vložíte technologii Microsoftu, může mít tato technologie vlastní chování, které může mít vliv na ochranu osobních údajů. WCF nepošle žádné informace společnosti Microsoft z vaší aplikace, pokud vy nebo koncový uživatel nerozhodnete, že ji odešlete na nás.  
   
 ## <a name="wcf-in-brief"></a>WCF v krátkém  
  Služba WCF je distribuovaná architektura pro zasílání zpráv pomocí .NET Framework Microsoftu, která vývojářům umožňuje vytvářet distribuované aplikace. Zprávy komunikující mezi dvěma aplikacemi obsahují záhlaví a informace o textu.  
   
  Záhlaví mohou obsahovat směrování zpráv, informace o zabezpečení, transakce a další informace v závislosti na službách, které aplikace používá. Zprávy jsou obvykle ve výchozím nastavení zašifrovány. Jedinou výjimkou je použití `BasicHttpBinding`, které bylo navrženo pro použití s nezabezpečenými staršími webovými službami. Jako návrhář aplikace zodpovídáte za finální návrh. Zprávy v těle protokolu SOAP obsahují data specifická pro aplikaci; Tato data, jako jsou osobní údaje definované aplikací, je ale možné zabezpečit pomocí funkcí šifrování a utajení WCF. V následujících částech jsou popsány funkce, které mohou mít vliv na ochranu osobních údajů.  
   
-## <a name="messaging"></a>Messaging  
+## <a name="messaging"></a>Zasílání zpráv  
  Každá zpráva WCF má hlavičku adresy, která určuje cíl zprávy a kam má odpověď jít.  
   
  Součást Address adresy koncového bodu je identifikátor URI (Uniform Resource Identifier), který identifikuje koncový bod. Adresa může být síťová nebo logická adresa. Adresa může obsahovat název počítače (název hostitele, plně kvalifikovaný název domény) a IP adresu. Adresa koncového bodu může obsahovat také globálně jedinečný identifikátor (GUID) nebo kolekci identifikátorů GUID pro dočasné adresování, které slouží k nerozlišujeí jednotlivých adres. Každá zpráva obsahuje ID zprávy, která je identifikátorem GUID. Tato funkce se řídí referenčním standardem WS-Addressing.  
   
  Vrstva zasílání zpráv WCF nepíše žádné osobní údaje do místního počítače. Může však šířit osobní údaje na úrovni sítě, pokud vývojář služby vytvořil službu, která tyto informace zpřístupňuje (například pomocí názvu osoby v názvu koncového bodu nebo včetně osobních údajů na webu koncového bodu). Služba Description Language, ale nevyžaduje, aby klienti k přístupu ke WSDL používali https. Pokud vývojář spustí nástroj pro dodané [metadata (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) v rámci koncového bodu, který zveřejňuje osobní údaje, může také výstup tohoto nástroje obsahovat tyto informace a výstupní soubor je zapsán na místní pevný disk.  
   
-## <a name="hosting"></a>Hosting  
+## <a name="hosting"></a>Hostování  
  Funkce hostování v rámci WCF umožňuje aplikacím spouštět na vyžádání nebo povolit sdílení portů mezi několika aplikacemi. Aplikace WCF může být hostována ve službě Internetová informační služba (IIS), podobně jako ASP.NET.  
   
  Hostování nezveřejňuje žádné konkrétní informace v síti a neuchovává data v počítači.  
@@ -44,7 +44,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Ověřování může mít za následek zabezpečenou relaci vytvořenou mezi komunikujícími koncovými body. Relace je identifikována identifikátorem GUID, který vydrží životnost relace zabezpečení. Následující tabulka ukazuje, co se zachová a kde.  
   
-|Datové|Storage|  
+|Data|Úložiště|  
 |----------|-------------|  
 |Přihlašovací údaje pro prezentace, jako je uživatelské jméno, certifikáty X. 509, tokeny Kerberos a odkazy na přihlašovací údaje.|Standardní mechanismy správy přihlašovacích údajů systému Windows, jako je například úložiště certifikátů systému Windows.|  
 |Informace o členství uživatele, například uživatelská jména a hesla.|ASP.NET poskytovatelé členství.|  
@@ -77,10 +77,10 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Funkce kanálů zařazených do fronty nepřidává do zprávy záhlaví. Místo toho vytvoří zprávu služby Řízení front zpráv s příslušným nastavením vlastností zprávy služby Řízení front zpráv a vyvolá metody služby Řízení front zpráv pro vložení zprávy do fronty služby Řízení front zpráv. Služba Řízení front zpráv je volitelná součást, která se dodává se systémem Windows.  
   
- Funkce kanálů ve frontě neuchovává žádné informace na počítači koncového uživatele, protože používá službu Řízení front zpráv jako infrastrukturu služby Řízení front zpráv.  
+ Funkce kanálů ve frontě neuchovává žádné informace v počítači koncového uživatele, protože používá službu Řízení front zpráv jako infrastrukturu služby Řízení front zpráv.  
   
 ## <a name="com-integration"></a>Integrace COM+  
- Tato funkce zalomí existující funkce COM a COM+ a vytvoří služby, které jsou kompatibilní se službami WCF. Tato funkce nepoužívá konkrétní záhlaví a neuchovává data na počítači koncového uživatele.  
+ Tato funkce zalomí existující funkce COM a COM+ a vytvoří služby, které jsou kompatibilní se službami WCF. Tato funkce nepoužívá konkrétní záhlaví a neuchovává data v počítači koncového uživatele.  
   
 ## <a name="com-service-moniker"></a>Moniker služby COM  
  To poskytuje nespravovaný obálku standardnímu klientovi WCF. Tato funkce nemá konkrétní záhlaví na lince ani neuchovává data v počítači.  
@@ -127,13 +127,13 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Odebrané klíče:  
   
- \- pro xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- pro xmlns: wst = "http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns: wst = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst: BinarySecret  
   
  wst: entropie  
   
- \- pro xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pro xmlns: wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns: wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse: heslo  
   
@@ -141,7 +141,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Potenciálně odstraněné osobní informace:  
   
- \- pro xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pro xmlns: wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns: wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse: username  
   
@@ -165,13 +165,13 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Podmínky \<NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
   
- \<AudienceRestrictionCondition>  
+ \<AudienceRestrictionCondition >  
   
- \<Audience>[uri]\</Audience>+  
+ \<cílovou skupinu > [URI]\</Audience > +  
   
- \</AudienceRestrictionCondition>*  
+ \</AudienceRestrictionCondition > *  
   
- \<DoNotCacheCondition />*  
+ \<DoNotCacheCondition/> *  
   
  <\!– abstraktní základní typ  
   
@@ -215,9 +215,9 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  \<ConfirmationMethod > [anyUri]\</ConfirmationMethod > +  
   
- \<SubjectConfirmationData>[any]\</SubjectConfirmationData>?  
+ \<SubjectConfirmationData > [any]\</SubjectConfirmationData >?  
   
- \<ds:KeyInfo>...\</ds:KeyInfo>?  
+ \<DS: KeyInfo >...\</DS: KeyInfo >?  
   
  \</SubjectConfirmation >?  
   
@@ -304,7 +304,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Pro následující obory názvů:  
   
- xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" (například pokud není k dispozici žádná akce)  
+ xmlns: wst = "http://schemas.xmlsoap.org/ws/2004/04/trust" a xmlns: wst = "http://schemas.xmlsoap.org/ws/2005/02/trust" (například pokud není k dispozici žádná akce)  
   
  Odeberou se informace pro tyto prvky těla, které zahrnují výměnu klíčů:  
   
@@ -359,12 +359,12 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
 #### <a name="no-information-is-removed-from-application-specific-headers-and-body-data"></a>Z hlaviček specifických pro aplikaci a dat těla nejsou odebrány žádné informace  
  WCF nesleduje osobní údaje v hlavičkách specifických pro aplikace (například řetězce dotazů) nebo data základního textu (například číslo platební karty).  
   
- Když je zapnuté protokolování zpráv, můžou se v protokolech zobrazovat osobní informace v záhlavích specifických pro jednotlivé aplikace a informace o textu. Znovu, nástroj pro nasazení aplikace zodpovídá za nastavení seznamů ACL pro konfigurační soubory a soubory protokolů. Může také vypnout protokolování, pokud nechce, aby tyto informace byly viditelné, nebo může tyto informace odfiltrovat od souborů protokolu po jejich zaprotokolování.  
+ Když je zapnuté protokolování zpráv, můžou se v protokolech zobrazovat osobní informace v záhlavích specifických pro jednotlivé aplikace a informace o textu. Znovu, nástroj pro nasazení aplikace zodpovídá za nastavení seznamů ACL pro konfigurační soubory a soubory protokolů. Můžou také vypnout protokolování, pokud nechtějí zobrazovat tyto informace, nebo tyto informace vyfiltrovat ze souborů protokolu po jejich zaprotokolování.  
   
 ### <a name="service-model-tracing"></a>Trasování modelu služby  
  Zdroj trasování modelu služby (<xref:System.ServiceModel>) umožňuje sledovat aktivity a události související se zpracováním zprávy. Tato funkce používá diagnostické funkce .NET Framework z <xref:System.Diagnostics>. Stejně jako u vlastnosti <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> je umístění a seznam ACL uživatelsky konfigurovatelné pomocí konfiguračních souborů aplikace .NET Framework. Stejně jako u protokolování zpráv je umístění souboru vždy nakonfigurované, když správce povolí trasování; Proto správce řídí seznam ACL.  
   
- Pokud je zpráva v oboru, trasování obsahují záhlaví zpráv. Stejná pravidla pro skrývání potenciálně osobních údajů v hlavičkách zpráv v předchozí části platí: osobní údaje, které byly dříve identifikovány, jsou ve výchozím nastavení odebrány z hlaviček v trasování. Aby bylo možné protokolovat potenciálně osobní údaje, musí konfigurace správce počítače i nástroj pro nasazení aplikace upravit. Osobní údaje obsažené v hlavičkách specifických pro aplikace jsou však zaznamenávány do trasování. Nástroj pro nasazení aplikace zodpovídá za nastavení seznamů ACL pro konfigurační a trasovací soubory. Může také vypnout trasování, pokud nechce, aby tyto informace byly viditelné, nebo může vyfiltrovat tyto informace z trasovacích souborů po jejich zaprotokolování.  
+ Pokud je zpráva v oboru, trasování obsahují záhlaví zpráv. Stejná pravidla pro skrývání potenciálně osobních údajů v hlavičkách zpráv v předchozí části platí: osobní údaje, které byly dříve identifikovány, jsou ve výchozím nastavení odebrány z hlaviček v trasování. Aby bylo možné protokolovat potenciálně osobní údaje, musí konfigurace správce počítače i nástroj pro nasazení aplikace upravit. Osobní údaje obsažené v hlavičkách specifických pro aplikace jsou však zaznamenávány do trasování. Nástroj pro nasazení aplikace zodpovídá za nastavení seznamů ACL pro konfigurační a trasovací soubory. Mohou také vypnout trasování pro skrytí těchto informací nebo odfiltrovat tyto informace z trasovacích souborů po jejich zaprotokolování.  
   
  V rámci trasování ServiceModel (označované jako ID aktivit a obvykle identifikátor GUID) propojuje různé aktivity společně jako zprávu mezi různými částmi infrastruktury.  
   
@@ -401,7 +401,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Jazyk WSDL (Web Services Description Language) obsahuje definici portu. Každý port má adresu koncového bodu a vazbu, která představuje služby používané aplikací. Vystavení kódu WSDL může být vypnuto pomocí konfigurace. V počítači nejsou uchovány žádné informace.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Windows Communication Foundation](index.md)
 - [Zabezpečení](./feature-details/security.md)

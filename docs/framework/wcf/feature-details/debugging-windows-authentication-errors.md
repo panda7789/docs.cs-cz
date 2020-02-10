@@ -8,14 +8,15 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 9dbf9eee6e4222f899d77a4457bc78132ec7f092
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 4a5e56f6b7f33a4c6f29aa384635737eeee37ddd
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920222"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095031"
 ---
-# <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
+# <a name="debug-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
+
 Při použití ověřování systému Windows jako mechanismu zabezpečení zpracovává rozhraní SSPI (Security Support Provider Interface) procesy zabezpečení. Pokud dojde k chybám zabezpečení ve vrstvě SSPI, jsou umístěny na základě Windows Communication Foundation (WCF). Toto téma poskytuje strukturu a sadu otázek, které vám pomůžou diagnostikovat chyby.  
   
  Přehled protokolu Kerberos najdete v tématu [Vysvětlení protokolu Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10)). Přehled rozhraní SSPI naleznete v tématu [SSPI](/windows/win32/secauthn/sspi).  
@@ -98,7 +99,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
 ### <a name="ntlm-protocol"></a>Protokol NTLM  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>Vyjednání SSP se vrátí do protokolu NTLM, ale protokol NTLM je zakázán.  
- Vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> je nastavena na hodnotu `false`, která způsobuje, že Windows Communication Foundation (WCF) vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí bránit posílání přihlašovacích údajů protokolu NTLM po drátě.  
+ Vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> je nastavena na hodnotu `false`, která způsobuje, že Windows Communication Foundation (WCF) vyvolá výjimku, pokud se používá protokol NTLM. Nastavení této vlastnosti na `false` nesmí bránit v posílání přihlašovacích údajů protokolu NTLM z přenosů.  
   
  Následující příklad ukazuje, jak zakázat použití funkce Fallback na NTLM.  
   
@@ -144,7 +145,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
 #### <a name="developing-and-deploying-with-different-identities"></a>Vývoj a nasazení s různými identitami  
  Pokud vyvíjíte aplikaci na jednom počítači a nasadíte ji na jiný počítač a použijete k ověřování na každém počítači různé typy účtů, může docházet k různým chování. Předpokládejme například, že vyvíjíte aplikaci na počítači se systémem Windows XP pro pomocí režimu ověřování `SSPI Negotiated`. Použijete-li k ověřování pomocí místní uživatelský účet, bude použit protokol NTLM. Po dokončení vývoje aplikace službu nasadíte na počítač s Windows serverem 2003, na kterém běží pod účtem domény. V tomto okamžiku klient nebude moci ověřit službu, protože bude používat protokol Kerberos a řadič domény.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>

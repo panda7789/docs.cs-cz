@@ -1,5 +1,5 @@
 ---
-title: odkaz na C# událost
+title: odkaz na C# event
 ms.date: 07/20/2015
 f1_keywords:
 - event
@@ -16,7 +16,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75713561"
 ---
-# <a name="event-c-reference"></a>událost (C# Referenční dokumentace)
+# <a name="event-c-reference"></a>event (C# Referenční dokumentace)
 
 Klíčové slovo `event` slouží k deklaraci události ve třídě vydavatele.
 

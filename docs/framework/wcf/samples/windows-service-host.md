@@ -5,12 +5,12 @@ helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-ms.openlocfilehash: 4d5e29f51ab49c142beb97060b719f26b050e767
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: ab1effe93a1572f5d4ce5296bba99dad24f9cbca
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715019"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094784"
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
 Tato ukázka předvádí službu Windows Communication Foundation (WCF) hostovanou ve spravované službě systému Windows. Služby systému Windows jsou ovládány pomocí apletu služby v **Ovládacích panelech** a lze je nakonfigurovat tak, aby se automaticky spouštěly po restartování systému. Ukázka se skládá z klientského programu a programu služby systému Windows. Služba je implementována jako program. exe a obsahuje svůj vlastní hostitelský kód. V jiných hostitelských prostředích, jako jsou služby Aktivace procesů systému Windows (WAS) nebo Internetová informační služba (IIS), není nutné psát hostující kód.
@@ -63,6 +63,6 @@ Tato ukázka předvádí službu Windows Communication Foundation (WCF) hostovan
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Hostování technologie AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+- [Hostování technologie AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

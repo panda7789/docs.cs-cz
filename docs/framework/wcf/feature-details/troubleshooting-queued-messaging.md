@@ -2,12 +2,12 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 5c039c34983647884561f33645f26e4a89280248
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 7990d4b9847ee2f35b9fe6269bb211763c4c80b6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921272"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095005"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 
@@ -47,13 +47,13 @@ Další informace najdete v tématu [rozdíly ve funkcích služby Řízení fro
 
 **Odpověď:** Ne. Nemusíte upgradovat na žádnou stranu na službu MSMQ 4,0.
 
-## <a name="troubleshooting"></a>Odstraňování problémů
+## <a name="troubleshooting"></a>Řešení potíží
 
 Tato část obsahuje odpovědi na nejčastější problémy při odstraňování potíží. Některé problémy, které jsou známá omezením, jsou popsány také v poznámkách k verzi.
 
 **Otázka:** Snažím se použít soukromou frontu a zobrazí se tato výjimka: `System.InvalidOperationException`: adresa URL je neplatná. Adresa URL pro frontu nesmí obsahovat znak $. Použijte syntaxi na adrese NET. MSMQ://machine/private/queueName a vyřešte soukromou frontu.
 
-**A:** V konfiguraci a kódu prosím zkontrolujte identifikátor URI ve frontě. Nepoužívejte v identifikátoru URI znak "$". Pokud například chcete adresovat soukromou frontu s názvem OrdersQueue, zadejte identifikátor URI as NET. MSMQ://localhost/private/ordersQueue.
+**A:** Ve vaší konfiguraci a kódu ověřte, zda je identifikátor URI fronty (Uniform Resource Identifier). Nepoužívejte v identifikátoru URI znak "$". Pokud například chcete adresovat soukromou frontu s názvem OrdersQueue, zadejte identifikátor URI jako `net.msmq://localhost/private/ordersQueue`.
 
 **Otázka:** Volání `ServiceHost.Open()` v naší aplikaci ve frontě vyvolá následující výjimku: `System.ArgumentException`: základní adresa nesmí obsahovat řetězec dotazu identifikátoru URI. Proč?
 
@@ -91,7 +91,7 @@ Pokud jsou záruky žádné (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOn
 
 A. Podívejte se na kontrakt služby. Možná jste zapomněli do všech operací služby umístit "IsOneWay =`true`". Fronty podporují pouze jednosměrné operace služby.
 
-**Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. Jaký je problém?
+**Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. V čem je problém?
 
 **A:** Zjistěte, jestli hostitel služby selhal. Můžete se podívat na trasování nebo implementaci `IErrorHandler`. Selhání hostitele služby ve výchozím nastavení, pokud je zjištěna nezpracovatelná zpráva.
 
@@ -132,7 +132,7 @@ Fronta nedoručených zpráv systému, stejně jako jakákoli vlastní fronta ne
 
 **Otázka:** Když používám název veřejného nebo privátního formátu a v systému Windows Vista se otevře hostitel služby, zobrazí se chybová zpráva. Proč?
 
-**A:** Kanál pro integraci WCF v systému Windows Vista kontroluje, zda lze otevřít podfrontu pro hlavní frontu aplikace pro zpracování nezpracovatelných zpráv. Název podfronty je odvozen z identifikátoru URI služby MSMQ. FormatName předaného do naslouchacího procesu. Název podfronty v MSMQ může být pouze název přímého formátu. Zobrazí se chyba. Změňte identifikátor URI fronty na název přímého formátu.
+**A:** Kanál pro integraci WCF v systému Windows Vista kontroluje, zda je možné podfrontu otevřít pro hlavní frontu aplikace pro zpracování poškozených zpráv. Název podfronty je odvozen z identifikátoru URI služby MSMQ. FormatName předaného pro naslouchací proces. Název podfronty v MSMQ může být pouze název přímého formátu. Zobrazí se chyba. Změňte identifikátor URI fronty na název přímého formátu.
 
 **Otázka:** Při příjmu zprávy z aplikace služby MSMQ se zpráva nachází ve frontě a není přečtena přijímající aplikací WCF. Proč?
 
@@ -208,4 +208,4 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 ## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a>Použití vlastních vazeb MSMQ s povoleným kontextem ReceiveContext
 
-Když použijete vlastní vazbu služby MSMQ s povoleným <xref:System.ServiceModel.Channels.ReceiveContext>m, příchozí zpráva bude používat vlákno fondu vláken, protože nativní služba MSMQ nepodporuje doplňování vstupu a výstupu pro asynchronní <xref:System.ServiceModel.Channels.ReceiveContext> přijímání. Důvodem je to, že zpracování takové zprávy používá interní transakce pro <xref:System.ServiceModel.Channels.ReceiveContext> a služba MSMQ nepodporuje asynchronní zpracování. Pokud chcete tento problém obejít, můžete do koncového bodu přidat <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> pro vynucení synchronního zpracování nebo nastavení <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> na 1.
+Když použijete vlastní vazbu služby MSMQ s povoleným <xref:System.ServiceModel.Channels.ReceiveContext>, zpracování příchozí zprávy používá vlákno fondu vláken, protože nativní služba MSMQ nepodporuje vstupně-výstupní doplňování pro asynchronní <xref:System.ServiceModel.Channels.ReceiveContext> přijímání. Důvodem je to, že zpracování takové zprávy používá interní transakce pro <xref:System.ServiceModel.Channels.ReceiveContext> a služba MSMQ nepodporuje asynchronní zpracování. Pokud chcete tento problém obejít, můžete do koncového bodu přidat <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> pro vynucení synchronního zpracování nebo nastavení <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> na 1.

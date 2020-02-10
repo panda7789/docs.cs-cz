@@ -2,16 +2,16 @@
 title: Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 ms.date: 03/30/2017
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
-ms.openlocfilehash: 9184386751bb44e89dfdcedd34ab0ab84a27323e
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 8fd08c9c29f7a268170aaa101a9bdb85250157dc
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710918"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094628"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 
-Tato ukázka předvádí, jak aktivita ExternalizedPolicy4 umožňuje spouštět existující .NET Framework 3,5 programovací model Windows Workflow Foundation (WF 3,5) <xref:System.Workflow.Activities.Rules.RuleSet> objektů v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] programovací model Windows Workflow Foundation (WF 4,5) přímo pomocí modulu pravidel, který je dodán v WF 3,5. Pomocí této aktivity můžete otevřít a spustit všechny existující <xref:System.Workflow.Activities.Rules.RuleSet>WF 3,5. Další informace o modulu pravidel WF 3,5, který je součástí programovací model Windows Workflow Foundation, najdete v tématu [Úvod do modulu programovací model Windows Workflow Foundation Rules](https://go.microsoft.com/fwlink/?LinkId=166079). Další informace o migraci pravidel [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]najdete v tématu pokyny k [migraci](../migration-guidance.md).
+Tato ukázka předvádí, jak aktivita ExternalizedPolicy4 umožňuje spouštět existující .NET Framework 3,5 programovací model Windows Workflow Foundation (WF 3,5) <xref:System.Workflow.Activities.Rules.RuleSet> objektů v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] programovací model Windows Workflow Foundation (WF 4,5) přímo pomocí modulu pravidel, který je dodán v WF 3,5. Pomocí této aktivity můžete otevřít a spustit všechny existující <xref:System.Workflow.Activities.Rules.RuleSet>WF 3,5. Další informace o modulu pravidel WF 3,5, který je součástí programovací model Windows Workflow Foundation, najdete v tématu [Úvod do modulu programovací model Windows Workflow Foundation Rules](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480193(v=msdn.10)). Další informace o migraci pravidel [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]najdete v tématu pokyny k [migraci](../migration-guidance.md).
 
 ## <a name="projects-in-this-sample"></a>Projekty v této ukázce
 

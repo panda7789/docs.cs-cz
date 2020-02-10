@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 2fef4c7b00fd6a1ed8f85a8bfa01ef9cfffa1bbb
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: d1cae7ad2ac0fdf963d11911484b1bd534cbc129
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919941"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094732"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma obsahuje seznam známých problémů, se kterými se zákazníci v průběhu vývoje služeb a klientů WCF spouštěli. Pokud problém, který používáte, není v tomto seznamu, doporučujeme vám nakonfigurovat trasování pro vaši službu. Tím se vygeneruje trasovací soubor, který můžete zobrazit pomocí prohlížeče trasovacích souborů a získat podrobné informace o výjimkách, ke kterým může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Configure Tracing](./diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči trasovacích souborů naleznete v tématu: [nástroj Service Trace Viewer (SvcTraceViewer. exe)](service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -47,7 +47,7 @@ Toto téma obsahuje seznam známých problémů, se kterými se zákazníci v pr
   
  Chyba protokolu HTTP 404,3 – FoundThe stránku, kterou požadujete, nelze zpracovat z důvodu konfigurace rozšíření. Pokud je stránka skriptem, přidejte obslužnou rutinu. Pokud se má soubor stáhnout, přidejte mapu MIME. Podrobná chyba InformationModule StaticFileModule.  
   
- Tato chybová zpráva se zobrazí, když v Ovládacích panelech není explicitně nastavená možnost Windows Communication Foundation aktivace protokolu HTTP. Chcete-li nastavit tuto možnost, přejděte na ovládací panely, v levém dolním rohu okna klikněte na položku programy. Klikněte na zapnout nebo vypnout funkce systému Windows. Rozbalte položku Microsoft .NET Framework 3.5.1 a vyberte možnost Windows Communication Foundation aktivace protokolem HTTP.  
+ Tato chybová zpráva se zobrazí, když v Ovládacích panelech není explicitně nastavená možnost Windows Communication Foundation aktivace protokolu HTTP. Chcete-li nastavit tuto možnost, přejděte na ovládací panely a v levém dolním rohu okna klikněte na položku programy. Klikněte na zapnout nebo vypnout funkce systému Windows. Rozbalte položku Microsoft .NET Framework 3.5.1 a vyberte možnost Windows Communication Foundation aktivace protokolem HTTP.  
   
 <a name="BKMK_q1"></a>   
 ## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>V případě, že je můj klient v době, kdy se po prvním požadavku nečinný, se někdy na druhou žádost dostanou MessageSecurityException –. Co se děje?  
@@ -59,7 +59,7 @@ Toto téma obsahuje seznam známých problémů, se kterými se zákazníci v pr
   
 <a name="BKMK_q3"></a>   
 ## <a name="can-i-load-my-service-configuration-from-somewhere-other-than-the-wcf-applications-configuration-file"></a>Můžu konfiguraci služby načíst z jiného místa než do konfiguračního souboru aplikace WCF?  
- Ano, ale je nutné vytvořit vlastní třídu <xref:System.ServiceModel.ServiceHost>, která přepíše metodu <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A>. Uvnitř této metody můžete zavolat základ pro načtení konfigurace (Pokud chcete načíst i standardní informace o konfiguraci), ale můžete také zcela nahradit systém načítání konfigurace. Všimněte si, že pokud chcete načíst konfiguraci z konfiguračního souboru, který se liší od konfiguračního souboru aplikace, musíte konfigurační soubor analyzovat sami a načíst konfiguraci.  
+ Ano, ale je nutné vytvořit vlastní třídu <xref:System.ServiceModel.ServiceHost>, která přepíše metodu <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A>. Uvnitř této metody můžete zavolat základ pro načtení konfigurace (Pokud chcete načíst i standardní informace o konfiguraci), ale můžete také zcela nahradit systém načítání konfigurace. Pokud chcete načíst konfiguraci z konfiguračního souboru, který se liší od konfiguračního souboru aplikace, musíte konfigurační soubor analyzovat sami a načíst konfiguraci.  
   
  Následující příklad kódu ukazuje, jak přepsat metodu <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> a jak přímo nakonfigurovat koncový bod.  
   
@@ -130,7 +130,7 @@ public class MyServiceHost : ServiceHost
   
     3. Služba je hostitelem služby Internetová informační služba (IIS), která ve výchozím nastavení používá účet hlavního názvu služby (SPN).  
   
-    4. Zaregistrujte nový hlavní název služby (SPN) s doménou pomocí SetSPN. Všimněte si, že budete muset být správcem domény, aby to bylo možné.  
+    4. Zaregistrujte nový hlavní název služby (SPN) s doménou pomocí SetSPN. Aby to bylo možné, musíte být správcem domény.  
   
  Další informace o protokolu Kerberos najdete v tématu [koncepty zabezpečení používané ve službě WCF](./feature-details/security-concepts-used-in-wcf.md) a:  
   
@@ -166,7 +166,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q88"></a>   
 ## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a>Změnil (a) jsem první parametr operace z velkých písmen na malá. Nyní můj klient vyvolá výjimku. Co se děje?  
- Hodnota názvů parametrů v signatuře operace je součástí kontraktu a rozlišuje velká a malá písmena. Atribut <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> použijte v případě, že potřebujete rozlišovat mezi názvem místního parametru a metadaty, které popisují operaci pro klientské aplikace.  
+ Hodnoty názvů parametrů v signatuře operace jsou součástí kontraktu a rozlišují velká a malá písmena. Atribut <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> použijte v případě, že potřebujete rozlišovat mezi názvem místního parametru a metadaty, které popisují operaci pro klientské aplikace.  
   
 <a name="BKMK_q99"></a>   
 ## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a>Používám jeden z mých nástrojů pro trasování a zobrazí se EndpointNotFoundException. Co se děje?  
@@ -237,7 +237,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BK_MK99"></a>   
 ## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>Při volání webové aplikace HTTP WCF z aplikace WCF SOAP služba vrátí následující chybu: metoda 405 není povolena.  
- Volání webové aplikace HTTP služby WCF (služba, která používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) ze služby WCF může generovat následující výjimku: `Unhandled Exception: System.ServiceModel.FaultException`1 [System. ServiceModel. ExceptionDetail]: vzdálený server vrátil neočekávanou odpověď: (405) metoda není povolena. Tato výjimka je způsobena tím, že služba WCF přepíše odchozí <xref:System.ServiceModel.OperationContext> s příchozím <xref:System.ServiceModel.OperationContext>. Chcete-li tento problém vyřešit, vytvořte <xref:System.ServiceModel.OperationContextScope> v rámci operace služby HTTP webu WCF. Příklad:  
+ Volání webové aplikace HTTP WCF (služba, která používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) ze služby WCF může generovat následující výjimku: ``Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: The remote server returned an unexpected response: (405) Method Not Allowed.`` k této výjimce dojde, protože služba WCF přepíše odchozí <xref:System.ServiceModel.OperationContext> s příchozími <xref:System.ServiceModel.OperationContext>y. Chcete-li tento problém vyřešit, vytvořte <xref:System.ServiceModel.OperationContextScope> v rámci operace služby HTTP webu WCF. Například:  
   
 ```csharp
 public string Echo(string input)  
@@ -249,6 +249,6 @@ public string Echo(string input)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění chyb u ověřování Windows](./feature-details/debugging-windows-authentication-errors.md)

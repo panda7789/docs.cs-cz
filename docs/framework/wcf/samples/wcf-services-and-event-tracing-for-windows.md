@@ -2,12 +2,12 @@
 title: Služby WCF a Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: 93663cbc33b6fab9b34bb02187e5b04192f5c13d
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 5bf965ad6a9997ec0603325f246679cf42662a52
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715269"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094810"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
 Tato ukázka předvádí, jak použít analytické trasování v Windows Communication Foundation (WCF) k vygenerování událostí v trasování událostí pro Windows (ETW). Analytická trasování jsou události vydávané na klíčových místech v zásobníku WCF, které umožňují řešení potíží se službami WCF v produkčním prostředí.
@@ -34,9 +34,9 @@ Tato ukázka předvádí, jak použít analytické trasování v Windows Communi
 
 5. V rámci testovacího klienta WCF přidejte službu tak, že vyberete **soubor**a pak **přidáte službu**.
 
-     Do vstupního pole přidejte adresu koncového bodu. Výchozí hodnota je `http://localhost:1378/Calculator.svc`.
+     Do vstupního pole přidejte adresu koncového bodu. Výchozí formát je `http://localhost:1378/Calculator.svc`.
 
-6. Otevřete aplikaci Prohlížeč událostí.
+6. Otevřete Prohlížeč událostí aplikace.
 
      Před vyvoláním služby spusťte Prohlížeč událostí a zajistěte, aby protokol událostí naslouchal sledování událostí vygenerovaných ze služby WCF.
 
@@ -87,6 +87,6 @@ Tato ukázka předvádí, jak použít analytické trasování v Windows Communi
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

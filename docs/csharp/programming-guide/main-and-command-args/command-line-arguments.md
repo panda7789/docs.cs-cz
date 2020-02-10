@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: e73eeeeb0e613d45b2ce31e744803bb75ba2a3c2
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d6775263e6f1afb227aa263b01d60f5181da74f3
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75700637"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093507"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 
@@ -44,7 +44,7 @@ Můžete také použít metodu `Convert` třídy `ToInt64` k provedení stejné 
 long num = Convert.ToInt64(s);
 ```
 
-Další informace naleznete v tématu <xref:System.Int64.Parse%2A> a <xref:System.Convert>.
+Další informace naleznete v tématech <xref:System.Int64.Parse%2A> a <xref:System.Convert>.
 
 ## <a name="example"></a>Příklad
 
@@ -73,11 +73,11 @@ Chcete-li zkompilovat a spustit aplikaci z příkazového řádku, postupujte po
 > [!NOTE]
 > Při spuštění aplikace v aplikaci Visual Studio můžete zadat argumenty příkazového řádku na [stránce ladění, Návrháři projektu](/visualstudio/ide/reference/debug-page-project-designer).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Environment?displayProperty=nameWithType>
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Argumenty Main() a příkazového řádku](index.md)
-- [Dsplay argumenty příkazového řádku](how-to-display-command-line-arguments.md)
+- [Jak zobrazit argumenty příkazového řádku](how-to-display-command-line-arguments.md)
 - [Návratové hodnoty Main()](main-return-values.md)
 - [Třídy](../classes-and-structs/classes.md)

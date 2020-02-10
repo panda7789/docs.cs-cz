@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 6771edcca8159b0805018c16167b25c287d3152c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 14bb8227a4a6c8beff6ab04c58d8e1a43db69856
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743745"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093133"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnostiC# (Referenční dokumentace)
 
@@ -75,7 +75,7 @@ Delegáty vytvořené z vyhodnocení sémanticky identických [výrazů lambda](
 
 ## <a name="inequality-operator-"></a>Operátor nerovnosti! =
 
-Operátor nerovnosti `!=` vrátí `true`, pokud jeho operandy nejsou stejné, `false` jinak. U operandů [předdefinovaných typů](../keywords/built-in-types-table.md)výraz `x != y` vytvoří stejný výsledek jako `!(x == y)`výrazu. Další informace o rovnosti typů naleznete v části [operátor rovnosti](#equality-operator-) .
+Operátor nerovnosti `!=` vrátí `true`, pokud jeho operandy nejsou stejné, `false` jinak. U operandů [předdefinovaných typů](../builtin-types/built-in-types.md)výraz `x != y` vytvoří stejný výsledek jako `!(x == y)`výrazu. Další informace o rovnosti typů naleznete v části [operátor rovnosti](#equality-operator-) .
 
 Následující příklad ukazuje použití operátoru `!=`:
 

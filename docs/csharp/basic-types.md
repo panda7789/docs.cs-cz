@@ -4,12 +4,12 @@ description: Další informace o základních typech (čísel, řetězců a obje
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 7b6dec16b3fd84ced856a9f0e42f38189b1e03fd
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ad496a9cbb0a654ec10ac38b374a76b042911302
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75339282"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093289"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnné a hodnoty
 
@@ -54,7 +54,7 @@ Další informace naleznete v tématu [přetypování a převody typu](programmi
 
 ## <a name="built-in-types"></a>Předdefinované typy
 
-C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celých čísel, hodnot s plovoucí desetinnou čárkou, logických výrazů, textových znaků, desetinných hodnot a dalších typů dat. Existují také předdefinované typy **řetězců** a **objektů** . Jsou k dispozici pro použití v jakémkoli C# programu. Další informace o předdefinovaných typech najdete v [referenční tabulce pro předdefinované typy](language-reference/keywords/built-in-types-table.md).  
+C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádření celých čísel, hodnot s plovoucí desetinnou čárkou, logických výrazů, textových znaků, desetinných hodnot a dalších typů dat. Existují také předdefinované typy **řetězců** a **objektů** . Jsou k dispozici pro použití v jakémkoli C# programu. Úplný seznam předdefinovaných typů naleznete v tématu [vestavěné typy](language-reference/builtin-types/built-in-types.md).
   
 ## <a name="custom-types"></a>Vlastní typy
 
@@ -84,7 +84,7 @@ Je důležité porozumět dvěma základním bodům o typu systému v .NET Frame
   
 - Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET Framework a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](language-reference/keywords/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou **struktury**. Další informace o typech hodnot naleznete v tématu [struktury](structs.md). Typy, které definujete pomocí klíčového slova [Class](language-reference/keywords/class.md) , jsou odkazové typy. Další informace o typech odkazů naleznete v tématu [třídy](programming-guide/classes-and-structs/classes.md). Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Struktury](structs.md)
 - [Třídy](programming-guide/classes-and-structs/classes.md)

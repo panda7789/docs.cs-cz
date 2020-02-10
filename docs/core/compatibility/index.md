@@ -1,13 +1,13 @@
 ---
-title: Typy přerušujících změn – .NET Core
+title: Typy přerušujících změn
 description: Přečtěte si, jak se .NET Core pokusí zachovat kompatibilitu pro vývojáře napříč verzemi .NET a jaký druh změny se považuje za zásadní změnu.
 ms.date: 06/10/2019
-ms.openlocfilehash: 76d04504c4476f0f7517a633cfbf1c0aa9d5797e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1c5790e39754b91aacbde9e87ed99f9dcc36ce9f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738582"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092977"
 ---
 # <a name="changes-that-affect-compatibility"></a>Změny ovlivňující kompatibilitu
 

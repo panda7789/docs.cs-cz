@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: a346a19400c1d2c536fff56ed7fb6dc27570df29
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 597bfd2c16f6289a2bcb931c3896918dcb6d9a4d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965825"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094134"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
 Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
@@ -24,10 +24,10 @@ Redistribuovatelné balíčky a jazykové sady pro .NET Framework můžete stáh
 - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-- [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+- [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
 - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
 - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451)
-- [.NET Framework 4,5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
+- [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
 
  Důležité poznámky:
 
@@ -190,7 +190,7 @@ Pokud je například spustitelný program contoso. exe a chcete tiše nainstalov
 
 `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso`
 
-K přizpůsobení instalace můžete použít další možnosti příkazového řádku. Příklad:
+K přizpůsobení instalace můžete použít další možnosti příkazového řádku. Například:
 
 - Chcete-li uživatelům umožnit, aby zavřeli spuštěné aplikace .NET Framework pro minimalizaci restartování systému, nastavte pasivní režim a použijte možnost `/showrmui` následujícím způsobem:
 
@@ -245,7 +245,7 @@ Instalační program .NET Framework zapisuje klíče registru po úspěšném do
 
 [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
 
-|Version|Hodnota DWORD verze|
+|Verze|Hodnota DWORD verze|
 |-------------|--------------------------------|
 |Aktualizace .NET Framework 4,8 nainstalované ve Windows 10 Květen 2019|528040|
 |Aktualizace .NET Framework 4,8 nainstalovaná ve všech jiných verzích operačního systému než Windows 10, které by byly 2019|528049|
@@ -274,9 +274,9 @@ Chcete-li například zjistit, zda je nainstalována úplná japonská jazyková
 
 | | |
 |-|-|
-| Key | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
-| Name | Vydaná verze |
-| Type | DWORD |
+| Klíč | HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
+| Název | Vydat |
+| Typ | DWORD |
 
 Pokud chcete zjistit, jestli je nainstalovaná konečná verze jazykové sady pro konkrétní verzi .NET Framework od 4,5 do 4.7.2, zkontrolujte hodnotu klíče verze DWORD popsanou v předchozí části a zjistěte [.NET Framework](#detect_net).
 
@@ -292,10 +292,10 @@ Pokud chcete zjistit, jestli je nainstalovaná konečná verze jazykové sady pr
 - [.NET Framework 4,7](https://dotnet.microsoft.com/download/dotnet-framework/net47)
 - [.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)
 - [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)
-- [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
+- [.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)
 - [.NET Framework 4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)
 - [.NET Framework 4.5.1](https://dotnet.microsoft.com/download/dotnet-framework/net451)
-- [.NET Framework 4,5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
+- [.NET Framework 4.5](https://dotnet.microsoft.com/download/dotnet-framework/net45)
 
 > [!IMPORTANT]
 > Jazykové sady neobsahují .NET Framework komponenty, které jsou nutné ke spuštění aplikace. před instalací jazykové sady je nutné nainstalovat .NET Framework pomocí webového nebo offline instalačního programu.
@@ -310,7 +310,7 @@ Pokud používáte webovou Instalační službu, nemusíte zřetězit jazykové 
 
 Úplný seznam možností příkazového řádku najdete v části [Možnosti příkazového řádku](#command-line-options) .
 
-### <a name="troubleshooting"></a>Odstraňování problémů
+### <a name="troubleshooting"></a>Řešení potíží
 
 #### <a name="return-codes"></a>Návratové kódy
 
@@ -359,16 +359,16 @@ V následující tabulce jsou uvedeny možnosti, které můžete zahrnout při z
 |Možnost|Popis|
 |------------|-----------------|
 |**/CEIPConsent**|Přepíše výchozí chování a pošle anonymní zpětnou vazbu Microsoftu, aby vylepšil budoucí prostředí nasazení. Tuto možnost lze použít pouze v případě, že instalační program vyzve k zadání souhlasu a pokud uživatel udělí oprávnění k odeslání anonymní zpětné vazby společnosti Microsoft.|
-|**/chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají společnosti Microsoft jako anonymní zpětná vazba, která pomáhá zlepšovat budoucí prostředí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače. Příklad: **/chainingpackage "Lucerne Publishing"** . Příklad zřetězení balíčku najdete v tématu [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
-|**/LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykovou sadu určenou v `LCID` a vynutí zobrazení zobrazeného uživatelského rozhraní v tomto jazyce, není-li nastaven tichý režim.<br /><br /> Pro webovou Instalační službu tento řetěz možností – nainstaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalačním programem.|
+|**/chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace se odesílají společnosti Microsoft jako anonymní zpětná vazba, která pomáhá zlepšovat budoucí prostředí nasazení.<br /><br /> Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače. Příklad: **/chainingpackage "Lucerne Publishing"** . Příklad zřetězení balíčku najdete v tématu [získávání informací o průběhu z instalačního balíčku](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100)).|
+|**/LCID**`LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykovou sadu určenou v `LCID` a vynutí zobrazení zobrazeného uživatelského rozhraní v tomto jazyce, není-li nastaven tichý režim.<br /><br /> Pro webovou Instalační službu tento řetěz možností – nainstaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalačním programem.|
 |**/log** `file` &#124; `folder`|Určuje umístění souboru protokolu. Výchozím nastavením je dočasná složka pro daný proces a výchozí název souboru je založen na balíčku. Je-li Přípona souboru. txt, je vytvořen textový protokol. Pokud zadáte jiné rozšíření nebo žádné rozšíření, vytvoří se protokol HTML.|
 |**/msioptions**|Určuje možnosti, které se mají předat pro položky. msi a. msp; například: `/msioptions "PROPERTY1='Value'"`.|
-|**/ norestart /**|Zabraňuje automatickému restartování instalačního programu. Použijete-li tuto možnost, musí zřetězená aplikace zachytit návratový kód a zpracovat restartování (viz část [získání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=179606) v knihovně MSDN).|
+|**/norestart**|Zabraňuje automatickému restartování instalačního programu. Použijete-li tuto možnost, musí zřetězená aplikace zachytit návratový kód a zpracovat restartování (viz část [získání informací o průběhu z instalačního balíčku](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100))).|
 |**/passive**|Nastaví pasivní režim. Zobrazí indikátor průběhu, který indikuje, že instalace probíhá, ale nezobrazuje žádné výzvy ani chybové zprávy pro uživatele. V tomto režimu, při zřetězení instalačního programu, musí zřetězení balíčku zpracovat [návratové kódy](#return-codes).|
 |**/pipe**|Vytvoří komunikační kanál, který umožní zřetězení balíčku, aby se mohl získat průběh.|
 |**/promptrestart**|Pouze pasivní režim, pokud instalační program vyžaduje restart, vyzve uživatele. Tato možnost vyžaduje zásah uživatele, pokud je vyžadováno restartování.|
-|**/q**|Nastaví tichý režim.|
-|**/ repair**|Aktivuje funkci opravy.|
+|**parametr**|Nastaví tichý režim.|
+|**/Repair**|Aktivuje funkci opravy.|
 |**/serialdownload**|Vynutí instalaci, aby se provedla až po stažení balíčku.|
 |**/showfinalerror**|Nastaví pasivní režim. Zobrazí chyby pouze v případě, že instalace není úspěšná. Tato možnost vyžaduje zásah uživatele, pokud instalace není úspěšná.|
 |**/showrmui**|Používá se pouze s možností **/passive** . Zobrazí okno se zprávou, která vyzývá uživatele, aby zavřeli .NET Framework aktuálně spuštěných aplikacích. Toto okno se zprávou se chová stejně jako v pasivním a nepasivním režimu.|
@@ -394,7 +394,7 @@ V následující tabulce jsou uvedeny .NET Framework jazykové sady, které jsou
 |1041|Japonština|dža|
 |1042|Korejština|Ko|
 |1043|Holandština – Nizozemsko|nl|
-|1044|Norština (Bokmål)|Ne|
+|1044|Norština (Bokmål)|ne|
 |1045|Polština|pl|
 |1046|Portugalština – Brazílie|pt-BR|
 |1049|Ruština|ru|
@@ -404,7 +404,7 @@ V následující tabulce jsou uvedeny .NET Framework jazykové sady, které jsou
 |2070|Portugalština – Portugalsko|pt-PT|
 |3082|Španělština – Španělsko (moderní řazení)|jednomu|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Příručka nasazení pro administrátory](guide-for-administrators.md)
 - [Požadavky na systém](../get-started/system-requirements.md)

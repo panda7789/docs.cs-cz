@@ -2,12 +2,12 @@
 title: Zpracování škodlivých zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: 389d0651438036cd23d30cf7dd866956ac8e5dae
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 378849815617f6556a7d9cc7e89c6697bfdd895d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921210"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094992"
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 *Nezpracovatelná zpráva* je zpráva, že překročila maximální počet pokusů o doručení do aplikace. K této situaci může dojít, když aplikace založená na frontě nemůže zpracovat zprávu z důvodu chyb. Pro splnění požadavků na spolehlivost přijímá aplikace zařazené do fronty zprávy v rámci transakce. Přerušení transakce, ve které byla přijata zpráva zařazená do fronty, opustí zprávu ve frontě, aby se zpráva opakovala v rámci nové transakce. Pokud se problém, který způsobil přerušování transakce, neopraví, přijímající aplikace může zablokovat ve smyčce příjem a přerušit stejnou zprávu, dokud nedosáhnete maximálního počtu pokusů o doručení a výsledků nepoškozených zpráv.  
@@ -17,7 +17,7 @@ ms.locfileid: "76921210"
  Ve výjimečných případech se zprávy nemůžou podařit odeslat do aplikace. Vrstva Windows Communication Foundation (WCF) může najít problém se zprávou, například pokud má zpráva špatný rámec, připojeny neplatné přihlašovací údaje k této zprávě nebo neplatnou hlavičku akce. V těchto případech aplikace zprávu nikdy neobdrží. zpráva se však stále může stát nezpracovatelnou zprávou a bude zpracována ručně.  
   
 ## <a name="handling-poison-messages"></a>Zpracování poškozených zpráv  
- V rámci služby WCF poskytuje manipulace s nezpracovatelovou zprávou mechanismus pro přijímající aplikaci, aby mohla řešit zprávy, které nelze odeslat do aplikace, nebo zprávy, které byly odeslány do aplikace, ale které nemohly být zpracovány z důvodu specifického pro aplikaci. hlediska. Zpracování nezpracovatelných zpráv je konfigurováno následujícími vlastnostmi v každé z dostupných vazeb zařazených do fronty:  
+ V rámci WCF zajišťuje manipulace s nezpracovatelovou zprávou mechanismus pro přijímající aplikaci, aby mohla zabývat se zprávami, které nelze odeslat do aplikace nebo zpráv, které jsou odeslány do aplikace, ale jejichž zpracování se nezdařilo kvůli konkrétní aplikaci. hlediska. Nakonfigurujte zpracování nezpracovatelných zpráv s následujícími vlastnostmi v každé z dostupných vazeb zařazených do fronty:  
   
 - `ReceiveRetryCount`. Celočíselná hodnota, která určuje maximální počet pokusů o doručení zprávy z fronty aplikace do aplikace. Výchozí hodnota je 5. To je dostačující v případech, kdy se problém okamžitě vyřeší, například s dočasným zablokování v databázi.  
   
@@ -35,7 +35,7 @@ ms.locfileid: "76921210"
   
 - Pøesunout. Tato možnost je k dispozici pouze v systému Windows Vista. Tím se tato nezpracovatelná zpráva přesune do fronty nezpracovatelných zpráv pro pozdější zpracování pomocí aplikace pro zpracování nepoškozené zprávy. Fronta nepoškozených zpráv je podfrontou fronty aplikace. Aplikace pro zpracování nepoškozených zpráv může být služba WCF, která čte zprávy z fronty nezpracovatelných zpráv. Fronta poškození je podfrontou fronty aplikací a lze ji adresovat jako NET. MSMQ://\<*název počítače*>/*applicationQueue*;p oison, kde *název počítače* je název počítače, na kterém je fronta uložena, a *applicationQueue* je název fronty pro konkrétní aplikaci.  
   
- Níže jsou uvedené maximální počty pokusů o doručení, které se pro zprávu udělaly:  
+Níže jsou uvedené maximální počty pokusů o doručení, které se pro zprávu udělaly:  
   
 - ((ReceiveRetryCount + 1) * (MaxRetryCycles + 1)) v systému Windows Vista.  
   
@@ -103,7 +103,7 @@ ms.locfileid: "76921210"
   
 - Služba Řízení front zpráv v systému Windows Vista podporuje vlastnost zprávy, která udržuje počet pokusů o doručení zprávy. Tato vlastnost počet přerušení není k dispozici v systémech Windows Server 2003 a Windows XP. Služba WCF udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesnou hodnotu, pokud je stejná zpráva čtena více než jednou službou WCF ve farmě.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
 - [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)

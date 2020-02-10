@@ -2,26 +2,27 @@
 title: Připojení ke zdroji dat
 ms.date: 03/30/2017
 ms.assetid: 9abc3f92-1be3-4e1a-b360-762dc689650e
-ms.openlocfilehash: 84dc15c0965b7ac8209bd9115d611162e57d6dda
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 206a4f741b6bf711b51da794e23f779c2bea6fa0
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980246"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094446"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>Připojení ke zdroji dat v ADO.NET
+
 V ADO.NET použijete objekt **připojení** pro připojení ke konkrétnímu zdroji dat zadáním potřebných ověřovacích informací v připojovacím řetězci. Použitý objekt **připojení** závisí na typu zdroje dat.  
   
  Každý .NET Framework poskytovatel dat, který je součástí .NET Framework, má <xref:System.Data.Common.DbConnection> objekt: .NET Framework Zprostředkovatel dat pro OLE DB obsahuje objekt <xref:System.Data.OleDb.OleDbConnection>, .NET Framework Zprostředkovatel dat pro SQL Server obsahuje objekt <xref:System.Data.SqlClient.SqlConnection>, .NET Framework Zprostředkovatel dat pro rozhraní ODBC zahrnuje <xref:System.Data.Odbc.OdbcConnection> objekt a .NET Framework Zprostředkovatel dat pro Oracle zahrnuje objekt <xref:System.Data.OracleClient.OracleConnection>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Navazování připojení](establishing-the-connection.md)  
+ [Navázání\ připojení](establishing-the-connection.md)
  Popisuje způsob použití objektu **připojení** k navázání připojení ke zdroji dat.  
   
- [Události připojení](connection-events.md)  
+ \ [události připojení](connection-events.md)
  Popisuje, jak používat událost **InfoMessage** k načtení informativních zpráv ze zdroje dat.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Připojovací řetězce](connection-strings.md)
 - [Sdružování připojení](connection-pooling.md)

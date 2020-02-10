@@ -10,15 +10,15 @@ helpviewer_keywords:
 - validation of PrintTickets [WPF]
 - PrintTicket [WPF], validation
 ms.assetid: 4fe2d501-d0b0-4fef-86af-6ffe6c162532
-ms.openlocfilehash: 15e328729886e0f1efc3b47705fcb4ce13013137
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: bd7f399555b343a52ec6f36aa3b8c706747d8b06
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035577"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094524"
 ---
 # <a name="how-to-validate-and-merge-printtickets"></a>Postupy: Ověření a sloučení PrintTickets
-[Schéma tisku](https://go.microsoft.com/fwlink/?LinkId=186397) v systému Microsoft Windows zahrnuje flexibilní a rozšiřitelné prvky <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket>. Předchozí rozepisuje možnosti tiskového zařízení a druhého nastavení určují, jak by mělo zařízení používat tyto možnosti s ohledem na konkrétní posloupnost dokumentů, jednotlivé dokumenty nebo jednotlivé stránky.  
+[Schéma tisku](/windows/win32/printdocs/printschema) v systému Microsoft Windows zahrnuje flexibilní a rozšiřitelné prvky <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket>. Předchozí rozepisuje možnosti tiskového zařízení a druhého nastavení určují, jak by mělo zařízení používat tyto možnosti s ohledem na konkrétní posloupnost dokumentů, jednotlivé dokumenty nebo jednotlivé stránky.  
   
  Typická posloupnost úloh pro aplikaci, která podporuje tisk, by byla následující.  
   
@@ -56,7 +56,7 @@ ms.locfileid: "73035577"
  [!code-csharp[PrintTicketManagment#UIForMergeAndValidatePTUtility](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#uiformergeandvalidateptutility)]
  [!code-vb[PrintTicketManagment#UIForMergeAndValidatePTUtility](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#uiformergeandvalidateptutility)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Printing.PrintCapabilities>
 - <xref:System.Printing.PrintTicket>
@@ -67,4 +67,4 @@ ms.locfileid: "73035577"
 - <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Přehled tisku](printing-overview.md)
-- [Tisk schématu](https://go.microsoft.com/fwlink/?LinkId=186397)
+- [Tisk schématu](/windows/win32/printdocs/printschema)

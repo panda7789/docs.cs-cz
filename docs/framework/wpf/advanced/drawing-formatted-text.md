@@ -10,12 +10,12 @@ helpviewer_keywords:
 - formatted text [WPF]
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
-ms.openlocfilehash: c786137a471e0199a8ac60f8d82b4ce440e33b7e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: f23f54283849ddaa827a98f0f28a39a72305dc1d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740394"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095226"
 ---
 # <a name="drawing-formatted-text"></a>Kreslení formátovaného textu
 Toto téma obsahuje přehled funkcí objektu <xref:System.Windows.Media.FormattedText>. Tento objekt poskytuje ovládací prvky nízké úrovně pro vykreslování textu v aplikacích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -33,7 +33,7 @@ Toto téma obsahuje přehled funkcí objektu <xref:System.Windows.Media.Formatte
   
  Objekt <xref:System.Windows.Media.FormattedText> poskytuje větší funkce formátování textu než ovládací prvky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] textu a může být užitečné v případech, kdy chcete text použít jako dekorativní prvek. Další informace naleznete v následující části [převedení formátovaného textu na geometrii](#converting_formatted_text).  
   
- Kromě toho objekt <xref:System.Windows.Media.FormattedText> je užitečný pro vytváření objektů odvozených <xref:System.Windows.Media.DrawingVisual>m orientovaném na text. <xref:System.Windows.Media.DrawingVisual> je zjednodušená třída pro kreslení, která se používá k vykreslování tvarů, obrázků nebo textu. Další informace najdete v tématu [test přístupů pomocí DrawingVisuals Sample](https://go.microsoft.com/fwlink/?LinkID=159994).  
+ Kromě toho objekt <xref:System.Windows.Media.FormattedText> je užitečný pro vytváření objektů odvozených <xref:System.Windows.Media.DrawingVisual>m orientovaném na text. <xref:System.Windows.Media.DrawingVisual> je zjednodušená třída pro kreslení, která se používá k vykreslování tvarů, obrázků nebo textu. Další informace najdete v tématu [test přístupů pomocí DrawingVisuals Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Visual%20Layer/DrawingVisual).  
   
 ## <a name="using-the-formattedtext-object"></a>Použití objektu FormattedText  
  Chcete-li vytvořit formátovaný text, zavolejte konstruktor <xref:System.Windows.Media.FormattedText.%23ctor%2A> pro vytvoření objektu <xref:System.Windows.Media.FormattedText>. Po vytvoření počátečního formátovaného textového řetězce můžete použít rozsah stylů formátování.  
@@ -88,34 +88,34 @@ Koule následující po geometrii cesty textu
 ## <a name="win32-migration"></a>Migrace Win32  
  Funkce <xref:System.Windows.Media.FormattedText> pro kreslení textu jsou podobné funkcím funkce Win32 DrawText. Pro vývojáře, kteří migrují z Win32 API, v následující tabulce jsou uvedeny příznaky Win32 DrawText a přibližný ekvivalent v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
-|Příznak DrawText|Ekvivalent WPF|Poznámky|  
+|Příznak DrawText|Ekvivalent WPF|Poznámky:|  
 |-------------------|--------------------|-----------|  
 |DT_BOTTOM|<xref:System.Windows.Media.FormattedText.Height%2A>|Vlastnost <xref:System.Windows.Media.FormattedText.Height%2A> použijte k výpočtu vhodné pozice y v systému Win32 DrawText.|  
 |DT_CALCRECT|<xref:System.Windows.Media.FormattedText.Height%2A>, <xref:System.Windows.Media.FormattedText.Width%2A>|Pomocí vlastností <xref:System.Windows.Media.FormattedText.Height%2A> a <xref:System.Windows.Media.FormattedText.Width%2A> můžete vypočítat výstupní obdélník.|  
 |DT_CENTER|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Použijte vlastnost <xref:System.Windows.Media.FormattedText.TextAlignment%2A> s hodnotou nastavenou na hodnotu <xref:System.Windows.TextAlignment.Center>.|  
-|DT_EDITCONTROL|Žádné|Není nutné. Šířka prostoru a vykreslení posledního řádku jsou stejné jako v ovládacím prvku pro úpravy rozhraní.|  
+|DT_EDITCONTROL|Žádná|Není nutné. Šířka prostoru a vykreslení posledního řádku jsou stejné jako v ovládacím prvku pro úpravy rozhraní.|  
 |DT_END_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Použijte vlastnost <xref:System.Windows.Media.FormattedText.Trimming%2A> s hodnotou <xref:System.Windows.TextTrimming.CharacterEllipsis>.<br /><br /> Použití <xref:System.Windows.TextTrimming.WordEllipsis> k získání DT_END_ELLIPSIS Win32 se třemi tečkami DT_WORD_ELIPSIS – v tomto případě se tři tečky vyskytují jenom na slovech, která se nevejdou na jeden řádek.|  
-|DT_EXPAND_TABS|Žádné|Není nutné. Karty se automaticky rozšiřují, aby se zastavily každých 4 EMS, což je přibližně šířka znaků, které jsou nezávisle na jazyce.|  
-|DT_EXTERNALLEADING|Žádné|Není nutné. Vnější přední prostor je vždy zahrnut v řádkování. Vlastnost <xref:System.Windows.Media.FormattedText.LineHeight%2A> slouží k vytvoření uživatelem definovaného řádkování.|  
-|DT_HIDEPREFIX|Žádné|Není podporováno. Před vytvořením objektu <xref:System.Windows.Media.FormattedText> z řetězce odeberte ' & '.|  
+|DT_EXPAND_TABS|Žádná|Není nutné. Karty se automaticky rozšiřují, aby se zastavily každých 4 EMS, což je přibližně šířka znaků, které jsou nezávisle na jazyce.|  
+|DT_EXTERNALLEADING|Žádná|Není nutné. Vnější přední prostor je vždy zahrnut v řádkování. Vlastnost <xref:System.Windows.Media.FormattedText.LineHeight%2A> slouží k vytvoření uživatelem definovaného řádkování.|  
+|DT_HIDEPREFIX|Žádná|Nepodporuje se. Před vytvořením objektu <xref:System.Windows.Media.FormattedText> z řetězce odeberte ' & '.|  
 |DT_LEFT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Toto je výchozí zarovnání textu. Použijte vlastnost <xref:System.Windows.Media.FormattedText.TextAlignment%2A> s hodnotou nastavenou na hodnotu <xref:System.Windows.TextAlignment.Left>. (Jenom WPF)|  
-|DT_MODIFYSTRING|Žádné|Není podporováno.|  
+|DT_MODIFYSTRING|Žádná|Nepodporuje se.|  
 |DT_NOCLIP|<xref:System.Windows.Media.Visual.VisualClip%2A>|K oříznutí dojde automaticky. Pokud chcete oříznout text, použijte vlastnost <xref:System.Windows.Media.Visual.VisualClip%2A>.|  
-|DT_NOFULLWIDTHCHARBREAK|Žádné|Není podporováno.|  
-|DT_NOPREFIX|Žádné|Není nutné. Znak ' & ' v řetězcích je vždy považován za běžný znak.|  
-|DT_PATHELLIPSIS|Žádné|Použijte vlastnost <xref:System.Windows.Media.FormattedText.Trimming%2A> s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
-|DT_PREFIX|Žádné|Není podporováno. Pokud chcete použít podtržítka pro text, jako je například klávesa akcelerátoru nebo propojení, použijte metodu <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A>.|  
-|DT_PREFIXONLY|Žádné|Není podporováno.|  
+|DT_NOFULLWIDTHCHARBREAK|Žádná|Nepodporuje se.|  
+|DT_NOPREFIX|Žádná|Není nutné. Znak ' & ' v řetězcích je vždy považován za běžný znak.|  
+|DT_PATHELLIPSIS|Žádná|Použijte vlastnost <xref:System.Windows.Media.FormattedText.Trimming%2A> s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
+|DT_PREFIX|Žádná|Nepodporuje se. Pokud chcete použít podtržítka pro text, jako je například klávesa akcelerátoru nebo propojení, použijte metodu <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A>.|  
+|DT_PREFIXONLY|Žádná|Nepodporuje se.|  
 |DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Použijte vlastnost <xref:System.Windows.Media.FormattedText.TextAlignment%2A> s hodnotou nastavenou na hodnotu <xref:System.Windows.TextAlignment.Right>. (Jenom WPF)|  
-|DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Nastavte <xref:System.Windows.Media.FormattedText.FlowDirection%2A> vlastnost <xref:System.Windows.FlowDirection.RightToLeft>.|  
-|DT_SINGLELINE|Žádné|Není nutné. <xref:System.Windows.Media.FormattedText> objektů se chová jako ovládací prvek s jedním řádkem, pokud není nastavena vlastnost <xref:System.Windows.Media.FormattedText.MaxTextWidth%2A> nebo text obsahuje znak návratu nebo řádku pro návrat na začátek řádku (CR/LF).|  
-|DT_TABSTOP|Žádné|Žádná podpora pro uživatelem definované pozice zarážek tabulátoru.|  
+|DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Vlastnost <xref:System.Windows.Media.FormattedText.FlowDirection%2A> nastavte na hodnotu <xref:System.Windows.FlowDirection.RightToLeft>.|  
+|DT_SINGLELINE|Žádná|Není nutné. <xref:System.Windows.Media.FormattedText> objektů se chová jako ovládací prvek s jedním řádkem, pokud není nastavena vlastnost <xref:System.Windows.Media.FormattedText.MaxTextWidth%2A> nebo text obsahuje znak návratu nebo řádku pro návrat na začátek řádku (CR/LF).|  
+|DT_TABSTOP|Žádná|Žádná podpora pro uživatelem definované pozice zarážek tabulátoru.|  
 |DT_TOP|<xref:System.Windows.Media.FormattedText.Height%2A>|Není nutné. Hlavní odůvodnění je výchozí. Další hodnoty vertikálního umístění je možné definovat pomocí vlastnosti <xref:System.Windows.Media.FormattedText.Height%2A> k výpočtu vhodné pozice y v systému Win32 DrawText.|  
 |DT_VCENTER|<xref:System.Windows.Media.FormattedText.Height%2A>|Vlastnost <xref:System.Windows.Media.FormattedText.Height%2A> použijte k výpočtu vhodné pozice y v systému Win32 DrawText.|  
-|DT_WORDBREAK|Žádné|Není nutné. K zalamování slov dochází automaticky <xref:System.Windows.Media.FormattedText> objekty. Nemůžete ho zakázat.|  
+|DT_WORDBREAK|Žádná|Není nutné. K zalamování slov dochází automaticky <xref:System.Windows.Media.FormattedText> objekty. Nemůžete ho zakázat.|  
 |DT_WORD_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Použijte vlastnost <xref:System.Windows.Media.FormattedText.Trimming%2A> s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.FormattedText>
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

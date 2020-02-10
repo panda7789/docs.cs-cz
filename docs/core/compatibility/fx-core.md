@@ -1,13 +1,14 @@
 ---
 title: Průlomové změny – .NET Framework do .NET Core
+titleSuffix: ''
 description: Obsahuje seznam přerušujících změn z .NET Framework do .NET Core.
 ms.date: 12/18/2019
-ms.openlocfilehash: 6959bffab62cabc524062231db989de45c8c1498
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 407f99adf5d400fce659ef71cda32ceac1e54491
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116499"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093055"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>Zásadní změny migrace z .NET Framework do .NET Core
 
@@ -110,7 +111,7 @@ Do .NET Core ve verzi 3,0 se přidala podpora model Windows Forms. Pokud migruje
 
 ***
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozhraní API, která vždy vyvolávají výjimky v .NET Core](unsupported-apis.md)
 - [Technologie .NET Framework nedostupné v .NET Core](../porting/net-framework-tech-unavailable.md)

@@ -3,12 +3,12 @@ title: Začínáme se službou Azure Blob Storage s využitím F#
 description: Ukládejte nestrukturovaná data v cloudu pomocí služby Azure Blob Storage.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 90ec0d63b11ad00c53a1740211e9a6509582e863
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 79f6a559ac603b0544916764126a988d3f3f43d7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935508"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092626"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob Storage s využitím F\#
 
@@ -16,11 +16,11 @@ ms.locfileid: "75935508"
 
 V tomto článku se dozvíte, jak provádět běžné úlohy pomocí služby Blob Storage. Ukázky se napíší pomocí F# Azure Storage klientské knihovny pro .NET. Mezi zahrnuté úlohy patří postup při nahrávání, vypsání, stahování a odstraňování objektů BLOB.
 
-Koncepční přehled služby Blob Storage najdete v [průvodci .NET pro úložiště objektů BLOB](/azure/storage/storage-dotnet-how-to-use-blobs).
+Koncepční přehled služby Blob Storage najdete v [průvodci .NET pro úložiště objektů BLOB](/azure/storage/blobs/storage-quickstart-blobs-dotnet).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-Pokud chcete použít tuto příručku, musíte nejdřív [vytvořit účet úložiště Azure](/azure/storage/storage-create-storage-account). Pro tento účet budete potřebovat taky přístupový klíč k úložišti.
+Pokud chcete použít tuto příručku, musíte nejdřív [vytvořit účet úložiště Azure](/azure/storage/common/storage-account-create). Pro tento účet budete potřebovat taky přístupový klíč k úložišti.
 
 ## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F# skriptu a spuštění F# Interactive
 
@@ -30,7 +30,7 @@ Dále použijte [Správce balíčků](package-management.md) , jako je [paket](h
 
 ### <a name="add-namespace-declarations"></a>Přidání deklarací oboru názvů
 
-Přidejte do horní části souboru `blobs.fsx` následující příkazy `open`:
+Přidejte do horní části souboru `open` následující příkazy `blobs.fsx`:
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L1-L5)]
 
@@ -102,14 +102,14 @@ Můžete také pojmenovat objekty BLOB s informacemi o cestě v jejich názvech.
 
 Můžete zvolit například následující sadu objektů blob bloku v kontejneru nazvaném `photos`:
 
-*photo1.jpg*\
+*photo1. jpg*\
 *2015/architektura/Description. txt*\
-*2015/architecture/photo3.jpg*\
-*2015/architecture/photo4.jpg*\
-*2016/architecture/photo5.jpg*\
-*2016/architecture/photo6.jpg*\
+\ *2015/architektury/photo3. jpg*
+\ *2015/architektury/photo4. jpg*
+*2016/architektura/photo5. jpg*\
+*2016/architektura/photo6. jpg*\
 *2016/architektura/Description. txt*\
-*2016/photo7.jpg*\
+\ *2016/photo7. jpg*
 
 Při volání `ListBlobs` na kontejneru (jako ve výše uvedené ukázce) se vrátí hierarchický výpis. Pokud obsahuje `CloudBlobDirectory` i `CloudBlockBlob` objektů, které představují adresáře a objekty BLOB v kontejneru, pak výsledný výstup vypadá podobně jako tento:
 
@@ -146,7 +146,7 @@ Pomocí metody `DownloadToStream` můžete také stáhnout obsah objektu BLOB ja
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L103-L106)]
 
-## <a name="delete-blobs"></a>Odstraňovat objekty blob
+## <a name="delete-blobs"></a>Odstranění objektů blob
 
 Pokud chcete odstranit objekt blob, nejdřív Získejte odkaz na objekt BLOB a pak na něj volejte metodu `Delete`.
 
@@ -196,8 +196,8 @@ Další informace najdete v tématu [Správa souběžnosti v Microsoft Azure Sto
 
 Každý objekt blob v úložišti Azure se musí nacházet v kontejneru. Kontejner je součástí názvu objektu blob. Třeba `mydata` je název kontejneru v těchto identifikátorech URI ukázkových objektů blob:
 
-- https://storagesample.blob.core.windows.net/mydata/blob1.txt
-- https://storagesample.blob.core.windows.net/mydata/photos/myphoto.jpg
+- `https://storagesample.blob.core.windows.net/mydata/blob1.txt`
+- `https://storagesample.blob.core.windows.net/mydata/photos/myphoto.jpg`
 
 Název kontejneru musí být platný název DNS, který odpovídá následujícím pravidlům pro pojmenování:
 
@@ -226,7 +226,7 @@ Teď, když jste se naučili základy používání Blob storage, podívejte se 
 
 ### <a name="tools"></a>Nástroje
 
-- [F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
+- [ F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
 Poskytovatel F# typu, který se dá použít k prozkoumání prostředků blob, Table a Queue Azure Storage a snadné použití operací CRUD na nich.
 
 - [FSharp. Azure. Storage](https://github.com/fsprojects/FSharp.Azure.Storage)\
@@ -237,14 +237,13 @@ Bezplatná samostatná aplikace od Microsoftu, která umožňuje vizuálně prac
 
 ### <a name="blob-storage-reference"></a>Odkazy Blob storage
 
-- [Rozhraní API služby Azure Storage pro .NET](/dotnet/api/overview/azure/storage)
-- [Referenční informace k rozhraní REST API služby Azure Storage](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
+- [Rozhraní API pro Azure Storage pro .NET](/dotnet/api/overview/azure/storage)
+- [Referenční informace o rozhraní REST API pro služby Azure Storage](/rest/api/storageservices/)
 
 ### <a name="related-guides"></a>Související příručky
 
-- [Začínáme s využitím Azure Blob Storage vC#](https://azure.microsoft.com/resources/samples/storage-blob-dotnet-getting-started/)
-- [Přenos dat pomocí nástroje příkazového řádku AzCopy ve Windows](/azure/storage/common/storage-use-azcopy)
-- [Přenos dat pomocí nástroje příkazového řádku AzCopy v systému Linux](/azure/storage/common/storage-use-azcopy-linux)
+- [Ukázky pro Azure Blob Storage pro .NET](https://docs.microsoft.com/samples/azure-samples/storage-blob-dotnet-getting-started/storage-blob-dotnet-getting-started/)
+- [Začínáme s AzCopy](/azure/storage/common/storage-use-azcopy-v10)
 - [Nakonfigurování připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
 - [Blog týmu Azure Storage](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
 - [Rychlý Start: použití .NET k vytvoření objektu BLOB v úložišti objektů](/azure/storage/blobs/storage-quickstart-blobs-dotnet)

@@ -4,16 +4,16 @@ description: Další informace C# o typech hodnot s možnou hodnotou null a jeji
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 42673d16ac68bbf119e57e4c357b1b2b2a0b5c51
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bd90a0b1b77349efe581eb8aae44c58802ba756d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740943"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093185"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s možnou hodnotou null (C# Referenční dokumentace)
 
-Typ hodnoty s možnou hodnotou null `T?` představuje všechny hodnoty svého základního [typu hodnoty](value-types.md) `T` a další hodnotu [null](../keywords/null.md) . Můžete například přiřadit libovolné z následujících tří hodnot `bool?` proměnné: `true`, `false`nebo `null`. Základní typ hodnoty `T` nemůže být typ hodnoty s možnou hodnotou null.
+*Typ hodnoty s možnou hodnotou null* `T?` představuje všechny hodnoty svého základního [typu hodnoty](value-types.md) `T` a další hodnotu [null](../keywords/null.md) . Můžete například přiřadit libovolné z následujících tří hodnot `bool?` proměnné: `true`, `false`nebo `null`. Základní typ hodnoty `T` nemůže být typ hodnoty s možnou hodnotou null.
 
 > [!NOTE]
 > C#8,0 zavádí funkci typů odkazů s možnou hodnotou null. Další informace naleznete v tématu [typy odkazů s možnou hodnotou null](../../nullable-references.md). Typy s C# možnou hodnotou null jsou k dispozici od 2.
@@ -68,7 +68,7 @@ Typ hodnoty, která není null, `T`, se implicitně převodit na odpovídající
 
 ## <a name="lifted-operators"></a>Zrušené operátory
 
-Předdefinované unární a binární operátory nebo jakékoli přetížené operátory, které jsou podporovány hodnotou typu `T`, jsou podporovány také odpovídajícím typem hodnoty s možnou hodnotou null `T?`. Tyto operátory, označované také jako přenesené *operátory*, vyvolávají `null`, pokud jsou jeden nebo oba operandy `null`; v opačném případě operátor používá k výpočtu výsledku obsažené hodnoty operandů. Například:
+Předdefinované unární a binární [operátory](../operators/index.md) nebo jakékoli přetížené operátory, které jsou podporovány hodnotou typu `T`, jsou podporovány také odpovídajícím typem hodnoty s možnou hodnotou null `T?`. Tyto operátory, označované také jako přenesené *operátory*, vyvolávají `null`, pokud jsou jeden nebo oba operandy `null`; v opačném případě operátor používá k výpočtu výsledku obsažené hodnoty operandů. Například:
 
 [!code-csharp[lifted operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
 
@@ -82,7 +82,9 @@ Pro [operátory porovnání](../operators/comparison-operators.md) `<`, `>`, `<=
 
 [!code-csharp-interactive[relational and equality operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#ComparisonOperators)]
 
-Předchozí příklad také ukazuje, že porovnání rovnosti dvou instancí typu s možnou hodnotou null, které jsou `null` vyhodnoceny jako `true`.
+U [operátoru rovnosti](../operators/equality-operators.md#equality-operator-) `==`, pokud jsou oba operandy `null`, je výsledek `true`, pokud je `null`pouze jeden z operandů, výsledek je `false`; v opačném případě jsou obsažené hodnoty operandů porovnány.
+
+Pro [operátor nerovnosti](../operators/equality-operators.md#inequality-operator-) `!=`, jsou-li oba operandy `null`, je výsledek `false`, pokud je `null`pouze jeden z operandů, výsledek je `true`; v opačném případě jsou obsažené hodnoty operandů porovnány.
 
 Pokud existuje [uživatelem definovaný převod](../operators/user-defined-conversion-operators.md) mezi dvěma typy hodnot, stejný převod lze použít také mezi odpovídajícími typy hodnot s možnou hodnotou null.
 

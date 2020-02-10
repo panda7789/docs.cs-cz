@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dynamic layout [WPF interoperability]
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-ms.openlocfilehash: 9f97639447284b792d52cf4aa25b81f584d7291a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 89ed57a787b93a1326b4accd3bb1bc5ff9a825fd
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787906"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095148"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
 Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> prvek komunikuje se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] layout.  
@@ -31,7 +31,7 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 |Funkce rozložení|Popis|  
 |--------------------|-----------------|  
 |Automatické přizpůsobení velikosti|Některé model Windows Forms řídí změnu velikosti sebe sama tak, aby se jejich obsah správně zobrazoval. Další informace naleznete v tématu [Přehled vlastností AutoSize](../../winforms/controls/autosize-property-overview.md).|  
-|Ukotvení a ukotvení|Model Windows Forms ovládací prvky podporují umístění a velikost na základě nadřazeného kontejneru. Další informace naleznete v tématu <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
+|Ukotvení a ukotvení|Model Windows Forms ovládací prvky podporují umístění a velikost na základě nadřazeného kontejneru. Další informace naleznete v tématech <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
 |Automatické škálování|Ovládací prvky kontejneru mění velikost sebe sama a jejich podřízené položky na základě rozlišení výstupního zařízení nebo velikosti (v pixelech) výchozího písma kontejneru. Další informace najdete v tématu [Automatické škálování v model Windows Forms](../../winforms/automatic-scaling-in-windows-forms.md).|  
 |Kontejnery rozložení|Ovládací prvky <xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel> uspořádají své podřízené ovládací prvky a velikost samy na základě jejich obsahu.|  
   
@@ -98,11 +98,11 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
   
 - Pokud vlastnost <xref:System.Windows.Forms.Control.Size%2A> vrací menší velikost než zadané omezení, <xref:System.Windows.Forms.Integration.WindowsFormsHost> akceptuje tuto hodnotu velikosti a vrátí hodnotu do systému [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ho rozložení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Návod: Uspořádání ovládacích prvků Windows Forms v subsystému WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
-- [Uspořádání ovládacích prvků model Windows Forms v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
+- [Uspořádání ovládacích prvků model Windows Forms v ukázce WPF](https://github.com/microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WpfLayoutHostingWfWithXaml)
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)

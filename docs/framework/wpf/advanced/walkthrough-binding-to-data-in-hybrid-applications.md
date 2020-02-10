@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-ms.openlocfilehash: 1bb38436049e338ab6033ae3b6370732a457d520
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0d1e66a1277e6a04d2f49ac91691160f70fb56e4
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794227"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095070"
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 
@@ -35,11 +35,11 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je nezbytné pro poskytování
 
 - Vazba na zdroj dat.
 
-Úplný výpis kódu úloh, které jsou znázorněné v tomto návodu, najdete v tématu [Ukázka datových vazeb v hybridních aplikacích](https://go.microsoft.com/fwlink/?LinkID=159983).
+Úplný výpis kódu úloh, které jsou znázorněné v tomto návodu, najdete v tématu [Ukázka datových vazeb v hybridních aplikacích](https://github.com/microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFWithWFAndDatabinding).
 
 Až budete hotovi, budete obeznámeni s funkcemi datových vazeb v hybridních aplikacích.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 K dokončení tohoto návodu budete potřebovat následující komponenty:
 
@@ -179,13 +179,13 @@ Komponenta <xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType
      [!code-csharp[WPFWithWFAndDatabinding#14](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#14)]
      [!code-vb[WPFWithWFAndDatabinding#14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#14)]
 
-10. Stisknutím klávesy F5 Sestavte a spusťte aplikaci.
+10. Stisknutím klávesy F5 aplikaci sestavíte a spustíte.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
-- [Ukázka datových vazeb v hybridních aplikacích](https://go.microsoft.com/fwlink/?LinkID=159983)
+- [Ukázka datových vazeb v hybridních aplikacích](https://github.com/microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFWithWFAndDatabinding)
 - [Návod: Hostování složeného ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 26c09e547205e7819ebb43d6e34b6e18d6d9ff98
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 7e034e92e1ff2b9bec0eaf8e0f3330f7a832a7e5
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460836"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095161"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroje LocBaml.  
@@ -81,7 +81,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
 <a name="build_locbaml"></a>   
 ## <a name="build-the-locbaml-tool"></a>Sestavení nástroje LocBaml  
   
-1. Všechny soubory potřebné k sestavení LocBaml jsou umístěné v ukázkách [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Stáhněte si C# soubory z [ukázky nástroje LocBaml](https://go.microsoft.com/fwlink/?LinkID=160016).  
+1. Všechny soubory potřebné k sestavení LocBaml jsou umístěné v ukázkách [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Stáhněte si C# soubory z [ukázky nástroje LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml).  
   
 2. Z příkazového řádku spusťte soubor projektu (LocBaml. csproj) pro sestavení nástroje:  
   
@@ -127,7 +127,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
 
    | |
    |-|
-   |HelloApp. g. en-US. Resources: Window1. BAML, Stack1: System. Windows. Controls. StackPanel. $Content, ignore, FALSE, FALSE, #Text1; #Text2;|
+   |HelloApp.g.en-US.resources:window1.baml,Stack1:System.Windows.Controls.StackPanel.$Content,Ignore,FALSE, FALSE,,#Text1;#Text2;|
    |HelloApp. g. en-US. Resources: Window1. BAML, Text1: System. Windows. Controls. TextBlock. $Content, None, TRUE, TRUE, Hello World|
    |HelloApp. g. en-US. Resources: Window1. BAML, Text2: System. Windows. Controls. TextBlock. $Content, None, true, true, World|
 
@@ -151,9 +151,9 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
   
    |Název BAML|Klíč prostředku|Kategorie|Čitelnost|Upravitelnost|Komentáře|Hodnota|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
-   |HelloApp. g. en-US. Resources: Window1. BAML|Stack1: System. Windows. Controls. StackPanel. $Content|Ohled|CHYBNÉ|CHYBNÉ||#Text1; #Text2|
-   |HelloApp. g. en-US. Resources: Window1. BAML|Text1: System. Windows. Controls. TextBlock. $Content|Žádné|PODMÍNKA|PODMÍNKA||Hello World|
-   |HelloApp. g. en-US. Resources: Window1. BAML|Text2: System. Windows. Controls. TextBlock. $Content|Žádné|PODMÍNKA|PODMÍNKA||Vylučte ze světa|
+   |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|CHYBNÉ|CHYBNÉ||#Text1;#Text2|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádná|PRAVDA|PRAVDA||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádná|PRAVDA|PRAVDA||Vylučte ze světa|
   
    Všimněte si, že všechny hodnoty pole **Komentáře** neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdné. Všimněte si také, že položka v prvním řádku není čitelná ani upravitelná a má "Ignore" jako hodnotu **kategorie** , všechny, které označují, že hodnotu nelze lokalizovat.  
   
@@ -209,7 +209,7 @@ V tomto kurzu se dozvíte, jak vytvořit lokalizovanou aplikaci pomocí nástroj
 ## <a name="whats-next"></a>Co dál  
  Nyní byste měli mít základní informace o tom, jak používat nástroj LocBaml.  Měli byste být schopni vytvořit soubor, který obsahuje identifikátory UID. Pomocí nástroje LocBaml byste měli být schopni analyzovat soubor pro extrakci lokalizovatelné obsahu a po překladu obsahu byste měli být schopni vygenerovat soubor. Resources. dll, který slučuje přeložený obsah. Toto téma neobsahuje všechny možné podrobnosti, ale nyní máte znalosti potřebné k použití LocBaml pro lokalizaci vašich aplikací.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Globalizace pro WPF](globalization-for-wpf.md)
 - [Přehled automatického rozložení](use-automatic-layout-overview.md)

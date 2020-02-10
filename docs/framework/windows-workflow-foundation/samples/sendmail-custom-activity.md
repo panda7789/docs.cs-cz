@@ -2,41 +2,41 @@
 title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: b1e2d58a09362569d4d408f6e1c9e589aa6bda76
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 90b3192d931b216345b50ba49465455427e43a64
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715571"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094602"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 V této ukázce se dozvíte, jak vytvořit vlastní aktivitu, která se odvozuje z <xref:System.Activities.AsyncCodeActivity> k odeslání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita využívá možnosti <xref:System.Net.Mail.SmtpClient> k asynchronnímu posílání e-mailů a k odesílání e-mailů s ověřováním. Poskytuje také některé funkce koncového uživatele, jako je režim testu, nahrazení tokenu, šablony souborů a cesta pro vyřazení testu.  
   
  Následující tabulka popisuje argumenty aktivity `SendMail`.  
   
-|Name|Type|Popis|  
+|Název|Typ|Popis|  
 |-|-|-|  
-|Hostitel|String|Adresa hostitele serveru SMTP.|  
-|Port|String|Port služby SMTP v hostiteli.|  
-|enableSsl|bool|Určuje, jestli <xref:System.Net.Mail.SmtpClient> k šifrování připojení používá SSL (Secure Sockets Layer) (SSL).|  
-|UserName|String|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření vlastnosti odesílatele <xref:System.Net.Mail.SmtpClient.Credentials%2A>.|  
-|Heslo|String|Heslo pro nastavení přihlašovacích údajů pro ověření vlastnosti odesílatele <xref:System.Net.Mail.SmtpClient.Credentials%2A>.|  
-|Předmět|řetězec \<<xref:System.Activities.InArgument%601>|Předmět zprávy|  
-|Text|řetězec \<<xref:System.Activities.InArgument%601>|Text zprávy|  
-|Přílohy|řetězec \<<xref:System.Activities.InArgument%601>|Kolekce příloh používaná k ukládání dat připojených k této e-mailové zprávě|  
-|Od|<xref:System.Net.Mail.MailAddress>|Z adresy pro tuto e-mailovou zprávu.|  
-|Pro|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce této e-mailové zprávy.|  
+|Hostitel|Řetězec|Adresa hostitele serveru SMTP.|  
+|Port|Řetězec|Port služby SMTP v hostiteli.|  
+|EnableSsl|bool|Určuje, jestli <xref:System.Net.Mail.SmtpClient> k šifrování připojení používá SSL (Secure Sockets Layer) (SSL).|  
+|UserName|Řetězec|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření vlastnosti odesílatele <xref:System.Net.Mail.SmtpClient.Credentials%2A>.|  
+|Heslo|Řetězec|Heslo pro nastavení přihlašovacích údajů pro ověření vlastnosti odesílatele <xref:System.Net.Mail.SmtpClient.Credentials%2A>.|  
+|Subjekt|řetězec \<<xref:System.Activities.InArgument%601>>|Předmět zprávy|  
+|Tělo|řetězec \<<xref:System.Activities.InArgument%601>>|Text zprávy|  
+|Přílohy|řetězec \<<xref:System.Activities.InArgument%601>>|Kolekce příloh používaná k ukládání dat připojených k této e-mailové zprávě|  
+|Z|<xref:System.Net.Mail.MailAddress>|Z adresy pro tuto e-mailovou zprávu.|  
+|Akce|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce této e-mailové zprávy.|  
 |CC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce kopie (CC) pro tuto e-mailovou zprávu.|  
-|SKRYT|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce skryté kopie (BCC) pro tuto e-mailovou zprávu.|  
+|BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce skryté kopie (BCC) pro tuto e-mailovou zprávu.|  
 |Tokeny|<xref:System.Activities.InArgument%601>< IDictionary\<String, String > >|Tokeny, které mají být nahrazeny v těle. Tato funkce umožňuje uživatelům zadat v těle některé hodnoty, než je lze později nahradit tokeny poskytnutými pomocí této vlastnosti.|  
-|BodyTemplateFilePath|String|Cesta k šabloně pro tělo Aktivita `SendMail` kopíruje obsah tohoto souboru do vlastnosti body.<br /><br /> Šablona může obsahovat tokeny, které jsou nahrazeny obsahem vlastnosti tokeny.|  
+|BodyTemplateFilePath|Řetězec|Cesta k šabloně pro tělo Aktivita `SendMail` kopíruje obsah tohoto souboru do vlastnosti body.<br /><br /> Šablona může obsahovat tokeny, které jsou nahrazeny obsahem vlastnosti tokeny.|  
 |TestMailTo|<xref:System.Net.Mail.MailAddress>|Když je tato vlastnost nastavená, všechny e-maily se odešlou na adresu uvedenou v ní.<br /><br /> Tato vlastnost je určena pro použití při testování pracovních postupů. Například pokud chcete zajistit, aby byly všechny e-maily odeslány bez jejich odeslání skutečným příjemcům.|  
-|TestDropPath|String|Když je tato vlastnost nastavená, všechny e-maily se uloží i do zadaného souboru.<br /><br /> Tato vlastnost je určena k použití při testování nebo ladění pracovních postupů, abyste se ujistili, že formát a obsah odchozích e-mailů je vhodný.|  
+|TestDropPath|Řetězec|Když je tato vlastnost nastavená, všechny e-maily se uloží i do zadaného souboru.<br /><br /> Tato vlastnost je určena k použití při testování nebo ladění pracovních postupů, abyste se ujistili, že formát a obsah odchozích e-mailů je vhodný.|  
   
 ## <a name="solution-contents"></a>Obsah řešení  
  Řešení obsahuje dva projekty.  
   
-|Projekt|Popis|Důležité soubory|  
+|Project|Popis|Důležité soubory|  
 |-------------|-----------------|---------------------|  
 |SendMail|Aktivita SendMail|1. SendMail.cs: implementace hlavní aktivity<br />2. SendMailDesigner. XAML a SendMailDesigner.xaml.cs: Návrhář pro aktivitu SendMail<br />3. MailTemplateBody. htm: Šablona pro odeslání e-mailu.|  
 |SendMailTestClient|Klient pro otestování aktivity SendMail  Tento projekt znázorňuje dva způsoby volání aktivity SendMail: deklarativně a programově.|1. Sequence1. XAML: pracovní postup, který vyvolá aktivitu SendMail.<br />2. Program.cs: vyvolá Sequence1 a také vytvoří pracovní postup programově, který používá SendMail.|  
@@ -107,13 +107,11 @@ new SendMail
   
  Další informace o nastavení serveru SMTP najdete na následujících odkazech.  
   
-- [Microsoft TechNet](https://go.microsoft.com/fwlink/?LinkId=166060)  
+- [Konfigurace služby SMTP (IIS 6,0)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784968(v=ws.10))  
   
-- [Konfigurace služby SMTP (IIS 6,0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
+- [IIS 7,0: Konfigurace e-mailu SMTP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772058(v=ws.10))  
   
-- [IIS 7,0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
-  
-- [Jak nainstalovat službu SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
+- [Jak nainstalovat službu SMTP](https://docs.microsoft.com/previous-versions/tn-archive/aa997480(v=exchg.65))  
   
  Emulátory SMTP poskytované třetími stranami jsou k dispozici ke stažení.  
   

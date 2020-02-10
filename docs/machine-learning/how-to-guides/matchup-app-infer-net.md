@@ -1,14 +1,14 @@
 ---
-title: Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravděpodobnostní programováním
-description: Naučte se používat programování pravděpodobnostní s Infer.NET k vytvoření aplikace seznamu her pro zápasu v závislosti na zjednodušené verzi TrueSkill.
-ms.date: 05/06/2019
+title: Infer.NET hra – párování aplikací – pravděpodobnostní programování
+description: Naučte se používat programování v pravděpodobnostní s Infer.NET k vytvoření rozhodné aplikace seznamu pro porovnávání her na základě zjednodušené verze TrueSkill.
+ms.date: 01/30/2020
 ms.custom: mvc,how-to
-ms.openlocfilehash: 69515c7b3518c35bf84335c453408b1466f93f34
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 8e489d61c5e6cca53ba12b13fddd0b73c7f85ef9
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774547"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092600"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravděpodobnostní programováním
 
@@ -18,7 +18,7 @@ Tato příručka vás seznámí s programováním v pravděpodobnostní pomocí 
 
 Programování pravděpodobnostní vám umožňuje vytvářet statistické modely reálných procesů.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Nastavení místního vývojového prostředí
 
@@ -51,10 +51,10 @@ Musíte uvést, jaké dovednosti v přehrávači jsou společně s jejich odchyl
 
 *Ukázková data výsledků her*
 
-Lovu |Replik | Loser
+Hra |Replik | Loser
 ---------|----------|---------
- první | Přehrávač 0 | Hráč 1
- odst | Přehrávač 0 | Hráč 3
+ 1 | Přehrávač 0 | Hráč 1
+ 2 | Přehrávač 0 | Hráč 3
  3 | Přehrávač 0 | Hráč 4
  4 | Hráč 1 | Hráč 2
  5 | Hráč 3 | Hráč 1

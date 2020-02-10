@@ -4,12 +4,12 @@ description: Tento rozšířený kurz ukazuje, jak migrovat existující kód s 
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: e480cfa7c041d18a2bdaf8caa2468165e855186e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 4edeab7b2a4211d50c424f567ad7df6ced0bf4ce
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740463"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093302"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: migrace stávajícího kódu s odkazy s možnou hodnotou null
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 > - Spravujte rozhraní mezi povolenými povolenými a zakázanými kontexty s povolenou hodnotou null.
 > - Ovládá kontexty anotace s možnou hodnotou null.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
@@ -40,7 +40,7 @@ Váš cíl migrace projektu by měl být vycházet z toho, aby využíval nové 
 
 ## <a name="upgrade-the-projects-to-c-8"></a>Upgradovat projekty na C# 8
 
-Dobrým prvním krokem je určit rozsah úlohy migrace. Začněte upgradem projektu na C# 8,0 (nebo novější). Přidejte `LangVersion` element do obou souborů csproj pro webový projekt a projekt testování částí:
+Dobrým prvním krokem je určit rozsah úlohy migrace. Začněte upgradem projektu na C# 8,0 (nebo novější). Přidejte prvek `LangVersion` do třídy Property v souborech csproj pro webový projekt a projekt testování částí:
 
 ```xml
 <LangVersion>8.0</LangVersion>
@@ -163,7 +163,7 @@ Provedli jste změny ve třídě `NewsService`, takže zapnete `#nullable enable
 
 Parametr `IMapper` je zadán jako neprázdný odkaz. Je volána ASP.NET Core kódem infrastruktury, takže kompilátor opravdu neví, že `IMapper` nikdy nebude null. Výchozí kontejner pro vkládání závislostí (DI) ASP.NET Core vyvolá výjimku, pokud nemůže vyřešit nezbytnou službu, takže kód je správný. Kompilátor nemůže ověřit všechna volání vašich veřejných rozhraní API, a to i v případě, že je váš kód zkompilován s povolenými kontexty anotace s možnou hodnotou null. Kromě toho mohou být knihovny spotřebovány projekty, které ještě nebyly přihlášeny k použití typů odkazů s možnou hodnotou null. Ověřte vstupy do veřejných rozhraní API, i když je deklarujete jako nehodnotné typy.
 
-## <a name="get-the-code"></a>Získat kód
+## <a name="get-the-code"></a>Získání kódu
 
 Opravili jste upozornění, která jste identifikovali při počáteční kompilaci testů, takže teď můžete zapnout kontext anotace s možnou hodnotou null pro oba projekty. Znovu sestavte projekty; Kompilátor ohlásí žádná upozornění. V úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/finished) můžete získat kód dokončeného projektu.
 

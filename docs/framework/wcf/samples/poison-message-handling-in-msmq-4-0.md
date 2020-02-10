@@ -2,28 +2,28 @@
 title: Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: cc4da0deea0de2cd8b3bb8e8f2ba9b8a17e3cc60
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 0a9d4ec9657bacdbcb1273791dc7a593a9565c25
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919400"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094953"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Zacházení s nezpracovatelnými zprávami v MSMQ 4.0
 Tato ukázka předvádí, jak ve službě provádět zpracování nezpracovatelných zpráv. Tato ukázka je založená na ukázce s [transakčními vazbami služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Tato ukázka používá `netMsmqBinding`. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
 
  V komunikaci ve frontě klient komunikuje se službou pomocí fronty. Klient přesněji odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.
 
- Nezpracovatelná zpráva je zpráva, která se opakovaně čte z fronty, když služba čte zprávu, nemůže zprávu zpracovat, a proto ukončí transakci, pod kterou je zpráva přečtena. V takových případech se zpráva znovu pokusí. To se může teoreticky opakovat, pokud dojde k potížím se zprávou. Všimněte si, že k tomu může dojít pouze v případě, že používáte transakce ke čtení z fronty a k vyvolání operace služby.
+ Nezpracovatelná zpráva je zpráva, která se opakovaně čte z fronty, když služba čte zprávu, nemůže zprávu zpracovat, a proto ukončí transakci, pod kterou je zpráva přečtena. V takových případech se zpráva znovu pokusí. To se může teoreticky opakovat, pokud dojde k potížím se zprávou. K tomu může dojít pouze v případě, že používáte transakce ke čtení z fronty a k vyvolání operace služby.
 
  V závislosti na verzi služby MSMQ podporuje NetMsmqBinding omezené zjišťování na úplnou detekci nezpracovatelných zpráv. Jakmile je zpráva zjištěna jako poškozená, může být zpracována několika způsoby. Na základě verze služby MSMQ podporuje NetMsmqBinding omezené zpracování na plné zpracování nezpracovatelných zpráv.
 
- Tato ukázka znázorňuje omezená poškození zařízení, která jsou k dispozici na platformě Windows Server 2003 a Windows XP a na zařízeních s úplnými poškozeními, které jsou k dispozici v systému V obou ukázkách je cílem přesunout nezpracovatelnou zprávu z fronty do jiné fronty, kterou pak může obsluhovat nezpracovatelná zpráva.
+ Tato ukázka znázorňuje omezená poškození zařízení, která jsou k dispozici na platformě Windows Server 2003 a Windows XP a na zařízeních s úplnými poškozeními, které jsou k dispozici v systému V obou ukázkách je cílem přesunout nezpracovatelnou zprávu z fronty do jiné fronty. Tuto frontu pak může obsluhovat nezpracovatelná zpráva.
 
 ## <a name="msmq-v40-poison-handling-sample"></a>Ukázka zpracování poškození služby MSMQ v 4.0
- V systému Windows Vista nabízí služba MSMQ zařízení s podfrontou nezpracovatele, které se dá použít k ukládání nezpracovatelných zpráv. Tato ukázka předvádí osvědčené postupy při práci s nepoškozenými zprávami pomocí systému Windows Vista.
+ V systému Windows Vista nabízí služba MSMQ poškozené zařízení podfronty, které lze použít k ukládání nezpracovatelných zpráv. Tato ukázka předvádí osvědčené postupy při práci s nepoškozenými zprávami pomocí systému Windows Vista.
 
- Detekce nepoškozených zpráv v systému Windows Vista je poměrně sofistikovaná. Existují tři vlastnosti, které vám pomůžou s detekcí. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> je počet, kolikrát je daná zpráva znovu načtena z fronty a odeslána do aplikace ke zpracování. Zpráva je znovu načtena z fronty při návratu do fronty, protože zprávu nelze odeslat do aplikace nebo aplikace vrátí zpět transakci v rámci operace služby. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> je počet přesunutí zprávy do fronty opakovaných pokusů. Po dosažení <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> se zpráva přesune do fronty opakování. Vlastnost <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> je časová prodleva, po jejímž uplynutí je zpráva přesunuta z fronty opakování zpět do hlavní fronty. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> se resetuje na 0. Zpráva se zopakuje. Pokud se všechny pokusy o čtení zprávy nezdařily, zpráva je označena jako poškozená.
+ Detekce nepoškozených zpráv v systému Windows Vista je sofistikovaná. Existují tři vlastnosti, které vám pomůžou s detekcí. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> je počet, kolikrát je daná zpráva znovu načtena z fronty a odeslána do aplikace ke zpracování. Zpráva je znovu načtena z fronty při návratu do fronty, protože zprávu nelze odeslat do aplikace nebo aplikace vrátí zpět transakci v rámci operace služby. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> je počet přesunutí zprávy do fronty opakovaných pokusů. Po dosažení <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> se zpráva přesune do fronty opakování. Vlastnost <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> je časová prodleva, po jejímž uplynutí je zpráva přesunuta z fronty opakování zpět do hlavní fronty. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> se resetuje na 0. Zpráva se zopakuje. Pokud se všechny pokusy o čtení zprávy nezdařily, zpráva je označena jako poškozená.
 
  Jakmile je zpráva označena jako poškozená, zpráva se zabývá podle nastavení v <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> výčtu. Chcete-li znovu iterovat možné hodnoty:
 
@@ -31,7 +31,7 @@ Tato ukázka předvádí, jak ve službě provádět zpracování nezpracovateln
 
 - Drop: k vyřazení zprávy.
 
-- Move: pro přesunutí zprávy do podfronty nezpracovatelných zpráv. Tato hodnota je k dispozici pouze v systému Windows Vista.
+- Move: pro přesunutí zprávy do podfronty nezpracovatelné zprávy. Tato hodnota je k dispozici pouze v systému Windows Vista.
 
 - Odmítnout: Pokud chcete zprávu zamítnout, odešlete zprávu zpátky do fronty nedoručených zpráv odesilatele. Tato hodnota je k dispozici pouze v systému Windows Vista.
 
@@ -48,7 +48,7 @@ public interface IOrderProcessor
 }
 ```
 
- Operace služby zobrazí zprávu informující o tom, že zpracovává objednávku. Aby bylo možné předvést funkci nezpracovatelné zprávy, vyvolá operace `SubmitPurchaseOrder` služby výjimku pro vrácení transakce při náhodném volání služby. Tím dojde k vrácení zprávy do fronty. Nakonec je zpráva označena jako nepoškozená. Konfigurace je nastavená tak, aby se nezpracovatelná zpráva přesunula do podfronty otrav.
+ Operace služby zobrazí zprávu informující o tom, že zpracovává objednávku. Aby bylo možné předvést funkci nezpracovatelné zprávy, vyvolá operace `SubmitPurchaseOrder` služby výjimku, která vrátí transakci při náhodném volání služby. Tím dojde k vrácení zprávy do fronty. Nakonec je zpráva označena jako nepoškozená. Konfigurace je nastavená tak, aby se nezpracovatelná zpráva přesunula do podfronty nepoškozeného.
 
 ```csharp
 // Service class that implements the service contract.
@@ -206,7 +206,7 @@ public class OrderProcessorService : IOrderProcessor
     }
 ```
 
- Na rozdíl od služby zpracování objednávek, která čte zprávy z fronty objednávek, služba nepoškozených zpráv čte zprávy z podfronty nezpracovatelných zpráv. Nezpracovatelná fronta je dílčí frontou hlavní fronty, má název "jed" a generuje se automaticky pomocí služby MSMQ. Pokud k němu chcete získat přístup, zadejte název hlavní fronty následovaný ";" a názvem podfronty, v tomto případě "jed", jak je znázorněno v následující ukázkové konfiguraci.
+ Na rozdíl od služby zpracování objednávek, která čte zprávy z fronty objednávek, služba nepoškozených zpráv přečte zprávy z podfronty pro poškození. Fronta poškození je podfrontou hlavní fronty, má název "jed" a generuje se automaticky pomocí služby MSMQ. Pokud k němu chcete získat přístup, zadejte název hlavní fronty následovaný znakem ";" a dílčí frontou, v tomto případě – "jed", jak je znázorněno v následující ukázkové konfiguraci.
 
 > [!NOTE]
 > V ukázce pro službu MSMQ v 3.0 není název fronty nefungují jako Podfronta, nikoli do fronty, do které jste zprávu přesunuli.

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - unfreezing Freezable objects [WPF]
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-ms.openlocfilehash: 755240859829042e9790b9c89e47bb7a2013ceef
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: b1887afd19407898d8de1d92252e29778899fb89
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460444"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095187"
 ---
 # <a name="freezable-objects-overview"></a>Přehled zablokovatelných objektů
 
@@ -170,11 +170,11 @@ Pokud vaše třída obsahuje datové členy, které nejsou závislé na vlastnos
 > [!NOTE]
 > Je velmi důležité, abyste začali každou metodu <xref:System.Windows.Freezable>, kterou přepíšete voláním základní implementace.
 
-Příklad vlastní třídy <xref:System.Windows.Freezable> naleznete v [ukázce vlastní animace](https://go.microsoft.com/fwlink/?LinkID=159981).
+Příklad vlastní třídy <xref:System.Windows.Freezable> naleznete v [ukázce vlastní animace](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/CustomAnimation).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Freezable>
-- [Ukázka vlastní animace](https://go.microsoft.com/fwlink/?LinkID=159981)
+- [Ukázka vlastní animace](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/CustomAnimation)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

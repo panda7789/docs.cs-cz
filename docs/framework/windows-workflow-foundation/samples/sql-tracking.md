@@ -2,12 +2,12 @@
 title: Sledování SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: c1bb4492695df3ff803dff893de24453d7c03dfb
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 88f44e5362684f755695aab154842fad2274134d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715568"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094589"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
 Tato ukázka předvádí, jak napsat vlastního účastníka sledování SQL, který zapisuje záznamy sledování do databáze SQL. Programovací model Windows Workflow Foundation (WF) poskytuje sledování pracovního postupu, které vám umožní získat přehled o spuštění instance pracovního postupu. Sledovací modul Sledování generuje záznamy sledování pracovních postupů během provádění pracovního postupu. Další informace o sledování pracovního postupu najdete v tématu [sledování a trasování pracovních postupů](../workflow-tracking-and-tracing.md).
@@ -23,7 +23,7 @@ Tato ukázka předvádí, jak napsat vlastního účastníka sledování SQL, kt
 
 3. Otevřete SqlTrackingSample. sln v aplikaci Visual Studio 2010.
 
-4. Stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení.
+4. Stisknutím kláves CTRL+SHIFT+B řešení sestavíte.
 
 5. Stisknutím klávesy F5 spusťte aplikaci.
 
@@ -41,7 +41,7 @@ Tato ukázka předvádí, jak napsat vlastního účastníka sledování SQL, kt
 
 10. V testovacím klientovi WCF poklikejte na **GetStockPrice**. Tím se otevře operace `GetStockPrice`, která přijímá jeden parametr, zadáte hodnotu `Contoso` a kliknete na **vyvolat**.
 
-11. Vypouštěné záznamy sledování se zapisují do SQL Database. Chcete-li zobrazit záznamy sledování, otevřete databázi TrackingSample ve službě SQL Management Studio a přejděte do tabulky. Další informace o SQL Server Management Studio najdete v tématu [Úvod do SQL Server Management Studio](https://go.microsoft.com/fwlink/?LinkId=165645). SQL Server 2008 Management Studio Express si můžete stáhnout [tady](https://go.microsoft.com/fwlink/?LinkId=180520). Spuštění dotazu SELECT v tabulkách zobrazuje data v záznamech sledování uložených v příslušných tabulkách.
+11. Vypouštěné záznamy sledování se zapisují do SQL Database. Chcete-li zobrazit záznamy sledování, otevřete databázi TrackingSample ve službě SQL Management Studio a přejděte do tabulky. Další informace o SQL Server Management Studio najdete v tématu [Úvod do SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms). SQL Server 2008 Management Studio Express si můžete stáhnout [tady](https://www.microsoft.com/download/details.aspx?id=7593). Spuštění dotazu SELECT v tabulkách zobrazuje data v záznamech sledování uložených v příslušných tabulkách.
 
 #### <a name="to-uninstall-the-sample"></a>Odinstalace ukázky
 
@@ -59,6 +59,6 @@ Tato ukázka předvádí, jak napsat vlastního účastníka sledování SQL, kt
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

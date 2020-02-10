@@ -2,12 +2,12 @@
 title: Architektura nástrojů příkazového řádku .NET Core
 description: Přečtěte si o vrstvách nástrojů .NET Core a o tom, co se změnilo v posledních verzích.
 ms.date: 03/06/2017
-ms.openlocfilehash: 0064e7354f073be618bcf6a79962ab495927fadd
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: fde1a0acb6af9dd65aa3466b4ea37473b2eab6fb
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980207"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092912"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Podrobný přehled změn v nástrojích .NET Core
 
@@ -24,13 +24,13 @@ V rámci tohoto přesunu byl vlastní modul sestavení vyvinutý pro sestavení 
 
 ## <a name="the-tooling-layers"></a>Vrstvy nástrojů
 
-Když se přesunete z existujícího projektového systému i s přepínači pro sestavování strojového stroje, otázka, kterou přirozeně následuje, provede některé z těchto změn. celkové "vrstvení" celého ekosystému nástrojů .NET Core? Existují nové bity a součásti?
+Se změnou v modulu sestavení a přesunem z existujícího systému projektů se za vás některé otázky přirozeně sledují. Provedení kterékoli z těchto změn změní celkové "vrstvení" nástrojů pro ekosystém nástrojů .NET Core? Existují nové bity a součásti?
 
 Pojďme začít s rychlým aktualizačním rozhraním ve verzi Preview 2, jak je znázorněno na následujícím obrázku:
 
 ![Preview 2 – architektura vysoké úrovně nástrojů](media/cli-msbuild-architecture/p2-arch.png)
 
-Vrstvení nástrojů je poměrně jednoduché. V dolní části je základem .NET Core CLI. Všechny ostatní nástroje vyšší úrovně, jako je například Visual Studio nebo Visual Studio Code, závisí a spoléhají na rozhraní příkazového řádku pro sestavování projektů, obnovování závislostí a tak dále. Například pokud aplikace Visual Studio chtěla provést operaci obnovení, měla by zavolat do `dotnet restore` ([Viz poznámku](#dotnet-restore-note)) v rozhraní příkazového řádku.
+Vrstvení nástrojů v Preview 2 je jednoduché. V dolní části je základem .NET Core CLI. Všechny ostatní nástroje vyšší úrovně, jako je například Visual Studio nebo Visual Studio Code, závisí a spoléhají na rozhraní příkazového řádku pro sestavování projektů, obnovování závislostí a tak dále. Například pokud aplikace Visual Studio chtěla provést operaci obnovení, zavolá do příkazu `dotnet restore` ([Viz poznámku](#dotnet-restore-note)) v rozhraní příkazového řádku.
 
 Při přesunu na nový systém projektu se změní předchozí diagram:
 

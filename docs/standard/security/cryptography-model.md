@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: 964c63e01a6b09e63e305e9a10dca46e62c18648
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: f878f73497b83aaf31f2ba3b23cca1f685867b3e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965955"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095265"
 ---
 # <a name="net-framework-cryptography-model"></a>Kryptografický model rozhraní .NET framework
 
@@ -41,7 +41,7 @@ Jako příklad různých implementací dostupných pro algoritmus zvažte symetr
 
 <xref:System.Security.Cryptography.Aes> dědí dvě třídy: <xref:System.Security.Cryptography.AesCryptoServiceProvider> a <xref:System.Security.Cryptography.AesManaged>. Třída <xref:System.Security.Cryptography.AesCryptoServiceProvider> je Obálka kolem implementace rozhraní Windows Cryptography API (CAPI) pro AES, zatímco třída <xref:System.Security.Cryptography.AesManaged> je zapsána výhradně ve spravovaném kódu. Kromě implementace spravovaného rozhraní CAPI existuje také třetí typ implementace, kryptografická generace (CNG). Příkladem algoritmu CNG je <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Algoritmy CNG jsou k dispozici v systému Windows Vista a novějších.
 
-Můžete zvolit, která implementace je pro vás nejvhodnější.  Spravované implementace jsou k dispozici na všech platformách, které podporují .NET Framework.  Implementace rozhraní CAPI jsou k dispozici ve starších operačních systémech a již nejsou vyvíjeny. CNG je nejnovější implementace, při které bude provedeno nové vývojové prostředí. Spravované implementace však nejsou certifikovány standardy FIPS (Federal Information Processing Standards) a mohou být nižší než obálkové třídy.
+Můžete zvolit, která implementace je pro vás nejvhodnější. Spravované implementace jsou k dispozici na všech platformách, které podporují .NET Framework. Implementace rozhraní CAPI jsou k dispozici ve starších operačních systémech a již nejsou vyvíjeny. CNG je nejnovější implementace, při které bude provedeno nové nasazení. Spravované implementace však nejsou certifikovány standardy FIPS (Federal Information Processing Standards) a mohou být nižší než obálkové třídy.
 
 ## <a name="stream-design"></a>Návrh streamu
 
@@ -73,7 +73,7 @@ Tady je seznam doporučených algoritmů podle aplikace:
 - Generuje se klíč z hesla:
   - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
 - [Použití kryptografických protokolů, algoritmů a zdrojového kódu v C, Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)

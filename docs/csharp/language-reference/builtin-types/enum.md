@@ -11,16 +11,16 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 72bc867bf0a789279da9a01f97c85d96b78684ed
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ac4dafef92bbc900d291a5b653c55ba295f1a6d6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444345"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093224"
 ---
 # <a name="enumeration-types-c-reference"></a>Výčtové typyC# (referenční)
 
-Výčtový typ (nebo typ výčtu) je typ hodnoty definovaný sadou pojmenovaných konstant základního [integrálního číselného](integral-numeric-types.md) typu. Chcete-li definovat typ výčtu, použijte klíčové slovo `enum` a zadejte názvy *členů výčtu*:
+*Výčtový typ* (nebo *typ výčtu*) je [typ hodnoty](value-types.md) definovaný sadou pojmenovaných konstant základního [integrálního číselného](integral-numeric-types.md) typu. Chcete-li definovat typ výčtu, použijte klíčové slovo `enum` a zadejte názvy *členů výčtu*:
 
 ```csharp
 enum Season
@@ -85,7 +85,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Explicitní převody výčtu](~/_csharplang/spec/conversions.md#explicit-enumeration-conversions)
 - [Implicitní převody výčtu](~/_csharplang/spec/conversions.md#implicit-enumeration-conversions)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Řetězce formátu výčtu](../../../standard/base-types/enumeration-format-strings.md)

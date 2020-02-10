@@ -1,17 +1,17 @@
 ---
-title: 'Kurz: zjišťování objektů pomocí hloubkového učení s ONNX a ML.NET'
+title: 'Kurz: zjišťování objektů pomocí modelu ONNX hloubkového učení'
 description: V tomto kurzu se dozvíte, jak pomocí předem připraveného modelu ONNX hloubkového učení v ML.NET detekovat objekty v obrázcích.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 12/12/2019
+ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 6aaf5acc605067f378ff5d42f713fe1c63d91e46
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 7ff9986c09e39f5c4d24f52c351db6455ff63e77
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794630"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092717"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: zjištění objektů pomocí ONNX v ML.NET
 
@@ -51,7 +51,7 @@ Mezi případy použití při detekci objektu patří:
 
 - Osobní hnací automobily
 - Robotika
-- Rozpoznávání tváře
+- Detekce obličeje
 - Bezpečnost na pracovišti
 - Počítání objektů
 - Rozpoznávání aktivit
@@ -448,7 +448,7 @@ Nakonec, mimo počáteční cyklus pro smyčku metody `FilterBoundingBoxes`, vr�
 
 [!code-csharp [ReturnFilteredBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L246)]
 
-Skvěle! Nyní je čas použít tento kód spolu s modelem pro bodování.
+Výborně! Nyní je čas použít tento kód spolu s modelem pro bodování.
 
 ## <a name="use-the-model-for-scoring"></a>Použití modelu pro bodování
 
@@ -667,7 +667,7 @@ Po příkazu try-catch přidejte další logiku, která indikuje, že proces je 
 
 A to je vše!
 
-## <a name="results"></a>výsledků
+## <a name="results"></a>Výsledky
 
 Po provedení předchozích kroků spusťte konzolovou aplikaci (CTRL + F5). Výsledky by měly být podobné následujícímu výstupu. Můžou se zobrazovat upozornění nebo zprávy o zpracování, ale tyto zprávy se z následujících výsledků odebraly z důvodu srozumitelnosti.
 

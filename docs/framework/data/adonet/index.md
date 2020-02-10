@@ -3,14 +3,15 @@ title: ADO.NET
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: a803c0592cd44801c55a699b56a9a498781a6593
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: cca3075a73a7bb45fd6154f760adfcda9064345c
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980103"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094394"
 ---
 # <a name="adonet"></a>ADO.NET
+
 ADO.NET je sada tříd, které zpřístupňují služby pro přístup k datům pro .NET Framework programátory. ADO.NET poskytuje bohatou sadu komponent pro vytváření distribuovaných aplikací pro sdílení dat. Je nedílnou součástí .NET Framework a poskytuje přístup k datům relačních, XML a aplikací. ADO.NET podporuje nejrůznější potřeby vývoje, včetně vytváření front-endové klientů databáze a obchodních objektů střední vrstvy používaných aplikacemi, nástroji, jazyky nebo internetovými prohlížeči.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
@@ -36,7 +37,7 @@ ADO.NET je sada tříd, které zpřístupňují služby pro přístup k datům p
  Obsahuje informace o LINQ to DataSet, včetně příkladů programování.  
   
  [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)  
- Popisuje, jak se připojit ke zdroji dat a jak načítat a upravovat data pomocí `Commands`, `DataReaders` a `DataAdapters`.  
+ Popisuje, jak se připojit ke zdroji dat a jak načítat a upravovat data pomocí `Commands`, `DataReaders`a `DataAdapters`.  
   
  [SQL Server a ADO.NET](./sql/index.md)  
  Popisuje, jak pracovat s funkcemi a funkcemi, které jsou specifické pro SQL Server.  
@@ -60,7 +61,7 @@ ADO.NET je sada tříd, které zpřístupňují služby pro přístup k datům p
  [Ukázky a kurzy](../../../samples-and-tutorials/index.md)  
  Poskytuje seznam ukázek a kurzů .NET.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
 - [Přehled ADO.NET](ado-net-overview.md)

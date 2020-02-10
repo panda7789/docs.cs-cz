@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: a2028ccce47de54b59323194a0ffab3a643d878c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4f7ddad8c3dc12391ef6bf345a73ebb384400b38
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712972"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093146"
 ---
 # <a name="using-directive-c-reference"></a>using – direktiva (C# Referenční dokumentace)
 
@@ -68,7 +68,7 @@ Vytvořte direktivu `using` alias, aby bylo snazší kvalifikovat identifikátor
 
 ```csharp
 using s = System.Text;
-using s.RegularExpressions;
+using s.RegularExpressions; // Generates a compiler error.
 ```
 
 Vytvořte direktivu `using` pro použití typů v oboru názvů bez nutnosti zadat obor názvů. Direktiva `using` neposkytuje přístup k žádným oborům názvů, které jsou vnořené v oboru názvů, který zadáte.
@@ -93,10 +93,10 @@ Následující příklad ukazuje, jak definovat direktivu `using` a alias `using
 
 Další informace najdete v tématu [direktivy using](~/_csharplang/spec/namespaces.md#using-directives) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Použití oboru názvů](../../programming-guide/namespaces/using-namespaces.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Obory názvů](../../programming-guide/namespaces/index.md)

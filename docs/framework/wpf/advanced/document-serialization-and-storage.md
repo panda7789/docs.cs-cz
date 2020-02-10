@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: ff0555105f219db5ed891c02400b0587c825718e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 6703825d4453b2e0e65036fa2d9c856139ee473c
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974651"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094563"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 
@@ -81,11 +81,11 @@ Moduly pro serializace a propojené serializátory používají stejné exponova
 
 3. Po vytvoření serializátoru modulu plug-in se instalační skript implementuje pro distribuci a instalaci (a odinstalaci) modulu plug-in (viz výše, "[instalace serializátorů modulu plug-in](#InstallingPluginSerializers)").
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Documents.Serialization>
 - <xref:System.Windows.Xps.XpsDocumentWriter>
 - <xref:System.Windows.Xps.Packaging.XpsDocument>
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Přehled tisku](printing-overview.md)
-- [Specifikace papíru XML: Přehled](https://go.microsoft.com/fwlink?LinkID=106246)
+- [Specifikace papíru XML](https://www.ecma-international.org/activities/XML%20Paper%20Specification/XPS%20Standard%20WD%201.6.pdf)

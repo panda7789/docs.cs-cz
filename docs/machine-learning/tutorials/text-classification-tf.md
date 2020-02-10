@@ -1,15 +1,15 @@
 ---
-title: 'Kurz: analýza míněních recenzí filmů pomocí předem připraveného modelu TensorFlow'
+title: 'Kurz: analýza míněních kontrol pomocí modelu TensorFlow'
 description: V tomto kurzu se dozvíte, jak používat předem vyškolený model TensorFlow k klasifikaci mínění v komentářích k webu. Mínění třídění binárního prostředí C# je Konzolová aplikace vyvinutá pomocí sady Visual Studio.
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 0e80cdc6bb7dcc62a57466e909451da972c92db8
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 7a6043f56a2ecaca633ba5545170f27a85a22efc
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738694"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092392"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Kurz: analýza míněních recenzí filmů pomocí předem připraveného modelu TensorFlow v ML.NET
 
@@ -26,11 +26,11 @@ V tomto kurzu se naučíte:
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TextClassificationTF) .
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 * [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 
-## <a name="setup"></a>Instalace
+## <a name="setup"></a>Nastavení
 
 ### <a name="create-the-application"></a>Vytvoření aplikace
 
@@ -79,16 +79,16 @@ Recenze filmů je text bezplatné Form. Vaše aplikace převede text na vstupní
 
 První je rozdělit text na samostatná slova a použít poskytnutý soubor mapování pro mapování jednotlivých slov na celočíselné kódování. Výsledkem této transformace je pole celé číslo proměnné s délkou odpovídající počtu slov ve větě.
 
-|Vlastnost| Hodnota|Type|
+|Vlastnost| Hodnota|Typ|
 |-------------|-----------------------|------|
-|ReviewText|Tato film je skutečně dobrá|odkazy řetězců|
+|ReviewText|Tato film je skutečně dobrá|řetězec|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 
 Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 600. Jedná se o délku, kterou model TensorFlow očekává.
 
-|Vlastnost| Hodnota|Type|
+|Vlastnost| Hodnota|Typ|
 |-------------|-----------------------|------|
-|ReviewText|Tato film je skutečně dobrá|odkazy řetězců|
+|ReviewText|Tato film je skutečně dobrá|řetězec|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 |Funkce|14, 22, 9, 66, 78,... |int [600]|
 
@@ -224,7 +224,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provede předpověď na jeden řádek dat:
 
-    |Vlastnost| Hodnota|Type|
+    |Vlastnost| Hodnota|Typ|
     |-------------|-----------------------|------|
     |Předpověď|[0,5459937, 0,454006255]|float []|
 
@@ -236,7 +236,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
     [!code-csharp[CallPredictSentiment](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#CallPredictSentiment)]
 
-## <a name="results"></a>výsledků
+## <a name="results"></a>Výsledky
 
 Sestavte a spusťte aplikaci.
 

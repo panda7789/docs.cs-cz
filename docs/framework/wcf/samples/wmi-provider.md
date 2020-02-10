@@ -2,12 +2,12 @@
 title: Poskytovatel WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: 4db8873397b0136de88d00ebe62c429aee260911
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a170a20212791d789af589c1ff99dcd1abad1c9e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715008"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094771"
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
 Tato ukázka předvádí, jak shromažďovat data ze služeb Windows Communication Foundation (WCF) za běhu pomocí poskytovatele rozhraní WMI (Windows Management Instrumentation) (WMI), který je integrovaný do WCF. Tato ukázka také ukazuje, jak přidat uživatelem definovaný objekt WMI do služby. Ukázka aktivuje zprostředkovatele rozhraní WMI pro [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak shromažďovat data ze služby `ICalculator` za běhu.  
@@ -32,7 +32,8 @@ Tato ukázka předvádí, jak shromažďovat data ze služeb Windows Communicati
  Přidání objektů WMI do služby umožňuje zobrazit uživatelsky definované informace spolu s integrovanými informacemi o zprostředkovateli rozhraní WMI. Toho je možné dosáhnout publikováním schématu služby do služby WMI pomocí aplikace Installutil. exe. Pokyny k tomuto účelu, společně s dalšími podrobnostmi, najdete v pokynech k instalaci na konci tématu.  
   
 ## <a name="accessing-wmi-information"></a>Přístup k informacím WMI  
- Data rozhraní WMI jsou dostupná mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, C++ Visual Basic aplikace, aplikace a .NET Framework (https://docs.microsoft.com/windows/desktop/wmisdk/using-wmi).  
+
+K datům WMI lze přistupovat mnoha různými způsoby. Microsoft poskytuje rozhraní API služby WMI pro skripty, Visual Basic C++ aplikace, aplikace a .NET Framework. Další informace najdete v tématu [použití rozhraní WMI](/windows/desktop/wmisdk/using-wmi).
   
  Tato ukázka používá dva skripty Java: jednu k vytvoření výčtu služeb spuštěných v počítači společně s některými jejich vlastnostmi a druhou pro zobrazení uživatelsky definovaných dat WMI. Skript otevře připojení ke zprostředkovateli rozhraní WMI, analyzuje data a zobrazí shromážděná data.  
   
@@ -143,6 +144,6 @@ cscript EnumerateCustomObjects.js
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\WMIProvider`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

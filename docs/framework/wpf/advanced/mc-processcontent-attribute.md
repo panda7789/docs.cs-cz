@@ -5,12 +5,12 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: 2689b2c8-b4dc-4b71-b9bd-f95e619122d7
-ms.openlocfilehash: dde304cc2b9db9cb01f9264ca1359b8979512cfa
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: bcf55668bdc70902e346c401549a88f6ccb9072e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458790"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095122"
 ---
 # <a name="mcprocesscontent-attribute"></a>mc:ProcessContent – atribut
 Určuje, které prvky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mají stále obsah zpracovaný relevantními nadřazenými prvky, a to i v případě, že je přímý nadřazený prvek možné ignorovat [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]ým procesorem z důvodu určení [atributu MC: ignorováno](mc-ignorable-attribute.md). Atribut `mc:ProcessContent` podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí.  
@@ -44,9 +44,9 @@ Určuje, které prvky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla
   
  V atributu lze zadat více předpon pomocí oddělovače mezer, například: `mc:ProcessContent="ignore:Element1 ignore:Element2"`.  
   
- Obor názvů `http://schemas.openxmlformats.org/markup-compatibility/2006` definuje další prvky a atributy, které nejsou zdokumentovány v této oblasti sady SDK. Další informace najdete v tématu [specifikace kompatibility značek XML](https://go.microsoft.com/fwlink/?LinkId=73824).  
+ Obor názvů `http://schemas.openxmlformats.org/markup-compatibility/2006` definuje další prvky a atributy, které nejsou zdokumentovány v této oblasti sady SDK. Další informace najdete v tématu [specifikace kompatibility značek XML](https://docs.microsoft.com/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [mc:Ignorable – atribut](mc-ignorable-attribute.md)
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

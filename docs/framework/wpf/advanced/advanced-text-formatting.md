@@ -9,12 +9,12 @@ helpviewer_keywords:
 - text [WPF]
 - typography [WPF], text formatting
 ms.assetid: f0a7986e-f5b2-485c-a27d-f8e922022212
-ms.openlocfilehash: d509de02cd1b3f645ee439c0b0eb33fd1ddbdb07
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 26ee3c2b8a431200c3dc04130deb2247b6c1446d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636104"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095239"
 ---
 # <a name="advanced-text-formatting"></a>Upřesněné formátování textu
 Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro zahrnutí textu do aplikace. Rozhraní API pro rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], jako je například <xref:System.Windows.Controls.TextBlock>, poskytují nejběžnější a všeobecně používané prvky pro textovou prezentaci. Kreslicí rozhraní API, například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, poskytují způsob, jak zahrnout formátovaný text do kreseb. Na nejvyšší úrovni poskytuje WPF nástroj rozšiřitelný nástroj formátování textu pro řízení všech aspektů textové prezentace, jako je Správa úložiště textu, Správa formátování textových běhů a Správa vložených objektů.  
@@ -22,10 +22,10 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
  Toto téma poskytuje Úvod do formátování textu WPF. Zaměřuje se na implementaci klienta a použití nástroje pro formátování textu WPF.  
   
 > [!NOTE]
-> Všechny příklady kódu v tomto dokumentu najdete v [ukázce Rozšířené formátování textu](https://go.microsoft.com/fwlink/?LinkID=159965).  
+> Všechny příklady kódu v tomto dokumentu najdete v [ukázce Rozšířené formátování textu](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI/TextFormatting).  
 
 <a name="prereq"></a>   
-## <a name="prerequisites"></a>Požadavky  
+## <a name="prerequisites"></a>Předpoklady  
  V tomto tématu se předpokládá, že máte zkušenosti s rozhraními API vyšší úrovně použitými pro textovou prezentaci. Většina uživatelských scénářů nebude vyžadovat rozhraní API pro rozšířené formátování textu popsané v tomto tématu. Úvod do různých textových rozhraní API naleznete [v tématu dokumenty v WPF](documents-in-wpf.md).  
   
 <a name="section1"></a>   
@@ -67,7 +67,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
   
  V následující tabulce jsou uvedeny některé z předdefinovaných <xref:System.Windows.Media.TextFormatting.TextRun> objektů.  
   
-|Typ TextRun|Použití|  
+|Typ TextRun|Využití|  
 |------------------|-----------|  
 |<xref:System.Windows.Media.TextFormatting.TextCharacters>|Specializovaný text, který se používá k předání reprezentace znaků glyfů zpátky do formátovacího modulu textu.|  
 |<xref:System.Windows.Media.TextFormatting.TextEmbeddedObject>|Specializovaný text, který se používá k poskytnutí obsahu při měření, testování přístupů a vykreslování, se provádí v celém rozsahu, jako je například tlačítko nebo obrázek v rámci textu.|  
@@ -91,7 +91,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
 ## <a name="specifying-formatting-properties"></a>Určení vlastností formátování  
  objekty <xref:System.Windows.Media.TextFormatting.TextRun> jsou formátovány pomocí vlastností poskytovaných v úložišti textu. Tyto vlastnosti jsou dva typy <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties>. <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> zpracovat všechny vlastnosti odstavce včetně <xref:System.Windows.TextAlignment> a <xref:System.Windows.FlowDirection>. <xref:System.Windows.Media.TextFormatting.TextRunProperties> jsou vlastnosti, které se mohou lišit pro každý text spouštěný v rámci odstavce, jako je například štětec popředí, <xref:System.Windows.Media.Typeface>a velikost písma. Chcete-li implementovat vlastní odstavcový a vlastní typy vlastností spuštění textu, musí vaše aplikace vytvořit třídy, které jsou odvozeny od <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties> v uvedeném pořadí.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

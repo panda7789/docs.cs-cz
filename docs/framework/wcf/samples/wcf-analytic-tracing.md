@@ -2,22 +2,22 @@
 title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 52a6787f6c7d309b1ae3a932780e4dbcb2ec0792
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 3ed9c5f08e89d978f8290dcda5ab1ecfd8b9c56c
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715308"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094823"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tento příklad ukazuje, jak přidat vlastní trasovací události do datového proudu analytických trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytická trasování jsou určena k tomu, aby bylo možné snadno získat přehled o službách bez placení vysokého snížení výkonu. V této ukázce se dozvíte, jak používat rozhraní <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API k zápisu událostí, které se integrují se službami WCF.  
   
  Další informace o rozhraních API <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> najdete v tématu <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.  
   
- Další informace o trasování událostí ve Windows najdete v tématu [vylepšení ladění a ladění výkonu pomocí ETW](https://go.microsoft.com/fwlink/?LinkId=166488).  
+ Další informace o trasování událostí ve Windows najdete v tématu [vylepšení ladění a ladění výkonu pomocí ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw).  
   
 ## <a name="disposing-eventprovider"></a>Disposing – EventProvider  
- Tato ukázka používá třídu <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType>, která implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování pro službu WCF je pravděpodobně vhodné použít prostředky <xref:System.Diagnostics.Eventing.EventProvider>po dobu života služby. Z tohoto důvodu a pro účely čitelnosti Tato ukázka nikdy neodstraní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu má vaše služba různé požadavky na trasování a musíte tento prostředek odstranit, měli byste tuto ukázku upravit v souladu s osvědčenými postupy pro odstraňování nespravovaných prostředků. Další informace o odstraňování nespravovaných prostředků naleznete v tématu [implementace metody Dispose](https://go.microsoft.com/fwlink/?LinkId=166436).  
+ Tato ukázka používá třídu <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType>, která implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování pro službu WCF je pravděpodobně vhodné použít prostředky <xref:System.Diagnostics.Eventing.EventProvider>po dobu života služby. Z tohoto důvodu a pro účely čitelnosti Tato ukázka nikdy neodstraní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu má vaše služba různé požadavky na trasování a musíte tento prostředek odstranit, měli byste tuto ukázku upravit v souladu s osvědčenými postupy pro odstraňování nespravovaných prostředků. Další informace o odstraňování nespravovaných prostředků naleznete v tématu [implementace metody Dispose](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose).  
   
 ## <a name="self-hosting-vs-web-hosting"></a>Samoobslužné hostování vs. hostování webů  
  V případě služeb hostovaných na webu poskytuje analytická trasování WCF pole s názvem "HostReference", které slouží k identifikaci služby, která vysílá trasování. V tomto modelu se můžou zúčastnit rozšiřitelné trasování uživatelů a tato ukázka demonstruje osvědčené postupy. Formát odkazu webového hostitele v případě, že se ve výsledném řetězci skutečně zobrazuje znak kanálu&#124;, může být kterýkoli z následujících:  
@@ -63,7 +63,7 @@ Tento příklad ukazuje, jak přidat vlastní trasovací události do datového 
   
      Služba ICalculator se přidá v levém podokně v části **projekty služeb**.  
   
-7. Otevřete aplikaci Prohlížeč událostí.  
+7. Otevřete Prohlížeč událostí aplikace.  
   
      Před vyvoláním služby spusťte Prohlížeč událostí a zajistěte, aby protokol událostí naslouchal sledování událostí vygenerovaných ze služby WCF.  
   
@@ -117,6 +117,6 @@ Tento příklad ukazuje, jak přidat vlastní trasovací události do datového 
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

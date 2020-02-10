@@ -1,20 +1,20 @@
 ---
-title: Vysvětlete předpovědi modelů pomocí funkce permutace důležitost
+title: Interpretace ML.NET modelů se závažností funkcí permutace
 description: Pochopení funkcí důležitosti modelů s funkcí permutace v ML.NET
-ms.date: 08/29/2019
+ms.date: 01/30/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 4bad8b0ed17a34ba290bf9c00d65cc3f000a2acf
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c1163a41cd2feb0e8785ae9d4c6a71dfbedf3f12
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976690"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092613"
 ---
-# <a name="explain-model-predictions-using-permutation-feature-importance"></a>Vysvětlete předpovědi modelů pomocí funkce permutace důležitost
+# <a name="interpret-model-predictions-using-permutation-feature-importance"></a>Interpretace předpovědi modelů pomocí funkce permutace důležitost
 
-Naučte se vysvětlovat ML.NET Machine Learning model předpovědi tím, že porozumíte funkcím příspěvku předpovědi pomocí funkce permutace důležitost (PFI).
+Pomocí funkce permutace Feature důležitost (PFI) se dozvíte, jak interpretovat ML.NET předpovědi modelu Machine Learning. PFI poskytuje relativní příspěvek, který každá funkce provede předpověď.
 
 Modely strojového učení se často považovat za černé čtverečky, které přijímají vstupy a generují výstup. Zprostředkující kroky nebo interakce mezi funkcemi, které ovlivňují výstup, se zřídka rozumí. Vzhledem k tomu, že je strojové učení zahrnuté do více aspektů každodenního života, jako je zdravotní péče, je velmi důležité pochopit, proč model strojového učení provádí rozhodnutí. Například pokud jsou diagnostiky provedeny modelem strojového učení, odborníci na zdravotní péči potřebují způsob, jak se podívat na faktory, které se při diagnostikování prováděly. Poskytnutí správné diagnostiky by mohlo způsobit velký rozdíl na tom, jestli má pacient rychlejší obnovení. Čím vyšší je úroveň vyjasnění v modelu, větší spolehlivé odborníky na zdravotní péči musí přijmout nebo odmítnout rozhodnutí učiněná modelem.
 
@@ -26,21 +26,21 @@ Kromě toho zvýrazňováním nejdůležitějších funkcí se mohou tvůrci mod
 
 Funkce v datové sadě používané pro tuto ukázku jsou ve sloupcích 1-12. Cílem je předpovědět `Price`.
 
-| Kolo | Funkce | Popis
+| Sloupec | Funkce | Popis
 | --- | --- | --- |
-| první | CrimeRate | Sazba za trestných činů za hlavu
-| odst | ResidentialZones | Místní zóny ve městě
+| 1 | CrimeRate | Sazba za trestných činů za hlavu
+| 2 | ResidentialZones | Místní zóny ve městě
 | 3 | CommercialZones | Jiné než místní zóny ve městě
 | 4 | NearWater | Blízkost k tělo vody
 | 5 | ToxicWasteLevels | Úrovně toxicity (PPM)
 | 6 | AverageRoomNumber | Průměrný počet místností v domu
-| čl | Domovská stránka | Stáří domů
+| 7 | Domovská stránka | Stáří domů
 | 8 | BusinessCenterDistance | Vzdálenost k nejbližší obchodní oblasti
 | 9 | HighwayAccess | Blízkost k dálnicím
-| 10pruhový | TaxRate | Daňová sazba vlastnosti
-| odst | StudentTeacherRatio | Poměr studentů k učitelům
-| 12,5 | PercentPopulationBelowPoverty | Procento populace žijících po chudobě
-| 13,5 | Cenové | Cena domovské stránky
+| 10 | TaxRate | Daňová sazba vlastnosti
+| 11 | StudentTeacherRatio | Poměr studentů k učitelům
+| 12 | PercentPopulationBelowPoverty | Procento populace žijících po chudobě
+| 13 | Cena | Cena domovské stránky
 
 Ukázka datové sady je uvedena níže:
 
@@ -97,7 +97,7 @@ class HousingPriceData
 }
 ```
 
-## <a name="train-the-model"></a>Výuka modelu
+## <a name="train-the-model"></a>Trénování modelu
 
 Následující ukázka kódu znázorňuje proces školení modelu lineární regrese k předvídání cen za domácnosti.
 

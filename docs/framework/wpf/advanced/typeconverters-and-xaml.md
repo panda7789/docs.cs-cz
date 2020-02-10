@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
-ms.openlocfilehash: aac6c347886b2c29e599952d7642fbe76441b617
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 6b8b58228e94ed12557e97406e55cc4165753076
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458920"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095083"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka XAML. V .NET Framework poskytuje <xref:System.ComponentModel.TypeConverter> třída konkrétní účel jako součást implementace spravované vlastní třídy, kterou lze použít jako hodnotu vlastnosti v použití atributu XAML. Pokud píšete vlastní třídu a chcete, aby byly instance vaší třídy použitelné jako hodnoty nastavitelných atributů XAML, může být nutné použít <xref:System.ComponentModel.TypeConverterAttribute> pro třídu, zapsat vlastní třídu <xref:System.ComponentModel.TypeConverter> nebo obojí.  
@@ -44,7 +44,7 @@ Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka 
  Existující převaděče typů mohou být obecně zjišťovány u typů WPF a .NET Framework kontrolou třídy (nebo vlastnosti) pro přítomnost použité <xref:System.ComponentModel.TypeConverterAttribute>. Tento atribut pojmenuje třídu, která je podpůrného konvertoru typu pro hodnoty daného typu, pro účely XAML a také potenciálně jiné účely.  
   
 ### <a name="type-converters-and-markup-extensions"></a>Převaděče typů a rozšíření značek  
- Rozšíření značek a převaděče typů plní kolmé role v souvislosti s chováním procesoru XAML a scénáři, na které jsou aplikovány. Přestože je kontext k dispozici pro použití rozšíření značek, chování konverze typu vlastností, kde rozšíření značek poskytuje hodnotu obecně není zaškrtnuto v implementacích rozšíření značek. Jinými slovy, i když rozšíření značek vrátí textový řetězec jako svůj `ProvideValue` výstup, chování konverze typu na tomto řetězci, jak je použito na konkrétní vlastnost nebo typ hodnoty vlastnosti není vyvoláno, obecně, účelem rozšíření označení je zpracování řetězce a vrátí objekt bez zapojeného konvertoru typu.  
+ Rozšíření značek a převaděče typů plní kolmé role v souvislosti s chováním procesoru XAML a scénáři, na které jsou aplikovány. Přestože je kontext k dispozici pro použití rozšíření značek, chování konverze typu vlastností, kde rozšíření značek poskytuje hodnotu obecně není zaškrtnuto v implementacích rozšíření značek. Jinými slovy, i když rozšíření značek vrátí textový řetězec jako svůj `ProvideValue` výstup, chování konverze typu na tomto řetězci, jak je použito na konkrétní vlastnost nebo typ hodnoty vlastnosti není vyvoláno, obecně, účelem rozšíření označení je zpracování řetězce a vrácení objektu bez účasti na konvertoru typu.  
   
  Jednou z běžných situací, kdy je rozšíření značek nezbytné místo konvertoru typu, je vytvořit odkaz na objekt, který již existuje. V optimálním případě konvertor bezstavového typu by mohl vygenerovat pouze novou instanci, která nemusí být žádoucí. Další informace o rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
@@ -55,7 +55,7 @@ Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka 
 ## <a name="implementing-a-type-converter"></a>Implementace konvertoru typu  
   
 ### <a name="typeconverter"></a>TypeConverter  
- V předchozím příkladu <xref:System.Windows.Point> byla uvedena <xref:System.Windows.PointConverter> třídy. Pro implementaci rozhraní .NET jazyka XAML jsou všechny převaděče typu používané pro účely XAML třídy odvozené od základní třídy <xref:System.ComponentModel.TypeConverter>. <xref:System.ComponentModel.TypeConverter> třída existovala ve verzích .NET Framework, které předcházejí existenci XAML; jedním z jeho původních použití bylo poskytnout převod řetězce pro dialogy vlastností v vizuálních návrhářích. Pro XAML je role <xref:System.ComponentModel.TypeConverter> rozšířena tak, aby zahrnovala základní třídu pro řetězce pro řetězce a převody z řetězce, které umožňují analýzu hodnoty řetězcového atributu a případně zpracování hodnoty za běhu konkrétní vlastnosti objektu zpět do řetězce pro serializace jako atribut.  
+ V předchozím příkladu <xref:System.Windows.Point> byla uvedena <xref:System.Windows.PointConverter> třídy. Pro implementaci rozhraní .NET jazyka XAML jsou všechny převaděče typu používané pro účely XAML třídy odvozené od základní třídy <xref:System.ComponentModel.TypeConverter>. <xref:System.ComponentModel.TypeConverter> třída existovala ve verzích .NET Framework, které předcházejí existenci XAML; jedním z jeho původních použití bylo poskytnout převod řetězce pro dialogy vlastností v vizuálních návrhářích. Pro XAML je role <xref:System.ComponentModel.TypeConverter> rozbalena tak, aby zahrnovala základní třídu pro převody řetězců a řetězce, které umožňují analýzu hodnoty řetězcového atributu a případně zpracování hodnoty za běhu konkrétní vlastnosti objektu zpět do řetězce pro serializaci jako atributu.  
   
  <xref:System.ComponentModel.TypeConverter> definuje čtyři členy, které jsou relevantní pro převod na a z řetězců pro účely zpracování XAML:  
   
@@ -67,14 +67,15 @@ Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka 
   
 - <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>  
   
- Nejdůležitější způsob je <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>. Tato metoda převede vstupní řetězec na požadovaný typ objektu. Výhradně řečeno, <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> metoda může být implementována pro převod mnohem širšího rozsahu typů do zamýšleného cílového typu konvertoru a slouží k tomu účelem, který rozšiřuje rámec XAML, jako jsou například podpůrné převody za běhu, ale pro účely XAML je pouze cesta kódu, která může zpracovat <xref:System.String> vstup, který je věcí.  
+ Nejdůležitější způsob je <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>. Tato metoda převede vstupní řetězec na požadovaný typ objektu. Výhradně řečeno, <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> metoda může být implementována pro převod mnohem širšího rozsahu typů do zamýšleného cílového typu konvertoru a slouží k tomu účelem, který rozšiřuje rámec XAML, jako je podpora převodů za běhu, ale pro účely XAML je pouze cesta kódu, která může zpracovat <xref:System.String> vstup, který se týká.  
   
  Další nejdůležitější metodou je <xref:System.ComponentModel.TypeConverter.ConvertTo%2A>. Pokud je aplikace převedena na reprezentace kódu (například pokud je uložena do souboru XAML jako soubor), <xref:System.ComponentModel.TypeConverter.ConvertTo%2A> zodpovídá za vytváření reprezentace kódu. V tomto případě je cesta kódu, která je v jazyce XAML, v případě, že předáváte `destinationType` <xref:System.String>.  
   
  <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A> a <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A> jsou metody podpory, které se používají, když se služba dotazuje na možnosti implementace <xref:System.ComponentModel.TypeConverter>. Tyto metody je nutné implementovat pro návrat `true` pro případy specifické pro typ, které odpovídají metody převodu vašeho převaděče. Pro účely XAML to obecně znamená <xref:System.String> typ.  
   
 ### <a name="culture-information-and-type-converters-for-xaml"></a>Informace o jazykové verzi a převaděče typů pro jazyk XAML  
- Každá implementace <xref:System.ComponentModel.TypeConverter> může mít vlastní výklad toho, co představuje platný řetězec pro převod, a může také použít nebo ignorovat popis typu předaný jako parametry. Je důležité zvážit v souvislosti s převodem typu kultury a XAML. Použití lokalizovatelných řetězců jako hodnot atributů je v jazyce XAML zcela podporováno. Ale použití tohoto lokalizovatelnýho řetězce jako vstupu konvertoru typu s konkrétními jazykovými požadavky není podporováno, protože převaděče typů pro hodnoty atributů XAML zahrnují chování při analýze pevného jazyka, a to pomocí `en-US` jazykové verze. Další informace o návrhových důvodech pro toto omezení byste měli prostudovat ve specifikaci jazyka XAML ([\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525)).  
+
+ Každá implementace <xref:System.ComponentModel.TypeConverter> může mít vlastní výklad toho, co představuje platný řetězec pro převod, a může také použít nebo ignorovat popis typu předaný jako parametry. Je důležité zvážit v souvislosti s převodem typu kultury a XAML. Použití lokalizovatelných řetězců jako hodnot atributů je v jazyce XAML zcela podporováno. Ale použití tohoto lokalizovatelnýho řetězce jako vstupu konvertoru typu s konkrétními jazykovými požadavky není podporováno, protože převaděče typů pro hodnoty atributů XAML zahrnují chování při analýze pevného jazyka, a to pomocí `en-US` jazykové verze. Další informace o návrhových příčinách tohoto omezení najdete v části specifikace jazyka XAML ([\[MS-XAML\]](https://download.microsoft.com/download/0/A/6/0A6F7755-9AF5-448B-907D-13985ACCF53E/[MS-XAML].pdf).  
   
  Jako příklad, kde může být jazyková verze příčinou problému, některé jazykové verze používají čárku jako oddělovač desetinných míst pro čísla. Dojde k kolizi s chováním, které mají mnoho převaděčů typu XAML jazyka WPF, což znamená použití čárky jako oddělovače (na základě historických předchůdců, jako jsou například Common X, Y nebo seznam oddělených čárkami). I v případě, že předá jazyková verze v okolním jazyce XAML (nastavení `Language` nebo `xml:lang` na jazykovou verzi `sl-SI`, příklad jazykové verze, která používá čárku pro desetinné místo), problém nevyřeší.  
   
@@ -107,7 +108,7 @@ Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka 
   
  Můžete také zadat konvertor typu na základě jednotlivých vlastností. Namísto použití <xref:System.ComponentModel.TypeConverterAttribute> pro definici třídy, použijte ji pro definici vlastnosti (hlavní definice, nikoli `get`/`set` implementacemi v rámci IT). Typ vlastnosti se musí shodovat s typem, který je zpracován vaším vlastním převaděčem typu. Při použití tohoto atributu, pokud procesor XAML zpracovává hodnoty této vlastnosti, může zpracovat vstupní řetězce a vracet instance objektů. Technika konvertoru typu pro jednotlivé vlastnosti je obzvláště užitečná, pokud se rozhodnete použít typ vlastnosti z Microsoft .NET Framework nebo z jiné knihovny, kde nemůžete určit definici třídy a nelze použít <xref:System.ComponentModel.TypeConverterAttribute>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ComponentModel.TypeConverter>
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

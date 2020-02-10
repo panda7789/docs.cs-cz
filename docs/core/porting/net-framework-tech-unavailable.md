@@ -1,14 +1,15 @@
 ---
 title: Technologie .NET Framework nedostupné v .NET Core
+titleSuffix: ''
 description: Přečtěte si o .NET Framework technologiích, které nejsou k dispozici v .NET Core
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: 89871753fef92a30bf2151a618207a73b40bb402
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: bd2488de653ecdfed261100b4c9019bea58fcab3
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936949"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092938"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologie .NET Framework nedostupné v .NET Core
 
@@ -46,6 +47,6 @@ Pro spouštění procesů s nejmenší sadou oprávnění používejte hranice z
 
 Rozhraní .NET Core nepodporuje System. EnterpriseServices (COM+).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled přenosů z .NET Framework do .NET Core](../porting/index.md)

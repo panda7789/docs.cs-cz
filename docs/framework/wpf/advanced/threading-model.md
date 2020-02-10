@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: 550ba74c7ceba16c2040932918364ae2a59ea665
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 87dcfa22bcce730c5a9b61721c3a846a08146475
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794271"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094498"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] je navržená tak, aby ukládala vývojáře z potíží s vlákny. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebude muset psát rozhraní, které používá více než jedno vlákno. Vzhledem k tomu, že programy s více vlákny jsou složité a obtížné je ladit, měli byste se jim vyhnout v případě existence řešení s jedním vláknem.
@@ -99,7 +99,7 @@ ms.locfileid: "76794271"
 
  Tato metoda kontroluje, zda je následující liché číslo primární. Pokud je primární, metoda přímo aktualizuje `bigPrime`<xref:System.Windows.Controls.TextBlock> tak, aby odrážela jeho zjišťování. To můžeme udělat, protože výpočet se vyskytuje ve stejném vlákně, které jste použili k vytvoření komponenty. Zvolili jsme použití samostatného vlákna pro výpočet, musíme použít složitější synchronizační mechanismus a spustit aktualizaci ve vlákně [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Tuto situaci si ukážeme dál.
 
- Úplný zdrojový kód pro tuto ukázku najdete v tématu [aplikace s jedním vláknem s ukázkou dlouho běžícího výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038) .
+ Úplný zdrojový kód pro tuto ukázku najdete v tématu [aplikace s jedním vláknem s ukázkou dlouho běžícího výpočtu](https://github.com/Microsoft/WPF-Samples/tree/master/Threading/SingleThreadedApplication) .
 
 <a name="weather_sim"></a>
 ### <a name="handling-a-blocking-operation-with-a-background-thread"></a>Zpracování blokující operace s vláknem na pozadí
@@ -215,6 +215,6 @@ ms.locfileid: "76794271"
 
  Úkolem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vyhnout se neočekávaným Vícenásobný přístup bez opětovného zavedení nevracení paměti, což znamená, že Vícenásobný přístup všude neblokujeme.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Vícevláknová aplikace s ukázkou dlouhotrvajícího výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038)
+- [Vícevláknová aplikace s ukázkou dlouhotrvajícího výpočtu](https://github.com/Microsoft/WPF-Samples/tree/master/Threading/SingleThreadedApplication)

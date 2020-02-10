@@ -1,13 +1,14 @@
 ---
 title: Nepodporovaná rozhraní API v .NET Core
+titleSuffix: ''
 description: Seznamte se s rozhraními API z .NET Framework, která vždy vyvolají výjimku pro .NET Core.
 ms.date: 12/23/2019
-ms.openlocfilehash: f27aeca31226a95dacf100813762eedb56876fbd
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: c4b94321d30cacd90d5c2ee23c258681683a6faa
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936977"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092964"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core"></a>Rozhraní API, která vždy vyvolávají výjimky v .NET Core
 
@@ -20,7 +21,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 > - Tento článek je nedokončený. Nejedná se o úplný seznam rozhraní API, která vyvolávají výjimky v rozhraní .NET Core.
 > - Tento článek nezahrnuje implementace explicitního rozhraní pro binární serializaci, která se vyvolává v .NET Core. Další informace najdete v tématu [binární serializace v .NET Core](../../standard/serialization/binary-serialization.md#net-core).
 
-## <a name="system"></a>Systém
+## <a name="system"></a>Systémový
 
 | Člen | Platformy, které vyvolávají výjimku |
 | - | - |
@@ -154,6 +155,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 
 | Člen | Platformy, které vyvolávají výjimku |
 | - | - |
+| <xref:System.Net.Sockets.Socket.%23ctor(System.Net.Sockets.SocketInformation)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Net.Sockets.Socket.DuplicateAndClose(System.Int32)?displayProperty=nameWithType> | Všechny |
 
 ## <a name="systemnetwebsockets"></a>System .NET. WebSockets
@@ -246,7 +248,6 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 | <xref:System.Security.Cryptography.CspKeyContainerInfo.Removable?displayProperty=nameWithType> | Linux a macOS |
 | <xref:System.Security.Cryptography.CspKeyContainerInfo.UniqueKeyContainerName?displayProperty=nameWithType> | Linux a macOS |
 | <xref:System.Security.Cryptography.HashAlgorithm.Create?displayProperty=nameWithType> | Všechny |
-| <xref:System.Security.Cryptography.HashAlgorithm.Create(System.String)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Cryptography.HMAC.Create?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Cryptography.HMAC.Create(System.String)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Security.Cryptography.HMAC.HashCore%2A?displayProperty=nameWithType> | Všechny |
@@ -321,7 +322,7 @@ Tento článek uspořádá ovlivněné členy rozhraní API podle oboru názvů.
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.IO.Stream,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Všechny |
 | <xref:System.Xml.XmlDictionaryWriter.CreateMtomWriter(System.IO.Stream,System.Text.Encoding,System.Int32,System.String,System.String,System.String,System.Boolean,System.Boolean)?displayProperty=nameWithType> | Všechny |
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zásadní změny migrace z .NET Framework do .NET Core](../compatibility/fx-core.md)
 - [Binární serializace v .NET Core](../../standard/serialization/binary-serialization.md#net-core)

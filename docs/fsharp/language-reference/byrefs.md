@@ -2,12 +2,12 @@
 title: Parametry ByRef
 description: Seznamte se s typy ByRef a ByRef jako F#v, které se používají pro programování na nízké úrovni.
 ms.date: 11/04/2019
-ms.openlocfilehash: 05a40059ad5b72829233b0c4135c76eb1cff4da5
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 2d98d325dc4ad26548fb2cc6aa5b872e152ee0a8
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965812"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092785"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
@@ -134,7 +134,7 @@ Typ `inref<'T>` je odvozen F# kompilátorem v následujících případech:
 2. Ukazatel `this` u typu struktury, který nemá žádná proměnlivá pole.
 3. Adresa umístění v paměti odvozeného od jiného ukazatele `inref<_>`.
 
-Když je využívána implicitní adresa `inref`, přetížení s argumentem typu `SomeType` je upřednostňováno na přetížení s argumentem typu `inref<SomeType>`. Příklad:
+Když je využívána implicitní adresa `inref`, přetížení s argumentem typu `SomeType` je upřednostňováno na přetížení s argumentem typu `inref<SomeType>`. Například:
 
 ```fsharp
 type C() =
@@ -179,7 +179,7 @@ I když tato pravidla omezují použití, tak aby mohli bezpečným způsobem pl
 
 ## <a name="byref-returns"></a>ByRef – vrácené hodnoty
 
-Návratové hodnoty F# ByRef z funkcí nebo členů lze vytvářet a spotřebovat. Při zpracování metody vracené `byref`se hodnota implicitně odkázat. Příklad:
+Návratové hodnoty F# ByRef z funkcí nebo členů lze vytvářet a spotřebovat. Při zpracování metody vracené `byref`se hodnota implicitně odkázat. Například:
 
 ```fsharp
 let squareAndPrint (data : byref<int>) = 
@@ -188,7 +188,7 @@ let squareAndPrint (data : byref<int>) =
 ```
 
 Chcete-li vrátit hodnotu ByRef, proměnná, která obsahuje hodnotu, musí být živá déle než aktuální obor.
-Také pro návrat typu ByRef použijte & Value (kde value je proměnná, která je větší než aktuální rozsah).
+Také pro návrat typu ByRef použijte `&value` (kde value je proměnná, která je větší než aktuální rozsah).
 
 ```fsharp
 let mutable sum = 0
@@ -252,4 +252,4 @@ let test () =
     ()
 ```
 
-To vám zabrání v získání různých výsledků v závislosti na tom, jestli kompilujete s optimalizací nebo vypnuto.
+Tím se zabrání v získání různých výsledků v závislosti na tom, jestli kompilujete s optimalizacemi nebo ne.

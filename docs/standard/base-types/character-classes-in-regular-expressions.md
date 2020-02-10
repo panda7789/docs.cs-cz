@@ -12,12 +12,12 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.openlocfilehash: cd9d3f69f8135b608ced91c34f747600352bafe1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 047d0ea7b3783f8cf45afde2a15470adda94cd6e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711451"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095044"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 
@@ -127,7 +127,7 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
   
  Mohou být spojeny dva nebo více rozsahů znaků. Pokud například chcete zadat rozsah desítkových číslic od "0" až "9", rozsah malých písmen od "a" až "f" a rozsah velkých písmen od "A" až po "F", použijte `[0-9a-fA-F]`.  
   
- Úvodní znak kosočtverce (`^`) ve skupině negativních znaků je povinný a označuje, že skupina znaků je skupina negativních znaků, nikoli skupina pozitivních znaků.  
+ Přední znak stříšky (`^`) ve skupině negativních znaků je povinný a označuje, že skupina znaků je skupina negativních znaků, nikoli skupina pozitivních znaků.  
   
 > [!IMPORTANT]
 > Skupina negativních znaků ve větším vzoru regulárního výrazu není kontrolní výraz nulové šířky. To znamená, že po vyhodnocení skupiny negativních znaků modul regulárních výrazů postoupí o jeden znak ve vstupním řetězci.  
@@ -526,7 +526,7 @@ Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. M
 |D800 - DB7F|`IsHighSurrogates`|  
 |DB80 - DBFF|`IsHighPrivateUseSurrogates`|  
 |DC00 - DFFF|`IsLowSurrogates`|  
-|E000 - F8FF|`IsPrivateUse` Nebo `IsPrivateUseArea`|  
+|E000 - F8FF|`IsPrivateUse` nebo `IsPrivateUseArea`|  
 |F900 - FAFF|`IsCJKCompatibilityIdeographs`|  
 |FB00 - FB4F|`IsAlphabeticPresentationForms`|  
 |FB50 - FDFF|`IsArabicPresentationForms-A`|  
@@ -567,7 +567,7 @@ Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. M
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/classsubtraction1.cs#15)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/classsubtraction1.vb#15)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Char.GetUnicodeCategory%2A>
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

@@ -18,16 +18,16 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 9fde2b28288b58d7da3a4d003ec50af7d7e7a965
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 9c8b11f9337ee9de90f2d4d96b5be162713bfcbd
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980168"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093211"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Číselné typy s plovoucí desetinnouC# čárkou (referenční)
 
-**Typy s plovoucí desetinnou** čárkou jsou podmnožinou **jednoduchých typů** a lze je inicializovat pomocí [*literálů*](#real-literals). Všechny typy s plovoucí desetinnou čárkou jsou také typy hodnot. Všechny číselné typy s plovoucí desetinnou čárkou podporují operátory [aritmetické](../operators/arithmetic-operators.md), [porovnání](../operators/comparison-operators.md)a [rovnosti](../operators/equality-operators.md) .
+*Číselné typy s plovoucí desetinnou* čárkou reprezentují reálné číslo. Všechny číselné typy s plovoucí desetinnou čárkou jsou [typy hodnot](value-types.md). Jsou to také [jednoduché typy](value-types.md#built-in-value-types) a lze je inicializovat pomocí [literálů](#real-literals). Všechny číselné typy s plovoucí desetinnou čárkou podporují operátory [aritmetické](../operators/arithmetic-operators.md), [porovnání](../operators/comparison-operators.md)a [rovnosti](../operators/equality-operators.md) .
 
 ## <a name="characteristics-of-the-floating-point-types"></a>Vlastnosti typů s plovoucí desetinnou čárkou
 
@@ -115,10 +115,10 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Typ Decimal](~/_csharplang/spec/types.md#the-decimal-type)
 - [Reálné literály](~/_csharplang/spec/lexical-structure.md#real-literals)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
-- [Tabulka předdefinovaných typů](../keywords/built-in-types-table.md)
+- [Typy hodnot](value-types.md)
 - [Celočíselné typy](integral-numeric-types.md)
 - [Řetězce standardního číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Číslovky v technologii .NET](../../../standard/numerics.md)

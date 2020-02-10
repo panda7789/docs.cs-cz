@@ -9,37 +9,27 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 412aa2bb2a56fbe654b0d9ce5f4b9b5176fc5549
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 99a08c9714e8f8cef0c1c96ac7f890d163324b44
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921304"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095018"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu s certifikátem SSL
+
 Při vytváření služby Windows Communication Foundation v místním prostředí (WCF) s třídou <xref:System.ServiceModel.WSHttpBinding>, která používá zabezpečení přenosu, je také nutné nakonfigurovat port s certifikátem X. 509. Pokud nevytváříte samoobslužně hostované služby, můžete službu hostovat na Internetová informační služba (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
   
  K nakonfigurování portu závisí nástroj, který použijete, na operačním systému, který běží na vašem počítači.  
   
- Pokud používáte systém Windows Server 2003 nebo Windows XP, použijte nástroj HttpCfg. exe. V systému Windows Server 2003 je tento nástroj nainstalován. V systému Windows XP můžete nástroj stáhnout pomocí [nástrojů podpory systému Windows XP Service Pack 2](https://go.microsoft.com/fwlink/?LinkId=88606). Další informace najdete v tématu [Httpcfg Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). Dokumentace k nástrojům [podpory systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) vysvětluje syntaxi nástroje HttpCfg. exe.  
+ Pokud používáte systém Windows Server 2003, použijte nástroj HttpCfg. exe. V systému Windows Server 2003 je tento nástroj nainstalován. Další informace najdete v tématu [Httpcfg Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10)). Dokumentace k nástrojům [podpory systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10)) vysvětluje syntaxi nástroje HttpCfg. exe.  
   
- Pokud používáte systém Windows Vista, použijte nástroj Netsh. exe, který je již nainstalován.  
+ Pokud používáte systém Windows Vista, použijte nástroj Netsh. exe, který je již nainstalován. 
   
- Toto téma popisuje, jak provést několik postupů:  
+> [!NOTE]
+> Úprava certifikátů uložených v počítači vyžaduje oprávnění správce.  
   
-- Určení aktuální konfigurace portu počítače.  
-  
-- Získávání kryptografického otisku certifikátu (nutné pro následující dva postupy).  
-  
-- Naváže certifikát SSL na konfiguraci portu.  
-  
-- Vytvořte vazbu certifikátu SSL s konfigurací portu a podpůrnými klientskými certifikáty.  
-  
-- Odstraňuje se certifikát SSL z čísla portu.  
-  
- Nezapomeňte, že změna certifikátů uložených v počítači vyžaduje oprávnění správce.  
-  
-### <a name="to-determine-how-ports-are-configured"></a>Určení způsobu konfigurace portů  
+## <a name="determine-how-ports-are-configured"></a>Určení způsobu konfigurace portů  
   
 1. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg. exe k zobrazení aktuální konfigurace portu pomocí přepínačů **dotaz** a **SSL** , jak je znázorněno v následujícím příkladu.  
   
@@ -53,7 +43,7 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
     netsh http show sslcert  
     ```  
   
-### <a name="to-get-a-certificates-thumbprint"></a>Získání kryptografického otisku certifikátu  
+## <a name="get-a-certificates-thumbprint"></a>Získání kryptografického otisku certifikátu  
   
 1. Pomocí modulu snap-in Certifikáty konzoly MMC Najděte certifikát X. 509, který má zamýšlený účel ověřování klienta. Další informace najdete v tématu [Postup: zobrazení certifikátů pomocí modulu snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
@@ -63,7 +53,7 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
 4. Odebere všechny mezery mezi šestnáctkovými znaky. Jedním ze způsobů, jak toho dosáhnout, je použít funkci Find-and-nahrazování textového editoru a nahradit každou mezeru znakem null.  
   
-### <a name="to-bind-an-ssl-certificate-to-a-port-number"></a>Vytvoření vazby certifikátu SSL k číslu portu  
+## <a name="bind-an-ssl-certificate-to-a-port-number"></a>Vytvoření vazby certifikátu SSL k číslu portu  
   
 1. V systému Windows Server 2003 nebo Windows XP použijte nástroj HttpCfg. exe v režimu "Set" v úložišti SSL (Secure Sockets Layer) (SSL) k navázání certifikátu na číslo portu. Nástroj používá kryptografický otisk k identifikaci certifikátu, jak je znázorněno v následujícím příkladu.  
   
@@ -87,7 +77,7 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
   
     - Parametr **AppID** je identifikátor GUID, který lze použít k identifikaci vlastnící aplikace.  
   
-### <a name="to-bind-an-ssl-certificate-to-a-port-number-and-support-client-certificates"></a>Vytvoření vazby certifikátu SSL k číslu portu a podpora klientských certifikátů  
+## <a name="bind-an-ssl-certificate-to-a-port-number-and-support-client-certificates"></a>Vytvoření vazby certifikátu SSL k číslu portu a podpora klientských certifikátů  
   
 1. V systému Windows Server 2003 nebo Windows XP pro podporu klientů, kteří se ověřují pomocí certifikátů X. 509 na transportní vrstvě, postupujte podle výše uvedeného postupu, ale předejte další parametr příkazového řádku HttpCfg. exe, jak je znázorněno v následujícím příkladu.  
   
@@ -103,7 +93,7 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
     netsh http add sslcert ipport=0.0.0.0:8000 certhash=0000000000003ed9cd0c315bbb6dc1c08da5e6 appid={00112233-4455-6677-8899-AABBCCDDEEFF} clientcertnegotiation=enable  
     ```  
   
-### <a name="to-delete-an-ssl-certificate-from-a-port-number"></a>Odstranění certifikátu SSL z čísla portu  
+## <a name="delete-an-ssl-certificate-from-a-port-number"></a>Odstraní certifikát SSL z čísla portu.  
   
 1. Pomocí nástroje HttpCfg. exe nebo Netsh. exe zobrazte porty a kryptografické otisky všech vazeb v počítači. Chcete-li vytisknout informace na disk, použijte znak přesměrování ">", jak je znázorněno v následujícím příkladu.  
   
@@ -124,11 +114,12 @@ Při vytváření služby Windows Communication Foundation v místním prostřed
     ```  
   
 ## <a name="example"></a>Příklad  
+
  Následující kód ukazuje, jak vytvořit samoobslužnou službu pomocí <xref:System.ServiceModel.WSHttpBinding> třídy nastavenou na zabezpečení přenosu. Při vytváření aplikace zadejte číslo portu v adrese.  
   
  [!code-csharp[c_WsHttpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wshttpservice/cs/source.cs#3)]
  [!code-vb[c_WsHttpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#3)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

@@ -4,21 +4,21 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 0e5f3578edc723e2e2a32b9b3a1d8a7dcabd2909
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 7dd3765b1b71d8c1ef22d714a00be3e171fab523
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965747"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093120"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 
 > "Weby by měly vypadat dobře zevnitř a ven."  
-> _- Paul Cookson_
+> _– Paul Cookson_
 
 Aplikace ASP.NET Core jsou webové aplikace a obvykle spoléhají na webové technologie klienta, jako je HTML, CSS a JavaScript. Díky oddělení obsahu stránky (HTML) od jejího rozložení a stylů (CSS) a jeho chování (prostřednictvím JavaScriptu) můžou komplexní webové aplikace využít oddělení zásad, které se týkají. Budoucí změny struktury, návrhu nebo chování aplikace je možné snadněji, pokud tyto otázky nejsou provázány.
 
-I když jsou HTML a CSS relativně stabilní, JavaScript, pomocí aplikačních architektur a vývojářů nástrojů pracujících s nástrojem k vytváření webových aplikací se vyvíjí při Breakneck rychlosti. Tato kapitola si vyhledá několik způsobů, jak je jazyk JavaScript používán webovými vývojáři jako součást vývoje aplikací, jak poskytuje podrobný přehled úhlů a reakci na klientské knihovny.
+I když jsou HTML a CSS relativně stabilní, JavaScript, pomocí aplikačních architektur a vývojářů nástrojů pracujících s nástrojem k vytváření webových aplikací se vyvíjí při Breakneck rychlosti. Tato kapitola si vyhledá několik způsobů, jak je jazyk JavaScript používán webovými vývojáři, a poskytuje podrobný přehled o úhlových a reagujících knihovnách na straně klienta.
 
 ## <a name="html"></a>HTML
 
@@ -75,7 +75,7 @@ Představte si například, že pokud hodnota v textovém poli přesáhne 10, el
 
 Většina funkcí jQuery, které chybí, je možné přidat s přidáním dalších knihoven. Architektura SPA, jako je úhlová, ale poskytuje tyto funkce lépe integrovaným způsobem, protože je navržená se všemi z nich na začátku. JQuery je také imperativní knihovna, což znamená, že je třeba volat funkce jQuery, aby cokoli s jQuery bylo možné dělat. Většina práce a funkcí, které poskytují architektury SPA, se dají provádět deklarativně, takže není potřeba zapisovat žádný skutečný kód.
 
-Vazba dat je skvělým příkladem. V jQuery obvykle pouze jeden řádek kódu pro získání hodnoty prvku modelu DOM nebo pro nastavení hodnoty elementu. Tento kód však musíte napsat kdykoli, když potřebujete změnit hodnotu prvku a někdy k tomu dojde ve více funkcích na stránce. Dalším běžným příkladem je viditelnost prvku. V jQuery může existovat mnoho různých míst, kde byste měli napsat kód pro řízení, zda byly určité prvky viditelné. V každém z těchto případů platí, že při použití datové vazby není nutné zapisovat kód. Stačí vytvořit vazbu hodnoty nebo viditelnosti prvků v dotazu na *ViewModel* na stránce a změny tohoto ViewModel by se automaticky projevily ve vázaných prvcích.
+Vazba dat je skvělým příkladem. V jQuery obvykle používá pouze jeden řádek kódu k získání hodnoty prvku modelu DOM nebo k nastavení hodnoty elementu. Tento kód však musíte napsat kdykoli, když potřebujete změnit hodnotu prvku a někdy k tomu dojde ve více funkcích na stránce. Dalším běžným příkladem je viditelnost prvku. V jQuery může existovat mnoho různých míst, kde byste měli napsat kód pro kontrolu, zda byly určité prvky viditelné. V každém z těchto případů platí, že při použití datové vazby není nutné zapisovat kód. Stačí vytvořit vazbu hodnoty nebo viditelnosti prvků v dotazu na *ViewModel* na stránce a změny této ViewModel by se automaticky projevily ve vázaných prvcích.
 
 ### <a name="angular-spas"></a>Úhlová Jednostránkovéa
 
@@ -108,7 +108,7 @@ Na rozdíl od úhlů, který nabízí úplnou implementaci vzoru pro zobrazení 
 
 Jednou z nejdůležitějších funkcí, které reagují, je použití virtuálního modelu DOM. Virtuální DOM umožňuje reagovat s několika výhodami, včetně výkonu (virtuální DOM může optimalizovat, které části skutečného modelu DOM se musí aktualizovat) a testovat (není nutné mít v prohlížeči možnost testovat reakce a jeho interakce s virtuálním objektem DOM).
 
-Reakce je také neobvyklá v tom, jak funguje s HTML. Místo toho, abyste museli mít striktní oddělení mezi kódem a označením (s odkazy na JavaScript, které se zobrazují v atributech HTML, případně), reaguje přidat HTML přímo do svého kódu JavaScriptu jako JSX. JSX je syntaxe podobná HTML, která se může kompilovat do čistě JavaScriptu. Příklad:
+Reakce je také neobvyklá v tom, jak funguje s HTML. Místo toho, abyste museli mít striktní oddělení mezi kódem a označením (s odkazy na JavaScript, které se zobrazují v atributech HTML, případně), reaguje přidat HTML přímo do svého kódu JavaScriptu jako JSX. JSX je syntaxe podobná HTML, která se může kompilovat do čistě JavaScriptu. Například:
 
 ```js
 <ul>
@@ -152,7 +152,7 @@ Rozhraní JavaScript Framework se nadále vyvíjí s Breakneck rychlostí. Pomoc
 > <https://docs.microsoft.com/aspnet/core/client-side/>
 > - **jQuery**  
 > <https://jquery.com/>
-> - **jQuery vs AngularJS**  
+> - **jQuery vs – AngularJS**  
 > <https://www.airpair.com/angularjs/posts/jquery-angularjs-comparison-migration-walkthrough>
 > - **Angular**  
 > <https://angular.io/>

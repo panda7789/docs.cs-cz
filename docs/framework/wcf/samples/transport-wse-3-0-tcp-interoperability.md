@@ -2,12 +2,12 @@
 title: 'Přenos: Součinnost TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: 8166e1c378bc745eb8c9f37d6982642e754813cb
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 8e95d7e75ac49aea4b823ee3434f53ed5df11fb0
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75544625"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094849"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
 Ukázka přenosu interoperability TCP v WSE 3,0 ukazuje, jak implementovat relaci duplexního připojení TCP jako vlastní přenos Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšiřitelnost vrstvy kanálu na rozhraní s existujícími nasazenými systémy. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  
@@ -37,7 +37,7 @@ Ukázka přenosu interoperability TCP v WSE 3,0 ukazuje, jak implementovat relac
   
  `return encoder.WriteMessage(message, maxBufferSize, bufferManager);`  
   
- Jakmile je <xref:System.ServiceModel.Channels.Message> kódovaný do bajtů, musí se přenést na síťový kabel. To vyžaduje systém pro definování hranic zprávy. WSE 3,0 používá jako svůj protokol rámců verzi [DIME](https://go.microsoft.com/fwlink/?LinkId=94999) . `WriteData` zapouzdřuje logiku rámců a zabalí bajt [] do sady záznamů DIME.  
+ Jakmile je <xref:System.ServiceModel.Channels.Message> kódovaný do bajtů, musí se přenést na síťový kabel. To vyžaduje systém pro definování hranic zprávy. WSE 3,0 používá jako svůj protokol rámců verzi [DIME](https://docs.microsoft.com/archive/msdn-magazine/2002/december/sending-files-attachments-and-soap-messages-via-dime) . `WriteData` zapouzdřuje logiku rámců a zabalí bajt [] do sady záznamů DIME.  
   
  Logika pro příjem zpráv je velmi podobná. Hlavní složitost zpracovává fakt, že čtení soketu může vracet méně bajtů, než bylo vyžádáno. Chcete-li dostávat zprávu, `WseTcpDuplexSessionChannel` čte bajty z přenosů, dekóduje rámce DIME a pak používá <xref:System.ServiceModel.Channels.MessageEncoder> pro přepínání bajtu [] na <xref:System.ServiceModel.Channels.Message>.  
   
@@ -157,7 +157,7 @@ Received Body: to me.
 Press enter.  
 ```  
   
- Server:  
+ WebServer  
   
 ```console  
 Listening for messages at soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  

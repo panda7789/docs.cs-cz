@@ -2,12 +2,12 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 63410ecc19e94e57f943e5d7dc13a6098bd91d51
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 56c8acbe53f1e0243f7c679da6ef04f7135bcd3a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714627"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094966"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communication Foundation (WCF) souvisejících se zabezpečením pomocí:  
@@ -47,7 +47,7 @@ Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communica
   
 3. Zašifrujte konfigurační nastavení appSettings ve složce Web. config vyvoláním následujícího příkazu: `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
   
- Další informace o šifrování oddílů konfiguračních souborů najdete v tématu věnovaném konfiguraci rozhraní DPAPI v ASP.NET ([sestavování zabezpečených aplikací ASP.NET: ověřování, autorizace a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)) a s postupy v tématu Konfigurace ASP.NET v ([Postupy: šifrování konfiguračních oddílů v ASP.NET 2,0 pomocí RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
+ Další informace o šifrování oddílů konfiguračních souborů najdete v tématu věnovaném konfiguraci rozhraní DPAPI v ASP.NET ([sestavování zabezpečených aplikací ASP.NET: ověřování, autorizace a zabezpečená komunikace](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))) a s postupy v tématu Konfigurace ASP.NET v ([Postupy: šifrování konfiguračních oddílů v ASP.NET 2,0 pomocí RSA](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))).  
   
 ## <a name="locking-configuration-file-elements"></a>Zamykání elementů konfiguračního souboru  
  Ve scénářích hostovaných na webu je možné mít služby v podadresářích služeb. V těchto situacích se hodnoty konfigurace pro službu v podadresáři vypočítávají prozkoumáním hodnot v souboru Machine. config a následným sloučením se soubory Web. config v nadřazených adresářích, které přesunují strom adresářů a nakonec sloučí Soubor Web. config v adresáři, který obsahuje službu. Výchozím chováním pro většinu konfiguračních elementů je umožnit, aby konfigurační soubory v podadresářích přepsaly hodnoty nastavené v nadřazených adresářích. V některých situacích může být žádoucí zabránit konfiguračním souborům v podadresářích z přepsání hodnot nastavených v konfiguraci nadřazeného adresáře.  
@@ -124,9 +124,9 @@ Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communica
   
  Je také možné zašifrovat prvky konfiguračního souboru pomocí DPAPI a RSA. Další informace najdete na následujících odkazech:  
   
-- [Sestavování zabezpečených aplikací ASP.NET: ověřování, autorizace a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)  
+- [Sestavování zabezpečených aplikací ASP.NET: ověřování, autorizace a zabezpečená komunikace](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))  
   
-- [Postupy: šifrování konfiguračních oddílů v ASP.NET 2,0 pomocí RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
+- [Postupy: šifrování konfiguračních oddílů v ASP.NET 2,0 pomocí RSA](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
@@ -142,6 +142,6 @@ Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communica
   
 1. Úpravou souboru Machine. config nastavte atribut `enableLoggingKnownPii` na hodnotu `false`.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
