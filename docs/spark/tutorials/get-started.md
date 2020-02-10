@@ -1,148 +1,154 @@
 ---
 title: Začínáme s .NET pro Apache Spark
-description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows.
-ms.date: 11/04/2019
+description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, MacOS a Ubuntu.
+ms.date: 01/31/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 679ee7660e96504768a781e1e384acab80362736
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 018c21804bf942233e07039281d7ec22a6bef763
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743212"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092314"
 ---
-# <a name="tutorial-get-started-with-net-for-apache-spark"></a><span data-ttu-id="a4c06-103">Kurz: Začínáme s .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-103">Tutorial: Get started with .NET for Apache Spark</span></span>
+# <a name="tutorial-get-started-with-net-for-apache-spark"></a><span data-ttu-id="6bb0e-103">Kurz: Začínáme s .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-103">Tutorial: Get started with .NET for Apache Spark</span></span>
 
-<span data-ttu-id="a4c06-104">V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows.</span><span class="sxs-lookup"><span data-stu-id="a4c06-104">This tutorial teaches you how to run a .NET for Apache Spark app using .NET Core on Windows.</span></span>
+<span data-ttu-id="6bb0e-104">V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci pomocí .NET Core ve Windows, MacOS a Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-104">This tutorial teaches you how to run a .NET for Apache Spark app using .NET Core on Windows, MacOS, and Ubuntu.</span></span>
 
-<span data-ttu-id="a4c06-105">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="a4c06-105">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="6bb0e-105">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-105">In this tutorial, you learn how to:</span></span>
 
 > [!div class="checklist"]
 >
-> * <span data-ttu-id="a4c06-106">Příprava prostředí Windows pro rozhraní .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-106">Prepare your Windows environment for .NET for Apache Spark</span></span>
-> * <span data-ttu-id="a4c06-107">Zápis prvního rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="a4c06-107">Write your first .NET for Apache Spark application</span></span>
-> * <span data-ttu-id="a4c06-108">Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="a4c06-108">Build and run your simple .NET for Apache Spark application</span></span>
+> * <span data-ttu-id="6bb0e-106">Příprava prostředí pro .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-106">Prepare your environment for .NET for Apache Spark</span></span>
+> * <span data-ttu-id="6bb0e-107">Zápis prvního rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="6bb0e-107">Write your first .NET for Apache Spark application</span></span>
+> * <span data-ttu-id="6bb0e-108">Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="6bb0e-108">Build and run your simple .NET for Apache Spark application</span></span>
 
-## <a name="prepare-your-environment"></a><span data-ttu-id="a4c06-109">Příprava prostředí</span><span class="sxs-lookup"><span data-stu-id="a4c06-109">Prepare your environment</span></span>
+## <a name="prepare-your-environment"></a><span data-ttu-id="6bb0e-109">Příprava prostředí</span><span class="sxs-lookup"><span data-stu-id="6bb0e-109">Prepare your environment</span></span>
 
-<span data-ttu-id="a4c06-110">Než začnete psát aplikaci, musíte nastavit některé závislosti požadavků.</span><span class="sxs-lookup"><span data-stu-id="a4c06-110">Before you begin writing your app, you need to set up some prerequisite dependencies.</span></span> <span data-ttu-id="a4c06-111">Pokud v prostředí příkazového řádku můžete spustit `dotnet`, `java`, `mvn``spark-shell`, je vaše prostředí už připravené a můžete přejít k další části.</span><span class="sxs-lookup"><span data-stu-id="a4c06-111">If you can run `dotnet`, `java`, `mvn`, `spark-shell` from your command line environment, then your environment is already prepared and you can skip to the next section.</span></span> <span data-ttu-id="a4c06-112">Pokud nemůžete spustit žádný z příkazů nebo všechny, proveďte následující kroky.</span><span class="sxs-lookup"><span data-stu-id="a4c06-112">If you cannot run any or all of the commands, do the following steps.</span></span>
+<span data-ttu-id="6bb0e-110">Než začnete psát aplikaci, musíte nastavit některé závislosti požadavků.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-110">Before you begin writing your app, you need to set up some prerequisite dependencies.</span></span> <span data-ttu-id="6bb0e-111">Pokud v prostředí příkazového řádku můžete spustit `dotnet`, `java`, `mvn``spark-shell`, je vaše prostředí už připravené a můžete přejít k další části.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-111">If you can run `dotnet`, `java`, `mvn`, `spark-shell` from your command line environment, then your environment is already prepared and you can skip to the next section.</span></span> <span data-ttu-id="6bb0e-112">Pokud nemůžete spustit žádný z příkazů nebo všechny, proveďte následující kroky.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-112">If you cannot run any or all of the commands, do the following steps.</span></span>
 
-### <a name="1-install-net"></a><span data-ttu-id="a4c06-113">1. instalace .NET</span><span class="sxs-lookup"><span data-stu-id="a4c06-113">1. Install .NET</span></span>
+### <a name="1-install-net"></a><span data-ttu-id="6bb0e-113">1. instalace .NET</span><span class="sxs-lookup"><span data-stu-id="6bb0e-113">1. Install .NET</span></span>
 
-<span data-ttu-id="a4c06-114">Chcete-li začít sestavovat aplikace .NET, je nutné stáhnout a nainstalovat sadu .NET SDK (Software Development Kit).</span><span class="sxs-lookup"><span data-stu-id="a4c06-114">To start building .NET apps, you need to download and install the .NET SDK (Software Development Kit).</span></span>
+<span data-ttu-id="6bb0e-114">Chcete-li začít sestavovat aplikace .NET, je nutné stáhnout a nainstalovat sadu .NET SDK (Software Development Kit).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-114">To start building .NET apps, you need to download and install the .NET SDK (Software Development Kit).</span></span>
 
-<span data-ttu-id="a4c06-115">Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).</span><span class="sxs-lookup"><span data-stu-id="a4c06-115">Download and install the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).</span></span> <span data-ttu-id="a4c06-116">Instalace sady SDK přidá do vaší cesty `dotnet` sada nástrojů.</span><span class="sxs-lookup"><span data-stu-id="a4c06-116">Installing the SDK adds the `dotnet` toolchain to your PATH.</span></span>
+<span data-ttu-id="6bb0e-115">Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-115">Download and install the [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1).</span></span> <span data-ttu-id="6bb0e-116">Instalace sady SDK přidá do vaší cesty `dotnet` sada nástrojů.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-116">Installing the SDK adds the `dotnet` toolchain to your PATH.</span></span>
 
-<span data-ttu-id="a4c06-117">Po instalaci .NET Core SDK otevřete nový příkazový řádek a spusťte `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="a4c06-117">Once you've installed the .NET Core SDK, open a new command prompt and run `dotnet`.</span></span>
+<span data-ttu-id="6bb0e-117">Po instalaci .NET Core SDK otevřete nový příkazový řádek nebo terminál a spusťte `dotnet`.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-117">Once you've installed the .NET Core SDK, open a new command prompt or terminal and run `dotnet`.</span></span>
 
-<span data-ttu-id="a4c06-118">Pokud se příkaz spustí a vytiskne informace o použití dotnet, může přejít k dalšímu kroku.</span><span class="sxs-lookup"><span data-stu-id="a4c06-118">If the command runs and prints out information about how to use dotnet, can move to the next step.</span></span> <span data-ttu-id="a4c06-119">Pokud se zobrazí chyba `'dotnet' is not recognized as an internal or external command`, před spuštěním příkazu se ujistěte, že jste otevřeli **Nový** příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="a4c06-119">If you receive a `'dotnet' is not recognized as an internal or external command` error, make sure you opened a **new** command prompt before running the command.</span></span>
+<span data-ttu-id="6bb0e-118">Pokud se příkaz spustí a vytiskne informace o použití dotnet, může přejít k dalšímu kroku.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-118">If the command runs and prints out information about how to use dotnet, can move to the next step.</span></span> <span data-ttu-id="6bb0e-119">Pokud se zobrazí chyba `'dotnet' is not recognized as an internal or external command`, před spuštěním příkazu se ujistěte, že jste otevřeli **Nový** příkazový řádek nebo terminál.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-119">If you receive a `'dotnet' is not recognized as an internal or external command` error, make sure you opened a **new** command prompt or terminal before running the command.</span></span>
 
-### <a name="2-install-java"></a><span data-ttu-id="a4c06-120">2. instalace Java</span><span class="sxs-lookup"><span data-stu-id="a4c06-120">2. Install Java</span></span>
+### <a name="2-install-java"></a><span data-ttu-id="6bb0e-120">2. instalace Java</span><span class="sxs-lookup"><span data-stu-id="6bb0e-120">2. Install Java</span></span>
 
-<span data-ttu-id="a4c06-121">Nainstalujte [Java 8,1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).</span><span class="sxs-lookup"><span data-stu-id="a4c06-121">Install [Java 8.1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).</span></span>
+<span data-ttu-id="6bb0e-121">Nainstalujte [Java 8,1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) pro Windows a MacOS nebo [OpenJDK 8](https://openjdk.java.net/install/) pro Ubuntu.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-121">Install [Java 8.1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) for Windows and MacOS, or [OpenJDK 8](https://openjdk.java.net/install/) for Ubuntu.</span></span>
 
-<span data-ttu-id="a4c06-122">Vyberte odpovídající verzi pro váš operační systém.</span><span class="sxs-lookup"><span data-stu-id="a4c06-122">Select the appropriate version for your operating system.</span></span> <span data-ttu-id="a4c06-123">Vyberte například **JDK-8u201-Windows-x64. exe** pro počítač se systémem Windows x64.</span><span class="sxs-lookup"><span data-stu-id="a4c06-123">For example, select **jdk-8u201-windows-x64.exe** for a Windows x64 machine.</span></span> <span data-ttu-id="a4c06-124">Pak pomocí příkazového `java` Ověřte instalaci.</span><span class="sxs-lookup"><span data-stu-id="a4c06-124">Then, use the command `java` to verify the installation.</span></span>
+<span data-ttu-id="6bb0e-122">Vyberte odpovídající verzi pro váš operační systém.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-122">Select the appropriate version for your operating system.</span></span> <span data-ttu-id="6bb0e-123">Například vyberte **JDK-8u201-Windows-x64. exe** pro počítač s Windows x64 (jak je vidět níže) nebo **JDK-8u231-MacOSX-x64. dmg** pro MacOS.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-123">For example, select **jdk-8u201-windows-x64.exe** for a Windows x64 machine (as shown below) or **jdk-8u231-macosx-x64.dmg** for MacOS.</span></span> <span data-ttu-id="6bb0e-124">Pak pomocí příkazového `java` Ověřte instalaci.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-124">Then, use the command `java` to verify the installation.</span></span>
 
 ![Stažení Java](https://dotnet.microsoft.com/static/images/java-jdk-downloads-windows.png?v=6BbJHoNyDO-PyYVciImr5wzh2AW_YHNcyb3p093AwPA)
 
-### <a name="3-install-7-zip"></a><span data-ttu-id="a4c06-126">3. instalace 7 – zip</span><span class="sxs-lookup"><span data-stu-id="a4c06-126">3. Install 7-zip</span></span>
+### <a name="3-install-compression-software"></a><span data-ttu-id="6bb0e-126">3. instalace kompresního softwaru</span><span class="sxs-lookup"><span data-stu-id="6bb0e-126">3. Install compression software</span></span>
 
-<span data-ttu-id="a4c06-127">Apache Spark se stáhl jako komprimovaný soubor. tgz.</span><span class="sxs-lookup"><span data-stu-id="a4c06-127">Apache Spark is downloaded as a compressed .tgz file.</span></span> <span data-ttu-id="a4c06-128">K extrakci souboru použijte program pro extrakci, například 7 – zip.</span><span class="sxs-lookup"><span data-stu-id="a4c06-128">Use an extraction program, like 7-zip, to extract the file.</span></span>
+<span data-ttu-id="6bb0e-127">Apache Spark se stáhl jako komprimovaný soubor. tgz.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-127">Apache Spark is downloaded as a compressed .tgz file.</span></span> <span data-ttu-id="6bb0e-128">K extrakci souboru použijte program pro extrakci, například [7-zip](https://www.7-zip.org/) nebo [WinZip](https://www.winzip.com/).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-128">Use an extraction program, like [7-Zip](https://www.7-zip.org/) or [WinZip](https://www.winzip.com/), to extract the file.</span></span>
 
-* <span data-ttu-id="a4c06-129">Navštivte [soubory ke stažení pro 7 – zip](https://www.7-zip.org/).</span><span class="sxs-lookup"><span data-stu-id="a4c06-129">Visit [7-Zip downloads](https://www.7-zip.org/).</span></span>
-* <span data-ttu-id="a4c06-130">V první tabulce na stránce vyberte 32 stažení x86 nebo 64-bit x64, v závislosti na vašem operačním systému.</span><span class="sxs-lookup"><span data-stu-id="a4c06-130">In the first table on the page, select the 32-bit x86 or 64-bit x64 download, depending on your operating system.</span></span>
-* <span data-ttu-id="a4c06-131">Po dokončení stahování spusťte instalační program.</span><span class="sxs-lookup"><span data-stu-id="a4c06-131">When the download completes, run the installer.</span></span>
+### <a name="4-install-apache-spark"></a><span data-ttu-id="6bb0e-129">4. instalace Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-129">4. Install Apache Spark</span></span>
 
-![Stažení 7Zip](https://dotnet.microsoft.com/static/images/7-zip-downloads.png?v=W6qWtFC1tTMKv3YGXz7lBa9F3M22uWyTvkMmunyroNk)
+<span data-ttu-id="6bb0e-130">[Stáhněte a nainstalujte Apache Spark](https://spark.apache.org/downloads.html).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-130">[Download and install Apache Spark](https://spark.apache.org/downloads.html).</span></span> <span data-ttu-id="6bb0e-131">Bude nutné vybrat z verze 2,3. \* nebo 2.4.0, 2.4.1, 2.4.3 nebo 2.4.4 (rozhraní .NET pro Apache Spark není kompatibilní s jinými verzemi Apache Spark).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-131">You'll need to select from version 2.3.\* or 2.4.0, 2.4.1, 2.4.3, or 2.4.4 (.NET for Apache Spark is not compatible with other versions of Apache Spark).</span></span>
 
-### <a name="4-install-apache-spark"></a><span data-ttu-id="a4c06-133">4. instalace Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-133">4. Install Apache Spark</span></span>
+<span data-ttu-id="6bb0e-132">Příkazy použité v následujících krocích předpokládají, že jste [stáhli a nainstalovali Apache Spark 2.4.1](https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-132">The commands used in the following steps assume you have [downloaded and installed Apache Spark 2.4.1](https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz).</span></span> <span data-ttu-id="6bb0e-133">Pokud chcete použít jinou verzi, nahraďte hodnotu **2.4.1** příslušným číslem verze.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-133">If you wish to use a different version, replace **2.4.1** with the appropriate version number.</span></span> <span data-ttu-id="6bb0e-134">Pak extrahujte soubor **. tar** a Apache Spark soubory.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-134">Then, extract the **.tar** file and the Apache Spark files.</span></span>
 
-<span data-ttu-id="a4c06-134">[Stáhněte a nainstalujte Apache Spark](https://spark.apache.org/downloads.html).</span><span class="sxs-lookup"><span data-stu-id="a4c06-134">[Download and install Apache Spark](https://spark.apache.org/downloads.html).</span></span> <span data-ttu-id="a4c06-135">Bude nutné vybrat z verze 2,3. \* nebo 2.4.0, 2.4.1, 2.4.3 nebo 2.4.4 (rozhraní .NET pro Apache Spark není kompatibilní s jinými verzemi Apache Spark).</span><span class="sxs-lookup"><span data-stu-id="a4c06-135">You'll need to select from version 2.3.\* or 2.4.0, 2.4.1, 2.4.3, or 2.4.4 (.NET for Apache Spark is not compatible with other versions of Apache Spark).</span></span>
+<span data-ttu-id="6bb0e-135">Extrahování vnořeného souboru **. tar** :</span><span class="sxs-lookup"><span data-stu-id="6bb0e-135">To extract the nested **.tar** file:</span></span>
 
-<span data-ttu-id="a4c06-136">Příkazy použité v následujících krocích předpokládají, že jste [stáhli a nainstalovali Apache Spark 2.4.1](https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz).</span><span class="sxs-lookup"><span data-stu-id="a4c06-136">The commands used in the following steps assume you have [downloaded and installed Apache Spark 2.4.1](https://archive.apache.org/dist/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz).</span></span> <span data-ttu-id="a4c06-137">Pokud chcete použít jinou verzi, nahraďte hodnotu **2.4.1** příslušným číslem verze.</span><span class="sxs-lookup"><span data-stu-id="a4c06-137">If you wish to use a different version, replace **2.4.1** with the appropriate version number.</span></span> <span data-ttu-id="a4c06-138">Pak extrahujte soubor **. tar** a Apache Spark soubory.</span><span class="sxs-lookup"><span data-stu-id="a4c06-138">Then, extract the **.tar** file and the Apache Spark files.</span></span>
+* <span data-ttu-id="6bb0e-136">Vyhledejte soubor **Spark-2.4.1-bin-Hadoop 2.7. tgz** , který jste si stáhli.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-136">Locate the **spark-2.4.1-bin-hadoop2.7.tgz** file that you downloaded.</span></span>
+* <span data-ttu-id="6bb0e-137">Klikněte pravým tlačítkem na soubor a vyberte **7-zip-> extrakci**.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-137">Right click on the file and select **7-Zip -> Extract here**.</span></span>
+* <span data-ttu-id="6bb0e-138">**Spark-2.4.1-bin-Hadoop 2.7. tar** se vytvoří společně s souborem **. tgz** , který jste stáhli.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-138">**spark-2.4.1-bin-hadoop2.7.tar** is created alongside the **.tgz** file you downloaded.</span></span>
 
-<span data-ttu-id="a4c06-139">Extrahování vnořeného souboru **. tar** :</span><span class="sxs-lookup"><span data-stu-id="a4c06-139">To extract the nested **.tar** file:</span></span>
+<span data-ttu-id="6bb0e-139">Extrahování Apache Spark souborů:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-139">To extract the Apache Spark files:</span></span>
 
-* <span data-ttu-id="a4c06-140">Vyhledejte soubor **Spark-2.4.1-bin-Hadoop 2.7. tgz** , který jste si stáhli.</span><span class="sxs-lookup"><span data-stu-id="a4c06-140">Locate the **spark-2.4.1-bin-hadoop2.7.tgz** file that you downloaded.</span></span>
-* <span data-ttu-id="a4c06-141">Klikněte pravým tlačítkem na soubor a vyberte **7-zip-> extrakci**.</span><span class="sxs-lookup"><span data-stu-id="a4c06-141">Right click on the file and select **7-Zip -> Extract here**.</span></span>
-* <span data-ttu-id="a4c06-142">**Spark-2.4.1-bin-Hadoop 2.7. tar** se vytvoří společně s souborem **. tgz** , který jste stáhli.</span><span class="sxs-lookup"><span data-stu-id="a4c06-142">**spark-2.4.1-bin-hadoop2.7.tar** is created alongside the **.tgz** file you downloaded.</span></span>
-
-<span data-ttu-id="a4c06-143">Extrahování Apache Spark souborů:</span><span class="sxs-lookup"><span data-stu-id="a4c06-143">To extract the Apache Spark files:</span></span>
-
-* <span data-ttu-id="a4c06-144">Klikněte pravým tlačítkem na **Spark-2.4.1-bin-Hadoop 2.7. tar** a vyberte **7-zip-> extrahování souborů...**</span><span class="sxs-lookup"><span data-stu-id="a4c06-144">Right click on **spark-2.4.1-bin-hadoop2.7.tar** and select **7-Zip -> Extract files...**</span></span>
-* <span data-ttu-id="a4c06-145">Do pole **extrahovat do** zadejte **C:\Bin** .</span><span class="sxs-lookup"><span data-stu-id="a4c06-145">Enter **C:\bin** in the **Extract to** field.</span></span>
-* <span data-ttu-id="a4c06-146">Zrušte zaškrtnutí políčka pod polem **extrahovat do** .</span><span class="sxs-lookup"><span data-stu-id="a4c06-146">Uncheck the checkbox below the **Extract to** field.</span></span>
-* <span data-ttu-id="a4c06-147">Vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="a4c06-147">Select **OK**.</span></span>
-* <span data-ttu-id="a4c06-148">Soubory Apache Spark jsou extrahovány do C:\bin\spark-2.4.1-bin-hadoop2.7</span><span class="sxs-lookup"><span data-stu-id="a4c06-148">The Apache Spark files are extracted to C:\bin\spark-2.4.1-bin-hadoop2.7</span></span>\
+* <span data-ttu-id="6bb0e-140">Klikněte pravým tlačítkem na **Spark-2.4.1-bin-Hadoop 2.7. tar** a vyberte **7-zip-> extrahování souborů...**</span><span class="sxs-lookup"><span data-stu-id="6bb0e-140">Right click on **spark-2.4.1-bin-hadoop2.7.tar** and select **7-Zip -> Extract files...**</span></span>
+* <span data-ttu-id="6bb0e-141">Do pole **extrahovat do** zadejte **C:\Bin** .</span><span class="sxs-lookup"><span data-stu-id="6bb0e-141">Enter **C:\bin** in the **Extract to** field.</span></span>
+* <span data-ttu-id="6bb0e-142">Zrušte zaškrtnutí políčka pod polem **extrahovat do** .</span><span class="sxs-lookup"><span data-stu-id="6bb0e-142">Uncheck the checkbox below the **Extract to** field.</span></span>
+* <span data-ttu-id="6bb0e-143">Vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-143">Select **OK**.</span></span>
+* <span data-ttu-id="6bb0e-144">Soubory Apache Spark jsou extrahovány do C:\bin\spark-2.4.1-bin-hadoop2.7</span><span class="sxs-lookup"><span data-stu-id="6bb0e-144">The Apache Spark files are extracted to C:\bin\spark-2.4.1-bin-hadoop2.7</span></span>\
 
 ![Instalace Sparku](https://dotnet.microsoft.com/static/images/spark-extract-with-7-zip.png?v=YvjUv54LIxI9FbALPC3h8zSQdyMtK2-NKbFOliG-f8M)
 
-<span data-ttu-id="a4c06-150">Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark:</span><span class="sxs-lookup"><span data-stu-id="a4c06-150">Run the following commands to set the environment variables used to locate Apache Spark:</span></span>
+<span data-ttu-id="6bb0e-146">Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark ve **Windows**:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-146">Run the following commands to set the environment variables used to locate Apache Spark on **Windows**:</span></span>
 
 ```console
 setx HADOOP_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 setx SPARK_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 ```
 
-<span data-ttu-id="a4c06-151">Jakmile nainstalujete vše a nastavíte proměnné prostředí, otevřete **Nový** příkazový řádek a spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="a4c06-151">Once you've installed everything and set your environment variables, open a **new** command prompt and run the following command:</span></span>
+<span data-ttu-id="6bb0e-147">Spuštěním následujících příkazů nastavte proměnné prostředí používané k vyhledání Apache Spark v **MacOS** a **Ubuntu**:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-147">Run the following commands to set the environment variables used to locate Apache Spark on **MacOS** and **Ubuntu**:</span></span>
+
+```bash
+export SPARK_HOME=~/bin/spark-2.4.1-bin-hadoop2.7/
+export PATH="$SPARK_HOME/bin:$PATH"
+source ~/.bashrc
+```
+
+<span data-ttu-id="6bb0e-148">Jakmile nainstalujete vše a nastavíte proměnné prostředí, otevřete **Nový** příkazový řádek nebo terminál a spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-148">Once you've installed everything and set your environment variables, open a **new** command prompt or terminal and run the following command:</span></span>
 
 `%SPARK_HOME%\bin\spark-submit --version`
 
-<span data-ttu-id="a4c06-152">Pokud se příkaz spustí a zobrazí informace o verzi, můžete přejít k dalšímu kroku.</span><span class="sxs-lookup"><span data-stu-id="a4c06-152">If the command runs and prints version information, you can move to the next step.</span></span>
+<span data-ttu-id="6bb0e-149">Pokud se příkaz spustí a zobrazí informace o verzi, můžete přejít k dalšímu kroku.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-149">If the command runs and prints version information, you can move to the next step.</span></span>
 
-<span data-ttu-id="a4c06-153">Pokud se zobrazí chyba `'spark-submit' is not recognized as an internal or external command`, ujistěte se, že jste otevřeli **Nový** příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="a4c06-153">If you receive a `'spark-submit' is not recognized as an internal or external command` error, make sure you opened a **new** command prompt.</span></span>
+<span data-ttu-id="6bb0e-150">Pokud se zobrazí chyba `'spark-submit' is not recognized as an internal or external command`, ujistěte se, že jste otevřeli **Nový** příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-150">If you receive a `'spark-submit' is not recognized as an internal or external command` error, make sure you opened a **new** command prompt.</span></span>
 
-### <a name="5-install-net-for-apache-spark"></a><span data-ttu-id="a4c06-154">5. Nainstalujte rozhraní .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-154">5. Install .NET for Apache Spark</span></span>
+### <a name="5-install-net-for-apache-spark"></a><span data-ttu-id="6bb0e-151">5. Nainstalujte rozhraní .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-151">5. Install .NET for Apache Spark</span></span>
 
-<span data-ttu-id="a4c06-155">Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub.</span><span class="sxs-lookup"><span data-stu-id="a4c06-155">Download the [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases) release from the .NET for Apache Spark GitHub.</span></span> <span data-ttu-id="a4c06-156">Například pokud jste na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 2.1](https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip).</span><span class="sxs-lookup"><span data-stu-id="a4c06-156">For example if you're on a Windows machine and plan to use .NET Core, [download the Windows x64 netcoreapp2.1 release](https://github.com/dotnet/spark/releases/download/v0.6.0/Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip).</span></span>
+<span data-ttu-id="6bb0e-152">Stáhněte si verzi [Microsoft. spark. Worker](https://github.com/dotnet/spark/releases) z rozhraní .net pro Apache Spark GitHub.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-152">Download the [Microsoft.Spark.Worker](https://github.com/dotnet/spark/releases) release from the .NET for Apache Spark GitHub.</span></span> <span data-ttu-id="6bb0e-153">Pokud jste například na počítači s Windows a plánujete použít .NET Core, [Stáhněte si verzi Windows x64 netcoreapp 3.1](https://github.com/dotnet/spark/releases/download/v0.8.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.8.0.zip).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-153">For example if you're on a Windows machine and plan to use .NET Core, [download the Windows x64 netcoreapp3.1 release](https://github.com/dotnet/spark/releases/download/v0.8.0/Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.8.0.zip).</span></span>
 
-<span data-ttu-id="a4c06-157">Extrakce Microsoft. spark. Worker:</span><span class="sxs-lookup"><span data-stu-id="a4c06-157">To extract the Microsoft.Spark.Worker:</span></span>
+<span data-ttu-id="6bb0e-154">Extrakce Microsoft. spark. Worker:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-154">To extract the Microsoft.Spark.Worker:</span></span>
 
-* <span data-ttu-id="a4c06-158">Vyhledejte soubor **Microsoft. spark. work. netcoreapp 2.1. Win-x64-0.6.0. zip** , který jste stáhli.</span><span class="sxs-lookup"><span data-stu-id="a4c06-158">Locate the **Microsoft.Spark.Worker.netcoreapp2.1.win-x64-0.6.0.zip** file that you downloaded.</span></span>
-* <span data-ttu-id="a4c06-159">Klikněte pravým tlačítkem a vyberte **7-zip-> extrahování souborů...** .</span><span class="sxs-lookup"><span data-stu-id="a4c06-159">Right click and select **7-Zip -> Extract files...**.</span></span>
-* <span data-ttu-id="a4c06-160">Do pole **extrahovat do** zadejte **C:\Bin** .</span><span class="sxs-lookup"><span data-stu-id="a4c06-160">Enter **C:\bin** in the **Extract to** field.</span></span>
-* <span data-ttu-id="a4c06-161">Zrušte zaškrtnutí políčka pod polem **extrahovat do** .</span><span class="sxs-lookup"><span data-stu-id="a4c06-161">Uncheck the checkbox below the **Extract to** field.</span></span>
-* <span data-ttu-id="a4c06-162">Vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="a4c06-162">Select **OK**.</span></span>
+* <span data-ttu-id="6bb0e-155">Vyhledejte soubor **Microsoft. spark. work. netcoreapp 3.1. Win-x64-0.8.0. zip** , který jste stáhli.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-155">Locate the **Microsoft.Spark.Worker.netcoreapp3.1.win-x64-0.8.0.zip** file that you downloaded.</span></span>
+* <span data-ttu-id="6bb0e-156">Klikněte pravým tlačítkem a vyberte **7-zip-> extrahování souborů...** .</span><span class="sxs-lookup"><span data-stu-id="6bb0e-156">Right click and select **7-Zip -> Extract files...**.</span></span>
+* <span data-ttu-id="6bb0e-157">Do pole **extrahovat do** zadejte **C:\Bin** .</span><span class="sxs-lookup"><span data-stu-id="6bb0e-157">Enter **C:\bin** in the **Extract to** field.</span></span>
+* <span data-ttu-id="6bb0e-158">Zrušte zaškrtnutí políčka pod polem **extrahovat do** .</span><span class="sxs-lookup"><span data-stu-id="6bb0e-158">Uncheck the checkbox below the **Extract to** field.</span></span>
+* <span data-ttu-id="6bb0e-159">Vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-159">Select **OK**.</span></span>
 
 ![Instalace .NET Spark](https://dotnet.microsoft.com/static/images/dotnet-for-spark-extract-with-7-zip.png?v=jwCyum9mL0mGIi4V5zC7yuvLfcj1_nL-QFFD8TClhZk)
 
-### <a name="6-install-winutils"></a><span data-ttu-id="a4c06-164">6. instalace WinUtils</span><span class="sxs-lookup"><span data-stu-id="a4c06-164">6. Install WinUtils</span></span>
+### <a name="6-install-winutils-windows-only"></a><span data-ttu-id="6bb0e-161">6. instalace WinUtils (jenom Windows)</span><span class="sxs-lookup"><span data-stu-id="6bb0e-161">6. Install WinUtils (Windows only)</span></span>
 
-<span data-ttu-id="a4c06-165">Rozhraní .NET pro Apache Spark vyžaduje, aby se WinUtils nainstalovaly společně s Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="a4c06-165">.NET for Apache Spark requires WinUtils to be installed alongside Apache Spark.</span></span> <span data-ttu-id="a4c06-166">[Stáhněte si winutils. exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe).</span><span class="sxs-lookup"><span data-stu-id="a4c06-166">[Download winutils.exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe).</span></span> <span data-ttu-id="a4c06-167">Pak zkopírujte WinUtils do **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.</span><span class="sxs-lookup"><span data-stu-id="a4c06-167">Then, copy WinUtils into **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.</span></span>
+<span data-ttu-id="6bb0e-162">Rozhraní .NET pro Apache Spark vyžaduje, aby se WinUtils nainstalovaly společně s Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-162">.NET for Apache Spark requires WinUtils to be installed alongside Apache Spark.</span></span> <span data-ttu-id="6bb0e-163">[Stáhněte si winutils. exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-163">[Download winutils.exe](https://github.com/steveloughran/winutils/blob/master/hadoop-2.7.1/bin/winutils.exe).</span></span> <span data-ttu-id="6bb0e-164">Pak zkopírujte WinUtils do **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-164">Then, copy WinUtils into **C:\bin\spark-2.4.1-bin-hadoop2.7\bin**.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a4c06-168">Pokud používáte jinou verzi systému Hadoop, která je Poznáma na konci názvu instalační složky Sparku, [Vyberte verzi WinUtils](https://github.com/steveloughran/winutils) , která je kompatibilní s vaší verzí Hadoop.</span><span class="sxs-lookup"><span data-stu-id="a4c06-168">If you are using a different version of Hadoop, which is annotated at the end of your Spark install folder name, [select the version of WinUtils](https://github.com/steveloughran/winutils) that's compatible with your version of Hadoop.</span></span>
+> <span data-ttu-id="6bb0e-165">Pokud používáte jinou verzi systému Hadoop, která je Poznáma na konci názvu instalační složky Sparku, [Vyberte verzi WinUtils](https://github.com/steveloughran/winutils) , která je kompatibilní s vaší verzí Hadoop.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-165">If you are using a different version of Hadoop, which is annotated at the end of your Spark install folder name, [select the version of WinUtils](https://github.com/steveloughran/winutils) that's compatible with your version of Hadoop.</span></span>
 
-### <a name="7-set-dotnet_worker_dir-and-check-dependencies"></a><span data-ttu-id="a4c06-169">7. Nastavte DOTNET_WORKER_DIR a ověřte závislosti.</span><span class="sxs-lookup"><span data-stu-id="a4c06-169">7. Set DOTNET_WORKER_DIR and check dependencies</span></span>
+### <a name="7-set-dotnet_worker_dir-and-check-dependencies"></a><span data-ttu-id="6bb0e-166">7. Nastavte DOTNET_WORKER_DIR a ověřte závislosti.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-166">7. Set DOTNET_WORKER_DIR and check dependencies</span></span>
 
-<span data-ttu-id="a4c06-170">Spuštěním následujícího příkazu nastavte proměnnou prostředí `DOTNET_WORKER_DIR`, kterou aplikace .NET používá k vyhledání rozhraní .NET pro Apache Spark:</span><span class="sxs-lookup"><span data-stu-id="a4c06-170">Run the following command to set the `DOTNET_WORKER_DIR` Environment Variable, which is used by .NET apps to locate .NET for Apache Spark:</span></span>
+<span data-ttu-id="6bb0e-167">Spusťte jeden z následujících příkazů, abyste nastavili proměnnou prostředí `DOTNET_WORKER_DIR`, kterou aplikace .NET používá k vyhledání rozhraní .NET pro Apache Spark.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-167">Run one of the following commands to set the `DOTNET_WORKER_DIR` Environment Variable, which is used by .NET apps to locate .NET for Apache Spark.</span></span>
 
-`setx DOTNET_WORKER_DIR "C:\bin\Microsoft.Spark.Worker-0.6.0"`
+<span data-ttu-id="6bb0e-168">V **systému Windows**vytvořte [novou proměnnou prostředí](https://www.java.com/en/download/help/path.xml) `DOTNET_WORKER_DIR` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali Microsoft. spark. worker (například `C:\bin\Microsoft.Spark.Worker\`).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-168">On **Windows**, create a [new environment variable](https://www.java.com/en/download/help/path.xml) `DOTNET_WORKER_DIR` and set it to the directory where you downloaded and extracted the Microsoft.Spark.Worker (for example, `C:\bin\Microsoft.Spark.Worker\`).</span></span>
 
-<span data-ttu-id="a4c06-171">Nakonec před přechodem na další oddíl dvakrát ověřte, že je možné spustit `dotnet`, `java`, `mvn``spark-shell` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="a4c06-171">Finally, double-check that you can run `dotnet`, `java`, `mvn`, `spark-shell` from your command line before you move to the next section.</span></span>
+<span data-ttu-id="6bb0e-169">V **MacOS**vytvořte novou proměnnou prostředí pomocí `export DOTNET_WORKER_DIR <your_path>` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali Microsoft. spark. Worker (například *~/bin/Microsoft.spark.Worker/* ).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-169">On **MacOS**, create a new environment variable using `export DOTNET_WORKER_DIR <your_path>` and set it to the directory where you downloaded and extracted the Microsoft.Spark.Worker (for example, *~/bin/Microsoft.Spark.Worker/*).</span></span> 
 
-## <a name="write-a-net-for-apache-spark-app"></a><span data-ttu-id="a4c06-172">Zápis rozhraní .NET pro aplikaci Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-172">Write a .NET for Apache Spark app</span></span>
+<span data-ttu-id="6bb0e-170">V **Ubuntu**vytvořte [novou proměnnou prostředí](https://help.ubuntu.com/community/EnvironmentVariables) `DOTNET_WORKER_DIR` a nastavte ji do adresáře, do kterého jste stáhli a extrahovali Microsoft. spark. Worker (například *~/bin/Microsoft.spark.Worker*).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-170">On **Ubuntu**, create a [new environment variable](https://help.ubuntu.com/community/EnvironmentVariables) `DOTNET_WORKER_DIR` and set it to the directory where you downloaded and extracted the Microsoft.Spark.Worker (for example, *~/bin/Microsoft.Spark.Worker*).</span></span>
 
-### <a name="1-create-a-console-app"></a><span data-ttu-id="a4c06-173">1. vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="a4c06-173">1. Create a console app</span></span>
+<span data-ttu-id="6bb0e-171">Nakonec před přechodem na další oddíl dvakrát ověřte, že je možné spustit `dotnet`, `java`, `mvn``spark-shell` z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-171">Finally, double-check that you can run `dotnet`, `java`, `mvn`, `spark-shell` from your command line before you move to the next section.</span></span>
 
-<span data-ttu-id="a4c06-174">Na příkazovém řádku spusťte následující příkazy k vytvoření nové konzolové aplikace:</span><span class="sxs-lookup"><span data-stu-id="a4c06-174">In your command prompt, run the following commands to create a new console application:</span></span>
+## <a name="write-a-net-for-apache-spark-app"></a><span data-ttu-id="6bb0e-172">Zápis rozhraní .NET pro aplikaci Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-172">Write a .NET for Apache Spark app</span></span>
 
-```console
+### <a name="1-create-a-console-app"></a><span data-ttu-id="6bb0e-173">1. vytvoření konzolové aplikace</span><span class="sxs-lookup"><span data-stu-id="6bb0e-173">1. Create a console app</span></span>
+
+<span data-ttu-id="6bb0e-174">V příkazovém řádku nebo terminálu spusťte následující příkazy k vytvoření nové konzolové aplikace:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-174">In your command prompt or terminal, run the following commands to create a new console application:</span></span>
+
+```dotnetcli
 dotnet new console -o mySparkApp
 cd mySparkApp
 ```
 
-<span data-ttu-id="a4c06-175">Příkaz `dotnet` vytvoří pro vás `new`ou aplikaci typu `console`.</span><span class="sxs-lookup"><span data-stu-id="a4c06-175">The `dotnet` command creates a `new` application of type `console` for you.</span></span> <span data-ttu-id="a4c06-176">Parametr `-o` vytvoří adresář s názvem *mySparkApp* , kde je vaše aplikace uložená, a naplní ji požadovanými soubory.</span><span class="sxs-lookup"><span data-stu-id="a4c06-176">The `-o` parameter creates a directory named *mySparkApp* where your app is stored and populates it with the required files.</span></span> <span data-ttu-id="a4c06-177">Příkaz `cd mySparkApp` změní adresář na adresář aplikace, který jste právě vytvořili.</span><span class="sxs-lookup"><span data-stu-id="a4c06-177">The `cd mySparkApp` command changes the directory to the app directory you just created.</span></span>
+<span data-ttu-id="6bb0e-175">Příkaz `dotnet` vytvoří pro vás `new`ou aplikaci typu `console`.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-175">The `dotnet` command creates a `new` application of type `console` for you.</span></span> <span data-ttu-id="6bb0e-176">Parametr `-o` vytvoří adresář s názvem *mySparkApp* , kde je vaše aplikace uložená, a naplní ji požadovanými soubory.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-176">The `-o` parameter creates a directory named *mySparkApp* where your app is stored and populates it with the required files.</span></span> <span data-ttu-id="6bb0e-177">Příkaz `cd mySparkApp` změní adresář na adresář aplikace, který jste právě vytvořili.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-177">The `cd mySparkApp` command changes the directory to the app directory you just created.</span></span>
 
-### <a name="2-install-nuget-package"></a><span data-ttu-id="a4c06-178">2. instalace balíčku NuGet</span><span class="sxs-lookup"><span data-stu-id="a4c06-178">2. Install NuGet package</span></span>
+### <a name="2-install-nuget-package"></a><span data-ttu-id="6bb0e-178">2. instalace balíčku NuGet</span><span class="sxs-lookup"><span data-stu-id="6bb0e-178">2. Install NuGet package</span></span>
 
-<span data-ttu-id="a4c06-179">Pokud chcete použít .NET pro Apache Spark v aplikaci, nainstalujte balíček Microsoft. spark.</span><span class="sxs-lookup"><span data-stu-id="a4c06-179">To use .NET for Apache Spark in an app, install the Microsoft.Spark package.</span></span> <span data-ttu-id="a4c06-180">Na příkazovém řádku spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="a4c06-180">In your command prompt, run the following command:</span></span>
+<span data-ttu-id="6bb0e-179">Pokud chcete použít .NET pro Apache Spark v aplikaci, nainstalujte balíček Microsoft. spark.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-179">To use .NET for Apache Spark in an app, install the Microsoft.Spark package.</span></span> <span data-ttu-id="6bb0e-180">V příkazovém řádku nebo terminálu spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-180">In your command prompt or terminal, run the following command:</span></span>
 
-`dotnet add package Microsoft.Spark --version 0.6.0`
+`dotnet add package Microsoft.Spark --version 0.8.0`
 
-### <a name="3-code-your-app"></a><span data-ttu-id="a4c06-181">3. kódování aplikace</span><span class="sxs-lookup"><span data-stu-id="a4c06-181">3. Code your app</span></span>
+### <a name="3-code-your-app"></a><span data-ttu-id="6bb0e-181">3. kódování aplikace</span><span class="sxs-lookup"><span data-stu-id="6bb0e-181">3. Code your app</span></span>
 
-<span data-ttu-id="a4c06-182">Otevřete *program.cs* v Visual Studio Code nebo libovolný textový editor a nahraďte celý kód následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="a4c06-182">Open *Program.cs* in Visual Studio Code, or any text editor, and replace all of the code with the following:</span></span>
+<span data-ttu-id="6bb0e-182">Otevřete *program.cs* v Visual Studio Code nebo libovolný textový editor a nahraďte celý kód následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-182">Open *Program.cs* in Visual Studio Code, or any text editor, and replace all of the code with the following:</span></span>
 
 ```csharp
 using Microsoft.Spark.Sql;
@@ -154,7 +160,7 @@ namespace MySparkApp
         static void Main(string[] args)
         {
             // Create a Spark session.
-            var spark = SparkSession
+            SparkSession spark = SparkSession
                 .Builder()
                 .AppName("word_count_sample")
                 .GetOrCreate();
@@ -163,7 +169,7 @@ namespace MySparkApp
             DataFrame dataFrame = spark.Read().Text("input.txt");
 
             // Count words.
-            var words = dataFrame
+            DataFrame words = dataFrame
                 .Select(Functions.Split(Functions.Col("value"), " ").Alias("words"))
                 .Select(Functions.Explode(Functions.Col("words"))
                 .Alias("word"))
@@ -181,9 +187,15 @@ namespace MySparkApp
 }
 ```
 
-### <a name="4-add-data-file"></a><span data-ttu-id="a4c06-183">4. Přidejte datový soubor.</span><span class="sxs-lookup"><span data-stu-id="a4c06-183">4. Add data file</span></span>
+### <a name="4-create-and-add-a-data-file"></a><span data-ttu-id="6bb0e-183">4. vytvoření a přidání datového souboru</span><span class="sxs-lookup"><span data-stu-id="6bb0e-183">4. Create and add a data file</span></span>
 
-<span data-ttu-id="a4c06-184">Vaše aplikace zpracovává soubor obsahující řádky textu.</span><span class="sxs-lookup"><span data-stu-id="a4c06-184">Your app processes a file containing lines of text.</span></span> <span data-ttu-id="a4c06-185">Vytvořte ve svém adresáři *mySparkApp* soubor *input. txt* s následujícím textem:</span><span class="sxs-lookup"><span data-stu-id="a4c06-185">Create an *input.txt* file in your *mySparkApp* directory, containing the following text:</span></span>
+<span data-ttu-id="6bb0e-184">Otevřete příkazový řádek nebo terminál a přejděte do složky aplikace.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-184">Open your command prompt or terminal and navigate into your app folder.</span></span>
+
+```bash
+cd <your-app-output-directory>
+```
+
+<span data-ttu-id="6bb0e-185">Vaše aplikace zpracovává soubor obsahující řádky textu.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-185">Your app processes a file containing lines of text.</span></span> <span data-ttu-id="6bb0e-186">Vytvořte ve svém adresáři *mySparkApp* soubor *input. txt* s následujícím textem:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-186">Create an *input.txt* file in your *mySparkApp* directory, containing the following text:</span></span>
 
 ```text
 Hello World
@@ -191,35 +203,42 @@ This .NET app uses .NET for Apache Spark
 This .NET app counts words with Apache Spark
 ```
 
-## <a name="run-your-net-for-apache-spark-app"></a><span data-ttu-id="a4c06-186">Spuštění aplikace .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-186">Run your .NET for Apache Spark app</span></span>
+## <a name="run-your-net-for-apache-spark-app"></a><span data-ttu-id="6bb0e-187">Spuštění aplikace .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-187">Run your .NET for Apache Spark app</span></span>
 
-1. <span data-ttu-id="a4c06-187">Spuštěním následujícího příkazu sestavte aplikaci:</span><span class="sxs-lookup"><span data-stu-id="a4c06-187">Run the following command to build your application:</span></span>
+1. <span data-ttu-id="6bb0e-188">Spuštěním následujícího příkazu sestavte aplikaci:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-188">Run the following command to build your application:</span></span>
 
    ```dotnetcli
    dotnet build
    ```
 
-2. <span data-ttu-id="a4c06-188">Spuštěním následujícího příkazu odešlete aplikaci, která se má spustit na Apache Spark:</span><span class="sxs-lookup"><span data-stu-id="a4c06-188">Run the following command to submit your application to run on Apache Spark:</span></span>
+2. <span data-ttu-id="6bb0e-189">Spuštěním následujícího příkazu odešlete aplikaci, která se má spustit na Apache Spark:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-189">Run the following command to submit your application to run on Apache Spark:</span></span>
 
-   ```powershell
-   %SPARK_HOME%\bin\spark-submit --class org.apache.spark.deploy.dotnet.DotnetRunner --master local bin\Debug\netcoreapp3.0\microsoft-spark-2.4.x-0.6.0.jar dotnet bin\Debug\netcoreapp3.0\mySparkApp.dll
+   ```console
+   spark-submit \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
+   --master local \
+   microsoft-spark-2.4.x-<version>.jar \
+   dotnet HelloSpark.dll
    ```
 
-3. <span data-ttu-id="a4c06-189">Po spuštění aplikace se do konzoly zapíše data počtu slov ve *vstupním souboru. txt* .</span><span class="sxs-lookup"><span data-stu-id="a4c06-189">When your app runs, the word count data of the *input.txt* file is written to the console.</span></span>
+   > [!NOTE]
+   > <span data-ttu-id="6bb0e-190">Tento příkaz předpokládá, že jste stáhli Apache Spark a přidali ho do proměnné prostředí PATH, aby bylo možné používat `spark-submit`.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-190">This command assumes you have downloaded Apache Spark and added it to your PATH environment variable to be able to use `spark-submit`.</span></span> <span data-ttu-id="6bb0e-191">V opačném případě byste měli použít úplnou cestu (například *C:\bin\apache-spark\bin\spark-Submit* nebo *~/Spark/bin/Spark-Submit*).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-191">Otherwise, you'd have to use the full path (for example, *C:\bin\apache-spark\bin\spark-submit* or *~/spark/bin/spark-submit*).</span></span>
 
-<span data-ttu-id="a4c06-190">Blahopřejeme!</span><span class="sxs-lookup"><span data-stu-id="a4c06-190">Congratulations!</span></span> <span data-ttu-id="a4c06-191">Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.</span><span class="sxs-lookup"><span data-stu-id="a4c06-191">You successfully authored and ran a .NET for Apache Spark app.</span></span>
+3. <span data-ttu-id="6bb0e-192">Po spuštění aplikace se do konzoly zapíše data počtu slov ve *vstupním souboru. txt* .</span><span class="sxs-lookup"><span data-stu-id="6bb0e-192">When your app runs, the word count data of the *input.txt* file is written to the console.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="a4c06-192">Další kroky</span><span class="sxs-lookup"><span data-stu-id="a4c06-192">Next steps</span></span>
+<span data-ttu-id="6bb0e-193">Blahopřejeme!</span><span class="sxs-lookup"><span data-stu-id="6bb0e-193">Congratulations!</span></span> <span data-ttu-id="6bb0e-194">Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache Spark aplikaci.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-194">You successfully authored and ran a .NET for Apache Spark app.</span></span>
 
-<span data-ttu-id="a4c06-193">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="a4c06-193">In this tutorial, you learned how to:</span></span>
+## <a name="next-steps"></a><span data-ttu-id="6bb0e-195">Další kroky</span><span class="sxs-lookup"><span data-stu-id="6bb0e-195">Next steps</span></span>
+
+<span data-ttu-id="6bb0e-196">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="6bb0e-196">In this tutorial, you learned how to:</span></span>
 > [!div class="checklist"]
 >
-> * <span data-ttu-id="a4c06-194">Příprava prostředí Windows pro rozhraní .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-194">Prepare your Windows environment for .NET for Apache Spark</span></span>
-> * <span data-ttu-id="a4c06-195">Zápis prvního rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="a4c06-195">Write your first .NET for Apache Spark application</span></span>
-> * <span data-ttu-id="a4c06-196">Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="a4c06-196">Build and run your simple .NET for Apache Spark application</span></span>
+> * <span data-ttu-id="6bb0e-197">Příprava prostředí Windows pro rozhraní .NET pro Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-197">Prepare your Windows environment for .NET for Apache Spark</span></span>
+> * <span data-ttu-id="6bb0e-198">Zápis prvního rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="6bb0e-198">Write your first .NET for Apache Spark application</span></span>
+> * <span data-ttu-id="6bb0e-199">Sestavování a spouštění jednoduchého rozhraní .NET pro Apache Spark aplikaci</span><span class="sxs-lookup"><span data-stu-id="6bb0e-199">Build and run your simple .NET for Apache Spark application</span></span>
 
-<span data-ttu-id="a4c06-197">Pokud se chcete podívat na video s vysvětlením výše uvedených kroků, Zarezervujte si [řadu videí .NET pro Apache Spark 101](https://channel9.msdn.com/Series/NET-for-Apache-Spark-101/Run-Your-First-NET-for-Apache-Spark-App).</span><span class="sxs-lookup"><span data-stu-id="a4c06-197">To see a video explaining the steps above, checkout the [.NET for Apache Spark 101 video series](https://channel9.msdn.com/Series/NET-for-Apache-Spark-101/Run-Your-First-NET-for-Apache-Spark-App).</span></span>
+<span data-ttu-id="6bb0e-200">Pokud se chcete podívat na video s vysvětlením výše uvedených kroků, Zarezervujte si [řadu videí .NET pro Apache Spark 101](https://channel9.msdn.com/Series/NET-for-Apache-Spark-101/Run-Your-First-NET-for-Apache-Spark-App).</span><span class="sxs-lookup"><span data-stu-id="6bb0e-200">To see a video explaining the steps above, checkout the [.NET for Apache Spark 101 video series](https://channel9.msdn.com/Series/NET-for-Apache-Spark-101/Run-Your-First-NET-for-Apache-Spark-App).</span></span>
 
-<span data-ttu-id="a4c06-198">Další informace najdete na stránce prostředky.</span><span class="sxs-lookup"><span data-stu-id="a4c06-198">Check out the resources page to learn more.</span></span>
+<span data-ttu-id="6bb0e-201">Další informace najdete na stránce prostředky.</span><span class="sxs-lookup"><span data-stu-id="6bb0e-201">Check out the resources page to learn more.</span></span>
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="a4c06-199">.NET pro prostředky Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a4c06-199">.NET for Apache Spark Resources</span></span>](../resources/index.md)
+> [<span data-ttu-id="6bb0e-202">.NET pro prostředky Apache Spark</span><span class="sxs-lookup"><span data-stu-id="6bb0e-202">.NET for Apache Spark Resources</span></span>](../resources/index.md)
