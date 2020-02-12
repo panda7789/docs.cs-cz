@@ -1,13 +1,13 @@
 ---
 title: Prohlídka jazyka F#
 description: Prohlédněte si některé klíčové funkce F# programovacího jazyka v této prohlídce s ukázkami kódu.
-ms.date: 11/06/2018
-ms.openlocfilehash: cfea2827dcec65f9e3606e8528179029e1f2db84
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 02/09/2020
+ms.openlocfilehash: ac2eef40e2dbc494e41a9760f0a70edb0f7ce399
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423809"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124569"
 ---
 # <a name="tour-of-f"></a>Prohlídka F\#
 
@@ -51,7 +51,7 @@ A jak vypadá základní manipulace s [řetězci](./language-reference/strings.m
 
 [!code-fsharp[Tuples](~/samples/snippets/fsharp/tour.fs#L186-L203)]
 
-Od F# 4,1 můžete také vytvořit `struct` řazené kolekce členů.  Tyto akce také spolupracují s C# 7/Visual Basic 15 řazenými kolekcemi členů, které jsou také `struct` řazené kolekce členů:
+Můžete také vytvořit `struct` řazené kolekce členů.  Tyto akce také spolupracují s C# 7/Visual Basic 15 řazenými kolekcemi členů, které jsou také `struct` řazené kolekce členů:
 
 [!code-fsharp[Tuples](~/samples/snippets/fsharp/tour.fs#L205-L218)]
 
@@ -100,7 +100,7 @@ Typy záznamů a sjednocení jsou dva základní datové typy, F# které se pou�
 
 [!code-fsharp[Records](~/samples/snippets/fsharp/tour.fs#L507-L559)]
 
-Od F# 4,1 můžete také reprezentovat záznamy jako `struct`s.  To se provádí s atributem `[<Struct>]`:
+Záznamy můžete také vyjádřit jako struktury. To se provádí s atributem `[<Struct>]`:
 
 [!code-fsharp[Records](~/samples/snippets/fsharp/tour.fs#L561-L568)]
 
@@ -138,6 +138,10 @@ Nepodaří-li se postupovat podle výše uvedeného výsledku, dojde k chybě ko
 [!code-fsharp[PatternMatching](~/samples/snippets/fsharp/tour.fs#L705-L742)]
 
 Něco, co jste si všimli, je použití `_`ho vzoru.  Tento vzor je známý jako [zástupný znak](./language-reference/pattern-matching.md#wildcard-pattern), což je způsob, jak se vyjádřit, co něco je.  I když je to pohodlnější, můžete náhodně obejít porovnávání vyčerpávajících vzorů a už nebudete využívat výhody při kompilaci, pokud nebudete s používáním `_`opatrní.  Je nejvhodnější použít, pokud nezáleží na určitých částech desloženého typu při porovnávání vzorů, nebo na konci klauzule, pokud jste ve výrazu porovnávání se vzorem využívali všechny smysluplné případy.
+
+V následujícím příkladu je použit `_` případ, když operace analýzy dojde k chybě.
+
+[!code-fsharp[PatternMatching](~/samples/snippets/fsharp/tour.fs#L744-L762)]
 
 [Aktivní vzory](./language-reference/active-patterns.md) představují další efektivní konstrukci pro použití s porovnáváním vzorů.  Umožňují rozdělit vstupní data do vlastních formulářů a jejich rozložení na webu volání porovnávání vzorů.  Mohou být také parametrizované, takže umožňují definovat oddíl jako funkci.  Rozšiřování předchozího příkladu na podporu aktivních vzorů vypadá nějak takto:
 

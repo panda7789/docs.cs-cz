@@ -7,20 +7,20 @@ helpviewer_keywords:
 - browser hosting support [WPF]
 - WPF browser hosting support APIs [WPF]
 ms.assetid: 82c133a8-d760-45fb-a2b9-3a997537f1d4
-ms.openlocfilehash: 7e285b916b076fdf0fc0d6477fba47d946b95726
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 68981f30918b5fff346daa2fce94bbf4601ea2e9
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744217"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124504"
 ---
 # <a name="native-wpf-browser-hosting-support-apis"></a>Nativní Prohlížeč WPF – rozhraní API pro podporu hostování
 Hostování aplikací WPF ve webových prohlížečích usnadňuje aktivní dokumentový server (označovaný také jako DocObject) zaregistrovaný mimo hostitele WPF. Internet Explorer je možné přímo aktivovat a integrovat s aktivním dokumentem. Pro hostování aplikací XBAP a volných dokumentů XAML v prohlížečích aplikace WPF poskytuje WPF modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí jako server WPF (Active Document Server) v aplikaci Internet Explorer. Nejjednodušší způsob, jak hostovat aplikace XBAP a dokumenty XAML v jiných prohlížečích a samostatných aplikacích, je však prostřednictvím ovládacího prvku webového prohlížeče Internet Explorer. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru pro aktivní dokument, ale umožňuje jeho vlastnímu hostiteli přizpůsobení a rozšiřování tohoto prostředí a přímé komunikace s aktuálním objektem aktivního dokumentu.  
   
- Server WPF Active Document Server implementuje několik běžných hostitelských rozhraní, včetně [IOleObject](https://go.microsoft.com/fwlink/?LinkId=162049), [IOleDocument](https://go.microsoft.com/fwlink/?LinkId=162050), [IOleInPlaceActiveObject](https://go.microsoft.com/fwlink/?LinkId=162051), [IPersistMoniker](https://go.microsoft.com/fwlink/?LinkId=162045), [IOleCommandTarget –](https://go.microsoft.com/fwlink/?LinkId=162047). V případě hostování v ovládacím prvku webového prohlížeče mohou být tato rozhraní dotazy z objektu vráceného vlastností [IWebBrowser2::D ocument](https://go.microsoft.com/fwlink/?LinkId=162048) .  
+ Server WPF Active Document Server implementuje několik běžných hostitelských rozhraní, včetně [IOleObject](/windows/win32/api/oleidl/nn-oleidl-ioleobject), [IOleDocument](/windows/win32/api/docobj/nn-docobj-ioledocument), [IOleInPlaceActiveObject](/windows/win32/api/oleidl/nn-oleidl-ioleinplaceactiveobject), [IPersistMoniker](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775042(v=vs.85)), [IOleCommandTarget –](/windows/win32/api/docobj/nn-docobj-iolecommandtarget). V případě hostování v ovládacím prvku webového prohlížeče mohou být tato rozhraní dotazy z objektu vráceného vlastností [IWebBrowser2::D ocument](https://docs.microsoft.com/previous-versions/aa752116(v=vs.85)) .  
   
 ## <a name="iolecommandtarget"></a>IOleCommandTarget –  
- Implementace [IOleCommandTarget –](https://go.microsoft.com/fwlink/?LinkId=162047) serveru WPF pro aktivní dokument podporuje mnoho příkazů standardní příkazy OLE souvisejících s navigací a prohlížečem (s identifikátorem GUID skupiny příkazů s hodnotou null). Kromě toho rozpoznává skupinu vlastních příkazů s názvem CGID_PresentationHost. V současné době je v rámci této skupiny definován pouze jeden příkaz.  
+ Implementace [IOleCommandTarget –](/windows/win32/api/docobj/nn-docobj-iolecommandtarget) serveru WPF pro aktivní dokument podporuje mnoho příkazů standardní příkazy OLE souvisejících s navigací a prohlížečem (s identifikátorem GUID skupiny příkazů s hodnotou null). Kromě toho rozpoznává skupinu vlastních příkazů s názvem CGID_PresentationHost. V současné době je v rámci této skupiny definován pouze jeden příkaz.  
   
 ```cpp  
 DEFINE_GUID(CGID_PresentationHost, 0xd0288c55, 0xd6, 0x4f5e, 0xa8, 0x51, 0x79, 0xde, 0xc5, 0x1b, 0x10, 0xec);  

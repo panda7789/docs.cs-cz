@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: bec7e14ceed867e89c3117efbc245938356b9d78
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 825b689dea145d18035344cd902ea1b8a50e82c3
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742279"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124205"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>Aplikace prohlížeče XAML (XBAP) spojují funkce webových aplikací a aplikací s bohatou funkční verzí. Podobně jako webové aplikace mohou být aplikace XBAP nasazeny na webový server a spouštěny z aplikace Internet Explorer nebo Firefox. Podobně jako aplikace s bohatou platností můžou aplikace XBAP využívat možnosti WPF. Vývoj aplikací XBAP je také podobný vývoji s bohatou podporou klientů. Toto téma poskytuje jednoduchý, vysoce základní Úvod k vývoji XBAP a popisuje, kde se vývoj v XBAP liší od standardního vysoce výkonného vývoje klienta.
@@ -91,7 +91,7 @@ ms.locfileid: "76742279"
 
 <a name="communicating_with_the_host_web_page"></a>
 ## <a name="communicating-with-the-host-web-page"></a>Komunikace s hostitelskou webovou stránkou
- Když je aplikace hostována v rámci bloku HTML, můžete komunikovat s webovou stránkou, která obsahuje aplikaci XBAP. To provedete načtením vlastnosti <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> <xref:System.Windows.Interop.BrowserInteropHelper>. Tato vlastnost vrátí objekt skriptu, který představuje okno HTML. Pak můžete přistupovat k vlastnostem, metodám a událostem [objektu window](https://go.microsoft.com/fwlink/?LinkId=160274) pomocí syntaxe regulárních teček. Můžete také získat přístup k metodám skriptu a globálním proměnným. Následující příklad ukazuje, jak načíst objekt skriptu a Zavřít prohlížeč.
+ Když je aplikace hostována v rámci bloku HTML, můžete komunikovat s webovou stránkou, která obsahuje aplikaci XBAP. To provedete načtením vlastnosti <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> <xref:System.Windows.Interop.BrowserInteropHelper>. Tato vlastnost vrátí objekt skriptu, který představuje okno HTML. Pak můžete přistupovat k vlastnostem, metodám a událostem [objektu window](https://developer.mozilla.org/en-US/docs/Web/API/Window) pomocí syntaxe regulárních teček. Můžete také získat přístup k metodám skriptu a globálním proměnným. Následující příklad ukazuje, jak načíst objekt skriptu a Zavřít prohlížeč.
 
  [!code-csharp[XbapBrowserInterop#10](~/samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml.cs#10)]
  [!code-vb[XbapBrowserInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/xbapbrowserinterop/vb/page1.xaml.vb#10)]
@@ -175,7 +175,7 @@ ms.locfileid: "76742279"
 > [!NOTE]
 > Chování popsané v předchozí tabulce je pro plně důvěryhodná aplikace XBAP, které nedodržují model důvěryhodného nasazení ClickOnce.
 
- Doporučuje se použít model důvěryhodného nasazení ClickOnce pro nasazení plně důvěryhodného prostředí XBAP. Tento model umožňuje, aby se XBAP automaticky udělila Plná důvěra bez ohledu na zónu zabezpečení, takže se uživateli nezobrazí výzva. V rámci tohoto modelu musíte aplikaci podepsat pomocí certifikátu od důvěryhodného vydavatele. Další informace naleznete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod do podepisování kódu](https://go.microsoft.com/fwlink/?LinkId=166327).
+ Doporučuje se použít model důvěryhodného nasazení ClickOnce pro nasazení plně důvěryhodného prostředí XBAP. Tento model umožňuje, aby se XBAP automaticky udělila Plná důvěra bez ohledu na zónu zabezpečení, takže se uživateli nezobrazí výzva. V rámci tohoto modelu musíte aplikaci podepsat pomocí certifikátu od důvěryhodného vydavatele. Další informace naleznete v tématu [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview) a [Úvod do podepisování kódu](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 <a name="xbap_start_time_performance_considerations"></a>
 ## <a name="xbap-start-time-performance-considerations"></a>Požadavky na výkon při zahájení XBAP

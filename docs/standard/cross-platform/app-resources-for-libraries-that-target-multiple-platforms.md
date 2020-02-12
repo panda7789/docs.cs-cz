@@ -12,14 +12,12 @@ helpviewer_keywords:
 - resources, for multiple platforms
 - targeting multiple platforms, resources for
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b32c2e354ea48e25ddb0aa561eb576cbfd89e3fb
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 3bf475117a85c2fced260dcc9460d55cd7007277
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204744"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123659"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Typ projektu .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) můžete použít k zajištění toho, aby k prostředkům v knihovnách tříd bylo možné přicházet z více platforem. Tento typ projektu je k dispozici v sadě Visual Studio 2012 a cílí na přenosnou podmnožinu knihovny tříd .NET Framework. Použití přenositelné knihovny tříd zajišťuje, aby k vaší knihovně bylo možné přistupovat z aplikací klasické pracovní plochy, aplikací Silverlight, aplikací Windows Phone a aplikací pro Store ve Windows 8. x.
@@ -65,7 +63,7 @@ Typ projektu .NET Framework [přenosné knihovny tříd](../../../docs/standard/
 |ID.Length|12|
 |Název|Název|
 |NameLength|25|
-|Titul|Databáze zaměstnanců|
+|Název|Databáze zaměstnanců|
 
  Následující kód definuje třídu `UILibrary`, která používá Správce prostředků obálku s názvem `resources` vygenerovanou aplikací Visual Studio, když je **modifikátor přístupu** pro soubor změněn na **veřejné**. Třída UILibrary analyzuje data řetězce podle potřeby. . Všimněte si, že třída je v oboru názvů `MyCompany.Employees`.
 
@@ -92,7 +90,7 @@ Typ projektu .NET Framework [přenosné knihovny tříd](../../../docs/standard/
 |HiredLength|16|
 |ID|ID|
 |Název|Nom|
-|Titul|Base de données des employés|
+|Název|Base de données des employés|
 
  Následující kód ilustruje, jak lze ke třídě `UILibrary` a k jejím prostředkům přicházet z aplikace v režimu konzoly. Pro přidání do projektu konzolové aplikace vyžaduje odkaz na UILibrary. dll.
 
@@ -104,7 +102,7 @@ Typ projektu .NET Framework [přenosné knihovny tříd](../../../docs/standard/
  [!code-csharp[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetroloc/cs/blankpage.xaml.cs#1)]
  [!code-vb[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portablemetroloc/vb/blankpage.xaml.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Resources.ResourceManager>
 - [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)

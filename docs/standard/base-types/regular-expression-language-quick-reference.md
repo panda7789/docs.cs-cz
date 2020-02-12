@@ -14,12 +14,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: fb84e746e1dffedebfbe289c8e7599bc50097f07
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8acf0886215c2d31f949e38401c4705ac9e2aef5
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128079"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124309"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
 
@@ -58,18 +58,18 @@ Třída znaků odpovídá jakémukoli znaku z množiny znaků. Třídy znaků o
 
 |Třída znaků|Popis|Vzor|Shody|
 |---------------------|-----------------|-------------|-------------|
-|`[` *character_group* `]`|Odpovídá jakémukoli jednomu znaku ve skupině *character_group*. Ve výchozím nastavení shoda rozlišuje velká a malá písmena.|`[ae]`|`"a"` v `"gray"`<br /><br /> `"a"``"e"` v `"lane"`|
+|`[` *character_group* `]`|Odpovídá jakémukoli jednomu znaku v *character_group*. Ve výchozím nastavení shoda rozlišuje velká a malá písmena.|`[ae]`|`"a"` v `"gray"`<br /><br /> `"a"``"e"` v `"lane"`|
 |`[^` *character_group* `]`|Negace: odpovídá jakémukoli jednomu znaku, který není v *character_group*. Ve výchozím nastavení znaky v *character_group* rozlišují velká a malá písmena.|`[^aei]`|`"r"`, `"g"``"n"` v `"reign"`|
 |`[` *první* `-` *Poslední* `]`|Rozsah znaků: odpovídá jakémukoli jednomu znaku v rozsahu od *první* po *Poslední*.|`[A-Z]`|`"A"``"B"` v `"AB123"`|
 |`.`|Zástupný znak: Odpovídá jakémukoli jednomu znaku s výjimkou \n.<br /><br /> Aby odpovídala znaku tečky literálu (. nebo `\u002E`), je nutné předcházet řídicímu znaku (`\.`).|`a.e`|`"ave"` v `"nave"`<br /><br /> `"ate"` v `"water"`|
 |*název* `\p{` `}`|Odpovídá jakémukoli jednomu znaku v obecné kategorii Unicode nebo pojmenovanému bloku určenému *názvem*.|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|`"C"``"L"` v `"City Lights"`<br /><br /> `"Д"``"Ж"` v `"ДЖem"`|
 |*název* `\P{` `}`|Odpovídá jakémukoli jednomu znaku, který není v obecné kategorii Unicode nebo pojmenovaném bloku určeném *názvem*.|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|`"i"`, `"t"``"y"` v `"City"`<br /><br /> `"e"``"m"` v `"ДЖem"`|
-|`\w`|Odpovídá jakémukoli znaku slova.|`\w`|`"I"`, `"D"`, `"A"``"1"``"3"`|
+|`\w`|Odpovídá jakémukoli znaku slova.|`\w`|`"I"`, `"D"`, `"A"``"1"``"3"``"ID A1.3"`|
 |`\W`|Odpovídá jakémukoli mimoslovnímu znaku.|`\W`|`" "``"."` v `"ID A1.3"`|
 |`\s`|Odpovídá jakémukoli prázdnému znaku.|`\w\s`|`"D "` v `"ID A1.3"`|
 |`\S`|Odpovídá jakémukoli neprázdnému znaku.|`\s\S`|`" _"` v `"int __ctr"`|
 |`\d`|Odpovídá jakékoli desítkové číslici.|`\d`|`"4"` v `"4 = IV"`|
-|`\D`|Odpovídá jakémukoli znaku kromě desítkové číslice.|`\D`|`" "`, `"="`, `" "``"I"``"V"`|
+|`\D`|Odpovídá jakémukoli znaku kromě desítkové číslice.|`\D`|`" "`, `"="`, `" "``"I"``"V"``"4 = IV"`|
 
 ## <a name="anchors"></a>Kotvy
 
@@ -101,7 +101,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a obv
 |`(?!` dílčí *výraz* `)`|Kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou.|`\b(?!un)\w+\b`|`"sure"``"used"` v `"unsure sure unity used"`|
 |`(?<=` dílčí *výraz* `)`|Kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou.|`(?<=19)\d{2}\b`|`"99"`, `"50"``"05"` v `"1851 1999 1950 1905 2003"`|
 |`(?<!` dílčí *výraz* `)`|Kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou.|`(?<!19)\d{2}\b`|`"51"``"03"` v `"1851 1999 1950 1905 2003"`|
-|`(?>` dílčí *výraz* `)`|Dílčí výraz bez mechanismu navracení (neboli dílčí výraz "greedy").|`[13579](?>A+B+)`|`"1ABB"`, `"3ABB"`a `"5AB"` v `"1ABB 3ABBC 5AB 5AC"`|
+|`(?>` dílčí *výraz* `)`|Skupina atomie.|`[13579](?>A+B+)`|`"1ABB"`, `"3ABB"`a `"5AB"` v `"1ABB 3ABBC 5AB 5AC"`|
 
 ## <a name="quantifiers"></a>Kvantifikátory
 
@@ -109,18 +109,18 @@ Kvantifikátor určuje, kolik instancí předchozího prvku (kterým může být
 
 |Kvantifikátor|Popis|Vzor|Shody|
 |----------------|-----------------|-------------|-------------|
-|`*`|Porovná předchozí prvek nulakrát nebo vícekrát.|`\d*\.\d`|`".0"`, `"19.9"``"219.9"`|
+|`*`|Porovná předchozí prvek nulakrát nebo vícekrát.|`\d*\.\d`|`".0"`, `"19.9"`, `"219.9"`|
 |`+`|Porovná předchozí prvek jednou nebo vícekrát.|`"be+"`|`"bee"` v `"been"``"be"` v `"bent"`|
-|`?`|Porovná předchozí prvek nulakrát nebo jedenkrát.|`"rai?n"`|`"ran"``"rain"`|
+|`?`|Porovná předchozí prvek nulakrát nebo jedenkrát.|`"rai?n"`|`"ran"`, `"rain"`|
 |`{` *n* `}`|Porovná předchozí prvek přesně *n* krát.|`",\d{3}"`|`",043"` v `"1,043.6"`, `",876"`, `",543"`a `",210"` v `"9,876,543,210"`|
-|`{` *n* `,}`|Porovná předchozí prvek nejméně *n* krát.|`"\d{2,}"`|`"166"`, `"29"``"1930"`|
-|`{` *n* `,` *m* `}`|Porovná předchozí prvek nejméně *n* krát, ale ne více než *m* krát.|`"\d{3,5}"`|`"166"``"17668"`<br /><br /> `"19302"` v `"193024"`|
-|`*?`|Porovná předchozí prvek nulakrát nebo vícekrát, ale s co nejmenším možným počtem opakování.|`\d*?\.\d`|`".0"`, `"19.9"``"219.9"`|
+|`{` *n* `,}`|Porovná předchozí prvek nejméně *n* krát.|`"\d{2,}"`|`"166"`, `"29"`, `"1930"`|
+|`{` *n* `,` *m* `}`|Porovná předchozí prvek nejméně *n* krát, ale ne více než *m* krát.|`"\d{3,5}"`|`"166"`, `"17668"`<br /><br /> `"19302"` v `"193024"`|
+|`*?`|Porovná předchozí prvek nulakrát nebo vícekrát, ale s co nejmenším možným počtem opakování.|`\d*?\.\d`|`".0"`, `"19.9"`, `"219.9"`|
 |`+?`|Porovná předchozí prvek jednou nebo vícekrát, ale s co nejmenším možným počtem opakování.|`"be+?"`|`"be"` v `"been"``"be"` v `"bent"`|
-|`??`|Porovná předchozí prvek nulakrát nebo jedenkrát, ale s co nejmenším možným počtem opakování.|`"rai??n"`|`"ran"``"rain"`|
+|`??`|Porovná předchozí prvek nulakrát nebo jedenkrát, ale s co nejmenším možným počtem opakování.|`"rai??n"`|`"ran"`, `"rain"`|
 |`{` *n* `}?`|Porovná předchozí prvek přesně *n* krát.|`",\d{3}?"`|`",043"` v `"1,043.6"`, `",876"`, `",543"`a `",210"` v `"9,876,543,210"`|
-|`{` *n* `,}?`|Porovná předchozí prvek nejméně *n* krát, ale s co nejmenším možným počtem opakování.|`"\d{2,}?"`|`"166"`, `"29"``"1930"`|
-|`{` *n* `,` *m* `}?`|Porovná předchozí prvek mezi *n* a *m* krát, ale s co nejmenším možným počtem opakování.|`"\d{3,5}?"`|`"166"``"17668"`<br /><br /> `"193"``"024"` v `"193024"`|
+|`{` *n* `,}?`|Porovná předchozí prvek nejméně *n* krát, ale s co nejmenším možným počtem opakování.|`"\d{2,}?"`|`"166"`, `"29"`, `"1930"`|
+|`{` *n* `,` *m* `}?`|Porovná předchozí prvek mezi *n* a *m* krát, ale s co nejmenším možným počtem opakování.|`"\d{3,5}?"`|`"166"`, `"17668"`<br /><br /> `"193"``"024"` v `"193024"`|
 
 ## <a name="backreference-constructs"></a>Konstrukce zpětných odkazů
 
@@ -185,7 +185,7 @@ Různé konstrukce buď upraví vzor regulárního výrazu, nebo o tomto vzoru 
 |`(?#` *komentář* `)`|Vložený komentář. Komentář končí první pravou závorkou.|`\bA(?#Matches words starting with A)\w+\b`|
 |`#` [do konce řádku]|Komentář x-mode. Komentář začíná na neřídicím `#` a pokračuje na konci řádku.|`(?x)\bA\w+\b#Matches words starting with A`|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>

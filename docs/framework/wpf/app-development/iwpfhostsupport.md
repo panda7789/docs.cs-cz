@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - IWpfHostSupport interface [WPF]
 ms.assetid: cc5a0281-de81-4cc1-87e4-0e46b1a811e9
-ms.openlocfilehash: 4855fae2954e5650d8c9bbb81153ebe64249a867
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: e3edd7f7080562d03453898dba7a9326561803b5
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740194"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124192"
 ---
 # <a name="iwpfhostsupport"></a>IWpfHostSupport
 Aplikace, které hostují obsah [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] přes PresentationHost. exe, implementují toto rozhraní, aby poskytovaly bod integrace mezi hostitelem a PresentationHost. exe.  
   
 ## <a name="remarks"></a>Poznámky  
- Aplikace Win32, jako jsou například webové prohlížeče, mohou hostovat obsah WPF, včetně aplikací prohlížeče XAML (XBAP) a volně XAML. Pro hostování obsahu WPF aplikace Win32 vytvoří instanci [ovládacího prvku WebBrowser](https://go.microsoft.com/fwlink/?LinkId=97911). Aby bylo možné hostovat, WPF vytvoří instanci PresentationHost. exe, která poskytne hostovanému obsahu WPF na hostitele pro zobrazení v [ovládacím prvku WebBrowser](https://go.microsoft.com/fwlink/?LinkId=97911).  
+ Aplikace Win32, jako jsou například webové prohlížeče, mohou hostovat obsah WPF, včetně aplikací prohlížeče XAML (XBAP) a volně XAML. Pro hostování obsahu WPF aplikace Win32 vytvoří instanci [ovládacího prvku WebBrowser](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752040(v=vs.85)). Aby bylo možné hostovat, WPF vytvoří instanci PresentationHost. exe, která poskytne hostovanému obsahu WPF na hostitele pro zobrazení v [ovládacím prvku WebBrowser](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752040(v=vs.85)).  
   
  Integrace povolená nástrojem `IWpfHostSupport` umožňuje PresentationHost. exe:  
   

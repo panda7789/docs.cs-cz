@@ -9,14 +9,12 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 87e756445255f1bd2417a06dfa611eba23208575
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: f5312177b9f437d9b5474d38fca80db6fc45245b
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716744"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123672"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) k implementaci vzoru Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
@@ -32,25 +30,25 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
 ## <a name="classes-that-support-mvvm"></a>Třídy, které podporují MVVM
  Při cílení na .NET Framework 4,5, .NET pro Windows 8. x Store aplikace, Silverlight nebo Windows Phone 7,5 pro váš přenosný projekt knihovny tříd jsou k dispozici následující třídy pro implementaci MVVM vzoru:
 
-- <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType> – třída
+- Třída <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType>
 
-- <xref:System.Collections.ObjectModel.ReadOnlyObservableCollection%601?displayProperty=nameWithType> – třída
+- Třída <xref:System.Collections.ObjectModel.ReadOnlyObservableCollection%601?displayProperty=nameWithType>
 
-- <xref:System.Collections.Specialized.INotifyCollectionChanged?displayProperty=nameWithType> – třída
+- Třída <xref:System.Collections.Specialized.INotifyCollectionChanged?displayProperty=nameWithType>
 
-- <xref:System.Collections.Specialized.NotifyCollectionChangedAction?displayProperty=nameWithType> – třída
+- Třída <xref:System.Collections.Specialized.NotifyCollectionChangedAction?displayProperty=nameWithType>
 
-- <xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs?displayProperty=nameWithType> – třída
+- Třída <xref:System.Collections.Specialized.NotifyCollectionChangedEventArgs?displayProperty=nameWithType>
 
-- <xref:System.Collections.Specialized.NotifyCollectionChangedEventHandler?displayProperty=nameWithType> – třída
+- Třída <xref:System.Collections.Specialized.NotifyCollectionChangedEventHandler?displayProperty=nameWithType>
 
-- <xref:System.ComponentModel.DataErrorsChangedEventArgs?displayProperty=nameWithType> – třída
+- Třída <xref:System.ComponentModel.DataErrorsChangedEventArgs?displayProperty=nameWithType>
 
-- <xref:System.ComponentModel.INotifyDataErrorInfo?displayProperty=nameWithType> – třída
+- Třída <xref:System.ComponentModel.INotifyDataErrorInfo?displayProperty=nameWithType>
 
-- <xref:System.ComponentModel.INotifyPropertyChanged?displayProperty=nameWithType> – třída
+- Třída <xref:System.ComponentModel.INotifyPropertyChanged?displayProperty=nameWithType>
 
-- <xref:System.Windows.Input.ICommand?displayProperty=nameWithType> – třída
+- Třída <xref:System.Windows.Input.ICommand?displayProperty=nameWithType>
 
 - Všechny třídy v oboru názvů <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType>
 
@@ -86,11 +84,11 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### <a name="view"></a>Podívejte se na téma .  
+### <a name="view"></a>Zobrazení  
  Z aplikace .NET Framework 4,5, aplikace pro Store v systému Windows 8. x, aplikace založené na technologii Silverlight nebo aplikace Windows Phone 7,5 můžete odkazovat na sestavení, které obsahuje model a zobrazení projektů modelu.  Pak vytvoříte zobrazení, které komunikuje s modelem zobrazení. Následující příklad ukazuje zjednodušenou aplikaci Windows Presentation Foundation (WPF), která načítá a aktualizuje data z modelu zobrazení. Podobná zobrazení můžete vytvořit v aplikacích Silverlight, Windows Phone nebo Windows 8. x Store.  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přenosná knihovna tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)

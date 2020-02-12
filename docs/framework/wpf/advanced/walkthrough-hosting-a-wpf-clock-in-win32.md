@@ -7,24 +7,24 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 1fdc0c9ccf1464d7519a4c5935520de1206ca9bb
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0aecde96d182e12ab72b1a6cba129ab1d8a28391
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794160"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123776"
 ---
 # <a name="walkthrough-host-a-wpf-clock-in-win32"></a>Návod: hostování hodin WPF v systému Win32
 
 Chcete-li umístit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] do aplikací Win32, použijte <xref:System.Windows.Interop.HwndSource>, která poskytuje HWND, který obsahuje váš [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Nejdřív vytvoříte <xref:System.Windows.Interop.HwndSource>, takže parametry pro něj budou podobné funkci CreateWindow. Pak <xref:System.Windows.Interop.HwndSource> informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]m obsahu, který v něm potřebujete. Nakonec obdržíte HWND z <xref:System.Windows.Interop.HwndSource>. Tento návod ukazuje, jak vytvořit smíšený [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci aplikace Win32, která znovu implementuje dialog **vlastností data a času** operačního systému.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Viz [spolupráce WPF a Win32](wpf-and-win32-interoperation.md).
 
 ## <a name="how-to-use-this-tutorial"></a>Jak používat tento kurz
 
-Tento kurz se zaměřuje na důležité kroky k vytvoření meziprovozního aplikace. Tento kurz je zálohovaný ukázkou, [Ukázka mezioperace v prostředí Win32](https://go.microsoft.com/fwlink/?LinkID=160051), ale tato ukázka se odráží u koncového produktu. V tomto kurzu se dokončí postup, jak jste se rozhodli, že jste začali s existujícím projektem Win32 vlastní, možná již existující projekt a přidáváte do aplikace hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Můžete porovnat svůj koncový produkt s [ukázkou meziprovozu pro hodiny Win32](https://go.microsoft.com/fwlink/?LinkID=160051).
+Tento kurz se zaměřuje na důležité kroky k vytvoření meziprovozního aplikace. Tento kurz je zálohovaný ukázkou, [Ukázka mezioperace v prostředí Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock), ale tato ukázka se odráží u koncového produktu. V tomto kurzu se dokončí postup, jak jste se rozhodli, že jste začali s existujícím projektem Win32 vlastní, možná již existující projekt a přidáváte do aplikace hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Můžete porovnat svůj koncový produkt s [ukázkou meziprovozu pro hodiny Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock).
 
 ## <a name="a-walkthrough-of-windows-presentation-framework-inside-win32-hwndsource"></a>Návod pro Windows Presentation Framework uvnitř Win32 (HwndSource)
 
@@ -232,10 +232,10 @@ Konečný výsledek vypadá takto:
 
 ![Dialogové okno Vlastnosti data a času finálního výsledku](./media/walkthrough-hosting-a-wpf-clock-in-win32/final-result-date-time-properties-dialog.png)
 
-K porovnání konečného výsledku s kódem, který vytvořil tento snímek obrazovky, si přečtěte část [Ukázka mezioperačního zpracování hodin Win32](https://go.microsoft.com/fwlink/?LinkID=160051).
+K porovnání konečného výsledku s kódem, který vytvořil tento snímek obrazovky, si přečtěte část [Ukázka mezioperačního zpracování hodin Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.HwndSource>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
-- [Ukázka mezi operacemi hodin Win32](https://go.microsoft.com/fwlink/?LinkID=160051)
+- [Ukázka mezi operacemi hodin Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock)

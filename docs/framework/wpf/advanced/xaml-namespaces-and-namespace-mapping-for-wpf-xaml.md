@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 85f35c29cdd1d9e4ea9776b756245a75af58e912
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: ac9e028d8804c4fdadf4e6be8d7650afa1406969
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741834"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124465"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Toto téma dále vysvětluje přítomnost a účel dvou mapování oboru názvů XAML, jak se často nacházejí v kořenové značce souboru XAML WPF. Popisuje také, jak vydávat podobná mapování pro použití elementů, které jsou definovány ve vlastním kódu, a/nebo v samostatných sestaveních.  
@@ -137,5 +137,5 @@ End Namespace
   
 ## <a name="see-also"></a>Viz také
 
-- [Porozumění oborům názvů XML](https://go.microsoft.com/fwlink/?LinkId=98069)
+- [Porozumění oborům názvů XML](https://docs.microsoft.com/previous-versions/aa468565(v=msdn.10))
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET application deployment [WPF], deploying with Firefox add-ons
 - .NET Framework Assistant for Firefox
 ms.assetid: 2403403b-9b14-48e9-b70d-fa288a3c9081
-ms.openlocfilehash: 687f61bd3ec7d10c6aa66c20cd5eb58fcc56f18a
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 56f5f633092d8aa0bfabdb0570ec26f14221838d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636364"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124608"
 ---
 # <a name="firefox-add-ons-to-support-net-application-deployment"></a>Doplňky Firefox pro podporu nasazení .NET aplikací
 Modul plug-in Windows Presentation Foundation (WPF) pro Firefox a pomocníka .NET Framework pro prohlížeč Firefox povoluje aplikace prohlížeče XAML (XBAP), volné [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]a aplikace ClickOnce pro práci s prohlížečem Mozilla Firefox.  
@@ -31,9 +31,9 @@ Modul plug-in Windows Presentation Foundation (WPF) pro Firefox a pomocníka .NE
   
 - Ohlaste všechny nainstalované verze .NET Framework nebo jenom nejnovější verzi.  
   
- Pomocník pro .NET Framework pro Firefox je součástí .NET Framework 3,5 SP1. Informace o odebrání pomocníka .NET Framework pro Firefox najdete v tématu [Odebrání pomocníka .NET Framework pro prohlížeč Firefox](https://go.microsoft.com/fwlink/?LinkId=177944).  
+ Pomocník pro .NET Framework pro Firefox je součástí .NET Framework 3,5 SP1. Informace o odebrání pomocníka .NET Framework pro Firefox najdete v tématu [Odebrání pomocníka .NET Framework pro prohlížeč Firefox](https://support.microsoft.com/help/963707/how-to-remove-the-net-framework-assistant-for-firefox).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)
 - [Přehled aplikací Prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md)

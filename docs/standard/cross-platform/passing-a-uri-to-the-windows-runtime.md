@@ -9,34 +9,32 @@ helpviewer_keywords:
 - Windows Runtime, .NET Framework support for
 - Windows Runtime, passing a URI to
 ms.assetid: 3eb5ce6f-f304-4f87-8e81-0f25092f5ad4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c489ec893ea335c8fafc904cf2a12162580ec266
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 71d427c2d602efbd92dc0128b1fada85a987904a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025435"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123620"
 ---
 # <a name="passing-a-uri-to-the-windows-runtime"></a>Předávání identifikátorů URI do prostředí Windows Runtime
-Prostředí Windows Runtime metody přijímají pouze absolutní identifikátor URI. Pokud předáte relativní identifikátor URI pro metodu Windows Runtime <xref:System.ArgumentException> je vyvolána výjimka. Tady jsou důvody: Při použití prostředí Windows Runtime v kódu rozhraní .NET Framework <xref:Windows.Foundation.Uri?displayProperty=nameWithType> třída se objeví jako <xref:System.Uri?displayProperty=nameWithType> v technologii Intellisense. <xref:System.Uri?displayProperty=nameWithType> Třída umožňuje relativní identifikátory URI, ale <xref:Windows.Foundation.Uri?displayProperty=nameWithType> třída nepodporuje. To platí také pro metody, které vystavíte v součástí prostředí Windows Runtime. Pokud vaše komponenta zpřístupní metodu, která přijímá identifikátor URI, podpis ve vašem kódu obsahuje <xref:System.Uri?displayProperty=nameWithType>. Ale pro uživatele vaší komponenty, obsahuje podpis <xref:Windows.Foundation.Uri?displayProperty=nameWithType>. Identifikátor URI, který je předán vaší komponentě, musí být absolutní identifikátor URI.  
+Metody prostředí Windows Runtime přijímají pouze absolutní identifikátory URI. Pokud předáte relativní identifikátor URI metodě prostředí Windows Runtime, je vyvolána výjimka <xref:System.ArgumentException>. Z tohoto důvodu: při použití prostředí Windows Runtime v kódu .NET Framework se třída <xref:Windows.Foundation.Uri?displayProperty=nameWithType> zobrazí jako <xref:System.Uri?displayProperty=nameWithType> v technologii IntelliSense. Třída <xref:System.Uri?displayProperty=nameWithType> povoluje relativní identifikátory URI, ale třída <xref:Windows.Foundation.Uri?displayProperty=nameWithType> ne. To platí také pro metody, které vystavíte v prostředí Windows Runtimech součástech. Pokud vaše komponenta zpřístupňuje metodu, která přebírá identifikátor URI, signatura v kódu zahrnuje <xref:System.Uri?displayProperty=nameWithType>. Pro uživatele vaší komponenty však signatura zahrnuje <xref:Windows.Foundation.Uri?displayProperty=nameWithType>. Identifikátor URI, který je předán vaší komponentě, musí být absolutním identifikátorem URI.  
   
-Toto téma ukazuje, jak detekovat absolutní identifikátor URI a jak ji vytvořit při odkazování na prostředek v balíčku aplikace.  
+V tomto tématu se dozvíte, jak zjistit absolutní identifikátor URI a jak ho vytvořit při odkazování na prostředek v balíčku aplikace.  
   
-## <a name="detecting-and-using-an-absolute-uri"></a>Odpojení a používání absolutního identifikátoru URI  
-Použití <xref:System.Uri.IsAbsoluteUri%2A?displayProperty=nameWithType> vlastnost tak, aby byl identifikátor URI absolutní před předáním do prostředí Windows Runtime. Pomocí této vlastnosti je efektivnější než zachytávání a manipulace <xref:System.ArgumentException> výjimky.  
+## <a name="detecting-and-using-an-absolute-uri"></a>Zjištění a použití absolutního identifikátoru URI  
+Pomocí vlastnosti <xref:System.Uri.IsAbsoluteUri%2A?displayProperty=nameWithType> zajistěte, aby byl identifikátor URI před předáním do prostředí Windows Runtime absolutní. Použití této vlastnosti je efektivnější než zachycení a zpracování výjimky <xref:System.ArgumentException>.  
   
-## <a name="using-an-absolute-uri-for-a-resource-in-the-app-package"></a>Použití absolutní identifikátor URI pro prostředek v balíčku aplikace  
-Pokud chcete určit identifikátor URI pro prostředek, který obsahuje balíček aplikace, můžete použít `ms-appx` nebo `ms-appx-web` schéma k vytvoření absolutního identifikátoru URI.  
+## <a name="using-an-absolute-uri-for-a-resource-in-the-app-package"></a>Použití absolutního identifikátoru URI pro prostředek v balíčku aplikace  
+Pokud chcete zadat identifikátor URI pro prostředek, který obsahuje váš balíček aplikace, můžete použít schéma `ms-appx` nebo `ms-appx-web` k vytvoření absolutního identifikátoru URI.  
   
-Následující příklad ukazuje, jak nastavit <xref:Windows.UI.Xaml.Controls.WebView.Source%2A> vlastnost <xref:Windows.UI.Xaml.Controls.WebView> ovládacího prvku a <xref:Windows.UI.Xaml.Controls.Image.Source%2A> vlastnost <xref:Windows.UI.Xaml.Controls.Image> ovládacího prvku na prostředky, které jsou obsaženy ve složce s názvem stránky, pomocí XAML a kódu.  
+Následující příklad ukazuje, jak nastavit vlastnost <xref:Windows.UI.Xaml.Controls.WebView.Source%2A> pro ovládací prvek <xref:Windows.UI.Xaml.Controls.WebView> a vlastnost <xref:Windows.UI.Xaml.Controls.Image.Source%2A> pro ovládací prvek <xref:Windows.UI.Xaml.Controls.Image> na prostředky, které jsou obsaženy ve složce s názvem Pages s použitím XAML a kódu.  
   
 [!code-xaml[System.URIToWindowsURI#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.uritowindowsuri/cs/mainpage.xaml#1)]  
 [!code-csharp[System.URIToWindowsURI#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.uritowindowsuri/cs/mainpage.xaml.cs#2)]
 [!code-vb[System.URIToWindowsURI#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.uritowindowsuri/vb/mainpage.xaml.vb#2)]  
   
-Další informace o těchto schématech naleznete v tématu [schémata identifikátoru URI](/windows/uwp/app-resources/uri-schemes) Windows Dev Center.  
+Další informace o těchto schématech najdete v tématu [schémata identifikátorů URI](/windows/uwp/app-resources/uri-schemes) na stránce Windows Dev Center.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

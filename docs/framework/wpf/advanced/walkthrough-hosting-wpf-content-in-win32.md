@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: ff95b330ff67e916a4d27ef841e757998d847c8b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 418c5a4708a7842e5e441235738b73a009c9c956
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76735320"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124543"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF v Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohatou prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do kódu Win32, může být efektivnější přidat funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] do vaší aplikace, a ne přepsat původní kód. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v okně Win32.  
   
- V tomto kurzu se dozvíte, jak napsat ukázkovou aplikaci, která [hostuje obsah WPF v okně ukázek Win32](https://go.microsoft.com/fwlink/?LinkID=160004), který hostuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v okně Win32. Tuto ukázku můžete v případě, že chcete hostovat jakékoli okno Win32, roztáhnout. Vzhledem k tomu, že zahrnuje kombinování spravovaného a nespravovaného C++kódu, aplikace je zapsána v/CLI.  
+ V tomto kurzu se dozvíte, jak napsat ukázkovou aplikaci, která [hostuje obsah WPF v okně ukázek Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32HostingWPFPage), který hostuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v okně Win32. Tuto ukázku můžete v případě, že chcete hostovat jakékoli okno Win32, roztáhnout. Vzhledem k tomu, že zahrnuje kombinování spravovaného a nespravovaného C++kódu, aplikace je zapsána v/CLI.  
 
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
@@ -26,7 +26,7 @@ ms.locfileid: "76735320"
  Vzhledem k tomu, že je ukázka, která doprovází C++tento kurz, implementována ve verzi/CLI, v tomto C++ kurzu se předpokládá znalost použití nástroje k programování rozhraní Windows API a porozumění programování spravovaného kódu. Znalost C++/CLI je užitečná, ale není nezbytná.  
   
 > [!NOTE]
-> Tento kurz obsahuje několik příkladů kódu z přidruženého vzorku. Pro čitelnost ale nezahrnuje kompletní vzorový kód. Úplný vzorový kód naleznete v tématu [hostování obsahu WPF v ukázce okna Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
+> Tento kurz obsahuje několik příkladů kódu z přidruženého vzorku. Pro čitelnost ale nezahrnuje kompletní vzorový kód. Úplný vzorový kód naleznete v tématu [hostování obsahu WPF v ukázce okna Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32HostingWPFPage).  
   
 <a name="basic_procedure"></a>   
 ## <a name="the-basic-procedure"></a>Základní postup  

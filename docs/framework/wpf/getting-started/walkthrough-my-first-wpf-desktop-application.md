@@ -11,14 +11,12 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 232605850c65aebd9aafdc9b76c90af42f2c901c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bc47405636c4727f502caf1f6e27050367eda74a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746972"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124335"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Kurz: Vytvoření první aplikace WPF v aplikaci Visual Studio 2019
 

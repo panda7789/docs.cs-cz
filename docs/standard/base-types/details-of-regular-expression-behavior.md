@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: af812e1e42d57c349e94b5992b768636857d2a0c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 504e315dda4e76f56a88d97149b1515b6743668b
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348272"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124348"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti o chování regulárních výrazů
 
@@ -106,7 +106,7 @@ ms.locfileid: "75348272"
 
 - Definice vyrovnávání skupin: `(?<`*název1*`-`*název2*`>` dílčí *výraz*`)`. Tato funkce umožňuje modulu regulárních výrazů sledovat vnořené konstrukce, jako jsou závorky nebo levou a pravou hranaté závorky. Příklad naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-- Dílčí výrazy bez mechanismu navracení (označované také jako hladové podvýrazy): `(?>`dílčí *výraz*`)`. Tato funkce umožňuje modulu zpětného navrácení, aby se zaručilo, že dílčí výraz odpovídá pouze první shodě nalezené pro tento dílčí výraz, jako kdyby byl výraz spuštěn nezávisle na jeho obsahujícím výrazu. Pokud nepoužijete tuto konstrukci, hledání zpětného navrácení z většího výrazu může změnit chování dílčího výrazu. Například regulární výraz `(a+)\w` odpovídá jednomu nebo více znakům "a", spolu se znakem slova, který následuje za sekvencí "a" a přiřadí sekvenci "a" do první zachytávající skupiny, pokud je však konečný znak vstupního řetězce také "a", odpovídá prvku `\w` jazyka a není součástí zachycené skupiny.
+- Atomické skupiny:`)`dílčího *výrazu* `(?>`. Tato funkce umožňuje modulu zpětného navrácení, aby se zaručilo, že dílčí výraz odpovídá pouze první shodě nalezené pro tento dílčí výraz, jako kdyby byl výraz spuštěn nezávisle na jeho obsahujícím výrazu. Pokud nepoužijete tuto konstrukci, hledání zpětného navrácení z většího výrazu může změnit chování dílčího výrazu. Například regulární výraz `(a+)\w` odpovídá jednomu nebo více znakům "a" společně se znakem slova, který následuje po sekvenci "a" a přiřadí sekvenci "a" do první zachytávající skupiny. Nicméně, pokud je konečný znak vstupního řetězce také "a", bude odpovídat prvku jazyka `\w` a není zahrnut do zachycené skupiny.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking2.cs#7)]
      [!code-vb[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking2.vb#7)]
@@ -116,7 +116,7 @@ ms.locfileid: "75348272"
      [!code-csharp[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking1.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking1.vb#8)]
 
-     Další informace o podvýrazech převracení naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+     Další informace o atomických skupinách naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
 - Shoda zprava doleva, která je určena zadáním možnosti <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> do konstruktoru <xref:System.Text.RegularExpressions.Regex> třídy nebo do metody pro porovnání statické instance. Tato funkce je užitečná při hledání zprava doleva, nikoli zleva doprava, nebo v případech, kdy je efektivnější zahájit shodu v pravé části vzoru namísto levého. Jak ukazuje následující příklad, použití spárování zprava doleva může změnit chování hladových kvantifikátorů. V tomto příkladu se provádí dvě hledání věty, která končí číslem. Hledání zleva doprava, které používá hladce, `+` odpovídá jedné ze šesti číslic ve větě, zatímco hledání zprava doleva odpovídá všem šesti číslicím. Popis vzoru regulárního výrazu naleznete v příkladu, který ukazuje opožděné kvantifikátory dříve v této části.
 
@@ -125,7 +125,7 @@ ms.locfileid: "75348272"
 
      Další informace o porovnání zprava doleva naleznete v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).
 
-- Pozitivní a negativní zpětné vyhledávání: `(?<=`dílčí *výraz*`)` pro pozitivní zpětné vyhledávání a `(?<!`dílčí *výraz*`)` pro negativní zpětné vyhledávání. Tato funkce se podobá dopřednému vyhledávání, který je popsaný výše v tomto tématu. Vzhledem k tomu, že modul regulárních výrazů umožňuje úplné porovnání zprava doleva, regulární výrazy povolují neomezený lookbehinds. Kladné a záporné zpětné vyhledávání lze také použít k zamezení vnořování kvantifikátorů, je-li vnořený dílčí výraz nadmnožinou vnějšího výrazu. Regulární výrazy s takovými vnořenými kvantifikátory často nabízejí nízký výkon. Například následující příklad ověřuje, že řetězec začíná a končí alfanumerickým znakem a že jakýkoli jiný znak v řetězci je jedna z větší podmnožiny. Tvoří část regulárního výrazu, který slouží k ověření e-mailových adres. Další informace najdete v tématu [: Ověřte, že jsou řetězce v platném formátu e-mailu](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).
+- Pozitivní a negativní zpětné vyhledávání: `(?<=`dílčí *výraz*`)` pro pozitivní zpětné vyhledávání a `(?<!`dílčí *výraz*`)` pro negativní zpětné vyhledávání. Tato funkce se podobá dopřednému vyhledávání, který je popsaný výše v tomto tématu. Vzhledem k tomu, že modul regulárních výrazů umožňuje úplné porovnání zprava doleva, regulární výrazy povolují neomezený lookbehinds. Kladné a záporné zpětné vyhledávání lze také použít k zamezení vnořování kvantifikátorů, je-li vnořený dílčí výraz nadmnožinou vnějšího výrazu. Regulární výrazy s takovými vnořenými kvantifikátory často nabízejí nízký výkon. Například následující příklad ověřuje, že řetězec začíná a končí alfanumerickým znakem a že jakýkoli jiný znak v řetězci je jedna z větší podmnožiny. Tvoří část regulárního výrazu, který slouží k ověření e-mailových adres. Další informace najdete v tématu [Postup: ověření, zda jsou řetězce v platném formátu e-mailu](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).
 
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]
@@ -144,7 +144,7 @@ ms.locfileid: "75348272"
 
 ## <a name="related-articles"></a>Související články
 
-|Titul|Popis|
+|Název|Popis|
 |-----------|-----------------|
 |[Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Poskytuje informace o tom, jak se ve výrazech zpětného navrácení větví regulárních výrazů hledají alternativní shody.|
 |[Kompilace a opětovné používání](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|Poskytuje informace o kompilaci a opětovném použití regulárních výrazů ke zvýšení výkonu.|
@@ -154,6 +154,6 @@ ms.locfileid: "75348272"
 |[Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)|Obsahuje příklady kódu, které ilustrují použití regulárních výrazů v běžných aplikacích.|
 |[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Poskytuje informace o sadě znaků, operátorech a konstrukcích, které lze použít k definování regulárních výrazů.|
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Referenční informace
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

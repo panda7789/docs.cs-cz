@@ -1,17 +1,15 @@
 ---
 title: Cílová rozhraní v projektech se stylem sady SDK – .NET
 description: Přečtěte si o cílových rozhraních pro aplikace a knihovny .NET Core.
-author: mairaw
-ms.author: mairaw
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 957671644ae333180b0c1ba4aae6d6e17ae6478b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 33beb5606cbf857cc41b739f256482b0298f1fb1
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838209"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124595"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Cílová rozhraní v projektech ve stylu sady SDK
 
@@ -31,7 +29,7 @@ Následující tabulka definuje nejběžnější cílová rozhraní, jejich odka
 
 | Cílová architektura      | Latest (Nejnovější) <br/> Stabilní verze | Moniker cílového rozhraní (TFM) | Vede <br/> Verze .NET Standard |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
-| .NET Standard         | 2.1                         | netstandard 2.1                 | NEUŽÍVÁ SE.                                     |
+| .NET Standard         | 2.1                         | netstandard 2.1                 | Není k dispozici                                     |
 | .NET Core             | 3.1                         | netcoreapp 3.1                  | 2.1                                     |
 | .NET Framework        | 4.8                         | net48                          | 2.0                                     |
 
@@ -47,8 +45,8 @@ Na cílové rozhraní se obvykle odkazuje pomocí TFM. V následující tabulce 
 | Windows Store              | Netcore [netcore45]<br>netcore45 [Win] [Win8]<br>netcore451 [win81] |
 | .NET Micro Framework       | netmf |
 | Silverlight                | sl4<br>sl5 |
-| Windows Phone              | wp [wp7]<br>wp7<br>wp75<br>wp8<br>wp81<br>wpa81 |
-| Univerzální platforma pro Windows | UAP [UAP 10.0]<br>UAP 10.0 [Win10] [netcore50] |
+| telefon se systémem Windows              | wp [wp7]<br>wp7<br>wp75<br>wp8<br>wp81<br>wpa81 |
+| Univerzální platforma Windows | UAP [UAP 10.0]<br>UAP 10.0 [Win10] [netcore50] |
 
 ## <a name="how-to-specify-target-frameworks"></a>Určení cílových rozhraní Framework
 
@@ -118,7 +116,7 @@ Systém sestavení je vědom symbolů preprocesoru, které představují cílov�
 
 Následující cílová rozhraní jsou zastaralá. Balíčky, které cílí na tyto cílové platformy, by se měly migrovat na zmíněné náhrady.
 
-| Zastaralé TFM                                                                             | Náhrada |
+| Zastaralé TFM                                                                             | Nahrazení |
 | ------------------------------------------------------------------------------------------ | ----------- |
 | aspnet50<br>aspnetcore50<br>dnxcore50<br>DNX<br>dnx45<br>dnx451<br>dnx452                  | netcoreapp  |
 | dotnet<br>dotnet50<br>dotnet51<br>dotnet52<br>dotnet53<br>dotnet54<br>dotnet55<br>dotnet56 | netstandard |
@@ -129,7 +127,7 @@ Následující cílová rozhraní jsou zastaralá. Balíčky, které cílí na t
 | win10                                                                                      | UAP 10.0     |
 | WinRT                                                                                      | netcore45   |
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Balíčky, metabalíčky a architektury](../core/packages.md)
 - [Vývoj knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)

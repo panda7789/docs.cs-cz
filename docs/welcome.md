@@ -1,16 +1,14 @@
 ---
 title: Vítá vás .NET
 description: Začínáme s řadou technologií .NET.
-author: mairaw
-ms.author: mairaw
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 15daaafed02ab1132a3c82c12efa6fad0e0a6db2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 20332f4dcc0664287873a27e0064a4765b1ecde7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838127"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124218"
 ---
 # <a name="welcome-to-net"></a>Vítá vás .NET
 
@@ -18,7 +16,7 @@ Informace o tom, jak vytvářet aplikace .NET Core, najdete v tématu Začínám
 
 Vytvářejte spousty typů aplikací pomocí .NET, jako je Cloud, IoT a hry, pomocí bezplatného nástroje pro více platforem. Vaše aplikace můžou běžet na Androidu, iOS, Linux, macOS a Windows. Nasaďte aplikace na servery nebo počítače a publikujte je do obchodů s aplikacemi pro nasazení na mobilních zařízeních. Rozhraní .NET je přístupné studentům a nadšence a všechny jsou Vítá vás v rámci Lively mezinárodní komunity pro vývojáře a umožňují přímé příspěvky na mnohé technologie .NET.
 
-## <a name="news"></a>Zprávy
+## <a name="news"></a>Novinky
 
 Informace o rozhraní .NET najdete v následujících blogových příspěvcích:
 

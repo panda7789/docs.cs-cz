@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: cb1764d1a6f363f3011268eae5fbcb2c76d9cc89
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 9b09f5a2505888c6154a58a3512c94c51f89295b
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938002"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124419"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v .NET
 
@@ -176,7 +176,7 @@ Aplikace často platí daň za snížený výkon při používání zpětného n
 
 Vzhledem k tomu, že hranice slova se neshoduje s hranicí znaku slova ani není jeho podmnožinou, nemá modul regulárních výrazů žádnou možnost při porovnávání znaků překročit hranici slova. To znamená, že pro tento regulární výraz nemůže mechanismus zpětného navracení nikdy přispět k celkovému úspěšnému vyhledání jakékoli shody – může pouze snížit výkon, protože modul regulárních výrazů je nucen uložit stav pro každou předběžně úspěšnou shodu znaku slova.
 
-Pokud určíte, že zpětné navrácení není nutné, můžete ho zakázat pomocí elementu `(?>subexpression)` jazyka. Následující příklad analyzuje vstupní řetězec pomocí dvou regulárních výrazů. První, `\b\p{Lu}\w*\b`, spoléhá na zpětné navrácení. Druhý `\b\p{Lu}(?>\w*)\b`zakáže navrácení. Jak znázorňuje výstup z příkladu, vytvoří oba výrazy stejný výsledek.
+Pokud určíte, že zpětné navrácení není nutné, můžete ho zakázat pomocí elementu `(?>subexpression)` jazyka, označovaného jako atomická skupina. Následující příklad analyzuje vstupní řetězec pomocí dvou regulárních výrazů. První, `\b\p{Lu}\w*\b`, spoléhá na zpětné navrácení. Druhý `\b\p{Lu}(?>\w*)\b`zakáže navrácení. Jak znázorňuje výstup z příkladu, vytvoří oba výrazy stejný výsledek.
 
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack2.cs#10)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack2.vb#10)]
@@ -204,7 +204,7 @@ Následující příklad znázorňuje používání tohoto regulárního výrazu
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack4.cs#11)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack4.vb#11)]
 
-Jazyk regulárních výrazů v rozhraní .NET obsahuje následující prvky jazyka, které lze použít k odstranění vnořených kvantifikátorů. Další informace najdete v tématu [Seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+Jazyk regulárních výrazů v rozhraní .NET obsahuje následující prvky jazyka, které lze použít k odstranění vnořených kvantifikátorů. Další informace naleznete v tématu [seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
 |Prvek jazyka|Popis|
 |----------------------|-----------------|
@@ -269,7 +269,7 @@ Zachytávání lze zakázat jedním z následujících způsobů:
 
 - Použijte možnost `n` v prvku `(?imnsx:subexpression)` jazyka. Tato možnost zakazuje všechna nepojmenovaná nebo implicitní zachycení v `subexpression`. Zachycení nepojmenovanou nebo implicitní vnořenou zachytávající skupinou jsou rovněž zakázána.
 
-## <a name="related-topics"></a>Příbuzná témata
+## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - presence of WPT [WPF], detecting
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
-ms.openlocfilehash: c68daf2cb5687497e66ad3022ce42352a17ae0f7
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 41010e615b6b3d10ebf6adc0e3f871873e94f409
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053441"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124452"
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0
 Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, musí nejdřív ověřit, že je k dispozici modul runtime .NET Framework. Toto téma poskytuje skript napsaný ve formátu HTML/JavaScript, který mohou správci použít k určení, zda .NET Framework k dispozici v systému.  
   
 > [!NOTE]
-> Podrobnější informace o instalaci, nasazení a detekci .NET Framework Microsoftu najdete v diskuzi v tématu [nasazení microsoft .NET Framework verze 3,0](https://go.microsoft.com/fwlink/?LinkId=96739).  
+> Podrobnější informace o instalaci, nasazení a detekci .NET Framework Microsoftu najdete v diskuzi v tématu [nasazení microsoft .NET Framework verze 3,0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).  
   
 <a name="content_expiration"></a>   
 ## <a name="detect-the-net-clr-user-agent-string"></a>Zjištění řetězce uživatelského agenta .NET CLR  

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 0fec72bdedbcc2c84d8bc65e72391366e42d82be
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a98c97a4aa95fb956a2ca6d417e009a281a938b6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739162"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124478"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 
@@ -44,7 +44,7 @@ Pro zajištění konzistentního mechanismu pro identifikaci a načítání těc
 
 ## <a name="the-pack-uri-scheme"></a>Schéma identifikátoru URI balíčku
 
-Schéma URI balíčku se používá ve specifikaci OPC ( [Open balení Conventions](https://go.microsoft.com/fwlink/?LinkID=71255) ), která popisuje model pro organizování a identifikaci obsahu. Klíčové prvky tohoto modelu jsou balíčky a části, kde *balíček* je logický kontejner pro jednu nebo více logických *částí*. Tento koncept znázorňuje následující obrázek.
+Schéma URI balíčku se používá ve specifikaci OPC ( [Open balení Conventions](https://www.ecma-international.org/publications/standards/Ecma-376.htm) ), která popisuje model pro organizování a identifikaci obsahu. Klíčové prvky tohoto modelu jsou balíčky a části, kde *balíček* je logický kontejner pro jednu nebo více logických *částí*. Tento koncept znázorňuje následující obrázek.
 
 ![Diagram balíčků a částí](./media/pack-uris-in-wpf/wpf-package-parts-diagram.png)
 

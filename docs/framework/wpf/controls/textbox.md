@@ -7,21 +7,21 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF]
 ms.assetid: 2512a277-e9d8-4de8-a12f-2bd95e8e7b60
-ms.openlocfilehash: 5be472d0d4f27c7a9acc966e4d6ffbcf9d7a1b0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b1b15739b1ba1787ba160a9a4d829d83fb10db1
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790829"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123634"
 ---
 # <a name="textbox"></a>TextBox
-<xref:System.Windows.Controls.TextBox> Ovládacího prvku poskytuje podporu pro základní textové zadání v aplikaci WPF.  
+Ovládací prvek <xref:System.Windows.Controls.TextBox> poskytuje podporu pro základní textové zadání v aplikacích WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [TextBox – přehled](textbox-overview.md)  
  [Témata s postupy](textbox-how-to-topics.md)  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Windows.Controls.TextBox>  
   
  <xref:System.Windows.Controls.RichTextBox>  
@@ -30,7 +30,7 @@ ms.locfileid: "61790829"
   
  <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
+- [Ukázka galerie ovládacích prvků WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/ControlsAndLayout)
 - [TextBox – styly a šablony](textbox-styles-and-templates.md)

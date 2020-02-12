@@ -9,14 +9,12 @@ helpviewer_keywords:
 - .NET Framework, and Windows Store apps
 - .NET Framework, and Windows Runtime
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: dd7e045bf54b09fe2a229efefc0218eb3f2f731a
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 56c9cb60ab46a583c34f898d20abf85f5ff0fe4c
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802749"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123698"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 

@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 2c6a8662236b614545e7fb8545b7b60e1b08b6bd
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 38c77086075e79c0ec5b4b1564ed753eded23b34
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559830"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124491"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazyka XAML. Tyto výrazy se často používají během zbývající části této dokumentace, a to jak pro dokumentaci WPF, tak pro ostatní architektury, které používají XAML, nebo základní koncepty XAML povolené podporou jazyka XAML na úrovni System. XAML. Toto téma se rozbalí na základní terminologii představené v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
@@ -43,7 +43,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
 ## <a name="the-xaml-language-specification"></a>Specifikace jazyka XAML  
  Terminologie syntaxe jazyka XAML definovaná zde je také definována nebo odkazována v rámci specifikace jazyka XAML. XAML je jazyk založený na XML a následuje nebo se rozšiřuje na strukturální pravidla XML. Některá z terminologie se sdílí z nebo je založena na terminologii, která se běžně používá, když popisuje jazyk XML nebo model objektu dokumentu XML.  
   
- Chcete-li získat další informace o specifikaci jazyka XAML, stáhněte [\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525) z webu Microsoft Download Center.  
+ Chcete-li získat další informace o specifikaci jazyka XAML, stáhněte [\[MS-XAML\]](https://download.microsoft.com/download/0/A/6/0A6F7755-9AF5-448B-907D-13985ACCF53E/[MS-XAML].pdf) z webu Microsoft Download Center.  
   
 <a name="xaml_and_clr"></a>   
 ## <a name="xaml-and-clr"></a>XAML a CLR  
@@ -254,7 +254,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  `<Button Style="{StaticResource MyStyle}">My button</Button>`  
   
- Zde `StaticResource` identifikuje třídu <xref:System.Windows.StaticResourceExtension> poskytující implementaci rozšíření značek. Další řetězec `MyStyle` slouží jako vstup pro nevýchozí konstruktor <xref:System.Windows.StaticResourceExtension>, kde parametr, který je pořízen z řetězce rozšíření, deklaruje požadovaný <xref:System.Windows.ResourceKey>. `MyStyle`očekává se, že bude [x:Key](../../../desktop-wpf/xaml-services/xkey-directive.md) hodnota <xref:System.Windows.Style> – definovaná jako prostředek. Použití [rozšíření značek StaticResource](staticresource-markup-extension.md) vyžaduje, aby se prostředek použil k poskytnutí hodnoty vlastnosti <xref:System.Windows.Style> prostřednictvím logiky vyhledávání statických prostředků v době načítání.  
+ Zde `StaticResource` identifikuje třídu <xref:System.Windows.StaticResourceExtension> poskytující implementaci rozšíření značek. Další řetězec `MyStyle` slouží jako vstup pro nevýchozí konstruktor <xref:System.Windows.StaticResourceExtension>, kde parametr, který je pořízen z řetězce rozšíření, deklaruje požadovaný <xref:System.Windows.ResourceKey>. `MyStyle` se očekává, že bude hodnota [x:key –](../../../desktop-wpf/xaml-services/xkey-directive.md) <xref:System.Windows.Style> definovaná jako prostředek. Použití [rozšíření značek StaticResource](staticresource-markup-extension.md) vyžaduje, aby se prostředek použil k poskytnutí hodnoty vlastnosti <xref:System.Windows.Style> prostřednictvím logiky vyhledávání statických prostředků v době načítání.  
   
  Další informace o rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md). Odkaz na rozšíření značek a jiné programovací funkce XAML povolené v obecné implementaci .NET XAML naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](../../../desktop-wpf/xaml-services/namespace-language-features.md). Pro rozšíření značek specifická pro WPF naleznete informace v tématu [rozšíření WPF XAML](wpf-xaml-extensions.md).  
   
@@ -313,7 +313,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  Ale stejně jako *TypeName*. formulář *Member* pro atributy, *BaseType* *člen* má špatný styl ve značce a Vy byste se ho měli vyhnout.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
 - [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)

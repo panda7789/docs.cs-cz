@@ -5,20 +5,20 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: 9be6245d7429466490d9dac93c5b94d70bde30bd
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 665daa14b543a357b17747a7d9d34dac2224711d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744486"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124554"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
-Když omezíte dostupnost produktu jenom na jeden jazyk, omezíte potenciální zákaznickou základnu na zlomek světové populace z našeho světa 6 500 000 000. Pokud chcete, aby se vaše aplikace dostaly do globální cílové skupiny, je cenově výhodné lokalizace vašeho produktu jedním z nejlepších a nejúčinnějších způsobů, jak oslovit více zákazníků.
+Když omezíte dostupnost produktu jenom na jeden jazyk, omezíte potenciální zákaznickou základnu na zlomek světové populace z našeho světa 7 500 000 000. Pokud chcete, aby se vaše aplikace dostaly do globální cílové skupiny, je cenově výhodné lokalizace vašeho produktu jedním z nejlepších a nejúčinnějších způsobů, jak oslovit více zákazníků.
 
 Tento přehled zavádí globalizaci a lokalizaci v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Globalizace je návrh a vývoj aplikací, které jsou prováděny ve více umístěních. Globalizace například podporuje lokalizovaná uživatelská rozhraní a regionální data pro uživatele v různých jazykových verzích. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje globální funkce návrhu, včetně automatického rozložení, satelitních sestavení a lokalizovaných atributů a komentářů.
 
-Lokalizace je převod prostředků aplikace do lokalizovaných verzí pro konkrétní jazykové verze, které aplikace podporuje. Při lokalizaci v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používáte rozhraní API v oboru názvů <xref:System.Windows.Markup.Localizer>. Tato rozhraní API zapněte ukázkový nástroj příkazového řádku [nástroje LocBaml](https://go.microsoft.com/fwlink/?LinkID=160016) . Informace o tom, jak sestavovat a používat LocBaml, najdete v tématu [lokalizace aplikace](how-to-localize-an-application.md).
+Lokalizace je převod prostředků aplikace do lokalizovaných verzí pro konkrétní jazykové verze, které aplikace podporuje. Při lokalizaci v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]používáte rozhraní API v oboru názvů <xref:System.Windows.Markup.Localizer>. Tato rozhraní API zapněte ukázkový nástroj příkazového řádku [nástroje LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml) . Informace o tom, jak sestavovat a používat LocBaml, najdete v tématu [lokalizace aplikace](how-to-localize-an-application.md).
 
 ## <a name="best-practices-for-globalization-and-localization-in-wpf"></a>Osvědčené postupy pro globalizaci a lokalizaci v subsystému WPF
 
@@ -48,7 +48,7 @@ Při návrhu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]
 
 - Když vytváříte navigační aplikace, které mohou být lokalizovány do jazykové verze, která prezentuje text ve formátu zprava doleva, explicitně nastavte <xref:System.Windows.FlowDirection> každé stránky, aby se zajistilo, že stránka nedědí <xref:System.Windows.FlowDirection> z <xref:System.Windows.Navigation.NavigationWindow>.
 
-- Když vytváříte samostatné navigační aplikace, které jsou hostované mimo prohlížeč, nastavte <xref:System.Windows.Application.StartupUri%2A> počáteční aplikace na <xref:System.Windows.Navigation.NavigationWindow> místo na stránku (například `<Application StartupUri="NavigationWindow.xaml">`). Tento návrh umožňuje změnit <xref:System.Windows.FlowDirection> okna a navigační panel. Další informace a příklad naleznete v části [Ukázka domovské stránky globalizace](https://go.microsoft.com/fwlink/?LinkID=159990).
+- Když vytváříte samostatné navigační aplikace, které jsou hostované mimo prohlížeč, nastavte <xref:System.Windows.Application.StartupUri%2A> počáteční aplikace na <xref:System.Windows.Navigation.NavigationWindow> místo na stránku (například `<Application StartupUri="NavigationWindow.xaml">`). Tento návrh umožňuje změnit <xref:System.Windows.FlowDirection> okna a navigační panel. Další informace a příklad naleznete v části [Ukázka domovské stránky globalizace](https://github.com/microsoft/WPF-Samples/tree/master/Globalization%20and%20Localization/GlobalizationHomepage).
 
 ### <a name="best-practices-for-wpf-localization"></a>Osvědčené postupy pro lokalizaci WPF
 
@@ -64,7 +64,7 @@ Při lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-
 
   - Nepoužívejte duplicitní <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti (nezapomeňte tento tip použít při použití příkazu kopírování a vložení).
 
-  - Nastavte umístění `UltimateResourceFallback` v souboru AssemblyInfo. * pro určení vhodného jazyka pro použití náhradní (například `[assembly: NeutralResourcesLanguage("en-US",   UltimateResourceFallbackLocation.Satellite)]`).
+  - Nastavte umístění `UltimateResourceFallback` v souboru AssemblyInfo.\* k určení vhodného jazyka pro záložní (například `[assembly: NeutralResourcesLanguage("en-US",   UltimateResourceFallbackLocation.Satellite)]`).
 
     Pokud se rozhodnete zahrnout zdrojový jazyk do hlavního sestavení vyvoláním značky `<UICulture>` v souboru projektu, nastavte umístění `UltimateResourceFallback` jako hlavní sestavení namísto satelitního (například `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]`).
 
@@ -102,7 +102,7 @@ Následující obrázek znázorňuje typický pracovní postup lokalizace, kter�
 
 Tato část obsahuje příklady lokalizovaných aplikací, které vám pomůžou pochopit, jak sestavovat a lokalizovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.
 
-#### <a name="run-dialog-box-example"></a>Příklad dialogového okna pro spuštění
+### <a name="run-dialog-box-example"></a>Příklad dialogového okna pro spuštění
 
 Následující obrázek ukazuje výstup ukázkového dialogového okna **spuštění** .
 
@@ -172,7 +172,7 @@ Všimněte si přidání `UICulture` hodnoty. Pokud je toto nastaveno na platnou
 
 **Parse**
 
-Po sestavení aplikace se v prvním kroku lokalizace analyzuje lokalizovatelné prostředky ze satelitního sestavení. Pro účely tohoto tématu použijte vzorový LocBaml Tool, který najdete v [ukázce nástroje LocBaml](https://go.microsoft.com/fwlink/?LinkID=160016). Všimněte si, že LocBaml je pouze ukázkový nástroj, který vám může pomoci začít při vytváření lokalizačního nástroje, který se vejde do procesu lokalizace. Pomocí LocBaml spusťte následující příkaz k analýze: **LocBaml/Parse RunDialog. Resources. dll/out:** pro vygenerování souboru RunDialog. Resources. dll. csv.
+Po sestavení aplikace se v prvním kroku lokalizace analyzuje lokalizovatelné prostředky ze satelitního sestavení. Pro účely tohoto tématu použijte vzorový LocBaml Tool, který najdete v [ukázce nástroje LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml). Všimněte si, že LocBaml je pouze ukázkový nástroj, který vám může pomoci začít při vytváření lokalizačního nástroje, který se vejde do procesu lokalizace. Pomocí LocBaml spusťte následující příkaz k analýze: **LocBaml/Parse RunDialog. Resources. dll/out:** pro vygenerování souboru RunDialog. Resources. dll. csv.
 
 **Lokalizovat**
 
@@ -215,7 +215,7 @@ V případě německého okna platí, že pokud je tento soubor. dll umístěný
 |Kód|Původní anglická verze BAML|Lokalizovaný BAML|
 |Kulturně neutrální prostředky|Další prostředky v angličtině|Další prostředky lokalizované do němčiny|
 
-Rozhraní .NET Framework automaticky zvolí, které sestavení satelitních prostředků se má načíst na základě `Thread.CurrentThread.CurrentUICulture`aplikace. Tato hodnota je nastavená na jazykovou verzi operačního systému Windows. Takže pokud používáte německé Windows, de-DE\MyDialog.resources.dll se načte, pokud používáte anglickou verzi Windows, en-US\MyDialog.resources.dll se načte. Pro aplikaci můžete nastavit konečný záložní prostředek zadáním NeutralResourcesLanguage do souboru AssemblyInfo. * vašeho projektu. Pokud například zadáte:
+Rozhraní .NET Framework automaticky zvolí, které sestavení satelitních prostředků se má načíst na základě `Thread.CurrentThread.CurrentUICulture`aplikace. Tato hodnota je nastavená na jazykovou verzi operačního systému Windows. Takže pokud používáte německé Windows, de-DE\MyDialog.resources.dll se načte, pokud používáte anglickou verzi Windows, en-US\MyDialog.resources.dll se načte. Pro aplikaci můžete nastavit konečný záložní prostředek zadáním NeutralResourcesLanguage do souboru AssemblyInfo vašeho projektu.\*. Pokud například zadáte:
 
 `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]`
 
@@ -223,7 +223,7 @@ en-US\MyDialog.resources.dll se pak použije s německými okny, pokud de-DE\MyD
 
 ### <a name="microsoft-saudi-arabia-homepage"></a>Domovská stránka Microsoft Saúdská Arábie
 
-Následující obrázek ukazuje domovskou stránku pro angličtinu a arabštinu. Kompletní vzorek, který vytváří tyto grafiky, najdete v [ukázce domovské stránky globalizace](https://go.microsoft.com/fwlink/?LinkID=159990).
+Následující obrázek ukazuje domovskou stránku pro angličtinu a arabštinu. Kompletní vzorek, který vytváří tyto grafiky, najdete v [ukázce domovské stránky globalizace](https://github.com/microsoft/WPF-Samples/tree/master/Globalization%20and%20Localization/GlobalizationHomepage).
 
 **Angličtina:**
 
@@ -305,4 +305,4 @@ Další informace o složených písmech najdete <xref:System.Windows.Media.Font
 
 **Lokalizace domovské stránky Microsoftu**
 
-K lokalizaci této aplikace můžete použít stejný postup jako v dialogovém okně Spustit. Lokalizovaný soubor. CSV pro arabštinu je k dispozici v [ukázce domovské stránky globalizace](https://go.microsoft.com/fwlink/?LinkID=159990).
+K lokalizaci této aplikace můžete použít stejný postup jako v dialogovém okně Spustit. Lokalizovaný soubor. CSV pro arabštinu je k dispozici v [ukázce domovské stránky globalizace](https://github.com/microsoft/WPF-Samples/tree/master/Globalization%20and%20Localization/GlobalizationHomepage).

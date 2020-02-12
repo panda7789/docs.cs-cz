@@ -2,14 +2,13 @@
 title: Volba mezi .NET Core a .NET Framework serverových aplikací
 description: Průvodce implementací rozhraní .NET, který byste měli zvážit při vytváření serverové aplikace v .NET.
 author: cartermp
-ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: c280e22341a45260a816a36c1148dc8c4f76db09
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: c202e42a46c4a72bdceca1fb250170d381603a8d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921423"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124621"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -48,7 +47,7 @@ K dispozici je mnoho platforem infrastruktury. Služba [Azure Service Fabric](ht
 
 Další informace o architektuře mikroslužeb najdete v tématu [mikroslužby .NET. Architektura pro kontejnerové aplikace .NET](../architecture/microservices/index.md).
 
-### <a name="containers"></a>Kontejnery
+### <a name="containers"></a>Containers
 
 Kontejnery se běžně používají ve spojení s architekturou mikroslužeb. Kontejnery lze také použít k kontejnerizaceí webových aplikací nebo služeb, které sledují model architektury. .NET Framework lze použít v kontejnerech Windows, ale modulární a odlehčená povaha .NET Core umožňuje lepší volbu kontejnerů. Při vytváření a nasazování kontejneru je velikost jeho image mnohem menší s .NET Core než s .NET Framework. Vzhledem k tomu, že se jedná o různé platformy, můžete nasadit serverové aplikace do kontejnerů Docker pro Linux, například.
 
@@ -101,7 +100,7 @@ Kromě oficiálního plánu jsou k dispozici i další rozhraní .NET Core. Úpl
 
 Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NET Core. Některé služby Azure poskytují sadu SDK, která ještě není dostupná pro využití v .NET Core. Jedná se o přechodnou okolnost, protože všechny služby Azure využívají .NET Core. Do té doby můžete místo sady SDK klienta vždy použít ekvivalentní REST API.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Volba mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
 - [ASP.NET Core cílení na .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)

@@ -1,51 +1,50 @@
 ---
 title: Knihovny tříd .NET
-description: Zjistěte, jak knihovny tříd .NET umožňují skupiny užitečné funkce do modulů, které mohou být využívána více aplikacemi.
+description: Přečtěte si, jak knihovny tříd .NET umožňují seskupovat užitečné funkce do modulů, které může používat více aplikací.
 author: richlander
-ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: c918883d8620513749826680f9f1b6d89ae87585
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b7934e5def202760ab05d363ee5fcda5d012ca72
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664605"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124582"
 ---
 # <a name="net-class-libraries"></a>Knihovny tříd .NET
 
-Knihovny tříd jsou [sdílenou knihovnu](https://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries) konceptem pro .NET. Umožňují componentize užitečné funkce do modulů, které mohou být využívána více aplikacemi. Můžete se také používá jako způsob načítání funkcí, které se nevyžaduje nebo neznámý. při spuštění aplikace. Knihovny tříd jsou popsány pomocí [formát souborů sestavení .NET](assembly/file-format.md).
+Knihovny tříd jsou koncept [sdílené knihovny](https://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries) pro rozhraní .NET. Umožňují componentize užitečné funkce v modulech, které může používat více aplikací. Lze je také použít jako způsob načítání funkcí, které nejsou potřeba nebo nejsou známy při spuštění aplikace. Knihovny tříd jsou popsány pomocí [formátu souboru sestavení .NET](assembly/file-format.md).
 
-Existují tři typy knihoven tříd, které můžete použít:
+Existují tři typy knihoven tříd, které lze použít:
 
-* **Specifické pro platformu** knihovny tříd mají přístup ke všem rozhraním API v dané platformy (pro rozhraní .NET Framework, například Xamarin pro iOS), ale jde použít jenom aplikace a knihovny cílené na této platformě.
-* **Přenosné** knihovny tříd mají přístup k podmnožinu rozhraní API a mohou využívat aplikace a knihovny cílené na více platforem.
-* **.NET standard** knihovny tříd jsou spojení konceptů specifických pro platformu a přenosné knihovny do jednoho modelu, který poskytuje nejlepší z obou.
+* Knihovny tříd **specifické pro platformu** mají přístup ke všem rozhraním API v dané platformě (například .NET Framework, Xamarin iOS), ale můžou je používat jenom aplikace a knihovny, které cílí na tuto platformu.
+* **Přenositelné** knihovny tříd mají přístup k podmnožině rozhraní API a můžou je používat aplikace a knihovny, které cílí na více platforem.
+* Knihovny tříd **.NET Standard** jsou fúzí konceptu knihovny specifické pro platformu a přenositelné knihovny do jediného modelu, který poskytuje nejlepší z obou.
 
-## <a name="platform-specific-class-libraries"></a>Knihovny tříd pro konkrétní platformu
+## <a name="platform-specific-class-libraries"></a>Knihovny tříd specifické pro platformu
 
-Knihovny pro konkrétní platformu je vázána na jedné implementace rozhraní .NET (například rozhraní .NET Framework na Windows) a mohou tedy důležité závislosti na známé spouštěcí prostředí. Takové prostředí bude vystavení známé sady rozhraní API (.NET a rozhraní API operačního systému) a bude udržovat a vystavit očekávaný stav (například registr Windows).
+Knihovny specifické pro platformu jsou vázány na jednu implementaci rozhraní .NET (například .NET Framework ve Windows) a mohou proto mít významné závislosti na známém prostředí pro spuštění. Takové prostředí zveřejňuje známou sadu rozhraní API (rozhraní API .NET a OS) a bude udržovat a vystavovat očekávaný stav (například registr systému Windows).
 
-Vývojáři, kteří vytvářejí knihovny pro konkrétní platformy můžete plně využít základní platformy. Tyto knihovny spustí vždy jen na daným platformě, což kontroly platformy nebo jiné formy podmíněný kód zbytečné (modulo jedné zdrojové kódu pro různé platformy).
+Vývojáři, kteří vytvářejí knihovny specifické pro platformu, můžou plně využívat základní platformu. Knihovny se v této dané platformě budou spouštět jenom v případě, že se vydávají kontroly platforem nebo jiné formy podmíněného kódu, který není potřebný (modulo jeden kód pro více platforem).
 
-Typ knihovny primární třída pro rozhraní .NET Framework byl knihovny pro konkrétní platformu. Dokonce i v jiných implementacích .NET umístila, zůstaly knihovny pro konkrétní platformu typ dominantní knihovny.
+Knihovny specifické pro platformu byly primární typ knihovny tříd pro .NET Framework. I v případě jiných implementací rozhraní .NET zůstaly knihovny specifické pro platformu dominantní typ knihovny.
 
-## <a name="portable-class-libraries"></a>Přenosné knihovny tříd
+## <a name="portable-class-libraries"></a>Přenositelné knihovny tříd
 
-Přenosné knihovny se podporují na více implementací rozhraní .NET. Závislosti se pořád moct použít na známé spouštěcí prostředí, ale prostředí jsou syntetické ten, který je generován průnik sadu konkrétní implementace rozhraní .NET. To znamená, že vystavené rozhraní API a platforma předpoklady podmnožinu toho, co by být k dispozici do knihovny pro konkrétní platformu.
+Přenosné knihovny jsou podporovány v několika implementacích rozhraní .NET. Stále můžou podniknout závislosti na známém prostředí pro spuštění, ale prostředí je syntetické, které se generuje v průsečíku sady konkrétních implementací .NET. To znamená, že vystavená rozhraní API a předpoklady platforem jsou podmnožinou toho, co by bylo k dispozici pro knihovnu specifickou pro konkrétní platformu.
 
-Volíte konfiguraci platformy tak při vytvoření přenosné knihovny. Jde o sadu platformy, které budete potřebovat pro podporu (například rozhraní .NET Framework 4.5 +, Windows Phone 8.0 +). Další platformy, které se rozhodnete pro podporu, méně rozhraní API a méně platformy předpoklady, které můžete provést, nejnižší společným faktorem. Tato vlastnost může být matoucí zpočátku od lidé často přemýšlení "více je lepší", ale, že v menší počet dostupných rozhraní API podporované platformy výsledky hledání.
+Konfiguraci platformy zvolíte při vytváření přenosné knihovny. Jedná se o sadu platforem, které potřebujete podporovat (například .NET Framework 4.5 +, Windows Phone 8.0 +). Čím více platforem si nebudete podporovat, tím menšího společného jmenovatele můžete udělat méně rozhraní API a méně. Tato vlastnost může být zamatoucí jako první, protože lidé často uvažují o "více jsou lepší", ale zjistíte, že více podporovaných platforem má za následek méně dostupných rozhraní API.
 
-Mnoho vývojářů knihovny přešli z vytváření více knihovny pro konkrétní platformu z jednoho zdroje (pomocí direktivy podmíněné kompilace) na přenosných knihoven. Existují [několik přístupů](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html) pro přístup k funkce specifické pro platformu v rámci přenosných knihoven s [návnada a přepínač](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/) nejvíce široce přijat postup v tomto okamžiku.
+Mnoho vývojářů knihovny přešlo z vytváření více knihoven specifických pro jednotlivé platformy z jednoho zdroje (pomocí direktiv podmíněné kompilace) do přenosných knihoven. Pro přístup k funkcím specifickým pro platformu v přenosných knihovnách je k dispozici [několik přístupů](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html) , přičemž v tomto [okamžiku je v](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/) tuto chvíli nejdůležitějším způsobem přijatelné.
 
-## <a name="net-standard-class-libraries"></a>Knihovny tříd .NET standard
+## <a name="net-standard-class-libraries"></a>.NET Standard knihovny tříd
 
-Knihovny .NET standard jsou nahrazení konceptů specifických pro platformu a přenosných knihoven. Jsou specifické pro platformu v tom smyslu, že zveřejňovaly všechny funkce ze základní platformy (bez syntetického platformy nebo průniky platformu). Jsou to v tom smyslu, že fungují na všech platformách doprovodné přenosné.
+Knihovny .NET Standard jsou náhradou konceptů knihoven specifických pro platformu a přenosných knihoven. Jsou specifické pro platformu v tom smyslu, že zpřístupňují všechny funkce z základní platformy (žádné syntetické platformy nebo průniky platforem). Jsou přenosné v tom smyslu, že fungují na všech podporovaných platformách.
 
-Sada knihovny .NET Standard poskytuje _kontrakty_. Implementace .NET musí podporovat každou smlouvu plně nebo vůbec ne. Každá implementace, proto podporuje sadu .NET Standard smluv. Důsledkem je, že každý knihovny třídy .NET Standard se podporuje na platformách, které podporují závislých kontraktu.
+.NET Standard zveřejňuje sadu _kontraktů_knihoven. Implementace rozhraní .NET musí podporovat jednotlivé smlouvy zcela nebo vůbec. Každá implementace proto podporuje sadu .NET Standardch kontraktů. Corollary je, že každá knihovna tříd .NET Standard je podporována na platformách, které podporují závislosti jejich smluv.
 
-.NET Standard nevystavuje celé funkce rozhraní .NET Framework (ani je, že cíl), ale zveřejňovaly mnoho další rozhraní API než přenosné knihovny tříd. Postupně přibudou další rozhraní API.
+.NET Standard nevystaví celou funkčnost .NET Framework (ani to není cílem), ale zveřejňuje mnoho dalších rozhraní API než přenosných knihoven tříd. V průběhu času bude přidáno více rozhraní API.
 
 Následující platformy podporují knihovny .NET Standard:
 
@@ -55,11 +54,11 @@ Následující platformy podporují knihovny .NET Standard:
 * Xamarin.iOS, Xamarin.Mac, Xamarin.Android
 * Univerzální platforma Windows (UPW)
 * Windows
-* Windows Phone
+* telefon se systémem Windows
 * Windows Phone Silverlight
 
-Další informace najdete v tématu [.NET Standard](net-standard.md) tématu.
+Další informace najdete v tématu [.NET Standard](net-standard.md) .
 
 ## <a name="mono-class-libraries"></a>Knihovny tříd mono
 
-Knihovny tříd jsou podporovány v Mono, včetně tři typy knihoven, které je popsáno výše. Mono často ukázala (správně) jako na více platforem implementace rozhraní Microsoft .NET Framework. V části to bylo, protože knihovny specifické pro platformu .NET Framework by mohla spustit na modul Mono runtime bez změny nebo opětovnou kompilaci. Tato vlastnost byla na místě před vytvořením knihovny tříd portable, proto byla jasnou volbou povolit binární přenositelnost mezi rozhraní .NET Framework a Mono (i když to šlo jenom v jednom směru).
+Knihovny tříd jsou podporovány v mono, včetně tří typů knihoven popsaných výše. Mono je často vidět (správně) jako implementace Microsoft .NET Framework pro různé platformy. Částečně to bylo způsobeno tím, že knihovny .NET Framework specifické pro platformu by mohly být spuštěny v Mono runtime bez změny nebo opětovné kompilace. Tato vlastnost byla provedena před vytvořením přenosných knihoven tříd, proto byla zřejmou volbou pro povolení binární přenositelnosti mezi .NET Framework a Mono (i když pracovala pouze v jednom směru).

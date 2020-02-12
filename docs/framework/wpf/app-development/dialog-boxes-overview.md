@@ -10,12 +10,12 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: 9ec6716fefdc8de75d7e523c56ae0b3a02c8cf02
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bce2eed5f0e78c16b85b399e588c3d0d68ce7cb7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424644"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123711"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
 Samostatné aplikace mají obvykle hlavní okno, které zobrazuje hlavní data, přes které aplikace funguje, a zpřístupňuje funkce pro zpracování těchto dat prostřednictvím [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mechanismů, jako jsou panely nabídek, panely nástrojů a stavové řádky. Netriviální aplikace může také zobrazit další okna, aby bylo možné provést následující akce:  
@@ -32,7 +32,7 @@ Samostatné aplikace mají obvykle hlavní okno, které zobrazuje hlavní data, 
   
  *Nemodální* dialogové okno na druhé straně nebrání uživateli v aktivaci jiných oken, když je otevřený. Pokud třeba uživatel chce najít výskyty konkrétního slova v dokumentu, hlavní okno často otevře dialogové okno s dotazem, kde se uživatel bude hledat. Vzhledem k tomu, že hledání slova nebrání uživateli v úpravách dokumentu, dialogové okno ale nemusí být modální. Nemodální dialogové okno má alespoň k dispozici tlačítko **Zavřít** pro zavření dialogového okna a může poskytnout další tlačítka pro spuštění určitých funkcí, jako je například tlačítko **Najít další** , které najde další slovo, které odpovídá kritériím hledání slov.  
   
- Windows Presentation Foundation (WPF) umožňuje vytvořit několik typů dialogových oken, včetně polí se zprávami, společných dialogových oken a vlastních dialogových oken. V tomto tématu jsou popsány jednotlivé a [dialogová okna ukázka](https://go.microsoft.com/fwlink/?LinkID=159984) nabízí srovnávací příklady.  
+ Windows Presentation Foundation (WPF) umožňuje vytvořit několik typů dialogových oken, včetně polí se zprávami, společných dialogových oken a vlastních dialogových oken. V tomto tématu jsou popsány jednotlivé a [dialogová okna ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox) nabízí srovnávací příklady.  
 
 <a name="Message_Boxes"></a>   
 ## <a name="message-boxes"></a>Okna se zprávou  
@@ -55,9 +55,9 @@ Samostatné aplikace mají obvykle hlavní okno, které zobrazuje hlavní data, 
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowandresultcodebehind1)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowandresultcodebehind1)]  
   
- Další informace o použití polí se zprávami najdete v tématu Ukázka <xref:System.Windows.MessageBox>, [MessageBox](https://go.microsoft.com/fwlink/?LinkID=160023)a [dialog box](https://go.microsoft.com/fwlink/?LinkID=159984).  
+ Další informace o použití polí se zprávami najdete v tématu Ukázka <xref:System.Windows.MessageBox>, [MessageBox](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/MessageBox)a [dialog box](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox).  
   
- I když <xref:System.Windows.MessageBox> může nabídnout jednoduché uživatelské prostředí dialogového okna, výhoda použití <xref:System.Windows.MessageBox> je jediným typem okna, které mohou být zobrazeny v aplikacích spuštěných v izolovaném prostoru zabezpečení s částečnou důvěryhodností (viz [zabezpečení](../security-wpf.md)), jako je například prohlížeč XAML. aplikace (XBAP).  
+ I když <xref:System.Windows.MessageBox> může nabídnout jednoduché uživatelské prostředí dialogového okna, výhoda použití <xref:System.Windows.MessageBox> je jediným typem okna, které mohou být zobrazeny v aplikacích spuštěných v izolovaném prostoru zabezpečení s částečnou důvěryhodností (viz [zabezpečení](../security-wpf.md)), jako jsou například aplikace prohlížeče XAML (XBAP).  
   
  Většina dialogových oken zobrazuje a shromažďuje složitější data, než je výsledek okna se zprávou, včetně textu, výběru (zaškrtávací políčka), vzájemně se vylučujícího výběru (přepínačů) a výběru seznamu (seznamy, pole se seznamem, rozevírací seznamy). Pro tyto Windows Presentation Foundation (WPF) poskytuje několik běžných dialogových oken a umožňuje vytvářet vlastní dialogová okna, i když je použití buď omezené na aplikace spuštěné s úplným vztahem důvěryhodnosti.  
   
@@ -118,7 +118,7 @@ I když jsou běžná dialogová okna užitečná a měla by být použita, poku
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
 ### <a name="creating-a-modal-custom-dialog-box"></a>Vytvoření modálního vlastního dialogového okna
 
-V tomto tématu se dozvíte, jak použít <xref:System.Windows.Window> k vytvoření typické implementace modálního dialogového okna, pomocí dialogového okna `Margins` jako příklad (viz [Ukázka v dialogovém okně ukázka](https://go.microsoft.com/fwlink/?LinkID=159984)). Následující obrázek ukazuje `Margins` dialogové okno.  
+V tomto tématu se dozvíte, jak použít <xref:System.Windows.Window> k vytvoření typické implementace modálního dialogového okna, pomocí dialogového okna `Margins` jako příklad (viz [Ukázka v dialogovém okně ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox)). Následující obrázek ukazuje `Margins` dialogové okno.  
   
  ![Dialogové okno okraje s poli pro definování levého okraje, horního okraje, pravého okraje a dolního okraje.](./media/dialog-boxes-overview/margin-size-dialog-box.png)  
   
@@ -304,7 +304,7 @@ Případně může váš kód volat <xref:System.Windows.Window.Close%2A> při k
 [!code-csharp[Calling the Close method](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxSample/CSharp/FindDialogBox.xaml.cs?range=1-9,119-126)]
 [!code-vb[Calling the Close method](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxSample/VisualBasic/FindDialogBox.xaml.vb?range=1-9,99-103)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled prvku Popup](../controls/popup-overview.md)
-- [Ukázka dialogového okna](https://go.microsoft.com/fwlink/?LinkID=159984)
+- [Ukázka dialogového okna](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox)

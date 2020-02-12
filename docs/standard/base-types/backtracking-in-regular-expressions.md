@@ -17,12 +17,12 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.openlocfilehash: a11e3501aa57fc81a28d27d1280d299f99e1dea1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e7922294db1236e697df80203583b2dbb3e41a01
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711516"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124439"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)a modul regulárních výrazů se vrátí do předchozího uloženého stavu, aby bylo možné pokračovat ve vyhledávání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -103,7 +103,7 @@ K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volite
  Porovnání vstupního řetězce s regulárním výrazem pokračuje tímto způsobem, dokud se modul regulárních výrazů nepokusí vyhledat všechny možné kombinace shody, a poté dojde k závěru, že neexistuje žádná shoda. Vzhledem k vnořeným kvantifikátorům je toto porovnání typu O (2<sup>n</sup>) nebo exponenciální operace, kde *n* je počet znaků ve vstupním řetězci. To znamená, že v nejhorším případě vyžaduje vstupní znak o délce 30 znaků přibližně 1 073 741 824 porovnání a vstupní znak o délce 40 znaků vyžaduje přibližně 1 099 511 627 776 porovnání. Pokud používáte řetězce o této nebo větší délce, může dokončení metod regulárních výrazů trvat extrémně dlouhou dobu, pokud zpracovávají obsah, který se neshoduje se vzorem regulárního výrazu. 
 
 ## <a name="controlling-backtracking"></a>Řídicí mechanismus navracení  
- Mechanismus navracení umožňuje vytvářet výkonné a pružné regulární výrazy. Jak již však bylo znázorněno v předchozích částech, mohou tyto výhody být vázány na nepřijatelně nízký výkon. Chcete-li zabránit nadměrnému zpětnému navracení, měli byste definovat interval časového limitu při vytváření instance <xref:System.Text.RegularExpressions.Regex>ho objektu nebo volání statické metody pro porovnání regulárního výrazu. Tento postup je popsán v následujícím oddíle. Kromě toho rozhraní .NET podporuje tři prvky regulárního výrazu, které omezují nebo potlačí zpětné navracení a které podporují složité regulární výrazy s minimální nebo žádnou pokutou výkonu: [nemechanismus](#nonbacktracking-subexpression)nevracení zpět, [kontrolní výrazy zpětného vyhledávání](#lookbehind-assertions)a [kontrolní výrazy dopředného vyhledávání](#lookahead-assertions). Další informace o jednotlivých prvcích jazyka naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ Mechanismus navracení umožňuje vytvářet výkonné a pružné regulární výrazy. Jak již však bylo znázorněno v předchozích částech, mohou tyto výhody být vázány na nepřijatelně nízký výkon. Chcete-li zabránit nadměrnému zpětnému navracení, měli byste definovat interval časového limitu při vytváření instance <xref:System.Text.RegularExpressions.Regex>ho objektu nebo volání statické metody pro porovnání regulárního výrazu. Tento postup je popsán v následujícím oddíle. Kromě toho rozhraní .NET podporuje tři prvky regulárního výrazu, které omezují nebo potlačí zpětné navrácení a které podporují složité regulární výrazy s minimální nebo žádnou pokutou výkonu: [atomické](#atomic-groups) [kontrolní výrazy](#lookbehind-assertions)a [kontrolní výrazy dopředného vyhledávání](#lookahead-assertions). Další informace o jednotlivých prvcích jazyka naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
 
 ### <a name="defining-a-time-out-interval"></a>Definování intervalu časového limitu  
  Počínaje .NET Framework 4,5 můžete nastavit hodnotu časového limitu, která představuje nejdelší interval, který modul regulárních výrazů vyhledá jednu shodu předtím, než tento pokus opustí a vyvolá výjimku <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Interval časového limitu určíte zadáním <xref:System.TimeSpan> hodnoty do konstruktoru <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pro instance regulárních výrazů. Kromě toho každá statická metoda porovnávání vzorů má přetížení s parametrem <xref:System.TimeSpan>, který umožňuje zadat hodnotu časového limitu. Ve výchozím nastavení je interval časového limitu nastaven na <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> a modul regulárních výrazů nevyprší časový limit.  
@@ -118,8 +118,8 @@ K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volite
  [!code-csharp[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/cs/ctor1.cs#1)]
  [!code-vb[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/vb/ctor1.vb#1)]  
 
-### <a name="nonbacktracking-subexpression"></a>Podvýraz bez mechanismu navracení  
- *`)` prvek* jazyka `(?>` v dílčím výrazu potlačuje navrácení. Slouží k zamezení problémům s výkonem, které souvisí s neúspěšnými shodami.  
+### <a name="atomic-groups"></a>Atomické skupiny
+ `(?>` dílčí *výraz*`)` jazyka potlačí zpětné navrácení do dílčího výrazu. Po úspěšném spárování neposkytne žádnou součást shody k následnému navrácení. Například ve vzorovém `(?>\w*\d*)1`, pokud `1` nelze porovnat, `\d*` neposkytuje žádnou shodu, ani když to znamená, že by `1` mohl úspěšně souhlasit. Atomické skupiny můžou pomáhat zabránit problémům s výkonem přidruženým k neúspěšným shodám.
   
  Následující příklad znázorňuje, jakým způsobem potlačení mechanismu navracení zlepšuje výkon při použití vnořených kvantifikátorů. Měří čas, který modul regulárních výrazů potřebuje k určení toho, zda se vstupní řetězec neshoduje s dvěma regulárními výrazy. První regulární výraz používá mechanismus navracení k tomu, aby se pokusil porovnat řetězec, který obsahuje jeden výskyt nebo několik výskytů jedné nebo několika šestnáctkových číslic následovaných dvojtečkou, následovaných jednou nebo několika šestnáctkovými číslicemi, následovaných dvěma dvojtečkami. Druhý regulární výraz je shodný s prvním výrazem, s výjimkou toho, že zakáže mechanismus navracení. Výstup z příkladu ukazuje, že zlepšení výkonu plynoucí ze zakázání mechanismu navracení je značné.  
   
@@ -188,7 +188,7 @@ K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volite
 |`[A-Z]\w*`|Porovná abecední znak následovaný žádným nebo několika znaky slova.|  
 |`$`|Ukončí porovnávání na konci vstupního řetězce.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

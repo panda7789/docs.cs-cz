@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-ms.openlocfilehash: d77ce78fe914bf300c5b33019d7cf67aa4ad74c3
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: d0962793854a6066112eb987fbdb3f703617787f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291456"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124413"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 prvky <xref:System.Windows.Controls.Panel> jsou komponenty, které řídí vykreslování prvků – jejich velikost a rozměry, jejich umístění a uspořádání jejich podřízeného obsahu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> prvků a možnost vytvářet vlastní prvky <xref:System.Windows.Controls.Panel>.  
@@ -94,14 +94,14 @@ prvky <xref:System.Windows.Controls.Panel> jsou komponenty, které řídí vykre
   
 <a name="Panels_overview_Canvas_subsection"></a>   
 ### <a name="canvas"></a>Plátno  
- Element <xref:System.Windows.Controls.Canvas> umožňuje umístění obsahu podle absolutních souřadnic *x* a *y*. Prvky lze vykreslit v jedinečném umístění; nebo, pokud prvky zabírají stejné souřadnice, pořadí, ve kterém jsou uvedeny v označení, určuje pořadí, ve kterém jsou prvky vykreslovány.  
+ Element <xref:System.Windows.Controls.Canvas> umožňuje umístění obsahu podle absolutních souřadnic *x* a *y* . Prvky lze vykreslit v jedinečném umístění; nebo, pokud prvky zabírají stejné souřadnice, pořadí, ve kterém jsou uvedeny v označení, určuje pořadí, ve kterém jsou prvky vykreslovány.  
   
  <xref:System.Windows.Controls.Canvas> poskytuje nejpružnější podporu rozložení pro všechny <xref:System.Windows.Controls.Panel>. Vlastnosti výšky a šířky slouží k definování oblasti plátna a prvky uvnitř jsou přiřazeny absolutní souřadnice vzhledem k oblasti nadřazeného <xref:System.Windows.Controls.Canvas>. Čtyři připojené vlastnosti, <xref:System.Windows.Controls.Canvas.Left%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Canvas.Top%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Canvas.Right%2A?displayProperty=nameWithType> a <xref:System.Windows.Controls.Canvas.Bottom%2A?displayProperty=nameWithType>, umožňují přesné řízení umístění objektu v rámci <xref:System.Windows.Controls.Canvas>, který vývojářům umožňuje umístit prvky na obrazovku přesně a uspořádat je.  
   
 #### <a name="cliptobounds-within-a-canvas"></a>ClipToBounds na plátně  
  <xref:System.Windows.Controls.Canvas> mohou umístit podřízené prvky na libovolné místo na obrazovce, a to i v souřadnicích, které jsou mimo vlastní definované <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A>. Kromě toho <xref:System.Windows.Controls.Canvas> nemá vliv na velikost jejích podřízených objektů. V důsledku toho je možné, že podřízený prvek překreslí jiné prvky mimo ohraničující obdélník nadřazeného <xref:System.Windows.Controls.Canvas>. Výchozím chováním <xref:System.Windows.Controls.Canvas> je umožnění vykreslování podřízených objektů mimo hranice nadřazené <xref:System.Windows.Controls.Canvas>. Pokud je toto chování nežádoucí, vlastnost <xref:System.Windows.UIElement.ClipToBounds%2A> lze nastavit na hodnotu `true`. To způsobí, že <xref:System.Windows.Controls.Canvas> klipu na svou vlastní velikost. <xref:System.Windows.Controls.Canvas> je jediným prvkem rozložení, který umožňuje vykreslení podřízených objektů mimo hranice.  
   
- Toto chování je graficky znázorněné v [ukázce porovnání vlastností šířky](https://go.microsoft.com/fwlink/?LinkID=160050).  
+ Toto chování je graficky znázorněné v [ukázce porovnání vlastností šířky](https://github.com/Microsoft/WPF-Samples/tree/master/Elements/WidthProperties).  
   
 #### <a name="defining-and-using-a-canvas"></a>Definování a použití plátna  
  <xref:System.Windows.Controls.Canvas> lze vytvořit instanci jednoduše pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] nebo kódu. Následující příklad ukazuje, jak použít <xref:System.Windows.Controls.Canvas> k naprostou pozici obsahu. Tento kód vytváří čtverce o velikosti 3 100 pixelů. První čtverec je červenou a pozice v levém horním rohu (*x, y*) je zadaná jako (0, 0). Druhý čtverec je zelený a jeho pozice v levém horním rohu je (100, 100), bezprostředně pod a vpravo od prvního čtverce. Třetí čtverec je modrý a jeho pozice v levém horním rohu je (50, 50), takže zahrnuje pravý dolní kvadrant prvního čtverce a levého horního kvadrantu druhého. Vzhledem k tomu, že se třetí čtverec nahlásilo jako poslední, zdá se, že se nachází na dalších dvou čtvercích – to znamená, že překrývající se části předpokládají barvu třetího pole.  
@@ -174,7 +174,7 @@ prvky <xref:System.Windows.Controls.Panel> jsou komponenty, které řídí vykre
   
  Rozdíl v chování vykreslování lze zobrazit v tomto obrázku.  
   
- ![Snímek obrazovky: StackPanel vs. DockPanel snímek obrazovky](./media/layout-smiley-stackpanel.PNG "layout_smiley_stackpanel")  
+ ![Snímek obrazovky: StackPanel vs. DockPanel screenshot](./media/layout-smiley-stackpanel.PNG "layout_smiley_stackpanel")  
   
 #### <a name="defining-and-using-a-stackpanel"></a>Definování a použití StackPanel  
  Následující příklad ukazuje, jak použít <xref:System.Windows.Controls.StackPanel> k vytvoření sady svislě umístěných tlačítek. Pro horizontální umístění nastavte vlastnost <xref:System.Windows.Controls.StackPanel.Orientation%2A> na hodnotu <xref:System.Windows.Controls.Orientation.Horizontal>.  
@@ -232,7 +232,7 @@ prvky <xref:System.Windows.Controls.Panel> jsou komponenty, které řídí vykre
   
  Podobně vlastní chování rozložení založené na odvozených třídách (například <xref:System.Windows.Controls.Canvas> nebo <xref:System.Windows.Controls.Grid>) lze definovat přepsáním jejich <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> a <xref:System.Windows.FrameworkElement.MeasureOverride%2A>ch metod.  
   
- Následující kód ukazuje, jak vytvořit vlastní prvek <xref:System.Windows.Controls.Panel>. Tento nový <xref:System.Windows.Controls.Panel>definovaný jako `PlotPanel`podporuje umístění podřízených elementů prostřednictvím použití pevně zakódovaných souřadnic *x* a *y*. V tomto příkladu je prvek <xref:System.Windows.Shapes.Rectangle> (nezobrazený) umístěn v bodu vykreslování 50 (*x*) a 50 (*y*).  
+ Následující kód ukazuje, jak vytvořit vlastní prvek <xref:System.Windows.Controls.Panel>. Tento nový <xref:System.Windows.Controls.Panel>definovaný jako `PlotPanel`podporuje umístění podřízených elementů prostřednictvím použití pevně zakódovaných souřadnic *x* a *y* . V tomto příkladu je prvek <xref:System.Windows.Shapes.Rectangle> (nezobrazený) umístěn v bodu vykreslování 50 (*x*) a 50 (*y*).  
   
  [!code-cpp[PlotPanel#1](~/samples/snippets/cpp/VS_Snippets_Wpf/PlotPanel/CPP/PlotPanel.cpp#1)]
  [!code-csharp[PlotPanel#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PlotPanel/CSharp/PlotPanel.cs#1)]
@@ -244,7 +244,7 @@ prvky <xref:System.Windows.Controls.Panel> jsou komponenty, které řídí vykre
 ## <a name="localizationglobalization-support"></a>Podpora lokalizace/globalizace  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje řadu funkcí, které pomáhají při vytváření lokalizovatelných [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].  
   
- Všechny prvky panelu nativně podporují vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A>, která se dá použít k dynamickému přetečení obsahu na základě nastavení národního prostředí nebo jazyka uživatele. Další informace najdete v tématu <xref:System.Windows.FrameworkElement.FlowDirection%2A>.  
+ Všechny prvky panelu nativně podporují vlastnost <xref:System.Windows.FrameworkElement.FlowDirection%2A>, která se dá použít k dynamickému přetečení obsahu na základě nastavení národního prostředí nebo jazyka uživatele. Další informace naleznete v tématu <xref:System.Windows.FrameworkElement.FlowDirection%2A>.  
   
  Vlastnost <xref:System.Windows.Window.SizeToContent%2A> poskytuje mechanismus, který vývojářům aplikací umožňuje předvídání potřeb lokalizovaných [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Pomocí <xref:System.Windows.SizeToContent.WidthAndHeight> hodnoty této vlastnosti je nadřazený <xref:System.Windows.Window> vždy dynamicky přizpůsobený obsahu a neomezuje se na umělá omezení výšky a šířky.  
   
@@ -252,12 +252,12 @@ prvky <xref:System.Windows.Controls.Panel> jsou komponenty, které řídí vykre
   
  Další informace o vytváření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací pomocí lokalizovatelných uživatelských rozhraní (uživatelská rozhraní) s najdete v tématu [Přehled použití automatického rozložení](../advanced/use-automatic-layout-overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
 - [Ukázka Galerie rozložení WPF](https://go.microsoft.com/fwlink/?LinkID=160054)
 - [Rozložení](../advanced/layout.md)
-- [Ukázka galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
+- [Ukázka galerie ovládacích prvků WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/ControlsAndLayout)
 - [Přehled zarovnání, okrajů a odsazení](../advanced/alignment-margins-and-padding-overview.md)
 - [Vytvoření vlastního vzorku panelu pro vybalení obsahu](https://go.microsoft.com/fwlink/?LinkID=159979)
 - [Přehled přidružených vlastností](../advanced/attached-properties-overview.md)
