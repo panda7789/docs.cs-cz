@@ -6,22 +6,22 @@ helpviewer_keywords:
 - presence of WPT [WPF], detecting
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
-ms.openlocfilehash: c68daf2cb5687497e66ad3022ce42352a17ae0f7
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 41010e615b6b3d10ebf6adc0e3f871873e94f409
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053441"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124452"
 ---
-# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a><span data-ttu-id="95acc-102">Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="95acc-102">How to: Detect Whether the .NET Framework 3.0 Is Installed</span></span>
-<span data-ttu-id="95acc-103">Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, musí nejdřív ověřit, že je k dispozici modul runtime .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="95acc-103">Before administrators can deploy Microsoft .NET Framework applications on a system, they must first confirm that the .NET Framework runtime is present.</span></span> <span data-ttu-id="95acc-104">Toto téma poskytuje skript napsaný ve formátu HTML/JavaScript, který mohou správci použít k určení, zda .NET Framework k dispozici v systému.</span><span class="sxs-lookup"><span data-stu-id="95acc-104">This topic provides a script written in HTML/JavaScript that administrators can use to determine whether the .NET Framework is present on a system.</span></span>  
+# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a><span data-ttu-id="7f9a9-102">Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="7f9a9-102">How to: Detect Whether the .NET Framework 3.0 Is Installed</span></span>
+<span data-ttu-id="7f9a9-103">Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, musí nejdřív ověřit, že je k dispozici modul runtime .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7f9a9-103">Before administrators can deploy Microsoft .NET Framework applications on a system, they must first confirm that the .NET Framework runtime is present.</span></span> <span data-ttu-id="7f9a9-104">Toto téma poskytuje skript napsaný ve formátu HTML/JavaScript, který mohou správci použít k určení, zda .NET Framework k dispozici v systému.</span><span class="sxs-lookup"><span data-stu-id="7f9a9-104">This topic provides a script written in HTML/JavaScript that administrators can use to determine whether the .NET Framework is present on a system.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="95acc-105">Podrobnější informace o instalaci, nasazení a detekci .NET Framework Microsoftu najdete v diskuzi v tématu [nasazení microsoft .NET Framework verze 3,0](https://go.microsoft.com/fwlink/?LinkId=96739).</span><span class="sxs-lookup"><span data-stu-id="95acc-105">For more detailed information on installing, deploying, and detecting the Microsoft .NET Framework, see the discussion in [Deploying Microsoft .NET Framework Version 3.0](https://go.microsoft.com/fwlink/?LinkId=96739).</span></span>  
+> <span data-ttu-id="7f9a9-105">Podrobnější informace o instalaci, nasazení a detekci .NET Framework Microsoftu najdete v diskuzi v tématu [nasazení microsoft .NET Framework verze 3,0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).</span><span class="sxs-lookup"><span data-stu-id="7f9a9-105">For more detailed information on installing, deploying, and detecting the Microsoft .NET Framework, see the discussion in [Deploying Microsoft .NET Framework Version 3.0](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480198(v=msdn.10)).</span></span>  
   
 <a name="content_expiration"></a>   
-## <a name="detect-the-net-clr-user-agent-string"></a><span data-ttu-id="95acc-106">Zjištění řetězce uživatelského agenta .NET CLR</span><span class="sxs-lookup"><span data-stu-id="95acc-106">Detect the ".NET CLR" User-Agent String</span></span>  
- <span data-ttu-id="95acc-107">Když je nainstalovaná .NET Framework, soubor MSI přidá ".NET CLR" a číslo verze do řetězce UserAgent.</span><span class="sxs-lookup"><span data-stu-id="95acc-107">When .NET Framework is installed, the MSI adds ".NET CLR" and the version number to the UserAgent string.</span></span> <span data-ttu-id="95acc-108">Následující příklad ukazuje skript vložený do jednoduché stránky HTML.</span><span class="sxs-lookup"><span data-stu-id="95acc-108">The following example shows a script embedded in a simple HTML page.</span></span> <span data-ttu-id="95acc-109">Skript vyhledá řetězec UserAgent a určí, zda je .NET Framework nainstalován, a zobrazí stavovou zprávu výsledků hledání.</span><span class="sxs-lookup"><span data-stu-id="95acc-109">The script searches the UserAgent string to determine whether .NET Framework is installed, and displays a status message on the results of the search.</span></span>  
+## <a name="detect-the-net-clr-user-agent-string"></a><span data-ttu-id="7f9a9-106">Zjištění řetězce uživatelského agenta .NET CLR</span><span class="sxs-lookup"><span data-stu-id="7f9a9-106">Detect the ".NET CLR" User-Agent String</span></span>  
+ <span data-ttu-id="7f9a9-107">Když je nainstalovaná .NET Framework, soubor MSI přidá ".NET CLR" a číslo verze do řetězce UserAgent.</span><span class="sxs-lookup"><span data-stu-id="7f9a9-107">When .NET Framework is installed, the MSI adds ".NET CLR" and the version number to the UserAgent string.</span></span> <span data-ttu-id="7f9a9-108">Následující příklad ukazuje skript vložený do jednoduché stránky HTML.</span><span class="sxs-lookup"><span data-stu-id="7f9a9-108">The following example shows a script embedded in a simple HTML page.</span></span> <span data-ttu-id="7f9a9-109">Skript vyhledá řetězec UserAgent a určí, zda je .NET Framework nainstalován, a zobrazí stavovou zprávu výsledků hledání.</span><span class="sxs-lookup"><span data-stu-id="7f9a9-109">The script searches the UserAgent string to determine whether .NET Framework is installed, and displays a status message on the results of the search.</span></span>  
   
 ```html  
 <HTML>  
@@ -113,13 +113,13 @@ ms.locfileid: "71053441"
 </HTML>  
 ```  
   
- <span data-ttu-id="95acc-110">Pokud je vyhledávání verze .NET CLR úspěšné, zobrazí se následující typ stavové zprávy:</span><span class="sxs-lookup"><span data-stu-id="95acc-110">If the search for the ".NET CLR " version is successful, the following type of status message appears:</span></span>  
+ <span data-ttu-id="7f9a9-110">Pokud je vyhledávání verze .NET CLR úspěšné, zobrazí se následující typ stavové zprávy:</span><span class="sxs-lookup"><span data-stu-id="7f9a9-110">If the search for the ".NET CLR " version is successful, the following type of status message appears:</span></span>  
   
  `This machine has the correct version of the .NET Framework 3.0: 3.0.04425.00`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 2.0.50727; .NET CLR 3.0.04425.00).`  
   
- <span data-ttu-id="95acc-111">V opačném případě se zobrazí následující typ stavové zprávy:</span><span class="sxs-lookup"><span data-stu-id="95acc-111">Otherwise, the following type of status message appears:</span></span>  
+ <span data-ttu-id="7f9a9-111">V opačném případě se zobrazí následující typ stavové zprávy:</span><span class="sxs-lookup"><span data-stu-id="7f9a9-111">Otherwise, the following type of status message appears:</span></span>  
   
  `This machine does not have correct version of the .NET Framework 3.0.`  
   
