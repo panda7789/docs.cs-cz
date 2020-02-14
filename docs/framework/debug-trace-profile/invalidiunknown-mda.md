@@ -8,34 +8,32 @@ helpviewer_keywords:
 - IUnknown pointers
 - managed debugging assistants (MDAs), invalid IUnknown pointer
 ms.assetid: c7924771-a16b-40fe-b337-ce51dcdf6a12
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ea7f48ab61c16cb0430717074f1b1feab4827763
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5df9a3f506d8c2de6f1a3125459adc2d59d510bf
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052597"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217369"
 ---
 # <a name="invalidiunknown-mda"></a>invalidIUnknown – pomocník spravovaného ladění (MDA)
-Pokud je do spravovaného kódu z nativního kódu předán neplatný `IUnknown` ukazatel, je aktivován pomocník spravovanéholadění(MDA).`invalidIUnknown` Při `IUnknown` dotazování `IUnknown` na rozhraní se nezdařila operace vrácení.  
+V případě, že je do spravovaného kódu z nativního kódu předán neplatný ukazatel `IUnknown`, je aktivován Pomocník s `invalidIUnknown` Managed Debugging Assistant (MDA). `IUnknown` se při dotazování na rozhraní `IUnknown` nepodařilo vrátit úspěch.  
   
 ## <a name="symptoms"></a>Příznaky  
  Při zařazování ukazatele rozhraní modelu COM během zařazování argumentů dojde k neočekávané chybě.  
   
-## <a name="cause"></a>příčina  
- Nesprávná `QueryInterface` implementace rozhraní COM předaných modulu CLR.  
+## <a name="cause"></a>Příčina  
+ Nesprávná implementace `QueryInterface` v rozhraní COM předanému modulu CLR.  
   
 ## <a name="resolution"></a>Řešení  
- Opravte `QueryInterface` implementaci.  
+ Opravte implementaci `QueryInterface`.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
  Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Popis chyby  
+ Popis chyby.  
   
-## <a name="configuration"></a>Konfiguraci  
+## <a name="configuration"></a>Konfigurace  
   
 ```xml  
 <mdaConfig>  
@@ -45,7 +43,7 @@ Pokud je do spravovaného kódu z nativního kódu předán neplatný `IUnknown`
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

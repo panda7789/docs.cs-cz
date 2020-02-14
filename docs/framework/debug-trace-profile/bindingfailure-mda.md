@@ -9,24 +9,22 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 93c426cce792c8f30a3551e2d4626736dd67278f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e3a9a915d25cbe5f052f039055167cf3ae4bf424
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052944"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216915"
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure – pomocník spravovaného ladění (MDA)
 
-Pokud se sestavení nepovede načíst, aktivuje se pomocník spravovanéholadění(MDA).`bindingFailure`
+Pokud se sestavení nepovede načíst, aktivuje se Pomocník pro spravované ladění v `bindingFailure` (MDA).
 
 ## <a name="symptoms"></a>Příznaky
 
-Kód se pokusil načíst sestavení pomocí statického odkazu nebo jedné z metod zavaděče, například <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo. <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> Sestavení není načteno a <xref:System.IO.FileNotFoundException> je vyvolána výjimka nebo. <xref:System.IO.FileLoadException>
+Kód se pokusil načíst sestavení pomocí statického odkazu nebo jedné z metod zavaděče, například <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>. Sestavení není načteno a je vyvolána výjimka <xref:System.IO.FileNotFoundException> nebo <xref:System.IO.FileLoadException>.
 
-## <a name="cause"></a>příčina
+## <a name="cause"></a>Příčina
 
 K selhání vazby dojde v případě, že modul runtime nemůže načíst sestavení. Selhání vazby může být výsledkem jedné z následujících situací:
 
@@ -44,19 +42,19 @@ K selhání vazby dojde v případě, že modul runtime nemůže načíst sestav
 
 Prvním krokem je určit, proč se modul CLR nemůže přivážet k požadovanému sestavení. Existuje mnoho důvodů, proč modul runtime pravděpodobně nenajde nebo nedokázal načíst požadované sestavení, například scénáře uvedené v části Příčina. K odstranění příčiny selhání vazby doporučujeme následující akce:
 
-- Určete příčinu pomocí dat poskytovaných v rámci `bindingFailure` aplikace MDA:
+- Určete příčinu pomocí dat poskytovaných `bindingFailure` MDA:
 
   - Spusťte [Fuslogvw. exe (Prohlížeč protokolu vazby sestavení)](../tools/fuslogvw-exe-assembly-binding-log-viewer.md) a přečtěte si protokoly chyb vytvořené pořadačem sestavení.
 
-  - Určete, zda je sestavení v požadovaném umístění. V případě <xref:System.Reflection.Assembly.LoadFrom%2A> metod a <xref:System.Reflection.Assembly.LoadFile%2A> lze požadované umístění snadno určit. V případě <xref:System.Reflection.Assembly.Load%2A> metody, která se váže pomocí identity sestavení, je nutné vyhledat sestavení, která odpovídají této identitě v cestě k <xref:System.AppDomain.BaseDirectory%2A> vlastnostem vlastnosti domény aplikace a globální mezipaměti sestavení (GAC).
+  - Určete, zda je sestavení v požadovaném umístění. V případě metod <xref:System.Reflection.Assembly.LoadFrom%2A> a <xref:System.Reflection.Assembly.LoadFile%2A> lze požadované umístění snadno určit. V případě metody <xref:System.Reflection.Assembly.Load%2A>, která vytváří vazby pomocí identity sestavení, je nutné vyhledat sestavení, která odpovídají této identitě v cestě k vlastnosti <xref:System.AppDomain.BaseDirectory%2A> a globální mezipaměti sestavení (GAC) domény aplikace.
 
 - Vyřešte příčinu na základě výše uvedeného rozhodnutí. Možné možnosti řešení jsou následující:
 
-  - Nainstalujte požadované sestavení do globální mezipaměti sestavení (GAC) a zavolejte na. <xref:System.Reflection.Assembly.Load%2A>Metoda pro načtení sestavení podle identity
+  - Nainstalujte požadované sestavení do globální mezipaměti sestavení (GAC) a zavolejte na. Metoda <xref:System.Reflection.Assembly.Load%2A> pro načtení sestavení podle identity.
 
-  - Zkopírujte požadované sestavení do adresáře aplikace a zavolejte <xref:System.Reflection.Assembly.Load%2A> metodu pro načtení sestavení podle identity.
+  - Zkopírujte požadované sestavení do adresáře aplikace a zavolejte metodu <xref:System.Reflection.Assembly.Load%2A> pro načtení sestavení podle identity.
 
-  - Překonfigurujte doménu aplikace, ve které došlo k chybě vazby, aby zahrnovala cestu sestavení, a to <xref:System.AppDomain.BaseDirectory%2A> buď změnou vlastnosti, nebo přidáním privátních cest probingu.
+  - Překonfigurujte doménu aplikace, ve které došlo k chybě vazby, aby zahrnovala cestu sestavení, buď změnou vlastnosti <xref:System.AppDomain.BaseDirectory%2A>, nebo přidáním privátních cest pro zjišťování.
 
   - Změňte seznam řízení přístupu pro soubor, aby mohl přihlášený uživatel číst soubor.
 
@@ -68,9 +66,9 @@ Tento MDA nemá žádný vliv na CLR. Oznamuje pouze data o chybách vazeb.
 
 MDA hlásí sestavení, které se nepodařilo načíst, včetně požadované cesty nebo zobrazovaného názvu, kontextu vazby, domény aplikace, v níž bylo zatížení vyžádáno, a důvodu chyby.
 
-Pokud nejsou data pro CLR k dispozici, může být zobrazované jméno nebo požadovaná cesta prázdná. Pokud volání <xref:System.Reflection.Assembly.Load%2A> metody neproběhlo, je pravděpodobně modulem runtime určení zobrazovaného názvu pro sestavení.
+Pokud nejsou data pro CLR k dispozici, může být zobrazované jméno nebo požadovaná cesta prázdná. Pokud volání metody <xref:System.Reflection.Assembly.Load%2A> neúspěšné, je pravděpodobně modulem runtime určení zobrazovaného názvu pro sestavení.
 
-## <a name="configuration"></a>Konfiguraci
+## <a name="configuration"></a>Konfigurace
 
 ```xml
 <mdaConfig>
@@ -105,6 +103,6 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

@@ -7,25 +7,23 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6024144b6f12df22369366f04c3cbad02c5011d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5b71eb81769db1188f97b1646a608df172ff56c5
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119017"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214828"
 ---
 # <a name="configsections-element-for-configuration"></a>\<> configSections – element pro \<konfigurace >
 
 Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 [**konfigurační >\<** ](configuration-element.md)   
-&nbsp;&nbsp; **\<configSections>**
+&nbsp;&nbsp; **\<configSections >**
 
 ## <a name="attributes"></a>Atributy
 
-Žádné
+Žádná
 
 ## <a name="parent-element"></a>Nadřazený element
 
@@ -38,8 +36,8 @@ Obsahuje konfigurační oddíl a deklarace oboru názvů.
 |     | Popis |
 | --- | ----------- |
 | [**oddíl \<>** ](section-element.md) | Obsahuje deklaraci konfiguračního oddílu. |
-| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
-| [ **\<remove>** ](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
+| [ **> \<sectionGroup**](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [ **\<odebrat >** ](remove-element-for-configsections.md) | Odebere předdefinovanou sekci nebo skupinu oddílů. |
 | [ **\<vymazat >** ](clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
 
 ## <a name="remarks"></a>Poznámky
@@ -66,6 +64,6 @@ Následující příklad ukazuje, jak definovat konfigurační oddíl a definova
 
 Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](index.md)

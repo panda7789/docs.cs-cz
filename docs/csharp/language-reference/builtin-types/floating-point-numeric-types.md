@@ -1,7 +1,7 @@
 ---
 title: Číselné typy s plovoucí desetinnou C# čárkou – referenční informace
-description: Přehled předdefinovaných typů s C# plovoucí desetinnou čárkou
-ms.date: 10/22/2019
+description: 'Přečtěte si o předdefinovaných C# typech s plovoucí desetinnou čárkou: float, Double a Decimal.'
+ms.date: 02/10/2020
 f1_keywords:
 - float
 - float_CSharpKeyword
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 9c8b11f9337ee9de90f2d4d96b5be162713bfcbd
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 95b7f266654bbbcdcd0f81e3aa11cfc94af9f0e5
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093211"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215239"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Číselné typy s plovoucí desetinnouC# čárkou (referenční)
 
@@ -50,19 +50,21 @@ Výchozí hodnota každého typu s plovoucí desetinnou čárkou je nula, `0`. K
 
 Vzhledem k tomu, že typ `decimal` má větší přesnost a menší rozsah než `float` a `double`, je vhodné pro finanční a peněžní výpočty.
 
-Ve výrazu můžete kombinovat [integrální](integral-numeric-types.md) typy a typy s plovoucí desetinnou čárkou. V tomto případě jsou integrální typy převedeny na typy s plovoucí desetinnou čárkou. Vyhodnocení výrazu je provedeno podle následujících pravidel:
+Ve výrazu můžete kombinovat [integrální](integral-numeric-types.md) typy a typy `float` a `double`. V tomto případě jsou integrální typy implicitně převedeny na jeden z typů s plovoucí desetinnou čárkou a v případě potřeby je typ `float` implicitně převeden na `double`. Výraz se vyhodnotí takto:
 
-- Pokud je jeden z typů s plovoucí desetinnou čárkou `double`, výraz se vyhodnotí jako `double`nebo [bool](bool.md) v relačních porovnáních a porovnávání rovnosti.
-- Pokud ve výrazu není žádný typ `double`, výraz se vyhodnotí jako `float`nebo [bool](bool.md) v relačních porovnáních a porovnávání rovnosti.
+- Pokud je ve výrazu `double` typ, výraz se vyhodnotí jako `double`nebo [`bool`](bool.md) v relačních porovnáních a porovnávání rovnosti.
+- Pokud ve výrazu není žádný typ `double`, výraz se vyhodnotí jako `float`nebo `bool` v relačních porovnáních a porovnávání rovnosti.
 
-Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:
+Ve výrazu můžete také kombinovat integrální typy a typ `decimal`. V tomto případě se celočíselné typy implicitně převádějí na typ `decimal` a výraz se vyhodnocuje jako `decimal`nebo `bool` v relačních porovnáních a porovnávání rovnosti.
 
-- Kladná a záporná nula
-- Kladné a záporné nekonečno
-- Hodnota není číslo (NaN).
-- Konečná sada nenulových hodnot
+Typ `decimal` nelze kombinovat s typy `float` a `double` ve výrazu. V takovém případě, pokud chcete provádět operace aritmetické, porovnání nebo rovnosti, je nutné explicitně převést operandy buď z, nebo na typ `decimal`, jak ukazuje následující příklad:
 
-Další informace o těchto hodnotách najdete v tématu IEEE standard pro binární aritmetické operace s plovoucí desetinnou čárkou, která je k dispozici na webu [IEEE](https://www.ieee.org) .
+```csharp-interactive
+double a = 1.0;
+decimal b = 2.1m;
+Console.WriteLine(a + (double)b);
+Console.WriteLine((decimal)a + b);
+```
 
 K formátování hodnoty s plovoucí desetinnou čárkou můžete použít buď [Standardní číselné formátovací řetězce](../../../standard/base-types/standard-numeric-format-strings.md) , nebo [řetězce vlastního číselného formátu](../../../standard/base-types/custom-numeric-format-strings.md) .
 

@@ -7,20 +7,18 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6cdd5833e14da1ab5185e56dce1190adfee4a2bf
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: d1e4f3478f6afd6a20c01c6b57a137020ee88f5f
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089029"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214758"
 ---
 # <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<odebrat > element pro NameValueSectionHandler a DictionarySectionHandler
 
 Odebere dříve definované nastavení.
 
-[ **\<configuration >** ](configuration-element.md) \
+[**konfigurační >\<** ](configuration-element.md)\
 &nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
 
@@ -34,17 +32,17 @@ Odebere dříve definované nastavení.
 
 |           | Popis |
 | --------- | ----------- |
-| **zkrat**   | Požadovaný atribut.<br><br>Určuje název nastavení, které se má odebrat. |
+| **key**   | Požadovaný atribut.<br><br>Určuje název nastavení, které se má odebrat. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 | Prvek | Popis |
 | ------- | ------------|
-| [ **\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
+| [ **>\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádná
 
 ## <a name="remarks"></a>Poznámky
 
@@ -84,6 +82,6 @@ Následující kód konfiguračního souboru aplikace odebere `key2` nastavení 
 
 Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](index.md)

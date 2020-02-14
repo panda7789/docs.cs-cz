@@ -5,14 +5,12 @@ helpviewer_keywords:
 - transparent code
 - security-transparent code
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f90b64b5e9ab5a167333a594ace7f247b1b2b7e7
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ca251ec3084d40269b107e7bd8bef708e8d49622
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975531"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215831"
 ---
 # <a name="security-transparent-code"></a>Kód transparentní pro zabezpečení
 
@@ -96,7 +94,7 @@ Model transparentnosti úrovně 1 má následující omezení:
 
 Pravidla transparentnosti se nevynutily, dokud se nevypočítá průhlednost. V tomto okamžiku je vyvolána <xref:System.InvalidOperationException>, pokud je porušení pravidla transparentnosti. Čas, kdy je transparentnost počítána, závisí na několika faktorech a nelze je předpovědět. Počítá se co nejblíže. V .NET Framework 4 proběhne výpočet transparentnosti na úrovni sestavení dřív než v .NET Framework 2,0. Jedinou jistotou je, že k výpočtu transparentnosti dojde v době, kdy je to potřeba. To se podobá tomu, jak kompilátor JIT (just-in-time) může změnit bod, když je metoda zkompilována, a zda jsou zjištěny chyby v této metodě. Výpočet transparentnosti není viditelný, pokud váš kód neobsahuje žádné chyby transparentnosti.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kód transparentní pro zabezpečení, úroveň 1](security-transparent-code-level-1.md)
 - [Kód transparentní pro zabezpečení, úroveň 2](security-transparent-code-level-2.md)

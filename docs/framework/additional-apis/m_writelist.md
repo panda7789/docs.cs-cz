@@ -10,14 +10,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 235503c1-1d01-4f59-895f-ae2cf15b3345
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9760e301e25bc6e69ab22b563894cb079a8d58bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 22f939d13cceac4d1c0b39e9e8fe20cdc0ab9387
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120030"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214902"
 ---
 # <a name="connectionm_writelist-field"></a>Connection. m\_pole WriteList
 

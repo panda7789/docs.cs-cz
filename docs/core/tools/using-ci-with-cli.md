@@ -1,14 +1,13 @@
 ---
 title: Průběžná integrace (CI) s .NET Core SDK a nástroji
 description: Naučte se používat .NET Core SDK a jeho nástroje na serveru sestavení s nepřetržitou integrací.
-author: mairaw
 ms.date: 05/18/2017
-ms.openlocfilehash: 65d062fce2f364932ebf8091bd9c6cdef561b633
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: bdb3913cbe588377d9fbee0f1c054e682629ac96
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714122"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215235"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Používání .NET Core SDK a nástrojů v kontinuální integraci (CI)
 
@@ -174,6 +173,6 @@ Většina tohoto dokumentu popisuje, jak získat nástroje .NET Core a nakonfigu
 
 Dva obecné přístupy, které přiberete při vytváření struktury procesu sestavení pro kód .NET Core pomocí nástrojů .NET Core, používají přímo nástroj MSBuild nebo pomocí příkazů příkazového řádku .NET Core. Jaký přístup byste měli vzít v úvahu, závisí na vaší úrovni pohodlí s ohledem na složitost a kompromisy. Nástroj MSBuild poskytuje možnost vyjádřit svůj proces sestavení jako úkoly a cíle, ale obsahuje i zvýšení složitosti syntaxe souboru projektu MSBuild. Použití nástrojů příkazového řádku .NET Core je možná jednodušší, ale vyžaduje, abyste napsali logiku orchestrace ve skriptovacím jazyce, jako je `bash` nebo PowerShell.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Soubory ke stažení pro .NET – Linux](https://dotnet.microsoft.com/download?initial-os=linux)

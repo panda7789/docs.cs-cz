@@ -9,14 +9,12 @@ helpviewer_keywords:
 - security-transparent code
 - security [.NET Framework], security-transparent code
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: efd3954b63a6683e04bd9143ca3523cdbace506d
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 8f232a7724ad831818627cbfc2845ea808a3fcfd
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894537"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215809"
 ---
 # <a name="security-transparent-code-level-1"></a>Kód transparentní pro zabezpečení, úroveň 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -44,7 +42,7 @@ ms.locfileid: "70894537"
   
 - Všechny požadavky propojení, které by byly splněny kódem transparentním z bezpečnostních potřeb, se stávají úplnými požadavky.  
   
-- Jakýkoli nezabezpečený (neověřitelný) kód, který musí být spuštěn v kódu transparentním z bezpečnostních důvodů, <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> způsobuje plný požadavek na oprávnění zabezpečení.  
+- Jakýkoli nezabezpečený (neověřitelný) kód, který musí být spuštěn v kódu transparentním z bezpečnostních důvodů, způsobuje plný požadavek na <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění zabezpečení.  
   
  Tato pravidla jsou vynutila během provádění modulem CLR (Common Language Runtime). Kód transparentní pro zabezpečení předává všechny požadavky na zabezpečení kódu, který volá zpět na jeho volající. Požadavky, které tok prostřednictvím kódu transparentního z důvodu zabezpečení nemohou zvýšit oprávnění. Pokud aplikace s nízkou důvěryhodností volá kód transparentní pro zabezpečení a způsobuje poptávku s vysokým oprávněním, požadavek se přesměruje zpět na kód s nízkou důvěryhodností a selže. Kód transparentní z důvodu zabezpečení nemůže zastavit požadavek, protože nemůže provádět kontrolní akce. Stejný transparentní kód, který je volán z plně důvěryhodného kódu, má za následek úspěšnou poptávku.  
   
@@ -64,10 +62,10 @@ ms.locfileid: "70894537"
 |Atribut|Popis|  
 |---------------|-----------------|  
 |<xref:System.Security.SecurityTransparentAttribute>|Povoluje se jenom na úrovni sestavení. Identifikuje všechny typy a členy v sestavení jako transparentní z hlediska zabezpečení. Sestavení nemůže obsahovat žádný kód kritický pro zabezpečení.|  
-|<xref:System.Security.SecurityCriticalAttribute>|Při použití na úrovni sestavení bez <xref:System.Security.SecurityCriticalAttribute.Scope%2A> vlastnosti identifikuje všechny kódy v sestavení jako zabezpečení transparentní ve výchozím nastavení, ale označuje, že sestavení může obsahovat kód kritický pro zabezpečení.<br /><br /> Při použití na úrovni třídy identifikuje třídu nebo metodu jako kritické pro zabezpečení, ale ne členy třídy. Pro zajištění kritického zabezpečení všech členů nastavte <xref:System.Security.SecurityCriticalAttribute.Scope%2A> vlastnost na <xref:System.Security.SecurityCriticalScope.Everything>hodnotu.<br /><br /> Při použití na úrovni člena platí atribut pouze pro daného člena.<br /><br /> Třída nebo člen identifikovaný jako kritické pro zabezpečení mohou provádět zvýšení oprávnění. **Důležité:**  V transparentnosti úrovně 1 jsou typy a členy kritické pro zabezpečení považovány za bezpečné – kritické, pokud jsou volány mimo sestavení. Je nutné chránit typy a členy kritické pro zabezpečení s požadavkem na propojení pro úplný vztah důvěryhodnosti, aby se předešlo neoprávněnému zvýšení oprávnění.|  
+|<xref:System.Security.SecurityCriticalAttribute>|Při použití na úrovni sestavení bez vlastnosti <xref:System.Security.SecurityCriticalAttribute.Scope%2A> identifikuje všechny kódy v sestavení jako transparentní zabezpečení ve výchozím nastavení, ale označuje, že sestavení může obsahovat kód kritický pro zabezpečení.<br /><br /> Při použití na úrovni třídy identifikuje třídu nebo metodu jako kritické pro zabezpečení, ale ne členy třídy. Pro zajištění kritického zabezpečení všech členů nastavte vlastnost <xref:System.Security.SecurityCriticalAttribute.Scope%2A> na hodnotu <xref:System.Security.SecurityCriticalScope.Everything>.<br /><br /> Při použití na úrovni člena platí atribut pouze pro daného člena.<br /><br /> Třída nebo člen identifikovaný jako kritické pro zabezpečení mohou provádět zvýšení oprávnění. **Důležité informace:**  V transparentnosti úrovně 1 jsou typy a členy kritické pro zabezpečení považovány za bezpečné – kritické, pokud jsou volány mimo sestavení. Je nutné chránit typy a členy kritické pro zabezpečení s požadavkem na propojení pro úplný vztah důvěryhodnosti, aby se předešlo neoprávněnému zvýšení oprávnění.|  
 |<xref:System.Security.SecuritySafeCriticalAttribute>|Identifikuje kód kritický pro zabezpečení, ke kterému lze přistupovat pomocí transparentního kódu v sestavení. V opačném případě kód transparentní z hlediska zabezpečení nemůže přistupovat ke soukromým nebo interním členům kritickým pro zabezpečení ve stejném sestavení. Tím by došlo k ovlivnění kódu kritického pro zabezpečení a zajištění neočekávaných zvýšení oprávnění. Bezpečný a kritický kód pro zabezpečení by měl projít přísným auditem zabezpečení. **Poznámka:**  Typy a členy kritické pro zabezpečení musí ověřit oprávnění volajících a určit, zda má volající oprávnění k přístupu k chráněným prostředkům.|  
   
- <xref:System.Security.SecuritySafeCriticalAttribute> Atribut umožňuje kódu transparentnímu z hlediska zabezpečení přistupovat ke členům kritickým pro zabezpečení ve stejném sestavení. Ve vašem sestavení zvažte kód transparentní z hlediska zabezpečení a kritický pro zabezpečení, který je rozdělen do dvou sestavení. Kód transparentní z hlediska zabezpečení by nedokázal zobrazit soukromé nebo interní členy kódu kritického pro zabezpečení. Kód kritický pro zabezpečení je kromě toho obecně auditován pro přístup k jeho veřejnému rozhraní. Neočekáváte, že privátní nebo interní stav bude přístupný mimo sestavení; Chcete zachovat stav izolované. <xref:System.Security.SecuritySafeCriticalAttribute> Atribut udržuje izolaci stavu mezi kódem transparentním z hlediska zabezpečení a kritickým pro zabezpečení a zároveň nabízí možnost přepsat izolaci, pokud je to nezbytné. Kód transparentní z hlediska <xref:System.Security.SecuritySafeCriticalAttribute>zabezpečení nemůže získat přístup k privátnímu nebo internímu kódu kritickému pro zabezpečení, pokud tyto členy nebyly označeny. Před použitím <xref:System.Security.SecuritySafeCriticalAttribute>proveďte audit tohoto člena, jako kdyby byl veřejně vystavený.  
+ Atribut <xref:System.Security.SecuritySafeCriticalAttribute> umožňuje kódu transparentním z hlediska zabezpečení přistupovat ke členům kritickým pro zabezpečení ve stejném sestavení. Ve vašem sestavení zvažte kód transparentní z hlediska zabezpečení a kritický pro zabezpečení, který je rozdělen do dvou sestavení. Kód transparentní z hlediska zabezpečení by nedokázal zobrazit soukromé nebo interní členy kódu kritického pro zabezpečení. Kód kritický pro zabezpečení je kromě toho obecně auditován pro přístup k jeho veřejnému rozhraní. Neočekáváte, že privátní nebo interní stav bude přístupný mimo sestavení; Chcete zachovat stav izolované. Atribut <xref:System.Security.SecuritySafeCriticalAttribute> udržuje izolaci stavu mezi kódem transparentním z hlediska zabezpečení a kritickým pro zabezpečení a zároveň nabízí možnost přepsat izolaci, pokud je to nezbytné. Kód transparentní z hlediska zabezpečení nemůže získat přístup k privátnímu nebo internímu kódu kritickému pro zabezpečení, pokud tyto členy nebyly označeny <xref:System.Security.SecuritySafeCriticalAttribute>. Před použitím <xref:System.Security.SecuritySafeCriticalAttribute>auditujte tohoto člena, jako kdyby byl veřejně vystavený.  
   
 ### <a name="assembly-wide-annotation"></a>Poznámka na úrovni sestavení  
  Následující tabulka popisuje účinky použití atributů zabezpečení na úrovni sestavení.  
@@ -75,7 +73,7 @@ ms.locfileid: "70894537"
 |Atribut Assembly|Stav sestavení|  
 |------------------------|--------------------|  
 |Žádný atribut v částečně důvěryhodném sestavení|Všechny typy a členy jsou transparentní.|  
-|Žádný atribut v plně důvěryhodném sestavení (v globální mezipaměti sestavení (GAC) nebo identifikovaný jako úplný vztah `AppDomain`důvěryhodnosti v rozhraní)|Všechny typy jsou transparentní a všechny členy jsou bezpečné a kritické pro zabezpečení.|  
+|Žádný atribut v plně důvěryhodném sestavení (v globální mezipaměti sestavení (GAC) nebo identifikovaný jako úplný vztah důvěryhodnosti v `AppDomain`)|Všechny typy jsou transparentní a všechny členy jsou bezpečné a kritické pro zabezpečení.|  
 |`SecurityTransparent`|Všechny typy a členy jsou transparentní.|  
 |`SecurityCritical(SecurityCriticalScope.Everything)`|Všechny typy a členy jsou kritické pro zabezpečení.|  
 |`SecurityCritical`|Veškerý kód je standardně transparentní. Jednotlivé typy a členy však mohou mít jiné atributy.|  
@@ -94,13 +92,13 @@ ms.locfileid: "70894537"
 [assembly: SecurityTransparent]  
 ```  
   
- Pokud chcete ve stejném sestavení kombinovat klíč kritického a transparentního kódu, začněte tím, že označíte sestavení s <xref:System.Security.SecurityCriticalAttribute> atributem k označení toho, že sestavení může obsahovat kritický kód, a to takto:  
+ Pokud chcete ve stejném sestavení kombinovat klíč kritického a transparentního kódu, začněte tím, že označíte sestavení s atributem <xref:System.Security.SecurityCriticalAttribute>, abyste označili, že sestavení může obsahovat kritický kód, a to takto:  
   
 ```csharp  
 [assembly: SecurityCritical]  
 ```  
   
- Chcete-li provést akce kritické pro zabezpečení, je nutné explicitně označit kód, který provede kritickou akci s jiným <xref:System.Security.SecurityCriticalAttribute> atributem, jak je znázorněno v následujícím příkladu kódu:  
+ Chcete-li provést akce kritické pro zabezpečení, je nutné explicitně označit kód, který provede kritickou akci s jiným atributem <xref:System.Security.SecurityCriticalAttribute>, jak je znázorněno v následujícím příkladu kódu:  
   
 ```csharp  
 [assembly: SecurityCritical]  
@@ -128,9 +126,9 @@ public class B
 }  
 ```  
   
- Předchozí kód je transparentní s výjimkou `Critical` metody, která je explicitně označena jako kritická pro zabezpečení. Transparentnost je výchozí nastavení, dokonce i s atributem na úrovni <xref:System.Security.SecurityCriticalAttribute> sestavení.  
+ Předchozí kód je transparentní s výjimkou metody `Critical`, která je explicitně označena jako kritická pro zabezpečení. Transparentnost je výchozí nastavení, dokonce i s atributem <xref:System.Security.SecurityCriticalAttribute> na úrovni sestavení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kód transparentní pro zabezpečení, úroveň 2](security-transparent-code-level-2.md)
 - [Změny zabezpečení](../security/security-changes.md)

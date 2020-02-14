@@ -1,22 +1,21 @@
 ---
 title: dotnet – příkaz vstest
 description: Příkaz dotnet VSTest vytvoří projekt a všechny jeho závislosti.
-author: mairaw
 ms.date: 05/30/2018
-ms.openlocfilehash: ffe3807be2c35fb4d6b46b83ed84200433f551d8
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c3838617ed539cf56f2840b826e9de58833820fd
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117515"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215315"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
-`dotnet-vstest`– Spustí testy ze zadaných souborů.
+`dotnet-vstest` – spustí testy ze zadaných souborů.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -39,7 +38,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
@@ -51,9 +50,9 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
 
 ## <a name="description"></a>Popis
 
-`dotnet-vstest` Příkaz`VSTest.Console` spustí aplikaci příkazového řádku pro spuštění automatizovaných testů jednotek.
+Příkaz `dotnet-vstest` spustí aplikaci `VSTest.Console` příkazového řádku, aby se spouštěly automatizované testy jednotek.
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `TEST_FILE_NAMES`
 
@@ -77,11 +76,11 @@ Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testova
 
 `--Platform|/Platform:<Platform type>`
 
-Cílová architektura platformy použitá pro spuštění testu. Platné hodnoty jsou `x86`, `x64`, a `ARM`.
+Cílová architektura platformy použitá pro spuštění testu. Platné hodnoty jsou `x86`, `x64`a `ARM`.
 
 `--Framework|/Framework:<Framework Version>`
 
-Cílová verze .NET Framework používaná pro spuštění testu. Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0` Další podporované hodnoty jsou `Framework40`, `Framework45`, `FrameworkCore10`a `FrameworkUap10`.
+Cílová verze .NET Framework používaná pro spuštění testu. Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework40`, `Framework45`, `FrameworkCore10`a `FrameworkUap10`.
 
 `--Parallel|/Parallel`
 
@@ -89,7 +88,7 @@ Paralelní provádění testů. Ve výchozím nastavení jsou všechny dostupné
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Spustí testy, které odpovídají danému výrazu. `<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je. K seskupení dílčích výrazů sepoužívajízávorky.`()`
+Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení dílčích výrazů.
 
 `-?|--Help|/?|/Help`
 
@@ -99,7 +98,7 @@ Vypíše krátkou nápovědu k příkazu.
 
 Zadejte protokolovací nástroj pro výsledky testů.
 
-* K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:
+* K publikování výsledků testů do Team Foundation Server použijte poskytovatele protokolovacího nástroje `TfsPublisher`:
 
   ```console
   /logger:TfsPublisher;
@@ -111,7 +110,7 @@ Zadejte protokolovací nástroj pro výsledky testů.
       [;RunTitle=<title>]
   ```
 
-* K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje. Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu. Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.
+* Chcete-li protokolovat výsledky do souboru sady Visual Studio Výsledky testů (TRX), použijte poskytovatele protokolovacího nástroje `trx`. Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu. Pokud `LogFileName` není k dispozici, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.
 
   ```console
   /logger:trx [;LogFileName=<Defaults to unique file name>]
@@ -147,7 +146,7 @@ Přečte soubor odpovědí pro další možnosti.
 
 `args`
 
-Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
+Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota `<n>=<v>`formuláře, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
@@ -165,11 +164,11 @@ Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testova
 
 `--Platform|/Platform:<Platform type>`
 
-Cílová architektura platformy použitá pro spuštění testu. Platné hodnoty jsou `x86`, `x64`, a `ARM`.
+Cílová architektura platformy použitá pro spuštění testu. Platné hodnoty jsou `x86`, `x64`a `ARM`.
 
 `--Framework|/Framework:<Framework Version>`
 
-Cílová verze .NET Framework používaná pro spuštění testu. Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0` Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.
+Cílová verze .NET Framework používaná pro spuštění testu. Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.
 
 `--Parallel|/Parallel`
 
@@ -177,7 +176,7 @@ Paralelní provádění testů. Ve výchozím nastavení jsou všechny dostupné
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Spustí testy, které odpovídají danému výrazu. `<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je. K seskupení dílčích výrazů sepoužívajízávorky.`()`
+Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení dílčích výrazů.
 
 `-?|--Help|/?|/Help`
 
@@ -187,7 +186,7 @@ Vypíše krátkou nápovědu k příkazu.
 
 Zadejte protokolovací nástroj pro výsledky testů.
 
-* K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:
+* K publikování výsledků testů do Team Foundation Server použijte poskytovatele protokolovacího nástroje `TfsPublisher`:
 
   ```console
   /logger:TfsPublisher;
@@ -199,7 +198,7 @@ Zadejte protokolovací nástroj pro výsledky testů.
       [;RunTitle=<title>]
   ```
 
-* K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje. Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu. Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.
+* Chcete-li protokolovat výsledky do souboru sady Visual Studio Výsledky testů (TRX), použijte poskytovatele protokolovacího nástroje `trx`. Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu. Pokud `LogFileName` není k dispozici, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.
 
   ```console
   /logger:trx [;LogFileName=<Defaults to unique file name>]
@@ -223,9 +222,9 @@ Povolí podrobné protokoly pro testovací platformu. Protokoly se zapisují do 
 
 `args`
 
-Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
+Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota `<n>=<v>`formuláře, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -241,11 +240,11 @@ Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testova
 
 `--Platform|/Platform:<Platform type>`
 
-Cílová architektura platformy použitá pro spuštění testu. Platné hodnoty jsou `x86`, `x64`, a `ARM`.
+Cílová architektura platformy použitá pro spuštění testu. Platné hodnoty jsou `x86`, `x64`a `ARM`.
 
 `--Framework|/Framework:<Framework Version>`
 
-Cílová verze .NET Framework používaná pro spuštění testu. Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0` Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.
+Cílová verze .NET Framework používaná pro spuštění testu. Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.
 
 `--Parallel|/Parallel`
 
@@ -253,7 +252,7 @@ Paralelní provádění testů. Ve výchozím nastavení jsou všechny dostupné
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Spustí testy, které odpovídají danému výrazu. `<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je. K seskupení dílčích výrazů sepoužívajízávorky.`()`
+Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení dílčích výrazů.
 
 `-?|--Help|/?|/Help`
 
@@ -263,7 +262,7 @@ Vypíše krátkou nápovědu k příkazu.
 
 Zadejte protokolovací nástroj pro výsledky testů.
 
-* K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:
+* K publikování výsledků testů do Team Foundation Server použijte poskytovatele protokolovacího nástroje `TfsPublisher`:
 
   ```console
   /logger:TfsPublisher;
@@ -275,7 +274,7 @@ Zadejte protokolovací nástroj pro výsledky testů.
       [;RunTitle=<title>]
   ```
 
-* K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje. Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu. Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.
+* Chcete-li protokolovat výsledky do souboru sady Visual Studio Výsledky testů (TRX), použijte poskytovatele protokolovacího nástroje `trx`. Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu. Pokud `LogFileName` není k dispozici, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.
 
   ```console
   /logger:trx [;LogFileName=<Defaults to unique file name>]
@@ -299,7 +298,7 @@ Povolí podrobné protokoly pro testovací platformu. Protokoly se zapisují do 
 
 `args`
 
-Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
+Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota `<n>=<v>`formuláře, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
 
 ---
 
@@ -309,7 +308,7 @@ Spustit testy v `mytestproject.dll`:
 
 `dotnet vstest mytestproject.dll`
 
-Spustit testy v `mytestproject.dll`nástroji, exportovat do vlastní složky s vlastním názvem:
+Spustit testy v `mytestproject.dll`, exportovat do vlastní složky s vlastním názvem:
 
 `dotnet vstest mytestproject.dll --logger:"trx;LogFileName=custom_file_name.trx" --ResultsDirectory:custom/file/path`
 
@@ -321,6 +320,6 @@ Spustit `TestMethod1` testy:
 
 `dotnet vstest /Tests:TestMethod1`
 
-Běh `TestMethod1` a`TestMethod2` testy:
+Spustit `TestMethod1` a `TestMethod2` testy:
 
 `dotnet vstest /Tests:TestMethod1,TestMethod2`

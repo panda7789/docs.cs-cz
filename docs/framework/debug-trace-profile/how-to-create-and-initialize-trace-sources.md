@@ -9,17 +9,15 @@ helpviewer_keywords:
 - initializing trace sources
 - configuration files [.NET Framework], trace sources
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cab9cc33bd5a4697cac5de85de8aa72e7eb4d6c6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: ae5e98a1ebf3753b24127f96ed563eba27eea2fb
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052705"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217429"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
-<xref:System.Diagnostics.TraceSource> Třída je používána aplikacemi k vytvoření trasování, která lze přidružit k aplikaci. <xref:System.Diagnostics.TraceSource>poskytuje metody trasování, které umožňují snadno sledovat události, trasovat data a vydávat informativní trasování. Výstup trasování z <xref:System.Diagnostics.TraceSource> lze vytvořit a inicializovat s nebo bez použití konfiguračních souborů. Toto téma poskytuje pokyny pro obě možnosti. Nicméně doporučujeme, abyste používali konfigurační soubory pro usnadnění rekonfigurace trasování, která jsou vytvářena pomocí zdrojů trasování v době běhu.  
+Třídu <xref:System.Diagnostics.TraceSource> používá aplikace k vytváření trasování, která lze přidružit k aplikaci. <xref:System.Diagnostics.TraceSource> poskytuje metody trasování, které umožňují snadno sledovat události, trasovat data a vydávat informativní trasování. Výstup trasování z <xref:System.Diagnostics.TraceSource> lze vytvořit a inicializovat s použitím konfiguračních souborů nebo bez něj. Toto téma poskytuje pokyny pro obě možnosti. Nicméně doporučujeme, abyste používali konfigurační soubory pro usnadnění rekonfigurace trasování, která jsou vytvářena pomocí zdrojů trasování v době běhu.  
   
 ### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Vytvoření a inicializace zdroje trasování pomocí konfiguračního souboru  
   
@@ -69,7 +67,7 @@ ms.locfileid: "71052705"
   
      Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy byla aplikace inicializována. Aplikace může dynamicky měnit vlastnosti nastavené konfiguračním souborem pro přepsání všech nastavení zadaných uživatelem. Například můžete chtít zajistit, aby se kritické zprávy vždy odesílaly do textového souboru, bez ohledu na aktuální nastavení konfigurace. Vzorový kód ukazuje, jak přepsat nastavení konfiguračního souboru, aby bylo zajištěno, že kritické zprávy jsou výstupem posluchačů trasování.  
   
-     Změna nastavení konfiguračního souboru během provádění aplikace nemění počáteční nastavení. Chcete-li změnit nastavení, musíte buď aplikaci restartovat, nebo programově aktualizovat aplikaci pomocí <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> metody.  
+     Změna nastavení konfiguračního souboru během provádění aplikace nemění počáteční nastavení. Chcete-li změnit nastavení, musíte buď aplikaci restartovat, nebo programově aktualizovat aplikaci pomocí metody <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType>.  
   
 ### <a name="to-initialize-trace-sources-listeners-and-filters-without-a-configuration-file"></a>Inicializace zdrojů trasování, posluchačů a filtrů bez konfiguračního souboru  
   
@@ -78,7 +76,7 @@ ms.locfileid: "71052705"
      [!code-csharp[TraceSourceExample2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample2/cs/program.cs#1)]
      [!code-vb[TraceSourceExample2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample2/vb/program.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TextWriterTraceListener>

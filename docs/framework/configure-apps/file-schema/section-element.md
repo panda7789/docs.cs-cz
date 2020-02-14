@@ -8,24 +8,22 @@ helpviewer_keywords:
 - section Element
 - <section> Element
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8c1675540df6844f98572c11cfb140bff23b31a8
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 8785523d664294e3ca3792fb0f84d739d1f1a376
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089020"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215719"
 ---
 # <a name="section-element"></a>oddíl > elementu \<
 
 Obsahuje deklaraci konfiguračního oddílu.
 
-[ **\<configuration >** ](configuration-element.md) \
+[**konfigurační >\<** ](configuration-element.md)\
 &nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<části >**
 
-[ **\<configuration >** ](configuration-element.md) \
+[**konfigurační >\<** ](configuration-element.md)\
 &nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;\<[**oddíly**](sectiongroup-element-for-configsections.md) >\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<části** >
@@ -44,7 +42,7 @@ Obsahuje deklaraci konfiguračního oddílu.
 |           | Popis |
 | --------- | ----------- |
 | **Jméno**  | Určuje název konfiguračního oddílu. |
-| **textový**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, který čte oddíl z konfiguračního souboru. Hodnota typu obsahuje syntaxi "plně kvalifikované-oddíl-obslužné rutiny-název třídy", Simple-Assembly-Name ". Jednoduchý název sestavení je kořenový název souboru bez přípony souboru *. dll* . |
+| **type**  | Určuje název třídy obslužné rutiny konfiguračního oddílu, který čte oddíl z konfiguračního souboru. Hodnota typu obsahuje syntaxi "plně kvalifikované-oddíl-obslužné rutiny-název třídy", Simple-Assembly-Name ". Jednoduchý název sestavení je kořenový název souboru bez přípony souboru *. dll* . |
 
 ## <a name="optional-attributes"></a>Volitelné atributy
 
@@ -60,14 +58,14 @@ Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systé
 |     | Popis |
 | --- | ----------- |
 | [ **\<configSections >** Objekt](configsections-element-for-configuration.md) | Obsahuje konfigurační oddíl a deklarace oboru názvů. |
-| [ **\<sectionGroup** Objekt](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
+| [ **>\<sectionGroup** Objekt](sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
 
 > [!NOTE]
-> **Oddíl\<** prvek je podřízeným prvkem buď **\<configSections >** nebo **\<sectionGroup** , ale ne obojího.
+> **Oddíl\<>** prvek je podřízeným prvkem buď **\<configSections >** nebo **\<sectionGroup** , ale ne obojího.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádná
 
 ## <a name="remarks"></a>Poznámky
 
@@ -96,6 +94,6 @@ Následující příklad ukazuje, jak definovat konfigurační oddíl a definova
 
 Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](index.md)

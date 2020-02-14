@@ -12,22 +12,20 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - unmanaged to managed garbage collection
 ms.assetid: 103eb3a3-1cf0-4406-8a9a-a7798fdc22d1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1679f87276262a08f5717ea81d263f4600542971
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: dd4080870ae88da8d4e2055369cd36f3981f2eac
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052765"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216459"
 ---
 # <a name="gcunmanagedtomanaged-mda"></a>gcUnmanagedToManaged – pomocník spravovaného ladění
-Pomocník `gcUnmanagedToManaged` spravovaného ladění (MDA) způsobuje uvolnění paměti při každém přechodu vlákna z nespravovaného do spravovaného kódu.  
+`gcUnmanagedToManaged` Pomocník pro spravované ladění (MDA) způsobí uvolnění paměti při každém přechodu vlákna z nespravovaného do spravovaného kódu.  
   
 ## <a name="symptoms"></a>Příznaky  
  Aplikace, která spouští nespravované uživatelské komponenty pomocí modelu COM a vyvolání platformy, způsobuje nedeterministické porušení přístupu v modulu CLR.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Pokud aplikace spouští nespravované uživatelské komponenty, mohou tyto součásti poškodit haldu uvolňování paměti. Tím dojde k porušení přístupu v modulu CLR, když se systém uvolňování paměti pokusí projít graf objektu.  
   
 ## <a name="resolution"></a>Řešení  
@@ -39,7 +37,7 @@ Pomocník `gcUnmanagedToManaged` spravovaného ladění (MDA) způsobuje uvolně
 ## <a name="output"></a>Výstup  
  Tento MDA nevytváří žádný výstup.  
   
-## <a name="configuration"></a>Konfiguraci  
+## <a name="configuration"></a>Konfigurace  
   
 ```xml  
 <mdaConfig>  
@@ -49,7 +47,7 @@ Pomocník `gcUnmanagedToManaged` spravovaného ladění (MDA) způsobuje uvolně
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

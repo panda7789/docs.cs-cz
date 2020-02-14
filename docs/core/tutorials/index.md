@@ -4,12 +4,12 @@ description: Při vytváření aplikací a knihoven v počítačích Mac, Linux 
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 4e0acc357453d3bd3fb877e357264cc1aa715e4c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: e9fc5544904fc5a1304dcce135e01b1895d3446b
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920431"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215173"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
@@ -41,12 +41,12 @@ Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 - [Organizování a testování projektů pomocí .NET Core CLI](testing-with-cli.md)
 - [Začínáme sF#](../../fsharp/get-started/get-started-command-line.md)
 
-## <a name="other"></a>Další
+## <a name="other"></a>Ostatní
 
 - [Testování částí v .NET Core pomocí testu dotnet](../testing/unit-testing-with-dotnet-test.md)
 - [Testování částí pomocí MSTest a .NET Core](../testing/unit-testing-with-mstest.md)
 - [Vývoj knihoven pomocí nástrojů pro různé platformy](libraries.md)
 - [Hostování .NET Core z nativního kódu](netcore-hosting.md)
-- [Vytvoření vlastní šablony pro dotnet new](cli-templates-create-item-template.md)
+- [Vytvoření šablon pro rozhraní příkazového řádku](cli-templates-create-item-template.md)
 
 Kurzy týkající se vývoje ASP.NET Core webových aplikací najdete v [dokumentaci k ASP.NET Core](/aspnet/core/).

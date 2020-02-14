@@ -7,20 +7,18 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fff5a5c2a523480f2eaebb127ec98ff6e9908acf
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: f6d860f35d22002030ffa3d09dd0d8a96116bf5e
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088705"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214746"
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<vymazat > elementu pro NameValueSectionHandler a DictionarySectionHandler
 
 Vymaže všechna dříve definovaná nastavení v oddílu.
 
-[ **\<configuration >** ](configuration-element.md) \
+[**konfigurační >\<** ](configuration-element.md)\
 &nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<vymazat >**
 
@@ -32,17 +30,17 @@ Vymaže všechna dříve definovaná nastavení v oddílu.
 
 ## <a name="attributes"></a>Atributy
 
-Žádné
+Žádná
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ------------|
-| [ **\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
+| [ **>\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádná
 
 ## <a name="remarks"></a>Poznámky
 
@@ -67,7 +65,7 @@ Následující kód konfiguračního souboru počítače deklaruje oddíl **\<my
 </configuration>
 ```
 
-Následující kód konfiguračního souboru aplikace odebere všechna nastavení z **\<mySection >** . Aplikace nemůže načíst žádná nastavení, která byla deklarována v v části **\<mySection** konfiguračního souboru počítače.
+Následující kód konfiguračního souboru aplikace odebere všechna nastavení z **\<mySection >** . Aplikace nemůže načíst žádná nastavení, která byla deklarována v v části **>\<mySection** konfiguračního souboru počítače.
 
 ```xml
 <!-- Application configuration file -->
@@ -82,6 +80,6 @@ Následující kód konfiguračního souboru aplikace odebere všechna nastaven�
 
 Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](index.md)

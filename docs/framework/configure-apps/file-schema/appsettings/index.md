@@ -7,20 +7,18 @@ helpviewer_keywords:
 - Windows Forms, app settings schema
 - configuration schema [.NET Framework], app settings
 ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 609ddba9cd4d58f9c388cf669039ee128e87efd0
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 0a3363b35a6fc8bd27753eb034f8a1e95feb5292
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088084"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215432"
 ---
 # <a name="app-settings-schema"></a>Schéma nastavení aplikace
 
 Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL webových služeb XML nebo jakékoli další vlastní informace o konfiguraci pro aplikaci.
 
-[ **\<configuration >** ](../configuration-element.md) \
+[**konfigurační >\<** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<appSettings >** ](appsettings-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<přidat >** ](add-element-for-appsettings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<clear >** ](clear-element-for-appsettings.md)\
@@ -29,9 +27,9 @@ Obsahuje vlastní nastavení aplikace, například cesty k souborům, adresy URL
 | Prvek | Popis |
 | ------- | ----------- |
 | [ **\<appSettings >** ](appsettings-element-for-configuration.md) | Obsahuje **\<přidat >** , **\<vymazat >** a **\<odebrat značky >** pro řízení nastavení aplikace. Má volitelný atribut **souboru** . |
-| [ **\<přidat >** ](add-element-for-appsettings.md) | Definuje nastavení. Podřízená položka **\<appSettings** Vyžaduje atributy **klíče** a **hodnoty** . |
-| [ **\<vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna nastavení. Podřízená položka **\<appSettings** Nemá žádné atributy. |
-| [ **\<odebrat >** ](remove-element-for-appsettings.md) | Odebere nastavení. Podřízená položka **\<appSettings** Vyžaduje atribut **Key** . |
+| [ **\<přidat >** ](add-element-for-appsettings.md) | Definuje nastavení. Podřízená položka **>\<appSettings** Vyžaduje atributy **klíče** a **hodnoty** . |
+| [ **\<vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna nastavení. Podřízená položka **>\<appSettings** Nemá žádné atributy. |
+| [ **\<odebrat >** ](remove-element-for-appsettings.md) | Odebere nastavení. Podřízená položka **>\<appSettings** Vyžaduje atribut **Key** . |
 
 ## <a name="appsettings-element"></a>element \<appSettings >
 
@@ -70,7 +68,7 @@ Následující příklad ukazuje konfigurační soubor aplikace, který využív
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled nastavení aplikace](../../../winforms/advanced/application-settings-overview.md)
 - [Architektura nastavení aplikace](../../../winforms/advanced/application-settings-architecture.md)

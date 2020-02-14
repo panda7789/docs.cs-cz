@@ -9,14 +9,12 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8784d6980d3edb1bbdd7b39a81e7e33bfec81242
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 49ba4e7ca0b8ed2e433053130bc9ca2742c72ec9
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039603"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217194"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall – pomocník spravovaného ladění (MDA)
 Pomocník s nástrojem `virtualCERCall` Managed Debugging Assistant (MDA) je aktivován jako upozornění indikující, že web volání v rámci grafu volání v oblasti s omezením (CER) odkazuje na virtuální cíl, který je virtuálním voláním k nekonečné virtuální metodě nebo volání pomocí rozhraní. Modul CLR (Common Language Runtime) nemůže předpovědět cílovou metodu těchto volání ze samotného mezilehlého jazyka a analýzy metadat. V důsledku toho nelze strom volání připravit jako součást grafu CER a přerušení vlákna v tomto podstromu nelze automaticky blokovat. Tento MDA upozorňuje na případy, kdy může být nutné rozšíření CER pomocí explicitního volání metody <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>, jakmile jsou další informace požadované pro výpočet cíle volání známy v době běhu.  
@@ -24,7 +22,7 @@ Pomocník s nástrojem `virtualCERCall` Managed Debugging Assistant (MDA) je akt
 ## <a name="symptoms"></a>Příznaky  
  CERs, které neběží, když je vlákno přerušeno nebo je doména aplikace uvolněna.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  CER obsahuje volání virtuální metody, která se nedá automaticky připravit.  
   
 ## <a name="resolution"></a>Řešení  
@@ -96,7 +94,7 @@ void MethodWithCer(MyClass object)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

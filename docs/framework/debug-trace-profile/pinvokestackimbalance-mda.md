@@ -10,14 +10,12 @@ helpviewer_keywords:
 - PInvokeStackImbalance MDA
 - managed debugging assistants (MDAs), platform invoke
 ms.assetid: 34ddc6bd-1675-4f35-86aa-de1645d5c631
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 117e0838f78d43bf9ffa555947bf8749830c9840
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: c789e8cb409bd4c59c91d6b646efe428afe7c86d
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801992"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217244"
 ---
 # <a name="pinvokestackimbalance-mda"></a>PInvokeStackImbalance – pomocník spravovaného ladění (MDA)
 
@@ -28,19 +26,19 @@ Pokud CLR zjistí, že Hloubka zásobníku po volání metody Invoke se neshoduj
 > [!NOTE]
 > Služba `PInvokeStackImbalance` MDA je ve výchozím nastavení zakázána. V aplikaci Visual Studio 2017 a novějších verzích se `PInvokeStackImbalance` MDA zobrazí v seznamu **asistenti spravovaného ladění** v dialogovém okně **nastavení výjimky** (které se zobrazí, když vyberete **ladění** > **Windows** > **Nastavení výjimek**). Zaškrtnutím nebo zrušením zaškrtnutí políčka **přerušit, pokud je vyvolána** , nepovolíte nebo zakážete MDA; Určuje, zda aplikace Visual Studio vyvolá výjimku při aktivaci MDA.
 
-## <a name="symptoms"></a>Symptomy
+## <a name="symptoms"></a>Příznaky
 
 V aplikaci dojde k narušení přístupu nebo poškození paměti při volání vyvolání nebo po volání platformy.
 
-## <a name="cause"></a>příčina
+## <a name="cause"></a>Příčina
 
 Spravovaný podpis volání vyvolání platformy nemusí odpovídat nespravovanému podpisu volané metody.  Tato neshoda může být způsobena spravovaným podpisem, který nedeklaruje správný počet parametrů, nebo nespecifikuje odpovídající velikost pro parametry.  Služba MDA může být také aktivována, protože konvence volání, která je pravděpodobně určena atributem <xref:System.Runtime.InteropServices.DllImportAttribute>, neodpovídá nespravované konvenci volání.
 
-## <a name="resolution"></a>Rozlišení
+## <a name="resolution"></a>Řešení
 
 Zkontrolujte spravovanou platformu vyvolání signatury a konvence volání, abyste ověřili shodu s signaturou a konvencí volání nativního cíle.  Zkuste explicitně specifikovat konvenci volání na spravovaných i nespravovaných stranách. Je také možné, i když to není pravděpodobné, že nespravované funkce z nějakého důvodu vyrovnaly zásobník z nějakého jiného důvodu, jako je například Chyba v nespravovaném kompilátoru.
 
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime
 
 Vynutí, aby volání všech platforem převzala neoptimalizovanou cestu v modulu CLR.
 
@@ -60,7 +58,7 @@ Zpráva MDA poskytuje název volání metody vyvolání platformy, která způso
 </mdaConfig>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

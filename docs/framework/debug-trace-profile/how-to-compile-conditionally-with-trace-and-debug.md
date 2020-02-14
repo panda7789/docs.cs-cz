@@ -10,14 +10,12 @@ helpviewer_keywords:
 - TRACE directive
 - conditional compilation, tracing code
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a2cb2ef473d6870da47e0e4c00fecf6bd60707f3
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2c3ec54535319f4c7507563a5976038ca40d20aa
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975573"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217453"
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
 Při ladění aplikace během vývoje přejde výstup trasování i ladění do okna výstup v aplikaci Visual Studio. Chcete-li však do nasazené aplikace zahrnout funkce trasování, je nutné zkompilovat vaše instrumentované aplikace s povolenou direktivou překladače **trasování** . To umožňuje zkompilovat kód pro vydanou verzi aplikace. Pokud nepovolíte direktivu **Trace** , veškerý trasovací kód se během kompilace ignoruje a není zahrnutý do spustitelného kódu, který nasadíte.  
@@ -59,7 +57,7 @@ Při ladění aplikace během vývoje přejde výstup trasování i ladění do 
   
      Význam direktiv podmíněné kompilace použitých ve výše uvedených příkladech je následující:  
   
-    |Směrnici|Význam|  
+    |– Direktiva|Význam|  
     |---------------|-------------|  
     |`vbc`|Visual Basic – kompilátor|  
     |`csc`|C#přepínač|  
@@ -73,7 +71,7 @@ Při ladění aplikace během vývoje přejde výstup trasování i ladění do 
   
 1. Zadejte odpovídající příkaz pro programovací jazyk v horní části souboru zdrojového kódu.  
   
-    |Jazyk|Příkaz|Výsledek|  
+    |Jazyk|Výpis|Výsledek|  
     |--------------|---------------|------------|  
     |**Visual Basic**|**#CONST TRACE = True**|Povolí trasování|  
     ||**#CONST TRACE = false**|Zakáže trasování|  
@@ -95,7 +93,7 @@ Odkomentujte direktivu kompilátoru.
 > [!NOTE]
 > Až budete připraveni kompilovat, můžete buď zvolit možnost **sestavit** z nabídky **sestavení** , nebo použít metodu příkazového řádku, ale bez zadání **d:** pro definování symbolů podmíněné kompilace.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Trasování a instrumentace aplikací](tracing-and-instrumenting-applications.md)
 - [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](how-to-create-initialize-and-configure-trace-switches.md)

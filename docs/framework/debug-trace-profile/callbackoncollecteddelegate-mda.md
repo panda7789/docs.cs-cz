@@ -14,24 +14,22 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - delegates [.NET Framework], garbage collection
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f7f5a6ef2d4e8d4a987ed74a6a04e31f87cc46f3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: eb14e0df5396d92eb223dde2e562684c4c318295
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052935"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217571"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)
-Pokud je delegát zařazen ze spravovaného do nespravovaného kódu jako ukazatel na funkci a na tento ukazatel funkce je umístěno zpětné volání, poté, co byl delegát uvolněn z paměti, je aktivován pomocník spravovanéholadění(MDA).`callbackOnCollectedDelegate`  
+Pokud je delegát zařazen ze spravovaného do nespravovaného kódu jako ukazatel na funkci a na tento ukazatel funkce je po uvolnění paměti pro tento ukazatel na funkci zpětného volání, je aktivován Pomocník pro ladění `callbackOnCollectedDelegate`.  
   
 ## <a name="symptoms"></a>Příznaky  
  K narušení přístupu dojde při pokusu o volání spravovaného kódu prostřednictvím ukazatelů na funkce, které byly získány ze spravovaných delegátů. Tyto chyby, zatímco nejsou chyby modulu CLR (Common Language Runtime), mohou vypadat tak, že v kódu CLR dojde k narušení přístupu.  
   
  Selhání není konzistentní; v některých případech se volání na ukazatel na funkci zdaří a někdy selže. K selhání může dojít pouze při velkém zatížení nebo při náhodném počtu pokusů.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Delegát, ze kterého byl ukazatel na funkci vytvořen a zpřístupněn nespravovanému kódu, byl shromážděn z paměti. Když se nespravovanou součást pokusí zavolat na ukazatel na funkci, vygeneruje porušení přístupu.  
   
  Selhání se jeví jako náhodné, protože závisí na tom, kdy dojde k uvolnění paměti. Pokud má delegát nárok na kolekci, může dojít k uvolnění paměti po zpětném volání a volání je úspěšné. V jinou dobu dojde k uvolnění paměti před zpětným voláním, zpětné volání vygeneruje porušení přístupu a program se zastaví.  
@@ -39,16 +37,16 @@ Pokud je delegát zařazen ze spravovaného do nespravovaného kódu jako ukazat
  Pravděpodobnost selhání závisí na době mezi zařazováním delegáta a zpětným voláním na ukazatel funkce a také frekvence uvolňování paměti. Selhání je občas v případě, že čas mezi zařazováním delegáta a následným zpětným voláním je krátký. To je obvykle případ, pokud nespravované metody, které obdrží ukazatel funkce, neuloží ukazatel na funkci pro pozdější použití, ale místo toho se před vrácením vrátí zpět na ukazatel funkce hned. Podobně další uvolňování paměti dochází v případě vysoké zátěže systému, což je pravděpodobnější, že k uvolňování paměti dojde před zpětným voláním.  
   
 ## <a name="resolution"></a>Řešení  
- Po zařazování delegáta jako nespravovaného ukazatele na funkci nemůže systém uvolňování paměti sledovat svoji dobu života. Místo toho musí váš kód uchovávat odkaz na delegáta po dobu života nespravovaného ukazatele na funkci. Než to ale uděláte, musíte nejdřív určit, který delegát byl shromážděn. Když je aktivováno MDA, poskytuje název typu delegáta. Použijte tento název k vyhledání kódu pro vyvolání nebo signatury modelu COM, které předají tento delegát do nespravovaného kódu. Poškozený delegát se předává přes jednu z těchto webů volání. Můžete také povolit `gcUnmanagedToManaged` službě MDA vynutit uvolňování paměti před každým zpětným voláním do modulu runtime. Tím dojde k odebrání nejistoty zavedené uvolňováním paměti tím, že zajistíte, aby se uvolňování paměti vždy před zpětným voláním. Jakmile víte, který delegát byl shromážděn, změňte kód tak, aby zůstal na spravované straně odkaz na spravovanou stranu za dobu života zařazovacího ukazatele nespravované funkce.  
+ Po zařazování delegáta jako nespravovaného ukazatele na funkci nemůže systém uvolňování paměti sledovat svoji dobu života. Místo toho musí váš kód uchovávat odkaz na delegáta po dobu života nespravovaného ukazatele na funkci. Než to ale uděláte, musíte nejdřív určit, který delegát byl shromážděn. Když je aktivováno MDA, poskytuje název typu delegáta. Použijte tento název k vyhledání kódu pro vyvolání nebo signatury modelu COM, které předají tento delegát do nespravovaného kódu. Poškozený delegát se předává přes jednu z těchto webů volání. Můžete také povolit `gcUnmanagedToManaged` MDA, aby vynutilo uvolňování paměti před každým zpětným voláním do modulu runtime. Tím dojde k odebrání nejistoty zavedené uvolňováním paměti tím, že zajistíte, aby se uvolňování paměti vždy před zpětným voláním. Jakmile víte, který delegát byl shromážděn, změňte kód tak, aby zůstal na spravované straně odkaz na spravovanou stranu za dobu života zařazovacího ukazatele nespravované funkce.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
- Když jsou delegáti zařazeni jako ukazatelé na funkce, modul runtime přidělí převod, který provede přechod z nespravovaného do spravovaného kódu. Tato rutina nespravovaného kódu ve skutečnosti volá před tím, než se spravované delegáty nakonec vyvolají. Bez povoleného `callbackOnCollectedDelegate` MDA se nespravovaný kód pro zařazování odstraní při shromáždění delegáta. Když je povolený MDA, nespravovaný kód pro zařazování se hned po shromáždění delegáta neodstraní. `callbackOnCollectedDelegate` Místo toho se ve výchozím nastavení chovají poslední instance 1 000 a při volání metody MDA se změní na aktivovat. V případě, že jsou shromažďována více zařazování delegátů, je nakonec 1 001 odstraněn převod.  
+ Když jsou delegáti zařazeni jako ukazatelé na funkce, modul runtime přidělí převod, který provede přechod z nespravovaného do spravovaného kódu. Tato rutina nespravovaného kódu ve skutečnosti volá před tím, než se spravované delegáty nakonec vyvolají. Bez povoleného `callbackOnCollectedDelegate` MDA se nespravovaný kód zařazování odstraní při shromáždění delegáta. Když je povolený `callbackOnCollectedDelegate` MDA, nespravovaný kód pro zařazování se hned po shromáždění delegáta neodstraní. Místo toho se ve výchozím nastavení chovají poslední instance 1 000 a při volání metody MDA se změní na aktivovat. V případě, že jsou shromažďována více zařazování delegátů, je nakonec 1 001 odstraněn převod.  
   
 ## <a name="output"></a>Výstup  
  MDA oznamuje název typu delegáta, který byl shromážděn před provedením zpětného volání na jeho nespravovaném ukazateli funkce.  
   
-## <a name="configuration"></a>Konfiguraci  
- Následující příklad ukazuje možnosti konfigurace aplikace. Nastaví počet převodní rutiny, který se zachová, takže zůstane aktivní až 1 500. Výchozí `listSize` hodnota je 1 000, minimum je 50 a maximum je 2 000.  
+## <a name="configuration"></a>Konfigurace  
+ Následující příklad ukazuje možnosti konfigurace aplikace. Nastaví počet převodní rutiny, který se zachová, takže zůstane aktivní až 1 500. Výchozí hodnota `listSize` je 1 000, minimum je 50 a maximum je 2 000.  
   
 ```xml  
 <mdaConfig>  
@@ -111,7 +109,7 @@ public class Entry
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

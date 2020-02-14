@@ -14,19 +14,17 @@ helpviewer_keywords:
 - trace listeners, filters
 - trace listeners, initializing
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a1e214266b66f390fecffe802270a4181a6d7a7f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 53cdce767d437c47aab94e883381954f8cf70653
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052682"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215924"
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování
-Jednou z nových funkcí v .NET Framework verze 2,0 je vylepšený sledovací systém. Základní místní prostředí není beze změny: trasovací zprávy jsou odesílány pomocí přepínačů posluchačům, kteří nahlásí data na přidružené výstupní médium. Primární rozdíl pro verzi 2,0 je, že trasování lze iniciovat prostřednictvím instancí <xref:System.Diagnostics.TraceSource> třídy. <xref:System.Diagnostics.TraceSource>je určen pro fungování jako vylepšený sledovací systém a lze jej použít místo statických metod pro starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> trasovací třídy. Známé <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.TraceSource> a <xref:System.Diagnostics.Debug> třídy stále existují, ale doporučeným postupem je použití třídy pro trasování.  
+Jednou z nových funkcí v .NET Framework verze 2,0 je vylepšený sledovací systém. Základní místní prostředí není beze změny: trasovací zprávy jsou odesílány pomocí přepínačů posluchačům, kteří nahlásí data na přidružené výstupní médium. Primární rozdíl pro verzi 2,0 je, že trasování lze inicializovat prostřednictvím instancí třídy <xref:System.Diagnostics.TraceSource>. <xref:System.Diagnostics.TraceSource> má fungovat jako vylepšený sledovací systém a lze jej použít místo statických metod pro starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> trasovacích tříd. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy stále existují, ale doporučeným postupem je použití třídy <xref:System.Diagnostics.TraceSource> pro trasování.  
   
- Toto téma popisuje použití <xref:System.Diagnostics.TraceSource> páru s konfiguračním souborem aplikace.  Je možné, i když nedoporučujeme trasovat pomocí <xref:System.Diagnostics.TraceSource> konfiguračního souboru bez použití konfiguračního souboru. Informace o trasování bez konfiguračního souboru najdete v tématu [How to: Vytvoření a inicializace zdrojů](how-to-create-and-initialize-trace-sources.md)trasování.  
+ Toto téma popisuje použití <xref:System.Diagnostics.TraceSource> společně s konfiguračním souborem aplikace.  K trasování pomocí <xref:System.Diagnostics.TraceSource> bez použití konfiguračního souboru je to možné, i když to nedoporučujeme. Informace o trasování bez konfiguračního souboru najdete v tématu [Postupy: vytváření a inicializace zdrojů trasování](how-to-create-and-initialize-trace-sources.md).  
   
 ### <a name="to-create-and-initialize-your-trace-source"></a>Vytvoření a inicializace zdroje trasování  
   
@@ -99,7 +97,7 @@ Jednou z nových funkcí v .NET Framework verze 2,0 je vylepšený sledovací sy
   
 ### <a name="to-change-the-level-at-which-a-listener-writes-a-trace-message"></a>Změna úrovně, na které naslouchací proces zapisuje trasovací zprávu  
   
-1. Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy byla aplikace inicializována. Chcete-li změnit tato nastavení, musíte změnit konfigurační soubor a restartovat aplikaci nebo programově aktualizovat aplikaci pomocí <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> metody. Aplikace může dynamicky měnit vlastnosti nastavené konfiguračním souborem pro přepsání všech nastavení zadaných uživatelem.  Například můžete chtít zajistit, aby se kritické zprávy vždy odesílaly do textového souboru, bez ohledu na aktuální nastavení konfigurace.  
+1. Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy byla aplikace inicializována. Chcete-li změnit tato nastavení, musíte změnit konfigurační soubor a restartovat aplikaci nebo programově aktualizovat aplikaci pomocí metody <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType>. Aplikace může dynamicky měnit vlastnosti nastavené konfiguračním souborem pro přepsání všech nastavení zadaných uživatelem.  Například můžete chtít zajistit, aby se kritické zprávy vždy odesílaly do textového souboru, bez ohledu na aktuální nastavení konfigurace.  
   
     ```csharp
     using System;  
@@ -163,11 +161,11 @@ Jednou z nových funkcí v .NET Framework verze 2,0 je vylepšený sledovací sy
     }  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.EventTypeFilter>
-- [Postupy: Vytvoření a inicializace zdrojů trasování](how-to-create-and-initialize-trace-sources.md)
+- [Postupy: Vytváření a inicializace zdrojů trasování](how-to-create-and-initialize-trace-sources.md)
 - [Moduly naslouchání trasování](trace-listeners.md)

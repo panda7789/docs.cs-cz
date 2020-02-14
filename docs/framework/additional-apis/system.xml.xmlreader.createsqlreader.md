@@ -1,7 +1,5 @@
 ---
 title: XmlReader. CreateSqlReader – metoda (System. XML)
-author: mairaw
-ms.author: mairaw
 ms.date: 10/17/2019
 topic_type:
 - apiref
@@ -11,14 +9,14 @@ api_location:
 - system.xml.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 302be4eff32d2c96a1571d291e0b289e77694db8
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c65ef7c073175488c11c5e912a44d46fd4319209
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584132"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215452"
 ---
-# <a name="xmlreadercreatesqlreader-method"></a>XmlReader. CreateSqlReader – metoda
+# <a name="xmlreadercreatesqlreader-method"></a>XmlReader.CreateSqlReader – metoda
 
 Vytvoří novou instanci <xref:System.Xml.XmlReader> pomocí zadaného datového proudu, nastavení a kontextové informace pro analýzu.
 
@@ -29,13 +27,13 @@ internal static XmlReader CreateSqlReader(Stream input,
 
 ## <a name="parameters"></a>Parametry
 
-- `input`<xref:System.IO.Stream>  
+- `input` <xref:System.IO.Stream>  
   Datový proud, který obsahuje data XML.
 
-- `settings`<xref:System.Xml.XmlReaderSettings>  
+- `settings` <xref:System.Xml.XmlReaderSettings>  
   Nastavení pro novou instanci <xref:System.Xml.XmlReader>. Tato hodnota může být `null`.
 
-- `inputContext`<xref:System.Xml.XmlParserContext>  
+- `inputContext` <xref:System.Xml.XmlParserContext>  
   Kontextové informace vyžadované k analýze fragmentu XML. Tato hodnota může být `null`.
 
 ## <a name="returns"></a>Vrací

@@ -10,24 +10,22 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), CER calls
 - generics [.NET Framework], open generic CER calls
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 44b6ee3e4f74a523c1e902a4eb48a64b11eb3937
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: de1735103314dfedbabe27623f579ce2c1e728af
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960905"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217266"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall – pomocník spravovaného ladění (MDA)
 
-Je aktivován Pomocník pro vy`openGenericCERCall` spravované ladění, který upozorňuje na to, že graf s omezeným výkonem (CER) s proměnnými obecného typu v kořenové metodě se zpracovává při kompilaci JIT nebo při generování nativní bitové kopie a aspoň u jednoho obecného typu. proměnné je typ odkazu na objekt.
+Je aktivován Pomocník pro vy`openGenericCERCall` spravované ladění, který upozorňuje na to, že graf s omezeným výkonem (CER) s proměnnými obecného typu v kořenové metodě se zpracovává při kompilaci JIT nebo při generování nativní bitové kopie a aspoň jedna z obecných typů proměnných je typ odkazu na objekt.
 
 ## <a name="symptoms"></a>Příznaky
 
 Kód CER se nespustí, pokud je vlákno přerušeno nebo pokud je doména aplikace uvolněna.
 
-## <a name="cause"></a>příčina
+## <a name="cause"></a>Příčina
 
 V době kompilace JIT je vytváření instancí obsahující typ odkazu na objekt pouze zástupce, protože výsledný kód je sdílen a každá proměnná typu odkazu na objekt může být libovolný typ odkazu na objekt. To může předem zabránit přípravě některých prostředků za běhu.
 
@@ -112,7 +110,7 @@ class MyClass
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>

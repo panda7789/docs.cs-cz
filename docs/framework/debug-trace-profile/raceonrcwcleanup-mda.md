@@ -9,22 +9,20 @@ helpviewer_keywords:
 - RaceOnRCWCleanup MDA
 - runtime callable wrappers
 ms.assetid: bee1e9b1-50a8-4c89-9cd9-7dd6b2458187
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 07b6c674e2608ac46bf9870ae26afc2fc1ec99ba
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: edf1fe3ee5be631f7f3c42f4a6cdb17f1be722cf
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052353"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216199"
 ---
 # <a name="raceonrcwcleanup-mda"></a>raceOnRCWCleanup – pomocník spravovaného ladění (MDA)
-Pomocník spravovaného ladění (MDA) je aktivován, když modul CLR (Common Language Runtime) zjistí, že se používá obálka s voláním [za běhu](../../standard/native-interop/runtime-callable-wrapper.md) (RCW), když volání uvolní, je provedeno pomocí příkazu, <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType> jako je například metoda. `raceOnRCWCleanup`  
+Pokud modul CLR (Common Language Runtime) zjistí, že se používá [obálka](../../standard/native-interop/runtime-callable-wrapper.md) RCW (Runtime), je-li volání k vydání vyvoláno pomocí příkazu, jako je například metoda <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>, je aktivována pomocná aplikace `raceOnRCWCleanup` Managed Debugging Assistant (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
  Porušení přístupu nebo poškození paměti během nebo po uvolnění RCW pomocí <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> nebo podobné metody.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  RCW se používá v jiném vlákně nebo v uvolňování zásobníku vláken.  RCW, který se používá, nelze uvolnit.  
   
 ## <a name="resolution"></a>Řešení  
@@ -36,7 +34,7 @@ Pomocník spravovaného ladění (MDA) je aktivován, když modul CLR (Common La
 ## <a name="output"></a>Výstup  
  Zpráva popisující chybu  
   
-## <a name="configuration"></a>Konfiguraci  
+## <a name="configuration"></a>Konfigurace  
   
 ```xml  
 <mdaConfig>  
@@ -46,7 +44,7 @@ Pomocník spravovaného ladění (MDA) je aktivován, když modul CLR (Common La
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

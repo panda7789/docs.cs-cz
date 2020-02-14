@@ -1,14 +1,13 @@
 ---
 title: Sestavení kompletního řešení .NET Core pomocí Visual Studio pro Mac
 description: Tento článek vás provede vytvořením řešení .NET Core, které obsahuje opakovaně použitelnou knihovnu a testování částí.
-author: mairaw
 ms.date: 12/19/2019
-ms.openlocfilehash: f4284cd4c3c8b358b87c31c0fd5c067b1e7fb8a2
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: dea23da33912de849f0dcbe1e2f6fa3edb3a5e24
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715355"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215204"
 ---
 # <a name="build-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Sestavení kompletního řešení .NET Core na macOS pomocí Visual Studio pro Mac
 
@@ -22,7 +21,7 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá hledané sl
 > - V Visual Studio pro Mac vyberte **Help** > **nahlásit problém** z nabídky nebo **nahlásit problém** z úvodní obrazovky, která otevře okno pro podání zprávy o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/41/index.html).
 > - Chcete-li vytvořit návrh, vyberte možnost **Help** > **poskytnout návrh** z nabídky nebo **Poskytněte návrh** z úvodní obrazovky, který vás přesměruje na [webovou stránku komunity vývojářů Visual Studio pro Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [.NET Core SDK 3,1 nebo novější](https://dotnet.microsoft.com/download)
 - [Visual Studio 2019 pro Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
@@ -36,7 +35,7 @@ Další informace o požadavcích najdete v tématu [závislosti a požadavky .N
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pro Mac dialogové okno Nový projekt](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project.png)
 
-1. Pojmenujte projekt "TextUtils" (krátký název "text Utilities") a řešením "WordCounter". Ponechejte možnost **vytvořit adresář projektu v adresáři řešení** zaškrtnuté. Vyberte **vytvořit**.
+1. Pojmenujte projekt "TextUtils" (krátký název "text Utilities") a řešením "WordCounter". Ponechejte možnost **vytvořit adresář projektu v adresáři řešení** zaškrtnuté. Vyberte **Create** (Vytvořit).
 
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pro Mac dialogových oknech Nový projekt](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project-options.png)
@@ -208,6 +207,6 @@ Testy jednotek poskytují automatizované softwarové testování během vývoje
 
 Stejný postup můžete použít k ladění kódu pomocí projektu testování částí. Namísto spuštění projektu aplikace WordCount, stiskněte klávesu CTRL a klikněte na projekt **knihovny testů** a v místní nabídce vyberte **Spustit ladění projektu** . Visual Studio pro Mac spustí testovací projekt pomocí připojeného ladicího programu. Spuštění se zastaví na všech zarážekch, které jste přidali do testovacího projektu, nebo na podkladový kód knihovny.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zpráva k vydání verze pro Visual Studio 2019 pro Mac](/visualstudio/releasenotes/vs2019-mac-relnotes)

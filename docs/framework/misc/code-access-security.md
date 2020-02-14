@@ -15,14 +15,12 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bdb4e84170d4d3b95b8b51f12e0787937aaaf961
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: a8021fade8df2c8bee5e3bf26da784a91526540f
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205655"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215900"
 ---
 # <a name="code-access-security"></a>Zabezpečení přístupu kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -36,7 +34,7 @@ ms.locfileid: "70205655"
 > [!NOTE]
 > V .NET Framework 4 byly provedeny významné změny zabezpečení přístupu kódu. Nejvýznamnější změnou je [transparentnost zabezpečení](security-transparent-code.md), ale existují i další významné změny, které ovlivňují zabezpečení přístupu kódu. Informace o těchto změnách najdete v tématu [změny zabezpečení](../security/security-changes.md).  
   
- Zabezpečení přístupu kódu primárně ovlivňuje kód knihovny a částečně důvěryhodné aplikace. Vývojáři knihovny musí chránit svůj kód před neoprávněným přístupem z částečně důvěryhodných aplikací. Částečně důvěryhodné aplikace jsou aplikace, které jsou načteny z externích zdrojů, jako je například Internet. Aplikace nainstalované na počítači nebo v místním intranetu běží v úplném vztahu důvěryhodnosti. Aplikace s plnou důvěryhodností neovlivní zabezpečení přístupu kódu, pokud nejsou označeny jako transparentní z hlediska [zabezpečení](security-transparent-code.md), protože jsou plně důvěryhodné. Jediným omezením pro plně důvěryhodné aplikace je, že aplikace, které jsou označeny <xref:System.Security.SecurityTransparentAttribute> atributem, nemohou volat kód, který je označen <xref:System.Security.SecurityCriticalAttribute> atributem. Částečně důvěryhodné aplikace musí být spuštěny v izolovaném prostoru (například v Internet Exploreru), aby bylo možné použít zabezpečení přístupu kódu. Pokud si stáhnete aplikaci z Internetu a pokusíte se ji spustit z plochy, <xref:System.NotSupportedException> zobrazí se zpráva s upozorněním: "Došlo k pokusu o načtení sestavení ze síťového umístění, které by způsobilo, že sestavení bylo v předchozích verzích .NET Framework v izolovaném prostoru. Tato verze .NET Framework ve výchozím nastavení nepovoluje zásady CAS, takže toto zatížení může být nebezpečné. " Pokud jste si jisti, že aplikace může být důvěryhodná, můžete ji povolit, aby byla spuštěna jako plná důvěryhodnost [ \<pomocí elementu loadFromRemoteSources >](../configure-apps/file-schema/runtime/loadfromremotesources-element.md). Informace o spuštění aplikace v izolovaném prostoru (sandbox) [najdete v tématu How to: Spustit částečně důvěryhodný kód v izolovaném](how-to-run-partially-trusted-code-in-a-sandbox.md)prostoru (sandboxu).  
+ Zabezpečení přístupu kódu primárně ovlivňuje kód knihovny a částečně důvěryhodné aplikace. Vývojáři knihovny musí chránit svůj kód před neoprávněným přístupem z částečně důvěryhodných aplikací. Částečně důvěryhodné aplikace jsou aplikace, které jsou načteny z externích zdrojů, jako je například Internet. Aplikace nainstalované na počítači nebo v místním intranetu běží v úplném vztahu důvěryhodnosti. Aplikace s plnou důvěryhodností neovlivní zabezpečení přístupu kódu, pokud nejsou označeny jako transparentní z hlediska [zabezpečení](security-transparent-code.md), protože jsou plně důvěryhodné. Jediným omezením pro plně důvěryhodné aplikace je, že aplikace, které jsou označeny atributem <xref:System.Security.SecurityTransparentAttribute>, nemohou volat kód, který je označen atributem <xref:System.Security.SecurityCriticalAttribute>. Částečně důvěryhodné aplikace musí být spuštěny v izolovaném prostoru (například v Internet Exploreru), aby bylo možné použít zabezpečení přístupu kódu. Pokud si stáhnete aplikaci z Internetu a pokusíte se ji spustit z počítače, zobrazí se zpráva s oznámením, že došlo k pokusu o načtení sestavení ze síťového umístění <xref:System.NotSupportedException>, které by způsobilo, že sestavení bylo v předchozích verzích .NET Framework v izolovaném prostoru. Tato verze .NET Framework ve výchozím nastavení nepovoluje zásady CAS, takže toto zatížení může být nebezpečné. " Pokud jste si jisti, že aplikace může být důvěryhodná, můžete ji povolit, aby byla spuštěna jako plná důvěryhodnost pomocí [elementu\<loadFromRemoteSources >](../configure-apps/file-schema/runtime/loadfromremotesources-element.md). Informace o spuštění aplikace v izolovaném prostoru (sandbox) naleznete v tématu [How to: Run částečně důvěryhodný kód v izolovaném prostoru (sandboxu)](how-to-run-partially-trusted-code-in-a-sandbox.md).  
   
  Veškerý spravovaný kód, který cílí na modul CLR (Common Language Runtime), obdrží výhody zabezpečení přístupu kódu, a to i v případě, že tento kód neprovádí volání zabezpečení přístupu kódu. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](code-access-security-basics.md).  
   

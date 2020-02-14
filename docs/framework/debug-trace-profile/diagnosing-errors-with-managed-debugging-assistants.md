@@ -29,14 +29,12 @@ helpviewer_keywords:
 - output, managed debugging assistants
 - errors [.NET Framework], managed debugging assistants
 ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6cb2a240a2e7e82b7015eb7a6d99c2117fa63045
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 712fbbe9e0ad291385e8eef321c5e8a2fa092a5d
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052889"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216561"
 ---
 # <a name="diagnose-errors-with-managed-debugging-assistants"></a>Diagnostikování chyb pomocí asistentů spravovaného ladění
 
@@ -70,7 +68,7 @@ V následující tabulce jsou uvedeny Mday dodávané s .NET Framework:
 |[releaseHandleFailed](releasehandlefailed-mda.md)|[reportAvOnComRelease](reportavoncomrelease-mda.md)|
 |[streamWriterBufferedDataLost](streamwriterbuffereddatalost-mda.md)|[virtualCERCall](virtualcercall-mda.md)|
 
-Ve výchozím nastavení .NET Framework aktivuje podmnožinu MDA pro všechny spravované ladicí programy. Můžete zobrazit výchozí sadu v sadě Visual Studio výběrem**Možnosti nastavení výjimek** **systému Windows** > v nabídce **ladění** a následným rozbalením seznamu **asistentů spravovaného ladění** .
+Ve výchozím nastavení .NET Framework aktivuje podmnožinu MDA pro všechny spravované ladicí programy. Výchozí sadu v sadě Visual Studio můžete zobrazit tak, že v nabídce **ladění** zvolíte možnost **Windows** > **výjimka** a potom rozbalíte seznam **asistenti spravovaného ladění** .
 
 ![Okno Nastavení výjimek v aplikaci Visual Studio](./media/diagnosing-errors-with-managed-debugging-assistants/exception-settings-mdas.png)
 
@@ -79,11 +77,11 @@ Ve výchozím nastavení .NET Framework aktivuje podmnožinu MDA pro všechny sp
 MDA můžete povolit a zakázat pomocí klíče registru, proměnné prostředí a nastavení konfigurace aplikace. Chcete-li použít nastavení konfigurace aplikace, musíte povolit buď klíč registru, nebo proměnnou prostředí.
 
 > [!TIP]
-> Místo zakázání MDA můžete aplikaci Visual Studio zabránit v zobrazení dialogového okna MDA vždy, když se přijme oznámení MDA. To provedete tak, že v nabídce **ladění** zvolíte možnost**Nastavení výjimek** **systému Windows** > , rozbalíte seznam **asistenti spravovaného ladění** a potom zaškrtnutím nebo zrušením zaškrtnutí políčka **přerušit při vyvolání** pro jednotlivý MDA.
+> Místo zakázání MDA můžete aplikaci Visual Studio zabránit v zobrazení dialogového okna MDA vždy, když se přijme oznámení MDA. Provedete to tak, že v nabídce **ladění** zvolíte možnost **Windows** > **výjimka** , rozbalíte seznam **asistenti spravovaného ladění** a potom zaškrtnutím nebo zrušením zaškrtnutí políčka **přerušit při vyvolání** pro jednotlivý MDA.
 
 ### <a name="registry-key"></a>Klíč registru
 
-Pokud chcete povolit MDA, přidejte **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\MDA** podklíč (typ REG_SZ, hodnota 1) v registru systému Windows. Zkopírujte následující příklad do textového souboru s názvem *MDAEnable. reg*. Otevřete Editor registru systému Windows (Regedit. exe) a v nabídce **soubor** vyberte **importovat**. Vyberte soubor *MDAEnable. reg* , který povolí MDA na tomto počítači. Nastavení podklíče na řetězcovou hodnotu **1** (ne hodnota DWORD **1**) umožňuje číst nastavení MDA ze souboru *ApplicationName. přípon*. MDA. config. Například konfigurační soubor MDA pro Poznámkový blok by měl název Notepad. exe. MDA. config.
+Pokud chcete povolit MDA, přidejte **\\HKEY_LOCAL_MACHINE \software\microsoft. NETFramework\MDA** podklíč (typ REG_SZ, hodnota 1) v registru systému Windows. Zkopírujte následující příklad do textového souboru s názvem *MDAEnable. reg*. Otevřete Editor registru systému Windows (Regedit. exe) a v nabídce **soubor** vyberte **importovat**. Vyberte soubor *MDAEnable. reg* , který povolí MDA na tomto počítači. Nastavení podklíče na řetězcovou hodnotu **1** (ne hodnota DWORD **1**) umožňuje číst nastavení MDA ze souboru *ApplicationName. přípon*. MDA. config. Například konfigurační soubor MDA pro Poznámkový blok by měl název Notepad. exe. MDA. config.
 
 ```text
 Windows Registry Editor Version 5.00
@@ -111,21 +109,21 @@ Ve výchozím nastavení jsou některé MDA povolené, když spustíte aplikaci,
 
 Aktivaci MDA můžete také ovládat pomocí proměnné prostředí COMPLUS_MDA, která přepisuje klíč registru. COMPLUS_MDA řetězec rozlišuje malá a velká písmena, čárkami oddělený seznam názvů MDA nebo jiné speciální řetězce ovládacích prvků. Od spravovaného nebo nespravovaného ladicího programu je ve výchozím nastavení povolená sada MDA. To se provádí implicitně předem vydaným seznamem MDA, který je ve výchozím nastavení povolený, v části Debuggery na hodnotu proměnné prostředí nebo klíče registru. Speciální řetězce ovládacích prvků jsou následující:
 
-- `0`-Deaktivuje všechny MDA.
+- `0` – deaktivuje všechny MDA.
 
-- `1`-Přečte nastavení MDA z *ApplicationName*. MDA. config.
+- `1` – přečte nastavení MDA z *ApplicationName*. MDA. config.
 
-- `managedDebugger`– Explicitně aktivuje všechny MDA, které jsou implicitně aktivované při spuštění spravovaného spustitelného souboru v ladicím programu.
+- `managedDebugger` – explicitně aktivuje všechny MDA, které jsou implicitně aktivované při spuštění spravovaného spustitelného souboru v ladicím programu.
 
-- `unmanagedDebugger`– Explicitně aktivuje všechny MDA, které jsou implicitně aktivované při spuštění nespravovaného spustitelného souboru v ladicím programu.
+- `unmanagedDebugger` – explicitně aktivuje všechny MDA, které jsou implicitně aktivované při spuštění nespravovaného spustitelného souboru v ladicím programu.
 
 Pokud existují konfliktní nastavení, přepíše předchozí nastavení poslední nastavení:
 
-- `COMPLUS_MDA=0`zakáže všechny MDA, včetně těch, které jsou implicitně povolené v rámci ladicího programu.
+- `COMPLUS_MDA=0` zakáže všechny MDA, včetně těch, které jsou implicitně povolené v rámci ladicího programu.
 
-- `COMPLUS_MDA=gcUnmanagedToManaged`povoluje `gcUnmanagedToManaged` se kromě všech MDA, které jsou implicitně povoleny v rámci ladicího programu.
+- `COMPLUS_MDA=gcUnmanagedToManaged` umožňuje `gcUnmanagedToManaged` kromě všech MDA, které jsou implicitně povoleny v rámci ladicího programu.
 
-- `COMPLUS_MDA=0;gcUnmanagedToManaged`povoluje `gcUnmanagedToManaged` , ale zakáže MDA, které by jinak byly implicitně povoleny v rámci ladicího programu.
+- `COMPLUS_MDA=0;gcUnmanagedToManaged` povoluje `gcUnmanagedToManaged`, ale zakáže MDA, které by jinak byly implicitně povoleny v rámci ladicího programu.
 
 ### <a name="application-specific-configuration-settings"></a>Nastavení konfigurace specifické pro aplikaci
 
@@ -148,7 +146,7 @@ Následující příklad ukazuje, jak povolit a nakonfigurovat [zařazování](m
 </mdaConfig>
 ```
 
-`Marshaling` MDA generuje informace o spravovaném typu, který je zařazen do nespravovaného typu pro každý spravovaný a nespravovaný přechod v aplikaci. MDA může také filtrovat názvy polí metody a struktury, které jsou zadány v podřízených prvcích methodFilter a **FieldFilter** v uvedeném pořadí. `Marshaling`
+`Marshaling` MDA generuje informace o spravovaném typu, který je zařazen do nespravovaného typu pro každý spravovaný a nespravovaný přechod v aplikaci. `Marshaling` MDA může také filtrovat názvy polí metody a struktury, které jsou zadány v podřízených prvcích **methodFilter** a **FieldFilter** v uvedeném pořadí.
 
 Následující příklad ukazuje, jak povolit více MDA pomocí jejich výchozích nastavení:
 
@@ -164,13 +162,13 @@ Následující příklad ukazuje, jak povolit více MDA pomocí jejich výchozí
 ```
 
 > [!IMPORTANT]
-> Pokud v konfiguračním souboru zadáte více než jednoho pomocníka, je nutné je uvést v abecedním pořadí. `virtualCERCall` Například pokud chcete povolit `invalidCERCall` i MDA `<invalidCERCall />` , musíte `<virtualCERCall />` přidat položku před zadáním. Pokud položky nejsou v abecedním pořadí, zobrazí se Neošetřená neplatná zpráva o výjimce konfiguračního souboru.
+> Pokud v konfiguračním souboru zadáte více než jednoho pomocníka, je nutné je uvést v abecedním pořadí. Například pokud chcete povolit `virtualCERCall` i `invalidCERCall` MDA, musíte přidat položku `<invalidCERCall />` před `<virtualCERCall />` položku. Pokud položky nejsou v abecedním pořadí, zobrazí se Neošetřená neplatná zpráva o výjimce konfiguračního souboru.
 
 ## <a name="mda-exceptions"></a>MDA – výjimky
 
 Když je povolený MDA, je aktivní, a to i v případě, že váš kód není spuštěný v ladicím programu. Je-li událost MDA vyvolána, když není k dispozici ladicí program, zpráva o události je uvedena v dialogovém okně Neošetřená výjimka, i když se nejedná o neošetřenou výjimku. Chcete-li se vyhnout dialogovému oknu, odeberte nastavení MDA-povolování, když váš kód není spuštěn v ladicím prostředí.
 
-Když se váš kód spustí v integrovaném vývojovém prostředí (IDE) sady Visual Studio, můžete se vyhnout dialogovému oknu výjimky, která se zobrazí pro konkrétní události MDA. Chcete-li to provést, v nabídce **ladění** vyberte možnost**Nastavení výjimek** **systému Windows** > . V okně **Nastavení výjimek** rozbalte seznam **asistenti spravovaného ladění** a potom zrušte zaškrtnutí políčka **přerušit při vyvolání** pro jednotlivý MDA. Pomocí tohoto dialogového okna můžete také *Povolit* zobrazení dialogových oken s výjimkou MDA.
+Když se váš kód spustí v integrovaném vývojovém prostředí (IDE) sady Visual Studio, můžete se vyhnout dialogovému oknu výjimky, která se zobrazí pro konkrétní události MDA. Chcete-li to provést, v nabídce **ladění** vyberte možnost **Windows** > **výjimka nastavení**. V okně **Nastavení výjimek** rozbalte seznam **asistenti spravovaného ladění** a potom zrušte zaškrtnutí políčka **přerušit při vyvolání** pro jednotlivý MDA. Pomocí tohoto dialogového okna můžete také *Povolit* zobrazení dialogových oken s výjimkou MDA.
 
 ## <a name="mda-output"></a>Výstup MDA
 
@@ -178,6 +176,6 @@ Výstup MDA je podobný následujícímu příkladu, který zobrazuje výstup z 
 
 **Volání funkce PInvoke ' MDATest! MDATest. program:: StdCall zrušil vyvážení zásobníku. To je pravděpodobně způsobeno tím, že spravovaný podpis PInvoke neodpovídá nespravovanému cílovému podpisu. Ověřte, že konvence volání a parametry signatury PInvoke odpovídají cílovému nespravovanému podpisu.**
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění, trasování a profilace](index.md)

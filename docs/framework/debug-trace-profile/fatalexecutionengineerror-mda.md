@@ -12,22 +12,20 @@ helpviewer_keywords:
 - FatalExecutionEngineError MDA
 - managed debugging assistants (MDAs), fatal errors
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3fd58ae8f73fd932df641ea96a44ff618dd139e2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e25c9ef6ec43089f1d85479d1afe301232ed1d4f
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052810"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217494"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>fatalExecutionEngineError – pomocník spravovaného ladění (MDA)
-Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), je aktivována pomocník spravovanéholadění(MDA).`fatalExecutionEngineError` Proces se ukončí.  
+Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), je aktivována pomocná aplikace `fatalExecutionEngineError` Managed Debugging Assistant (MDA). Proces se ukončí.  
   
 ## <a name="symptoms"></a>Příznaky  
  Neočekávané ukončení procesu. Jiné příznaky nelze určit, protože k selhání CLR může dojít z nejrůznějších důvodů.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Modul CLR byl závažně poškozen. To je nejčastěji způsobeno poškozením dat, což může být způsobeno několika problémy, jako jsou volání funkcí vyvolání poškozené platformy a předání neplatných dat modulu CLR.  
   
 ## <a name="resolution"></a>Řešení  
@@ -63,7 +61,7 @@ Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), j
 ## <a name="output"></a>Výstup  
  Adresa funkce CLR, která způsobila závažnou chybu, ID vlákna, ve kterém došlo k chybě, a kód chyby.  
   
-## <a name="configuration"></a>Konfiguraci  
+## <a name="configuration"></a>Konfigurace  
   
 ```xml  
 <mdaConfig>  
@@ -73,7 +71,7 @@ Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), j
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution.Cer>

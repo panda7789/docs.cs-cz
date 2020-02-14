@@ -7,21 +7,19 @@ helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6112d87afcca8b2f54508d03d3ea4c0781d7e475
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 47d7648aae08544890a4dd2e42cedbf68a8acc72
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119272"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214738"
 ---
 # <a name="appsettings-element-for-configuration"></a>\<Element appSettings > pro \<konfigurace >
 
 Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační oddíl poskytnutý .NET Framework.
 
 [**konfigurační >\<** ](../configuration-element.md)   
-&nbsp;&nbsp; **\<appSettings>**
+&nbsp;&nbsp; **\<appSettings >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -47,9 +45,9 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 |     | Popis |
 | --- | ----------- |
-| [ **\<add>** ](add-element-for-appsettings.md) | Přidá vlastní nastavení aplikace. |
+| [ **\<přidat >** ](add-element-for-appsettings.md) | Přidá vlastní nastavení aplikace. |
 | [ **\<vymazat >** ](clear-element-for-appsettings.md) | Vymaže všechna dříve definovaná nastavení aplikace. |
-| [ **\<remove>** ](remove-element-for-appsettings.md) | Odebere dříve definované nastavení aplikace. |
+| [ **\<odebrat >** ](remove-element-for-appsettings.md) | Odebere dříve definované nastavení aplikace. |
 
 ## <a name="remarks"></a>Poznámky
 
@@ -84,6 +82,6 @@ Následující příklad ukazuje konfigurační soubor aplikace, který využív
 
 Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](../index.md)
