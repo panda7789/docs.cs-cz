@@ -7,20 +7,18 @@ helpviewer_keywords:
 - add Element
 - <add> Element
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 865c693bf8f23bf050064ac097b72aa6fa3b371e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 5c7de79ec626966e71d461dd3865b294a8979db2
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088750"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214815"
 ---
 # <a name="add-element-for-appsettings"></a>\<přidat > element pro \<appSettings >
 
 Přidá vlastní nastavení aplikace.
 
-[ **\<configuration >** ](../configuration-element.md) \
+[**konfigurační >\<** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<appSettings >** ](appsettings-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**
 
@@ -36,7 +34,7 @@ Přidá vlastní nastavení aplikace.
 
 |           | Popis |
 | --------- | ----------- |
-| **zkrat**   | Požadovaný atribut.<br><br>Určuje název klíče, který chcete přidat. |
+| **key**   | Požadovaný atribut.<br><br>Určuje název klíče, který chcete přidat. |
 | **value** | Požadovaný atribut.<br><br>Určuje hodnotu klíče, který se má přidat. |
 
 ## <a name="parent-element"></a>Nadřazený element
@@ -47,7 +45,7 @@ Přidá vlastní nastavení aplikace.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádná
 
 ## <a name="example"></a>Příklad
 
@@ -68,6 +66,6 @@ Následující příklad používá element `<add>` k definování dvou nastaven
 </appSettings>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](../index.md)

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - executable image for debugging
 - debugging [.NET Framework], executable images for
 ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1b64bd1e112932f394bb473a21642d37e28e39d3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 44d512a8ebec0e21e33f51c07428331e5e22b7bf
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052502"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217331"
 ---
 # <a name="making-an-image-easier-to-debug-in-net"></a>Usnadnění ladění obrazu v .NET
 
@@ -42,7 +40,7 @@ AllowOptimize=0
 
 Hodnotu každé možnosti lze nastavit na 0 nebo 1 a chybějící možnost bude mít výchozí hodnotu 0. Nastavení volby `GenerateTrackingInfo` na hodnotu 1 a volby `AllowOptimize` na hodnotu 0 poskytuje nejjednodušší ladění.
 
-Počínaje verzí 2,0 .NET Framework kompilátor JIT vždy generuje informace o sledování bez ohledu na hodnotu pro `GenerateTrackingInfo`; tato `AllowOptimize` hodnota však má i nadále vliv. Při použití nástroje [Ngen. exe (generátor nativních bitových kopií)](../tools/ngen-exe-native-image-generator.md) k předkompilování nativní bitové kopie bez optimalizace musí být soubor. ini přítomen v cílové složce `AllowOptimize=0` , pokud je spuštěn nástroj Ngen. exe. Pokud jste předkompilováni sestavení bez optimalizace, je nutné před opětovným spuštěním nástroje Ngen. exe, aby byl kód předem kompilován jako optimalizovaný, odebrat předkompilovaný kód pomocí možnosti NGen. exe **/Uninstall** . Pokud soubor. ini není ve složce přítomen, ve výchozím nastavení předkompiluje nástroj Ngen. exe kód jako optimalizovaný.
+Počínaje verzí 2,0 .NET Framework kompilátor JIT vždy generuje informace o sledování bez ohledu na hodnotu pro `GenerateTrackingInfo`; Nicméně hodnota `AllowOptimize` má stále vliv. Při použití nástroje [Ngen. exe (generátor nativních bitových kopií)](../tools/ngen-exe-native-image-generator.md) k předkompilování nativní bitové kopie bez optimalizace musí být soubor. ini přítomen v cílové složce s `AllowOptimize=0`, když se spustí Ngen. exe. Pokud jste předkompilováni sestavení bez optimalizace, je nutné před opětovným spuštěním nástroje Ngen. exe, aby byl kód předem kompilován jako optimalizovaný, odebrat předkompilovaný kód pomocí možnosti NGen. exe **/Uninstall** . Pokud soubor. ini není ve složce přítomen, ve výchozím nastavení předkompiluje nástroj Ngen. exe kód jako optimalizovaný.
 
 <xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> určuje nastavení sestavení. **DebuggableAttribute** obsahuje dvě pole, která určují, zda má kompilátor JIT optimalizovat a/nebo generovat informace o sledování. Počínaje verzí 2,0 .NET Framework kompilátor JIT vždy generuje informace o sledování.
 
@@ -53,7 +51,7 @@ Pro maloobchodní sestavení nejsou kompilátory nastaveny žádné **Debuggable
 > [!NOTE]
 > Ve verzi 1,0 .NET Framework C++ kompilátor Microsoft Visual Compiler přidá rozhraní **DebuggableAttribute** , pokud jsou zadány možnosti kompilátoru **/CLR** a **/Zi** . Ve verzi 1,1 .NET Framework musíte buď ručně přidat **DebuggableAttribute** do kódu, nebo použít možnost linkeru **/ASSEMBLYDEBUG** .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ladění, trasování a profilace](index.md)
 - [Povolení JIT – ladění Attach](enabling-jit-attach-debugging.md)

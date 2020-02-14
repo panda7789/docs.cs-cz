@@ -7,20 +7,18 @@ helpviewer_keywords:
 - add Element
 - <add> Element
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ac07fc9ba6f030209a5e0d0160689fab95bc1b4a
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 57722f3518fad12cb8e6e35d68f40bb8465bdd86
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088767"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215438"
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<přidat > element pro NameValueSectionHandler a DictionarySectionHandler
 
 Přidá vlastní nastavení aplikace. Každý **\<přidat značku >** obsahuje dvojici klíč/hodnota.
 
-[ **\<configuration >** ](configuration-element.md) \
+[**konfigurační >\<** ](configuration-element.md)\
 &nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<přidat >**
 
@@ -34,18 +32,18 @@ Přidá vlastní nastavení aplikace. Každý **\<přidat značku >** obsahuje d
 
 | Atribut | Popis |
 | --------- | ----------- |
-| **zkrat**   | Požadovaný atribut.<br><br>Určuje název nastavení. |
+| **key**   | Požadovaný atribut.<br><br>Určuje název nastavení. |
 | **value** | Požadovaný atribut.<br><br>Určuje hodnotu nastavení. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 | Prvek | Popis |
 | ------- | ------------|
-| [ **\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
+| [ **>\<sectionGroup** Objekt](custom-element-2.md) | Definuje nastavení pro vlastní konfigurační oddíly, které používají třídy <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler>. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádná
 
 ## <a name="example"></a>Příklad
 
@@ -66,6 +64,6 @@ Následující příklad ukazuje, jak definovat vlastní konfigurační oddíl a
 
 Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine. config*) a souborech *Web. config* , které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma konfiguračního souboru pro .NET Framework](index.md)

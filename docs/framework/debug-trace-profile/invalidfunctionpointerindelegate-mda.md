@@ -11,22 +11,20 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), marshaling
 - invalid function pointers
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6e3e64a720d12426fb066619b46c73402d1113e0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 723f51e14c314bde40c34d629ba7fc4f6276c633
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052618"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217376"
 ---
 # <a name="invalidfunctionpointerindelegate-mda"></a>invalidFunctionPointerInDelegate – pomocník spravovaného ladění (MDA)
-Pomocník `invalidFunctionPointerInDelegate` spravovaného ladění (MDA) je aktivován, pokud je předán neplatný ukazatel na funkci, aby bylo možné vytvořit delegáta nad ukazatelem nativní funkce.  
+V případě, že je předán neplatný ukazatel na funkci pro vytvoření delegáta přes ukazatel nativní funkce, je aktivován Pomocník s `invalidFunctionPointerInDelegate` spravované ladění (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
  Při použití delegáta přes ukazatel na funkci došlo k narušení přístupu nebo neočekávanému poškození paměti.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Byl zadán neplatný ukazatel na funkci.  
   
 ## <a name="resolution"></a>Řešení  
@@ -38,7 +36,7 @@ Pomocník `invalidFunctionPointerInDelegate` spravovaného ladění (MDA) je akt
 ## <a name="output"></a>Výstup  
  Neplatný ukazatel na funkci.  
   
-## <a name="configuration"></a>Konfiguraci  
+## <a name="configuration"></a>Konfigurace  
   
 ```xml  
 <mdaConfig>  
@@ -48,7 +46,7 @@ Pomocník `invalidFunctionPointerInDelegate` spravovaného ladění (MDA) je akt
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

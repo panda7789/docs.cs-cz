@@ -13,24 +13,22 @@ helpviewer_keywords:
 - managed code, debugging
 - native debugging, MDAs
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d14ba8724659172711da44e7bb249e9d20768dbc
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8f1621090079c030e3c055a417ed9bcad882bf78
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052339"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217239"
 ---
 # <a name="reentrancy-mda"></a>vícenásobný přístup MDA
-Při pokusu o přechod z nativního kódu do spravovaného kódu se aktivuje pomocník spravovanéholadění(MDA),protožepředchozípřepínačzespravovanéhodonativníhokódunebylprovedenprostřednictvímpřechodupodlepořadí.`reentrancy`  
+Při pokusu o přechod z nativního kódu do spravovaného kódu v případech, kdy předchozí přepínač ze spravovaného do nativního kódu nebyl proveden přechodem z pořadí, je aktivován Pomocník s nástrojem `reentrancy` Managed Debugging Assistant (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
  Halda objektu je poškozena nebo dojde k jiným závažným chybám při přechodu z nativního kódu do spravovaného kódu.  
   
  Vlákna, která přepínají mezi nativním a spravovaným kódem v obou směrech, musí provádět přechod na objednávku. Nicméně některé body rozšiřitelnosti na nízké úrovni v operačním systému, jako je vektorová obslužná rutina výjimky, umožňují přepínání ze spravovaného do nativního kódu bez nutnosti přechodu do konkrétního pořadí.  Tyto přepínače jsou v rámci řízení operačního systému, nikoli v rámci řízení modulu CLR (Common Language Runtime).  Jakýkoliv nativní kód, který se spouští uvnitř těchto bodů rozšiřitelnosti, se musí vyhnout volání zpět do spravovaného kódu.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Bod rozšiřitelnosti operačního systému nižší úrovně, jako je například vektorová obslužná rutina výjimky, byl aktivován při spuštění spravovaného kódu.  Kód aplikace, který je vyvolán prostřednictvím tohoto bodu rozšiřitelnosti, se pokouší o zpětné volání zpět do spravovaného kódu.  
   
  Tento problém je vždy způsoben kódem aplikace.  
@@ -38,7 +36,7 @@ Při pokusu o přechod z nativního kódu do spravovaného kódu se aktivuje pom
 ## <a name="resolution"></a>Řešení  
  Prověřte trasování zásobníku pro vlákno, které aktivovalo Tento MDA.  Vlákno se pokouší o neoprávněné volání spravovaného kódu.  Trasování zásobníku by mělo odhalit kód aplikace pomocí tohoto bodu rozšiřitelnosti, kódu operačního systému, který poskytuje tento bod rozšiřitelnosti, a spravovaného kódu, který byl přerušen bodem rozšiřitelnosti.  
   
- Například se zobrazí informace MDA aktivované při pokusu o volání spravovaného kódu zevnitř vektorové obslužné rutiny výjimky.  V zásobníku se zobrazí kód pro zpracování výjimek operačního systému a určitý spravovaný kód, který aktivuje výjimku, jako je <xref:System.DivideByZeroException> například <xref:System.AccessViolationException>nebo.  
+ Například se zobrazí informace MDA aktivované při pokusu o volání spravovaného kódu zevnitř vektorové obslužné rutiny výjimky.  V zásobníku se zobrazí kód pro zpracování výjimek operačního systému a určitý spravovaný kód, který aktivuje výjimku, jako je například <xref:System.DivideByZeroException> nebo <xref:System.AccessViolationException>.  
   
  V tomto příkladu je správné řešení implementovat vektorovou obslužnou rutinu výjimky zcela v nespravovaném kódu.  
   
@@ -56,7 +54,7 @@ low-level native extensibility points. Managed Debugging Assistant
 ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.  
 ```  
   
-## <a name="configuration"></a>Konfiguraci  
+## <a name="configuration"></a>Konfigurace  
   
 ```xml  
 <mdaConfig>  
@@ -67,7 +65,7 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu způsobí, že <xref:System.AccessViolationException> bude vyvolána výjimka.  Ve verzích Windows, které podporují zpracování vektorových výjimek, to způsobí, že bude volána spravovaná vektorová obslužná rutina výjimky.  Pokud je povolený `MyHandler` MDA,běhempokusuovolánízkódupodporyzpracovánívektorovévýjimkyvoperačnímsystému`reentrancy` se aktivuje.  
+ Následující příklad kódu způsobí vyvolání <xref:System.AccessViolationException>.  Ve verzích Windows, které podporují zpracování vektorových výjimek, to způsobí, že bude volána spravovaná vektorová obslužná rutina výjimky.  Pokud je povolená `reentrancy` MDA, modul MDA se aktivuje během pokusu o volání `MyHandler` z kódu podpory zpracování vektorové výjimky operačního systému.  
   
 ```csharp
 using System;  
@@ -104,6 +102,6 @@ public class Reenter
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

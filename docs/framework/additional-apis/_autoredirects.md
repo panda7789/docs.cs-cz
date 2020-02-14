@@ -10,14 +10,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 82acb409f09826d70f8f050c932ab4aebc4fd172
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: da7acdd890d0bff267fb592e81ceb6553421323f
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120087"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215715"
 ---
 # <a name="httpwebrequest_autoredirects-field"></a>HttpWebRequest.\_pole autoredirect
 
