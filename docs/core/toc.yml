@@ -49,8 +49,9 @@
     - name: Instalace lokalizované technologie IntelliSense
       href: install/localized-intellisense.md
 - name: Začínáme
-  href: get-started.md
   items:
+    - name: Začínáme
+      href: get-started.md
     - name: 'Začínáme s jazykem C# a nástrojem Visual Studio Code'
       href: tutorials/with-visual-studio-code.md
     - name: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio Code
@@ -83,16 +84,9 @@
   displayName: app compatibility
   href: compatibility/
 - name: Kurzy
-  href: tutorials/index.md
   items:
-    - name: Šablony rozhraní příkazového řádku (CLI)
-      items:
-        - name: 1 – Vytvoření šablony položky
-          href: tutorials/cli-templates-create-item-template.md
-        - name: 2 – Vytvoření šablony projektu
-          href: tutorials/cli-templates-create-project-template.md
-        - name: 3 – Vytvoření sady šablon
-          href: tutorials/cli-templates-create-template-pack.md
+    - name: Přehled
+      href: tutorials/index.md
     - name: Začínáme s .NET Core pomocí sady Visual Studio pro Mac
       href: tutorials/using-on-mac-vs.md
     - name: Sestavení kompletního řešení .NET Core v macOS
@@ -109,6 +103,14 @@
       href: tutorials/aspnet-core.md
     - name: Hostování .NET Core z nativního kódu
       href: tutorials/netcore-hosting.md
+    - name: Vytvoření šablon pro rozhraní příkazového řádku (CLI)
+      items:
+        - name: 1 – Vytvoření šablony položky
+          href: tutorials/cli-templates-create-item-template.md
+        - name: 2 – Vytvoření šablony projektu
+          href: tutorials/cli-templates-create-project-template.md
+        - name: 3 – Vytvoření sady šablon
+          href: tutorials/cli-templates-create-template-pack.md
 - name: Konfigurace běhového prostředí
   items:
     - name: Nastavení
@@ -131,13 +133,6 @@
       href: native-interop/expose-components-to-com.md
 - name: 'Balíčky, metabalíčky a architektury'
   href: packages.md
-- name: Přehled změn v CLI
-  href: tools/cli-msbuild-architecture.md
-  items:
-    - name: Správa závislostí
-      href: tools/dependencies.md
-    - name: Dodatky k formátu csproj
-      href: tools/csproj.md
 - name: Migrace
   items:
     - name: .NET Core 2.0 na 2.1
@@ -146,11 +141,16 @@
       href: migration/index.md
     - name: Mapování mezi project.json a csproj
       href: tools/project-json-to-csproj.md
+    - name: Přehled změn v CLI
+      href: tools/cli-msbuild-architecture.md
+    - name: Dodatky k formátu csproj
+      href: tools/csproj.md
     - name: Migrace z DNX
       href: migration/from-dnx.md
 - name: Nasazení aplikací
-  href: deploying/index.md
   items:
+    - name: Přehled
+      href: deploying/index.md
     - name: Publikování aplikací v rozhraní příkazového řádku
       href: deploying/deploy-with-cli.md
     - name: Nasazení aplikací pomocí sady Visual Studio
@@ -192,6 +192,8 @@
 - name: Testování jednotek
   href: testing/index.md
   items:
+    - name: Přehled
+      href: testing/index.md
     - name: Osvědčené postupy pro testování částí
       href: testing/unit-testing-best-practices.md
     - name: 'Testování částí v C# s použitím xUnit'
@@ -221,8 +223,9 @@
 - name: Kontinuální integrace
   href: tools/using-ci-with-cli.md
 - name: Správa verzí
-  href: versions/index.md
   items:
+    - name: Přehled
+      href: versions/index.md
     - name: Výběr verze .NET Core
       href: versions/selection.md
     - name: Odebrání zastaralých modulů runtime a sad SDK
@@ -330,8 +333,9 @@
             - name: dotnet remove package
               href: tools/dotnet-remove-package.md
 - name: Další nástroje platformy .NET Core
-  href: additional-tools/index.md
   items:
+    - name: Přehled
+      href: additional-tools/index.md
     - name: Nástroj pro odinstalaci .NET Core
       href: additional-tools/uninstall-tool.md
     - name: WCF Web Service Reference Provider
@@ -364,13 +368,15 @@
       href: porting/wpf.md
     - name: Portování projektů v C++/CLI
       href: porting/cpp-cli.md
-- name: Načítání závislostí
+- name: Správa a načítání závislostí
   items:
-    - name: Přehled
+    - name: Správa závislostí
+      href: tools/dependencies.md
+    - name: Načítání závislostí
       href: dependency-loading/overview.md
     - name: Vysvětlení používání třídy AssemblyLoadContext
       href: dependency-loading/understanding-assemblyloadcontext.md
-    - name: Podrobné informace o načítání
+    - name: Podrobnosti o načítání závislosti
       items:
         - name: Výchozí testování závislostí
           href: dependency-loading/default-probing.md
@@ -387,6 +393,4 @@
         - name: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
           href: ../standard/assembly/unloadability-howto.md
 - name: Vytváření distribučních balíčků .NET Core
-  items:
-    - name: Přehled
-      href: distribution-packaging.md
+  href: distribution-packaging.md
