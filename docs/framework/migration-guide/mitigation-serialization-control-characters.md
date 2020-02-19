@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataContractJsonSerializer changes
 - serialization changes
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
-ms.openlocfilehash: 209f7827e61ef72de1d64fad46dc9f241fa6edef
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b6468bc4ae37765d969a1f92b16967cc656ab7ff
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346575"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452627"
 ---
 # <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Zmírnění rizika: serializace řídicích znaků pomocí DataContractJsonSerializer
 
@@ -20,15 +20,15 @@ Počínaje .NET Framework 4,7 se způsob, jakým jsou řídicí znaky serializov
  
 ## <a name="impact"></a>Dopad
 
-V rozhraní .NET Framework 4.6.2 a starších verzích <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> neserializovat některé speciální řídicí znaky, například `\b`, `\f`a `\t`, způsobem, který byl kompatibilní s normami ECMAScript V6 a V8.
+V .NET Framework 4.6.2 a dřívějších verzích <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> neserializovat některé speciální řídicí znaky, jako je `\b`, `\f`a `\t`, způsobem, který byl kompatibilní s normami ECMAScript V6 a V8.
 
 Pro aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4,7, je serializace těchto řídicích znaků kompatibilní s ECMAScript V6 a V8. Ovlivněna jsou následující rozhraní API:
 
 - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> 
 
-## <a name="mitigation"></a>Zmírnění
+## <a name="mitigation"></a>Omezení rizik
 
-U aplikací, které cílí na verze .NET Framework počínaje .NET Framework 4,7, je toto chování ve výchozím nastavení povolené.
+Pro aplikace, které cílí na verze .NET Framework od .NET Framework 4,7, je toto chování ve výchozím nastavení povolené.
 
 Není-li toto chování žádoucí, můžete se odhlásit z této funkce přidáním následujícího řádku do oddílu `<runtime>` souboru App. config nebo Web. config:
 
@@ -38,6 +38,6 @@ Není-li toto chování žádoucí, můžete se odhlásit z této funkce přidá
 </runtime>
 ```
  
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Kompatibilita aplikací](application-compatibility.md)

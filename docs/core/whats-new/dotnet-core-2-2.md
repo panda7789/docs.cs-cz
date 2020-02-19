@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 917b51e0cf36cca45135fda4a084eb2bca62e835
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9495288658fa102df8f0fbd643e2fcdf49d8f3b3
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100696"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451977"
 ---
 # <a name="whats-new-in-net-core-22"></a>Co je nového v .NET Core 2.2
 
@@ -18,7 +18,7 @@ ms.locfileid: "73100696"
 
 ## <a name="new-deployment-mode"></a>Nový režim nasazení
 
-Počínaje rozhraním .NET Core 2,2 můžete nasadit [spustitelné soubory závislé na rozhraních](../deploying/index.md#framework-dependent-executables-fde), které jsou soubory **. exe** namísto souborů **. dll** . Funguje podobně jako u nasazení závislých na rozhraních, v závislosti na architektuře (FDE) se pořád spoléhá na přítomnost sdílené systémové verze .NET Core, která se má spustit. Vaše aplikace obsahuje jenom váš kód a všechny závislosti třetích stran. Na rozdíl od nasazení závislých na rozhraních FDEs jsou specifické pro platformu.
+Počínaje rozhraním .NET Core 2,2 můžete nasadit [spustitelné soubory závislé na rozhraních](../deploying/index.md#publish-runtime-dependent), které jsou soubory **. exe** namísto souborů **. dll** . Funguje podobně jako u nasazení závislých na rozhraních, v závislosti na architektuře (FDE) se pořád spoléhá na přítomnost sdílené systémové verze .NET Core, která se má spustit. Vaše aplikace obsahuje jenom váš kód a všechny závislosti třetích stran. Na rozdíl od nasazení závislých na rozhraních FDEs jsou specifické pro platformu.
 
 Tento nový režim nasazení má odlišnou výhodu při vytváření spustitelného souboru místo knihovny, což znamená, že můžete svou aplikaci spustit přímo, aniž byste vyvolali `dotnet` jako první.
 
@@ -84,7 +84,7 @@ Informace o vylepšení výkonu, které může být výsledkem vrstvené kompila
 
 Ve výchozím nastavení je v .NET Core 2,2 Preview 2 zapnutá vrstvená kompilace. Rozhodli jsme se však, že ve výchozím nastavení není stále připraveno povolit vrstvenou kompilaci. Takže v .NET Core 2,2 se vrstvená kompilace bude i nadále jednat o funkci výslovného souhlasu. Informace o tom, jak se na vrstvenou kompilaci rozvrstvit, najdete v tématu [vylepšení kompilátoru JIT](dotnet-core-2-1.md#jit-compiler-improvements) v tématu [co je nového v .NET Core 2,1](dotnet-core-2-1.md).
 
-## <a name="runtime"></a>Runtime
+## <a name="runtime"></a>Modul runtime
 
 **Vložení kódu před provedením metody Main**
 
@@ -94,7 +94,7 @@ Očekáváme, že poskytovatelé hostingu definují vlastní konfiguraci a zása
 
 Další informace najdete v tématu [spouštěcí zavěšení hostitele](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/host-startup-hook.md) .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Co je nového v .NET Core](index.md)
 - [Co je nového v ASP.NET Core 2,2](/aspnet/core/release-notes/aspnetcore-2.2)

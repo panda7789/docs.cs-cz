@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 8412020fb98fde245b873a2f0c6a355f6436f712
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 99706fdc3d60a5e1a7f85400c1184d5acc808e42
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868275"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449724"
 ---
 # <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9:: GetNativeCodeStartAddresses – metoda
 
@@ -60,7 +60,7 @@ Pokud je povolená vrstvená kompilace, funkce může mít více než jeden těl
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?pivots=os-windows).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
@@ -68,6 +68,6 @@ Pokud je povolená vrstvená kompilace, funkce může mít více než jeden těl
 
 **Verze rozhraní .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozhraní ICorProfilerInfo9](icorprofilerinfo9-interface.md)

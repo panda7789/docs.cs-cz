@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
-ms.openlocfilehash: 322325b765f62d04e5713557f2ef9c97e1746ae0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a84f74bde8da9ca7e40184b76efe51cea129b66a
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792054"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451847"
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
 Před zavedením několika aktivních sad výsledků (MARS) museli vývojáři použít k řešení určitých scénářů buď několik připojení, nebo ukazatele na straně serveru. Pokud se navíc v transakční situaci použilo víc připojení, vyžadují se vázaná připojení (s **sp_getbindtoken** a **sp_bindsession**). Následující scénáře ukazují, jak použít připojení s povoleným MARSm místo několika připojení.  
   
 ## <a name="using-multiple-commands-with-mars"></a>Použití více příkazů s MARS  
- Následující aplikace konzoly ukazuje, jak použít dva <xref:System.Data.SqlClient.SqlDataReader> objekty se dvěma <xref:System.Data.SqlClient.SqlCommand> objekty a jeden <xref:System.Data.SqlClient.SqlConnection> objekt s povoleným Mars.  
+ Následující aplikace konzoly ukazuje, jak použít dva objekty <xref:System.Data.SqlClient.SqlDataReader> se dvěma objekty <xref:System.Data.SqlClient.SqlCommand> a jeden objekt <xref:System.Data.SqlClient.SqlConnection> s povoleným MARS.  
   
 ### <a name="example"></a>Příklad  
- V tomto příkladu se otevře jedno připojení k databázi **AdventureWorks** . <xref:System.Data.SqlClient.SqlCommand> Objekt <xref:System.Data.SqlClient.SqlDataReader> je vytvořen pomocí objektu. Při použití čtecího modulu je otevřen druhý <xref:System.Data.SqlClient.SqlDataReader> objekt, který používá data z prvního <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtenář.  
+ V tomto příkladu se otevře jedno připojení k databázi **AdventureWorks** . Při použití objektu <xref:System.Data.SqlClient.SqlCommand> se vytvoří <xref:System.Data.SqlClient.SqlDataReader>. Při použití čtecího modulu je otevřen druhý <xref:System.Data.SqlClient.SqlDataReader>, který používá data z první <xref:System.Data.SqlClient.SqlDataReader> jako vstup do klauzule WHERE pro druhý čtecí modul.  
   
 > [!NOTE]
 > Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
@@ -164,10 +164,10 @@ static void Main()
 ```  
   
 ## <a name="reading-and-updating-data-with-mars"></a>Čtení a aktualizace dat pomocí MARS  
- MARS umožňuje, aby se připojení používalo pro operace čtení i operace jazyka DML (data remanipulace Language) s více než jednou probíhající operací. Tato funkce eliminuje nutnost zabývat se chybami zaneprázdněnými připojením aplikace. MARS navíc může nahradit uživatele koncových ukazatelů na straně serveru, což obecně spotřebovává víc prostředků. Proto vzhledem k tomu, že více operací může pracovat s jedním připojením, může sdílet stejný kontext transakce, což eliminuje nutnost používat systémové uložené procedury **sp_getbindtoken** a **sp_bindsession** .  
+ MARS umožňuje, aby se připojení používalo pro operace čtení i operace jazyka DML (data remanipulace Language) s více než jednou probíhající operací. Tato funkce eliminuje nutnost zabývat se chybami zaneprázdněnými připojením aplikace. MARS navíc může nahradit použití ukazatelů na straně serveru, což obecně spotřebovává víc prostředků. Vzhledem k tomu, že více operací může pracovat s jedním připojením, může sdílet stejný kontext transakce, což eliminuje nutnost použít **sp_getbindtoken** a **sp_bindsession** systémových uložených procedur.  
   
 ### <a name="example"></a>Příklad  
- Následující aplikace konzoly ukazuje, jak použít dva <xref:System.Data.SqlClient.SqlDataReader> objekty se třemi <xref:System.Data.SqlClient.SqlCommand> objekty a jediným <xref:System.Data.SqlClient.SqlConnection> objektem s povolenou službou Mars. První objekt příkazu načte seznam dodavatelů, jejichž kreditní hodnocení je 5. Druhý objekt příkazu používá ID dodavatele poskytované od a <xref:System.Data.SqlClient.SqlDataReader> k načtení druhého <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Každý záznam produktu se navštíví druhým <xref:System.Data.SqlClient.SqlDataReader>. Provede se výpočet, který určí, co by mělo být nového v rámci **OrderQty** . Třetí objekt příkazu se pak použije k aktualizaci tabulky **ProductVendor** s novou hodnotou. Celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
+ Následující aplikace konzoly ukazuje, jak použít dva objekty <xref:System.Data.SqlClient.SqlDataReader> se třemi objekty <xref:System.Data.SqlClient.SqlCommand> a jeden objekt <xref:System.Data.SqlClient.SqlConnection> s povoleným MARS. První objekt příkazu načte seznam dodavatelů, jejichž kreditní hodnocení je 5. Druhý objekt příkazu používá ID dodavatele poskytnuté z <xref:System.Data.SqlClient.SqlDataReader> k načtení druhého <xref:System.Data.SqlClient.SqlDataReader> se všemi produkty pro konkrétního dodavatele. Druhý <xref:System.Data.SqlClient.SqlDataReader>navštíví každý záznam produktu. Provede se výpočet, který určí, co by mělo být nového v rámci **OrderQty** . Třetí objekt příkazu se pak použije k aktualizaci tabulky **ProductVendor** s novou hodnotou. Celý proces probíhá v rámci jedné transakce, která je vrácena zpět na konci.  
   
 > [!NOTE]
 > Následující příklad používá ukázkovou databázi **AdventureWorks** , která je součástí SQL Server. Připojovací řetězec uvedený v ukázkovém kódu předpokládá, že je databáze nainstalována a je k dispozici v místním počítači. Upravte připojovací řetězec podle potřeby pro vaše prostředí.  
@@ -402,7 +402,7 @@ private static string GetConnectionString()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Více aktivních sad výsledků (MARS)](multiple-active-result-sets-mars.md)
 - [Přehled ADO.NET](../ado-net-overview.md)

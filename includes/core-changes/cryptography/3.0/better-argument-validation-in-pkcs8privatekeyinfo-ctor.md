@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a9b6af31b68c25ab58c52757f48ed23cca3f5a35
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 8d3a8712528d2d35c706cc26b8c388b65d6ad506
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568002"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449209"
 ---
 ### <a name="better-argument-validation-in-the-pkcs8privatekeyinfo-constructor"></a>Lepší ověřování argumentu v konstruktoru Pkcs8PrivateKeyInfo
 
@@ -24,7 +24,7 @@ var info = new Pkcs8PrivateKeyInfo(algorithmId, algorithmParameters, privateKey)
 byte[] encoded = info.Encode();
 ```
 
-Počínaje rozhraním .NET Core 3,0 Preview 9 se v konstruktoru ověří argument a neplatná hodnota způsobí, že metoda vyvolává <xref:System.Security.Cryptography.CryptographicException>. Tato změna přesune výjimku blíže ke zdroji chyby dat. Příklad:
+Počínaje rozhraním .NET Core 3,0 Preview 9 se v konstruktoru ověří argument a neplatná hodnota způsobí, že metoda vyvolává <xref:System.Security.Cryptography.CryptographicException>. Tato změna přesune výjimku blíže ke zdroji chyby dat. Například:
 
 ```csharp
 byte[] algorithmParameters = { 0x05, 0x00, 0x05, 0x00 };
@@ -53,6 +53,6 @@ Kryptografie
 
 ### Affected APIs
 
-- `M:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo.#ctor(System.Security.Cryptography.Oid,System.Nullable{System.ReadOnlyMemory{System.Byte}},System.ReadOnlyMemory{System.Byte},System.Boolean))
+- `M:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo.#ctor(System.Security.Cryptography.Oid,System.Nullable{System.ReadOnlyMemory{System.Byte}},System.ReadOnlyMemory{System.Byte},System.Boolean)`
 
 -->

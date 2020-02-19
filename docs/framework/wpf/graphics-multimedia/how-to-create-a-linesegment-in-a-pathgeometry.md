@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření LineSegment v PathGeometry'
+title: 'Postupy: Vytváření LineSegment v PathGeometry'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,37 +8,37 @@ helpviewer_keywords:
 - line segments [WPF], creating
 - graphics [WPF], line segments
 ms.assetid: 0155ed47-a20d-49a7-a306-186d8e07fbc4
-ms.openlocfilehash: a50c98ccc3f6d517e0917cb774af4d49d2bfa7a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc7fbad1e534988a36d85c55c1b6a8249692ad67
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054546"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452081"
 ---
-# <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a>Postupy: Vytvoření LineSegment v PathGeometry
+# <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a>Postupy: Vytváření LineSegment v PathGeometry
 
-Tento příklad ukazuje, jak vytvořit úsek čáry. Chcete-li vytvořit úsek čáry, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.LineSegment> třídy.
+Tento příklad ukazuje, jak vytvořit segment čáry. Chcete-li vytvořit segment čáry, použijte třídy <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>a <xref:System.Windows.Media.LineSegment>.
 
 ## <a name="example"></a>Příklad
 
-Následující příklady nakreslit <xref:System.Windows.Media.LineSegment> z (10, 50) na (200, 70). Následující obrázek znázorňuje výsledný <xref:System.Windows.Media.LineSegment>; mřížky na pozadí byla přidána do souřadnicový systém zobrazení.
+Následující příklady nakreslí <xref:System.Windows.Media.LineSegment> z (10, 50) do (200, 70). Následující ilustrace znázorňuje výsledný <xref:System.Windows.Media.LineSegment>; bylo přidáno pozadí mřížky pro zobrazení souřadnicového systému.
 
-![LineSegment v PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") A LineSegment vykreslovány z (10,50) (200,70)
+![LineSegment v PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") LineSegment vykreslený z (10, 50) do (200, 70)
 
-[xaml]
+formátu
 
-V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete použít syntaxi atributů k popisu cesty.
+V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]můžete k popisu cesty použít syntaxi atributu.
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1"
   Data="M 10,50 L 200,70" />
 ```
 
-[xaml]
+formátu
 
-(Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)
+(Všimněte si, že tato syntaxe atributu ve skutečnosti vytvoří <xref:System.Windows.Media.StreamGeometry>, což je verze <xref:System.Windows.Media.PathGeometry>s světlejší váhou. Další informace naleznete na stránce [syntaxe označení cesty](path-markup-syntax.md) .)
 
-V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], mohou také nakreslit úsek čáry pomocí syntaxe elementu objektu. Tady je ekvivalentní předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.
+V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]můžete také nakreslit segment čáry pomocí syntaxe elementů objektu. Následující příklad je ekvivalentní k předchozímu příkladu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 ```xaml
 <Path Stroke="Black" StrokeThickness="1">
@@ -100,9 +100,9 @@ myPath.StrokeThickness = 1
 myPath.Data = myPathGeometry
 ```
 
-V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).
+Tento příklad je součástí většího vzorku. úplnou ukázku najdete v [ukázce geometrií](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.PathFigure>
 - <xref:System.Windows.Media.PathGeometry>

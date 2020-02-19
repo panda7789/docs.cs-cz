@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 5c49d75432980d2f3af77ee040bc6eb20886b027
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 22fe5608b0a3f86baf80abb3810a512077954ac3
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861668"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449748"
 ---
 # <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9:: GetILToNativeMapping3 – metoda
 
@@ -55,7 +55,7 @@ Pokud je povolená vrstvená kompilace, může mít metoda více než jeden těl
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?pivots=os-windows).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
@@ -63,6 +63,6 @@ Pokud je povolená vrstvená kompilace, může mít metoda více než jeden těl
 
 **Verze .NET Framework:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozhraní ICorProfilerInfo9](icorprofilerinfo9-interface.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 53f25be3bc38d88aa7723f6a0858317ee5ce6143
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 04bf2d2ec78a02e8fd3d71200c64a807b874bc97
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559648"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452601"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování grafiky, která mají vliv na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -24,7 +24,7 @@ Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](
   
 <a name="xpdmandwddm"></a>   
 ## <a name="what-are-xpdm-and-wddm"></a>Co jsou XPDM a WDDM?  
- Některá nastavení registru pro vykreslování grafiky mají různé výchozí hodnoty v závislosti na tom, jestli vaše grafická karta používá ovladač XPDM nebo WDDM. XPDM je model ovladače zobrazení Microsoft Windows XP a WDDM je model ovladače zobrazení systému Windows. WDDM je k dispozici na počítačích se systémy Windows Vista a Windows 7. XPDM je k dispozici na počítačích se systémy Windows Vista, Microsoft Windows XP a Microsoft Windows Server 2003. Další informace o WDDM najdete v tématu [Průvodce návrhem zobrazovacího modelu Windows Vista](https://go.microsoft.com/fwlink/?LinkId=178394).  
+ Některá nastavení registru pro vykreslování grafiky mají různé výchozí hodnoty v závislosti na tom, jestli vaše grafická karta používá ovladač XPDM nebo WDDM. XPDM je model ovladače zobrazení Microsoft Windows XP a WDDM je model ovladače zobrazení systému Windows. WDDM je k dispozici na počítačích se systémy Windows Vista a Windows 7. XPDM je k dispozici na počítačích se systémy Windows Vista, Microsoft Windows XP a Microsoft Windows Server 2003. Další informace o WDDM naleznete v tématu [Průvodce návrhem řídicích ovladačů systému Windows (WDDM)](/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide).  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Nastavení registru  
@@ -68,7 +68,7 @@ Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](
   
 |Klíč registru|Typ hodnoty|  
 |------------------|----------------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|Řetězec|  
   
  V listopadu 2004 společnost Microsoft vydala novou verzi pokynů pro testování ovladačů; ovladače napsané po tomto datu nabízejí lepší stabilitu. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použije kanál hardwarové akcelerace pro tyto ovladače a přejde zpět na softwarové vykreslování pro ovladače XPDM publikované před tímto datem.  
   
@@ -95,7 +95,7 @@ Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](
   
  **Možnost použít rastrový odkaz** má hodnotu DWORD. Hodnota 0 značí, že se nepoužívá rastrový rastr. Jakákoli jiná nenulová hodnota vynutí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít rastrový odkaz.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md)
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

@@ -2,12 +2,12 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: cd8b43aa9b2373b5ce038e5007678778201f0746
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 44c2cdbadd02aef6b2bbb32bde8bcb9b19f8360d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74354269"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452575"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Zpracování Vícenásobný přístup v asynchronních aplikacích (Visual Basic)
 
@@ -17,7 +17,7 @@ Při zahrnutí asynchronního kódu do aplikace byste měli zvážit a případn
 > Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
 
 > [!NOTE]
-> Protokol TLS (Transport Layer Security) verze 1,2 je teď minimální verzí, která se má použít při vývoji aplikací. Pokud se vaše aplikace zaměřuje na verzi rozhraní .NET Framework starší než 4,7, přečtěte si následující článek [s doporučenými postupy TLS (Transport Layer Security) s .NET Framework](../../../../framework/network-programming/tls.md) 
+> Protokol TLS (Transport Layer Security) verze 1,2 je teď minimální verzí, která se má použít při vývoji aplikací. Pokud se vaše aplikace zaměřuje na verzi .NET Framework starší než 4,7, přečtěte si následující článek o [osvědčených postupech TLS (Transport Layer Security) s .NET Framework](../../../../framework/network-programming/tls.md).
 
 ## <a name="BKMK_RecognizingReentrancy"></a>Rozpoznávání Vícenásobný přístup
 
@@ -682,7 +682,7 @@ Následující část poskytuje kód pro sestavení příkladu jako aplikace WPF
 
 12. Proveďte změny z [zakázání tlačítka Start](#BKMK_DisableTheStartButton), [zrušte a restartujte operaci](#BKMK_CancelAndRestart)nebo [Spusťte více operací a](#BKMK_RunMultipleOperations) zaznamenejte výstup pro zpracování Vícenásobný přístup.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)

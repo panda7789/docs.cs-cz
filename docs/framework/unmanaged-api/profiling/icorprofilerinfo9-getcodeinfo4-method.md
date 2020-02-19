@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 3e3e3afc221d153ff3573126ff10014d39af761a
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f65cebff912adeb7afc34434467cf7be72f9be32
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868301"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449761"
 ---
 # <a name="icorprofilerinfo9getcodeinfo4-method"></a>ICorProfilerInfo9:: GetCodeInfo4 – metoda
 
@@ -64,7 +64,7 @@ Alternativně můžete pro získání správné velikosti vyrovnávací paměti 
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?pivots=os-windows).
 
 **Hlavička:** CorProf. idl, CorProf. h
 
@@ -72,6 +72,6 @@ Alternativně můžete pro získání správné velikosti vyrovnávací paměti 
 
 **Verze rozhraní .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozhraní ICorProfilerInfo9](ICorProfilerInfo9-interface.md)

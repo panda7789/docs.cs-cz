@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Action delegate, creating with lambda expression
 - lambda expressions, with Action and Func
 ms.assetid: 645b2c17-29d0-4ffa-8684-430743cc2f2d
-ms.openlocfilehash: d1b716e977702d03db176da70be00a1e5c789a4b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4e5be295a52edc1a7f0a0a3aa98f55335ae3e31b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129034"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452997"
 ---
 # <a name="lambda-expressions-in-plinq-and-tpl"></a>Výrazy lambda v PLINQ a TPL
 
@@ -26,11 +26,11 @@ Task Parallel Library (TPL) obsahuje mnoho metod, které přebírají jednu z <x
 
 ## <a name="func-delegate"></a>Delegát Func
 
-Delegát `Func` zapouzdřuje metodu, která vrací hodnotu. V podpisu funkce vždy určuje parametr typu poslední nebo pravý typ, který vrací návratový typ. Jednou z běžných příčin chyb kompilátoru je pokus o předání dvou vstupních parametrů <xref:System.Func%602?displayProperty=nameWithType>; ve skutečnosti tento typ používá pouze jeden vstupní parametr. Knihovna tříd rozhraní definuje 17 verzí `Func`: <xref:System.Func%601?displayProperty=nameWithType>, <xref:System.Func%602?displayProperty=nameWithType>, <xref:System.Func%603?displayProperty=nameWithType>a tak dále až <xref:System.Func%6017?displayProperty=nameWithType>.
+Delegát `Func` zapouzdřuje metodu, která vrací hodnotu. V `Func` signatura, poslední, nebo úplně vpravo, parametr Type vždy určuje návratový typ. Jednou z běžných příčin chyb kompilátoru je pokus o předání dvou vstupních parametrů <xref:System.Func%602?displayProperty=nameWithType>; ve skutečnosti tento typ používá pouze jeden vstupní parametr. Rozhraní .NET definuje 17 verzí `Func`: <xref:System.Func%601?displayProperty=nameWithType>, <xref:System.Func%602?displayProperty=nameWithType>, <xref:System.Func%603?displayProperty=nameWithType>a tak dále až <xref:System.Func%6017?displayProperty=nameWithType>.
 
 ## <a name="action-delegate"></a>Delegát akce
 
-Delegát <xref:System.Action?displayProperty=nameWithType> zapouzdřuje metodu (sub v Visual Basic), která nevrací hodnotu, nebo vrátí [typ void](../../csharp/language-reference/keywords/void.md). V signatuře typu akce parametry typu reprezentují pouze vstupní parametry. Podobně jako Func knihovna tříd Framework definuje 17 verzí akce, od verze, která nemá parametry typu, prostřednictvím verze, která má 16 parametrů typu.
+Delegát <xref:System.Action?displayProperty=nameWithType> zapouzdřuje metodu (sub v Visual Basic), která nevrací hodnotu. V signatuře typu `Action` parametry typu reprezentují pouze vstupní parametry. Podobně jako `Func`rozhraní .NET definuje 17 verzí `Action`, od verze, která nemá parametry typu, prostřednictvím verze, která má 16 parametrů typu.
 
 ## <a name="example"></a>Příklad
 
@@ -39,6 +39,6 @@ Následující příklad metody <xref:System.Threading.Tasks.Parallel.ForEach%60
 [!code-csharp[System.Threading.Tasks.Parallel#02](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallel/cs/parallelforeach.cs#02)]
 [!code-vb[System.Threading.Tasks.Parallel#02](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallel/vb/parallelforeach.vb#02)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
