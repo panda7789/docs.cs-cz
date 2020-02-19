@@ -154,6 +154,9 @@
             - name: Správa verzí
               tocHref: /dotnet/core/versions/
               topicHref: /dotnet/core/versions/index
+            - name: SDK – projekty
+              tocHref: /dotnet/core/project-sdk/
+              topicHref: /dotnet/core/project-sdk/overview
             - name: Nástroje
               tocHref: /dotnet/core/tools/
               topicHref: /dotnet/core/tools/index

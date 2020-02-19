@@ -111,6 +111,18 @@
           href: tutorials/cli-templates-create-project-template.md
         - name: 3 – Vytvoření sady šablon
           href: tutorials/cli-templates-create-template-pack.md
+- name: Sady SDK projektu
+  items:
+    - name: Přehled
+      href: project-sdk/overview.md
+    - name: Odkaz
+      items:
+        - name: Microsoft.NET.Sdk
+          href: project-sdk/msbuild-props.md
+        - name: Microsoft.NET.Sdk.Web
+          href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+        - name: Microsoft.NET.Sdk.Razor
+          href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
 - name: Konfigurace běhového prostředí
   items:
     - name: Nastavení
