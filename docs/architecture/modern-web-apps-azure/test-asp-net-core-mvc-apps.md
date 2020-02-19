@@ -3,13 +3,13 @@ title: Test ASP.NET Core aplikací MVC
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Test ASP.NET Core aplikací MVC
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 5f63e350e2f1ba8699bb002a54492cbf9501948e
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.date: 12/04/2019
+ms.openlocfilehash: d83f7fca10aed6301c170b7b6c5651da6f02be08
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965773"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449358"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
@@ -106,7 +106,7 @@ Pokud má určitá třída aplikace testovat mnoho metod (a tedy mnoho testovac�
 
 ## <a name="unit-testing-aspnet-core-apps"></a>Testování částí ASP.NET Core aplikací
 
-V dobře navržené aplikaci ASP.NET Core bude většina složitosti a obchodní logiky zapouzdřená v obchodních entitách a v různých službách. Aplikace ASP.NET Core MVC samotná, s jejími kontroléry, filtry, ViewModels a zobrazeními, by měla vyžadovat hodně testů jednotek. Většina funkcí dané akce leží mimo metodu Action sám. Testování, zda směrování funguje správně, nebo globální zpracování chyb, nelze provést efektivně pomocí testu jednotek. Podobně platí, že jakékoli filtry, včetně ověřování modelu a ověřování a ověřovacích filtrů, nemůžou být testovány jednotkou. Bez těchto zdrojů chování by většina metod akcí měla být triviální, a to bez ohledu na to, jestli je jejich práce na služby, která se dá testovat nezávisle na řadiči, který je používá.
+V dobře navržené aplikaci ASP.NET Core bude většina složitosti a obchodní logiky zapouzdřená v obchodních entitách a v různých službách. Aplikace ASP.NET Core MVC samotná, s jejími kontroléry, filtry, ViewModels a zobrazeními, by měla vyžadovat hodně testů jednotek. Většina funkcí dané akce leží mimo metodu Action sám. Testování, zda směrování funguje správně, nebo globální zpracování chyb, nelze provést efektivně pomocí testu jednotek. Podobně platí, že jakékoli filtry, včetně ověřování modelu a ověřování a ověřovacích filtrů, nejde testovat pomocí testu, který cílí na metodu akce kontroleru. Bez těchto zdrojů chování by většina metod akcí měla být triviální, a to bez ohledu na to, jestli je jejich práce na služby, která se dá testovat nezávisle na řadiči, který je používá.
 
 Někdy budete muset kód Refaktorovat za účelem testování částí. To často zahrnuje identifikaci abstrakcí a použití injektáže závislosti pro přístup k abstrakci v kódu, který chcete testovat, spíše než kódování přímo proti infrastruktuře. Zvažte například tuto jednoduchou metodu akce pro zobrazení obrázků:
 
@@ -153,7 +153,7 @@ Většina testů integrace v aplikacích ASP.NET Core by měla být testovací s
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Funkční testování ASP.NET Core aplikací
 
-U ASP.NET Corech aplikací poskytuje třída `TestServer` funkční testy poměrně snadného zápisu. `TestServer` pomocí `WebHostBuilder` můžete nakonfigurovat přímo (normálně pro aplikaci) nebo s typem `WebApplicationFactory` (k dispozici od verze 2,1). Zkuste považovat svého testovacího hostitele na svého produkčního hostitele co nejpřesněji, takže testy budou fungovat podobně jako u aplikace v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci ContentRootu TestServer, která je používána ASP.NET Core k nalezení statických prostředků, jako jsou zobrazení.
+U ASP.NET Corech aplikací poskytuje třída `TestServer` funkční testy poměrně snadného zápisu. `TestServer` můžete nakonfigurovat přímo pomocí `WebHostBuilder` (nebo `HostBuilder`) přímo (jako obvykle pro aplikaci) nebo pomocí `WebApplicationFactory`ho typu (k dispozici od verze 2,1). Měli byste se pokusit přesně vyhledat svého testovacího hostitele na produkčního hostitele, aby testy mohly postupovat podobně jako v případě, že aplikace provede v produkčním prostředí. Třída `WebApplicationFactory` je užitečná pro konfiguraci ContentRootu TestServer, která je používána ASP.NET Core k nalezení statických prostředků, jako jsou zobrazení.
 
 Jednoduché funkční testy můžete vytvořit vytvořením třídy testu, která implementuje IClassFixture\<WebApplicationFactory\<TEntry > >, kde TEntry je třída Startup vaší webové aplikace. Na tomto místě testovací přípravek může vytvořit klienta pomocí metody CreateClient objektu pro vytváření:
 
@@ -175,6 +175,7 @@ public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 
 ```cs
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.eShopWeb.Infrastructure.Data;
@@ -184,32 +185,35 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Microsoft.eShopWeb.FunctionalTests.Web.Controllers
+namespace Microsoft.eShopWeb.FunctionalTests.Web
 {
-    public class CustomWebApplicationFactory<TStartup>
-    : WebApplicationFactory<Startup>
+    public class WebTestFixture : WebApplicationFactory<Startup>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
+            builder.UseEnvironment("Testing");
+
             builder.ConfigureServices(services =>
             {
+                 services.AddEntityFrameworkInMemoryDatabase();
+
                 // Create a new service provider.
-                var serviceProvider = new ServiceCollection()
+                var provider = services
                     .AddEntityFrameworkInMemoryDatabase()
                     .BuildServiceProvider();
 
-                // Add a database context (ApplicationDbContext) using an in-memory
+                // Add a database context (ApplicationDbContext) using an in-memory 
                 // database for testing.
                 services.AddDbContext<CatalogContext>(options =>
                 {
                     options.UseInMemoryDatabase("InMemoryDbForTesting");
-                    options.UseInternalServiceProvider(serviceProvider);
+                    options.UseInternalServiceProvider(provider);
                 });
 
                 services.AddDbContext<AppIdentityDbContext>(options =>
                 {
                     options.UseInMemoryDatabase("Identity");
-                    options.UseInternalServiceProvider(serviceProvider);
+                    options.UseInternalServiceProvider(provider);
                 });
 
                 // Build the service provider.
@@ -224,7 +228,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.Web.Controllers
                     var loggerFactory = scopedServices.GetRequiredService<ILoggerFactory>();
 
                     var logger = scopedServices
-                        .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
+                        .GetRequiredService<ILogger<WebTestFixture>>();
 
                     // Ensure the database is created.
                     db.Database.EnsureCreated();
@@ -233,6 +237,11 @@ namespace Microsoft.eShopWeb.FunctionalTests.Web.Controllers
                     {
                         // Seed the database with test data.
                         CatalogContextSeed.SeedAsync(db, loggerFactory).Wait();
+
+                        // seed sample user data
+                        var userManager = scopedServices.GetRequiredService<UserManager<ApplicationUser>>();
+                        var roleManager = scopedServices.GetRequiredService<RoleManager<IdentityRole>>();
+                        AppIdentityDbContextSeed.SeedAsync(userManager, roleManager).Wait();
                     }
                     catch (Exception ex)
                     {
@@ -249,17 +258,17 @@ namespace Microsoft.eShopWeb.FunctionalTests.Web.Controllers
 Testy mohou pomocí tohoto vlastního WebApplicationFactory vytvořit klienta a následně provádět požadavky na aplikaci pomocí této klientské instance. Aplikace bude mít osazená data, která lze použít jako součást kontrolních výrazů testu. Následující test ověří, zda se Domovská stránka aplikace eShopOnWeb správně načítá a obsahuje seznam produktů přidaných do aplikace v rámci počátečních dat.
 
 ```cs
-using Microsoft.eShopWeb.FunctionalTests.Web.Controllers;
-using Microsoft.eShopWeb.Web;
+using Microsoft.eShopWeb.FunctionalTests.Web;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 {
-    public class HomePageOnGet : IClassFixture<CustomWebApplicationFactory<Startup>>
+    [Collection("Sequential")]
+    public class HomePageOnGet : IClassFixture<WebTestFixture>
     {
-        public HomePageOnGet(CustomWebApplicationFactory<Startup> factory)
+        public HomePageOnGet(WebTestFixture factory)
         {
             Client = factory.CreateClient();
         }
@@ -293,8 +302,6 @@ Tento funkční test vykonává úplný ASP.NET Core zásobník aplikací MVC/Ra
 >   <https://docs.microsoft.com/ef/core/miscellaneous/testing/>
 > - **Integrační testy v ASP.NET Core** \
 >   <https://docs.microsoft.com/aspnet/core/test/integration-tests>
-> - **ASP.NET Community rychlou schůzku – 15. května 2018 – testování MVC s Javier C. Nelson** – video na YouTube \
->   <https://www.youtube.com/watch?v=wtOE-xmFJkw&list=PL1rZQsJPBU2StolNg0aqvQswETPcYnNKL&index=5>
 
 >[!div class="step-by-step"]
 >[Předchozí](work-with-data-in-asp-net-core-apps.md)

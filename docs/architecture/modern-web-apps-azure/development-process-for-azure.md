@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 830271d76e5a87ed782d81fa9491328c580f0f87
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7a641c1b6665af6e9e78ef182174b360041d74aa
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849585"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450037"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
@@ -26,13 +26,9 @@ ms.locfileid: "70849585"
 
 Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému vývojovém prostředí (IDE) nebo odlehčenému a agilnímu editoru, Microsoft vám při vývoji aplikací ASP.NET Core
 
-**Visual Studio 2017.** Pokud používáte *Visual Studio 2017* , můžete sestavovat ASP.NET Coreé aplikace, pokud máte nainstalovanou úlohu *vývoje .NET Core pro různé platformy* . Obrázek 10-1 ukazuje požadovanou úlohu v dialogovém okně instalace sady Visual Studio 2017.
+**Visual Studio 2019.** Visual Studio 2019 je nejlepší integrované vývojové prostředí (IDE) pro vývoj aplikací pro ASP.NET Core. Nabízí hostitele funkcí, které zvyšují produktivitu vývojářů. Můžete ji použít k vývoji aplikace a následné analýze výkonu a dalších vlastností. Integrovaný ladicí program umožňuje pozastavit provádění kódu a krokovat zpět a zpátky prostřednictvím kódu za běhu. Vestavěný Test Runner umožňuje organizovat testy a jejich výsledky a může dokonce provádět testování za provozu při kódování. Pomocí Live Share můžete spolupracovat v reálném čase s ostatními vývojáři a bez problémů sdílet relaci kódu přes síť. A až budete připraveni, Visual Studio zahrnuje všechno, co potřebujete k publikování aplikace v Azure, nebo kdekoli, kde ji můžete hostovat.
 
-![Instalace úlohy .NET Core v aplikaci Visual Studio 2017](./media/image10-1.png)
-
-**Obrázek 10-1.** Instalace úlohy .NET Core v aplikaci Visual Studio 2017.
-
-[Stažení sady Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+[Stáhněte si Visual Studio 2019](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
 **Visual Studio Code a DOTNET CLI** (nástroje pro různé platformy pro Mac, Linux a Windows). Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje jazyk vývoje, můžete použít Microsoft Visual Studio kód a dotnet CLI. Tyto produkty poskytují jednoduché a přesto robustní prostředí, které zjednodušuje pracovní postup vývojářů. Kromě toho Visual Studio Code podporuje rozšíření pro C\# a vývoj webů a poskytuje IntelliSense a zástupce úloh v editoru.
 
@@ -58,7 +54,7 @@ Vytvořte Azure App Service, do které budete aplikaci nasazovat. Webovou aplika
 
 ![AzureWebApp](./media/image10-2.png)
 
-**Obrázek 10-2.** Vytvoření nové Azure App Service webové aplikace na webu Azure Portal.
+**Obrázek 10-1.** Vytvoření nové Azure App Service webové aplikace na webu Azure Portal.
 
 Proces sestavení CI provede automatizované sestavení pokaždé, když se nový kód potvrdí do úložiště správy zdrojového kódu projektu. Tím získáte okamžitou zpětnou vazbu, kterou kód sestaví (a v ideálním případě projde automatizované testy) a je možné jej nasadit. Toto sestavení CI vytvoří artefakt balíčku nasazení webu a publikuje ho pro využití procesem CD.
 
@@ -74,11 +70,11 @@ Po nakonfigurování kanálu CI/CD můžete jednoduše provést aktualizace webo
 
 ### <a name="workflow-for-developing-azure-hosted-aspnet-core-applications"></a>Pracovní postup pro vývoj aplikací ASP.NET Core hostovaných v Azure
 
-Po nakonfigurování účtu Azure a procesu CI/CD je vývoj aplikací ASP.NET Core hostovaných v Azure jednoduchý. Následují základní kroky, které obvykle provádíte při sestavování aplikace ASP.NET Core hostované v Azure App Service jako webové aplikace, jak je znázorněno na obrázku 10-3.
+Po nakonfigurování účtu Azure a procesu CI/CD je vývoj aplikací ASP.NET Core hostovaných v Azure jednoduchý. Následují základní kroky, které obvykle provádíte při sestavování aplikace ASP.NET Core hostované v Azure App Service jako webové aplikace, jak je znázorněno na obrázku 10-2.
 
 ![EndToEndDevDeployWorkflow](./media/image10-3.png)
 
-**Obrázek 10-3.** Podrobný pracovní postup pro vytváření ASP.NET Corech aplikací a jejich hostování v Azure
+**Obrázek 10-2.** Podrobný pracovní postup pro vytváření ASP.NET Corech aplikací a jejich hostování v Azure
 
 #### <a name="step-1-local-dev-environment-inner-loop"></a>Krok 1. Vnitřní smyčka místního vývojového prostředí
 
@@ -88,7 +84,7 @@ Vývoj aplikace ASP.NET Core pro nasazení do Azure se neliší od vývoje aplik
 
 Kdykoli budete připraveni sdílet svůj kód s týmem, měli byste odeslat změny z místního zdrojového úložiště do sdíleného zdrojového úložiště vašeho týmu. Pokud pracujete ve vlastní větvi, tento krok obvykle zahrnuje sloučení kódu do sdílené větve (například prostřednictvím [žádosti](https://docs.microsoft.com/azure/devops/git/pull-requests)o přijetí změn).
 
-#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3: Server sestavení: průběžná integrace. sestavení, testování, balení
+#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Server sestavení: průběžná integrace. sestavení, testování, balení
 
 Nové sestavení je spuštěno na serveru sestavení vždy, když je provedeno nové potvrzení do úložiště kódu sdílené aplikace. V rámci procesu CI by toto sestavení mělo plně kompilovat aplikaci a spouštět automatizované testy, aby bylo možné potvrdit, že vše funguje podle očekávání. Konečný výsledek procesu CI by měl být zabalená verze webové aplikace připravená pro nasazení.
 
@@ -96,7 +92,7 @@ Nové sestavení je spuštěno na serveru sestavení vždy, když je provedeno n
 
 Po úspěšném sestavení si proces CD zachová vytvořené artefakty sestavení. To bude zahrnovat balíček nasazení webu. Server sestavení tento balíček nasadí, aby Azure App Service a nahradil existující službu nově vytvořenou. Tento krok obvykle cílí na přípravné prostředí, ale některé aplikace se nasazují přímo do výroby prostřednictvím procesu CD.
 
-#### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Azure App Service webové aplikace
+#### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Webová aplikace Azure App Service
 
 Po nasazení se aplikace ASP.NET Core spustí v kontextu Azure App Service webové aplikace. Tato webová aplikace se dá monitorovat a dále konfigurovat pomocí webu Azure Portal.
 
@@ -104,7 +100,7 @@ Po nasazení se aplikace ASP.NET Core spustí v kontextu Azure App Service webov
 
 Když je webová aplikace spuštěná, můžete monitorovat stav aplikace a shromažďovat data o diagnostice a chování uživatelů. Application Insights je součástí sady Visual Studio a nabízí automatické instrumentace pro aplikace ASP.NET. Může vám poskytnout informace o využití, výjimkách, požadavcích, výkonu a protokolech.
 
-## <a name="references"></a>Reference
+## <a name="references"></a>Odkazy
 
 **Sestavení a nasazení aplikace ASP.NET Core do Azure**  
 <https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core>

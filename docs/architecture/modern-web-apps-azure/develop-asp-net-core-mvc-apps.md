@@ -3,13 +3,13 @@ title: Vývoj aplikací ASP.NET Core MVC
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | vývoj aplikací ASP.NET Core MVC
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 7bc30db084f361e6c4654b89e69230b379b0136c
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.date: 12/04/2019
+ms.openlocfilehash: 3b1409fbb924638f0148c74a678d482aeb732357
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116526"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449440"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -26,7 +26,7 @@ Když vytváříte novou aplikaci ASP.NET Core, měli byste mít na paměti, že
 
 ### <a name="why-razor-pages"></a>Proč Razor Pages?
 
-Razor Pages je výchozím přístupem pro nové webové aplikace v aplikaci Visual Studio. Razor Pages nabízí jednodušší způsob, jak sestavovat funkce aplikace založené na stránkách, jako jsou například formuláře bez hesla. Pomocí řadičů a zobrazení je běžné, že aplikace mají velmi velké řadiče, které pracovaly s mnoha různými závislostmi a zobrazují modely a vracejí mnoho různých zobrazení. Výsledkem je mnohem složitost a často vede k tomu, že řadiče, které nesledovaly princip jedné zodpovědnosti nebo jsou efektivně otevřené/uzavřené zásady. Tento problém Razor Pages řeší zapouzdřením logiky na straně serveru pro danou logickou "stránku" v rámci webové aplikace pomocí značek Razor. Stránka Razor, která nemá žádnou logiku na straně serveru, může jednoduše sestávat ze souboru Razor (např. index. cshtml). Avšak většina netriviálních Razor Pages bude mít přidruženou třídu modelu stránky, která je podle konvence pojmenována stejně jako soubor Razor s příponou ". cs" (například "Index.cshtml.cs").
+Razor Pages je výchozím přístupem pro nové webové aplikace v aplikaci Visual Studio. Razor Pages nabízí jednodušší způsob, jak sestavovat funkce aplikace založené na stránkách, jako jsou například formuláře bez hesla. Pomocí řadičů a zobrazení je běžné, že aplikace mají velmi velké řadiče, které pracovaly s mnoha různými závislostmi a zobrazují modely a vracejí mnoho různých zobrazení. Výsledkem je složitější a často se jedná o řadiče, které nesledovaly princip jedné zodpovědnosti nebo efektivně otevřené nebo uzavřené zásady. Tento problém Razor Pages řeší zapouzdřením logiky na straně serveru pro danou logickou "stránku" v rámci webové aplikace pomocí značek Razor. Stránka Razor, která nemá žádnou logiku na straně serveru, může jednoduše sestávat ze souboru Razor (např. index. cshtml). Avšak většina netriviálních Razor Pages bude mít přidruženou třídu modelu stránky, která je podle konvence pojmenována stejně jako soubor Razor s příponou ". cs" (například "Index.cshtml.cs").
 
 Model stránky stránky Razor kombinuje zodpovědnosti kontroleru MVC a ViewModel. Místo zpracování žádostí s metodami akce kontroleru se spustí obslužné rutiny modelu stránky, jako je například "OnGet ()", vykreslení jejich přidružené stránky ve výchozím nastavení. Razor Pages zjednodušuje proces sestavování jednotlivých stránek v aplikaci ASP.NET Core a zároveň stále poskytuje všechny funkce architektury služby ASP.NET Core MVC. Jsou to dobrá výchozí volba pro nové funkce založené na stránkách.
 
@@ -43,15 +43,15 @@ Ve své srdci ASP.NET Core aplikace mapují příchozí požadavky na odchozí o
 Aplikace ASP.NET Core MVC můžou používat konvenční trasy, trasy atributů nebo obojí. Konvenční trasy jsou definovány v kódu a určují _konvence_ směrování pomocí syntaxe jako v následujícím příkladu:
 
 ```csharp
-app.UseMvc(routes =>
+app.UseEndpoints(endpoints =>
 {
-    routes.MapRoute("default","{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 ```
 
 V tomto příkladu byla do směrovací tabulky přidána trasa s názvem "default". Definuje šablonu směrování se zástupnými symboly pro _kontroler_, _Akce_a _ID_. Zástupné symboly kontroleru a akce mají nastavené výchozí hodnoty ("Home" a "index") a zástupný symbol ID je nepovinný (na základě použití "?"). Zde definovaná konvence uvádí, že první část požadavku by měla odpovídat názvu kontroleru, druhé části akce a v případě, že je potřeba třetí část, bude představovat parametr ID. Konvenční trasy jsou obvykle definovány na jednom místě pro aplikaci, například v metodě Configure ve třídě Startup.
 
-Trasy atributů jsou aplikovány přímo na řadiče a akce namísto zadání globálně. To má výhodu, že je mnohem více zjistitelná, když se díváte na konkrétní metodu, ale znamená, že informace o směrování nejsou uchovávány na jednom místě v aplikaci. Pomocí tras atributů můžete snadno zadat více tras pro danou akci a kombinovat trasy mezi řadiči a akcemi. Příklad:
+Trasy atributů jsou aplikovány přímo na řadiče a akce namísto zadání globálně. To má výhodu, že je mnohem více zjistitelná, když se díváte na konkrétní metodu, ale znamená, že informace o směrování nejsou uchovávány na jednom místě v aplikaci. Pomocí tras atributů můžete snadno zadat více tras pro danou akci a kombinovat trasy mezi řadiči a akcemi. Například:
 
 ```csharp
 [Route("Home")]
@@ -129,9 +129,9 @@ public class Startup
     public Startup(IHostingEnvironment env)
     {
         var builder = new ConfigurationBuilder()
-        .SetBasePath(env.ContentRootPath)
-        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
     }
 }
 ```
@@ -152,7 +152,7 @@ public void Configure(IApplicationBuilder app,
 Metoda ConfigureServices je výjimkou tohoto chování; musí mít pouze jeden parametr typu IServiceCollection. Ve skutečnosti nemusí podporovat vkládání závislostí, protože na jedné straně zodpovídá za přidání objektů do kontejneru služeb a na druhé má přístup ke všem aktuálně nakonfigurovaným službám prostřednictvím parametru IServiceCollection. Proto můžete pracovat se závislostmi definovanými v kolekci ASP.NET Core Services v každé části třídy po spuštění, a to tak, že požadujete potřebnou službu jako parametr nebo při práci s IServiceCollection v ConfigureServices.
 
 > [!NOTE]
-> Pokud potřebujete zajistit, aby byly určité služby k dispozici pro třídu spuštění, můžete je nakonfigurovat pomocí WebHostBuilder a její metody ConfigureServices.
+> Pokud potřebujete zajistit, aby byly určité služby k dispozici pro třídu pro spuštění, můžete je nakonfigurovat pomocí IWebHostBuilder a její ConfigureServices metody uvnitř volání CreateDefaultBuilder.
 
 Spouštěcí třída je modelem, jak byste měli strukturovat ostatní části aplikace ASP.NET Core, od řadičů po middlewaru až po filtrování na vaše vlastní služby. V každém případě byste měli postupovat podle [principu explicitních závislostí](https://deviq.com/explicit-dependencies-principle/), vyžádat si své závislosti namísto jejich přímého vytváření a využití injektáže závislostí v celé aplikaci. Buďte opatrní, kde a jak přímo vytvářet instance implementací, zejména služeb a objektů, které pracují s infrastrukturou nebo mají vedlejší účinky. Preferovat práci s abstrakcemi definovanými v jádru vaší aplikace a předanými jako argumenty pro zakódujeme odkazů na konkrétní typy implementace.
 
@@ -191,15 +191,10 @@ public class HomeController
 Také je potřeba přidat do svých tras podporu oblastí:
 
 ```csharp
-app.UseMvc(routes =>
+app.UseEndpoints(endpoints =>
 {
-    // Areas support
-    routes.MapRoute(
-    name: "areaRoute",
-    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-    routes.MapRoute(
-    name: "default",
-    template: "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(name: "areaRoute", pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 ```
 
@@ -237,7 +232,7 @@ Tuto konvenci pak zadáte jako možnost při přidávání podpory pro MVC do ap
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC také používá konvenci k vyhledání zobrazení. Můžete ho přepsat vlastní konvencí, aby se zobrazily ve složkách funkcí (pomocí názvu funkce poskytnutého FeatureConvention, výše). Další informace o tomto přístupu a stažení Pracovní ukázky najdete v článku na webu MSDN, [řezy funkcí pro ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
+ASP.NET Core MVC také používá konvenci k vyhledání zobrazení. Můžete ho přepsat vlastní konvencí, aby se zobrazily ve složkách funkcí (pomocí názvu funkce poskytnutého FeatureConvention, výše). Další informace o tomto přístupu a stažení Pracovní ukázky najdete v článku na webu MSDN Magazine, [řezy funkcí pro ASP.NET Core MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc).
 
 ### <a name="cross-cutting-concerns"></a>Související aspekty
 
@@ -282,7 +277,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Nepovolujte, aby vaše metody akcí byly nepotřebné s podmíněným kódem. Místo toho tyto zásady vyžádejte do filtrů, které se dají použít podle potřeby. V tomto příkladu se kontrola ověření modelu, ke kterému by mělo dojít při každém odeslání příkazu do rozhraní API, může nahradit následující atribut:
+Nepovolujte, aby vaše metody akcí byly nepotřebné s podmíněným kódem. Místo toho tyto zásady vyžádejte do filtrů, které se dají použít podle potřeby. V tomto příkladu se kontrola ověření modelu, ke kterému by mělo dojít při odeslání příkazu do rozhraní API, může nahradit následující atribut:
 
 ```csharp
 public class ValidateModelAttribute : ActionFilterAttribute
@@ -311,7 +306,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Můžete si přečíst další informace o implementaci filtrů a stažení Pracovní ukázky z článku na webu MSDN [– reálné ASP.NET Core filtry MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
+Další informace o implementaci filtrů a stažení Pracovní ukázky najdete v článku o časopise MSDN, [reálné ASP.NET Core filtry MVC](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters).
 
 > ### <a name="references--structuring-applications"></a>Odkazy – strukturování aplikací
 >
@@ -321,10 +316,10 @@ Můžete si přečíst další informace o implementaci filtrů a stažení Prac
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc>
 > - **Filtry**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
-> - **MSDN – Real World ASP.NET Core filtry MVC**  
+> - **MSDN Magazine – filtry MVC ASP.NET Core Real World**  
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
 
-## <a name="security"></a>Zabezpečení –
+## <a name="security"></a>Zabezpečení
 
 Zabezpečení webových aplikací je velké téma s mnoha důležitými informacemi. Ve své základní úrovni zabezpečení zahrnuje jistotu, že víte, komu daný požadavek pochází, a potom zajistěte, aby žádost měla přístup jenom k prostředkům, které by měl mít. Ověřování je proces porovnávání přihlašovacích údajů dodaných s žádostí v důvěryhodném úložišti dat, aby bylo možné zjistit, jestli by se žádost měla považovat za přicházející ze známé entity. Autorizace je proces omezení přístupu k určitým prostředkům na základě identity uživatele. Třetí problém se zabezpečením chrání žádosti před odposloucháváním třetími stranami, pro které byste měli aspoň [zajistit, aby vaše aplikace používala SSL](/aspnet/core/security/enforcing-ssl).
 
@@ -356,11 +351,9 @@ public void Configure(IApplicationBuilder app)
 {
     app.UseStaticFiles();
     app.UseIdentity();
-    app.UseMvc(routes =>
+    app.UseEndpoints(endpoints =>
     {
-        routes.MapRoute(
-        name: "default",
-        template: "{controller=Home}/{action=Index}/{id?}");
+        endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
     });
 }
 ```
@@ -445,8 +438,6 @@ Buďte obzvláště opatrní při zavádění vlastní implementace kryptografie
 
 Kromě obsluhy stránek a reagování na požadavky na data prostřednictvím webových rozhraní API můžou ASP.NET Core aplikace komunikovat přímo s připojenými klienty. Tato odchozí komunikace může využívat celou řadu přenosových technologií, nejběžnějších WebSockets. ASP.NET Core Signal je knihovna, která usnadňuje přidání funkce komunikace mezi klientem a serverem v reálném čase do vašich aplikací. Signal podporuje nejrůznější technologie přenosu, včetně WebSockets, a abstrakce mnoho podrobností implementace od vývojářů.
 
-Pro ASP.NET Core od verze 2,1 byl k dispozici ASP.NET Core signál.
-
 Komunikace klienta v reálném čase, ať už používá objekty WebSockets přímo nebo jiné techniky, je užitečná v nejrůznějších scénářích aplikací. Možné příklady:
 
 - Živé aplikace chatovací místnosti
@@ -520,7 +511,7 @@ Model domény se skládá z objektů, které vzájemně spolupracují, aby před
 
 - [Události domény](https://martinfowler.com/eaaDev/DomainEvent.html), které představují věci v rámci systému, které jsou důležité pro ostatní části systému.
 
-Počítejte s tím, že doménový model s DDD by měl zapouzdřit složité chování v rámci modelu. Entity, zejména, by neměly být pouze kolekce vlastností. Pokud model domény postrádá chování a pouze představuje stav systému, je tento [model anemic](https://deviq.com/anemic-model/), což je nežádoucí v DDD.
+Doménový model DDD by měl zapouzdřit složité chování v rámci modelu. Entity, zejména, by neměly být pouze kolekce vlastností. Pokud model domény postrádá chování a pouze představuje stav systému, je tento [model anemic](https://deviq.com/anemic-model/), což je nežádoucí v DDD.
 
 Kromě těchto typů modelů se na DDD obvykle používá celá řada vzorů:
 
@@ -559,7 +550,7 @@ Proces nasazení ASP.NET Core aplikace se účastní několika kroků bez ohledu
 
 ASP.NET Core aplikace jsou konzolové aplikace, které musí být spuštěny, když se Server spustí a restartuje, pokud dojde k chybě aplikace (nebo serveru). K automatizaci tohoto procesu lze použít správce procesů. Nejběžnějšími správci procesů pro ASP.NET Core jsou Nginx a Apache v systémech Linux a IIS nebo ve službě Windows ve Windows.
 
-Kromě správce procesů musí ASP.NET Core aplikace hostované na webovém serveru Kestrel použít reverzní proxy server. Zpětný proxy server přijímá požadavky HTTP z Internetu a předá je Kestrel po předběžném zpracování. Reverzní proxy servery poskytují vrstvu zabezpečení pro aplikaci a vyžadují se pro nasazení Edge (vystavené provozu z Internetu). Kestrel je relativně nové a ještě nenabízí ochranu proti určitým útokům. Kestrel také nepodporuje hostování více aplikací na stejném portu, takže techniky, jako jsou hlavičky hostitelů, nelze s ní používat, aby bylo možné hostovat více aplikací na stejném portu a IP adrese.
+Kromě správce procesů mohou ASP.NET Core aplikace používat reverzní proxy server. Zpětný proxy server přijímá požadavky HTTP z Internetu a předá je Kestrel po předběžném zpracování. Reverzní proxy servery poskytují vrstvu zabezpečení pro aplikaci. Kestrel také nepodporuje hostování více aplikací na stejném portu, takže techniky, jako jsou hlavičky hostitelů, nelze s ní používat, aby bylo možné hostovat více aplikací na stejném portu a IP adrese.
 
 ![Kestrel na Internet](./media/image7-5.png)
 
@@ -583,7 +574,7 @@ Pokud jste hostitelem aplikace v Azure, můžete použít Microsoft Azure Applic
 
 - Směrování na více webů (konsolidovat až 20 lokalit na jednom Application Gateway)
 
-- Firewall webových aplikací
+- Brána firewall webových aplikací
 
 - Podpora protokolu WebSocket
 

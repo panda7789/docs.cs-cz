@@ -3,13 +3,13 @@ title: Běžné webové technologie na straně klienta
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Běžné webové technologie na straně klienta
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 7dd3765b1b71d8c1ef22d714a00be3e171fab523
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.date: 12/04/2019
+ms.openlocfilehash: 2809c8539b42e8e2250039dceed1389b3cbdcd8a
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093120"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449371"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 
@@ -20,9 +20,12 @@ Aplikace ASP.NET Core jsou webové aplikace a obvykle spoléhají na webové tec
 
 I když jsou HTML a CSS relativně stabilní, JavaScript, pomocí aplikačních architektur a vývojářů nástrojů pracujících s nástrojem k vytváření webových aplikací se vyvíjí při Breakneck rychlosti. Tato kapitola si vyhledá několik způsobů, jak je jazyk JavaScript používán webovými vývojáři, a poskytuje podrobný přehled o úhlových a reagujících knihovnách na straně klienta.
 
+> [!NOTE]
+> Blazor poskytuje alternativu k rozhraním JavaScript pro vytváření bohatých interaktivních uživatelských rozhraní klienta. Podpora Blazor na straně klienta je stále ve verzi Preview, takže pro tuto kapitolu teď není tato kapitola mimo rozsah.
+
 ## <a name="html"></a>HTML
 
-HTML (HyperText Markup Language) je standardní značkovací jazyk používaný k vytváření webových stránek a webových aplikací. Jeho prvky tvoří stavební kameny stránek, které představují formátovaný text, obrázky, vstupy formulářů a další struktury. Když prohlížeč odešle požadavek na adresu URL, ať už načte stránku nebo aplikaci, první věc, kterou vrátí, je dokument HTML. Tento dokument HTML může odkazovat nebo obsahovat další informace o jeho vzhledu a rozložení ve formě šablony stylů CSS nebo chování ve formě JavaScriptu.
+HTML je standardní značkovací jazyk používaný k vytváření webových stránek a webových aplikací. Jeho prvky tvoří stavební kameny stránek, které představují formátovaný text, obrázky, vstupy formulářů a další struktury. Když prohlížeč odešle požadavek na adresu URL, ať už načte stránku nebo aplikaci, první věc, kterou vrátí, je dokument HTML. Tento dokument HTML může odkazovat nebo obsahovat další informace o jeho vzhledu a rozložení ve formě šablony stylů CSS nebo chování ve formě JavaScriptu.
 
 ## <a name="css"></a>CSS
 
@@ -36,13 +39,13 @@ Doporučuje se, abyste zachovali styly ve vlastních samostatných souborech se 
 
 ### <a name="css-preprocessors"></a>Preprocesory CSS
 
-Šablony stylů CSS nemají podporu pro podmíněnou logiku, proměnné a další funkce programovacího jazyka. Proto velké šablony stylů často obsahují mnoho opakování, protože stejná barva, písmo nebo jiné nastavení se aplikují na mnoho různých variací prvků HTML a tříd CSS. Předprocesory šablon stylů CSS mohou vašim šablonám pokrývat základní [Princip](https://deviq.com/don-t-repeat-yourself/) přidáním podpory proměnných a logiky.
+Šablony stylů CSS nemají podporu pro podmíněnou logiku, proměnné a další funkce programovacího jazyka. Proto velké šablony stylů často obsahují poměrně velký počet opakování, protože stejná barva, písmo nebo jiné nastavení se aplikuje na mnoho různých variací prvků HTML a tříd CSS. Předprocesory šablon stylů CSS mohou vašim šablonám pokrývat základní [Princip](https://deviq.com/don-t-repeat-yourself/) přidáním podpory proměnných a logiky.
 
 Nejoblíbenější preprocesory CSS jsou Sass a méně. Rozšiřuje šablony stylů CSS a jsou zpětně kompatibilní, což znamená, že prostý soubor CSS je platný soubor Sass nebo LESS. Sass je založen na Ruby a méně je založen na jazyce JavaScript a obě se obvykle spouštějí jako součást místního procesu vývoje. K dispozici jsou nástroje příkazového řádku i integrovaná podpora v aplikaci Visual Studio pro jejich spouštění pomocí úloh Gulp nebo grunt.
 
 ## <a name="javascript"></a>JavaScript
 
-JavaScript je dynamický a interpretovaný programovací jazyk, který byl standardizován ve specifikaci jazyka ECMAScript. Je programovací jazyk webu. Podobně jako CSS může být JavaScript definován jako atributy v rámci prvků HTML, jako bloky skriptu na stránce nebo v samostatných souborech. Stejně jako v případě šablon stylů CSS je obecně doporučováno uspořádat JavaScript do samostatných souborů a uchovávat tak co nejvíce z HTML nalezeného na jednotlivých webových stránkách nebo zobrazeních aplikací.
+JavaScript je dynamický a interpretovaný programovací jazyk, který byl standardizován ve specifikaci jazyka ECMAScript. Je programovací jazyk webu. Podobně jako CSS může být JavaScript definován jako atributy v rámci prvků HTML, jako bloky skriptu na stránce nebo v samostatných souborech. Stejně jako v případě šablon stylů CSS doporučujeme uspořádat JavaScript do samostatných souborů a uchovávat tak co nejvíc z HTML nalezeného na jednotlivých webových stránkách nebo zobrazeních aplikací.
 
 Při práci s JavaScriptem ve webové aplikaci je k dispozici několik úloh, které je obvykle potřeba provést:
 
@@ -79,7 +82,7 @@ Vazba dat je skvělým příkladem. V jQuery obvykle používá pouze jeden řá
 
 ### <a name="angular-spas"></a>Úhlová Jednostránkovéa
 
-AngularJS se rychle stala jedním z nejoblíbenějších rozhraní JavaScript v celém světě. S úhlovými 2 tým znovu sestavil rozhraní od základu (pomocí [TypeScript](https://www.typescriptlang.org/)) a předává je do jednoduchého úhlu. V současné době verze 4 má úhlová architektura i pro vytváření aplikací s jednou stránkou.
+Úhlová část z nejoblíbenějších JavaScriptových architektur na světě. Od úhlových 2 tým znovu sestavil rozhraní od základu (pomocí [TypeScript](https://www.typescriptlang.org/)) a předává ho z původního názvu AngularJS do jednoduchého úhlu. Nově navržený úhlový model je teď po celou dobu několika let robustním rozhraním pro vytváření aplikací s jednou stránkou.
 
 Úhlové aplikace jsou sestavené z komponent. Komponenty kombinují šablony HTML se speciálními objekty a ovládají část stránky. V tomto příkladu se zobrazuje jednoduchá součást z úhlů:
 
@@ -104,7 +107,7 @@ Společnost Microsoft vyvinula referenční aplikaci [eShopOnContainers](https:/
 
 ### <a name="react"></a>React
 
-Na rozdíl od úhlů, který nabízí úplnou implementaci vzoru pro zobrazení modelu, reaguje pouze na zobrazení. Nejedná se o architekturu, pouze o knihovnu, takže pro vytvoření zabezpečeného hesla budete muset využít další knihovny.
+Na rozdíl od úhlů, který nabízí úplnou implementaci vzoru pro zobrazení modelu, reaguje pouze na zobrazení. Nejedná se o architekturu, pouze o knihovnu, takže pro vytvoření zabezpečeného hesla budete muset využít další knihovny. Existuje řada knihoven, které jsou navrženy pro použití s Reakcim na vytváření bohatých webových aplikací.
 
 Jednou z nejdůležitějších funkcí, které reagují, je použití virtuálního modelu DOM. Virtuální DOM umožňuje reagovat s několika výhodami, včetně výkonu (virtuální DOM může optimalizovat, které části skutečného modelu DOM se musí aktualizovat) a testovat (není nutné mít v prohlížeči možnost testovat reakce a jeho interakce s virtuálním objektem DOM).
 
@@ -121,6 +124,40 @@ Reakce je také neobvyklá v tom, jak funguje s HTML. Místo toho, abyste museli
 Pokud už znáte JavaScript, měli byste snadno reagovat na učení. K dispozici není skoro tolik výukové křivky nebo speciální syntaxe, která se týká úhlů nebo jiných oblíbených knihoven.
 
 Vzhledem k tomu, že reakce není úplným rozhraním, obvykle budete chtít, aby jiné knihovny zpracovaly věci jako směrování, volání webového rozhraní API a správu závislostí. Dobrým aspektem je, že si můžete vybrat nejlepší knihovnu pro každou z těchto věcí, ale nevýhodou je, že je potřeba provést všechna tato rozhodnutí a ověřit, jestli všechny zvolené knihovny fungují dobře společně, až budete hotovi. Pokud chcete dobrý výchozí bod, můžete použít Startovní sadu, jako je reakce Slingshot, která předvede sadu kompatibilních knihoven společně s reagují.
+
+### <a name="vue"></a>Vue
+
+V úvodní příručce "Vue je progresivní architektura pro sestavování uživatelských rozhraní. Na rozdíl od jiných monolitickéch platforem je Vue navržená od základu pro přírůstkové přijetí. Základní knihovna se zaměřuje pouze na vrstvu zobrazení a lze ji snadno vybírat a integrovat s jinými knihovnami nebo existujícími projekty. Na druhé straně je Vue naprosto schopný v kombinaci s moderními nástroji a podpůrnými knihovnami v kombinaci. "
+
+Začínáme s Vue jednoduše vyžaduje zahrnutí skriptu do souboru HTML:
+
+```html
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+```
+
+S přidaným rozhraním je pak možné deklarativně vykreslovat data do modelu DOM pomocí jednoduché syntaxe šablonování Vue:
+
+```html
+<div id="app">
+  {{ message }}
+</div>
+```
+
+a pak přidejte následující skript:
+
+```js
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+```
+
+To je dostatečné pro vykreslení "Hello Vue!" na stránce. Všimněte si však, že Vue nevykresluje zprávu pouze jednou pro div. Podporuje datovou vazbu a dynamické aktualizace tak, že pokud se hodnota `message` změní, je hodnota v `<div>` okamžitě aktualizována tak, aby odrážela.
+
+Samozřejmě to jenom poškrábaný plochu, na kterou je Vue schopný. V posledních několika letech se vám získala značná spousta oblíbenosti a má velkou komunitu. Existuje [velký a rostoucí seznam podpůrných komponent a knihoven](https://github.com/vuejs/awesome-vue#redux) , které pracují s Vue a rozšiřují také. Pokud se chystáte do webové aplikace přidat chování na straně klienta nebo zvážit vytvoření úplného zabezpečeného hesla, Vue se prozkoumá.
 
 ### <a name="choosing-a-spa-framework"></a>Výběr architektury SPA
 
@@ -157,13 +194,13 @@ Rozhraní JavaScript Framework se nadále vyvíjí s Breakneck rychlostí. Pomoc
 > - **Angular**  
 > <https://angular.io/>
 > - **React**  
-> <https://facebook.github.io/react/>
-> - **Reakce Slingshot**  
-> <https://github.com/coryhouse/react-slingshot>
-> - **Reakce vs. 2 porovnání**  
-> <https://www.codementor.io/codementorteam/react-vs-angular-2-comparison-beginners-guide-lvz5710ha>
-> - **5 nejlepších platforem JavaScript 2017**  
-> <https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282>
+> <https://reactjs.org/>
+> - **Vue**  
+> <https://vuejs.org/>
+> - **Úhlové vs Vueé vs. rozhraní pro výběr v 2020**
+> <https://www.codeinwp.com/blog/angular-vs-vue-vs-react/>
+> - **Hlavní rozhraní JavaScript pro front-end vývoj v 2020**  
+> <https://www.freecodecamp.org/news/complete-guide-for-front-end-developers-javascript-frameworks-2019/>
 
 >[!div class="step-by-step"]
 >[Předchozí](common-web-application-architectures.md)

@@ -3,13 +3,13 @@ title: Běžné architektury webových aplikací
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Prozkoumat společné architektury webových aplikací
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 6a4e971c1cb19a12710ad7893378a49758b4016e
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.date: 12/04/2019
+ms.openlocfilehash: 7ec0d9cece40ba8a99e8ab5e028f7ac491ed6f4d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884238"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450171"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -40,7 +40,7 @@ Pro vyřešení těchto problémů se aplikace často rozvíjejí do řešení s
 
 ## <a name="what-are-layers"></a>Co jsou vrstvy?
 
-Vzhledem k tím, že aplikace výrazně roste, je třeba tuto složitost zvládnout tak, že se aplikace rozdělují podle svých povinností nebo obav. To se řídí oddělením zásad, které vám pomůžou udržet rostoucí základ kódu, aby mohli vývojáři snadno najít, kde jsou určité funkce implementované. Vrstvená architektura nabízí řadu výhod mimo organizaci s kódem, i když.
+Vzhledem k tím, že aplikace výrazně roste, je třeba tuto složitost zvládnout tak, že se aplikace rozdělují podle svých povinností nebo obav. Postupuje podle oddělení principů a může pomáhat udržet rostoucí základ kódu, aby mohli vývojáři snadno najít, kde jsou určité funkce implementované. Vrstvená architektura nabízí řadu výhod mimo organizaci s kódem, i když.
 
 Díky uspořádání kódu do vrstev lze v celé aplikaci znovu použít běžné funkce nízké úrovně. Toto opakované použití je užitečné, protože znamená, že je nutné zapsat méně kódu a protože může aplikaci povolit standardizaci na jednu implementaci, a to po [neopakuji (suchý)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) princip.
 
@@ -99,8 +99,7 @@ Nejjednodušší způsob, jak škálovat webovou aplikaci v Azure, je nakonfigur
 
 Aplikace, které následují po principu inverze závislostí, a také principy návrhu založeného na doméně (DDD), které mají za následek podobnou architekturu. Tato architektura prošla řadou názvů za roky. Jedním z prvních názvů je Šestiúhelníkická architektura následovaný porty-a-adaptery. V poslední době je citována jako [cibulová architektura](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) nebo [čistá architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Tento název se používá jako název pro tuto architekturu v této elektronické příručce.
 
-> [!NOTE]
-> Pojem čistá architektura se dá použít pro aplikace, které jsou vytvořené pomocí DDD principu, i pro ty, které nejsou sestavené pomocí DDD. V případě bývalého příkazu se tato kombinace může označovat jako "čistá DDD architektura".
+Referenční aplikace eShopOnWeb používá přístup k čisté architektuře při uspořádávání kódu do projektů. Můžete najít šablonu řešení, kterou můžete použít jako výchozí bod pro vlastní ASP.NET Core v úložišti GitHub [ardalis/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
 
 Čistá architektura vloží model obchodní logiky a aplikace do středu aplikace. Místo toho, aby obchodní logika závisela na přístupu k datům nebo jiné infrastruktuře, je tato závislost opačná: informace o infrastruktuře a implementaci závisí na jádru aplikace. Toho je dosaženo definováním abstrakcí nebo rozhraní v jádru aplikace, které jsou následně implementovány pomocí typů definovaných ve vrstvě infrastruktury. Běžným způsobem vizualizace této architektury je použití řady soustředných kruhů, podobně jako cibule. Obrázek 5-7 ukazuje příklad tohoto stylu strukturální reprezentace.
 
@@ -173,7 +172,7 @@ Vrstva uživatelského rozhraní v aplikaci ASP.NET Core MVC je vstupním bodem 
 - Filtry
 - Zobrazení
 - ViewModels
-- Třída pro spuštění
+- Spuštění
 
 Třída po spuštění zodpovídá za konfiguraci aplikace a pro zapojení typů implementace do rozhraní, což umožňuje, aby vkládání závislostí fungovalo správně v době běhu.
 
@@ -212,7 +211,7 @@ Nasazování aktualizací jako imagí Docker je mnohem rychlejší a efektivně 
 
 Vzhledem k tomu, že jsou kontejnery v podstatě neměnné, nemusíte si dělat starosti s poškozenými virtuálními počítači, zatímco skripty pro aktualizace se nemusí zapomenout na určitou konkrétní konfiguraci nebo soubor, který zůstal na disku.
 
-Kontejnery Docker můžete použít k nasazení monolitické pro jednodušší webové aplikace. Tím se zlepší průběžná integrace a kanály průběžného nasazování a pomáhá dosáhnout úspěchu nasazení na produkční prostředí. Žádné další "na mém počítači funguje, proč nefunguje v produkčním prostředí?"
+Kontejnery Docker můžete použít k nasazení monolitické pro jednodušší webové aplikace. Tím se zlepší průběžná integrace a kanály průběžného nasazování a pomáhá dosáhnout úspěchu nasazení na produkční prostředí. Žádné další "na mém počítači nefunguje, proč nefunguje v produkčním prostředí?"
 
 Architektura založená na mikroslužbách má spoustu výhod, ale tyto výhody přináší náklady na zvýšení složitosti. V některých případech náklady převažují nad výhodami, takže aplikace nasazení monolitické spuštěná v jednom kontejneru nebo v několika kontejnerech je lepší volbou.
 
@@ -263,21 +262,19 @@ networks:
 `docker-compose.yml` soubor odkazuje na `Dockerfile` v projektu `Web`. `Dockerfile` slouží k určení, který základní kontejner bude použit a jak bude aplikace konfigurována. `Dockerfile``Web`:
 
 ```Dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
 
+COPY *.sln .
 COPY . .
 WORKDIR /app/src/Web
 RUN dotnet restore
 
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/src/Web/out ./
-
-# Optional: Set this here if not setting it from docker-compose.yml
-# ENV ASPNETCORE_ENVIRONMENT Development
 
 ENTRYPOINT ["dotnet", "Web.dll"]
 ```
@@ -298,7 +295,7 @@ Pokud chcete přidat podporu Docker do aplikace pomocí sady Visual Studio, ujis
   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 - **Vzor úložiště**  
   <https://deviq.com/repository-pattern/>
-- **Ukázka řešení čištění architektury**  
+- **Šablona řešení pro čištění architektury**  
   <https://github.com/ardalis/cleanarchitecture>
 - **Elektronická kniha – architekti mikroslužeb**  
   <https://aka.ms/MicroservicesEbook>

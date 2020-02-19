@@ -2,12 +2,12 @@
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro aplikaci s více kontejnery pomocí Docker-Compose. yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: f9cab35ac8e11ca89a83f646c29bf72f84e66ef4
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 26b7362112c12583377db9f8fa516ee8ce3b1ac2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116551"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450697"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -424,7 +424,7 @@ Docker-Format očekává, že každý řádek v souboru. env bude ve formátu \<
 
 Hodnoty nastavené v běhovém prostředí vždy přepisují hodnoty definované v souboru. env. Podobným způsobem hodnoty předané pomocí argumentů příkazového řádku přepisují také výchozí hodnoty nastavené v souboru. env.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Přehled Docker Compose** \
     <https://docs.docker.com/compose/overview/>
@@ -463,11 +463,11 @@ Za tímto účelem tým .NET poskytuje čtyři základní varianty v [dotnet/Cor
 1. **SDK**: pro scénáře vývoje a sestavování
 1. **ASPNET**: pro produkční scénáře ASP.NET
 1. **runtime**: pro produkční scénáře .NET
-1. **runtime-DEPS**: pro produkční scénáře aplikací, které jsou [samostatně obsaženy](../../../core/deploying/index.md#self-contained-deployments-scd).
+1. **runtime-DEPS**: pro produkční scénáře aplikací, které jsou [samostatně obsaženy](../../../core/deploying/index.md#publish-self-contained).
 
 V případě rychlejšího spuštění jsou bitové kopie za běhu také automaticky nastaveny\_adresy URL aspnetcore na port 80 a použít Ngen k vytvoření mezipaměti nativní bitové kopie sestavení.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Vytváření optimalizovaných imagí Docker pomocí ASP.NET Core**  
   <https://docs.microsoft.com/archive/blogs/stevelasker/building-optimized-docker-images-with-asp-net-core>

@@ -3,13 +3,13 @@ title: Charakteristika moderních webových aplikací
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Charakteristiky moderních webových aplikací
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: d3848f3b0cf993930bfc3801ce40c5eac30f094d
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.date: 12/04/2019
+ms.openlocfilehash: d70fa54adeb505fd37807399402281dfda67cf52
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374090"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451561"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Charakteristiky moderních webových aplikací
 
@@ -49,7 +49,7 @@ ASP.NET Core také plně podporuje [vkládání závislostí](https://deviq.com/
 
 ## <a name="easily-tested-with-automated-tests"></a>Snadné testování pomocí automatizovaných testů
 
-ASP.NET Core aplikace podporují testování částí a jejich volné propojení a podpora pro vkládání závislostí usnadňuje prohození otázek infrastruktury s falešnými implementacemi pro účely testování. ASP.NET Core také dodává TestServer, který se dá použít k hostování aplikací v paměti. Funkční testy mohou následně provádět požadavky na tento server v paměti a využívat úplný zásobník aplikace (včetně middlewaru, směrování, vazeb modelů, filtrů atd.) a příjem odpovědi, a to vše za zlomek času, který by vyžadoval hostování aplikace na skutečném serveru. a provádějte požadavky prostřednictvím síťové vrstvy. Tyto testy jsou obzvláště snadné pro psaní a cenné pro rozhraní API, které jsou v moderních webových aplikacích stále důležitější.
+ASP.NET Core aplikace podporují testování částí a jejich volné propojení a podpora pro vkládání závislostí usnadňuje prohození otázek infrastruktury s falešnými implementacemi pro účely testování. ASP.NET Core také dodává s TestServer, které se dají použít k hostování aplikací v paměti. Funkční testy mohou následně provádět požadavky na tento server v paměti a využívat úplný zásobník aplikace (včetně middlewaru, směrování, vazeb modelů, filtrů atd.) a příjem odpovědi, a to vše za zlomek času, který by vyžadoval hostování aplikace na skutečném serveru. a provádějte požadavky prostřednictvím síťové vrstvy. Tyto testy jsou obzvláště snadné pro psaní a cenné pro rozhraní API, které jsou v moderních webových aplikacích stále důležitější.
 
 ## <a name="traditional-and-spa-behaviors-supported"></a>Podporovaná tradiční a zabezpečené chování
 
@@ -61,20 +61,28 @@ Mnoho webových aplikací zahrnuje kombinaci tradičního chování webových ap
 
 ## <a name="simple-development-and-deployment"></a>Jednoduchý vývoj a nasazení
 
-ASP.NET Core aplikace je možné psát pomocí jednoduchých textových editorů a rozhraní příkazového řádku nebo s plnohodnotným vývojovým prostředím, jako je Visual Studio. Aplikace monolitické jsou obvykle nasazeny do jednoho koncového bodu. Nasazení lze snadno automatizovat v rámci kanálu průběžné integrace (CI) a průběžného doručování (CD). Kromě tradičních nástrojů pro CI/CD má Windows Azure integrovanou podporu pro úložiště Git a může automaticky nasadit aktualizace, když se provedou v zadané větvi nebo značce Git.
+ASP.NET Core aplikace je možné psát pomocí jednoduchých textových editorů a rozhraní příkazového řádku nebo s plnohodnotným vývojovým prostředím, jako je Visual Studio. Aplikace monolitické jsou obvykle nasazeny do jednoho koncového bodu. Nasazení lze snadno automatizovat v rámci kanálu průběžné integrace (CI) a průběžného doručování (CD). Kromě tradičních nástrojů CI/CD Microsoft Azure má integrovanou podporu pro úložiště Git a může automaticky nasadit aktualizace, když se provedou v zadané větvi nebo značce Git. Azure DevOps poskytuje plnohodnotný kanál pro sestavení a nasazování CI/CD a akce GitHubu poskytují další možnost pro projekty hostované tam.
 
 ## <a name="traditional-aspnet-and-web-forms"></a>Tradiční ASP.NET a webové formuláře
 
-Kromě ASP.NET Core bude tradiční ASP.NET 4. x nadále spolehlivou a spolehlivou platformou pro vytváření webových aplikací. ASP.NET podporuje vývojové modely MVC a webové rozhraní API a také webové formuláře, které jsou vhodné pro bohatou podporu aplikací založených na stránkách a nabízí bohatou ekosystém komponent třetích stran. Microsoft Azure má skvělou podporu dlouhodobě zavazuje chránit pro aplikace ASP.NET 4. x a mnoho vývojářů je s touto platformou obeznámené.
+Kromě ASP.NET Core bude tradiční ASP.NET 4. x nadále spolehlivou a spolehlivou platformou pro vytváření webových aplikací. ASP.NET podporuje vývojové modely MVC a webové rozhraní API a také webové formuláře, které jsou vhodné pro bohatou stránku a funkce pro vývoj aplikací založených na stránkách a nabízí bohatý ekosystém komponent třetích stran. Microsoft Azure má skvělou podporu dlouhodobě zavazuje chránit pro aplikace ASP.NET 4. x a mnoho vývojářů je s touto platformou obeznámené.
+
+## <a name="blazor"></a>Blazor
+
+Blazor je součástí ASP.NET Core 3,0 a novějších. Poskytuje nový mechanismus pro sestavování propracovaných interaktivních webových aplikací pomocí Razor C#, a ASP.NET Core. Nabízí další řešení, které byste měli vzít v úvahu při vývoji moderních webových aplikací. Existují dvě verze Blazor, které je potřeba vzít v úvahu: na straně serveru a na straně klienta.
+
+Blazor na straně serveru bylo vydány v 2019 s ASP.NET Core 3,0. Vzhledem k tomu, že má název, běží na serveru a vykresluje změny v dokumentu klienta zpátky do prohlížeče přes síť. Blazor na straně serveru poskytuje bohatě funkční prostředí, aniž by bylo potřeba JavaScript na straně klienta a bez nutnosti samostatného načtení stránky pro každou interakci stránky klienta. Změny na načtené stránce jsou požadovány serverem a zpracovány serverem a poté odeslány zpět klientovi pomocí nástroje Signal.
+
+Blazor na straně klienta bude vydána v 2020 a eliminuje nutnost vykreslování změn na serveru. Místo toho bude využívat WebAssembly ke spouštění kódu .NET v rámci klienta. Klient může stále volat rozhraní API na server, pokud je to potřeba pro vyžádání dat, ale všechny chování na straně klienta běží v klientovi prostřednictvím WebAssembly, které už je podporované všemi hlavními prohlížeči a je jenom knihovna JavaScriptu.
 
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderní webové aplikace
 >
 > - **Úvod do ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/>
-> - **Šest klíčových výhod ASP.NET Core, které se liší a lépe**  
->   <https://blog.trigent.com/six-key-benefits-of-asp-net-core-1-0-which-make-it-different-better/>
 > - **Testování v ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/testing/>
+> - **Blazor – začátek**  
+>   <https://blazor.net/docs/get-started.html>
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)

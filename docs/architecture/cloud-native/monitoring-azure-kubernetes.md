@@ -1,13 +1,13 @@
 ---
 title: Monitorování ve službě Azure Kubernetes Service
 description: Monitorování ve službě Azure Kubernetes Service
-ms.date: 09/23/2019
-ms.openlocfilehash: fc9d84fd738ff1c40d25860680e14313c9323517
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.date: 02/05/2020
+ms.openlocfilehash: 5c46b9e8599f70d430ad26cf1364343454d30a16
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711646"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450060"
 ---
 # <a name="monitoring-in-azure-kubernetes-services"></a>Monitorování ve službě Azure Kubernetes Service
 
@@ -15,28 +15,14 @@ ms.locfileid: "75711646"
 
 Integrované protokolování v Kubernetes je primitivní. Existují však skvělé možnosti pro získání protokolů z Kubernetes a na místo, kde je lze správně analyzovat. Pokud potřebujete monitorovat clustery AKS, je ideálním řešením konfigurace elastického zásobníku pro Kubernetes.
 
-## <a name="elastic-stack"></a>Elastický zásobník
+## <a name="azure-monitor-for-containers"></a>Azure Monitor pro kontejnery
 
-Elastický zásobník je efektivní možností pro shromažďování informací z clusteru Kubernetes. Kubernetes podporuje odesílání protokolů do koncového bodu Elasticsearch a ve [většině případů](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)je potřeba začít s nastavením proměnných prostředí, jak je znázorněno na obrázku 7-5:
-
-```kubernetes
-KUBE_LOGGING_DESTINATION=elasticsearch
-KUBE_ENABLE_NODE_LOGGING=true
-```
-
-**Obrázek 7-5** – proměnné konfigurace pro Kubernetes
-
-Tím se do clusteru nainstaluje Elasticsearch a do něj budou odesílány všechny protokoly clusteru.
-
-![příklad řídicího panelu Kibana ukazující výsledky dotazu na protokoly ingestované z Kubernetes](./media/kibana-dashboard.png)
-**obrázek 7-6**. Příklad řídicího panelu Kibana znázorňující výsledky dotazu proti protokolům, které jsou ingestované z Kubernetes
-
-## <a name="azure-container-monitoring"></a>Monitorování kontejnerů Azure
-
-Azure Container monitor podporuje využívání protokolů nejenom Kubernetes, ale také z jiných modulů orchestrace, jako jsou DC/OS, Docker Swarm a Red Hat OpenShift.
+[Azure monitor for Containers](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview) podporuje využívání protokolů nejenom Kubernetes, ale také z jiných modulů orchestrace, jako jsou DC/OS, Docker Swarm a Red Hat OpenShift.
 
 ![využívání protokolů z různých kontejnerů](./media/containers-diagram.png)
-**obrázek 7-7**.  Využívání protokolů z různých kontejnerů
+**obrázek 7-10**. Využívání protokolů z různých kontejnerů
+
+[Prometheus](https://prometheus.io/) je oblíbený open source řešení pro monitorování metrik. Je součástí cloudové nativní výpočetní platformy. Použití Prometheus obvykle vyžaduje správu serveru Prometheus s vlastním úložištěm. [Azure monitor for Containers ale poskytuje přímou integraci s koncovými body metrik Prometheus](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-prometheus-integration), takže se nevyžaduje samostatný server.
 
 Informace o protokolu a metrikě se shromažďují nejen z kontejnerů spuštěných v clusteru, ale také z hostitelů clusteru. Umožňuje korelační informace protokolu z obou dvou, což znamená, že je mnohem jednodušší sledovat chybu.
 
@@ -45,7 +31,7 @@ Instalace sběračů protokolů se liší v clusterech se [systémy Windows](htt
 Bez ohledu na to, který Orchestrator nebo operační systém spouští démon Azure Monitor, jsou informace protokolu předávány stejným Azure Monitor nástrojům, se kterými se uživatelé znají. Tím se zajistí paralelní prostředí v prostředích, která jsou kombinací různých zdrojů protokolů, jako je hybridní Kubernetes nebo Azure Functions prostředí.
 
 ![ukázkový řídicí panel, který zobrazuje informace o protokolování a metrikě z řady spuštěných kontejnerů.](./media/containers-dashboard.png)
-**obrázek 7-8**. Vzorový řídicí panel, který zobrazuje informace o protokolování a metrikách z řady spuštěných kontejnerů.
+**obrázek 7-11**. Vzorový řídicí panel, který zobrazuje informace o protokolování a metrikách z řady spuštěných kontejnerů.
 
 ## <a name="logfinalize"></a>Log. Finalize ()
 

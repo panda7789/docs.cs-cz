@@ -3,17 +3,19 @@ title: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure
 description: Příručka, která poskytuje kompletní pokyny k vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 739dd607aaa45f73e777a30c6495e329236fee17
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.date: 12/4/2019
+ms.openlocfilehash: c19e5e90cfb96463f744cfb064abe72ee5db2e9f
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296290"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449322"
 ---
-# <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architekt moderních webových aplikací pomocí ASP.NET Core a Azure
+# <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
-![Titulní obrázek Průvodce moderními webovými aplikacemi v architektech](./media/index/web-application-guide-cover-image.png)
+![Titulní obrázek knihy Průvodce moderními webovými aplikacemi architektury](./media/index/web-application-guide-cover-image.png)
+
+**Edice verze 3.1** – aktualizace na ASP.NET Core 3,1
 
 PUBLIKOVAL (A)
 
@@ -25,7 +27,7 @@ Jeden způsob Microsoftu
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 by Microsoft Corporation
+Copyright © 2020 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
@@ -33,15 +35,15 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
-Microsoft a ochranné známky uvedené https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na adrese https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
-Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc. Používá se oprávněním.
+Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.
 
 Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
-Autorizova
+Autor:
 
 > **Steve "ardalis" Smith** -Software Architect a Trainer- [Ardalis.com](https://ardalis.com)
 
@@ -83,7 +85,7 @@ Vytváření webových aplikací pomocí ASP.NET Core hostovaných v Azure nabí
 
 Tato příručka poskytuje kompletní pokyny k vytváření *monolitické* webových aplikací pomocí ASP.NET Core a Azure. V tomto kontextu odkazuje "monolitické" na skutečnost, že tyto aplikace jsou nasazeny jako jediná jednotka, nikoli jako kolekce interaktivních služeb a aplikací.
 
-Tato příručka je doplňkem k ["_mikroslužbám .NET". Architektura pro kontejnerové aplikace_](../microservices/index.md) .NET, která se zaměřuje na Další informace o Docker, mikroslužbách a nasazení kontejnerů pro hostování podnikových aplikací.
+Tato příručka je doplňkem k ["_mikroslužbám .NET". Architektura pro kontejnerové aplikace .NET_](../microservices/index.md) , která se zaměřuje na Další informace o Docker, mikroslužbách a nasazení kontejnerů pro hostování podnikových aplikací.
 
 ### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 

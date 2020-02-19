@@ -3,13 +3,13 @@ title: Práce s daty v aplikacích ASP.NET Core
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Práce s daty v aplikacích ASP.NET Core
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: d3c91f594eedd2636cbf08285f0dee352bc4835a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 12/04/2019
+ms.openlocfilehash: f37bdca688559236d9b07b97f7ee7459b3be4f39
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777120"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449345"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -200,9 +200,9 @@ private void ConfigureOrder(EntityTypeBuilder<Order> builder)
 }
 ```
 
-V tomto příkladu je vlastnost `ShipToAddress` typu `Address`. `Address` je objekt hodnoty s několika vlastnostmi, například `Street` a `City`. EF Core mapuje objekt `Order` na jeho tabulku s jedním sloupcem na `Address` vlastnost, přičemž prefixuje název každého sloupce s názvem vlastnosti. V tomto příkladu by tabulka `Order` zahrnovala sloupce jako `ShipToAddress_Street` a `ShipToAddress_City`.
+V tomto příkladu je vlastnost `ShipToAddress` typu `Address`. `Address` je objekt hodnoty s několika vlastnostmi, například `Street` a `City`. EF Core mapuje objekt `Order` na jeho tabulku s jedním sloupcem na `Address` vlastnost, přičemž prefixuje název každého sloupce s názvem vlastnosti. V tomto příkladu by tabulka `Order` zahrnovala sloupce jako `ShipToAddress_Street` a `ShipToAddress_City`. V případě potřeby je také možné uložit vlastněné typy v samostatných tabulkách.
 
-[EF Core 2,2 zavádí podporu pro kolekce vlastněných entit](https://docs.microsoft.com/ef/core/what-is-new/ef-core-2.2#collections-of-owned-entities)
+Přečtěte si další informace o podpoře vlastněných [entit v EF Core](/ef/core/modeling/owned-entities).
 
 ### <a name="resilient-connections"></a>Odolná připojení
 
@@ -342,7 +342,7 @@ Je možné, že databáze NoSQL ukládá více verzí objektů, ale některé pe
 
 Databáze NoSQL obvykle vynutily [kyselinu](https://en.wikipedia.org/wiki/ACID), což znamená, že výhody výkonu i škálovatelnosti oproti relačním databázím. Jsou vhodné pro extrémně velké datové sady a objekty, které nejsou vhodné pro úložiště v normalizovaných strukturách tabulek. Neexistuje žádný důvod, proč jediná aplikace nemůže využívat relační i NoSQL databáze, a to s využitím každého z nich, kde se nejlépe hodí.
 
-## <a name="azure-cosmos-db"></a>Azure Cosmos DB
+## <a name="azure-cosmos-db"></a>Databáze Azure Cosmos
 
 Azure Cosmos DB je plně spravovaná databázová služba NoSQL, která nabízí cloudové úložiště dat bez schématu. Azure Cosmos DB je postavená na zajištění rychlého a předvídatelného výkonu, vysoké dostupnosti, elastického škálování a globální distribuce. I když se jedná o databázi NoSQL, můžou vývojáři používat pro data JSON bohatou a známou schopnost dotazů SQL. Všechny prostředky v Azure Cosmos DB jsou uloženy jako dokumenty JSON. Prostředky se spravují jako _položky_, což jsou dokumenty obsahující metadata a _kanály_, které jsou kolekcemi položek. Obrázek 8-2 ukazuje vztah mezi různými prostředky Azure Cosmos DB.
 
@@ -350,7 +350,7 @@ Azure Cosmos DB je plně spravovaná databázová služba NoSQL, která nabízí
 
 **Obrázek 8-2.** Azure Cosmos DB organizace prostředků.
 
-Dotazovací jazyk Azure Cosmos DB je jednoduché, ale výkonné rozhraní pro dotazování dokumentů JSON. Jazyk podporuje podmnožinu gramatiky ANSI SQL a přidává hlubokou integraci objektu JavaScriptu, polí, konstrukce objektu a vyvolání funkce.
+Dotazovací jazyk Azure Cosmos DB je jednoduché, ale výkonné rozhraní pro dotazování dokumentů JSON. Tento jazyk podporuje podmnožinu gramatiky ANSI SQL a přidává těsnou integraci s javascriptovými objekty, poli, vytvářením objektů a voláním funkcí.
 
 **Odkazy – Azure Cosmos DB**
 

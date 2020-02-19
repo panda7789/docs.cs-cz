@@ -3,13 +3,13 @@ title: Zásady architektury
 description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Principy architektury
 author: ardalis
 ms.author: wiwagn
-ms.date: 02/16/2019
-ms.openlocfilehash: 656c92c417283366e4bb757489c189ecbc0ea815
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 12/04/2019
+ms.openlocfilehash: ffc890bf8cd6b07bd70d8fc7b2b8cfeaf474ae35
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416690"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450268"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -34,7 +34,7 @@ Ve třídách je zapouzdření dosaženo omezením přístupu mimo přístup k v
 
 ### <a name="dependency-inversion"></a>Inverze závislosti
 
-Směr závislosti v rámci aplikace by měl být ve směru abstrakce, nikoli v podrobnostech implementace. Většina aplikací je zapsána tak, aby toky závislostí při kompilaci byly ve směru provádění za běhu. Tím se vytvoří graf přímého závislosti. To znamená, že pokud modul A zavolá funkci v modulu B, která volá funkci v modulu C, pak v době kompilace bude záviset na B, jak je znázorněno na obrázku 4-1.
+Směr závislosti v rámci aplikace by měl být ve směru abstrakce, nikoli v podrobnostech implementace. Většina aplikací je zapsána tak, aby toky závislostí při kompilaci byly ve směru provádění za běhu. Tím se vytvoří graf přímého závislosti. To znamená, že pokud modul A zavolá funkci v modulu B, která volá funkci v modulu C, pak v době kompilace bude záviset na B, která bude záviset na C, jak je znázorněno na obrázku 4-1.
 
 ![Graf přímého závislosti](./media/image4-1.png)
 
@@ -46,7 +46,7 @@ Použití principu pro inverze závislostí umožňuje volat metody na abstrakci
 
 **Obrázek 4-2.** Graf nevrácené závislosti
 
-**Inverze závislosti** je klíčovou součástí tvorby volně propojených aplikací, protože podrobnosti implementace je možné zapsat do záviset na a implementují abstrakce vyšší úrovně, nikoli jiným způsobem. Výsledné aplikace jsou ve výsledku testovatelné, modulární a udržovatelnější. Postup *Injektáže závislosti* je možný pomocí principu inverze závislosti.
+**Inverze závislosti** je klíčovou součástí vytváření volně vázaných aplikací, protože podrobnosti implementace mohou být zapsány do záviset na a implementovat abstrakce na vyšší úrovni, nikoli jiným způsobem. Výsledné aplikace jsou ve výsledku testovatelné, modulární a udržovatelnější. Postup *Injektáže závislosti* je možný pomocí principu inverze závislosti.
 
 ### <a name="explicit-dependencies"></a>Explicitní závislosti
 
@@ -56,7 +56,7 @@ Pomocí principu explicitních závislostí jsou vaše třídy a metody od klien
 
 ### <a name="single-responsibility"></a>Jediná odpovědnost
 
-Princip jedné zodpovědnosti se vztahuje na objektově orientovaný návrh, ale je možné ho také považovat za Princip architektury, který se podobá oddělení obav. Uvádí, že by měly mít objekty jenom jednu zodpovědnost a že by měly mít jenom jeden důvod, aby se změnila. Konkrétně jediná situace, kdy se má objekt změnit, je třeba aktualizovat způsob, jakým má být proveden jeho jedna zodpovědnost. V rámci tohoto principu je usnadněno vytvoření více volně propojených a modulárních systémů, protože mnoho druhů nového chování lze implementovat jako nové třídy, nikoli přidáním další zodpovědnosti existující třídy. Přidávání nových tříd je vždy bezpečnější než změna stávajících tříd, protože žádný kód ještě nezávisí na nových třídách.
+Princip jedné zodpovědnosti se vztahuje na objektově orientovaný návrh, ale je možné ho také považovat za Princip architektury, který se podobá oddělení obav. Uvádí, že by měly mít objekty jenom jednu zodpovědnost a že by měly mít jenom jeden důvod, aby se změnila. Konkrétně jediná situace, kdy se má objekt změnit, je třeba aktualizovat způsob, jakým má být proveden jeho jedna zodpovědnost. V rámci tohoto principu je usnadněno vytvoření více volně propojených a modulárních systémů, protože mnoho druhů nového chování může být implementováno jako nové třídy, nikoli přidáním další zodpovědnosti existující třídy. Přidávání nových tříd je vždy bezpečnější než změna stávajících tříd, protože žádný kód ještě nezávisí na nových třídách.
 
 V aplikaci monolitické můžeme uplatnit zásadu jedné zodpovědnosti na vysokou úroveň na vrstvy v aplikaci. Odpovědnost za prezentaci by měla zůstat v projektu uživatelského rozhraní, zatímco odpovědnost za přístup k datům by měla být zachována v rámci projektu infrastruktury. Obchodní logika by měla být zachována v projektu základního aplikace, kde ji lze snadno otestovat a lze ji vyvíjet nezávisle na jiných odpovědnostech.
 
@@ -99,7 +99,7 @@ Požadavek, aby třídy měly některé z výše uvedených funkcí nebo chován
 
 Minimálně jednotlivé webové aplikace by měly být zaměřené na vlastní ohraničený kontext s vlastním úložištěm trvalého využití pro svůj obchodní model místo sdílení databáze s jinými aplikacemi. Komunikace mezi ohraničenými kontexty probíhá prostřednictvím programových rozhraní, nikoli přes sdílenou databázi, která umožňuje, aby obchodní logika a události byly provedeny v reakci na změny, které probíhají. Ohraničené kontexty jsou úzce namapovány na mikroslužby, které jsou také ideálním způsobem implementovány jako vlastní jednotlivé ohraničené kontexty.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - [Vzory návrhu JAVA: principy](https://java-design-patterns.com/principles/)
 - [Ohraničený kontext](https://martinfowler.com/bliki/BoundedContext.html)
