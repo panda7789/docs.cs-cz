@@ -2,12 +2,12 @@
 title: dotnet – příkaz Vyčištění
 description: Příkaz dotnet Cleanup vyčistí aktuální adresář.
 ms.date: 06/26/2019
-ms.openlocfilehash: 736c0bba5d156e919534f1ad811641e815b3ffac
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 715a33a8a1aa13a2a76f9d4522413dcc72e4b4aa
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734250"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451353"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
@@ -67,7 +67,7 @@ Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubo
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Vyčistí výstupní složku zadaného modulu runtime. Tato funkce se používá, když se vytvořilo [samostatné nasazení](../deploying/index.md#self-contained-deployments-scd) . Možnost je k dispozici od verze .NET Core 2,0 SDK.
+  Vyčistí výstupní složku zadaného modulu runtime. Tato funkce se používá, když se vytvořilo [samostatné nasazení](../deploying/index.md#publish-self-contained) . Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
 * **`-v|--verbosity <LEVEL>`**
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 420ae24e-762b-4e09-b4c3-2112c470ee49
-ms.openlocfilehash: 33f4263c747ac2590234493ec7cb9e6048ed2b96
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 012bddc0b4c29a0b50abc3a0df5c3cd34dc4725a
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794022"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452393"
 ---
 # <a name="large-udts"></a>Velké uživatelsky definované typy
 Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili systém skalárního typu serveru tím, že ukládá objekty modulu CLR (Common Language Runtime) do databáze SQL Server. UDT může obsahovat více prvků a může mít chování, na rozdíl od tradičních datových typů aliasů, které se skládají z jednoho SQL Server systémových dat.  
@@ -22,19 +22,19 @@ Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili 
   
  Úplnou dokumentaci pro uživatelsky definované typy najdete v tématu verze SQL Server Knihy online pro verzi SQL Server, kterou používáte.  
   
- **SQL Server Books Online**  
+ **Dokumentace SQL Serveru**  
   
-1. [Uživatelem definované typy CLR](https://go.microsoft.com/fwlink/?LinkId=98366)  
+1. [Uživatelem definované typy CLR](/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types)  
   
 ## <a name="retrieving-udt-schemas-using-getschema"></a>Načítání schémat UDT pomocí GetSchema  
- Metoda vrátí informace o schématu <xref:System.Data.DataTable>databáze v. <xref:System.Data.SqlClient.SqlConnection> <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> Další informace najdete v tématu [SQL Server kolekcí schémat](../sql-server-schema-collections.md).  
+ Metoda <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> <xref:System.Data.SqlClient.SqlConnection> vrací informace o schématu databáze v <xref:System.Data.DataTable>. Další informace najdete v tématu [SQL Server kolekcí schémat](../sql-server-schema-collections.md).  
   
 ### <a name="getschematable-column-values-for-udts"></a>Hodnoty sloupce GetSchema pro UDT  
- <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> Metoda vrátí<xref:System.Data.SqlClient.SqlDataReader> hodnotu ,kterápopisujemetadatasloupce.<xref:System.Data.DataTable> Následující tabulka popisuje rozdíly v metadatech sloupců pro velké UDT mezi SQL Server 2005 a SQL Server 2008.  
+ Metoda <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> <xref:System.Data.SqlClient.SqlDataReader> vrací <xref:System.Data.DataTable>, která popisuje metadata sloupce. Následující tabulka popisuje rozdíly v metadatech sloupců pro velké UDT mezi SQL Server 2005 a SQL Server 2008.  
   
 |Sloupec SqlDataReader|SQL Server 2005|SQL Server 2008 a novější|  
 |--------------------------|---------------------|-------------------------------|  
-|`ColumnSize`|Se liší|Se liší|  
+|`ColumnSize`|Různé|Různé|  
 |`NumericPrecision`|255|255|  
 |`NumericScale`|255|255|  
 |`DataType`|`Byte[]`|Instance UDT|  
@@ -42,12 +42,12 @@ Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili 
 |`ProviderType`|21 (`SqlDbType.VarBinary`)|29 (`SqlDbType.Udt`)|  
 |`NonVersionedProviderType`|29 (`SqlDbType.Udt`)|29 (`SqlDbType.Udt`)|  
 |`DataTypeName`|`SqlDbType.VarBinary`|Název tři části zadaný jako *Database. Schema. TypeName*.|  
-|`IsLong`|Se liší|Se liší|  
+|`IsLong`|Různé|Různé|  
   
 ## <a name="sqldatareader-considerations"></a>SqlDataReader Considerations  
- <xref:System.Data.SqlClient.SqlDataReader> Byl rozšířen od SQL Server 2008 až po podporu načítání velkých hodnot UDT. Způsob zpracování velkých hodnot UDT metodou <xref:System.Data.SqlClient.SqlDataReader> závisí na verzi SQL Server, kterou používáte, a také `Type System Version` na zadaném v připojovacím řetězci. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
+ <xref:System.Data.SqlClient.SqlDataReader> bylo rozšířeno od SQL Server 2008 až po podporu načítání velkých hodnot UDT. Způsob zpracování velkých hodnot UDT pomocí <xref:System.Data.SqlClient.SqlDataReader> závisí na verzi SQL Server, kterou používáte, a na `Type System Version` určeném v připojovacím řetězci. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
- Následující metody <xref:System.Data.SqlClient.SqlDataReader> <xref:System.Data.SqlTypes.SqlBinary> vrátí místo typu UDT, pokud `Type System Version` je nastavena na SQL Server 2005:  
+ Následující metody <xref:System.Data.SqlClient.SqlDataReader> vrátí <xref:System.Data.SqlTypes.SqlBinary> namísto UDT, pokud je `Type System Version` nastaveno na SQL Server 2005:  
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetProviderSpecificFieldType%2A>  
   
@@ -59,7 +59,7 @@ Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili 
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetSqlValues%2A>  
   
- Následující metody vrátí pole `Byte[]` namísto typu UDT, `Type System Version` Pokud je nastavena na SQL Server 2005:  
+ Následující metody vrátí pole `Byte[]` místo typu UDT, pokud je `Type System Version` nastaveno na SQL Server 2005:  
   
 - <xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>  
   
@@ -68,7 +68,7 @@ Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili 
  Všimněte si, že pro aktuální verzi ADO.NET nejsou provedeny žádné převody.  
   
 ## <a name="specifying-sqlparameters"></a>Určení SqlParameters  
- Následující <xref:System.Data.SqlClient.SqlParameter> vlastnosti byly rozšířeny, aby fungovaly s velkými udty.  
+ Následující <xref:System.Data.SqlClient.SqlParameter> vlastnosti byly rozšířeny, aby fungovaly s velkými Udty.  
   
 |Vlastnost SqlParameter|Popis|  
 |---------------------------|-----------------|  
@@ -77,7 +77,7 @@ Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili 
 |<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Získá nebo nastaví velikost hodnoty parametru, která se má vyřešit. Výchozí hodnota je 0. Vlastnost může být celé číslo, které představuje velikost hodnoty parametru. U velkých UDT může být skutečná velikost UDT nebo-1 pro neznámý.|  
   
 ## <a name="retrieving-data-example"></a>Příklad načítání dat  
- Následující fragment kódu ukazuje, jak načíst velká data UDT. Proměnná předpokládá platné připojení k databázi SQL Server `commandString` a proměnná předpokládá platný příkaz SELECT se sloupcem primárního klíče uvedeným jako první. `connectionString`  
+ Následující fragment kódu ukazuje, jak načíst velká data UDT. Proměnná `connectionString` předpokládá platné připojení k databázi SQL Server a proměnná `commandString` předpokládá platný příkaz SELECT se sloupcem primárního klíče uvedeným jako první.  
   
 ```csharp  
 using (SqlConnection connection = new SqlConnection(   
@@ -131,7 +131,7 @@ Using connection As New SqlConnection( _
 End Using  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Konfigurace parametrů a datové typy parametrů](../configuring-parameters-and-parameter-data-types.md)
 - [Načítání informací o databázovém schématu](../retrieving-database-schema-information.md)

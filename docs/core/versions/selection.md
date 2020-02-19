@@ -4,12 +4,12 @@ description: Přečtěte si, jak rozhraní .NET Core automaticky najde a zvolí 
 author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
-ms.openlocfilehash: 546725db907937dea6fe0739656fb585a8855644
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 55f04ce81f63753831fca8fa2e44811c44049733
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713974"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450996"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core, kterou chcete použít.
 
@@ -78,7 +78,7 @@ Daná sada SDK podporuje pevnou sadu rozhraní omezené do cílové architektury
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Aplikace závislé na architektuře – předávají změny
 
-Spouštíte-li aplikaci ze zdroje s [`dotnet run`](../tools/dotnet-run.md), z [**nasazení závislého na rozhraní**](../deploying/index.md#framework-dependent-deployments-fdd) s [`dotnet myapp.dll`](../tools/dotnet.md#description)nebo z [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#framework-dependent-executables-fde) s `myapp.exe`, je spustitelný soubor `dotnet` **hostitel** pro aplikaci.
+Spouštíte-li aplikaci ze zdroje s [`dotnet run`](../tools/dotnet-run.md), z [**nasazení závislého na rozhraní**](../deploying/index.md#publish-runtime-dependent) s [`dotnet myapp.dll`](../tools/dotnet.md#description)nebo z [**spustitelného souboru závislého na rozhraní**](../deploying/index.md#publish-runtime-dependent) s `myapp.exe`, je spustitelný soubor `dotnet` **hostitel** pro aplikaci.
 
 Hostitel zvolí nejnovější verzi opravy nainstalovanou v počítači. Pokud jste například zadali `netcoreapp2.0` v souboru projektu a `2.0.4` je nejnovějším nainstalovaným modulem runtime .NET, je použita `2.0.4` modul runtime.
 
@@ -91,7 +91,7 @@ Několik příkladů použití ukazuje chování, pokud cílíte na 2,0:
 - je zadáno 2,0. Nejsou nainstalovány žádné 2,0. * verzí. 2.2.2 je nainstalovaná nejvyšší verze 2. x modulu runtime. 2.2.2 se používá.
 - je zadáno 2,0. Nejsou nainstalovány žádné 2. verze x. 3.0.0 je nainstalován. Zobrazí se chybová zpráva.
 
-Dílčí verze s přesměrováním obsahuje jeden vedlejší dopad, který může mít vliv na koncové uživatele. Uvažte následující příklady:
+Dílčí verze s přesměrováním obsahuje jeden vedlejší dopad, který může mít vliv na koncové uživatele. Představte si následující scénář:
 
 1. Aplikace určuje, že se vyžaduje 2,0.
 2. Pokud je spuštěná, verze 2,0. * není nainstalovaná, ale je 2.2.2. Bude použita verze 2.2.2.
@@ -101,7 +101,7 @@ Je možné, že se 2.0.5 a 2.2.2 chovají jinak, zejména u scénářů, jako je
 
 ## <a name="self-contained-deployments-include-the-selected-runtime"></a>Samostatně zahrnutá nasazení zahrnují vybraný modul runtime.
 
-Aplikaci můžete publikovat jako [**samostatně uzavřenou distribuci**](../deploying/index.md#self-contained-deployments-scd). Tento přístup naváže modul runtime a knihovny .NET Core s vaší aplikací. Samostatně obsažená nasazení nemají závislost na běhových prostředích. K výběru verze modulu runtime dojde v době publikování, nikoli v době běhu.
+Aplikaci můžete publikovat jako [**samostatně uzavřenou distribuci**](../deploying/index.md#publish-self-contained). Tento přístup naváže modul runtime a knihovny .NET Core s vaší aplikací. Samostatně obsažená nasazení nemají závislost na běhových prostředích. K výběru verze modulu runtime dojde v době publikování, nikoli v době běhu.
 
 Proces publikování vybere nejnovější verzi opravy dané rodiny modulu runtime. `dotnet publish` například vybere možnost .NET Core 2.0.4, pokud se jedná o nejnovější verzi opravy v rodině runtime .NET Core 2,0. Cílová architektura (včetně nejnovějších nainstalovaných oprav zabezpečení) je zabalená spolu s aplikací.
 

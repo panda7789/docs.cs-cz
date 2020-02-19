@@ -3,12 +3,12 @@ title: Řešení potíží s používáním nástrojů .NET Core
 description: Seznamte se s běžnými problémy při používání nástrojů .NET Core a možných řešení.
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: df896405a122050acba220923eee58e87e0b75b6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 45139c3441b84964b937d5d1cc63a018f8d1f0fb
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74282503"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451074"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Řešení potíží s používáním nástrojů .NET Core
 
@@ -44,7 +44,7 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
 
     Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-    | OS          | Cesta                          |
+    | Operační systém          | Cesta                          |
     |-------------|-------------------------------|
     | Linux/macOS | `$HOME/.dotnet/tools`         |
     | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -73,7 +73,7 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
 
 ### <a name="runtime-not-found"></a>Modul runtime se nenašel.
 
-Nástroje .NET Core jsou [aplikace závislé na rozhraních](../deploying/index.md#framework-dependent-deployments-fdd), což znamená, že spoléhají na modul runtime .NET Core nainstalovaný na vašem počítači. Pokud se očekávaný modul runtime nenajde, dodržuje normální pravidla předávaných modulem runtime .NET Core, jako například:
+Nástroje .NET Core jsou [aplikace závislé na rozhraních](../deploying/index.md#publish-runtime-dependent), což znamená, že spoléhají na modul runtime .NET Core nainstalovaný na vašem počítači. Pokud se očekávaný modul runtime nenajde, dodržuje normální pravidla předávaných modulem runtime .NET Core, jako například:
 
 * Aplikace se vrátí k nejvyšší verzi opravy zadané hlavní a dílčí verze.
 * Pokud neexistuje žádný vyhovující modul runtime s párové číslo hlavní verze a podverze, použije se další vyšší dílčí verze.
@@ -160,6 +160,6 @@ Instalace nástroje vyžaduje přístup k informačnímu kanálu NuGet, který o
 
 Běžným důvodem selhání je, že název nástroje není správný. K tomu může dojít z důvodu neúspěšného zadání, nebo proto, že se nástroj přesunul nebo byl zastaralý. V případě nástrojů na NuGet.org je třeba, abyste si ověřili, že je správný název, hledání nástroje na NuGet.org a zkopírování instalačního příkazu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 * [Přehled globálních nástrojů .NET Core](global-tools.md)

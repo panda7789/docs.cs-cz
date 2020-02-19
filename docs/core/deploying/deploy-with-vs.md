@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 23dc0f691c8a8d80a0bd2a5d301ace0d129007af
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 11a322278ce3ff38964fe2fa389e0b4a58897ec4
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920895"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449020"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
@@ -24,7 +24,7 @@ Následující části ukazují, jak pomocí Microsoft Visual Studio vytvořit n
 - Samostatná nasazení
 - Samostatné nasazení s závislostmi třetích stran
 
-Informace o použití sady Visual Studio pro vývoj aplikací .NET Core najdete v tématu [závislosti a požadavky .NET Core](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
+Informace o použití sady Visual Studio pro vývoj aplikací .NET Core najdete v tématu [závislosti a požadavky .NET Core](../install/dependencies.md?pivots=os-windows).
 
 ## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
 
@@ -110,7 +110,7 @@ Po dokončení ladění můžete publikovat samostatně zahrnuté nasazení:
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15,6 a starší](#tab/vs156)
+# <a name="visual-studio-156-and-earlier"></a>[Visual Studio 15,6 a starší](#tab/vs156)
 
 Po ladění a otestování programu vytvořte soubory, které mají být nasazeny s vaší aplikací pro každou platformu, na kterou cílíte.
 
@@ -176,7 +176,7 @@ Následuje úplný soubor *csproj* pro tento projekt.
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15,7 a novější](#tab/vs157)
+# <a name="visual-studio-157-and-later"></a>[Visual Studio 15,7 a novější](#tab/vs157)
 
 Po ladění a otestování programu vytvořte soubory, které mají být nasazeny s vaší aplikací pro každou platformu, na kterou cílíte. To zahrnuje vytvoření samostatného profilu pro každou cílovou platformu.
 
@@ -274,7 +274,7 @@ Nasazení samostatně uzavřeného nasazení s jednou nebo více závislostmi t�
 
 Následuje kompletní soubor *csproj* pro tento projekt:
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15,6 a starší](#tab/vs156)
+# <a name="visual-studio-156-and-earlier"></a>[Visual Studio 15,6 a starší](#tab/vs156)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -289,7 +289,7 @@ Následuje kompletní soubor *csproj* pro tento projekt:
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15,7 a novější](#tab/vs157)
+# <a name="visual-studio-157-and-later"></a>[Visual Studio 15,7 a novější](#tab/vs157)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -309,7 +309,7 @@ Při nasazení aplikace jsou také součástí souborů aplikace všechny závis
 
 Samostatné nasazení můžete nasadit jenom pomocí knihovny třetích stran na platformy podporované touto knihovnou. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nasazení aplikace .NET Core](index.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)

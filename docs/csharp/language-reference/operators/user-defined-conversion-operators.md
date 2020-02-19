@@ -10,12 +10,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 2f4858d729093d3520e97610e0eac8600093187a
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 379deb20243a13cc608cb7fe119b341065327c1e
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936867"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450671"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Uživatelsky definované operátory převodu (C# referenční)
 
@@ -42,11 +42,12 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Implicitní převody](~/_csharplang/spec/conversions.md#implicit-conversions)
 - [Explicitní převody](~/_csharplang/spec/conversions.md#explicit-conversions)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
 - [Přetížení operátoru](operator-overloading.md)
 - [Operátory testování typů a přetypování](type-testing-and-cast.md)
 - [Přetypování a převod typu](../../programming-guide/types/casting-and-type-conversions.md)
+- [Pokyny pro návrh – operátory převodu](../../../standard/design-guidelines/operator-overloads.md#conversion-operators)
 - [Zřetězené uživatelem definované explicitní převody vC#](https://docs.microsoft.com/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c)

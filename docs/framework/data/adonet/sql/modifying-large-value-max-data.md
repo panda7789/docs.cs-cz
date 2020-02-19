@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: cb37fdb85d323d4f0816a3667a4624da8ec75e65
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 7ed036f5ad3a1c042ee277ecd2145f72746ef420
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76979843"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451834"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
 Datové typy large object (LOB) překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro datové typy `varchar`, `nvarchar`a `varbinary`, aby bylo možné úložiště hodnot větší než 2 ^ 32 bajtů. Sloupce tabulky a proměnné Transact-SQL mohou určovat datové typy `varchar(max)`, `nvarchar(max)`nebo `varbinary(max)`. V ADO.NET lze datové typy `max` načíst pomocí `DataReader`a lze je také zadat jako vstupní i výstupní hodnoty parametrů bez speciálního zpracování. U velkých `varchar` datových typů lze data načíst a aktualizovat přírůstkově.  
@@ -19,9 +19,9 @@ Datové typy large object (LOB) překračují maximální velikost řádku 8 kil
   
  Následující tabulka obsahuje odkazy na dokumentaci v SQL Server Knihy online.  
   
- **SQL Server Books Online**  
+ **Dokumentace SQL Serveru**  
   
-1. [Použití datových typů s velkými hodnotami](https://go.microsoft.com/fwlink/?LinkId=120498)  
+1. [Použití datových typů s velkými hodnotami](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms178158(v=sql.100))  
   
 ## <a name="large-value-type-restrictions"></a>Omezení typu s velkou hodnotou  
  Následující omezení platí pro `max` datové typy, které pro menší datové typy neexistují:  
@@ -55,7 +55,7 @@ FROM OPENROWSET
 ## <a name="updating-data-using-update-write"></a>Aktualizace dat pomocí aktualizace. PSAL  
  Příkaz UPDATE jazyka Transact-SQL obsahuje novou syntaxi zápisu pro úpravu obsahu `varchar(max)`, `nvarchar(max)`nebo `varbinary(max)` sloupců. Díky tomu můžete provádět částečné aktualizace dat. AKTUALIZACE. Syntaxe zápisu se tady zobrazuje ve zkrácené podobě:  
   
- AKTUALIZOVAT  
+ UPDATE  
   
  { *\<objekt >* }  
   
@@ -65,7 +65,7 @@ FROM OPENROWSET
   
  Metoda WRITE určuje, že se upraví sekce hodnoty *column_name* . Výraz je hodnota, která bude zkopírována do *column_name*, `@Offset` je počátečním bodem, ve kterém bude výraz napsán, a argument `@Length` je délka oddílu ve sloupci.  
   
-|If|Potom si|  
+|Pokud uživatel|Pak...|  
 |--------|----------|  
 |Výraz je nastaven na hodnotu NULL.|`@Length` se ignoruje a hodnota v *column_name* se na zadaném `@Offset`zkrátí.|  
 |`@Offset` je NULL.|Operace aktualizace připojí výraz na konci existující hodnoty *column_name* a `@Length` je ignorována.|  
@@ -249,7 +249,7 @@ WHERE   DocumentID=@DocumentID
  [!code-csharp[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Binární a vysoké hodnoty na SQL Serveru](sql-server-binary-and-large-value-data.md)
 - [Mapování datových typů SQL Serveru](../sql-server-data-type-mappings.md)

@@ -2,12 +2,12 @@
 title: Zpracování Vícenásobný přístup v asynchronních aplikacíchC#()
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: 9a6189624eff988ec6b0ac8a93330d591ed46a8c
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 67fbbd294ffe6219b58065f974543b2dd483a92c
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772027"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451860"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Zpracování Vícenásobný přístup v asynchronních aplikacíchC#()
 
@@ -31,7 +31,7 @@ Při zahrnutí asynchronního kódu do aplikace byste měli zvážit a případn
 > Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
 
 > [!NOTE]
-> Protokol TLS (Transport Layer Security) verze 1,2 je teď minimální verzí, která se má použít při vývoji aplikací. Pokud se vaše aplikace zaměřuje na verzi rozhraní .NET Framework starší než 4,7, přečtěte si následující článek [s doporučenými postupy TLS (Transport Layer Security) s .NET Framework](../../../../framework/network-programming/tls.md) 
+> Protokol TLS (Transport Layer Security) verze 1,2 je teď minimální verzí, která se má použít při vývoji aplikací. Pokud se vaše aplikace zaměřuje na verzi .NET Framework starší než 4,7, přečtěte si následující článek o [osvědčených postupech TLS (Transport Layer Security) s .NET Framework](../../../../framework/network-programming/tls.md).
 
 ## <a name="BKMK_RecognizingReentrancy"></a>Rozpoznávání Vícenásobný přístup
 
@@ -157,7 +157,7 @@ Chcete-li nastavit tento scénář, proveďte následující změny základního
         CancellationTokenSource cts;
     ```
 
-2. V `StartButton_Click` určete, zda již operace probíhá. Pokud je hodnota `cts` null, žádná operace již není aktivní. Pokud hodnota není null, operace, která je již spuštěna, je zrušena.
+2. V `StartButton_Click`určete, zda již operace probíhá. Pokud je hodnota `cts` null, žádná operace již není aktivní. Pokud hodnota není null, operace, která je již spuštěna, je zrušena.
 
     ```csharp
     // *** If a download process is already underway, cancel it.
@@ -176,7 +176,7 @@ Chcete-li nastavit tento scénář, proveďte následující změny základního
     cts = newCTS;
     ```
 
-4. Na konci `StartButton_Click` je aktuální proces dokončený, takže nastavte hodnotu `cts` zpátky na null.
+4. Na konci `StartButton_Click`je aktuální proces dokončený, takže nastavte hodnotu `cts` zpátky na null.
 
     ```csharp
     // *** When the process is complete, signal that another process can begin.
@@ -223,7 +223,7 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-V `AccessTheWebAsync` proveďte následující změny.
+V `AccessTheWebAsync`proveďte následující změny.
 
 - Přidejte parametr pro přijetí tokenu zrušení z `StartButton_Click`.
 
@@ -405,7 +405,7 @@ Proměnná `Task`, `pendingWork`, dohlíží na proces zobrazení a zabraňuje v
 
 #### <a name="the-click-event-handler"></a>Obslužná rutina události kliknutí
 
-Obslužná rutina události `StartButton_Click` zvyšuje písmeno skupiny pokaždé, když uživatel klikne na tlačítko **Start** . Obslužná rutina pak zavolá `AccessTheWebAsync` ke spuštění operace stahování.
+Obslužná rutina události `StartButton_Click`zvyšuje písmeno skupiny pokaždé, když uživatel klikne na tlačítko **Start** . Obslužná rutina pak zavolá `AccessTheWebAsync` ke spuštění operace stahování.
 
 ```csharp
 private async void StartButton_Click(object sender, RoutedEventArgs e)
@@ -536,9 +536,9 @@ Výstup ukazuje následující vzory.
     TOTAL bytes returned:  915908
     ```
 
-- Úloha `pendingWork` má hodnotu null na začátku `FinishOneGroupAsync` pouze pro skupinu A, která začala jako první. Skupina A ještě nedokončila výraz await, když dosáhne `FinishOneGroupAsync`. Proto ovládací prvek nebyl vrácen do `AccessTheWebAsync` a první přiřazení, které `pendingWork`, neproběhlo.
+- Úloha `pendingWork` má hodnotu null na začátku `FinishOneGroupAsync` pouze pro skupinu A, která začala jako první. Skupina A ještě nedokončila výraz await, když dosáhne `FinishOneGroupAsync`. Proto ovládací prvek nebyl vrácen do `AccessTheWebAsync`a první přiřazení, které `pendingWork`, neproběhlo.
 
-- Ve výstupu se vždy zobrazí následující dva řádky společně. Kód se nikdy nepřerušil mezi zahájením operace skupiny v `StartButton_Click` a přiřazením úkolu, který `pendingWork` skupina.
+- Ve výstupu se vždy zobrazí následující dva řádky společně. Kód se nikdy nepřerušil mezi zahájením operace skupiny v `StartButton_Click` a přiřazením úkolu, který `pendingWork`skupina.
 
     ```output
     #Starting group B.
@@ -728,7 +728,7 @@ Následující část poskytuje kód pro sestavení příkladu jako aplikace WPF
 
 12. Proveďte změny z [zakázání tlačítka Start](#BKMK_DisableTheStartButton), [zrušte a restartujte operaci](#BKMK_CancelAndRestart)nebo [Spusťte více operací a](#BKMK_RunMultipleOperations) zaznamenejte výstup pro zpracování Vícenásobný přístup.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./index.md)

@@ -3,12 +3,12 @@ title: Datové typy SQL Serveru a ADO.NET
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
-ms.openlocfilehash: 9baffc7a439c851ead7ec0e12899adf418174e22
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: f727c69b1dd5c23c6a89911005256de70255fd4c
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76979856"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452328"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Datové typy SQL Serveru a ADO.NET
 SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, které může způsobit ztrátu dat. Aby se zajistila integrita dat, .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient>) poskytují typové přístupové metody pro práci s SQL Server daty. Výčty v třídách <xref:System.Data.SqlDbType> lze použít k určení <xref:System.Data.SqlClient.SqlParameter> datových typů.  
@@ -19,9 +19,9 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, kter
   
  SQL Server datové typy, které jsou k dispozici pro použití ve vaší aplikaci, závisí na verzi SQL Server, kterou používáte. Další informace najdete v příslušné verzi SQL Server Knihy online v následující tabulce.  
   
- **SQL Server Books Online**  
+ **Dokumentace SQL Serveru**  
   
-1. [Datové typy (databázový stroj)](https://go.microsoft.com/fwlink/?LinkID=107468)  
+1. [Datové typy (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [SqlTypes a datová sada](sqltypes-and-the-dataset.md)  
@@ -42,7 +42,7 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, kter
  [Data XML na SQL Serveru](xml-data-in-sql-server.md)  
  Popisuje, jak pracovat s daty XML načtenými z SQL Server.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Data.DataSet>  
  Popisuje třídu `DataSet` a všechny její členy.  
   
@@ -55,7 +55,7 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, kter
  <xref:System.Data.DbType>  
  Popisuje výčet `DbType` a všechny jeho členy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Mapování datových typů SQL Serveru](../sql-server-data-type-mappings.md)
 - [Konfigurace parametrů a datové typy parametrů](../configuring-parameters-and-parameter-data-types.md)

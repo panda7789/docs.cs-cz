@@ -1,101 +1,157 @@
 ---
-title: Nasazení aplikace .NET Core
-description: Přečtěte si o způsobech nasazení aplikace .NET Core.
-ms.date: 12/03/2018
-ms.openlocfilehash: 425f0d5bf11fd0572825d2025005aacf65d7d2cd
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+title: Publikování aplikace
+description: Přečtěte si o způsobech publikování aplikace .NET Core. .NET Core může publikovat aplikace pro konkrétní platformy nebo pro různé platformy. Aplikaci můžete publikovat jako samostatnou nebo jako závislou na modulu runtime. Každý režim má vliv na to, jak uživatel spouští vaši aplikaci.
+ms.date: 01/31/2020
+ms.openlocfilehash: 696cca436c73601a3e7825033152d43a659a7dce
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920880"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448981"
 ---
-# <a name="net-core-application-deployment"></a>Nasazení aplikace .NET Core
+# <a name="net-core-application-publishing-overview"></a>Přehled publikování aplikace .NET Core
 
-Pro aplikace .NET Core můžete vytvořit tři typy nasazení:
+Aplikace, které vytvoříte pomocí .NET Core, se dají publikovat ve dvou různých režimech a režim má vliv na to, jak uživatel aplikaci spustí.
 
-- Nasazení závislé na rozhraní. Jak naznačuje název, nasazení závislé na rozhraní (FDD) spoléhá na přítomnost sdílené verze .NET Core v rámci systému v cílovém systému. Vzhledem k tomu, že je rozhraní .NET Core již přítomno, aplikace je také přenosná mezi instalacemi rozhraní .NET Core. Vaše aplikace obsahuje pouze vlastní kód a všechny závislosti třetích stran, které jsou mimo knihovny .NET Core. FDDs obsahují soubory *. dll* , které lze spustit pomocí [nástroje dotnet](../tools/dotnet.md) z příkazového řádku. Například `dotnet app.dll` spouští aplikaci s názvem `app`.
+Publikování aplikace jako *samostatné* vytvoří aplikaci, která zahrnuje modul runtime a knihovny .NET Core a vaši aplikaci a její závislosti. Uživatelé aplikace ji mohou spustit na počítači, ve kterém není nainstalován modul .NET Core Runtime. 
 
-- Samostatné nasazení. Na rozdíl od FDD, samostatné nasazení (SCD) nespoléhá na přítomnost sdílených komponent v cílovém systému. Všechny komponenty, včetně knihoven .NET Core a modulu runtime .NET Core, jsou součástí aplikace a jsou izolované od jiných aplikací .NET Core. SCDs obsahují spustitelný soubor (například *App. exe* na platformách systému Windows pro aplikaci s názvem `app`), která je Přejmenovaná verze hostitele .NET Core specifická pro konkrétní platformu a soubor *. dll* (například *App. dll*), což je skutečná aplikace.
+Publikování aplikace jako *závislé na modulu runtime* vytvoří aplikaci, která obsahuje pouze vlastní aplikaci a její závislosti. Uživatelé aplikace musí samostatně nainstalovat modul runtime .NET Core.
 
-- Spustitelné soubory závislé na rozhraní. Vytvoří spustitelný soubor, který běží na cílové platformě. Podobně jako FDDs, spustitelné soubory závislé na rozhraních (FDE) jsou specifické pro platformu a nejsou samostatně obsaženy. Tato nasazení se pořád spoléhají na přítomnost sdílené systémové verze .NET Core, která se má spustit. Na rozdíl od SCD vaše aplikace obsahuje jenom váš kód a všechny závislosti třetích stran, které jsou mimo knihovny .NET Core. FDEs vyprodukuje spustitelný soubor, který běží na cílové platformě.
+Oba režimy publikování vytvoří ve výchozím nastavení spustitelný soubor specifický pro platformu. Aplikace závislé na modulu runtime lze vytvořit bez spustitelného souboru a tyto aplikace jsou pro různé platformy.
 
-## <a name="framework-dependent-deployments-fdd"></a>Nasazení závislá na rozhraní (FDD)
+Když je vytvořen spustitelný soubor, můžete zadat cílovou platformu s identifikátorem modulu runtime (RID). Další informace o identifikátorů RID najdete v [katalogu .NET Core RID Catalog](../rid-catalog.md).
 
-V případě FDD nasadíte jenom své aplikace a závislosti třetích stran. Vaše aplikace bude používat verzi .NET Core, která je k dispozici v cílovém systému. Toto je výchozí model nasazení pro .NET Core a aplikace ASP.NET Core, které cílí na .NET Core.
+Následující tabulka popisuje příkazy, které slouží k publikování aplikace jako závislé na modulu runtime nebo samostatné, na verzi sady SDK:
 
-### <a name="why-create-a-framework-dependent-deployment"></a>Proč vytvořit nasazení závislé na rozhraní?
+| Typ                                                                                 | SADA SDK 2,1 | Sada SDK 3. x | Příkaz |
+| -----------------------------------------------------------------------------------  | ------- | ------- | ------- |
+| [spustitelný soubor závislý na modulu runtime](#publish-runtime-dependent) pro aktuální platformu. |         | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [spustitelný soubor závislý na modulu runtime](#publish-runtime-dependent) pro konkrétní platformu.  |         | ✔️      | [`dotnet publish -r <RID> --self-contained false`](../tools/dotnet-publish.md) |
+| [binární soubor pro více platforem závislý na modulu runtime](#publish-runtime-dependent).               | ✔️      | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [samostatně obsažený spustitelný soubor](#publish-self-contained).                                | ✔️      | ✔️      | [`dotnet publish -r <RID>`](../tools/dotnet-publish.md) |
 
-Nasazení FDD má několik výhod:
+Další informace naleznete v tématu [.NET Core dotnet Publish Command](../tools/dotnet-publish.md).
 
-- Nemusíte definovat cílové operační systémy, na které bude aplikace .NET Core běžet předem. Vzhledem k tomu, že .NET Core používá společný formát PE pro spustitelné soubory a knihovny bez ohledu na operační systém, může .NET Core spustit vaši aplikaci bez ohledu na základní operační systém. Další informace o formátu souboru PE naleznete v tématu [Formát souboru sestavení .NET](../../standard/assembly/file-format.md).
+## <a name="produce-an-executable"></a>Získání spustitelného souboru
 
-- Velikost balíčku pro nasazení je malá. Nasadíte jenom svou aplikaci a její závislosti, ne samotné .NET Core.
+Spustitelné soubory nejsou pro různé platformy. Jsou specifické pro operační systém a architekturu procesoru. Při publikování aplikace a vytvoření spustitelného souboru můžete aplikaci publikovat jako [samostatnou](#publish-self-contained) nebo [závislou na běhu](#publish-runtime-dependent). Publikování aplikace jako samostatné zahrnuje modul runtime .NET Core s aplikací a uživatelé aplikace se nemusí starat o instalaci .NET Core před spuštěním aplikace. Aplikace publikované jako nezávisle na modulu runtime nezahrnují modul runtime a knihovny .NET Core. jsou zahrnuté jenom závislosti aplikace a třetí strany.
 
-- Pokud přepíšete, FDDs použije nejnovější službu, která je v cílovém systému nainstalovaná. To umožňuje vaší aplikaci používat nejnovější opravenou verzi modulu runtime .NET Core. 
+Následující příkazy vyprodukuje spustitelný soubor:
 
-- Více aplikací používá stejnou instalaci .NET Core, což snižuje nároky na místo na disku a využití paměti v hostitelských systémech.
+| Typ                                                                                 | SADA SDK 2,1 | Sada SDK 3. x | Příkaz |
+| ------------------------------------------------------------------------------------ | ------- | ------- | ------- |
+| [spustitelný soubor závislý na modulu runtime](#publish-runtime-dependent) pro aktuální platformu. |         | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
+| [spustitelný soubor závislý na modulu runtime](#publish-runtime-dependent) pro konkrétní platformu.  |         | ✔️      | [`dotnet publish -r <RID> --self-contained false`](../tools/dotnet-publish.md) |
+| [samostatně obsažený spustitelný soubor](#publish-self-contained).                                | ✔️      | ✔️      | [`dotnet publish -r <RID>`](../tools/dotnet-publish.md) |
 
-K dispozici je také několik nevýhody:
+## <a name="produce-a-cross-platform-binary"></a>Vytvoření binárního souboru pro různé platformy
 
-- Vaše aplikace může běžet pouze v případě, že je v hostitelském systému již nainstalována verze .NET Core vaší aplikace [nebo novější verze](../versions/selection.md#framework-dependent-apps-roll-forward).
+Binární soubory pro různé platformy se vytvářejí při publikování aplikace jako závislé na [modulu runtime](#publish-runtime-dependent)ve formě souboru *DLL* . Soubor *DLL* se jmenuje po vašem projektu. Například pokud máte aplikaci s názvem **word_reader**, vytvoří se soubor s názvem *word_reader. dll* . Aplikace publikované tímto způsobem jsou spouštěny pomocí příkazu `dotnet <filename.dll>` a lze je spustit na libovolné platformě.
 
-- Je možné, že se modul runtime a knihovny .NET Core mění bez vašeho vědomí v budoucích verzích. Ve výjimečných případech to může změnit chování vaší aplikace.
+Binární soubory pro různé platformy můžou běžet v jakémkoli operačním systému, pokud je už nainstalovaný cílový modul runtime .NET Core. Pokud není cílový modul runtime .NET Core nainstalovaný, může se aplikace spustit s novějším modulem runtime, pokud je aplikace nakonfigurovaná tak, aby se předalo. Další informace najdete v tématu [posunutí aplikací závislých na modulu runtime](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-## <a name="self-contained-deployments-scd"></a>Samostatně obsažená nasazení (SCD)
+Následující příkaz vytvoří binární soubor pro různé platformy:
 
-Pro samostatně nasazené nasazení nasadíte aplikaci a všechny požadované závislosti třetích stran spolu s verzí rozhraní .NET Core, kterou jste použili k sestavení aplikace. Vytvoření SCD neobsahuje [nativní závislosti .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) na různých platformách, takže musí být přítomné před spuštěním aplikace. Další informace o vazbách verzí za běhu naleznete v článku [vázání verzí v .NET Core](../versions/selection.md).
+| Typ                                                                                 | SADA SDK 2,1 | Sada SDK 3. x | Příkaz |
+| -----------------------------------------------------------------------------------  | ------- | ------- | ------- |
+| [binární soubor pro více platforem závislý na modulu runtime](#publish-runtime-dependent).               | ✔️      | ✔️      | [`dotnet publish`](../tools/dotnet-publish.md) |
 
-Počínaje platformou .NET Core 2,1 SDK (verze 2.1.300) .NET Core podporuje *přeposlání verze opravy*. Když vytvoříte samostatné nasazení, nástroje .NET Core automaticky zahrnují nejnovější provozní modul runtime verze .NET Core, na kterou cílí vaše aplikace. (Nejnovější obsluhované běhové prostředí zahrnuje opravy zabezpečení a další opravy chyb.) Modul runtime služby nemusí být přítomen v systému sestavení; automaticky se stáhne z NuGet.org. Další informace, včetně pokynů k odsouhlasení z aktualizace verze patch, najdete v tématu [nasazení modulu runtime s automatickým](runtime-patch-selection.md)zahrnutím.
+## <a name="publish-runtime-dependent"></a>Publikování – závislé na modulu runtime
 
-Nasazení FDD a SCD používají samostatné spustitelné soubory hostitele, takže můžete podepsat spustitelný soubor hostitele pro SCD s vaším podpisem vydavatele.
+Aplikace publikované jako modul Runtime závisí na různých platformách a nezahrnují modul runtime .NET Core. K instalaci modulu runtime .NET Core je nutný uživatel vaší aplikace.
 
-### <a name="why-deploy-a-self-contained-deployment"></a>Proč nasadit samostatně zahrnuté nasazení?
+Publikování aplikace jako závislé na běhu vytvoří binární soubor pro [více platforem](#produce-a-cross-platform-binary) jako soubor *DLL* a spustitelný soubor specifický pro [platformu](#produce-an-executable) , který cílí na aktuální platformu. *Knihovna DLL* je více než platforma, zatímco spustitelný soubor není. Pokud například publikujete aplikaci s názvem **word_reader** a cílovým systémem Windows, vytvoří se soubor *word_reader. exe* společně s *word_reader. dll*. Při cílení na Linux nebo macOS se vytvoří spustitelný soubor *word_reader* společně s *word_reader. dll*. Další informace o identifikátorů RID najdete v [katalogu .NET Core RID Catalog](../rid-catalog.md).
 
-Nasazení samostatně zahrnutého nasazení má dvě hlavní výhody:
+> [!IMPORTANT]
+> .NET Core SDK 2,1 nevytváří spustitelné soubory specifické pro platformu při publikování závislého modulu runtime aplikace.
 
-- Máte jenom kontrolu nad verzí .NET Core, která je nasazená s vaší aplikací. .NET Core se dá obsluhovat jenom vámi.
+Binární soubor pro více platforem aplikace můžete spustit pomocí příkazu `dotnet <filename.dll>` a můžete ho spustit na libovolné platformě. Pokud aplikace používá balíček NuGet, který má implementace specifické pro platformu, zkopírují se všechny závislosti platforem do složky pro publikování společně s aplikací.
 
-- Můžete si být jistí, že cílový systém může spustit aplikaci .NET Core, protože poskytujete verzi .NET Core, na které bude běžet.
+Pro konkrétní platformu můžete vytvořit spustitelný soubor předáním parametrů `-r <RID> --self-contained false` do příkazu [`dotnet publish`](../tools/dotnet-publish.md) . Pokud je parametr `-r` vynechán, vytvoří se pro vaši aktuální platformu spustitelný soubor. Všechny balíčky NuGet, které mají závislosti specifické pro platformu pro cílovou platformu, se zkopírují do složky pro publikování.
 
-Má také řadu nevýhod:
+### <a name="advantages"></a>Výhody
 
-- Vzhledem k tomu, že je .NET Core součástí balíčku pro nasazení, musíte vybrat cílové platformy, pro které sestavíte balíčky nasazení předem.
+- \ pro **malé nasazení**
+Distribuuje se jenom vaše aplikace a její závislosti. Modul runtime .NET Core a knihovny jsou nainstalovány uživatelem a všechny aplikace sdílejí modul runtime.
 
-- Velikost balíčku pro nasazení je poměrně velká, protože musíte zahrnout rozhraní .NET Core i aplikace a její závislosti třetích stran.
+- \ **pro různé platformy**
+Vaše aplikace a všechny. Knihovna založená na síti běží na jiných operačních systémech. Pro vaši aplikaci nemusíte definovat cílovou platformu. Informace o formátu souboru .NET naleznete v tématu [Formát souboru sestavení .NET](../../standard/assembly/file-format.md).
 
-  Od .NET Core 2,0 můžete zmenšit velikost nasazení v systémech Linux o přibližně 28 MB pomocí [*režimu invariantní globalizace*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).NET Core. Rozhraní .NET Core v systému Linux obvykle spoléhá na [ICU knihovny](http://icu-project.org) pro podporu globalizace. V režimu invariant nejsou knihovny součástí vašeho nasazení a všechny jazykové verze se chovají jako [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
+- **Používá nejnovější opravené běhové prostředí**\
+Aplikace používá nejnovější modul runtime (v rámci cílové hlavní řady rozhraní .NET Core) nainstalovaného v cílovém systému. To znamená, že vaše aplikace automaticky používá nejnovější opravenou verzi modulu runtime .NET Core. Toto výchozí chování lze přepsat. Další informace najdete v tématu [posunutí aplikací závislých na modulu runtime](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-- Nasazením mnoha samostatných aplikací .NET Core do systému můžete využívat značné množství místa na disku, protože každá aplikace duplikuje soubory .NET Core.
+### <a name="disadvantages"></a>Nevýhody
 
-## <a name="framework-dependent-executables-fde"></a>Spustitelné soubory závislé na rozhraních (FDE)
+- **Vyžaduje předběžnou instalaci\ modulu runtime** .
+Vaše aplikace může běžet jenom v případě, že je v hostitelském systému už nainstalovaná verze .NET Core, na kterou vaše aplikace cílí. V případě, že chcete, aby aplikace vyžadovala určitou verzi rozhraní .NET Core nebo umožňovala novější verzi .NET Core, můžete nakonfigurovat chování při přeposílání. Další informace najdete v tématu [posunutí aplikací závislých na modulu runtime](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-Počínaje .NET Core 2,2 můžete nasadit aplikaci jako FDE spolu se všemi požadovanými závislostmi třetích stran. Vaše aplikace bude používat verzi .NET Core, která je nainstalovaná v cílovém systému.
+- **Rozhraní .NET Core se může změnit**\
+Modul runtime a knihovny .NET Core je možné aktualizovat v počítači, na kterém je aplikace spuštěná. Ve výjimečných případech to může změnit chování aplikace, pokud používáte knihovny .NET Core, které dělají většina aplikací. Můžete nakonfigurovat, jak vaše aplikace používá novější verze .NET Core. Další informace najdete v tématu [posunutí aplikací závislých na modulu runtime](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-### <a name="why-deploy-a-framework-dependent-executable"></a>Proč nasadit spustitelný soubor závislý na rozhraní?
+Následující nevýhody platí jenom pro .NET Core 2,1 SDK.
 
-Nasazení aplikace FDE má několik výhod:
+- **Spuštění aplikace pomocí příkazu `dotnet`** \
+Aby bylo možné aplikaci spustit, musí uživatel spustit příkaz `dotnet <filename.dll>`. Sada .NET Core 2,1 SDK nevytváří spustitelné soubory specifické pro platformu pro aplikace publikované modulem runtime.
 
-- Velikost balíčku pro nasazení je malá. Nasadíte jenom svou aplikaci a její závislosti, ne samotné .NET Core.
+### <a name="examples"></a>Příklady
 
-- Více aplikací používá stejnou instalaci .NET Core, což snižuje nároky na místo na disku a využití paměti v hostitelských systémech.
+Publikování aplikace závislé na prostředí runtime pro různé platformy. Spustitelný soubor, který cílí na aktuální platformu, se vytvoří společně se souborem *DLL* .
 
-- Vaše aplikace se dá spustit voláním publikovaného spustitelného souboru bez nutnosti vyvolat nástroj `dotnet` přímo.
+```dotnet
+dotnet publish
+```
 
-K dispozici je také několik nevýhody:
+Publikování aplikace závislé na prostředí runtime pro různé platformy. Společně se souborem *DLL* je vytvořen spustitelný soubor Linux 64. Tento příkaz nefunguje s .NET Core SDK 2,1.
 
-- Vaše aplikace může běžet pouze v případě, že je v hostitelském systému již nainstalována verze .NET Core vaší aplikace [nebo novější verze](../versions/selection.md#framework-dependent-apps-roll-forward).
+```dotnet
+dotnet publish -r linux-x64 --self-contained false
+```
 
-- Je možné, že se modul runtime a knihovny .NET Core mění bez vašeho vědomí v budoucích verzích. Ve výjimečných případech to může změnit chování vaší aplikace.
+## <a name="publish-self-contained"></a>Publikování samostatného kontejneru
 
-- Aplikaci musíte publikovat pro každou cílovou platformu.
+Publikování aplikace jako samostatně obsahuje spustitelný soubor specifický pro platformu. Výstupní složka pro publikování obsahuje všechny komponenty aplikace včetně knihoven .NET Core a cílového modulu runtime. Aplikace je izolovaná od ostatních aplikací .NET Core a nepoužívá místně nainstalovaný sdílený modul runtime. Uživatel vaší aplikace není potřebný ke stažení a instalaci .NET Core.
 
-## <a name="step-by-step-examples"></a>Podrobné příklady
+Spustitelný soubor executable je vytvořen pro zadanou cílovou platformu. Pokud máte například aplikaci s názvem **word_reader**a publikujete samostatně uložený spustitelný soubor pro Windows, vytvoří se soubor *word_reader. exe* . Publikování pro Linux nebo macOS se vytvoří soubor *word_reader* . Cílová platforma a architektura je určena parametrem `-r <RID>` pro příkaz [`dotnet publish`](../tools/dotnet-publish.md) . Další informace o identifikátorů RID najdete v [katalogu .NET Core RID Catalog](../rid-catalog.md).
 
-Podrobné příklady nasazení aplikací .NET Core pomocí .NET Core CLI najdete v tématu [publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md). Podrobné příklady nasazení aplikací .NET Core pomocí sady Visual Studio najdete v tématu [nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md). 
+Pokud má aplikace závislosti specifické pro platformu, například balíček NuGet obsahující závislosti specifické pro danou platformu, zkopírují se do složky publikování společně s aplikací.
 
-## <a name="see-also"></a>Viz také:
+### <a name="advantages"></a>Výhody
 
-- [Publikování aplikací .NET Core pomocí .NET Core CLI](deploy-with-cli.md)
-- [Nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)
-- [Balíčky, metabalíčky a architektury](../packages.md)
+- **Řízení verze .NET Core**\
+Můžete řídit, která verze .NET Core se nasazuje s vaší aplikací.
+
+- \ **cílení na konkrétní platformu**
+Vzhledem k tomu, že je nutné aplikaci publikovat pro každou platformu, víte, kde bude aplikace spuštěna. Pokud .NET Core zavádí novou platformu, uživatelé nemůžou svou aplikaci na této platformě spustit, dokud neuvolníte verzi, která cílí na tuto platformu. Před spuštěním vaší aplikace na nové platformě můžete aplikaci otestovat pro problémy s kompatibilitou.
+
+### <a name="disadvantages"></a>Nevýhody
+
+- **Větší\ nasazení**
+Vzhledem k tomu, že vaše aplikace zahrnuje modul runtime .NET Core a všechny závislosti aplikací, velikost stahovaných a požadované místo na pevném disku je větší než verze [závislá na modulu runtime](#publish-runtime-dependent) .
+
+  > [!TIP]
+  > Velikost nasazení v systémech Linux můžete zmenšit přibližně o 28 MB pomocí [*režimu invariantování globalizace*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).NET Core. To vynutí, aby vaše aplikace považovala všechny kultury jako [invariantní jazykovou verzi](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
+
+- **Těžší aktualizace verze .NET Core**\
+Modul runtime .NET Core (distribuovaný s vaší aplikací) se dá upgradovat jenom vydáním nové verze vaší aplikace. Zodpovídáte za poskytnutí aktualizované verze vaší aplikace pro opravy zabezpečení modulu runtime .NET Core. 
+
+### <a name="examples"></a>Příklady
+
+Publikujte samostatně obsaženou aplikaci. Je vytvořen macOS 64 bitový spustitelný soubor.
+
+```dotnet
+dotnet publish -r osx-x64
+```
+
+Publikujte samostatně obsaženou aplikaci. Je vytvořen spustitelný soubor systému Windows 64.
+
+```dotnet
+dotnet publish -r win-x64
+```
+
+## <a name="see-also"></a>Viz také
+
+- [Nasazení aplikací .NET Core pomocí .NET Core CLI.](deploy-with-cli.md)
+- [Nasazení aplikací .NET Core pomocí sady Visual Studio.](deploy-with-vs.md)
+- [Balíčky, metabalíčky a rozhraní.](../packages.md)
 - [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)
+- [Vyberte verzi rozhraní .NET Core, kterou chcete použít.](../versions/selection.md)

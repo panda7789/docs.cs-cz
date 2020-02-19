@@ -2,26 +2,26 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt .NET Core do adresáře.
 ms.date: 05/29/2018
-ms.openlocfilehash: 4612c8cd1f63550905ef7c6d94af050892b1620c
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 0653a7b1e1abd6d7ffd3d21a0410279235b43a28
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117615"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451289"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
-`dotnet publish`– Zabalí aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
+`dotnet publish` – zabalí aplikaci a její závislosti do složky pro nasazení do hostitelského systému.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 ```dotnetcli
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-build] [--no-dependencies]
@@ -29,7 +29,7 @@ dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--ma
 dotnet publish [-h|--help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 ```dotnetcli
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies]
@@ -37,7 +37,7 @@ dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--ma
 dotnet publish [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
@@ -49,18 +49,18 @@ dotnet publish [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet publish`zkompiluje aplikaci, přečte prostřednictvím svých závislostí zadaných v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
+`dotnet publish` zkompiluje aplikaci, přečte jejich závislosti zadané v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
 
 - Kód zprostředkujícího jazyka (IL) v sestavení s příponou *DLL* .
 - soubor *. DEPS. JSON* , který obsahuje všechny závislosti projektu.
 - soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime, který aplikace očekává, a další možnosti konfigurace pro modul runtime (například typ uvolňování paměti).
 - Závislosti aplikace, které jsou zkopírovány z mezipaměti NuGet do výstupní složky.
 
-Výstup `dotnet publish` příkazu je připravený k nasazení do hostitelského systému (například server, počítač, Mac, notebook) k provedení. Jedná se o jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, které projekt určuje, hostující systém může nebo nemusí mít nainstalovaný modul .NET Core Shared runtime. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md). Adresářovou strukturu publikované aplikace najdete v tématu [Struktura adresáře](/aspnet/core/hosting/directory-structure).
+Výstup příkazu `dotnet publish` je připravený k nasazení do hostitelského systému (například server, počítač, Mac, notebook) k provedení. Jedná se o jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, které projekt určuje, hostující systém může nebo nemusí mít nainstalovaný modul .NET Core Shared runtime. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md). Adresářovou strukturu publikované aplikace najdete v tématu [Struktura adresáře](/aspnet/core/hosting/directory-structure).
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT`
 
@@ -68,7 +68,7 @@ Projekt, který se má publikovat Jedná se o cestu a název souboru [C#](csproj
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `-c|--configuration {Debug|Release}`
 
@@ -88,11 +88,11 @@ Vypíše krátkou nápovědu k příkazu.
 
 `--manifest <PATH_TO_MANIFEST_FILE>`
 
-Určuje jeden nebo několik [cílových manifestů](../deploying/runtime-store.md) , které se použijí ke zkrácení sady balíčků publikovaných s aplikací. Soubor manifestu je součástí výstupu [ `dotnet store` příkazu](dotnet-store.md). Chcete-li zadat více manifestů, `--manifest` přidejte možnost pro každý manifest. Tato možnost je k dispozici počínaje verzí .NET Core 2,0 SDK.
+Určuje jeden nebo několik [cílových manifestů](../deploying/runtime-store.md) , které se použijí ke zkrácení sady balíčků publikovaných s aplikací. Soubor manifestu je součástí výstupu [příkazu`dotnet store`](dotnet-store.md). Chcete-li zadat více manifestů, přidejte možnost `--manifest` pro každý manifest. Tato možnost je k dispozici počínaje verzí .NET Core 2,0 SDK.
 
 `--no-build`
 
-Nevytvoří projekt před publikováním. Také implicitně nastaví `--no-restore` příznak.
+Nevytvoří projekt před publikováním. Také implicitně nastaví příznak `--no-restore`.
 
 `--no-dependencies`
 
@@ -109,21 +109,21 @@ Pokud je cesta relativní, vygenerovaný výstupní adresář je relativní vzhl
 
 `--self-contained`
 
-Publikuje modul runtime .NET Core ve vaší aplikaci, takže modul runtime nemusí být na cílovém počítači nainstalován. Je-li zadán identifikátor modulu runtime, jeho výchozí hodnota `true`je. Další informace o různých typech nasazení naleznete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+Publikuje modul runtime .NET Core ve vaší aplikaci, takže modul runtime nemusí být na cílovém počítači nainstalován. Je-li zadán identifikátor modulu runtime, je jeho výchozí hodnota `true`. Další informace o různých typech nasazení naleznete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publikuje aplikaci pro daný modul runtime. Používá se při vytváření [samostatně zahrnutého nasazení (SCD)](../deploying/index.md#self-contained-deployments-scd). Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Výchozím nastavením je publikování [nasazení závislého na rozhraní (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+Publikuje aplikaci pro daný modul runtime. Používá se při vytváření [samostatně zahrnutého nasazení (SCD)](../deploying/index.md#publish-self-contained). Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Výchozím nastavením je publikování [nasazení závislého na rozhraní (FDD)](../deploying/index.md#publish-runtime-dependent).
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
 
 `--version-suffix <VERSION_SUFFIX>`
 
 Definuje příponu verze, která nahradí hvězdičku (`*`) v poli verze souboru projektu.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `-c|--configuration {Debug|Release}`
 
@@ -143,7 +143,7 @@ Vypíše krátkou nápovědu k příkazu.
 
 `--manifest <PATH_TO_MANIFEST_FILE>`
 
-Určuje jeden nebo několik [cílových manifestů](../deploying/runtime-store.md) , které se použijí ke zkrácení sady balíčků publikovaných s aplikací. Soubor manifestu je součástí výstupu [ `dotnet store` příkazu](dotnet-store.md). Chcete-li zadat více manifestů, `--manifest` přidejte možnost pro každý manifest. Tato možnost je k dispozici počínaje verzí .NET Core 2,0 SDK.
+Určuje jeden nebo několik [cílových manifestů](../deploying/runtime-store.md) , které se použijí ke zkrácení sady balíčků publikovaných s aplikací. Soubor manifestu je součástí výstupu [příkazu`dotnet store`](dotnet-store.md). Chcete-li zadat více manifestů, přidejte možnost `--manifest` pro každý manifest. Tato možnost je k dispozici počínaje verzí .NET Core 2,0 SDK.
 
 `--no-dependencies`
 
@@ -160,21 +160,21 @@ Pokud je cesta relativní, vygenerovaný výstupní adresář je relativní vzhl
 
 `--self-contained`
 
-Publikuje modul runtime .NET Core ve vaší aplikaci, takže modul runtime nemusí být na cílovém počítači nainstalován. Je-li zadán identifikátor modulu runtime, jeho výchozí hodnota `true`je. Další informace o různých typech nasazení naleznete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+Publikuje modul runtime .NET Core ve vaší aplikaci, takže modul runtime nemusí být na cílovém počítači nainstalován. Je-li zadán identifikátor modulu runtime, je jeho výchozí hodnota `true`. Další informace o různých typech nasazení naleznete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publikuje aplikaci pro daný modul runtime. Používá se při vytváření [samostatně zahrnutého nasazení (SCD)](../deploying/index.md#self-contained-deployments-scd). Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Výchozím nastavením je publikování [nasazení závislého na rozhraní (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+Publikuje aplikaci pro daný modul runtime. Používá se při vytváření [samostatně zahrnutého nasazení (SCD)](../deploying/index.md#publish-self-contained). Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Výchozím nastavením je publikování [nasazení závislého na rozhraní (FDD)](../deploying/index.md#publish-runtime-dependent).
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
 
 `--version-suffix <VERSION_SUFFIX>`
 
 Definuje příponu verze, která nahradí hvězdičku (`*`) v poli verze souboru projektu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -190,7 +190,7 @@ Vypíše krátkou nápovědu k příkazu.
 
 `--manifest <PATH_TO_MANIFEST_FILE>`
 
-Určuje jeden nebo několik [cílových manifestů](../deploying/runtime-store.md) , které se použijí ke zkrácení sady balíčků publikovaných s aplikací. Soubor manifestu je součástí výstupu [ `dotnet store` příkazu](dotnet-store.md). Chcete-li zadat více manifestů, `--manifest` přidejte možnost pro každý manifest. Tato možnost je k dispozici počínaje verzí .NET Core 2,0 SDK.
+Určuje jeden nebo několik [cílových manifestů](../deploying/runtime-store.md) , které se použijí ke zkrácení sady balíčků publikovaných s aplikací. Soubor manifestu je součástí výstupu [příkazu`dotnet store`](dotnet-store.md). Chcete-li zadat více manifestů, přidejte možnost `--manifest` pro každý manifest. Tato možnost je k dispozici počínaje verzí .NET Core 2,0 SDK.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
@@ -199,11 +199,11 @@ Pokud je cesta relativní, vygenerovaný výstupní adresář je relativní vzhl
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publikuje aplikaci pro daný modul runtime. Používá se při vytváření [samostatně zahrnutého nasazení (SCD)](../deploying/index.md#self-contained-deployments-scd). Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Výchozím nastavením je publikování [nasazení závislého na rozhraní (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+Publikuje aplikaci pro daný modul runtime. Používá se při vytváření [samostatně zahrnutého nasazení (SCD)](../deploying/index.md#publish-self-contained). Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Výchozím nastavením je publikování [nasazení závislého na rozhraní (FDD)](../deploying/index.md#publish-runtime-dependent).
 
 `-v|--verbosity <LEVEL>`
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
+Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
 
 `--version-suffix <VERSION_SUFFIX>`
 
@@ -221,11 +221,11 @@ Publikovat aplikaci pomocí zadaného souboru projektu:
 
 `dotnet publish ~/projects/app1/app1.csproj`
 
-Publikování projektu v aktuálním adresáři pomocí `netcoreapp1.1` rozhraní:
+Publikujte projekt v aktuálním adresáři pomocí `netcoreapp1.1` Framework:
 
 `dotnet publish --framework netcoreapp1.1`
 
-Publikování aktuální aplikace pomocí `netcoreapp1.1` architektury a modulu runtime pro `OS X 10.10` (Tento identifikátor RID musíte uvést v souboru projektu).
+Publikování aktuální aplikace pomocí rozhraní `netcoreapp1.1` Framework a modulu runtime pro `OS X 10.10` (Tento identifikátor RID musíte uvést v souboru projektu).
 
 `dotnet publish --framework netcoreapp1.1 --runtime osx.10.11-x64`
 
@@ -233,7 +233,7 @@ Publikování aktuální aplikace, ale neobnovování odkazů na projekt na proj
 
 `dotnet publish --no-dependencies`
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Cílové architektury](../../standard/frameworks.md)
 - [Katalog identifikátoru runtime (RID)](../rid-catalog.md)

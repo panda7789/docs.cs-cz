@@ -2,12 +2,12 @@
 title: Podepisování uložených procedur na SQL Serveru
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-ms.openlocfilehash: 8dc62527be7273d3ce3222d4d261b81bc40b1e19
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0131655d06a6ef543ea460d04739401538cac04b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791809"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452354"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL Serveru
 
@@ -15,9 +15,9 @@ Digitální podpis je datový výtah zašifrovaný pomocí privátního klíče 
 
 Uloženou proceduru můžete podepsat pomocí certifikátu nebo asymetrického klíče. To je určené pro scénáře, kdy oprávnění nejde dědit pomocí zřetězení vlastnictví nebo když je řetěz vlastnictví poškozený, jako je například dynamický SQL. Pak můžete vytvořit uživatele namapovaného na certifikát a udělit mu oprávnění k přístupu k objektům, ke kterým musí mít uložená procedura přístup.
 
-Můžete také vytvořit přihlašovací údaje namapované na stejný certifikát a pak každému přihlašovacímu jménu udělit potřebná oprávnění na úrovni serveru nebo přidat přihlašovací údaje k jedné nebo více pevným rolím serveru. To je navrženo tak, aby `TRUSTWORTHY` nedocházelo k povolení nastavení databáze pro scénáře, ve kterých jsou potřeba oprávnění vyšší úrovně.
+Můžete také vytvořit přihlašovací údaje namapované na stejný certifikát a pak každému přihlašovacímu jménu udělit potřebná oprávnění na úrovni serveru nebo přidat přihlašovací údaje k jedné nebo více pevným rolím serveru. To je navrženo tak, aby nedocházelo k povolení nastavení databáze `TRUSTWORTHY` pro scénáře, ve kterých jsou potřeba oprávnění vyšší úrovně.
 
-Když je uložená procedura spuštěná, SQL Server kombinuje oprávnění uživatele certifikátu a/nebo přihlášení s volajícími. Na rozdíl od `EXECUTE AS` klauzule nemění kontext provádění procedury. Integrované funkce, které vracejí přihlašovací jméno a uživatelská jména, vracejí jméno volajícího, nikoli uživatelské jméno certifikátu.
+Když je uložená procedura spuštěná, SQL Server kombinuje oprávnění uživatele certifikátu a/nebo přihlášení s volajícími. Na rozdíl od klauzule `EXECUTE AS` nemění kontext provádění procedury. Integrované funkce, které vracejí přihlašovací jméno a uživatelská jména, vracejí jméno volajícího, nikoli uživatelské jméno certifikátu.
 
 ## <a name="creating-certificates"></a>Vytváření certifikátů
 
@@ -39,7 +39,7 @@ Pokud modul potřebuje další oprávnění na úrovni databáze:
 
 Pokud modul potřebuje další oprávnění na úrovni serveru:
 
-1. Zkopírujte certifikát do `master` databáze.
+1. Zkopírujte certifikát do databáze `master`.
 
 1. Pomocí příkazu Transact-SQL `CREATE LOGIN [userName] FROM CERTIFICATE [certificateName]` vytvořte přihlášení přidružené k tomuto certifikátu.
 
@@ -52,12 +52,12 @@ Pokud modul potřebuje další oprávnění na úrovni serveru:
 
 Další informace najdete v následujících materiálech.
 
-|Resource|Popis|
+|Prostředek|Popis|
 |--------------|-----------------|
-|[Přihlášení modulu](https://go.microsoft.com/fwlink/?LinkId=98590) SQL Server Knihy online|Popisuje podepisování modulů a poskytuje ukázkový scénář a odkazy na související témata jazyka Transact-SQL.|
-|[Podepisování uložených procedur s certifikátem](/sql/relational-databases/tutorial-signing-stored-procedures-with-a-certificate) v SQL Server Knihy online|V této části najdete kurz pro podepsání uložené procedury pomocí certifikátu.|
+|[Podepisování modulů](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms345102(v=sql.100))|Popisuje podepisování modulů a poskytuje ukázkový scénář a odkazy na relevantní články jazyka Transact-SQL.|
+|[Podepisování uložených procedur s certifikátem](/sql/relational-databases/tutorial-signing-stored-procedures-with-a-certificate)|V této části najdete kurz pro podepsání uložené procedury pomocí certifikátu.|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
 - [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)

@@ -2,12 +2,12 @@
 title: Požadavky na výkon (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-ms.openlocfilehash: 2b116a22c0f422377246d8cc0b2d647fd78a289b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 6cd0adb7963b3cfc05fcd6f30d8a7039a50f9485
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039847"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452458"
 ---
 # <a name="performance-considerations-entity-framework"></a>Požadavky na výkon (Entity Framework)
 Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje několik důležitých informací, které vám pomůžou zlepšit výkon Entity Framework aplikací.  
@@ -15,11 +15,11 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
 ## <a name="stages-of-query-execution"></a>Fáze provádění dotazů  
  Aby bylo možné lépe pochopit výkon dotazů v Entity Framework, je užitečné pochopit operace, ke kterým dochází, když se dotaz spustí na koncepčním modelu a vrátí data jako objekty. Následující tabulka popisuje tento sled operací.  
   
-|Operace|Relativní náklady|opakování|Komentáře|  
+|Operace|Relativní náklady|Frequency|Komentáře|  
 |---------------|-------------------|---------------|--------------|  
 |Načítají se metadata.|Mírná|Jednou v každé doméně aplikace.|Metadata modelu a mapování používaná Entity Framework jsou načtena do <xref:System.Data.Metadata.Edm.MetadataWorkspace>. Tato metadata jsou v mezipaměti globálně a jsou k dispozici pro jiné instance <xref:System.Data.Objects.ObjectContext> ve stejné doméně aplikace.|  
 |Otevírání připojení k databázi|Střední<sup>1</sup>|Podle potřeby.|Vzhledem k tomu, že otevřené připojení k databázi spotřebovává cenný prostředek, Entity Framework otevře a zavře připojení databáze pouze podle potřeby. Připojení můžete také explicitně otevřít. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).|  
-|Generování zobrazení|Maximální|Jednou v každé doméně aplikace. (Může být vygenerováno předem.)|Předtím, než Entity Framework může spustit dotaz na koncepční model nebo uložit změny do zdroje dat, je nutné pro přístup k databázi vygenerovat sadu zobrazení místních dotazů. Kvůli vysokým nákladům na generování těchto zobrazení můžete zobrazení předem vygenerovat a přidat je do projektu v době návrhu. Další informace naleznete v tématu [How to: Pre-Generate Views to zdokonale Performance Query](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).|  
+|Generování zobrazení|Vysoká|Jednou v každé doméně aplikace. (Může být vygenerováno předem.)|Předtím, než Entity Framework může spustit dotaz na koncepční model nebo uložit změny do zdroje dat, je nutné pro přístup k databázi vygenerovat sadu zobrazení místních dotazů. Kvůli vysokým nákladům na generování těchto zobrazení můžete zobrazení předem vygenerovat a přidat je do projektu v době návrhu. Další informace naleznete v tématu [How to: Pre-Generate Views to zdokonale Performance Query](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).|  
 |Příprava dotazu|Střední<sup>2</sup>|Jednou pro každý jedinečný dotaz.|Zahrnuje náklady na vytvoření příkazu dotazu, vygenerování stromu příkazů na základě modelu a mapování metadat a definování tvaru vrácených dat. Vzhledem k tomu, že Entity SQL příkazy dotazů a dotazy LINQ jsou ukládány do mezipaměti, pozdější spuštění stejného dotazu trvá méně času. Můžete přesto použít zkompilované dotazy LINQ k omezení těchto nákladů v pozdějším spuštění a zkompilované dotazy mohou být efektivnější než dotazy LINQ, které jsou automaticky uloženy v mezipaměti. Další informace najdete v tématu [kompilované dotazy (LINQ to Entities)](./language-reference/compiled-queries-linq-to-entities.md). Obecné informace o provádění dotazů LINQ naleznete v tématu [LINQ to Entities](./language-reference/linq-to-entities.md). **Poznámka:**  LINQ to Entities dotazy, které používají operátor `Enumerable.Contains` na kolekce v paměti, nejsou automaticky ukládány do mezipaměti. V kompilovaných dotazech LINQ se taky Parametrizace kolekce v paměti, které se nepovolují.|  
 |Provádění dotazu|Nízká úroveň<sup>2</sup>|Jednou pro každý dotaz.|Náklady na provedení příkazu proti zdroji dat pomocí poskytovatele dat ADO.NET. Vzhledem k tomu, že většina zdrojů dat ukládá plány dotazů do mezipaměti, může pozdější spuštění stejného dotazu trvat i kratší dobu.|  
 |Načítání a ověřování typů|Nízká úroveň<sup>3</sup>|Jednou pro každou instanci <xref:System.Data.Objects.ObjectContext>.|Typy jsou načteny a ověřovány proti typům, které definuje koncepční model.|  
@@ -41,7 +41,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
  Vzhledem k tomu, že dotazy můžou být náročné na prostředky, zvažte, v jakém místě v kódu a na jakém počítači se dotaz spustí.  
   
 #### <a name="deferred-versus-immediate-execution"></a>Odložené versus okamžité provedení  
- Když vytvoříte dotaz <xref:System.Data.Objects.ObjectQuery%601> nebo LINQ, dotaz se nemusí spustit okamžitě. Provádění dotazu je odloženo, dokud nebudou požadovány výsledky, například během výčtu `foreach` (C#) nebo`For Each`(Visual Basic) nebo když je přiřazena k vyplnění<xref:System.Collections.Generic.List%601>kolekce. Spuštění dotazu se okamžitě spustí při volání metody <xref:System.Data.Objects.ObjectQuery%601.Execute%2A> na <xref:System.Data.Objects.ObjectQuery%601> nebo při volání metody LINQ, která vrací dotaz typu Singleton, jako je například <xref:System.Linq.Enumerable.First%2A> nebo <xref:System.Linq.Enumerable.Any%2A>. Další informace najdete v tématu [dotazy objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)) a [provádění dotazů (LINQ to Entities)](./language-reference/query-execution.md).  
+ Když vytvoříte dotaz <xref:System.Data.Objects.ObjectQuery%601> nebo LINQ, dotaz se nemusí spustit okamžitě. Provádění dotazu je odloženo, dokud nebudou požadovány výsledky, například během výčtu `foreach` (C#) nebo `For Each` (Visual Basic) nebo když je přiřazena k vyplnění <xref:System.Collections.Generic.List%601> kolekce. Spuštění dotazu se okamžitě spustí při volání metody <xref:System.Data.Objects.ObjectQuery%601.Execute%2A> na <xref:System.Data.Objects.ObjectQuery%601> nebo při volání metody LINQ, která vrací dotaz typu Singleton, jako je například <xref:System.Linq.Enumerable.First%2A> nebo <xref:System.Linq.Enumerable.Any%2A>. Další informace najdete v tématu [dotazy objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)) a [provádění dotazů (LINQ to Entities)](./language-reference/query-execution.md).  
   
 #### <a name="client-side-execution-of-linq-queries"></a>Spuštění dotazů LINQ na straně klienta  
  I když se spustí dotaz LINQ v počítači, který je hostitelem zdroje dat, mohou být některé části dotazu LINQ vyhodnoceny v klientském počítači. Další informace najdete v části spuštění úložiště v tématu [spuštění dotazu (LINQ to Entities)](./language-reference/query-execution.md).  
@@ -128,7 +128,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
   
  Při práci s velmi velkými modely platí následující aspekty:  
   
- Formát metadat .NET omezuje počet znaků uživatelského řetězce v daném binárním formátu na 16 777 215 (0xFFFFFF). Pokud generujete zobrazení pro velmi velký model a zobrazení souborů dosáhne tohoto limitu velikosti, zobrazí se při vytváření dalších uživatelských řetězců nezbývá žádné logické místo. Chyba kompilace Toto omezení velikosti se vztahuje na všechny spravované binární soubory. Další informace najdete v [blogu](https://go.microsoft.com/fwlink/?LinkId=201476) , který ukazuje, jak se vyhnout chybě při práci s velkými a složitými modely.  
+ Formát metadat .NET omezuje počet znaků uživatelského řetězce v daném binárním formátu na 16 777 215 (0xFFFFFF). Pokud generujete zobrazení pro velmi velký model a zobrazení souborů dosáhne tohoto limitu velikosti, zobrazí se při vytváření dalších uživatelských řetězců nezbývá žádné logické místo. Chyba kompilace Toto omezení velikosti se vztahuje na všechny spravované binární soubory. Další informace najdete v [blogu](https://docs.microsoft.com/archive/blogs/appfabriccat/solving-the-no-logical-space-left-to-create-more-user-strings-error-and-improving-performance-of-pre-generated-views-in-visual-studio-net4-entity-framework) , který ukazuje, jak se vyhnout chybě při práci s velkými a složitými modely.  
   
 #### <a name="consider-using-the-notracking-merge-option-for-queries"></a>Zvažte použití možnosti sloučení NoTracking pro dotazy  
  Ke sledování vrácených objektů v kontextu objektu je nutné mít náklady. Zjišťování změn objektů a zajištění, že více požadavků pro stejnou logickou entitu vrací stejnou instanci objektu, vyžaduje, aby byly objekty připojeny k instanci <xref:System.Data.Objects.ObjectContext>. Pokud neplánujete provádět aktualizace nebo odstraňování objektů a nepožadujete správu identit, zvažte použití možností <xref:System.Data.Objects.MergeOption.NoTracking> sloučení při spouštění dotazů.  
@@ -145,14 +145,14 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
  Když vaše aplikace provede řadu dotazů na objekty nebo často volání <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> k uchování operací vytvoření, aktualizace a odstranění na zdroj dat, Entity Framework musí nepřetržitě otevřít a zavřít připojení ke zdroji dat. V těchto situacích zvažte ruční otevření připojení na začátku těchto operací a buď uzavření nebo zrušení připojení po dokončení operací. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
 ## <a name="performance-data"></a>Údaje o výkonu  
- Některá data o výkonu pro Entity Framework jsou publikována v následujících příspěvcích na [blogu týmu ADO.NET](https://go.microsoft.com/fwlink/?LinkId=91905):  
+ Některá data o výkonu pro Entity Framework jsou publikována v následujících příspěvcích na [blogu týmu ADO.NET](https://docs.microsoft.com/archive/blogs/adonet/):  
   
-- [Zkoumání výkonu ADO.NET Entity Framework – část 1](https://go.microsoft.com/fwlink/?LinkId=123907)  
+- [Zkoumání výkonu ADO.NET Entity Framework – část 1](https://docs.microsoft.com/archive/blogs/adonet/exploring-the-performance-of-the-ado-net-entity-framework-part-1)  
   
-- [Zkoumání výkonu ADO.NET Entity Framework – část 2](https://go.microsoft.com/fwlink/?LinkId=123909)  
+- [Zkoumání výkonu ADO.NET Entity Framework – část 2](https://docs.microsoft.com/archive/blogs/adonet/exploring-the-performance-of-the-ado-net-entity-framework-part-2)  
   
-- [Porovnání výkonu ADO.NET Entity Framework](https://go.microsoft.com/fwlink/?LinkID=123913)  
+- [Porovnání výkonu ADO.NET Entity Framework](https://docs.microsoft.com/archive/blogs/adonet/ado-net-entity-framework-performance-comparison)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Důležité informace o vývoji a nasazení](development-and-deployment-considerations.md)

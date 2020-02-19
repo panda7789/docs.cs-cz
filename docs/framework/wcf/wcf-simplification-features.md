@@ -2,12 +2,12 @@
 title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: dd944ad2963e29fd3aa9254f3a37f2c2b98ce70d
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 28a05053fda8380b55a1a9eee20119b8c4cfccfe
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802385"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452653"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 
@@ -78,7 +78,7 @@ WCF teď podporuje vývoj pro první smlouvu. Nástroj Svcutil. exe má přepín
 
 ## <a name="add-service-reference-from-a-portable-subset-project"></a>Přidat odkaz na službu z přenositelné podmnožiny projektu
 
-Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více implementací .NET (Desktop, Silverlight, Windows Phone a XBOX). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestavením rozhraní .NET Framework, které lze použít v jakékoli implementaci rozhraní .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](add-service-reference-in-a-portable-subset-project.md).
+Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více implementací .NET (Desktop, Silverlight, Windows Phone a Xbox). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestaveními, které lze použít v jakékoli implementaci rozhraní .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](add-service-reference-in-a-portable-subset-project.md).
 
 ## <a name="aspnet-compatibility-mode-default-changed"></a>Režim kompatibility ASP.NET se ve výchozím nastavení změnil
 
@@ -94,7 +94,7 @@ Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu výv
 
 Následující tabulka popisuje nastavení, která se změnila a kde najít další informace.
 
-|Vlastnost|Zapnout|Nové výchozí|Další informace|
+|Vlastnost|Zapnuto|Nové výchozí|Další informace|
 |--------------|--------|-----------------|----------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může připojení TCP trvat při ověřování pomocí protokolu rámců .NET. Klient potřebuje odeslat některá počáteční data předtím, než server bude mít dostatek informací k provedení ověření. Tento časový limit je úmyslně menší než ReceiveTimeout (10 min), aby škodlivé neověřené klienty neudržovaly připojení na server po dlouhou dobu. Výchozí hodnota je 30 sekund. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * počet procesorů|Tato vlastnost na úrovni soketu popisuje počet požadavků čekajících na přijetí k zařazení do fronty. Pokud nevyřízená fronta nevyřízených položek vyplní, budou nové požadavky na soket odmítnuty. Další informace o <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|

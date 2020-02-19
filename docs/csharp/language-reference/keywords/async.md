@@ -8,12 +8,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 3d3f045eed3bad3624ed4994aebb862c52a4e196
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 30ee13a4174a137481fbcd36ccef721958b94a12
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713783"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450853"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 
@@ -71,7 +71,7 @@ Asynchronní metoda může mít následující návratové typy:
 
 - <xref:System.Threading.Tasks.Task>
 - <xref:System.Threading.Tasks.Task%601>
-- [void](./void.md). metody `async void` jsou obecně nedoporučovány pro jiný kód než obslužné rutiny událostí, protože volající nemohou `await` tyto metody a musí implementovat jiný mechanismus, který bude hlásit úspěšné dokončení nebo chybové stavy.
+- [void](../builtin-types/void.md). metody `async void` jsou obecně nedoporučovány pro jiný kód než obslužné rutiny událostí, protože volající nemohou `await` tyto metody a musí implementovat jiný mechanismus, který bude hlásit úspěšné dokončení nebo chybové stavy.
 - Počínaje C# 7,0, jakýkoli typ, který má přístupnou metodu `GetAwaiter`. Typ `System.Threading.Tasks.ValueTask<TResult>` představuje jednu takovou implementaci. Je k dispozici přidáním balíčku NuGet `System.Threading.Tasks.Extensions`. 
 
 Asynchronní metoda nemůže deklarovat jakýkoli parametr [in](./in-parameter-modifier.md), [ref](./ref.md) nebo [out](./out-parameter-modifier.md) , ani nemůže mít [odkazovou návratovou hodnotu](../../programming-guide/classes-and-structs/ref-returns.md), ale může volat metody, které mají tyto parametry.  
@@ -84,7 +84,7 @@ Počínaje C# 7,0 vrátíte jiný typ, obvykle hodnotový typ, který má metodu
 
 Další informace a příklady naleznete v tématu [Async Return Types](../../programming-guide/concepts/async/async-return-types.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
 - [await](../operators/await.md)

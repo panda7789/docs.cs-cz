@@ -2,12 +2,12 @@
 title: Migrace .NET Core ze služby Project. JSON
 description: Naučte se migrovat starší projekt .NET Core pomocí Project. JSON.
 ms.date: 07/19/2017
-ms.openlocfilehash: f81d01c052c3632c48a5f961be86eab686c2074e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8a9dc05c82fd5476a70ee36a294a287abbfb68c4
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714355"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450684"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migrace projektů .NET Core ze služby Project. JSON
 
@@ -65,7 +65,7 @@ Tato chyba se zobrazí, pokud máte soubor *Global. JSON* v aktuálním nebo nad
 Pokud stále používáte DNX pro vývoj v .NET Core, proces migrace by se měl provádět ve dvou fázích:
 
 1. Použijte [stávající pokyny k migraci DNX](from-dnx.md) k migraci z DNX na rozhraní PŘÍKAZového řádku s povoleným formátem JSON pro Project.
-2. Postupujte podle kroků z předchozí části a migrujte z *Project. JSON* na *. csproj*.  
+2. Postupujte podle kroků z předchozí části a migrujte z *Project. JSON* na *. csproj*.
 
 > [!NOTE]
 > DNX se oficiálně zastaralá během vydání verze Preview 1 .NET Core CLI.
@@ -80,12 +80,12 @@ Formát .NET Core csproj se mění a vyvíjí u každé nové předběžné verz
 - Odeberte příkazy `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` a `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` z horního a dolního okraje projektu. Tyto příkazy import jsou odvozeny v sadě SDK, takže není nutné, aby byly v projektu.
 - Pokud máte v projektu `Microsoft.NETCore.App` nebo `NETStandard.Library` `<PackageReference>` položky, měli byste je odebrat. Tyto odkazy na balíčky jsou [odvozeny v sadě SDK](https://aka.ms/sdkimplicitrefs).
 - Odeberte prvek `Microsoft.NET.Sdk` `<PackageReference>`, pokud existuje. Odkaz na sadu SDK přichází prostřednictvím atributu `Sdk` u elementu `<Project>`.
-- Odeberte [globy](https://en.wikipedia.org/wiki/Glob_(programming)) , které jsou [zahrnuté v sadě SDK](../tools/csproj.md#default-compilation-includes-in-net-core-projects). Ponecháním těchto globy ve vašem projektu dojde k chybě při sestavování, protože položky kompilace budou duplikovány.
+- Odeberte [globy](https://en.wikipedia.org/wiki/Glob_(programming)) , které jsou [zahrnuté v sadě SDK](../project-sdk/overview.md#default-compilation-includes). Ponecháním těchto globy ve vašem projektu dojde k chybě při sestavování, protože položky kompilace budou duplikovány.
 
 Po provedení těchto kroků by váš projekt měl být plně kompatibilní s formátem RTM .NET Core csproj.
 
 Příklady před a po migraci ze starého formátu csproj na nový najdete v článku [aktualizace nástrojů pro vylepšení sady Visual Studio 2017 RC – .NET Core](https://devblogs.microsoft.com/dotnet/updating-visual-studio-2017-rc-net-core-tooling-improvements/) na blogu .NET.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Přenos, migrace a Upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)
+- [Port, migrace a upgrade projektů sady Visual Studio](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)

@@ -3,12 +3,12 @@ title: ICorProfilerInfo9 – rozhraní
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 371e85ce8f5d7b420a30ac842ec658949e47d30e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 431a546fb4a3b92b379e273553f0caf540ba1473
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861642"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449727"
 ---
 # <a name="icorprofilerinfo9-interface"></a>ICorProfilerInfo9 – rozhraní
 
@@ -23,10 +23,10 @@ Podtřída [ICorProfilerInfo8](icorprofilerinfo8-interface.md) , která poskytuj
 |[Metoda GetCodeInfo4](icorprofilerinfo9-getcodeinfo4-method.md)| Vzhledem k počáteční adrese nativního kódu vrátí bloky virtuální paměti, která ukládá tento kód. |
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).  
+**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?pivots=os-windows).  
 **Hlavička:** CorProf. idl, CorProf. h  
 **Verze rozhraní .NET:** [!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rozhraní pro profilaci](profiling-interfaces.md)

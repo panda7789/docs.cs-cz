@@ -2,12 +2,12 @@
 title: Požadavky na zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 9a560db5dbcb7a87a1c933febfb8bf676cc8816b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e2e1fc75049d41b50aa59092fe1aa21e8cdab659
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968408"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452484"
 ---
 # <a name="security-considerations-entity-framework"></a>Požadavky na zabezpečení (Entity Framework)
 Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění aplikací Entity Framework. Měli byste také postupovat podle doporučení pro vytváření zabezpečených .NET Framework aplikací. Další informace najdete v tématu [Přehled zabezpečení](../security-overview.md).  
@@ -27,7 +27,7 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
  Během operace přihlášení jsou informace, které jsou založeny na hesle uživatele, předány serveru přes síťové knihovny základního zdroje dat. Škodlivý zprostředkovatel může ukrást přihlašovací údaje uživatele, generovat škodlivé dotazy nebo manipulovat se sadou výsledků dotazu.  
   
 #### <a name="encrypt-your-connection-to-protect-sensitive-data"></a>Zašifrujte připojení pro ochranu citlivých dat.  
- Entity Framework nezpracovává přímo šifrování dat. Pokud uživatelé přistupují k datům přes veřejnou síť, měla by vaše aplikace vytvořit šifrované připojení ke zdroji dat, aby se zvýšilo zabezpečení. Další informace naleznete v dokumentaci týkající se zabezpečení pro váš zdroj dat. Zdroj dat SQL Server najdete v tématu [šifrování připojení k SQL Server](https://go.microsoft.com/fwlink/?LinkId=119544).  
+ Entity Framework nezpracovává přímo šifrování dat. Pokud uživatelé přistupují k datům přes veřejnou síť, měla by vaše aplikace vytvořit šifrované připojení ke zdroji dat, aby se zvýšilo zabezpečení. Další informace naleznete v dokumentaci týkající se zabezpečení pro váš zdroj dat. Zdroj dat SQL Server najdete v tématu [šifrování připojení k SQL Server](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms189067(v=sql.105)).  
   
 #### <a name="secure-the-connection-string"></a>Zabezpečte připojovací řetězec.  
  Ochrana přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec představuje potenciální chybu zabezpečení, pokud není zabezpečena nebo pokud není správně vytvořena. Když ukládáte informace o připojení do prostého textu nebo je zachová v paměti, riskujete, že dojde k narušení celého systému. Níže jsou uvedené doporučené metody zabezpečení připojovacích řetězců:  
@@ -69,7 +69,7 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
   
 - <xref:System.Security.Permissions.ReflectionPermission>: <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> pro podporu LINQ to Entitiesch dotazů.  
   
-- <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> zařazení do <xref:System.Transactions>ho<xref:System.Transactions.Transaction>.  
+- <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> zařazení do <xref:System.Transactions>ho <xref:System.Transactions.Transaction>.  
   
 - <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimek pomocí rozhraní <xref:System.Runtime.Serialization.ISerializable>.  
   
@@ -81,7 +81,7 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
  Entity Framework nevynutila žádná oprávnění zabezpečení a vyvolá libovolný uživatelem zadaný datový objekt v procesu bez ohledu na to, zda je důvěryhodný nebo nikoli. Ujistěte se, že úložiště dat a aplikace provádí ověřování a autorizaci klienta.  
   
 #### <a name="restrict-access-to-all-configuration-files"></a>Omezte přístup ke všem konfiguračním souborům.  
- Správce musí omezit přístup pro zápis do všech souborů, které určují konfiguraci aplikace, včetně souborů enterprisesec. config, Security. config, Machine. conf a konfiguračního souboru aplikace \<> *aplikace*. exe. config.  
+ Správce musí omezit přístup pro zápis do všech souborů, které určují konfiguraci aplikace, včetně souborů enterprisesec. config, Security. config, Machine. conf a konfiguračního souboru aplikace \<*aplikaci*>. exe. config.  
   
  Neutrální název zprostředkovatele je v App. config upravitelný. Klientská aplikace musí převzít zodpovědnost za přístup k základnímu poskytovateli prostřednictvím modelu výroby standardního zprostředkovatele pomocí silného názvu.  
   
@@ -162,7 +162,7 @@ Součásti služby ADO.NET metadata neprotokolují žádné soukromé informace.
 #### <a name="do-not-accept-metadataworkspace-objects-from-untrusted-sources"></a>Nepřijímejte objekty MetadataWorkspace z nedůvěryhodných zdrojů.  
  Aplikace by neměly přijímat instance <xref:System.Data.Metadata.Edm.MetadataWorkspace> třídy z nedůvěryhodných zdrojů. Místo toho byste měli explicitně vytvořit a naplnit pracovní prostor z takového zdroje.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
 - [Důležité informace o nasazení](deployment-considerations.md)

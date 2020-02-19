@@ -11,12 +11,12 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: ac4dafef92bbc900d291a5b653c55ba295f1a6d6
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 4377d113a18d23c8a0f9a669e6112f1a8223cc79
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093224"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450866"
 ---
 # <a name="enumeration-types-c-reference"></a>Výčtové typyC# (referenční)
 
@@ -89,5 +89,6 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 
 - [C#odkaz](../index.md)
 - [Řetězce formátu výčtu](../../../standard/base-types/enumeration-format-strings.md)
-- [Zásady vytváření názvů výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
+- [Pokyny pro návrh – návrh výčtu](../../../standard/design-guidelines/enum.md)
+- [Pokyny pro návrh – zásady vytváření názvů výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
 - [příkaz switch](../keywords/switch.md)

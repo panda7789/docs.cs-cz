@@ -9,12 +9,12 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Win32 host containers [WPF], hit tests using
 ms.assetid: 9491f7f3-d8ba-4573-a888-2f064d1349dc
-ms.openlocfilehash: b71783f2d061c9139de4449d8e0106eb00345894
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: a86c1c36f75fa232d52731959371268a8b2593d7
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740179"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452802"
 ---
 # <a name="how-to-hit-test-using-a-win32-host-container"></a>Postupy: Spuštění testu použitím kontejneru hostitele Win32
 Můžete vytvořit vizuální objekty v okně Win32 tím, že poskytnete kontejner hostitelského okna pro vizuální objekty. Chcete-li zajistit zpracování událostí pro obsažené vizuální objekty, které zpracovávají zprávy předané do smyčky filtru zpráv kontejneru hostitelského okna. Další informace o tom, jak hostovat vizuální objekty v okně Win32, najdete [v tématu Kurz: hostování vizuálních objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md) .  
@@ -32,9 +32,9 @@ Můžete vytvořit vizuální objekty v okně Win32 tím, že poskytnete kontejn
   
  Objekt <xref:System.Windows.Interop.HwndSource> prezentuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahu v rámci okna Win32. Hodnota vlastnosti <xref:System.Windows.Interop.HwndSource.RootVisual%2A> objektu <xref:System.Windows.Interop.HwndSource> představuje uzel nejvyšší úrovně v hierarchii vizuálního stromu.  
   
- Kompletní ukázku pro testování objektů pomocí kontejneru hostitele Win32 naleznete v tématu [test volání s ukázkovou meziprovozu](https://go.microsoft.com/fwlink/?LinkID=159995)Win32.  
+ Kompletní ukázku pro testování objektů pomocí kontejneru hostitele Win32 naleznete v tématu [test volání s ukázkovou meziprovozu](https://github.com/microsoft/WPF-Samples/tree/master/Visual%20Layer/VisualsHitTesting)Win32.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Interop.HwndSource>
 - [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)

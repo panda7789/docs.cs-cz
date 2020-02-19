@@ -9,33 +9,33 @@ helpviewer_keywords:
 - animation [WPF], opacity of SolidColorBrush
 - SolidColorBrush [WPF], animating opacity of
 ms.assetid: d9154354-843f-4713-bad1-35bb0ba6eaeb
-ms.openlocfilehash: 610a7c4879b4ffe54940e8bc744dcca0711e84d2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 08b85935e0cb1ababd1fb63b9d02518ea3fcfa17
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593389"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452880"
 ---
 # <a name="how-to-animate-the-color-or-opacity-of-a-solidcolorbrush"></a>Postupy: Animace barvy a krytí štětce SolidColorBrush
-Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> a <xref:System.Windows.Media.Brush.Opacity%2A> z <xref:System.Windows.Media.SolidColorBrush>.  
+Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> a <xref:System.Windows.Media.Brush.Opacity%2A> <xref:System.Windows.Media.SolidColorBrush>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá tři animace pro animaci <xref:System.Windows.Media.SolidColorBrush.Color%2A> a <xref:System.Windows.Media.Brush.Opacity%2A> z <xref:System.Windows.Media.SolidColorBrush>.  
+ Následující příklad používá tři animace k animaci <xref:System.Windows.Media.SolidColorBrush.Color%2A> a <xref:System.Windows.Media.Brush.Opacity%2A> <xref:System.Windows.Media.SolidColorBrush>.  
   
-- První animace <xref:System.Windows.Media.Animation.ColorAnimation>, se změní barva stopy <xref:System.Windows.Media.Colors.Gray%2A> vstupu myší v obdélníku.  
+- První animace, <xref:System.Windows.Media.Animation.ColorAnimation>, změní barvu štětce na <xref:System.Windows.Media.Colors.Gray%2A>, když ukazatel myši vstoupí do obdélníku.  
   
-- Další animace jiného <xref:System.Windows.Media.Animation.ColorAnimation>, se změní barva stopy <xref:System.Windows.Media.Colors.Orange%2A> když ukazatel myši opustí obdélníku.  
+- Další animace, jinou <xref:System.Windows.Media.Animation.ColorAnimation>, změní barvu štětce na <xref:System.Windows.Media.Colors.Orange%2A>, když myš opustí obdélník.  
   
-- Poslední animace <xref:System.Windows.Media.Animation.DoubleAnimation>, mění neprůhlednost štětce rovnou 0,0, když se stiskne levé tlačítko myši.  
+- Poslední animace, <xref:System.Windows.Media.Animation.DoubleAnimation>, změní krytí štětce na 0,0 při stisknutí levého tlačítka myši.  
   
  [!code-csharp[brushanimations_snip#SolidColorBrushAnimationExample](~/samples/snippets/csharp/VS_Snippets_Wpf/brushanimations_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushanimationexample)]  
   
- Ucelenější ukázku, která ukazuje, jak animovat různé druhy štětce, najdete v článku [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973). Další informace o animace, najdete v článku [přehled animace](animation-overview.md).  
+ Úplnější ukázku, která ukazuje, jak animovat různé typy štětců, naleznete v [ukázce štětce](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes). Další informace o animacích najdete v [přehledu animace](animation-overview.md).  
   
- Pro zajištění konzistence s další příklady animace, kód verze tohoto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objekt jejich animace. Při použití jedné animace v kódu, je ale jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
+ Pro zajištění konzistence s dalšími příklady animací používají verze kódu v tomto příkladu objekt <xref:System.Windows.Media.Animation.Storyboard> k aplikování animací. Nicméně při použití jedné animace v kódu je jednodušší použít metodu <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad naleznete v tématu [animace vlastnosti bez použití scénáře](how-to-animate-a-property-without-using-a-storyboard.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled animace](animation-overview.md)
 - [Přehled scénářů](storyboards-overview.md)
-- [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
+- [Ukázka štětců](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes)

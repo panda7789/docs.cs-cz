@@ -3,12 +3,12 @@ title: porovnání Project. JSON a csproj
 description: Viz mapování mezi elementy Project. JSON a csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: c31590cf34990867b81af4d073846c2952928798
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: abe515007b47b415ac33e3350a29edced1784d68
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714137"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451102"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi vlastnostmi Project. JSON a csproj
 
@@ -30,7 +30,7 @@ Nový formát \*. csproj je formát založený na jazyce XML. Následující př
 
 ## <a name="common-top-level-properties"></a>Společné vlastnosti nejvyšší úrovně
 
-### <a name="name"></a>name
+### <a name="name"></a>jméno
 
 ```json
 {
@@ -38,7 +38,7 @@ Nový formát \*. csproj je formát založený na jazyce XML. Následující př
 }
 ```
 
-Již není podporováno. V hodnotě csproj je určena název souboru projektu, který obvykle odpovídá názvu adresáře. Například `MyProjectName.csproj`.
+Již není podporováno. V hodnotě csproj je určena název souboru projektu, který obvykle odpovídá názvu adresáře. například `MyProjectName.csproj`.
 
 Ve výchozím nastavení určuje název souboru projektu také hodnotu `<AssemblyName>` a vlastnosti `<PackageId>`.
 
@@ -52,7 +52,7 @@ Ve výchozím nastavení určuje název souboru projektu také hodnotu `<Assembl
 `<AssemblyName>` bude mít jinou hodnotu než `<PackageId>`, pokud byla `buildOptions\outputName` vlastnost definována v Project. JSON.
 Další informace najdete v tématu [Další běžné možnosti sestavení](#other-common-build-options).
 
-### <a name="version"></a>Verze nástroje
+### <a name="version"></a>version
 
 ```json
 {
@@ -141,7 +141,7 @@ Pro definování seznamu cílových rozhraní použijte vlastnost `TargetFramewo
 </PropertyGroup>
 ```
 
-## <a name="dependencies"></a>dependencies
+## <a name="dependencies"></a>závislosti
 
 > [!IMPORTANT]
 > Pokud se jedná o **projekt** , nikoli o balíček, formát se liší.
@@ -337,7 +337,7 @@ V nástroji MSBuild jsou všechny projekty *přenosné* během sestavení, ale m
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
 
-Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/index.md#self-contained-deployments-scd).
+Další informace najdete v tématu [samostatná nasazení (SCD)](../deploying/index.md#publish-self-contained).
 
 ## <a name="tools"></a>nástroje
 
@@ -395,7 +395,7 @@ Pokud byla `false``emitEntryPoint`, hodnota `OutputType` je převedena na `Libra
 </PropertyGroup>
 ```
 
-### <a name="keyfile"></a>KeyFile
+### <a name="keyfile"></a>keyFile
 
 ```json
 {
@@ -572,7 +572,7 @@ Všechny tyto hodnoty však můžete nastavit v souboru csproj a také ve vlastn
 Ve csproj se nepodporuje. Místo toho je nutné v souboru *. nuspec* vytvořit zahrnuté soubory obsahu.
 Další informace najdete v tématu [zahrnutí souborů obsahu](/nuget/schema/nuspec#including-content-files).
 
-## <a name="files"></a>soubory
+## <a name="files"></a>files
 
 V *aplikaci Project. JSON*bylo možné sestavení a sadu rozšířit, aby se daly kompilovat a vkládat z různých složek.
 V nástroji MSBuild to je prováděno pomocí [položek](/visualstudio/msbuild/common-msbuild-project-items). Následující příklad je běžným převodem:
@@ -673,6 +673,6 @@ Další informace najdete v tématu [zahrnutí obsahu do balíčku](/nuget/schem
 </ItemGroup>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Podrobný přehled změn v rozhraní příkazového řádku](../tools/cli-msbuild-architecture.md)

@@ -1,19 +1,19 @@
 ---
 title: dotnet – příkaz
 description: Přečtěte si o příkazu dotnet (obecný ovladač pro .NET Core CLI) a jeho použití.
-ms.date: 06/04/2018
-ms.openlocfilehash: 7674529980623caa2291987bdeba52f50ce2fc2c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 02/13/2020
+ms.openlocfilehash: 364978465b63401907b46ead64dbceb2f15c8169
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920552"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451165"
 ---
 # <a name="dotnet-command"></a>dotnet – příkaz
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet` – Nástroj pro správu zdrojového kódu a binárních souborů .NET.
 
@@ -21,14 +21,14 @@ ms.locfileid: "76920552"
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 ```dotnetcli
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
     [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 ```dotnetcli
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
@@ -36,7 +36,7 @@ dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--de
     [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagnostics]
@@ -53,7 +53,7 @@ dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagno
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `--additional-deps <PATH>`
 
@@ -117,7 +117,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Vytiskne verzi .NET Core SDK, která se používá.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `--additional-deps <PATH>`
 
@@ -167,7 +167,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Vytiskne verzi .NET Core SDK, která se používá.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 `--additionalprobingpath <PATH>`
 
@@ -215,7 +215,7 @@ Vytiskne verzi .NET Core SDK, která se používá.
 
 ### <a name="general"></a>Obecné
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 | Příkaz                                       | Funkce                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
@@ -234,7 +234,7 @@ Vytiskne verzi .NET Core SDK, která se používá.
 | [dotnet restore](dotnet-store.md)               | Ukládá sestavení do úložiště balíčků modulu runtime.                     |
 | [dotnet test](dotnet-test.md)                 | Spustí testy pomocí nástroje Test Runner.                                     |
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -252,7 +252,7 @@ Vytiskne verzi .NET Core SDK, která se používá.
 | [dotnet restore](dotnet-store.md)     | Ukládá sestavení do úložiště balíčků modulu runtime.                     |
 | [dotnet test](dotnet-test.md)       | Spustí testy pomocí nástroje Test Runner.                                     |
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -293,16 +293,16 @@ Příkaz | Funkce
 [dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo vypíše místní prostředky NuGet, jako je mezipaměť požadavků HTTP, dočasná mezipaměť nebo složka globálních balíčků v celém počítači.
 [dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje ho.
 
-### <a name="global-tools-commands"></a>Příkazy globálních nástrojů
+### <a name="global-tool-path-and-local-tools-commands"></a>Příkazy globálních nástrojů, nástrojů a cest a místních nástrojů
 
-K dispozici jsou [globální nástroje .NET Core](global-tools.md) od .NET Core SDK 2.1.300:
+Nástroje jsou konzolové aplikace, které jsou nainstalovány z balíčků NuGet a jsou vyvolány z příkazového řádku. Můžete psát nástroje sami nebo instalovat nástroje napsané třetí stranou. Nástroje jsou také známé jako globální nástroje, nástroje pro cestu nástrojů a místní nástroje. Další informace najdete v tématu [Přehled nástrojů .NET Core](global-tools.md). Nástroje pro globální a cestu nástrojů jsou k dispozici od .NET Core SDK 2,1. K dispozici jsou místní nástroje od .NET Core SDK 3,0.
 
 Příkaz | Funkce
 --- | ---
-[dotnet tool install](dotnet-tool-install.md) | Nainstaluje na váš počítač globální nástroj.
-[dotnet tool list](dotnet-tool-list.md) | Zobrazí seznam všech globálních nástrojů, které jsou aktuálně nainstalované ve výchozím adresáři na vašem počítači nebo v zadané cestě.
-[dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstaluje z počítače globální nástroj.
-[dotnet tool update](dotnet-tool-update.md) | Aktualizuje na svém počítači globální nástroj.
+[dotnet tool install](dotnet-tool-install.md) | Nainstaluje nástroj na váš počítač.
+[dotnet tool list](dotnet-tool-list.md) | Zobrazí seznam všech nástrojů, které jsou aktuálně nainstalované na vašem počítači, na základě globálních nástrojů, nástrojů a cest.
+[dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstaluje nástroj z počítače.
+[dotnet tool update](dotnet-tool-update.md) | Aktualizuje nástroj, který je nainstalovaný na vašem počítači.
 
 ### <a name="additional-tools"></a>Další nástroje
 
@@ -340,7 +340,7 @@ Spusťte knihovnu DLL aplikace, například `myapp.dll`:
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `DOTNET_PACKAGES`
 
@@ -362,7 +362,7 @@ Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK v
 
 Zakáže posunutí dílčí verze, pokud je nastaveno na `0`. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `DOTNET_PACKAGES`
 
@@ -380,7 +380,7 @@ Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesí
 
 Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastavená, použije se výchozí hodnota `true`. Nastavte na `false`, aby se nepřeložily z globálního umístění a měly izolované instalace .NET Core (hodnoty `0` nebo `false` jsou přijaté). Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 `DOTNET_PACKAGES`
 
@@ -396,7 +396,7 @@ Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesí
 
 ---
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
 - [Nastavení konfigurace runtime .NET Core](../run-time-config/index.md)

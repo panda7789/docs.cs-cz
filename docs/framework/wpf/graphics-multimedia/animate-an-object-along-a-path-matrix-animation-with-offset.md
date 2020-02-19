@@ -9,31 +9,31 @@ helpviewer_keywords:
 - animation [WPF], objects along paths (matrix animation with offset accumulation)
 - matrix animation with offset accumulation [WPF]
 ms.assetid: 1bca90ef-9832-4128-8ed6-62908e7ec146
-ms.openlocfilehash: 3e7b892e2a2215d26512850477844d71bce7fe09
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b3975ef5031b50381dfa9baf7f34a58fc05ab4e
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922691"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453101"
 ---
 # <a name="how-to-animate-an-object-along-a-path-matrix-animation-with-offset-accumulation"></a>Postupy: Animace objektu podél cesty (animace matice s akumulací posunu)
-Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> třídy animace objektu podél cesty a animace accumulate posun hodnoty, jak bude správce opakovat.  
+Tento příklad ukazuje, jak použít třídu <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> k animaci objektu podél cesty a k tomu, aby animace nashromáždila hodnoty posunutí při opakování.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> objektu pro animaci <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform> použitý pro tlačítko. V důsledku toho tlačítko přesune podél zakřivené cesty.  
+ Následující příklad používá objekt <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> k animování vlastnosti <xref:System.Windows.Media.MatrixTransform.Matrix%2A> <xref:System.Windows.Media.MatrixTransform> použité pro tlačítko. V důsledku toho se tlačítko přesune podél zakřivené cesty.  
   
- Kromě toho v příkladu je nastavena <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative%2A> vlastnost `true`, což způsobí, že posun animovaný matici nashromáždí během animace se opakuje. Protože nahromadí posun přesune na tlačítko dále napříč obrazovku, když je animace se opakuje, nikoli resetování na počáteční pozici.  
+ Kromě toho příklad nastavuje vlastnost <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative%2A> na `true`, což způsobí, že posun animované matice se nashromáždí jako opakování animace. Vzhledem k tomu, že posunování se sestavuje, tlačítko se při opakování animace místo resetování na počáteční pozici přesune přes obrazovku na obrazovce.  
   
  [!code-xaml[PathAnimationGallery_snippet#MatrixAnimationUsingPathOffsetCumulativeWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_snippet/CS/matrixanimationusingpathexampleoffsetcumulative.xaml#matrixanimationusingpathoffsetcumulativewholepage)]  
   
  [!code-csharp[PathAnimationGallery_procedural_snip#MatrixAnimationUsingPathOffsetCumulativeWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_procedural_snip/CSharp/MatrixAnimationUsingPathExampleOffsetCumulative.cs#matrixanimationusingpathoffsetcumulativewholepage)]
  [!code-vb[PathAnimationGallery_procedural_snip#MatrixAnimationUsingPathOffsetCumulativeWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PathAnimationGallery_procedural_snip/VisualBasic/MatrixAnimationUsingPathExampleOffsetCumulative.vb#matrixanimationusingpathoffsetcumulativewholepage)]  
   
- Všimněte si, že i když <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative%2A> vlastnosti způsobí, že hodnoty posunu k shromažďování přes opakování, nezpůsobí otočení hodnoty pro shromažďování. Aby otočení hodnoty accumulate, nastavení se animace <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent%2A> a <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulative%2A> vlastností `true`.  
+ Všimněte si, že i když vlastnost <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative%2A> způsobí, že hodnoty posunutí budou v průběhu opakování shromažďovány, nezpůsobí nahromadění hodnot rotace. Chcete-li nashromáždit hodnoty rotace, nastavte <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent%2A> animace a vlastnosti <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulative%2A> na `true`.  
   
- Úplnou ukázku najdete v tématu [ukázkové animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028). Příklad ukazuje, jak animovat <xref:System.Windows.Media.Matrix> hodnoty podél cesty bez akumulací posunu, naleznete v tématu [animace objektu podél cesty (animace matice)](how-to-animate-an-object-along-a-path-matrix-animation.md).  
+ Úplnou ukázku najdete v tématu [Ukázka animace cesty](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/PathAnimations). Příklad ukazující postup animace <xref:System.Windows.Media.Matrix> hodnoty podél cesty bez akumulace posunu naleznete v tématu [animace objektu podél cesty (animace matice)](how-to-animate-an-object-along-a-path-matrix-animation.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled animace](animation-overview.md)
 - [Postupy: Témata animace cesty](path-animation-how-to-topics.md)

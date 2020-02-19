@@ -2,16 +2,16 @@
 title: Reference k příkazům rozhraní příkazového řádku ML.NET
 description: Přehled, ukázky a Reference k příkazu pro automatický vlak v nástroji CLI ML.NET
 ms.date: 12/18/2019
-ms.openlocfilehash: 5e59eba91721b26622360818a73adb07a654dc28
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 537f8d361c170378f5fe8cf454320831d7c8cbf2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636117"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449696"
 ---
 # <a name="the-mlnet-cli-command-reference"></a>Reference k příkazům rozhraní příkazového řádku ML.NET
 
-Příkaz `auto-train` je hlavním příkazem, který poskytuje nástroj ML.NET CLI. Tento příkaz umožňuje vygenerovat dobrý model ML.NET s využitím automatizovaného strojového učení (AutoML) a také ukázkový C# kód pro spuštění nebo určení skóre modelu. Kromě toho C# kód pro výuku modelu je vygenerován pro vás, abyste mohli prozkoumat algoritmus a nastavení modelu.
+Příkaz `auto-train` je hlavním příkazem, který poskytuje nástroj ML.NET CLI. Příkaz umožňuje vygenerovat dobrý model ML.NET s využitím automatizovaného strojového učení (AutoML) a také ukázkový C# kód pro spuštění nebo určení skóre modelu. Kromě toho C# kód pro výuku modelu je vygenerován pro vás, abyste mohli prozkoumat algoritmus a nastavení modelu.
 
 > [!NOTE]
 > Toto téma odkazuje na ML.NET CLI a ML.NET AutoML, které jsou momentálně ve verzi Preview, a materiál může být změněn.
@@ -94,7 +94,7 @@ mlnet auto-train
 
 Neplatné možnosti vstupu způsobí, že nástroj rozhraní příkazového řádku vygeneruje seznam platných vstupů a chybovou zprávu.
 
-## <a name="task"></a>Úloha
+## <a name="task"></a>Úkol
 
 `--task | --mltask | -T` (String)
 
@@ -145,7 +145,7 @@ V podstatě při použití `validation dataset` a `test dataset`je fáze ověře
 1. V první části se jenom podíváte na vaše modely a vyberete nejlepší způsob, jak pomocí ověřovacích dat (= ověřování) vybrat nejvhodnější přístup.
 2. Pak odhadnete přesnost vybraného přístupu (= test).
 
-Oddělení dat by proto mohlo být 80/10/10 nebo 75/15/10. Příklad:
+Oddělení dat by proto mohlo být 80/10/10 nebo 75/15/10. Například:
 
 - soubor `training-dataset` by měl mít 75% dat.
 - soubor `validation-dataset` by měl mít 15% dat.
@@ -188,7 +188,7 @@ Příklad:
 `--has-header | -h` (bool)
 
 Určete, zda mají soubory DataSet řádek záhlaví.
-Možné hodnoty jsou:
+Možné hodnoty:
 
 - `true`
 - `false`
@@ -225,7 +225,7 @@ Můžete určit tyto hodnoty:
 
 Pokud parametr `--cache` nezadáte, použije se ve výchozím nastavení mezipaměť `auto` konfigurace.
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `--name | -N` (String)
 
@@ -239,13 +239,13 @@ Soubor modelu ML.NET (. Soubor ZIP) bude mít stejný název i.
 
 Kořenové umístění/složka, do které se umístí vygenerovaný výstup Výchozí je aktuální adresář.
 
-## <a name="verbosity"></a>Podrobnosti
+## <a name="verbosity"></a>Verbosity
 
 `--verbosity | -V` (String)
 
 Nastaví úroveň podrobností standardního výstupu.
 
-Povolené hodnoty jsou následující:
+Povolené hodnoty jsou:
 
 - `q[uiet]`
 - `m[inimal]` (ve výchozím nastavení)
@@ -259,7 +259,7 @@ Ve výchozím nastavení by měl nástroj rozhraní příkazového řádku při 
 
 Vytiskne nápovědu pro příkaz s popisem pro každý parametr příkazu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postup instalace nástroje ML.NET CLI](../how-to-guides/install-ml-net-cli.md)
 - [Přehled rozhraní příkazového řádku ML.NET](../automate-training-with-cli.md)

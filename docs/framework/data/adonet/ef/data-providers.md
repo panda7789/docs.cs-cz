@@ -2,12 +2,12 @@
 title: Zprostředkovatelé dat Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 5252e639-ff11-4818-82e7-07221ed6ae23
-ms.openlocfilehash: 8d02a49af8674a5568c56347c4045552f8477f1a
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: bf3e55833a3dbed29b1f767014c106af93b2526d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854748"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452536"
 ---
 # <a name="entity-framework-data-providers"></a>Zprostředkovatelé dat Entity Framework
 Tato část poskytuje informace o poskytovatelích dat, které podporují Entity Framework.  
@@ -20,12 +20,8 @@ Tato část poskytuje informace o poskytovatelích dat, které podporují Entity
  Popisuje poskytovatele .NET Framework dat, který podporuje Entity Framework pro použití s databází SQL Server.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Entity Framework (SQL Server Compact)](https://go.microsoft.com/fwlink/?LinkId=135638)  
+ [Entity Framework (SQL Server Compact)](https://docs.microsoft.com/previous-versions/sql/compact/sql-server-compact-4.0/cc835494(v=sql.110))  
  Popisuje omezení zprostředkovatele a způsob použití Entity Framework s databází SQL Server Compact.  
-  
- [Poskytovatelé třetích stran pro Entity Framework](https://go.microsoft.com/fwlink/?LinkId=143699)  
- Seznam zprostředkovatelů dat třetích stran, které jsou aktuálně k dispozici pro Entity Framework.  
-  
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Práce se zprostředkovateli dat](working-with-data-providers.md)

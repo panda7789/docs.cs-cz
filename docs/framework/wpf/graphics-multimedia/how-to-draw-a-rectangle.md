@@ -6,32 +6,32 @@ helpviewer_keywords:
 - graphics [WPF], rectangles
 - rectangles [WPF], drawing
 ms.assetid: beeb57ef-fab5-4446-a38a-1588f97b4c2f
-ms.openlocfilehash: 261026b994b432565928b38ff1657115ff7cbe4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 95191e9d90bc2ac32902399125d9a51192e897bf
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947625"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452932"
 ---
 # <a name="how-to-draw-a-rectangle"></a>Postupy: Vykreslení obdélníku
-Tento příklad ukazuje, jak nakreslit obdélník s použitím <xref:System.Windows.Shapes.Rectangle> elementu.  
+Tento příklad ukazuje, jak vykreslit obdélník pomocí elementu <xref:System.Windows.Shapes.Rectangle>.  
   
- Chcete-li nakreslit obdélník, vytvořte <xref:System.Windows.Shapes.Rectangle> element a zadejte jeho <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>. Má Vymalovat vnitřní obdélníku, nastavte jeho <xref:System.Windows.Shapes.Shape.Fill%2A>. Obdélník osnovy, použijte jeho <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> vlastnosti.  
+ Chcete-li nakreslit obdélník, vytvořte prvek <xref:System.Windows.Shapes.Rectangle> a zadejte jeho <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>. Chcete-li malovat uvnitř obdélníku, nastavte jeho <xref:System.Windows.Shapes.Shape.Fill%2A>. Chcete-li obdélník obsloužit jako obrys, použijte jeho <xref:System.Windows.Shapes.Shape.Stroke%2A> a vlastnosti <xref:System.Windows.Shapes.Shape.StrokeThickness%2A>.  
   
- Abyste obdélník zaoblené rohy, zadejte nepovinný <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> vlastnosti. <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> nastaveny vlastnosti osy x a y poloměr elipsy, který se používá k Zakulacení rohů obdélníku.  
+ Chcete-li dát obdélník zaoblené rohy, určete volitelné <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a vlastnosti <xref:System.Windows.Shapes.Rectangle.RadiusY%2A>. Vlastnosti <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> a <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> nastavují poloměry osy x a y na elipse, která se používá k zaoblení rohů obdélníku.  
   
- V následujícím příkladu dvě <xref:System.Windows.Shapes.Rectangle> prvky jsou vykreslovány <xref:System.Windows.Controls.Canvas>. Má první obdélník <xref:System.Windows.Media.Brushes.Blue%2A> vnitřní. Je druhý obdélník <xref:System.Windows.Media.Brushes.Blue%2A> vnitřní, <xref:System.Windows.Media.Brushes.Black%2A> osnovy a zaoblené rohy.  
+ V následujícím příkladu jsou vykresleny dva prvky <xref:System.Windows.Shapes.Rectangle> v <xref:System.Windows.Controls.Canvas>. První obdélník má <xref:System.Windows.Media.Brushes.Blue%2A> vnitřní. Druhý obdélník má <xref:System.Windows.Media.Brushes.Blue%2A> vnitřek, <xref:System.Windows.Media.Brushes.Black%2A> osnovu a zaoblené rohy.  
   
 ## <a name="example"></a>Příklad  
  [!code-xaml[drawingwithshapeelements#Rectangle1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/rectangleexample.xaml#rectangle1)]  
   
- Přestože tento příklad používá <xref:System.Windows.Controls.Canvas> tak, aby obsahovala obdélníky, můžete použít prvky obdélník (a všechny ostatní prvky tvar) s žádným <xref:System.Windows.Controls.Panel> nebo <xref:System.Windows.Controls.Control> , který podporuje netextový obsah. Ve skutečnosti jsou obzvláště užitečná pozadí pro části obdélníky <xref:System.Windows.Controls.Grid> panelů. Příklad najdete v tématu [Přehled tabulek](../advanced/table-overview.md).  
+ Přestože tento příklad používá <xref:System.Windows.Controls.Canvas> k zahrnutí obdélníků, můžete použít prvky Rectangle (a všechny ostatní prvky obrazce) s libovolným <xref:System.Windows.Controls.Panel> nebo <xref:System.Windows.Controls.Control>, které podporují obsah, který není textový. Obdélníky jsou zejména užitečné pro poskytování pozadí pro části <xref:System.Windows.Controls.Grid> panelů. Příklad naleznete v [tabulce Přehled](../advanced/table-overview.md).  
   
- V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
+ Tento příklad je součástí většího vzorku; kompletní ukázku naleznete v tématu [Ukázka prvků tvaru](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Shapes.Rectangle>
-- [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)
+- [Prvky tvaru – ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements)
 - [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
-- [Přehled tabulky](../advanced/table-overview.md)
+- [Přehled tabulek](../advanced/table-overview.md)

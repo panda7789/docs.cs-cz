@@ -5,12 +5,12 @@ helpviewer_keywords:
 - loadFromRemoteSources element
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-ms.openlocfilehash: a4dbcd0a0b848e5ef57965b5b3f4fcee9161b724
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 454314bf1002a9648f669cc708c8ac42461fccaf
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116563"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452263"
 ---
 # <a name="loadfromremotesources-element"></a>\<element > loadFromRemoteSources
 Určuje, zda mají být sestavení načtena ze vzdálených zdrojů udělena plná důvěryhodnost v .NET Framework 4 a novějších.
@@ -18,7 +18,7 @@ Určuje, zda mají být sestavení načtena ze vzdálených zdrojů udělena pln
 > [!NOTE]
 > Pokud jste byli přesměrováni na tento článek z důvodu chybové zprávy v seznamu chyb projektu sady Visual Studio nebo chyba sestavení, přečtěte si téma [How to: Use a Assembly from web in Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100)).  
   
-[ **\<configuration >** ](../configuration-element.md) \
+[**konfigurační >\<** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<loadFromRemoteSources >**  
   
@@ -46,7 +46,7 @@ Určuje, zda mají být sestavení načtena ze vzdálených zdrojů udělena pln
 |`true`|Udělte úplný vztah důvěryhodnosti aplikacím ze vzdálených zdrojů.|  
   
 ### <a name="child-elements"></a>Podřízené prvky  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
@@ -89,17 +89,17 @@ Pokud `enabled` není nastavená na `true`, vyvolá se <xref:System.IO.FileLoadE
 
 Nastavení elementu `<loadFromRemoteSources>` pro `true` zabrání vyvolání této výjimky. Umožňuje určit, že se nespoléháte na modul CLR (Common Language Runtime) k izolovanému prostoru pro načtená sestavení pro zabezpečení a že může být povoleno provádět v úplném vztahu důvěryhodnosti.
 
-## <a name="notes"></a>Poznámky
+## <a name="notes"></a>Poznámky:
 
 - V .NET Framework 4,5 a novějších verzích jsou sestavení v místních síťových sdílených složkách ve výchozím nastavení spouštěna v úplném vztahu důvěryhodnosti. nemusíte povolit `<loadFromRemoteSources>` element.
 
 - Pokud byla aplikace zkopírována z webu, je označena systémem Windows jako webová aplikace, a to i v případě, že se nachází v místním počítači. Toto označení můžete změnit změnou jeho vlastností souboru, nebo můžete použít element `<loadFromRemoteSources>` pro udělení úplného vztahu důvěryhodnosti sestavení. Alternativně můžete použít metodu <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> k načtení místního sestavení, které má operační systém označen jako načtený z webu.
 
-- Můžete získat <xref:System.IO.FileLoadException> v aplikaci, která běží v aplikaci Virtual PC v systému Windows. K tomu může dojít při pokusu o načtení souboru z propojených složek v hostitelském počítači. Může k tomu dojít i v případě, že se pokusíte načíst soubor ze složky propojené přes [službu Vzdálená plocha](https://go.microsoft.com/fwlink/?LinkId=182775) (Terminálová služba). Chcete-li se vyhnout výjimce, nastavte `enabled` na `true`.
+- Můžete získat <xref:System.IO.FileLoadException> v aplikaci, která běží v aplikaci Virtual PC v systému Windows. K tomu může dojít při pokusu o načtení souboru z propojených složek v hostitelském počítači. Může k tomu dojít i v případě, že se pokusíte načíst soubor ze složky propojené přes [službu Vzdálená plocha](/windows/win32/termserv/terminal-services-portal) (Terminálová služba). Chcete-li se vyhnout výjimce, nastavte `enabled` na `true`.
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element se obvykle používá v konfiguračním souboru aplikace, ale lze jej použít v jiných konfiguračních souborech v závislosti na kontextu. Další informace najdete v článku [více implicitních použití zásad CAS: loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839) na blogu zabezpečení .NET.  
+Tento element se obvykle používá v konfiguračním souboru aplikace, ale lze jej použít v jiných konfiguračních souborech v závislosti na kontextu. Další informace najdete v článku [více implicitních použití zásad CAS: loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources) na blogu zabezpečení .NET.  
 
 ## <a name="example"></a>Příklad
 
@@ -113,9 +113,9 @@ Následující příklad ukazuje, jak udělit úplný vztah důvěryhodnosti k s
 </configuration>  
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Více implicitních použití zásad CAS: loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839)
+- [Více implicitních použití zásad CAS: loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
 - [Postupy: spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

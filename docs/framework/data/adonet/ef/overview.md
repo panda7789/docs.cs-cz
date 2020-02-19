@@ -2,12 +2,12 @@
 title: Přehled Entity Framework
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: b68db4f139330ccc1da5057498a37a08d00ba266
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ff0c85da89c44834620831c041df3ccdcaf8282f
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738505"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452523"
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 
@@ -20,9 +20,9 @@ Entity Framework umožňuje vývojářům pracovat s daty ve formě objektů a v
 
  Fyzický model je vydaný správcem databáze za účelem zlepšení výkonu, ale programátory, kteří píší kód aplikace, jsou primárně omezeni na práci s logickým modelem, a to psaním dotazů SQL a voláním uložených procedur. Doménové modely se obecně používají jako nástroj pro zachytávání a oznamování požadavků aplikace, často jako inertní diagramy, které jsou prohlíženy a popsány v počátečních fázích projektu a pak byly opuštěny. Řada vývojových týmů přeskočí vytvoření koncepčního modelu a začne zadáním tabulek, sloupců a klíčů v relační databázi.
 
- Entity Framework dává možnost života modelům tím, že umožňuje vývojářům dotazovat se na entity a vztahy v doménovém modelu (označované jako *koncepční* model v Entity Framework) a přitom se spoléhá na Entity Framework k překladu těchto operací na zdroj dat. – specifické příkazy. To uvolňuje aplikace od pevně zakódovaných závislostí na konkrétním zdroji dat.
+ Entity Framework dává možnost života modelům tím, že umožňuje vývojářům dotazovat se na entity a vztahy v doménovém modelu (označované jako *koncepční* model v Entity Framework) a spoléhat se na Entity Framework, aby tyto operace převedly na konkrétní příkazy ze zdroje dat. To uvolňuje aplikace od pevně zakódovaných závislostí na konkrétním zdroji dat.
 
- Při práci s Code First konceptuální model je mapován na model úložiště v kódu. Entity Framework může odvodit koncepční model na základě typů objektů a dalších konfigurací, které definujete. Metadata mapování se generují za běhu na základě kombinace způsobu, jakým jste definovali typy domén a další konfigurační informace, které zadáte v kódu. Entity Framework v závislosti na metadatech vygeneruje databázi podle potřeby. Další informace najdete v tématu [Vytvoření a mapování koncepčního modelu](https://go.microsoft.com/fwlink/?LinkID=235382).
+ Při práci s Code First konceptuální model je mapován na model úložiště v kódu. Entity Framework může odvodit koncepční model na základě typů objektů a dalších konfigurací, které definujete. Metadata mapování se generují za běhu na základě kombinace způsobu, jakým jste definovali typy domén a další konfigurační informace, které zadáte v kódu. Entity Framework v závislosti na metadatech vygeneruje databázi podle potřeby. Další informace najdete v tématu [Vytvoření modelu](/ef/ef6/modeling/).
 
  Při práci s nástroji model EDM (Entity Data Model) jsou koncepční model, model úložiště a mapování mezi těmito dvěma vyjádřeny ve schématech založených na jazyce XML a definovány v souborech, které mají odpovídající přípony názvů:
 
@@ -37,7 +37,7 @@ Model a mapování úložiště se mohou podle potřeby měnit, aniž by vyžado
 Entity Framework používá tyto modely a mapování souborů k vytváření, čtení, aktualizaci a odstraňování operací s entitami a vztahy v koncepčním modelu na ekvivalentní operace ve zdroji dat. Entity Framework dokonce podporuje entity mapování v koncepčním modelu na uložené procedury ve zdroji dat. Další informace najdete v tématu [specifikace CSDL, SSDL a MSL](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec).
 
 ## <a name="map-objects-to-data"></a>Mapování objektů na data
- Objektově orientované programování představuje výzvu pro interakci se systémy ukládání dat. I když organizace tříd často odráží organizaci relačních databázových tabulek, přizpůsobení není ideální. Více normalizovaných tabulek často odpovídá jedné třídě a vztahy mezi třídami jsou často reprezentovány jinak než vztahy mezi tabulkami. Například pro reprezentaci zákazníka pro prodejní objednávku může třída `Order` použít vlastnost, která obsahuje odkaz na instanci `Customer` třídy, zatímco řádek `Order` tabulky v databázi obsahuje sloupec cizího klíče (nebo sadu sloupců) s hodnotou, která odpovídá hodnotě primárního klíče v `Customer` tabulce. `Customer` třída může mít vlastnost s názvem `Orders`, která obsahuje kolekci instancí třídy `Order`, zatímco `Customer` tabulka v databázi nemá porovnatelný sloupec. Entity Framework poskytuje vývojářům flexibilitu k tomu, aby představovala relace tímto způsobem, nebo aby lépe modeloval vztahy, které jsou v databázi reprezentovány.
+ Objektově orientované programování představuje výzvu pro interakci se systémy ukládání dat. I když organizace tříd často odráží organizaci relačních databázových tabulek, přizpůsobení není ideální. Více normalizovaných tabulek často odpovídá jedné třídě a vztahy mezi třídami jsou často reprezentovány jinak než vztahy mezi tabulkami. Například pro reprezentaci zákazníka pro prodejní objednávku může třída `Order` použít vlastnost, která obsahuje odkaz na instanci `Customer` třídy, zatímco řádek `Order` tabulky v databázi obsahuje sloupec cizího klíče (neboli sadu sloupců) s hodnotou, která odpovídá hodnotě primárního klíče v tabulce `Customer`. `Customer` třída může mít vlastnost s názvem `Orders`, která obsahuje kolekci instancí třídy `Order`, zatímco `Customer` tabulka v databázi nemá porovnatelný sloupec. Entity Framework poskytuje vývojářům flexibilitu k tomu, aby představovala relace tímto způsobem, nebo aby lépe modeloval vztahy, které jsou v databázi reprezentovány.
 
  Stávající řešení se pokusila přemostění této mezery, což se často označuje jako "Neshoda neshody", a to pouze mapováním objektově orientovaných tříd a vlastností na relační tabulky a sloupce. Místo přebírání tohoto tradičního přístupu Entity Framework mapuje relační tabulky, sloupce a omezení cizího klíče v logických modelech na entity a vztahy v koncepčních modelech. To umožňuje větší flexibilitu při definování objektů a optimalizaci logického modelu. Nástroje model EDM (Entity Data Model) generují rozšiřitelné datové třídy založené na koncepčním modelu. Tyto třídy jsou částečné třídy, které lze rozšířit o další členy, které vývojář přidá. Ve výchozím nastavení třídy, které jsou generovány pro konkrétní koncepční model, jsou odvozeny ze základních tříd, které poskytují služby pro entity vyhodnocování jako objekty a pro sledování a ukládání změn. Vývojáři můžou tyto třídy použít pro práci s entitami a vztahy jako objekty související s přidruženími. Vývojáři mohou také přizpůsobit třídy, které jsou generovány pro koncepční model. Další informace naleznete v tématu [práce s objekty](working-with-objects.md).
 
@@ -57,7 +57,7 @@ Následující diagram znázorňuje architekturu Entity Framework pro přístup 
 
 Nástroje model EDM (Entity Data Model) mohou generovat třídu odvozenou z `System.Data.Objects.ObjectContext` nebo `System.Data.Entity.DbContext`, která představuje kontejner entity v koncepčním modelu. Tento kontext objektu poskytuje zařízení pro sledování změn a správu identit, souběžnosti a vztahů. Tato třída také zpřístupňuje `SaveChanges` metodu, která zapisuje vložení, aktualizace a odstranění do zdroje dat. Podobně jako dotazy jsou tyto změny provedeny buď pomocí příkazů automaticky generovaných systémem, nebo uloženými procedurami, které jsou určeny vývojářem.
 
-## <a name="data-providers"></a>Poskytovatelé dat
+## <a name="data-providers"></a>Zprostředkovatelé dat
 
 Poskytovatel `EntityClient` rozšiřuje model poskytovatele ADO.NET přístupem k datům z pojmů koncepčních entit a vztahů. Spouští dotazy, které používají [!INCLUDE[esql](../../../../../includes/esql-md.md)]. [!INCLUDE[esql](../../../../../includes/esql-md.md)] poskytuje základní dotazovací jazyk, který umožňuje `EntityClient` komunikaci s databází. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](entityclient-provider-for-the-entity-framework.md).
 
@@ -67,7 +67,7 @@ Entity Framework obsahuje aktualizovaný Zprostředkovatel dat SqlClient, který
 
 Společně s modulem runtime Entity Framework obsahuje Visual Studio nástroje pro mapování a modelování. Další informace najdete v tématu [modelování a mapování](modeling-and-mapping.md).
 
-## <a name="learn-more"></a>Víc se uč
+## <a name="learn-more"></a>Další informace
 
 Další informace o Entity Framework najdete v těchto tématech:
 
@@ -77,6 +77,6 @@ Další informace o Entity Framework najdete v těchto tématech:
 
 [Prostředky Entity Framework](resources.md) – obsahuje odkazy na koncepční témata a odkazy na externí témata a prostředky pro vytváření entity Frameworkch aplikací.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ADO.NET Entity Framework](index.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 4919aed8f5b1d134f3bbfce437228d1a67911a1b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 2d6a514e52b25e65d9fd8a1efc3f930ce8f08178
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345435"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450814"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 
@@ -28,10 +28,10 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[break](break.md)|[byte](../builtin-types/integral-numeric-types.md)|[case](switch.md)|[catch](try-catch.md)|  
 |[char](../builtin-types/char.md)|[checked](checked.md)|[class](class.md)|[const](const.md)|  
 |[continue](continue.md)|[decimal](../builtin-types/floating-point-numeric-types.md)|[default](default.md)|[delegate](../builtin-types/reference-types.md)|  
-|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[enum](../builtin-types/enum.md)|  
+|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[ostatních](if-else.md)|[enum](../builtin-types/enum.md)|  
 |[event](event.md)|[explicit](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](../builtin-types/bool.md)|  
 |[finally](try-finally.md)|[určí](fixed-statement.md)|[float](../builtin-types/floating-point-numeric-types.md)|[for](for.md)|  
-|[foreach](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
+|[foreach](foreach-in.md)|[goto](goto.md)|[Přestože](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
 |[in](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[internal](internal.md)|
 |[is](is.md)|[lock](lock-statement.md)|[long](../builtin-types/integral-numeric-types.md)|[namespace](namespace.md)|
 |[new](../operators/new-operator.md)|[null](null.md)|[object](../builtin-types/reference-types.md)|[operator](../operators/operator-overloading.md)|
@@ -42,7 +42,7 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[struct](struct.md)|[switch](switch.md)|[this](this.md)|[throw](throw.md)|
 |[true](../builtin-types/bool.md)|[Zkuste](try-catch.md)|[typeof](../operators/type-testing-and-cast.md#typeof-operator)|[uint](../builtin-types/integral-numeric-types.md)|
 |[ulong](../builtin-types/integral-numeric-types.md)|[unchecked](unchecked.md)|[unsafe](unsafe.md)|[ushort](../builtin-types/integral-numeric-types.md)|
-|[using](using.md)|[Použití static](using-static.md)|[virtual](virtual.md)|[void](void.md)|
+|[using](using.md)|[Použití static](using-static.md)|[virtual](virtual.md)|[void](../builtin-types/void.md)|
 |[volatile](volatile.md)|[while](while.md)|
 
 ## <a name="contextual-keywords"></a>Kontextová klíčová slova
@@ -54,7 +54,7 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[add](add.md)|[alias](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](../operators/await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamic](../builtin-types/reference-types.md)|[equals](equals.md)|
-|[from](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
+|[Výsledkem](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
 |[skupiny](group-clause.md)|[into](into.md)|[join](join-clause.md)|
 |[aplikaci](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
 |[OrderBy](orderby-clause.md)|[částečný (typ)](partial-type.md)|[Partial (metoda)](partial-method.md)|
@@ -63,6 +63,6 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[when (podmínka filtru)](when.md)|[where (omezení obecného typu)](where-generic-type-constraint.md)|[WHERE (klauzule dotazu)](where-clause.md)|
 |[yield](yield.md)| | |
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)

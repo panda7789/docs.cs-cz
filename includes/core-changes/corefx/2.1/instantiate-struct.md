@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: f09a593160b21a9a22a8e7c7faeffdaaab41db85
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: dc5f608dc9eb4635e1282a9ca5e15ff1bf7d0e0d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344888"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449547"
 ---
 ### <a name="private-fields-added-to-built-in-struct-types"></a>Soukromá pole přidaná k předdefinovaným typům struktury
 
 Soukromá pole byla přidána k předdefinovaným typům struktury v [referenčních sestaveních](../../../../docs/standard/assembly/reference-assemblies.md). V důsledku toho musí být C#v typu struktury vždy vytvořena instance pomocí [operátoru new](../../../../docs/csharp/language-reference/operators/new-operator.md) nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal)nebo inicializací jednotlivých privátních polí.
 
-#### <a name="change-description"></a>Popis změny
+#### <a name="change-description"></a>Změnit popis
 
 V .NET Core 2,0 a předchozích verzích byly některé předdefinované typy struktury, například <xref:System.ConsoleKeyInfo>, vytvořeny jako instance bez použití operátoru `new` nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal) v C#. Důvodem je to, že [referenční sestavení](../../../../docs/standard/assembly/reference-assemblies.md) použitá C# kompilátorem neobsahovala soukromá pole pro struktury. Všechna soukromá pole pro typy struktury .NET jsou přidána do referenčních sestavení, která začínají v .NET Core 2,1.
 
@@ -35,7 +35,7 @@ V .NET Core 2,1 výsledkem předchozího kódu je následující chyba kompilát
 
 Vytvořte instanci typů struktury pomocí operátoru `new` nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
-Příklad:
+Například:
 
 ```csharp
 ConsoleKeyInfo key = new ConsoleKeyInfo();    // Struct type.
@@ -413,7 +413,7 @@ CoreFx
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `T:System.ConsoleKeyInfo`
 - `T:System.Memory{T}`

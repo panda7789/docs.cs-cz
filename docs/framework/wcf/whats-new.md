@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: e01b3a39a004e963e5bb66c5fa71433cb4e7204a
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: b22266efe2e775acd04c400cf9da50bffab28183
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802372"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449501"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Co je nového ve WCF 4.5
 
@@ -36,7 +36,7 @@ WCF teď podporuje vývoj pro první smlouvu. Svcutil. exe má přepínač/servi
 
 ### <a name="add-service-reference-from-a-portable-subset-project"></a>Přidat odkaz na službu z přenositelné podmnožiny projektu
 
-Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více platforem .NET (Desktop, Silverlight, Windows Phone a XBOX). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET Framework, které lze použít na libovolné platformě .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](add-service-reference-in-a-portable-subset-project.md).
+Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET udržovat jeden zdrojový strom a systém sestavení a přitom stále podporovat více platforem .NET (Desktop, Silverlight, Windows Phone a Xbox). Přenositelné Podmnožinové projekty odkazují pouze na přenosné knihovny .NET, které jsou sestaveními, která lze použít na libovolné platformě .NET. Prostředí pro vývojáře je stejné jako přidání odkazu na službu do jakékoli jiné klientské aplikace WCF. Další informace naleznete v tématu [Přidat odkaz na službu v přenositelné podmnožině projektu](add-service-reference-in-a-portable-subset-project.md).
 
 ### <a name="aspnet-compatibility-mode-default-changed"></a>Režim kompatibility ASP.NET se ve výchozím nastavení změnil
 
@@ -78,7 +78,7 @@ WebSockets je technologie, která poskytuje skutečnou obousměrnou komunikaci p
 
 Následující tabulka popisuje nastavení, která se změnila a kde najít další informace.
 
-|Vlastnost|Zapnout|Nové výchozí|Další informace najdete v tématu .|
+|Vlastnost|Zapnuto|Nové výchozí|Další informace najdete v tématu|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * počet procesorů|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
@@ -114,7 +114,7 @@ Počínaje WCF 4,5 binární kodér WCF přidá podporu pro kompresi. Typ kompre
 
 ## <a name="udp"></a>UDP
 
-Byla přidána podpora pro přenos UDP, který vývojářům umožňuje psát služby, které používají zasílání zpráv "Fire and zapomene". Klient odešle zprávu službě a neočekává od služby žádnou odpověď.
+Byla přidána podpora pro přenos UDP, který vývojářům umožňuje psát služby, které používají zasílání zpráv "Fire and zapomene". Klient pošle zprávu službě a neočekává odpověď ze služby.
 
 ## <a name="multiple-authentication-support"></a>Podpora více ověřování
 

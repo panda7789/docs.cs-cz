@@ -2,12 +2,12 @@
 title: Úložiště balíčků modulu runtime
 description: Naučte se používat úložiště balíčků modulu runtime pro cílení na manifesty používané .NET Core.
 ms.date: 08/12/2017
-ms.openlocfilehash: 8c58ccdb90e5ae9830313f52c19f58629ea5b0a2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7a833ed95147608c6fb403f8f0dec179d2a73833
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76737784"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448955"
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčků modulu runtime
 
@@ -122,11 +122,11 @@ Zadejte cílové manifesty v souboru projektu pouze v případě, že cílové p
 
 ASP.NET Core implicitní úložiště platí pouze pro ASP.NET Core 2,0. Důrazně doporučujeme, aby aplikace používaly ASP.NET Core 2,1 a novější, které **nepoužívají implicitní** úložiště. ASP.NET Core 2,1 a novější používají sdílené rozhraní.
 
-Funkce úložiště balíčků za běhu se implicitně používá v aplikaci ASP.NET Core, když se aplikace nasadí jako aplikace [nasazení závislá na rozhraní (FDD)](index.md#framework-dependent-deployments-fdd) . Cíle v [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) zahrnují manifesty odkazující na implicitní úložiště balíčků v cílovém systému. Kromě toho jakákoli aplikace FDD, která závisí na balíčku `Microsoft.AspNetCore.All`, má za následek publikovanou aplikaci, která obsahuje jenom aplikaci a její prostředky, a ne balíčky uvedené v `Microsoft.AspNetCore.All` Metapackage. Předpokládá se, že tyto balíčky jsou k dispozici v cílovém systému.
+Funkce úložiště balíčků za běhu se implicitně používá v aplikaci ASP.NET Core, když se aplikace nasadí jako aplikace [nasazení závislá na rozhraní (FDD)](index.md#publish-runtime-dependent) . Cíle v [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) zahrnují manifesty odkazující na implicitní úložiště balíčků v cílovém systému. Kromě toho jakákoli aplikace FDD, která závisí na balíčku `Microsoft.AspNetCore.All`, má za následek publikovanou aplikaci, která obsahuje jenom aplikaci a její prostředky, a ne balíčky uvedené v `Microsoft.AspNetCore.All` Metapackage. Předpokládá se, že tyto balíčky jsou k dispozici v cílovém systému.
 
 V případě, že je nainstalováno .NET Core SDK, je úložiště balíčků modulu runtime nainstalováno na hostiteli. Další instalační programy můžou poskytnout běhové úložiště balíčků, včetně instalace zip/tarballu .NET Core SDK, `apt-get`, Red Hat Yumu, hostitelského sady Windows serveru .NET Core a ručních instalací balíčků běhového prostředí.
 
-Při nasazování aplikace [pro nasazení závislé na rozhraní (FDD)](index.md#framework-dependent-deployments-fdd) se ujistěte, že je v cílovém prostředí nainstalovaný .NET Core SDK. Pokud je aplikace nasazená do prostředí, které neobsahuje ASP.NET Core, můžete implicitní úložiště odhlásit zadáním **\<PublishWithAspNetCoreTargetManifest >** nastaveno na `false` v souboru projektu, jako v následujícím příkladu:
+Při nasazování aplikace [pro nasazení závislé na rozhraní (FDD)](index.md#publish-runtime-dependent) se ujistěte, že je v cílovém prostředí nainstalovaný .NET Core SDK. Pokud je aplikace nasazená do prostředí, které neobsahuje ASP.NET Core, můžete implicitní úložiště odhlásit zadáním **\<PublishWithAspNetCoreTargetManifest >** nastaveno na `false` v souboru projektu, jako v následujícím příkladu:
 
 ```xml
 <PropertyGroup>
@@ -135,7 +135,7 @@ Při nasazování aplikace [pro nasazení závislé na rozhraní (FDD)](index.md
 ```
 
 > [!NOTE]
-> Pro aplikace [s podporou nasazení (SCD)](index.md#self-contained-deployments-scd) se předpokládá, že cílový systém nutně neobsahuje požadované balíčky manifestu. Proto **\<PublishWithAspNetCoreTargetManifest >** pro aplikaci SCD nelze nastavit na `true`.
+> Pro aplikace [s podporou nasazení (SCD)](index.md#publish-self-contained) se předpokládá, že cílový systém nutně neobsahuje požadované balíčky manifestu. Proto **\<PublishWithAspNetCoreTargetManifest >** pro aplikaci SCD nelze nastavit na `true`.
 
 Pokud nasadíte aplikaci se závislostí manifestu, která je přítomna v nasazení (sestavení je k dispozici ve složce *bin* ), není úložiště balíčků modulu runtime *použito* na hostiteli pro toto sestavení. Sestavení složky *bin* se používá bez ohledu na jeho přítomnost v úložišti balíčků modulu runtime na hostiteli.
 

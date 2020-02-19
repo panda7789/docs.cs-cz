@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: 202c1867ae6404db074e6196b28ffe5f453ef5bf
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 2fb00e830380c5c4cbf7b6dcd2c8a585e1617b4b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965604"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451366"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -35,7 +35,7 @@ Vzhledem k tomu, že se na `Microsoft.NETCore.App` nebo `NETStandard.Library` me
 
 - Pokud cílíte na rozhraní .NET Core nebo .NET Standard, nikdy nemusíte mít explicitní odkaz na `Microsoft.NETCore.App` nebo `NETStandard.Library` metabalíčky prostřednictvím položky `<PackageReference>` v souboru projektu.
 - Pokud potřebujete specifickou verzi modulu runtime při cílení na .NET Core, měli byste použít vlastnost `<RuntimeFrameworkVersion>` v projektu (například `1.0.4`) namísto odkazování na Metapackage.
-  - K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) a potřebujete konkrétní opravu verze 1.0.0 LTS runtime, například.
+  - K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#publish-self-contained) a potřebujete konkrétní opravu verze 1.0.0 LTS runtime, například.
 - Pokud potřebujete specifickou verzi `NETStandard.Library` Metapackage při cílení na .NET Standard, můžete použít vlastnost `<NetStandardImplicitPackageVersion>` a nastavit požadovanou verzi.
 - Nedávejte explicitně odkazy ani neaktualizujte `Microsoft.NETCore.App` ani `NETStandard.Library` Metapackage v projektech .NET Framework. Pokud je při použití balíčku NuGet založeného na .NET Standard potřeba libovolná verze `NETStandard.Library`, NuGet tuto verzi nainstaluje automaticky.
 
@@ -55,12 +55,12 @@ Při odkazování na balíčky `Microsoft.AspNetCore.App` nebo `Microsoft.AspNet
 
 > Známý problém: sada .NET Core 2,1 SDK podporuje pouze tuto syntaxi pouze v případě, že projekt používá také Microsoft. NET. SDK. Web. To je vyřešeno v sadě .NET Core 2,2 SDK.
 
-Tyto odkazy na ASP.NET Core metabalíčky mají mírně odlišné chování z většiny běžných balíčků NuGet. [Nasazení aplikací závislých na rozhraních](../deploying/index.md#framework-dependent-deployments-fdd) , která používají tyto metabalíčky, automaticky využívají ASP.NET Core sdílené rozhraní. Při použití metabalíčky se s aplikací nasadí **žádné** prostředky z odkazovaného ASP.NET Core balíčků NuGet – ASP.NET Core sdílené rozhraní obsahuje tyto prostředky. Prostředky ve sdíleném rozhraní jsou optimalizované pro cílovou platformu pro zlepšení času spuštění aplikace. Další informace o sdílených rozhraních naleznete v tématu [distribuční balíček .NET Core](../distribution-packaging.md).
+Tyto odkazy na ASP.NET Core metabalíčky mají mírně odlišné chování z většiny běžných balíčků NuGet. [Nasazení aplikací závislých na rozhraních](../deploying/index.md#publish-runtime-dependent) , která používají tyto metabalíčky, automaticky využívají ASP.NET Core sdílené rozhraní. Při použití metabalíčky se s aplikací nasadí **žádné** prostředky z odkazovaného ASP.NET Core balíčků NuGet – ASP.NET Core sdílené rozhraní obsahuje tyto prostředky. Prostředky ve sdíleném rozhraní jsou optimalizované pro cílovou platformu pro zlepšení času spuštění aplikace. Další informace o sdílených rozhraních naleznete v tématu [distribuční balíček .NET Core](../distribution-packaging.md).
 
 *Je* -li zadána verze, je zpracována jako *minimální* verze ASP.NET Core sdílené architektury pro nasazení závislá na rozhraních a jako *Přesná* verze pro samostatně nasazená nasazení. To může mít následující důsledky:
 
 - Pokud je verze ASP.NET Core nainstalovaná na serveru menší než verze zadaná na PackageReference, proces .NET Core se nepovede spustit. Aktualizace Metapackage jsou často k dispozici v NuGet.org před zpřístupněním aktualizací v hostitelských prostředích, jako je Azure. Aktualizace verze PackageReference na ASP.NET Core by mohla způsobit selhání nasazené aplikace.
-- Pokud je aplikace nasazena jako [samostatné nasazení](../deploying/index.md#self-contained-deployments-scd), aplikace nemusí obsahovat nejnovější aktualizace zabezpečení .NET Core. Pokud není určena verze, může sada SDK automaticky zahrnovat nejnovější verzi ASP.NET Core v samostatném nasazení.
+- Pokud je aplikace nasazena jako [samostatné nasazení](../deploying/index.md#publish-self-contained), aplikace nemusí obsahovat nejnovější aktualizace zabezpečení .NET Core. Pokud není určena verze, může sada SDK automaticky zahrnovat nejnovější verzi ASP.NET Core v samostatném nasazení.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Výchozí kompilace zahrnuje v projektech .NET Core
 
@@ -72,9 +72,9 @@ Následující tabulka ukazuje, který prvek a které [globy](https://en.wikiped
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Kompilace           | \*\*/\*. cs (nebo jiné jazykové rozšíření) | \*\*/\*.user;  \*\*/\*.\*proj;  \*\*/\*.sln;  \*\*/\*.vssscc  | NEUŽÍVÁ SE.                      |
-| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | NEUŽÍVÁ SE.                      |
-| Žádné              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | \*\*/\*. cs; \*\*/\*. resx   |
+| Kompilace           | \*\*/\*. cs (nebo jiné jazykové rozšíření) | \*\*/\*. User;  \*\*/\*.\*proj;  \*\*/\*. sln;  \*\*/\*. vssscc  | Není k dispozici                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*. User; \*\*/\*.\*proj; \*\*/\*. sln; \*\*/\*. vssscc     | Není k dispozici                      |
+| Žádná              | \*\*/\*                                   | \*\*/\*. User; \*\*/\*.\*proj; \*\*/\*. sln; \*\*/\*. vssscc     | \*\*/\*. cs; \*\*/\*. resx   |
 
 > [!NOTE]
 > **Vyloučit glob** vždy vylučuje `./bin` a `./obj` složky, které jsou reprezentovány `$(BaseOutputPath)` a `$(BaseIntermediateOutputPath)` vlastnostech nástroje MSBuild v uvedeném pořadí. Všechna vyloučení jsou představována `$(DefaultItemExcludes)`.
@@ -143,7 +143,7 @@ Element `<PackageReference>` Item Určuje [závislost NuGet v projektu](/nuget/c
 <PackageReference Include="<package-id>" Version="" PrivateAssets="" IncludeAssets="" ExcludeAssets="" />
 ```
 
-#### <a name="version"></a>Version
+#### <a name="version"></a>Verze
 
 Atribut Required `Version` určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/reference/package-versioning#version-ranges-and-wildcards) . Výchozí chování je minimální verze (včetně shody). Například zadání `Version="1.2.3"` odpovídá zápisu NuGet `[1.2.3, )` a znamená, že vyřešený balíček bude mít verzi 1.2.3, je-li k dispozici, nebo více jinak.
 
@@ -182,7 +182,7 @@ Element `<DotNetCliToolReference>` Item Určuje nástroj CLI, který uživatel c
 
 Všimněte si, že `DotNetCliToolReference` se [teď už nepoužívá](https://github.com/dotnet/announcements/issues/107) , a to ve prospěch [místních nástrojů .NET Core](https://aka.ms/local-tools).
 
-#### <a name="version"></a>Version
+#### <a name="version"></a>Verze
 
 `Version` určuje verzi balíčku, který má být obnoven. Atribut respektuje pravidla schématu [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) . Výchozí chování je minimální verze (včetně shody). Například zadání `Version="1.2.3"` odpovídá zápisu NuGet `[1.2.3, )` a znamená, že vyřešený balíček bude mít verzi 1.2.3, je-li k dispozici, nebo více jinak.
 
@@ -288,11 +288,15 @@ Podrobnosti o autorských právech pro balíček.
 
 ### <a name="packagerequirelicenseacceptance"></a>PackageRequireLicenseAcceptance
 
-Logická hodnota, která určuje, zda klient musí požádat spotřebitele o přijetí licence k balíčku před instalací balíčku. Výchozí hodnota je `false`.
+Logická hodnota, která určuje, zda klient musí požádat spotřebitele o přijetí licence k balíčku před instalací balíčku. Výchozí formát je `false`.
+
+### <a name="developmentdependency"></a>DevelopmentDependency
+
+Logická hodnota, která určuje, zda je balíček označen jako jen pro vývoj, což zabrání zahrnutí balíčku jako závislosti v jiných balíčcích. Pomocí PackageReference (NuGet 4,8 +) Tento příznak také znamená, že prostředky při kompilaci jsou vyloučeny z kompilace. Další informace najdete v tématu [Podpora DevelopmentDependency pro PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).
 
 ### <a name="packagelicenseexpression"></a>PackageLicenseExpression
 
-Identifikátor nebo výraz [licence SPDX](https://spdx.org/licenses/) Například `Apache-2.0`.
+Identifikátor nebo výraz [licence SPDX](https://spdx.org/licenses/) například `Apache-2.0`.
 
 Tady je úplný seznam [identifikátorů licencí SPDX](https://spdx.org/licenses/). NuGet.org přijímá při použití výrazu typu licence pouze licence OSI nebo FSF schválené.
 
@@ -396,7 +400,7 @@ Tato logická hodnota určuje, zda mají být výstupní sestavení sestavení z
 
 ### <a name="includecontentinpack"></a>IncludeContentInPack
 
-Tato logická hodnota určuje, zda budou všechny položky, které mají typ `Content`, zahrnuty do výsledného balíčku automaticky. Výchozí hodnota je `true`.
+Tato logická hodnota určuje, zda budou všechny položky, které mají typ `Content`, zahrnuty do výsledného balíčku automaticky. Výchozí formát je `true`.
 
 ### <a name="buildoutputtargetfolder"></a>BuildOutputTargetFolder
 

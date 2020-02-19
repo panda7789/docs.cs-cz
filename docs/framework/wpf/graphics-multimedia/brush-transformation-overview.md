@@ -9,49 +9,49 @@ helpviewer_keywords:
 - properties [WPF], transformation
 - transformation properties of brushes [WPF]
 ms.assetid: 8b9bfc09-12fd-4cd5-b445-99949f27bc39
-ms.openlocfilehash: 39b3ad9bebfc56002f77ad6e9026a4446c95455b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1d3a56014e0975f3616b7f90021b4290ced5daab
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020631"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453127"
 ---
 # <a name="brush-transformation-overview"></a>Přehled transformace štětce
-Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Media.Brush.Transform%2A> a <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Vlastnosti umožňují otočit, škálování a zkosení a převede štětec obsah. Toto téma popisuje rozdíly mezi těmito dvěma vlastnostmi a poskytuje příklady jejich použití.  
+Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Media.Brush.Transform%2A> a <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Vlastnosti umožňují otáčet, škálovat, zkosit a překládat obsah štětce. Toto téma popisuje rozdíly mezi těmito dvěma vlastnostmi a poskytuje příklady jejich použití.  
   
 <a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Požadavky  
- V tomto tématu informace o tom, měli byste porozumět funkce štětec, který je transformace. Pro <xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>, najdete v článku [Malování plnými barvami a přechody přehled](painting-with-solid-colors-and-gradients-overview.md). Pro <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush>, naleznete v tématu [Malování pomocí obrázků, kreseb a vizuálních](painting-with-images-drawings-and-visuals.md). Také by měl být obeznámeni s 2D transformace podle [transformuje přehled](transforms-overview.md).  
+## <a name="prerequisites"></a>Předpoklady  
+ Pro pochopení tohoto tématu byste měli pochopit funkce štětce, které transformují. <xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>najdete v tématu [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md). <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>nebo <xref:System.Windows.Media.VisualBrush>, najdete v tématu [malování pomocí obrázků, kreseb a vizuálů](painting-with-images-drawings-and-visuals.md). Měli byste se také seznámit s 2D transformacemi popsanými v [přehledu transformací](transforms-overview.md).  
   
 <a name="transformversusrelativetransform"></a>   
-## <a name="differences-between-the-transform-and-relativetransform-properties"></a>Rozdíly mezi transformace a RelativeTransform vlastnosti  
- Při použití transformace štětec <xref:System.Windows.Media.Brush.Transform%2A> vlastnost, musíte znát velikosti oblasti malovaného Pokud budete chtít transformace štětce obsah o jeho střed. Předpokládejme, že malovaného oblast je 200 zařízení nezávislé pixelů na šířku a výšku 150.  Pokud jste použili <xref:System.Windows.Media.RotateTransform> otočit štětec výstup 45 stupňů o jeho střed, by dáte <xref:System.Windows.Media.RotateTransform> <xref:System.Windows.Media.RotateTransform.CenterX%2A> 100 a <xref:System.Windows.Media.RotateTransform.CenterY%2A> 75.  
+## <a name="differences-between-the-transform-and-relativetransform-properties"></a>Rozdíly mezi vlastnostmi Transform a funkci RelativeTransform  
+ Když aplikujete transformaci na vlastnost <xref:System.Windows.Media.Brush.Transform%2A> štětce, je potřeba znát velikost oblasti namalované, pokud chcete transformovat obsah štětce o jeho středu. Předpokládejme, že oblast namalovaného zařízení je 200 nezávisle na velikosti zařízení 150, která je ve vysokém  Pokud jste použili <xref:System.Windows.Media.RotateTransform> k otočení výstupu štětce o 45 stupňů od jeho středu, získáte <xref:System.Windows.Media.RotateTransform> <xref:System.Windows.Media.RotateTransform.CenterX%2A> 100 a <xref:System.Windows.Media.RotateTransform.CenterY%2A> 75.  
   
- Při použití transformace štětec <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost, že je použita transformace štětce před jeho výstupu se mapuje na oblasti malovaného. Následující seznam popisuje pořadí, ve kterém se zpracovat a transformovat štětec obsah.  
+ Když použijete transformaci na vlastnost <xref:System.Windows.Media.Brush.RelativeTransform%2A> štětce, tato transformace se aplikuje na štětec předtím, než se jeho výstup namapuje na oblast vykreslení. Následující seznam popisuje pořadí, ve kterém se obsah štětce zpracovává a transformuje.  
   
-1. Zpracovat obsah na stopu. Pro <xref:System.Windows.Media.GradientBrush>, to znamená, že určující oblasti přechodu. Pro <xref:System.Windows.Media.TileBrush>, <xref:System.Windows.Media.TileBrush.Viewbox%2A> je namapována na <xref:System.Windows.Media.TileBrush.Viewport%2A>. To se stane stopy výstup.  
+1. Zpracuje obsah štětce. Pro <xref:System.Windows.Media.GradientBrush>to znamená, že se určí oblast přechodu. Pro <xref:System.Windows.Media.TileBrush>je <xref:System.Windows.Media.TileBrush.Viewbox%2A> namapován na <xref:System.Windows.Media.TileBrush.Viewport%2A>. Toto se zobrazí jako výstup štětce.  
   
-2. Nástroj štětec výstupu projektu do obdélníku 1 × 1 transformace.  
+2. Promítnout výstup štětce do obdélníku transformace 1 x 1  
   
-3. Použití štětce společnosti <xref:System.Windows.Media.Brush.RelativeTransform%2A>, má-li nějaký.  
+3. Použijte <xref:System.Windows.Media.Brush.RelativeTransform%2A>štětce, pokud má jednu z nich.  
   
-4. Transformovaný výstup projektu do oblasti pro vykreslení.  
+4. Namalujte transformované výstupy na oblast, která se má malovat.  
   
-5. Použití štětce společnosti <xref:System.Windows.Media.Transform>, má-li nějaký.  
+5. Použijte <xref:System.Windows.Media.Transform>štětce, pokud má jednu z nich.  
   
- Vzhledem k tomu, <xref:System.Windows.Media.Brush.RelativeTransform%2A> se použije při stopy výstup je namapovaná na 1 × 1 obdélníku, center transformace a posunutí hodnoty se zdají být relativní. Například, pokud jste použili <xref:System.Windows.Media.RotateTransform> otočit štětec výstup 45 stupňů o jeho střed, by dáte <xref:System.Windows.Media.RotateTransform> <xref:System.Windows.Media.RotateTransform.CenterX%2A> 0,5 a <xref:System.Windows.Media.RotateTransform.CenterY%2A> 0,5.  
+ Vzhledem k tomu, že <xref:System.Windows.Media.Brush.RelativeTransform%2A> je použit, zatímco výstup štětce je namapován na 1 x 1 obdélník, hodnoty pro transformaci a posunutí se jeví jako relativní. Pokud jste například použili <xref:System.Windows.Media.RotateTransform> k otočení výstupu štětce 45 stupňů od jeho středu, získáte <xref:System.Windows.Media.RotateTransform> <xref:System.Windows.Media.RotateTransform.CenterX%2A> 0,5 a <xref:System.Windows.Media.RotateTransform.CenterY%2A> 0,5.  
   
- Následující obrázek znázorňuje výstup několik štětců, které byly otočit o 45 stupňů pomocí <xref:System.Windows.Media.Brush.RelativeTransform%2A> a <xref:System.Windows.Media.Brush.Transform%2A> vlastnosti.  
+ Následující ilustrace znázorňuje výstup několika štětců, které byly otočeny o 45 stupňů pomocí vlastností <xref:System.Windows.Media.Brush.RelativeTransform%2A> a <xref:System.Windows.Media.Brush.Transform%2A>.  
   
- ![Vlastnosti RelativeTransform a transformace](./media/graphicsmm-brushrelativetransform-transform-small.png "graphicsmm_brushrelativetransform_transform_small")  
+ ![Vlastnosti funkci RelativeTransform a Transform](./media/graphicsmm-brushrelativetransform-transform-small.png "graphicsmm_brushrelativetransform_transform_small")  
   
 <a name="relativetransformandtilebrush"></a>   
-## <a name="using-relativetransform-with-a-tilebrush"></a>Funkci RelativeTransform pomocí TileBrush  
- Vzhledem k tomu dlaždice štětce složitější než ostatní štětce, použití <xref:System.Windows.Media.Brush.RelativeTransform%2A> do jednoho může vést k neočekávaným výsledkům. Jako příklad může posloužit na následujícím obrázku.  
+## <a name="using-relativetransform-with-a-tilebrush"></a>Použití funkci RelativeTransform s objektem TileBrush  
+ Vzhledem k tomu, že štětce dlaždic jsou složitější než jiné štětce, může použití <xref:System.Windows.Media.Brush.RelativeTransform%2A> na jednu způsobit neočekávané výsledky. Například proveďte následující obrázek.  
   
- ![Zdroj image](./media/graphicsmm-reltransform-1-original-image.jpg "graphicsmm_reltransform_1_original_image")  
+ ![Zdrojový obrázek](./media/graphicsmm-reltransform-1-original-image.jpg "graphicsmm_reltransform_1_original_image")  
   
- Následující příklad používá <xref:System.Windows.Media.ImageBrush> má Vymalovat obdélníkovou oblast s předchozím obrázku. Se vztahuje <xref:System.Windows.Media.RotateTransform> k <xref:System.Windows.Media.ImageBrush> objektu <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost a nastaví jeho <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost <xref:System.Windows.Media.Stretch.UniformToFill>, který mělo zachovat poměr stran obrázku je mohla pro úplně naplnění obdélníku.  
+ Následující příklad používá <xref:System.Windows.Media.ImageBrush> k vykreslení obdélníkové oblasti s předchozím obrázkem. Aplikuje <xref:System.Windows.Media.RotateTransform> na vlastnost <xref:System.Windows.Media.Brush.RelativeTransform%2A> objektu <xref:System.Windows.Media.ImageBrush> a nastaví jeho vlastnost <xref:System.Windows.Media.TileBrush.Stretch%2A> na <xref:System.Windows.Media.Stretch.UniformToFill>, která by měla zachovat poměr stran obrázku, když je roztažen tak, aby byl obdélník zcela vyplněn.  
   
  [!code-xaml[BrushOverviewExamples_snip#GraphicsMMRelativeTransformExample2Inline](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/RelativeTransformIllustration.xaml#graphicsmmrelativetransformexample2inline)]  
   
@@ -59,45 +59,45 @@ Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Me
   
  ![Transformovaný výstup](./media/graphicsmm-reltransform-6-output.png "graphicsmm_reltransform_6_output")  
   
- Všimněte si, že na obrázku je zkreslený, i když na stopu <xref:System.Windows.Media.TileBrush.Stretch%2A> byl nastaven na <xref:System.Windows.Media.Stretch.UniformToFill>. Důvodem je, že je relativní transformace použita po stopy <xref:System.Windows.Media.TileBrush.Viewbox%2A> je namapována na jeho <xref:System.Windows.Media.TileBrush.Viewport%2A>. Následující seznam popisuje jednotlivé kroky procesu:  
+ Všimněte si, že obrázek je zkreslený, i když <xref:System.Windows.Media.TileBrush.Stretch%2A> štětce byl nastaven na <xref:System.Windows.Media.Stretch.UniformToFill>. To je proto, že se použije relativní transformace po namapování <xref:System.Windows.Media.TileBrush.Viewbox%2A> štětce na jeho <xref:System.Windows.Media.TileBrush.Viewport%2A>. Následující seznam popisuje jednotlivé kroky procesu:  
   
-1. Projekt na stopu obsah (<xref:System.Windows.Media.TileBrush.Viewbox%2A>) na jeho základní dlaždice (<xref:System.Windows.Media.TileBrush.Viewport%2A>) štětec pomocí <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení.  
+1. Promítnout obsah štětce (<xref:System.Windows.Media.TileBrush.Viewbox%2A>) na základní dlaždici (<xref:System.Windows.Media.TileBrush.Viewport%2A>) pomocí nastavení <xref:System.Windows.Media.TileBrush.Stretch%2A> štětce.  
   
-     ![Roztažení Viewbox přizpůsobit zobrazení](./media/graphicsmm-reltransform-2-viewbox-to-viewport.png "graphicsmm_reltransform_2_viewbox_to_viewport")  
+     ![Roztáhnout Viewbox tak, aby odpovídala zobrazení](./media/graphicsmm-reltransform-2-viewbox-to-viewport.png "graphicsmm_reltransform_2_viewbox_to_viewport")  
   
-2. Projekt základní dlaždice na 1 × 1 transformace obdélník.  
+2. Promítnout základní dlaždici na transformační obdélník 1 x 1  
   
-     ![Zobrazení mapy na obdélník transformace](./media/graphicsmm-reltransform-3-output-to-transform.png "graphicsmm_reltransform_3_output_to_transform")  
+     ![Mapování zobrazení na obdélník transformace](./media/graphicsmm-reltransform-3-output-to-transform.png "graphicsmm_reltransform_3_output_to_transform")  
   
-3. Použít <xref:System.Windows.Media.RotateTransform>.  
+3. Použijte <xref:System.Windows.Media.RotateTransform>.  
   
-     ![Umožňuje aplikovat relativní transformaci](./media/graphicsmm-reltransform-4-transform-rotate.png "graphicsmm_reltransform_4_transform_rotate")  
+     ![Použít relativní transformaci](./media/graphicsmm-reltransform-4-transform-rotate.png "graphicsmm_reltransform_4_transform_rotate")  
   
-4. Projekt transformovaný základní dlaždice do oblasti pro vykreslení.  
+4. Namalovat transformaci na základní dlaždici na oblast, která se má vykreslit.  
   
-     ![Transformovaný štětce projektu do výstupní oblasti](./media/graphicsmm-reltransform-5-transform-to-output.png "graphicsmm_reltransform_5_transform_to_output")  
+     ![Projekt transformované štětce do výstupní oblasti](./media/graphicsmm-reltransform-5-transform-to-output.png "graphicsmm_reltransform_5_transform_to_output")  
   
 <a name="rotateexample"></a>   
-## <a name="example-rotate-an-imagebrush-45-degrees"></a>Příklad: Otočit ImageBrush 45 stupňů  
- Následující příklad se vztahuje <xref:System.Windows.Media.RotateTransform> k <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost <xref:System.Windows.Media.ImageBrush>. <xref:System.Windows.Media.RotateTransform> Objektu <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> vlastnosti jsou obě nastaveny na 0,5, bod relativních souřadnicích center obsah. V důsledku toho jsou otočeny stopy obsah o jeho střed.  
+## <a name="example-rotate-an-imagebrush-45-degrees"></a>Příklad: otočení ImageBrush 45 stupňů  
+ Následující příklad aplikuje <xref:System.Windows.Media.RotateTransform> na vlastnost <xref:System.Windows.Media.Brush.RelativeTransform%2A> <xref:System.Windows.Media.ImageBrush>. Vlastnosti objektu <xref:System.Windows.Media.RotateTransform> <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> jsou nastaveny na hodnotu 0,5, relativní souřadnice centrálního bodu obsahu. V důsledku toho se obsah štětce otočí o jeho středu.  
   
  [!code-csharp[BrushesIntroduction_snip#ImageBrushRelativeTransformExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTransformExample.cs#imagebrushrelativetransformexample)]
  [!code-vb[BrushesIntroduction_snip#ImageBrushRelativeTransformExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtransformexample.vb#imagebrushrelativetransformexample)]
  [!code-xaml[BrushesIntroduction_snip#ImageBrushRelativeTransformExample](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTransformExample.xaml#imagebrushrelativetransformexample)]  
   
- V dalším příkladu platí také <xref:System.Windows.Media.RotateTransform> do <xref:System.Windows.Media.ImageBrush>, ale používá <xref:System.Windows.Media.Brush.Transform%2A> vlastnost místo <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost. Otočit štětec o jeho střed <xref:System.Windows.Media.RotateTransform> objektu <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> musí být nastavena na absolutní souřadnice. Vzhledem k tomu, že obdélník se kresleno štětec je 175 o 90 pixelů, je jeho středového bodu (87.5, 45).  
+ Následující příklad také použije <xref:System.Windows.Media.RotateTransform> na <xref:System.Windows.Media.ImageBrush>, ale místo vlastnosti <xref:System.Windows.Media.Brush.RelativeTransform%2A> používá vlastnost <xref:System.Windows.Media.Brush.Transform%2A>. Pro otočení štětce o jeho středu musí být <xref:System.Windows.Media.RotateTransform.CenterX%2A> a <xref:System.Windows.Media.RotateTransform.CenterY%2A> objektu <xref:System.Windows.Media.RotateTransform> nastavena na absolutní souřadnice. Vzhledem k tomu, že obdélník, který je vykreslen štětcem, je 175 × 90 pixelů, jeho středový bod je (87,5, 45).  
   
  [!code-csharp[BrushesIntroduction_snip#ImageBrushTransformExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/BrushTransformExample.cs#imagebrushtransformexample)]
  [!code-vb[BrushesIntroduction_snip#ImageBrushTransformExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/brushtransformexample.vb#imagebrushtransformexample)]
  [!code-xaml[BrushesIntroduction_snip#ImageBrushTransformExample](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/BrushTransformExample.xaml#imagebrushtransformexample)]  
   
- Následující obrázek znázorňuje štětce bez transformace, s transformací, která se použije k <xref:System.Windows.Media.Brush.RelativeTransform%2A> vlastnost a s transformací, která se použije k <xref:System.Windows.Media.Brush.Transform%2A> vlastnost.  
+ Následující ilustrace znázorňuje štětec bez transformace, s transformací použitou na vlastnost <xref:System.Windows.Media.Brush.RelativeTransform%2A> a s transformací použitou na vlastnost <xref:System.Windows.Media.Brush.Transform%2A>.  
   
- ![Štětec RelativeTransform workflow a transformovat nastavení](./media/wcpsdk-graphicsmm-transformandrelativetransform.png "wcpsdk_graphicsmm_transformandrelativetransform")  
+ ![Nastavení funkci RelativeTransform štětce a transformace](./media/wcpsdk-graphicsmm-transformandrelativetransform.png "wcpsdk_graphicsmm_transformandrelativetransform")  
   
- V tomto příkladu je součástí větší ukázky. Úplnou ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973). Další informace o štětcích, najdete v článku [přehled štětců WPF](wpf-brushes-overview.md).  
+ Tento příklad je součástí většího vzorku. Úplnou ukázku najdete v [ukázce štětce](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes). Další informace o štětcích naleznete v [přehledu štětců WPF](wpf-brushes-overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Media.Brush.Transform%2A>
 - <xref:System.Windows.Media.Brush.RelativeTransform%2A>

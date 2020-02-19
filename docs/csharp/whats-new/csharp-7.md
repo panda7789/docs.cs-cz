@@ -3,12 +3,12 @@ title: Co je nového v C# 7,0 – C# příručka
 description: Získejte přehled o nových funkcích v C# jazyce verze 7,0.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 73563a04dea04c942a6326d6a04ddd54bb80b0ed
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a6ac5c00ceb2ce8e5e56e2a86a8cde937d5108e2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694579"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448631"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v C# 7,0
 
@@ -236,7 +236,7 @@ Díky tomu je snazší psát další kód založený na výrazu. Pro kontrolu ch
 
 Vrácení `Task` objektu z asynchronních metod může způsobit kritické body výkonu v určitých cestách. `Task` je odkazový typ, takže jeho použití znamená přidělení objektu. V případech, kdy metoda deklarovaná s modifikátorem `async` vrací výsledek uložený v mezipaměti nebo je dokončena synchronně, se další přidělení můžou stát značnými náklady v částech kritického výkonu v kódu. Pokud dojde k přidělení v těsných smyčkách, může to být nákladné.
 
-Nová funkce jazyka znamená, že návratové typy asynchronní metody nejsou omezeny na `Task`, `Task<T>`a `void`. Vrácený typ musí stále splňovat asynchronní vzorek, což znamená, že metoda `GetAwaiter` musí být přístupná. Jako jeden konkrétní příklad byl do rozhraní .NET Framework přidán `ValueTask` typ, aby bylo možné používat tuto novou jazykovou funkci:
+Nová funkce jazyka znamená, že návratové typy asynchronní metody nejsou omezeny na `Task`, `Task<T>`a `void`. Vrácený typ musí stále splňovat asynchronní vzorek, což znamená, že metoda `GetAwaiter` musí být přístupná. Jako jeden konkrétní příklad byl do .NET přidán `ValueTask` typ, aby bylo možné používat tuto novou jazykovou funkci:
 
 [!code-csharp[UsingValueTask](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#UsingValueTask "Using ValueTask")]
 

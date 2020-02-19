@@ -2,12 +2,12 @@
 title: Průběžná integrace (CI) s .NET Core SDK a nástroji
 description: Naučte se používat .NET Core SDK a jeho nástroje na serveru sestavení s nepřetržitou integrací.
 ms.date: 05/18/2017
-ms.openlocfilehash: bdb3913cbe588377d9fbee0f1c054e682629ac96
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 6e23a21dd36422a095e56519c9aa28ce2549f7b2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215235"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451035"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Používání .NET Core SDK a nástrojů v kontinuální integraci (CI)
 
@@ -32,7 +32,7 @@ Skript instalačního programu je automatizovaný pro spuštění na začátku s
 > [!NOTE]
 > **Služby Azure DevOps**
 >
-> Při použití skriptu instalačního programu nejsou nativní závislosti automaticky nainstalovány. Nativní závislosti je nutné nainstalovat, pokud je operační systém neobsahuje. Další informace najdete v tématu [závislosti a požadavky .NET Core](../install/dependencies.md?tabs=netcore30&pivots=os-linux).
+> Při použití skriptu instalačního programu nejsou nativní závislosti automaticky nainstalovány. Nativní závislosti je nutné nainstalovat, pokud je operační systém neobsahuje. Další informace najdete v tématu [závislosti a požadavky .NET Core](../install/dependencies.md).
 
 ## <a name="ci-setup-examples"></a>Příklady nastavení CI
 

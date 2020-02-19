@@ -9,12 +9,12 @@ helpviewer_keywords:
 - filtering data in views [WPF]
 - data binding [WPF], filtering data in views
 ms.assetid: c76e8606-4cc4-45a8-9110-e2ec66dc6afd
-ms.openlocfilehash: ea49897ca5e9cb6b639cf7d98ff05bd287c51761
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f15bcfd1e3c4175f8b4b97244f120d5edbdec9b8
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453480"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453075"
 ---
 # <a name="how-to-filter-data-in-a-view"></a>Postupy: Filtrování dat v zobrazení
 Tento příklad ukazuje, jak filtrovat data v zobrazení.  
@@ -35,7 +35,7 @@ Tento příklad ukazuje, jak filtrovat data v zobrazení.
  [!code-csharp[SortFilter#Unfilter](~/samples/snippets/csharp/VS_Snippets_Wpf/SortFilter/CSharp/Page1.xaml.cs#unfilter)]
  [!code-vb[SortFilter#Unfilter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SortFilter/VisualBasic/Page1.xaml.vb#unfilter)]  
   
- Informace o tom, jak vytvořit nebo získat zobrazení, najdete v tématu [získání výchozího zobrazení sběru dat](how-to-get-the-default-view-of-a-data-collection.md). Úplný příklad najdete v tématu [řazení a filtrování položek v ukázce zobrazení](https://go.microsoft.com/fwlink/?LinkID=160040).  
+ Informace o tom, jak vytvořit nebo získat zobrazení, najdete v tématu [získání výchozího zobrazení sběru dat](how-to-get-the-default-view-of-a-data-collection.md). Úplný příklad najdete v tématu [řazení a filtrování položek v ukázce zobrazení](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/SortFilter).  
   
  Pokud objekt zobrazení pochází z <xref:System.Windows.Data.CollectionViewSource> objektu, použijete logiku filtrování nastavením obslužné rutiny události pro událost <xref:System.Windows.Data.CollectionViewSource.Filter>. V následujícím příkladu je `listingDataView` instance <xref:System.Windows.Data.CollectionViewSource>.  
   
@@ -47,7 +47,7 @@ Tento příklad ukazuje, jak filtrovat data v zobrazení.
  [!code-csharp[DataBindingLab#5](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#5)]
  [!code-vb[DataBindingLab#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#5)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Data.CollectionView.CanFilter%2A>
 - <xref:System.Windows.Data.BindingListCollectionView.CustomFilter%2A>
