@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: caf12296b208b3d2e57c3a74300cced225e4db66
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 38ca93f62a066bade988a89b704fca26368b0b2b
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738757"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504160"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -48,11 +48,11 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 1. Stáhněte [soubor zip datové sady mínění s popiskem "UCI" (viz citace v následující poznámce)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho do libovolné složky, kterou zvolíte.
 
     > [!NOTE]
-    > Tento kurz používá datovou sadu ze skupiny "od" až po jednotlivé štítky pomocí hlubokých funkcí, Kotzias et al,. KONFERENCE KDD 2015 a hostuje se v úložišti UCI Machine Learning – Dua, D. a Karra Taniskidou, E. (2017). UCI Machine Learning úložiště [http://archive.ics.uci.edu/ml ]. Irvine, CA: University of California, školní informace a počítačové vědy.
+    > Tento kurz používá datovou sadu ze skupiny "od" až po jednotlivé štítky pomocí hlubokých funkcí, Kotzias et al,. KONFERENCE KDD 2015 a hostuje se v úložišti UCI Machine Learning – Dua, D. a Karra Taniskidou, E. (2017). UCI Machine Learning úložiště [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, školní informace a počítačové vědy.
 
 2. Zkopírujte soubor `yelp_labelled.txt` do složky, kterou jste dříve vytvořili (například `/cli-test`).
 
-3. Otevřete preferovaný příkazový řádek a přejděte do složky, do které jste zkopírovali soubor DataSet. Příklad:
+3. Otevřete preferovaný příkazový řádek a přejděte do složky, do které jste zkopírovali soubor DataSet. Například:
 
     ```console
     cd /cli-test
@@ -83,7 +83,7 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 1. Spusťte následující příkaz ML.NET CLI:
 
     ```console
-    mlnet auto-train --task binary-classification --dataset "yelp_labelled.txt" --label-column-index 1 --has-header false --max-exploration-time 10
+    mlnet auto-train --task binary-classification --dataset "yelp_labelled.txt" --label-column-index 1 --has-header false --max-exploration-time 10
     ```
 
     Tento příkaz spustí **příkaz`mlnet auto-train`** :
@@ -97,11 +97,11 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 
     <!-- markdownlint-disable MD023 MD025 -->
 
-    # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+    # <a name="windows"></a>[Windows](#tab/windows)
 
     ![ML.NET CLI auto-vlak v PowerShellu](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
 
-    # <a name="macos-bashtabmacosbash"></a>[macOS bash](#tab/macosbash)
+    # <a name="macos-bash"></a>[macOS bash](#tab/macosbash)
 
     ![ML.NET CLI auto-vlak v PowerShellu](./media/mlnet-cli/mlnet-auto-train-binary-classification-bash.gif)
 
@@ -174,42 +174,42 @@ Tyto vyčíslované prostředky jsou vysvětleny v následujících krocích kur
     }
     ```
 
-- První řádek kódu jednoduše vytvoří objekt `MLContext` potřebný při každém spuštění kódu ML.NET.
+    - První řádek kódu jednoduše vytvoří objekt `MLContext` potřebný při každém spuštění kódu ML.NET.
 
-- Druhý řádek kódu je komentovaný, protože model nepotřebujete vyškolit, protože už ho pro vás vyškole nástroj CLI a uložil se do serializovaného modelu. Soubor ZIP. Pokud ale chcete vidět, *jak byl model vyškolený* rozhraním příkazového řádku, můžete tento řádek odkomentovat a spustit/ladit školicí kód, který se používá pro konkrétní model ml.
+    - Druhý řádek kódu je komentovaný, protože model nepotřebujete vyškolit, protože už ho pro vás vyškole nástroj CLI a uložil se do serializovaného modelu. Soubor ZIP. Pokud ale chcete vidět, *jak byl model vyškolený* rozhraním příkazového řádku, můžete tento řádek odkomentovat a spustit/ladit školicí kód, který se používá pro konkrétní model ml.
 
-- Ve třetím řádku kódu načtete model z serializovaného modelu. Soubor ZIP s rozhraním API pro `mlContext.Model.Load()` poskytnutím cesty k tomuto modelu. Soubor ZIP.
+    - Ve třetím řádku kódu načtete model z serializovaného modelu. Soubor ZIP s rozhraním API pro `mlContext.Model.Load()` poskytnutím cesty k tomuto modelu. Soubor ZIP.
 
-- Ve čtvrtém řádku kódu, který načtete, vytvořte objekt `PredictionEngine` s rozhraním API `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)`. `PredictionEngine` objekt budete potřebovat vždy, když chcete vytvořit předpověď, která cílí na jeden vzorek dat (v tomto případě jediného textu, který předpovídá své mínění).
+    - Ve čtvrtém řádku kódu, který načtete, vytvořte objekt `PredictionEngine` s rozhraním API `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)`. `PredictionEngine` objekt budete potřebovat vždy, když chcete vytvořit předpověď, která cílí na jeden vzorek dat (v tomto případě jediného textu, který předpovídá své mínění).
 
-- Pátý řádek kódu je místo, kde vytvoříte tato *jediná ukázková data* , která se mají použít pro předpověď voláním funkce `CreateSingleDataSample()`. Vzhledem k tomu, že nástroj rozhraní příkazového řádku neví, jaký druh dat použít, v rámci této funkce načítá první řádek datové sady. Nicméně v tomto případě můžete také vytvořit vlastní "pevně kódovaná" data namísto aktuální implementace funkce `CreateSingleDataSample()` aktualizací tohoto jednoduššího kódu, který implementuje tuto funkci:
+    - Pátý řádek kódu je místo, kde vytvoříte tato *jediná ukázková data* , která se mají použít pro předpověď voláním funkce `CreateSingleDataSample()`. Vzhledem k tomu, že nástroj rozhraní příkazového řádku neví, jaký druh dat použít, v rámci této funkce načítá první řádek datové sady. Nicméně v tomto případě můžete také vytvořit vlastní "pevně kódovaná" data namísto aktuální implementace funkce `CreateSingleDataSample()` aktualizací tohoto jednoduššího kódu, který implementuje tuto funkci:
 
-    ```csharp
-    private static ModelInput CreateSingleDataSample()
-    {
-        ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
-        return sampleForPrediction;
-    }
-    ```
+        ```csharp
+        private static ModelInput CreateSingleDataSample()
+        {
+            ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
+            return sampleForPrediction;
+        }
+        ```
 
 1. Spusťte projekt, a to buď pomocí původních ukázkových dat načtených z prvního řádku datové sady, nebo poskytnutím vlastních pevně zakódovaných ukázkových dat. Měli byste dosáhnout předpovědi srovnatelné s:
 
-    # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+    # <a name="windows"></a>[Windows](#tab/windows)
 
     Spusťte konzolovou aplikaci ze sady Visual Studio tak, že kliknete na F5 (tlačítko Přehrát):
 
     ![ML.NET CLI auto-vlak v PowerShellu](./media/mlnet-cli/sample-cli-prediction-execution.png))
 
-    # <a name="macos-bashtabmacosbash"></a>[macOS bash](#tab/macosbash)
+    # <a name="macos-bash"></a>[macOS bash](#tab/macosbash)
 
     Spusťte konzolovou aplikaci z příkazového řádku zadáním následujících příkazů:
 
-     ```bash
-     cd SampleBinaryClassification
-     cd SampleBinaryClassification.ConsoleApp
+    ```dotnetcli
+    cd SampleBinaryClassification
+    cd SampleBinaryClassification.ConsoleApp
 
-     dotnet run
-     ```
+    dotnet run
+    ```
 
     ![ML.NET CLI auto-vlak v PowerShellu](./media/mlnet-cli/sample-cli-prediction-execution-bash.png))
 
@@ -257,7 +257,7 @@ V tomto kurzu jste se naučili:
 > - Pochopení generovaného C# kódu pro spuštění modelu (kód pro použití v aplikaci koncového uživatele)
 > - Prozkoumejte vygenerovaný C# kód, který se použil ke studiu "nejlepší kvality" modelu (vzdělávací účely).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET](../automate-training-with-cli.md)
 - [Kurz: používání modelů ML.NET na škálovatelných ASP.NET Core Web Apps a rozhraní WebApi](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)

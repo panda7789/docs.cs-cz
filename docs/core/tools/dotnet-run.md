@@ -1,21 +1,17 @@
 ---
 title: příkaz dotnet run
 description: Příkaz dotnet Run poskytuje pohodlný způsob, jak spustit aplikaci ze zdrojového kódu.
-ms.date: 10/31/2019
-ms.openlocfilehash: 5920f0d1f04204b286fdf6f51f5fd13644846390
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/19/2020
+ms.openlocfilehash: 415d7079db6a3da80c4fcf2074307ea760e84982
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734100"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503605"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
-**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -23,40 +19,12 @@ ms.locfileid: "76734100"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-<!-- markdownlint-disable MD025 -->
-
-# <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
-
 ```dotnetcli
-dotnet run [-c|--configuration] [-f|--framework] [--force] [--interactive] [--launch-profile] [--no-build] [--no-dependencies]
-    [--no-launch-profile] [--no-restore] [-p|--project] [-r|--runtime] [-v|--verbosity] [[--] [application arguments]]
+dotnet run [-c|--configuration] [-f|--framework] [--force] [--interactive] [--launch-profile] 
+    [--no-build] [--no-dependencies] [--no-launch-profile] [--no-restore] [-p|--project] 
+    [-r|--runtime] [-v|--verbosity] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
-
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
-
-```dotnetcli
-dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies]
-    [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [-v|--verbosity] [[--] [application arguments]]
-dotnet run [-h|--help]
-```
-
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
-
-```dotnetcli
-dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies]
-    [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [[--] [application arguments]]
-dotnet run [-h|--help]
-```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
-
-```dotnetcli
-dotnet run [-c|--configuration] [-f|--framework] [-p|--project] [[--] [application arguments]]
-dotnet run [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Popis
 
@@ -80,209 +48,84 @@ Chcete-li spustit aplikaci, příkaz `dotnet run` vyřeší závislosti aplikace
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
+- **`--`**
 
-`--`
+  Odděluje argumenty pro `dotnet run` z argumentů pro spouštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
 
-Odděluje argumenty pro `dotnet run` z argumentů pro spouštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
+- **`-c|--configuration <CONFIGURATION>`**
 
-`-c|--configuration {Debug|Release}`
+  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`, ale můžete přepsat nastavení konfigurace sestavení v projektu.
 
-Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`.
+- **`-f|--framework <FRAMEWORK>`**
 
-`-f|--framework <FRAMEWORK>`
+  Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rozhraní musí být určeno v souboru projektu.
 
-Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rozhraní musí být určeno v souboru projektu.
+- **`--force`**
 
-`--force`
+  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
 
-Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
+- **`-h|--help`**
 
-`-h|--help`
+  Vypíše krátkou nápovědu k příkazu.
 
-Vypíše krátkou nápovědu k příkazu.
+- **`--interactive`**
 
-`--interactive`
+  Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování). K dispozici od verze .NET Core 3,0 SDK.
 
-Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování).
+- **`--launch-profile <NAME>`**
 
-`--launch-profile <NAME>`
+  Název spouštěcího profilu (pokud existuje), který se má použít při spouštění aplikace Spouštěcí profily jsou definované v souboru *launchSettings. JSON* a obvykle se nazývají `Development`, `Staging`a `Production`. Další informace najdete v tématu [práce s více prostředími](/aspnet/core/fundamentals/environments).
 
-Název spouštěcího profilu (pokud existuje), který se má použít při spouštění aplikace Spouštěcí profily jsou definované v souboru *launchSettings. JSON* a obvykle se nazývají `Development`, `Staging`a `Production`. Další informace najdete v tématu [práce s více prostředími](/aspnet/core/fundamentals/environments).
+- **`--no-build`**
 
-`--no-build`
+  Před spuštěním nevytvoří projekt. Také implicitně nastaví příznak `--no-restore`.
 
-Před spuštěním nevytvoří projekt. Také implicitně nastaví příznak `--no-restore`.
+- **`--no-dependencies`**
 
-`--no-dependencies`
+  Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
 
-Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
+- **`--no-launch-profile`**
 
-`--no-launch-profile`
+  Nepokusí se nakonfigurovat aplikaci pomocí *launchSettings. JSON* .
 
-Nepokusí se nakonfigurovat aplikaci pomocí *launchSettings. JSON* .
+- **`--no-restore`**
 
-`--no-restore`
+  Při spuštění příkazu neprovede implicitní obnovení.
 
-Při spuštění příkazu neprovede implicitní obnovení.
+- **`-p|--project <PATH>`**
 
-`-p|--project <PATH>`
+  Určuje cestu k souboru projektu, který se má spustit (název složky nebo úplná cesta). Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
 
-Určuje cestu k souboru projektu, který se má spustit (název složky nebo úplná cesta). Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
+- **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-`--runtime <RUNTIME_IDENTIFIER>`
+  Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). pro sadu .NET Core 3,0 SDK je `-r` k dispozici krátká možnost.
 
-Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
+- **`-v|--verbosity <LEVEL>`**
 
-`-v|--verbosity <LEVEL>`
-
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
-
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
-
-`--`
-
-Odděluje argumenty pro `dotnet run` z argumentů pro spouštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
-
-`-c|--configuration {Debug|Release}`
-
-Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`.
-
-`-f|--framework <FRAMEWORK>`
-
-Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rozhraní musí být určeno v souboru projektu.
-
-`--force`
-
-Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
-
-`-h|--help`
-
-Vypíše krátkou nápovědu k příkazu.
-
-`--launch-profile <NAME>`
-
-Název spouštěcího profilu (pokud existuje), který se má použít při spouštění aplikace Spouštěcí profily jsou definované v souboru *launchSettings. JSON* a obvykle se nazývají `Development`, `Staging`a `Production`. Další informace najdete v tématu [práce s více prostředími](/aspnet/core/fundamentals/environments).
-
-`--no-build`
-
-Před spuštěním nevytvoří projekt. Také implicitně nastaví příznak `--no-restore`.
-
-`--no-dependencies`
-
-Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
-
-`--no-launch-profile`
-
-Nepokusí se nakonfigurovat aplikaci pomocí *launchSettings. JSON* .
-
-`--no-restore`
-
-Při spuštění příkazu neprovede implicitní obnovení.
-
-`-p|--project <PATH>`
-
-Určuje cestu k souboru projektu, který se má spustit (název složky nebo úplná cesta). Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
-
-`--runtime <RUNTIME_IDENTIFIER>`
-
-Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
-
-`-v|--verbosity <LEVEL>`
-
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
-
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
-
-`--`
-
-Odděluje argumenty pro `dotnet run` z argumentů pro spouštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
-
-`-c|--configuration {Debug|Release}`
-
-Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`.
-
-`-f|--framework <FRAMEWORK>`
-
-Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rozhraní musí být určeno v souboru projektu.
-
-`--force`
-
-Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
-
-`-h|--help`
-
-Vypíše krátkou nápovědu k příkazu.
-
-`--launch-profile <NAME>`
-
-Název spouštěcího profilu (pokud existuje), který se má použít při spouštění aplikace Spouštěcí profily jsou definované v souboru *launchSettings. JSON* a obvykle se nazývají `Development`, `Staging`a `Production`. Další informace najdete v tématu [práce s více prostředími](/aspnet/core/fundamentals/environments).
-
-`--no-build`
-
-Před spuštěním nevytvoří projekt. Také implicitně nastaví příznak `--no-restore`.
-
-`--no-dependencies`
-
-Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
-
-`--no-launch-profile`
-
-Nepokusí se nakonfigurovat aplikaci pomocí *launchSettings. JSON* .
-
-`--no-restore`
-
-Při spuštění příkazu neprovede implicitní obnovení.
-
-`-p|--project <PATH>`
-
-Určuje cestu k souboru projektu, který se má spustit (název složky nebo úplná cesta). Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
-
-`--runtime <RUNTIME_IDENTIFIER>`
-
-Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
-
-`--`
-
-Odděluje argumenty pro `dotnet run` z argumentů pro spouštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
-
-`-c|--configuration {Debug|Release}`
-
-Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`.
-
-`-f|--framework <FRAMEWORK>`
-
-Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rozhraní musí být určeno v souboru projektu.
-
-`-h|--help`
-
-Vypíše krátkou nápovědu k příkazu.
-
-`-p|--project <PATH/PROJECT.csproj>`
-
-Určuje cestu a název souboru projektu. (Podívejte se na poznámku.) Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
-
-> [!NOTE]
-> Použijte cestu a název souboru projektu s možností `-p|--project`. Regrese v rozhraní příkazového řádku zabraňuje tomu, aby poskytovala cestu ke složce .NET Core SDK 1. x. Další informace o tomto problému naleznete v tématu [dotnet Run-p. nelze spustit projekt (dotnet/cli #5992)](https://github.com/dotnet/cli/issues/5992).
-
----
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `m`. K dispozici od verze .NET Core 2,1 SDK. 
 
 ## <a name="examples"></a>Příklady
 
-Spustit projekt v aktuálním adresáři:
+- Spustit projekt v aktuálním adresáři:
 
-`dotnet run`
+  ```dotnetcli
+  dotnet run
+  ```
 
-Spustit zadaný projekt:
+- Spustit zadaný projekt:
 
-`dotnet run --project ./projects/proj1/proj1.csproj`
+  ```dotnetcli
+  dotnet run --project ./projects/proj1/proj1.csproj
+  ```
 
-Spustí projekt v aktuálním adresáři (`--help` argument v tomto příkladu je předán do aplikace, protože je použita možnost prázdné `--`):
+- Spustí projekt v aktuálním adresáři (`--help` argument v tomto příkladu je předán do aplikace, protože je použita možnost prázdné `--`):
 
-`dotnet run --configuration Release -- --help`
+  ```dotnetcli
+  dotnet run --configuration Release -- --help
+  ```
 
-Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pouze s minimálním výstupem a potom spusťte projekt: (.NET Core SDK 2,0 a novější verze):
+- Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pouze s minimálním výstupem a potom spusťte projekt: (.NET Core SDK 2,0 a novější verze):
 
-`dotnet run --verbosity m`
+  ```dotnetcli
+  dotnet run --verbosity m
+  ```

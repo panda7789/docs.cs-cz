@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 8ce2710d71c56f182e936f898e25539bc50d3827
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3efc54cea7e10bc21a472a7fa9d4026e305be79a
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341354"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503835"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>Jak ověřit, že je rozhraní .NET Core již nainstalováno
 
@@ -23,13 +23,17 @@ Pokud některý z příkazů v tomto článku neproběhne úspěšně, nemáte n
 
 ## <a name="check-sdk-versions"></a>Kontrolovat verze sady SDK
 
-Můžete si prohlédnout, které verze .NET Core SDK jsou aktuálně nainstalovány s terminálem. Otevřete terminál a spusťte příkaz `dotnet --list-sdks`.
+Můžete si prohlédnout, které verze .NET Core SDK jsou aktuálně nainstalovány s terminálem. Otevřete terminál a spusťte následující příkaz.
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+Zobrazí se výstup podobný následujícímu.
 
 ::: zone pivot="os-windows"
 
 ```console
-dotnet --list-sdks
-
 2.1.500 [C:\program files\dotnet\sdk]
 2.1.502 [C:\program files\dotnet\sdk]
 2.1.504 [C:\program files\dotnet\sdk]
@@ -45,8 +49,6 @@ dotnet --list-sdks
 ::: zone pivot="os-linux"
 
 ```bash
-dotnet --list-sdks
-
 2.1.500 [/home/user/dotnet/sdk]
 2.1.502 [/home/user/dotnet/sdk]
 2.1.504 [/home/user/dotnet/sdk]
@@ -62,8 +64,6 @@ dotnet --list-sdks
 ::: zone pivot="os-macos"
 
 ```bash
-dotnet --list-sdks
-
 2.1.500 [/usr/local/share/dotnet/sdk]
 2.1.502 [/usr/local/share/dotnet/sdk]
 2.1.504 [/usr/local/share/dotnet/sdk]
@@ -78,13 +78,17 @@ dotnet --list-sdks
 
 ## <a name="check-runtime-versions"></a>Kontrolovat verze modulu runtime
 
-Můžete zjistit, které verze modulu runtime .NET Core jsou aktuálně nainstalovány pomocí příkazu `dotnet --list-runtimes`.
+Verze modulu runtime .NET Core, které jsou aktuálně nainstalovány, můžete zobrazit pomocí následujícího příkazu.
+
+```dotnetcli
+dotnet --list-runtimes
+```
+
+Zobrazí se výstup podobný následujícímu.
 
 ::: zone pivot="os-windows"
 
 ```console
-dotnet --list-runtimes
-
 Microsoft.AspNetCore.All 2.1.7 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.2.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
@@ -113,8 +117,6 @@ Microsoft.WindowsDesktop.App 3.1.0 [c:\program files\dotnet\shared\Microsoft.Win
 ::: zone pivot="os-linux"
 
 ```bash
-dotnet --list-runtimes
-
 Microsoft.AspNetCore.All 2.1.7 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.2.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
@@ -141,8 +143,6 @@ Microsoft.NETCore.App 3.1.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 ::: zone pivot="os-macos"
 
 ```bash
-dotnet --list-runtimes
-
 Microsoft.AspNetCore.All 2.1.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.2.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]

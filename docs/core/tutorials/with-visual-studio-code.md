@@ -3,18 +3,18 @@ title: Začínáme s jazykem C# a nástrojem Visual Studio Code
 description: Naučte se, jak vytvořit a ladit první aplikaci .NET Core C# pomocí Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: fdf26d67ca06ffb5ae9f8c12aa29819280770d5c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: acd1c300545bc6c107552576180afd7dec6b7382
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715311"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503517"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
 .NET Core poskytuje rychlou a modulární platformu pro vytváření aplikací, které běží na systémech Windows, Linux a macOS. Pomocí Visual Studio Code s C# rozšířením můžete získat výkonné prostředí pro C# úpravy s plnou podporou technologie IntelliSense (inteligentní dokončování kódu) a ladění.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 1. Nainstalujte [Visual Studio Code](https://code.visualstudio.com/).
 2. Nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download).
@@ -56,7 +56,7 @@ Pojďme začít jednoduchý program Hello World v .NET Core:
 
 Můžete si také prohlédnout krátký video kurz pro další nápovědu k instalaci ve [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [MacOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS)nebo [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Ladit
+## <a name="debug"></a>Ladění
 
 1. Otevřete *program.cs* kliknutím na něj. Při prvním otevření C# souboru v Visual Studio Code [OmniSharp](https://www.omnisharp.net/) načte v editoru.
 
@@ -129,8 +129,13 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 
 5. Uložte změny a spusťte program znovu. Nová zpráva by se měla zobrazit spolu s připojovacím řetězcem.
 
+    ```dotnetcli
+    dotnet run
+    ```
+
+    Zobrazí se následující výstup:
+
     ```console
-    > dotnet run
     Hello World! Happy coding!
     ```
 
@@ -140,7 +145,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 
 Rozšíření Visual Studio Code C# může generovat assety pro sestavení a ladění. Visual Studio Code vás vyzve k vygenerování těchto assetů při prvním otevření C# projektu. Pokud jste nevytvořili prostředky, můžete přesto spustit tento příkaz otevřením palety příkazů (**zobrazení palety příkazů zobrazit >** ) a zadáním "> .NET: generovat prostředky pro sestavení a ladění". Výběrem této možnosti se vytvoří konfigurační soubory *. VSCode*, *Launch. JSON*a *Tasks. JSON* , které potřebujete.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nastavení Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)
 - [Ladění v Visual Studio Code](https://code.visualstudio.com/Docs/editor/debugging)

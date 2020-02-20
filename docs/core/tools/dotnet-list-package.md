@@ -1,21 +1,21 @@
 ---
 title: příkaz dotnet list Package
 description: Příkaz dotnet list Package nabízí pohodlný možnost zobrazit seznam odkazů na balíčky pro projekt nebo řešení.
-ms.date: 06/26/2019
-ms.openlocfilehash: fe95f3898c5bd85956f4312eb4d20259227e9ff0
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 02/14/2020
+ms.openlocfilehash: bd275c308c3a213661d5cc6c7e60817620f076a5
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117725"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503735"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
-[!INCLUDE [topic-appliesto-net-core-22plus](../../../includes/topic-appliesto-net-core-22plus.md)]
+**Tento článek se týká:** ✔️ .net Core 2,2 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
-`dotnet list package`– Obsahuje odkazy na balíčky pro projekt nebo řešení.
+`dotnet list package` – obsahuje odkazy na balíček pro projekt nebo řešení.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -27,49 +27,43 @@ dotnet list package [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet list package` Příkaz nabízí pohodlný možnost zobrazit seznam všech odkazů balíčků NuGet pro konkrétní projekt nebo řešení. Nejprve je třeba sestavit projekt, aby bylo možné pro tento příkaz zpracovat potřebné prostředky. Následující příklad ukazuje výstup `dotnet list package` příkazu pro projekt [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) :
+Příkaz `dotnet list package` nabízí pohodlný možnost zobrazit seznam všech odkazů na balíčky NuGet pro konkrétní projekt nebo řešení. Nejprve je třeba sestavit projekt, aby bylo možné pro tento příkaz zpracovat potřebné prostředky. Následující příklad ukazuje výstup příkazu `dotnet list package` pro projekt [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) :
 
 ```output
 Project 'SentimentAnalysis' has the following package references
    [netcoreapp2.1]:
    Top-level Package               Requested   Resolved
-   > Microsoft.ML                  0.11.0      0.11.0
+   > Microsoft.ML                  1.4.0       1.4.0
    > Microsoft.NETCore.App   (A)   [2.1.0, )   2.1.0
 
 (A) : Auto-referenced package.
 ```
 
-**Požadovaný** sloupec odkazuje na verzi balíčku zadanou v souboru projektu a může být rozsahem. Sloupec **vyřešený** obsahuje verzi, kterou projekt aktuálně používá, a je vždy jednou hodnotou. Balíčky zobrazující `(A)` právo vedle jejich názvů představují [Implicitní odkazy na balíčky](csproj.md#implicit-package-references) , které jsou odvozeny z nastavení projektu (`Sdk` typ, `<TargetFramework>` nebo `<TargetFrameworks>` vlastnost atd.).
+**Požadovaný** sloupec odkazuje na verzi balíčku zadanou v souboru projektu a může být rozsahem. Sloupec **vyřešený** obsahuje verzi, kterou projekt aktuálně používá, a je vždy jednou hodnotou. Balíčky zobrazující `(A)` vpravo vedle jejich názvů představují [Implicitní odkazy na balíčky](csproj.md#implicit-package-references) , které jsou odvozeny z nastavení projektu (typ`Sdk`, `<TargetFramework>` nebo `<TargetFrameworks>` Property atd.).
 
-`--outdated` Pomocí možnosti zjistíte, jestli jsou v projektech k dispozici novější verze balíčků, které používáte. Ve výchozím nastavení `--outdated` zobrazí seznam nejnovějších stabilních balíčků, pokud není přeložená verze zároveň předprodejní verze. Pokud chcete při výpisu novějších verzí zahrnout předběžné verze, zadejte `--include-prerelease` také možnost. Následující příklady ukazují výstup `dotnet list package --outdated --include-prerelease` příkazu pro stejný projekt jako předchozí příklad:
+Pomocí možnosti `--outdated` zjistíte, jestli jsou v projektech k dispozici novější verze balíčků, které používáte. Ve výchozím nastavení `--outdated` uvádí nejnovější stabilní balíčky, pokud není přeložená verze zároveň předprodejní verze. Chcete-li zahrnout předprodejní verze při výpisu novějších verzí, zadejte také možnost `--include-prerelease`. Následující příklady ukazují výstup příkazu `dotnet list package --outdated --include-prerelease` pro stejný projekt jako předchozí příklad:
 
 ```output
 The following sources were used:
    https://api.nuget.org/v3/index.json
+   C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
 
 Project `SentimentAnalysis` has the following updates to its packages
    [netcoreapp2.1]:
    Top-level Package      Requested   Resolved   Latest
-   > Microsoft.ML         0.11.0      0.11.0     1.0.0-preview
+   > Microsoft.ML         1.4.0       1.4.0      1.5.0-preview
 ```
 
-Pokud potřebujete zjistit, zda má váš projekt přenositelné závislosti, použijte `--include-transitive` možnost. K přenosným závislostem dochází při přidávání balíčku do projektu, který se následně spoléhá na jiný balíček. Následující příklad ukazuje výstup z spuštění `dotnet list package --include-transitive` příkazu pro projekt [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) , který zobrazuje balíčky nejvyšší úrovně a balíčky, na kterých jsou závislé:
+Pokud potřebujete zjistit, zda má váš projekt přenositelné závislosti, použijte možnost `--include-transitive`. K přenosným závislostem dochází při přidávání balíčku do projektu, který se následně spoléhá na jiný balíček. Následující příklad ukazuje výstup z spuštění příkazu `dotnet list package --include-transitive` pro projekt [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) , který zobrazuje balíčky nejvyšší úrovně a balíčky, na kterých jsou závislé:
 
 ```output
 Project 'HelloPlugin' has the following package references
    [netcoreapp3.0]:
-   Top-level Package                      Requested                    Resolved
-   > Microsoft.NETCore.Platforms    (A)   [3.0.0-preview3.19128.7, )   3.0.0-preview3.19128.7
-   > Microsoft.WindowsDesktop.App   (A)   [3.0.0-preview3-27504-2, )   3.0.0-preview3-27504-2
-
-   Transitive Package               Resolved
-   > Microsoft.NETCore.Targets      2.0.0
-   > PluginBase                     1.0.0
-
-(A) : Auto-referenced package.
+   Transitive Package      Resolved
+   > PluginBase            1.0.0
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `PROJECT | SOLUTION`
 
@@ -77,61 +71,61 @@ Soubor projektu nebo řešení, na kterém chcete pracovat. Pokud není zadán, 
 
 ## <a name="options"></a>Možnosti
 
-* **`--config <SOURCE>`**
+- **`--config <SOURCE>`**
 
-  Zdroje NuGet, které se mají použít při hledání novějších balíčků `--outdated` Vyžaduje možnost.
+  Zdroje NuGet, které se mají použít při hledání novějších balíčků Vyžaduje možnost `--outdated`.
 
-* **`--framework <FRAMEWORK>`**
+- **`--framework <FRAMEWORK>`**
 
   Zobrazí jenom balíčky, které platí pro zadanou [cílovou architekturu](../../standard/frameworks.md). Pokud chcete zadat více platforem, opakujte možnost několikrát. Například: `--framework netcoreapp2.2 --framework netstandard2.0`.
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Vypíše krátkou nápovědu k příkazu.
 
-* **`--highest-minor`**
+- **`--highest-minor`**
 
-  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacím číslem hlavní verze. `--outdated` Vyžaduje možnost.
+  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacím číslem hlavní verze. Vyžaduje možnost `--outdated`.
 
-* **`--highest-patch`**
+- **`--highest-patch`**
 
-  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacími čísly hlavní verze a podverze. `--outdated` Vyžaduje možnost.
+  Při hledání novějších balíčků bere v úvahu jenom balíčky s porovnávacími čísly hlavní verze a podverze. Vyžaduje možnost `--outdated`.
 
-* **`--include-prerelease`**
+- **`--include-prerelease`**
 
-  Při hledání novějších balíčků bere v úvahu balíčky s předběžnou verzí. `--outdated` Vyžaduje možnost.
+  Při hledání novějších balíčků bere v úvahu balíčky s předběžnou verzí. Vyžaduje možnost `--outdated`.
 
-* **`--include-transitive`**
+- **`--include-transitive`**
 
   Vypisuje přenositelné balíčky kromě balíčků nejvyšší úrovně. Když zadáte tuto možnost, zobrazí se seznam balíčků, na kterých jsou závislé balíčky na nejvyšší úrovni.
 
-* **`--interactive`**
+- **`--interactive`**
 
   Umožňuje zastavení příkazu zastavit a počkat na vstup nebo akci uživatele. Například k dokončení ověřování. K dispozici od verze .NET Core 3,0 SDK.
 
-* **`--outdated`**
+- **`--outdated`**
 
   Vypíše balíčky s dostupnými novějšími verzemi.
 
-* **`-s|--source <SOURCE>`**
+- **`-s|--source <SOURCE>`**
 
-  Zdroje NuGet, které se mají použít při hledání novějších balíčků `--outdated` Vyžaduje možnost.
+  Zdroje NuGet, které se mají použít při hledání novějších balíčků Vyžaduje možnost `--outdated`.
 
 ## <a name="examples"></a>Příklady
 
-* Výpis odkazů na balíčky určitého projektu:
+- Výpis odkazů na balíčky určitého projektu:
 
   ```dotnetcli
   dotnet list SentimentAnalysis.csproj package
   ```
 
-* Vypíše odkazy na balíčky s dostupnými novějšími verzemi, včetně předprodejních verzí:
+- Vypíše odkazy na balíčky s dostupnými novějšími verzemi, včetně předprodejních verzí:
 
   ```dotnetcli
   dotnet list package --outdated --include-prerelease
   ```
 
-* Vypíše odkazy na balíčky pro konkrétní cílové rozhraní:
+- Vypíše odkazy na balíčky pro konkrétní cílové rozhraní:
 
   ```dotnetcli
   dotnet list package --framework netcoreapp3.0

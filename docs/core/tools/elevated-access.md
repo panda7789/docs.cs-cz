@@ -3,12 +3,12 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s osvědčenými postupy pro příkazy dotnet, které vyžadují vyšší přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: cf7c93a0adcae7092a61a6fc6046cd45cf00bf58
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 1cf29012736e5b6d858ca22dc2a9b97e7e8e33ef
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216305"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503565"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Zvýšený přístup pro příkazy dotnet
 
@@ -16,7 +16,7 @@ Osvědčené postupy pro vývoj softwaru pomáhají vývojářům psát software
 
 Následující příkazy lze spustit se zvýšenými oprávněními:
 
-- `dotnet tool`příkazy, jako je například [Instalace nástroje dotnet](dotnet-tool-install.md).
+- `dotnet tool` příkazy, jako je například [Instalace nástroje dotnet](dotnet-tool-install.md).
 - `dotnet run --no-build`
 
 Nedoporučujeme spouštět další příkazy se zvýšenými oprávněními. Konkrétně nedoporučujeme zvyšovat zvýšení oprávnění pomocí příkazů, které používají MSBuild, například [dotnet Restore](dotnet-restore.md), [sestavení dotnet](dotnet-build.md)a [spuštění dotnet](dotnet-run.md). Primárním problémem jsou problémy se správou oprávnění, když uživatel prochází zpátky a zpátky mezi kořenovým a omezeným účtem po vystavení příkazů dotnet. Můžete se setkat s omezeným uživatelem, který nemáte přístup k souboru vytvořenému kořenovým uživatelem. Existují způsoby, jak tuto situaci vyřešit, ale nejsou potřebné k tomu, aby se na první místo dostaly.
@@ -29,13 +29,13 @@ Následující pokyny ukazují doporučený způsob, jak nainstalovat, spustit a
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 ### <a name="install-the-global-tool"></a>Instalace globálního nástroje
 
-Pokud složka `%ProgramFiles%\dotnet-tools` již existuje, proveďte následující kroky a ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravě tohoto adresáře:
+Pokud `%ProgramFiles%\dotnet-tools` složka již existuje, proveďte následující kroky a ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravě tohoto adresáře:
 
-- Klikněte pravým tlačítkem `%ProgramFiles%\dotnet-tools` na složku a vyberte **vlastnosti**. Otevře se dialogové okno **společné vlastnosti** . 
+- Klikněte pravým tlačítkem na složku `%ProgramFiles%\dotnet-tools` a vyberte možnost **vlastnosti**. Otevře se dialogové okno **společné vlastnosti** . 
 - Vyberte kartu **zabezpečení** . V části **uživatelské jméno nebo název skupiny**ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravám adresáře. 
 - Pokud skupina uživatelé může zapisovat nebo upravovat adresář, použijte při instalaci nástrojů místo příkazu *dotnet-Tools*jiný název adresáře.
 
@@ -73,11 +73,11 @@ Do příkazového řádku se zvýšenými oprávněními zadejte následující 
 dotnet tool uninstall PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools"
 ```
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 [!INCLUDE [elevated-access-unix](../../../includes/elevated-access-unix.md)]
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 [!INCLUDE [elevated-access-unix](../../../includes/elevated-access-unix.md)]
 
@@ -85,7 +85,7 @@ dotnet tool uninstall PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools"
 
 ## <a name="local-tools"></a>Místní nástroje
 
-Místní nástroje jsou vymezeny podle stromu podadresářů pro jednotlivé uživatele. Při spuštění se zvýšenými oprávněními místní nástroje sdílí omezené uživatelské prostředí do prostředí se zvýšenými oprávněními. V systému Linux a macOS to vede k nastavování souborů s přístupem uživatele root. Pokud uživatel přepne zpět na účet s omezeným přístupem, uživatel již nebude moci přistupovat k souborům nebo do něj zapisovat. Proto se nedoporučuje instalovat nástroje, které vyžadují zvýšení oprávnění, protože místní nástroje. Místo toho použijte `--tool-path` možnost a předchozí pokyny pro globální nástroje.
+Místní nástroje jsou vymezeny podle stromu podadresářů pro jednotlivé uživatele. Při spuštění se zvýšenými oprávněními místní nástroje sdílí omezené uživatelské prostředí do prostředí se zvýšenými oprávněními. V systému Linux a macOS to vede k nastavování souborů s přístupem uživatele root. Pokud uživatel přepne zpět na účet s omezeným přístupem, uživatel již nebude moci přistupovat k souborům nebo do něj zapisovat. Proto se nedoporučuje instalovat nástroje, které vyžadují zvýšení oprávnění, protože místní nástroje. Místo toho použijte možnost `--tool-path` a předchozí pokyny pro globální nástroje.
 
 ## <a name="elevation-during-development"></a>Zvýšení úrovně během vývoje
 
@@ -93,18 +93,18 @@ Během vývoje můžete potřebovat vyšší úroveň přístupu k otestování 
 
 - Pomocí vygenerovaného spustitelného souboru (poskytuje nejlepší výkon při spuštění):
 
-   ```bash
+   ```dotnetcli
    dotnet build
    sudo ./bin/Debug/netcoreapp3.0/APPLICATIONNAME
    ```
     
-- Pomocí příkazu [dotnet Run](dotnet-run.md) s `—no-build` příznakem Vyhněte se generování nových binárních souborů:
+- Pomocí příkazu [dotnet Run](dotnet-run.md) s příznakem `—no-build` se vyhnete generování nových binárních souborů:
 
-   ```bash
+   ```dotnetcli
    dotnet build
    sudo dotnet run --no-build
    ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled globálních nástrojů .NET Core](global-tools.md)

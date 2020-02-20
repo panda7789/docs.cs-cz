@@ -2,18 +2,18 @@
 title: Začínáme s F# nástroji příkazového řádku
 description: Naučte se vytvářet jednoduché řešení Multi-Project na F# používání .NET Core CLI v jakémkoli operačním systému (Windows, MacOS nebo Linux).
 ms.date: 03/26/2018
-ms.openlocfilehash: aa3ed84660a951eeafc11a00ea3831f587b6d876
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 6f67314f49150e20b18734f21f24daa3ce856922
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559484"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504141"
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Začněte s F# .NET Core CLI
 
 Tento článek popisuje, jak můžete začít s F# jakýmkoli operačním systémem (Windows, MacOS nebo Linux) pomocí .NET Core CLI. Prochází sestavením řešení s více projekty pomocí knihovny tříd, která je volána konzolovou aplikací.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Chcete-li začít, je nutné nainstalovat nejnovější [.NET Core SDK](https://dotnet.microsoft.com/download).
 
@@ -135,7 +135,7 @@ Obnovte závislosti NuGet `dotnet restore` a spusťte `dotnet build` a sestavte 
 
 Změňte adresář na projekt konzoly `src/App` a spusťte `Hello World` projektu jako argumenty:
 
-```console
+```dotnetcli
 cd src/App
 dotnet run Hello World
 ```

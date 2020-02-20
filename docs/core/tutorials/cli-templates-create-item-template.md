@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: fa0ae18221c33d196960239411f8860a561b20ee
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5f4038e863d9bb59df470d3516c08fd2ad29c078
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340372"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503553"
 ---
 # <a name="tutorial-create-an-item-template"></a>Kurz: Vytvoření šablony položky
 
@@ -26,7 +26,7 @@ V této části série se naučíte:
 > * Testování šablony položky
 > * Odinstalace šablony položky
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 * [.NET Core 2,2 SDK](https://dotnet.microsoft.com/download) nebo novější verze.
 * Přečtěte si referenční článek [vlastní šablony pro dotnet New](../tools/custom-templates.md).
@@ -41,7 +41,7 @@ Tato série používá pracovní složku, ve které je zdroj šablony obsažený
 
 Nejprve vytvořte nadřazenou složku, na které název nezáleží. Pak vytvořte podsložku s názvem _Work_. V _pracovní_ složce vytvořte podsložku s názvem _Templates_.
 
-Dále v nadřazené složce vytvořte složku s názvem _test_. Struktura složky by měla vypadat takto:
+Dále v nadřazené složce vytvořte složku s názvem _test_. Struktura složky by měla vypadat nějak takto.
 
 ```console
 parent_folder
@@ -99,7 +99,7 @@ working
                 template.json
 ```
 
-Otevřete _template. JSON_ s oblíbeným textovým editorem a vložte následující kód JSON a uložte ho:
+Otevřete _template. JSON_ s oblíbeným textovým editorem a vložte následující kód JSON a uložte ho.
 
 ```json
 {
@@ -151,8 +151,13 @@ Worker Service                                    worker                [C#]    
 
 Teď, když máte nainstalovanou šablonu položky, otestujte ji. Přejděte do složky _test/_ Folder a vytvořte novou konzolovou aplikaci pomocí `dotnet new console`. Tím se vygeneruje pracovní projekt, který lze snadno otestovat pomocí příkazu `dotnet run`.
 
+```dotnetcli
+dotnet new console
+```
+
+Zobrazí se výstup podobný následujícímu.
+
 ```console
-C:\test> dotnet new console
 The template "Console Application" was created successfully.
 
 Processing post-creation actions...
@@ -162,15 +167,27 @@ Running 'dotnet restore' on C:\test\test.csproj...
 Restore succeeded.
 ```
 
+Spusťte projekt s.
+
+```dotnetcli
+dotnet run
+```
+
+Zobrazí se následující výstup.
+
 ```console
-C:\test> dotnet run
 Hello World!
 ```
 
 Dále spusťte `dotnet new stringext` pro vygenerování _CommonExtensions.cs_ ze šablony.
 
+```dotnetcli
+dotnet new stringext
+```
+
+Zobrazí se následující výstup.
+
 ```console
-C:\test> dotnet new stringext
 The template "Example templates: string extensions" was created successfully.
 ```
 
@@ -182,8 +199,13 @@ Console.WriteLine("Hello World!".Reverse());
 
 Spusťte program znovu a uvidíte, že výsledek je obrácený.
 
+```dotnetcli
+dotnet run
+```
+
+Zobrazí se následující výstup.
+
 ```console
-C:\test> dotnet run
 !dlroW olleH
 ```
 
@@ -193,8 +215,13 @@ Blahopřejeme! Vytvořili jste a nasadili šablonu položky pomocí .NET Core. P
 
 Vzhledem k tomu, že jste nainstalovali šablonu podle cesty k souboru, je nutné ji odinstalovat s **absolutní** cestou k souboru. Seznam nainstalovaných šablon můžete zobrazit spuštěním příkazu `dotnet new -u`. Vaše šablona by měla být uvedena jako poslední. Pomocí příkazu `dotnet new -u <ABSOLUTE PATH TO TEMPLATE DIRECTORY>` použijte cestu k odinstalaci šablony.
 
+```dotnetcli
+dotnet new -u
+```
+
+Zobrazí se výstup podobný následujícímu.
+
 ```console
-C:\working> dotnet new -u
 Template Instantiation Commands for .NET Core CLI
 
 Currently installed items:
@@ -222,8 +249,10 @@ Currently installed items:
       Example templates: string extensions (stringext) C#
 ```
 
-```console
-C:\working> dotnet new -u C:\working\templates\extensions
+Chcete-li odinstalovat šablonu, spusťte následující příkaz.
+
+```dotnetcli
+dotnet new -u C:\working\templates\extensions
 ```
 
 ## <a name="next-steps"></a>Další kroky

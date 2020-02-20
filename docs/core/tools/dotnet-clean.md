@@ -1,21 +1,17 @@
 ---
 title: dotnet – příkaz Vyčištění
 description: Příkaz dotnet Cleanup vyčistí aktuální adresář.
-ms.date: 06/26/2019
-ms.openlocfilehash: 715a33a8a1aa13a2a76f9d4522413dcc72e4b4aa
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 02/14/2020
+ms.openlocfilehash: 186f1ea07718a8e178f88c3d079cf6e2f1f8660b
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451353"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503751"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
-**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -41,9 +37,9 @@ Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubo
 
 ## <a name="options"></a>Možnosti
 
-* **`-c|--configuration {Debug|Release}`**
+* **`-c|--configuration <CONFIGURATION>`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`. Tato možnost je vyžadována pouze při čištění, pokud jste ji zadali během sestavování.
+  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`, ale můžete přepsat nastavení konfigurace sestavení v projektu. Tato možnost je vyžadována pouze při čištění, pokud jste ji zadali během sestavování.
 
 * **`-f|--framework <FRAMEWORK>`**
 
@@ -67,7 +63,7 @@ Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubo
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Vyčistí výstupní složku zadaného modulu runtime. Tato funkce se používá, když se vytvořilo [samostatné nasazení](../deploying/index.md#publish-self-contained) . Možnost je k dispozici od verze .NET Core 2,0 SDK.
+  Vyčistí výstupní složku zadaného modulu runtime. Tato funkce se používá, když se vytvořilo [samostatné nasazení](../deploying/index.md#publish-self-contained) .
 
 * **`-v|--verbosity <LEVEL>`**
 

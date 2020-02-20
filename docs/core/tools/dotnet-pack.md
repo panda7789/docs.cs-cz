@@ -1,21 +1,17 @@
 ---
 title: příkaz dotnet Pack
 description: Příkaz dotnet Pack vytvoří balíčky NuGet pro projekt .NET Core.
-ms.date: 08/08/2019
-ms.openlocfilehash: 057d1029e5c933912c43c178b6db8a8498f2ed57
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 865262f1eb314f9b7e8ee713c573a965e89ded93
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734122"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503654"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
-**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -63,13 +59,13 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 ## <a name="options"></a>Možnosti
 
-- **`-c|--configuration {Debug|Release}`**
+- **`-c|--configuration <CONFIGURATION>`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
+  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`, ale můžete přepsat nastavení konfigurace sestavení v projektu.
 
 - **`--force`**
 
-  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* . Možnost je k dispozici od verze .NET Core 2,0 SDK.
+  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
 
 - **`-h|--help`**
 
@@ -93,11 +89,11 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - **`--no-dependencies`**
 
-  Ignoruje odkazy z projektu na projekt a obnoví pouze kořenový projekt. Možnost je k dispozici od verze .NET Core 2,0 SDK.
+  Ignoruje odkazy z projektu na projekt a obnoví pouze kořenový projekt.
 
 - **`--no-restore`**
 
-  Při spuštění příkazu neprovede implicitní obnovení. Možnost je k dispozici od verze .NET Core 2,0 SDK.
+  Při spuštění příkazu neprovede implicitní obnovení.
 
 - **`--nologo`**
 
@@ -109,7 +105,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - **`--runtime <RUNTIME_IDENTIFIER>`**
 
-  Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Možnost je k dispozici od verze .NET Core 2,0 SDK.
+  Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
 
 - **`-s|--serviceable`**
 
@@ -167,7 +163,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
   dotnet pack -p:TargetFrameworks=net45
   ```
 
-- Sbalení projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení (.NET Core SDK 2,0 a novější verze):
+- Sbalení projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení:
 
   ```dotnetcli
   dotnet pack --runtime win10-x64

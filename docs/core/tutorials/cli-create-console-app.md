@@ -1,17 +1,17 @@
 ---
-title: Začínáme s .NET Core s využitím rozhraní příkazového řádku
+title: Začínáme s .NET Core v rozhraní příkazového řádku
 description: Podrobný kurz ukazující, jak začít s .NET Core v systému Windows, Linux nebo macOS pomocí .NET Core CLI.
 author: thraka
 ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6e1c7881aa415ea54307d80214001a2f0fe5b4a6
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: af1b374cd14d5070194c035024ce2328c9016646
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920469"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503541"
 ---
 # <a name="get-started-with-net-core-using-the-net-core-cli"></a>Začínáme s .NET Core s využitím .NET Core CLI
 
@@ -19,16 +19,16 @@ V tomto článku se dozvíte, jak začít s vývojem aplikací .NET Core, které
 
 Pokud .NET Core CLI neznáte, přečtěte si [přehled .NET Core CLI](../tools/index.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [.NET Core SDK 3,1](https://dotnet.microsoft.com/download) nebo novější verze.
-- Textový editor nebo Editor kódu dle vašeho výběru.
+- Textový editor nebo editor kódu podle vašeho výběru.
 
 ## <a name="hello-console-app"></a>Hello, konzolová aplikace!
 
 [Vzorový kód můžete zobrazit nebo stáhnout](https://github.com/dotnet/samples/tree/master/core/console-apps/HelloMsBuild) z úložiště GitHub/Samples GitHub. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte do složky, kterou jste vytvořili, a zadejte následující:
+Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte do složky, kterou jste vytvořili, a zadejte následující text.
 
 ```dotnetcli
 dotnet new console
@@ -64,17 +64,25 @@ Podívejme se na stručný návod:
 
     [dotnet spustit](../tools/dotnet-run.md) volá [sestavení dotnet](../tools/dotnet-build.md) , aby bylo zajištěno, že cíle sestavení byly sestaveny, a poté volá `dotnet <assembly.dll>` pro spuštění cílové aplikace.
     
-    ```console
+    ```dotnetcli
     dotnet run
+    ```
 
+    Zobrazí se následující výstup.
+
+    ```console
     Hello World!
     ```
     
     Alternativně můžete také spustit `dotnet build` pro zkompilování kódu bez spuštění konzolových aplikací sestavení. Výsledkem je kompilovaná aplikace, jako soubor DLL, na základě názvu projektu. V tomto případě se vytvoří soubor s názvem *Hello. dll*. Tuto aplikaci můžete spustit s `dotnet bin\Debug\netcoreapp3.1\Hello.dll` ve Windows (použijte `/` pro systémy jiné než Windows).
     
-    ```console
+    ```dotnetcli
     dotnet bin\Debug\netcoreapp3.1\Hello.dll
+    ```
 
+    Zobrazí se následující výstup.
+
+    ```console
     Hello World!
     ```
     
@@ -98,8 +106,13 @@ Pojďme program trochu změnit. Fibonacci čísla jsou zábavné, takže je při
 
 03. Spusťte program předáním parametru do aplikace. Když použijete příkaz `dotnet` ke spuštění aplikace, přidejte `--` na konec. Cokoli napravo od `--` bude do aplikace předán jako parametr. V následujícím příkladu je hodnota `John` předána do aplikace.
 
+    ```dotnetcli
+    dotnet run -- John
+    ```
+
+    Zobrazí se následující výstup.
+
     ```console
-    $ dotnet run -- John
     Hello John!
     Fibonacci Numbers 1-15:
     1: 0
@@ -119,7 +132,7 @@ Pojďme program trochu změnit. Fibonacci čísla jsou zábavné, takže je při
     15: 377
     ```
 
-A je to! *Program.cs* můžete upravit jakýmkoli způsobem.
+A to je vše! *Program.cs* můžete upravit jakýmkoli způsobem.
 
 ## <a name="working-with-multiple-files"></a>Práce s více soubory
 
@@ -135,10 +148,15 @@ Jednotlivé soubory jsou pro jednoduché jednorázové programy přesné, ale po
 
 03. Spusťte [sestavení dotnet](../tools/dotnet-build.md) pro zkompilování změn.
 
-04. Spusťte aplikaci spuštěním příkazu [dotnet](../tools/dotnet-run.md). Následující příklad ukazuje výstup programu:
+04. Spusťte aplikaci spuštěním příkazu [dotnet](../tools/dotnet-run.md).
+
+    ```dotnetcli
+    dotnet run
+    ```
+
+    Zobrazí se následující výstup.
 
     ```console
-    $ dotnet run
     0
     1
     1
@@ -160,8 +178,13 @@ Jednotlivé soubory jsou pro jednoduché jednorázové programy přesné, ale po
 
 Až budete připraveni k distribuci vaší aplikace, pomocí příkazu [dotnet Publish](../tools/dotnet-publish.md) vygenerujte složku pro _publikování_ v _přihrádce\\ladění\\netcoreapp 3.1\\publikovat\\_ (použijte `/` pro systémy jiné než Windows). Obsah složky pro _publikování_ můžete distribuovat na jiné platformy, pokud už máte nainstalovanou modul dotnet runtime.
 
-```console
+```dotnetcli
 dotnet publish
+```
+
+Zobrazí se výstup podobný následujícímu.
+
+```console
 Microsoft (R) Build Engine version 16.4.0+e901037fe for .NET Core
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -174,9 +197,13 @@ Výše uvedený výstup se může lišit v závislosti na vaší aktuální slo�
 
 Publikovanou aplikaci můžete spustit pomocí příkazu [dotnet](../tools/dotnet.md) :
 
-```console
+```dotnetcli
 dotnet bin\Debug\netcoreapp3.1\publish\Hello.dll
+```
 
+Zobrazí se následující výstup.
+
+```console
 Hello World!
 ```
 
@@ -190,10 +217,10 @@ Hello World!
 
 ## <a name="conclusion"></a>Závěr
 
-A je to! Teď můžete začít používat základní koncepty, které jste zde zjistili, k vytvoření vlastních programů.
+A to je vše! Teď můžete začít používat základní koncepty, které jste zde zjistili, k vytvoření vlastních programů.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Organizování a testování projektů pomocí .NET Core CLI](testing-with-cli.md)
 - [Publikování aplikací .NET Core pomocí .NET Core CLI](../deploying/deploy-with-cli.md)
-- [Nasazení aplikace .NET core](../deploying/index.md)
+- [Nasazení aplikace .NET Core](../deploying/index.md)

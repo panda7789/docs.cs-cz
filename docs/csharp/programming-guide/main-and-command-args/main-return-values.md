@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 21e780470f455ac133fd4d11ae43c63a4b18c582
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: eaa78c33613093bb0e108870669392d07d346a95
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712036"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503998"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main ()C# (Průvodce programováním)
 
@@ -39,8 +39,11 @@ Potom vytvořte powershellový skript, který spustí aplikaci a zobrazí výsle
 
 Vzhledem k tomu, že kód vrátí hodnotu nula, dávkový soubor ohlásí úspěch. Pokud ale změníte MainReturnValTest.cs a vrátíte nenulovou hodnotu a pak znovu zkompilujete program, při následném spuštění skriptu PowerShellu se nahlásí chyba.
 
-```powershell
+```dotnetcli
 dotnet run
+```
+
+```powershell
 if ($LastExitCode -eq 0) {
     Write-Host "Execution succeeded"
 } else
@@ -50,7 +53,7 @@ if ($LastExitCode -eq 0) {
 Write-Host "Return value = " $LastExitCode
 ```
 
-## <a name="sample-output"></a>Výstup ukázky
+## <a name="sample-output"></a>Ukázkový výstup
 
 ```txt
 Execution succeeded
@@ -92,9 +95,9 @@ Když vstupní bod aplikace vrátí `Task` nebo `Task<int>`, kompilátor vygener
 > [!NOTE]
 >Pokud příklady použité `async` modifikátorem metody `Main`, kompilátor vygeneruje stejný kód.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [C#Odkaz](../index.md)
 - [Argumenty Main() a příkazového řádku](index.md)
 - [Jak zobrazit argumenty příkazového řádku](./how-to-display-command-line-arguments.md)

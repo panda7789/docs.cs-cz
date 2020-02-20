@@ -1,17 +1,17 @@
 ---
 title: dotnet MSBuild – příkaz
 description: Příkaz dotnet MSBuild poskytuje přístup k příkazovému řádku MSBuild.
-ms.date: 12/03/2018
-ms.openlocfilehash: dae1e9f0ca355166d41c11fbafb80c7c9fb29748
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 28a32a460d644d3e22f16b5dd9416222ae466e2e
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733197"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503679"
 ---
 # <a name="dotnet-msbuild"></a>dotnet msbuild
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -31,25 +31,25 @@ Příkaz [dotnet Build](dotnet-build.md) je ekvivalentní `dotnet msbuild -resto
 
 ## <a name="examples"></a>Příklady
 
-* Sestavení projektu a jeho závislostí:
+- Sestavení projektu a jeho závislostí:
 
   ```dotnetcli
   dotnet msbuild
   ```
 
-* Sestavení projektu a jeho závislostí pomocí konfigurace vydané verze:
+- Sestavení projektu a jeho závislostí pomocí konfigurace vydané verze:
 
   ```dotnetcli
   dotnet msbuild -property:Configuration=Release
   ```
 
-* Spusťte cíl publikování a publikování pro `osx.10.11-x64` RID:
+- Spusťte cíl publikování a publikování pro `osx.10.11-x64` RID:
 
   ```dotnetcli
   dotnet msbuild -target:Publish -property:RuntimeIdentifiers=osx.10.11-x64
   ```
 
-* Zobrazit celý projekt se všemi cíli, které jsou součástí sady SDK:
+- Zobrazit celý projekt se všemi cíli, které jsou součástí sady SDK:
 
   ```dotnetcli
   dotnet msbuild -preprocess

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-ms.openlocfilehash: 3763e93ff3a14819f59102a01cf3285e85afd12d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e879dcf385acbc522c0a3573cfa374550ea23333
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716200"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504134"
 ---
 # <a name="clr-etw-events"></a>Události ETW CLR
 Témata v této části popisují události trasování událostí pro Windows (ETW). Každá událost má přidružené klíčové slovo a úroveň, které jsou popsány v tématu [klíčová slova ETW a úrovně CLR](clr-etw-keywords-and-levels.md) . CLR má dva poskytovatele pro události:  
@@ -59,10 +59,9 @@ Témata v této části popisují události trasování událostí pro Windows (
  [Událost zásobníku](stack-etw-event.md)  
  Zachycuje informace, které se používají s jinými událostmi k vygenerování trasování zásobníku po vyvolání události.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vylepšení ladění a optimalizace výkonu pomocí ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
-- [Blog o výkonu Windows](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/)
 - [Řízení přihlašování rozhraní .NET Framework](controlling-logging.md)
 - [Poskytovatelé Trasování událostí pro Windows v CLR](clr-etw-providers.md)
 - [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](clr-etw-keywords-and-levels.md)

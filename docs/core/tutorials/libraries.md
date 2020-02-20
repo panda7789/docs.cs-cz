@@ -3,18 +3,18 @@ title: Vývoj knihoven pomocí .NET Core CLI
 description: Naučte se vytvářet knihovny .NET Core pomocí .NET Core CLI. Vytvoříte knihovnu, která podporuje více rozhraní.
 author: cartermp
 ms.date: 05/01/2017
-ms.openlocfilehash: a7c0175d29f483571578b58d698dd790cf66f7f4
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: c23c1f027b4d6d09c50eb2257d34f72ec56302f4
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920448"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503507"
 ---
 # <a name="develop-libraries-with-the-net-core-cli"></a>Vývoj knihoven pomocí .NET Core CLI
 
 Tento článek popisuje, jak psát knihovny pro .NET pomocí .NET Core CLI. Rozhraní příkazového řádku poskytuje efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. Knihovny můžete vytvářet i v aplikaci Visual Studio a pokud je vaše preferované prostředí, [Přečtěte si průvodce sadou Visual Studio](library-with-visual-studio.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Potřebujete na svém počítači nainstalované [.NET Core SDK a CLI](https://dotnet.microsoft.com/download) .
 
@@ -73,7 +73,7 @@ Pokud chcete dosáhnout maximálního počtu vývojářů a projektů, použijte
 
 | Verze rozhraní .NET Framework | TFM      |
 | ---------------------- | -------- |
-| .NET Framework 2.0     | `net20`  |
+| .NET Framework 2,0     | `net20`  |
 | .NET Framework 3.0     | `net30`  |
 | .NET Framework 3.5     | `net35`  |
 | .NET Framework 4,0     | `net40`  |
@@ -96,7 +96,7 @@ Pak tento TFM vložíte do oddílu `TargetFramework` souboru projektu. Tady je p
 </Project>
 ```
 
-A je to! I když se tato kompilace kompiluje jenom pro .NET Framework 4, můžete použít knihovnu v novějších verzích .NET Framework.
+A to je vše! I když se tato kompilace kompiluje jenom pro .NET Framework 4, můžete použít knihovnu v novějších verzích .NET Framework.
 
 ## <a name="how-to-multitarget"></a>Jak cílit
 
@@ -220,7 +220,7 @@ Je důležité, abyste mohli testovat napříč platformami. V poli můžete pou
 
 1. Nastavte své řešení. Můžete to udělat pomocí následujících příkazů:
 
-   ```bash
+   ```dotnetcli
    mkdir SolutionWithSrcAndTest
    cd SolutionWithSrcAndTest
    dotnet new sln
@@ -241,7 +241,7 @@ Je důležité, abyste mohli testovat napříč platformami. V poli můžete pou
 
 1. Přejděte do adresáře testovacího projektu a přidejte odkaz na `MyProject.Test` z `MyProject`.
 
-   ```bash
+   ```dotnetcli
    cd MyProject.Test
    dotnet add reference ../MyProject/MyProject.csproj
    ```
@@ -257,7 +257,7 @@ Je důležité, abyste mohli testovat napříč platformami. V poli můžete pou
 
 1. Spuštěním příkazu `dotnet test` ověřte, že xUnit běží. Pokud jste se rozhodli používat MSTest, měl by se místo toho spustit spouštěč konzoly MSTest.
 
-A je to! Pomocí nástrojů příkazového řádku teď můžete svoji knihovnu testovat napříč všemi platformami. Pokud chcete pokračovat v testování, když máte všechno nastavené, testování knihovny je velmi jednoduché:
+A to je vše! Pomocí nástrojů příkazového řádku teď můžete svoji knihovnu testovat napříč všemi platformami. Pokud chcete pokračovat v testování, když máte všechno nastavené, testování knihovny je velmi jednoduché:
 
 1. Proveďte změny v knihovně.
 1. Spusťte testy z příkazového řádku v adresáři testu s příkazem `dotnet test`.
@@ -300,7 +300,7 @@ Scénáře spotřeby, jako je to znamená, že rozhraní API, ke kterým se při
 
 V terminálu můžete spustit následující příkazy, které tvoří stejnou strukturu jako tato příručka:
 
-```console
+```dotnetcli
 mkdir AwesomeLibrary && cd AwesomeLibrary
 dotnet new sln
 mkdir AwesomeLibrary.Core && cd AwesomeLibrary.Core && dotnet new classlib

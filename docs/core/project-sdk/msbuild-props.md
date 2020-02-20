@@ -1,14 +1,14 @@
 ---
 title: Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK
 description: Referenční informace o vlastnostech MSBuild, které jsou srozumitelné pro .NET Core SDK.
-ms.date: 02/02/2020
+ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: f5dc2079bc313b8dd9fa5556cd941521a597ae38
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 00d9152d864ac0727a511f4c3c15abba82aab904
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453809"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503811"
 ---
 # <a name="msbuild-properties-for-net-core-sdk-projects"></a>Vlastnosti nástroje MSBuild pro projekty .NET Core SDK
 
@@ -19,25 +19,9 @@ Tato stránka popisuje vlastnosti nástroje MSBuild pro konfiguraci projektů .N
 
 ## <a name="framework-properties"></a>Vlastnosti architektury
 
-- [NetStandardImplicitPackageVersion](#netstandardimplicitpackageversion)
 - [TargetFramework](#targetframework)
 - [TargetFramework](#targetframeworks)
-
-### <a name="netstandardimplicitpackageversion"></a>NetStandardImplicitPackageVersion
-
-> [!NOTE]
-> Tato vlastnost se vztahuje pouze na projekty používající `netstandard1.x`. Neplatí pro projekty, které používají `netstandard2` a novější.
-
-Vlastnost `NetStandardImplicitPackageVersion` použijte, pokud chcete zadat verzi rozhraní, která je nižší než verze [Metapackage](../packages.md#metapackages) . Soubor projektu v následujícím příkladu cílí na `netstandard1.3`, ale používá verzi 1.6.0 `NETStandard.Library`.
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-  </PropertyGroup>
-</Project>
-```
+- [NetStandardImplicitPackageVersion](#netstandardimplicitpackageversion)
 
 ### <a name="targetframework"></a>targetFramework
 
@@ -69,6 +53,22 @@ Vlastnost `TargetFrameworks` použijte v případě, že chcete, aby aplikace by
 ```
 
 Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu sady SDK](../../standard/frameworks.md).
+
+### <a name="netstandardimplicitpackageversion"></a>NetStandardImplicitPackageVersion
+
+> [!NOTE]
+> Tato vlastnost se vztahuje pouze na projekty používající `netstandard1.x`. Neplatí pro projekty, které používají `netstandard2.x`.
+
+Vlastnost `NetStandardImplicitPackageVersion` použijte, pokud chcete zadat verzi rozhraní, která je nižší než verze [Metapackage](../packages.md#metapackages) . Soubor projektu v následujícím příkladu cílí na `netstandard1.3`, ale používá verzi 1.6.0 `NETStandard.Library`.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+</Project>
+```
 
 ## <a name="publish-properties"></a>Vlastnosti publikování
 

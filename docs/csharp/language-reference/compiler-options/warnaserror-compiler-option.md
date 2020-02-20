@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -warnaserror compiler option [C#]
 - warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
-ms.openlocfilehash: 66c78ee56c9d5153b5b878b2e695ad4ee6bffe0b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7d43941629e933ac5a9e9c9d6a1388b6194f8d99
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606247"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503477"
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror – (C# možnosti kompilátoru)
 Parametr **-warnaserror – +** zpracovává všechna upozornění jako chyby.  
@@ -29,7 +29,7 @@ Parametr **-warnaserror – +** zpracovává všechna upozornění jako chyby.
   
  Ve výchozím nastavení je **-warnaserror –-** v platnosti, což způsobí, že upozornění nebrání generování výstupního souboru. **-warnaserror –** , který je stejný jako **-warnaserror – +** , způsobí, že upozornění budou považována za chyby.  
   
- Případně, pokud chcete, aby bylo možné považovat jenom několik specifických upozornění jako chyby, můžete zadat čárkami oddělený seznam čísel upozornění, které se budou považovat za chyby.  
+ Případně, pokud chcete, aby bylo možné považovat jenom několik specifických upozornění jako chyby, můžete zadat čárkami oddělený seznam čísel upozornění, které se budou považovat za chyby. Sada všech upozornění s hodnotou null se dá zadat s zkráceným **připouštějící hodnotu null** .
   
  Pomocí [-warn](./warn-compiler-option.md) určete úroveň upozornění, která má kompilátor zobrazovat. Pomocí [-Upozornění](./nowarn-compiler-option.md) můžete zakázat určitá upozornění.  
   
@@ -41,17 +41,17 @@ Parametr **-warnaserror – +** zpracovává všechna upozornění jako chyby.
   
 3. Upravte vlastnost **považovat upozornění jako chybu** .  
   
- Chcete-li nastavit tuto možnost kompilátoru programově <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>, přečtěte si téma.  
+ Chcete-li nastavit tuto možnost kompilátoru programově, přečtěte si téma <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>.  
   
 ## <a name="example"></a>Příklad  
- Kompilovat `in.cs` a nechat kompilátor zobrazovat žádná upozornění:  
+ Zkompilovat `in.cs` a nechat kompilátor zobrazovat žádná upozornění:  
   
 ```console  
 csc -warnaserror in.cs  
-csc -warnaserror:642,649,652 in.cs  
+csc -warnaserror:642,649,652,nullable in.cs  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

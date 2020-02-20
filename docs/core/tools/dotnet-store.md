@@ -1,17 +1,17 @@
 ---
 title: dotnet – příkaz pro úložiště
 description: Příkaz dotnet Store ukládá zadaná sestavení do úložiště balíčků modulu runtime.
-ms.date: 05/29/2018
-ms.openlocfilehash: cc5b4b6160ba296e1529f006c15e238746d9e08a
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: da1d132b2b873ff55ec104b5bb092d0194889bdc
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733048"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503577"
 ---
 # <a name="dotnet-store"></a>dotnet store
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -19,7 +19,9 @@ ms.locfileid: "76733048"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-`dotnet store -m|--manifest -f|--framework -r|--runtime  [--framework-version] [-h|--help] [--output] [--skip-optimization] [--skip-symbols] [-v|--verbosity] [--working-dir]`
+```dotnetcli
+dotnet store -m|--manifest -f|--framework -r|--runtime  [--framework-version] [-h|--help] [--output] [--skip-optimization] [--skip-symbols] [-v|--verbosity] [--working-dir]
+```
 
 ## <a name="description"></a>Popis
 
@@ -27,57 +29,61 @@ ms.locfileid: "76733048"
 
 ## <a name="required-options"></a>Požadované možnosti
 
-`-f|--framework <FRAMEWORK>`
+- **`-f|--framework <FRAMEWORK>`**
 
-Určuje [cílovou architekturu](../../standard/frameworks.md).
+  Určuje [cílovou architekturu](../../standard/frameworks.md). Cílová architektura musí být zadána v souboru projektu.
 
-`-m|--manifest <PATH_TO_MANIFEST_FILE>`
+- **`-m|--manifest <PATH_TO_MANIFEST_FILE>`**
 
-*Soubor manifestu úložiště balíčku* je soubor XML, který obsahuje seznam balíčků, které mají být uloženy. Formát souboru manifestu je kompatibilní s formátem projektu ve stylu sady SDK. Soubor projektu, který odkazuje na požadované balíčky, lze proto použít s možností `-m|--manifest` pro uložení sestavení v úložišti balíčků modulu runtime. Chcete-li zadat více souborů manifestu, opakujte možnost a cestu pro každý soubor. Například: `--manifest packages1.csproj --manifest packages2.csproj`.
+  *Soubor manifestu úložiště balíčku* je soubor XML, který obsahuje seznam balíčků, které mají být uloženy. Formát souboru manifestu je kompatibilní s formátem projektu ve stylu sady SDK. Soubor projektu, který odkazuje na požadované balíčky, lze proto použít s možností `-m|--manifest` pro uložení sestavení v úložišti balíčků modulu runtime. Chcete-li zadat více souborů manifestu, opakujte možnost a cestu pro každý soubor. Například: `--manifest packages1.csproj --manifest packages2.csproj`.
 
-`-r|--runtime <RUNTIME_IDENTIFIER>`
+- **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-[Identifikátor modulu runtime](../rid-catalog.md) , který má být cílen.
+  [Identifikátor modulu runtime](../rid-catalog.md) , který má být cílen.
 
 ## <a name="optional-options"></a>Volitelné možnosti
 
-`--framework-version <FRAMEWORK_VERSION>`
+- **`--framework-version <FRAMEWORK_VERSION>`**
 
-Určuje .NET Core SDK verzi. Tato možnost umožňuje vybrat konkrétní verzi rozhraní nad rámec určenou možností `-f|--framework`.
+  Určuje .NET Core SDK verzi. Tato možnost umožňuje vybrat konkrétní verzi rozhraní nad rámec určenou možností `-f|--framework`.
 
-`-h|--help`
+- **`-h|--help`**
 
-Zobrazí informace o nápovědě.
+  Zobrazí informace o nápovědě.
 
-`-o|--output <OUTPUT_DIRECTORY>`
+- **`-o|--output <OUTPUT_DIRECTORY>`**
 
-Určuje cestu k úložišti balíčků modulu runtime. Pokud není zadaný, použije se výchozí podadresář *úložiště* instalačního adresáře .NET Core uživatelského profilu.
+  Určuje cestu k úložišti balíčků modulu runtime. Pokud není zadaný, použije se výchozí podadresář *úložiště* instalačního adresáře .NET Core uživatelského profilu.
 
-`--skip-optimization`
+- **`--skip-optimization`**
 
-Přeskočí fázi optimalizace.
+  Přeskočí fázi optimalizace.
 
-`--skip-symbols`
+- **`--skip-symbols`**
 
-Přeskočí generování symbolů. V současné době můžete generovat symboly jenom v systémech Windows a Linux.
+  Přeskočí generování symbolů. V současné době můžete generovat symboly jenom v systémech Windows a Linux.
 
-`-v|--verbosity <LEVEL>`
+- **`-v|--verbosity <LEVEL>`**
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
 
-`-w|--working-dir <INTERMEDIATE_WORKING_DIRECTORY>`
+- **`-w|--working-dir <WORKING_DIRECTORY>`**
 
-Pracovní adresář použitý příkazem. Pokud není zadaný, použije se podadresář *obj* aktuálního adresáře.
+  Pracovní adresář použitý příkazem. Pokud není zadaný, použije se podadresář *obj* aktuálního adresáře.
 
 ## <a name="examples"></a>Příklady
 
-Uložte balíčky zadané v souboru projektu *Packages. csproj* pro .NET Core 2.0.0:
+- Uložte balíčky zadané v souboru projektu *Packages. csproj* pro .NET Core 2.0.0:
 
-`dotnet store --manifest packages.csproj --framework-version 2.0.0`
+  ```dotnetcli
+  dotnet store --manifest packages.csproj --framework-version 2.0.0
+  ```
 
-Uložit balíčky zadané v *balíčku. csproj* bez optimalizace:
+- Uložit balíčky zadané v *balíčku. csproj* bez optimalizace:
 
-`dotnet store --manifest packages.csproj --skip-optimization`
+  ```dotnetcli
+  dotnet store --manifest packages.csproj --skip-optimization
+  ```
 
 ## <a name="see-also"></a>Viz také
 

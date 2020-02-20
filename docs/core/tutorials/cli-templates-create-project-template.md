@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 64b029f87135c3424d01a6833619f0aec3833883
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f53f4037f832265a35f65bf2e5096c7e5a37bcf1
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340356"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503531"
 ---
 # <a name="tutorial-create-a-project-template"></a>Kurz: Vytvoření šablony projektu
 
@@ -26,7 +26,7 @@ V této části série se naučíte:
 > * Testování šablony položky
 > * Odinstalace šablony položky
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 * Vyplňte [část 1](cli-templates-create-item-template.md) této série kurzů.
 * Otevřete terminál a přejděte do složky _working\templates_ .
@@ -47,7 +47,7 @@ working
 
 ## <a name="modify-programcs"></a>Upravit Program.cs
 
-Otevřete soubor _program.cs_ . Projekt konzoly nepoužívá asynchronní vstupní bod, takže ho přidáváme. Změňte kód na následující a uložte soubor:
+Otevřete soubor _program.cs_ . Projekt konzoly nepoužívá asynchronní vstupní bod, takže ho přidáváme. Změňte kód na následující a uložte soubor.
 
 ```csharp
 using System;
@@ -85,10 +85,17 @@ Pojďme aktualizovat C# jazykovou verzi, kterou projekt používá, na verzi 8,0
 
 ## <a name="build-the-project"></a>Sestavení projektu
 
-Před dokončením šablony projektu byste ji měli otestovat, abyste se ujistili, že kompiluje a běží správně. V terminálu spusťte příkaz `dotnet run` a měl by se zobrazit následující výstup:
+Před dokončením šablony projektu byste ji měli otestovat, abyste se ujistili, že kompiluje a běží správně.
+
+V terminálu spusťte následující příkaz.
+
+```dotnetcli
+dotnet run
+```
+
+Zobrazí se následující výstup.
 
 ```console
-C:\working\templates\consoleasync> dotnet run
 Hello World with C# 8.0!
 ```
 
@@ -102,7 +109,7 @@ Teď, když máte vytvořený obsah šablony, je nutné vytvořit šablonu confi
 
 Když vytvoříte šablonu, všechny soubory a složky ve složce šablon budou zahrnuty jako součást šablony kromě speciální konfigurační složky. Tato konfigurační složka má název _. template. config_.
 
-Nejprve vytvořte novou podsložku s názvem _. template. config_a zadejte ji. Pak vytvořte nový soubor s názvem _template. JSON_. Struktura vaší složky by měla vypadat takto:
+Nejprve vytvořte novou podsložku s názvem _. template. config_a zadejte ji. Pak vytvořte nový soubor s názvem _template. JSON_. Vaše struktura složky by měla vypadat takto.
 
 ```console
 working
@@ -112,7 +119,7 @@ working
                 template.json
 ```
 
-Otevřete _template. JSON_ s oblíbeným textovým editorem a vložte následující kód JSON a uložte ho:
+Otevřete _template. JSON_ s oblíbeným textovým editorem a vložte následující kód JSON a uložte ho.
 
 ```json
 {
@@ -133,12 +140,17 @@ Tento konfigurační soubor obsahuje všechna nastavení pro šablonu. Můžete 
 
 `classifications` položka představuje sloupec **značky** , který se zobrazí, když spustíte `dotnet new` a získáte seznam šablon. Uživatelé můžou vyhledávat i na základě klasifikačních značek. Nezaměňujte vlastnost `tags` v souboru JSON se seznamem značek `classifications`. Existují dvě různé věci, které se nazývají podobně. Úplné schéma pro soubor *template. JSON* najdete v [úložišti schémat JSON](http://json.schemastore.org/template). Další informace o souboru *template. JSON* najdete v tématu [dotnet šablonování wiki](https://github.com/dotnet/templating/wiki).
 
-Teď, když máte platný soubor _. template. config/Template. JSON_ , je vaše šablona připravená k instalaci. Před instalací šablony nezapomeňte odstranit všechny složky a soubory s dalšími soubory, které nechcete zahrnout do šablony, jako jsou složky _bin_ nebo _obj_ . V terminálu přejděte do složky _consoleasync_ a spusťte `dotnet new -i .\` a nainstalujte šablonu umístěnou v aktuální složce. Pokud používáte operační systém Linux nebo MacOS, použijte lomítko: `dotnet new -i ./`.
+Teď, když máte platný soubor _. template. config/Template. JSON_ , je vaše šablona připravená k instalaci. Před instalací šablony nezapomeňte odstranit všechny složky a soubory s dalšími soubory, které nechcete zahrnout do šablony, jako jsou složky _bin_ nebo _obj_ . V terminálu přejděte do složky _consoleasync_ a spusťte `dotnet new -i .\` a nainstalujte šablonu umístěnou v aktuální složce. Pokud používáte operační systém Linux nebo macOS, použijte lomítko: `dotnet new -i ./`.
 
 Tento příkaz vypíše seznam nainstalovaných šablon, které by měly obsahovat vaše.
 
+```dotnetcli
+dotnet new -i .\
+```
+
+Zobrazí se výstup podobný následujícímu.
+
 ```console
-C:\working\templates\consoleasync> dotnet new -i .\
 Usage: new [options]
 
 Options:
@@ -159,17 +171,33 @@ Worker Service                                    worker                [C#]    
 
 ### <a name="test-the-project-template"></a>Testování šablony projektu
 
-Teď, když máte nainstalovanou šablonu položky, otestujte ji. Přejděte do složky _test_ a vytvořte novou konzolovou aplikaci pomocí `dotnet new consoleasync`. Tím se vygeneruje pracovní projekt, který lze snadno otestovat pomocí příkazu `dotnet run`.
+Teď, když máte nainstalovanou šablonu položky, otestujte ji.
 
-```console
-C:\test> dotnet new consoleasync
-The template "Example templates: async project" was created successfully.
-```
+1. Přejít do složky _test_
 
-```console
-C:\test> dotnet run
-Hello World with C# 8.0!
-```
+1. Vytvořte novou konzolovou aplikaci pomocí následujícího příkazu, který generuje pracovní projekt, který lze snadno otestovat pomocí příkazu `dotnet run`.
+
+    ```dotnetcli
+    dotnet new consoleasync
+    ```
+
+    Zobrazí se následující výstup.
+
+    ```console
+    The template "Example templates: async project" was created successfully.
+    ```
+
+1. Spusťte projekt pomocí následujícího příkazu.
+
+    ```dotnetcli
+    dotnet run
+    ```
+
+    Zobrazí se následující výstup.
+
+    ```console
+    Hello World with C# 8.0!
+    ```
 
 Blahopřejeme! Vytvořili jste a nasadili šablonu projektu pomocí .NET Core. Při přípravě na další část této série kurzů musíte odinstalovat šablonu, kterou jste vytvořili. Přesvědčte se, zda jsou všechny soubory odstraněny také z _testovací_ složky. Tím se vrátíte zpět do připraveného stavu pro další hlavní část tohoto kurzu.
 
@@ -177,8 +205,13 @@ Blahopřejeme! Vytvořili jste a nasadili šablonu projektu pomocí .NET Core. P
 
 Vzhledem k tomu, že jste šablonu nainstalovali pomocí cesty k souboru, je nutné ji odinstalovat s **absolutní** cestou k souboru. Seznam nainstalovaných šablon můžete zobrazit spuštěním příkazu `dotnet new -u`. Vaše šablona by měla být uvedena jako poslední. Pomocí příkazu `dotnet new -u <ABSOLUTE PATH TO TEMPLATE DIRECTORY>` použijte cestu k odinstalaci šablony.
 
+```dotnetcli
+dotnet new -u
+```
+
+Zobrazí se výstup podobný následujícímu.
+
 ```console
-C:\working> dotnet new -u
 Template Instantiation Commands for .NET Core CLI
 
 Currently installed items:
@@ -206,8 +239,10 @@ Currently installed items:
       Example templates: async project (consoleasync) C#
 ```
 
-```console
-C:\working> dotnet new -u C:\working\templates\consoleasync
+Chcete-li odinstalovat šablonu, spusťte následující příkaz.
+
+```dotnetcli
+dotnet new -u C:\working\templates\consoleasync
 ```
 
 ## <a name="next-steps"></a>Další kroky

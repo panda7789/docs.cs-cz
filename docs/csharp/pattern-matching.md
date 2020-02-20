@@ -4,12 +4,12 @@ description: Další informace o výrazech porovnávání vzorů vC#
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: ff84ddd4f07fb77dc9fe648a495a441ed8f9198b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: db509a0ebf1e205e9996ba8102757fe8c0b9ea3a
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039365"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501631"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -33,7 +33,7 @@ Z těchto struktur napíšeme metodu, která vypočítá oblast nějakého tvaru
 
 ## <a name="the-is-type-pattern-expression"></a>Výraz vzoru typu `is`
 
-Před C# 7,0 byste museli testovat každý typ v řadě`if`a`is`příkazy:
+Před C# 7,0 byste museli testovat každý typ v řadě `if` a `is` příkazy:
 
 [!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 
@@ -136,3 +136,7 @@ Toto je jeden z příkladů, kde můžete chtít zvážit výraz případu `var`
 Porovnávání vzorů funguje s jakýmkoli datovým typem. Zapisujete výrazy, které prozkoumají objekt, a na základě těchto podmínek proveďte rozhodnutí toku řízení.
 
 Porovnejte kód z této ukázky s návrhem, který by následoval z vytváření hierarchie tříd pro abstraktní `Shape` a specifické odvozené tvary z každého s vlastní implementací virtuální metody pro výpočet oblasti. Často zjistíte, že výrazy porovnávání vzorů můžou být velmi užitečným nástrojem při práci s daty a chcete oddělit informace týkající se úložiště dat, která se týkají chování.
+
+## <a name="see-also"></a>Viz také
+
+- [Kurz: použití funkcí pro porovnávání vzorů k rozšiřování datových typů](tutorials/pattern-matching.md)

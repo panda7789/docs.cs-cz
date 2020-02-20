@@ -5,12 +5,12 @@ author: thraka
 ms.date: 12/10/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 3a72f68f5634c9ee5b137baf12a279130861e61a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5bc926861dd6a501d7c2d24bd5f7c4116cc78b2c
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787842"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503486"
 ---
 # <a name="tutorial-create-a-template-pack"></a>Kurz: vytvoření balíčku šablon
 
@@ -25,7 +25,7 @@ V této části série se naučíte:
 > * Instalace šablony ze souboru balíčku NuGet
 > * Odinstalace šablony podle ID balíčku
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 * Dokončete [část 1](cli-templates-create-item-template.md) a [část 2](cli-templates-create-project-template.md) této série kurzů.
 
@@ -51,8 +51,11 @@ dotnet new console -n templatepack -o .
 
 Parametr `-n` nastaví název souboru _. csproj_ na _templatepack. csproj_. Parametr `-o` vytvoří soubory v aktuálním adresáři. Měl by se zobrazit výsledek podobný následujícímu výstupu.
 
+```dotnetcli
+dotnet new console -n templatepack -o .
+```
+
 ```console
-C:\working> dotnet new console -n templatepack -o .
 The template "Console Application" was created successfully.
 
 Processing post-creation actions...
@@ -109,8 +112,11 @@ dotnet pack
 
 Tento příkaz sestaví projekt a vytvoří balíček NuGet v tomto umístění by měl být složka _working\bin\Debug_ .
 
+```dotnetcli
+dotnet pack
+```
+
 ```console
-C:\working> dotnet pack
 Microsoft (R) Build Engine version 16.2.0-preview-19278-01+d635043bd for .NET Core
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -146,8 +152,11 @@ Pokud jste nahráli balíček NuGet do informačního kanálu NuGet, můžete po
 
 Bez ohledu na to, jakým způsobem jste balíček šablon nainstalovali, buď pomocí souboru _. nupkg_ přímo nebo pomocí kanálu NuGet, je odebrání balíčku šablon stejné. Použijte `<PackageId>` šablony, kterou chcete odinstalovat. Seznam šablon, které jsou nainstalovány, můžete získat spuštěním příkazu `dotnet new -u`.
 
+```dotnetcli
+dotnet new -u
+```
+
 ```console
-C:\working> dotnet new -u
 Template Instantiation Commands for .NET Core CLI
 
 Currently installed items:

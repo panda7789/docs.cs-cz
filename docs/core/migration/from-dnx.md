@@ -2,12 +2,12 @@
 title: Migrace z DNX na .NET Core CLI
 description: Migrujte z použití nástrojů DNX k .NET Core CLI nástrojů.
 ms.date: 06/20/2016
-ms.openlocfilehash: e15e7ce10bb7a36deb2acd2abb9a0bd4ec8cd4a9
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 31317f110ae1e8586b78becd757d0a8ff07f1459
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920628"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503830"
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX na .NET Core CLI (Project. JSON)
 
@@ -48,13 +48,13 @@ Následující tabulka ukazuje mapování mezi příkazy DNX/DNU a jejich protě
 
 | DNX – příkaz                    | CLI – příkaz    | Popis                                                                                                     |
 |--------------------------------|----------------|-----------------------------------------------------------------------------------------------------------------|
-| DNX spuštění                        | dotnet run     | Spustí kód ze zdroje.                                                                                           |
-| dnu sestavení                      | dotnet build   | Sestavte binární soubor IL vašeho kódu.                                                                                |
-| dnu Pack                       | dotnet pack    | Zabalit balíček NuGet vašeho kódu.                                                                        |
+| DNX spuštění                        | `dotnet run`     | Spustí kód ze zdroje.                                                                                           |
+| dnu sestavení                      | `dotnet build`   | Sestavte binární soubor IL vašeho kódu.                                                                                |
+| dnu Pack                       | `dotnet pack`    | Zabalit balíček NuGet vašeho kódu.                                                                        |
 | DNX \[příkaz] (například "DNX web") | Není k dispozici\*          | V DNX World spusťte příkaz definovaný v projektu Project. JSON.                                                     |
 | instalace dnu                    | Není k dispozici\*          | V DNX World nainstalujte balíček jako závislost.                                                            |
-| dnu obnovení                    | dotnet restore | Obnoví závislosti zadané v projektu. JSON. ([Viz poznámku](#dotnet-restore-note))                                                            |
-| publikování dnu                    | dotnet publish | Publikujte aplikaci pro nasazení v jedné ze tří forem (přenosné, přenosné s nativní a samostatnou). |
+| dnu obnovení                    | `dotnet restore` | Obnoví závislosti zadané v projektu. JSON. ([Viz poznámku](#dotnet-restore-note))                                                            |
+| publikování dnu                    | `dotnet publish` | Publikujte aplikaci pro nasazení v jedné ze tří forem (přenosné, přenosné s nativní a samostatnou). |
 | dnu zalomení                       | Není k dispozici\*          | V DNX World zabalte Project. JSON ve csproj.                                                                    |
 | příkazy dnu                   | Není k dispozici\*          | V DNX World spravujte globálně nainstalované příkazy.                                                           |
 

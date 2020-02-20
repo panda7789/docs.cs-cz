@@ -2,21 +2,17 @@
 title: dotnet – místní příkazy NuGet
 description: Příkaz dotnet NuGet Locals vymaže nebo vypíše místní prostředky NuGet, jako je mezipaměť požadavků HTTP, dočasná mezipaměť nebo složka globálních balíčků v celém počítači.
 author: karann-msft
-ms.date: 06/26/2019
-ms.openlocfilehash: b57c127650555e412af08df6656fb62d75c8ed7c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 3fdd7d946b08b4c18cfaeb65013de259b927a7fa
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734078"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503692"
 ---
 # <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
-**Tento článek se týká:** ✔️ .NET Core 1. x SDK a novějších verzí
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -35,7 +31,7 @@ Příkaz `dotnet nuget locals` vymaže nebo vypíše místní prostředky NuGet 
 
 ## <a name="arguments"></a>Argumenty
 
-* **`CACHE_LOCATION`**
+- **`CACHE_LOCATION`**
 
   Umístění mezipaměti, které se má vypsat nebo vymazat Přijímá jednu z následujících hodnot:
 
@@ -46,49 +42,49 @@ Příkaz `dotnet nuget locals` vymaže nebo vypíše místní prostředky NuGet 
 
 ## <a name="options"></a>Možnosti
 
-* **`--force-english-output`**
+- **`--force-english-output`**
 
   Vynutí spuštění aplikace s využitím neutrální jazykové verze založené na angličtině.
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Vypíše krátkou nápovědu k příkazu.
 
-* **`-c|--clear`**
+- **`-c|--clear`**
 
   Možnost Clear spustí u zadaného typu mezipaměti operaci Clear. Obsah adresářů mezipaměti se odstraní rekurzivně. Spuštěný uživatel nebo skupina musí mít oprávnění k souborům v adresářích mezipaměti. V takovém případě se zobrazí chyba označující soubory nebo složky, které nebyly vymazány.
 
-* **`-l|--list`**
+- **`-l|--list`**
 
   Možnost seznam slouží k zobrazení umístění zadaného typu mezipaměti.
 
 ## <a name="examples"></a>Příklady
 
-* Zobrazuje cesty ke všem adresářům místní mezipaměti (adresář HTTP-cache, adresář mezipaměti globálních balíčků a dočasný adresář mezipaměti):
+- Zobrazuje cesty ke všem adresářům místní mezipaměti (adresář HTTP-cache, adresář mezipaměti globálních balíčků a dočasný adresář mezipaměti):
 
   ```dotnetcli
   dotnet nuget locals all –l
   ```
 
-* Zobrazuje cestu k místnímu adresáři protokolu HTTP-cache:
+- Zobrazuje cestu k místnímu adresáři protokolu HTTP-cache:
 
   ```dotnetcli
   dotnet nuget locals http-cache --list
   ```
 
-* Vymaže všechny soubory ze všech adresářů místní mezipaměti (adresář mezipaměti protokolu HTTP, adresář mezipaměti globálních balíčků a dočasný adresář mezipaměti):
+- Vymaže všechny soubory ze všech adresářů místní mezipaměti (adresář mezipaměti protokolu HTTP, adresář mezipaměti globálních balíčků a dočasný adresář mezipaměti):
 
   ```dotnetcli
   dotnet nuget locals all --clear
   ```
 
-* Vymaže všechny soubory v místní složce mezipaměti Global-Packages:
+- Vymaže všechny soubory v místní složce mezipaměti Global-Packages:
 
   ```dotnetcli
   dotnet nuget locals global-packages -c
   ```
 
-* Vymaže všechny soubory v adresáři místní dočasné mezipaměti:
+- Vymaže všechny soubory v adresáři místní dočasné mezipaměti:
 
   ```dotnetcli
   dotnet nuget locals temp -c

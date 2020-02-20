@@ -4,12 +4,12 @@ description: Přečtěte si o typu struktury a způsobu jejich vytváření.
 ms.date: 10/12/2016
 ms.technology: csharp-fundamentals
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: cdfe2a763058b8f568ede2ff93c918c2dae874f7
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 540742ea6a215e09f0cc31b218ac10fbf6192352
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346905"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503988"
 ---
 # <a name="structs"></a>Struktury
 
@@ -47,9 +47,6 @@ Struktury sdílejí většinu stejné syntaxe jako třídy, i když jsou struktu
 
 - Na rozdíl od tříd lze vytvořit instanci struktur bez použití operátoru `new`.
 
-   > [!NOTE]
-   > V .NET Core 2,1 a novějších se musí vytvořit instance typu struktury pomocí [operátoru new](language-reference/operators/new-operator.md) nebo [výchozího literálu](language-reference/operators/default.md#default-literal)nebo inicializací každého z jeho privátních polí. Další informace najdete v tématu [přerušující změny migrace z verze 2,0 na 2,1](../core/compatibility/2.0-2.1.md#corefx).
-
 - Struktury mohou deklarovat konstruktory, které mají parametry.
 
 - Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Všechny struktury dědí přímo z <xref:System.ValueType>, které dědí z <xref:System.Object>.
@@ -60,7 +57,7 @@ Struktury sdílejí většinu stejné syntaxe jako třídy, i když jsou struktu
 
 Typy běžných hodnot nemohou mít hodnotu [null](language-reference/keywords/null.md). Můžete však vytvořit typy hodnot s možnou hodnotou null, a to tak, že po typu napřipojíte `?`. Například `int?` je `int` typ, který může mít také hodnotu [null](./language-reference/keywords/null.md). Typy s možnou hodnotou null jsou instancemi obecného typu struktury <xref:System.Nullable%601>. Typy hodnot s možnou hodnotou null jsou zvláště užitečné při předávání dat do a z databází, ve kterých mohou být číselné hodnoty null nebo nedefinovány. Další informace naleznete v tématu [typy hodnot s možnou hodnotou null](language-reference/builtin-types/nullable-value-types.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třídy](programming-guide/classes-and-structs/classes.md)
 - [Základní typy](basic-types.md)
