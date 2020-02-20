@@ -2,14 +2,13 @@
 title: Ochrana tajných kódů při produkci pomocí Azure Key Vault
 description: Zabezpečení v mikroslužbách a webových aplikacích .NET – Azure Key Vault je skvělým způsobem, jak zpracovávat tajné klíče aplikací, které jsou zcela řízené správci. Správci mohou dokonce přiřazovat a odvolávat hodnoty vývoje bez vývojářů, kteří je chtějí zpracovat.
 author: mjrousos
-ms.author: wiwagn
-ms.date: 10/19/2018
-ms.openlocfilehash: 4d121f584188c5d5fa9ddf0d91bea5e107eff0cb
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.date: 01/30/2020
+ms.openlocfilehash: cc95d491136c945255408cec2bd49d4d6579e29a
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899660"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501757"
 ---
 # <a name="use-azure-key-vault-to-protect-secrets-at-production-time"></a>Použití Azure Key Vault k ochraně tajných kódů v produkčním čase
 
@@ -35,7 +34,7 @@ Balíček **Microsoft. Extensions. Configuration. AzureKeyVault** umožňuje apl
 > [!IMPORTANT]
 > Doporučujeme, abyste jako poslední Poskytovatel konfigurace zaregistrovali Azure Key Vault, takže může přepsat hodnoty konfigurace z předchozích zprostředkovatelů.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **Použití Azure Key Vault k ochraně tajných klíčů aplikace** \
   [https://docs.microsoft.com/azure/guidance/guidance-multitenant-identity-keyvault](/azure/guidance/guidance-multitenant-identity-keyvault)

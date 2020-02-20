@@ -1,17 +1,17 @@
 ---
 title: Proces vývoje pro aplikace založené na Docker
 description: Získejte podrobný přehled možností vývoje aplikací využívajících Docker. Použití sady Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu multiplatformní (Windows, macOS a Linux).
-ms.date: 09/27/2018
-ms.openlocfilehash: 95e940371f4dbef3b3a8f327c13acbbc55ff29ef
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.date: 01/30/2020
+ms.openlocfilehash: 799aa6fc742a8fb763ec5a7ae3cf3f70f89bed6d
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337702"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502722"
 ---
 # <a name="development-process-for-docker-based-applications"></a>Proces vývoje pro aplikace založené na Docker
 
-*Sestavujte kontejnery aplikací .NET tak, jak chcete, ať už se jedná o integrované vývojové prostředí (IDE) se sadou Visual Studio a Visual Studio Tools pro Docker nebo rozhraní příkazového řádku Docker, a Visual Studio Code.*
+*Vývoj aplikací .NET pomocí integrovaného vývojového prostředí (IDE), které se zaměřuje na sady Visual Studio a Visual Studio Tools pro Docker nebo CLI/editor, se zaměřuje na rozhraní Docker CLI a Visual Studio Code.*
 
 ## <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
@@ -19,17 +19,17 @@ ms.locfileid: "75337702"
 
 Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému vývojovém prostředí (IDE) nebo odlehčenému a agilnímu editoru, Microsoft nabízí nástroje, které můžete použít pro vývoj aplikací Dock
 
-**Visual Studio (pro Windows).** Při vývoji aplikací využívajících Docker se sadou Visual Studio se doporučuje použít Visual Studio 2017 verze 15,7 nebo novější, která je dodávána s nástroji pro Docker, který je už integrovaný. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat vaše aplikace přímo v cílovém prostředí Docker. Stisknutím klávesy F5 můžete spustit a ladit aplikaci (jeden kontejner nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5 upravit a aktualizovat aplikaci, aniž by bylo nutné znovu sestavit kontejner. Toto je nejvýkonnější volba pro vývoj aplikací využívajících Docker.
+**Visual Studio (pro Windows).** Vývoj aplikací .NET Core 3,1 na bázi Docker v systému Visual Studio vyžaduje Visual Studio 2019 verze 16,4 nebo novější. Visual Studio 2019 obsahuje nástroje pro Docker, které jsou už integrované. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat vaše aplikace přímo v cílovém prostředí Docker. Stisknutím klávesy F5 můžete spustit a ladit aplikaci (jeden kontejner nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5 upravit a aktualizovat aplikaci, aniž by bylo nutné znovu sestavit kontejner. Toto je nejvýkonnější volba pro vývoj aplikací využívajících Docker.
 
-**Visual Studio for Mac.** Je to prostředí IDE, vývoj Xamarin Studio spuštěný v macOS a podporuje Docker od Mid-2017. To by mělo být Upřednostňovaná volba pro vývojáře pracující v macOSch počítačích, kteří také chtějí používat výkonné integrované vývojové prostředí (IDE).
+**Visual Studio pro Mac.** Jedná se o integrované vývojové prostředí (IDE), vývoj Xamarin Studio spuštěný v macOS. Pro vývoj pro .NET Core 3,1 vyžaduje verze 8,4 nebo novější. To by mělo být Upřednostňovaná volba pro vývojáře pracující v macOSch počítačích, kteří také chtějí používat výkonné integrované vývojové prostředí (IDE).
 
-**Visual Studio Code a Docker CLI**. Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje libovolný jazyk vývoje, můžete použít Microsoft Visual Studio kód (VS Code) a Docker CLI. Toto je přístup pro vývoj pro různé platformy pro macOS, Linux a Windows. Kromě toho Visual Studio Code podporuje rozšíření pro Docker, jako je například IntelliSense pro úlohy fázemi a zástupce pro spouštění příkazů Docker z editoru.
+**Visual Studio Code a Docker CLI**. Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje libovolný vývojový jazyk, můžete použít Visual Studio Code a Docker CLI. Toto je přístup pro vývoj pro různé platformy pro macOS, Linux a Windows. Kromě toho Visual Studio Code podporuje rozšíření pro Docker, jako je například IntelliSense pro úlohy fázemi a zástupce pro spouštění příkazů Docker z editoru.
 
 Když nainstalujete [Docker Desktop Community Edition (CE)](https://hub.docker.com/search/?type=edition&offering=community), můžete k sestavování aplikací pro Windows i Linux použít jedno rozhraní Docker CLI.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
-- **Visual Studio**. Oficiální lokalita. \
+- Sadu **Visual Studio**. Oficiální lokalita. \
   [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
 - **Visual Studio Code**. Oficiální lokalita. \

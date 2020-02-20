@@ -1,13 +1,13 @@
 ---
 title: Terminologie Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Terminologie Docker
-ms.date: 01/07/2019
-ms.openlocfilehash: 33f2918df5b63cc4bd54ddb84900c6bd91e9f77e
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 01/30/2020
+ms.openlocfilehash: 5ffc7e791df8cbc999c6ababf62670bae46e1d5e
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921010"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502841"
 ---
 # <a name="docker-terminology"></a>Terminologie Dockeru
 
@@ -31,7 +31,7 @@ V této části jsou uvedeny pojmy a definice, se kterými byste se měli sezná
 
 **Registr**: služba, která poskytuje přístup k úložištím. Výchozím registrem pro většinu veřejných imagí je [Docker Hub](https://hub.docker.com/) (vlastněné Docker jako organizace). Registr obvykle obsahuje úložiště z více týmů. Společnosti mají často privátní registry pro ukládání a správu imagí, které vytvořili. Azure Container Registry je další příklad.
 
-**Vícestránkový obrázek**: pro více architektur je funkce, která zjednodušuje výběr příslušné image. podle platformy, kde je Docker spuštěný, například když souboru Dockerfile požaduje základní image **z MCR.Microsoft.com/dotnet/Core/SDK:2.2** z registru, který ve skutečnosti získá **2,2-SDK-nanoserver-1709**, **2,2-SDK-nanoserver-1803**, **2,2-SDK-nanoserver-1809** nebo **2,2-SDK-Stretch**, v závislosti na operačním systému a verzi, kde je Docker spuštěný.
+**Vícestránkový obrázek**: u více architektur se jedná o funkci, která zjednodušuje výběr příslušné image v závislosti na platformě, kde je Docker spuštěný. Například když souboru Dockerfile požaduje základní image **z MCR.Microsoft.com/dotnet/Core/SDK:3.1** z registru, ve skutečnosti to **3,1-SDK-nanoserver-1909**, **3,1-SDK-nanoserver-1809** nebo **3,1-SDK-Buster-Slim**, v závislosti na operačním systému a verzi, kde je Docker spuštěný.
 
 **Docker Hub**: veřejný registr pro nahrání obrázků a práci s nimi. Docker Hub poskytuje hostování imagí Docker, veřejné nebo privátní Registry, triggery sestavení a Webhooky a integraci s GitHubem a Bitbucket.
 

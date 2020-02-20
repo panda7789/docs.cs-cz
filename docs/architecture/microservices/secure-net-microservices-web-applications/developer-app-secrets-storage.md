@@ -2,14 +2,13 @@
 title: Bezpečné ukládání tajných kódů aplikace během vývoje
 description: Zabezpečení v mikroslužbách a webových aplikacích .NET – neukládejte tajné klíče vaší aplikace jako hesla, připojovací řetězce nebo klíče rozhraní API ve správě zdrojového kódu. Seznamte se s možnostmi, které můžete použít v ASP.NET Core, zejména musíte pochopit, jak se má řídit uživatel. tajné kódy.
 author: mjrousos
-ms.author: wiwagn
-ms.date: 10/19/2018
-ms.openlocfilehash: fe8e7fa11c9a4f4cae133c2e09f9e4b4dd40a546
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.date: 01/30/2020
+ms.openlocfilehash: 1ef2246746b9165f1564fa7be64ff7eb28eb1d32
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296484"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501789"
 ---
 # <a name="store-application-secrets-safely-during-development"></a>Bezpečné ukládání tajných kódů aplikací během vývoje
 
@@ -39,7 +38,7 @@ Všimněte si, že proměnné prostředí se běžně ukládají jako prostý te
 
 ## <a name="store-secrets-with-the-aspnet-core-secret-manager"></a>Uložení tajných kódů pomocí Správce ASP.NET Core tajných klíčů
 
-Nástroj ASP.NET Core [správce tajných](/aspnet/core/security/app-secrets#secret-manager) klíčů poskytuje další způsob udržování tajných kódů ze zdrojového kódu. Chcete-li použít nástroj Správce tajných klíčů, nainstalujte balíček **Microsoft. Extensions. Configuration. SecretManager** do souboru projektu. Jakmile je tato závislost přítomna a byla obnovena, lze pomocí příkazu `dotnet user-secrets` nastavit hodnotu tajných kódů z příkazového řádku. Tyto tajné kódy budou uloženy v souboru JSON v adresáři profilu uživatele (podrobnosti se liší podle operačního systému), a to mimo zdrojový kód.
+Nástroj ASP.NET Core [správce tajných](/aspnet/core/security/app-secrets#secret-manager) klíčů poskytuje další způsob udržování tajných kódů ze zdrojového kódu **během vývoje**. Chcete-li použít nástroj Správce tajných klíčů, nainstalujte balíček **Microsoft. Extensions. Configuration. SecretManager** do souboru projektu. Jakmile je tato závislost přítomna a byla obnovena, lze pomocí příkazu `dotnet user-secrets` nastavit hodnotu tajných kódů z příkazového řádku. Tyto tajné kódy budou uloženy v souboru JSON v adresáři profilu uživatele (podrobnosti se liší podle operačního systému), a to mimo zdrojový kód.
 
 Tajné klíče nastavené nástrojem Správce tajných klíčů jsou uspořádány pomocí vlastnosti `UserSecretsId` projektu, který používá tajné kódy. Proto je nutné, abyste nastavili vlastnost UserSecretsId v souboru projektu, jak je znázorněno v následujícím fragmentu kódu. Výchozí hodnota je identifikátor GUID přiřazený aplikací Visual Studio, ale skutečný řetězec není důležitý, pokud je v počítači jedinečný.
 

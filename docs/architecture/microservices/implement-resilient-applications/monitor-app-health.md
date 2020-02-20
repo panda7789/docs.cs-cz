@@ -1,13 +1,13 @@
 ---
 title: Monitorování stavu
 description: Prozkoumejte jeden ze způsobů implementace monitorování stavu.
-ms.date: 01/07/2019
-ms.openlocfilehash: f1d63e04bbea95fcf0a9f9d3b50aef0e7d4a830e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: a91e51af66049f9774365cd56b90ab792a4dd4fc
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732883"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502692"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -19,7 +19,7 @@ V typickém modelu odesílají služby zprávy o jejich stavu a tyto informace j
 
 ## <a name="implement-health-checks-in-aspnet-core-services"></a>Implementace kontrol stavu ve službě ASP.NET Core Services
 
-Při vývoji ASP.NET Core mikroslužeb nebo webové aplikace můžete použít integrovanou funkci kontroly stavu, která byla vydaná v prostředí ASP .NET Core 2,2. Stejně jako mnoho funkcí ASP.NET Core, jsou kontroly stavu dodávány se sadou služeb a middlewaru.
+Při vývoji ASP.NET Core mikroslužeb nebo webové aplikace můžete použít integrovanou funkci kontroly stavu, která byla vydaná v prostředí ASP .NET Core 3,1 ([Microsoft. Extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks)). Stejně jako mnoho funkcí ASP.NET Core, jsou kontroly stavu dodávány se sadou služeb a middlewaru.
 
 Služby kontroly stavu a middleware se snadno používají a poskytují možnosti, které vám umožní ověřit, jestli nějaký externí prostředek potřebný pro vaši aplikaci (třeba databáze SQL Server nebo vzdálené rozhraní API) pracuje správně. Když použijete tuto funkci, můžete se také rozhodnout, co znamená, že je prostředek v pořádku, jak je vysvětleno později.
 
@@ -27,20 +27,23 @@ Abyste tuto funkci mohli efektivně používat, musíte nejdřív nakonfigurovat
 
 ### <a name="use-the-healthchecks-feature-in-your-back-end-aspnet-microservices"></a>Použití funkce HealthChecks v ASP.NET mikroslužbách back-endu
 
-V této části se dozvíte, jak se funkce HealthChecks používá v ukázkové aplikaci webového rozhraní API ASP.NET Core 2,2. Implementace této funkce v rozsáhlých mikroslužbách škály, jako je eShopOnContainers, je vysvětleno v další části. Chcete-li začít, je třeba definovat, co znamená dobrý stav pro jednotlivé mikroslužby. V ukázkové aplikaci jsou mikroslužby v dobrém stavu, pokud je k dispozici rozhraní API mikroslužeb přes protokol HTTP a k dispozici je také související databáze SQL Server.
+V této části se dozvíte, jak se funkce HealthChecks, jak je implementováno v souboru [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks), používá v ukázkové aplikaci webového rozhraní API ASP.NET Core 3,1. Implementace této funkce v rozsáhlých mikroslužbách, jako je eShopOnContainers, je vysvětleno v další části. Chcete-li začít, je třeba definovat, co znamená dobrý stav pro jednotlivé mikroslužby. V ukázkové aplikaci jsou mikroslužby v dobrém stavu, pokud je k dispozici rozhraní API mikroslužeb přes protokol HTTP a k dispozici je také související databáze SQL Server.
 
-V rozhraní .NET Core 2,2 s integrovanými rozhraními API můžete nakonfigurovat služby a přidat kontrolu stavu pro mikroslužbu a její závislé SQL Server databázi tímto způsobem:
+V rozhraní .NET Core 3,1 s integrovanými rozhraními API můžete nakonfigurovat služby a přidat kontrolu stavu pro mikroslužbu a její závislé SQL Server databázi tímto způsobem:
 
 ```csharp
-// Startup.cs from .NET Core 2.2 Web Api sample
+// Startup.cs from .NET Core 3.1 Web API sample
 //
 public void ConfigureServices(IServiceCollection services)
 {
     //...
     // Registers required services for health checks
     services.AddHealthChecks()
-    // Add a health check for a SQL database
-    .AddCheck("MyDatabase", new SqlConnectionHealthCheck(Configuration["ConnectionStrings:DefaultConnection"]));
+        // Add a health check for a SQL Server database
+        .AddSqlServer(
+            configuration["ConnectionString"],
+            name: "OrderingDB-check",
+            tags: new string[] { "orderingdb" });
 }
 ```
 
@@ -98,17 +101,26 @@ public class SqlConnectionHealthCheck : IHealthCheck
 }
 ```
 
-Všimněte si, že v předchozím kódu je `Select 1` dotazem, který slouží ke kontrole stavu databáze. Aby bylo možné monitorovat dostupnost mikroslužeb, orchestrace, jako je Kubernetes, a Service Fabric pravidelně provádět kontroly stavu tím, že odesílají požadavky na testování mikroslužeb. Je důležité uchovávat dotazy v databázi efektivně, aby tyto operace byly rychlé a nevedly k vyššímu využití prostředků.
+Všimněte si, že v předchozím kódu je `Select 1` dotazem, který slouží ke kontrole stavu databáze. Aby bylo možné monitorovat dostupnost mikroslužeb, orchestrace, jako je Kubernetes, pravidelně provádějí kontroly stavu tím, že odesílají požadavky na testování mikroslužeb. Je důležité uchovávat dotazy v databázi efektivně, aby tyto operace byly rychlé a nevedly k vyššímu využití prostředků.
 
-Nakonec vytvořte middleware, který reaguje na cestu URL/HC:
+Nakonec přidejte middleware, který reaguje na cestu URL `/hc`:
 
 ```csharp
-// Startup.cs from .NET Core 2.2 Web Api sample
+// Startup.cs from .NET Core 3.1 Web Api sample
 //
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     //…
-    app.UseHealthChecks("/hc");
+    app.UseEndpoints(endpoints =>
+    {
+        //...
+        endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+        {
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+        //...
+    });
     //…
 }
 ```
@@ -119,7 +131,7 @@ Po vyvolání koncového bodu `<yourmicroservice>/hc` spustí všechny kontroly 
 
 Mikroslužby v eShopOnContainers spoléhají na provádění svých úkolů více službami. Například `Catalog.API` mikroslužba z eShopOnContainers závisí na mnoha službách, jako je Azure Blob Storage, SQL Server a RabbitMQ. Proto má pomocí metody `AddCheck()` přidáno několik kontrol stavu. Pro každou závislou službu musí být přidána vlastní implementace `IHealthCheck` definující příslušný stav jeho stavu.
 
-Open source projekt [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) tento problém vyřeší tím, že poskytuje implementace vlastního ověření stavu pro každou z těchto podnikových služeb, které jsou postaveny na .net Core 2,2. Každá kontrolu stavu je k dispozici jako samostatný balíček NuGet, který lze snadno přidat do projektu. eShopOnContainers je často používejte ve všech mikroslužbách.
+Open source projekt [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) tento problém vyřeší tím, že poskytuje implementace vlastního ověření stavu pro každou z těchto podnikových služeb, které jsou postaveny na .net Core 3,1. Každá kontrolu stavu je k dispozici jako samostatný balíček NuGet, který lze snadno přidat do projektu. eShopOnContainers je často používá ve všech mikroslužbách.
 
 Například v `Catalog.API` mikroslužeb byly přidány následující balíčky NuGet:
 
@@ -175,7 +187,7 @@ public static IServiceCollection AddCustomHealthCheck(this IServiceCollection se
 }
 ```
 
-Nakonec přidáme middleware HealthCheck, který bude naslouchat koncovému bodu "/HC":
+Nakonec přidejte middleware HealthCheck pro poslech koncového bodu "/HC":
 
 ```csharp
 // HealthCheck middleware
@@ -271,7 +283,7 @@ Můžete použít jednoduché vlastní aplikace ukazující stav vašich služeb
 
 Nakonec, pokud ukládáte všechny streamy událostí, můžete k vizualizaci dat použít Microsoft Power BI nebo jiná řešení, jako je Kibana nebo Splunk.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **Uživatelské rozhraní HealthChecks a HealthChecks pro ASP.NET Core** \
   <https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks>
@@ -279,7 +291,7 @@ Nakonec, pokud ukládáte všechny streamy událostí, můžete k vizualizaci da
 - **Úvod do Service Fabric monitoring stavu** \
   [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
 
-- **Azure Monitor**  
+- **Azure Monitor** \
   <https://azure.microsoft.com/services/monitor/>
 
 >[!div class="step-by-step"]

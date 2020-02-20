@@ -1,13 +1,13 @@
 ---
 title: Implementace objektů hodnot
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte informace a možnosti pro implementaci objektů hodnot pomocí nových funkcí Entity Framework.
-ms.date: 10/08/2018
-ms.openlocfilehash: 70c92fe86fda20ed4e909b945b843e8e71092f09
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.date: 01/30/2020
+ms.openlocfilehash: 4ace5c141b1cbd2dcfefb7ea7165a4006b130479
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899778"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502515"
 ---
 # <a name="implement-value-objects"></a>Implementace objektů hodnot
 
@@ -131,13 +131,13 @@ public class Address : ValueObject
 
 Můžete zjistit, jak tato implementace objektu hodnoty nemá žádnou identitu, a proto žádné pole ID není ani na třídě Address ani na třídě ValueObject.
 
-Neexistence pole ID ve třídě, která má být použita Entity Framework nebyla možná, dokud EF Core 2,0, což významně pomáhá implementovat lépe vícehodnotové objekty bez ID. To je přesně vysvětlení další části.
+Neexistence pole ID ve třídě, která má být použita Entity Framework (EF), nebylo možné, dokud EF Core 2,0, což významně pomáhá implementovat lépe vícehodnotové objekty bez ID. To je přesně vysvětlení další části.
 
-Může být namítáno, že objekty hodnot, které jsou neměnné, by měly být jen pro čtení (tj. vlastnosti jen pro získání), a to vlastně pravdivé. Objekty hodnot se ale obvykle serializovat a deserializovat, aby procházely přes fronty zpráv a jen pro čtení zastaví deserializaci, aby bylo možné přiřadit hodnoty, takže je pouze máme soukromá sada, která je dostatečně čitelná, aby mohla být praktická.
+Může být namítáno, že objekty hodnot, které jsou neměnné, by měly být jen pro čtení (to znamená, že mají vlastnosti jen pro získání) a které jsou skutečně pravdivé. Objekty hodnot se ale obvykle serializovat a deserializovat, aby procházely přes fronty zpráv a jen pro čtení zastaví deserializaci, aby bylo možné přiřadit hodnoty, takže je pouze máme soukromá sada, která je dostatečně čitelná, aby mohla být praktická.
 
-## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20"></a>Jak zachovat objekty hodnot v databázi pomocí EF Core 2,0
+## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>Jak zachovat objekty hodnot v databázi pomocí EF Core 2,0 a novějších
 
-Právě jste viděli, jak v doménovém modelu definovat objekt hodnoty. Ale jak můžete ve skutečnosti uchovávat v databázi prostřednictvím jádra Entity Framework (EF), která obvykle cílí na entity s identitou?
+Právě jste viděli, jak v doménovém modelu definovat objekt hodnoty. Ale jak je můžete ve skutečnosti uchovávat v databázi pomocí Entity Framework Core, protože obvykle cílí na entity s identitou?
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>Pozadí a starší přístupy pomocí EF Core 1,1
 
@@ -160,11 +160,11 @@ void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 
 Trvalost tohoto objektu Value do databáze se ale prováděla jako regulární entita v jiné tabulce.
 
-S EF Core 2,0 existují nové a lepší způsoby, jak zachovat objekty hodnot.
+V EF Core 2,0 a novějších existují nové a lepší způsoby, jak zachovat objekty hodnot.
 
-## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20"></a>Zachovat objekty hodnot jako vlastněné typy entit v EF Core 2,0
+## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20-and-later"></a>Zachovat objekty hodnot jako vlastněné typy entit v EF Core 2,0 a novějších verzích
 
-I s některými mezerami mezi vzorem objektu kanonické hodnoty v DDD a vlastněnou entitou typu v EF Core je aktuálně nejlepším způsobem, jak zachovat objekty hodnot pomocí EF Core 2,0. Na konci této části můžete vidět omezení.
+I s některými mezerami mezi vzorem objektu kanonické hodnoty v DDD a vlastněnou entitou typu v EF Core je aktuálně nejlepším způsobem, jak zachovat objekty hodnot pomocí EF Core 2,0 a novějších. Na konci této části můžete vidět omezení.
 
 Do EF Core od verze 2,0 byla přidána funkce typu vlastněné entity.
 
@@ -178,7 +178,7 @@ Identita instancí vlastněných typů není zcela vlastní. Skládá se ze tř�
 
 - Navigační vlastnost, na kterou se odkazuje
 
-- V případě kolekcí vlastněných typů se nezávislá komponenta (zatím nepodporovaná v EF Core 2,0, která se nachází na 2,2).
+- V případě kolekcí vlastněných typů, nezávislé komponenty (podporované v EF Core 2,2 a novější).
 
 Například v modelu domény řazení na eShopOnContainers jako součást entity Order je objekt hodnoty adresy implementován jako vlastněný typ entity v rámci entity Owner, která je objednávka. Adresa je typ bez vlastnosti identity definované v doménovém modelu. Slouží jako vlastnost typu objednávky k určení dodací adresy pro konkrétní objednávku.
 
@@ -275,7 +275,7 @@ public class Address
 
 - Identita (klíč) instance vlastního typu v našem zásobníku je složena z identity typu vlastníka a definice vlastněného typu.
 
-#### <a name="owned-entities-capabilities"></a>Možnosti vlastněných entit:
+#### <a name="owned-entities-capabilities"></a>Možnosti vlastněných entit
 
 - Vlastněné typy mohou odkazovat na jiné entity, buď vlastněné (vnořené vlastněné typy), nebo nevlastní (standardní referenční vlastnosti navigace jiným entitám).
 
@@ -283,29 +283,29 @@ public class Address
 
 - Rozdělení tabulky je nastavení podle konvence, ale můžete si ji vyfiltrovat tak, že namapujete vlastněný typ na jinou tabulku pomocí ToTable.
 
-- Načítání Eager se provádí automaticky na vlastněných typech, tj. není nutné volat include () na dotaz.
+- Načítání Eager se provádí automaticky na vlastněných typech, to znamená, že pro dotaz není nutné volat `.Include()`.
 
-- Dá se nakonfigurovat s atributem \[vlastní\], od EF Core 2,1
+- Dá se nakonfigurovat s atributem `[Owned]`, a to pomocí EF Core 2,1 a novějších.
 
-#### <a name="owned-entities-limitations"></a>Omezení entit vlastněných entitami:
+- Může zpracovávat kolekce vlastněných typů (pomocí verze 2,2 a novější).
 
-- Nemůžete vytvořit\> Negenerickými\<T vlastněných typu (podle návrhu).
+#### <a name="owned-entities-limitations"></a>Omezení entit vlastněných společností
 
-- Nelze volat ModelBuilder. entity\<T\>() na vlastněných typech (aktuálně podle návrhu).
+- Nemůžete vytvořit `DbSet<T>` typu, který je ve vlastnictví (podle návrhu).
 
-- Zatím nejsou žádné kolekce vlastněných typů (od EF Core 2,1, ale budou podporované v 2,2).
+- Nemůžete volat `ModelBuilder.Entity<T>()` u vlastněných typů (aktuálně podle návrhu).
 
-- Není podporována podpora volitelného typu (to znamená Nullable), který je namapován s vlastníkem ve stejné tabulce (tj. použití rozdělení tabulky). Důvodem je to, že mapování se provádí pro každou vlastnost, ale nepoužíváme samostatnou sentinelou pro komplexní hodnotu null a jako celek.
+- Není podporována podpora volitelného typu (to znamená Nullable), který je namapován s vlastníkem ve stejné tabulce (tj. pomocí rozdělení tabulky). Důvodem je to, že mapování se provádí pro každou vlastnost, ale nepoužíváme samostatnou sentinelou pro komplexní hodnotu null a jako celek.
 
 - Pro vlastněné typy není podporovaná podpora mapování dědičnosti, ale měli byste být schopni mapovat dva typy listů stejných hierarchií dědičnosti jako jiné vlastněné typy. EF Core nebude mít důvod k tomu, že jsou součástí stejné hierarchie.
 
 #### <a name="main-differences-with-ef6s-complex-types"></a>Hlavní rozdíly s EF6's komplexními typy
 
-- Rozdělení tabulky je volitelné, tj. je možné je volitelně namapovat na samostatnou tabulku a nadále mít vlastní typy.
+- Rozdělení tabulky je volitelné, to znamená, že mohou být případně mapovány na samostatnou tabulku a stále mají vlastní typy.
 
 - Můžou odkazovat na jiné entity (to znamená, že můžou fungovat jako závislá strana na vztazích s jinými nevlastními typy).
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **Martin Fowlera. \ vzor ValueObject**
   <https://martinfowler.com/bliki/ValueObject.html>
@@ -316,8 +316,11 @@ public class Address
 - **Vaughn Vernon. Implementace návrhu založeného na doméně.** (Kniha; obsahuje diskuzi o objektech hodnot) \
   <https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/>
 
+- **Vlastní typy entit** \
+  <https://docs.microsoft.com/ef/core/modeling/owned-entities>
+
 - **Vlastnosti stínu** \
-  [https://docs.microsoft.com/ef/core/modeling/shadow-properties](/ef/core/modeling/shadow-properties)
+  <https://docs.microsoft.com/ef/core/modeling/shadow-properties>
 
 - **Komplexní typy a/nebo hodnotové objekty**. Diskuze v úložišti GitHubu EF Core (karta problémy) \
   <https://github.com/dotnet/efcore/issues/246>

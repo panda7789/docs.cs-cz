@@ -1,13 +1,13 @@
 ---
 title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
-ms.date: 10/08/2018
-ms.openlocfilehash: 08cb409b06a54c6b30afa393a817e14bd64fbcbf
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+description: Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
+ms.date: 01/30/2020
+ms.openlocfilehash: a88f3bfd11ea06df085ca82ed7265cb37006fc31
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "73737513"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502449"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -92,11 +92,9 @@ public void ConfigureServices(IServiceCollection services)
 {
     // Register out-of-the-box framework services.
     services.AddDbContext<CatalogContext>(c =>
-    {
-        c.UseSqlServer(Configuration["ConnectionString"]);
-    },
-    ServiceLifetime.Scoped
-    );
+        c.UseSqlServer(Configuration["ConnectionString"]),
+        ServiceLifetime.Scoped);
+
     services.AddMvc();
     // Register custom application dependencies.
     services.AddScoped<IMyCustomRepository, MyCustomSQLRepository>();
@@ -109,7 +107,7 @@ Nejběžnějším vzorem při registraci typů v kontejneru IoC je registrace p�
 
 Při použití funkce DI v .NET Core můžete chtít skenovat sestavení a automaticky registrovat jeho typy podle konvencí. Tato funkce není v současnosti k dispozici v ASP.NET Core. Pro to však můžete použít knihovnu [Scrutor](https://github.com/khellang/Scrutor) . Tento přístup je vhodný, když máte desítky typů, které je třeba registrovat v kontejneru IoC.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Matthew krále. Registrace služeb pomocí \ Scrutor**
   <https://www.mking.net/blog/registering-services-with-scrutor>
@@ -164,7 +162,7 @@ Typ rozsahu instance Určuje, jak je instance sdílena mezi požadavky na stejno
 
 - Jedna instance sdílená napříč všemi objekty pomocí kontejneru IoC (dále v kontejneru ASP.NET Core IoC jako *singleton*).
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Úvod do injektáže závislosti v ASP.NET Core** \
   [https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection](/aspnet/core/fundamentals/dependency-injection)
@@ -289,7 +287,7 @@ V podstatě třída Command obsahuje všechna data, která potřebujete pro prov
 
 V důsledku dalších charakteristik jsou příkazy neměnné, protože očekávané využití je, že jsou zpracovávány přímo doménovým modelem. Nemusejí se měnit během plánované životnosti. Ve C# třídě lze neměnnosti dosáhnout tak, že neexistují žádné metody setter nebo jiné metody, které mění vnitřní stav.
 
-Uvědomte si, že Pokud zamýšlíte nebo očekáváte, že budou příkazy přecházet pomocí serializace/deserializace procesu, vlastnosti musí mít privátní metodu setter a atribut `[DataMember]` (nebo `[JsonProperty]`), jinak deserializátor nebude moci rekonstruovat objekt v cíli s požadovanými hodnotami.
+Mějte na paměti, že pokud máte v úmyslu nebo očekáváte, že procházíte pomocí serializace/deserializace procesu, vlastnosti musí mít privátní metodu setter a atribut `[DataMember]` (nebo `[JsonProperty]`). V opačném případě deserializátor nebude moci rekonstruovat objekt v cílovém umístění s požadovanými hodnotami. Můžete také použít vlastnosti, které jsou skutečně jen pro čtení, pokud má třída konstruktor s parametry pro všechny vlastnosti, s obvyklým camelCase konvencí pojmenování a opatřit konstruktor jako `[JsonConstructor]`. Tato možnost však vyžaduje více kódu.
 
 Například třída příkazu pro vytvoření objednávky je pravděpodobně podobná z údajů pro pořadí, které chcete vytvořit, ale pravděpodobně nepotřebujete stejné atributy. `CreateOrderCommand` například nemá ID objednávky, protože objednávka ještě nebyla vytvořena.
 
@@ -315,7 +313,7 @@ Někteří vývojáři zavedou své objekty žádosti o uživatelské rozhraní 
 
 ### <a name="the-command-handler-class"></a>Třída obslužné rutiny příkazu
 
-Pro každý příkaz byste měli implementovat konkrétní třídu obslužné rutiny příkazu. To znamená, jak vzor funguje, a je místo, kde budete používat objekt Command, doménové objekty a objekty úložiště infrastruktury. Obslužná rutina příkazu je ve skutečnosti jádrem aplikační vrstvy z podmínek CQRS a DDD. Nicméně všechny doménové logiky by měly být obsaženy v rámci tříd domény – v rámci agregovaných kořenů (kořenové entity), podřízených entit nebo [doménových služeb](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/), ale ne v rámci obslužné rutiny příkazu, což je třída z aplikační vrstvy.
+Pro každý příkaz byste měli implementovat konkrétní třídu obslužné rutiny příkazu. To znamená, jak vzor funguje, a je místo, kde budete používat objekt Command, doménové objekty a objekty úložiště infrastruktury. Obslužná rutina příkazu je ve skutečnosti jádrem aplikační vrstvy z podmínek CQRS a DDD. Nicméně všechny doménové logiky by měly být obsaženy v doménových třídách, v rámci agregovaných kořenů (kořenové entity), podřízených entit nebo [doménových služeb](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/), ale ne v rámci obslužné rutiny příkazu, což je třída z aplikační vrstvy.
 
 Třída obslužné rutiny příkazu nabízí silné kameny v rámci způsobu, jak dosáhnout jediného principu zodpovědnosti (SRP) zmíněného v předchozí části.
 
@@ -396,7 +394,7 @@ Jedná se o další kroky, které by měla obslužná rutina příkazu provést:
 
 - Pokud je výsledkem operace agregace úspěch a po dokončení transakce, vyvolejte integrační události. (Ty můžou být vyvolány i třídami infrastruktury, jako jsou úložiště.)
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Označte Seemann. V hranicích nejsou aplikace orientované na objekt** \
   <https://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/>
@@ -799,7 +797,7 @@ Mohli byste vytvořit další ověření. Jedná se o velmi čistý a elegantní
 
 Podobným způsobem můžete implementovat jiné chování pro další aspekty nebo problémy mimo průřez, které chcete použít pro příkazy při jejich zpracování.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 ##### <a name="the-mediator-pattern"></a>Vzor zprostředkovatelů
 

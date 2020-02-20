@@ -1,13 +1,13 @@
 ---
 title: Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte podrobnosti implementace vrstvy trvalé infrastruktury pomocí Entity Framework Core.
-ms.date: 10/08/2018
-ms.openlocfilehash: b70ede6b47cbf990d0435aef841416c68f6439b4
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte podrobnosti implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core.
+ms.date: 01/30/2020
+ms.openlocfilehash: 63579dc74ba52551bc1ee02a57337c1b17fdf396
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737909"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502500"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvy trvalosti infrastruktury s Entity Framework Core
 
@@ -21,7 +21,7 @@ Jádro Entity Framework (EF) je odlehčená, rozšiřitelná a více platforem o
 
 Vzhledem k tomu, že Úvod do EF Core je již k dispozici v dokumentaci společnosti Microsoft, jednoduše poskytujeme odkazy na tyto informace.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Entity Framework Core** \
   [https://docs.microsoft.com/ef/core/](/ef/core/)
@@ -32,7 +32,7 @@ Vzhledem k tomu, že Úvod do EF Core je již k dispozici v dokumentaci společn
 -  \ **třídy DbContext**
   [https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext](xref:Microsoft.EntityFrameworkCore.DbContext)
 
-- **Compare EF Core & EF6. x** \
+- **Compare EF Core &AMP; EF6. x** \
   [https://docs.microsoft.com/ef/efcore-and-ef6/index](/ef/efcore-and-ef6/index)
 
 ## <a name="infrastructure-in-entity-framework-core-from-a-ddd-perspective"></a>Infrastruktura v Entity Framework Core z DDD perspektivy
@@ -230,7 +230,7 @@ builder.RegisterType<OrderRepository>()
 
 Všimněte si, že použití životnosti singleton pro úložiště může způsobit vážné problémy s souběžnou dostupností, když je DbContext nastavené na rozsah (InstancePerLifetimeScope) životního cyklu (výchozí doba pro DBContext).
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Implementace vzorového úložiště a pracovní jednotky v aplikaci ASP.NET MVC** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
@@ -273,49 +273,73 @@ class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> orderConfiguration)
     {
-            orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
+        orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
 
-            orderConfiguration.HasKey(o => o.Id);
+        orderConfiguration.HasKey(o => o.Id);
 
-            orderConfiguration.Ignore(b => b.DomainEvents);
+        orderConfiguration.Ignore(b => b.DomainEvents);
 
-            orderConfiguration.Property(o => o.Id)
-                .ForSqlServerUseSequenceHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
+        orderConfiguration.Property(o => o.Id)
+            .UseHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
 
-            //Address Value Object persisted as owned entity type supported since EF Core 2.0
-            orderConfiguration.OwnsOne(o => o.Address);
+        //Address value object persisted as owned entity type supported since EF Core 2.0
+        orderConfiguration
+            .OwnsOne(o => o.Address, a =>
+            {
+                a.WithOwner();
+            });
 
-            orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
-            orderConfiguration.Property<int?>("BuyerId").IsRequired(false);
-            orderConfiguration.Property<int>("OrderStatusId").IsRequired();
-            orderConfiguration.Property<int?>("PaymentMethodId").IsRequired(false);
-            orderConfiguration.Property<string>("Description").IsRequired(false);
+        orderConfiguration
+            .Property<int?>("_buyerId")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("BuyerId")
+            .IsRequired(false);
 
-            var navigation = orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+        orderConfiguration
+            .Property<DateTime>("_orderDate")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("OrderDate")
+            .IsRequired();
 
-            // DDD Patterns comment:
-            //Set as field (New since EF 1.1) to access the OrderItem collection property through its field
-            navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+        orderConfiguration
+            .Property<int>("_orderStatusId")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("OrderStatusId")
+            .IsRequired();
 
-            orderConfiguration.HasOne<PaymentMethod>()
-                .WithMany()
-                .HasForeignKey("PaymentMethodId")
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Restrict);
+        orderConfiguration
+            .Property<int?>("_paymentMethodId")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("PaymentMethodId")
+            .IsRequired(false);
 
-            orderConfiguration.HasOne<Buyer>()
-                .WithMany()
-                .IsRequired(false)
-                .HasForeignKey("BuyerId");
+        orderConfiguration.Property<string>("Description").IsRequired(false);
 
-            orderConfiguration.HasOne(o => o.OrderStatus)
-                .WithMany()
-                .HasForeignKey("OrderStatusId");
+        var navigation = orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+
+        // DDD Patterns comment:
+        //Set as field (New since EF 1.1) to access the OrderItem collection property through its field
+        navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+
+        orderConfiguration.HasOne<PaymentMethod>()
+            .WithMany()
+            .HasForeignKey("_paymentMethodId")
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        orderConfiguration.HasOne<Buyer>()
+            .WithMany()
+            .IsRequired(false)
+            .HasForeignKey("_buyerId");
+
+        orderConfiguration.HasOne(o => o.OrderStatus)
+            .WithMany()
+            .HasForeignKey("_orderStatusId");
     }
 }
 ```
 
-V rámci stejné metody OnModelCreating můžete nastavit všechna mapování Fluent rozhraní API, ale je vhodné rozdělit kód na oddíly a mít více tříd konfigurace, jednu pro každou entitu, jak je znázorněno v příkladu. Zejména u velkých modelů je vhodné mít samostatné třídy konfigurace pro konfiguraci různých typů entit.
+V rámci stejné `OnModelCreating` metody můžete nastavit všechna mapování Fluent rozhraní API, ale je vhodné rozdělit kód na oddíly a mít více tříd konfigurace, jednu pro každou entitu, jak je znázorněno v příkladu. Zejména u velkých modelů je vhodné mít samostatné třídy konfigurace pro konfiguraci různých typů entit.
 
 Kód v příkladu ukazuje několik explicitních deklarací a mapování. EF Core konvence ale mnoho z těchto mapování provede automaticky, takže skutečný kód, který byste potřebovali v případě, může být menší.
 
@@ -333,7 +357,7 @@ Algoritmus Hi/Lo popisuje mechanismus pro získání dávky jedinečných ID ze 
 
 - Vygeneruje lidský čitelný identifikátor, na rozdíl od technik, které používají identifikátory GUID.
 
-EF Core podporuje [Hilo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) pomocí metody ForSqlServerUseSequenceHiLo, jak je znázorněno v předchozím příkladu.
+EF Core podporuje [Hilo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) s metodou `UseHiLo`, jak je znázorněno v předchozím příkladu.
 
 ### <a name="map-fields-instead-of-properties"></a>Mapování polí namísto vlastností
 
@@ -410,6 +434,7 @@ public class BasketWithItemsSpecification : BaseSpecification<Basket>
     {
         AddInclude(b => b.Items);
     }
+
     public BasketWithItemsSpecification(string buyerId)
         : base(b => b.BuyerId == buyerId)
     {
@@ -445,9 +470,9 @@ public IEnumerable<T> List(ISpecification<T> spec)
 
 Kromě zapouzdření logiky filtrování může specifikace určit tvar dat, která mají být vrácena, včetně vlastností, které mají být naplněny.
 
-I když nedoporučujeme vracet IQueryable z úložiště, je zcela dobré je v úložišti použít k sestavení sady výsledků. Tento přístup můžete zobrazit v metodě seznamu výše, která používá mezilehlé výrazy IQueryable k sestavení seznamu zahrnutí dotazu před provedením dotazu s kritérii specifikace na posledním řádku.
+I když nedoporučujeme vracet `IQueryable` z úložiště, je zcela dobré ho v rámci úložiště použít k sestavení sady výsledků. Tento přístup můžete zobrazit v metodě seznamu výše, která používá mezilehlé `IQueryable` výrazy k sestavení seznamu zahrnutí dotazu před provedením dotazu s kritérii specifikace na posledním řádku.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Mapování tabulky** \
   [https://docs.microsoft.com/ef/core/modeling/relational/tables](/ef/core/modeling/relational/tables)

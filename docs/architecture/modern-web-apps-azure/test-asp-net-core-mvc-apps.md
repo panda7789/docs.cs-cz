@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: d83f7fca10aed6301c170b7b6c5651da6f02be08
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 164e820ffa6030b3dcb9180d56e57ce39bb03143
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449358"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503930"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Test ASP.NET Core aplikací MVC
 
@@ -70,7 +70,7 @@ Běžným přístupem je uspořádání projektů aplikace do složky src a test
 
 **Obrázek 9-2**. Testování organizace ve vašem řešení
 
-Můžete použít jakékoli testovací rozhraní, které dáváte přednost. XUnit Framework dobře funguje a je to, co všechny ASP.NET Core a EF Core testy jsou napsány v. Projekt testů xUnit můžete do sady Visual Studio přidat pomocí šablony zobrazené na obrázku 9-3 nebo z rozhraní příkazového řádku pomocí příkazu dotnet New xUnit.
+Můžete použít jakékoli testovací rozhraní, které dáváte přednost. XUnit Framework dobře funguje a je to, co všechny ASP.NET Core a EF Core testy jsou napsány v. Projekt testů xUnit můžete přidat do sady Visual Studio pomocí šablony zobrazené na obrázku 9-3 nebo z CLI pomocí `dotnet new xunit`.
 
 ![Přidání projektu testů xUnit do sady Visual Studio](./media/image9-3.png)
 

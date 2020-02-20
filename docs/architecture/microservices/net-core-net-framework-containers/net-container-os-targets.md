@@ -1,13 +1,13 @@
 ---
 title: Operační systém, na který mají cílit kontejnery .NET
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Jaký operační systém pro cílení na kontejnery .NET
-ms.date: 01/07/2019
-ms.openlocfilehash: dcf91f5ab808a8704201979f6bab1140c3343bce
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: a09e3981ece478a9795c0f27acc98d604864cdd5
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736924"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501866"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Operační systém, na který mají cílit kontejnery .NET
 
@@ -32,14 +32,14 @@ Můžete také vytvořit vlastní image Docker v případech, kdy chcete použí
 
 Když přidáte název Image do souboru souboru Dockerfile, můžete vybrat operační systém a verzi v závislosti na používané značce, jako v následujících příkladech:
 
-| Obrázek | Komentáře |
+| Image | Komentáře |
 |-------|----------|
-| mcr.microsoft.com/dotnet/core/runtime:2.2 | .NET Core 2,2 s více architekturami: podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2 | ASP.NET Core 2,2 s více architekturami: podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. <br/> Obrázek aspnetcore má několik optimalizací pro ASP.NET Core. |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine | .NET Core 2,2 runtime – jenom pro Linux Alpine distribuce |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803 | .NET Core 2,2 runtime – jenom na Windows nano serveru (Windows Server verze 1803) |
+| mcr.microsoft.com/dotnet/core/runtime:3.1 | .NET Core 3,1 s více architekturami: podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1 | ASP.NET Core 3,1 s více architekturami: podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. <br/> Obrázek aspnetcore má několik optimalizací pro ASP.NET Core. |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim | .NET Core 3,1 runtime – pouze v systémech Linux Debian distribuce |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1809 | .NET Core 3,1 runtime – jenom na Windows nano serveru (Windows Server verze 1809) |
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **BitmapDecoder se nezdařila z důvodu chybějícího souboru WindowsCodecsExt. dll (problém GitHubu).**  
   <https://github.com/microsoft/dotnet-framework-docker/issues/299>

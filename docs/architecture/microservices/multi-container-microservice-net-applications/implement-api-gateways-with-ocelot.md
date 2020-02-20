@@ -1,26 +1,24 @@
 ---
 title: Implementace bran rozhraní API s Ocelotem
 description: Naučte se implementovat brány API pomocí Ocelot a jak používat Ocelot v prostředí založeném na kontejnerech.
-ms.date: 10/02/2018
-ms.openlocfilehash: c0bcd240b6bd190dd02266c7faaf9fd668eb23bb
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 01/30/2020
+ms.openlocfilehash: 0eb834829a418cfa1ccdf13c5fc8849f6855c4ba
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777297"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502419"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace bran API pomocí Ocelot
 
-Referenční aplikace [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) používá [Ocelot](https://github.com/ThreeMammals/Ocelot), jednoduchou a odlehčenou bránu API, kterou můžete nasazovat kdekoli spolu s mikroslužbami nebo kontejnery, například v některém z následujících prostředí, které používá eShopOnContainers:
-
-- Hostitel Docker, ve vašem místním počítači pro vývoj, místně nebo v cloudu.
-- Kubernetes cluster, místní nebo ve spravovaném cloudu, jako je Azure Kubernetes Service (AKS).
-- Service Fabric clusteru, místně nebo v cloudu.
-- Service Fabric mesh, jako PaaS/bez serveru v Azure.
+> [!IMPORTANT]
+> Referenční [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) aplikace v současné době používá funkce poskytované [zástupné](https://www.envoyproxy.io/) k implementaci brány API namísto předchozího odkazovaného [Ocelot](https://github.com/ThreeMammals/Ocelot).
+> Tuto možnost jsme zvolili kvůli integrované podpoře zástupné protokolu WebSocket, kterou vyžaduje nová komunikace mezi službami gRPC implementované v eShopOnContainers.
+> Tento oddíl jsme ale v průvodci zachovali, takže můžete zvážit Ocelot jako jednoduchou, schopnou a zjednodušenou bránu API vhodnou pro scénáře produkčního prostředí.
 
 ## <a name="architect-and-design-your-api-gateways"></a>Architekt a návrh vašich bran rozhraní API
 
-Následující diagram architektury ukazuje, jak jsou brány rozhraní API implementované pomocí Ocelot v eShopOnContainers.
+Následující diagram architektury ukazuje, jak byly v eShopOnContainers implementovány brány rozhraní API pomocí Ocelot.
 
 ![Diagram znázorňující architekturu eShopOnContainers](./media/implement-api-gateways-with-ocelot/eshoponcontainers-architecture.png)
 
@@ -89,7 +87,7 @@ Požadavek HTTP ukončí běh tohoto druhu C# kódu s přístupem k databázi mi
 V souvislosti s adresou URL mikroslužeb, když jsou kontejnery nasazeny na místním počítači pro vývoj (místní hostitel Docker), má každý kontejner mikroslužeb vždy interní port (obvykle port 80), který je uveden v souboru Dockerfile, jako v následujícím souboru Dockerfile:
 
 ```Dockerfile
-FROM microsoft/aspnetcore:2.0.5 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80
 ```
@@ -105,7 +103,7 @@ Při vývoji ale chcete přímo získat přístup k mikroslužbám nebo kontejne
 Tady je příklad souboru `docker-compose.override.yml` pro mikroslužbu katalogu:
 
 ```yml
-catalog.api:
+catalog-api:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://0.0.0.0:80
@@ -123,10 +121,10 @@ Za normálních okolností nebudete nasazovat do provozního prostředí Docker 
 Spusťte službu mikroslužeb katalogu v místním hostiteli Docker. Buď spusťte úplné řešení eShopOnContainers ze sady Visual Studio (spustí všechny služby v Docker – skládání souborů), nebo spusťte službu Catalog v katalogu pomocí následujícího příkazu Docker-skládání v prostředí CMD nebo PowerShell umístěného ve složce, kde jsou umístěny `docker-compose.yml` a `docker-compose.override.yml`.
 
 ```console
-docker-compose run --service-ports catalog.api
+docker-compose run --service-ports catalog-api
 ```
 
-Tento příkaz spustí pouze závislosti kontejneru služby Catalog. API a závislostí, které jsou zadány v Docker-Compose. yml. V tomto případě kontejner SQL Server a kontejner RabbitMQ.
+Tento příkaz spustí pouze závislosti kontejneru služby API Catalog plus, které jsou zadány v Docker-Compose. yml. V tomto případě kontejner SQL Server a kontejner RabbitMQ.
 
 Pak můžete přímo získat přístup ke mikroslužbám katalogu a pomocí uživatelského rozhraní Swagger získat přístup k jeho metodám přímo prostřednictvím tohoto "externího" portu, v tomto případě `http://localhost:5101/swagger`:
 
@@ -142,7 +140,7 @@ Komunikace s přímým přístupem k mikroslužbám ale v tomto případě přes
 
 Ocelot je v podstatě sada middlewarů, které můžete použít v určitém pořadí.
 
-Ocelot je navržená tak, aby pracovala pouze s ASP.NET Core. Zaměřuje se na netstandard 2.0, takže se dá použít kdekoli .NET Standard 2,0, včetně běhového prostředí .NET Core 2,0 a .NET Framework 4.6.1 runtime a up.
+Ocelot je navržená tak, aby pracovala pouze s ASP.NET Core. Cílí na to `netstandard2.0`, takže se dá použít kdekoli .NET Standard 2,0, včetně běhového prostředí .NET Core 2,0 a .NET Framework 4.6.1 runtime a up.
 
 Ocelot a jeho závislosti nainstalujete v projektu ASP.NET Core pomocí [balíčku NuGet ocelot](https://www.nuget.org/packages/Ocelot/)ze sady Visual Studio.
 
@@ -207,7 +205,7 @@ Tady je zjednodušený příklad, jak [přesměrovat konfigurační soubor](http
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "catalog.api",
+          "Host": "catalog-api",
           "Port": 80
         }
       ],
@@ -219,7 +217,7 @@ Tady je zjednodušený příklad, jak [přesměrovat konfigurační soubor](http
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
+          "Host": "basket-api",
           "Port": 80
         }
       ],
@@ -249,7 +247,7 @@ Hlavní funkcí brány Ocelot API je přijmout příchozí požadavky HTTP a př
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
+          "Host": "basket-api",
           "Port": 80
         }
       ],
@@ -318,7 +316,7 @@ Jak vidíte v následujícím souboru Docker-Compose. override. yml, jediným ro
 mobileshoppingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5200:80"
   volumes:
@@ -327,7 +325,7 @@ mobileshoppingapigw:
 mobilemarketingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5201:80"
   volumes:
@@ -336,7 +334,7 @@ mobilemarketingapigw:
 webshoppingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5202:80"
   volumes:
@@ -345,7 +343,7 @@ webshoppingapigw:
 webmarketingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5203:80"
   volumes:
@@ -362,13 +360,13 @@ Díky rozdělení brány API na několik bran rozhraní API můžou různé výv
 
 Když teď spustíte eShopOnContainers s branami rozhraní API (standardně ve verzi VS při otevírání řešení eShopOnContainers-ServicesAndWebApps. sln nebo spuštěním příkazu "Docker-sestavit"), provedou se následující ukázkové trasy.
 
-Když například navštívíte nadřazený URL `http://localhost:5202/api/v1/c/catalog/items/2/` obsluhované bránou webshoppingapigw API, získáte stejný výsledek z interní adresy URL pro příjem dat `http://catalog.api/api/v1/2` v rámci hostitele Docker, jako v následujícím prohlížeči.
+Když například navštívíte nadřazený URL `http://localhost:5202/api/v1/c/catalog/items/2/` obsluhované bránou webshoppingapigw API, získáte stejný výsledek z interní adresy URL pro příjem dat `http://catalog-api/api/v1/2` v rámci hostitele Docker, jako v následujícím prohlížeči.
 
 ![Snímek obrazovky prohlížeče znázorňující odpověď procházející rozhraním API Gateway](./media/implement-api-gateways-with-ocelot/access-microservice-through-url.png)
 
 **Obrázek 6-35**. Přístup k mikroslužbám prostřednictvím adresy URL poskytované bránou API
 
-Z důvodu testování nebo ladění, pokud jste chtěli získat přímý přístup ke kontejneru Docker katalogu (pouze ve vývojovém prostředí) bez předávání bránou API, vzhledem k tomu, že Catalog. API je interní překlad DNS na hostitele Docker (zjišťování služby, které zpracovává názvy služeb Docker – skládání), jediným způsobem, jak přímo přistupovat ke kontejneru, je externí port publikovaný v Docker-Compose. override. yml, který je k dispozici pouze pro vývojové testy, například `http://localhost:5101/api/v1/Catalog/items/1` v následujícím prohlížeči.
+Z důvodu testování nebo ladění, pokud jste chtěli získat přímý přístup ke kontejneru Docker katalogu (pouze ve vývojovém prostředí) bez předávání bránou API, vzhledem k tomu, že "Catalog-API" je překlad DNS interního překladu na hostitele Docker (zjišťování služby, které zpracovávají názvy služeb Docker-), jediným způsobem, jak přímo přistupovat ke kontejneru, je externí port publikovaný v Docker-Compose. override. yml, který je k dispozici pouze pro vývojové testy, například `http://localhost:5101/api/v1/Catalog/items/1` v následujícím prohlížeči.
 
 ![Snímek obrazovky prohlížeče ukazující přímou odpověď na katalog. API](./media/implement-api-gateways-with-ocelot/direct-access-microservice-testing.png)
 
@@ -426,7 +424,7 @@ Způsob zabezpečení při ověřování jakékoli služby na úrovni brány roz
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
+          "Host": "basket-api",
           "Port": 80
         }
       ],

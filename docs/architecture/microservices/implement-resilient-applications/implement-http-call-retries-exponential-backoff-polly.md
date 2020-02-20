@@ -1,13 +1,13 @@
 ---
 title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
 description: Naučte se zpracovávat chyby HTTP pomocí Polly a HttpClientFactory.
-ms.date: 01/07/2019
-ms.openlocfilehash: 551cd1230c565b30c81090c984747e726680b9ed
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 01/30/2020
+ms.openlocfilehash: 60943360c9674f93b246b37b2667b48dab659e0e
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089960"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502672"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů volání HTTP pomocí exponenciálního omezení rychlostiu se zásadami HttpClientFactory a Polly
 
@@ -19,9 +19,9 @@ Nicméně psaní vlastního kódu pro použití knihovny Polly s HttpClient mů�
 
 Následující kroky ukazují, jak můžete použít opakování protokolu HTTP s integrovaným Polly do HttpClientFactory, který je vysvětlen v předchozí části.
 
-**Odkazování na balíčky ASP.NET Core 2,2**
+**Odkazování na balíčky ASP.NET Core 3,1**
 
-`HttpClientFactory` je k dispozici od .NET Core 2,1. Doporučujeme však použít nejnovější balíčky ASP.NET Core 2,2 z NuGet v projektu. Obvykle potřebujete `AspNetCore` Metapackage a balíček rozšíření `Microsoft.Extensions.Http.Polly`.
+`HttpClientFactory` je k dispozici od .NET Core 2,1. Doporučujeme však použít nejnovější balíčky ASP.NET Core 3,1 z NuGet v projektu. Obvykle se také musíte odkazovat na balíček rozšíření `Microsoft.Extensions.Http.Polly`.
 
 **Konfigurace klienta pomocí zásad opakování Polly při spuštění**
 
@@ -68,9 +68,9 @@ var retryWithJitterPolicy = HttpPolicyExtensions
 
 Polly poskytuje algoritmy chvění připravené k výrobě prostřednictvím webu projektu.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-- **Vzor opakování**  
+- **Model Opakování**  
   [https://docs.microsoft.com/azure/architecture/patterns/retry](/azure/architecture/patterns/retry)
 
 - **Polly a HttpClientFactory**  

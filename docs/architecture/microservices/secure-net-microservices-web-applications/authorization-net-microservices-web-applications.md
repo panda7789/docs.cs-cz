@@ -2,14 +2,13 @@
 title: O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 description: Zabezpečení v mikroslužbách a webových aplikacích .NET – získáte přehled o hlavních možnostech ověřování v ASP.NET Core aplikací – na základě rolí a na základě zásad.
 author: mjrousos
-ms.author: wiwagn
-ms.date: 10/19/2018
-ms.openlocfilehash: 36cd8eaf7ffe78a29762398044dc1803adc1b200
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.date: 01/30/2020
+ms.openlocfilehash: f6b69faceac9a9b4819212cc04f89080f3ddad56
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296468"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501770"
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 
@@ -86,8 +85,10 @@ services.AddAuthorization(options =>
 {
     options.AddPolicy("AdministratorsOnly", policy =>
         policy.RequireRole("Administrator"));
+
     options.AddPolicy("EmployeesOnly", policy =>
         policy.RequireClaim("EmployeeNumber"));
+
     options.AddPolicy("Over21", policy =>
         policy.Requirements.Add(new MinimumAgeRequirement(21)));
 });
@@ -111,7 +112,7 @@ Kromě registrace požadavků na vlastní zásady pomocí `AddPolicy` volání j
 
 Příkladem vlastního autorizačního požadavku a obslužné rutiny pro kontrolu stáří uživatele (na základě `DateOfBirth` deklarace) je k dispozici v dokumentaci k [autorizaci](https://docs.asp.net/en/latest/security/authorization/policies.html)ASP.NET Core.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **ASP.NET Core ověřování** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/identity](/aspnet/core/security/authentication/identity)

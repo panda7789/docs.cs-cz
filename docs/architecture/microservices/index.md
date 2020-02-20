@@ -1,19 +1,19 @@
 ---
 title: Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Mikroslužby jsou modulární a nezávisle nasazujíelné služby. Kontejnery Docker (pro Linux a Windows) zjednodušují nasazení a testování tím, že propojí službu a její závislosti do jedné jednotky, která se pak spustí v izolovaném prostředí.
-ms.date: 01/07/2019
-ms.openlocfilehash: 7fa4935fe56ca873a5311812637964083e34170e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 01/30/2020
+ms.openlocfilehash: 5da167de1ffd2169aea44b9872281e71c87927b1
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089911"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502635"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: architektura pro kontejnerové aplikace .NET
 
 ![Titulní kniha](./media/cover-small.png)
 
-**Edice 2.2** – aktualizace na ASP.NET Core 2,2
+**Edice verze 3.1** – aktualizace na ASP.NET Core 3,1
 
 Tato příručka je Úvod k vývoji aplikací založených na mikroslužbách a jejich správě pomocí kontejnerů. Popisuje přístupy k návrhu a implementaci architektury pomocí .NET Core a kontejnerů Docker.
 
@@ -37,7 +37,7 @@ Docker se stává jako de facto standard v odvětví kontejneru, který je podpo
 
 Kromě toho architektura [mikroslužeb](https://martinfowler.com/articles/microservices.html) se vychází jako důležitý přístup pro distribuované klíčové aplikace. V architektuře založené na mikroslužbách je aplikace postavená na kolekci služeb, které se dají vyvíjet, testovat, nasazovat a samostatně nakládat s verzemi.
 
-## <a name="about-this-guide"></a>O této příručce
+## <a name="about-this-guide"></a>O této příručce
 
 Tato příručka je Úvod k vývoji aplikací založených na mikroslužbách a jejich správě pomocí kontejnerů. Popisuje přístupy k návrhu a implementaci architektury pomocí .NET Core a kontejnerů Docker. Aby bylo snazší začít s kontejnery a mikroslužbami, tato příručka se zaměřuje na odkaz na kontejner a aplikaci založenou na mikroslužbách, kterou můžete prozkoumat. Ukázková aplikace je k dispozici v úložišti GitHub [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) .
 
@@ -45,9 +45,9 @@ Tato příručka poskytuje pokyny pro základní vývoj a architekturu primárn�
 
 Po prostudování tohoto průvodce by vám v dalším kroku pomohlo zjistit mikroslužby připravené k výrobě na Microsoft Azure.
 
-## <a name="version"></a>Version
+## <a name="version"></a>Verze
 
-Tato příručka byla revidována tak, aby kryla verzi **.NET Core 2,2** a řadu dalších aktualizací, které se vztahují ke stejným "Wave" technologií (tj. Azure a další technologie jiných výrobců se shodují v čase s .NET Core 2,2. To je důvod, proč se verze knihy aktualizovala také na verzi **2,2**.
+Tato příručka byla revidována tak, aby kryla verzi **.NET core 3,1** spolu s mnoha dalšími aktualizacemi, které se týkají stejných "Wave" technologií (tj. Azure a dalších technologií třetích stran), které se shodují v čase s verzí .net Core 3,1. To je důvod, proč se verze knihy aktualizovala také na verzi **3,1**.
 
 ## <a name="what-this-guide-does-not-cover"></a>Co tato příručka nepokrývá
 
@@ -82,7 +82,7 @@ Tento průvodce jsme napsali a pomohli vám pochopit architekturu kontejnerovýc
 
 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
 
-## <a name="credits"></a>dobropis
+## <a name="credits"></a>Kredity
 
 Spoluautoři:
 
@@ -146,9 +146,9 @@ Editory
 >
 > **Charles Lowell**, software inženýr, vs Cat tým, Microsoft
 >
-> **Miguel Veloso**, SR. konzultant při Turing výzvě
+> **Miguel Veloso**, inženýr pro vývoj softwaru v jednoduchých konceptech
 
-## <a name="copyright"></a>Úprava
+## <a name="copyright"></a>Copyright
 
 STAŽENÍ k dispozici na adrese: <https://aka.ms/microservicesebook>
 
@@ -162,7 +162,7 @@ Jeden způsob Microsoftu
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 od společnosti Microsoft Corporation
+Copyright © 2020 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 

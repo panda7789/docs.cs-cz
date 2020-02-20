@@ -1,13 +1,13 @@
 ---
 title: Pracovní postup vývoje aplikací Dockeru
 description: Pochopte podrobnosti pracovního postupu pro vývoj aplikací založených na Docker. Zahajte krok za krokem a získejte do některých podrobností, abyste mohli optimalizovat fázemi a skončit s zjednodušeným pracovním postupem, který je dostupný při používání sady Visual Studio.
-ms.date: 01/07/2019
-ms.openlocfilehash: 53675bf974069e9052d6d03b2743314af6f13cf9
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.date: 01/30/2020
+ms.openlocfilehash: c58ea2436027968143777a19286a1a0a72107717
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965786"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502748"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -37,7 +37,7 @@ V této části je tento celý proces podrobný a každý hlavní krok je vysvě
 
 Pokud používáte přístup pro vývoj Editor/CLI (například Visual Studio Code plus Docker CLI v systému macOS nebo Windows), musíte znát každý krok, obecně více podrobností, než Pokud používáte Visual Studio. Další informace o práci v prostředí CLI najdete v části elektronický [životní cyklus aplikací Docker v kontejneru s platformami a nástroji Microsoftu](https://aka.ms/dockerlifecycleebook/).
 
-Pokud používáte sadu Visual Studio 2017, mnohé z těchto kroků jsou zpracovávány za vás, což výrazně zvyšuje vaši produktivitu. To platí hlavně v případě, že používáte Visual Studio 2017 a cílíte na aplikace s více kontejnery. Například když jediným kliknutím myši, Visual Studio přidá do vašich projektů soubor souboru Dockerfile a Docker-Compose. yml s konfigurací vaší aplikace. Při spuštění aplikace v aplikaci Visual Studio se vytvoří image Docker a aplikace s více kontejnery se spustí přímo v Docker; i když vám umožní ladit několik kontejnerů najednou. Tyto funkce zvýší vaši rychlost vývoje.
+Pokud používáte sadu Visual Studio 2019, mnohé z těchto kroků jsou zpracovávány za vás, což výrazně zvyšuje vaši produktivitu. To platí hlavně v případě, že používáte Visual Studio 2019 a cílíte na aplikace s více kontejnery. Například při použití jediného kliknutí myši Visual Studio přidá soubor `Dockerfile` a `docker-compose.yml` do vašich projektů s konfigurací vaší aplikace. Při spuštění aplikace v aplikaci Visual Studio se vytvoří image Docker a aplikace s více kontejnery se spustí přímo v Docker; i když vám umožní ladit několik kontejnerů najednou. Tyto funkce zvýší vaši rychlost vývoje.
 
 Nicméně, protože Visual Studio neprovede tyto kroky automaticky, neznamená to, že nepotřebujete, abyste věděli, co se právě nachází pod nástrojem Docker. Proto následující pokyny podrobně popisuje každý krok.
 
@@ -53,21 +53,21 @@ Pokud chcete začít, ujistěte se, že máte nainstalovánu [verzi Docker Commu
 
 [Začínáme s Docker CE for Windows](https://docs.docker.com/docker-for-windows/)
 
-Kromě toho potřebujete Visual Studio 2017 verze 15,7 nebo novější s nainstalovanou úlohou **vývoje .NET Core pro různé platformy** , jak je znázorněno na obrázku 5-2.
+Kromě toho potřebujete Visual Studio 2019 verze 16,4 nebo novější s nainstalovanou úlohou **vývoje .NET Core pro různé platformy** , jak je znázorněno na obrázku 5-2.
 
 ![Snímek obrazovky s výběrem pro vývoj pro různé platformy .NET Core](./media/docker-app-development-workflow/dotnet-core-cross-platform-development.png)
 
-**Obrázek 5-2**. Výběr úlohy **vývoje .NET Core pro různé platformy** během instalace sady Visual Studio 2017
+**Obrázek 5-2**. Výběr úlohy **vývoje .NET Core pro různé platformy** během instalace sady Visual Studio 2019
 
 Můžete spustit kódování aplikace v jednoduchém rozhraní .NET (obvykle v .NET Core, pokud plánujete používat kontejnery) dokonce ještě před povolením Docker ve vaší aplikaci a nasazením a testováním v Docker. Doporučuje se ale co nejdříve začít pracovat na Docker, protože to bude reálné prostředí a jakékoli problémy, které je možné zjistit co nejdříve. To je doporučováno, protože Visual Studio usnadňuje práci s Docker, který je skoro průhledný, což je nejlepší příklad při ladění aplikací s více kontejnery ze sady Visual Studio.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Začínáme s Docker CE for Windows** \
   <https://docs.docker.com/docker-for-windows/>
 
-- **Visual Studio 2017** \
-  [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017)
+- **Visual Studio 2019** \
+  [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)
 
 ![Obrázek pro krok 2.](./media/docker-app-development-workflow/step-2-write-dockerfile.png)
 
@@ -77,34 +77,34 @@ Pro každou vlastní image, kterou chcete sestavit, potřebujete souboru Dockerf
 
 Souboru Dockerfile je umístěn v kořenové složce aplikace nebo služby. Obsahuje příkazy, které informují Docker, jak nastavit a spustit vaši aplikaci nebo službu v kontejneru. Můžete ručně vytvořit souboru Dockerfile v kódu a přidat ho do svého projektu společně s vašimi závislostmi .NET.
 
-Pomocí sady Visual Studio a jejích nástrojů pro Docker Tato úloha vyžaduje jenom několik kliknutí myší. Při vytváření nového projektu v aplikaci Visual Studio 2017 existuje možnost s názvem **Povolit podporu kontejneru (Docker)** , jak je znázorněno na obrázku 5-3.
+Pomocí sady Visual Studio a jejích nástrojů pro Docker Tato úloha vyžaduje jenom několik kliknutí myší. Při vytváření nového projektu v aplikaci Visual Studio 2019 existuje možnost s názvem **Povolit podporu Docker**, jak je znázorněno na obrázku 5-3.
 
 ![Snímek obrazovky, který ukazuje zaškrtávací políčko Povolit podporu Docker.](./media/docker-app-development-workflow/enable-docker-support-check-box.png)
 
-**Obrázek 5-3**. Povolení podpory Docker při vytváření nového projektu ASP.NET Core v aplikaci Visual Studio 2017
+**Obrázek 5-3**. Povolení podpory Docker při vytváření nového projektu ASP.NET Core v aplikaci Visual Studio 2019
 
-Podporu Docker můžete povolit také pro existující projekt ASP.NET Core webové aplikace tak, že pravým tlačítkem myši kliknete na projekt v **Průzkumník řešení** a vyberete **Přidat** > **podporu Docker**, jak je znázorněno na obrázku 5-4.
+Podporu Docker můžete povolit také pro existující projekt ASP.NET Core webové aplikace tak, že pravým tlačítkem myši kliknete na projekt v **Průzkumník řešení** a vyberete **Přidat** > **podporu Docker...** , jak je znázorněno na obrázku 5-4.
 
 ![Snímek obrazovky s možností podpora Docker v nabídce Přidat](./media/docker-app-development-workflow/add-docker-support-option.png)
 
-**Obrázek 5-4**. Povolení podpory Docker v existujícím projektu sady Visual Studio 2017
+**Obrázek 5-4**. Povolení podpory Docker v existujícím projektu sady Visual Studio 2019
 
 Tato akce přidá do projektu *souboru Dockerfile* s požadovanou konfigurací a je k dispozici pouze pro ASP.NET Core projekty.
 
-Podobným způsobem může Visual Studio také přidat soubor Docker-Compose. yml pro celé řešení s možností **přidat > kontejner Orchestrator support**. V kroku 4 si tuto možnost podrobněji prozkoumáme.
+Podobným způsobem může Visual Studio také přidat soubor `docker-compose.yml` pro celé řešení s možností **přidat > kontejner Orchestrator support...** . V kroku 4 si tuto možnost podrobněji prozkoumáme.
 
 ### <a name="using-an-existing-official-net-docker-image"></a>Použití stávající oficiální image rozhraní .NET Docker
 
-Obvykle vytvoříte vlastní image pro kontejner nad základní imagí, kterou získáte z oficiálního úložiště, jako je registr [Docker Hub](https://hub.docker.com/) . To je přesně to, co se stane v rámci pokrývání, když povolíte podporu Docker v aplikaci Visual Studio. Vaše souboru Dockerfile bude používat existující image `aspnetcore`.
+Obvykle vytvoříte vlastní image pro kontejner nad základní imagí, kterou získáte z oficiálního úložiště, jako je registr [Docker Hub](https://hub.docker.com/) . To je přesně to, co se stane v rámci pokrývání, když povolíte podporu Docker v aplikaci Visual Studio. Vaše souboru Dockerfile bude používat existující image `dotnet/core/aspnet`.
 
-Dříve jsme zjistili, které image a úložiště Docker můžete použít v závislosti na zvoleném rozhraní a operačním systému. Například pokud chcete použít ASP.NET Core (Linux nebo Windows), obrázek, který se má použít, je `mcr.microsoft.com/dotnet/core/aspnet:2.2`. Proto stačí určit, jakou základní image Docker budete pro svůj kontejner používat. Uděláte to tak, že do souboru Dockerfile přidáte `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2`. To se automaticky provede v aplikaci Visual Studio, ale pokud byste chtěli verzi aktualizovat, aktualizujete tuto hodnotu.
+Dříve jsme zjistili, které image a úložiště Docker můžete použít v závislosti na zvoleném rozhraní a operačním systému. Například pokud chcete použít ASP.NET Core (Linux nebo Windows), obrázek, který se má použít, je `mcr.microsoft.com/dotnet/core/aspnet:3.1`. Proto stačí určit, jakou základní image Docker budete pro svůj kontejner používat. Uděláte to tak, že do souboru Dockerfile přidáte `FROM mcr.microsoft.com/dotnet/core/aspnet:3.1`. To se automaticky provede v aplikaci Visual Studio, ale pokud byste chtěli verzi aktualizovat, aktualizujete tuto hodnotu.
 
 Použití oficiálního úložiště imagí .NET z dokovacího centra s číslem verze zajišťuje, aby byly na všech počítačích dostupné stejné funkce jazyka (včetně vývoje, testování a produkčního prostředí).
 
 Následující příklad ukazuje vzorový souboru Dockerfile pro kontejner ASP.NET Core.
 
 ```Dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ARG source
 WORKDIR /app
 EXPOSE 80
@@ -112,11 +112,11 @@ COPY ${source:-obj/Docker/publish} .
 ENTRYPOINT ["dotnet", " MySingleContainerWebApp.dll "]
 ```
 
-V tomto případě je image založená na verzi 2,2 oficiální image ASP.NET Core Docker (více imagí pro Linux a Windows). Toto je nastavení `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2`. (Další informace o této základní imagi najdete na stránce s [obrázkem Docker .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) .) V souboru Dockerfile musíte také dát Docker pokyn, aby naslouchal na portu TCP, který budete používat při běhu (v tomto případě port 80, jak je nakonfigurovaný s nastavením zpřístupnit).
+V tomto případě je image založená na verzi 3,1 oficiální image ASP.NET Core Docker (více imagí pro Linux a Windows). Toto je nastavení `FROM mcr.microsoft.com/dotnet/core/aspnet:3.1`. (Další informace o této základní imagi najdete na stránce s [obrázkem Docker .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) .) V souboru Dockerfile musíte také dát Docker pokyn, aby naslouchal na portu TCP, který budete používat při běhu (v tomto případě port 80, jak je nakonfigurovaný s nastavením zpřístupnit).
 
 V souboru Dockerfile můžete určit další nastavení konfigurace v závislosti na jazyku a rozhraní, které používáte. Například řádek ENTRYPOINT s `["dotnet", "MySingleContainerWebApp.dll"]` instruuje Docker ke spuštění aplikace .NET Core. Pokud k sestavení a spuštění aplikace .NET používáte sadu SDK a .NET Core CLI (dotnet CLI), toto nastavení se liší. Dolním řádkem je, že se řádek ENTRYPOINT a další nastavení liší v závislosti na jazyku a platformě, kterou zvolíte pro vaši aplikaci.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Vytváření imagí Docker pro aplikace .NET Core** \
   [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
@@ -136,16 +136,16 @@ Jedno úložiště může obsahovat varianty platformy, jako je například bito
 
 Pokud zadáte značku, cílící na platformu, která je explicitní, podobně jako v následujících případech:
 
-- `microsoft/dotnet:2.2-aspnetcore-runtime-stretch-slim` \
-  Cíle: modul runtime .NET Core 2,2 – pouze v systému Linux
+- `mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim` \
+  Cíle: modul runtime .NET Core 3,1 – pouze v systému Linux
 
-- `microsoft/dotnet:2.2-aspnetcore-runtime-nanoserver-1809` \
-  Cíle: modul runtime .NET Core 2,2 – pouze v systému Windows nano Server
+- `mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1909` \
+  Cíle: modul runtime .NET Core 3,1 – pouze v systému Windows nano Server
 
-Pokud ale zadáte stejný název bitové kopie, a to i se stejnou značkou, používají se pro více imagí (jako je `aspnetcore` image) verze systému Linux nebo Windows, a to v závislosti na operačním systému hostitele Docker, který nasazujete, jak je znázorněno v následujícím příkladu:
+Pokud ale zadáte stejný název bitové kopie, a to i se stejnou značkou, používají se pro více imagí (jako je `aspnet` image) verze systému Linux nebo Windows, a to v závislosti na operačním systému hostitele Docker, který nasazujete, jak je znázorněno v následujícím příkladu:
 
-- `microsoft/dotnet:2.2-aspnetcore-runtime` \
-  Vícenásobný arch: rozhraní .NET Core 2,2 runtime – pouze v systémech Linux nebo Windows nano Server v závislosti na hostitelském operačním systému Docker
+- `mcr.microsoft.com/dotnet/core/aspnet:3.1` \
+  Vícenásobný arch: rozhraní .NET Core 3,1 runtime – pouze v systémech Linux nebo Windows nano Server v závislosti na hostitelském operačním systému Docker
 
 Tímto způsobem načteme variantu systému Windows, když nasadíte image z hostitele Windows, vyžádá si variantu Windows a vyžádá si stejný název image z hostitele Linux.
 
@@ -174,11 +174,11 @@ Nejlepším způsobem, jak porozumět více fázím, je souboru Dockerfile detai
 Počáteční souboru Dockerfile by měl vypadat nějak takto:
 
 ```Dockerfile
- 1  FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
+ 1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+ 5  FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
  6  WORKDIR /src
  7  COPY src/Services/Catalog/Catalog.API/Catalog.API.csproj …
  8  COPY src/BuildingBlocks/HealthChecks/src/Microsoft.AspNetCore.HealthChecks …
@@ -277,11 +277,11 @@ Pro konečnou optimalizaci se k tomu dochází pouze v případě, že řádek 2
 Výsledný soubor je pak:
 
 ```Dockerfile
- 1  FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS base
+ 1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
  4
- 5  FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS publish
+ 5  FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS publish
  6  WORKDIR /src
  7  COPY . .
  8  RUN dotnet restore /ignoreprojectextensions:.dcproj
@@ -298,7 +298,7 @@ Výsledný soubor je pak:
 
 Můžete vytvořit vlastní základní image Docker od začátku. Tento scénář se nedoporučuje pro někoho, kdo začíná s Docker, ale pokud chcete nastavit konkrétní bity vlastní základní image, můžete to udělat.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Vícevrstvé image .NET Core**. \
   <https://github.com/dotnet/announcements/issues/14>
@@ -308,7 +308,7 @@ Můžete vytvořit vlastní základní image Docker od začátku. Tento scéná�
 
 ![Obrázek pro krok 3](./media/docker-app-development-workflow/step-3-create-dockerfile-defined-images.png)
 
-## <a name="step-3-create-your-custom-docker-images-and-embed-your-application-or-service-in-them"></a>Krok 3: Vytvořte vlastní image Docker a vložte do nich svou aplikaci nebo službu.
+## <a name="step-3-create-your-custom-docker-images-and-embed-your-application-or-service-in-them"></a>Krok 3. Vytvořte vlastní image Docker a vložte do nich svou aplikaci nebo službu.
 
 Pro každou službu ve vaší aplikaci je potřeba vytvořit související image. Pokud se vaše aplikace skládá z jediné služby nebo webové aplikace, stačí pouze jeden obrázek.
 
@@ -354,35 +354,35 @@ services:
   webmvc:
     image: eshop/web
     environment:
-      - CatalogUrl=http://catalog.api
-      - OrderingUrl=http://ordering.api
+      - CatalogUrl=http://catalog-api
+      - OrderingUrl=http://ordering-api
     ports:
       - "80:80"
     depends_on:
-      - catalog.api
-      - ordering.api
+      - catalog-api
+      - ordering-api
 
-  catalog.api:
-    image: eshop/catalog.api
+  catalog-api:
+    image: eshop/catalog-api
     environment:
-      - ConnectionString=Server=sql.data;Port=1433;Database=CatalogDB;…
+      - ConnectionString=Server=sqldata;Port=1433;Database=CatalogDB;…
     ports:
       - "81:80"
     depends_on:
-      - sql.data
+      - sqldata
 
-  ordering.api:
-    image: eshop/ordering.api
+  ordering-api:
+    image: eshop/ordering-api
     environment:
-      - ConnectionString=Server=sql.data;Database=OrderingDb;…
+      - ConnectionString=Server=sqldata;Database=OrderingDb;…
     ports:
       - "82:80"
     extra_hosts:
       - "CESARDLBOOKVHD:10.0.75.1"
     depends_on:
-      - sql.data
+      - sqldata
 
-  sql.data:
+  sqldata:
     image: mssql-server-linux:latest
     environment:
       - SA_PASSWORD=Pass@word
@@ -393,7 +393,7 @@ services:
 
 Tento soubor Docker-Compose. yml je zjednodušená a Sloučená verze. Obsahuje statická konfigurační data pro každý kontejner (jako je název vlastní image), který je vždy vyžadován, a informace o konfiguraci, které mohou být závislé na prostředí nasazení, jako je například připojovací řetězec. V dalších částech se dozvíte, jak rozdělit konfiguraci Docker-Compose. yml do více souborů Docker – pro vytváření souborů a přepis hodnot v závislosti na prostředí a typu spuštění (ladění nebo vydání).
 
-Příklad souboru Docker-Compose. yml definuje čtyři služby: služba `webmvc` (webová aplikace), dvě mikroslužby (`ordering.api` a `basket.api`) a jeden kontejner zdrojů dat `sql.data`, na základě SQL Server pro Linux běžící jako kontejner. Každá služba bude nasazena jako kontejner, takže se pro každý z nich vyžaduje image Docker.
+Příklad souboru Docker-Compose. yml definuje čtyři služby: služba `webmvc` (webová aplikace), dvě mikroslužby (`ordering-api` a `basket-api`) a jeden kontejner zdrojů dat `sqldata`, na základě SQL Server pro Linux běžící jako kontejner. Každá služba bude nasazena jako kontejner, takže se pro každý z nich vyžaduje image Docker.
 
 Soubor Docker-Compose. yml určuje nejen to, jaké kontejnery jsou používány, ale jak jsou konfigurovány samostatně. Například definice kontejneru `webmvc` v souboru. yml:
 
@@ -407,7 +407,7 @@ Soubor Docker-Compose. yml určuje nejen to, jaké kontejnery jsou používány,
 
 Až budeme pokrývat, jak implementovat mikroslužby a aplikace pro více kontejnerů, provedeme znovu soubor Docker-Compose. yml v pozdější části.
 
-### <a name="working-with-docker-composeyml-in-visual-studio-2017"></a>Práce s Docker-Compose. yml v aplikaci Visual Studio 2017
+### <a name="working-with-docker-composeyml-in-visual-studio-2019"></a>Práce s Docker-Compose. yml v aplikaci Visual Studio 2019
 
 Kromě přidání souboru Dockerfile do projektu, jak je uvedeno dříve, může Visual Studio 2017 (ze verze 15,8 on) přidat do řešení podporu nástroje Orchestrator pro Docker Compose.
 
@@ -415,17 +415,17 @@ Když přidáte podporu nástroje Orchestrator pro kontejner, jak je znázorněn
 
 Tuto operaci je nutné opakovat v každém projektu, který chcete zahrnout do souboru Docker-Compose. yml.
 
-V době psaní tohoto zápisu aplikace Visual Studio podporuje orchestraci Docker Compose a Service Fabric.
+V době psaní tohoto zápisu aplikace Visual Studio podporuje orchestraci **Docker Compose** a **Kubernetes/Helm** .
 
 ![Snímek obrazovky s možností podpora pro produkt Orchestrator pro kontejner v místní nabídce projektu](./media/docker-app-development-workflow/add-container-orchestrator-support-option.png)
 
-**Obrázek 5-7**. Přidání podpory Docker do sady Visual Studio 2017 tak, že kliknete pravým tlačítkem na projekt ASP.NET Core
+**Obrázek 5-7**. Přidání podpory Docker do sady Visual Studio 2019 tak, že kliknete pravým tlačítkem na projekt ASP.NET Core
 
 Po přidání podpory nástroje Orchestrator do řešení v aplikaci Visual Studio se také zobrazí nový uzel (v souboru `docker-compose.dcproj` projektu) v Průzkumník řešení, který obsahuje přidané soubory Docker-Compose. yml, jak je znázorněno na obrázku 5-8.
 
 ![Snímek obrazovky s uzlem Docker-psací v Průzkumník řešení.](./media/docker-app-development-workflow/docker-compose-tree-node.png)
 
-**Obrázek 5-8**. Uzel stromu **Docker-psacího** uzlu přidaný do sady Visual Studio 2017 Průzkumník řešení
+**Obrázek 5-8**. Uzel stromu **Docker-psacího** uzlu přidaný do sady Visual Studio 2019 Průzkumník řešení
 
 Pomocí příkazu `docker-compose up` můžete nasadit aplikaci s více kontejnery s jedním souborem Docker-Compose. yml. Visual Studio však přidá skupinu, takže můžete přepsat hodnoty v závislosti na prostředí (vývoj nebo produkce) a typu spuštění (vydání nebo ladění). Tato funkce bude vysvětlena v dalších částech.
 
@@ -433,7 +433,7 @@ Pomocí příkazu `docker-compose up` můžete nasadit aplikaci s více kontejne
 
 ## <a name="step-5-build-and-run-your-docker-application"></a>Krok 5. Sestavení a spuštění aplikace Docker
 
-Pokud má vaše aplikace jenom jeden kontejner, můžete ho spustit nasazením na hostitele Docker (virtuální počítač nebo fyzický server). Pokud však vaše aplikace obsahuje více služeb, můžete ji nasadit jako složenou aplikaci, a to buď pomocí jednoho příkazu CLI (Docker-sestavit), nebo pomocí sady Visual Studio, která bude tento příkaz používat v rámci pokrývání. Pojďme se podívat na různé možnosti.
+Pokud má vaše aplikace jenom jeden kontejner, můžete ho spustit nasazením na hostitele Docker (virtuální počítač nebo fyzický server). Pokud však vaše aplikace obsahuje více služeb, můžete ji nasadit jako složenou aplikaci, a to buď pomocí jednoho příkazu CLI (`docker-compose up)`, nebo pomocí sady Visual Studio, která bude tento příkaz používat v rámci pokrývání. Pojďme se podívat na různé možnosti.
 
 ### <a name="option-a-running-a-single-container-application"></a>Možnost A: spuštění aplikace s jedním kontejnerem
 
@@ -479,7 +479,7 @@ Po spuštění příkazu Docker-sestavit je aplikace a její související konte
 
 #### <a name="using-visual-studio"></a>Pomocí sady Visual Studio
 
-Spuštění aplikace s více kontejnery pomocí sady Visual Studio 2017 nemůže získat jednodušší. Stačí stisknout **kombinaci kláves CTRL + F5** ke spuštění nebo **F5** pro ladění, jako obvykle, nastavení projektu **Docker-sestavit** jako spouštěného projektu.  Visual Studio zpracuje všechna potřebná nastavení, takže můžete vytvořit zarážky jako obvykle a ladit tak, co se stane samostatnými procesy běžícími na vzdálených serverech stejným způsobem.
+Spuštění aplikace s více kontejnery pomocí sady Visual Studio 2019 nemůže získat jednodušší. Stačí stisknout **kombinaci kláves CTRL + F5** ke spuštění nebo **F5** pro ladění, jako obvykle, nastavení projektu **Docker-sestavit** jako spouštěného projektu.  Visual Studio zpracuje všechna potřebná nastavení, takže můžete vytvořit zarážky jako obvykle a ladit tak, co se stane samostatnými procesy běžícími v "vzdálených serverech" s ladicím programem již připojeným. stejně jako to.
 
 Jak bylo zmíněno dříve, pokaždé, když přidáte podporu řešení Docker do projektu v rámci řešení, je tento projekt konfigurován v souboru Global (Solution-Level) Docker-Compose. yml, který umožňuje spustit nebo ladit celé řešení najednou. Visual Studio spustí jeden kontejner pro každý projekt, který má povolenou podporu řešení Docker, a provede všechny interní kroky (dotnet publish, Docker Build atd.).
 
@@ -487,13 +487,13 @@ Pokud si chcete prohlédnout všechny drudgery, podívejte se na soubor:
 
 `{root solution folder}\obj\Docker\docker-compose.vs.debug.g.yml`
 
-Důležitým bodem je, jak je znázorněno na obrázku 5-12, v aplikaci Visual Studio 2017 je k dispozici další příkaz **Docker** pro akci klávesy F5. Tato možnost umožňuje spustit nebo ladit aplikaci s více kontejnery spuštěním všech kontejnerů, které jsou definovány v souborech Docker-Compose. yml na úrovni řešení. Možnost ladit řešení s více kontejnery znamená, že můžete nastavit několik zarážek, každou zarážku v jiném projektu (kontejneru) a při ladění ze sady Visual Studio se zastavíte na zarážekch definovaných v různých projektech a v systému různé kontejnery.
+Důležitým bodem je, jak je znázorněno na obrázku 5-12, v aplikaci Visual Studio 2019 je k dispozici další příkaz **Docker** pro akci klávesy F5. Tato možnost umožňuje spustit nebo ladit aplikaci s více kontejnery spuštěním všech kontejnerů, které jsou definovány v souborech Docker-Compose. yml na úrovni řešení. Možnost ladit řešení s více kontejnery znamená, že můžete nastavit několik zarážek, každou zarážku v jiném projektu (kontejneru) a při ladění ze sady Visual Studio se zastavíte na zarážekch definovaných v různých projektech a v systému různé kontejnery.
 
 ![Snímek obrazovky s panelem ladění, na kterém je spuštěný projekt Docker-sestavit](./media/docker-app-development-workflow/debug-toolbar-docker-compose-project.png)
 
-**Obrázek 5-12**. Spouštění aplikací s více kontejnery v aplikaci Visual Studio 2017
+**Obrázek 5-12**. Spouštění aplikací s více kontejnery v aplikaci Visual Studio 2019
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Nasazení kontejneru ASP.NET na hostitele vzdáleného docker** \
   <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
@@ -522,15 +522,15 @@ Aplikaci můžete také otestovat pomocí oblého terminálu, jak je znázorněn
 
 **Obrázek 5-14**. Příklad testování aplikace Docker v místním prostředí pomocí formátu kudrlinkou
 
-### <a name="testing-and-debugging-containers-with-visual-studio-2017"></a>Testování a ladění kontejnerů pomocí sady Visual Studio 2017
+### <a name="testing-and-debugging-containers-with-visual-studio-2019"></a>Testování a ladění kontejnerů pomocí sady Visual Studio 2019
 
-Při spuštění a ladění kontejnerů pomocí sady Visual Studio 2017 můžete ladit aplikaci .NET podobným způsobem jako při spuštění bez kontejnerů.
+Při spuštění a ladění kontejnerů pomocí sady Visual Studio 2019 můžete ladit aplikaci .NET podobným způsobem jako při spuštění bez kontejnerů.
 
 ### <a name="testing-and-debugging-without-visual-studio"></a>Testování a ladění bez sady Visual Studio
 
-Pokud vyvíjíte pomocí přístupu Editor/CLI, kontejnery ladění jsou obtížnější a vy budete chtít ladit vygenerováním trasování.
+Pokud vyvíjíte pomocí přístupu Editor/CLI, kontejnery ladění jsou obtížnější a pravděpodobně budete chtít ladit vygenerováním trasování.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Ladění aplikací v místním kontejneru docker** \
   [https://docs.microsoft.com/visualstudio/containers/edit-and-refresh](/visualstudio/containers/edit-and-refresh)
@@ -550,9 +550,9 @@ Proces vývoje pro aplikace Docker: 1 – kódování vaší aplikace, 2-zápis 
 
 Kromě toho je nutné provést krok 2 (přidání podpory Docker do vašich projektů) pouze jednou. Proto je pracovní postup podobný obvyklým vývojářským úlohám při použití rozhraní .NET pro jakýkoliv jiný vývoj. Potřebujete zjistit, co se týká pokrývání (proces sestavení obrazu, jaké základní image používáte, nasazení kontejnerů atd.), a někdy budete také muset upravit soubor souboru Dockerfile nebo Docker-Compose. yml, abyste mohli chování přizpůsobit. Ale většina práce je výrazně zjednodušená pomocí sady Visual Studio, což vám umožní mnohem větší produktivitu.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
-- **Steve Lasker. .NET Docker – vývoj s využitím sady Visual Studio 2017** \
+- **Steve Lasker. .NET Docker pro vývoj pomocí sady Visual Studio (2017)**  \
   <https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111>
 
 ## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Použití příkazů PowerShellu v souboru Dockerfile k nastavení kontejnerů Windows
@@ -560,7 +560,7 @@ Kromě toho je nutné provést krok 2 (přidání podpory Docker do vašich proj
 [Kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/index) umožňují převést existující aplikace pro Windows na Image Docker a nasadit je pomocí stejných nástrojů jako zbytek ekosystému Docker. Chcete-li použít kontejnery Windows, spusťte příkazy prostředí PowerShell v souboru Dockerfile, jak je znázorněno v následujícím příkladu:
 
 ```Dockerfile
-FROM microsoft/windowsservercore
+FROM mcr.microsoft.com/windows/servercore
 LABEL Description="IIS" Vendor="Microsoft" Version="10"
 RUN powershell -Command Add-WindowsFeature Web-Server
 CMD [ "ping", "localhost", "-t" ]
@@ -572,9 +572,9 @@ V tomto případě používáme základní bitovou kopii Windows serveru (nastav
 RUN powershell add-windowsfeature web-asp-net45
 ```
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
-- **aspnet-docker/Dockerfile.** Příklady příkazů PowerShellu, které se mají spustit z fázemi a zahrnutí funkcí Windows. \
+- **ASPNET-Docker/souboru Dockerfile.** Příklady příkazů PowerShellu, které se mají spustit z fázemi a zahrnutí funkcí Windows. \
   <https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile>
 
 >[!div class="step-by-step"]

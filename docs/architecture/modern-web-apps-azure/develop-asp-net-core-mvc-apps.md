@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 3b1409fbb924638f0148c74a678d482aeb732357
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: a18b4dfc60c7d3971136f73f333b7225735710b3
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449440"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503955"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -546,7 +546,7 @@ Hybridní přístup by byl pro transakční nebo složitější oblasti aplikace
 
 ## <a name="deployment"></a>Nasazení
 
-Proces nasazení ASP.NET Core aplikace se účastní několika kroků bez ohledu na to, kde se bude hostovat. Prvním krokem je publikování aplikace, která se dá provést pomocí příkazu dotnet publish CLI. Tím dojde k zkompilování aplikace a k umístění všech souborů potřebných ke spuštění aplikace do určené složky. Při nasazení ze sady Visual Studio se tento krok provádí automaticky. Složka Publish obsahuje soubory. exe a. dll pro aplikaci a její závislosti. Samostatně obsažená aplikace bude obsahovat také verzi modulu runtime .NET. ASP.NET Core aplikace budou zahrnovat také konfigurační soubory, statické prostředky klienta a zobrazení MVC.
+Proces nasazení ASP.NET Core aplikace se účastní několika kroků bez ohledu na to, kde se bude hostovat. Prvním krokem je publikování aplikace, která se dá provést pomocí příkazu `dotnet publish` CLI. Tím dojde k zkompilování aplikace a k umístění všech souborů potřebných ke spuštění aplikace do určené složky. Při nasazení ze sady Visual Studio se tento krok provádí automaticky. Složka Publish obsahuje soubory. exe a. dll pro aplikaci a její závislosti. Samostatně obsažená aplikace bude obsahovat také verzi modulu runtime .NET. ASP.NET Core aplikace budou zahrnovat také konfigurační soubory, statické prostředky klienta a zobrazení MVC.
 
 ASP.NET Core aplikace jsou konzolové aplikace, které musí být spuštěny, když se Server spustí a restartuje, pokud dojde k chybě aplikace (nebo serveru). K automatizaci tohoto procesu lze použít správce procesů. Nejběžnějšími správci procesů pro ASP.NET Core jsou Nginx a Apache v systémech Linux a IIS nebo ve službě Windows ve Windows.
 

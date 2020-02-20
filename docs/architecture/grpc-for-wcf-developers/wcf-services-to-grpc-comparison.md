@@ -2,16 +2,16 @@
 title: Porovnání WCF s gRPC-gRPC pro vývojáře WCF
 description: Porovnání rozhraní WCF a gRPC pro vytváření distribuovaných aplikací.
 ms.date: 09/02/2019
-ms.openlocfilehash: 312492dcce4bdef61feff0bf924c6df287b9c676
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4f54db76c9512b770b4dd993496d95437dd89753
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966956"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503339"
 ---
 # <a name="comparing-wcf-to-grpc"></a>Porovnávání WCF s gRPC
 
-Předchozí kapitola by měla mít za cíl dobrý pohled na Protobuf a způsob, jakým gRPC zpracovává zprávy. Před provedením podrobného převodu z WCF na gRPC je důležité pohlížet na to, jak se rozsah funkcí aktuálně dostupných ve službě WCF zpracovává v gRPC a jaká alternativní řešení můžete použít, když se zdá, že se nejeví jako ekvivalentní gRPC. Konkrétně tato kapitola se zabývá následujícími tématy:
+Předchozí kapitola vám poskytla dobrý pohled na Protobuf a způsob, jakým gRPC zpracovává zprávy. Než provedete podrobný převod z Windows Communication Foundation (WCF) na gRPC, je důležité znát, jak jsou funkce dostupné v rámci služby WCF zpracovávány v gRPC a jaká alternativní řešení můžete použít, pokud neexistuje žádný ekvivalent gRPC. Konkrétně tato kapitola se zabývá následujícími tématy:
 
 - Operace a metody
 - Vazby a přenosy
@@ -37,12 +37,12 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
-// The request message containing the user's name.
+// The request message that contains the user's name.
 message HelloRequest {
   string name = 1;
 }
 
-// The response message containing the greetings.
+// The response message that contains the greetings.
 message HelloReply {
   string message = 1;
 }

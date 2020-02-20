@@ -1,13 +1,13 @@
 ---
 title: Testování služeb a webových aplikací ASP.NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte architekturu pro testování ASP.NET Core služeb a webových aplikací v kontejnerech.
-ms.date: 10/02/2018
-ms.openlocfilehash: 324b71d830bca43be71e8847fe2dd1b8b1593556
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: ab3ae6276ea4e4c741731f050913d956046271ca
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739470"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501994"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb a webových aplikací ASP.NET Core
 
@@ -68,7 +68,7 @@ Na rozdíl od testování částí zahrnuje testy pro integraci často aspekty i
 
 Vzhledem k tomu, že integrační testy vykonávají větší segmenty kódu než testy jednotek a protože integrační testy spoléhají na prvky infrastruktury, mají za následek, že se jedná o objednávky pomaleji než testy jednotek. Proto je vhodné omezit počet testů integrace, které zapisujete a spouštíte.
 
-ASP.NET Core obsahuje vestavěný testovací webový hostitel, který se dá použít ke zpracování požadavků HTTP bez režie sítě, což znamená, že tyto testy můžete spustit rychleji při použití reálného webového hostitele. Testovací webový hostitel (TestServer) je k dispozici v komponentě NuGet jako Microsoft. AspNetCore. TestHost. Lze ji přidat do projektů Integration Tests a použít k hostování ASP.NET Corech aplikací.
+ASP.NET Core obsahuje vestavěný testovací webový hostitel, který se dá použít ke zpracování požadavků HTTP bez režie sítě, což znamená, že tyto testy můžete spouštět rychleji než při použití reálného webového hostitele. Testovací webový hostitel (TestServer) je k dispozici v komponentě NuGet jako Microsoft. AspNetCore. TestHost. Lze ji přidat do projektů Integration Tests a použít k hostování ASP.NET Corech aplikací.
 
 Jak vidíte v následujícím kódu, při vytváření integračních testů pro ASP.NET Core řadiče, vytváříte instance řadičů přes testovacího hostitele. To je srovnatelné s požadavkem HTTP, ale běží rychleji.
 
@@ -99,7 +99,7 @@ public class PrimeWebDefaultRequestShould
 }
 ```
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Steve Smith. Testovací kontroléry** (ASP.NET Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
@@ -110,7 +110,7 @@ public class PrimeWebDefaultRequestShould
 - **Testování částí v .NET Core pomocí příkazu dotnet test** \
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
-- **xUnit.net**. Oficiální lokalita. \
+- **xUnit.NET**. Oficiální lokalita. \
     <https://xunit.github.io/>
 
 - **Základy testování částí.** \
@@ -140,8 +140,6 @@ Testy referenční aplikace (eShopOnContainers) se nedávno změnily a teď exis
 
 3. **Funkce/integrační testy pro aplikace**, které se zaměřují na integraci mikroslužeb, s testovacími případy, které působí několik mikroslužeb. Tyto testy jsou umístěny v Project **Application. FunctionalTests**.
 
-4. **Zátěžové testy**, které se zaměřují na doby odezvy pro jednotlivé mikroslužby. Tyto testy jsou umístěné v Project **LoadTest** a potřebují Visual Studio 2017 Enterprise Edition.
-
 Test jednotek a integračních testů na mikroslužbu je obsažen v testovací složce v každé mikroslužbě a aplikaci. testy zatížení jsou obsaženy ve složce test ve složce řešení, jak je znázorněno na obrázku 6-25.
 
 ![Snímek obrazovky VS ukazující některé z testovacích projektů v řešení](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
@@ -150,7 +148,7 @@ Test jednotek a integračních testů na mikroslužbu je obsažen v testovací s
 
 Testy funkcí a integrace mikroslužeb a aplikací jsou spouštěny ze sady Visual Studio pomocí rutiny regulárních testů, ale nejdřív je potřeba spustit požadované služby infrastruktury, a to pomocí sady souborů Docker-skládání obsažených ve složce pro testování řešení:
 
-**docker-compose-test.yml**
+**Docker-Compose-test. yml**
 
 ```yml
 version: '3.4'
@@ -160,13 +158,13 @@ services:
     image: redis:alpine
   rabbitmq:
     image: rabbitmq:3-management-alpine
-  sql.data:
-    image: microsoft/mssql-server-linux:2017-latest
-  nosql.data:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+  nosqldata:
     image: mongo
 ```
 
-**docker-compose-test.override.yml**
+**Docker-Compose-test. override. yml**
 
 ```yml
 version: '3.4'
@@ -179,13 +177,13 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-  sql.data:
+  sqldata:
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
       - "5433:1433"
-  nosql.data:
+  nosqldata:
     ports:
       - "27017:27017"
 ```
@@ -198,7 +196,7 @@ docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 
 Jak vidíte, tyto soubory Docker-skládání začínají pouze mikroslužby Redis, RabbitMQ, SQL Server a MongoDB.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Testuje soubor Readme** v úložišti EShopOnContainers na GitHubu \
     <https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/test>

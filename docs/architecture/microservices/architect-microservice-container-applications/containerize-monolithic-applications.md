@@ -1,13 +1,13 @@
 ---
 title: Kontejnerizování monolitických aplikací
 description: Uzavření monolitické aplikace, i když nezískají všechny výhody architektury mikroslužeb, přináší důležité výhody nasazení, které se dají hned doručovat.
-ms.date: 09/20/2018
-ms.openlocfilehash: e02aa4ff644fc26b7f15721866f8862f6a175cf2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: 0e6f7504a91d2b1a89193471746168fc34f50956
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738003"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503289"
 ---
 # <a name="containerizing-monolithic-applications"></a>Kontejnerizování monolitických aplikací
 
@@ -61,7 +61,7 @@ Bez ohledu na to, jestli chcete získat ověření kontejneru nasazeného do Azu
 
 ![Snímek obrazovky dialogového okna pro vytvoření App Service zobrazující Container Registry](./media/containerize-monolithic-applications/publish-azure-app-service-container.png)
 
-**Obrázek 4-4**. Publikování aplikace s jedním kontejnerem pro Azure App Service ze sady Visual Studio
+**Obrázek 4-4**. Publikování aplikace s jedním kontejnerem pro Azure App Service ze sady Visual Studio 2019
 
 Bez Docker, pokud jste potřebovali jiné funkce, architektury nebo závislosti, které nejsou podporované v Azure App Service, museli byste počkat, dokud tým Azure tyto závislosti v App Service neaktualizoval. Nebo jste museli přepnout na jiné služby, jako je Azure Cloud Services nebo virtuální počítače, kde jste měli další kontrolu a mohli jste pro svou aplikaci nainstalovat požadovanou komponentu nebo architekturu.
 

@@ -1,13 +1,13 @@
 ---
 title: Komunikace v architektuře mikroslužeb
 description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami a porozumět vlivům synchronních a asynchronních způsobů.
-ms.date: 09/20/2018
-ms.openlocfilehash: 7bd45e0b8f8ea3330cf8d2b613e54111cc72f14f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.date: 01/30/2020
+ms.openlocfilehash: f2d6e78966bb7d5f481de6db0ab1dcfe2812a1b5
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966980"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503305"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 
@@ -47,7 +47,7 @@ Jak už bylo zmíněno, důležitým bodem při sestavování aplikace založen�
 
 Pokud je to možné, nikdy nezáleží na synchronní komunikaci (požadavek nebo odpověď) mezi několika mikroslužbami, a to ani u dotazů. Cílem každé mikroslužby je autonomní a k dispozici klientovi klienta, i když ostatní služby, které jsou součástí komplexní aplikace, nejsou v pořádku. Pokud se domníváte, že je třeba provést volání z jedné mikroslužby do ostatních mikroslužeb (například provedení požadavku HTTP na dotaz na data), aby bylo možné poskytnout odpověď klientské aplikaci, máte architekturu, která nebude odolná, pokud se některé mikroslužby selžou.
 
-Kromě toho je třeba mít závislosti HTTP mezi mikroslužbami, například při vytváření dlouhých cyklů požadavků a odpovědí s řetězy požadavků HTTP, jak je znázorněno v první části obrázku 4-15, nejen to znamená, že vaše mikroslužby nejsou autonomní, ale také jejich výkon. mělo dopad na to, že jedna ze služeb v tomto řetězci nefunguje dobře.
+Kromě toho máte závislosti HTTP mezi mikroslužbami, například při vytváření dlouhých cyklů požadavků a odpovědí s řetězy požadavků HTTP, jak je znázorněno v první části obrázku 4-15, nejen to, že vaše mikroslužby nejsou autonomní, ale i jejich výkon se projeví, jakmile jedna ze služeb v tomto řetězci nefunguje dobře.
 
 Čím více přidáváte synchronní závislosti mezi mikroslužbami, jako jsou požadavky na dotazy, tím horší je celková doba odezvy pro klientské aplikace.
 
@@ -61,7 +61,7 @@ Pokud vaše mikroslužba potřebuje vyvolat další akci v jiné mikroslužbě (
 
 A konečně (a jedná se o většinu problémů při vytváření mikroslužeb), pokud vaše počáteční mikroslužba potřebuje data, která jsou původně vlastněna jinými mikroslužbami, nespoléhá na to, aby pro tato data prováděla synchronní požadavky. Místo toho replikujte nebo rozšiřujte tato data (pouze atributy, které potřebujete) do databáze počáteční služby, a to pomocí konečné konzistence (obvykle pomocí integračních událostí, jak je vysvětleno v nadcházejících oddílech).
 
-Jak bylo uvedeno výše v části [Identifikace hranic doménových modelů pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md), při duplikaci některých dat napříč několika mikroslužbami není nesprávný návrh – v opačném případě, kdy je to možné, můžete data přeložit do konkrétního jazyka nebo podmínek, které jsou v rámci této další domény nebo vázaného kontextu. Například v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) máte mikroslužbu s názvem identity. API, která má za následek většinu dat uživatele s entitou s názvem uživatel. Pokud ale potřebujete ukládat data o uživateli v rámci objednávání mikroslužeb, uložte ho jako jinou entitu s názvem kupující. Entita nákupčí sdílí stejnou identitu s původní entitou uživatele, ale může mít jenom několik atributů, které vyžaduje doména řazení, a ne celý profil uživatele.
+Jak bylo uvedeno dříve v části [identifikující hranice doménového modelu pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md) , duplikace některých dat napříč několika mikroslužbami není nesprávným návrhem, v opačném případě, kdy je to možné, můžete data přeložit do konkrétního jazyka nebo podmínek, které jsou pro další domény nebo vázané kontexty. Například v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) máte mikroslužbu s názvem `identity-api`, která je ve většině dat uživatele s entitou s názvem `User`. Pokud ale potřebujete ukládat data o uživateli v rámci `Ordering` mikroslužeb, uložte ho jako jinou entitu s názvem `Buyer`. Entita `Buyer` sdílí stejnou identitu s původní `User`ou entitou, ale může mít jenom několik atributů, které vyžaduje `Ordering` doména, a ne celý profil uživatele.
 
 Můžete použít libovolný protokol pro komunikaci a šíření dat asynchronně napříč mikroslužbami, aby bylo možné zajistit jejich případné konzistenci. Jak už jsme uvedli, mohli byste použít události integrace pomocí sběrnice událostí nebo zprostředkovatele zpráv nebo můžete protokol HTTP použít taky tak, že v něm provedete dotazování dalších služeb. Nezáleží na tom. Důležité pravidlo je nevytvářet synchronní závislosti mezi vašimi mikroslužbami.
 
@@ -87,7 +87,7 @@ Oblíbeným stylem architektury pro komunikaci mezi požadavkem a odpovědí je 
 
 K dispozici je další hodnota při používání služby HTTP REST jako jazyk definice rozhraní. Pokud například použijete [metadata Swagger](https://swagger.io/) k popisu rozhraní API služby, můžete použít nástroje, které generují zástupné procedury klienta, které mohou přímo zjišťovat a využívat vaše služby.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Martin Fowlera. Richardson model splatnosti** popis modelu REST. \
   <https://martinfowler.com/articles/richardsonMaturityModel.html>

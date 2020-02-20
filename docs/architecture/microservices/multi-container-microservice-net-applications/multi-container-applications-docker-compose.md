@@ -1,13 +1,13 @@
 ---
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro aplikaci s více kontejnery pomocí Docker-Compose. yml.
-ms.date: 10/02/2018
-ms.openlocfilehash: 26b7362112c12583377db9f8fa516ee8ce3b1ac2
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 01/30/2020
+ms.openlocfilehash: 86d6feda343df7f4b72374f93fc45b3246780cdf
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450697"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502455"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -26,20 +26,20 @@ services:
   webmvc:
     image: eshop/webmvc
     environment:
-      - CatalogUrl=http://catalog.api
-      - OrderingUrl=http://ordering.api
-      - BasketUrl=http://basket.api
+      - CatalogUrl=http://catalog-api
+      - OrderingUrl=http://ordering-api
+      - BasketUrl=http://basket-api
     ports:
       - "5100:80"
     depends_on:
-      - catalog.api
-      - ordering.api
-      - basket.api
+      - catalog-api
+      - ordering-api
+      - basket-api
 
-  catalog.api:
-    image: eshop/catalog.api
+  catalog-api:
+    image: eshop/catalog-api
     environment:
-      - ConnectionString=Server=sql.data;Initial Catalog=CatalogData;User Id=sa;Password=your@password
+      - ConnectionString=Server=sqldata;Initial Catalog=CatalogData;User Id=sa;Password=your@password
     expose:
       - "80"
     ports:
@@ -48,37 +48,37 @@ services:
     extra_hosts:
       - "CESARDLSURFBOOK:10.0.75.1"
     depends_on:
-      - sql.data
+      - sqldata
 
-  ordering.api:
-    image: eshop/ordering.api
+  ordering-api:
+    image: eshop/ordering-api
     environment:
-      - ConnectionString=Server=sql.data;Database=Services.OrderingDb;User Id=sa;Password=your@password
+      - ConnectionString=Server=sqldata;Database=Services.OrderingDb;User Id=sa;Password=your@password
     ports:
       - "5102:80"
     #extra hosts can be used for standalone SQL Server or services at the dev PC
     extra_hosts:
       - "CESARDLSURFBOOK:10.0.75.1"
     depends_on:
-      - sql.data
+      - sqldata
 
-  basket.api:
-    image: eshop/basket.api
+  basket-api:
+    image: eshop/basket-api
     environment:
-      - ConnectionString=sql.data
+      - ConnectionString=sqldata
     ports:
       - "5103:80"
     depends_on:
-      - sql.data
+      - sqldata
 
-  sql.data:
+  sqldata:
     environment:
       - SA_PASSWORD=your@password
       - ACCEPT_EULA=Y
     ports:
       - "5434:1433"
 
-  basket.data:
+  basketdata:
     image: redis
 ```
 
@@ -87,21 +87,21 @@ Kořenový klíč v tomto souboru je služby. V tomto klíči definujete služby
 | Název služby | Popis |
 |--------------|-------------|
 | webmvc       | Kontejner včetně aplikace ASP.NET Core MVC využívající mikroslužby na straně serveru C\#|
-| catalog.api  | Kontejner včetně služby Catalog ASP.NET Core mikroslužby webového rozhraní API |
-| objednávání. API | Kontejner, včetně pořadí ASP.NET Core mikroslužby webového rozhraní API |
-| sql.data     | Kontejner se spuštěným SQL Server pro Linux, který uchovává databáze mikroslužeb. |
-| basket.api   | Kontejner s ASP.NET Core mikroslužba webového rozhraní API pro koš |
-| basket.data  | Kontejner, ve kterém je spuštěná služba REDIS cache, s databází košíku jako REDIS cache |
+| katalog – rozhraní API  | Kontejner včetně služby Catalog ASP.NET Core mikroslužby webového rozhraní API |
+| řazení – rozhraní API | Kontejner, včetně pořadí ASP.NET Core mikroslužby webového rozhraní API |
+| sqldata     | Kontejner se spuštěným SQL Server pro Linux, který uchovává databáze mikroslužeb. |
+| košík – rozhraní API   | Kontejner s ASP.NET Core mikroslužba webového rozhraní API pro koš |
+| basketdata  | Kontejner, ve kterém je spuštěná služba REDIS cache, s databází košíku jako REDIS cache |
 
 ### <a name="a-simple-web-service-api-container"></a>Jednoduchý kontejner rozhraní API pro webové služby
 
-Zaměření na jeden kontejner, Catalog. API Container-mikroslužba má jasné definice:
+Zaostření na jednom kontejneru, katalogu rozhraní API – mikroslužba má jasné definice:
 
 ```yml
-  catalog.api:
-    image: eshop/catalog.api
+  catalog-api:
+    image: eshop/catalog-api
     environment:
-      - ConnectionString=Server=sql.data;Initial Catalog=CatalogData;User Id=sa;Password=your@password
+      - ConnectionString=Server=sqldata;Initial Catalog=CatalogData;User Id=sa;Password=your@password
     expose:
       - "80"
     ports:
@@ -110,32 +110,32 @@ Zaměření na jeden kontejner, Catalog. API Container-mikroslužba má jasné d
     extra_hosts:
       - "CESARDLSURFBOOK:10.0.75.1"
     depends_on:
-      - sql.data
+      - sqldata
 ```
 
 Tato služba kontejneru má následující základní konfiguraci:
 
-- Je založen na vlastní imagi eshop/Catalog. API. V zájmu zjednodušení není v souboru žádné nastavení pro sestavení: klíče. To znamená, že bitová kopie musí být dřív sestavená (pomocí buildu Docker) nebo se stáhla (pomocí příkazu docker pull) z libovolného registru Docker.
+- Je založen na vlastní imagi **eshop/Catalog-API** . V zájmu zjednodušení není v souboru žádné nastavení pro sestavení: klíče. To znamená, že bitová kopie musí být dřív sestavená (pomocí buildu Docker) nebo se stáhla (pomocí příkazu docker pull) z libovolného registru Docker.
 
 - Definuje proměnnou prostředí s názvem ConnectionString s připojovacím řetězcem, který má být použit Entity Framework pro přístup k instanci SQL Server, která obsahuje model dat katalogu. V takovém případě stejný kontejner SQL Server drží více databází. Proto potřebujete na svém vývojovém počítači méně paměti pro Docker. Můžete ale také nasadit jeden kontejner SQL Server pro každou databázi mikroslužeb.
 
-- Název SQL Server je SQL. data, což je stejný název, který se používá pro kontejner, na kterém je spuštěná instance SQL Server pro Linux. To je pohodlné; možnost použít toto rozlišení názvu (interní pro hostitele Docker) vyřeší síťovou adresu, takže nemusíte znát interní IP adresy pro kontejnery, které přistupujete z jiných kontejnerů.
+- Název SQL Server je **Sqldata**, což je stejný název, který se používá pro kontejner, na kterém je spuštěná instance SQL Server pro Linux. To je pohodlné; možnost použít toto rozlišení názvu (interní pro hostitele Docker) vyřeší síťovou adresu, takže nemusíte znát interní IP adresy pro kontejnery, které přistupujete z jiných kontejnerů.
 
 Vzhledem k tomu, že připojovací řetězec je definován proměnnou prostředí, můžete tuto proměnnou nastavit pomocí jiného mechanismu a v jinou dobu. Můžete například nastavit jiný připojovací řetězec při nasazování do produkčního prostředí v konečných hostitelích nebo z vašich kanálů CI/CD v Azure DevOps Services nebo preferovaného systému DevOps.
 
-- Zpřístupňuje port 80 pro interní přístup ke službě Catalog. API v rámci hostitele Docker. Hostitelem je aktuálně virtuální počítač se systémem Linux, protože je založen na imagi Docker pro Linux, ale můžete nastavit, aby se kontejner spouštěl v imagi Windows.
+- Zpřístupňuje port 80 pro interní přístup ke službě **Catalog-API** v rámci hostitele Docker. Hostitelem je aktuálně virtuální počítač se systémem Linux, protože je založen na imagi Docker pro Linux, ale můžete nastavit, aby se kontejner spouštěl v imagi Windows.
 
 - Přepošle vystavený port 80 na kontejner na port 5101 na hostitelském počítači Docker (virtuální počítač Linux).
 
-- Propojí webovou službu s SQL. Data Service (instance SQL Server pro databázi Linux spuštěnou v kontejneru). Když zadáte tuto závislost, kontejner Catalog. API se nespustí, dokud se už nespustí kontejner SQL. data; To je důležité, protože Catalog. API vyžaduje, aby se nejdřív nastavila a běžela databáze SQL Server. Tento druh závislosti kontejneru ale v mnoha případech není dostatečný, protože kontroly Docker jsou jenom na úrovni kontejneru. Někdy může být služba (v tomto případě SQL Server) stále připravená, takže je vhodné implementovat logiku opakování pomocí exponenciálního omezení rychlostiu v klientských mikroslužbách. To znamená, že pokud kontejner závislostí není připravený na krátkou dobu, bude aplikace stále odolná.
+- Odkazuje na webovou službu na službu **Sqldata** (instance SQL Server pro databázi Linux spuštěnou v kontejneru). Když zadáte tuto závislost, kontejner API Catalog se nespustí, dokud se kontejner Sqldata už nespustil. To je důležité, protože Catalog-API vyžaduje, aby se nejdřív nastavila a běžela databáze SQL Server. Tento druh závislosti kontejneru ale v mnoha případech není dostatečný, protože kontroly Docker jsou jenom na úrovni kontejneru. Někdy může být služba (v tomto případě SQL Server) stále připravená, takže je vhodné implementovat logiku opakování pomocí exponenciálního omezení rychlostiu v klientských mikroslužbách. To znamená, že pokud kontejner závislostí není připravený na krátkou dobu, bude aplikace stále odolná.
 
 - Je nakonfigurovaná tak, aby povolovala přístup k externím serverům: nastavení další\_hostitelů umožňuje přístup k externím serverům nebo počítačům mimo hostitele Docker (to znamená, že je mimo výchozí virtuální počítač Linux, který je hostitelem hostitele Docker), jako je například místní instance SQL Server na vašem vývojovém počítači.
 
-K dispozici jsou také další pokročilá nastavení Docker-Compose. yml, která budeme projednávat v následujících oddílech.
+K dispozici jsou také další pokročilejší `docker-compose.yml`á nastavení, která budeme projednávat v následujících částech.
 
 ### <a name="using-docker-compose-files-to-target-multiple-environments"></a>Použití souborů Docker-skládání k sestavení více prostředí
 
-Soubory Docker-Compose. yml jsou definiční soubory a mohou být používány více infrastrukturami, které tento formát porozuměly. Nejpřímější nástroj je příkaz Docker-skládání.
+`docker-compose.*.yml` soubory jsou definiční soubory a mohou být používány více infrastrukturami, které tento formát porozuměl. Nejpřímější nástroj je příkaz Docker-skládání.
 
 Proto pomocí příkazu Docker-skládání můžete cílit na následující hlavní scénáře.
 
@@ -179,13 +179,13 @@ Ve výchozím nastavení čte čtení dva soubory, Docker-Compose. yml a nepovin
 
 ![Snímek obrazovky se soubory v projektu Docker pro sestavení.](./media/multi-container-applications-docker-compose/docker-compose-file-visual-studio.png)
 
-**Obrázek 6-11**. soubory Docker – sestavení v aplikaci Visual Studio 2017
+**Obrázek 6-11**. soubory Docker – sestavení v aplikaci Visual Studio 2019
 
 **Docker – sestavení** struktury souborů projektu:
 
-* *. dockerignore* – používá se k ignorování souborů
-* *Docker-Compose. yml* – slouží k vytváření mikroslužeb
-* *Docker-Compose. override. yml* – používá se ke konfiguraci prostředí mikroslužeb.
+- *. dockerignore* – používá se k ignorování souborů
+- *Docker-Compose. yml* – slouží k vytváření mikroslužeb
+- *Docker-Compose. override. yml* – používá se ke konfiguraci prostředí mikroslužeb.
 
 Soubory Docker můžete upravit pomocí libovolného editoru, například Visual Studio Code nebo subvápna, a aplikaci spustit pomocí příkazu Docker-sestavit.
 
@@ -207,34 +207,34 @@ Můžete zkombinovat více souborů Docker-Compose*. yml pro zpracování různ�
 #docker-compose.yml (Base)
 version: '3.4'
 services:
-  basket.api:
-    image: eshop/basket.api:${TAG:-latest}
+  basket-api:
+    image: eshop/basket-api:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Basket/Basket.API/Dockerfile
     depends_on:
-      - basket.data
-      - identity.api
+      - basketdata
+      - identity-api
       - rabbitmq
 
-  catalog.api:
-    image: eshop/catalog.api:${TAG:-latest}
+  catalog-api:
+    image: eshop/catalog-api:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Catalog/Catalog.API/Dockerfile
     depends_on:
-      - sql.data
+      - sqldata
       - rabbitmq
 
-  marketing.api:
-    image: eshop/marketing.api:${TAG:-latest}
+  marketing-api:
+    image: eshop/marketing-api:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Marketing/Marketing.API/Dockerfile
     depends_on:
-      - sql.data
-      - nosql.data
-      - identity.api
+      - sqldata
+      - nosqldata
+      - identity-api
       - rabbitmq
 
   webmvc:
@@ -243,19 +243,19 @@ services:
       context: .
       dockerfile: src/Web/WebMVC/Dockerfile
     depends_on:
-      - catalog.api
-      - ordering.api
-      - identity.api
-      - basket.api
-      - marketing.api
+      - catalog-api
+      - ordering-api
+      - identity-api
+      - basket-api
+      - marketing-api
 
-  sql.data:
-    image: microsoft/mssql-server-linux:2017-latest
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
 
-  nosql.data:
+  nosqldata:
     image: mongo
 
-  basket.data:
+  basketdata:
     image: redis
 
   rabbitmq:
@@ -286,12 +286,12 @@ version: '3.4'
 services:
 # Simplified number of services here:
 
-  basket.api:
+  basket-api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - ConnectionString=${ESHOP_AZURE_REDIS_BASKET_DB:-basket.data}
-      - identityUrl=http://identity.api
+      - ConnectionString=${ESHOP_AZURE_REDIS_BASKET_DB:-basketdata}
+      - identityUrl=http://identity-api
       - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
@@ -304,11 +304,11 @@ services:
     ports:
       - "5103:80"
 
-  catalog.api:
+  catalog-api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - ConnectionString=${ESHOP_AZURE_CATALOG_DB:-Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word}
+      - ConnectionString=${ESHOP_AZURE_CATALOG_DB:-Server=sqldata;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word}
       - PicBaseUrl=${ESHOP_AZURE_STORAGE_CATALOG_URL:-http://localhost:5202/api/v1/catalog/items/[0]/pic/}
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
@@ -323,17 +323,17 @@ services:
     ports:
       - "5101:80"
 
-  marketing.api:
+  marketing-api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - ConnectionString=${ESHOP_AZURE_MARKETING_DB:-Server=sql.data;Database=Microsoft.eShopOnContainers.Services.MarketingDb;User Id=sa;Password=Pass@word}
-      - MongoConnectionString=${ESHOP_AZURE_COSMOSDB:-mongodb://nosql.data}
+      - ConnectionString=${ESHOP_AZURE_MARKETING_DB:-Server=sqldata;Database=Microsoft.eShopOnContainers.Services.MarketingDb;User Id=sa;Password=Pass@word}
+      - MongoConnectionString=${ESHOP_AZURE_COSMOSDB:-mongodb://nosqldata}
       - MongoDatabase=MarketingDb
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
       - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}
-      - identityUrl=http://identity.api
+      - identityUrl=http://identity-api
       - IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
       - CampaignDetailFunctionUri=${ESHOP_AZUREFUNC_CAMPAIGN_DETAILS_URI}
       - PicBaseUrl=${ESHOP_AZURE_STORAGE_MARKETING_URL:-http://localhost:5110/api/v1/campaigns/[0]/pic/}
@@ -354,12 +354,12 @@ services:
       - PurchaseUrl=http://webshoppingapigw
       - IdentityUrl=http://10.0.75.1:5105
       - MarketingUrl=http://webmarketingapigw
-      - CatalogUrlHC=http://catalog.api/hc
-      - OrderingUrlHC=http://ordering.api/hc
-      - IdentityUrlHC=http://identity.api/hc
-      - BasketUrlHC=http://basket.api/hc
-      - MarketingUrlHC=http://marketing.api/hc
-      - PaymentUrlHC=http://payment.api/hc
+      - CatalogUrlHC=http://catalog-api/hc
+      - OrderingUrlHC=http://ordering-api/hc
+      - IdentityUrlHC=http://identity-api/hc
+      - BasketUrlHC=http://basket-api/hc
+      - MarketingUrlHC=http://marketing-api/hc
+      - PaymentUrlHC=http://payment-api/hc
       - SignalrHubUrl=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5202
       - UseCustomizationData=True
       - ApplicationInsights__InstrumentationKey=${INSTRUMENTATION_KEY}
@@ -367,16 +367,16 @@ services:
       - UseLoadTest=${USE_LOADTEST:-False}
     ports:
       - "5100:80"
-  sql.data:
+  sqldata:
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
       - "5433:1433"
-  nosql.data:
+  nosqldata:
     ports:
       - "27017:27017"
-  basket.data:
+  basketdata:
     ports:
       - "6379:6379"
   rabbitmq:
@@ -412,7 +412,7 @@ Proměnné prostředí jsou vytvářeny a inicializovány různými způsoby v z
 
 Následující příklad ukazuje soubor. ENV, jako je soubor [. env](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/.env) pro aplikaci eShopOnContainers.
 
-```env
+```sh
 # .env file
 
 ESHOP_EXTERNAL_DNS_NAME_OR_IP=localhost
@@ -437,7 +437,7 @@ Hodnoty nastavené v běhovém prostředí vždy přepisují hodnoty definované
 Pokud zkoumáte Docker a .NET Core na zdrojích na internetu, najdete fázemi, které demonstrují jednoduchost vytváření imagí Docker zkopírováním zdroje do kontejneru. Tyto příklady naznačují, že pomocí jednoduché konfigurace můžete mít image Docker s prostředím zabaleným do aplikace. Následující příklad ukazuje jednoduchý souboru Dockerfile v tomto podmnožině.
 
 ```Dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80
 EXPOSE 80

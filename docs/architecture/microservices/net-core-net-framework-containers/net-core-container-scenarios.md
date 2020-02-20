@@ -1,13 +1,13 @@
 ---
 title: Kdy pro kontejnery Dockeru zvolit .NET Core
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Kdy zvolit .NET Core pro kontejnery Docker
-ms.date: 09/11/2018
-ms.openlocfilehash: d17b6b7620f485f09f8f18ac792418a48ae40037
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 01/30/2020
+ms.openlocfilehash: b3cb1eefe739b4ffdbbdd0bdcb3c74b51862704b
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920982"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501851"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Core
 
@@ -35,11 +35,11 @@ Kromě platforem a editorů můžete [.NET Core CLI](../../../core/tools/index.m
 
 Kontejnery se běžně používají ve spojení s architekturou mikroslužeb, i když je lze použít také k kontejnerizaceí webových aplikací nebo služeb, které následují podle modelu architektury. Můžete použít .NET Framework v kontejnerech Windows, ale modularita a zjednodušená povaha .NET Core je ideální pro kontejnery a architektury mikroslužeb. Při vytváření a nasazování kontejneru je jeho obrázek mnohem menší s .NET Core než s .NET Framework.
 
-## <a name="creating-and-deploying-microservices-on-containers"></a>Vytváření a nasazování mikroslužeb na kontejnery
+## <a name="create-and-deploy-microservices-on-containers"></a>Vytváření a nasazování mikroslužeb v kontejnerech
 
-Pomocí jednoduchých procesů můžete použít tradiční .NET Framework pro vytváření aplikací založených na mikroslužbách (bez kontejnerů). Proto protože .NET Framework je už nainstalovaná a sdílená napříč procesy, procesy jsou lehké a rychlé, aby se spouštěly. Pokud však používáte kontejnery, je obrázek pro tradiční .NET Framework také založen na systému Windows Server Core a je příliš velký pro přístup k mikroslužbám v rámci kontejnerů.
+Pomocí jednoduchých procesů můžete použít tradiční .NET Framework pro vytváření aplikací založených na mikroslužbách (bez kontejnerů). Proto protože .NET Framework je už nainstalovaná a sdílená napříč procesy, procesy jsou lehké a rychlé, aby se spouštěly. Pokud však používáte kontejnery, je obrázek pro tradiční .NET Framework také založen na systému Windows Server Core a je příliš velký pro přístup k mikroslužbám v rámci kontejnerů. Týmy ale hledají příležitosti pro zlepšení prostředí pro .NET Framework uživatele. Nedávno se velikost [imagí kontejneru jádra Windows serveru snížila na > 40% menší](https://devblogs.microsoft.com/dotnet/we-made-windows-server-core-container-images-40-smaller). 
 
-Naproti tomu je .NET Core nejlepší kandidát, pokud jste přechodu systém orientovaný na mikroslužby, který je založený na kontejnerech, protože .NET Core je odlehčené. Spolu se souvisejícími imagemi kontejnerů, jako je Linux nebo image Windows nano, jsou navíc štíhlé a malé vytváření kontejnerů a jejich rychlé spuštění.
+Na druhé straně je .NET Core nejlepší kandidát, pokud jste přechodu systém orientovaný na mikroslužby, který je založený na kontejnerech, protože .NET Core je odlehčené. Kromě toho jsou jeho související image kontejnerů pro Linux nebo Windows nano Server štíhlé a malé, což zahájí vytváření a rychlé vytváření kontejnerů.
 
 Mikroslužba má být co nejnižší, což je co nejmenší: Pokud chcete mít v provozu malý prostor s malým přístavem, můžete mít malý ohraničený kontext (kontrolu DDD, [návrh založený na doméně](https://en.wikipedia.org/wiki/Domain-driven_design)), který představuje malou oblast obav a který je možné rychle spustit a zastavit. Pro tyto požadavky budete chtít použít malé a rychlé vytváření instancí imagí kontejneru, jako je například Image kontejneru .NET Core.
 

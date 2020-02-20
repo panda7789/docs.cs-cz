@@ -1,13 +1,13 @@
 ---
 title: Vytvoření jednoduché mikroslužby CRUD řízené daty
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení vytvoření jednoduché mikroslužby CRUD (data řízená daty) v rámci kontextu aplikace mikroslužeb.
-ms.date: 01/07/2019
-ms.openlocfilehash: 56cec488c22b0f3b45b9c1dae9d2f4fd7ef7beaa
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: b72d7defed81e57e2971c5e2b53df2d86b2dc947
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737346"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502362"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -39,7 +39,7 @@ Chcete-li implementovat jednoduchou mikroslužbu CRUD pomocí .NET Core a sady V
 
 ![Snímek obrazovky s vizuálním studia se zobrazením nastavení projektu.](./media/data-driven-crud-microservice/create-asp-net-core-web-api-project.png)
 
-**Obrázek 6-6**. Vytvoření projektu webového rozhraní API ASP.NET Core v aplikaci Visual Studio
+**Obrázek 6-6**. Vytvoření projektu webového rozhraní API ASP.NET Core v aplikaci Visual Studio 2019
 
 Pokud chcete vytvořit ASP.NET Core projekt webového rozhraní API, vyberte nejdřív ASP.NET Core webovou aplikaci a pak vyberte typ rozhraní API. Po vytvoření projektu můžete své řadiče MVC implementovat stejně jako v jakémkoli jiném projektu webového rozhraní API, a to pomocí rozhraní Entity Framework API nebo jiného rozhraní API. V novém projektu webového rozhraní API vidíte, že jediná závislost, kterou máte v této mikroslužbě, je ASP.NET Core sama. Interně v rámci závislosti *Microsoft. AspNetCore. All* odkazuje na Entity Framework a spoustu dalších balíčků NuGet pro .NET Core, jak je znázorněno na obrázku 6-7.
 
@@ -129,12 +129,27 @@ public class CatalogController : ControllerBase
 
     // GET api/v1/[controller]/items[?pageSize=3&pageIndex=10]
     [HttpGet]
-    [Route("[action]")]
+    [Route("items")]
     [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
-    public async Task<IActionResult> Items([FromQuery]int pageSize = 10,
-                                           [FromQuery]int pageIndex = 0)
-
+    [ProducesResponseType(typeof(IEnumerable<CatalogItem>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    public async Task<IActionResult> ItemsAsync(
+        [FromQuery]int pageSize = 10,
+        [FromQuery]int pageIndex = 0,
+        string ids = null)
     {
+        if (!string.IsNullOrEmpty(ids))
+        {
+            var items = await GetItemsByIdsAsync(ids);
+
+            if (!items.Any())
+            {
+                return BadRequest("ids value invalid. Must be comma-separated list of numbers");
+            }
+
+            return Ok(items);
+        }
+
         var totalItems = await _catalogContext.CatalogItems
             .LongCountAsync();
 
@@ -172,7 +187,7 @@ V ASP.NET Core můžete použít vkládání závislostí (DI) z pole. Nemusíte
 
 V příkladu výše `CatalogController` třídy vkládáme objekt typu `CatalogContext` a další objekty prostřednictvím konstruktoru `CatalogController()`.
 
-Důležitou konfigurací, která se nastavuje v projektu webového rozhraní API, je registrace třídy DbContext do kontejneru IoC služby. To obvykle provedete ve třídě `Startup` voláním metody `services.AddDbContext<DbContext>()` uvnitř metody `ConfigureServices()`, jak je znázorněno v následujícím příkladu:
+Důležitou konfigurací, která se nastavuje v projektu webového rozhraní API, je registrace třídy DbContext do kontejneru IoC služby. To obvykle provedete ve třídě `Startup` voláním metody `services.AddDbContext<DbContext>()` uvnitř metody `ConfigureServices()`, jak je znázorněno v následujícím **zjednodušeném** příkladu:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -205,7 +220,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Dotazování na Data** \
   [https://docs.microsoft.com/ef/core/querying/index](/ef/core/querying/index)
@@ -240,9 +255,9 @@ Z vašich souborů Docker-Compose. yml nebo Docker-Compose. yml můžete inicial
 # docker-compose.override.yml
 
 #
-catalog.api:
+catalog-api:
   environment:
-    - ConnectionString=Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
+    - ConnectionString=Server=sqldata;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
     # Additional environment variables for this service
   ports:
     - "5101:80"
@@ -268,11 +283,11 @@ V rámci změny obchodních požadavků se můžou přidat nové kolekce prostř
 
 Správa verzí umožňuje webovému rozhraní API označovat funkce a prostředky, které zveřejňuje. Klientská aplikace pak může odeslat požadavky na konkrétní verzi funkce nebo prostředku. Existuje několik přístupů k implementaci správy verzí:
 
-- Správa verzí identifikátorů URI
+- Správa verzí pomocí identifikátoru URI
 
-- Správa verzí řetězce dotazů
+- Správa verzí pomocí řetězce dotazu
 
-- Správa verzí hlaviček
+- Správa verzí pomocí hlavičky
 
 Způsob implementace řetězce dotazu a verze identifikátoru URI je nejjednodušší. Správa verzí hlaviček je dobrým přístupem. Nicméně verze hlaviček není tak explicitní a přímá jako verze identifikátoru URI. Vzhledem k tomu, že správa verzí adres URL je nejjednodušší a nejpřesnější, používá ukázková aplikace eShopOnContainers správu verzí pomocí identifikátoru URI.
 
@@ -289,7 +304,7 @@ public class CatalogController : ControllerBase
 
 Tento mechanismus správy verzí je jednoduchý a závisí na serveru, který požadavek směruje na příslušný koncový bod. Pro výkonnější správu verzí a nejlepší způsob používání REST je však vhodné použít médium a implementovat [HATEOAS (hypertextový odkaz jako modul stavu aplikace)](https://docs.microsoft.com/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources).
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Scott Hanselman ASP.NET Core RESTful webové rozhraní API, které se dají snadno** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
@@ -350,7 +365,7 @@ Dokumentace k rozhraní API uživatelského rozhraní Swagger vygenerované swas
 
 V současné době se swashbuckle skládá z pěti vnitřních balíčků NuGet v rámci meta-Package [swashbuckle. AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore) pro aplikace ASP.NET Core.
 
-Po instalaci těchto balíčků NuGet do projektu webového rozhraní API je potřeba nakonfigurovat Swagger ve třídě Startup, jak je uvedeno v následujícím kódu (zjednodušený):
+Po instalaci těchto balíčků NuGet do projektu webového rozhraní API je potřeba nakonfigurovat Swagger ve třídě Startup, jako v následujícím **zjednodušeném** kódu:
 
 ```csharp
 public class Startup
@@ -366,12 +381,11 @@ public class Startup
         services.AddSwaggerGen(options =>
         {
             options.DescribeAllEnumsAsStrings();
-            options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+            options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Title = "eShopOnContainers - Catalog HTTP API",
                 Version = "v1",
-                Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
-                TermsOfService = "Terms Of Service"
+                Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample"
             });
         });
 
@@ -395,7 +409,7 @@ public class Startup
 
 Až to uděláte, můžete aplikaci spustit a procházet následujícími koncovými body JSON a UI pomocí adres URL, jako jsou tyto:
 
-```url
+```console
   http://<your-root-url>/swagger/v1/swagger.json
 
   http://<your-root-url>/swagger/
@@ -415,7 +429,7 @@ Podrobnosti o rozhraní API uživatelského rozhraní Swagger zobrazuje ukázku 
 
 To je jednoduché. A vzhledem k tomu, že se automaticky generuje, metadata Swagger se po přidání dalších funkcí do rozhraní API zvětší.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Stránky pomoci webového rozhraní API ASP.NET pomocí swagger** \
   [https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger](/aspnet/core/tutorials/web-api-help-pages-using-swagger)

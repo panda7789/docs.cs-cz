@@ -2,14 +2,13 @@
 title: Zabezpečení mikroslužeb a webových aplikací .NET
 description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získejte informace o možnostech ověřování v ASP.NET Core webových aplikacích.
 author: mjrousos
-ms.author: wiwagn
-ms.date: 10/19/2018
-ms.openlocfilehash: 6d318f4efc6958610947f164d6ca63634f3d7db5
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 01/30/2020
+ms.openlocfilehash: f82212956f5492a51ec99d092e1a5131d1b31313
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777217"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501647"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
@@ -37,17 +36,48 @@ Pokud jsou mikroslužby k dispozici přímo, důvěřuje, která zahrnuje ověř
 
 Primárním mechanismem v ASP.NET Core pro identifikaci uživatelů aplikace je systém členství [ASP.NET Core identit](/aspnet/core/security/authentication/identity) . ASP.NET Core identity ukládá informace o uživateli (včetně přihlašovacích údajů, rolí a deklarací) do úložiště dat nakonfigurovaného vývojářem. Úložiště dat ASP.NET Core identity je obvykle Entity Framework úložiště, které je k dispozici v balíčku `Microsoft.AspNetCore.Identity.EntityFrameworkCore`. Vlastní úložiště nebo jiné balíčky třetích stran ale můžou sloužit k ukládání informací o identitě do Azure Table Storage, CosmosDB nebo jiných umístění.
 
-Následující kód je pořízen ze šablony projektu ASP.NET Core webové aplikace s vybraným ověřováním individuálního uživatelského účtu. Ukazuje, jak nakonfigurovat ASP.NET Core identity pomocí EntityFramework. Core v metodě Startup. ConfigureServices.
+> [!TIP]
+> ASP.NET Core 2,1 a novější poskytuje [ASP.NET Core identitu](/aspnet/core/security/authentication/identity) jako [knihovnu tříd Razor](/aspnet/core/razor-pages/ui-class), takže v projektu neuvidíte spoustu potřebného kódu, stejně jako v případě předchozích verzí. Podrobnosti o tom, jak přizpůsobit kód identity podle vašich potřeb, najdete v tématu [Identita uživatelského rozhraní v ASP.NET Core projektech](/aspnet/core/security/authentication/scaffold-identity).
+
+Následující kód je pořízen z šablony projektu ASP.NET Core Web Application MVC 3,1 s vybraným ověřováním individuálního uživatelského účtu. Ukazuje, jak nakonfigurovat ASP.NET Core identity pomocí Entity Framework Core v metodě `Startup.ConfigureServices`.
 
 ```csharp
-services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-    services.AddIdentity<ApplicationUser, IdentityRole>()
-        .AddEntityFrameworkStores<ApplicationDbContext>()
-        .AddDefaultTokenProviders();
+public void ConfigureServices(IServiceCollection services)
+{
+    //...
+    services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(
+            Configuration.GetConnectionString("DefaultConnection")));
+
+    services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        .AddEntityFrameworkStores<ApplicationDbContext>();
+
+    services.AddRazorPages();
+    //...
+}
 ```
 
-Po nakonfigurování ASP.NET Core identity ji povolíte voláním aplikace. UseIdentity v metodě `Startup.Configure` služby.
+Po nakonfigurování ASP.NET Core identity ji povolíte přidáním `app.UseAuthentication()` a `endpoints.MapRazorPages()`, jak je znázorněno v následujícím kódu v metodě `Startup.Configure` služby:
+
+```csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    //...
+    app.UseRouting();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapRazorPages();
+    });
+    //...
+}
+```
+
+> [!IMPORTANT]
+> Řádky v předcházejícím kódu **musí být v pořadí, v jakém jsou uvedeny** pro správné fungování identity.
 
 Použití ASP.NET Core identity umožňuje několik scénářů:
 
@@ -65,69 +95,54 @@ V případě scénářů ověřování, které využívají úložiště dat mí
 
 ASP.NET Core podporuje také použití [externích zprostředkovatelů ověřování](/aspnet/core/security/authentication/social/) , aby se uživatelé mohli přihlašovat prostřednictvím toků [OAuth 2,0](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2) . To znamená, že se uživatelé můžou přihlásit pomocí stávajících procesů ověřování od poskytovatelů, jako je Microsoft, Google, Facebook nebo Twitter, a přidružit tyto identity k identitě ASP.NET Core ve vaší aplikaci.
 
-Chcete-li použít externí ověřování, zahrňte příslušný middleware ověřování do kanálu zpracování požadavků HTTP vaší aplikace. Tento middleware zodpovídá za zpracování žádostí o vrácení tras identifikátorů URI od poskytovatele ověřování, zaznamenání informací o identitě a jejich zpřístupnění prostřednictvím metody SignInManager. GetExternalLoginInfo.
+Chcete-li použít externí ověřování, kromě včetně middlewaru ověřování, jak je uvedeno dříve, pomocí metody `app.UseAuthentication()`, je také nutné zaregistrovat externího poskytovatele v `Startup`, jak je znázorněno v následujícím příkladu:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    //...
+    services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        .AddEntityFrameworkStores<ApplicationDbContext>();
+
+    services.AddAuthentication()
+        .AddMicrosoftAccount(microsoftOptions =>
+        {
+            microsoftOptions.ClientId = Configuration["Authentication:Microsoft:ClientId"];
+            microsoftOptions.ClientSecret = Configuration["Authentication:Microsoft:ClientSecret"];
+        })
+        .AddGoogle(googleOptions => { ... })
+        .AddTwitter(twitterOptions => { ... })
+        .AddFacebook(facebookOptions => { ... });
+    //...
+}
+```
 
 Oblíbená externí poskytovatelé ověřování a jejich přidružené balíčky NuGet jsou uvedené v následující tabulce:
 
 | **Poskytovatel**  | **Balíček**                                          |
 | ------------- | ---------------------------------------------------- |
-| **Microsoft** | **Microsoft.AspNetCore.Authentication.MicrosoftAccount** |
-| **Google**    | **Microsoft.AspNetCore.Authentication.Google**           |
-| **Facebook**  | **Microsoft.AspNetCore.Authentication.Facebook**         |
-| **Twitter**   | **Microsoft.AspNetCore.Authentication.Twitter**          |
+| **Microsoft** | **Microsoft. AspNetCore. Authentication. MicrosoftAccount** |
+| **Google**    | **Microsoft. AspNetCore. Authentication. Google**           |
+| **Facebook**  | **Microsoft. AspNetCore. Authentication. Facebook**         |
+| **Twitter**   | **Microsoft. AspNetCore. Authentication. Twitter**          |
 
-Ve všech případech je middleware zaregistrován voláním metody registrace podobné `app.Use{ExternalProvider}Authentication` v `Startup.Configure`. Tyto metody registrace přebírají objekt Options, který obsahuje ID aplikace a tajné informace (například heslo), jak to vyžaduje poskytovatel. Externí zprostředkovatelé ověřování vyžadují, aby se aplikace zaregistrovala (jak je vysvětleno v [dokumentaci ASP.NET Core](/aspnet/core/security/authentication/social/)), aby mohla informovat uživatele o tom, co aplikace žádá o přístup k jejich identitě.
+Ve všech případech musíte dokončit postup registrace aplikace, který je závislý na dodavateli a který obvykle zahrnuje:
 
-Jakmile je middleware zaregistrován v `Startup.Configure`, můžete uživatele vyzvat, aby se přihlásili z jakékoli akce kontroleru. Uděláte to tak, že vytvoříte objekt `AuthenticationProperties`, který obsahuje název poskytovatele ověřování a adresu URL pro přesměrování. Pak vrátíte odpověď na výzvu, která předá objekt `AuthenticationProperties`. Příklad ukazuje následující kód.
+1. Získává se ID klientské aplikace.
+2. Načítá se tajný klíč klientské aplikace.
+3. Konfigurace adresy URL pro přesměrování, kterou zpracovává middleware autorizace a registrovaný poskytovatel
+4. Volitelně můžete nakonfigurovat přihlašovací adresu URL pro správné zpracování odhlášení ve scénáři jednotného přihlašování (SSO).
 
-```csharp
-var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider,
-    redirectUrl);
-return Challenge(properties, provider);
-```
+Podrobnosti o konfiguraci aplikace pro externího poskytovatele najdete v dokumentaci k ASP.NET Core v tématu [ověřování externího poskytovatele](/aspnet/core/security/authentication/social/).
 
-Parametr redirectUrl zahrnuje adresu URL, na kterou by měl externí poskytovatel přesměrovat po ověření uživatele. Adresa URL by měla představovat akci, která bude uživatele podepsat na základě externích informací o identitě, jako v následujícím zjednodušeném příkladu:
+> [!TIP]
+Všechny podrobnosti zpracovává middleware autorizace a výše zmíněné služby. Proto stačí zvolit možnost ověřování **jednotlivých uživatelských účtů** při vytváření projektu webové aplikace ASP.NET code v aplikaci Visual Studio, jak je znázorněno na obrázku 9-3, kromě registrace výše zmíněných zprostředkovatelů ověřování.
 
-```csharp
-// Sign in the user with this external login provider if the user
-// already has a login.
-var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false);
+![Snímek obrazovky dialogového okna Nový ASP.NET Core webové aplikace](./media/index/select-individual-user-account-authentication-option.png)
 
-if (result.Succeeded)
-{
-    return RedirectToLocal(returnUrl);
-}
-else
-{
-    ApplicationUser newUser = new ApplicationUser
-    {
-        // The user object can be constructed with claims from the
-        // external authentication provider, combined with information
-        // supplied by the user after they have authenticated with
-        // the external provider.
-        UserName = info.Principal.FindFirstValue(ClaimTypes.Name),
-        Email = info.Principal.FindFirstValue(ClaimTypes.Email)
-    };
-    var identityResult = await _userManager.CreateAsync(newUser);
-    if (identityResult.Succeeded)
-    {
-        identityResult = await _userManager.AddLoginAsync(newUser, info);
-        if (identityResult.Succeeded)
-        {
-            await _signInManager.SignInAsync(newUser, isPersistent: false);
-        }
-        return RedirectToLocal(returnUrl);
-    }
-}
-```
+**Obrázek 9-3**. Výběr možnosti jednotlivých uživatelských účtů pro použití externího ověřování při vytváření projektu webové aplikace v aplikaci Visual Studio 2019.
 
-Pokud při vytváření projektu webové aplikace ASP.NET Core v aplikaci Visual Studio zvolíte možnost ověřování **individuálního uživatelského účtu** , veškerý kód nezbytný k přihlášení pomocí externího zprostředkovatele je již v projektu, jak je znázorněno na obrázku 9-3.
-
-![Snímek obrazovky dialogového okna Nový ASP.NET Core webové aplikace](./media/index/select-external-authentication-option.png)
-
-**Obrázek 9-3**. Výběr možnosti pro použití externího ověřování při vytváření projektu webové aplikace
-
-Kromě externích poskytovatelů ověřování uvedených v předchozích částech jsou k dispozici balíčky třetích stran, které poskytují middleware pro používání mnoha dalších externích poskytovatelů ověřování. Seznam naleznete v tématu [ASPNET. Security. OAuth. Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src) na GitHubu.
+Kromě externích poskytovatelů ověřování uvedených v předchozích částech jsou k dispozici balíčky třetích stran, které poskytují middleware pro používání mnoha dalších externích poskytovatelů ověřování. Seznam najdete v úložišti [ASPNET. Security. OAuth. Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src) na GitHubu.
 
 Můžete také vytvořit vlastní middleware pro externí ověřování a vyřešit určité zvláštní potřeby.
 
@@ -147,31 +162,36 @@ Pokud jsou informace o uživateli uložené v Azure Active Directory nebo jiném
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     //…
-    // Configure the pipeline to use authentication
     app.UseAuthentication();
     //…
-    app.UseMvc();
+    app.UseEndpoints(endpoints =>
+    {
+        //...
+    });
 }
 
 public void ConfigureServices(IServiceCollection services)
 {
     var identityUrl = Configuration.GetValue<string>("IdentityUrl");
     var callBackUrl = Configuration.GetValue<string>("CallBackUrl");
+    var sessionCookieLifetime = configuration.GetValue("SessionCookieLifetimeMinutes", 60);
 
     // Add Authentication services
 
     services.AddAuthentication(options =>
     {
         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     })
-    .AddCookie()
+    .AddCookie(setup => setup.ExpireTimeSpan = TimeSpan.FromMinutes(sessionCookieLifetime))
     .AddOpenIdConnect(options =>
     {
         options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.Authority = identityUrl;
-        options.SignedOutRedirectUri = callBackUrl;
+        options.Authority = identityUrl.ToString();
+        options.SignedOutRedirectUri = callBackUrl.ToString();
+        options.ClientId = useLoadTest ? "mvctest" : "mvc";
         options.ClientSecret = "secret";
+        options.ResponseType = useLoadTest ? "code id_token token" : "code id_token";
         options.SaveTokens = true;
         options.GetClaimsFromUserInfoEndpoint = true;
         options.RequireHttpsMetadata = false;
@@ -218,12 +238,16 @@ Když zadáte klienty a prostředky, které má IdentityServer4 použít, může
 Ukázková konfigurace IdentityServer4 pro použití prostředků v paměti a klientů, které poskytuje vlastní typ IClientStore, může vypadat podobně jako v následujícím příkladu:
 
 ```csharp
-// Add IdentityServer services
-services.AddSingleton<IClientStore, CustomClientStore>();
-services.AddIdentityServer()
-    .AddSigningCredential("CN=sts")
-    .AddInMemoryApiResources(MyApiResourceProvider.GetAllResources())
-    .AddAspNetIdentity<ApplicationUser>();
+public IServiceProvider ConfigureServices(IServiceCollection services)
+{
+    //...
+    services.AddSingleton<IClientStore, CustomClientStore>();
+    services.AddIdentityServer()
+        .AddSigningCredential("CN=sts")
+        .AddInMemoryApiResources(MyApiResourceProvider.GetAllResources())
+        .AddAspNetIdentity<ApplicationUser>();
+    //...
+}
 ```
 
 ### <a name="consume-security-tokens"></a>Využívat tokeny zabezpečení
@@ -241,7 +265,10 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     // Configure the pipeline to use authentication
     app.UseAuthentication();
     //…
-    app.UseMvc();
+    app.UseEndpoints(endpoints =>
+    {
+        //...
+    });
 }
 
 public void ConfigureServices(IServiceCollection services)
@@ -252,8 +279,8 @@ public void ConfigureServices(IServiceCollection services)
 
     services.AddAuthentication(options =>
     {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultAuthenticateScheme = AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme;
 
     }).AddJwtBearer(options =>
     {
@@ -276,7 +303,7 @@ Díky tomuto middlewaru jsou tokeny JWT automaticky extrahovány z autorizační
 
 Middleware pro ověření nosiče JWT může také podporovat pokročilejší scénáře, jako je například použití místního certifikátu k ověření tokenu, není-li tato autorita k dispozici. V tomto scénáři můžete zadat objekt `TokenValidationParameters` v objektu `JwtBearerOptions`.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **Sdílení souborů cookie mezi aplikacemi** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)

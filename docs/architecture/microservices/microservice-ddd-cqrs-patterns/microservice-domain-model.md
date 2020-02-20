@@ -1,13 +1,13 @@
 ---
 title: Návrh doménového modelu mikroslužby
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Princip klíčových konceptů při navrhování doménového modelu orientovaného na DDD
-ms.date: 10/08/2018
-ms.openlocfilehash: 3a02059064305ca148b7909923e2f51e60ee54d5
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: 628fb5c76362ec8f48367b3d69d16ea6ebd24f09
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737383"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502322"
 ---
 # <a name="design-a-microservice-domain-model"></a>Návrh doménového modelu mikroslužeb
 
@@ -53,7 +53,7 @@ To je důvod, proč architektury mikroslužeb jsou ideální pro přístup s ví
 
 Někteří lidé říkají, že model domény anemic je anti-Pattern. Ve skutečnosti záleží na tom, co implementujete. Pokud je mikroslužba, kterou vytváříte, dostatečně jednoduchá (například služba CRUD), pak za doménovým modelem anemic se nejedná o anti-Pattern. Pokud ale potřebujete řešit složitost domény mikroslužeb, která má mnoho stále se měnících obchodních pravidel, model domény anemic může být antipattern pro daný kontext mikroslužeb nebo vázaného kontextu. V takovém případě může mít návrh jako bohatý model s entitami, které obsahují data a chování, i implementaci dalších vzorků DDD (agregované hodnoty, objekty hodnot atd.) pro dlouhodobou úspěšnost této mikroslužby.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **DevIQ. \ doménových entit**
   <https://deviq.com/entity/>
@@ -74,11 +74,11 @@ Něco, co je entita v mikroslužbě, nemusí být entitou v jiné mikroslužbě,
 
 Osoba, která má jméno a příjmení, je obvykle entita, protože osoba má identitu, a to i v případě, že se název a příjmení shodují s jinou sadou hodnot, například pokud se tyto názvy vztahují také na jinou osobu.
 
-Objekty hodnot jsou obtížné spravovat v relačních databázích a ORMs jako EF, zatímco v dokumentu orientovaném na dokumenty se snadněji implementují a používají.
+Objekty hodnot je obtížné spravovat v relačních databázích a ORMs, jako je Entity Framework (EF), zatímco v databázích orientovaných na dokumenty je snazší je implementovat a používat.
 
-EF Core 2,0 obsahuje funkci [vlastněné entity](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) , která usnadňuje zpracování hodnotových objektů, jak se dozvíme později v podrobnostech.
+EF Core 2,0 a novějších verzích zahrnují funkci [vlastněné entity](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) , která usnadňuje zpracování objektů hodnot, jak se dozvíte podrobněji později.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Martin Fowlera. \ – vzor objektu hodnoty**
   <https://martinfowler.com/bliki/ValueObject.html>
@@ -131,7 +131,7 @@ public class Order : Entity, IAggregateRoot
 
 Identifikace a práce s agregacemi vyžaduje výzkum a možnosti. Další informace najdete v následujících dalších seznamech prostředků.
 
-#### <a name="additional-resources"></a>Další materiály a zdroje informací
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Vaughn Vernon. Účinný agregovaný návrh – část I: modelování jedné agregace** (z <http://dddcommunity.org/>) \
   <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>

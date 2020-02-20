@@ -2,12 +2,12 @@
 title: Sítě – gRPC pro vývojáře WCF
 description: Použití sítě k směrování a vyrovnání požadavků na služby gRPC Services v clusteru Kubernetes.
 ms.date: 09/02/2019
-ms.openlocfilehash: cc4855b1ed27e29076e4f13f5c5d3dffa63a6554
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a29d6893e585c7eb60c847cef0149afeeaebcdab
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711279"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503382"
 ---
 # <a name="service-meshes"></a>Sítě – sítě
 
@@ -17,29 +17,29 @@ Síť je součást infrastruktury, která přebírá řízení žádostí o slu�
 - Vyrovnávání zatížení
 - Odolnost proti chybám
 - Šifrování
-- Sledování
+- Monitorování
 
-Sítě Kubernetes fungují přidáním dalšího kontejneru, který se označuje jako *proxy vozíku*, do každého pod tím, co je zahrnuto do sítě. Proxy přebírá všechny příchozí a odchozí síťové požadavky, což umožňuje, aby konfigurace a Správa síťových aspektů byly oddělené od kontejnerů aplikací a v mnoha případech bez nutnosti provádět změny kódu aplikace.
+Sítě Kubernetes fungují přidáním dalšího kontejneru, který se označuje jako *proxy vozíku*, do každého pod tím, co je zahrnuto do sítě. Proxy přebírá všechny příchozí a odchozí síťové požadavky. Pak můžete udržovat konfiguraci a správu otázek sítě odděleně od kontejnerů aplikací. V mnoha případech toto oddělení nevyžaduje žádné změny kódu aplikace.
 
-Proveďte [příklad předchozí kapitoly](kubernetes.md#test-the-application), ve kterém byly všechny požadavky gRPC z webové aplikace směrovány do jediné instance služby gRPC. Důvodem je, že název hostitele služby se přeloží na IP adresu a tato IP adresa se uloží do mezipaměti po dobu života instance `HttpClientHandler`. Můžete to vyřešit tak, že ručně vyřešíte vyhledávání DNS nebo vytváříte více klientů, ale tím se kód aplikace významně nemění bez nutnosti přidat jakoukoli firmu nebo hodnotu zákazníka.
+V [příkladu předchozí kapitoly](kubernetes.md#test-the-application)byly požadavky gRPC z webové aplikace směrovány do jediné instance služby gRPC. Důvodem je, že název hostitele služby se přeloží na IP adresu a tato IP adresa se uloží do mezipaměti po dobu života instance `HttpClientHandler`. Toto řešení může být možné vyřešit ručním zpracováním vyhledávání DNS nebo vytvořením několika klientů. Toto řešení ale může zkomplikovat kód aplikace bez nutnosti přidat jakoukoli firmu nebo zákaznickou hodnotu.
 
-Pomocí sítě služby se požadavky z kontejneru aplikace odesílají na proxy vozík, který je může rozmístit inteligentně napříč všemi instancemi jiné služby. Síť může také:
+Když použijete síť, požadavky z kontejneru aplikace se odešlou na proxy postranní vozík. Proxy z postranového vozíku je pak může inteligentně rozmístit napříč všemi instancemi jiné služby. Síť může také:
 
 - Bez problémů můžete reagovat na selhání jednotlivých instancí služby.
-- Zpracovat sémantiku opakování pro neúspěšná volání nebo vypršení časových limitů
-- Přesměrovat neúspěšné požadavky na alternativní instanci bez návratu do klientské aplikace.
+- Zpracovat sémantiku opakování pro neúspěšná volání nebo vypršení časového limitu.
+- Přesměrovat neúspěšné požadavky na alternativní instanci bez návratu do klientské aplikace
 
-Na následujícím snímku obrazovky se zobrazuje aplikace StockWeb běžící s mřížkou linkeru služby bez jakýchkoli změn v kódu aplikace nebo i v případě, že se používá Image Docker. Jediná požadovaná změna byla přidání poznámky k nasazení v souborech YAML pro služby `stockdata` a `stockweb`.
+Následující snímek obrazovky ukazuje aplikaci StockWeb běžící s mřížkou linkeru služby. V kódu aplikace nejsou žádné změny a image Docker se nepoužívá. Jediná požadovaná změna byla přidání poznámky k nasazení v souborech YAML pro služby `stockdata` a `stockweb`.
 
 ![StockWeb s sítí služby](media/service-mesh/stockweb-servicemesh-screenshot.png)
 
-Můžete vidět ze sloupce Server, že požadavky z aplikace StockWeb byly směrovány do obou replik služby StockData, a to i v případě, že pocházejí z jediné instance `HttpClient` v kódu aplikace. Pokud zkontrolujete kód, uvidíte, že všechny požadavky 100 na službu StockData se současně používají stejnou instanci `HttpClient`, ale i s sítí služby, tyto požadavky budou vyvážené i v případě, že jsou dostupné spousty instancí služby.
+Můžete vidět ze sloupce **Server** , že požadavky z aplikace StockWeb byly směrovány do obou replik služby StockData, a to i v případě, že pocházejí z jediné instance `HttpClient` v kódu aplikace. Pokud zkontrolujete kód, uvidíte, že všechny požadavky 100 na službu StockData se provádějí současně pomocí stejné instance `HttpClient`. S sítí služby budou tyto požadavky vyrovnávány napříč celou řadou instancí služby, které jsou k dispozici.
 
-Sítě se vztahují jenom na přenosy v rámci clusteru. U externích klientů si přečtěte [další kapitolu vyrovnávání zatížení](load-balancing.md).
+Sítě se vztahují jenom na přenosy v rámci clusteru. U externích klientů si přečtěte další kapitolu [Vyrovnávání zatížení](load-balancing.md).
 
 ## <a name="service-mesh-options"></a>Možnosti sítě
 
-Existují tři implementace sítě pro obecné účely, které jsou aktuálně k dispozici pro použití s Kubernetes: Istio, linkerem a Consul Connect. Všechny tři poskytují požadavky na směrování a proxy, šifrování provozu, odolnost, ověřování od hostitele do hostitele a řízení provozu.
+Tři implementace sítě pro obecné účely jsou aktuálně k dispozici pro použití s Kubernetes: [Istio](https://istio.io), [linkerem](https://linkerd.io)a [Consul připojit](https://consul.io/mesh.html). Všechny tři poskytují požadavky na směrování a proxy, šifrování provozu, odolnost, ověřování od hostitele do hostitele a řízení provozu.
 
 Volba sítě služby závisí na několika faktorech:
 
@@ -47,18 +47,12 @@ Volba sítě služby závisí na několika faktorech:
 - Povaha clusteru, jeho velikost, počet nasazených služeb a objem přenosů v rámci sítě s clustery.
 - Snadné nasazení a Správa sítě a její použití se službami
 
-Další informace o každé síti služby jsou k dispozici na příslušných webech.
-
-- [**Istio** – istio.IO](https://istio.io)
-- [**Linkered** – linkerd.IO](https://linkerd.io)
-- [**Consul** – Consul.IO/Mesh.html](https://consul.io/mesh.html)
-
 ## <a name="example-add-linkerd-to-a-deployment"></a>Příklad: Přidání linkeru do nasazení
 
 V tomto příkladu se dozvíte, jak používat síť s propojovacími službami s aplikací *StockKube* z [předchozí části](kubernetes.md).
-Chcete-li postupovat podle tohoto příkladu, je nutné [nainstalovat linkered CLI](https://linkerd.io/2/getting-started/#step-1-install-the-cli). Binární soubory Windows se dají stáhnout z oddílu verze GitHubu. Ujistěte se, že používáte nejnovější **stabilní** verzi a ne jednu z hraničních vydání.
+Chcete-li postupovat podle tohoto příkladu, je nutné [nainstalovat linkered CLI](https://linkerd.io/2/getting-started/#step-1-install-the-cli). Binární soubory Windows si můžete stáhnout z části, kde jsou uvedené verze GitHubu. Ujistěte se, že používáte nejnovější *stabilní* verzi a ne jednu z hraničních vydání.
 
-Po nainstalování linkeru rozhraní příkazového řádku, postupujte podle pokynů [*Začínáme* na linkeru webu] a nainstalujte linkerované komponenty do clusteru Kubernetes. Pokyny jsou přímo předávány a instalace by v místní instanci Kubernetes měla trvat několik minut.
+Po instalaci rozhraní příkazového řádku, postupujte podle pokynů [Začínáme](https://linkerd.io/2/getting-started/index.html) a nainstalujte linkerované komponenty do clusteru Kubernetes. Pokyny jsou jednoduché a v místní instanci Kubernetes by instalace měla trvat jenom pár minut.
 
 ### <a name="add-linkerd-to-kubernetes-deployments"></a>Přidat linkery do nasazení Kubernetes
 
@@ -80,7 +74,7 @@ linkerd inject stockweb.yml | kubectl apply -f -
 
 ### <a name="inspect-services-in-the-linkerd-dashboard"></a>Kontrola služeb v řídicím panelu linkeru
 
-Spusťte Linkerový řídicí panel pomocí rozhraní příkazového řádku `linkerd`.
+Otevřete Linkerový řídicí panel pomocí rozhraní příkazového řádku `linkerd`.
 
 ```console
 linkerd dashboard
@@ -90,7 +84,7 @@ linkerd dashboard
 
 ![Linkerový řídicí panel zobrazující aplikace StockKube](media/service-mesh/linkerd-screenshot.png)
 
-Pokud zvýšíte počet replik služby StockData gRPC, jak je znázorněno v následujícím příkladu, a aktualizovat stránku StockWeb v prohlížeči, měla by se zobrazit kombinace identifikátorů ve sloupci Server, což značí, že požadavky jsou obsluhovány všemi dostupnými instancemi. .
+Pokud zvýšíte počet replik služby StockData gRPC, jak je znázorněno v následujícím příkladu, a aktualizovat stránku StockWeb v prohlížeči, měla by se zobrazit kombinace identifikátorů ve sloupci **Server** . Tato kombinace znamená, že všechny dostupné instance obsluhují požadavky.
 
 ```yaml
 apiVersion: apps/v1

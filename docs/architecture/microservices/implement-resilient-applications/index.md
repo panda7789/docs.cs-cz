@@ -1,13 +1,13 @@
 ---
 title: Implementace odolných aplikací
-description: Přečtěte si o odolnosti, klíčové koncepci v architektuře mikroslužeb. Musíte znát, jak plynule řešit přechodné chyby, protože k nim dojde.
-ms.date: 10/16/2018
-ms.openlocfilehash: 766349e72389f848b0a741b020707cc7acf3410d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+description: Přečtěte si o odolnosti, klíčové koncepci v architektuře mikroslužeb. Musíte znát, jak plynule řešit přechodné chyby, když k nim dojde.
+ms.date: 01/30/2020
+ms.openlocfilehash: ccdb2470c727ad4bd89c4e0634da8564b8010e63
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296058"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502658"
 ---
 # <a name="implement-resilient-applications"></a>Implementace odolných aplikací
 
@@ -18,6 +18,16 @@ Odolnost proti chybám je schopnost zotavení po selháních a nadále fungovat.
 Pro návrh a nasazení aplikace založené na mikroslužbách je to dost náročné. Ale také je potřeba, aby vaše aplikace běžela v prostředí, kde je nějaký konkrétní druh selhání. Proto by vaše aplikace měla být odolná. Měla by být navržená tak, aby se vypořádat s částečnými chybami, jako jsou výpadky sítě nebo uzly nebo selhání virtuálních počítačů v cloudu. Dokonce i mikroslužby (kontejnery), které se přesunou do jiného uzlu v clusteru, můžou v rámci aplikace způsobit přerušované krátké chyby.
 
 Mnohé jednotlivé komponenty vaší aplikace by měly také zahrnovat funkce monitorování stavu. Podle pokynů v této kapitole můžete vytvořit aplikaci, která může hladce fungovat navzdory přechodnému výpadku nebo normálním hiccups, ke kterým dochází ve složitých i cloudových nasazeních.
+
+>[!IMPORTANT]
+> eShopOnContainer používala [knihovnu Polly](http://www.thepollyproject.org/) k implementaci odolnosti pomocí [typových klientů](./use-httpclientfactory-to-implement-resilient-http-requests.md) až do vydání 3.0.0.
+>
+> Od verze 3.0.0 je odolnost volání HTTP implementovaná pomocí [propojovací sítě](https://linkerd.io/), která zpracovává opakované pokusy transparentním a konfigurovatelným způsobem v rámci clusteru Kubernetes, aniž by bylo nutné tyto obavy v kódu zpracovat.
+>
+> Knihovna Polly se pořád používá k přidání odolnosti do databázových připojení, která jsou speciálně při spouštění služeb.
+
+>[!WARNING]
+> Všechny ukázky kódu v této části byly platné před použitím linkeru a nejsou aktualizovány, aby odrážely aktuální vlastní kód. Proto dávají smysl v kontextu této části.
 
 >[!div class="step-by-step"]
 >[Předchozí](../microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api.md)
