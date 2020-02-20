@@ -6,12 +6,12 @@ helpviewer_keywords:
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-ms.openlocfilehash: 5f4697ea518e7fe03df4ecac9d748386a8ac6313
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d873f626b660bb6bd94710add4543e21e11823d6
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705402"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452016"
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 
@@ -21,7 +21,7 @@ Na rozdíl od polí nejsou vlastnosti klasifikovány jako proměnné. Proto nelz
 
 Vlastnosti mají mnoho použití: může ověřit data před tím, než povolí změnu. mohou transparentně vystavovat data pro třídu, kde jsou data skutečně načtena z nějakého jiného zdroje, jako je například databáze. mohou provést akci při změně dat, jako je například vyvolání události nebo změna hodnoty jiných polí.
 
-Vlastnosti jsou deklarovány v bloku třídy zadáním úrovně přístupu pole, za nímž následuje typ vlastnosti následovaný názvem vlastnosti a následným blokem kódu, který deklaruje `get`přistupující objekt nebo přístupový objekt `set`. Příklad:
+Vlastnosti jsou deklarovány v bloku třídy zadáním úrovně přístupu pole, za nímž následuje typ vlastnosti následovaný názvem vlastnosti a následným blokem kódu, který deklaruje `get`přistupující objekt nebo přístupový objekt `set`. Například:
 
 [!code-csharp[csProgGuideProperties#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#7)]
 
@@ -35,7 +35,7 @@ Tělo přístupového objektu `get` se podobá metodě. Musí vracet hodnotu typ
 
 [!code-csharp[csProgGuideProperties#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#8)]
 
-Když odkazujete na vlastnost, s výjimkou cíle přiřazení, je vyvolán přistupující objekt `get` pro čtení hodnoty vlastnosti. Příklad:
+Když odkazujete na vlastnost, s výjimkou cíle přiřazení, je vyvolán přistupující objekt `get` pro čtení hodnoty vlastnosti. Například:
 
 [!code-csharp[csProgGuideProperties#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#9)]
 
@@ -45,7 +45,7 @@ Je to špatný styl programování ke změně stavu objektu pomocí přístupov�
 
 [!code-csharp[csProgGuideProperties#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#10)]
 
-Přístupový objekt `get` lze použít k vrácení hodnoty pole nebo k jejímu výpočtu a vrácení. Příklad:
+Přístupový objekt `get` lze použít k vrácení hodnoty pole nebo k jejímu výpočtu a vrácení. Například:
 
 [!code-csharp[csProgGuideProperties#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#11)]
 
@@ -53,11 +53,11 @@ Pokud v předchozím segmentu kódu nepřiřazujete hodnotu vlastnosti `Name`, v
 
 ## <a name="the-set-accessor"></a>Přístupový objekt set
 
-Přistupující objekt `set` se podobá metodě, jejíž návratový typ je [void](../../language-reference/keywords/void.md). Používá implicitní parametr s názvem `value`, jehož typ je typ vlastnosti. V následujícím příkladu je `set` přistupující objekt přidaný do vlastnosti `Name`:
+Přistupující objekt `set` se podobá metodě, jejíž návratový typ je [void](../../language-reference/builtin-types/void.md). Používá implicitní parametr s názvem `value`, jehož typ je typ vlastnosti. V následujícím příkladu je `set` přistupující objekt přidaný do vlastnosti `Name`:
 
 [!code-csharp[csProgGuideProperties#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#12)]
 
-Když přiřadíte hodnotu vlastnosti, `set` přistupující objekt je vyvolán pomocí argumentu, který poskytuje novou hodnotu. Příklad:
+Když přiřadíte hodnotu vlastnosti, `set` přistupující objekt je vyvolán pomocí argumentu, který poskytuje novou hodnotu. Například:
 
 [!code-csharp[csProgGuideProperties#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#13)]
 
@@ -106,9 +106,9 @@ V tomto příkladu dvě třídy, `Cube` a `Square`, implementujte abstraktní t�
 
 [!code-csharp[csProgGuideProperties#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#6)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Vlastnosti](properties.md)
 - [Vlastnosti rozhraní](interface-properties.md)
 - [Automaticky implementované vlastnosti](auto-implemented-properties.md)

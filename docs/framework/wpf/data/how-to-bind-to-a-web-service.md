@@ -9,18 +9,18 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 76fa13d4a12362d04c832fd59ee69db5a6811029
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 3a3f6edc974448ddab9fe30e97bdc1130d3b97dc
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454456"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449969"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Postupy: Připojení k webové službě
 Tento příklad ukazuje, jak vytvořit vazby k objektům vráceným voláními metody webové služby.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá [služba obsahu MTPS (MSDN/TechNet Publishing System)](https://go.microsoft.com/fwlink/?LinkId=95677) k načtení seznamu jazyků podporovaných zadaným dokumentem.  
+ V tomto příkladu se používá služba obsahu MTPS (MSDN/TechNet Publishing System) k načtení seznamu jazyků podporovaných zadaným dokumentem.  
   
  Před voláním webové služby je nutné vytvořit odkaz na ni. Chcete-li vytvořit webový odkaz na službu MTPS pomocí sady Visual Studio, postupujte podle následujících kroků:  
   
@@ -45,7 +45,7 @@ Tento příklad ukazuje, jak vytvořit vazby k objektům vráceným voláními m
   
  Informace o struktuře `getContentResponse`najdete v [dokumentaci ke službě obsahu](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
 - [Přehled zdrojů vazby](binding-sources-overview.md)

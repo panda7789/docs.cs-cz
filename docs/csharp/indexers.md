@@ -4,12 +4,12 @@ description: Seznamte C# se s indexery a jejich implementací indexovaných vlas
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: 86e646b341cf098d8621f095d4bfc9ea2191940d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 966483e80d8dd0421dce1b7fabdb0d443d73a0fc
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039122"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450879"
 ---
 # <a name="indexers"></a>Indexery
 
@@ -175,7 +175,7 @@ public class DataSamples
 
 Můžete postupovat podle tohoto návrhu idiom a modelovat jakýkoli druh kolekce, kde jsou dobré důvody, proč nenačíst celou sadu dat do kolekce v paměti. Všimněte si, že třída `Page` je soukromá vnořená třída, která není součástí veřejného rozhraní. Tyto podrobnosti jsou skryté od všech uživatelů této třídy.
 
-### <a name="dictionaries"></a>slovníky
+### <a name="dictionaries"></a>Slovníky
 
 Dalším běžným scénářem je situace, kdy potřebujete modelovat slovník nebo mapu. Tento scénář je v případě, že váš typ ukládá hodnoty na základě klíče, obvykle textových klíčů. Tento příklad vytvoří slovník, který mapuje argumenty příkazového řádku na [výrazy lambda](delegates-overview.md) , které spravují tyto možnosti. Následující příklad ukazuje dvě třídy: `ArgsActions` třídu, která mapuje možnost příkazového řádku na delegáta `Action` a `ArgsProcessor`, který používá `ArgsActions` ke spuštění každého `Action`, když k této možnosti dojde.
 
@@ -321,7 +321,7 @@ using CityDataMeasurements = System.Collections.Generic.Dictionary<string, Syste
 
 vytvoří *alias* pro konstruovaný obecný typ. Tyto příkazy umožňují kódu později použít výstižnější `DateMeasurements` a `CityDateMeasurements` názvy namísto obecné konstrukce `Dictionary<DateTime, Measurements>` a `Dictionary<string, Dictionary<DateTime, Measurements> >`. Tento konstruktor vyžaduje použití plně kvalifikovaného názvu typu na pravé straně znaku `=`.
 
-Druhým postupem je obložení časových částí libovolného objektu `DateTime`, který se používá k indexování do kolekcí. Rozhraní .NET Framework neobsahuje typ pouze datum.
+Druhým postupem je obložení časových částí libovolného objektu `DateTime`, který se používá k indexování do kolekcí. Rozhraní .NET nezahrnuje typ pouze datum.
 Vývojáři používají `DateTime` typ, ale pomocí vlastnosti `Date` zajistěte, aby všechny objekty `DateTime` z tohoto dne byly stejné.
 
 ## <a name="summing-up"></a>Sčítání

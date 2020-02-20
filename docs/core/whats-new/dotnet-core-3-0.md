@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 92d97ca3efe761c879d0940a02342edb5a8180f0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 60794c4f8a5f9aeb7a4b3cd58c0c9f00e03fa9e7
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920382"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450977"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -19,15 +19,15 @@ Tento článek popisuje, co je v .NET Core 3.0 novinkou. Jedním z největších
 
 .NET Core 3.0 přidává podporu pro C# 8.0. Důrazně doporučujeme, abyste používali [Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo novější, [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview) nebo novější, nebo [Visual Studio Code](https://code.visualstudio.com/) s nejnovějším  **C# rozšířením**.
 
-[Stáhněte si a začněte používat .NET Core 3.0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
+[Stáhněte si a začněte používat .NET Core 3,0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
 
-Další informace o této verzi najdete v tématu [oznámení .NET Core 3.0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
+Další informace o této verzi najdete v tématu [oznámení .NET Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
 
 .NET Core RC1 se považuje za produkční verzi Microsoft a je plně podporovaná. Pokud používáte verzi Preview, musíte pro pokračování podpory přejít na verzi RTM.
 
 ## <a name="language-improvements-c-80"></a>Jazykové vylepšení C# 8,0
 
-C#8,0 je také součástí této verze, která zahrnuje funkce [typu odkazu s možnou hodnotou null](../../csharp/tutorials/nullable-reference-types.md) , [asynchronní datové proudy](../../csharp/tutorials/generate-consume-asynchronous-stream.md)a [Další vzory](../../csharp/tutorials/pattern-matching.md). Další informace o C# funkcích 8.0 najdete v tématu [co je nového v C# 8.0](../../csharp/whats-new/csharp-8.md).
+C#8,0 je také součástí této verze, která zahrnuje funkce [typu odkazu s možnou hodnotou null](../../csharp/tutorials/nullable-reference-types.md) , [asynchronní datové proudy](../../csharp/tutorials/generate-consume-asynchronous-stream.md)a [Další vzory](../../csharp/tutorials/pattern-matching.md). Další informace o C# funkcích 8,0 najdete v tématu [co je nového v C# 8,0](../../csharp/whats-new/csharp-8.md).
 
 Byla přidána vylepšení jazyka pro podporu následujících funkcí rozhraní API, které jsou popsány níže:
 
@@ -36,7 +36,7 @@ Byla přidána vylepšení jazyka pro podporu následujících funkcí rozhraní
 
 ## <a name="net-standard-21"></a>.NET Standard 2.1
 
-.NET Core 3,0 implementuje **.NET Standard 2,1**. Výchozí šablona `dotnet new classlib` však vygeneruje projekt, který je stále cílen **.NET Standard 2,0**. Chcete-li cílit na **.NET Standard 2.1**, upravte soubor projektu a `TargetFramework` změňte vlastnost `netstandard2.1`na:
+.NET Core 3,0 implementuje **.NET Standard 2,1**. Výchozí šablona `dotnet new classlib` však vygeneruje projekt, který je stále cílen **.NET Standard 2,0**. Chcete-li cílit na **.NET Standard 2,1**, upravte soubor projektu a změňte vlastnost `TargetFramework` na `netstandard2.1`:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -48,13 +48,13 @@ Byla přidána vylepšení jazyka pro podporu následujících funkcí rozhraní
 </Project>
 ```
 
-Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), protože Visual Studio 2017 nepodporuje **.NET Standard 2.1** nebo **.NET Core 3.0**.
+Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), protože Visual Studio 2017 nepodporuje **.NET Standard 2,1** nebo **.NET Core 3,0**.
 
 ## <a name="compiledeploy"></a>Kompilovat/nasadit
 
 ### <a name="default-executables"></a>Výchozí spustitelné soubory
 
-.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#framework-dependent-executables-fde) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#self-contained-deployments-scd) vyvolat spustitelný soubor.
+.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#publish-runtime-dependent) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#publish-self-contained) vyvolat spustitelný soubor.
 
 Během `dotnet build` nebo `dotnet publish`se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
 
@@ -112,7 +112,7 @@ Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.m
 
 ### <a name="tiered-compilation"></a>Vrstvená kompilace
 
-[Vrstvená kompilace](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md) (TC) je ve výchozím nastavení zapnuté pomocí .NET Core 3.0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) k zajištění lepšího výkonu.
+[Vrstvená kompilace](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md) (TC) je ve výchozím nastavení zapnutá pomocí .net Core 3,0. Tato funkce umožňuje modulu runtime pružně použít kompilátor JIT (just-in-time) k zajištění lepšího výkonu.
 
 Hlavní výhodou vrstvené kompilace je poskytnout dva způsoby jitting metod: v úrovni nižší kvality, ale rychlejší, nebo na vyšší kvalitu, ale na nižší úrovni. Kvalita odkazuje na to, jak dobře je metoda optimalizovaná. TC pomáhá zlepšit výkon aplikace, když projde různými fázemi provádění, od spuštění po stabilním stavu. Když je vrstvená kompilace zakázána, každá metoda je kompilována jedním způsobem, který je v průběhu spuštění posunut na výkon ustáleného stavu.
 
@@ -217,7 +217,7 @@ Existují některé operace, jako je propojování a publikování stránek Razo
 .NET Core 3.0 zavádí místní nástroje. Místní nástroje jsou podobné [globálním nástrojům](../tools/global-tools.md) , ale jsou přidruženy k určitému umístění na disku. Místní nástroje nejsou globálně dostupné a distribuují se jako balíčky NuGet.
 
 > [!WARNING]
-> Pokud jste si vyzkoušeli místní nástroje v rozhraní .NET Core 3.0 Preview 1 `dotnet tool restore` , `dotnet tool install`jako je třeba spuštění nebo, odstraňte složku mezipaměti místních nástrojů. V opačném případě místní nástroje nebudou fungovat v novější verzi. Tato složka je umístěna v umístění:
+> Pokud jste zkusili místní nástroje v rozhraní .NET Core 3,0 Preview 1, jako je například spuštění `dotnet tool restore` nebo `dotnet tool install`, odstraňte složku mezipaměti místních nástrojů. V opačném případě místní nástroje nebudou fungovat v novější verzi. Tato složka je umístěna v umístění:
 >
 > V macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
 >
@@ -225,7 +225,7 @@ Existují některé operace, jako je propojování a publikování stránek Razo
 
 Místní nástroje spoléhají na název souboru manifestu `dotnet-tools.json` v aktuálním adresáři. Tento soubor manifestu definuje nástroje, které jsou k dispozici v této složce a níže. Můžete distribuovat soubor manifestu s vaším kódem, aby bylo zajištěno, že kdokoli, kdo spolupracuje s vaším kódem, může obnovit a použít stejné nástroje.
 
-U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime. Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2.1. Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu runtime. Mnoho nástrojů, které jsou aktuálně na NuGet.org Target pro .NET Core Runtime 2.1. Pokud chcete tyto nástroje nainstalovat globálně nebo lokálně, budete si muset nainstalovat [modul runtime .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
 
 ### <a name="new-globaljson-options"></a>Nové možnosti Global. JSON
 
@@ -250,7 +250,7 @@ Systém uvolňování paměti se teď dá nakonfigurovat s nastavením **GCLarge
 
 ### <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
-Instalační program MSI pro Windows se od verze .NET Core 3.0 změnil. Instalační programy sady SDK teď upgradují verze sady SDK, které jsou na místě. Pásma funkcí jsou definována ve *stovkách* v oddílu *patch* tohoto čísla verze. Například **3.0. _101_**  a **3.0. _201_**  jsou verze ve dvou různých pruzích funkcí během **3.0. _101_**  a **3.0. _199_**  jsou ve stejném pásmu funkcí. A při .NET Core SDK **3.0. _101_**  je nainstalováno, .NET Core SDK **3.0. _100_**  se odebere z počítače, pokud existuje. Při .NET Core SDK **3.0. _200_**  je nainstalována na stejném počítači .NET Core SDK **3.0. _101_**  nebude odebráno.
+Instalační program MSI pro Windows se od verze .NET Core 3.0 změnil. Instalační programy sady SDK teď upgradují verze sady SDK, které jsou na místě. Pásma funkcí jsou definována ve *stovkách* v oddílu *patch* tohoto čísla verze. Například **3,0. _101_**  a **3,0. _201_**  jsou verze ve dvou různých pruzích funkcí během **3,0. _101_**  a **3,0. _199_**  jsou ve stejném pásmu funkcí. A při .NET Core SDK **3,0. _101_**  je nainstalováno, .NET Core SDK **3,0. _100_**  se odebere z počítače, pokud existuje. Při .NET Core SDK **3,0. _200_**  je nainstalována na stejném počítači .NET Core SDK **3,0. _101_**  nebude odebráno.
 
 Další informace o tom, jak se správou verzí, najdete v tématu Přehled toho, [jak je verze .NET Core](../versions/index.md).
 
@@ -267,7 +267,7 @@ dotnet new wpf
 dotnet new winforms
 ```
 
-Visual Studio 2019 přidává **nové šablony projektů** pro .NET Core 3.0 model Windows Forms a WPF.
+Visual Studio 2019 přidává **nové šablony projektů** pro .net Core 3,0 model Windows Forms a WPF.
 
 Další informace o tom, jak přenést existující aplikaci .NET Framework, naleznete v tématu [port WPF Projects](../../desktop-wpf/migration/convert-project-from-net-framework.md) and [port model Windows Forms Projects](../porting/winforms.md).
 
@@ -295,13 +295,13 @@ Příklad vytvoření komponenty modelu COM a její využití naleznete v [ukáz
 
 ### <a name="windows-native-interop"></a>Nativní spolupráce Windows
 
-Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT. I když .NET Core podporuje **volání nespravovaného voláním**.NET Core 3.0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**. Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
+Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT. I když .NET Core podporuje **volání nespravovaného voláním**.net Core 3,0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**. Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
 
 ### <a name="msix-deployment"></a>Nasazení MSIX
 
 [MSIX](https://docs.microsoft.com/windows/msix/) je nový formát balíčku aplikace systému Windows. Dá se použít k nasazení desktopových aplikací .NET Core 3.0 do Windows 10.
 
-[Projekt pro balení aplikace pro systém Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), který je k dispozici v aplikaci Visual Studio 2019, umožňuje vytvářet balíčky MSIX pomocí aplikací .NET Core s využitím [vlastních součástí](../deploying/index.md#self-contained-deployments-scd) .
+[Projekt pro balení aplikace pro systém Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), který je k dispozici v aplikaci Visual Studio 2019, umožňuje vytvářet balíčky MSIX pomocí aplikací .NET Core s využitím [vlastních součástí](../deploying/index.md#publish-self-contained) .
 
 Soubor projektu .NET Core musí určovat podporované moduly runtime ve vlastnosti `<RuntimeIdentifiers>`:
 
@@ -313,7 +313,7 @@ Soubor projektu .NET Core musí určovat podporované moduly runtime ve vlastnos
 
 ### <a name="serialport-for-linux"></a>Portu SerialPort pro Linux
 
-.NET Core 3.0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> systém Linux.
+.NET Core 3,0 poskytuje základní podporu pro <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> v systému Linux.
 
 Dřív se .NET Core podporuje jenom pomocí `SerialPort` ve Windows.
 
@@ -345,21 +345,21 @@ Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PW
 > [!NOTE]
 > **ARM64** Podpora Windows není ještě dostupná.
 
-## <a name="security"></a>Zabezpečení –
+## <a name="security"></a>Zabezpečení
 
 ### <a name="tls-13--openssl-111-on-linux"></a>TLS 1.3 & OpenSSL 1.1.1 v systému Linux
 
-.NET Core teď využívá [podporu TLS 1.3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí. S protokolem TLS 1.3:
+.NET Core teď využívá [podporu TLS 1,3 v OpenSSL 1.1.1](https://www.openssl.org/blog/blog/2018/09/11/release111/), pokud je dostupná v daném prostředí. S protokolem TLS 1.3:
 
 - Časy připojení se zlepšily s omezenou špičkou odezvy mezi klientem a serverem.
 - Vylepšené zabezpečení kvůli odebrání různých zastaralých a nezabezpečených kryptografických algoritmů.
 
-V případě, že je k dispozici, .NET Core 3.0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Pokud je k dispozici služba **OpenSSL 1.1.1** <xref:System.Net.Security.SslStream?displayProperty=nameWithType> , budou v obou <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> typech použity **protokoly TLS 1.3** (za předpokladu, že klient i server podporují protokol **TLS 1.3**).
+V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Když je k dispozici **OpenSSL 1.1.1** , budou používat <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> **TLS 1,3** (za předpokladu <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, že klient i server podporují protokol **TLS 1,3**).
 
 > [!IMPORTANT]
-> Windows a macOS ještě nepodporují **TLS 1.3**. Až bude podpora k dispozici, bude .NET Core 3.0 podporovat **TLS 1.3** v těchto operačních systémech.
+> Windows a macOS ještě nepodporují **TLS 1,3**. Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.
 
-Následující C# příklad 8.0 ukazuje rozhraní .NET Core 3.0 v Ubuntu 18.10, které <https://www.cloudflare.com>se připojuje k:
+Následující C# příklad 8,0 ukazuje rozhraní .net Core 3,0 na Ubuntu 18,10 připojení k <https://www.cloudflare.com>:
 
 [!code-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
 
@@ -482,7 +482,7 @@ Další informace najdete v tématu věnovaném [vnitřním procesorům platform
 
 ### <a name="improved-net-core-version-apis"></a>Vylepšená rozhraní API verze .NET Core
 
-Počínaje rozhraním .NET Core 3.0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace. Příklad:
+Počínaje rozhraním .NET Core 3.0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace. Například:
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");

@@ -5,17 +5,17 @@ helpviewer_keywords:
 - <PreferComInsteadOfManagedRemoting> element
 - PreferComInsteadOfManagedRemoting element
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
-ms.openlocfilehash: 47c568a8d6e89a195414552b3db5953ee61d1e55
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1376df4efd56734f2b8da9bd76033afcce8a285b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116019"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452250"
 ---
 # <a name="prefercominsteadofmanagedremoting-element"></a>\<element > PreferComInsteadOfManagedRemoting
 Určuje, zda modul runtime bude používat zprostředkovatele komunikace s objekty COM namísto vzdálené komunikace pro všechna volání napříč hranicemi domény aplikace.  
   
-[ **\<configuration >** ](../configuration-element.md) \
+[**konfigurační >\<** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<PreferComInsteadOfManagedRemoting >**  
   
@@ -42,7 +42,7 @@ Určuje, zda modul runtime bude používat zprostředkovatele komunikace s objek
 |`true`|Modul runtime bude používat zprostředkovatele komunikace s objekty COM napříč hranicemi aplikační domény.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádné.  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -54,9 +54,9 @@ Určuje, zda modul runtime bude používat zprostředkovatele komunikace s objek
 ## <a name="remarks"></a>Poznámky  
  Při nastavení atributu `enabled` na `true`se modul runtime chová takto:  
   
-- Modul runtime nevolá [IUnknown:: QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pro rozhraní [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) , když rozhraní [IUnknown](https://go.microsoft.com/fwlink/?LinkId=148003) vstoupí do domény prostřednictvím rozhraní modelu COM. Místo toho vytvoří obálku webRCW ( [za běhu](../../../../standard/native-interop/runtime-callable-wrapper.md) ) kolem objektu.  
+- Modul runtime nevolá [IUnknown:: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pro rozhraní [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) , když rozhraní [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) vstoupí do domény prostřednictvím rozhraní modelu COM. Místo toho vytvoří obálku webRCW ( [za běhu](../../../../standard/native-interop/runtime-callable-wrapper.md) ) kolem objektu.  
   
-- Modul runtime vrátí E_NOINTERFACE, když přijme `QueryInterface` volání pro rozhraní [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) pro libovolný [obálku](../../../../standard/native-interop/com-callable-wrapper.md) (doleva) typu com, která byla vytvořena v této doméně.  
+- Modul runtime vrátí E_NOINTERFACE, když obdrží `QueryInterface` volání rozhraní [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) pro libovolný [obálku](../../../../standard/native-interop/com-callable-wrapper.md) (doleva) typu com, která byla vytvořena v této doméně.  
   
  Tato dvě chování zajišťují, že všechna volání rozhraní COM mezi spravovanými objekty napříč hranicemi aplikační domény používají místo vzdálené komunikace COM a COM Interop.  
   
@@ -71,7 +71,7 @@ Určuje, zda modul runtime bude používat zprostředkovatele komunikace s objek
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)

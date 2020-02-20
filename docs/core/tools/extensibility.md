@@ -2,12 +2,12 @@
 title: Model rozšiřitelnosti .NET Core CLI
 description: Přečtěte si, jak můžete .NET Core CLI rozšiřuje.
 ms.date: 04/12/2017
-ms.openlocfilehash: 74da895fb3a3f6c77640a2b9a64acdb2894a954b
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 56a9cedc090ddca446c0ee1a60f2ca49590e7635
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920518"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451152"
 ---
 # <a name="net-core-cli-extensibility-model"></a>Model rozšiřitelnosti .NET Core CLI
 
@@ -32,7 +32,7 @@ Rozhraní příkazového řádku lze rozšířit třemi hlavními způsoby:
 Tři výše popsané mechanismy rozšíření nejsou exkluzivní. Můžete použít jeden nebo všechny nebo jejich kombinaci. Který z jednoho výběru závisí hlavně na cíli, který se snažíte dosáhnout s vaším rozšířením.
 
 ## <a name="per-project-based-extensibility"></a>Rozšiřitelnost na základě projektu
-Nástroje pro jednotlivé projekty jsou [nasazení závislá na rozhraní](../deploying/index.md#framework-dependent-deployments-fdd) , která jsou distribuována jako balíčky NuGet. Nástroje jsou k dispozici pouze v kontextu projektu, který je odkazuje na ně a pro které jsou obnoveny. Volání mimo kontext projektu (například mimo adresář, který obsahuje projekt) selže, protože příkaz nelze nalézt.
+Nástroje pro jednotlivé projekty jsou [nasazení závislá na rozhraní](../deploying/index.md#publish-runtime-dependent) , která jsou distribuována jako balíčky NuGet. Nástroje jsou k dispozici pouze v kontextu projektu, který je odkazuje na ně a pro které jsou obnoveny. Volání mimo kontext projektu (například mimo adresář, který obsahuje projekt) selže, protože příkaz nelze nalézt.
 
 Tyto nástroje jsou ideální pro servery sestavení, protože není potřeba nic mimo soubor projektu. Proces sestavení spustí obnovení pro sestavení projektu, které bude k dispozici. Jazykové projekty, například F#, jsou také v této kategorii, protože každý projekt lze zapsat pouze do jednoho konkrétního jazyka.
 

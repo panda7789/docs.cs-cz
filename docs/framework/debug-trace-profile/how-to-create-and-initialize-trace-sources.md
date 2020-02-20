@@ -9,19 +9,19 @@ helpviewer_keywords:
 - initializing trace sources
 - configuration files [.NET Framework], trace sources
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
-ms.openlocfilehash: ae5e98a1ebf3753b24127f96ed563eba27eea2fb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: cc2987499aa094960c08d220940fe1aed5440b2d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217429"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449956"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
 Třídu <xref:System.Diagnostics.TraceSource> používá aplikace k vytváření trasování, která lze přidružit k aplikaci. <xref:System.Diagnostics.TraceSource> poskytuje metody trasování, které umožňují snadno sledovat události, trasovat data a vydávat informativní trasování. Výstup trasování z <xref:System.Diagnostics.TraceSource> lze vytvořit a inicializovat s použitím konfiguračních souborů nebo bez něj. Toto téma poskytuje pokyny pro obě možnosti. Nicméně doporučujeme, abyste používali konfigurační soubory pro usnadnění rekonfigurace trasování, která jsou vytvářena pomocí zdrojů trasování v době běhu.  
   
 ### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Vytvoření a inicializace zdroje trasování pomocí konfiguračního souboru  
   
-1. Vytvořte projekt konzolové aplikace sady Visual Studio a nahraďte poskytnutý kód následujícím kódem. Tento kód protokoluje chyby a varování a výstupy některých z nich do konzoly a některé z nich jsou k souboru myListener, který je vytvořen položkami v konfiguračním souboru.  
+1. Vytvořte projekt konzolové aplikace sady Visual Studio (.NET Framework) a nahraďte poskytnutý kód následujícím kódem. Tento kód protokoluje chyby a varování a výstupy některých z nich do konzoly a některé z nich jsou k souboru myListener, který je vytvořen položkami v konfiguračním souboru.  
   
      [!code-csharp[TraceSourceExample1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample1/cs/program.cs#1)]
      [!code-vb[TraceSourceExample1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample1/vb/program.vb#1)]  

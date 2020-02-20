@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-ms.openlocfilehash: f0f55c948d10c61ebab57f47e3461531ccf5f610
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 00f01b63cdf9397fe25f28fff08767dfc3a83e69
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559713"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453114"
 ---
 # <a name="animation-overview"></a>Přehled animace
 
@@ -213,7 +213,7 @@ Vzhledem k tomu, že animace generují hodnoty vlastností, existují různé ty
 
   Příklady v tomto přehledu používají animace, protože jsou nejjednodušší pro použití. Animace od/do/podle jsou podrobněji popsány v přehledu animací z/do/podle.
 
-- \<*Type*>AnimationUsingKeyFrames
+- *typ*\<> AnimationUsingKeyFrames
 
   Animace klíčových snímků jsou výkonnější než z/do/podle animací, protože můžete zadat libovolný počet cílových hodnot a dokonce řídit metodu interpolace. Některé typy lze animovat pouze pomocí animací klíčových snímků. Animace klíčových snímků jsou podrobně popsané v tématu [Přehled animací klíčových snímků](key-frame-animations-overview.md).
 
@@ -231,10 +231,10 @@ Následující tabulka ukazuje několik běžných typů animací a některé vl
 
 |Typ vlastnosti|Odpovídající animace Basic (od/do/po)|Odpovídající animace klíčových snímků|Animace odpovídající cesty|Příklad použití|
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádná|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animace <xref:System.Windows.FrameworkElement.Width%2A> <xref:System.Windows.Controls.DockPanel> nebo <xref:System.Windows.FrameworkElement.Height%2A> <xref:System.Windows.Controls.Button>.|
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animace <xref:System.Windows.Media.EllipseGeometry.Center%2A> pozice <xref:System.Windows.Media.EllipseGeometry>|
-|<xref:System.String>|Žádné|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> <xref:System.Windows.Controls.Button>.|
+|<xref:System.String>|Žádná|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádná|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> <xref:System.Windows.Controls.Button>.|
 
 <a name="animationsaretimelines"></a>
 
@@ -341,7 +341,7 @@ I když se pro <xref:System.Windows.Media.Animation.Storyboard>vytvoří i hodin
 
 Aby animace odrážela změny vazeb a dat animace, je nutné jejich hodiny znovu vygenerovat. Hodiny se negenerují automaticky. Chcete-li, aby animace odrážela změny, proveďte znovu použití scénáře pomocí <xref:System.Windows.Media.Animation.BeginStoryboard> nebo <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metody. Když použijete některou z těchto metod, animace se restartuje. V kódu můžete pomocí metody <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> posunout scénář zpátky do jeho předchozí pozice.
 
-Příklad animace vázané na data naleznete v tématu [Ukázka animace Key spline](https://go.microsoft.com/fwlink/?LinkID=160011). Další informace o tom, jak systém animace a časování funguje, najdete v tématu [Přehled systému pro animace a časování](animation-and-timing-system-overview.md).
+Příklad animace vázané na data naleznete v tématu [Ukázka animace Key spline](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/KeySplineAnimations). Další informace o tom, jak systém animace a časování funguje, najdete v tématu [Přehled systému pro animace a časování](animation-and-timing-system-overview.md).
 
 <a name="otherWaysToAnimateSection"></a>
 
@@ -355,11 +355,11 @@ Příklady v tomto přehledu ukazují, jak animovat pomocí scénářů. Při po
 
 Následující ukázky vám můžou pomáhat začít s přidáváním animací do vašich aplikací.
 
-- [Ukázka cílových hodnot z, do a podle animace](https://go.microsoft.com/fwlink/?LinkID=159988)
+- [Ukázka cílových hodnot z, do a podle animace](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/TargetValues)
 
   Ukazuje různé nastavení z/na/podle.
 
-- [Ukázka chování časování animace](https://go.microsoft.com/fwlink/?LinkID=159970)
+- [Ukázka chování časování animace](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationTiming)
 
   Ukazuje různé způsoby, jak můžete řídit chování časování animace. Tato ukázka také ukazuje, jak vytvořit datovou cílovou hodnotu animace.
 
@@ -380,14 +380,14 @@ Následující ukázky vám můžou pomáhat začít s přidáváním animací d
 |[Přehled scénářů](storyboards-overview.md)|Popisuje způsob použití scénářů s více časovými osami k vytváření složitých animací.|
 |[Přehled chování časování](timing-behaviors-overview.md)|Popisuje typy a vlastnosti <xref:System.Windows.Media.Animation.Timeline> používané v animacích.|
 |[Přehled událostí časování](timing-events-overview.md)|Popisuje události, které jsou k dispozici na <xref:System.Windows.Media.Animation.Timeline> a objekty <xref:System.Windows.Media.Animation.Clock> pro spouštění kódu v bodech na časové ose, jako je například spuštění, pozastavení, obnovení, přeskočení nebo zastavení.|
-|[Postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animací a časových os ve vaší aplikaci.|
+|[Témata s postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animací a časových os ve vaší aplikaci.|
 |[Postupy: Témata hodin](clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití objektu <xref:System.Windows.Media.Animation.Clock> v aplikaci.|
 |[Témata s postupy ke klíčovým snímkům](key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací klíčových snímků ve vaší aplikaci.|
 |[Postupy: Témata animace cesty](path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací cest ve vaší aplikaci.|
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Odkaz
+## <a name="reference"></a>Referenční informace
 
 - <xref:System.Windows.Media.Animation.Timeline>
 

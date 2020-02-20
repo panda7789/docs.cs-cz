@@ -6,15 +6,16 @@ helpviewer_keywords:
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: c56d673de958f49a9ace60350442e89039e1d69f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 77b173a420f26834855e0bdca3c8d04406ac65d4
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712101"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452003"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Převody kódování C# (Průvodce programováním v C#)
- Konvence kódování slouží k následujícím účelům:  
+
+Konvence kódování slouží k následujícím účelům:  
   
 - Vytvářejí konzistentní vzhled kódu, aby se čtenáři mohli soustředit na obsah, nikoli na rozložení.  
   
@@ -24,7 +25,7 @@ ms.locfileid: "75712101"
   
 - Ukazují C# osvědčené postupy.  
 
- Pokyny v tomto tématu používá společnost Microsoft k vývoji ukázek a dokumentace.  
+Pokyny v tomto článku používá společnost Microsoft k vývoji ukázek a dokumentace.  
   
 ## <a name="naming-conventions"></a>Konvence vytváření názvů  
   
@@ -35,7 +36,8 @@ ms.locfileid: "75712101"
 - Nemusíte měnit názvy objektů, které byly vytvořeny pomocí nástrojů návrháře sady Visual Studio, aby vyhovovaly jiným pokynům.  
   
 ## <a name="layout-conventions"></a>Konvence rozložení  
- Dobrá rozložení používá formátování k zdůraznění struktury kódu a k usnadnění čtení kódu. Příklady a ukázky společnosti Microsoft splňují následující konvence:  
+
+Dobrá rozložení používá formátování k zdůraznění struktury kódu a k usnadnění čtení kódu. Příklady a ukázky společnosti Microsoft splňují následující konvence:  
   
 - Použijte výchozí nastavení editoru kódu (inteligentní odrážky, odsazení čtyř znaků, tabulátory uložené jako mezery). Další informace naleznete v tématu [Možnosti, textový editor, C#formátování](/visualstudio/ide/reference/options-text-editor-csharp-formatting).  
   
@@ -66,7 +68,8 @@ ms.locfileid: "75712101"
 - Nevytvářejte formátované bloky hvězdiček kolem komentářů.  
   
 ## <a name="language-guidelines"></a>Pokyny pro jazyk  
- Následující části popisují postupy, které C# tým sleduje pro přípravu příkladů kódu a ukázek.  
+
+Následující části popisují postupy, které C# tým sleduje pro přípravu příkladů kódu a ukázek.  
   
 ### <a name="string-data-type"></a>Datový typ String  
   
@@ -94,33 +97,38 @@ ms.locfileid: "75712101"
   
 - Vyhněte se použití `var` místo [dynamického](../../language-reference/builtin-types/reference-types.md).  
   
-- Pomocí implicitního zápisu určete typ proměnné smyčky v [pro smyčky for](../../language-reference/keywords/for.md) a [foreach](../../language-reference/keywords/foreach-in.md) .  
+- Pomocí implicitního zápisu určete typ proměnné smyčky v [pro smyčky for](../../language-reference/keywords/for.md) .  
   
      Následující příklad používá implicitní zadání v příkazu `for`.  
   
      [!code-csharp[csProgGuideCodingConventions#7](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#7)]  
-  
-     Následující příklad používá implicitní zadání v příkazu `foreach`.  
-  
-     [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]  
-  
+
+- Nepoužívejte implicitní typování k určení typu proměnné smyčky ve smyčce [foreach](../../language-reference/keywords/foreach-in.md) .
+
+     Následující příklad používá explicitní psaní do příkazu `foreach`.
+
+     [!code-csharp[csProgGuideCodingConventions#12](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#12)]
+
+     > [!NOTE]
+     > Buďte opatrní, aby nedošlo k náhodné změně typu prvku kolekce ITER. Například je snadné přepnout z <xref:System.Linq.IQueryable?displayProperty=nameWithType> na <xref:System.Collections.IEnumerable?displayProperty=nameWithType> v příkazu `foreach`, který změní spuštění dotazu.
+
 ### <a name="unsigned-data-type"></a>Nepodepsaný datový typ  
   
-- Obecně použijte `int` spíše než typy bez znaménka. Použití `int` je běžné v celém C#a při použití `int`je snazší pracovat s ostatními knihovnami.  
+Obecně použijte `int` spíše než typy bez znaménka. Použití `int` je běžné v celém C#a při použití `int`je snazší pracovat s ostatními knihovnami.  
   
 ### <a name="arrays"></a>Pole  
   
-- Použijte stručnou syntaxi při inicializaci polí na řádku deklarace.  
+Použijte stručnou syntaxi při inicializaci polí na řádku deklarace.  
   
-     [!code-csharp[csProgGuideCodingConventions#13](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#13)]  
+[!code-csharp[csProgGuideCodingConventions#13](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#13)]  
   
-### <a name="delegates"></a>Delegáti  
+### <a name="delegates"></a>Delegáty  
   
-- K vytvoření instancí typu delegáta použijte stručnou syntaxi.  
+K vytvoření instancí typu delegáta použijte stručnou syntaxi.  
   
-     [!code-csharp[csProgGuideCodingConventions#14](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#14)]  
+[!code-csharp[csProgGuideCodingConventions#14](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#14)]  
   
-     [!code-csharp[csProgGuideCodingConventions#15](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#15)]  
+[!code-csharp[csProgGuideCodingConventions#15](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#15)]  
   
 ### <a name="try-catch-and-using-statements-in-exception-handling"></a>Zpracování výjimek s použitím příkazů try-catch a using  
   
@@ -134,9 +142,9 @@ ms.locfileid: "75712101"
   
 ### <a name="-and-124124-operators"></a>& & a &#124; &#124; operátory  
   
-- Aby nedocházelo k výjimkám a zvýšili výkon přeskočením zbytečných porovnání, použijte [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) namísto [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) a [ &#124; ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) místo [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při porovnávání, jak je znázorněno v následujícím příkladu.  
+Aby nedocházelo k výjimkám a zvýšili výkon přeskočením zbytečných porovnání, použijte [&&](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) namísto [&](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-) a [ &#124; ](../../language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) místo [&#124;](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-) při porovnávání, jak je znázorněno v následujícím příkladu.  
   
-     [!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
+[!code-csharp[csProgGuideCodingConventions#18](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#18)]  
   
 ### <a name="new-operator"></a>Operátor new  
   
@@ -154,15 +162,15 @@ ms.locfileid: "75712101"
   
 ### <a name="event-handling"></a>Zpracování událostí  
   
-- Pokud definujete obslužnou rutinu události, kterou nemusíte později odebrat, použijte výraz lambda.  
+Pokud definujete obslužnou rutinu události, kterou nemusíte později odebrat, použijte výraz lambda.  
   
-     [!code-csharp[csProgGuideCodingConventions#22](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#22)]  
+[!code-csharp[csProgGuideCodingConventions#22](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#22)]  
   
-     [!code-csharp[csProgGuideCodingConventions#23](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#23)]  
+[!code-csharp[csProgGuideCodingConventions#23](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#23)]  
   
 ### <a name="static-members"></a>Statické členy  
   
-- Volejte [statické](../../language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName. StaticMember*. Tento postup usnadňuje čitelnost kódu tím, že provádí jasné zrušení statického přístupu.  Nekvalifikovat statický člen definovaný v základní třídě s názvem odvozené třídy.  Při kompilaci kódu je čitelnost kódu zavádějící a kód může být v budoucnu přerušen, pokud přidáte statický člen se stejným názvem do odvozené třídy.  
+Volejte [statické](../../language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName. StaticMember*. Tento postup usnadňuje čitelnost kódu tím, že provádí jasné zrušení statického přístupu.  Nekvalifikovat statický člen definovaný v základní třídě s názvem odvozené třídy.  Při kompilaci kódu je čitelnost kódu zavádějící a kód může být v budoucnu přerušen, pokud přidáte statický člen se stejným názvem do odvozené třídy.  
   
 ### <a name="linq-queries"></a>Dotazy LINQ  
   
@@ -192,10 +200,11 @@ ms.locfileid: "75712101"
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   
-## <a name="security"></a>Zabezpečení –  
- Postupujte podle pokynů v části [zásady bezpečného kódování](../../../standard/security/secure-coding-guidelines.md).  
+## <a name="security"></a>Zabezpečení  
+
+Postupujte podle pokynů v části [zásady bezpečného kódování](../../../standard/security/secure-coding-guidelines.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Visual Basic konvence kódování](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)
 - [Pokyny pro zabezpečené kódování](../../../standard/security/secure-coding-guidelines.md)

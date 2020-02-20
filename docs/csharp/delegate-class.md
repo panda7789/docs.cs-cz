@@ -1,23 +1,23 @@
 ---
 title: System. Delegate a klíčové slovo `delegate`
-description: Přečtěte si o třídách v .NET Framework, které podporují delegáty, a o tom, jak jsou tato mapování na klíčové slovo Delegate.
+description: Přečtěte si o třídách v rozhraní .NET, které podporují delegáty a jejich mapování na klíčové slovo Delegate.
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: f4635ff623feec9407021792cabd1677184b4d34
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 3cfc9925be0f191dc3fc93c02f4a8f9a40b71895
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420368"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450918"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System. Delegate a klíčové slovo `delegate`
 
 [Předchozí](delegates-overview.md)
 
-Tento článek bude pokrývat třídy v rozhraní .NET Framework, které podporují delegáty, a způsob mapování na klíčové slovo `delegate`.
+Tento článek popisuje třídy v rozhraní .NET, které podporují delegáty, a způsob mapování na klíčové slovo `delegate`.
 
-## <a name="defining-delegate-types"></a>Definování typů delegátů
+## <a name="define-delegate-types"></a>Definování typů delegátů
 
 Pojďme začít s klíčovým slovem Delegate, protože to je primárně to, co budete používat při práci s delegáty. Kód, který kompilátor generuje při použití klíčového slova `delegate`, se namapuje na volání metod, která vyvolávají členy třídy <xref:System.Delegate> a <xref:System.MulticastDelegate>. 
 
@@ -41,7 +41,7 @@ Všimněte si, že se syntaxe může zobrazit, jako by deklaruje proměnnou, ale
 
 Kompilátor také generuje přidat a odebrat obslužné rutiny pro tento nový typ tak, aby klienti této třídy mohli přidávat a odebírat metody ze seznamu volání instance. Kompilátor vyhodnotí, že signatura přidávaného nebo odebraného metody odpovídá podpisu použitému při deklaraci metody. 
 
-## <a name="declaring-instances-of-delegates"></a>Deklarace instancí delegátů
+## <a name="declare-instances-of-delegates"></a>Deklarovat instance delegátů
 
 Po definování delegáta můžete vytvořit instanci tohoto typu.
 Podobně jako všechny proměnné C#v nemůžete deklarovat instance delegátů přímo v oboru názvů nebo v globálním oboru názvů.
@@ -57,7 +57,7 @@ Typ proměnné je `Comparison<T>`, dříve definovaný typ delegáta. Název pro
  
  Tento fragment kódu výše deklaruje členskou proměnnou uvnitř třídy. Můžete také deklarovat proměnné delegáta, které jsou lokální proměnné nebo argumenty metody.
 
-## <a name="invoking-delegates"></a>Vyvolání delegátů
+## <a name="invoke-delegates"></a>Vyvolat delegáty
 
 Vyvoláte metody, které jsou v seznamu volání delegáta, voláním tohoto delegáta. V rámci metody `Sort()` kód zavolá metodu porovnání k určení, které pořadí umístit objekty:
 
@@ -70,7 +70,7 @@ Zacházíte s proměnnou jako s názvem metody a vyvoláte ji pomocí syntaxe vo
 
 Tento řádek kódu představuje nebezpečný předpoklad: není nijak zaručeno, že do delegáta byl přidán cíl. Pokud nejsou k dispozici žádné cíle, by výše uvedený řádek způsobil vyvolání `NullReferenceException`. Idiomy, který se používá k vyřešení tohoto problému, je složitější než jednoduchá hodnota null a jsou pokrytá později v této [sérii](delegates-patterns.md).
 
-## <a name="assigning-adding-and-removing-invocation-targets"></a>Přiřazení, přidávání a odebírání cílů volání
+## <a name="assign-add-and-remove-invocation-targets"></a>Přiřazení, přidání a odebrání cílů volání
 
 To je způsob, jakým je definován typ delegáta a jak jsou instance delegáta deklarovány a vyvolány.
 
@@ -115,11 +115,11 @@ Příklad řazení () obvykle k delegátovi připojí jedinou cílovou metodu. N
 
 Výše popsaná jazyková podpora poskytuje funkce a podporu, které obvykle budete potřebovat pro práci s delegáty. Tyto funkce jsou postavené na dvou třídách v rozhraní .NET Core Framework: <xref:System.Delegate> a <xref:System.MulticastDelegate>.
 
-Třída `System.Delegate` a její samostatná přímá dílčí třída, `System.MulticastDelegate`, poskytují podporu rozhraní pro vytváření delegátů, registraci metod jako cíle delegátů a vyvolání všech metod, které jsou registrovány jako cíl delegáta. 
+Třídu `System.Delegate` a její jednu přímou podtřídou, `System.MulticastDelegate`, poskytují podporu rozhraní pro vytváření delegátů, registraci metod jako cíle delegátů a vyvolání všech metod, které jsou registrovány jako cíl delegáta. 
 
 V zájmech se třídy `System.Delegate` a `System.MulticastDelegate` samy nedelegovaní sami. Poskytují základ pro všechny konkrétní typy delegátů. Stejný proces návrhu jazyka má pověření, že nelze deklarovat třídu, která je odvozena z `Delegate` nebo `MulticastDelegate`. C# Jazyková pravidla zakazují.
  
-Místo toho C# kompilátor vytvoří instance třídy odvozené z `MulticastDelegate`při použití klíčového slova C# jazyka k deklaraci typů delegátů.
+Místo toho C# kompilátor vytvoří instance třídy odvozené z `MulticastDelegate` při použití klíčového slova C# jazyka k deklaraci typů delegátů.
 
 Tento návrh má své kořeny v první verzi C# a .NET. Jedním z cílů pro návrhového týmu bylo zajistit, aby při použití delegátů byl vynutilný bezpečnost typu. Což znamenalo, že Delegáti byli vyvoláni se správným typem a počtem argumentů. A že libovolný návratový typ byl správně uveden v době kompilace. Delegáti byli součástí verze 1,0 .NET, která byla před obecnými typy.
 
@@ -131,6 +131,6 @@ První, nejdůležitější fakt, jak si pamatovat, je, že každý delegát, se
 
 Metody, které použijete nejvíce s delegáty, jsou `Invoke()` a `BeginInvoke()` / `EndInvoke()`. `Invoke()` vyvolá všechny metody, které byly připojeny ke konkrétní instanci delegáta. Jak jste viděli výše, obvykle vyvoláte delegáty pomocí syntaxe volání metody v proměnné Delegate. Jak vidíte [později v této sérii](delegates-patterns.md), existují vzory, které pracují přímo s těmito metodami.
 
-Teď, když jste viděli syntaxi jazyka a třídy, které podporují delegáty, Podívejme se, jak se používají Delegáti silného typu, vytvoří a vyvolají.
+Teď, když jste viděli syntaxi jazyka a třídy, které podporují delegáty, Podívejme se, jak se používají Delegáti silného typu, vytvoří se a vyvolají.
 
 [Next](delegates-strongly-typed.md)

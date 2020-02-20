@@ -7,12 +7,12 @@ helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
-ms.openlocfilehash: 47d7648aae08544890a4dd2e42cedbf68a8acc72
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: e1f285aae10a89fa49846534d5b47e15920294ea
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77214738"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452276"
 ---
 # <a name="appsettings-element-for-configuration"></a>\<Element appSettings > pro \<konfigurace >
 
@@ -33,7 +33,7 @@ Obsahuje vlastní nastavení aplikace. Toto je předdefinovaný konfigurační o
 
 |           | Popis |
 | --------- | ----------- |
-| **souborů**  | Nepovinný atribut.<br><br>Určuje relativní cestu k externímu souboru, který obsahuje vlastní nastavení konfigurace aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou zadány v **\<přidat >** , **\<odebrat >** a **\<odstranit >** prvky a jako tyto prvky používá stejný formát dvojice klíč/hodnota.<br><br>Zadaná cesta je relativní vzhledem k hlavnímu konfiguračnímu souboru. V případě aplikace model Windows Forms se jedná o binární složku (například */bin/Debug*), nikoli o umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů je cesta relativní k kořenovému adresáři aplikace, kde je umístěn soubor *Web. config* .<br><br>Všimněte si, že modul runtime ignoruje atribut, pokud zadaný soubor nelze nalézt. |
+| **souborů**  | Nepovinný atribut.<br><br>Určuje relativní cestu k externímu souboru, který obsahuje vlastní nastavení konfigurace aplikace. Zadaný soubor obsahuje stejný druh nastavení, které jsou zadány v **\<přidat >** , **\<odebrat >** a **\<odstranit >** prvky a jako tyto prvky používá stejný formát dvojice klíč/hodnota.<br><br>Zadaná cesta je relativní vzhledem k hlavnímu konfiguračnímu souboru. V případě aplikace model Windows Forms se jedná o binární složku (například */bin/Debug*), nikoli o umístění konfiguračního souboru aplikace. Pro aplikace webových formulářů je cesta relativní k kořenovému adresáři aplikace, kde je umístěn soubor *Web. config* .<br><br>Modul runtime ignoruje atribut, pokud zadaný soubor nelze nalézt. |
 
 ## <a name="parent-element"></a>Nadřazený element
 

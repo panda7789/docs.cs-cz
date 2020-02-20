@@ -2,12 +2,12 @@
 title: dotnet – příkaz vstest
 description: Příkaz dotnet VSTest vytvoří projekt a všechny jeho závislosti.
 ms.date: 05/30/2018
-ms.openlocfilehash: c3838617ed539cf56f2840b826e9de58833820fd
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 3fdb5443d6d0cfbe1e7e88bc824cbb930f211260
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215315"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451178"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
@@ -21,7 +21,7 @@ ms.locfileid: "77215315"
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 ```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
@@ -30,7 +30,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
     [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 ```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath] 
@@ -38,7 +38,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
@@ -60,7 +60,7 @@ Spustí testy ze zadaných sestavení. Rozdělte více názvů testovacích sest
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -88,7 +88,7 @@ Paralelní provádění testů. Ve výchozím nastavení jsou všechny dostupné
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení dílčích výrazů.
+Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení podvýrazů.
 
 `-?|--Help|/?|/Help`
 
@@ -148,7 +148,7 @@ Přečte soubor odpovědí pro další možnosti.
 
 Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota `<n>=<v>`formuláře, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -176,7 +176,7 @@ Paralelní provádění testů. Ve výchozím nastavení jsou všechny dostupné
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení dílčích výrazů.
+Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení podvýrazů.
 
 `-?|--Help|/?|/Help`
 
@@ -224,7 +224,7 @@ Povolí podrobné protokoly pro testovací platformu. Protokoly se zapisují do 
 
 Určuje nadbytečné argumenty, které se mají předat adaptéru. Argumenty jsou zadány jako páry název-hodnota `<n>=<v>`formuláře, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. K oddělení více argumentů použijte mezeru.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1. x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -252,7 +252,7 @@ Paralelní provádění testů. Ve výchozím nastavení jsou všechny dostupné
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení dílčích výrazů.
+Spustí testy, které odpovídají danému výrazu. `<Expression>` je `<property>Operator<value>[|&<Expression>]`formátu, kde operátor je jedním z `=`, `!=`nebo `~`. Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako je `DisplayName`. `()` závorky se používají k seskupení podvýrazů.
 
 `-?|--Help|/?|/Help`
 

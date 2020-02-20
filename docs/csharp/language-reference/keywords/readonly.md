@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: f9fa6f893e7f999564c4dcb43d40755547d3c793
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c3db8f7791e510768608e834339526fb82771979
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713115"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451938"
 ---
 # <a name="readonly-c-reference"></a>readonly – modifikátor (Referenční dokumentace jazyka C#)
 
@@ -54,7 +54,7 @@ V tomto příkladu nelze hodnotu pole `year` změnit v `ChangeYear`metody, a to 
 Tyto kontexty konstruktoru jsou také pouze kontexty, ve kterých je platný pro předání pole `readonly` jako parametr [out](out-parameter-modifier.md) nebo [ref](ref.md) .
 
 > [!NOTE]
-> Klíčové slovo `readonly` se liší od klíčového slova [const](const.md) . Pole `const` lze inicializovat pouze v deklaraci pole. Pole `readonly` lze v deklaraci pole a v jakémkoli konstruktoru přiřadit vícekrát. Proto `readonly` pole mohou mít různé hodnoty v závislosti na použitém konstruktoru. I když `const` pole je konstanta při kompilaci, pole `readonly` lze použít pro konstanty za běhu jako v následujícím příkladu:
+> Klíčové slovo `readonly` se liší od klíčového slova [const](const.md) . Pole `const` lze inicializovat pouze v deklaraci pole. Pole `readonly` lze v deklaraci pole a v jakémkoli konstruktoru přiřadit vícekrát. Proto `readonly` pole mohou mít různé hodnoty v závislosti na použitém konstruktoru. I když `const` pole je konstanta při kompilaci, pole `readonly` lze použít pro konstanty run-time, jako v následujícím příkladu:
 >
 > ```csharp
 > public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;
@@ -70,7 +70,7 @@ p2.y = 66;        // Error
 
 zobrazí se chybová zpráva kompilátoru:
 
-`A readonly field cannot be assigned to (except in a constructor or a variable initializer)`
+**K poli jen pro čtení se nedá přiřadit (kromě případu, kdy se nachází v konstruktoru nebo inicializátoru proměnné).**
 
 ## <a name="readonly-struct-example"></a>Příklad struktury jen pro čtení
 
@@ -155,10 +155,10 @@ Můžete si také prohlédnout návrhy specifikace jazyka:
 - [struktura ReadOnly a ReadOnly](~/_csharplang/proposals/csharp-7.2/readonly-ref.md)
 - [Členové struktury jen pro čtení](~/_csharplang/proposals/csharp-8.0/readonly-instance-members.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Modifikátory](index.md)
 - [const](const.md)

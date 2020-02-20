@@ -2,12 +2,12 @@
 title: Katalog identifikátorů runtime .NET Core (RID)
 description: Přečtěte si o identifikátoru modulu runtime (RID) a způsobu použití identifikátorů RID v .NET Core.
 ms.date: 02/22/2019
-ms.openlocfilehash: 4369e263f1f46c73f04c65e4124f63c68d133520
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: feb19632f16a047ecfb2dcb697a9b837824a1929
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789911"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451730"
 ---
 # <a name="net-core-rid-catalog"></a>Katalog identifikátorů RID .NET Core
 
@@ -27,9 +27,9 @@ Jeden identifikátor RID lze nastavit v prvku `<RuntimeIdentifier>` souboru proj
 
 Identifikátorů RID, které reprezentují konkrétní operační systémy, se obvykle řídí tímto vzorem: `[os].[version]-[architecture]-[additional qualifiers]`, kde:
 
-- `[os]` je moniker operačního systému nebo platformy. Například `ubuntu`.
+- `[os]` je moniker operačního systému nebo platformy. například `ubuntu`.
 
-- `[version]` je verze operačního systému ve formě čísla verze odděleného tečkou (`.`). Například `15.10`.
+- `[version]` je verze operačního systému ve formě čísla verze odděleného tečkou (`.`). například `15.10`.
 
   - Verze **by neměla** být marketingová verze, protože často představují více diskrétních verzí operačního systému s různou oblastí rozhraní API platformy.
 
@@ -108,7 +108,7 @@ Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v 
   - `win10-arm`
   - `win10-arm64`
 
-Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-windows).
+Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?pivots=os-windows).
 
 ## <a name="linux-rids"></a>Linux identifikátorů RID
 
@@ -126,7 +126,7 @@ Jsou uvedeny pouze běžné hodnoty. Nejnovější a kompletní verzi najdete v 
   - `tizen.4.0.0`
   - `tizen.5.0.0`
 
-Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-linux).
+Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?pivots=os-linux).
 
 ## <a name="macos-rids"></a>macOS identifikátorů RID
 
@@ -145,8 +145,8 @@ macOS identifikátorů RID používá starší značku "OSX". Jsou uvedeny pouze
 - macOS 10,14 Mojave (.NET Core 1,1 nebo novější verze)
   - `osx.10.14-x64`
 
-Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-macos).
+Další informace najdete v tématu [závislosti a požadavky .NET Core](install/dependencies.md?pivots=os-macos).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ID modulu runtime](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/readme.md)

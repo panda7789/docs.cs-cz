@@ -1,20 +1,20 @@
 ---
 title: .NET Standard
 description: Seznamte se s .NET Standard, jejími verzemi a implementacemi rozhraní .NET, které ho podporují.
-ms.date: 09/23/2019
+ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 25490d5063a1f6c31b76af30ac6d37de6cb8c07f
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 00b40b771a8608bad7e3f992e3c99367ff6bb131
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124634"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452588"
 ---
 # <a name="net-standard"></a>.NET Standard
 
-[.NET Standard](https://github.com/dotnet/standard) je formální specifikace rozhraní API .NET, která jsou určená k dispozici pro všechny implementace rozhraní .NET. Motivace na pozadí .NET Standard vytváří větší jednotnost v ekosystému .NET. [ECMA 335](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) pokračuje v vytváření jednotnosti pro chování implementace rozhraní .NET, ale pro implementace knihovny .NET není k dispozici podobná specifikace pro knihovny tříd .NET Base (BCL).
+[.NET Standard](https://github.com/dotnet/standard) je formální specifikace rozhraní API .NET, která jsou určená k dispozici pro všechny implementace rozhraní .NET. Motivace za .NET Standard je vytvořit větší jednotnost v ekosystému .NET. [Ecma 335](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) pokračuje v vytváření jednotnosti pro chování implementace technologie .NET a zatímco ECMA 335 určuje malou sadu standardních knihoven, specifikace .NET Standard zahrnuje širší škálu rozhraní API .NET.
 
 .NET Standard umožňuje následující klíčové scénáře:
 
