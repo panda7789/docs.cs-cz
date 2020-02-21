@@ -2,18 +2,20 @@
 title: Výčty Protobuf – gRPC pro vývojáře WCF
 description: Naučte se deklarovat a používat výčty v Protobuf.
 ms.date: 09/09/2019
-ms.openlocfilehash: 4ea4d03bede2a9ebfd1f2c3ee56f299e918800e9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 01cf4a4e5e0eda1e7ddff2a6780119fcb3120dad
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971578"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543141"
 ---
 # <a name="protobuf-enumerations"></a>Výčty protobuf
 
-Protobuf podporuje výčtové typy, jak je vidět v předchozí části, kde byl pro určení typu `oneof` pole použit výčet. Můžete definovat vlastní typy výčtu a Protobuf je zkompiluje do C# výčtových typů. Vzhledem k tomu, že Protobuf lze použít s různými jazyky, zásady vytváření názvů pro výčty se C# liší od konvencí. Generátor kódu je však chytřejší a převádí názvy na tradiční C# případ. Pokud je ekvivalent názvu pole v jazyce Pascal shodný s názvem výčtu, bude odstraněn.
+Protobuf podporuje výčtové typy. Tuto podporu jste viděli v předchozí části, kde byl k určení typu `Oneof` pole použit výčet. Můžete definovat vlastní typy výčtu a Protobuf je zkompiluje do C# výčtových typů. 
 
-Například v tomto výčtu Protobuf jsou pole s předponou `ACCOUNT_STATUS`, která odpovídá názvu výčtu Case Case Enum: `AccountStatus`.
+Vzhledem k tomu, že můžete používat Protobuf s různými jazyky, zásady vytváření názvů pro výčty se C# liší od konvencí. Generátor kódu však převede názvy na tradiční C# případ. Pokud je ekvivalent názvu pole v jazyce Pascal shodný s názvem výčtu, bude odstraněn.
+
+Například v následujícím výčtu Protobuf jsou pole s předponou `ACCOUNT_STATUS`. Tato předpona je shodná s názvem Pascal-Case Enum, `AccountStatus`.
 
 ```protobuf
 enum AccountStatus {
@@ -25,7 +27,7 @@ enum AccountStatus {
 }
 ```
 
-Generátor proto vytvoří C# výčet podobný následujícímu kódu:
+Generátor vytvoří C# výčet podobný následujícímu kódu:
 
 ```csharp
 public enum AccountStatus
@@ -38,7 +40,7 @@ public enum AccountStatus
 }
 ```
 
-Definice výčtu Protobuf **musí** mít jako první pole nulovou konstantu. Jako v C#můžete deklarovat více polí se stejnou hodnotou, ale tuto možnost musíte explicitně povolit pomocí možnosti `allow_alias` ve výčtu:
+Definice výčtu Protobuf *musí* mít jako první pole nulovou konstantu. Jako v C#můžete deklarovat více polí se stejnou hodnotou. Tuto možnost však musíte explicitně povolit pomocí možnosti `allow_alias` ve výčtu:
 
 ```protobuf
 enum AccountStatus {
@@ -70,7 +72,7 @@ message Product {
 }
 ```
 
-Nastavíte-li `product.AvailableIn` na `Region.NorthAmerica | Region.SouthAmerica`, je serializován jako celočíselná hodnota `3`. Když se klient nebo server pokusí hodnotu deserializovat, nenajde shodu v definici výčtu pro `3` a výsledek bude `Region.None`.
+Nastavíte-li `product.AvailableIn` na `Region.NorthAmerica | Region.SouthAmerica`, je serializován jako celočíselná hodnota `3`. Když se klient nebo server pokusí hodnotu deserializovat, nenajde shodu v definici výčtu pro `3`. Výsledek bude `Region.None`.
 
 Nejlepším způsobem, jak pracovat s více hodnotami výčtu v Protobuf, je použít pole `repeated` typu výčtu.
 

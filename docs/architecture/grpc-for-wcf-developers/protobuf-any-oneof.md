@@ -2,20 +2,20 @@
 title: Protobuf jakákoli pole a oneof pro typy variant – gRPC pro vývojáře WCF
 description: Naučte se používat libovolný typ a klíčové slovo oneof k reprezentaci typů objektů variant ve zprávách.
 ms.date: 09/09/2019
-ms.openlocfilehash: af3ba22c238aa80a8c6119f62d5d8914770cad68
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 6fe7acbd1ec35289f7ad6f3acee8509ab934619d
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971620"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543193"
 ---
 # <a name="protobuf-any-and-oneof-fields-for-variant-types"></a>Protobuf všechna pole a oneof pro typy variant
 
-Manipulace s dynamickými typy vlastností (to znamená, vlastnosti typu `object`) ve službě WCF je složitá. Je nutné zadat serializátory, musí být zadány atributy [Třída KnownType](xref:System.Runtime.Serialization.KnownTypeAttribute) a tak dále.
+Manipulace s dynamickými typy vlastností (to znamená, vlastnosti typu `object`) v Windows Communication Foundation (WCF) jsou komplikované. Například je nutné zadat serializátory a zadat atributy [Třída KnownType](xref:System.Runtime.Serialization.KnownTypeAttribute) .
 
-Protobuf poskytuje dvě jednodušší možnosti pro práci s hodnotami, které mohou být více než jedním typem. Typ `Any` může představovat libovolný známý typ zprávy Protobuf, zatímco klíčové slovo `oneof` umožňuje určit, že v dané zprávě lze nastavit pouze jeden z rozsahů polí.
+Vyrovnávací paměť protokolu (Protobuf) poskytuje dvě jednodušší možnosti pro práci s hodnotami, které mohou být více než jedním typem. Typ `Any` může představovat libovolný známý typ zprávy Protobuf. Pomocí klíčového slova `oneof` lze určit, že v libovolné zprávě lze nastavit pouze jeden z rozsahů polí.
 
-## <a name="any"></a>Vše
+## <a name="any"></a>Všechny
 
 `Any` je jedním z "dobře známých typů" Protobuf: kolekce užitečných a opakovaně použitelných typů zpráv s implementacemi ve všech podporovaných jazycích. Chcete-li použít typ `Any`, je nutné naimportovat definici `google/protobuf/any.proto`.
 
@@ -58,11 +58,11 @@ public void FormatChangeNotification(ChangeNotification change)
 }
 ```
 
-`Descriptor` statické pole každého generovaného typu je používáno vnitřním kódem reflexe Protobuf k překladu `Any` typů polí. K dispozici je také metoda `TryUnpack<T>`, která vytvoří neinicializované instance `T` i v případě, že se nezdařila, takže je lepší použít metodu `Is`, jak je uvedeno výše.
+Vnitřní kód reflexe Protobuf používá pole static `Descriptor` u každého generovaného typu k překladu `Any` typů polí. K dispozici je také metoda `TryUnpack<T>`, která vytvoří neinicializované instance `T` i v případě, že dojde k chybě. Je lepší používat metodu `Is`, jak je uvedeno výše.
 
 ## <a name="oneof"></a>Oneof
 
-Pole oneof jsou funkcí jazyka: klíčové slovo `oneof` je při generování třídy zprávy zpracováno kompilátorem. Použití `oneof` k určení `ChangeNotification` zprávy může vypadat takto:
+Pole oneof jsou funkcí jazyka: kompilátor zpracovává klíčové slovo `oneof`, když generuje třídu zprávy. Použití `oneof` k určení `ChangeNotification` zprávy může vypadat takto:
 
 ```protobuf
 message Stock {
@@ -82,7 +82,7 @@ message ChangeNotification {
 }
 ```
 
-Pole v rámci `oneof` sady musí mít v rámci celkové deklarace zprávy jedinečné číselné pole.
+Pole v sadě `oneof` musí mít v celkové deklaraci zprávy jedinečné číselné pole.
 
 Při použití `oneof`generovaný C# kód obsahuje výčet, který určuje, která z polí byla nastavena. Chcete-li zjistit, které pole je nastaveno, můžete otestovat výčet. Pole, která nejsou nastavena jako návratová `null` nebo výchozí hodnota namísto vyvolání výjimky.
 

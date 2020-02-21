@@ -1,17 +1,17 @@
 ---
 title: Protobuf Maps for slovníks – gRPC pro vývojáře WCF
-description: Seznamte se s použitím Protobuf Maps k vyjádření. Typy slovníků netto.
+description: Naučte se používat mapy Protobuf k reprezentování typů slovníků v .NET.
 ms.date: 09/09/2019
-ms.openlocfilehash: 8b4f29daa263f329dc533d3ddc596d0f47c1b6e0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: bf848bbc7e3618f6d78e280fcd85d5eb88d5cfae
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967417"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543128"
 ---
 # <a name="protobuf-maps-for-dictionaries"></a>Mapování protobuf pro slovníky
 
-Je důležité, aby bylo možné vyjádřit libovolné kolekce pojmenovaných hodnot ve zprávách. V rozhraní .NET to se běžně zpracovává pomocí typů slovníků. Protobuf ekvivalentem typu .NET <xref:System.Collections.Generic.IDictionary%602> je `map<key_type, value_type>` typ. V této části se dozvíte, jak deklarovat `map` v Protobuf a jak používat generovaný kód.
+Je důležité, aby bylo možné vyjádřit libovolné kolekce pojmenovaných hodnot ve zprávách. V rozhraní .NET se to obvykle zpracovává prostřednictvím typů slovníků. Ekvivalentem typu <xref:System.Collections.Generic.IDictionary%602> .NET v vyrovnávací paměti protokolu (Protobuf) je typ `map<key_type, value_type>`. V této části se dozvíte, jak deklarovat `map` typ v Protobuf a jak použít generovaný kód.
 
 ```protobuf
 message StockPrices {
@@ -19,9 +19,9 @@ message StockPrices {
 }
 ```
 
-Ve vygenerovaném kódu `map` pole používají třídu `Google.Protobuf.Collections.MapField<TKey, TValue>`, která implementuje standardní rozhraní kolekce .NET, včetně <xref:System.Collections.Generic.IDictionary%602>.
+V generovaném kódu `map` pole používají třídu `Google.Protobuf.Collections.MapField<TKey, TValue>`. Tato třída implementuje standardní rozhraní kolekce .NET, včetně <xref:System.Collections.Generic.IDictionary%602>.
 
-Pole mapování nelze přímo zopakovat v definici zprávy, ale můžete vytvořit vnořenou zprávu obsahující mapu a použít `repeated` pro typ zprávy, jako v následujícím příkladu:
+Pole mapování nelze přímo zopakovat v definici zprávy. Můžete ale vytvořit vnořenou zprávu obsahující mapu a použít `repeated` pro typ zprávy, jako v následujícím příkladu:
 
 ```protobuf
 message Order {

@@ -2,16 +2,16 @@
 title: Protobuf vnořené typy – gRPC pro vývojáře WCF
 description: Přečtěte si o vnořených typech zpráv v Protobuf a gRPC a o tom C#, jak se generují v.
 ms.date: 09/09/2019
-ms.openlocfilehash: bbc7ed41516d29f867bbc9da5b258f6a3c9ff261
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7b9a331336ebe1ca7bc75fdd164b7b88ae4f9db2
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967386"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542843"
 ---
 # <a name="protobuf-nested-types"></a>Vnořené typy protobuf
 
-Stejně jako C# umožňuje deklarovat třídy uvnitř jiných tříd, Protobuf umožňuje vnořovat definice zpráv v rámci jiných zpráv. Následující příklad ukazuje, jak vytvořit vnořené typy zpráv:
+Stejně jako C# umožňuje deklarovat třídy uvnitř jiných tříd, vyrovnávací paměť protokolu (Protobuf) umožňuje vnořovat definice zpráv v rámci jiných zpráv. Následující příklad ukazuje, jak vytvořit vnořené typy zpráv:
 
 ```protobuf
 message Outer {

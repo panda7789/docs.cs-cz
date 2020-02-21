@@ -2,12 +2,12 @@
 title: Samoobslužné aplikace gRPC – gRPC pro vývojáře WCF
 description: Nasazení ASP.NET Corech aplikací gRPC jako samoobslužných služeb.
 ms.date: 09/02/2019
-ms.openlocfilehash: 2244f161ad4b5d60138ae0f7b4d6a9c8c8829aa8
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: ee370ba1893b060505b38ddf84235bd84433ad32
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503399"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542986"
 ---
 # <a name="self-hosted-grpc-applications"></a>Samoobslužné aplikace gRPC
 
@@ -90,6 +90,7 @@ Nyní publikujte aplikaci. Aplikace může být buď závislá na architektuře,
   ```dotnetcli
   dotnet publish -c Release -r linux-x64 -o ./publish
   ```
+  
 Zkopírujte celý obsah adresáře `publish` do instalační složky na hostiteli se systémem Linux. Registrace služby vyžaduje speciální soubor nazvaný *soubor jednotky*, který bude přidán do adresáře `/etc/systemd/system`. K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor s identifikátorem, který chcete použít `systemd` a rozšířením `.service`. Použijte například `/etc/systemd/system/myapp.service`.
 
 Soubor služby používá formát INI, jak je znázorněno v následujícím příkladu:

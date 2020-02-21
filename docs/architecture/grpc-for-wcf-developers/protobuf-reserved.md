@@ -2,16 +2,18 @@
 title: Protobuf vyhrazená pole – gRPC pro vývojáře WCF
 description: Přečtěte si o vyhrazených polích pro kompatibilitu mezi verzemi.
 ms.date: 09/09/2019
-ms.openlocfilehash: e589cd38a712ce014fa2c4d847fbde359d538dd0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 50082a1aab2e7707a1839b9d56455124a9e4a6a1
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967303"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542973"
 ---
 # <a name="protobuf-reserved-fields"></a>Vyhrazená pole protobuf
 
-Záruky zpětné kompatibility Protobuf spoléhají na čísla polí, která vždy představují stejnou datovou položku. Pokud se pole odebere ze zprávy v nové verzi služby, toto číslo pole by se nikdy nepoužilo. To je možné vyhovět pomocí klíčového slova `reserved`. Pokud se pole `displayName` a `marketId` odebrala ze zprávy `Stock` definované dříve, jejich čísla polí by měla být vyhrazena jako v následujícím příkladu.
+Záruky zpětné kompatibility ve vyrovnávací paměti protokolu (Protobuf) spoléhají na čísla polí, vždy představují stejnou datovou položku. Pokud se pole odebere ze zprávy v nové verzi služby, toto číslo pole by se nikdy nepoužilo. Můžete to enfore pomocí klíčového slova `reserved`. 
+
+Pokud se pole `displayName` a `marketId` odebrala ze zprávy `Stock` definované dříve, jejich čísla polí by měla být vyhrazena jako v následujícím příkladu.
 
 ```protobuf
 syntax "proto3";
@@ -25,7 +27,7 @@ message Stock {
 }
 ```
 
-Klíčové slovo `reserved` lze také použít jako zástupný text pro pole, která mohou být v budoucnu přidána. Souvislá čísla polí lze vyjádřit jako rozsah pomocí klíčového slova `to`.
+Klíčové slovo `reserved` můžete použít také jako zástupný symbol pro pole, která mohou být v budoucnu přidána. Souvislá čísla polí můžete vyjádřit jako rozsah pomocí klíčového slova `to`.
 
 ```protobuf
 syntax "proto3";

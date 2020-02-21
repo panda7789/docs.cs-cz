@@ -1,17 +1,17 @@
 ---
 title: Opakující se pole pro seznamy a pole – gRPC pro vývojáře WCF
-description: Seznamte se s tím, jak jsou kolekce zpracovávány pomocí Protobuf a jak souvisejí s kolekcemi .NET.
+description: Pochopte, jak Protobuf zpracovává kolekce a jak souvisí s kolekcemi .NET.
 ms.date: 09/09/2019
-ms.openlocfilehash: 17c579bc98ba62ea74b9452bdb28efd96fc51406
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 16f2b5a54b032f32c8fcb9d572d5284fe589cb01
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967370"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542956"
 ---
 # <a name="repeated-fields-for-lists-and-arrays"></a>Opakující se pole pro seznamy a pole
 
-Seznamy jsou určené v Protobuf pomocí klíčového slova `repeated` předpony. Následující příklad ukazuje, jak vytvořit seznam:
+V části vyrovnávací paměť protokolu (Protobuf) určíte seznamy pomocí klíčového slova prefix `repeated`. Následující příklad ukazuje, jak vytvořit seznam:
 
 ```protobuf
 message Person {
@@ -20,7 +20,9 @@ message Person {
 }
 ```
 
-Ve vygenerovaném kódu `repeated` pole jsou reprezentovány pomocí obecného typu `Google.Protobuf.Collections.RepeatedField<T>` namísto jakýchkoli vestavěných typů kolekce .NET. Typ `RepeatedField<T>` obsahuje kód potřebný k serializaci a deserializaci seznamu do binárního formátu. Implementuje všechna rozhraní .NET Collection Standard, například <xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IEnumerable%601>, takže můžete použít dotazy LINQ nebo je snadno převést na pole nebo seznam.
+Ve vygenerovaném kódu `repeated` pole jsou reprezentovány pomocí obecného typu `Google.Protobuf.Collections.RepeatedField<T>` namísto jakýchkoli vestavěných typů kolekce .NET. 
+
+Typ `RepeatedField<T>` obsahuje kód potřebný k serializaci a deserializaci seznamu do binárního formátu. Implementuje všechna standardní rozhraní .NET Collection, například <xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IEnumerable%601>. Takže můžete snadno použít dotazy LINQ nebo je převést na pole nebo seznam.
 
 >[!div class="step-by-step"]
 >[Předchozí](protobuf-nested-types.md)

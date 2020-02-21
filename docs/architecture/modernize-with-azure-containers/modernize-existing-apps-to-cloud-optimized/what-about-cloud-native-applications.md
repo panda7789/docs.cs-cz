@@ -2,12 +2,12 @@
 title: Co jsou nativní cloudové aplikace?
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Co jsou aplikace Cloud Native?
 ms.date: 04/28/2018
-ms.openlocfilehash: cf4c3b24a4eeb62ed84a5fccb294b675d38fcc36
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: d2a7f89e347d75ddbdae84c8eb57e32447b83297
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72318443"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543544"
 ---
 # <a name="what-about-cloud-native-applications"></a>Co jsou nativní cloudové aplikace?
 
@@ -41,7 +41,10 @@ Cloud – nativní je pokročilejší nebo vyspělý stav pro rozsáhlé a klí�
 
 [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) je primárním zvýšením principů nativních pro Cloud. Microsoft je [členem služby CNCF](https://azure.microsoft.com/blog/announcing-cncf/).
 
-Ukázku definice a další informace o vlastnostech cloudových nativních aplikací najdete v článku Gartner, [jak architektovat a navrhovat aplikace Cloud Native](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications). Konkrétní pokyny od Microsoftu o implementaci nativní cloudové aplikace najdete v tématu [mikroslužby .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook).
+Podrobné pokyny pro návrh a vývoj aplikací pro nativní Cloud najdete v následujících bezplatných elektronických knih:
+
+* [Navržení cloudových aplikací .NET pro Azure](../../cloud-native/introduction.md)
+* [Mikroslužby .NET: architektura pro kontejnerové aplikace .NET](../../microservices/index.md).
 
 Nejdůležitější faktor, který je třeba vzít v úvahu při migraci úplné aplikace do nativního modelu cloudu, je, že je nutné přearchitektit architekturu založenou na mikroslužbách. To jasně vyžaduje významné investice do vývoje, protože se jedná o velký proces refaktoringu. Tato možnost se obvykle volí pro klíčové aplikace, které vyžadují nové úrovně škálovatelnosti a dlouhodobé flexibility. Můžete ale začít přecházet ke cloudovým nativním přidáním mikroslužeb pro pár nových scénářů a nakonec Refaktorovat aplikaci úplně jako mikroslužby. Toto je postupný přístup, který je nejlepší volbou pro některé scénáře.
 

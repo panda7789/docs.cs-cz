@@ -2,12 +2,12 @@
 title: Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Mikroslužby jsou modulární a nezávisle nasazujíelné služby. Kontejnery Docker (pro Linux a Windows) zjednodušují nasazení a testování tím, že propojí službu a její závislosti do jedné jednotky, která se pak spustí v izolovaném prostředí.
 ms.date: 01/30/2020
-ms.openlocfilehash: 5da167de1ffd2169aea44b9872281e71c87927b1
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 1337fe56e78e03a85627737bd52a089fd946b842
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502635"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543531"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: architektura pro kontejnerové aplikace .NET
 
@@ -21,7 +21,7 @@ Aby bylo snazší začít, příručka se zaměřuje na odkaz na kontejner a apl
 
 ## <a name="action-links"></a>Odkazy na akce
 
-- Stáhnout tuto elektronickou knihu ve zvoleném formátu (pouze anglické verze): | [PDF](https://aka.ms/microservicesebook) | [MOBI](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-mobi) | [EPUB](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-epub) |
+- Tato elektronická kniha je také k dispozici ve formátu PDF (pouze v anglické verzi [).](https://aka.ms/microservicesebook)
 
 - Klonování/rozvětvení referenční aplikace [eShopOnContainers na GitHubu](https://github.com/dotnet-architecture/eShopOnContainers)
 
@@ -78,9 +78,7 @@ Aplikace eShopOnContainers je open source referenční aplikace pro .NET Core a 
 
 ## <a name="send-us-your-feedback"></a>Pošlete nám svůj názor.
 
-Tento průvodce jsme napsali a pomohli vám pochopit architekturu kontejnerových aplikací a mikroslužeb v .NET. Bude vyvíjena příručka a související referenční aplikace, takže jsme Vítejte na vašem názoru. Pokud máte komentáře týkající se toho, jak se dá tato příručka zlepšit, pošlete prosím jim tyto informace:
-
-[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
+Tento průvodce jsme napsali a pomohli vám pochopit architekturu kontejnerových aplikací a mikroslužeb v .NET. Bude vyvíjena příručka a související referenční aplikace, takže jsme Vítejte na vašem názoru. Pokud máte komentáře týkající se vylepšení této příručky, odešlete zpětnou vazbu na <https://aka.ms/ebookfeedback>.
 
 ## <a name="credits"></a>Kredity
 
@@ -149,8 +147,6 @@ Editory
 > **Miguel Veloso**, inženýr pro vývoj softwaru v jednoduchých konceptech
 
 ## <a name="copyright"></a>Copyright
-
-STAŽENÍ k dispozici na adrese: <https://aka.ms/microservicesebook>
 
 PUBLIKOVAL (A)
 
