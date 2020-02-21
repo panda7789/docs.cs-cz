@@ -1,68 +1,79 @@
 ---
 title: příkaz dotnet nástroje pro odinstalaci
-description: Příkaz pro odinstalaci nástroje dotnet odinstaluje zadaný globální nástroj .NET Core z počítače.
-ms.date: 05/29/2018
-ms.openlocfilehash: 033753f44464e78b826e908e0b6cdf276da8a179
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: Příkaz pro odinstalaci nástroje dotnet odinstaluje zadaný nástroj .NET Core ze svého počítače.
+ms.date: 02/14/2020
+ms.openlocfilehash: 82dad0206d9c3e2ef0f41c353f4a608f10e4f127
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117541"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543440"
 ---
 # <a name="dotnet-tool-uninstall"></a>dotnet tool uninstall
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
-`dotnet tool uninstall`– Odinstaluje zadaný [globální nástroj .NET Core](global-tools.md) z počítače.
+`dotnet tool uninstall` – odinstaluje zadaný [nástroj .NET Core](global-tools.md) ze svého počítače.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
 dotnet tool uninstall <PACKAGE_NAME> <-g|--global>
 dotnet tool uninstall <PACKAGE_NAME> <--tool-path>
+dotnet tool uninstall <PACKAGE_NAME>
 dotnet tool uninstall <-h|--help>
 ```
 
 ## <a name="description"></a>Popis
 
-`dotnet tool uninstall` Příkaz nabízí způsob, jak odinstalovat globální nástroje .NET Core z počítače. Chcete-li použít příkaz, musíte určit, že chcete odebrat nástroj pro všechny uživatele pomocí `--global` možnosti nebo zadat cestu k umístění nástroje `--tool-path` pomocí možnosti.
+Příkaz `dotnet tool uninstall` poskytuje způsob, jak odinstalovat nástroje .NET Core z počítače. Chcete-li použít příkaz, zadejte jednu z následujících možností:
 
-## <a name="arguments"></a>Arguments
+* K odinstalaci globálního nástroje, který byl nainstalován ve výchozím umístění, použijte možnost `--global`.
+* K odinstalaci globálního nástroje, který byl nainstalován ve vlastním umístění, použijte možnost `--tool-path`.
+* Chcete-li odinstalovat místní nástroj, vynechejte možnosti `--global` a `--tool-path`.
 
-`PACKAGE_NAME`
+**K dispozici jsou místní nástroje od .NET Core SDK 3,0.**
 
-Název nebo ID balíčku NuGet, který obsahuje globální nástroj .NET Core pro odinstalaci. Název balíčku můžete najít pomocí příkazu pro [Výpis seznamu nástrojů dotnet](dotnet-tool-list.md) .
+## <a name="arguments"></a>Argumenty
+
+- **`PACKAGE_NAME`**
+
+  Název nebo ID balíčku NuGet, který obsahuje nástroj .NET Core, který se má odinstalovat Název balíčku můžete najít pomocí příkazu pro [Výpis seznamu nástrojů dotnet](dotnet-tool-list.md) .
 
 ## <a name="options"></a>Možnosti
 
-`-g|--global`
+- **`-g|--global`**
 
-Určuje, že nástroj, který se má odebrat, pochází z instalace v rámci uživatele. Nelze kombinovat s `--tool-path` možností. Pokud tuto možnost nezadáte, musíte zadat `--tool-path` možnost.
+  Určuje, že nástroj, který se má odebrat, pochází z instalace v rámci uživatele. Nelze kombinovat s možností `--tool-path`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj. 
 
-`-h|--help`
+- **`-h|--help`**
 
-Vypíše krátkou nápovědu k příkazu.
+  Vypíše krátkou nápovědu k příkazu.
 
-`--tool-path <PATH>`
+- **`--tool-path <PATH>`**
 
-Určuje umístění, kam se má globální nástroj odinstalovat. Cesta může být absolutní nebo relativní. Nelze kombinovat s `--global` možností. Pokud tuto možnost nezadáte, musíte zadat `--global` možnost.
+  Určuje umístění pro odinstalaci nástroje. Cesta může být absolutní nebo relativní. Nelze kombinovat s možností `--global`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj. 
 
 ## <a name="examples"></a>Příklady
 
-Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) :
+- **`dotnet tool uninstall -g dotnetsay`**
 
-`dotnet tool uninstall -g dotnetsay`
+  Odinstaluje nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global.
 
-Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z určité složky systému Windows:
+- **`dotnet tool uninstall dotnetsay --tool-path c:\global-tools`**
 
-`dotnet tool uninstall dotnetsay --tool-path c:\global-tools`
+  Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z určitého adresáře Windows.
 
-Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z konkrétní složky Linux/MacOS:
+- **`dotnet tool uninstall dotnetsay --tool-path ~/bin`**
 
-`dotnet tool uninstall dotnetsay --tool-path ~/bin`
+  Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z konkrétního adresáře Linux/MacOS.
+
+- **`dotnet tool uninstall dotnetsay`**
+
+  Odinstaluje místní nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z aktuálního adresáře.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Globální nástroje .NET Core](global-tools.md)
+- [Nástroje .NET Core](global-tools.md)

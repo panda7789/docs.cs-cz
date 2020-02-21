@@ -3,12 +3,12 @@ title: Postup úpravy obsahu řetězce – C# Průvodce
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 539e313173d46c2c92399cefe94207c8beed03b4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ecedd9a9027aa925c753f8e187d611b19d3db991
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973254"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543258"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Postup úpravy obsahu řetězce v jazyce C\#
 
@@ -62,12 +62,13 @@ Následující příklad ukazuje, jak nahradit sadu znaků v řetězci. Nejprve 
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#6)]
 
-## <a name="unsafe-modifications-to-string"></a>Nezabezpečené změny řetězce
+## <a name="programmatically-build-up-string-content"></a>Programové sestavení obsahu řetězce
 
-Pomocí **nebezpečného** kódu můžete upravit řetězec "na místě" po jeho vytvoření. Nezabezpečený kód obchází mnoho funkcí rozhraní .NET navržených tak, aby minimalizovaly určité typy chyb v kódu. Je nutné použít nezabezpečený kód pro úpravu řetězce v místě, protože třída String je navržena jako **neměnný** typ. Po vytvoření se hodnota nezmění. Nezabezpečený kód obchází tuto vlastnost pomocí přístupu a úprav paměti používané `string` bez použití normálních `string`ch metod.
-Následující příklad je k dispozici pro případy, kdy chcete upravit řetězec na místě pomocí nezabezpečeného kódu. Příklad ukazuje použití klíčového slova `fixed`. Klíčové slovo `fixed` zabraňuje uvolňování paměti (GC) v přesunutí objektu String v paměti, zatímco kód přistupuje k paměti pomocí nebezpečného ukazatele. Ukazuje také jeden možný vedlejší účinek nebezpečných operací na řetězcích, které jsou výsledkem způsobu, C# jakým interně ukládají řetězce (interny) řetězce. Obecně platí, že tuto techniku byste neměli používat, pokud to není nezbytně nutné. Další informace najdete v článcích o [nebezpečných](../language-reference/keywords/unsafe.md) a [opravených](../language-reference/keywords/fixed-statement.md). Reference k rozhraní API pro <xref:System.String.Intern%2A> obsahuje informace o interning pro řetězce.
+Vzhledem k tomu, že řetězce jsou neměnné, předchozí příklady všechny vytvoří dočasné řetězce nebo znaková pole. Ve scénářích s vysokým výkonem může být žádoucí zabránit tomuto přidělení haldy. .NET Core poskytuje metodu <xref:System.String.Create%2A?displayProperty=nameWithType>, která umožňuje programově vyplnit obsah znaku v řetězci prostřednictvím zpětného volání a vyhnout se dostřednímu přidělení dočasného řetězce.
 
-[!code-csharp[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+[!code-csharp[using string.Create to programmatically build the string content for a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+
+Můžete upravit řetězec v pevném bloku s nebezpečným kódem, ale **důrazně** nedoporučujeme upravovat obsah řetězce po vytvoření řetězce. Tím dojde k nepředvídatelným účelům. Například pokud někdo interně interně předává řetězec, který má stejný obsah jako váš, bude mít kopii a neočekává se, že upravujete svůj řetězec vůbec.
 
 Tyto ukázky můžete vyzkoušet na základě kódu v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 

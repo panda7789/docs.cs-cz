@@ -2,13 +2,13 @@
 title: Řešení potíží s používáním nástrojů .NET Core
 description: Seznamte se s běžnými problémy při používání nástrojů .NET Core a možných řešení.
 author: kdollard
-ms.date: 09/23/2019
-ms.openlocfilehash: 45139c3441b84964b937d5d1cc63a018f8d1f0fb
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 02/14/2020
+ms.openlocfilehash: ab5d1be8f201ea283f8537f18886feab46157127
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451074"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543271"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Řešení potíží s používáním nástrojů .NET Core
 
@@ -59,7 +59,7 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
   * Pokud jste nainstalovali sadu .NET Core 3,0 SDK a nastavili jste proměnnou prostředí `DOTNET_ADD_GLOBAL_TOOLS_TO_PATH` na `false`.
   * Pokud jste nainstalovali sadu .NET Core 2,2 SDK nebo starší verze a nastavili jste proměnnou prostředí `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` na `true`.
 
-  Další informace o globálních nástrojích najdete v tématu [Přehled globálních nástrojů .NET Core](global-tools.md).
+  Další informace najdete v tématu [nástroje .NET Core](global-tools.md).
 
 * Místní nástroje
 
@@ -137,9 +137,6 @@ Nástroje .NET Core, které jsou ve verzi Preview, se musí zadat s částí ná
 dotnet tool install -g --version 1.1.0-pre <toolName>
 ```
 
-> [!NOTE]
-> Tým .NET Core CLI plánuje přidat přepínač `--preview` v budoucí verzi, aby to zjednodušil.
-
 ### <a name="package-isnt-a-net-core-tool"></a>Balíček není nástroj .NET Core.
 
 * Našel se balíček NuGet s tímto názvem, ale Nejednalo se o nástroj .NET Core.
@@ -160,6 +157,6 @@ Instalace nástroje vyžaduje přístup k informačnímu kanálu NuGet, který o
 
 Běžným důvodem selhání je, že název nástroje není správný. K tomu může dojít z důvodu neúspěšného zadání, nebo proto, že se nástroj přesunul nebo byl zastaralý. V případě nástrojů na NuGet.org je třeba, abyste si ověřili, že je správný název, hledání nástroje na NuGet.org a zkopírování instalačního příkazu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-* [Přehled globálních nástrojů .NET Core](global-tools.md)
+* [Nástroje .NET Core](global-tools.md)

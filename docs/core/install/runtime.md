@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: d36909e06bd9a3de0940c4c1b2b9eacbf9cafe7f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: ba50eb222d9eab6bffbb8ebfdf0ecf47951ce719
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740589"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543518"
 ---
 # <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
 
@@ -69,6 +69,8 @@ export PATH=$PATH:$HOME/dotnet
 >
 > Přidejte také `export DOTNET_ROOT=$HOME/dotnet` na konec souboru.
 
+Tento přístup umožňuje nainstalovat různé verze do samostatných umístění a zvolit, která z nich se má použít pro kterou aplikaci.
+
 ::: zone-end
 
 ::: zone pivot="os-windows"
@@ -85,6 +87,25 @@ dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore
 
 > [!NOTE]
 > Výše uvedený příkaz nainstaluje modul runtime ASP.NET Core, aby se maximální kompatibilita mohla. Modul runtime ASP.NET Core zahrnuje také standardní modul runtime .NET Core.
+
+## <a name="download-and-manually-install"></a>Stažení a ruční instalace
+
+Chcete-li extrahovat modul runtime a zpřístupnit příkazy .NET Core CLI v terminálu, nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak vytvořte adresář, do kterého chcete nainstalovat, například `%USERPROFILE%\dotnet`. Nakonec Extrahujte stažený soubor zip do tohoto adresáře.
+
+Ve výchozím nastavení nepoužívají .NET Core CLI příkazy a aplikace tímto způsobem instalaci .NET Core. Musíte ho výslovně použít. Provedete to tak, že změníte proměnné prostředí, se kterými je aplikace spuštěná:
+
+```console
+set DOTNET_ROOT=%USERPROFILE%\dotnet
+set PATH=%USERPROFILE%\dotnet;%PATH%
+```
+
+Tento přístup umožňuje nainstalovat více verzí do samostatných umístění a pak explicitně zvolit umístění instalace, které by měla aplikace používat, a to spuštěním aplikace s proměnnými prostředí, které ukazují na toto umístění.
+
+I v případě, že jsou tyto proměnné prostředí nastaveny, .NET Core při výběru nejlepšího rozhraní pro spuštění aplikace i nadále posuzuje výchozí globální umístění instalace. Výchozí hodnota je obvykle `C:\Program Files\dotnet`, kterou instalační programy používají. Modulu runtime můžete dát pokyn, aby používal pouze vlastní umístění instalace, a to nastavením této proměnné prostředí:
+
+```console
+set DOTNET_MULTILEVEL_LOOKUP=0
+```
 
 ::: zone-end
 

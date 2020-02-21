@@ -3,12 +3,12 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s osvědčenými postupy pro příkazy dotnet, které vyžadují vyšší přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: 1cf29012736e5b6d858ca22dc2a9b97e7e8e33ef
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: fe33cbe966d175f71ba350737b283c1e83f64fa6
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503565"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543427"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Zvýšený přístup pro příkazy dotnet
 
@@ -31,7 +31,7 @@ Následující pokyny ukazují doporučený způsob, jak nainstalovat, spustit a
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-### <a name="install-the-global-tool"></a>Instalace globálního nástroje
+### <a name="install-the-tool"></a>Instalace nástroje
 
 Pokud `%ProgramFiles%\dotnet-tools` složka již existuje, proveďte následující kroky a ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravě tohoto adresáře:
 
@@ -105,6 +105,6 @@ Během vývoje můžete potřebovat vyšší úroveň přístupu k otestování 
    sudo dotnet run --no-build
    ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled globálních nástrojů .NET Core](global-tools.md)

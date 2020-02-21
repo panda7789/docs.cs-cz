@@ -13,12 +13,12 @@ helpviewer_keywords:
 - performance monitoring, tracing code
 - Trace class, instrumentation for .NET applications
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
-ms.openlocfilehash: 1dd7317e38b6bee44dda75319c9f7c2a6567e3b4
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 2dcdbaf50ed053d43fc2df2c80fe7688e7b3e51f
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216040"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542608"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
 Trasování je způsob, jak můžete monitorovat provádění aplikace, když je spuštěná. Můžete přidat trasování a ladění instrumentace do aplikace .NET Framework při jejím vývoji a můžete použít tuto instrumentaci při vývoji aplikace i po jejím nasazení. Třídy <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> můžete použít k zaznamenání informací o chybách a spouštění aplikací v protokolech, textových souborech nebo jiných zařízeních pro pozdější analýzu.  
@@ -42,7 +42,7 @@ Trasování je způsob, jak můžete monitorovat provádění aplikace, když je
  Třídy <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> poskytují prostředky pro monitorování a kontrolu výkonu aplikace buď během vývoje, nebo po nasazení. Můžete například použít třídu <xref:System.Diagnostics.Trace> ke sledování určitých typů akcí v nasazené aplikaci, jak se vyskytují (například vytváření nových připojení k databázi), a proto může monitorovat efektivitu aplikace.  
   
 ## <a name="code-tracing-and-debugging"></a>Trasování a ladění kódu  
- Během vývoje můžete použít metody výstupu třídy <xref:System.Diagnostics.Debug> k zobrazení zpráv v okně výstup integrovaného vývojového prostředí (IDE) sady Visual Studio. Například:  
+ Během vývoje můžete použít metody výstupu třídy <xref:System.Diagnostics.Debug> k zobrazení zpráv v okně výstup integrovaného vývojového prostředí (IDE) sady Visual Studio. Příklad:  
   
 ```vb  
 Trace.WriteLine("Hello World!")  
@@ -97,7 +97,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 7. Pokud během běhu dojde k problému, zapněte příslušný přepínač trasování. Další informace najdete v tématu [konfigurace přepínačů trasování](how-to-create-initialize-and-configure-trace-switches.md).  
   
-     Trasovací kód zapisuje trasovací zprávy do zadaného cíle, například obrazovky, textový soubor nebo protokol událostí. Typ naslouchacího procesu, který jste zahrnuli do kolekce **Trace. Listeners** , určuje cíl.  
+     Trasovací kód zapisuje trasovací zprávy do zadaného cíle, například obrazovky, textový soubor nebo protokol událostí. Typ naslouchacího procesu, který jste zahrnuli do kolekce <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>, určuje cíl.  
   
 8. Analyzujte trasovací zprávy pro identifikaci a pochopení problému v aplikaci.  
   
@@ -120,23 +120,23 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 |Metoda|Výstup|  
 |------------|------------|  
-|**Uplatňuje**|Zadaný text; nebo, pokud žádný není zadán, zásobník volání. Výstup je zapsán pouze v případě, že podmínka zadaná jako argument v příkazu **Assert** je **false**.|  
-|**Proběhne**|Zadaný text; nebo, pokud žádný není zadán, zásobník volání.|  
-|**Zápis**|Zadaný text.|  
-|**WriteIf**|Zadaný text, pokud je splněna podmínka zadaná jako argument v příkazu **WriteIf** .|  
-|**WriteLine**|Zadaný text a znak návratu na začátek řádku.|  
-|**WriteLineIf**|Zadaný text a návrat na začátek řádku, pokud je splněna podmínka zadaná jako argument v příkazu **WriteLineIf** .|  
+|`Assert`|Zadaný text; nebo, pokud žádný není zadán, zásobník volání. Výstup je zapsán pouze v případě, že je podmínka zadaná jako argument v příkazu `Assert` nastavena na **hodnotu false**.|  
+|`Fail`|Zadaný text; nebo, pokud žádný není zadán, zásobník volání.|  
+|`Write`|Zadaný text.|  
+|`WriteIf`|Zadaný text, pokud je splněna podmínka zadaná jako argument v příkazu `WriteIf`.|  
+|`WriteLine`|Zadaný text a znak návratu na začátek řádku.|  
+|`WriteLineIf`|Zadaný text a návrat na začátek řádku, pokud je splněna podmínka zadaná jako argument v příkazu `WriteLineIf`.|  
   
- Všechny naslouchací procesy v kolekci <xref:System.Diagnostics.Trace.Listeners%2A> obdrží zprávy popsané v tabulce výše, ale provedené akce se mohou lišit v závislosti na tom, jaký typ naslouchacího procesu zprávu obdrží. Například <xref:System.Diagnostics.DefaultTraceListener> zobrazí dialogové okno kontrolní výraz při přijetí oznámení o **chybě** nebo neúspěšném **vyhodnocení kontrolního** výrazu, ale <xref:System.Diagnostics.TextWriterTraceListener> jednoduše zapíše výstup do svého proudu.  
+ Všechny naslouchací procesy v kolekci <xref:System.Diagnostics.Trace.Listeners%2A> obdrží zprávy popsané v tabulce výše, ale provedené akce se mohou lišit v závislosti na tom, jaký typ naslouchacího procesu zprávu obdrží. Například <xref:System.Diagnostics.DefaultTraceListener> zobrazí dialogové okno kontrolní výraz při přijetí `Fail` nebo `Assert` oznámení, ale <xref:System.Diagnostics.TextWriterTraceListener> jednoduše zapíše výstup do svého proudu.  
   
  Vlastní výsledky můžete vydávat implementací vlastního naslouchacího procesu. Vlastní naslouchací proces trasování může například zobrazit zprávy do okna se zprávou nebo připojit k databázi a přidat zprávy do tabulky. Všechny vlastní naslouchací procesy by měly podporovat šest metod uvedených výše. Další informace o vytváření posluchačů definovaných vývojářům naleznete v tématu <xref:System.Diagnostics.TraceListener> v referenční příručce .NET Framework.  
   
- Metody **Write** a **WriteLine** vždy zapisují zadaný text. **Assert**, **WriteIf**a **WriteLineIf** vyžadují logický argument, který určuje, zda zapisují zadaný text, nebo ne. zapisují zadaný text pouze v případě, že má výraz **hodnotu true** (pro **WriteIf** a **WriteLineIf**) nebo **false** (pro **Assert**). Metoda **neúspěšného** zápisu vždy zapisuje zadaný text. Další informace naleznete v tématu [Postupy: Přidání příkazů trasování do kódu aplikace](how-to-add-trace-statements-to-application-code.md) a odkazu na .NET Framework.  
+ Metody `Write` a `WriteLine` vždy píší text, který zadáte. `Assert`, `WriteIf`a `WriteLineIf` vyžadují logický argument, který určuje, zda zapisují zadaný text, nebo ne. zapisují zadaný text pouze v případě, že je výraz **pravdivý** (pro `WriteIf` a `WriteLineIf`) nebo **false** (pro `Assert`). Metoda `Fail` vždy zapisuje zadaný text. Další informace naleznete v tématu [Postupy: Přidání příkazů trasování do kódu aplikace](how-to-add-trace-statements-to-application-code.md) a odkazu na .NET Framework.  
   
 ## <a name="security-concerns"></a>Problematika zabezpečení  
  Pokud nezakážete trasování a ladění před nasazením aplikace ASP.NET, může vaše aplikace odhalit informace, které by mohly být zneužity škodlivým programem. Další informace najdete v tématu [Postupy: podmíněné kompilování s trasováním a laděním](how-to-compile-conditionally-with-trace-and-debug.md), [kompilováním a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio)a [Postupy: vytváření, inicializace a konfigurace přepínačů trasování](how-to-create-initialize-and-configure-trace-switches.md). Ladění je také možné konfigurovat prostřednictvím Internetová informační služba (IIS).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.TraceSource>

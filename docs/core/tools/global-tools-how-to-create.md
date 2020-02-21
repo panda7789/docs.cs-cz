@@ -1,193 +1,211 @@
 ---
-title: Postup vytvoření globálního nástroje .NET Core
-description: Popisuje, jak vytvořit globální nástroj. Globální nástroj je Konzolová aplikace, která je nainstalována prostřednictvím .NET Core CLI.
-author: Thraka
-ms.author: adegeo
-ms.date: 08/22/2018
-ms.openlocfilehash: 1daecf7234f02a5fe0dcf25cf7edbb0af327b8c1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+title: 'Kurz: Vytvoření nástroje .NET Core'
+description: Naučte se vytvořit nástroj .NET Core. Nástroj je Konzolová aplikace, která je nainstalována pomocí .NET Core CLI.
+ms.date: 02/12/2020
+ms.openlocfilehash: 558bf9e37efc8de68a61f1384fababe342ab7d66
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343525"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543401"
 ---
-# <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globálního nástroje .NET Core pomocí .NET Core CLI
+# <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Kurz: Vytvoření nástroje .NET Core pomocí .NET Core CLI
 
-V tomto článku se naučíte, jak vytvořit a zabalit globální nástroj .NET Core. .NET Core CLI umožňuje vytvořit konzolovou aplikaci jako globální nástroj, který mohou uživatelé snadno nainstalovat a spustit. Globální nástroje .NET Core jsou balíčky NuGet, které jsou nainstalované z .NET Core CLI. Další informace o globálních nástrojích najdete v tématu [Přehled globálních nástrojů .NET Core](global-tools.md).
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+V tomto kurzu se naučíte, jak vytvořit a zabalit nástroj .NET Core. .NET Core CLI umožňuje vytvořit konzolovou aplikaci jako nástroj, který mohou nainstalovat a spustit další. Nástroje .NET Core jsou balíčky NuGet, které jsou nainstalované z .NET Core CLI. Další informace o nástrojích najdete v tématu [Přehled nástrojů .NET Core](global-tools.md).
+
+Nástroj, který vytvoříte, je Konzolová aplikace, která jako vstup převezme zprávu, a zobrazí zprávu spolu s řádky textu, které vytvoří obrázek robota.
+
+Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nástroj. V následujících dvou kurzech používáte [Nástroj jako globální nástroj](global-tools-how-to-use.md) a [nástroj použijete jako místní nástroj](local-tools-how-to-use.md).
+
+## <a name="prerequisites"></a>Požadavky
+
+- [.NET Core SDK 3,1](https://dotnet.microsoft.com/download) nebo novější verze.
+
+  Tento kurz a následující [kurz pro globální nástroje](global-tools-how-to-use.md) se vztahují na .NET Core SDK 2,1 a novější verze, protože v této verzi jsou dostupné globální nástroje. Ale v tomto kurzu se předpokládá, že máte nainstalovaný 3,1 nebo novější, abyste měli možnost pokračovat na [místní kurzy k nástrojům](local-tools-how-to-use.md). K dispozici jsou místní nástroje od .NET Core SDK 3,0. Postupy pro vytvoření nástroje jsou stejné, ať už používáte jako globální nástroj, nebo jako místní nástroj.
+  
+- Textový editor nebo editor kódu podle vašeho výběru.
 
 ## <a name="create-a-project"></a>Vytvoření projektu
 
-Tento článek používá .NET Core CLI k vytvoření a správě projektu.
+1. Otevřete příkazový řádek a vytvořte složku s názvem *úložiště*.
 
-Náš ukázkový nástroj bude Konzolová aplikace, která generuje robota ASCII a vytiskne zprávu. Nejprve vytvořte novou konzolovou aplikaci .NET Core.
+1. Přejděte do složky *úložiště* a zadejte následující příkaz, kde nahraďte `<name>` jedinečnou hodnotou, aby byl název projektu jedinečný. 
 
-```dotnetcli
-dotnet new console -o botsay
-```
+   ```dotnetcli
+   dotnet new console -n botsay-<name>
+   ```
 
-Přejděte do adresáře `botsay` vytvořeného předchozím příkazem.
+   Můžete například spustit následující příkaz:
+
+   ```dotnetcli
+   dotnet new console -n botsay-nancydavolio
+   ```
+
+   Příkaz vytvoří novou složku s názvem *botsay-\<název >* ve složce *úložiště* .
+
+1. Přejděte do složky *botsay-\<název >* .
+
+   ```console
+   cd botsay-<name>
+   ```
 
 ## <a name="add-the-code"></a>Přidání kódu
 
-Otevřete `Program.cs` soubor pomocí oblíbeného textového editoru, jako je například `vim` nebo [Visual Studio Code](https://code.visualstudio.com/).
+1. Otevřete `Program.cs` soubor pomocí editoru kódu.
 
-Do horní části souboru přidejte následující direktivu `using`, což pomáhá zkrátit kód pro zobrazení informací o verzi aplikace.
+1. Do horní části souboru přidejte následující direktivu `using`:
 
-```csharp
-using System.Reflection;
-```
+   ```csharp
+   using System.Reflection;
+   ```
 
-Potom přejděte dolů k metodě `Main`. Nahraďte metodu následujícím kódem pro zpracování argumentů příkazového řádku pro vaši aplikaci. Pokud nebyly předány žádné argumenty, zobrazí se krátká zpráva help. V opačném případě jsou všechny tyto argumenty transformovány do řetězce a vytištěny s robotem.
+1. Nahraďte metodu `Main` následujícím kódem pro zpracování argumentů příkazového řádku pro aplikaci.
 
-```csharp
-static void Main(string[] args)
-{
-    if (args.Length == 0)
-    {
-        var versionString = Assembly.GetEntryAssembly()
-                                .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-                                .InformationalVersion
-                                .ToString();
+   ```csharp
+   static void Main(string[] args)
+   {
+       if (args.Length == 0)
+       {
+           var versionString = Assembly.GetEntryAssembly()
+                                   .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+                                   .InformationalVersion
+                                   .ToString();
 
-        Console.WriteLine($"botsay v{versionString}");
-        Console.WriteLine("-------------");
-        Console.WriteLine("\nUsage:");
-        Console.WriteLine("  botsay <message>");
-        return;
-    }
+           Console.WriteLine($"botsay v{versionString}");
+           Console.WriteLine("-------------");
+           Console.WriteLine("\nUsage:");
+           Console.WriteLine("  botsay <message>");
+           return;
+       }
 
-    ShowBot(string.Join(' ', args));
-}
-```
+       ShowBot(string.Join(' ', args));
+   }
+   ```
 
-### <a name="create-the-bot"></a>Vytvoření robota
+   Pokud nejsou předány žádné argumenty, zobrazí se krátká zpráva help. V opačném případě jsou všechny argumenty zřetězeny do jednoho řetězce a vytištěny voláním metody `ShowBot`, kterou vytvoříte v následujícím kroku.
 
-Dále přidejte novou metodu s názvem `ShowBot`, která převezme řetězcový parametr. Tato metoda vytiskne zprávy a robota ASCII. Z ukázky [dotnetbot](https://github.com/dotnet/core/blob/master/samples/dotnetsay/Program.cs) byl vytvořen kód bot standardu ASCII.
+1. Přidejte novou metodu s názvem `ShowBot`, která přijímá řetězcový parametr. Metoda vytiskne zprávu a obrázek robota s použitím řádků textu.
 
-```csharp
-static void ShowBot(string message)
-{
-    string bot = $"\n        {message}";
-    bot += @"
-    __________________
-                      \
-                       \
-                          ....
-                          ....'
-                           ....
-                        ..........
-                    .............'..'..
-                 ................'..'.....
-               .......'..........'..'..'....
-              ........'..........'..'..'.....
-             .'....'..'..........'..'.......'.
-             .'..................'...   ......
-             .  ......'.........         .....
-             .    _            __        ......
-            ..    #            ##        ......
-           ....       .                 .......
-           ......  .......          ............
-            ................  ......................
-            ........................'................
-           ......................'..'......    .......
-        .........................'..'.....       .......
-     ........    ..'.............'..'....      ..........
-   ..'..'...      ...............'.......      ..........
-  ...'......     ...... ..........  ......         .......
- ...........   .......              ........        ......
-.......        '...'.'.              '.'.'.'         ....
-.......       .....'..               ..'.....
-   ..       ..........               ..'........
-          ............               ..............
-         .............               '..............
-        ...........'..              .'.'............
-       ...............              .'.'.............
-      .............'..               ..'..'...........
-      ...............                 .'..............
-       .........                        ..............
-        .....
-";
-    Console.WriteLine(bot);
-}
-```
+   ```csharp
+   static void ShowBot(string message)
+   {
+       string bot = $"\n        {message}";
+       bot += @"
+       __________________
+                         \
+                          \
+                             ....
+                             ....'
+                              ....
+                           ..........
+                       .............'..'..
+                    ................'..'.....
+                  .......'..........'..'..'....
+                 ........'..........'..'..'.....
+                .'....'..'..........'..'.......'.
+                .'..................'...   ......
+                .  ......'.........         .....
+                .    _            __        ......
+               ..    #            ##        ......
+              ....       .                 .......
+              ......  .......          ............
+               ................  ......................
+               ........................'................
+              ......................'..'......    .......
+           .........................'..'.....       .......
+        ........    ..'.............'..'....      ..........
+      ..'..'...      ...............'.......      ..........
+     ...'......     ...... ..........  ......         .......
+    ...........   .......              ........        ......
+   .......        '...'.'.              '.'.'.'         ....
+   .......       .....'..               ..'.....
+      ..       ..........               ..'........
+             ............               ..............
+            .............               '..............
+           ...........'..              .'.'............
+          ...............              .'.'.............
+         .............'..               ..'..'...........
+         ...............                 .'..............
+          .........                        ..............
+           .....
+   ";
+       Console.WriteLine(bot);
+   }
+   ```
 
-### <a name="test-the-tool"></a>Otestování nástroje
+1. Uložte provedené změny.
+
+## <a name="test-the-application"></a>Testování aplikace
 
 Spusťte projekt a podívejte se na výstup. Zkuste tyto variace na příkazovém řádku pro zobrazení různých výsledků:
 
 ```dotnetcli
 dotnet run
 dotnet run -- "Hello from the bot"
-dotnet run -- hello from the bot
+dotnet run -- Hello from the bot
 ```
 
 Všechny argumenty po `--` oddělovači jsou předány do aplikace.
 
-## <a name="set-up-the-global-tool"></a>Nastavení globálního nástroje
+## <a name="package-the-tool"></a>Zabalení nástroje
 
-Předtím, než budete moci zabalit a distribuovat aplikaci jako globální nástroj, je nutné upravit soubor projektu. Otevřete soubor `botsay.csproj` a přidejte do uzlu `<Project><PropertyGroup>` tři nové uzly XML:
+Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nutné upravit soubor projektu. 
 
-- `<PackAsTool>`\
-POŽADOVANOU Označuje, že aplikace bude zabalena pro instalaci jako globální nástroj.
+1. Otevřete *název botsay-\<> soubor. csproj* a přidejte na konec `<PropertyGroup>` uzlu tři nové uzly XML:
 
-- `<ToolCommandName>`\
-VOLITELNÉ Alternativní název nástroje, jinak bude název příkazu pro nástroj pojmenován za souborem projektu. V balíčku můžete mít několik nástrojů, přičemž volba jedinečného a popisného názvu pomůže odlišit od ostatních nástrojů ve stejném balíčku.
+   ```xml
+   <PackAsTool>true</PackAsTool>
+   <ToolCommandName>botsay</ToolCommandName>
+   <PackageOutputPath>./nupkg</PackageOutputPath>
+   ```
 
-- `<PackageOutputPath>`\
-VOLITELNÉ Kde bude vytvořen balíček NuGet. Balíček NuGet je to, co .NET Core CLI globální nástroje používají k instalaci vašeho nástroje.
+   `<ToolCommandName>` je volitelný prvek, který určuje příkaz, který nástroj vyvolá po jeho instalaci. Pokud tento prvek není k dispozici, název příkazu pro nástroj je název souboru projektu bez přípony *. csproj* .
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
+   `<PackageOutputPath>` je volitelný prvek, který určuje, kde bude vytvořen balíček NuGet. Balíček NuGet je to, co .NET Core CLI používá k instalaci nástroje.
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+   Soubor projektu teď vypadá jako v následujícím příkladu:
 
-    <PackAsTool>true</PackAsTool>
-    <ToolCommandName>botsay</ToolCommandName>
-    <PackageOutputPath>./nupkg</PackageOutputPath>
+   ```xml
+   <Project Sdk="Microsoft.NET.Sdk">
+  
+     <PropertyGroup>
 
-  </PropertyGroup>
+       <OutputType>Exe</OutputType>
+       <TargetFramework>netcoreapp3.1</TargetFramework>
+  
+       <PackAsTool>true</PackAsTool>
+       <ToolCommandName>botsay</ToolCommandName>
+       <PackageOutputPath>./nupkg</PackageOutputPath>
+  
+     </PropertyGroup>
 
-</Project>
-```
+   </Project>
+   ```
 
-I když je `<PackageOutputPath>` nepovinná, použijte ji v tomto příkladu. Ujistěte se, že jste ji nastavili: `<PackageOutputPath>./nupkg</PackageOutputPath>`.
+1. Vytvořte balíček NuGet spuštěním příkazu [dotnet Pack](dotnet-pack.md) :
 
-Dále vytvořte balíček NuGet pro vaši aplikaci.
+   ```dotnetcli
+   dotnet pack
+   ```
 
-```dotnetcli
-dotnet pack
-```
+   *Název botsay-\<>. 1.0.0. nupkg* se vytvoří ve složce určené hodnotou `<PackageOutputPath>` ze souboru *botsay-\<Name >. csproj* , který je v tomto příkladu složkou *./nupkg* .
+  
+   Pokud chcete veřejně vydávat nástroj, můžete ho nahrát na `https://www.nuget.org`. Jakmile je nástroj k dispozici v NuGet, mohou vývojáři nainstalovat nástroj pomocí příkazu pro [instalaci nástroje dotnet](dotnet-tool-install.md) . V tomto kurzu nainstalujete balíček přímo z místní složky *nupkg* , takže není potřeba balíček nahrát do NuGet.
 
-Soubor `botsay.1.0.0.nupkg` se vytvoří ve složce určené hodnotou `<PackageOutputPath>` XML ze souboru `botsay.csproj`, který je v tomto příkladu složkou `./nupkg`. To usnadňuje instalaci a testování. Pokud chcete veřejně vydávat nástroj, nahrajte ho do <https://www.nuget.org>. Jakmile je nástroj k dispozici v NuGet, vývojáři můžou provést instalaci nástroje na úrovni uživatele pomocí možnosti `--global` příkazu pro [instalaci nástroje dotnet](dotnet-tool-install.md) .
+## <a name="troubleshoot"></a>Řešení potíží
 
-Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
+Pokud se vám zobrazí chybová zpráva s postupem v tomto kurzu, přečtěte si téma [řešení potíží s používáním nástrojů .NET Core](troubleshoot-usage-issues.md).
 
-```dotnetcli
-dotnet tool install --global --add-source ./nupkg botsay
-```
+## <a name="next-steps"></a>Další kroky
 
-Parametr `--add-source` přikáže .NET Core CLI k dočasnému použití složky `./nupkg` (naše `<PackageOutputPath>` složka) jako dalšího zdrojového kanálu pro balíčky NuGet. Další informace o instalaci globálních nástrojů najdete v tématu [Přehled globálních nástrojů .NET Core](global-tools.md).
+V tomto kurzu jste vytvořili konzolovou aplikaci a zabalíte ji jako nástroj. Pokud se chcete dozvědět, jak nástroj používat jako globální nástroj, přejděte k dalšímu kurzu.
 
-Pokud je instalace úspěšná, zobrazí se zpráva s příkazem použitým pro volání nástroje a nainstalované verze, podobně jako v následujícím příkladu:
+> [!div class="nextstepaction"]
+> [Instalace a použití globálního nástroje](global-tools-how-to-use.md)
 
-```output
-You can invoke the tool using the following command: botsay
-Tool 'botsay' (version '1.0.0') was successfully installed.
-```
+Pokud chcete, můžete přeskočit kurz globálních nástrojů a přejít přímo do kurzu místních nástrojů.
 
-Nyní byste měli být schopni zadat `botsay` a získat odpověď z nástroje.
-
-> [!NOTE]
-> Pokud byla instalace úspěšná, ale nemůžete použít příkaz `botsay`, možná budete muset otevřít nový terminál, aby se cesta aktualizovala.
-
-## <a name="remove-the-tool"></a>Odebrat nástroj
-
-Až budete s nástrojem hotovi, můžete ho odebrat pomocí následujícího příkazu:
-
-```dotnetcli
-dotnet tool uninstall -g botsay
-```
+> [!div class="nextstepaction"]
+> [Instalace a použití místního nástroje](local-tools-how-to-use.md)

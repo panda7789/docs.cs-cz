@@ -2,12 +2,12 @@
 title: Události
 description: Zjistěte, F# jak události umožňují přidružit volání funkcí k akcím uživatele, které jsou důležité při programování v grafickém uživatelském rozhraní.
 ms.date: 05/16/2016
-ms.openlocfilehash: e581d9c31c1b8f3c114b86c898011dec3bd52535
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: ad60aff318832ab3ba5e9f7c43928898e171cea8
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216457"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543622"
 ---
 # <a name="events"></a>Události
 
@@ -18,19 +18,19 @@ Události umožňují přiřadit funkce volání a akce uživatele a jsou důl
 
 ## <a name="handling-events"></a>Zpracování událostí
 
-Pokud použijete knihovnu grafického uživatelského rozhraní, jako jsou formuláře Windows Forms nebo Windows Presentation Foundation (WPF), je většina kódu v aplikaci spuštěna jako odpověď na události, které byly předdefinovány knihovnou. Tyto předdefinované události jsou členy tříd grafického uživatelského rozhraní, jako jsou formuláře a ovládací prvky. Můžete přidat vlastní chování k již existující události, jako je například kliknutí na tlačítko, odkazem na konkrétní pojmenovanou událost zájmu (například `Click` na událost `Form` třídy `Add` ) a voláním metody, jak je znázorněno v následujícím kódu. . Pokud spustíte tento příkaz z F# interaktivního, vynechejte volání `System.Windows.Forms.Application.Run(System.Windows.Forms.Form)`.
+Pokud použijete knihovnu grafického uživatelského rozhraní, jako jsou formuláře Windows Forms nebo Windows Presentation Foundation (WPF), je většina kódu v aplikaci spuštěna jako odpověď na události, které byly předdefinovány knihovnou. Tyto předdefinované události jsou členy tříd grafického uživatelského rozhraní, jako jsou formuláře a ovládací prvky. Můžete přidat vlastní chování k již existující události, jako je například kliknutí na tlačítko, odkazem na konkrétní pojmenovanou událost zájmu (například `Click` událost `Form` třídy) a voláním metody `Add`, jak je znázorněno v následujícím kódu. Pokud spustíte tento příkaz z F# interaktivního, vynechejte volání `System.Windows.Forms.Application.Run(System.Windows.Forms.Form)`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3601.fs)]
 
-Typ `Add` metody je `('a -> unit) -> unit`. Proto metoda obslužné rutiny události přijímá jeden parametr, obvykle argumenty události a vrací `unit`. Předchozí příklad znázorňuje ovladač událostí jako výraz lambda. Ovladačem událostí může být také hodnota funkce, jako v následujícím příkladu kódu. Následující příklad kódu znázorňuje také použití parametrů ovladače událostí, který poskytuje informace specifické pro daný typ události. Pro událost systém `System.Windows.Forms.MouseEventArgs` předává `X` objekt, který obsahuje a `Y` pozici ukazatele. `MouseMove`
+Typ metody `Add` je `('a -> unit) -> unit`. Proto metoda obslužné rutiny události přijímá jeden parametr, obvykle argumenty události a vrací `unit`. Předchozí příklad znázorňuje ovladač událostí jako výraz lambda. Ovladačem událostí může být také hodnota funkce, jako v následujícím příkladu kódu. Následující příklad kódu znázorňuje také použití parametrů ovladače událostí, který poskytuje informace specifické pro daný typ události. Pro událost `MouseMove` předává systém objekt `System.Windows.Forms.MouseEventArgs`, který obsahuje `X` a `Y` pozici ukazatele.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3602.fs)]
 
 ## <a name="creating-custom-events"></a>Vytváření vlastních událostí
 
-F#události jsou reprezentovány F# třídou [Event](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) , která implementuje rozhraní [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent`je to rozhraní, které kombinuje funkce dvou dalších rozhraní `System.IObservable<'T>` a [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto mají ekvivalentní funkce delegátů v jiných jazycích a další funkce z `IObservable`, což znamená, F# že události podporují filtrování událostí a používají F# funkce první třídy a `Event` výrazy lambda jako obslužné rutiny událostí Tato funkce je k dispozici v [modulu Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+F#události jsou reprezentovány F# třídou [Event](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) , která implementuje rozhraní [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent` je toto rozhraní, které kombinuje funkce dvou dalších rozhraní, `System.IObservable<'T>` a [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto `Event`s mají ekvivalentní funkce delegátů v jiných jazycích a další funkce z `IObservable`, což znamená, že F# události podporují filtrování událostí a používají F# funkce první třídy a lambda výrazy jako obslužné rutiny událostí. Tato funkce je k dispozici v [modulu Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
 
-Chcete-li vytvořit událost pro třídu, která funguje stejně jako jakákoli jiná událost .NET Framework, přidejte do třídy `let` vazbu, která `Event` definuje jako pole ve třídě. Můžete zadat požadovaný typ argumentu události jako typ argumentu, nebo jej ponechat prázdný a odvodit odpovídající typ pomocí kompilátoru. Musíte také definovat člen události, který zpřístupňuje událost jako událost typu CLI. Tento člen by měl mít atribut [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) . Je deklarován jako vlastnost a její implementace je pouze voláním vlastnosti [publikovat](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) události. Uživatelé vaší třídy mohou použít `Add` metodu publikované události pro přidání obslužné rutiny. Argumentem `Add` metody může být výraz lambda. Můžete použít `Trigger` vlastnost události k vyvolání události a předání argumentů funkci obslužné rutiny. Následující příklad kódu to dokládá. V tomto příkladu je odvozeným argumentem typu události řazená kolekce, která představuje argumenty pro výraz lambda.
+Chcete-li vytvořit událost pro třídu, která funguje stejně jako jakákoli jiná událost .NET Framework, přidejte do třídy `let` vazby definující `Event` jako pole ve třídě. Můžete zadat požadovaný typ argumentu události jako typ argumentu, nebo jej ponechat prázdný a odvodit odpovídající typ pomocí kompilátoru. Musíte také definovat člen události, který zpřístupňuje událost jako událost typu CLI. Tento člen by měl mít atribut [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) . Je deklarován jako vlastnost a její implementace je pouze voláním vlastnosti [publikovat](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) události. Uživatelé vaší třídy mohou použít metodu `Add` publikované události pro přidání obslužné rutiny. Argumentem metody `Add` může být výraz lambda. Můžete použít vlastnost `Trigger` události k vyvolání události a předání argumentů funkci obslužné rutiny. Následující příklad kódu to dokládá. V tomto příkladu je odvozeným argumentem typu události řazená kolekce, která představuje argumenty pro výraz lambda.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3605.fs)]
 
@@ -40,7 +40,7 @@ Výstup je následující.
 Event1 occurred! Object data: Hello World!
 ```
 
-Další funkce poskytované `Event` modulem jsou znázorněny zde. Následující příklad kódu ukazuje základní použití `Event.create` pro vytvoření události a metody triggeru, přidání dvou obslužných rutin událostí ve formě výrazů lambda a následnou aktivací události pro provedení obou výrazů lambda.
+Další funkce, které poskytuje modul `Event`, jsou znázorněny zde. Následující příklad kódu ukazuje základní použití `Event.create` k vytvoření události a metody triggeru, přidání dvou obslužných rutin událostí ve formě výrazů lambda a následnou aktivací události pro provedení obou výrazů lambda.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3603.fs)]
 
@@ -53,7 +53,7 @@ Given a value: Event occurred.
 
 ## <a name="processing-event-streams"></a>Zpracování datových proudů události
 
-Místo pouhého přidání obslužné rutiny události pro událost pomocí funkce [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) můžete použít funkce v `Event` modulu ke zpracování datových proudů událostí v vysoce přizpůsobených způsobech. K tomu je třeba použít přesměrování přesměrování (`|>`) spolu s událostí jako první hodnotu v řadě volání funkce `Event` a modul funguje jako následné volání funkce.
+Místo pouhého přidání obslužné rutiny události pro událost pomocí funkce [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) můžete použít funkce v modulu `Event` ke zpracování proudů událostí v vysoce přizpůsobených způsobech. Chcete-li to provést, použijte přesměrování přesměrování (`|>`) spolu s událostí jako první hodnotu v řadě volání funkce a modul `Event` funguje jako následné volání funkcí.
 
 Následující příklad kódu ukazuje, jak lze nastavit událost, pro kterou je ovladač událostí volán pouze za určitých podmínek.
 
@@ -63,7 +63,7 @@ Následující příklad kódu ukazuje, jak lze nastavit událost, pro kterou je
 
 ## <a name="implementing-an-interface-event"></a>Implementace události rozhraní
 
-Při vývoji součástí uživatelského rozhraní začínáte často tak, že vytvoříte nový formulář nebo nový ovládací prvek, který se dědí z existujícího formuláře nebo ovládacího prvku. Události jsou často definovány v rozhraní. V takovém případě pak musíte implementovat rozhraní za účelem implementace události. Rozhraní definuje jednu `System.ComponentModel.INotifyPropertyChanged.PropertyChanged`událost. `System.ComponentModel.INotifyPropertyChanged` Následující kód znázorňuje způsob implementace události, kterou toto zděděné rozhraní definuje:
+Při vývoji součástí uživatelského rozhraní začínáte často tak, že vytvoříte nový formulář nebo nový ovládací prvek, který se dědí z existujícího formuláře nebo ovládacího prvku. Události jsou často definovány v rozhraní. V takovém případě pak musíte implementovat rozhraní za účelem implementace události. Rozhraní `System.ComponentModel.INotifyPropertyChanged` definuje jednu událost `System.ComponentModel.INotifyPropertyChanged.PropertyChanged`. Následující kód znázorňuje způsob implementace události, kterou toto zděděné rozhraní definuje:
 
 ```fsharp
 module CustomForm
@@ -80,8 +80,9 @@ type AppForm() as this =
 
     // Set up a click event to change the properties.
     do
-        this.Click |> Event.add(fun evArgs -> this.Property1 <- "text2"
-        this.Property2 <- "text3")
+        this.Click |> Event.add(fun evArgs ->
+            this.Property1 <- "text2"
+            this.Property2 <- "text3")
 
     // This property does not have the property-changed event set.
     member val Property1 : string = "text" with get, set
@@ -115,7 +116,7 @@ inpc.PropertyChanged.Add(appForm.OnPropertyChanged)
 Application.Run(appForm)
 ```
 
-Pokud chcete událost v konstruktoru připojit, je kód trochu složitější, protože Event propojení musí být v `then` bloku v dalším konstruktoru, jako v následujícím příkladu:
+Pokud chcete připojit událost v konstruktoru, je kód trochu složitější, protože Event propojení musí být v dalším konstruktoru `then` bloku, jak je uvedeno v následujícím příkladu:
 
 ```fsharp
 module CustomForm
@@ -134,8 +135,9 @@ type AppForm private (dummy) as this =
 
     // Set up a click event to change the properties.
     do
-        this.Click |> Event.add(fun evArgs -> this.Property1 <- "text2"
-        this.Property2 <- "text3")
+        this.Click |> Event.add(fun evArgs ->
+            this.Property1 <- "text2"
+            this.Property2 <- "text3")
 
     // This property does not have the property changed event set.
     member val Property1 : string = "text" with get, set
@@ -176,7 +178,7 @@ Application.Run(appForm)
 
 - [Členové](index.md)
 - [Zpracování a vyvolávání událostí](../../../standard/events/index.md)
-- [Výrazy lambda: Klíčové slovo `fun`](../functions/lambda-expressions-the-fun-keyword.md)
+- [Výrazy lambda: klíčové slovo `fun`](../functions/lambda-expressions-the-fun-keyword.md)
 - [Control. Event – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
 - [Control. Event&#60;–&#62; třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
 - [Control. Event&#60;' Delegate; ' args&#62; Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

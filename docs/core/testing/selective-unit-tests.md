@@ -3,16 +3,20 @@ title: Spouštění selektivních testů jednotek
 description: Jak použít výraz filtru ke spuštění selektivních testů jednotek pomocí příkazu dotnet test v .NET Core.
 author: smadala
 ms.date: 03/22/2017
-ms.openlocfilehash: 57428dad2de6c2507ca2cdc42e3df9e83a1edd69
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b9156300587215e68c01c609e298dbc1a2c53d11
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715462"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543505"
 ---
 # <a name="running-selective-unit-tests"></a>Spouštění selektivních testů jednotek
 
 Pomocí příkazu `dotnet test` v rozhraní .NET Core můžete použít výraz filtru ke spuštění selektivních testů. Tento článek ukazuje, jak filtrovat, který test se spouští. Následující příklady používají `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte `--filter` `--testcasefilter:`.
+
+> [!NOTE]
+> Použití filtrů, které zahrnují vykřičník (!) na `*nix` vyžaduje uvozovací znaky, protože je `!` vyhrazena. Například tento filtr přeskočí všechny testy, pokud obor názvů obsahuje IntegrationTests: `dotnet test --filter FullyQualifiedName\!~IntegrationTests`.
+> Všimněte si zpětného lomítka před vykřičníkem.
 
 ## <a name="mstest"></a>MSTest
 

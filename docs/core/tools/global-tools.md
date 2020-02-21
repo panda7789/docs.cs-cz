@@ -1,141 +1,275 @@
 ---
-title: Globální nástroje .NET Core
-description: Přehled toho, jaké globální nástroje .NET Core jsou a jaké jsou .NET Core CLI příkazy, které jsou pro ně k dispozici.
+title: Nástroje .NET Core
+description: Jak nainstalovat, používat, aktualizovat a odebrat nástroje .NET Core Zahrnuje globální nástroje, nástroje nástroje pro cestu a místní nástroje.
 author: KathleenDollard
-ms.date: 05/29/2018
-ms.openlocfilehash: 1531df48b7ca9c816b897d06e725ec375f6cae31
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 02/12/2020
+ms.openlocfilehash: d8ee30df3fe063fd41a85072d145b1b5eec7d0d0
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920496"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543388"
 ---
-# <a name="net-core-global-tools-overview"></a>Přehled globálních nástrojů .NET Core
+# <a name="how-to-manage-net-core-tools"></a>Správa nástrojů .NET Core
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-Globální nástroj .NET Core je speciální balíček NuGet, který obsahuje konzolovou aplikaci. Globální nástroj lze nainstalovat do počítače ve výchozím umístění, které je součástí proměnné prostředí PATH nebo ve vlastním umístění.
+Nástroj .NET Core je speciální balíček NuGet, který obsahuje konzolovou aplikaci. Nástroj lze nainstalovat do počítače následujícími způsoby:
 
-Pokud chcete použít globální nástroj .NET Core:
+* Jako globální nástroj.
 
-* Vyhledejte informace o nástroji (obvykle stránka webu nebo GitHub).
-* Podívejte se na údaje o autorovi a statistice v domovském kanálu (obvykle NuGet.org).
-* Nainstalujte nástroj.
-* Zavolejte nástroj.
-* Aktualizujte nástroj.
-* Odinstalujte nástroj.
+  Binární soubory nástroje jsou nainstalovány ve výchozím adresáři, který je přidán do proměnné prostředí PATH. Nástroj můžete vyvolat z libovolného adresáře v počítači bez zadání jeho umístění. Pro všechny adresáře v počítači se používá jedna verze nástroje.
+
+* Jako globální nástroj ve vlastním umístění (označované také jako nástroj pro cestu nástroje).
+
+  Binární soubory nástroje jsou nainstalovány v umístění, které zadáte. Nástroj můžete vyvolat z instalačního adresáře nebo zadáním adresáře s názvem příkazu nebo přidáním adresáře do proměnné prostředí PATH. Pro všechny adresáře v počítači se používá jedna verze nástroje.
+
+* Jako místní nástroj (platí pro .NET Core SDK 3,0 a novější).
+
+  Binární soubory nástroje jsou nainstalovány ve výchozím adresáři. Nástroj byste vyvolali z instalačního adresáře nebo kteréhokoli z jeho podadresářů. Různé adresáře mohou používat různé verze nástroje.
+  
+  Rozhraní .NET CLI používá soubory manifestu k udržení přehledu o tom, které nástroje jsou nainstalovány jako místní do adresáře. Když je soubor manifestu uložen v kořenovém adresáři úložiště zdrojového kódu, může Přispěvatel klonovat úložiště a vyvolat jeden .NET Core CLI příkaz, který nainstaluje všechny nástroje, které jsou uvedeny v souborech manifestu.
 
 > [!IMPORTANT]
-> Globální nástroje .NET Core se zobrazí ve vaší cestě a spustí se v úplném vztahu důvěryhodnosti. Neinstalujte globální nástroje .NET Core, pokud nedůvěřujete autorovi.
+> Nástroje .NET Core běží v úplném vztahu důvěryhodnosti. Neinstalujte nástroj .NET Core, pokud nedůvěřujete autorovi.
 
-## <a name="find-a-net-core-global-tool"></a>Najít globální nástroj .NET Core
+## <a name="find-a-tool"></a>Najít nástroj
 
-V současné době není k dispozici žádná funkce hledání globálních nástrojů v .NET Core CLI. Níže jsou uvedená doporučení pro hledání nástrojů:
+V současné době .NET Core nemá funkci pro hledání v nástroji. Tady je několik způsobů, jak najít nástroje:
 
-* Globální nástroje .NET Core najdete na [NuGet](https://www.nuget.org). NuGet ale ještě neumožňuje vyhledávat konkrétně globální nástroje .NET Core.
-* Doporučení k nástrojům můžete najít v blogovém příspěvku nebo v úložišti GitHubu [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
-* Zdrojový kód pro globální nástroje vytvořené týmem ASP.NET můžete zobrazit v úložišti GitHub [/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools) .
-* Informace o diagnostických nástrojích najdete v [části .NET Core dotnet – globální nástroje diagnostiky](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
+* Podívejte se na seznam nástrojů v úložišti GitHub [natemcmaster/dotnet-Tools](https://github.com/natemcmaster/dotnet-tools) .
+* Pomocí [ToolGet](https://www.toolget.net/) můžete vyhledat nástroje .NET.
+* Podívejte se na zdrojový kód pro nástroje vytvořené týmem ASP.NET Core v [adresáři Tools úložiště GitHubu pro dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/tree/master/src/Tools).
+* Seznamte se s diagnostickými nástroji na [diagnostických nástrojích rozhraní .NET Core dotnet](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools).
+* Prohledejte web [NuGet](https://www.nuget.org) . Web NuGet ale ještě nemá funkci, která vám umožní hledat jenom balíčky nástrojů.
 
 ## <a name="check-the-author-and-statistics"></a>Kontrolovat autora a statistiky
 
-Vzhledem k tomu, že globální nástroje .NET Core běží v úplném vztahu důvěryhodnosti a jsou všeobecně nainstalované v cestě, můžou být velmi výkonné. Nestahujte nástroje od lidí, kterým nedůvěřujete.
+Vzhledem k tomu, že nástroje .NET Core běží v úplném vztahu důvěryhodnosti a globální nástroje se přidávají do proměnné prostředí PATH, můžou být velmi výkonné. Nestahujte nástroje od lidí, kterým nedůvěřujete.
 
 Pokud je nástroj hostovaný na NuGet, můžete si ho vyhledat pomocí hledání tohoto nástroje.
 
 ## <a name="install-a-global-tool"></a>Instalace globálního nástroje
 
-K instalaci globálního nástroje použijte příkaz [dotnet nástroje install](dotnet-tool-install.md) .NET Core CLI. Následující příklad ukazuje, jak nainstalovat globální nástroj ve výchozím umístění:
+Chcete-li nainstalovat nástroj jako globální nástroj, použijte možnost `-g` nebo `--global` [instalaci nástroje dotnet](dotnet-tool-install.md), jak je znázorněno v následujícím příkladu:
 
 ```dotnetcli
 dotnet tool install -g dotnetsay
 ```
 
-Pokud nástroj není možné nainstalovat, zobrazí se chybové zprávy. Ověřte, zda jsou kontrolovány informační kanály, které jste očekávali.
-
-Pokud se pokoušíte nainstalovat předběžnou verzi nebo konkrétní verzi nástroje, můžete číslo verze zadat v následujícím formátu:
-
-```dotnetcli
-dotnet tool install -g <package-name> --version <version-number>
-```
-
-Pokud je instalace úspěšná, zobrazí se zpráva s příkazem použitým pro volání nástroje a nainstalované verze, podobně jako v následujícím příkladu:
+Výstup ukazuje příkaz použitý k vyvolání nástroje a nainstalovanou verzi, podobně jako v následujícím příkladu:
 
 ```output
 You can invoke the tool using the following command: dotnetsay
-Tool 'dotnetsay' (version '2.0.0') was successfully installed.
+Tool 'dotnetsay' (version '2.1.4') was successfully installed.
 ```
 
-Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
+Výchozí umístění binárních souborů nástroje závisí na operačním systému:
 
-| OS          | Cesta                          |
+| Operační systém          | Cesta                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-Tato umístění jsou přidána do cesty uživatele při prvním spuštění sady SDK, takže je možné nainstalovanou sadu globálních nástrojů volat přímo.
+Toto umístění se přidá do cesty uživatele při prvním spuštění sady SDK, takže globální nástroje lze vyvolat z libovolného adresáře bez určení umístění nástroje.
 
-Všimněte si, že globální nástroje jsou specifické pro uživatele, ne jako globální počítač. To znamená, že nemůžete nainstalovat globální nástroj, který je k dispozici pro všechny uživatele počítače. Nástroj je k dispozici pouze pro každý profil uživatele, ve kterém byl nástroj nainstalován.
+Přístup k nástroji je specifický pro uživatele, ne jako globální počítač. Globální nástroj je k dispozici pouze pro uživatele, který nástroj nainstaloval.
 
-Globální nástroje je také možné nainstalovat do konkrétního adresáře. Při instalaci do konkrétního adresáře musí uživatel ověřit, zda je příkaz k dispozici, zahrnutím tohoto adresáře do cesty, voláním příkazu se zadaným adresářem nebo voláním nástroje ze zadaného adresáře.
-V takovém případě .NET Core CLI nepřidá toto umístění automaticky do proměnné prostředí PATH.
+### <a name="install-a-global-tool-in-a-custom-location"></a>Instalace globálního nástroje ve vlastním umístění
 
-## <a name="use-the-tool"></a>Použití nástroje
+Chcete-li nainstalovat nástroj jako globální nástroj ve vlastním umístění, použijte možnost `--tool-path` [Instalace nástroje dotnet](dotnet-tool-install.md), jak je znázorněno v následujících příkladech.
 
-Po instalaci nástroje jej můžete zavolat pomocí jeho příkazu. Všimněte si, že tento příkaz nemůže být stejný jako název balíčku.
+Ve Windows:
 
-Pokud je příkaz `dotnetsay`, zavolejte ho pomocí:
+```dotnetcli
+dotnet tool install dotnetsay --tool-path c:\dotnet-tools
+```
+
+V systému Linux nebo macOS:
+
+```dotnetcli
+dotnet tool install dotnetsay --tool-path ~/bin
+```
+
+.NET Core SDK nepřidá toto umístění automaticky do proměnné prostředí PATH. Chcete [-li vyvolat Nástroj pro cestu nástroje](#invoke-a-tool-path-tool), je nutné zajistit, aby byl příkaz k dispozici pomocí jedné z následujících metod:
+
+* Přidejte instalační adresář do proměnné prostředí PATH.
+* Zadejte úplnou cestu k nástroji, když ji vyvoláte.
+* Vyvolejte nástroj v instalačním adresáři.
+
+## <a name="install-a-local-tool"></a>Instalace místního nástroje
+
+**Platí pro .NET Core 3,0 SDK a novější.**
+
+Chcete-li nainstalovat nástroj pouze pro místní přístup (pro aktuální adresář a podadresáře), je nutné jej přidat do souboru manifestu nástroje. Chcete-li vytvořit soubor manifestu nástroje, spusťte příkaz `dotnet new tool-manifest`:
+
+```dotnetcli
+dotnet new tool-manifest
+```
+
+Tento příkaz vytvoří v adresáři *. config* soubor manifestu s názvem *dotnet-Tools. JSON* . Chcete-li přidat místní nástroj do souboru manifestu, použijte příkaz pro [instalaci nástroje dotnet](dotnet-tool-install.md) a **vynechejte** `--global` a `--tool-path` možnosti, jak je znázorněno v následujícím příkladu:
+
+```dotnetcli
+dotnet tool install dotnetsay
+```
+
+Výstup příkazu ukazuje, ve kterém souboru manifestu je nově nainstalovaný nástroj, podobně jako v následujícím příkladu:
+
+```console
+You can invoke the tool from this directory using the following command:
+dotnet tool run dotnetsay
+Tool 'dotnetsay' (version '2.1.4') was successfully installed.
+Entry is added to the manifest file /home/name/botsay/.config/dotnet-tools.json.
+```
+
+Následující příklad ukazuje soubor manifestu se dvěma nainstalovanými místními nástroji:
+
+```json
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "botsay": {
+      "version": "1.0.0",
+      "commands": [
+        "botsay"
+      ]
+    },
+    "dotnetsay": {
+      "version": "2.1.3",
+      "commands": [
+        "dotnetsay"
+      ]
+    }
+  }
+}
+```
+
+Místní nástroj se obvykle přidává do kořenového adresáře úložiště. Až vrátíte se změnami soubor manifestu do úložiště, vývojáři, kteří si zaregistrují kód z úložiště, získají nejnovější soubor manifestu. Chcete-li nainstalovat všechny nástroje, které jsou uvedeny v souboru manifestu, spusťte příkaz `dotnet tool restore`:
+
+```dotnetcli
+dotnet tool restore
+```
+
+Výstup označuje, které nástroje byly obnoveny:
+
+```console
+Tool 'botsay' (version '1.0.0') was restored. Available commands: botsay
+Tool 'dotnetsay' (version '2.1.3') was restored. Available commands: dotnetsay
+Restore was successful.
+```
+
+## <a name="install-a-specific-tool-version"></a>Instalace konkrétní verze nástroje
+
+Chcete-li nainstalovat předběžnou verzi nástroje nebo konkrétní verzi nástroje, zadejte číslo verze pomocí možnosti `--version`, jak je znázorněno v následujícím příkladu:
+
+```dotnetcli
+dotnet tool install dotnetsay --version 2.1.3
+```
+
+## <a name="use-a-tool"></a>Použití nástroje
+
+Příkaz, který použijete k vyvolání nástroje, se může lišit od názvu balíčku, který nainstalujete. Chcete-li zobrazit všechny nástroje, které jsou aktuálně nainstalovány v počítači pro aktuálního uživatele, použijte příkaz [seznam nástrojů dotnet](dotnet-tool-list.md) :
+
+```dotnetcli
+dotnet tool list
+```
+
+Výstup zobrazuje verzi a příkaz každého nástroje, podobně jako v následujícím příkladu:
+
+```console
+Package Id      Version      Commands       Manifest
+-------------------------------------------------------------------------------------------
+botsay          1.0.0        botsay         /home/name/repository/.config/dotnet-tools.json
+dotnetsay       2.1.3        dotnetsay      /home/name/repository/.config/dotnet-tools.json
+```
+
+Jak je znázorněno v tomto příkladu, v seznamu se zobrazí místní nástroje. Chcete-li zobrazit globální nástroje, použijte možnost `--global` a k zobrazení nástrojů cest k nástroji použijte možnost `--tool-path`.
+
+### <a name="invoke-a-global-tool"></a>Vyvolání globálního nástroje
+
+U globálních nástrojů použijte samotný příkaz nástroje. Například pokud je příkaz `dotnetsay` nebo `dotnet-doc`, to je to, co používáte k vyvolání příkazu:
 
 ```console
 dotnetsay
+dotnet-doc
 ```
 
-Pokud autor nástroje chtěl zobrazit nástroj v kontextu `dotnet` výzvy, mohl by jej napsat způsobem, který ho zavolá jako `dotnet <command>`, například:
+Pokud příkaz začíná předponou `dotnet-`, alternativní způsob, jak nástroj vyvolat, je použít příkaz `dotnet` a vynechat prefix příkazu nástroje. Například pokud je příkaz `dotnet-doc`, nástroj vyvolá následující příkaz:
 
 ```dotnetcli
 dotnet doc
 ```
 
-To, které nástroje jsou součástí nainstalovaného globálního balíčku nástroje, můžete najít tak, že zobrazíte nainstalované balíčky pomocí příkazu pro [Výpis seznamu nástrojů dotnet](dotnet-tool-list.md) .
+V následujícím scénáři ale nemůžete použít příkaz `dotnet` k vyvolání globálního nástroje:
 
-Pokyny k použití můžete vyhledat také na webu nástroje nebo zadáním jednoho z následujících příkazů:
+* Globální nástroj a místní nástroj mají stejný příkaz jako s předponou `dotnet-`.
+* Chcete vyvolat globální nástroj z adresáře, který je v oboru pro místní nástroj.
 
-```console
-<command> --help
-dotnet <command> --help
+V tomto scénáři `dotnet doc` a `dotnet dotnet-doc` vyvolat místní nástroj. K vyvolání globálního nástroje použijte samotný příkaz:
+
+```dotnetcli
+dotnet-doc
 ```
 
-## <a name="other-cli-commands"></a>Další příkazy rozhraní příkazového řádku
+### <a name="invoke-a-tool-path-tool"></a>Vyvolání nástroje pro cestu k nástroji
 
-.NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použijte kterýkoli z `dotnet tool` příkazů s jednou z následujících možností:
+Chcete-li vyvolat globální nástroj, který je nainstalován pomocí možnosti `tool-path`, ujistěte se, že je příkaz k dispozici, jak je vysvětleno [výše v tomto článku](#install-a-global-tool-in-a-custom-location).
 
-* `--global` nebo `-g` určuje, že se příkaz vztahuje na globální nástroje pro uživatele.
-* `--tool-path` určuje vlastní umístění pro globální nástroje.
+### <a name="invoke-a-local-tool"></a>Vyvolání místního nástroje
 
-Zjistit, které příkazy jsou k dispozici pro globální nástroje:
+Chcete-li vyvolat místní nástroj, je nutné použít příkaz `dotnet` v rámci instalačního adresáře. Můžete použít dlouhý tvar (`dotnet tool run <COMMAND_NAME>`) nebo krátký tvar (`dotnet <COMMAND_NAME>`), jak je znázorněno v následujících příkladech:
+
+```dotnetcli
+dotnet tool run dotnetsay
+dotnet dotnetsay
+```
+
+Pokud je příkaz s předponou `dotnet-`, můžete při vyvolání nástroje použít nebo vynechat předponu. Například pokud je příkaz `dotnet-doc`, některý z následujících příkladů vyvolá místní nástroj:
+
+```dotnetcli
+dotnet tool run dotnet-doc
+dotnet dotnet-doc
+dotnet doc
+```
+
+## <a name="update-a-tool"></a>Aktualizace nástroje
+
+Aktualizace nástroje zahrnuje odinstalaci a opětovnou instalaci s nejnovější stabilní verzí. Pokud chcete nástroj aktualizovat, použijte příkaz [dotnet nástroje Update](dotnet-tool-update.md) se stejnou možností, jakou jste použili k instalaci nástroje:
+
+```dotnetcli
+dotnet tool update --global <packagename>
+dotnet tool update --tool-path <packagename>
+dotnet tool update <packagename>
+```
+
+V případě místního nástroje vyhledá sada SDK první soubor manifestu, který obsahuje ID balíčku, a to tak, že hledá v aktuálním adresáři a v nadřazených adresářích. Pokud v žádném souboru manifestu není žádné takové ID balíčku, sada SDK přidá novou položku do nejbližšího souboru manifestu.
+
+## <a name="uninstall-a-tool"></a>Odinstalace nástroje
+
+Odeberte nástroj pomocí příkazu pro [odinstalaci nástroje dotnet](dotnet-tool-uninstall.md) se stejnou možností, jakou jste použili k instalaci nástroje:
+
+```dotnetcli
+dotnet tool uninstall --global <packagename>
+dotnet tool uninstall --tool-path<packagename>
+dotnet tool uninstall <packagename>
+```
+
+V případě místního nástroje vyhledá sada SDK první soubor manifestu, který obsahuje ID balíčku, a to tak, že hledá v aktuálním adresáři a v nadřazených adresářích.
+
+## <a name="get-help-and-troubleshoot"></a>Získat nápovědu a řešit potíže
+
+Pokud chcete získat seznam dostupných `dotnet tool` příkazů, zadejte následující příkaz:
 
 ```dotnetcli
 dotnet tool --help
 ```
 
-Aktualizace globálního nástroje zahrnuje odinstalaci a opětovnou instalaci s nejnovější stabilní verzí. Pokud chcete aktualizovat globální nástroj, použijte příkaz [dotnet nástroje Update](dotnet-tool-update.md) :
+Pokud chcete získat pokyny k používání nástrojů, zadejte jeden z následujících příkazů nebo si přečtěte web tohoto nástroje:
 
 ```dotnetcli
-dotnet tool update -g <packagename>
+<command> --help
+dotnet <command> --help
 ```
 
-Odeberte globální nástroj pomocí [odinstalace nástroje dotnet](dotnet-tool-uninstall.md):
-
-```dotnetcli
-dotnet tool uninstall -g <packagename>
-```
-
-Chcete-li zobrazit všechny globální nástroje, které jsou aktuálně nainstalovány v počítači, spolu s jejich verzí a příkazy, použijte příkaz pro [seznam nástrojů dotnet](dotnet-tool-list.md) :
-
-```dotnetcli
-dotnet tool list -g
-```
-
-## <a name="see-also"></a>Viz také:
-
-* [Řešení potíží s používáním nástrojů .NET Core](troubleshoot-usage-issues.md)
+Pokud se nemůžete nainstalovat nebo spustit nástroj, přečtěte si téma řešení potíží s [používáním nástrojů .NET Core](troubleshoot-usage-issues.md).
