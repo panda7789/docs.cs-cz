@@ -1,99 +1,118 @@
 ---
 title: příkaz pro instalaci nástroje dotnet
-description: Instalační příkaz nástroje dotnet nainstaluje na svém počítači zadaný globální nástroj .NET Core.
-ms.date: 05/29/2018
-ms.openlocfilehash: d6f691117e93a39c9837b282dca19e452515c80a
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: Příkaz pro instalaci nástroje dotnet nainstaluje na váš počítač zadaný nástroj .NET Core.
+ms.date: 02/14/2020
+ms.openlocfilehash: 2705defe9b77009ca1411da28dd86d144ccc19e6
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117469"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543466"
 ---
-# <a name="dotnet-tool-install"></a><span data-ttu-id="c36b6-103">dotnet tool install</span><span class="sxs-lookup"><span data-stu-id="c36b6-103">dotnet tool install</span></span>
+# <a name="dotnet-tool-install"></a><span data-ttu-id="c5ffd-103">dotnet tool install</span><span class="sxs-lookup"><span data-stu-id="c5ffd-103">dotnet tool install</span></span>
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+<span data-ttu-id="c5ffd-104">**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="c5ffd-104">**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="c36b6-104">Name</span><span class="sxs-lookup"><span data-stu-id="c36b6-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="c5ffd-105">Název</span><span class="sxs-lookup"><span data-stu-id="c5ffd-105">Name</span></span>
 
-<span data-ttu-id="c36b6-105">`dotnet tool install`– Nainstaluje na váš počítač zadaný [globální nástroj .NET Core](global-tools.md) .</span><span class="sxs-lookup"><span data-stu-id="c36b6-105">`dotnet tool install` - Installs the specified [.NET Core Global Tool](global-tools.md) on your machine.</span></span>
+<span data-ttu-id="c5ffd-106">`dotnet tool install` – nainstaluje na váš počítač zadaný [nástroj .NET Core](global-tools.md) .</span><span class="sxs-lookup"><span data-stu-id="c5ffd-106">`dotnet tool install` - Installs the specified [.NET Core tool](global-tools.md) on your machine.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="c36b6-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="c36b6-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="c5ffd-107">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="c5ffd-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet tool install <PACKAGE_NAME> <-g|--global> [--add-source] [--configfile] [--framework] [-v|--verbosity] [--version]
 dotnet tool install <PACKAGE_NAME> <--tool-path> [--add-source] [--configfile] [--framework] [-v|--verbosity] [--version]
+dotnet tool install <PACKAGE_NAME> [--add-source] [--configfile] [--framework] [-v|--verbosity] [--version]
 dotnet tool install <-h|--help>
 ```
 
-## <a name="description"></a><span data-ttu-id="c36b6-107">Popis</span><span class="sxs-lookup"><span data-stu-id="c36b6-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="c5ffd-108">Popis</span><span class="sxs-lookup"><span data-stu-id="c5ffd-108">Description</span></span>
 
-<span data-ttu-id="c36b6-108">`dotnet tool install` Příkaz nabízí způsob, jak na svém počítači nainstalovat globální nástroje .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c36b6-108">The `dotnet tool install` command provides a way for you to install .NET Core Global Tools on your machine.</span></span> <span data-ttu-id="c36b6-109">Chcete-li použít příkaz, musíte určit, že chcete provést instalaci pro všechny uživatele pomocí `--global` možnosti, nebo zadat cestu k její instalaci `--tool-path` pomocí možnosti.</span><span class="sxs-lookup"><span data-stu-id="c36b6-109">To use the command, you either have to specify that you want a user-wide installation using the `--global` option or you specify a path to install it using the `--tool-path` option.</span></span>
+<span data-ttu-id="c5ffd-109">Příkaz `dotnet tool install` poskytuje způsob, jak nainstalovat nástroje .NET Core na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-109">The `dotnet tool install` command provides a way for you to install .NET Core tools on your machine.</span></span> <span data-ttu-id="c5ffd-110">Chcete-li použít příkaz, zadejte jednu z následujících možností instalace:</span><span class="sxs-lookup"><span data-stu-id="c5ffd-110">To use the command, you specify one of the following installation options:</span></span>
 
-<span data-ttu-id="c36b6-110">Globální nástroje jsou ve výchozím nastavení nainstalovány v následujících adresářích při zadání `-g` možnosti (nebo `--global`):</span><span class="sxs-lookup"><span data-stu-id="c36b6-110">Global Tools are installed in the following directories by default when you specify the `-g` (or `--global`) option:</span></span>
+* <span data-ttu-id="c5ffd-111">Pokud chcete nainstalovat globální nástroj ve výchozím umístění, použijte možnost `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-111">To install a global tool in the default location, use the `--tool-path` option.</span></span>
+* <span data-ttu-id="c5ffd-112">Pokud chcete nainstalovat globální nástroj ve vlastním umístění, použijte možnost `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-112">To install a global tool in a custom location,  use the `--tool-path` option.</span></span>
+* <span data-ttu-id="c5ffd-113">Chcete-li nainstalovat místní nástroj, vynechejte možnosti `--global` a `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-113">To install a local tool, omit the `--global` and `--tool-path` options.</span></span>
 
-| <span data-ttu-id="c36b6-111">OS</span><span class="sxs-lookup"><span data-stu-id="c36b6-111">OS</span></span>          | <span data-ttu-id="c36b6-112">Cesta</span><span class="sxs-lookup"><span data-stu-id="c36b6-112">Path</span></span>                          |
+<span data-ttu-id="c5ffd-114">**K dispozici jsou místní nástroje od .NET Core SDK 3,0.**</span><span class="sxs-lookup"><span data-stu-id="c5ffd-114">**Local tools are available starting with .NET Core SDK 3.0.**</span></span>
+
+<span data-ttu-id="c5ffd-115">Globální nástroje se ve výchozím nastavení nainstalují do následujících adresářů, když zadáte `-g` nebo `--global` možnosti:</span><span class="sxs-lookup"><span data-stu-id="c5ffd-115">Global tools are installed in the following directories by default when you specify the `-g` or `--global` option:</span></span>
+
+| <span data-ttu-id="c5ffd-116">Operační systém</span><span class="sxs-lookup"><span data-stu-id="c5ffd-116">OS</span></span>          | <span data-ttu-id="c5ffd-117">Cesta</span><span class="sxs-lookup"><span data-stu-id="c5ffd-117">Path</span></span>                          |
 |-------------|-------------------------------|
-| <span data-ttu-id="c36b6-113">Linux/macOS</span><span class="sxs-lookup"><span data-stu-id="c36b6-113">Linux/macOS</span></span> | `$HOME/.dotnet/tools`         |
-| <span data-ttu-id="c36b6-114">Windows</span><span class="sxs-lookup"><span data-stu-id="c36b6-114">Windows</span></span>     | `%USERPROFILE%\.dotnet\tools` |
+| <span data-ttu-id="c5ffd-118">Linux/macOS</span><span class="sxs-lookup"><span data-stu-id="c5ffd-118">Linux/macOS</span></span> | `$HOME/.dotnet/tools`         |
+| <span data-ttu-id="c5ffd-119">Windows</span><span class="sxs-lookup"><span data-stu-id="c5ffd-119">Windows</span></span>     | `%USERPROFILE%\.dotnet\tools` |
 
-## <a name="arguments"></a><span data-ttu-id="c36b6-115">Arguments</span><span class="sxs-lookup"><span data-stu-id="c36b6-115">Arguments</span></span>
+<span data-ttu-id="c5ffd-120">Místní nástroje jsou přidány do souboru *nástroje-manifest. JSON* v adresáři *. config* v rámci aktuálního adresáře.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-120">Local tools are added to a *tool-manifest.json* file in a *.config* directory under the current directory.</span></span> <span data-ttu-id="c5ffd-121">Pokud soubor manifestu ještě neexistuje, vytvořte ho spuštěním následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="c5ffd-121">If a manifest file doesn't exist yet, create it by running the following command:</span></span>
 
-`PACKAGE_NAME`
+```dotnetcli
+dotnet new tool-manifest
+```
 
-<span data-ttu-id="c36b6-116">Název nebo ID balíčku NuGet, který obsahuje globální nástroj .NET Core, který se má nainstalovat</span><span class="sxs-lookup"><span data-stu-id="c36b6-116">Name/ID of the NuGet package that contains the .NET Core Global Tool to install.</span></span>
+<span data-ttu-id="c5ffd-122">Další informace najdete v tématu [instalace místního nástroje](global-tools.md#install-a-local-tool).</span><span class="sxs-lookup"><span data-stu-id="c5ffd-122">For more information, see [Install a local tool](global-tools.md#install-a-local-tool).</span></span>
 
-## <a name="options"></a><span data-ttu-id="c36b6-117">Možnosti</span><span class="sxs-lookup"><span data-stu-id="c36b6-117">Options</span></span>
+## <a name="arguments"></a><span data-ttu-id="c5ffd-123">Argumenty</span><span class="sxs-lookup"><span data-stu-id="c5ffd-123">Arguments</span></span>
 
-`--add-source <SOURCE>`
+- **`PACKAGE_NAME`**
 
-<span data-ttu-id="c36b6-118">Přidá další zdroj balíčku NuGet, který se použije při instalaci.</span><span class="sxs-lookup"><span data-stu-id="c36b6-118">Adds an additional NuGet package source to use during installation.</span></span>
+  <span data-ttu-id="c5ffd-124">Název nebo ID balíčku NuGet, který obsahuje nástroj .NET Core, který se má nainstalovat</span><span class="sxs-lookup"><span data-stu-id="c5ffd-124">Name/ID of the NuGet package that contains the .NET Core tool to install.</span></span>
 
-`--configfile <FILE>`
+## <a name="options"></a><span data-ttu-id="c5ffd-125">Možnosti</span><span class="sxs-lookup"><span data-stu-id="c5ffd-125">Options</span></span>
 
-<span data-ttu-id="c36b6-119">Soubor konfigurace NuGet (*NuGet. config*), který se má použít.</span><span class="sxs-lookup"><span data-stu-id="c36b6-119">The NuGet configuration (*nuget.config*) file to use.</span></span>
+- **`add-source <SOURCE>`**
 
-`--framework <FRAMEWORK>`
+  <span data-ttu-id="c5ffd-126">Přidá další zdroj balíčku NuGet, který se použije při instalaci.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-126">Adds an additional NuGet package source to use during installation.</span></span>
 
-<span data-ttu-id="c36b6-120">Určuje [cílovou platformu](../../standard/frameworks.md) pro instalaci nástroje pro.</span><span class="sxs-lookup"><span data-stu-id="c36b6-120">Specifies the [target framework](../../standard/frameworks.md) to install the tool for.</span></span> <span data-ttu-id="c36b6-121">Ve výchozím nastavení se .NET Core SDK pokusí zvolit nejvhodnější cílové rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c36b6-121">By default, the .NET Core SDK tries to choose the most appropriate target framework.</span></span>
+- **`configfile <FILE>`**
 
-`-g|--global`
+  <span data-ttu-id="c5ffd-127">Soubor konfigurace NuGet (*NuGet. config*), který se má použít.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-127">The NuGet configuration (*nuget.config*) file to use.</span></span>
 
-<span data-ttu-id="c36b6-122">Určuje, že instalace je rozsáhlá pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="c36b6-122">Specifies that the installation is user wide.</span></span> <span data-ttu-id="c36b6-123">Nelze kombinovat s `--tool-path` možností.</span><span class="sxs-lookup"><span data-stu-id="c36b6-123">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="c36b6-124">Pokud tuto možnost nezadáte, musíte zadat `--tool-path` možnost.</span><span class="sxs-lookup"><span data-stu-id="c36b6-124">If you don't specify this option, you must specify the `--tool-path` option.</span></span>
+- **`framework <FRAMEWORK>`**
 
-`-h|--help`
+  <span data-ttu-id="c5ffd-128">Určuje [cílovou platformu](../../standard/frameworks.md) pro instalaci nástroje pro.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-128">Specifies the [target framework](../../standard/frameworks.md) to install the tool for.</span></span> <span data-ttu-id="c5ffd-129">Ve výchozím nastavení se .NET Core SDK pokusí zvolit nejvhodnější cílové rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-129">By default, the .NET Core SDK tries to choose the most appropriate target framework.</span></span>
 
-<span data-ttu-id="c36b6-125">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="c36b6-125">Prints out a short help for the command.</span></span>
+- **`-g|--global`**
 
-`--tool-path <PATH>`
+  <span data-ttu-id="c5ffd-130">Určuje, že instalace je rozsáhlá pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-130">Specifies that the installation is user wide.</span></span> <span data-ttu-id="c5ffd-131">Nelze kombinovat s možností `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-131">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="c5ffd-132">Vynechání `--global` a `--tool-path` Určuje instalaci místního nástroje.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-132">Omitting both `--global` and `--tool-path` specifies a local tool installation.</span></span> 
 
-<span data-ttu-id="c36b6-126">Určuje umístění, kam se má nainstalovat globální nástroj.</span><span class="sxs-lookup"><span data-stu-id="c36b6-126">Specifies the location where to install the Global Tool.</span></span> <span data-ttu-id="c36b6-127">Cesta může být absolutní nebo relativní.</span><span class="sxs-lookup"><span data-stu-id="c36b6-127">PATH can be absolute or relative.</span></span> <span data-ttu-id="c36b6-128">Pokud cesta neexistuje, příkaz se pokusí ho vytvořit.</span><span class="sxs-lookup"><span data-stu-id="c36b6-128">If PATH doesn't exist, the command tries to create it.</span></span> <span data-ttu-id="c36b6-129">Nelze kombinovat s `--global` možností.</span><span class="sxs-lookup"><span data-stu-id="c36b6-129">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="c36b6-130">Pokud tuto možnost nezadáte, musíte zadat `--global` možnost.</span><span class="sxs-lookup"><span data-stu-id="c36b6-130">If you don't specify this option, you must specify the `--global` option.</span></span>
+- **`-h|--help`**
 
-`-v|--verbosity <LEVEL>`
+  <span data-ttu-id="c5ffd-133">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-133">Prints out a short help for the command.</span></span>
 
-<span data-ttu-id="c36b6-131">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="c36b6-131">Sets the verbosity level of the command.</span></span> <span data-ttu-id="c36b6-132">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`</span><span class="sxs-lookup"><span data-stu-id="c36b6-132">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+- **`tool-path <PATH>`**
 
-`--version <VERSION_NUMBER>`
+  <span data-ttu-id="c5ffd-134">Určuje umístění, kam se má nainstalovat globální nástroj.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-134">Specifies the location where to install the Global Tool.</span></span> <span data-ttu-id="c5ffd-135">Cesta může být absolutní nebo relativní.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-135">PATH can be absolute or relative.</span></span> <span data-ttu-id="c5ffd-136">Pokud cesta neexistuje, příkaz se pokusí ho vytvořit.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-136">If PATH doesn't exist, the command tries to create it.</span></span> <span data-ttu-id="c5ffd-137">Vynechání `--global` a `--tool-path` Určuje instalaci místního nástroje.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-137">Omitting both `--global` and `--tool-path` specifies a local tool installation.</span></span> 
 
-<span data-ttu-id="c36b6-133">Verze nástroje, který se má nainstalovat</span><span class="sxs-lookup"><span data-stu-id="c36b6-133">The version of the tool to install.</span></span> <span data-ttu-id="c36b6-134">Ve výchozím nastavení je nainstalovaná nejnovější stabilní verze balíčku.</span><span class="sxs-lookup"><span data-stu-id="c36b6-134">By default, the latest stable package version is installed.</span></span> <span data-ttu-id="c36b6-135">Tuto možnost použijte k instalaci verze Preview nebo starší verze nástroje.</span><span class="sxs-lookup"><span data-stu-id="c36b6-135">Use this option to install preview or older versions of the tool.</span></span>
+- **`-v|--verbosity <LEVEL>`**
 
-## <a name="examples"></a><span data-ttu-id="c36b6-136">Příklady</span><span class="sxs-lookup"><span data-stu-id="c36b6-136">Examples</span></span>
+  <span data-ttu-id="c5ffd-138">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-138">Sets the verbosity level of the command.</span></span> <span data-ttu-id="c5ffd-139">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-139">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
-<span data-ttu-id="c36b6-137">Nainstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) do výchozího umístění:</span><span class="sxs-lookup"><span data-stu-id="c36b6-137">Installs the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool in the default location:</span></span>
+- **`--version <VERSION_NUMBER>`**
 
-`dotnet tool install -g dotnetsay`
+  <span data-ttu-id="c5ffd-140">Verze nástroje, který se má nainstalovat</span><span class="sxs-lookup"><span data-stu-id="c5ffd-140">The version of the tool to install.</span></span> <span data-ttu-id="c5ffd-141">Ve výchozím nastavení je nainstalovaná nejnovější stabilní verze balíčku.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-141">By default, the latest stable package version is installed.</span></span> <span data-ttu-id="c5ffd-142">Tuto možnost použijte k instalaci verze Preview nebo starší verze nástroje.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-142">Use this option to install preview or older versions of the tool.</span></span>
 
-<span data-ttu-id="c36b6-138">Nainstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) do určité složky Windows:</span><span class="sxs-lookup"><span data-stu-id="c36b6-138">Installs the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool on a specific Windows folder:</span></span>
+## <a name="examples"></a><span data-ttu-id="c5ffd-143">Příklady</span><span class="sxs-lookup"><span data-stu-id="c5ffd-143">Examples</span></span>
 
-`dotnet tool install dotnetsay --tool-path c:\global-tools`
+- **`dotnet tool install -g dotnetsay`**
 
-<span data-ttu-id="c36b6-139">Nainstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) do konkrétní složky Linux/MacOS:</span><span class="sxs-lookup"><span data-stu-id="c36b6-139">Installs the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool on a specific Linux/macOS folder:</span></span>
+  <span data-ttu-id="c5ffd-144">Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj ve výchozím umístění.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-144">Installs [dotnetsay](https://www.nuget.org/packages/dotnetsay/) as a global tool in the default location.</span></span>
 
-`dotnet tool install dotnetsay --tool-path ~/bin`
+- **`dotnet tool install dotnetsay --tool-path c:\global-tools`**
 
-<span data-ttu-id="c36b6-140">Nainstaluje 2.0.0 verze globálního nástroje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) :</span><span class="sxs-lookup"><span data-stu-id="c36b6-140">Installs version 2.0.0 of the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool:</span></span>
+  <span data-ttu-id="c5ffd-145">Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj do konkrétního adresáře Windows.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-145">Installs [dotnetsay](https://www.nuget.org/packages/dotnetsay/) as a global tool in a specific Windows directory.</span></span>
 
-`dotnet tool install -g dotnetsay --version 2.0.0`
+- **`dotnet tool install dotnetsay --tool-path ~/bin`**
 
-## <a name="see-also"></a><span data-ttu-id="c36b6-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c36b6-141">See also</span></span>
+  <span data-ttu-id="c5ffd-146">Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj do konkrétního adresáře Linux/MacOS.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-146">Installs [dotnetsay](https://www.nuget.org/packages/dotnetsay/) as a global tool in a specific Linux/macOS directory.</span></span>
 
-- [<span data-ttu-id="c36b6-142">Globální nástroje .NET Core</span><span class="sxs-lookup"><span data-stu-id="c36b6-142">.NET Core Global Tools</span></span>](global-tools.md)
+- **`dotnet tool install -g dotnetsay --version 2.0.0`**
+
+  <span data-ttu-id="c5ffd-147">Nainstaluje 2.0.0 verze [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako globální nástroj.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-147">Installs version 2.0.0 of [dotnetsay](https://www.nuget.org/packages/dotnetsay/) as a global tool.</span></span>
+
+- **`dotnet tool install dotnetsay`**
+
+  <span data-ttu-id="c5ffd-148">Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako místní Nástroj pro aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="c5ffd-148">Installs [dotnetsay](https://www.nuget.org/packages/dotnetsay/) as a local tool for the current directory.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="c5ffd-149">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c5ffd-149">See also</span></span>
+
+- [<span data-ttu-id="c5ffd-150">Nástroje .NET Core</span><span class="sxs-lookup"><span data-stu-id="c5ffd-150">.NET Core tools</span></span>](global-tools.md)

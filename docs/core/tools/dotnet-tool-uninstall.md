@@ -1,68 +1,79 @@
 ---
 title: příkaz dotnet nástroje pro odinstalaci
-description: Příkaz pro odinstalaci nástroje dotnet odinstaluje zadaný globální nástroj .NET Core z počítače.
-ms.date: 05/29/2018
-ms.openlocfilehash: 033753f44464e78b826e908e0b6cdf276da8a179
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: Příkaz pro odinstalaci nástroje dotnet odinstaluje zadaný nástroj .NET Core ze svého počítače.
+ms.date: 02/14/2020
+ms.openlocfilehash: 82dad0206d9c3e2ef0f41c353f4a608f10e4f127
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117541"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543440"
 ---
-# <a name="dotnet-tool-uninstall"></a><span data-ttu-id="5e855-103">dotnet tool uninstall</span><span class="sxs-lookup"><span data-stu-id="5e855-103">dotnet tool uninstall</span></span>
+# <a name="dotnet-tool-uninstall"></a><span data-ttu-id="8715e-103">dotnet tool uninstall</span><span class="sxs-lookup"><span data-stu-id="8715e-103">dotnet tool uninstall</span></span>
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+<span data-ttu-id="8715e-104">**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="8715e-104">**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="5e855-104">Name</span><span class="sxs-lookup"><span data-stu-id="5e855-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="8715e-105">Název</span><span class="sxs-lookup"><span data-stu-id="8715e-105">Name</span></span>
 
-<span data-ttu-id="5e855-105">`dotnet tool uninstall`– Odinstaluje zadaný [globální nástroj .NET Core](global-tools.md) z počítače.</span><span class="sxs-lookup"><span data-stu-id="5e855-105">`dotnet tool uninstall` - Uninstalls the specified [.NET Core Global Tool](global-tools.md) from your machine.</span></span>
+<span data-ttu-id="8715e-106">`dotnet tool uninstall` – odinstaluje zadaný [nástroj .NET Core](global-tools.md) ze svého počítače.</span><span class="sxs-lookup"><span data-stu-id="8715e-106">`dotnet tool uninstall` - Uninstalls the specified [.NET Core tool](global-tools.md) from your machine.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="5e855-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="5e855-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="8715e-107">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="8715e-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet tool uninstall <PACKAGE_NAME> <-g|--global>
 dotnet tool uninstall <PACKAGE_NAME> <--tool-path>
+dotnet tool uninstall <PACKAGE_NAME>
 dotnet tool uninstall <-h|--help>
 ```
 
-## <a name="description"></a><span data-ttu-id="5e855-107">Popis</span><span class="sxs-lookup"><span data-stu-id="5e855-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="8715e-108">Popis</span><span class="sxs-lookup"><span data-stu-id="8715e-108">Description</span></span>
 
-<span data-ttu-id="5e855-108">`dotnet tool uninstall` Příkaz nabízí způsob, jak odinstalovat globální nástroje .NET Core z počítače.</span><span class="sxs-lookup"><span data-stu-id="5e855-108">The `dotnet tool uninstall` command provides a way for you to uninstall .NET Core Global Tools from your machine.</span></span> <span data-ttu-id="5e855-109">Chcete-li použít příkaz, musíte určit, že chcete odebrat nástroj pro všechny uživatele pomocí `--global` možnosti nebo zadat cestu k umístění nástroje `--tool-path` pomocí možnosti.</span><span class="sxs-lookup"><span data-stu-id="5e855-109">To use the command, you either have to specify that you want to remove a user-wide tool using the `--global` option or specify a path to where the tool is installed using the `--tool-path` option.</span></span>
+<span data-ttu-id="8715e-109">Příkaz `dotnet tool uninstall` poskytuje způsob, jak odinstalovat nástroje .NET Core z počítače.</span><span class="sxs-lookup"><span data-stu-id="8715e-109">The `dotnet tool uninstall` command provides a way for you to uninstall .NET Core tools from your machine.</span></span> <span data-ttu-id="8715e-110">Chcete-li použít příkaz, zadejte jednu z následujících možností:</span><span class="sxs-lookup"><span data-stu-id="8715e-110">To use the command, you specify one of the following options:</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="5e855-110">Arguments</span><span class="sxs-lookup"><span data-stu-id="5e855-110">Arguments</span></span>
+* <span data-ttu-id="8715e-111">K odinstalaci globálního nástroje, který byl nainstalován ve výchozím umístění, použijte možnost `--global`.</span><span class="sxs-lookup"><span data-stu-id="8715e-111">To uninstall a global tool that was installed in the default location, use the `--global` option.</span></span>
+* <span data-ttu-id="8715e-112">K odinstalaci globálního nástroje, který byl nainstalován ve vlastním umístění, použijte možnost `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="8715e-112">To uninstall a global tool that was installed in a custom location,  use the `--tool-path` option.</span></span>
+* <span data-ttu-id="8715e-113">Chcete-li odinstalovat místní nástroj, vynechejte možnosti `--global` a `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="8715e-113">To uninstall a local tool, omit the `--global` and `--tool-path` options.</span></span>
 
-`PACKAGE_NAME`
+<span data-ttu-id="8715e-114">**K dispozici jsou místní nástroje od .NET Core SDK 3,0.**</span><span class="sxs-lookup"><span data-stu-id="8715e-114">**Local tools are available starting with .NET Core SDK 3.0.**</span></span>
 
-<span data-ttu-id="5e855-111">Název nebo ID balíčku NuGet, který obsahuje globální nástroj .NET Core pro odinstalaci.</span><span class="sxs-lookup"><span data-stu-id="5e855-111">Name/ID of the NuGet package that contains the .NET Core Global Tool to uninstall.</span></span> <span data-ttu-id="5e855-112">Název balíčku můžete najít pomocí příkazu pro [Výpis seznamu nástrojů dotnet](dotnet-tool-list.md) .</span><span class="sxs-lookup"><span data-stu-id="5e855-112">You can find the package name using the [dotnet tool list](dotnet-tool-list.md) command.</span></span>
+## <a name="arguments"></a><span data-ttu-id="8715e-115">Argumenty</span><span class="sxs-lookup"><span data-stu-id="8715e-115">Arguments</span></span>
 
-## <a name="options"></a><span data-ttu-id="5e855-113">Možnosti</span><span class="sxs-lookup"><span data-stu-id="5e855-113">Options</span></span>
+- **`PACKAGE_NAME`**
 
-`-g|--global`
+  <span data-ttu-id="8715e-116">Název nebo ID balíčku NuGet, který obsahuje nástroj .NET Core, který se má odinstalovat</span><span class="sxs-lookup"><span data-stu-id="8715e-116">Name/ID of the NuGet package that contains the .NET Core tool to uninstall.</span></span> <span data-ttu-id="8715e-117">Název balíčku můžete najít pomocí příkazu pro [Výpis seznamu nástrojů dotnet](dotnet-tool-list.md) .</span><span class="sxs-lookup"><span data-stu-id="8715e-117">You can find the package name using the [dotnet tool list](dotnet-tool-list.md) command.</span></span>
 
-<span data-ttu-id="5e855-114">Určuje, že nástroj, který se má odebrat, pochází z instalace v rámci uživatele.</span><span class="sxs-lookup"><span data-stu-id="5e855-114">Specifies that the tool to be removed is from a user-wide installation.</span></span> <span data-ttu-id="5e855-115">Nelze kombinovat s `--tool-path` možností.</span><span class="sxs-lookup"><span data-stu-id="5e855-115">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="5e855-116">Pokud tuto možnost nezadáte, musíte zadat `--tool-path` možnost.</span><span class="sxs-lookup"><span data-stu-id="5e855-116">If you don't specify this option, you must specify the `--tool-path` option.</span></span>
+## <a name="options"></a><span data-ttu-id="8715e-118">Možnosti</span><span class="sxs-lookup"><span data-stu-id="8715e-118">Options</span></span>
 
-`-h|--help`
+- **`-g|--global`**
 
-<span data-ttu-id="5e855-117">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="5e855-117">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="8715e-119">Určuje, že nástroj, který se má odebrat, pochází z instalace v rámci uživatele.</span><span class="sxs-lookup"><span data-stu-id="8715e-119">Specifies that the tool to be removed is from a user-wide installation.</span></span> <span data-ttu-id="8715e-120">Nelze kombinovat s možností `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="8715e-120">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="8715e-121">Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj.</span><span class="sxs-lookup"><span data-stu-id="8715e-121">Omitting both `--global` and `--tool-path` specifies that the tool to be removed is a local tool.</span></span> 
 
-`--tool-path <PATH>`
+- **`-h|--help`**
 
-<span data-ttu-id="5e855-118">Určuje umístění, kam se má globální nástroj odinstalovat.</span><span class="sxs-lookup"><span data-stu-id="5e855-118">Specifies the location where to uninstall the Global Tool.</span></span> <span data-ttu-id="5e855-119">Cesta může být absolutní nebo relativní.</span><span class="sxs-lookup"><span data-stu-id="5e855-119">PATH can be absolute or relative.</span></span> <span data-ttu-id="5e855-120">Nelze kombinovat s `--global` možností.</span><span class="sxs-lookup"><span data-stu-id="5e855-120">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="5e855-121">Pokud tuto možnost nezadáte, musíte zadat `--global` možnost.</span><span class="sxs-lookup"><span data-stu-id="5e855-121">If you don't specify this option, you must specify the `--global` option.</span></span>
+  <span data-ttu-id="8715e-122">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="8715e-122">Prints out a short help for the command.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="5e855-122">Příklady</span><span class="sxs-lookup"><span data-stu-id="5e855-122">Examples</span></span>
+- **`--tool-path <PATH>`**
 
-<span data-ttu-id="5e855-123">Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) :</span><span class="sxs-lookup"><span data-stu-id="5e855-123">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool:</span></span>
+  <span data-ttu-id="8715e-123">Určuje umístění pro odinstalaci nástroje.</span><span class="sxs-lookup"><span data-stu-id="8715e-123">Specifies the location where to uninstall the tool.</span></span> <span data-ttu-id="8715e-124">Cesta může být absolutní nebo relativní.</span><span class="sxs-lookup"><span data-stu-id="8715e-124">PATH can be absolute or relative.</span></span> <span data-ttu-id="8715e-125">Nelze kombinovat s možností `--global`.</span><span class="sxs-lookup"><span data-stu-id="8715e-125">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="8715e-126">Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj.</span><span class="sxs-lookup"><span data-stu-id="8715e-126">Omitting both `--global` and `--tool-path` specifies that the tool to be removed is a local tool.</span></span> 
 
-`dotnet tool uninstall -g dotnetsay`
+## <a name="examples"></a><span data-ttu-id="8715e-127">Příklady</span><span class="sxs-lookup"><span data-stu-id="8715e-127">Examples</span></span>
 
-<span data-ttu-id="5e855-124">Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z určité složky systému Windows:</span><span class="sxs-lookup"><span data-stu-id="5e855-124">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool from a specific Windows folder:</span></span>
+- **`dotnet tool uninstall -g dotnetsay`**
 
-`dotnet tool uninstall dotnetsay --tool-path c:\global-tools`
+  <span data-ttu-id="8715e-128">Odinstaluje nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global.</span><span class="sxs-lookup"><span data-stu-id="8715e-128">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) global tool.</span></span>
 
-<span data-ttu-id="5e855-125">Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z konkrétní složky Linux/MacOS:</span><span class="sxs-lookup"><span data-stu-id="5e855-125">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool from a specific Linux/macOS folder:</span></span>
+- **`dotnet tool uninstall dotnetsay --tool-path c:\global-tools`**
 
-`dotnet tool uninstall dotnetsay --tool-path ~/bin`
+  <span data-ttu-id="8715e-129">Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z určitého adresáře Windows.</span><span class="sxs-lookup"><span data-stu-id="8715e-129">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) global tool from a specific Windows directory.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5e855-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5e855-126">See also</span></span>
+- **`dotnet tool uninstall dotnetsay --tool-path ~/bin`**
 
-- [<span data-ttu-id="5e855-127">Globální nástroje .NET Core</span><span class="sxs-lookup"><span data-stu-id="5e855-127">.NET Core Global Tools</span></span>](global-tools.md)
+  <span data-ttu-id="8715e-130">Odinstaluje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z konkrétního adresáře Linux/MacOS.</span><span class="sxs-lookup"><span data-stu-id="8715e-130">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) global tool from a specific Linux/macOS directory.</span></span>
+
+- **`dotnet tool uninstall dotnetsay`**
+
+  <span data-ttu-id="8715e-131">Odinstaluje místní nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z aktuálního adresáře.</span><span class="sxs-lookup"><span data-stu-id="8715e-131">Uninstalls the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) local tool from the current directory.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="8715e-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8715e-132">See also</span></span>
+
+- [<span data-ttu-id="8715e-133">Nástroje .NET Core</span><span class="sxs-lookup"><span data-stu-id="8715e-133">.NET Core tools</span></span>](global-tools.md)

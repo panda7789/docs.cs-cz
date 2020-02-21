@@ -1,62 +1,73 @@
 ---
 title: příkaz pro seznam nástrojů dotnet
-description: Příkaz pro výpis seznamu nástrojů dotnet obsahuje seznam zadaného globálního nástroje .NET Core z počítače.
-ms.date: 05/29/2018
-ms.openlocfilehash: 6d35b1dce0c6d57edb0c6dd5f9711f093bc804aa
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: Příkaz pro výpis seznamu nástrojů dotnet obsahuje seznam nástrojů .NET Core, které jsou nainstalovány na vašem počítači.
+ms.date: 02/14/2020
+ms.openlocfilehash: bb74cfeaf441cf8a1a030d97d16655f85d8267d1
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117561"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543453"
 ---
-# <a name="dotnet-tool-list"></a><span data-ttu-id="b3f1c-103">dotnet tool list</span><span class="sxs-lookup"><span data-stu-id="b3f1c-103">dotnet tool list</span></span>
+# <a name="dotnet-tool-list"></a><span data-ttu-id="76d89-103">dotnet tool list</span><span class="sxs-lookup"><span data-stu-id="76d89-103">dotnet tool list</span></span>
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+<span data-ttu-id="76d89-104">**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí</span><span class="sxs-lookup"><span data-stu-id="76d89-104">**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="b3f1c-104">Name</span><span class="sxs-lookup"><span data-stu-id="b3f1c-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="76d89-105">Název</span><span class="sxs-lookup"><span data-stu-id="76d89-105">Name</span></span>
 
-<span data-ttu-id="b3f1c-105">`dotnet tool list`– Zobrazí seznam všech [globálních nástrojů .NET Core](global-tools.md) , které jsou aktuálně nainstalované ve výchozím adresáři na vašem počítači nebo v zadané cestě.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-105">`dotnet tool list` - Lists all [.NET Core Global Tools](global-tools.md) currently installed in the default directory on your machine or in the specified path.</span></span>
+<span data-ttu-id="76d89-106">`dotnet tool list` – zobrazí seznam všech [nástrojů .NET Core](global-tools.md) zadaného typu, které jsou aktuálně nainstalované na vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="76d89-106">`dotnet tool list` - Lists all [.NET Core tools](global-tools.md) of the specified type currently installed on your machine.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="b3f1c-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="b3f1c-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="76d89-107">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="76d89-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet tool list <-g|--global>
 dotnet tool list <--tool-path>
+dotnet tool list
 dotnet tool list <-h|--help>
 ```
 
-## <a name="description"></a><span data-ttu-id="b3f1c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="b3f1c-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="76d89-108">Popis</span><span class="sxs-lookup"><span data-stu-id="76d89-108">Description</span></span>
 
-<span data-ttu-id="b3f1c-108">`dotnet tool list` Příkaz umožňuje zobrazit seznam všech globálních nástrojů .NET Core nainstalovaných na vašem počítači (aktuální profil uživatele) nebo v zadané cestě.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-108">The `dotnet tool list` command provides a way for you to list all .NET Core Global Tools installed user-wide on your machine (current user profile) or in the specified path.</span></span> <span data-ttu-id="b3f1c-109">Příkaz vypíše název balíčku, nainstalovanou verzi a příkaz globálních nástrojů.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-109">The command lists the package name, version installed, and the Global Tool command.</span></span> <span data-ttu-id="b3f1c-110">Chcete-li použít příkaz list, je nutné určit, že chcete zobrazit všechny nástroje pro celý uživatel pomocí `--global` možnosti nebo zadat vlastní cestu `--tool-path` pomocí možnosti.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-110">To use the list command, you either have to specify that you want to see all user-wide tools using the `--global` option or specify a custom path using the `--tool-path` option.</span></span>
+<span data-ttu-id="76d89-109">Příkaz `dotnet tool list` slouží jako způsob zobrazení seznamu všech nástrojů .NET Core Global, nástroje-Path nebo místních nástrojů, které jsou nainstalovány na vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="76d89-109">The `dotnet tool list` command provides a way for you to list all .NET Core global, tool-path, or local Tools installed on your machine.</span></span> <span data-ttu-id="76d89-110">Příkaz vypíše název balíčku, nainstalovanou verzi a příkaz nástroje.</span><span class="sxs-lookup"><span data-stu-id="76d89-110">The command lists the package name, version installed, and the tool command.</span></span>  <span data-ttu-id="76d89-111">Chcete-li použít příkaz, zadejte jednu z následujících možností:</span><span class="sxs-lookup"><span data-stu-id="76d89-111">To use the command, you specify one of the following:</span></span>
 
-## <a name="options"></a><span data-ttu-id="b3f1c-111">Možnosti</span><span class="sxs-lookup"><span data-stu-id="b3f1c-111">Options</span></span>
+* <span data-ttu-id="76d89-112">Globální nástroj nainstalovaný ve výchozím umístění.</span><span class="sxs-lookup"><span data-stu-id="76d89-112">A global tool installed in the default location.</span></span> <span data-ttu-id="76d89-113">Použití možnosti `--global`</span><span class="sxs-lookup"><span data-stu-id="76d89-113">Use the `--global` option</span></span>
+* <span data-ttu-id="76d89-114">Globální nástroj nainstalovaný ve vlastním umístění.</span><span class="sxs-lookup"><span data-stu-id="76d89-114">A global tool installed in a custom location.</span></span> <span data-ttu-id="76d89-115">Použijte možnost `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="76d89-115">Use the `--tool-path` option.</span></span>
+* <span data-ttu-id="76d89-116">Místní nástroj.</span><span class="sxs-lookup"><span data-stu-id="76d89-116">A local tool.</span></span> <span data-ttu-id="76d89-117">Vynechejte možnosti `--global` a `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="76d89-117">Omit the `--global` and `--tool-path` options.</span></span>
 
-`-g|--global`
+<span data-ttu-id="76d89-118">**K dispozici jsou místní nástroje od .NET Core SDK 3,0.**</span><span class="sxs-lookup"><span data-stu-id="76d89-118">**Local tools are available starting with .NET Core SDK 3.0.**</span></span>
 
-<span data-ttu-id="b3f1c-112">Obsahuje seznam globálních nástrojů pro všechny uživatele.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-112">Lists user-wide Global Tools.</span></span> <span data-ttu-id="b3f1c-113">Nelze kombinovat s `--tool-path` možností.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-113">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="b3f1c-114">Pokud tuto možnost nezadáte, musíte zadat `--tool-path` možnost.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-114">If you don't specify this option, you must specify the `--tool-path` option.</span></span>
+## <a name="options"></a><span data-ttu-id="76d89-119">Možnosti</span><span class="sxs-lookup"><span data-stu-id="76d89-119">Options</span></span>
 
-`-h|--help`
+- **`-g|--global`**
 
-<span data-ttu-id="b3f1c-115">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-115">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="76d89-120">Obsahuje seznam globálních nástrojů pro všechny uživatele.</span><span class="sxs-lookup"><span data-stu-id="76d89-120">Lists user-wide global tools.</span></span> <span data-ttu-id="76d89-121">Nelze kombinovat s možností `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="76d89-121">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="76d89-122">Vynechání `--global` a `--tool-path` seznam místních nástrojů.</span><span class="sxs-lookup"><span data-stu-id="76d89-122">Omitting both `--global` and `--tool-path` lists local tools.</span></span> 
 
-`--tool-path <PATH>`
+- **`-h|--help`**
 
-<span data-ttu-id="b3f1c-116">Určuje vlastní umístění, kde se mají najít globální nástroje.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-116">Specifies a custom location where to find Global Tools.</span></span> <span data-ttu-id="b3f1c-117">Cesta může být absolutní nebo relativní.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-117">PATH can be absolute or relative.</span></span> <span data-ttu-id="b3f1c-118">Nelze kombinovat s `--global` možností.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-118">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="b3f1c-119">Pokud tuto možnost nezadáte, musíte zadat `--global` možnost.</span><span class="sxs-lookup"><span data-stu-id="b3f1c-119">If you don't specify this option, you must specify the `--global` option.</span></span>
+  <span data-ttu-id="76d89-123">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="76d89-123">Prints out a short help for the command.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="b3f1c-120">Příklady</span><span class="sxs-lookup"><span data-stu-id="b3f1c-120">Examples</span></span>
+- **`--tool-path <PATH>`**
 
-<span data-ttu-id="b3f1c-121">Zobrazí seznam všech globálních nástrojů nainstalovaných v celém počítači (aktuální profil uživatele):</span><span class="sxs-lookup"><span data-stu-id="b3f1c-121">Lists all Global Tools installed user-wide on your machine (current user profile):</span></span>
+  <span data-ttu-id="76d89-124">Určuje vlastní umístění, kde se mají najít globální nástroje.</span><span class="sxs-lookup"><span data-stu-id="76d89-124">Specifies a custom location where to find global tools.</span></span> <span data-ttu-id="76d89-125">Cesta může být absolutní nebo relativní.</span><span class="sxs-lookup"><span data-stu-id="76d89-125">PATH can be absolute or relative.</span></span> <span data-ttu-id="76d89-126">Nelze kombinovat s možností `--global`.</span><span class="sxs-lookup"><span data-stu-id="76d89-126">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="76d89-127">Vynechání `--global` a `--tool-path` seznam místních nástrojů.</span><span class="sxs-lookup"><span data-stu-id="76d89-127">Omitting both `--global` and `--tool-path` lists local tools.</span></span> 
 
-`dotnet tool list -g`
+## <a name="examples"></a><span data-ttu-id="76d89-128">Příklady</span><span class="sxs-lookup"><span data-stu-id="76d89-128">Examples</span></span>
 
-<span data-ttu-id="b3f1c-122">Zobrazí seznam globálních nástrojů z konkrétní složky systému Windows:</span><span class="sxs-lookup"><span data-stu-id="b3f1c-122">Lists the Global Tools from a specific Windows folder:</span></span>
+- **`dotnet tool list -g`**
 
-`dotnet tool list --tool-path c:\global-tools`
+  <span data-ttu-id="76d89-129">Zobrazí seznam všech globálních nástrojů nainstalovaných v celém počítači (aktuální profil uživatele).</span><span class="sxs-lookup"><span data-stu-id="76d89-129">Lists all global tools installed user-wide on your machine (current user profile).</span></span>
 
-<span data-ttu-id="b3f1c-123">Zobrazí seznam globálních nástrojů z konkrétní složky Linux/macOS:</span><span class="sxs-lookup"><span data-stu-id="b3f1c-123">Lists the Global Tools from a specific Linux/macOS folder:</span></span>
+- **`dotnet tool list --tool-path c:\global-tools`**
 
-`dotnet tool list --tool-path ~/bin`
+  <span data-ttu-id="76d89-130">Zobrazí seznam globálních nástrojů z konkrétního adresáře Windows.</span><span class="sxs-lookup"><span data-stu-id="76d89-130">Lists the global tools from a specific Windows directory.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="b3f1c-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b3f1c-124">See also</span></span>
+- **`dotnet tool list --tool-path ~/bin`**
 
-- [<span data-ttu-id="b3f1c-125">Globální nástroje .NET Core</span><span class="sxs-lookup"><span data-stu-id="b3f1c-125">.NET Core Global Tools</span></span>](global-tools.md)
+  <span data-ttu-id="76d89-131">Zobrazí seznam globálních nástrojů z konkrétního adresáře Linux/macOS.</span><span class="sxs-lookup"><span data-stu-id="76d89-131">Lists the global tools from a specific Linux/macOS directory.</span></span>
+
+- **`dotnet tool list`**
+
+  <span data-ttu-id="76d89-132">Zobrazí seznam všech místních nástrojů dostupných v aktuálním adresáři.</span><span class="sxs-lookup"><span data-stu-id="76d89-132">Lists all local tools available in the current directory.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="76d89-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76d89-133">See also</span></span>
+
+- [<span data-ttu-id="76d89-134">Nástroje .NET Core</span><span class="sxs-lookup"><span data-stu-id="76d89-134">.NET Core tools</span></span>](global-tools.md)
