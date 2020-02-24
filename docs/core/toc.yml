@@ -250,17 +250,23 @@
   items:
     - name: Přehled
       href: tools/index.md
-    - name: Nástroje
+    - name: Globální a místní nástroje
       expanded: true
       items:
-        - name: Globální nástroje
-          expanded: true
+        - name: Postupy při správě nástrojů
+          href: tools/global-tools.md
+        - name: Kurzy
           items:
-            - name: Přehled
-              href: tools/global-tools.md
-            - name: Vytvoření globálního nástroje
+            - name: Vytvoření nástroje
+              displayName: tools
               href: tools/global-tools-how-to-create.md
-        - name: Řešení potíží s využitím nástrojů
+            - name: Instalace a použití globálního nástroje
+              displayName: tools
+              href: tools/global-tools-how-to-use.md
+            - name: Instalace a použití místního nástroje
+              displayName: tools
+              href: tools/local-tools-how-to-use.md
+        - name: Řešení potíží s nástroji
           href: tools/troubleshoot-usage-issues.md
     - name: Přístup se zvýšenými oprávněními
       href: tools/elevated-access.md
@@ -320,6 +326,10 @@
               href: tools/dotnet-tool-install.md
             - name: dotnet tool list
               href: tools/dotnet-tool-list.md
+            - name: dotnet tool restore
+              href: tools/dotnet-tool-restore.md
+            - name: dotnet tool run
+              href: tools/dotnet-tool-run.md
             - name: dotnet tool uninstall
               href: tools/dotnet-tool-uninstall.md
             - name: dotnet tool update
