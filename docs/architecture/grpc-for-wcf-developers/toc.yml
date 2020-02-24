@@ -12,7 +12,7 @@
           href: interface-definition-language.md
         - name: Síťové protokoly
           href: network-protocols.md
-        - name: Proč se pro vývojáře WCF doporučuje gRPC
+        - name: Proč doporučujeme gRPC pro vývojáře WCF
           href: Why-grpc.md
     - name: Vyrovnávací paměti protokolů
       href: protocol-buffers.md
@@ -27,7 +27,7 @@
           href: protobuf-repeated.md
         - name: Vyhrazená pole protobuf
           href: protobuf-reserved.md
-        - name: Pole protobuf Any a OneOf pro variantní typy
+        - name: Pole protobuf Any a Oneof pro variantní typy
           href: protobuf-any-oneof.md
         - name: Výčty protobuf
           href: protobuf-enums.md
@@ -79,7 +79,7 @@
           href: docker.md
         - name: Kubernetes
           href: kubernetes.md
-        - name: gRPC a Service Mesh
+        - name: Sítě služeb
           href: service-mesh.md
         - name: Vyrovnávání zatížení
           href: load-balancing.md
