@@ -4,49 +4,50 @@ description: Při vytváření aplikací a knihoven v počítačích Mac, Linux 
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: e9fc5544904fc5a1304dcce135e01b1895d3446b
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 84784787465bec43cc460d34ca84e4baa5a15d7d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215173"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625931"
 ---
-# <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a><span data-ttu-id="cf51f-103">Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="cf51f-103">Learn .NET Core and the .NET Core SDK tools by exploring these tutorials</span></span>
+# <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a><span data-ttu-id="91c79-103">Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="91c79-103">Learn .NET Core and the .NET Core SDK tools by exploring these tutorials</span></span>
 
-<span data-ttu-id="cf51f-104">Následující kurzy jsou k dispozici pro získání informací o .NET Core.</span><span class="sxs-lookup"><span data-stu-id="cf51f-104">The following tutorials are available for learning about .NET Core.</span></span>
+<span data-ttu-id="91c79-104">Následující kurzy jsou k dispozici pro získání informací o .NET Core.</span><span class="sxs-lookup"><span data-stu-id="91c79-104">The following tutorials are available for learning about .NET Core.</span></span>
 
-## <a name="create-applications-with-visual-studio"></a><span data-ttu-id="cf51f-105">Vytváření aplikací pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="cf51f-105">Create applications with Visual Studio</span></span>
+## <a name="create-applications-with-visual-studio"></a><span data-ttu-id="91c79-105">Vytváření aplikací pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="91c79-105">Create applications with Visual Studio</span></span>
 
-- [<span data-ttu-id="cf51f-106">Vytvoření konzolové aplikace Hello World</span><span class="sxs-lookup"><span data-stu-id="cf51f-106">Create a Hello World console application</span></span>](with-visual-studio.md)
-- [<span data-ttu-id="cf51f-107">Ladění aplikace Hello World</span><span class="sxs-lookup"><span data-stu-id="cf51f-107">Debug your Hello World application</span></span>](debugging-with-visual-studio.md)
-- [<span data-ttu-id="cf51f-108">Publikování aplikace Hello World</span><span class="sxs-lookup"><span data-stu-id="cf51f-108">Publish your Hello World application</span></span>](publishing-with-visual-studio.md)
-- [<span data-ttu-id="cf51f-109">Sestavení knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="cf51f-109">Build a class library</span></span>](library-with-visual-studio.md)
-- [<span data-ttu-id="cf51f-110">Testování knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="cf51f-110">Test a class library</span></span>](testing-library-with-visual-studio.md)
-- [<span data-ttu-id="cf51f-111">Využití knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="cf51f-111">Consume a class library</span></span>](consuming-library-with-visual-studio.md)
-- [<span data-ttu-id="cf51f-112">Azure Cosmos DB: Začínáme s rozhraním SQL API a .NET Core</span><span class="sxs-lookup"><span data-stu-id="cf51f-112">Azure Cosmos DB: Get started with the SQL API and .NET Core</span></span>](/azure/cosmos-db/sql-api-dotnetcore-get-started)
+- [<span data-ttu-id="91c79-106">Vytvoření konzolové aplikace Hello World</span><span class="sxs-lookup"><span data-stu-id="91c79-106">Create a Hello World console application</span></span>](with-visual-studio.md)
+- [<span data-ttu-id="91c79-107">Ladění aplikace Hello World</span><span class="sxs-lookup"><span data-stu-id="91c79-107">Debug your Hello World application</span></span>](debugging-with-visual-studio.md)
+- [<span data-ttu-id="91c79-108">Publikování aplikace Hello World</span><span class="sxs-lookup"><span data-stu-id="91c79-108">Publish your Hello World application</span></span>](publishing-with-visual-studio.md)
+- [<span data-ttu-id="91c79-109">Sestavení knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="91c79-109">Build a class library</span></span>](library-with-visual-studio.md)
+- [<span data-ttu-id="91c79-110">Testování knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="91c79-110">Test a class library</span></span>](testing-library-with-visual-studio.md)
+- [<span data-ttu-id="91c79-111">Využití knihovny tříd</span><span class="sxs-lookup"><span data-stu-id="91c79-111">Consume a class library</span></span>](consuming-library-with-visual-studio.md)
+- [<span data-ttu-id="91c79-112">Azure Cosmos DB: Začínáme s rozhraním SQL API a .NET Core</span><span class="sxs-lookup"><span data-stu-id="91c79-112">Azure Cosmos DB: Get started with the SQL API and .NET Core</span></span>](/azure/cosmos-db/sql-api-dotnetcore-get-started)
 
-## <a name="build-applications-with-visual-studio-code"></a><span data-ttu-id="cf51f-113">Sestavování aplikací pomocí Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="cf51f-113">Build applications with Visual Studio Code</span></span>
+## <a name="build-applications-with-visual-studio-code"></a><span data-ttu-id="91c79-113">Sestavování aplikací pomocí Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="91c79-113">Build applications with Visual Studio Code</span></span>
 
-- [<span data-ttu-id="cf51f-114">Začínáme s jazykem C# a nástrojem Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="cf51f-114">Get started with C# and Visual Studio Code</span></span>](with-visual-studio-code.md)
-- [<span data-ttu-id="cf51f-115">Začínáme s .NET Core v systému macOS</span><span class="sxs-lookup"><span data-stu-id="cf51f-115">Get started with .NET Core on macOS</span></span>](using-on-macos.md)
+- [<span data-ttu-id="91c79-114">Začínáme s jazykem C# a nástrojem Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="91c79-114">Get started with C# and Visual Studio Code</span></span>](with-visual-studio-code.md)
+- [<span data-ttu-id="91c79-115">Začínáme s .NET Core v systému macOS</span><span class="sxs-lookup"><span data-stu-id="91c79-115">Get started with .NET Core on macOS</span></span>](using-on-macos.md)
 
-## <a name="build-applications-with-visual-studio-for-mac"></a><span data-ttu-id="cf51f-116">Sestavování aplikací pomocí Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="cf51f-116">Build applications with Visual Studio for Mac</span></span>
+## <a name="build-applications-with-visual-studio-for-mac"></a><span data-ttu-id="91c79-116">Sestavování aplikací pomocí Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="91c79-116">Build applications with Visual Studio for Mac</span></span>
 
-- [<span data-ttu-id="cf51f-117">Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="cf51f-117">Get started with .NET Core on macOS using Visual Studio for Mac</span></span>](using-on-mac-vs.md)
-- [<span data-ttu-id="cf51f-118">Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="cf51f-118">Building a complete .NET Core solution on macOS using Visual Studio for Mac</span></span>](using-on-mac-vs-full-solution.md)
+- [<span data-ttu-id="91c79-117">Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="91c79-117">Get started with .NET Core on macOS using Visual Studio for Mac</span></span>](using-on-mac-vs.md)
+- [<span data-ttu-id="91c79-118">Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac</span><span class="sxs-lookup"><span data-stu-id="91c79-118">Building a complete .NET Core solution on macOS using Visual Studio for Mac</span></span>](using-on-mac-vs-full-solution.md)
 
-## <a name="build-applications-with-the-net-core-cli"></a><span data-ttu-id="cf51f-119">Sestavování aplikací pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="cf51f-119">Build applications with the .NET Core CLI</span></span>
+## <a name="build-applications-with-the-net-core-cli"></a><span data-ttu-id="91c79-119">Sestavování aplikací pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="91c79-119">Build applications with the .NET Core CLI</span></span>
 
-- [<span data-ttu-id="cf51f-120">Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="cf51f-120">Get started with .NET Core on Windows/Linux/macOS using the .NET Core CLI</span></span>](cli-create-console-app.md)
-- [<span data-ttu-id="cf51f-121">Organizování a testování projektů pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="cf51f-121">Organizing and testing projects with the .NET Core CLI</span></span>](testing-with-cli.md)
-- [<span data-ttu-id="cf51f-122">Začínáme sF#</span><span class="sxs-lookup"><span data-stu-id="cf51f-122">Get started with F#</span></span>](../../fsharp/get-started/get-started-command-line.md)
+- [<span data-ttu-id="91c79-120">Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="91c79-120">Get started with .NET Core on Windows/Linux/macOS using the .NET Core CLI</span></span>](cli-create-console-app.md)
+- [<span data-ttu-id="91c79-121">Organizování a testování projektů pomocí .NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="91c79-121">Organizing and testing projects with the .NET Core CLI</span></span>](testing-with-cli.md)
+- [<span data-ttu-id="91c79-122">Začínáme sF#</span><span class="sxs-lookup"><span data-stu-id="91c79-122">Get started with F#</span></span>](../../fsharp/get-started/get-started-command-line.md)
 
-## <a name="other"></a><span data-ttu-id="cf51f-123">Ostatní</span><span class="sxs-lookup"><span data-stu-id="cf51f-123">Other</span></span>
+## <a name="other"></a><span data-ttu-id="91c79-123">Ostatní</span><span class="sxs-lookup"><span data-stu-id="91c79-123">Other</span></span>
 
-- [<span data-ttu-id="cf51f-124">Testování částí v .NET Core pomocí testu dotnet</span><span class="sxs-lookup"><span data-stu-id="cf51f-124">Unit Testing in .NET Core using dotnet test</span></span>](../testing/unit-testing-with-dotnet-test.md)
-- [<span data-ttu-id="cf51f-125">Testování částí pomocí MSTest a .NET Core</span><span class="sxs-lookup"><span data-stu-id="cf51f-125">Unit testing with MSTest and .NET Core</span></span>](../testing/unit-testing-with-mstest.md)
-- [<span data-ttu-id="cf51f-126">Vývoj knihoven pomocí nástrojů pro různé platformy</span><span class="sxs-lookup"><span data-stu-id="cf51f-126">Developing Libraries with Cross Platform Tools</span></span>](libraries.md)
-- [<span data-ttu-id="cf51f-127">Hostování .NET Core z nativního kódu</span><span class="sxs-lookup"><span data-stu-id="cf51f-127">Hosting .NET Core from native code</span></span>](netcore-hosting.md)
-- [<span data-ttu-id="cf51f-128">Vytvoření šablon pro rozhraní příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="cf51f-128">Create templates for the CLI</span></span>](cli-templates-create-item-template.md)
+- [<span data-ttu-id="91c79-124">Testování částí v .NET Core pomocí testu dotnet</span><span class="sxs-lookup"><span data-stu-id="91c79-124">Unit Testing in .NET Core using dotnet test</span></span>](../testing/unit-testing-with-dotnet-test.md)
+- [<span data-ttu-id="91c79-125">Testování částí pomocí MSTest a .NET Core</span><span class="sxs-lookup"><span data-stu-id="91c79-125">Unit testing with MSTest and .NET Core</span></span>](../testing/unit-testing-with-mstest.md)
+- [<span data-ttu-id="91c79-126">Vývoj knihoven pomocí nástrojů pro různé platformy</span><span class="sxs-lookup"><span data-stu-id="91c79-126">Developing Libraries with Cross Platform Tools</span></span>](libraries.md)
+- [<span data-ttu-id="91c79-127">Hostování .NET Core z nativního kódu</span><span class="sxs-lookup"><span data-stu-id="91c79-127">Hosting .NET Core from native code</span></span>](netcore-hosting.md)
+- [<span data-ttu-id="91c79-128">Vytvoření šablon pro rozhraní příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="91c79-128">Create templates for the CLI</span></span>](cli-templates-create-item-template.md)
+- [<span data-ttu-id="91c79-129">Vytvoření a použití nástrojů pro rozhraní příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="91c79-129">Create and use tools for the CLI</span></span>](../tools/global-tools-how-to-create.md)
 
-<span data-ttu-id="cf51f-129">Kurzy týkající se vývoje ASP.NET Core webových aplikací najdete v [dokumentaci k ASP.NET Core](/aspnet/core/).</span><span class="sxs-lookup"><span data-stu-id="cf51f-129">For tutorials about developing ASP.NET Core web applications, see the [ASP.NET Core documentation](/aspnet/core/).</span></span>
+<span data-ttu-id="91c79-130">Kurzy týkající se vývoje ASP.NET Core webových aplikací najdete v [dokumentaci k ASP.NET Core](/aspnet/core/).</span><span class="sxs-lookup"><span data-stu-id="91c79-130">For tutorials about developing ASP.NET Core web applications, see the [ASP.NET Core documentation](/aspnet/core/).</span></span>
