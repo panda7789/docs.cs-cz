@@ -2,12 +2,12 @@
 title: Typy přerušujících změn
 description: Přečtěte si, jak se .NET Core pokusí zachovat kompatibilitu pro vývojáře napříč verzemi .NET a jaký druh změny se považuje za zásadní změnu.
 ms.date: 06/10/2019
-ms.openlocfilehash: 1c5790e39754b91aacbde9e87ed99f9dcc36ce9f
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: bf0cc35d69e6bb501640455604a99a1f48962c4a
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092977"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628589"
 ---
 # <a name="changes-that-affect-compatibility"></a>Změny ovlivňující kompatibilitu
 
@@ -49,7 +49,7 @@ Změny v této kategorii upravují oblast veřejného povrchu typu. Většina zm
 
   *Původní* sestavení musí být označeno <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>, které odkazuje na nové sestavení.
 
-- ✔️ **povoleno: Změna typu [struktury](../../csharp/language-reference/keywords/struct.md) na typ `readonly struct`**
+- ✔️ **povoleno: Změna typu [struktury](../../csharp/language-reference/builtin-types/struct.md) na typ `readonly struct`**
 
   Změna typu `readonly struct` na typ `struct` není povolená.
 
@@ -77,11 +77,11 @@ Změny v této kategorii upravují oblast veřejného povrchu typu. Většina zm
 
   Pravidlo pro odebrání rozhraní obsahuje jednu výjimku: můžete přidat implementaci rozhraní, které je odvozeno z odebraného rozhraní. Můžete například odebrat <xref:System.IDisposable>, pokud typ nebo rozhraní nyní implementuje <xref:System.ComponentModel.IComponent>, které implementuje <xref:System.IDisposable>.
 
-- ❌ **zakázané: Změna typu `readonly struct` na typ [struktury](../../csharp/language-reference/keywords/struct.md)**
+- ❌ **zakázané: Změna typu `readonly struct` na typ [struktury](../../csharp/language-reference/builtin-types/struct.md)**
 
   Změna typu `struct` na typ `readonly struct` je povolena, ale.
 
-- ❌ **zakázané: Změna typu [struktury](../../csharp/language-reference/keywords/struct.md) na typ `ref struct` a naopak**
+- ❌ **zakázané: Změna typu [struktury](../../csharp/language-reference/builtin-types/struct.md) na typ `ref struct` a naopak**
 
 - ❌ **zakázané: zmenšení viditelnosti typu**
 
@@ -300,7 +300,7 @@ Změny v této kategorii upravují oblast veřejného povrchu typu. Většina zm
 
 - ✔️ **povoleno: přidání [parametrů](../../csharp/language-reference/keywords/params.md) do parametru**
 
-- ❌ **zakázané: Změna [struktury](../../csharp/language-reference/keywords/struct.md) na [třídu](../../csharp/language-reference/keywords/class.md) a naopak**
+- ❌ **zakázané: Změna [struktury](../../csharp/language-reference/builtin-types/struct.md) na [třídu](../../csharp/language-reference/keywords/class.md) a naopak**
 
 - ❌ **zakázané: přidání klíčového slova [checked](../../csharp/language-reference/keywords/virtual.md) do bloku kódu**
 

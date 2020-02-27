@@ -5,12 +5,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 95735d5032a8896570918b991f12b853af88fb68
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a2f5300f9647823cf2c9ac2a4a5c7c888c7dd245
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705480"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626578"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako podrobný plán, který určuje, co může typ provádět. Objekt je v podstatě blok paměti, který byl přidělen a nakonfigurován podle podrobného plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty se také nazývají instance a mohou být uloženy buď v pojmenované proměnné, nebo v poli nebo v kolekci. Kód klienta je kód, který používá tyto proměnné pro volání metod a přístup k veřejným vlastnostem objektu. V objektově orientovaném jazyce C#, jako je typický program, se skládá z více objektů, které pracují dynamicky.  
@@ -48,7 +48,7 @@ Definice třídy nebo struktury je jako podrobný plán, který určuje, co mů�
 - Chcete-li určit, zda jsou hodnoty polí ve dvou instancích třídy stejné, je možné použít metodu <xref:System.Object.Equals%2A> nebo [operátor = =](../../language-reference/operators/equality-operators.md#equality-operator-). Je však možné je použít pouze v případě, že třída přepsala nebo přetížena k poskytnutí vlastní definice toho, co "rovnost" znamená pro objekty daného typu. Třída může také implementovat rozhraní <xref:System.IEquatable%601> nebo rozhraní <xref:System.Collections.Generic.IEqualityComparer%601>. Obě rozhraní poskytují metody, které lze použít k testování rovnosti hodnoty. Při návrhu vlastních tříd, které přepíší `Equals`, nezapomeňte postupovat podle pokynů uvedených v tématu [Definování rovnosti hodnoty pro typ](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) a <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.
   
 ## <a name="related-sections"></a>Související oddíly  
- Další informace:  
+ Další informace najdete tady:  
   
 - [Třídy](./classes.md)  
   
@@ -60,12 +60,12 @@ Definice třídy nebo struktury je jako podrobný plán, který určuje, co mů�
   
 - [Události](../events/index.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [object](../../language-reference/builtin-types/reference-types.md)
 - [Dědičnost](./inheritance.md)
 - [class](../../language-reference/keywords/class.md)
-- [struct](../../language-reference/keywords/struct.md)
+- [struct](../../language-reference/builtin-types/struct.md)
 - [new – operátor](../../language-reference/operators/new-operator.md)
 - [Obecný systém typů](../../../standard/base-types/common-type-system.md)

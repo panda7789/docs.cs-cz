@@ -6,16 +6,16 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: 465dbb9120e6e81e5ef216c34dc6a92283956033
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 8eedfaed111f01cc2ec55a2f42df66d4588bd42f
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964664"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626734"
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 
-Pokaždé, když se vytvoří [Třída](../../language-reference/keywords/class.md) nebo [Struktura](../../language-reference/keywords/struct.md) , zavolá se její konstruktor. Třída nebo struktura může mít více konstruktorů, které přijímají různé argumenty. Konstruktory umožňují programátorovi nastavit výchozí hodnoty, omezit vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady naleznete v tématu [using](./using-constructors.md) a [konstruktory instancí](./instance-constructors.md).  
+Pokaždé, když se vytvoří [Třída](../../language-reference/keywords/class.md) nebo [Struktura](../../language-reference/builtin-types/struct.md) , zavolá se její konstruktor. Třída nebo struktura může mít více konstruktorů, které přijímají různé argumenty. Konstruktory umožňují programátorovi nastavit výchozí hodnoty, omezit vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady naleznete v tématu [using](./using-constructors.md) a [konstruktory instancí](./instance-constructors.md).  
 
 ## <a name="parameterless-constructors"></a>Konstruktory bez parametrů
   
@@ -56,9 +56,9 @@ Další informace a příklady naleznete v tématu [statické konstruktory](./st
   
  [Zápis kopírovacího konstruktoru](./how-to-write-a-copy-constructor.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](./index.md)
 - [Finalizační metody](./destructors.md)
 - [static](../../language-reference/keywords/static.md)

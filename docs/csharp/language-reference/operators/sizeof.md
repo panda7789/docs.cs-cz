@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: c88f205a616587e5437bf4fc81bcbdcbbc19a9ac
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8e4518718d0975f8b4a65870f15d8c52d692c2f5
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712634"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625732"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof – operátorC# (Referenční dokumentace)
 
@@ -42,13 +42,13 @@ Následující příklad ukazuje použití operátoru `sizeof`:
 
 [!code-csharp[sizeof examples](~/samples/csharp/language-reference/operators/SizeOfOperator.cs)]
 
-Operátor `sizeof` vrací počet bajtů, které by byly přiděleny modulem CLR (Common Language Runtime) ve spravované paměti. U typů [struktury](../keywords/struct.md) tato hodnota zahrnuje jakékoli odsazení, jak ukazuje předchozí příklad. Výsledek operátoru `sizeof` se může lišit od výsledku metody <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType>, která vrací velikost typu v *nespravované* paměti.
+Operátor `sizeof` vrací počet bajtů, které by byly přiděleny modulem CLR (Common Language Runtime) ve spravované paměti. U typů [struktury](../builtin-types/struct.md) tato hodnota zahrnuje jakékoli odsazení, jak ukazuje předchozí příklad. Výsledek operátoru `sizeof` se může lišit od výsledku metody <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType>, která vrací velikost typu v *nespravované* paměti.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 Další informace naleznete v části [operátor sizeof](~/_csharplang/spec/unsafe-code.md#the-sizeof-operator) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)

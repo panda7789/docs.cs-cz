@@ -12,12 +12,12 @@ ms.assetid: e5a8e088-7ec8-4fd9-bcb3-9078fd134829
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: dac049ea6a51037daa0e23dc93476e4410b2df06
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7626e1efbb30ef3bfe9b5b1278c0adb18dd5944b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745994"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628706"
 ---
 # <a name="develop-windows-forms-controls-at-design-time"></a>Vývoj ovládacích prvků model Windows Forms v době návrhu
 
@@ -36,7 +36,7 @@ Ukazuje, jak vytvořit jednoduchý složený ovládací prvek v C#.
 [Návod: dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)\
 Ukazuje, jak vytvořit jednoduchý ovládací prvek model Windows Forms pomocí dědičnosti C#v.
 
-[Návod: provádění běžných úloh pomocí inteligentních značek v ovládacích prvcích model Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md)\
+[Návod: provádění běžných úloh pomocí akcí návrháře](perform-common-tasks-design-actions.md)\
 Ukazuje, jak používat funkci inteligentních značek na ovládacím prvku model Windows Forms.
 
 [Návod: serializace kolekcí standardních typů pomocí\ DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)

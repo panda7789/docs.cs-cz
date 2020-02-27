@@ -2,12 +2,12 @@
 title: Azure Monitor
 description: Použití Azure Monitor k získání přehledu o tom, zda je systém spuštěný.
 ms.date: 02/05/2020
-ms.openlocfilehash: 961331011db4e59583438a2dbdf366bbe0e34261
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 87ffca186346c3356c0277809d1d67145d1dd17b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448913"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628030"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
@@ -75,10 +75,10 @@ Jak jsou zjištěny běžné příčiny výstrah, lze výstrahy zvýšit s podro
 
 Azure Monitor automaticky využívá Machine Learning k pochopení normálních provozních parametrů nasazených aplikací. Díky tomu je možné detekovat služby, které fungují mimo jejich normální parametry. Například typický provoz v týdnu v lokalitě může být 10 000 požadavků za minutu. A potom v daném týdnu náhle počet požadavků narazí na velmi neobvyklé 20 000 požadavků za minutu. [Inteligentní zjišťování](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) si všimněte odchylky od normy a aktivuje výstrahu. V současné době je analýza trendů dostatečně chytrá, aby nedocházelo k vypálení falešně pozitivních výsledků, když se očekává zatížení provozu.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
-- [Inteligentní Alert Management – MS Ignite – video](https://oxfordcomputergroup.com/resourceso365-security-native-cloud-authentication/)
+- [Inteligentní Alert Management – MS Ignite – video](https://oxfordcomputergroup.com/resources/o365-security-native-cloud-authentication/)
 
 >[!div class="step-by-step"]
 >[Předchozí](monitoring-azure-kubernetes.md)

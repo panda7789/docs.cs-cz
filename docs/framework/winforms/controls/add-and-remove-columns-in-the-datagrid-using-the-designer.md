@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], adding columns
 - DataGridView control [Windows Forms], removing columns
 ms.assetid: 9e709f35-0a8c-4e7e-b4c4-bacb7a834077
-ms.openlocfilehash: 717a0074f0750352a23b90a9b6e5eab1dc6c925a
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8843b1d30f3e5f31a060e27b41b0105e6584f155
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732346"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628602"
 ---
 # <a name="how-to-add-and-remove-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DataGridView> musí obsahovat sloupce, aby se zobrazila data. Pokud plánujete naplnit ovládací prvek ručně, je nutné přidat sloupce sami. Alternativně můžete ovládací prvek navazovat na zdroj dat, který vygeneruje a automaticky naplní sloupce. Pokud zdroj dat obsahuje více sloupců, než chcete zobrazit, můžete odstranit nežádoucí sloupce.
@@ -21,7 +21,7 @@ Ovládací prvek model Windows Forms <xref:System.Windows.Forms.DataGridView> mu
 
 ## <a name="to-add-a-column-using-the-designer"></a>Přidání sloupce pomocí návrháře
 
-1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) a pak vyberte **Přidat sloupec**.
+1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf akcí návrháře (![malé černé šipky](./media/designer-actions-glyph.gif)) a pak vyberte **Přidat sloupec**.
 
 2. V dialogovém okně **Přidat sloupec** zvolte možnost sloupec s **vazbou** a vyberte sloupec ze zdroje dat, nebo zvolte možnost **nevázaný sloupec** a definujte sloupec pomocí zadaných polí.
 

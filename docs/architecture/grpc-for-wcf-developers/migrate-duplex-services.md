@@ -1,29 +1,29 @@
 ---
 title: Migrace duplexních služeb WCF na gRPC-gRPC pro vývojáře WCF
-description: Naučte se migrovat různé formy duplexní služby WCF na služby gRPC streaming.
+description: Naučte se migrovat různé formy duplexních služeb WCF na služby gRPC streaming.
 ms.date: 09/02/2019
-ms.openlocfilehash: e2248df20e5c2d8f96055d42ba684749251154bd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5737f02044ab9e4064f632164db764541a9c4d31
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971872"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628537"
 ---
 # <a name="migrate-wcf-duplex-services-to-grpc"></a>Migrace duplexních služeb WCF do gRPC
 
-Teď, když jsou na začátku základní koncepty, Tato část se bude pohlížet na složitější *streamování* gRPC Services.
+Teď, když máte představu o základních konceptech, v této části se podíváte na složitější *streamování* gRPC Services.
 
-V Windows Communication Foundation (WCF) existuje několik způsobů použití duplexních služeb. Některé služby jsou iniciovány klientem a poté jsou z tohoto serveru streamovaná data. Jiné plně duplexní služby můžou v dokumentaci WCF zahrnovat nepřetržitou obousměrnou komunikaci, například klasický příklad kalkulačky. Tato kapitola bude mít dvě možné implementace služby WCF "burzovních impulsů" a migruje je do gRPC: jedno pomocí služby RPC pro streamování serveru a druhý pomocí protokolu RPC s obousměrným datovým proudem.
+V Windows Communication Foundation (WCF) existuje několik způsobů použití duplexních služeb. Některé služby jsou iniciovány klientem a poté jsou z tohoto serveru streamovaná data. Jiné plně duplexní služby můžou zahrnovat nepřetržitou obousměrnou komunikaci, jako je například klasický Kalkulačka v dokumentaci k WCF. Tato kapitola bude trvat dvě možné implementace burzovních impulsů WCF a migrovat je na gRPC: jeden, který používá rozhraní RPC pro streamování serveru, a druhý, který používá protokol RPC s obousměrným datovým proudem.
 
 ## <a name="server-streaming-rpc"></a>RPC streamování serveru
 
-V [ukázkovém řešení SIMPLESTOCKTICKER WCF](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/SimpleStockTickerSample/wcf/SimpleStockTicker)je *SimpleStockPriceTicker*duplexní služba, kde klient spouští připojení se seznamem burzovních symbolů a server používá *rozhraní zpětného volání* k posílání aktualizací, jakmile budou k dispozici. Klient implementuje rozhraní, aby reagoval na volání ze serveru.
+V [ukázkovém řešení SIMPLESTOCKTICKER WCF](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/SimpleStockTickerSample/wcf/SimpleStockTicker)je SimpleStockPriceTicker duplexní služba, pro kterou klient spouští připojení se seznamem burzovních symbolů a server používá *rozhraní zpětného volání* k odesílání aktualizací, jakmile budou k dispozici. Klient implementuje rozhraní, aby reagoval na volání ze serveru.
 
 ### <a name="the-wcf-solution"></a>Řešení WCF
 
-Řešení WCF je implementováno jako server NetTCP v místním prostředí v konzolové aplikaci .NET Framework 4. x.
+Řešení WCF je implementováno jako hostitelský server NET. TCP ve .NET Framework 4. Konzolová aplikace *x* .
 
-#### <a name="the-servicecontract"></a>Třída ServiceContract
+#### <a name="servicecontract"></a>ServiceContract
 
 ```csharp
 [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ISimpleStockTickerCallback))]
@@ -34,7 +34,7 @@ public interface ISimpleStockTickerService
 }
 ```
 
-Služba má jedinou metodu bez návratového typu, protože bude používat rozhraní zpětného volání `ISimpleStockTickerCallback` k posílání dat klientovi v reálném čase.
+Služba má jedinou metodu bez návratového typu, protože používá rozhraní zpětného volání `ISimpleStockTickerCallback` k posílání dat klientovi v reálném čase.
 
 #### <a name="the-callback-interface"></a>Rozhraní zpětného volání
 
@@ -47,13 +47,13 @@ public interface ISimpleStockTickerCallback
 }
 ```
 
-Implementace těchto rozhraní se dají najít v řešení společně s falešným externími závislostmi k poskytnutí testovacích dat.
+Implementace těchto rozhraní můžete v řešení najít společně s falešným externími závislostmi k poskytnutí testovacích dat.
 
 ### <a name="grpc-streaming"></a>streamování gRPC
 
-GRPC způsob zpracování dat v reálném čase se liší. Volání z klienta na server může vytvořit trvalý datový proud, který lze monitorovat pro zprávy přicházející asynchronně. Navzdory rozdílům může být datový proud intuitivnější způsob, jak se s těmito daty pracovat a které jsou důležitější při moderním programování s důrazem na LINQ, reaktivní streamy, funkční programování atd.
+Proces gRPC pro zpracování dat v reálném čase se liší od procesu WCF. Volání z klienta na server může vytvořit trvalý datový proud, který lze monitorovat pro zprávy, které přicházejí asynchronně. Navzdory rozdílům může být datový proud intuitivnější způsob, jak se s těmito daty pracovat a které jsou pro moderní programování důležitější, což zdůrazňuje LINQ, reaktivní streamy, funkční programování atd.
 
-Definice služby potřebuje dvě zprávy: jednu pro požadavek a jednu pro datový proud. Služba vrátí datový proud `StockTickerUpdate` zprávy pomocí klíčového slova `stream` ve své deklaraci `return`. Doporučujeme, abyste do aktualizace přidali `Timestamp`, abyste zobrazili přesný čas změny ceny.
+Definice služby potřebuje dvě zprávy: jednu pro požadavek a jednu pro datový proud. Služba vrátí datový proud zprávy `StockTickerUpdate` s klíčovým slovem `stream` ve své deklaraci `return`. Doporučujeme, abyste do aktualizace přidali `Timestamp`, abyste zobrazili přesný čas změny ceny.
 
 #### <a name="simple_stock_tickerproto"></a>simple_stock_ticker. proto
 
@@ -81,7 +81,7 @@ message StockTickerUpdate {
 }
 ```
 
-### <a name="implement-the-simplestockticker"></a>Implementace rozhraní SimpleStockTicker
+### <a name="implement-simplestockticker"></a>Implementovat SimpleStockTicker
 
 Opětovným použitím falešného `StockPriceSubscriber` z projektu WCF zkopírujte tři třídy z knihovny tříd `TraderSys.StockMarket` do nové .NET Standard knihovny tříd v cílovém řešení. Chcete-li lépe dodržovat osvědčené postupy, přidejte `Factory` typ pro vytvoření instancí IT a zaregistrujte `IStockPriceSubscriberFactory` pomocí služby pro vkládání závislostí ASP.NET Core.
 
@@ -102,7 +102,7 @@ public class StockPriceSubscriberFactory : IStockPriceSubscriberFactory
 }
 ```
 
-#### <a name="registering-the-factory"></a>Registrace továrny
+#### <a name="register-the-factory"></a>Registrace továrny
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -112,7 +112,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Nyní lze tuto třídu použít k implementaci služby gRPC StockTicker.
+Tato třída se teď dá použít k implementaci `StockTickerService`gRPC.
 
 #### <a name="stocktickerservicecs"></a>StockTickerService.cs
 
@@ -149,7 +149,7 @@ public class StockTickerService : Protos.SimpleStockTicker.SimpleStockTickerBase
         }
         catch (Exception e)
         {
-            // Handle any errors due to broken connection etc.
+            // Handle any errors caused by broken connection, etc.
             _logger.LogError($"Failed to write message: {e.Message}");
         }
     }
@@ -163,17 +163,17 @@ public class StockTickerService : Protos.SimpleStockTicker.SimpleStockTickerBase
 }
 ```
 
-Jak vidíte, i když deklarace v souboru `.proto` říká, že metoda vrátí datový proud `StockTickerUpdate` zprávy, ve skutečnosti vrátí Vanilla `Task`. Úloha vytvoření datového proudu je zpracována generovaným kódem a běhovými knihovnami gRPC, které poskytují datový proud odpovědí `IServerStreamWriter<StockTickerUpdate>` připravený k použití.
+Jak vidíte, i když deklarace v souboru `.proto` říká, že metoda vrátí datový proud `StockTickerUpdate` zprávy, ve skutečnosti vrátí `Task`. Úloha vytvoření datového proudu je zpracována generovaným kódem a běhovými knihovnami gRPC, které poskytují datový proud odpovědí `IServerStreamWriter<StockTickerUpdate>` připravený k použití.
 
 Na rozdíl od služby duplexní služba WCF, kde je instance třídy služby aktivní, když je připojení otevřené, služba gRPC použije vrácenou úlohu, aby službu udržovala aktivní. Úloha by neměla být dokončena, dokud nebude připojení ukončeno.
 
 Služba může zjistit, kdy klient ukončil připojení pomocí `CancellationToken` z `ServerCallContext`. Jednoduchá statická metoda, `AwaitCancellation`, se používá k vytvoření úlohy, která se dokončí při zrušení tokenu.
 
-V metodě `Subscribe` pak Získejte `StockPriceSubscriber` a přidejte obslužnou rutinu události, která zapisuje do datového proudu odpovědí. Pak počkejte, než se připojení zavře, a teprve potom okamžitě odstraňte `subscriber`, aby se zabránilo zápisu dat do zavřeného datového proudu.
+V metodě `Subscribe` pak Získejte `StockPriceSubscriber` a přidejte obslužnou rutinu události, která zapisuje do datového proudu odpovědí. Pak počkejte, než se připojení zavře, a poté okamžitě odstraňte `subscriber`, aby nedošlo k pokusu o zápis dat do zavřeného datového proudu.
 
-Metoda `WriteUpdateAsync` má `try`/`catch` blok pro zpracování případných chyb, ke kterým může dojít při zápisu zprávy do datového proudu. To je důležitý aspekt trvalého připojení přes sítě, které by mohlo být v jakémkoli milisekundě přerušeno, ať už úmyslně nebo z důvodu selhání.
+Metoda `WriteUpdateAsync` má `try`/`catch` blok pro zpracování chyb, které mohou nastat při zápisu zprávy do datového proudu. Toto posouzení je důležité v trvalých připojeních přes sítě, která by mohla být v jakémkoli milisekundě přerušená, ať už úmyslně nebo z důvodu selhání.
 
-### <a name="using-the-stocktickerservice-from-a-client-application"></a>Použití rozhraní StockTickerService z klientské aplikace
+### <a name="use-stocktickerservice-from-a-client-application"></a>Použití StockTickerService z klientské aplikace
 
 Použijte stejný postup v předchozí části a vytvořte knihovnu klientských tříd klienta ze souboru `.proto` ke sdílení. V ukázce je k dispozici Konzolová aplikace .NET Core 3,0, která ukazuje, jak používat klienta.
 
@@ -204,18 +204,18 @@ class Program
 }
 ```
 
-V tomto případě není metoda `Subscribe` v generovaném klientovi asynchronní. Stream se vytvoří a dá se použít hned, protože jeho `MoveNext` metoda je asynchronní a při prvním volání se nespustí, dokud nebude připojení aktivní.
+V tomto případě není metoda `Subscribe` v generovaném klientovi asynchronní. Datový proud se vytvoří a dá se použít hned, protože jeho `MoveNext` metoda je asynchronní a při prvním volání ho nebude možné dokončit, dokud nebude připojení aktivní.
 
-Datový proud je předán metodě asynchronního `DisplayAsync`; Aplikace potom počká, až uživatel stiskne klávesu, a pak zruší metodu `DisplayAsync` a před ukončením počká, než se úkol dokončí.
+Datový proud je předán asynchronní metodě `DisplayAsync`. Aplikace potom počká, až uživatel stiskne klávesu, a poté zruší metodu `DisplayAsync` a před ukončením počká, než se úkol dokončí.
 
 > [!NOTE]
-> Tento kód používá novou C# syntaxi 8 "using Declaration" k Dispose datového proudu a kanálu při ukončení metody `Main`. Jedná se o malou změnu, ale je to dobrý čas, který omezí odsazení a prázdné řádky.
+> Tento kód používá novou C# syntaxi syntaxe 8 `using` k Dispose datového proudu a kanálu, když se metoda `Main` ukončí. Jedná se o malou změnu, ale je to dobrý čas, který omezí odsazení a prázdné řádky.
 
 #### <a name="consume-the-stream"></a>Využití streamu
 
 WCF používá rozhraní zpětného volání, aby mohl server volat metody přímo na straně klienta. datové proudy gRPC fungují jinak. Klient prochází vráceným datovým proudem a zpracovává zprávy stejným způsobem, jako kdyby byly vráceny z místní metody vracející `IEnumerable`.
 
-Typ `IAsyncStreamReader<T>` funguje podobně jako `IEnumerator<T>`: existuje `MoveNext` metoda, která vrátí hodnotu true, dokud bude existovat více dat, a vlastnost `Current`, která vrací nejnovější hodnotu. Jediným rozdílem je, že metoda `MoveNext` vrátí `Task<bool>` namísto pouze `bool`. Metoda rozšíření `ReadAllAsync` zalomí datový proud ve standardu C# 8 `IAsyncEnumerable`, který lze použít s novou syntaxí `await foreach`.
+Typ `IAsyncStreamReader<T>` funguje podobně jako `IEnumerator<T>`. Existuje `MoveNext` metoda, která vrací hodnotu true, pokud jsou k dispozici další data a vlastnost `Current`, která vrací nejnovější hodnotu. Jediným rozdílem je, že metoda `MoveNext` vrátí `Task<bool>` namísto pouze `bool`. Metoda rozšíření `ReadAllAsync` zalomí datový proud ve standardu C# 8 `IAsyncEnumerable`, který lze použít s novou syntaxí `await foreach`.
 
 ```csharp
 static async Task DisplayAsync(IAsyncStreamReader<StockTickerUpdate> stream, CancellationToken token)
@@ -239,9 +239,9 @@ static async Task DisplayAsync(IAsyncStreamReader<StockTickerUpdate> stream, Can
 ```
 
 > [!TIP]
-> Oddíl na [klientských knihovnách](client-libraries.md#iobservable) na konci této kapitoly si vyhledá, jak přidat rozšiřující metodu a třídy pro zabalení `IAsyncStreamReader<T>` v `IObservable<T>` pro vývojáře pomocí reaktivních programovacích vzorů.
+> Pro vývojáře, kteří používají reaktivní programové vzory, část na [klientských knihovnách](client-libraries.md#iobservable) na konci této kapitoly ukazuje, jak přidat rozšiřující metodu a třídy pro zabalení `IAsyncStreamReader<T>` v `IObservable<T>`.
 
-Znovu pečlivě Zachyťte výjimky z důvodu možnosti selhání sítě a <xref:System.OperationCanceledException>, které budou nevyhnutelně vyvolány, protože kód používá <xref:System.Threading.CancellationToken> k přerušení smyčky. `RpcException` typ obsahuje spoustu užitečných informací o chybách běhového prostředí gRPC, včetně `StatusCode`. Další informace najdete v části [ *zpracování chyb* v kapitole 4](error-handling.md).
+Znovu nezapomeňte zachytit výjimky z důvodu možnosti selhání sítě a kvůli <xref:System.OperationCanceledException>, která bude nevyhnutelně vyvolána, protože kód používá <xref:System.Threading.CancellationToken> k přerušení smyčky. `RpcException` typ obsahuje spoustu užitečných informací o chybách běhového prostředí gRPC, včetně `StatusCode`. Další informace najdete v části [ *zpracování chyb* v kapitole 4](error-handling.md).
 
 ## <a name="bidirectional-streaming"></a>Obousměrný streamování
 
@@ -270,9 +270,9 @@ public interface IFullStockTickerService
 
 Rozhraní zpětného volání zůstává stejné.
 
-Implementace tohoto modelu v gRPC je méně jednoduchá, protože nyní existují dva proudy dat s předávanými zprávami: jeden od klienta k serveru a druhý ze serveru do klienta. Nelze použít více metod pro implementaci operace přidání a odebrání, ale více než jeden typ zprávy lze předat jednomu datovému proudu pomocí typu `Any` nebo `oneof` klíčového slova, které bylo pokryto v [kapitole 3](protobuf-any-oneof.md).
+Implementace tohoto modelu v gRPC je méně jednoduchá, protože nyní existují dva proudy dat s předávanými zprávami: jeden od klienta k serveru a druhý ze serveru do klienta. Není možné použít více metod k implementaci operací přidání a odebrání, ale můžete předat více než jeden typ zprávy v jednom datovém proudu pomocí typu `Any` nebo klíčového slova `oneof`, které bylo pokryto v [kapitole 3](protobuf-any-oneof.md).
 
-V případě, že existuje určitá sada typů, které jsou přijatelné, `oneof` představuje lepší způsob, jak jít. Použijte `ActionMessage`, která může obsahovat buď `AddSymbolRequest`, nebo `RemoveSymbolRequest`.
+V případě, že existuje určitá sada typů, které jsou přijatelné, `oneof` představuje lepší způsob, jak jít. Použijte `ActionMessage`, který může obsahovat `AddSymbolRequest` nebo `RemoveSymbolRequest`:
 
 ```protobuf
 message ActionMessage {
@@ -291,7 +291,7 @@ message RemoveSymbolRequest {
 }
 ```
 
-Deklarace služby streamování na obousměrné streamování, která přebírá proud `ActionMessage`ch zpráv.
+Deklarovat službu obousměrného streamování, která přebírá proud `ActionMessage`ch zpráv:
 
 ```protobuf
 service FullStockTicker {
@@ -299,7 +299,7 @@ service FullStockTicker {
 }
 ```
 
-Implementace této služby je podobná předchozímu příkladu, s výjimkou prvního parametru `Subscribe` metody je nyní `IAsyncStreamReader<ActionMessage>`, které lze použít ke zpracování `Add` a `Remove` požadavků.
+Implementace této služby je podobná jako v předchozím příkladu, s výjimkou prvního parametru metody `Subscribe` je teď `IAsyncStreamReader<ActionMessage>`, která se dá použít ke zpracování `Add` a `Remove` požadavků:
 
 ```csharp
 public override async Task Subscribe(IAsyncStreamReader<ActionMessage> requestStream, IServerStreamWriter<StockTickerUpdate> responseStream, ServerCallContext context)
@@ -332,7 +332,7 @@ private async Task WriteUpdateAsync(IServerStreamWriter<StockTickerUpdate> strea
     }
     catch (Exception e)
     {
-        // Handle any errors due to broken connection etc.
+        // Handle any errors caused by broken connection, etc.
         _logger.LogError($"Failed to write message: {e.Message}");
     }
 }
@@ -345,7 +345,7 @@ private static Task AwaitCancellation(CancellationToken token)
 }
 ```
 
-Třída `ActionMessage`, kterou gRPC pro USA vygenerovala, že je možné nastavit jenom jednu z vlastností `Add` a `Remove` a najít, která z nich není `null`, je platný způsob, jakým se používá typ zprávy, ale lepší způsob hledání. Generování kódu také vytvořilo `enum ActionOneOfCase` ve třídě `ActionMessage`, která vypadá takto:
+Třída `ActionMessage`, kterou gRPC vygenerovala, zaručuje, že lze nastavit pouze jeden z vlastností `Add` a `Remove`. Zjištění, které z nich není `null`, představuje platný způsob, jak určit typ zprávy, který se používá, ale lepší způsob je. Generování kódu také vytvořilo `enum ActionOneOfCase` ve třídě `ActionMessage`, která vypadá takto:
 
 ```csharp
 public enum ActionOneofCase {
@@ -355,7 +355,7 @@ public enum ActionOneofCase {
 }
 ```
 
-Vlastnost `ActionCase` na objektu `ActionMessage` lze použít s příkazem `switch` k určení, které pole je nastaveno.
+Vlastnost `ActionCase` na objektu `ActionMessage` lze použít s příkazem `switch` k určení, které pole je nastaveno:
 
 ```csharp
 private async Task HandleActions(IAsyncStreamReader<ActionMessage> requestStream, IFullStockPriceSubscriber subscriber, CancellationToken token)
@@ -382,13 +382,13 @@ private async Task HandleActions(IAsyncStreamReader<ActionMessage> requestStream
 ```
 
 > [!TIP]
-> Příkaz `switch` má `default` případ, který zaznamená upozornění, pokud je zjištěna neznámá `ActionOneOfCase` hodnota. To může být užitečné v případě, že klient používá novější verzi `.proto` souboru, který přidal další akce. Je to jeden z důvodů, proč je použití `switch` lepší než testování pro `null` ve známých polích.
+> Příkaz `switch` má `default` případ, který zaznamená upozornění, pokud nalezne neznámou hodnotu `ActionOneOfCase`. To může být užitečné pro indikaci, že klient používá novější verzi `.proto` souboru, který přidal další akce. Je to jeden z důvodů, proč je použití `switch` lepší než testování pro `null` ve známých polích.
 
-### <a name="use-the-fullstocktickerservice-from-a-client-application"></a>Použití FullStockTickerService z klientské aplikace
+### <a name="use-fullstocktickerservice-from-a-client-application"></a>Použití FullStockTickerService z klientské aplikace
 
-Existuje jednoduchá aplikace .NET Core 3,0 WPF, která předvádí použití tohoto složitějšího klienta. Úplnou aplikaci najdete [na GitHubu](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTicker).
+Existuje jednoduchá aplikace .NET Core 3,0 WPF, která demonstruje použití tohoto složitějšího klienta. Celou aplikaci můžete najít na [GitHubu](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTicker).
 
-Klient se používá ve třídě `MainWindowViewModel`, která získá instanci `FullStockTicker.FullStockTickerClient` typu z vkládání závislostí.
+Klient se používá ve třídě `MainWindowViewModel`, která získá instanci `FullStockTicker.FullStockTickerClient` typu z injektáže vložením závislosti:
 
 ```csharp
 public class MainWindowViewModel : IAsyncDisposable, INotifyPropertyChanged
@@ -431,9 +431,9 @@ public async Task Remove(PriceViewModel priceViewModel)
 ```
 
 > [!IMPORTANT]
-> Nastavením hodnoty `oneof` pole u zprávy se automaticky vymaže všechna pole, která byla dříve nastavena.
+> Nastavením hodnoty `oneof` pole na zprávu automaticky vymažete všechna pole, která byla nastavena dříve.
 
-Proud odpovědí je zpracováván v metodě `async` a `Task`, která se vrátí, je držena, aby byla uvolněna při zavření okna.
+Proud odpovědí je zpracováván v metodě `async`. `Task`, kterou vrátí, je držena, aby byla uvolněna při zavření okna:
 
 ```csharp
 private async Task HandleResponsesAsync(CancellationToken token)
@@ -460,12 +460,12 @@ private async Task HandleResponsesAsync(CancellationToken token)
 }
 ```
 
-### <a name="client-clean-up"></a>Vyčištění klienta
+### <a name="client-cleanup"></a>Vyčištění klienta
 
-Po zavření okna a `MainWindowViewModel` je uvolněna (z `Closed` události `MainWindow`), doporučujeme, abyste správně odstranili `AsyncDuplexStreamingCall` objekt. Konkrétně by měla být volána metoda `CompleteAsync` v `RequestStream`, aby se řádně zavřel datový proud na serveru. Následující příklad ukazuje metodu `DisposeAsync` z ukázkového zobrazení-model:
+Po zavření okna a `MainWindowViewModel` je uvolněna (z `Closed` události `MainWindow`), doporučujeme, abyste správně odstranili `AsyncDuplexStreamingCall` objekt. Konkrétně by měla být volána metoda `CompleteAsync` v `RequestStream`, aby se řádně zavřel datový proud na serveru. Tento příklad ukazuje metodu `DisposeAsync` z ukázkového zobrazení-model:
 
 ```csharp
-public ValueTask DisposeAsync()
+public async ValueTask DisposeAsync()
 {
     try
     {
@@ -479,7 +479,7 @@ public ValueTask DisposeAsync()
 }
 ```
 
-Uzavírání datových proudů požadavků umožňuje serveru včas vyřadit vlastní prostředky. To zlepšuje efektivitu a škálovatelnost služeb a zabraňuje výjimkám.
+Uzavírání datových proudů požadavků umožňuje serveru včas nakládat své vlastní prostředky. To zlepšuje efektivitu a škálovatelnost služeb a zabraňuje výjimkám.
 
 >[!div class="step-by-step"]
 >[Předchozí](migrate-request-reply.md)

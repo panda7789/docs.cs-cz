@@ -3,12 +3,12 @@ title: Telemetrie .NET Core SDK
 description: Objevte funkce telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: 8bde344ee393e113502a0895ee55c241cbf24c57
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: abc9f8e1ef134ebfb5ec9acacb629d5180aaf83b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714106"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625914"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrie .NET Core SDK
 
@@ -16,7 +16,7 @@ ms.locfileid: "75714106"
 
 Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](https://creativecommons.org/licenses/by/4.0/)navýšení. 
 
-## <a name="scope"></a>Obor
+## <a name="scope"></a>Rozsah
 
 `dotnet` má dvě funkce: ke spuštění aplikací a k provádění příkazů rozhraní příkazového řádku. Při použití `dotnet` k spuštění aplikace v následujícím formátu *není shromažďována* telemetrie:
 
@@ -54,15 +54,15 @@ Ochrana vašich osobních údajů je pro nás důležitá. Pokud máte podezřen
 
 Funkce telemetrie shromažďuje následující data:
 
-| Verze sady SDK | Datové |
+| Verze sady SDK | Data |
 |--------------|------|
-| Všechny          | Časové razítko vyvolání |
-| Všechny          | Byl vyvolán příkaz (například "Build"), který začíná hodnotou hash 2,1. |
-| Všechny          | Tři oktety, které se používají k určení geografického umístění. |
-| Všechny          | Operační systém a verze. |
-| Všechny          | ID modulu runtime (RID), na kterém je sada SDK spuštěná. |
-| Všechny          | Verze .NET Core SDK |
-| Všechny          | Profil telemetrie: volitelná hodnota se používá jenom s výslovným výslovným souhlasem uživatele a používá se interně v Microsoftu. |
+| Vše          | Časové razítko vyvolání |
+| Vše          | Byl vyvolán příkaz (například "Build"), který začíná hodnotou hash 2,1. |
+| Vše          | Tři oktety, které se používají k určení geografického umístění. |
+| Vše          | Operační systém a verze. |
+| Vše          | ID modulu runtime (RID), na kterém je sada SDK spuštěná. |
+| Vše          | Verze .NET Core SDK |
+| Vše          | Profil telemetrie: volitelná hodnota se používá jenom s výslovným výslovným souhlasem uživatele a používá se interně v Microsoftu. |
 | > = 2.0        | Argumenty a možnosti příkazu: několik argumentů a možností je shromažďováno (nejedná se o libovolný řetězec). Viz [shromážděné možnosti](#collected-options). Hodnota hash po 2.1.300 |
 | > = 2.0         | Určuje, jestli je sada SDK spuštěná v kontejneru. |
 | > = 2.0         | Cílové architektury (z události `TargetFramework`), které začínají algoritmem hash 2,1. |
@@ -94,8 +94,8 @@ Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu 
 |-------------------------|------------------------------------------------------------------------------------------------|
 | `--verbosity`           | Všechny příkazy                                                                                   |
 | `--language`            | `dotnet new`                                                                                   |
-| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`                  |
-| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`, `dotnet vstest` |
+| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run``dotnet test`                  |
+| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test``dotnet vstest` |
 | `--runtime`             | `dotnet build``dotnet publish`                                                              |
 | `--platform`            | `dotnet vstest`                                                                                |
 | `--logger`              | `dotnet vstest`                                                                                |
@@ -128,13 +128,13 @@ at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, ITelemetry telemetryC
 at Microsoft.DotNet.Cli.Program.Main(String[] args)
 ```
 
-### <a name="avoid-inadvertent-disclosure-information"></a>Vyhněte se neúmyslným informacím o zveřejnění
+### <a name="avoid-inadvertent-disclosure-of-information"></a>Vyhněte se nechtěnému zveřejňování informací
 
 Přispěvatelé .NET Core a všichni ostatní spouštějí verzi .NET Core SDK, kterou samy vytvořili, by měli zvážit cestu ke svému zdrojovému kódu sady SDK. Pokud dojde k chybě při použití .NET Core SDK, které je vlastní sestavení ladění nebo nakonfigurováno pomocí vlastních souborů symbolů sestavení, bude cesta ke zdrojovému souboru sady SDK z sestavovacího počítače shromažďována jako součást trasování zásobníku a není použita hodnota hash.
 
 Z tohoto důvodu by se vlastní sestavení .NET Core SDK neměla nacházet v adresářích, jejichž názvy cest zveřejňují osobní nebo citlivé informace. 
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Data telemetrie .NET Core CLI-2019 Q2](https://dotnet.microsoft.com/platform/telemetry/dotnet-core-cli-2019q2)
 - [Zdroj odkazů telemetrie (úložiště dotnet/CLI)](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)

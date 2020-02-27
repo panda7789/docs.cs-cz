@@ -2,16 +2,16 @@
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
 ms.date: 05/29/2018
-ms.openlocfilehash: 909815151265117395c6d8d13b4443a245c05f9e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 890d1fc3fd9d47f2bdcd63f2a25248c3edd705e4
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451191"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626044"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
 ## <a name="name"></a>Název
 
@@ -19,36 +19,15 @@ ovladač testu `dotnet test`-.NET použitý ke spuštění testů jednotek
 
 ## <a name="synopsis"></a>Stručný obsah
 
-<!-- markdownlint-disable MD025 -->
-
-# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
-
 ```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
-    [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] 
-    [-v|--verbosity] [-- <RunSettings arguments>]
+dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame]
+    [-c|--configuration] [--collect] [-d|--diag] [-f|--framework]
+    [--filter] [-l|--logger] [--no-build] [--no-restore]
+    [-o|--output] [-r|--results-directory] [-s|--settings]
+    [-t|--list-tests] [-v|--verbosity] [-- <RunSettings arguments>]
 
 dotnet test [-h|--help]
 ```
-
-# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
-
-```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
-    [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
-
-dotnet test [-h|--help]
-```
-
-# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
-
-```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
-
-dotnet test [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Popis
 
@@ -60,213 +39,103 @@ Projekty testů určují Test Runner pomocí obyčejného prvku `<PackageReferen
 
 ## <a name="arguments"></a>Argumenty
 
-`PROJECT`
+- **`PROJECT`**
 
-Cesta k testovacímu projektu. Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
+  Cesta k testovacímu projektu. Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21"></a>[.NET Core 2,1](#tab/netcore21)
+- **`a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
-`-a|--test-adapter-path <PATH_TO_ADAPTER>`
+  Použijte vlastní testovací adaptéry ze zadané cesty v testovacím běhu.
 
-Použijte vlastní testovací adaptéry ze zadané cesty v testovacím běhu.
+- **`-blame`**
 
-`--blame`
+  Spustí testy v režimu viny. Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence. XML* , který zachycuje pořadí spuštění testů před selháním.
 
-Spustí testy v režimu viny. Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu. Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence. XML* , který zachycuje pořadí spuštění testů před selháním.
+- **`c|--configuration {Debug|Release}`**
 
-`-c|--configuration {Debug|Release}`
+  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení sady SDK.
 
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení sady SDK.
+- **`-collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
-`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
+  Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
 
-Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
+- **`d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
+  Povolí diagnostický režim pro testovací platformu a zapíše diagnostické zprávy do zadaného souboru.
 
-Povolí diagnostický režim pro testovací platformu a zapíše diagnostické zprávy do zadaného souboru.
+- **`f|--framework <FRAMEWORK>`**
 
-`-f|--framework <FRAMEWORK>`
+  Vyhledá testovací binární soubory pro konkrétní [rozhraní](../../standard/frameworks.md).
 
-Vyhledá testovací binární soubory pro konkrétní [rozhraní](../../standard/frameworks.md).
+- **`--filter <EXPRESSION>`**
 
-`--filter <EXPRESSION>`
+  Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v části [Podrobnosti o možnosti filtru](#filter-option-details) . Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
 
-Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v části [Podrobnosti o možnosti filtru](#filter-option-details) . Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
+- **`h|--help`**
 
-`-h|--help`
+  Vypíše krátkou nápovědu k příkazu.
 
-Vypíše krátkou nápovědu k příkazu.
+- **`l|--logger <LoggerUri/FriendlyName>`**
 
-`-l|--logger <LoggerUri/FriendlyName>`
+  Určuje protokolovací nástroj pro výsledky testů.
 
-Určuje protokolovací nástroj pro výsledky testů.
+- **`--no-build`**
 
-`--no-build`
+  Před spuštěním nevytvoří testovací projekt. Také implicitně nastaví příznak-`--no-restore`.
 
-Před spuštěním nevytvoří testovací projekt. Také implicitně nastaví příznak `--no-restore`.
+- **`--no-restore`**
 
-`--no-restore`
+  Při spuštění příkazu neprovede implicitní obnovení.
 
-Při spuštění příkazu neprovede implicitní obnovení.
+- **`-o|--output <OUTPUT_DIRECTORY>`**
 
-`-o|--output <OUTPUT_DIRECTORY>`
+  Adresář, ve kterém se mají najít binární soubory, které se mají spustit.
 
-Adresář, ve kterém se mají najít binární soubory, které se mají spustit.
+- **`-r|--results-directory <PATH>`**
 
-`-r|--results-directory <PATH>`
+  Adresář, do kterého budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, vytvoří se.
 
-Adresář, do kterého budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, vytvoří se.
+- **`-s|--settings <SETTINGS_FILE>`**
 
-`-s|--settings <SETTINGS_FILE>`
+  Soubor `.runsettings`, který se má použít pro spuštění testů. [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
 
-Soubor `.runsettings`, který se má použít pro spuštění testů. [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
+- **`-t|--list-tests`**
 
-`-t|--list-tests`
+  Vypíše všechny zjištěné testy v aktuálním projektu.
 
-Vypíše všechny zjištěné testy v aktuálním projektu.
+- **`-v|--verbosity <LEVEL>`**
 
-`-v|--verbosity <LEVEL>`
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
 
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
+- argumenty `RunSettings`
 
-`RunSettings arguments`
+  Argumenty jsou předány jako `RunSettings` konfigurace testu. Argumenty jsou zadány jako páry `[name]=[value]` po "--" (Všimněte si mezer za-). K oddělení více párů `[name]=[value]` se používá mezera.
 
-Argumenty byly předány jako konfigurace RunSettings pro test. Argumenty jsou zadány jako páry `[name]=[value]` po "--" (Všimněte si mezer za-). K oddělení více párů `[name]=[value]` se používá mezera.
+  Příklad: `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-Příklad: `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
-
-Další informace o RunSettings naleznete v tématu [VSTest. Console. exe: předávání argumentů runsettings](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
-
-# <a name="net-core-20"></a>[.NET Core 2,0](#tab/netcore20)
-
-`-a|--test-adapter-path <PATH_TO_ADAPTER>`
-
-Použijte vlastní testovací adaptéry ze zadané cesty v testovacím běhu.
-
-`-c|--configuration {Debug|Release}`
-
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení sady SDK.
-
-`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
-
-Povolí shromažďování dat pro testovací běh. Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).
-
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
-
-Povolí diagnostický režim pro testovací platformu a zapíše diagnostické zprávy do zadaného souboru.
-
-`-f|--framework <FRAMEWORK>`
-
-Vyhledá testovací binární soubory pro konkrétní [rozhraní](../../standard/frameworks.md).
-
-`--filter <EXPRESSION>`
-
-Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v části [Podrobnosti o možnosti filtru](#filter-option-details) . Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
-
-`-h|--help`
-
-Vypíše krátkou nápovědu k příkazu.
-
-`-l|--logger <LoggerUri/FriendlyName>`
-
-Určuje protokolovací nástroj pro výsledky testů.
-
-`--no-build`
-
-Před spuštěním nevytvoří testovací projekt. Také implicitně nastaví příznak `--no-restore`.
-
-`--no-restore`
-
-Při spuštění příkazu neprovede implicitní obnovení.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Adresář, ve kterém se mají najít binární soubory, které se mají spustit.
-
-`-r|--results-directory <PATH>`
-
-Adresář, do kterého budou umístěny výsledky testů. Pokud zadaný adresář neexistuje, vytvoří se.
-
-`-s|--settings <SETTINGS_FILE>`
-
-Soubor `.runsettings`, který se má použít pro spuštění testů. [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
-
-`-t|--list-tests`
-
-Vypíše všechny zjištěné testy v aktuálním projektu.
-
-`-v|--verbosity <LEVEL>`
-
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
-
-# <a name="net-core-1x"></a>[.NET Core 1. x](#tab/netcore1x)
-
-`-a|--test-adapter-path <PATH_TO_ADAPTER>`
-
-Použijte vlastní testovací adaptéry ze zadané cesty v testovacím běhu.
-
-`-c|--configuration {Debug|Release}`
-
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`, ale konfigurace vašeho projektu může přepsat toto výchozí nastavení sady SDK.
-
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
-
-Povolí diagnostický režim pro testovací platformu a zapíše diagnostické zprávy do zadaného souboru.
-
-`-f|--framework <FRAMEWORK>`
-
-Vyhledá testovací binární soubory pro konkrétní [rozhraní](../../standard/frameworks.md).
-
-`--filter <EXPRESSION>`
-
-Odfiltruje testy v aktuálním projektu pomocí daného výrazu. Další informace najdete v části [Podrobnosti o možnosti filtru](#filter-option-details) . Další informace a příklady použití selektivního filtrování testů jednotek naleznete v tématu [spuštění selektivních testů jednotek](../testing/selective-unit-tests.md).
-
-`-h|--help`
-
-Vypíše krátkou nápovědu k příkazu.
-
-`-l|--logger <LoggerUri/FriendlyName>`
-
-Určuje protokolovací nástroj pro výsledky testů.
-
-`--no-build`
-
-Před spuštěním nevytvoří testovací projekt.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Adresář, ve kterém se mají najít binární soubory, které se mají spustit.
-
-`-s|--settings <SETTINGS_FILE>`
-
-Soubor `.runsettings`, který se má použít pro spuštění testů. [Nakonfigurujte testy jednotek pomocí `.runsettings` souboru.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
-
-`-t|--list-tests`
-
-Vypíše všechny zjištěné testy v aktuálním projektu.
-
-`-v|--verbosity <LEVEL>`
-
-Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
-
----
+  Další informace naleznete v tématu [VSTest. Console. exe: předávání argumentů runsettings](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 ## <a name="examples"></a>Příklady
 
-Spustit testy v projektu v aktuálním adresáři:
+- Spustit testy v projektu v aktuálním adresáři:
 
-`dotnet test`
+  ```dotnetcli
+  dotnet test
+  ```
 
-Spusťte testy v projektu `test1`:
+- Spusťte testy v projektu `test1`:
 
-`dotnet test ~/projects/test1/test1.csproj`
+  ```dotnetcli
+  dotnet test ~/projects/test1/test1.csproj
+  ```
 
-Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor výsledků testů ve formátu TRX:
+- Spusťte testy v projektu v aktuálním adresáři a vygenerujte soubor výsledků testů ve formátu TRX:
 
-`dotnet test --logger trx`
+  ```dotnetcli
+  dotnet test --logger trx
+  ```
 
 ## <a name="filter-option-details"></a>Podrobnosti možnosti filtru
 
@@ -299,7 +168,7 @@ Výrazy se dají spojit s podmíněnými operátory:
 | Operátor            | Funkce |
 | ------------------- | -------- |
 | <code>&#124;</code> | NEBO       |
-| `&`                 | A      |
+| `&`                 | AND      |
 
 Výrazy můžete uzavřít do závorek při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)`).
 

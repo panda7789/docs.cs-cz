@@ -2,12 +2,12 @@
 title: Migrace služby Request-Reply WCF do gRPC-gRPC pro vývojáře WCF
 description: Naučte se migrovat jednoduchou službu Request-Reply z WCF na gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: f0b20e7b374438f90d83aebc6035a4e4dd94ae18
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 018aa94a15cdcb1e0f559afb7b3a88cd4f915398
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971789"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628550"
 ---
 # <a name="migrate-a-wcf-request-reply-service-to-a-grpc-unary-rpc"></a>Migrace služby požadavek-odpověď WCF na gRPC unární RPC
 
@@ -15,7 +15,7 @@ V této části se dozvíte, jak migrovat základní službu Request-Reply ve sl
 
 ## <a name="the-wcf-solution"></a>Řešení WCF
 
-[Řešení PortfoliosSample](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/wcf/TraderSys) zahrnuje jednoduchou službu portfolio požadavek-odpověď pro stažení jednoho portfolia nebo všechny portfolia pro daného dodavatele. Služba je definována v `IPortfolioService` rozhraní s atributem `ServiceContract`:
+[Řešení PortfoliosSample](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/wcf/TraderSys) zahrnuje jednoduchou službu portfolio požadavků a odpovědí ke stažení jednoho portfolia nebo všech portfolií pro daného dodavatele. Služba je definována v `IPortfolioService` rozhraní s atributem `ServiceContract`:
 
 ```csharp
 [ServiceContract]
@@ -29,7 +29,7 @@ public interface IPortfolioService
 }
 ```
 
-`Portfolio` model je jednoduchá C# třída označená pomocí [DataContract](xref:System.Runtime.Serialization.DataContractAttribute), včetně seznamu objektů `PortfolioItem`. Tyto modely jsou definovány v projektu `TraderSys.PortfolioData` společně s třídou úložiště, která představuje abstrakci přístupu k datům.
+`Portfolio` model je jednoduchá C# třída označená pomocí [DataContract](xref:System.Runtime.Serialization.DataContractAttribute) a obsahuje seznam objektů `PortfolioItem`. Tyto modely jsou definovány v `TraderSys.PortfolioData` projektu společně s třídou úložiště, která představuje abstrakci přístupu k datům.
 
 ```csharp
 [DataContract]
@@ -62,7 +62,7 @@ public class PortfolioItem
 }
 ```
 
-Implementace `ServiceContract` používá třídu úložiště poskytnutou prostřednictvím injektáže, který vrací instance `DataContract`ch typů.
+Implementace `ServiceContract` používá třídu úložiště poskytovanou prostřednictvím injektáže, který vrací instance `DataContract`ch typů:
 
 ```csharp
 public class PortfolioService : IPortfolioService
@@ -88,7 +88,7 @@ public class PortfolioService : IPortfolioService
 
 ## <a name="the-portfoliosproto-file"></a>Portfolio. soubor.
 
-Pokud jste postupovali podle pokynů v předchozí části, měli byste mít projekt gRPC s `portfolios.proto` souborem, který vypadá nějak takto.
+Pokud jste postupovali podle pokynů v předchozí části, měli byste mít projekt gRPC s `portfolios.proto` souborem, který vypadá takto:
 
 ```protobuf
 syntax = "proto3";
@@ -104,12 +104,12 @@ service Portfolios {
 
 Prvním krokem je migrace tříd `DataContract` na jejich ekvivalenty Protobuf.
 
-## <a name="convert-the-datacontracts-to-grpc-messages"></a>Převod kontraktů DataContract na zprávy gRPC
+## <a name="convert-the-datacontract-classes-to-grpc-messages"></a>Převést třídy DataContract na zprávy gRPC
 
-Třída `PortfolioItem` bude nejprve převedena na zprávu Protobuf, protože na ní závisí `Portfolio` třída. Třída je velmi jednoduchá a tři vlastnosti jsou mapovány přímo na gRPC datové typy. Vlastnost `Cost` představující cenu vyplácenou za akcie při nákupu, je `decimal` pole a gRPC podporuje pouze `float` nebo `double` pro reálné hodnoty, které nejsou vhodné pro měnu. Vzhledem k tomu, že se ceny za sdílení liší v rozmezí minimálně 1 centu, je možné náklady vyjádřit jako `int32` z centů.
+Třída `PortfolioItem` bude nejprve převedena na zprávu Protobuf, protože na ní závisí třída `Portfolio`. Třída je jednoduchá a tři vlastnosti jsou mapovány přímo na gRPC datové typy. Vlastnost `Cost`, která představuje cenu vyplácenou za akcie při nákupu, je pole `decimal`. gRPC podporuje pouze `float` nebo `double` pro skutečná čísla, která nejsou vhodná pro měnu. Vzhledem k tomu, že se ceny za sdílení liší minimálně v jednom centu, je možné náklady vyjádřit jako `int32` z centů.
 
 > [!NOTE]
-> Nezapomeňte použít `camelCase` pro názvy polí v souboru `.proto`; generátor C# kódu je převede na `PascalCase` za vás a uživatelé dalších jazyků budou děkují za dodržování různých standardů kódování.
+> Nezapomeňte použít camelCase pro názvy polí v souboru `.proto`. Generátor C# kódu je převede na PascalCase za vás a uživatelé dalších jazyků budou děkují za dodržování různých standardů kódování.
 
 ```protobuf
 message PortfolioItem {
@@ -130,15 +130,15 @@ message Portfolio {
 }
 ```
 
-Teď máme naši datovou zprávu, abychom mohli deklarovat koncové body RPC služby.
+Teď, když máte datové zprávy, můžete deklarovat koncové body RPC služby.
 
-## <a name="convert-the-servicecontract-to-a-grpc-service"></a>Převést třídu ServiceContract na službu gRPC
+## <a name="convert-servicecontract-to-a-grpc-service"></a>Převést třídu ServiceContract na službu gRPC
 
-Metoda `Get` WCF používá dva parametry: `Guid traderId` a `int portfolioId`. metody služby gRPC mohou převzít pouze jeden parametr, takže je nutné vytvořit zprávu pro uložení dvou hodnot. Běžným postupem je pojmenování těchto objektů požadavků stejným názvem jako metoda a přípona `Request`. `string` se znovu používá pro pole `traderId` namísto `Guid`.
+Metoda `Get` WCF používá dva parametry: `Guid traderId` a `int portfolioId`. metody služby gRPC mohou převzít pouze jeden parametr, takže musíte vytvořit zprávu pro uložení těchto dvou hodnot. Běžným postupem je pojmenování těchto objektů požadavků stejným názvem jako metoda následovaná `Request`příponou. `string` se znovu používá pro pole `traderId` namísto `Guid`.
 
-Služba může pouze vrátit `Portfolio` zprávu přímo, ale to může mít dopad na zpětnou kompatibilitu v budoucnu. Je vhodné definovat samostatné `Request` a `Response` zprávy pro každou metodu ve službě, a to i v případě, že je mnoho z nich stejné, a to v případě, že se jedná o `GetResponse` zprávu s jediným `Portfolio` polem.
+Služba může pouze vrátit `Portfolio` zprávu přímo, ale to může mít vliv na zpětnou kompatibilitu v budoucnu. Je dobrým zvykem definovat samostatné `Request` a `Response` zprávy pro každou metodu ve službě, a to i v případě, že je mnoho z nich teď stejné. Deklarujete `GetResponse`ovou zprávu s jedním `Portfolio` polem.
 
-Následující příklad ukazuje deklaraci metody služby gRPC pomocí zprávy `GetRequest`:
+Tento příklad ukazuje deklaraci metody služby gRPC ve zprávě `GetRequest`:
 
 ```protobuf
 message GetRequest {
@@ -155,12 +155,12 @@ service Portfolios {
 }
 ```
 
-Metoda `GetAll` WCF přijímá pouze jeden parametr, `traderId`, takže se může zdát, že jako typ parametru lze zadat `string`, ale gRPC vyžaduje definovaný typ zprávy. Tento požadavek pomáhá vyhodnotit postup použití vlastních zpráv pro všechny vstupy a výstupy, a to z důvodu zpětné kompatibility v budoucnu.
+Metoda `GetAll` WCF přebírá pouze jeden parametr, `traderId`, takže se může zdát, že jako typ parametru lze zadat `string`. Ale gRPC vyžaduje definovaný typ zprávy. Tento požadavek pomáhá vyhodnotit postup použití vlastních zpráv pro všechny vstupy a výstupy, a to z důvodu zpětné kompatibility v budoucnu.
 
-Metoda WCF vrátila také `List<Portfolio>`, ale ze stejného důvodu nepovoluje jednoduché typy parametrů, gRPC nepovoluje `repeated Portfolio` jako návratový typ. Místo toho vytvořte `GetAllResponse` typ pro zabalení seznamu.
+Metoda WCF také vrací `List<Portfolio>`, ale ze stejného důvodu nepovoluje jednoduché typy parametrů, gRPC nepovoluje `repeated Portfolio` jako návratový typ. Místo toho vytvořte `GetAllResponse` typ pro zabalení seznamu.
 
 > [!WARNING]
-> Můžete se rozhodnout vytvořit zprávu `PortfolioList` nebo podobnou a použít ji napříč různými metodami služby, ale tuto pokušení byste měli odolat. Není možné zjistit, jak se různé metody v rámci služby můžou v budoucnu vyvíjet, takže jejich zprávy jsou specifické a čistě oddělené.
+> Můžete se rozhodnout, že vytvoříte zprávu `PortfolioList` nebo něco podobného a použijete ji napříč různými metodami služby, ale tuto pokušení byste měli odolat. Není možné zjistit, jak se různé metody ve službě budou vyvíjet, takže jejich zprávy budou specifické a čistě oddělené.
 
 ```protobuf
 message GetAllRequest {
@@ -177,9 +177,9 @@ service Portfolios {
 }
 ```
 
-Pokud uložíte projekt s těmito změnami, cíl sestavení gRPC se spustí na pozadí a vygeneruje všechny typy zpráv Protobuf a základní třídu, kterou můžete zdědit k implementaci služby.
+Pokud uložíte projekt s těmito změnami, cíl sestavení gRPC se spustí na pozadí a vygeneruje všechny typy zpráv Protobuf a základní třídu, kterou můžete zdědit pro implementaci služby.
 
-Otevřete třídu `Services/GreeterService.cs` a odstraňte ukázkový kód. Nyní můžete přidat implementaci služby portfolio. Vygenerovaná základní třída bude v oboru názvů `Protos` a je vygenerována jako vnořená třída. gRPC vytvoří statickou třídu se stejným názvem jako služba v souboru `.proto` a pak základní třídu s příponou `Base` uvnitř této statické třídy, takže úplný identifikátor základního typu je `TraderSys.Portfolios.Protos.Portfolios.PortfoliosBase`.
+Otevřete třídu `Services/GreeterService.cs` a odstraňte ukázkový kód. Nyní můžete přidat implementaci služby portfolio. Vygenerovaná základní třída bude v oboru názvů `Protos` a je vygenerována jako vnořená třída. gRPC vytvoří statickou třídu se stejným názvem jako služba v souboru `.proto` a základní třídou s příponou `Base` uvnitř této statické třídy, takže úplný identifikátor základního typu je `TraderSys.Portfolios.Protos.Portfolios.PortfoliosBase`.
 
 ```csharp
 namespace TraderSys.Portfolios.Services
@@ -198,14 +198,14 @@ Návratový typ metody je `Task<T>`, kde `T` je typ zprávy odpovědi. Všechny 
 
 ## <a name="migrate-the-portfoliodata-library-to-net-core"></a>Migrace knihovny PortfolioData do .NET Core
 
-V tomto okamžiku projekt potřebuje úložiště portfolia a modely obsažené v knihovně tříd `TraderSys.PortfolioData` v řešení WCF. Nejjednodušší způsob, jak je přenést do více instancí, je vytvořit novou knihovnu tříd pomocí dialogového okna **Nový projekt** aplikace Visual Studio se šablonou *knihovny tříd (.NET Standard)* , nebo z příkazového řádku pomocí .NET Core CLI spustit následující příkazy z adresáře, který obsahuje soubor `TraderSys.sln`.
+V tomto okamžiku projekt potřebuje úložiště portfolia a modely obsažené v knihovně tříd `TraderSys.PortfolioData` v řešení WCF. Nejjednodušší způsob, jak je přenést do více instancí, je vytvořit novou knihovnu tříd pomocí dialogového okna **Nový projekt** aplikace Visual Studio se šablonou knihovny tříd (.NET Standard), nebo z příkazového řádku pomocí .NET Core CLI spustit tyto příkazy z adresáře, který obsahuje soubor `TraderSys.sln`:
 
 ```dotnetcli
 dotnet new classlib -o src/TraderSys.PortfolioData
 dotnet sln add src/TraderSys.PortfolioData
 ```
 
-Jakmile je knihovna vytvořena a přidána do řešení, odstraňte vygenerovaný `Class1.cs` soubor a zkopírujte soubory z knihovny řešení WCF do složky nové knihovny tříd, čímž zachováte strukturu složek.
+Poté, co jste vytvořili knihovnu a přidáte ji do řešení, odstraňte vygenerovaný `Class1.cs` soubor a zkopírujte soubory z knihovny řešení WCF do nové složky knihovny tříd, čímž zachováte strukturu složek:
 
 ```
 Models
@@ -215,7 +215,7 @@ IPortfolioRepository.cs
 PortfolioRepository.cs
 ```
 
-Projekty .NET ve stylu sady SDK automaticky zahrnují všechny `.cs` soubory do jejich vlastního adresáře, takže není nutné je explicitně přidávat do projektu. Jediným krokem je odebrání atributů `DataContract` a `DataMember` z tříd `Portfolio` a `PortfolioItem`, aby byly prostými starými C# třídami.
+Projekty .NET ve stylu sady SDK automaticky zahrnují všechny `.cs` soubory v nebo v jejich vlastním adresáři, takže je nemusíte explicitně přidávat do projektu. Jediným krokem je odebrání atributů `DataContract` a `DataMember` z tříd `Portfolio` a `PortfolioItem`, aby byly prostými starými C# třídami:
 
 ```csharp
 public class Portfolio
@@ -236,7 +236,7 @@ public class PortfolioItem
 
 ## <a name="use-aspnet-core-dependency-injection"></a>Použít vkládání závislostí ASP.NET Core
 
-Nyní můžete přidat odkaz na tuto knihovnu do projektu aplikace gRPC a spotřebovat třídu `PortfolioRepository` pomocí injektáže závislosti v implementaci služby gRPC. V aplikaci WCF bylo vkládání závislostí zajištěno kontejnerem Autofac IoC. ASP.NET Core má v nástroji vloženýmiy pro vkládání závislostí. úložiště lze zaregistrovat v metodě `ConfigureServices` `Startup` třídy.
+Nyní můžete přidat odkaz na tuto knihovnu do projektu aplikace gRPC a spotřebovat třídu `PortfolioRepository` pomocí injektáže závislosti v implementaci služby gRPC. V aplikaci WCF bylo vkládání závislostí zajištěno kontejnerem Autofac IoC. ASP.NET Core má v příkazu vloženýmiy pro vkládání závislostí. Úložiště můžete zaregistrovat v metodě `ConfigureServices` `Startup` třídy:
 
 ```csharp
 public class Startup
@@ -271,7 +271,7 @@ public class PortfolioService : Protos.Portfolios.PortfoliosBase
 
 Nyní, když jste deklarovali vaše zprávy a službu v souboru `portfolios.proto`, je nutné implementovat metody služby ve třídě `PortfolioService`, která dědí z třídy `Portfolios.PortfoliosBase` generované v gRPC. Metody jsou deklarovány jako `virtual` v základní třídě. Pokud je nepřepíšete, budou ve výchozím nastavení vráceny stavový kód "neimplementováno" gRPC.
 
-Začněte implementací metody `Get`. Výchozí přepsání vypadá jako v následujícím příkladu:
+Začněte implementací metody `Get`. Výchozí přepsání vypadá jako v tomto příkladu:
 
 ```csharp
 public override Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -280,7 +280,7 @@ public override Task<GetResponse> Get(GetRequest request, ServerCallContext cont
 }
 ```
 
-Prvním problémem je, že `request.TraderId` je řetězec a služba vyžaduje `Guid`. I když je očekávaný formát pro řetězec `UUID`, kód musí zabývat se možností, že volající odeslal neplatnou hodnotu a správně reagovat. Služba může s chybami reagovat vyvoláním `RpcException`a pomocí standardního stavového kódu `InvalidArgument` tento problém vyjádřit.
+Prvním problémem je, že `request.TraderId` je řetězec a služba vyžaduje `Guid`. I když je očekávaný formát pro řetězec `UUID`, musí kód zabývat se možností, že volající odeslal neplatnou hodnotu a odpovídajícím způsobem reagovat. Služba může reagovat s chybami tím, že vyvolají `RpcException` a použije standardní stavový kód `InvalidArgument` k vyjádření problému:
 
 ```csharp
 public override Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -294,7 +294,7 @@ public override Task<GetResponse> Get(GetRequest request, ServerCallContext cont
 }
 ```
 
-Jakmile bude k dispozici správná `Guid` hodnota `traderId`, úložiště se dá použít k načtení portfolia a vrácení do klienta.
+Po použití správné `Guid` hodnoty pro `traderId`můžete k načtení portfolia použít úložiště a vrátit ho do klienta:
 
 ```csharp
     var response = new GetResponse
@@ -305,7 +305,7 @@ Jakmile bude k dispozici správná `Guid` hodnota `traderId`, úložiště se d�
 
 ### <a name="map-internal-models-to-grpc-messages"></a>Mapování interních modelů na zprávy gRPC
 
-Předchozí kód ve skutečnosti nefunguje, protože úložiště vrací svůj vlastní POCO model `Portfolio`, ale *gRPC potřebuje vlastní* zprávu Protobuf `Portfolio`. Podobně jako mapování Entity Framework typů na typy přenosů dat, nejlepším řešením je poskytnout převod mezi těmito dvěma. Vhodným místem pro vložení kódu je do třídy generované Protobuf, která je deklarována jako třída `partial`, aby ji bylo možné rozšířit.
+Předchozí kód ve skutečnosti nefunguje, protože úložiště vrací svůj vlastní POCO model `Portfolio`, ale gRPC potřebuje vlastní zprávu Protobuf `Portfolio`. Stejně jako při mapování typů Entity Framework na typy přenosu dat, nejlepším řešením je poskytnout převod mezi těmito dvěma. Dobrým místem pro vložení kódu pro tento převod je v třídě generované Protobuf, která je deklarována jako třída `partial`, aby ji bylo možné rozšířit:
 
 ```csharp
 namespace TraderSys.Portfolios.Protos
@@ -349,7 +349,7 @@ namespace TraderSys.Portfolios.Protos
 > [!NOTE]
 > Můžete použít knihovnu, jako je například [automapper](https://automapper.org/) , pro zpracování tohoto převodu z interních tříd modelu na Protobuf typy, pokud nakonfigurujete převody typu nižší úrovně jako `string`/`Guid` nebo `decimal`/`double` a mapování seznamu.
 
-S kódem převodu na místě může být implementace metody `Get` dokončena.
+Teď, když máte na místě převod kódu, můžete dokončit implementaci `Get` metody:
 
 ```csharp
 public override async Task<GetResponse> Get(GetRequest request, ServerCallContext context)
@@ -369,7 +369,7 @@ public override async Task<GetResponse> Get(GetRequest request, ServerCallContex
 
 ```
 
-Implementace metody `GetAll` je podobná. Všimněte si, že pole `repeated` ve zprávách Protobuf jsou generována jako `readonly` vlastností typu `RepeatedField<T>`, takže je nutné do nich přidat položky pomocí metody `AddRange`, jako v následujícím příkladu:
+Implementace metody `GetAll` je podobná. Všimněte si, že pole `repeated` ve zprávách Protobuf jsou generována jako `readonly` vlastností typu `RepeatedField<T>`, takže je nutné do nich přidat položky pomocí metody `AddRange`, jako v tomto příkladu:
 
 ```csharp
 public override async Task<GetAllResponse> GetAll(GetAllRequest request, ServerCallContext context)
@@ -392,23 +392,23 @@ Po úspěšné migraci služby Request-Reply WCF do gRPC se podívejme na vytvo�
 
 ## <a name="generate-client-code"></a>Vygenerovat kód klienta
 
-Vytvořte .NET Standard knihovnu tříd ve stejném řešení, aby obsahovala klienta. Toto je primárně příklad vytváření kódu klienta, ale můžete ho zabalit pomocí NuGet a distribuovat ho do interního úložiště, aby se daly využívat jiné týmy .NET. Pokračujte a přidejte do řešení novou knihovnu tříd .NET Standard nazvanou `TraderSys.Portfolios.Client` a odstraňte soubor `Class1.cs`.
+Vytvořte .NET Standard knihovnu tříd ve stejném řešení, aby obsahovala klienta. Toto je primárně příklad vytváření kódu klienta, ale tuto knihovnu můžete zabalit pomocí nástroje NuGet a distribuovat ji do interního úložiště, aby se daly využívat jiné týmy .NET. Pokračujte a přidejte do řešení novou knihovnu tříd .NET Standard nazvanou `TraderSys.Portfolios.Client` a odstraňte soubor `Class1.cs`.
 
 > [!CAUTION]
 > Balíček NuGet pro [Grpc .NET. Client](https://www.nuget.org/packages/Grpc.Net.Client) vyžaduje rozhraní .net Core 3,0 (nebo jiný modul runtime kompatibilní s .NET Standard 2,1). Předchozí verze .NET Framework a .NET Core jsou podporovány balíčkem NuGet [Grpc. Core](https://www.nuget.org/packages/Grpc.Core) .
 
-V aplikaci Visual Studio 2019 můžete přidat odkazy na gRPC Services podobně jako při přidávání odkazů na služby do projektů WCF v dřívějších verzích sady Visual Studio. Odkazy na služby a připojené služby jsou všechny spravované ve stejném uživatelském rozhraní, ke kterému máte přístup kliknutím pravým tlačítkem myši na uzel **závislosti** v `TraderSys.Portfolios.Client` projektu v Průzkumník řešení a vybráním možnosti **Přidat připojenou službu**. V zobrazeném okně nástroje vyberte část odkazy na **služby** a klikněte na **Přidat nový odkaz na službu gRPC**.
+V aplikaci Visual Studio 2019 můžete přidat odkazy na gRPC Services způsobem, který je podobný jako při přidávání odkazů na služby do projektů WCF v dřívějších verzích sady Visual Studio. Odkazy na služby a připojené služby se teď spravují v rámci stejného uživatelského rozhraní. Přístup k uživatelskému rozhraní získáte tak, že kliknete pravým tlačítkem na uzel **závislosti** v `TraderSys.Portfolios.Client` projektu v Průzkumník řešení a vyberete **Přidat připojenou službu**. V zobrazeném okně nástroje vyberte oddíl odkazy na **službu** a pak vyberte **Přidat nový odkaz na službu gRPC**:
 
-![Uživatelské rozhraní připojené služby v aplikaci Visual Studio 2019](media/migrate-request-reply/add-connected-service.png)
+![Uživatelské rozhraní připojených služeb v aplikaci Visual Studio 2019](media/migrate-request-reply/add-connected-service.png)
 
-Přejděte k souboru `portfolios.proto` v projektu `TraderSys.Portfolios`, ponechte **typ třídy generovaný** jako **klient**a klikněte na **OK**.
+V projektu `TraderSys.Portfolios` přejděte k souboru `portfolios.proto`, **v části** **Vyberte typ třídy, který se má vygenerovat**, a pak vyberte **OK**:
 
 ![Dialogové okno Přidat nový odkaz na službu gRPC v aplikaci Visual Studio 2019](media/migrate-request-reply/add-new-grpc-service-reference.png)
 
 > [!TIP]
 > Všimněte si, že toto dialogové okno také poskytuje pole Adresa URL. Pokud vaše organizace udržuje adresář `.proto`ch souborů, který je přístupný pro web, můžete vytvořit klienty pouze nastavením této adresy URL.
 
-Při použití funkce **Přidat připojenou službu** sady Visual Studio je soubor `portfolios.proto` přidán do projektu knihovny tříd jako *propojený soubor*namísto zkopírování, takže změny souboru v projektu služby budou automaticky použity v klientském projektu. Element `<Protobuf>` v souboru `csproj` vypadá takto:
+Použijete-li funkci **Přidat připojenou službu** sady Visual Studio, soubor `portfolios.proto` se přidá do projektu knihovny tříd jako *propojený soubor* namísto zkopírování, takže změny souboru v projektu služby budou automaticky použity v klientském projektu. Element `<Protobuf>` v souboru `csproj` vypadá takto:
 
 ```xml
 <Protobuf Include="..\TraderSys.Portfolios\Protos\portfolios.proto" GrpcServices="Client">
@@ -417,7 +417,7 @@ Při použití funkce **Přidat připojenou službu** sady Visual Studio je soub
 ```
 
 > [!TIP]
-> Pokud nepoužíváte aplikaci Visual Studio nebo dáváte přednost práci z příkazového řádku, můžete použít globální nástroj **dotnet-grpc** pro správu odkazů Protobuf v rámci projektu .NET grpc. [Další informace najdete v dokumentaci **dotnet-grpc** ](https://docs.microsoft.com/aspnet/core/grpc/dotnet-grpc).
+> Pokud nepoužíváte aplikaci Visual Studio nebo chcete pracovat z příkazového řádku, můžete použít globální nástroj `dotnet-grpc` pro správu odkazů Protobuf v projektu .NET gRPC. Další informace najdete v dokumentaci k [`dotnet-grpc`](/aspnet/core/grpc/dotnet-grpc).
 
 ### <a name="use-the-portfolios-service-from-a-client-application"></a>Použití služby portfolio z klientské aplikace
 
@@ -449,7 +449,7 @@ public class Program
 }
 ```
 
-Nyní jste migrovali základní aplikaci WCF do ASP.NET Core služby gRPC a vytvořili klienta pro využívání služby z aplikace .NET. V další části jsou pokryty "duplexní" služby.
+Nyní jste migrovali základní aplikaci WCF do služby ASP.NET Core gRPC a vytvořili jste klienta pro využívání služby z aplikace .NET. V další části najdete další zahrnuté duplexní služby.
 
 >[!div class="step-by-step"]
 >[Předchozí](create-project.md)

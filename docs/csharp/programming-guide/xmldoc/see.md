@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cross-references [C#]
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
-ms.openlocfilehash: 17d1d344b9a27ffd4995fa4849ee6d5ce7f90f29
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: f4834f88c646b44269f8290c2ad08698c34e714a
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789693"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627669"
 ---
 # <a name="see-c-programming-guide"></a>\<najdete v >C# (Průvodce programováním).
 
@@ -27,7 +27,7 @@ ms.locfileid: "76789693"
 
 ## <a name="parameters"></a>Parametry
 
-- cref = " `member`"
+- cref = "`member`"
 
   Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor zkontroluje, zda daný prvek kódu existuje a předá `member` k názvu elementu ve výstupním souboru XML. Umístit *člena* v uvozovkách ("").
 
@@ -41,7 +41,7 @@ Následující příklad ukazuje \<zobrazení značky > v rámci oddílu Summary
 
 [!code-csharp[csProgGuideDocComments#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#12)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Průvodce programováním](../index.md)
 - [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)

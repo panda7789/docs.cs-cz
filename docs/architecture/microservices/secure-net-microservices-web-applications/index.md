@@ -3,12 +3,12 @@ title: Zabezpečení mikroslužeb a webových aplikací .NET
 description: Zabezpečení u mikroslužeb a webových aplikací .NET – Získejte informace o možnostech ověřování v ASP.NET Core webových aplikacích.
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: f82212956f5492a51ec99d092e1a5131d1b31313
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 0ac2591f8650e9f8cf29560735a9ec803d29ee4f
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77501647"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628329"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zajištění zabezpečených mikroslužeb a webových aplikací .NET
 
@@ -135,8 +135,8 @@ Ve všech případech musíte dokončit postup registrace aplikace, který je z�
 
 Podrobnosti o konfiguraci aplikace pro externího poskytovatele najdete v dokumentaci k ASP.NET Core v tématu [ověřování externího poskytovatele](/aspnet/core/security/authentication/social/).
 
-> [!TIP]
-Všechny podrobnosti zpracovává middleware autorizace a výše zmíněné služby. Proto stačí zvolit možnost ověřování **jednotlivých uživatelských účtů** při vytváření projektu webové aplikace ASP.NET code v aplikaci Visual Studio, jak je znázorněno na obrázku 9-3, kromě registrace výše zmíněných zprostředkovatelů ověřování.
+>[!TIP]
+>Všechny podrobnosti zpracovává middleware autorizace a výše zmíněné služby. Proto stačí zvolit možnost ověřování **jednotlivých uživatelských účtů** při vytváření projektu webové aplikace ASP.NET code v aplikaci Visual Studio, jak je znázorněno na obrázku 9-3, kromě registrace výše zmíněných zprostředkovatelů ověřování.
 
 ![Snímek obrazovky dialogového okna Nový ASP.NET Core webové aplikace](./media/index/select-individual-user-account-authentication-option.png)
 
@@ -303,7 +303,7 @@ Díky tomuto middlewaru jsou tokeny JWT automaticky extrahovány z autorizační
 
 Middleware pro ověření nosiče JWT může také podporovat pokročilejší scénáře, jako je například použití místního certifikátu k ověření tokenu, není-li tato autorita k dispozici. V tomto scénáři můžete zadat objekt `TokenValidationParameters` v objektu `JwtBearerOptions`.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Sdílení souborů cookie mezi aplikacemi** \
   [https://docs.microsoft.com/aspnet/core/security/cookie-sharing](/aspnet/core/security/cookie-sharing)

@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: faab6ac57629db11c60ee5b563ea95ebb90016dd
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 7c227b61c6d5b4ead00fced0dba046b90683fde1
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964360"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626409"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
 
-Při vytvoření [třídy](../../language-reference/keywords/class.md) nebo [struktury](../../language-reference/keywords/struct.md) se zavolá její konstruktor. Konstruktory mají stejný název jako třída nebo struktura a obvykle inicializují datové členy nového objektu.  
+Při vytvoření [třídy](../../language-reference/keywords/class.md) nebo [struktury](../../language-reference/builtin-types/struct.md) se zavolá její konstruktor. Konstruktory mají stejný název jako třída nebo struktura a obvykle inicializují datové členy nového objektu.  
   
  V následujícím příkladu je třída s názvem `Taxi` definována pomocí jednoduchého konstruktoru. Tato třída se pak vytvoří s operátorem [New](../../language-reference/operators/new-operator.md) . Konstruktor `Taxi` je vyvolán operátorem `new` ihned po přidělení paměti pro nový objekt.  
   
@@ -29,7 +29,7 @@ Při vytvoření [třídy](../../language-reference/keywords/class.md) nebo [str
   
  Další informace naleznete v tématu [Soukromé konstruktory](./private-constructors.md).  
   
- Konstruktory pro typy [struktury](../../language-reference/keywords/struct.md) připomínají konstruktory třídy, ale `structs` nesmí obsahovat explicitní konstruktor bez parametrů, protože jeden je poskytnut automaticky kompilátorem. Tento konstruktor inicializuje každé pole v `struct` [výchozí hodnotu](../../language-reference/builtin-types/default-values.md). Tento konstruktor bez parametrů je však vyvolána pouze v případě, že je vytvořena instance `struct` s `new`. Například tento kód používá konstruktor bez parametrů pro <xref:System.Int32>, takže jste si jisti, že je inicializováno celé číslo:  
+ Konstruktory pro typy [struktury](../../language-reference/builtin-types/struct.md) připomínají konstruktory třídy, ale `structs` nesmí obsahovat explicitní konstruktor bez parametrů, protože jeden je poskytnut automaticky kompilátorem. Tento konstruktor inicializuje každé pole v `struct` [výchozí hodnotu](../../language-reference/builtin-types/default-values.md). Tento konstruktor bez parametrů je však vyvolána pouze v případě, že je vytvořena instance `struct` s `new`. Například tento kód používá konstruktor bez parametrů pro <xref:System.Int32>, takže jste si jisti, že je inicializováno celé číslo:  
   
 ```csharp  
 int i = new int();  
@@ -92,9 +92,9 @@ Console.WriteLine("{0}, {1}", a, b);
 
 Další informace naleznete v tématu [konstruktory instancí](~/_csharplang/spec/classes.md#instance-constructors) a [statické konstruktory](~/_csharplang/spec/classes.md#static-constructors) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](./index.md)
 - [Konstruktory](./constructors.md)
 - [Finalizační metody](./destructors.md)

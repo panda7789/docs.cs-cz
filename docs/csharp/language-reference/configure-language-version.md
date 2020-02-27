@@ -1,36 +1,39 @@
 ---
 title: C#jazykové verze – C# Průvodce
-description: Přečtěte si informace C# o tom, jak je jazyková verze určena na základě vašeho projektu, a v různých hodnotách, na které lze ručně upravit.
-ms.date: 07/10/2019
-ms.openlocfilehash: 3c1035d983660ea0a945e4d4b7b72c69736c90cb
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+description: Přečtěte si o C# tom, jak je jazyková verze určena na základě vašeho projektu a z důvodů na základě této volby. Přečtěte si, jak přepsat výchozí nastavení ručně.
+ms.date: 02/21/2020
+ms.openlocfilehash: 2be76fdac471a7175b661d896b0da2910b3609f3
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980129"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626761"
 ---
 # <a name="c-language-versioning"></a>C#jazykové verze
 
-Nejnovější C# kompilátor určuje výchozí jazykovou verzi v závislosti na cílovém rozhraní architektury vašeho projektu nebo rozhraní. Důvodem je, že C# jazyk může obsahovat funkce, které spoléhají na typy nebo běhové komponenty, které nejsou k dispozici v každé implementaci rozhraní .NET. Tím se také zajistí, že pro jakýkoliv cíl, na který je projekt sestaven, získáte ve výchozím nastavení nejvyšší kompatibilní jazykovou verzi.
+Nejnovější C# kompilátor určuje výchozí jazykovou verzi v závislosti na cílovém rozhraní architektury vašeho projektu nebo rozhraní. Visual Studio neposkytuje uživatelské rozhraní pro změnu hodnoty, ale můžete ho změnit úpravou souboru *csproj* . Volba výchozí zajistí, že používáte nejnovější verzi jazyka kompatibilní s vaší cílovou architekturou. Můžete využívat přístup k nejnovějším funkcím jazyka kompatibilním s cílem vašeho projektu. Tato výchozí volba také zajišťuje, že nebudete používat jazyk, který vyžaduje typy nebo běhové chování, které není v cílové architektuře k dispozici. Výběr jazykové verze, která je novější než výchozí, může způsobit, že bude obtížné diagnostikovat chyby při kompilaci a za běhu.
 
-Pravidla v tomto článku se vztahují na kompilátor dodaný se sadou Visual Studio 2019 nebo .NET Core 3,0 SDK. C# Kompilátory, které jsou součástí instalace sady Visual Studio 2017 nebo starší verze .NET Core SDK v cíli C# 7,0 ve výchozím nastavení. 
+C#8,0 (a vyšší) se podporuje jenom v .NET Core 3. x a novějších verzích. Mnohé z nejnovějších funkcí vyžadují knihovnu a běhové funkce, které jsou představené v .NET Core 3. x:
+
+- Výchozí implementace člena rozhraní vyžaduje nové funkce v .NET Core 3,0 CLR.
+- Asynchronní datové proudy vyžadují nové typy <xref:System.IAsyncDisposable?displayProperty=nameWithType>, <xref:System.Collections.Generic.IAsyncEnumerable%601?displayProperty=nameWithType>a <xref:System.Collections.Generic.IAsyncEnumerator%601?displayProperty=nameWithType>.
+- Indexy a rozsahy vyžadují nové typy <xref:System.Index?displayProperty=nameWithType> a <xref:System.Range?displayProperty=nameWithType>.
+- Typy odkazů s možnou hodnotou null umožňují použití několika [atributů](../nullable-attributes.md) k poskytnutí lepších upozornění. Tyto atributy se přidaly do .NET Core 3,0. Jiné cílové architektury nebyly opatřeny poznámkami žádné z těchto atributů. To znamená, že upozornění s možnou hodnotou null nemusí přesně odrážet možné problémy.
 
 ## <a name="defaults"></a>Ve výchozím nastavení
 
 Kompilátor určuje výchozí hodnotu na základě těchto pravidel:
 
-|Cílová architektura|Verze nástroje|C#výchozí verze jazyka|
+|Cílová architektura|version|C#výchozí verze jazyka|
 |----------------|-------|---------------------------|
-|.NET Core|3.x|C# 8.0|
+|.NET Core|3.x|C#8.0|
 |.NET Core|2.x|C# 7.3|
-|.NET Standard|2.1|C# 8.0|
+|.NET Standard|2.1|C#8.0|
 |.NET Standard|2.0|C# 7.3|
 |.NET Standard|verze|C# 7.3|
-|.NET Framework|vše|C# 7.3|
+|.NET Framework|all|C# 7.3|
 
-## <a name="default-for-previews"></a>Výchozí pro náhledy
-
-Když se váš projekt zaměřuje na architekturu verze Preview, která má odpovídající jazykovou verzi Preview, bude použit jazyk verze Preview. Tím zajistíte, že budete moci používat nejnovější funkce, u kterých je zaručená práce s touto verzí Preview v jakémkoli prostředí, aniž by to ovlivnilo projekty, které cílí na vydanou verzi .NET Core.
+Když se váš projekt zaměřuje na architekturu verze Preview, která má odpovídající jazykovou verzi Preview, bude použit jazyk verze Preview. Nejnovější funkce v rámci této verze Preview můžete používat v jakémkoli prostředí, aniž by to ovlivnilo projekty, které cílí na vydanou verzi .NET Core.
 
 ## <a name="override-a-default"></a>Přepsat výchozí
 
@@ -64,11 +67,11 @@ Chcete-li konfigurovat více projektů, můžete vytvořit soubor **Directory. B
 </Project>
 ```
 
-Nyní sestavení v každém podadresáři adresáře obsahujícího tento soubor použije verzi Preview C# . Další informace naleznete v článku o [přizpůsobení sestavení](/visualstudio/msbuild/customize-your-build).
+Sestavení ve všech podadresářích adresáře obsahujícího tento soubor budou používat verzi C# Preview. Další informace naleznete v článku o [přizpůsobení sestavení](/visualstudio/msbuild/customize-your-build).
 
 ## <a name="c-language-version-reference"></a>C#Referenční informace o jazykové verzi
 
-V následující tabulce jsou uvedeny všechny C# aktuální jazykové verze. Kompilátor nemusí nutně pochopit každou hodnotu, pokud je starší. Pokud nainstalujete .NET Core 3,0, budete mít přístup ke všem uvedeným.
+V následující tabulce jsou uvedeny všechny C# aktuální jazykové verze. Kompilátor nemusí nutně pochopit každou hodnotu, pokud je starší. Pokud instalujete .NET Core 3,0 nebo novější, máte k dispozici přístup k všechno uvedenému.
 
 |Hodnota|Význam|
 |------------|-------------|
@@ -78,7 +81,7 @@ V následující tabulce jsou uvedeny všechny C# aktuální jazykové verze. Ko
 |8.0|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 8,0 nebo nižší.|
 |7.3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší.|
 |7.2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší.|
-|7,1|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,1 nebo nižší.|
+|7.1|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,1 nebo nižší.|
 |7|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší.|
 |6|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 6,0 nebo nižší.|
 |5|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 5,0 nebo nižší.|

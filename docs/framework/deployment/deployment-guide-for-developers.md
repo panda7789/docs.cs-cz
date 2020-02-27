@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 597bfd2c16f6289a2bcb931c3896918dcb6d9a4d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 26c168040b0fa5e975e64a7518b0d0bf250c4711
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094134"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628121"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
 Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
@@ -134,21 +134,7 @@ InstallAware vytváří balíčky Windows App (APPX), Instalační služba syst�
 
 ### <a name="installshield-deployment"></a>Nasazení InstallShield
 
-V aplikaci Visual Studio vyberte nasazení InstallShield a přidejte závislost na .NET Framework:
-
-1. V řádku nabídek sady Visual Studio vyberte možnost **soubor**, **Nový**, **projekt**.
-
-2. V levém podokně dialogového okna **Nový projekt** vyberte možnost **ostatní typy projektů**, **nastavení a nasazení**, **InstallShield Le**.
-
-3. Do pole **název** zadejte název projektu a klikněte na **tlačítko OK**.
-
-4. Pokud vytváříte projekt instalace a nasazení poprvé, vyberte **Přejít na InstallShield** nebo **Povolit InstallShield unedition** , aby bylo možné stáhnout InstallShield s omezením pro vaši verzi Microsoft Visual Studio. Restartujte sadu Visual Studio.
-
-5. Chcete-li přidat výstup projektu, klikněte na průvodce **pomocníkem projektu** a vyberte možnost **soubory aplikace** . Pomocí tohoto průvodce můžete nakonfigurovat další atributy projektu.
-
-6. Pokračujte na **požadavky na instalaci** a vyberte operační systémy a verzi .NET Framework, kterou chcete nainstalovat.
-
-7. Otevřete místní nabídku pro projekt instalace a vyberte možnost **sestavit**.
+InstallShield sestaví balíčky aplikací systému Windows (MSIX, APPX), balíčky Instalační služba systému Windows (MSI) a nativního kódu (EXE). InstallShield také poskytuje integraci se službou Visual Studio. Další informace najdete na webu [InstallShield](https://www.flexerasoftware.com/install/products/installshield.html) .
 
 <a name="wix"></a>
 
@@ -190,7 +176,7 @@ Pokud je například spustitelný program contoso. exe a chcete tiše nainstalov
 
 `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso`
 
-K přizpůsobení instalace můžete použít další možnosti příkazového řádku. Například:
+K přizpůsobení instalace můžete použít další možnosti příkazového řádku. Příklad:
 
 - Chcete-li uživatelům umožnit, aby zavřeli spuštěné aplikace .NET Framework pro minimalizaci restartování systému, nastavte pasivní režim a použijte možnost `/showrmui` následujícím způsobem:
 

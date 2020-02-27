@@ -1,24 +1,24 @@
 ---
 title: Vlastnosti rozhraní – C# Průvodce programováním
-ms.date: 07/20/2015
+ms.date: 01/31/2020
 helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: ff892a35f4be6600c00bc0c72c2f789ef6eb4408
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5798b80526f34e923e2eaab43847b98f6c64e14b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705532"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626617"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
 
-Vlastnosti lze deklarovat v [rozhraní](../../language-reference/keywords/interface.md). Následuje příklad přistupujícího objektu vlastnosti rozhraní:
+Vlastnosti lze deklarovat v [rozhraní](../../language-reference/keywords/interface.md). Následující příklad deklaruje přistupující objekt vlastnosti rozhraní:
 
-[!code-csharp[csProgGuideProperties#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#14)]
+[!code-csharp[DeclareProperties](~/samples/snippets/csharp/interfaces/properties.cs#DeclareInterfaceProperties)]
 
-Přistupující objekt vlastnosti rozhraní nemá tělo. Proto je účel přístupových objektů indikován, zda je vlastnost určena pro čtení i zápis, jen pro čtení nebo jen pro zápis.
+Vlastnosti rozhraní obvykle nemají tělo. Přistupující objekty označují, zda je vlastnost určena pro čtení i zápis, jen pro čtení nebo jen pro zápis. Na rozdíl od tříd a struktur deklaruje přistupující objekty bez těla deklarace [automaticky implementované vlastnosti](auto-implemented-properties.md). Počínaje C# 8,0 může rozhraní definovat výchozí implementaci pro členy, včetně vlastností. Definice výchozí implementace pro vlastnost v rozhraní je vzácná, protože rozhraní nemůžou definovat datová pole instance.
 
 ## <a name="example"></a>Příklad
 
@@ -26,23 +26,24 @@ V tomto příkladu rozhraní `IEmployee` má vlastnost pro čtení i zápis, `Na
 
 Můžete použít plně kvalifikovaný název vlastnosti, který odkazuje na rozhraní, ve kterém je člen deklarován. Příklad:
 
-[!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
+[!code-csharp[ExplicitProperties](~/samples/snippets/csharp/interfaces/properties.cs#ExplicitImplementation)]
 
-To se označuje jako [explicitní implementace rozhraní](../interfaces/explicit-interface-implementation.md). Například pokud `Employee` třídy implementuje dvě rozhraní `ICitizen` a `IEmployee` a obě rozhraní mají vlastnost `Name`, bude nutná implementace explicitního člena rozhraní. To znamená, že následující deklarace vlastnosti:
+Předchozí příklad ukazuje [explicitní implementaci rozhraní](../interfaces/explicit-interface-implementation.md). Například pokud `Employee` třídy implementuje dvě rozhraní `ICitizen` a `IEmployee` a obě rozhraní mají vlastnost `Name`, bude nutná implementace explicitního člena rozhraní. To znamená, že následující deklarace vlastnosti:
 
-[!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
+[!code-csharp[ExplicitProperties](~/samples/snippets/csharp/interfaces/properties.cs#ExplicitImplementation)]
 
 implementuje vlastnost `Name` v rozhraní `IEmployee`, zatímco následující deklarace:
 
-[!code-csharp[csProgGuideProperties#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#17)]
+[!code-csharp[ExplicitProperties](~/samples/snippets/csharp/interfaces/properties.cs#CitizenImplementation)]
 
 implementuje vlastnost `Name` v rozhraní `ICitizen`.
 
-[!code-csharp[csProgGuideProperties#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#15)]
+[!code-csharp[Example](~/samples/snippets/csharp/interfaces/properties.cs#PropertyExample)]
+[!code-csharp[Example](~/samples/snippets/csharp/interfaces/properties.cs#UseProperty)]
 
 **`210 Hazem Abolrous`**
 
-## <a name="sample-output"></a>Výstup ukázky
+## <a name="sample-output"></a>Ukázkový výstup
 
 ```console
 Enter number of employees: 210
@@ -52,9 +53,9 @@ Employee number: 211
 Employee name: Hazem Abolrous
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Vlastnosti](./properties.md)
 - [Použití vlastností](./using-properties.md)
 - [Porovnání mezi vlastnostmi a indexery](../indexers/comparison-between-properties-and-indexers.md)

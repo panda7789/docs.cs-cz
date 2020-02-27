@@ -10,12 +10,12 @@ ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 3b88f64fca8d3f11308f1cbfde97de2e6c2f22cc
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0b68a70b55cbf03d480fd388a637a4caf78b6eaa
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740215"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628797"
 ---
 # <a name="walkthrough-arrange-controls-on-windows-forms-using-snaplines"></a>Návod: uspořádání ovládacích prvků na model Windows Forms pomocí zarovnávacím čárám
 
@@ -124,7 +124,7 @@ Pomocí zarovnávacím čárám můžete zarovnat seskupené ovládací prvky i 
 
 ## <a name="align-a-label-to-a-controls-text"></a>Zarovnání popisku na text ovládacího prvku
 
-1. Přetáhněte ovládací prvek <xref:System.Windows.Forms.TextBox> z **panelu nástrojů** do formuláře. Po zrušení ovládacího prvku <xref:System.Windows.Forms.TextBox> do formuláře klikněte na glyf inteligentních značek a vyberte možnost **nastavit text na TextBox1** . Podrobnosti najdete v tématu [Návod: provádění běžných úloh pomocí inteligentních značek v ovládacích prvcích model Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md).
+1. Přetáhněte ovládací prvek <xref:System.Windows.Forms.TextBox> z **panelu nástrojů** do formuláře. Po zrušení ovládacího prvku <xref:System.Windows.Forms.TextBox> do formuláře klikněte na glyf inteligentních značek a vyberte možnost **nastavit text na TextBox1** . Podrobnosti najdete v tématu [Návod: provádění běžných úloh pomocí akcí návrháře](perform-common-tasks-design-actions.md).
 
 2. Přetáhněte ovládací prvek <xref:System.Windows.Forms.Label> z **panelu nástrojů** do formuláře.
 

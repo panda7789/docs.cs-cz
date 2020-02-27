@@ -2,16 +2,18 @@
 title: Možnosti kompilátoru
 description: Použijte F# možnosti příkazového řádku kompilátoru pro řízení kompilace vašich F# aplikací a knihoven.
 ms.date: 12/10/2018
-ms.openlocfilehash: d0f4d1ca5ae45af25d6c304a2920d5c457700b1a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ecaae538a5db2f5dfefa79cb8e7b8b51d39c440d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424757"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628875"
 ---
 # <a name="compiler-options"></a>Možnosti kompilátoru
 
-Toto téma popisuje možnosti příkazového řádku kompilátoru pro F# kompilátor, FSC. exe. Prostředí kompilace lze také ovládat nastavením vlastností projektu.
+Toto téma popisuje možnosti příkazového řádku kompilátoru pro F# kompilátor, FSC. exe.
+
+Prostředí kompilace lze také ovládat nastavením vlastností projektu. Pro projekty, které cílí na .NET Core, se vlastnost "jiné příznaky" `<OtherFlags>...</OtherFlags>` v `.fsproj`používá k určení dalších možností příkazového řádku.
 
 ## <a name="compiler-options-listed-alphabetically"></a>Možnosti kompilátoru (abecední pořadí)
 
@@ -26,7 +28,7 @@ V následující tabulce jsou uvedeny možnosti kompilátoru seřazené podle ab
 |`--crossoptimize[+|-]`|Povolí nebo zakáže optimalizace mezi moduly.|
 |<code>--delaysign[+&#124;-]</code>|Odhlásí sestavení pouze pomocí veřejné části klíče silného názvu.<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti C# kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;možnosti &#40;&#41;kompilátoru&#35; delaysign C](https://msdn.microsoft.com/library/ta1sxwy8.aspx).|
 |<code>--checked[+&#124;-]</code>|Povolí nebo zakáže generování kontrol přetečení.<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti C# kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;kontrolované &#40;možnosti&#35; &#41;kompilátoru jazyka C](https://msdn.microsoft.com/library/h25wtyxf.aspx).|
-|<code>--debug[+&#124;-]</code><br /><br /><code>-g[+&#124;-]</code><br /><br /><code>--debug:[full&#124;pdbonly]</code><br /><br /><code>-g: [full&#124;pdbonly]</code>|Povoluje nebo zakazuje generování ladicích informací nebo určuje typ informací o ladění, které mají být vygenerovány. Výchozí hodnota je plná, což umožňuje připojení ke spuštěnému programu. Zvolením možnosti **pdbonly** získáte omezené informace o ladění uložené v souboru PDB (program databáze).<br /><br />Odpovídá možnosti C# kompilátoru se stejným názvem. Další informace naleznete v tématu<br /><br />[ladění možností kompilátoru jazyka C&#35; &#40; &#47;&#41;](https://msdn.microsoft.com/library/8cw0bt21.aspx)|
+|<code>--debug[+&#124;-]</code><br /><br /><code>-g[+&#124;-]</code><br /><br /><code>--debug:[full&#124;pdbonly]</code><br /><br /><code>-g: [full&#124;pdbonly]</code>|Povoluje nebo zakazuje generování ladicích informací nebo určuje typ informací o ladění, které mají být vygenerovány. Výchozí hodnota je plná, což umožňuje připojení ke spuštěnému programu. Zvolením možnosti **pdbonly** získáte omezené informace o ladění uložené v souboru PDB (program databáze).<br /><br />Odpovídá možnosti C# kompilátoru se stejným názvem. Další informace najdete v tématu<br /><br />[ladění možností kompilátoru jazyka C&#35; &#40; &#47;&#41;](https://msdn.microsoft.com/library/8cw0bt21.aspx)|
 |`--define:symbol`<br /><br />`-d:symbol`|Definuje symbol pro použití v podmíněné kompilaci.|
 |<code>--deterministic[+&#124;-]</code>|Vytvoří deterministické sestavení (včetně GUID verze modulu a časového razítka). Tato možnost se nedá použít s čísly verze zástupných znaků a podporuje jenom vložené a přenosné typy ladění.|
 |`--doc:xmldoc-filename`|Instruuje kompilátor, aby vygeneroval dokumentační komentáře XML do zadaného souboru. Další informace najdete v [dokumentaci XML](xml-documentation.md).<br /><br />Tato možnost kompilátoru je ekvivalentní možnosti C# kompilátoru se stejným názvem. Další informace naleznete v tématu [ &#47;možnosti &#40;&#41;kompilátoru&#35; doc C](https://msdn.microsoft.com/library/3260k4x7.aspx).|

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: b5be6892a265f0a2b7f3109321fdcf46d4b0ea22
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9005c425badc5a4ed74e6af3447e563daf61229e
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711841"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627796"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
@@ -22,7 +22,7 @@ private fixed char name[30];
 
 ## <a name="remarks"></a>Poznámky
 
-V bezpečném kódu C# struktura obsahující pole neobsahuje prvky pole. Místo toho struktura obsahuje odkaz na prvky. Pole s pevnou velikostí můžete vložit do [struktury](../../language-reference/keywords/struct.md) , pokud se používá v [nebezpečném](../../language-reference/keywords/unsafe.md) bloku kódu.
+V bezpečném kódu C# struktura obsahující pole neobsahuje prvky pole. Místo toho struktura obsahuje odkaz na prvky. Pole s pevnou velikostí můžete vložit do [struktury](../../language-reference/builtin-types/struct.md) , pokud se používá v [nebezpečném](../../language-reference/keywords/unsafe.md) bloku kódu.
 
 Následující `struct` mají velikost 8 bajtů. Pole `pathName` je odkazem:
 
@@ -32,7 +32,7 @@ Následující `struct` mají velikost 8 bajtů. Pole `pathName` je odkazem:
 
 [!code-csharp[Struct with embedded inline array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#7)]
 
-Velikost elementu 128 `char` pole je 256 bajtů. Pevná velikost [znaková](../../language-reference/builtin-types/char.md) vyrovnávací paměť vždy bere dva bajty na znak bez ohledu na kódování. To platí i v případě, že jsou vyrovnávací paměti pro znaky zařazeny do metod nebo struktur rozhraní API pomocí `CharSet = CharSet.Auto` nebo `CharSet = CharSet.Ansi`. Další informace najdete v tématu <xref:System.Runtime.InteropServices.CharSet>.
+Velikost elementu 128 `char` pole je 256 bajtů. Pevná velikost [znaková](../../language-reference/builtin-types/char.md) vyrovnávací paměť vždy bere dva bajty na znak bez ohledu na kódování. To platí i v případě, že jsou vyrovnávací paměti pro znaky zařazeny do metod nebo struktur rozhraní API pomocí `CharSet = CharSet.Auto` nebo `CharSet = CharSet.Ansi`. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.CharSet>.
 
 Předchozí příklad ukazuje přístup k polím `fixed` bez připnutí, která je k dispozici od C# 7,3.
 
@@ -48,9 +48,9 @@ Nebezpečné vyrovnávací paměti se liší od regulárních polí následujíc
 - Deklarace pole by měla zahrnovat počet, například `char id[8]`. Nemůžete použít `char id[]`.
 - Nebezpečné vyrovnávací paměti mohou být pouze pole instancí struktur v nezabezpečeném kontextu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Nebezpečný kód a ukazatele](index.md)
 - [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)
 - [Interoperabilita](../interop/index.md)

@@ -2,12 +2,12 @@
 title: Asynchronní programování
 description: Naučte F# se, jak poskytuje čistou podporu pro asynchronii na základě programovacího modelu na úrovni jazyka odvozeného od konceptů základních funkcí programování.
 ms.date: 12/17/2018
-ms.openlocfilehash: 471566befd69f330fb9254dbd57b19569d9f9ad3
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7021d7936d10f9ea6fceb4aa56db3285d21624ad
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344664"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628849"
 ---
 # <a name="async-programming-in-f"></a>Asynchronní programování v F\#
 
@@ -69,7 +69,7 @@ let main argv =
     0
 ```
 
-V tomto příkladu je funkce `printTotalFileBytes` typu `string -> Async<unit>`. Volání funkce ve skutečnosti neprovede asynchronní výpočet. Místo toho vrátí `Async<unit>`, který funguje jako *specifikace* práce, která má být provedena asynchronně. Volá `Async.AwaitTask` v jeho těle, který převede výsledek <xref:System.IO.File.WriteAllBytesAsync%2A> na příslušný typ.
+V tomto příkladu je funkce `printTotalFileBytes` typu `string -> Async<unit>`. Volání funkce ve skutečnosti neprovede asynchronní výpočet. Místo toho vrátí `Async<unit>`, který funguje jako *specifikace* práce, která má být provedena asynchronně. Volá `Async.AwaitTask` v jeho těle, který převede výsledek <xref:System.IO.File.ReadAllBytesAsync%2A> na příslušný typ.
 
 Další důležitou linkou je volání `Async.RunSynchronously`. Jedná se o jednu z asynchronních funkcí modulu, které je třeba volat, pokud chcete skutečně provést F# asynchronní výpočet.
 
@@ -150,7 +150,7 @@ Podpis:
 computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
 ```
 
-Ideální v těchto situacích:
+Kdy použít:
 
 - Pokud chcete spustit více asynchronních výpočtů současně, nikoli v jednom okamžiku, ale nemusíte je naplánovat paralelně.
 - Pokud chcete vytvořit propojení životnosti podřízeného výpočtu s nadřazeným výpočtem.
@@ -170,7 +170,7 @@ Podpis:
 computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 ```
 
-Ideální v těchto situacích:
+Kdy použít:
 
 - Pokud potřebujete něco aktualizovat v volajícím vlákně uprostřed asynchronního výpočtu.
 
@@ -188,7 +188,7 @@ Podpis:
 computation: Async<'T> - taskCreationOptions: ?TaskCreationOptions - cancellationToken: ?CancellationToken -> Task<'T>
 ```
 
-Ideální v těchto situacích:
+Kdy použít:
 
 - Pokud potřebujete zavolat do rozhraní .NET API, které očekává <xref:System.Threading.Tasks.Task%601> pro reprezentaci výsledku asynchronního výpočtu.
 
@@ -245,7 +245,7 @@ Podpis:
 task: Task<'T>  -> Async<'T>
 ```
 
-Ideální v těchto situacích:
+Kdy použít:
 
 - Když spotřebováváte rozhraní .NET API, které vrací <xref:System.Threading.Tasks.Task%601> v rámci F# asynchronního výpočtu.
 
@@ -263,7 +263,7 @@ Podpis:
 computation: Async<'T> -> Async<Choice<'T, exn>>
 ```
 
-Ideální v těchto situacích:
+Kdy použít:
 
 - Při provádění asynchronní práce, která může selhat s výjimkou a chcete tuto výjimku zpracovat v volajícím.
 
@@ -281,7 +281,7 @@ Podpis:
 computation: Async<'T> -> Async<unit>
 ```
 
-Ideální v těchto situacích:
+Kdy použít:
 
 - Pokud máte asynchronní výpočet, jehož výsledek není potřeba. To se podobá kódu `ignore` pro neasynchronní kód.
 
@@ -382,7 +382,7 @@ Například výpočet může být v závislosti na povaze práce spuštěn ve vl
 
 I F# když poskytuje některé možnosti, jak spustit asynchronní výpočet v aktuálním vlákně (nebo explicitně ne na aktuálním vlákně), asynchronii obecně není přidružená k určité strategii vláken.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [F# Asynchronní programovací model](https://www.microsoft.com/research/publication/the-f-asynchronous-programming-model)
 - [F# Asynchronní Průvodce jet. com](https://medium.com/jettech/f-async-guide-eb3c8a2d180a)

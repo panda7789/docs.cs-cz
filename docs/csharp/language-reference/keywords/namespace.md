@@ -8,12 +8,12 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: 1eaec05289ad1146ac3dcd6479442a6fae067cc9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b35f0a2a5cc0b2895b491d4ee24f89955f4b8fed
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713370"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625797"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
 
@@ -31,7 +31,7 @@ V rámci oboru názvů můžete deklarovat nula nebo více následujících typ�
 
 - [interface](interface.md)
 
-- [struct](struct.md)
+- [struct](../builtin-types/struct.md)
 
 - [enum](../builtin-types/enum.md)
 
@@ -55,7 +55,7 @@ Následující příklad ukazuje, jak zavolat statickou metodu ve vnořeném obo
 
 Další informace najdete v části [obory názvů](~/_csharplang/spec/namespaces.md) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)

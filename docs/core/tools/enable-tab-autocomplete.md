@@ -1,23 +1,23 @@
 ---
-title: Povolit dokončování karet
+title: Povolení dokončování pomocí tabulátoru
 description: V tomto článku se naučíte, jak povolit dokončování karet pro .NET Core CLI pro PowerShell, bash a zsh.
 author: thraka
 ms.author: adegeo
 ms.date: 11/03/2019
-ms.openlocfilehash: 649b723c2abfa74443a16914594284a77e0eafc0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 6614f11a9c4eb1b1aac4dd8dac8d05d15262bd0c
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920538"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626005"
 ---
 # <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Jak povolit dokončování karet pro .NET Core CLI
 
-Počínaje rozhraním .NET Core 2,0 SDK .NET Core CLI podporuje dokončování karet. Tento článek popisuje, jak nakonfigurovat dokončování karet pro tři prostředí, PowerShell, bash a zsh. Další prostředí můžou podporovat automatické dokončování. Informace o tom, jak nakonfigurovat automatické dokončování, najdete v dokumentaci, jak postupovat podle kroků popsaných v tomto článku.
+**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
 
-[!INCLUDE [topic-appliesto-net-core-2plus](~/includes/topic-appliesto-net-core-2plus.md)]
+Tento článek popisuje, jak nakonfigurovat dokončování karet pro tři prostředí, PowerShell, bash a zsh. Další prostředí naleznete v dokumentaci ke konfiguraci dokončování karet.
 
-Po dokončení instalace se aktivuje doplňování tabulátoru pro .NET Core CLI zadáním příkazu `dotnet` v prostředí a následným stisknutím klávesy TAB. Aktuální příkazový řádek se odešle do příkazu `dotnet complete` a výsledky se zpracují ve vašem prostředí. Výsledky můžete testovat bez aktivace tabulátoru odesláním nějakého přímo do příkazu `dotnet complete`. Příklad:
+Po nastavení se aktivace karty .NET Core CLI aktivuje zadáním příkazu `dotnet` v prostředí a následným stisknutím klávesy TAB. Aktuální příkazový řádek se odešle do příkazu `dotnet complete` a výsledky se zpracují ve vašem prostředí. Výsledky můžete testovat bez aktivace tabulátoru odesláním nějakého přímo do příkazu `dotnet complete`. Příklad:
 
 ```console
 > dotnet complete "dotnet a"

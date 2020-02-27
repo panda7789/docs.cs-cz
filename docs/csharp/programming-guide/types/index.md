@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: d277869809b7148a2c3d568c91fce15f9a83baa1
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: ade2cba857a1a32039f8fd07881f13f63f0dbe1a
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093562"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628134"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -67,7 +67,7 @@ C#poskytuje standardní sadu předdefinovaných číselných typů k vyjádřen�
 
 ## <a name="custom-types"></a>Vlastní typy
 
-Použijete konstrukce [struct](../../language-reference/keywords/struct.md), [Class](../../language-reference/keywords/class.md), [Interface](../../language-reference/keywords/interface.md)a [Enum](../../language-reference/builtin-types/enum.md) k vytvoření vlastních typů. Samotná knihovna tříd .NET je kolekce vlastních typů poskytovaných Microsoftem, které můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou nejčastěji používané typy v knihovně tříd k dispozici v jakémkoli C# programu. Ostatní budou k dispozici pouze v případě, že explicitně přidáte odkaz na projekt do sestavení, ve kterém jsou definovány. Poté, co má kompilátor odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v tomto sestavení ve zdrojovém kódu. Další informace naleznete v tématu [Knihovna tříd .NET](../../../standard/class-library-overview.md).
+Použijete konstrukce [struct](../../language-reference/builtin-types/struct.md), [Class](../../language-reference/keywords/class.md), [Interface](../../language-reference/keywords/interface.md)a [Enum](../../language-reference/builtin-types/enum.md) k vytvoření vlastních typů. Samotná knihovna tříd .NET je kolekce vlastních typů poskytovaných Microsoftem, které můžete použít ve svých vlastních aplikacích. Ve výchozím nastavení jsou nejčastěji používané typy v knihovně tříd k dispozici v jakémkoli C# programu. Ostatní budou k dispozici pouze v případě, že explicitně přidáte odkaz na projekt do sestavení, ve kterém jsou definovány. Poté, co má kompilátor odkaz na sestavení, můžete deklarovat proměnné (a konstanty) typů deklarovaných v tomto sestavení ve zdrojovém kódu. Další informace naleznete v tématu [Knihovna tříd .NET](../../../standard/class-library-overview.md).
 
 ## <a name="the-common-type-system"></a>Obecný systém typů
 
@@ -75,7 +75,7 @@ Je důležité porozumět dvěma základním bodům o systému typů v .NET:
 
 - Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je napříkladC# <xref:System.Int32?displayProperty=nameWithType> (klíčové slovo: [int](../../language-reference/builtin-types/integral-numeric-types.md)), jsou odvozeny z jednoho základního typu, kterýC# je <xref:System.Object?displayProperty=nameWithType> (klíčové slovo: [Object](../../language-reference/builtin-types/reference-types.md)). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../../../standard/base-types/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](../classes-and-structs/inheritance.md).
 
-- Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](../../language-reference/keywords/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou `structs`. Typy, které definujete pomocí klíčového slova [Class](../../language-reference/keywords/class.md) , jsou odkazové typy. Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
+- Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](../../language-reference/builtin-types/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou `structs`. Typy, které definujete pomocí klíčového slova [Class](../../language-reference/keywords/class.md) , jsou odkazové typy. Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
 
 Následující ilustrace znázorňuje vztah mezi typy hodnot a typy odkazů v CTS.
 
@@ -90,7 +90,7 @@ Následující obrázek znázorňuje typy hodnot a typy odkazů v CTS:
 
 Typy hodnot jsou odvozeny z <xref:System.ValueType?displayProperty=nameWithType>, které jsou odvozeny z <xref:System.Object?displayProperty=nameWithType>. Typy, které jsou odvozeny od <xref:System.ValueType?displayProperty=nameWithType> mají zvláštní chování v modulu CLR. Proměnné typu hodnoty přímo obsahují jejich hodnoty, což znamená, že je paměť přidělena vloženému v jakémkoli kontextu, kdy je proměnná deklarována. Neexistuje žádné samostatné přidělení haldy nebo režie uvolňování paměti pro proměnné typu hodnoty.
 
-Existují dvě kategorie typů hodnot: [struct](../../language-reference/keywords/struct.md) a [Enum](../../language-reference/builtin-types/enum.md).
+Existují dvě kategorie typů hodnot: [struct](../../language-reference/builtin-types/struct.md) a [Enum](../../language-reference/builtin-types/enum.md).
 
 Předdefinované číselné typy jsou struktury a mají vlastnosti a metody, ke kterým máte přístup:
 
@@ -109,7 +109,7 @@ char c = 'Z';
 
 Typy hodnot jsou *zapečetěné*, což znamená, že nemůžete odvodit typ z <xref:System.Int32?displayProperty=nameWithType>a nemůžete definovat strukturu, která by dědila z jakékoli uživatelsky definované třídy nebo struktury, protože struktura může dědit pouze z <xref:System.ValueType?displayProperty=nameWithType>. Struktura však může implementovat jedno nebo více rozhraní. Typ struktury můžete přetypovat na libovolný typ rozhraní, který implementuje; To způsobí, že operace *zabalení* zabalí strukturu uvnitř objektu typu reference na spravované haldě. K operacím zabalení dojde, když předáte typ hodnoty metodě, která přijímá <xref:System.Object?displayProperty=nameWithType> nebo libovolný typ rozhraní jako vstupní parametr. Další informace naleznete v tématu [zabalení a rozbalení](./boxing-and-unboxing.md).
 
-Klíčové slovo [struct](../../language-reference/keywords/struct.md) můžete použít k vytvoření vlastních typů hodnot. Struktura se obvykle používá jako kontejner pro malou sadu souvisejících proměnných, jak je znázorněno v následujícím příkladu:
+Klíčové slovo [struct](../../language-reference/builtin-types/struct.md) můžete použít k vytvoření vlastních typů hodnot. Struktura se obvykle používá jako kontejner pro malou sadu souvisejících proměnných, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 

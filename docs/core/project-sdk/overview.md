@@ -3,12 +3,12 @@ title: Přehled sady Project SDK pro .NET Core
 description: Přečtěte si o sadách SDK projektu .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: b1b839f81b1b4a8d20dbb34d3d2fc000c64acb8a
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: c41b25bf7933e7b1f6cb50da5e52dc0b312f5c74
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453802"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626247"
 ---
 # <a name="net-core-project-sdks"></a>Sady SDK pro projekty .NET Core
 
@@ -32,7 +32,7 @@ Můžete také vytvořit vlastní sadu SDK, která se dá distribuovat přes NuG
 
 ## <a name="project-files"></a>Soubory projektu
 
-Projekty .NET Core jsou založeny na formátu [MSBuild](/visualstudio/msbuild/msbuild) . Soubory projektu, které mají rozšíření jako *. csproj* pro C# projekty a *. fsproj* pro F# projekty, jsou ve formátu XML. Kořenový prvek souboru projektu MSBuild je [projektový](/msbuild/project-element-msbuild) prvek. Element `Project` má volitelný `Sdk` atribut, který určuje sadu SDK (a verzi), která se má použít. Chcete-li použít nástroje .NET Core a sestavit kód, nastavte atribut `Sdk` na jedno z ID v tabulce dostupné sady [SDK](#available-sdks) .
+Projekty .NET Core jsou založeny na formátu [MSBuild](/visualstudio/msbuild/msbuild) . Soubory projektu, které mají rozšíření jako *. csproj* pro C# projekty a *. fsproj* pro F# projekty, jsou ve formátu XML. Kořenový prvek souboru projektu MSBuild je [projektový](/visualstudio/msbuild/project-element-msbuild) prvek. Element `Project` má volitelný `Sdk` atribut, který určuje sadu SDK (a verzi), která se má použít. Chcete-li použít nástroje .NET Core a sestavit kód, nastavte atribut `Sdk` na jedno z ID v tabulce dostupné sady [SDK](#available-sdks) .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -76,7 +76,7 @@ Odkazování na sadu SDK jedním z těchto způsobů značně zjednodušuje soub
 
 Pokud je sada SDK a její cíle zahrnutá pomocí příkazu `dotnet msbuild -preprocess`, můžete zobrazit plně rozbalený projekt jako MSBuild. Přepínač [předběžného zpracování](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) [`dotnet msbuild`](../tools/dotnet-msbuild.md) ukazuje, které soubory jsou importovány, jejich zdroje a jejich příspěvky na sestavení bez skutečného sestavení projektu.
 
-Pokud má projekt více cílových rozhraní, zaměřte výsledky příkazu pouze na jednu architekturu zadáním jako vlastnost MSBuild. Například:
+Pokud má projekt více cílových rozhraní, zaměřte výsledky příkazu pouze na jednu architekturu zadáním jako vlastnost MSBuild. Příklad:
 
 `dotnet msbuild -property:TargetFramework=netcoreapp2.0 -preprocess:output.xml`
 
@@ -88,8 +88,8 @@ Následující tabulka ukazuje, který prvek a které [globy](https://en.wikiped
 
 | Prvek           | Zahrnout glob                              | Vyloučit glob                                                  | Odebrat glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
-| Kompilace           | \*\*/\*. cs (nebo jiné jazykové rozšíření) | \*\*/\*. User;  \*\*/\*.\*proj;  \*\*/\*. sln;  \*\*/\*. vssscc  | Není k dispozici                      |
-| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*. User; \*\*/\*.\*proj; \*\*/\*. sln; \*\*/\*. vssscc     | Není k dispozici                      |
+| Kompilace           | \*\*/\*. cs (nebo jiné jazykové rozšíření) | \*\*/\*. User;  \*\*/\*.\*proj;  \*\*/\*. sln;  \*\*/\*. vssscc  | neuvedeno                      |
+| EmbeddedResource  | \*\*/\*. resx                              | \*\*/\*. User; \*\*/\*.\*proj; \*\*/\*. sln; \*\*/\*. vssscc     | neuvedeno                      |
 | Žádná              | \*\*/\*                                   | \*\*/\*. User; \*\*/\*.\*proj; \*\*/\*. sln; \*\*/\*. vssscc     | \*\*/\*. cs; \*\*/\*. resx |
 
 > [!NOTE]

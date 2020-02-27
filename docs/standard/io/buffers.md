@@ -7,12 +7,12 @@ helpviewer_keywords:
 - I/O [.NET], buffers
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: e42f165bfedec3b1fa54615ee7e2a2028f40aadb
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 5b98e3e2d41d3e49a28db6393f15f13c3579b06d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960493"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628075"
 ---
 # <a name="work-with-buffers-in-net"></a>Práce s vyrovnávacími paměťmi v .NET
 
@@ -51,13 +51,13 @@ Tato metoda zápisu používá `Memory<T>`/`Span<T>` vyrovnávací paměti posky
 
 <xref:System.Buffers.ReadOnlySequence%601> je struktura, která může představovat souvislou nebo nesouvislou sekvenci `T`. Dá se sestavit z:
 
-1. A `T[]`
-1. A `ReadOnlyMemory<T>`
+1. Položka `T[]`.
+1. Položka `ReadOnlyMemory<T>`.
 1. Dvojice uzlů propojeného seznamu <xref:System.Buffers.ReadOnlySequenceSegment%601> a index představující počáteční a koncovou pozici sekvence.
 
 Třetí reprezentace je nejzajímavější, protože má dopad na výkon různých operací na `ReadOnlySequence<T>`:
 
-|Reprezentace|Operace|Složitost|
+|Obrázek|Operace|Složitost|
 ---|---|---|
 |`T[]`/`ReadOnlyMemory<T>`|`Length`|`O(1)`|
 |`T[]`/`ReadOnlyMemory<T>`|`GetPosition(long)`|`O(1)`|
@@ -105,7 +105,7 @@ Existuje několik přístupů, které lze použít ke zpracování dat ve více 
 - Zkopírujte `ReadOnlySequence<T>` do souvislého pole a považovat ho za jednu vyrovnávací paměť:
   - Pokud je velikost `ReadOnlySequence<T>` malá, může být vhodné kopírovat data do vyrovnávací paměti přidělené zásobníkem pomocí operátoru [stackalloc](../../csharp/language-reference/operators/stackalloc.md) .
   - Zkopírujte `ReadOnlySequence<T>` do pole ve fondu pomocí <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType>.
-  - Použití [ `ReadOnlySequence<T>.ToArray()` ](xref:System.Buffers.BuffersExtensions.ToArray%2A). Nedoporučuje se v aktivních cestách, protože přiděluje nový `T[]` haldy.
+  - Použijte [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). Nedoporučuje se v aktivních cestách, protože přiděluje nový `T[]` haldy.
 
 Následující příklady ukazují některé běžné případy zpracování `ReadOnlySequence<byte>`:
 
@@ -114,6 +114,8 @@ Následující příklady ukazují některé běžné případy zpracování `Re
 Následující příklad analyzuje celé číslo o velikosti 4 bajtu big-endian od začátku `ReadOnlySequence<byte>`.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet5)]
+
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
 
 ##### <a name="process-text-data"></a>Zpracování textových dat
 
@@ -146,7 +148,7 @@ Při práci s `ReadOnlySequence<T>`/`SequencePosition` vs. normální `ReadOnlyS
 - Nelze porovnat dva `SequencePosition`, což ztěžuje:
   - Zjistěte, zda je jedna pozice větší nebo menší než jiná pozice.
   - Napište nějaké algoritmy analýzy.
-- `ReadOnlySequence<T>` je větší než odkaz na objekt a měla by být předána [v](../../csharp/language-reference/keywords/in-parameter-modifier.md) nebo [ref](../../csharp/language-reference/keywords/ref.md) tam, kde je to možné. Předávání `ReadOnlySequence<T>` pomocí `in` nebo `ref` omezuje kopie [struktury](../../csharp/language-reference/keywords/struct.md).
+- `ReadOnlySequence<T>` je větší než odkaz na objekt a měla by být předána [v](../../csharp/language-reference/keywords/in-parameter-modifier.md) nebo [ref](../../csharp/language-reference/keywords/ref.md) tam, kde je to možné. Předávání `ReadOnlySequence<T>` pomocí `in` nebo `ref` omezuje kopie [struktury](../../csharp/language-reference/builtin-types/struct.md).
 - Prázdné segmenty:
   - Jsou platné v rámci `ReadOnlySequence<T>`.
   - Může se zobrazit při iteraci pomocí metody `ReadOnlySequence<T>.TryGet`.

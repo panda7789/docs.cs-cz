@@ -3,12 +3,12 @@ title: Nespravované typy C# – referenční informace
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 97aa4dd629e385dbe9641d82a7da21a0aaa63e92
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 042cf382879cc4010a388fb75f41099b4342c9d9
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342578"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626942"
 ---
 # <a name="unmanaged-types-c-reference"></a>Nespravované typyC# (Referenční dokumentace)
 
@@ -17,7 +17,7 @@ Typ je **nespravovaný typ** , pokud se jedná o některý z následujících ty
 - `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal`nebo `bool`
 - Libovolný typ [výčtu](enum.md)
 - Libovolný typ [ukazatele](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- Libovolný uživatelsky definovaný typ [struktury](../keywords/struct.md) , který obsahuje pole nespravovaných typů a v C# 7,3 a starších verzích není konstruovaný typ (typ, který obsahuje alespoň jeden argument typu).
+- Libovolný uživatelsky definovaný typ [struktury](struct.md) , který obsahuje pole nespravovaných typů a v C# 7,3 a starších verzích není konstruovaný typ (typ, který obsahuje alespoň jeden argument typu).
 
 Počínaje C# 7,3 můžete použít [omezení`unmanaged`](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) k určení toho, že parametr typu není ukazatel nespravovaného typu, který neumožňuje hodnotu null.
 
@@ -33,7 +33,7 @@ Obecná struktura může být zdrojem nespravovaných i nespravovaných konstruo
 
 Další informace naleznete v části [typy ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-types) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)

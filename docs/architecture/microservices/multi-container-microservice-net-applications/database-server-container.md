@@ -2,12 +2,12 @@
 title: Použití databázového serveru spuštěného jako kontejner
 description: Pochopení důležitosti použití databázového serveru běžícího jako kontejneru pouze pro vývoj. Nikdy pro produkční prostředí.
 ms.date: 01/30/2020
-ms.openlocfilehash: 816ac196636f78a368a9f20e8eedcc6a22567fa7
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 0cbc933003aac10970814378c27e88b5cb0ddbe5
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502290"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628524"
 ---
 # <a name="use-a-database-server-running-as-a-container"></a>Použití databázového serveru spuštěného jako kontejner
 
@@ -45,13 +45,13 @@ Aplikace eShopOnContainers inicializuje každou databázi mikroslužeb pomocí u
 
 Použití SQL Server jako kontejneru není právě užitečné pro ukázku, ve které nemůžete mít přístup k instanci SQL Server. Jak je uvedeno, je vhodné také pro vývojová a testovací prostředí, abyste mohli snadno spouštět testy integrace počínaje čistým SQL Server obrázkem a známými daty pomocí osazení nových ukázkových dat.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Spuštění bitové kopie SQL Server Docker v systému Linux, Mac nebo Windows** \
-    <https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker>
+  <https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker>
 
 - **Připojení a dotazování SQL Server on Linux pomocí sqlcmd** \
-    <https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd>
+  <https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd>
 
 ## <a name="seeding-with-test-data-on-web-application-startup"></a>Osazení s testovacími daty při spuštění webové aplikace
 

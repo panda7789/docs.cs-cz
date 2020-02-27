@@ -2,12 +2,12 @@
 title: Iterátory
 ms.date: 07/20/2015
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
-ms.openlocfilehash: 465a8e6650c3d015520164030a146c9502ebe603
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2789ac66690ebfd472b9bae5ccf08b1bdfaa0922
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353742"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628732"
 ---
 # <a name="iterators-visual-basic"></a>Iterátory (Visual Basic)
 
@@ -435,7 +435,7 @@ I když zapisujete iterátor jako metodu, kompilátor je převede na vnořenou t
 
 Chcete-li zjistit, co kompilátor dělá, můžete použít nástroj Ildasm. exe k zobrazení kódu zprostředkujícího jazyka společnosti Microsoft, který je generován pro metodu iterátoru.
 
-Při vytváření iterátoru pro [třídu](../../../csharp/language-reference/keywords/class.md) nebo [strukturu](../../../csharp/language-reference/keywords/struct.md)není nutné implementovat celé <xref:System.Collections.IEnumerator> rozhraní. Když kompilátor detekuje iterátor, automaticky generuje `Current`, `MoveNext`a `Dispose` metody rozhraní <xref:System.Collections.IEnumerator> nebo <xref:System.Collections.Generic.IEnumerator%601>.
+Při vytváření iterátoru pro [třídu](../../language-reference/statements/class-statement.md) nebo [strukturu](../../language-reference/statements/structure-statement.md)není nutné implementovat celé <xref:System.Collections.IEnumerator> rozhraní. Když kompilátor detekuje iterátor, automaticky generuje `Current`, `MoveNext`a `Dispose` metody rozhraní <xref:System.Collections.IEnumerator> nebo <xref:System.Collections.Generic.IEnumerator%601>.
 
 U každého následného opakování smyčky `For Each…Next` (nebo přímého volání `IEnumerator.MoveNext`) pokračuje další tělo kódu iterátoru po předchozím příkazu `Yield`. Pak pokračuje dalším příkazem `Yield` až do chvíle, kdy se dosáhne konce textu iterátoru, nebo dokud se nezjistí `Exit Function` nebo `Return` příkaz.
 
@@ -453,7 +453,7 @@ Iterátory umožňují udržovat jednoduchost smyčky `For Each`, když potřebu
 
 - Zapouzdřit sestavení seznamu v iterátoru. V metodě iterátoru můžete sestavit seznam a pak každý výsledek vracet ve smyčce.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections.Generic>
 - <xref:System.Collections.Generic.IEnumerable%601>

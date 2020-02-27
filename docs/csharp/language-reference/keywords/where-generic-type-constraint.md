@@ -6,12 +6,12 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 19bf7682916336173ed93619fb6f0ff1242a1b30
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d236420c5019f7529b729155b13df50807dc1dab
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712803"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626708"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 
@@ -32,7 +32,7 @@ Klauzule `where` může určit, že typ je `class` nebo `struct`. Omezení `stru
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
 
-Klauzule `where` může zahrnovat omezení `notnull`. Omezení `notnull` omezuje parametr typu na typy, které neumožňují hodnotu null. Tento typ může být [typ hodnoty](struct.md) nebo typ odkazu, který neumožňuje hodnotu null. Omezení `notnull` je k dispozici počínaje C# verzí 8,0 pro kód zkompilovaný v [kontextu`nullable enable`](../../nullable-references.md#nullable-contexts). Na rozdíl od jiných omezení, pokud argument typu narušuje omezení `notnull`, kompilátor vygeneruje upozornění namísto chyby. Upozornění se generují jenom v kontextu `nullable enable`. 
+Klauzule `where` může zahrnovat omezení `notnull`. Omezení `notnull` omezuje parametr typu na typy, které neumožňují hodnotu null. Tento typ může být [typ hodnoty](../builtin-types/value-types.md) nebo typ odkazu, který neumožňuje hodnotu null. Omezení `notnull` je k dispozici počínaje C# verzí 8,0 pro kód zkompilovaný v [kontextu`nullable enable`](../../nullable-references.md#nullable-contexts). Na rozdíl od jiných omezení, pokud argument typu narušuje omezení `notnull`, kompilátor vygeneruje upozornění namísto chyby. Upozornění se generují jenom v kontextu `nullable enable`.
 
 > [!IMPORTANT]
 > Obecné deklarace, které zahrnují omezení `notnull` lze použít v kontextu s možnou hodnotou null, ale kompilátor neuplatňuje omezení.
@@ -69,10 +69,10 @@ Podrobnosti o syntaxi a použití omezení naleznete v tématu [omezení u param
 
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Úvod do obecných typů](../../programming-guide/generics/index.md)
 - [new – omezení](./new-constraint.md)
 - [Omezení parametrů typů](../../programming-guide/generics/constraints-on-type-parameters.md)

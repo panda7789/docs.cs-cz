@@ -9,16 +9,16 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 54b5f97aca131f52b9b5d9f54d7fa5ec00ba3d5b
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b18b2bf31787fa58e614cd4f057fba9037fe8ad8
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423679"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627549"
 ---
 # <a name="systemiopipelines-in-net"></a>System. IO. Pipelines v .NET
 
-<xref:System.IO.Pipelines> je nová knihovna, která je navržena tak, aby usnadnila vysoce výkonné vstupně-výstupní operace v rozhraní .NET. Jedná se o knihovnu, která cílí na .NET Standard, která funguje na všech implementacích rozhraní .NET.
+<xref:System.IO.Pipelines> je nová knihovna, která je navržená tak, aby usnadnila vysoce výkonné vstupně-výstupní operace v .NET. Jedná se o knihovnu, která cílí na .NET Standard, která funguje na všech implementacích rozhraní .NET.
 
 <a name="solve"></a>
 
@@ -32,7 +32,7 @@ Aplikace, které analyzují streamovaná data, se skládají ze standardizované
 * Analýza dat streamování je vysoce výkonná.
 * Snižte složitost kódu.
 
-Následující kód je typický pro server TCP, který přijímá zprávy oddělené řádky (oddělený `'\n'`) od klienta:
+Následující kód je typický pro server TCP, který přijímá zprávy oddělené řádky (oddělené `'\n'`) od klienta:
 
 ```csharp
 async Task ProcessLinesAsync(NetworkStream stream)
@@ -47,10 +47,10 @@ async Task ProcessLinesAsync(NetworkStream stream)
 
 Předchozí kód má několik problémů:
 
-* V jednom volání `ReadAsync` nemusí být přijata celá zpráva (konce řádku).
+* V jednom volání `ReadAsync`nemusí být přijata celá zpráva (konce řádku).
 * Ignoruje výsledek `stream.ReadAsync`. `stream.ReadAsync` vrátí, kolik dat bylo přečteno.
-* Nezpracovává případ, kdy je více řádků čteno v jednom volání `ReadAsync`.
-* Přiděluje pole `byte` s každým čtením.
+* Nezpracovává případ, kdy je v jednom `ReadAsync` volání čteno více řádků.
+* Přiděluje pole `byte` při každém čtení.
 
 Chcete-li opravit předchozí problémy, jsou vyžadovány následující změny:
 
@@ -66,11 +66,13 @@ Chcete-li opravit předchozí problémy, jsou vyžadovány následující změny
 
 [!code-csharp[](~/samples/snippets/csharp/pipelines/ProcessLinesAsync.cs?name=snippet)]
 
-Předchozí kód je složitý a neřeší všechny zjištěné problémy. Vysoce výkonné sítě obvykle znamenají psaní velmi složitého kódu pro maximalizaci výkonu. `System.IO.Pipelines` bylo navrženo tak, aby byl tento typ kódu snazší.
+Předchozí kód je složitý a neřeší všechny zjištěné problémy. Vysoce výkonné sítě obvykle znamenají psaní velmi složitého kódu pro maximalizaci výkonu. `System.IO.Pipelines` byla navržena tak, aby byl tento typ kódu snazší.
+
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
 
 ## <a name="pipe"></a>Příkazem
 
-Třídu <xref:System.IO.Pipelines.Pipe> lze použít k vytvoření dvojice `PipeWriter/PipeReader`. Všechna data zapsaná do `PipeWriter` jsou k dispozici v `PipeReader`:
+Třídu <xref:System.IO.Pipelines.Pipe> lze použít k vytvoření páru `PipeWriter/PipeReader`. Všechna data zapsaná do `PipeWriter` jsou k dispozici v `PipeReader`:
 
 [!code-csharp[](~/samples/snippets/csharp/pipelines/Pipe.cs?name=snippet2)]
 
@@ -85,27 +87,27 @@ Existují dvě smyčky:
 * `FillPipeAsync` čte z `Socket` a zapisuje do `PipeWriter`.
 * `ReadPipeAsync` čte z `PipeReader` a analyzuje příchozí řádky.
 
-Nejsou přiděleny žádné explicitní vyrovnávací paměti. Veškerá správa vyrovnávací paměti je delegovaná na implementace `PipeReader` a `PipeWriter`. Delegování správy vyrovnávací paměti usnadňuje využívání kódu pro zaměření pouze na obchodní logiku.
+Nejsou přiděleny žádné explicitní vyrovnávací paměti. Veškerá správa vyrovnávací paměti je delegována na implementace `PipeReader` a `PipeWriter`. Delegování správy vyrovnávací paměti usnadňuje využívání kódu pro zaměření pouze na obchodní logiku.
 
 V první smyčce:
 
-* je volána hodnota <xref:System.IO.Pipelines.PipeWriter.GetMemory(System.Int32)?displayProperty=nameWithType> pro získání paměti ze základního zapisovače.
-* je volána hodnota <xref:System.IO.Pipelines.PipeWriter.Advance(System.Int32)?displayProperty=nameWithType>, která sděluje `PipeWriter`, kolik dat bylo zapsáno do vyrovnávací paměti.
+* pro získání paměti ze základního zapisovače je volána <xref:System.IO.Pipelines.PipeWriter.GetMemory(System.Int32)?displayProperty=nameWithType>.
+* je volána <xref:System.IO.Pipelines.PipeWriter.Advance(System.Int32)?displayProperty=nameWithType> pro sdělení `PipeWriter` množství dat zapsaných do vyrovnávací paměti.
 * k zpřístupnění dat pro `PipeReader`je volána <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType>.
 
 Ve druhé smyčce `PipeReader` spotřebovává vyrovnávací paměti napsané `PipeWriter`. Vyrovnávací paměti přicházejí ze soketu. Volání `PipeReader.ReadAsync`:
 
-* Vrátí <xref:System.IO.Pipelines.ReadResult>, která obsahuje dvě důležité informace:
+* Vrátí <xref:System.IO.Pipelines.ReadResult>, který obsahuje dvě důležité informace:
 
   * Data, která byla načtena ve formě `ReadOnlySequence<byte>`.
-  * Logická hodnota `IsCompleted`, která označuje, zda byl dosažen konec dat (EOF).
+  * Logický `IsCompleted`, který označuje, zda bylo dosaženo konce dat (EOF).
 
 Po nalezení oddělovače na konci řádku (konce řádku) a při analýze řádku:
 
 * Logika zpracuje vyrovnávací paměť a přeskočí, co je již zpracováno.
-* je volána hodnota `PipeReader.AdvanceTo`, která sděluje `PipeReader`, kolik dat bylo spotřebováno a zkontrolováno.
+* je volána `PipeReader.AdvanceTo` pro sdělení `PipeReader` množství dat spotřebovaných a testovaných.
 
-Smyčka čtečky a zapisovače končí voláním `Complete`. `Complete` umožňuje podkladové kanálu uvolnit přidělenou paměť.
+Smyčka čtečky a zapisovače končí voláním `Complete`. `Complete` umožňuje původnímu kanálu uvolnit přidělenou paměť.
 
 ### <a name="backpressure-and-flow-control"></a>Řízení zatížení a tok
 
@@ -121,17 +123,17 @@ Analýza obvykle trvá více času, než stačí kopírovat bloky dat ze sítě:
 
 Pro zajištění optimálního výkonu existuje zůstatek mezi častými pozastavením a přidělením více paměti.
 
-Pro vyřešení předchozího problému má `Pipe` dvě nastavení pro řízení toku dat:
+Chcete-li vyřešit předchozí problém, `Pipe` má dvě nastavení pro řízení toku dat:
 
 * <xref:System.IO.Pipelines.PipeOptions.PauseWriterThreshold>: Určuje, kolik dat by mělo být uloženo do vyrovnávací paměti před voláním <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> pozastavení.
-* <xref:System.IO.Pipelines.PipeOptions.ResumeWriterThreshold>: Určuje, kolik dat musí čtenář sledovat před voláním `PipeWriter.FlushAsync` obnovení.
+* <xref:System.IO.Pipelines.PipeOptions.ResumeWriterThreshold>: Určuje, kolik dat musí čtenář sledovat před tím, než se volání `PipeWriter.FlushAsync` obnoví.
 
 ![Diagram s ResumeWriterThreshold a PauseWriterThreshold](./media/pipelines/resume-pause.png)
 
 <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType>:
 
-* Vrátí nekompletní `ValueTask<FlushResult>`, pokud množství dat v `Pipe` kříže `PauseWriterThreshold`.
-* Dokončí `ValueTask<FlushResult>`, když se změní na nižší než `ResumeWriterThreshold`.
+* Vrátí nekompletní `ValueTask<FlushResult>`, pokud je množství dat v `Pipe` `PauseWriterThreshold`.
+* Dokončí `ValueTask<FlushResult>`, když bude nižší než `ResumeWriterThreshold`.
 
 Pomocí dvou hodnot se vyhnete rychlému cyklování, ke kterému může dojít, když se použije jedna hodnota.
 
@@ -146,7 +148,7 @@ var pipe = new Pipe(options);
 
 ### <a name="pipescheduler"></a>PipeScheduler
 
-Typicky při použití `async` a `await` se asynchronní kód obnoví buď na <xref:System.Threading.Tasks.TaskScheduler> nebo v aktuálním <xref:System.Threading.SynchronizationContext>.
+Obvykle při použití `async` a `await`se asynchronní kód obnoví buď na <xref:System.Threading.Tasks.TaskScheduler>, nebo v aktuální <xref:System.Threading.SynchronizationContext>.
 
 Při provádění vstupně-výstupních operací je důležité mít detailní kontrolu nad tím, kde se vstupně-výstupní operace provádí. Tento ovládací prvek umožňuje efektivní využití mezipamětí CPU. Efektivní ukládání do mezipaměti je klíčové pro vysoce výkonné aplikace, jako jsou webové servery. <xref:System.IO.Pipelines.PipeScheduler> poskytuje kontrolu nad tím, kde se spouštějí asynchronní zpětná volání. Ve výchozím nastavení:
 
@@ -155,22 +157,22 @@ Při provádění vstupně-výstupních operací je důležité mít detailní k
 
 [!code-csharp[](~/samples/snippets/csharp/pipelines/Program.cs?name=snippet)]
 
-[PipeScheduler.](xref:System.IO.Pipelines.PipeScheduler.ThreadPool) Apartment je implementace <xref:System.IO.Pipelines.PipeScheduler>, která zařadí zpětná volání do fondu vláken. `PipeScheduler.ThreadPool` je výchozí a obecně nejlepší volbou. [PipeScheduler. inline](xref:System.IO.Pipelines.PipeScheduler.Inline) může způsobit nezamýšlené důsledky, jako je zablokování.
+[PipeScheduler.](xref:System.IO.Pipelines.PipeScheduler.ThreadPool) vlákn je implementace <xref:System.IO.Pipelines.PipeScheduler>, která zařadí zpětná volání do fondu vláken. výchozím nastavením je `PipeScheduler.ThreadPool` a obecně nejlepší volbou. [PipeScheduler. inline](xref:System.IO.Pipelines.PipeScheduler.Inline) může způsobit nezamýšlené důsledky, jako je zablokování.
 
 ### <a name="pipe-reset"></a>Resetování kanálu
 
-Opakované použití objektu `Pipe` je často efektivní. Chcete-li obnovit kanál, zavolejte <xref:System.IO.Pipelines.PipeReader> <xref:System.IO.Pipelines.Pipe.Reset%2A>, pokud jsou dokončeny `PipeReader` i `PipeWriter`.
+Je často efektivní použít `Pipe` objekt. Chcete-li obnovit kanál, zavolejte <xref:System.IO.Pipelines.PipeReader> <xref:System.IO.Pipelines.Pipe.Reset%2A>, pokud jsou dokončeny `PipeReader` i `PipeWriter`.
 
 ## <a name="pipereader"></a>PipeReader
 
-<xref:System.IO.Pipelines.PipeReader> spravuje paměť jménem volajícího. Po volání <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType>**vždy** volat <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType>. To umožňuje `PipeReader` ví, kdy se volající provede s pamětí, aby se mohl sledovat. `ReadOnlySequence<byte>` vrácená z `PipeReader.ReadAsync` je platná pouze do chvíle, kdy volání `PipeReader.AdvanceTo`. Po volání `PipeReader.AdvanceTo` není povoleno použít `ReadOnlySequence<byte>`.
+<xref:System.IO.Pipelines.PipeReader> spravuje paměť v zastoupení volajícího. Po volání <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType>**vždy** volat <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType>. To umožňuje `PipeReader` zjistit, kdy se volající provede s pamětí, aby mohl být sledován. `ReadOnlySequence<byte>` vrácená z `PipeReader.ReadAsync` je platná pouze do chvíle, kdy volání `PipeReader.AdvanceTo`. Použití `ReadOnlySequence<byte>` po volání `PipeReader.AdvanceTo`je neplatné.
 
 `PipeReader.AdvanceTo` přebírá dva argumenty <xref:System.SequencePosition>:
 
 * První argument určuje, kolik paměti bylo spotřebováno.
 * Druhý argument určuje, kolik paměti bylo pozorováno.
 
-Označení dat jako spotřebované znamená, že kanál může vrátit paměť do podkladového fondu vyrovnávací paměti. Označení dat jako pozorovaných ovládacích prvků řídí, co je další volání `PipeReader.ReadAsync`. Označení všeho jako pozorovaného znamená, že další volání `PipeReader.ReadAsync` nebude vráceno, dokud nebudou do kanálu zapsána další data. Jakákoli jiná hodnota provede další volání `PipeReader.ReadAsync` okamžitě se zjištěnými *a* nepozorovanými daty, ale data, která již byla spotřebována.
+Označení dat jako spotřebované znamená, že kanál může vrátit paměť do podkladového fondu vyrovnávací paměti. Označení dat jako pozorovaných řídí ovládací prvky, které provádí následující volání `PipeReader.ReadAsync`. Označení všeho jako pozorovaného znamená, že další volání `PipeReader.ReadAsync` nebude vracet, dokud nebudou do kanálu zapsána další data. Jakákoli jiná hodnota provede další volání `PipeReader.ReadAsync` okamžitě vrátí zjištěná *a* nepozorovaná data, ale data, která již byla spotřebována.
 
 ### <a name="read-streaming-data-scenarios"></a>Čtení scénářů streamování dat
 
@@ -179,7 +181,7 @@ Při pokusu o čtení dat streamování je k dispozici několik typických vzor�
 * Pokud má datový proud data, analyzujte jednu zprávu.
 * Pokud má datový proud data, analyzujte všechny dostupné zprávy.
 
-V následujících příkladech se k analýze zpráv z `ReadOnlySequence<byte>` používá metoda `TryParseMessage`. `TryParseMessage` analyzuje jednu zprávu a aktualizuje vstupní vyrovnávací paměť pro oříznutí analyzované zprávy z vyrovnávací paměti. `TryParseMessage` není součástí .NET, jedná se o metodu psanou uživatelem, která se používá v následujících oddílech.
+Následující příklady používají metodu `TryParseMessage` pro analýzu zpráv z `ReadOnlySequence<byte>`. `TryParseMessage` analyzuje jednu zprávu a aktualizuje vstupní vyrovnávací paměť pro oříznutí analyzované zprávy z vyrovnávací paměti. `TryParseMessage` není součástí .NET, jedná se o metodu psanou uživatelem, která se používá v následujících oddílech.
 
 ```csharp
 bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
@@ -205,7 +207,7 @@ Jeden případ zprávy má nejvíce potenciál pro chyby. Předání špatných 
 
 ### <a name="reading-multiple-messages"></a>Čtení více zpráv
 
-Následující kód přečte všechny zprávy z `PipeReader` a volá `ProcessMessageAsync` na každé.
+Následující kód přečte všechny zprávy z `PipeReader` a zavolá `ProcessMessageAsync`.
 
 [!code-csharp[MyConnection1](~/samples/snippets/csharp/pipelines/MyConnection1.cs?name=snippet)]
 
@@ -214,8 +216,8 @@ Následující kód přečte všechny zprávy z `PipeReader` a volá `ProcessMes
 `PipeReader.ReadAsync`:
 
 * Podporuje předávání <xref:System.Threading.CancellationToken>.
-* Vyvolá <xref:System.OperationCanceledException>, pokud je `CancellationToken` zrušen, zatímco existuje nevyřízená událost čtení.
-* Podporuje způsob, jak zrušit aktuální operaci čtení prostřednictvím <xref:System.IO.Pipelines.PipeReader.CancelPendingRead%2A?displayProperty=nameWithType>, což zabrání vyvolání výjimky. Volání `PipeReader.CancelPendingRead` způsobí, že aktuální nebo druhé volání `PipeReader.ReadAsync` vrátí <xref:System.IO.Pipelines.ReadResult> s `IsCanceled` nastavenou na `true`. To může být užitečné pro zastavení stávající smyčky čtení v nedestruktivním a nevýjimečném způsobu.
+* Vyvolá <xref:System.OperationCanceledException>, pokud se `CancellationToken` zruší v době, kdy probíhá čtení.
+* Podporuje způsob, jak zrušit aktuální operaci čtení prostřednictvím <xref:System.IO.Pipelines.PipeReader.CancelPendingRead%2A?displayProperty=nameWithType>, což zabrání vyvolání výjimky. Volání `PipeReader.CancelPendingRead` způsobí, že aktuální nebo další volání `PipeReader.ReadAsync` vrátí <xref:System.IO.Pipelines.ReadResult> s `IsCanceled` nastavenou na `true`. To může být užitečné pro zastavení stávající smyčky čtení v nedestruktivním a nevýjimečném způsobu.
 
 [!code-csharp[MyConnection](~/samples/snippets/csharp/pipelines/MyConnection.cs?name=snippet)]
 
@@ -223,21 +225,21 @@ Následující kód přečte všechny zprávy z `PipeReader` a volá `ProcessMes
 
 ### <a name="pipereader-common-problems"></a>PipeReader běžné problémy
 
-* Předání špatných hodnot do `consumed` nebo `examined` může vést k tomu, že se už čtou data.
+* Předání špatných hodnot `consumed` nebo `examined` může vést k tomu, že se už čtou data.
 * Předání `buffer.End` jako prověření může mít za následek:
 
   * Data zastavena
   * Možnou výjimku z paměti (OOM), pokud nejsou data spotřebována. Například `PipeReader.AdvanceTo(position, buffer.End)` při zpracování jedné zprávy v čase z vyrovnávací paměti.
 
-* Předání špatných hodnot do `consumed` nebo `examined` může způsobit nekonečnou smyčku. Například `PipeReader.AdvanceTo(buffer.Start)` Pokud se `buffer.Start` nezměnil, způsobí to, že se další volání `PipeReader.ReadAsync` vrátí hned před přijetím nových dat.
+* Předání špatných hodnot `consumed` nebo `examined` může mít za následek nekonečnou smyčku. Například `PipeReader.AdvanceTo(buffer.Start)` Pokud `buffer.Start` beze změny, způsobí to, že se další volání `PipeReader.ReadAsync` vrátí hned před přijetím nových dat.
 * Předání špatných hodnot do `consumed` nebo `examined` může mít za následek nekonečné ukládání do vyrovnávací paměti (OOM).
-* Použití `ReadOnlySequence<byte>` po volání `PipeReader.AdvanceTo` může mít za následek poškození paměti (po zadarmo se používá).
+* Použití `ReadOnlySequence<byte>` po volání `PipeReader.AdvanceTo` může mít za následek poškození paměti (použijte po uvolnění).
 * Selhání volání `PipeReader.Complete/CompleteAsync` může způsobit nevracení paměti.
-* Kontrola <xref:System.IO.Pipelines.ReadResult.IsCompleted?displayProperty=nameWithType> a před zpracováním vyrovnávací paměti za běhu dojde k úniku informací. Stav ukončení smyčky by měl být založený na `ReadResult.Buffer.IsEmpty` a `ReadResult.IsCompleted`. Tato nesprávně by mohla způsobit nekonečnou smyčku.
+* Při kontrole <xref:System.IO.Pipelines.ReadResult.IsCompleted?displayProperty=nameWithType> a ukončení logiky čtení před zpracováním vyrovnávací paměti dojde ke ztrátě dat. Stav ukončení smyčky by měl být založený na `ReadResult.Buffer.IsEmpty` a `ReadResult.IsCompleted`. Tato nesprávně by mohla způsobit nekonečnou smyčku.
 
 #### <a name="problematic-code"></a>Problematický kód
 
-❌ **ztráta dat**
+❌ **ztráty dat**
 
 `ReadResult` může vrátit konečný segment dat, když je `IsCompleted` nastaven na `true`. Tato data nebudou čtena před ukončením smyčky pro čtení. výsledkem bude ztráta dat.
 
@@ -247,9 +249,9 @@ Následující kód přečte všechny zprávy z `PipeReader` a volá `ProcessMes
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
-❌ **nekonečné smyčka**
+❌ **nekonečné smyčce**
 
-Následující logika může způsobit nekonečnou smyčku, pokud `Result.IsCompleted` je `true`, ale ve vyrovnávací paměti není nikdy úplná zpráva.
+Následující logika může způsobit nekonečnou smyčku, pokud je `Result.IsCompleted` `true`, ale ve vyrovnávací paměti není nikdy úplná zpráva.
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
@@ -257,7 +259,7 @@ Následující logika může způsobit nekonečnou smyčku, pokud `Result.IsComp
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
-Tady je další část kódu se stejným problémem. Před zaškrtnutím `ReadResult.IsCompleted` se kontroluje, jestli není prázdná vyrovnávací paměť. Protože je v `else if`, zacykluje se trvale, pokud ve vyrovnávací paměti nikdy není úplná zpráva.
+Tady je další část kódu se stejným problémem. Před zaškrtnutím `ReadResult.IsCompleted`se kontroluje, jestli není prázdná vyrovnávací paměť. Vzhledem k tomu, že je v `else if`, bude tato smyčka nepřetržitě v případě, že ve vyrovnávací paměti stále není úplná zpráva.
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
@@ -267,7 +269,7 @@ Tady je další část kódu se stejným problémem. Před zaškrtnutím `ReadRe
 
 **neočekávané Zablokování** ❌
 
-Nepodmíněné volání `PipeReader.AdvanceTo` s `buffer.End` v pozici `examined` může způsobit zablokování při analýze jedné zprávy. Další volání `PipeReader.AdvanceTo` se vrátí do:
+Nepodmíněné volání `PipeReader.AdvanceTo` s `buffer.End` ve `examined` pozici může způsobit, že při analýze jedné zprávy dojde k zablokování. Další volání `PipeReader.AdvanceTo` nevrátí do:
 
 * Do kanálu se zapisují další data.
 * A nová data se předtím nezkoumala.
@@ -278,7 +280,7 @@ Nepodmíněné volání `PipeReader.AdvanceTo` s `buffer.End` v pozici `examined
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
-❌ **nedostatek paměti (OOM)**
+**nedostatek paměti ❌ (OOM)**
 
 V následujících podmínkách uchovává následující kód ukládání do vyrovnávací paměti, dokud nedojde k <xref:System.OutOfMemoryException>:
 
@@ -293,7 +295,7 @@ V následujících podmínkách uchovává následující kód ukládání do vy
 
 **poškození ❌ paměti**
 
-Při psaní pomocníků, které čtou vyrovnávací paměť, je nutné před voláním `Advance` zkopírovat všechny vrácené datové části. Následující příklad vrátí paměť, kterou `Pipe` zahodila, a může ji znovu použít pro další operaci (čtení/zápis).
+Při psaní pomocníků, které čtou vyrovnávací paměť, je nutné před voláním `Advance`zkopírovat všechny vrácené datové části. Následující příklad vrátí paměť, kterou `Pipe` zahodila, a může ji znovu použít pro další operaci (čtení/zápis).
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
@@ -314,7 +316,7 @@ Předchozí kód:
 * Vyžádá vyrovnávací paměť o velikosti alespoň 5 bajtů z `PipeWriter` pomocí <xref:System.IO.Pipelines.PipeWriter.GetMemory%2A>.
 * Zapisuje bajty pro řetězec ASCII `"Hello"` do vráceného `Memory<byte>`.
 * Volá <xref:System.IO.Pipelines.PipeWriter.Advance%2A> k určení, kolik bajtů bylo zapsáno do vyrovnávací paměti.
-* Vyprázdní `PipeWriter`, což pošle bajty na příslušné zařízení.
+* Vyprázdní `PipeWriter`, čímž pošle bajty na příslušné zařízení.
 
 Předchozí metoda zápisu používá vyrovnávací paměti poskytované `PipeWriter`. Případně <xref:System.IO.Pipelines.PipeWriter.WriteAsync%2A?displayProperty=nameWithType>:
 
@@ -325,7 +327,7 @@ Předchozí metoda zápisu používá vyrovnávací paměti poskytované `PipeWr
 
 ### <a name="cancellation"></a>Zrušení
 
-<xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> podporuje předávání <xref:System.Threading.CancellationToken>. Předání `CancellationToken` má za následek `OperationCanceledException`, pokud je token zrušený, dokud je Nevyřízeno vyprázdnění. `PipeWriter.FlushAsync` podporuje způsob, jak zrušit aktuální operaci vyprázdnění prostřednictvím <xref:System.IO.Pipelines.PipeWriter.CancelPendingFlush%2A?displayProperty=nameWithType> bez vyvolání výjimky. Volání `PipeWriter.CancelPendingFlush` způsobí, že aktuální nebo druhé volání `PipeWriter.FlushAsync` nebo `PipeWriter.WriteAsync` vrátí <xref:System.IO.Pipelines.FlushResult> s `IsCanceled` nastavenou na `true`. To může být užitečné, pokud chcete zablokovat vyprázdnit vyřazení v nedestruktivním a nevýjimečném způsobu.
+<xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> podporuje předávání <xref:System.Threading.CancellationToken>. Předání `CancellationToken` má za následek `OperationCanceledException`, pokud je token zrušený, dokud je Nevyřízeno vyprázdnění. `PipeWriter.FlushAsync` podporuje způsob, jak zrušit aktuální operaci vyprázdnění prostřednictvím <xref:System.IO.Pipelines.PipeWriter.CancelPendingFlush%2A?displayProperty=nameWithType> bez vyvolání výjimky. Volání `PipeWriter.CancelPendingFlush` způsobí, že aktuální nebo další volání `PipeWriter.FlushAsync` nebo `PipeWriter.WriteAsync` vrátí <xref:System.IO.Pipelines.FlushResult> s `IsCanceled` nastaveným na `true`. To může být užitečné, pokud chcete zablokovat vyprázdnit vyřazení v nedestruktivním a nevýjimečném způsobu.
 
 <a name="pwcp"></a>
 
@@ -334,14 +336,14 @@ Předchozí metoda zápisu používá vyrovnávací paměti poskytované `PipeWr
 * <xref:System.IO.Pipelines.PipeWriter.GetSpan%2A> a <xref:System.IO.Pipelines.PipeWriter.GetMemory%2A> vrátí vyrovnávací paměť s minimální požadovanou velikostí paměti. **Neberete** přesnou velikost vyrovnávací paměti.
 * Není nijak zaručeno, že po sobě jdoucí volání budou vracet stejnou vyrovnávací paměť nebo vyrovnávací paměť se stejnou velikostí.
 * Po volání <xref:System.IO.Pipelines.PipeWriter.Advance%2A> pro pokračování v zápisu dalších dat je nutné požádat o novou vyrovnávací paměť. Dřív získaná vyrovnávací paměť se nedá zapsat do.
-* Volání `GetMemory` nebo `GetSpan`, zatímco existuje neúplné volání `FlushAsync` není bezpečné.
-* Volání `Complete` nebo `CompleteAsync`, zatímco existují nevyprázdněná data, mohou způsobit poškození paměti.
+* Volání `GetMemory` nebo `GetSpan` v době, kdy existuje neúplné volání `FlushAsync` není bezpečné.
+* Volání `Complete` nebo `CompleteAsync` v době, kdy jsou nevyprázdněná data, mohou způsobit poškození paměti.
 
 ## <a name="iduplexpipe"></a>IDuplexPipe
 
 <xref:System.IO.Pipelines.IDuplexPipe> je kontrakt pro typy, které podporují čtení i zápis. Například síťové připojení by představovalo `IDuplexPipe`.
 
- Na rozdíl od `Pipe`, který obsahuje `PipeReader` a `PipeWriter`, `IDuplexPipe` představuje jednu stranu úplného duplexního připojení. To znamená, že obsah zapsaný do `PipeWriter` nebude načten z `PipeReader`.
+ Na rozdíl od `Pipe`, která obsahuje `PipeReader` a `PipeWriter`, `IDuplexPipe` představuje jednu stranu úplného duplexního připojení. To znamená, že obsah zapsaný do `PipeWriter` nebude načten z `PipeReader`.
 
 ## <a name="streams"></a>Datové proudy
 

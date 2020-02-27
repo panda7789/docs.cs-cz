@@ -5,18 +5,18 @@ ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 2447db25e837cdcd6d67847b8677d7d44da551a9
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 93b6079b9a3bbf6d537094cab9dfb305ace7f6bf
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964942"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625862"
 ---
 # <a name="default-values-of-c-types-c-reference"></a>Výchozí hodnoty C# typů (C# Referenční dokumentace)
 
 Následující tabulka ukazuje výchozí hodnoty C# typů:
 
-|Type|Výchozí hodnota|
+|Typ|Výchozí hodnota|
 |---------|------------------|
 |Libovolný typ odkazu|`null`|
 |Libovolný [vestavěný celočíselný numerický typ](integral-numeric-types.md)|0 (nula)|
@@ -24,7 +24,7 @@ Následující tabulka ukazuje výchozí hodnoty C# typů:
 |[bool](bool.md)|`false`|
 |[char](char.md)|`'\0'` (U + 0000)|
 |[enum](enum.md)|Hodnota vytvořená výrazem `(E)0`, kde `E` je identifikátor výčtu.|
-|[struct](../keywords/struct.md)|Hodnota vytvořená nastavením všech polí typu hodnoty na jejich výchozí hodnoty a všechna pole typu odkaz na `null`.|
+|[struct](struct.md)|Hodnota vytvořená nastavením všech polí typu hodnoty na jejich výchozí hodnoty a všechna pole typu odkaz na `null`.|
 |Libovolný [typ hodnoty s možnou hodnotou null](nullable-value-types.md)|Instance, pro kterou je vlastnost <xref:System.Nullable%601.HasValue%2A> `false` a vlastnost <xref:System.Nullable%601.Value%2A> není definována. Tato výchozí hodnota je také známá jako hodnota *null* typu hodnoty s možnou hodnotou null.|
 
 Použijte [výchozí operátor](../operators/default.md) k vytvoření výchozí hodnoty typu, jak ukazuje následující příklad:
@@ -55,7 +55,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Výchozí hodnoty](~/_csharplang/spec/variables.md#default-values)
 - [Výchozí konstruktory](~/_csharplang/spec/types.md#default-constructors)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Konstruktory](../../programming-guide/classes-and-structs/constructors.md)

@@ -5,17 +5,15 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: 12408bd9f10e7ed147a6c1adc0497d3b8d797e42
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 705e571e11fa7c8276fcb48d15ed0160fbda2bc5
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319826"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628758"
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
 Zde jsou uvedeny pokyny k dokumentaci k Windows Communication Foundation (WCF). U odkazovaných dokumentů se doporučuje spouštět body seskupené podle konkrétních zájmů a úrovně odbornosti.  
-  
- Chcete-li nainstalovat samostatnou verzi dokumentace a prohlížeč nápovědy, stáhněte [Microsoft Windows SDK v 7,1](https://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).  
   
 ## <a name="new-to-windows-communication-foundation-programming"></a>Novinka Windows Communication Foundation programování  
   
@@ -39,7 +37,7 @@ Zde jsou uvedeny pokyny k dokumentaci k Windows Communication Foundation (WCF). 
   
 - Konfigurace pomocí souborů XML je hlavním prostředkem pro programování služeb a klientů WCF. Referenční dokumentaci pro prvky XML používané v konfiguračních souborech najdete v tématu [schéma konfigurace WCF](../configure-apps/file-schema/wcf/index.md).  
   
-## <a name="troubleshooting"></a>Poradce při potížích  
+## <a name="troubleshooting"></a>Řešení potíží  
  Informace o řešení běžných problémů s WCF najdete v tématu [rychlý Start pro řešení potíží WCF](wcf-troubleshooting-quickstart.md).  
   
 ## <a name="using-windows-communication-foundation-with-other-technologies"></a>Použití Windows Communication Foundation s jinými technologiemi  
@@ -61,7 +59,7 @@ Zde jsou uvedeny pokyny k dokumentaci k Windows Communication Foundation (WCF). 
 ## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>Protokoly WS-* podporované v Windows Communication Foundation  
  Seznam protokolů podporovaných vazbami poskytovaných systémem najdete v tématu [protokoly webových služeb podporované vazbami interoperability poskytované systémem](./feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). Seznam vazeb poskytovaných systémem naleznete v tématu [systémové vazby](system-provided-bindings.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ukázky Windows Communication Foundation](./samples/index.md)
 - [Koncepční přehled](conceptual-overview.md)

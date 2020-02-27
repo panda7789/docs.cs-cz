@@ -1,25 +1,25 @@
 ---
 title: Metadata – gRPC pro vývojáře WCF
-description: Jak se v gRPC používají metadata k předání dalšího kontextu mezi klienty a servery
+description: Jak se v gRPC používají metadata k předání dalšího kontextu mezi klienty a servery.
 ms.date: 09/02/2019
-ms.openlocfilehash: 723d877bfbf0c2b0785949ff15939aedbac4d4e9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 64fa94d1e63af480cbc7363631de161c5b8b8fb8
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971980"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628576"
 ---
 # <a name="metadata"></a>Metadata
 
-"Metadata" odkazují na další data, která mohou být užitečná při zpracování požadavků a odpovědí, ale nejsou součástí skutečných aplikačních dat. Metadata mohou zahrnovat ověřovací tokeny, vyžádat si identifikátory a značky pro účely monitorování nebo informace o datech, jako je počet záznamů v datové sadě.
+*Metadata* odkazují na další data, která by mohla být užitečná při zpracování požadavků a odpovědí, ale která nejsou součástí skutečných aplikačních dat. Metadata mohou zahrnovat ověřovací tokeny, vyžádat si identifikátory a značky pro účely monitorování a informace o datech, jako je počet záznamů v datové sadě.
 
-Je možné přidat do zpráv WCF záhlaví obecných klíčů a hodnot pomocí <xref:System.ServiceModel.OperationContextScope> a vlastnost <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders?displayProperty=nameWithType> a pomocí <xref:System.ServiceModel.Channels.MessageProperties>je zpracovat.
+Je možné přidat hlavičky obecných klíčů a hodnot do zpráv Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.OperationContextScope> a vlastnosti <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders?displayProperty=nameWithType> a zpracovávat je pomocí <xref:System.ServiceModel.Channels.MessageProperties>.
 
-volání a odpovědi gRPC můžou zahrnovat i metadata podobná hlavičkám HTTP. Ty jsou většinou neviditelné, protože gRPC sebe sama a jsou předávány prostřednictvím kódu aplikace nebo middlewaru. Metadata jsou reprezentována jako páry klíč/hodnota, kde klíč je řetězec a hodnota je buď řetězec, nebo binární data. V souboru `.proto` nemusíte zadávat metadata.
+volání a odpovědi gRPC můžou zahrnovat i metadata, která jsou podobná hlavičkám HTTP. Tato metadata jsou většinou neviditelná pro gRPC sebe sama a předávají se prostřednictvím kódu aplikace nebo middlewaru. Metadata jsou reprezentována jako páry klíč/hodnota, kde klíč je řetězec a hodnota je buď řetězec, nebo binární data. V souboru `.proto` nemusíte zadávat metadata.
 
-Metadata se zpracovávají pomocí `Metadata` třídy z balíčku NuGet pro [Grpc. Core. API](https://www.nuget.org/packages/Grpc.Core.Api/) . Tato třída se dá použít se syntaxí inicializátoru kolekce.
+Metadata jsou zpracována třídou `Metadata` balíčku NuGet [Grpc. Core. API](https://www.nuget.org/packages/Grpc.Core.Api/) . Tato třída se dá použít se syntaxí inicializátoru kolekce.
 
-Následující příklad ukazuje, jak přidat metadata k volání z C# klienta:
+Tento příklad ukazuje, jak přidat metadata k volání z C# klienta:
 
 ```csharp
 var metadata = new Metadata

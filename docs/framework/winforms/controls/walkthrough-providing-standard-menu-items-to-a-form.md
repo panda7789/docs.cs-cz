@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Zajištění standardních položek nabídky pro formulář'
+title: 'Návod: Poskytnutí standardních položek nabídky formuláři'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,106 +10,106 @@ helpviewer_keywords:
 - StatusStrip control [Windows Forms]
 - ToolStrip control [Windows Forms]
 ms.assetid: dac37d98-589e-4d6d-9673-6437e8943122
-ms.openlocfilehash: ebfacadfee3ea069359a72ea0402751e9e6280d7
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: ee80aad445c00bb4b98b49c80495fa512150bcef
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211508"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628771"
 ---
-# <a name="walkthrough-providing-standard-menu-items-to-a-form"></a>Návod: Zajištění standardních položek nabídky pro formulář
+# <a name="walkthrough-providing-standard-menu-items-to-a-form"></a>Návod: Poskytnutí standardních položek nabídky formuláři
 
-Můžete zadat standardní nabídky formuláře s <xref:System.Windows.Forms.MenuStrip> ovládacího prvku.
+Pomocí ovládacího prvku <xref:System.Windows.Forms.MenuStrip> můžete poskytnout standardní nabídku pro vaše formuláře.
 
-Tento návod ukazuje, jak používat <xref:System.Windows.Forms.MenuStrip> řízení vytvořit standardní nabídku. Formuláře také reaguje, když uživatel vybere položku nabídky. Tyto úlohy jsou uvedené v tomto návodu:
+Tento návod ukazuje, jak pomocí ovládacího prvku <xref:System.Windows.Forms.MenuStrip> vytvořit standardní nabídku. Formulář také reaguje, když uživatel vybere položku nabídky. V tomto návodu jsou znázorněné následující úlohy:
 
-- Vytvoření projektu Windows Forms.
+- Vytvoření projektu model Windows Forms.
 
-- Vytvoření standardní nabídky.
+- Vytvoření standardní nabídky
 
-- Vytváření <xref:System.Windows.Forms.StatusStrip> ovládacího prvku.
+- Vytvoření ovládacího prvku <xref:System.Windows.Forms.StatusStrip>.
 
 - Zpracování výběru položky nabídky.
 
-Až budete hotovi, budete mít formulář s standardní nabídky, která zobrazuje výběru položky nabídky v <xref:System.Windows.Forms.StatusStrip> ovládacího prvku.
+Po dokončení budete mít formulář se standardní nabídkou, která zobrazí výběr položek nabídky v ovládacím prvku <xref:System.Windows.Forms.StatusStrip>.
 
-Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Zajištění standardních položek nabídky pro formulář](how-to-provide-standard-menu-items-to-a-form.md).
+Chcete-li zkopírovat kód v tomto tématu jako jeden výpis, přečtěte si téma [Postup: poskytnutí standardních položek nabídky do formuláře](how-to-provide-standard-menu-items-to-a-form.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
-Visual Studio k dokončení tohoto návodu budete potřebovat.
+K dokončení tohoto Názorného postupu budete potřebovat Visual Studio.
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
-1. V sadě Visual Studio vytvořte projekt aplikace Windows volá **StandardMenuForm** (**souboru** > **nový** > **projektu**   >  **Visual C#**  nebo **jazyka Visual Basic** > **klasický desktopový**  >  **Aplikaci Windows Forms**).
+1. V aplikaci Visual Studio vytvořte projekt aplikace pro Windows s názvem **StandardMenuForm** (**File** > **New** > **Project** >  **C# Visual** nebo **Visual Basic** > **Classic Desktop** > **model Windows Forms aplikace**).
 
-2. V Návrháři formulářů Windows vyberte formulář.
+2. V Návrhář formulářů vyberte formulář.
 
 ## <a name="create-a-standard-menu"></a>Vytvořit standardní nabídku
 
-Návrhář formulářů Windows můžete automaticky naplnit <xref:System.Windows.Forms.MenuStrip> ovládací prvek s standardních položek nabídky.
+Návrhář formulářů může automaticky naplnit ovládací prvek <xref:System.Windows.Forms.MenuStrip> pomocí standardních položek nabídky.
 
-1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládacího prvku na formulář.
+1. Z **panelu nástrojů**přetáhněte ovládací prvek <xref:System.Windows.Forms.MenuStrip> do formuláře.
 
-2. Klikněte na tlačítko <xref:System.Windows.Forms.MenuStrip> piktogram inteligentní značky ovládacího prvku (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) a vyberte **vložit standardní položky**.
+2. Klikněte na piktogram akcí návrháře <xref:System.Windows.Forms.MenuStrip> (![malé černé šipky](./media/designer-actions-glyph.gif)) a vyberte **Vložit standardní položky**.
 
-     <xref:System.Windows.Forms.MenuStrip> Ovládací prvek se vyplní standardních položek nabídky.
+     Ovládací prvek <xref:System.Windows.Forms.MenuStrip> se naplní standardními položkami nabídky.
 
-3. Klikněte na tlačítko **souboru** položka nabídky zobrazit jeho výchozí položky nabídky a odpovídajících ikon.
+3. Kliknutím na položku nabídky **soubor** zobrazíte její výchozí položky nabídky a příslušné ikony.
 
 ## <a name="create-a-statusstrip-control"></a>Vytvoření ovládacího prvku StatusStrip
 
-Použití <xref:System.Windows.Forms.StatusStrip> ovládací prvek pro zobrazení stavu pro aplikace Windows Forms. V uvedeném příkladě se zobrazí položky nabídky vybraných uživatelem v <xref:System.Windows.Forms.StatusStrip> ovládacího prvku.
+Pro zobrazení stavu aplikací model Windows Forms použijte ovládací prvek <xref:System.Windows.Forms.StatusStrip>. V aktuálním příkladu se položky nabídky vybrané uživatelem zobrazí v ovládacím prvku <xref:System.Windows.Forms.StatusStrip>.
 
-1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.StatusStrip> ovládacího prvku na formulář.
+1. Z **panelu nástrojů**přetáhněte ovládací prvek <xref:System.Windows.Forms.StatusStrip> do formuláře.
 
-     <xref:System.Windows.Forms.StatusStrip> Ovládací prvek automaticky ukotvené do dolní části formuláře.
+     Ovládací prvek <xref:System.Windows.Forms.StatusStrip> se automaticky ukotví do dolní části formuláře.
 
-2. Klikněte na tlačítko <xref:System.Windows.Forms.StatusStrip> ovládacího prvku tlačítko rozevíracího seznamu a vyberte **StatusLabel** přidáte <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvek <xref:System.Windows.Forms.StatusStrip> ovládacího prvku.
+2. Klikněte na tlačítko rozevíracího seznamu <xref:System.Windows.Forms.StatusStrip>ho ovládacího prvku a výběrem **StatusLabel** přidejte ovládací prvek <xref:System.Windows.Forms.ToolStripStatusLabel> do ovládacího prvku <xref:System.Windows.Forms.StatusStrip>.
 
-## <a name="handle-item-selection"></a>Výběr položek popisovač
+## <a name="handle-item-selection"></a>Zpracovat výběr položky
 
-Zpracování <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked> události a reagovat, když uživatel vybere položku nabídky.
+Zpracuje událost <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked>, aby reagovala, když uživatel vybere položku nabídky.
 
-1. Klikněte na tlačítko **soubor** položku nabídky, kterou jste vytvořili v části Vytvoření oddílu standardní nabídky.
+1. Klikněte na položku nabídky **soubor** , kterou jste vytvořili v části vytvoření standardní nabídky.
 
-2. V **vlastnosti** okna, klikněte na tlačítko **události**.
+2. V okně **vlastnosti** klikněte na položku **události**.
 
-3. Dvakrát klikněte <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked> událostí.
+3. Dvakrát klikněte na událost <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked>.
 
-     Návrhář formulářů Windows generuje obslužná rutina události <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked> událostí.
+     Návrhář formulářů generuje obslužnou rutinu události pro událost <xref:System.Windows.Forms.ToolStripDropDownItem.DropDownItemClicked>.
 
-4. Vložte následující kód do obslužné rutiny události.
+4. Do obslužné rutiny události vložte následující kód.
 
      [!code-csharp[System.Windows.Forms.ToolStrip.StandardMenu#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StandardMenu/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.ToolStrip.StandardMenu#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StandardMenu/VB/Form1.vb#3)]
 
-5. Vložit `UpdateStatus` nástroj definici metody do formuláře.
+5. Do formuláře vložte definici metody nástroje `UpdateStatus`.
 
      [!code-csharp[System.Windows.Forms.ToolStrip.StandardMenu#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StandardMenu/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.ToolStrip.StandardMenu#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StandardMenu/VB/Form1.vb#2)]
 
 ## <a name="checkpoint--test-your-form"></a>Kontrolní bod – testování formuláře
 
-1. Stisknutím klávesy **F5** kompilace a spuštění formuláře.
+1. Pro zkompilování a spuštění formuláře stiskněte klávesu **F5** .
 
-2. Klikněte na tlačítko **souboru** položky nabídky a otevřete nabídku.
+2. Kliknutím na položku nabídky **soubor** otevřete nabídku.
 
-3. Na **souboru** nabídky, klikněte na jednu z položek, vyberte ho.
+3. V nabídce **soubor** klikněte na jednu z položek a vyberte ji.
 
-     <xref:System.Windows.Forms.StatusStrip> Ovládací prvek zobrazuje vybrané položky.
+     Ovládací prvek <xref:System.Windows.Forms.StatusStrip> zobrazí vybranou položku.
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto návodu jste vytvořili, pomocí standardní nabídky formuláře. Můžete použít <xref:System.Windows.Forms.ToolStrip> řady ovládacích prvků pro mnoho dalších důvodů:
+V tomto návodu jste vytvořili formulář se standardní nabídkou. <xref:System.Windows.Forms.ToolStrip> rodinu ovládacích prvků lze použít pro mnoho dalších účelů:
 
-- Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu [ContextMenu – přehled komponenty](contextmenu-component-overview-windows-forms.md).
+- Vytvořte místní nabídky pro ovládací prvky pomocí <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu věnovaném [přehledu komponent](contextmenu-component-overview-windows-forms.md).
 
-- Vytvoření více formuláře (MDI interface) dokumentu s ukotvení <xref:System.Windows.Forms.ToolStrip> ovládacích prvků. Další informace najdete v tématu [názorný postup: Vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).
+- Vytvořte formulář MDI (Multiple Document Interface) s ovládacími prvky docking <xref:System.Windows.Forms.ToolStrip>. Další informace najdete v tématu [Návod: Vytvoření formuláře MDI pomocí slučování nabídek a ovládacích prvků ToolStrip](walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).
 
-- Zadejte vaše <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled. Další informace najdete v tématu [jak: Nastavení vykreslovacího modulu prvku ToolStrip pro aplikaci](how-to-set-the-toolstrip-renderer-for-an-application.md).
+- Poskytněte vašemu <xref:System.Windows.Forms.ToolStrip> profesionální vzhled. Další informace naleznete v tématu [How to: set a Renderer ToolStrip pro aplikaci](how-to-set-the-toolstrip-renderer-for-an-application.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStrip>

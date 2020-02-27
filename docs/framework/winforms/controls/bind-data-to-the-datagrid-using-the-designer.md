@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data sources [Windows Forms], binding to Windows Forms controls
 - DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
-ms.openlocfilehash: d5fab6acc53e5b8be247e958bdba78f0d3647fdc
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: d49a718e42a989c731cdf748fb63a6305ee096bf
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744112"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626321"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku Windows Forms DataGridView pomocí Návrháře
 Pomocí návrháře můžete propojit ovládací prvek <xref:System.Windows.Forms.DataGridView> se zdroji dat několika různých odrůd, včetně databází, obchodních objektů a webových služeb. Při navázání ovládacího prvku na zdroj dat pomocí návrháře je ovládací prvek automaticky svázán s <xref:System.Windows.Forms.BindingSource> komponentou, která představuje zdroj dat. Kromě toho se sloupce automaticky generují v ovládacím prvku tak, aby odpovídaly informacím schématu poskytnutým zdrojem dat.
@@ -24,7 +24,7 @@ Pomocí návrháře můžete propojit ovládací prvek <xref:System.Windows.Form
 
 ## <a name="to-bind-the-control-to-a-data-source"></a>Svázání ovládacího prvku se zdrojem dat
 
-1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")).
+1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf akcí návrháře (![malou černou šipku](./media/designer-actions-glyph.gif)).
 
 2. Klikněte na šipku rozevíracího seznamu u možnosti **Zvolit zdroj dat** .
 

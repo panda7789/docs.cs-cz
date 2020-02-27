@@ -5,12 +5,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 8348e080d833e79dd364aee511ac7d05fb53d1cc
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 114fa2973c50be9a4199db9729e3cd9ea6122866
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543557"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626526"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 
@@ -21,7 +21,7 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že b
 
 ## <a name="method-signatures"></a>Signatury metod
 
-Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md), [struktuře](../../language-reference/keywords/struct.md)nebo [rozhraní](../interfaces/index.md) zadáním úrovně přístupu, jako je například `public` nebo `private`, volitelné modifikátory, jako je například `abstract` nebo `sealed`, návratová hodnota, název metody a všechny parametry metody. Tyto části jsou společně signaturou metody.
+Metody jsou deklarovány ve [třídě](../../language-reference/keywords/class.md), [struktuře](../../language-reference/builtin-types/struct.md)nebo [rozhraní](../interfaces/index.md) zadáním úrovně přístupu, jako je například `public` nebo `private`, volitelné modifikátory, jako je například `abstract` nebo `sealed`, návratová hodnota, název metody a všechny parametry metody. Tyto části jsou společně signaturou metody.
 
 > [!NOTE]
 > Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.
@@ -165,7 +165,7 @@ Další informace najdete v tématu [iterátory](../concepts/iterators.md).
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](index.md)

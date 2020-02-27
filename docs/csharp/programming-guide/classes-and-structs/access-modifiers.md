@@ -1,81 +1,75 @@
 ---
 title: Modifikátory přístupu – C# Průvodce programováním
-ms.date: 07/20/2015
+ms.date: 03/08/2020
 helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: 0d8e536902317c1e5b00dadde069dd6242189088
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 749d53344a2518966cfa5d937069ba73dfd6be8f
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705662"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628225"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
-Všechny typy a členy typu mají úroveň přístupnosti, která určuje, zda lze použít z jiného kódu v sestavení nebo v jiných sestaveních. Následující modifikátory přístupu můžete použít k určení přístupnosti typu nebo člena při jeho deklaraci:  
-  
- [public](../../language-reference/keywords/public.md)  
- Na daný typ nebo člen je možné přistupovat jakýkoli jiný kód ve stejném sestavení nebo jiném sestavení, které na něj odkazuje. 
-  
- [private](../../language-reference/keywords/private.md)  
- Typ nebo člen může být k dispozici pouze pomocí kódu ve stejné třídě nebo struktuře.  
-  
- [protected](../../language-reference/keywords/protected.md)  
- Typ nebo člen může být k dispozici pouze pomocí kódu ve stejné třídě nebo ve třídě, která je odvozena z této třídy.  
- [internal](../../language-reference/keywords/internal.md)  
- K typu nebo členu může být přistup libovolným kódem ve stejném sestavení, ale nikoli z jiného sestavení.  
-  
- [chráněná interní](../../language-reference/keywords/protected-internal.md) K typu nebo členu lze přistupovat jakýmkoli kódem v sestavení, ve kterém je deklarován, nebo z odvozené třídy v jiném sestavení. 
 
- [soukromé chráněné](../../language-reference/keywords/private-protected.md) K typu nebo členu lze přistupovat pouze v rámci deklarovaného sestavení, kódu ve stejné třídě nebo v typu, který je odvozen z této třídy.
-  
- Následující příklady ukazují, jak zadat modifikátory přístupu pro typ a člen:  
-  
- [!code-csharp[csProgGuideObjects#72](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#72)]  
-  
- Ne všechny modifikátory přístupu lze použít pro všechny typy nebo členy ve všech kontextech a v některých případech je přístupnost člena typu omezená přístupností jeho nadřazeného typu. Následující části obsahují další podrobnosti o usnadnění přístupu.  
-  
+Všechny typy a členy typu mají úroveň přístupnosti. Úroveň přístupnosti řídí, zda lze použít z jiného kódu v sestavení nebo v jiných sestaveních. Použijte následující modifikátory přístupu k určení přístupnosti typu nebo člena při jeho deklaraci:
+
+- [Public](../../language-reference/keywords/public.md): k typu nebo členu může být přistup jakýkoliv jiný kód ve stejném sestavení nebo jiném sestavení, které na něj odkazuje.
+- [Private](../../language-reference/keywords/private.md): k typu nebo členu lze použít pouze kód ve stejném `class` nebo `struct`.
+- [Protected](../../language-reference/keywords/protected.md): k typu nebo členu lze použít pouze kód ve stejném `class`nebo v `class`, který je odvozen z tohoto `class`.
+- [interní](../../language-reference/keywords/internal.md): k typu nebo členu je možné přistupovat jakýmkoli kódem ve stejném sestavení, ale ne z jiného sestavení.
+- [Protected Internal](../../language-reference/keywords/protected-internal.md): k typu nebo členu je možné přistupovat jakýmkoli kódem v sestavení, ve kterém je deklarováno, nebo z odvozené `class` v jiném sestavení.
+- [Private Protected](../../language-reference/keywords/private-protected.md): k typu nebo členu lze v rámci deklarovaného sestavení použít pouze kód ve stejném `class` nebo v typu, který je odvozen z tohoto `class`.
+
+Následující příklady ukazují, jak zadat modifikátory přístupu pro typ a člen:
+
+[!code-csharp[PublicAccess](~/samples/snippets/csharp/objectoriented/accessmodifiers.cs#PublicAccess)]
+
+Ne všechny modifikátory přístupu jsou platné pro všechny typy nebo členy ve všech kontextech. V některých případech je přístupnost člena typu omezená přístupností jeho nadřazeného typu.
+
 ## <a name="class-and-struct-accessibility"></a>Přístupnost třídy a struktury  
- Třídy a struktury, které jsou deklarovány přímo v rámci oboru názvů (jinými slovy, které nejsou vnořené v jiných třídách nebo strukturách) mohou být buď veřejné, nebo interní. Interní je výchozí, pokud není zadán modifikátor přístupu.  
-  
- Členy struktury, včetně vnořených tříd a struktur, lze deklarovat jako veřejné, interní nebo soukromé. Členy třídy, včetně vnořených tříd a struktur, mohou být veřejné, chráněné interní, chráněné, interní, privátní nebo privátní. Úroveň přístupu pro členy třídy a členy struktury, včetně vnořených tříd a struktur, je ve výchozím nastavení soukromá. Soukromé vnořené typy nejsou přístupné z vnějšku nadřazeného typu.  
-  
- Odvozené třídy nemohou mít větší přístupnost než jejich základní typy. Jinými slovy, nelze mít `B` veřejné třídy, které jsou odvozeny z interní `A`třídy. Pokud to bylo povoleno, mělo by to mít účinek `A` veřejné, protože všechny chráněné nebo interní členy `A` jsou přístupné z odvozené třídy.  
-  
- Můžete povolit konkrétním jiným sestavením přístup k interním typům pomocí InternalsVisibleToAttribute. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend.md).  
-  
-## <a name="class-and-struct-member-accessibility"></a>Přístupnost třídy a člena struktury  
- Členy třídy (včetně vnořených tříd a struktur) lze deklarovat s libovolným šesti typy přístupu. Členy struktury nejde deklarovat jako chráněné, protože struktury nepodporují dědění.  
-  
- V normálním případě přístupnost člena není větší než přístupnost typu, který ho obsahuje. Veřejný člen interní třídy však může být přístupný mimo sestavení, pokud člen implementuje metody rozhraní nebo přepíše virtuální metody, které jsou definovány ve veřejné základní třídě.  
-  
- Typ každého členu, který je pole, vlastnost nebo událost musí být k dispozici alespoň jako člen samotný. Podobně, návratový typ a typy parametrů každého člena, který je metoda, indexer nebo delegát, musí být k dispozici alespoň jako samotný člen. Například nemůžete mít veřejnou metodu `M`, která vrací třídu `C`, pokud `C` není také veřejná. Podobně nemůžete mít chráněnou vlastnost typu `A`, pokud je `A` deklarována jako soukromá.  
-  
- Uživatelem definované operátory musí být vždy deklarovány jako veřejné a statické. Další informace naleznete v tématu [přetížení operátoru](../../language-reference/operators/operator-overloading.md).  
-  
- Finalizační metody nemůžou mít modifikátory dostupnosti.  
-  
- Chcete-li nastavit úroveň přístupu pro člena třídy nebo struktury, přidejte příslušné klíčové slovo do deklarace člena, jak je znázorněno v následujícím příkladu.  
-  
- [!code-csharp[csProgGuideObjects#73](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#73)]  
-  
-> [!NOTE]
-> Chráněná interní úroveň přístupnosti znamená chráněný nebo interní, nechráněnou a interní. Jinými slovy, chráněný interní člen může být k dispozici z libovolné třídy ve stejném sestavení, včetně odvozených tříd. Chcete-li omezit přístupnost jenom na odvozené třídy ve stejném sestavení, deklarujte samotnou třídu jako interní a deklarujte její členy jako chráněnou. Počínaje verzí C# 7,2 můžete také použít modifikátor privátního chráněného přístupu, abyste dosáhli stejného výsledku bez nutnosti vytvořit interní obsahující třídu.  
-  
-## <a name="other-types"></a>Další typy  
- Rozhraní deklarovaná přímo v rámci oboru názvů lze deklarovat jako veřejné nebo interní a stejně jako třídy a struktury, výchozí nastavení rozhraní pro interní přístup. Členy rozhraní jsou vždy veřejné, protože účelem rozhraní je povolit jiným typům přístup ke třídě nebo struktuře. Pro členy rozhraní nelze použít žádné modifikátory přístupu.  
-  
- Členy výčtu jsou vždy veřejné a nelze použít žádné modifikátory přístupu.  
-  
- Delegáti se chovají jako třídy a struktury. Ve výchozím nastavení mají interní přístup, pokud jsou deklarovány přímo v rámci oboru názvů a soukromý přístup, je-li vnořen.  
-  
-## <a name="c-language-specification"></a>C# – jazyková specifikace  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)
+Třídy a struktury deklarované přímo v rámci oboru názvů (jinými slovy, které nejsou vnořené v jiných třídách nebo strukturách) mohou být buď `public`, nebo `internal`. Pokud není zadán modifikátor přístupu, `Internal` výchozí hodnota.  
+
+Členy struktury, včetně vnořených tříd a struktur, lze deklarovat `public`, `internal`nebo `private`. Členy třídy, včetně vnořených tříd a struktur, mohou být `public`, `protected internal`, `protected`, `internal`, `private protected`nebo `private`. Členy třídy a struktury, včetně vnořených tříd a struktur, mají ve výchozím nastavení přístup `private`. Soukromé vnořené typy nejsou přístupné z vnějšku nadřazeného typu.
+
+Odvozené třídy nemůžou mít větší přístupnost než jejich základní typy. Nelze deklarovat `B` veřejné třídy, které jsou odvozeny z vnitřní `A`třídy. Pokud je to povoleno, bude mít účinek `A` veřejné, protože všechny `protected` nebo `internal` členové `A` jsou přístupné z odvozené třídy.
+
+Pro přístup k interním typům pomocí `InternalsVisibleToAttribute`lze povolit konkrétní další sestavení. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend.md).
+
+## <a name="class-and-struct-member-accessibility"></a>Přístupnost třídy a člena struktury  
+
+Členy třídy (včetně vnořených tříd a struktur) lze deklarovat s libovolným šesti typy přístupu. Členy struktury nejde deklarovat jako `protected`, `protected internal`nebo `private protected`, protože struktury nepodporují dědění.
+
+V normálním případě přístupnost člena nepřekračuje přístupnost typu, který ho obsahuje. `public` člen interní třídy však může být přístupný mimo sestavení, pokud člen implementuje metody rozhraní nebo přepíše virtuální metody, které jsou definovány ve veřejné základní třídě.
+
+Typ každého pole člena, vlastnost nebo událost musí být k dispozici alespoň jako člen samotný. Podobně musí být návratový typ a typy parametrů jakékoli metody, indexeru nebo delegáta aspoň tak přístupné jako samotný člen. Například nemůžete mít metodu `public` `M`, která vrací `C` třídy, pokud `C` ani `public`. Podobně nemůžete mít vlastnost `protected` typu `A`, pokud je `A` deklarována jako `private`.
+
+Uživatelem definované operátory musí být vždy deklarovány jako `public` a `static`. Další informace naleznete v tématu [přetížení operátoru](../../language-reference/operators/operator-overloading.md).
+
+Finalizační metody nemůžou mít modifikátory dostupnosti.
+
+Chcete-li nastavit úroveň přístupu pro člena `class` nebo `struct`, přidejte příslušné klíčové slovo do deklarace člena, jak je znázorněno v následujícím příkladu.
+
+[!code-csharp[MethodAccess](~/samples/snippets/csharp/objectoriented/accessmodifiers.cs#MethodAccess)]
+
+## <a name="other-types"></a>Další typy
+
+Rozhraní deklarovaná přímo v rámci oboru názvů mohou být `public` nebo `internal` a stejně jako třídy a struktury, výchozí nastavení rozhraní `internal` přístupu. Členy rozhraní jsou ve výchozím nastavení `public`, protože účelem rozhraní je povolit jiným typům přístup ke třídě nebo struktuře. Deklarace členů rozhraní můžou zahrnovat jakýkoli modifikátor přístupu. To je nejužitečnější pro statické metody pro zajištění běžných implementací, které jsou vyžadovány všemi implementátori třídy.
+
+Členy výčtu jsou vždy `public`a nelze použít žádné modifikátory přístupu.
+
+Delegáti se chovají jako třídy a struktury. Ve výchozím nastavení mají přístup `internal`, pokud jsou deklarovány přímo v rámci oboru názvů a `private` přístup, pokud je vnořený.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](./index.md)
 - [Rozhraní](../interfaces/index.md)
 - [private](../../language-reference/keywords/private.md)
@@ -85,5 +79,5 @@ Všechny typy a členy typu mají úroveň přístupnosti, která určuje, zda l
 - [protected internal](../../language-reference/keywords/protected-internal.md)
 - [private protected](../../language-reference/keywords/private-protected.md)
 - [class](../../language-reference/keywords/class.md)
-- [struct](../../language-reference/keywords/struct.md)
+- [struct](../../language-reference/builtin-types/struct.md)
 - [interface](../../language-reference/keywords/interface.md)

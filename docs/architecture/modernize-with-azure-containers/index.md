@@ -2,24 +2,24 @@
 title: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows (druhá edice)
 description: Naučte se přezvednout a přemodernizovat stávající aplikace do cloudu Azure a kontejnerů pomocí této elektronické knihy.
 ms.date: 04/28/2018
-ms.openlocfilehash: fa20e606c9a1364fbdf8c9a58c8703420d9e65a9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9439de84dd46ac3153d951378764d10184c33a52
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714575"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628374"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows (druhá edice)
 
 ![Titulní obrázek Průvodce aplikacemi rozhraní .NET pro modernizovat](./media/index/web-application-guide-cover-image.png)
 
-PUBLIKOVAL(A)  
+PUBLIKOVAL (A)  
 Microsoft Press a Microsoft DevDiv  
 Divize společnosti Microsoft Corporation  
-One Microsoft Way  
+Jeden způsob Microsoftu  
 Redmond, Washington 98052-6399  
 
-Copyright © 2018 by Microsoft Corporation  
+Copyright © 2020 od společnosti Microsoft Corporation  
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy nemůže být reprodukována v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
@@ -29,7 +29,7 @@ Pokud máte dotazy související s touto knihou, pošlete e-mail na [dotnet-arch
 
 Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska autora. Zobrazení, názory a informace vyjádřené v této knize, včetně adres URL a dalších odkazů na internetové weby, se mohou změnit bez předchozího upozornění.
 
-Některé příklady, které jsou zde uvedeny, slouží pouze pro ilustraci a jsou smyšlené. Jakákoli spojitost s kterýmkoli skutečným subjektem není zamýšlená a nelze ji vyvozovat.
+Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
 Microsoft a ochranné známky uvedené na adrese <https://www.microsoft.com> na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft. Všechny ostatní značky jsou majetkem příslušných vlastníků.
 
@@ -89,7 +89,7 @@ Třetí úroveň zralosti je konečným cílem v cloudu, ale je to pro mnoho apl
 
 Tabulka 1-1 popisuje hlavní výhody a důvody pro výběr každé migrace nebo přístupu k moderním účelům.
 
-| **Cloudová infrastruktura – připraveno** <br /> *Zvednutí a posunutí* | **Optimalizované pro Cloud** <br /> *Modernizovat* | **Cloud-Native** <br /> *Modernizovat, rearchitekt a přepis* |
+| **Cloudová infrastruktura – připraveno** <br /> *Zvednutí a posunutí* | **Optimalizované pro Cloud** <br /> *Modernizovat* | **Cloud – nativní** <br /> *Modernizovat, rearchitekt a přepis* |
 |---|---|---|
 | **Cíl výpočtů aplikace** |
 | Aplikace nasazené na virtuální počítače v Azure | Monolitické nebo N-vrstvé aplikace nasazené do Azure App Service, Azure Container instance (ACI), virtuální počítače s kontejnery nebo AKS (služba Azure Kubernetes) | Kontejnerové mikroslužby založené na službě Azure Kubernetes (AKS) nebo mikroslužby bez serveru založené na Azure Functions. |

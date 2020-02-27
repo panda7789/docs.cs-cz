@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data [Windows Forms], displaying
 - columns [Windows Forms], read-only
 ms.assetid: b4ef7a75-ab33-4ee3-b2cf-201530e454e9
-ms.openlocfilehash: 51d9488ef83f7d2c1c01c9ffd756edf8944d738d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 2dd3f8bfcad39ca3d530c79a6e6a8170585f7adf
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744973"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627952"
 ---
 # <a name="how-to-make-columns-read-only-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Převedení sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Ve výchozím nastavení mohou uživatelé upravovat text a číselná data zobrazená v ovládacím prvku model Windows Forms <xref:System.Windows.Forms.DataGridView>. Chcete-li zobrazit data, která nejsou určena k úpravám, je nutné vytvořit sloupce, které obsahují data jen pro čtení. Informace o tom, jak nastavit ovládací prvek jen pro čtení, naleznete v tématu [How to: prevence a Dissčítání řádků v ovládacím prvku model Windows Forms DataGridView pomocí návrháře](prevent-row-addition-and-deletion-in-the-datagrid-using-the-designer.md).
@@ -21,7 +21,7 @@ Ve výchozím nastavení mohou uživatelé upravovat text a číselná data zobr
 
 ## <a name="to-make-a-column-read-only-by-using-the-designer"></a>Zpřístupnění sloupce jen pro čtení pomocí návrháře
 
-1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) a pak vyberte **Upravit sloupce**.
+1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf akcí návrháře (![malé černé šipky](./media/designer-actions-glyph.gif)) a pak vyberte **Upravit sloupce**.
 
 2. Vyberte sloupec ze seznamu **vybrané sloupce** .
 

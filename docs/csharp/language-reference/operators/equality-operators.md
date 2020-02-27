@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 14bb8227a4a6c8beff6ab04c58d8e1a43db69856
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 578413b053fc1daab0c3162d9032f4d64d3e470d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093133"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626695"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnostiC# (Referenční dokumentace)
 
@@ -41,7 +41,7 @@ Operandy [předdefinovaných hodnotových typů](../builtin-types/value-types.md
 
 Dva operandy stejného typu [výčtu](../builtin-types/enum.md) jsou stejné, pokud jsou odpovídající hodnoty základního integrálního typu stejné.
 
-Uživatelsky definované typy [struktur](../keywords/struct.md) nepodporují ve výchozím nastavení operátor `==`. Aby bylo možné podporovat operátor `==`, musí být uživatelsky definovanou strukturou [přetížena](operator-overloading.md) .
+Uživatelsky definované typy [struktur](../builtin-types/struct.md) nepodporují ve výchozím nastavení operátor `==`. Aby bylo možné podporovat operátor `==`, musí být uživatelsky definovanou strukturou [přetížena](operator-overloading.md) .
 
 Počínaje C# 7,3 jsou operátory `==` a `!=` podporovány C# [řazenými kolekcemi členů](../../tuples.md). Další informace naleznete v části [rovnost a řazené kolekce členů](../../tuples.md#equality-and-tuples) v článku [ C# typy řazené kolekce členů](../../tuples.md) .
 

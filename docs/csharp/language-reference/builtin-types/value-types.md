@@ -8,16 +8,16 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 6b96d65f657f2af1af5c9a245e956640ee06260e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 76f4a3ed929e3ac8e3e6cc74158e75af7a6c8cf2
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748515"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625944"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
 
-*Typy hodnot* a [odkazové typy](../keywords/reference-types.md) jsou dvě hlavní kategorie C# typů. Proměnná typu hodnoty obsahuje instanci typu. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu. Ve výchozím nastavení, při [přiřazení](../operators/assignment-operator.md), předávání argumentu metodě nebo vrácení výsledku metody, jsou zkopírovány hodnoty proměnných. V případě proměnných typu hodnoty jsou zkopírovány odpovídající instance typu. Následující příklad ukazuje toto chování:
+*Typy hodnot* a [odkazové typy](../keywords/reference-types.md) jsou dvě hlavní kategorie C# typů. Proměnná typu hodnoty obsahuje instanci typu. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu. Ve výchozím nastavení, při [přiřazení](../operators/assignment-operator.md), předávání argumentu metodě a vrácení výsledku metody, jsou zkopírovány hodnoty proměnných. V případě proměnných typu hodnoty jsou zkopírovány odpovídající instance typu. Následující příklad ukazuje toto chování:
 
 [!code-csharp[copy of values](~/samples/csharp/language-reference/builtin-types/ValueTypes.cs#ValueTypeCopied)]
 
@@ -34,7 +34,7 @@ Pokud typ hodnoty obsahuje datový člen typu odkazu, je při zkopírování ins
 
 Typ hodnoty může být jeden z těchto dvou typů:
 
-- [typ struktury](../keywords/struct.md), který zapouzdřuje data a související funkce
+- [typ struktury](struct.md), který zapouzdřuje data a související funkce
 - [typ výčtu](enum.md), který je definován sadou pojmenovaných konstant a představuje volbu nebo kombinaci voleb
 
 [Typ hodnoty s možnou hodnotou null](nullable-value-types.md) `T?` představuje všechny hodnoty svého základního typu hodnoty `T` a další hodnotu [null](../keywords/null.md) . Nelze přiřadit `null` k proměnné typu hodnoty, pokud se nejedná o typ hodnoty s možnou hodnotou null.

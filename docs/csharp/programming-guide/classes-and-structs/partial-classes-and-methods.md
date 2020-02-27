@@ -6,16 +6,16 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: e359913aad4b8cea001a894d4ba5720fab54d42b
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 641c2e3adfb3dabaa300e94b203aa6c4c4b509d2
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451912"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628186"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 
-Je možné rozdělit definici [třídy](../../language-reference/keywords/class.md), [struktury](../../language-reference/keywords/struct.md), [rozhraní](../../language-reference/keywords/interface.md) nebo metody přes dva nebo více zdrojových souborů. Každý zdrojový soubor obsahuje oddíl definice typu nebo metody a všechny části jsou kombinovány při kompilaci aplikace.
+Je možné rozdělit definici [třídy](../../language-reference/keywords/class.md), [struktury](../../language-reference/builtin-types/struct.md), [rozhraní](../../language-reference/keywords/interface.md) nebo metody přes dva nebo více zdrojových souborů. Každý zdrojový soubor obsahuje oddíl definice typu nebo metody a všechny části jsou kombinovány při kompilaci aplikace.
 
 ## <a name="partial-classes"></a>Částečné třídy
 
@@ -60,7 +60,7 @@ Následující jsou sloučeny ze všech definicí částečného typu:
 
 - class – atributy
 
-- členové
+- členy
 
 Zvažte například následující deklarace:
 
@@ -165,7 +165,7 @@ partial void onNameChanged()
 
 - Můžete vytvořit [delegáta](../../language-reference/builtin-types/reference-types.md) částečné metody, která je definována a implementována, ale nikoli částečnou metodu, která byla definována pouze.
 
-## <a name="c-language-specification"></a>Specifikace jazyka C#
+## <a name="c-language-specification"></a>C# – jazyková specifikace
 
 Další informace naleznete v tématu [částečné typy](~/_csharplang/spec/classes.md#partial-types) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 

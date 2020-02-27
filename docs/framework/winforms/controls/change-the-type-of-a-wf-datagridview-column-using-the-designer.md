@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], changing column type
 - data [Windows Forms], displaying
 ms.assetid: 7f994d45-600d-4190-a187-35803214b40c
-ms.openlocfilehash: 976f257d38dc7be5c904e63da47c61486bd3301c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 470f350a4791a3db39d08ab7992d86eb7b2e270a
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76737129"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628615"
 ---
 # <a name="how-to-change-the-type-of-a-windows-forms-datagridview-column-using-the-designer"></a>Postupy: Změna typu sloupce Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít změnit typ sloupce, který již byl přidán do ovládacího prvku model Windows Forms <xref:System.Windows.Forms.DataGridView>. Například můžete chtít upravit typy některých sloupců, které jsou generovány automaticky při svázání ovládacího prvku se zdrojem dat. To je užitečné v případě, že zobrazená tabulka obsahuje sloupce, které obsahují cizí klíče, do řádků v tabulce v relaci. V takovém případě možná budete chtít nahradit sloupce textového pole, které zobrazují tyto cizí klíče, sloupci pole se seznamem, které zobrazují smysluplnější hodnoty ze související tabulky.
@@ -21,7 +21,7 @@ Někdy budete chtít změnit typ sloupce, který již byl přidán do ovládací
 
 ### <a name="to-change-the-type-of-a-column-using-the-designer"></a>Změna typu sloupce pomocí návrháře
 
-1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) a pak vyberte **Upravit sloupce**.
+1. V pravém horním rohu ovládacího prvku <xref:System.Windows.Forms.DataGridView> klikněte na glyf akcí návrháře (![malé černé šipky](./media/designer-actions-glyph.gif)) a pak vyberte **Upravit sloupce**.
 
 2. Vyberte sloupec ze seznamu **vybrané sloupce** .
 

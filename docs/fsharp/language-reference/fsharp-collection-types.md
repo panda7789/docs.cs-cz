@@ -2,12 +2,12 @@
 title: Typy kolekcí
 description: Přečtěte F# si o typech kolekcí a o tom, jak se liší od typů kolekcí v .NET Framework.
 ms.date: 05/16/2016
-ms.openlocfilehash: e5735efbffb1010f3886f3b32800a61e2d3b0d36
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: df34a18e7762c52e169aa8a69709ae16064c134d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344572"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628862"
 ---
 # <a name="f-collection-types"></a>Typy kolekcí F#
 
@@ -19,34 +19,34 @@ Typy kolekce se také liší v typu struktury dat, ve kterých jsou objekty ulo�
 
 V následující tabulce jsou F# uvedeny typy kolekcí.
 
-|Type|Popis|Související odkazy|
+|Typ|Popis|Související odkazy|
 |----|-----------|-------------|
-|[Seznam](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Seřazená, neproměnlivá řada prvků stejného typu. Implementováno jako propojený seznam.|[Seznamy](lists.md)<br /><br />[Seznam modulů](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
-|[Pole](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Pevná velikost, která je založená na nule, proměnlivá kolekce po sobě jdoucích datových prvků, které jsou všechny stejného typu.|[Pole](arrays.md)<br /><br />[Modul pole](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Přidaný modul](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Modul Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
+|[Seznamu](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Seřazená, neproměnlivá řada prvků stejného typu. Implementováno jako propojený seznam.|[Seznamy](lists.md)<br /><br />[Seznam modulů](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
+|[Skupin](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Pevná velikost, která je založená na nule, proměnlivá kolekce po sobě jdoucích datových prvků, které jsou všechny stejného typu.|[Pole](arrays.md)<br /><br />[Modul pole](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Přidaný modul](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Modul Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
 |[SEQ](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Logická řada prvků, které jsou všechny jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může být využívána lépe než seznam, pokud nejsou použity všechny prvky. Sekvence jsou reprezentovány typem `seq<'T>`, který je aliasem pro `IEnumerable<T>`. Proto může být jakýkoli typ .NET Framework, který implementuje `System.Collections.Generic.IEnumerable<'T>`, použit jako sekvence.|[Sekvence](sequences.md)<br /><br />[SEQ – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Mapa](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Neproměnlivý slovník prvků. K prvkům se používá klíč.|[Mapový modul](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
+|[Mapy](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Neproměnlivý slovník prvků. K prvkům se používá klíč.|[Mapový modul](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
 |[Stanovenými](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Neproměnlivá sada, která je založena na binárních stromech, kde F# porovnání je strukturální relační funkce, která potenciálně používá implementace `System.IComparable` rozhraní na klíčových hodnotách.|[Nastavit modul](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
 
 ### <a name="table-of-functions"></a>Tabulka funkcí
 
 Tato část porovnává funkce, které jsou k F# dispozici pro typy kolekcí. Výpočet složitosti funkce je uveden, kde N je velikost první kolekce a M je velikost druhé kolekce, pokud existuje. Pomlčka (-) označuje, že tato funkce není v kolekci k dispozici. Vzhledem k tomu, že sekvence jsou vyhodnoceny jako laxně vytvářená, funkce, jako je například Seq. DISTINCT, může být O (1), protože se okamžitě vrátí, i když stále ovlivňuje výkon sekvence při vytváření výčtu.
 
-|Funkce|Array|Seznam|Sequence|Mapa|Nastavit|Popis|
+|Funkce|Pole|Seznam|Pořadí|Mapa|Nastavit|Popis|
 |--------|-----|----|--------|---|---|-----------|
-|příloh|O (M)|O (N)|O (N)|-|-|Vrátí novou kolekci, která obsahuje prvky první kolekce následované elementy druhé kolekce.|
+|příloh|O (N)|O (N)|O (N)|-|-|Vrátí novou kolekci, která obsahuje prvky první kolekce následované elementy druhé kolekce.|
 |add|-|-|-|O (protokol N)|O (protokol N)|Vrátí novou kolekci s přidaným elementem.|
 |průměr|O (N)|O (N)|O (N)|-|-|Vrátí průměr z prvků v kolekci.|
 |averageBy –|O (N)|O (N)|O (N)|-|-|Vrátí průměr výsledků zadané funkce použité pro každý prvek.|
 |blit –|O (N)|-|-|-|-|Zkopíruje část pole.|
-|mezipaměť|-|-|O (N)|-|-|Vypočítá a ukládá prvky sekvence.|
+|cache|-|-|O (N)|-|-|Vypočítá a ukládá prvky sekvence.|
 |přetypování|-|-|O (N)|-|-|Převede elementy na zadaný typ.|
-|zvolte|O (N)|O (N)|O (N)|-|-|Použije danou funkci `f` pro každý prvek `x` seznamu. Vrátí seznam obsahující výsledky pro každý prvek, kde funkce vrátí `Some(f(x))`.|
-|shromažďovat|O (N)|O (N)|O (N)|-|-|Použije danou funkci na každý prvek kolekce, zřetězí všechny výsledky a vrátí kombinovaný seznam.|
+|Výběrem|O (N)|O (N)|O (N)|-|-|Použije danou funkci `f` pro každý prvek `x` seznamu. Vrátí seznam obsahující výsledky pro každý prvek, kde funkce vrátí `Some(f(x))`.|
+|shromáždění|O (N)|O (N)|O (N)|-|-|Použije danou funkci na každý prvek kolekce, zřetězí všechny výsledky a vrátí kombinovaný seznam.|
 |compareWith –|-|-|O (N)|-|-|Porovná dvě sekvence pomocí dané funkce porovnání, elementu po prvku.|
 |concat|O (N)|O (N)|O (N)|-|-|Kombinuje dané výčtové výčty jako jeden zřetězený výčet.|
-|obsahuje|-|-|-|-|O (protokol N)|Vrátí hodnotu true, pokud sada obsahuje zadaný element.|
+|Obsahuje|-|-|-|-|O (protokol N)|Vrátí hodnotu true, pokud sada obsahuje zadaný element.|
 |containsKey|-|-|-|O (protokol N)|-|Testuje, zda je prvek v doméně mapy.|
-|počet|-|-|-|-|O (N)|Vrátí počet prvků v objektu set.|
+|count|-|-|-|-|O (N)|Vrátí počet prvků v objektu set.|
 |CountBy –|-|-|O (N)|-|-|Aplikuje funkci generování klíčů na každý prvek sekvence a vrátí sekvenci, která poskytuje jedinečné klíče a jejich počet výskytů v původní sekvenci.|
 |copy|O (N)|-|O (N)|-|-|Zkopíruje kolekci.|
 |vytvoření|O (N)|-|-|-|-|Vytvoří pole celých prvků, které jsou původně danou hodnotou.|
@@ -54,7 +54,7 @@ Tato část porovnává funkce, které jsou k F# dispozici pro typy kolekcí. V�
 |rozdíl|-|-|-|-|O (M &#42; protokol N)|Vrátí novou sadu s prvky druhé sady odebrané z první sady.|
 |distinct|||O (1)&#42;|||Vrátí sekvenci, která neobsahuje žádné duplicitní položky na základě porovnání obecného algoritmu hash a rovnosti položek. Pokud v sekvenci dojde vícekrát k elementu, další výskyty se zahodí.|
 |distinctBy –|||O (1)&#42;|||Vrátí sekvenci, která neobsahuje žádné duplicitní položky podle obecného porovnání hodnoty hash a rovnosti u klíčů, které vrací daná funkce generování klíčů. Pokud v sekvenci dojde vícekrát k elementu, další výskyty se zahodí.|
-|empty|O(1)|O(1)|O(1)|O(1)|O(1)|Vytvoří prázdnou kolekci.|
+|Prázdná|O(1)|O(1)|O(1)|O(1)|O(1)|Vytvoří prázdnou kolekci.|
 |neexistuje|O (N)|O (N)|O (N)|O (protokol N)|O (protokol N)|Testuje, zda jakýkoliv prvek sekvence splňuje daný predikát.|
 |exists2 –|O(min(N,M))|-|O(min(N,M))|||Testuje, zda některé páry odpovídajících prvků vstupních sekvencí splní daný predikát.|
 |fill|O (N)|||||Nastaví rozsah prvků pole na danou hodnotu.|
@@ -62,7 +62,7 @@ Tato část porovnává funkce, které jsou k F# dispozici pro typy kolekcí. V�
 |find|O (N)|O (N)|O (N)|O (protokol N)|-|Vrátí první prvek, pro který vrátí daná funkce `true`. Vrátí `System.Collections.Generic.KeyNotFoundException`, pokud žádný takový prvek neexistuje.|
 |findIndex|O (N)|O (N)|O (N)|-|-|Vrátí index prvního prvku v poli, který splňuje daný predikát. Vyvolá `System.Collections.Generic.KeyNotFoundException`, pokud žádný prvek nesplňuje predikát.|
 |FindKey –|-|-|-|O (protokol N)|-|Vyhodnotí funkci u každého mapování v kolekci a vrátí klíč pro první mapování, kde funkce vrátí `true`. Pokud žádný takový prvek neexistuje, tato funkce vyvolá `System.Collections.Generic.KeyNotFoundException`.|
-|sklopit|O (N)|O (N)|O (N)|O (N)|O (N)|Použije funkci na každý prvek kolekce a podvláknuje argument Akumulovaná pomocí výpočtu. Je-li vstupní funkce f a prvky jsou I0... Tato funkce v nástroji počítá f (... (f s I0)...) pro.|
+|nahoře|O (N)|O (N)|O (N)|O (N)|O (N)|Použije funkci na každý prvek kolekce a podvláknuje argument Akumulovaná pomocí výpočtu. Je-li vstupní funkce f a prvky jsou I0... Tato funkce v nástroji počítá f (... (f s I0)...) pro.|
 |fold2 –|O (N)|O (N)|-|-|-|Aplikuje funkci na odpovídající prvky dvou kolekcí, zřetězení argumentu Akumulovaná prostřednictvím výpočtu. Kolekce musí mít stejné velikosti. Je-li vstupní funkce f a prvky jsou I0... v a J0... jN, tato funkce vypočítá f (... (f s I0 J0)...) v jN.|
 |foldBack –|O (N)|O (N)|-|O (N)|O (N)|Použije funkci na každý prvek kolekce a podvláknuje argument Akumulovaná pomocí výpočtu. Je-li vstupní funkce f a prvky jsou I0... Tato funkce v nástroji počítá f I0 (... (f v s)).|
 |Foldback2 –|O (N)|O (N)|-|-|-|Aplikuje funkci na odpovídající prvky dvou kolekcí, zřetězení argumentu Akumulovaná prostřednictvím výpočtu. Kolekce musí mít stejné velikosti. Je-li vstupní funkce f a prvky jsou I0... v a J0... jN, tato funkce vypočítá f I0 J0 (... (f v jN s)).|
@@ -72,7 +72,7 @@ Tato část porovnává funkce, které jsou k F# dispozici pro typy kolekcí. V�
 |záhlaví|-|O(1)|O(1)|-|-|Vrátí první prvek kolekce.|
 |init|O (N)|O (N)|O(1)|-|-|Vytvoří kolekci pro výpočet prvků v dimenzi a funkci generátoru.|
 |initInfinite –|-|-|O(1)|-|-|Generuje sekvenci, která při iteraci vrátí úspěšné prvky voláním dané funkce.|
-|Krývají|-|-|-|-|O (log N &#42; log M)|Vypočítá průnik dvou sad.|
+|krývají|-|-|-|-|O (log N &#42; log M)|Vypočítá průnik dvou sad.|
 |intersectMany|-|-|-|-|O (N1 &#42; N2...)|Vypočítá průnik sekvencí sad. Sekvence nesmí být prázdná.|
 |isEmpty|O(1)|O(1)|O(1)|O(1)|-|Vrátí `true`, pokud je kolekce prázdná.|
 |isProperSubset|-|-|-|-|O (M &#42; protokol N)|Vrátí `true`, pokud jsou všechny prvky první sady ve druhé sadě a alespoň jeden prvek druhé sady není v první sadě.|
@@ -101,9 +101,9 @@ Tato část porovnává funkce, které jsou k F# dispozici pro typy kolekcí. V�
 |ofSeq –|O (N)|O (N)|-|O (N)|O (N)|Vytvoří kolekci, která obsahuje stejné prvky jako daná sekvence.|
 |dvojic|-|-|O (N)|-|-|Vrací sekvenci každého prvku ve vstupní sekvenci a jeho předchůdce s výjimkou prvního prvku, který je vrácen pouze jako předchůdce druhého prvku.|
 |partition|O (N)|O (N)|-|O (N)|O (N)|Rozdělí kolekci do dvou kolekcí. První kolekce obsahuje prvky, pro které daný predikát vrací `true`a druhá kolekce obsahuje prvky, pro které daný predikát vrátí `false`.|
-|permute|O (N)|O (N)|-|-|-|Vrátí pole se všemi elementy permuted podle zadané permutace.|
+|permute –|O (N)|O (N)|-|-|-|Vrátí pole se všemi elementy permuted podle zadané permutace.|
 |zrad|O (N)|O (N)|O (N)|O (protokol N)|-|Použije danou funkci na po sobě jdoucí prvky a vrátí první výsledek, kde funkce vrátí některé. Pokud funkce žádné nevrátí, `System.Collections.Generic.KeyNotFoundException` je vyvolána.|
-|readonly|-|-|O (N)|-|-|Vytvoří objekt sekvence, který se deleguje k danému objektu sekvence. Tato operace zajišťuje, že přetypování typu nemůže znovu zjistit a postoupit původní sekvenci. Například pokud je zadáno pole, vrácená sekvence vrátí prvky pole, ale nelze přetypovat vrácený objekt sekvence na pole.|
+|jen pro čtení|-|-|O (N)|-|-|Vytvoří objekt sekvence, který se deleguje k danému objektu sekvence. Tato operace zajišťuje, že přetypování typu nemůže znovu zjistit a postoupit původní sekvenci. Například pokud je zadáno pole, vrácená sekvence vrátí prvky pole, ale nelze přetypovat vrácený objekt sekvence na pole.|
 |úrovně|O (N)|O (N)|O (N)|-|-|Použije funkci na každý prvek kolekce a podvláknuje argument Akumulovaná pomocí výpočtu. Tato funkce se spouští použitím funkce na první dva prvky, předává tento výsledek do funkce společně s třetím prvkem a tak dále. Funkce vrátí konečný výsledek.|
 |reduceBack –|O (N)|O (N)|-|-|-|Použije funkci na každý prvek kolekce a podvláknuje argument Akumulovaná pomocí výpočtu. Je-li vstupní funkce f a prvky jsou I0... Tato funkce v nástroji počítá f I0 (... (f iN-1 v)).|
 |remove|-|-|-|O (protokol N)|O (protokol N)|Odebere prvek z domény mapy. Není-li prvek přítomen, není vyvolána žádná výjimka.|
@@ -144,7 +144,7 @@ Tato část porovnává funkce, které jsou k F# dispozici pro typy kolekcí. V�
 |zip|O (N)|O (N)|O (N)|-|-|Kombinuje dvě kolekce do seznamu párů. Dva seznamy musí mít stejné délky.|
 |zip3|O (N)|O (N)|O (N)|-|-|Kombinuje tři kolekce do seznamu trojí. Seznamy musí mít stejnou délku.|
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy F#](fsharp-types.md)
 - [Referenční dokumentace jazyka F#](index.md)

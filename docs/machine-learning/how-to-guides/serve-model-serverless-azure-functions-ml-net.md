@@ -1,16 +1,16 @@
 ---
 title: Nasazení modelu do Azure Functions
 description: Obsluha modelu ML.NET mínění Analysis Machine Learning pro předpověď přes Internet pomocí Azure Functions
-ms.date: 11/07/2019
+ms.date: 02/21/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 5ef6331950845b2900e33b2c51c308644ba17fd6
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 33afd568bb12b855a3888bec31f2e9bbc3c720da
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733349"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628667"
 ---
 # <a name="deploy-a-model-to-azure-functions"></a>Nasazení modelu do Azure Functions
 
@@ -19,11 +19,11 @@ Naučte se, jak nasadit předem vyškolený model ML.NET Machine Learning pro p�
 > [!NOTE]
 > Tato ukázka spustí verzi Preview služby `PredictionEnginePool`.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou "vývoj pro různé platformy .NET Core" a "vývoj pro Azure".
 - [Nástroje Azure Functions](/azure/azure-functions/functions-develop-vs#check-your-tools-version)
-- Prostředí
+- PowerShell
 - Předem vyškolený model. Pomocí [kurzu ML.NET analýza mínění](../tutorials/sentiment-analysis.md) sestavte svůj vlastní model nebo si stáhněte tento [model služby Machine Learning s představitelnou mínění analýzou](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip) .
 
 ## <a name="azure-functions-sample-overview"></a>Přehled ukázek Azure Functions
@@ -32,11 +32,11 @@ Tato ukázka je  **C# triggerem http Azure Functions aplikaci** , která použí
 
 ## <a name="create-azure-functions-project"></a>Vytvořit Azure Functions projekt
 
-1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** **projekt**  > . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **cloudu** . Pak vyberte šablonu projektu **Azure Functions** . Do textového pole **název** zadejte "SentimentAnalysisFunctionsApp" a pak vyberte tlačítko **OK** .
+1. Otevřete sadu Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** > **projekt** . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **cloudu** . Pak vyberte šablonu projektu **Azure Functions** . Do textového pole **název** zadejte "SentimentAnalysisFunctionsApp" a pak vyberte tlačítko **OK** .
 1. V dialogovém okně **Nový projekt** otevřete rozevírací seznam nad možnostmi projektu a vyberte **Azure Functions v2 (.NET Core)** . Pak vyberte projekt **triggeru http** a pak klikněte na tlačítko **OK** .
 1. Vytvořte v projektu adresář s názvem *MLModels* a uložte svůj model:
 
-    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **přidat** **novou složku** > . Zadejte "MLModels" a stiskněte klávesu ENTER.
+    V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** > **Nová složka**. Zadejte "MLModels" a stiskněte klávesu ENTER.
 
 1. Nainstalujte **balíček NuGet Microsoft.ml** verze **1.3.1**:
 
@@ -50,9 +50,9 @@ Tato ukázka je  **C# triggerem http Azure Functions aplikaci** , která použí
 
     V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet, vyhledejte **Microsoft.Extensions.ml**, vyberte tento balíček v seznamu a klikněte na tlačítko **nainstalovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
 
-1. Nainstalujte **balíček NuGet Microsoft. NET. SDK. Functions** verze **1.0.28 +** :
+1. Nainstalujte **balíček NuGet Microsoft. NET. SDK. Functions** verze **1.0.31**:
 
-    V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu nainstalované, vyhledejte **Microsoft. NET. SDK. Functions**, vyberte tento balíček v seznamu, vyberte v rozevírací nabídce verze možnost **1.0.28 nebo novější** a klikněte na tlačítko **aktualizovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
+    V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu nainstalované, vyhledejte **Microsoft. NET. SDK. Functions**, vyberte tento balíček v seznamu, vyberte v rozevírací nabídce verze možnost **1.0.31** a klikněte na tlačítko **aktualizovat** . Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
 
 ## <a name="add-pre-trained-model-to-project"></a>Přidat předem vyškolený model do projektu
 
@@ -63,17 +63,17 @@ Tato ukázka je  **C# triggerem http Azure Functions aplikaci** , která použí
 
 Vytvořte třídu pro předpověď mínění. Přidejte do projektu novou třídu:
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** > **Nová položka**.
 
 1. V dialogovém okně **Přidat novou položku** vyberte možnost **Azure Functions** a změňte pole **název** na *AnalyzeSentiment.cs*. Pak vyberte tlačítko **Přidat** .
 
 1. V dialogovém okně **Nová funkce Azure** vyberte **Trigger http**. Pak vyberte tlačítko **OK** .
 
-    V editoru kódu se otevře soubor *AnalyzeSentiment.cs* . Přidejte následující příkaz `using` do horní části *AnalyzeSentiment.cs*:
+    V editoru kódu se otevře soubor *AnalyzeSentiment.cs* . Do horní části *AnalyzeSentiment.cs*přidejte následující příkaz `using`:
 
     [!code-csharp [AnalyzeUsings](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/AnalyzeSentiment.cs#L1-L11)]
 
-    Ve výchozím nastavení je třída `AnalyzeSentiment` `static`. Nezapomeňte z definice třídy odebrat klíčové slovo `static`.
+    Ve výchozím nastavení je třída `AnalyzeSentiment` `static`. Nezapomeňte odebrat klíčové slovo `static` z definice třídy.
 
     ```csharp
     public class AnalyzeSentiment
@@ -107,15 +107,15 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
 
     [!code-csharp [SentimentPrediction](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/DataModels/SentimentPrediction.cs#L5-L14)]
 
-    `SentimentPrediction` dědí z `SentimentData`, který poskytuje přístup k původním datům ve vlastnosti `SentimentText` a také výstup generovaný modelem.
+    `SentimentPrediction` dědí z `SentimentData`, která poskytuje přístup k původním datům ve vlastnosti `SentimentText`, a také výstup generovaný modelem.
 
 ## <a name="register-predictionenginepool-service"></a>Zaregistrovat službu PredictionEnginePool
 
-Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a zabezpečení vlákna použijte kombinaci injektáže a `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
+Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečný pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a bezpečnosti vláken použijte kombinaci injektáže a `PredictionEnginePool` služby, která vytváří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
 
 Následující odkaz poskytuje další informace, pokud se chcete dozvědět víc o [vkládání závislostí](https://en.wikipedia.org/wiki/Dependency_injection).
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** > **Nová položka**.
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *Startup.cs*. Pak vyberte tlačítko **Přidat** .
 1. Do horní části *Startup.cs*přidejte následující příkazy using:
 
@@ -150,12 +150,12 @@ Na vysoké úrovni tento kód automaticky inicializuje objekty a služby pro poz
 
 Modely strojového učení nejsou statické. Jakmile budou k dispozici nová školicí data, model se přeškolí a znovu nasadí. Jedním ze způsobů, jak získat nejnovější verzi modelu do vaší aplikace, je znovu nasadit celou aplikaci. Tím se ale zavádí výpadek aplikace. Služba `PredictionEnginePool` poskytuje mechanismus pro opětovné načtení aktualizovaného modelu bez nutnosti pořizovat aplikaci.
 
-Nastavte parametr `watchForChanges` na `true` a `PredictionEnginePool` spustí [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) , které naslouchají oznámením o změnách systému souborů a vyvolává události, když dojde ke změně souboru. Tím se zobrazí výzva `PredictionEnginePool` pro automatické opětovné načtení modelu.
+Nastavte parametr `watchForChanges` na `true`a `PredictionEnginePool` spustí [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) , který čeká na oznámení o změnách systému souborů a vyvolává události, když dojde ke změně souboru. Tím se zobrazí výzva `PredictionEnginePool`, aby se model automaticky znovu načítat.
 
-Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci.
+Model je identifikován parametrem `modelName`, aby bylo po změně možné znovu načíst více než jeden model na aplikaci.
 
 > [!TIP]
-> Alternativně můžete použít metodu `FromUri` při práci s místně uloženými modely. Místo sledování událostí změněných souborů `FromUri` se dotazuje na vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace. V níže uvedeném příkladu kódu `PredictionEnginePool` cyklické dotazování modelu uloženého v zadaném identifikátoru URI každou minutu.
+> Alternativně můžete při práci s modely uloženými vzdáleně použít metodu `FromUri`. Místo sledování událostí změněných souborů `FromUri` dotazuje vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace. V níže uvedeném příkladu kódu `PredictionEnginePool` dotazuje model uložený v zadaném identifikátoru URI každou minutu.
 >
 >```csharp
 >builder.Services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
@@ -179,7 +179,7 @@ Nahraďte stávající implementaci metody *Run* ve třídě *AnalyzeSentiment* 
 
 [!code-csharp [AnalyzeRunMethod](~/machinelearning-samples/samples/csharp/end-to-end-apps/ScalableMLModelOnAzureFunction/SentimentAnalysisFunctionsApp/AnalyzeSentiment.cs#L26-L45)]
 
-Když se spustí metoda `Run`, jsou příchozí data z požadavku HTTP deserializovaná a slouží jako vstup pro `PredictionEnginePool`. Metoda `Predict` se pak zavolá, aby předpovědi pomocí `SentimentAnalysisModel` zaregistrovaného ve třídě `Startup` a vrátí výsledky zpátky uživateli, pokud je úspěšný.
+Když se metoda `Run` spustí, příchozí data z požadavku HTTP se deserializovat a použijí se jako vstup pro `PredictionEnginePool`. Metoda `Predict` je pak volána k provedení předpovědi pomocí `SentimentAnalysisModel` zaregistrovaného ve třídě `Startup` a vrátí výsledky zpět uživateli v případě úspěchu.
 
 ## <a name="test-locally"></a>Test lokálně
 

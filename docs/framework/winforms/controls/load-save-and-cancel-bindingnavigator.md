@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], manipulating
 - BindingNavigator control [Windows Forms], adding buttons
 ms.assetid: faa33042-186e-4bb2-8798-17ceb987ec62
-ms.openlocfilehash: ac862d163f1bd8b66f29160d836bc459e4bf4081
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0305df5e7566f9441ce09fa3346a8b2dc67c8943
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745136"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627965"
 ---
 # <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Postupy: Přidávání tlačítek Načíst, Uložit a Storno do ovládacího prvku Windows Forms BindingNavigator
 
@@ -35,7 +35,7 @@ V následujícím postupu je ovládací prvek <xref:System.Windows.Forms.TextBox
 
 5. Vyberte ovládací prvek <xref:System.Windows.Forms.BindingNavigator>.
 
-6. Klikněte na glyf inteligentních značek (![glyf inteligentních značek](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")), aby se zobrazil dialog **úlohy BindingNavigator** , a vyberte **Upravit položky**.
+6. Klikněte na glyf akcí návrháře (![malé černé šipky](./media/designer-actions-glyph.gif)), takže se zobrazí dialogové okno **úlohy BindingNavigator** a vyberte **Upravit položky**.
 
      Zobrazí se **Editor kolekce Items** .
 

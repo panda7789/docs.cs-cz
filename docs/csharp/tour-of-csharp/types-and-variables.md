@@ -3,12 +3,12 @@ title: C#Typy a proměnné – prohlídka C# jazyka
 description: Informace o definování typů a deklaraci proměnných vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 28ba01f7d3f9c71e99945a5d5e813d95389b3b79
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 571e346d1e46be798dca1b42cfcc2af3aa65e641
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76737630"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627562"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -47,7 +47,7 @@ Následující text uvádí přehled C#systému typů.
 [ValueTypes]: ../language-reference/builtin-types/value-types.md
 [SimpleTypes]: ../language-reference/builtin-types/value-types.md#built-in-value-types
 [EnumTypes]: ../language-reference/builtin-types/enum.md
-[StructTypes]: ../language-reference/keywords/struct.md
+[StructTypes]: ../language-reference/builtin-types/struct.md
 [NullableTypes]: ../language-reference/builtin-types/nullable-value-types.md
 [ReferenceTypes]: ../language-reference/keywords/reference-types.md
 [ClassTypes]: ../language-reference/keywords/class.md

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - one-way communication [.NET Framework]
 - local computer communication [.NET Framework], pipes
 ms.assetid: e7773c77-c646-4a01-8a96-a003d59fc4c9
-ms.openlocfilehash: 16018be820951a2739d602edb99845eb89495d5e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ea4aee60d090a56eb0cf3f2a81c1b05c04806d4b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706644"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627991"
 ---
 # <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a>Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů
 Anonymní kanály poskytují meziprocesovou komunikaci na místním počítači. Tyto anonymní kanály nabízejí méně funkcí než pojmenované kanály, mají však také menší nákladovou režii. Anonymní kanály lze použít pro usnadnění meziprocesové komunikace na místním počítači. Anonymní kanály nelze použít pro komunikaci v rámci sítě.  
@@ -35,6 +35,8 @@ Anonymní kanály poskytují meziprocesovou komunikaci na místním počítači.
  [!code-cpp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cpp/program.cpp#01)]
  [!code-csharp[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/cs/Program.cs#01)]
  [!code-vb[System.IO.Pipes.AnonymousPipeServerStream_Sample#01](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeServerStream_Sample/vb/program.vb#01)]  
+
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
   
 ## <a name="example"></a>Příklad  
  Následující příklad znázorňuje proces klienta. Proces serveru spustí proces klienta a poskytne tomuto procesu popisovač klienta. Výsledný spustitelný soubor z kódu klienta by měl být pojmenován jako `pipeClient.exe` a zkopírován do stejného adresáře jako spustitelný soubor serveru před spuštěním procesu serveru.  
@@ -43,7 +45,7 @@ Anonymní kanály poskytují meziprocesovou komunikaci na místním počítači.
  [!code-csharp[System.IO.Pipes.AnonymousPipeClientStream_Sample#01](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeClientStream_Sample/cs/Program.cs#01)]
  [!code-vb[System.IO.Pipes.AnonymousPipeClientStream_Sample#01](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Pipes.AnonymousPipeClientStream_Sample/vb/program.vb#01)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Pojmenované kanály](../../../docs/standard/io/pipe-operations.md)
 - [Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů](../../../docs/standard/io/how-to-use-named-pipes-for-network-interprocess-communication.md)

@@ -2,12 +2,12 @@
 title: příkaz pro instalaci nástroje dotnet
 description: Příkaz pro instalaci nástroje dotnet nainstaluje na váš počítač zadaný nástroj .NET Core.
 ms.date: 02/14/2020
-ms.openlocfilehash: 2705defe9b77009ca1411da28dd86d144ccc19e6
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 837d12bc807ad95ccdbd9c0e087c7d45418c6e74
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543466"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626031"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
@@ -30,7 +30,7 @@ dotnet tool install <-h|--help>
 
 Příkaz `dotnet tool install` poskytuje způsob, jak nainstalovat nástroje .NET Core na váš počítač. Chcete-li použít příkaz, zadejte jednu z následujících možností instalace:
 
-* Pokud chcete nainstalovat globální nástroj ve výchozím umístění, použijte možnost `--tool-path`.
+* Pokud chcete nainstalovat globální nástroj ve výchozím umístění, použijte možnost `--global`.
 * Pokud chcete nainstalovat globální nástroj ve vlastním umístění, použijte možnost `--tool-path`.
 * Chcete-li nainstalovat místní nástroj, vynechejte možnosti `--global` a `--tool-path`.
 
@@ -113,6 +113,6 @@ Další informace najdete v tématu [instalace místního nástroje](global-tool
 
   Nainstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) jako místní Nástroj pro aktuální adresář.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nástroje .NET Core](global-tools.md)

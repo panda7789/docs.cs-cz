@@ -4,16 +4,16 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: bf290681395460bec10be45c4eaa1f165e453caf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 17162a0dc959a85c03a5cb5757e2b91fe10b0ab3
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75702893"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628160"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Použití indexerů (C# Průvodce programováním)
 
-Indexery jsou syntaktické pohodlí, které umožňují vytvořit [třídu](../../language-reference/keywords/class.md), [strukturu](../../language-reference/keywords/struct.md)nebo [rozhraní](../../language-reference/keywords/interface.md) , které mohou klientské aplikace přistupovat pouze jako pole. Indexery se nejčastěji implementují v typech, jejichž primární účel je zapouzdření interní kolekce nebo pole. Předpokládejme například, že máte třídu `TempRecord`, která představuje teplotu ve stupních Fahrenheita zaznamenanou v 10 různých časech během 24 hodin. Třída obsahuje pole `temps` typu `float[]` pro uložení hodnot teploty. Implementací indexeru v této třídě mají klienti přístup k teplotám v instanci `TempRecord` jako `float temp = tr[4]` namísto `float temp = tr.temps[4]`. Zápis indexeru zjednodušuje syntaxi pro klientské aplikace. také umožňuje, aby byla třída a její účel intuitivnějšíější, aby bylo možné porozumět ostatním vývojářům.  
+Indexery jsou syntaktické pohodlí, které umožňují vytvořit [třídu](../../language-reference/keywords/class.md), [strukturu](../../language-reference/builtin-types/struct.md)nebo [rozhraní](../../language-reference/keywords/interface.md) , které mohou klientské aplikace přistupovat pouze jako pole. Indexery se nejčastěji implementují v typech, jejichž primární účel je zapouzdření interní kolekce nebo pole. Předpokládejme například, že máte třídu `TempRecord`, která představuje teplotu ve stupních Fahrenheita zaznamenanou v 10 různých časech během 24 hodin. Třída obsahuje pole `temps` typu `float[]` pro uložení hodnot teploty. Implementací indexeru v této třídě mají klienti přístup k teplotám v instanci `TempRecord` jako `float temp = tr[4]` namísto `float temp = tr.temps[4]`. Zápis indexeru zjednodušuje syntaxi pro klientské aplikace. také umožňuje, aby byla třída a její účel intuitivnějšíější, aby bylo možné porozumět ostatním vývojářům.  
   
 Chcete-li deklarovat indexer pro třídu nebo strukturu, použijte klíčové slovo [This](../../language-reference/keywords/this.md) , jak ukazuje následující příklad:
 
@@ -72,8 +72,8 @@ Následující příklad deklaruje třídu, která ukládá dny v týdnu. Přist
   
 - Nastavte přístupnost přístupových objektů [Get](../../language-reference/keywords/get.md) a [set](../../language-reference/keywords/set.md) jako omezujících oprávnění, která jsou přiměřená. To je důležité zejména pro přistupující objekt `set`. Další informace najdete v tématu [Omezení přístupnosti přístupového objektu](../classes-and-structs/restricting-accessor-accessibility.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Indexery](./index.md)
 - [Vlastnosti](../classes-and-structs/properties.md)

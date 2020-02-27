@@ -4,12 +4,12 @@ description: Při vytváření aplikací a knihoven v počítačích Mac, Linux 
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: e9fc5544904fc5a1304dcce135e01b1895d3446b
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 84784787465bec43cc460d34ca84e4baa5a15d7d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215173"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625931"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
@@ -48,5 +48,6 @@ Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 - [Vývoj knihoven pomocí nástrojů pro různé platformy](libraries.md)
 - [Hostování .NET Core z nativního kódu](netcore-hosting.md)
 - [Vytvoření šablon pro rozhraní příkazového řádku](cli-templates-create-item-template.md)
+- [Vytvoření a použití nástrojů pro rozhraní příkazového řádku](../tools/global-tools-how-to-create.md)
 
 Kurzy týkající se vývoje ASP.NET Core webových aplikací najdete v [dokumentaci k ASP.NET Core](/aspnet/core/).

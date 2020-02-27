@@ -2,24 +2,24 @@
 title: Určení vlastního šifrovacího algoritmu
 ms.date: 03/30/2017
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-ms.openlocfilehash: 55200732b392c15a25853af28ecdf9e32d092da4
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0bfa6c46f4db1171eb314625e36c267000a0ec12
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849114"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628680"
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Určení vlastního šifrovacího algoritmu
 WCF umožňuje zadat vlastní šifrovací algoritmus, který se použije při šifrování dat nebo výpočetních digitálních podpisů. To se provádí pomocí následujících kroků:  
   
-1. Odvodit třídu z<xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
+1. Odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
   
 2. Registrovat algoritmus  
   
-3. Nakonfigurujte vazbu s <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>třídou odvozenou.  
+3. Nakonfigurujte vazbu s třídou odvozenou od <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.  
   
 ## <a name="derive-a-class-from-securityalgorithmsuite"></a>Odvození třídy z SecurityAlgorithmSuite  
- <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> Je abstraktní základní třída, která umožňuje určit algoritmus, který se má použít při provádění různých operací souvisejících se zabezpečením. Například výpočet hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  
+ <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> je abstraktní základní třída, která umožňuje určit algoritmus, který se má použít při provádění různých operací souvisejících se zabezpečením. Například výpočet hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  
   
 ```csharp  
 public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite  
@@ -105,9 +105,9 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 </configuration>  
 ```  
   
- V části pod prvkem <`cryptoClasses`> se vytvoří mapování mezi SHA256CryptoServiceProvider a aliasem "SHA256CSP". Prvek <`nameEntry`> vytvoří mapování mezi alias "SHA256CSP" a zadanou adresou URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm ).  
+ Část pod prvkem <`cryptoClasses`> vytvoří mapování mezi SHA256CryptoServiceProvider a aliasem "SHA256CSP". Element <`nameEntry`> vytvoří mapování mezi aliasem "SHA256CSP" a zadanou `http://constoso.com/CustomAlgorithms/CustomHashAlgorithm`ou URL.  
   
- K registraci vlastního algoritmu v kódu použijte <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> metodu. Tato metoda vytvoří obě mapování. Následující příklad ukazuje, jak zavolat tuto metodu:  
+ Chcete-li zaregistrovat vlastní algoritmus v kódu, použijte metodu <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])>. Tato metoda vytvoří obě mapování. Následující příklad ukazuje, jak zavolat tuto metodu:  
   
 ```csharp
 // Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the   
@@ -116,7 +116,7 @@ CryptoConfig.AddAlgorithm(typeof(SHA256CryptoServiceProvider), "http://constoso.
 ```  
   
 ## <a name="configure-the-binding"></a>Konfigurace vazby  
- Vazbu nakonfigurujete zadáním vlastní <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>odvozené třídy v nastavení vazby, jak je znázorněno v následujícím fragmentu kódu:  
+ Vazbu nakonfigurujete tak, že v nastavení vazby zadáte vlastní třídu odvozenou od <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>, jak je znázorněno v následujícím fragmentu kódu:  
   
 ```csharp  
 WSHttpBinding binding = new WSHttpBinding();  
@@ -125,7 +125,7 @@ WSHttpBinding binding = new WSHttpBinding();
   
  Úplný příklad kódu naleznete [v tématu kryptografická flexibilita v ukázce zabezpečení služby WCF](../samples/cryptographic-agility-in-wcf-security.md) .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Zabezpečení služeb a klientů](../feature-details/securing-services-and-clients.md)
 - [Zabezpečení služeb](../securing-services.md)

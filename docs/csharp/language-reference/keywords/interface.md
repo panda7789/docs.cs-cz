@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: b315d1f04c9e74700afba8ee7871b23ab4b2fd28
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 473f5f8e226f0a144746ac943afcffdccd4777c7
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744694"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625849"
 ---
 # <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface"::: (C# Referenční dokumentace)
 
-Rozhraní definuje kontrakt. Všechny [`class`](class.md) nebo [`struct`](struct.md) , které implementují tuto smlouvu, musí poskytovat implementaci členů definovaných v rozhraní. Počínaje C# 8,0 může rozhraní definovat výchozí implementaci pro členy. Může také definovat [`static`](static.md) členy, aby bylo možné poskytnout jedinou implementaci pro běžné funkce.
+Rozhraní definuje kontrakt. Všechny [`class`](class.md) nebo [`struct`](../builtin-types/struct.md) , které implementují tuto smlouvu, musí poskytovat implementaci členů definovaných v rozhraní. Počínaje C# 8,0 může rozhraní definovat výchozí implementaci pro členy. Může také definovat [`static`](static.md) členy, aby bylo možné poskytnout jedinou implementaci pro běžné funkce.
 
 V následujícím příkladu musí třída `ImplementationClass` implementovat metodu s názvem `SampleMethod`, která nemá žádné parametry a vrací `void`.
 
@@ -78,6 +78,4 @@ Další informace naleznete v části [rozhraní](~/_csharplang/spec/interfaces.
 - [Rozhraní](../../programming-guide/interfaces/index.md)
 - [Použití vlastností](../../programming-guide/classes-and-structs/using-properties.md)
 - [Použití indexerů](../../programming-guide/indexers/using-indexers.md)
-- [class](class.md)
-- [struct](struct.md)
 - [Rozhraní](../../programming-guide/interfaces/index.md)

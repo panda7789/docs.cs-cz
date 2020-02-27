@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-ms.openlocfilehash: 665c99302887c51c69b4d818619dd6bedd43b644
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 46d4f77a4a490b2acdb5da20b9a477f27c38d410
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714939"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628238"
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 
-*Pole* je proměnná libovolného typu, který je deklarován přímo ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md). Pole jsou *členy* jejich nadřazeného typu.
+*Pole* je proměnná libovolného typu, který je deklarován přímo ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/builtin-types/struct.md). Pole jsou *členy* jejich nadřazeného typu.
 
 Třída nebo struktura může mít pole instance, statická pole nebo obojí. Pole instance jsou specifická pro instanci typu. Máte-li třídu T s polem instance F, můžete vytvořit dva objekty typu T a upravit hodnotu F v každém objektu, aniž by to ovlivnilo hodnotu v jiném objektu. Naproti tomu statické pole patří do samotné třídy a je sdíleno mezi všemi instancemi této třídy. Ke statickému poli můžete přistupovat pouze pomocí názvu třídy. Pokud ke statickému poli přistupujete pomocí názvu instance, získáte [CS0176](../../misc/cs0176.md) chybu při kompilaci.
 
@@ -48,9 +48,9 @@ Pole může být deklarované [jen pro čtení](../../language-reference/keyword
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Třídy a struktury](./index.md)
 - [Použití konstruktorů](./using-constructors.md)
 - [Dědičnost](./inheritance.md)
