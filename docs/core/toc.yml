@@ -49,25 +49,7 @@
     - name: Instalace lokalizované technologie IntelliSense
       href: install/localized-intellisense.md
 - name: Začínáme
-  items:
-    - name: Začínáme
-      href: get-started.md
-    - name: 'Začínáme s jazykem C# a nástrojem Visual Studio Code'
-      href: tutorials/with-visual-studio-code.md
-    - name: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio Code
-      href: tutorials/using-on-macos.md
-    - name: Vytvoření první konzolové aplikace v sadě Visual Studio
-      href: tutorials/with-visual-studio.md
-    - name: Ladění aplikace pomocí sady Visual Studio
-      href: tutorials/debugging-with-visual-studio.md
-    - name: Publikace aplikace pomocí sady Visual Studio
-      href: tutorials/publishing-with-visual-studio.md
-    - name: Vytvoření knihovny .NET Standard v sadě Visual Studio
-      href: tutorials/library-with-visual-studio.md
-    - name: Testování knihovny .NET Standard v sadě Visual Studio
-      href: tutorials/testing-library-with-visual-studio.md
-    - name: Využití knihovny .NET Standard v sadě Visual Studio
-      href: tutorials/consuming-library-with-visual-studio.md
+  href: get-started.md
 - name: Co je nového v .NET Core
   items:
     - name: Co je nového v .NET Core 3.1
@@ -87,12 +69,28 @@
   items:
     - name: Přehled
       href: tutorials/index.md
-    - name: Začínáme s .NET Core pomocí sady Visual Studio pro Mac
-      href: tutorials/using-on-mac-vs.md
-    - name: Sestavení kompletního řešení .NET Core v macOS
-      href: tutorials/using-on-mac-vs-full-solution.md
+    - name: Začínáme s .NET Core pomocí sady Visual Studio
+      href: tutorials/with-visual-studio.md
+    - name: Začínáme s .NET Core pomocí Visual Studio Code
+      href: tutorials/with-visual-studio-code.md
     - name: Začínáme s .NET Core v rozhraní příkazového řádku
       href: tutorials/cli-create-console-app.md
+    - name: Začínáme s .NET Core pomocí Visual Studio Code na macOS
+      href: tutorials/using-on-macos.md
+    - name: Začínáme s .NET Core pomocí sady Visual Studio pro Mac
+      href: tutorials/using-on-mac-vs.md
+    - name: Ladění aplikace pomocí sady Visual Studio
+      href: tutorials/debugging-with-visual-studio.md
+    - name: Publikace aplikace pomocí sady Visual Studio
+      href: tutorials/publishing-with-visual-studio.md
+    - name: Vytvoření knihovny .NET Standard v sadě Visual Studio
+      href: tutorials/library-with-visual-studio.md
+    - name: Testování knihovny .NET Standard v sadě Visual Studio
+      href: tutorials/testing-library-with-visual-studio.md
+    - name: Využití knihovny .NET Standard v sadě Visual Studio
+      href: tutorials/consuming-library-with-visual-studio.md
+    - name: Sestavení kompletního řešení .NET Core v macOS
+      href: tutorials/using-on-mac-vs-full-solution.md
     - name: Uspořádání a testování projektů pomocí .NET Core CLI
       href: tutorials/testing-with-cli.md
     - name: Vývoj knihoven pomocí nástrojů pro různé platformy
