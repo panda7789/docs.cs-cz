@@ -82,8 +82,6 @@
       href: tour-of-csharp/statements.md
     - name: Třídy a objekty
       href: tour-of-csharp/classes-and-objects.md
-    - name: Struktury
-      href: tour-of-csharp/structs.md
     - name: Pole
       href: tour-of-csharp/arrays.md
     - name: Rozhraní
@@ -129,8 +127,6 @@
       href: basic-types.md
     - name: Třídy
       href: programming-guide/classes-and-structs/classes.md
-    - name: Struktury
-      href: structs.md
     - name: N-tice
       href: tuples.md
     - name: Dekonstrukce řazených kolekcí členů a dalších typů
@@ -941,19 +937,12 @@
     - name: "Třídy a\_struktury"
       items:
         - name: Přehled
-          displayName: classes structs
+          displayName: classes
           href: programming-guide/classes-and-structs/index.md
         - name: Třídy
           href: programming-guide/classes-and-structs/classes.md
         - name: Objekty
           href: programming-guide/classes-and-structs/objects.md
-        - name: Struktury
-          items:
-            - name: Přehled
-              displayName: structs
-              href: programming-guide/classes-and-structs/structs.md
-            - name: Používání struktur
-              href: programming-guide/classes-and-structs/using-structs.md
         - name: Dědičnost
           href: programming-guide/classes-and-structs/inheritance.md
         - name: Polymorfismus
