@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: 01e11ed62b0855b9027dfd7999f8b787c075028a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9bf57e0f74a353fb6512a24214e9479c1d813aab
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709670"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160206"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Skriptování šablony stylů XSLT pomocí \<msxsl: > skriptu
 Třída <xref:System.Xml.Xsl.XslTransform> podporuje vložené skriptování pomocí elementu `script`.  
@@ -49,7 +49,7 @@ Třída <xref:System.Xml.Xsl.XslTransform> podporuje vložené skriptování pom
   
 |Výchozí obory názvů|Popis|  
 |------------------------|-----------------|  
-|Systém|Systémová třída|  
+|Systémový|Systémová třída|  
 |System.Collection|Třídy kolekcí.|  
 |System.Text|Třídy textu.|  
 |System.Text.RegularExpressions|Třídy regulárních výrazů.|  
@@ -62,11 +62,11 @@ Třída <xref:System.Xml.Xsl.XslTransform> podporuje vložené skriptování pom
   
  Zadané argumenty a návratové hodnoty, které jsou definovány funkcemi skriptu, musí být jedním z typů XPath nebo XSLT typu konsorcium World Wide Web (W3C). V následující tabulce jsou uvedeny odpovídající typy W3C, ekvivalentní .NET Framework třídy (Type) a zda typ W3C je typ XPath nebo typ XSLT.  
   
-|Type|Ekvivalentní třída .NET Framework (typ)|Typ XPath nebo typ XSLT|  
+|Typ|Ekvivalentní třída .NET Framework (typ)|Typ XPath nebo typ XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
-|String|System. String|XPath|  
-|Boolean|System. Boolean|XPath|  
-|Počet|System.Double|XPath|  
+|Řetězec|System. String|XPath|  
+|Logická hodnota|System. Boolean|XPath|  
+|Číslo|System.Double|XPath|  
 |Fragment stromu výsledků|System.Xml.XPath.XPathNavigator|XSLT|  
 |Sada uzlů|System.Xml.XPath.XPathNodeIterator|XPath|  
   
@@ -122,14 +122,14 @@ Public Class Sample
     'Load the XML data file.  
     Dim doc As XPathDocument = New XPathDocument(filename)  
   
-    'Create an XmlTextWriter to output to the console.               
+    'Create an XmlTextWriter to output to the console.
     Dim writer As XmlTextWriter = New XmlTextWriter(Console.Out)  
     writer.Formatting = Formatting.Indented  
   
     'Transform the file.  
     xslt.Transform(doc, Nothing, writer, Nothing)  
     writer.Close()  
-  End Sub   
+  End Sub
 End Class  
 ```  
   
@@ -154,7 +154,7 @@ public class Sample
     //Load the XML data file.  
     XPathDocument doc = new XPathDocument(filename);  
   
-    //Create an XmlTextWriter to output to the console.               
+    //Create an XmlTextWriter to output to the console.
     XmlTextWriter writer = new XmlTextWriter(Console.Out);  
     writer.Formatting = Formatting.Indented;  
   
@@ -198,14 +198,14 @@ public class Sample
       ]]>  
    </msxsl:script>  
   
-  <xsl:template match="data">    
+  <xsl:template match="data">
   <circles>  
   
   <xsl:for-each select="circle">  
     <circle>  
     <xsl:copy-of select="node()"/>  
        <circumference>  
-          <xsl:value-of select="user:circumference(radius)"/>   
+          <xsl:value-of select="user:circumference(radius)"/>
        </circumference>  
     </circle>  
   </xsl:for-each>  
@@ -226,9 +226,9 @@ public class Sample
     <radius>37.5</radius>  
     <circumference>235.5</circumference>  
   </circle>  
-</circles>    
+</circles>
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

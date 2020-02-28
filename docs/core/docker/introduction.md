@@ -3,12 +3,12 @@ title: Úvod do Docker
 description: Tento článek poskytuje úvodní informace a přehled pro Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc
-ms.openlocfilehash: 40c8a3c8d81d23c621ccb83a283f49aa34a58ac1
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: eedfd1e7c1b361beb9d4f271e739657ef5e894a6
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920825"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157788"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -18,23 +18,23 @@ Další informace o tom, jak nainstalovat Docker, najdete na stránce pro staže
 
 ## <a name="docker-basics"></a>Základy Docker
 
-Existuje několik konceptů, které byste měli znát. Klient Docker má rozhraní příkazového řádku, které můžete použít ke správě imagí a kontejnerů. Jak už bylo uvedeno výše, měli byste si projít čas, abyste si přečetli dokumentaci k dokumentaci s [přehledem Docker](https://docs.docker.com/engine/docker-overview/) . 
+Existuje několik konceptů, které byste měli znát. Klient Docker má rozhraní příkazového řádku, které můžete použít ke správě imagí a kontejnerů. Jak už bylo uvedeno výše, měli byste si projít čas, abyste si přečetli dokumentaci k dokumentaci s [přehledem Docker](https://docs.docker.com/engine/docker-overview/) .
 
-### <a name="images"></a>Obrázky
+### <a name="images"></a>Image
 
 Obrázek je uspořádaná kolekce změn systému souborů, které tvoří základ kontejneru. Obrázek nemá stav a je určen jen pro čtení. Mnohem tím, kdy je obrázek založen na jiné imagi, ale s některým přizpůsobením. Například při vytváření nové image pro aplikaci byste ji měli založit na stávající imagi, která již obsahuje modul runtime .NET Core.
 
 Vzhledem k tomu, že kontejnery jsou vytvořeny z imagí, mají image sadu parametrů spuštění (například spuštění spustitelného souboru), který se spouští při spuštění kontejneru.
 
-### <a name="containers"></a>Kontejnery
+### <a name="containers"></a>Containers
 
 Kontejner je instance spustitelný obrázku. Při sestavování image nasadíte svoji aplikaci a závislosti. Potom lze vytvořit instanci více kontejnerů, z nichž každá je izolována od sebe. Každá instance kontejneru má vlastní systém souborů, paměť a síťové rozhraní.
 
-### <a name="registries"></a>Registr
+### <a name="registries"></a>Registry
 
 Registry kontejnerů jsou kolekcí úložišť imagí. Obrázky můžete založit na imagi registru. Kontejnery můžete vytvořit přímo z image v registru. [Vztah mezi kontejnery Docker, obrázky a Registry](../../architecture/microservices/container-docker-introduction/docker-containers-images-registries.md) je důležitý koncept při [navrhování a sestavování kontejnerových aplikací nebo mikroslužeb](../../architecture/microservices/architect-microservice-container-applications/index.md). Tento přístup značně zkracuje dobu mezi vývojem a nasazením.
 
-Docker má veřejný registr hostovaný v [Docker Hub](https://hub.docker.com/) , který můžete použít. [Image související s .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) jsou uvedené v Docker Hub. 
+Docker má veřejný registr hostovaný v [Docker Hub](https://hub.docker.com/) , který můžete použít. [Image související s .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) jsou uvedené v Docker Hub.
 
 Microsoft Container Registry (MCR) je oficiálním zdrojem imagí kontejnerů poskytovaných společností Microsoft. MCR je postaven na Azure CDN k poskytování globálně replikovaných imagí. MCR ale nemá veřejný web a primární způsob, jak získat informace o imagí kontejnerů poskytovaných Microsoftem, je prostřednictvím [stránek Microsoft Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
 
@@ -44,7 +44,7 @@ Microsoft Container Registry (MCR) je oficiálním zdrojem imagí kontejnerů po
 
 ## <a name="net-core-images"></a>Image .NET Core
 
-Oficiální image Docker pro .NET Core jsou publikované ve službě Microsoft Container Registry (MCR) a jsou zjistitelné v [úložišti Microsoft .NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/). Každé úložiště obsahuje obrázky pro různé kombinace rozhraní .NET (SDK nebo modulu runtime) a operačního systému, které můžete použít. 
+Oficiální image Docker pro .NET Core jsou publikované ve službě Microsoft Container Registry (MCR) a jsou zjistitelné v [úložišti Microsoft .NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/). Každé úložiště obsahuje obrázky pro různé kombinace rozhraní .NET (SDK nebo modulu runtime) a operačního systému, které můžete použít.
 
 Společnost Microsoft poskytuje obrázky, které jsou upraveny pro konkrétní scénáře. Například [úložiště ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) poskytuje obrázky, které jsou vytvořené pro spouštění ASP.NET Core aplikací v produkčním prostředí.
 

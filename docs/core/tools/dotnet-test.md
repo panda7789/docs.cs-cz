@@ -1,13 +1,13 @@
 ---
 title: dotnet – příkaz testu
 description: Příkaz dotnet test se používá ke spouštění testů jednotek v daném projektu.
-ms.date: 05/29/2018
-ms.openlocfilehash: 890d1fc3fd9d47f2bdcd63f2a25248c3edd705e4
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.date: 02/27/2020
+ms.openlocfilehash: 6e906ab396a788905c99f50e73390b765b240efc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626044"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157008"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -168,7 +168,7 @@ Výrazy se dají spojit s podmíněnými operátory:
 | Operátor            | Funkce |
 | ------------------- | -------- |
 | <code>&#124;</code> | NEBO       |
-| `&`                 | AND      |
+| `&`                 | A      |
 
 Výrazy můžete uzavřít do závorek při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)`).
 

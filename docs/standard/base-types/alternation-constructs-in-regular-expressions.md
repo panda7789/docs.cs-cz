@@ -15,12 +15,12 @@ helpviewer_keywords:
 - constructs, alternation
 - .NET Framework regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.openlocfilehash: 8db9ef72415f148aca2c975fc4e8b70421e3adc3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 02664bd2812f89649ec933483161263bae530a75
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711555"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159686"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukce alternace v regulárních výrazech
 
@@ -62,7 +62,7 @@ Regulární výraz `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` je interpretován tak, 
 |<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|Porovnává jednu z následujících hodnot: dvě desítkové číslice následované spojovníkem a sedmi desítkových číslic; nebo tři desítkové číslice, pomlčky, dvě desítkové číslice, další spojovník a čtyři desítkové číslice.|  
 |`\d`|Ukončí porovnání na hranici slova.|  
   
-<a name="Conditional_Expr"></a>   
+<a name="Conditional_Expr"></a>
 ## <a name="conditional-matching-with-an-expression"></a>Podmíněné porovnání s výrazem
 
 Tento prvek jazyka se pokusí vyhledat jeden ze dvou vzorů v závislosti na tom, zda se může shodovat s počátečním vzorem. Jeho syntaxe je:  
@@ -129,6 +129,6 @@ V následujícím příkladu je uvedena variace tohoto příkladu, který použ�
 [!code-csharp[RegularExpressions.Language.Alternation#5](~/samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.alternation/cs/alternation5.cs#5)]
 [!code-vb[RegularExpressions.Language.Alternation#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.alternation/vb/alternation5.vb#5)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](regular-expression-language-quick-reference.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: 0ce7182af33a795188d01ac457b9d45b8ad305dd
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 46a266849f137076170287aeb10becedf83ccf78
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960383"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160219"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a>Proces spravovaného spuštění zahrnuje následující kroky, které jsou podrobně popsány dále v tomto tématu:  
@@ -36,7 +36,7 @@ ms.locfileid: "74960383"
   
      Modul CLR (Common Language Runtime) poskytuje infrastrukturu, která umožňuje uskutečnit spuštění a provést služby, které lze použít během spuštění.  
   
-<a name="choosing_a_compiler"></a>   
+<a name="choosing_a_compiler"></a>
 ## <a name="choosing-a-compiler"></a>Volba kompilátoru  
  Chcete-li využívat výhod poskytovaných modulem CLR (Common Language Runtime), je nutné použít jeden nebo více kompilátorů jazyka, které se zaměřují na modul runtime, například Visual Basic, C#, Visual C++, F# nebo jeden z mnoha kompilátorů třetích stran, například kompilátor Eiffel, Perl nebo COBOL.  
   
@@ -44,7 +44,7 @@ ms.locfileid: "74960383"
   
  [Zpět na začátek](#introduction)  
   
-<a name="compiling_to_msil"></a>   
+<a name="compiling_to_msil"></a>
 ## <a name="compiling-to-msil"></a>Kompilace do jazyka MSIL  
  Při kompilaci spravovaného kódu převádí kompilátor zdrojový kód do jazyka MSIL (Microsoft Intermediate Language), což je sada instrukcí nezávislá na procesoru, které mohou být efektivně převedeny do nativního kódu. Jazyk MSIL obsahuje pokyny pro načítání, ukládání, inicializaci a volání metod na objekty, stejně jako pokyny pro aritmetické a logické operace, tok řízení, přímý přístup do paměti (DMA), zpracování výjimek a jiné operace. Před spuštěním kódu musí být jazyk MSIL převeden na kód specifický pro procesor, obvykle [kompilátorem JIT (just-in-time)](#compiling_msil_to_native_code). Vzhledem k tomu, že modul CLR (Common Language Runtime) poskytuje pro každou podporovanou počítačovou architekturu jeden nebo více kompilátorů JIT, může být stejná sada MSIL zkompilována pomocí kompilátoru JIT a běžet na jakékoliv podporované architektuře.  
   
@@ -52,7 +52,7 @@ ms.locfileid: "74960383"
   
  [Zpět na začátek](#introduction)  
   
-<a name="compiling_msil_to_native_code"></a>   
+<a name="compiling_msil_to_native_code"></a>
 ## <a name="compiling-msil-to-native-code"></a>Kompilace jazyka MSIL do nativního kódu  
  Před spuštěním jazyka MSIL (Microsoft Intermediate Language) je nutné, aby byl zkompilován proti modulu CLR (Common Language Runtime) do nativního kódu architektury cílového počítače. .NET Framework poskytuje dva způsoby, jak provést tento převod:  
   
@@ -89,7 +89,7 @@ ms.locfileid: "74960383"
   
  [Zpět na začátek](#introduction)  
   
-<a name="running_code"></a>   
+<a name="running_code"></a>
 ## <a name="running-code"></a>Spuštění kódu  
  Modul CLR (Common Language Runtime) poskytuje infrastrukturu, která umožňuje uskutečnit spravované spuštění a služby, jež lze použít během provádění. Před spuštěním metody je nutné, aby byla zkompilována do kódu specifického pro procesor. Jednotlivé metody, pro které byl vygenerován kód jazyka MSIL, jsou při prvním volání kompilovány pomocí kompilátoru JIT a poté spuštěny. Jakmile příště metodu spustíte, spustí se stávající nativní kód zkompilovaný pomocí kompilátoru JIT. Proces kompilace JIT a následné spuštění kódu se opakuje až do dokončení provádění.  
   
@@ -105,7 +105,7 @@ ms.locfileid: "74960383"
   
  [Zpět na začátek](#introduction)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled](../../docs/framework/get-started/overview.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - constructs, grouping
 - grouping constructs
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
-ms.openlocfilehash: 87cc3d53cf06457191d9c87020c4151e3f848c51
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 5b2ea110837d9d5b905f97ab706af52a594f1c43
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124322"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159218"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachycují podřetězce vstupního řetězce. Konstrukce seskupení lze použít k následujícím akcím:  
@@ -48,7 +48,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
   
  Informace o skupinách a modelu objektu regulárních výrazů naleznete v tématu [seskupovací konstrukce a objekty regulárních výrazů](#Objects).  
   
-<a name="matched_subexpression"></a>   
+<a name="matched_subexpression"></a>
 ## <a name="matched-subexpressions"></a>Odpovídající podvýrazy  
  Následující seskupovací konstrukce zachytí odpovídající dílčí výraz:  
   
@@ -87,7 +87,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`(\1)`|Porovnává s řetězcem v první zachycené skupině. Toto je druhá zachytávající skupina. Tento příklad přiřadí k zachycené skupině, aby bylo možné načíst počáteční pozici duplicitního slova z vlastnosti `Match.Index`.|  
 |`\W`|Porovnává znak, který není slovní, včetně mezer a interpunkce. To brání vzoru regulárního výrazu v porovnání s slovem, které začíná slovem z první zachycené skupiny.|  
   
-<a name="named_matched_subexpression"></a>   
+<a name="named_matched_subexpression"></a>
 ## <a name="named-matched-subexpressions"></a>Pojmenované odpovídající podvýrazy  
  Následující seskupovací konstrukce zachytí odpovídající dílčí výraz a umožní vám k němu přistupovat podle názvu nebo čísla:  
   
@@ -161,7 +161,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`\D+`|Porovnává jeden nebo více znaků, které nejsou desítkové číslice.|  
 |`(?<digit>\d+)?`|Porovná žádný nebo jeden výskyt jednoho nebo více znaků desítkové číslice. Přiřaďte shodu k `digit` pojmenované skupině.|  
   
-<a name="balancing_group_definition"></a>   
+<a name="balancing_group_definition"></a>
 ## <a name="balancing-group-definitions"></a>Vyrovnávání definic skupin  
  Vyrovnávací Seskupovací definice odstraní definici dříve definované skupiny a obchodů v aktuální skupině, interval mezi dříve definovanou skupinou a aktuální skupinou. Tato seskupovací konstrukce má následující formát:  
   
@@ -234,7 +234,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |23|`(?(Open)(?!))`|Skupina `Open` není definována, takže se nezkouší žádná shoda.|  
 |24|`$`|Odpovídá konci vstupního řetězce.|  
   
-<a name="noncapturing_group"></a>   
+<a name="noncapturing_group"></a>
 ## <a name="noncapturing-groups"></a>Skupiny bez zachycení  
  Následující seskupovací konstrukce nezachycuje podřetězec, který odpovídá dílčímu výrazu:  
   
@@ -260,7 +260,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`(?:\b(?:\w+)\W*)+`|Porovná vzor jednoho nebo více slovních znaků počínaje hranicí slova, za nímž následuje nula nebo více znaků bez slova, jednou nebo vícekrát. Nepřiřazujte odpovídající text na zachycenou skupinu.|  
 |`\.`|Odpovídá tečkě.|  
   
-<a name="group_options"></a>   
+<a name="group_options"></a>
 ## <a name="group-options"></a>Možnosti skupiny  
  Následující seskupovací konstrukce aplikuje nebo zakáže zadané možnosti v rámci dílčího výrazu:  
   
@@ -284,7 +284,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
  [!code-csharp[Conceptual.Regex.Language.Options#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#8)]
  [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]  
   
-<a name="zerowidth_positive_lookahead_assertion"></a>   
+<a name="zerowidth_positive_lookahead_assertion"></a>
 ## <a name="zero-width-positive-lookahead-assertions"></a>Pozitivní kontrolní výrazy dopředného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou:  
   
@@ -307,7 +307,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`\w+`|Porovná jeden nebo více znaků slova.|  
 |`(?=\sis\b)`|Určí, zda jsou znaky slova následovány prázdným znakem a řetězcem "is", který končí na hranici slova. V takovém případě je shoda úspěšná.|  
   
-<a name="zerowidth_negative_lookahead_assertion"></a>   
+<a name="zerowidth_negative_lookahead_assertion"></a>
 ## <a name="zero-width-negative-lookahead-assertions"></a>Negativní kontrolní výrazy dopředného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou:  
   
@@ -345,7 +345,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`\b`|Ukončí porovnání na hranici slova.|  
 |`\p{P})`|Pokud další znak není symbol interpunkce (například tečka nebo čárka), shoda se zdaří.|  
   
-<a name="zerowidth_positive_lookbehind_assertion"></a>   
+<a name="zerowidth_positive_lookbehind_assertion"></a>
 ## <a name="zero-width-positive-lookbehind-assertions"></a>Pozitivní kontrolní výrazy zpětného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou:  
   
@@ -370,7 +370,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
   
  Kontrolní výrazy pozitivního zpětného vyhledávání s nulovou šířkou slouží také k omezení zpětného navrácení, pokud poslední znak nebo znaky v zachycené skupině musí být podmnožinou znaků, které odpovídají vzoru regulárního výrazu dané skupiny. Například pokud skupina zachytává všechny po sobě jdoucí znaky slova, můžete použít kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou pro vyžadování, aby byl poslední znak seřazený podle abecedy.  
   
-<a name="zerowidth_negative_lookbehind_assertion"></a>   
+<a name="zerowidth_negative_lookbehind_assertion"></a>
 ## <a name="zero-width-negative-lookbehind-assertions"></a>Negativní kontrolní výrazy zpětného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou:  
   
@@ -395,7 +395,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`\d{4}\b`|Porovnává čtyři desítkové číslice a ukončí porovnávání na hranici slova.|  
 |<code>(?<!(Saturday&#124;Sunday) )</code>|Pokud shoda předchází jiné než řetězce "Sobota" nebo "neděle" následovaný mezerou, shoda je úspěšná.|  
   
-<a name="atomic_groups"></a>   
+<a name="atomic_groups"></a>
 ## <a name="atomic-groups"></a>Atomické skupiny  
  Následující seskupovací konstrukce představuje atomickou skupinu (známou v některých jiných modulech regulárních výrazů jako dílčí výraz bez mechanismu navracení, výraz atomické dílčí výrazy nebo pouze jednou):
   
@@ -424,7 +424,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`\b`|Ukončí porovnávání na hranici slova.|  
 |`(?>(\w)\1+)`|Porovnává jeden nebo více výskytů duplicitního znaku slova, ale nepoužívejte k tomu, aby se shodovala s posledním znakem na hranici slova.|  
   
-<a name="Objects"></a>   
+<a name="Objects"></a>
 ## <a name="grouping-constructs-and-regular-expression-objects"></a>Seskupovací konstrukce a objekty regulárních výrazů  
  Podřetězce, které jsou porovnány zachycující skupinou regulárního výrazu, jsou reprezentovány <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> objekty, které lze načíst z objektu <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType>, který je vrácen vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. Objekt <xref:System.Text.RegularExpressions.GroupCollection> se vyplní následujícím způsobem:  
   

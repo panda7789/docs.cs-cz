@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 12/10/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: a82934fd2ea9568681a3bec82c3b15513decc926
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bdd6e28713bdece2bd144e6763bd84d719e91449
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741562"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156631"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio"></a>Publikování aplikace Hello World .NET Core pomocí sady Visual Studio
 
@@ -25,15 +25,15 @@ V části [vytvoření Hello World aplikace pomocí .NET Core v aplikaci Visual 
 1. Klikněte pravým tlačítkem na projekt **HelloWorld** (ne na řešení HelloWorld) a v nabídce vyberte **publikovat** . (Můžete také vybrat **publikovat HelloWorld** z hlavní nabídky **sestavení** .)
 
    ![Místní nabídka publikování Visual studia](media/publishing-with-visual-studio/publish-context-menu.png)
-   
+
 1. Na stránce **Vyberte cíl publikování** vyberte **Složka**a pak vyberte **vytvořit profil**.
 
    ![Výběr cíle publikování v aplikaci Visual Studio](media/publishing-with-visual-studio/pick-publish-target.png)
-   
+
 1. Na stránce **publikovat** vyberte **publikovat**.
 
    ![Okno pro publikování v aplikaci Visual Studio](media/publishing-with-visual-studio/publish-page.png)
-   
+
 ## <a name="inspect-the-files"></a>Kontrola souborů
 
 Proces publikování vytvoří nasazení závislé na rozhraní, což je typ nasazení, ve kterém je publikovaná aplikace spuštěna na libovolné platformě podporované rozhraním .NET Core s nainstalovaným rozhraním .NET Core v systému. Uživatelé můžou publikovanou aplikaci spustit dvojitým kliknutím na spustitelný soubor nebo vyvoláním příkazu `dotnet HelloWorld.dll` z příkazového řádku.
@@ -59,7 +59,7 @@ V následujících krocích se podíváte na soubory vytvořené procesem publik
          Toto je verze [nasazení závislá na rozhraní](../deploying/deploy-with-cli.md#framework-dependent-deployment) aplikace. Chcete-li spustit tuto dynamickou knihovnu, zadejte `dotnet HelloWorld.dll` do příkazového řádku.
 
       * *Soubor HelloWorld. exe*
-      
+
          Toto je [spustitelná](../deploying/deploy-with-cli.md#framework-dependent-executable) verze aplikace závislá na rozhraní. Pokud ho chcete spustit, zadejte `HelloWorld.exe` do příkazového řádku.
 
       * *HelloWorld. pdb* (volitelné pro nasazení)

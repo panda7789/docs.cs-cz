@@ -35,12 +35,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: e637b2527ce0f7e1b48b713549cb87b2c13881db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8956be3cf8f96a8dd255f378d4927404c172c908
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124812"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159998"
 ---
 # <a name="the-regular-expression-object-model"></a>Model objektu regulárního výrazu
 <a name="introduction"></a>Toto téma popisuje objektový model používaný při práci s regulárními výrazy .NET. Obsahuje následující oddíly:  
@@ -57,7 +57,7 @@ ms.locfileid: "73124812"
   
 - [Individuální zachycení](#the_individual_capture)  
   
-<a name="Engine"></a>   
+<a name="Engine"></a>
 ## <a name="the-regular-expression-engine"></a>Modul regulárních výrazů  
  Modul regulárních výrazů v rozhraní .NET je reprezentován třídou <xref:System.Text.RegularExpressions.Regex>. Modul regulárních výrazů zodpovídá za analýzu a kompilování regulárního výrazu a pro provádění operací, které odpovídají vzoru regulárního výrazu se vstupním řetězcem. Modul je centrální součástí v modelu objektu regulárních výrazů .NET.  
   
@@ -159,11 +159,11 @@ ms.locfileid: "73124812"
 |`\.`|Odpovídá tečkě.|  
 |`\s`|Porovná prázdný znak.|  
   
-<a name="Match_and_MCollection"></a>   
+<a name="Match_and_MCollection"></a>
 ## <a name="the-matchcollection-and-match-objects"></a>Objekty MatchCollection a matched  
  Metody Regex vrací dva objekty, které jsou součástí modelu objektu regulárního výrazu: objekt <xref:System.Text.RegularExpressions.MatchCollection> a objekt <xref:System.Text.RegularExpressions.Match>.  
   
-<a name="the_match_collection"></a>   
+<a name="the_match_collection"></a>
 ### <a name="the-match-collection"></a>Kolekce shod  
  Metoda <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> vrátí objekt <xref:System.Text.RegularExpressions.MatchCollection>, který obsahuje objekty <xref:System.Text.RegularExpressions.Match>, které představují všechny shody nalezené modulem regulárních výrazů, v pořadí, ve kterém se vyskytují ve vstupním řetězci. Pokud neexistují žádné shody, metoda vrátí objekt <xref:System.Text.RegularExpressions.MatchCollection> bez členů. Vlastnost <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> umožňuje přístup k jednotlivým členům kolekce pomocí indexu, od nuly po jednu nižší, než je hodnota vlastnosti <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType>. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> je indexer kolekce (in C#) a výchozí vlastnost (v Visual Basic).  
   
@@ -174,7 +174,7 @@ ms.locfileid: "73124812"
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matchcollection1.cs#6)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matchcollection1.vb#6)]  
   
-<a name="the_match"></a>   
+<a name="the_match"></a>
 ### <a name="the-match"></a>Shoda  
  Třída <xref:System.Text.RegularExpressions.Match> představuje výsledek jedné shody regulárního výrazu. K objektům <xref:System.Text.RegularExpressions.Match> můžete přistupovat dvěma způsoby:  
   
@@ -228,7 +228,7 @@ ms.locfileid: "73124812"
   
  [Zpět na začátek](#introduction)  
   
-<a name="GroupCollection"></a>   
+<a name="GroupCollection"></a>
 ## <a name="the-group-collection"></a>Kolekce skupin  
  Vlastnost <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vrací objekt <xref:System.Text.RegularExpressions.GroupCollection>, který obsahuje objekty <xref:System.Text.RegularExpressions.Group>, které reprezentují zachycené skupiny v jedné shodě. První objekt <xref:System.Text.RegularExpressions.Group> v kolekci (na indexu 0) představuje celou shodu. Každý objekt, který následuje, představuje výsledky jedné zachytávající skupiny.  
   
@@ -259,7 +259,7 @@ ms.locfileid: "73124812"
   
  [Zpět na začátek](#introduction)  
   
-<a name="the_captured_group"></a>   
+<a name="the_captured_group"></a>
 ## <a name="the-captured-group"></a>Zachycená skupina  
  Třída <xref:System.Text.RegularExpressions.Group> představuje výsledek z jedné zachytávající skupiny. Objekty skupiny, které představují zachytávající skupiny definované v regulárním výrazu, jsou vráceny vlastností <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> objektu <xref:System.Text.RegularExpressions.GroupCollection> vráceného vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. Vlastnost <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> je indexerem (v C#) a výchozí vlastností (v Visual Basic) třídy <xref:System.Text.RegularExpressions.Group>. Můžete také načíst jednotlivé členy iterací kolekce pomocí `foreach` nebo konstrukce `For Each`. Příklad najdete v předchozí části.  
   
@@ -282,7 +282,7 @@ ms.locfileid: "73124812"
 |`:`|Porovnává dvojtečku.|  
 |`(?<value>\w+)`|Porovná jeden nebo více znaků slova. Název této zachytávající skupiny je `value`.|  
   
- Vlastnosti třídy <xref:System.Text.RegularExpressions.Group> poskytují informace o zachycené skupině: vlastnost `Group.Value` obsahuje zachycený podřetězec, vlastnost `Group.Index` označuje počáteční pozici zachycené skupiny ve vstupním textu, vlastnost `Group.Length` obsahuje délku zachyceného textu a vlastnost `Group.Success` označuje, zda podřetězec odpovídá vzoru definovanému zachycující skupinou.  
+ Vlastnosti třídy <xref:System.Text.RegularExpressions.Group> poskytují informace o zachycené skupině: vlastnost `Group.Value` obsahuje zachycený podřetězec, vlastnost `Group.Index` označuje počáteční pozici zachycené skupiny ve vstupním textu, vlastnost `Group.Length` obsahuje délku zachyceného textu a vlastnost `Group.Success` označuje, zda se podřetězec shodoval se vzorem definovaným zachycující skupinou.  
   
  Použití kvantifikátorů na skupinu (Další informace naleznete v části [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) upravuje vztah jednoho zachycení na skupinu zachycení dvěma způsoby:  
   
@@ -292,7 +292,7 @@ ms.locfileid: "73124812"
     |--------------------|-----------|  
     |`Success`|`false`|  
     |`Value`|<xref:System.String.Empty?displayProperty=nameWithType>|  
-    |`Length`|0,8|  
+    |`Length`|0|  
   
      V následujícím příkladu je uvedena ukázka. Ve vzoru regulárního výrazu `aaa(bbb)*ccc`první zachytávající skupina (podřetězec "BBB") se může shodovat nula nebo vícekrát. Vzhledem k tomu, že vstupní řetězec "aaaccc" odpovídá vzoru, zachytávající skupina nemá shodu.  
   
@@ -306,7 +306,7 @@ ms.locfileid: "73124812"
   
  [Zpět na začátek](#introduction)  
   
-<a name="CaptureCollection"></a>   
+<a name="CaptureCollection"></a>
 ## <a name="the-capture-collection"></a>Kolekce Capture  
  Objekt <xref:System.Text.RegularExpressions.Group> obsahuje informace pouze o posledním zachycení. Celá sada zachycení vytvořená zachycující skupinou je však stále k dispozici z objektu <xref:System.Text.RegularExpressions.CaptureCollection>, který je vrácen vlastností <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>. Každý člen kolekce je <xref:System.Text.RegularExpressions.Capture> objekt, který představuje zachycení vytvořené touto zachycující skupinou v pořadí, v jakém byly zachyceny (a proto v pořadí, ve kterém byly zachycené řetězce porovnány zleva doprava ve vstupním řetězci). Jednotlivé objekty <xref:System.Text.RegularExpressions.Capture> můžete načíst z kolekce jedním ze dvou způsobů:  
   
@@ -328,7 +328,7 @@ ms.locfileid: "73124812"
   
  [Zpět na začátek](#introduction)  
   
-<a name="the_individual_capture"></a>   
+<a name="the_individual_capture"></a>
 ## <a name="the-individual-capture"></a>Individuální zachycení  
  Třída <xref:System.Text.RegularExpressions.Capture> obsahuje výsledky z zachycení jednoho dílčího výrazu. Vlastnost <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType> obsahuje odpovídající text a vlastnost <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> označuje pozici s nulovým základem ve vstupním řetězci, na které se má odpovídající podřetězec začínat.  
   
@@ -349,7 +349,7 @@ ms.locfileid: "73124812"
 |`;`|Porovnává středník.|  
 |`((\w+(\s\w+)*),(\d+);)+`|Porovnává se se vzorem slova následovaného dalšími slovy následovanými čárkou, jednou nebo více číslicemi a středníkem, jednou nebo vícekrát. Toto je první zachytávající skupina.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Text.RegularExpressions>
 - [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)

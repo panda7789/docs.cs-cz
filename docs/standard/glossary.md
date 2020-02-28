@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 822d6c9513d49dcc6bc57421003441d9bcc7c281
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 8da1d858835210590a80a624fb8989fbfe8e0a91
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921114"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160089"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -22,15 +22,15 @@ Podobně jako [JIT](#jit), tento kompilátor také překládá [Il](#il) do stro
 
 Viz [CoreRT](#corert) a [.NET Native](#net-native).
 
-## <a name="aspnet"></a>ASP.NET 
+## <a name="aspnet"></a>ASP.NET
 
 Původní implementace ASP.NET, která je dodávána s .NET Framework.
 
-Někdy ASP.NET je zastřešující termín, který odkazuje na implementace ASP.NET, včetně ASP.NET Core. To znamená, že podmínka přenáší v rámci určité instance je určena podle kontextu. Pokud chcete, aby bylo jasné, že nepoužíváte ASP.NET, použijte k tomu ASP.NET 4. x, které by znamenaly obě implementace. 
+Někdy ASP.NET je zastřešující termín, který odkazuje na implementace ASP.NET, včetně ASP.NET Core. To znamená, že podmínka přenáší v rámci určité instance je určena podle kontextu. Pokud chcete, aby bylo jasné, že nepoužíváte ASP.NET, použijte k tomu ASP.NET 4. x, které by znamenaly obě implementace.
 
 Další informace najdete v [dokumentaci k ASP.NET](/aspnet/#pivot=aspnet).
 
-## <a name="aspnet-core"></a>ASP.NET Core
+## <a name="aspnet-core"></a>Jádro ASP.NET
 
 Vysoce výkonná implementace Open Source ASP.NET založená na .NET Core pro více platforem.
 
@@ -78,7 +78,7 @@ Veškerý běhový software, vývojové nástroje a komunitní prostředky, kter
 
 Pojem "ekosystém .NET" se od podobných termínů, jako je například .NET Stack, liší v zahrnutí aplikací a knihoven třetích stran. Tady je příklad ve větě:
 
-- "Motivací za [.NET Standard](#net-standard) je vytvoření větší jednotnosti v ekosystému .NET." 
+- "Motivací za [.NET Standard](#net-standard) je vytvoření větší jednotnosti v ekosystému .NET."
 
 ## <a name="framework"></a>rozhraní
 
@@ -96,11 +96,11 @@ V existující dokumentaci "Framework" někdy odkazuje na [implementaci rozhran�
 
 Systém uvolňování paměti.
 
-Systém uvolňování paměti je implementace automatické správy paměti.  GC uvolňuje paměť obsazená objekty, které se již nepoužívají. 
+Systém uvolňování paměti je implementace automatické správy paměti.  GC uvolňuje paměť obsazená objekty, které se již nepoužívají.
 
 Viz [shromažďování paměti](garbage-collection/index.md).
 
-## <a name="il"></a>KÓDU
+## <a name="il"></a>IL
 
 Převodní jazyk.
 
@@ -157,19 +157,19 @@ Termín pro [.NET Standard](#net-standard) a všechny implementace a úlohy [.NE
 
 Projděte si [příručku .NET](index.md)
 
-## <a name="net-core"></a>.NET Core 
+## <a name="net-core"></a>.NET Core
 
 Vysoce výkonná a open source implementace .NET pro více platforem. Zahrnuje základní modul CLR (Common Language Runtime) (CoreCLR), základní modul runtime AOT (CoreRT, ve vývoji), základní knihovnu základních tříd a základní sadu SDK.
 
 Viz [.NET Core](../core/index.md).
 
-## <a name="net-core-cli"></a>Rozhraní příkazového řádku .NET Core
+## <a name="net-core-cli"></a>.NET Core CLI
 
 Sada nástrojů pro více platforem pro vývoj aplikací .NET Core.
 
 Viz [.NET Core CLI](../core/tools/index.md).
 
-## <a name="net-core-sdk"></a>.NET Core SDK
+## <a name="net-core-sdk"></a>Sada .NET Core SDK
 
 Sada knihoven a nástrojů, které vývojářům umožňují vytvářet aplikace a knihovny .NET Core. Zahrnuje [.NET Core CLI](#net-core-cli) pro sestavování aplikací, knihoven .NET Core a modulu runtime pro vytváření a spouštění aplikací a spustitelný soubor dotnet (*dotnet. exe*), který spouští příkazy rozhraní příkazového řádku a spouští aplikace.
 
@@ -211,13 +211,13 @@ Balíček NuGet &mdash; nebo pouze balíček &mdash; je soubor *. zip* s jedním
 
 Soubor *. zip* má příponu *. nupkg* a může obsahovat prostředky, jako jsou soubory *DLL* a *XML* soubory pro použití s více cílovými rozhraními a verzemi. Při instalaci v aplikaci nebo knihovně jsou příslušné prostředky vybrány na základě cílového rozhraní určeného aplikací nebo knihovnou. Prostředky, které definují rozhraní, jsou ve složce *ref* a assety definující implementaci jsou ve složce *lib* .
 
-## <a name="platform"></a>platforma
+## <a name="platform"></a>Platforma
 
 Operační systém a hardware, na kterém běží, jako je Windows, macOS, Linux, iOS a Android.
 
 Tady jsou příklady použití ve větách:
 
-- ".NET Core je implementace .NET pro různé platformy." 
+- ".NET Core je implementace .NET pro různé platformy."
 - "Profily PCL reprezentují platformy Microsoft, zatímco .NET Standard nezávislá na platformu."
 
 Dokumentace rozhraní .NET často používá "platformu .NET", která znamená implementaci .NET nebo .NET Stack včetně všech implementací. Obě tato použití se z tohoto hlediska snaží obměňujte s primárním (operačním nebo hardwarovým) významem, takže plánujeme tato použití z dokumentace eliminovat.
@@ -239,13 +239,13 @@ Dokumentace rozhraní .NET někdy používá "runtime", což znamená implementa
 - "Knihovny určené ke spuštění na více modulech runtime by měly cílit na toto rozhraní." (odkazování na .NET Standard)
 - "Různé moduly runtime .NET implementují konkrétní verze .NET Standard. … Každá verze modulu .NET runtime inzeruje nejvyšší .NET Standard verzi, kterou podporuje...
 
-Plánujeme toto nekonzistentní použití eliminovat. 
+Plánujeme toto nekonzistentní použití eliminovat.
 
 ## <a name="stack"></a>stack
 
 Sada programovacích technologií používaných společně k sestavování a spouštění aplikací.
 
-Rozhraní .NET Stack odkazuje na .NET Standard a všechny implementace rozhraní .NET. Fráze ".NET Stack" může odkazovat na jednu implementaci rozhraní .NET. 
+Rozhraní .NET Stack odkazuje na .NET Standard a všechny implementace rozhraní .NET. Fráze ".NET Stack" může odkazovat na jednu implementaci rozhraní .NET.
 
 ## <a name="target-framework"></a>Cílová architektura
 
@@ -271,7 +271,7 @@ Univerzální platforma Windows.
 
 Implementace .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, phablets, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace se dají zapisovat do C++, C#Visual Basic a JavaScriptu. Při použití C# a Visual Basic rozhraní API .NET poskytuje .NET Core.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Průvodce technologií .NET](index.md)
 - [Průvodce rozhraním .NET Framework](../framework/index.md)

@@ -1,13 +1,13 @@
 ---
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
-ms.date: 05/29/2018
-ms.openlocfilehash: c221e8a34e844d0ad0482d2bb4aa6e1c795555ca
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.date: 02/27/2020
+ms.openlocfilehash: e74027ba70ddf6905a12f9691caeb0a406428ad6
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626057"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157021"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 

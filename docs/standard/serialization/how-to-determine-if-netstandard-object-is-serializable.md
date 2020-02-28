@@ -8,16 +8,16 @@ dev_langs:
 helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
-ms.openlocfilehash: 87bf863b158fe3b2c03c7a6d23462bc2aabf9966
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4037dee36aeb619eb2757016904fd877158e57cf
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73106621"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159894"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>Jak zjistit, zda je objekt .NET Standard serializovatelný
 
-.NET Standard je specifikace definující typy a členy, které musí být přítomny v konkrétních implementacích .NET, které odpovídají této verzi standardu. .NET Standard však nedefinuje, zda je typ serializovatelný. Typy definované v knihovně .NET Standard nejsou označeny atributem <xref:System.SerializableAttribute>. Místo toho je možné určit, zda je konkrétní typ serializovatelný, konkrétní implementaci rozhraní .NET, například .NET Framework a .NET Core. 
+.NET Standard je specifikace definující typy a členy, které musí být přítomny v konkrétních implementacích .NET, které odpovídají této verzi standardu. .NET Standard však nedefinuje, zda je typ serializovatelný. Typy definované v knihovně .NET Standard nejsou označeny atributem <xref:System.SerializableAttribute>. Místo toho je možné určit, zda je konkrétní typ serializovatelný, konkrétní implementaci rozhraní .NET, například .NET Framework a .NET Core.
 
 Pokud jste vytvořili knihovnu, která cílí na .NET Standard, vaše knihovna může být spotřebována jakoukoli implementací .NET, která podporuje .NET Standard. To znamená, že nemůžete předem znát, zda je konkrétní typ serializovatelný; můžete určit, zda je v době běhu serializovatelný.
 
@@ -31,7 +31,7 @@ Pak můžete předat libovolný objekt metodě, abyste zjistili, zda lze seriali
 [!code-csharp[test-is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/csharp/program.cs#1)]
 [!code-vb[test-is-a-type-serializable](~/samples/snippets/standard/serialization/is-serializable/vb/program.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Binární serializace](binary-serialization.md)
 - <xref:System.SerializableAttribute?displayProperty=nameWithType>

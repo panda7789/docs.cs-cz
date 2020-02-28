@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: af1b374cd14d5070194c035024ce2328c9016646
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 1a691ad0c1f8dbfadd642360d7f9629a136ff3ab
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503541"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156657"
 ---
 # <a name="get-started-with-net-core-using-the-net-core-cli"></a>Začínáme s .NET Core s využitím .NET Core CLI
 
@@ -40,30 +40,30 @@ Podívejme se na stručný návod:
 01. `dotnet new console`
 
     [dotnet New](../tools/dotnet-new.md) vytvoří aktuální soubor projektu *Hello. csproj* se závislostmi nezbytnými k vytvoření konzolové aplikace. Vytvoří také základní soubor *program.cs*, který obsahuje vstupní bod pro aplikaci.
-    
+
     *Hello. csproj*:
-    
+
     [!code-xml[Hello.csproj](~/samples/core/console-apps/HelloMsBuild/Hello.csproj)]
-    
+
     Soubor projektu určuje vše potřebné k obnovení závislostí a sestavování programu.
-    
+
     - Element `<OutputType>` určuje, že vytváříme spustitelný soubor, a to i v jiných slovech konzolové aplikace.
     - Element `<TargetFramework>` určuje, jakou implementaci .NET cílíme. V pokročilém scénáři můžete zadat více cílových rozhraní a sestavit je pro všechny v rámci jedné operace. V tomto kurzu se podíváme na vytváření jenom pro .NET Core 3,1.
-    
+
     *Program.cs*:
-    
+
     [!code-csharp[Program.cs](~/samples/core/console-apps/HelloMsBuild/Program.cs)]
-    
+
     Program se spustí `using System`, což znamená "přenést vše do oboru názvů `System` do rozsahu pro tento soubor". Obor názvů `System` obsahuje třídu `Console`.
-    
+
     Pak definujeme obor názvů s názvem `Hello`. Můžete to změnit na cokoli, co potřebujete. Třída s názvem `Program` je definována v rámci tohoto oboru názvů s metodou `Main`, která přebírá pole řetězců s názvem `args`. Toto pole obsahuje seznam argumentů předaných při spuštění programu. V takovém případě se toto pole nepoužívá a program jednoduše zapisuje text "Hello World!". do konzoly. Později provedeme změny kódu, který tento argument využije.
-    
+
     `dotnet new` volá implicitně [dotnet Restore](../tools/dotnet-restore.md) . `dotnet restore` volání [NuGet](https://www.nuget.org/) (Správce balíčků .NET) pro obnovení stromu závislostí. NuGet analyzuje soubor *Hello. csproj* , stáhne závislosti definované v souboru (nebo je z mezipaměti v počítači převede) a zapíše soubor *obj/Project. assets. JSON* , který je nezbytný pro zkompilování a spuštění ukázky.
 
 02. `dotnet run`
 
     [dotnet spustit](../tools/dotnet-run.md) volá [sestavení dotnet](../tools/dotnet-build.md) , aby bylo zajištěno, že cíle sestavení byly sestaveny, a poté volá `dotnet <assembly.dll>` pro spuštění cílové aplikace.
-    
+
     ```dotnetcli
     dotnet run
     ```
@@ -73,9 +73,9 @@ Podívejme se na stručný návod:
     ```console
     Hello World!
     ```
-    
+
     Alternativně můžete také spustit `dotnet build` pro zkompilování kódu bez spuštění konzolových aplikací sestavení. Výsledkem je kompilovaná aplikace, jako soubor DLL, na základě názvu projektu. V tomto případě se vytvoří soubor s názvem *Hello. dll*. Tuto aplikaci můžete spustit s `dotnet bin\Debug\netcoreapp3.1\Hello.dll` ve Windows (použijte `/` pro systémy jiné než Windows).
-    
+
     ```dotnetcli
     dotnet bin\Debug\netcoreapp3.1\Hello.dll
     ```
@@ -85,7 +85,7 @@ Podívejme se na stručný návod:
     ```console
     Hello World!
     ```
-    
+
     Když je aplikace zkompilována, byl společně s `Hello.dll`vytvořen spustitelný soubor specifický pro operační systém. V systému Windows to bude `Hello.exe`. v systému Linux nebo macOS by to bylo `hello`. S výše uvedeným příkladem je soubor pojmenován pomocí `Hello.exe` nebo `Hello`. Tento spustitelný soubor můžete spustit přímo.
 
     ```console

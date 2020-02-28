@@ -10,23 +10,23 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: f72d2d83d701b20648140900d65c9098a8abb721
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 310967f39c3aa7a46d79087bcbf0cb016f7d7284
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76164057"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159569"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Zápis vlastních převaděčů pro serializaci JSON (zařazování) v .NET
 
-Tento článek ukazuje, jak vytvořit vlastní převaděče pro třídy serializace JSON, které jsou k dispozici v oboru názvů <xref:System.Text.Json>. Úvod do `System.Text.Json`naleznete [v tématu How to serializovat and deserializovat JSON v rozhraní .NET](system-text-json-how-to.md).
+Tento článek ukazuje, jak vytvořit vlastní převaděče pro třídy serializace JSON, které jsou k dispozici v oboru názvů <xref:[!OP.NO-LOC(System.Text.Json)]>. Úvod do `[!OP.NO-LOC(System.Text.Json)]`naleznete [v tématu How to serializovat and deserializovat JSON v rozhraní .NET](system-text-json-how-to.md).
 
-*Převodník* je třída, která převádí objekt nebo hodnotu na a z formátu JSON. Obor názvů `System.Text.Json` obsahuje integrované převaděče pro většinu primitivních typů, které jsou mapovány na primitivní prvky jazyka JavaScript. Můžete psát vlastní převaděče:
+*Převodník* je třída, která převádí objekt nebo hodnotu na a z formátu JSON. Obor názvů `[!OP.NO-LOC(System.Text.Json)]` obsahuje integrované převaděče pro většinu primitivních typů, které jsou mapovány na primitivní prvky jazyka JavaScript. Můžete psát vlastní převaděče:
 
 * Chcete-li přepsat výchozí chování vestavěného převaděče. Můžete například chtít, aby byly hodnoty `DateTime` ve formátu mm/dd/rrrr namísto výchozího formátu ISO 8601-1:2019.
 * Pro podporu vlastního typu hodnoty. Například struktura `PhoneNumber`.
 
-Můžete také napsat vlastní převaděče pro přizpůsobení nebo rozšiřování `System.Text.Json` s funkcemi, které nejsou součástí aktuální verze. Následující scénáře jsou pokryté dále v tomto článku:
+Můžete také napsat vlastní převaděče pro přizpůsobení nebo rozšiřování `[!OP.NO-LOC(System.Text.Json)]` s funkcemi, které nejsou součástí aktuální verze. Následující scénáře jsou pokryté dále v tomto článku:
 
 * [Deserializace odvozených typů do vlastností objektu](#deserialize-inferred-types-to-object-properties).
 * [Slovník podpory s jiným neřetězcovým klíčem](#support-dictionary-with-non-string-key)
@@ -58,7 +58,7 @@ Následující ukázka je převaděč, který přepisuje výchozí serializaci p
 
 ## <a name="sample-factory-pattern-converter"></a>Ukázkový konvertor vzorků výrobního modelu
 
-Následující kód ukazuje vlastní převaděč, který pracuje s `Dictionary<Enum,TValue>`. Kód řídí model továrny, protože první parametr obecného typu je `Enum` a druhý je otevřen. Metoda `CanConvert` vrací `true` pouze pro `Dictionary` se dvěma obecnými parametry, první z nich je `Enum` typ. Vnitřní převaděč získá existující převaděč, který zpracuje typ, který je poskytován za běhu pro `TValue`. 
+Následující kód ukazuje vlastní převaděč, který pracuje s `Dictionary<Enum,TValue>`. Kód řídí model továrny, protože první parametr obecného typu je `Enum` a druhý je otevřen. Metoda `CanConvert` vrací `true` pouze pro `Dictionary` se dvěma obecnými parametry, první z nich je `Enum` typ. Vnitřní převaděč získá existující převaděč, který zpracuje typ, který je poskytován za běhu pro `TValue`.
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DictionaryTKeyEnumTValueConverter.cs)]
 
@@ -68,47 +68,47 @@ Předchozí kód je stejný jako ten, který je zobrazen ve [slovníku podpory s
 
 Následující postup vysvětluje, jak vytvořit převaděč podle základního vzoru:
 
-* Vytvořte třídu, která je odvozena z <xref:System.Text.Json.Serialization.JsonConverter%601>, kde `T` je typ k serializaci a deserializaci.
-* Přepište metodu `Read` pro deserializaci příchozího JSON a převeďte ji na typ `T`. Použijte <xref:System.Text.Json.Utf8JsonReader>, která je předána metodě pro čtení formátu JSON.
-* Přepište metodu `Write` k serializaci příchozího objektu typu `T`. Použijte <xref:System.Text.Json.Utf8JsonWriter>, která je předána metodě pro zápis formátu JSON.
+* Vytvořte třídu, která je odvozena z <xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverter%601>, kde `T` je typ k serializaci a deserializaci.
+* Přepište metodu `Read` pro deserializaci příchozího JSON a převeďte ji na typ `T`. Použijte <xref:[!OP.NO-LOC(System.Text.Json)].Utf8JsonReader>, která je předána metodě pro čtení formátu JSON.
+* Přepište metodu `Write` k serializaci příchozího objektu typu `T`. Použijte <xref:[!OP.NO-LOC(System.Text.Json)].Utf8JsonWriter>, která je předána metodě pro zápis formátu JSON.
 * Metodu `CanConvert` popište pouze v případě potřeby. Výchozí implementace vrátí `true`, když typ, který má být převeden, je typu `T`. Proto převaděče, které podporují pouze typ `T`, nemusejí přepsat tuto metodu. Příklad převaděče, který musí přepsat tuto metodu, naleznete v části [polymorfní deserializace](#support-polymorphic-deserialization) dále v tomto článku.
 
-Můžete odkazovat na [předdefinovaný zdrojový kód převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters/) jako referenční implementace pro psaní vlastních převaděčů.
+Můžete odkazovat na [předdefinovaný zdrojový kód převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/[!OP.NO-LOC(System.Text.Json)]/src/[!OP.NO-LOC(System/Text/Json)]/Serialization/Converters/) jako referenční implementace pro psaní vlastních převaděčů.
 
 ## <a name="steps-to-follow-the-factory-pattern"></a>Postup pro postup pro model výroby
 
 Následující postup vysvětluje, jak vytvořit převaděč podle vzorce pro vytváření:
 
-* Vytvořte třídu, která je odvozena z <xref:System.Text.Json.Serialization.JsonConverterFactory>.
-* Přepište metodu `CanConvert`, aby vracela hodnotu true, pokud je typ převodu ten, který může převaděč zpracovat. Pokud je například převaděč určený pro `List<T>` může zpracovat pouze `List<int>`, `List<string>`a `List<DateTime>`. 
+* Vytvořte třídu, která je odvozena z <xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverterFactory>.
+* Přepište metodu `CanConvert`, aby vracela hodnotu true, pokud je typ převodu ten, který může převaděč zpracovat. Pokud je například převaděč určený pro `List<T>` může zpracovat pouze `List<int>`, `List<string>`a `List<DateTime>`.
 * Přepište metodu `CreateConverter` pro vrácení instance třídy převaděče, která bude zpracovávat typ k převodu, který je k dispozici za běhu.
-* Vytvořte třídu převaděče, kterou vytváří instance metody `CreateConverter`. 
+* Vytvořte třídu převaděče, kterou vytváří instance metody `CreateConverter`.
 
 Model továrny je vyžadován pro otevřené generické typy, protože kód pro převod objektu na a z řetězce není stejný pro všechny typy. Převaděč pro otevřený obecný typ (`List<T>`, například) musí vytvořit převaděč pro uzavřený obecný typ (`List<DateTime>`, například) na pozadí. Kód musí být napsán pro zpracování každého uzavřeného a obecného typu, který může převaděč zpracovat.
 
-Typ `Enum` je podobný otevřenému obecnému typu: převaděč pro `Enum` musí vytvořit převaděč pro konkrétní `Enum` (například`WeekdaysEnum`) na pozadí. 
+Typ `Enum` je podobný otevřenému obecnému typu: převaděč pro `Enum` musí vytvořit převaděč pro konkrétní `Enum` (například`WeekdaysEnum`) na pozadí.
 
 ## <a name="error-handling"></a>Zpracování chyb
 
-Pokud potřebujete vyvolat výjimku v kódu pro zpracování chyb, zvažte vyvolání <xref:System.Text.Json.JsonException> bez zprávy. Tento typ výjimky automaticky vytvoří zprávu, která obsahuje cestu k části JSON, která způsobila chybu. Například příkaz `throw new JsonException();` vytvoří chybovou zprávu jako v následujícím příkladu:
+Pokud potřebujete vyvolat výjimku v kódu pro zpracování chyb, zvažte vyvolání <xref:[!OP.NO-LOC(System.Text.Json)].JsonException> bez zprávy. Tento typ výjimky automaticky vytvoří zprávu, která obsahuje cestu k části JSON, která způsobila chybu. Například příkaz `throw new JsonException();` vytvoří chybovou zprávu jako v následujícím příkladu:
 
 ```
-Unhandled exception. System.Text.Json.JsonException: 
-The JSON value could not be converted to System.Object. 
+Unhandled exception. [!OP.NO-LOC(System.Text.Json)].JsonException:
+The JSON value could not be converted to System.Object.
 Path: $.Date | LineNumber: 1 | BytePositionInLine: 37.
 ```
 
-Pokud zadáte zprávu (například `throw new JsonException("Error occurred")`, výjimka stále poskytne cestu ve vlastnosti <xref:System.Text.Json.JsonException.Path>.
+Pokud zadáte zprávu (například `throw new JsonException("Error occurred")`, výjimka stále poskytne cestu ve vlastnosti <xref:[!OP.NO-LOC(System.Text.Json)].JsonException.Path>.
 
 ## <a name="register-a-custom-converter"></a>Registrace vlastního převaděče
 
 *Zaregistrujte* vlastní převaděč a nastavte `Serialize` a metody `Deserialize` ho použít. Vyberte jeden z následujících přístupů:
 
-* Přidejte instanci třídy Converter do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters?displayProperty=nameWithType>.
-* Použijte atribut [[JsonConverter]](xref:System.Text.Json.Serialization.JsonConverterAttribute) pro vlastnosti, které vyžadují vlastní převaděč.
-* Použijte atribut [[JsonConverter]](xref:System.Text.Json.Serialization.JsonConverterAttribute) pro třídu nebo strukturu, která představuje vlastní typ hodnoty.
+* Přidejte instanci třídy Converter do kolekce <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters?displayProperty=nameWithType>.
+* Použijte atribut [[JsonConverter]](xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverterAttribute) pro vlastnosti, které vyžadují vlastní převaděč.
+* Použijte atribut [[JsonConverter]](xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverterAttribute) pro třídu nebo strukturu, která představuje vlastní typ hodnoty.
 
-## <a name="registration-sample---converters-collection"></a>Registrace ukázek – kolekce převaděčů 
+## <a name="registration-sample---converters-collection"></a>Registrace ukázek – kolekce převaděčů
 
 Tady je příklad, který nastaví <xref:System.ComponentModel.DateTimeOffsetConverter> jako výchozí pro vlastnosti typu <xref:System.DateTimeOffset>:
 
@@ -296,11 +296,11 @@ Kód převaděče v předchozím příkladu čte a zapisuje každou vlastnost ru
 * [Konvertor Int32, který umožňuje řetězcové i číselné hodnoty při deserializaci](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Int32.cs)
 * [Konvertor Enum](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Enum.cs)
 * [Vypíše převaděč >\<T, který přijímá externí data.](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
-* [Long [] převaděč, který funguje se seznamem čísel oddělených čárkami](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs) 
+* [Long [] převaděč, který funguje se seznamem čísel oddělených čárkami](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs)
 
 Pokud potřebujete vytvořit převaděč, který upraví chování existujícího integrovaného převaděče, můžete získat [zdrojový kód existujícího převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters) , který slouží jako výchozí bod pro přizpůsobení.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 * [Zdrojový kód pro předdefinované převaděče](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
 * [Podpora DateTime a DateTimeOffset v System.Text.Json](../datetime/system-text-json-support.md)

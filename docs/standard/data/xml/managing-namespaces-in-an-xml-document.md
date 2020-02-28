@@ -3,17 +3,17 @@ title: Správa oborů názvů v dokumentu XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: 64ef9fd4ca3a9a83b9cd3eba9cb952b0f668e9f0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7b219788895ab2f89fa285c2e1b7de62639bfcf9
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710697"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160037"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastními a předdefinovanými identifikátory URI. Chcete-li vytvořit tato přidružení, definujete předpony pro identifikátor URI oboru názvů a použijete tyto předpony pro kvalifikaci názvů elementů a atributů v datech XML. Obory názvů zabraňují kolizím názvů prvků a atributů a umožňují, aby elementy a atributy stejného názvu byly zpracovány a ověřovány jinak.  
   
-<a name="declare"></a>   
+<a name="declare"></a>
 ## <a name="declaring-namespaces"></a>Deklarace oborů názvů  
  Chcete-li deklarovat obor názvů pro element, použijte atribut `xmlns:`:  
   
@@ -30,7 +30,7 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
   
  Chcete-li označit, že element je součástí konkrétního oboru názvů, přidejte do něj předponu oboru názvů. Například pokud prvek `Author` patří do `mybook` oboru názvů, je deklarován jako `<mybook:Author>`.  
   
-<a name="scope"></a>   
+<a name="scope"></a>
 ## <a name="declaration-scope"></a>Rozsah deklarace  
  Obor názvů je platný od svého bodu deklarace až do konce elementu, ve kterém byl deklarován. V tomto příkladu se obor názvů definovaný v elementu `BOOK` nevztahuje na prvky mimo `BOOK` element, jako je prvek `Publisher`:  
   
@@ -65,19 +65,19 @@ Obory názvů XML přiřadí prvky a názvy atributů v dokumentu XML s vlastní
   
  Tady jsou některé úlohy správy a vyhledávání, které můžete provádět s <xref:System.Xml.XmlNamespaceManager> třídou. Další informace a příklady naleznete v odkazech na referenční stránku pro jednotlivé metody nebo vlastnosti.  
   
-|Pro|Použití|  
+|Akce|Použití|  
 |--------|---------|  
-|Přidat obor názvů|Metoda <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
-|Odebrání oboru názvů|Metoda <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
+|Přidat obor názvů|<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A> – metoda|  
+|Odebrání oboru názvů|<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A> – metoda|  
 |Najít identifikátor URI pro výchozí obor názvů|<xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A> – vlastnost|  
-|Najít identifikátor URI pro předponu oboru názvů|Metoda <xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
-|Vyhledání předpony pro identifikátor URI oboru názvů|Metoda <xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
-|Získá seznam oborů názvů v aktuálním uzlu.|Metoda <xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
+|Najít identifikátor URI pro předponu oboru názvů|<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A> – metoda|  
+|Vyhledání předpony pro identifikátor URI oboru názvů|<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A> – metoda|  
+|Získá seznam oborů názvů v aktuálním uzlu.|<xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A> – metoda|  
 |Obor oboru názvů|metody <xref:System.Xml.XmlNamespaceManager.PushScope%2A> a <xref:System.Xml.XmlNamespaceManager.PopScope%2A>|  
-|Ověří, jestli je v aktuálním oboru definovaná předpona.|Metoda <xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
+|Ověří, jestli je v aktuálním oboru definovaná předpona.|<xref:System.Xml.XmlNamespaceManager.HasNamespace%2A> – metoda|  
 |Získat tabulku názvů použitou k vyhledání předpon a identifikátorů URI|<xref:System.Xml.XmlNamespaceManager.NameTable%2A> – vlastnost|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlNamespaceManager>
 - [Dokumenty a data XML](../../../../docs/standard/data/xml/index.md)

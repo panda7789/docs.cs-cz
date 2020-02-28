@@ -12,12 +12,12 @@ helpviewer_keywords:
 - managed heap
 - runtime, automatic memory management
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
-ms.openlocfilehash: d112bf6d145893bd7b0f99e2b233fc83e72fe227
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1038f16dca507e58005189c9558a9ec8dae4b34f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140567"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159699"
 ---
 # <a name="automatic-memory-management"></a>Automatická správa paměti
 Automatická správa paměti je jednou ze služeb, které modul CLR (Common Language Runtime) poskytuje během [spravovaného spuštění](../../docs/standard/managed-execution-process.md). Systém uvolňování paměti modulu CLR (Common Language Runtime) spravuje přidělování a uvolňování paměti pro aplikaci. Pro vývojáře to znamená, že nemusíte psát kód pro provádění úloh správy paměti při vývoji spravovaných aplikací. Automatická správa paměti může eliminovat běžné problémy, například forgetting k uvolnění objektu a příčinou nevrácení paměti nebo pokusu o přístup k paměti pro objekt, který již byl uvolněn. Tato část popisuje, jak systém uvolňování paměti přiděluje a uvolňuje paměť.  
@@ -27,7 +27,7 @@ Automatická správa paměti je jednou ze služeb, které modul CLR (Common Lang
   
  Přidělování paměti ze spravované haldy je rychlejší než nespravované přidělení paměti. Vzhledem k tomu, že modul Runtime přiděluje paměť pro objekt přidáním hodnoty k ukazateli, je téměř stejně rychlá jako přidělování paměti ze zásobníku. Kromě toho vzhledem k tomu, že nové objekty, které jsou přiděleny po sobě, jsou uloženy souvisle ve spravované haldě, aplikace může přistupovat k objektům velmi rychle.  
   
-<a name="cpconautomaticmemorymanagementreleasingmemoryanchor1"></a>   
+<a name="cpconautomaticmemorymanagementreleasingmemoryanchor1"></a>
 ## <a name="releasing-memory"></a>Uvolňování paměti  
  Optimalizující modul systému uvolňování paměti určuje nejvhodnější čas k provedení kolekce na základě přidělení. Když systém uvolňování paměti provede kolekci, uvolní paměť pro objekty, které již aplikace nepoužívá. Určuje, které objekty již nejsou používány, prozkoumáním kořenů aplikace. Každá aplikace má sadu kořenů. Každý kořenový adresář buď odkazuje na objekt na spravované haldě, nebo je nastaven na hodnotu null. Kořeny aplikace zahrnují statická pole, místní proměnné a parametry v zásobníku vlákna a Registry procesoru. Systém uvolňování paměti má přístup k seznamu aktivních kořenových adresářů, které [kompilátor JIT (just-in-time)](../../docs/standard/managed-execution-process.md) a modul runtime udržují. Pomocí tohoto seznamu prohlíží kořeny aplikace a v procesu vytvoří graf, který obsahuje všechny objekty, které jsou dostupné z kořenů.  
   
@@ -49,7 +49,7 @@ Automatická správa paměti je jednou ze služeb, které modul CLR (Common Lang
 ## <a name="releasing-memory-for-unmanaged-resources"></a>Uvolnění paměti pro nespravované prostředky  
  Pro většinu objektů, které vaše aplikace vytvoří, můžete spoléhat na systém uvolňování paměti, aby automaticky prováděla nezbytné úlohy správy paměti. Nespravované prostředky však vyžadují explicitní vyčištění. Nejběžnějším typem nespravovaného prostředku je objekt, který balí prostředek operačního systému, jako je například popisovač souboru, popisovač okna nebo síťové připojení. I když je systém uvolňování paměti schopný sledovat životnost spravovaného objektu, který zapouzdřuje nespravovaný prostředek, nemá specifické znalosti o tom, jak prostředek vyčistit. Při vytváření objektu, který zapouzdřuje nespravovaný prostředek, se doporučuje zadat potřebný kód pro vyčištění nespravovaného prostředku ve veřejné metodě **Dispose** . Poskytnutím metody **Dispose** umožníte uživatelům vašeho objektu explicitně uvolnit svou paměť, až se dokončí s objektem. Při použití objektu, který zapouzdřuje nespravovaný prostředek, byste měli být vědomi **Dispose** a zavolat ho podle potřeby. Další informace o čištění nespravovaných prostředků a příklad vzoru návrhu pro implementaci **Dispose**naleznete v tématu [uvolňování paměti](../../docs/standard/garbage-collection/index.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.GC>
 - [Uvolňování paměti](../../docs/standard/garbage-collection/index.md)

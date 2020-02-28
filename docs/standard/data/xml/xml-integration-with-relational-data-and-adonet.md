@@ -3,12 +3,12 @@ title: Integrace XML s relačními daty a ADO.NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-ms.openlocfilehash: 373e28d1fffd8c47acb4acb70271db056aa3a27b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 30b788c77a2352d0d02ee772ab3f428381facd9f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709930"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155617"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Integrace XML s relačními daty a ADO.NET
 Třída **objektu XmlDataDocument** je odvozenou třídou **XmlDocument**a obsahuje data XML. Výhodou **objektu XmlDataDocument** je, že poskytuje most mezi relačními a hierarchickými daty. Je to **XmlDocument** , který může být svázán s **datovou sadou** a obě třídy mohou synchronizovat změny provedené v datech, která jsou obsažena v obou třídách. Element **XmlDocument** , který je svázán s **datovou sadou** , umožňuje integraci XML s relačními daty a vy nemusíte mít data reprezentovaná buď jako XML, nebo v relačním formátu. Můžete to provést i bez omezení na jednu reprezentaci dat.  
@@ -27,7 +27,7 @@ Třída **objektu XmlDataDocument** je odvozenou třídou **XmlDocument**a obsah
   
  Vzhledem k tomu, že **objektu XmlDataDocument** je zděděn z prvku **XmlDocument**, poskytuje implementaci konsorcia W3C DOM. Skutečnost, že **objektu XmlDataDocument** je přidružen k a ukládá podmnožinu svých dat v rámci, **datová sada** neomezuje ani nemění použití jako **XmlDocument** jakýmkoli způsobem. Kód napsaný pro využívání prvku **XmlDocument** funguje nezměněný na **objektu XmlDataDocument**. **Datová sada** poskytuje relační pohled na stejná data definováním tabulek, sloupců, vztahů a omezení a jedná se o samostatné úložiště uživatelských dat v paměti.  
   
- Následující ilustrace znázorňuje různá přidružení, která obsahují data XML s **datovou sadou** a **objektu XmlDataDocument**: 
+ Následující ilustrace znázorňuje různá přidružení, která obsahují data XML s **datovou sadou** a **objektu XmlDataDocument**:
   
  ![Diagram, který zobrazuje různá přidružení s datovou sadou XML.](./media/xml-integration-with-relational-data-and-adonet/xml-integration-relational-data-adodotnet.gif)  
   
@@ -45,6 +45,6 @@ Třída **objektu XmlDataDocument** je odvozenou třídou **XmlDocument**a obsah
   
  Pokud načítáte **datovou sadu** z **objektu XmlDataDocument** adres, přečtěte si článek [synchronizace datové sady s dokumentem XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)

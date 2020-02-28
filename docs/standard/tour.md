@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 0154910b91df0b2f72daebe802e4c75bbca964bb
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f4cd2e47da236d276a42b972265ffd1a2fe27310
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337582"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160336"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 
@@ -21,13 +21,13 @@ Tento článek obsahuje průvodce s některými klíčovými funkcemi rozhraní 
 
 ## <a name="how-to-run-the-code-samples"></a>Jak spustit ukázky kódu
 
-Informace o tom, jak nastavit vývojové prostředí pro spuštění ukázek kódu, naleznete v tématu [Začínáme](get-started.md) . Zkopírování a vložení ukázek kódu z této stránky do vašeho prostředí, aby je bylo možné spustit. 
+Informace o tom, jak nastavit vývojové prostředí pro spuštění ukázek kódu, naleznete v tématu [Začínáme](get-started.md) . Zkopírování a vložení ukázek kódu z této stránky do vašeho prostředí, aby je bylo možné spustit.
 
 ## <a name="programming-languages"></a>Programovací jazyky
 
 Rozhraní .NET podporuje více programovacích jazyků. Implementace rozhraní .NET implementují rozhraní [Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), které kromě jiného určuje interoperabilitu modulu runtime a jazyka nezávislého na jazyce. To znamená, že zvolíte libovolný jazyk .NET pro sestavování aplikací a služeb v rozhraní .NET.
 
-Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic. 
+Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic.
 
 * C#je jednoduchý, výkonný, typově bezpečný a objektově orientovaný a přitom zachovává expresivity a elegance jazyků ve stylu jazyka C. Kdokoli, kdo zná jazyk C a podobné jazyky, najde v přizpůsobení několik C#problémů. Další informace o nástroji C#najdete v [ C# příručce](../csharp/index.yml) .
 

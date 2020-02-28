@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fdca8d957bb2453e90652af1dfe5ef99b33b1b2c
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 8025f84f2425f5b91e08b28ddb24d105d8c4d1a3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163199"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159582"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET
 
@@ -24,7 +24,7 @@ Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím r
 
 Většina vzorových ukázkových kódů v serializaci <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` na "poměrně tištěné" formátu JSON (s odsazením a prázdným znakem pro lidské čitelnost). Při použití v produkčním prostředí byste obvykle přijali výchozí hodnotu `false` pro toto nastavení.
 
-## <a name="namespaces"></a>Jmenné prostory
+## <a name="namespaces"></a>Obory názvů
 
 Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy. Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Příklady kódu, které jsou uvedené v tomto článku, vyžadují direktivy `using` pro jeden nebo oba tyto obory názvů:
 
@@ -61,7 +61,7 @@ Tady je ukázková třída, která obsahuje kolekce a vnořenou třídu:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
 
-Výstup JSON z serializace instance předchozího typu vypadá jako v následujícím příkladu. Výstup JSON je ve výchozím nastavení minifikovaného: 
+Výstup JSON z serializace instance předchozího typu vypadá jako v následujícím příkladu. Výstup JSON je ve výchozím nastavení minifikovaného:
 
 ```json
 {"Date":"2019-08-01T00:00:00-07:00","TemperatureCelsius":25,"Summary":"Hot","DatesAvailable":["2019-08-01T00:00:00-07:00","2019-08-02T00:00:00-07:00"],"TemperatureRanges":{"Cold":{"High":20,"Low":-10},"Hot":{"High":60,"Low":20}},"SummaryWords":["Cool","Windy","Humid"]}
@@ -191,7 +191,7 @@ Ve výchozím nastavení se názvy vlastností a klíče slovníku ve výstupu J
 * [Převést názvy všech vlastností na velikost ve stylu CamelCase](#use-camel-case-for-all-json-property-names)
 * [Implementace vlastní zásady pro pojmenovávání vlastností](#use-a-custom-json-property-naming-policy)
 * [Převede klíče slovníku na ve stylu CamelCase případ.](#camel-case-dictionary-keys)
-* [Převod výčtů na řetězce a ve stylu CamelCase velikost písmen](#enums-as-strings) 
+* [Převod výčtů na řetězce a ve stylu CamelCase velikost písmen](#enums-as-strings)
 
 Pro jiné scénáře, které vyžadují speciální zpracování názvů a hodnot vlastností JSON, můžete [implementovat vlastní převaděče](system-text-json-converters-how-to.md).
 
@@ -382,7 +382,7 @@ Zde je příklad objektu pro serializaci a výstup JSON:
 |---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00|
 | TemperatureCelsius| 25 |
-| Přehled| null|
+| Souhrn| null|
 
 ```json
 {
@@ -507,7 +507,7 @@ V předchozím ukázkovém scénáři obě přístupy způsobí, že vlastnost `
 ```
 
 > [!IMPORTANT]
-> Tyto přístupy poskytují polymorfní serializaci pouze pro kořenový objekt, který má být serializován, nikoli pro vlastnosti daného kořenového objektu. 
+> Tyto přístupy poskytují polymorfní serializaci pouze pro kořenový objekt, který má být serializován, nikoli pro vlastnosti daného kořenového objektu.
 
 Můžete získat polymorfní serializaci pro objekty nižší úrovně, pokud je definujete jako typ `object`. Předpokládejme například, že vaše třída `WeatherForecast` má vlastnost s názvem `PreviousForecast`, kterou lze definovat jako typ `WeatherForecast` nebo `object`:
 
@@ -566,7 +566,7 @@ Následující příklad ukazuje kód JSON, který je výsledkem předchozího k
 }
 ```
 
-Další informace o polymorfní **serializaci**a informace o **deserializaci**najdete v tématu [postup migrace z Newtonsoft.Json na System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
+Další informace o polymorfní **serializaci**a informace o **deserializaci**naleznete v tématu [How to migruje from Newtonsoft. JSON to System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Povolí komentáře a koncové čárky.
 
@@ -634,14 +634,14 @@ Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, `DatesAvailable
 
 Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry klíč-hodnota vlastnosti `ExtensionData`:
 
-|Vlastnost |Hodnota  |Poznámky  |
+|Vlastnost |Hodnota  |Poznámky:  |
 |---------|---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00||
 | TemperatureCelsius| 0 | Neshoda malých a velkých písmen (`temperatureCelsius` ve formátu JSON), takže vlastnost není nastavená. |
-| Přehled | Horká ||
+| Souhrn | Hot ||
 | ExtensionData – | temperatureCelsius: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
 || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
-| |SummaryWords:<br>Studená<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
+| |SummaryWords:<br>Cool<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
 
 Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:
 
@@ -712,7 +712,7 @@ Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Js
 Předchozí kód:
 
 * Předpokládá, že se JSON, který se má analyzovat, nachází v řetězci s názvem `jsonString`.
-* Vypočítá průměrnou třídu pro objekty v `Students` poli, které mají vlastnost `Grade`. 
+* Vypočítá průměrnou třídu pro objekty v `Students` poli, které mají vlastnost `Grade`.
 * Přiřadí výchozí stupeň 70 pro studenty, kteří nemají třídu.
 * Počítá studenty zvýšením `count` proměnné s každou iterací. Alternativou je volání <xref:System.Text.Json.JsonElement.GetArrayLength%2A>, jak je znázorněno v následujícím příkladu:
 
@@ -732,7 +732,7 @@ Předchozí kód:
 
 * Přečte soubor JSON, načte data do `JsonDocument`a zapisuje do souboru formát JSON s formátováním (poměrně vytištěného).
 * Používá <xref:System.Text.Json.JsonDocumentOptions> k určení, že komentáře ve vstupním JSON jsou povolené, ale ignorují se.
-* Po dokončení volání zavolá <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> na zapisovači. Alternativou je umožnit zapisovači AutoFlush při jeho uvolnění. 
+* Po dokončení volání zavolá <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> na zapisovači. Alternativou je umožnit zapisovači AutoFlush při jeho uvolnění.
 
 Tady je příklad vstupu JSON, který se má zpracovat v příkladu kódu:
 
@@ -769,7 +769,7 @@ Předchozí kód:
 * Předpokládá, že soubor je kódovaný jako UTF-16 a překóduje ho do UTF-8. Soubor kódovaný jako UTF-8 lze číst přímo do `ReadOnlySpan<byte>`pomocí následujícího kódu:
 
   ```csharp
-  ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName); 
+  ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName);
   ```
 
   Pokud soubor obsahuje znak pořadí bajtů UTF-8 (BOM), odeberte ho před předáním bajtů do `Utf8JsonReader`, protože čtecí modul očekává text. V opačném případě se kusovník považuje za neplatný kód JSON a čtenář vyvolá výjimku.
@@ -778,7 +778,7 @@ Zde je ukázka JSON, kterou může předchozí kód přečíst. Výsledná Souhr
 
 [!code-json[](~/samples/snippets/core/system-text-json/csharp/Universities.json)]
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 * [Přehled System.Text.Json](system-text-json-overview.md)
 * [Zápis vlastních převaděčů](system-text-json-converters-how-to.md)

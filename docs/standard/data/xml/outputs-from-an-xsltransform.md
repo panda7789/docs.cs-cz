@@ -3,12 +3,12 @@ title: Výstupy z XslTransform
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
-ms.openlocfilehash: 178b1e949868d3af893cbcb6df63590053341a3e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 93cbf7807630a605e17e7f513055c052aad0d08e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710489"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159634"
 ---
 # <a name="outputs-from-an-xsltransform"></a>Výstupy z XslTransform
 Vzhledem k tomu, že šablony stylů mohou určit výstupní formát pomocí příkazu `<xsl:output>` s atributem `method`, následující tabulka popisuje, co je výstupní formát při použití <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody k zápisu výstupu a výstupní formát je deklarován jako <xref:System.IO.Stream> nebo <xref:System.IO.TextWriter>.  
@@ -41,10 +41,10 @@ Vzhledem k tomu, že šablony stylů mohou určit výstupní formát pomocí př
   
 - CDATA-Section-Elements  
   
-- rážce  
+- Rážce  
   
     > [!NOTE]
-    > \*atribut Encoding je ignorován, pokud metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> posílá svůj výstup do <xref:System.IO.TextWriter>. Místo toho se použije vlastnost Encoding <xref:System.IO.TextWriter>. 
+    > \*atribut Encoding je ignorován, pokud metoda <xref:System.Xml.Xsl.XslTransform.Transform%2A> posílá svůj výstup do <xref:System.IO.TextWriter>. Místo toho se použije vlastnost Encoding <xref:System.IO.TextWriter>.
   
  Následující atribut je ignorován, pokud je výstupem metody <xref:System.Xml.Xsl.XslTransform.Transform%2A> <xref:System.IO.Stream>:  
   
@@ -55,6 +55,6 @@ Vzhledem k tomu, že šablony stylů mohou určit výstupní formát pomocí př
 ## <a name="escaping-special-characters"></a>Speciální znaky pro uvozovací znaky  
  Značka `<xsl:text disable-output-escaping>` slouží k označení, zda je nutné zadat speciální znaky do formuláře XML (například pomocí `<&lt>` místo symbolu `"<"`) nebo vlevo v aktuální podmínce. Atribut `disable-output-escaping` je ignorován při transformaci na objekt <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> a nemá žádný vliv na speciální znaky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

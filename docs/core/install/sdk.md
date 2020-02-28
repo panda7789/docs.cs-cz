@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 4a6c8b27812e9f60e52132169dda0464c24abcc2
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 0aa323533dd9136372c2bbc330c9c3056fdf428c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740563"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157568"
 ---
 # <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
@@ -35,6 +35,19 @@ Systém Windows obsahuje samostatné instalační programy, které lze použít 
 macOS má samostatné instalační programy, které se dají použít k instalaci sady .NET Core 3,1 SDK:
 
 - [Procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+
+## <a name="download-and-manually-install"></a>Stažení a ruční instalace
+
+Jako alternativu k instalačním modulům macOS pro .NET Core můžete sadu SDK stáhnout a nainstalovat ručně.
+
+K extrakci sady SDK a zpřístupnění .NET Core CLI příkazů v terminálu, nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak otevřete terminál a spusťte následující příkazy. Předpokládá se, že se modul runtime stáhne do souboru `~/Downloads/dotnet-sdk.pkg`.
+
+```bash
+mkdir -p $HOME/dotnet
+sudo installer -pkg ~/Downloads/dotnet-sdk.pkg -target $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
 
 ::: zone-end
 
@@ -77,16 +90,16 @@ export PATH=$PATH:$HOME/dotnet
 
 Pokud používáte Visual Studio pro vývoj aplikací .NET Core, v následující tabulce je popsána minimální požadovaná verze sady Visual Studio na základě cílové verze .NET Core SDK.
 
-| Verze .NET Core SDK | Verze sady Visual Studio                      |
+| Verze .NET Core SDK | Verze Visual Studio                      |
 | --------------------- | ------------------------------------------ |
 | 3.1                   | Visual Studio 2019 verze 16,4 nebo vyšší. |
-| 3,0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
+| 3.0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
 | 2.2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
 | 2.1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
 
 Pokud již máte nainstalováno Visual Studio, můžete si ověřit verzi pomocí následujících kroků.
 
-01. Otevřít Visual Studio.
+01. Otevřete sadu Visual Studio.
 01. Vyberte **nápovědu** > **o Microsoft Visual Studio**.
 01. Přečtěte si číslo verze v dialogovém okně **o produktu** .
 
@@ -104,6 +117,25 @@ Při instalaci nebo úpravách sady Visual Studio vyberte jednu nebo více násl
 - Úloha **vývoj desktopových aplikací .NET** v části **Desktop & Mobile** .
 
 [![Windows Visual Studio 2019 s úlohou .NET Core](media/install-sdk/windows-install-visual-studio-2019.png)](media/install-sdk/windows-install-visual-studio-2019.png#lightbox)
+
+## <a name="download-and-manually-install"></a>Stažení a ruční instalace
+
+Chcete-li extrahovat modul runtime a zpřístupnit příkazy .NET Core CLI v terminálu, nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak vytvořte adresář, do kterého chcete nainstalovat, například `%USERPROFILE%\dotnet`. Nakonec Extrahujte stažený soubor zip do tohoto adresáře.
+
+Ve výchozím nastavení nepoužívají .NET Core CLI příkazy a aplikace tímto způsobem instalaci .NET Core. Musíte ho výslovně použít. Provedete to tak, že změníte proměnné prostředí, se kterými je aplikace spuštěná:
+
+```console
+set DOTNET_ROOT=%USERPROFILE%\dotnet
+set PATH=%USERPROFILE%\dotnet;%PATH%
+```
+
+Tento přístup umožňuje nainstalovat více verzí do samostatných umístění a pak explicitně zvolit umístění instalace, které by měla aplikace používat, a to spuštěním aplikace s proměnnými prostředí, které ukazují na toto umístění.
+
+I v případě, že jsou tyto proměnné prostředí nastaveny, .NET Core při výběru nejlepšího rozhraní pro spuštění aplikace i nadále posuzuje výchozí globální umístění instalace. Výchozí hodnota je obvykle `C:\Program Files\dotnet`, kterou instalační programy používají. Modulu runtime můžete dát pokyn, aby používal pouze vlastní umístění instalace, a to nastavením této proměnné prostředí:
+
+```console
+set DOTNET_MULTILEVEL_LOOKUP=0
+```
 
 ::: zone-end
 
@@ -186,6 +218,7 @@ Další informace o použití .NET Core v kontejneru Docker najdete v tématu [�
 
 ::: zone pivot="os-macos"
 
+- [Práce s MacOS Catalina notarization](macos-notarization-issues.md).
 - [Kurz: Začínáme s MacOS](../tutorials/using-on-mac-vs.md).
 - [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](../tutorials/with-visual-studio-code.md).
 - [Kurz: kontejnerizace aplikace .NET Core](../docker/build-container.md)

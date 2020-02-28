@@ -18,12 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: aa8a62ee0c653a1905283696b97f55a3e6ffff85
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 99e1f3f96465d05c100a0dbb2bc5218810c33754
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706540"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159426"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždycky omezený na uživatele, který ho vytvořil. Pro implementaci tohoto typu izolace používá modul CLR stejný pojem identity uživatele, jakou operační systém rozpozná, což je identita přidružená k procesu, ve kterém kód běží při otevření úložiště. Tato identita je identita ověřeného uživatele, ale zosobnění může způsobit, že se identita aktuálního uživatele dynamicky mění.  
@@ -53,7 +53,7 @@ Přístup k izolovanému úložišti je vždycky omezený na uživatele, který 
 > [!IMPORTANT]
 > Izolované úložiště není k dispozici pro aplikace Windows 8. x Store. Místo toho použijte datové třídy aplikace v oborech názvů `Windows.Storage` zahrnutých v rozhraní prostředí Windows Runtime API k ukládání místních dat a souborů. Další informace najdete v tématu [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) na stránce Windows Dev Center.  
   
-<a name="UserAssembly"></a>   
+<a name="UserAssembly"></a>
 ## <a name="isolation-by-user-and-assembly"></a>Izolace podle uživatele a sestavení  
  Pokud je nutné sestavení, které používá úložiště dat, přístupné z jakékoli domény aplikace, je vhodná izolace podle uživatele a sestavení. V takové situaci se obvykle používá izolované úložiště k ukládání dat, která se vztahují na více aplikací, a není vázána na žádnou konkrétní aplikaci, například na jméno uživatele nebo informace o licenci. Aby bylo možné získat přístup k úložišti izolovanému podle uživatele a sestavení, musí být kód důvěryhodný k přenosu informací mezi aplikacemi. Typicky se izolace podle uživatele a sestavení povoluje v intranetech, ale ne na internetu. Volání statické metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A?displayProperty=nameWithType> a předání do uživatele a sestavení <xref:System.IO.IsolatedStorage.IsolatedStorageScope> vrátí úložiště s tímto druhem izolace.  
   
@@ -71,7 +71,7 @@ Přístup k izolovanému úložišti je vždycky omezený na uživatele, který 
  [!code-csharp[Conceptual.IsolatedStorage#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source11.cs#18)]
  [!code-vb[Conceptual.IsolatedStorage#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source11.vb#18)]  
   
-<a name="UserDomainAssembly"></a>   
+<a name="UserDomainAssembly"></a>
 ## <a name="isolation-by-user-domain-and-assembly"></a>Izolace podle uživatele, domény a sestavení  
  Pokud vaše aplikace používá sestavení třetí strany, které vyžaduje privátní úložiště dat, můžete k uložení privátních dat použít izolované úložiště. Izolace podle uživatele, domény a sestavení zajišťuje, aby k datům měl přístup pouze kód v daném sestavení, a pouze v případě, že je sestavení používáno aplikací, která byla spuštěna v době, kdy sestavení vytvořilo úložiště, a pouze v případě, že uživatel, pro kterého byl obchod vytvořen, spouští  použití. Izolace podle uživatele, domény a sestavení udržuje sestavení třetí strany proti úniku dat do jiných aplikací. Tento typ izolace by měl být výchozí volbou, pokud víte, že chcete použít izolované úložiště, ale nevíte, jaký typ izolace použít. Voláním metody static <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a předáním do uživatele, domény a sestavení <xref:System.IO.IsolatedStorage.IsolatedStorageScope> vrátí úložiště s tímto druhem izolace.  
   
@@ -87,7 +87,7 @@ Přístup k izolovanému úložišti je vždycky omezený na uživatele, který 
  [!code-csharp[Conceptual.IsolatedStorage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source10.cs#15)]
  [!code-vb[Conceptual.IsolatedStorage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source10.vb#15)]  
   
-<a name="Roaming"></a>   
+<a name="Roaming"></a>
 ## <a name="isolated-storage-and-roaming"></a>Izolované úložiště a roaming  
  Cestovní profily uživatelů jsou funkce systému Windows, která umožňuje uživateli nastavit identitu v síti a pomocí této identity se přihlašovat k jakémukoli síťovému počítači a přitom přenášet všechna individuální nastavení. Sestavení, které používá izolované úložiště, může určit, že izolované úložiště uživatele by se mělo přesunout pomocí cestovního profilu uživatele. Roaming lze použít ve spojení s izolací podle uživatele a sestavení nebo s izolací podle uživatele, domény a sestavení. Pokud se obor roamingu nepoužívá, úložiště se neroaminge ani v případě, že se použije cestovní profil uživatele.  
   
@@ -103,7 +103,7 @@ Přístup k izolovanému úložišti je vždycky omezený na uživatele, který 
  [!code-csharp[Conceptual.IsolatedStorage#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source9.cs#12)]
  [!code-vb[Conceptual.IsolatedStorage#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source9.vb#12)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageScope>
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

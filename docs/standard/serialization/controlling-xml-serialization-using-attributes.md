@@ -15,12 +15,12 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: e089924900196ae369de1becfe3d0b8f0a00b79c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d4e30984a232b17d1f40e300655c519ec1a6e191
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459284"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159907"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
@@ -250,7 +250,7 @@ Jiný způsob k rozlišení dvou datové proudy XML je použít nástroj definic
 Pokud <xref:System.Xml.Serialization.XmlElementAttribute> se použije k poli, výsledný schéma popisuje element takto.
 
 ```xml
-<xs:element minOccurs="0" maxOccurs="unbounded" name="Employees" type="Employee" /> 
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Employees" type="Employee" />
 ```
 
 ## <a name="serializing-an-arraylist"></a>Serializace ArrayList
@@ -267,7 +267,7 @@ End Class
 
 ```csharp
 public class Group {
-    [XmlElement(Type = typeof(Employee)), 
+    [XmlElement(Type = typeof(Employee)),
     XmlElement(Type = typeof(Manager))]
     public ArrayList Info;
 }
@@ -315,7 +315,7 @@ Naopak, pokud byly k serializaci instancí třídy pouze `NewGroupName` bude nal
 
 Mohou nastat situace, když veřejné vlastnosti nebo pole nemusí být serializován. Můžete například pole nebo vlastnost může obsahovat metadat. V takových případech, použije <xref:System.Xml.Serialization.XmlIgnoreAttribute> na pole nebo vlastnost a <xref:System.Xml.Serialization.XmlSerializer> vynechá nad ním.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
 - [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)

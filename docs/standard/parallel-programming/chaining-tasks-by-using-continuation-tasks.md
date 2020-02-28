@@ -8,17 +8,17 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: bf8a1c028b7b987cb9a7340597087d799dfd4321
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7de8c4e44e1866e3df36c666c9ecc210dc6a7d83
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123178"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159361"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronním programování je běžné pro jednu asynchronní operaci po dokončení, k vyvolání druhé operace a předání dat do ní. Pokračování je tradičně prováděno pomocí metod zpětného volání. V knihovně Task Parallel Library jsou stejné funkce poskytovány *pokračujícími úkoly*. Pokračující úkol (označuje se také jako pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se označuje jako *předchůdce*po dokončení předchůdce.  
   
- Pokračování je poměrně snadné použít, ale jsou ale výkonné a flexibilní. Můžete například:  
+ Pokračování je poměrně snadné použít, ale jsou ale výkonné a flexibilní. Můžete například provést následující věci:  
   
 - Předat data z předchůdce do pokračování.  
   
@@ -42,7 +42,7 @@ V asynchronním programování je běžné pro jednu asynchronní operaci po dok
  Pokračování je samo <xref:System.Threading.Tasks.Task> a neblokuje vlákno, ve kterém je spuštěno. Zavolejte metodu <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> pro blokování, dokud neskončí pokračování úlohy.  
   
 ## <a name="creating-a-continuation-for-a-single-antecedent"></a>Vytvoření pokračování pro jeden předchůdce  
- Můžete vytvořit pokračování, které se provede po dokončení jeho předchůdce voláním metody <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Následující příklad znázorňuje základní vzorek (pro přehlednost, vynechává se zpracování výjimek). Spustí předchozí úlohu, `taskA`, která vrátí objekt <xref:System.DayOfWeek>, který označuje název aktuálního dne v týdnu. Po dokončení předchůdce se úkol pokračování, `continuation`, předává předchůdci a zobrazí řetězec, který obsahuje jeho výsledek. 
+ Můžete vytvořit pokračování, které se provede po dokončení jeho předchůdce voláním metody <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Následující příklad znázorňuje základní vzorek (pro přehlednost, vynechává se zpracování výjimek). Spustí předchozí úlohu, `taskA`, která vrátí objekt <xref:System.DayOfWeek>, který označuje název aktuálního dne v týdnu. Po dokončení předchůdce se úkol pokračování, `continuation`, předává předchůdci a zobrazí řetězec, který obsahuje jeho výsledek.
 
 > [!NOTE]
 > C# Ukázky v tomto článku využívají modifikátor `async` na metodě `Main`. Tato funkce je k dispozici v C# 7,1 a novějších verzích. Předchozí verze generují [`CS5001`](../../csharp/misc/cs5001.md) při kompilování tohoto ukázkového kódu. Je nutné nastavit jazykovou verzi na C# 7,1 nebo novější. Informace o tom, jak nakonfigurovat jazykovou verzi, najdete v článku o [konfiguraci jazykové verze](../../csharp/language-reference/configure-language-version.md).
@@ -150,6 +150,6 @@ V asynchronním programování je běžné pro jednu asynchronní operaci po dok
   
 - Pokud je pokračování připojená podřízená úloha, která byla vytvořena pomocí možnosti <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType>, jejich výjimky budou rozšířeny nadřazeným objektem zpět do volajícího vlákna, jako je případ v jakémkoli jiném připojeném podřízeném prvku. Další informace najdete v tématu [připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)

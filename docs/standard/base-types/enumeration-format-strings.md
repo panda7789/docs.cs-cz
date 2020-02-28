@@ -10,12 +10,12 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: c32fd9d59f61b6befe94ff9eb85b0c39ce926adb
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: da7634758f5c4319fa18612d216682dc141318fd
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348269"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155955"
 ---
 # <a name="enumeration-format-strings"></a>Řetězce formátu výčtu
 
@@ -48,7 +48,7 @@ Zobrazí položku výčtu jako celočíselnou hodnotu v nejkratší možné repr
 
 Zobrazí položku výčtu jako šestnáctkovou hodnotu. Hodnota je vyjádřena podle potřeby počátečními nulami pro zajištění, že výsledný řetězec má dva znaky pro každý bajt v [základním číselném typu](xref:System.Enum.GetUnderlyingType%2A)typu výčtu. Následující příklad znázorňuje specifikátor formátu X. V příkladu je podkladový typ obou <xref:System.ConsoleColor> i <xref:System.IO.FileAttributes> <xref:System.Int32>nebo celé číslo 32 (nebo 4 bajt), které vytváří výsledný řetězec 8 znaků.
 
-[!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]      
+[!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]
 [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]
 
 ## <a name="example"></a>Příklad
@@ -68,6 +68,6 @@ Metodu `Color.ToString(System.String)` lze následně použít k zobrazení hodn
 [!code-csharp[Formatting.Enum#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#7)]
 [!code-vb[Formatting.Enum#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#7)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy formátování](formatting-types.md)

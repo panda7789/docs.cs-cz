@@ -2,12 +2,12 @@
 title: příkaz dotnet nástroje pro odinstalaci
 description: Příkaz pro odinstalaci nástroje dotnet odinstaluje zadaný nástroj .NET Core ze svého počítače.
 ms.date: 02/14/2020
-ms.openlocfilehash: 82dad0206d9c3e2ef0f41c353f4a608f10e4f127
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 7a15c169c73cf5a743e0fa6f47645d6bccedbde3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543440"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157042"
 ---
 # <a name="dotnet-tool-uninstall"></a>dotnet tool uninstall
 
@@ -46,7 +46,7 @@ Příkaz `dotnet tool uninstall` poskytuje způsob, jak odinstalovat nástroje .
 
 - **`-g|--global`**
 
-  Určuje, že nástroj, který se má odebrat, pochází z instalace v rámci uživatele. Nelze kombinovat s možností `--tool-path`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj. 
+  Určuje, že nástroj, který se má odebrat, pochází z instalace v rámci uživatele. Nelze kombinovat s možností `--tool-path`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj.
 
 - **`-h|--help`**
 
@@ -54,7 +54,7 @@ Příkaz `dotnet tool uninstall` poskytuje způsob, jak odinstalovat nástroje .
 
 - **`--tool-path <PATH>`**
 
-  Určuje umístění pro odinstalaci nástroje. Cesta může být absolutní nebo relativní. Nelze kombinovat s možností `--global`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj. 
+  Určuje umístění pro odinstalaci nástroje. Cesta může být absolutní nebo relativní. Nelze kombinovat s možností `--global`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který má být odebrán, je místní nástroj.
 
 ## <a name="examples"></a>Příklady
 
@@ -74,6 +74,6 @@ Příkaz `dotnet tool uninstall` poskytuje způsob, jak odinstalovat nástroje .
 
   Odinstaluje místní nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) z aktuálního adresáře.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nástroje .NET Core](global-tools.md)

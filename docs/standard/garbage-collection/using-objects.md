@@ -10,12 +10,12 @@ helpviewer_keywords:
 - try/finally block
 - garbage collection, encapsulating resources
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
-ms.openlocfilehash: 979cd782e5ab094b6dea010fc7a0b27caa390e67
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c5232aa89064c514e71f3a18bc754159e9c9b15b
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141342"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160275"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>Použití objektů, které implementují IDisposable
 
@@ -56,9 +56,9 @@ Následující příklad je podobný předchozímu příkladu s tím rozdílem, 
 [!code-csharp[Conceptual.Disposable#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/using5.cs#6)]
 [!code-vb[Conceptual.Disposable#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/using5.vb#6)]  
   
-Můžete postupovat podle tohoto základního vzoru, pokud se rozhodnete implementovat nebo musíte implementovat blok `try/finally`, protože váš programovací jazyk nepodporuje příkaz `using`, ale umožňuje přímé volání metody <xref:System.IDisposable.Dispose%2A>. 
+Můžete postupovat podle tohoto základního vzoru, pokud se rozhodnete implementovat nebo musíte implementovat blok `try/finally`, protože váš programovací jazyk nepodporuje příkaz `using`, ale umožňuje přímé volání metody <xref:System.IDisposable.Dispose%2A>.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vymazání nespravovaných prostředků](../../../docs/standard/garbage-collection/unmanaged.md)
 - [using – příkazC# (Referenční dokumentace)](../../csharp/language-reference/keywords/using-statement.md)

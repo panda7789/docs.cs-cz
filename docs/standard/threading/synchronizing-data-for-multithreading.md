@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: ecc1e234b03cb45075c40ff6698f71f8ce18d0de
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a70bd3070d8b1dcd06e55d330a01d29071293f6c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128978"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159387"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro Multithreading
 
@@ -35,7 +35,7 @@ Pokud více vláken může volat vlastnosti a metody jednoho objektu, je důlež
 |Žádná synchronizace|Ne|Ne|Ne|Ne|Ne|Ne|  
 |Synchronizovaný kontext|Ne|Ne|Ne|Ano|Ano|Ne|  
 |Synchronizované oblasti kódu|Ne|Ne|Pouze v případě označení|Ne|Pouze v případě označení|Pouze v případě označení|  
-|Ruční synchronizace|Zásah|Zásah|Zásah|Zásah|Zásah|Zásah|  
+|Ruční synchronizace|Ručně|Ručně|Ručně|Ručně|Ručně|Ručně|  
   
 ## <a name="no-synchronization"></a>Žádná synchronizace  
  Toto je výchozí nastavení pro objekty. Jakékoli vlákno může kdykoli přistupovat k libovolné metodě nebo poli. Přístup k těmto objektům má pouze jedno vlákno v čase.  
@@ -64,10 +64,10 @@ Pokud více vláken může volat vlastnosti a metody jednoho objektu, je důlež
  V obou případech, pokud je vyvolána výjimka v bloku kódu, zámek získaný **zámkem** nebo **SyncLock** je automaticky uvolněn. Kompilátory C# a Visual Basic emitují blok **Try**/**finally** s **monitorováním. Zadejte** na začátku příkazu try a **Sledujte. Exit** v bloku **finally** . Pokud je vyvolána výjimka uvnitř bloku **Lock** nebo **SyncLock** , spustí se obslužná rutina **finally** , která vám umožní provést jakoukoli čistou práci.  
   
 ## <a name="synchronized-context"></a>Synchronizovaný kontext  
- 
+
 Pouze v aplikacích .NET Framework a Xamarin můžete použít <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> na jakémkoli <xref:System.ContextBoundObject> k synchronizaci všech metod instancí a polí. Všechny objekty ve stejné kontextu domény sdílejí stejný zámek. Více vláknům má povolen přístup k metodám a polím, ale v jednom okamžiku je povoleno pouze jedno vlákno.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
 - [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)

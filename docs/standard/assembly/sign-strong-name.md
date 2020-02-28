@@ -11,12 +11,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 64f3a51b29a7116c736fea0e76465a4a73c640c2
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 9998e69e8bf1505bcfc7a9103e9d89616dad9633
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738778"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160310"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: podepsání sestavení silným názvem
 
@@ -73,9 +73,9 @@ Další informace o tomto nástroji naleznete v tématu [linker sestavení](../.
 ## <a name="sign-an-assembly-with-a-strong-name-by-using-attributes"></a>Podepsání sestavení silným názvem pomocí atributů  
   
 1. Přidejte atribut <xref:System.Reflection.AssemblyKeyFileAttribute?displayProperty=nameWithType> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> do souboru zdrojového kódu a zadejte název souboru nebo kontejneru obsahujícího pár klíčů, který se má použít při podepisování sestavení silným názvem.  
-   
+
 2. Zkompilujte soubor zdrojového kódu běžným způsobem.  
-   
+
    > [!NOTE]
    > Kompilátory C# a Visual Basic vydávají upozornění kompilátoru (CS1699 a BC41008) při výskytu atributu <xref:System.Reflection.AssemblyKeyFileAttribute> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> ve zdrojovém kódu. Upozornění můžete ignorovat.  
 
@@ -107,7 +107,7 @@ Následující příklad používá C# kompilátor a podepíše sestavení *Util
 csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk  
 ```  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)
 - [Postupy: Vytvoření páru veřejného a soukromého klíče](create-public-private-key-pair.md)

@@ -12,12 +12,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: edd398cd3e42e23301dcc992093d14d087754e76
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d6314fae266505fbb4410aaaa351973070ab3811
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347244"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156436"
 ---
 # <a name="resolve-assembly-loads"></a>Řešení zavedení sestavení
 Rozhraní .NET poskytuje <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost pro aplikace, které vyžadují větší kontrolu nad načítáním sestavení. Při zpracování této události může vaše aplikace načíst sestavení do kontextu zatížení z vnějšku běžných cest zjišťování, vybrat, která z několika verzí sestavení má být načtena, generovat dynamické sestavení a vrátit je a tak dále. Toto téma poskytuje pokyny pro zpracování události <xref:System.AppDomain.AssemblyResolve>.  
@@ -81,7 +81,7 @@ using namespace System::Reflection;
 ref class Example
 {
 internal:
-    static Assembly^ MyHandler(Object^ source, ResolveEventArgs^ e) 
+    static Assembly^ MyHandler(Object^ source, ResolveEventArgs^ e)
     {
         Console::WriteLine("Resolving {0}", e->Name);
         return Assembly::Load(e->Name);
@@ -98,7 +98,7 @@ void main()
         Object^ obj = ad->CreateInstanceAndUnwrap(
             "MyAssembly, version=1.2.3.4, culture=neutral, publicKeyToken=null",
             "MyType");
-    } 
+    }
     catch (Exception^ ex)
     {
         Console::WriteLine(ex->Message);
@@ -133,19 +133,19 @@ class BadExample
             object obj = ad.CreateInstanceAndUnwrap(
                 "MyAssembly, version=1.2.3.4, culture=neutral, publicKeyToken=null",
                 "MyType");
-        } 
+        }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
     }
 
-    static Assembly MyHandler(object source, ResolveEventArgs e) 
+    static Assembly MyHandler(object source, ResolveEventArgs e)
     {
         Console.WriteLine("Resolving {0}", e.Name);
         return Assembly.Load(e.Name);
     }
-} 
+}
 
 /* This example produces output similar to the following:
 
@@ -165,7 +165,7 @@ Imports System.Reflection
 Class BadExample
 
     Shared Sub Main()
-    
+
         Dim ad As AppDomain = AppDomain.CreateDomain("Test")
         AddHandler ad.AssemblyResolve, AddressOf MyHandler
 
@@ -196,7 +196,7 @@ End Class
 'Process is terminated due to StackOverflowException.
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Osvědčené postupy pro načítání sestavení](../../framework/deployment/best-practices-for-assembly-loading.md)
 - [Použití aplikačních domén](../../framework/app-domains/use.md)

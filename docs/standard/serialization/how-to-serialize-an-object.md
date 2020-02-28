@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Serializace objektu'
+title: 'Postupy: serializace objektu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
 ms.assetid: a1207d05-32b2-4953-8582-959607991227
-ms.openlocfilehash: a587a132446a5f5d74b2d534b1ca3b93ccca1480
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3e24d890d47747c51086214530073fc551321079
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928998"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159881"
 ---
-# <a name="how-to-serialize-an-object"></a>Postupy: Serializace objektu
+# <a name="how-to-serialize-an-object"></a>Postupy: serializace objektu
 K serializaci objektu, nejprve vytvořte objekt, který má být serializován a nastavíte jeho veřejné vlastnosti a pole. Chcete-li to provést, je třeba určit přenos formát, ve kterém má být uložena jako datový proud nebo jako soubor XML datového proudu. Například pokud datový proud XML musí být uložen ve formě trvalé, vytvořit <xref:System.IO.FileStream> objektu.  
   
 > [!NOTE]
@@ -42,7 +42,7 @@ K serializaci objektu, nejprve vytvořte objekt, který má být serializován a
     ```csharp  
     MySerializableClass myObject = new MySerializableClass();  
     // Insert code to set properties and fields of the object.  
-    XmlSerializer mySerializer = new   
+    XmlSerializer mySerializer = new
     XmlSerializer(typeof(MySerializableClass));  
     // To write to a file, create a StreamWriter object.  
     StreamWriter myWriter = new StreamWriter("myFileName.xml");  
@@ -50,7 +50,7 @@ K serializaci objektu, nejprve vytvořte objekt, který má být serializován a
     myWriter.Close();  
     ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

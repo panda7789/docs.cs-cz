@@ -4,12 +4,12 @@ description: Naučte se osvědčené postupy pro psaní testů jednotek, které 
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 387d66bfeaf48359a27a532247a799c319f38caa
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a65cf3fbfb6562dbd9aaf815e1bfe469585c0fc0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714282"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157385"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Osvědčené postupy testování částí pomocí .NET Core a .NET Standard
 
@@ -117,7 +117,7 @@ Název testu by měl sestávat ze tří částí:
 
 Testy jsou více, než pouze zajištění, že váš kód funguje, ale také poskytují dokumentaci. Stejně jako při prohlížení sady jednotkových testů byste měli být schopni odvodit chování kódu bez ohledu na samotný kód. Kromě toho, když testy selžou, vidíte přesně ty scénáře, které nesplňují vaše očekávání.
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[BeforeNaming](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeNaming)]
 
 #### <a name="better"></a>Zájmu
@@ -137,7 +137,7 @@ Testy jsou více, než pouze zajištění, že váš kód funguje, ale také pos
 
 Čitelnost je jedním z nejdůležitějších aspektů při psaní testu. Oddělení každé z těchto akcí v rámci testu jasně zvýrazní závislosti vyžadované pro volání vašeho kódu, způsob, jakým je váš kód volán a co se snažíte uplatnit. I když může být možné zkombinovat některé kroky a zmenšit velikost testu, primárním cílem je udělat co možná čitelnou zkoušku.
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[BeforeArranging](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeArranging)]
 
 #### <a name="better"></a>Zájmu
@@ -153,7 +153,7 @@ Vstup, který se má použít v testu jednotek, by měl být nejjednodušší, a
 
 Testy, které obsahují více informací, než je nutné k předání testu, mají větší šanci na zavedení chyb do testu a může udělat záměr méně jasného záměru testu. Při psaní testů, které chcete zaměřit na chování. Nastavení zvláštních vlastností pro modely nebo použití nenulových hodnot v případě potřeby, pouze odčítání od toho, co se snažíte prokázat.
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[BeforeMinimallyPassing](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeMinimallyPassing)]
 
 #### <a name="better"></a>Zájmu
@@ -169,10 +169,10 @@ Při pojmenování proměnných v testování částí je důležité, pokud nen
 
 Řetězce Magic můžou způsobit nejasnost čtenářů vašich testů. Pokud je řetězec vyhledáný běžným způsobem, může se stát, že se pro parametr nebo návratovou hodnotu vybere určitá hodnota. To může způsobit, že se podíváme na podrobnosti implementace, ale nemusíte se zaměřit na test.
 
-> [!TIP] 
+> [!TIP]
 > Při psaní testů byste se měli zaměřit na co nejvíc záměrů. V případě řetězců Magic je dobrým přístupem přiřadit tyto hodnoty konstantám.
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[BeforeMagicString](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeMagicString)]
 
 #### <a name="better"></a>Zájmu
@@ -191,7 +191,7 @@ Když zavedete logiku do sady testů, šance na to, že dojde k chybě, se výra
 > [!TIP]
 > Pokud se logika v testu jeví jako nenevyhnutelná, zvažte rozdělení testu na dva nebo více různých testů.
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[LogicInTests](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#LogicInTests)]
 
 #### <a name="better"></a>Zájmu
@@ -208,10 +208,10 @@ Pokud pro testy požadujete podobný objekt nebo stav, preferovat pomocnou metod
 
 V rozhraních pro testování částí je `Setup` volána před každou a každou jednotkovou zkouškou v rámci sady testů. I když se některý z nich může zobrazit jako užitečný nástroj, obvykle končí na bloated a těžko čte testy. Každý test bude mít k dispozici různé požadavky, aby bylo možné spustit test a začít. `Setup` však vynutí použití přesně stejných požadavků pro každý test.
 
-> [!NOTE] 
+> [!NOTE]
 > xUnit odebral SetUp i rozboru od verze 2. x
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[BeforeSetup](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeSetup)]
 
 ```csharp
@@ -239,21 +239,21 @@ Při psaní testů se pokuste zahrnout pouze jeden kontrolní výraz na test. Me
 
 - Pokud jeden kontrolní výraz selže, následné kontrolní výrazy nebudou vyhodnoceny.
 - Zajistíte, že ve svých testech neuplatňujete více případů.
-- Poskytuje celý obrázek jako důvod selhání testů. 
+- Poskytuje celý obrázek jako důvod selhání testů.
 
 Při zavedení více kontrolních výrazů do testovacího případu není zaručeno, že budou provedeny všechny kontrolní výrazy. Ve většině rozhraních testování částí se po selhání kontrolního výrazu v testu jednotky automaticky považují testy pokračování za neúspěšné. To může být matoucí, protože funkce, které skutečně fungují, se budou zobrazovat jako neúspěšné.
 
 > [!NOTE]
 > Běžnou výjimkou z tohoto pravidla je při uplatnění na objekt. V tomto případě je všeobecně přijatelné mít více kontrolních výrazů proti každé vlastnosti, aby bylo zajištěno, že objekt je ve stavu, ve kterém očekáváte.
 
-#### <a name="bad"></a>Chybně:
+#### <a name="bad"></a>Špatné:
 [!code-csharp[BeforeMultipleAsserts](../../../samples/csharp/unit-testing-best-practices/before/StringCalculatorTests.cs#BeforeMultipleAsserts)]
 
 #### <a name="better"></a>Zájmu
 [!code-csharp[AfterMultipleAsserts](../../../samples/csharp/unit-testing-best-practices/after/StringCalculatorTests.cs#AfterMultipleAsserts)]
 
 ### <a name="validate-private-methods-by-unit-testing-public-methods"></a>Ověřit soukromé metody pomocí veřejných metod testování částí
-Ve většině případů by nemělo být nutné testovat soukromou metodu. Soukromé metody jsou podrobné informace o implementaci. Tímto způsobem si můžete představit: soukromé metody nikdy neexistují v izolaci. V určitém okamžiku se jedná o veřejnou metodu, která volá soukromou metodu jako součást její implementace. To, co byste měli dbát, je konečný výsledek veřejné metody, která volá do privátního. 
+Ve většině případů by nemělo být nutné testovat soukromou metodu. Soukromé metody jsou podrobné informace o implementaci. Tímto způsobem si můžete představit: soukromé metody nikdy neexistují v izolaci. V určitém okamžiku se jedná o veřejnou metodu, která volá soukromou metodu jako součást její implementace. To, co byste měli dbát, je konečný výsledek veřejné metody, která volá do privátního.
 
 Vezměte v úvahu následující případ:
 
@@ -270,9 +270,9 @@ private string TrimInput(string input)
 }
 ```
 
-První reakce může být začít psát test pro `TrimInput`, protože chcete zajistit, aby metoda fungovala podle očekávání. Je však možné, že `ParseLogLine` manipulovat `sanitizedInput` takovým způsobem, že neočekáváte, vykreslení testu proti `TrimInput` nevýhodně. 
+První reakce může být začít psát test pro `TrimInput`, protože chcete zajistit, aby metoda fungovala podle očekávání. Je však možné, že `ParseLogLine` manipulovat `sanitizedInput` takovým způsobem, že neočekáváte, vykreslení testu proti `TrimInput` nevýhodně.
 
-Skutečný test by měl probíhat proti `ParseLogLine` veřejnému způsobu, protože to je to, co byste měli v konečném případě zajímat. 
+Skutečný test by měl probíhat proti `ParseLogLine` veřejnému způsobu, protože to je to, co byste měli v konečném případě zajímat.
 
 ```csharp
 public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
@@ -293,11 +293,11 @@ Jedním ze zásad testování částí je, že musí mít plnou kontrolu nad tes
 ```csharp
 public int GetDiscountedPrice(int price)
 {
-    if(DateTime.Now.DayOfWeek == DayOfWeek.Tuesday) 
+    if(DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
     {
         return price / 2;
     }
-    else 
+    else
     {
         return price;
     }
@@ -326,7 +326,7 @@ public void GetDiscountedPrice_OnTuesday_ReturnsHalfPrice()
 }
 ```
 
-Bohužel rychle zjistíte, že existuje několik problémů s vašimi testy. 
+Bohužel rychle zjistíte, že existuje několik problémů s vašimi testy.
 
 - Pokud je testovací sada spuštěna v úterý, druhý test projde, ale první test se nezdaří.
 - Pokud je testovací sada spuštěna v jakémkoli jiném dni, bude první test úspěšný, ale druhý test selže.
@@ -341,11 +341,11 @@ public interface IDateTimeProvider
 
 public int GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
 {
-    if(dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday) 
+    if(dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday)
     {
         return price / 2;
     }
-    else 
+    else
     {
         return price;
     }

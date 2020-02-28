@@ -9,12 +9,12 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communication
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-ms.openlocfilehash: 7d80099fcfcba58cd863004ba7faf0bafa3abd09
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 004da94bc7345bdc294562f0e1bedf6f1735adec
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628017"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159712"
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
 Soubor mapované paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi souborem a prostorem paměti umožňuje aplikaci, včetně více procesů, pro úpravu souboru čtením a zápisem přímo do paměti. Počínaje .NET Framework 4 můžete použít spravovaný kód pro přístup k souborům mapovaným do paměti stejným způsobem jako nativní funkce systému Windows přistupující k souborům mapovaným do paměti, jak je popsáno v tématu [Správa souborů mapovaných](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10))do paměti.  
@@ -83,7 +83,7 @@ Soubor mapované paměti obsahuje obsah souboru ve virtuální paměti. Toto map
   
  [!code-csharp[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](../../../samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/cs/program.cs#1)]
  [!code-vb[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/vb/program.vb#1)]  
- 
+
 [!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
 
  Následující příklad otevře stejný soubor mapované paměti pro jiný proces.  

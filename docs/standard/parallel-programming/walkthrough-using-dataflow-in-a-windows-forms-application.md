@@ -7,19 +7,19 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: b6f4b933f76834f48d522d9c97fb0c9b5c24e13d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 794253514edf63f02276e1ece21c60a85c534390
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139915"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159764"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Postupy: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování imagí v aplikaci model Windows Forms.  
   
  Tento příklad načte soubory obrázků ze zadané složky, vytvoří složený obrázek a zobrazí výsledek. V příkladu se používá model toku dat ke směrování imagí přes síť. V modelu toku dat vzájemně komunikují nezávislé součásti programu a odesílají zprávy. Když komponenta obdrží zprávu, provede nějakou akci a pak výsledek předá do jiné komponenty. Porovnejte je s modelem toku řízení, ve kterém aplikace používá řídicí struktury, například podmíněné příkazy, smyčky a tak dále, k řízení pořadí operací v programu.  
   
-## <a name="prerequisites"></a>Požadavky  
+## <a name="prerequisites"></a>Předpoklady  
  Před zahájením tohoto návodu Přečtěte [tok](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) dat.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -35,7 +35,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 - [Úplný příklad](#complete)  
   
-<a name="winforms"></a>   
+<a name="winforms"></a>
 ## <a name="creating-the-windows-forms-application"></a>Vytvoření aplikace model Windows Forms  
  Tato část popisuje, jak vytvořit základní aplikaci model Windows Forms a jak přidat ovládací prvky do hlavního formuláře.  
   
@@ -51,7 +51,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 5. Přidejte objekt <xref:System.Windows.Forms.PictureBox> do hlavního formuláře. Vlastnost <xref:System.Windows.Forms.Control.Dock%2A> nastavte na hodnotu <xref:System.Windows.Forms.DockStyle.Fill>.  
   
-<a name="network"></a>   
+<a name="network"></a>
 ## <a name="creating-the-dataflow-network"></a>Vytváření sítě toku dat  
  Tato část popisuje, jak vytvořit síť toku dat, která provádí zpracování bitové kopie.  
   
@@ -101,7 +101,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
  V tomto příkladu se používá sdílený token zrušení namísto nastavení vlastnosti <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>, protože vlastnost <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> trvale zruší provádění bloku toku dat. Token zrušení umožňuje v tomto příkladu znovu použít stejnou síť toku dat, a to i v případě, že uživatel zruší jednu nebo více operací. Příklad, který používá <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> k trvalému zrušení provádění bloku toku dat, naleznete v tématu [How to: Canceling The Dataflow Block](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
   
-<a name="ui"></a>   
+<a name="ui"></a>
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Propojení sítě toku dat s uživatelským rozhraním  
  Tato část popisuje, jak propojit síť toku dat s uživatelským rozhraním. Vytváření složené image a zrušení operace se spouští z tlačítek **Zvolit složku** a **Zrušit** . Když uživatel zvolí některé z těchto tlačítek, je vhodná akce iniciována asynchronním způsobem.  
   
@@ -119,7 +119,7 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   
-<a name="complete"></a>   
+<a name="complete"></a>
 ## <a name="the-complete-example"></a>Kompletní příklad  
  Následující příklad ukazuje kompletní kód pro tento návod.  
   
@@ -129,6 +129,6 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
  ![Aplikace model Windows Forms](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

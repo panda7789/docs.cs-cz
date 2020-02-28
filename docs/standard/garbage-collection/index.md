@@ -18,17 +18,17 @@ helpviewer_keywords:
 - runtime, garbage collection
 - garbage collection, about
 ms.assetid: 22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9
-ms.openlocfilehash: 0038f4ba28c7ea3e7be4502a71026a2b3ad47829
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 846df5ecb1e681e8d0440e627586a681bf071efa
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120992"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160141"
 ---
 # <a name="garbage-collection"></a>Kolekce paměti
 . Systém uvolňování paměti sítě spravuje přidělování a uvolňování paměti pro vaši aplikaci. Při každém vytvoření nového objektu modul CLR přidělí objektu paměť ze spravované haldy. Dokud je ve spravované haldě k dispozici adresní prostor, modul runtime bude pokračovat v přidělování prostoru pro nové objekty. Paměť však není neomezená. Z důvodu získání paměti musí nakonec systém uvolňování paměti provést uvolnění paměti. Optimalizující modul systému uvolňování paměti určuje nejvhodnější čas k provedení uvolnění paměti na základě způsobu přidělování paměti. Při uvolňování paměti systém ověřuje, zda objekty ve spravované haldě již nejsou používány aplikací, a provede nezbytné úkony k opětovnému získání paměti.  
   
-<a name="related_topics"></a>   
+<a name="related_topics"></a>
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
@@ -42,7 +42,7 @@ ms.locfileid: "73120992"
 |[Sledování prostředků domény aplikace](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)|Popisuje sledování využití procesoru a paměti doménou aplikace.|  
 |[Slabé odkazy](../../../docs/standard/garbage-collection/weak-references.md)|Popisuje funkce, které systému uvolňování paměti umožňují získat paměť objektu a zároveň podporují přístup aplikace k danému objektu.|  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.GC?displayProperty=nameWithType>  
   
  <xref:System.GCCollectionMode?displayProperty=nameWithType>  
@@ -59,6 +59,6 @@ ms.locfileid: "73120992"
   
  <xref:System.IDisposable?displayProperty=nameWithType>  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vymazání nespravovaných prostředků](../../../docs/standard/garbage-collection/unmanaged.md)

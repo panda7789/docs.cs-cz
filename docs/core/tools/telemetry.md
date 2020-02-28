@@ -3,18 +3,18 @@ title: Telemetrie .NET Core SDK
 description: Objevte funkce telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: abc9f8e1ef134ebfb5ec9acacb629d5180aaf83b
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 9d5d7ff09ade89712f2fbbe35224851bb1c28b4c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77625914"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156683"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrie .NET Core SDK
 
 [.NET Core SDK](index.md) obsahuje funkci telemetrie, která shromažďuje data o využití a informace o výjimkách při selhání .NET Core CLI. .NET Core CLI se dodává s .NET Core SDK a je to sada operací, které umožňují sestavovat, testovat a publikovat aplikace .NET Core. Je důležité, aby tým .NET pochopil, jak se nástroje používají, aby bylo možné je zlepšit. Informace o selháních pomáhají týmu vyřešit problémy a opravovat chyby.
 
-Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](https://creativecommons.org/licenses/by/4.0/)navýšení. 
+Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](https://creativecommons.org/licenses/by/4.0/)navýšení.
 
 ## <a name="scope"></a>Rozsah
 
@@ -30,7 +30,7 @@ Telemetrie *se shromáždí* při použití některého z [.NET Core CLI příka
 
 ## <a name="how-to-opt-out"></a>Jak odhlásit
 
-Funkce telemetrie .NET Core SDK je ve výchozím nastavení povolená. Pokud se chcete odhlásit od funkce telemetrie, nastavte proměnnou prostředí `DOTNET_CLI_TELEMETRY_OPTOUT` na `1` nebo `true`. 
+Funkce telemetrie .NET Core SDK je ve výchozím nastavení povolená. Pokud se chcete odhlásit od funkce telemetrie, nastavte proměnnou prostředí `DOTNET_CLI_TELEMETRY_OPTOUT` na `1` nebo `true`.
 
 V případě, že dojde k úspěšné instalaci, posílá instalační program .NET Core SDK také jednu položku telemetrie. Chcete-li se odhlásit, nastavte před instalací .NET Core SDK proměnnou prostředí `DOTNET_CLI_TELEMETRY_OPTOUT`.
 
@@ -132,7 +132,7 @@ at Microsoft.DotNet.Cli.Program.Main(String[] args)
 
 Přispěvatelé .NET Core a všichni ostatní spouštějí verzi .NET Core SDK, kterou samy vytvořili, by měli zvážit cestu ke svému zdrojovému kódu sady SDK. Pokud dojde k chybě při použití .NET Core SDK, které je vlastní sestavení ladění nebo nakonfigurováno pomocí vlastních souborů symbolů sestavení, bude cesta ke zdrojovému souboru sady SDK z sestavovacího počítače shromažďována jako součást trasování zásobníku a není použita hodnota hash.
 
-Z tohoto důvodu by se vlastní sestavení .NET Core SDK neměla nacházet v adresářích, jejichž názvy cest zveřejňují osobní nebo citlivé informace. 
+Z tohoto důvodu by se vlastní sestavení .NET Core SDK neměla nacházet v adresářích, jejichž názvy cest zveřejňují osobní nebo citlivé informace.
 
 ## <a name="see-also"></a>Viz také
 

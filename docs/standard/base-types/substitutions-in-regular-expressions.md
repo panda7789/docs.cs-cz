@@ -13,19 +13,19 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: db0e2234055c6869c4cf55196d9f3b62a6996c96
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3562bd113ae4c9a3f721d8858a5d3625ef548d3a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972066"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160075"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
 Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzorů pro nahrazení. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory nahrazení jsou k dispozici pro přetížení metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>, které mají `replacement` parametr a metodu <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>. Metody nahradí odpovídající vzor vzorem, který je definován parametrem `replacement`.  
   
  Rozhraní .NET Framework definuje prvky substituce uvedené v následující tabulce.  
   
-|Substituce|Popis|  
+|Nahrazení|Popis|  
 |------------------|-----------------|  
 |$ *číslo*|Zahrnuje poslední podřetězec odpovídající zachytávající skupině, která je identifikována *číslem*, kde *Number* je desítková hodnota v řetězci pro nahrazení. Další informace najdete v tématu [Nahrazování číslované skupiny](#substituting-a-numbered-group).|  
 |$ { *Name* }|Zahrnuje poslední podřetězec odpovídající pojmenované skupině, která je určena názvem `(?<`*název*`> )` v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování pojmenované skupiny](#substituting-a-named-group).|  
@@ -140,11 +140,11 @@ Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzorů pro
   
 |Shoda|Pozice|Řetězec před shodou|Výsledný řetězec|  
 |-----------|--------------|-------------------------|-------------------|  
-|první|odst|aa|AA**AA AA**bb2cc3dd4ee5|  
-|odst|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
+|1|2|aa|AA**AA AA**bb2cc3dd4ee5|  
+|2|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
 |3|8|aa1bb2cc|aaaabbaa1bbcc**aa1bb2cc**dd4ee5|  
-|4|odst|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5|  
-|5|čtrnáct|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**| 
+|4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5|  
+|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**|
 
 ## <a name="substituting-the-text-after-the-match"></a>Nahrazování textu po shodě  
  Nahrazení `$'` nahradí odpovídající řetězec celým vstupním řetězcem po shodě. To znamená, že duplikuje vstupní řetězec po shodě a odebírá odpovídající text. Jakýkoli text, který předchází odpovídajícímu textu, zůstává ve výsledném řetězci nezměněn. Pokud se neshoduje, náhrada `$'` nemá žádný vliv.  
@@ -158,11 +158,11 @@ Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzorů pro
   
 |Shoda|Pozice|Řetězec po shodě|Výsledný řetězec|  
 |-----------|--------------|------------------------|-------------------|  
-|první|odst|bb2cc3dd4ee5|AA**bb2cc3dd4ee5**bb2cc3dd4ee5|  
-|odst|5|cc3dd4ee5|aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5|  
+|1|2|bb2cc3dd4ee5|AA**bb2cc3dd4ee5**bb2cc3dd4ee5|  
+|2|5|cc3dd4ee5|aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5|  
 |3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5|  
-|4|odst|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5|  
-|5|čtrnáct|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
+|4|11|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5|  
+|5|14|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
 
 ## <a name="substituting-the-last-captured-group"></a>Nahrazování poslední zachycené skupiny  
  Nahrazení `$+` nahradí porovnávaný řetězec poslední zachycenou skupinou. Pokud nejsou k dispozici žádné zachycené skupiny nebo pokud je hodnota poslední zachycené skupiny <xref:System.String.Empty?displayProperty=nameWithType>, náhrada `$+` nemá žádný vliv.  
@@ -194,9 +194,9 @@ Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzorů pro
   
 |Shoda|Pozice|Shoda|Výsledný řetězec|  
 |-----------|--------------|-----------|-------------------|  
-|první|3|123|ABC**ABC123DEF456**DEF456|  
-|odst|5|456|ABCABC123DEF456DEF**ABC123DEF456**|  
+|1|3|123|ABC**ABC123DEF456**DEF456|  
+|2|5|456|ABCABC123DEF456DEF**ABC123DEF456**|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

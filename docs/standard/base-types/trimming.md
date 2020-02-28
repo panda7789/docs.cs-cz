@@ -15,12 +15,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: 66a4945f536c2f30d61a878e6449a6b0f6b45f22
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bdbe267bb178e90c0008422e6543a23178c2c4d8
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132886"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159985"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Ořezávání a odstraňování znaků z řetězců v .NET
 Pokud analyzujete větu na jednotlivá slova, může se stát, že se na konci slova dokončí slova, která obsahují prázdné mezery (označované také jako prázdné znaky). V této situaci můžete použít jednu z metod Trim třídy **System. String** k odebrání libovolného počtu mezer nebo jiných znaků ze zadané pozice v řetězci. Následující tabulka popisuje dostupné metody Trim.  
@@ -77,7 +77,7 @@ Pokud analyzujete větu na jednotlivá slova, může se stát, že se na konci s
   
  Tento kód zobrazí `World!` do konzoly.  
   
-## <a name="remove"></a>Odebrány 
+## <a name="remove"></a>Odebrat
 
  Metoda <xref:System.String.Remove%2A?displayProperty=nameWithType> Odstraní zadaný počet znaků, který začíná na zadané pozici v existujícím řetězci. Tato metoda předpokládá index založený na nule.  
   
@@ -87,13 +87,13 @@ Pokud analyzujete větu na jednotlivá slova, může se stát, že se na konci s
  [!code-csharp[Conceptual.String.BasicOps#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#21)]
  [!code-vb[Conceptual.String.BasicOps#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/trimming.vb#21)]  
   
-## <a name="replace"></a>náhrady
+## <a name="replace"></a>Nahradit
 
  Můžete také odebrat zadaný znak nebo podřetězec z řetězce voláním metody <xref:System.String.Replace%28System.String%2CSystem.String%29?displayProperty=nameWithType> a zadáním prázdného řetězce (<xref:System.String.Empty?displayProperty=nameWithType>) jako náhrady. Následující příklad odebere všechny čárky z řetězce.  
   
  [!code-csharp[Conceptual.String.BasicOps#23](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/replace1.cs#23)]
  [!code-vb[Conceptual.String.BasicOps#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/replace1.vb#23)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)

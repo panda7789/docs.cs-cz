@@ -12,12 +12,12 @@ helpviewer_keywords:
 - converting times
 - local time conversions
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
-ms.openlocfilehash: d0b38523f054598ba6fb1f05a0183bc4ccff2120
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fbb59dbe364763209f44a4e2241d1d5275036c40
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132566"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156020"
 ---
 # <a name="converting-times-between-time-zones"></a>Převádění časů mezi časovými pásmy
 
@@ -32,7 +32,7 @@ Koordinovaný světový čas (UTC) je Standard s vysokou přesností. Světová 
 
 Nejjednodušší způsob, jak převést čas na čas UTC, je zavolat metodu `static` (`Shared` v Visual Basic) <xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType>. Přesný převod prováděný metodou závisí na hodnotě vlastnosti <xref:System.DateTime.Kind%2A> parametru `dateTime`, jak je uvedeno v následující tabulce.
 
-| `DateTime.Kind`            | Konverze                                                                     |
+| `DateTime.Kind`            | Převod                                                                     |
 | -------------------------- | ------------------------------------------------------------------------------ |
 | `DateTimeKind.Local`       | Převede místní čas na čas UTC.                                                    |
 | `DateTimeKind.Unspecified` | Předpokládá, že parametr `dateTime` je místní čas a převede místní čas na UTC. |
@@ -72,7 +72,7 @@ Následující kód převede čas UTC na střední (běžný čas).
 
 Chcete-li převést čas UTC na místní čas, zavolejte metodu <xref:System.DateTime.ToLocalTime%2A> objektu <xref:System.DateTime>, jehož čas chcete převést. Přesné chování metody závisí na hodnotě vlastnosti <xref:System.DateTime.Kind%2A> objektu, jak je uvedeno v následující tabulce.
 
-| `DateTime.Kind`            | Konverze                                                                               |
+| `DateTime.Kind`            | Převod                                                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------- |
 | `DateTimeKind.Local`       | Vrátí hodnotu <xref:System.DateTime> beze změny.                                      |
 | `DateTimeKind.Unspecified` | Předpokládá, že hodnota <xref:System.DateTime> je UTC a převede čas UTC na místní čas. |
@@ -109,7 +109,7 @@ Hodnoty data a času reprezentované <xref:System.DateTimeOffset> objekty nejsou
 Například pokud je datum a čas požadavku uživatele na webovou stránku známo a serializován jako řetězec ve formátu MM/dd/rrrr hh: mm: SS zzzz, převede následující `ReturnTimeOnServer` metoda tuto hodnotu data a času na webový server.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/TimeConversions.cs#1)]
-[!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions.vb#1)] 
+[!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions.vb#1)]
 
 Pokud je metodě předán řetězec "9/1/2007 5:32:07 -05:00", který představuje datum a čas v časovém pásmu 5 hodin před časem UTC, vrátí 9/1/2007 3:32:07 dop. 07:00 pro server umístěný v oblasti USA (běžný čas).
 
@@ -118,7 +118,7 @@ Třída <xref:System.TimeZoneInfo> také obsahuje přetížení metody <xref:Sys
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/timeconversions2.cs#2)]
 [!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions2.vb#2)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.TimeZoneInfo>
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)

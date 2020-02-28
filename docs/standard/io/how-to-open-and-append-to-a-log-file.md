@@ -11,15 +11,15 @@ helpviewer_keywords:
 - log files, appending to
 - I/O [.NET Framework], log files
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
-ms.openlocfilehash: b0e399ba3c0cfa0ad3b92afbc7e07af7659e8ae6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a549aba3a763bcfc5a3889efd65e2495eca7622c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706709"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155708"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>Postupy: otevření a připojení k souboru protokolu
-<xref:System.IO.StreamWriter> a <xref:System.IO.StreamReader> zápis znaků a čtení znaků z datových proudů. Následující příklad kódu otevře soubor *log. txt* pro vstup, nebo ho vytvoří, pokud neexistuje, a připojí informace protokolu na konec souboru. Příklad následně zapíše obsah souboru do standardního výstupu pro zobrazení. 
+<xref:System.IO.StreamWriter> a <xref:System.IO.StreamReader> zápis znaků a čtení znaků z datových proudů. Následující příklad kódu otevře soubor *log. txt* pro vstup, nebo ho vytvoří, pokud neexistuje, a připojí informace protokolu na konec souboru. Příklad následně zapíše obsah souboru do standardního výstupu pro zobrazení.
 
 Jako alternativu k tomuto příkladu můžete ukládat informace jako jeden řetězec nebo pole řetězců a použít metodu <xref:System.IO.File.WriteAllText%2A?displayProperty=nameWithType> nebo <xref:System.IO.File.WriteAllLines%2A?displayProperty=nameWithType> k dosažení stejné funkce.  
   
@@ -30,7 +30,7 @@ Jako alternativu k tomuto příkladu můžete ukládat informace jako jeden řet
  [!code-csharp[Conceptual.BasicIO.TextFiles#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source2.cs#2)]
  [!code-vb[Conceptual.BasicIO.TextFiles#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source2.vb#2)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.StreamWriter>  
 - <xref:System.IO.StreamReader>  

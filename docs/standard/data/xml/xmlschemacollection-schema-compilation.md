@@ -1,19 +1,19 @@
 ---
-title: Kompilace schématu XmlSchemaCollection
+title: XmlSchemaCollection Schema Compilation
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
-ms.openlocfilehash: 1f300bab01f94af8c70c8b67a69a73fbc5ba5bac
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: af6df3729f1bd926e9a47cc5b9d9bf460c8e1225
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709826"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159283"
 ---
-# <a name="xmlschemacollection-schema-compilation"></a>Kompilace schématu XmlSchemaCollection
+# <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection Schema Compilation
 **XmlSchemaCollection** je mezipaměť nebo knihovna, kde mohou být uloženy a ověřeny schémata XML-data redukovaná (XDR) a XML Schema Definition Language (XSD). **XmlSchemaCollection** vylepšuje výkon ukládáním schémat do paměti místo přístupu ze souboru nebo adresy URL.  
   
 > [!NOTE]
@@ -51,11 +51,11 @@ vr.Schemas.Add(xsc)
 XmlTextReader tr = new XmlTextReader("Books.xml");  
 XmlValidatingReader vr = new XmlValidatingReader(tr);  
 XmlSchemaCollection xsc = new XmlSchemaCollection();  
-xsc.Add("urn:bookstore-schema", "Books.xsd");    
+xsc.Add("urn:bookstore-schema", "Books.xsd");
 vr.Schemas.Add(xsc);  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Ověření XDR s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
 - [Ověření schématu XML (XSD) s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemacollection.md)

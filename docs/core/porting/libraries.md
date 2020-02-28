@@ -3,18 +3,18 @@ title: Knihovny portů do .NET Core
 description: Naučte se, jak přenést projekty knihovny z .NET Framework do .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 646587120de2e51280c2af4de36bf3a6b0f60c2d
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 68fe36e543d949dc76bdb0c19ef3482936ad9e79
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920611"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157528"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Port .NET Framework knihovny do .NET Core
 
 Naučte se, jak portovat kód .NET Framework knihovny do .NET Core, kde běží na různých platformách a rozšiřuje dosah aplikací, které ho používají.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 V tomto článku se předpokládá, že máte následující:
 
@@ -97,7 +97,7 @@ Tento přístup může být nejvhodnější pro větší a složitější projek
 1. Je rozumné napsat vlastní implementaci nedostupného .NET Framework rozhraní API?
    Můžete zvážit kopírování, úpravy a používání kódu z [.NET Frameworkho zdroje odkazů](https://github.com/Microsoft/referencesource). Zdrojový kód odkazu je licencován v rámci [licence MIT](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), takže máte významnou volnost v používání zdroje jako základu pro váš vlastní kód. Stačí se ujistit, že v kódu budete správně atribut Microsoft.
 1. Tento postup opakujte podle potřeby pro různé projekty.
- 
+
 Fáze analýzy může určitou dobu trvat v závislosti na velikosti vašeho základu kódu. Doba útraty v této fázi k důkladnému pochopení rozsahu změn potřebných pro vývoj plánu obvykle šetří čas v dlouhodobém běhu, zejména v případě, že máte složitý základ kódu.
 
 Váš plán by mohl zahrnovat významné změny v základu kódu a přitom stále cílit .NET Framework 4.7.2, takže tato verze je podrobněji sestavená. Způsob provádění plánu závisí na základu kódu.

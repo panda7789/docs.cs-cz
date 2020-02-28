@@ -9,12 +9,12 @@ helpviewer_keywords:
 - time zones [.NET Framework], enumerating
 - enumerating time zones [.NET Framework]
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
-ms.openlocfilehash: 662e389f4fecc77244e378f1c0672935403fa456
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aa8962c8aea208778983610041937dc3f75c1f1e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129113"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159439"
 ---
 # <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Postupy: zobrazení výčtu časových pásem v počítači
 
@@ -55,9 +55,9 @@ V příkladu se spustí aplikace systému Windows, která zobrazuje časová pá
 Většina ovládacích prvků seznam (například <xref:System.Windows.Forms.ListBox?displayProperty=nameWithType> nebo ovládací prvek <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType>) umožňuje přiřadit kolekci proměnných objektu ke své vlastnosti `DataSource`, pokud kolekce implementuje rozhraní <xref:System.Collections.IEnumerable>. (Obecná třída <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>.) Chcete-li zobrazit jednotlivý objekt v kolekci, ovládací prvek volá metodu tohoto objektu `ToString` k extrakci řetězce, který je použit k reprezentaci objektu. V případě <xref:System.TimeZoneInfo> objektů vrátí metoda `ToString` zobrazovaný název objektu <xref:System.TimeZoneInfo> (hodnota jeho <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost).
 
 > [!NOTE]
-> Vzhledem k tomu, že ovládací prvky seznamu volají metodu `ToString` objektu, můžete přiřadit kolekci objektů <xref:System.TimeZoneInfo> ovládacímu prvku, nechat ovládací prvek zobrazit smysluplný název pro každý objekt a načíst objekt <xref:System.TimeZoneInfo>, který uživatel vybral. Tím se eliminuje nutnost extrakce řetězce pro každý objekt v kolekci, přiřazení řetězce ke kolekci, která je následně přiřazena vlastnosti `DataSource` ovládacího prvku, načtení řetězce, který uživatel vybral, a pak pomocí tohoto řetězce k extrakci objektu, který Popisuje. 
+> Vzhledem k tomu, že ovládací prvky seznamu volají metodu `ToString` objektu, můžete přiřadit kolekci objektů <xref:System.TimeZoneInfo> ovládacímu prvku, nechat ovládací prvek zobrazit smysluplný název pro každý objekt a načíst objekt <xref:System.TimeZoneInfo>, který uživatel vybral. Tím se eliminuje nutnost extrakce řetězce pro každý objekt v kolekci, přiřazení řetězce ke kolekci, která je následně přiřazena vlastnosti `DataSource` ovládacího prvku, načtení řetězce, který uživatel vybral, a pak pomocí tohoto řetězce k extrakci objektu, který popisuje.
 
-## <a name="compiling-the-code"></a>Kompilování kódu
+## <a name="compiling-the-code"></a>Zkompilování kódu
 
 Tento příklad vyžaduje:
 
@@ -67,7 +67,7 @@ Tento příklad vyžaduje:
 
   <xref:System.Collections.ObjectModel>
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
 - [Postupy: Ukládání časových pásem do integrovaného prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)

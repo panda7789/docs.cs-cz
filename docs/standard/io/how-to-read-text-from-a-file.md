@@ -12,15 +12,15 @@ helpviewer_keywords:
 - data streams, reading text from files
 - I/O [.NET Framework], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-ms.openlocfilehash: 49ea989a2b11c6572dc08970cf96e2df5f4fa024
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8676e5f0acd0646b4854df7dde060ec15548ec3e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706657"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155721"
 ---
 # <a name="how-to-read-text-from-a-file"></a>Postupy: čtení textu ze souboru
-Následující příklady znázorňují způsob synchronního a asynchronního čtení textu z textového souboru pomocí rozhraní .NET pro aplikace klasické pracovní plochy. V obou příkladech, při vytváření instance třídy <xref:System.IO.StreamReader>, zadáte relativní nebo absolutní cestu k souboru. 
+Následující příklady znázorňují způsob synchronního a asynchronního čtení textu z textového souboru pomocí rozhraní .NET pro aplikace klasické pracovní plochy. V obou příkladech, při vytváření instance třídy <xref:System.IO.StreamReader>, zadáte relativní nebo absolutní cestu k souboru.
   
 > [!NOTE]
 > Tyto příklady kódu se nevztahují na vývoj aplikací pro univerzální platformu Windows (UWP), protože prostředí Windows Runtime poskytuje různé typy datových proudů pro čtení a zápis do souborů. Příklad, který ukazuje, jak číst text ze souboru v aplikaci UWP, najdete v tématu [rychlý Start: čtení a zápis souborů](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)). Příklady, které ukazují, jak převést mezi datovými proudy .NET Framework a prostředí Windows Runtime datových proudů, naleznete v tématu [How to: Convert between .NET Framework Streams and prostředí Windows Runtime Streams](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md).  
@@ -34,7 +34,7 @@ Následující příklad ukazuje synchronní operaci čtení v konzolové aplika
  [!code-csharp[Conceptual.BasicIO.TextFiles#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source3.cs#3)]
  [!code-vb[Conceptual.BasicIO.TextFiles#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source3.vb#3)]  
   
-## <a name="example-asynchronous-read-in-a-wpf-app"></a>Příklad: asynchronní čtení v aplikaci WPF 
+## <a name="example-asynchronous-read-in-a-wpf-app"></a>Příklad: asynchronní čtení v aplikaci WPF
  Následující příklad ukazuje asynchronní operaci čtení v aplikaci Windows Presentation Foundation (WPF).  
   
 > [!IMPORTANT]
@@ -43,7 +43,7 @@ Následující příklad ukazuje synchronní operaci čtení v konzolové aplika
  [!code-csharp[TextFiles](../../../samples/snippets/csharp/VS_Snippets_Wpf/TextFiles/MainWindow.xaml.cs)]
  [!code-vb[TextFiles](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextFiles/MainWindow.xaml.vb)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.StreamReader>  
 - <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>  

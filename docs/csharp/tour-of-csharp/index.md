@@ -1,27 +1,29 @@
 ---
 title: Prohlídka C# – C# Průvodce
 description: Začínáte C#? Seznamte se se základy jazyka.
-ms.date: 04/05/2019
-ms.openlocfilehash: b510342f957a259a6c7763441778461b3dd4ef1e
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.date: 02/26/2020
+ms.openlocfilehash: 69651d6233bfaf217366be3850f6b3d9c550d8e2
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77673287"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159140"
 ---
 # <a name="a-tour-of-the-c-language"></a>Prohlídka C# jazyka
 
-C#(vyslovit "viz Sharp") je jednoduchý, moderní, objektově orientovaný programovací jazyk, který je typově bezpečný. C#má své kořeny v řadě jazyků C a bude se okamžitě seznámit s programátory jazyka C C++,, Java a JavaScriptu.
+C#(vyslovější "viz Sharp") je moderní, objektově orientovaný programovací jazyk, který je typově bezpečný. C#má své kořeny v řadě jazyků C a bude se okamžitě seznámit s programátory jazyka C C++,, Java a JavaScriptu.
 
-Tato prohlídka poskytuje přehled hlavních součástí jazyka v C# 7 a novějších verzích. Pokud chcete prozkoumat jazyk pomocí interaktivních příkladů, zkuste [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzů.
+Tato prohlídka poskytuje přehled hlavních součástí jazyka v C# 8 a starších verzích. Pokud chcete prozkoumat jazyk pomocí interaktivních příkladů, zkuste [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzů.
 
-C#je objektově orientovaný jazyk, ale C# dále zahrnuje podporu pro programování ***orientované na komponenty*** . Moderní návrh softwaru se stále spoléhá na softwarové komponenty ve formě integrovaných a samoobslužných balíčků funkcí. Klíč k takovým součástem je, že prezentují programovací model s vlastnostmi, metodami a událostmi. mají atributy, které poskytují deklarativní informace o komponentě. a obsahují vlastní dokumentaci. C#poskytuje jazykové konstrukce pro podporu přímo těchto konceptů C# a vytváří tak velmi přirozený jazyk pro vytváření a používání softwarových komponent.
+C#je objektově orientovaný jazyk, ale C# dále zahrnuje podporu pro programování ***orientované na komponenty*** . Moderní návrh softwaru se stále spoléhá na softwarové komponenty ve formě integrovaných a samoobslužných balíčků funkcí. Klíč k takovým součástem je, že prezentují programovací model s vlastnostmi, metodami a událostmi. Mají atributy, které poskytují deklarativní informace o komponentě. Obsahují svou vlastní dokumentaci. C#poskytuje jazykové konstrukce pro podporu přímo těchto konceptů C# a vytváří přirozený jazyk pro vytváření a používání softwarových komponent.
 
-Několik C# funkcí pomáhá při konstrukci robustních a odolných aplikací: ***uvolňování*** paměti automaticky uvolňuje paměť, kterou zabírá nedosažitelné nepoužívané objekty; ***zpracování výjimek*** poskytuje strukturovaný a rozšiřitelný přístup k detekci a obnovení chyb. a ***typově bezpečný*** návrh tohoto jazyka znemožňuje čtení z neinicializovaných proměnných, pro indexaci polí nad rámec jejich hranic nebo pro provedení nezaškrtnutých přetypování typu.
+Několik C# funkcí pomáhá při konstrukci robustních a odolných aplikací. ***Uvolňování*** paměti automaticky uvolňuje paměť, kterou zabírá nedosažitelné nepoužívané objekty. ***Zpracování výjimek*** poskytuje strukturovaný a rozšiřitelný přístup k detekci a obnovení chyb. ***Typově bezpečný*** návrh tohoto jazyka znemožňuje čtení z neinicializovaných proměnných, pro indexaci polí nad rámec jejich hranic nebo pro provedení nezaškrtnutých přetypování typu.
 
 C#má ***jednotný systém typů***. Všechny C# typy, včetně primitivních typů, například `int` a `double`, dědí z jednoho kořenového typu `object`. Všechny typy tedy sdílí sadu běžných operací a hodnoty libovolného typu mohou být uloženy, přepravovány a provozovány konzistentním způsobem. Kromě toho C# podporuje uživatelsky definované typy odkazů i typy hodnot, což umožňuje dynamické přidělování objektů a také vložené úložiště lehkých struktur.
 
-Aby bylo zajištěno, že se programy a knihovny můžou v průběhu času vyvíjejí kompatibilním způsobem, je mnohem zdůrazněno, že C# se v návrhu používá ***Správa verzí*** C#. Řada programovacích jazyků platíte jenom malým pozornostům tohoto problému. v důsledku toho jsou programy napsané v těchto jazycích častěji využívány, pokud jsou zavedeny novější verze závislých knihoven. C#Aspekty návrhu, které byly přímo ovlivněny aspekty správy verzí, zahrnují samostatné modifikátory `virtual` a `override`, pravidla pro řešení přetížení metod a podporu explicitních deklarací členů rozhraní.
+Aby bylo zajištěno, že se programy a knihovny můžou v průběhu času vyvíjejí kompatibilním způsobem, je mnohem zdůrazněno, že C# se v návrhu používá ***Správa verzí*** C#. Řada programovacích jazyků platíte jenom malým pozornostům tohoto problému. V důsledku toho programy napsané v těchto dalších jazycích jsou v případě, že jsou zavedeny novější verze závislých knihoven, často rozdělují, než je potřeba. C#Aspekty návrhu, které byly přímo ovlivněny aspekty správy verzí, zahrnují samostatné modifikátory `virtual` a `override`, pravidla pro řešení přetížení metod a podporu explicitních deklarací členů rozhraní.
+
+V novějších verzích C# zahrnuje další programovací paradigma. C#obsahuje funkce, které podporují techniky funkčního programování, jako jsou lambda výrazy. Další nové funkce podporují oddělení dat a algoritmů, jako je porovnávání vzorů.
 
 ## <a name="hello-world"></a>Hello World
 
@@ -29,20 +31,18 @@ Program "Hello, World" se tradičně používá k zavedení programovacího jazy
 
 [!code-csharp[Hello World](~/samples/snippets/csharp/tour/hello/Program.cs)]
 
-C#zdrojové soubory mají obvykle `.cs`příponu souboru. Za předpokladu, že program "Hello, World" je uložen v souboru *Hello.cs*, program může být zkompilován pomocí příkazového řádku:
+C#zdrojové soubory mají obvykle `.cs`příponu souboru. Chcete-li vytvořit tento program, nejprve Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download). Pak spusťte příkaz `dotnet new console -o hello` pro vytvoření nového programu a skriptu sestavení. Program a skript sestavení jsou v souborech `Program.cs` a `hello.csproj`, v uvedeném pořadí. Aplikaci sestavíte a spustíte s příkazy `run`:
 
 ```console
-csc hello.cs
+cd hello
+dotnet run
 ```
 
-který vytváří spustitelné sestavení s názvem *Hello. exe*. Výstup vytvořený touto aplikací při spuštění:
+Program vytvoří následující výstup: 
 
 ```console
-Hello, World
+Hello, World!
 ```
-
-> [!IMPORTANT]
-> Příkaz `csc` se zkompiluje pro úplné rozhraní a nemusí být k dispozici na všech platformách.
 
 Program "Hello, World" začíná pomocí direktivy `using`, která odkazuje na obor názvů `System`. Obory názvů poskytují hierarchické prostředky pro C# uspořádání programů a knihoven. Obory názvů obsahují typy a jiné obory názvů, například obor názvů `System` obsahuje několik typů, jako je `Console` třída odkazovaná v programu, a řadu dalších oborů názvů, jako je například `IO` a `Collections`. Direktiva `using`, která odkazuje na daný obor názvů, umožňuje nekvalifikované použití typů, které jsou členy tohoto oboru názvů. Z důvodu direktivy `using` může program používat `Console.WriteLine` jako zkratku pro `System.Console.WriteLine`.
 

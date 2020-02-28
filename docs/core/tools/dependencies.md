@@ -1,29 +1,31 @@
 ---
-title: Správa závislostí v nástrojích .NET Core
-description: Vysvětluje, jak spravovat závislosti pomocí nástrojů .NET Core.
-ms.date: 03/06/2017
-ms.openlocfilehash: 916daca0240c10dc63ca96048590a426bc51d450
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+title: Správa závislostí v .NET Core
+description: Vysvětluje, jak spravovat závislosti projektu pro aplikaci .NET Core.
+no-loc:
+- dotnet add package
+- dotnet remove package
+- dotnet list package
+ms.date: 02/25/2020
+ms.openlocfilehash: 367be7eb04d58bffc0846de1d035a5801e8d9376
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965617"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157242"
 ---
-# <a name="manage-dependencies-with-net-core-sdk-10"></a>Správa závislostí pomocí .NET Core SDK 1,0
+# <a name="manage-dependencies-in-net-core-applications"></a>Správa závislostí v aplikacích .NET Core
 
-Když přesunete projekty .NET Core z Project. JSON na csproj a MSBuild, nastaly se významné investice také z důvodu sjednocení souboru projektu a prostředků, které umožňují sledování závislostí. U projektů .NET Core se jedná o podobnou funkci Project. JSON. Neexistuje žádný samostatný soubor JSON nebo XML, který sleduje závislosti NuGet. V této změně jsme také zavedli další typ *odkazu* do syntaxe csproj s názvem `<PackageReference>`.
+Tento článek vysvětluje, jak přidat a odebrat závislosti úpravou souboru projektu nebo pomocí rozhraní příkazového řádku.
 
-Tento dokument popisuje nový typ odkazu. Také ukazuje, jak přidat závislost balíčku pomocí tohoto nového typu odkazu na váš projekt.
+## <a name="the-packagereference-element"></a>Element \<PackageReference >
 
-## <a name="the-new-packagereference-element"></a>Nový \<prvek > PackageReference
-
-`<PackageReference>` má následující základní strukturu:
+Prvek souboru projektu `<PackageReference>` má následující strukturu:
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" />
 ```
 
-Pokud jste obeznámeni s nástrojem MSBuild, bude se seznámit s dalšími typy odkazů, které již existují. Klíč je příkaz `Include`, který určuje ID balíčku, který chcete přidat do projektu. Podřízený prvek `<Version>` určuje verzi, která má být získána. Verze jsou zadány na základě [pravidel verze NuGet](/nuget/create-packages/dependency-versions#version-ranges).
+Atribut `Include` Určuje ID balíčku, který se má přidat do projektu. Atribut `Version` určuje verzi, která má být získána. Verze jsou zadány na základě [pravidel verze NuGet](/nuget/create-packages/dependency-versions#version-ranges).
 
 > [!NOTE]
 > Pokud nejste obeznámeni s syntaxí souboru projektu, další informace naleznete v referenční dokumentaci k [projektu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference) .
@@ -34,39 +36,47 @@ Podmínky použijte k přidání závislosti, která je k dispozici pouze v urč
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
 ```
 
-Závislost bude platná pouze v případě, že se pro daný cíl děje sestavení. `$(TargetFramework)` v podmínce je vlastnost MSBuild, která je nastavena v projektu. Pro většinu běžných aplikací .NET Core to nebudete potřebovat.
+Závislost v předchozím příkladu bude platná pouze v případě, že se pro daný cíl děje sestavení. `$(TargetFramework)` v podmínce je vlastnost MSBuild, která je nastavena v projektu. Pro většinu běžných aplikací .NET Core to nemusíte dělat.
 
-## <a name="add-a-dependency-to-the-project"></a>Přidat závislost do projektu
+## <a name="add-a-dependency-by-editing-the-project-file"></a>Přidat závislost úpravou souboru projektu
 
-Přidání závislosti do projektu je jednoduché. Tady je příklad, jak přidat Json.NET verze `9.0.1` do projektu. Samozřejmě platí pro všechny ostatní závislosti NuGet.
-
-Soubor projektu má dva nebo více `<ItemGroup>` uzlů. Jeden z uzlů již obsahuje `<PackageReference>` prvky. Do tohoto uzlu můžete přidat novou závislost nebo vytvořit novou. výsledek bude stejný.
-
-Následující příklad používá výchozí šablonu, která je zahozena `dotnet new console`. Toto je jednoduchá Konzolová aplikace. Když otevřete projekt, najdete `<ItemGroup>` s již existujícím `<PackageReference>`em. Přidejte do něj následující:
+Chcete-li přidat závislost, přidejte `<PackageReference>` element uvnitř elementu `<ItemGroup>`. Můžete přidat do existujícího `<ItemGroup>` nebo vytvořit nový. Následující příklad používá výchozí projekt konzolové aplikace, který je vytvořen pomocí `dotnet new console`:
 
 ```xml
-<PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
-```
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
-Potom uložte projekt a spusťte příkaz `dotnet restore` pro instalaci závislosti.
-
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
-
-Úplný projekt vypadá takto:
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
   </ItemGroup>
+
 </Project>
 ```
 
-## <a name="remove-a-dependency-from-the-project"></a>Odebrat závislost z projektu
+## <a name="add-a-dependency-by-using-the-cli"></a>Přidání závislosti pomocí rozhraní příkazového řádku
 
-Odebrání závislosti ze souboru projektu zahrnuje pouhou odebrání `<PackageReference>` ze souboru projektu.
+Chcete-li přidat závislost, spusťte příkaz [dotnet add package](dotnet-add-package.md) , jak je znázorněno v následujícím příkladu:
+
+```dotnetcli
+dotnet add package Microsoft.EntityFrameworkCore
+```
+
+## <a name="remove-a-dependency-by-editing-the-project-file"></a>Odstranění závislosti úpravou souboru projektu
+
+Chcete-li odebrat závislost, odeberte její `<PackageReference>` element ze souboru projektu.
+
+## <a name="remove-a-dependency-by-using-the-cli"></a>Odebrání závislosti pomocí rozhraní příkazového řádku
+
+Chcete-li odebrat závislost, spusťte příkaz [dotnet remove package](dotnet-remove-package.md) , jak je znázorněno v následujícím příkladu:
+
+```dotnetcli
+dotnet remove package Microsoft.EntityFrameworkCore
+```
+
+## <a name="see-also"></a>Viz také
+
+* [Balíčky NuGet v souborech projektu](../project-sdk/msbuild-props.md#nuget-packages)
+* [dotnet list package – příkaz](dotnet-remove-package.md)

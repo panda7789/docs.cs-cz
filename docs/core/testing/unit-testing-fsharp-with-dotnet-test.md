@@ -4,12 +4,12 @@ description: Seznamte se s koncepty F# testování částí v .NET Core pomocí 
 author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.openlocfilehash: 9cf301533046951f8fd3f9829afabadf6bba3d64
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5fe4a8faddd87334439513368f24d808abc58e65
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715433"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157307"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -82,7 +82,7 @@ Máte následující konečné rozložení řešení:
         MathServiceTests.fsproj
 ```
 
-Spusťte `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` v adresáři *Unit-Testing-with-FSharp* . 
+Spusťte `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` v adresáři *Unit-Testing-with-FSharp* .
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
@@ -158,15 +158,15 @@ Test můžete vyřešit tak, že provedete vyfiltrování filtrované sekvence p
 let private square x = x * x
 let private isOdd x = x % 2 <> 0
 
-let squaresOfOdds xs = 
-    xs 
-    |> Seq.filter isOdd 
+let squaresOfOdds xs =
+    xs
+    |> Seq.filter isOdd
     |> Seq.map square
 ```
 
 Vytvořili jste malou knihovnu a sadu testů jednotek pro tuto knihovnu. Rozpracovali jste řešení, aby přidávání nových balíčků a testů bylo součástí normálního pracovního postupu. Vyrostli jste většinu času a úsilí při řešení cílů aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [dotnet new](../tools/dotnet-new.md)
 - [dotnet run](../tools/dotnet-new.md)

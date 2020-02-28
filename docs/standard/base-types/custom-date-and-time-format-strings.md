@@ -14,12 +14,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 87436b7d9e2041afb14b146ae0c16201c8593154
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b33366922677b26f8fe99454206cacd5bb124f32
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348297"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159270"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
@@ -30,7 +30,7 @@ Formátovací řetězec data a času definuje textovou reprezentaci hodnoty <xre
 
 Vlastní řetězce formátu data a času lze použít s hodnotami <xref:System.DateTime> i <xref:System.DateTimeOffset>.
 
-[!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-utc-partial-note.md)] 
+[!INCLUDE[C# interactive-note](~/includes/csharp-interactive-with-utc-partial-note.md)]
 
 <a name="table"></a>V operacích formátování lze použít vlastní formátovací řetězce data a času buď s metodou `ToString` instance data a času, nebo s metodou, která podporuje složené formátování. Následující příklad znázorňuje oba způsoby použití.
 
@@ -398,7 +398,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "M" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#11](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#11)]
 [!code-vb[Formatting.DateAndTime.Custom#11](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#11)]
 
-[Zpět na tabulku](#table) 
+[Zpět na tabulku](#table)
 
 ## <a name="MM_Specifier"></a>Specifikátor vlastního formátu "MM"
 
@@ -627,10 +627,10 @@ Následující znaky v řetězci vlastního formátu data a času jsou vyhrazeny
 
 ||||||
 |-|-|-|-|-|
-|F|H|Síťový|M|společnosti|
+|F|H|K|M|d|
 |f|G|h|m|s|
-|t|y|z|%|:|
-|/|"|tokenu prostředku|&#92;||
+|t|Y|z|%|:|
+|/|.|'|&#92;||
 
 Všechny ostatní znaky jsou vždy interpretovány jako znakové literály a v operaci formátování jsou zahrnuty ve výsledném řetězci beze změny.  V operaci analýzy musí přesně odpovídat znakům ve vstupním řetězci; Porovnávání rozlišuje velká a malá písmena.
 
@@ -653,7 +653,7 @@ Následující příklad obsahuje literálové znaky "PST" (pro Tichomoří (bě
 [!code-csharp[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
 [!code-vb[Formatting.DateAndTime.Custom#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
 
-## <a name="notes"></a>Poznámky
+## <a name="notes"></a>Poznámky:
 
 ### <a name="UsingSingleSpecifiers"></a>Použití jednoduchých specifikátorů vlastního formátu
 
@@ -692,7 +692,7 @@ Formátování je ovlivněno vlastnostmi aktuálního objektu <xref:System.Globa
 
 Výsledný řetězec vytvořený mnoha specifikátory vlastního formátu data a času závisí také na vlastnostech aktuálního objektu <xref:System.Globalization.DateTimeFormatInfo>. Vaše aplikace může změnit výsledek vytvořený některými vlastními specifikátory formátu data a času změnou odpovídající vlastnosti <xref:System.Globalization.DateTimeFormatInfo>. Například specifikátor formátu "ddd" přidá zkrácený název dne v týdnu nalezený v poli <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A> řetězců k výslednému řetězci. Podobně specifikátor formátu "MMMM" přidá úplný název měsíce nalezený v poli <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A> řetězců k výslednému řetězci.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.IFormatProvider?displayProperty=nameWithType>

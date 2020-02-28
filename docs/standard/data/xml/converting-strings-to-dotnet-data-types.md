@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: ac7e1b68f3f43a0c84c7330666825207e5b90004
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e54990785cafd6061c6d53c13af6476a4b46e20e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711048"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160349"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na datové typy rozhraní .NET Framework
 Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **XmlConvert** , která odpovídá požadavkům aplikace. Seznam všech metod převodu, které jsou k dispozici ve třídě **XmlConvert** , naleznete v tématu <xref:System.Xml.XmlConvert>.  
@@ -22,13 +22,13 @@ Chcete-li převést řetězec na datový typ .NET Framework, použijte metodu **
   
 |Typ rozhraní .NET Framework|Vrácený řetězec|  
 |-------------------------|---------------------|  
-|Boolean|"pravda", "NEPRAVDA"|  
+|Logická hodnota|"pravda", "NEPRAVDA"|  
 |Single. PositiveInfinity|"INF"|  
 |Single. NegativeInfinity|"-INF"|  
 |Double. PositiveInfinity|"INF"|  
 |Double. NegativeInfinity|"-INF"|  
-|Datum a čas|Formát je "rrrr-MM-ddTHH: mm: sszzzzzz" a jeho podmnožiny.|  
-|Časový rozsah|Formát je PnYnMnTnHnMnS, což je, `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
+|DateTime|Formát je "rrrr-MM-ddTHH: mm: sszzzzzz" a jeho podmnožiny.|  
+|Časový interval|Formát je PnYnMnTnHnMnS, což je, `P2Y10M15DT10H30M20S` je doba 2 roky, 10 měsíců, 15 dní, 10 hodin, 30 minut a 20 sekund.|  
   
 > [!NOTE]
 > Pokud převedete některý z .NET Framework typů uvedených v tabulce na řetězec pomocí metody **ToString** , vrácený řetězec není základní typ, ale typ řetězce XML Schema (XSD).  
@@ -47,7 +47,7 @@ DateTime date = new DateTime (2001, 08, 04);
 writer.WriteElementString("Date", XmlConvert.ToString(date));  
 ```  
   
- **Output**  
+ **Výstup**  
   
  `<Date>2001-08-04T00:00:00</Date>`.  
   
@@ -65,7 +65,7 @@ Int32 value = 200;
 writer.WriteElementString("Number", XmlConvert.ToString(value));  
 ```  
   
- **Output**  
+ **Výstup**  
   
  `<Number>200</Number>`  
   
@@ -77,17 +77,17 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
 |Platný vstupní parametr řetězce|Typ výstupu .NET Framework|  
 |----------------------------------|--------------------------------|  
 |„true“|Logická hodnota. true|  
-|"1"|Logická hodnota. true|  
+|1|Logická hodnota. true|  
 |„false“|Boolean. false|  
 |"0"|Boolean. false|  
   
  Například s ohledem na následující kód XML:  
   
- **Vstup**  
+ **Input** (Vstup)  
   
 ```xml  
 <Boolean>true</Boolean>  
-<Boolean>1</Boolean>   
+<Boolean>1</Boolean>
 ```  
   
  Obojí lze chápat pomocí následujícího kódu a **bValue** je **System. Boolean. true**:  
@@ -131,7 +131,7 @@ Double value = Double.PositiveInfinity;
 writer.WriteElementString("Infinity", XmlConvert.ToString(value));  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
 - [Převádění typů rozhraní .NET Framework na řetězce](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

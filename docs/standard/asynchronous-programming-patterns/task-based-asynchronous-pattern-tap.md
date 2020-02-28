@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
-ms.openlocfilehash: f61ad49753da9d96e733ea667095722ddc238fe1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 89c486618729c334bf74f0a1f4f9dd1b3cee8b0e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121102"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78158165"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Asynchronní vzor založený na úlohách (klepnutím)
 Asynchronní vzor založený na úlohách (klepněte) je založen na <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> typech v oboru názvů <xref:System.Threading.Tasks?displayProperty=nameWithType>, které slouží k reprezentaci libovolných asynchronních operací. TAP je doporučený asynchronní návrh vzoru pro nový vývoj.  
@@ -29,7 +29,7 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
  Metoda klepnutí vrátí buď <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, nebo <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>, na základě toho, zda odpovídající synchronní metoda vrátí typ void nebo typ `TResult`.  
   
  Parametry metody klepnutí by měly odpovídat parametrům jeho synchronního protějšku a měly by být zadány ve stejném pořadí.  Parametry `out` a `ref` však nejsou z tohoto pravidla vyňaty a je třeba se jim vyhnout zcela. Všechna data, která by byla vrácena pomocí `out` nebo `ref` parametru, by měla být vrácena jako součást `TResult` vrácená <xref:System.Threading.Tasks.Task%601>a měla by použít řazenou kolekci členů nebo vlastní datovou strukturu pro přizpůsobení více hodnot. Měli byste také zvážit přidání parametru <xref:System.Threading.CancellationToken> i v případě, že se synchronní protějšek metody klepnutí na ni nenabídne.
- 
+
  Metody, které jsou odčleněny výhradně na vytváření, manipulaci nebo kombinaci úloh (kde je asynchronní záměr metody jasný v názvu metody nebo v názvu typu, ke kterému patří metoda), nemusí následovat po tomto vzoru názvů. Tyto metody jsou často označovány jako *kombinátory*. Příklady kombinátory zahrnují <xref:System.Threading.Tasks.Task.WhenAll%2A> a <xref:System.Threading.Tasks.Task.WhenAny%2A>a jsou popsány v tématu [použití integrovaného oddílu založeného na úlohách kombinátory](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md#combinators) článku, který [spotřebovává asynchronní vzor založený na úlohách](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md).  
   
  Příklady, jak se syntaxe klepnutí liší od syntaxe používané v zastaralých asynchronních vzorech programování, jako je asynchronní programovací model (APM) a asynchronní vzor založený na událostech (EAP), naleznete v tématu [asynchronní programovací vzory](../../../docs/standard/asynchronous-programming-patterns/index.md).  
@@ -48,12 +48,12 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
   
 ## <a name="target-environment"></a>Cílové prostředí  
  Při implementaci metody TAP můžete určit, kde dochází k asynchronnímu spouštění. Úlohy můžete spouštět ve fondu vláken, implementovat je pomocí asynchronního I/O (bez vázání na vlákno pro většinu spuštění operace), spustit je na konkrétním vlákně (například vlákně UI) nebo použít libovolný počet potenciálních kontextů. Metoda klepnutí může dokonce mít nic ke spuštění a může vrátit <xref:System.Threading.Tasks.Task>, která představuje výskyt podmínky jinde v systému (například úkol, který představuje data přicházející do struktury dat zařazené do fronty).
- 
+
  Volající metody klepnutí může blokovat čekání na provedení metody klepnutí synchronním čekáním na výsledný úkol nebo může spustit další (pokračování) kód po dokončení asynchronní operace. Tvůrce kódu pokračování má kontrolu nad tím, kde se spustí kód. Kód pro pokračování můžete vytvořit buď explicitně, prostřednictvím metod <xref:System.Threading.Tasks.Task> třídy (například <xref:System.Threading.Tasks.Task.ContinueWith%2A>) nebo implicitně pomocí jazykové podpory založené na pokračováních (například `await` v C#`Await` Visual Basic `AwaitValue` v F#).  
   
 ## <a name="task-status"></a>Stav úlohy  
- Třída <xref:System.Threading.Tasks.Task> poskytuje životní cyklus pro asynchronní operace a tento cyklus je reprezentován výčtem <xref:System.Threading.Tasks.TaskStatus>. Pro podporu rohových případů typů, které jsou odvozeny z <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601>a pro podporu oddělení konstrukce od plánování, třída <xref:System.Threading.Tasks.Task> zpřístupňuje metodu <xref:System.Threading.Tasks.Task.Start%2A>. Úlohy, které jsou vytvořeny pomocí veřejných <xref:System.Threading.Tasks.Task> konstruktory, jsou označovány jako *studené úlohy*, protože začínají jejich životní cyklus v neplánovaném <xref:System.Threading.Tasks.TaskStatus.Created> stavu a jsou plánovány pouze v případě, že je na těchto instancích volána <xref:System.Threading.Tasks.Task.Start%2A>. 
- 
+ Třída <xref:System.Threading.Tasks.Task> poskytuje životní cyklus pro asynchronní operace a tento cyklus je reprezentován výčtem <xref:System.Threading.Tasks.TaskStatus>. Pro podporu rohových případů typů, které jsou odvozeny z <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601>a pro podporu oddělení konstrukce od plánování, třída <xref:System.Threading.Tasks.Task> zpřístupňuje metodu <xref:System.Threading.Tasks.Task.Start%2A>. Úlohy, které jsou vytvořeny pomocí veřejných <xref:System.Threading.Tasks.Task> konstruktory, jsou označovány jako *studené úlohy*, protože začínají jejich životní cyklus v neplánovaném <xref:System.Threading.Tasks.TaskStatus.Created> stavu a jsou plánovány pouze v případě, že je na těchto instancích volána <xref:System.Threading.Tasks.Task.Start%2A>.
+
  Všechny ostatní úlohy zahájí svůj životní cyklus v horkém stavu, což znamená, že asynchronní operace, které představují, již byly iniciovány a jejich stav úlohy je jiná hodnota výčtu než <xref:System.Threading.Tasks.TaskStatus.Created?displayProperty=nameWithType>. Všechny úlohy, které jsou vráceny z metod TAP, musí být aktivovány. **Pokud metoda klepnutí interně používá konstruktor úkolu k vytvoření instance úkolu, který má být vrácen, metoda klepnutí musí volat <xref:System.Threading.Tasks.Task.Start%2A> na objektu <xref:System.Threading.Tasks.Task> před jeho vrácením.** Příjemci metody klepnutí můžou bezpečně předpokládat, že vrácená úloha je aktivní a neměla by se pokoušet o volání <xref:System.Threading.Tasks.Task.Start%2A> na všech <xref:System.Threading.Tasks.Task>, které se vrátí z metody klepnutí. Volání <xref:System.Threading.Tasks.Task.Start%2A> na aktivní úloze má za následek výjimku <xref:System.InvalidOperationException>.  
   
 ## <a name="cancellation-optional"></a>Zrušení (volitelné)  
@@ -64,15 +64,15 @@ TAP používá jedinou metodu k reprezentaci zahájení a dokončení asynchronn
   
  Asynchronní operace sleduje tento token kvůli žádostem o zrušení. Pokud obdrží žádost o zrušení, může vyhovět žádosti a operaci zrušit. Pokud výsledkem požadavku na zrušení je předčasně ukončena práce, metoda klepnutí vrátí úlohu, která skončí ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled>. k dispozici není žádný výsledek a není vyvolána žádná výjimka.  <xref:System.Threading.Tasks.TaskStatus.Canceled> stav se považuje za konečný (dokončený) stav úlohy společně s <xref:System.Threading.Tasks.TaskStatus.Faulted> a <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> stavy. Proto pokud je úkol ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled>, jeho vlastnost <xref:System.Threading.Tasks.Task.IsCompleted%2A> vrátí `true`. Když se úloha dokončí ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled>, všechna pokračování zaregistrovaná v rámci úlohy se naplánují nebo spustí, pokud není možnost pokračování, jako je třeba <xref:System.Threading.Tasks.TaskContinuationOptions.NotOnCanceled>, nedošlo k odhlášení z pokračování. Jakýkoli kód, který asynchronně čeká na zrušený úkol prostřednictvím použití funkcí jazyka, pokračuje v běhu, ale přijímá <xref:System.OperationCanceledException> nebo výjimku z něj odvozenou. Kód, který je blokován synchronně čekáním na úlohu prostřednictvím metod, jako je například <xref:System.Threading.Tasks.Task.Wait%2A> a <xref:System.Threading.Tasks.Task.WaitAll%2A> také i nadále běžet s výjimkou.  
   
- Pokud token zrušení požadoval zrušení před tím, než je volána metoda klepnutí, která přijímá tento token, metoda klepnutí by měla vrátit úlohu <xref:System.Threading.Tasks.TaskStatus.Canceled>.  Pokud je však požadováno zrušení při spuštěné asynchronní operaci, asynchronní operace nemusí přijmout žádost o zrušení.  Vrácený úkol by měl končit ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled> pouze v případě, že operace skončí v důsledku požadavku na zrušení. Pokud je požadováno zrušení, ale výsledek nebo výjimka jsou stále vyprodukovány, úloha by měla skončit ve <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> nebo <xref:System.Threading.Tasks.TaskStatus.Faulted>m stavu. 
- 
+ Pokud token zrušení požadoval zrušení před tím, než je volána metoda klepnutí, která přijímá tento token, metoda klepnutí by měla vrátit úlohu <xref:System.Threading.Tasks.TaskStatus.Canceled>.  Pokud je však požadováno zrušení při spuštěné asynchronní operaci, asynchronní operace nemusí přijmout žádost o zrušení.  Vrácený úkol by měl končit ve stavu <xref:System.Threading.Tasks.TaskStatus.Canceled> pouze v případě, že operace skončí v důsledku požadavku na zrušení. Pokud je požadováno zrušení, ale výsledek nebo výjimka jsou stále vyprodukovány, úloha by měla skončit ve <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> nebo <xref:System.Threading.Tasks.TaskStatus.Faulted>m stavu.
+
  Pro asynchronní metody, které chtějí vystavit možnost zrušit první a nejpřednější, nemusíte poskytovat přetížení, které nepřijímá token zrušení. Pro metody, které nelze zrušit, neposkytujte přetížení, která přijímají token zrušení. To pomáhá volajícímu určit, zda je skutečně možné zrušit cílovou metodu.  Kód příjemce, který není žádoucí pro zrušení, může volat metodu, která přijímá <xref:System.Threading.CancellationToken> a jako hodnotu argumentu zadat <xref:System.Threading.CancellationToken.None%2A>. <xref:System.Threading.CancellationToken.None%2A> je funkčně ekvivalentní výchozímu <xref:System.Threading.CancellationToken>.  
   
 ## <a name="progress-reporting-optional"></a>Vytváření sestav průběhu (volitelné)  
- Některé asynchronní operace těží z poskytování oznámení o průběhu. Ta se obvykle používají k aktualizaci uživatelského rozhraní informacemi o průběhu asynchronní operace. 
- 
- V klepněte, průběh je zpracován prostřednictvím rozhraní <xref:System.IProgress%601>, které je předáno asynchronní metodě jako parametr, který je obvykle pojmenován `progress`.  Poskytnutí rozhraní průběhu při volání asynchronní metody pomáhá eliminovat konflikty časování, které jsou výsledkem nesprávného použití (to znamená, když obslužným rutinám, které jsou nesprávně zaregistrovány po zahájení operace, chybí aktualizace).  Důležitější je, že rozhraní průběhu podporuje různé implementace průběhu podle náročnosti kódu.  Náročný kód se bude například starat pouze o nejnovější aktualizaci průběhu nebo může chtít mít všechny aktualizace ve vyrovnávací paměti nebo může chtít vyvolat akci pro každou aktualizaci nebo může chtít řídit, zda je volání zařazeno do konkrétního vlákna. Všech těchto možností lze dosáhnout pomocí různých implementací rozhraní přizpůsobených potřebám konkrétního příjemce.  Stejně jako u zrušení, klepnutí na implementace by měly poskytnout parametr <xref:System.IProgress%601>, pouze pokud rozhraní API podporuje oznámení o průběhu. 
- 
+ Některé asynchronní operace těží z poskytování oznámení o průběhu. Ta se obvykle používají k aktualizaci uživatelského rozhraní informacemi o průběhu asynchronní operace.
+
+ V klepněte, průběh je zpracován prostřednictvím rozhraní <xref:System.IProgress%601>, které je předáno asynchronní metodě jako parametr, který je obvykle pojmenován `progress`.  Poskytnutí rozhraní průběhu při volání asynchronní metody pomáhá eliminovat konflikty časování, které jsou výsledkem nesprávného použití (to znamená, když obslužným rutinám, které jsou nesprávně zaregistrovány po zahájení operace, chybí aktualizace).  Důležitější je, že rozhraní průběhu podporuje různé implementace průběhu podle náročnosti kódu.  Náročný kód se bude například starat pouze o nejnovější aktualizaci průběhu nebo může chtít mít všechny aktualizace ve vyrovnávací paměti nebo může chtít vyvolat akci pro každou aktualizaci nebo může chtít řídit, zda je volání zařazeno do konkrétního vlákna. Všech těchto možností lze dosáhnout pomocí různých implementací rozhraní přizpůsobených potřebám konkrétního příjemce.  Stejně jako u zrušení, klepnutí na implementace by měly poskytnout parametr <xref:System.IProgress%601>, pouze pokud rozhraní API podporuje oznámení o průběhu.
+
  Pokud například metoda `ReadAsync` popsaná výše v tomto článku dokáže podávat sestavy o mezilehlém pokroku ve formě počtu přečtených bajtů, může zpětné volání průběhu představovat <xref:System.IProgress%601> rozhraní:  
   
  [!code-csharp[Conceptual.TAP#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap/cs/examples1.cs#2)]
@@ -122,16 +122,16 @@ End Class
 ```csharp  
 public Task MethodNameAsync(…);  
 public Task MethodNameAsync(…, CancellationToken cancellationToken);  
-public Task MethodNameAsync(…, IProgress<T> progress);   
-public Task MethodNameAsync(…,   
+public Task MethodNameAsync(…, IProgress<T> progress);
+public Task MethodNameAsync(…,
     CancellationToken cancellationToken, IProgress<T> progress);  
 ```  
   
 ```vb  
 Public MethodNameAsync(…) As Task  
 Public MethodNameAsync(…, cancellationToken As CancellationToken cancellationToken) As Task  
-Public MethodNameAsync(…, progress As IProgress(Of T)) As Task   
-Public MethodNameAsync(…, cancellationToken As CancellationToken,   
+Public MethodNameAsync(…, progress As IProgress(Of T)) As Task
+Public MethodNameAsync(…, cancellationToken As CancellationToken,
                        progress As IProgress(Of T)) As Task  
 ```  
   
@@ -171,13 +171,13 @@ Public MethodNameAsync(…, progress As IProgress(Of T)) As Task
   
 ```csharp  
 public Task MethodNameAsync(…);  
-public Task MethodNameAsync(…,   
+public Task MethodNameAsync(…,
     CancellationToken cancellationToken, IProgress<T> progress);  
 ```  
   
 ```vb  
 Public MethodNameAsync(…) As Task  
-Public MethodNameAsync(…, cancellationToken As CancellationToken,   
+Public MethodNameAsync(…, cancellationToken As CancellationToken,
                        progress As IProgress(Of T)) As Task  
 ```  
   
@@ -187,7 +187,7 @@ Public MethodNameAsync(…, cancellationToken As CancellationToken,
   
  Pokud se rozhodnete vystavit více přetížení, aby bylo zrušení nebo průběh volitelné, přetížení, která nepodporují zrušení nebo průběh, by se měla chovat, jako by byla předána <xref:System.Threading.CancellationToken.None%2A> pro zrušení nebo `null` pro průběh přetížení, který je podporuje.  
   
-## <a name="related-topics"></a>Příbuzná témata  
+## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |-----------|-----------------|  

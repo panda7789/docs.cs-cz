@@ -1,14 +1,14 @@
 ---
 title: C#Pole – prohlídka C# jazyka
 description: Pole jsou nejzákladnější typ kolekce v C# jazyce.
-ms.date: 08/10/2016
+ms.date: 02/27/2020
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
-ms.openlocfilehash: 195df1f31c71ee7a202a3b57076775c4f717d399
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 3e045c0933a21beab6958c7851546ba6e0b55ef9
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77673313"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159192"
 ---
 # <a name="arrays"></a>Pole
 
@@ -35,11 +35,11 @@ Operátor New umožňuje zadat počáteční hodnoty prvků pole pomocí ***inic
 
 [!code-csharp[ArrayInitialization](../../../samples/snippets/csharp/tour/arrays/Program.cs#L39-L39)]
 
-Všimněte si, že délka pole je odvozená od počtu výrazů mezi {a}. Deklarace lokální proměnné a pole lze dále zkrátit tak, aby se typ pole nemuselo přestavit.
+Délka pole je odvozená od počtu výrazů mezi {a}. Deklarace lokální proměnné a pole lze dále zkrátit tak, aby se typ pole nemuselo přestavit.
 
 [!code-csharp[ArrayInitialization](../../../samples/snippets/csharp/tour/arrays/Program.cs#L44-L44)]
 
-Oba předchozí příklady jsou ekvivalentní následujícímu:
+Oba předchozí příklady jsou ekvivalentní následujícímu kódu:
 
 [!code-csharp[ArrayAssignment](../../../samples/snippets/csharp/tour/arrays/Program.cs#L49-L53)]
 

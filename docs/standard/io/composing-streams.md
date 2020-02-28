@@ -13,15 +13,15 @@ helpviewer_keywords:
 - base streams
 - streams, backing stores
 ms.assetid: da761658-a535-4f26-a452-b30df47f73d5
-ms.openlocfilehash: 689cc9537cd7a5fe6a677d42e5790bbcf1b3aefa
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3f18712793254f4942c092c87a3e64c73b492ae0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708145"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160102"
 ---
 # <a name="compose-streams"></a>Vytváření datových proudů
-*Záložní úložiště* je úložné médium, například disk nebo paměť. Každé jiné záložní úložiště implementuje svůj vlastní Stream jako implementaci třídy <xref:System.IO.Stream>. 
+*Záložní úložiště* je úložné médium, například disk nebo paměť. Každé jiné záložní úložiště implementuje svůj vlastní Stream jako implementaci třídy <xref:System.IO.Stream>.
 
 Každý typ datového proudu čte a zapisuje bajty z a do daného záložního úložiště. Streamy, které se připojují k záložním úložištím, se nazývají *základní proudy* Základní datové proudy mají konstruktory s parametry nezbytnými pro připojení datového proudu k záložnímu úložišti. Například <xref:System.IO.FileStream> obsahuje konstruktory, které určují parametr cesty, který určuje, jak bude soubor sdílen procesy.  
 
@@ -44,7 +44,7 @@ Následující příklad vytvoří <xref:System.IO.BinaryReader> pro čtení baj
  [!code-csharp[System.IO.StreamReader#21](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/source3.cs#21)]
  [!code-vb[System.IO.StreamReader#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/source3.vb#21)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.StreamReader>
 - <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>

@@ -3,12 +3,12 @@ title: Volba mezi .NET Core a .NET Framework serverových aplikací
 description: Průvodce implementací rozhraní .NET, který byste měli zvážit při vytváření serverové aplikace v .NET.
 author: cartermp
 ms.date: 06/19/2018
-ms.openlocfilehash: c202e42a46c4a72bdceca1fb250170d381603a8d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 0b6bf4c2eb66aa4de497923a0a16b65a955ba6fc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124621"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159972"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -75,7 +75,7 @@ Ve většině případů nemusíte migrovat stávající aplikace do .NET Core. 
 
 Knihovny jsou rychle přechodu .NET Standard. .NET Standard umožňuje sdílení kódu napříč všemi implementacemi .NET, včetně .NET Core. S .NET Standard 2,0 je to ještě snazší:
 
-- Plocha rozhraní API se stala mnohem větší. 
+- Plocha rozhraní API se stala mnohem větší.
 - Byl zaveden režim kompatibility .NET Framework. Tento režim kompatibility umožňuje projektům .NET Standard/. NET Core odkazovat na .NET Framework knihovny. Další informace o režimu kompatibility naleznete v tématu [oznamujeme .NET Standard 2,0](https://devblogs.microsoft.com/dotnet/announcing-net-standard-2-0/).
 
 Takže v případě, že knihovny nebo balíčky NuGet využívají technologie, které nejsou dostupné v .NET Standard/. NET Core, je nutné použít .NET Framework.
@@ -86,7 +86,7 @@ Některé technologie .NET Framework nejsou dostupné v .NET Core. Některé z n
 
 - ASP.NET webové formuláře aplikace: webové formuláře ASP.NET jsou k dispozici pouze v .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Neexistují žádné plány k převedení ASP.NET webových formulářů do .NET Core.
 
-- ASP.NET webové stránky aplikace: webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core. 
+- ASP.NET webové stránky aplikace: webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core.
 
 - Implementace služeb WCF. I když existuje [Knihovna WCF-Client](https://github.com/dotnet/wcf) ke využívání služeb WCF z .NET Core, implementace serveru WCF je aktuálně dostupná jenom v .NET Framework. Tento scénář není součástí aktuálního plánu pro .NET Core, ale je považován za budoucí.
 

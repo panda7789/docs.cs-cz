@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 0583329ae75fa54cf000212479895ccebdbd30d8
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: a7e03a833886a1486e0dc081d6ef059791a464b5
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74142053"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156332"
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -70,7 +70,7 @@ Tělo metody sestává ze dvou bloků kódu:
   
   **Spravované objekty, které využívají velké množství paměti nebo využívají omezených prostředky.** Uvolnění těchto objektů explicitně v metodě `Dispose` uvolní je rychleji, než kdyby byly uvolněny nedeterministické systémem uvolňování paměti.  
   
-Pokud volání metody pochází z finalizační metody ( *to znamená, pokud je* zrušení `false`), spustí se pouze kód, který uvolní nespravované prostředky. Protože pořadí, ve kterém uvolňování paměti ničí spravované objekty během finalizace není definováno, voláním tohoto `Dispose` přetížení s hodnotou `false` zabrání finalizačnímu programu v pokusu o vydání spravovaných prostředků, které již mohly být uvolnit.  
+Pokud volání metody pochází z finalizační metody ( *to znamená, pokud je* zrušení `false`), spustí se pouze kód, který uvolní nespravované prostředky. Protože pořadí, ve kterém uvolňování paměti ničí spravované objekty během finalizace není definováno, voláním tohoto `Dispose` přetížení s hodnotou `false` zabrání finalizačnímu programu v pokusu o vydání spravovaných prostředků, které mohou být již uvolněny.  
   
 ## <a name="implementing-the-dispose-pattern-for-a-base-class"></a>Implementace vzoru Dispose pro základní třídu
 
@@ -125,7 +125,7 @@ Zde je obecný vzor pro implementaci vzoru dispose pro odvozenou třídu, která
 > [!NOTE]
 > V C#můžete přepsat <xref:System.Object.Finalize%2A?displayProperty=nameWithType> definováním [destruktoru](../../csharp/programming-guide/classes-and-structs/destructors.md).  
   
-<a name="SafeHandles"></a>   
+<a name="SafeHandles"></a>
 ## <a name="using-safe-handles"></a>Používání bezpečných popisovačů
 
 Psaní kódu pro finalizační metodu objektu je složitý úkol, který může způsobit problémy, není-li prováděn správně. Proto doporučujeme sestavit <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> objektů namísto implementace finalizační metody.  
@@ -142,7 +142,7 @@ Třídy odvozené od třídy <xref:System.Runtime.InteropServices.SafeHandle?dis
   
 - Třída <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> pro obslužné rutiny čekání.  
   
-<a name="base"></a>   
+<a name="base"></a>
 ## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-base-class"></a>Používání bezpečného popisovače pro implementaci vzoru Dispose pro základní třídu
 
 Následující příklad znázorňuje vzor Dispose pro základní třídu, `DisposableStreamResource`, která používá bezpečný popisovač k zapouzdření nespravovaných prostředků. Definuje třídu `DisposableResource`, která používá <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> k zabalení <xref:System.IO.Stream>ho objektu, který představuje otevřený soubor. Metoda `DisposableResource` také obsahuje jedinou vlastnost `Size`, která vrátí celkový počet bajtů v datovém proudu souboru.  
@@ -150,7 +150,7 @@ Následující příklad znázorňuje vzor Dispose pro základní třídu, `Disp
 [!code-csharp[Conceptual.Disposable#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/base1.cs#9)]
 [!code-vb[Conceptual.Disposable#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/base1.vb#9)]  
   
-<a name="derived"></a>   
+<a name="derived"></a>
 ## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-derived-class"></a>Používání bezpečného popisovače pro implementaci vzoru Dispose pro odvozenou třídu
 
 Následující příklad znázorňuje vzor Dispose pro odvozenou třídu, `DisposableStreamResource2`, která dědí z třídy `DisposableStreamResource` prezentované v předchozím příkladu. Třída přidá další metodu, `WriteFileInfo`a pomocí objektu <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> zabalí popisovač zapisovatelného souboru.  
@@ -158,7 +158,7 @@ Následující příklad znázorňuje vzor Dispose pro odvozenou třídu, `Dispo
 [!code-csharp[Conceptual.Disposable#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/derived1.cs#10)]
 [!code-vb[Conceptual.Disposable#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/derived1.vb#10)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.GC.SuppressFinalize%2A>
 - <xref:System.IDisposable>

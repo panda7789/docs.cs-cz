@@ -11,12 +11,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 427550e1fbeb38cefbb4afe97d80e198ac2d6cb0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: adda4ed2ab5c59e3518b8e724044529a79840ad0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127637"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156475"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Postupy: odkazování na sestavení se silným názvem
 Proces pro odkazování na typy nebo prostředky v sestavení se silným názvem je obvykle transparentní. Odkaz lze vytvořit buď v době kompilace (počáteční vazba), nebo v době běhu.  
@@ -28,7 +28,7 @@ K referenci v době kompilace dojde, když označíte kompilátor, že sestaven�
   
 ## <a name="make-a-compile-time-reference-to-a-strong-named-assembly"></a>Vytvoření odkazu na sestavení v čase kompilace na sestavení se silným názvem  
 
-Na příkazovém řádku zadejte následující příkaz:  
+Do příkazového řádku zadejte následující příkaz:  
 
 \<*příkaz kompilátoru*>  **/Reference:** \<*název sestavení*>  
 
@@ -49,7 +49,7 @@ Když vytvoříte odkaz na sestavení se silným názvem, například pomocí me
 Příklad:  
 
 ```console
-myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33   
+myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33
 ```  
 
 V tomto příkladu je `PublicKeyToken` hexadecimální formou tokenu veřejného klíče. Pokud není k dispozici žádná hodnota jazykové verze, použijte `Culture=neutral`.  
@@ -79,6 +79,6 @@ Pokud máte soubor s veřejným klíčem, můžete místo toho použít následu
 
 **sn-tp \<** *soubor veřejného klíče* **>**  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)

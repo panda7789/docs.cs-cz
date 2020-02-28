@@ -13,25 +13,25 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: ae0ba0bf15b6a02df5130d34d277322897826697
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b1ec8cfc0f8c6e660d716c51bf3c3387b73a278f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338516"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159309"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 
 Funkce složeného formátování .NET přebírá seznam objektů a složený řetězec formátu jako vstup. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
   
 > [!IMPORTANT]
-> Namísto použití složených formátovacích řetězců můžete použít *interpolované řetězce* , pokud jazyk a jazykovou verzi, kterou používáte, podporuje. Interpolovaný řetězec je řetězec, který obsahuje *interpolovaných výrazů*. Každý interpolovaný výraz je přeložit výraz hodnotu a zahrnuté ve výsledném řetězci, když se přiřadí řetězec. Další informace naleznete v tématu [interpolace řetězce (C# referenční)](../../csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (Visual Basic odkaz)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Namísto použití složených formátovacích řetězců můžete použít *interpolované řetězce* , pokud jazyk a jazykovou verzi, kterou používáte, podporuje. Interpolovaná řetězcová událost je řetězec, který obsahuje *interpolované výrazy*. Každý interpolovaný výraz je přeložit výraz hodnotu a zahrnuté ve výsledném řetězci, když se přiřadí řetězec. Další informace naleznete v tématu [interpolace řetězce (C# referenční)](../../csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (Visual Basic odkaz)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 Funkce složeného formátování je podporována například následujícími metodami:  
   
 - <xref:System.String.Format%2A?displayProperty=nameWithType>, která vrací formátovaný výsledný řetězec.  
   
-- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, která připojí formátovaný výsledný řetězec k objektu <xref:System.Text.StringBuilder>.   
+- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, která připojí formátovaný výsledný řetězec k objektu <xref:System.Text.StringBuilder>.
 - Některá přetížení metody <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, která zobrazuje formátovaný výsledný řetězec do konzoly.  
   
 - Některá přetížení metody <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType>, která zapisují formátovaný výsledný řetězec do datového proudu nebo souboru. Třídy odvozené od <xref:System.IO.TextWriter>, například <xref:System.IO.StreamWriter> a <xref:System.Web.UI.HtmlTextWriter>, sdílejí také tuto funkci.  
@@ -55,7 +55,7 @@ Funkce složeného formátování je podporována například následujícími m
 ## <a name="format-item-syntax"></a>Syntaxe položky formátu  
  Jednotlivé položky formátu mají následující podobu a skládají se z následujících součástí:  
   
- `{` *index*[`,`*alignment*][`:`*formatString*]`}`  
+ `{` *index*[`,`*zarovnání*] [`:`*formatString*]`}`  
   
  Jsou požadovány odpovídající složené závorky ("{" a "}").  
   
@@ -85,7 +85,7 @@ Funkce složeného formátování je podporována například následujícími m
   
  Následující tabulka uvádí seznam typů nebo kategorií typů v knihovně tříd rozhraní .NET Framework, které podporují předdefinovanou množinu řetězců formátu, a obsahuje odkazy na témata, která poskytují seznam jednotlivých řetězců formátu. Formátování řetězců poskytuje rozšířitelný mechanismus, který umožňuje definovat nové řetězce formátu pro všechny existující typy a také definovat množinu řetězců formátu podporovaných typem definovaného aplikací. Další informace najdete v tématech <xref:System.IFormattable> a <xref:System.ICustomFormatter> rozhraní.  
   
-|Typ nebo kategorie typů|Viz .|  
+|Typ nebo kategorie typů|Seznamte se s|  
 |---------------------------|---------|  
 |Typy data a času (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
 |Výčtové typy (všechny typy odvozené od <xref:System.Enum?displayProperty=nameWithType>)|[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  
@@ -157,7 +157,7 @@ Funkce složeného formátování je podporována například následujícími m
  [!code-csharp[Formatting.Composite#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/Composite1.cs#6)]
  [!code-vb[Formatting.Composite#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/Composite1.vb#6)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Console.WriteLine%2A>
 - <xref:System.String.Format%2A?displayProperty=nameWithType>

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach, parallel version
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
-ms.openlocfilehash: 528e22d6b54179181d1479f4feaedfbf82933c58
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 02b94b673dc4468e68a1dadd83aab0e3bfcfaa16
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921220"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160297"
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postupy: zápis jednoduché smyčky Parallel. ForEach
 
@@ -50,7 +50,7 @@ V aplikaci Visual Studio jsou k dispozici C# šablony pro Visual Basic a konzolo
 Z příkazového řádku můžete použít buď příkazy .NET Core CLI (například `dotnet new console` nebo `dotnet new console -lang vb`), nebo můžete vytvořit soubor a použít kompilátor příkazového řádku pro aplikaci .NET Framework.
 
 V případě projektu .NET Core musíte odkazovat na balíček NuGet **System. Drawing. Common** . V aplikaci Visual Studio použijte Správce balíčků NuGet k instalaci balíčku. Alternativně můžete do souboru \*. csproj nebo \*. vbproj přidat odkaz na balíček:
- 
+
 ```xml
 <ItemGroup>
      <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
@@ -61,7 +61,7 @@ Chcete-li spustit konzolovou aplikaci .NET Core z příkazového řádku, použi
 
 Chcete-li spustit konzolovou aplikaci ze sady Visual Studio, stiskněte klávesu **F5**.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)

@@ -2,15 +2,15 @@
 title: Školicí materiály Azure pro tvůrce modelů
 description: Příručka k prostředkům pro Azure Machine Learning
 ms.topic: reference
-ms.date: 02/25/2020
+ms.date: 02/27/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: a0a75283cdc7402c67b6bfb0799189fa34cd39a7
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 866fd5a90d13f85f2f8a1aa45ff0e1efb0096642
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77675203"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159296"
 ---
 # <a name="model-builder-azure-training-resources"></a>Školicí materiály Azure pro tvůrce modelů
 
@@ -52,7 +52,7 @@ Chcete-li vytvořit pracovní prostor Azure Machine Learning, jsou potřeba nás
 
 ## <a name="training"></a>Školení
 
-Školení v Azure je dostupné jenom pro scénář klasifikace imagí v Tvůrci modelů. Algoritmus používaný ke výukě těchto modelů je rozsáhlá neuronové síť založená na architektuře ResNet50. Během školení se zřídí prostředky potřebné ke výukě modelu a model se vyškole. Tento proces trvá několik minut a čas se může lišit v závislosti na velikosti vybraného výpočetního prostředí i na množství dat. Průběh spuštění můžete sledovat výběrem odkazu monitorovat aktuální spuštění v Azure Portal v aplikaci Visual Studio.
+Školení v Azure je dostupné jenom pro scénář klasifikace imagí v Tvůrci modelů. Algoritmus používaný ke výukě těchto modelů je rozsáhlá neuronové síť založená na architektuře ResNet50. Školicí proces trvá určitou dobu a množství času se může lišit v závislosti na velikosti vybraného výpočetního prostředí i na množství dat. Při prvním školení modelu můžete očekávat trochu delší dobu školení, protože je potřeba zřídit prostředky. Průběh spuštění můžete sledovat výběrem odkazu monitorovat aktuální spuštění v Azure Portal v aplikaci Visual Studio.
 
 ## <a name="results"></a>Výsledky
 
@@ -64,12 +64,26 @@ Po dokončení školení se do řešení přidají dva projekty s následující
   - bestModel. Onnx: serializovaná verze modelu ve formátu Open neuronové Network Exchange (ONNX). ONNX je open source formát pro modely AI, který podporuje interoperabilitu mezi platformami, jako je ML.NET, PyTorch a TensorFlow.
   - bestModelMap. JSON: seznam kategorií používaných při vytváření předpovědi k mapování výstupu modelu na textovou kategorii.
   - MLModel. zip: serializovaná verze kanálu předpovědi ML.NET, která používá serializovanou verzi modelu *bestModel. Onnx* k vytváření předpovědi a mapování výstupů pomocí souboru `bestModelMap.json`.
-  
+
+## <a name="use-the-machine-learning-model"></a>Použití modelu Machine Learning
+
+Třídy `ModelInput` a `ModelOutput` v projektu *modelu* definují schéma očekávaného vstupu a výstupu modelu.
+
+Ve scénáři klasifikace obrázku `ModelInput` obsahuje dva sloupce:
+
+- `ImageSource`: cesta k řetězci umístění obrázku.
+- `Label`: skutečná kategorie, do které obrázek patří. `Label` se používá jako vstup jenom při výuce a při provádění předpovědi se nemusí zadávat.
+
+`ModelOutput` obsahuje dva sloupce:
+
+- `Prediction`: předpovězená kategorie obrázku.
+- `Score`: seznam pravděpodobností pro všechny kategorie (nejvyšší patří do `Prediction`).
+
 ## <a name="troubleshooting"></a>Řešení potíží
 
 ### <a name="cannot-create-compute"></a>Nejde vytvořit výpočetní prostředky.
 
 Pokud dojde k chybě během Azure Machine Learning vytváření výpočetních prostředků, výpočetní prostředek může stále existovat v chybovém stavu. Pokud se pokusíte znovu vytvořit výpočetní prostředek se stejným názvem, operace se nezdařila. Chcete-li tuto chybu vyřešit, postupujte takto:
 
-* Vytvoření nového COMPUTE s jiným názvem
-* Přejít na Azure Portal a odebrat původní výpočetní prostředek
+- Vytvoření nového COMPUTE s jiným názvem
+- Přejít na Azure Portal a odebrat původní výpočetní prostředek

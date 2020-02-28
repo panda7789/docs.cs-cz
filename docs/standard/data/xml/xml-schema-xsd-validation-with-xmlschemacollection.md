@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
-ms.openlocfilehash: 1ab6dec2b99b01db04333c5d47176e40ed033fa7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 994153ba93848ebb120f23bdf6a979462a65142d
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709891"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159478"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu XML (XSD) s třídou XmlSchemaCollection
 Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML proti schématům XML Schema Definition Language (XSD). <xref:System.Xml.Schema.XmlSchemaCollection> zvyšuje výkon tím, že ukládá schémata do kolekce, takže nejsou načteny do paměti pokaždé, když dojde k ověření. Pokud schéma existuje v kolekci schémat, použije se atribut `schemaLocation` k vyhledání schématu v kolekci.  
@@ -35,7 +35,7 @@ Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření doku
 ```vb  
 Dim xsc As New XmlSchemaCollection()  
 ' XML Schema.  
-xsc.Add("urn:bookstore-schema", schema)   
+xsc.Add("urn:bookstore-schema", schema)
 reader = New XmlTextReader(filename)  
 vreader = New XmlValidatingReader(reader)  
 vreader.Schemas.Add(xsc)  
@@ -184,9 +184,9 @@ while(vr.Read()) {
  Následující text popisuje obsah souboru schématu XML sample4. xsd, který má být ověřen proti.  
   
 ```xml  
-<xs:schema   
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"   
-    xmlns:tns="datatypesTest"   
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="datatypesTest"
     targetNamespace="datatypesTest"  
     elementFormDefault="qualified">  
   
@@ -206,7 +206,7 @@ while(vr.Read()) {
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlParserContext>
 - <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>

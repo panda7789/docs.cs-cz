@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte, jak kontejnerizace aplikaci .NET Core p
 ms.date: 01/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 17d3dfbe58770b19a75be1dad3ae03406584992c
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: e1904430a591b0e74a69d50a53869a130fc0a248
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900116"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157827"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: kontejnerizace aplikace .NET Core
 
@@ -21,7 +21,7 @@ Naučíte se:
 >
 > - Vytvoření a publikování jednoduché aplikace .NET Core
 > - Vytvoření a konfigurace souboru Dockerfile pro .NET Core
-> - Sestavení image Docker
+> - Sestavení image Dockeru
 > - Vytvoření a spuštění kontejneru Docker
 
 Porozumíte sestavení kontejneru Docker a nasazování úloh pro aplikaci .NET Core. *Platforma Docker* používá *modul Docker* k rychlému sestavování a zabalení aplikací jako *imagí Docker*. Tyto image jsou napsané ve formátu *souboru Dockerfile* , aby je bylo možné nasadit a spustit v vrstveném kontejneru.
@@ -29,7 +29,7 @@ Porozumíte sestavení kontejneru Docker a nasazování úloh pro aplikaci .NET 
 > [!TIP]
 > Pokud pracujete se stávající aplikací ASP.NET Core, přečtěte si kurz o [tom, jak kontejnerizace ASP.NET Core aplikace](/aspnet/core/host-and-deploy/docker/building-net-docker-images) .
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Nainstalujte následující požadavky:
 
@@ -141,7 +141,7 @@ dotnet publish -c Release
 
 Tento příkaz zkompiluje vaši aplikaci do složky pro *publikování* . Cesta ke složce pro *publikování* z pracovní složky by měla být `.\app\bin\Release\netcoreapp3.1\publish\`
 
-Ve složce *aplikace* Získejte výpis adresáře složky pro publikování a ověřte, zda byl vytvořen soubor *MyApp. dll* . 
+Ve složce *aplikace* Získejte výpis adresáře složky pro publikování a ověřte, zda byl vytvořen soubor *MyApp. dll* .
 
 ```console
 > dir bin\Release\netcoreapp3.1\publish

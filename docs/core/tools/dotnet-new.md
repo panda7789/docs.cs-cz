@@ -2,12 +2,12 @@
 title: dotnet – nový příkaz
 description: Příkaz dotnet New vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 02/13/2020
-ms.openlocfilehash: f11512acf5a1fdc4bde49b3d1212ccf6335dff8b
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: d3c609419596b123f5bfb3ca85cf292a61154a70
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451327"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157216"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -20,7 +20,7 @@ ms.locfileid: "77451327"
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name] 
+dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name]
     [--nuget-source] [-o|--output] [-u|--uninstall] [--update-apply] [--update-check] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
@@ -174,7 +174,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
   Seznam výchozích C# verzí najdete v tématu [výchozí](../../csharp/language-reference/configure-language-version.md#defaults).
 
-- **`--no-restore`** 
+- **`--no-restore`**
 
   Je-li tento parametr zadán, nespustí při vytváření projektu implicitní obnovení. K dispozici od verze .NET Core 2,2 SDK.
 
@@ -202,7 +202,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Výchozí hodnota je `netcoreapp3.1`. K dispozici od verze .NET Core 3,1 SDK. 
+  Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Výchozí hodnota je `netcoreapp3.1`. K dispozici od verze .NET Core 3,1 SDK.
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -234,7 +234,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Výchozí hodnota je `netcoreapp3.1`. K dispozici od verze .NET Core 3,1 SDK. 
+  Určuje [rozhraní](../../standard/frameworks.md) , které se má cílit. Výchozí hodnota je `netcoreapp3.1`. K dispozici od verze .NET Core 3,1 SDK.
 
 - **`--exclude-launch-settings`**
 
@@ -503,7 +503,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
-  Typ ověřování, který má být použit. K dispozici od verze .NET Core 3,0 SDK. 
+  Typ ověřování, který má být použit. K dispozici od verze .NET Core 3,0 SDK.
   
   Možné hodnoty jsou:
 
@@ -512,7 +512,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* . 
+  Vyloučí z vygenerované šablony *launchSettings. JSON* .
 
 - **`--no-restore`**
 
@@ -544,7 +544,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 - **`--exclude-launch-settings`**
 
-  Vyloučí z vygenerované šablony *launchSettings. JSON* . 
+  Vyloučí z vygenerované šablony *launchSettings. JSON* .
 
 - **`-f|--framework <FRAMEWORK>`**
 

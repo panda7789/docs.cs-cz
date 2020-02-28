@@ -3,12 +3,12 @@ title: Podpora pro funkci msxsl:node-set()
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d0cbf517-d9f6-4097-9851-4fa62903decd
-ms.openlocfilehash: b9603f6c910e8e29309618c8e01e283c28ae2bff
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5022b298cb20796edbc54e951d8b06043697d832
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710125"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155591"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Podpora pro funkci msxsl:node-set()
 Funkce `msxsl:node-set` umožňuje převést fragment stromu výsledků na sadu uzlů. Výsledná sada uzlů vždy obsahuje jeden uzel a je kořenovým uzlem stromu.  
@@ -35,7 +35,7 @@ Funkce `msxsl:node-set` umožňuje převést fragment stromu výsledků na sadu 
   
     <xsl:template match="/">  
         <authors>  
-            <xsl:for-each select="msxsl:node-set($books)/book">   
+            <xsl:for-each select="msxsl:node-set($books)/book">
                 <author><xsl:value-of select="@author"/></author>  
             </xsl:for-each>  
         </authors>  
@@ -51,6 +51,6 @@ Funkce `msxsl:node-set` umožňuje převést fragment stromu výsledků na sadu 
 <authors><author>Michael Howard</author><author>Michael Kay</author></authors>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

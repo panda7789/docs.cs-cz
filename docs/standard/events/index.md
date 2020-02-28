@@ -14,12 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: a53a8123db64948503bd6d2da9a27fc414dc1e1f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b8ed028bc1edabf14d7b2dd67d94b28d574d2eb4
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423528"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159621"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a vyvolávání událostí
 
@@ -55,7 +55,7 @@ U scénářů, kde Delegáti <xref:System.EventHandler> a <xref:System.EventHand
 [!code-csharp[EventsOverview#4](~/samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
 [!code-vb[EventsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
   
-## <a name="event-data"></a>Data události
+## <a name="event-data"></a>Data událostí
 
 Data přidružená k události lze poskytnout prostřednictvím třídy dat události. Rozhraní .NET poskytuje mnoho datových tříd událostí, které můžete použít ve svých aplikacích. Například třída <xref:System.IO.Ports.SerialDataReceivedEventArgs> je třída dat události pro událost <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType>. Rozhraní .NET se řídí vzorem pojmenování všech tříd dat událostí pomocí `EventArgs`. Určíte, která třída dat události je přidružena k události, a to tak, že se podíváte na delegáta události. Například delegát <xref:System.IO.Ports.SerialDataReceivedEventHandler> obsahuje třídu <xref:System.IO.Ports.SerialDataReceivedEventArgs> jako jeden z jeho parametrů.  
   
@@ -78,7 +78,7 @@ Následující příklad ukazuje metodu obslužné rutiny události s názvem `c
 [!code-vb[EventsOverview#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>Statické a dynamické obslužné rutiny událostí  
- 
+
 .NET umožňuje předplatitelům registrovat se pro oznamování událostí staticky nebo dynamicky. Statické obslužné rutiny událostí jsou platné pro celou dobu života třídy, jejíž události zpracovávají. Dynamické obslužné rutiny událostí jsou explicitně aktivovány a dezaktivovány během provádění programu, obvykle v reakci na určitou logickou logiku programu. Můžete je například použít, pokud jsou oznámení o událostech nutná pouze za určitých podmínek nebo pokud aplikace poskytuje více obslužných rutin událostí a běhových podmínek definují příslušné rozhraní, které se má použít. Příklad v předchozím oddílu ukazuje, jak dynamicky přidat obslužnou rutinu události. Další informace naleznete v tématu [události](../../visual-basic/programming-guide/language-features/events/index.md) (v Visual Basic) a [události](../../csharp/programming-guide/events/index.md) (v C#).  
   
 ## <a name="raising-multiple-events"></a>Vyvolání více událostí  
@@ -95,7 +95,7 @@ Následující příklad ukazuje metodu obslužné rutiny události s názvem `c
 |[Návrhový vzor Pozorovatel](observer-design-pattern.md)|Popisuje vzor návrhu, který umožňuje předplatiteli zaregistrovat se a přijímat oznámení od poskytovatele.|  
 |[Postupy: Zpracování událostí v aplikaci Web Forms](how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost, která je vyvolána ovládacím prvkem webového formuláře.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.EventHandler>
 - <xref:System.EventHandler%601>

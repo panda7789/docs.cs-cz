@@ -13,12 +13,12 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: 78f89c3c8784467d3ec396106de7bbb34a2022f6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca104c512641774217de5e270dc50b7393fc5725
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121956"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159244"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
 Obor názvů <xref:System.Runtime.InteropServices> poskytuje tři kategorie atributů specifických pro spolupráci: ty, které jste použili v době návrhu, ty, které byly aplikovány pomocí nástrojů pro spolupráci s objekty COM a rozhraní API během procesu převodu a které byly aplikovány vámi nebo zprostředkovatelem komunikace s objekty COM.  
@@ -38,7 +38,7 @@ Obor názvů <xref:System.Runtime.InteropServices> poskytuje tři kategorie atri
 |<xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>|Označuje rozhraní, která jsou zdrojem událostí pro třídu.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|  
 |<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>|Označuje, že metoda by měla být volána, když je zrušena registrace sestavení z modelu COM, aby mohl být během procesu proveden uživatelsky napsaný kód.|  
 |<xref:System.Runtime.InteropServices.ComVisibleAttribute>|Pokud se hodnota atributu rovná **false**, vykresluje se typy neviditelné na com. Tento atribut lze použít na jednotlivý typ nebo na celé sestavení pro řízení viditelnosti modelu COM. Ve výchozím nastavení jsou viditelné všechny spravované, veřejné typy. atribut není nutné, aby jej bylo možné zobrazit.|  
-|<xref:System.Runtime.InteropServices.DispIdAttribute>|Určuje identifikátor odeslání objektu COM (DISPID) metody nebo pole. Tento atribut obsahuje identifikátor DISPID pro metodu, pole nebo vlastnost, kterou popisuje.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.| 
+|<xref:System.Runtime.InteropServices.DispIdAttribute>|Určuje identifikátor odeslání objektu COM (DISPID) metody nebo pole. Tento atribut obsahuje identifikátor DISPID pro metodu, pole nebo vlastnost, kterou popisuje.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|
 |<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|Označuje výchozí rozhraní pro třídu COM implementovanou v rozhraní .NET.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|
 |<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|Označuje fyzickou pozici každého pole v rámci třídy při použití s **StructLayoutAttribute**a **LayoutKind** je nastaven na hodnotu Explicit.|  
 |<xref:System.Runtime.InteropServices.GuidAttribute>|Určuje globálně jedinečný identifikátor (GUID) třídy, rozhraní nebo celé knihovny typů. Řetězec předaný atributu musí být formát, který je přijatelným argumentem konstruktoru pro typ **System. GUID**.<br /><br /> Nástroje pro spolupráci s objekty COM mohou použít tento atribut.|  
@@ -66,7 +66,7 @@ Obor názvů <xref:System.Runtime.InteropServices> poskytuje tři kategorie atri
 |<xref:System.Runtime.InteropServices.TypeLibTypeAttribute>|Obsahuje **TYPEFLAGS** , které byly původně importovány pro tento typ z knihovny typů modelu COM.|  
 |<xref:System.Runtime.InteropServices.TypeLibVarAttribute>|Obsahuje **VARFLAGS** , které byly původně importovány pro tuto proměnnou z knihovny typů modelu COM.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Runtime.InteropServices>
 - [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-ms.openlocfilehash: 16daa0ef3133b6cd04dc48b7f79fd365098e4bdf
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 9555304e570226b2ed3b040735cf099b5a018f93
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348075"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156540"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analýza řetězců data a času v .NET
 
@@ -48,7 +48,7 @@ Kromě data a času může řetězcová reprezentace data a času zahrnovat posu
   
 Zprostředkovatel formátu slouží také k interpretaci nejednoznačného číselného data. Není jasné, které součásti data reprezentované řetězcem "02/03/04" jsou měsíc, den a rok. Komponenty jsou interpretovány podle pořadí podobných formátů data ve zprostředkovateli formátu.
 
-## <a name="parse"></a>Analyzovat
+## <a name="parse"></a>Analýza
 
 Následující příklad ukazuje použití metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> k převedení `string` na <xref:System.DateTime>. V tomto příkladu se používá jazyková verze přidružená k aktuálnímu vláknu. Pokud <xref:System.Globalization.CultureInfo> přidružená k aktuální jazykové verzi nemůže analyzovat vstupní řetězec, je vyvolána <xref:System.FormatException>.
 
@@ -72,7 +72,7 @@ Nicméně i když můžete použít přetížení metody <xref:System.DateTime.P
 
 [!code-csharp[Parsing.DateAndTime#3](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#3)]
 [!code-vb[Parsing.DateAndTime#3](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#3)]
- 
+
 ## <a name="parseexact"></a>ParseExact
 
 Metoda <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> převede řetězec na objekt <xref:System.DateTime>, pokud odpovídá jedné ze zadaných vzorů řetězce. Když je do této metody předána řetězec, který není jedním z určených formulářů, je vyvolána <xref:System.FormatException>. Můžete zadat jeden ze specifikátorů standardního formátu data a času nebo kombinaci vlastního specifikátoru formátu. Pomocí specifikátorů vlastního formátu je možné vytvořit vlastní řetězec pro rozpoznávání. Vysvětlení specifikátorů naleznete v tématech o standardních formátovacích [řetězcích data a času](standard-date-and-time-format-strings.md) a [vlastních formátovacích řetězcích data a času](custom-date-and-time-format-strings.md).  
@@ -84,7 +84,7 @@ V následujícím příkladu je metoda <xref:System.DateTime.ParseExact%2A?displ
 
 Každé přetížení <xref:System.DateTime.Parse%2A> a <xref:System.DateTime.ParseExact%2A> metody má také parametr <xref:System.IFormatProvider>, který poskytuje informace specifické pro jazykovou verzi o formátování řetězce. Tento objekt <xref:System.IFormatProvider> je objekt <xref:System.Globalization.CultureInfo>, který představuje standardní jazykovou verzi nebo objekt <xref:System.Globalization.DateTimeFormatInfo>, který je vrácen vlastností <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>.  <xref:System.DateTime.ParseExact%2A> také používá další argument řetězce nebo pole řetězců, který definuje jeden nebo více vlastních formátů data a času.  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Analýza řetězců](parsing-strings.md)
 - [Typy formátování](formatting-types.md)

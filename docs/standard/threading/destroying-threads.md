@@ -9,16 +9,16 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET Framework], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-ms.openlocfilehash: efd4c596f67d5eabace8ecafb48f2d350df6a18e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 842ca4ff17f9cbab3a1518d2dea37436c9b23f9d
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938038"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155929"
 ---
 # <a name="destroying-threads"></a>Zničení vláken
 
-Chcete-li ukončit provádění vlákna, obvykle používáte [model zrušení spolupráce](cancellation-in-managed-threads.md). V některých případech není možné vlákno zastavovat spolupracuje, protože spouští kód třetí strany, který není navržen pro kooperativní zrušení. Metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> v .NET Framework lze použít k vynucenému ukončení spravovaného vlákna. Když zavoláte <xref:System.Threading.Thread.Abort%2A>, modul CLR (Common Language Runtime) vyvolá <xref:System.Threading.ThreadAbortException> v cílovém vlákně, které může zachytit cílové vlákno. Další informace najdete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není v rozhraní .NET Core podporována. Pokud potřebujete ukončit provádění kódu třetí strany v .NET Core nuceně, spusťte ho v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
+Chcete-li ukončit provádění vlákna, obvykle používáte [model zrušení spolupráce](cancellation-in-managed-threads.md). V některých případech není možné vlákno zastavovat spolupracuje, protože spouští kód třetí strany, který není navržen pro kooperativní zrušení. Metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> v .NET Framework lze použít k vynucenému ukončení spravovaného vlákna. Když zavoláte <xref:System.Threading.Thread.Abort%2A>, modul CLR (Common Language Runtime) vyvolá <xref:System.Threading.ThreadAbortException> v cílovém vlákně, které může zachytit cílové vlákno. Další informace naleznete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není v rozhraní .NET Core podporována. Pokud potřebujete ukončit provádění kódu třetí strany v .NET Core nuceně, spusťte ho v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
 
 > [!NOTE]
 > Pokud vlákno spouští nespravovaný kód, když je volána jeho metoda <xref:System.Threading.Thread.Abort%2A>, modul runtime ho označí <xref:System.Threading.ThreadState.AbortRequested?displayProperty=nameWithType>. Výjimka je vyvolána, když se vlákno vrátí do spravovaného kódu.  
@@ -38,26 +38,26 @@ Try
 Catch ex As ThreadAbortException  
     ' Clean-up code can go here.  
     ' If there is no Finally clause, ThreadAbortException is  
-    ' re-thrown by the system at the end of the Catch clause.   
+    ' re-thrown by the system at the end of the Catch clause.
 Finally  
     ' Clean-up code can go here.  
 End Try  
-' Do not put clean-up code here, because the exception   
+' Do not put clean-up code here, because the exception
 ' is rethrown at the end of the Finally clause.  
 ```  
   
 ```csharp  
-try   
+try
 {  
     // Code that is executing when the thread is aborted.  
-}   
-catch (ThreadAbortException ex)   
+}
+catch (ThreadAbortException ex)
 {  
     // Clean-up code can go here.  
     // If there is no Finally clause, ThreadAbortException is  
-    // re-thrown by the system at the end of the Catch clause.   
+    // re-thrown by the system at the end of the Catch clause.
 }  
-// Do not put clean-up code here, because the exception   
+// Do not put clean-up code here, because the exception
 // is rethrown at the end of the Finally clause.  
 ```  
   
@@ -65,7 +65,7 @@ catch (ThreadAbortException ex)
   
  Můžete zabránit, aby systém znovu vyvolal výjimku, voláním metody <xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType>. Měli byste to ale udělat jenom v případě, že váš vlastní kód způsobil <xref:System.Threading.ThreadAbortException>.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.ThreadAbortException>
 - <xref:System.Threading.Thread>

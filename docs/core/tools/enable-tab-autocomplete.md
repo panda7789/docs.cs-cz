@@ -4,12 +4,12 @@ description: V tomto článku se naučíte, jak povolit dokončování karet pro
 author: thraka
 ms.author: adegeo
 ms.date: 11/03/2019
-ms.openlocfilehash: 6614f11a9c4eb1b1aac4dd8dac8d05d15262bd0c
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 31328be14811760bc8d7fb527e0d55abfe6b1493
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626005"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156748"
 ---
 # <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Jak povolit dokončování karet pro .NET Core CLI
 
@@ -38,18 +38,18 @@ Vstup                                | stane                                    
 :------------------------------------|:----------------------------------------------------------------------------|:--------------------------------
 `dotnet a⇥`                          | `dotnet add`                                                                 | `add` je první dílčí příkaz abecedně.
 `dotnet add p⇥`                      | `dotnet add --help`                                                          | Doplňování tabulátoru odpovídá podřetězcům a `--help` je první abecedně.
-`dotnet add p⇥⇥`                    | `dotnet add package`                                                          | Další návrh zobrazíte stisknutím klávesy TAB a podruhé.      
+`dotnet add p⇥⇥`                    | `dotnet add package`                                                          | Další návrh zobrazíte stisknutím klávesy TAB a podruhé.
 `dotnet add package Microsoft⇥`      | `dotnet add package Microsoft.ApplicationInsights.Web`                      | Výsledky se vrátí abecedně.
 `dotnet remove reference ⇥`          | `dotnet remove reference ..\..\src\OmniSharp.DotNet\OmniSharp.DotNet.csproj` | Dokončování karet je soubor projektu s podporou.
 
 ## <a name="powershell"></a>PowerShell
 
-Pokud chcete pro .NET Core CLI přidat do **PowerShellu** tabulátor, vytvořte nebo upravte profil uložený v proměnné `$PROFILE`. Další informace najdete v tématu [jak vytvořit profil](/powershell/module/microsoft.powershell.core/about/about_profiles#how-to-create-a-profile) a profily a [zásady spouštění](/powershell/module/microsoft.powershell.core/about/about_profiles#profiles-and-execution-policy). 
+Pokud chcete pro .NET Core CLI přidat do **PowerShellu** tabulátor, vytvořte nebo upravte profil uložený v proměnné `$PROFILE`. Další informace najdete v tématu [jak vytvořit profil](/powershell/module/microsoft.powershell.core/about/about_profiles#how-to-create-a-profile) a profily a [zásady spouštění](/powershell/module/microsoft.powershell.core/about/about_profiles#profiles-and-execution-policy).
 
 Do svého profilu přidejte následující kód:
 
 ```powershell
-# PowerShell parameter completion shim for the dotnet CLI 
+# PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
      param($commandName, $wordToComplete, $cursorPosition)
          dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
@@ -88,7 +88,7 @@ Chcete-li do prostředí **ZSH** pro .NET Core CLI přidat doplňování tabulá
 ```zsh
 # zsh parameter completion for the dotnet CLI
 
-_dotnet_zsh_complete() 
+_dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
 

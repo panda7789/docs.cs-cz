@@ -3,16 +3,16 @@ title: Ohrožení zabezpečení při dešifrování CBC
 description: Naučte se, jak detekovat a zmírnit omezení chyb časování pomocí symetrického dešifrování režimu CBC (Cipher-Block-Chaining) pomocí odsazení.
 ms.date: 06/12/2018
 author: blowdart
-ms.openlocfilehash: 87f8e3c53e4d06f6a4edc7670891ac83ec8d65ab
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4616ef9015b47ff232a17f058c7a0f1449f42e81
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705844"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159959"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Ohrožení zabezpečení časování u symetrického dešifrování pomocí odsazení v režimu CBC
 
-Společnost Microsoft se domnívá, že již není bezpečná k dešifrování dat šifrovaných pomocí režimu CBC (Cipher-Block-Chaining) symetrického šifrování, pokud bylo použito ověřitelné odsazení bez předchozího zadání integrity šifrovaného textu, s výjimkou konkrétního žádný. Tento odhad je založen na aktuálně známém kryptografickém výzkumu. 
+Společnost Microsoft se domnívá, že již není bezpečná k dešifrování dat šifrovaných pomocí režimu CBC (Cipher-Block-Chaining) symetrického šifrování, pokud bylo použito ověřitelné odsazení bez předchozího zadání integrity šifrovaného textu, s výjimkou konkrétního žádný. Tento odhad je založen na aktuálně známém kryptografickém výzkumu.
 
 ## <a name="introduction"></a>Úvod
 

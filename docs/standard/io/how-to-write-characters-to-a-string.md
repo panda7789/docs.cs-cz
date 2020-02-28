@@ -11,29 +11,29 @@ helpviewer_keywords:
 - streams, writing characters to strings
 - I/O [.NET Framework], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-ms.openlocfilehash: b53513ef0b373cdde7703eddcd182ab7fd15cb9b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ecbfa2de2c21ff79df269f74eeddfa0738e7e25c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706618"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160274"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Postupy: zápis znaků do řetězce
 Následující příklady kódu píší synchronně nebo asynchronně z pole znaků do řetězce.  
   
 ## <a name="example-write-characters-synchronously-in-a-console-app"></a>Příklad: synchronní zápis znaků v konzolové aplikaci  
- Následující příklad používá <xref:System.IO.StringWriter> k zápisu pěti znaků synchronně do objektu <xref:System.Text.StringBuilder>. 
+ Následující příklad používá <xref:System.IO.StringWriter> k zápisu pěti znaků synchronně do objektu <xref:System.Text.StringBuilder>.
   
  [!code-csharp[Conceptual.StringBuilder#9](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/example2.cs#9)]
  [!code-vb[Conceptual.StringBuilder#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/example2.vb#9)]  
   
-## <a name="example-write-characters-asynchronously-in-a-wpf-app"></a>Příklad: asynchronní zápis znaků v aplikaci WPF 
+## <a name="example-write-characters-asynchronously-in-a-wpf-app"></a>Příklad: asynchronní zápis znaků v aplikaci WPF
  Dalším příkladem je kód za aplikací WPF. Při načtení okna příklad asynchronně načítá všechny znaky z ovládacího prvku <xref:System.Windows.Controls.TextBox> a ukládá je do pole. Potom asynchronně zapisuje každé písmeno nebo prázdné znaky na samostatný řádek ovládacího prvku <xref:System.Windows.Controls.TextBlock>.  
   
  [!code-csharp[StreamReaderWriter](../../../samples/snippets/csharp/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.cs)]
  [!code-vb[StreamReaderWriter](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.vb)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.StringWriter>  
 - <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>  

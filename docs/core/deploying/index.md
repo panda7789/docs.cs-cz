@@ -2,18 +2,18 @@
 title: Publikování aplikace
 description: Přečtěte si o způsobech publikování aplikace .NET Core. .NET Core může publikovat aplikace pro konkrétní platformy nebo pro různé platformy. Aplikaci můžete publikovat jako samostatnou nebo jako závislou na modulu runtime. Každý režim má vliv na to, jak uživatel spouští vaši aplikaci.
 ms.date: 01/31/2020
-ms.openlocfilehash: 696cca436c73601a3e7825033152d43a659a7dce
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 3b9c3b7f29af12477874b7a31ef0de4750719de0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448981"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157932"
 ---
 # <a name="net-core-application-publishing-overview"></a>Přehled publikování aplikace .NET Core
 
 Aplikace, které vytvoříte pomocí .NET Core, se dají publikovat ve dvou různých režimech a režim má vliv na to, jak uživatel aplikaci spustí.
 
-Publikování aplikace jako *samostatné* vytvoří aplikaci, která zahrnuje modul runtime a knihovny .NET Core a vaši aplikaci a její závislosti. Uživatelé aplikace ji mohou spustit na počítači, ve kterém není nainstalován modul .NET Core Runtime. 
+Publikování aplikace jako *samostatné* vytvoří aplikaci, která zahrnuje modul runtime a knihovny .NET Core a vaši aplikaci a její závislosti. Uživatelé aplikace ji mohou spustit na počítači, ve kterém není nainstalován modul .NET Core Runtime.
 
 Publikování aplikace jako *závislé na modulu runtime* vytvoří aplikaci, která obsahuje pouze vlastní aplikaci a její závislosti. Uživatelé aplikace musí samostatně nainstalovat modul runtime .NET Core.
 
@@ -132,7 +132,7 @@ Vzhledem k tomu, že vaše aplikace zahrnuje modul runtime .NET Core a všechny 
   > Velikost nasazení v systémech Linux můžete zmenšit přibližně o 28 MB pomocí [*režimu invariantování globalizace*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).NET Core. To vynutí, aby vaše aplikace považovala všechny kultury jako [invariantní jazykovou verzi](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
 - **Těžší aktualizace verze .NET Core**\
-Modul runtime .NET Core (distribuovaný s vaší aplikací) se dá upgradovat jenom vydáním nové verze vaší aplikace. Zodpovídáte za poskytnutí aktualizované verze vaší aplikace pro opravy zabezpečení modulu runtime .NET Core. 
+Modul runtime .NET Core (distribuovaný s vaší aplikací) se dá upgradovat jenom vydáním nové verze vaší aplikace. Zodpovídáte za poskytnutí aktualizované verze vaší aplikace pro opravy zabezpečení modulu runtime .NET Core.
 
 ### <a name="examples"></a>Příklady
 

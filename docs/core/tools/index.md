@@ -3,12 +3,12 @@ title: .NET Core CLI
 titleSuffix: ''
 description: Přehled .NET Core CLI a jeho funkcí.
 ms.date: 02/13/2020
-ms.openlocfilehash: c491088f26a9aa1c065414e76fb0b80d554380b4
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: d84f96889cabc3fb4521e39db25050aacdd11546
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77625979"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156709"
 ---
 # <a name="net-core-cli-overview"></a>Přehled .NET Core CLI
 
@@ -77,7 +77,7 @@ dotnet /build_output/my_app.dll
 
 ### <a name="driver"></a>Ovladač
 
-Ovladač má název [dotnet](dotnet.md) a má dvě zodpovědnosti, buď spuštění [aplikace závislé na rozhraní](../deploying/index.md) , nebo spuštění příkazu. 
+Ovladač má název [dotnet](dotnet.md) a má dvě zodpovědnosti, buď spuštění [aplikace závislé na rozhraní](../deploying/index.md) , nebo spuštění příkazu.
 
 Chcete-li spustit aplikaci závislou na rozhraní, zadejte aplikaci za ovladačem, například `dotnet /path/to/my_app.dll`. Při provádění příkazu ze složky, kde se nachází knihovna DLL aplikace, stačí provést `dotnet my_app.dll`. Pokud chcete použít konkrétní verzi modulu runtime .NET Core, použijte možnost `--fx-version <VERSION>` (viz Referenční dokumentace [příkazu dotnet](dotnet.md) ).
 

@@ -2,12 +2,12 @@
 title: příkaz dotnet list Package
 description: Příkaz dotnet list Package nabízí pohodlný možnost zobrazit seznam odkazů na balíčky pro projekt nebo řešení.
 ms.date: 02/14/2020
-ms.openlocfilehash: bd275c308c3a213661d5cc6c7e60817620f076a5
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 1cb52b8de10b2eef2ef7465f04316e9446318763
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503735"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157229"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
@@ -20,7 +20,7 @@ ms.locfileid: "77503735"
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
-dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
+dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch]
    [--include-prerelease] [--include-transitive] [--interactive] [--outdated] [--source]
 dotnet list package [-h|--help]
 ```

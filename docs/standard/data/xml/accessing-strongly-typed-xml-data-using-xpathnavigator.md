@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-ms.openlocfilehash: ec08b668bf54c5460e078bbb27bfbc370aff4e4a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e6ec30e3c7c2318b199122cd63c7f56584707a98
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711178"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78158048"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k datům XML silného typu pomocí XPathNavigator
 Jako instance datového modelu XPath 2,0 může třída <xref:System.Xml.XPath.XPathNavigator> obsahovat data silného typu, která se mapují na typy modulu CLR (Common Language Runtime). V souladu s datovým modelem XPath 2,0 mohou obsahovat pouze elementy a atributy data silného typu. Třída <xref:System.Xml.XPath.XPathNavigator> poskytuje mechanismy pro přístup k datům v rámci <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu jako data silného typu a také mechanismy pro převod z jednoho datového typu na jiný.  
@@ -111,9 +111,9 @@ Console.WriteLine(navigator.SchemaInfo.SchemaElement.MinOccurs);
  Příklad také přebírá `books.xsd` schéma jako vstup.  
   
 ```xml  
-<xs:schema xmlns="http://www.contoso.com/books"   
-attributeFormDefault="unqualified" elementFormDefault="qualified"   
-targetNamespace="http://www.contoso.com/books"   
+<xs:schema xmlns="http://www.contoso.com/books"
+attributeFormDefault="unqualified" elementFormDefault="qualified"
+targetNamespace="http://www.contoso.com/books"
 xmlns:xs="http://www.w3.org/2001/XMLSchema">  
     <xs:simpleType name="publishedType">  
         <xs:restriction base="xs:date">  
@@ -183,7 +183,7 @@ Console.WriteLine("The price of the book has been dropped 20% from {0:C} to {1:C
   
  Další informace o mapování z vestavěných typů schématu na typy CLR naleznete v tématu [Podpora typů v třídách System. XML](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>

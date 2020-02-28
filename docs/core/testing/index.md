@@ -4,12 +4,12 @@ description: Tento článek poskytuje stručný přehled testování částí pr
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.openlocfilehash: 41f4457e636ca495b78109803ca66680e72d007e
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 1263bfe337b9d6609c0ca7df70aa299a61a7f1a0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899889"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157398"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování částí v .NET Core a .NET Standard
 
@@ -23,9 +23,9 @@ Můžete použít integrované šablony projektu .NET Core 2,0 a novější pro 
 
 ## <a name="what-are-unit-tests"></a>Co jsou testy jednotek?
 
-Automatizované testy jsou skvělým způsobem, jak zajistit, aby softwarová aplikace měla své záměry dělat. Pro softwarové aplikace existuje několik typů testů. Patří mezi ně integrační testy, webové testy, zátěžové testy a další. **Testování částí testuje jednotlivé** softwarové komponenty a metody. Testy jednotek by měly testovat pouze kód v rámci ovládacího prvku vývojáře. Neměly by se týkat testovací infrastruktury. Mezi aspekty infrastruktury patří databáze, souborové systémy a síťové prostředky. 
+Automatizované testy jsou skvělým způsobem, jak zajistit, aby softwarová aplikace měla své záměry dělat. Pro softwarové aplikace existuje několik typů testů. Patří mezi ně integrační testy, webové testy, zátěžové testy a další. **Testování částí testuje jednotlivé** softwarové komponenty a metody. Testy jednotek by měly testovat pouze kód v rámci ovládacího prvku vývojáře. Neměly by se týkat testovací infrastruktury. Mezi aspekty infrastruktury patří databáze, souborové systémy a síťové prostředky.
 
-Pamatujte také na to, že jsou osvědčené postupy pro psaní testů. Například [Vývoj řízený testováním (TDD)](https://deviq.com/test-driven-development/) je při zápisu jednotkového testu před kódem, který je určen ke kontrole. TDD je jako vytvoření osnovy pro knihu předtím, než ji napíšeme. Je určena k tomu, aby vývojářům usnadnil psaní jednodušších, čitelnějších a efektivních kódu. 
+Pamatujte také na to, že jsou osvědčené postupy pro psaní testů. Například [Vývoj řízený testováním (TDD)](https://deviq.com/test-driven-development/) je při zápisu jednotkového testu před kódem, který je určen ke kontrole. TDD je jako vytvoření osnovy pro knihu předtím, než ji napíšeme. Je určena k tomu, aby vývojářům usnadnil psaní jednodušších, čitelnějších a efektivních kódu.
 
 > [!NOTE]
 > Tým ASP.NET řídí [tyto konvence](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines#unit-tests-and-functional-tests) , které vývojářům pomůžou pocházet s dobrými názvy testovacích tříd a metod.
@@ -40,11 +40,11 @@ Projekty testů jednotek .NET Core jsou podporované pro:
 
 - [C#](../../csharp/index.yml)
 - [F#](../../fsharp/index.yml)
-- [Visual Basic](../../visual-basic/index.yml) 
+- [Visual Basic](../../visual-basic/index.yml)
 
 Můžete si také vybrat:
 
-- [xUnit](https://xunit.github.io) 
+- [xUnit](https://xunit.github.io)
 - [NUnit](https://nunit.org)
 - [MSTest](https://github.com/Microsoft/testfx-docs)
 

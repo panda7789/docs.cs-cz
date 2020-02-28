@@ -3,16 +3,16 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s osvědčenými postupy pro příkazy dotnet, které vyžadují vyšší přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: fe33cbe966d175f71ba350737b283c1e83f64fa6
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 4aff9badfa8ad9b83adc4496d4ebd6df29252e36
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543427"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156761"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Zvýšený přístup pro příkazy dotnet
 
-Osvědčené postupy pro vývoj softwaru pomáhají vývojářům psát software, který vyžaduje nejnižší množství oprávnění. Nicméně nějaký software, například nástroje pro monitorování výkonu, vyžaduje oprávnění správce z důvodu pravidel operačního systému. Následující pokyny popisují podporované scénáře pro zápis takového softwaru pomocí .NET Core. 
+Osvědčené postupy pro vývoj softwaru pomáhají vývojářům psát software, který vyžaduje nejnižší množství oprávnění. Nicméně nějaký software, například nástroje pro monitorování výkonu, vyžaduje oprávnění správce z důvodu pravidel operačního systému. Následující pokyny popisují podporované scénáře pro zápis takového softwaru pomocí .NET Core.
 
 Následující příkazy lze spustit se zvýšenými oprávněními:
 
@@ -35,8 +35,8 @@ Následující pokyny ukazují doporučený způsob, jak nainstalovat, spustit a
 
 Pokud `%ProgramFiles%\dotnet-tools` složka již existuje, proveďte následující kroky a ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravě tohoto adresáře:
 
-- Klikněte pravým tlačítkem na složku `%ProgramFiles%\dotnet-tools` a vyberte možnost **vlastnosti**. Otevře se dialogové okno **společné vlastnosti** . 
-- Vyberte kartu **zabezpečení** . V části **uživatelské jméno nebo název skupiny**ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravám adresáře. 
+- Klikněte pravým tlačítkem na složku `%ProgramFiles%\dotnet-tools` a vyberte možnost **vlastnosti**. Otevře se dialogové okno **společné vlastnosti** .
+- Vyberte kartu **zabezpečení** . V části **uživatelské jméno nebo název skupiny**ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravám adresáře.
 - Pokud skupina uživatelé může zapisovat nebo upravovat adresář, použijte při instalaci nástrojů místo příkazu *dotnet-Tools*jiný název adresáře.
 
 Nástroje nainstalujete spuštěním následujícího příkazu v příkazovém řádku se zvýšenými oprávněními. Během instalace vytvoří složku *dotnet-Tools* .
@@ -97,7 +97,7 @@ Během vývoje můžete potřebovat vyšší úroveň přístupu k otestování 
    dotnet build
    sudo ./bin/Debug/netcoreapp3.0/APPLICATIONNAME
    ```
-    
+
 - Pomocí příkazu [dotnet Run](dotnet-run.md) s příznakem `—no-build` se vyhnete generování nových binárních souborů:
 
    ```dotnetcli
@@ -105,6 +105,6 @@ Během vývoje můžete potřebovat vyšší úroveň přístupu k otestování 
    sudo dotnet run --no-build
    ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled globálních nástrojů .NET Core](global-tools.md)

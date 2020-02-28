@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 0905cbebb2d966570be4ac3aefb40f4377b97061
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 323a2390f079c17b81db01e4e3787916251943bf
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742587"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156553"
 ---
 # <a name="whats-new-in-net-core-31"></a>Co je nového v .NET Core 3.1
 
@@ -36,6 +36,34 @@ Další informace o této verzi najdete v tématu [oznámení .NET Core 3,1](htt
 | .NET Core 2.1 | Konec životnosti 21. srpna 2021.    |
 
 Další informace najdete v tématu [zásady podpory pro .NET Core](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+
+## <a name="macos-apphost-and-notarization"></a>macOS appHost a notarization
+
+*jenom macOS*
+
+Od notarized .NET Core SDK 3,1 pro macOS je nastavení appHost ve výchozím nastavení zakázané. Další informace najdete v tématu [MacOS Catalina notarization a dopad na stažení a projekty .NET Core](../install/macos-notarization-issues.md).
+
+Když je povolené nastavení appHost, .NET Core při sestavování nebo publikování generuje nativní spustitelný soubor strojového souboru. Vaše aplikace běží v kontextu appHost, když je spuštěná ze zdrojového kódu pomocí příkazu `dotnet run`, nebo spuštěním spustitelného souboru stroj-O přímo.
+
+Bez appHost je jediným způsobem, jak může uživatel spustit aplikaci [závislou na běhu](../deploying/index.md#publish-runtime-dependent) , je pomocí příkazu `dotnet <filename.dll>`. AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
+
+Můžete buď nakonfigurovat appHost na úrovni projektu, nebo přepnout appHost pro konkrétní `dotnet` příkaz s parametrem `-p:UseAppHost`:
+
+- Soubor projektu
+
+  ```xml
+  <PropertyGroup>
+    <UseAppHost>true</UseAppHost>
+  </PropertyGroup>
+  ```
+
+- Parametr příkazového řádku
+
+  ```dotnetcli
+  dotnet run -p:UseAppHost=true
+  ```
+
+Další informace o nastavení `UseAppHost` naleznete v tématu [Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK](../project-sdk/msbuild-props.md#useapphost).
 
 ## <a name="windows-forms"></a>Windows Forms
 

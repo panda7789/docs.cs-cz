@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 221d19ee6441614324d375b66e8b13a90f683890
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: e0a6912c10baa0be4a8ef9f6536948ae27f235c7
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921280"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159556"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>Postup migrace z Newtonsoft. JSON na System. text. JSON
 
@@ -54,7 +54,7 @@ V následující tabulce jsou uvedeny `Newtonsoft.Json` funkce a `System.Text.Js
 | Deserializovat odvozený typ pro `object` vlastností      | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#deserialization-of-object-properties) |
 | Deserializovat JSON `null` literálu na typy bez hodnoty null | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#deserialize-null-to-non-nullable-type) |
 | Deserializace pro neměnné třídy a struktury          | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#deserialize-to-immutable-classes-and-structs) |
-| Atribut `[JsonConstructor]`                         | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#specify-constructor-to-use) |
+| atribut `[JsonConstructor]`                         | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#specify-constructor-to-use) |
 | nastavení `Required` u atributu `[JsonProperty]`        | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#required-properties) |
 | nastavení `NullValueHandling` u atributu `[JsonProperty]` | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#conditionally-ignore-a-property)  |
 | nastavení `DefaultValueHandling` u atributu `[JsonProperty]` | ⚠️ [se nepodporuje, alternativní řešení, ukázka](#conditionally-ignore-a-property)  |
@@ -81,7 +81,7 @@ Nejedná se o vyčerpávající seznam funkcí `Newtonsoft.Json`. Seznam obsahuj
 
 ve výchozím nastavení je <xref:System.Text.Json> striktní a vyhnout se případnému odhadu nebo výkladu jménem volajícího a zdůraznění deterministického chování. Knihovna je záměrně navržena tak, aby způsobila výkon a zabezpečení. ve výchozím nastavení je `Newtonsoft.Json` flexibilní. Tento základní rozdíl v návrhu je za mnoho z následujících specifických rozdílů ve výchozím chování.
 
-### <a name="case-insensitive-deserialization"></a>Deserializace bez rozlišování velkých a malých písmen 
+### <a name="case-insensitive-deserialization"></a>Deserializace bez rozlišování velkých a malých písmen
 
 Při deserializaci `Newtonsoft.Json` ve výchozím nastavení rozlišovat velikost písmen bez rozlišení velkých a malých písmen. Ve výchozím nastavení <xref:System.Text.Json> rozlišuje velká a malá písmena, což dává lepší výkon, protože se jedná o přesnou shodu. Informace o tom, jak rozlišovat velká a malá písmena, naleznete v tématu [porovnávání vlastností](system-text-json-how-to.md#case-insensitive-property-matching)bez rozlišování velkých a malých písmen.
 
@@ -194,7 +194,7 @@ Vlastní převaděče lze implementovat pro typy, které nemají vestavěnou pod
 
 `Newtonsoft.Json` mohou serializovat nebo deserializovat čísla reprezentovaná řetězci JSON (obklopenými uvozovkami). Například může přijmout: `{"DegreesCelsius":"23"}` místo `{"DegreesCelsius":23}`. Chcete-li toto chování povolit v <xref:System.Text.Json>, implementujte vlastní převaděč podobný následujícímu příkladu. Převaděč zpracovává vlastnosti definované jako `long`:
 
-* Jejich serializace jako řetězce JSON. 
+* Jejich serializace jako řetězce JSON.
 * Při deserializaci přijímá čísla a čísla JSON v rámci uvozovek.
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/LongToStringConverter.cs)]
@@ -238,7 +238,7 @@ Když `Newtonsoft.Json` deserializace <xref:System.Object>,:
 
 Chcete-li implementovat odvození typu pro vlastnosti `object`, vytvořte pomocí převaděče jako příklad [psaní vlastních převaděčů](system-text-json-converters-how-to.md#deserialize-inferred-types-to-object-properties).
 
-### <a name="deserialize-null-to-non-nullable-type"></a>Deserializovat hodnotu null na typ, který není možnou hodnotou null 
+### <a name="deserialize-null-to-non-nullable-type"></a>Deserializovat hodnotu null na typ, který není možnou hodnotou null
 
 `Newtonsoft.Json` nevyvolá výjimku v následujícím scénáři:
 
@@ -326,7 +326,7 @@ Předchozí kód převaděče je zjednodušený příklad. Pokud potřebujete zp
 
 `Newtonsoft.Json` má několik způsobů, jak podmíněně ignorovat vlastnost při serializaci nebo deserializaci:
 
-* `DefaultContractResolver` umožňuje vybrat vlastnosti, které se mají zahrnout nebo vyloučit, na základě libovolného kritéria. 
+* `DefaultContractResolver` umožňuje vybrat vlastnosti, které se mají zahrnout nebo vyloučit, na základě libovolného kritéria.
 * Nastavení `NullValueHandling` a `DefaultValueHandling` na `JsonSerializerSettings` umožňují určit, že všechny vlastnosti null-Value nebo Default-value by měly být ignorovány.
 * Nastavení `NullValueHandling` a `DefaultValueHandling` na atributu `[JsonProperty]` umožňují zadat jednotlivé vlastnosti, které by měly být ignorovány, pokud je nastavena hodnota null nebo výchozí hodnota.
 
@@ -341,7 +341,7 @@ Tyto možnosti **vám** neumožňují:
 * Ignorovat všechny vlastnosti, které mají výchozí hodnotu pro typ.
 * Ignoruje vybrané vlastnosti, které mají výchozí hodnotu pro daný typ.
 * Ignoruje vybrané vlastnosti, pokud jejich hodnota je null.
-* Ignorovat vybrané vlastnosti na základě libovolných kritérií vyhodnocených v době běhu. 
+* Ignorovat vybrané vlastnosti na základě libovolných kritérií vyhodnocených v době běhu.
 
 Pro tuto funkci můžete napsat vlastní převaděč. Tady je ukázkový POCO a vlastní převaděč, který ilustruje tento přístup:
 
@@ -349,7 +349,7 @@ Pro tuto funkci můžete napsat vlastní převaděč. Tady je ukázkový POCO a 
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecastRuntimeIgnoreConverter.cs)]
 
-Převaděč způsobí, že vlastnost `Summary` bude vynechána z serializace, je-li její hodnota null, prázdný řetězec nebo "N/A". 
+Převaděč způsobí, že vlastnost `Summary` bude vynechána z serializace, je-li její hodnota null, prázdný řetězec nebo "N/A".
 
 Zaregistrujte tento vlastní převaděč [pomocí atributu ve třídě](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type) nebo [přidáním převaděče](system-text-json-converters-how-to.md#registration-sample---converters-collection) do kolekce <xref:System.Text.Json.JsonSerializerOptions.Converters>.
 
@@ -446,7 +446,7 @@ Ve výchozím nastavení `Newtonsoft.Json` serializovat podle hodnoty. Napříkl
 
 ### <a name="jsondocument-is-idisposable"></a>JsonDocument je IDisposable
 
-`JsonDocument` vytvoří zobrazení dat v paměti do fondu vyrovnávací paměti. Proto na rozdíl od `JObject` nebo `JArray` z `Newtonsoft.Json`, typ `JsonDocument` implementuje `IDisposable` a musí být použit uvnitř bloku using. 
+`JsonDocument` vytvoří zobrazení dat v paměti do fondu vyrovnávací paměti. Proto na rozdíl od `JObject` nebo `JArray` z `Newtonsoft.Json`, typ `JsonDocument` implementuje `IDisposable` a musí být použit uvnitř bloku using.
 
 Jenom `JsonDocument` z rozhraní API, pokud chcete přenést vlastnictví životnosti a zařadit odpovědnost volajícímu. Ve většině scénářů to není nutné. Pokud volající potřebuje pracovat s celým dokumentem JSON, vraťte <xref:System.Text.Json.JsonElement.Clone%2A> <xref:System.Text.Json.JsonDocument.RootElement%2A>, což je <xref:System.Text.Json.JsonElement>. Pokud volající potřebuje pracovat s konkrétním prvkem v dokumentu JSON, vraťte <xref:System.Text.Json.JsonElement.Clone%2A> tohoto <xref:System.Text.Json.JsonElement>. Pokud vrátíte `RootElement` nebo dílčí prvek přímo bez provedení `Clone`, volající nebude moci získat přístup k vráceným `JsonElement` po `JsonDocument`, který je vlastníkem, je uvolněn.
 
@@ -456,7 +456,7 @@ Tady je příklad, který vyžaduje, abyste provedli `Clone`:
 public JsonElement LookAndLoad(JsonElement source)
 {
     string json = File.ReadAllText(source.GetProperty("fileName").GetString());
-   
+
     using (JsonDocument doc = JsonDocument.Parse(json))
     {
         return doc.RootElement.Clone();
@@ -464,7 +464,7 @@ public JsonElement LookAndLoad(JsonElement source)
 }
 ```
 
-Předchozí kód očekává `JsonElement`, který obsahuje vlastnost `fileName`. Otevře soubor JSON a vytvoří `JsonDocument`. Metoda předpokládá, že volající chce pracovat s celým dokumentem, a vrátí `Clone` `RootElement`. 
+Předchozí kód očekává `JsonElement`, který obsahuje vlastnost `fileName`. Otevře soubor JSON a vytvoří `JsonDocument`. Metoda předpokládá, že volající chce pracovat s celým dokumentem, a vrátí `Clone` `RootElement`.
 
 Pokud obdržíte `JsonElement` a vrátíte dílčí prvek, není nutné vracet `Clone` dílčího prvku. Volající je zodpovědný za udržování naživu `JsonDocument`, do kterého patří předaný `JsonElement`. Příklad:
 
@@ -504,7 +504,7 @@ Následující části vysvětlují Doporučené programovací vzory pro použit
 
 ### <a name="utf8jsonreader-is-a-ref-struct"></a>Utf8JsonReader je struktura ref.
 
-Vzhledem k tomu, že `Utf8JsonReader` typ je *Struktura ref*, má [určitá omezení](../../csharp/language-reference/keywords/ref.md#ref-struct-types). Například nemůže být uložen jako pole ve třídě nebo struktuře jiné než struktura ref. Aby se dosáhlo vysokého výkonu, musí být tento typ `ref struct`, protože musí ukládat do mezipaměti vstupní [\<bajtů](xref:System.ReadOnlySpan%601), která je sama strukturou ref. Tento typ je navíc proměnlivý, protože obsahuje stav. Proto **jej předejte pomocí ref** , nikoli podle hodnoty. Předání podle hodnoty by vedlo k kopírování struktury a změny stavu by pro volajícího neměly být viditelné. To se liší od `Newtonsoft.Json`, protože `Newtonsoft.Json` `JsonTextReader` je třída. Další informace o použití struktur ref, najdete v tématu [Zápis bezpečného a efektivního C# kódu](../../csharp/write-safe-efficient-code.md).
+Vzhledem k tomu, že `Utf8JsonReader` typ je *Struktura ref*, má [určitá omezení](../../csharp/language-reference/keywords/ref.md#ref-struct-types). Například nemůže být uložen jako pole ve třídě nebo struktuře jiné než struktura ref. Aby se dosáhlo vysokého výkonu, musí být tento typ `ref struct`, protože musí ukládat do mezipaměti vstupní [>\<bajtů](xref:System.ReadOnlySpan%601), která je sama strukturou ref. Tento typ je navíc proměnlivý, protože obsahuje stav. Proto **jej předejte pomocí ref** , nikoli podle hodnoty. Předání podle hodnoty by vedlo k kopírování struktury a změny stavu by pro volajícího neměly být viditelné. To se liší od `Newtonsoft.Json`, protože `Newtonsoft.Json` `JsonTextReader` je třída. Další informace o použití struktur ref, najdete v tématu [Zápis bezpečného a efektivního C# kódu](../../csharp/write-safe-efficient-code.md).
 
 ### <a name="read-utf-8-text"></a>Číst text v kódování UTF-8
 
@@ -512,9 +512,9 @@ Abyste dosáhli nejlepšího možného výkonu při použití `Utf8JsonReader`, 
 
 ### <a name="read-with-a-stream-or-pipereader"></a>Čtení s datovým proudem nebo PipeReader
 
-`Utf8JsonReader` podporuje čtení z [ReadOnlySpan\<bajtů](xref:System.ReadOnlySpan%601) kódovaných v kódování UTF-8 > nebo [ReadOnlySequence\<bajtů](xref:System.Buffers.ReadOnlySequence%601) (což je výsledek čtení z >).
+`Utf8JsonReader` podporuje čtení z [ReadOnlySpan\<bajtů](xref:System.ReadOnlySpan%601) kódovaných v kódování UTF-8 > nebo [ReadOnlySequence\<bajtů](xref:System.Buffers.ReadOnlySequence%601) (což je výsledek čtení z >).<xref:System.IO.Pipelines.PipeReader>
 
-Pro synchronní čtení můžete načíst datovou část JSON až do konce datového proudu do pole bajtů a předat je do čtecího zařízení. Pro čtení z řetězce (který je kódován jako UTF-16) volejte <xref:System.Text.Encoding.UTF8>.<xref:System.Text.Encoding.GetBytes%2A> pro první překódování řetězce do kódovaného bajtového pole UTF-8. Pak předejte tuto `Utf8JsonReader`. 
+Pro synchronní čtení můžete načíst datovou část JSON až do konce datového proudu do pole bajtů a předat je do čtecího zařízení. Pro čtení z řetězce (který je kódován jako UTF-16) volejte <xref:System.Text.Encoding.UTF8>.<xref:System.Text.Encoding.GetBytes%2A> pro první překódování řetězce do kódovaného bajtového pole UTF-8. Pak předejte tuto `Utf8JsonReader`.
 
 Vzhledem k tomu, že `Utf8JsonReader` považuje vstup za text JSON, znamená to, že znak pořadí bajtů UTF-8 (BOM) se považuje za neplatný JSON. Volající musí tuto funkci před předáním dat do čtecího modulu filtrovat.
 
@@ -522,7 +522,7 @@ Příklady kódu naleznete v tématu [Use Utf8JsonReader](system-text-json-how-t
 
 ### <a name="read-with-multi-segment-readonlysequence"></a>Čtení s více segmenty ReadOnlySequence
 
-Pokud je váš vstup ve formátu JSON [ReadOnlySpan\<](xref:System.ReadOnlySpan%601), ke každému elementu JSON se dá získat přístup z vlastnosti `ValueSpan` ve čtečce při procházení smyčky pro čtení. Pokud je však vstup [ReadOnlySequence\<bajt >](xref:System.Buffers.ReadOnlySequence%601) (což je výsledek čtení z <xref:System.IO.Pipelines.PipeReader>), mohou některé elementy JSON přetažný více segmentů objektu `ReadOnlySequence<byte>`. Tyto prvky nebudou přístupné z <xref:System.Text.Json.Utf8JsonReader.ValueSpan%2A> v souvislém bloku paměti. Místo toho, když máte jako vstup více segmentů `ReadOnlySequence<byte>`, Dotazujte vlastnost <xref:System.Text.Json.Utf8JsonReader.HasValueSequence%2A> na čtečce, abyste zjistili, jak získat přístup k aktuálnímu elementu JSON. Tady je doporučený vzor:
+Pokud je váš vstup ve formátu JSON [ReadOnlySpan\<>](xref:System.ReadOnlySpan%601), ke každému elementu JSON se dá získat přístup z vlastnosti `ValueSpan` ve čtečce při procházení smyčky pro čtení. Pokud je však vstup [ReadOnlySequence\<bajt >](xref:System.Buffers.ReadOnlySequence%601) (což je výsledek čtení z <xref:System.IO.Pipelines.PipeReader>), mohou některé elementy JSON přetažný více segmentů objektu `ReadOnlySequence<byte>`. Tyto prvky nebudou přístupné z <xref:System.Text.Json.Utf8JsonReader.ValueSpan%2A> v souvislém bloku paměti. Místo toho, když máte jako vstup více segmentů `ReadOnlySequence<byte>`, Dotazujte vlastnost <xref:System.Text.Json.Utf8JsonReader.HasValueSequence%2A> na čtečce, abyste zjistili, jak získat přístup k aktuálnímu elementu JSON. Tady je doporučený vzor:
 
 ```csharp
 while (reader.Read())
@@ -645,7 +645,7 @@ Pokud potřebujete nadále používat `Newtonsoft.Json` pro určité cílové ar
 * [UnifiedJsonWriter.JsonTextWriter.cs](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/installer/managed/Microsoft.Extensions.DependencyModel/UnifiedJsonWriter.JsonTextWriter.cs)
 * [UnifiedJsonWriter.Utf8JsonWriter.cs](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/installer/managed/Microsoft.Extensions.DependencyModel/UnifiedJsonWriter.Utf8JsonWriter.cs)
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)[Restore this when the roadmap is updated.]-->
 * [Přehled System.Text.Json](system-text-json-overview.md)

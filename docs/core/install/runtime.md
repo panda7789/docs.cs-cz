@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: ba50eb222d9eab6bffbb8ebfdf0ecf47951ce719
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: a41bbdf5419585f06773583dbe82ab0d84ebaa4c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543518"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157633"
 ---
 # <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
 
@@ -35,6 +35,19 @@ Systém Windows obsahuje samostatné instalační programy, které lze použít 
 macOS má samostatné instalační programy, které se dají použít k instalaci modulu runtime .NET Core 3,1:
 
 - [Procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+
+## <a name="download-and-manually-install"></a>Stažení a ruční instalace
+
+Jako alternativu pro instalační programy macOS pro .NET Core můžete stáhnout a ručně nainstalovat modul runtime.
+
+Chcete-li nainstalovat modul runtime a povolit příkazy .NET Core CLI k dispozici v terminálu, nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak otevřete terminál a spusťte následující příkazy. Předpokládá se, že se modul runtime stáhne do souboru `~/Downloads/dotnet-runtime.pkg`.
+
+```bash
+mkdir -p $HOME/dotnet
+sudo installer -pkg ~/Downloads/dotnet-runtime.pkg -target $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
 
 ::: zone-end
 
@@ -64,7 +77,7 @@ export PATH=$PATH:$HOME/dotnet
 > - **Prostředí bash**: *~/. bash_profile*, *~/.bashrc*
 > - **Korn shell**: *~/.KSHRC* nebo *. Profile*
 > - **Prostředí Z**: *~/.zshrc* nebo *. zprofile*
-> 
+>
 > Upravte příslušný zdrojový soubor pro prostředí a přidejte `:$HOME/dotnet` na konec existujícího příkazu `PATH`. Pokud není zahrnutý žádný příkaz `PATH`, přidejte nový řádek s `export PATH=$PATH:$HOME/dotnet`.
 >
 > Přidejte také `export DOTNET_ROOT=$HOME/dotnet` na konec souboru.

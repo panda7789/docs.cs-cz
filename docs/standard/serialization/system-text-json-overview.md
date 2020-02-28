@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: acb83be9b20a155b6b6a9fb5ade38e099f54e71d
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 660a2831aa6a807486fc47eae880bcd11347c547
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163589"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159543"
 ---
 # <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Serializace a deserializace JSON (zařazení a zrušení zařazení) v .NET – přehled
 
@@ -22,7 +22,7 @@ Obor názvů `System.Text.Json` poskytuje funkce pro serializaci a deserializaci
 
 Návrh knihovny zvýrazňuje vysoký výkon a nedostatečné přidělení paměti nad rozsáhlou sadu funkcí. Integrovaná podpora UTF-8 optimalizuje proces čtení a zápisu textu JSON kódovaného jako UTF-8, což je nejbezpečnější kódování dat na webu a soubory na disku.
 
-Knihovna také poskytuje třídy pro práci s modelem objektů dokumentů v paměti (DOM). Tato funkce umožňuje náhodný přístup jen pro čtení prvků v souboru JSON nebo v řetězci. 
+Knihovna také poskytuje třídy pro práci s modelem objektů dokumentů v paměti (DOM). Tato funkce umožňuje náhodný přístup jen pro čtení prvků v souboru JSON nebo v řetězci.
 
 ## <a name="how-to-get-the-library"></a>Jak získat knihovnu
 
@@ -32,7 +32,7 @@ Knihovna také poskytuje třídy pro práci s modelem objektů dokumentů v pam�
   * .NET Framework 4.7.2 a novější verze
   * .NET Core 2,0, 2,1 a 2,2
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 * [Jak používat knihovnu](system-text-json-how-to.md)
 * [Postup migrace z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)

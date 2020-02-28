@@ -2,12 +2,12 @@
 title: 'Kurz: instalace a používání místních nástrojů .NET Core'
 description: Naučte se instalovat a používat nástroj .NET jako místní nástroj.
 ms.date: 02/12/2020
-ms.openlocfilehash: 6de620772cec1e9d1b1f57380b72c0163d68337c
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: a4355886513040e2436bdbd87905e5baee2dd7a5
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543864"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156696"
 ---
 # <a name="tutorial-install-and-use-a-net-core-local-tool-using-the-net-core-cli"></a>Kurz: instalace a použití místního nástroje .NET Core pomocí .NET Core CLI
 
@@ -15,7 +15,7 @@ ms.locfileid: "77543864"
 
 V tomto kurzu se naučíte, jak nainstalovat a používat místní nástroj. Použijete nástroj, který vytvoříte v [prvním kurzu této série](global-tools-how-to-create.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 * Dokončete [první kurz této série](global-tools-how-to-create.md).
 * Nainstalujte modul runtime .NET Core 2,1.
@@ -24,9 +24,9 @@ V tomto kurzu se naučíte, jak nainstalovat a používat místní nástroj. Pou
 
 ## <a name="create-a-manifest-file"></a>Vytvořit soubor manifestu
 
-Chcete-li nainstalovat nástroj pouze pro místní přístup (pro aktuální adresář a podadresáře), je nutné jej přidat do souboru manifestu. 
+Chcete-li nainstalovat nástroj pouze pro místní přístup (pro aktuální adresář a podadresáře), je nutné jej přidat do souboru manifestu.
 
-Ve složce *botsay-\<název >* přejděte o jednu úroveň výš do složky *úložiště* :
+Ve složce *Microsoft. botsay* přejděte o jednu úroveň výš do složky *úložiště* :
 
 ```console
 cd ..
@@ -63,7 +63,7 @@ Když použijete příkaz CLI, který odkazuje na místní nástroj, sada SDK vy
 Nainstalujte nástroj z balíčku, který jste vytvořili v prvním kurzu:
 
 ```dotnetcli
-dotnet tool install --add-source ./botsay-<name>/nupkg botsay-<name>
+dotnet tool install --add-source ./microsoft.botsay/nupkg microsoft.botsay
 ```
 
 Tento příkaz přidá nástroj do souboru manifestu, který jste vytvořili v předchozím kroku. Výstup příkazu zobrazuje, ve kterém souboru manifestu je nově nainstalovaný nástroj:
@@ -71,7 +71,7 @@ Tento příkaz přidá nástroj do souboru manifestu, který jste vytvořili v p
  ```console
  You can invoke the tool from this directory using the following command:
  'dotnet tool run botsay' or 'dotnet botsay'
- Tool 'botsay-<name>' (version '1.0.0') was successfully installed.
+ Tool 'microsoft.botsay' (version '1.0.0') was successfully installed.
  Entry is added to the manifest file /home/name/repository/.config/dotnet-tools.json
  ```
 
@@ -82,7 +82,7 @@ Soubor *. config/dotnet-Tools. JSON* teď obsahuje jeden nástroj:
   "version": 1,
   "isRoot": true,
   "tools": {
-    "botsay-<name>": {
+    "microsoft.botsay": {
       "version": "1.0.0",
       "commands": [
         "botsay"
@@ -111,7 +111,7 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
      "version": 1,
      "isRoot": true,
      "tools": {
-       "botsay-<name>": {
+       "microsoft.botsay": {
          "version": "1.0.0",
          "commands": [
            "botsay"
@@ -131,7 +131,7 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
 
 1. Uložte provedené změny.
 
-   Tato změna je stejná jako získání nejnovější verze z úložiště poté, co někdo jiný nainstaloval balíček `dotnetsay` pro adresář projektu. 
+   Tato změna je stejná jako získání nejnovější verze z úložiště poté, co někdo jiný nainstaloval balíček `dotnetsay` pro adresář projektu.
 
 1. Spusťte příkaz `dotnet tool restore`.
 
@@ -142,7 +142,7 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
    Příkaz vytvoří výstup podobný následujícímu příkladu:
 
    ```console
-   Tool 'botsay-<name>' (version '1.0.0') was restored. Available commands: botsay
+   Tool 'microsoft.botsay' (version '1.0.0') was restored. Available commands: botsay
    Tool 'dotnetsay' (version '2.1.3') was restored. Available commands: dotnetsay
    Restore was successful.
    ```
@@ -157,9 +157,9 @@ V kořenovém adresáři úložiště obvykle nainstalujete místní nástroj. P
 
    ```console
    Package Id      Version      Commands       Manifest
-   -------------------------------------------------------------------------------------------
-   botsay-<name>   1.0.0        botsay         /home/name/repository/.config/dotnet-tools.json
-   dotnetsay       2.1.3        dotnetsay      /home/name/repository/.config/dotnet-tools.json
+   --------------------------------------------------------------------------------------------
+   microsoft.botsay 1.0.0        botsay         /home/name/repository/.config/dotnet-tools.json
+   dotnetsay        2.1.3        dotnetsay      /home/name/repository/.config/dotnet-tools.json
    ```
 
 1. Otestujte nástroje:
@@ -191,7 +191,7 @@ Příkaz Update vyhledá první soubor manifestu, který obsahuje ID balíčku, 
 Nainstalované nástroje odeberte spuštěním příkazu pro [odinstalaci nástroje dotnet](dotnet-tool-uninstall.md) :
 
 ```dotnetcli
-dotnet tool uninstall botsay-<name>
+dotnet tool uninstall microsoft.botsay
 ```
 
 ```dotnetcli
@@ -202,6 +202,6 @@ dotnet tool uninstall dotnetsay
 
 Pokud se vám zobrazí chybová zpráva s postupem v tomto kurzu, přečtěte si téma [řešení potíží s používáním nástrojů .NET Core](troubleshoot-usage-issues.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 Další informace najdete v tématu [nástroje .NET Core](global-tools.md) .

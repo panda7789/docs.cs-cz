@@ -3,12 +3,12 @@ title: Ladění aplikace Hello World .NET Core pomocí sady Visual Studio
 description: Naučte se ladit aplikaci Hello World napsanou v C# nebo Visual Basic se sadou Visual Studio.
 ms.date: 12/05/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: bc2736165ec827c1f2670605f23f549ceed4e83a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b2ee1401fc89f990c5f930d80d1a510a117e63a0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714059"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156670"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio"></a>Ladění aplikace C# .net Core Hello World nebo Visual Basic pomocí sady Visual Studio
 
@@ -28,7 +28,7 @@ Spusťte program a vyzkoušejte několik funkcí ladění:
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 1. Nastavte *zarážku* na řádku, který čte `Console.WriteLine($"\nHello, {name}, on {date:d} at {date:t}!");` kliknutím na levý okraj okna Code (kód) na řádku. Zarážku lze také nastavit vložením blikajícího kurzoru do řádku kódu a následným stisknutím klávesy **F9** nebo výběrem možnosti **ladit** > v řádku nabídek **Přepnout zarážku** .
 
@@ -64,12 +64,12 @@ Spusťte program a vyzkoušejte několik funkcí ladění:
 
 1. Stisknutím libovolné klávesy ukončete aplikaci a zastavte ladění.
 
-# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+# <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
 1. Nastavte *zarážku* na řádku, který čte `Console.WriteLine($"{vbCrLf}Hello, {name}, on {currentDate:d} at {currentDate:t}!")` kliknutím na levý okraj okna Code (kód) na řádku. Můžete také nastavit zarážku umístěním blikajícího kurzoru na požadovaný řádek a pak vybrat možnost **ladění** > v řádku nabídek **Přepnout zarážku** .
 
    Zarážka dočasně přerušuje provádění aplikace *před* provedením řádku se zarážkou.
-   
+
    Jak ukazuje následující obrázek, sada Visual Studio označuje řádek, na kterém je zarážka nastavena, zvýrazněním a zobrazením červeného kruhu v jeho levém okraji.
 
    ![Okno programu Visual Studio se sadou zarážek](./media/debugging-with-visual-studio/vb/set-breakpoint-in-editor.png)
@@ -104,7 +104,7 @@ Program zobrazí řetězec, který uživatel zadá. Co se stane, když uživatel
 
 Chcete-li nastavit podmíněný bod přerušení a otestovat, co se stane, když uživatel nezadá řetězec, udělejte toto:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 1. Pravým tlačítkem myši klikněte na červenou tečku, která představuje zarážku. V místní nabídce vyberte **podmínky** a otevřete tak dialogové okno **Nastavení zarážky** . Zaškrtněte políčko pro **podmínky** , pokud ještě není vybraná.
 
@@ -142,7 +142,7 @@ Chcete-li nastavit podmíněný bod přerušení a otestovat, co se stane, když
 
 1. Vymažte zarážku kliknutím na tečku na levém okraji okna kódu nebo výběrem možnosti **ladit > přepínací zarážku** , když je vybraný řádek kódu.
 
-# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+# <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
 1. Pravým tlačítkem myši klikněte na červenou tečku, která představuje zarážku. V místní nabídce vyberte **podmínky** a otevřete tak dialogové okno **Nastavení zarážky** . Zaškrtněte políčko pro **podmínky**.
 
@@ -185,7 +185,7 @@ Chcete-li nastavit podmíněný bod přerušení a otestovat, co se stane, když
 
 Visual Studio také umožňuje krokovat řádek po řádku programu a monitorovat jeho spuštění. Obvykle byste nastavili zarážku a pomocí této funkce mohli sledovat tok programu přes malou část kódu programu. Vzhledem k tomu, že je váš program malý, můžete projít celým programem:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 1. Na panelu nabídek zvolte možnost **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu **F11**. Visual Studio zvýrazní a zobrazí šipku vedle dalšího řádku provádění.
 
@@ -211,7 +211,7 @@ Visual Studio také umožňuje krokovat řádek po řádku programu a monitorova
 
 1. Stisknutím libovolné klávesy zavřete okno konzoly a zastavte ladění.
 
-# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+# <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
 1. Na panelu nabídek zvolte možnost **ladění** > **Krokovat s vnořením** nebo stiskněte klávesu **F11**. Visual Studio zvýrazní a zobrazí šipku vedle dalšího řádku provádění.
 

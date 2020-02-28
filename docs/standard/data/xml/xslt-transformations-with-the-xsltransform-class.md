@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
-ms.openlocfilehash: 5f670fa5e83d1802496c0cc6972a7e3af7cae374
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e03eb08c71ff2d031ac61a702683e3950d94f2be
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709644"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160232"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformace XSLT s třídou XslTransform
 
@@ -22,7 +22,7 @@ Cílem XSLT je převést obsah zdrojového dokumentu XML do jiného dokumentu, k
 
 ## <a name="overview"></a>Přehled
 
-![Diagram znázorňující architekturu transformace XSLT.](./media/xslt-transformations-with-the-xsltransform-class/xslt-transformation-architecture.gif) 
+![Diagram znázorňující architekturu transformace XSLT.](./media/xslt-transformations-with-the-xsltransform-class/xslt-transformation-architecture.gif)
 
 Doporučení XSLT používá jazyk XML Path (XPath) pro výběr částí dokumentu XML, kde XPath je dotazovací jazyk, který slouží k navigaci uzlů stromu dokumentu. Jak je znázorněno v diagramu, .NET Framework implementace XPath slouží k výběru částí jazyka XML uložených v několika třídách, například <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XPath.XPathDocument>. <xref:System.Xml.XPath.XPathDocument> je optimalizované úložiště dat XSLT a při použití s <xref:System.Xml.Xsl.XslTransform>poskytuje transformace XSLT s dobrým výkonem.
 
@@ -74,7 +74,7 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Xml.Xsl;
 
-public class Sample 
+public class Sample
 {
     private const String filename = "mydata.xml";
     private const String stylesheet = "myStyleSheet.xsl";
@@ -92,7 +92,7 @@ public class Sample
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Xsl.XslTransform>
 - [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 26b0535fa918a802dd0922554ae197ba10396d56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a76cc40f308ac2f636a650cd4a17da0e94e23a34
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129567"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160258"
 ---
 # <a name="managed-threading-best-practices"></a>Osvědčené postupy spravovaného vlákna
 Multithreading vyžaduje pečlivé programování. V případě většiny úkolů lze omezit složitost umístěním požadavků do fronty pro spuštění pomocí vláken fondu vláken. Toto téma řeší obtížnější situace, například koordinaci práce více vláken nebo zpracování vláken, která se blokují.  
@@ -107,7 +107,7 @@ Pomocí vlastnosti <xref:System.Environment.ProcessorCount?displayProperty=nameW
     ```  
   
     ```csharp  
-    lock(lockObject)   
+    lock(lockObject)
     {  
         myField++;  
     }  
@@ -172,7 +172,7 @@ Pomocí vlastnosti <xref:System.Environment.ProcessorCount?displayProperty=nameW
   
 - Nepoužívejte poskytování statických metod, které mění stav. V případě běžných použití serverů je statický stav sdílen napříč požadavky, což znamená, že více vláken může současně spustit tento kód. Tato skutečnost otevírá možnosti pro chyby spojené s používáním více vláken. Zvažte používání návrhového vzoru, který zapouzdřuje data do instancí, jež nejsou sdíleny napříč požadavky. Dále platí, že pokud jsou synchronizována statická data, volání mezi statickými metodami, které mění stav, může způsobit zablokování nebo redundantní synchronizaci, což nepříznivě ovlivňuje výkon.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Dělení na vlákna](../../../docs/standard/threading/index.md)
 - [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)

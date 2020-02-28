@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 6a165c3e0f41603ef7233669d7148dd44b1d3ce6
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 1de231b01e3fa97e78a87ae6b0595a9b5536374e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696764"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160167"
 ---
 # <a name="best-practices-for-exceptions"></a>Osvědčené postupy pro výjimky
 
@@ -56,7 +56,7 @@ Třída může poskytovat metody nebo vlastnosti, které umožňují vyhnout se 
 
 Dalším způsobem, jak se vyhnout výjimkám, je vrátit hodnotu null (nebo výchozí) pro extrémně běžné chybové případy namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null (nebo výchozí) v těchto případech minimalizujete dopad na výkon aplikace.
 
-Pro typy hodnot bez ohledu na to, jestli se má jako indikátor chyby použít `Nullable<T>` nebo výchozí, je něco, co je potřeba zvážit pro vaši konkrétní aplikaci. Když použijete `Nullable<Guid>`, `default` se `null` místo `Guid.Empty`. V některých případech může přidání `Nullable<T>` usnadnit jeho vymazání, pokud je hodnota přítomna nebo chybí. Jinak přidávání `Nullable<T>` může vytvořit další případy, které kontrolují, že nepotřebujete, a sloužit pouze k vytváření potenciálních zdrojů chyb. 
+Pro typy hodnot bez ohledu na to, jestli se má jako indikátor chyby použít `Nullable<T>` nebo výchozí, je něco, co je potřeba zvážit pro vaši konkrétní aplikaci. Když použijete `Nullable<Guid>`, `default` se `null` místo `Guid.Empty`. V některých případech může přidání `Nullable<T>` usnadnit jeho vymazání, pokud je hodnota přítomna nebo chybí. Jinak přidávání `Nullable<T>` může vytvořit další případy, které kontrolují, že nepotřebujete, a sloužit pouze k vytváření potenciálních zdrojů chyb.
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení kódu chyby
 
@@ -98,7 +98,7 @@ Například u implementací rozhraní .NET, které podporují aplikační domén
 
 - Sestavení umístěte do společného základu cesty aplikace sdíleného oběma doménami aplikace.
 
-    \- nebo –
+    \- nebo-
 
 - Pokud domény nesdílejí společný základ cesty aplikace, podepište sestavení obsahující informace o výjimce silným názvem a nasaďte sestavení do globální mezipaměti sestavení (GAC).
 
@@ -113,7 +113,7 @@ Chybová zpráva, kterou uživatel vidí, je odvozena z vlastnosti <xref:System.
 Pro lokalizované aplikace byste měli poskytnout lokalizovaný řetězec zprávy pro všechny výjimky, které může vaše aplikace vyvolat. Soubory prostředků můžete použít k poskytnutí lokalizovaných chybových zpráv. Informace o lokalizaci aplikací a načítání lokalizovaných řetězců naleznete v následujících článcích:
 
 - [Postupy: vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek](how-to-create-localized-exception-messages.md)
-- [Prostředky v aplikacích klasické pracovní plochy](../../framework/resources/index.md) 
+- [Prostředky v aplikacích klasické pracovní plochy](../../framework/resources/index.md)
 - <xref:System.Resources.ResourceManager?displayProperty=nameWithType>
 
 ## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>V možnosti vlastní výjimky zadejte podle potřeby další vlastnosti.
@@ -214,6 +214,6 @@ Catch ex As Exception
 End Try
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výjimky](index.md)

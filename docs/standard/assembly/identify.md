@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Určení, zda je soubor sestavení'
+title: 'Postupy: určení, zda je soubor sestavením'
 ms.date: 08/19/2019
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f9bff86ac559e40136ed016b862eef8ba0863ce3
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 1d66c0c166724f195a3cafd9bcbe3c7414c08ebb
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973220"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159504"
 ---
-# <a name="how-to-determine-if-a-file-is-an-assembly"></a>Postupy: Určení, zda je soubor sestavení
+# <a name="how-to-determine-if-a-file-is-an-assembly"></a>Postupy: určení, zda je soubor sestavením
 
 Soubor je sestavení, pokud je a pouze v případě, že je spravován a obsahuje položku sestavení v metadatech. Další informace o sestaveních a metadatech naleznete v tématu [Assembly manifest](manifest.md).  
   
@@ -22,13 +22,13 @@ Soubor je sestavení, pokud je a pouze v případě, že je spravován a obsahuj
   
 2. Načtěte soubor, který chcete testovat.  
   
-3. Pokud **Ildasm** hlásí, že soubor není soubor přenositelného spustitelného souboru (PE), nejedná se o sestavení. Další informace najdete v tématu [postup: Zobrazit obsah](view-contents.md)sestavení.  
+3. Pokud **Ildasm** hlásí, že soubor není soubor přenositelného spustitelného souboru (PE), nejedná se o sestavení. Další informace naleznete v tématu [Postupy: zobrazení obsahu sestavení](view-contents.md).  
   
 ## <a name="how-to-programmatically-determine-if-a-file-is-an-assembly"></a>Jak programově určit, jestli je soubor sestavení  
   
-1. <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType> Zavolejte metodu a předejte jí úplnou cestu k souboru a název testovaného souboru.  
+1. Zavolejte metodu <xref:System.Reflection.AssemblyName.GetAssemblyName%2A?displayProperty=nameWithType>, předejte úplnou cestu k souboru a název testovaného souboru.  
   
-2. Pokud je vyvolána výjimka, soubor není sestavení. <xref:System.BadImageFormatException>  
+2. Pokud je vyvolána výjimka <xref:System.BadImageFormatException>, soubor není sestavení.  
   
 ## <a name="example"></a>Příklad  
 Tento příklad testuje knihovnu DLL, aby bylo možné zjistit, zda se jedná o sestavení.  
@@ -88,10 +88,10 @@ End Module
 ' Output (with .NET Framework 3.5 installed):  
 '        Yes, the file is an Assembly.  
 ```
- 
-<xref:System.Reflection.AssemblyName.GetAssemblyName%2A> Metoda načte testovací soubor a pak ho uvolní, jakmile jsou informace čteny.  
+
+Metoda <xref:System.Reflection.AssemblyName.GetAssemblyName%2A> načte testovací soubor a pak ho uvolní, jakmile jsou informace čteny.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection.AssemblyName>
 - [C#Průvodce programováním](../../csharp/programming-guide/index.md)

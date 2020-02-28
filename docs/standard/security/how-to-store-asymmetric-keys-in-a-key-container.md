@@ -15,12 +15,12 @@ helpviewer_keywords:
 - encryption [.NET Framework], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-ms.openlocfilehash: 8ca4c4c5b1257411ecdf86858040bf428a9e6ce0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6b703156b38f52513c86f7b2507ac6c185a9dd50
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706055"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155942"
 ---
 # <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: Uložení asymetrického klíče v kontejneru klíčů
 Asymetrické soukromé klíče by nikdy neměly být uloženy doslovně nebo ve formátu prostého textu v místním počítači. Pokud potřebujete uložit soukromý klíč, měli byste použít kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy kontejnerů klíčů RSA na úrovni počítače a na úrovni uživatele](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100)).  
@@ -76,7 +76,7 @@ Public Class StoreKey
     End Sub  
   
     Public Shared Sub GenKey_SaveInContainer(ByVal ContainerName As String)  
-        ' Create the CspParameters object and set the key container   
+        ' Create the CspParameters object and set the key container
         ' name used to store the RSA key pair.  
         Dim cp As New CspParameters()  
         cp.KeyContainerName = ContainerName  
@@ -90,7 +90,7 @@ Public Class StoreKey
     End Sub  
   
     Public Shared Sub GetKeyFromContainer(ByVal ContainerName As String)  
-        ' Create the CspParameters object and set the key container   
+        ' Create the CspParameters object and set the key container
         '  name used to store the RSA key pair.  
         Dim cp As New CspParameters()  
         cp.KeyContainerName = ContainerName  
@@ -104,7 +104,7 @@ Public Class StoreKey
     End Sub  
   
     Public Shared Sub DeleteKeyFromContainer(ByVal ContainerName As String)  
-        ' Create the CspParameters object and set the key container   
+        ' Create the CspParameters object and set the key container
         '  name used to store the RSA key pair.  
         Dim cp As New CspParameters()  
         cp.KeyContainerName = ContainerName  
@@ -160,7 +160,7 @@ public class StoreKey
   
     public static void GenKey_SaveInContainer(string ContainerName)  
     {  
-        // Create the CspParameters object and set the key container   
+        // Create the CspParameters object and set the key container
         // name used to store the RSA key pair.  
         CspParameters cp = new CspParameters();  
         cp.KeyContainerName = ContainerName;  
@@ -175,7 +175,7 @@ public class StoreKey
   
     public static void GetKeyFromContainer(string ContainerName)  
     {  
-        // Create the CspParameters object and set the key container   
+        // Create the CspParameters object and set the key container
         // name used to store the RSA key pair.  
         CspParameters cp = new CspParameters();  
         cp.KeyContainerName = ContainerName;  
@@ -190,7 +190,7 @@ public class StoreKey
   
     public static void DeleteKeyFromContainer(string ContainerName)  
     {  
-        // Create the CspParameters object and set the key container   
+        // Create the CspParameters object and set the key container
         // name used to store the RSA key pair.  
         CspParameters cp = new CspParameters();  
         cp.KeyContainerName = ContainerName;  
@@ -221,7 +221,7 @@ Key added to container:
 Key deleted.  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
 - [Šifrování dat](../../../docs/standard/security/encrypting-data.md)

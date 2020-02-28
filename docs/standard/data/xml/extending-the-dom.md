@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-ms.openlocfilehash: 41b6959843e866b89da46a9cedfb54a2f5ed001a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 11c7e8c8d2ea3b49fe73ab4dde4e2ccc8bc917ff
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710879"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159673"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 
@@ -42,9 +42,9 @@ End Class 'LineInfoDocument
 ```
 
 ```csharp
-class LineInfoDocument : XmlDocument 
+class LineInfoDocument : XmlDocument
 {
-    public override XmlElement CreateElement(string prefix, string localname, string nsURI) 
+    public override XmlElement CreateElement(string prefix, string localname, string nsURI)
     {
         LineInfoElement elem = new LineInfoElement(prefix, localname, nsURI, this);
         return elem;
@@ -250,6 +250,6 @@ Další informace o zpracování událostí uzlu naleznete v tématu [události]
 
 Pokud přepíšete metodu <xref:System.Xml.XmlDocument.CreateElement%2A> v odvozené třídě, při vytváření nových prvků při úpravách dokumentu nebudou přidány výchozí atributy. Jedná se o problém jenom při úpravách. Vzhledem k tomu, že metoda <xref:System.Xml.XmlDocument.CreateElement%2A> zodpovídá za přidání výchozích atributů do <xref:System.Xml.XmlDocument>, je nutné tuto funkci v metodě <xref:System.Xml.XmlDocument.CreateElement%2A> nakódovat. Pokud načítáte <xref:System.Xml.XmlDocument>, která obsahuje výchozí atributy, bude zpracována správně. Další informace o výchozích atributech naleznete v tématu [vytváření nových atributů pro prvky v modelu DOM](creating-new-attributes-for-elements-in-the-dom.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

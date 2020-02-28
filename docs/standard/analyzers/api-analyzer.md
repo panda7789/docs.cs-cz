@@ -4,12 +4,12 @@ description: Přečtěte si, jak může analyzátor rozhraní .NET API pomáhat 
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: f6cf2d8109c564447972afd18c6d6d587711304b
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: e214c91f2beebc7f3b3324f4879deba9a5623f86
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542621"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156131"
 ---
 # <a name="net-api-analyzer"></a>Analyzátor rozhraní .NET API
 
@@ -20,7 +20,7 @@ Analyzátor API se dodává jako balíček NuGet [Microsoft. dotnet. analyzers. 
 > [!NOTE]
 > Analyzátor rozhraní .NET API je stále předběžnou verzí.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Visual Studio 2017 a novější verze nebo Visual Studio pro Mac (všechny verze).
 
@@ -38,7 +38,7 @@ Analyzátor API používá kódy chyb specifické pro rozhraní API, které zač
 
 ### <a name="add-the-api-analyzer-to-your-project"></a>Přidání analyzátoru rozhraní API do projektu
 
-1. Otevřít Visual Studio.
+1. Otevřete sadu Visual Studio.
 2. Otevřete projekt, na kterém chcete spustit analyzátor.
 3. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Spravovat balíčky NuGet**. (Tato možnost je k dispozici také z nabídky **projekt** .)
 4. Na kartě Správce balíčků NuGet:
@@ -47,7 +47,7 @@ Analyzátor API používá kódy chyb specifické pro rozhraní API, které zač
    3. Vyberte možnost **Zahrnout předprodejní verze**.
    4. Vyhledejte **Microsoft. dotnet. analyzers. Compatibility**.
    5. Vyberte tento balíček v seznamu.
-   6. Vyberte tlačítko **instalovat** . 
+   6. Vyberte tlačítko **instalovat** .
    7. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
 
 ### <a name="use-the-api-analyzer"></a>Použití analyzátoru rozhraní API
@@ -56,13 +56,13 @@ V případě, že se v kódu používá zastaralé rozhraní API, jako je např�
 
 ![Snímek obrazovky rozhraní API pro WebClient se zelenou vlnovkou a žárovkou na levé straně](media/api-analyzer/green-squiggle.jpg)
 
-Okno **Seznam chyb** obsahuje upozornění s jedinečným ID na zastaralé rozhraní API, jak je znázorněno v následujícím příkladu (`DE004`): 
+Okno **Seznam chyb** obsahuje upozornění s jedinečným ID na zastaralé rozhraní API, jak je znázorněno v následujícím příkladu (`DE004`):
 
 ![Snímek obrazovky okna Seznam chyb zobrazující ID a popis upozornění](media/api-analyzer/warnings-id-and-descriptions.jpg "Seznam chyb okno, které obsahuje upozornění.")
 
 Kliknutím na ID přejdete na webovou stránku s podrobnými informacemi o tom, proč se rozhraní API zastaralo, a návrhy týkající se alternativních rozhraní API, která se dají použít.
 
-Všechna upozornění lze potlačit kliknutím pravým tlačítkem na zvýrazněný člen a výběrem možnosti **potlačit \<ID diagnostiky >** . Existují dva způsoby, jak potlačit upozornění: 
+Všechna upozornění lze potlačit kliknutím pravým tlačítkem na zvýrazněný člen a výběrem možnosti **potlačit \<ID diagnostiky >** . Existují dva způsoby, jak potlačit upozornění:
 
 - [místně (ve zdroji)](#suppress-warnings-locally)
 - [globálně (v souboru potlačení)](#suppress-warnings-globally) – doporučeno
@@ -119,13 +119,13 @@ Analyzátor v současné době zpracovává následující případy:
 
 Všechna tato diagnostika jsou k dispozici nejen v integrovaném vývojovém prostředí (IDE), ale také na příkazovém řádku jako součást sestavení projektu, který zahrnuje server CI.
 
-## <a name="configuration"></a>Konfiguraci
+## <a name="configuration"></a>Konfigurace
 
 Uživatel rozhodne, jak by měla být Diagnostika zpracována: jako upozornění, chyby, návrhy nebo je vypnuto. Například jako architekt se můžete rozhodnout, že problémy s kompatibilitou by měly být považovány za chyby, volání některých zastaralých rozhraní API generují upozornění, zatímco ostatní generují pouze návrhy. Můžete ji nakonfigurovat samostatně podle ID diagnostiky a podle projektu. Provedete to tak, že v **Průzkumník řešení**přejdete do uzlu **závislosti** v projektu. Rozbalte uzel **závislosti** > **analyzátory** > **Microsoft. dotnet. analyzers. Compatibility**. Klikněte pravým tlačítkem na ID diagnostiky, vyberte **nastavit závažnost sady pravidel** a vyberte požadovanou možnost.
 
 ![Snímek obrazovky Průzkumník řešení znázorňující diagnostiku a automaticky otevírané okno se závažností sady pravidel "](media/api-analyzer/disable-notifications.jpg)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - Představujeme Blogový příspěvek k [analyzátoru API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) .
 - Ukázkové video [analyzátoru API](https://youtu.be/eeBEahYXGd0) na YouTube

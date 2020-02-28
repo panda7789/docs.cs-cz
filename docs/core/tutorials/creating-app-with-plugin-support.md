@@ -4,23 +4,23 @@ description: Naučte se, jak vytvořit aplikaci .NET Core, která podporuje modu
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: 32205a507bc95b2f8a2f75368aab3fde710249ee
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 4c03c70edcdba52c4e6029402b92d5478a0d312c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787855"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156644"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Vytvoření aplikace .NET Core pomocí modulů plug-in
 
-V tomto kurzu se dozvíte, jak vytvořit vlastní <xref:System.Runtime.Loader.AssemblyLoadContext> pro načtení modulů plug-in. K vyřešení závislostí modulu plug-in se používá <xref:System.Runtime.Loader.AssemblyDependencyResolver>. Kurz správně izoluje závislosti modulu plug-in z hostující aplikace. Naučíte se:
+V tomto kurzu se dozvíte, jak vytvořit vlastní <xref:System.Runtime.Loader.AssemblyLoadContext> pro načtení modulů plug-in. K vyřešení závislostí modulu plug-in se používá <xref:System.Runtime.Loader.AssemblyDependencyResolver>. Kurz správně izoluje závislosti modulu plug-in z hostující aplikace. Dozvíte se, jak provést tyto akce:
 
 - Vytvořte strukturu projektu pro podporu modulů plug-in.
 - Vytvořte vlastní <xref:System.Runtime.Loader.AssemblyLoadContext> pro načtení každého modulu plug-in.
 - Pokud chcete, aby moduly plug-in měly závislosti, použijte <xref:System.Runtime.Loader.AssemblyDependencyResolver?displayProperty=fullName> typ.
 - Vytváření modulů plug-in, které lze snadno nasadit pouhým zkopírováním artefaktů sestavení.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Nainstalujte [sadu .NET Core 3,0 SDK](https://dotnet.microsoft.com/download) nebo novější verzi.
 
@@ -218,7 +218,7 @@ Při použití jiné instance `PluginLoadContext` pro každý modul plug-in mů�
 Zpět v kořenové složce proveďte následující kroky:
 
 1. Spusťte následující příkaz, který vytvoří nový projekt knihovny tříd s názvem `HelloPlugin`:
-    
+
     ```dotnetcli
     dotnet new classlib -o HelloPlugin
     ```
@@ -233,7 +233,7 @@ Zpět v kořenové složce proveďte následující kroky:
 
 [!code-csharp[the-hello-plugin](~/samples/core/extensions/AppWithPlugin/HelloPlugin/HelloCommand.cs)]
 
-Nyní otevřete soubor *HelloPlugin. csproj* . Měl by vypadat nějak takto:
+Nyní otevřete soubor *HelloPlugin. csproj* . Mělo by to vypadat nějak takto:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

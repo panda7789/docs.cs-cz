@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
-ms.openlocfilehash: 3b44b981a65dee5d216f882198a74b5fb61adfad
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7413c3fae7d7189ec8dca43b0c77f6b56158f416
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708039"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159465"
 ---
 # <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>Postupy: převod mezi datovými proudy .NET Framework a prostředí Windows Runtime (pouze Windows)
 
@@ -28,7 +28,7 @@ Chcete-li převést datový proud z prostředí Windows Runtime na datový proud
   
 - <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A?displayProperty=nameWithType> převede vstupní datový proud v prostředí Windows Runtime na spravovaný datový proud v rozhraní .NET pro aplikace UWP.
 
-Prostředí Windows Runtime nabízí typy streamů, které podporují jenom čtení, jenom zápis nebo čtení a zápis. Tyto možnosti jsou zachovány, když převedete prostředí Windows Runtime datový proud na datový proud .NET Framework. Dále platí, že pokud převedete datový proud Windows Runtime na datový proud rozhraní .NET Framework a zpět, získáte původní instanci Windows Runtime. 
+Prostředí Windows Runtime nabízí typy streamů, které podporují jenom čtení, jenom zápis nebo čtení a zápis. Tyto možnosti jsou zachovány, když převedete prostředí Windows Runtime datový proud na datový proud .NET Framework. Dále platí, že pokud převedete datový proud Windows Runtime na datový proud rozhraní .NET Framework a zpět, získáte původní instanci Windows Runtime.
 
 Osvědčeným postupem je použít metodu převodu, která odpovídá schopnostem prostředí Windows Runtimeho datového proudu, který chcete převést. Vzhledem k tomu, že <xref:Windows.Storage.Streams.IRandomAccessStream> je čitelný a zapisovatelný (implementuje <xref:Windows.Storage.Streams.IOutputStream> i <xref:Windows.Storage.Streams.IInputStream>), metody převodu udržují možnosti původního datového proudu. Například použití <xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A?displayProperty=nameWithType> k převodu <xref:Windows.Storage.Streams.IRandomAccessStream> neomezuje převedený .NET Framework datový proud na čitelné. Je také možné zapisovat.
 
@@ -67,7 +67,7 @@ Chcete-li spustit tento příklad, vytvořte aplikaci XAML pro UWP, která cíl�
   [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage2.xaml.cs)]
   [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage2.xaml.vb)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Rychlý Start: čtení a zápis souboru (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh464978(v=win.10))  
 - [Přehled aplikace .NET pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))  

@@ -5,12 +5,12 @@ author: leecow
 ms.author: leecow
 ms.date: 12/04/2019
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 4164ea5a04d80ab20109168a225b793b02ee616a
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: ca86b3c158bb38c1293cd4303dcf4c00ea9175b1
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448890"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157804"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>Závislosti a požadavky .NET Core
 
@@ -294,6 +294,14 @@ Rozhraní .NET Core je podporované v následujících verzích macOS:
 | 3.0               | Velký Sierra (10.13 +)  | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
 | 2.2               | Sierra (10.12 +)       | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
 | 2.1               | Sierra (10.12 +)       | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) |
+
+Od macOS Catalina (verze 10,15) je nutné, aby byl veškerý software sestavený po 1. června 2019, který je distribuován s ID vývojáře, notarized. Tento požadavek se vztahuje na modul runtime .NET Core, .NET Core SDK a software vytvořený pomocí .NET Core.
+
+Instalační programy pro .NET Core (běhové i sady SDK) verze 3,1, 3,0 a 2,1 byly notarized od 18. února 2020. Předchozí vydané verze nejsou notarized. Pokud spustíte aplikaci, která není notarized, zobrazí se chybová zpráva podobná následujícímu obrázku:
+
+![Výstraha macOS Catalina notarization](media/dependencies/macos-notarized-pkg-warning.png)
+
+Další informace o tom, jak vynucované notarization má vliv na rozhraní .NET Core (a aplikace .NET Core), najdete v tématu [Working with MacOS Catalina notarization](macos-notarization-issues.md).
 
 ## <a name="libgdiplus"></a>libgdiplus
 

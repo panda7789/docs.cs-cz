@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 60794c4f8a5f9aeb7a4b3cd58c0c9f00e03fa9e7
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 6e85c2c3e796ae59a13f944bd4913e4b7316c56a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450977"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156566"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -54,12 +54,40 @@ Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https:
 
 ### <a name="default-executables"></a>Výchozí spustitelné soubory
 
-.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#publish-runtime-dependent) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#publish-self-contained) vyvolat spustitelný soubor.
+.NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na modulu runtime](../deploying/index.md#publish-runtime-dependent) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#publish-self-contained) vyvolat spustitelný soubor.
 
-Během `dotnet build` nebo `dotnet publish`se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
+Během `dotnet build` nebo `dotnet publish`se vytvoří spustitelný soubor (známý jako **appHost**), který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
 
 - Můžete dvakrát kliknout na spustitelný soubor.
 - Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` ve Windows, a `./myapp` v systémech Linux a macOS.
+
+### <a name="macos-apphost-and-notarization"></a>macOS appHost a notarization
+
+*jenom macOS*
+
+Od notarized .NET Core SDK 3,0 pro macOS je nastavení pro vytvoření výchozího spustitelného souboru (známého jako appHost) ve výchozím nastavení zakázané. Další informace najdete v tématu [MacOS Catalina notarization a dopad na stažení a projekty .NET Core](../install/macos-notarization-issues.md).
+
+Když je povolené nastavení appHost, .NET Core při sestavování nebo publikování generuje nativní spustitelný soubor strojového souboru. Vaše aplikace běží v kontextu appHost, když je spuštěná ze zdrojového kódu pomocí příkazu `dotnet run`, nebo spuštěním spustitelného souboru stroj-O přímo.
+
+Bez appHost je jediným způsobem, jak může uživatel spustit aplikaci [závislou na běhu](../deploying/index.md#publish-runtime-dependent) , je pomocí příkazu `dotnet <filename.dll>`. AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
+
+Můžete buď nakonfigurovat appHost na úrovni projektu, nebo přepnout appHost pro konkrétní `dotnet` příkaz s parametrem `-p:UseAppHost`:
+
+- Soubor projektu
+
+  ```xml
+  <PropertyGroup>
+    <UseAppHost>true</UseAppHost>
+  </PropertyGroup>
+  ```
+
+- Parametr příkazového řádku
+
+  ```dotnetcli
+  dotnet run -p:UseAppHost=true
+  ```
+
+Další informace o nastavení `UseAppHost` naleznete v tématu [Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK](../project-sdk/msbuild-props.md#useapphost).
 
 ### <a name="single-file-executables"></a>Spustitelné soubory s jedním souborem
 
@@ -482,7 +510,7 @@ Další informace najdete v tématu věnovaném [vnitřním procesorům platform
 
 ### <a name="improved-net-core-version-apis"></a>Vylepšená rozhraní API verze .NET Core
 
-Počínaje rozhraním .NET Core 3.0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace. Například:
+Počínaje rozhraním .NET Core 3.0 verze rozhraní API poskytovaná pomocí .NET Core nyní vrátí očekávané informace. Příklad:
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");

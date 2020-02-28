@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: bfa9c24ef4cd2c418c91e00318aa47b889078d40
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: d4444b6d080afa92a4e7fd9f30c5f9358f02f0ef
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552661"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159231"
 ---
 # <a name="framework-libraries"></a>Knihovny architektury
 
@@ -52,7 +52,7 @@ Rozhraní .NET zahrnuje sadu rozhraní API pro nástroj, která poskytují funkc
 
 * <xref:System.Net.Http.HttpClient> – rozhraní API pro posílání požadavků HTTP a příjem odpovědí HTTP z prostředku identifikovaného identifikátorem URI.
 * <xref:System.Xml.Linq.XDocument> – rozhraní API pro načítání a dotazování dokumentů XML pomocí LINQ.
-* <xref:System.IO.StreamReader> – rozhraní API pro čtení souborů. 
+* <xref:System.IO.StreamReader> – rozhraní API pro čtení souborů.
 * <xref:System.IO.StreamWriter> – rozhraní API pro zápis souborů.
 
 ## <a name="app-model-apis"></a>Rozhraní API modelů aplikací

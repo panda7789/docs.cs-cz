@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 9b868bd5ed77788cd9b44c11623ae38eba58153c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3ca340e19d7340d7bea133fa62c6d8bbc3c0512a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711360"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160388"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data je často možné zpracovávat efektivněji, když jsou uložená a manipulována jako kolekce. Můžete použít třídu <xref:System.Array?displayProperty=nameWithType> nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System. Collections. neproměnlivé obory názvů pro přidání, odebrání a úpravu individuálních prvků nebo rozsahu prvků v kolekci.  
@@ -24,7 +24,7 @@ Podobná data je často možné zpracovávat efektivněji, když jsou uložená 
   
  Počínaje .NET Framework 4 poskytují kolekce v oboru názvů <xref:System.Collections.Concurrent> efektivní operace bezpečné pro přístup z více vláken pro přístup k položkám kolekce z více vláken. Neměnné třídy kolekce v System. Collections. neměnný obor názvů ([balíček NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) jsou podstatou bezpečné pro přístup z více vláken, protože operace jsou prováděny na kopii původní kolekce a původní kolekci nelze změnit.  
 
-<a name="BKMK_Commoncollectionfeatures"></a>   
+<a name="BKMK_Commoncollectionfeatures"></a>
 ## <a name="common-collection-features"></a>Společné funkce kolekcí  
  Všechny kolekce poskytují metody pro přidání, odebrání nebo vyhledání položek v kolekci. Kromě toho všechny kolekce, které přímo nebo nepřímo implementují rozhraní <xref:System.Collections.ICollection> nebo rozhraní <xref:System.Collections.Generic.ICollection%601> sdílejí tyto funkce:  
   
@@ -54,10 +54,10 @@ Podobná data je často možné zpracovávat efektivněji, když jsou uložená 
   
      Neobecné typy kolekcí v oboru názvů <xref:System.Collections> poskytují určitou bezpečnost vlákna při synchronizaci. obvykle zveřejněná prostřednictvím <xref:System.Collections.ICollection.SyncRoot%2A> a <xref:System.Collections.ICollection.IsSynchronized%2A>ch členů. Ve výchozím nastavení nejsou tyto kolekce bezpečné pro přístup z více vláken. Pokud vyžadujete škálovatelný a efektivní vícevláknový přístup ke kolekci, použijte jednu z tříd v oboru názvů <xref:System.Collections.Concurrent> nebo zvažte použití neměnné kolekce. Další informace najdete v tématu [kolekce bezpečné](../../../docs/standard/collections/thread-safe/index.md)pro přístup z více vláken.  
   
-<a name="BKMK_Choosingacollection"></a>   
+<a name="BKMK_Choosingacollection"></a>
 ## <a name="choosing-a-collection"></a>Výběr kolekce  
  Obecně byste měli použít obecné kolekce. Následující tabulka popisuje některé běžné scénáře shromažďování a třídy kolekcí, které můžete pro tyto scénáře použít. Pokud s obecnými kolekcemi začínáte, tato tabulka vám pomůže vybrat obecnou kolekci, která bude pro váš úkol fungovat nejlépe.  
- 
+
 |Chci...|Možnosti Obecné kolekce|Možnosti bez obecné kolekce|Možnosti bezpečného a neměnného přístupu k vláknům|  
 |-|-|-|-|  
 |Ukládat položky jako páry klíč/hodnota pro rychlé vyhledání podle klíče|<xref:System.Collections.Generic.Dictionary%602>|<xref:System.Collections.Hashtable><br /><br /> (Kolekce párů klíč/hodnota, které jsou uspořádány na základě hash kódu klíče.)|<xref:System.Collections.Concurrent.ConcurrentDictionary%602><br /><br /> <xref:System.Collections.ObjectModel.ReadOnlyDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableDictionary%602>|  
@@ -69,7 +69,7 @@ Podobná data je často možné zpracovávat efektivněji, když jsou uložená 
 |Seřazená kolekce|<xref:System.Collections.Generic.SortedList%602>|<xref:System.Collections.SortedList>|<xref:System.Collections.Immutable.ImmutableSortedDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
 |Sada pro matematické funkce|<xref:System.Collections.Generic.HashSet%601><br /><br /> <xref:System.Collections.Generic.SortedSet%601>|Bez doporučení|<xref:System.Collections.Immutable.ImmutableHashSet%601><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
   
-<a name="BKMK_RelatedTopics"></a>   
+<a name="BKMK_RelatedTopics"></a>
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
@@ -83,8 +83,8 @@ Podobná data je často možné zpracovávat efektivněji, když jsou uložená 
 |[Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekce, například <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>, které podporují bezpečný a efektivní souběžný přístup z více vláken.|  
 |System.Collections.Immutable|Zavádí neměnné kolekce a poskytuje odkazy na typy kolekcí.|  
   
-<a name="BKMK_Reference"></a>   
-## <a name="reference"></a>Odkaz  
+<a name="BKMK_Reference"></a>
+## <a name="reference"></a>Referenční informace  
  <xref:System.Array?displayProperty=nameWithType>  
  <xref:System.Collections?displayProperty=nameWithType>  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  

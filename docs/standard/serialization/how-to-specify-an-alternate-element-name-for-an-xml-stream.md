@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zadání alternativního názvu elementu pro XML stream'
+title: 'Postupy: určení alternativního názvu elementu pro datový proud XML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,16 +12,16 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: 577b96517632ca1ae06891540f22c2c3c3886cd1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6aaff20e2955fc9f121b3e60b14c0bbcf7515660
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018005"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159855"
 ---
-# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: Zadání alternativního názvu elementu pro XML stream
+# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: určení alternativního názvu elementu pro datový proud XML
   
-Pomocí <xref:System.Xml.Serialization.XmlSerializer>, můžete vygenerovat více než jeden datový proud XML se stejnou sadou tříd. Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly. Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN. Jedna služba používá značky \<ISBN > zatímco druhý používá značky \<BookID >. Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`. Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky. U první webové služby XML je podle očekávání. Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.  
+Pomocí <xref:System.Xml.Serialization.XmlSerializer>, můžete vygenerovat více než jeden datový proud XML se stejnou sadou tříd. Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly. Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN. Jedna služba používá značku \<ISBN >, zatímco druhá používá značku \<BookID >. Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`. Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky. U první webové služby XML je podle očekávání. Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.  
   
 ## <a name="to-create-an-xml-stream-with-an-alternate-element-name"></a>Chcete-li vytvořit datový proud XML s názvem alternativní elementu  
   
@@ -73,7 +73,7 @@ public class SerializeOverride()
     myAttributes.XmlElements.Add(myElementAttribute);  
     XmlAttributeOverrides myOverrides = new XmlAttributeOverrides();  
     myOverrides.Add(typeof(Book), "ISBN", myAttributes);  
-    XmlSerializer mySerializer =   
+    XmlSerializer mySerializer =
     new XmlSerializer(typeof(Book), myOverrides)  
     Book b = new Book();  
     b.ISBN = "123456789"  
@@ -91,7 +91,7 @@ public class SerializeOverride()
 </Book>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Serialization.XmlElementAttribute>
 - <xref:System.Xml.Serialization.XmlAttributes>

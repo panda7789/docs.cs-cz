@@ -1,14 +1,14 @@
 ---
 title: C#Rozhraní – prohlídka C# jazyka
 description: Rozhraní definují smlouvy implementované typy vC#
-ms.date: 08/10/2016
+ms.date: 02/27/2020
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
-ms.openlocfilehash: d10d9f69cebe9a05cdff9b9ff5d817237bf8c56f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 62d94462fa481379cf70d63a598deb7f36be204f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346831"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159127"
 ---
 # <a name="interfaces"></a>Rozhraní
 
@@ -22,11 +22,11 @@ Třídy a struktury mohou implementovat více rozhraní. V následujícím pří
 
 [!code-csharp[InterfacesTwo](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L19-L27)]
 
-Pokud třída nebo struktura implementuje konkrétní rozhraní, instance této třídy nebo struktury lze implicitně převést na tento typ rozhraní. Příklad
+Pokud třída nebo struktura implementuje konkrétní rozhraní, instance této třídy nebo struktury lze implicitně převést na tento typ rozhraní. Například
 
 [!code-csharp[InterfacesThree](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L33-L35)]
 
-V případech, kdy instance není staticky známá pro implementaci konkrétního rozhraní, lze použít dynamické přetypování typu. Například následující příkazy používají přetypování dynamického typu k získání `IControl` a `IDataBound` rozhraní objektu. Vzhledem k tomu, že je skutečný typ objektu run-time `EditBox`, přetypování je úspěšné.
+V případech, kdy instance není staticky známá pro implementaci konkrétního rozhraní, lze použít dynamické přetypování. Například následující příkazy používají přetypování dynamického typu k získání `IControl` a `IDataBound` rozhraní objektu. Vzhledem k tomu, že je skutečný typ objektu run-time `EditBox`, přetypování je úspěšné.
 
 [!code-csharp[InterfacesFour](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L40-L42)]
 

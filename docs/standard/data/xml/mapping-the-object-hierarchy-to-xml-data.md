@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-ms.openlocfilehash: 2ca5f27bdea75f6c6ce8f954f553b6a58a1a9204
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 642a7e5321d0150865f74a66a811914bc9f5d21d
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124252"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160024"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na data XML
 V případě, že je dokument XML v paměti, konceptuální reprezentace je strom. Pro programování máte hierarchii objektů pro přístup k uzlům stromu. Následující příklad ukazuje, jak se obsah XML stávají uzly.  
@@ -20,7 +20,7 @@ V případě, že je dokument XML v paměti, konceptuální reprezentace je stro
   
  Pokud máte následující jednoduchý kód XML:  
   
- **Vstup**  
+ **Input** (Vstup)  
   
 ```xml  
 <book>  
@@ -37,7 +37,7 @@ Reprezentace stromu uzlů v knize a názvu
   
  Následující příklad přečte v datech XML a zapisuje jiný text v závislosti na typu uzlu. Použijte následující datový soubor XML jako Input, **Items. XML**:  
   
- **Vstup**  
+ **Input** (Vstup)  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -68,8 +68,8 @@ Public Class Sample
         Dim reader As XmlTextReader = Nothing  
   
         Try  
-            ' Load the reader with the data file and   
-            'ignore all white space nodes.   
+            ' Load the reader with the data file and
+            'ignore all white space nodes.
             reader = New XmlTextReader(filename)  
             reader.WhitespaceHandling = WhitespaceHandling.None  
   
@@ -122,7 +122,7 @@ public class Sample
   
         try  
         {  
-            // Load the reader with the data file and ignore   
+            // Load the reader with the data file and ignore
             // all white space nodes.  
             reader = new XmlTextReader(filename);  
             reader.WhitespaceHandling = WhitespaceHandling.None;  
@@ -176,7 +176,7 @@ public class Sample
   
  Výstup z příkladu odhalí mapování dat na typy uzlů.  
   
- **Output**  
+ **Výstup**  
   
 ```xml  
 <?xml version='1.0'?><!--This is a sample XML document --><!DOCTYPE Items [<!ENTITY number "123">]<Items><Item>Test with an entity: 123</Item><Item>test with a child element <more> stuff</Item><Item>test with a CDATA section <![CDATA[<456>]]> def</Item><Item>Test with a char entity: A</Item><--Fourteen chars in this element.--><Item>1234567890ABCD</Item></Items>  
@@ -186,31 +186,31 @@ public class Sample
   
 |Vstup|Výstup|Test typu uzlu|  
 |-----------|------------|--------------------|  
-|\<? XML verze = "1.0"? >|\<? XML verze = ' 1.0 '? >|XmlNodeType. XmlDeclaration|  
-|\<!--Toto je ukázkový dokument XML – >|\<!--Toto je ukázkový dokument XML – >|XmlNodeType. Comment|  
-|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >] >|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >]|XmlNodeType. DocumentType|  
-|\<položky >|\<položky >|XmlNodeType. element|  
-|Položka \<|Položka \<|XmlNodeType. element|  
-|Test s entitou: &number;|Test s entitou: 123|XmlNodeType. text|  
-|\</Item >|\</Item >|XmlNodeType. EndElement|  
-|Položka \<|Položka \<|XmNodeType. element|  
-|test s podřízeným elementem|test s podřízeným elementem|XmlNodeType. text|  
-|\<Další >|\<Další >|XmlNodeType. element|  
-|vhodné|vhodné|XmlNodeType. text|  
-|\</Item >|\</Item >|XmlNodeType. EndElement|  
-|Položka \<|Položka \<|XmlNodeType. element|  
-|testování pomocí oddílu CDATA|testování pomocí oddílu CDATA|XmlTest. text|  
-|<! [CDATA [\<456 >]]\>|<! [CDATA [\<456 >]]\>|XmlTest. CDATA|  
-|IME|IME|XmlNodeType. text|  
-|\</Item >|\</Item >|XmlNodeType. EndElement|  
-|Položka \<|Položka \<|XmlNodeType. element|  
-|Test s entitou char: &\#65;|Test s entitou char: A|XmlNodeType. text|  
-|\</Item >|\</Item >|XmlNodeType. EndElement|  
-|v tomto elementu \<!--čtrnáct znaků.-->|\<– čtrnáct znaků v tomto elementu.-->|XmlNodeType. Comment|  
-|Položka \<|Položka \<|XmlNodeType. element|  
-|1234567890ABCD|1234567890ABCD|XmlNodeType. text|  
-|\</Item >|\</Item >|XmlNodeType. EndElement|  
-|\</Items >|\</Items >|XmlNodeType. EndElement|  
+|\<? XML verze = "1.0"? >|\<? XML verze = ' 1.0 '? >|XmlNodeType.XmlDeclaration|  
+|\<!--Toto je ukázkový dokument XML – >|\<!--Toto je ukázkový dokument XML – >|XmlNodeType.Comment|  
+|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >] >|\<! Položky DOCTYPE [\<! Číslo ENTITY "123" >]|XmlNodeType.DocumentType|  
+|\<položky >|\<položky >|XmlNodeType.Element|  
+|Položka \<>|Položka \<>|XmlNodeType.Element|  
+|Test s entitou: &number;|Test s entitou: 123|XmlNodeType.Text|  
+|\</Item >|\</Item >|XmlNodeType.EndElement|  
+|Položka \<>|Položka \<>|XmNodeType.Element|  
+|test s podřízeným elementem|test s podřízeným elementem|XmlNodeType.Text|  
+|\<Další >|\<Další >|XmlNodeType.Element|  
+|vhodné|vhodné|XmlNodeType.Text|  
+|\</Item >|\</Item >|XmlNodeType.EndElement|  
+|Položka \<>|Položka \<>|XmlNodeType.Element|  
+|testování pomocí oddílu CDATA|testování pomocí oddílu CDATA|XmlTest.Text|  
+|<! [CDATA [\<456 >]]\>|<! [CDATA [\<456 >]]\>|XmlTest.CDATA|  
+|IME|IME|XmlNodeType.Text|  
+|\</Item >|\</Item >|XmlNodeType.EndElement|  
+|Položka \<>|Položka \<>|XmlNodeType.Element|  
+|Test s entitou char: &\#65;|Test s entitou char: A|XmlNodeType.Text|  
+|\</Item >|\</Item >|XmlNodeType.EndElement|  
+|v tomto elementu \<!--čtrnáct znaků.-->|\<– čtrnáct znaků v tomto elementu.-->|XmlNodeType.Comment|  
+|Položka \<>|Položka \<>|XmlNodeType.Element|  
+|1234567890ABCD|1234567890ABCD|XmlNodeType.Text|  
+|\</Item >|\</Item >|XmlNodeType.EndElement|  
+|\</Items >|\</Items >|XmlNodeType.EndElement|  
   
  Musíte znát typ uzlu, který je přiřazen, protože typ uzlu řídí, jaké druhy akcí jsou platné a jaký druh vlastností lze nastavit a načíst.  
   
@@ -218,6 +218,6 @@ public class Sample
   
  Chcete-li přidat nové uzly do modelu DOM, přečtěte si téma [vkládání uzlů do dokumentu XML](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md). Chcete-li odebrat uzly z modelu DOM, přečtěte si téma [Odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md). Chcete-li upravit obsah uzlů v modelu DOM, přečtěte si téma [Úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

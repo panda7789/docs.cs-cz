@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: 2c3215fd42e8cf6d6427d23f94c14db4230ddd02
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c14c60b30f8f70aa5e888ed45d6f867154e18d8
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138066"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159647"
 ---
 # <a name="exceptions-in-managed-threads"></a>Výjimky ve spravovaných vláknech
 Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožňuje většině neošetřených výjimek v vláknech pokračovat přirozeně. Ve většině případů to znamená, že Neošetřená výjimka způsobí ukončení aplikace.  
@@ -41,7 +41,7 @@ Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožň
   
  Povolení neošetřených výjimek v vláknech pro pokračování v přirozeném prostředí, dokud operační systém neukončí program, zveřejňuje tyto problémy při vývoji a testování. Zprávy o chybách pro ukončení programu podporují ladění.  
   
-<a name="ChangeFromPreviousVersions"></a>   
+<a name="ChangeFromPreviousVersions"></a>
 ## <a name="change-from-previous-versions"></a>Změnit z předchozích verzí  
  Nejvýznamnější změna se týká spravovaných vláken. V .NET Framework verzích 1,0 a 1,1 poskytuje modul CLR (Common Language Runtime) pro neošetřené výjimky v následujících situacích příkaz restop:  
   
@@ -76,6 +76,6 @@ Počínaje verzí 2,0 .NET Framework modul CLR (Common Language Runtime) umožň
 ## <a name="host-override"></a>Přepsání hostitele  
  V .NET Framework verze 2,0 může nespravovaný hostitel používat rozhraní [ICLRPolicyManager](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) v rozhraní API pro hostování k přepsání výchozích neošetřených zásad pro modul CLR (Common Language Runtime). Funkce [ICLRPolicyManager:: SetUnhandledExceptionPolicy –](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) slouží k nastavení zásad pro neošetřené výjimky.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)

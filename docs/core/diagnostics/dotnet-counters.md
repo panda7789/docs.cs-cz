@@ -1,13 +1,13 @@
 ---
 title: dotnet – čítače – .NET Core
 description: Naučte se instalovat a používat nástroj příkazového řádku dotnet-Counter.
-ms.date: 10/14/2019
-ms.openlocfilehash: 399d5908e8ac52bcd4a20c1a819fc6c99f4de2f4
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/26/2020
+ms.openlocfilehash: 88f701a60d0ee03dd0236ae54c57679943e14939
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76737703"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157879"
 ---
 # <a name="dotnet-counters"></a>dotnet-counters
 
@@ -45,8 +45,53 @@ dotnet-counters [-h|--help] [--version] <command>
 
 | Příkaz                                             |
 | --------------------------------------------------- |
+| [dotnet – čítače jsou shromažďovány](#dotnet-counters-collect) |
 | [dotnet – seznam čítačů](#dotnet-counters-list)       |
 | [dotnet – monitorování čítačů](#dotnet-counters-monitor) |
+| [dotnet – čítače PS](#dotnet-counters-ps) |
+
+## <a name="dotnet-counters-collect"></a>dotnet – čítače jsou shromažďovány
+
+Pravidelně shromažďují vybrané hodnoty čítačů a exportují je do určeného formátu souboru pro následné zpracování.
+
+### <a name="synopsis"></a>Stručný obsah
+
+```console
+dotnet-counters collect [-h|--help] [-p|--process-id] [--refreshInterval] [counter_list] [--format] [-o|--output]
+```
+
+### <a name="options"></a>Možnosti
+
+- **`-p|--process-id <PID>`**
+
+  ID procesu, který se má monitorovat
+
+- **`--refresh-interval <SECONDS>`**
+
+  Počet sekund prodlevy mezi aktualizací zobrazených čítačů
+
+- **`counter_list <COUNTERS>`**
+
+  Mezerou oddělený seznam čítačů. Čítače lze zadat `provider_name[:counter_name]`. Pokud se `provider_name` používá bez opravňujícího `counter_name`, zobrazí se všechny čítače. Chcete-li zjistit názvy zprostředkovatelů a čítačů, použijte příkaz [dotnet-Counters list](#dotnet-counters-list) .
+
+- **`--format <csv|json>`**
+
+  Formát TNelze načíst, který se má exportovat Aktuálně dostupné: CSV, JSON.
+
+- **`-o|--output <output>`**
+
+  Název výstupního souboru
+
+### <a name="examples"></a>Příklady
+
+- Shromáždí všechny čítače v intervalu obnovování 3 sekundy a vygeneruje jako výstup sdílený svazek clusteru:
+
+  ```console
+  > dotnet-counters collect --process-id 1902 --refresh-interval 3 --format csv
+
+  counter_list is unspecified. Monitoring all counters by default.
+  Starting a counter session. Press Q to quit.
+  ```
 
 ## <a name="dotnet-counters-list"></a>dotnet – seznam čítačů
 
@@ -135,3 +180,22 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
   Press p to pause, r to resume, q to quit.
       request                                      100
   ```
+  
+## <a name="dotnet-counters-ps"></a>dotnet – čítače PS 
+
+Zobrazí seznam procesů dotnet, které lze monitorovat.
+
+### <a name="synopsis"></a>Stručný obsah
+
+```console
+dotnet-counters ps [-h|--help]
+```
+
+### <a name="example"></a>Příklad
+
+```console
+> dotnet-counters ps
+  
+  15683 WebApi     /home/suwhang/repos/WebApi/WebApi
+  16324 dotnet     /usr/local/share/dotnet/dotnet
+```

@@ -4,12 +4,12 @@ description: Popisuje součásti architektury .NET, jako jsou .NET Standard, imp
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: af28863ac98ff5ffb5a8133fb98f2f1e7036985d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: eadcf05069edfa32a52c5e73045b4cebd1a9a6ac
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124387"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160375"
 ---
 # <a name="net-architectural-components"></a>Komponenty architektury .NET
 
@@ -70,7 +70,7 @@ Modul runtime je spouštěcí prostředí pro spravovaný program. Operační sy
 
 - Modul CLR (Common Language Runtime) pro .NET Framework
 - Core Common Language Runtime (CoreCLR) pro .NET Core
-- .NET Native pro Univerzální platforma Windows 
+- .NET Native pro Univerzální platforma Windows
 - Mono runtime pro Xamarin. iOS, Xamarin. Android, Xamarin. Mac a rozhraní mono Desktop Framework
 
 ## <a name="net-tooling-and-common-infrastructure"></a>Nástroje .NET a běžná infrastruktura
@@ -96,7 +96,7 @@ Pro [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) 
 - **Jazyk Standard (verze 5,0): ECMA-334. PDF C#**  [](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)
 - **Common Language Infrastructure**: Tato akce je k dispozici ve formátu [PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf) a formuláři [zip](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.zip) .
 - **Informace odvozené ze souboru XML oddílu IV**: je k dispozici ve formátech [PDF](https://www.ecma-international.org/publications/files/ECMA-TR/ECMA%20TR-084.pdf) a [zip](https://www.ecma-international.org/publications/files/ECMA-TR/TR-084.zip) .
- 
+
 Oficiální dokumenty ISO/IEC jsou k dispozici na stránce Standard ISO/IEC – [veřejně dostupné standardy](https://standards.iso.org/ittf/PubliclyAvailableStandards/) . Tyto odkazy jsou přímo z této stránky:
 
 - **Informační technologie – programovací jazyky – C#** : [ISO/IEC 23270:2018](https://standards.iso.org/ittf/PubliclyAvailableStandards/c075178_ISO_IEC_23270_2018.zip)

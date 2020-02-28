@@ -2,12 +2,12 @@
 title: Nástroj XML Serializer Generator Tool (Sgen.exe)
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: 492337973f71b10dc061353b7083f596b402ae29
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: d67ab634279c4f8e06d609950932e2422bc43395
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392717"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159517"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Nástroj XML Serializer Generator Tool (Sgen.exe)
 Vytvoří generátor serializátor XML sestavení serializace XML pro typy v zadané sestavení s cílem zlepšit výkon při spuštění <xref:System.Xml.Serialization.XmlSerializer> při serializuje nebo deserializuje objekty zadaného typů.  
@@ -50,12 +50,12 @@ sgen [options]
  Následující příkaz vytvoří sestavení s názvem Data.XmlSerializers.dll pro serializaci všechny typy, které jsou obsaženy v sestavení s názvem Data.dll.  
   
 ```console  
-sgen Data.dll   
+sgen Data.dll
 ```  
   
  Data.XmlSerializers.dll sestavení lze odkazovat z kódu, který potřebuje k serializaci a deserializaci typy v Data.dll.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -4,12 +4,12 @@ description: Seznamte se s koncepty C# testování částí v a .NET Core pomoc�
 author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
-ms.openlocfilehash: 2d432f5efd6f8de3593f939abbd488f9fe68b73e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1b21e961ffceb3fce2697ad3254e79ed258aaa1a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715387"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157334"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# částí pomocí MSTest a .NET Core
 
@@ -36,15 +36,15 @@ namespace Prime.Services
 {
     public class PrimeService
     {
-        public bool IsPrime(int candidate) 
+        public bool IsPrime(int candidate)
         {
             throw new NotImplementedException("Please create a test first.");
-        } 
+        }
     }
 }
 ```
 
-Změňte adresář zpátky na adresář s *testováním jednotek pomocí-MSTest* . Spusťte [`dotnet sln add PrimeService/PrimeService.csproj`](../tools/dotnet-sln.md) pro přidání projektu knihovny tříd do řešení. 
+Změňte adresář zpátky na adresář s *testováním jednotek pomocí-MSTest* . Spusťte [`dotnet sln add PrimeService/PrimeService.csproj`](../tools/dotnet-sln.md) pro přidání projektu knihovny tříd do řešení.
 
 ## <a name="create-the-test-project"></a>Vytvořte projekt testu
 
@@ -90,7 +90,7 @@ Následující osnova znázorňuje konečné rozložení řešení:
         PrimeServiceTests.csproj
 ```
 
-Spusťte [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj`](../tools/dotnet-sln.md) v adresáři *Unit-Testing-using-MSTest* . 
+Spusťte [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj`](../tools/dotnet-sln.md) v adresáři *Unit-Testing-using-MSTest* .
 
 ## <a name="create-the-first-test"></a>Vytvoření prvního testu
 
@@ -123,7 +123,7 @@ namespace Prime.UnitTests.Services
 }
 ```
 
-[Atribut TestClass](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) označuje třídu, která obsahuje testy jednotek. [Atribut TestMethod](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) označuje, že metoda je metodou testu. 
+[Atribut TestClass](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) označuje třídu, která obsahuje testy jednotek. [Atribut TestMethod](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) označuje, že metoda je metodou testu.
 
 Uložte tento soubor a spusťte [`dotnet test`](../tools/dotnet-test.md) pro sestavení testů a knihovny tříd a potom spusťte testy. MSTest Test Runner obsahuje vstupní bod programu pro spuštění testů. `dotnet test` spustí Test Runner pomocí projektu testování částí, který jste vytvořili.
 
@@ -142,7 +142,7 @@ public bool IsPrime(int candidate)
 
 V adresáři *Unit-Testing-using-MSTest* znovu spusťte `dotnet test`. Příkaz `dotnet test` spustí sestavení pro projekt `PrimeService` a potom pro projekt `PrimeService.Tests`. Po sestavení obou projektů spustí tento jediný test. Předá.
 
-## <a name="add-more-features"></a>Přidání dalších funkcí
+## <a name="add-more-features"></a>Přidat další funkce
 
 Teď, když jste udělali jeden test Pass, je čas zapsat další. Pro čísla apostrofů existuje několik dalších jednoduchých případů: 0,-1. Můžete přidat nové testy s [atributem TestMethod](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute), ale to se rychle bude zdlouhavé. Existují další atributy MSTest, které umožňují napsat sadu podobných testů.  [Atribut DataTestMethod](xref:Microsoft.VisualStudio.TestTools.UnitTesting.DataTestMethodAttribute) představuje sadu testů, které spouštějí stejný kód, ale mají různé vstupní argumenty. Pomocí [atributu DataRow](xref:Microsoft.VisualStudio.TestTools.UnitTesting.DataRowAttribute) můžete zadat hodnoty pro tyto vstupy.
 
@@ -160,8 +160,8 @@ Pokračujte v iteraci přidáním dalších testů, více teorie a další kód 
 
 Vytvořili jste malou knihovnu a sadu testů jednotek pro tuto knihovnu. Rozpracovali jste řešení, aby přidávání nových balíčků a testů bylo součástí normálního pracovního postupu. Vyrostli jste většinu času a úsilí při řešení cílů aplikace.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:Microsoft.VisualStudio.TestTools.UnitTesting>
-- [Použití rozhraní MSTest při testech jednotek](/visualstudio/test/using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests)
+- [Použití rozhraní MSTest v testování částí](/visualstudio/test/using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests)
 - [Dokumentace k testovacímu rozhraní MSTest v2](https://github.com/Microsoft/testfx-docs)

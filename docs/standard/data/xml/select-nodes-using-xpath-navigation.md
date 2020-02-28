@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-ms.openlocfilehash: 8f4136683f13a52b84ab9e8bfd69f30c8914e029
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 58f1487486c2802a2c64b51afcecb01c76dd291a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710177"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155604"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>Výběr uzlů pomocí navigace XPath
 XML model DOM (Document Object Model) (DOM) obsahuje metody, které umožňují použít navigaci jazyka XML Path (XPath) k dotazování na informace v modelu DOM. Pomocí XPath můžete najít jeden konkrétní uzel nebo najít všechny uzly, které splňují určitá kritéria.  
@@ -30,7 +30,7 @@ Dim root As XmlNode = doc.DocumentElement
 Dim nsmgr As New XmlNamespaceManager(doc.NameTable)  
 nsmgr.AddNamespace("bk", "urn:newbooks-schema")  
   
-' Select and display the first node in which the author's   
+' Select and display the first node in which the author's
 ' last name is Kingsolver.  
 Dim node As XmlNode = root.SelectSingleNode( _  
      "descendant::bk:book[bk:author/bk:last-name='Kingsolver']", nsmgr)  
@@ -47,7 +47,7 @@ XmlNode root = doc.DocumentElement;
 XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);  
 nsmgr.AddNamespace("bk", "urn:newbooks-schema");  
   
-// Select and display the first node in which the author's   
+// Select and display the first node in which the author's
 // last name is Kingsolver.  
 XmlNode node = root.SelectSingleNode(  
     "descendant::bk:book[bk:author/bk:last-name='Kingsolver']", nsmgr);  
@@ -160,6 +160,6 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
 </bookstore>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

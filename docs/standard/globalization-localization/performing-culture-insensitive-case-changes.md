@@ -15,12 +15,12 @@ helpviewer_keywords:
 - String.ToUpper method
 - culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
-ms.openlocfilehash: b5289074724e3afd7356599738eeba648f25ca06
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7b2dee03619e24c5a2845699a06e88abab0c594b
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120851"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160128"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Provádění změn velikosti písmen nezávisle na jazykové verzi
 Metody <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType>a <xref:System.Char.ToLower%2A?displayProperty=nameWithType> poskytují přetížení, která nepřijímají žádné parametry. Ve výchozím nastavení tato přetížení bez parametrů mění velikost písmen v závislosti na hodnotě <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>. Výsledkem je, že se rozlišují malá a velká písmena, která se mohou lišit podle jazykové verze. Chcete-li zrušit zaškrtnutí bez ohledu na to, zda mají být změny velikosti písmen závislé na jazykové verzi nebo nezávislé na jazykové verzi, měli byste použít přetížení těchto metod, které vyžadují explicitní určení `culture` parametr. Pro změny velikosti písmen závislé na jazykové verzi zadejte `CultureInfo.CurrentCulture` pro parametr `culture`. U změn velikosti písmen nezávisle na jazykové verzi zadejte `CultureInfo.InvariantCulture` pro parametr `culture`.  
@@ -41,7 +41,7 @@ End Function
 ```  
   
 ```csharp  
-static object LookupKey(string key)   
+static object LookupKey(string key)
 {  
     return internalHashtable[key.ToLower()];  
 }  
@@ -56,7 +56,7 @@ End Function
 ```  
   
 ```csharp  
-static object LookupKey(string key)   
+static object LookupKey(string key)
 {  
     return internalHashtable[key.ToLower(CultureInfo.InvariantCulture)];  
 }  
@@ -65,7 +65,7 @@ static object LookupKey(string key)
 ## <a name="using-the-chartoupper-and-chartolower-methods"></a>Použití metod Char. ToUpper a Char. ToLower  
  I když metody `Char.ToUpper` a `Char.ToLower` mají stejné vlastnosti jako `String.ToUpper` a `String.ToLower` metody, jsou tu ovlivněny pouze takové jazykové verze: Turečtina (Turecko) a Ázerbájdžánština (latinka, Ázerbájdžán). Toto jsou jediné dvě kultury s rozdíly v malých a velkých znacích. Další podrobnosti o tomto jedinečném mapování případu naleznete v části "velikost písmen" v tématu <xref:System.String> třídy. Pro přehlednost kódu a zajištění konzistentních výsledků doporučujeme vždy použít přetížení těchto metod, které vám umožní explicitně zadat `culture` parametr.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.String.ToUpper%2A?displayProperty=nameWithType>
 - <xref:System.String.ToLower%2A?displayProperty=nameWithType>

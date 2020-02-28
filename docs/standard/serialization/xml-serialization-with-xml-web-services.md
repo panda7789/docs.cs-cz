@@ -17,15 +17,15 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: c8e4e848cb37ac1b2d147b570d98777a7beaf1bb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 2301f30a55e136b9a75a414d9325e4cf71c161da
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460250"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159530"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
-Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML vygenerované webovou službou XML, můžete použít atributy uvedené v obou [atributech, které řídí serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, které řídí kódované serializace protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) na třídy, vracet hodnoty, parametry a pole souboru sloužící k vytvoření webové služby XML (. asmx). Další informace o vytvoření webové služby XML naleznete v tématu [webové služby XML pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
+Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML vygenerované webovou službou XML, můžete použít atributy uvedené v obou [atributech, které řídí serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, které řídí kódované serializace protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) na třídy, vracet hodnoty, parametry a pole souboru používaného k vytvoření webové služby XML (. asmx). Další informace o vytvoření webové služby XML naleznete v tématu [webové služby XML pomocí ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100)).  
   
 ## <a name="literal-and-encoded-styles"></a>Literál a kódovaného stylů  
  KÓD XML generovaný webovou službou XML lze naformátovat jedním ze dvou způsobů, buď literálů, nebo kódovaných, jak je vysvětleno v tématu [Přizpůsobení formátování zpráv SOAP](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)). Proto existují dvě sady atributů, které řídí serializace XML. Atributy uvedené v [atributech, které řídí serializace XML,](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) jsou navrženy pro řízení literálového stylu XML. Atributy uvedené v [atributech, které ovládají ovládací prvek kódované serializaci protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) , mají kódovaný styl. Použitím selektivní tyto atributy, můžete přizpůsobit aplikace má být vrácena, obojím stylů. Kromě toho tyto atributy lze použít (v závislosti) má být vrácen hodnoty a parametry.  
@@ -51,12 +51,12 @@ End Class
   
 Public Class MyService  
     <WebMethod, SoapDocumentMethod> _  
-    public Function MyLiteralMethod() As Order   
+    public Function MyLiteralMethod() As Order
         Dim myOrder As Order = New Order()  
         return myOrder  
     End Function  
     <WebMethod, SoapRpcMethod> _  
-    public Function MyEncodedMethod() As Order   
+    public Function MyEncodedMethod() As Order
         Dim myOrder As Order = New Order()  
         return myOrder  
     End Function  
@@ -129,7 +129,7 @@ public class MyService {
 public Function MyLiteralMethod() As _  
 <XmlElement(Namespace:="http://www.cohowinery.com", _  
 ElementName:= "BookOrder")> _  
-Order   
+Order
     Dim myOrder As Order = New Order()  
     return myOrder  
 End Function  
@@ -169,7 +169,7 @@ public Function MyLiteralMethod(<XmlElement _
 ("MyOrderID", Namespace:="http://www.microsoft.com")>ID As String) As _  
 <XmlElement(Namespace:="http://www.cohowinery.com", _  
 ElementName:= "BookOrder")> _  
-Order   
+Order
     Dim myOrder As Order = New Order()  
     myOrder.OrderID = ID  
     return myOrder  
@@ -180,12 +180,12 @@ End Function
 [return: XmlElement(Namespace = "http://www.cohowinery.com",  
 ElementName = "BookOrder")]  
 [WebMethod][SoapDocumentMethod]  
-public Order MyLiteralMethod([XmlElement("MyOrderID",   
+public Order MyLiteralMethod([XmlElement("MyOrderID",
 Namespace="http://www.microsoft.com")] string ID){  
     Order myOrder = new Order();  
     myOrder.OrderID = ID;  
     return myOrder;  
-}   
+}
 ```  
   
  Požadavek SOAP bude vypadat takto.  
@@ -258,7 +258,7 @@ public class Order {
 </BookOrderForm>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
 - [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)

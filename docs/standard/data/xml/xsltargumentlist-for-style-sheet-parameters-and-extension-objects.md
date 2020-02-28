@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
-ms.openlocfilehash: 5cd733d557dabe66145fdbb848c473411d63c62b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 34ffb9923337bbad90b2170a16d610d26c7f6f23
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709618"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160193"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pro parametry šablon stylů a objektů rozšíření
 Třída <xref:System.Xml.Xsl.XsltArgumentList> obsahuje rozšiřitelné parametry jazyka StyleSheet (XSLT) a objekty rozšíření XSLT. Při předání do metody <xref:System.Xml.Xsl.XslTransform.Transform%2A> mohou být tyto parametry a objekty rozšíření vyvolány ze šablon stylů.  
@@ -38,9 +38,9 @@ Třída <xref:System.Xml.Xsl.XsltArgumentList> obsahuje rozšiřitelné parametr
   
 |Typ W3C|Ekvivalentní třída .NET Framework (typ)|Typ XPath nebo typ XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
-|String|System. String|XPath|  
-|Boolean|System. Boolean|XPath|  
-|Počet|System.Double|XPath|  
+|Řetězec|System. String|XPath|  
+|Logická hodnota|System. Boolean|XPath|  
+|Číslo|System.Double|XPath|  
 |Fragment stromu výsledků|System.Xml.XPath.XPathNavigator|XSLT|  
 |Sada uzlů|System.Xml.XPath.XPathNodeIterator|XPath|  
   
@@ -173,8 +173,8 @@ public class Sample
   
 ```xml  
 <order>  
-   <total>36.9</total>   
-   15% discount if paid by: 5/6/2001 5:01:15 PM   
+   <total>36.9</total>
+   15% discount if paid by: 5/6/2001 5:01:15 PM
 </order>  
 ```  
   
@@ -317,7 +317,7 @@ public class Sample
   <circle>  
     <radius>37.5</radius>  
   </circle>  
-</data>    
+</data>
 ```  
   
  Circle. xsl  
@@ -332,7 +332,7 @@ public class Sample
     <circle>  
     <xsl:copy-of select="node()"/>  
        <circumference>  
-          <xsl:value-of select="myObj:Circumference(radius)"/>          
+          <xsl:value-of select="myObj:Circumference(radius)"/>
        </circumference>  
     </circle>  
   </xsl:for-each>  
@@ -362,6 +362,6 @@ public class Sample
   
  `</circles>`  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

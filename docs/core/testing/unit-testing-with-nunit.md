@@ -3,12 +3,12 @@ title: Testování C# částí pomocí nunit a .NET Core
 description: Seznamte se s koncepty C# testování částí v a .NET Core pomocí interaktivního prostředí, které vytváří ukázkové řešení pomocí příkazu dotnet test a nunit.
 author: rprouse
 ms.date: 08/31/2018
-ms.openlocfilehash: 1ea17d9f830d8ac20e2bad79eebab5db767e0af8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8c099695b48e96ac47e41794082cd8dccaa0457a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714217"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157268"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# částí pomocí nunit a .NET Core
 
@@ -16,7 +16,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze.
 - Textový editor nebo editor kódu podle vašeho výběru.
@@ -28,7 +28,7 @@ Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-using-nu
 ```dotnetcli
 dotnet new sln
 ```
- 
+
 Potom vytvořte adresář *PrimeService* . Následující osnova ukazuje strukturu adresářů a souborů, které jsou tak daleko:
 
 ```console
@@ -137,11 +137,11 @@ namespace Prime.UnitTests.Services
 
             Assert.IsFalse(result, "1 should not be prime");
         }
-        
+
         /*
         More tests
         */
-        
+
         private PrimeService CreatePrimeService()
         {
              return new PrimeService();

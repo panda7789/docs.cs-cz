@@ -12,17 +12,17 @@ helpviewer_keywords:
 - copying directories
 - directories [.NET Framework], copying
 ms.assetid: 5a969765-e5f8-4b4e-977e-90e2b0a1fe3c
-ms.openlocfilehash: 132ce0b887f7c314311e294567c546bded9a89a0
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 5d40db7f902dac8bd6bbdc1510be8e56a321be30
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77627388"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159452"
 ---
 # <a name="how-to-copy-directories"></a>Postupy: kopírování adresářů
-Toto téma ukazuje, jak použít třídy v/v k synchronnímu zkopírování obsahu adresáře do jiného umístění. 
+Toto téma ukazuje, jak použít třídy v/v k synchronnímu zkopírování obsahu adresáře do jiného umístění.
 
-Příklad asynchronního kopírování souborů najdete v tématu [asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md). 
+Příklad asynchronního kopírování souborů najdete v tématu [asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md).
 
 Tento příklad kopíruje podadresáře nastavením `copySubDirs` metody `DirectoryCopy` na `true`. Metoda `DirectoryCopy` rekurzivně kopíruje podadresáře tím, že se zavolá sám na každý podadresář, dokud nebudete moci kopírovat.  
   

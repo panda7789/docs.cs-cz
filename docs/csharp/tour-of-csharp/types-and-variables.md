@@ -1,22 +1,22 @@
 ---
 title: C#Typy a proměnné – prohlídka C# jazyka
 description: Informace o definování typů a deklaraci proměnných vC#
-ms.date: 08/10/2016
+ms.date: 02/25/2020
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 571e346d1e46be798dca1b42cfcc2af3aa65e641
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: b2a5255a243c12543a1cd59b5724b6c826306e04
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77627562"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159088"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
-Existují dva druhy typů v C#: *typy hodnot* a *typy odkazů*. Proměnné typů hodnot přímo obsahují svá data, zatímco proměnné typu odkazu ukládají odkazy na jejich data, přičemž ta se označují jako objekty. U typů odkazů je možné, aby dvě proměnné odkazovaly na stejný objekt a bylo tak možné, aby operace s jednou proměnnou ovlivnily objekt, na který je odkazováno z jiné proměnné. S typy hodnot mají proměnné, které mají svou vlastní kopii dat, a není možné, aby operace s jedním z nich ovlivnily jiný (kromě případu, kdy `ref` a `out` proměnné parametru).
+Existují dva druhy typů v C#: *typy hodnot* a *typy odkazů*. Proměnné typů hodnot přímo obsahují svá data, zatímco proměnné typu odkazu ukládají odkazy na jejich data, přičemž ta se označují jako objekty. U typů odkazů je možné, aby dvě proměnné odkazovaly na stejný objekt a bylo tak možné, aby operace s jednou proměnnou ovlivnily objekt, na který je odkazováno z jiné proměnné. S typy hodnot mají proměnné, které mají svou vlastní kopii dat, a není možné, že operace na jednom mají vliv na ostatní (s výjimkou proměnných parametrů `ref` a `out`).
 
 C#typy hodnot jsou dále rozděleny na *jednoduché typy*, *výčtové typy*, *typy struktury*a *typy s možnou hodnotou null*. C#odkazové typy jsou dále rozděleny do *typů tříd*, *typů rozhraní*, *typů polí*a *typů delegátů*.
 
-Následující text uvádí přehled C#systému typů.
+Následující osnova poskytuje přehled o C#typu systému.
 
 - [Typy hodnot][ValueTypes]
   - [Jednoduché typy][SimpleTypes]
@@ -65,19 +65,19 @@ C#programy používají *deklarace typů* k vytváření nových typů. Deklarac
 
 Typ `class` definuje datovou strukturu obsahující datové členy (pole) a členy funkce (metody, vlastnosti a další). Typy tříd podporují jednu dědičnost a polymorfismus, mechanismy, které mohou odvozené třídy roztáhnout a specializovat základní třídy.
 
-Typ `struct` je podobný typu třídy v tom, že představuje strukturu s datovými členy a členy funkce. Nicméně na rozdíl od tříd jsou struktury typy hodnot a obvykle nevyžadují přidělení haldy. Typy struktury nepodporují uživatelem zadanou dědičnost a všechny typy struktury implicitně dědí z typu `object`.
+Typ `struct` je podobný typu třídy v tom, že představuje strukturu s datovými členy a členy funkce. Nicméně na rozdíl od tříd, struktury jsou typy hodnot a obvykle nevyžadují přidělení haldy. Typy struktury nepodporují uživatelem zadanou dědičnost a všechny typy struktury implicitně dědí z typu `object`.
 
 Typ `interface` definuje kontrakt jako pojmenovanou sadu členů veřejné funkce. `class` nebo `struct`, které implementují `interface`, musí poskytovat implementace členů funkcí rozhraní. `interface` může dědit z více základních rozhraní a `class` nebo `struct` mohou implementovat více rozhraní.
 
-Typ `delegate` představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Delegáti umožňují zacházet s metodami jako s entitami, které lze přiřadit proměnným a předávat jako parametry. Delegáti jsou analogické jako typy funkcí poskytované funkčními jazyky. Jsou také podobné konceptu ukazatelů na funkce nalezených v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce jsou delegáti objektově orientované a typově bezpečné.
+Typ `delegate` představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Delegáti umožňují zacházet s metodami jako s entitami, které lze přiřadit proměnným a předávat jako parametry. Delegáti jsou analogické jako typy funkcí poskytované funkčními jazyky. Jsou také podobné konceptu ukazatelů funkcí nalezených v některých jiných jazycích. Na rozdíl od ukazatelů na funkce jsou delegáti objektově orientovaný a typově bezpečný.
 
-`class`, `struct`, `interface` a `delegate` typy podporují obecné typy, kde mohou být parametrizovany s jinými typy.
+`class`, `struct`, `interface`a `delegate` typy podporují obecné typy, kde mohou být parametrizovany s jinými typy.
 
 Typ `enum` je odlišný typ s pojmenovanými konstantami. Každý typ `enum` má podkladový typ, který musí být jedním z osmi integrálních typů. Sada hodnot typu `enum` je stejná jako sada hodnot základního typu.
 
 C#podporuje jedno a multidimenzionální pole libovolného typu. Na rozdíl od typů uvedených výše nemusí být typy polí deklarovány dříve, než mohou být použity. Místo toho jsou typy polí konstruovány pomocí názvu typu s hranatými závorkami. Například `int[]` je jednorozměrné pole `int`, `int[,]` je dvourozměrné pole `int`a `int[][]` je jednorozměrné pole s jednorozměrném polem `int`y.
 
-Typy hodnot s možnou hodnotou null také nemusí být deklarovány dříve, než mohou být použity. U každého typu hodnot bez hodnoty null `T` existuje odpovídající typ hodnoty s možnou hodnotou null `T?`, která může obsahovat další hodnotu `null`. Například `int?` je typ, který může obsahovat libovolné 32 celé číslo se znaménkem nebo hodnotu `null`.
+Typy hodnot s možnou hodnotou null také nemusí být deklarovány dříve, než mohou být použity. Pro každý typ hodnoty bez hodnoty null `T`existuje odpovídající typ hodnoty s možnou hodnotou null `T?`, která může obsahovat další hodnotu `null`. Například `int?` je typ, který může obsahovat libovolné 32 celé číslo se znaménkem nebo hodnotu `null`.
 
 C#systém typů je sjednocený tak, že hodnota libovolného typu může být považována za `object`. Každý typ C# přímo nebo nepřímo je odvozen z typu `object` třídy a `object` je nejvyšší základní třídou všech typů. Hodnoty typů odkazů se považují za objekty pouhým zobrazením hodnot jako typu `object`. Hodnoty typů hodnot se považují za objekty prováděním operací *zabalení* a *rozbalení*. V následujícím příkladu je `int` hodnota převedena na `object` a zpět na `int`.
 

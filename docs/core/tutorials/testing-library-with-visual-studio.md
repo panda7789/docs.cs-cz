@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: 3a4f25b0d250469102fdac6ee960e42b2d969aed
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 307261088f5c7c69c0e69fbd6b99940c04842eec
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559575"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156618"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio"></a>Testování knihovny .NET Standard pomocí .NET Core v aplikaci Visual Studio
 
 V [sestavení knihovny .NET Standard v aplikaci Visual Studio](library-with-visual-studio.md)jste vytvořili jednoduchou knihovnu tříd, která přidá metodu rozšíření do <xref:System.String> třídy. Nyní vytvoříte test jednotky, abyste se ujistili, že funguje podle očekávání. Projekt testování částí přidáte do řešení, které jste vytvořili v předchozím článku.
 
-## <a name="create-a-unit-test-project"></a>Vytvoření projektu testování částí
+## <a name="create-a-unit-test-project"></a>Vytvoření projektu testů jednotek
 
 Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
@@ -54,13 +54,13 @@ Chcete-li vytvořit projekt testování částí, postupujte následovně:
 
     ```vb
     Imports Microsoft.VisualStudio.TestTools.UnitTesting
-    
+
     Namespace StringLibraryTest
         <TestClass>
         Public Class UnitTest1
             <TestMethod>
             Sub TestSub()
-    
+
             End Sub
         End Class
     End Namespace
@@ -181,6 +181,6 @@ Testování sestavení pro vydání:
 
 Teď, když jste dokončili testování knihovny, je dalším krokem zpřístupnění volajícím. Můžete ho seskupit s jednou nebo více aplikacemi nebo ho můžete distribuovat jako balíček NuGet. Další informace naleznete v tématu [spotřebovávání knihovny tříd .NET Standard](consuming-library-with-visual-studio.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základy testování částí – Visual Studio](/visualstudio/test/unit-test-basics)

@@ -2,12 +2,12 @@
 title: 'Kurz: Vytvoření nástroje .NET Core'
 description: Naučte se vytvořit nástroj .NET Core. Nástroj je Konzolová aplikace, která je nainstalována pomocí .NET Core CLI.
 ms.date: 02/12/2020
-ms.openlocfilehash: 558bf9e37efc8de68a61f1384fababe342ab7d66
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 88cc3be7b149834ace0c5f3ba8ac8c039199908f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543401"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156722"
 ---
 # <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Kurz: Vytvoření nástroje .NET Core pomocí .NET Core CLI
 
@@ -19,7 +19,7 @@ Nástroj, který vytvoříte, je Konzolová aplikace, která jako vstup převezm
 
 Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nástroj. V následujících dvou kurzech používáte [Nástroj jako globální nástroj](global-tools-how-to-use.md) a [nástroj použijete jako místní nástroj](local-tools-how-to-use.md).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [.NET Core SDK 3,1](https://dotnet.microsoft.com/download) nebo novější verze.
 
@@ -31,24 +31,18 @@ Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nás
 
 1. Otevřete příkazový řádek a vytvořte složku s názvem *úložiště*.
 
-1. Přejděte do složky *úložiště* a zadejte následující příkaz, kde nahraďte `<name>` jedinečnou hodnotou, aby byl název projektu jedinečný. 
+1. Přejděte do složky *úložiště* a zadejte následující příkaz:
 
    ```dotnetcli
-   dotnet new console -n botsay-<name>
+   dotnet new console -n microsoft.botsay
    ```
 
-   Můžete například spustit následující příkaz:
+   Příkaz vytvoří novou složku s názvem *Microsoft. botsay* ve složce *úložiště* .
 
-   ```dotnetcli
-   dotnet new console -n botsay-nancydavolio
-   ```
-
-   Příkaz vytvoří novou složku s názvem *botsay-\<název >* ve složce *úložiště* .
-
-1. Přejděte do složky *botsay-\<název >* .
+1. Přejděte do složky *Microsoft. botsay* .
 
    ```console
-   cd botsay-<name>
+   cd microsoft.botsay
    ```
 
 ## <a name="add-the-code"></a>Přidání kódu
@@ -151,9 +145,9 @@ Všechny argumenty po `--` oddělovači jsou předány do aplikace.
 
 ## <a name="package-the-tool"></a>Zabalení nástroje
 
-Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nutné upravit soubor projektu. 
+Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nutné upravit soubor projektu.
 
-1. Otevřete *název botsay-\<> soubor. csproj* a přidejte na konec `<PropertyGroup>` uzlu tři nové uzly XML:
+1. Otevřete soubor *Microsoft. botsay. csproj* a přidejte tři nové uzly XML na konec `<PropertyGroup>` uzlu:
 
    ```xml
    <PackAsTool>true</PackAsTool>
@@ -190,7 +184,7 @@ Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nu
    dotnet pack
    ```
 
-   *Název botsay-\<>. 1.0.0. nupkg* se vytvoří ve složce určené hodnotou `<PackageOutputPath>` ze souboru *botsay-\<Name >. csproj* , který je v tomto příkladu složkou *./nupkg* .
+   Soubor *Microsoft. botsay. 1.0.0. nupkg* se vytvoří ve složce určené hodnotou `<PackageOutputPath>` ze souboru *Microsoft. botsay. csproj* , který je v tomto příkladu složkou *./nupkg* .
   
    Pokud chcete veřejně vydávat nástroj, můžete ho nahrát na `https://www.nuget.org`. Jakmile je nástroj k dispozici v NuGet, mohou vývojáři nainstalovat nástroj pomocí příkazu pro [instalaci nástroje dotnet](dotnet-tool-install.md) . V tomto kurzu nainstalujete balíček přímo z místní složky *nupkg* , takže není potřeba balíček nahrát do NuGet.
 

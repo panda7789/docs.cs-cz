@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 9495288658fa102df8f0fbd643e2fcdf49d8f3b3
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: e045c39240c99777d05ca86ee0a8cd1fa4309c4f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451977"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156579"
 ---
 # <a name="whats-new-in-net-core-22"></a>Co je nového v .NET Core 2.2
 
@@ -26,7 +26,7 @@ Tento nový režim nasazení má odlišnou výhodu při vytváření spustiteln�
 
 **Zpracování událostí ve službách za běhu**
 
-Chcete-li pochopit, jak ovlivňují vaši aplikaci, může být často vhodné monitorovat použití služeb runtime, jako je například GC, JIT, a nevlákenná vlákna. V systémech Windows to se obvykle provádí monitorováním událostí ETW aktuálního procesu. I když to bude i nadále fungovat dobře, není vždy možné používat trasování událostí pro Windows, pokud pracujete v prostředí s nízkým oprávněním nebo v systému Linux nebo macOS. 
+Chcete-li pochopit, jak ovlivňují vaši aplikaci, může být často vhodné monitorovat použití služeb runtime, jako je například GC, JIT, a nevlákenná vlákna. V systémech Windows to se obvykle provádí monitorováním událostí ETW aktuálního procesu. I když to bude i nadále fungovat dobře, není vždy možné používat trasování událostí pro Windows, pokud pracujete v prostředí s nízkým oprávněním nebo v systému Linux nebo macOS.
 
 Počínaje .NET Core 2,2 události CoreCLR se teď dají spotřebovat pomocí třídy <xref:System.Diagnostics.Tracing.EventListener?displayProperty=nameWithType>. Tyto události popisují chování takových služeb za běhu jako GC, JIT, fondu a spolupráci. Jedná se o stejné události, které jsou přístupné jako součást zprostředkovatele ETW CoreCLR.  Díky tomu můžou aplikace tyto události spotřebovat nebo použít transportní mechanismus k jejich posílání do agregační služby telemetrie. Můžete se podívat, jak se přihlásit k odběru událostí v následující ukázce kódu:
 

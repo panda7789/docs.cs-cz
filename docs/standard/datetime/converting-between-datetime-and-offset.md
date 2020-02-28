@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-ms.openlocfilehash: 428553f75db2cca6705ac72873e86e120e94d134
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5c19296f75e9e002e88263c5e5efa9917e185ebc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132584"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156033"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Převádění mezi DateTime a DateTimeOffset
 
@@ -99,7 +99,7 @@ Chcete-li určit, že hodnota <xref:System.DateTimeOffset> představuje místní
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#7)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#7)]
 
-Vlastnost <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> lze použít také k převedení <xref:System.DateTimeOffset> hodnoty na hodnotu místního <xref:System.DateTime>. Vlastnost <xref:System.DateTime.Kind%2A> vrácené hodnoty <xref:System.DateTime> je <xref:System.DateTimeKind.Local>. Následující kód používá vlastnost <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> při převodu <xref:System.DateTimeOffset> hodnoty, jejíž posun odpovídá místnímu časovému pásmu. 
+Vlastnost <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> lze použít také k převedení <xref:System.DateTimeOffset> hodnoty na hodnotu místního <xref:System.DateTime>. Vlastnost <xref:System.DateTime.Kind%2A> vrácené hodnoty <xref:System.DateTime> je <xref:System.DateTimeKind.Local>. Následující kód používá vlastnost <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> při převodu <xref:System.DateTimeOffset> hodnoty, jejíž posun odpovídá místnímu časovému pásmu.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]
@@ -127,6 +127,6 @@ Všimněte si, že tento kód vytváří dvě předpoklady, které v závislosti
 
 - Předpokládá, že datum a čas, jehož posun se rovná tomuto místnímu časovému pásmu, představuje místní časové pásmo. Vzhledem k tomu, že hodnoty data a času jsou z původního časového pásma odasociovány, nemusí se jednat o případ; Datum a čas mohou mít původ v jiném časovém pásmu se stejným posunem.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)

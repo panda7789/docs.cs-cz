@@ -14,12 +14,12 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.openlocfilehash: 91fc0022eae3f036e0ec046ea12446871926ab27
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 135cfa815c10d1a9dd9056604a4601678da9d5c4
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711464"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159348"
 ---
 # <a name="changing-case-in-net"></a>Změna velikosti písmen v .NET
 Pokud napíšete aplikaci, která přijímá vstup od uživatele, nikdy nemusíte mít jistotu, v jakém případě bude tento případ použit k zadání dat. Často chcete, aby byly řetězce použita konzistentně, zejména v případě, že je zobrazujete v uživatelském rozhraní. Následující tabulka popisuje tři metody změny velikosti písmen. První dvě metody poskytují přetížení, které přijímá jazykovou verzi.  
@@ -33,7 +33,7 @@ Pokud napíšete aplikaci, která přijímá vstup od uživatele, nikdy nemusít
 > [!WARNING]
 > Všimněte si, že metody <xref:System.String.ToUpper%2A?displayProperty=nameWithType> a <xref:System.String.ToLower%2A?displayProperty=nameWithType> by se neměly používat k převodu řetězců, aby je bylo možné porovnat nebo otestovat pro rovnost. Další informace najdete v části [porovnávání řetězců smíšeného případu](#Comparing) .  
   
-<a name="Comparing"></a>   
+<a name="Comparing"></a>
 ## <a name="comparing-strings-of-mixed-case"></a>Porovnávání řetězců smíšeného případu  
  Chcete-li porovnat řetězce kombinovaného případu s určením jejich řazení, zavolejte jedno z přetížení metody <xref:System.String.CompareTo%2A?displayProperty=nameWithType> s parametrem `comparisonType` a zadejte hodnotu buď <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType>nebo <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro argument `comparisonType`. Pro porovnání s použitím jiné jazykové verze než aktuální jazykové verze volejte přetížení metody <xref:System.String.CompareTo%2A?displayProperty=nameWithType> s parametrem `culture` a `options` a zadejte hodnotu <xref:System.Globalization.CompareOptions.IgnoreCase?displayProperty=nameWithType> jako argument `options`.  
   
@@ -69,7 +69,7 @@ Pokud napíšete aplikaci, která přijímá vstup od uživatele, nikdy nemusít
   
  Všimněte si, že i když je závislá na jazykové verzi, metoda <xref:System.Globalization.TextInfo.ToTitleCase%2A?displayProperty=nameWithType> neposkytuje lingvisticky správná pravidla pro velká písmena. Například metoda v předchozím příkladu převede "sdělovač dvou měst" na "sdělovač dvou měst". Lingvisticky správná velikost nadpisu pro jazykovou verzi en-US je ale "sdělovačem dvou měst".  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)
 - [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

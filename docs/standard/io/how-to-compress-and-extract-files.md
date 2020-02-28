@@ -10,12 +10,12 @@ helpviewer_keywords:
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-ms.openlocfilehash: 6345b467e9ade085a38de6dc9758b1bd99d1ae62
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5aa25e265ed6ffb613e9916414c6f2335a4aaf57
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708099"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159374"
 ---
 # <a name="how-to-compress-and-extract-files"></a>Postupy: komprimace a extrakce souborů
 
@@ -31,9 +31,9 @@ Následující příklady znázorňují některé operace, které můžete prov�
 
 ## <a name="example-1-create-and-extract-a-zip-file"></a>Příklad 1: vytvoření a extrakce souboru. zip
 
-Následující příklad ukazuje, jak vytvořit a extrahovat komprimovaný soubor s *příponou. zip* pomocí třídy <xref:System.IO.Compression.ZipFile>. V příkladu se komprimuje obsah složky do nového souboru *. zip* a pak se vyextrahuje soubor zip do nové složky. 
+Následující příklad ukazuje, jak vytvořit a extrahovat komprimovaný soubor s *příponou. zip* pomocí třídy <xref:System.IO.Compression.ZipFile>. V příkladu se komprimuje obsah složky do nového souboru *. zip* a pak se vyextrahuje soubor zip do nové složky.
 
-Ukázku spustíte tak, že ve složce programu vytvoříte složku *Start* a naplníte ji soubory do souboru ZIP. 
+Ukázku spustíte tak, že ve složce programu vytvoříte složku *Start* a naplníte ji soubory do souboru ZIP.
 
 Pokud se zobrazí chyba sestavení "název" podřízený ZipFile "v aktuálním kontextu", "přidejte odkaz na sestavení `System.IO.Compression.FileSystem` do projektu.
 
@@ -42,13 +42,13 @@ Pokud se zobrazí chyba sestavení "název" podřízený ZipFile "v aktuálním 
 
 ## <a name="example-2-extract-specific-file-extensions"></a>Příklad 2: extrakce konkrétních přípon souborů
 
-Následující příklad prochází obsah existujícího souboru *zip* a extrahuje soubory, které mají příponu *. txt* . Používá třídu <xref:System.IO.Compression.ZipArchive> pro přístup k souboru zip a třídu <xref:System.IO.Compression.ZipArchiveEntry> pro kontrolu jednotlivých položek. Metoda rozšíření <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> pro objekt <xref:System.IO.Compression.ZipArchiveEntry> je k dispozici ve třídě <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>. 
+Následující příklad prochází obsah existujícího souboru *zip* a extrahuje soubory, které mají příponu *. txt* . Používá třídu <xref:System.IO.Compression.ZipArchive> pro přístup k souboru zip a třídu <xref:System.IO.Compression.ZipArchiveEntry> pro kontrolu jednotlivých položek. Metoda rozšíření <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> pro objekt <xref:System.IO.Compression.ZipArchiveEntry> je k dispozici ve třídě <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>.
 
-Ukázku spustíte tak, že ve složce programu umístíte soubor *. zip* s názvem *Result. zip* . Po zobrazení výzvy zadejte název složky, do které se má extrahovat. 
+Ukázku spustíte tak, že ve složce programu umístíte soubor *. zip* s názvem *Result. zip* . Po zobrazení výzvy zadejte název složky, do které se má extrahovat.
 
 Pokud se zobrazí chyba sestavení "název" podřízený ZipFile "v aktuálním kontextu", "přidejte odkaz na sestavení `System.IO.Compression.FileSystem` do projektu.
 
-Pokud se zobrazí chyba "typ ' ZipArchive ' je definován v sestavení, které není odkazováno," přidejte odkaz na sestavení `System.IO.Compression` do projektu. 
+Pokud se zobrazí chyba "typ ' ZipArchive ' je definován v sestavení, které není odkazováno," přidejte odkaz na sestavení `System.IO.Compression` do projektu.
 
 > [!IMPORTANT]
 > V případě souborů rozzipovává je nutné vyhledat cesty ke škodlivým souborům, které mohou uniknout z adresáře, do kterého jste extrahováni. To se označuje jako útok pomocí cesty. Následující příklad ukazuje, jak kontrolovat škodlivé cesty k souborům a poskytuje bezpečný způsob, jak je rozbalit.
@@ -70,7 +70,7 @@ Pro komprimaci a dekompresi dat můžete také použít třídy <xref:System.IO.
 [!code-csharp[IO.Compression.GZip1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/IO.Compression.GZip1/CS/gziptest.cs#1)]
 [!code-vb[IO.Compression.GZip1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/IO.Compression.GZip1/VB/gziptest.vb#1)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.Compression.ZipArchive>  
 - <xref:System.IO.Compression.ZipFile>  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: d409c0e9a2a6564e5fb16e4e2c72ab661ae2d5ce
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 30af18b7d7b86621586c7da66eda1b37356d5565
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706159"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159777"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Postupy: Vytvoření objektu WindowsPrincipal
 Existují dva způsoby, jak vytvořit objekt <xref:System.Security.Principal.WindowsPrincipal>, v závislosti na tom, zda kód musí opakovaně provádět ověřování na základě rolí, nebo musí být proveden pouze jednou.  
@@ -40,13 +40,13 @@ Existují dva způsoby, jak vytvořit objekt <xref:System.Security.Principal.Win
 2. Pomocí sady zásad použijte vlastnost statického <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> k načtení objektu zabezpečení, který zapouzdřuje aktuálního uživatele systému Windows. Vzhledem k tomu, že návratový typ vlastnosti je <xref:System.Security.Principal.IPrincipal>, musíte přetypovat výsledek na typ <xref:System.Security.Principal.WindowsPrincipal>. Následující kód inicializuje nový objekt <xref:System.Security.Principal.WindowsPrincipal> k hodnotě objektu zabezpečení přidruženého k aktuálnímu vláknu.  
   
     ```csharp  
-    WindowsPrincipal myPrincipal =   
+    WindowsPrincipal myPrincipal =
         (WindowsPrincipal) Thread.CurrentPrincipal;  
     ```  
   
     ```vb  
     Dim myPrincipal As WindowsPrincipal = _  
-        CType(Thread.CurrentPrincipal, WindowsPrincipal)   
+        CType(Thread.CurrentPrincipal, WindowsPrincipal)
     ```  
   
 3. Po vytvoření objektu zabezpečení můžete použít některou z několika metod k jeho ověření.  
@@ -75,6 +75,6 @@ Existují dva způsoby, jak vytvořit objekt <xref:System.Security.Principal.Win
   
 3. Po vytvoření objektu zabezpečení můžete použít některou z několika metod k jeho ověření.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)

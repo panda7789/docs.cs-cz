@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 09/13/2019
-ms.openlocfilehash: 48e429a6379b0a13cb81f8db6fae27aa31409840
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5a02c71b16e2c8e5ade5128866af7dc46a03ba4a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794615"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160180"
 ---
 # <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Postup vytvoření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
 
@@ -30,7 +30,7 @@ Chcete-li vytvořit vlastní výjimku, použijte následující postup:
     [Serializable]
     public class StudentNotFoundException : Exception { }
     ```
-    
+
     ```vb
     <Serializable>
     Public Class StudentNotFoundException
@@ -53,7 +53,7 @@ Chcete-li vytvořit vlastní výjimku, použijte následující postup:
             : base(message, inner) { }
     }
     ```
-    
+
     ```vb
     <Serializable>
     Public Class StudentNotFoundException
@@ -165,7 +165,7 @@ Chcete-li vytvořit lokalizované zprávy o výjimce:
     > [!NOTE]
     > Pokud je název projektu `TestProject` a soubor prostředků *ExceptionMessages. resx* se nachází ve složce *Resources* projektu, plně kvalifikovaný název souboru prostředků je `TestProject.Resources.ExceptionMessages`.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytvoření uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)
 - [Vytváření satelitních sestavení pro aplikace klasické pracovní plochy](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md)

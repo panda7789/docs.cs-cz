@@ -2,12 +2,12 @@
 title: příkaz pro aktualizaci nástroje dotnet
 description: Příkaz pro aktualizaci nástroje dotnet aktualizuje zadaný nástroj .NET Core na vašem počítači.
 ms.date: 02/14/2020
-ms.openlocfilehash: 50bb366fedfb0ea69b8b6007ff89e366b4f689de
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 80e807a0fc06ad762334f888e701f6d9c448369a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543414"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156943"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
@@ -58,7 +58,7 @@ Příkaz `dotnet tool update` poskytuje způsob, jak aktualizovat nástroje .NET
 
 - **`-g|--global`**
 
-  Určuje, že je aktualizace určena pro nástroj pro uživatelský rozsah. Nelze kombinovat s možností `--tool-path`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který se má aktualizovat, je místní nástroj. 
+  Určuje, že je aktualizace určena pro nástroj pro uživatelský rozsah. Nelze kombinovat s možností `--tool-path`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který se má aktualizovat, je místní nástroj.
 
 - **`-h|--help`**
 
@@ -66,7 +66,7 @@ Příkaz `dotnet tool update` poskytuje způsob, jak aktualizovat nástroje .NET
 
 - **`--tool-path <PATH>`**
 
-  Určuje umístění, kde je nainstalován globální nástroj. Cesta může být absolutní nebo relativní. Nelze kombinovat s možností `--global`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který se má aktualizovat, je místní nástroj. 
+  Určuje umístění, kde je nainstalován globální nástroj. Cesta může být absolutní nebo relativní. Nelze kombinovat s možností `--global`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který se má aktualizovat, je místní nástroj.
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -90,6 +90,6 @@ Příkaz `dotnet tool update` poskytuje způsob, jak aktualizovat nástroje .NET
 
   Aktualizuje místní nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) nainstalovaný pro aktuální adresář.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Nástroje .NET Core](global-tools.md)

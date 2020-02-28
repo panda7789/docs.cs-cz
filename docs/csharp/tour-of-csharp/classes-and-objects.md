@@ -1,14 +1,14 @@
 ---
 title: Třídy a objekty v C# -A prohlídku C# jazyka
 description: Začínáte C#? Přečtěte si tento přehled tříd, objektů a dědičnosti.
-ms.date: 08/10/2016
+ms.date: 02/27/2020
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: e5078135ab22445ac636c6edc3d46570be8fcaf5
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: c178e11b5667905f75538555c8a309e2fdb4a9ef
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77673300"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159179"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -16,7 +16,7 @@ ms.locfileid: "77673300"
 
 Nové třídy jsou vytvářeny pomocí deklarací třídy. Deklarace třídy začíná hlavičkou, která určuje atributy a modifikátory třídy, název třídy, základní třídu (Pokud je daná) a rozhraní implementovaná třídou. Pod hlavičkou následuje tělo třídy, které se skládá ze seznamu deklarací členů napsaných mezi oddělovači `{` a `}`.
 
-Následuje deklarace jednoduché třídy s názvem `Point`:
+Následující kód ukazuje deklaraci jednoduché třídy s názvem `Point`:
 
 [!code-csharp[PointClass](~/samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
 
@@ -30,7 +30,7 @@ Paměť obsazená objektem je automaticky uvolněna v případě, že objekt ji�
 
 Členy třídy jsou buď statické členy, nebo členy instance. Statické členy patří ke třídám a členy instance patří do objektů (instance tříd).
 
-Následující příklad obsahuje přehled druhů členů, které třída může obsahovat.
+Následující seznam obsahuje přehled druhů členů, které třída může obsahovat.
 
 - Konstanty
   - Konstantní hodnoty přidružené ke třídě
@@ -55,20 +55,20 @@ Následující příklad obsahuje přehled druhů členů, které třída může
 
 ## <a name="accessibility"></a>Přístupnost
 
-Každý člen třídy má přidruženou přístupnost, která řídí oblasti textu programu, které mají přístup k členu. Existuje šest možných forem usnadnění přístupu. Tyto jsou shrnuté níže.
+Každý člen třídy má přidruženou přístupnost, která řídí oblasti textu programu, které mají přístup ke členu. Existuje šest možných forem usnadnění přístupu. Modifikátory přístupu jsou shrnuty níže.
 
 - `public`
-  - Přístup není omezený
+  - Přístup není omezen.
 - `protected`
-  - Přístup omezený na tuto třídu nebo třídy odvozené z této třídy
+  - Přístup je omezen na tuto třídu nebo třídy odvozené z této třídy.
 - `internal`
-  - Přístup omezený na aktuální sestavení (. exe,. dll atd.)
+  - Přístup je omezen na aktuální sestavení (. exe,. dll atd.).
 - `protected internal`
-  - Přístup omezený na obsahující třídu, třídy odvozené od obsahující třídy nebo třídy v rámci stejného sestavení
+  - Přístup je omezen na obsahující třídu, třídy odvozené z obsahující třídy nebo třídy v rámci stejného sestavení.
 - `private`
-  - Přístup omezený na tuto třídu
+  - Přístup je omezen na tuto třídu.
 - `private protected`
-  - Přístup omezený na obsahující třídu nebo třídy odvozené z nadřazeného typu v rámci stejného sestavení
+  - Přístup je omezen na obsahující třídu nebo třídy odvozené z nadřazeného typu v rámci stejného sestavení.
 
 ## <a name="type-parameters"></a>Parametry typu
 
@@ -89,9 +89,9 @@ Deklarace třídy může specifikovat základní třídu za názvem třídy a pa
 
 [!code-csharp[Point3DClass](~/samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
 
-Třída dědí členy své základní třídy. Dědičnost znamená, že třída implicitně obsahuje všechny členy své základní třídy, s výjimkou instancí a statických konstruktorů a finalizační metody základní třídy. Odvozená třída může přidat nové členy do těch, které dědí, ale nemůže odebrat definici zděděného člena. V předchozím příkladu `Point3D` dědí pole `x` a `y` ze `Point`a každá `Point3D` instance obsahuje tři pole, `x`, `y`a `z`.
+Třída dědí členy své základní třídy. Dědičnost znamená, že třída implicitně obsahuje všechny členy své základní třídy, s výjimkou instancí a statických konstruktorů a finalizační metody základní třídy. Odvozená třída může přidat nové členy do těch členů, které dědí, ale nemůže odebrat definici zděděného člena. V předchozím příkladu `Point3D` dědí pole `x` a `y` ze `Point`a každá `Point3D` instance obsahuje tři pole, `x`, `y`a `z`.
 
-Implicitní převod existuje z typu třídy na libovolný z jeho základních typů třídy. Proto proměnná typu třídy může odkazovat na instanci této třídy nebo instanci jakékoli odvozené třídy. Například s ohledem na předchozí deklarace třídy může proměnná typu `Point` odkazovat buď na `Point`, nebo na `Point3D`:
+Implicitní převod existuje z typu třídy na libovolný z jeho základních typů třídy. Proměnná typu třídy může odkazovat na instanci této třídy nebo instance jakékoli odvozené třídy. Například s ohledem na předchozí deklarace třídy může proměnná typu `Point` odkazovat buď na `Point`, nebo na `Point3D`:
 
 [!code-csharp[Point3DExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
 
@@ -99,11 +99,11 @@ Implicitní převod existuje z typu třídy na libovolný z jeho základních ty
 
 *Pole* je proměnná, která je přidružena ke třídě nebo s instancí třídy.
 
-Pole deklarované pomocí statického modifikátoru definuje statické pole. Statické pole identifikuje právě jedno umístění úložiště. Bez ohledu na to, kolik instancí třídy je vytvořeno, existuje pouze jedna kopie statického pole.
+Pole deklarované pomocí statického modifikátoru definuje statické pole. Statické pole identifikuje právě jedno umístění úložiště. Bez ohledu na to, kolik instancí třídy je vytvořeno, je k dispozici pouze jedna kopie statického pole.
 
 Pole deklarované bez statického modifikátoru definuje pole instance. Každá instance třídy obsahuje samostatnou kopii všech polí instance této třídy.
 
-V následujícím příkladu má každá instance třídy `Color` samostatnou kopii polí `r`, `g`a `b` instance, ale je k dispozici pouze jedna kopie `Black`, `White`, `Red`, `Green`a `Blue` statických polí:
+V následujícím příkladu má každá instance třídy `Color` samostatnou kopii polí `r`, `g`a `b` instance, ale existuje pouze jedna kopie `Black`, `White`, `Red`, `Green`a `Blue` statických polí:
 
 [!code-csharp[ColorClass](~/samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
 
@@ -117,7 +117,7 @@ Metody mohou mít seznam *parametrů*, které reprezentují hodnoty nebo odkazy 
 
 Podobně jako typy mohou metody mít také sadu parametrů typu, pro které argumenty typu musí být zadány při volání metody. Na rozdíl od typů lze argumenty typu často odvodit z argumentů volání metody a nemusí být explicitně předány.
 
-*Signatura* metody musí být jedinečná ve třídě, ve které je metoda deklarovaná. Signatura metody se skládá z názvu metody, počtu parametrů typu a počtu, modifikátorů a typů jeho parametrů. Podpis metody nezahrnuje návratový typ.
+*Signatura* metody musí být jedinečná ve třídě, ve které je metoda deklarovaná. Signatura metody se skládá z názvu metody, počtu parametrů typu a počtu, modifikátorů a typů jeho parametrů. Signatura metody neobsahuje návratový typ.
 
 ### <a name="parameters"></a>Parametry
 
@@ -155,13 +155,13 @@ Tělo metody může deklarovat proměnné, které jsou specifické pro vyvolán�
 
 [!code-csharp[Squares](~/samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]
 
-C#aby bylo možné získat hodnotu, musí být místní proměnná *jednoznačně přiřazena* . Například pokud deklarace předchozí `i` neobsahují počáteční hodnotu, kompilátor by nahlásil chybu pro následné použití `i`, protože `i` by se v těchto bodech v programu jednoznačně přiřadily.
+C#aby bylo možné získat hodnotu, musí být místní proměnná *jednoznačně přiřazena* . Například pokud deklarace předchozí `i` neobsahovala počáteční hodnotu, kompilátor by nahlásil chybu pro následné použití `i`, protože `i` nemusely být jednoznačně přiřazeny v těchto bodech v programu.
 
-Metoda může použít příkazy `return` pro vrácení řízení volajícímu. V metodě, která vrací `void`, příkazy `return` nemohou specifikovat výraz. V metodě vracející typ, který není void, `return` příkazy musí zahrnovat výraz, který vypočítá vrácenou hodnotu.
+Metoda může použít příkazy `return` pro vrácení řízení volajícímu. V metodě, která vrací `void`, `return` příkazy nemůžou specifikovat výraz. V metodě vracející typ, který není void, `return` příkazy musí zahrnovat výraz, který vypočítá vrácenou hodnotu.
 
 ### <a name="static-and-instance-methods"></a>Statické a instanční metody
 
-Metoda deklarovaná pomocí statického modifikátoru je *statická metoda*. Statická metoda nepracuje na konkrétní instanci a může přímo přistupovat ke statickým členům.
+Metoda deklarovaná pomocí statického modifikátoru je *statická metoda*. Statická metoda nefunguje na konkrétní instanci a může přímo přistupovat ke statickým členům.
 
 Metoda deklarovaná bez statického modifikátoru je *Metoda instance*. Metoda instance pracuje na konkrétní instanci a může přistupovat ke statickým i instancím členů. Instance, na které byla vyvolána metoda instance, může být explicitně k dispozici jako `this`. Odkaz na `this` ve statické metodě je chyba.
 
@@ -177,7 +177,7 @@ Následující příklad ukazuje použití třídy entity.
 
 [!code-csharp[EntityExample](~/samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
 
-Všimněte si, že statické metody `SetNextSerialNo` a `GetNextSerialNo` jsou vyvolány na třídě, zatímco metoda instance `GetSerialNo` je vyvolána na instancích třídy.
+Statické metody `SetNextSerialNo` a `GetNextSerialNo` jsou vyvolány na třídě, zatímco metoda instance `GetSerialNo` je vyvolána na instancích třídy.
 
 ### <a name="virtual-override-and-abstract-methods"></a>Virtuální, přepisování a abstraktní metody
 
@@ -189,7 +189,7 @@ Virtuální metoda může být *přepsána* v odvozené třídě. Pokud deklarac
 
 *Abstraktní metoda* je virtuální metoda bez implementace. Abstraktní metoda je deklarována s modifikátorem abstract a je povolena pouze ve třídě, která je také deklarována jako abstraktní. Abstraktní metoda musí být přepsána v každé neabstraktní odvozené třídě.
 
-Následující příklad deklaruje abstraktní třídu, `Expression`, která představuje uzel stromu výrazu, a tři odvozené třídy, `Constant`, `VariableReference`a `Operation`, které implementují uzly stromu výrazů pro konstanty, odkazy na proměnné a aritmetické operace. (To je podobné, ale nelze je zaměňovat s typy stromu výrazů).
+Následující příklad deklaruje abstraktní třídu, `Expression`, která představuje uzel stromu výrazu, a tři odvozené třídy, `Constant`, `VariableReference`a `Operation`, které implementují uzly stromu výrazů pro konstanty, odkazy na proměnné a aritmetické operace. (Tento příklad je podobný, ale nelze je zaměňovat s typy stromu výrazů).
 
 [!code-csharp[ExpressionClass](~/samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
 
@@ -207,7 +207,7 @@ Následující program používá třídy `Expression` k vyhodnocení výrazu `x
 
 ### <a name="method-overloading"></a>Přetížení metody
 
-*Přetížení* metody umožňuje, aby více metod ve stejné třídě měl stejný název, pokud mají jedinečné podpisy. Při kompilování volání přetížené metody kompilátor používá *řešení přetížení* k určení konkrétní metody, která má být vyvolána. Řešení přetížení najde jednu metodu, která nejlépe odpovídá argumentům, nebo hlásí chybu, pokud nelze najít žádnou nejlepší shodu. Následující příklad ukazuje rozlišení přetížení v platnosti. Komentář pro každé vyvolání v metodě `UsageExample` ukazuje, která metoda je skutečně vyvolána.
+*Přetížení* metody umožňuje, aby více metod ve stejné třídě měl stejný název, pokud mají jedinečné podpisy. Při kompilování volání přetížené metody kompilátor používá *řešení přetížení* k určení konkrétní metody, která má být vyvolána. Řešení přetížení najde jednu metodu, která nejlépe odpovídá argumentům, nebo hlásí chybu, pokud nelze najít žádnou nejlepší shodu. Následující příklad ukazuje rozlišení přetížení v platnosti. Komentář pro každé vyvolání v metodě `UsageExample` ukazuje, která metoda je vyvolána.
 
 [!code-csharp[OverloadUsage](~/samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
 
@@ -215,7 +215,7 @@ Jak je znázorněno v příkladu, konkrétní metodu lze vždy vybrat explicitn�
 
 ## <a name="other-function-members"></a>Další členové funkcí
 
-Členy, které obsahují spustitelný kód, jsou souhrnně označovány jako *Členové funkce* třídy. Předchozí část popisuje metody, které jsou hlavním typem členů funkce. Tato část popisuje další typy členů funkce, které C#podporuje: konstruktory, vlastnosti, indexery, události, operátory a finalizační metody.
+Členy, které obsahují spustitelný kód, jsou souhrnně označovány jako *Členové funkce* třídy. Předchozí část popisuje metody, které jsou primárními typy členů funkce. Tato část popisuje další typy členů funkce, které C#podporuje: konstruktory, vlastnosti, indexery, události, operátory a finalizační metody.
 
 Následující příklad ukazuje obecnou třídu s názvem `MyList<T>`, která implementuje zvětšený seznam objektů. Třída obsahuje několik příkladů nejběžnějších druhů členů funkce.
 
@@ -234,7 +234,7 @@ Konstruktory instancí můžou být přetížené a můžou mít volitelné para
 
 [!code-csharp[ListExample1](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
 
-Na rozdíl od jiných členů nejsou konstruktory instancí zděděny a třída nemá žádné konstruktory instancí jiné než ty, které jsou ve třídě skutečně deklarovány. Pokud pro třídu není zadán konstruktor instance, bude automaticky zadáno prázdné číslo bez parametrů.
+Na rozdíl od jiných členů konstruktory instancí nejsou děděny a třída nemá žádné konstruktory instancí, než tyto konstruktory jsou ve skutečnosti deklarovány ve třídě. Pokud pro třídu není zadán konstruktor instance, bude automaticky zadáno prázdné číslo bez parametrů.
 
 ### <a name="properties"></a>Vlastnosti
 
@@ -246,7 +246,7 @@ Přístupový objekt get odpovídá metodě bez parametrů s návratovou hodnoto
 
 Přístupový objekt set odpovídá metodě s jedním parametrem s názvem Value a bez návratového typu. Když se na vlastnost odkazuje jako na cíl přiřazení nebo jako operand + + nebo--, přistupující objekt set je vyvolán s argumentem, který poskytuje novou hodnotu.
 
-Třída `MyList<T>` deklaruje dvě vlastnosti, `Count` a `Capacity`, které jsou jen pro čtení a pro čtení i zápis, v uvedeném pořadí. Následuje příklad použití těchto vlastností:
+Třída `MyList<T>` deklaruje dvě vlastnosti, `Count` a `Capacity`, které jsou jen pro čtení a pro čtení i zápis, v uvedeném pořadí. Následující kód je příkladem použití těchto vlastností:
 
 [!code-csharp[ListExample2](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
 
@@ -276,7 +276,7 @@ Klienti reagují na události prostřednictvím *obslužných rutin událostí*.
 
 [!code-csharp[EventExample](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]
 
-Pro pokročilé scénáře, kde je požadováno řízení základního úložiště události, může deklarace události explicitně poskytnout `add` a přístupové objekty `remove`, které jsou poněkud podobné přístupovému objektu `set` vlastnosti.
+Pro pokročilé scénáře, kde je požadováno řízení základního úložiště události, může deklarace události explicitně poskytnout `add` a přístupové objekty `remove`, které jsou podobné přístupovému objektu `set` vlastnosti.
 
 ### <a name="operators"></a>Operátory
 
@@ -292,7 +292,7 @@ První `Console.WriteLine` výstupy `True`, protože dva seznamy obsahují stejn
 
 *Finalizační metoda* je člen, který implementuje akce vyžadované k finalizaci instance třídy. Finalizační metody nemohou mít parametry, nemohou mít modifikátory dostupnosti a nelze je volat explicitně. Finalizační metoda pro instanci je vyvolána automaticky během uvolňování paměti.
 
-Uvolňování paměti je povolená rozsáhlá Zeměpisná šířka při rozhodování o shromažďování objektů a spouštění finalizační metody. Konkrétně časování volání finalizační metody není deterministické a v jakémkoli vlákně mohou být provedeny finalizační metody. Z těchto a dalších důvodů by třídy měly implementovat finalizační metody pouze v případě, že žádná jiná řešení nejsou proveditelná.
+Uvolňování paměti je povolená rozsáhlá Zeměpisná šířka při rozhodování o shromažďování objektů a spouštění finalizační metody. Konkrétně časování volání finalizační metody není deterministické a finalizační metody mohou být provedeny v jakémkoli vlákně. Z těchto a dalších důvodů by třídy měly implementovat finalizační metody pouze v případě, že žádná jiná řešení nejsou proveditelná.
 
 Příkaz `using` poskytuje lepší přístup k zničení objektu.
 

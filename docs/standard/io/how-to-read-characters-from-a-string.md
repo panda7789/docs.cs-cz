@@ -13,17 +13,17 @@ helpviewer_keywords:
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-ms.openlocfilehash: 0c3516c4abadfd22609c3568beffc14e027ef69e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ed267ad62e46f6216c94906df1bcefb0684ab51b
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706670"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155760"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>Postupy: čtení znaků z řetězce
 Následující příklady kódu znázorňují, jak číst znaky synchronně nebo asynchronně z řetězce.  
   
-## <a name="example-read-characters-synchronously"></a>Příklad: synchronní čtení znaků 
+## <a name="example-read-characters-synchronously"></a>Příklad: synchronní čtení znaků
  Tento příklad načte 13 znaků synchronně z řetězce, uloží je do pole a zobrazí je. Příklad přečte zbytek znaků v řetězci, uloží je do pole začínajícího na šestém prvku a zobrazí obsah pole.  
   
  [!code-csharp[Conceptual.StringReader#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.stringreader/cs/source.cs#1)]
@@ -35,7 +35,7 @@ Následující příklady kódu znázorňují, jak číst znaky synchronně nebo
  [!code-csharp[Conceptual.StringReader#2](../../../samples/snippets/csharp/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.cs)]
  [!code-vb[Conceptual.StringReader#2](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StringReaderWriter/MainWindow.xaml.vb)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.StringReader>  
 - <xref:System.IO.StringReader.Read%2A?displayProperty=nameWithType>  

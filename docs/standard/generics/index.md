@@ -26,12 +26,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: f04b6fcd1641a53efe75d38ab7122967bff6a58d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7f20e5108ad8bff602f5b761e65f093d987f2608
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708368"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156306"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 
@@ -90,7 +90,7 @@ Obecné typy umožňují přizpůsobit metodu, třídu, strukturu nebo rozhraní
      [!code-csharp[HowToGeneric#24](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/source2.cs#24)]
      [!code-vb[HowToGeneric#24](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToGeneric/VB/source2.vb#24)]  
   
-- Vyšší výkon. Obecné typy kolekcí obecně poskytují lepší pro ukládání a manipulaci s typy hodnot, protože není nutné pole hodnot.  
+- Lepší výkon. Obecné typy kolekcí obecně poskytují lepší pro ukládání a manipulaci s typy hodnot, protože není nutné pole hodnot.  
   
 - Obecné Delegáti umožňují typově bezpečná zpětná volání bez nutnosti vytvářet více tříd delegátů. Například obecný delegát <xref:System.Predicate%601> umožňuje vytvořit metodu, která implementuje vlastní kritéria hledání pro konkrétní typ a použít metodu s metodami <xref:System.Array> typu, jako jsou <xref:System.Array.Find%2A>, <xref:System.Array.FindLast%2A>a <xref:System.Array.FindAll%2A>.  
   
@@ -124,7 +124,7 @@ Obecné typy umožňují přizpůsobit metodu, třídu, strukturu nebo rozhraní
   
  Modul CLR (Common Language Runtime) poskytuje nové operační kódy a předpony pro podporu obecných typů v jazyce MSIL (Microsoft Intermediate Language), včetně <xref:System.Reflection.Emit.OpCodes.Stelem>, <xref:System.Reflection.Emit.OpCodes.Ldelem>, <xref:System.Reflection.Emit.OpCodes.Unbox_Any>, <xref:System.Reflection.Emit.OpCodes.Constrained>a <xref:System.Reflection.Emit.OpCodes.Readonly>.  
   
- Visual C++, C#a Visual Basic vše poskytují plnou podporu pro definování a používání generických typů. Další informace o podpoře jazyků naleznete v tématu [Obecné typy v Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Úvod do obecných](../../csharp/programming-guide/generics/index.md)hodnot a [Přehled obecných typů ve vizuálu C++ ](/cpp/windows/overview-of-generics-in-visual-cpp). 
+ Visual C++, C#a Visual Basic vše poskytují plnou podporu pro definování a používání generických typů. Další informace o podpoře jazyků naleznete v tématu [Obecné typy v Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Úvod do obecných](../../csharp/programming-guide/generics/index.md)hodnot a [Přehled obecných typů ve vizuálu C++ ](/cpp/windows/overview-of-generics-in-visual-cpp).
 
 ## <a name="nested-types-and-generics"></a>Vnořené typy a obecné typy  
  Typ, který je vnořen v obecném typu, může záviset na parametrech typu nadřazeného obecného typu. Modul CLR (Common Language Runtime) považuje vnořené typy za obecné, a to i v případě, že nemají vlastní parametry obecného typu. Při vytváření instance vnořeného typu je nutné zadat argumenty typu pro všechny nadřazené obecné typy.  
@@ -144,7 +144,7 @@ Obecné typy umožňují přizpůsobit metodu, třídu, strukturu nebo rozhraní
 |[Úvod do obecných typů](../../csharp/programming-guide/generics/index.md)|Poskytuje přehled o definování a použití obecných typů pro C# uživatele.|  
 |[Přehled obecných typů ve Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Popisuje funkci obecných typů pro C++ uživatele, včetně rozdílů mezi obecnými typy a šablonami.|  
 
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Referenční informace  
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  
