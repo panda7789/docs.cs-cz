@@ -5,12 +5,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: a2f5300f9647823cf2c9ac2a4a5c7c888c7dd245
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 09b290713f3bc2a7a7824bb19c98138943ad5b2c
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626578"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673378"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako podrobný plán, který určuje, co může typ provádět. Objekt je v podstatě blok paměti, který byl přidělen a nakonfigurován podle podrobného plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty se také nazývají instance a mohou být uloženy buď v pojmenované proměnné, nebo v poli nebo v kolekci. Kód klienta je kód, který používá tyto proměnné pro volání metod a přístup k veřejným vlastnostem objektu. V objektově orientovaném jazyce C#, jako je typický program, se skládá z více objektů, které pracují dynamicky.  
@@ -52,8 +52,6 @@ Definice třídy nebo struktury je jako podrobný plán, který určuje, co mů�
   
 - [Třídy](./classes.md)  
   
-- [Struktury](./structs.md)  
-  
 - [Konstruktory](./constructors.md)  
   
 - [Finalizační metody](./destructors.md)  
@@ -66,6 +64,6 @@ Definice třídy nebo struktury je jako podrobný plán, který určuje, co mů�
 - [object](../../language-reference/builtin-types/reference-types.md)
 - [Dědičnost](./inheritance.md)
 - [class](../../language-reference/keywords/class.md)
-- [struct](../../language-reference/builtin-types/struct.md)
+- [Typy struktury](../../language-reference/builtin-types/struct.md)
 - [new – operátor](../../language-reference/operators/new-operator.md)
 - [Obecný systém typů](../../../standard/base-types/common-type-system.md)

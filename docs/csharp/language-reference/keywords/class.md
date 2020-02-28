@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 187a49131e903e00cab54d9db43b6cd8eb359a3a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 500160d3bc9280b866e5f5ba24c5edc623e752c1
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713696"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673092"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 
@@ -32,10 +32,10 @@ V C#je povolena pouze jedna dědičnost. Jinými slovy třída může dědit pou
 
 |Dědičnost|Příklad|
 |-----------------|-------------|
-|Žádné|`class ClassA { }`|
-|Jednoduché|`class DerivedClass: BaseClass { }`|
-|Žádné, implementuje dvě rozhraní|`class ImplClass: IFace1, IFace2 { }`|
-|Single, implementuje jedno rozhraní.|`class ImplDerivedClass: BaseClass, IFace1 { }`|
+|Žádná|`class ClassA { }`|
+|Jednoduché|`class DerivedClass : BaseClass { }`|
+|Žádné, implementuje dvě rozhraní|`class ImplClass : IFace1, IFace2 { }`|
+|Single, implementuje jedno rozhraní.|`class ImplDerivedClass : BaseClass, IFace1 { }`|
 
 Třídy, které deklarujete přímo v rámci oboru názvů, nikoli vnořené v rámci jiných tříd, mohou být buď [veřejné](./public.md) , nebo [interní](./internal.md). Třídy jsou ve výchozím nastavení `internal`.
 
@@ -65,15 +65,15 @@ Třída může obsahovat deklarace následujících členů:
 
 - [Události](../../programming-guide/events/index.md)
 
-- [Delegáti](../../programming-guide/delegates/index.md)
+- [Delegáty](../../programming-guide/delegates/index.md)
 
 - [Třídy](../../programming-guide/classes-and-structs/classes.md)
 
 - [Rozhraní](../../programming-guide/interfaces/index.md)
 
-- [Struktury](../../programming-guide/classes-and-structs/structs.md)
+- [Typy struktury](../builtin-types/struct.md)
 
-- [Výčty](../builtin-types/enum.md)
+- [Výčtové typy](../builtin-types/enum.md)
 
 ## <a name="example"></a>Příklad
 
@@ -99,9 +99,9 @@ Nakonec si všimněte, že pro objekt vytvořený pomocí konstruktoru bez param
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](./index.md)
 - [Odkazové typy](./reference-types.md)

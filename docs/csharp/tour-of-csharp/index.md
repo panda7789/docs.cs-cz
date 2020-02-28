@@ -2,12 +2,12 @@
 title: Prohlídka C# – C# Průvodce
 description: Začínáte C#? Seznamte se se základy jazyka.
 ms.date: 04/05/2019
-ms.openlocfilehash: e2d7af3a35dc9d4fdeddf9eb742d155ab33094b4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b510342f957a259a6c7763441778461b3dd4ef1e
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711659"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673287"
 ---
 # <a name="a-tour-of-the-c-language"></a>Prohlídka C# jazyka
 
@@ -64,13 +64,11 @@ Máte spoustu dalších informací o C#. Následující témata obsahují přehl
   - Pomocí ***příkazů*** můžete vyjádřit akce programu.
 - [Třídy a objekty](classes-and-objects.md)
   - ***Třídy*** jsou základem C#typů. ***Objekty*** jsou instancemi třídy. Třídy jsou sestaveny pomocí ***členů***, které jsou také pokryty v tomto tématu.
-- [Struktury](structs.md)
-  - ***Struktury*** jsou datové struktury, které jsou na rozdíl od tříd typy hodnot.
 - [Pole](arrays.md)
   - ***Pole*** je datová struktura, která obsahuje počet proměnných, které jsou dostupné prostřednictvím počítaných indexů.
 - [Rozhraní](interfaces.md)
   - ***Rozhraní*** definuje kontrakt, který může být implementován pomocí tříd a struktur. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů, které definuje – určuje pouze členy, které musí být poskytnuty třídami nebo strukturami, které implementují rozhraní.
-- [Delegáti](delegates.md)
+- [Delegáty](delegates.md)
   - ***Typ delegáta*** představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Delegáti umožňují zacházet s metodami jako s entitami, které lze přiřadit proměnným a předávat jako parametry. Delegáti jsou podobní pojmu ukazatelů na funkce nalezené v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce jsou delegáti objektově orientované a typově bezpečné.
 - [Atributy](attributes.md)
   - ***Atributy*** umožňují programům určit další deklarativní informace o typech, členech a jiných entitách.

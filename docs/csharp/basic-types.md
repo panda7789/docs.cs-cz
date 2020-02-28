@@ -4,12 +4,12 @@ description: Další informace o základních typech (čísel, řetězců a obje
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 10230394ece27a2a34be1075abcdbd3765995aeb
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: bb2177026afb2eef2e14ece0c306bfd3ffe7af39
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628563"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673261"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnné a hodnoty
 
@@ -82,9 +82,10 @@ Je důležité porozumět dvěma základním bodům o typu systému v .NET Frame
   
 - Podporuje princip dědičnosti. Typy mohou být odvozeny od jiných typů, které se nazývají *základní typy*. Odvozený typ dědí (s určitými omezeními) metody, vlastnosti a další členy základního typu. Základní typ může být odvozen z jiného typu. v takovém případě odvozený typ dědí členy obou základních typů v rámci své Hierarchie dědičnosti. Všechny typy, včetně předdefinovaných číselných typů, jako je napříkladC# <xref:System.Int32> (klíčové slovo: `int`), jsou odvozeny z jednoho základního typu, kterýC# je <xref:System.Object> (klíčové slovo: `object`). Tato hierarchie sjednoceného typu se nazývá CTS ( [Common Type System](../standard/common-type-system.md) ). Další informace o dědičnosti v C#naleznete v tématu [Dědičnost](programming-guide/classes-and-structs/inheritance.md).  
   
-- Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET Framework a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova [struct](language-reference/builtin-types/struct.md) , jsou typy hodnot; všechny předdefinované číselné typy jsou **struktury**. Další informace o typech hodnot naleznete v tématu [struktury](structs.md). Typy, které definujete pomocí klíčového slova [Class](language-reference/keywords/class.md) , jsou odkazové typy. Další informace o typech odkazů naleznete v tématu [třídy](programming-guide/classes-and-structs/classes.md). Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
+- Každý typ v CTS je definován buď jako *typ hodnoty* , nebo jako *typ odkazu*. To zahrnuje všechny vlastní typy v knihovně tříd .NET a také vlastní uživatelsky definované typy. Typy, které definujete pomocí klíčového slova `struct` nebo `enum` jsou typy hodnot. Další informace o typech hodnot naleznete v tématu [typy hodnot](language-reference/builtin-types/value-types.md). Typy, které definujete pomocí klíčového slova [Class](language-reference/keywords/class.md) , jsou odkazové typy. Další informace o typech odkazů naleznete v tématu [třídy](programming-guide/classes-and-structs/classes.md). Typy odkazů a typy hodnot mají odlišná pravidla kompilace a jiné chování za běhu.
 
 ## <a name="see-also"></a>Viz také
 
-- [Struktury](structs.md)
+- [Typy struktury](language-reference/builtin-types/struct.md)
+- [Výčtové typy](language-reference/builtin-types/enum.md)
 - [Třídy](programming-guide/classes-and-structs/classes.md)

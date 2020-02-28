@@ -3,12 +3,12 @@ title: Historie C# – C# Průvodce
 description: Co jazyk vypadal jako v jeho dřívějších verzích a jak se vyvinulo od verze?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 83934d9c8194d5109cea0e847d287c01c32a2955
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 9114395a5c6cfd8df5da18024921c35828947e0b
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739101"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673274"
 ---
 # <a name="the-history-of-c"></a>Historie\# jazyka C
 
@@ -37,7 +37,7 @@ C#verze 1,0 prohlédla z vydaných funkcí v porovnání s dnešním datem. Naš
 K dispozici jsou C# hlavní funkce 1,0:
 
 - [Třídy](../programming-guide/classes-and-structs/classes.md)
-- [Struktury](../programming-guide/classes-and-structs/structs.md)
+- [Struktury](../language-reference/builtin-types/struct.md)
 - [Rozhraní](../programming-guide/interfaces/index.md)
 - [Události](../events-overview.md)
 - [Vlastnosti](../properties.md)

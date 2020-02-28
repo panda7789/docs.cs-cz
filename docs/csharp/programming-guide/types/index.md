@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ade2cba857a1a32039f8fd07881f13f63f0dbe1a
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: a094e6e8ab9094fb14ce9a2ca8a180cbf9b273cb
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628134"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673391"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -113,7 +113,7 @@ Klíčové slovo [struct](../../language-reference/builtin-types/struct.md) mů�
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 
-Další informace o strukturách naleznete v tématu [structs](../classes-and-structs/structs.md). Další informace o typech hodnot naleznete v tématu [typy hodnot](../../language-reference/builtin-types/value-types.md).
+Další informace o strukturách naleznete v tématu [typy struktury](../../language-reference/builtin-types/struct.md). Další informace o typech hodnot naleznete v tématu [typy hodnot](../../language-reference/builtin-types/value-types.md).
 
 Druhá kategorie typů hodnot je [Enum](../../language-reference/builtin-types/enum.md). Výčet definuje sadu pojmenovaných celočíselných konstant. Například výčet <xref:System.IO.FileMode?displayProperty=nameWithType> v knihovně tříd .NET obsahuje sadu pojmenovaných celých čísel, která určují, jak by měl být soubor otevřen. Je definován tak, jak je znázorněno v následujícím příkladu:
 
@@ -205,3 +205,4 @@ Další informace najdete v následujících tématech:
 - [Průvodce programováním v C#](../index.md)
 - [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)
 - [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)
+ 

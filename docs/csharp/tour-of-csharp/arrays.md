@@ -1,48 +1,48 @@
 ---
-title: C#Pole – připravuje C# jazyka
-description: Pole jsou v základním typem kolekce C# jazyka
+title: C#Pole – prohlídka C# jazyka
+description: Pole jsou nejzákladnější typ kolekce v C# jazyce.
 ms.date: 08/10/2016
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
-ms.openlocfilehash: 56a053ac8525d4c6c34592d6092f3f162cb04247
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 195df1f31c71ee7a202a3b57076775c4f717d399
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634608"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673313"
 ---
 # <a name="arrays"></a>Pole
 
-***Pole*** je datová struktura, která obsahuje několik proměnných, které jsou přístupné prostřednictvím vypočítané indexy. Proměnné, které jsou obsaženy v poli, tzv. ***prvky*** pole, jsou všechny stejného typu a tento typ se nazývá ***typ elementu*** pole.
+***Pole*** je datová struktura, která obsahuje počet proměnných, které jsou dostupné prostřednictvím počítaných indexů. Proměnné obsažené v poli, označované také jako ***prvky*** pole, jsou všechny stejného typu a tento typ se nazývá ***typ elementu*** pole.
 
-Typy pole jsou typy odkazů a deklarace proměnné pole jednoduše vyčleňuje místo odkazu na pole instance. Dynamicky se vytvářejí instance skutečné pole za běhu pomocí operátoru new. Určuje novou operaci ***délka*** nové instance pole, které se potom jsme opravili po dobu životnosti instance. Indexy prvků v rozsahu pole z `0` k `Length - 1`. `new` Operátor automaticky inicializuje prvků pole na výchozí hodnoty, které je třeba nulu pro všechny číselné typy a `null` pro všechny typy odkazů.
+Typy polí jsou odkazové typy a deklarace proměnné pole jednoduše nastaví volné místo pro odkaz na instanci pole. Skutečné instance pole jsou vytvářeny dynamicky za běhu pomocí operátoru new. Nová operace určuje ***délku*** nové instance pole, která je poté opravena po dobu života instance. Indexy prvků rozsahu pole od `0` do `Length - 1`. Operátor `new` automaticky inicializuje prvky pole na výchozí hodnotu, což je například nula pro všechny číselné typy a `null` pro všechny typy odkazů.
 
 Následující příklad vytvoří pole `int` prvky, inicializuje pole a vytiskne obsah pole.
 
 [!code-csharp[ArraySample](../../../samples/snippets/csharp/tour/arrays/Program.cs#L3-L18)]
 
-Tento příklad vytvoří a pracuje ***jednorozměrné pole***. C# rovněž podporuje ***vícerozměrných polí***. Zadejte počet rozměrů pole, označované také jako ***pořadí*** typ pole je jednu plus počet čárek mezi hranaté závorky pole zapsána. Následující příklad přiděluje jednorozměrná dvourozměrném a trojrozměrného pole.
+Tento příklad vytvoří a pracuje na jednorozměrném ***poli***. C#podporuje rovněž ***multidimenzionální pole***. Počet rozměrů typu pole, označovaný také jako ***rozměr*** typu pole, je jedna plus počet čárek napsaných mezi hranatými závorkami typu pole. Následující příklad přiděluje jednorozměrné, dvojrozměrné a trojrozměrné pole v uvedeném pořadí.
 
 [!code-csharp[ArrayRank](../../../samples/snippets/csharp/tour/arrays/Program.cs#L24-L26)]
 
-`a1` Pole obsahuje 10 prvků `a2` pole obsahuje 50 (10 × 5) elementy a `a3` 100 (10 × 5 × 2) obsahuje pole prvků.
-Typ elementu pole může být libovolného typu, včetně typu pole. Někdy se označuje jako pole s prvky typu pole ***vícenásobného pole*** protože ne všechny délky pole elementu mají být stejné. V následujícím příkladu se přiděluje pole polí `int`:
+Pole `a1` obsahuje 10 prvků, pole `a2` obsahuje 50 (10 × 5) prvků a pole `a3` obsahuje 100 (10 × 5 × 2) prvků.
+Typ elementu pole může být libovolný typ, včetně typu pole. Pole s prvky typu pole se někdy nazývá ***vícenásobné pole*** , protože délky polí elementů nemusí být stejné. Následující příklad přiděluje pole polí `int`:
 
 [!code-csharp[ArrayAllocation](../../../samples/snippets/csharp/tour/arrays/Program.cs#L31-L34)]
 
-První řádek vytvoří pole se třemi prvky, každý typ `int[]` a každý s počáteční hodnotou `null`. Následující řádky následně inicializujete tři prvky s odkazy na jednotlivá pole instancí z různých délek.
+První řádek vytvoří pole se třemi prvky, každou typu `int[]` a každý s počáteční hodnotou `null`. Následující řádky poté inicializují tři prvky s odkazy na jednotlivé instance pole s různou délkou.
 
-Operátor new povoluje počáteční hodnoty prvků pole zadat pomocí ***inicializátor pole***, což je seznamem výrazů napsané mezi oddělovači `{` a `}`. V následujícím příkladu se přiděluje a inicializuje `int[]` s tři elementy.
+Operátor New umožňuje zadat počáteční hodnoty prvků pole pomocí ***inicializátoru pole***, což je seznam výrazů zapsaných mezi oddělovači `{` a `}`. Následující příklad přiděluje a inicializuje `int[]` se třemi prvky.
 
 [!code-csharp[ArrayInitialization](../../../samples/snippets/csharp/tour/arrays/Program.cs#L39-L39)]
 
-Všimněte si, že délka pole je odvozen z počet výrazů mezi {a}. Lokální proměnná a pole deklarace lze zkrátit další tak, aby typ pole nemusí být revidovat.
+Všimněte si, že délka pole je odvozená od počtu výrazů mezi {a}. Deklarace lokální proměnné a pole lze dále zkrátit tak, aby se typ pole nemuselo přestavit.
 
 [!code-csharp[ArrayInitialization](../../../samples/snippets/csharp/tour/arrays/Program.cs#L44-L44)]
 
-Obě předchozí příklady jsou ekvivalentní následujícímu zápisu:
+Oba předchozí příklady jsou ekvivalentní následujícímu:
 
 [!code-csharp[ArrayAssignment](../../../samples/snippets/csharp/tour/arrays/Program.cs#L49-L53)]
 
 >[!div class="step-by-step"]
->[Předchozí](structs.md)
->[další](interfaces.md)
+>[Předchozí](classes-and-objects.md)
+>[Další](interfaces.md)

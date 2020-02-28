@@ -3,12 +3,12 @@ title: Třídy a objekty v C# -A prohlídku C# jazyka
 description: Začínáte C#? Přečtěte si tento přehled tříd, objektů a dědičnosti.
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: be8e760b19b7ca5305918ecfdbf9ad797d7e76b2
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: e5078135ab22445ac636c6edc3d46570be8fcaf5
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105633"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673300"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -53,7 +53,7 @@ Následující příklad obsahuje přehled druhů členů, které třída může
 - Typy
   - Vnořené typy deklarované třídou
 
-## <a name="accessibility"></a>Usnadnění
+## <a name="accessibility"></a>Přístupnost
 
 Každý člen třídy má přidruženou přístupnost, která řídí oblasti textu programu, které mají přístup k členu. Existuje šest možných forem usnadnění přístupu. Tyto jsou shrnuté níže.
 
@@ -298,4 +298,4 @@ Příkaz `using` poskytuje lepší přístup k zničení objektu.
 
 > [!div class="step-by-step"]
 > [Předchozí](statements.md)
-> [Další](structs.md)
+> [Další](arrays.md)

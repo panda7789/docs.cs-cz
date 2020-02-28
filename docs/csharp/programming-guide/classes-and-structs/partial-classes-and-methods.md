@@ -6,12 +6,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 641c2e3adfb3dabaa300e94b203aa6c4c4b509d2
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 50b192d5a7416a982f41d0c3ac13e9c1bfe3397c
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628186"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673352"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 
@@ -173,6 +173,6 @@ Další informace naleznete v tématu [částečné typy](~/_csharplang/spec/cla
 
 - [Průvodce programováním v C#](../index.md)
 - [Třídy](./classes.md)
-- [Struktury](./structs.md)
+- [Typy struktury](../../language-reference/builtin-types/struct.md)
 - [Rozhraní](../interfaces/index.md)
 - [partial (typ)](../../language-reference/keywords/partial-type.md)

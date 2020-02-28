@@ -10,12 +10,12 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-ms.openlocfilehash: 301ba292010470208e92a225c1014bcb50497106
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: afd9e688bd716375bafb370fad4af082a9498411
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714823"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673417"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Třídy a struktury (Průvodce programováním v C#)
 Třídy a struktury jsou dva ze základních konstrukcí systému obecného typu v .NET Framework. Každá z nich je v podstatě datová struktura, která zapouzdřuje sadu dat a chování, které patří dohromady jako logická jednotka. Data a chování jsou *členy* třídy nebo struktury a obsahují její metody, vlastnosti a události a tak dále, jak je uvedeno dále v tomto tématu.  
@@ -28,7 +28,7 @@ Třídy a struktury jsou dva ze základních konstrukcí systému obecného typu
   
  Obecně třídy jsou používány k modelování složitějšího chování nebo dat, která mají být upravena po vytvoření objektu třídy. Struktury jsou nejvhodnější pro malé datové struktury, které obsahují hlavně data, která nejsou určena k úpravám po vytvoření struktury.  
   
- Další informace naleznete v tématu [třídy](./classes.md), [objekty](./objects.md)a [struktury](./structs.md).  
+ Další informace naleznete v tématu [třídy](./classes.md), [objekty](./objects.md)a [typy struktury](../../language-reference/builtin-types/struct.md).  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu má `CustomClass` v oboru názvů `ProgrammingGuide` tři členy: konstruktor instance, vlastnost s názvem `Number`a metodu s názvem `Multiply`. Metoda `Main` ve třídě `Program` vytvoří instanci (objekt) `CustomClass`a metoda objektu a vlastnost je k dispozici pomocí zápisu s tečkou.
@@ -63,7 +63,7 @@ Třídy a struktury jsou dva ze základních konstrukcí systému obecného typu
   
 - [Vnořené typy](./nested-types.md)  
   
-### <a name="accessibility"></a>Usnadnění  
+### <a name="accessibility"></a>Přístupnost  
  Některé metody a vlastnosti mají být volány nebo dostupné z kódu mimo vaši třídu nebo strukturu, označované jako *kód klienta*. Jiné metody a vlastnosti mohou být použity pouze v samotné třídě nebo struktuře. Je důležité omezit přístupnost kódu, aby k němu mohl získat pouze zamýšlený kód klienta. Určíte, jak budou přístupné vaše typy a jejich členové klientskému kódu pomocí modifikátorů přístupu [Public](../../language-reference/keywords/public.md), [Protected](../../language-reference/keywords/protected.md), [internal](../../language-reference/keywords/internal.md), [Protected Internal](../../language-reference/keywords/protected-internal.md), [Private](../../language-reference/keywords/private.md) a [Private Protected](../../language-reference/keywords/private-protected.md). Výchozí přístupnost je `private`. Další informace najdete v tématu [modifikátory přístupu](./access-modifiers.md).  
   
 ### <a name="inheritance"></a>Dědičnost  
@@ -101,6 +101,6 @@ Třídy a struktury jsou dva ze základních konstrukcí systému obecného typu
 ## <a name="c-language-specification"></a>C# – jazyková specifikace  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
