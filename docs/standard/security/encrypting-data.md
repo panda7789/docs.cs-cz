@@ -11,20 +11,20 @@ helpviewer_keywords:
 - cryptography [.NET Framework], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: b335e0d39c1809b028e2005a472fe77729e9d267
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 669b9c77ca0102ed94d8743cf37b18c0d0c528dc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706211"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159400"
 ---
-# <a name="encrypting-data"></a><span data-ttu-id="ecfba-102">Šifrování dat</span><span class="sxs-lookup"><span data-stu-id="ecfba-102">Encrypting Data</span></span>
-<span data-ttu-id="ecfba-103">Symetrické šifrování a asymetrické šifrování se provádí pomocí různých procesů.</span><span class="sxs-lookup"><span data-stu-id="ecfba-103">Symmetric encryption and asymmetric encryption are performed using different processes.</span></span> <span data-ttu-id="ecfba-104">Symetrické šifrování se provádí na datových proudech a je proto užitečné pro šifrování velkých objemů dat.</span><span class="sxs-lookup"><span data-stu-id="ecfba-104">Symmetric encryption is performed on streams and is therefore useful to encrypt large amounts of data.</span></span> <span data-ttu-id="ecfba-105">Asymetrické šifrování se provádí na malém počtu bajtů a je proto užitečné jenom pro malé objemy dat.</span><span class="sxs-lookup"><span data-stu-id="ecfba-105">Asymmetric encryption is performed on a small number of bytes and is therefore useful only for small amounts of data.</span></span>  
+# <a name="encrypting-data"></a><span data-ttu-id="4638a-102">Šifrování dat</span><span class="sxs-lookup"><span data-stu-id="4638a-102">Encrypting Data</span></span>
+<span data-ttu-id="4638a-103">Symetrické šifrování a asymetrické šifrování se provádí pomocí různých procesů.</span><span class="sxs-lookup"><span data-stu-id="4638a-103">Symmetric encryption and asymmetric encryption are performed using different processes.</span></span> <span data-ttu-id="4638a-104">Symetrické šifrování se provádí na datových proudech a je proto užitečné pro šifrování velkých objemů dat.</span><span class="sxs-lookup"><span data-stu-id="4638a-104">Symmetric encryption is performed on streams and is therefore useful to encrypt large amounts of data.</span></span> <span data-ttu-id="4638a-105">Asymetrické šifrování se provádí na malém počtu bajtů a je proto užitečné jenom pro malé objemy dat.</span><span class="sxs-lookup"><span data-stu-id="4638a-105">Asymmetric encryption is performed on a small number of bytes and is therefore useful only for small amounts of data.</span></span>  
   
-## <a name="symmetric-encryption"></a><span data-ttu-id="ecfba-106">Symetrické šifrování</span><span class="sxs-lookup"><span data-stu-id="ecfba-106">Symmetric Encryption</span></span>  
- <span data-ttu-id="ecfba-107">Spravované třídy symetrického kryptografie se používají se speciální třídou datového proudu s názvem <xref:System.Security.Cryptography.CryptoStream>, který šifruje data čtená do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="ecfba-107">The managed symmetric cryptography classes are used with a special stream class called a <xref:System.Security.Cryptography.CryptoStream> that encrypts data read into the stream.</span></span> <span data-ttu-id="ecfba-108">Třída **CryptoStream** je inicializována se třídou spravovaného datového proudu, třída implementuje rozhraní <xref:System.Security.Cryptography.ICryptoTransform> (vytvořené ze třídy, která implementuje šifrovací algoritmus), a výčet <xref:System.Security.Cryptography.CryptoStreamMode>, který popisuje typ přístupu povolený pro objekt **CryptoStream**.</span><span class="sxs-lookup"><span data-stu-id="ecfba-108">The **CryptoStream** class is initialized with a managed stream class, a class implements the <xref:System.Security.Cryptography.ICryptoTransform> interface (created from a class that implements a cryptographic algorithm), and a <xref:System.Security.Cryptography.CryptoStreamMode> enumeration that describes the type of access permitted to the **CryptoStream**.</span></span> <span data-ttu-id="ecfba-109">Třídu **CryptoStream** lze inicializovat pomocí libovolné třídy, která je odvozena od třídy <xref:System.IO.Stream>, včetně <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>a <xref:System.Net.Sockets.NetworkStream>.</span><span class="sxs-lookup"><span data-stu-id="ecfba-109">The **CryptoStream** class can be initialized using any class that derives from the <xref:System.IO.Stream> class, including <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>, and <xref:System.Net.Sockets.NetworkStream>.</span></span> <span data-ttu-id="ecfba-110">Pomocí těchto tříd můžete provádět symetrické šifrování u nejrůznějších objektů streamu.</span><span class="sxs-lookup"><span data-stu-id="ecfba-110">Using these classes, you can perform symmetric encryption on a variety of stream objects.</span></span>  
+## <a name="symmetric-encryption"></a><span data-ttu-id="4638a-106">Symetrické šifrování</span><span class="sxs-lookup"><span data-stu-id="4638a-106">Symmetric Encryption</span></span>  
+ <span data-ttu-id="4638a-107">Spravované třídy symetrického kryptografie se používají se speciální třídou datového proudu s názvem <xref:System.Security.Cryptography.CryptoStream>, který šifruje data čtená do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="4638a-107">The managed symmetric cryptography classes are used with a special stream class called a <xref:System.Security.Cryptography.CryptoStream> that encrypts data read into the stream.</span></span> <span data-ttu-id="4638a-108">Třída **CryptoStream** je inicializována se třídou spravovaného datového proudu, třída implementuje rozhraní <xref:System.Security.Cryptography.ICryptoTransform> (vytvořené ze třídy, která implementuje šifrovací algoritmus), a výčet <xref:System.Security.Cryptography.CryptoStreamMode>, který popisuje typ přístupu povolený pro objekt **CryptoStream**.</span><span class="sxs-lookup"><span data-stu-id="4638a-108">The **CryptoStream** class is initialized with a managed stream class, a class implements the <xref:System.Security.Cryptography.ICryptoTransform> interface (created from a class that implements a cryptographic algorithm), and a <xref:System.Security.Cryptography.CryptoStreamMode> enumeration that describes the type of access permitted to the **CryptoStream**.</span></span> <span data-ttu-id="4638a-109">Třídu **CryptoStream** lze inicializovat pomocí libovolné třídy, která je odvozena od třídy <xref:System.IO.Stream>, včetně <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>a <xref:System.Net.Sockets.NetworkStream>.</span><span class="sxs-lookup"><span data-stu-id="4638a-109">The **CryptoStream** class can be initialized using any class that derives from the <xref:System.IO.Stream> class, including <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>, and <xref:System.Net.Sockets.NetworkStream>.</span></span> <span data-ttu-id="4638a-110">Pomocí těchto tříd můžete provádět symetrické šifrování u nejrůznějších objektů streamu.</span><span class="sxs-lookup"><span data-stu-id="4638a-110">Using these classes, you can perform symmetric encryption on a variety of stream objects.</span></span>  
   
- <span data-ttu-id="ecfba-111">Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged>, která implementuje šifrovací algoritmus Rijndael a používá ho k provedení šifrování ve třídě **CryptoStream** .</span><span class="sxs-lookup"><span data-stu-id="ecfba-111">The following example illustrates how to create a new instance of the <xref:System.Security.Cryptography.RijndaelManaged> class, which implements the Rijndael encryption algorithm, and use it to perform encryption on a **CryptoStream** class.</span></span> <span data-ttu-id="ecfba-112">V tomto příkladu je **CryptoStream** inicializován s objektem datového proudu s názvem `myStream`, který může být jakýkoli typ spravovaného datového proudu.</span><span class="sxs-lookup"><span data-stu-id="ecfba-112">In this example, the **CryptoStream** is initialized with a stream object called `myStream` that can be any type of managed stream.</span></span> <span data-ttu-id="ecfba-113">Metodě **CreateEncryptor** z třídy **RijndaelManaged** se předal klíč a IV, který se používá k šifrování.</span><span class="sxs-lookup"><span data-stu-id="ecfba-113">The **CreateEncryptor** method from the **RijndaelManaged** class is passed the key and IV that are used for encryption.</span></span> <span data-ttu-id="ecfba-114">V tomto případě se použijí výchozí klíč a hodnota IV vygenerované z `rmCrypto`.</span><span class="sxs-lookup"><span data-stu-id="ecfba-114">In this case, the default key and IV generated from `rmCrypto` are used.</span></span> <span data-ttu-id="ecfba-115">Nakonec se předává **CryptoStreamMode. Write** , který zadává přístup pro zápis do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="ecfba-115">Finally, the **CryptoStreamMode.Write** is passed, specifying write access to the stream.</span></span>  
+ <span data-ttu-id="4638a-111">Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged>, která implementuje šifrovací algoritmus Rijndael a používá ho k provedení šifrování ve třídě **CryptoStream** .</span><span class="sxs-lookup"><span data-stu-id="4638a-111">The following example illustrates how to create a new instance of the <xref:System.Security.Cryptography.RijndaelManaged> class, which implements the Rijndael encryption algorithm, and use it to perform encryption on a **CryptoStream** class.</span></span> <span data-ttu-id="4638a-112">V tomto příkladu je **CryptoStream** inicializován s objektem datového proudu s názvem `myStream`, který může být jakýkoli typ spravovaného datového proudu.</span><span class="sxs-lookup"><span data-stu-id="4638a-112">In this example, the **CryptoStream** is initialized with a stream object called `myStream` that can be any type of managed stream.</span></span> <span data-ttu-id="4638a-113">Metodě **CreateEncryptor** z třídy **RijndaelManaged** se předal klíč a IV, který se používá k šifrování.</span><span class="sxs-lookup"><span data-stu-id="4638a-113">The **CreateEncryptor** method from the **RijndaelManaged** class is passed the key and IV that are used for encryption.</span></span> <span data-ttu-id="4638a-114">V tomto případě se použijí výchozí klíč a hodnota IV vygenerované z `rmCrypto`.</span><span class="sxs-lookup"><span data-stu-id="4638a-114">In this case, the default key and IV generated from `rmCrypto` are used.</span></span> <span data-ttu-id="4638a-115">Nakonec se předává **CryptoStreamMode. Write** , který zadává přístup pro zápis do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="4638a-115">Finally, the **CryptoStreamMode.Write** is passed, specifying write access to the stream.</span></span>  
   
 ```vb  
 Dim rmCrypto As New RijndaelManaged()  
@@ -36,12 +36,12 @@ RijndaelManaged rmCrypto = new RijndaelManaged();
 CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateEncryptor(), CryptoStreamMode.Write);  
 ```  
   
- <span data-ttu-id="ecfba-116">Po spuštění tohoto kódu se všechna data zapsaná do objektu **CryptoStream** šifrují pomocí algoritmu Rijndael.</span><span class="sxs-lookup"><span data-stu-id="ecfba-116">After this code is executed, any data written to the **CryptoStream** object is encrypted using the Rijndael algorithm.</span></span>  
+ <span data-ttu-id="4638a-116">Po spuštění tohoto kódu se všechna data zapsaná do objektu **CryptoStream** šifrují pomocí algoritmu Rijndael.</span><span class="sxs-lookup"><span data-stu-id="4638a-116">After this code is executed, any data written to the **CryptoStream** object is encrypted using the Rijndael algorithm.</span></span>  
   
- <span data-ttu-id="ecfba-117">Následující příklad ukazuje celý proces vytvoření datového proudu, šifrování datového proudu, zápis do datového proudu a zavření datového proudu.</span><span class="sxs-lookup"><span data-stu-id="ecfba-117">The following example shows the entire process of creating a stream, encrypting the stream, writing to the stream, and closing the stream.</span></span> <span data-ttu-id="ecfba-118">Tento příklad vytvoří síťový datový proud, který je zašifrovaný pomocí třídy **CryptoStream** a třídy **RijndaelManaged** .</span><span class="sxs-lookup"><span data-stu-id="ecfba-118">This example creates a network stream that is encrypted using the **CryptoStream** class and the **RijndaelManaged** class.</span></span> <span data-ttu-id="ecfba-119">Do šifrovaného datového proudu pomocí třídy <xref:System.IO.StreamWriter> se zapisuje zpráva.</span><span class="sxs-lookup"><span data-stu-id="ecfba-119">A message is written to the encrypted stream with the <xref:System.IO.StreamWriter> class.</span></span>  
+ <span data-ttu-id="4638a-117">Následující příklad ukazuje celý proces vytvoření datového proudu, šifrování datového proudu, zápis do datového proudu a zavření datového proudu.</span><span class="sxs-lookup"><span data-stu-id="4638a-117">The following example shows the entire process of creating a stream, encrypting the stream, writing to the stream, and closing the stream.</span></span> <span data-ttu-id="4638a-118">Tento příklad vytvoří síťový datový proud, který je zašifrovaný pomocí třídy **CryptoStream** a třídy **RijndaelManaged** .</span><span class="sxs-lookup"><span data-stu-id="4638a-118">This example creates a network stream that is encrypted using the **CryptoStream** class and the **RijndaelManaged** class.</span></span> <span data-ttu-id="4638a-119">Do šifrovaného datového proudu pomocí třídy <xref:System.IO.StreamWriter> se zapisuje zpráva.</span><span class="sxs-lookup"><span data-stu-id="4638a-119">A message is written to the encrypted stream with the <xref:System.IO.StreamWriter> class.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="ecfba-120">Tento příklad můžete použít také k zápisu do souboru.</span><span class="sxs-lookup"><span data-stu-id="ecfba-120">You can also use this example to write to a file.</span></span> <span data-ttu-id="ecfba-121">Chcete-li to provést, odstraňte odkaz <xref:System.Net.Sockets.TcpClient> a nahraďte <xref:System.Net.Sockets.NetworkStream> <xref:System.IO.FileStream>.</span><span class="sxs-lookup"><span data-stu-id="ecfba-121">To do that, delete the <xref:System.Net.Sockets.TcpClient> reference and replace the <xref:System.Net.Sockets.NetworkStream> with a <xref:System.IO.FileStream>.</span></span>  
+> <span data-ttu-id="4638a-120">Tento příklad můžete použít také k zápisu do souboru.</span><span class="sxs-lookup"><span data-stu-id="4638a-120">You can also use this example to write to a file.</span></span> <span data-ttu-id="4638a-121">Chcete-li to provést, odstraňte odkaz <xref:System.Net.Sockets.TcpClient> a nahraďte <xref:System.Net.Sockets.NetworkStream> <xref:System.IO.FileStream>.</span><span class="sxs-lookup"><span data-stu-id="4638a-121">To do that, delete the <xref:System.Net.Sockets.TcpClient> reference and replace the <xref:System.Net.Sockets.NetworkStream> with a <xref:System.IO.FileStream>.</span></span>  
   
 ```vb  
 Imports System  
@@ -54,11 +54,11 @@ Sub Main()
    Try  
       'Create a TCP connection to a listening TCP process.  
       'Use "localhost" to specify the current computer or  
-      'replace "localhost" with the IP address of the   
-      'listening process.   
+      'replace "localhost" with the IP address of the
+      'listening process.
       Dim tcp As New TcpClient("localhost", 11000)  
   
-      'Create a network stream from the TCP connection.   
+      'Create a network stream from the TCP connection.
       Dim netStream As NetworkStream = tcp.GetStream()  
   
       'Create a new instance of the RijndaelManaged class  
@@ -68,11 +68,11 @@ Sub Main()
             Dim key As Byte() = {&H1, &H2, &H3, &H4, &H5, &H6, &H7, &H8, &H9, &H10, &H11, &H12, &H13, &H14, &H15, &H16}  
             Dim iv As Byte() = {&H1, &H2, &H3, &H4, &H5, &H6, &H7, &H8, &H9, &H10, &H11, &H12, &H13, &H14, &H15, &H16}  
   
-      'Create a CryptoStream, pass it the NetworkStream, and encrypt   
+      'Create a CryptoStream, pass it the NetworkStream, and encrypt
       'it with the Rijndael class.  
       Dim cryptStream As New CryptoStream(netStream, rmCrypto.CreateEncryptor(key, iv), CryptoStreamMode.Write)  
   
-      'Create a StreamWriter for easy writing to the   
+      'Create a StreamWriter for easy writing to the
       'network stream.  
       Dim sWriter As New StreamWriter(cryptStream)  
   
@@ -110,11 +110,11 @@ public class main
       {  
          //Create a TCP connection to a listening TCP process.  
          //Use "localhost" to specify the current computer or  
-         //replace "localhost" with the IP address of the   
-         //listening process.    
+         //replace "localhost" with the IP address of the
+         //listening process.
          TcpClient tcp = new TcpClient("localhost",11000);  
   
-         //Create a network stream from the TCP connection.   
+         //Create a network stream from the TCP connection.
          NetworkStream netStream = tcp.GetStream();  
   
          //Create a new instance of the RijndaelManaged class  
@@ -124,13 +124,13 @@ public class main
          byte[] key = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16};  
          byte[] iv = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16};  
   
-         //Create a CryptoStream, pass it the NetworkStream, and encrypt   
+         //Create a CryptoStream, pass it the NetworkStream, and encrypt
          //it with the Rijndael class.  
-         CryptoStream cryptStream = new CryptoStream(netStream,   
-         rmCrypto.CreateEncryptor(key, iv),     
+         CryptoStream cryptStream = new CryptoStream(netStream,
+         rmCrypto.CreateEncryptor(key, iv),
          CryptoStreamMode.Write);  
   
-         //Create a StreamWriter for easy writing to the   
+         //Create a StreamWriter for easy writing to the
          //network stream.  
          StreamWriter sWriter = new StreamWriter(cryptStream);  
   
@@ -156,22 +156,22 @@ public class main
 }  
 ```  
   
- <span data-ttu-id="ecfba-122">Aby byl předchozí příklad úspěšně spuštěn, musí existovat proces, který naslouchá na IP adrese a čísle portu zadané ve třídě <xref:System.Net.Sockets.TcpClient>.</span><span class="sxs-lookup"><span data-stu-id="ecfba-122">For the previous example to execute successfully, there must be a process listening on the IP address and port number specified in the <xref:System.Net.Sockets.TcpClient> class.</span></span> <span data-ttu-id="ecfba-123">Pokud proces naslouchání existuje, kód se připojí k procesu naslouchání, šifruje datový proud pomocí symetrického algoritmu Rijndael a zapíše "Hello World!"</span><span class="sxs-lookup"><span data-stu-id="ecfba-123">If a listening process exists, the code will connect to the listening process, encrypt the stream using the Rijndael symmetric algorithm, and write "Hello World!"</span></span> <span data-ttu-id="ecfba-124">do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="ecfba-124">to the stream.</span></span> <span data-ttu-id="ecfba-125">Pokud je kód úspěšný, zobrazí se následující text konzole:</span><span class="sxs-lookup"><span data-stu-id="ecfba-125">If the code is successful, it displays the following text to the console:</span></span>  
+ <span data-ttu-id="4638a-122">Aby byl předchozí příklad úspěšně spuštěn, musí existovat proces, který naslouchá na IP adrese a čísle portu zadané ve třídě <xref:System.Net.Sockets.TcpClient>.</span><span class="sxs-lookup"><span data-stu-id="4638a-122">For the previous example to execute successfully, there must be a process listening on the IP address and port number specified in the <xref:System.Net.Sockets.TcpClient> class.</span></span> <span data-ttu-id="4638a-123">Pokud proces naslouchání existuje, kód se připojí k procesu naslouchání, šifruje datový proud pomocí symetrického algoritmu Rijndael a zapíše "Hello World!"</span><span class="sxs-lookup"><span data-stu-id="4638a-123">If a listening process exists, the code will connect to the listening process, encrypt the stream using the Rijndael symmetric algorithm, and write "Hello World!"</span></span> <span data-ttu-id="4638a-124">do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="4638a-124">to the stream.</span></span> <span data-ttu-id="4638a-125">Pokud je kód úspěšný, zobrazí se následující text konzole:</span><span class="sxs-lookup"><span data-stu-id="4638a-125">If the code is successful, it displays the following text to the console:</span></span>  
   
 ```console  
 The message was sent.  
 ```  
   
- <span data-ttu-id="ecfba-126">Nicméně pokud není nalezen žádný proces naslouchání nebo je vyvolána výjimka, kód zobrazí následující text konzole:</span><span class="sxs-lookup"><span data-stu-id="ecfba-126">However, if no listening process is found or an exception is raised, the code displays the following text to the console:</span></span>  
+ <span data-ttu-id="4638a-126">Nicméně pokud není nalezen žádný proces naslouchání nebo je vyvolána výjimka, kód zobrazí následující text konzole:</span><span class="sxs-lookup"><span data-stu-id="4638a-126">However, if no listening process is found or an exception is raised, the code displays the following text to the console:</span></span>  
   
 ```console  
 The connection failed.  
 ```  
   
-## <a name="asymmetric-encryption"></a><span data-ttu-id="ecfba-127">Asymetrické šifrování</span><span class="sxs-lookup"><span data-stu-id="ecfba-127">Asymmetric Encryption</span></span>  
- <span data-ttu-id="ecfba-128">Asymetrické algoritmy jsou obvykle používány k šifrování malých objemů dat, jako je například šifrování symetrického klíče a IV.</span><span class="sxs-lookup"><span data-stu-id="ecfba-128">Asymmetric algorithms are usually used to encrypt small amounts of data such as the encryption of a symmetric key and IV.</span></span> <span data-ttu-id="ecfba-129">Obvykle jednotlivec provádějící asymetrické šifrování používá veřejný klíč generovaný jinou stranou.</span><span class="sxs-lookup"><span data-stu-id="ecfba-129">Typically, an individual performing asymmetric encryption uses the public key generated by another party.</span></span> <span data-ttu-id="ecfba-130">Třídu <xref:System.Security.Cryptography.RSACryptoServiceProvider> poskytuje .NET Framework pro tento účel.</span><span class="sxs-lookup"><span data-stu-id="ecfba-130">The <xref:System.Security.Cryptography.RSACryptoServiceProvider> class is provided by the .NET Framework for this purpose.</span></span>  
+## <a name="asymmetric-encryption"></a><span data-ttu-id="4638a-127">Asymetrické šifrování</span><span class="sxs-lookup"><span data-stu-id="4638a-127">Asymmetric Encryption</span></span>  
+ <span data-ttu-id="4638a-128">Asymetrické algoritmy jsou obvykle používány k šifrování malých objemů dat, jako je například šifrování symetrického klíče a IV.</span><span class="sxs-lookup"><span data-stu-id="4638a-128">Asymmetric algorithms are usually used to encrypt small amounts of data such as the encryption of a symmetric key and IV.</span></span> <span data-ttu-id="4638a-129">Obvykle jednotlivec provádějící asymetrické šifrování používá veřejný klíč generovaný jinou stranou.</span><span class="sxs-lookup"><span data-stu-id="4638a-129">Typically, an individual performing asymmetric encryption uses the public key generated by another party.</span></span> <span data-ttu-id="4638a-130">Třídu <xref:System.Security.Cryptography.RSACryptoServiceProvider> poskytuje .NET Framework pro tento účel.</span><span class="sxs-lookup"><span data-stu-id="4638a-130">The <xref:System.Security.Cryptography.RSACryptoServiceProvider> class is provided by the .NET Framework for this purpose.</span></span>  
   
- <span data-ttu-id="ecfba-131">Následující příklad používá informace o veřejném klíči k šifrování symetrického klíče a IV.</span><span class="sxs-lookup"><span data-stu-id="ecfba-131">The following example uses public key information to encrypt a symmetric key and IV.</span></span> <span data-ttu-id="ecfba-132">Jsou inicializována dvě Bajtová pole, která představují veřejný klíč třetí strany.</span><span class="sxs-lookup"><span data-stu-id="ecfba-132">Two byte arrays are initialized that represent the public key of a third party.</span></span> <span data-ttu-id="ecfba-133">Do těchto hodnot se inicializuje objekt <xref:System.Security.Cryptography.RSAParameters>.</span><span class="sxs-lookup"><span data-stu-id="ecfba-133">An <xref:System.Security.Cryptography.RSAParameters> object is initialized to these values.</span></span> <span data-ttu-id="ecfba-134">Dále je objekt **RSAParameters** (spolu s veřejným klíčem, který představuje) importován do parametru **RSACryptoServiceProvider** pomocí metody <xref:System.Security.Cryptography.RSACryptoServiceProvider.ImportParameters%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="ecfba-134">Next, the **RSAParameters** object (along with the public key it represents) is imported into an **RSACryptoServiceProvider** using the <xref:System.Security.Cryptography.RSACryptoServiceProvider.ImportParameters%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="ecfba-135">Nakonec se šifrují privátní klíč a IV vytvořené třídou <xref:System.Security.Cryptography.RijndaelManaged>.</span><span class="sxs-lookup"><span data-stu-id="ecfba-135">Finally, the private key and IV created by a <xref:System.Security.Cryptography.RijndaelManaged> class are encrypted.</span></span> <span data-ttu-id="ecfba-136">V tomto příkladu je potřeba, aby systémy měly nainstalované 128 bitového šifrování.</span><span class="sxs-lookup"><span data-stu-id="ecfba-136">This example requires systems to have 128-bit encryption installed.</span></span>  
+ <span data-ttu-id="4638a-131">Následující příklad používá informace o veřejném klíči k šifrování symetrického klíče a IV.</span><span class="sxs-lookup"><span data-stu-id="4638a-131">The following example uses public key information to encrypt a symmetric key and IV.</span></span> <span data-ttu-id="4638a-132">Jsou inicializována dvě Bajtová pole, která představují veřejný klíč třetí strany.</span><span class="sxs-lookup"><span data-stu-id="4638a-132">Two byte arrays are initialized that represent the public key of a third party.</span></span> <span data-ttu-id="4638a-133">Do těchto hodnot se inicializuje objekt <xref:System.Security.Cryptography.RSAParameters>.</span><span class="sxs-lookup"><span data-stu-id="4638a-133">An <xref:System.Security.Cryptography.RSAParameters> object is initialized to these values.</span></span> <span data-ttu-id="4638a-134">Dále je objekt **RSAParameters** (spolu s veřejným klíčem, který představuje) importován do parametru **RSACryptoServiceProvider** pomocí metody <xref:System.Security.Cryptography.RSACryptoServiceProvider.ImportParameters%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="4638a-134">Next, the **RSAParameters** object (along with the public key it represents) is imported into an **RSACryptoServiceProvider** using the <xref:System.Security.Cryptography.RSACryptoServiceProvider.ImportParameters%2A?displayProperty=nameWithType> method.</span></span> <span data-ttu-id="4638a-135">Nakonec se šifrují privátní klíč a IV vytvořené třídou <xref:System.Security.Cryptography.RijndaelManaged>.</span><span class="sxs-lookup"><span data-stu-id="4638a-135">Finally, the private key and IV created by a <xref:System.Security.Cryptography.RijndaelManaged> class are encrypted.</span></span> <span data-ttu-id="4638a-136">V tomto příkladu je potřeba, aby systémy měly nainstalované 128 bitového šifrování.</span><span class="sxs-lookup"><span data-stu-id="4638a-136">This example requires systems to have 128-bit encryption installed.</span></span>  
   
 ```vb  
 Imports System  
@@ -195,7 +195,7 @@ Module Module1
         'Create a new instance of the RSAParameters structure.  
         Dim rsaKeyInfo As New RSAParameters()  
   
-        'Set rsaKeyInfo to the public key values.   
+        'Set rsaKeyInfo to the public key values.
         rsaKeyInfo.Modulus = publicKey  
         rsaKeyInfo.Exponent = exponent  
   
@@ -243,7 +243,7 @@ class Class1
       //Create a new instance of the RSAParameters structure.  
       RSAParameters rsaKeyInfo = new RSAParameters();  
   
-      //Set rsaKeyInfo to the public key values.   
+      //Set rsaKeyInfo to the public key values.
       rsaKeyInfo.Modulus = publicKey;  
       rsaKeyInfo.Exponent = exponent;  
   
@@ -260,8 +260,8 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ecfba-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ecfba-137">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4638a-137">Viz také</span><span class="sxs-lookup"><span data-stu-id="4638a-137">See also</span></span>
 
-- [<span data-ttu-id="ecfba-138">Generování klíčů pro šifrování a dešifrování</span><span class="sxs-lookup"><span data-stu-id="ecfba-138">Generating Keys for Encryption and Decryption</span></span>](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [<span data-ttu-id="ecfba-139">Dešifrování dat</span><span class="sxs-lookup"><span data-stu-id="ecfba-139">Decrypting Data</span></span>](../../../docs/standard/security/decrypting-data.md)
-- [<span data-ttu-id="ecfba-140">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="ecfba-140">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)
+- [<span data-ttu-id="4638a-138">Generování klíčů pro šifrování a dešifrování</span><span class="sxs-lookup"><span data-stu-id="4638a-138">Generating Keys for Encryption and Decryption</span></span>](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
+- [<span data-ttu-id="4638a-139">Dešifrování dat</span><span class="sxs-lookup"><span data-stu-id="4638a-139">Decrypting Data</span></span>](../../../docs/standard/security/decrypting-data.md)
+- [<span data-ttu-id="4638a-140">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="4638a-140">Cryptographic Services</span></span>](../../../docs/standard/security/cryptographic-services.md)

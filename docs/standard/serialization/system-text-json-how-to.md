@@ -9,65 +9,65 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fdca8d957bb2453e90652af1dfe5ef99b33b1b2c
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 8025f84f2425f5b91e08b28ddb24d105d8c4d1a3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163199"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159582"
 ---
-# <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a><span data-ttu-id="c5efd-102">Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET</span><span class="sxs-lookup"><span data-stu-id="c5efd-102">How to serialize and deserialize (marshal and unmarshal) JSON in .NET</span></span>
+# <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a><span data-ttu-id="a2f7e-102">Jak serializovat a deserializovat (zařazování a zrušit zařazení) JSON v .NET</span><span class="sxs-lookup"><span data-stu-id="a2f7e-102">How to serialize and deserialize (marshal and unmarshal) JSON in .NET</span></span>
 
-<span data-ttu-id="c5efd-103">Tento článek ukazuje, jak použít obor názvů <xref:System.Text.Json> k serializaci a deserializaci do a z JavaScript Object Notation (JSON).</span><span class="sxs-lookup"><span data-stu-id="c5efd-103">This article shows how to use the <xref:System.Text.Json> namespace to serialize and deserialize to and from JavaScript Object Notation (JSON).</span></span>
+<span data-ttu-id="a2f7e-103">Tento článek ukazuje, jak použít obor názvů <xref:System.Text.Json> k serializaci a deserializaci do a z JavaScript Object Notation (JSON).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-103">This article shows how to use the <xref:System.Text.Json> namespace to serialize and deserialize to and from JavaScript Object Notation (JSON).</span></span>
 
-<span data-ttu-id="c5efd-104">Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím rozhraní, jako je například [ASP.NET Core](/aspnet/core/).</span><span class="sxs-lookup"><span data-stu-id="c5efd-104">The directions and sample code use the library directly, not through a framework such as [ASP.NET Core](/aspnet/core/).</span></span>
+<span data-ttu-id="a2f7e-104">Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím rozhraní, jako je například [ASP.NET Core](/aspnet/core/).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-104">The directions and sample code use the library directly, not through a framework such as [ASP.NET Core](/aspnet/core/).</span></span>
 
-<span data-ttu-id="c5efd-105">Většina vzorových ukázkových kódů v serializaci <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` na "poměrně tištěné" formátu JSON (s odsazením a prázdným znakem pro lidské čitelnost).</span><span class="sxs-lookup"><span data-stu-id="c5efd-105">Most of the serialization sample code sets <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> to `true` to "pretty-print" the JSON (with indentation and whitespace for human readability).</span></span> <span data-ttu-id="c5efd-106">Při použití v produkčním prostředí byste obvykle přijali výchozí hodnotu `false` pro toto nastavení.</span><span class="sxs-lookup"><span data-stu-id="c5efd-106">For production use, you would typically accept the default value of `false` for this setting.</span></span>
+<span data-ttu-id="a2f7e-105">Většina vzorových ukázkových kódů v serializaci <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` na "poměrně tištěné" formátu JSON (s odsazením a prázdným znakem pro lidské čitelnost).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-105">Most of the serialization sample code sets <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> to `true` to "pretty-print" the JSON (with indentation and whitespace for human readability).</span></span> <span data-ttu-id="a2f7e-106">Při použití v produkčním prostředí byste obvykle přijali výchozí hodnotu `false` pro toto nastavení.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-106">For production use, you would typically accept the default value of `false` for this setting.</span></span>
 
-## <a name="namespaces"></a><span data-ttu-id="c5efd-107">Jmenné prostory</span><span class="sxs-lookup"><span data-stu-id="c5efd-107">Namespaces</span></span>
+## <a name="namespaces"></a><span data-ttu-id="a2f7e-107">Obory názvů</span><span class="sxs-lookup"><span data-stu-id="a2f7e-107">Namespaces</span></span>
 
-<span data-ttu-id="c5efd-108">Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy.</span><span class="sxs-lookup"><span data-stu-id="c5efd-108">The <xref:System.Text.Json> namespace contains all the entry points and the main types.</span></span> <span data-ttu-id="c5efd-109">Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-109">The <xref:System.Text.Json.Serialization> namespace contains attributes and APIs for advanced scenarios and customization specific to serialization and deserialization.</span></span> <span data-ttu-id="c5efd-110">Příklady kódu, které jsou uvedené v tomto článku, vyžadují direktivy `using` pro jeden nebo oba tyto obory názvů:</span><span class="sxs-lookup"><span data-stu-id="c5efd-110">The code examples shown in this article require `using` directives for one or both of these namespaces:</span></span>
+<span data-ttu-id="a2f7e-108">Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-108">The <xref:System.Text.Json> namespace contains all the entry points and the main types.</span></span> <span data-ttu-id="a2f7e-109">Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-109">The <xref:System.Text.Json.Serialization> namespace contains attributes and APIs for advanced scenarios and customization specific to serialization and deserialization.</span></span> <span data-ttu-id="a2f7e-110">Příklady kódu, které jsou uvedené v tomto článku, vyžadují direktivy `using` pro jeden nebo oba tyto obory názvů:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-110">The code examples shown in this article require `using` directives for one or both of these namespaces:</span></span>
 
 ```csharp
 using System.Text.Json;
 using System.Text.Json.Serialization;
 ```
 
-<span data-ttu-id="c5efd-111">Atributy z oboru názvů <xref:System.Runtime.Serialization> se v `System.Text.Json`aktuálně nepodporují.</span><span class="sxs-lookup"><span data-stu-id="c5efd-111">Attributes from the <xref:System.Runtime.Serialization> namespace aren't currently supported in `System.Text.Json`.</span></span>
+<span data-ttu-id="a2f7e-111">Atributy z oboru názvů <xref:System.Runtime.Serialization> se v `System.Text.Json`aktuálně nepodporují.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-111">Attributes from the <xref:System.Runtime.Serialization> namespace aren't currently supported in `System.Text.Json`.</span></span>
 
-## <a name="how-to-write-net-objects-to-json-serialize"></a><span data-ttu-id="c5efd-112">Zápis objektů .NET do formátu JSON (serializace)</span><span class="sxs-lookup"><span data-stu-id="c5efd-112">How to write .NET objects to JSON (serialize)</span></span>
+## <a name="how-to-write-net-objects-to-json-serialize"></a><span data-ttu-id="a2f7e-112">Zápis objektů .NET do formátu JSON (serializace)</span><span class="sxs-lookup"><span data-stu-id="a2f7e-112">How to write .NET objects to JSON (serialize)</span></span>
 
-<span data-ttu-id="c5efd-113">Chcete-li zapsat JSON do řetězce nebo do souboru, zavolejte metodu <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c5efd-113">To write JSON to a string or to a file, call the <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> method.</span></span>
+<span data-ttu-id="a2f7e-113">Chcete-li zapsat JSON do řetězce nebo do souboru, zavolejte metodu <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-113">To write JSON to a string or to a file, call the <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> method.</span></span>
 
-<span data-ttu-id="c5efd-114">Následující příklad vytvoří JSON jako řetězec:</span><span class="sxs-lookup"><span data-stu-id="c5efd-114">The following example creates JSON as a string:</span></span>
+<span data-ttu-id="a2f7e-114">Následující příklad vytvoří JSON jako řetězec:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-114">The following example creates JSON as a string:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-115">Následující příklad používá synchronní kód k vytvoření souboru JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-115">The following example uses synchronous code to create a JSON file:</span></span>
+<span data-ttu-id="a2f7e-115">Následující příklad používá synchronní kód k vytvoření souboru JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-115">The following example uses synchronous code to create a JSON file:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFile.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-116">Následující příklad používá asynchronní kód k vytvoření souboru JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-116">The following example uses asynchronous code to create a JSON file:</span></span>
+<span data-ttu-id="a2f7e-116">Následující příklad používá asynchronní kód k vytvoření souboru JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-116">The following example uses asynchronous code to create a JSON file:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFileAsync.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-117">Předchozí příklady používají odvození typu pro typ, který je serializován.</span><span class="sxs-lookup"><span data-stu-id="c5efd-117">The preceding examples use type inference for the type being serialized.</span></span> <span data-ttu-id="c5efd-118">Přetížení `Serialize()` přebírá parametr obecného typu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-118">An overload of `Serialize()` takes a generic type parameter:</span></span>
+<span data-ttu-id="a2f7e-117">Předchozí příklady používají odvození typu pro typ, který je serializován.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-117">The preceding examples use type inference for the type being serialized.</span></span> <span data-ttu-id="a2f7e-118">Přetížení `Serialize()` přebírá parametr obecného typu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-118">An overload of `Serialize()` takes a generic type parameter:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerializeWithGenericParameter)]
 
-### <a name="serialization-example"></a><span data-ttu-id="c5efd-119">Příklad serializace</span><span class="sxs-lookup"><span data-stu-id="c5efd-119">Serialization example</span></span>
+### <a name="serialization-example"></a><span data-ttu-id="a2f7e-119">Příklad serializace</span><span class="sxs-lookup"><span data-stu-id="a2f7e-119">Serialization example</span></span>
 
-<span data-ttu-id="c5efd-120">Tady je ukázková třída, která obsahuje kolekce a vnořenou třídu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-120">Here's an example class that contains collections and a nested class:</span></span>
+<span data-ttu-id="a2f7e-120">Tady je ukázková třída, která obsahuje kolekce a vnořenou třídu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-120">Here's an example class that contains collections and a nested class:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
 
-<span data-ttu-id="c5efd-121">Výstup JSON z serializace instance předchozího typu vypadá jako v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-121">The JSON output from serializing an instance of the preceding type looks like the following example.</span></span> <span data-ttu-id="c5efd-122">Výstup JSON je ve výchozím nastavení minifikovaného:</span><span class="sxs-lookup"><span data-stu-id="c5efd-122">The JSON output is minified by default:</span></span> 
+<span data-ttu-id="a2f7e-121">Výstup JSON z serializace instance předchozího typu vypadá jako v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-121">The JSON output from serializing an instance of the preceding type looks like the following example.</span></span> <span data-ttu-id="a2f7e-122">Výstup JSON je ve výchozím nastavení minifikovaného:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-122">The JSON output is minified by default:</span></span>
 
 ```json
 {"Date":"2019-08-01T00:00:00-07:00","TemperatureCelsius":25,"Summary":"Hot","DatesAvailable":["2019-08-01T00:00:00-07:00","2019-08-02T00:00:00-07:00"],"TemperatureRanges":{"Cold":{"High":20,"Low":-10},"Hot":{"High":60,"Low":20}},"SummaryWords":["Cool","Windy","Humid"]}
 ```
 
-<span data-ttu-id="c5efd-123">Následující příklad ukazuje stejný formát JSON (to znamená, že je poměrně vytištěn s prázdným znakem a odsazením):</span><span class="sxs-lookup"><span data-stu-id="c5efd-123">The following example shows the same JSON, formatted (that is, pretty-printed with whitespace and indentation):</span></span>
+<span data-ttu-id="a2f7e-123">Následující příklad ukazuje stejný formát JSON (to znamená, že je poměrně vytištěn s prázdným znakem a odsazením):</span><span class="sxs-lookup"><span data-stu-id="a2f7e-123">The following example shows the same JSON, formatted (that is, pretty-printed with whitespace and indentation):</span></span>
 
 ```json
 {
@@ -96,82 +96,82 @@ using System.Text.Json.Serialization;
 }
 ```
 
-### <a name="serialize-to-utf-8"></a><span data-ttu-id="c5efd-124">Serializovat do UTF-8</span><span class="sxs-lookup"><span data-stu-id="c5efd-124">Serialize to UTF-8</span></span>
+### <a name="serialize-to-utf-8"></a><span data-ttu-id="a2f7e-124">Serializovat do UTF-8</span><span class="sxs-lookup"><span data-stu-id="a2f7e-124">Serialize to UTF-8</span></span>
 
-<span data-ttu-id="c5efd-125">Chcete-li serializovat do UTF-8, zavolejte metodu <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType>:</span><span class="sxs-lookup"><span data-stu-id="c5efd-125">To serialize to UTF-8, call the <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType> method:</span></span>
+<span data-ttu-id="a2f7e-125">Chcete-li serializovat do UTF-8, zavolejte metodu <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType>:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-125">To serialize to UTF-8, call the <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType> method:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-126">K dispozici je také přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které přijímá <xref:System.Text.Json.Utf8JsonWriter>.</span><span class="sxs-lookup"><span data-stu-id="c5efd-126">A <xref:System.Text.Json.JsonSerializer.Serialize%2A> overload that takes a <xref:System.Text.Json.Utf8JsonWriter> is also available.</span></span>
+<span data-ttu-id="a2f7e-126">K dispozici je také přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které přijímá <xref:System.Text.Json.Utf8JsonWriter>.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-126">A <xref:System.Text.Json.JsonSerializer.Serialize%2A> overload that takes a <xref:System.Text.Json.Utf8JsonWriter> is also available.</span></span>
 
-<span data-ttu-id="c5efd-127">Serializace do UTF-8 je přibližně 5-10% rychlejší než použití metod založených na řetězci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-127">Serializing to UTF-8 is about 5-10% faster than using the string-based methods.</span></span> <span data-ttu-id="c5efd-128">Rozdíl je z důvodu, že bajty (jako UTF-8) není nutné převést na řetězce (UTF-16).</span><span class="sxs-lookup"><span data-stu-id="c5efd-128">The difference is because the bytes (as UTF-8) don't need to be converted to strings (UTF-16).</span></span>
+<span data-ttu-id="a2f7e-127">Serializace do UTF-8 je přibližně 5-10% rychlejší než použití metod založených na řetězci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-127">Serializing to UTF-8 is about 5-10% faster than using the string-based methods.</span></span> <span data-ttu-id="a2f7e-128">Rozdíl je z důvodu, že bajty (jako UTF-8) není nutné převést na řetězce (UTF-16).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-128">The difference is because the bytes (as UTF-8) don't need to be converted to strings (UTF-16).</span></span>
 
-## <a name="serialization-behavior"></a><span data-ttu-id="c5efd-129">Chování serializace</span><span class="sxs-lookup"><span data-stu-id="c5efd-129">Serialization behavior</span></span>
+## <a name="serialization-behavior"></a><span data-ttu-id="a2f7e-129">Chování serializace</span><span class="sxs-lookup"><span data-stu-id="a2f7e-129">Serialization behavior</span></span>
 
-* <span data-ttu-id="c5efd-130">Ve výchozím nastavení jsou serializovány všechny veřejné vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="c5efd-130">By default, all public properties are serialized.</span></span> <span data-ttu-id="c5efd-131">Můžete [určit vlastnosti, které se mají vyloučit](#exclude-properties-from-serialization).</span><span class="sxs-lookup"><span data-stu-id="c5efd-131">You can [specify properties to exclude](#exclude-properties-from-serialization).</span></span>
-* <span data-ttu-id="c5efd-132">[Výchozí kodér](xref:System.Text.Encodings.Web.JavaScriptEncoder.Default) řídí znaky jiné než ASCII, znaky citlivé na jazyk HTML v rozsahu ASCII a znaky, které musí být uvozeny podle [specifikace JSON RFC 8259](https://tools.ietf.org/html/rfc8259#section-7).</span><span class="sxs-lookup"><span data-stu-id="c5efd-132">The [default encoder](xref:System.Text.Encodings.Web.JavaScriptEncoder.Default) escapes non-ASCII characters, HTML-sensitive characters within the ASCII-range, and characters that must be escaped according to [the RFC 8259 JSON spec](https://tools.ietf.org/html/rfc8259#section-7).</span></span>
-* <span data-ttu-id="c5efd-133">Ve výchozím nastavení je JSON minifikovaného.</span><span class="sxs-lookup"><span data-stu-id="c5efd-133">By default, JSON is minified.</span></span> <span data-ttu-id="c5efd-134">[Kód JSON můžete v podstatě vytisknout](#serialize-to-formatted-json).</span><span class="sxs-lookup"><span data-stu-id="c5efd-134">You can [pretty-print the JSON](#serialize-to-formatted-json).</span></span>
-* <span data-ttu-id="c5efd-135">Ve výchozím nastavení jsou malá a velká písmena názvů JSON shodná s názvy .NET.</span><span class="sxs-lookup"><span data-stu-id="c5efd-135">By default, casing of JSON names matches the .NET names.</span></span> <span data-ttu-id="c5efd-136">Můžete [přizpůsobit název a velikost písmen JSON](#customize-json-names-and-values).</span><span class="sxs-lookup"><span data-stu-id="c5efd-136">You can [customize JSON name casing](#customize-json-names-and-values).</span></span>
-* <span data-ttu-id="c5efd-137">Byly zjištěny cyklické odkazy a byly vyvolány výjimky.</span><span class="sxs-lookup"><span data-stu-id="c5efd-137">Circular references are detected and exceptions thrown.</span></span>
-* <span data-ttu-id="c5efd-138">V současné době jsou pole vyloučena.</span><span class="sxs-lookup"><span data-stu-id="c5efd-138">Currently, fields are excluded.</span></span>
+* <span data-ttu-id="a2f7e-130">Ve výchozím nastavení jsou serializovány všechny veřejné vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-130">By default, all public properties are serialized.</span></span> <span data-ttu-id="a2f7e-131">Můžete [určit vlastnosti, které se mají vyloučit](#exclude-properties-from-serialization).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-131">You can [specify properties to exclude](#exclude-properties-from-serialization).</span></span>
+* <span data-ttu-id="a2f7e-132">[Výchozí kodér](xref:System.Text.Encodings.Web.JavaScriptEncoder.Default) řídí znaky jiné než ASCII, znaky citlivé na jazyk HTML v rozsahu ASCII a znaky, které musí být uvozeny podle [specifikace JSON RFC 8259](https://tools.ietf.org/html/rfc8259#section-7).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-132">The [default encoder](xref:System.Text.Encodings.Web.JavaScriptEncoder.Default) escapes non-ASCII characters, HTML-sensitive characters within the ASCII-range, and characters that must be escaped according to [the RFC 8259 JSON spec](https://tools.ietf.org/html/rfc8259#section-7).</span></span>
+* <span data-ttu-id="a2f7e-133">Ve výchozím nastavení je JSON minifikovaného.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-133">By default, JSON is minified.</span></span> <span data-ttu-id="a2f7e-134">[Kód JSON můžete v podstatě vytisknout](#serialize-to-formatted-json).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-134">You can [pretty-print the JSON](#serialize-to-formatted-json).</span></span>
+* <span data-ttu-id="a2f7e-135">Ve výchozím nastavení jsou malá a velká písmena názvů JSON shodná s názvy .NET.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-135">By default, casing of JSON names matches the .NET names.</span></span> <span data-ttu-id="a2f7e-136">Můžete [přizpůsobit název a velikost písmen JSON](#customize-json-names-and-values).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-136">You can [customize JSON name casing](#customize-json-names-and-values).</span></span>
+* <span data-ttu-id="a2f7e-137">Byly zjištěny cyklické odkazy a byly vyvolány výjimky.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-137">Circular references are detected and exceptions thrown.</span></span>
+* <span data-ttu-id="a2f7e-138">V současné době jsou pole vyloučena.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-138">Currently, fields are excluded.</span></span>
 
-<span data-ttu-id="c5efd-139">Mezi podporované typy patří:</span><span class="sxs-lookup"><span data-stu-id="c5efd-139">Supported types include:</span></span>
+<span data-ttu-id="a2f7e-139">Mezi podporované typy patří:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-139">Supported types include:</span></span>
 
-* <span data-ttu-id="c5efd-140">Primitivní prvky .NET, které se mapují na primitivní prvky JavaScriptu, jako jsou číselné typy, řetězce a logická hodnota.</span><span class="sxs-lookup"><span data-stu-id="c5efd-140">.NET primitives that map to JavaScript primitives, such as numeric types, strings, and Boolean.</span></span>
-* <span data-ttu-id="c5efd-141">Uživatelsky definované [prosté staré objekty CLR (POCOs)](https://stackoverflow.com/questions/250001/poco-definition).</span><span class="sxs-lookup"><span data-stu-id="c5efd-141">User-defined [Plain Old CLR Objects (POCOs)](https://stackoverflow.com/questions/250001/poco-definition).</span></span>
-* <span data-ttu-id="c5efd-142">Jednorozměrné a vícenásobná pole (`ArrayName[][]`).</span><span class="sxs-lookup"><span data-stu-id="c5efd-142">One-dimensional and jagged arrays (`ArrayName[][]`).</span></span>
-* <span data-ttu-id="c5efd-143">`Dictionary<string,TValue>`, kde `TValue` je `object`, `JsonElement`nebo POCO.</span><span class="sxs-lookup"><span data-stu-id="c5efd-143">`Dictionary<string,TValue>` where `TValue` is `object`, `JsonElement`, or a POCO.</span></span>
-* <span data-ttu-id="c5efd-144">Kolekce z následujících oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="c5efd-144">Collections from the following namespaces.</span></span>
+* <span data-ttu-id="a2f7e-140">Primitivní prvky .NET, které se mapují na primitivní prvky JavaScriptu, jako jsou číselné typy, řetězce a logická hodnota.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-140">.NET primitives that map to JavaScript primitives, such as numeric types, strings, and Boolean.</span></span>
+* <span data-ttu-id="a2f7e-141">Uživatelsky definované [prosté staré objekty CLR (POCOs)](https://stackoverflow.com/questions/250001/poco-definition).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-141">User-defined [Plain Old CLR Objects (POCOs)](https://stackoverflow.com/questions/250001/poco-definition).</span></span>
+* <span data-ttu-id="a2f7e-142">Jednorozměrné a vícenásobná pole (`ArrayName[][]`).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-142">One-dimensional and jagged arrays (`ArrayName[][]`).</span></span>
+* <span data-ttu-id="a2f7e-143">`Dictionary<string,TValue>`, kde `TValue` je `object`, `JsonElement`nebo POCO.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-143">`Dictionary<string,TValue>` where `TValue` is `object`, `JsonElement`, or a POCO.</span></span>
+* <span data-ttu-id="a2f7e-144">Kolekce z následujících oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-144">Collections from the following namespaces.</span></span>
   * <xref:System.Collections>
   * <xref:System.Collections.Generic>
   * <xref:System.Collections.Immutable>
 
-<span data-ttu-id="c5efd-145">[Vlastní převaděče můžete implementovat](system-text-json-converters-how-to.md) pro zpracování dalších typů nebo pro poskytování funkcí, které integrované převaděče nepodporují.</span><span class="sxs-lookup"><span data-stu-id="c5efd-145">You can [implement custom converters](system-text-json-converters-how-to.md) to handle additional types or to provide functionality that isn't supported by the built-in converters.</span></span>
+<span data-ttu-id="a2f7e-145">[Vlastní převaděče můžete implementovat](system-text-json-converters-how-to.md) pro zpracování dalších typů nebo pro poskytování funkcí, které integrované převaděče nepodporují.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-145">You can [implement custom converters](system-text-json-converters-how-to.md) to handle additional types or to provide functionality that isn't supported by the built-in converters.</span></span>
 
-## <a name="how-to-read-json-into-net-objects-deserialize"></a><span data-ttu-id="c5efd-146">Postup čtení formátu JSON do objektů .NET (deserializace)</span><span class="sxs-lookup"><span data-stu-id="c5efd-146">How to read JSON into .NET objects (deserialize)</span></span>
+## <a name="how-to-read-json-into-net-objects-deserialize"></a><span data-ttu-id="a2f7e-146">Postup čtení formátu JSON do objektů .NET (deserializace)</span><span class="sxs-lookup"><span data-stu-id="a2f7e-146">How to read JSON into .NET objects (deserialize)</span></span>
 
-<span data-ttu-id="c5efd-147">Chcete-li provést deserializaci z řetězce nebo souboru, zavolejte metodu <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c5efd-147">To deserialize from a string or a file, call the <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> method.</span></span>
+<span data-ttu-id="a2f7e-147">Chcete-li provést deserializaci z řetězce nebo souboru, zavolejte metodu <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-147">To deserialize from a string or a file, call the <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> method.</span></span>
 
-<span data-ttu-id="c5efd-148">Následující příklad přečte JSON z řetězce a vytvoří instanci `WeatherForecast` třídy uvedené dříve pro [příklad serializace](#serialization-example):</span><span class="sxs-lookup"><span data-stu-id="c5efd-148">The following example reads JSON from a string and creates an instance of the `WeatherForecast` class shown earlier for the [serialization example](#serialization-example):</span></span>
+<span data-ttu-id="a2f7e-148">Následující příklad přečte JSON z řetězce a vytvoří instanci `WeatherForecast` třídy uvedené dříve pro [příklad serializace](#serialization-example):</span><span class="sxs-lookup"><span data-stu-id="a2f7e-148">The following example reads JSON from a string and creates an instance of the `WeatherForecast` class shown earlier for the [serialization example](#serialization-example):</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetDeserialize)]
 
-<span data-ttu-id="c5efd-149">Chcete-li provést deserializaci ze souboru pomocí synchronního kódu, přečtěte si soubor do řetězce, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-149">To deserialize from a file by using synchronous code, read the file into a string, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-149">Chcete-li provést deserializaci ze souboru pomocí synchronního kódu, přečtěte si soubor do řetězce, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-149">To deserialize from a file by using synchronous code, read the file into a string, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFile.cs?name=SnippetDeserialize)]
 
-<span data-ttu-id="c5efd-150">Chcete-li provést deserializaci ze souboru pomocí asynchronního kódu, zavolejte metodu <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A>:</span><span class="sxs-lookup"><span data-stu-id="c5efd-150">To deserialize from a file by using asynchronous code, call the <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A> method:</span></span>
+<span data-ttu-id="a2f7e-150">Chcete-li provést deserializaci ze souboru pomocí asynchronního kódu, zavolejte metodu <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A>:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-150">To deserialize from a file by using asynchronous code, call the <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A> method:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFileAsync.cs?name=SnippetDeserialize)]
 
-### <a name="deserialize-from-utf-8"></a><span data-ttu-id="c5efd-151">Deserializace ze znakové sady UTF-8</span><span class="sxs-lookup"><span data-stu-id="c5efd-151">Deserialize from UTF-8</span></span>
+### <a name="deserialize-from-utf-8"></a><span data-ttu-id="a2f7e-151">Deserializace ze znakové sady UTF-8</span><span class="sxs-lookup"><span data-stu-id="a2f7e-151">Deserialize from UTF-8</span></span>
 
-<span data-ttu-id="c5efd-152">Chcete-li provést deserializaci ze znakové sady UTF-8, zavolejte <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> přetížení, které přebírá `Utf8JsonReader` nebo `ReadOnlySpan<byte>`, jak je znázorněno v následujících příkladech.</span><span class="sxs-lookup"><span data-stu-id="c5efd-152">To deserialize from UTF-8, call a <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> overload that takes a `Utf8JsonReader` or a `ReadOnlySpan<byte>`, as shown in the following examples.</span></span> <span data-ttu-id="c5efd-153">V příkladech se předpokládá, že je JSON v bajtovém poli s názvem jsonUtf8Bytes.</span><span class="sxs-lookup"><span data-stu-id="c5efd-153">The examples assume the JSON is in a byte array named jsonUtf8Bytes.</span></span>
+<span data-ttu-id="a2f7e-152">Chcete-li provést deserializaci ze znakové sady UTF-8, zavolejte <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> přetížení, které přebírá `Utf8JsonReader` nebo `ReadOnlySpan<byte>`, jak je znázorněno v následujících příkladech.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-152">To deserialize from UTF-8, call a <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> overload that takes a `Utf8JsonReader` or a `ReadOnlySpan<byte>`, as shown in the following examples.</span></span> <span data-ttu-id="a2f7e-153">V příkladech se předpokládá, že je JSON v bajtovém poli s názvem jsonUtf8Bytes.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-153">The examples assume the JSON is in a byte array named jsonUtf8Bytes.</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize1)]
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize2)]
 
-## <a name="deserialization-behavior"></a><span data-ttu-id="c5efd-154">Chování deserializace</span><span class="sxs-lookup"><span data-stu-id="c5efd-154">Deserialization behavior</span></span>
+## <a name="deserialization-behavior"></a><span data-ttu-id="a2f7e-154">Chování deserializace</span><span class="sxs-lookup"><span data-stu-id="a2f7e-154">Deserialization behavior</span></span>
 
-* <span data-ttu-id="c5efd-155">Ve výchozím nastavení se při porovnávání názvů vlastností rozlišují velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="c5efd-155">By default, property name matching is case-sensitive.</span></span> <span data-ttu-id="c5efd-156">Můžete [zadat nerozlišování velkých a malých písmen](#case-insensitive-property-matching).</span><span class="sxs-lookup"><span data-stu-id="c5efd-156">You can [specify case-insensitivity](#case-insensitive-property-matching).</span></span>
-* <span data-ttu-id="c5efd-157">Pokud JSON obsahuje hodnotu vlastnosti jen pro čtení, hodnota je ignorována a není vyvolána žádná výjimka.</span><span class="sxs-lookup"><span data-stu-id="c5efd-157">If the JSON contains a value for a read-only property, the value is ignored and no exception is thrown.</span></span>
-* <span data-ttu-id="c5efd-158">Deserializace na odkazové typy bez bezparametrového konstruktoru není podporována.</span><span class="sxs-lookup"><span data-stu-id="c5efd-158">Deserialization to reference types without a parameterless constructor isn't supported.</span></span>
-* <span data-ttu-id="c5efd-159">Deserializace u neměnných objektů nebo vlastností jen pro čtení není podporována.</span><span class="sxs-lookup"><span data-stu-id="c5efd-159">Deserialization to immutable objects or read-only properties isn't supported.</span></span>
-* <span data-ttu-id="c5efd-160">Ve výchozím nastavení jsou výčty podporovány jako čísla.</span><span class="sxs-lookup"><span data-stu-id="c5efd-160">By default, enums are supported as numbers.</span></span> <span data-ttu-id="c5efd-161">[Názvy výčtů můžete serializovat jako řetězce](#enums-as-strings).</span><span class="sxs-lookup"><span data-stu-id="c5efd-161">You can [serialize enum names as strings](#enums-as-strings).</span></span>
-* <span data-ttu-id="c5efd-162">Pole nejsou podporována.</span><span class="sxs-lookup"><span data-stu-id="c5efd-162">Fields aren't supported.</span></span>
-* <span data-ttu-id="c5efd-163">Ve výchozím nastavení komentáře nebo koncové čárky ve formátu JSON vyvolají výjimky.</span><span class="sxs-lookup"><span data-stu-id="c5efd-163">By default, comments or trailing commas in the JSON throw exceptions.</span></span> <span data-ttu-id="c5efd-164">Můžete [povolovat komentáře a koncové čárky](#allow-comments-and-trailing-commas).</span><span class="sxs-lookup"><span data-stu-id="c5efd-164">You can [allow comments and trailing commas](#allow-comments-and-trailing-commas).</span></span>
-* <span data-ttu-id="c5efd-165">[Výchozí maximální hloubka](xref:System.Text.Json.JsonReaderOptions.MaxDepth) je 64.</span><span class="sxs-lookup"><span data-stu-id="c5efd-165">The [default maximum depth](xref:System.Text.Json.JsonReaderOptions.MaxDepth) is 64.</span></span>
+* <span data-ttu-id="a2f7e-155">Ve výchozím nastavení se při porovnávání názvů vlastností rozlišují velká a malá písmena.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-155">By default, property name matching is case-sensitive.</span></span> <span data-ttu-id="a2f7e-156">Můžete [zadat nerozlišování velkých a malých písmen](#case-insensitive-property-matching).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-156">You can [specify case-insensitivity](#case-insensitive-property-matching).</span></span>
+* <span data-ttu-id="a2f7e-157">Pokud JSON obsahuje hodnotu vlastnosti jen pro čtení, hodnota je ignorována a není vyvolána žádná výjimka.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-157">If the JSON contains a value for a read-only property, the value is ignored and no exception is thrown.</span></span>
+* <span data-ttu-id="a2f7e-158">Deserializace na odkazové typy bez bezparametrového konstruktoru není podporována.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-158">Deserialization to reference types without a parameterless constructor isn't supported.</span></span>
+* <span data-ttu-id="a2f7e-159">Deserializace u neměnných objektů nebo vlastností jen pro čtení není podporována.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-159">Deserialization to immutable objects or read-only properties isn't supported.</span></span>
+* <span data-ttu-id="a2f7e-160">Ve výchozím nastavení jsou výčty podporovány jako čísla.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-160">By default, enums are supported as numbers.</span></span> <span data-ttu-id="a2f7e-161">[Názvy výčtů můžete serializovat jako řetězce](#enums-as-strings).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-161">You can [serialize enum names as strings](#enums-as-strings).</span></span>
+* <span data-ttu-id="a2f7e-162">Pole nejsou podporována.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-162">Fields aren't supported.</span></span>
+* <span data-ttu-id="a2f7e-163">Ve výchozím nastavení komentáře nebo koncové čárky ve formátu JSON vyvolají výjimky.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-163">By default, comments or trailing commas in the JSON throw exceptions.</span></span> <span data-ttu-id="a2f7e-164">Můžete [povolovat komentáře a koncové čárky](#allow-comments-and-trailing-commas).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-164">You can [allow comments and trailing commas](#allow-comments-and-trailing-commas).</span></span>
+* <span data-ttu-id="a2f7e-165">[Výchozí maximální hloubka](xref:System.Text.Json.JsonReaderOptions.MaxDepth) je 64.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-165">The [default maximum depth](xref:System.Text.Json.JsonReaderOptions.MaxDepth) is 64.</span></span>
 
-<span data-ttu-id="c5efd-166">[Vlastní převaděče můžete implementovat](system-text-json-converters-how-to.md) pro poskytování funkcí, které nejsou podporované integrovanými převaděči.</span><span class="sxs-lookup"><span data-stu-id="c5efd-166">You can [implement custom converters](system-text-json-converters-how-to.md) to provide functionality that isn't supported by the built-in converters.</span></span>
+<span data-ttu-id="a2f7e-166">[Vlastní převaděče můžete implementovat](system-text-json-converters-how-to.md) pro poskytování funkcí, které nejsou podporované integrovanými převaděči.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-166">You can [implement custom converters](system-text-json-converters-how-to.md) to provide functionality that isn't supported by the built-in converters.</span></span>
 
-## <a name="serialize-to-formatted-json"></a><span data-ttu-id="c5efd-167">Serializovat do formátovaného formátu JSON</span><span class="sxs-lookup"><span data-stu-id="c5efd-167">Serialize to formatted JSON</span></span>
+## <a name="serialize-to-formatted-json"></a><span data-ttu-id="a2f7e-167">Serializovat do formátovaného formátu JSON</span><span class="sxs-lookup"><span data-stu-id="a2f7e-167">Serialize to formatted JSON</span></span>
 
-<span data-ttu-id="c5efd-168">Chcete-li vytvořit poměrně tisk výstupu JSON, nastavte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> na `true`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-168">To pretty-print the JSON output, set <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> to `true`:</span></span>
+<span data-ttu-id="a2f7e-168">Chcete-li vytvořit poměrně tisk výstupu JSON, nastavte <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> na `true`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-168">To pretty-print the JSON output, set <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> to `true`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerializePrettyPrint)]
 
-<span data-ttu-id="c5efd-169">Tady je příklad typu pro serializaci a poměrně tištěné výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-169">Here's an example type to be serialized and pretty-printed JSON output:</span></span>
+<span data-ttu-id="a2f7e-169">Tady je příklad typu pro serializaci a poměrně tištěné výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-169">Here's an example type to be serialized and pretty-printed JSON output:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
@@ -183,23 +183,23 @@ using System.Text.Json.Serialization;
 }
 ```
 
-## <a name="customize-json-names-and-values"></a><span data-ttu-id="c5efd-170">Přizpůsobení názvů a hodnot JSON</span><span class="sxs-lookup"><span data-stu-id="c5efd-170">Customize JSON names and values</span></span>
+## <a name="customize-json-names-and-values"></a><span data-ttu-id="a2f7e-170">Přizpůsobení názvů a hodnot JSON</span><span class="sxs-lookup"><span data-stu-id="a2f7e-170">Customize JSON names and values</span></span>
 
-<span data-ttu-id="c5efd-171">Ve výchozím nastavení se názvy vlastností a klíče slovníku ve výstupu JSON nezměnily, včetně případu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-171">By default, property names and dictionary keys are unchanged in the JSON output, including case.</span></span> <span data-ttu-id="c5efd-172">Hodnoty výčtu jsou reprezentovány jako čísla.</span><span class="sxs-lookup"><span data-stu-id="c5efd-172">Enum values are represented as numbers.</span></span> <span data-ttu-id="c5efd-173">V této části se dozvíte, jak:</span><span class="sxs-lookup"><span data-stu-id="c5efd-173">This section explains how to:</span></span>
+<span data-ttu-id="a2f7e-171">Ve výchozím nastavení se názvy vlastností a klíče slovníku ve výstupu JSON nezměnily, včetně případu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-171">By default, property names and dictionary keys are unchanged in the JSON output, including case.</span></span> <span data-ttu-id="a2f7e-172">Hodnoty výčtu jsou reprezentovány jako čísla.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-172">Enum values are represented as numbers.</span></span> <span data-ttu-id="a2f7e-173">V této části se dozvíte, jak:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-173">This section explains how to:</span></span>
 
-* [<span data-ttu-id="c5efd-174">Přizpůsobení jednotlivých názvů vlastností</span><span class="sxs-lookup"><span data-stu-id="c5efd-174">Customize individual property names</span></span>](#customize-individual-property-names)
-* [<span data-ttu-id="c5efd-175">Převést názvy všech vlastností na velikost ve stylu CamelCase</span><span class="sxs-lookup"><span data-stu-id="c5efd-175">Convert all property names to camel case</span></span>](#use-camel-case-for-all-json-property-names)
-* [<span data-ttu-id="c5efd-176">Implementace vlastní zásady pro pojmenovávání vlastností</span><span class="sxs-lookup"><span data-stu-id="c5efd-176">Implement a custom property naming policy</span></span>](#use-a-custom-json-property-naming-policy)
-* [<span data-ttu-id="c5efd-177">Převede klíče slovníku na ve stylu CamelCase případ.</span><span class="sxs-lookup"><span data-stu-id="c5efd-177">Convert dictionary keys to camel case</span></span>](#camel-case-dictionary-keys)
-* [<span data-ttu-id="c5efd-178">Převod výčtů na řetězce a ve stylu CamelCase velikost písmen</span><span class="sxs-lookup"><span data-stu-id="c5efd-178">Convert enums to strings and camel case</span></span>](#enums-as-strings) 
+* [<span data-ttu-id="a2f7e-174">Přizpůsobení jednotlivých názvů vlastností</span><span class="sxs-lookup"><span data-stu-id="a2f7e-174">Customize individual property names</span></span>](#customize-individual-property-names)
+* [<span data-ttu-id="a2f7e-175">Převést názvy všech vlastností na velikost ve stylu CamelCase</span><span class="sxs-lookup"><span data-stu-id="a2f7e-175">Convert all property names to camel case</span></span>](#use-camel-case-for-all-json-property-names)
+* [<span data-ttu-id="a2f7e-176">Implementace vlastní zásady pro pojmenovávání vlastností</span><span class="sxs-lookup"><span data-stu-id="a2f7e-176">Implement a custom property naming policy</span></span>](#use-a-custom-json-property-naming-policy)
+* [<span data-ttu-id="a2f7e-177">Převede klíče slovníku na ve stylu CamelCase případ.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-177">Convert dictionary keys to camel case</span></span>](#camel-case-dictionary-keys)
+* [<span data-ttu-id="a2f7e-178">Převod výčtů na řetězce a ve stylu CamelCase velikost písmen</span><span class="sxs-lookup"><span data-stu-id="a2f7e-178">Convert enums to strings and camel case</span></span>](#enums-as-strings)
 
-<span data-ttu-id="c5efd-179">Pro jiné scénáře, které vyžadují speciální zpracování názvů a hodnot vlastností JSON, můžete [implementovat vlastní převaděče](system-text-json-converters-how-to.md).</span><span class="sxs-lookup"><span data-stu-id="c5efd-179">For other scenarios that require special handling of JSON property names and values, you can [implement custom converters](system-text-json-converters-how-to.md).</span></span>
+<span data-ttu-id="a2f7e-179">Pro jiné scénáře, které vyžadují speciální zpracování názvů a hodnot vlastností JSON, můžete [implementovat vlastní převaděče](system-text-json-converters-how-to.md).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-179">For other scenarios that require special handling of JSON property names and values, you can [implement custom converters](system-text-json-converters-how-to.md).</span></span>
 
-### <a name="customize-individual-property-names"></a><span data-ttu-id="c5efd-180">Přizpůsobení jednotlivých názvů vlastností</span><span class="sxs-lookup"><span data-stu-id="c5efd-180">Customize individual property names</span></span>
+### <a name="customize-individual-property-names"></a><span data-ttu-id="a2f7e-180">Přizpůsobení jednotlivých názvů vlastností</span><span class="sxs-lookup"><span data-stu-id="a2f7e-180">Customize individual property names</span></span>
 
-<span data-ttu-id="c5efd-181">Chcete-li nastavit název jednotlivých vlastností, použijte atribut [[JsonPropertyName]](xref:System.Text.Json.Serialization.JsonPropertyNameAttribute) .</span><span class="sxs-lookup"><span data-stu-id="c5efd-181">To set the name of individual properties, use the [[JsonPropertyName]](xref:System.Text.Json.Serialization.JsonPropertyNameAttribute) attribute.</span></span>
+<span data-ttu-id="a2f7e-181">Chcete-li nastavit název jednotlivých vlastností, použijte atribut [[JsonPropertyName]](xref:System.Text.Json.Serialization.JsonPropertyNameAttribute) .</span><span class="sxs-lookup"><span data-stu-id="a2f7e-181">To set the name of individual properties, use the [[JsonPropertyName]](xref:System.Text.Json.Serialization.JsonPropertyNameAttribute) attribute.</span></span>
 
-<span data-ttu-id="c5efd-182">Tady je příklad typu k serializaci a výslednému formátu JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-182">Here's an example type to serialize and resulting JSON:</span></span>
+<span data-ttu-id="a2f7e-182">Tady je příklad typu k serializaci a výslednému formátu JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-182">Here's an example type to serialize and resulting JSON:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
@@ -212,18 +212,18 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-183">Název vlastnosti nastavený tímto atributem:</span><span class="sxs-lookup"><span data-stu-id="c5efd-183">The property name set by this attribute:</span></span>
+<span data-ttu-id="a2f7e-183">Název vlastnosti nastavený tímto atributem:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-183">The property name set by this attribute:</span></span>
 
-* <span data-ttu-id="c5efd-184">Platí v obou směrech pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-184">Applies in both directions, for serialization and deserialization.</span></span>
-* <span data-ttu-id="c5efd-185">Má přednost před zásadami pro pojmenovávání vlastností.</span><span class="sxs-lookup"><span data-stu-id="c5efd-185">Takes precedence over property naming policies.</span></span>
+* <span data-ttu-id="a2f7e-184">Platí v obou směrech pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-184">Applies in both directions, for serialization and deserialization.</span></span>
+* <span data-ttu-id="a2f7e-185">Má přednost před zásadami pro pojmenovávání vlastností.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-185">Takes precedence over property naming policies.</span></span>
 
-### <a name="use-camel-case-for-all-json-property-names"></a><span data-ttu-id="c5efd-186">Pro všechny názvy vlastností JSON použijte ve stylu CamelCase Case</span><span class="sxs-lookup"><span data-stu-id="c5efd-186">Use camel case for all JSON property names</span></span>
+### <a name="use-camel-case-for-all-json-property-names"></a><span data-ttu-id="a2f7e-186">Pro všechny názvy vlastností JSON použijte ve stylu CamelCase Case</span><span class="sxs-lookup"><span data-stu-id="a2f7e-186">Use camel case for all JSON property names</span></span>
 
-<span data-ttu-id="c5efd-187">Pokud chcete u všech názvů vlastností JSON použít ve stylu CamelCase, nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> na `JsonNamingPolicy.CamelCase`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-187">To use camel case for all JSON property names, set <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> to `JsonNamingPolicy.CamelCase`, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-187">Pokud chcete u všech názvů vlastností JSON použít ve stylu CamelCase, nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> na `JsonNamingPolicy.CamelCase`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-187">To use camel case for all JSON property names, set <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> to `JsonNamingPolicy.CamelCase`, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundTripCamelCasePropertyNames.cs?name=Serialize)]
 
-<span data-ttu-id="c5efd-188">Tady je příklad třídy pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-188">Here's an example class to serialize and JSON output:</span></span>
+<span data-ttu-id="a2f7e-188">Tady je příklad třídy pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-188">Here's an example class to serialize and JSON output:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
@@ -236,22 +236,22 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-189">Zásada pro pojmenování vlastností případu ve stylu CamelCase:</span><span class="sxs-lookup"><span data-stu-id="c5efd-189">The camel case property naming policy:</span></span>
+<span data-ttu-id="a2f7e-189">Zásada pro pojmenování vlastností případu ve stylu CamelCase:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-189">The camel case property naming policy:</span></span>
 
-* <span data-ttu-id="c5efd-190">Platí pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-190">Applies to serialization and deserialization.</span></span>
-* <span data-ttu-id="c5efd-191">Je přepsán `[JsonPropertyName]` atributy.</span><span class="sxs-lookup"><span data-stu-id="c5efd-191">Is overridden by `[JsonPropertyName]` attributes.</span></span> <span data-ttu-id="c5efd-192">To je důvod, proč název vlastnosti JSON `Wind` v příkladu není ve stylu CamelCase Case.</span><span class="sxs-lookup"><span data-stu-id="c5efd-192">This is why the JSON property name `Wind` in the example is not camel case.</span></span>
+* <span data-ttu-id="a2f7e-190">Platí pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-190">Applies to serialization and deserialization.</span></span>
+* <span data-ttu-id="a2f7e-191">Je přepsán `[JsonPropertyName]` atributy.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-191">Is overridden by `[JsonPropertyName]` attributes.</span></span> <span data-ttu-id="a2f7e-192">To je důvod, proč název vlastnosti JSON `Wind` v příkladu není ve stylu CamelCase Case.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-192">This is why the JSON property name `Wind` in the example is not camel case.</span></span>
 
-### <a name="use-a-custom-json-property-naming-policy"></a><span data-ttu-id="c5efd-193">Použít vlastní zásady pojmenování vlastností JSON</span><span class="sxs-lookup"><span data-stu-id="c5efd-193">Use a custom JSON property naming policy</span></span>
+### <a name="use-a-custom-json-property-naming-policy"></a><span data-ttu-id="a2f7e-193">Použít vlastní zásady pojmenování vlastností JSON</span><span class="sxs-lookup"><span data-stu-id="a2f7e-193">Use a custom JSON property naming policy</span></span>
 
-<span data-ttu-id="c5efd-194">Chcete-li použít vlastní zásadu pojmenovávání vlastností JSON, vytvořte třídu, která je odvozena z <xref:System.Text.Json.JsonNamingPolicy> a přepište metodu <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-194">To use a custom JSON property naming policy, create a class that derives from <xref:System.Text.Json.JsonNamingPolicy> and override the <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A> method, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-194">Chcete-li použít vlastní zásadu pojmenovávání vlastností JSON, vytvořte třídu, která je odvozena z <xref:System.Text.Json.JsonNamingPolicy> a přepište metodu <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-194">To use a custom JSON property naming policy, create a class that derives from <xref:System.Text.Json.JsonNamingPolicy> and override the <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A> method, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/UpperCaseNamingPolicy.cs)]
 
-<span data-ttu-id="c5efd-195">Pak nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> na instanci třídy zásad pojmenování:</span><span class="sxs-lookup"><span data-stu-id="c5efd-195">Then set the <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> property to an instance of your naming policy class:</span></span>
+<span data-ttu-id="a2f7e-195">Pak nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> na instanci třídy zásad pojmenování:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-195">Then set the <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> property to an instance of your naming policy class:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripPropertyNamingPolicy.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-196">Tady je příklad třídy pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-196">Here's an example class to serialize and JSON output:</span></span>
+<span data-ttu-id="a2f7e-196">Tady je příklad třídy pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-196">Here's an example class to serialize and JSON output:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
@@ -264,18 +264,18 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-197">Zásady pojmenování vlastností JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-197">The JSON property naming policy:</span></span>
+<span data-ttu-id="a2f7e-197">Zásady pojmenování vlastností JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-197">The JSON property naming policy:</span></span>
 
-* <span data-ttu-id="c5efd-198">Platí pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-198">Applies to serialization and deserialization.</span></span>
-* <span data-ttu-id="c5efd-199">Je přepsán `[JsonPropertyName]` atributy.</span><span class="sxs-lookup"><span data-stu-id="c5efd-199">Is overridden by `[JsonPropertyName]` attributes.</span></span> <span data-ttu-id="c5efd-200">Důvodem je, že název vlastnosti JSON `Wind` v příkladu není velká písmena.</span><span class="sxs-lookup"><span data-stu-id="c5efd-200">This is why the JSON property name `Wind` in the example is not upper case.</span></span>
+* <span data-ttu-id="a2f7e-198">Platí pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-198">Applies to serialization and deserialization.</span></span>
+* <span data-ttu-id="a2f7e-199">Je přepsán `[JsonPropertyName]` atributy.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-199">Is overridden by `[JsonPropertyName]` attributes.</span></span> <span data-ttu-id="a2f7e-200">Důvodem je, že název vlastnosti JSON `Wind` v příkladu není velká písmena.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-200">This is why the JSON property name `Wind` in the example is not upper case.</span></span>
 
-### <a name="camel-case-dictionary-keys"></a><span data-ttu-id="c5efd-201">Klíče slovníku případů ve stylu CamelCase</span><span class="sxs-lookup"><span data-stu-id="c5efd-201">Camel case dictionary keys</span></span>
+### <a name="camel-case-dictionary-keys"></a><span data-ttu-id="a2f7e-201">Klíče slovníku případů ve stylu CamelCase</span><span class="sxs-lookup"><span data-stu-id="a2f7e-201">Camel case dictionary keys</span></span>
 
-<span data-ttu-id="c5efd-202">Pokud je vlastnost objektu, která má být serializována, typu `Dictionary<string,TValue>`, `string` klíče lze převést na ve stylu CamelCase případ.</span><span class="sxs-lookup"><span data-stu-id="c5efd-202">If a property of an object to be serialized is of type `Dictionary<string,TValue>`, the `string` keys can be converted to camel case.</span></span> <span data-ttu-id="c5efd-203">Provedete to tak, že nastavíte <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> na `JsonNamingPolicy.CamelCase`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-203">To do that, set <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> to `JsonNamingPolicy.CamelCase`, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-202">Pokud je vlastnost objektu, která má být serializována, typu `Dictionary<string,TValue>`, `string` klíče lze převést na ve stylu CamelCase případ.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-202">If a property of an object to be serialized is of type `Dictionary<string,TValue>`, the `string` keys can be converted to camel case.</span></span> <span data-ttu-id="a2f7e-203">Provedete to tak, že nastavíte <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> na `JsonNamingPolicy.CamelCase`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-203">To do that, set <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> to `JsonNamingPolicy.CamelCase`, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCamelCaseDictionaryKeys.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-204">Serializace objektu se slovníkem s názvem `TemperatureRanges`, který má páry klíč-hodnota `"ColdMinTemp", 20` a `"HotMinTemp", 40` by vedlo jako výstup JSON jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-204">Serializing an object with a dictionary named `TemperatureRanges` that has key-value pairs `"ColdMinTemp", 20` and `"HotMinTemp", 40` would result in JSON output like the following example:</span></span>
+<span data-ttu-id="a2f7e-204">Serializace objektu se slovníkem s názvem `TemperatureRanges`, který má páry klíč-hodnota `"ColdMinTemp", 20` a `"HotMinTemp", 40` by vedlo jako výstup JSON jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-204">Serializing an object with a dictionary named `TemperatureRanges` that has key-value pairs `"ColdMinTemp", 20` and `"HotMinTemp", 40` would result in JSON output like the following example:</span></span>
 
 ```json
 {
@@ -289,17 +289,17 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-205">Zásady pro pojmenovávání ve stylu CamelCase pro klíče slovníku se vztahují pouze na serializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-205">The camel case naming policy for dictionary keys applies to serialization only.</span></span> <span data-ttu-id="c5efd-206">Pokud deserializaci slovníku, klíče budou odpovídat souboru JSON, i když zadáte `JsonNamingPolicy.CamelCase` pro `DictionaryKeyPolicy`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-206">If you deserialize a dictionary, the keys will match the JSON file even if you specify `JsonNamingPolicy.CamelCase` for the `DictionaryKeyPolicy`.</span></span>
+<span data-ttu-id="a2f7e-205">Zásady pro pojmenovávání ve stylu CamelCase pro klíče slovníku se vztahují pouze na serializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-205">The camel case naming policy for dictionary keys applies to serialization only.</span></span> <span data-ttu-id="a2f7e-206">Pokud deserializaci slovníku, klíče budou odpovídat souboru JSON, i když zadáte `JsonNamingPolicy.CamelCase` pro `DictionaryKeyPolicy`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-206">If you deserialize a dictionary, the keys will match the JSON file even if you specify `JsonNamingPolicy.CamelCase` for the `DictionaryKeyPolicy`.</span></span>
 
-### <a name="enums-as-strings"></a><span data-ttu-id="c5efd-207">Výčty jako řetězce</span><span class="sxs-lookup"><span data-stu-id="c5efd-207">Enums as strings</span></span>
+### <a name="enums-as-strings"></a><span data-ttu-id="a2f7e-207">Výčty jako řetězce</span><span class="sxs-lookup"><span data-stu-id="a2f7e-207">Enums as strings</span></span>
 
-<span data-ttu-id="c5efd-208">Ve výchozím nastavení jsou výčty serializovány jako čísla.</span><span class="sxs-lookup"><span data-stu-id="c5efd-208">By default, enums are serialized as numbers.</span></span> <span data-ttu-id="c5efd-209">Chcete-li serializovat názvy výčtu jako řetězce, použijte <xref:System.Text.Json.Serialization.JsonStringEnumConverter>.</span><span class="sxs-lookup"><span data-stu-id="c5efd-209">To serialize enum names as strings, use the <xref:System.Text.Json.Serialization.JsonStringEnumConverter>.</span></span>
+<span data-ttu-id="a2f7e-208">Ve výchozím nastavení jsou výčty serializovány jako čísla.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-208">By default, enums are serialized as numbers.</span></span> <span data-ttu-id="a2f7e-209">Chcete-li serializovat názvy výčtu jako řetězce, použijte <xref:System.Text.Json.Serialization.JsonStringEnumConverter>.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-209">To serialize enum names as strings, use the <xref:System.Text.Json.Serialization.JsonStringEnumConverter>.</span></span>
 
-<span data-ttu-id="c5efd-210">Předpokládejme například, že potřebujete serializovat následující třídu, která má výčet:</span><span class="sxs-lookup"><span data-stu-id="c5efd-210">For example, suppose you need to serialize the following class that has an enum:</span></span>
+<span data-ttu-id="a2f7e-210">Předpokládejme například, že potřebujete serializovat následující třídu, která má výčet:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-210">For example, suppose you need to serialize the following class that has an enum:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithEnum)]
 
-<span data-ttu-id="c5efd-211">Pokud je souhrn `Hot`, ve výchozím nastavení má serializovaný formát JSON číselnou hodnotu 3:</span><span class="sxs-lookup"><span data-stu-id="c5efd-211">If the Summary is `Hot`, by default the serialized JSON has the numeric value 3:</span></span>
+<span data-ttu-id="a2f7e-211">Pokud je souhrn `Hot`, ve výchozím nastavení má serializovaný formát JSON číselnou hodnotu 3:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-211">If the Summary is `Hot`, by default the serialized JSON has the numeric value 3:</span></span>
 
 ```json
 {
@@ -309,11 +309,11 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-212">Následující vzorový kód místo číselných hodnot serializace názvy výčtu a převede názvy na ve stylu CamelCase případ:</span><span class="sxs-lookup"><span data-stu-id="c5efd-212">The following sample code serializes the enum names instead of the numeric values, and converts the names to camel case:</span></span>
+<span data-ttu-id="a2f7e-212">Následující vzorový kód místo číselných hodnot serializace názvy výčtu a převede názvy na ve stylu CamelCase případ:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-212">The following sample code serializes the enum names instead of the numeric values, and converts the names to camel case:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripEnumAsString.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-213">Výsledný kód JSON vypadá jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-213">The resulting JSON looks like the following example:</span></span>
+<span data-ttu-id="a2f7e-213">Výsledný kód JSON vypadá jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-213">The resulting JSON looks like the following example:</span></span>
 
 ```json
 {
@@ -323,23 +323,23 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-214">Názvy řetězců výčtu lze deserializovat také, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-214">Enum string names can be deserialized as well, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-214">Názvy řetězců výčtu lze deserializovat také, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-214">Enum string names can be deserialized as well, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripEnumAsString.cs?name=SnippetDeserialize)]
 
-## <a name="exclude-properties-from-serialization"></a><span data-ttu-id="c5efd-215">Vyloučit vlastnosti ze serializace</span><span class="sxs-lookup"><span data-stu-id="c5efd-215">Exclude properties from serialization</span></span>
+## <a name="exclude-properties-from-serialization"></a><span data-ttu-id="a2f7e-215">Vyloučit vlastnosti ze serializace</span><span class="sxs-lookup"><span data-stu-id="a2f7e-215">Exclude properties from serialization</span></span>
 
-<span data-ttu-id="c5efd-216">Ve výchozím nastavení jsou serializovány všechny veřejné vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="c5efd-216">By default, all public properties are serialized.</span></span> <span data-ttu-id="c5efd-217">Pokud nechcete, aby se některé z nich zobrazovaly ve výstupu JSON, máte několik možností.</span><span class="sxs-lookup"><span data-stu-id="c5efd-217">If you don't want some of them to appear in the JSON output, you have several options.</span></span> <span data-ttu-id="c5efd-218">V této části se dozvíte, jak vyloučit:</span><span class="sxs-lookup"><span data-stu-id="c5efd-218">This section explains how to exclude:</span></span>
+<span data-ttu-id="a2f7e-216">Ve výchozím nastavení jsou serializovány všechny veřejné vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-216">By default, all public properties are serialized.</span></span> <span data-ttu-id="a2f7e-217">Pokud nechcete, aby se některé z nich zobrazovaly ve výstupu JSON, máte několik možností.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-217">If you don't want some of them to appear in the JSON output, you have several options.</span></span> <span data-ttu-id="a2f7e-218">V této části se dozvíte, jak vyloučit:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-218">This section explains how to exclude:</span></span>
 
-* [<span data-ttu-id="c5efd-219">Jednotlivé vlastnosti</span><span class="sxs-lookup"><span data-stu-id="c5efd-219">Individual properties</span></span>](#exclude-individual-properties)
-* [<span data-ttu-id="c5efd-220">Všechny vlastnosti jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="c5efd-220">All read-only properties</span></span>](#exclude-all-read-only-properties)
-* [<span data-ttu-id="c5efd-221">Všechny vlastnosti s hodnotou null</span><span class="sxs-lookup"><span data-stu-id="c5efd-221">All null-value properties</span></span>](#exclude-all-null-value-properties)
+* [<span data-ttu-id="a2f7e-219">Jednotlivé vlastnosti</span><span class="sxs-lookup"><span data-stu-id="a2f7e-219">Individual properties</span></span>](#exclude-individual-properties)
+* [<span data-ttu-id="a2f7e-220">Všechny vlastnosti jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="a2f7e-220">All read-only properties</span></span>](#exclude-all-read-only-properties)
+* [<span data-ttu-id="a2f7e-221">Všechny vlastnosti s hodnotou null</span><span class="sxs-lookup"><span data-stu-id="a2f7e-221">All null-value properties</span></span>](#exclude-all-null-value-properties)
 
-### <a name="exclude-individual-properties"></a><span data-ttu-id="c5efd-222">Vyloučení individuálních vlastností</span><span class="sxs-lookup"><span data-stu-id="c5efd-222">Exclude individual properties</span></span>
+### <a name="exclude-individual-properties"></a><span data-ttu-id="a2f7e-222">Vyloučení individuálních vlastností</span><span class="sxs-lookup"><span data-stu-id="a2f7e-222">Exclude individual properties</span></span>
 
-<span data-ttu-id="c5efd-223">Chcete-li ignorovat jednotlivé vlastnosti, použijte atribut [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) .</span><span class="sxs-lookup"><span data-stu-id="c5efd-223">To ignore individual properties, use the [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) attribute.</span></span>
+<span data-ttu-id="a2f7e-223">Chcete-li ignorovat jednotlivé vlastnosti, použijte atribut [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) .</span><span class="sxs-lookup"><span data-stu-id="a2f7e-223">To ignore individual properties, use the [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute) attribute.</span></span>
 
-<span data-ttu-id="c5efd-224">Tady je příklad typu pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-224">Here's an example type to serialize and JSON output:</span></span>
+<span data-ttu-id="a2f7e-224">Tady je příklad typu pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-224">Here's an example type to serialize and JSON output:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithIgnoreAttribute)]
 
@@ -350,13 +350,13 @@ using System.Text.Json.Serialization;
 }
 ```
 
-### <a name="exclude-all-read-only-properties"></a><span data-ttu-id="c5efd-225">Vyloučit všechny vlastnosti jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="c5efd-225">Exclude all read-only properties</span></span>
+### <a name="exclude-all-read-only-properties"></a><span data-ttu-id="a2f7e-225">Vyloučit všechny vlastnosti jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="a2f7e-225">Exclude all read-only properties</span></span>
 
-<span data-ttu-id="c5efd-226">Vlastnost je jen pro čtení, pokud obsahuje veřejnou metodu getter, ale ne veřejnou metodu setter.</span><span class="sxs-lookup"><span data-stu-id="c5efd-226">A property is read-only if it contains a public getter but not a public setter.</span></span> <span data-ttu-id="c5efd-227">Chcete-li vyloučit všechny vlastnosti jen pro čtení, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> na `true`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-227">To exclude all read-only properties, set the <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> to `true`, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-226">Vlastnost je jen pro čtení, pokud obsahuje veřejnou metodu getter, ale ne veřejnou metodu setter.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-226">A property is read-only if it contains a public getter but not a public setter.</span></span> <span data-ttu-id="a2f7e-227">Chcete-li vyloučit všechny vlastnosti jen pro čtení, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> na `true`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-227">To exclude all read-only properties, set the <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> to `true`, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeExcludeReadOnlyProperties.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-228">Tady je příklad typu pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-228">Here's an example type to serialize and JSON output:</span></span>
+<span data-ttu-id="a2f7e-228">Tady je příklad typu pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-228">Here's an example type to serialize and JSON output:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithROProperty)]
 
@@ -368,21 +368,21 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-229">Tato možnost se vztahuje pouze na serializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-229">This option applies only to serialization.</span></span> <span data-ttu-id="c5efd-230">Během deserializace jsou vlastnosti jen pro čtení ve výchozím nastavení ignorovány.</span><span class="sxs-lookup"><span data-stu-id="c5efd-230">During deserialization, read-only properties are ignored by default.</span></span>
+<span data-ttu-id="a2f7e-229">Tato možnost se vztahuje pouze na serializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-229">This option applies only to serialization.</span></span> <span data-ttu-id="a2f7e-230">Během deserializace jsou vlastnosti jen pro čtení ve výchozím nastavení ignorovány.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-230">During deserialization, read-only properties are ignored by default.</span></span>
 
-### <a name="exclude-all-null-value-properties"></a><span data-ttu-id="c5efd-231">Vyloučit všechny vlastnosti hodnoty null</span><span class="sxs-lookup"><span data-stu-id="c5efd-231">Exclude all null value properties</span></span>
+### <a name="exclude-all-null-value-properties"></a><span data-ttu-id="a2f7e-231">Vyloučit všechny vlastnosti hodnoty null</span><span class="sxs-lookup"><span data-stu-id="a2f7e-231">Exclude all null value properties</span></span>
 
-<span data-ttu-id="c5efd-232">Chcete-li vyloučit všechny vlastnosti hodnoty null, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> na hodnotu `true`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-232">To exclude all null value properties, set the <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> property to `true`, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-232">Chcete-li vyloučit všechny vlastnosti hodnoty null, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> na hodnotu `true`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-232">To exclude all null value properties, set the <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> property to `true`, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeExcludeNullValueProperties.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-233">Zde je příklad objektu pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-233">Here's an example object to serialize and JSON output:</span></span>
+<span data-ttu-id="a2f7e-233">Zde je příklad objektu pro serializaci a výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-233">Here's an example object to serialize and JSON output:</span></span>
 
-|<span data-ttu-id="c5efd-234">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="c5efd-234">Property</span></span> |<span data-ttu-id="c5efd-235">Hodnota</span><span class="sxs-lookup"><span data-stu-id="c5efd-235">Value</span></span>  |
+|<span data-ttu-id="a2f7e-234">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="a2f7e-234">Property</span></span> |<span data-ttu-id="a2f7e-235">Hodnota</span><span class="sxs-lookup"><span data-stu-id="a2f7e-235">Value</span></span>  |
 |---------|---------|
-| <span data-ttu-id="c5efd-236">Datum</span><span class="sxs-lookup"><span data-stu-id="c5efd-236">Date</span></span>    | <span data-ttu-id="c5efd-237">8/1/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="c5efd-237">8/1/2019 12:00:00 AM -07:00</span></span>|
-| <span data-ttu-id="c5efd-238">TemperatureCelsius</span><span class="sxs-lookup"><span data-stu-id="c5efd-238">TemperatureCelsius</span></span>| <span data-ttu-id="c5efd-239">25</span><span class="sxs-lookup"><span data-stu-id="c5efd-239">25</span></span> |
-| <span data-ttu-id="c5efd-240">Přehled</span><span class="sxs-lookup"><span data-stu-id="c5efd-240">Summary</span></span>| <span data-ttu-id="c5efd-241">null</span><span class="sxs-lookup"><span data-stu-id="c5efd-241">null</span></span>|
+| <span data-ttu-id="a2f7e-236">Datum</span><span class="sxs-lookup"><span data-stu-id="a2f7e-236">Date</span></span>    | <span data-ttu-id="a2f7e-237">8/1/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="a2f7e-237">8/1/2019 12:00:00 AM -07:00</span></span>|
+| <span data-ttu-id="a2f7e-238">TemperatureCelsius</span><span class="sxs-lookup"><span data-stu-id="a2f7e-238">TemperatureCelsius</span></span>| <span data-ttu-id="a2f7e-239">25</span><span class="sxs-lookup"><span data-stu-id="a2f7e-239">25</span></span> |
+| <span data-ttu-id="a2f7e-240">Souhrn</span><span class="sxs-lookup"><span data-stu-id="a2f7e-240">Summary</span></span>| <span data-ttu-id="a2f7e-241">null</span><span class="sxs-lookup"><span data-stu-id="a2f7e-241">null</span></span>|
 
 ```json
 {
@@ -391,11 +391,11 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-242">Toto nastavení platí pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-242">This setting applies to serialization and deserialization.</span></span> <span data-ttu-id="c5efd-243">Informace o jeho vlivu na deserializaci naleznete v tématu [Ignore null Při deserializaci](#ignore-null-when-deserializing).</span><span class="sxs-lookup"><span data-stu-id="c5efd-243">For information about its effect on deserialization, see [Ignore null when deserializing](#ignore-null-when-deserializing).</span></span>
+<span data-ttu-id="a2f7e-242">Toto nastavení platí pro serializaci a deserializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-242">This setting applies to serialization and deserialization.</span></span> <span data-ttu-id="a2f7e-243">Informace o jeho vlivu na deserializaci naleznete v tématu [Ignore null Při deserializaci](#ignore-null-when-deserializing).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-243">For information about its effect on deserialization, see [Ignore null when deserializing](#ignore-null-when-deserializing).</span></span>
 
-## <a name="customize-character-encoding"></a><span data-ttu-id="c5efd-244">Přizpůsobení kódování znaků</span><span class="sxs-lookup"><span data-stu-id="c5efd-244">Customize character encoding</span></span>
+## <a name="customize-character-encoding"></a><span data-ttu-id="a2f7e-244">Přizpůsobení kódování znaků</span><span class="sxs-lookup"><span data-stu-id="a2f7e-244">Customize character encoding</span></span>
 
-<span data-ttu-id="c5efd-245">Ve výchozím nastavení serializátor řídí všechny znaky jiné než ASCII.</span><span class="sxs-lookup"><span data-stu-id="c5efd-245">By default, the serializer escapes all non-ASCII characters.</span></span>  <span data-ttu-id="c5efd-246">To znamená, že je nahradí je `\uxxxx`, kde `xxxx` je kód Unicode znaku.</span><span class="sxs-lookup"><span data-stu-id="c5efd-246">That is, it replaces them with `\uxxxx` where `xxxx` is the Unicode code of the character.</span></span>  <span data-ttu-id="c5efd-247">Například pokud je vlastnost `Summary` nastavena na жаркоa v cyrilici, `WeatherForecast` objekt je serializován, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-247">For example, if the `Summary` property is set to Cyrillic жарко, the `WeatherForecast` object is serialized as shown in this example:</span></span>
+<span data-ttu-id="a2f7e-245">Ve výchozím nastavení serializátor řídí všechny znaky jiné než ASCII.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-245">By default, the serializer escapes all non-ASCII characters.</span></span>  <span data-ttu-id="a2f7e-246">To znamená, že je nahradí je `\uxxxx`, kde `xxxx` je kód Unicode znaku.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-246">That is, it replaces them with `\uxxxx` where `xxxx` is the Unicode code of the character.</span></span>  <span data-ttu-id="a2f7e-247">Například pokud je vlastnost `Summary` nastavena na жаркоa v cyrilici, `WeatherForecast` objekt je serializován, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-247">For example, if the `Summary` property is set to Cyrillic жарко, the `WeatherForecast` object is serialized as shown in this example:</span></span>
 
 ```json
 {
@@ -405,15 +405,15 @@ using System.Text.Json.Serialization;
 }
 ```
 
-### <a name="serialize-language-character-sets"></a><span data-ttu-id="c5efd-248">Serializovat znakové sady jazyků</span><span class="sxs-lookup"><span data-stu-id="c5efd-248">Serialize language character sets</span></span>
+### <a name="serialize-language-character-sets"></a><span data-ttu-id="a2f7e-248">Serializovat znakové sady jazyků</span><span class="sxs-lookup"><span data-stu-id="a2f7e-248">Serialize language character sets</span></span>
 
-<span data-ttu-id="c5efd-249">Chcete-li serializovat znakové sady jednoho nebo více jazyků bez uvozovacího znaku, určete [rozsahy Unicode](xref:System.Text.Unicode.UnicodeRanges) při vytváření instance <xref:System.Text.Encodings.Web.JavaScriptEncoder?displayProperty=fullName>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-249">To serialize the character set(s) of one or more languages without escaping, specify [Unicode range(s)](xref:System.Text.Unicode.UnicodeRanges) when creating an instance of <xref:System.Text.Encodings.Web.JavaScriptEncoder?displayProperty=fullName>, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-249">Chcete-li serializovat znakové sady jednoho nebo více jazyků bez uvozovacího znaku, určete [rozsahy Unicode](xref:System.Text.Unicode.UnicodeRanges) při vytváření instance <xref:System.Text.Encodings.Web.JavaScriptEncoder?displayProperty=fullName>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-249">To serialize the character set(s) of one or more languages without escaping, specify [Unicode range(s)](xref:System.Text.Unicode.UnicodeRanges) when creating an instance of <xref:System.Text.Encodings.Web.JavaScriptEncoder?displayProperty=fullName>, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetLanguageSets)]
 
-<span data-ttu-id="c5efd-250">Tento kód neřídí cyrilici ani řecké znaky.</span><span class="sxs-lookup"><span data-stu-id="c5efd-250">This code doesn't escape Cyrillic or Greek characters.</span></span> <span data-ttu-id="c5efd-251">Pokud je vlastnost `Summary` nastavena na жаркоa v cyrilici, `WeatherForecast` objekt je serializován, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-251">If the `Summary` property is set to Cyrillic жарко, the `WeatherForecast` object is serialized as shown in this example:</span></span>
+<span data-ttu-id="a2f7e-250">Tento kód neřídí cyrilici ani řecké znaky.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-250">This code doesn't escape Cyrillic or Greek characters.</span></span> <span data-ttu-id="a2f7e-251">Pokud je vlastnost `Summary` nastavena na жаркоa v cyrilici, `WeatherForecast` objekt je serializován, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-251">If the `Summary` property is set to Cyrillic жарко, the `WeatherForecast` object is serialized as shown in this example:</span></span>
 
 ```json
 {
@@ -423,17 +423,17 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-252">Chcete-li serializovat všechny jazykové sady bez uvozovacího uvozovacího, použijte <xref:System.Text.Unicode.UnicodeRanges.All?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="c5efd-252">To serialize all language sets without escaping, use <xref:System.Text.Unicode.UnicodeRanges.All?displayProperty=nameWithType>.</span></span>
+<span data-ttu-id="a2f7e-252">Chcete-li serializovat všechny jazykové sady bez uvozovacího uvozovacího, použijte <xref:System.Text.Unicode.UnicodeRanges.All?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-252">To serialize all language sets without escaping, use <xref:System.Text.Unicode.UnicodeRanges.All?displayProperty=nameWithType>.</span></span>
 
-### <a name="serialize-specific-characters"></a><span data-ttu-id="c5efd-253">Serializovat konkrétní znaky</span><span class="sxs-lookup"><span data-stu-id="c5efd-253">Serialize specific characters</span></span>
+### <a name="serialize-specific-characters"></a><span data-ttu-id="a2f7e-253">Serializovat konkrétní znaky</span><span class="sxs-lookup"><span data-stu-id="a2f7e-253">Serialize specific characters</span></span>
 
-<span data-ttu-id="c5efd-254">Alternativou je zadání jednotlivých znaků, které chcete použít, bez nutnosti řídicích znaků.</span><span class="sxs-lookup"><span data-stu-id="c5efd-254">An alternative is to specify individual characters that you want to allow through without being escaped.</span></span> <span data-ttu-id="c5efd-255">Následující příklad serializace pouze prvních dvou znaků жарко:</span><span class="sxs-lookup"><span data-stu-id="c5efd-255">The following example serializes only the first two characters of жарко:</span></span>
+<span data-ttu-id="a2f7e-254">Alternativou je zadání jednotlivých znaků, které chcete použít, bez nutnosti řídicích znaků.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-254">An alternative is to specify individual characters that you want to allow through without being escaped.</span></span> <span data-ttu-id="a2f7e-255">Následující příklad serializace pouze prvních dvou znaků жарко:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-255">The following example serializes only the first two characters of жарко:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetSelectedCharacters)]
 
-<span data-ttu-id="c5efd-256">Zde je příklad kódu JSON vytvořeného předchozím kódem:</span><span class="sxs-lookup"><span data-stu-id="c5efd-256">Here's an example of JSON produced by the preceding code:</span></span>
+<span data-ttu-id="a2f7e-256">Zde je příklad kódu JSON vytvořeného předchozím kódem:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-256">Here's an example of JSON produced by the preceding code:</span></span>
 
 ```json
 {
@@ -443,37 +443,37 @@ using System.Text.Json.Serialization;
 }
 ```
 
-### <a name="serialize-all-characters"></a><span data-ttu-id="c5efd-257">Serializovat všechny znaky</span><span class="sxs-lookup"><span data-stu-id="c5efd-257">Serialize all characters</span></span>
+### <a name="serialize-all-characters"></a><span data-ttu-id="a2f7e-257">Serializovat všechny znaky</span><span class="sxs-lookup"><span data-stu-id="a2f7e-257">Serialize all characters</span></span>
 
-<span data-ttu-id="c5efd-258">Chcete-li minimalizovat uvozovací znaky, můžete použít <xref:System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-258">To minimize escaping you can use <xref:System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping?displayProperty=nameWithType>, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-258">Chcete-li minimalizovat uvozovací znaky, můžete použít <xref:System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-258">To minimize escaping you can use <xref:System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping?displayProperty=nameWithType>, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUnsafeRelaxed)]
 
 > [!CAUTION]
-> <span data-ttu-id="c5efd-259">V porovnání s výchozím kodérem je `UnsafeRelaxedJsonEscaping` kodér více opravňující, aby bylo možné předávat znaky bez řídicích znaků:</span><span class="sxs-lookup"><span data-stu-id="c5efd-259">Compared to the default encoder, the `UnsafeRelaxedJsonEscaping` encoder is more permissive about allowing characters to pass through unescaped:</span></span>
+> <span data-ttu-id="a2f7e-259">V porovnání s výchozím kodérem je `UnsafeRelaxedJsonEscaping` kodér více opravňující, aby bylo možné předávat znaky bez řídicích znaků:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-259">Compared to the default encoder, the `UnsafeRelaxedJsonEscaping` encoder is more permissive about allowing characters to pass through unescaped:</span></span>
 >
-> * <span data-ttu-id="c5efd-260">Neřídí znaky citlivé na HTML, například `<`, `>`, `&`a `'`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-260">It doesn't escape HTML-sensitive characters such as `<`, `>`, `&`, and `'`.</span></span>
-> * <span data-ttu-id="c5efd-261">Nenabízí žádné další ochrany proti důkladné ochraně před útoky XSS nebo informací, jako jsou ty, které by mohly vzniknout ze strany klienta a *serveru na znakovou sadu.*</span><span class="sxs-lookup"><span data-stu-id="c5efd-261">It doesn't offer any additional defense-in-depth protections against XSS or information disclosure attacks, such as those which might result from the client and server disagreeing on the *charset*.</span></span>
+> * <span data-ttu-id="a2f7e-260">Neřídí znaky citlivé na HTML, například `<`, `>`, `&`a `'`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-260">It doesn't escape HTML-sensitive characters such as `<`, `>`, `&`, and `'`.</span></span>
+> * <span data-ttu-id="a2f7e-261">Nenabízí žádné další ochrany proti důkladné ochraně před útoky XSS nebo informací, jako jsou ty, které by mohly vzniknout ze strany klienta a *serveru na znakovou sadu.*</span><span class="sxs-lookup"><span data-stu-id="a2f7e-261">It doesn't offer any additional defense-in-depth protections against XSS or information disclosure attacks, such as those which might result from the client and server disagreeing on the *charset*.</span></span>
 >
-> <span data-ttu-id="c5efd-262">Nezabezpečený kodér používejte pouze v případě, že je známo, že klient bude interpretovat výslednou datovou část jako JSON kódovaný v kódování UTF-8.</span><span class="sxs-lookup"><span data-stu-id="c5efd-262">Use the unsafe encoder only when it's known that the client will be interpreting the resulting payload as UTF-8 encoded JSON.</span></span> <span data-ttu-id="c5efd-263">Můžete ji například použít, pokud server odesílá hlavičku odpovědi `Content-Type: application/json; charset=utf-8`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-263">For example, you can use it if the server is sending the response header `Content-Type: application/json; charset=utf-8`.</span></span> <span data-ttu-id="c5efd-264">Nikdy nepovolujte výstup nezpracovaného `UnsafeRelaxedJsonEscaping` do stránky HTML nebo elementu `<script>`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-264">Never allow the raw `UnsafeRelaxedJsonEscaping` output to be emitted into an HTML page or a `<script>` element.</span></span>
+> <span data-ttu-id="a2f7e-262">Nezabezpečený kodér používejte pouze v případě, že je známo, že klient bude interpretovat výslednou datovou část jako JSON kódovaný v kódování UTF-8.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-262">Use the unsafe encoder only when it's known that the client will be interpreting the resulting payload as UTF-8 encoded JSON.</span></span> <span data-ttu-id="a2f7e-263">Můžete ji například použít, pokud server odesílá hlavičku odpovědi `Content-Type: application/json; charset=utf-8`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-263">For example, you can use it if the server is sending the response header `Content-Type: application/json; charset=utf-8`.</span></span> <span data-ttu-id="a2f7e-264">Nikdy nepovolujte výstup nezpracovaného `UnsafeRelaxedJsonEscaping` do stránky HTML nebo elementu `<script>`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-264">Never allow the raw `UnsafeRelaxedJsonEscaping` output to be emitted into an HTML page or a `<script>` element.</span></span>
 
-## <a name="serialize-properties-of-derived-classes"></a><span data-ttu-id="c5efd-265">Serializovat vlastnosti odvozených tříd</span><span class="sxs-lookup"><span data-stu-id="c5efd-265">Serialize properties of derived classes</span></span>
+## <a name="serialize-properties-of-derived-classes"></a><span data-ttu-id="a2f7e-265">Serializovat vlastnosti odvozených tříd</span><span class="sxs-lookup"><span data-stu-id="a2f7e-265">Serialize properties of derived classes</span></span>
 
-<span data-ttu-id="c5efd-266">Serializace hierarchie polymorfního typu není podporována.</span><span class="sxs-lookup"><span data-stu-id="c5efd-266">Serialization of a polymorphic type hierarchy is not supported.</span></span> <span data-ttu-id="c5efd-267">Například pokud je vlastnost definována jako rozhraní nebo abstraktní třída, jsou serializovány pouze vlastnosti definované v rozhraní nebo abstraktní třídě, a to i v případě, že typ modulu runtime má další vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="c5efd-267">For example, if a property is defined as an interface or an abstract class, only the properties defined on the interface or abstract class are serialized, even if the runtime type has additional properties.</span></span> <span data-ttu-id="c5efd-268">Výjimky z tohoto chování jsou vysvětleny v této části.</span><span class="sxs-lookup"><span data-stu-id="c5efd-268">The exceptions to this behavior are explained in this section.</span></span>
+<span data-ttu-id="a2f7e-266">Serializace hierarchie polymorfního typu není podporována.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-266">Serialization of a polymorphic type hierarchy is not supported.</span></span> <span data-ttu-id="a2f7e-267">Například pokud je vlastnost definována jako rozhraní nebo abstraktní třída, jsou serializovány pouze vlastnosti definované v rozhraní nebo abstraktní třídě, a to i v případě, že typ modulu runtime má další vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-267">For example, if a property is defined as an interface or an abstract class, only the properties defined on the interface or abstract class are serialized, even if the runtime type has additional properties.</span></span> <span data-ttu-id="a2f7e-268">Výjimky z tohoto chování jsou vysvětleny v této části.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-268">The exceptions to this behavior are explained in this section.</span></span>
 
-<span data-ttu-id="c5efd-269">Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastDerived`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-269">For example, suppose you have a `WeatherForecast` class and a derived class `WeatherForecastDerived`:</span></span>
+<span data-ttu-id="a2f7e-269">Předpokládejme například, že máte třídu `WeatherForecast` a odvozenou třídu `WeatherForecastDerived`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-269">For example, suppose you have a `WeatherForecast` class and a derived class `WeatherForecastDerived`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFDerived)]
 
-<span data-ttu-id="c5efd-270">A Předpokládejme, že argument typu metody `Serialize` v době kompilace je `WeatherForecast`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-270">And suppose the type argument of the `Serialize` method at compile time is `WeatherForecast`:</span></span>
+<span data-ttu-id="a2f7e-270">A Předpokládejme, že argument typu metody `Serialize` v době kompilace je `WeatherForecast`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-270">And suppose the type argument of the `Serialize` method at compile time is `WeatherForecast`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
 
-<span data-ttu-id="c5efd-271">V tomto scénáři není vlastnost `WindSpeed` serializována i v případě, že je objekt `weatherForecast` ve skutečnosti objekt `WeatherForecastDerived`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-271">In this scenario, the `WindSpeed` property is not serialized even if the `weatherForecast` object is actually a `WeatherForecastDerived` object.</span></span> <span data-ttu-id="c5efd-272">Serializovat se budou jenom vlastnosti základní třídy:</span><span class="sxs-lookup"><span data-stu-id="c5efd-272">Only the base class properties are serialized:</span></span>
+<span data-ttu-id="a2f7e-271">V tomto scénáři není vlastnost `WindSpeed` serializována i v případě, že je objekt `weatherForecast` ve skutečnosti objekt `WeatherForecastDerived`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-271">In this scenario, the `WindSpeed` property is not serialized even if the `weatherForecast` object is actually a `WeatherForecastDerived` object.</span></span> <span data-ttu-id="a2f7e-272">Serializovat se budou jenom vlastnosti základní třídy:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-272">Only the base class properties are serialized:</span></span>
 
 ```json
 {
@@ -483,19 +483,19 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-273">Toto chování je určeno k tomu, aby se zabránilo náhodnému úniku dat v odvozeném typu vytvořeném modulem runtime.</span><span class="sxs-lookup"><span data-stu-id="c5efd-273">This behavior is intended to help prevent accidental exposure of data in a derived runtime-created type.</span></span>
+<span data-ttu-id="a2f7e-273">Toto chování je určeno k tomu, aby se zabránilo náhodnému úniku dat v odvozeném typu vytvořeném modulem runtime.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-273">This behavior is intended to help prevent accidental exposure of data in a derived runtime-created type.</span></span>
 
-<span data-ttu-id="c5efd-274">Chcete-li serializovat vlastnosti odvozeného typu v předchozím příkladu, použijte jeden z následujících přístupů:</span><span class="sxs-lookup"><span data-stu-id="c5efd-274">To serialize the properties of the derived type in the preceding example, use one of the following approaches:</span></span>
+<span data-ttu-id="a2f7e-274">Chcete-li serializovat vlastnosti odvozeného typu v předchozím příkladu, použijte jeden z následujících přístupů:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-274">To serialize the properties of the derived type in the preceding example, use one of the following approaches:</span></span>
 
-* <span data-ttu-id="c5efd-275">Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které umožňuje určit typ za běhu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-275">Call an overload of <xref:System.Text.Json.JsonSerializer.Serialize%2A> that lets you specify the type at runtime:</span></span>
+* <span data-ttu-id="a2f7e-275">Zavolejte přetížení <xref:System.Text.Json.JsonSerializer.Serialize%2A>, které umožňuje určit typ za běhu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-275">Call an overload of <xref:System.Text.Json.JsonSerializer.Serialize%2A> that lets you specify the type at runtime:</span></span>
 
   [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeGetType)]
 
-* <span data-ttu-id="c5efd-276">Deklarujte objekt, který se má serializovat jako `object`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-276">Declare the object to be serialized as `object`.</span></span>
+* <span data-ttu-id="a2f7e-276">Deklarujte objekt, který se má serializovat jako `object`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-276">Declare the object to be serialized as `object`.</span></span>
 
   [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeObject)]
 
-<span data-ttu-id="c5efd-277">V předchozím ukázkovém scénáři obě přístupy způsobí, že vlastnost `WindSpeed` bude zahrnutá ve výstupu JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-277">In the preceding example scenario, both approaches cause the `WindSpeed` property to be included in the JSON output:</span></span>
+<span data-ttu-id="a2f7e-277">V předchozím ukázkovém scénáři obě přístupy způsobí, že vlastnost `WindSpeed` bude zahrnutá ve výstupu JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-277">In the preceding example scenario, both approaches cause the `WindSpeed` property to be included in the JSON output:</span></span>
 
 ```json
 {
@@ -507,24 +507,24 @@ using System.Text.Json.Serialization;
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="c5efd-278">Tyto přístupy poskytují polymorfní serializaci pouze pro kořenový objekt, který má být serializován, nikoli pro vlastnosti daného kořenového objektu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-278">These approaches provide polymorphic serialization only for the root object to be serialized, not for properties of that root object.</span></span> 
+> <span data-ttu-id="a2f7e-278">Tyto přístupy poskytují polymorfní serializaci pouze pro kořenový objekt, který má být serializován, nikoli pro vlastnosti daného kořenového objektu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-278">These approaches provide polymorphic serialization only for the root object to be serialized, not for properties of that root object.</span></span>
 
-<span data-ttu-id="c5efd-279">Můžete získat polymorfní serializaci pro objekty nižší úrovně, pokud je definujete jako typ `object`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-279">You can get polymorphic serialization for lower-level objects if you define them as type `object`.</span></span> <span data-ttu-id="c5efd-280">Předpokládejme například, že vaše třída `WeatherForecast` má vlastnost s názvem `PreviousForecast`, kterou lze definovat jako typ `WeatherForecast` nebo `object`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-280">For example, suppose your `WeatherForecast` class has a property named `PreviousForecast` that can be defined as type `WeatherForecast` or `object`:</span></span>
+<span data-ttu-id="a2f7e-279">Můžete získat polymorfní serializaci pro objekty nižší úrovně, pokud je definujete jako typ `object`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-279">You can get polymorphic serialization for lower-level objects if you define them as type `object`.</span></span> <span data-ttu-id="a2f7e-280">Předpokládejme například, že vaše třída `WeatherForecast` má vlastnost s názvem `PreviousForecast`, kterou lze definovat jako typ `WeatherForecast` nebo `object`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-280">For example, suppose your `WeatherForecast` class has a property named `PreviousForecast` that can be defined as type `WeatherForecast` or `object`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPrevious)]
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPreviousAsObject)]
 
-<span data-ttu-id="c5efd-281">Pokud vlastnost `PreviousForecast` obsahuje instanci `WeatherForecastDerived`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-281">If the `PreviousForecast` property contains an instance of `WeatherForecastDerived`:</span></span>
+<span data-ttu-id="a2f7e-281">Pokud vlastnost `PreviousForecast` obsahuje instanci `WeatherForecastDerived`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-281">If the `PreviousForecast` property contains an instance of `WeatherForecastDerived`:</span></span>
 
-* <span data-ttu-id="c5efd-282">Výstup JSON pro serializaci `WeatherForecastWithPrevious` **nezahrnuje** `WindSpeed`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-282">The JSON output from serializing `WeatherForecastWithPrevious` **doesn't include** `WindSpeed`.</span></span>
-* <span data-ttu-id="c5efd-283">Výstup JSON pro serializaci `WeatherForecastWithPreviousAsObject` **zahrnuje** `WindSpeed`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-283">The JSON output from serializing `WeatherForecastWithPreviousAsObject` **includes** `WindSpeed`.</span></span>
+* <span data-ttu-id="a2f7e-282">Výstup JSON pro serializaci `WeatherForecastWithPrevious` **nezahrnuje** `WindSpeed`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-282">The JSON output from serializing `WeatherForecastWithPrevious` **doesn't include** `WindSpeed`.</span></span>
+* <span data-ttu-id="a2f7e-283">Výstup JSON pro serializaci `WeatherForecastWithPreviousAsObject` **zahrnuje** `WindSpeed`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-283">The JSON output from serializing `WeatherForecastWithPreviousAsObject` **includes** `WindSpeed`.</span></span>
 
-<span data-ttu-id="c5efd-284">Pro serializaci `WeatherForecastWithPreviousAsObject`není nutné volat `Serialize<object>` nebo `GetType`, protože kořenový objekt není ten, který může být odvozeného typu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-284">To serialize `WeatherForecastWithPreviousAsObject`, it isn't necessary to call `Serialize<object>` or `GetType` because the root object isn't the one that may be of a derived type.</span></span> <span data-ttu-id="c5efd-285">Následující příklad kódu nevolá `Serialize<object>` nebo `GetType`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-285">The following code example doesn't call `Serialize<object>` or `GetType`:</span></span>
+<span data-ttu-id="a2f7e-284">Pro serializaci `WeatherForecastWithPreviousAsObject`není nutné volat `Serialize<object>` nebo `GetType`, protože kořenový objekt není ten, který může být odvozeného typu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-284">To serialize `WeatherForecastWithPreviousAsObject`, it isn't necessary to call `Serialize<object>` or `GetType` because the root object isn't the one that may be of a derived type.</span></span> <span data-ttu-id="a2f7e-285">Následující příklad kódu nevolá `Serialize<object>` nebo `GetType`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-285">The following code example doesn't call `Serialize<object>` or `GetType`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeSecondLevel)]
 
-<span data-ttu-id="c5efd-286">Předchozí kód správně serializace `WeatherForecastWithPreviousAsObject`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-286">The preceding code correctly serializes `WeatherForecastWithPreviousAsObject`:</span></span>
+<span data-ttu-id="a2f7e-286">Předchozí kód správně serializace `WeatherForecastWithPreviousAsObject`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-286">The preceding code correctly serializes `WeatherForecastWithPreviousAsObject`:</span></span>
 
 ```json
 {
@@ -540,15 +540,15 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-287">Stejný přístup k definování vlastností jako `object` pracuje s rozhraními.</span><span class="sxs-lookup"><span data-stu-id="c5efd-287">The same approach of defining properties as `object` works with interfaces.</span></span> <span data-ttu-id="c5efd-288">Předpokládejme, že máte následující rozhraní a implementaci a chcete serializovat třídu s vlastnostmi, které obsahují instance implementace:</span><span class="sxs-lookup"><span data-stu-id="c5efd-288">Suppose you have the following interface and implementation, and you want to serialize a class with properties that contain implementation instances:</span></span>
+<span data-ttu-id="a2f7e-287">Stejný přístup k definování vlastností jako `object` pracuje s rozhraními.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-287">The same approach of defining properties as `object` works with interfaces.</span></span> <span data-ttu-id="a2f7e-288">Předpokládejme, že máte následující rozhraní a implementaci a chcete serializovat třídu s vlastnostmi, které obsahují instance implementace:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-288">Suppose you have the following interface and implementation, and you want to serialize a class with properties that contain implementation instances:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/IForecast.cs)]
 
-<span data-ttu-id="c5efd-289">Při serializaci instance `Forecasts`pouze `Tuesday` zobrazí vlastnost `WindSpeed`, protože `Tuesday` je definován jako `object`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-289">When you serialize an instance of `Forecasts`, only `Tuesday` shows the `WindSpeed` property, because `Tuesday` is defined as `object`:</span></span>
+<span data-ttu-id="a2f7e-289">Při serializaci instance `Forecasts`pouze `Tuesday` zobrazí vlastnost `WindSpeed`, protože `Tuesday` je definován jako `object`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-289">When you serialize an instance of `Forecasts`, only `Tuesday` shows the `WindSpeed` property, because `Tuesday` is defined as `object`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeInterface)]
 
-<span data-ttu-id="c5efd-290">Následující příklad ukazuje kód JSON, který je výsledkem předchozího kódu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-290">The following example shows the JSON that results from the preceding code:</span></span>
+<span data-ttu-id="a2f7e-290">Následující příklad ukazuje kód JSON, který je výsledkem předchozího kódu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-290">The following example shows the JSON that results from the preceding code:</span></span>
 
 ```json
 {
@@ -566,16 +566,16 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-291">Další informace o polymorfní **serializaci**a informace o **deserializaci**najdete v tématu [postup migrace z Newtonsoft.Json na System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).</span><span class="sxs-lookup"><span data-stu-id="c5efd-291">For more information about polymorphic **serialization**, and for information about **deserialization**, see [How to migrate from Newtonsoft.Json to System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).</span></span>
+<span data-ttu-id="a2f7e-291">Další informace o polymorfní **serializaci**a informace o **deserializaci**naleznete v tématu [How to migruje from Newtonsoft. JSON to System. text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-291">For more information about polymorphic **serialization**, and for information about **deserialization**, see [How to migrate from Newtonsoft.Json to System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).</span></span>
 
-## <a name="allow-comments-and-trailing-commas"></a><span data-ttu-id="c5efd-292">Povolí komentáře a koncové čárky.</span><span class="sxs-lookup"><span data-stu-id="c5efd-292">Allow comments and trailing commas</span></span>
+## <a name="allow-comments-and-trailing-commas"></a><span data-ttu-id="a2f7e-292">Povolí komentáře a koncové čárky.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-292">Allow comments and trailing commas</span></span>
 
-<span data-ttu-id="c5efd-293">Ve výchozím nastavení se komentáře a koncové čárky ve formátu JSON nepovolují.</span><span class="sxs-lookup"><span data-stu-id="c5efd-293">By default, comments and trailing commas are not allowed in JSON.</span></span> <span data-ttu-id="c5efd-294">Chcete-li ve formátu JSON dovolit komentáře, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> na hodnotu `JsonCommentHandling.Skip`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-294">To allow comments in the JSON, set the <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> property to `JsonCommentHandling.Skip`.</span></span>
-<span data-ttu-id="c5efd-295">A pokud chcete koncovým čárkám povolený, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> na `true`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-295">And to allow trailing commas, set the <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> property to `true`.</span></span> <span data-ttu-id="c5efd-296">Následující příklad ukazuje, jak je možné:</span><span class="sxs-lookup"><span data-stu-id="c5efd-296">The following example shows how to allow both:</span></span>
+<span data-ttu-id="a2f7e-293">Ve výchozím nastavení se komentáře a koncové čárky ve formátu JSON nepovolují.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-293">By default, comments and trailing commas are not allowed in JSON.</span></span> <span data-ttu-id="a2f7e-294">Chcete-li ve formátu JSON dovolit komentáře, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> na hodnotu `JsonCommentHandling.Skip`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-294">To allow comments in the JSON, set the <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> property to `JsonCommentHandling.Skip`.</span></span>
+<span data-ttu-id="a2f7e-295">A pokud chcete koncovým čárkám povolený, nastavte vlastnost <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> na `true`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-295">And to allow trailing commas, set the <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> property to `true`.</span></span> <span data-ttu-id="a2f7e-296">Následující příklad ukazuje, jak je možné:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-296">The following example shows how to allow both:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeCommasComments.cs?name=SnippetDeserialize)]
 
-<span data-ttu-id="c5efd-297">Tady je příklad JSON s komentáři a koncovou čárkou:</span><span class="sxs-lookup"><span data-stu-id="c5efd-297">Here's example JSON with comments and a trailing comma:</span></span>
+<span data-ttu-id="a2f7e-297">Tady je příklad JSON s komentáři a koncovou čárkou:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-297">Here's example JSON with comments and a trailing comma:</span></span>
 
 ```json
 {
@@ -585,13 +585,13 @@ using System.Text.Json.Serialization;
 }
 ```
 
-## <a name="case-insensitive-property-matching"></a><span data-ttu-id="c5efd-298">Porovnávání vlastností bez rozlišení velkých a malých písmen</span><span class="sxs-lookup"><span data-stu-id="c5efd-298">Case-insensitive property matching</span></span>
+## <a name="case-insensitive-property-matching"></a><span data-ttu-id="a2f7e-298">Porovnávání vlastností bez rozlišení velkých a malých písmen</span><span class="sxs-lookup"><span data-stu-id="a2f7e-298">Case-insensitive property matching</span></span>
 
-<span data-ttu-id="c5efd-299">Ve výchozím nastavení deserializace hledá název vlastnosti rozlišující velká a malá písmena mezi vlastnostmi JSON a cílovým objektem.</span><span class="sxs-lookup"><span data-stu-id="c5efd-299">By default, deserialization looks for case-sensitive property name matches between JSON and the target object properties.</span></span> <span data-ttu-id="c5efd-300">Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> na `true`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-300">To change that behavior, set <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> to `true`:</span></span>
+<span data-ttu-id="a2f7e-299">Ve výchozím nastavení deserializace hledá název vlastnosti rozlišující velká a malá písmena mezi vlastnostmi JSON a cílovým objektem.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-299">By default, deserialization looks for case-sensitive property name matches between JSON and the target object properties.</span></span> <span data-ttu-id="a2f7e-300">Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> na `true`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-300">To change that behavior, set <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> to `true`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeCaseInsensitive.cs?name=SnippetDeserialize)]
 
-<span data-ttu-id="c5efd-301">Tady je příklad JSON s názvy vlastností Case ve stylu CamelCase.</span><span class="sxs-lookup"><span data-stu-id="c5efd-301">Here's example JSON with camel case property names.</span></span> <span data-ttu-id="c5efd-302">Lze deserializovat do následujícího typu, který má názvy vlastností Case typu Pascal.</span><span class="sxs-lookup"><span data-stu-id="c5efd-302">It can be deserialized into the following type that has Pascal case property names.</span></span>
+<span data-ttu-id="a2f7e-301">Tady je příklad JSON s názvy vlastností Case ve stylu CamelCase.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-301">Here's example JSON with camel case property names.</span></span> <span data-ttu-id="a2f7e-302">Lze deserializovat do následujícího typu, který má názvy vlastností Case typu Pascal.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-302">It can be deserialized into the following type that has Pascal case property names.</span></span>
 
 ```json
 {
@@ -603,13 +603,13 @@ using System.Text.Json.Serialization;
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
-## <a name="handle-overflow-json"></a><span data-ttu-id="c5efd-303">Přetečení JSON popisovače</span><span class="sxs-lookup"><span data-stu-id="c5efd-303">Handle overflow JSON</span></span>
+## <a name="handle-overflow-json"></a><span data-ttu-id="a2f7e-303">Přetečení JSON popisovače</span><span class="sxs-lookup"><span data-stu-id="a2f7e-303">Handle overflow JSON</span></span>
 
-<span data-ttu-id="c5efd-304">Při deserializaci můžete přijímat data ve formátu JSON, která nejsou reprezentovaná vlastnostmi cílového typu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-304">While deserializing, you might receive data in the JSON that is not represented by properties of the target type.</span></span> <span data-ttu-id="c5efd-305">Předpokládejme například, že váš cílový typ je:</span><span class="sxs-lookup"><span data-stu-id="c5efd-305">For example, suppose your target type is this:</span></span>
+<span data-ttu-id="a2f7e-304">Při deserializaci můžete přijímat data ve formátu JSON, která nejsou reprezentovaná vlastnostmi cílového typu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-304">While deserializing, you might receive data in the JSON that is not represented by properties of the target type.</span></span> <span data-ttu-id="a2f7e-305">Předpokládejme například, že váš cílový typ je:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-305">For example, suppose your target type is this:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
-<span data-ttu-id="c5efd-306">A JSON, který se má deserializovat, je:</span><span class="sxs-lookup"><span data-stu-id="c5efd-306">And the JSON to be deserialized is this:</span></span>
+<span data-ttu-id="a2f7e-306">A JSON, který se má deserializovat, je:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-306">And the JSON to be deserialized is this:</span></span>
 
 ```json
 {
@@ -628,22 +628,22 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-307">Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, `DatesAvailable` a `SummaryWords` vlastnosti mají nikde a budou ztraceny.</span><span class="sxs-lookup"><span data-stu-id="c5efd-307">If you deserialize the JSON shown into the type shown, the `DatesAvailable` and `SummaryWords` properties have nowhere to go and are lost.</span></span> <span data-ttu-id="c5efd-308">Chcete-li zachytit další data, jako jsou tyto vlastnosti, použijte atribut [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) na vlastnost typu `Dictionary<string,object>` nebo `Dictionary<string,JsonElement>`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-308">To capture extra data such as these properties, apply the [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) attribute to a property of type `Dictionary<string,object>` or `Dictionary<string,JsonElement>`:</span></span>
+<span data-ttu-id="a2f7e-307">Pokud deserializaci kódu JSON zobrazeného na zobrazeném typu, `DatesAvailable` a `SummaryWords` vlastnosti mají nikde a budou ztraceny.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-307">If you deserialize the JSON shown into the type shown, the `DatesAvailable` and `SummaryWords` properties have nowhere to go and are lost.</span></span> <span data-ttu-id="a2f7e-308">Chcete-li zachytit další data, jako jsou tyto vlastnosti, použijte atribut [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) na vlastnost typu `Dictionary<string,object>` nebo `Dictionary<string,JsonElement>`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-308">To capture extra data such as these properties, apply the [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) attribute to a property of type `Dictionary<string,object>` or `Dictionary<string,JsonElement>`:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithExtensionData)]
 
-<span data-ttu-id="c5efd-309">Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry klíč-hodnota vlastnosti `ExtensionData`:</span><span class="sxs-lookup"><span data-stu-id="c5efd-309">When you deserialize the JSON shown earlier into this sample type, the extra data becomes key-value pairs of the `ExtensionData` property:</span></span>
+<span data-ttu-id="a2f7e-309">Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typu se data dalších dat stávají páry klíč-hodnota vlastnosti `ExtensionData`:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-309">When you deserialize the JSON shown earlier into this sample type, the extra data becomes key-value pairs of the `ExtensionData` property:</span></span>
 
-|<span data-ttu-id="c5efd-310">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="c5efd-310">Property</span></span> |<span data-ttu-id="c5efd-311">Hodnota</span><span class="sxs-lookup"><span data-stu-id="c5efd-311">Value</span></span>  |<span data-ttu-id="c5efd-312">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c5efd-312">Notes</span></span>  |
+|<span data-ttu-id="a2f7e-310">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="a2f7e-310">Property</span></span> |<span data-ttu-id="a2f7e-311">Hodnota</span><span class="sxs-lookup"><span data-stu-id="a2f7e-311">Value</span></span>  |<span data-ttu-id="a2f7e-312">Poznámky:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-312">Notes</span></span>  |
 |---------|---------|---------|
-| <span data-ttu-id="c5efd-313">Datum</span><span class="sxs-lookup"><span data-stu-id="c5efd-313">Date</span></span>    | <span data-ttu-id="c5efd-314">8/1/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="c5efd-314">8/1/2019 12:00:00 AM -07:00</span></span>||
-| <span data-ttu-id="c5efd-315">TemperatureCelsius</span><span class="sxs-lookup"><span data-stu-id="c5efd-315">TemperatureCelsius</span></span>| <span data-ttu-id="c5efd-316">0</span><span class="sxs-lookup"><span data-stu-id="c5efd-316">0</span></span> | <span data-ttu-id="c5efd-317">Neshoda malých a velkých písmen (`temperatureCelsius` ve formátu JSON), takže vlastnost není nastavená.</span><span class="sxs-lookup"><span data-stu-id="c5efd-317">Case-sensitive mismatch (`temperatureCelsius` in the JSON), so the property isn't set.</span></span> |
-| <span data-ttu-id="c5efd-318">Přehled</span><span class="sxs-lookup"><span data-stu-id="c5efd-318">Summary</span></span> | <span data-ttu-id="c5efd-319">Horká</span><span class="sxs-lookup"><span data-stu-id="c5efd-319">Hot</span></span> ||
-| <span data-ttu-id="c5efd-320">ExtensionData –</span><span class="sxs-lookup"><span data-stu-id="c5efd-320">ExtensionData</span></span> | <span data-ttu-id="c5efd-321">temperatureCelsius: 25</span><span class="sxs-lookup"><span data-stu-id="c5efd-321">temperatureCelsius: 25</span></span> |<span data-ttu-id="c5efd-322">Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.</span><span class="sxs-lookup"><span data-stu-id="c5efd-322">Since the case didn't match, this JSON property is an extra and becomes a key-value pair in the dictionary.</span></span>|
-|| <span data-ttu-id="c5efd-323">DatesAvailable:</span><span class="sxs-lookup"><span data-stu-id="c5efd-323">DatesAvailable:</span></span><br>  <span data-ttu-id="c5efd-324">8/1/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="c5efd-324">8/1/2019 12:00:00 AM -07:00</span></span><br><span data-ttu-id="c5efd-325">8/2/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="c5efd-325">8/2/2019 12:00:00 AM -07:00</span></span> |<span data-ttu-id="c5efd-326">Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="c5efd-326">Extra property from the JSON becomes a key-value pair, with an array as the value object.</span></span>|
-| |<span data-ttu-id="c5efd-327">SummaryWords:</span><span class="sxs-lookup"><span data-stu-id="c5efd-327">SummaryWords:</span></span><br><span data-ttu-id="c5efd-328">Studená</span><span class="sxs-lookup"><span data-stu-id="c5efd-328">Cool</span></span><br><span data-ttu-id="c5efd-329">Vítr</span><span class="sxs-lookup"><span data-stu-id="c5efd-329">Windy</span></span><br><span data-ttu-id="c5efd-330">Humid</span><span class="sxs-lookup"><span data-stu-id="c5efd-330">Humid</span></span> |<span data-ttu-id="c5efd-331">Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="c5efd-331">Extra property from the JSON becomes a key-value pair, with an array as the value object.</span></span>|
+| <span data-ttu-id="a2f7e-313">Datum</span><span class="sxs-lookup"><span data-stu-id="a2f7e-313">Date</span></span>    | <span data-ttu-id="a2f7e-314">8/1/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="a2f7e-314">8/1/2019 12:00:00 AM -07:00</span></span>||
+| <span data-ttu-id="a2f7e-315">TemperatureCelsius</span><span class="sxs-lookup"><span data-stu-id="a2f7e-315">TemperatureCelsius</span></span>| <span data-ttu-id="a2f7e-316">0</span><span class="sxs-lookup"><span data-stu-id="a2f7e-316">0</span></span> | <span data-ttu-id="a2f7e-317">Neshoda malých a velkých písmen (`temperatureCelsius` ve formátu JSON), takže vlastnost není nastavená.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-317">Case-sensitive mismatch (`temperatureCelsius` in the JSON), so the property isn't set.</span></span> |
+| <span data-ttu-id="a2f7e-318">Souhrn</span><span class="sxs-lookup"><span data-stu-id="a2f7e-318">Summary</span></span> | <span data-ttu-id="a2f7e-319">Hot</span><span class="sxs-lookup"><span data-stu-id="a2f7e-319">Hot</span></span> ||
+| <span data-ttu-id="a2f7e-320">ExtensionData –</span><span class="sxs-lookup"><span data-stu-id="a2f7e-320">ExtensionData</span></span> | <span data-ttu-id="a2f7e-321">temperatureCelsius: 25</span><span class="sxs-lookup"><span data-stu-id="a2f7e-321">temperatureCelsius: 25</span></span> |<span data-ttu-id="a2f7e-322">Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-322">Since the case didn't match, this JSON property is an extra and becomes a key-value pair in the dictionary.</span></span>|
+|| <span data-ttu-id="a2f7e-323">DatesAvailable:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-323">DatesAvailable:</span></span><br>  <span data-ttu-id="a2f7e-324">8/1/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="a2f7e-324">8/1/2019 12:00:00 AM -07:00</span></span><br><span data-ttu-id="a2f7e-325">8/2/2019 12:00:00 DOP. 07:00</span><span class="sxs-lookup"><span data-stu-id="a2f7e-325">8/2/2019 12:00:00 AM -07:00</span></span> |<span data-ttu-id="a2f7e-326">Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-326">Extra property from the JSON becomes a key-value pair, with an array as the value object.</span></span>|
+| |<span data-ttu-id="a2f7e-327">SummaryWords:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-327">SummaryWords:</span></span><br><span data-ttu-id="a2f7e-328">Cool</span><span class="sxs-lookup"><span data-stu-id="a2f7e-328">Cool</span></span><br><span data-ttu-id="a2f7e-329">Vítr</span><span class="sxs-lookup"><span data-stu-id="a2f7e-329">Windy</span></span><br><span data-ttu-id="a2f7e-330">Humid</span><span class="sxs-lookup"><span data-stu-id="a2f7e-330">Humid</span></span> |<span data-ttu-id="a2f7e-331">Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-331">Extra property from the JSON becomes a key-value pair, with an array as the value object.</span></span>|
 
-<span data-ttu-id="c5efd-332">Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-332">When the target object is serialized, the extension data key value pairs become JSON properties just as they were in the incoming JSON:</span></span>
+<span data-ttu-id="a2f7e-332">Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-332">When the target object is serialized, the extension data key value pairs become JSON properties just as they were in the incoming JSON:</span></span>
 
 ```json
 {
@@ -663,17 +663,17 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-333">Všimněte si, že název vlastnosti `ExtensionData` se ve formátu JSON nezobrazuje.</span><span class="sxs-lookup"><span data-stu-id="c5efd-333">Notice that the `ExtensionData` property name doesn't appear in the JSON.</span></span> <span data-ttu-id="c5efd-334">Díky tomuto chování může JSON vytvořit zpáteční cestu, aniž by došlo ke ztrátě dalších dat, která by jinak nebyla deserializována.</span><span class="sxs-lookup"><span data-stu-id="c5efd-334">This behavior lets the JSON make a round trip without losing any extra data that otherwise wouldn't be deserialized.</span></span>
+<span data-ttu-id="a2f7e-333">Všimněte si, že název vlastnosti `ExtensionData` se ve formátu JSON nezobrazuje.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-333">Notice that the `ExtensionData` property name doesn't appear in the JSON.</span></span> <span data-ttu-id="a2f7e-334">Díky tomuto chování může JSON vytvořit zpáteční cestu, aniž by došlo ke ztrátě dalších dat, která by jinak nebyla deserializována.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-334">This behavior lets the JSON make a round trip without losing any extra data that otherwise wouldn't be deserialized.</span></span>
 
-## <a name="ignore-null-when-deserializing"></a><span data-ttu-id="c5efd-335">Při deserializaci ignorovat hodnotu null</span><span class="sxs-lookup"><span data-stu-id="c5efd-335">Ignore null when deserializing</span></span>
+## <a name="ignore-null-when-deserializing"></a><span data-ttu-id="a2f7e-335">Při deserializaci ignorovat hodnotu null</span><span class="sxs-lookup"><span data-stu-id="a2f7e-335">Ignore null when deserializing</span></span>
 
-<span data-ttu-id="c5efd-336">Ve výchozím nastavení platí, že pokud je vlastnost ve formátu JSON null, odpovídající vlastnost v cílovém objektu je nastavena na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="c5efd-336">By default, if a property in JSON is null, the corresponding property in the target object is set to null.</span></span> <span data-ttu-id="c5efd-337">V některých scénářích může cílová vlastnost mít výchozí hodnotu a nechcete, aby hodnota null přepsala výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-337">In some scenarios, the target property might have a default value, and you don't want a null value to override the default.</span></span>
+<span data-ttu-id="a2f7e-336">Ve výchozím nastavení platí, že pokud je vlastnost ve formátu JSON null, odpovídající vlastnost v cílovém objektu je nastavena na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-336">By default, if a property in JSON is null, the corresponding property in the target object is set to null.</span></span> <span data-ttu-id="a2f7e-337">V některých scénářích může cílová vlastnost mít výchozí hodnotu a nechcete, aby hodnota null přepsala výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-337">In some scenarios, the target property might have a default value, and you don't want a null value to override the default.</span></span>
 
-<span data-ttu-id="c5efd-338">Předpokládejme například, že následující kód představuje cílový objekt:</span><span class="sxs-lookup"><span data-stu-id="c5efd-338">For example, suppose the following code represents your target object:</span></span>
+<span data-ttu-id="a2f7e-338">Předpokládejme například, že následující kód představuje cílový objekt:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-338">For example, suppose the following code represents your target object:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithDefault)]
 
-<span data-ttu-id="c5efd-339">A Předpokládejme, že následující kód JSON je deserializovaný:</span><span class="sxs-lookup"><span data-stu-id="c5efd-339">And suppose the following JSON is deserialized:</span></span>
+<span data-ttu-id="a2f7e-339">A Předpokládejme, že následující kód JSON je deserializovaný:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-339">And suppose the following JSON is deserialized:</span></span>
 
 ```json
 {
@@ -683,106 +683,106 @@ using System.Text.Json.Serialization;
 }
 ```
 
-<span data-ttu-id="c5efd-340">Po deserializaci má vlastnost `Summary` objektu `WeatherForecastWithDefault` hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="c5efd-340">After deserialization, the `Summary` property of the `WeatherForecastWithDefault` object is null.</span></span>
+<span data-ttu-id="a2f7e-340">Po deserializaci má vlastnost `Summary` objektu `WeatherForecastWithDefault` hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-340">After deserialization, the `Summary` property of the `WeatherForecastWithDefault` object is null.</span></span>
 
-<span data-ttu-id="c5efd-341">Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType> na `true`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-341">To change this behavior, set <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType> to `true`, as shown in the following example:</span></span>
+<span data-ttu-id="a2f7e-341">Chcete-li toto chování změnit, nastavte <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType> na `true`, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-341">To change this behavior, set <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType> to `true`, as shown in the following example:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeIgnoreNull.cs?name=SnippetDeserialize)]
 
-<span data-ttu-id="c5efd-342">Při této možnosti je vlastnost `Summary` objektu `WeatherForecastWithDefault` výchozí hodnotou "No Summary" po deserializaci.</span><span class="sxs-lookup"><span data-stu-id="c5efd-342">With this option, the `Summary` property of the `WeatherForecastWithDefault` object is the default value "No summary" after deserialization.</span></span>
+<span data-ttu-id="a2f7e-342">Při této možnosti je vlastnost `Summary` objektu `WeatherForecastWithDefault` výchozí hodnotou "No Summary" po deserializaci.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-342">With this option, the `Summary` property of the `WeatherForecastWithDefault` object is the default value "No summary" after deserialization.</span></span>
 
-<span data-ttu-id="c5efd-343">Hodnoty null ve formátu JSON jsou ignorovány pouze v případě, že jsou platné.</span><span class="sxs-lookup"><span data-stu-id="c5efd-343">Null values in the JSON are ignored only if they are valid.</span></span> <span data-ttu-id="c5efd-344">Hodnoty null pro typy hodnot, které neumožňují hodnotu null, způsobují výjimky.</span><span class="sxs-lookup"><span data-stu-id="c5efd-344">Null values for non-nullable value types cause exceptions.</span></span>
+<span data-ttu-id="a2f7e-343">Hodnoty null ve formátu JSON jsou ignorovány pouze v případě, že jsou platné.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-343">Null values in the JSON are ignored only if they are valid.</span></span> <span data-ttu-id="a2f7e-344">Hodnoty null pro typy hodnot, které neumožňují hodnotu null, způsobují výjimky.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-344">Null values for non-nullable value types cause exceptions.</span></span>
 
-## <a name="utf8jsonreader-utf8jsonwriter-and-jsondocument"></a><span data-ttu-id="c5efd-345">Utf8JsonReader, Utf8JsonWriter a JsonDocument</span><span class="sxs-lookup"><span data-stu-id="c5efd-345">Utf8JsonReader, Utf8JsonWriter, and JsonDocument</span></span>
+## <a name="utf8jsonreader-utf8jsonwriter-and-jsondocument"></a><span data-ttu-id="a2f7e-345">Utf8JsonReader, Utf8JsonWriter a JsonDocument</span><span class="sxs-lookup"><span data-stu-id="a2f7e-345">Utf8JsonReader, Utf8JsonWriter, and JsonDocument</span></span>
 
-<span data-ttu-id="c5efd-346"><xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> je pro text JSON s kódováním UTF-8 s vysokým výkonem vysoce výkonné, nízké přidělení a je čteno z `ReadOnlySpan<byte>` nebo `ReadOnlySequence<byte>`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-346"><xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> is a high-performance, low allocation, forward-only reader for UTF-8 encoded JSON text, read from a `ReadOnlySpan<byte>` or `ReadOnlySequence<byte>`.</span></span> <span data-ttu-id="c5efd-347">`Utf8JsonReader` je typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace.</span><span class="sxs-lookup"><span data-stu-id="c5efd-347">The `Utf8JsonReader` is a low-level type that can be used to build custom parsers and deserializers.</span></span> <span data-ttu-id="c5efd-348">Metoda <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> používá `Utf8JsonReader` v rámci pokrývání.</span><span class="sxs-lookup"><span data-stu-id="c5efd-348">The <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> method uses `Utf8JsonReader` under the covers.</span></span>
+<span data-ttu-id="a2f7e-346"><xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> je pro text JSON s kódováním UTF-8 s vysokým výkonem vysoce výkonné, nízké přidělení a je čteno z `ReadOnlySpan<byte>` nebo `ReadOnlySequence<byte>`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-346"><xref:System.Text.Json.Utf8JsonReader?displayProperty=fullName> is a high-performance, low allocation, forward-only reader for UTF-8 encoded JSON text, read from a `ReadOnlySpan<byte>` or `ReadOnlySequence<byte>`.</span></span> <span data-ttu-id="a2f7e-347">`Utf8JsonReader` je typ nízké úrovně, který lze použít k vytvoření vlastních analyzátorů a deserializace.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-347">The `Utf8JsonReader` is a low-level type that can be used to build custom parsers and deserializers.</span></span> <span data-ttu-id="a2f7e-348">Metoda <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> používá `Utf8JsonReader` v rámci pokrývání.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-348">The <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> method uses `Utf8JsonReader` under the covers.</span></span>
 
-<span data-ttu-id="c5efd-349"><xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> je vysoce výkonný způsob, jak psát text JSON kódovaný v kódování UTF-8 ze běžných typů .NET, jako jsou `String`, `Int32`a `DateTime`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-349"><xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> is a high-performance way to write UTF-8 encoded JSON text from common .NET types like `String`, `Int32`, and `DateTime`.</span></span> <span data-ttu-id="c5efd-350">Zapisovač je typ nižší úrovně, který lze použít k vytvoření vlastních serializátorů.</span><span class="sxs-lookup"><span data-stu-id="c5efd-350">The writer is a low-level type that can be used to build custom serializers.</span></span> <span data-ttu-id="c5efd-351">Metoda <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> používá `Utf8JsonWriter` v rámci pokrývání.</span><span class="sxs-lookup"><span data-stu-id="c5efd-351">The <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> method uses `Utf8JsonWriter` under the covers.</span></span>
+<span data-ttu-id="a2f7e-349"><xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> je vysoce výkonný způsob, jak psát text JSON kódovaný v kódování UTF-8 ze běžných typů .NET, jako jsou `String`, `Int32`a `DateTime`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-349"><xref:System.Text.Json.Utf8JsonWriter?displayProperty=fullName> is a high-performance way to write UTF-8 encoded JSON text from common .NET types like `String`, `Int32`, and `DateTime`.</span></span> <span data-ttu-id="a2f7e-350">Zapisovač je typ nižší úrovně, který lze použít k vytvoření vlastních serializátorů.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-350">The writer is a low-level type that can be used to build custom serializers.</span></span> <span data-ttu-id="a2f7e-351">Metoda <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> používá `Utf8JsonWriter` v rámci pokrývání.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-351">The <xref:System.Text.Json.JsonSerializer.Serialize%2A?displayProperty=nameWithType> method uses `Utf8JsonWriter` under the covers.</span></span>
 
-<span data-ttu-id="c5efd-352"><xref:System.Text.Json.JsonDocument?displayProperty=fullName> poskytuje možnost vytvářet model DOM (Document Object Model) DOM (jen pro čtení) pomocí `Utf8JsonReader`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-352"><xref:System.Text.Json.JsonDocument?displayProperty=fullName> provides the ability to build a read-only Document Object Model (DOM) by using `Utf8JsonReader`.</span></span> <span data-ttu-id="c5efd-353">Model DOM poskytuje náhodný přístup k datům v datové části JSON.</span><span class="sxs-lookup"><span data-stu-id="c5efd-353">The DOM provides random access to data in a JSON payload.</span></span> <span data-ttu-id="c5efd-354">K elementům JSON, které tvoří datovou část, lze přistupovat prostřednictvím <xref:System.Text.Json.JsonElement>ho typu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-354">The JSON elements that compose the payload can be accessed via the <xref:System.Text.Json.JsonElement> type.</span></span> <span data-ttu-id="c5efd-355">`JsonElement` typ poskytuje enumerátory Array a Object spolu s rozhraními API pro převod textu JSON na běžné typy .NET.</span><span class="sxs-lookup"><span data-stu-id="c5efd-355">The `JsonElement` type provides array and object enumerators along with APIs to convert JSON text to common .NET types.</span></span> <span data-ttu-id="c5efd-356">`JsonDocument` zpřístupňuje vlastnost <xref:System.Text.Json.JsonDocument.RootElement>.</span><span class="sxs-lookup"><span data-stu-id="c5efd-356">`JsonDocument` exposes a <xref:System.Text.Json.JsonDocument.RootElement> property.</span></span>
+<span data-ttu-id="a2f7e-352"><xref:System.Text.Json.JsonDocument?displayProperty=fullName> poskytuje možnost vytvářet model DOM (Document Object Model) DOM (jen pro čtení) pomocí `Utf8JsonReader`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-352"><xref:System.Text.Json.JsonDocument?displayProperty=fullName> provides the ability to build a read-only Document Object Model (DOM) by using `Utf8JsonReader`.</span></span> <span data-ttu-id="a2f7e-353">Model DOM poskytuje náhodný přístup k datům v datové části JSON.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-353">The DOM provides random access to data in a JSON payload.</span></span> <span data-ttu-id="a2f7e-354">K elementům JSON, které tvoří datovou část, lze přistupovat prostřednictvím <xref:System.Text.Json.JsonElement>ho typu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-354">The JSON elements that compose the payload can be accessed via the <xref:System.Text.Json.JsonElement> type.</span></span> <span data-ttu-id="a2f7e-355">`JsonElement` typ poskytuje enumerátory Array a Object spolu s rozhraními API pro převod textu JSON na běžné typy .NET.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-355">The `JsonElement` type provides array and object enumerators along with APIs to convert JSON text to common .NET types.</span></span> <span data-ttu-id="a2f7e-356">`JsonDocument` zpřístupňuje vlastnost <xref:System.Text.Json.JsonDocument.RootElement>.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-356">`JsonDocument` exposes a <xref:System.Text.Json.JsonDocument.RootElement> property.</span></span>
 
-<span data-ttu-id="c5efd-357">Následující části ukazují, jak používat tyto nástroje pro čtení a zápis JSON.</span><span class="sxs-lookup"><span data-stu-id="c5efd-357">The following sections show how to use these tools for reading and writing JSON.</span></span>
+<span data-ttu-id="a2f7e-357">Následující části ukazují, jak používat tyto nástroje pro čtení a zápis JSON.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-357">The following sections show how to use these tools for reading and writing JSON.</span></span>
 
-## <a name="use-jsondocument-for-access-to-data"></a><span data-ttu-id="c5efd-358">Použití JsonDocument pro přístup k datům</span><span class="sxs-lookup"><span data-stu-id="c5efd-358">Use JsonDocument for access to data</span></span>
+## <a name="use-jsondocument-for-access-to-data"></a><span data-ttu-id="a2f7e-358">Použití JsonDocument pro přístup k datům</span><span class="sxs-lookup"><span data-stu-id="a2f7e-358">Use JsonDocument for access to data</span></span>
 
-<span data-ttu-id="c5efd-359">Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.JsonDocument> pro náhodný přístup k datům v řetězci JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-359">The following example shows how to use the <xref:System.Text.Json.JsonDocument> class for random access to data in a JSON string:</span></span>
+<span data-ttu-id="a2f7e-359">Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.JsonDocument> pro náhodný přístup k datům v řetězci JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-359">The following example shows how to use the <xref:System.Text.Json.JsonDocument> class for random access to data in a JSON string:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades1)]
 
-<span data-ttu-id="c5efd-360">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="c5efd-360">The preceding code:</span></span>
+<span data-ttu-id="a2f7e-360">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-360">The preceding code:</span></span>
 
-* <span data-ttu-id="c5efd-361">Předpokládá, že se JSON, který se má analyzovat, nachází v řetězci s názvem `jsonString`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-361">Assumes the JSON to analyze is in a string named `jsonString`.</span></span>
-* <span data-ttu-id="c5efd-362">Vypočítá průměrnou třídu pro objekty v `Students` poli, které mají vlastnost `Grade`.</span><span class="sxs-lookup"><span data-stu-id="c5efd-362">Calculates an average grade for objects in a `Students` array that have a `Grade` property.</span></span> 
-* <span data-ttu-id="c5efd-363">Přiřadí výchozí stupeň 70 pro studenty, kteří nemají třídu.</span><span class="sxs-lookup"><span data-stu-id="c5efd-363">Assigns a default grade of 70 for students who don't have a grade.</span></span>
-* <span data-ttu-id="c5efd-364">Počítá studenty zvýšením `count` proměnné s každou iterací.</span><span class="sxs-lookup"><span data-stu-id="c5efd-364">Counts students by incrementing a `count` variable with each iteration.</span></span> <span data-ttu-id="c5efd-365">Alternativou je volání <xref:System.Text.Json.JsonElement.GetArrayLength%2A>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-365">An alternative is to call <xref:System.Text.Json.JsonElement.GetArrayLength%2A>, as shown in the following example:</span></span>
+* <span data-ttu-id="a2f7e-361">Předpokládá, že se JSON, který se má analyzovat, nachází v řetězci s názvem `jsonString`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-361">Assumes the JSON to analyze is in a string named `jsonString`.</span></span>
+* <span data-ttu-id="a2f7e-362">Vypočítá průměrnou třídu pro objekty v `Students` poli, které mají vlastnost `Grade`.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-362">Calculates an average grade for objects in a `Students` array that have a `Grade` property.</span></span>
+* <span data-ttu-id="a2f7e-363">Přiřadí výchozí stupeň 70 pro studenty, kteří nemají třídu.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-363">Assigns a default grade of 70 for students who don't have a grade.</span></span>
+* <span data-ttu-id="a2f7e-364">Počítá studenty zvýšením `count` proměnné s každou iterací.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-364">Counts students by incrementing a `count` variable with each iteration.</span></span> <span data-ttu-id="a2f7e-365">Alternativou je volání <xref:System.Text.Json.JsonElement.GetArrayLength%2A>, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-365">An alternative is to call <xref:System.Text.Json.JsonElement.GetArrayLength%2A>, as shown in the following example:</span></span>
 
   [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades2)]
 
-<span data-ttu-id="c5efd-366">Zde je příklad kódu JSON, který tento kód zpracovává:</span><span class="sxs-lookup"><span data-stu-id="c5efd-366">Here's an example of the JSON that this code processes:</span></span>
+<span data-ttu-id="a2f7e-366">Zde je příklad kódu JSON, který tento kód zpracovává:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-366">Here's an example of the JSON that this code processes:</span></span>
 
 [!code-json[](~/samples/snippets/core/system-text-json/csharp/GradesPrettyPrint.json)]
 
-## <a name="use-jsondocument-to-write-json"></a><span data-ttu-id="c5efd-367">Zápis JSON pomocí JsonDocument</span><span class="sxs-lookup"><span data-stu-id="c5efd-367">Use JsonDocument to write JSON</span></span>
+## <a name="use-jsondocument-to-write-json"></a><span data-ttu-id="a2f7e-367">Zápis JSON pomocí JsonDocument</span><span class="sxs-lookup"><span data-stu-id="a2f7e-367">Use JsonDocument to write JSON</span></span>
 
-<span data-ttu-id="c5efd-368">Následující příklad ukazuje, jak zapsat JSON z <xref:System.Text.Json.JsonDocument>:</span><span class="sxs-lookup"><span data-stu-id="c5efd-368">The following example shows how to write JSON from a <xref:System.Text.Json.JsonDocument>:</span></span>
+<span data-ttu-id="a2f7e-368">Následující příklad ukazuje, jak zapsat JSON z <xref:System.Text.Json.JsonDocument>:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-368">The following example shows how to write JSON from a <xref:System.Text.Json.JsonDocument>:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentWriteJson.cs?name=SnippetSerialize)]
 
-<span data-ttu-id="c5efd-369">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="c5efd-369">The preceding code:</span></span>
+<span data-ttu-id="a2f7e-369">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-369">The preceding code:</span></span>
 
-* <span data-ttu-id="c5efd-370">Přečte soubor JSON, načte data do `JsonDocument`a zapisuje do souboru formát JSON s formátováním (poměrně vytištěného).</span><span class="sxs-lookup"><span data-stu-id="c5efd-370">Reads a JSON file, loads the data into a `JsonDocument`, and writes formatted (pretty-printed) JSON to a file.</span></span>
-* <span data-ttu-id="c5efd-371">Používá <xref:System.Text.Json.JsonDocumentOptions> k určení, že komentáře ve vstupním JSON jsou povolené, ale ignorují se.</span><span class="sxs-lookup"><span data-stu-id="c5efd-371">Uses <xref:System.Text.Json.JsonDocumentOptions> to specify that comments in the input JSON are allowed but ignored.</span></span>
-* <span data-ttu-id="c5efd-372">Po dokončení volání zavolá <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> na zapisovači.</span><span class="sxs-lookup"><span data-stu-id="c5efd-372">When finished, calls <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> on the writer.</span></span> <span data-ttu-id="c5efd-373">Alternativou je umožnit zapisovači AutoFlush při jeho uvolnění.</span><span class="sxs-lookup"><span data-stu-id="c5efd-373">An alternative is to let the writer autoflush when it's disposed.</span></span> 
+* <span data-ttu-id="a2f7e-370">Přečte soubor JSON, načte data do `JsonDocument`a zapisuje do souboru formát JSON s formátováním (poměrně vytištěného).</span><span class="sxs-lookup"><span data-stu-id="a2f7e-370">Reads a JSON file, loads the data into a `JsonDocument`, and writes formatted (pretty-printed) JSON to a file.</span></span>
+* <span data-ttu-id="a2f7e-371">Používá <xref:System.Text.Json.JsonDocumentOptions> k určení, že komentáře ve vstupním JSON jsou povolené, ale ignorují se.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-371">Uses <xref:System.Text.Json.JsonDocumentOptions> to specify that comments in the input JSON are allowed but ignored.</span></span>
+* <span data-ttu-id="a2f7e-372">Po dokončení volání zavolá <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> na zapisovači.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-372">When finished, calls <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> on the writer.</span></span> <span data-ttu-id="a2f7e-373">Alternativou je umožnit zapisovači AutoFlush při jeho uvolnění.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-373">An alternative is to let the writer autoflush when it's disposed.</span></span>
 
-<span data-ttu-id="c5efd-374">Tady je příklad vstupu JSON, který se má zpracovat v příkladu kódu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-374">Here's an example of JSON input to be processed by the example code:</span></span>
+<span data-ttu-id="a2f7e-374">Tady je příklad vstupu JSON, který se má zpracovat v příkladu kódu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-374">Here's an example of JSON input to be processed by the example code:</span></span>
 
 [!code-json[](~/samples/snippets/core/system-text-json/csharp/Grades.json)]
 
-<span data-ttu-id="c5efd-375">Výsledkem je následující poměrně tištěný výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="c5efd-375">The result is the following pretty-printed JSON output:</span></span>
+<span data-ttu-id="a2f7e-375">Výsledkem je následující poměrně tištěný výstup JSON:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-375">The result is the following pretty-printed JSON output:</span></span>
 
 [!code-json[](~/samples/snippets/core/system-text-json/csharp/GradesPrettyPrint.json)]
 
-## <a name="use-utf8jsonwriter"></a><span data-ttu-id="c5efd-376">Použití Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="c5efd-376">Use Utf8JsonWriter</span></span>
+## <a name="use-utf8jsonwriter"></a><span data-ttu-id="a2f7e-376">Použití Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="a2f7e-376">Use Utf8JsonWriter</span></span>
 
-<span data-ttu-id="c5efd-377">Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Utf8JsonWriter>:</span><span class="sxs-lookup"><span data-stu-id="c5efd-377">The following example shows how to use the <xref:System.Text.Json.Utf8JsonWriter> class:</span></span>
+<span data-ttu-id="a2f7e-377">Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Utf8JsonWriter>:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-377">The following example shows how to use the <xref:System.Text.Json.Utf8JsonWriter> class:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8WriterToStream.cs?name=SnippetSerialize)]
 
-## <a name="use-utf8jsonreader"></a><span data-ttu-id="c5efd-378">Použití Utf8JsonReader</span><span class="sxs-lookup"><span data-stu-id="c5efd-378">Use Utf8JsonReader</span></span>
+## <a name="use-utf8jsonreader"></a><span data-ttu-id="a2f7e-378">Použití Utf8JsonReader</span><span class="sxs-lookup"><span data-stu-id="a2f7e-378">Use Utf8JsonReader</span></span>
 
-<span data-ttu-id="c5efd-379">Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Utf8JsonReader>:</span><span class="sxs-lookup"><span data-stu-id="c5efd-379">The following example shows how to use the <xref:System.Text.Json.Utf8JsonReader> class:</span></span>
+<span data-ttu-id="a2f7e-379">Následující příklad ukazuje, jak použít třídu <xref:System.Text.Json.Utf8JsonReader>:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-379">The following example shows how to use the <xref:System.Text.Json.Utf8JsonReader> class:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8ReaderFromBytes.cs?name=SnippetDeserialize)]
 
-<span data-ttu-id="c5efd-380">Předchozí kód předpokládá, že proměnná `jsonUtf8` je bajtové pole, které obsahuje platný kód JSON kódovaný jako UTF-8.</span><span class="sxs-lookup"><span data-stu-id="c5efd-380">The preceding code assumes that the `jsonUtf8` variable is a byte array that contains valid JSON, encoded as UTF-8.</span></span>
+<span data-ttu-id="a2f7e-380">Předchozí kód předpokládá, že proměnná `jsonUtf8` je bajtové pole, které obsahuje platný kód JSON kódovaný jako UTF-8.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-380">The preceding code assumes that the `jsonUtf8` variable is a byte array that contains valid JSON, encoded as UTF-8.</span></span>
 
-### <a name="filter-data-using-utf8jsonreader"></a><span data-ttu-id="c5efd-381">Filtrování dat pomocí Utf8JsonReader</span><span class="sxs-lookup"><span data-stu-id="c5efd-381">Filter data using Utf8JsonReader</span></span>
+### <a name="filter-data-using-utf8jsonreader"></a><span data-ttu-id="a2f7e-381">Filtrování dat pomocí Utf8JsonReader</span><span class="sxs-lookup"><span data-stu-id="a2f7e-381">Filter data using Utf8JsonReader</span></span>
 
-<span data-ttu-id="c5efd-382">Následující příklad ukazuje, jak číst soubor synchronně a vyhledat hodnotu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-382">The following example shows how to read a file synchronously and search for a value:</span></span>
+<span data-ttu-id="a2f7e-382">Následující příklad ukazuje, jak číst soubor synchronně a vyhledat hodnotu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-382">The following example shows how to read a file synchronously and search for a value:</span></span>
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8ReaderFromFile.cs)]
 
-<span data-ttu-id="c5efd-383">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="c5efd-383">The preceding code:</span></span>
+<span data-ttu-id="a2f7e-383">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-383">The preceding code:</span></span>
 
-* <span data-ttu-id="c5efd-384">Předpokládá, že JSON obsahuje pole objektů a každý objekt může obsahovat vlastnost Name typu String.</span><span class="sxs-lookup"><span data-stu-id="c5efd-384">Assumes the JSON contains an array of objects and each object may contain a "name" property of type string.</span></span>
-* <span data-ttu-id="c5efd-385">Spočítá hodnoty vlastností Objects a Name, které končí na "University".</span><span class="sxs-lookup"><span data-stu-id="c5efd-385">Counts objects and "name" property values that end with "University".</span></span>
-* <span data-ttu-id="c5efd-386">Předpokládá, že soubor je kódovaný jako UTF-16 a překóduje ho do UTF-8.</span><span class="sxs-lookup"><span data-stu-id="c5efd-386">Assumes the file is encoded as UTF-16 and transcodes it into UTF-8.</span></span> <span data-ttu-id="c5efd-387">Soubor kódovaný jako UTF-8 lze číst přímo do `ReadOnlySpan<byte>`pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="c5efd-387">A file encoded as UTF-8 can be read directly into a `ReadOnlySpan<byte>`, by using the following code:</span></span>
+* <span data-ttu-id="a2f7e-384">Předpokládá, že JSON obsahuje pole objektů a každý objekt může obsahovat vlastnost Name typu String.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-384">Assumes the JSON contains an array of objects and each object may contain a "name" property of type string.</span></span>
+* <span data-ttu-id="a2f7e-385">Spočítá hodnoty vlastností Objects a Name, které končí na "University".</span><span class="sxs-lookup"><span data-stu-id="a2f7e-385">Counts objects and "name" property values that end with "University".</span></span>
+* <span data-ttu-id="a2f7e-386">Předpokládá, že soubor je kódovaný jako UTF-16 a překóduje ho do UTF-8.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-386">Assumes the file is encoded as UTF-16 and transcodes it into UTF-8.</span></span> <span data-ttu-id="a2f7e-387">Soubor kódovaný jako UTF-8 lze číst přímo do `ReadOnlySpan<byte>`pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="a2f7e-387">A file encoded as UTF-8 can be read directly into a `ReadOnlySpan<byte>`, by using the following code:</span></span>
 
   ```csharp
-  ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName); 
+  ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName);
   ```
 
-  <span data-ttu-id="c5efd-388">Pokud soubor obsahuje znak pořadí bajtů UTF-8 (BOM), odeberte ho před předáním bajtů do `Utf8JsonReader`, protože čtecí modul očekává text.</span><span class="sxs-lookup"><span data-stu-id="c5efd-388">If the file contains a UTF-8 byte order mark (BOM), remove it before passing the bytes to the `Utf8JsonReader`, since the reader expects text.</span></span> <span data-ttu-id="c5efd-389">V opačném případě se kusovník považuje za neplatný kód JSON a čtenář vyvolá výjimku.</span><span class="sxs-lookup"><span data-stu-id="c5efd-389">Otherwise, the BOM is considered invalid JSON, and the reader throws an exception.</span></span>
+  <span data-ttu-id="a2f7e-388">Pokud soubor obsahuje znak pořadí bajtů UTF-8 (BOM), odeberte ho před předáním bajtů do `Utf8JsonReader`, protože čtecí modul očekává text.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-388">If the file contains a UTF-8 byte order mark (BOM), remove it before passing the bytes to the `Utf8JsonReader`, since the reader expects text.</span></span> <span data-ttu-id="a2f7e-389">V opačném případě se kusovník považuje za neplatný kód JSON a čtenář vyvolá výjimku.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-389">Otherwise, the BOM is considered invalid JSON, and the reader throws an exception.</span></span>
 
-<span data-ttu-id="c5efd-390">Zde je ukázka JSON, kterou může předchozí kód přečíst.</span><span class="sxs-lookup"><span data-stu-id="c5efd-390">Here's a JSON sample that the preceding code can read.</span></span> <span data-ttu-id="c5efd-391">Výsledná Souhrnná zpráva je "2 z čtvrtého" má názvy, které končí na "University" ":</span><span class="sxs-lookup"><span data-stu-id="c5efd-391">The resulting summary message is "2 out of 4 have names that end with 'University'":</span></span>
+<span data-ttu-id="a2f7e-390">Zde je ukázka JSON, kterou může předchozí kód přečíst.</span><span class="sxs-lookup"><span data-stu-id="a2f7e-390">Here's a JSON sample that the preceding code can read.</span></span> <span data-ttu-id="a2f7e-391">Výsledná Souhrnná zpráva je "2 z čtvrtého" má názvy, které končí na "University" ":</span><span class="sxs-lookup"><span data-stu-id="a2f7e-391">The resulting summary message is "2 out of 4 have names that end with 'University'":</span></span>
 
 [!code-json[](~/samples/snippets/core/system-text-json/csharp/Universities.json)]
 
-## <a name="additional-resources"></a><span data-ttu-id="c5efd-392">Další materiály a zdroje informací</span><span class="sxs-lookup"><span data-stu-id="c5efd-392">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="a2f7e-392">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="a2f7e-392">Additional resources</span></span>
 
-* <span data-ttu-id="c5efd-393">[Přehled System.Text.Json](system-text-json-overview.md)</span><span class="sxs-lookup"><span data-stu-id="c5efd-393">[System.Text.Json overview](system-text-json-overview.md)</span></span>
-* [<span data-ttu-id="c5efd-394">Zápis vlastních převaděčů</span><span class="sxs-lookup"><span data-stu-id="c5efd-394">How to write custom converters</span></span>](system-text-json-converters-how-to.md)
-* <span data-ttu-id="c5efd-395">[Postup migrace z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)</span><span class="sxs-lookup"><span data-stu-id="c5efd-395">[How to migrate from Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)</span></span>
-* <span data-ttu-id="c5efd-396">[Podpora DateTime a DateTimeOffset v System.Text.Json](../datetime/system-text-json-support.md)</span><span class="sxs-lookup"><span data-stu-id="c5efd-396">[DateTime and DateTimeOffset support in System.Text.Json](../datetime/system-text-json-support.md)</span></span>
-* <span data-ttu-id="c5efd-397">[Reference k rozhraní API System.Text.Json](xref:System.Text.Json)</span><span class="sxs-lookup"><span data-stu-id="c5efd-397">[System.Text.Json API reference](xref:System.Text.Json)</span></span>
+* <span data-ttu-id="a2f7e-393">[Přehled System.Text.Json](system-text-json-overview.md)</span><span class="sxs-lookup"><span data-stu-id="a2f7e-393">[System.Text.Json overview](system-text-json-overview.md)</span></span>
+* [<span data-ttu-id="a2f7e-394">Zápis vlastních převaděčů</span><span class="sxs-lookup"><span data-stu-id="a2f7e-394">How to write custom converters</span></span>](system-text-json-converters-how-to.md)
+* <span data-ttu-id="a2f7e-395">[Postup migrace z Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)</span><span class="sxs-lookup"><span data-stu-id="a2f7e-395">[How to migrate from Newtonsoft.Json](system-text-json-migrate-from-newtonsoft-how-to.md)</span></span>
+* <span data-ttu-id="a2f7e-396">[Podpora DateTime a DateTimeOffset v System.Text.Json](../datetime/system-text-json-support.md)</span><span class="sxs-lookup"><span data-stu-id="a2f7e-396">[DateTime and DateTimeOffset support in System.Text.Json](../datetime/system-text-json-support.md)</span></span>
+* <span data-ttu-id="a2f7e-397">[Reference k rozhraní API System.Text.Json](xref:System.Text.Json)</span><span class="sxs-lookup"><span data-stu-id="a2f7e-397">[System.Text.Json API reference](xref:System.Text.Json)</span></span>
 <!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->
