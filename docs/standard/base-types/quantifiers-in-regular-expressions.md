@@ -14,12 +14,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: a7a870ac32385bf5015f1a95c0246fed6a5c9c05
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f1627248cbed0f03c6fb76ce660f9b2bf7764781
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084238"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160011"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků musí být přítomné ve vstupu pro nalezení shody.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -222,7 +222,7 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |`{1,10}`|Porovnává s předchozím vzorem mezi 1 a 10krát.|  
 |`[.!?]`|Porovnává s libovolným znakem interpunkce ".", "!" nebo "?".|  
   
-<a name="Greedy"></a>   
+<a name="Greedy"></a>
 ## <a name="greedy-and-lazy-quantifiers"></a>Hladce a opožděné kvantifikátory  
  Počet kvantifikátorů má dvě verze:  
   
@@ -261,7 +261,7 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`(a\1`|Buď porovnává "a" spolu s hodnotou první zachycené skupiny...|  
-|<code>&#124;(?(1)</code>|... nebo testujte, zda byla definována první zachycená skupina. (Všimněte si, že `(?(1)` konstrukce nedefinuje zachytávající skupinu.)|  
+|<code>&#124;(?(1)</code>|… nebo testujte, zda byla definována první zachycená skupina. (Všimněte si, že `(?(1)` konstrukce nedefinuje zachytávající skupinu.)|  
 |`\1))`|Pokud existuje první zachycená skupina, odpovídá její hodnotě. Pokud skupina neexistuje, bude skupina odpovídat <xref:System.String.Empty?displayProperty=nameWithType>.|  
   
  První regulární výraz se pokusí porovnat tento vzor mezi nulou a dvakrát. druhý, přesně dvakrát. Vzhledem k tomu, že první model dosáhne svého minimálního počtu zachycení s prvním zachycením <xref:System.String.Empty?displayProperty=nameWithType>, nikdy se neopakuje, aby se pokusila porovnat `a\1`; kvantifikátor `{0,2}` povoluje v poslední iteraci pouze prázdné shody. Naopak druhý regulární výraz odpovídá "a", protože vyhodnocuje `a\1` podruhé. minimální počet iterací, 2, vynutí, aby se modul opakoval po prázdné shodě.  
@@ -269,7 +269,7 @@ Kvantifikátory určují, kolik instancí znaku, skupiny nebo třídy znaků mus
  [!code-csharp[RegularExpressions.Quantifiers.EmptyMatch#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/cs/emptymatch4.cs#2)]
  [!code-vb[RegularExpressions.Quantifiers.EmptyMatch#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/vb/emptymatch4.vb#2)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
 - [Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
