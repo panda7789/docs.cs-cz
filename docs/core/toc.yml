@@ -12,6 +12,8 @@
       href: install/runtime.md
     - name: Podporovaný operační systém a závislosti
       href: install/dependencies.md
+    - name: Záležitosti „notářského“ ověřování pro macOS
+      href: install/macos-notarization-issues.md
     - name: Jak kontrolovat verze .NET Core
       href: install/how-to-detect-installed-versions.md
     - name: Správci balíčků pro Linux
@@ -109,6 +111,17 @@
           href: tutorials/cli-templates-create-project-template.md
         - name: 3 – Vytvoření sady šablon
           href: tutorials/cli-templates-create-template-pack.md
+    - name: Vytvoření nástrojů pro rozhraní příkazového řádku (CLI)
+      items:
+        - name: 1 – Vytvoření nástroje
+          displayName: 'tools, tutorials'
+          href: tools/global-tools-how-to-create.md
+        - name: 2 – Vytvoření globálního nástroje
+          displayName: 'tools, tutorials'
+          href: tools/global-tools-how-to-use.md
+        - name: 3 – Vytvoření místního nástroje
+          href: tools/local-tools-how-to-use.md
+          displayName: 'tools, tutorials'
 - name: Sady SDK projektu
   items:
     - name: Přehled
@@ -121,163 +134,12 @@
           href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
         - name: Microsoft.NET.Sdk.Razor
           href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
-- name: Konfigurace běhového prostředí
-  items:
-    - name: Nastavení
-      href: run-time-config/index.md
-    - name: Nastavení kompilace
-      href: run-time-config/compilation.md
-    - name: Nastavení ladění a profilace
-      href: run-time-config/debugging-profiling.md
-    - name: Nastavení systému uvolňování paměti
-      href: run-time-config/garbage-collector.md
-    - name: Nastavení globalizace
-      href: run-time-config/globalization.md
-    - name: Nastavení sítě
-      href: run-time-config/networking.md
-    - name: Nastavení dělení na vlákna
-      href: run-time-config/threading.md
-- name: Nativní interoperabilita
-  items:
-    - name: Vystavení komponent .NET Core pro COM
-      href: native-interop/expose-components-to-com.md
-- name: 'Balíčky, metabalíčky a architektury'
-  href: packages.md
-- name: Migrace
-  items:
-    - name: .NET Core 2.0 na 2.1
-      href: migration/20-21.md
-    - name: Migrace ze souboru project.json
-      href: migration/index.md
-    - name: Mapování mezi project.json a csproj
-      href: tools/project-json-to-csproj.md
-    - name: Přehled změn v CLI
-      href: tools/cli-msbuild-architecture.md
-    - name: Dodatky k formátu csproj
-      href: tools/csproj.md
-    - name: Migrace z DNX
-      href: migration/from-dnx.md
-- name: Nasazení aplikací
-  items:
-    - name: Přehled
-      href: deploying/index.md
-    - name: Publikování aplikací v rozhraní příkazového řádku
-      href: deploying/deploy-with-cli.md
-    - name: Nasazení aplikací pomocí sady Visual Studio
-      href: deploying/deploy-with-vs.md
-    - name: Vytvoření balíčku NuGet v rozhraní příkazového řádku
-      href: deploying/creating-nuget-packages.md
-    - name: Samostatné nasazení – dopředné posunutí modulu runtime
-      href: deploying/runtime-patch-selection.md
-    - name: Úložiště balíčků modulu runtime
-      href: deploying/runtime-store.md
-- name: Docker
-  items:
-    - name: Úvod k .NET a Dockeru
-      href: docker/introduction.md
-    - name: Kontejnerizace aplikace .NET Core
-      href: docker/build-container.md
-    - name: Nástroje kontejneru v sadě Visual Studio
-      href: /visualstudio/containers/overview
-- name: Diagnostické nástroje
-  items:
-    - name: Přehled
-      href: diagnostics/index.md
-    - name: Spravované ladicí programy
-      href: diagnostics/managed-debuggers.md
-    - name: Protokolování a trasování
-      href: diagnostics/logging-tracing.md
-    - name: Globální nástroje .NET Core CLI
-      items:
-        - name: dotnet-counters
-          href: diagnostics/dotnet-counters.md
-        - name: dotnet-dump
-          href: diagnostics/dotnet-dump.md
-        - name: dotnet-trace
-          href: diagnostics/dotnet-trace.md
-    - name: Kurzy diagnostiky .NET Core
-      items:
-        - name: Ladění nevrácené paměti
-          href: diagnostics/debug-memory-leak.md
-- name: Testování jednotek
-  href: testing/index.md
-  items:
-    - name: Přehled
-      href: testing/index.md
-    - name: Osvědčené postupy pro testování částí
-      href: testing/unit-testing-best-practices.md
-    - name: 'Testování částí v C# s použitím xUnit'
-      href: testing/unit-testing-with-dotnet-test.md
-    - name: 'Testování částí v C# s použitím NUnit'
-      href: testing/unit-testing-with-nunit.md
-    - name: 'Testování částí v C# s použitím MSTest'
-      href: testing/unit-testing-with-mstest.md
-    - name: 'Testování částí v F# s použitím xUnit'
-      href: testing/unit-testing-fsharp-with-dotnet-test.md
-    - name: 'Testování částí v F# s použitím NUnit'
-      href: testing/unit-testing-fsharp-with-nunit.md
-    - name: 'Testování částí v F# s použitím MSTest'
-      href: testing/unit-testing-fsharp-with-mstest.md
-    - name: Testování částí ve Visual Basicu s použitím xUnit
-      href: testing/unit-testing-visual-basic-with-dotnet-test.md
-    - name: Testování částí ve Visual Basicu s použitím NUnit
-      href: testing/unit-testing-visual-basic-with-nunit.md
-    - name: Testování částí ve Visual Basicu s použitím MSTest
-      href: testing/unit-testing-visual-basic-with-mstest.md
-    - name: Spouštění selektivních testů jednotek
-      href: testing/selective-unit-tests.md
-    - name: Publikovaný výstup testování částí
-      href: testing/unit-testing-published-output.md
-    - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
-      href: /visualstudio/test/live-unit-testing-start
-- name: Kontinuální integrace
-  href: tools/using-ci-with-cli.md
-- name: Správa verzí
-  items:
-    - name: Přehled
-      href: versions/index.md
-    - name: Výběr verze .NET Core
-      href: versions/selection.md
-    - name: Odebrání zastaralých modulů runtime a sad SDK
-      href: versions/remove-runtime-sdk-versions.md
-- name: Katalog RID (Runtime Identifier)
-  href: rid-catalog.md
 - name: Přehled sady .NET Core SDK
   href: sdk.md
 - name: Rozhraní příkazového řádku .NET Core
   items:
     - name: Přehled
       href: tools/index.md
-    - name: Globální a místní nástroje
-      expanded: true
-      items:
-        - name: Postupy při správě nástrojů
-          href: tools/global-tools.md
-        - name: Kurzy
-          items:
-            - name: Vytvoření nástroje
-              displayName: tools
-              href: tools/global-tools-how-to-create.md
-            - name: Instalace a použití globálního nástroje
-              displayName: tools
-              href: tools/global-tools-how-to-use.md
-            - name: Instalace a použití místního nástroje
-              displayName: tools
-              href: tools/local-tools-how-to-use.md
-        - name: Řešení potíží s nástroji
-          href: tools/troubleshoot-usage-issues.md
-    - name: Přístup se zvýšenými oprávněními
-      href: tools/elevated-access.md
-    - name: Model rozšíření
-      href: tools/extensibility.md
-    - name: Vlastní šablony
-      href: tools/custom-templates.md
-    - name: Povolení dokončování pomocí tabulátoru
-      href: tools/enable-tab-autocomplete.md
-    - name: Telemetrie
-      href: tools/telemetry.md
-    - name: global.json – přehled
-      href: tools/global-json.md
     - name: Odkaz
       items:
         - name: dotnet
@@ -352,6 +214,44 @@
               href: tools/dotnet-list-package.md
             - name: dotnet remove package
               href: tools/dotnet-remove-package.md
+    - name: Globální a místní nástroje
+      items:
+        - name: Správa nástrojů
+          href: tools/global-tools.md
+        - name: Řešení potíží s nástroji
+          href: tools/troubleshoot-usage-issues.md
+    - name: global.json – přehled
+      href: tools/global-json.md
+    - name: Vlastní šablony
+      href: tools/custom-templates.md
+    - name: Telemetrie
+      href: tools/telemetry.md
+    - name: Přístup se zvýšenými oprávněními
+      href: tools/elevated-access.md
+    - name: Povolení dokončování pomocí tabulátoru
+      href: tools/enable-tab-autocomplete.md
+    - name: Model rozšíření
+      href: tools/extensibility.md
+- name: Diagnostické nástroje
+  items:
+    - name: Přehled
+      href: diagnostics/index.md
+    - name: Spravované ladicí programy
+      href: diagnostics/managed-debuggers.md
+    - name: Protokolování a trasování
+      href: diagnostics/logging-tracing.md
+    - name: Globální nástroje .NET Core CLI
+      items:
+        - name: dotnet-counters
+          href: diagnostics/dotnet-counters.md
+        - name: dotnet-dump
+          href: diagnostics/dotnet-dump.md
+        - name: dotnet-trace
+          href: diagnostics/dotnet-trace.md
+    - name: Kurzy diagnostiky .NET Core
+      items:
+        - name: Ladění nevrácené paměti
+          href: diagnostics/debug-memory-leak.md
 - name: Další nástroje platformy .NET Core
   items:
     - name: Přehled
@@ -366,6 +266,58 @@
       href: additional-tools/dotnet-svcutil.xmlserializer-guide.md
     - name: XML Serializer Generator
       href: additional-tools/xml-serializer-generator.md
+- name: Nasazení aplikací
+  items:
+    - name: Přehled
+      href: deploying/index.md
+    - name: Publikování aplikací v rozhraní příkazového řádku
+      href: deploying/deploy-with-cli.md
+    - name: Nasazení aplikací pomocí sady Visual Studio
+      href: deploying/deploy-with-vs.md
+    - name: Vytvoření balíčku NuGet v rozhraní příkazového řádku
+      href: deploying/creating-nuget-packages.md
+    - name: Samostatné nasazení – dopředné posunutí modulu runtime
+      href: deploying/runtime-patch-selection.md
+    - name: Úložiště balíčků modulu runtime
+      href: deploying/runtime-store.md
+- name: Docker
+  items:
+    - name: Úvod k .NET a Dockeru
+      href: docker/introduction.md
+    - name: Kontejnerizace aplikace .NET Core
+      href: docker/build-container.md
+    - name: Nástroje kontejneru v sadě Visual Studio
+      href: /visualstudio/containers/overview
+- name: Konfigurace běhového prostředí
+  items:
+    - name: Nastavení
+      href: run-time-config/index.md
+    - name: Nastavení kompilace
+      href: run-time-config/compilation.md
+    - name: Nastavení ladění a profilace
+      href: run-time-config/debugging-profiling.md
+    - name: Nastavení systému uvolňování paměti
+      href: run-time-config/garbage-collector.md
+    - name: Nastavení globalizace
+      href: run-time-config/globalization.md
+    - name: Nastavení sítě
+      href: run-time-config/networking.md
+    - name: Nastavení dělení na vlákna
+      href: run-time-config/threading.md
+- name: Migrace
+  items:
+    - name: .NET Core 2.0 na 2.1
+      href: migration/20-21.md
+    - name: Migrace ze souboru project.json
+      href: migration/index.md
+    - name: Mapování mezi project.json a csproj
+      href: tools/project-json-to-csproj.md
+    - name: Přehled změn v CLI
+      href: tools/cli-msbuild-architecture.md
+    - name: Dodatky k formátu csproj
+      href: tools/csproj.md
+    - name: Migrace z DNX
+      href: migration/from-dnx.md
 - name: Přenos z rozhraní .NET Framework
   items:
     - name: Přehled
@@ -388,6 +340,47 @@
       href: porting/wpf.md
     - name: Portování projektů v C++/CLI
       href: porting/cpp-cli.md
+- name: Testování jednotek
+  href: testing/index.md
+  items:
+    - name: Přehled
+      href: testing/index.md
+    - name: Osvědčené postupy pro testování částí
+      href: testing/unit-testing-best-practices.md
+    - name: 'Testování částí v C# s použitím xUnit'
+      href: testing/unit-testing-with-dotnet-test.md
+    - name: 'Testování částí v C# s použitím NUnit'
+      href: testing/unit-testing-with-nunit.md
+    - name: 'Testování částí v C# s použitím MSTest'
+      href: testing/unit-testing-with-mstest.md
+    - name: 'Testování částí v F# s použitím xUnit'
+      href: testing/unit-testing-fsharp-with-dotnet-test.md
+    - name: 'Testování částí v F# s použitím NUnit'
+      href: testing/unit-testing-fsharp-with-nunit.md
+    - name: 'Testování částí v F# s použitím MSTest'
+      href: testing/unit-testing-fsharp-with-mstest.md
+    - name: Testování částí ve Visual Basicu s použitím xUnit
+      href: testing/unit-testing-visual-basic-with-dotnet-test.md
+    - name: Testování částí ve Visual Basicu s použitím NUnit
+      href: testing/unit-testing-visual-basic-with-nunit.md
+    - name: Testování částí ve Visual Basicu s použitím MSTest
+      href: testing/unit-testing-visual-basic-with-mstest.md
+    - name: Spouštění selektivních testů jednotek
+      href: testing/selective-unit-tests.md
+    - name: Publikovaný výstup testování částí
+      href: testing/unit-testing-published-output.md
+    - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
+      href: /visualstudio/test/live-unit-testing-start
+- name: Správa verzí
+  items:
+    - name: Přehled
+      href: versions/index.md
+    - name: Výběr verze .NET Core
+      href: versions/selection.md
+    - name: Odebrání zastaralých modulů runtime a sad SDK
+      href: versions/remove-runtime-sdk-versions.md
+- name: Katalog RID (Runtime Identifier)
+  href: rid-catalog.md
 - name: Správa a načítání závislostí
   items:
     - name: Správa závislostí
@@ -414,3 +407,9 @@
           href: ../standard/assembly/unloadability-howto.md
 - name: Vytváření distribučních balíčků .NET Core
   href: distribution-packaging.md
+- name: Vystavení komponent .NET Core pro COM
+  href: native-interop/expose-components-to-com.md
+- name: 'Balíčky, metabalíčky a architektury'
+  href: packages.md
+- name: Kontinuální integrace
+  href: tools/using-ci-with-cli.md
