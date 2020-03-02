@@ -1181,7 +1181,7 @@
           href: walkthrough-authoring-a-composite-control-with-visual-csharp.md
         - name: 'Návod: Dědění z ovládacího prvku'
           href: walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md
-        - name: 'Návod: Provádění běžných úloh pomocí inteligentních značek'
+        - name: 'Návod: Provádění běžných úloh pomocí akcí návrhu'
           href: perform-common-tasks-design-actions.md
         - name: 'Návod: Serializace kolekcí standardních typů'
           href: serializing-collections-designerserializationvisibilityattribute.md
