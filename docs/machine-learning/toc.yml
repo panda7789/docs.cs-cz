@@ -121,5 +121,7 @@
       href: resources/index.md
     - name: Slovníček
       href: resources/glossary.md
+    - name: Školicí materiály k Azure
+      href: resources/azure-training-concepts-model-builder.md
     - name: Telemetrie rozhraní příkazového řádku
       href: resources/ml-net-cli-telemetry.md
