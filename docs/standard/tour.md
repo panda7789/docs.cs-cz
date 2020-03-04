@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: f4cd2e47da236d276a42b972265ffd1a2fe27310
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 61d4792b1f1b92dd59442ee38810da96c6cf63bd
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160336"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241140"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 
@@ -41,7 +41,7 @@ Rozhraní .NET používá [uvolňování paměti (GC)](garbage-collection/index.
 
 Paměť přidělují následující dva řádky:
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L1-L2)]
+[!code-csharp[MemoryManagement](../../samples/snippets/csharp/snippets/tour/MemoryManagement.csx#L1-L2)]
 
 Neexistuje žádné podobné klíčové slovo, které by bylo možné zrušit přidělení paměti, protože dealokace probíhá automaticky, když uvolňování paměti uvolní paměť prostřednictvím naplánovaného spuštění.
 
@@ -49,7 +49,7 @@ Systém uvolňování paměti je jednou ze služeb, které pomůžou zajistit *b
 
 V následujícím příkladu vyvolá modul runtime výjimku <xref:System.IndexOutOfRangeException> pro vymáhání zabezpečení paměti:
 
-[!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
+[!code-csharp[MemoryManagement](../../samples/snippets/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 ## <a name="working-with-unmanaged-resources"></a>Práce s nespravovanými prostředky
 
@@ -57,7 +57,7 @@ Některé objekty odkazují na *nespravované prostředky*. Nespravované prost�
 
 V rozhraní .NET objekty, které odkazují na nespravované prostředky, implementují rozhraní <xref:System.IDisposable>. Po dokončení používání objektu zavoláte <xref:System.IDisposable.Dispose> metodu objektu, která je zodpovědná za uvolnění nespravovaných prostředků. Jazyky .NET poskytují pohodlný [příkaz`using`](../csharp/language-reference/keywords/using.md) pro takové objekty, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
+[!code-csharp[UnmanagedResources](../../samples/snippets/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
 Po dokončení `using` bloku rozhraní .NET runtime automaticky zavolá metodu <xref:System.IDisposable.Dispose> objektu `stream`, která uvolní popisovač souboru. Modul runtime také provádí tuto chybu, pokud výjimka způsobí, že ovládací prvek opustí blok.
 
@@ -73,15 +73,15 @@ Objekt je instance konkrétního typu. Jediné operace, které jsou povoleny pro
 
 Jazyky .NET jsou objektově orientované s hierarchiemi základních a odvozených tříd. Modul runtime .NET povoluje pouze přetypování a volání objektů, které odpovídají hierarchii objektů. Pamatujte, že každý typ definovaný v jakémkoli jazyce .NET je odvozen ze základního typu <xref:System.Object>.
 
-[!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L19-L23)]
+[!code-csharp[TypeSafety](../../samples/snippets/csharp/snippets/tour/TypeSafety.csx#L19-L23)]
 
 Bezpečnost typů se také používá k vymáhání zapouzdření tím, že zaručuje přesnost přístupových klíčových slov. Přístupová klíčová slova jsou artefakty, které řídí přístup ke členům daného typu jiným kódem. Ty se obvykle používají pro různé druhy dat v rámci typu, který se používá ke správě jeho chování.
 
-[!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
+[!code-csharp[TypeSafety](../../samples/snippets/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
 C#, Visual Basic a F# podpora *odvození místního typu*. Odvození typu znamená, že kompilátor odvodit typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že bezpečnost typů je přerušena nebo se nepoužívá. Výsledný typ má silný typ se všemi, který implikuje. Z předchozího příkladu je přepsána `dog` pro zavedení odvození typu a zbývající část příkladu je beze změny:
 
-[!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
+[!code-csharp[TypeSafety](../../samples/snippets/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
 F#má ještě další možnosti odvození typu, než odvození typu místní metody, které se C# nacházejí v a Visual Basic. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
 
@@ -101,7 +101,7 @@ Byly přidány obecné typy, které programátorům pomůžou implementovat gene
 
 Následující příklad ukazuje základní program spuštěný pomocí instance <xref:System.Collections.Generic.List%601>ch typů:
 
-[!code-csharp[GenericsShort](../../samples/csharp/snippets/tour/GenericsShort.csx)]
+[!code-csharp[GenericsShort](../../samples/snippets/csharp/snippets/tour/GenericsShort.csx)]
 
 Další informace naleznete v tématu [Obecné typy (obecné typy) – přehled](generics.md) .
 
@@ -133,7 +133,7 @@ V závislosti na jazykové podpoře vám CLR umožní přistupovat k nativní pa
 
 Následující příklad je upravená verze metody `ToString()` z `StringBuilder` třídy. Ukazuje, jak lze pomocí `unsafe` kódu efektivně implementovat algoritmus přesunutím kolem bloků paměti přímo:
 
-[!code-csharp[Unsafe](../../samples/csharp/snippets/tour/Unsafe.csx)]
+[!code-csharp[Unsafe](../../samples/snippets/csharp/snippets/tour/Unsafe.csx)]
 
 ## <a name="next-steps"></a>Další kroky
 

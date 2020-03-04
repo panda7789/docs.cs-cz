@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 1a691ad0c1f8dbfadd642360d7f9629a136ff3ab
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: fe69521a6ac88055e3e8c8502a7e19a72667dbef
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156657"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240854"
 ---
 # <a name="get-started-with-net-core-using-the-net-core-cli"></a>Začínáme s .NET Core s využitím .NET Core CLI
 
@@ -43,7 +43,7 @@ Podívejme se na stručný návod:
 
     *Hello. csproj*:
 
-    [!code-xml[Hello.csproj](~/samples/core/console-apps/HelloMsBuild/Hello.csproj)]
+    [!code-xml[Hello.csproj](~/samples/snippets/core/tutorials/cli-create-console-app/HelloMsBuild/csharp/Hello.csproj)]
 
     Soubor projektu určuje vše potřebné k obnovení závislostí a sestavování programu.
 
@@ -52,7 +52,7 @@ Podívejme se na stručný návod:
 
     *Program.cs*:
 
-    [!code-csharp[Program.cs](~/samples/core/console-apps/HelloMsBuild/Program.cs)]
+    [!code-csharp[Program.cs](~/samples/snippets/core/tutorials/cli-create-console-app/HelloMsBuild/csharp/Program.cs)]
 
     Program se spustí `using System`, což znamená "přenést vše do oboru názvů `System` do rozsahu pro tento soubor". Obor názvů `System` obsahuje třídu `Console`.
 
@@ -100,7 +100,7 @@ Pojďme program trochu změnit. Fibonacci čísla jsou zábavné, takže je při
 
 01. Obsah souboru *program.cs* nahraďte následujícím kódem:
 
-    [!code-csharp[Fibonacci](~/samples/core/console-apps/fibonacci-msbuild/Program.cs)]
+    [!code-csharp[Fibonacci](~/samples/snippets/core/tutorials/cli-create-console-app/fibonacci-msbuild/csharp/Program.cs)]
 
 02. Spusťte [sestavení dotnet](../tools/dotnet-build.md) pro zkompilování změn.
 
@@ -140,11 +140,11 @@ Jednotlivé soubory jsou pro jednoduché jednorázové programy přesné, ale po
 
 01. Přidejte nový soubor do adresáře *Hello* s názvem *FibonacciGenerator.cs* s následujícím kódem:
 
-    [!code-csharp[Fibonacci Generator](~/samples/core/console-apps/FibonacciBetterMsBuild/FibonacciGenerator.cs)]
+    [!code-csharp[Fibonacci Generator](~/samples/snippets/core/tutorials/cli-create-console-app/FibonacciBetterMsBuild/csharp/FibonacciGenerator.cs)]
 
 02. Změňte metodu `Main` v souboru *program.cs* pro vytvoření instance nové třídy a zavolejte její metodu jako v následujícím příkladu:
 
-    [!code-csharp[New Program.cs](~/samples/core/console-apps/FibonacciBetterMsBuild/Program.cs)]
+    [!code-csharp[New Program.cs](~/samples/snippets/core/tutorials/cli-create-console-app/FibonacciBetterMsBuild/csharp/Program.cs)]
 
 03. Spusťte [sestavení dotnet](../tools/dotnet-build.md) pro zkompilování změn.
 

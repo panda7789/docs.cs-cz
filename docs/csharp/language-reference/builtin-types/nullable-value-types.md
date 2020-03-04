@@ -4,12 +4,12 @@ description: Další informace C# o typech hodnot s možnou hodnotou null a jeji
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: bd90a0b1b77349efe581eb8aae44c58802ba756d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 9b7a1e7e639608248b4b465bd440247b4061f52e
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093185"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239791"
 ---
 # <a name="nullable-value-types-c-reference"></a>Typy hodnot s možnou hodnotou null (C# Referenční dokumentace)
 
@@ -24,9 +24,9 @@ Pokud potřebujete reprezentovat nedefinovanou hodnotu základního typu hodnoty
 
 ## <a name="declaration-and-assignment"></a>Deklarace a přiřazení
 
-Typ hodnoty je implicitně převoditelný na odpovídající typ hodnoty s možnou hodnotou null, takže můžete přiřadit hodnotu proměnné typu hodnoty s možnou hodnotou null, jako byste to proznamenali pro svůj základní typ hodnoty. Můžete také přiřadit hodnotu `null`. Například:
+Typ hodnoty je implicitně převoditelný na odpovídající typ hodnoty s možnou hodnotou null, takže můžete přiřadit hodnotu proměnné typu hodnoty s možnou hodnotou null, jako byste to proznamenali pro svůj základní typ hodnoty. Můžete také přiřadit hodnotu `null`. Příklad:
 
-[!code-csharp[declare and assign](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#Declaration)]
+[!code-csharp[declare and assign](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#Declaration)]
 
 Výchozí hodnota typu hodnoty s možnou hodnotou null představuje `null`, to znamená, že se jedná o instanci, jejíž vlastnost <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType> vrací `false`.
 
@@ -34,7 +34,7 @@ Výchozí hodnota typu hodnoty s možnou hodnotou null představuje `null`, to z
 
 Počínaje C# 7,0 můžete použít [operátor`is` se vzorkem typu](../operators/type-testing-and-cast.md#type-testing-with-pattern-matching) pro prohlédnutí instance typu hodnoty s možnou hodnotou null pro `null` a načtení hodnoty nadřazeného typu:
 
-[!code-csharp-interactive[use pattern matching](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#PatternMatching)]
+[!code-csharp-interactive[use pattern matching](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#PatternMatching)]
 
 Vždy můžete použít následující vlastnosti jen pro čtení k prohlédnutí a získání hodnoty proměnné typu s možnou hodnotou null:
 
@@ -44,23 +44,23 @@ Vždy můžete použít následující vlastnosti jen pro čtení k prohlédnut�
 
 Následující příklad používá vlastnost `HasValue` k otestování, zda proměnná obsahuje hodnotu před jejich zobrazením:
 
-[!code-csharp-interactive[use HasValue](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#HasValue)]
+[!code-csharp-interactive[use HasValue](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#HasValue)]
 
 Můžete také porovnat proměnnou typu hodnoty s možnou hodnotou null s `null` namísto použití vlastnosti `HasValue`, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[use comparison with null](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#CompareWithNull)]
+[!code-csharp-interactive[use comparison with null](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#CompareWithNull)]
 
 ## <a name="conversion-from-a-nullable-value-type-to-an-underlying-type"></a>Převod z typu hodnoty s možnou hodnotou null na nadřízený typ
 
 Pokud chcete přiřadit hodnotu typu hodnoty s možnou hodnotou null na proměnnou typu hodnoty, která není null, možná budete muset zadat hodnotu, která má být přiřazena místo `null`. Použijte [operátor slučování s hodnotou null `??`](../operators/null-coalescing-operator.md) k tomu, abyste to mohli udělat (můžete také použít metodu <xref:System.Nullable%601.GetValueOrDefault(%600)?displayProperty=nameWithType> pro stejný účel):
 
-[!code-csharp-interactive[?? operator](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#NullCoalescing)]
+[!code-csharp-interactive[?? operator](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#NullCoalescing)]
 
 Pokud chcete použít [výchozí](default-values.md) hodnotu základního typu hodnoty místo `null`, použijte metodu <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType>.
 
 Typ hodnoty s možnou hodnotou null můžete také explicitně přetypovat na typ, který není null, jak ukazuje následující příklad:
 
-[!code-csharp[explicit cast](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#Cast)]
+[!code-csharp[explicit cast](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#Cast)]
 
 V době běhu, pokud je hodnota typu hodnoty s možnou hodnotou null `null`, vyvolá explicitní přetypování <xref:System.InvalidOperationException>.
 
@@ -68,9 +68,9 @@ Typ hodnoty, která není null, `T`, se implicitně převodit na odpovídající
 
 ## <a name="lifted-operators"></a>Zrušené operátory
 
-Předdefinované unární a binární [operátory](../operators/index.md) nebo jakékoli přetížené operátory, které jsou podporovány hodnotou typu `T`, jsou podporovány také odpovídajícím typem hodnoty s možnou hodnotou null `T?`. Tyto operátory, označované také jako přenesené *operátory*, vyvolávají `null`, pokud jsou jeden nebo oba operandy `null`; v opačném případě operátor používá k výpočtu výsledku obsažené hodnoty operandů. Například:
+Předdefinované unární a binární [operátory](../operators/index.md) nebo jakékoli přetížené operátory, které jsou podporovány hodnotou typu `T`, jsou podporovány také odpovídajícím typem hodnoty s možnou hodnotou null `T?`. Tyto operátory, označované také jako přenesené *operátory*, vyvolávají `null`, pokud jsou jeden nebo oba operandy `null`; v opačném případě operátor používá k výpočtu výsledku obsažené hodnoty operandů. Příklad:
 
-[!code-csharp[lifted operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
+[!code-csharp[lifted operators](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
 
 > [!NOTE]
 > Pro `bool?` typ `&` předdefinované operátory a `|` nepostupují podle pravidel popsaných v této části: výsledek vyhodnocení operátoru může být bez hodnoty null, i když je jeden z operandů `null`. Další informace naleznete v části s [možnou hodnotou null logických operátorů](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](../operators/boolean-logical-operators.md) .
@@ -80,7 +80,7 @@ Pro [operátory porovnání](../operators/comparison-operators.md) `<`, `>`, `<=
 - ani větší než nebo rovno `null`
 - bez `null`
 
-[!code-csharp-interactive[relational and equality operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#ComparisonOperators)]
+[!code-csharp-interactive[relational and equality operators](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#ComparisonOperators)]
 
 U [operátoru rovnosti](../operators/equality-operators.md#equality-operator-) `==`, pokud jsou oba operandy `null`, je výsledek `true`, pokud je `null`pouze jeden z operandů, výsledek je `false`; v opačném případě jsou obsažené hodnoty operandů porovnány.
 
@@ -97,27 +97,27 @@ Instance typu hodnoty s možnou hodnotou null `T?` je [zabalená](../../programm
 
 Můžete unbox zabalenou hodnotu typu hodnoty `T` k odpovídajícímu typu hodnoty s možnou hodnotou null `T?`, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[boxing and unboxing](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#Boxing)]
+[!code-csharp-interactive[boxing and unboxing](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#Boxing)]
 
 ## <a name="how-to-identify-a-nullable-value-type"></a>Jak identifikovat typ hodnoty s možnou hodnotou null
 
 Následující příklad ukazuje, jak určit, zda <xref:System.Type?displayProperty=nameWithType> instance představuje konstruovaný typ hodnoty s možnou hodnotou null, tj. <xref:System.Nullable%601?displayProperty=nameWithType> typ se zadaným parametrem typu `T`:
 
-[!code-csharp-interactive[whether Type is nullable](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsTypeNullable)]
+[!code-csharp-interactive[whether Type is nullable](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsTypeNullable)]
 
 Jak ukazuje příklad, použijte operátor [typeof](../operators/type-testing-and-cast.md#typeof-operator) k vytvoření instance <xref:System.Type?displayProperty=nameWithType>.
 
 Chcete-li určit, zda je instance typu s možnou hodnotou null, nepoužívejte metodu <xref:System.Object.GetType%2A?displayProperty=nameWithType> k získání <xref:System.Type> instance, která má být testována pomocí předchozího kódu. Při volání metody <xref:System.Object.GetType%2A?displayProperty=nameWithType> u instance typu hodnoty s možnou hodnotou null je instance [zabalena](#boxing-and-unboxing) do <xref:System.Object>. Jako zabalení instance typu s možnou hodnotou null je ekvivalentem zabalení hodnoty nenulového typu, <xref:System.Object.GetType%2A> vrátí instanci <xref:System.Type>, která představuje nadřízený typ hodnoty s možnou hodnotou null:
 
-[!code-csharp-interactive[GetType example](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#GetType)]
+[!code-csharp-interactive[GetType example](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#GetType)]
 
 Nepoužívejte také operátor [is](../operators/type-testing-and-cast.md#is-operator) k určení, zda je instance typu hodnot s možnou hodnotou null. Jak ukazuje následující příklad, nelze odlišit typy instance typu s možnou hodnotou null a její základní typ instance s operátorem `is`:
 
-[!code-csharp-interactive[is operator example](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsOperator)]
+[!code-csharp-interactive[is operator example](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsOperator)]
 
 K určení, zda je instance typu s možnou hodnotou null, lze použít kód prezentovaný v následujícím příkladu:
 
-[!code-csharp-interactive[whether an instance is of a nullable type](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsInstanceNullable)]
+[!code-csharp-interactive[whether an instance is of a nullable type](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsInstanceNullable)]
 
 > [!NOTE]
 > Metody popsané v této části se nevztahují na [typy odkazů s možnou hodnotou null](../../nullable-references.md).

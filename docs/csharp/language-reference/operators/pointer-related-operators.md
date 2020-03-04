@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 9851fcd056eeee33b8f3d7e9d541f9fa43b36d29
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 51e6aeda7699d9e2fe3c46ced93e1783a52e6743
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036148"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78238959"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Operátory související s ukazateli (C# referenční)
 
@@ -46,11 +46,11 @@ Informace o typech ukazatelů naleznete v tématu [typy ukazatelů](../../progra
 
 Unární operátor `&` vrátí adresu svého operandu:
 
-[!code-csharp[address of local](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
+[!code-csharp[address of local](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
 
 Operandem operátoru `&` musí být pevná proměnná. *Pevné* proměnné jsou proměnné, které jsou umístěny v umístěních úložiště, která nejsou ovlivněna operací [uvolňování paměti](../../../standard/garbage-collection/index.md). V předchozím příkladu je místní proměnná `number` pevnou proměnnou, protože se nachází v zásobníku. Proměnné, které jsou umístěné v umístění úložiště, které může být ovlivněno systémem uvolňování paměti (například přemístěné), se nazývají *pohyblivé* proměnné. V příkladech pohyblivých proměnných jsou pole objektů a prvky pole. Adresu pohyblivé proměnné můžete získat, pokud "opravíte" nebo "PIN" a pomocí [příkazu`fixed`](../keywords/fixed-statement.md). Získaná adresa je platná pouze uvnitř bloku příkazu `fixed`. Následující příklad ukazuje, jak použít příkaz `fixed` a operátor `&`:
 
-[!code-csharp[address of fixed](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
+[!code-csharp[address of fixed](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
 
 Nemůžete získat adresu konstanty nebo hodnoty.
 
@@ -62,7 +62,7 @@ Operátor binárního `&` vypočítá [logický a](boolean-logical-operators.md#
 
 Operátor dereference unárního ukazatele `*` získá proměnnou, ke které má svůj operand ukazatel. Označuje se také jako operátor odkázání. Operand operátoru `*` musí být typu ukazatele.
 
-[!code-csharp[pointer indirection](~/samples/csharp/language-reference/operators/PointerOperators.cs#PointerIndirection)]
+[!code-csharp[pointer indirection](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#PointerIndirection)]
 
 Operátor `*` nelze použít na výraz typu `void*`.
 
@@ -84,17 +84,17 @@ je ekvivalentem
 
 Následující příklad ukazuje použití operátoru `->`:
 
-[!code-csharp[pointer member access](~/samples/csharp/language-reference/operators/PointerOperators.cs#MemberAccess)]
+[!code-csharp[pointer member access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#MemberAccess)]
 
 Operátor `->` nelze použít na výraz typu `void*`.
 
 ## <a name="pointer-element-access-operator-"></a>Operátor přístupu k elementu ukazatele []
 
-Pro výraz `p` typu ukazatele je přístup k prvku `p[n]` formuláře vyhodnocen jako `*(p + n)`, kde `n` musí být typu implicitně převést na `int``uint``long`nebo `ulong`. Informace o chování operátoru `+` s ukazateli naleznete v části [sčítání nebo odčítání celočíselné hodnoty nebo z ukazatele na ukazatel](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) .
+Pro výraz `p` typu ukazatele je přístup k prvku `p[n]` formuláře vyhodnocen jako `*(p + n)`, kde `n` musí být typu implicitně převoditelná na `int`, `uint`, `long`nebo `ulong`. Informace o chování operátoru `+` s ukazateli naleznete v části [sčítání nebo odčítání celočíselné hodnoty nebo z ukazatele na ukazatel](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) .
 
 Následující příklad ukazuje, jak přistupovat k prvkům pole s ukazatelem a operátorem `[]`:
 
-[!code-csharp[pointer element access](~/samples/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
+[!code-csharp[pointer element access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
 
 V příkladu se pomocí [operátoru`stackalloc`](stackalloc.md) přidělí blok paměti v zásobníku.
 
@@ -128,7 +128,7 @@ Pro ukazatel `p` typu `T*` a výraz `n` pro typ implicitně převoditelný na `i
 
 Následující příklad ukazuje použití operátoru `+` s ukazatelem:
 
-[!code-csharp[pointer addition](~/samples/csharp/language-reference/operators/PointerOperators.cs#AddNumber)]
+[!code-csharp[pointer addition](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddNumber)]
 
 ### <a name="pointer-subtraction"></a>Odečtení ukazatele
 
@@ -136,7 +136,7 @@ Pro dva ukazatele `p1` a `p2` typu `T*``p1 - p2` výraz vygeneruje rozdíl mezi 
 
 Následující příklad ukazuje odčítání ukazatele:
 
-[!code-csharp[pointer subtraction](~/samples/csharp/language-reference/operators/PointerOperators.cs#SubtractPointers)]
+[!code-csharp[pointer subtraction](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#SubtractPointers)]
 
 ### <a name="pointer-increment-and-decrement"></a>Zvýšení a snížení ukazatele
 
@@ -146,7 +146,7 @@ Oba operátory jsou podporovány ve dvou formulářích: přípona (`p++` a `p--
 
 Následující příklad demonstruje chování obou operátorů přípony i prefixu:
 
-[!code-csharp[pointer increment](~/samples/csharp/language-reference/operators/PointerOperators.cs#Increment)]
+[!code-csharp[pointer increment](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#Increment)]
 
 ## <a name="pointer-comparison-operators"></a>Operátory porovnání ukazatelů
 
@@ -185,7 +185,7 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 - [Zvýšení a snížení ukazatele](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
 - [Porovnání ukazatelů](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)

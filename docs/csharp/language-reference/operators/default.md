@@ -4,12 +4,12 @@ description: Použití výchozího operátoru k vytvoření výchozí hodnoty ty
 ms.date: 08/01/2019
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 651c4698514aee8cf4dab75ea32c98493e19a30b
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: ba4c02caa53a9d532be4012a4543a25cd41b6023
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964624"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239310"
 ---
 # <a name="default-operator-c-reference"></a>Default – operátorC# (Referenční dokumentace)
 
@@ -17,7 +17,7 @@ Operátor `default` vytváří [výchozí hodnotu](../builtin-types/default-valu
 
 Následující příklad ukazuje použití operátoru `default`:
 
-[!code-csharp-interactive[default of T](~/samples/csharp/language-reference/operators/DefaultOperator.cs#WithOperand)]
+[!code-csharp-interactive[default of T](~/samples/snippets/csharp/language-reference/operators/DefaultOperator.cs#WithOperand)]
 
 Klíčové slovo `default` lze také použít jako výchozí popisek Case v rámci [příkazu`switch`](../keywords/switch.md).
 
@@ -32,7 +32,7 @@ Počínaje C# 7,1 můžete použít literál `default` k vytvoření výchozí h
 
 Následující příklad ukazuje použití `default` literálu:
 
-[!code-csharp-interactive[default literal](~/samples/csharp/language-reference/operators/DefaultOperator.cs#DefaultLiteral)]
+[!code-csharp-interactive[default literal](~/samples/snippets/csharp/language-reference/operators/DefaultOperator.cs#DefaultLiteral)]
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -40,7 +40,7 @@ Další informace naleznete v oddílu [výchozí hodnoty výrazů](~/_csharplang
 
 Další informace o `default` literálu naleznete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-7.1/target-typed-default.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)

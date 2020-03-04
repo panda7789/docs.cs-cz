@@ -4,12 +4,12 @@ description: Přečtěte si, jak přenést znalosti z existujícího modelu Tens
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: f5ec31f8bfdc089d275588b228c8ce6f28a44201
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 1e5478f53c82f36ddafe19e3659e2234ff9687b4
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092548"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241023"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Kurz: generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow
 
@@ -145,15 +145,15 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 1. Do horní části souboru *program.cs* přidejte následující další příkazy `using`:
 
-    [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#AddUsings)]
+    [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddUsings)]
 
 1. Přidejte následující kód na řádek vpravo nad `Main` metodou pro určení cest prostředků:
 
-    [!code-csharp[DeclareGlobalVariables](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DeclareGlobalVariables)]
+    [!code-csharp[DeclareGlobalVariables](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareGlobalVariables)]
 
 1. Vytvořte třídy pro vstupní data a předpovědi.
 
-    [!code-csharp[DeclareImageData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DeclareImageData)]
+    [!code-csharp[DeclareImageData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareImageData)]
 
     `ImageData` je vstupní třída dat obrázku a má následující <xref:System.String> pole:
 
@@ -162,7 +162,7 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 1. Přidejte do projektu novou třídu pro `ImagePrediction`:
 
-    [!code-csharp[DeclareImagePrediction](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DeclareImagePrediction)]
+    [!code-csharp[DeclareImagePrediction](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareImagePrediction)]
 
     `ImagePrediction` je třída prediktivních imagí a má následující pole:
 
@@ -175,7 +175,7 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 1. Inicializujte `mlContext` proměnnou novou instancí `MLContext`.  Nahraďte `Console.WriteLine("Hello World!")` řádek následujícím kódem v metodě `Main`:
 
-    [!code-csharp[CreateMLContext](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CreateMLContext)]
+    [!code-csharp[CreateMLContext](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CreateMLContext)]
 
     [Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializuje `mlContext` vytvoří nové prostředí ml.NET, které lze sdílet napříč objekty pracovního postupu vytváření modelů. Je podobný a koncepčně `DBContext` v Entity Framework.
 
@@ -183,7 +183,7 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 1. Model zahájení má několik parametrů, které je třeba předat. Vytvořte strukturu pro mapování hodnot parametrů na popisné názvy pomocí následujícího kódu, a to hned za `Main()` metodou:
 
-    [!code-csharp[InceptionSettings](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#InceptionSettings)]
+    [!code-csharp[InceptionSettings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#InceptionSettings)]
 
 ### <a name="create-a-display-utility-method"></a>Vytvoření metody zobrazovacího nástroje
 
@@ -200,7 +200,7 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
 
 1. Vyplňte text `DisplayResults` metody:
 
-    [!code-csharp[DisplayPredictions](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DisplayPredictions)]
+    [!code-csharp[DisplayPredictions](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayPredictions)]
 
 ### <a name="create-a-tsv-file-utility-method"></a>Vytvoření metody Utility souboru. TSV
 
@@ -215,7 +215,7 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
 
 1. Vyplňte text `ReadFromTsv` metody:
 
-    [!code-csharp[ReadFromTsv](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReadFromTsv)]
+    [!code-csharp[ReadFromTsv](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ReadFromTsv)]
 
     Kód analyzuje soubor `tags.tsv`, aby přidal cestu souboru k názvu souboru obrázku pro vlastnost `ImagePath` a načetl ji a `Label` do objektu `ImageData`.
 
@@ -232,11 +232,11 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
 
 1. Vytvořte objekt `ImageData`, který obsahuje plně kvalifikovanou cestu a název souboru obrázku pro jeden `ImagePath`. Přidejte následující kód jako další řádky v metodě `ClassifySingleImage()`:
 
-    [!code-csharp[LoadImageData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadImageData)]
+    [!code-csharp[LoadImageData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadImageData)]
 
 1. Udělejte jednu předpověď přidáním následujícího kódu jako další řádek v metodě `ClassifySingleImage`:
 
-    [!code-csharp[PredictSingle](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#PredictSingle)]
+    [!code-csharp[PredictSingle](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#PredictSingle)]
 
     K získání předpovědi použijte metodu [předpověď ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) . [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečný pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o tom, jak [používat `PredictionEnginePool` ve ASP.NET corem webovém rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
@@ -245,7 +245,7 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
 
 1. Zobrazit výsledek předpovědi jako další řádek kódu v metodě `ClassifySingleImage()`:
 
-   [!code-csharp[DisplayPrediction](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DisplayPrediction)]
+   [!code-csharp[DisplayPrediction](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayPrediction)]
 
 ## <a name="construct-the-mlnet-model-pipeline"></a>Vytvoření kanálu modelu ML.NET
 
@@ -266,13 +266,13 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
 1. Přidat odhady pro načtení, změnu velikosti a extrakci pixelů z dat obrázku:
 
-    [!code-csharp[ImageTransforms](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ImageTransforms)]
+    [!code-csharp[ImageTransforms](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ImageTransforms)]
 
     Data obrázku musí být zpracována ve formátu, který očekává model TensorFlow. V tomto případě jsou obrázky načteny do paměti, jsou změněna na konzistentní velikost a pixely jsou extrahovány do číselného vektoru.
 
 1. Přidejte Estimator, abyste načetli model TensorFlow, a zadávejte skóre:
 
-    [!code-csharp[ScoreTensorFlowModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ScoreTensorFlowModel)]
+    [!code-csharp[ScoreTensorFlowModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ScoreTensorFlowModel)]
 
     Tato fáze v kanálu načte model TensorFlow do paměti a pak zpracovává vektor hodnot obrazových bodů prostřednictvím sítě modelu TensorFlow. Použití vstupů na model hloubkového učení a generování výstupu pomocí modelu se označuje jako **bodování**. Při použití modelu v celém rozsahu je bodování odvozeno nebo předpověď.
 
@@ -282,29 +282,29 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
 1. Přidejte Estimator k namapování popisků řetězce v školicích datech na hodnoty celočíselného klíče:
 
-    [!code-csharp[MapValueToKey](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#MapValueToKey)]
+    [!code-csharp[MapValueToKey](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#MapValueToKey)]
 
     ML.NET Trainer, který je připojen k dalšímu, vyžaduje, aby popisky byly v `key` formátu místo libovolných řetězců. Klíč je číslo, které má jeden k jednomu mapování na hodnotu řetězce.
 
 1. Přidejte ML.NET školicí algoritmus:
 
-    [!code-csharp[AddTrainer](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#AddTrainer)]
+    [!code-csharp[AddTrainer](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddTrainer)]
 
 1. Přidejte Estimator k namapování hodnoty předpovězeného klíče zpátky do řetězce:
 
-    [!code-csharp[MapKeyToValue](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#MapKeyToValue)]
+    [!code-csharp[MapKeyToValue](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#MapKeyToValue)]
 
 ## <a name="train-the-model"></a>Trénování modelu
 
 1. Načtěte školicí data pomocí obálky [LoadFromTextFile](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile(Microsoft.ML.DataOperationsCatalog,System.String,Microsoft.ML.Data.TextLoader.Options)) . Přidejte následující kód jako další řádek v metodě `GenerateModel()`:
 
-    [!code-csharp[LoadData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadData "Load the data")]
+    [!code-csharp[LoadData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadData "Load the data")]
 
     Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.IDataView). `IDataView` je flexibilní a efektivní způsob popisující tabulková data (číselná a text). Data je možné načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do objektu `IDataView`.
 
 1. Vyškolit model s daty načtenými výše:
 
-    [!code-csharp[TrainModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#TrainModel)]
+    [!code-csharp[TrainModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#TrainModel)]
 
     Metoda `Fit()` navlakuje váš model použitím školicí datové sady na kanál.
 
@@ -312,13 +312,13 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
 1. Načtěte a Transformujte testovací data přidáním následujícího kódu na další řádek metody `GenerateModel`:
 
-    [!code-csharp[LoadAndTransformTestData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadAndTransformTestData "Load and transform test data")]
+    [!code-csharp[LoadAndTransformTestData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadAndTransformTestData "Load and transform test data")]
 
     Existuje několik ukázkových imagí, které můžete použít k vyhodnocení modelu. Podobně jako u školicích dat je potřeba je načíst do `IDataView`, aby je bylo možné transformovat podle modelu.
 
 1. Přidejte následující kód do metody `GenerateModel()` pro vyhodnocení modelu:
 
-    [!code-csharp[Evaluate](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#Evaluate)]
+    [!code-csharp[Evaluate](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#Evaluate)]
 
     Jakmile máte předsadu předpovědi, metoda [Evaluate ()](xref:Microsoft.ML.RecommendationCatalog.Evaluate%2A) :
 
@@ -329,7 +329,7 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
     Použijte následující kód k zobrazení metrik, sdílení výsledků a pak jejich fungování:
 
-    [!code-csharp[DisplayMetrics](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DisplayMetrics)]
+    [!code-csharp[DisplayMetrics](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayMetrics)]
 
     Pro klasifikaci imagí jsou vyhodnocovány následující metriky:
 
@@ -338,17 +338,17 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
 1. Přidejte následující kód, který vrátí vycvičený model jako další řádek:
 
-    [!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReturnModel)]
+    [!code-csharp[SaveModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ReturnModel)]
 
 ## <a name="run-the-application"></a>Spusťte aplikaci!
 
 1. Přidejte volání `GenerateModel` v metodě `Main` po vytvoření třídy MLContext:
 
-    [!code-csharp[CallGenerateModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallGenerateModel)]
+    [!code-csharp[CallGenerateModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CallGenerateModel)]
 
 1. Přidejte volání metody `ClassifySingleImage()` jako další řádek kódu v metodě `Main`:
 
-    [!code-csharp[CallClassifySingleImage](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallClassifySingleImage)]
+    [!code-csharp[CallClassifySingleImage](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CallClassifySingleImage)]
 
 1. Spusťte konzolovou aplikaci (CTRL + F5). Výsledky by měly být podobné následujícímu výstupu.  Můžou se zobrazovat upozornění nebo zprávy o zpracování, ale tyto zprávy se z následujících výsledků odebraly z důvodu srozumitelnosti.
 

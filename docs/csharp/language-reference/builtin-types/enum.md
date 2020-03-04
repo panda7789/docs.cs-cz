@@ -11,12 +11,12 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 4377d113a18d23c8a0f9a669e6112f1a8223cc79
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 77c7b7bd7f3e59fbe782755c829f18cf1cefc725
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450866"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239817"
 ---
 # <a name="enumeration-types-c-reference"></a>Výčtové typyC# (referenční)
 
@@ -54,7 +54,7 @@ Typ výčtu můžete použít k reprezentaci výběru ze sady vzájemně se vylu
 
 Chcete-li, aby typ výčtu představoval kombinaci možností, definujte členy výčtu pro tyto možnosti tak, aby jednotlivá volba byla bitového pole. To znamená, že přidružené hodnoty těchto členů výčtu by měly být mocninou dvou. Pak můžete použít [bitové logické operátory `|` nebo `&`](../operators/bitwise-and-shift-operators.md#enumeration-logical-operators) k kombinování voleb nebo průsečíku kombinací voleb v uvedeném pořadí. Chcete-li označit, že typ výčtu deklaruje bitová pole, použijte atribut [Flags](xref:System.FlagsAttribute) na něj. Jak ukazuje následující příklad, můžete také zahrnout některé typické kombinace v definici výčtového typu.
 
-[!code-csharp[enum flags](~/samples/csharp/language-reference/builtin-types/EnumType.cs#Flags)]
+[!code-csharp[enum flags](~/samples/snippets/csharp/language-reference/builtin-types/EnumType.cs#Flags)]
 
 Další informace a příklady najdete na stránce s referenčními informacemi k rozhraní <xref:System.FlagsAttribute?displayProperty=nameWithType> API a v části [atributu flags](/dotnet/api/system.enum#non-exclusive-members-and-the-flags-attribute) na referenční stránce rozhraní API <xref:System.Enum?displayProperty=nameWithType>.
 
@@ -68,7 +68,7 @@ Počínaje C# 7,3 můžete použít `System.Enum` v omezení základní třídy 
 
 Pro jakýkoliv typ výčtu existují explicitní převody mezi výčtovým typem a jeho základním integrálním typem. Pokud [přetypování](../operators/type-testing-and-cast.md#cast-operator-) hodnoty výčtu na svůj nadřízený typ, je výsledkem přidružená celočíselná hodnota člena výčtu.
 
-[!code-csharp[enum conversions](~/samples/csharp/language-reference/builtin-types/EnumType.cs#Conversions)]
+[!code-csharp[enum conversions](~/samples/snippets/csharp/language-reference/builtin-types/EnumType.cs#Conversions)]
 
 Použijte metodu <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> k určení, zda typ výčtu obsahuje člena výčtu s určitou přidruženou hodnotou.
 

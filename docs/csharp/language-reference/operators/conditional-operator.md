@@ -9,12 +9,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 60156585dd21d5d2f9c9f3916452bb8574ddd4e4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6e8fde8c210b2c33cc514167be7face657cbb618
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712725"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239376"
 ---
 # <a name="-operator-c-reference"></a>?: – operátorC# (Referenční dokumentace)
 
@@ -51,7 +51,7 @@ a ? b : (c ? d : e)
 
 Následující příklad ukazuje použití podmíněného operátoru:
 
-[!code-csharp-interactive[non ref conditional](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
+[!code-csharp-interactive[non ref conditional](~/samples/snippets/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
 
 ## <a name="conditional-ref-expression"></a>Podmíněný výraz ref
 
@@ -69,13 +69,13 @@ V případě podmíněného výrazu ref musí být typ `consequent` a `alternati
 
 Následující příklad ukazuje použití podmíněného ref výrazu:
 
-[!code-csharp-interactive[conditional ref](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
+[!code-csharp-interactive[conditional ref](~/samples/snippets/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
 
 ## <a name="conditional-operator-and-an-ifelse-statement"></a>Podmíněný operátor a příkaz `if..else`
 
 Použití podmíněného operátoru namísto příkazu [if-else](../keywords/if-else.md) může mít za následek výstižnější kód v případech, kdy budete potřebovat podmíněně k výpočtu hodnoty. Následující příklad ukazuje dva způsoby, jak klasifikovat celé číslo jako záporné nebo nezáporné:
 
-[!code-csharp[conditional and if-else](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#CompareWithIf)]
+[!code-csharp[conditional and if-else](~/samples/snippets/csharp/language-reference/operators/ConditionalOperator.cs#CompareWithIf)]
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 
@@ -87,11 +87,11 @@ Další informace naleznete v části [podmíněný operátor](~/_csharplang/spe
 
 Další informace o podmíněném výrazu ref najdete v [poznámce k návrhu funkcí](~/_csharplang/proposals/csharp-7.2/conditional-ref.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
 - [if-else – příkaz](../keywords/if-else.md)
-- [?. a ?[] operátory](member-access-operators.md#null-conditional-operators--and-)
+- [?. ani? [] – operátory](member-access-operators.md#null-conditional-operators--and-)
 - [?? a?? = – operátory](null-coalescing-operator.md)
 - [ref – klíčové slovo](../keywords/ref.md)

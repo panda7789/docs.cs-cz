@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 301177113f67748b62ea2686615cfe5378fdc2fd
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: f6665e18e51af96761941e419fabc409e4b9391d
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78157541"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240971"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Vystavení součástí .NET Core pro COM
 
@@ -41,7 +41,21 @@ Prvním krokem je vytvoření knihovny.
 3. Do horní části souboru přidejte `using System.Runtime.InteropServices;`.
 4. Vytvořte rozhraní s názvem `IServer`. Příklad:
 
-   [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+   ```csharp
+   using System;
+   using System.Runtime.InteropServices;
+
+   [ComVisible(true)]
+   [Guid(ContractGuids.ServerInterface)]
+   [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+   public interface IServer
+   {
+       /// <summary>
+       /// Compute the value of the constant Pi.
+       /// </summary>
+       double ComputePi();
+   }
+   ```
 
 5. Přidejte atribut `[Guid("<IID>")]` do rozhraní s identifikátorem GUID rozhraní pro rozhraní modelu COM, které implementujete. například `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Všimněte si, že tento identifikátor GUID musí být jedinečný, protože se jedná o jediný identifikátor tohoto rozhraní pro COM. V aplikaci Visual Studio můžete vygenerovat GUID tak, že kliknete na nástroje > vytvořit GUID a otevřete nástroj vytvořit GUID.
 6. Přidejte atribut `[InterfaceType]` do rozhraní a určete, jaká základní rozhraní COM by měla vaše rozhraní implementovat.

@@ -1,13 +1,13 @@
 ---
 title: Monitorování stavu
 description: Prozkoumejte jeden ze způsobů implementace monitorování stavu.
-ms.date: 01/30/2020
-ms.openlocfilehash: a91e51af66049f9774365cd56b90ab792a4dd4fc
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.date: 03/02/2020
+ms.openlocfilehash: 3b8ba57149061e629bee441672718eba8a79da63
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502692"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241153"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -19,7 +19,7 @@ V typickém modelu odesílají služby zprávy o jejich stavu a tyto informace j
 
 ## <a name="implement-health-checks-in-aspnet-core-services"></a>Implementace kontrol stavu ve službě ASP.NET Core Services
 
-Při vývoji ASP.NET Core mikroslužeb nebo webové aplikace můžete použít integrovanou funkci kontroly stavu, která byla vydaná v prostředí ASP .NET Core 3,1 ([Microsoft. Extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks)). Stejně jako mnoho funkcí ASP.NET Core, jsou kontroly stavu dodávány se sadou služeb a middlewaru.
+Při vývoji ASP.NET Core mikroslužeb nebo webové aplikace můžete použít integrovanou funkci kontroly stavu, která byla vydaná v prostředí ASP .NET Core 2,2 ([Microsoft. Extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks)). Stejně jako mnoho funkcí ASP.NET Core, jsou kontroly stavu dodávány se sadou služeb a middlewaru.
 
 Služby kontroly stavu a middleware se snadno používají a poskytují možnosti, které vám umožní ověřit, jestli nějaký externí prostředek potřebný pro vaši aplikaci (třeba databáze SQL Server nebo vzdálené rozhraní API) pracuje správně. Když použijete tuto funkci, můžete se také rozhodnout, co znamená, že je prostředek v pořádku, jak je vysvětleno později.
 
@@ -27,7 +27,9 @@ Abyste tuto funkci mohli efektivně používat, musíte nejdřív nakonfigurovat
 
 ### <a name="use-the-healthchecks-feature-in-your-back-end-aspnet-microservices"></a>Použití funkce HealthChecks v ASP.NET mikroslužbách back-endu
 
-V této části se dozvíte, jak se funkce HealthChecks, jak je implementováno v souboru [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks), používá v ukázkové aplikaci webového rozhraní API ASP.NET Core 3,1. Implementace této funkce v rozsáhlých mikroslužbách, jako je eShopOnContainers, je vysvětleno v další části. Chcete-li začít, je třeba definovat, co znamená dobrý stav pro jednotlivé mikroslužby. V ukázkové aplikaci jsou mikroslužby v dobrém stavu, pokud je k dispozici rozhraní API mikroslužeb přes protokol HTTP a k dispozici je také související databáze SQL Server.
+V této části se dozvíte, jak implementovat funkci HealthChecks v ukázkové aplikaci webového rozhraní API ASP.NET Core 3,1 při použití balíčku [Microsoft. Extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks) . Implementace této funkce v rozsáhlých mikroslužbách, jako je eShopOnContainers, je vysvětleno v další části.
+
+Chcete-li začít, je třeba definovat, co znamená dobrý stav pro jednotlivé mikroslužby. V ukázkové aplikaci definujeme, že mikroslužba je v pořádku, pokud je její rozhraní API přístupné přes protokol HTTP a k dispozici je také související databáze SQL Server.
 
 V rozhraní .NET Core 3,1 s integrovanými rozhraními API můžete nakonfigurovat služby a přidat kontrolu stavu pro mikroslužbu a její závislé SQL Server databázi tímto způsobem:
 
@@ -40,10 +42,11 @@ public void ConfigureServices(IServiceCollection services)
     // Registers required services for health checks
     services.AddHealthChecks()
         // Add a health check for a SQL Server database
-        .AddSqlServer(
-            configuration["ConnectionString"],
-            name: "OrderingDB-check",
-            tags: new string[] { "orderingdb" });
+        .AddCheck(
+            "OrderingDB-check", 
+            new SqlConnectionHealthCheck(Configuration["ConnectionString"]), 
+            HealthStatus.Unhealthy, 
+            new string[] { "orderingdb" });
 }
 ```
 
@@ -114,11 +117,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     app.UseEndpoints(endpoints =>
     {
         //...
-        endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
-        {
-            Predicate = _ => true,
-            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-        });
+        endpoints.MapHealthChecks("/hc");
         //...
     });
     //…
@@ -129,9 +128,9 @@ Po vyvolání koncového bodu `<yourmicroservice>/hc` spustí všechny kontroly 
 
 ### <a name="healthchecks-implementation-in-eshoponcontainers"></a>Implementace HealthChecks v eShopOnContainers
 
-Mikroslužby v eShopOnContainers spoléhají na provádění svých úkolů více službami. Například `Catalog.API` mikroslužba z eShopOnContainers závisí na mnoha službách, jako je Azure Blob Storage, SQL Server a RabbitMQ. Proto má pomocí metody `AddCheck()` přidáno několik kontrol stavu. Pro každou závislou službu musí být přidána vlastní implementace `IHealthCheck` definující příslušný stav jeho stavu.
+Mikroslužby v eShopOnContainers spoléhají na provádění svých úkolů více službami. Například `Catalog.API` mikroslužba z eShopOnContainers závisí na mnoha službách, jako je Azure Blob Storage, SQL Server a RabbitMQ. Proto má pomocí metody `AddCheck()` přidáno několik kontrol stavu. Pro každou závislou službu se musí přidat vlastní implementace `IHealthCheck` definující příslušný stav jeho stavu.
 
-Open source projekt [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) tento problém vyřeší tím, že poskytuje implementace vlastního ověření stavu pro každou z těchto podnikových služeb, které jsou postaveny na .net Core 3,1. Každá kontrolu stavu je k dispozici jako samostatný balíček NuGet, který lze snadno přidat do projektu. eShopOnContainers je často používá ve všech mikroslužbách.
+Open source projekt [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) tento problém řeší tím, že poskytuje implementace vlastních kontrol stavu pro každou z těchto podnikových služeb, které jsou postaveny na .net Core 3,1. Každá kontrolu stavu je k dispozici jako samostatný balíček NuGet, který lze snadno přidat do projektu. eShopOnContainers je často používá ve všech mikroslužbách.
 
 Například v `Catalog.API` mikroslužeb byly přidány následující balíčky NuGet:
 

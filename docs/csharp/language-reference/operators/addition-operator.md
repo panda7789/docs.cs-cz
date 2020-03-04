@@ -13,12 +13,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 0c468f0fe56c68a16de660dbb3bd6356b4b6a00f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c8452ab1f90bb2873a591b483b5432311a9f9b79
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712764"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239623"
 ---
 # <a name="-and--operators-c-reference"></a>+ a + = – operátoryC# (Referenční dokumentace)
 
@@ -30,17 +30,17 @@ Informace o aritmetickém operátoru `+` naleznete v části [unární operátor
 
 Když je jeden nebo oba operandy typu [String](../builtin-types/reference-types.md#the-string-type), operátor `+` zřetězí řetězcové reprezentace svých operandů:
 
-[!code-csharp-interactive[string concatenation](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddStrings)]
+[!code-csharp-interactive[string concatenation](~/samples/snippets/csharp/language-reference/operators/AdditionOperator.cs#AddStrings)]
 
 Počínaje C# 6, [interpolace řetězců](../tokens/interpolated.md) poskytuje pohodlnější způsob formátování řetězců:
 
-[!code-csharp-interactive[string interpolation](~/samples/csharp/language-reference/operators/AdditionOperator.cs#UseStringInterpolation)]
+[!code-csharp-interactive[string interpolation](~/samples/snippets/csharp/language-reference/operators/AdditionOperator.cs#UseStringInterpolation)]
 
 ## <a name="delegate-combination"></a>Kombinace delegátů
 
 U operandů stejného typu [delegát](../builtin-types/reference-types.md#the-delegate-type) vrací operátor `+` novou instanci delegáta, která při vyvolání vyvolá levý operand a poté vyvolá operand na pravé straně. Pokud je některý z operandů `null`, vrátí operátor `+` hodnotu jiného operandu (který také může být `null`). Následující příklad ukazuje, jak mohou být Delegáti kombinováni s operátorem `+`:
 
-[!code-csharp-interactive[delegate combination](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddDelegates)]
+[!code-csharp-interactive[delegate combination](~/samples/snippets/csharp/language-reference/operators/AdditionOperator.cs#AddDelegates)]
 
 Chcete-li provést odebrání delegáta, použijte [operátor`-`](subtraction-operator.md#delegate-removal).
 
@@ -64,7 +64,7 @@ s výjimkou `x` je vyhodnocena pouze jednou.
 
 Následující příklad ukazuje použití operátoru `+=`:
 
-[!code-csharp-interactive[+= examples](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddAndAssign)]
+[!code-csharp-interactive[+= examples](~/samples/snippets/csharp/language-reference/operators/AdditionOperator.cs#AddAndAssign)]
 
 Operátor `+=` lze také použít k určení metody obslužné rutiny události při přihlášení k odběru [události](../keywords/event.md). Další informace najdete v tématu [Postup: přihlášení a](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)odhlášení odběru událostí.
 
@@ -76,7 +76,7 @@ Uživatelsky definovaný typ může [přetížit](operator-overloading.md) oper�
 
 Další informace naleznete v částech [unárního operátoru plus](~/_csharplang/spec/expressions.md#unary-plus-operator) a [operátoru sčítání](~/_csharplang/spec/expressions.md#addition-operator) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)

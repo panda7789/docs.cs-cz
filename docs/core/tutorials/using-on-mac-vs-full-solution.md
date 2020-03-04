@@ -2,12 +2,12 @@
 title: Sestavení kompletního řešení .NET Core pomocí Visual Studio pro Mac
 description: Tento článek vás provede vytvořením řešení .NET Core, které obsahuje opakovaně použitelnou knihovnu a testování částí.
 ms.date: 12/19/2019
-ms.openlocfilehash: dea23da33912de849f0dcbe1e2f6fa3edb3a5e24
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 8c9fcca404a3875b6bb7f9cf20551a017ff553c5
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215204"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239960"
 ---
 # <a name="build-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Sestavení kompletního řešení .NET Core na macOS pomocí Visual Studio pro Mac
 
@@ -35,14 +35,14 @@ Další informace o požadavcích najdete v tématu [závislosti a požadavky .N
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pro Mac dialogové okno Nový projekt](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project.png)
 
-1. Pojmenujte projekt "TextUtils" (krátký název "text Utilities") a řešením "WordCounter". Ponechejte možnost **vytvořit adresář projektu v adresáři řešení** zaškrtnuté. Vyberte **Create** (Vytvořit).
+1. Pojmenujte projekt "TextUtils" (krátký název "text Utilities") a řešením "WordCounter". Ponechejte možnost **vytvořit adresář projektu v adresáři řešení** zaškrtnuté. Vyberte **Vytvořit**.
 
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pro Mac dialogových oknech Nový projekt](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project-options.png)
 
 1. Na panelu **řešení** rozbalte uzel `TextUtils`, aby se zobrazil soubor třídy poskytnutý šablonou, *Class1.cs*. Podržte klávesu CTRL a klikněte na soubor, v místní nabídce vyberte **Přejmenovat** a přejmenujte soubor na *WORDCOUNT.cs*. Otevřete soubor a nahraďte jeho obsah následujícím kódem:
 
-   [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/TextUtils/WordCount.cs)]
+   [!code-csharp[Main](../../../samples/snippets/core/tutorials/using-on-mac-vs-full-solution/csharp/TextUtils/WordCount.cs)]
 
 1. Uložte soubor pomocí kterékoli ze tří různých metod: <kbd>&#8984;</kbd> použijte klávesovou zkratku+<kbd>s</kbd>, vyberte **soubor** > **Uložit** z nabídky nebo stiskněte klávesu CTRL na kartě soubor a v místní nabídce vyberte **Uložit** . Následující obrázek znázorňuje okno IDE:
 
@@ -175,7 +175,7 @@ Testy jednotek poskytují automatizované softwarové testování během vývoje
 
 1. Otevřete soubor *program.cs* . Nahraďte kód následujícím kódem:
 
-   [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/WordCounterApp/Program.cs)]
+   [!code-csharp[Main](../../../samples/snippets/core/tutorials/using-on-mac-vs-full-solution/csharp/WordCounterApp/Program.cs)]
 
 1. Stiskněte klávesu CTRL a klikněte na projekt `WordCounterApp` a v místní nabídce vyberte **spustit projekt** . Po spuštění aplikace zadejte do příkazového řádku v okně konzoly hodnoty pro hledané slovo a vstupní řetězec. Aplikace označuje počet, kolikrát se hledané slovo v řetězci zobrazuje.
 

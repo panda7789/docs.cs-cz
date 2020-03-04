@@ -4,12 +4,12 @@ description: Seznamte se s koncepty C# testování částí v a .NET Core pomoc�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 226db54047747fbd065c64f5e4812094921c7f62
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c9e3d63a2cf4f560591459833340b729ffec1b95
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714240"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240893"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování C# částí v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -124,7 +124,7 @@ dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 
 Podle pokynů v části "nahraďte kód v *PrimeService.cs* pomocí následujícího kódu" v předchozí části.
 
-## <a name="create-a-test"></a>Vytvoření testu
+## <a name="create-a-test"></a>Vytvořit test
 
 Oblíbeným přístupem v rámci vývoje řízených testů (TDD) je napsat test před implementací cílového kódu. V tomto kurzu se používá přístup TDD. Metoda `IsPrime` je volat, ale není implementovaná. Testovací volání `IsPrime` se nezdařilo. Pomocí TDD je napsán test, u kterého se říká selhání. Cílový kód je aktualizován, aby provedl test Pass. Tento přístup se opakuje, napíše se neúspěšný test a pak se aktualizuje cílový kód, který se má předat.
 
@@ -207,7 +207,7 @@ public void IsPrime_InputIs1_ReturnFalse()
 
 s následujícím kódem:
 
-[!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
+[!code-csharp[Sample_TestCode](../../../samples/snippets/core/testing/unit-testing-using-dotnet-test/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
 V předchozím kódu `[Theory]` a `[InlineData]` povolit testování více hodnot, které jsou menší než dvě. Dva je nejmenší číslo prvočísla.
 
@@ -228,7 +228,7 @@ Po přístupu ke službě TDD přidejte další neúspěšné testy a pak aktual
 
 Metoda Completed `IsPrime` není účinným algoritmem pro testování primality.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - [Oficiální web xUnit.net](https://xunit.github.io)
 - [Testování logiky kontroleru v ASP.NET Core](/aspnet/core/mvc/controllers/testing)

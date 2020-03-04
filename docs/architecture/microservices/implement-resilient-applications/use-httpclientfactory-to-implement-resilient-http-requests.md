@@ -2,12 +2,12 @@
 title: Použití HttpClientFactory k implementaci odolných požadavků HTTP
 description: Naučte se používat HttpClientFactory, která je k dispozici od .NET Core 2,1, pro vytváření instancí `HttpClient`, což usnadňuje jejich použití ve svých aplikacích.
 ms.date: 08/08/2019
-ms.openlocfilehash: 1a6d65509d669166e73ad907b506bae7fa26536d
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 7028a23a8945802d7ec0129b70b2840d03acfba1
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900314"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241049"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavků HTTP
 
@@ -183,7 +183,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
 
 Až do tohoto okamžiku, zobrazený kód provádí pouze běžné požadavky HTTP, ale hodnota Magic přichází v následujících částech, kde, stačí, když přidáte zásady a delegujete obslužné rutiny na registrované typové klienty, všechny požadavky HTTP, které má `HttpClient` provádět, se budou chovat s ohledem na odolné zásady, jako jsou třeba opakované pokusy pomocí exponenciálního omezení rychlostiu, přepínacích cyklů nebo jakákoli jiná vlastní obslužná rutina, která implementuje další funkce zabezpečení, jako je například použití ověřovacích tokenů nebo jakékoli jiné vlastní funkce.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
 - **Používání HttpClientFactory v .NET Core**  
   [https://docs.microsoft.com/aspnet/core/fundamentals/http-requests](/aspnet/core/fundamentals/http-requests)
@@ -198,5 +198,5 @@ Až do tohoto okamžiku, zobrazený kód provádí pouze běžné požadavky HTT
   <https://github.com/dotnet/extensions/issues/1345>
 
 >[!div class="step-by-step"]
->[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)
+>[Předchozí](implement-resilient-entity-framework-core-sql-connections.md)
 >[Další](implement-http-call-retries-exponential-backoff-polly.md)

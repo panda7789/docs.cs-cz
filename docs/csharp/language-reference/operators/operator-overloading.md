@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 1475852d312fa16980f25347fc9a864cb1659221
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: c59ae6960a77efd866db4748ca537d9e5218fd1e
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451925"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78238972"
 ---
 # <a name="operator-overloading-c-reference"></a>Přetížení operátoru (C# reference)
 
@@ -25,7 +25,7 @@ K deklarování operátoru použijte klíčové slovo `operator`. Deklarace oper
 
 Následující příklad definuje zjednodušenou strukturu, která představuje racionální číslo. Struktura přetěžuje některé [aritmetické operátory](arithmetic-operators.md):
 
-[!code-csharp[fraction example](~/samples/csharp/language-reference/operators/OperatorOverloading.cs)]
+[!code-csharp[fraction example](~/samples/snippets/csharp/language-reference/operators/OperatorOverloading.cs)]
 
 Předchozí příklad můžete zvětšit [definováním implicitního převodu](user-defined-conversion-operators.md) z `int` na `Fraction`. Přetížené operátory pak podporují argumenty těchto dvou typů. To znamená, že by bylo možné přidat celé číslo do zlomku a získat zlomek jako výsledek.
 

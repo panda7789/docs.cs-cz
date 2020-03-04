@@ -4,12 +4,12 @@ description: Další informace o výrazech porovnávání vzorů vC#
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: db509a0ebf1e205e9996ba8102757fe8c0b9ea3a
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: ffa59d073ad891fd93e0f8d7ad8889de0499b106
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77501631"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241010"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -27,7 +27,7 @@ Při procházení této ukázky je třeba na rozdíl od tohoto kódu tento kód 
 
 Místo toho, aby se spouštěla definice abstraktního obrazce a přidala se různé konkrétní třídy tvarů, začněte místo toho, aby se pro každý geometrický tvar spouštěly jenom jednoduché datové definice:
 
-[!code-csharp[ShapeDefinitions](../../samples/csharp/PatternMatching/Shapes.cs#01_ShapeDefinitions "Shape definitions")]
+[!code-csharp[ShapeDefinitions](../../samples/snippets/csharp/PatternMatching/Shapes.cs#01_ShapeDefinitions "Shape definitions")]
 
 Z těchto struktur napíšeme metodu, která vypočítá oblast nějakého tvaru.
 
@@ -35,13 +35,13 @@ Z těchto struktur napíšeme metodu, která vypočítá oblast nějakého tvaru
 
 Před C# 7,0 byste museli testovat každý typ v řadě `if` a `is` příkazy:
 
-[!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
+[!code-csharp[ClassicIsExpression](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 
 Výše uvedený kód je klasický výraz *vzoru typu*: testujete proměnnou pro určení jejího typu a provedení jiné akce založené na tomto typu.
 
 Tento kód se bude jednodušší pomocí rozšíření pro výraz `is` pro přiřazení proměnné, pokud je test úspěšný:
 
-[!code-csharp[IsPatternExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#03_IsPatternExpression "is pattern expression")]
+[!code-csharp[IsPatternExpression](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#03_IsPatternExpression "is pattern expression")]
 
 V této aktualizované verzi výraz `is` testuje proměnnou a přiřadí ji k nové proměnné správného typu. Všimněte si také, že tato verze zahrnuje typ `Rectangle`, což je `struct`. Nový výraz `is` pracuje s typy hodnot a typy odkazů.
 
@@ -64,12 +64,12 @@ V době, kdy bude trvat, možná budete muset podporovat jiné typy tvarů. Poku
 Tradiční příkaz `switch` byl výraz Pattern: podporuje se konstantní vzorek.
 Můžete porovnat proměnnou s libovolnou konstantou použitou v příkazu `case`:
 
-[!code-csharp[ClassicSwitch](../../samples/csharp/PatternMatching/GeometricUtilities.cs#04_ClassicSwitch "Classic switch statement")]
+[!code-csharp[ClassicSwitch](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#04_ClassicSwitch "Classic switch statement")]
 
 Jediný vzor podporovaný příkazem `switch` byl konstantním vzorem. Bylo větší omezení na číselné typy a typ `string`.
 Tato omezení byla odebrána a nyní můžete napsat příkaz `switch` pomocí vzoru typu:
 
-[!code-csharp[Switch Type Pattern](../../samples/csharp/PatternMatching/GeometricUtilities.cs#05_SwitchTypePattern "Compute with `switch` expression")]
+[!code-csharp[Switch Type Pattern](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#05_SwitchTypePattern "Compute with `switch` expression")]
 
 Vzor odpovídající příkazu `switch` používá známou syntaxi pro vývojáře, kteří používali tradiční příkaz jazyka C-Style `switch`. Každý `case` je vyhodnocen a je proveden kód pod podmínkou, která odpovídá vstupní proměnné. Provádění kódu nemůže "klesnout do" z jednoho výrazu Case do dalšího. Syntaxe příkazu `case` vyžaduje, aby každý `case` končit `break`, `return`nebo `goto`.
 
@@ -87,7 +87,7 @@ Nyní s obecnější `switch` výrazy je pořadí každé části věcí. Výraz
 
 Pro prvky, které mají 0 oblast s použitím klauzule `when` na `case` popisku, můžete vytvořit zvláštní případy. Čtverec s délkou druhé délky 0 nebo kroužek s poloměrem 0 má oblast 0. Tuto podmínku určíte pomocí klauzule `when` na `case` popisku:  
 
-[!code-csharp[ComputeDegenerateShapes](../../samples/csharp/PatternMatching/GeometricUtilities.cs#07_ComputeDegenerateShapes "Compute shapes with 0 area")]
+[!code-csharp[ComputeDegenerateShapes](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#07_ComputeDegenerateShapes "Compute shapes with 0 area")]
 
 Tato změna ukazuje několik důležitých bodů o nové syntaxi. Nejprve lze použít více `case`ch popisků na jeden oddíl `switch`. Blok příkazu se spustí, když některý z těchto popisků je `true`. Pokud je v tomto případě výraz `switch` buď kruhem, nebo čtvercem s 0 oblastí, vrátí metoda konstantu 0.
 
@@ -98,13 +98,13 @@ Není však možné sdělit, *které* bylo přiřazeno v době kompilace, proto�
 
 Přidávají se tyto obrazce s 0 oblastí, takže přidáváme několik dalších typů tvarů: obdélník a trojúhelník:
 
-[!code-csharp[AddRectangleAndTriangle](../../samples/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "Add rectangle and triangle")]
+[!code-csharp[AddRectangleAndTriangle](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#09_AddRectangleAndTriangle "Add rectangle and triangle")]
 
  Tato sada změn přidává `case` popisky pro negenerovaný případ a popisky a bloky pro každý nový tvar. 
 
 Nakonec můžete přidat `null` případ, abyste zajistili, že argument nebude `null`:
 
-[!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
+[!code-csharp[NullCase](../../samples/snippets/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
 Speciální chování pro vzor `null` je zajímavé, protože konstanta `null` ve vzorku nemá typ, ale lze ji převést na libovolný odkazový typ nebo na typ s možnou hodnotou null. Místo převedení `null` na libovolný typ jazyk definuje, že `null` hodnota nebude odpovídat žádnému vzoru typu bez ohledu na typ doby kompilace proměnné. Toto chování vytvoří nový vzor typu založený `switch`, který je konzistentní s příkazem `is`: `is` příkazy Always vrací `false`, pokud je hodnota zaškrtnuta `null`. Je také jednodušší: po zkontrolování typu nebudete potřebovat další kontrolu null. Můžete vidět, že neexistují žádné kontroly null v žádném z bloků Case výše uvedených vzorků: nejsou nezbytné, protože odpovídající vzorek typu garantuje hodnotu, která není null.
 
@@ -124,7 +124,7 @@ Vzhledem k tomu, že všechny jiné než výchozí případy jsou upřednostňov
 
 Třetí pravidlo zavádí, kde může být užitečný případ `var`. Představte si, že provádíte porovnávání vzorů, kde vstup je řetězec a hledáte známé hodnoty příkazu. Můžete napsat něco jako:
 
-[!code-csharp[VarCaseExpression](../../samples/csharp/PatternMatching/Program.cs#VarCaseExpression "use a var case expression to filter white space")]
+[!code-csharp[VarCaseExpression](../../samples/snippets/csharp/PatternMatching/Program.cs#VarCaseExpression "use a var case expression to filter white space")]
 
 `var` Case odpovídá `null`, prázdnému řetězci nebo jakémukoli řetězci, který obsahuje pouze prázdné znaky. Všimněte si, že předchozí kód používá operátor `?.`, aby se zajistilo, že nechtěně nevyvolá <xref:System.NullReferenceException>. `default` případ zpracovává všechny další řetězcové hodnoty, které nejsou pochopeny tímto analyzátorem příkazů.
 

@@ -4,12 +4,12 @@ description: Přečtěte si o vzorech událostí .NET a o tom, jak vytvořit sta
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: a050dc9a11470ff3b71488ce2ab4b92e607aa9b0
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 517e46ffec163a9bd49baa58fc0b37b54b2b2809
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037170"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239856"
 ---
 # <a name="standard-net-event-patterns"></a>Standardní vzory událostí .NET
 
@@ -40,7 +40,7 @@ Použití modelu událostí poskytuje některé výhody návrhu. Můžete vytvo�
 
 Tady je počáteční deklarace argumentu události pro vyhledání hledaného souboru: 
 
-[!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
+[!code-csharp[EventArgs](../../samples/snippets/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
 
 I když tento typ vypadá jako malý, pouze datový typ, měli byste postupovat podle konvence a vytvořit z něj referenční (`class`) typ. To znamená, že objekt argumentu bude předán odkazem a všechny aktualizace dat budou zobrazeny všemi předplatiteli. První verze je neproměnlivý objekt. Měli byste raději nastavit vlastnosti v argumentu události typ unmutableed. Jeden předplatitel pak nemůže změnit hodnoty předtím, než je uvidí jiný odběratel. (V takovém případě jsou k dispozici výjimky, jak vidíte níže.)  
 
@@ -48,21 +48,21 @@ Dále je potřeba vytvořit deklaraci události ve třídě hledání ve služb�
 
 Pojďme vyplňovat třídu hledání souborů, aby bylo možné vyhledávat soubory, které odpovídají vzoru, a vyvolat správnou událost při zjištění shody.
 
-[!code-csharp[FileSearcher](../../samples/csharp/events/Program.cs#FileSearcherV1 "Create the initial file searcher")]
+[!code-csharp[FileSearcher](../../samples/snippets/csharp/events/Program.cs#FileSearcherV1 "Create the initial file searcher")]
 
 ## <a name="defining-and-raising-field-like-events"></a>Definování a vyvolávání událostí podobných poli
 
 Nejjednodušší způsob, jak přidat událost do vaší třídy, je deklarovat tuto událost jako veřejné pole, jako v předchozím příkladu:
 
-[!code-csharp[DeclareEvent](../../samples/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
+[!code-csharp[DeclareEvent](../../samples/snippets/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
 
 Vypadá to, že deklaruje veřejné pole, což by znamenalo špatný objektově orientovaný postup. Chcete chránit přístup k datům prostřednictvím vlastností nebo metod. Přestože to může vypadat jako špatný postup, kód generovaný kompilátorem vytvoří obálky, aby k objektům událostí bylo možné získávat přístup pouze bezpečným způsobem. Jediné operace dostupné v události podobné poli jsou přidání obslužné rutiny:
 
-[!code-csharp[DeclareEventHandler](../../samples/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
+[!code-csharp[DeclareEventHandler](../../samples/snippets/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
 
 a odebrat obslužnou rutinu:
 
-[!code-csharp[RemoveEventHandler](../../samples/csharp/events/Program.cs#RemoveHandler "Remove the event handler")]
+[!code-csharp[RemoveEventHandler](../../samples/snippets/csharp/events/Program.cs#RemoveHandler "Remove the event handler")]
 
 Všimněte si, že pro obslužnou rutinu je k dispozici místní proměnná. Pokud jste použili tělo lambda, odebrání by nefungovalo správně. By to byla jiná instance delegáta a tiše nedělá nic.
 
@@ -86,7 +86,7 @@ Poté, co všichni předplatitelé viděli vyvolanou událost, vyhledá součás
 
 Pojďme implementovat první verzi této ukázky. Do typu `FileFoundArgs` musíte přidat pole Boolean s názvem `CancelRequested`:
 
-[!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgs "Update event arguments")]
+[!code-csharp[EventArgs](../../samples/snippets/csharp/events/Program.cs#EventArgs "Update event arguments")]
 
 Toto nové pole se automaticky inicializuje na `false`, což je výchozí hodnota pro pole Boolean, takže nebudete nic rušit. Jedinou jinou změnou součásti je zkontrolování příznaku po vyvolání události, aby bylo možné zjistit, zda některý z předplatitelů požadoval zrušení:
 
@@ -124,25 +124,25 @@ Může se jednat o zdlouhavou operaci v adresáři s mnoha podadresáři. Pojďm
 
 Začnete vytvořením nové odvozené třídy EventArgs pro vytváření sestav nového adresáře a postupu. 
 
-[!code-csharp[DirEventArgs](../../samples/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
+[!code-csharp[DirEventArgs](../../samples/snippets/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
 
 Znovu můžete postupovat podle doporučení a nastavit pro argumenty události neměnný typ odkazu.
 
 Dále definujte událost. Tentokrát použijete jinou syntaxi. Kromě použití syntaxe pole můžete explicitně vytvořit vlastnost s obslužnými rutinami přidat a odebrat. V této ukázce nebudete v těchto obslužných rutinách potřebovat další kód, ale ukazuje, jak byste je vytvořili.
 
-[!code-csharp[Declare event with add and remove handlers](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Declare the event with add and remove handlers")]
+[!code-csharp[Declare event with add and remove handlers](../../samples/snippets/csharp/events/Program.cs#DeclareSearchEvent "Declare the event with add and remove handlers")]
 
 V mnoha způsobech kód, který sem píšete, zrcadlí kód, který kompilátor generuje pro definice událostí pole, které jste viděli dříve. Vytvoříte událost pomocí syntaxe, která je velmi podobná jako vlastnost použitá pro [vlastnosti](properties.md). Všimněte si, že obslužné rutiny mají jiné názvy: `add` a `remove`. Jsou volány k přihlášení k odběru události nebo k odhlášení odběru události. Všimněte si, že je také nutné deklarovat soukromé pole zálohování pro uložení proměnné události. Je inicializována na hodnotu null.
 
 Nyní přidáme přetížení metody `Search`, která projde podadresáři a vyvolá obě události. Nejjednodušší způsob, jak to provést, je použít výchozí argument k určení, že chcete prohledávat všechny adresáře:
 
-[!code-csharp[SearchImplementation](../../samples/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
+[!code-csharp[SearchImplementation](../../samples/snippets/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
 
 V tomto okamžiku můžete spustit aplikaci, která volá metodu Overload pro hledání všech podadresářů. K nové události `ChangeDirectory` neexistují žádní předplatitelé, ale použití `?.Invoke()` idiom zajišťuje správné fungování.
 
  Pojďme přidat obslužnou rutinu pro zápis řádku, který ukazuje průběh v okně konzoly. 
 
-[!code-csharp[Search](../../samples/csharp/events/Program.cs#Search "Declare event handler")]
+[!code-csharp[Search](../../samples/snippets/csharp/events/Program.cs#Search "Declare event handler")]
 
 Viděli jste vzory, které jsou následovány v rámci ekosystému .NET.
 Díky učení těchto vzorů a konvencí budete rychle psát idiomatickou C# a .NET.

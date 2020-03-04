@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: b7ea52eaccda4599969a5d1e3b683d2d842b0d82
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: a5aca12e4037d517c3bcfb403c990605a052d48f
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093237"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239843"
 ---
 # <a name="char-c-reference"></a>char (C# Referenční dokumentace)
 
@@ -34,7 +34,7 @@ Typ [řetězce](reference-types.md#the-string-type) představuje text jako poslo
 - řídicí sekvence Unicode, která je `\u` následovaná hexadecimálním znázorněním kódu znaku se čtyřmi symboly.
 - šestnáctková řídicí sekvence, která je `\x` následovaná hexadecimálním znázorněním kódu znaku.
 
-[!code-csharp-interactive[char literals](~/samples/csharp/language-reference/builtin-types/CharType.cs#Literals)]
+[!code-csharp-interactive[char literals](~/samples/snippets/csharp/language-reference/builtin-types/CharType.cs#Literals)]
 
 Jak ukazuje předchozí příklad, můžete také přetypovat hodnotu kódu znaku na odpovídající `char`ovou hodnotu.
 

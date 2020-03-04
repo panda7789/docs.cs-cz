@@ -3,12 +3,12 @@ title: Automatizace školení modelů pomocí rozhraní příkazového řádku M
 description: Zjistěte, jak pomocí nástroje CLI ML.NET automaticky proškolit nejlepší model z příkazového řádku.
 ms.date: 12/17/2019
 ms.custom: how-to
-ms.openlocfilehash: ffcdba28fcb73a02f5d4726075588fe3b7789375
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 9c493b1df0dd326ad2f0a5d1cac0fc11d7cf37e2
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740131"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240620"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
 
@@ -23,11 +23,11 @@ ML.NET CLI tento proces zjednodušuje pomocí automatizovaného strojového uče
 
 ## <a name="what-is-the-mlnet-command-line-interface-cli"></a>Co je rozhraní příkazového řádku ML.NET (CLI)?
 
-ML.NET CLI je globální nástroj dotnet. Po nainstalování mu udělíte úlohu strojového učení a školicí datovou sadu, která generuje ML.NET model, a také C# kód, který se má spustit pro použití modelu ve vaší aplikaci.
+ML.NET CLI je [nástroj .NET Core](../core/tools/global-tools.md). Po nainstalování mu udělíte úlohu strojového učení a školicí datovou sadu, která generuje ML.NET model, a také C# kód, který se má spustit pro použití modelu ve vaší aplikaci.
 
 Jak je znázorněno na následujícím obrázku, je jednoduché vytvořit vysoce kvalitní ML.NET model (soubor s serializovaným modelem. zip) a vzorový C# kód pro spuštění nebo určení skóre modelu. Kromě toho je vytvořen C# také kód pro vytvoření nebo výuku modelu, takže můžete prozkoumat a iterovat na algoritmus a nastavení použité pro vygenerovaný "nejlepší model".
 
-![image](media/automate-training-with-cli/cli-high-level-process.png "AutoML Engine pracuje v rozhraní příkazového řádku ML.NET")
+![obrazu](media/automate-training-with-cli/cli-high-level-process.png "AutoML Engine pracuje v rozhraní příkazového řádku ML.NET")
 
 Tyto prostředky můžete vygenerovat z vlastních datových sad, aniž byste je museli kódovat sami, takže také zlepší vaši produktivitu, i když už znáte ML.NET.
 
@@ -44,7 +44,7 @@ Příklad použití:
 mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
 ```
 
-![obrázek](media/automate-training-with-cli/cli-model-generation.gif)
+![image](media/automate-training-with-cli/cli-model-generation.gif)
 
 Můžete ho spustit stejným způsobem jako v *prostředí Windows PowerShell*, * MacOS/Linux bash nebo *Windows CMD*. Automatické dokončování v tabulkovém prostředí (návrhy parametrů) ale nebude fungovat ve *Windows CMD*.
 
@@ -64,17 +64,17 @@ Třetí Asset a školicí kód vám ukáže, co ML.NET kód rozhraní API použ�
 
 ## <a name="understanding-the-quality-of-the-model"></a>Princip kvality modelu
 
-Když vygenerujete "nejlepší model" pomocí nástroje CLI, uvidíte metriky kvality (například přesnost a R-kvadrát) podle toho, jakou úlohu ML cílíte.
+Když vygenerujete "nejlepší model" pomocí nástroje CLI, uvidíte metriky kvality (například přesnost a R-kvadrát) podle potřeby pro úlohu ML, na kterou cílíte.
 
-Tady shrnujeme tyto metriky seskupené podle úkolu ML, abyste porozuměli kvalitě automaticky generovaného nejlepšího modelu.
+Tady jsou tyto metriky shrnuté podle úkolu ML, abyste porozuměli kvalitě automaticky generovaného nejlepšího modelu.
 
 ### <a name="metrics-for-binary-classification-models"></a>Metriky pro binární modely klasifikace
 
 V následujícím seznamu se zobrazí seznam metriky úlohy binární klasifikace v ML pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
 
-![obrázek](media/automate-training-with-cli/cli-binary-classification-metrics.png)
+![image](media/automate-training-with-cli/cli-binary-classification-metrics.png)
 
-Přesnost je oblíbená metrika pro problémy s klasifikací, ale přesnost není vždy nejlepší metrikou pro výběr nejlepšího modelu, jak je vysvětleno v níže uvedených odkazech. Existují případy, kdy potřebujete vyhodnotit kvalitu modelu s dalšími metrikami.
+Přesnost je oblíbená metrika pro problémy s klasifikací, ale přesnost není vždy nejlepší metrikou pro výběr nejlepšího modelu, jak je vysvětleno v následujících odkazech. Existují případy, kdy potřebujete vyhodnotit kvalitu modelu s dalšími metrikami.
 
 Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro binární klasifikaci](resources/metrics.md#evaluation-metrics-for-binary-classification).
 
@@ -82,7 +82,7 @@ Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příka
 
 Následující seznam zobrazuje seznam metrik úlohy klasifikace s více třídami pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
 
-![obrázek](media/automate-training-with-cli/cli-multiclass-classification-metrics.png)
+![image](media/automate-training-with-cli/cli-multiclass-classification-metrics.png)
 
 Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro klasifikaci s více třídami](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
 
@@ -92,11 +92,11 @@ Regresní model odpovídá datům, pokud jsou rozdíly mezi zjištěnými hodnot
 
 Zobrazí se podobný seznam metrik pro nejlépe pět modelů kvality, které rozhraní příkazového řádku najde. V tomto konkrétním případě, který se týká úlohy regresní ML:
 
-![obrázek](media/automate-training-with-cli/cli-regression-metrics.png)
+![image](media/automate-training-with-cli/cli-regression-metrics.png)
 
 Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro regresi](resources/metrics.md#evaluation-metrics-for-regression-and-recommendation).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Postup instalace nástroje ML.NET CLI](how-to-guides/install-ml-net-cli.md)
 - [Kurz: analýza mínění pomocí rozhraní příkazového řádku ML.NET](tutorials/sentiment-analysis-cli.md)

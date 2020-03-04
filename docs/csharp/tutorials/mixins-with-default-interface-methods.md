@@ -3,12 +3,12 @@ title: Vytváření Mixin typů pomocí výchozích metod rozhraní
 description: Pomocí výchozích členů rozhraní můžete roztáhnout rozhraní s nepovinnými výchozími implementacemi pro implementátory.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: f97410124a4ca5bbb10972ab5e7942fa4af68d72
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: aaf8d34e27c9c56d95560656eb7a7b24b152c053
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921449"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240103"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Kurz: kombinace funkcí při vytváření tříd pomocí rozhraní s výchozími metodami rozhraní
 
@@ -22,7 +22,7 @@ V tomto kurzu se naučíte:
 > * Vytvořte třídy, které používají výchozí implementace.
 > * Vytvořte třídy, které přepíší některé nebo všechny výchozí implementace.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download/dotnet-core) nebo novější.
 
@@ -53,21 +53,21 @@ Pojďme vytvořit kód, abychom předvedli tyto rozdíly.
 
 Začněte vytvořením rozhraní, které definuje chování pro všechny světla:
 
-[!code-csharp[Declare base interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
+[!code-csharp[Declare base interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
 
 Základní přípojka režie by mohla implementovat toto rozhraní, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[First overhead light](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
+[!code-csharp[First overhead light](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
 
 V tomto kurzu kód neřídí zařízení IoT, ale emuluje tyto aktivity zápisem zpráv do konzoly. Kód můžete prozkoumat bez automatizace vaší domu.
 
 Nyní nadefinujte rozhraní pro světlo, které se může automaticky vypnout po vypršení časového limitu:
 
-[!code-csharp[pure Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
+[!code-csharp[pure Timer interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
 
 Můžete přidat základní implementaci do režijního světla, ale lepším řešením je upravit tuto definici rozhraní a poskytnout `virtual` výchozí implementaci:
 
-[!code-csharp[Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
+[!code-csharp[Timer interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
 
 Přidáním této změny může třída `OverheadLight` implementovat funkci časovače tím, že deklaruje podporu rozhraní:
 
@@ -77,7 +77,7 @@ public class OverheadLight : ITimerLight { }
 
 Jiný typ světla může podporovat propracovanější protokol. Může poskytnout svou vlastní implementaci pro `TurnOnFor`, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
+[!code-csharp[Override the timer function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
 
 Na rozdíl od přepisu metod virtuální třídy nepoužívá deklarace `TurnOnFor` ve třídě `HalogenLight` klíčové slovo `override`.
 
@@ -85,19 +85,19 @@ Na rozdíl od přepisu metod virtuální třídy nepoužívá deklarace `TurnOnF
 
 Výhody výchozích metod rozhraní se při zavádění pokročilejších funkcí stanou nejasnější. Používání rozhraní umožňuje kombinovat a odpovídat možnostem. Umožňuje také každému autorovi třídy zvolit mezi výchozí implementací a vlastní implementací. Pojďme přidat rozhraní s výchozí implementací pro blikající světlo:
 
-[!code-csharp[Define the blinking light interface](~/samples/csharp/tutorials/mixins-with-interfaces/IBlinkingLight.cs?name=SnippetBlinkingLight)]
+[!code-csharp[Define the blinking light interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/IBlinkingLight.cs?name=SnippetBlinkingLight)]
 
 Výchozí implementace umožňuje jakékoli světlo blikat. Režijní náklady mohou pomocí výchozí implementace přidat možnosti časovače i blikání:
 
-[!code-csharp[Use the default blink function](~/samples/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
+[!code-csharp[Use the default blink function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
 
 Nový typ světla, `LEDLight` podporuje přímo funkci Timer i funkci Blink. Tento styl světla implementuje rozhraní `ITimerLight` i `IBlinkingLight` a přepisuje metodu `Blink`:
 
-[!code-csharp[Override the blink function](~/samples/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
+[!code-csharp[Override the blink function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
 
 `ExtraFancyLight` může podporovat funkce blikání i časovače přímo:
 
-[!code-csharp[Override the blink and timer function](~/samples/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
+[!code-csharp[Override the blink and timer function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
 `HalogenLight`, který jste vytvořili dříve, nepodporuje blikání. Nepřidejte `IBlinkingLight` do seznamu podporovaných rozhraní.
 
@@ -105,21 +105,21 @@ Nový typ světla, `LEDLight` podporuje přímo funkci Timer i funkci Blink. Ten
 
 Nyní napíšeme nějaký testovací kód. Můžete využít C#funkci [porovnávání vzorů](../pattern-matching.md) k určení možností světla tím, že prozkoumáte, která rozhraní podporuje.  Následující metoda využije podporované funkce každého světla:
 
-[!code-csharp[Test a light's capabilities](~/samples/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetTestLightFunctions)]
+[!code-csharp[Test a light's capabilities](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetTestLightFunctions)]
 
 Následující kód v metodě `Main` vytvoří každý typ světla v sekvenci a provede testy, které světlo:
 
-[!code-csharp[Test a light's capabilities](~/samples/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetMainMethod)]
+[!code-csharp[Test a light's capabilities](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetMainMethod)]
 
 ## <a name="how-the-compiler-determines-best-implementation"></a>Způsob, jakým kompilátor určí nejlepší implementaci
 
 Tento scénář ukazuje základní rozhraní bez implementace. Přidání metody do rozhraní `ILight` zavádí nové složitosti. Jazyková pravidla řízení výchozích metod rozhraní minimalizují vliv na konkrétní třídy, které implementují více odvozených rozhraní. Pojďme vylepšit původní rozhraní novou metodou, která ukazuje, jak se tyto změny použijí. Každé světlo indikátor může hlásit svůj stav napájení jako výčtovou hodnotu:
 
-[!code-csharp[Enumeration for power status](~/samples/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
+[!code-csharp[Enumeration for power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
 
 Výchozí implementace předpokládá napájení z elektrické sítě:
 
-[!code-csharp[Report a default power status](~/samples/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
+[!code-csharp[Report a default power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
 
 Tyto změny se zkompiluje čistě, i když `ExtraFancyLight` deklaruje podporu rozhraní `ILight` a obou odvozených rozhraní, `ITimerLight` a `IBlinkingLight`. V rozhraní `ILight` je deklarována pouze jedna "nejbližší" implementace. Jakákoliv třída, která deklarovaná přepsání by se stala jedinou implementací "nejbližší". Viděli jste příklady v předchozích třídách, které overrode členy jiných odvozených rozhraní.
 

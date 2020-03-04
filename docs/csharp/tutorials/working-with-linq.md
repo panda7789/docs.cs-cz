@@ -4,18 +4,18 @@ description: V tomto kurzu se naučíte generovat sekvence pomocí LINQ, metody 
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 8984fdf0ff26726b6d05e8bee8a9e8ae1c350ea7
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ece001e82c0aa44a91999bea78d2fd695ff9362b
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345610"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240012"
 ---
 # <a name="work-with-language-integrated-query-linq"></a>Práce s jazykem integrovaným dotazem (LINQ)
 
 ## <a name="introduction"></a>Úvod
 
-V tomto kurzu se naučíte funkcemi v .NET Core a C# v jazyce. Naučíte se tyto dovednosti:
+V tomto kurzu se naučíte funkcemi v .NET Core a C# v jazyce. Co se naučíte:
 
 - Generujte sekvence pomocí LINQ.
 - Metody zápisu, které lze snadno použít v dotazech LINQ.
@@ -29,7 +29,7 @@ Pro vaše účely je to světle srdce, které se používá při manipulaci s se
 
 V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. V úložišti GitHub/Samples můžete také zobrazit [ukázku dokončeno](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) . Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Budete muset nastavit počítač tak, aby běžel .NET Core. Pokyny k instalaci najdete na stránce pro [stažení jádra .NET](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit v systému Windows, Ubuntu Linux nebo OS X nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
@@ -179,7 +179,7 @@ Rozhraní <xref:System.Collections.Generic.IEnumerable%601> má jednu metodu: <x
 
 Toto je implementace této metody:
 
-[!CODE-csharp[InterleaveSequenceWith](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet1)]
+[!CODE-csharp[InterleaveSequenceWith](../../../samples/snippets/csharp/getting-started/console-linq/extensions.cs?name=snippet1)]
 
 Teď, když jste tuto metodu napsali, se vraťte k metodě `Main` a přemístěte balíček jednou:
 
@@ -213,7 +213,7 @@ Kolik přeřazení trvá pro nastavení balíčku zpátky na původní objednáv
 
 Zápis metody pro určení, zda jsou dvě sekvence stejné, by měly být jednoduché. Je to podobná struktura jako metoda, kterou jste napsali pro přemístění balíčku. Pouze tento čas, místo `yield return`z každého prvku, porovnáte vyhovující prvky každé sekvence. Po vytvoření výčtu celé sekvence, pokud každý prvek odpovídá, jsou sekvence stejné:
 
-[!CODE-csharp[SequenceEquals](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet2)]
+[!CODE-csharp[SequenceEquals](../../../samples/snippets/csharp/getting-started/console-linq/extensions.cs?name=snippet2)]
 
 To ukazuje druhou metodu LINQ idiom: Terminal. Přebírají sekvenci jako vstup (nebo v tomto případě dvě sekvence) a vrátí jednu skalární hodnotu. Při použití metod terminálu jsou vždy poslední metodou v řetězci metod pro dotaz LINQ, tedy název "Terminal".
 
@@ -267,7 +267,7 @@ Pamatujte na to, že jsme původní balíček vygenerovali pomocí dotazu LINQ. 
 
 V souboru `Extensions.cs` zadejte nebo zkopírujte níže uvedenou metodu. Tato metoda rozšíření vytvoří nový soubor s názvem `debug.log` v adresáři projektu a zaznamená, který dotaz je aktuálně prováděn do souboru protokolu. Tato metoda rozšíření se dá připojit k libovolnému dotazu a označit tak, že se dotaz spustil.
 
-[!CODE-csharp[LogQuery](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
+[!CODE-csharp[LogQuery](../../../samples/snippets/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
 
 Pod `File`se zobrazí červená vlnovka, což znamená, že neexistuje. Nebude zkompilován, protože kompilátor neví, co `File`. Chcete-li tento problém vyřešit, je třeba přidat následující řádek kódu do prvního řádku v `Extensions.cs`:
 
@@ -329,7 +329,7 @@ Všimněte si, že při každém přístupu k dotazu nechcete protokolovat. Prot
 
 Můžete zvýšit výkon kódu zde, abyste snížili počet provedených provedení. Jednoduchá oprava, kterou můžete udělat, je *Uložit do mezipaměti* výsledky původního dotazu LINQ, který sestaví balíček karet. V současné době spouštíte dotazy znovu a znovu pokaždé, když smyčka do-while projde iterací, znovu se vytvoří balíček karet a znovu se přeskočí. Pro ukládání balíčku karet do mezipaměti můžete využít metody LINQ <xref:System.Linq.Enumerable.ToArray%2A> a <xref:System.Linq.Enumerable.ToList%2A>; Když je připojíte k dotazům, provedou stejné akce, které jste jim přihlásili, ale nyní budou výsledky ukládat do pole nebo seznamu v závislosti na metodě, kterou se rozhodnete volat. Přidejte do obou dotazů metodu LINQ <xref:System.Linq.Enumerable.ToArray%2A> a program spusťte znovu:
 
-[!CODE-csharp[Main](../../../samples/csharp/getting-started/console-linq/Program.cs?name=snippet1)]
+[!CODE-csharp[Main](../../../samples/snippets/csharp/getting-started/console-linq/Program.cs?name=snippet1)]
 
 Teď je vypínání na více než 30 dotazů. Spusťte znovu s náhodným a uvidíte podobná vylepšení: teď spustí 162 dotazů.
 
@@ -350,8 +350,8 @@ Kromě technologie LINQ jste se dozvěděli o magicians techniky použití pro �
 
 Další informace o LINQ najdete v těchto tématech:
 
-- [ (LINQ)](../programming-guide/concepts/linq/index.md)
-- [Úvod do LINQ](../programming-guide/concepts/linq/index.md)
+- [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
+- [Úvod do jazyka LINQ](../programming-guide/concepts/linq/index.md)
 - [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
 - [Transformace dat pomocí LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
 - [Syntaxe dotazu a syntaxe metody v LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)

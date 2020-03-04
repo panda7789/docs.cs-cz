@@ -3,12 +3,12 @@ title: Obecné vzory pro delegáty
 description: Přečtěte si o běžných vzorech pro používání delegátů ve vašem kódu, abyste zabránili silnému propojení mezi vašimi komponentami.
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: 174ae4129464c9d2e787048793cec764121ca4aa
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 40e6ced7337e32d6e9b67b12a15ad7e03a77c4b6
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454077"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239869"
 ---
 # <a name="common-patterns-for-delegates"></a>Obecné vzory pro delegáty
 
@@ -54,15 +54,15 @@ V rámci tohoto návrhu může být primární součástí protokolu nevirtuáln
 
 Pojďme začít malým: počáteční implementace přijme nové zprávy a zapíše je pomocí kteréhokoli připojeného delegáta. Můžete začít s jedním delegátem, který zapisuje zprávy do konzoly.
 
-[!code-csharp[LoggerImplementation](../../samples/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
+[!code-csharp[LoggerImplementation](../../samples/snippets/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
 
 Výše uvedená statická třída je nejjednodušší věc, která může fungovat. Musíme napsat jednu implementaci pro metodu, která zapisuje zprávy do konzoly: 
 
-[!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/LoggingMethods.cs#LogToConsole "A Console logger.")]
+[!code-csharp[LogToConsole](../../samples/snippets/csharp/delegates-and-events/LoggingMethods.cs#LogToConsole "A Console logger.")]
 
 Nakonec musíte připojit delegáta tak, že ho připojíte k delegátovi WriteMessage deklarovanému v protokolovacím nástroji:
 
-[!code-csharp[ConnectDelegate](../../samples/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
+[!code-csharp[ConnectDelegate](../../samples/snippets/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
 
 ## <a name="practices"></a>Způsobů
 
@@ -78,12 +78,12 @@ Pojďme tuto první verzi udělat trochu robustnější a pak začít vytvářet
 
 Nyní přidáme do metody `LogMessage()` několik argumentů, aby vaše třída protokolu vytvořila více strukturovaných zpráv:
 
-[!code-csharp[Severity](../../samples/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
-[!code-csharp[NextLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
+[!code-csharp[Severity](../../samples/snippets/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
+[!code-csharp[NextLogger](../../samples/snippets/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
 
 Teď využijeme tento argument `Severity` k filtrování zpráv, které se odesílají do výstupu protokolu. 
 
-[!code-csharp[FinalLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
+[!code-csharp[FinalLogger](../../samples/snippets/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
 
 ## <a name="practices"></a>Způsobů
 
@@ -97,11 +97,11 @@ Komponenta log je také k disjetí. Pojďme přidat další výstupní modul, kt
 
 Tady je tento protokolovací nástroj založený na souboru:
 
-[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
+[!code-csharp[FileLogger](../../samples/snippets/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
 
 Po vytvoření této třídy je možné ji vytvořit a připojit její metodu LogMessage – k součásti protokolovacího nástroje:
 
-[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
+[!code-csharp[FileLogger](../../samples/snippets/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
 
 Tyto dvě se vzájemně nevylučují. Můžete připojit obě metody protokolu a generovat zprávy do konzoly a souboru:
 

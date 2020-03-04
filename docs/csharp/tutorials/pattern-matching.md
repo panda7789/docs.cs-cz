@@ -4,12 +4,12 @@ description: Tento rozšířený kurz ukazuje, jak používat techniky porovnáv
 ms.date: 03/13/2019
 ms-technology: csharp-whats-new
 ms.custom: mvc
-ms.openlocfilehash: ca7ae63a038fce0b2569e7a4bd1805765bc23d44
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fd08e707402bfcd552997111a9c3fa58841a5466
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039194"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240051"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: použití funkcí pro porovnávání vzorů k rozšiřování datových typů
 
@@ -23,7 +23,7 @@ V tomto kurzu se naučíte:
 > - Použijte výrazy porovnávání vzorů k implementaci chování založeného na typech a hodnotách vlastností.
 > - Kombinací porovnávání vzorů s jinými technikami vytvoříte kompletní algoritmy.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
@@ -41,7 +41,7 @@ Vezměte v úvahu hlavní metropolitní oblast, která využívá mýtné a ceny
 
 Z tohoto krátkého popisu jste mohli rychle vykreslit hierarchii objektů k modelování tohoto systému. Vaše data ale pocházejí z několika zdrojů, jako jsou jiné systémy pro správu registrace vozidel. Tyto systémy poskytují různé třídy pro modelování dat a nemáte jeden objektový model, který můžete použít. V tomto kurzu použijete tyto zjednodušené třídy pro modelování dat vozidel z těchto externích systémů, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[ExternalSystems](~/samples/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
+[!code-csharp[ExternalSystems](~/samples/snippets/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
 
 Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start) GitHub. Můžete vidět, že třídy vozidel jsou z různých systémů a jsou v různých oborech názvů. Není možné využít žádnou společnou základní třídu, kromě `System.Object`.
 
@@ -298,24 +298,24 @@ Pro tuto funkci použijete porovnávání vzorů, ale budete je integrovat s jin
 
 V následující tabulce jsou uvedeny kombinace vstupních hodnot a násobitele cen ve špičce:
 
-| Den        | Interval         | Směr | Nárok |
+| Day        | Čas         | Směr | Premium |
 | ---------- | ------------ | --------- |--------:|
-| Názvy    | ráno nespěcháte | Příjem   | × 2,00  |
-| Názvy    | ráno nespěcháte | Komunikace  | × 1,00  |
-| Názvy    | Daytime      | Příjem   | × 1,50  |
-| Názvy    | Daytime      | Komunikace  | × 1,50  |
-| Názvy    | večerní nespěcháte | Příjem   | × 1,00  |
-| Názvy    | večerní nespěcháte | Komunikace  | × 2,00  |
-| Názvy    | přes noc    | Příjem   | × 0,75  |
-| Názvy    | přes noc    | Komunikace  | × 0,75  |
-| Volné    | ráno nespěcháte | Příjem   | × 1,00  |
-| Volné    | ráno nespěcháte | Komunikace  | × 1,00  |
-| Volné    | Daytime      | Příjem   | × 1,00  |
-| Volné    | Daytime      | Komunikace  | × 1,00  |
-| Volné    | večerní nespěcháte | Příjem   | × 1,00  |
-| Volné    | večerní nespěcháte | Komunikace  | × 1,00  |
-| Volné    | přes noc    | Příjem   | × 1,00  |
-| Volné    | přes noc    | Komunikace  | × 1,00  |
+| Názvy    | ráno nespěcháte | příjem   | × 2,00  |
+| Názvy    | ráno nespěcháte | komunikace  | × 1,00  |
+| Názvy    | Daytime      | příjem   | × 1,50  |
+| Názvy    | Daytime      | komunikace  | × 1,50  |
+| Názvy    | večerní nespěcháte | příjem   | × 1,00  |
+| Názvy    | večerní nespěcháte | komunikace  | × 2,00  |
+| Názvy    | přes noc    | příjem   | × 0,75  |
+| Názvy    | přes noc    | komunikace  | × 0,75  |
+| Volné    | ráno nespěcháte | příjem   | × 1,00  |
+| Volné    | ráno nespěcháte | komunikace  | × 1,00  |
+| Volné    | Daytime      | příjem   | × 1,00  |
+| Volné    | Daytime      | komunikace  | × 1,00  |
+| Volné    | večerní nespěcháte | příjem   | × 1,00  |
+| Volné    | večerní nespěcháte | komunikace  | × 1,00  |
+| Volné    | přes noc    | příjem   | × 1,00  |
+| Volné    | přes noc    | komunikace  | × 1,00  |
 
 Existují 16 různých kombinací tří proměnných. Kombinací některých podmínek zjednodušete výraz finálního přepínače.
 
@@ -337,17 +337,17 @@ private static bool IsWeekDay(DateTime timeOfToll) =>
 
 Tato metoda funguje, ale je repetitious. Můžete ho zjednodušit, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[IsWeekDay](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
+[!code-csharp[IsWeekDay](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
 
 Dále přidejte podobnou funkci pro kategorizaci času do bloků:
 
-[!code-csharp[GetTimeBand](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
+[!code-csharp[GetTimeBand](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
 
 Předchozí metoda nepoužívá porovnávání vzorů. Je jasné, že se seznámíte s `if`mi příkazy. Můžete přidat privátní `enum` pro převod jednotlivých časových úseků na samostatnou hodnotu.
 
 Po vytvoření těchto metod můžete použít jiný výraz `switch` se **vzorem řazené kolekce členů** pro výpočet cenové úrovně Premium. Můžete sestavit výraz `switch` se všemi 16 opěrkami rukou:
 
-[!code-csharp[FullTuplePattern](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
+[!code-csharp[FullTuplePattern](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
 
 Výše uvedený kód funguje, ale může být zjednodušený. Všechny osm kombinací pro daný víkend mají stejnou mýtné. Všechna osm můžete nahradit následujícím řádkem:
 
@@ -380,7 +380,7 @@ public decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
 
 Nakonec můžete odebrat dvě nespěcháte hodiny, které platí pro běžnou cenu. Po odebrání těchto zbraní můžete `false` nahradit pomocí zahození (`_`) v konečném přepínači ARM. Budete mít následující metodu, kterou jste dokončili:
 
-[!code-csharp[SimplifiedTuplePattern](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
+[!code-csharp[SimplifiedTuplePattern](../../../samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
 
 Tento příklad zvýrazňuje jednu z výhod porovnávání vzorů: větve vzorů jsou vyhodnocovány v pořadí. V případě, že je změníte jejich uspořádání tak, aby předchozí větev zpracovává jeden z vašich pozdějších případů, kompilátor vás upozorní na nedosažitelný kód. Tato jazyková pravidla usnadňují provádění předchozích zjednodušení s jistotou, že se kód nezměnil.
 

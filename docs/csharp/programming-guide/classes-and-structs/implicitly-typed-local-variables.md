@@ -5,12 +5,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 692a0f8ad933f3ba4bef50681cb3487fa0a7eea9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d39e4c4dd180ba35b7555d61211a34d696b04f50
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714838"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240997"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (C# Průvodce programováním)
 
@@ -68,7 +68,7 @@ Následující omezení platí pro implicitně typové deklarace proměnných:
 
 - Pokud je typ s názvem `var` v oboru, pak bude klíčové slovo `var` přeloženo na tento název typu a nebude zpracováno jako součást implicitně typové deklarace lokální proměnné.
 
-Implicitní zadání pomocí klíčového slova `var` lze použít pouze pro proměnné v oboru místních metod. Implicitní psaní není k dispozici pro pole třídy, C# protože by Kompilátor narazil na logický Paradox při zpracování kódu: kompilátor musí znát typ pole, ale nemůže určit typ, dokud není výraz přiřazení analyzován, a výraz nelze vyhodnotit bez znalosti typu. Uvažujte následující kód:
+Implicitní zadání pomocí klíčového slova `var` lze použít pouze pro proměnné v oboru místních metod. Implicitní psaní není k dispozici pro pole třídy, C# protože by Kompilátor narazil na logický Paradox při zpracování kódu: kompilátor musí znát typ pole, ale nemůže určit typ, dokud není výraz přiřazení analyzován, a výraz nelze vyhodnotit bez znalosti typu. Vezměte v úvahu následující kód:
 
 ```csharp
 private var bookTitles;
@@ -88,9 +88,9 @@ Klíčové slovo `var` může být užitečné také v případě, že konkrétn
 
 [!code-csharp[cscsrefQueryKeywords#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#13)]
 
-Použití `var` však má alespoň potenciál, aby bylo obtížné pochopit kód pro jiné vývojáře. V C# takovém případě dokumentace obecně používá `var` jenom v případě, že je to potřeba.
+Použití `var` pomáhá zjednodušit váš kód, ale jeho použití by mělo být omezeno na případy, kde je vyžadováno, nebo v případě, že se váš kód bude snadněji číst. Další informace o tom, kdy se správně používá `var`, najdete v části [implicitní zadání místních proměnných](../inside-a-program/coding-conventions.md#implicitly-typed-local-variables) v článku C# pokyny pro kódování.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#Odkaz](../../language-reference/index.md)
 - [Implicitně typovaná pole](../arrays/implicitly-typed-arrays.md)

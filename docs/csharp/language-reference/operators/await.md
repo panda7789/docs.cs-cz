@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 6dc058f3850e30d8c424d4372c47b127c7d361b6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 156c07561406caed6ebb4a354a5cc2b484c832db
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712738"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239505"
 ---
 # <a name="await-operator-c-reference"></a>await – operátorC# (Referenční dokumentace)
 
@@ -20,7 +20,7 @@ Operátor `await` pozastaví vyhodnocení ohraničující [asynchronní](../keyw
 
 V následujícím příkladu metoda <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> vrátí instanci `Task<byte[]>`, která představuje asynchronní operaci, která při dokončení vytvoří bajtové pole. Dokud se operace nedokončí, operátor `await` pozastaví metodu `DownloadDocsMainPageAsync`. Když se `DownloadDocsMainPageAsync` pozastaví, vrátí se ovládací prvek do metody `Main`, která je volajícím `DownloadDocsMainPageAsync`. Metoda `Main` se spustí, dokud nepotřebuje výsledek asynchronní operace prováděné metodou `DownloadDocsMainPageAsync`. Když <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> získá všechny bajty, vyhodnotí se zbytek metody `DownloadDocsMainPageAsync`. Potom je vyhodnocena zbývající `Main` metoda.
 
-[!code-csharp[await example](~/samples/csharp/language-reference/operators/AwaitOperator.cs)]
+[!code-csharp[await example](~/samples/snippets/csharp/language-reference/operators/AwaitOperator.cs)]
 
 Předchozí příklad používá [asynchronní metodu `Main`](../../programming-guide/main-and-command-args/index.md), která je možná od C# 7,1. Další informace naleznete v oddílu [await v části Metoda Main](#await-operator-in-the-main-method) .
 
@@ -45,7 +45,7 @@ Počínaje C# 7,1 [`Main` metoda](../../programming-guide/main-and-command-args/
 
 Další informace naleznete v oddílu [await Expressions](~/_csharplang/spec/expressions.md#await-expressions) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 32784f7d4b9e3a93eb7f81b4829b39c1a06ef949
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 2397bf999ba97fe0c011de180e05be4177894365
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920386"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239882"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -177,17 +177,17 @@ Bez těchto typů při předávání takových položek jako části pole nebo o
 
 Následující příklad používá instanci <xref:System.Span%601> a <xref:System.Memory%601> k poskytnutí virtuálního zobrazení 10 prvků pole.
 
-[!code-csharp[Span\<T>](~/samples/core/whats-new/whats-new-in-21/cs/program.cs)]
+[!code-csharp[Span\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/program.cs)]
 
-[!code-vb[Memory\<T>](~/samples/core/whats-new/whats-new-in-21/vb/program.vb)]
+[!code-vb[Memory\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/vb/program.vb)]
 
 ### <a name="brotli-compression"></a>Komprese Brotli
 
 .NET Core 2,1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátová kompresní algoritmus, který je definovaný v [dokumentu RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a který podporuje většina webových prohlížečů a hlavních webových serverů. Můžete použít třídu <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> založenou na streamech nebo vysoce výkonné <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> a třídy <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> založené na rozsahu. Následující příklad ukazuje kompresi pomocí <xref:System.IO.Compression.BrotliStream> třídy:
 
-[!code-csharp[Brotli compression](~/samples/core/whats-new/whats-new-in-21/cs/brotli.cs#1)]
+[!code-csharp[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/brotli.cs#1)]
 
-[!code-vb[Brotli compression](~/samples/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
+[!code-vb[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
 
 Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System.IO.Compression.DeflateStream> a <xref:System.IO.Compression.GZipStream>, což usnadňuje převod kódu, který volá tato rozhraní API na <xref:System.IO.Compression.BrotliStream>.
 
@@ -245,7 +245,11 @@ V systému Windows můžete také zvolit použití <xref:System.Net.Http.WinHttp
 
 V systémech Linux a macOS můžete nakonfigurovat <xref:System.Net.Http.HttpClient> jenom pro jednotlivé procesy. V systému Linux je nutné nasadit [libcurl](https://curl.haxx.se/libcurl/) , pokud chcete použít starou implementaci <xref:System.Net.Http.HttpClient>. (Instaluje se s .NET Core 2,0.)
 
-## <a name="see-also"></a>Viz také:
+### <a name="breaking-changes"></a>Změny způsobující chyby
+
+Informace o zásadních změnách najdete v tématu zásadní [změny migrace z verze 2,0 na 2,1](../compatibility/2.0-2.1.md).
+
+## <a name="see-also"></a>Viz také
 
 - [Co je nového v .NET Core](index.md)
 - [Nové funkce v EF Core 2,1](/ef/core/what-is-new/ef-core-2.1)

@@ -4,12 +4,12 @@ description: Naučte se, jak vytvořit aplikaci .NET Core, která podporuje modu
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: 4c03c70edcdba52c4e6029402b92d5478a0d312c
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: eae792ddaa6655bfdcd932d3cb695f9dafa68130
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156644"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240841"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Vytvoření aplikace .NET Core pomocí modulů plug-in
 
@@ -105,7 +105,7 @@ Dalším krokem při sestavování aplikace pomocí modulů plug-in je definová
 
 V kořenové složce projektu spusťte `dotnet new classlib -o PluginBase`. Také spusťte `dotnet sln add PluginBase/PluginBase.csproj` pro přidání projektu do souboru řešení. Odstraňte soubor `PluginBase/Class1.cs` a ve složce `PluginBase` s názvem `ICommand.cs` vytvořte nový soubor s následující definicí rozhraní:
 
-[!code-csharp[the-plugin-interface](~/samples/core/extensions/AppWithPlugin/PluginBase/ICommand.cs)]
+[!code-csharp[the-plugin-interface](~/samples/snippets/core/tutorials/creating-app-with-plugin-support/csharp/PluginBase/ICommand.cs)]
 
 Toto `ICommand` rozhraní je rozhraní, které budou všechny moduly plug-in implementovat.
 
@@ -187,7 +187,7 @@ static IEnumerable<ICommand> CreateCommands(Assembly assembly)
 
 Nyní může aplikace správně načíst a vytvořit instanci příkazů z načtených sestavení modulu plug-in, ale nelze načíst sestavení modulu plug-in. Ve složce *AppWithPlugin* vytvořte soubor s názvem *PluginLoadContext.cs* s následujícím obsahem:
 
-[!code-csharp[loading-plugins](~/samples/core/extensions/AppWithPlugin/AppWithPlugin/PluginLoadContext.cs)]
+[!code-csharp[loading-plugins](~/samples/snippets/core/tutorials/creating-app-with-plugin-support/csharp/AppWithPlugin/PluginLoadContext.cs)]
 
 Typ `PluginLoadContext` je odvozen z <xref:System.Runtime.Loader.AssemblyLoadContext>. `AssemblyLoadContext` typ je speciální typ v modulu runtime, který umožňuje vývojářům izolovat načtená sestavení do různých skupin, aby se zajistilo, že verze sestavení nejsou v konfliktu. Kromě toho může vlastní `AssemblyLoadContext` zvolit různé cesty pro načtení sestavení a přepsat výchozí chování. `PluginLoadContext` používá instanci `AssemblyDependencyResolver` typu představenou v .NET Core 3,0 k překladu názvů sestavení na cesty. Objekt `AssemblyDependencyResolver` je vytvořen s cestou k knihovně tříd .NET. Překládá sestavení a nativní knihovny na jejich relativní cesty založené na souboru *. DEPS. JSON* pro knihovnu tříd, jehož cesta byla předána konstruktoru `AssemblyDependencyResolver`. Vlastní `AssemblyLoadContext` umožňuje modulům plug-in používat vlastní závislosti a `AssemblyDependencyResolver` usnadňuje správné načtení závislostí.
 
@@ -231,7 +231,7 @@ Zpět v kořenové složce proveďte následující kroky:
 
 3. Soubor *HelloPlugin/Class1. cs* nahraďte souborem s názvem *HelloCommand.cs* s následujícím obsahem:
 
-[!code-csharp[the-hello-plugin](~/samples/core/extensions/AppWithPlugin/HelloPlugin/HelloCommand.cs)]
+[!code-csharp[the-hello-plugin](~/samples/snippets/core/tutorials/creating-app-with-plugin-support/csharp/HelloPlugin/HelloCommand.cs)]
 
 Nyní otevřete soubor *HelloPlugin. csproj* . Mělo by to vypadat nějak takto:
 

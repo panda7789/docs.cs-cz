@@ -3,12 +3,12 @@ title: Organizování a testování projektů pomocí .NET Core CLI
 description: V tomto kurzu se dozvíte, jak organizovat a testovat projekty .NET Core z příkazového řádku.
 author: cartermp
 ms.date: 09/10/2018
-ms.openlocfilehash: 11d13ad1d74c69cdfe0626bda8823dd0609da85f
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 0d61e0fc004cfcb6d78c49475c7b7f0f523aad2c
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920419"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239908"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-cli"></a>Organizování a testování projektů pomocí .NET Core CLI
 
@@ -65,23 +65,23 @@ Vytvořte následující strukturu složek se zvýrazněným obsahem souboru:
 
 *IPet.cs*:
 
-[!code-csharp[IPet interface](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/IPet.cs)]
+[!code-csharp[IPet interface](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Pets/IPet.cs)]
 
 *Dog.cs*:
 
-[!code-csharp[Dog class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Dog.cs)]
+[!code-csharp[Dog class](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Pets/Dog.cs)]
 
 *Cat.cs*:
 
-[!code-csharp[Cat class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Cat.cs)]
+[!code-csharp[Cat class](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Pets/Cat.cs)]
 
 *Program.cs*:
 
-[!code-csharp[Main](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Program.cs)]
+[!code-csharp[Main](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Program.cs)]
 
-*NewTypes.csproj*:
+*NewTypes. csproj*:
 
-[!code-xml[NewTypes csproj](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/NewTypes.csproj)]
+[!code-xml[NewTypes csproj](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/NewTypes.csproj)]
 
 Spusťte následující příkaz:
 
@@ -118,9 +118,9 @@ Nebo máte také možnost ručně přidat odkaz na projekt přidáním uzlu `<It
 </ItemGroup>
 ```
 
-*NewTypesTests.csproj*:
+*NewTypesTests. csproj*:
 
-[!code-xml[NewTypesTests csproj](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/NewTypesTests.csproj)]
+[!code-xml[NewTypesTests csproj](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/test/NewTypesTests/NewTypesTests.csproj)]
 
 Soubor *NewTypesTests. csproj* obsahuje následující:
 
@@ -217,7 +217,7 @@ Test execution time: 1.7000 Seconds
 
 Změňte kontrolní výrazy testů z `Assert.NotEqual` na `Assert.Equal`:
 
-[!code-csharp[PetTests class](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/PetTests.cs)]
+[!code-csharp[PetTests class](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/test/NewTypesTests/PetTests.cs)]
 
 Spusťte testy znovu pomocí příkazu `dotnet test` a získejte následující výstup:
 

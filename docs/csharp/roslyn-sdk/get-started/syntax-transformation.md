@@ -1,116 +1,116 @@
 ---
-title: Začínáme s syntaxe transformace (rozhraní Roslyn API)
-description: Úvod do procházení, dotazování a procházení stromu syntaxe.
+title: Začínáme s transformací syntaxe (rozhraní API Roslyn)
+description: Úvod do procházení, dotazování a procházení stromů syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: bbd56f445a9f06b530a7d094b06f60e6123788da
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 5045dca839daba1070b34720e72cc9c4f7b94828
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306920"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240607"
 ---
-# <a name="get-started-with-syntax-transformation"></a>Začínáme s syntaxe transformace
+# <a name="get-started-with-syntax-transformation"></a>Začínáme s transformací syntaxe
 
-Tento kurz vychází koncepty a techniky prozkoumali v [vám umožní začít analýza syntaxe](syntax-analysis.md) a [začít pracovat s sémantické analýzy](semantic-analysis.md) šablon rychlý start. Pokud jste tak dosud neučinili, by se měla dokončit tyto rychlé starty před zahájením tohoto objektu.
+V tomto kurzu se seznámíte s koncepty a technikami, které jsme prozkoumali v části [Začínáme s analýzou syntaxe](syntax-analysis.md) a [Začínáme s nástroji pro rychlé zprovoznění sémantických analýz](semantic-analysis.md) . Pokud jste to ještě neudělali, měli byste před zahájením tohoto postupu dokončit tyto rychlé starty.
 
-V tomto rychlém startu si projít techniky pro vytváření a transformace stromu syntaxe. V kombinaci s postupy, které jste se naučili v předchozích rychlých startů vytvoření vaší první příkazového řádku refaktoring!
+V tomto rychlém startu prozkoumáte techniky vytváření a transformování stromů syntaxe. V kombinaci s technikami, které jste se naučili v předchozích rychlých startech, vytvoříte první refaktoring příkazového řádku.
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
-## <a name="immutability-and-the-net-compiler-platform"></a>Neměnnost a platformě .NET compiler platform
+## <a name="immutability-and-the-net-compiler-platform"></a>Neměnnosti a platforma .NET Compiler
 
-**Neměnnost** je základním principem .NET compiler platform. Neměnné datové struktury nelze změnit po jejich vytvoření. Neměnné datové struktury lze bezpečně sdílet a zároveň analyzují několik příjemců. Nehrozí nebezpečí, že tento jednoho příjemce má vliv na jiné nepředvídatelnými způsoby. Vaše analyzátor nemusí zámků nebo jiné míry souběžnosti. Toto pravidlo platí pro stromy syntaxe, kompilace, symboly, sémantickým modelům a každý další datová struktura, na které narazíte. Místo úpravy existujících struktur, rozhraní API vytvořit nové objekty podle zadaného rozdíly, staré. Tento koncept použijete na stromové struktury syntaxe pro vytvoření nové stromové struktury pomocí transformace.
+**Neměnnosti** je základní principem platformy .NET Compiler. Neměnné datové struktury nelze po vytvoření změnit. Neměnné datové struktury je možné bezpečně sdílet a analyzovat přes víc příjemců současně. Nehrozí nebezpečí, že jeden příjemce ovlivňuje jiné nepředvídatelné způsoby. Analyzátor nepotřebuje zámky nebo jiné míry souběžnosti. Toto pravidlo se vztahuje na stromy syntaxe, kompilace, symboly, sémantické modely a na všechny ostatní datové struktury, ke kterým dojde. Místo úprav existujících struktur vytvoří rozhraní API nové objekty založené na zadaných rozdílech na staré. Tento koncept použijete pro stromy syntaxe pro vytvoření nových stromů pomocí transformací.
 
 ## <a name="create-and-transform-trees"></a>Vytváření a transformace stromů
 
-Zvolte jednu ze dvou strategií pro syntaxe transformace. **Metody pro vytváření objektů** jsou nejlepší použít při hledáte konkrétním uzlům nahradit, nebo konkrétní umístění, kam chcete vložit nový kód. **Programy** jsou nejlépe, když chcete ve vyhledávání celý projekt vzorky kódu, které mají být nahrazeny.
+Zvolíte jednu ze dvou strategií pro transformaci syntaxe. **Metody továrního** využití se nejlépe používají při hledání konkrétních uzlů k nahrazení nebo určitých umístění, kam chcete vložit nový kód. Opakované **zápisy** jsou nejvhodnější, pokud chcete skenovat celý projekt vzorů kódu, které chcete nahradit.
 
-### <a name="create-nodes-with-factory-methods"></a>Vytvoření uzly pomocí metody pro vytváření objektů
+### <a name="create-nodes-with-factory-methods"></a>Vytváření uzlů s metodami pro vytváření objektů
 
-První transformace syntaxe ukazuje metody pro vytváření objektů. Chystáte se nahradit `using System.Collections;` příkazem `using System.Collections.Generic;` příkazu. Tento příklad ukazuje, jak vytvořit <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> objektů pomocí <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody pro vytváření objektů. Pro každý typ z **uzel**, **token**, nebo **triviální prvek** je metoda factory, který vytvoří instanci daného typu. Při vytváření stromu syntaxe vytváření uzly hierarchicky způsobem zdola nahoru. Potom budete transformace existující program nahrazujete stávající uzly s větve, které jste vytvořili.
+První transformace syntaxe ukazuje metody továrny. Chystáte se nahradit příkaz `using System.Collections;` příkazem `using System.Collections.Generic;`. Tento příklad ukazuje, jak vytvořit <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> objekty pomocí metod <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> Factory. Pro každý typ **uzlu**, **tokenu**nebo **minihry** existuje výrobní metoda, která vytvoří instanci tohoto typu. Struktury syntaxe můžete vytvářet hierarchicky sestavování uzlů v hierarchickém uspořádání. Pak převedete existující program tak, aby nahradil stávající uzly nově vytvořeným stromem.
 
-Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#**  > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na **OK**.
+Spusťte aplikaci Visual Studio a vytvořte nový C# projekt **Nástroje pro analýzu samostatného kódu** . V aplikaci Visual Studio vyberte **soubor** > **Nový** > **projekt** . zobrazí se dialogové okno Nový projekt. V části **rozšíření** pro  **C# Visual** > vyberte **Nástroj pro analýzu**samostatného kódu. Tento rychlý Start má dva ukázkové projekty, takže si pojmenujte řešení **SyntaxTransformationQuickStart**a pojmenujte projekt **ConstructionCS**. Klikněte na tlačítko **OK**.
 
-Tento projekt používá <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody k vytvoření třídy <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> představující `System.Collections.Generic` oboru názvů.
+Tento projekt používá metody třídy <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> k vytvoření <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> reprezentujícího obor názvů `System.Collections.Generic`.
 
-Přidejte následující použití direktivy k hornímu okraji `Program.cs` soubor k importu metod pro vytváření objektů <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory> třídy a metody <xref:System.Console> tak, aby je mohli použít později bez kvalifikování:
+Přidejte následující direktivu using do horní části souboru `Program.cs` pro import metod objektu pro vytváření <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory> třídy a metod <xref:System.Console>, abyste je mohli použít později bez jejich zařazení:
 
-[!code-csharp[import the SyntaxFactory class](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#StaticUsings "import the Syntax Factory class and the System.Console class")]
+[!code-csharp[import the SyntaxFactory class](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#StaticUsings "import the Syntax Factory class and the System.Console class")]
 
-Vytvoříte **název uzly syntaxe** k sestavení stromu, který představuje `using System.Collections.Generic;` příkazu. <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax> je základní třídou pro čtyři typy názvů, které se zobrazují v jazyce C#. Můžete vytvořit tyto čtyři typy názvů dohromady a vytvoří libovolný název, který se může objevit v jazyce C#:
+Vytvoříte **uzly syntaxe názvu** pro sestavení stromu, který představuje příkaz `using System.Collections.Generic;`. <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax> je základní třídou pro čtyři typy názvů, které se zobrazují C#v. Tyto čtyři typy názvů vytvoříte společně, abyste mohli vytvořit libovolný název, který se může zobrazit C# v jazyku:
 
-* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType>, která představuje jednoduchý jeden identifikátor názvy jako `System` a `Microsoft`.
-* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax?displayProperty=nameWithType>, která představuje obecný typ nebo metoda název například `List<int>`.
-* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax?displayProperty=nameWithType>, která představuje úplný název ve tvaru `<left-name>.<right-identifier-or-generic-name>` například `System.IO`.
-* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax?displayProperty=nameWithType>, která představuje název sestavení extern alias takové použití `LibraryV2::Foo`.
+* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType>, která představuje jednoduché názvy s jedním identifikátorem jako `System` a `Microsoft`.
+* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax?displayProperty=nameWithType>, která představuje obecný typ nebo název metody, jako je například `List<int>`.
+* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax?displayProperty=nameWithType>, která představuje kvalifikovaný název formuláře `<left-name>.<right-identifier-or-generic-name>` například `System.IO`.
+* <xref:Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax?displayProperty=nameWithType>, která představuje název pomocí sestavení extern alias, jako je například `LibraryV2::Foo`.
 
-Můžete použít <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory.IdentifierName(System.String)> metodu pro vytvoření <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax> uzlu. Přidejte následující kód do vašeho `Main` metoda ve `Program.cs`:
+Použijte metodu <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory.IdentifierName(System.String)> k vytvoření uzlu <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax>. Do metody `Main` v `Program.cs`přidejte následující kód:
 
-[!code-csharp[create the system identifier](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateIdentifierName "Create and display the system name identifier")]
+[!code-csharp[create the system identifier](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateIdentifierName "Create and display the system name identifier")]
 
-Předchozí kód vytvoří <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax> objektu a přiřadí ji do proměnné `name`. Mnohé z rozhraní Roslyn API vrátí základní třídy, aby bylo snazší pro práci s souvisejících typů. Proměnná `name`, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax>, lze opětovně použít během vytváření <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax>. Nepoužívejte odvození typu proměnné, jak sestavit ukázku. Tento krok v tomto projektu budete automatizovat.
+Předchozí kód vytvoří objekt <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax> a přiřadí ho k proměnné `name`. Mnoho z rozhraní API Roslyn vrací základní třídy, aby bylo snazší pracovat se souvisejícími typy. Proměnnou `name`, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax>, lze znovu použít při sestavování <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax>. Nepoužívejte odvození typu při sestavování ukázky. Tento krok budete automatizovat v tomto projektu.
 
-Vytvořili jste název. Nyní je čas vytvářet více uzlů do stromu podle budovy <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax>. Pomocí nového stromu `name` jako nalevo od názvu a nový <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax> pro `Collections` oboru názvů jako pravá strana <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax>. Přidejte následující kód, který `program.cs`:
+Vytvořili jste název. Nyní je čas sestavit více uzlů do stromu vytvořením <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax>. Nový strom používá `name` jako levé straně názvu a nový <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax> pro `Collections` obor názvů jako pravou stranu <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax>. Přidejte následující kód pro `program.cs`:
 
-[!code-csharp[create the collections identifier](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateQualifiedIdentifierName "Build the System.Collections identifier")]
+[!code-csharp[create the collections identifier](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateQualifiedIdentifierName "Build the System.Collections identifier")]
 
-Spusťte kód znovu a zobrazit výsledky. Strom uzlů, který představuje kód vytváříte. Tento model k sestavení bude pokračovat <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax> pro obor názvů `System.Collections.Generic`. Přidejte následující kód, který `Program.cs`:
+Spusťte kód znovu a podívejte se na výsledky. Vytváříte strom uzlů, které představují kód. Budete pokračovat v tomto modelu a sestavíte <xref:Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax> pro obor názvů `System.Collections.Generic`. Přidejte následující kód pro `Program.cs`:
 
-[!code-csharp[create the full identifier](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateFullNamespace "Build the System.Collections.Generic identifier")]
+[!code-csharp[create the full identifier](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateFullNamespace "Build the System.Collections.Generic identifier")]
 
-Spusťte program znovu, abyste viděli, že jste při vytváření stromu pro kód pro přidání.
+Spusťte program znovu, abyste viděli, že jste sestavili strom pro kód, který chcete přidat.
 
-### <a name="create-a-modified-tree"></a>Vytvořte upravenou stromu
+### <a name="create-a-modified-tree"></a>Vytvořit upravený strom
 
-Začlenění stromu syntaxe. malé, který obsahuje jeden příkaz. Rozhraní API k vytvoření nové uzly jsou správná volba pro vytvoření jednotlivé příkazy nebo jiných malých blocích kódu. Ale pokud chcete sestavit větší bloky kódu, byste měli použít metody, které nahradí uzly nebo vložit uzlů do stávající strom. Mějte na paměti, že jsou neměnné stromu syntaxe. **Syntaxe API** neposkytuje žádný mechanismus pro úpravu existující stromu syntaxe. Po vytvoření. Místo toho poskytuje metody, které vytvářejí nové stromové struktury podle změn do existující aplikace. `With*` metody jsou definované v konkrétních tříd, které jsou odvozeny z <xref:Microsoft.CodeAnalysis.SyntaxNode> nebo v rozšiřující metody deklarované v <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions> třídy. Tyto metody vytvoří nový uzel s použitím změn na stávající uzel podřízené vlastnosti. Kromě toho <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> metody rozšíření lze použít k nahrazení potomka uzlu v podstrom. Tato metoda také aktualizuje nadřazené tak, aby odkazoval na nově vytvořený podřízenou položku a opakuje tento postup se celý strom - tento proces se označuje jako _znovu na otáčejících_ stromu.
+Vytvořili jste malý strom syntaxe, který obsahuje jeden příkaz. Rozhraní API pro vytvoření nových uzlů jsou pravá volba pro vytváření jednoduchých příkazů nebo jiných malých bloků kódu. Chcete-li však vytvořit větší bloky kódu, měli byste použít metody, které nahradí uzly nebo vloží uzly do existujícího stromu. Nezapomeňte, že stromy syntaxe jsou neměnné. **Rozhraní API syntaxe** neposkytuje žádný mechanismus pro úpravu stávajícího stromu syntaxe po konstrukci. Místo toho poskytuje metody, které vytváří nové stromy založené na změnách stávajících. `With*` metody jsou definovány v konkrétních třídách, které jsou odvozeny z <xref:Microsoft.CodeAnalysis.SyntaxNode> nebo v metodách rozšíření deklarovaných ve třídě <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions>. Tyto metody vytvoří nový uzel pomocí změn v podřízených vlastnostech existujícího uzlu. Kromě toho může být metoda rozšíření <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> použita k nahrazení podřízeného uzlu v podstromu. Tato metoda také aktualizuje nadřazenou položku tak, aby odkazovala na nově vytvořený podřízený objekt, a tento proces se opakuje v celém stromu – jedná se o proces, který je známý jako _opakované rozmístění_ stromu.
 
-Dalším krokem je vytvoření stromu, který představuje celou (malé) program a potom ho změnit. Přidejte následující kód do začátku `Program` třídy:
+Dalším krokem je vytvoření stromu, který představuje celý (malý) program, a pak ho upraví. Do začátku `Program` třídy přidejte následující kód:
 
-[!code-csharp[create a parse tree](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#DeclareSampleCode "Create a tree that represents a small program")]
+[!code-csharp[create a parse tree](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#DeclareSampleCode "Create a tree that represents a small program")]
 
 > [!NOTE]
-> Příklad kódu používá `System.Collections` obor názvů, ne `System.Collections.Generic` oboru názvů.
+> Vzorový kód používá `System.Collections` obor názvů a nikoli obor názvů `System.Collections.Generic`.
 
-V dalším kroku přidejte následující kód k dolnímu okraji `Main` metodu pro analýzu textu a vytvoření stromu:
+Dále přidejte následující kód do dolní části `Main` metody k analýze textu a vytvoření stromu:
 
-[!code-csharp[create a parse tree](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateParseTree "Create a tree that represents a small program")]
+[!code-csharp[create a parse tree](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#CreateParseTree "Create a tree that represents a small program")]
 
-V tomto příkladu <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.WithName(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax)?displayProperty=NameWithType> metody lze nahradit název v <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> uzlu s jedním vytvořený v předchozím kódu.
+Tento příklad používá metodu <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.WithName(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax)?displayProperty=NameWithType> k nahrazení názvu v <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> uzlu pomocí prvního vytvořeného v předchozím kódu.
 
-Vytvořte nový <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> pomocí uzlu <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.WithName(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax)> způsob aktualizace `System.Collections` název s názvem, který jste vytvořili v předchozím kódu. Přidejte následující kód k dolnímu okraji `Main` metody:
+Vytvořte nový uzel <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> pomocí metody <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.WithName(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax)> a aktualizujte `System.Collections` název názvem, který jste vytvořili v předchozím kódu. Do dolní části `Main` metody přidejte následující kód:
 
-[!code-csharp[create a new subtree](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#BuildNewUsing "Create the subtree with the replaced namespace")]
+[!code-csharp[create a new subtree](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#BuildNewUsing "Create the subtree with the replaced namespace")]
 
-Spusťte program a podívejte se důkladně na výstupu. `newusing` Nebyl umístěn ve stromové struktuře root. Původní stromu nebylo změněno.
+Spusťte program a pečlivě si prohlédněte výstup. `newusing` nebyl umístěn do kořenového stromu. Původní strom se nezměnil.
 
-Přidejte následující kód s využitím <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> metodu rozšíření k vytvoření nové větve. Nové stromové struktury je výsledek nahrazení stávající import aktualizované `newUsing` uzlu. Přiřazení této větve ke stávající `root` proměnné:
+Přidejte následující kód pomocí metody rozšíření <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> pro vytvoření nového stromu. Nový strom je výsledkem nahrazení stávajícího importu pomocí aktualizovaného uzlu `newUsing`. Tomuto novému stromu přiřadíte existující proměnnou `root`:
 
-[!code-csharp[create a new root tree](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#TransformTree "Create the transformed root tree with the replaced namespace")]
+[!code-csharp[create a new root tree](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#TransformTree "Create the transformed root tree with the replaced namespace")]
 
-Spusťte program znovu. Tentokrát stromu nyní správně importuje `System.Collections.Generic` oboru názvů.
+Spusťte program znovu. Tentokrát strom nyní správně importuje `System.Collections.Generic` obor názvů.
 
 ### <a name="transform-trees-using-syntaxrewriters"></a>Transformace stromů pomocí `SyntaxRewriters`
 
-`With*` a <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> metody poskytují pohodlný způsob, jak transformovat jednotlivých větvích stromu syntaxe. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> Třída provádí více transformací ve stromu syntaxe. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> Třída je podtřídou třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor%601?displayProperty=nameWithType>. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> Platí pro konkrétní typ transformace <xref:Microsoft.CodeAnalysis.SyntaxNode>. Transformace můžete aplikovat více typů <xref:Microsoft.CodeAnalysis.SyntaxNode> objekty bez ohledu na to jsou uvedeny ve stromu syntaxe. Druhý projekt v tomto rychlém startu se vytvoří příkazového řádku refaktoring, který odebere explicitní typy v místní deklarace proměnných, které by bylo možné použít kdekoli, který odvození typu.
+Metody `With*` a <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> poskytují pohodlný způsob, jak transformovat jednotlivé větve stromu syntaxe. Třída <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> provádí více transformací stromu syntaxe. Třída <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> je podtřídou třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor%601?displayProperty=nameWithType>. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> aplikuje transformaci na konkrétní typ <xref:Microsoft.CodeAnalysis.SyntaxNode>. Můžete použít transformace na více typů <xref:Microsoft.CodeAnalysis.SyntaxNode> objektů, pokud se zobrazí ve stromové struktuře syntaxe. Druhý projekt v tomto rychlém startu vytvoří refaktoring příkazového řádku, který odebere explicitní typy v deklaracích místních proměnných kdekoli, kde by bylo možné použít odvození typu.
 
-Vytvoření nového jazyka C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, klikněte pravým tlačítkem myši `SyntaxTransformationQuickStart` uzel řešení. Zvolte **přidat** > **nový projekt** zobrazíte **dialogu Nový projekt**. V části **Visual C#**  > **rozšiřitelnost**, zvolte **samostatný nástroj pro analýzu kódu**. Pojmenujte svůj projekt `TransformationCS` a klikněte na tlačítko OK.
+Vytvoří nový C# projekt **Nástroje pro analýzu samostatného kódu** . V aplikaci Visual Studio klikněte pravým tlačítkem myši na uzel `SyntaxTransformationQuickStart` řešení. Chcete-li zobrazit **dialogové okno Nový projekt**, vyberte možnost **Přidat** > **Nový projekt** . V části **rozšiřitelnost** **vizuálního C#**  > vyberte **Nástroj pro analýzu**samostatného kódu. Pojmenujte projekt `TransformationCS` a klikněte na tlačítko OK.
 
-Prvním krokem je vytvoření třídy, která je odvozena z <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> provádět transformaci. Přidejte nový soubor třídy do projektu. V sadě Visual Studio, zvolte **projektu** > **přidat třídu...** . V **přidat novou položku** typ dialogu `TypeInferenceRewriter.cs` jako název souboru.
+Prvním krokem je vytvoření třídy, která je odvozena z <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> k provedení transformací. Přidejte do projektu nový soubor třídy. V aplikaci Visual Studio vyberte **projekt** > **Přidat třídu...** . Do dialogového okna **Přidat novou položku** zadejte `TypeInferenceRewriter.cs` jako název souboru.
 
-Přidejte následující direktivy using `TypeInferenceRewriter.cs` souboru:
+Do souboru `TypeInferenceRewriter.cs` přidejte následující direktivy using:
 
-[!code-csharp[add necessary usings](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#AddUsings "Add required usings")]
+[!code-csharp[add necessary usings](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#AddUsings "Add required usings")]
 
-Dále zkontrolujte, `TypeInferenceRewriter` rozšíření třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> třídy:
+Dále nastavte třídu `TypeInferenceRewriter`, aby rozšířila třídu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter>:
 
-[!code-csharp[add base class](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#BaseClass "Add base class")]
+[!code-csharp[add base class](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#BaseClass "Add base class")]
 
-Přidejte následující kód, chcete-li deklarovat soukromé pole jen pro čtení pro uložení <xref:Microsoft.CodeAnalysis.SemanticModel> a inicializace v konstruktoru. Budete potřebovat toto pole později k určení, kde lze použít odvození typu proměnné:
+Přidejte následující kód pro deklaraci privátního pole jen pro čtení pro uložení <xref:Microsoft.CodeAnalysis.SemanticModel> a jeho inicializaci v konstruktoru. Toto pole budete potřebovat později, abyste zjistili, kde lze použít odvození typu:
 
-[!code-csharp[initialize members](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#Construction "Declare and initialize member variables")]
+[!code-csharp[initialize members](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#Construction "Declare and initialize member variables")]
 
-Přepsat <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> metody:
+Přepsat metodu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)>:
 
 ```csharp
 public override SyntaxNode VisitLocalDeclarationStatement(LocalDeclarationStatementSyntax node)
@@ -120,15 +120,15 @@ public override SyntaxNode VisitLocalDeclarationStatement(LocalDeclarationStatem
 ```
 
 > [!NOTE]
-> Mnohé z rozhraní Roslyn API deklarovat návratové typy, které jsou základní třídy skutečné typy modulu runtime vrátila. V mnoha případech může zcela - nahrazuje jiný druh uzlu jeden typ uzlu nebo dokonce odebrat. V tomto příkladu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> metoda vrátí hodnotu <xref:Microsoft.CodeAnalysis.SyntaxNode>, namísto odvozeným typem tohoto <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>. Vrátí nový tento RW <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> uzel je založené na existující.
+> Řada rozhraní API Roslyn deklaruje návratové typy, které jsou základními třídami skutečných běhových typů. V mnoha scénářích může být jeden druh uzlu nahrazen jiným typem uzlu zcela nebo dokonce odebrán. V tomto příkladu metoda <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> vrátí <xref:Microsoft.CodeAnalysis.SyntaxNode>namísto odvozeného typu <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>. Tento korektor vrátí nový uzel <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> založený na stávajícím uzlu.
 
-V tomto rychlém startu zpracovává deklarace místních proměnných. Můžete rozšířit ji do jiné deklarace, jako `foreach` smyčky, `for` smyčky, LINQ – výrazy a výrazy lambda. Kromě toho tento RW bude pouze transformace deklarací v nejjednodušší podobě:
+Tento rychlý Start zpracovává deklarace místních proměnných. Můžete ji zvětšit na jiné deklarace, jako jsou `foreach` smyčky, `for` cykly, výrazy LINQ a výrazy lambda. Kromě toho bude tento korektor transformovat jenom deklarace nejjednoduššího tvaru:
 
 ```csharp
 Type variable = expression;
 ```
 
-Pokud budete chtít vyzkoušet sami, zvažte jeho rozšíření dokončení vzorku pro tyto typy deklarace proměnných:
+Pokud chcete prozkoumat vlastní průzkum, zvažte rozšíření dokončené ukázky pro tyto typy deklarací proměnných:
 
 ```csharp
 // Multiple variables in a single declaration.
@@ -138,46 +138,46 @@ Type variable1 = expression1,
 Type variable;
 ```
 
-Přidejte následující kód do těla `VisitLocalDeclarationStatement` metoda vynechá přepisování tyto formy deklarací:
+Do těla `VisitLocalDeclarationStatement` metody přidejte následující kód, který přeskočí přepis těchto forem deklarací:
 
-[!code-csharp[exclude other declarations](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#Exclusions "Exclude variables declarations not processed by this sample")]
+[!code-csharp[exclude other declarations](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#Exclusions "Exclude variables declarations not processed by this sample")]
 
-Metoda označuje, že žádné přepisování probíhá tak, že vrací `node` parametr bez jakýchkoli úprav. Pokud ani jeden z nich `if` výrazy jsou splněny, představuje možné deklaraci inicializace uzel. Přidat tyto příkazy extrahovat název typu zadaného v deklaraci a vytvořit vazbu pomocí <xref:Microsoft.CodeAnalysis.SemanticModel> pole, které chcete získat typ symbolu:
+Metoda označuje, že žádné přepisy neprobíhá vrácením parametru `node` beze změny. Pokud žádný z těchto `if` výrazů není true, uzel představuje možnou deklaraci s inicializací. Přidejte tyto příkazy k extrakci názvu typu zadaného v deklaraci a k vytvoření vazby pomocí pole <xref:Microsoft.CodeAnalysis.SemanticModel> pro získání symbolu typu:
 
-[!code-csharp[extract type name](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#ExtractTypeSymbol "Extract the type name specified by the declaration")]
+[!code-csharp[extract type name](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#ExtractTypeSymbol "Extract the type name specified by the declaration")]
 
-Teď přidejte tento příkaz k vytvoření vazby inicializačního výrazu:
+Nyní přidejte tento příkaz k vytvoření vazby na výraz inicializátoru:
 
-[!code-csharp[bind initializer](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#BindInitializer "Bind the initializer expressions")]
+[!code-csharp[bind initializer](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#BindInitializer "Bind the initializer expressions")]
 
-Nakonec přidejte následující `if` příkaz Nahradit existující název typu se `var` – klíčové slovo, pokud zadaný typ odpovídá typu inicializačního výrazu:
+Nakonec přidejte následující příkaz `if`, který nahradí existující název typu klíčovým slovem `var`, pokud typ výrazu inicializátoru odpovídá zadanému typu:
 
-[!code-csharp[ReplaceNode](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#ReplaceNode "Replace the initializer node")]
+[!code-csharp[ReplaceNode](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/TypeInferenceRewriter.cs#ReplaceNode "Replace the initializer node")]
 
-Podmíněným totiž deklarace může hlasovat inicializačního výrazu na základní třídu nebo rozhraní. V případě potřeby, typy na levé a pravé straně přiřazení se neshodují. Odebrání explicitního typu v těchto případech by změnila sémantiku programu. `var` je zadán jako identifikátor místo klíčového slova, protože `var` je kontextové klíčové slovo. Úvodní a Koncové triviální prvek (prázdné znaky) jsou přenášena starý název typu má `var` – klíčové slovo k udržovat prázdné znaky svislé a odsazení. Je jednodušší použít `ReplaceNode` spíše než `With*` k transformaci <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> vzhledem k tomu, že název typu je ve skutečnosti podřízený příkazu deklarace.
+Podmíněný požadavek je vyžadován, protože deklarace může vypřetypovat výraz inicializátoru na základní třídu nebo rozhraní. Pokud je to požadováno, typy na levé a pravé straně přiřazení se neshodují. Odebrání explicitního typu v těchto případech způsobí změnu sémantiky programu. `var` je zadáno jako identifikátor namísto klíčového slova, protože `var` je kontextové klíčové slovo. Úvodní a koncové minihry (prázdné znaky) jsou předány z starého názvu typu do klíčového slova `var` pro zachování vertikálního prázdného místa a odsazení. Je jednodušší použít `ReplaceNode` spíše než `With*` k transformaci <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>, protože název typu je ve skutečnosti podřízeným příkazem deklarace.
 
-Když jste dokončení `TypeInferenceRewriter`. Nyní vraťte se na vaše `Program.cs` souboru k dokončení příkladu. Vytvoření testu <xref:Microsoft.CodeAnalysis.Compilation> a získat <xref:Microsoft.CodeAnalysis.SemanticModel> z něj. Použít <xref:Microsoft.CodeAnalysis.SemanticModel> vyzkoušet vaše `TypeInferenceRewriter`. V tomto kroku budete používat poslední. Do té doby deklarujte proměnnou zástupný symbol představující váš test kompilace:
+Dokončili jste `TypeInferenceRewriter`. Nyní se vraťte do souboru `Program.cs` a dokončete příklad. Vytvoří testovací <xref:Microsoft.CodeAnalysis.Compilation> a získá <xref:Microsoft.CodeAnalysis.SemanticModel> z něj. Pomocí tohoto <xref:Microsoft.CodeAnalysis.SemanticModel> můžete vyzkoušet `TypeInferenceRewriter`. Tento krok provedete jako poslední. Do té doby deklarujeme zástupnou proměnnou představující vaši kompilaci testů:
 
-[!code-csharp[DeclareCompilation](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#DeclareTestCompilation "Declare the test compilation")]
+[!code-csharp[DeclareCompilation](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#DeclareTestCompilation "Declare the test compilation")]
 
-Po pozastavení chvilku, měli byste vidět k chybě vlnovku zobrazovat sestavy, které žádný `CreateTestCompilation` metody existuje. Stisknutím klávesy **Ctrl + tečka** otevřít žárovku a potom stiskněte klávesu Enter k vyvolání **generovat Pahýl metody** příkazu. Tento příkaz bude generovat pahýl metody pro `CreateTestCompilation` metodu `Program` třídy. Budete přejdete zpět tak, aby vyplnil v této metodě později:
+Po pozastavení by se měla zobrazit chybová vlnovka, která hlásí, že neexistuje žádná `CreateTestCompilation` metoda. Stisknutím **kombinace kláves CTRL + tečka** otevřete žárovku a potom stiskněte klávesu ENTER pro vyvolání příkazu **vygenerovat metodu stub** . Tento příkaz vytvoří zástupnou proceduru metody pro metodu `CreateTestCompilation` ve třídě `Program`. Později se vrátíte k vyplnění této metody:
 
-![Metoda jazyka C# generovat z využití](./media/syntax-transformation/generate-from-usage.png)
+![C#Generovat metodu z využití](./media/syntax-transformation/generate-from-usage.png)
 
-Zadejte následující kód k iteraci přes každý <xref:Microsoft.CodeAnalysis.SyntaxTree> v testu <xref:Microsoft.CodeAnalysis.Compilation>. U každé z nich, inicializovat nový `TypeInferenceRewriter` s <xref:Microsoft.CodeAnalysis.SemanticModel> pro stromové struktuře:
+Zapište následující kód pro iteraci každého <xref:Microsoft.CodeAnalysis.SyntaxTree> v testovacím <xref:Microsoft.CodeAnalysis.Compilation>. Pro každou z nich inicializujte novou `TypeInferenceRewriter` s <xref:Microsoft.CodeAnalysis.SemanticModel> pro tuto stromovou strukturu:
 
-[!code-csharp[IterateTrees](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#IterateTrees "Iterate all the source trees in the test compilation")]
+[!code-csharp[IterateTrees](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#IterateTrees "Iterate all the source trees in the test compilation")]
 
-Uvnitř `foreach` prohlášení, které jste vytvořili, přidejte následující kód k provedení transformace na každou stromu zdrojového kódu. Tento kód transformovaný větve podmíněně zapíše, pokud byly provedeny žádné změny. Vaše RW by měl změnit pouze stromu, pokud dojde nejmíň jeden místní deklarace proměnných, které by se dá zjednodušit pomocí odvození typu proměnné:
+V rámci příkazu `foreach`, který jste vytvořili, přidejte následující kód, který provede transformaci na každém zdrojovém stromu. Tento kód podmíněně zapisuje novou transformované stromové struktury, pokud byly provedeny nějaké úpravy. Váš přepis by měl změnit pouze strom, pokud nalezne jeden nebo více deklarací místních proměnných, které by mohly být zjednodušeny pomocí odvození typu:
 
-[!code-csharp[TransformTrees](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#TransformTrees "Transform and save any trees that are modified by the rewriter")]
+[!code-csharp[TransformTrees](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#TransformTrees "Transform and save any trees that are modified by the rewriter")]
 
-Měli byste vidět podtržené vlnovkou `File.WriteAllText` kódu. Vyberte žárovku a přidejte nezbytné `using System.IO;` příkazu.
+V kódu `File.WriteAllText` by se měly zobrazit vlnovky. Vyberte žárovku a přidejte potřebný příkaz `using System.IO;`.
 
-Téměř Hotovo! Je jednou krok vlevo: vytvoření testu <xref:Microsoft.CodeAnalysis.Compilation>. Vzhledem k tomu, že jste ještě používali odvození typu vůbec během tohoto rychlého startu, ji byste nastavit ideální testovacího případu. Bohužel vytvoření kompilaci ze souboru projektu C# je nad rámec tohoto návodu. Ale naštěstí Pokud jste postupovali podle pokynů pečlivě, je naděje. Nahraďte obsah `CreateTestCompilation` metodu s následujícím kódem. Vytvoří testovací kompilaci, která odpovídá shodou projektu je popsáno v tomto rychlém startu:
+Skoro jste hotovi! Tady je jeden krok vlevo: vytváření <xref:Microsoft.CodeAnalysis.Compilation>testů. Vzhledem k tomu, že jste nepoužívali odvození typu v rámci tohoto rychlého startu, by se vytvořil dokonalý testovací případ. Vytvoření kompilace ze souboru C# projektu je však mimo rámec tohoto návodu. Ať už se vám postupuje podle pokynů, buďte opatrní. Obsah metody `CreateTestCompilation` nahraďte následujícím kódem. Vytvoří kompilaci testů, který prochází podle projektu popsaného v tomto rychlém startu:
 
-[!code-csharp[CreateTestCompilation](../../../../samples/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#CreateTestCompilation "Create a test compilation using the code written for this quickstart.")]
+[!code-csharp[CreateTestCompilation](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#CreateTestCompilation "Create a test compilation using the code written for this quickstart.")]
 
-Různé prsty a spuštění projektu. V sadě Visual Studio, zvolte **ladění** > **spustit ladění**. By měl být výzva pomocí sady Visual Studio, které se změnily soubory v projektu. Klikněte na tlačítko "**Ano všem**" znovu načíst upravené soubory. Prozkoumejte, je sledovat vaše úžasných funkcí. Všimněte si, kolik srozumitelnější kód vypadá bez všech těchto specifikátorech typu. explicitní a redundantní.
+Mezi prsty a spusťte projekt. V aplikaci Visual Studio vyberte možnost **ladění** > **Spustit ladění**. Měli byste být vyzváni v aplikaci Visual Studio, že se změnily soubory v projektu. Chcete-li znovu načíst změněné soubory, klikněte na tlačítko**Ano všem**. Prohlédněte si je a sledujte své supery. Všimněte si, že množství čisticího kódu vypadá bez všech těchto explicitních a redundantních specifikátorů typu.
 
-Blahopřejeme! Využili jste **rozhraní API kompilátoru** psát vlastní refaktoring, který vyhledá všechny soubory v projektu C# pro některé syntaktické vzorce analyzuje sémantiku zdrojový kód, který odpovídá tyto vzory a převede jej. Nyní jste oficiálně refaktoring Autor!
+Blahopřejeme! Použili jste **rozhraní API kompilátoru** k zápisu vlastního faktoru, který prohledává všechny soubory v C# projektu pro určité syntaktické vzory, analyzuje sémantiku zdrojového kódu, který odpovídá těmto vzorům, a transformuje ho. Nyní jste oficiálně refaktoring.

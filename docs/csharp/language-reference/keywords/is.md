@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 1a1f539e80f8d843f40640fa798cf6122f316a9f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a72f3b87e7558c594ef8a94bd0eadcc4664206b9
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715240"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239648"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#)
 
@@ -36,7 +36,7 @@ Při použití vzoru typu k provedení porovnávání se vzorem `is` testuje, zd
    expr is type varname
 ```
 
-kde *expr* je výraz, který je vyhodnocen jako instance nějakého typu, *typ* je název typu, na který má být výsledek *výrazu* převeden, a *název_proměnné* je objekt, na který je výsledek *výrazu* převeden, pokud je `is` test `true`. 
+Kde *expr* je výraz, který je vyhodnocen jako instance nějakého typu, *typ* je název typu, na který má být výsledek *výrazu* převeden, a *název_proměnné* je objekt, na který je výsledek *výrazu* převeden, pokud je `is` test `true`. 
 
 Výraz `is` je `true`, pokud *výraz* není `null`a kterákoli z následujících možností je pravdivá:
 
@@ -106,15 +106,21 @@ Následující příklad ukazuje porovnání `null` kontroly:
 
 ### <a name="var-pattern"></a>variabilní vzorek
 
-Vzor `var` je catch-All pro libovolný typ nebo hodnotu. Hodnota *expr* je vždy přiřazena místní proměnné, která má stejný typ jako typ času kompilace *expr*. Výsledek výrazu `is` je vždy `true`. Jeho syntaxe je:
+Vzor porovnávání se vzorem `var` vždy proběhne úspěšně. Jeho syntaxe je:
 
 ```csharp
    expr is var varname
 ```
 
-V následujícím příkladu je použit vzorek var pro přiřazení výrazu proměnné s názvem `obj`. Pak zobrazí hodnotu a typ `obj`.
+Kde hodnota *expr* je vždy přiřazena místní proměnné s názvem *název_proměnné*. *název_proměnné* je proměnná stejného typu jako typ *výrazu*při kompilaci. 
+
+Pokud je *výraz* vyhodnocen jako `null`, výraz `is` vytvoří `true` a přiřadí `null` k *název_proměnné*. Vzor var je jedno z několika použití `is`, které vytváří `true` pro `null` hodnotu.
+
+Pomocí vzoru `var` lze vytvořit dočasnou proměnnou v rámci logického výrazu, jak ukazuje následující příklad:
 
 [!code-csharp[is#8](../../../../samples/snippets/csharp/language-reference/keywords/is/is-var-pattern8.cs#8)]
+
+V předchozím příkladu se dočasná proměnná používá k uložení výsledku nákladné operace. Proměnnou je pak možné použít několikrát.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
   
@@ -123,7 +129,7 @@ Další informace najdete v části [operátor is](~/_csharplang/spec/expression
 - [Porovnávání vzorů](~/_csharplang/proposals/csharp-7.0/pattern-matching.md)
 - [Porovnávání vzorů s obecnými typy](~/_csharplang/proposals/csharp-7.1/generics-pattern-match.md)
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Klíčová slova jazyka C#](index.md)

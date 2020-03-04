@@ -4,12 +4,12 @@ description: V tomto pokročilém kurzu se naučíte prozkoumat data pomocí ind
 ms.date: 09/20/2019
 ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: 3d4c022ff8d6e7f260632e34d6f28277014c85c8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5b6277763cfccfc75947f6fa0534964389b1dea3
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345620"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240038"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
@@ -52,29 +52,29 @@ string[] words = new string[]
 
 Poslední slovo můžete načíst pomocí indexu `^1`. Pod inicializaci přidejte následující kód:
 
-[!code-csharp[LastIndex](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastIndex)]
+[!code-csharp[LastIndex](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastIndex)]
 
 Rozsah Určuje *začátek* a *konec* rozsahu. Rozsahy jsou exkluzivní, což znamená, že *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah. 
 
 Následující kód vytvoří dílčí rozsah s slovy "Rychlá", "hnědá" a "Fox". Zahrnuje `words[1]` prostřednictvím `words[3]`. Element `words[4]` není v rozsahu. Do stejné metody přidejte následující kód. Zkopírujte ho a vložte ho do dolní části okna interaktivní.
 
-[!code-csharp[Range](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Range)]
+[!code-csharp[Range](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Range)]
 
 Následující kód vytvoří dílčí rozsah s "opožděným" a "pes". Zahrnuje `words[^2]` a `words[^1]`. Koncový index `words[^0]` není zahrnutý. Přidejte také následující kód:
 
-[!code-csharp[LastRange](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastRange)]
+[!code-csharp[LastRange](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastRange)]
 
 V následujících příkladech jsou vytvořeny rozsahy, které jsou otevřeny pro začátek, konec nebo obojí:
 
-[!code-csharp[PartialRange](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_PartialRanges)]
+[!code-csharp[PartialRange](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_PartialRanges)]
 
 Můžete také deklarovat rozsahy nebo indexy jako proměnné. Proměnná se pak dá použít uvnitř `[` a `]`ch znaků:
 
-[!code-csharp[IndexRangeTypes](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_RangeIndexTypes)]
+[!code-csharp[IndexRangeTypes](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_RangeIndexTypes)]
 
 Následující příklad znázorňuje mnoho z důvodů pro tyto volby. Pokud chcete vyzkoušet různé kombinace, upravte `x`, `y`a `z`. Při experimentování použijte hodnoty, kde je `x` menší než `y`a `y` je nižší než `z` pro platné kombinace. Do nové metody přidejte následující kód. Vyzkoušejte různé kombinace:
 
-[!code-csharp[SemanticsExamples](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
+[!code-csharp[SemanticsExamples](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
 
 ## <a name="type-support-for-indices-and-ranges"></a>Podpora typů pro indexy a rozsahy
 
@@ -90,6 +90,6 @@ Například následující typy rozhraní .NET podporují jak indexy, tak rozsah
 
 Pokud chcete provést analýzu v podrozsahu celé sekvence, často použijete rozsahy a indexy. Nová syntaxe je jasná při čtení přesně z toho, co je dílčí rozsah zahrnutý. Místní funkce `MovingAverage` jako argument převezme <xref:System.Range>. Metoda pak při výpočtu minimálních, maximálních a průměrů vytvoří výčet pouze tohoto rozsahu. Vyzkoušejte následující kód v projektu:
 
-[!code-csharp[MovingAverages](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_MovingAverage)]
+[!code-csharp[MovingAverages](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_MovingAverage)]
 
 Dokončený kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/RangesIndexes) .

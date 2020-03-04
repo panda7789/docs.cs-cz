@@ -5,12 +5,12 @@ helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-ms.openlocfilehash: e1deb17dfdfea4c8b66eb8d836a10bf888727e1a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 249d0607ddd280bcb4e9cf3ef34b28ff8ada3b04
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715905"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240490"
 ---
 # <a name="thread-pool-etw-events"></a>Události Trasování událostí pro Windows fondu vláken
 Tyto události shromažďují informace o vláknech Worker a I/O.  
@@ -42,7 +42,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |ActiveWorkerThreadCount|Win: UInt32|Počet pracovních vláken, která jsou k dispozici pro zpracování práce, včetně těch, které již zpracovávají práci.|  
 |RetiredWorkerThreadCount|Win: UInt32|Počet pracovních vláken, která nejsou k dispozici pro zpracování práce, ale jsou držena v rezervě v případě, že jsou později potřeba další vlákna.|  
@@ -66,7 +66,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |Propustnost|Win: Double|Počet dokončení na jednotku času.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
@@ -86,7 +86,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |AverageThroughput|Win: Double|Průměrná propustnost vzorku měření.|  
 |NewWorkerThreadCount|Win: UInt32|Nový počet aktivních pracovních vláken.|  
@@ -108,16 +108,16 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
-|Doba platnosti|Win: Double|Množství času v sekundách, během kterého byly tyto statistiky shromažďovány.|  
+|Doba trvání|Win: Double|Množství času v sekundách, během kterého byly tyto statistiky shromažďovány.|  
 |Propustnost|Win: Double|Průměrný počet dokončení za sekundu v průběhu tohoto intervalu.|  
 |ThreadWave|Win: Double|Vyhrazeno pro interní použití.|  
 |ThroughputWave|Win: Double|Vyhrazeno pro interní použití.|  
 |ThroughputErrorEstimate|Win: Double|Vyhrazeno pro interní použití.|  
 |AverageThroughputErrorEstimate|Win: Double|Vyhrazeno pro interní použití.|  
 |ThroughputRatio|Win: Double|Relativní zvýšení propustnosti způsobené kolísáním počtu aktivních pracovních vláken v průběhu tohoto intervalu.|  
-|Spolehlivost|Win: Double|Míra platnosti pole ThroughputRatio.|  
+|Confidence|Win: Double|Míra platnosti pole ThroughputRatio.|  
 |NewcontrolSetting|Win: Double|Počet aktivních pracovních vláken, která budou sloužit jako základ pro budoucí variace počtu aktivních vláken.|  
 |NewThreadWaveMagnitude|Win: UInt16|Velikost budoucích variant počtu aktivních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
@@ -140,7 +140,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |Počet|win:UInt64|Počet vstupně-výstupních vláken, včetně nově vytvořeného vlákna.|  
 |NumRetired|win:UInt64|Počet vyřazených pracovních vláken.|  
@@ -161,7 +161,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |Počet|win:UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
 |NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
@@ -182,7 +182,7 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |Počet|win:UInt64|Počet vstupně-výstupních vláken ve fondu vláken, včetně tohoto typu.|  
 |NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
@@ -199,16 +199,16 @@ Tyto události shromažďují informace o vláknech Worker a I/O.
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`IOThreadTerminate`|45|Ve fondu vláken se vytvoří vstupně-výstupní vlákno.|  
+|`IOThreadTerminate`|45|Vstupně-výstupní vlákno je ukončeno ve fondu vláken.|  
   
  V následující tabulce jsou uvedena data události.  
   
-|Název pole|Datový typ|Popis|  
+|Název pole|Typ dat|Popis|  
 |----------------|---------------|-----------------|  
 |Počet|win:UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
 |NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)

@@ -4,12 +4,12 @@ description: Informace o tom, jak funguje C# Správa verzí v prostředí a .NET
 ms.date: 01/08/2017
 ms.technology: csharp-advanced-concepts
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 3fadbc1257ae758fc220685fa074a4fa68b20ba1
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: ee123893ac8baa0a55bdf69ce49fb6fcb87601b4
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039659"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239999"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C\#
 
@@ -53,7 +53,7 @@ To je snazší, když uživatelům umožníte upgradovat na novou verzi knihovny
 ### <a name="application-configuration-file"></a>Konfigurační soubor aplikace
 
 Jako vývojář rozhraní .NET existuje velmi vysoká pravděpodobnost, že jste narazili [na `app.config` soubor](../framework/configure-apps/file-schema/index.md) ve většině typů projektů.
-Tento jednoduchý konfigurační soubor může být delší způsob, jak zlepšit zavedení nových aktualizací. Obecně byste měli navrhovat knihovny tak, aby se informace, které se pravděpodobně mění pravidelně, ukládaly do souboru `app.config`. tímto způsobem se tyto informace aktualizují, konfigurační soubor starších verzí stačí nahradit novým a bez nutnost rekompilace knihovny.
+Tento jednoduchý konfigurační soubor může být delší způsob, jak zlepšit zavedení nových aktualizací. Obecně byste měli navrhovat knihovny tak, aby se informace, které se pravděpodobně mění pravidelně, ukládaly do souboru `app.config`, a to tak, že se tyto informace aktualizují, konfigurační soubor starších verzí stačí nahradit novým, aniž by bylo nutné znovu zkompilována knihovnu.
 
 ## <a name="consuming-libraries"></a>Využívání knihoven
 
@@ -82,9 +82,9 @@ Použijete modifikátor `new` ke skrytí zděděných členů základní třídy
 
 Vezměte v úvahu následující příklad:
 
-[!code-csharp[Sample usage of the 'new' modifier](~/samples/csharp/versioning/new/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'new' modifier](~/samples/snippets/csharp/versioning/new/Program.cs#sample)]
 
-**Output**
+**Výstup**
 
 ```console
 A base method
@@ -100,9 +100,9 @@ Pokud není zadán modifikátor `new`, bude ve výchozím nastavení v odvozené
 
 Modifikátor `override` znamená, že odvozená implementace rozšiřuje implementaci člena základní třídy místo jeho skrytí. Pro člena základní třídy musí být použit modifikátor `virtual`.
 
-[!code-csharp[Sample usage of the 'override' modifier](../../samples/csharp/versioning/override/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'override' modifier](../../samples/snippets/csharp/versioning/override/Program.cs#sample)]
 
-**Output**
+**Výstup**
 
 ```console
 Base Method One: Method One

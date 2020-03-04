@@ -4,12 +4,12 @@ ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: beb55f0765e7f9090f0587f1d2a06cf03ea90ab8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 60d1f1b2fc2792d40d36482dc880d924220f12a2
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712660"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239193"
 ---
 # <a name="new-operator-c-reference"></a>New – operátorC# (Referenční dokumentace)
 
@@ -21,21 +21,21 @@ Můžete také použít klíčové slovo `new` jako [Modifikátor deklarace čle
 
 Chcete-li vytvořit novou instanci typu, obvykle vyvoláte jeden z [konstruktorů](../../programming-guide/classes-and-structs/constructors.md) tohoto typu pomocí operátoru `new`:
 
-[!code-csharp-interactive[invoke constructor](~/samples/csharp/language-reference/operators/NewOperator.cs#Constructor)]
+[!code-csharp-interactive[invoke constructor](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#Constructor)]
 
 Můžete použít [inicializátor objektu nebo kolekce](../../programming-guide/classes-and-structs/object-and-collection-initializers.md) s operátorem `new` pro vytvoření instance a inicializaci objektu v jednom příkazu, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[constructor with initializer](~/samples/csharp/language-reference/operators/NewOperator.cs#ConstructorWithInitializer)]
+[!code-csharp-interactive[constructor with initializer](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#ConstructorWithInitializer)]
 
 ## <a name="array-creation"></a>Vytvoření pole
 
 Také operátor `new` slouží k vytvoření instance pole, jak ukazuje následující příklad:
 
-[!code-csharp-interactive[create array](~/samples/csharp/language-reference/operators/NewOperator.cs#Array)]
+[!code-csharp-interactive[create array](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#Array)]
 
 Pomocí syntaxe inicializace pole vytvořte instanci pole a naplňte ji prvky v jednom příkazu. Následující příklad ukazuje různé způsoby, jak to lze provést:
 
-[!code-csharp-interactive[initialize array](~/samples/csharp/language-reference/operators/NewOperator.cs#ArrayInitialization)]
+[!code-csharp-interactive[initialize array](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#ArrayInitialization)]
 
 Další informace o polích naleznete v tématu [Arrays](../../programming-guide/arrays/index.md).
 
@@ -43,7 +43,7 @@ Další informace o polích naleznete v tématu [Arrays](../../programming-guide
 
 Chcete-li vytvořit instanci [anonymního typu](../../programming-guide/classes-and-structs/anonymous-types.md), použijte operátor `new` a syntaxi inicializátoru objektu:
 
-[!code-csharp-interactive[anonymous type](~/samples/csharp/language-reference/operators/NewOperator.cs#AnonymousType)]
+[!code-csharp-interactive[anonymous type](~/samples/snippets/csharp/language-reference/operators/NewOperator.cs#AnonymousType)]
 
 ## <a name="destruction-of-type-instances"></a>Zničení instancí typů
 
@@ -59,7 +59,7 @@ Uživatelsky definovaný typ nemůže přetížit operátor `new`.
 
 Další informace najdete v části [Nový operátor](~/_csharplang/spec/expressions.md#the-new-operator) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)

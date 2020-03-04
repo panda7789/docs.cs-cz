@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: 953d8d3055dff48cd943b748771f20803a4d6573
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1055b10d0e3e971a6b0963c1ed950fef903ac5bd
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120893"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239947"
 ---
 # <a name="globalization"></a>Globalizace
 
@@ -66,7 +66,7 @@ Kdykoli je to možné, byste měli zpracovávat řetězce jako celé řetězce m
 > [!TIP]
 > Třídu <xref:System.Globalization.StringInfo> lze použít pro práci s textovými prvky namísto jednotlivých znaků v řetězci.
 
-V případě vyhledávání a porovnávání řetězců je běžné omylem zacházet s řetězcem jako s kolekcí znaků, z nichž každý je reprezentován objektem <xref:System.Char>. Ve skutečnosti může být jeden znak tvořen jedním, dvěma nebo více <xref:System.Char> objekty. Tyto znaky se nejčastěji nacházejí v řetězcích z kultur, jejichž abecedy se skládají z znaků mimo rozsah znaků Latinské úrovně Basic v kódování Unicode (U + 0021 až U + 007E). Následující příklad se pokusí najít index pro velké písmeno latinky A s ČÁRKou (U + 00C0) v řetězci. Tento znak však může být reprezentován dvěma různými způsoby: jako jednou jednotkou kódu (U + 00C0) nebo jako složený znak (dvě jednotky kódu: U + 0021 a U + 007E). V tomto případě je znak reprezentován v instanci řetězce pomocí dvou <xref:System.Char> objektů, U + 0021 a U + 007E. Vzorový kód volá <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> a <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> přetížení k nalezení pozice tohoto znaku v instanci řetězce, ale vrací různé výsledky. První volání metody má argument <xref:System.Char>; provede ordinální porovnávání, a proto nemůže najít shodu. Druhé volání má argument <xref:System.String>; provádí porovnání zohledňující jazykovou verzi, a proto najde shodu.
+V případě vyhledávání a porovnávání řetězců je běžné omylem zacházet s řetězcem jako s kolekcí znaků, z nichž každý je reprezentován objektem <xref:System.Char>. Ve skutečnosti může být jeden znak tvořen jedním, dvěma nebo více <xref:System.Char> objekty. Tyto znaky se nejčastěji nacházejí v řetězcích z kultur, jejichž abecedy se skládají z znaků mimo rozsah znaků Latinské úrovně Basic v kódování Unicode (U + 0021 až U + 007E). Následující příklad se pokusí najít index pro velké písmeno latinky A s ČÁRKou (U + 00C0) v řetězci. Tento znak však může být reprezentován dvěma různými způsoby: jako jednou jednotkou kódu (U + 00C0) nebo jako složený znak (dvě jednotky kódu: U + 0041 a U + 0300). V tomto případě je znak reprezentován v instanci řetězce pomocí dvou <xref:System.Char> objektů, U + 0041 a U + 0300. Vzorový kód volá <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> a <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> přetížení k nalezení pozice tohoto znaku v instanci řetězce, ale vrací různé výsledky. První volání metody má argument <xref:System.Char>; provede ordinální porovnávání, a proto nemůže najít shodu. Druhé volání má argument <xref:System.String>; provádí porovnání zohledňující jazykovou verzi, a proto najde shodu.
 
 [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
 [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]
@@ -106,13 +106,13 @@ Rozhraní .NET používá tabulky k provádění řazení zohledňující jazyko
 
 |Verze rozhraní .NET Framework|Operační systém|Verze Unicode|
 |----------------------------|----------------------|---------------------|
-|.NET Framework 2.0|Všechny operační systémy|Unicode 4,1|
+|.NET Framework 2,0|Všechny operační systémy|Unicode 4,1|
 |.NET Framework 3.0|Všechny operační systémy|Unicode 4,1|
 |.NET Framework 3.5|Všechny operační systémy|Unicode 4,1|
 |.NET Framework 4|Všechny operační systémy|Unicode 5,0|
 |.NET Framework 4,5 a novější ve Windows 7|Unicode 5,0|
 |.NET Framework 4,5 a novější ve Windows 8 a novějších operačních systémech|6\.3.0 Unicode|
-|.NET Core (všechny verze)|Závisí na verzi standardu Unicode, kterou podporuje základní operační systém.|
+|.NET core (všechny verze)|Závisí na verzi standardu Unicode, kterou podporuje základní operační systém.|
 
 Počínaje .NET Framework 4,5 a ve všech verzích .NET Core je porovnávání a řazení řetězců závislé na operačním systému. .NET Framework 4,5 a novější verze spuštěné v systému Windows 7 načte data z vlastních tabulek, které implementují Unicode 5,0. .NET Framework 4,5 a novější verze spuštěné v systému Windows 8 a novějších načte data z tabulek operačního systému, které implementují Unicode 6,3. V .NET Core závisí podporovaná verze Unicode na podkladovém operačním systému. Pokud jste serializováni Setříděná data závislá na jazykové verzi, můžete použít třídu <xref:System.Globalization.SortVersion> k určení, kdy je potřeba seřadit Serializovaná data, aby byla konzistentní s rozhraním .NET a pořadím řazení operačního systému. Příklad naleznete v tématu <xref:System.Globalization.SortVersion> třídy.
 
@@ -281,7 +281,7 @@ V případě, že jsou čísla zobrazena v uživatelském rozhraní, byste měli
 
 - Funkce [složeného formátování](../../../docs/standard/base-types/composite-formatting.md) , když se používá s číselnými hodnotami
 
-Následující příklad zobrazuje průměrnou teplotu za měsíc v Paříži, Francii. Před zobrazením dat nejprve nastaví aktuální jazykovou verzi na francouzština (Francie) a pak ji nastaví na angličtinu (USA). V každém případě jsou názvy měsíců a teploty zobrazeny ve formátu, který je vhodný pro danou jazykovou verzi. Všimněte si, že obě jazykové verze používají jiné oddělovače desetinných míst v hodnotě teploty. Všimněte si také, že v příkladu se používá vlastní řetězec formátu data a času "MMMM" k zobrazení úplného názvu měsíce a který přiděluje příslušné množství místa pro název měsíce ve výsledném řetězci určením délky názvu nejdelšího měsíce v <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> a rray.
+Následující příklad zobrazuje průměrnou teplotu za měsíc v Paříži, Francii. Před zobrazením dat nejprve nastaví aktuální jazykovou verzi na francouzština (Francie) a pak ji nastaví na angličtinu (USA). V každém případě jsou názvy měsíců a teploty zobrazeny ve formátu, který je vhodný pro danou jazykovou verzi. Všimněte si, že obě jazykové verze používají jiné oddělovače desetinných míst v hodnotě teploty. Všimněte si také, že v příkladu se používá vlastní řetězec formátu data a času "MMMM" k zobrazení úplného názvu měsíce a který přiděluje příslušné množství místa pro název měsíce ve výsledném řetězci určením délky názvu nejdelšího měsíce v poli <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType>.
 
 [!code-csharp[Conceptual.Globalization#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers1.cs#5)]
 [!code-vb[Conceptual.Globalization#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers1.vb#5)]
@@ -338,7 +338,7 @@ Obecně neprovádějte žádné předpoklady týkající se hodnot konkrétních
 
 - V systémech Windows může uživatel přizpůsobit nastavení specifické pro jazykovou verzi pomocí aplikace **oblast a jazyk** v Ovládacích panelech. Při vytváření instance objektu <xref:System.Globalization.CultureInfo> můžete určit, zda odráží tyto vlastní uživatelské přizpůsobení voláním konstruktoru <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>. Pro aplikace pro koncové uživatele byste obvykle měli respektovat uživatelské preference, takže se uživateli zobrazí data ve formátu, který očekává.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
 - [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)

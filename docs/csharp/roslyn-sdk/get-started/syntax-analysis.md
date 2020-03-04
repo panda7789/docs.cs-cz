@@ -3,12 +3,12 @@ title: Začínáme s analýzou syntaxe (rozhraní API Roslyn)
 description: Úvod do procházení, dotazování a procházení stromů syntaxe.
 ms.date: 02/05/2018
 ms.custom: mvc
-ms.openlocfilehash: d4163e8aadf577a5a5cbed225b26a0ec8390277e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 22d1303c9daa2ae35cf130b0c857cd7a5efdbe76
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347004"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240510"
 ---
 # <a name="get-started-with-syntax-analysis"></a>Začínáme s analýzou syntaxe
 
@@ -84,35 +84,35 @@ Vytvořit nový C# projekt **Nástroje pro analýzu samostatného kódu** :
 Chystáte se analyzovat základní "Hello World!" program byl zobrazen výše.
 Do `Program` třídy přidejte text pro Hello World program jako konstantu:
 
-[!code-csharp[Declare the program text](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#1 "Declare a constant string for the program text to analyze")]
+[!code-csharp[Declare the program text](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#1 "Declare a constant string for the program text to analyze")]
 
 Dále přidejte následující kód, který sestaví **strom syntaxe** pro text kódu v konstantě `programText`.  Do metody `Main` přidejte následující řádek:
 
-[!code-csharp[Create the tree](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#2 "Create the syntax tree")]
+[!code-csharp[Create the tree](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#2 "Create the syntax tree")]
 
 Tyto dva řádky vytvoří strom a načtou kořenový uzel tohoto stromu. Nyní můžete zkontrolovat uzly ve stromové struktuře. Přidejte tyto řádky do metody `Main` pro zobrazení některých vlastností kořenového uzlu ve stromové struktuře:
 
-[!code-csharp[Examine the root node](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#3 "Examine the root node")]
+[!code-csharp[Examine the root node](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#3 "Examine the root node")]
 
 Spusťte aplikaci, abyste viděli, jak kód zjistil kořenový uzel v tomto stromu.
 
 Obvykle byste procházeli procházením stromu, abyste se dozvěděli o kódu. V tomto příkladu analyzujete kód, který znáte pro zkoumání rozhraní API. Přidejte následující kód pro prohlédnutí prvního členu `root` uzlu:
 
-[!code-csharp[Find the first member](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#4 "Find the first member")]
+[!code-csharp[Find the first member](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#4 "Find the first member")]
 
 Tento člen je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType>. Představuje vše v rozsahu deklarace `namespace HelloWorld`. Přidejte následující kód k prohlédnutí uzlů, které jsou deklarovány v oboru názvů `HelloWorld`:
 
-[!code-csharp[Find the class declaration](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#5 "Find the class declaration")]
+[!code-csharp[Find the class declaration](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#5 "Find the class declaration")]
 
 Spusťte program a podívejte se, co jste se naučili.
 
 Teď, když víte, že je deklarace <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax?displayProperty=nameWithType>, deklarujte novou proměnnou tohoto typu pro prohlédnutí deklarace třídy. Tato třída obsahuje pouze jednoho člena: metodu `Main`. Přidejte následující kód k nalezení `Main` metody a přetypujte ji na <xref:Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax?displayProperty=nameWithType>.
 
-[!code-csharp[Find the main declaration](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#6 "Find the main declaration")]
+[!code-csharp[Find the main declaration](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#6 "Find the main declaration")]
 
 Uzel deklarace metody obsahuje všechny syntaktické informace o metodě. Pojďme zobrazit návratový typ metody `Main`, číslo a typy argumentů a text těla metody. Přidejte následující kód:
 
-[!code-csharp[Examine the syntax of the main method](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#7 "Display information about the main method")]
+[!code-csharp[Examine the syntax of the main method](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#7 "Display information about the main method")]
 
 Spuštěním programu zobrazíte všechny informace, které jste zjistili o tomto programu:
 
@@ -144,7 +144,7 @@ Kromě procházení stromů můžete také prozkoumat strom syntaxe pomocí meto
 
 Pomocí těchto metod dotazů můžete najít argument metody `Main` jako alternativu k navigaci stromu. Do dolní části `Main` metody přidejte následující kód:
 
-[!code-csharp[Query the tree for the arguments to Main](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#8 "Query the tree for the arguments to Main")]
+[!code-csharp[Query the tree for the arguments to Main](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#8 "Query the tree for the arguments to Main")]
 
 První příkaz používá výraz LINQ a metodu <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A> k vyhledání stejného parametru jako v předchozím příkladu.
 
@@ -164,35 +164,35 @@ Dokončený kód pro tuto ukázku najdete v [našem úložišti GitHub](https://
 
 Stejně jako v předchozím příkladu můžete definovat řetězcovou konstantu, která bude obsahovat text programu, který budete analyzovat:
 
-[!code-csharp[Define the code text to analyzer](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#1 "Define the program text to analyze")]
+[!code-csharp[Define the code text to analyzer](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#1 "Define the program text to analyze")]
 
 Tento zdrojový text obsahuje `using` direktivy rozptýlené ve čtyřech různých umístěních: na úrovni souboru v oboru názvů nejvyšší úrovně a ve dvou vnořených oborech názvů. Tento příklad zvýrazní základní scénář použití třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> pro dotazování kódu. Je nenáročný na návštěvu všech uzlů v kořenovém stromu syntaxe pro vyhledání pomocí deklarací. Místo toho můžete vytvořit odvozenou třídu a přepsat metodu, která bude volána pouze v případě, že aktuální uzel ve stromové struktuře je Direktiva using. Váš návštěvník neprovádí žádnou práci na žádném jiném typu uzlu. Tato jediná metoda prověřuje jednotlivé příkazy `using` a vytvoří kolekci oborů názvů, které nejsou v oboru názvů `System`. Sestavíte <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>, který prověřuje všechny příkazy `using`, ale pouze příkazy `using`.
 
 Nyní, když jste definovali text programu, je třeba vytvořit `SyntaxTree` a získat kořen této stromové struktury:
 
-[!code-csharp[Create the Syntax tree and access the root](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#2 "Create the Syntax tree and access the root node.")]
+[!code-csharp[Create the Syntax tree and access the root](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#2 "Create the Syntax tree and access the root node.")]
 
 Dále vytvořte novou třídu. V aplikaci Visual Studio vyberte **projekt** > **Přidat novou položku**. V dialogovém okně **Přidat novou položku** jako název souboru zadejte *UsingCollector.cs* .
 
 Implementujete funkci `using` návštěvníka ve třídě `UsingCollector`. Začněte tím, že třídu `UsingCollector` odvodíte z <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>.
 
-[!code-csharp[Declare the base class for the using collector](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#3 "Declare the base class for the UsingCollector")]
+[!code-csharp[Declare the base class for the using collector](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#3 "Declare the base class for the UsingCollector")]
 
 Pro uložení uzlů oboru názvů, které shromažďujete, potřebujete úložiště.  Deklarace veřejné vlastnosti jen pro čtení ve třídě `UsingCollector`; pomocí této proměnné můžete ukládat <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> uzly, které najdete:
 
-[!code-csharp[Declare storage for the using syntax nodes](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#4 "Declare storage for the using syntax nodes")]
+[!code-csharp[Declare storage for the using syntax nodes](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#4 "Declare storage for the using syntax nodes")]
 
 Základní třída <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> implementuje logiku pro návštěvě každého uzlu ve stromové struktuře syntaxe. Odvozená třída Přepisuje metody volané pro konkrétní uzly, které vás zajímají. V takovém případě vás zajímá jakákoli `using` direktiva. To znamená, že je nutné přepsat metodu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitUsingDirective(Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax)>. Jedním z argumentů této metody je objekt <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax?displayProperty=nameWithType>. To je důležitou výhodou pro použití návštěvníků: volá přepsané metody s argumenty, které už jsou přetypování na konkrétní typ uzlu. Třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax?displayProperty=nameWithType> obsahuje vlastnost <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.Name>, která ukládá název importovaného oboru názvů. Je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType>. Do přepsání <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitUsingDirective(Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax)> přidejte následující kód:
 
-[!code-csharp[Examine using nodes for the System namespace](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#5 "Examine all using nodes for the System namespace.")]
+[!code-csharp[Examine using nodes for the System namespace](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#5 "Examine all using nodes for the System namespace.")]
 
 Stejně jako v předchozím příkladu jste přidali celou řadu `WriteLine` příkazů, které pomáhají pochopit tuto metodu. Můžete vidět, kdy se volá a kde se do něj předávají argumenty.
 
 Nakonec potřebujete přidat dva řádky kódu pro vytvoření `UsingCollector` a pokaždé, když navštívíte kořenový uzel a budete shromažďovat všechny příkazy `using`. Pak přidejte smyčku `foreach` pro zobrazení všech příkazů `using`, které kolekce nalezla:
 
-[!code-csharp[Create the UsingCollector and visit the root node.](../../../../samples/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#6 "Create the UsingCollector and visit the root node.")]
+[!code-csharp[Create the UsingCollector and visit the root node.](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#6 "Create the UsingCollector and visit the root node.")]
 
-Zkompilujte a spusťte program. Měli byste vidět následující výstup:
+Zkompilujte a spusťte program. Měl by se zobrazit následující výstup:
 
 ```console
         VisitUsingDirective called with System.

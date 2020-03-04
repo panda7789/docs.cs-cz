@@ -4,12 +4,12 @@ description: Nedávná vylepšení C# jazyka umožňují psát ověřitelný bez
 ms.date: 10/23/2018
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: f590a338d35966e2cd3a507164057a49b8a5f6f8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: d4a7916b80e15c7f00fa0a7da213ed0593e0959d
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346705"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239973"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečného a C# efektivního kódu
 
@@ -154,7 +154,7 @@ Vrácení `ref readonly` umožňuje uložit kopírování větších struktur a 
 
 Na webu volání využije volající možnost použít vlastnost `Origin` jako `ref readonly` nebo jako hodnotu:
 
-[!code-csharp[AssignRefReadonly](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#AssignRefReadonly "Assigning a ref readonly")]
+[!code-csharp[AssignRefReadonly](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#AssignRefReadonly "Assigning a ref readonly")]
 
 První přiřazení v předchozím kódu vytvoří kopii `Origin` konstanty a přiřadí tuto kopii. Druhý přiřadí odkaz. Všimněte si, že modifikátor `readonly` musí být součástí deklarace proměnné. Odkaz, na který se odkazuje, se nedá změnit. Pokusí se to provést za účelem chyby při kompilaci.
 
@@ -180,7 +180,7 @@ Tento postup často vylepšuje výkon pro typy hodnot ReadOnly, které jsou vět
 
 Následující kód ukazuje příklad metody, která vypočítá vzdálenost mezi dvěma body v 3D prostoru.
 
-[!code-csharp[InArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgument "Specifying an in argument")]
+[!code-csharp[InArgument](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgument "Specifying an in argument")]
 
 Argumenty jsou dvě struktury, které obsahují tři dvojité. Dvojitá přesnost je 8 bajtů, takže každý argument je 24 bajtů. Zadáním modifikátoru `in` předáte do těchto argumentů odkaz na 4 bajty nebo 8 bajtů v závislosti na architektuře počítače. Rozdíl velikosti je malý, ale přidává se, když vaše aplikace volá tuto metodu v těsné smyčce pomocí řady různých hodnot.
 
@@ -190,7 +190,7 @@ Modifikátor `in` lze použít pro libovolného člena, který přebírá parame
 
 Další funkcí `in` parametrů je, že pro argument `in` parametr můžete použít literálové hodnoty nebo konstanty. Navíc na rozdíl od `ref` nebo `out` parametr není nutné použít modifikátor `in` na webu volání. Následující kód ukazuje dva příklady volání metody `CalculateDistance`. První používá dvě místní proměnné předané odkazem. Druhý zahrnuje dočasnou proměnnou vytvořenou jako součást volání metody.
 
-[!code-csharp[UseInArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#UseInArgument "Specifying an In argument")]
+[!code-csharp[UseInArgument](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#UseInArgument "Specifying an In argument")]
 
 Existuje několik způsobů, jak kompilátor vynutil charakter `in` argument jen pro čtení.  První z nich volaná metoda se nemůže přímo přiřadit k parametru `in`. Nelze ji přímo přiřadit k žádnému poli `in` parametr, pokud je tato hodnota typu `struct`. Kromě toho nemůžete předat parametr `in` žádné metodě pomocí modifikátoru `ref` nebo `out`.
 Tato pravidla platí pro každé pole parametru `in`, pokud je pole typem `struct` a parametr je také `struct` typ. Ve skutečnosti platí, že tato pravidla se použijí pro přístup k více vrstvám členů, přičemž typy na všech úrovních přístupu členů jsou `structs`.
@@ -204,11 +204,11 @@ Použití parametrů `in` se může vyhnout potenciálním nákladům na výkon 
 
 Tato pravidla jsou užitečná, když aktualizujete existující kód tak, aby používal argumenty odkazu jen pro čtení. Uvnitř volané metody můžete zavolat libovolnou metodu instance, která používá parametry hodnot. V těchto případech je vytvořena kopie parametru `in`. Vzhledem k tomu, že kompilátor může vytvořit dočasnou proměnnou pro libovolný parametr `in`, můžete také zadat výchozí hodnoty pro libovolný parametr `in`. Následující kód určuje počátek (bod 0, 0) jako výchozí hodnotu pro druhý bod:
 
-[!code-csharp[InArgumentDefault](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgumentDefault "Specifying defaults for an in parameter")]
+[!code-csharp[InArgumentDefault](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgumentDefault "Specifying defaults for an in parameter")]
 
 Chcete-li vynutit, aby kompilátor předal argumenty jen pro čtení odkazem, určete `in` modifikátor u argumentů na webu volání, jak je znázorněno v následujícím kódu:
 
-[!code-csharp[UseInArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ExplicitInArgument "Specifying an In argument")]
+[!code-csharp[UseInArgument](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ExplicitInArgument "Specifying an In argument")]
 
 Toto chování usnadňuje přijímání parametrů `in` v průběhu času v rozsáhlých základech kódu, kde je možné nárůst výkonu. Nejprve přidáte modifikátor `in` k podpisům metod. Pak můžete přidat modifikátor `in` na webech volání a vytvořit `readonly struct` typy a povolit tak kompilátoru, aby se zabránilo vytváření obrannou linií kopií parametrů `in` ve více umístěních.
 
@@ -218,13 +218,13 @@ Označení parametru `in` lze také použít s odkazovým typem nebo číselným
 
 Výše popsané techniky vysvětlují, jak se vyhnout kopiím vrácením odkazů a předáním hodnot odkazem. Tyto techniky fungují nejlépe, pokud jsou typy argumentů deklarovány jako `readonly struct` typy. V opačném případě kompilátor musí vytvořit **obrannou linií kopie** v mnoha situacích, aby se vynutila vlastnost ReadOnly-Ness všech argumentů. Vezměte v úvahu následující příklad, který vypočítá vzdálenost prostorového bodu od počátku:
 
-[!code-csharp[InArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgument "Specifying an in argument")]
+[!code-csharp[InArgument](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgument "Specifying an in argument")]
 
 Struktura *`Point3D` není struktura* jen pro čtení. V těle této metody je k dispozici šest různých volání přístupu k vlastnostem. Při prvním zkoumání jste si možná mysleli, že tyto přístupy byly bezpečné. Po všech případech přistupující objekt `get` by neměl upravovat stav objektu. Nejedná se ale o žádné jazykové pravidlo, které to vynutilo. Je to jenom běžná konvence. Libovolný typ může implementovat přistupující objekt `get`, který změnil vnitřní stav. Bez záruky jazyka musí kompilátor vytvořit dočasnou kopii argumentu před voláním libovolného člena. Dočasné úložiště je vytvořeno v zásobníku, hodnoty argumentu jsou zkopírovány do dočasného úložiště a hodnota je zkopírována do zásobníku pro každý přístup člena jako argument `this`. V mnoha situacích tyto kopie poškozují výkon, takže pokud typ argumentu není `readonly struct`, je průchozí hodnota rychlejší než odkaz Pass-by-ReadOnly.
 
 Místo toho, pokud výpočet vzdálenosti používá neproměnlivou strukturu `ReadonlyPoint3D`, dočasné objekty nejsou potřeba:
 
-[!code-csharp[readonlyInArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ReadOnlyInArgument "Specifying a readonly in argument")]
+[!code-csharp[readonlyInArgument](../../samples/snippets/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ReadOnlyInArgument "Specifying a readonly in argument")]
 
 Kompilátor generuje efektivnější kód při volání členů `readonly struct`: `this` odkaz namísto kopie příjemce je vždy parametr `in` předaný odkazem na metodu člena. Tato optimalizace ukládá kopírování při použití `readonly struct` jako argumentu `in`.
 
@@ -238,7 +238,7 @@ Související funkce jazyka je schopnost deklarovat typ hodnoty, který musí b�
 
 Můžete mít podobné požadavky na práci s pamětí vytvořenou pomocí [`stackalloc`](language-reference/operators/stackalloc.md) nebo při použití paměti z rozhraní API pro interoperabilitu. Pro tyto potřeby můžete definovat vlastní typy `ref struct`.
 
-## <a name="readonly-ref-struct-type"></a>Typ `readonly ref struct`
+## <a name="readonly-ref-struct-type"></a>typ `readonly ref struct`
 
 Deklarace struktury jako `readonly ref` kombinuje výhody a omezení deklarace `ref struct` a `readonly struct`. Paměť využitá rozsahem jen pro čtení je omezená na jeden rámec zásobníku a paměť, kterou používá rozsah jen pro čtení, se nedá změnit.
 
@@ -262,7 +262,7 @@ Tyto kompromisy mají obvykle minimální dopad na výkon. U rozsáhlých strukt
 
 Tato vylepšení C# jazyka jsou navržena pro kritické algoritmy výkonu, kde minimalizace přidělení paměti je významným faktorem při dosahování potřebného výkonu. Možná zjistíte, že tyto funkce nepoužíváte často v kódu, který píšete. Tato vylepšení se ale přijala v rámci .NET. Díky většímu množství rozhraní API využívají tyto funkce, ale můžete zlepšit výkon aplikací.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [ref – klíčové slovo](language-reference/keywords/ref.md)
 - [Návratové a místní referenční hodnoty](programming-guide/classes-and-structs/ref-returns.md)

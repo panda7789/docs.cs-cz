@@ -4,12 +4,12 @@ description: Tento rozšířený kurz ukazuje, jak migrovat existující kód s 
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 4edeab7b2a4211d50c424f567ad7df6ced0bf4ce
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 38619f9efa5da1f9b3264b3d4240103f0869afea
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093302"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240025"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: migrace stávajícího kódu s odkazy s možnou hodnotou null
 
@@ -77,11 +77,11 @@ Tyto dvě direktivy vám pomůžou zaměřit se na vaše úsilí při migraci. P
 
 Třída `NewsStoryViewModel` je objekt pro přenos dat (DTO) a dvě vlastnosti jsou řetězce pro čtení a zápis:
 
-[!code-csharp[InitialViewModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#StarterViewModel)]
+[!code-csharp[InitialViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#StarterViewModel)]
 
 Tyto dvě vlastnosti způsobují `CS8618`, nepovolenou vlastnost není inicializovaná. Je to dostatečně jasné: vlastnosti `string` mají výchozí hodnotu `null`, když je vytvořen `NewsStoryViewModel`. Důležité je, abyste zjistili, jak se vytvářejí objekty `NewsStoryViewModel`. Při prohlížení této třídy nemůžete zjistit, zda je hodnota `null` součástí návrhu, nebo pokud jsou tyto objekty nastaveny na hodnoty, které nejsou null vždy při vytvoření jedné z nich. Příběhy novinek jsou vytvořeny v metodě `GetNews` `NewsService` třídy:
 
-[!code-csharp[StarterCreateNewsItem](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
+[!code-csharp[StarterCreateNewsItem](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
 V předchozím bloku kódu se už trochu přechází. Tato aplikace používá balíček NuGet [automapper](https://automapper.org/) k vytvoření položky zpráv z `ISyndicationItem`. Zjistili jste, že položky novinového článku jsou vytvořeny a vlastnosti jsou nastaveny v daném příkazu. To znamená, že návrh `NewsStoryViewModel` označuje, že tyto vlastnosti by nikdy neměly mít hodnotu `null`. Tyto vlastnosti by neměly být **typy odkazů**, které nejsou null. Který nejlépe vyjadřuje původní záměr návrhu. Ve skutečnosti *jsou* všechny `NewsStoryViewModel` správně vytvořeny s hodnotami, které nejsou null. Díky tomu následující inicializační kód provede platnou opravu:
 
@@ -96,15 +96,15 @@ public class NewsStoryViewModel
 
 Přiřazení `Title` a `Uri` `default`, které `null` pro typ `string`, nemění chování programu za běhu. `NewsStoryViewModel` je stále vytvořen s hodnotami null, ale nyní kompilátor hlásí žádná upozornění. **Operátor null-striktní**, znak `!` následující po `default` výrazu instruuje kompilátor, že předchozí výraz není null. Tato technika může být účelná, pokud jiné změny vynutí mnohem větší změny základu kódu, ale v této aplikaci je poměrně rychlé a lepší řešení: `NewsStoryViewModel` neměnného typu, kde jsou všechny vlastnosti nastaveny v konstruktoru. Proveďte následující změny `NewsStoryViewModel`:
 
-[!code-csharp[FinishedViewModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
+[!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
 
 Až to uděláte, musíte aktualizovat kód, který konfiguruje automapper, aby místo nastavení vlastností používal konstruktor. Otevřete `NewsService.cs` a vyhledejte následující kód v dolní části souboru:
 
-[!code-csharp[StarterAutoMapper](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
+[!code-csharp[StarterAutoMapper](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
 
 Tento kód mapuje vlastnosti objektu `ISyndicationItem` na vlastnosti `NewsStoryViewModel`. Chcete, aby automapper místo toho poskytovala mapování pomocí konstruktoru. Výše uvedený kód nahraďte následující konfigurací automapper:
 
-[!code-csharp[FinishedViewModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
+[!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
 
 Všimněte si, že vzhledem k tomu, že je tato třída malá a že jste pečlivě prozkoumali, měli byste zapnout direktivu `#nullable enable` nad rámec této deklarace třídy. Změna konstruktoru mohla způsobit poškození, takže je vhodné spustit všechny testy a otestovat aplikaci před přechodem na.
 
@@ -112,11 +112,11 @@ První sada změn ukázala, jak zjistit, kdy původní návrh určil, že by pro
 
 Jindy, struktura třídy poskytuje různé změny záměru. Otevřete soubor *Error.cshtml.cs* ve složce *stránky* . `ErrorViewModel` obsahuje následující kód:
 
-[!code-csharp[StarterErrorModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Error.cshtml.cs#StartErrorModel)]
+[!code-csharp[StarterErrorModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Error.cshtml.cs#StartErrorModel)]
 
 Přidejte direktivu `#nullable enable` před deklaraci třídy a direktivu `#nullable restore`. Zobrazí se jedno upozornění, že `RequestId` neinicializuje. Pohledem na třídu byste měli rozhodnout, že v některých případech by vlastnost `RequestId` měla mít hodnotu null. Existence vlastnosti `ShowRequestId` označuje, že chybějící hodnoty jsou možné. Vzhledem k tomu, že je `null` platný, přidejte `?` na typ `string` k označení, že vlastnost `RequestId` je *odkazem s možnou hodnotou null*. Konečná třída vypadá jako v následujícím příkladu:
 
-[!code-csharp[FinishedErrorModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Error.cshtml.cs#ErrorModel)]
+[!code-csharp[FinishedErrorModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Error.cshtml.cs#ErrorModel)]
 
 Zkontrolujte použití vlastnosti a uvidíte, že na přidružené stránce je vlastnost před vykreslením v kódu zkontrolována na hodnotu null. To je bezpečné použití typu odkazu s možnou hodnotou null, takže jste s touto třídou hotovi.
 
@@ -124,27 +124,27 @@ Zkontrolujte použití vlastnosti a uvidíte, že na přidružené stránce je v
 
 Oprava pro jednu sadu upozornění často vytvoří nová upozornění v souvisejícím kódu. Pojďme se podívat na upozornění v akci tím, že opravíte třídu `index.cshtml.cs`. Otevřete soubor `index.cshtml.cs` a Projděte si kód. Tento soubor obsahuje kód za stránkou indexu:
 
-[!code-csharp[StarterIndexModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
+[!code-csharp[StarterIndexModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
 
 Přidejte direktivu `#nullable enable` a zobrazí se dvě upozornění. Není inicializována vlastnost `ErrorText` ani vlastnost `NewsItems`. Přezkoumání této třídy by vedlo k názoru, že obě vlastnosti by měly mít hodnoty s možnou hodnotou null: obě mají privátní metody setter. V metodě `OnGet` je přiřazena právě jedna. Před provedením změn se podívejte na uživatele obou vlastností. V samotné stránce je `ErrorText` před generováním značek pro všechny chyby zkontrolováno na hodnotu null. Kolekce `NewsItems` se kontroluje proti `null`a kontrolovala se, aby kolekce měla položky. Rychlá oprava by představovala vlastnosti odkazu s možnou hodnotou null. Lepším řešením je vytvořit kolekci odkazový typ, který není null, a při načítání zpráv přidat položky do existující kolekce. První oprava je přidání `?` do `string` typu pro `ErrorText`:
 
-[!code-csharp[UpdateErrorText](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
+[!code-csharp[UpdateErrorText](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
 
 Tato změna se nevyhodnotí na základě jiného kódu, protože jakýkoli přístup k vlastnosti `ErrorText` byl již chráněn pomocí kontroly hodnoty null. Dále inicializujte seznam `NewsItems` a odeberte metodu setter vlastnosti a vytvořte ji jako vlastnost jen pro čtení:
 
-[!code-csharp[InitializeNewsItems](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#InitializeNewsItems)]
+[!code-csharp[InitializeNewsItems](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#InitializeNewsItems)]
 
 Opravili jsme upozornění, ale zavedli chybu. Seznam `NewsItems` je nyní **správný konstrukcí**, ale kód, který nastaví seznam v `OnGet` se musí změnit tak, aby odpovídal novému rozhraní API. Místo přiřazení volejte `AddRange`, aby se položky příspěvků přidaly do existujícího seznamu:
 
-[!code-csharp[AddRange](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#AddRange)]
+[!code-csharp[AddRange](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#AddRange)]
 
 Použití `AddRange` místo přiřazení znamená, že metoda `GetNews` může vracet `IEnumerable` namísto `List`. Který ukládá jedno přidělení. Změňte signaturu metody a odeberte `ToList` volání, jak je znázorněno v následujícím příkladu kódu:
 
-[!code-csharp[GetNews](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#GetNewsFinished)]
+[!code-csharp[GetNews](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#GetNewsFinished)]
 
 Změna signatury také zruší jeden z testů. Otevřete soubor `NewsServiceTests.cs` ve složce `Services` projektu `SimpleFeedReader.Tests`. Přejděte na `Returns_News_Stories_Given_Valid_Uri` test a změňte typ proměnné `result` na `IEnumerable<NewsItem>`. Změna typu znamená, že vlastnost `Count` již není k dispozici, takže nahraďte vlastnost `Count` v `Assert` voláním `Any()`:
 
-[!code-csharp[FixTests](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader.Tests/Services/NewsServiceTests.cs#FixTestSignature)]
+[!code-csharp[FixTests](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader.Tests/Services/NewsServiceTests.cs#FixTestSignature)]
 
 Je nutné přidat příkaz `using System.Linq` na začátek souboru.
 
@@ -159,7 +159,7 @@ Tato sada změn zvýrazňuje zvláštní pozornost při aktualizaci kódu, kter�
 
 Provedli jste změny ve třídě `NewsService`, takže zapnete `#nullable enable` anotaci této třídy. To negeneruje žádná nová upozornění. Pečlivé zkoumání třídy však pomáhá ilustrovat některá omezení analýzy toku kompilátoru. Prověřte konstruktor:
 
-[!code-csharp[ServiceConstructor](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ServiceConstructor)]
+[!code-csharp[ServiceConstructor](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ServiceConstructor)]
 
 Parametr `IMapper` je zadán jako neprázdný odkaz. Je volána ASP.NET Core kódem infrastruktury, takže kompilátor opravdu neví, že `IMapper` nikdy nebude null. Výchozí kontejner pro vkládání závislostí (DI) ASP.NET Core vyvolá výjimku, pokud nemůže vyřešit nezbytnou službu, takže kód je správný. Kompilátor nemůže ověřit všechna volání vašich veřejných rozhraní API, a to i v případě, že je váš kód zkompilován s povolenými kontexty anotace s možnou hodnotou null. Kromě toho mohou být knihovny spotřebovány projekty, které ještě nebyly přihlášeny k použití typů odkazů s možnou hodnotou null. Ověřte vstupy do veřejných rozhraní API, i když je deklarujete jako nehodnotné typy.
 

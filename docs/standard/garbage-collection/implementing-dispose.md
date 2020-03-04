@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: a7e03a833886a1486e0dc081d6ef059791a464b5
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: f3d3269ccf56954f963762503d2bc1c53b9e6b83
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156332"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78238985"
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -33,7 +33,7 @@ Vzor Dispose má dvě varianty:
   
 Aby bylo možné zajistit, aby se prostředky vždy vyčistily, měla by být metoda <xref:System.IDisposable.Dispose%2A> volat několikrát, aniž by došlo k vyvolání výjimky.  
   
-Příklad kódu, který je k dispozici pro metodu <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType>, ukazuje, jak agresivní uvolňování paměti může způsobit spuštění finalizační metody v době, kdy je stále prováděn člen uvolněného objektu. Je vhodné volat metodu <xref:System.GC.KeepAlive%2A> na konci zdlouhavé <xref:System.IDisposable.Dispose%2A> metody.  
+Příklad kódu, který je k dispozici pro metodu <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> ukazuje, jak uvolňování paměti může způsobit spuštění finalizační metody, zatímco nespravovaný odkaz na objekt nebo jeho členy se stále používá. Může být vhodné využít <xref:System.GC.KeepAlive%2A?displayProperty=nameWithType> k tomu, aby objekt nezpůsobil pro uvolňování paměti od začátku aktuální rutiny do bodu, ve kterém je tato metoda volána.
   
 <a name="Dispose2"></a>
 ## <a name="dispose-and-disposeboolean"></a>Dispose() a Dispose(Boolean)  

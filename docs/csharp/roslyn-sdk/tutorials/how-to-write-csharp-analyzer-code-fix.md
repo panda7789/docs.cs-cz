@@ -3,12 +3,12 @@ title: 'Kurz: vytvoření prvního analyzátoru a opravy kódu'
 description: V tomto kurzu najdete podrobné pokyny k sestavení analyzátoru a opravy kódu pomocí sady .NET Compiler SDK (rozhraní Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 99401e74588088d56b3fbd916e050f5d468722a1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f6fc21c010f9b5fcd5e709ef822639c020a7c93b
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346942"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240547"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: vytvoření prvního analyzátoru a opravy kódu
 
@@ -16,7 +16,7 @@ Sada .NET Compiler Platform SDK poskytuje nástroje, které potřebujete k vytv�
 
 V tomto kurzu se seznámíte s vytvořením **analyzátoru** a s doprovodnou **opravou kódu** pomocí rozhraní API Roslyn. Analyzátor je způsob, jak provádět analýzu zdrojového kódu a nahlásit problém uživateli. V případě potřeby může analyzátor také poskytnout opravu kódu, která představuje úpravu zdrojového kódu uživatele. V tomto kurzu se vytvoří analyzátor, který najde deklarace místních proměnných, které by mohly být deklarované pomocí modifikátoru `const`, ale ne. Oprava doprovodného kódu upraví tyto deklarace a přidá modifikátor `const`.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
 - [Visual Studio 2019](https://www.visualstudio.com/downloads)
@@ -105,7 +105,7 @@ context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
 
 Nahraďte ji následujícím řádkem:
 
-[!code-csharp[Register the node action](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstAnalyzer.cs#RegisterNodeAction "Register a node action")]
+[!code-csharp[Register the node action](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstAnalyzer.cs#RegisterNodeAction "Register a node action")]
 
 Po této změně můžete metodu `AnalyzeSymbol` odstranit. Tento analyzátor prověřuje <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.LocalDeclarationStatement?displayProperty=nameWithType>, nikoli příkazy <xref:Microsoft.CodeAnalysis.SymbolKind.NamedType?displayProperty=nameWithType>. Všimněte si, že `AnalyzeNode` obsahuje červené vlnovky. Kód, který jste právě přidali, odkazuje na metodu `AnalyzeNode`, která nebyla deklarována. Deklarujte tuto metodu pomocí následujícího kódu:
 
@@ -192,17 +192,17 @@ Uživatel zvolí tuto možnost z uživatelského rozhraní žárovky v editoru a
 
 Otevřete soubor **MakeConstCodeFixProvider.cs** , který šablona přidala.  Tato oprava kódu je již zapojena do ID diagnostiky vytvořeného analyzátorem diagnostiky, ale ještě neimplementuje správnou transformaci kódu. Nejprve byste měli odebrat některý kód šablony. Změňte řetězec nadpisu na "vytvořit konstantu":
 
-[!code-csharp[Update the CodeFix title](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CodeFixTitle "Update the CodeFix title")]
+[!code-csharp[Update the CodeFix title](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CodeFixTitle "Update the CodeFix title")]
 
 Dále odstraňte metodu `MakeUppercaseAsync`. Už se nepoužívá.
 
 Všichni poskytovatelé oprav kódu jsou odvozeni z <xref:Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider>. Všechna <xref:Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)?displayProperty=nameWithType> přepisují, aby nahlásily dostupné opravy kódu. V `RegisterCodeFixesAsync`změňte typ nadřazeného uzlu, který hledáte pro <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>, aby odpovídal diagnostice:
 
-[!code-csharp[Find local declaration node](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FindDeclarationNode  "Find the local declaration node that raised the diagnostic")]
+[!code-csharp[Find local declaration node](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FindDeclarationNode  "Find the local declaration node that raised the diagnostic")]
 
 Dále změňte poslední řádek pro registraci opravy kódu. Vaše oprava vytvoří nový dokument, který bude mít za následek přidání modifikátoru `const` do existující deklarace:
 
-[!code-csharp[Register the new code fix](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#RegisterCodeFix  "Register the new code fix")]
+[!code-csharp[Register the new code fix](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#RegisterCodeFix  "Register the new code fix")]
 
 Všimněte si červené vlnovky v kódu, který jste právě přidali na symbol `MakeConstAsync`. Přidejte deklaraci pro `MakeConstAsync` jako v následujícím kódu:
 
@@ -218,7 +218,7 @@ Vaše nová metoda `MakeConstAsync` transformuje <xref:Microsoft.CodeAnalysis.Do
 
 Vytvoříte nový token klíčového slova `const` pro vložení na začátek prohlášení. Buďte opatrní, abyste nejdřív odebrali všechny úvodní minihry z prvního tokenu příkazu deklarace a připojili ho k tokenu `const`. Do metody `MakeConstAsync` přidejte následující kód:
 
-[!code-csharp[Create a new const keyword token](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CreateConstToken  "Create the new const keyword token")]
+[!code-csharp[Create a new const keyword token](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CreateConstToken  "Create the new const keyword token")]
 
 Dále přidejte token `const` k deklaraci pomocí následujícího kódu:
 
@@ -233,7 +233,7 @@ var newLocal = trimmedLocal
 
 Dále naformátujte novou deklaraci tak C# , aby odpovídala pravidlům formátování. Formátování změn tak, aby odpovídalo existujícímu kódu, vytvoří lepší prostředí. Přidejte následující příkaz hned za existující kód:
 
-[!code-csharp[Format the new declaration](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FormatLocal  "Format the new declaration")]
+[!code-csharp[Format the new declaration](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FormatLocal  "Format the new declaration")]
 
 Pro tento kód je vyžadován nový obor názvů. Do horní části souboru přidejte následující příkaz `using`:
 
@@ -249,7 +249,7 @@ Posledním krokem je provedení úprav. Tento postup má tři kroky:
 
 Na konec `MakeConstAsync` metody přidejte následující kód:
 
-[!code-csharp[replace the declaration](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceDocument  "Generate a new document by replacing the declaration")]
+[!code-csharp[replace the declaration](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceDocument  "Generate a new document by replacing the declaration")]
 
 Oprava kódu je připravená k vyzkoušení.  Stisknutím klávesy F5 spusťte projekt analyzátoru v druhé instanci aplikace Visual Studio. Ve druhé instanci sady Visual Studio vytvořte nový C# projekt konzolové aplikace a přidejte několik deklarací místních proměnných inicializovaných s konstantními hodnotami do metody Main. Uvidíte, že jsou hlášeny jako upozornění, jak je uvedeno níže.
 
@@ -308,7 +308,7 @@ public void WhenDiagnosticIsRaisedFixUpdatesCode(
 
 Předchozí kód také provedl několik změn kódu, který vytváří očekávaný výsledek diagnostiky. Používá veřejné konstanty zaregistrované v analyzátoru `MakeConst`. Kromě toho používá dvě řetězcové konstanty pro vstupní a pevný zdroj. Do třídy `UnitTest` přidejte následující řetězcové konstanty:
 
-[!code-csharp[string constants for fix test](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FirstFixTest "string constants for fix test")]
+[!code-csharp[string constants for fix test](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FirstFixTest "string constants for fix test")]
 
 Spusťte tyto dva testy, abyste se ujistili, že jsou průchody. V aplikaci Visual Studio otevřete **Průzkumníka testů** výběrem možnosti **Test** > **Windows** > **Test Explorer**.  Stiskněte odkaz **Spustit vše** .
 
@@ -316,7 +316,7 @@ Spusťte tyto dva testy, abyste se ujistili, že jsou průchody. V aplikaci Visu
 
 Obecně platí, že analyzátory by měly skončit co nejrychleji, což má minimální práci. Visual Studio volá zaregistrované analyzátory jako kód úprav uživatele. Odezva je klíčovým požadavkem. Existuje několik testovacích případů pro kód, který by neměl vyvolat diagnostiku. Analyzátor již zpracovává jeden z těchto testů, případ, kdy je přiřazena proměnná po inicializaci. Přidejte následující řetězcovou konstantu do testů pro reprezentaci tohoto případu:
 
-[!code-csharp[variable assigned](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#VariableAssigned "a variable that is assigned after being initialized won't raise the diagnostic")]
+[!code-csharp[variable assigned](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#VariableAssigned "a variable that is assigned after being initialized won't raise the diagnostic")]
 
 Pak přidejte řádek dat pro tento test, jak je znázorněno v následujícím fragmentu kódu:
 
@@ -331,19 +331,19 @@ Tento test se také projde. Dále přidejte konstanty pro podmínky, které jste
 
 - Deklarace, které jsou již `const`, protože jsou již const:
 
-   [!code-csharp[already const declaration](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#AlreadyConst "a declaration that is already const should not raise the diagnostic")]
+   [!code-csharp[already const declaration](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#AlreadyConst "a declaration that is already const should not raise the diagnostic")]
 
 - Deklarace, které nemají žádný inicializátor, protože neexistuje žádná hodnota, která se má použít:
 
-   [!code-csharp[declarations that have no initializer](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#NoInitializer "a declaration that has no initializer should not raise the diagnostic")]
+   [!code-csharp[declarations that have no initializer](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#NoInitializer "a declaration that has no initializer should not raise the diagnostic")]
 
 - Deklarace, kde inicializátor není konstanta, protože nemohou být konstanty v čase kompilace:
 
-   [!code-csharp[declarations where the initializer isn't const](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#InitializerNotConstant "a declaration where the initializer is not a compile-time constant should not raise the diagnostic")]
+   [!code-csharp[declarations where the initializer isn't const](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#InitializerNotConstant "a declaration where the initializer is not a compile-time constant should not raise the diagnostic")]
 
 Může být ještě složitější, protože C# umožňuje více deklarací v rámci jednoho příkazu. Vezměte v úvahu následující řetězcové konstanty testovacího případu:
 
-[!code-csharp[multiple initializers](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#MultipleInitializers "A declaration can be made constant only if all variables in that statement can be made constant")]
+[!code-csharp[multiple initializers](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#MultipleInitializers "A declaration can be made constant only if all variables in that statement can be made constant")]
 
 Proměnná `i` může být vytvořena jako konstanta, ale proměnná `j` nemůže. Proto tento příkaz nelze vytvořit jako deklaraci konstanty. Přidejte deklarace `DataRow` pro všechny tyto testy:
 
@@ -425,23 +425,23 @@ První `foreach` smyčka prověřuje každou deklaraci proměnné pomocí syntak
 
 Už jste téměř hotovi. Analyzátor může zpracovat několik dalších podmínek. Visual Studio volá analyzátory, zatímco uživatel píše kód. Často se jedná o případ, kdy se analyzátor bude volat pro kód, který se nekompiluje. Metoda `AnalyzeNode` analyzátoru diagnostiky nezjistí, zda je konstantní hodnota převoditelná na typ proměnné. Aktuální implementace tak bude Happily převést nesprávnou deklaraci, jako je int i = "ABC", na místní konstantu. Přidat řetězcovou konstantu zdrojového řetězce pro tuto podmínku:
 
-[!code-csharp[Mismatched types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsInvalid "When the variable type and the constant type don't match, there's no diagnostic")]
+[!code-csharp[Mismatched types don't raise diagnostics](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsInvalid "When the variable type and the constant type don't match, there's no diagnostic")]
 
 Odkazové typy se navíc nezpracovávají správně. Jediná hodnota konstanty povolená pro typ odkazu je `null`, s výjimkou případu, kdy <xref:System.String?displayProperty=nameWithType>, která umožňuje řetězcové literály. Jinými slovy, `const string s = "abc"` je právní, ale `const object s = "abc"` ne. Tento fragment kódu ověřuje tuto podmínku:
 
-[!code-csharp[Reference types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsntString "When the variable type is a reference type other than string, there's no diagnostic")]
+[!code-csharp[Reference types don't raise diagnostics](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsntString "When the variable type is a reference type other than string, there's no diagnostic")]
 
 Chcete-li být důkladnější, je nutné přidat další test, abyste se ujistili, že můžete vytvořit konstantní deklarace pro řetězec. Následující fragment kódu definuje kód, který vyvolává diagnostiku, a kód po použití opravy:
 
-[!code-csharp[string reference types raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#ConstantIsString "When the variable type is string, it can be constant")]
+[!code-csharp[string reference types raise diagnostics](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#ConstantIsString "When the variable type is string, it can be constant")]
 
 Nakonec, pokud je proměnná deklarována s klíčovým slovem `var`, oprava kódu nesprávné věci a vygeneruje deklaraci `const var`, která není C# jazykem podporována. Chcete-li opravit tuto chybu, oprava kódu musí nahradit klíčové slovo `var` názvem odvozeného typu:
 
-[!code-csharp[var references need to use the inferred types](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#VarDeclarations "Declarations made using var must have the type replaced with the inferred type")]
+[!code-csharp[var references need to use the inferred types](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#VarDeclarations "Declarations made using var must have the type replaced with the inferred type")]
 
 Tyto změny aktualizují deklarace datových řádků pro oba testy. Následující kód ukazuje tyto testy se všemi atributy datových řádků:
 
-[!code-csharp[The finished tests](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FinishedTests "The finished tests for the make const analyzer")]
+[!code-csharp[The finished tests](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FinishedTests "The finished tests for the make const analyzer")]
 
 Naštěstí můžete všechny výše uvedené chyby vyřešit pomocí stejných technik, které jste právě naučili.
 
@@ -495,7 +495,7 @@ Chcete-li nahradit klíčové slovo var správným názvem typu, je nutné ve sv
 
 Tyto zvuky jako velké množství kódu. Není to. Nahraďte řádek, který deklaruje a inicializuje `newLocal`, pomocí následujícího kódu. Hned po inicializaci `newModifiers`:
 
-[!code-csharp[Replace Var designations](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceVar "Replace a var designation with the explicit type")]
+[!code-csharp[Replace Var designations](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceVar "Replace a var designation with the explicit type")]
 
 K použití typu <xref:Microsoft.CodeAnalysis.Simplification.Simplifier> budete muset přidat jeden `using` příkaz:
 
@@ -522,7 +522,7 @@ Po těchto změnách získáte červené vlnovky pouze první dvě proměnné. P
 
 Blahopřejeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples.
 
-## <a name="other-resources"></a>Další zdroje
+## <a name="other-resources"></a>Další prostředky
 
 - [Začínáme s analýzou syntaxe](../get-started/syntax-analysis.md)
 - [Začínáme se sémantickou analýzou](../get-started/semantic-analysis.md)

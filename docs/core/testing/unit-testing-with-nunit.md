@@ -3,12 +3,12 @@ title: Testování C# částí pomocí nunit a .NET Core
 description: Seznamte se s koncepty C# testování částí v a .NET Core pomocí interaktivního prostředí, které vytváří ukázkové řešení pomocí příkazu dotnet test a nunit.
 author: rprouse
 ms.date: 08/31/2018
-ms.openlocfilehash: 8c099695b48e96ac47e41794082cd8dccaa0457a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 283aa5a28ed213d4290eb3c73a98af56ec074ad0
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78157268"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240880"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# částí pomocí nunit a .NET Core
 
@@ -87,7 +87,7 @@ dotnet new nunit
 
 Příkaz [dotnet New](../tools/dotnet-new.md) vytvoří testovací projekt, který jako knihovnu testů používá nunit. Vygenerovaná šablona konfiguruje Test Runner v souboru *PrimeService. Tests. csproj* :
 
-[!code-xml[Packages](~/samples/core/getting-started/unit-testing-using-nunit/PrimeService.Tests/PrimeService.Tests.csproj#Packages)]
+[!code-xml[Packages](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService.Tests.csproj#Packages)]
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new` v předchozím kroku se přidala sada Microsoft Test SDK, testovací rozhraní NUnit a testovací adaptér NUnit. Nyní přidejte knihovnu tříd `PrimeService` jako jinou závislost do projektu. Použijte příkaz [`dotnet add reference`](../tools/dotnet-add-reference.md) :
 
@@ -120,35 +120,7 @@ dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 
 Napíšete jeden neúspěšný test, udělejte ho a pak proces opakujte. V adresáři *PrimeService. Tests* přejmenujte soubor *UnitTest1.cs* na *PrimeService_IsPrimeShould. cs* a nahraďte jeho celý obsah následujícím kódem:
 
-```csharp
-using NUnit.Framework;
-using Prime.Services;
-
-namespace Prime.UnitTests.Services
-{
-    [TestFixture]
-    public class PrimeService_IsPrimeShould
-    {
-        [Test]
-        public void IsPrime_InputIs1_ReturnFalse()
-        {
-            PrimeService primeService = CreatePrimeService();
-            var result = primeService.IsPrime(1);
-
-            Assert.IsFalse(result, "1 should not be prime");
-        }
-
-        /*
-        More tests
-        */
-
-        private PrimeService CreatePrimeService()
-        {
-             return new PrimeService();
-        }
-    }
-}
-```
+[!code-csharp[Sample_FirstTest](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_FirstTest)]
 
 Atribut `[TestFixture]` označuje třídu, která obsahuje testy jednotek. Atribut `[Test]` označuje metodu, která je metodou testu.
 
@@ -175,7 +147,7 @@ Teď, když jste udělali jeden test Pass, je čas zapsat další. Pro čísla a
 
 Místo vytváření nových testů použijte tento atribut k vytvoření jednoho testu řízeného daty. Test řízený daty je metoda, která testuje několik hodnot menší než dvě, což je nejnižší číslo základny:
 
-[!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-nunit/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
+[!code-csharp[Sample_TestCode](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
 Spusťte `dotnet test`a dva z těchto testů selžou. Chcete-li provést všechny testy Pass, změňte klauzuli `if` na začátku `Main` metody v souboru *PrimeService.cs* :
 

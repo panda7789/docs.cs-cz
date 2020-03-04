@@ -10,12 +10,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 379deb20243a13cc608cb7fe119b341065327c1e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: cddb3139742329303989c6fed9e9b64474e6b1f9
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450671"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78238855"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Uživatelsky definované operátory převodu (C# referenční)
 
@@ -29,7 +29,7 @@ Použijte klíčová slova `operator` a `implicit` nebo `explicit` k definován�
 
 Následující příklad ukazuje, jak definovat implicitní a explicitní převod:
 
-[!code-csharp[implicit an explicit conversions](~/samples/csharp/language-reference/operators/UserDefinedConversions.cs)]
+[!code-csharp[implicit an explicit conversions](~/samples/snippets/csharp/language-reference/operators/UserDefinedConversions.cs)]
 
 Také použijte klíčové slovo `operator` k přetížení předdefinovaného C# operátoru. Další informace naleznete v tématu [přetížení operátoru](operator-overloading.md).
 

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 19f74e6835ae555a3a38aa6ca8679948c7f290dd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 790249c4cc85128f529bd88a4bf27d8b75121aaa
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712751"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239532"
 ---
 # <a name="assignment-operators-c-reference"></a>Operátory přiřazení (C# Referenční dokumentace)
 
@@ -31,13 +31,13 @@ a = (b = c)
 
 Následující příklad ukazuje použití operátoru přiřazení s lokální proměnnou, vlastností a prvkem indexeru jako jeho levý operand:
 
-[!code-csharp-interactive[simple assignment](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
+[!code-csharp-interactive[simple assignment](~/samples/snippets/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
 
 ## <a name="ref-assignment-operator"></a>operátor přiřazení ref
 
 Počínaje C# 7,3 můžete použít operátor přiřazení ref `= ref` k opětovnému přiřazení místní proměnné ref nebo [ref](../keywords/ref.md#ref-readonly-locals) pro [místní](../keywords/ref.md#ref-locals) typ. Následující příklad ukazuje použití operátoru přiřazení ref:
 
-[!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
+[!code-csharp[ref assignment operator](~/samples/snippets/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
 V případě operátoru přiřazení odkazu musí být oba operandy stejného typu.
 
@@ -75,7 +75,7 @@ Další informace naleznete v části [operátory přiřazení](~/_csharplang/sp
 
 Další informace o operátoru přiřazení ref `= ref`naleznete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
