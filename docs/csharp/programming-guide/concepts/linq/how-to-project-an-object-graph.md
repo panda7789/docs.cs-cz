@@ -1,19 +1,19 @@
 ---
-title: Jak promítnout objektový graf (C#)
+title: Jak promítat objektový graf (C#)
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: 93fabe26fd3d9ff0b61d8b8dfc33425715452c88
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: eafb3d9064159c43fc98e0b241f0045465fca824
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635688"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168957"
 ---
-# <a name="how-to-project-an-object-graph-c"></a>Jak promítnout objektový graf (C#)
-Toto téma ukazuje, jak projektovat nebo naplnit objekt grafu z XML.  
+# <a name="how-to-project-an-object-graph-c"></a>Jak promítat objektový graf (C#)
+Toto téma ukazuje, jak promítat nebo naplnit objektový graf z XML.  
   
 ## <a name="example"></a>Příklad  
- Následující kód naplní graf objektů pomocí tříd `Address`, `PurchaseOrder`a `PurchaseOrderItem` z [ukázkového souboru XML: typický dokument XML s nákupní objednávkou (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) .  
+ Následující kód naplní objektový `Address`graf `PurchaseOrder`dokumentem XML , a `PurchaseOrderItem` [třídy z ukázkového souboru XML: Typická nákupní objednávka (LINQ to XML).](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)  
   
 ```csharp  
 class Address  
@@ -185,7 +185,7 @@ class Program {
                             from a in po.Elements("Address")  
                             select new Address {  
                                 AddressType = ((string)a.Attribute("Type") == "Shipping") ?  
-                                    Address.AddressUse.Shipping :   
+                                    Address.AddressUse.Shipping :
                                     Address.AddressUse.Billing,  
                                 Name = (string)a.Element("Name"),  
                                 Street = (string)a.Element("Street"),  
@@ -214,9 +214,9 @@ class Program {
 }  
 ```  
   
- V tomto příkladu je výsledek dotazu LINQ vrácen jako <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`. Položky ve třídě `PurchaseOrder` jsou typu <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`. Kód používá metodu rozšíření <xref:System.Linq.Enumerable.ToList%2A> k vytvoření kolekce <xref:System.Collections.Generic.List%601> z výsledků dotazu.  
+ V tomto příkladu je výsledek dotazu LINQ `PurchaseOrderItem`vrácen jako . <xref:System.Collections.Generic.IEnumerable%601> Položky ve `PurchaseOrder` třídě jsou <xref:System.Collections.Generic.IEnumerable%601> `PurchaseOrderItem`typu . Kód používá <xref:System.Linq.Enumerable.ToList%2A> metodu rozšíření <xref:System.Collections.Generic.List%601> k vytvoření kolekce z výsledků dotazu.  
   
- Tento příklad vytvoří následující výstup:  
+ Příklad vytváří následující výstup:  
   
 ```output  
 PurchaseOrderNumber: 99503  
@@ -255,7 +255,7 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>

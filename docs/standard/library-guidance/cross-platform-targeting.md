@@ -1,61 +1,61 @@
 ---
-title: Cílení na různé platformy pro knihovny .NET
-description: Doporučení osvědčených postupů pro vytváření knihoven .NET pro různé platformy
+title: Cílení napříč platformami pro knihovny .NET
+description: Doporučení osvědčených postupů pro vytváření knihoven .NET pro různé platformy.
 ms.date: 08/12/2019
 ms.openlocfilehash: 61adff3759984554bb83531b4f9d8a49e29c929c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76731458"
 ---
 # <a name="cross-platform-targeting"></a>Cílení na více platforem
 
-Moderní rozhraní .NET podporuje několik operačních systémů a zařízení. Je důležité, aby open source knihovny pro .NET podporovaly co nejvíce vývojářů, ať už vytváří web ASP.NET hostovaný v Azure, nebo hry .NET v Unity.
+Moderní rozhraní .NET podporuje více operačních systémů a zařízení. Je důležité, aby open source knihovny .NET podporovaly co nejvíce vývojářů, ať už budují ASP.NET web hostovaný v Azure, nebo hru .NET v Unity.
 
 ## <a name="net-standard"></a>.NET Standard
 
-.NET Standard je nejlepším způsobem, jak přidat podporu pro více platforem do knihovny .NET. [.NET Standard](../net-standard.md) je specifikace rozhraní API .NET, která jsou k dispozici ve všech implementacích rozhraní .NET. Cílení na .NET Standard umožňuje vytvořit knihovny, které jsou omezené na používání rozhraní API, která jsou v dané verzi .NET Standard, což znamená, že je použitelná pro všechny platformy, které implementují tuto verzi .NET Standard.
+Standard .NET je nejlepší způsob, jak přidat podporu pro různé platformy do knihovny .NET. [.NET Standard](../net-standard.md) je specifikace rozhraní API .NET, která jsou k dispozici ve všech implementacích rozhraní .NET. Cílení .NET Standard umožňuje vytvářet knihovny, které jsou omezeny na použití rozhraní API, které jsou v dané verzi standardu .NET, což znamená, že je použitelné pro všechny platformy, které implementují tuto verzi standardu .NET.
 
 ![.NET Standard](./media/cross-platform-targeting/platforms-netstandard.png ".NET Standard")
 
-Při cílení .NET Standard a úspěšném kompilování projektu nezaručujeme, že se knihovna na všech platformách úspěšně spustí:
+Cílení na standard .NET a úspěšná kompilace projektu nezaručuje, že knihovna bude úspěšně spuštěna na všech platformách:
 
-1. Rozhraní API specifická pro platformu se na jiných platformách nezdaří. Například <xref:Microsoft.Win32.Registry?displayProperty=nameWithType> bude ve Windows úspěšné a vyvolat <xref:System.PlatformNotSupportedException> při použití v jakémkoli jiném operačním systému.
-2. Rozhraní API se můžou chovat jinak. Například rozhraní API pro reflexi mají různé charakteristiky výkonu, když aplikace používá předdobu kompilace v systému iOS nebo UWP.
+1. Na jiných platformách se nezdaří specifická api pro platformu. Například <xref:Microsoft.Win32.Registry?displayProperty=nameWithType> bude úspěšné v <xref:System.PlatformNotSupportedException> systému Windows a hodit při použití na jiném osu.
+2. Api se mohou chovat jinak. Například reflexe API mají různé charakteristiky výkonu při aplikaci používá předčasovou kompilaci na iOS nebo UPW.
 
 > [!TIP]
-> Tým .NET [nabízí nástroj Roslyn Analyzer](../analyzers/api-analyzer.md) , který vám umožní zjistit možné problémy.
+> Tým .NET [nabízí analyzátor Roslyn,](../analyzers/api-analyzer.md) který vám pomůže zjistit možné problémy.
 
-✔️ začínat zahrnutím cíle `netstandard2.0`.
+✔️ do začít `netstandard2.0` s včetně cíle.
 
-> Většina knihoven pro obecné použití by neměla vyžadovat rozhraní API mimo .NET Standard 2,0. .NET Standard 2,0 podporuje všechny moderní platformy a je doporučeným způsobem, jak podporovat více platforem s jedním cílem.
+> Většina knihoven pro obecné účely by neměla potřebovat rozhraní API mimo rozhraní .NET Standard 2.0. .NET Standard 2.0 je podporován všemi moderními platformami a je doporučeným způsobem, jak podporovat více platforem s jedním cílem.
 
-❌ se vyhnout zahrnutí cíle `netstandard1.x`.
+❌Vyhněte `netstandard1.x` se včetně cíle.
 
-> .NET Standard 1. x se distribuuje jako podrobná sada balíčků NuGet, která vytvoří graf závislostí balíčku a výsledkem je, že vývojáři stahují spoustu balíčků při sestavování. Moderní platformy .NET, včetně .NET Framework 4.6.1, UWP a Xamarin, jsou všechny podpory .NET Standard 2,0. Pokud výslovně potřebujete cílit na starší platformu, měli byste cílit pouze na .NET Standard 1. x.
+> .NET Standard 1.x je distribuován jako podrobná sada balíčků NuGet, která vytvoří velký graf závislostí balíčků a výsledkem je, že vývojáři při vytváření stahují velké množství balíčků. Moderní platformy .NET, včetně rozhraní .NET Framework 4.6.1, UWP a Xamarin, všechny podporují standard .NET Standard 2.0. Měli byste cílit pouze na rozhraní .NET Standard 1.x pouze v případě, že konkrétně potřebujete cílit na starší platformu.
 
-✔️ zahrnout cíl `netstandard2.0`, pokud požadujete cíl `netstandard1.x`.
+✔️ do `netstandard2.0` zahrnout cíl, `netstandard1.x` pokud budete potřebovat cíl.
 
-> Na všech platformách, které podporují .NET Standard 2,0, se použije `netstandard2.0` cíl a bude výhodná mít menší graf balíčků, zatímco starší platformy budou pořád fungovat a budou se vracet k používání `netstandard1.x`ho cíle.
+> Všechny platformy podporující rozhraní .NET Standard `netstandard2.0` 2.0 budou používat cíl a těžit z toho, že `netstandard1.x` mají menší graf balíčků, zatímco starší platformy budou stále fungovat a vrátí se k použití cíle.
 
-❌ neobsahují .NET Standard cíl, pokud knihovna spoléhá na model aplikace specifický pro platformu.
+❌NEZAHRNUJTE cíl .NET Standard, pokud knihovna závisí na modelu aplikace specifické pro platformu.
 
-> Například knihovna Control Toolkit pro UWP závisí na modelu aplikace, který je k dispozici pouze pro UWP. Rozhraní API specifická pro model aplikace nebudou k dispozici v .NET Standard.
+> Například knihovna nástrojů ovládacího prvku UPW závisí na modelu aplikace, který je k dispozici pouze na UPW. Rozhraní API specifická pro model aplikace nebudou k dispozici ve standardu .NET.
 
-## <a name="multi-targeting"></a>Cílení na více platforem
+## <a name="multi-targeting"></a>Vícenásobné cílení
 
-Někdy potřebujete přístup k rozhraním API pro konkrétní rozhraní z vašich knihoven. Nejlepším způsobem, jak volat rozhraní API specifická pro rozhraní, je použití cílení na více verzí, který sestaví projekt pro mnoho [cílových rozhraní .NET](../frameworks.md) , nikoli jenom pro jeden.
+Někdy potřebujete přístup k rozhraní API specifické pro architekturu z knihoven. Nejlepší způsob, jak volat rozhraní API specifické pro architekturu je pomocí více cílení, který vytváří váš projekt pro mnoho [rozhraní .NET cíl rámce,](../frameworks.md) nikoli pouze pro jeden.
 
-Pokud chcete, aby vaši spotřebitelé mohli sestavovat pro jednotlivé architektury, měli byste se snažit mít výstup .NET Standard a jeden nebo několik výstupů specifických pro rozhraní. V případě cílení na více platforem jsou všechna sestavení zabalena do jednoho balíčku NuGet. Příjemci pak můžou odkazovat na stejný balíček a NuGet vybere příslušnou implementaci. Vaše knihovna .NET Standard slouží jako záložní knihovna, která se používá všude, s výjimkou případů, kdy váš balíček NuGet nabízí implementaci specifickou pro rozhraní. Cílení na více platforem umožňuje použít podmíněnou kompilaci v kódu a volat rozhraní API specifická pro rozhraní.
+Chcete-li chránit vaše spotřebitele před nutností vytvářet pro jednotlivé architektury, měli byste se snažit mít výstup .NET Standard plus jeden nebo více výstupů specifických pro architekturu. S více cílení, všechny sestavení jsou zabaleny uvnitř jednoho balíčku NuGet. Spotřebitelé pak můžete odkazovat na stejný balíček a NuGet vybere příslušnou implementaci. Vaše knihovna .NET Standard slouží jako záložní knihovna, která se používá všude, s výjimkou případů, kdy váš balíček NuGet nabízí implementaci specifické pro architekturu. Vícenásobné cílení umožňuje používat podmíněnou kompilaci ve vašem kódu a volat rozhraní API specifická pro architekturu.
 
 ![Balíček NuGet s více sestaveními](./media/cross-platform-targeting/nuget-package-multiple-assemblies.png "Balíček NuGet s více sestaveními")
 
-✔️ Zvažte kromě .NET Standard také cílení implementace rozhraní .NET.
+✔️ ZVÁŽIT cílení na implementací rozhraní .NET kromě standardu .NET.
 
-> Cílení implementace rozhraní .NET umožňuje volat rozhraní API specifická pro platformu, která jsou mimo .NET Standard.
+> Cílení na implementace rozhraní .NET umožňuje volat rozhraní API specifická pro platformu, která jsou mimo standard .NET.
 >
-> Pokud to uděláte, neprovádějte vyřazení podpory pro .NET Standard. Místo toho vyvolejte z rozhraní API funkce implementace a nabídky. Tímto způsobem se vaše knihovna dá použít kdekoli a podporuje modul runtime s lehkými funkcemi.
+> Při této práci nepřepírejte podporu pro standard .NET. Místo toho vyvolání z implementace a nabídnout možnosti API. Tímto způsobem lze knihovnu používat kdekoli a podporuje runtime light-up funkcí.
 
 ```csharp
 public static class GpsLocation
@@ -88,19 +88,19 @@ public static class GpsLocation
 }
 ```
 
-Pokud je váš zdrojový kód pro všechny cíle stejný, ❌ se vyhnout cílení na více platforem a také cílení na .NET Standard.
+❌Vyhněte se více cílení, stejně jako cílení .NET Standard, pokud zdrojový kód je stejný pro všechny cíle.
 
-> Sestavení .NET Standard bude automaticky použito NuGet. Cílení na jednotlivé implementace rozhraní .NET zvyšuje `*.nupkg`ou velikost bez výhod.
+> Sestavení .NET Standard bude automaticky použito společností NuGet. Cílení na jednotlivé implementace `*.nupkg` rozhraní .NET zvyšuje velikost bez výhody.
 
-✔️ Zvažte přidání cíle pro `net461`, když přidáváte `netstandard2.0` cíl.
+✔️ ZVAŽTe přidání `net461` cíle, když `netstandard2.0` nabízíte cíl.
 
-> Použití .NET Standard 2,0 z .NET Framework obsahuje některé problémy, které byly vyřešeny v .NET Framework 4.7.2. Můžete vylepšit prostředí pro vývojáře, kteří jsou pořád na .NET Framework 4.6.1-4.7.1, a nabízet jim binární soubor, který je sestavený pro .NET Framework 4.6.1.
+> Použití rozhraní .NET Standard 2.0 z rozhraní .NET Framework má některé problémy, které byly vyřešeny v rozhraní .NET Framework 4.7.2. Můžete zlepšit prostředí pro vývojáře, kteří jsou stále na rozhraní .NET Framework 4.6.1 - 4.7.1 tím, že jim nabídne binární soubor, který je vytvořen pro rozhraní .NET Framework 4.6.1.
 
-✔️ k distribuci knihovny pomocí balíčku NuGet.
+✔️ do distribuovat knihovnu pomocí balíčku NuGet.
 
-> NuGet vybere nejlepší cíl pro vývojáře a chrání je před tím, než bude muset vybrat příslušnou implementaci.
+> NuGet vybere nejlepší cíl pro vývojáře a chránit je museli vybrat příslušnou implementaci.
 
-✔️ použít vlastnost `TargetFrameworks` souboru projektu při cílení na více platforem.
+✔️ do použít `TargetFrameworks` vlastnost souboru projektu při vícecílení.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -111,18 +111,18 @@ Pokud je váš zdrojový kód pro všechny cíle stejný, ❌ se vyhnout cílen�
 </Project>
 ```
 
-✔️ Zvažte použití nástroje [MSBuild. SDK. Extras](https://github.com/onovotny/MSBuildSdkExtras) při cílení na více platforem pro UWP a Xamarin, protože značně zjednodušuje váš soubor projektu.
+✔️ zvažte použití [MSBuild.Sdk.Extras](https://github.com/onovotny/MSBuildSdkExtras) při multi-cílení pro UPW a Xamarin, protože výrazně zjednodušuje soubor projektu.
 
 ## <a name="older-targets"></a>Starší cíle
 
-Rozhraní .NET podporuje cílení na verze .NET Framework, které nejsou podporované, i platformy, které se už běžně nepoužívají. I když existuje hodnota, aby vaše knihovna fungovala s co možná nejvíce cíli, může dopracovat s chybějícími rozhraními API a zvýšit tak značnou režii. Domníváme se, že některá rozhraní už necílí na cílení a berou v úvahách jejich dosah a omezení.
+Rozhraní .NET podporuje cílení na verze rozhraní .NET Framework, které jsou dlouho mimo podporu, stejně jako platformy, které se již běžně nepoužívají. I když je hodnota v tom, aby vaše knihovna pracovat na co nejvíce cílů, jak je to možné, museli obejít chybějící api může přidat významné režie. Věříme, že některé rámce již nestojí za cílení, vzhledem k jejich dosahu a omezením.
 
-❌ neobsahují cíl knihovny přenosných tříd (PCL). například `portable-net45+win8+wpa81+wp8`.
+❌NEZAHRNUJTE cíl knihovny přenosných tříd (PCL). Například, `portable-net45+win8+wpa81+wp8`.
 
-> .NET Standard je moderní způsob, jak podporovat knihovny .NET pro různé platformy a nahrazuje PCLs.
+> .NET Standard je moderní způsob, jak podporovat knihovny .NET napříč platformami a nahrazuje pcls.
 
-❌ nezahrnují cíle pro platformy .NET, které už nejsou podporované. Například `SL4``WP`.
+❌NEZAHRNEJTE cíle pro platformy .NET, které již nejsou podporovány. Například `SL4`, `WP`.
 
 >[!div class="step-by-step"]
 >[Předchozí](get-started.md)
->[Další](strong-naming.md)
+>[další](strong-naming.md)

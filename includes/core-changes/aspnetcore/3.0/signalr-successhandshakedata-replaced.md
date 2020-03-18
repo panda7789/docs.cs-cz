@@ -1,38 +1,38 @@
 ---
 ms.openlocfilehash: 1d8bcaf68d44f27642048c1c207b52c55b604690
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901589"
 ---
-### <a name="signalr-handshakeprotocolsuccesshandshakedata-replaced"></a>Signál: HandshakeProtocol. SuccessHandshakeData nahrazeno
+### <a name="signalr-handshakeprotocolsuccesshandshakedata-replaced"></a>SignalR: HandshakeProtocol.SuccessHandshakeData nahrazen
 
-Pole [HandshakeProtocol. SuccessHandshakeData](https://github.com/dotnet/aspnetcore/blob/c5b2bc0df2a0027832bf7d01dfb19ca39cd08ae6/src/SignalR/common/SignalR.Common/src/Protocol/HandshakeProtocol.cs#L27) se odebralo a nahradilo pomocnou metodou, která generuje úspěšnou odpověď handshake pro konkrétní `IHubProtocol`.
+Pole [HandshakeProtocol.SuccessHandshakeData](https://github.com/dotnet/aspnetcore/blob/c5b2bc0df2a0027832bf7d01dfb19ca39cd08ae6/src/SignalR/common/SignalR.Common/src/Protocol/HandshakeProtocol.cs#L27) bylo odebráno a nahrazeno pomocnou metodou, která generuje `IHubProtocol`úspěšnou odpověď handshake dané konkrétní .
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-`HandshakeProtocol.SuccessHandshakeData` bylo `public static ReadOnlyMemory<byte>` poli.
+`HandshakeProtocol.SuccessHandshakeData`bylo `public static ReadOnlyMemory<byte>` pole.
 
 #### <a name="new-behavior"></a>Nové chování
 
-`HandshakeProtocol.SuccessHandshakeData` byl nahrazen metodou `static` `GetSuccessfulHandshake(IHubProtocol protocol)`, která vrací `ReadOnlyMemory<byte>` na základě zadaného protokolu.
+`HandshakeProtocol.SuccessHandshakeData`byla nahrazena `static` `GetSuccessfulHandshake(IHubProtocol protocol)` metodou, která `ReadOnlyMemory<byte>` vrací na základě zadaného protokolu.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Do _odpovědi_ handshake byly přidány další pole, která nejsou konstantní a mění se v závislosti na vybraném protokolu.
+Další pole byla přidána do _odpovědi_ handshake, které nejsou konstantní a mění se v závislosti na vybraném protokolu.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Žádné Tento typ není určený pro použití z uživatelského kódu. Je `public`, aby bylo možné je sdílet mezi serverem a klientem signalizace. Můžou je používat i klienti návěstí zákazníka napsané v .NET. Tato změna by neměla mít vliv na **uživatele** signálu.
+Žádné. Tento typ není určen pro použití z uživatelského kódu. Je to `public`, takže může být sdílena mezi serverem SignalR a klientem. Může být také používán klienty signalr zákazníka napsanými v rozhraní .NET. **Uživatelé** SignalR by neměly být ovlivněny touto změnou.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

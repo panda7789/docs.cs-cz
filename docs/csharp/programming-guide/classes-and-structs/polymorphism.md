@@ -1,88 +1,88 @@
 ---
-title: Polymorfismus – C# Průvodce programováním
+title: Polymorfismus - C# Programovací průvodce
 ms.date: 02/08/2020
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 169ba2a1307a301c80b3d9ccac45f4ac9f707921
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 58980bd0d70d8a778cdb208f56d31ee8465871a4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626285"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170166"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 
-Polymorfismus se často označuje jako třetí pilíř objektově orientovaného programování, a to po zapouzdření a dědičnosti. Polymorfismus je řecký Word, který znamená "velký tvar" a má dva odlišné aspekty:
+Polymorfismus je často označován jako třetí pilíř objektově orientovaného programování po zapouzdření a dědičnosti. Polymorfismus je řecké slovo, které znamená "mnoho-formoval" a má dva odlišné aspekty:
   
-- V době běhu lze objekty odvozené třídy považovat za objekty základní třídy v místech, jako jsou parametry metody a kolekce nebo pole. Pokud tato polymorfismua nastane, deklarovaný typ objektu již není totožný s jeho typem za běhu.
-- Základní třídy mohou definovat a implementovat [virtuální](../../language-reference/keywords/virtual.md) *metody*a odvozené třídy je mohou [přepsat](../../language-reference/keywords/override.md) , což znamená, že poskytují svou vlastní definici a implementaci. V době běhu, když kód klienta volá metodu, modul CLR vyhledá typ za běhu objektu a vyvolá přepsání virtuální metody. Ve zdrojovém kódu můžete zavolat metodu pro základní třídu a způsobit spuštění odvozené třídy verze metody.
+- Za běhu objekty odvozené třídy mohou být považovány za objekty základní třídy v místech, jako jsou parametry metody a kolekce nebo pole. Dojde-li k tomuto polymorfismu, deklarovaný typ objektu již není shodný s typem za běhu.
+- Základní třídy mohou definovat a implementovat [virtuální](../../language-reference/keywords/virtual.md) *metody*a odvozené třídy je mohou [přepsat,](../../language-reference/keywords/override.md) což znamená, že poskytují vlastní definici a implementaci. Za běhu, když kód klienta volá metodu, CLR vyhledá typ běhu objektu a vyvolá toto přepsání virtuální metody. Ve zdrojovém kódu můžete volat metodu na základní třídy a způsobit odvozené třídy verze metody, které mají být provedeny.
 
-Virtuální metody umožňují pracovat se skupinami souvisejících objektů jednotným způsobem. Předpokládejme například, že máte aplikaci pro kreslení, která umožňuje uživateli vytvářet různé druhy tvarů na kreslicí ploše. V době kompilace neznáte, které konkrétní typy tvarů uživatel vytvoří. Aplikace však musí sledovat všechny různé typy tvarů, které byly vytvořeny, a musí je aktualizovat v reakci na akce myši uživatele. K vyřešení tohoto problému můžete použít polymorfismus ve dvou základních krocích:
+Virtuální metody umožňují pracovat se skupinami souvisejících objektů jednotným způsobem. Předpokládejme například, že máte kreslicí aplikaci, která umožňuje uživateli vytvářet různé druhy obrazců na kreslicí ploše. V době kompilace nevíte, které konkrétní typy obrazců uživatel vytvoří. Aplikace však musí sledovat všechny různé typy obrazců, které jsou vytvořeny a musí je aktualizovat v reakci na akce myši uživatele. Polymorfismus můžete použít k vyřešení tohoto problému ve dvou základních krocích:
 
-1. Vytvořte hierarchii třídy, ve které jsou jednotlivé konkrétní třídy tvarů odvozeny ze společné základní třídy.
-1. Použijte virtuální metodu k vyvolání vhodné metody pro jakoukoli odvozenou třídu prostřednictvím jediného volání metody základní třídy.
+1. Vytvořte hierarchii tříd, ve které každá konkrétní třída tvarů pochází ze společné základní třídy.
+1. Virtuální metoda slouží k vyvolání příslušné metody pro všechny odvozené třídy prostřednictvím jednoho volání metody základní třídy.
 
-Nejprve vytvořte základní třídu s názvem `Shape`a odvozené třídy jako `Rectangle`, `Circle`a `Triangle`. Poskytněte třídu `Shape` virtuální metodu nazvanou `Draw`a přepište ji v každé odvozené třídě pro vykreslení konkrétního tvaru, který třída představuje. Vytvořte objekt `List<Shape>` a přidejte do něj `Circle`, `Triangle`a `Rectangle`. 
+Nejprve vytvořte základní `Shape`třídu s názvem `Rectangle` `Circle`a `Triangle`odvozené třídy, například , a . Pojmenujte třídu `Shape` `Draw`virtuální metodou s názvem a přepište ji v každé odvozené třídě, abyste nakreslili konkrétní tvar, který třída představuje. Vytvořte `List<Shape>` objekt a `Circle` `Triangle`přidejte `Rectangle` k němu a .
 
 [!code-csharp[Polymorphism overview](~/samples/snippets/csharp/objectoriented/Inheritance.cs#PolymorphismOverview)]
 
-Chcete-li aktualizovat plochu pro kreslení, použijte smyčku [foreach](../../language-reference/keywords/foreach-in.md) k iterování seznamu a zavolejte metodu `Draw` u každého objektu `Shape` v seznamu. I když každý objekt v seznamu má deklarovaný typ `Shape`, je typ za běhu (přepsaná verze metody v každé odvozené třídě), která bude vyvolána.
+Chcete-li aktualizovat kreslicí plochu, použijte [foreach](../../language-reference/keywords/foreach-in.md) smyčky `Draw` iterát prostřednictvím seznamu a volání metody na každý `Shape` objekt v seznamu. I když každý objekt v seznamu `Shape`má deklarovaný typ , je to typ run-time (přepsané verze metody v každé odvozené třídě), která bude vyvolána.
 
 [!code-csharp[Polymorphism overview](~/samples/snippets/csharp/objectoriented/Inheritance.cs#UsePolymorphism)]
 
-V C#je každý typ polymorfní, protože všechny typy, včetně uživatelsky definovaných typů, dědí z <xref:System.Object>.  
+V jazyce C# je každý typ polymorfní, protože všechny <xref:System.Object>typy, včetně uživatelem definovaných typů, dědí z .  
 
 ## <a name="polymorphism-overview"></a>Přehled polymorfismu
 
 ### <a name="virtual-members"></a>Virtuální členové
 
-Když odvozená třída dědí ze základní třídy, získá všechny metody, pole, vlastnosti a události základní třídy. Návrhář odvozené třídy může lišit možnosti pro chování virtuálních metod:
+Když odvozená třída dědí ze základní třídy, získá všechny metody, pole, vlastnosti a události základní třídy. Návrhář odvozené třídy může různé volby pro chování virtuálních metod:
 
 - Odvozená třída může přepsat virtuální členy v základní třídě a definovat nové chování.
-- Odvozená třída dědí nejbližší metodu základní třídy bez přepsání, zachovává stávající chování, ale umožňuje dalším odvozeným třídám přepsat metodu.
-- Odvozená třída může definovat novou nevirtuální implementaci těchto členů, kteří skryjí implementace základní třídy.
+- Odvozená třída dědí nejbližší metodu základní třídy bez jejího přepsání, zachování existujícího chování, ale povolení dalších odvozených tříd k přepsání metody.
+- Odvozené třídy může definovat nové nevirtuální implementace těchto členů, které skrýt implementace základní třídy.
 
-Odvozená třída může přepsat člen základní třídy pouze v případě, že je člen základní třídy deklarován jako [virtuální](../../language-reference/keywords/virtual.md) nebo [abstraktní](../../language-reference/keywords/abstract.md). Odvozený člen musí použít klíčové slovo [override](../../language-reference/keywords/override.md) k explicitnímu označení toho, že je metoda určena k účasti ve virtuálním vyvolání. Následující kód poskytuje příklad:
+Odvozená třída může přepsat člen základní třídy pouze v případě, že člen základní třídy je deklarován jako [virtuální](../../language-reference/keywords/virtual.md) nebo [abstraktní](../../language-reference/keywords/abstract.md). Odvozený člen musí použít klíčové slovo [přepsat](../../language-reference/keywords/override.md) explicitně označit, že metoda je určena k účasti na virtuální vyvolání. Následující kód obsahuje příklad:
 
 [!code-csharp[Virtual overview](~/samples/snippets/csharp/objectoriented/Inheritance.cs#VirtualMethods)]
 
-Pole nemůžou být virtuální. virtuální můžou být jenom metody, vlastnosti, události a indexery. Když odvozená třída přepíše virtuální člen, je tento člen volán i v případě, že instance této třídy je k dispozici jako instance základní třídy. Následující kód poskytuje příklad:
+Pole nemohou být virtuální. pouze metody, vlastnosti, události a indexery mohou být virtuální. Když odvozená třída přepíše virtuální člen, tento člen je volán i v případě, že instance této třídy je přístupná jako instance základní třídy. Následující kód obsahuje příklad:
 
 [!code-csharp[Virtual overview example](~/samples/snippets/csharp/objectoriented/Inheritance.cs#VirtualMethods)]
 
-Virtuální metody a vlastnosti umožňují odvozeným třídám rozšiřuje základní třídu bez nutnosti použití implementace základní třídy metody. Další informace najdete v tématu [Správa verzí pomocí klíčových slov override a New](./versioning-with-the-override-and-new-keywords.md). Rozhraní poskytuje další způsob, jak definovat metodu nebo sadu metod, jejichž implementace je ponechána na odvozené třídy. Další informace naleznete v tématu [rozhraní](../interfaces/index.md).
+Virtuální metody a vlastnosti umožňují odvozeným třídám rozšířit základní třídu bez nutnosti použití implementace základní třídy metody. Další informace naleznete v [tématu Versioning with the Override and New Keywords](./versioning-with-the-override-and-new-keywords.md). Rozhraní poskytuje jiný způsob, jak definovat metodu nebo sadu metod, jejichž implementace je ponechána na odvozené třídy. Další informace naleznete v [tématu Rozhraní](../interfaces/index.md).
 
-### <a name="hide-base-class-members-with-new-members"></a>Skrýt členy základní třídy novými členy
+### <a name="hide-base-class-members-with-new-members"></a>Skrýt členy základní třídy s novými členy
 
-Chcete-li, aby vaše odvozená třída měla člena se stejným názvem jako členem v základní třídě, můžete použít klíčové slovo [New](../../language-reference/keywords/new-modifier.md) pro skrytí člena základní třídy. Klíčové slovo `new` je vloženo před návratový typ člena třídy, který se nahrazuje. Následující kód poskytuje příklad:
+Pokud chcete, aby vaše odvozená třída měla člena se stejným názvem jako člen v základní třídě, můžete použít [nové](../../language-reference/keywords/new-modifier.md) klíčové slovo ke skrytí člena základní třídy. Klíčové `new` slovo je umístěn před návratový typ člena třídy, který je nahrazen. Následující kód obsahuje příklad:
 
 [!code-csharp[New method overview example](~/samples/snippets/csharp/objectoriented/Inheritance.cs#NewMethods)]
 
-Ke skrytým členům základní třídy je možné přivodit z klientského kódu přetypování instance odvozené třídy na instanci základní třídy. Příklad:
+Členové skryté základní třídy mohou být přístupné z kódu klienta přetypování instance odvozené třídy na instanci základní třídy. Například:
 
 [!code-csharp[New method overview usage](~/samples/snippets/csharp/objectoriented/Inheritance.cs#UseNewMethods)]
 
-### <a name="prevent-derived-classes-from-overriding-virtual-members"></a>Zabránit odvozeným třídám z přepsání virtuálních členů  
+### <a name="prevent-derived-classes-from-overriding-virtual-members"></a>Zabránit odvozeným třídám v přepsání virtuálních členů  
 
-Virtuální členové zůstávají virtuální bez ohledu na to, kolik tříd bylo deklarováno mezi virtuálním členem a třídou, která ji původně deklarovala. Pokud třída `A` deklaruje virtuální člen a třídy `B` jsou odvozeny z `A`a `C` třídy jsou odvozeny z `B`, třída `C` dědí virtuální člen a může jej přepsat bez ohledu na to, zda třída `B` deklarovala přepsání pro daného člena. Následující kód poskytuje příklad:
+Virtuální členové zůstávají virtuální, bez ohledu na to, kolik tříd byly deklarovány mezi virtuální člen a třídy, která původně deklaroval. Pokud `A` třída deklaruje `B` virtuální člen `A`a `C` třída je `B`odvozena od , a třída je odvozena z , třída `C` dědí virtuální člen a může přepsat, bez ohledu na to, zda třída `B` deklarovala přepsání pro tento člen. Následující kód obsahuje příklad:
 
 [!code-csharp[Basic hierarchy](~/samples/snippets/csharp/objectoriented/Hierarchy.cs#FirstHierarchy)]
 
-Odvozená třída může zastavit virtuální dědičnost deklarací override jako [sealed](../../language-reference/keywords/sealed.md). Zastavování dědičnosti vyžaduje vložení klíčového slova `sealed` před klíčovým slovem `override` v deklaraci člena třídy. Následující kód poskytuje příklad:
+Odvozená třída může zastavit virtuální dědičnost deklarováním přepsání jako [zapečetěné](../../language-reference/keywords/sealed.md). Zastavení dědičnosti `sealed` vyžaduje uvedení `override` klíčového slova před klíčové slovo v deklaraci člena třídy. Následující kód obsahuje příklad:
 
 [!code-csharp[A sealed overridden member](~/samples/snippets/csharp/objectoriented/Hierarchy.cs#SealedOverride)]
 
-V předchozím příkladu metoda `DoWork` již není virtuální ani žádná třída odvozená od `C`. Pořád je virtuální pro instance `C`, i když jsou přetypování na typ `B` nebo typ `A`. Zapečetěné metody lze nahradit odvozenými třídami pomocí klíčového slova `new`, jak ukazuje následující příklad:
+V předchozím příkladu `DoWork` metoda již není virtuální pro `C`všechny třídy odvozené z . Je to stále virtuální pro `C`instance , i když `B` jsou `A`přetypována na typ nebo typ . Zapečetěné metody mohou být nahrazeny odvozenými třídami pomocí klíčového `new` slova, jak ukazuje následující příklad:
 
 [!code-csharp[New method declaration](~/samples/snippets/csharp/objectoriented/Hierarchy.cs#NewDeclaration)]
 
-V tomto případě, pokud je `DoWork` volána na `D` pomocí proměnné typu `D`, je volána nová `DoWork`. Pokud se pro přístup k instanci `D`používá proměnná typu `C`, `B`nebo `A`, volání `DoWork` bude následovat pravidla virtuální dědičnosti, směrování těchto volání do implementace `DoWork` na třídě `C`.
+V `DoWork` tomto případě, pokud `D` je volána `D`pomocí `DoWork` proměnné typu , je volána nová. Pokud proměnná `C`typu `B`, `A` , nebo se `D`používá pro `DoWork` přístup k instanci , volání bude dodržovat `DoWork` pravidla `C`virtuální dědičnosti, směrování těchto volání k implementaci na třídu .
 
 ### <a name="access-base-class-virtual-members-from-derived-classes"></a>Přístup k virtuálním členům základní třídy z odvozených tříd
 
-Odvozená třída, která nahradila nebo přepsala metodu nebo vlastnost, může stále přistupovat k metodě nebo vlastnosti základní třídy pomocí klíčového slova `base`. Následující kód poskytuje příklad:
+Odvozená třída, která nahradila nebo přepsala metodu nebo vlastnost, může stále `base` přistupovat k metodě nebo vlastnosti základní třídy pomocí klíčového slova. Následující kód obsahuje příklad:
 
 ```csharp
 public class Base
@@ -101,10 +101,10 @@ public class Derived : Base
 }
 ```
 
-Další informace naleznete v tématu [Base](../../language-reference/keywords/base.md).
+Další informace naleznete v [tématu base](../../language-reference/keywords/base.md).
 
 > [!NOTE]
-> Doporučuje se, aby virtuální členové používali `base` k volání implementace základní třídy tohoto člena ve vlastní implementaci. V případě, že dojde k chování základní třídy, umožňuje odvozeným třídám soustředit se na implementaci konkrétního chování, které je specifické pro odvozenou třídu. Pokud není volána implementace základní třídy, je až do odvozené třídy, aby jejich chování bylo kompatibilní s chováním základní třídy.
+> Doporučuje se, aby `base` virtuální členové použít k volání implementace základní třídy tohoto člena v jejich vlastní implementaci. Umožňuje základní třídy chování umožňuje odvozené třídy soustředit se na implementaci chování specifické pro odvozené třídy. Pokud není volána implementace základní třídy, je na odvozené třídě, aby jejich chování bylo kompatibilní s chováním základní třídy.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -114,11 +114,11 @@ Další informace naleznete v tématu [Base](../../language-reference/keywords/b
 
 ## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)
 - [Dědičnost](./inheritance.md)
 - [Abstraktní a uzavřené třídy a jejich členové](./abstract-and-sealed-classes-and-class-members.md)
 - [Metody](./methods.md)
-- [Události](../events/index.md)
+- [Akce](../events/index.md)
 - [Vlastnosti](./properties.md)
 - [Indexery](../indexers/index.md)
 - [Typy](../types/index.md)

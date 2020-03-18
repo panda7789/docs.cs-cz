@@ -1,22 +1,22 @@
 ---
-title: Třídy a objekty – Úvod do C# kurzu
-description: Vytvoření prvního C# programu a prozkoumání konceptů orientovaných na objekty
+title: Třídy a objekty – úvod do kurzu jazyka C#
+description: Vytvořte si svůj první c# program a prozkoumejte objektově orientované koncepty
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 5715124a307c7b7fe41b584df82dd328c873ae29
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: b6ad72997647b80b981f1a1871e384791404bdf7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240077"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156590"
 ---
-# <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Prozkoumat objektově orientované programování pomocí tříd a objektů
+# <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Prozkoumejte objektově orientované programování pomocí tříd a objektů
 
-V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo MacOS. Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.
+Tento kurz očekává, že máte počítač, který můžete použít pro vývoj. Kurz .NET [Hello World za 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo macOS. Rychlý přehled příkazů, které budete používat, najdete v části [Seznamte se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="create-your-application"></a>Vytvoření aplikace
 
-Pomocí okna terminálu vytvořte adresář s názvem *Classes*. V takovém případě sestavíte svou aplikaci. Přejděte do tohoto adresáře a zadejte `dotnet new console` v okně konzoly. Tento příkaz vytvoří vaši aplikaci. Otevřete *program.cs*. Mělo by to vypadat takto:
+Pomocí okna terminálu vytvořte adresář s názvem *classes*. Budete stavět svou aplikaci tam. Změňte na tento `dotnet new console` adresář a zadejte do okna konzoly. Tento příkaz vytvoří aplikaci. Otevřít *Program.cs*. Mělo by to vypadat takto:
 
 ```csharp
 using System;
@@ -33,21 +33,21 @@ namespace classes
 }
 ```
 
-V tomto kurzu budete vytvářet nové typy, které reprezentují bankovní účet. Vývojáři obvykle definují každou třídu v jiném textovém souboru. To usnadňuje správu v případě, že se velikost programu zvětšuje. V adresáři *třídy* vytvořte nový soubor s názvem *BankAccount.cs* . 
+V tomto kurzu budete vytvářet nové typy, které představují bankovní účet. Vývojáři obvykle definují každou třídu v jiném textovém souboru. To usnadňuje správu, protože se velikost programu zvětšuje. Vytvořte nový soubor s názvem *BankAccount.cs* v adresáři *tříd.*
 
-Tento soubor bude obsahovat definici ***bankovního účtu***. Objektově orientované programování organizuje kód vytvořením typů ve formě ***tříd***. Tyto třídy obsahují kód, který představuje konkrétní entitu. Třída `BankAccount` představuje bankovní účet. Kód implementuje konkrétní operace prostřednictvím metod a vlastností. V tomto kurzu bankovní účet podporuje toto chování:
+Tento soubor bude obsahovat definici ***bankovního účtu***. Objektově orientované programování uspořádá kód vytvořením typů ve formě ***tříd***. Tyto třídy obsahují kód, který představuje konkrétní entitu. Třída `BankAccount` představuje bankovní účet. Kód implementuje konkrétní operace prostřednictvím metod a vlastností. V tomto kurzu bankovní účet podporuje toto chování:
 
-1. Má 10 číslic, které jedinečně identifikují bankovní účet.
-1. Obsahuje řetězec, který ukládá název nebo názvy vlastníků.
+1. Má desetimístné číslo, které jednoznačně identifikuje bankovní účet.
+1. Má řetězec, který ukládá název nebo názvy vlastníků.
 1. Zůstatek lze načíst.
 1. Přijímá vklady.
-1. Přijímá stažení.
+1. Přijímá výběry.
 1. Počáteční zůstatek musí být kladný.
-1. Vyčerpání nemůže vést k zápornému zůstatku.
+1. Výběry nemohou mít za následek záporný zůstatek.
 
 ## <a name="define-the-bank-account-type"></a>Definování typu bankovního účtu
 
-Můžete začít vytvořením základních tříd, které definují toto chování. To by vypadalo takto:
+Můžete začít vytvořením základů třídy, která definuje toto chování. Vypadalo by to takto:
 
 ```csharp
 using System;
@@ -71,15 +71,15 @@ namespace classes
 }
 ```
 
-Než začnete pracovat, Podívejme se na to, co jste vytvořili.  Deklarace `namespace` poskytuje způsob, jak logicky organizovat váš kód. Tento kurz je poměrně malý, takže veškerý kód se vloží do jednoho oboru názvů. 
+Než půjdete dál, podívejme se na to, co jste vybudovali.  Deklarace `namespace` poskytuje způsob, jak logicky uspořádat kód. Tento kurz je relativně malý, takže veškerý kód vložíte do jednoho oboru názvů.
 
-`public class BankAccount` definuje třídu nebo typ, který vytváříte. Vše uvnitř `{` a `}`, které následuje deklarace třídy, definuje stav a chování třídy. Existuje pět ***členů*** třídy `BankAccount`. První tři jsou ***vlastnosti***. Vlastnosti jsou datové prvky a mohou mít kód, který vynutil ověřování nebo jiná pravidla. Poslední dvě jsou ***metody***. Metody jsou bloky kódu, které provádějí jednu funkci. Čtení názvů jednotlivých členů by mělo poskytnout dostatek informací pro vás nebo jiného vývojáře, aby bylo možné pochopit, co třída dělá.
+`public class BankAccount`definuje třídu nebo typ, který vytváříte. Vše uvnitř `{` `}` a které následuje deklarace třídy definuje stav a chování třídy. Ve `BankAccount` třídě je pět ***členů.*** První tři jsou ***vlastnosti***. Vlastnosti jsou datové prvky a může mít kód, který vynucuje ověření nebo jiná pravidla. Poslední dvě jsou ***metody***. Metody jsou bloky kódu, které provádějí jednu funkci. Čtení názvů každého z členů by mělo poskytnout dostatek informací pro vás nebo jiného vývojáře pochopit, co třída dělá.
 
-## <a name="open-a-new-account"></a>Otevřít nový účet
+## <a name="open-a-new-account"></a>Otevření nového účtu
 
-První funkcí, kterou je třeba implementovat, je otevření bankovního účtu. Když zákazník otevře účet, musí dodat počáteční zůstatek a informace o vlastníkovi nebo vlastníkovi tohoto účtu. 
+První funkcí, kterou je třeba implementovat, je otevření bankovního účtu. Když si zákazník otevře účet, musí zadat počáteční zůstatek a informace o vlastníkovi nebo vlastnících tohoto účtu.
 
-Vytvoření nového objektu `BankAccount`ho typu znamená definování ***konstruktoru*** , který přiřazuje tyto hodnoty. ***Konstruktor*** je člen, který má stejný název jako třída. Slouží k inicializaci objektů tohoto typu třídy. Přidejte následující konstruktor do typu `BankAccount`:
+Vytvoření nového objektu `BankAccount` typu znamená definování ***konstruktoru,*** který přiřadí tyto hodnoty. ***Konstruktor*** je člen, který má stejný název jako třída. Používá se k inicializaci objektů tohoto typu třídy. Přidejte do `BankAccount` typu následující konstruktor:
 
 ```csharp
 public BankAccount(string name, decimal initialBalance)
@@ -89,69 +89,69 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-Konstruktory jsou volány při vytváření objektu pomocí [`new`](../../language-reference/operators/new-operator.md). Řádek `Console.WriteLine("Hello World!");` v *program.cs* nahraďte následujícím kódem (nahraďte `<name>` názvem):
+Konstruktory jsou volány při [`new`](../../language-reference/operators/new-operator.md)vytváření objektu pomocí . Nahraďte `Console.WriteLine("Hello World!");` řádek v *Program.cs* následujícím `<name>` kódem (nahraďte se svým jménem):
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
 Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
 ```
 
-Zadejte `dotnet run` a zjistěte, co se stane.  
+Zadejte, `dotnet run` abyste viděli, co se stane.  
 
-Všimnete si, že číslo účtu je prázdné? Je čas ji opravit. Číslo účtu by mělo být přiřazeno, když je objekt vytvořen. Ale nemělo by to být zodpovědností volajícího vytvořit. Kód třídy `BankAccount` by měl znát způsob přiřazení nových čísel účtů.  To lze provést jednoduše tak, že začnete s 10 číslicemi. Při vytvoření každého nového účtu ho zvyšte. Nakonec uložte aktuální číslo účtu, když je objekt vytvořen.
+Všimli jste si, že číslo účtu je prázdné? Je čas to napravit. Číslo účtu by mělo být přiřazeno při vytvoření objektu. Ale to by nemělo být odpovědností volajícího k jeho vytvoření. Kód `BankAccount` třídy by měl vědět, jak přiřadit nová čísla účtů.  Jednoduchý způsob, jak to udělat, je začít s 10-místné číslo. Při každém vytvoření nového účtu jej směřuje. Nakonec uložte číslo aktuálního účtu při vytvoření objektu.
 
-Přidejte následující deklaraci člena do třídy `BankAccount`:
+Do třídy přidejte `BankAccount` následující deklaraci člena:
 
 ```csharp
 private static int accountNumberSeed = 1234567890;
 ```
 
-Toto je datový člen. Je to `private`, což znamená, že k němu lze přistupovat pouze pomocí kódu v rámci `BankAccount` třídy. Jedná se o způsob, jak oddělit veřejné zodpovědnosti (jako je třeba číslo účtu) od soukromé implementace (jak se generují čísla účtů). Je také `static`, což znamená, že je sdílen všemi objekty `BankAccount`. Hodnota proměnné, která není statická, je jedinečná pro každou instanci objektu `BankAccount`. Přidejte následující dva řádky do konstruktoru pro přiřazení čísla účtu:
+Toto je datový člen. Je to `private`, což znamená, že lze přistupovat pouze kód uvnitř třídy. `BankAccount` Je to způsob, jak oddělit veřejné odpovědnosti (jako je číslo účtu) od soukromé implementace (způsob generování čísel účtů). Je také `static`, což znamená, že `BankAccount` je sdílena všemi objekty. Hodnota nestatické proměnné je jedinečná pro každou `BankAccount` instanci objektu. Přidejte k konstruktoru následující dva řádky a přiřaďte číslo účtu:
 
 ```csharp
 this.Number = accountNumberSeed.ToString();
 accountNumberSeed++;
 ```
 
-Výsledky zobrazíte zadáním `dotnet run`.
+Zadáním `dotnet run` zobrazíte výsledky.
 
-## <a name="create-deposits-and-withdrawals"></a>Vytváření vkladů a stažení
+## <a name="create-deposits-and-withdrawals"></a>Vytváření vkladů a výběrů
 
-Třída bankovního účtu musí přijímat vklady a stažení, aby fungovaly správně. Pojďme implementovat vklady a stažení, a to vytvořením deníku každé transakce pro účet. Který má několik výhod v rámci jednoduché aktualizace zůstatku každé transakce. Historii lze použít k auditování všech transakcí a ke správě každodenních zůstatků. Vynásobením zůstatku z historie všech transakcí v případě potřeby budou všechny chyby v jedné transakci, které jsou opraveny, správně promítnuty do zůstatku následujícího výpočtu.
+Vaše třída bankovního účtu musí přijímat vklady a výběry, aby fungovaly správně. Pojďme implementovat vklady a výběry vytvořením deníku každé transakce pro účet. To má několik výhod oproti pouhé aktualizaci zůstatku na každé transakci. Historii lze použít k auditu všech transakcí a správě denních zůstatků. Výpočtem zůstatku z historie všech transakcí v případě potřeby se všechny chyby v jedné transakci, které jsou opraveny, správně projeví v zůstatku při dalším výpočtu.
 
-Pojďme začít vytvořením nového typu reprezentujícího transakci. Toto je jednoduchý typ, který nemá žádné zodpovědnosti. Potřebuje několik vlastností. Vytvořte nový soubor s názvem *Transaction.cs*. Přidejte do ní následující kód:
+Začněme vytvořením nového typu představujícího transakci. Jedná se o jednoduchý typ, který nemá žádné povinnosti. Potřebuje pár nemovitostí. Vytvořte nový soubor s názvem *Transaction.cs*. Přidejte do ní následující kód:
 
 [!code-csharp[Transaction](~/samples/snippets/csharp/classes-quickstart/Transaction.cs)]
 
-Nyní přidáme <xref:System.Collections.Generic.List%601> objektů `Transaction` do třídy `BankAccount`. Přidejte následující deklaraci:
+Nyní přidáme do <xref:System.Collections.Generic.List%601> třídy `Transaction` objekty. `BankAccount` Přidejte následující prohlášení:
 
 [!code-csharp[TransactionDecl](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#TransactionDeclaration)]
 
-Třída <xref:System.Collections.Generic.List%601> vyžaduje, abyste naimportovali jiný obor názvů. Na začátek *BankAccount.cs*přidejte následující:
+Třída <xref:System.Collections.Generic.List%601> vyžaduje import ovat jiný obor názvů. Na začátku BankAccount.cs se přidejte k *nejtento*:
 
 ```csharp
 using System.Collections.Generic;
 ```
 
-Teď změníme způsob hlášení `Balance`.  Dá se najít sečtením hodnot všech transakcí. Upravte deklaraci `Balance` ve třídě `BankAccount` na následující:
+Nyní změníme způsob, `Balance` jakým je hlášen.  Lze jej nalézt sečtením hodnot všech transakcí. Upravte deklaraci `Balance` `BankAccount` ve třídě takto:
 
 [!code-csharp[BalanceComputation](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#BalanceComputation)]
 
-Tento příklad ukazuje důležitý aspekt ***vlastností***. Nyní počítáte rovnováhu, když další programátor žádá o hodnotu. Vaše výpočty vyčísluje všechny transakce a jako aktuální zůstatek poskytuje součet.
+Tento příklad ukazuje důležitý aspekt ***vlastností***. Nyní počítačjete zůstatek, když jiný programátor požádá o hodnotu. Výpočty počadnou všechny transakce a poskytuje součet jako aktuální zůstatek.
 
-Dále Implementujte metody `MakeDeposit` a `MakeWithdrawal`. Tyto metody vyplatí poslední dvě pravidla: počáteční zůstatek musí být kladný a že jakékoli stažení nesmí vytvořit záporný zůstatek. 
+Dále implementujte `MakeDeposit` `MakeWithdrawal` metody a. Tyto metody budou prosazovat poslední dvě pravidla: že počáteční zůstatek musí být kladný a že jakékoli stažení nesmí vytvářet záporný zůstatek.
 
-Tím se zavádí koncept ***výjimek***. Standardní způsob, jak určit, že metoda nemůže dokončit svou práci, je vyvolat výjimku. Typ výjimky a přidružená zpráva popisují chybu. V tomto případě metoda `MakeDeposit` vyvolá výjimku, pokud je velikost depozita záporná. Metoda `MakeWithdrawal` vyvolá výjimku, pokud je částka pro stažení záporná, nebo pokud se použije výsledek vyjmutí v záporném zůstatku:
+Tím se zavádí pojem ***výjimky***. Standardní způsob označení, že metoda nemůže úspěšně dokončit svou práci, je vyvolat výjimku. Typ výjimky a zprávy s ním spojené popisují chybu. Zde `MakeDeposit` metoda vyvolá výjimku, pokud je částka vkladu záporná. `MakeWithdrawal` Metoda vyvolá výjimku, pokud je částka výběru záporná nebo pokud použití výběru vede k zápornému zůstatku:
 
 [!code-csharp[DepositAndWithdrawal](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
 
-Příkaz [`throw`](../../language-reference/keywords/throw.md) **vyvolá** výjimku. Spuštění aktuálního bloku končí a ovládací prvky se přenesou do prvního odpovídajícího `catch` bloku nalezeného v zásobníku volání. Přidáte `catch` blok pro otestování tohoto kódu trochu později.
+Příkaz [`throw`](../../language-reference/keywords/throw.md) **vyvolá** výjimku. Spuštění aktuálního bloku končí a řízení se `catch` přenese do prvního odpovídajícího bloku nalezeného v zásobníku volání. Přidáte `catch` blok pro testování tohoto kódu o něco později.
 
-Konstruktor by měl získat jednu změnu, aby přidal počáteční transakci místo přímé aktualizace zůstatku. Vzhledem k tomu, že jste už napsali metodu `MakeDeposit`, zavolejte ji z vašeho konstruktoru. Dokončený konstruktor by měl vypadat takto:
+Konstruktor by měl získat jednu změnu tak, aby přidá počáteční transakce, spíše než aktualizovat zůstatek přímo. Vzhledem k `MakeDeposit` tomu, že jste již napsali metodu, zavolejte ji z konstruktoru. Hotový konstruktor by měl vypadat takto:
 
 [!code-csharp[Constructor](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#Constructor)]
 
-<xref:System.DateTime.Now?displayProperty=nameWithType> je vlastnost, která vrátí aktuální datum a čas. Otestujte to přidáním několika vkladů a staženími v metodě `Main`:
+<xref:System.DateTime.Now?displayProperty=nameWithType>je vlastnost, která vrací aktuální datum a čas. Otestujte to přidáním několika vkladů a výběrů ve vaší `Main` metodě:
 
 ```csharp
 account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
@@ -160,7 +160,7 @@ account.MakeDeposit(100, DateTime.Now, "Friend paid me back");
 Console.WriteLine(account.Balance);
 ```
 
-V dalším kroku otestujte chybové stavy tím, že se pokusíte vytvořit účet se záporným zůstatkem:
+Dále otestujte, že zachycujete chybové stavy, a to pokusem o vytvoření účtu se záporným zůstatkem:
 
 ```csharp
 // Test that the initial balances must be positive.
@@ -175,7 +175,7 @@ catch (ArgumentOutOfRangeException e)
 }
 ```
 
-Pomocí [příkazů`try` a `catch`](../../language-reference/keywords/try-catch.md) označíte blok kódu, který může vyvolat výjimky a zachytit tyto chyby, které očekáváte. Stejný postup můžete použít k otestování kódu, který vyvolá výjimku pro záporný zůstatek:
+Pomocí [ `try` příkazy `catch` a](../../language-reference/keywords/try-catch.md) označit blok kódu, který může vyvolat výjimky a zachytit tyto chyby, které očekáváte. Stejnou techniku můžete použít k testování kódu, který vyvolá výjimku pro záporné saldo:
 
 ```csharp
 // Test for a negative balance.
@@ -190,26 +190,26 @@ catch (InvalidOperationException e)
 }
 ```
 
-Uložte soubor a zadejte `dotnet run`, abyste ho mohli vyzkoušet.
+Uložte soubor `dotnet run` a zadejte jej vyzkoušejte.
 
-## <a name="challenge---log-all-transactions"></a>Výzva – protokoluje všechny transakce.
+## <a name="challenge---log-all-transactions"></a>Výzva - protokolovat všechny transakce
 
-Pro dokončení tohoto kurzu můžete napsat metodu `GetAccountHistory`, která vytvoří `string` pro historii transakce. Přidejte tuto metodu do `BankAccount`ho typu:
+Chcete-li dokončit tento kurz, můžete napsat metodu, `GetAccountHistory` která vytvoří `string` pro historii transakcí. Přidejte tuto `BankAccount` metodu do typu:
 
 [!code-csharp[History](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#History)]
 
-Tato třída používá třídu <xref:System.Text.StringBuilder> k formátování řetězce, který obsahuje jeden řádek pro každou transakci. Kód pro formátování řetězců jste viděli dříve v těchto kurzech. Jeden nový znak je `\t`. Tím se vloží karta pro formátování výstupu.
+To používá <xref:System.Text.StringBuilder> třídu k formátování řetězce, který obsahuje jeden řádek pro každou transakci. Viděli jste kód formátování řetězce dříve v těchto kurzech. Jeden nový `\t`znak je . To vloží kartu pro formátování výstupu.
 
-Přidejte tento řádek k otestování v *program.cs*:
+Přidejte tento řádek a otestujte jej v *Program.cs*:
 
 ```csharp
 Console.WriteLine(account.GetAccountHistory());
 ```
 
-Výsledky zobrazíte zadáním `dotnet run`.
+Zadáním `dotnet run` zobrazíte výsledky.
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud jste se zablokovali, můžete se podívat na zdroj tohoto kurzu [v našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/).
+Pokud jste uvízli, můžete vidět zdroj pro tento výukový program [v našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/).
 
-Blahopřejeme, dokončili jste všechny naše úvodní C# informace k kurzům. Pokud se Eager o další informace, vyzkoušejte si více našich [kurzů](../index.md).
+Gratulujeme, jste dokončili všechny naše úvod do c# kurzy. Pokud se chcete dozvědět více, vyzkoušejte více našich [výukových programů](../index.md).

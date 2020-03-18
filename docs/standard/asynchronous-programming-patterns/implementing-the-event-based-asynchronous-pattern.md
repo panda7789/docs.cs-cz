@@ -18,67 +18,67 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
 ms.openlocfilehash: 9865fa169e0776765f9a97ec0a7b4555bf253886
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "67663705"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na událostech
 
-Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).
+Pokud píšete třídu s některými operacemi, které mohou způsobit znatelné zpoždění, zvažte poskytnutí asynchronní funkce implementací [přehledu asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).
 
-Asynchronní vzor založený na událostech poskytuje standardizované způsob, jak zabalit třídu, která obsahuje asynchronní funkce. Pokud se implementuje pomocí tříd pomocných rutin, jako jsou <xref:System.ComponentModel.AsyncOperationManager>, vaše třída bude fungovat správně v rámci modelu všechny aplikace, včetně ASP.NET, konzolových aplikací a aplikací Windows Forms.
+Asynchronní vzor založený na událostech poskytuje standardizovaný způsob, jak zabalit třídu, která má asynchronní funkce. Pokud je implementována <xref:System.ComponentModel.AsyncOperationManager>s pomocné třídy, jako je , bude vaše třída pracovat správně v rámci libovolného modelu aplikace, včetně ASP.NET, konzolové aplikace a windows forms aplikace.
 
-Příklad, který implementuje asynchronního vzoru založeného na událostech, naleznete v tématu [jak: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).
+Příklad, který implementuje asynchronní vzor založený na událostech, naleznete v tématu [How to: Implement a Component that Supports the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).
 
-Pro jednoduché asynchronní operace, můžete zjistit <xref:System.ComponentModel.BackgroundWorker> komponenty vhodná. Další informace o <xref:System.ComponentModel.BackgroundWorker>, naleznete v tématu [jak: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).
+Pro jednoduché asynchronní operace můžete <xref:System.ComponentModel.BackgroundWorker> najít součást vhodné. Další informace <xref:System.ComponentModel.BackgroundWorker>o [aplikaci naleznete v tématu Postup: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).
 
 Následující seznam popisuje funkce asynchronního vzoru založeného na událostech popsané v tomto tématu.
 
 - Příležitosti pro implementaci asynchronního vzoru založeného na událostech
 
-- Názvy asynchronních metod
+- Pojmenování asynchronních metod
 
-- Volitelně podporují zrušení
+- Volitelně podpora zrušení
 
 - Volitelně podporovat vlastnost IsBusy
 
-- Volitelně můžete poskytovat podporu pro vykazování průběhu
+- Volitelně poskytovat podporu pro vykazování průběhu
 
-- Volitelně můžete poskytovat podporu pro vrácení přírůstkové výsledků
+- Volitelně poskytují podporu pro vrácení přírůstkových výsledků
 
-- Zpracování Out a Ref parametrů metody
+- Zpracování a ref parametry v metodách
 
 ## <a name="opportunities-for-implementing-the-event-based-asynchronous-pattern"></a>Příležitosti pro implementaci asynchronního vzoru založeného na událostech
 
-Zvažte implementaci asynchronního vzoru založeného na událostech při:
+Zvažte implementaci asynchronního vzoru založeného na událostech, pokud:
 
-- Není nutné klientům vaší třídy <xref:System.Threading.WaitHandle> a <xref:System.IAsyncResult> objekty, které jsou k dispozici pro asynchronní operace, což znamená, že dotazování a <xref:System.Threading.WaitHandle.WaitAll%2A> nebo <xref:System.Threading.WaitHandle.WaitAny%2A> muset být vytvářeny klientem.
+- Klienti vaší třídy <xref:System.Threading.WaitHandle> nepotřebují a <xref:System.IAsyncResult> objekty, které jsou k <xref:System.Threading.WaitHandle.WaitAll%2A> <xref:System.Threading.WaitHandle.WaitAny%2A> dispozici pro asynchronní operace, což znamená, že dotazování a nebo bude muset být vytvořen klientem.
 
-- Chcete, aby asynchronní operace lze spravovat pomocí klienta s modelem známé události nebo delegáta.
+- Chcete, aby asynchronní operace byly spravovány klientem se známým modelem události/delegáta.
 
-Všechny operace je kandidátem pro implementaci asynchronních, ale ty očekáváte, že budou účtovat dlouhé latenci by měl být. Operace ve kterých klientech volání metody a upozorněni na dokončení bez dalšího zásahu vyžaduje jsou zvlášť vhodná. Vhodné jsou také operace, které běží nepřetržitě, pravidelně upozornění klientů průběh, přírůstkové výsledky nebo změny stavu.
+Každá operace je kandidátem pro asynchronní implementaci, ale ty, které očekáváte, že vynaloží dlouhé latence by měly být považovány za. Zvláště vhodné jsou operace, při kterých klienti volají metodu a jsou upozorněni na dokončení, bez nutnosti dalšího zásahu. Vhodné jsou také operace, které běží nepřetržitě a pravidelně upozorňují klienty na průběh, přírůstkové výsledky nebo změny stavu.
 
-Další informace o rozhodování, kdy podporují asynchronní vzor založený na událostech najdete v tématu [rozhodování o tom, když k implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md).
+Další informace o rozhodování o tom, kdy podporovat asynchronní vzor založený na událostech, naleznete [v tématu Rozhodování o tom, kdy implementovat asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md).
 
-## <a name="naming-asynchronous-methods"></a>Názvy asynchronních metod
+## <a name="naming-asynchronous-methods"></a>Pojmenování asynchronních metod
 
-Pro každou metodu synchronní *MethodName* pro které chcete poskytnout asynchronní protějšek:
+Pro každou synchronní metodu *MethodName,* pro kterou chcete poskytnout asynchronní protějšek:
 
-Definování _MethodName_**asynchronní** metoda, která:
+Definujte metodu _MethodName_**Async,** která:
 
-- Vrátí `void`.
+- Vrací objekt `void`.
 
-- Má stejné parametry jako *MethodName* metody.
+- Přebírá stejné parametry jako *MethodName Method.*
 
-- Přijímá více volání.
+- Přijímá více vyvolání.
 
-Volitelně můžete definovat _MethodName_**asynchronní** přetížení, stejný jako _MethodName_**asynchronní**, ale ještě objekt s hodnotou Parametr s názvem `userState`. To provést, pokud jste připraveni spravovat více souběžných volání metody, v takovém případě `userState` doručí hodnotu zpět na všechny obslužné rutiny události k rozlišení volání metody. Můžete to udělat jednoduše jako místo k uložení stavu uživatele pro pozdější načtení.
+Volitelně definujte přetížení _MethodName_**Async,** identické s _MethodName_**Async**, `userState`ale s dalším nazývaným parametrem s hodnotou objektu . Toto akci proveďte, pokud jste připraveni spravovat více souběžných `userState` vyvolání metody, v takovém případě bude hodnota doručena zpět všem obslužným rutinám událostí k rozlišení vyvolání metody. Můžete také provést jednoduše jako místo pro uložení stavu uživatele pro pozdější načtení.
 
-Pro každou zvláštní _MethodName_**asynchronní** podpis metody:
+Pro každý samostatný podpis metody _MethodName_**Async:**
 
-1. Definujte následující událost ve stejné třídě, jako metodu:
+1. Definujte následující událost ve stejné třídě jako metoda:
 
     ```vb
     Public Event MethodNameCompleted As MethodNameCompletedEventHandler
@@ -88,7 +88,7 @@ Pro každou zvláštní _MethodName_**asynchronní** podpis metody:
     public event MethodNameCompletedEventHandler MethodNameCompleted;
     ```
 
-2. Definovat následující delegáta a <xref:System.ComponentModel.AsyncCompletedEventArgs>. Tyto bude mít definici pravděpodobně mimo vlastní třídy, ale stejný obor názvů.
+2. Definujte následující <xref:System.ComponentModel.AsyncCompletedEventArgs>hodelegáta a . Ty budou pravděpodobně definovány mimo samotnou třídu, ale ve stejném oboru názvů.
 
     ```vb
     Public Delegate Sub MethodNameCompletedEventHandler( _
@@ -111,116 +111,116 @@ Pro každou zvláštní _MethodName_**asynchronní** podpis metody:
     }
     ```
 
-    - Ujistěte se, _MethodName_**CompletedEventArgs** třída zveřejňuje její členy jako vlastnosti jen pro čtení a nikoli pole jako pole datové vazby.
+    - Ujistěte se, že třída _MethodName_**CompletedEventArgs** zveřejňuje své členy jako vlastnosti jen pro čtení a nikoli pole, protože pole zabraňují datové vazbě.
 
-    - Není definován žádný <xref:System.ComponentModel.AsyncCompletedEventArgs>-odvozené třídy pro metody, které neposkytují výsledky. Stačí použít instanci <xref:System.ComponentModel.AsyncCompletedEventArgs> samotný.
+    - Nedefinujte <xref:System.ComponentModel.AsyncCompletedEventArgs>žádné odvozené třídy pro metody, které nevytvářejí výsledky. Jednoduše použijte instanci <xref:System.ComponentModel.AsyncCompletedEventArgs> sám o sobě.
 
       > [!NOTE]
-      > Je zcela přijatelné, když a proveditelné, opakovaně používat delegáta a <xref:System.ComponentModel.AsyncCompletedEventArgs> typy. V tomto případě pojmenování nebude odpovídat jako název metody, od daného delegáta a <xref:System.ComponentModel.AsyncCompletedEventArgs> nesmí být vázán na jedinou metodu.
+      > Je naprosto přijatelné, pokud je to proveditelné a <xref:System.ComponentModel.AsyncCompletedEventArgs> vhodné, znovu použít delegáta a typy. V tomto případě nebude pojmenování tak konzistentní s názvem metody, <xref:System.ComponentModel.AsyncCompletedEventArgs> protože daný delegát a nebude vázán a jedinou metodou.
 
-## <a name="optionally-support-cancellation"></a>Volitelně podporují zrušení
+## <a name="optionally-support-cancellation"></a>Volitelně podpora zrušení
 
-Pokud vaše třída bude podporovat zrušení asynchronní operace, by měly být vystaveny zrušení klientovi, jak je popsáno níže. Všimněte si, že existují dvě rozhodovací body, které je potřeba dosáhnout před definováním podpoře zrušení:
+Pokud vaše třída bude podporovat zrušení asynchronní operace, zrušení by měla být vystavena klientovi, jak je popsáno níže. Všimněte si, že existují dva body rozhodnutí, které je třeba dosáhnout před definováním podpory zrušení:
 
-- Má vaše třída, včetně budoucí očekávané dodatky, pouze jedna asynchronní operace, která podporuje zrušení?
+- Má vaše třída, včetně budoucích očekávaných dodatků k ní, pouze jednu asynchronní operaci, která podporuje zrušení?
 
-- Je asynchronní operace, které podporují více čekající operace podporu zrušení? To znamená, nemá _MethodName_**asynchronní** take – metoda `userState` parametr, a to neumožňuje několika vyvoláními čeká na dokončení některého?
+- Mohou asynchronní operace, které podporují zrušení, podporovat více čekajících operací? To znamená, že metoda _MethodName_ `userState` **Async** trvá parametr a umožňuje více vyvolání před čekáním na dokončení jakékoli?
 
-Chcete-li zjistit, co by měl být podpis pro metodu zrušení pomocí odpovědi na tyto dvě otázky v následující tabulce.
+Pomocí odpovědí na tyto dvě otázky v následující tabulce určete, jaký by měl být podpis pro metodu zrušení.
 
 ### <a name="visual-basic"></a>Visual Basic
 
-||Nepodporuje více souběžných operací.|Pouze jedna operace v čase|
+||Podporováno více souběžných operací|Pouze jedna operace najednou|
 |------|------------------------------------------------|----------------------------------|
-|Jedna asynchronní operace v celé třídy|`Sub MethodNameAsyncCancel(ByVal userState As Object)`|`Sub MethodNameAsyncCancel()`|
-|Více asynchronních operací v třídě|`Sub CancelAsync(ByVal userState As Object)`|`Sub CancelAsync()`|
+|Jedna asynchronní operace v celé třídě|`Sub MethodNameAsyncCancel(ByVal userState As Object)`|`Sub MethodNameAsyncCancel()`|
+|Více asynchronních operací ve třídě|`Sub CancelAsync(ByVal userState As Object)`|`Sub CancelAsync()`|
 
 ### <a name="c"></a>C\#
 
-||Nepodporuje více souběžných operací.|Pouze jedna operace v čase|
+||Podporováno více souběžných operací|Pouze jedna operace najednou|
 |------|------------------------------------------------|----------------------------------|
-|Jedna asynchronní operace v celé třídy|`void MethodNameAsyncCancel(object userState);`|`void MethodNameAsyncCancel();`|
-|Více asynchronních operací v třídě|`void CancelAsync(object userState);`|`void CancelAsync();`|
+|Jedna asynchronní operace v celé třídě|`void MethodNameAsyncCancel(object userState);`|`void MethodNameAsyncCancel();`|
+|Více asynchronních operací ve třídě|`void CancelAsync(object userState);`|`void CancelAsync();`|
 
-Pokud definujete `CancelAsync(object userState)` metody, klienti musí být opatrní při volbě jejich stavu hodnoty tak, aby je schopna rozlišovat mezi všechny asynchronní metody vyvolané na objekt a ne jenom mezi všechny volání jedné asynchronní metody.
+Pokud definujete `CancelAsync(object userState)` metodu, klienti musí být opatrní při výběru jejich hodnoty stavu, aby byly schopny rozlišit mezi všechny asynchronní metody vyvolané na objektu a nikoli pouze mezi všechny vyvolání jedné asynchronní metody.
 
-Rozhodnutí o název verze jedním. asynchronní operace _MethodName_**AsyncCancel** vychází nebudou moct snadněji zjistit metodu v návrhovém prostředí, jako je IntelliSense ve Visual Studio. Tím se skupiny souvisejících členů a odlišuje od ostatních členů, které nesouvisí s asynchronní funkcí. Pokud očekáváte, že můžou existovat další asynchronních operací přibylo v dalších verzích, je lepší definovat `CancelAsync`.
+Rozhodnutí pojmenovat verzi methodname _MethodName_**AsyncCancel** s jednou asynchronní operací je založeno na možnosti snadněji zjistit metodu v návrhovém prostředí, jako je technologie IntelliSense sady Visual Studio. To seskupuje související členy a odlišuje je od ostatních členů, kteří nemají nic společného s asynchronní funkce. Pokud očekáváte, že mohou být přidány další asynchronní operace v `CancelAsync`následujících verzích, je lepší definovat .
 
-Ve stejné třídě nedefinují více metod z výše uvedené tabulce. Který nebude dávat smysl, nebo ji bude dál sbližuje tyto rozhraní třídy s růst počtu metody.
+Nedefinujte více metod z výše uvedené tabulky ve stejné třídě. To nebude dávat smysl, nebo to bude nepořádek třídy rozhraní s šíření metod.
 
-Tyto metody obvykle vrátí okamžitě, a tato operace může nebo nemusí skutečně zrušit. V obslužné rutině události pro _MethodName_**dokončeno** událostí, _MethodName_**CompletedEventArgs** objekt obsahuje `Cancelled` pole, které můžou klienti použít k určení, zda došlo k zrušení.
+Tyto metody se obvykle vrátí okamžitě a operace může nebo nemusí ve skutečnosti zrušit. V obslužné rutině události _MethodName_**Completed** objekt _MethodName_**Completed Obsahuje** `Cancelled` pole, které mohou klienti použít k určení, zda došlo ke zrušení.
 
-Dodržováním podle sémantiky zrušení [osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
+Řiďte se sémantikou zrušení popsanou v [doporučených postupech pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
 ## <a name="optionally-support-the-isbusy-property"></a>Volitelně podporovat vlastnost IsBusy
 
-Pokud vaše třída nepodporuje více souběžných volání, vezměte v úvahu vystavení `IsBusy` vlastnost. To umožňuje vývojářům určit, jestli _MethodName_**asynchronní** metodu je spuštěna bez zachycování výjimky z _MethodName_**asynchronní**  metody.
+Pokud vaše třída nepodporuje více souběžných vyvolání, `IsBusy` zvažte vystavení vlastnosti. To umožňuje vývojářům určit, zda method _MethodName_**Async** je spuštěna bez zachycení výjimky z _MethodName_**Async** metody.
 
-Dodržováním `IsBusy` podle sémantiky [osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
+Řiďte `IsBusy` se sémantikou popsanou v [doporučených postupech pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
-## <a name="optionally-provide-support-for-progress-reporting"></a>Volitelně můžete poskytovat podporu pro vykazování průběhu
+## <a name="optionally-provide-support-for-progress-reporting"></a>Volitelně poskytovat podporu pro vykazování průběhu
 
-Je často žádoucí, aby asynchronní operaci na informace o průběhu během jeho operace. Asynchronní vzor založený na událostech poskytuje vodítko to udělat.
+Často je žádoucí, aby asynchronní operace hlásila průběh během operace. Asynchronní vzor založený na událostech poskytuje pokyny k tomu.
 
-- Volitelně definuje události vyvolané službou asynchronní operace a vyvolána na odpovídající vlákno. <xref:System.ComponentModel.ProgressChangedEventArgs> Objekt představuje indikátor průběhu vracející celé číslo, který má být v rozmezí od 0 do 100.
+- Volitelně definujte událost, která má být vyvolána asynchronní operací a vyvolána v příslušném vlákně. Objekt <xref:System.ComponentModel.ProgressChangedEventArgs> nese indikátor průběhu s celočíselnou hodnotou, u kterého se očekává hodnota mezi 0 a 100.
 
-- Pojmenujte tuto událost následujícím způsobem:
+- Pojmenujte tuto událost takto:
 
-  - `ProgressChanged` Pokud třída má více asynchronních operací (nebo se očekává růst zahrnout více asynchronních operací v budoucích verzích);
+  - `ProgressChanged`pokud třída má více asynchronních operací (nebo se očekává, že růst zahrnout více asynchronních operací v budoucích verzích);
 
-  - _MethodName_**ProgressChanged** Pokud má třída jedné asynchronní operace.
+  - _MethodName_**ProgressChanged** pokud má třída jednu asynchronní operaci.
 
-  Tato volba názvů, který vytvořil pro metodu zrušení parallels, jak je popsáno v části volitelně podporu zrušení.
+  Tato volba pojmenování paralely, které byly provedeny pro metodu zrušení, jak je popsáno v volitelně podpora zrušení části.
 
-Tato událost používejte <xref:System.ComponentModel.ProgressChangedEventHandler> delegáta a <xref:System.ComponentModel.ProgressChangedEventArgs> třídy. Případně, pokud indikátor průběhu více specifického pro doménu může být poskytnuta (pro instanci, přečtených bajtů a celkový počet bajtů pro operace nástroje download), pak byste měli definovat odvozenou třídu <xref:System.ComponentModel.ProgressChangedEventArgs>.
+Tato událost by <xref:System.ComponentModel.ProgressChangedEventHandler> měla používat <xref:System.ComponentModel.ProgressChangedEventArgs> podpis delegáta a třídu. Případně pokud lze poskytnout indikátor průběhu více specifický pro doménu (například bajty pro čtení a celkové bajty pro operaci <xref:System.ComponentModel.ProgressChangedEventArgs>stahování), měli byste definovat odvozenou třídu .
 
-Všimněte si, že existuje pouze jeden `ProgressChanged` nebo _MethodName_**ProgressChanged** události pro třídu, bez ohledu na počet asynchronních metod, které podporuje. Se očekává, že klienti používat `userState` objekt, který je předán _MethodName_**asynchronní** metody k rozlišení mezi průběh aktualizací na více souběžných operací.
+Všimněte si, `ProgressChanged` že existuje pouze jeden nebo _MethodName_**ProgressChanged** událost pro třídu, bez ohledu na počet asynchronních metod, které podporuje. Očekává se, že `userState` klienti budou používat objekt, který je předán metodám _MethodName_**Async,** k rozlišení mezi aktualizacemi průběhu více souběžných operací.
 
-Může nastat situace, ve kterých více operací podporují průběh a každá vrátí jiný indikátor průběhu. V tomto případě jediný `ProgressChanged` událostí není vhodná, a může být vhodné, podpora více `ProgressChanged` události. V tomto případě použijte vzor pojmenování spočívající v _MethodName_**ProgressChanged** pro každou _MethodName_**asynchronní** metody.
+Mohou nastat situace, ve kterých více operací podporují průběh a každý vrátí jiný ukazatel pro průběh. V tomto případě `ProgressChanged` jedna událost není vhodné a můžete `ProgressChanged` zvážit podporu více událostí. V tomto případě použijte vzor pojmenování _MethodName_**ProgressChanged** pro každou _metodu MethodName_**Async.**
 
-Dodržováním vykazování průběhu sémantiku popsané [osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
+Dodržujte sémantiku hlášení průběhu popsanou [doporučené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
-## <a name="optionally-provide-support-for-returning-incremental-results"></a>Volitelně můžete poskytovat podporu pro vrácení přírůstkové výsledků
+## <a name="optionally-provide-support-for-returning-incremental-results"></a>Volitelně poskytují podporu pro vrácení přírůstkových výsledků
 
-Asynchronní operace v některých případech může vrátit přírůstkové výsledky před dokončením. Existuje mnoho možností, které lze použít pro podporu tohoto scénáře. Některé příklady.
+Někdy asynchronní operace může vrátit přírůstkové výsledky před dokončením. Existuje několik možností, které lze použít pro podporu tohoto scénáře. Některé příklady následují.
 
-### <a name="single-operation-class"></a>Jedním operation – třída
+### <a name="single-operation-class"></a>Třída s jednou operací
 
-Pokud vaše třída podporuje pouze jeden asynchronní operace a tato operace se bude moct vrátit přírůstkové výsledky, pak:
+Pokud vaše třída podporuje pouze jednu asynchronní operaci a tato operace je schopna vrátit přírůstkové výsledky, pak:
 
-- Rozšíření <xref:System.ComponentModel.ProgressChangedEventArgs> typu provádět přírůstkové Výsledná data a definujte _MethodName_**ProgressChanged** událostí s tímto Rozšířená data.
+- Rozšiřte <xref:System.ComponentModel.ProgressChangedEventArgs> typ tak, aby přenášel přírůstková data výsledků, a definujte událost _MethodName_**ProgressChanged** s těmito rozšířenými daty.
 
-- Vyvolat to _MethodName_**ProgressChanged** událost v případě, že je výsledek přírůstkové do sestavy.
+- Raise this _MethodName_**ProgressChanged** událost když je přírůstkový výsledek sestavy.
 
-Toto řešení platí konkrétně pro třídu jedním. asynchronní operace, protože neexistuje žádný problém s stejné události, ke kterým dochází pro vracení výsledků přírůstkové "všechny operace", jako _MethodName_**ProgressChanged**  nepodporuje události.
+Toto řešení platí konkrétně pro třídu single-async-operation, protože neexistuje žádný problém se stejnou událostí, ke které dochází, aby se vrátily přírůstkové výsledky na "všechny operace", jako to dělá událost _MethodName_**ProgressChanged.**
 
-### <a name="multiple-operation-class-with-homogeneous-incremental-results"></a>Třída více operace s homogenní přírůstkové výsledky
+### <a name="multiple-operation-class-with-homogeneous-incremental-results"></a>Třída s více operacemi s homogenními přírůstkovými výsledky
 
-V tomto případě vaše třída podporuje několik asynchronních metod každý může vracet přírůstkové výsledků, a tyto přírůstkové výsledky všechny mají stejný typ dat.
+V tomto případě vaše třída podporuje více asynchronních metod, z nichž každá je schopna vracet přírůstkové výsledky a tyto přírůstkové výsledky mají stejný typ dat.
 
-Postupujte podle výše uvedeného třídy jedné operace, jako stejný model <xref:System.EventArgs> struktura bude fungovat pro všechny přírůstkové výsledky. Definování `ProgressChanged` události místo _MethodName_**ProgressChanged** událost, protože se vztahuje na několik asynchronních metod.
+Postupujte podle výše popsaného modelu pro třídy s jednou operací, protože stejná <xref:System.EventArgs> struktura bude fungovat pro všechny přírůstkové výsledky. Definujte `ProgressChanged` událost namísto události _MethodName_**ProgressChanged,** protože se vztahuje na více asynchronních metod.
 
-### <a name="multiple-operation-class-with-heterogeneous-incremental-results"></a>Třída více operace s heterogenní přírůstkové výsledky
+### <a name="multiple-operation-class-with-heterogeneous-incremental-results"></a>Třída s více operacemi s heterogenními přírůstkovými výsledky
 
-Pokud vaše třída podporuje několik asynchronních metod, každé vrácení jiný typ dat, měli byste:
+Pokud vaše třída podporuje více asynchronních metod, každý vrací jiný typ dat, měli byste:
 
-- Oddělení přírůstkových výsledků generování sestav z vykazování průběhu.
+- Oddělte přírůstkové vykazování výsledků od vykazování průběhu.
 
-- Definujte samostatný _MethodName_**ProgressChanged** událost s odpovídající <xref:System.EventArgs> pro každou asynchronní metodu ke zpracování dat přírůstkové výsledek této metody.
+- Definujte samostatnou událost _MethodName_**ProgressChanged** s příslušnou <xref:System.EventArgs> pro každou asynchronní metodu pro zpracování přírůstkových dat výsledků této metody.
 
-Vyvolání této obslužné rutiny události v příslušné vláknu, jak je popsáno v [osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
+Vyvolat tuto obslužnou rutinu události v příslušném vlákně, jak je popsáno v [doporučených postupech pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md).
 
-## <a name="handling-out-and-ref-parameters-in-methods"></a>Zpracování Out a Ref parametrů metody
+## <a name="handling-out-and-ref-parameters-in-methods"></a>Zpracování a ref parametry v metodách
 
-I když využívání `out` a `ref` se obecně nedoporučuje v rozhraní .NET Framework, jsou zde pravidla při jsou k dispozici:
+Přestože použití `out` `ref` a je obecně nedoporučuje v rozhraní .NET Framework, zde jsou pravidla dodržovat, když jsou k dispozici:
 
-Zadaný synchronní metoda *MethodName*:
+Vzhledem k tomu, synchronní metoda *MethodName*:
 
-- `out` Parametry se mají *MethodName* by neměly být součástí _MethodName_**asynchronní**. Místo toho by měla být součástí _MethodName_**CompletedEventArgs** se stejným názvem jako svůj parametr ekvivalentní v *MethodName* (Pokud není vhodnější Název).
+- `out`parametry *MethodName* by neměly být součástí _MethodName_**Async**. Místo toho by měly být součástí _MethodName_**CompletedEventArgs** se stejným názvem jako jeho ekvivalent parametru v *MethodName* (pokud neexistuje vhodnější název).
 
-- `ref` Parametry se mají *MethodName* by se měla zobrazit jako součást _MethodName_**asynchronní**a jako součást _MethodName_  **CompletedEventArgs** se stejným názvem jako svůj parametr ekvivalentní v *MethodName* (Pokud není vhodnější název).
+- `ref`parametry *methodname* by se měly zobrazit jako součást _MethodName_**Async**a jako součást _MethodName_**CompletedEventArgs** se stejným názvem jako jeho ekvivalent parametru v *MethodName* (pokud není vhodnější název).
 
-Mějme například:
+Například vzhledem k tomu, že:
 
 ```vb
 Public Function MethodName(ByVal arg1 As String, ByRef arg2 As String, ByRef arg3 As String) As Integer
@@ -230,7 +230,7 @@ Public Function MethodName(ByVal arg1 As String, ByRef arg2 As String, ByRef arg
 public int MethodName(string arg1, ref string arg2, out string arg3);
 ```
 
-Asynchronní metody a jeho <xref:System.ComponentModel.AsyncCompletedEventArgs> třídy bude vypadat takto:
+Vaše asynchronní metoda <xref:System.ComponentModel.AsyncCompletedEventArgs> a její třída bude vypadat takto:
 
 ```vb
 Public Sub MethodNameAsync(ByVal arg1 As String, ByVal arg2 As String)
@@ -257,7 +257,7 @@ public class MethodNameCompletedEventArgs : System.ComponentModel.AsyncCompleted
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>

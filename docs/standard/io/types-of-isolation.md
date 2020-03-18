@@ -19,53 +19,53 @@ helpviewer_keywords:
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
 ms.openlocfilehash: 99e1f3f96465d05c100a0dbb2bc5218810c33754
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159426"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
-Přístup k izolovanému úložišti je vždycky omezený na uživatele, který ho vytvořil. Pro implementaci tohoto typu izolace používá modul CLR stejný pojem identity uživatele, jakou operační systém rozpozná, což je identita přidružená k procesu, ve kterém kód běží při otevření úložiště. Tato identita je identita ověřeného uživatele, ale zosobnění může způsobit, že se identita aktuálního uživatele dynamicky mění.  
+Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace používá soubor RUNTIME společného jazyka stejnou představu o identitě uživatele, kterou rozpozná operační systém, což je identita přidružená k procesu, ve kterém je kód spuštěn při otevření úložiště. Tato identita je ověřená identita uživatele, ale zosobnění může způsobit dynamickou změnu identity aktuálního uživatele.  
   
- Přístup k izolovanému úložišti je také omezen na základě identity přidružené k doméně a sestavení aplikace nebo samotném sestavení. Modul runtime získá tyto identity následujícími způsoby:  
+ Přístup k izolovanému úložišti je také omezen podle identity přidružené k doméně a sestavení aplikace nebo k samotnému sestavení. Runtime získá tyto identity následujícími způsoby:  
   
-- Doménová identita představuje legitimaci aplikace, která v případě webové aplikace může být úplnou adresou URL. V případě kódu hostovaného v prostředí může být identita domény založená na cestě k adresáři aplikace. Například pokud se spustitelný soubor spouští z cesty C:\Office\MyApp.exe, bude identita domény C:\Office\MyApp.exe.  
+- Identita domény představuje důkaz aplikace, která v případě webové aplikace může být úplná adresa URL. U kódu hostovaného prostředím může být identita domény založena na cestě k adresáři aplikace. Pokud například spustitelný soubor běží z cesty C:\Office\MyApp.exe, bude identita domény C:\Office\MyApp.exe.  
   
-- Identita sestavení je důkazem sestavení. Může to pocházet z kryptografického digitálního podpisu, který může být [silným názvem](../assembly/strong-named.md)sestavení, vydavatelem sestavení nebo jeho identitou URL. Pokud má sestavení silný název a identitu vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pochází z Internetu a není podepsané, je použita identita URL. Další informace o sestaveních a silných názvech naleznete v tématu [programování se sestaveními](../assembly/program.md).  
+- Identita sestavení je důkazem sestavení. To může pocházet z kryptografického digitálního podpisu, což může být [silný název](../assembly/strong-named.md)sestavení , vydavatel softwaru sestavení nebo jeho identita url. Pokud má sestavení silný název i identitu vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pochází z Internetu a je nepodepsané, identita adresy URL se používá. Další informace o sestaveních a silných názvech naleznete v [tématu Programování pomocí sestavení](../assembly/program.md).  
   
-- Roamingové úložiště se přesouvá s uživatelem, který má cestovní profil uživatele. Soubory jsou zapsány do síťového adresáře a jsou staženy do libovolného počítače, do kterého se uživatel přihlašuje. Další informace o cestovních profilech uživatelů najdete v tématu <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>.  
+- Roamingová úložiště se přesouvají s uživatelem, který má cestovní profil uživatele. Soubory jsou zapsány do síťového adresáře a stahovány do libovolného počítače, ke které se uživatel přihlásí. Další informace o cestovních <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>uživatelských profilech naleznete v tématu .  
   
- Díky kombinování konceptů identit uživatelů, domén a sestavení může izolované úložiště izolovat data následujícími způsoby, z nichž každá má vlastní scénáře použití:  
+ Kombinací konceptů identity uživatele, domény a sestavení může izolované úložiště izolovat data následujícími způsoby, z nichž každý má své vlastní scénáře použití:  
   
 - [Izolace podle uživatele a sestavení](#UserAssembly)  
   
 - [Izolace podle uživatele, domény a sestavení](#UserDomainAssembly)  
   
- Jednu z těchto izolací můžete kombinovat s uživatelským profilem roamingu. Další informace najdete v části [izolované úložiště a roaming](#Roaming).  
+ Některou z těchto izolací lze kombinovat s cestovním uživatelským profilem. Další informace naleznete v části [Izolované úložiště a roaming](#Roaming).  
   
- Následující obrázek ukazuje, jak jsou obchody izolované v různých oborech:  
+ Následující obrázek znázorňuje, jak jsou obchody izolovány v různých oborech:  
   
  ![Diagram, který zobrazuje izolaci podle uživatele a sestavení.](./media/types-of-isolation/isolated-storage-types.gif)  
   
- Všimněte si, že s výjimkou úložišť roamingu je izolované úložiště vždycky implicitně izolované počítačem, protože používá úložná zařízení, která jsou místní pro daný počítač.  
+ Všimněte si, že s výjimkou roamingových úložišť je izolované úložiště vždy implicitně izolováno počítačem, protože používá úložiště, která jsou pro daný počítač místní.  
   
 > [!IMPORTANT]
-> Izolované úložiště není k dispozici pro aplikace Windows 8. x Store. Místo toho použijte datové třídy aplikace v oborech názvů `Windows.Storage` zahrnutých v rozhraní prostředí Windows Runtime API k ukládání místních dat a souborů. Další informace najdete v tématu [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) na stránce Windows Dev Center.  
+> Izolované úložiště není dostupné pro aplikace pro Windows 8.x Store. Místo toho použijte třídy `Windows.Storage` dat aplikace v oborech názvů zahrnutých v rozhraní API prostředí Windows Runtime k ukládání místních dat a souborů. Další informace naleznete v [tématu Data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) v Centru pro vývoj systému Windows.  
   
 <a name="UserAssembly"></a>
 ## <a name="isolation-by-user-and-assembly"></a>Izolace podle uživatele a sestavení  
- Pokud je nutné sestavení, které používá úložiště dat, přístupné z jakékoli domény aplikace, je vhodná izolace podle uživatele a sestavení. V takové situaci se obvykle používá izolované úložiště k ukládání dat, která se vztahují na více aplikací, a není vázána na žádnou konkrétní aplikaci, například na jméno uživatele nebo informace o licenci. Aby bylo možné získat přístup k úložišti izolovanému podle uživatele a sestavení, musí být kód důvěryhodný k přenosu informací mezi aplikacemi. Typicky se izolace podle uživatele a sestavení povoluje v intranetech, ale ne na internetu. Volání statické metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A?displayProperty=nameWithType> a předání do uživatele a sestavení <xref:System.IO.IsolatedStorage.IsolatedStorageScope> vrátí úložiště s tímto druhem izolace.  
+ Pokud sestavení, které používá úložiště dat musí být přístupné z domény libovolné aplikace, izolace podle uživatele a sestavení je vhodné. V této situaci se obvykle používá izolované úložiště k ukládání dat, která platí ve více aplikacích a není vázána na žádnou konkrétní aplikaci, jako je například jméno uživatele nebo informace o licenci. Pro přístup k úložišti izolovanému uživatelem a sestavením musí být kód důvěryhodný pro přenos informací mezi aplikacemi. Izolace podle uživatele a sestavení je obvykle povolena v intranetu, ale ne v Síti Internet. Volání statické <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A?displayProperty=nameWithType> metody a předávání v <xref:System.IO.IsolatedStorage.IsolatedStorageScope> uživatele a sestavení vrátí úložiště s tímto druhem izolace.  
   
- Následující příklad kódu načte úložiště izolované uživatelem a sestavením. K úložišti je možné přistupovat prostřednictvím objektu `isoFile`.  
+ Následující příklad kódu načte úložiště, které je izolováno uživatelem a sestavením. Úložiště lze přistupovat prostřednictvím objektu. `isoFile`  
   
  [!code-cpp[Conceptual.IsolatedStorage#17](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source11.cpp#17)]
  [!code-csharp[Conceptual.IsolatedStorage#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source11.cs#17)]
  [!code-vb[Conceptual.IsolatedStorage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source11.vb#17)]  
   
- Příklad, který používá parametry legitimace, naleznete v tématu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%28System.IO.IsolatedStorage.IsolatedStorageScope%2CSystem.Security.Policy.Evidence%2CSystem.Type%2CSystem.Security.Policy.Evidence%2CSystem.Type%29>.  
+ Příklad, který používá parametry evidence, naleznete v tématu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%28System.IO.IsolatedStorage.IsolatedStorageScope%2CSystem.Security.Policy.Evidence%2CSystem.Type%2CSystem.Security.Policy.Evidence%2CSystem.Type%29>.  
   
- Metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> je k dispozici jako zástupce, jak je znázorněno v následujícím příkladu kódu. Tuto klávesovou zkratku nejde použít k otevření úložišť, která jsou schopná roamingu. v takových případech použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  
+ Metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> je k dispozici jako zástupce, jak je znázorněno v následujícím příkladu kódu. Tuto zkratku nelze použít k otevření obchodů, které jsou schopné roamingu; v <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> takových případech.  
   
  [!code-cpp[Conceptual.IsolatedStorage#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source11.cpp#18)]
  [!code-csharp[Conceptual.IsolatedStorage#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source11.cs#18)]
@@ -73,15 +73,15 @@ Přístup k izolovanému úložišti je vždycky omezený na uživatele, který 
   
 <a name="UserDomainAssembly"></a>
 ## <a name="isolation-by-user-domain-and-assembly"></a>Izolace podle uživatele, domény a sestavení  
- Pokud vaše aplikace používá sestavení třetí strany, které vyžaduje privátní úložiště dat, můžete k uložení privátních dat použít izolované úložiště. Izolace podle uživatele, domény a sestavení zajišťuje, aby k datům měl přístup pouze kód v daném sestavení, a pouze v případě, že je sestavení používáno aplikací, která byla spuštěna v době, kdy sestavení vytvořilo úložiště, a pouze v případě, že uživatel, pro kterého byl obchod vytvořen, spouští  použití. Izolace podle uživatele, domény a sestavení udržuje sestavení třetí strany proti úniku dat do jiných aplikací. Tento typ izolace by měl být výchozí volbou, pokud víte, že chcete použít izolované úložiště, ale nevíte, jaký typ izolace použít. Voláním metody static <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a předáním do uživatele, domény a sestavení <xref:System.IO.IsolatedStorage.IsolatedStorageScope> vrátí úložiště s tímto druhem izolace.  
+ Pokud vaše aplikace používá sestavení jiného výrobce, které vyžaduje úložiště soukromých dat, můžete použít izolované úložiště k ukládání soukromých dat. Izolace podle uživatele, domény a sestavení zajišťuje, že pouze kód v daném sestavení přístup k datům a pouze v případě, že sestavení je používáno aplikací, která byla spuštěna při vytvoření úložiště sestavení a pouze v případě, že uživatel, pro kterého bylo úložiště vytvořeno, spustí Aplikace. Izolace podle uživatele, domény a sestavení udržuje sestavení jiného výrobce z úniku dat do jiných aplikací. Tento typ izolace by měla být výchozí volbou, pokud víte, že chcete použít izolované úložiště, ale nejste si jisti, jaký typ izolace použít. Volání statické <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a předávání v uživateli, <xref:System.IO.IsolatedStorage.IsolatedStorageScope> doméně a sestavení vrátí úložiště s tímto druhem izolace.  
   
- Následující příklad kódu načte úložiště izolované uživatelem, doménou a sestavením. K úložišti je možné přistupovat prostřednictvím objektu `isoFile`.  
+ Následující příklad kódu načte úložiště izolované uživatelem, doménou a sestavením. Úložiště lze přistupovat prostřednictvím objektu. `isoFile`  
   
  [!code-cpp[Conceptual.IsolatedStorage#14](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source10.cpp#14)]
  [!code-csharp[Conceptual.IsolatedStorage#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source10.cs#14)]
  [!code-vb[Conceptual.IsolatedStorage#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source10.vb#14)]  
   
- Další metoda je k dispozici jako zástupce, jak je znázorněno v následujícím příkladu kódu. Tuto klávesovou zkratku nejde použít k otevření úložišť, která jsou schopná roamingu. v takových případech použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  
+ Jiná metoda je k dispozici jako zástupce, jak je znázorněno v následujícím příkladu kódu. Tuto zkratku nelze použít k otevření obchodů, které jsou schopné roamingu; v <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> takových případech.  
   
  [!code-cpp[Conceptual.IsolatedStorage#15](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source10.cpp#15)]
  [!code-csharp[Conceptual.IsolatedStorage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source10.cs#15)]
@@ -89,15 +89,15 @@ Přístup k izolovanému úložišti je vždycky omezený na uživatele, který 
   
 <a name="Roaming"></a>
 ## <a name="isolated-storage-and-roaming"></a>Izolované úložiště a roaming  
- Cestovní profily uživatelů jsou funkce systému Windows, která umožňuje uživateli nastavit identitu v síti a pomocí této identity se přihlašovat k jakémukoli síťovému počítači a přitom přenášet všechna individuální nastavení. Sestavení, které používá izolované úložiště, může určit, že izolované úložiště uživatele by se mělo přesunout pomocí cestovního profilu uživatele. Roaming lze použít ve spojení s izolací podle uživatele a sestavení nebo s izolací podle uživatele, domény a sestavení. Pokud se obor roamingu nepoužívá, úložiště se neroaminge ani v případě, že se použije cestovní profil uživatele.  
+ Cestovní profily uživatelů jsou funkce systému Windows, která umožňuje uživateli nastavit identitu v síti a použít tuto identitu k přihlášení do libovolného síťového počítače a přenášet všechna přizpůsobená nastavení. Sestavení, které používá izolované úložiště, může určit, že izolované úložiště uživatele by se mělo přesunout s cestovním profilem uživatele. Roaming lze použít ve spojení s izolací uživatelem a sestavením nebo s izolací podle uživatele, domény a sestavení. Pokud se nepoužívá obor roamingu, obchody nebudou přetékat ani v případě, že je použit cestovní profil uživatele.  
   
- Následující příklad kódu načte cestovní úložiště izolované uživatelem a sestavením. K úložišti je možné přistupovat prostřednictvím objektu `isoFile`.  
+ Následující příklad kódu načte úložiště roamingu izolované uživatelem a sestavením. Úložiště lze přistupovat prostřednictvím objektu. `isoFile`  
   
  [!code-cpp[Conceptual.IsolatedStorage#11](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source9.cpp#11)]
  [!code-csharp[Conceptual.IsolatedStorage#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source9.cs#11)]
  [!code-vb[Conceptual.IsolatedStorage#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source9.vb#11)]  
   
- Obor domény lze přidat k vytvoření cestovního úložiště, které je izolované uživatelem, doménou a aplikací. Následující příklad kódu to demonstruje.  
+ Obor domény lze přidat k vytvoření cestovního úložiště izolovaného uživatelem, doménou a aplikací. Následující příklad kódu ukazuje toto.  
   
  [!code-cpp[Conceptual.IsolatedStorage#12](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source9.cpp#12)]
  [!code-csharp[Conceptual.IsolatedStorage#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source9.cs#12)]

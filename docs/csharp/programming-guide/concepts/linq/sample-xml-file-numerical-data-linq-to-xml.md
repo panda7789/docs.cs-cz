@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Numerická data (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
-ms.openlocfilehash: fc990d2f9f15f05337e6d21dd9b46a78caa1f63a
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 921d2a42d0d553b08ecd291b3480d040dd379a96
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483577"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168100"
 ---
 # <a name="sample-xml-file-numerical-data-linq-to-xml"></a>Ukázkový soubor XML: Numerická data (LINQ to XML)
-Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje číselná data pro sčítání, agregovat a seskupení.  
+Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor obsahuje číselná data pro sčítání, průměrování a seskupování.  
   
-## <a name="dataxml"></a>Data.xml  
+## <a name="dataxml"></a>Soubor Data.xml  
   
 ```xml  
 <Root>  
@@ -54,4 +54,3 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
   </Data>  
 </Root>  
 ```  
- 

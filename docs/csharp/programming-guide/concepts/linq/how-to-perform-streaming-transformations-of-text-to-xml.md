@@ -1,23 +1,23 @@
 ---
-title: Jak provádět transformace streamování textu do formátu XML (C#)
+title: Jak provádět streamování transformace textu do XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
 ms.openlocfilehash: 496535b7f868095a62be2b72b1eea2b082e00a44
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345799"
 ---
-# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Jak provádět transformace streamování textu do formátu XML (C#)
+# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Jak provádět streamování transformace textu do XML (C#)
 
-Jedním ze způsobů, jak zpracovat textový soubor, je napsat metodu rozšíření, která vytvoří datový soubor v daném čase pomocí `yield return` konstrukce. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděným odloženým způsobem. Pokud potom použijete <xref:System.Xml.Linq.XStreamingElement> ke streamování výstupu, můžete vytvořit transformaci z textového souboru do formátu XML, který používá minimální množství paměti bez ohledu na velikost zdrojového textového souboru.
+Jedním z přístupů ke zpracování textového souboru je napsat metodu rozšíření, `yield return` která streamuje textový soubor řádek najednou pomocí konstrukce. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděně odložené způsobem. Pokud pak <xref:System.Xml.Linq.XStreamingElement> použijete k streamování výstupu, můžete vytvořit transformaci z textového souboru do xml, který používá minimální množství paměti, bez ohledu na velikost zdrojového textového souboru.
 
- V souvislosti s transformacemi streamování dochází k nějakým aspektům. Transformace streamování se nejlépe používá v situacích, kdy můžete celý soubor zpracovat jednou a pokud můžete řádky zpracovat v pořadí, ve kterém se nachází ve zdrojovém dokumentu. Pokud je třeba soubor zpracovat více než jednou, nebo pokud budete muset řádky seřadit předtím, než je budete moci zpracovat, ztratíte spoustu výhod používání techniky streamování.
+ Existují některé námitky týkající se streamování transformace. Transformace streamování je nejvhodnější v situacích, kdy můžete zpracovat celý soubor jednou a pokud můžete zpracovat řádky v pořadí, ve kterém se vyskytují ve zdrojovém dokumentu. Pokud máte zpracovat soubor více než jednou, nebo pokud budete muset třídit řádky před jejich zpracováním, ztratíte mnoho výhod použití datového proudu techniky.
 
 ## <a name="example"></a>Příklad
 
- Následující textový soubor, lidé. txt, je zdrojem tohoto příkladu.
+ Následující textový soubor, People.txt, je zdrojem pro tento příklad.
 
 ```text
 #This is a comment
@@ -26,7 +26,7 @@ Jedním ze způsobů, jak zpracovat textový soubor, je napsat metodu rozšíře
 3,David,Wright,Inventor
 ```
 
- Následující kód obsahuje metodu rozšíření, která streamuje řádky textového souboru v odvoditelné podobě.
+ Následující kód obsahuje metodu rozšíření, která streamuje řádky textového souboru odloženým způsobem.
 
 ```csharp
 public static class StreamReaderSequence
@@ -66,7 +66,7 @@ class Program
 }
 ```
 
- Tento příklad vytvoří následující výstup:
+ Tento příklad vytváří následující výstup:
 
 ```xml
 <Root>
@@ -88,6 +88,6 @@ class Program
 </Root>
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Xml.Linq.XStreamingElement>

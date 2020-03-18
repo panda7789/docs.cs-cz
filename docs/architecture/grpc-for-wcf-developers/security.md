@@ -1,61 +1,61 @@
 ---
-title: Zabezpečení v gRPC aplikacích – gRPC pro vývojáře WCF
-description: Přehled ověřování volání a kanálu a autorizaci v gRPC.
+title: Zabezpečení v gRPC aplikacích - gRPC pro vývojáře WCF
+description: Přehled ověřování a autorizace volání a kanálů v gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: d5804ad5de4a834eb81b90fa1ea7a61969a0b42f
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 70cbf441bbc1b299b997f7d1f02bcd2bf7fde60c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503419"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147812"
 ---
 # <a name="security-in-grpc-applications"></a>Zabezpečení v aplikacích gRPC
 
-V jakémkoli scénáři reálného světa je zabezpečení aplikací a služeb zásadní. Zabezpečení pokrývá tři klíčové oblasti: 
+V každém reálném scénáři je zabezpečení aplikací a služeb nezbytné. Bezpečnost zahrnuje tři klíčové oblasti:
 
-* Šifrování síťového provozu, aby nedocházelo ke škodlivému hackerům v zachycení.
-* Ověřování klientů a serverů k navázání identity a vztahu důvěryhodnosti.
-* Autorizace klientů pro řízení přístupu k systémům a uplatnění oprávnění na základě identity.
+* Šifrování síťového provozu, aby se zabránilo škodlivým hackerům v jeho zachycení.
+* Ověřování klientů a serverů za účelem vytvoření identity a důvěryhodnosti.
+* Autorizace klientů k řízení přístupu k systémům a použití oprávnění na základě identity.
 
 > [!NOTE]
-> *Ověřování* se týká vytvoření identity klienta nebo serveru. K určení toho, jestli má klient oprávnění pro přístup k prostředku nebo k vystavení příkazu, se jedná o *autorizaci* .
+> *Ověřování* se týká zjištění identity klienta nebo serveru. *Autorizace* se týká určení, zda má klient oprávnění k přístupu k prostředku nebo k vydání příkazu.
 
-Tato kapitola se zabývá zařízeními pro ověřování a autorizaci v gRPC pro ASP.NET Core. Bude taky projednávat zabezpečení sítě prostřednictvím šifrovaných připojení TLS.
+Tato kapitola se bude týkat zařízení pro ověřování a autorizaci v gRPC pro ASP.NET Core. Bude také diskutovat o zabezpečení sítě prostřednictvím šifrovaných připojení TLS.
 
 ## <a name="wcf-authentication-and-authorization"></a>Ověřování a autorizace WCF
 
-V Windows Communication Foundation (WCF) byly ověřování a autorizace zpracovávány různými způsoby v závislosti na používaných přenosech a vazbách. Služba WCF podporuje různé standardy zabezpečení WS-\*. Také podporuje ověřování systému Windows pro služby HTTP spuštěné ve službě IIS nebo NetTCP Services mezi systémy Windows.
+V systému Windows Communication Foundation (WCF) ověřování a autorizace byly zpracovány různými způsoby, v závislosti na přenosy a vazby používané. WCF podporovalrůzné standardy\* zabezpečení WS. Podporovala také ověřování systému Windows pro služby HTTP spuštěné ve službě IIS nebo nettcp služby mezi systémy Windows.
 
-## <a name="grpc-authentication-and-authorization"></a>ověřování a autorizace gRPC
+## <a name="grpc-authentication-and-authorization"></a>gRPC ověřování a autorizace
 
-ověřování a autorizace gRPC funguje na dvou úrovních:
+gRPC ověřování a autorizace funguje na dvou úrovních:
 
-* Ověřování/autorizace na úrovni volání je obvykle zpracovávána prostřednictvím tokenů, které jsou v metadatech při volání aplikovány. 
-* Ověřování na úrovni kanálu používá klientský certifikát, který je použit na úrovni připojení. Může také zahrnovat ověřování na úrovni volání/přihlašovací údaje autorizace pro automatické použití na každé volání kanálu. 
+* Ověřování/autorizace na úrovni volání se obvykle zpracovává prostřednictvím tokenů, které jsou použity v metadatech při volání.
+* Ověřování na úrovni kanálu používá klientský certifikát, který je použit na úrovni připojení. Může také obsahovat pověření pro ověřování/autorizaci na úrovni volání, která se použijí na každé volání v kanálu automaticky.
 
-Ke zvýšení zabezpečení služby můžete použít jeden nebo oba tyto mechanismy.
+Můžete použít jeden nebo oba tyto mechanismy k zabezpečení služby.
 
-ASP.NET Core implementace gRPC podporuje ověřování a autorizaci prostřednictvím většiny standardních ASP.NET Core mechanismů:
+ASP.NET Core implementace gRPC podporuje ověřování a autorizaci prostřednictvím většiny standardních ASP.NET core mechanismy:
 
-- Volání ověřování
+- Ověření volání
   - Azure Active Directory
   - IdentityServer
-  - Nosný token JWT
+  - JWT Žeton nosiče
   - OAuth 2.0
   - OpenID Connect
   - WS-Federation
 - Ověřování kanálu
-  - certifikát klienta
+  - Klientský certifikát
 
-Metody ověřování volání jsou všechny založené na *tokenech*. Jediným skutečným rozdílem je způsob, jakým se generují tokeny, a knihovny, které slouží k ověření tokenů ve službě ASP.NET Core.
+Všechny metody ověřování volání jsou založeny na *tokenech*. Jediným skutečným rozdílem je, jak jsou generovány tokeny a knihovny, které se používají k ověření tokeny ve službě ASP.NET Core.
 
-Další informace najdete v článku o [ověřování a autorizaci](/aspnet/core/grpc/authn-and-authz) .
+Další informace naleznete v článku [Ověřování a autorizace.](/aspnet/core/grpc/authn-and-authz)
 
 > [!NOTE]
-> Pokud používáte gRPC prostřednictvím připojení HTTP/2 zašifrovaného protokolem TLS, bude veškerý provoz mezi klienty a servery zašifrovaný, i když nepoužíváte ověřování na úrovni kanálu.
+> Pokud používáte gRPC přes připojení HTTP/2 šifrované protokolem TLS, veškerý provoz mezi klienty a servery je šifrován, i když nepoužíváte ověřování na úrovni kanálu.
 
-V této kapitole se dozvíte, jak použít přihlašovací údaje volání a přihlašovací údaje kanálu ke službě gRPC. Zobrazí také informace o použití přihlašovacích údajů z klienta .NET Core gRPC k ověřování pomocí služby.
+Tato kapitola ukáže, jak použít pověření volání a pověření kanálu pro službu gRPC. Také ukáže, jak používat pověření z klienta .NET Core gRPC k ověření se službou.
 
 >[!div class="step-by-step"]
 >[Předchozí](client-libraries.md)
->[Další](call-credentials.md)
+>[další](call-credentials.md)

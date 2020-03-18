@@ -1,31 +1,31 @@
 ---
-title: Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK
-description: Referenční informace o vlastnostech MSBuild, které jsou srozumitelné pro .NET Core SDK.
+title: Vlastnosti MSBuild pro sadu Microsoft.NET.Sdk
+description: Odkaz na vlastnosti MSBuild, které jsou chápány sadou .NET Core SDK.
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 00d9152d864ac0727a511f4c3c15abba82aab904
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: d4a204a1e0216313418d278ec3bd333f72db8751
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503811"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399180"
 ---
-# <a name="msbuild-properties-for-net-core-sdk-projects"></a>Vlastnosti nástroje MSBuild pro projekty .NET Core SDK
+# <a name="msbuild-properties-for-net-core-sdk-projects"></a>Vlastnosti msbuild pro projekty sady .NET Core SDK
 
-Tato stránka popisuje vlastnosti nástroje MSBuild pro konfiguraci projektů .NET Core.
+Tato stránka popisuje vlastnosti MSBuild pro konfiguraci projektů .NET Core.
 
 > [!NOTE]
-> Tato stránka je Nedokončená práce a neobsahuje seznam všech užitečných vlastností MSBuild pro .NET Core SDK. Seznam běžných vlastností MSBuild najdete v tématu [běžné vlastnosti MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
+> Tato stránka je nedokončená a neuvádí všechny užitečné vlastnosti MSBuild pro sadu .NET Core SDK. Seznam běžných vlastností MSBuild naleznete [v tématu Common MSBuild properties](/visualstudio/msbuild/common-msbuild-project-properties).
 
-## <a name="framework-properties"></a>Vlastnosti architektury
+## <a name="framework-properties"></a>Vlastnosti rozhraní Framework
 
-- [TargetFramework](#targetframework)
-- [TargetFramework](#targetframeworks)
+- [Targetframework](#targetframework)
+- [Cílové rámce](#targetframeworks)
 - [NetStandardImplicitPackageVersion](#netstandardimplicitpackageversion)
 
-### <a name="targetframework"></a>targetFramework
+### <a name="targetframework"></a>Targetframework
 
-Vlastnost `TargetFramework` určuje cílovou verzi rozhraní .NET Framework pro aplikaci, která implicitně odkazuje na [Metapackage](../packages.md#metapackages). Seznam platných monikerů cílového rozhraní Framework naleznete v tématu [cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
+Vlastnost `TargetFramework` určuje verzi cílového rozhraní pro aplikaci, která implicitně odkazuje na [metabalíček](../packages.md#metapackages). Seznam platných zástupných názvů cílové architektury naleznete v tématu [Cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -35,14 +35,14 @@ Vlastnost `TargetFramework` určuje cílovou verzi rozhraní .NET Framework pro 
 </Project>
 ```
 
-Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu sady SDK](../../standard/frameworks.md).
+Další informace naleznete v tématu [Target frameworks in SDK-style projects](../../standard/frameworks.md).
 
-### <a name="targetframeworks"></a>TargetFramework
+### <a name="targetframeworks"></a>Cílové rámce
 
-Vlastnost `TargetFrameworks` použijte v případě, že chcete, aby aplikace byla cílena na více platforem. Seznam platných monikerů cílového rozhraní Framework naleznete v tématu [cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
+Vlastnost `TargetFrameworks` použijte, když chcete, aby vaše aplikace cílila na více platforem. Seznam platných zástupných názvů cílové architektury naleznete v tématu [Cílové architektury v projektech ve stylu sady SDK](../../standard/frameworks.md#supported-target-framework-versions).
 
 > [!NOTE]
-> Tato vlastnost je ignorována, pokud je zadána `TargetFramework` (v jednotném čísle).
+> Tato vlastnost je `TargetFramework` ignorována, pokud je zadán (singulární) .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -52,14 +52,14 @@ Vlastnost `TargetFrameworks` použijte v případě, že chcete, aby aplikace by
 </Project>
 ```
 
-Další informace naleznete v tématu [cílová rozhraní v projektech ve stylu sady SDK](../../standard/frameworks.md).
+Další informace naleznete v tématu [Target frameworks in SDK-style projects](../../standard/frameworks.md).
 
 ### <a name="netstandardimplicitpackageversion"></a>NetStandardImplicitPackageVersion
 
 > [!NOTE]
-> Tato vlastnost se vztahuje pouze na projekty používající `netstandard1.x`. Neplatí pro projekty, které používají `netstandard2.x`.
+> Tato vlastnost se vztahuje `netstandard1.x`pouze na projekty pomocí . Nevztahuje se na projekty, které používají `netstandard2.x`.
 
-Vlastnost `NetStandardImplicitPackageVersion` použijte, pokud chcete zadat verzi rozhraní, která je nižší než verze [Metapackage](../packages.md#metapackages) . Soubor projektu v následujícím příkladu cílí na `netstandard1.3`, ale používá verzi 1.6.0 `NETStandard.Library`.
+`NetStandardImplicitPackageVersion` Vlastnost použijte, pokud chcete zadat verzi architektury, která je nižší než verze [metabalíčku.](../packages.md#metapackages) Soubor projektu v následujícím `netstandard1.3` příkladu cíle, ale používá `NETStandard.Library`verzi 1.6.0 .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -70,15 +70,15 @@ Vlastnost `NetStandardImplicitPackageVersion` použijte, pokud chcete zadat verz
 </Project>
 ```
 
-## <a name="publish-properties"></a>Vlastnosti publikování
+## <a name="publish-properties"></a>Publikovat vlastnosti
 
-- [RuntimeIdentifier](#runtimeidentifier)
-- [RuntimeIdentifiers](#runtimeidentifiers)
+- [Identifikátor runtime](#runtimeidentifier)
+- [Identifikátory runtime](#runtimeidentifiers)
 - [UseAppHost](#useapphost)
 
-### <a name="runtimeidentifier"></a>RuntimeIdentifier
+### <a name="runtimeidentifier"></a>Identifikátor runtime
 
-Vlastnost `RuntimeIdentifier` umožňuje zadat jeden [identifikátor modulu runtime (RID)](../rid-catalog.md) pro projekt. Identifikátor RID umožňuje publikování samostatně zahrnutého nasazení.
+Vlastnost `RuntimeIdentifier` umožňuje zadat jeden [identifikátor runtime (RID)](../rid-catalog.md) pro projekt. Rid umožňuje publikování samostatné nasazení.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -88,12 +88,12 @@ Vlastnost `RuntimeIdentifier` umožňuje zadat jeden [identifikátor modulu runt
 </Project>
 ```
 
-### <a name="runtimeidentifiers"></a>RuntimeIdentifiers
+### <a name="runtimeidentifiers"></a>Identifikátory runtime
 
-Vlastnost `RuntimeIdentifiers` umožňuje zadat seznam [identifikátorů modulu runtime (identifikátorů RID)](../rid-catalog.md) pro daný projekt oddělený středníkem. Tuto vlastnost použijte v případě, že potřebujete publikovat více modulů runtime. `RuntimeIdentifiers` se používá v době obnovení, aby se zajistilo, že jsou správné prostředky v grafu.
+Vlastnost `RuntimeIdentifiers` umožňuje zadat seznam [identifikátorů runtime (RID)](../rid-catalog.md) pro projekt oddělený středníkem. Tuto vlastnost použijte, pokud potřebujete publikovat pro více runtimes. `RuntimeIdentifiers`se používá v době obnovení, aby bylo zajištěno, že správné prostředky jsou v grafu.
 
 > [!TIP]
-> `RuntimeIdentifier` (jednotné) může poskytovat rychlejší sestavení, je-li vyžadován pouze jeden modul runtime.
+> `RuntimeIdentifier`(singulární) může poskytnout rychlejší sestavení, když je vyžadován pouze jeden runtime.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -105,9 +105,9 @@ Vlastnost `RuntimeIdentifiers` umožňuje zadat seznam [identifikátorů modulu 
 
 ### <a name="useapphost"></a>UseAppHost
 
-Vlastnost `UseAppHost` byla představena ve verzi 2.1.400 .NET Core SDK. Určuje, zda je pro nasazení vytvořen nativní spustitelný soubor. Pro samostatně obsažená nasazení je vyžadován nativní spustitelný soubor.
+Vlastnost `UseAppHost` byla zavedena ve verzi 2.1.400 sady .NET Core SDK. Určuje, zda je pro nasazení vytvořen nativní spustitelný soubor. Nativní spustitelný soubor je vyžadován pro samostatná nasazení.
 
-V rozhraní .NET Core 3,0 a novějších verzích je ve výchozím nastavení vytvořen spustitelný soubor závislý na rozhraní. Nastavte vlastnost `UseAppHost` na `false`, aby se zakázalo generování spustitelného souboru.
+V rozhraní .NET Core 3.0 a novějších verzích je ve výchozím nastavení vytvořen spustitelný soubor závislý na rozhraní. Nastavte `UseAppHost` vlastnost `false` zakázat generování spustitelného souboru.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -117,13 +117,13 @@ V rozhraní .NET Core 3,0 a novějších verzích je ve výchozím nastavení vy
 </Project>
 ```
 
-Další informace o nasazení naleznete v tématu [nasazení aplikace .NET Core](../deploying/index.md).
+Další informace o nasazení naleznete v tématu [.NET Core application deployment](../deploying/index.md).
 
-## <a name="compile-properties"></a>Vlastnosti kompilace
+## <a name="compile-properties"></a>Kompilovat vlastnosti
 
-### <a name="langversion"></a>Langversion –
+### <a name="langversion"></a>LangVersion
 
-Vlastnost `LangVersion` umožňuje zadat konkrétní verzi programovacího jazyka. Pokud například chcete získat přístup k C# funkcím verze Preview, nastavte `LangVersion` na `preview`.
+Vlastnost `LangVersion` umožňuje určit konkrétní verzi programovacího jazyka. Například pokud chcete přístup k c# `LangVersion` náhled `preview`funkce, nastavte na .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -133,15 +133,16 @@ Vlastnost `LangVersion` umožňuje zadat konkrétní verzi programovacího jazyk
 </Project>
 ```
 
-Další informace najdete v tématu [ C# jazyková verze](../../csharp/language-reference/configure-language-version.md#override-a-default).
+Další informace naleznete v [tématu C# language versioning](../../csharp/language-reference/configure-language-version.md#override-a-default).
 
 ## <a name="nuget-packages"></a>Balíčky NuGet
 
-- [PackageReference](#packagereference)
+- [Odkaz na balíček](#packagereference)
+- [AssetTargetFallback](#assettargetfallback)
 
-### <a name="packagereference"></a>PackageReference
+### <a name="packagereference"></a>Odkaz na balíček
 
-Položka `PackageReference` umožňuje zadat závislost NuGet. Například můžete chtít odkazovat na jeden balíček místo [Metapackage](../packages.md#metapackages). Atribut `Include` Určuje ID balíčku. Fragment souboru projektu v následujícím příkladu odkazuje na balíček [System. Runtime](https://www.nuget.org/packages/System.Runtime/) .
+Položka `PackageReference` umožňuje zadat závislost NuGet. Můžete například odkazovat na jeden balíček namísto [metabalíčku](../packages.md#metapackages). Atribut `Include` určuje ID balíčku. Fragment souboru projektu v následujícím příkladu odkazuje na balíček [System.Runtime.](https://www.nuget.org/packages/System.Runtime/)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -152,16 +153,31 @@ Položka `PackageReference` umožňuje zadat závislost NuGet. Například můž
 </Project>
 ```
 
-Další informace naleznete v tématu [odkazy na balíčky v souborech projektu](/nuget/consume-packages/package-references-in-project-files).
+Další informace naleznete [v tématu Odkazy na balíčky v souborech projektu](/nuget/consume-packages/package-references-in-project-files).
 
-### <a name="pack-and-restore-targets"></a>Cíle sad a obnovení
+### <a name="assettargetfallback"></a>AssetTargetFallback
 
-MSBuild 15,1 představil `pack` a `restore` cíle pro vytváření a obnovování balíčků NuGet v rámci sestavení. Informace o vlastnostech MSBuild pro tyto cíle, včetně `PackageTargetFallback`, najdete v tématu [sada NuGet Pack a obnovení jako cíle MSBuild](/nuget/reference/msbuild-targets).
+Vlastnost `AssetTargetFallback` umožňuje zadat další verze architektury kompatibilní pro projekty, které odkazuje na váš projekt a Balíčky NuGet, které váš projekt spotřebovává. Například pokud zadáte závislost balíčku `PackageReference` pomocí, ale tento balíček neobsahuje prostředky, `TargetFramework`které `AssetTargetFallback` jsou kompatibilní s projekty , vlastnost vstoupí do hry. Kompatibilita odkazovaného balíčku je znovu kontrolována pomocí každého `AssetTargetFallback`cílového rozhraní, které je zadáno v aplikaci .
+
+Vlastnost můžete `AssetTargetFallback` nastavit na jednu nebo více [verzí cílové architektury](../../standard/frameworks.md#supported-target-framework-versions).
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  ...
+  <PropertyGroup>
+    <AssetTargetFallback>net461</AssetTargetFallback>
+  </PropertyGroup>
+</Project>
+```
+
+### <a name="pack-and-restore-targets"></a>Sbalit a obnovit cíle
+
+MSBuild 15.1 `pack` zavedena a `restore` cíle pro vytváření a obnovení nuget balíčky jako součást sestavení. Informace o vlastnostech MSBuild pro `PackageTargetFallback`tyto cíle, včetně naleznete v [tématu NuGet pack a restore as MSBuild targets](/nuget/reference/msbuild-targets).
 
 ## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace schématu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
-- [Běžné vlastnosti nástroje MSBuild](/visualstudio/msbuild/common-msbuild-project-properties)
-- [Vlastnosti nástroje MSBuild pro balíček NuGet](/nuget/reference/msbuild-targets#pack-target)
-- [Vlastnosti nástroje MSBuild pro obnovení NuGet](/nuget/reference/msbuild-targets#restore-properties)
+- [Odkaz na schéma msbuild](/visualstudio/msbuild/msbuild-project-file-schema-reference)
+- [Běžné vlastnosti MSBuild](/visualstudio/msbuild/common-msbuild-project-properties)
+- [Vlastnosti MSBuild pro balíček NuGet](/nuget/reference/msbuild-targets#pack-target)
+- [Vlastnosti MSBuild pro obnovení NuGet](/nuget/reference/msbuild-targets#restore-properties)
 - [Přizpůsobení sestavení](/visualstudio/msbuild/customize-your-build)

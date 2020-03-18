@@ -1,90 +1,99 @@
 ---
-title: příkaz pro aktualizaci nástroje dotnet
-description: Příkaz pro aktualizaci nástroje dotnet aktualizuje zadaný nástroj .NET Core na vašem počítači.
+title: dotnet nástroj aktualizovat, příkaz
+description: Příkaz aktualizace nástroje dotnet aktualizuje zadaný nástroj .NET Core v počítači.
 ms.date: 02/14/2020
-ms.openlocfilehash: 80e807a0fc06ad762334f888e701f6d9c448369a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 497b052a8b9cfa9dca8d80316075fe7565d6b35a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78156943"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847817"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
-**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet tool update` – aktualizuje zadaný [nástroj .NET Core](global-tools.md) na vašem počítači.
+`dotnet tool update`- Aktualizuje zadaný [nástroj .NET Core v](global-tools.md) počítači.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
-dotnet tool update <PACKAGE_NAME> <-g|--global> [--configfile] [--framework] [-v|--verbosity] [--add-source]
-dotnet tool update <PACKAGE_NAME> <--tool-path> [--configfile] [--framework] [-v|--verbosity] [--add-source]
-dotnet tool update <PACKAGE_NAME> [--configfile] [--framework] [-v|--verbosity] [--add-source]
+dotnet tool update <PACKAGE_NAME> <-g|--global>
+    [--configfile] [--framework] [-v|--verbosity]
+    [--add-source]
+
+dotnet tool update <PACKAGE_NAME> <--tool-path>
+    [--configfile] [--framework] [-v|--verbosity]
+    [--add-source]
+
+dotnet tool update <PACKAGE_NAME>
+    [--configfile] [--framework] [-v|--verbosity]
+    [--add-source]
+
 dotnet tool update <-h|--help>
 ```
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet tool update` poskytuje způsob, jak aktualizovat nástroje .NET Core na vašem počítači na nejnovější stabilní verzi balíčku. Příkaz odinstaluje a znovu nainstaluje nástroj a efektivně ho aktualizuje. Chcete-li použít příkaz, zadejte jednu z následujících možností:
+Příkaz `dotnet tool update` poskytuje způsob, jak aktualizovat nástroje .NET Core v počítači na nejnovější stabilní verzi balíčku. Příkaz odinstaluje a přeinstaluje nástroj, efektivně jej aktualizuje. Chcete-li použít příkaz, zadejte jednu z následujících možností:
 
-* Pokud chcete aktualizovat globální nástroj, který byl nainstalovaný ve výchozím umístění, použijte možnost `--global`.
-* Chcete-li aktualizovat globální nástroj, který byl nainstalován ve vlastním umístění, použijte možnost `--tool-path`.
-* Chcete-li aktualizovat místní nástroj, vynechejte možnosti `--global` a `--tool-path`.
+* Chcete-li aktualizovat globální nástroj, který byl `--global` nainstalován ve výchozím umístění, použijte možnost
+* Chcete-li aktualizovat globální nástroj, který byl `--tool-path` nainstalován ve vlastním umístění, použijte tuto možnost.
+* Chcete-li aktualizovat místní nástroj, `--global` `--tool-path` vynechte možnosti a.
 
-**K dispozici jsou místní nástroje od .NET Core SDK 3,0.**
+**Místní nástroje jsou k dispozici počínaje .NET Core SDK 3.0.**
 
 ## <a name="arguments"></a>Argumenty
 
 - **`PACKAGE_NAME`**
 
-  Název nebo ID balíčku NuGet, který obsahuje globální nástroj .NET Core, který se má aktualizovat Název balíčku můžete najít pomocí příkazu pro [Výpis seznamu nástrojů dotnet](dotnet-tool-list.md) .
+  Název/ID balíčku NuGet, který obsahuje globální nástroj .NET Core, který má být aktualizován. Název balíčku můžete najít pomocí příkazu [seznamu nástrojů dotnet.](dotnet-tool-list.md)
 
 ## <a name="options"></a>Možnosti
 
 - **`--add-source <SOURCE>`**
 
-  Přidá další zdroj balíčku NuGet, který se použije při instalaci.
+  Přidá další zdroj balíčku NuGet pro použití během instalace.
 
 - **`--configfile <FILE>`**
 
-  Soubor konfigurace NuGet (*NuGet. config*), který se má použít.
+  Soubor konfigurace NuGet (*nuget.config).*
 
 - **`--framework <FRAMEWORK>`**
 
-  Určuje [cílovou platformu](../../standard/frameworks.md) , pro kterou chcete nástroj aktualizovat.
+  Určuje [cílovou architekturu,](../../standard/frameworks.md) pro kterou má být nástroj aktualizován.
 
 - **`-g|--global`**
 
-  Určuje, že je aktualizace určena pro nástroj pro uživatelský rozsah. Nelze kombinovat s možností `--tool-path`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který se má aktualizovat, je místní nástroj.
+  Určuje, že aktualizace je určen pro nástroj pro celý uživatele. Nelze kombinovat s `--tool-path` možností. Vynechání obou `--global` `--tool-path` a určuje, že nástroj, který má být aktualizován, je místní nástroj.
 
 - **`-h|--help`**
 
-  Vypíše krátkou nápovědu k příkazu.
+  Vytiskne krátkou nápovědu pro příkaz.
 
 - **`--tool-path <PATH>`**
 
-  Určuje umístění, kde je nainstalován globální nástroj. Cesta může být absolutní nebo relativní. Nelze kombinovat s možností `--global`. Vynechání `--global` a `--tool-path` určuje, že nástroj, který se má aktualizovat, je místní nástroj.
+  Určuje umístění, kde je globální nástroj nainstalován. CESTA může být absolutní nebo relativní. Nelze kombinovat s `--global` možností. Vynechání obou `--global` `--tool-path` a určuje, že nástroj, který má být aktualizován, je místní nástroj.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a .
 
 ## <a name="examples"></a>Příklady
 
 - **`dotnet tool update -g dotnetsay`**
 
-  Aktualizuje nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global.
+  Aktualizuje globální nástroj [dotnetsay.](https://www.nuget.org/packages/dotnetsay/)
 
 - **`dotnet tool update dotnetsay --tool-path c:\global-tools`**
 
-  Aktualizuje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) umístěný v určitém adresáři Windows.
+  Aktualizuje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) umístěný v určitém adresáři systému Windows.
 
 - **`dotnet tool update dotnetsay --tool-path ~/bin`**
 
-  Aktualizuje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) umístěný v určitém adresáři Linux/MacOS.
+  Aktualizuje globální nástroj [dotnetsay](https://www.nuget.org/packages/dotnetsay/) umístěný v určitém adresáři Linux/macOS.
 
 - **`dotnet tool update dotnetsay`**
 
@@ -93,3 +102,5 @@ Příkaz `dotnet tool update` poskytuje způsob, jak aktualizovat nástroje .NET
 ## <a name="see-also"></a>Viz také
 
 - [Nástroje .NET Core](global-tools.md)
+- [Kurz: Instalace a použití globálního nástroje .NET Core pomocí rozhraní CLI jádra .NET](global-tools-how-to-use.md)
+- [Kurz: Instalace a použití místního nástroje .NET Core pomocí rozhraní CLI jádra .NET](local-tools-how-to-use.md)

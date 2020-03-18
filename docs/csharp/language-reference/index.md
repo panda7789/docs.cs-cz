@@ -1,5 +1,5 @@
 ---
-title: C#odkaz
+title: Referenční dokumentace k jazyku C#
 ms.date: 02/14/2017
 helpviewer_keywords:
 - Visual C#, language reference
@@ -9,60 +9,60 @@ helpviewer_keywords:
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
 ms.openlocfilehash: 4875e53327e24c4b5983a4a3b79b5beced368725
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74428615"
 ---
-# <a name="c-reference"></a>C#odkaz
+# <a name="c-reference"></a>Referenční dokumentace k jazyku C#
 
-Tato část poskytuje referenční materiál o C# klíčových slovech, operátorech, speciálních znacích, direktivách preprocesoru, možnostech kompilátoru a chybách a upozorněních kompilátoru.  
+Tato část obsahuje referenční materiál o c# klíčová slova, operátory, speciální znaky, direktivy preprocesoru, možnosti kompilátoru a chyby kompilátoru a upozornění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
- [Klíčová slova jazyka C#](./keywords/index.md)  
- Obsahuje odkazy na informace o C# klíčových slovech a syntaxi.  
+ [C# Klíčová slova](./keywords/index.md)  
+ Obsahuje odkazy na informace o klíčových slovech jazyka C# a syntaxi.  
   
  [Operátory jazyka C#](./operators/index.md)  
- Obsahuje odkazy na informace o C# operátorech a syntaxi.  
+ Obsahuje odkazy na informace o operátorech jazyka C# a syntaxi.  
 
  [Speciální znaky v jazyce C#](./tokens/index.md)  
- Obsahuje odkazy na informace o speciálních kontextových znacích C# v a jejich využití.  
+ Obsahuje odkazy na informace o zvláštních kontextových znacích v c# a jejich použití.  
 
- [C# Direktivy preprocesoru](./preprocessor-directives/index.md)  
- Obsahuje odkazy na informace o příkazech kompilátoru pro vložení ve C# zdrojovém kódu.  
+ [Direktivy preprocesoru jazyka C#](./preprocessor-directives/index.md)  
+ Obsahuje odkazy na informace o příkazech kompilátoru pro vkládání do zdrojového kódu jazyka C#.  
   
  [Možnosti kompilátoru jazyka C#](./compiler-options/index.md)  
  Obsahuje informace o možnostech kompilátoru a o jejich použití.  
   
  [Chyby kompilátoru jazyka C#](./compiler-messages/index.md)  
- Obsahuje fragmenty kódu, které ukazují příčinu a opravu C# chyb a upozornění kompilátoru.  
+ Zahrnuje fragmenty kódu, které demonstrují příčinu a opravu chyb a upozornění kompilátoru jazyka C#.  
   
- [C#Specifikace jazyka](../../../_csharplang/spec/introduction.md)  
- Specifikace C# jazyka 6,0. Toto je návrh konceptu pro jazyk C# 6,0. Tento dokument bude revidován prostřednictvím práce s výborem Standards C# ECMA. Verze 5,0 byla vydána v prosinci 2017 jako standardní dokument [ECMA-334 5 Edition](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf) .
+ [Specifikace jazyka C#](../../../_csharplang/spec/introduction.md)  
+ Specifikace jazyka C# 6.0. Toto je návrh návrhu jazyka C# 6.0. Tento dokument bude zpřesněn prostřednictvím práce s výborem pro standardy ECMA C#. Verze 5.0 byla vydána v prosinci 2017 jako standardní dokument [ECMA-334 5th Edition.](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)
 
-Funkce, které byly implementovány ve C# verzích po 6,0, jsou reprezentovány v návrzích specifikace jazyka. Tyto dokumenty popisují rozdíly ve specifikaci jazyka, aby bylo možné tyto nové funkce Přidat. Tyto jsou ve formuláři návrhu konceptu. Tyto specifikace budou upřesněny a odeslány do výboru standardů ECMA pro formální kontrolu a začlenění do budoucí verze C# Standard.
+Funkce, které byly implementovány ve verzích jazyka C# po 6.0 jsou zastoupeny v návrzích specifikace jazyka. Tyto dokumenty popisují rozdíly na specifikace jazyka za účelem přidání těchto nových funkcí. Ty jsou v podobě návrhu. Tyto specifikace budou zpřesněny a předloženy výboru pro normy ECMA k formálnímu přezkoumání a začlenění do budoucí verze normy C# .
 
- [C#Návrhy specifikace 7,0](../../../_csharplang/proposals/csharp-7.0/pattern-matching.md)  
- V C# 7,0 je implementováno několik nových funkcí. Patří mezi ně porovnávání vzorů, místní funkce, deklarace proměnných out, výrazy throw, binární literály a oddělovače číslic. Tato složka obsahuje specifikace pro každou z těchto funkcí.
+ [C# 7.0 Specifikace Návrhy](../../../_csharplang/proposals/csharp-7.0/pattern-matching.md)  
+ Existuje celá řada nových funkcí implementovaných v C# 7.0. Patří mezi ně porovnávání vzorů, místní funkce, mimo deklarace proměnných, throw výrazy, binární literály a oddělovače číslic. Tato složka obsahuje specifikace pro každou z těchto funkcí.
   
- [C#Návrhy specifikace 7,1](../../../_csharplang/proposals/csharp-7.1/async-main.md)  
- V C# 7,1 jsou přidané nové funkce. Nejprve můžete napsat metodu `Main`, která vrací `Task` nebo `Task<int>`. To umožňuje přidat modifikátor `async` do `Main`. Výraz `default` lze použít bez typu v umístění, kde lze typ odvodit. Také je možné odvodit názvy členů řazené kolekce členů. A nakonec lze použít porovnávání vzorů s obecnými typy.
+ [C# 7.1 Specifikace Návrhy](../../../_csharplang/proposals/csharp-7.1/async-main.md)  
+ V c# 7.1 jsou přidány nové funkce. Nejprve můžete napsat `Main` metodu, která vrátí `Task` nebo `Task<int>`. To umožňuje přidat `async` modifikátor do aplikace `Main`. Výraz `default` lze použít bez typu v umístěních, kde lze odvodit typ. Také řazené kolekce členů názvy lze odvodit. Nakonec porovnávání vzorů lze použít s obecnými typy.
 
- [C#Návrhy specifikace 7,2](../../../_csharplang/proposals/csharp-7.2/readonly-ref.md)  
- C#7,2 Přidání řady malých funkcí. Argumenty můžete předat odkazem ReadOnly pomocí klíčového slova `in`. K dispozici je množství změn nízké úrovně, které podporují bezpečnost v době kompilace pro `Span` a související typy. V některých situacích můžete použít pojmenované argumenty, kde jsou později argumenty pozice. Modifikátor přístupu `private protected` umožňuje určit, že volající jsou omezeny na odvozené typy implementované ve stejném sestavení. Operátor `?:` lze přeložit na odkaz na proměnnou. Můžete také formátovat hexadecimální a binární čísla pomocí počátečního oddělovače číslic.
+ [C# 7.2 Specifikace Návrhy](../../../_csharplang/proposals/csharp-7.2/readonly-ref.md)  
+ C# 7.2 přidal řadu malých funkcí. Argumenty můžete předat pouze pro `in` čtení pomocí klíčového slova. Existuje celá řada změn nižší úrovně pro podporu `Span` bezpečnosti kompilace v době kompilace a související typy. Můžete použít pojmenované argumenty, kde pozdější argumenty jsou poziční, v některých situacích. Modifikátor `private protected` přístupu umožňuje určit, že volající jsou omezeny na odvozené typy implementované ve stejném sestavení. Operátor `?:` může vyřešit odkaz na proměnnou. Můžete také formátovat šestnáctková a binární čísla pomocí oddělovače předních číslic.
 
- [C#Návrhy specifikace 7,3](../../../_csharplang/proposals/csharp-7.3/blittable.md)  
- C#7,3 je další verze bodu, která zahrnuje několik malých aktualizací. V parametrech obecného typu můžete použít nová omezení. Další změny usnadňují práci s `fixed` poli, včetně použití přidělení [`stackalloc`](./operators/stackalloc.md) . Místní proměnné deklarované s klíčovým slovem `ref` mohou být přiřazeny k odkazování na nové úložiště. Atributy lze umístit do automaticky implementovaných vlastností, které cílí na pole zálohování generované kompilátorem. Proměnné výrazu lze použít v inicializátorech. Řazené kolekce členů lze porovnat s rovností (nebo nerovností). Existuje také vylepšení řešení přetížení.
+ [C# 7.3 Specifikace Návrhy](../../../_csharplang/proposals/csharp-7.3/blittable.md)  
+ C# 7.3 je další bod vydání, které obsahuje několik malých aktualizací. Můžete použít nová omezení pro parametry obecného typu. Další změny usnadňují práci `fixed` s poli, [`stackalloc`](./operators/stackalloc.md) včetně použití přidělení. Místní proměnné deklarované pomocí klíčového `ref` slova mohou být znovu přiřazeny k odkazu na nové úložiště. Atributy můžete umístit na automaticky implementované vlastnosti, které cílí na záložní pole generované kompilátorem. Proměnné výrazu lze použít v inicializačních metodách. Řazené kolekce členů mohou být porovnány pro rovnost (nebo nerovnost). Došlo také k určitým vylepšením řešení přetížení.
   
- [C#Návrhy specifikace 8,0](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
- C#8,0 je k dispozici v rozhraní .NET Core 3,0. Mezi tyto funkce patří typy odkazů s možnou hodnotou null, rekurzivní porovnávání vzorů, metody rozhraní Standard, asynchronní streamy, rozsahy a indexy, založené na vzorcích a používání deklarací, přiřazení sloučení s hodnotou null a členy instance s vlastností ReadOnly.
+ [C# 8.0 Specifikace Návrhy](../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md)  
+ C# 8.0 je k dispozici s rozhraním .NET Core 3.0. Funkce zahrnují typy odkazů s možnou hodnotou null, porovnávání rekurzivních vzorů, výchozí metody rozhraní, asynchronní datové proudy, rozsahy a indexy, vzor založený na použití a použití deklarací, přiřazení null coalescing a členy instancí pouze pro čtení.
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Použití vývojového prostředí sady Visual Studio pro jazyk C#](/visualstudio/get-started/csharp)  
- Obsahuje odkazy na koncepční témata a témata související s úlohami, které popisují rozhraní IDE a editor.  
+ Obsahuje odkazy na koncepční a úkolová témata, která popisují rozhraní IDE a editor.  
   
- [Průvodce programováním v C#](../programming-guide/index.md)  
- Obsahuje informace o používání C# programovacího jazyka.
+ [Programovací příručka jazyka C#](../programming-guide/index.md)  
+ Obsahuje informace o použití programovacího jazyka C#.

@@ -1,29 +1,29 @@
 ---
-title: Dotazování na největší soubor nebo soubory ve stromu adresářů (LINQ) (C#)
+title: Jak dotazovat na největší soubor nebo soubory ve stromu adresářů (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: dee501dc8d0cabd718307b45c99ca049ae4250aa
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ed7d610bd292be4062db89f3c94af280e851141f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344556"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168762"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Dotazování na největší soubor nebo soubory ve stromu adresářů (LINQ) (C#)
-Tento příklad ukazuje pět dotazů týkajících se velikosti souboru v bajtech:  
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Jak dotazovat na největší soubor nebo soubory ve stromu adresářů (LINQ) (C#)
+Tento příklad ukazuje pět dotazů souvisejících s velikostí souboru v bajtech:  
   
-- Jak načíst velikost v bajtech pro největší soubor  
+- Jak načíst velikost v bajtů největšího souboru.  
   
-- Jak načíst velikost nejmenšího souboru v bajtech.  
+- Jak načíst velikost v bajtů nejmenšího souboru.  
   
-- Jak načíst největší nebo nejmenší soubor objektu <xref:System.IO.FileInfo> z jedné nebo více složek v zadané kořenové složce.  
+- Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor objektu z jedné nebo více složek v zadané kořenové složce.  
   
-- Jak načíst sekvenci, jako je 10 největších souborů.  
+- Jak načíst sekvenci, jako je například 10 největších souborů.  
   
-- Postup při řazení souborů do skupin na základě velikosti jejich souboru v bajtech. soubory, které jsou menší než zadaná velikost, se ignorují.  
+- Jak seřadit soubory do skupin na základě jejich velikosti souboru v bajtů, ignoruje soubory, které jsou menší než zadaná velikost.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje pět samostatných dotazů, které ukazují, jak zadávat dotazy a seskupovat soubory v závislosti na velikosti souboru v bajtech. Tyto příklady lze snadno upravit tak, aby dotaz byly založeny na nějaké jiné vlastnosti objektu <xref:System.IO.FileInfo>.  
+ Následující příklad obsahuje pět samostatných dotazů, které ukazují, jak dotazovat a seskupit soubory, v závislosti na jejich velikosti souboru v bajtů. Tyto příklady můžete snadno upravit a založit dotaz <xref:System.IO.FileInfo> na jiné vlastnosti objektu.  
   
 ```csharp  
 class QueryBySize  
@@ -96,7 +96,7 @@ class QueryBySize
         }  
   
         // Group the files according to their size, leaving out  
-        // files that are less than 200000 bytes.   
+        // files that are less than 200000 bytes.
         var querySizeGroups =  
             from file in fileList  
             let len = GetFileLength(file)  
@@ -138,14 +138,14 @@ class QueryBySize
 }  
 ```  
   
- Chcete-li vrátit jeden nebo více úplných objektů <xref:System.IO.FileInfo>, musí dotaz nejprve projít každý zdroj dat a pak je seřadit podle hodnoty vlastnosti length. Pak může vrátit jednu z nich nebo sekvenci s největší délkou. Použijte <xref:System.Linq.Enumerable.First%2A> k vrácení prvního prvku v seznamu. Použijte <xref:System.Linq.Enumerable.Take%2A> k vrácení prvního n počtu prvků. Určete sestupné řazení, aby bylo možné umístit nejmenší prvky na začátek seznamu.  
+ Chcete-li vrátit <xref:System.IO.FileInfo> jeden nebo více úplných objektů, dotaz nejprve musí prozkoumat každý z nich ve zdroji dat a pak je seřadit podle hodnoty jejich Length vlastnost. Pak může vrátit jeden nebo sekvence s největší délky. Slouží <xref:System.Linq.Enumerable.First%2A> k vrácení prvníprvek v seznamu. Slouží <xref:System.Linq.Enumerable.Take%2A> k vrácení první n počet prvků. Určete sestupné pořadí řazení, chcete-li umístit nejmenší prvky na začátek seznamu.  
   
- Dotaz, volá do samostatné metodě získat velikost souboru v bajtech, aby bylo možné využívat možné výjimku, která bude vyvolána v případě, kdy byl odstraněn soubor v jiném vlákně v období od <xref:System.IO.FileInfo> objekt byl vytvořen při volání funkce `GetFiles`. I přes objekt <xref:System.IO.FileInfo> již byl vytvořen, výjimka může být způsobena tím, že se objekt <xref:System.IO.FileInfo> pokusí aktualizovat jeho vlastnost <xref:System.IO.FileInfo.Length%2A> pomocí nejaktuálnější velikosti v bajtech, při které je vlastnost poprvé k dispozici. Vložením této operace do bloku try-catch mimo dotaz se řídí pravidlo vyloučení operací v dotazech, které můžou způsobit vedlejší účinky. Obecně je potřeba věnovat velkou péči při využívání výjimek, aby se zajistilo, že aplikace zůstane v neznámém stavu.  
+ Dotaz volá samostatnou metodu k získání velikosti souboru v bajtů s cílem spotřebovat možnou výjimku, která bude vyvolána v případě, kdy byl soubor odstraněn v jiném vlákně v časovém období od vytvoření objektu <xref:System.IO.FileInfo> ve volání `GetFiles`. I prostřednictvím objektu <xref:System.IO.FileInfo> již byla vytvořena, <xref:System.IO.FileInfo> může dojít k <xref:System.IO.FileInfo.Length%2A> výjimce, protože objekt se pokusí aktualizovat svou vlastnost pomocí nejaktuálnější velikost v bajtů při prvním přístupu k vlastnosti. Umístěním této operace v try-catch bloku mimo dotaz, budeme dodržovat pravidlo vyhnout se operacím v dotazech, které mohou způsobit vedlejší účinky. Obecně je třeba věnovat velkou pozornost při využívání výjimek, abyste se ujistili, že aplikace není ponechána v neznámém stavu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
- 
-## <a name="see-also"></a>Viz také:
+Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.
 
-- [LINQ to Objects (C#)](./linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)

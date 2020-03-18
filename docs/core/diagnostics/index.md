@@ -1,49 +1,49 @@
 ---
-title: Přehled diagnostických nástrojů – .NET Core
+title: Přehled diagnostických nástrojů - .NET Core
 description: Přehled nástrojů a technik, které jsou k dispozici pro diagnostiku aplikací .NET Core.
 ms.date: 12/17/2019
 ms.topic: overview
 ms.openlocfilehash: 0a78ec6c88f5323104277cddea4480a5e13b4e41
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715569"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79399047"
 ---
-# <a name="what-diagnostic-tools-are-available-in-net-core"></a>Jaké diagnostické nástroje jsou k dispozici v .NET Core?
+# <a name="what-diagnostic-tools-are-available-in-net-core"></a>Jaké diagnostické nástroje jsou k dispozici v rozhraní .NET Core?
 
-Software se vždy chová podle očekávání, ale rozhraní .NET Core obsahuje nástroje a rozhraní API, které vám pomohou rychle a efektivně diagnostikovat tyto problémy.
+Software se ne vždy chová tak, jak byste očekávali, ale rozhraní .NET Core má nástroje a rozhraní API, které vám pomohou tyto problémy rychle a efektivně diagnostikovat.
 
 Tento článek vám pomůže najít různé nástroje, které potřebujete.
 
 ## <a name="managed-debuggers"></a>Spravované ladicí programy
 
-[Spravované ladicí programy](managed-debuggers.md) umožňují pracovat s programem. Pozastavení, přírůstkové provádění, prozkoumání a obnovení, vám poskytne přehled o chování kódu. Ladicí program je první volbou pro diagnostiku funkčních problémů, které je možné snadno reprodukovat.
+[Spravované ladicí program](managed-debuggers.md) umožňuje interakci s programem. Pozastavení, postupné provádění, zkoumání a obnovení vám umožní nahlédnout do chování vašeho kódu. Ladicí program je první volbou pro diagnostiku funkčních problémů, které lze snadno reprodukovat.
 
 ## <a name="logging-and-tracing"></a>Protokolování a trasování
 
-[Protokolování a trasování](logging-tracing.md) jsou související techniky. Odkazují na instrumentaci kódu k vytváření souborů protokolu. Soubory zaznamenávají podrobnosti o tom, co program dělá. Pomocí těchto podrobností lze diagnostikovat nejsložitější problémy. V kombinaci s časovými razítky jsou tyto techniky také cenné při vyšetřování výkonu.
+[Protokolování a trasování](logging-tracing.md) jsou související techniky. Odkazují na instrumentační kód k vytvoření souborů protokolu. Soubory zaznamenávají podrobnosti o tom, co program dělá. Tyto detaily lze použít k diagnostice nejsložitějších problémů. V kombinaci s časovými razítky jsou tyto techniky také cenné při vyšetřování výkonu.
 
-## <a name="unit-testing"></a>Testování jednotek
+## <a name="unit-testing"></a>Testování částí
 
-[Testování částí](../testing/index.md) je klíčovou součástí kontinuální integrace a nasazování vysoce kvalitního softwaru. Testy jednotek jsou navržené tak, aby vám při přerušení nějakého upozornění poskytovala včasné varování.
+[Testování částí](../testing/index.md) je klíčovou součástí průběžné integrace a nasazování vysoce kvalitního softwaru. Testy částí jsou navrženy tak, aby vám včasné varování, když něco rozbít.
 
-## <a name="net-core-dotnet-diagnostic-global-tools"></a>.NET Core dotnet – globální nástroje diagnostiky
+## <a name="net-core-dotnet-diagnostic-global-tools"></a>Globální nástroje pro diagnostiku dotnet .NET Core
 
 ### <a name="dotnet-counters"></a>dotnet-counters
 
-[dotnet-Counters](dotnet-counters.md) je nástroj pro monitorování výkonu, který slouží k monitorování stavu první úrovně a vyšetřování výkonu. Sleduje hodnoty čítačů výkonu publikované prostřednictvím rozhraní <xref:System.Diagnostics.Tracing.EventCounter> API. Například můžete rychle monitorovat věci, jako je využití procesoru nebo četnost výjimek vyvolaných v aplikaci .NET Core.
+[čítače dotnet](dotnet-counters.md) je nástroj pro sledování výkonu pro monitorování stavu první úrovně a sledování výkonu. Sleduje hodnoty čítače výkonu <xref:System.Diagnostics.Tracing.EventCounter> publikované prostřednictvím rozhraní API. Můžete například rychle sledovat věci, jako je využití procesoru nebo rychlost výjimky jsou vyvolány v aplikaci .NET Core.
 
 ### <a name="dotnet-dump"></a>dotnet-dump
 
-Nástroj [dotnet-dump](dotnet-dump.md) je způsob, jak shromažďovat a analyzovat základní výpisy paměti Windows a Linux bez nativního ladicího programu.
+[Nástroj dotnet-dump](dotnet-dump.md) je způsob, jak shromažďovat a analyzovat výpisy jádra systému Windows a Linux bez nativního ladicího programu.
 
 ### <a name="dotnet-trace"></a>dotnet-trace
 
-.NET Core zahrnuje to, co se říká `EventPipe`, prostřednictvím které jsou dostupná diagnostická data. Nástroj [dotnet-Trace](dotnet-trace.md) umožňuje využívat zajímavá data profilace z vaší aplikace, která vám pomůžou ve scénářích, kdy je potřeba, aby aplikace v hlavní příčině běžely pomalu.
+.NET Core zahrnuje to, co se `EventPipe` nazývá prostřednictvím, které jsou vystavena diagnostická data. Nástroj [dotnet-trace](dotnet-trace.md) umožňuje využívat zajímavá data profilování z vaší aplikace, která vám můžou pomoct ve scénářích, kde je potřeba způsobit pomalé aplikace.
 
 ## <a name="net-core-diagnostics-tutorials"></a>Kurzy diagnostiky .NET Core
 
 ### <a name="debug-a-memory-leak"></a>Ladění nevrácené paměti
 
-[Kurz: ladění](debug-memory-leak.md) nevrácené paměti pomocí ladění procházení paměti Nástroj [dotnet-Counters](dotnet-counters.md) slouží k potvrzení nevracení a k diagnostice nevracení slouží nástroj [dotnet-dump](dotnet-dump.md) .
+[Kurz: Ladění nevracení paměti](debug-memory-leak.md) prochází hledání min. nevracení paměti. Nástroj [dotnet-counters](dotnet-counters.md) se používá k potvrzení nevracení a nástroj [dotnet-dump](dotnet-dump.md) se používá k diagnostice nevracení.

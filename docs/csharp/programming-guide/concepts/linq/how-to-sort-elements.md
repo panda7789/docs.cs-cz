@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: řazení elementůC#()'
+title: Jak seřadit prvky (C#)
 ms.date: 07/20/2015
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
 ms.openlocfilehash: 7fad9fcb43905072c88a5704c56672917bfc377c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347369"
 ---
-# <a name="how-to-sort-elements-c"></a>Postupy: řazení elementůC#()
+# <a name="how-to-sort-elements-c"></a>Jak seřadit prvky (C#)
 Tento příklad ukazuje, jak napsat dotaz, který seřadí jeho výsledky.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Numerická data (LINQ to XML).](./sample-xml-file-numerical-data-linq-to-xml.md)  
   
 ```csharp  
 XElement root = XElement.Load("Data.xml");  
@@ -39,9 +39,9 @@ foreach (decimal el in prices)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data v oboru názvů](./sample-xml-file-numerical-data-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Numerická data v oboru názvů](./sample-xml-file-numerical-data-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("DataInNamespace.xml");  
@@ -67,6 +67,6 @@ foreach (decimal el in prices)
 89.99  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Řazení dat (C#)](./sorting-data.md)

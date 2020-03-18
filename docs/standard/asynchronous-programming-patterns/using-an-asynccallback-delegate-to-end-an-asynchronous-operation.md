@@ -12,28 +12,28 @@ helpviewer_keywords:
 - stopping asynchronous operations
 ms.assetid: 9d97206c-8917-406c-8961-7d0909d84eeb
 ms.openlocfilehash: c3cac2db57a24bf6a0f5640e4ad8101686e6c3e9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73130927"
 ---
 # <a name="using-an-asynccallback-delegate-to-end-an-asynchronous-operation"></a>Použití delegáta AsyncCallback k ukončení asynchronní operace
-Aplikace, které mohou provádět jiné operace při čekání na výsledky asynchronní operace, by neměly zablokovat čekání na dokončení operace. Pomocí jedné z následujících možností můžete pokračovat v provádění pokynů při čekání na dokončení asynchronní operace:  
+Aplikace, které mohou dělat jinou práci při čekání na výsledky asynchronní operace by nemělblokovat čekání až do dokončení operace. Pomocí jedné z následujících možností pokračujte v provádění pokynů při čekání na dokončení asynchronní operace:  
   
-- Použijte delegáta <xref:System.AsyncCallback> pro zpracování výsledků asynchronní operace v samostatném vlákně. Tento přístup je znázorněný v tomto tématu.  
+- Použijte <xref:System.AsyncCallback> delegáta ke zpracování výsledků asynchronní operace v samostatném vlákně. Tento přístup je demonstrován v tomto tématu.  
   
-- K určení, zda byla operace dokončena, použijte vlastnost <xref:System.IAsyncResult.IsCompleted%2A> <xref:System.IAsyncResult> vrácenou metodou **Begin**_OperationName_ asynchronní operace. Příklad, který demonstruje tento přístup, najdete v tématu [cyklické dotazování na stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
+- Pomocí <xref:System.IAsyncResult.IsCompleted%2A> vlastnosti <xref:System.IAsyncResult> vrácené metodou **Begin**_OperationName_ asynchronní operace určete, zda byla operace dokončena. Příklad, který ukazuje tento přístup, naleznete [v tématu dotazování pro stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje použití asynchronních metod ve třídě <xref:System.Net.Dns> k načtení informací DNS (Domain Name System) pro uživatelem definované počítače. Tento příklad vytvoří delegáta <xref:System.AsyncCallback>, který odkazuje na metodu `ProcessDnsInformation`. Tato metoda se volá jednou pro každý asynchronní požadavek na informace DNS.  
+ Následující příklad kódu ukazuje použití asynchronních <xref:System.Net.Dns> metod ve třídě k načtení informací DNS (Domain Name System) pro počítače zadané uživatelem. Tento příklad <xref:System.AsyncCallback> vytvoří delegáta, `ProcessDnsInformation` který odkazuje na metodu. Tato metoda je volána jednou pro každý asynchronní požadavek na informace DNS.  
   
- Všimněte si, že uživatel zadaný uživatelem je předán parametru <xref:System.Net.Dns.BeginGetHostByName%2A><xref:System.Object>. Příklad, který ukazuje definování a použití složitějšího objektu stavu, naleznete v tématu [použití delegáta AsyncCallback a objektu State](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-and-state-object.md).  
+ Všimněte si, že hostitel zadaný uživatelem je předán parametru. <xref:System.Net.Dns.BeginGetHostByName%2A> <xref:System.Object> Příklad, který ukazuje definování a použití složitější objekt stavu, naleznete [v tématu použití AsyncCallback delegate a state Object](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-and-state-object.md).  
   
  [!code-csharp[AsyncDesignPattern#4](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDesignPattern/CS/AsyncDelegateNoStateObject.cs#4)]
  [!code-vb[AsyncDesignPattern#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AsyncDesignPattern/VB/AsyncDelegateNoState.vb#4)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
 - [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)

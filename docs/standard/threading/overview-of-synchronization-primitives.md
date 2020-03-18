@@ -1,6 +1,6 @@
 ---
 title: Přehled primitiv synchronizace
-description: Přečtěte si o primitivech synchronizace vláken .NET používaných k synchronizaci přístupu ke sdílenému vláknu nebo k interakci řídicího vlákna.
+description: Informace o primitivech synchronizace vláken .NET, které se používají k synchronizaci přístupu ke sdílenému prostředku nebo interakci podprocesu ovládacího prvku
 ms.date: 10/01/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,139 +9,139 @@ helpviewer_keywords:
 - managed threading
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
 ms.openlocfilehash: 43f78c914b7cb01f9b0de4c258d5882548e52790
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73106595"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
 
-Rozhraní .NET poskytuje rozsah typů, které můžete použít k synchronizaci přístupu ke sdílenému prostředku nebo k interakci s vlákny pro koordinaci.
+Rozhraní .NET poskytuje řadu typů, které můžete použít k synchronizaci přístupu ke sdílenému prostředku nebo ke koordinaci interakce podprocesu.
 
 > [!IMPORTANT]
-> Pro ochranu přístupu ke sdílenému prostředku použijte stejnou instanci primitiva synchronizace. Pokud k ochraně stejného prostředku používáte různé primitivní instance synchronizace, obejít ochranu poskytovanou primitivním primitivem.
+> Použijte stejnou instanci primitivní synchronizace k ochraně přístupu ke sdílenému prostředku. Pokud používáte různé synchronizace primitivní instance k ochraně stejného prostředku, budete obejít ochranu poskytovanou synchronizace primitivní.
 
-## <a name="waithandle-class-and-lightweight-synchronization-types"></a>Třídy WaitHandle a zjednodušené typy synchronizace
+## <a name="waithandle-class-and-lightweight-synchronization-types"></a>Třída WaitHandle a zjednodušené typy synchronizace
 
-Několik primitiv synchronizace rozhraní .NET je odvozeno od třídy <xref:System.Threading.WaitHandle?displayProperty=nameWithType>, která zapouzdřuje nativní popisovač synchronizace operačního systému a používá mechanismus signalizace pro interakci s vlákny. Tyto třídy zahrnují:
+Více .NET synchronizace primitiv odvozené z <xref:System.Threading.WaitHandle?displayProperty=nameWithType> třídy, která zapouzdřuje nativní operační systém synchronizační popisovač a používá mechanismus signalizace pro interakci podprocesu. Tyto třídy zahrnují:
 
-- <xref:System.Threading.Mutex?displayProperty=nameWithType>, která uděluje exkluzivní přístup ke sdílenému prostředku. Stav mutex je signalizována, pokud není vlastníkem vlákna.
-- <xref:System.Threading.Semaphore?displayProperty=nameWithType>, která omezuje počet vláken, která mají souběžný přístup ke sdílenému prostředku nebo fondu prostředků. Stav semaforu je nastaven na signalizaci, pokud je jeho počet větší než nula a nesignálný, pokud je jeho počet nula.
-- <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>, který představuje událost synchronizace vlákna a může být buď v signalizačním, nebo nesignalizacém stavu.
-- <xref:System.Threading.AutoResetEvent?displayProperty=nameWithType>, která je odvozena z <xref:System.Threading.EventWaitHandle> a, při signalizaci, je automaticky nastavena na nesignálný stav po uvolnění jediného čekajícího vlákna.
-- <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>, která je odvozena z <xref:System.Threading.EventWaitHandle> a v případě signalizace zůstane v signalizačním stavu, dokud nebude volána metoda <xref:System.Threading.EventWaitHandle.Reset%2A>.
+- <xref:System.Threading.Mutex?displayProperty=nameWithType>, který uděluje výhradní přístup ke sdílenému prostředku. Stav mutex je signalizován, pokud žádné vlákno vlastní.
+- <xref:System.Threading.Semaphore?displayProperty=nameWithType>, který omezuje počet podprocesů, které mají současně přístup ke sdílenému prostředku nebo fondu prostředků. Stav semaforu je nastaven na signalizováno, když je jeho počet větší než nula a nesignalizován, když je jeho počet nulový.
+- <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>, který představuje událost synchronizace vláken a může být v signalizovaném nebo nesignalizovaném stavu.
+- <xref:System.Threading.AutoResetEvent?displayProperty=nameWithType>, který je <xref:System.Threading.EventWaitHandle> odvozen a při signalizaci automaticky resetuje do nesignalizovaného stavu po uvolnění jednoho čekajícího vlákna.
+- <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>, který je <xref:System.Threading.EventWaitHandle> odvozen a při signalizaci zůstává v <xref:System.Threading.EventWaitHandle.Reset%2A> signalizovaném stavu, dokud není metoda volána.
 
-V .NET Framework, protože <xref:System.Threading.WaitHandle> jsou odvozeny z <xref:System.MarshalByRefObject?displayProperty=nameWithType>, lze tyto typy použít k synchronizaci aktivit vláken napříč hranicemi aplikační domény.
+V rozhraní .NET <xref:System.Threading.WaitHandle> Framework, <xref:System.MarshalByRefObject?displayProperty=nameWithType>protože je odvozen od , tyto typy lze použít k synchronizaci aktivit podprocesů přes hranice domény aplikace.
 
-V .NET Framework a .NET Core mohou některé z těchto typů představovat pojmenované popisovače synchronizace systému, které jsou viditelné v celém operačním systému a lze je použít pro synchronizaci mezi procesy:
+V rozhraní .NET Framework a .NET Core mohou některé z těchto typů představovat popisovače synchronizace pojmenovaného systému, které jsou viditelné v celém operačním systému a lze je použít pro meziprocesovou synchronizaci:
 
-- <xref:System.Threading.Mutex> (.NET Framework a .NET Core),
-- <xref:System.Threading.Semaphore> (.NET Framework a .NET Core ve Windows),
-- <xref:System.Threading.EventWaitHandle> (.NET Framework a .NET Core ve Windows).
+- <xref:System.Threading.Mutex>(.NET Framework a .NET Core),
+- <xref:System.Threading.Semaphore>(Rozhraní .NET Framework a .NET Core v systému Windows),
+- <xref:System.Threading.EventWaitHandle>(.NET Framework a .NET Core v systému Windows).
 
-Další informace najdete v referenčních informacích k rozhraní <xref:System.Threading.WaitHandle> API.
+Další informace naleznete <xref:System.Threading.WaitHandle> v odkazu rozhraní API.
 
-Odlehčené typy synchronizace nespoléhají na základní obslužné rutiny operačního systému a obvykle poskytují lepší výkon. Nelze je však použít pro synchronizaci mezi procesy. Tyto typy použijte pro synchronizaci vláken v rámci jedné aplikace.
+Zjednodušené typy synchronizace nespoléhají na základní popisovače operačního systému a obvykle poskytují lepší výkon. Nelze je však použít pro synchronizaci mezi procesy. Tyto typy použijte pro synchronizaci vláken v rámci jedné aplikace.
 
-Některé z těchto typů jsou alternativy k typům odvozeným od <xref:System.Threading.WaitHandle>. Například <xref:System.Threading.SemaphoreSlim> je zjednodušenou alternativou pro <xref:System.Threading.Semaphore>.
+Některé z těchto typů jsou alternativy <xref:System.Threading.WaitHandle>k typům odvozeným od . Například <xref:System.Threading.SemaphoreSlim> je lehká <xref:System.Threading.Semaphore>alternativa k .
 
 ## <a name="synchronization-of-access-to-a-shared-resource"></a>Synchronizace přístupu ke sdílenému prostředku
 
-.NET poskytuje řadu synchronizačních primitiv pro řízení přístupu ke sdílenému prostředku více vlákny.
+Rozhraní .NET poskytuje řadu synchronizačních primitiv pro řízení přístupu ke sdílenému prostředku více vlákny.
 
 ### <a name="monitor-class"></a>Monitor – třída
 
-Třída <xref:System.Threading.Monitor?displayProperty=nameWithType> uděluje vzájemně exkluzivní přístup ke sdílenému prostředku získáním nebo uvolněním zámku objektu, který identifikuje prostředek. I když je držen zámek, vlákno, které obsahuje zámek, může znovu načíst a uvolnit zámek. Jakékoli jiné vlákno zablokovalo získání zámku a <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> metoda počká, dokud se zámek neuvolní. Metoda <xref:System.Threading.Monitor.Enter%2A> získá uvolněný zámek. Pomocí metody <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> lze také určit dobu, během které se vlákno pokusí získat zámek. Vzhledem k tomu, že třída <xref:System.Threading.Monitor> má spřažení vlákna, vlákno, které získalo zámek, musí uvolnit zámek voláním metody <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType>.
+Třída <xref:System.Threading.Monitor?displayProperty=nameWithType> uděluje vzájemně vylučující přístup ke sdílenému prostředku získáním nebo uvolněním zámku na objekt, který identifikuje prostředek. Zatímco zámek je držen, podproces, který drží zámek můžete znovu získat a uvolnit zámek. Jakékoli jiné vlákno je blokován o <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> získání zámku a metoda čeká, dokud zámek je uvolněna. Metoda <xref:System.Threading.Monitor.Enter%2A> získá uvolněný zámek. Metodu <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> můžete také použít k určení doby, po kterou se vlákno pokusí získat zámek. Vzhledem <xref:System.Threading.Monitor> k tomu, že třída má spřažení podprocesů, <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> podproces, který získal zámek musí uvolnit zámek voláním metody.
 
-Můžete koordinovat interakci vláken, která získávají zámek na stejný objekt pomocí metod <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.Pulse%2A?displayProperty=nameWithType>a <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType>.
+Můžete koordinovat interakci podprocesů, které získávají zámek na <xref:System.Threading.Monitor.Wait%2A?displayProperty=nameWithType>stejný <xref:System.Threading.Monitor.Pulse%2A?displayProperty=nameWithType>objekt <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> pomocí , a metody.
 
-Další informace najdete v referenčních informacích k rozhraní <xref:System.Threading.Monitor> API.
+Další informace naleznete <xref:System.Threading.Monitor> v odkazu rozhraní API.
 
 > [!NOTE]
-> Použijte příkaz [Lock](../../csharp/language-reference/keywords/lock-statement.md) v C# a příkaz [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) v Visual Basic pro synchronizaci přístupu ke sdílenému prostředku místo přímého použití třídy <xref:System.Threading.Monitor>. Tyto příkazy jsou implementovány pomocí metod <xref:System.Threading.Monitor.Enter%2A> a <xref:System.Threading.Monitor.Exit%2A> a `try…finally` bloku, aby bylo zajištěno, že se získaný zámek vždy uvolňuje.
+> Použijte příkaz [lock](../../csharp/language-reference/keywords/lock-statement.md) v jazyce C# a příkaz [SyncLock](../../visual-basic/language-reference/statements/synclock-statement.md) v jazyce <xref:System.Threading.Monitor> Visual Basic k synchronizaci přístupu ke sdílenému prostředku namísto přímého použití třídy. Tyto příkazy jsou <xref:System.Threading.Monitor.Enter%2A> implementovány pomocí metody a <xref:System.Threading.Monitor.Exit%2A> `try…finally` blok, aby bylo zajištěno, že získané zámek je vždy uvolněna.
 
 ### <a name="mutex-class"></a>Mutex – třída
 
-Třída <xref:System.Threading.Mutex?displayProperty=nameWithType>, jako je <xref:System.Threading.Monitor>, uděluje exkluzivní přístup ke sdílenému prostředku. Použijte jedno z přetížení metod [mutex. WaitOne](<xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>) pro vyžádání vlastnictví mutexu. Stejně jako <xref:System.Threading.Monitor>, <xref:System.Threading.Mutex> má spřažení vlákna a vlákno, které získalo mutex, je musí uvolnit voláním metody <xref:System.Threading.Mutex.ReleaseMutex%2A?displayProperty=nameWithType>.
+Třída, <xref:System.Threading.Mutex?displayProperty=nameWithType> jako <xref:System.Threading.Monitor>je , uděluje výhradní přístup ke sdílenému prostředku. Použijte jeden z přetížení metody [Mutex.WaitOne](<xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>) požádat o vlastnictví mutex. Stejně jako <xref:System.Threading.Monitor>, <xref:System.Threading.Mutex> má spřažení podprocesů a vlákno, <xref:System.Threading.Mutex.ReleaseMutex%2A?displayProperty=nameWithType> které získalo mutex musí uvolnit voláním metody.
 
-Na rozdíl od <xref:System.Threading.Monitor>lze třídu <xref:System.Threading.Mutex> použít pro synchronizaci mezi procesy. K tomu použijte pojmenovaný mutex, který je viditelný v celém operačním systému. Chcete-li vytvořit pojmenovanou instanci mutex, použijte [konstruktor Mutex](<xref:System.Threading.Mutex.%23ctor%2A>) , který určuje název. Můžete také volat metodu <xref:System.Threading.Mutex.OpenExisting%2A?displayProperty=nameWithType> pro otevření existujícího objektu mutex s názvem systému.
+Na <xref:System.Threading.Monitor>rozdíl <xref:System.Threading.Mutex> od , třídy lze použít pro synchronizaci mezi procesy. Chcete-li to provést, použijte pojmenovaný objekt mutex, který je viditelný v celém operačním systému. Chcete-li vytvořit pojmenovanou instanci mutex, použijte [konstruktor Mutex,](<xref:System.Threading.Mutex.%23ctor%2A>) který určuje název. Můžete také volat <xref:System.Threading.Mutex.OpenExisting%2A?displayProperty=nameWithType> metodu otevřít existující pojmenovaný systém mutex.
   
-Další informace najdete v článku věnovaném [mutexům](mutexes.md) a v referenčních informacích k rozhraní <xref:System.Threading.Mutex> API.
+Další informace naleznete v článku [Mutexes](mutexes.md) a odkaz na <xref:System.Threading.Mutex> rozhraní API.
 
-### <a name="spinlock-structure"></a>Struktura struktuře SpinLock
+### <a name="spinlock-structure"></a>Struktura SpinLock
 
-Struktura <xref:System.Threading.SpinLock?displayProperty=nameWithType>, jako je <xref:System.Threading.Monitor>, uděluje exkluzivní přístup ke sdílenému prostředku na základě dostupnosti zámku. Když se <xref:System.Threading.SpinLock> pokusí získat zámek, který není k dispozici, čeká ve smyčce a opakovaně kontroluje, dokud zámek nebude k dispozici.
+Struktura, <xref:System.Threading.SpinLock?displayProperty=nameWithType> jako <xref:System.Threading.Monitor>je , uděluje výhradní přístup ke sdílenému prostředku na základě dostupnosti zámku. Při <xref:System.Threading.SpinLock> pokusech o získání zámku, který není k dispozici, čeká ve smyčce, opakovaně kontroluje, dokud zámek k dispozici.
 
-Další informace o výhodách a nevýhodách použití zámku získáte v článku o [struktuře SpinLock](spinlock.md) a v referenčních informacích k rozhraní API <xref:System.Threading.SpinLock>.
+Další informace o výhodách a nevýhodách použití spin lock, naleznete <xref:System.Threading.SpinLock> v článku [SpinLock](spinlock.md) a odkaz na rozhraní API.
 
-### <a name="readerwriterlockslim-class"></a>ReaderWriterLockSlim – třída
+### <a name="readerwriterlockslim-class"></a>Třída ReaderWriterLockSlim
 
-Třída <xref:System.Threading.ReaderWriterLockSlim?displayProperty=nameWithType> uděluje exkluzivní přístup ke sdílenému prostředku pro zápis a umožňuje více vláknům přistupovat k prostředku současně pro čtení. Můžete chtít použít <xref:System.Threading.ReaderWriterLockSlim> k synchronizaci přístupu ke sdílené datové struktuře, která podporuje operace čtení bezpečné pro přístup z více vláken, ale vyžaduje výhradní přístup k provedení operace zápisu. Když vlákno požaduje výhradní přístup (například voláním metody <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A?displayProperty=nameWithType>), pak další požadavky na čtečku a zapisovač, dokud všichni stávající čtenáři neukončí zámek, a zapisovač zadal a ukončil zámek.
+Třída <xref:System.Threading.ReaderWriterLockSlim?displayProperty=nameWithType> uděluje výhradní přístup ke sdílenému prostředku pro zápis a umožňuje více vláken pro přístup k prostředku současně pro čtení. Můžete chtít použít <xref:System.Threading.ReaderWriterLockSlim> k synchronizaci přístupu ke sdílené datové struktuře, která podporuje operace čtení bezpečné pro přístup z více vláken, ale vyžaduje výhradní přístup k provedení operace zápisu. Když vlákno požaduje výhradní přístup (například <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A?displayProperty=nameWithType> voláním metody), následné požadavky pro čtenáře a zapisovatele blokují, dokud všechny existující čtenáři neukončí zámek a zapisovatel nezadal a neukončil zámek.
   
-Další informace najdete v referenčních informacích k rozhraní <xref:System.Threading.ReaderWriterLockSlim> API.
+Další informace naleznete <xref:System.Threading.ReaderWriterLockSlim> v odkazu rozhraní API.
 
-### <a name="semaphore-and-semaphoreslim-classes"></a>Semafor a třídy SemaphoreSlim
+### <a name="semaphore-and-semaphoreslim-classes"></a>Třídy Semafor a SemaforSlim
 
-Třídy <xref:System.Threading.Semaphore?displayProperty=nameWithType> a <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> omezují počet vláken, která mají souběžný přístup ke sdílenému prostředku nebo fondu prostředků. Další vlákna, která vyžádají prostředek, počkejte, dokud jakékoli vlákno neuvolní semafor. Vzhledem k tomu, že semafor nemá spřažení vláken, vlákno může získat semafor a další ho může uvolnit.
+<xref:System.Threading.Semaphore?displayProperty=nameWithType> Třídy <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> a omezit počet podprocesů, které mohou přistupovat ke sdílenému prostředku nebo fondu prostředků současně. Další vlákna, která požadují prostředek, počkejte, dokud žádné vlákno neuvolní semafor. Vzhledem k tomu, že semafor nemá spřažení vláken, vlákno může získat semafor a jiný ho může uvolnit.
 
-<xref:System.Threading.SemaphoreSlim> je odlehčená alternativa k <xref:System.Threading.Semaphore> a lze ji použít pouze pro synchronizaci v rámci jedné hranice procesu.
+<xref:System.Threading.SemaphoreSlim>je zjednodušenou <xref:System.Threading.Semaphore> alternativou k a lze ji použít pouze pro synchronizaci v rámci jedné hranice procesu.
 
-Ve Windows můžete použít <xref:System.Threading.Semaphore> pro synchronizaci mezi procesy. K tomu je třeba vytvořit instanci <xref:System.Threading.Semaphore>, která představuje pojmenovaný systémový semafor pomocí jednoho z [konstruktorů semaforu](<xref:System.Threading.Semaphore.%23ctor%2A>) , který určuje název nebo metodu <xref:System.Threading.Semaphore.OpenExisting%2A?displayProperty=nameWithType>. <xref:System.Threading.SemaphoreSlim> nepodporuje pojmenované systémové semafory.
+V systému Windows <xref:System.Threading.Semaphore> můžete použít pro synchronizaci mezi procesy. Chcete-li to <xref:System.Threading.Semaphore> provést, vytvořte instanci, která představuje pojmenovaný systémový semafor pomocí jednoho <xref:System.Threading.Semaphore.OpenExisting%2A?displayProperty=nameWithType> z [konstruktorů Semafor,](<xref:System.Threading.Semaphore.%23ctor%2A>) který určuje název nebo metodu. <xref:System.Threading.SemaphoreSlim>nepodporuje pojmenované systémové semafory.
 
-Další informace najdete v článku [semafor a SemaphoreSlim](semaphore-and-semaphoreslim.md) a referenční informace k rozhraní API pro <xref:System.Threading.Semaphore> nebo <xref:System.Threading.SemaphoreSlim>.
+Další informace naleznete v článku [Semafor a SemaphoreSlim](semaphore-and-semaphoreslim.md) a <xref:System.Threading.Semaphore> odkaz na rozhraní API nebo. <xref:System.Threading.SemaphoreSlim>
 
-## <a name="thread-interaction-or-signaling"></a>Interakce vlákna nebo signalizace
+## <a name="thread-interaction-or-signaling"></a>Interakce závitu nebo signalizace
 
-Interakce vlákna (nebo signalizace vlákna) znamená, že vlákno musí čekat na oznámení nebo signál, z jednoho nebo více vláken, aby bylo možné pokračovat. Například pokud vlákno A zavolá metodu <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> vlákna B, vlákno A je blokováno, dokud není vlákno B dokončeno. Prvky synchronizace popsané v předchozí části poskytují jiný mechanismus pro signalizaci: uvolněním zámku vlákno upozorní jiné vlákno, že může pokračovat získáním zámku.
+Interakce vlákna (nebo signalizace vlákna) znamená, že vlákno musí čekat na oznámení nebo signál z jednoho nebo více vláken, aby bylo možné pokračovat. Například pokud vlákno A <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> volá metodu vlákna B, vlákno A je blokován, dokud vlákno B nedokončí. Synchronizační primitiva popsaná v předchozí části poskytují jiný mechanismus pro signalizaci: uvolněním zámku vlákno upozorní jiné vlákno, které může pokračovat získáním zámku.
 
-Tato část popisuje další konstrukce signalizace poskytované rozhraním .NET.
+Tato část popisuje další signalizační konstrukce poskytované rozhraním .NET.
 
-### <a name="eventwaithandle-autoresetevent-manualresetevent-and-manualreseteventslim-classes"></a>Třídy EventWaitHandle, AutoResetEvent, ManualResetEvent a ManualResetEventSlim
+### <a name="eventwaithandle-autoresetevent-manualresetevent-and-manualreseteventslim-classes"></a>Třída EventWaitHandle, AutoResetEvent, ManualResetEvent a ManualResetEventSlim
 
-Třída <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType> představuje událost synchronizace vlákna.
+Třída <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType> představuje událost synchronizace vláken.
 
-Událost synchronizace může být buď v nesignalizacém, nebo ve stavu signalizace. Při nesignalizaci stavu události je vlákno, které volá přetížení události <xref:System.Threading.WaitHandle.WaitOne%2A?>, blokováno, dokud událost není signalizována. Metoda <xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType> nastaví stav události, která má být signalizována.
+Událost synchronizace může být v nesignalizovaném nebo signalizovaném stavu. Pokud je stav události nesignalizován, vlákno, které volá <xref:System.Threading.WaitHandle.WaitOne%2A?> přetížení události, je blokováno, dokud není signalizována událost. Metoda <xref:System.Threading.EventWaitHandle.Set%2A?displayProperty=nameWithType> nastaví stav události signalizované.
 
-Chování <xref:System.Threading.EventWaitHandle>, které bylo signalizaci, závisí na režimu obnovení:
+Chování signalizovaného objektu <xref:System.Threading.EventWaitHandle> závisí na jeho režimu resetování:
 
-- <xref:System.Threading.EventWaitHandle> vytvořené pomocí příznaku <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> se automaticky obnoví po uvolnění jediného čekajícího vlákna. Vypadá to jako Turnstile, který umožňuje pouze jedno vlákno přes pokaždé, když je signál. Třída <xref:System.Threading.AutoResetEvent?displayProperty=nameWithType>, která je odvozena z <xref:System.Threading.EventWaitHandle>, představuje toto chování.
-- <xref:System.Threading.EventWaitHandle> vytvořené pomocí příznaku <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> zůstává signalizována, dokud není volána jeho metoda <xref:System.Threading.EventWaitHandle.Reset%2A>. Je to jako brána, která je zavřená, dokud není signalizována, a pak zůstane otevřená, dokud ji někdo neuzavře. Třída <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>, která je odvozena z <xref:System.Threading.EventWaitHandle>, představuje toto chování. Třída <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> je zjednodušenou alternativou pro <xref:System.Threading.ManualResetEvent>.
+- Vytvořené <xref:System.Threading.EventWaitHandle> s <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> příznakem resetuje automaticky po uvolnění jednoho čekajícího vlákna. Je to jako turniket, který umožňuje pouze jedno vlákno, když je signalizováno. Třída, <xref:System.Threading.AutoResetEvent?displayProperty=nameWithType> která je <xref:System.Threading.EventWaitHandle>odvozena od , představuje toto chování.
+- Vytvořené <xref:System.Threading.EventWaitHandle> s <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> příznakem zůstane signalizováno, dokud není volána jeho <xref:System.Threading.EventWaitHandle.Reset%2A> metoda. Je to jako brána, která je zavřená, dokud není signalizována, a pak zůstane otevřená, dokud ji někdo nezavře. Třída, <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> která je <xref:System.Threading.EventWaitHandle>odvozena od , představuje toto chování. Třída <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> je lehká <xref:System.Threading.ManualResetEvent>alternativa k .
 
-Ve Windows můžete použít <xref:System.Threading.EventWaitHandle> pro synchronizaci mezi procesy. Chcete-li to provést, vytvořte instanci <xref:System.Threading.EventWaitHandle>, která představuje pojmenovanou událost synchronizace systému pomocí jednoho z [konstruktorů EventWaitHandle](<xref:System.Threading.EventWaitHandle.%23ctor%2A>) , které určují název nebo metodu <xref:System.Threading.EventWaitHandle.OpenExisting%2A?displayProperty=nameWithType>.
+V systému Windows <xref:System.Threading.EventWaitHandle> můžete použít pro synchronizaci mezi procesy. Chcete-li to <xref:System.Threading.EventWaitHandle> provést, vytvořte instanci, která představuje událost synchronizace pojmenovaného systému pomocí <xref:System.Threading.EventWaitHandle.OpenExisting%2A?displayProperty=nameWithType> jednoho z [konstruktorů EventWaitHandle,](<xref:System.Threading.EventWaitHandle.%23ctor%2A>) který určuje název nebo metodu.
 
-Další informace najdete v článku [EventWaitHandle](eventwaithandle.md) . Referenční informace k rozhraní API naleznete v tématu <xref:System.Threading.EventWaitHandle>, <xref:System.Threading.AutoResetEvent>, <xref:System.Threading.ManualResetEvent>a <xref:System.Threading.ManualResetEventSlim>.
+Další informace naleznete v článku [EventWaitHandle.](eventwaithandle.md) Odkaz na rozhraní <xref:System.Threading.EventWaitHandle>API <xref:System.Threading.AutoResetEvent> <xref:System.Threading.ManualResetEvent>naleznete <xref:System.Threading.ManualResetEventSlim>v tématu , , a .
 
-### <a name="countdownevent-class"></a>CountdownEvent – třída
+### <a name="countdownevent-class"></a>Třída CountdownEvent
 
-Třída <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> představuje událost, která se nastaví, když je její počet nula. I když je <xref:System.Threading.CountdownEvent.CurrentCount?displayProperty=nameWithType> větší než nula, vlákno, které volá <xref:System.Threading.CountdownEvent.Wait%2A?displayProperty=nameWithType>, je blokované. Zavolejte <xref:System.Threading.CountdownEvent.Signal%2A?displayProperty=nameWithType> pro snížení počtu událostí.
+Třída <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> představuje událost, která se stane nastavena, když je její počet nula. Zatímco <xref:System.Threading.CountdownEvent.CurrentCount?displayProperty=nameWithType> je větší než nula, vlákno, které volá <xref:System.Threading.CountdownEvent.Wait%2A?displayProperty=nameWithType> je blokován. Volání <xref:System.Threading.CountdownEvent.Signal%2A?displayProperty=nameWithType> snížení počtu událostí.
 
-Na rozdíl od <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim>, které lze použít k odblokování více vláken pomocí signálu z jednoho vlákna, můžete použít <xref:System.Threading.CountdownEvent> k odblokování jednoho nebo více podprocesů s signály z více vláken.
+Na rozdíl <xref:System.Threading.ManualResetEvent> <xref:System.Threading.ManualResetEventSlim>od nebo , které můžete použít k odblokování více vláken <xref:System.Threading.CountdownEvent> se signálem z jednoho vlákna, můžete použít k odblokování jednoho nebo více vláken se signály z více vláken.
 
-Další informace najdete v článku [CountdownEvent](countdownevent.md) a v referenčních informacích k rozhraní API <xref:System.Threading.CountdownEvent>.
+Další informace naleznete v článku [CountdownEvent](countdownevent.md) a odkaz na <xref:System.Threading.CountdownEvent> rozhraní API.
 
-### <a name="barrier-class"></a>Bariéra – třída
+### <a name="barrier-class"></a>Bariérová třída
 
-Třída <xref:System.Threading.Barrier?displayProperty=nameWithType> představuje bariéru spuštění vlákna. Vlákno, které volá metodu <xref:System.Threading.Barrier.SignalAndWait%2A?displayProperty=nameWithType>, signalizuje, že dosáhla bariéry a čeká, dokud ostatní vlákna účastníka dosáhnou bariéry. Když všechna vlákna účastníka dosáhnou bariéry, budou pokračovat a bariéra se resetuje a dá se použít znovu.
+Třída <xref:System.Threading.Barrier?displayProperty=nameWithType> představuje bariéru spuštění podprocesu. Podproces, který <xref:System.Threading.Barrier.SignalAndWait%2A?displayProperty=nameWithType> volá volání metody signály, že dosáhl bariéry a čeká, dokud ostatní účastník podprocesy dosáhnout bariéry. Když všechny účastníky závity dosáhnou bariéry, pokračují a bariéra se resetuje a může být znovu použita.
 
-Můžete použít <xref:System.Threading.Barrier> v případě, že jeden nebo více vláken vyžaduje výsledky jiných vláken před pokračováním do další fáze výpočtu.
+Můžete použít, <xref:System.Threading.Barrier> když jeden nebo více vláken vyžadují výsledky jiných vláken před pokračováním do další fáze výpočtu.
 
-Další informace najdete v článku o [bariérě](barrier.md) a v referenčních informacích k rozhraní <xref:System.Threading.Barrier> API.
+Další informace naleznete v článku <xref:System.Threading.Barrier> [bariéra](barrier.md) a odkaz na rozhraní API.
 
 ## <a name="interlocked-class"></a>Interlocked – třída
 
-Třída <xref:System.Threading.Interlocked?displayProperty=nameWithType> poskytuje statické metody, které provádějí jednoduché atomické operace na proměnné. Tyto atomické operace zahrnují sčítání, zvýšení a snížení, Exchange a podmíněný Exchange, které závisí na porovnání a operace čtení z 64 celočíselné hodnoty.
+Třída <xref:System.Threading.Interlocked?displayProperty=nameWithType> poskytuje statické metody, které provádějí jednoduché atomické operace s proměnnou. Tyto atomické operace zahrnují sčítání, přírůstek a snížení, výměnu a podmíněnou výměnu, která závisí na porovnání, a operace čtení 64bitové celočíselné hodnoty.
 
-Další informace najdete v referenčních informacích k rozhraní <xref:System.Threading.Interlocked> API.
+Další informace naleznete <xref:System.Threading.Interlocked> v odkazu rozhraní API.
 
-## <a name="spinwait-structure"></a>Struktura objektu SpinWait
+## <a name="spinwait-structure"></a>Struktura SpinWait
 
-Struktura <xref:System.Threading.SpinWait?displayProperty=nameWithType> poskytuje podporu pro čekání na číselník. Můžete ji chtít použít, když vlákno musí počkat na signalizaci události nebo podmínku, která má být splněna, ale pokud se očekává, že doba čekání bude menší než čekací doba potřebná při použití popisovače čekání nebo jiným způsobem blokování vlákna. Pomocí <xref:System.Threading.SpinWait>můžete zadat krátkou dobu, kdy se má při čekání čekat, a pak (například čekáním nebo v režimu spánku), a to pouze v případě, že podmínka nebyla v zadaném čase splněna.
+<xref:System.Threading.SpinWait?displayProperty=nameWithType> Struktura poskytuje podporu pro spin-based čekání. Můžete chtít použít, když podproces musí čekat na událost, která má být signalizována nebo podmínka, která má být splněna, ale při skutečné čekací doby se očekává, že bude menší než čekací doba požadovaná pomocí popisovač čekání nebo jinak blokování podprocesu. Pomocí <xref:System.Threading.SpinWait>aplikace můžete zadat krátkou dobu, po kterou se má během čekání otáčet, a potom výtěžnost (například čekáním nebo spánkem) pouze v případě, že podmínka nebyla splněna v zadaném čase.
 
-Další informace najdete v článku [objektu SpinWait](spinwait.md) a v referenčních informacích k rozhraní API <xref:System.Threading.SpinWait>.
+Další informace naleznete v článku [SpinWait](spinwait.md) a odkaz na <xref:System.Threading.SpinWait> rozhraní API.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekce bezpečné pro přístup z více vláken](../collections/thread-safe/index.md)
-- [Dělení objektů a funkcí](threading-objects-and-features.md)
+- [Dělení objektů a funkcí na vlákna](threading-objects-and-features.md)

@@ -1,16 +1,16 @@
 ---
-title: Postup dotazování na duplicitní soubory ve stromu adresářů (LINQ) (C#)
+title: Jak dotazovat duplicitní soubory ve stromu adresářů (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
-ms.openlocfilehash: 7c84dba3e87077077f28bc2e665ea3774cf44d3b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 0578d6c85c7d2e38c840c278c7ad2775467ac741
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347879"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168879"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Postup dotazování na duplicitní soubory ve stromu adresářů (LINQ) (C#)
-Někdy se soubory, které mají stejný název, mohou nacházet ve více než jedné složce. Například v instalační složce sady Visual Studio má několik složek soubor Readme. htm. Tento příklad ukazuje, jak zadat dotaz na tyto duplicitní názvy souborů v zadané kořenové složce. Druhý příklad ukazuje, jak se dotázat na soubory, jejichž velikost a posledního zápisu časy se také shodují.  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Jak dotazovat duplicitní soubory ve stromu adresářů (LINQ) (C#)
+Někdy mohou být soubory se stejným názvem umístěny ve více než jedné složce. Například v instalační složce sady Visual Studio má několik složek soubor readme.htm. Tento příklad ukazuje, jak dotazovat na takové duplicitní názvy souborů pod zadanou kořenovou složku. Druhý příklad ukazuje, jak dotaz ovat na soubory, jejichž velikost a LastWrite časy také shodují.  
   
 ## <a name="example"></a>Příklad  
   
@@ -99,7 +99,7 @@ class QueryDuplicateFileNames
         // A named type is used to enable the query to be  
         // passed to another method. Anonymous types can also be used  
         // for composite keys but cannot be passed across method boundaries  
-        //   
+        //
         var queryDupFiles =  
             from file in fileList  
             group file.FullName.Substring(charsToSkip) by  
@@ -167,12 +167,12 @@ class QueryDuplicateFileNames
 }  
 ```  
   
- První dotaz k určení shody používá jednoduchý klíč. Vyhledá soubory, které mají stejný název, ale jejichž obsah se může lišit. Druhý dotaz používá složený klíč pro porovnání se třemi vlastnostmi objektu <xref:System.IO.FileInfo>. Tento dotaz je mnohem pravděpodobnější najít soubory se stejným názvem a podobným nebo shodným obsahem.  
+ První dotaz používá jednoduchý klíč k určení shody; Vyhledá soubory, které mají stejný název, ale jejichž obsah se může lišit. Druhý dotaz používá složený klíč tak, aby <xref:System.IO.FileInfo> odpovídal třem vlastnostem objektu. Tento dotaz je mnohem pravděpodobnější najít soubory, které mají stejný název a podobný nebo stejný obsah.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to Objects (C#)](./linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)

@@ -1,5 +1,5 @@
 ---
-title: Postup převodu řetězce na číslo – C# programovací Průvodce
+title: Jak převést řetězec na číslo - C# Programovací průvodce
 ms.date: 02/11/2019
 helpviewer_keywords:
 - conversions [C#]
@@ -7,36 +7,36 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: 21732acd65eb4522b19ce84600fd8b333fb8a705
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 54a4562a5cc493fc287bdf2f6bcf9723557f2a05
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711867"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79157036"
 ---
-# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Převod řetězce na číslo (C# Průvodce programováním)
+# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Jak převést řetězec na číslo (C# Programovací průvodce)
 
-Můžete převést [řetězec](../../language-reference/builtin-types/reference-types.md) na číslo voláním metody `Parse` nebo `TryParse`, která se nachází na různých číselných typech (`int`, `long`, `double`atd.), nebo pomocí metod ve třídě <xref:System.Convert?displayProperty=nameWithType>.  
+[Řetězec](../../language-reference/builtin-types/reference-types.md) můžete převést na číslo `Parse` voláním `TryParse` metody nebo nalezené`int`na `long` `double`různých číselných typech ( <xref:System.Convert?displayProperty=nameWithType> , , , atd.) nebo pomocí metod ve třídě.  
   
- Pokud máte řetězec, je poněkud efektivnější a jednoduše zavolejte metodu `TryParse` (například [`int.TryParse("11", out number)`](xref:System.Int32.TryParse%2A)) nebo metodu `Parse` (například [`var number = int.Parse("11")`](xref:System.Int32.Parse%2A)).  Použití metody <xref:System.Convert> je užitečnější pro obecné objekty, které implementují <xref:System.IConvertible>.  
+ Pokud máte řetězec, je o něco efektivnější a `TryParse` jednodušší volat [`int.TryParse("11", out number)`](xref:System.Int32.TryParse%2A)metodu `Parse` (například) [`var number = int.Parse("11")`](xref:System.Int32.Parse%2A)nebo metodu (například).  Použití <xref:System.Convert> metody je užitečnější pro <xref:System.IConvertible>obecné objekty, které implementují .  
   
- Můžete použít metody `Parse` nebo `TryParse` na číselném typu, který řetězec obsahuje, například typ <xref:System.Int32?displayProperty=nameWithType>.  Metoda <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> používá <xref:System.Int32.Parse%2A> interně.  Metoda `Parse` vrátí převedený počet; Metoda `TryParse` vrací hodnotu <xref:System.Boolean>, která označuje, zda byl převod úspěšný, a vrátí převedený počet v [parametru`out`](../../language-reference/keywords/out.md). Pokud řetězec nemá platný formát, `Parse` vyvolá výjimku, zatímco `TryParse` vrátí `false`. Při volání metody `Parse` byste měli vždy použít zpracování výjimek k zachycení <xref:System.FormatException> v případě, že operace analýzy neproběhne úspěšně.  
+ Můžete použít `Parse` `TryParse` nebo metody na číselný typ, který <xref:System.Int32?displayProperty=nameWithType> očekáváte řetězec obsahuje, jako je například typ.  Metoda <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> používá <xref:System.Int32.Parse%2A> interně.  Metoda `Parse` vrátí převedené číslo; metoda `TryParse` vrátí <xref:System.Boolean> hodnotu, která označuje, zda byl převod úspěšný, a vrátí převedené číslo v [ `out` parametru](../../language-reference/keywords/out.md). Pokud řetězec není v platném `Parse` formátu, vyvolá výjimku, vzhledem k tomu, `TryParse` že vrátí `false`. Při volání `Parse` metody, měli byste vždy použít <xref:System.FormatException> zpracování výjimek zachytit v případě, že operace analýzy selže.  
   
-## <a name="calling-the-parse-and-tryparse-methods"></a>Volání metod Parse a TryParse
+## <a name="calling-the-parse-and-tryparse-methods"></a>Volání Metody Parse a TryParse
 
-Metody `Parse` a `TryParse` ignorují prázdné znaky na začátku a na konci řetězce, ale všechny ostatní znaky musí být znaky, které tvoří příslušný číselný typ (`int`, `long`, `ulong`, `float`, `decimal`atd.).  Jakékoli prázdné místo v řetězci, které tvoří číslo, způsobí chybu.  Můžete například použít `decimal.TryParse` k analýze "10", "10,3" nebo "10", ale tuto metodu nelze použít k analýze 10 z "10X", "1 0" (Všimněte si vloženého prostoru), "10 .3" (poznámení s vloženým prostorem), "10E1" (`float.TryParse` funguje zde) a tak dále. Kromě toho řetězec, jehož hodnota je `null` nebo <xref:System.String.Empty?displayProperty=nameWithType>, se nepodařilo úspěšně analyzovat. Před pokusem o jeho analýzu můžete vyhledat voláním metody <xref:System.String.IsNullOrEmpty%2A?displayProperty=nameWithType> a zadat hodnotu null nebo prázdný řetězec. 
+Metody `Parse` `TryParse` a ignorují prázdné znaky na začátku a na konci řetězce, ale všechny ostatní`int` `long`znaky `ulong` `float`musí `decimal`být znaky, které tvoří příslušný číselný typ ( , , , , atd.).  Jakékoli prázdné místo v řetězci, který tvoří číslo způsobí chybu.  Můžete například použít `decimal.TryParse` k analýzě "10", "10.3" nebo " 10 ", ale tuto metodu nelze použít k analyzovat 10 z "10X", "1 0" (všimněte si vložené`float.TryParse` mezery), "10.3" (všimněte si vložené mezery), "10e1" (funguje zde) a tak dále. Kromě toho řetězec, jehož hodnota je `null` nebo <xref:System.String.Empty?displayProperty=nameWithType> se nezdaří analyzovat úspěšně. Můžete zkontrolovat nula nebo prázdný řetězec před pokusem o <xref:System.String.IsNullOrEmpty%2A?displayProperty=nameWithType> jeho analýzu voláním metody.
 
-Následující příklad ukazuje úspěšné i neúspěšné volání `Parse` a `TryParse`.  
+Následující příklad ukazuje úspěšné i neúspěšné `Parse` `TryParse`volání a .  
   
 [!code-csharp[Parse and TryParse](~/samples/snippets/csharp/programming-guide/string-to-number/parse-tryparse/program.cs)]  
 
-Následující příklad ilustruje jeden z přístupů k analýze řetězce, který by měl obsahovat úvodní číselné znaky (včetně hexadecimálních znaků) a koncových znaků, které nejsou číselné. Před voláním metody <xref:System.Int32.TryParse%2A> přiřadí platné znaky od začátku řetězce k novému řetězci. Vzhledem k tomu, že řetězce, které mají být analyzovány, obsahují malý počet znaků, příklad volá metodu <xref:System.String.Concat%2A?displayProperty=nameWithType> pro přiřazení platných znaků novému řetězci. Pro větší řetězec lze místo toho použít třídu <xref:System.Text.StringBuilder>. 
+Následující příklad ilustruje jeden přístup k analýzě řetězec, který se očekává, že bude obsahovat úvodní číselné znaky (včetně šestnáctkových znaků) a koncové nečíselné znaky. Přiřadí platné znaky od začátku řetězce k novému <xref:System.Int32.TryParse%2A> řetězci před voláním metody. Vzhledem k tomu, že řetězce, které mají být analyzovány, obsahují malý počet znaků, příklad volá metodu <xref:System.String.Concat%2A?displayProperty=nameWithType> pro přiřazení platných znaků k novému řetězci. Pro větší řetězec <xref:System.Text.StringBuilder> třídy lze použít místo.
   
 [!code-csharp[Removing invalid characters](~/samples/snippets/csharp/programming-guide/string-to-number/parse-tryparse2/program.cs)]  
 
 ## <a name="calling-the-convert-methods"></a>Volání metod Convert
 
-V následující tabulce jsou uvedeny některé z metod <xref:System.Convert> třídy, které lze použít k převodu řetězce na číslo.  
+V následující tabulce jsou uvedeny <xref:System.Convert> některé metody z třídy, které můžete použít k převodu řetězce na číslo.  
   
 |Číselný typ|Metoda|  
 |------------------|------------|  
@@ -50,12 +50,12 @@ V následující tabulce jsou uvedeny některé z metod <xref:System.Convert> t�
 |`uint`|<xref:System.Convert.ToUInt32%28System.String%29>|  
 |`ulong`|<xref:System.Convert.ToUInt64%28System.String%29>|  
   
- Následující příklad volá metodu <xref:System.Convert.ToInt32%28System.String%29?displayProperty=nameWithType> pro převod vstupního řetězce na typ [int](../../language-reference/builtin-types/integral-numeric-types.md). Příklad zachytí dvě nejběžnější výjimky, které mohou být vyvolány touto metodou, <xref:System.FormatException> a <xref:System.OverflowException>. Pokud je možné výsledné číslo zvýšit bez překročení <xref:System.Int32.MaxValue?displayProperty=nameWithType>, příklad přidá 1 k výsledku a zobrazí výstup.  
+ Následující příklad volá <xref:System.Convert.ToInt32%28System.String%29?displayProperty=nameWithType> metodu převést vstupní řetězec [na int](../../language-reference/builtin-types/integral-numeric-types.md). Příklad zachytí dvě nejběžnější výjimky, které mohou být <xref:System.FormatException> <xref:System.OverflowException>vyvolány touto metodou a . Pokud výsledné číslo může být zvýšení bez <xref:System.Int32.MaxValue?displayProperty=nameWithType>překročení , příklad přidá 1 k výsledku a zobrazí výstup.  
   
 [!code-csharp[Parsing with Convert methods](~/samples/snippets/csharp/programming-guide/string-to-number/convert/program.cs)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Typy](./index.md)
-- [Jak zjistit, zda řetězec představuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
-- [Ukázka: nástroj formátování WinForms pro .NET CoreC#()](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
+- [Jak určit, jestli řetězec představuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Ukázka: Nástroj pro formátování WinForms .NET (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)

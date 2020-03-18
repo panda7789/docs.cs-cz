@@ -6,10 +6,10 @@ helpviewer_keywords:
 - .NET Framework development
 ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
 ms.openlocfilehash: 494f3305f225e0130df30433f3fa0d06ca218068
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73122552"
 ---
 # <a name="net-framework-application-essentials"></a>Základy vytváření aplikací pomocí rozhraní .NET Framework
@@ -25,17 +25,17 @@ Tato část dokumentace rozhraní .NET Framework obsahuje informace o základn�
  [Obecné typy](../../docs/standard/generics/index.md)  
  Popisuje funkci obecných typů, včetně obecných kolekcí, delegátů a rozhraní poskytovaných rozhraním .NET Framework. Obsahuje odkazy na dokumentaci funkcí jazyka C#, Visual Basic a Visual C++ a na podpůrné technologie, jako je například reflexe.  
   
- [Numerics](../../docs/standard/numerics.md)  
- Popisuje číselné typy v .NET Framework.  
+ [Číselné číslo](../../docs/standard/numerics.md)  
+ Popisuje číselné typy v rozhraní .NET Framework.  
   
- [Události](../../docs/standard/events/index.md)  
+ [Akce](../../docs/standard/events/index.md)  
  Obsahuje přehled modelu události v rozhraní .NET Framework.  
   
  [Výjimky](../../docs/standard/exceptions/index.md)  
  Popisuje zpracování chyb, které poskytuje rozhraní .NET Framework, a základy zpracování výjimek.  
   
- [Vstup/výstup souborů a streamů](../../docs/standard/io/index.md)  
- Vysvětluje, jak můžete provádět synchronní a asynchronní přístup k souborům a datovým proudům a jak používat izolované úložiště.  
+ [I/O souborů a proudů](../../docs/standard/io/index.md)  
+ Vysvětluje, jak můžete provádět synchronní a asynchronní přístup k souborům a datovým proudům a jak používat do izolovaného úložiště.  
   
  [Data, časy a časová pásma](../../docs/standard/datetime/index.md)  
  Popisuje způsob práce s časovými pásmy a jejich převody v aplikacích, které časová pásma zohledňují.  
@@ -46,13 +46,13 @@ Tato část dokumentace rozhraní .NET Framework obsahuje informace o základn�
  [Serializace](../../docs/standard/serialization/index.md)  
  Popisuje proces převodu stavu objektu do podoby, kterou lze zachovat nebo přenášet.  
   
- [Prostředky v desktopových aplikacích](../../docs/framework/resources/index.md)  
+ [Prostředky v aplikacích klasické pracovní plochy](../../docs/framework/resources/index.md)  
  Popisuje podporu rozhraní .NET Framework pro vytváření a ukládání prostředků. Tato část popisuje také podporu pro lokalizované prostředky a model prostředků satelitních sestavení pro vytváření balíčků a nasazení těchto lokalizovaných prostředků.  
   
  [Globalizace a lokalizace](../../docs/standard/globalization-localization/index.md)  
  Poskytuje informace, které vám pomohou při navrhování a vývoji aplikací, které lze ihned nasadit kdekoli na světě.  
   
- [Přístupnost](../../docs/framework/ui-automation/index.md) Poskytuje informace o automatizaci uživatelského rozhraní společnosti Microsoft, což je rozhraní usnadnění, které řeší potřeby produktů pro usnadnění a automatizované testovací architektury tím, že poskytuje programový přístup k informacím o uživatelském rozhraní (UI).  
+ [Usnadnění přístupu](../../docs/framework/ui-automation/index.md) Obsahuje informace o automatizaci uživatelského rozhraní společnosti Microsoft, což je architektura usnadnění, která řeší potřeby produktů asistenčních technologií a automatizovaných testovacích rámců tím, že poskytuje programový přístup k informacím o uživatelském rozhraní.  
   
  [Atributy](../../docs/standard/attributes/index.md)  
  Popisuje způsob používání atributů k přizpůsobení metadat.  

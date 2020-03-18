@@ -1,112 +1,112 @@
 ---
-title: Volba mezi .NET Core a .NET Framework serverových aplikací
-description: Průvodce implementací rozhraní .NET, který byste měli zvážit při vytváření serverové aplikace v .NET.
+title: Možnost volby mezi rozhraním .NET Core a rozhraním .NET Framework pro serverové aplikace
+description: Průvodce, na které implementaci rozhraní .NET byste měli zvážit při vytváření serverové aplikace v rozhraní .NET.
 author: cartermp
 ms.date: 06/19/2018
 ms.openlocfilehash: 0b6bf4c2eb66aa4de497923a0a16b65a955ba6fc
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159972"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
-Existují dvě podporované implementace pro vytváření aplikací na straně serveru pomocí .NET: .NET Framework a .NET Core. Oba sdílejí mnoho stejných komponent a můžete sdílet kód mezi dvěma. Existují však zásadní rozdíly mezi těmito dvěma a volbami, záleží na tom, co chcete provést.  Tento článek poskytuje pokyny k použití jednotlivých.
+Existují dvě podporované implementace pro vytváření aplikací na straně serveru s rozhraním .NET: Rozhraní .NET Framework a .NET Core. Oba sdílejí mnoho stejných součástí a můžete sdílet kód mezi dvěma. Existují však zásadní rozdíly mezi těmito dvěma a vaše volba závisí na tom, co chcete dosáhnout.  Tento článek obsahuje pokyny k použití.
 
-Pro serverovou aplikaci použijte .NET Core v těchto případech:
+Jádro .NET pro serverovou aplikaci použijte v:
 
-- Máte různé požadavky na více platforem.
-- Cílíte na mikroslužby.
-- Používáte kontejnery Docker.
+- Máte potřeby napříč platformami.
+- Zaměřujete se na mikroslužby.
+- Používáte kontejnery Dockeru.
 - Potřebujete vysoce výkonné a škálovatelné systémy.
-- Pro každou aplikaci potřebujete souběžnou verzi rozhraní .NET.
+- Potřebujete souběžné verze rozhraní .NET pro aplikaci.
 
-Pro serverovou aplikaci použijte .NET Framework v těchto případech:
+Rozhraní .NET Framework použijte pro serverovou aplikaci, pokud:
 
-- Vaše aplikace aktuálně používá .NET Framework (doporučení je místo migrace).
-- Vaše aplikace používá knihovny .NET třetích stran nebo balíčky NuGet, které nejsou k dispozici pro .NET Core.
+- Vaše aplikace aktuálně používá rozhraní .NET Framework (doporučení je rozšířit místo migrace).
+- Vaše aplikace používá knihovny .NET třetích stran nebo balíčky NuGet, které nejsou k dispozici pro jádro .NET Core.
 - Vaše aplikace používá technologie .NET, které nejsou k dispozici pro .NET Core.
-- Vaše aplikace používá platformu, která nepodporuje .NET Core. Rozhraní .NET Core podporují Windows, macOS a Linux.
+- Vaše aplikace používá platformu, která nepodporuje .NET Core. Windows, macOS a Linux podporují .NET Core.
 
 ## <a name="when-to-choose-net-core"></a>Kdy zvolit .NET Core
 
-V následujících částech najdete podrobnější vysvětlení výše uvedených důvodů pro výběr .NET Core.
+V následujících částech je uvedeno podrobnější vysvětlení dříve uvedených důvodů pro vychystávání .NET Core.
 
-### <a name="cross-platform-needs"></a>Požadavky na různé platformy
+### <a name="cross-platform-needs"></a>Potřeby napříč platformami
 
-Pokud vaše aplikace (Web/služba) potřebuje běžet na více platformách (Windows, Linux a macOS), použijte .NET Core.
+Pokud vaše aplikace (web/služba) potřebuje spustit na více platformách (Windows, Linux a macOS), použijte .NET Core.
 
-.NET Core podporuje dříve zmíněné operační systémy jako pracovní stanici pro vývoj. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro Windows a macOS. Můžete také použít Visual Studio Code, která běží na macOS, Linux a Windows. Visual Studio Code podporuje rozhraní .NET Core, včetně technologie IntelliSense a ladění. Většina editorů třetích stran, jako např. (Emacs), a VI, fungují s .NET Core. Tyto editory třetích stran získávají IntelliSense editoru pomocí [omnisharp](https://www.omnisharp.net/). Můžete také zabránit jakémukoli editoru kódu a přímo použít [.NET Core CLI](../core/tools/index.md), k dispozici pro všechny podporované platformy.
+.NET Core podporuje dříve uvedené operační systémy jako vývojovou pracovní stanici. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro Windows a macOS. Můžete také použít Visual Studio Code, který běží na macOS, Linux a Windows. Visual Studio Code podporuje .NET Core, včetně IntelliSense a ladění. Většina editorů třetích stran, například Sublime, Emacs a VI, pracuje s rozhraním .NET Core. Tyto editory třetích stran získat editor IntelliSense pomocí [Omnisharp](https://www.omnisharp.net/). Můžete se také vyhnout libovolnému editoru kódu a přímo použít [rozhraní PŘÍKAZOVÉHO PŘÍKAZU .NET Core](../core/tools/index.md), které je k dispozici pro všechny podporované platformy.
 
 ### <a name="microservices-architecture"></a>Architektura mikroslužeb
 
-Architektura mikroslužeb umožňuje kombinovat technologie napříč hranicí služby. Tato kombinace technologie umožňuje postupný podíl rozhraní .NET Core pro nové mikroslužby, které pracují s dalšími mikroslužbami nebo službami. Můžete například kombinovat mikroslužby nebo služby vyvinuté pomocí .NET Framework, Java, Ruby nebo jiných technologií monolitické.
+Architektura mikroslužeb umožňuje kombinaci technologií přes hranice služby. Tato kombinace technologií umožňuje postupné přijetí .NET Core pro nové mikroslužby, které pracují s jinými mikroslužbami nebo službami. Můžete například kombinovat mikroslužby nebo služby vyvinuté pomocí rozhraní .NET Framework, Java, Ruby nebo jiných monolitických technologií.
 
-K dispozici je mnoho platforem infrastruktury. Služba [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) je navržená pro rozsáhlé a komplexní systémy mikroslužeb. [Azure App Service](https://azure.microsoft.com/services/app-service/) je dobrou volbou pro bezstavové mikroslužby. Alternativy mikroslužeb na základě Docker vyhovují jakémukoli druhu přístupu ke mikroslužbám, jak je vysvětleno v části [Containers (kontejnery](#containers) ). Všechny tyto platformy podporují .NET Core a jsou ideální pro hostování vašich mikroslužeb.
+K dispozici je mnoho infrastrukturních platforem. [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) je určen pro velké a složité mikroslužbové systémy. [Azure App Service](https://azure.microsoft.com/services/app-service/) je dobrou volbou pro mikroslužby bez stavů. Alternativy mikroslužeb založené na Dockeru odpovídají jakémukoli přístupu mikroslužeb, jak je vysvětleno v části [Kontejnery.](#containers) Všechny tyto platformy podporují .NET Core a učinit je ideální pro hostování mikroslužeb.
 
-Další informace o architektuře mikroslužeb najdete v tématu [mikroslužby .NET. Architektura pro kontejnerové aplikace .NET](../architecture/microservices/index.md).
+Další informace o architektuře mikroslužeb naleznete v tématu [.NET Microservices. Architektura pro kontejnerizované aplikace .NET](../architecture/microservices/index.md).
 
-### <a name="containers"></a>Containers
+### <a name="containers"></a>Kontejnery
 
-Kontejnery se běžně používají ve spojení s architekturou mikroslužeb. Kontejnery lze také použít k kontejnerizaceí webových aplikací nebo služeb, které sledují model architektury. .NET Framework lze použít v kontejnerech Windows, ale modulární a odlehčená povaha .NET Core umožňuje lepší volbu kontejnerů. Při vytváření a nasazování kontejneru je velikost jeho image mnohem menší s .NET Core než s .NET Framework. Vzhledem k tomu, že se jedná o různé platformy, můžete nasadit serverové aplikace do kontejnerů Docker pro Linux, například.
+Kontejnery se běžně používají ve spojení s architekturou mikroslužeb. Kontejnery lze také kontejnerizovat webové aplikace nebo služby, které postupují podle jakéhokoli vzoru architektury. Rozhraní .NET Framework lze použít v kontejnerech systému Windows, ale modularita a zjednodušená povaha .NET Core je lepší volbou pro kontejnery. Při vytváření a nasazování kontejneru je velikost jeho image mnohem menší s rozhraním .NET Core než u rozhraní .NET Framework. Vzhledem k tomu, že je napříč platformami, můžete například nasadit serverové aplikace do kontejnerů Linux Dockeru.
 
-Kontejnery Docker je možné hostovat ve vlastní infrastruktuře systému Linux nebo Windows nebo v cloudové službě, jako je například [Služba Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/). Služba Azure Kubernetes může spravovat, orchestrovat a škálovat aplikace založené na kontejnerech v cloudu.
+Kontejnery Dockeru můžou být hostované ve vaší vlastní infrastruktuře Linuxu nebo Windows nebo v cloudové službě, jako je [služba Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/). Služba Azure Kubernetes service může spravovat, organizovat a škálovat aplikace založené na kontejnerech v cloudu.
 
-### <a name="a-need-for-high-performance-and-scalable-systems"></a>Potřeba vysoce výkonné a škálovatelné systémy
+### <a name="a-need-for-high-performance-and-scalable-systems"></a>Potřeba vysoce výkonných a škálovatelných systémů
 
-V případě, že váš systém potřebuje nejlepší možný výkon a škálovatelnost, je nejlepší možností rozhraní .NET Core a ASP.NET Core. Vysoce výkonný modul runtime serveru pro Windows Server a Linux přináší .NET a nejvyšší výkonnou webovou architekturu na [TechEmpower srovnávacích testech](https://www.techempower.com/benchmarks/#hw=ph&test=plaintext).
+Když váš systém potřebuje nejlepší možný výkon a škálovatelnost, jsou nejlepšími možnostmi .NET Core a ASP.NET Core. Vysoce výkonný server runtime pro Windows Server a Linux dělá z rozhraní .NET nejvýkonnější webový rámec pro [srovnávací testy TechEmpower](https://www.techempower.com/benchmarks/#hw=ph&test=plaintext).
 
-Výkon a škálovatelnost jsou obzvláště důležité pro architektury mikroslužeb, kde můžou běžet stovky mikroslužeb. V ASP.NET Core se systémy spouštějí s mnohem menším počtem serverů/Virtual Machines (VM). Omezené servery a virtuální počítače šetří náklady v oblasti infrastruktury a hostování.
+Výkon a škálovatelnost jsou důležité zejména pro architektury mikroslužeb, kde mohou být spuštěny stovky mikroslužeb. S ASP.NET Core, systémy běží s mnohem nižší počet serverů /virtuálních počítačů (VM). Snížené servery/virtuální virtuální zařízení šetří náklady na infrastrukturu a hostování.
 
-### <a name="a-need-for-side-by-side-of-net-versions-per-application-level"></a>Potřeba souběžně s verzemi .NET na úrovni aplikace
+### <a name="a-need-for-side-by-side-of-net-versions-per-application-level"></a>Potřeba souběžných verzí rozhraní .NET na úroveň aplikace
 
-Pro instalaci aplikací se závislostmi na různých verzích rozhraní .NET doporučujeme .NET Core. .NET Core nabízí souběžnou instalaci různých verzí modulu runtime .NET Core na stejném počítači. Tato Souběžná instalace umožňuje více služeb na stejném serveru, každý z nich na vlastní verzi .NET Core. Také snižuje rizika a šetří peníze v upgradech aplikací a IT operacích.
+Chcete-li nainstalovat aplikace se závislostmi na různých verzích rozhraní .NET, doporučujeme .NET Core. .NET Core nabízí souběžnou instalaci různých verzí runtime .NET Core na stejném počítači. Tato souběžná instalace umožňuje více služeb na stejném serveru, každá z nich na vlastní verzi rozhraní .NET Core. Také snižuje rizika a šetří peníze při upgradu aplikací a operacích IT.
 
-## <a name="when-to-choose-net-framework"></a>Kdy zvolit .NET Framework
+## <a name="when-to-choose-net-framework"></a>Kdy zvolit rozhraní .NET Framework
 
-.NET Core nabízí významné výhody pro nové aplikace a vzory aplikací. .NET Framework však nadále je přirozenou volbou pro mnoho stávajících scénářů a protože .NET Framework není nahrazeno rozhraním .NET Core pro všechny serverové aplikace.
+.NET Core nabízí významné výhody pro nové aplikace a vzory aplikací. Rozhraní .NET Framework je však i nadále přirozenou volbou pro mnoho existujících scénářů a jako takové rozhraní .NET Framework není nahrazeno .NET Core pro všechny serverové aplikace.
 
-### <a name="current-net-framework-applications"></a>Aktuální aplikace .NET Framework
+### <a name="current-net-framework-applications"></a>Aktuální aplikace rozhraní .NET Framework
 
-Ve většině případů nemusíte migrovat stávající aplikace do .NET Core. Místo toho doporučujeme použít .NET Core při rozšiřování existující aplikace, jako je například zápis nové webové služby v ASP.NET Core.
+Ve většině případů není nutné migrovat existující aplikace do .NET Core. Místo toho je doporučeným přístupem použití .NET Core při rozšíření existující aplikace, jako je například zápis nové webové služby v ASP.NET Core.
 
-### <a name="a-need-to-use-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Pro .NET Core je potřeba použít knihovny .NET nebo balíčky NuGet třetích stran, které nejsou k dispozici.
+### <a name="a-need-to-use-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Potřeba používat knihovny .NET jiných výrobců nebo balíčky NuGet, které nejsou k dispozici pro jádro .NET Core
 
-Knihovny jsou rychle přechodu .NET Standard. .NET Standard umožňuje sdílení kódu napříč všemi implementacemi .NET, včetně .NET Core. S .NET Standard 2,0 je to ještě snazší:
+Knihovny rychle přijímají standard .NET. Standard .NET standard umožňuje sdílení kódu ve všech implementacích rozhraní .NET včetně jádra .NET. S rozhraním .NET Standard 2.0 je to ještě jednodušší:
 
-- Plocha rozhraní API se stala mnohem větší.
-- Byl zaveden režim kompatibility .NET Framework. Tento režim kompatibility umožňuje projektům .NET Standard/. NET Core odkazovat na .NET Framework knihovny. Další informace o režimu kompatibility naleznete v tématu [oznamujeme .NET Standard 2,0](https://devblogs.microsoft.com/dotnet/announcing-net-standard-2-0/).
+- Povrch rozhraní API se stal mnohem větší.
+- Byl zaveden režim kompatibility rozhraní .NET Framework. Tento režim kompatibility umožňuje projektům .NET Standard/.NET Core odkazovat na knihovny rozhraní .NET Framework. Další informace o režimu kompatibility naleznete v [tématu Oznámení standardu .NET Standard 2.0](https://devblogs.microsoft.com/dotnet/announcing-net-standard-2-0/).
 
-Takže v případě, že knihovny nebo balíčky NuGet využívají technologie, které nejsou dostupné v .NET Standard/. NET Core, je nutné použít .NET Framework.
+Takže pouze v případech, kdy knihovny nebo balíčky NuGet používají technologie, které nejsou k dispozici v rozhraní .NET Standard/.NET Core, je třeba použít rozhraní .NET Framework.
 
-### <a name="a-need-to-use-net-technologies-not-available-for-net-core"></a>Potřeba používat technologie .NET, které nejsou k dispozici pro .NET Core
+### <a name="a-need-to-use-net-technologies-not-available-for-net-core"></a>Potřeba používat technologie .NET není k dispozici pro .NET Core
 
-Některé technologie .NET Framework nejsou dostupné v .NET Core. Některé z nich mohou být k dispozici v novějších verzích .NET Core. Ostatní se nevztahují na nové vzory aplikací, na které cílí .NET Core, a nemusí být nikdy k dispozici. V následujícím seznamu jsou uvedeny nejběžnější technologie, které se v .NET Core nenašly:
+Některé technologie rozhraní .NET Framework nejsou v jádru .NET k dispozici. Některé z nich mohou být k dispozici v pozdějších verzích .NET Core. Jiné se nevztahují na nové vzory aplikací, na které cílí .NET Core, a nemusí být nikdy k dispozici. V následujícím seznamu jsou uvedeny nejběžnější technologie, které nebyly nalezeny v rozhraní .NET Core:
 
-- ASP.NET webové formuláře aplikace: webové formuláře ASP.NET jsou k dispozici pouze v .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Neexistují žádné plány k převedení ASP.NET webových formulářů do .NET Core.
+- ASP.NET webových formulářů: ASP.NET webové formuláře jsou k dispozici pouze v rozhraní .NET Framework. ASP.NET Core nelze použít pro ASP.NET webových formulářů. Neexistují žádné plány přenést ASP.NET webových formulářů do .NET Core.
 
-- ASP.NET webové stránky aplikace: webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core.
+- ASP.NET aplikace webových stránek: ASP.NET webové stránky nejsou součástí ASP.NET jádra.
 
-- Implementace služeb WCF. I když existuje [Knihovna WCF-Client](https://github.com/dotnet/wcf) ke využívání služeb WCF z .NET Core, implementace serveru WCF je aktuálně dostupná jenom v .NET Framework. Tento scénář není součástí aktuálního plánu pro .NET Core, ale je považován za budoucí.
+- Implementace služeb WCF. I v případě, že je [knihovna WCF-Client](https://github.com/dotnet/wcf) využívat wcf služby z .NET Core, WCF server implementace je aktuálně k dispozici pouze v rozhraní .NET Framework. Tento scénář není součástí aktuálního plánu pro .NET Core, ale je zvažován pro budoucnost.
 
-- Služby související s pracovním postupem: programovací model Windows Workflow Foundation (WF), služby pracovních postupů (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako "ADO.NET Data Services") jsou k dispozici pouze v .NET Framework.  Neexistují žádné plány, jak přenést WF/WCF + WF/WCF Data Services do .NET Core.
+- Služby související s pracovními postupy: Windows Workflow Foundation (WF), Workflow Services (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako "ADO.NET datové služby") jsou k dispozici pouze v rozhraní .NET Framework.  Neexistují žádné plány pro přenos datových služeb WF/WCF+WF/WCF do jádra .NET.
 
-- Podpora jazyků: Visual Basic a F# jsou aktuálně podporované v rozhraní .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných šablon projektů naleznete v tématu [Možnosti šablony pro dotnet New](../core/tools/dotnet-new.md#arguments).
+- Podpora jazyka: Visual Basic a F# jsou aktuálně podporovány v .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných šablon projektů naleznete v [tématu Možnosti šablony pro dotnet new](../core/tools/dotnet-new.md#arguments).
 
-Kromě oficiálního plánu jsou k dispozici i další rozhraní .NET Core. Úplný seznam najdete v tématu CoreFX problémy označené jako [port-to-Core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Tento seznam nepředstavuje závazek společnosti Microsoft, aby tyto komponenty byly součástí .NET Core. Jednoduše zachytíte přáním z komunity. Pokud se rozhodnete o kterékoli součásti označené jako `port-to-core`, účastníte se diskusí na GitHubu. A pokud si myslíte, že chybí něco, zapište nový problém do [úložiště .NET](https://github.com/dotnet/runtime/issues/new).
+Kromě oficiálního plánu existují další rámce, které mají být přeneseny na .NET Core. Úplný seznam naleznete v tématu CoreFX problémy označené jako [port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Tento seznam nepředstavuje závazek společnosti Microsoft přenést tyto součásti do .NET Core. Jsou to prostě zachytit touhu od komunity, aby tak učinily. Pokud vám záleží na některé z `port-to-core`komponent označených jako , zúčastněte se diskusí na GitHubu. A pokud si myslíte, že něco chybí, zasoubor nový problém v [úložišti .NET](https://github.com/dotnet/runtime/issues/new).
 
-### <a name="a-need-to-use-a-platform-that-doesnt-support-net-core"></a>Je potřeba použít platformu, která nepodporuje .NET Core.
+### <a name="a-need-to-use-a-platform-that-doesnt-support-net-core"></a>Potřeba používat platformu, která nepodporuje .NET Core
 
-Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NET Core. Některé služby Azure poskytují sadu SDK, která ještě není dostupná pro využití v .NET Core. Jedná se o přechodnou okolnost, protože všechny služby Azure využívají .NET Core. Do té doby můžete místo sady SDK klienta vždy použít ekvivalentní REST API.
+Některé platformy Microsoftu nebo třetích stran nepodporují .NET Core. Některé služby Azure poskytují sdk ještě není k dispozici pro spotřebu na .NET Core. Toto je přechodná okolnost, protože všechny služby Azure používají .NET Core. Do té doby můžete vždy použít ekvivalentní rozhraní REST API namísto klienta SDK.
 
 ## <a name="see-also"></a>Viz také
 
-- [Volba mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
-- [ASP.NET Core cílení na .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
+- [Vyberte si mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
+- [Cílení ASP.NET Core na .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
 - [Cílové architektury](frameworks.md)
-- [Průvodce platformou .NET Core](../core/index.md)
-- [Přenos z .NET Framework do .NET Core](../core/porting/index.md)
+- [Základní příručka rozhraní .NET](../core/index.md)
+- [Přenesení z rozhraní .NET Framework do jádra rozhraní .NET](../core/porting/index.md)
 - [Úvod k .NET a Dockeru](../core/docker/introduction.md)
-- [Přehled komponent .NET](components.md)
-- [Mikroslužby .NET. Architektura pro kontejnerové aplikace .NET](../architecture/microservices/index.md)
+- [Přehled součástí rozhraní .NET](components.md)
+- [Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET](../architecture/microservices/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Správa závislostí v .NET Core
+title: Správa závislostí v rozhraní .NET Core
 description: Vysvětluje, jak spravovat závislosti projektu pro aplikaci .NET Core.
 no-loc:
 - dotnet add package
@@ -7,40 +7,40 @@ no-loc:
 - dotnet list package
 ms.date: 02/25/2020
 ms.openlocfilehash: 367be7eb04d58bffc0846de1d035a5801e8d9376
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78157242"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399145"
 ---
-# <a name="manage-dependencies-in-net-core-applications"></a>Správa závislostí v aplikacích .NET Core
+# <a name="manage-dependencies-in-net-core-applications"></a>Správa závislostí v základních aplikacích rozhraní .NET
 
-Tento článek vysvětluje, jak přidat a odebrat závislosti úpravou souboru projektu nebo pomocí rozhraní příkazového řádku.
+Tento článek vysvětluje, jak přidat a odebrat závislosti úpravou souboru projektu nebo pomocí příkazového příkazového příkazu.
 
-## <a name="the-packagereference-element"></a>Element \<PackageReference >
+## <a name="the-packagereference-element"></a>Prvek \<PackageReference>
 
-Prvek souboru projektu `<PackageReference>` má následující strukturu:
+Prvek `<PackageReference>` souboru projektu má následující strukturu:
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" />
 ```
 
-Atribut `Include` Určuje ID balíčku, který se má přidat do projektu. Atribut `Version` určuje verzi, která má být získána. Verze jsou zadány na základě [pravidel verze NuGet](/nuget/create-packages/dependency-versions#version-ranges).
+Atribut `Include` určuje ID balíčku, který má být do projektu přidejte. Atribut `Version` určuje verzi, kterou chcete získat. Verze jsou určeny podle [pravidel verze NuGet](/nuget/create-packages/dependency-versions#version-ranges).
 
 > [!NOTE]
-> Pokud nejste obeznámeni s syntaxí souboru projektu, další informace naleznete v referenční dokumentaci k [projektu MSBuild](/visualstudio/msbuild/msbuild-project-file-schema-reference) .
+> Pokud nejste obeznámeni se syntaxí souboru projektu, naleznete další informace v dokumentaci [k odkazu na projekt MSBuild.](/visualstudio/msbuild/msbuild-project-file-schema-reference)
 
-Podmínky použijte k přidání závislosti, která je k dispozici pouze v určitém cíli, jak je znázorněno v následujícím příkladu:
+Pomocí podmínek můžete přidat závislost, která je dostupná pouze v určitém cíli, jak je znázorněno v následujícím příkladu:
 
 ```xml
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
 ```
 
-Závislost v předchozím příkladu bude platná pouze v případě, že se pro daný cíl děje sestavení. `$(TargetFramework)` v podmínce je vlastnost MSBuild, která je nastavena v projektu. Pro většinu běžných aplikací .NET Core to nemusíte dělat.
+Závislost v předchozím příkladu bude platná pouze v případě, že sestavení prodaný cíl. V `$(TargetFramework)` podmínce je MSBuild vlastnost, která je nastavena v projektu. Pro většinu běžných aplikací .NET Core to není nutné provést.
 
-## <a name="add-a-dependency-by-editing-the-project-file"></a>Přidat závislost úpravou souboru projektu
+## <a name="add-a-dependency-by-editing-the-project-file"></a>Přidání závislosti úpravou souboru projektu
 
-Chcete-li přidat závislost, přidejte `<PackageReference>` element uvnitř elementu `<ItemGroup>`. Můžete přidat do existujícího `<ItemGroup>` nebo vytvořit nový. Následující příklad používá výchozí projekt konzolové aplikace, který je vytvořen pomocí `dotnet new console`:
+Chcete-li přidat závislost, `<PackageReference>` přidejte `<ItemGroup>` prvek uvnitř prvku. Můžete přidat do `<ItemGroup>` existující nebo vytvořit nový. Následující příklad používá výchozí projekt aplikace konzoly, který je vytvořen `dotnet new console`:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -56,21 +56,21 @@ Chcete-li přidat závislost, přidejte `<PackageReference>` element uvnitř ele
 </Project>
 ```
 
-## <a name="add-a-dependency-by-using-the-cli"></a>Přidání závislosti pomocí rozhraní příkazového řádku
+## <a name="add-a-dependency-by-using-the-cli"></a>Přidání závislosti pomocí zapisování/li se konzauma
 
-Chcete-li přidat závislost, spusťte příkaz [dotnet add package](dotnet-add-package.md) , jak je znázorněno v následujícím příkladu:
+Chcete-li přidat závislost, [dotnet add package](dotnet-add-package.md) spusťte příkaz, jak je znázorněno v následujícím příkladu:
 
 ```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore
 ```
 
-## <a name="remove-a-dependency-by-editing-the-project-file"></a>Odstranění závislosti úpravou souboru projektu
+## <a name="remove-a-dependency-by-editing-the-project-file"></a>Odebrání závislosti úpravou souboru projektu
 
-Chcete-li odebrat závislost, odeberte její `<PackageReference>` element ze souboru projektu.
+Chcete-li odebrat závislost, odeberte její `<PackageReference>` prvek ze souboru projektu.
 
-## <a name="remove-a-dependency-by-using-the-cli"></a>Odebrání závislosti pomocí rozhraní příkazového řádku
+## <a name="remove-a-dependency-by-using-the-cli"></a>Odebrání závislosti pomocí zapisování/li se konzauma
 
-Chcete-li odebrat závislost, spusťte příkaz [dotnet remove package](dotnet-remove-package.md) , jak je znázorněno v následujícím příkladu:
+Chcete-li odstranit závislost, [dotnet remove package](dotnet-remove-package.md) spusťte příkaz, jak je znázorněno v následujícím příkladu:
 
 ```dotnetcli
 dotnet remove package Microsoft.EntityFrameworkCore
@@ -79,4 +79,4 @@ dotnet remove package Microsoft.EntityFrameworkCore
 ## <a name="see-also"></a>Viz také
 
 * [Balíčky NuGet v souborech projektu](../project-sdk/msbuild-props.md#nuget-packages)
-* [dotnet list package – příkaz](dotnet-remove-package.md)
+* [dotnet list packagePříkaz](dotnet-remove-package.md)

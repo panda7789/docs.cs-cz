@@ -1,31 +1,31 @@
 ---
-title: Načtení textu odstavců (C#)
+title: Načítání textu odstavců (C#)
 ms.date: 07/20/2015
 ms.assetid: 127d635e-e559-408f-90c8-2bb621ca50ac
-ms.openlocfilehash: cedca9df84ee687a9e304cde0015b46d07956364
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7c47420045def3fe973169e01143646c0f60a8eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423331"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168242"
 ---
-# <a name="retrieving-the-text-of-the-paragraphs-c"></a>Načtení textu odstavců (C#)
-Tento příklad sestaví v předchozím příkladu [a načítá odstavce a jejich stylyC#()](./retrieving-the-paragraphs-and-their-styles.md). Tento nový příklad načte text každého odstavce jako řetězec.  
+# <a name="retrieving-the-text-of-the-paragraphs-c"></a>Načítání textu odstavců (C#)
+Tento příklad vychází z předchozího příkladu [Načítání odstavců a jejich styly (C#).](./retrieving-the-paragraphs-and-their-styles.md) Tento nový příklad načte text každého odstavce jako řetězec.  
   
- Chcete-li načíst text, tento příklad přidá další dotaz, který prochází kolekcí anonymních typů a projekty nové kolekce anonymního typu s přidáním nového člena, `Text`. Používá operátor dotazu <xref:System.Linq.Enumerable.Aggregate%2A> Standard k zřetězení více řetězců do jednoho řetězce.  
+ Chcete-li načíst text, tento příklad přidá další dotaz, který iterates prostřednictvím kolekce anonymních typů a `Text`projekty novou kolekci anonymního typu s přidáním nového člena , . Používá standardní <xref:System.Linq.Enumerable.Aggregate%2A> operátor dotazu zřetězit více řetězců do jednoho řetězce.  
   
- Tato technika (to znamená, že nejprve procházíte do kolekce anonymního typu a pak tuto kolekci použijete pro projekt k nové kolekci anonymního typu) je běžné a užitečné idiom. Tento dotaz může být zapsaný bez projekce prvního anonymního typu. Z důvodu opožděného vyhodnocení ale nevyužívá mnohem další výpočetní výkon. Idiom vytváří v haldě krátkodobé objekty pro zpracování, ale v podstatě nesnižuje výkon.  
+ Tato technika (to znamená, že nejprve promítá do kolekce anonymního typu, pak pomocí této kolekce pro projekt na novou kolekci anonymního typu) je běžné a užitečné idiom. Tento dotaz mohl být zapsán bez promítání na první anonymní typ. Však z důvodu opožděné vyhodnocení, přitom nepoužívá mnoho dalšího výpočetního výkonu. Idiom vytvoří více objektů s krátkou životností na haldě, ale to podstatně nesnižuje výkon.  
   
- Samozřejmě by bylo možné napsat jeden dotaz, který obsahuje funkce pro načtení odstavců, styl každého odstavce a text každého odstavce. Často je však užitečné rozdělit složitější dotaz do několika dotazů, protože výsledný kód je více modulární a snazší pro údržbu. Kromě toho, pokud potřebujete znovu použít část dotazu, je snazší Refaktorovat, pokud jsou dotazy zapisovány tímto způsobem.  
+ Samozřejmě by bylo možné napsat jeden dotaz, který obsahuje funkce pro načtení odstavců, styl každého odstavce a text každého odstavce. Často je však užitečné rozdělit složitější dotaz na více dotazů, protože výsledný kód je více modulární a snadněji udržovatelné. Kromě toho pokud potřebujete znovu použít část dotazu, je snazší refaktorovat, pokud dotazy jsou zapsány tímto způsobem.  
   
- Tyto dotazy, které jsou zřetězeny společně, používají model zpracování, který je podrobně prověřen v tématu [kurz: zřetězení dotazů společněC#()](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
+ Tyto dotazy, které jsou zřetězené dohromady, použijte model zpracování, který je podrobně zkoumán v tématu [Kurz: Řetězení dotazů společně (C#)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracovává dokument WordprocessingML, určuje uzel elementu, název stylu a text každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový dotaz se zavolá v komentářích v následujícím kódu.  
+ Tento příklad zpracovává wordprocessingML dokument, určení uzlu prvku, název stylu a text každého odstavce. Tento příklad vychází z předchozích příkladů v tomto kurzu. Nový dotaz je volán v komentářích v níže uvedeném kódu.  
   
- Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML (C#) pro zdrojový Office](./creating-the-source-office-open-xml-document.md).  
+ Pokyny k vytvoření zdrojového dokumentu pro tento příklad naleznete [v tématu Vytvoření dokumentu Open XML (C#) zdrojové sady Office](./creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ Tento příklad používá třídy z sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
 ```csharp  
 const string fileName = "SampleDoc.docx";  
@@ -68,7 +68,7 @@ using (Package wdPackage = Package.Open(fileName, FileMode.Open, FileAccess.Read
     }  
 }  
   
-string defaultStyle =   
+string defaultStyle =
     (string)(  
         from style in styleDoc.Root.Elements(w + "style")  
         where (string)style.Attribute(w + "type") == "paragraph"&&  
@@ -117,7 +117,7 @@ foreach (var p in paraWithText)
     Console.WriteLine("StyleName:{0} >{1}<", p.StyleName, p.Text);  
 ```  
   
- Tento příklad vytvoří následující výstup při použití v dokumentu popsaném v [tématu vytvoření zdrojového dokumentu XML pro OfficeC#()](./creating-the-source-office-open-xml-document.md).  
+ Tento příklad vytvoří následující výstup při použití na dokument popsaný v [části Vytvoření dokumentu Open XML (C#) zdrojové kanceláře](./creating-the-source-office-open-xml-document.md).  
   
 ```output  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -138,11 +138,11 @@ StyleName:Code >Hello World<
 ```  
   
 ## <a name="next-steps"></a>Další kroky  
- Další příklad ukazuje, jak použít rozšiřující metodu namísto <xref:System.Linq.Enumerable.Aggregate%2A>, k zřetězení více řetězců do jednoho řetězce.  
+ Následující příklad ukazuje, jak použít metodu <xref:System.Linq.Enumerable.Aggregate%2A>rozšíření, nikoli , zřetězit více řetězců do jednoho řetězce.  
   
 - [Refaktoring pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (C#)](shape-of-wordprocessingml-documents.md)
-- [Odložené provádění a opožděné vyhodnocení v LINQ to XML (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](shape-of-wordprocessingml-documents.md)
+- [Odložené spuštění a opožděné vyhodnocení v LINQ na XML (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

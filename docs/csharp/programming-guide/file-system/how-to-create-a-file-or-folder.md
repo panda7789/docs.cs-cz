@@ -1,5 +1,5 @@
 ---
-title: Postup vytvoření souboru nebo složky – C# Průvodce programováním
+title: Jak vytvořit soubor nebo složku - C# Programovací průvodce
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders [C#]
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: e0d0a7fbbc7e6a5c9a0bd00dec1188c5cfdcf896
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cdcc0a375aa1eca29c024d1e0c9008f337d0c772
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705246"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167554"
 ---
-# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Postup vytvoření souboru nebo složky (C# Průvodce programováním)
+# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Jak vytvořit soubor nebo složku (C# Programming Guide)
 Můžete programově vytvořit složku v počítači, vytvořit podsložku, vytvořit soubor v podsložce a zapsat data do souboru.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csFilesandFolders#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#10)]  
   
- Pokud složka již existuje, <xref:System.IO.Directory.CreateDirectory%2A> neprovede žádnou akci a není vyvolána žádná výjimka. <xref:System.IO.File.Create%2A?displayProperty=nameWithType> však nahradí existující soubor novým souborem. V příkladu se používá příkaz `if`-`else`, který brání v nahrazení existujícího souboru.  
+ Pokud složka již existuje, <xref:System.IO.Directory.CreateDirectory%2A> neprovede žádnou akci a není vyvolána žádná výjimka. Nahradí <xref:System.IO.File.Create%2A?displayProperty=nameWithType> však existující soubor novým souborem. Příklad používá `if` - `else` příkaz, který zabraňuje nahrazení existujícího souboru.  
   
- Provedením následujících změn v příkladu můžete určit různé výsledky na základě toho, zda soubor s určitým názvem již existuje. Pokud takový soubor neexistuje, kód ho vytvoří. Pokud takový soubor existuje, kód připojí data do tohoto souboru.  
+ Provedením následujících změn v příkladu můžete určit různé výsledky na základě toho, zda soubor s určitým názvem již existuje. Pokud takový soubor neexistuje, kód jej vytvoří. Pokud takový soubor existuje, kód připojí data k tomuto souboru.  
   
-- Zadejte jiný než náhodný název souboru.  
+- Zadejte název nenáhodného souboru.  
   
     ```csharp  
     // Comment out the following line.  
@@ -34,10 +34,10 @@ Můžete programově vytvořit složku v počítači, vytvořit podsložku, vytv
     string fileName = "MyNewFile.txt";  
     ```  
   
-- V následujícím kódu nahraďte příkaz `if`-`else` příkazem `using`.  
+- Nahraďte `if` - `else` příkaz `using` příkazem v následujícím kódu.  
   
     ```csharp  
-    using (System.IO.FileStream fs = new System.IO.FileStream(pathString, FileMode.Append))   
+    using (System.IO.FileStream fs = new System.IO.FileStream(pathString, FileMode.Append))
     {  
         for (byte i = 0; i < 100; i++)  
         {  
@@ -46,29 +46,29 @@ Můžete programově vytvořit složku v počítači, vytvořit podsložku, vytv
     }  
     ```  
   
- Spusťte příklad několikrát, abyste ověřili, že se data do souboru přidávají pokaždé.  
+ Spusťte příklad několikrát ověřit, že data jsou přidána do souboru pokaždé.  
   
- Další `FileMode` hodnoty, které můžete vyzkoušet, najdete v tématu <xref:System.IO.FileMode>.  
+ Další `FileMode` hodnoty, které můžete <xref:System.IO.FileMode>vyzkoušet, naleznete v tématu .  
   
  Následující podmínky mohou způsobit výjimku:  
   
-- Název složky je poškozený. Například obsahuje neplatné znaky nebo je pouze mezera (<xref:System.ArgumentException> třídy). K vytvoření platných názvů cest použijte třídu <xref:System.IO.Path>.  
+- Název složky je poškozen. Obsahuje například neplatné znaky nebo je<xref:System.ArgumentException> pouze prázdné znaky (třída). Pomocí <xref:System.IO.Path> třídy vytvořte platné názvy cest.  
   
-- Nadřazená složka složky, která se má vytvořit, je jen pro čtení (<xref:System.IO.IOException> třída).  
+- Nadřazená složka složky, která<xref:System.IO.IOException> má být vytvořena, je jen pro čtení (třída).  
   
-- Název složky je `null` (<xref:System.ArgumentNullException> třídy).  
+- Název složky `null` <xref:System.ArgumentNullException> je (třída).  
   
-- Název složky je příliš dlouhý (<xref:System.IO.PathTooLongException> třídy).  
+- Název složky je<xref:System.IO.PathTooLongException> příliš dlouhý (třída).  
   
-- Název složky je pouze dvojtečka, ":" (<xref:System.IO.PathTooLongException> třídy).  
+- Název složky je pouze dvojtečka, ":"(<xref:System.IO.PathTooLongException> třída).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Instance <xref:System.Security.SecurityException> třídy může být vyvolána v situacích částečné důvěryhodnosti.  
+ Instance třídy <xref:System.Security.SecurityException> může být vyvolána v situacích částečné důvěryhodnosti.  
   
- Pokud nemáte oprávnění k vytvoření složky, příklad vyvolá instanci třídy <xref:System.UnauthorizedAccessException>.  
+ Pokud nemáte oprávnění k vytvoření složky, příklad vyvolá instanci <xref:System.UnauthorizedAccessException> třídy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO?displayProperty=nameWithType>
-- [Průvodce programováním v jazyce C#](../index.md)
-- [Systém souborů a registr (C# Průvodce programováním)](./index.md)
+- [Programovací příručka jazyka C#](../index.md)
+- [Systém souborů a registr (Průvodce programováním v C#)](./index.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: kopírování adresářů'
+title: 'Postup: Kopírování adresářů'
 ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,18 +13,18 @@ helpviewer_keywords:
 - directories [.NET Framework], copying
 ms.assetid: 5a969765-e5f8-4b4e-977e-90e2b0a1fe3c
 ms.openlocfilehash: 5d40db7f902dac8bd6bbdc1510be8e56a321be30
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159452"
 ---
-# <a name="how-to-copy-directories"></a>Postupy: kopírování adresářů
-Toto téma ukazuje, jak použít třídy v/v k synchronnímu zkopírování obsahu adresáře do jiného umístění.
+# <a name="how-to-copy-directories"></a>Postup: Kopírování adresářů
+Toto téma ukazuje, jak používat vstupně-v třídy synchronně kopírovat obsah adresáře do jiného umístění.
 
-Příklad asynchronního kopírování souborů najdete v tématu [asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md).
+Příklad asynchronní kopie souboru naleznete [v tématu V/V. asynchronního souboru](../../../docs/standard/io/asynchronous-file-i-o.md).
 
-Tento příklad kopíruje podadresáře nastavením `copySubDirs` metody `DirectoryCopy` na `true`. Metoda `DirectoryCopy` rekurzivně kopíruje podadresáře tím, že se zavolá sám na každý podadresář, dokud nebudete moci kopírovat.  
+Tento příklad zkopíruje podadresáře `DirectoryCopy` nastavením `true` `copySubDirs` metody na . Metoda `DirectoryCopy` rekurzivně zkopíruje podadresáře voláním sebe sama v každém podadresáři, dokud nejsou k dispozici žádné další kopírování.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.IO.Directory_Copy#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory_Copy/cs/program.cs#1)]
@@ -37,6 +37,6 @@ Tento příklad kopíruje podadresáře nastavením `copySubDirs` metody `Direct
 - <xref:System.IO.FileInfo>
 - <xref:System.IO.DirectoryInfo>
 - <xref:System.IO.FileStream>
-- [Vstupně-výstupní operace se soubory a datovým proudem](../../../docs/standard/io/index.md)
-- [Běžné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)
-- [I/O asynchronní soubory](../../../docs/standard/io/asynchronous-file-i-o.md)
+- [Vstupně-tono-videa](../../../docs/standard/io/index.md)
+- [Běžné vstupně-no úkoly](../../../docs/standard/io/common-i-o-tasks.md)
+- [Vstupně-nosný soubor asynchronní soubor](../../../docs/standard/io/asynchronous-file-i-o.md)

@@ -1,36 +1,36 @@
 ---
-title: Typy RPC-gRPC pro vývojáře WCF
-description: Kontrola typů vzdáleného volání procedur podporovaného službou WCF a jejich ekvivalenty v gRPC
+title: Typy RPC - gRPC pro vývojáře WCF
+description: Přezkum typů volání vzdálených procedur podporovaných WCF a jejich ekvivalenty v gRPC
 ms.date: 09/02/2019
-ms.openlocfilehash: 58f097bac61395e6810155e8ae9a6bbf2219ec5e
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: b9d4ce7cae693ed7904229483cbccfe3b299b640
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503441"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401681"
 ---
 # <a name="types-of-rpc"></a>Typy RPC
 
-Jako vývojář Windows Communication Foundation (WCF) se pravděpodobně používá pro zvládnutí následujících typů vzdáleného volání procedur (RPC):
+Jako vývojář Windows Communication Foundation (WCF) jste pravděpodobně zvyklí na práci s následujícími typy vzdáleného volání procedur (RPC):
 
-- Požadavek nebo odpověď
-- Přenos
-  - Obousměrný Duplex s relací
+- Žádost/odpověď
+- Duplexní:
+  - Jednosměrný oboustranný tisk s relací
   - Plně duplexní s relací
-- Jednosměrnou metodou
+- Jednosměrné
 
-Tyto typy RPC je možné namapovat poměrně přirozeně na stávající gRPC koncepty. Tato kapitola bude mít na začátku všechny tyto oblasti. [Kapitola 5](migrate-wcf-to-grpc.md) bude podrobněji prozkoumat podobné příklady.
+Tyto typy RPC je možné mapovat poměrně přirozeně na existující koncepty gRPC. Tato kapitola se bude zabývat každou z těchto oblastí. [Kapitola 5](migrate-wcf-to-grpc.md) se bude podrobněji zabývat podobnými příklady.
 
 | WCF | gRPC |
 | --- | ---- |
-| Pravidelný požadavek nebo odpověď | Unární |
-| Duplexní služba s relací pomocí rozhraní zpětného volání klienta | Streamování serveru |
-| Plně duplexní služba s relací | Obousměrný streamování |
+| Pravidelný požadavek/odpověď | Unární |
+| Duplexní služba s relací pomocí rozhraní zpětného volání klienta | Serverové vysílání |
+| Plně duplexní služba s relací | Obousměrné streamování |
 | Jednosměrné operace | Streamování klientů |
 
-## <a name="requestreply"></a>Požadavek nebo odpověď
+## <a name="requestreply"></a>Žádost/odpověď
 
-Pro jednoduché metody žádosti a odpovědi, které přijímají a vracejí malé objemy dat, použijte nejjednodušší vzor gRPC, unární RPC.
+Pro jednoduché metody požadavku/odpovědi, které berou a vracejí malé množství dat, použijte nejjednodušší gRPC vzor, unární RPC.
 
 ```protobuf
 service Things {
@@ -57,21 +57,21 @@ public async Task ShowThing(int thingId)
 }
 ```
 
-Jak vidíte, implementace gRPC unární metody služby RPC je podobná implementaci operace WCF. Rozdíl je v tom, že pomocí gRPC přepisujete metodu základní třídy namísto implementace rozhraní. Na serveru gRPC základní metody vždy vrací <xref:System.Threading.Tasks.Task%601>, i když klient poskytne asynchronní a blokující metody pro volání služby.
+Jak můžete vidět, implementace metody služby gRPC unární služby RPC je podobná implementaci operace WCF. Rozdíl je, že s gRPC přepsat metodu základní třídy namísto implementace rozhraní. Na serveru gRPC základní metody <xref:System.Threading.Tasks.Task%601>vždy vrátit , i když klient poskytuje asynchronní a blokování metody pro volání služby.
 
-## <a name="wcf-duplex-one-way-to-client"></a>Duplexní přenos přes WCF – jeden ze způsobů klienta
+## <a name="wcf-duplex-one-way-to-client"></a>WCF duplex, jedna cesta ke klientovi
 
-Aplikace WCF (s některými vazbami) můžou vytvořit trvalé připojení mezi klientem a serverem. Server může asynchronně odesílat data do klienta, dokud není připojení ukončeno, pomocí *rozhraní zpětného volání* zadaného ve vlastnosti <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType>.
+WCF aplikace (s určitými vazbami) můžete vytvořit trvalé připojení mezi klientem a serverem. Server může asynchronně odesílat data klientovi, dokud není připojení ukončeno, pomocí <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> *rozhraní zpětného volání* určeného ve vlastnosti.
 
-služby gRPC Services poskytují podobné funkce jako datové proudy zpráv. Datové proudy se nemapují *přesně* na duplexní služby WCF v souvislosti s implementací, ale můžete dosáhnout stejných výsledků.
+služby gRPC poskytují podobné funkce s datovými proudy zpráv. Datové proudy nejsou *mapovat přesně* WCF duplexní služby z hlediska implementace, ale můžete dosáhnout stejných výsledků.
 
-### <a name="grpc-streaming"></a>streamování gRPC
+### <a name="grpc-streaming"></a>gRPC streamování
 
-gRPC podporuje vytváření trvalých datových proudů z klienta na server a ze serveru na klienta. Oba typy datových proudů mohou být souběžně aktivní. Tato možnost se nazývá obousměrné streamování. 
+gRPC podporuje vytváření trvalých datových proudů z klienta na server a ze serveru na klienta. Oba typy datového proudu může být aktivní současně. Tato schopnost se nazývá obousměrné streamování.
 
-Datové proudy můžete používat pro libovolné asynchronní zasílání zpráv v průběhu času. Nebo je můžete použít k předávání velkých datových sad, které jsou příliš velké pro generování a posílání v jednom požadavku nebo odpovědi.
+Datové proudy můžete použít pro libovolné asynchronní zasílání zpráv v průběhu času. Nebo je můžete použít pro předávání velkých datových sad, které jsou příliš velké pro generování a odesílání v jednom požadavku nebo odpovědi.
 
-Následující příklad ukazuje server – streamování RPC.
+Následující příklad ukazuje server-streaming RPC.
 
 ```protobuf
 service ClockStreamer {
@@ -96,7 +96,7 @@ public class ClockStreamerService : ClockStreamer.ClockStreamerBase
 }
 ```
 
-Tento datový proud serveru lze spotřebovat z klientské aplikace, jak je znázorněno v následujícím kódu:
+Tento datový proud serveru lze spotřebovávat z klientské aplikace, jak je znázorněno v následujícím kódu:
 
 ```csharp
 public async Task TellTheTimeAsync(CancellationToken token)
@@ -115,19 +115,19 @@ public async Task TellTheTimeAsync(CancellationToken token)
 ```
 
 > [!NOTE]
-> Služba RPC pro streamování serveru je užitečná pro služby ve stylu předplatného. Jsou také užitečné pro posílání velkých datových sad, pokud by bylo neefektivní nebo nemožné sestavit celou datovou sadu v paměti. Odezvy streamování nejsou ale rychlé, protože odesílající `repeated` pole v jedné zprávě. Jako pravidlo by se streamování neměl používat pro malé datové sady.
+> Server-streaming RPC jsou užitečné pro služby ve stylu předplatného. Jsou také užitečné pro odesílání velkých datových sad, když by bylo neefektivní nebo nemožné vytvořit celou datovou sadu v paměti. Odpovědi na streamování však nejsou tak `repeated` rychlé jako odesílání polí v jedné zprávě. Streamování by se zpravidla nemělo používat pro malé datové sady.
 
-### <a name="differences-from-wcf"></a>Rozdíly oproti WCF
+### <a name="differences-from-wcf"></a>Rozdíly od WCF
 
-Duplexní služba WCF používá rozhraní zpětného volání klienta, které může mít více metod. Služba streamování serveru gRPC může odesílat zprávy jenom přes jeden datový proud. Pokud potřebujete více metod, použijte typ zprávy s [libovolným polem nebo jedním polem](protobuf-any-oneof.md) pro odeslání různých zpráv a napište kód v klientovi, který je zpracovává.
+Duplexní služba WCF používá rozhraní pro zpětné volání klienta, které může mít více metod. Služba streamování serveru gRPC může odesílat zprávy pouze přes jeden datový proud. Pokud potřebujete více metod, použijte typ zprávy s [polem Any nebo polem](protobuf-any-oneof.md) pro odesílání různých zpráv a zapisujte kód do klienta, který je zpracovává.
 
-Ve službě WCF je třída [ServiceContract](xref:System.ServiceModel.ServiceContractAttribute) s relací udržována v provozu, dokud není připojení ukončeno. V rámci relace lze volat více metod. V gRPC `Task`, že se metoda implementace vrátí, by neměla být dokončena, dokud nebude připojení ukončeno.
+V WCF [ServiceContract](xref:System.ServiceModel.ServiceContractAttribute) třídy s relace je udržována naživu, dokud není připojení ukončeno. V rámci relace lze volat více metod. V gRPC, `Task` že metoda implementace vrátí by neměl dokončit, dokud připojení je uzavřen.
 
-## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a>Jednosměrné operace WCF a streamování klienta gRPC
+## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a>WCF jednosměrné operace a gRPC klientstreaming
 
-WCF poskytuje jednosměrné operace (označené `[OperationContract(IsOneWay = true)]`), které vracejí potvrzení specifické pro přenos. metody služby gRPC vždycky vrátí odpověď, i když je prázdná. Klient by měl vždycky očekávat tuto odpověď. Pro formát "Fire-and-zapomene" zasílání zpráv v gRPC můžete vytvořit službu streamování klientů.
+WCF poskytuje jednosměrné operace `[OperationContract(IsOneWay = true)]`(označené ) které vracejí potvrzení specifické pro přenos. metody služby gRPC vždy vrátí odpověď, i když je prázdná. Klient by měl vždy čekat na tuto odpověď. Pro "fire-and-forget" styl zasílání zpráv v gRPC, můžete vytvořit klientstreaming služby.
 
-### <a name="thing_logproto"></a>thing_log. proto
+### <a name="thing_logproto"></a>thing_log.proto
 
 ```protobuf
 service ThingLog {
@@ -189,13 +189,13 @@ public class ThingLogger : IAsyncDisposable
 }
 ```
 
-Můžete použít vzdálená volání procedur (RPC) pro zasílání zpráv s požárem a zapomenout, jak je znázorněno v předchozím příkladu. Můžete je také použít k posílání velkých datových sad serveru. Platí stejné upozornění na výkon: pro menší datové sady použijte pole `repeated` v pravidelných zprávách.
+K zasílání zpráv fire-and-forget můžete použít klient-streaming, jak je znázorněno v předchozím příkladu. Můžete je také použít pro odesílání velmi velkých datových sad na server. Platí stejné upozornění na výkon: pro menší `repeated` datové sady použijte pole v pravidelných zprávách.
 
-## <a name="wcf-full-duplex-services"></a>Plně duplexní služby WCF
+## <a name="wcf-full-duplex-services"></a>WCF plně duplexní služby
 
-Duplexní vazba WCF podporuje více jednosměrných operací jak v rozhraní služby, tak i v rozhraní zpětného volání klienta. Tato podpora umožňuje průběžné konverzace mezi klientem a serverem. gRPC podporuje něco podobného jako obousměrný datový proud RPCSS, kde jsou oba parametry označeny modifikátorem `stream`.
+Duplexní vazba WCF podporuje více jednosměrných operací v rozhraní služby i v rozhraní zpětného volání klienta. Tato podpora umožňuje probíhající konverzace mezi klientem a serverem. gRPC podporuje něco podobného s obousměrnými streamovacími RPC, kde jsou oba parametry označeny modifikátorem. `stream`
 
-### <a name="chatproto"></a>chat. proto
+### <a name="chatproto"></a>chat.proto
 
 ```protobuf
 service Chatter {
@@ -228,9 +228,9 @@ public class ChatterService : Chatter.ChatterBase
 }
 ```
 
-V předchozím příkladu vidíte, že metoda implementace přijímá datový proud žádosti (`IAsyncStreamReader<MessageRequest>`) i datový proud odpovědí (`IServerStreamWriter<MessageResponse>`). Metoda může číst a zapisovat zprávy, dokud nebude připojení ukončeno.
+V předchozím příkladu uvidíte, že metoda implementace přijímá`IAsyncStreamReader<MessageRequest>`datový proud požadavku`IServerStreamWriter<MessageResponse>`( ) i datový proud odpovědí ( ). Metoda může číst a zapisovat zprávy, dokud není připojení ukončeno.
 
-### <a name="chatter-client"></a>Klient chatu
+### <a name="chatter-client"></a>Klient chatteru
 
 ```csharp
 public class Chat : IAsyncDisposable
@@ -272,4 +272,4 @@ public class Chat : IAsyncDisposable
 
 >[!div class="step-by-step"]
 >[Předchozí](wcf-bindings.md)
->[Další](metadata.md)
+>[další](metadata.md)

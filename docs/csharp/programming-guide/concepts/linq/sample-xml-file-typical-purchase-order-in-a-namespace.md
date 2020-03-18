@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru'
 ms.date: 07/20/2015
 ms.assetid: 84dc3339-ea32-4ccc-9af6-ab38ddfecced
-ms.openlocfilehash: 59ef22c73345fa13278795a6363871b3657e5b8f
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 001a12210c2252d9718425d0d4013bdbdf25b996
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868698"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167961"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru
-Následující soubor XML se v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci používá v různých příkladech. Tento soubor je typickou nákupní objednávkou. KÓD XML je v oboru názvů.  
+Následující soubor XML se používá v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] různých příkladech v dokumentaci. Tento soubor je typická nákupní objednávka. Kód XML je v oboru názvů.  
   
-## <a name="purchaseorderinnamespacexml"></a>PurchaseOrderInNamespace. XML  
+## <a name="purchaseorderinnamespacexml"></a>Soubor PurchaseOrderInNamespace.xml  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -53,4 +53,3 @@ Následující soubor XML se v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.
   </aw:Items>  
 </aw:PurchaseOrder>  
 ```  
- 

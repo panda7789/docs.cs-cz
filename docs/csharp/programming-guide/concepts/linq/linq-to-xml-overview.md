@@ -1,39 +1,39 @@
 ---
-title: Přehled LINQ to XML (C#)
+title: LinQ na XML Přehled (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: d8b606e1d3287f13a2112b75d5239fd1ac7dd7dc
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 334788a50832b8fe42ecc9a3272dd71f2f2af4ee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635506"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168412"
 ---
-# <a name="linq-to-xml-overview-c"></a>Přehled LINQ to XML (C#)
+# <a name="linq-to-xml-overview-c"></a>LinQ na XML Přehled (C#)
 
-LINQ to XML poskytuje rozhraní pro programování XML v paměti, které využívá architekturu LINQ (Integrated Query) jazyka .NET. LINQ to XML využívá možnosti rozhraní .NET a je porovnatelný z aktualizovaného a přepracovaného programovacího rozhraní XML model DOM (Document Object Model) (DOM). 
- 
-Soubor XML byl široce přijat jako způsob, jak formátovat data v mnoha kontextech. Můžete například najít XML na webu, v konfiguračních souborech, v systém Microsoft Office soubory aplikace Word a v databázích.
+LINQ na XML poskytuje programovací rozhraní XML v paměti, které využívá rozhraní LINQ (Language-Integrated Query) .NET.NET to XML provides a in-memory XML programming interface that leverages the .NET Language-Integrated Query (LINQ) Framework. LINQ to XML používá možnosti rozhraní .NET a je srovnatelný s aktualizovaným přepracovaným programovacím rozhraním XML objektového modelu dokumentu (DOM).
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je aktuální, přenavržený přístup k programování s XML. Poskytuje funkce pro úpravy dokumentů v paměti model DOM (Document Object Model) (DOM) a podporuje výrazy dotazů LINQ. I když tyto výrazy dotazu jsou syntakticky odlišné od XPath, poskytují podobné funkce.
+Jazyk XML byl široce přijat jako způsob formátování dat v mnoha kontextech. Xml můžete například najít na webu, v konfiguračních souborech, v souborech aplikace Microsoft Office Word a v databázích.
 
-## <a name="linq-to-xml-developers"></a>LINQ to XML vývojáři
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je aktuální, přepracovaný přístup k programování pomocí XML. Poskytuje možnosti úpravy dokumentu v paměti modelu DOCUMENT Object Model (DOM) a podporuje výrazy dotazu LINQ. Přestože tyto výrazy dotazu jsou syntakticky odlišné od XPath, poskytují podobné funkce.
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] cílí na celou řadu vývojářů. Pro průměrného vývojáře, který chce jenom udělat, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] usnadňuje práci s XML pomocí dotazů, které jsou podobné SQL. S pouhou bitovou studiem se programátoři můžou naučit psát stručné a výkonné dotazy v programovacím jazyce, který si vyberete.
+## <a name="linq-to-xml-developers"></a>LINQ vývojářům XML
 
-Profesionální vývojáři můžou pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] významně zvýšit produktivitu. S [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]můžou napsat méně kódu, který je více expresější, kompaktnější a výkonnější. Můžou používat výrazy dotazů z více domén dat současně.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]zaměřuje na různé vývojáře. Pro průměrného vývojáře, který chce [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] jen něco udělat, usnadňuje XML tím, že poskytuje prostředí dotazu, které je podobné SQL. S trochou studia se programátoři mohou naučit psát stručné a výkonné dotazy ve svém programovacím jazyce.
 
-## <a name="what-is-linq-to-xml"></a>Co je LINQ to XML?
+Profesionální vývojáři [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] mohou využít k výraznému zvýšení jejich produktivity. S [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], mohou psát méně kódu, který je výraznější, kompaktnější a výkonnější. Mohou používat výrazy dotazu z více datových domén současně.
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je programovací rozhraní XML v paměti, které umožňuje pracovat s XML v rámci .NET Framework programovacích jazyků.
+## <a name="what-is-linq-to-xml"></a>Co je LINQ na XML?
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je stejně jako model DOM (Document Object Model) (DOM) v tom, že převede dokument XML do paměti. Můžete provést dotazování a úpravy dokumentu a až ho upravíte, můžete ho uložit do souboru nebo ho serializovat a poslat přes Internet. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se však liší od modelu DOM: poskytuje nový objektový model, který je světlejší o váhu a usnadňuje práci s a který využívá funkce jazyka v C#.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je programovací rozhraní XML s podporou linq v paměti, které umožňuje pracovat s jazykem XML z programovacích jazyků rozhraní .NET Framework.
 
-Nejdůležitější výhodou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je jeho integrace s LINQ (Language-Integrated Query). Tato integrace umožňuje zapisovat dotazy v dokumentu XML v paměti pro načtení kolekcí prvků a atributů. Funkce dotazu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je srovnatelná s funkcemi (i když není v syntaxi) do XPath a XQuery. Integrace LINQ v C# systému poskytuje silnější psaní, kontrolu doby kompilace a vylepšenou podporu ladicího programu.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je jako document object model (DOM) v tom, že přináší dokument XML do paměti. Dokument můžete dotazovat a upravovat a po jeho úpravě jej můžete uložit do souboru nebo jej serializovat a odeslat přes Internet. Liší [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se však od modelu DOM: Poskytuje nový objektový model, který je lehčí a snadněji se s ním pracuje a který využívá funkce jazyka v jazyce C#.
 
-Další výhodou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je možnost použití výsledků dotazu jako parametrů pro <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XAttribute> konstruktory objektů umožňuje účinný přístup k vytváření stromů XML. Tento přístup s názvem *funkční konstrukce*umožňuje vývojářům snadno transformovat stromy XML z jednoho obrazce na druhý.
+Nejdůležitější výhodou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je jeho integrace s jazykem integrovaný dotaz (LINQ). Tato integrace umožňuje psát dotazy na dokument XML v paměti k načtení kolekcí prvků a atributů. Možnost dotazu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je srovnatelná ve funkčnosti (i když ne v syntaxi) s XPath a XQuery. Integrace LINQ v C# poskytuje silnější psaní, kontrolu v době kompilace a vylepšenou podporu ladicího programu.
 
-Například můžete mít typické nákupní objednávky XML, jak je popsáno v [ukázkovém souboru XML: typická nákupní objednávka (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml-1.md). Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]můžete spustit následující dotaz pro získání hodnoty atributu číslo součásti pro každý prvek položky v nákupní objednávce:
+Další výhodou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je možnost použít výsledky dotazu <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XAttribute> jako parametry a konstruktory objektů umožňuje výkonný přístup k vytváření stromů XML. Tento přístup, nazývaný *funkční konstrukce*, umožňuje vývojářům snadno transformovat stromy XML z jednoho obrazce do druhého.
+
+Můžete mít například typickou nákupní objednávku XML popsanou v [ukázkovém souboru XML: Typická nákupní objednávka (LINQ to XML).](sample-xml-file-typical-purchase-order-linq-to-xml-1.md) Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]aplikace můžete spustit následující dotaz a získat hodnotu atributu číslo dílu pro každý prvek položky v nákupní objednávce:
 
 ```csharp
 // Load the XML file from our project directory containing the purchase orders
@@ -47,13 +47,13 @@ IEnumerable<string> partNos =  from item in purchaseOrder.Descendants("Item")
                                select (string) item.Attribute("PartNumber");
 ```
 
-Toto lze přepsat ve formě syntaxe metody:
+To lze přepsat ve formě syntaxe metody:
 
 ```csharp
 IEnumerable<string> partNos = purchaseOrder.Descendants("Item").Select(x => (string) x.Attribute("PartNumber"));
 ```
 
-Jako další příklad můžete chtít seznam, který je seřazen podle čísla součásti, u položek s hodnotou větší než $100. Chcete-li získat tyto informace, můžete spustit následující dotaz:
+Jako další příklad můžete chtít seznam položek s hodnotou větší než 100 Kč seřazený podle čísla dílu. Chcete-li získat tyto informace, můžete spustit následující dotaz:
 
 ```csharp
 // Load the XML file from our project directory containing the purchase orders
@@ -69,7 +69,7 @@ IEnumerable<XElement> pricesByPartNos =  from item in purchaseOrder.Descendants(
                                  select item;
 ```
 
-Tuto akci lze znovu zapsat ve formě syntaxe metody:
+Opět platí, že to to může být přepsána ve formě syntaxe metody:
 
 ```csharp
 IEnumerable<XElement> pricesByPartNos = purchaseOrder.Descendants("Item")
@@ -77,25 +77,25 @@ IEnumerable<XElement> pricesByPartNos = purchaseOrder.Descendants("Item")
                                         .OrderBy(order => order.Element("PartNumber"));
 ```
 
-Kromě těchto možností LINQ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje vylepšené programovací rozhraní XML. Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]můžete:
+Kromě těchto funkcí LINQ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje vylepšené programovací rozhraní XML. Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]aplikace můžete:
 
-- Načte XML ze [souborů](how-to-load-xml-from-a-file.md) nebo [datových proudů](how-to-stream-xml-fragments-from-an-xmlreader.md).
+- Načtěte XML ze [souborů](how-to-load-xml-from-a-file.md) nebo [datových proudů](how-to-stream-xml-fragments-from-an-xmlreader.md).
 
-- Serializace XML do souborů nebo datových proudů.
+- Serialize XML na soubory nebo datové proudy.
 
 - Vytvořte XML od začátku pomocí funkční konstrukce.
 
-- Dotazování XML pomocí osy jako XPath
+- Dotaz XML pomocí xpath-jako osy.
 
-- Manipulace se stromovou strukturou XML v paměti pomocí metod, jako je <xref:System.Xml.Linq.XContainer.Add%2A>, <xref:System.Xml.Linq.XNode.Remove%2A>, <xref:System.Xml.Linq.XNode.ReplaceWith%2A>a <xref:System.Xml.Linq.XElement.SetValue%2A>.
+- Manipulujte se stromem XML v paměti <xref:System.Xml.Linq.XContainer.Add%2A> <xref:System.Xml.Linq.XNode.Remove%2A>pomocí <xref:System.Xml.Linq.XNode.ReplaceWith%2A>metod, jako jsou například , , a <xref:System.Xml.Linq.XElement.SetValue%2A>.
 
-- Ověří stromy XML pomocí XSD.
+- Ověřte stromy XML pomocí xsd.
 
-- Použijte kombinaci těchto funkcí pro transformaci stromů XML z jednoho obrazce do jiného.
+- Pomocí kombinace těchto funkcí můžete transformovat stromy XML z jednoho obrazce do druhého.
 
 ## <a name="creating-xml-trees"></a>Vytváření stromů XML
 
-Jednou z nejvýznamnějších výhod programování s [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je snadné vytváření stromů XML. Například pro vytvoření malého stromu XML můžete napsat kód následujícím způsobem:
+Jednou z nejvýznamnějších výhod programování [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s je, že je snadné vytvářet xml stromy. Chcete-li například vytvořit malý strom XML, můžete napsat kód následujícím způsobem:
 
 ```csharp
 XElement contacts =
@@ -116,11 +116,11 @@ new XElement("Contacts",
 );
 ```
 
-Další informace naleznete v tématu [CREATING XML TreesC#()](./creating-xml-trees-linq-to-xml-2.md).
+Další informace naleznete [v tématu Creating XML Trees (C#)](./creating-xml-trees-linq-to-xml-2.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Referenční informace (LINQ to XML)](./reference-linq-to-xml.md)
-- [LINQ to XML vs. DOM (C#)](./linq-to-xml-vs-dom.md)
-- [LINQ to XML vs. další technologie XML](./linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ na XML vs. DOM (C#)](./linq-to-xml-vs-dom.md)
+- [LINQ na XML vs. jiné technologie XML](./linq-to-xml-vs-other-xml-technologies.md)
 - <xref:System.Xml.Linq>

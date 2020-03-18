@@ -1,140 +1,140 @@
 ---
-title: 'Kurz: klasifikace porušení stavu pomocí Tvůrce modelů'
-description: Tento kurz ukazuje, jak vytvořit model klasifikace s více třídami pomocí Tvůrce modelů ML.NET ke klasifikaci závažnosti porušení stavu Restaurace v San Francisco.
+title: 'Kurz: Klasifikovat porušení stavu s Model Builder'
+description: Tento kurz ukazuje, jak vytvořit vícetřídní klasifikační model pomocí ML.NET Model Builder klasifikovat závažnost porušení stavu restaurace v San Francisku.
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 11/21/2019
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: 90abbc9ffe5765880d18d0d29c8e13bc1330ddc3
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.custom: mvc,mlnet-tooling
+ms.openlocfilehash: e94313277a025d482105a6d78b6608d4df442c43
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341558"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79185844"
 ---
-# <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Kurz: klasifikace závažnosti porušení stavu restaurací pomocí Tvůrce modelů
+# <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Kurz: Klasifikujte závažnost porušení stavu restaurace s Model Builder
 
-Naučte se vytvářet model klasifikace s více třídami pomocí Tvůrce modelů ke kategorizaci úrovně rizika porušení v restauracích, která byla zjištěna během kontrol stavu.
+Naučte se, jak vytvořit vícetřídní klasifikační model pomocí Tvůrce modelů ke kategorizaci úrovně rizika porušení restaurací zjištěných při kontrolách stavu.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 >
 > - Příprava a pochopení dat
-> - Zvolte scénář
+> - Výběr scénáře
 > - Načtení dat z databáze
 > - Trénování modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
 > [!NOTE]
-> Tvůrce modelů je aktuálně ve verzi Preview.
+> Tvůrce modelů je momentálně ve verzi Preview.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu modelů](../how-to-guides/install-model-builder.md).
+Seznam předpokladů a pokynů k instalaci naleznete v [instalační příručce výrobce modelů](../how-to-guides/install-model-builder.md).
 
-## <a name="model-builder-multiclass-classification-overview"></a>Přehled klasifikace více tříd tvůrce modelů
+## <a name="model-builder-multiclass-classification-overview"></a>Přehled klasifikace vícetřídového tvůrce modelů
 
-Tato ukázka vytvoří konzolovou aplikaci C# .NET Core, která kategorizuje riziko porušení stavu pomocí modelu strojového učení sestaveného pomocí Tvůrce modelů. Zdrojový kód pro tento kurz najdete v úložišti GitHub [/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/modelbuilder/MulticlassClassification_RestaurantViolations) .
+Tato ukázka vytvoří aplikaci konzoly C# .NET Core, která kategorizuje riziko porušení stavu pomocí modelu strojového učení vytvořeného pomocí tvůrce modelů. Zdrojový kód pro tento kurz najdete v úložišti GitHub [dotnet/machinelearning-samples.](https://github.com/dotnet/machinelearning-samples/tree/master/samples/modelbuilder/MulticlassClassification_RestaurantViolations)
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Vytvořte  **C# konzolovou aplikaci .NET Core** nazvanou "RestaurantViolations". Ujistěte se, že **umístění řešení a projekt ve stejném adresáři** není **zaškrtnuté** (vs 2019), nebo je **zaškrtnuté** políčko **vytvořit adresář pro řešení** (vs 2017).
+1. Vytvořte **aplikaci konzoly C# .NET Core** s názvem "RestaurantViolations". Ujistěte se, že **umístit řešení a projekt ve stejném adresáři** je **nezaškrtnuté** (VS 2019) nebo **vytvořit adresář pro řešení** je **zaškrtnuto** (VS 2017).
 
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
-> Datová sada, která se používá ke studiu a vyhodnocení modelu Machine Learning, je původně od [Francisco oddělení San veřejného zdravotního hodnocení z oblasti bezpečnosti restaurace](https://www.sfdph.org/dph/EH/Food/score/default.asp). Pro usnadnění pohodlí byla datová sada zhuštěná tak, aby obsahovala pouze sloupce, které jsou relevantní pro výuku modelu a předpovědi. Další informace o této [datové sadě](https://data.sfgov.org/Health-and-Social-Services/Restaurant-Scores-LIVES-Standard/pyih-qa8i?row_index=0)najdete na následujícím webu.
+> Soubor dat používaný k trénování a vyhodnocování modelu strojového učení pochází původně z [oddělení sanfranciského ministerstva bezpečnosti restaurací pro veřejné zdraví](https://www.sfdph.org/dph/EH/Food/score/default.asp). Pro větší pohodlí byla datová sada zhuštěna tak, aby obsahovala pouze sloupce důležité pro trénování modelu a předpovědi. Další informace o [datové sadě](https://data.sfgov.org/Health-and-Social-Services/Restaurant-Scores-LIVES-Standard/pyih-qa8i?row_index=0)naleznete na následujícím webu .
 
-[Stáhněte si datovou sadu výsledků pro bezpečnost restaurace](https://github.com/luisquintanilla/machinelearning-samples/raw/AB1608219/samples/modelbuilder/MulticlassClassification_RestaurantViolations/RestaurantScores.zip) a rozbalte ji.
+[Stáhněte si datovou sadu Restaurant Safety Scores](https://github.com/luisquintanilla/machinelearning-samples/raw/AB1608219/samples/modelbuilder/MulticlassClassification_RestaurantViolations/RestaurantScores.zip) a rozbalte ji.
 
-Každý řádek v datové sadě obsahuje informace o porušeních zjištěných během kontroly ze zdravotního oddělení a posouzení rizika ohrožení bezpečnosti veřejného zdraví a bezpečnosti.
+Každý řádek v datovém souboru obsahuje informace o porušeních zjištěných při kontrole ze strany ministerstva zdravotnictví a posouzení rizik a rizika, které tato porušení představují pro veřejné zdraví a bezpečnost.
 
-| InspectionType | ViolationDescription | RiskCategory |
+| Typ kontroly | PorušeníPopis | Kategorie rizika |
 | --- | --- | --- |
-| Rutina – neplánovaná | Nedostatečné vyčištěné nebo upravené kontaktní plochy v potravinách | Střední riziko |
-| Nové vlastnictví | Vysoce rizikové napadení škůdci | Vysoké riziko |
-| Rutina – neplánovaná | Vymazání tkanin není čisté nebo správně uložené nebo nedostatečného upraveného. | Nízké riziko |
+| Rutina - neplánovaná | Nedostatečně vyčištěné nebo dezinfikované povrchy styku s potravinami | Mírné riziko |
+| Nové vlastnictví | Vysoce rizikové zamoření škůdci | Vysoké riziko |
+| Rutina - neplánovaná | Utěrací utěrky nejsou čisté nebo řádně uložené nebo nedostatečné dezinfekční | Nízké riziko |
 
-- **InspectionType**: typ kontroly. Může to být buď první kontrola pro nové zařízení, rutinní kontrola, kontrola stížnosti a mnoho dalších typů.
-- **ViolationDescription**: byl zjištěn popis porušení během kontroly.
-- **RiskCategory**: závažnost rizika, které je porušením, představuje veřejný stav a bezpečnost.
+- **InspectionType**: typ kontroly. Může se jednalo buď o první inspekci nového zařízení, rutinní inspekci, inspekci stížností a mnoho dalších typů.
+- **PorušeníPopis**: popis porušení zjištěného během kontroly.
+- **RizikaKategorie**: závažnost rizika porušení představuje pro veřejné zdraví a bezpečnost.
 
-`label` je sloupec, který chcete předpovědět. Při provádění úlohy klasifikace je cílem přiřadit kategorii (text nebo číselnou). V tomto scénáři klasifikace je závažnost porušení přiřazena hodnotě nízké, střední nebo vysoké rizikovosti. Proto je **RiskCategory** jmenovka. `features` jsou vstupy, které modelu udělíte pro předpověď `label`. V tomto případě se **InspectionType** a **ViolationDescription** používají jako funkce nebo vstupy pro předpověď **RiskCategory**.
+Je `label` sloupec, který chcete předpovědět. Při provádění úkolu klasifikace je cílem přiřadit kategorii (text nebo číselné). V tomto scénáři klasifikace závažnost porušení je přiřazena hodnota nízké, střední nebo vysoké riziko. Proto **RiskCategory** je popisek. Jsou `features` vstupy, které dáte modelu `label`předpovědět . V tomto případě **InspectionType** a **ViolationDescription** se používají jako funkce nebo vstupy předpovědět **RiskCategory**.
 
-## <a name="choose-a-scenario"></a>Zvolte scénář
+## <a name="choose-a-scenario"></a>Výběr scénáře
 
-![Průvodce tvůrcem modelů v aplikaci Visual Studio](./media/sentiment-analysis-model-builder/model-builder-screen.png)
+![Průvodce tvůrcem modelů v sadě Visual Studio](./media/sentiment-analysis-model-builder/model-builder-screen.png)
 
-Pokud chcete svůj model naučit, vyberte si ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. V takovém případě se jedná o scénář *klasifikace*.
+Chcete-li trénovat model, vyberte ze seznamu dostupných scénářů strojového učení, které poskytuje Tvůrce modelů. V tomto případě je scénář *klasifikace vydání*.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt *RestaurantViolations* a vyberte **Přidat** > **Machine Learning**.
-1. Pro tuto ukázku je scénářem klasifikace s více třídami. V kroku *scénář* v Tvůrci modelů vyberte scénář **klasifikace problému** .
+1. V **Průzkumníku řešení**klepněte pravým tlačítkem myši na projekt *RestaurantViolations* a vyberte **přidat** > **strojové učení**.
+1. Pro tuto ukázku scénář je klasifikace více tříd. V kroku *scénář* tvůrce modelů vyberte scénář **klasifikace problémů.**
 
 ## <a name="load-the-data"></a>Načtení dat
 
-Tvůrce modelů přijímá data z databáze SQL Server nebo místního souboru ve formátu `csv` nebo `tsv`.
+Tvůrce modelů přijímá data z databáze serveru SQL `csv` `tsv` Server nebo místního souboru ve formátu nebo formátu.
 
-1. V kroku data nástroje Tvůrce modelů vyberte v rozevíracím seznamu zdroj dat možnost **SQL Server** .
-1. Vyberte tlačítko vedle textového pole **připojit k SQL Server databázi** .
-    1. V dialogovém okně **Vybrat data** vyberte **Microsoft SQL Server databázový soubor**.
-    1. Zrušte zaškrtnutí políčka **vždy použít tento výběr** a vyberte **pokračovat**.
-    1. V dialogovém okně **Vlastnosti připojení** vyberte **Procházet** a vyberte stažený soubor *RestaurantScores. mdf* .
+1. V datovém kroku nástroje Model Builder vyberte **SQL Server** z rozevíracího souboru zdroje dat.
+1. Vyberte tlačítko vedle textového pole **Připojit k databázi serveru SQL Server.**
+    1. V dialogovém okně **Zvolit data** vyberte **položku Microsoft SQL Server Database File**.
+    1. Zrušte zaškrtnutí políčka **Vždy použít tento výběr** a vyberte **pokračovat**.
+    1. V dialogovém okně **Vlastnosti připojení** vyberte **Procházet** a vyberte stažený soubor *RestaurantScores.mdf.*
     1. Vyberte **OK**.
-1. V rozevíracím seznamu **název tabulky** vyberte možnost **porušení** .
-1. V rozevíracím seznamu **sloupec pro předpověď (popisek)** vyberte **RiskCategory** .
-1. Ponechte výchozí výběry sloupců, **InspectionType** a **ViolationDescription**, zaškrtněte rozevírací seznam **vstupní sloupce (funkce)** .
-1. Vyberte odkaz **výuka** , který se přesune k dalšímu kroku v Tvůrci modelů.
+1. V rozevíracím souboru **Název tabulky** zvolte **Porušení.**
+1. V rozevíracím seznamu **Sloupec k předvídání (Popisek)** zvolte **Kategorie rizika.**
+1. Ponechte výchozí výběr **sloupců, InspectionType** a **ViolationDescription**, se změnami v rozevírací seznam **Vstupní sloupce (Funkce).**
+1. Vyberte **vlak** odkaz přejít na další krok v Builder.
 
 ## <a name="train-the-model"></a>Trénování modelu
 
-Úkolem strojového učení, který se používá ke studiu modelu klasifikace problému v tomto kurzu, je klasifikace s více třídami. V průběhu procesu školení modelů vlacích sestaví model modelování samostatné modely pomocí různých algoritmů a nastavení třídy s více třídami, aby bylo možné najít nejlepší model pro datovou sadu.
+Úloha strojového učení slouží k trénování modelu klasifikace problémů v tomto kurzu je klasifikace více tříd. Během procesu školení modelu Model Builder trénuje samostatné modely pomocí různých algoritmů klasifikace více tříd a nastavení, aby našel nejvýkonnější model pro vaši datovou sadu.
 
-Čas potřebný ke školení modelu je úměrný množství dat. Tvůrce modelů automaticky vybere výchozí hodnotu pro **čas do výuky (sekundy)** na základě velikosti zdroje dat.
+Doba potřebná pro model pro trénování je úměrná množství dat. Tvůrce modelů automaticky vybere výchozí hodnotu pro **čas pro trénování (sekundy)** na základě velikosti zdroje dat.
 
-1. I když tvůrce modelů nastaví hodnotu **času na vlak (sekundy)** až 10 sekund, narůstá na 30 sekund. Školení po delší dobu umožňuje tvůrci modelů prozkoumat větší počet algoritmů a kombinaci parametrů při hledání nejlepšího modelu.
-1. Vyberte **Spustit školení**.
+1. Přestože Model Builder nastaví hodnotu **Čas trénovat (sekundy)** na 10 sekund, zvyšte ji na 30 sekund. Školení pro delší časové zpracování umožňuje Model Builder prozkoumat větší počet algoritmů a kombinace parametrů při hledání nejlepší model.
+1. Vyberte **možnost Zahájit trénink**.
 
-    V průběhu procesu školení se data o průběhu zobrazují v části `Progress` v kroku výuka.
+    V průběhu tréninkového procesu se `Progress` údaje o průběhu zobrazují v části kroku vlaku.
 
     - **Stav** zobrazuje stav dokončení procesu školení.
-    - **Nejlepší přesnost** zobrazuje přesnost nejlepšího modelu, kterou najde tvůrce modelů, zatím. Vyšší přesnost znamená, že model se v testovacích datech podrobnějším způsobem vypovídat.
-    - **Nejlepší algoritmus** zobrazuje název nejlepšího algoritmu nalezeného tvůrcem modelu, zatím.
-    - **Poslední algoritmus** zobrazuje název algoritmu naposledy, který tvůrce modelů použil k vytvoření výukového modelu.
+    - **Nejlepší přesnost** zobrazuje přesnost nejvýkonnějšího modelu, který dosud našel Model Builder. Vyšší přesnost znamená, že model byl na testovacích datech předpovězen správněji.
+    - **Nejlepší algoritmus** zobrazí název algoritmu s nejlepším výkonem, který dosud našel Model Builder.
+    - **Poslední algoritmus** zobrazí název algoritmu, který byl naposledy použit tvůrcem modelů k trénování modelu.
 
-1. Po dokončení školení vyberte odkaz **vyhodnotit** , který se přesune k dalšímu kroku.
+1. Po dokončení tréninku vyberte odkaz **Vyhodnotit a** přejděte k dalšímu kroku.
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Výsledkem kroku školení je jeden model, který má nejlepší výkon. V kroku vyhodnocení v Tvůrci modelů obsahuje oddíl Output algoritmus používaný modelem nejlepšího provádění v **nejlepším záznamu modelu** spolu se metrikami v **nejvyšší přesnosti modelu**. Kromě toho se zobrazí Souhrnná tabulka obsahující až pět modelů, které se prozkoumaly a jejich metriky.
+Výsledkem kroku školení je jeden model, který měl nejlepší výkon. V kroku vyhodnocení Tvůrce modelů obsahuje výstupní část algoritmus používaný nejvýkonnějším modelem v položce **Nejlepší model** spolu s metrikami v **kategorii Nejlepší přesnost modelu**. Kromě toho se zobrazí souhrnná tabulka obsahující až pět modelů, které byly prozkoumány a jejich metriky.
 
-Pokud nejste spokojeni s metrikami přesnosti, můžou se některé snadné způsoby, jak se pokusit zvýšit přesnost modelu, zvýšit množství času pro výuku modelu nebo použít více dat. V opačném případě vyberte odkaz **kód** , který se přesune k poslednímu kroku v Tvůrci modelů.
+Pokud nejste spokojeni s metrikami přesnosti, některé jednoduché způsoby, jak se pokusit zlepšit přesnost modelu, je prodloužit dobu pro trénování modelu nebo použití více dat. V opačném případě vyberte odkaz **kódu** pro přechod na poslední krok v Builder.
 
-## <a name="add-the-code-to-make-predictions"></a>Přidejte kód, který provede předpovědi
+## <a name="add-the-code-to-make-predictions"></a>Přidání kódu pro předpověď
 
-Dva projekty jsou vytvořeny v důsledku školicího procesu.
+Dva projekty jsou vytvořeny v důsledku procesu školení.
 
-- RestaurantViolationsML. ConsoleApp: Konzolová aplikace C# .NET Core, která obsahuje kód pro školení modelů a ukázku kódu.
-- RestaurantViolationsML. model: .NET Standard knihovny tříd obsahující datové modely, které definují schéma vstupních a výstupních dat modelu, uloženou verzi modelu nejlepšího provádění během školení a pomocnou třídu nazvanou `ConsumeModel` k vytvoření předpovědi.
+- RestaurantViolationsML.ConsoleApp: Aplikace C# .NET Core Console, která obsahuje trénování modelu a kód spotřeby vzorku.
+- RestaurantViolationsML.Model: Knihovna třídy .NET Standard obsahující datové modely, které definují schéma vstupních a výstupních dat modelu, uloženou `ConsumeModel` verzi nejvýkonnějšího modelu během trénovaní a pomocnou třídu volanou k předpovědi.
 
-1. V kroku Code v Tvůrci modelů vyberte **Přidat projekty** a přidejte do řešení automaticky generované projekty.
-1. Otevřete soubor *program.cs* v projektu *RestaurantViolations* .
-1. Přidejte následující příkaz using pro odkaz na projekt *RestaurantViolationsML. model* :
+1. V kroku kódu Tvůrce modelů vyberte **Přidat projekty** a přidejte do řešení automaticky generované projekty.
+1. Otevřete soubor *Program.cs* v projektu *RestaurantViolations.*
+1. Přidejte následující příkaz using, abyste odkazovali na projekt *RestaurantViolationsML.Model:*
 
     [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/modelbuilder/MulticlassClassification_RestaurantViolations/RestaurantViolations/Program.cs#L2)]
 
-1. Chcete-li vytvořit předpovědi pro nová data pomocí modelu, vytvořte novou instanci třídy `ModelInput` v rámci metody `Main` vaší aplikace. Všimněte si, že kategorie rizik není součástí vstupu. Důvodem je to, že model vygeneruje předpověď pro něj.
+1. Chcete-li předpovědět nová data pomocí modelu, vytvořte `ModelInput` novou `Main` instanci třídy uvnitř metody vaší aplikace. Všimněte si, že kategorie rizika není součástí vstupu. Důvodem je, že model generuje předpověď pro něj.
 
     [!code-csharp [TestData](~/machinelearning-samples/samples/modelbuilder/MulticlassClassification_RestaurantViolations/RestaurantViolations/Program.cs#L11-L15)]
 
-1. Použijte metodu `Predict` z `ConsumeModel` třídy. Metoda `Predict` načte vyškolený model, vytvoří [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro model a použije ho k předpovědií nových dat.
+1. Použijte `Predict` metodu `ConsumeModel` z třídy. Metoda `Predict` načte trénovaný [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) model, vytvoří pro model a používá jej k vytváření předpovědí na nová data.
 
     [!code-csharp [Prediction](~/machinelearning-samples/samples/modelbuilder/MulticlassClassification_RestaurantViolations/RestaurantViolations/Program.cs#L17-L24)]
 
 1. Spusťte aplikaci.
 
-    Výstup generovaný programem by měl vypadat podobně jako následující fragment kódu:
+    Výstup generovaný programem by měl vypadat podobně jako výstřižek níže:
 
     ```bash
     Inspection Type: Complaint
@@ -142,14 +142,14 @@ Dva projekty jsou vytvořeny v důsledku školicího procesu.
     Risk Category: Moderate Risk
     ```
 
-Pokud potřebujete odkazovat na vygenerované projekty později v jiném řešení, můžete je najít v adresáři `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
+Pokud potřebujete odkazovat na generované projekty později uvnitř jiného řešení, `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools` můžete je najít uvnitř adresáře.
 
-Blahopřejeme! Úspěšně jste vytvořili model strojového učení pro kategorizaci rizika narušení stavu pomocí Tvůrce modelů. Zdrojový kód pro tento kurz najdete v úložišti GitHub [/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/modelbuilder/MulticlassClassification_RestaurantViolations) .
+Blahopřejeme! Úspěšně jste vytvořili model strojového učení, abyste kategorizovali riziko porušení stavu pomocí Tvůrce modelů. Zdrojový kód pro tento kurz najdete v úložišti GitHub [dotnet/machinelearning-samples.](https://github.com/dotnet/machinelearning-samples/tree/master/samples/modelbuilder/MulticlassClassification_RestaurantViolations)
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-Další informace o tématech uvedených v tomto kurzu najdete v následujících zdrojích informací:
+Další informace o tématech uvedených v tomto kurzu naleznete v následujících zdrojích:
 
 - [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenarios)
-- [Klasifikace s více třídami](../resources/glossary.md#multiclass-classification)
-- [Metrika modelu klasifikace s více třídami](../resources/metrics.md#evaluation-metrics-for-multi-class-classification)
+- [Klasifikace více tříd](../resources/glossary.md#multiclass-classification)
+- [Metriky modelu klasifikace více tříd](../resources/metrics.md#evaluation-metrics-for-multi-class-classification)

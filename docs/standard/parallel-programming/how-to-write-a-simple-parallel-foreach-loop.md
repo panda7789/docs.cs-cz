@@ -1,5 +1,5 @@
 ---
-title: Zápis jednoduchého paralelního programu pomocí Parallel. ForEach
+title: Napsat jednoduchý paralelní program pomocí Parallel.ForEach
 ms.date: 02/14/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,46 +10,46 @@ helpviewer_keywords:
 - parallel programming, foreach
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
 ms.openlocfilehash: 02b94b673dc4468e68a1dadd83aab0e3bfcfaa16
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160297"
 ---
-# <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postupy: zápis jednoduché smyčky Parallel. ForEach
+# <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postup: Napište jednoduchou smyčku Parallel.ForEach
 
-Tento příklad ukazuje, jak použít smyčku <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> k povolení datových paralelismu přes libovolný <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat.
+Tento příklad ukazuje, <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> jak použít smyčku k <xref:System.Collections.IEnumerable?displayProperty=nameWithType> <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> povolení paralelismu dat přes všechny nebo zdroj dat.
 
 > [!NOTE]
-> Tato dokumentace používá lambda výrazy k definování delegátů v PLINQ. Pokud nejste obeznámeni s lambda výrazy v C# nebo Visual Basic, přečtěte si téma [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
+> Tato dokumentace používá lambda výrazy definovat delegáty v PLINQ. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, naleznete [lambda výrazy v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu se předpokládá, že máte ve složce *C:\Users\Public\Pictures\Sample obrázky* několik souborů. jpg a vytvoříme novou podsložku s názvem *Modified*. Když spustíte příklad, otáčí se každý obrázek. jpg ve *vzorových obrázcích* a uloží se do *upraveného*. V případě potřeby můžete tyto dvě cesty upravit.
+Tento příklad předpokládá, že máte několik souborů JPG ve složce *C:\Users\Public\Pictures\Sample Pictures* a vytvoří tenovou podsložku s názvem *Změněno*. Při spuštění příkladu otočí každý .jpg obraz v *ukázkové obrázky* a uloží jej *do změnit*. Podle potřeby můžete upravit dvě cesty.
 
 [!code-csharp[TPL_Parallel#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/simpleforeach.cs#03)]
 [!code-vb[TPL_Parallel#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/simpleforeach.vb#03)]
 
-<xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>ová smyčka funguje jako smyčka <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType>. Smyčka rozdělí zdrojovou kolekci a naplánuje práci na více vláknech na základě prostředí systému. Čím více procesorů v systému, tím rychleji se spustí paralelní metoda. U některých zdrojových kolekcí může být sekvenční smyčka rychlejší v závislosti na velikosti zdroje a druhu práce, kterou smyčka provádí. Další informace o výkonu najdete v tématu [potenciální nástrah v datech a paralelismuch Tasks](potential-pitfalls-in-data-and-task-parallelism.md).
+Smyčka <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> funguje jako <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> smyčka. Smyčka rozdělí zdrojovou kolekci a naplánuje práci na více vláknech na základě systémového prostředí. Čím více procesorů v systému, tím rychlejší paralelní metoda běží. Pro některé zdrojové kolekce může být sekvenční smyčka rychlejší, v závislosti na velikosti zdroje a druhu práce, kterou smyčka provádí. Další informace o výkonu naleznete [v tématu Potenciální úskalí v datech a paralelismu úloh](potential-pitfalls-in-data-and-task-parallelism.md).
 
-Další informace o paralelních smyčkách naleznete v tématu [How to: Write a Simple Parallel. for Loop](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md).
+Další informace o paralelních smyčkách naleznete v [tématu How to: Write a simple Parallel.For loop](../../../docs/standard/parallel-programming/how-to-write-a-simple-parallel-for-loop.md).
 
-Chcete-li použít <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> s neobecnou kolekcí, můžete použít metodu rozšíření <xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType> k převedení kolekce do obecné kolekce, jak je znázorněno v následujícím příkladu:
+Chcete-li použít <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> s neobecnou kolekci, můžete použít metodu <xref:System.Linq.Enumerable.Cast%2A?displayProperty=nameWithType> rozšíření převést kolekci na obecnou kolekci, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[TPL_Parallel#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/nongeneric.cs#07)]
 [!code-vb[TPL_Parallel#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/nongeneric.vb#07)]
 
-Můžete také použít Paralelní LINQ (PLINQ) k paralelizovat zpracování zdrojů dat <xref:System.Collections.Generic.IEnumerable%601>. PLINQ umožňuje použít syntax deklarativního dotazu k vyjádření chování smyčky. Další informace naleznete v tématu [PARALLEL LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).
+Paralelní LINQ (PLINQ) můžete také použít k <xref:System.Collections.Generic.IEnumerable%601> paralelizaci zpracování zdrojů dat. PLINQ umožňuje použít syntaxi deklarativního dotazu k vyjádření chování smyčky. Další informace naleznete [v tématu Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).
 
-## <a name="compile-and-run-the-code"></a>Zkompilovat a spustit kód
+## <a name="compile-and-run-the-code"></a>Kompilace a spuštění kódu
 
-Kód můžete zkompilovat jako konzolovou aplikaci pro .NET Framework nebo jako konzolovou aplikaci pro .NET Core.
+Kód můžete zkompilovat jako konzolovou aplikaci pro rozhraní .NET Framework nebo jako konzolovou aplikaci pro rozhraní .NET Core.
 
-V aplikaci Visual Studio jsou k dispozici C# šablony pro Visual Basic a konzolové aplikace pro Windows Desktop a .NET Core.
+V sadě Visual Studio existují šablony aplikací visual basic a c# konzoly pro Windows Desktop a .NET Core.
 
-Z příkazového řádku můžete použít buď příkazy .NET Core CLI (například `dotnet new console` nebo `dotnet new console -lang vb`), nebo můžete vytvořit soubor a použít kompilátor příkazového řádku pro aplikaci .NET Framework.
+Z příkazového řádku můžete použít příkazy rozhraní PŘÍKAZU .NET `dotnet new console` `dotnet new console -lang vb`Core (například nebo ) nebo můžete vytvořit soubor a použít kompilátor příkazového řádku pro aplikaci rozhraní .NET Framework.
 
-V případě projektu .NET Core musíte odkazovat na balíček NuGet **System. Drawing. Common** . V aplikaci Visual Studio použijte Správce balíčků NuGet k instalaci balíčku. Alternativně můžete do souboru \*. csproj nebo \*. vbproj přidat odkaz na balíček:
+Pro projekt .NET Core je nutné odkazovat na balíček **System.Drawing.Common** NuGet. V sadě Visual Studio použijte K instalaci balíčku Správce balíčků NuGet. Případně můžete přidat odkaz na balíček \*v souboru \*.csproj nebo .vbproj:
 
 ```xml
 <ItemGroup>
@@ -57,12 +57,12 @@ V případě projektu .NET Core musíte odkazovat na balíček NuGet **System. D
 </ItemGroup>
 ```
 
-Chcete-li spustit konzolovou aplikaci .NET Core z příkazového řádku, použijte `dotnet run` ze složky, která obsahuje vaši aplikaci.
+Chcete-li spustit aplikaci konzoly .NET `dotnet run` Core z příkazového řádku, použijte ze složky, která obsahuje vaši aplikaci.
 
-Chcete-li spustit konzolovou aplikaci ze sady Visual Studio, stiskněte klávesu **F5**.
+Chcete-li spustit konzolovou aplikaci z aplikace Visual Studio, stiskněte **klávesu F5**.
 
 ## <a name="see-also"></a>Viz také
 
-- [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+- [Paralelismus dat](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

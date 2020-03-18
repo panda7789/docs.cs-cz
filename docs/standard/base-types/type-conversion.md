@@ -25,36 +25,36 @@ helpviewer_keywords:
 - data types [.NET Framework], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
 ms.openlocfilehash: 0e88303f2bac2dae90a97f9d2de92af1d2a0f80d
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73976494"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>Převod typů v rozhraní .NET Framework
-Jednotlivým hodnotám je přidružen typ, který definuje atributy, jako například množství prostoru vyhrazeného hodnotě, rozsah možných hodnot a členy, které to umožňují. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  
+Každá hodnota má přidružený typ, který definuje atributy, jako je například velikost místa přiděleného hodnotě, rozsah možných hodnot, které může mít, a členy, které zpřístupní. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  
   
- .NET Framework automaticky podporuje následující převody:  
+ Rozhraní .NET Framework automaticky podporuje následující převody:  
   
-- Konverze z odvozené třídy na základní třídu. To znamená, že například instance libovolné třídy nebo struktury může být převedena na instanci <xref:System.Object>.  Tento převod nevyžaduje operátor přetypování nebo převodu.  
+- Převod z odvozené třídy na základní třídu. To například znamená, že instanci libovolné třídy nebo <xref:System.Object> struktury lze převést na instanci.  Tento převod nevyžaduje operátor přetypování nebo převodu.  
   
-- Konverze ze základní třídy zpět na původní odvozenou třídu. V C#, tento převod vyžaduje operátor přetypování. V Visual Basic vyžaduje, aby byl operátor `CType`, pokud je `Option Strict` zapnutý.  
+- Převod ze základní třídy zpět na původní odvozené třídy. V c#, tento převod vyžaduje operátor přetypování. V jazyce Visual `CType` Basic `Option Strict` vyžaduje operátor, pokud je zapnuto.  
   
-- Převod z typu, který implementuje rozhraní k objektu rozhraní, které představuje toto rozhraní. Tento převod nevyžaduje operátor přetypování nebo převodu.  
+- Převod z typu, který implementuje rozhraní na objekt rozhraní, který představuje toto rozhraní. Tento převod nevyžaduje operátor přetypování nebo převodu.  
   
-- Konverze z objektu rozhraní zpět na původní typ, který implementuje toto rozhraní.  V C#, tento převod vyžaduje operátor přetypování. V Visual Basic vyžaduje, aby byl operátor `CType`, pokud je `Option Strict` zapnutý.  
+- Převod z objektu rozhraní zpět na původní typ, který implementuje toto rozhraní.  V c#, tento převod vyžaduje operátor přetypování. V jazyce Visual `CType` Basic `Option Strict` vyžaduje operátor, pokud je zapnuto.  
   
- Kromě těchto automatických převodů .NET Framework poskytuje několik funkcí, které podporují převod vlastního typu. Patří mezi ně například:  
+ Kromě těchto automatických převodů poskytuje rozhraní .NET Framework několik funkcí, které podporují převod vlastního typu. Patří mezi ně například:  
   
-- Operátor `Implicit`, který definuje dostupné rozšiřující převody mezi typy. Další informace naleznete v části [implicitní převod s implicitním operátorem](#implicit-conversion-with-the-implicit-operator) .  
+- Operátor, `Implicit` který definuje dostupné rozšiřující převody mezi typy. Další informace naleznete [v části Implicitní převod s implicitním operátorem.](#implicit-conversion-with-the-implicit-operator)  
   
-- Operátor `Explicit`, který definuje dostupné zužující převody mezi typy. Další informace naleznete v části [explicitní převod s explicitním operátorem](#explicit-conversion-with-the-explicit-operator) .  
+- Operátor, `Explicit` který definuje dostupné zužující převody mezi typy. Další informace naleznete v části [Explicitní převod s explicitním operátorem.](#explicit-conversion-with-the-explicit-operator)  
   
-- Rozhraní <xref:System.IConvertible>, které definuje převody na jednotlivé základní .NET Framework datové typy. Další informace najdete v části [rozhraní IConvertible](#the-iconvertible-interface) .  
+- Rozhraní, <xref:System.IConvertible> které definuje převody na každý z datových typů základní rozhraní .NET Framework. Další informace naleznete v části [Rozhraní IKonslete.](#the-iconvertible-interface)  
   
-- Třída <xref:System.Convert>, která poskytuje sadu metod, které implementují metody v rozhraní <xref:System.IConvertible>. Další informace naleznete v oddílu [třída Convert](#the-convert-class) .  
+- Třída, <xref:System.Convert> která poskytuje sadu metod, které implementují metody v <xref:System.IConvertible> rozhraní. Další informace naleznete v části [Převést třídu.](#the-convert-class)  
   
-- Třída <xref:System.ComponentModel.TypeConverter>, která je základní třídou, která se dá rozšířit tak, aby podporovala převod zadaného typu na jakýkoliv jiný typ. Další informace naleznete v oddílu [třídy TypeConverter](#the-typeconverter-class) .  
+- Třída, <xref:System.ComponentModel.TypeConverter> což je základní třída, která může být rozšířena tak, aby podporovala převod zadaného typu na jiný typ. Další informace naleznete v části [Třída převaděče typeconverteru.](#the-typeconverter-class)  
 
 ## <a name="implicit-conversion-with-the-implicit-operator"></a>Implicitní převod s implicitním operátorem  
  Rozšiřující převody zahrnují vytvoření nové hodnoty z hodnoty existujícího typu, který má buď více omezený rozsah, nebo více omezený seznam členů než cílový typ. Rozšiřující převody nemohou způsobit ztrátu dat (ačkoliv mohou způsobit ztrátu přesnosti). Vzhledem k tomu, že nemůže dojít ke ztrátě dat, mohou kompilátory zpracovat převod implicitně nebo transparentně, aniž by bylo nutné použít metodu explicitního převodu nebo operátor přetypování.  
@@ -62,17 +62,17 @@ Jednotlivým hodnotám je přidružen typ, který definuje atributy, jako např�
 > [!NOTE]
 > Ačkoli kód, který provede implicitní převod, může volat metodu převodu nebo použít operátor přetypování, není jejich používání vyžadováno kompilátory, které podporují implicitní převody.  
   
- Například typ <xref:System.Decimal> podporuje implicitní převody z <xref:System.Byte>, <xref:System.Char>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.UInt16>, <xref:System.UInt32>a <xref:System.UInt64> hodnot. Následující příklad ilustruje některé z těchto implicitních převodů při přiřazování hodnot proměnné <xref:System.Decimal>.  
+ <xref:System.Decimal> Například typ podporuje implicitní <xref:System.Byte>převody z <xref:System.Int64> <xref:System.SByte>, <xref:System.UInt16> <xref:System.Char> <xref:System.Int16>, <xref:System.Int32> <xref:System.UInt64> , , , <xref:System.UInt32>, a hodnoty. Následující příklad ilustruje některé z těchto implicitních převodů <xref:System.Decimal> při přiřazování hodnot proměnné.  
   
  [!code-csharp[Conceptual.Conversion#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/implicit1.cs#1)]
  [!code-vb[Conceptual.Conversion#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/implicit1.vb#1)]  
   
- Pokud kompilátor určitého jazyka podporuje vlastní operátory, můžete ve vlastních typech definovat také implicitní převody. Následující příklad poskytuje částečnou implementaci datového typu se znaménkem v bajtu s názvem `ByteWithSign`, který používá reprezentaci se znaménkem a velikostí. Podporuje implicitní převod hodnot <xref:System.Byte> a <xref:System.SByte> na hodnoty `ByteWithSign`.  
+ Pokud kompilátor určitého jazyka podporuje vlastní operátory, můžete ve vlastních typech definovat také implicitní převody. Následující příklad obsahuje částečnou implementaci podepsaného bajtového datového typu s názvem, `ByteWithSign` který používá reprezentaci podepisování a velikosti. Podporuje implicitní <xref:System.Byte> převod <xref:System.SByte> a `ByteWithSign` hodnoty na hodnoty.  
   
  [!code-csharp[Conceptual.Conversion#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/implicit1.cs#2)]
  [!code-vb[Conceptual.Conversion#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/implicit1.vb#2)]  
   
- Klientský kód pak může deklarovat `ByteWithSign` proměnnou a přiřadit jí <xref:System.Byte> a <xref:System.SByte> hodnoty bez provedení explicitních převodů nebo pomocí operátorů přetypování, jak ukazuje následující příklad.  
+ Klientský kód pak `ByteWithSign` může deklarovat proměnnou a přiřadit ji <xref:System.Byte> a <xref:System.SByte> hodnoty bez provedení explicitní převody nebo pomocí libovolné hodování operátory, jak ukazuje následující příklad.  
   
  [!code-csharp[Conceptual.Conversion#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/implicit1.cs#3)]
  [!code-vb[Conceptual.Conversion#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/implicit1.vb#3)]  
@@ -81,116 +81,116 @@ Jednotlivým hodnotám je přidružen typ, který definuje atributy, jako např�
  Zužující převody zahrnují vytvoření nové hodnoty z hodnoty existujícího typu, která má buď větší rozsah, nebo větší seznam členů než cílový typ. Vzhledem k tomu, že zužující převod může mít za následek ztrátu dat, kompilátory často vyžadují, aby byl převod vytvořen explicitně prostřednictvím volání metody převodu nebo operátoru přetypování. To znamená, že převod musí být zpracován explicitně v kódu vývojáře.  
   
 > [!NOTE]
-> Hlavní účel, který vyžaduje metodu převodu nebo operátor přetypování pro zužující převody, je poskytnout vývojářům možnost, že může dojít ke ztrátě dat nebo <xref:System.OverflowException>, aby mohla být zpracována v kódu. Některé kompilátory však mohou tento požadavek zmírnit. Například v Visual Basic, pokud je `Option Strict` vypnutá (výchozí nastavení), kompilátor Visual Basic se pokusí provést zužující převody implicitně.  
+> Hlavním účelem vyžadování metody převodu nebo operátoru přetypování pro zúžení převodů <xref:System.OverflowException> je seznámit vývojáře s možností ztráty dat nebo tak, aby bylo možné s ním zacházet v kódu. Některé kompilátory však mohou tento požadavek zmírnit. Například v jazyce `Option Strict` Visual Basic, pokud je vypnuto (jeho výchozí nastavení), kompilátor jazyka se pokusí provést zužující převody implicitně.  
   
- Například datové typy <xref:System.UInt32>, <xref:System.Int64>a <xref:System.UInt64> mají rozsahy, které překračují datový typ <xref:System.Int32>, jak je uvedeno v následující tabulce.  
+ Například <xref:System.UInt32>, <xref:System.Int64>a <xref:System.UInt64> datové typy mají oblasti, <xref:System.Int32> které překračují datový typ, jak ukazuje následující tabulka.  
   
 |Typ|Porovnání s rozsahem Int32|  
 |----------|------------------------------------|  
-|<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>a <xref:System.Int64.MinValue?displayProperty=nameWithType> je menší než (má větší záporný rozsah než) <xref:System.Int32.MinValue?displayProperty=nameWithType>.|  
-|<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
-|<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
+|<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType>je větší <xref:System.Int32.MaxValue?displayProperty=nameWithType>než <xref:System.Int64.MinValue?displayProperty=nameWithType> , a je menší než <xref:System.Int32.MinValue?displayProperty=nameWithType>(má větší negativní rozsah než) .|  
+|<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType>je větší <xref:System.Int32.MaxValue?displayProperty=nameWithType>než .|  
+|<xref:System.UInt64>|<xref:System.UInt64.MaxValue?displayProperty=nameWithType>je větší <xref:System.Int32.MaxValue?displayProperty=nameWithType>než .|  
   
- Pro zpracování těchto zužujících převodů .NET Framework umožňuje typům definovat operátor `Explicit`. Kompilátory jednotlivých jazyků mohou následně implementovat tento operátor pomocí vlastní syntaxe, nebo může být volána člen třídy <xref:System.Convert> k provedení převodu. (Další informace o třídě <xref:System.Convert> naleznete dále v tomto tématu v [třídě Convert](#the-convert-class) .) Následující příklad znázorňuje použití funkcí jazyka pro zpracování explicitního převodu těchto potenciálně celočíselných hodnot z rozsahu na <xref:System.Int32> hodnoty.  
+ Chcete-li zpracovat takové zužující převody, `Explicit` rozhraní .NET Framework umožňuje typy definovat operátor. Jednotlivé kompilátory jazyka pak můžete implementovat tento operátor <xref:System.Convert> pomocí vlastní syntaxe nebo člen třídy lze volat k provedení převodu. (Další informace o <xref:System.Convert> třídě najdete v [tématu Převést třídy](#the-convert-class) dále v tomto tématu.) Následující příklad ilustruje použití funkcí jazyka pro zpracování explicitní převod těchto potenciálně mimo rozsah <xref:System.Int32> celočíselné hodnoty na hodnoty.  
   
  [!code-csharp[Conceptual.Conversion#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#4)]
  [!code-vb[Conceptual.Conversion#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/explicit1.vb#4)]  
   
- Explicitní převody mohou mít různé výsledky v různých jazycích a tyto výsledky se mohou lišit od hodnoty vrácené odpovídající <xref:System.Convert> metodou. Pokud je například hodnota <xref:System.Double> 12,63251 převedena na <xref:System.Int32>, metoda Visual Basic `CInt` i metoda .NET Framework <xref:System.Convert.ToInt32%28System.Double%29?displayProperty=nameWithType> zaokrouhlí <xref:System.Double>, aby vrátilo hodnotu 13, ale operátor C# `(int)` zkrátí <xref:System.Double>, aby vrátil hodnotu 12. Podobně operátor C# `(int)` nepodporuje převod Boolean-to-Integer, ale metoda `CInt` Visual Basic převádí hodnotu `true` na-1. Na druhé straně <xref:System.Convert.ToInt32%28System.Boolean%29?displayProperty=nameWithType> metoda převede hodnotu `true` na 1.  
+ Explicitní převody mohou vést k různým výsledkům v různých jazycích <xref:System.Convert> a tyto výsledky se mohou lišit od hodnoty vrácené odpovídající metodou. Například pokud <xref:System.Double> hodnota 12.63251 je převeden <xref:System.Int32>na , `CInt` visual basic metoda <xref:System.Convert.ToInt32%28System.Double%29?displayProperty=nameWithType> a .NET Framework metoda <xref:System.Double> zaokrouhlit `(int)` na vrátit hodnotu <xref:System.Double> 13, ale C# operátor zkrátí vrátit hodnotu 12. Podobně operátor C# `(int)` nepodporuje převod boolean-to-celočíselné, ale `CInt` metoda jazyka převede `true` hodnotu na -1. Na druhé straně <xref:System.Convert.ToInt32%28System.Boolean%29?displayProperty=nameWithType> metoda převede hodnotu `true` na 1.  
   
- Většina kompilátorů umožňuje, aby explicitní převody byly prováděny zkontrolovaným, nebo nezkontrolovaným způsobem. Při provedení kontrolovaného převodu je vyvolána <xref:System.OverflowException>, když hodnota typu, který má být převeden, je mimo rozsah cílového typu. Pokud je nezkontrolovaný převod proveden za stejných podmínek, nemusí převod vyvolat výjimku, ale stejné chování bude nedefinováno a může mít za následek nesprávnou hodnotu.  
+ Většina kompilátorů umožňuje, aby explicitní převody byly prováděny zkontrolovaným, nebo nezkontrolovaným způsobem. Při provádění zaškrtnutého převodu <xref:System.OverflowException> je vyvolána, když je hodnota typu, který má být převeden, mimo rozsah cílového typu. Pokud je nezkontrolovaný převod proveden za stejných podmínek, nemusí převod vyvolat výjimku, ale stejné chování bude nedefinováno a může mít za následek nesprávnou hodnotu.  
   
 > [!NOTE]
-> V C#lze kontrolované převody provádět pomocí klíčového slova `checked` spolu s operátorem přetypování, nebo zadáním možnosti kompilátoru `/checked+`. Naopak nekontrolované převody lze provádět pomocí klíčového slova `unchecked` spolu s operátorem přetypování, nebo zadáním možnosti kompilátoru `/checked-`. Ve výchozím nastavení jsou explicitní převody nezkontrolované. V Visual Basic lze kontrolované převody provést zrušením zaškrtnutí políčka **Odebrat kontroly přetečení celých čísel** v dialogovém okně **Pokročilé nastavení kompilátoru** projektu nebo zadáním možnosti kompilátoru `/removeintchecks-`. Naopak nezaškrtnuté převody lze provést zaškrtnutím políčka **Odebrat kontroly přetečení celých čísel** v dialogovém okně **Pokročilé nastavení kompilátoru** projektu nebo zadáním možnosti kompilátoru `/removeintchecks+`. Ve výchozím nastavení jsou explicitní převody zkontrolované.  
+> V C# lze zkontrolovat převody pomocí `checked` klíčového slova společně s operátorem `/checked+` přetypování nebo zadáním možnosti kompilátoru. Naopak nekontrolované převody lze provést pomocí `unchecked` klíčového slova společně s operátorem `/checked-` přetypování nebo zadáním možnosti kompilátoru. Ve výchozím nastavení jsou explicitní převody nezkontrolované. V jazyce Visual Basic lze zaškrtnuté převody provést zrušením zaškrtnutí políčka **Odebrat kontroly přetečení celého** `/removeintchecks-` čísla v dialogovém okně Rozšířené nastavení **kompilátoru** projektu nebo zadáním možnosti kompilátoru. Naopak nezaškrtnuté převody lze provést zaškrtnutím políčka **Odebrat kontroly přetečení celého čísla** v dialogovém okně `/removeintchecks+` Rozšířené nastavení **kompilátoru** projektu nebo zadáním možnosti kompilátoru. Ve výchozím nastavení jsou explicitní převody zkontrolované.  
   
- Následující C# příklad používá klíčová slova `checked` a `unchecked` k ilustraci rozdílu v chování, pokud je hodnota mimo rozsah <xref:System.Byte> převedena na <xref:System.Byte>. Kontrolovaný převod vyvolá výjimku, ale nekontrolovaný převod přiřadí <xref:System.Byte.MaxValue?displayProperty=nameWithType> k proměnné <xref:System.Byte>.  
+ Následující příklad jazyka C# používá klíčová slova `checked` a `unchecked` k ilustraci <xref:System.Byte> rozdílu v <xref:System.Byte>chování při převodu hodnoty mimo rozsah a . Kontrolovaný převod vyvolá výjimku, ale nezaškrtnutý převod <xref:System.Byte.MaxValue?displayProperty=nameWithType> přiřadí <xref:System.Byte> proměnné.  
   
  [!code-csharp[Conceptual.Conversion#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#12)]  
   
- Pokud konkrétní jazykový kompilátor podporuje vlastní přetížené operátory, můžete ve vlastních typech definovat také explicitní převody. Následující příklad poskytuje částečnou implementaci datového typu se znaménkem v bajtu s názvem `ByteWithSign`, který používá reprezentaci se znaménkem a velikostí. Podporuje explicitní převod hodnot <xref:System.Int32> a <xref:System.UInt32> na hodnoty `ByteWithSign`.  
+ Pokud konkrétní jazykový kompilátor podporuje vlastní přetížené operátory, můžete ve vlastních typech definovat také explicitní převody. Následující příklad obsahuje částečnou implementaci podepsaného bajtového datového typu s názvem, `ByteWithSign` který používá reprezentaci podepisování a velikosti. Podporuje explicitní převod <xref:System.Int32> <xref:System.UInt32> a `ByteWithSign` hodnoty na hodnoty.  
   
  [!code-csharp[Conceptual.Conversion#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#5)]
  [!code-vb[Conceptual.Conversion#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/explicit1.vb#5)]  
   
- Klientský kód pak může deklarovat `ByteWithSign` proměnnou a přiřadit <xref:System.Int32> a <xref:System.UInt32> hodnoty, pokud přiřazení zahrnují operátor přetypování nebo metodu převodu, jak ukazuje následující příklad.  
+ Kód klienta pak `ByteWithSign` může deklarovat proměnnou a přiřadit ji <xref:System.Int32> a <xref:System.UInt32> hodnoty, pokud přiřazení zahrnují operátor přetypování nebo metodu převodu, jak ukazuje následující příklad.  
   
  [!code-csharp[Conceptual.Conversion#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/explicit1.cs#6)]
  [!code-vb[Conceptual.Conversion#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/explicit1.vb#6)]  
 
 ## <a name="the-iconvertible-interface"></a>Rozhraní IConvertible  
- Aby bylo možné podporovat převod jakéhokoli typu na základní typ modulu CLR, .NET Framework poskytuje rozhraní <xref:System.IConvertible>. Implementující typ je vyžadován pro následující akce:  
+ Pro podporu převodu libovolného typu na základní typ běžného modulu runtime poskytuje <xref:System.IConvertible> rozhraní rozhraní .NET Framework. Implementující typ je vyžadován pro následující akce:  
   
-- Metoda, která vrací <xref:System.TypeCode> implementující typu.  
+- Metoda, která <xref:System.TypeCode> vrací implementující typ.  
   
-- Metody pro převod implementující typu na každý základní typ modulu CLR (Common Language Runtime) (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>a tak dále).  
+- Metody převodu implementujícího typu na každý základní<xref:System.Boolean> <xref:System.Byte>typ <xref:System.DateTime> <xref:System.Decimal>běžného jazyka runtime ( , , , <xref:System.Double>, a tak dále).  
   
-- Zobecněná metoda převodu k převedení instance implementujícího typu na jiný určený typ. Převody, které nejsou podporovány, by měly vyvolat <xref:System.InvalidCastException>.  
+- Zobecněná metoda převodu k převedení instance implementujícího typu na jiný určený typ. Převody, které nejsou podporovány by měl vyvolat <xref:System.InvalidCastException>.  
   
- Každý základní typ modulu CLR (Common Language Runtime) (to znamená <xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.String>, <xref:System.UInt16>, <xref:System.UInt32>a <xref:System.UInt64>), a také <xref:System.DBNull> a <xref:System.Enum> typy, implementujte rozhraní <xref:System.IConvertible>. Jedná se však o explicitní implementace rozhraní; metodu převodu lze volat pouze prostřednictvím proměnné rozhraní <xref:System.IConvertible>, jak ukazuje následující příklad. Tento příklad převede hodnotu <xref:System.Int32> na ekvivalentní <xref:System.Char> hodnotu.  
+ Každý základní typ běžného modulu <xref:System.Boolean>runtime <xref:System.Char> <xref:System.DateTime>(tj. <xref:System.Int16> <xref:System.Int32>, <xref:System.Int64> <xref:System.SByte> <xref:System.Single> <xref:System.String> <xref:System.UInt16> <xref:System.UInt32> <xref:System.UInt64> <xref:System.DBNull> <xref:System.Enum> <xref:System.Decimal> <xref:System.Byte>, <xref:System.Double>, , , , , , , <xref:System.IConvertible> , , a ), a také a typy, implementujte rozhraní. Jedná se však o explicitní implementace rozhraní; metodu převodu lze volat <xref:System.IConvertible> pouze prostřednictvím proměnné rozhraní, jak ukazuje následující příklad. Tento příklad převede <xref:System.Int32> hodnotu <xref:System.Char> na ekvivalentní hodnotu.  
   
  [!code-csharp[Conceptual.Conversion#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/iconvertible1.cs#7)]
  [!code-vb[Conceptual.Conversion#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/iconvertible1.vb#7)]  
   
- Pokud je požadavek volání metody převodu uplatněn na rozhraní a nikoli na implementující typ, jsou implementace explicitního rozhraní poměrně nákladné. Místo toho doporučujeme volat příslušný člen třídy <xref:System.Convert> pro převod mezi základními typy modulu CLR (Common Language Runtime). Další informace naleznete v další části [třídy Convert](#the-convert-class).  
+ Pokud je požadavek volání metody převodu uplatněn na rozhraní a nikoli na implementující typ, jsou implementace explicitního rozhraní poměrně nákladné. Místo toho doporučujeme zavolat příslušného <xref:System.Convert> člena třídy převést mezi základní typy běžného běhu v jazyce. Další informace naleznete v další části [Převést třídy](#the-convert-class).  
   
 > [!NOTE]
-> Kromě rozhraní <xref:System.IConvertible> a <xref:System.Convert> třídy poskytované .NET Framework mohou jednotlivé jazyky také poskytovat způsoby provádění převodů. Například C# používá operátory přetypování; Visual Basic používá funkce převodu implementované kompilátorem, jako jsou `CType`, `CInt`a `DirectCast`.  
+> Kromě <xref:System.IConvertible> rozhraní a <xref:System.Convert> třídy poskytované rozhraním .NET Framework mohou jednotlivé jazyky také poskytovat způsoby provádění převodů. Například C# používá operátory přetypování; Visual Basic používá funkce převodu `CType`implementované kompilátorem, například , `CInt`a `DirectCast`.  
   
- Ve většině případů je rozhraní <xref:System.IConvertible> navrženo tak, aby podporovalo převod mezi základními typy v .NET Framework. Rozhraní lze však implementovat také pomocí vlastního typu, a podpořit tak převod tohoto typu na vlastní typy. Další informace najdete v části [vlastní převody s metodou ChangeType](#custom-conversions-with-the-changetype-method) dále v tomto tématu.
+ Z větší části <xref:System.IConvertible> rozhraní je určen pro podporu převodu mezi základní typy v rozhraní .NET Framework. Rozhraní lze však implementovat také pomocí vlastního typu, a podpořit tak převod tohoto typu na vlastní typy. Další informace naleznete v části [Vlastní převody s metodou ChangeType](#custom-conversions-with-the-changetype-method) dále v tomto tématu.
 
 ## <a name="the-convert-class"></a>Třída Convert
- I když je možné volat jednotlivé implementace rozhraní <xref:System.IConvertible> rozhraní, aby se prováděl převod typu, volání metod třídy <xref:System.Convert?displayProperty=nameWithType> je doporučeným jazykově neutrálním způsobem pro převod z jednoho základního typu na jiný. Kromě toho lze metodu <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> použít k převodu ze zadaného vlastního typu na jiný typ.  
+ Přestože každý základní <xref:System.IConvertible> typ implementace rozhraní lze volat k provedení převodu typu, volání metody <xref:System.Convert?displayProperty=nameWithType> třídy je doporučený jazykově neutrální způsob, jak převést z jednoho základního typu na jiný. Kromě toho <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> lze metodu použít k převodu ze zadaného vlastního typu na jiný typ.  
   
 ### <a name="conversions-between-base-types"></a>Převody mezi základními typy  
- Třída <xref:System.Convert> poskytuje jazykově neutrální způsob pro provádění převodů mezi základními typy a je k dispozici pro všechny jazyky, které cílí na modul CLR (Common Language Runtime). Poskytuje kompletní sadu metod pro rozšiřující i zužující převody a vyvolá <xref:System.InvalidCastException> pro převody, které nejsou podporovány (například převod <xref:System.DateTime> hodnoty na celočíselnou hodnotu). Zužující převody jsou prováděny v kontrolovaném kontextu a <xref:System.OverflowException> je vyvolána, pokud se převod nezdařil.  
+ Třída <xref:System.Convert> poskytuje jazykově neutrální způsob provádění převodů mezi základními typy a je k dispozici všem jazykům, které cílí na běžný jazyk runtime. Poskytuje úplnou sadu metod pro rozšíření a zužující převody <xref:System.InvalidCastException> a vyvolá pro převody, které nejsou <xref:System.DateTime> podporovány (například převod hodnoty na celou hodnotu). Zužující převody jsou prováděny v kontrolovaném kontextu a <xref:System.OverflowException> je vyvolána, pokud se nezdaří převodu.  
   
 > [!IMPORTANT]
-> Vzhledem k tomu, že třída <xref:System.Convert> obsahuje metody pro převod na a z každého základního typu, eliminuje nutnost volání <xref:System.IConvertible> explicitní implementace rozhraní pro jednotlivé základní typy.  
+> Vzhledem <xref:System.Convert> k tomu, že třída obsahuje metody pro převod do a z <xref:System.IConvertible> každého základního typu, eliminuje potřebu volat explicitní implementaci rozhraní každého základního typu.  
   
- Následující příklad ilustruje použití třídy <xref:System.Convert?displayProperty=nameWithType> k provedení několika rozšiřujících a zužujících převodů mezi .NET Framework základními typy.  
+ Následující příklad ilustruje použití <xref:System.Convert?displayProperty=nameWithType> třídy k provedení několika rozšiřujících a zužujících převodů mezi základními typy rozhraní .NET Framework.  
   
  [!code-csharp[Conceptual.Conversion#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/convert1.cs#8)]
  [!code-vb[Conceptual.Conversion#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/convert1.vb#8)]  
   
- V některých případech, zejména při převodu do a z hodnot s plovoucí desetinnou čárkou, může převod zahrnovat ztrátu přesnosti, i když nevyvolá <xref:System.OverflowException>. Následující příklad znázorňuje tuto ztrátu přesnosti. V prvním případě má hodnota <xref:System.Decimal> menší přesnost (méně platných číslic), když je převedena na <xref:System.Double>. V druhém případě je hodnota <xref:System.Double> zaokrouhlena z 42,72 na 43, aby bylo možné dokončit převod.  
+ V některých případech, zejména při převodu na a z hodnoty s plovoucí desetinnou tálicí, převod může zahrnovat ztrátu přesnosti, i když nevyvolá <xref:System.OverflowException>. Následující příklad znázorňuje tuto ztrátu přesnosti. V prvním případě <xref:System.Decimal> hodnota má menší přesnost (méně platných číslic) <xref:System.Double>při převodu na . V druhém případě <xref:System.Double> je hodnota zaokrouhlena z 42.72 na 43 za účelem dokončení převodu.  
   
  [!code-csharp[Conceptual.Conversion#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/convert1.cs#9)]
  [!code-vb[Conceptual.Conversion#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/convert1.vb#9)]  
   
- Tabulka, která obsahuje seznam rozšiřujících a zužujících převodů podporovaných třídou <xref:System.Convert>, naleznete v tématu [převodní tabulky typů](../../../docs/standard/base-types/conversion-tables.md).  
+ Tabulka se seznamem rozšiřujících i zužujících <xref:System.Convert> převodů podporovaných třídou naleznete v [tématu Typové konverzní tabulky](../../../docs/standard/base-types/conversion-tables.md).  
 
 ### <a name="custom-conversions-with-the-changetype-method"></a>Vlastní převody pomocí metody ChangeType  
- Kromě podpory převodů na jednotlivé základní typy lze třídu <xref:System.Convert> použít k převedení vlastního typu na jeden nebo více předdefinovaných typů. Tento převod provádí metoda <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, která zase zabalí volání metody <xref:System.IConvertible.ToType%2A?displayProperty=nameWithType> parametru `value`. To znamená, že objekt reprezentovaný parametrem `value` musí poskytovat implementaci rozhraní <xref:System.IConvertible>.  
+ Kromě podpory převody na každý základní typy, <xref:System.Convert> třídy lze převést vlastní typ na jeden nebo více předdefinovaných typů. Tento převod se <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> provádí metodou, která zase zabalí <xref:System.IConvertible.ToType%2A?displayProperty=nameWithType> volání `value` metody parametru. To znamená, že objekt `value` reprezentované <xref:System.IConvertible> parametr musí poskytnout implementaci rozhraní.  
   
 > [!NOTE]
-> Vzhledem k tomu, že metody <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%29?displayProperty=nameWithType> a <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> používají objekt <xref:System.Type> k určení cílového typu, ke kterému je `value` převeden, lze použít k provedení dynamického převodu na objekt, jehož typ není znám v době kompilace. Upozorňujeme však, že <xref:System.IConvertible> implementace `value` musí nadále podporovat tento převod.  
+> Vzhledem <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%29?displayProperty=nameWithType> <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> k tomu, že metody a používají <xref:System.Type> objekt k určení cílového typu, na který `value` je převeden, lze je použít k provedení dynamického převodu na objekt, jehož typ není v době kompilace znám. Všimněte si <xref:System.IConvertible> však, že provádění `value` musí stále podporovat tento převod.  
   
- Následující příklad znázorňuje možnou implementaci rozhraní <xref:System.IConvertible>, která umožňuje převést objekt `TemperatureCelsius` na objekt `TemperatureFahrenheit` a naopak. Příklad definuje základní třídu, `Temperature`, která implementuje rozhraní <xref:System.IConvertible> a přepisuje metodu <xref:System.Object.ToString%2A?displayProperty=nameWithType>. Odvozené třídy `TemperatureCelsius` a `TemperatureFahrenheit` přepíší `ToType` a metody `ToString` základní třídy.  
+ Následující příklad ilustruje možnou implementaci <xref:System.IConvertible> rozhraní, `TemperatureCelsius` která umožňuje objekt převést na `TemperatureFahrenheit` objekt a naopak. Příklad definuje základní třídu `Temperature`, která <xref:System.IConvertible> implementuje rozhraní <xref:System.Object.ToString%2A?displayProperty=nameWithType> a přepíše metodu. Odvozené `TemperatureCelsius` a `TemperatureFahrenheit` třídy každý `ToType` přepsat `ToString` a metody základní třídy.  
   
  [!code-csharp[Conceptual.Conversion#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/iconvertible2.cs#10)]
  [!code-vb[Conceptual.Conversion#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/iconvertible2.vb#10)]  
   
- Následující příklad znázorňuje několik volání těchto <xref:System.IConvertible> implementace k převedení `TemperatureCelsius` objektů na `TemperatureFahrenheit` objektů a naopak.  
+ Následující příklad ilustruje několik volání <xref:System.IConvertible> těchto implementací převést `TemperatureCelsius` objekty na `TemperatureFahrenheit` objekty a naopak.  
   
  [!code-csharp[Conceptual.Conversion#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/iconvertible2.cs#11)]
  [!code-vb[Conceptual.Conversion#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/iconvertible2.vb#11)]  
 
 ## <a name="the-typeconverter-class"></a>Třída TypeConverter  
- .NET Framework také umožňuje definovat konvertor typu pro vlastní typ rozšířením třídy <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType> a přidružením konvertoru typu k typu prostřednictvím atributu <xref:System.ComponentModel.TypeConverterAttribute?displayProperty=nameWithType>. Následující tabulka popisuje rozdíly mezi tímto přístupem a implementací rozhraní <xref:System.IConvertible> pro vlastní typ.  
+ Rozhraní .NET Framework také umožňuje definovat převaděč typu pro <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType> vlastní typ rozšířením třídy a přidruženou <xref:System.ComponentModel.TypeConverterAttribute?displayProperty=nameWithType> převaděč typu s typem prostřednictvím atributu. Následující tabulka zdůrazňuje rozdíly mezi tímto přístupem <xref:System.IConvertible> a implementací rozhraní pro vlastní typ.  
   
 > [!NOTE]
 > Podporu v době návrhu lze pro vlastní typ zajistit pouze tehdy, pokud byl definován konvertor typu.  
   
 |Převod pomocí TypeConverter|Převod pomocí IConvertible|  
 |------------------------------------|-----------------------------------|  
-|Je implementován pro vlastní typ odvozením samostatné třídy z <xref:System.ComponentModel.TypeConverter>. Tato odvozená třída je přidružená k vlastnímu typu použitím atributu <xref:System.ComponentModel.TypeConverterAttribute>.|Je implementován vlastním typem za účelem převodu. Uživatel typu vyvolá metodu převodu <xref:System.IConvertible> pro daný typ.|  
+|Je implementována pro vlastní typ odvozením <xref:System.ComponentModel.TypeConverter>samostatné třídy z . Tato odvozená třída je přidružena k <xref:System.ComponentModel.TypeConverterAttribute> vlastnímu typu použitím atributu.|Je implementován vlastním typem za účelem převodu. Uživatel typu vyvolá metodu <xref:System.IConvertible> převodu na typu.|  
 |Lze použít v době návrhu i v době spuštění.|Lze použít pouze v době spuštění.|  
-|Používá reflexi; Proto je pomalejší než Převod povolený pomocí <xref:System.IConvertible>.|Nepoužívá reflexi.|  
-|Umožňuje obousměrný převod typu z vlastního typu na jiné datové typy a z jiných datových typů na vlastní typ. Například <xref:System.ComponentModel.TypeConverter> definovaná pro `MyType` umožňuje převody z `MyType` na <xref:System.String>a z <xref:System.String> na `MyType`.|Umožňuje převod z vlastního typu na jiné datové typy, nikoli však z jiných datových typů na vlastní typ.|  
+|Používá odraz; proto je pomalejší než převod <xref:System.IConvertible>povolený .|Nepoužívá reflexi.|  
+|Umožňuje obousměrný převod typu z vlastního typu na jiné datové typy a z jiných datových typů na vlastní typ. Například <xref:System.ComponentModel.TypeConverter> definované pro `MyType` umožňuje převody `MyType` z <xref:System.String> do `MyType` <xref:System.String>a z do .|Umožňuje převod z vlastního typu na jiné datové typy, nikoli však z jiných datových typů na vlastní typ.|  
   
- Další informace o použití převaděčů typů pro provádění převodů naleznete v tématu <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType>.  
+ Další informace o použití převaděčů <xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType>typů k provádění převodů naleznete v tématu .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Convert?displayProperty=nameWithType>
 - <xref:System.IConvertible>

@@ -1,22 +1,22 @@
 ---
-title: Programování s použitím uzlůC#()
+title: Programování s uzly (C#)
 ms.date: 07/20/2015
 ms.assetid: c38df0f2-c805-431a-93ff-9103a4284c2f
-ms.openlocfilehash: 8c4c858cbc1fad4041c2e5ce62ca8a01dd1cfb2c
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 05c2e95fe97effda7b537a7ac2d8f5780f4e212b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253150"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168311"
 ---
-# <a name="programming-with-nodes-c"></a>Programování s použitím uzlůC#()
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Vývojáři, kteří potřebují psát programy, jako je editor XML, transformační systém nebo zapisovač sestav, často potřebují psát programy, které fungují na jemnější úrovni členitosti než prvky a atributy. Často potřebují pracovat na úrovni uzlu, manipulaci s textovými uzly, pokyny pro zpracování a komentáře. Toto téma poskytuje některé podrobnosti o programování na úrovni uzlu.  
+# <a name="programming-with-nodes-c"></a>Programování s uzly (C#)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]Vývojáři, kteří potřebují psát programy, jako je editor XML, transformační systém nebo zapisovatel sestavy, často potřebují psát programy, které pracují na jemnější úrovni rozlišovací schopnosti než prvky a atributy. Často je třeba pracovat na úrovni uzlu, manipulace s textovými uzly, pokyny pro zpracování a komentáře. Toto téma obsahuje některé podrobnosti o programování na úrovni uzlu.  
   
-## <a name="node-details"></a>Podrobnosti uzlu  
- Existuje řada podrobných informací o programování, které by programátor pracující na úrovni uzlu měl znát.  
+## <a name="node-details"></a>Podrobnosti o uzlu  
+ Existuje celá řada podrobností o programování, které programátor pracující na úrovni uzlu by měl vědět.  
   
-### <a name="parent-property-of-children-nodes-of-xdocument-is-set-to-null"></a>Vlastnost Parent podřízených uzlů XDocument je nastavena na hodnotu null.  
- Vlastnost obsahuje nadřazenou položku <xref:System.Xml.Linq.XElement>, ne nadřazený uzel. <xref:System.Xml.Linq.XObject.Parent%2A> Podřízené uzly <xref:System.Xml.Linq.XDocument> nemají žádnou nadřazenou <xref:System.Xml.Linq.XElement>položku. Jejich nadřazeným prvkem je dokument, takže <xref:System.Xml.Linq.XObject.Parent%2A> vlastnost pro tyto uzly je nastavena na hodnotu null.  
+### <a name="parent-property-of-children-nodes-of-xdocument-is-set-to-null"></a>Nadřazená vlastnost podřízených uzlů XDocument je nastavena na hodnotu Null.  
+ Vlastnost <xref:System.Xml.Linq.XObject.Parent%2A> obsahuje nadřazený <xref:System.Xml.Linq.XElement>uzel , nikoli nadřazený uzel. Podřízené uzly <xref:System.Xml.Linq.XElement>nemají nadřazenou položku <xref:System.Xml.Linq.XDocument> . Jejich nadřazený <xref:System.Xml.Linq.XObject.Parent%2A> je dokument, takže vlastnost pro tyto uzly je nastavena na hodnotu null.  
   
  Následující příklad ukazuje toto:  
   
@@ -26,15 +26,15 @@ Console.WriteLine(doc.Nodes().OfType<XComment>().First().Parent == null);
 Console.WriteLine(doc.Root.Parent == null);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 True  
 True  
 ```  
   
-### <a name="adjacent-text-nodes-are-possible"></a>Jsou možné sousední uzly textu.  
- V řadě programovacích modelů XML jsou sousední textové uzly vždycky sloučeny. To se někdy označuje jako normalizace textových uzlů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]nenormalizuje textové uzly. Pokud přidáte dva textové uzly do stejného elementu, bude výsledkem sousedících textových uzlů. Pokud však přidáte obsah zadaný jako řetězec, nikoli jako <xref:System.Xml.Linq.XText> uzel, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] může řetězec sloučit s sousedícím textovým uzlem.  
+### <a name="adjacent-text-nodes-are-possible"></a>Sousední textové uzly jsou možné  
+ V řadě programovacích modelů XML jsou sousední textové uzly vždy sloučeny. To se někdy nazývá normalizace textových uzlů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]nenormalizuje textové uzly. Pokud přidáte dva textové uzly do stejného prvku, bude výsledkem sousední textové uzly. Pokud však přidáte obsah určený jako řetězec, nikoli [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] jako uzel, <xref:System.Xml.Linq.XText> může řetězec sloučit s sousedním textovým uzlem.  
   
  Následující příklad ukazuje toto:  
   
@@ -52,7 +52,7 @@ xmlTree.Add(new XText("more text"));
 Console.WriteLine(xmlTree.Nodes().OfType<XText>().Count());  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 1  
@@ -60,8 +60,8 @@ Console.WriteLine(xmlTree.Nodes().OfType<XText>().Count());
 2  
 ```  
   
-### <a name="empty-text-nodes-are-possible"></a>Jsou možné prázdné textové uzly.  
- V některých programovacích modelech XML je zaručeno, že textové uzly nebudou obsahovat prázdný řetězec. Důvodem je, že takový textový uzel nemá žádný vliv na serializaci kódu XML. Z toho důvodu, že když odeberete text z textového uzlu nastavením jeho hodnoty na prázdný řetězec, samotný textový uzel nebude odstraněn, ze stejného důvodu, že je možné použít sousední textové uzly.  
+### <a name="empty-text-nodes-are-possible"></a>Prázdné textové uzly jsou možné  
+ V některých programovacích modelech XML je zaručeno, že textové uzly neobsahují prázdný řetězec. Důvodem je, že takový textový uzel nemá žádný vliv na serializaci XML. Ze stejného důvodu, že sousední textové uzly jsou možné, pokud odeberete text z textového uzlu nastavením jeho hodnoty na prázdný řetězec, samotný textový uzel nebude odstraněn.  
   
 ```csharp  
 XElement xmlTree = new XElement("Root", "Content");  
@@ -71,17 +71,17 @@ XText textNode = xmlTree.Nodes().OfType<XText>().First();
 textNode.Value = "";  
   
 XText textNode2 = xmlTree.Nodes().OfType<XText>().First();  
-Console.WriteLine(">>{0}<<", textNode2);   
+Console.WriteLine(">>{0}<<", textNode2);
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 >><<  
 ```  
   
-### <a name="an-empty-text-node-impacts-serialization"></a>Prázdný textový uzel ovlivňuje serializaci.  
- Pokud element obsahuje pouze podřízený textový uzel, který je prázdný, je serializován pomocí syntaxe dlouhých značek: `<Child></Child>`. Pokud element neobsahuje žádné podřízené uzly, je serializován s syntaxí krátké značky: `<Child />`.  
+### <a name="an-empty-text-node-impacts-serialization"></a>Prázdný textový uzel ovlivňuje serializaci  
+ Pokud prvek obsahuje pouze podřízený textový uzel, který je prázdný, je `<Child></Child>`serializován s syntaxí dlouhé značky: . Pokud prvek neobsahuje žádné podřízené uzly, je serializován `<Child />`s syntaxí krátké značky: .  
   
 ```csharp  
 XElement child1 = new XElement("Child1",  
@@ -89,20 +89,20 @@ XElement child1 = new XElement("Child1",
 );  
 XElement child2 = new XElement("Child2");  
 Console.WriteLine(child1);  
-Console.WriteLine(child2);   
+Console.WriteLine(child2);
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Child1></Child1>  
 <Child2 />  
 ```  
   
-### <a name="namespaces-are-attributes-in-the-linq-to-xml-tree"></a>Obory názvů jsou atributy ve stromu LINQ to XML.  
- I když deklarace oboru názvů mají identickou syntaxi atributů, v některých programovacích rozhraních, jako jsou XSLT a XPath, deklarace oborů názvů nejsou považovány za atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]rozhraní se však obory názvů ukládají <xref:System.Xml.Linq.XAttribute> jako objekty ve stromu XML. Pokud iterete pomocí atributů pro prvek, který obsahuje deklaraci oboru názvů, uvidíte deklaraci oboru názvů jako jednu z položek ve vrácené kolekci.  
+### <a name="namespaces-are-attributes-in-the-linq-to-xml-tree"></a>Obory názvů jsou atributy ve stromu LINQ do stromu XML  
+ I když deklarace oboru názvů mají identickou syntaxi atributů, v některých programovacích rozhraních, jako jsou XSLT a XPath, deklarace oboru názvů nejsou považovány za atributy. V aplikaci jsou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]však <xref:System.Xml.Linq.XAttribute> obory názvů uloženy jako objekty ve stromu XML. Pokud iterát prostřednictvím atributy pro prvek, který obsahuje deklaraci oboru názvů, zobrazí se deklarace oboru názvů jako jedna z položek ve vrácené kolekci.  
   
- <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A> Vlastnost označuje, zda je atribut deklarací oboru názvů.  
+ Vlastnost <xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A> označuje, zda je atribut deklarací oboru názvů.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -114,7 +114,7 @@ foreach (XAttribute att in root.Attributes())
     Console.WriteLine("{0}  IsNamespaceDeclaration:{1}", att, att.IsNamespaceDeclaration);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 xmlns="http://www.adventure-works.com"  IsNamespaceDeclaration:True  
@@ -122,8 +122,8 @@ xmlns:fc="www.fourthcoffee.com"  IsNamespaceDeclaration:True
 AnAttribute="abc"  IsNamespaceDeclaration:False  
 ```  
   
-### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>Metody osy XPath nevracejí podřízené prázdné znaky XDocument  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]umožňuje podřízených textových uzlů <xref:System.Xml.Linq.XDocument>v, pokud textové uzly obsahují pouze prázdné znaky. Model objektu XPath ale neobsahuje prázdné znaky jako podřízené uzly dokumentu, takže při iteraci mezi podřízenými prvky <xref:System.Xml.Linq.XDocument> <xref:System.Xml.Linq.XContainer.Nodes%2A> pomocí osy se vrátí textové uzly bílého prostoru. Při iteraci mezi podřízenými objekty <xref:System.Xml.Linq.XDocument> pomocí metod osy XPath ale prázdné textové uzly nebudou vráceny.  
+### <a name="xpath-axis-methods-do-not-return-child-white-space-of-xdocument"></a>Metody osy XPath nevracejí podřízený prázdné místo xdocument  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]umožňuje podřízené textové uzly <xref:System.Xml.Linq.XDocument>, pokud textové uzly obsahují pouze prázdné znaky. Objektový model XPath však neobsahuje prázdné místo jako podřízené uzly dokumentu, takže <xref:System.Xml.Linq.XDocument> při <xref:System.Xml.Linq.XContainer.Nodes%2A> iterace prostřednictvím podřízených objektů pomocí osy budou vráceny prázdné textové uzly. Však při iterace prostřednictvím <xref:System.Xml.Linq.XDocument> podřízených pomocí metody osy XPath, prázdné textové uzly nebudou vráceny.  
   
 ```csharp  
 // Create a document with some white-space child nodes of the document.  
@@ -139,18 +139,18 @@ XDocument root = XDocument.Parse(
 Console.WriteLine(root.Nodes().OfType<XText>().Count());  
   
 // count the white-space child nodes using XPathEvaluate  
-Console.WriteLine(((IEnumerable)root.XPathEvaluate("text()")).OfType<XText>().Count());   
+Console.WriteLine(((IEnumerable)root.XPathEvaluate("text()")).OfType<XText>().Count());
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 3  
 0  
 ```  
   
-### <a name="xdeclaration-objects-are-not-nodes"></a>Objekty XDeclaration nejsou uzly.  
- Při iteraci mezi podřízenými uzly <xref:System.Xml.Linq.XDocument>objektu, se nezobrazí objekt deklarace XML. Jedná se o vlastnost dokumentu, nikoli o podřízený uzel.  
+### <a name="xdeclaration-objects-are-not-nodes"></a>Objekty XDeclaration nejsou uzly  
+ Při itetu prostřednictvím podřízených <xref:System.Xml.Linq.XDocument>uzlů , neuvidíte objekt deklarace XML. Je vlastnostdokumentu, nikoli podřízený uzel.  
   
 ```csharp  
 XDocument doc = new XDocument(  
@@ -164,7 +164,7 @@ Console.WriteLine(File.ReadAllText("Temp.xml"));
 Console.WriteLine(doc.Nodes().Count());  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  

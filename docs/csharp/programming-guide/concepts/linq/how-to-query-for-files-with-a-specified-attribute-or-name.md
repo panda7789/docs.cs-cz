@@ -1,16 +1,16 @@
 ---
-title: Dotazování na soubory se zadaným atributem nebo názvem (C#)
+title: Jak dotazovat na soubory se zadaným atributem nebo názvem (C#)
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: 8ecf3263dcee9b54d01dd0b577ba8bec2a199da9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fc6456f159887b7ad109e8ad48f0f79999d53e09
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346719"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168866"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Dotazování na soubory se zadaným atributem nebo názvem (C#)
-Tento příklad ukazuje, jak najít všechny soubory, které mají zadanou příponu názvu souboru (například ". txt") v zadaném stromu adresářů. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Jak dotazovat na soubory se zadaným atributem nebo názvem (C#)
+Tento příklad ukazuje, jak najít všechny soubory, které mají zadanou příponu názvu souboru (například ".txt") v zadaném adresářovém stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
   
 ## <a name="example"></a>Příklad  
   
@@ -44,8 +44,8 @@ class FindFileByExtension
             Console.WriteLine(fi.FullName);  
         }  
   
-        // Create and execute a new query by using the previous   
-        // query as a starting point. fileQuery is not   
+        // Create and execute a new query by using the previous
+        // query as a starting point. fileQuery is not
         // executed again until the call to Last()  
         var newestFile =  
             (from file in fileQuery  
@@ -64,9 +64,9 @@ class FindFileByExtension
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-  Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
+  Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to Objects (C#)](./linq-to-objects.md)
-- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [LINQ na objekty (C#)](./linq-to-objects.md)
+- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)

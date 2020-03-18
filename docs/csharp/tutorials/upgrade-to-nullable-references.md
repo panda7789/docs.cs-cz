@@ -1,66 +1,66 @@
 ---
 title: Upgrade na typy odkazů s možnou hodnotou null
-description: Tento rozšířený kurz ukazuje, jak migrovat existující kód s odkazem s možnou hodnotou null.
+description: Tento pokročilý kurz ukazuje, jak migrovat existující kód s typy odkazů s možnou hodnotou null.
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 38619f9efa5da1f9b3264b3d4240103f0869afea
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 9767493059623e770cc100b83b9284e8d0bdf0f8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240025"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156451"
 ---
-# <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: migrace stávajícího kódu s odkazy s možnou hodnotou null
+# <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: Migrace existujícího kódu s typy odkazů s možnou hodnotou null
 
-C#8 zavádí **typy odkazů s možnou hodnotou null**, které připlňují odkazové typy stejným způsobem jako typy hodnot s možnou hodnotou null. Deklarujete proměnnou, která bude představovat **typ odkazu s možnou hodnotou null** připojením `?` k typu. `string?` například představuje `string`s možnou hodnotou null. Tyto nové typy můžete použít k přehlednějšímu vyjádření záměru návrhu: některé proměnné *musí mít vždy hodnotu*, jiné *mohou chybět hodnoty*. Všechny existující proměnné typu odkazu by byly interpretovány jako typ odkazu, který není null. 
+C# 8 zavádí **typy odkazů s možnou hodnotou null**, které doplňují typy odkazů stejným způsobem typy hodnot s možnou hodnotou null. Deklarujete proměnnou jako **typ odkazu s možnou hodnotou null** připojením typu a. `?` Například `string?` představuje hodnotu `string`nullable . Tyto nové typy můžete použít k jasněji vyjádřit záměr návrhu: některé proměnné *musí mít vždy hodnotu*, jiné *mohou chybět hodnotu*. Všechny existující proměnné typu odkazu by byly interpretovány jako typ odkazu s hodnotou nes hotelnou hodnotou null.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 >
-> - Při práci s kódem povolit kontroly pro prázdné odkazy
-> - Diagnostikujte a opravte různá upozornění související s hodnotami null.
-> - Spravujte rozhraní mezi povolenými povolenými a zakázanými kontexty s povolenou hodnotou null.
-> - Ovládá kontexty anotace s možnou hodnotou null.
+> - Povolte kontroly nulového odkazu při práci s kódem.
+> - Diagnostikovat a opravit různá upozornění týkající se hodnoty null.
+> - Spravujte rozhraní mezi povolenými a zakázanými kontexty s možnou hodnotou null.
+> - Řídit kontexty poznámk y s možnou hodnotou null.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
+Budete muset nastavit počítač pro spuštění .NET Core, včetně kompilátoru C# 8.0. Kompilátor Jazyka C# 8 je k dispozici počínaje [sadou Visual Studio 2019 verze 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download).
 
-V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, včetně sady Visual Studio nebo .NET Core CLI.
+Tento kurz předpokládá, že jste obeznámeni s C# a .NET, včetně Visual Studio nebo .NET Core CLI.
 
 ## <a name="explore-the-sample-application"></a>Prozkoumejte ukázkovou aplikaci
 
-Ukázková aplikace, kterou migrujete, je webová aplikace čtečky informačního kanálu RSS. Čte z jednoho informačního kanálu RSS a zobrazuje souhrny pro nejnovější články. Můžete vybrat některý z článků pro návštěvě webu. Aplikace je relativně nová, ale byla zapsána před přístupným odkazem s možnou hodnotou null. Rozhodnutí o návrhu aplikace představují zásady zvuku, ale nevyužívají tuto důležitou funkci jazyka.
+Ukázková aplikace, kterou budete migrovat, je webová aplikace pro čtení informačních kanálů RSS. Čte z jednoho informačního kanálu RSS a zobrazuje souhrny nejnovějších článků. Můžete si vybrat některý z článků k návštěvě webu. Aplikace je relativně nová, ale byla zapsána před použitím typů odkazů s možnou hodnotou null. Rozhodnutí o návrhu aplikace představovala zásady zvuku, ale nevyužívají tuto důležitou jazykovou funkci.
 
-Ukázková aplikace obsahuje knihovnu testů jednotek, která ověřuje hlavní funkčnost aplikace. Tento projekt usnadňuje upgrade bezpečně, pokud změníte jakoukoli implementaci na základě vygenerovaných upozornění. Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start) GitHub.
+Ukázková aplikace obsahuje knihovnu testování částí, která ověřuje hlavní funkce aplikace. Tento projekt usnadní bezpečné upgradování, pokud změníte některou z implementací na základě generovaných upozornění. Startovací kód si můžete stáhnout z úložiště [GitHub dotnet/samples.](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start)
 
-Váš cíl migrace projektu by měl být vycházet z toho, aby využíval nové funkce jazyka, aby bylo jasné vyjádřit záměr na hodnotu null proměnných, a tak učinit takovým způsobem, že kompilátor negeneruje upozornění, když máte kontext poznámky s možnou hodnotou null a kontext s možnou hodnotou null nastaven na `enabled`.
+Vaším cílem migrace projektu by mělo být využití nové funkce jazyka tak, aby jasně vyjádřit svůj záměr na nullability proměnných a tak učinit takovým způsobem, že kompilátor negeneruje `enabled`upozornění, pokud máte nullable kontext poznámky a nullable upozornění kontextu nastavena na .
 
-## <a name="upgrade-the-projects-to-c-8"></a>Upgradovat projekty na C# 8
+## <a name="upgrade-the-projects-to-c-8"></a>Upgrade projektů na C# 8
 
-Dobrým prvním krokem je určit rozsah úlohy migrace. Začněte upgradem projektu na C# 8,0 (nebo novější). Přidejte prvek `LangVersion` do třídy Property v souborech csproj pro webový projekt a projekt testování částí:
+Dobrým prvním krokem je určení rozsahu úlohy migrace. Začněte upgradem projektu na C# 8.0 (nebo novější). Přidejte `LangVersion` prvek do PropertyGroup v souborech csproj pro webový projekt i projekt testování částí:
 
 ```xml
 <LangVersion>8.0</LangVersion>
 ```
 
-Upgrade jazykové verze vybere C# 8,0, ale nepovoluje kontext anotace s možnou hodnotou null nebo kontext s možnou hodnotou null. Znovu sestavte projekt, aby se zajistilo, že bude sestaven bez upozornění.
+Upgrade jazykové verze vybere C# 8.0, ale nepovolí kontext poznámky s možnou hodnotou null nebo kontext upozornění s možnou hodnotou null. Znovu sestavit projekt a zajistit, že se staví bez upozornění.
 
-Dobrým dalším krokem je zapnout kontext anotace s možnou hodnotou null a zjistit, kolik upozornění se vygenerovalo. Přidejte následující element do obou souborů csproj v řešení přímo pod prvkem `LangVersion`:
+Dobrým dalším krokem je zapnout kontext poznámky s možnou hodnotou null a zjistit, kolik upozornění je generováno. Přidejte následující prvek do obou csproj souborů `LangVersion` v řešení, přímo pod element:
 
 ```xml
 <Nullable>enable</Nullable>
 ```
 
-Proveďte testovací sestavení a Všimněte si seznamu upozornění. V této malé aplikaci kompilátor vygeneruje pět upozornění, takže je pravděpodobně nutné povolit kontext poznámky s možnou hodnotou null a zahájit opravy upozornění pro celý projekt.
+Proveďte testovací sestavení a všimněte si seznamu upozornění. V této malé aplikaci kompilátor generuje pět upozornění, takže je pravděpodobné, že byste ponechat kontext poznámky s možnou hodnotou null povoleno a začít opravovat upozornění pro celý projekt.
 
-Tato strategie funguje jenom pro menší projekty. U všech větších projektů je počet upozornění vygenerovaných povolením kontextu anotace s možnou hodnotou null pro celý základ kódu obtížnější opravit upozornění systematicky. U větších podnikových projektů často budete chtít najednou migrovat projekt. V každém projektu migrujte jednu třídu nebo soubor v jednom okamžiku.
+Tato strategie funguje pouze u menších projektů. Pro všechny větší projekty počet upozornění generovaných povolením kontextu poznámky s možnou hodnotou null pro celý základ kódu ztěžuje systematickou opravu upozornění. U větších projektů organizace budete často chtít migrovat jeden projekt po druhém. V každém projektu migrujte jednu třídu nebo soubor najednou.
 
-## <a name="warnings-help-discover-original-design-intent"></a>Upozornění, která vám pomůžou zjistit původní záměr návrhu
+## <a name="warnings-help-discover-original-design-intent"></a>Upozornění pomáhají zjistit původní záměr návrhu
 
-K dispozici jsou dvě třídy, které generují více upozornění. Začněte s třídou `NewsStoryViewModel`. Odeberte prvek `Nullable` z obou souborů csproj, abyste mohli omezit rozsah upozornění na oddíly kódu, se kterými pracujete. Otevřete soubor *NewsStoryViewModel.cs* a přidejte následující direktivy, abyste povolili kontext anotace s možnou hodnotou null pro `NewsStoryViewModel` a obnovili je následující definice třídy:
+Existují dvě třídy, které generují více upozornění. Začni `NewsStoryViewModel` s hodinou. Odeberte `Nullable` prvek z obou souborů csproj, abyste mohli omezit rozsah upozornění na části kódu, se kterými pracujete. Otevřete soubor *NewsStoryViewModel.cs* a přidejte následující direktivy, `NewsStoryViewModel` které povolí kontext poznámky s možnou hodnotou null pro a obnovení podle této definice třídy:
 
 ```csharp
 #nullable enable
@@ -73,17 +73,17 @@ public class NewsStoryViewModel
 #nullable restore
 ```
 
-Tyto dvě direktivy vám pomůžou zaměřit se na vaše úsilí při migraci. Pro oblast kódu, na které aktivně pracujete, jsou vygenerována upozornění s možnou hodnotou null. Můžete je nechat zapnuté, dokud nebudete připraveni zapnout upozornění pro celý projekt. Místo `disable` hodnoty byste měli použít `restore`, takže nechtěně zakážete kontext později, když jste zapnuli anotace s možnou hodnotou null pro celý projekt. Jakmile zapnete kontext anotace s možnou hodnotou null pro celý projekt, můžete z tohoto projektu odebrat všechny `#nullable` direktivy pragma.
+Tyto dvě směrnice vám pomohou soustředit úsilí o migraci. Upozornění s možnou hodnotou null jsou generována pro oblast kódu, na které aktivně pracujete. Necháte je zapnuté, dokud nebudete připraveni zapnout varování pro celý projekt. Měli byste `restore` použít `disable` spíše než hodnotu, abyste později omylem nezakázali kontext, když jste zapnuli poznámky s možnou hodnotou null pro celý projekt. Po zapnutí kontextu poznámky s možnou hodnotou null pro celý `#nullable` projekt můžete odebrat všechny pragmy z tohoto projektu.
 
-Třída `NewsStoryViewModel` je objekt pro přenos dat (DTO) a dvě vlastnosti jsou řetězce pro čtení a zápis:
+Třída `NewsStoryViewModel` je objekt přenosu dat (DTO) a dvě vlastnosti jsou řetězce pro čtení a zápis:
 
 [!code-csharp[InitialViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#StarterViewModel)]
 
-Tyto dvě vlastnosti způsobují `CS8618`, nepovolenou vlastnost není inicializovaná. Je to dostatečně jasné: vlastnosti `string` mají výchozí hodnotu `null`, když je vytvořen `NewsStoryViewModel`. Důležité je, abyste zjistili, jak se vytvářejí objekty `NewsStoryViewModel`. Při prohlížení této třídy nemůžete zjistit, zda je hodnota `null` součástí návrhu, nebo pokud jsou tyto objekty nastaveny na hodnoty, které nejsou null vždy při vytvoření jedné z nich. Příběhy novinek jsou vytvořeny v metodě `GetNews` `NewsService` třídy:
+Tyto dvě `CS8618`vlastnosti způsobit , "Vlastnost nes platnou hodnotou null je neinicializován". To je dostatečně jasné: obě `string` vlastnosti `null` mají `NewsStoryViewModel` výchozí hodnotu při vytvoření. Co je důležité zjistit, `NewsStoryViewModel` je, jak jsou vytvořeny objekty. Při pohledu na tuto třídu `null` nelze zjistit, zda je hodnota součástí návrhu nebo pokud jsou tyto objekty nastaveny na hodnoty bez nuly při každém vytvoření. Novinky příběhy jsou vytvořeny `GetNews` v `NewsService` metodě třídy:
 
 [!code-csharp[StarterCreateNewsItem](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
-V předchozím bloku kódu se už trochu přechází. Tato aplikace používá balíček NuGet [automapper](https://automapper.org/) k vytvoření položky zpráv z `ISyndicationItem`. Zjistili jste, že položky novinového článku jsou vytvořeny a vlastnosti jsou nastaveny v daném příkazu. To znamená, že návrh `NewsStoryViewModel` označuje, že tyto vlastnosti by nikdy neměly mít hodnotu `null`. Tyto vlastnosti by neměly být **typy odkazů**, které nejsou null. Který nejlépe vyjadřuje původní záměr návrhu. Ve skutečnosti *jsou* všechny `NewsStoryViewModel` správně vytvořeny s hodnotami, které nejsou null. Díky tomu následující inicializační kód provede platnou opravu:
+V předchozím bloku kódu se toho děje docela dost. Tato aplikace používá balíček [AutoMapper](https://automapper.org/) NuGet k `ISyndicationItem`vytvoření zpravodajské položky z . Zjistili jste, že položky zpravodajského příběhu jsou vytvořeny a vlastnosti jsou nastaveny v tomto jednom příkazu. To znamená, že `NewsStoryViewModel` návrh pro označuje, `null` že tyto vlastnosti by nikdy mít hodnotu. Tyto vlastnosti by měly být **neplatné typy odkazů**. To nejlépe vyjadřuje původní záměr návrhu. Ve skutečnosti `NewsStoryViewModel` *je* každý správně vytvořena s hodnotami bez nuly. Díky tomu je následující inicializační kód platnou opravou:
 
 ```csharp
 public class NewsStoryViewModel
@@ -94,77 +94,77 @@ public class NewsStoryViewModel
 }
 ```
 
-Přiřazení `Title` a `Uri` `default`, které `null` pro typ `string`, nemění chování programu za běhu. `NewsStoryViewModel` je stále vytvořen s hodnotami null, ale nyní kompilátor hlásí žádná upozornění. **Operátor null-striktní**, znak `!` následující po `default` výrazu instruuje kompilátor, že předchozí výraz není null. Tato technika může být účelná, pokud jiné změny vynutí mnohem větší změny základu kódu, ale v této aplikaci je poměrně rychlé a lepší řešení: `NewsStoryViewModel` neměnného typu, kde jsou všechny vlastnosti nastaveny v konstruktoru. Proveďte následující změny `NewsStoryViewModel`:
+`Title` Přiřazení a `Uri` `default` na který `null` je `string` pro typ nezmění chování za běhu programu. Je `NewsStoryViewModel` stále konstruována s hodnotami null, ale nyní kompilátor hlásí žádná upozornění. **Operátor null odpouštějící** `!` , znak `default` za výrazem říká kompilátoru, že předchozí výraz není null. Tato technika může být účelná, když jiné změny vynucují mnohem větší změny základu `NewsStoryViewModel` kódu, ale v této aplikaci je relativně rychlé a lepší řešení: Vytvořte neměnný typ, kde jsou všechny vlastnosti nastaveny v konstruktoru. Proveďte následující změny `NewsStoryViewModel`v :
 
 [!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
 
-Až to uděláte, musíte aktualizovat kód, který konfiguruje automapper, aby místo nastavení vlastností používal konstruktor. Otevřete `NewsService.cs` a vyhledejte následující kód v dolní části souboru:
+Jakmile je to hotovo, je třeba aktualizovat kód, který konfiguruje AutoMapper tak, aby používá konstruktor spíše než nastavení vlastností. Otevřete `NewsService.cs` a vyhledejte následující kód v dolní části souboru:
 
 [!code-csharp[StarterAutoMapper](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
 
-Tento kód mapuje vlastnosti objektu `ISyndicationItem` na vlastnosti `NewsStoryViewModel`. Chcete, aby automapper místo toho poskytovala mapování pomocí konstruktoru. Výše uvedený kód nahraďte následující konfigurací automapper:
+Tento kód mapuje `ISyndicationItem` vlastnosti `NewsStoryViewModel` objektu na vlastnosti. Chcete, aby automapper poskytnout mapování pomocí konstruktoru místo. Nahraďte výše uvedený kód následující konfigurací automapperu:
 
 [!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
 
-Všimněte si, že vzhledem k tomu, že je tato třída malá a že jste pečlivě prozkoumali, měli byste zapnout direktivu `#nullable enable` nad rámec této deklarace třídy. Změna konstruktoru mohla způsobit poškození, takže je vhodné spustit všechny testy a otestovat aplikaci před přechodem na.
+Všimněte si, že vzhledem k tomu, že tato `#nullable enable` třída je malá a pečlivě jste prozkoumali, měli byste zapnout direktivu nad touto deklarací třídy. Změna konstruktoru mohla něco rozbít, takže stojí za to spustit všechny testy a otestovat aplikaci před přechodem.
 
-První sada změn ukázala, jak zjistit, kdy původní návrh určil, že by proměnné neměly být nastavené na `null`. Technika je označována jako **správná konstrukcí**. Deklarujete, že objekt a jeho vlastnosti nelze `null`, když je vytvořen. Analýza toku kompilátoru poskytuje záruku, že tyto vlastnosti nejsou nastaveny na `null` po konstrukci. Všimněte si, že tento konstruktor je volán externím kódem a tento kód je **oblivious s možnou hodnotou null**. Nová syntaxe neposkytuje kontrolu za běhu. Externí kód může obejít analýzu toku kompilátoru. 
+První sada změn ukázala, jak zjistit, kdy původní návrh naznačil, že `null`proměnné by neměly být nastaveny na . Tato technika je **označována jako správná konstrukcí**. Deklarujete, že `null` objekt a jeho vlastnosti nemůže být, když je vytvořen. Analýza toku kompilátoru poskytuje záruku, že `null` tyto vlastnosti nejsou nastaveny na po výstavbě. Všimněte si, že tento konstruktor je volána externí kód a že kód je **nula nevšímavý**. Nová syntaxe neposkytuje kontrolu za běhu. Externí kód může obejít analýzu toku kompilátoru.
 
-Jindy, struktura třídy poskytuje různé změny záměru. Otevřete soubor *Error.cshtml.cs* ve složce *stránky* . `ErrorViewModel` obsahuje následující kód:
+Jindy struktura třídy poskytuje různé stopy k záměru. Otevřete *soubor Error.cshtml.cs* ve složce *Stránky.* Obsahuje `ErrorViewModel` následující kód:
 
 [!code-csharp[StarterErrorModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Error.cshtml.cs#StartErrorModel)]
 
-Přidejte direktivu `#nullable enable` před deklaraci třídy a direktivu `#nullable restore`. Zobrazí se jedno upozornění, že `RequestId` neinicializuje. Pohledem na třídu byste měli rozhodnout, že v některých případech by vlastnost `RequestId` měla mít hodnotu null. Existence vlastnosti `ShowRequestId` označuje, že chybějící hodnoty jsou možné. Vzhledem k tomu, že je `null` platný, přidejte `?` na typ `string` k označení, že vlastnost `RequestId` je *odkazem s možnou hodnotou null*. Konečná třída vypadá jako v následujícím příkladu:
+Přidejte `#nullable enable` direktivu před `#nullable restore` deklaraci třídy a za ní direktivu. Dostanete jedno upozornění, `RequestId` které není inicializováno. Při pohledu na třídu, `RequestId` měli byste se rozhodnout, že vlastnost by měla být null v některých případech. Existence vlastnosti `ShowRequestId` označuje, že chybějící hodnoty jsou možné. Protože `null` je platný, `?` přidejte `string` na `RequestId` typ označující vlastnost je *typ odkazu s možnou hodnotou null*. Poslední třída vypadá jako následující příklad:
 
 [!code-csharp[FinishedErrorModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Error.cshtml.cs#ErrorModel)]
 
-Zkontrolujte použití vlastnosti a uvidíte, že na přidružené stránce je vlastnost před vykreslením v kódu zkontrolována na hodnotu null. To je bezpečné použití typu odkazu s možnou hodnotou null, takže jste s touto třídou hotovi.
+Zkontrolujte použití vlastnosti a uvidíte, že na přidružené stránce je vlastnost zkontrolována na hodnotu null před vykreslením ve značkách. To je bezpečné použití typu odkazu s možnou hodnotou null, takže jste hotovi s touto třídou.
 
-## <a name="fixing-nulls-causes-change"></a>Oprava hodnot null způsobí změnu.
+## <a name="fixing-nulls-causes-change"></a>Oprava nuly způsobí změnu
 
-Oprava pro jednu sadu upozornění často vytvoří nová upozornění v souvisejícím kódu. Pojďme se podívat na upozornění v akci tím, že opravíte třídu `index.cshtml.cs`. Otevřete soubor `index.cshtml.cs` a Projděte si kód. Tento soubor obsahuje kód za stránkou indexu:
+Oprava pro jednu sadu upozornění často vytváří nová upozornění v souvisejícím kódu. Podívejme se na varování v `index.cshtml.cs` akci opravou třídy. Otevřete `index.cshtml.cs` soubor a zkontrolujte kód. Tento soubor obsahuje kód, který je pro stránku indexu:
 
 [!code-csharp[StarterIndexModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
 
-Přidejte direktivu `#nullable enable` a zobrazí se dvě upozornění. Není inicializována vlastnost `ErrorText` ani vlastnost `NewsItems`. Přezkoumání této třídy by vedlo k názoru, že obě vlastnosti by měly mít hodnoty s možnou hodnotou null: obě mají privátní metody setter. V metodě `OnGet` je přiřazena právě jedna. Před provedením změn se podívejte na uživatele obou vlastností. V samotné stránce je `ErrorText` před generováním značek pro všechny chyby zkontrolováno na hodnotu null. Kolekce `NewsItems` se kontroluje proti `null`a kontrolovala se, aby kolekce měla položky. Rychlá oprava by představovala vlastnosti odkazu s možnou hodnotou null. Lepším řešením je vytvořit kolekci odkazový typ, který není null, a při načítání zpráv přidat položky do existující kolekce. První oprava je přidání `?` do `string` typu pro `ErrorText`:
+Přidejte `#nullable enable` direktivu a zobrazí se dvě upozornění. Vlastnost ani `ErrorText` `NewsItems` vlastnost není inicializována. Zkoumání této třídy by vést k domněnce, že obě vlastnosti by měly být typy odkazů s možnou hodnotou null: Oba mají soukromé setters. Přesně jeden je `OnGet` přiřazen v metodě. Před provedením změn se podívejte na spotřebitele obou vlastností. Na samotné stránce `ErrorText` je kontrolována proti null před generováním značky pro všechny chyby. Kolekce `NewsItems` je kontrolována `null`proti , a kontrolována, aby bylo zajištěno, že kolekce obsahuje položky. Rychlou opravou by bylo, aby obě vlastnosti s možnou hodnotou null typy odkazů. Lepší oprava by bylo vytvořit kolekce neplatný typ odkazu a přidat položky do existující kolekce při načítání novinek. První oprava je přidat `?` do `string` typu `ErrorText`pro :
 
 [!code-csharp[UpdateErrorText](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
 
-Tato změna se nevyhodnotí na základě jiného kódu, protože jakýkoli přístup k vlastnosti `ErrorText` byl již chráněn pomocí kontroly hodnoty null. Dále inicializujte seznam `NewsItems` a odeberte metodu setter vlastnosti a vytvořte ji jako vlastnost jen pro čtení:
+Tato změna nebude zvlnění prostřednictvím jiného `ErrorText` kódu, protože jakýkoli přístup k vlastnosti byl již střežen null kontroly. Dále inicializovat `NewsItems` seznam a odebrat setter vlastností, takže je vlastnost jen pro čtení:
 
 [!code-csharp[InitializeNewsItems](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#InitializeNewsItems)]
 
-Opravili jsme upozornění, ale zavedli chybu. Seznam `NewsItems` je nyní **správný konstrukcí**, ale kód, který nastaví seznam v `OnGet` se musí změnit tak, aby odpovídal novému rozhraní API. Místo přiřazení volejte `AddRange`, aby se položky příspěvků přidaly do existujícího seznamu:
+To opravilo varování, ale zavedlo chybu. Seznam `NewsItems` je nyní **správné podle konstrukce**, ale `OnGet` kód, který nastaví seznam v musí změnit tak, aby odpovídaly nové rozhraní API. Místo přiřazení volejte `AddRange` a přidejte novinky do existujícího seznamu:
 
 [!code-csharp[AddRange](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#AddRange)]
 
-Použití `AddRange` místo přiřazení znamená, že metoda `GetNews` může vracet `IEnumerable` namísto `List`. Který ukládá jedno přidělení. Změňte signaturu metody a odeberte `ToList` volání, jak je znázorněno v následujícím příkladu kódu:
+Použití `AddRange` namísto přiřazení znamená, že `GetNews` `IEnumerable` metoda může `List`vrátit místo . To šetří jednu alokaci. Změňte podpis metody a odeberte `ToList` volání, jak je znázorněno v následujícím příkladu kódu:
 
 [!code-csharp[GetNews](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#GetNewsFinished)]
 
-Změna signatury také zruší jeden z testů. Otevřete soubor `NewsServiceTests.cs` ve složce `Services` projektu `SimpleFeedReader.Tests`. Přejděte na `Returns_News_Stories_Given_Valid_Uri` test a změňte typ proměnné `result` na `IEnumerable<NewsItem>`. Změna typu znamená, že vlastnost `Count` již není k dispozici, takže nahraďte vlastnost `Count` v `Assert` voláním `Any()`:
+Změna podpisu přeruší jeden z testů také. Otevřete `NewsServiceTests.cs` soubor `Services` ve složce `SimpleFeedReader.Tests` projektu. Přejděte `Returns_News_Stories_Given_Valid_Uri` na test a změňte `IEnumerable<NewsItem>`typ proměnné na `result` . Změna typu `Count` znamená, že vlastnost již není `Count` k `Assert` dispozici, proto `Any()`vlastnost v písmenu a) nahraďte voláním :
 
 [!code-csharp[FixTests](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader.Tests/Services/NewsServiceTests.cs#FixTestSignature)]
 
-Je nutné přidat příkaz `using System.Linq` na začátek souboru.
+Na začátek souboru `using System.Linq` budete muset také přidat příkaz.
 
-Tato sada změn zvýrazňuje zvláštní pozornost při aktualizaci kódu, který obsahuje obecné vytváření instancí. Seznam i elementy v seznamu typů bez hodnoty null. V obou případech mohou být typy s možnou hodnotou null. Jsou povoleny všechny následující deklarace:
+Tato sada změn upozorňuje zvláštní pozornost při aktualizaci kódu, který zahrnuje obecné instance. Seznam a prvky v seznamu typů s nulovou hodnotou. Buď nebo oba mohou být typy s možnou hodnotou null. Jsou povolena všechna tato prohlášení:
 
-- `List<NewsStoryViewModel>`: neprázdný seznam modelů zobrazení s hodnotou null
-- `List<NewsStoryViewModel?>`: neprázdný seznam modelů zobrazení s možnou hodnotou null
-- `List<NewsStoryViewModel>?`: seznam s možnou hodnotou null v neprázdných modelech zobrazení.
-- `List<NewsStoryViewModel?>?`: seznam povolených typů zobrazení s možnou hodnotou null.
+- `List<NewsStoryViewModel>`: neplatný seznam modelů zobrazení, které nelze utnout.
+- `List<NewsStoryViewModel?>`: neplatný seznam modelů zobrazení s možnou hodnotou null.
+- `List<NewsStoryViewModel>?`: seznam neplatných modelů zobrazení s možnou neplatnou platnosti.
+- `List<NewsStoryViewModel?>?`: seznam modelů zobrazení s možnou hodnotou null.
 
 ## <a name="interfaces-with-external-code"></a>Rozhraní s externím kódem
 
-Provedli jste změny ve třídě `NewsService`, takže zapnete `#nullable enable` anotaci této třídy. To negeneruje žádná nová upozornění. Pečlivé zkoumání třídy však pomáhá ilustrovat některá omezení analýzy toku kompilátoru. Prověřte konstruktor:
+Provedli jste změny `NewsService` ve třídě, proto `#nullable enable` zapněte poznámky pro tuto třídu. Tím se nevygenerují žádná nová upozornění. Pečlivé zkoumání třídy však pomáhá ilustrovat některá omezení analýzy toku kompilátoru. Zkontrolujte konstruktor:
 
 [!code-csharp[ServiceConstructor](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ServiceConstructor)]
 
-Parametr `IMapper` je zadán jako neprázdný odkaz. Je volána ASP.NET Core kódem infrastruktury, takže kompilátor opravdu neví, že `IMapper` nikdy nebude null. Výchozí kontejner pro vkládání závislostí (DI) ASP.NET Core vyvolá výjimku, pokud nemůže vyřešit nezbytnou službu, takže kód je správný. Kompilátor nemůže ověřit všechna volání vašich veřejných rozhraní API, a to i v případě, že je váš kód zkompilován s povolenými kontexty anotace s možnou hodnotou null. Kromě toho mohou být knihovny spotřebovány projekty, které ještě nebyly přihlášeny k použití typů odkazů s možnou hodnotou null. Ověřte vstupy do veřejných rozhraní API, i když je deklarujete jako nehodnotné typy.
+Parametr `IMapper` je zadán jako neplatný odkaz. Nazývá se ASP.NET základní infrastruktury kódu, takže kompilátor není `IMapper` opravdu vědět, že nikdy nebude null. Výchozí ASP.NET kontejner uzákladní ho vkládání závislostí (DI) vyvolá výjimku, pokud nemůže vyřešit potřebnou službu, takže kód je správný. Kompilátor nemůže ověřit všechna volání veřejných rozhraní API, i když je váš kód zkompilován s povolenými kontexty poznámk s možnou hodnotou null. Kromě toho mohou být vaše knihovny spotřebovány projekty, které se ještě nerozhodly používat referenční typy s možnou hodnotou null. Ověřte vstupy pro veřejná api, i když jste je deklarovali jako neplatné typy.
 
 ## <a name="get-the-code"></a>Získání kódu
 
-Opravili jste upozornění, která jste identifikovali při počáteční kompilaci testů, takže teď můžete zapnout kontext anotace s možnou hodnotou null pro oba projekty. Znovu sestavte projekty; Kompilátor ohlásí žádná upozornění. V úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/finished) můžete získat kód dokončeného projektu.
+Opravili jste upozornění, která jste identifikovali v počátečním testu kompilace, takže nyní můžete zapnout kontext poznámky s možnou hodnotou null pro oba projekty. Znovu sestavit projekty; kompilátor nehlásí žádná upozornění. Kód pro dokončený projekt můžete získat v úložišti [GitHub dotnet/samples.](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/finished)
 
-Nové funkce, které podporují typy odkazů s možnou hodnotou null, vám pomůžou najít a opravit potenciální chyby ve způsobu zpracování `null` hodnot ve vašem kódu. Povolení kontextu anotace s možnou hodnotou null umožňuje vyjádřit svůj záměr návrhu: některé proměnné by nikdy neměly mít hodnotu null, jiné proměnné mohou obsahovat hodnoty null. Tyto funkce usnadňují deklaraci záměru návrhu. Podobně kontext varování s možnou hodnotou null instruuje kompilátor, aby vydával upozornění v případě porušení tohoto záměru. Tato upozornění vás provedou, abyste provedli aktualizace, díky kterým je váš kód větší odolný a méně pravděpodobný, aby během provádění vyvolal `NullReferenceException`. Rozsah těchto kontextů můžete řídit tak, abyste se mohli soustředit na místní oblasti kódu, které se mají migrovat, zatímco zbývající základ kódu se nedotkne. V praxi můžete tuto úlohu migrace provést jako součást běžné údržby tříd. V tomto kurzu se ukázal proces migrace aplikace na použití typů odkazů s možnou hodnotou null. Můžete prozkoumat větší reálný příklad tohoto procesu prozkoumáním žádosti o přijetí změn (PR [Jan Skeet](https://github.com/jskeet) ), která umožňuje zahrnutí typů odkazů s možnou hodnotou null do [NodaTime](https://github.com/nodatime/nodatime/pull/1240/commits). Nebo něco navíc se naučíte používat pro použití typů odkazů s možnou hodnotou null s Entity Framework Core v [Entity Framework Core pracuje s typy odkazů s možnou hodnotou null](/ef/core/miscellaneous/nullable-reference-types).
+Nové funkce, které podporují typy odkazů s možnou hodnotou `null` null, vám pomohou najít a opravit potenciální chyby v tom, jak zpracováváte hodnoty v kódu. Povolení kontextu poznámky s možnou hodnotou null umožňuje vyjádřit záměr návrhu: některé proměnné by nikdy neměly být nulové, jiné proměnné mohou obsahovat hodnoty null. Tyto funkce usnadňují deklarování záměru návrhu. Podobně kontext upozornění s možnou hodnotou null instruuje kompilátor udělit upozornění, pokud jste porušili tento záměr. Tato upozornění vás k provedení aktualizací, které váš kód `NullReferenceException` odolnější a méně pravděpodobné, že vyvolat během provádění. Můžete řídit rozsah těchto kontextů tak, aby se můžete zaměřit na místní oblasti kódu migrovat, zatímco zbývající základ kódu je nedotčena. V praxi můžete tento úkol migrace součást pravidelné údržby do tříd. Tento kurz demonstroval proces migrace aplikace pro použití typů odkazů s možnou hodnotou null. Můžete prozkoumat větší real-svět příklad tohoto procesu zkoumáním PR [Jon Skeet](https://github.com/jskeet) se začlenit nullable typy odkazů do [NodaTime](https://github.com/nodatime/nodatime/pull/1240/commits). Nebo jen kromě toho můžete naučit techniky pro použití typů odkazů s možnou hodnotou null s entity framework core v [entity framework core - práce s typy odkazů s možnou hodnotou null](/ef/core/miscellaneous/nullable-reference-types).

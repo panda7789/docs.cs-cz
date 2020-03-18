@@ -17,43 +17,43 @@ helpviewer_keywords:
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
 ms.openlocfilehash: b286bdd2c5d7b03a0a2b5f94478e252da6cd0ae2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73120852"
 ---
 # <a name="localizability-review"></a>Revize lokalizovatelnosti
 
-Kontrola lokalizovatelnosti je přechodný krok vývoje aplikace připravené pro použití ve světě. Ověřuje, zda je globální aplikace připravena k lokalizaci a identifikuje jakýkoli kód nebo jakékoli aspekty uživatelského rozhraní, které vyžadují zvláštní zpracování. Tento krok také pomáhá zajistit, že proces lokalizace nezavede do vaší aplikace žádné funkční nedostatky. Když byly vyřešeny všechny problémy vyvolané přezkoumáním lokalizovatelnosti, je vaše aplikace připravená na lokalizaci. Pokud je kontrola lokalizovatelnosti důkladná, neměli byste během procesu lokalizace upravovat žádný zdrojový kód.
+Kontrola lokalizovatelnosti je mezikrokem ve vývoji aplikace připravené pro svět. Ověří, že globalizovaná aplikace je připravena k lokalizaci a identifikuje jakýkoli kód nebo jakékoli aspekty uživatelského rozhraní, které vyžadují zvláštní zpracování. Tento krok také pomáhá zajistit, že proces lokalizace nezavede do aplikace žádné funkční vady. Pokud byly vyřešeny všechny problémy vyvolané kontrolou lokalizovatelnosti, aplikace je připravena k lokalizaci. Pokud je kontrola lokalizovatelnosti důkladná, neměli byste během procesu lokalizace upravovat žádný zdrojový kód.
 
-Kontrola lokalizovatelnosti se skládá z následujících tří kontrol:
+Přezkum lokalizovatelnosti se skládá z těchto tří kontrol:
 
-- [Jsou implementovaná doporučení globalizace?](#global)
+- [Jsou doporučení globalizace implementována?](#global)
 
-- [Jsou funkce závislé na jazykové verzi zpracovávány správně?](#culture)
+- [Jsou funkce citlivé na jazykovou verzi správně zpracovány?](#culture)
 
-- [Otestovali jste aplikaci s mezinárodními daty?](#test)
+- [Testovali jste svou aplikaci s mezinárodními daty?](#test)
 
 <a name="global"></a>
 ## <a name="implement-globalization-recommendations"></a>Implementace doporučení globalizace
 
-Pokud jste aplikaci navrhli a vyvinuli s lokalizací a pokud jste postupovali s doporučeními popsanými v článku [globalizace](../../../docs/standard/globalization-localization/globalization.md) , přezkoumání lokalizovatelnosti bude převážně složitosti. V opačném případě byste měli v průběhu této fáze zkontrolovat a implementovat doporučení pro [globalizaci](../../../docs/standard/globalization-localization/globalization.md) a opravit chyby ve zdrojovém kódu, které brání lokalizaci.
+Pokud jste navrhli a vyvinuli aplikaci s ohledem na lokalizaci a pokud jste postupovali podle doporučení popsaných v článku [globalizace,](../../../docs/standard/globalization-localization/globalization.md) bude kontrola lokalizovatelnosti do značné míry průchodem zajištění kvality. V opačném případě byste v této fázi měli zkontrolovat a implementovat doporučení pro [globalizaci](../../../docs/standard/globalization-localization/globalization.md) a opravit chyby ve zdrojovém kódu, které brání lokalizaci.
 
 <a name="culture"></a>
-## <a name="handle-culture-sensitive-features"></a>Zpracování funkcí závislých na jazykové verzi
+## <a name="handle-culture-sensitive-features"></a>Zpracování funkcí citlivých na jazykovou verzi
 
-Rozhraní .NET neposkytuje programovou podporu v řadě oblastí, které jsou široce závislé na jazykové verzi. Ve většině případů je třeba napsat vlastní kód, který bude zpracovávat oblasti funkcí jako následující:
+Rozhraní .NET neposkytuje programovou podporu v řadě oblastí, které se značně liší podle jazykové verze. Ve většině případů je třeba napsat vlastní kód pro zpracování oblastí funkcí, jako je následující:
 
 - Adresy
 
 - Telefonní čísla
 
-- Velikosti papíru
+- Formáty papíru
 
-- Měrné jednotky používané pro délky, váhy, oblast, hlasitost a teploty
+- Měrné jednotky používané pro délky, závaží, plochu, objem a teploty
 
-   I když rozhraní .NET nenabízí integrovanou podporu pro převod mezi jednotkami měření, můžete použít vlastnost <xref:System.Globalization.RegionInfo.IsMetric%2A?displayProperty=nameWithType> k určení, zda konkrétní země nebo oblast používá systém metriky, jak ukazuje následující příklad.
+   Přestože rozhraní .NET nenabízí integrovanou podporu pro převod mezi <xref:System.Globalization.RegionInfo.IsMetric%2A?displayProperty=nameWithType> měrnými jednotkami, můžete pomocí této vlastnosti určit, zda určitá země nebo oblast používá systém metrik, jak ukazuje následující příklad.
 
    [!code-csharp[Conceptual.Localizability#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.localizability/cs/ismetric1.cs#1)]
    [!code-vb[Conceptual.Localizability#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.localizability/vb/ismetric1.vb#1)]
@@ -61,25 +61,25 @@ Rozhraní .NET neposkytuje programovou podporu v řadě oblastí, které jsou š
 <a name="test"></a>
 ## <a name="test-your-application"></a>Testování aplikace
 
-Před lokalizací aplikace byste ji měli otestovat pomocí mezinárodních dat v mezinárodní verzi operačního systému. I když většina uživatelského rozhraní nebude v tomto okamžiku lokalizována, budete moci detekovat následující problémy:
+Před lokalizací aplikace byste ji měli otestovat pomocí mezinárodních dat v mezinárodních verzích operačního systému. Přestože většina uživatelského rozhraní nebude v tomto okamžiku lokalizována, budete moci zjistit problémy, jako jsou následující:
 
-- Serializovaná data, která nejsou v rámci verzí operačního systému správně reserializována.
+- Serializovaná data, která nejsou správně rekonstruována ve verzích operačního systému.
 
-- Číselná data, která nereflektují konvence aktuální jazykové verze. Čísla lze například zobrazit s nepřesnými oddělovači skupin, oddělovači desetinných míst nebo symboly měny.
+- Číselná data, která neodráží konvence aktuální jazykové verze. Čísla mohou být například zobrazena s nepřesnými oddělovači skupin, oddělovači desetinných míst nebo symboly měny.
 
-- Data a času, která nereflektují konvence aktuální jazykové verze. Například čísla představující měsíc a den se mohou zobrazit v nesprávném pořadí, oddělovače dat mohou být nesprávné nebo informace o časovém pásmu mohou být nesprávné.
+- Data a čas dat, která neodráží konvence aktuální jazykové verze. Například čísla, která představují měsíc a den, se mohou zobrazit v nesprávném pořadí, oddělovače kalendářních dat mohou být nesprávné nebo informace o časovém pásmu mohou být nesprávné.
 
-- Prostředky, které se nenašly, protože jste pro svou aplikaci neoznačili výchozí jazykovou verzi.
+- Prostředky, které nelze najít, protože jste neidentifikovali výchozí jazykovou verzi aplikace.
 
 - Řetězce, které jsou zobrazeny v neobvyklém pořadí pro konkrétní jazykovou verzi.
 
-- Porovnávání řetězců nebo porovnání pro rovnost, které vracejí neočekávané výsledky.
+- Porovnání řetězců nebo porovnání rovnosti, které vracejí neočekávané výsledky.
 
-Pokud jste postupovali s doporučeními globalizace při vývoji aplikace, zpracování funkcí závislých na jazykové verzi a identifikaci a řešení problémů lokalizace, které vznikly během testování, můžete přejít k dalšímu kroku [. Lokalizace](../../../docs/standard/globalization-localization/localization.md).
+Pokud jste postupovali podle doporučení globalizace při vývoji aplikace, správně zpracovány funkce citlivé na jazykovou verzi a identifikovat a řešit problémy lokalizace, které vznikly během testování, můžete přistoupit k dalšímu kroku, [Lokalizace](../../../docs/standard/globalization-localization/localization.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
 - [Lokalizace](../../../docs/standard/globalization-localization/localization.md)
 - [Globalizace](../../../docs/standard/globalization-localization/globalization.md)
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)

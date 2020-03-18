@@ -1,19 +1,19 @@
 ---
-title: Silné názvy a knihovny .NET
-description: Doporučení osvědčených postupů pro silné pojmenovávání knihoven .NET.
+title: Silné pojmenování a knihovny .NET
+description: Doporučení osvědčených postupů pro silné pojmenování knihoven .NET.
 ms.date: 10/16/2018
 ms.openlocfilehash: db268093b07a2ece7cdb8329fd789b52da9c5c32
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76744534"
 ---
 # <a name="strong-naming"></a>Vytváření silných názvů
 
-Silné pojmenování odkazuje na podepsání sestavení klíčem a vytváření [sestavení se silným názvem](../assembly/strong-named.md). Je-li sestavení se silným názvem, vytvoří jedinečnou identitu na základě názvu a čísla verze sestavení a může přispět k prevenci konfliktů sestavení.
+Silné pojmenování odkazuje na podepsání sestavení pomocí klíče, vytvoření [sestavení se silným názvem](../assembly/strong-named.md). Pokud je sestavení silně pojmenované, vytvoří jedinečnou identitu založenou na názvu a čísle verze sestavení a může pomoci zabránit konfliktům sestavení.
 
-Nevýhodou na silné názvy je, že .NET Framework ve Windows umožňuje striktní načítání sestavení, jakmile je sestavení silným názvem. Odkaz na sestavení se silným názvem se musí přesně shodovat s verzí, na kterou odkazuje sestavení. při použití sestavení vynutí vývojáři [nakonfigurovat přesměrování vazby](../../framework/configure-apps/redirect-assembly-versions.md) .
+Nevýhodou silného pojmenování je, že rozhraní .NET Framework v systému Windows umožňuje přísné načítání sestavení, jakmile je sestavení silné s názvem. Odkaz na sestavení se silným názvem se musí přesně shodovat s verzí, na kterou odkazuje sestavení, což nutí vývojáře [konfigurovat přesměrování vazeb](../../framework/configure-apps/redirect-assembly-versions.md) při použití sestavení:
 
 ```xml
 <configuration>
@@ -28,46 +28,46 @@ Nevýhodou na silné názvy je, že .NET Framework ve Windows umožňuje striktn
 </configuration>
 ```
 
-Když vývojáři rozhraní .NET nakladou stížnost na silné pojmenování, k čemu obvykle dochází, je striktní načítání sestavení. Naštěstí je tento problém izolovaný od .NET Framework. .NET Core, Xamarin, UWP a většina dalších implementací .NET nemají striktní načítání sestavení a odstraňují Hlavní nevýhodou silných názvů.
+Když si vývojáři rozhraní .NET stěžují na silné pojmenování, obvykle si stěžují na přísné načítání sestavení. Naštěstí tento problém je izolován a rozhraní .NET Framework. .NET Core, Xamarin, UPW a většina ostatních implementací .NET nemají přísné načítání sestavení a odebere hlavní nevýhodu silného pojmenování.
 
-Jedním z důležitých aspektů silného pojmenování je to, že je to virové: silné pojmenované sestavení může odkazovat jenom na další silná pojmenovaná sestavení. Pokud vaše knihovna nemá silný název, měli byste vyloučit vývojáře, kteří sestavují aplikaci nebo knihovnu, která potřebuje silné názvy jejich použití.
+Jedním z důležitých aspektů silného pojmenování je, že je virové: silné pojmenované sestavení může odkazovat pouze na další silná pojmenovaná sestavení. Pokud vaše knihovna není silná s názvem, pak jste vyloučili vývojáře, kteří budují aplikaci nebo knihovnu, která potřebuje silné pojmenování z jeho použití.
 
-Výhody silného pojmenování:
+Výhody silného pojmenování jsou:
 
-1. Sestavení lze odkazovat a používat v jiných sestavení se silným názvem.
-2. Sestavení může být uloženo v globální mezipaměti sestavení (GAC).
-3. Sestavení lze načítat souběžně s jinými verzemi sestavení. Souběžné načítání sestavení je běžně vyžadováno aplikacemi s architekturami modulů plug-in.
+1. Na sestavení lze odkazovat a používat je jinými sestaveními se silným názvem.
+2. Sestavení lze uložit do globální mezipaměti sestavení (GAC).
+3. Sestava může být načtena vedle sebe s jinými verzemi sestavení. Zatížení sestavy vedle sebe je běžně vyžadováno aplikacemi s architekturou modulu plug-in.
 
-## <a name="create-strong-named-net-libraries"></a>Vytvořit silně pojmenované knihovny .NET
+## <a name="create-strong-named-net-libraries"></a>Vytvoření silných pojmenovaných knihoven .NET
 
-Měli byste silně pojmenovat open source knihovny .NET. Silné pojmenování sestavení zajišťuje, aby ho nejvíc uživatelé mohl použít a striktní načítání sestavení ovlivňuje jenom .NET Framework.
+Měli byste silné jméno open-source knihovny .NET. Silné pojmenování sestavení zajišťuje, že ji může používat většina lidí a přísné načítání sestavení ovlivní pouze rozhraní .NET Framework.
 
 > [!NOTE]
-> Tyto doprovodné materiály jsou specifické pro veřejně distribuované knihovny .NET, jako jsou knihovny .NET publikované v NuGet.org. Pro většinu aplikací .NET není vyžadováno silné pojmenování a ve výchozím nastavení by se nemělo provádět.
+> Tento návod je specifický pro veřejně distribuované knihovny .NET, jako jsou například knihovny .NET publikované v NuGet.org. Silné pojmenování není vyžadováno většinou aplikací .NET a ve výchozím nastavení by nemělo být prováděno.
 
-✔️ Zvažte silné pojmenovávání sestavení vaší knihovny.
+✔️ ZVAŽTE silné pojmenování sestavení knihovny.
 
-✔️ Zvažte přidání klíče silného pojmenování do systému správy zdrojů.
+✔️ ZVAŽTe přidání silného pojmenovávacího klíče do systému správy zdrojového kódu.
 
-> Veřejně dostupný klíč umožňuje vývojářům změnit a znovu zkompilovat zdrojový kód knihovny se stejným klíčem.
+> Veřejně dostupný klíč umožňuje vývojářům upravit a znovu zkompilovat zdrojový kód knihovny se stejným klíčem.
 >
-> Silný klíč pro pojmenovávání by neměl být veřejný, pokud byl v minulosti použit k udělení zvláštních oprávnění ve [scénářích s částečnou důvěryhodností](../../framework/misc/using-libraries-from-partially-trusted-code.md). V opačném případě může dojít k ohrožení stávajících prostředí.
+> Silný pojmenovávací klíč byste neměli zveřejňovat, pokud byl v minulosti použit k udělení zvláštních oprávnění ve [scénářích částečné důvěryhodnosti](../../framework/misc/using-libraries-from-partially-trusted-code.md). V opačném případě může dojít k ohrožení existujících prostředí.
 
 > [!IMPORTANT]
-> Pokud je požadována identita vydavatele kódu, doporučujeme podepisování prostřednictvím [technologie Authenticode](/windows-hardware/drivers/install/authenticode) a [balíčku NuGet](/nuget/create-packages/sign-a-package) . Zabezpečení přístupu kódu (CAS) by nemělo být použito jako zmírnění zabezpečení.
+> Pokud je požadována identita vydavatele kódu, [authenticode](/windows-hardware/drivers/install/authenticode) a NuGet package signing jsou [doporučeny.](/nuget/create-packages/sign-a-package) Zabezpečení přístupu kódu (CAS) by nemělbýt používán jako zmírnění zabezpečení.
 
-✔️ Zvažte zvýšení verze sestavení pouze při změnách hlavní verze, které uživatelům pomůžou snížit přesměrování vazby a jak často se aktualizují.
+✔️ ZVAŽTE zvýšení verze sestavení pouze na hlavní verze změny pomoci uživatelům snížit přesměrování vazby a jak často jsou aktualizovány.
 
-> Přečtěte si další informace o způsobu [správy verzí a verzi sestavení](./versioning.md#assembly-version).
+> Přečtěte si další informace o [správu verzí a verzi sestavení](./versioning.md#assembly-version).
 
-❌ Nepřidávat, odebírat ani měnit silný názvový klíč.
+❌NEPŘIdávejte, neodebírejte ani neměňte silný pojmenovávacím klíčem.
 
-> Úprava silného klíče pro pojmenování sestavení změní identitu sestavení a přeruší zkompilovaný kód, který ho používá. Další informace najdete v tématu [binární změny v binárním souboru](./breaking-changes.md#binary-breaking-change).
+> Úprava silného pojmenovávacího klíče sestavení změní identitu sestavení a přeruší zkompilovaný kód, který jej používá. Další informace naleznete v [tématu binární narušující změny](./breaking-changes.md#binary-breaking-change).
 
-❌ nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
+❌NEPublikujte verze knihovny se silným názvem a bez silného název. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
 
-> Publikování dvou balíčků rozvětvení ekosystém pro vývojáře. Také Pokud aplikace skončí v závislosti na obou balíčcích, může vývojář zaznamenat konflikty názvů typů. V případě, že se týká .NET, jsou různými typy v různých sestaveních.
+> Publikování dvou balíčků rozpisy váš vývojář ský eco-systém. Také pokud aplikace skončí v závislosti na obou balíčcích vývojář může dojít ke konfliktům názvu typu. Pokud jde o rozhraní .NET, jsou různé typy v různých sestaveních.
 
 >[!div class="step-by-step"]
 >[Předchozí](cross-platform-targeting.md)
->[Další](nuget.md)
+>[další](nuget.md)

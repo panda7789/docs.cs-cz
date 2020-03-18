@@ -1,60 +1,60 @@
 ---
-title: Koncepce sady SDK platformy kompilátoru .NET a objektový model
-description: V tomto přehledu najdete na pozadí, které potřebujete k práci efektivně pomocí kompilátoru .NET SDK. Naučíte se vrstvy rozhraní API, hlavní typy používané a celkové objektový model.
+title: Koncepty a objektový model platformy kompilátoru .NET
+description: Tento přehled poskytuje pozadí, které potřebujete efektivně pracovat s kompilátorem .NET SDK. Dozvíte se vrstvy rozhraní API, hlavní typy a celkový objektový model.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: ee8f902bf1df8b63e229fd518e7a0c592fcd47ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e563260e21fb8807017db90ff63e30fec0415a48
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706681"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156958"
 ---
-# <a name="understand-the-net-compiler-platform-sdk-model"></a>Pochopení modelu sada SDK platformy kompilátoru .NET
+# <a name="understand-the-net-compiler-platform-sdk-model"></a>Principy modelu sady .NET Compiler Platform SDK
 
-Zpracování kódu, který napíšete následující strukturovaných pravidla, které často se liší od lidí způsob, jak číst a pochopení kódu. Základní znalosti o model používaný kompilátory je zásadní pro pochopení rozhraní API používat při sestavení založené na platformě Roslyn nástroje. 
+Kompilátory zpracovávají kód, který píšete podle strukturovaných pravidel, která se často liší od způsobu, jakým lidé čtou a rozumí kódu. Základní znalost modelu používaného kompilátory je nezbytné pro pochopení api, která používáte při vytváření nástrojů založených na Roslyn.
 
-## <a name="compiler-pipeline-functional-areas"></a>Kompilátor kanálu funkčních oblastí
+## <a name="compiler-pipeline-functional-areas"></a>Funkční oblasti kanálu kompilátoru
 
-Sada SDK platformy kompilátoru .NET poskytuje C# a kompilátory jazyka Visual Basic code analýzy vám jako spotřebitel poskytuje úroveň rozhraní API, která odráží tradiční kompilátoru kanálu.
+Sada SDK platformy kompilátoru .NET zpřístupňuje analýzu kódu kompilátorů jazyka C# a Visual Basic vám jako spotřebiteli tím, že poskytuje vrstvu rozhraní API, která zrcadlí tradiční kanál kompilátoru.
 
-![kroky zpracování zdrojový kód a kód objektu kompilátoru kanálu](media/compiler-api-model/compiler-pipeline.png)
+![kroky kanálu kompilátoru zpracování zdrojového kódu objektu](media/compiler-api-model/compiler-pipeline.png)
 
-Jednotlivé fáze tohoto kanálu je samostatná komponenta. Nejprve fáze analýzy tokenizes a analyzuje zdrojový text do syntaxe, která následuje jazyk gramatiky. Za druhé fáze deklarace analyzuje zdroje a importovaná metadata do formuláře s názvem symboly. V dalším kroku fáze vazby odpovídá identifikátory v kódu na symboly. A konečně fáze vygeneruje vysílá sestavení všechny informace, které jsou vytvářeny pomocí kompilátoru.
+Každá fáze tohoto kanálu je samostatnou součástí. Nejprve fáze analýzy tokenizuje a analyzuje zdrojový text do syntaxe, která následuje za jazykovou gramatikou. Za druhé fáze deklarace analyzuje zdroj a importovaná metadata do formuláře s názvem symboly. Dále fáze vazby odpovídá identifikátorům v kódu se symboly. Nakonec fáze emitu vydává sestavení se všemi informacemi vytvořenými kompilátorem.
 
-![Kompilátor kanálu rozhraní api poskytuje přístup k každého kroku, který je součástí kompilátoru kanálu](media/compiler-api-model/compiler-pipeline-api.png)
+![Rozhraní API kanálu kompilátoru poskytuje přístup ke každému kroku, který je součástí kanálu kompilátoru](media/compiler-api-model/compiler-pipeline-api.png)
 
-Odpovídající každé z těchto fází, sada SDK platformy kompilátoru .NET poskytuje objektový model, který umožňuje přístup k informacím v této fázi. Parsování fáze zpřístupňuje stromu syntaxe, fáze deklaraci vystavuje tabulky hierarchické symbolů, fáze vazby zpřístupňuje výsledek sémantické analýzy kompilátoru a vygeneruje fáze je rozhraní API, který generuje kódy bajtů IL.
+Odpovídající každé z těchto fází, sada SDK platformy kompilátoru .NET zpřístupňuje objektový model, který umožňuje přístup k informacím v této fázi. Fáze analýzy zpřístupňuje strom syntaxe, fáze deklarace zpřístupňuje hierarchickou tabulku symbolů, fáze vazby zpřístupňuje výsledek sémantické analýzy kompilátoru a fáze emitu je rozhraní API, které vytváří kódy bajtů IL.
 
-![k dispozici z kompilátoru jazykových služeb rozhraní api v každém kroku kompilátoru kanálu](media/compiler-api-model/compiler-pipeline-lang-svc.png)
+![jazykové služby dostupné z rozhraní API kompilátoru v každém kroku kanálu kompilátoru](media/compiler-api-model/compiler-pipeline-lang-svc.png)
 
-Každý kompilátor kombinuje tyto součásti společně jako jeden celek začátku do konce.
+Každý kompilátor kombinuje tyto součásti dohromady jako jeden celek od konce.
 
-Tato rozhraní API jsou stejné ty, které používá sada Visual Studio. Například použití kódu, sbalování a formátování funkce stromu syntaxe, prohlížeče objektů a navigace funkce používají tabulky symbolů, refaktoring a přejít k definici použití sémantického modelu a všechny z nich, včetně rozhraní API pro generování využívá funkce upravit a pokračovat. 
+Tato api jsou stejné ty, které používá Visual Studio. Například funkce osnovy a formátování kódu používají stromy syntaxe, prohlížeč objektů a navigační funkce používají tabulku symbolů, refaktoringy a Přejít na definici používají sémantický model a funkce Upravit a pokračovat používá všechny tyto funkce, včetně rozhraní EMIT API.
 
-## <a name="api-layers"></a>Rozhraní API vrstvy
+## <a name="api-layers"></a>Vrstvy rozhraní API
 
-Kompilátor .NET SDK se skládá ze dvou vrstev hlavní rozhraní API: kompilátoru rozhraní API a pracovním prostorům rozhraní API.
+Sada SDK kompilátoru .NET se skládá ze dvou hlavních vrstev rozhraní API: rozhraní API kompilátoru a rozhraní API pracovních prostorů.
 
-![rozhraní api vrstvy reprezentována kompilátor kanálu rozhraní API](media/compiler-api-model/api-layers.png)
+![vrstvy rozhraní API reprezentované rozhraními kanálu kompilátoru](media/compiler-api-model/api-layers.png)
 
-### <a name="compiler-apis"></a>Rozhraní API kompilátoru
+### <a name="compiler-apis"></a>Api kompilátoru
 
-Kompilátor vrstva obsahuje objektové modely, které odpovídají informace, které jsou zveřejněné v jednotlivých fázích kanálu kompilátor syntaktický a sémantický. Vrstva kompilátoru také obsahuje neměnné snímek na jediné vyvolání kompilátoru, včetně odkazů na sestavení, možnosti kompilátoru a soubory zdrojového kódu. Existují dvě různá rozhraní API, které představují C# jazyka a jazyk Visual Basic. Tato dvě rozhraní API jsou podobné jako u obrazce ale navržených pro vysokou věrností pro každý jednotlivých jazyků. Tato vrstva nemá žádné závislosti na součásti sady Visual Studio.
+Vrstva kompilátoru obsahuje objektové modely, které odpovídají informacím vystaveným v každé fázi kanálu kompilátoru, syntaktické ho i sémantické. Vrstva kompilátoru také obsahuje neměnný snímek jednoho vyvolání kompilátoru, včetně odkazů na sestavení, možností kompilátoru a souborů zdrojového kódu. Existují dvě odlišná rozhraní API, která představují jazyk C# a jazyk jazyka Visual Basic. Tato dvě rozhraní API mají podobný tvar, ale jsou přizpůsobena pro vysokou věrnost jednotlivým jazykům. Tato vrstva nemá žádné závislosti na součástech sady Visual Studio.
 
-### <a name="diagnostic-apis"></a>Diagnostických rozhraní API
+### <a name="diagnostic-apis"></a>Diagnostická api
 
-Jako součást své analýzy kompilátor může vytvořit sadu diagnostiky, které pokrývají vše od syntaxe sémantické a chyby jednoznačného přiřazení do různých upozornění a informativní diagnostiky. Vrstvu rozhraní API služby kompilátoru zpřístupňuje diagnostiky prostřednictvím rozšiřitelné rozhraní API, která umožňuje uživatelem definované analyzátory zapojené do kompilace. To umožňuje diagnostiky definovaný uživatelem, například vytvořené metodou nástrojů, jako je StyleCop nebo FxCop, bude vytvořen spolu s definované kompilátorem diagnostiky. Vytváření diagnostiky tímto způsobem má výhodu přirozeně integrace pomocí nástrojů, jako je MSBuild a sadě Visual Studio, který je závislý na diagnostiky pro prostředí, jako je zastavení sestavení na základě zásad a zobrazují živé podtržení vlnovkou v editoru a navrhněte kódu opravy.
+V rámci své analýzy může kompilátor vytvořit sadu diagnostiky pokrývající vše od syntaxe, sémantického a jednoznačného přiřazení chyb až po různá upozornění a informační diagnostiku. Vrstva rozhraní API kompilátoru zpřístupňuje diagnostiku prostřednictvím rozšiřitelného rozhraní API, které umožňuje připojení uživatelem definovaných analyzátorů do procesu kompilace. Umožňuje uživatelsky definovanou diagnostiku, například ty, které jsou vyráběny nástroji, jako je StyleCop nebo FxCop, které mají být vyrobeny vedle diagnostiky definované kompilátorem. Vytváření diagnostiky tímto způsobem má tu výhodu, že se přirozeně integruje s nástroji, jako jsou MSBuild a Visual Studio, které závisí na diagnostice pro prostředí, jako je zastavení sestavení založené na zásadách a zobrazení živých vlnovek v editoru a navrhování kódu Opravy.
 
-### <a name="scripting-apis"></a>Skriptovací rozhraní API
+### <a name="scripting-apis"></a>Skriptovací api
 
-Hostování a skriptovací rozhraní API jsou součástí kompilátoru vrstvy. Můžete využít pro provádění kódu a shromažďování kontextu spuštění modulu runtime.
-C# Interaktivní okno REPL (čtení-vyhodnocení-Print smyčky) používá tato rozhraní API. REPL umožňuje používat C# jako skriptovací jazyk, spouští kód interaktivně při psaní.
+Hostování a skriptování API jsou součástí vrstvy kompilátoru. Můžete je použít pro provádění fragmentů kódu a akumulaci kontextu spuštění modulu runtime.
+C# interaktivní REPL (Read-Evaluate-Print Loop) používá tato api. REPL umožňuje používat C# jako skriptovací jazyk, provádění kódu interaktivně při psaní.
 
-### <a name="workspaces-apis"></a>Rozhraní API pro pracovní prostory
+### <a name="workspaces-apis"></a>Api pracovních prostorů
 
-Pracovní prostory vrstva obsahuje rozhraní API pracovní prostor, který je výchozím bodem pro provedení analýzy kódu a refaktoring přes celé řešení. Slouží k uspořádání všechny informace o projekty v řešení do jediného objektu modelu, nabízející přímý přístup k modelů kompilátoru vrstvy objektu bez nutnosti analyzovat soubory, nakonfigurujte možnosti, nebo spravovat závislosti projektu na projekt .
+Vrstva pracovních prostorů obsahuje rozhraní API pracovního prostoru, které je výchozím bodem pro provádění analýzy kódu a refaktoringu přes celá řešení. Pomáhá při uspořádání všech informací o projektech v řešení do jednoho objektového modelu a nabízí přímý přístup k objektovým modelům vrstvy kompilátoru bez nutnosti analyzovat soubory, konfigurovat možnosti nebo spravovat závislosti mezi projekty .
 
-Kromě toho v pracovních prostorech vrstvy povrchy sadu rozhraní API používá při provádění analýzu kódu a refaktoring nástroje, které fungují v rámci hostitelského prostředí, jako je integrované vývojové prostředí sady Visual Studio. Mezi příklady patří najít všechny odkazy, formátování a rozhraní API pro generování kódu.
+Kromě toho vrstva pracovních prostorů zobrazí sadu rozhraní API používaných při implementaci nástrojů pro analýzu kódu a refaktoringu, které fungují v hostitelském prostředí, jako je ide visual studia. Mezi příklady patří najít všechny odkazy, formátování a generování kódu API.
 
-Tato vrstva nemá žádné závislosti na součásti sady Visual Studio.
+Tato vrstva nemá žádné závislosti na součástech sady Visual Studio.

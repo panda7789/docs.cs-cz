@@ -1,21 +1,21 @@
 ---
-title: Jak načíst jediný atribut (LINQ to XML) (C#)
+title: Jak načíst jeden atribut (LINQ do XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 1b6b07b9-933f-47e9-874e-e790cab49dc5
-ms.openlocfilehash: 31b34bddc9e748b473641235402847991d444c39
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 830a7be24702b6037ac62471060fbe49d8ded598
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347495"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168710"
 ---
-# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Jak načíst jediný atribut (LINQ to XML) (C#)
-Toto téma vysvětluje, jak načíst jediný atribut prvku s ohledem na název atributu. To je užitečné pro psaní výrazů dotazů, kde chcete najít element, který má konkrétní atribut.  
+# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Jak načíst jeden atribut (LINQ do XML) (C#)
+Toto téma vysvětluje, jak načíst jeden atribut prvku, vzhledem k názvu atributu. To je užitečné pro psaní výrazů dotazu, kde chcete najít prvek, který má určitý atribut.  
   
- Metoda <xref:System.Xml.Linq.XElement.Attribute%2A> třídy <xref:System.Xml.Linq.XElement> vrací <xref:System.Xml.Linq.XAttribute> se zadaným názvem.  
+ Metoda <xref:System.Xml.Linq.XElement.Attribute%2A> třídy <xref:System.Xml.Linq.XElement> vrátí <xref:System.Xml.Linq.XAttribute> se zadaným názvem.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá metodu <xref:System.Xml.Linq.XElement.Attribute%2A>.  
+ Následující příklad používá <xref:System.Xml.Linq.XElement.Attribute%2A> metodu.  
   
 ```csharp  
 XElement cust = new XElement("PhoneNumbers",  
@@ -33,7 +33,7 @@ foreach (XElement el in elList)
     Console.WriteLine((string)el.Attribute("type"));  
 ```  
   
- Tento příklad vyhledá všechny následníky ve stromu s názvem `Phone`a poté vyhledá atribut s názvem `type`.  
+ Tento příklad vyhledá všechny potomky `Phone`ve stromu s `type`názvem a potom najde atribut s názvem .  
   
  Výsledkem tohoto kódu je následující výstup:  
   
@@ -43,7 +43,7 @@ work
 ```  
   
 ## <a name="example"></a>Příklad  
- Pokud chcete načíst hodnotu atributu, můžete jej přetypovat stejným způsobem jako u objektů <xref:System.Xml.Linq.XElement>. Následující příklad ukazuje to.  
+ Pokud chcete načíst hodnotu atributu, můžete ho přetypovat, <xref:System.Xml.Linq.XElement> stejně jako u objektů. Následující příklad ukazuje to.  
   
 ```csharp  
 XElement cust = new XElement("PhoneNumbers",  
@@ -54,7 +54,7 @@ XElement cust = new XElement("PhoneNumbers",
         new XAttribute("type", "work"),  
         "555-555-6666")  
 );  
-IEnumerable<XElement> elList =   
+IEnumerable<XElement> elList =
     from el in cust.Descendants("Phone")  
     select el;  
 foreach (XElement el in elList)  
@@ -68,10 +68,10 @@ home
 work  
 ```  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní operátory přetypování pro třídu <xref:System.Xml.Linq.XAttribute> na `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID``GUID?`  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]poskytuje explicitní operátory <xref:System.Xml.Linq.XAttribute> přetypážení `int?` `uint`pro `uint?`třídu `ulong` `ulong?`do `float` `float?` `double` `double?` `decimal` `decimal?` `string`, `bool` `bool?`, `int`, , , , `GUID?` `long` `long?`, , , , , , , , `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, , a .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -97,6 +97,6 @@ home
 work  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [LINQ to XML osy (C#)](./linq-to-xml-axes-overview.md)
+- [LINQ na osy XML (C#)](./linq-to-xml-axes-overview.md)
