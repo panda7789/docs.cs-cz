@@ -1,42 +1,42 @@
 ---
-title: Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
-description: Zjistěte, jak pomocí nástroje CLI ML.NET automaticky proškolit nejlepší model z příkazového řádku.
+title: Automatizace tréninku modelu pomocí ML.NET CLI
+description: Zjistěte, jak pomocí nástroje ML.NET CLI automaticky trénovat nejlepší model z příkazového řádku.
 ms.date: 12/17/2019
-ms.custom: how-to
-ms.openlocfilehash: 9c493b1df0dd326ad2f0a5d1cac0fc11d7cf37e2
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.custom: how-to, mlnet-tooling
+ms.openlocfilehash: 3344ed15266503d4d5c7cd9db0a0596f58a904fa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240620"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79185886"
 ---
-# <a name="automate-model-training-with-the-mlnet-cli"></a>Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
+# <a name="automate-model-training-with-the-mlnet-cli"></a>Automatizace tréninku modelu pomocí ML.NET CLI
 
-ML.NET CLI automatizuje generování modelů pro vývojáře v rozhraní .NET.
+Rozhraní ML.NET CLI automatizuje generování modelu pro vývojáře rozhraní .NET.
 
-Pokud chcete používat rozhraní ML.NET API samostatně, (bez ML.NET AutoML CLI), musíte zvolit Trainer (implementaci algoritmu strojového učení pro konkrétní úlohu) a sadu transformací dat (metodologie funkcí), která se použije na vaše data. Optimální kanál se bude pro každou datovou sadu lišit a výběr optimálního algoritmu ze všech voleb zvyšuje složitost. Ještě více, každý algoritmus má sadu parametrů, které se mají vyladit. Proto můžete strávit týdny a někdy měsíce na optimalizaci modelů ve službě Machine Learning, které se snaží najít nejlepší kombinace funkcí pro inženýry, výukové algoritmy a základní parametry.
+Chcete-li použít ML.NET ROZHRANÍ API samo o sobě (bez ML.NET automatického rozhraní řízení podepisování ML.NET) musíte zvolit trenažér (implementace algoritmu strojového učení pro konkrétní úkol) a sadu transformací dat (funkce inženýrství) použít pro vaše data. Optimální kanál se bude lišit pro každou datovou sadu a výběr optimální algoritmus ze všech možností zvyšuje složitost. Ještě dále každý algoritmus má sadu hyperparameters, které mají být naladěny. Proto můžete strávit týdny a někdy měsíce optimalizace modelu strojového učení se snaží najít nejlepší kombinace funkce inženýrství, učení algoritmy a hyperparametry.
 
-ML.NET CLI tento proces zjednodušuje pomocí automatizovaného strojového učení (AutoML). 
+ClI ML.NET zjednodušuje tento proces pomocí automatizovaného strojového učení (AutoML).
 
 > [!NOTE]
-> Toto téma odkazuje na ML.NET **CLI** a ml.NET **AutoML**, které jsou momentálně ve verzi Preview, a materiál může být změněn.
+> Toto téma odkazuje na ML.NET **cli** a ML.NET **AutoML**, které jsou aktuálně ve verzi Preview, a materiál může být může být změnit.
 
 ## <a name="what-is-the-mlnet-command-line-interface-cli"></a>Co je rozhraní příkazového řádku ML.NET (CLI)?
 
-ML.NET CLI je [nástroj .NET Core](../core/tools/global-tools.md). Po nainstalování mu udělíte úlohu strojového učení a školicí datovou sadu, která generuje ML.NET model, a také C# kód, který se má spustit pro použití modelu ve vaší aplikaci.
+Rozhraní ML.NET CLI je [nástroj .NET Core](../core/tools/global-tools.md). Po instalaci, můžete dát úlohu strojového učení a trénovací datové sady a generuje ML.NET model, stejně jako kód C# spustit pro použití modelu ve vaší aplikaci.
 
-Jak je znázorněno na následujícím obrázku, je jednoduché vytvořit vysoce kvalitní ML.NET model (soubor s serializovaným modelem. zip) a vzorový C# kód pro spuštění nebo určení skóre modelu. Kromě toho je vytvořen C# také kód pro vytvoření nebo výuku modelu, takže můžete prozkoumat a iterovat na algoritmus a nastavení použité pro vygenerovaný "nejlepší model".
+Jak je znázorněno na následujícím obrázku, je jednoduché generovat vysoce kvalitní ML.NET modelu (serializovaný model .zip soubor) plus ukázkový kód C# pro spuštění/skóre tohoto modelu. Kromě toho je také generován kód Jazyka C# pro vytvoření a trénování tohoto modelu, takže můžete zkoumat a iterovat algoritmus a nastavení použitá pro tento generovaný "nejlepší model".
 
-![obrazu](media/automate-training-with-cli/cli-high-level-process.png "AutoML Engine pracuje v rozhraní příkazového řádku ML.NET")
+![Obrázek](media/automate-training-with-cli/cli-high-level-process.png "Motor AutoML pracující uvnitř ML.NET CLI")
 
-Tyto prostředky můžete vygenerovat z vlastních datových sad, aniž byste je museli kódovat sami, takže také zlepší vaši produktivitu, i když už znáte ML.NET.
+Tyto datové zdroje můžete generovat z vlastních datových sad bez vlastního kódování sami, takže také zvyšuje vaši produktivitu, i když již znáte ML.NET.
 
-V současné době jsou úlohy ML podporované rozhraním příkazového řádku ML.NET:
+V současné době jsou úkoly ML podporované ML.NET cli:
 
 - `binary-classification`
 - `multiclass-classification`
 - `regression`
-- Budoucnost: další úlohy strojového učení, jako je `recommendation`, `ranking`, `anomaly-detection``clustering`
+- Budoucnost: další úkoly `recommendation`strojového učení, jako jsou , `ranking`, `anomaly-detection`,`clustering`
 
 Příklad použití:
 
@@ -46,59 +46,59 @@ mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" 
 
 ![image](media/automate-training-with-cli/cli-model-generation.gif)
 
-Můžete ho spustit stejným způsobem jako v *prostředí Windows PowerShell*, * MacOS/Linux bash nebo *Windows CMD*. Automatické dokončování v tabulkovém prostředí (návrhy parametrů) ale nebude fungovat ve *Windows CMD*.
+Můžete jej spustit stejným způsobem na *Windows PowerShell*, * macOS / Linux bash, nebo *Windows CMD*. Automatické dokončování tabulkových (návrhy parametrů) však nebude v *systému Windows CMD*fungovat .
 
-## <a name="output-assets-generated"></a>Vygenerované výstupní prostředky
+## <a name="output-assets-generated"></a>Vytvořená výstupní aktiva
 
-Příkaz CLI `auto-train` generuje následující prostředky ve výstupní složce:
+`auto-train` Příkaz PŘÍKAZ K PŘÍKAZU generuje ve výstupní složce následující datové zdroje:
 
-- Serializovaný model. zip ("nejlepší model") je připravený k použití ke spuštění předpovědi.
-- C#řešení pomocí:
-  - C#kód pro spuštění nebo určení skóre generovaného modelu (k tomu, aby předpovědi v aplikacích pro koncové uživatele s tímto modelem).
-  - C#kód s školicím kódem, který slouží ke generování tohoto modelu (pro účely učení nebo přeškolení modelu).
-- Soubor protokolu s informacemi o všech iteracích/rozcyklcích v rámci více vyhodnocených algoritmů, včetně jejich podrobné konfigurace/kanálu.
+- Serializovaný model .zip ("nejlepší model") připravený k použití pro spuštění předpovědi.
+- Řešení Jazyka C# s:
+  - C# kód pro spuštění/skóre, které generované model (chcete-li předpovědi v aplikacích koncových uživatelů s tímto modelem).
+  - C# kód s trénovací kód slouží ke generování tohoto modelu (pro účely učení nebo přeškolení modelu).
+- Soubor protokolu s informacemi o všech iterací/sweeps přes více algoritmů vyhodnoceny, včetně jejich podrobnou konfiguraci/potrubí.
 
-První dva prostředky lze použít přímo v aplikacích pro koncové uživatele (ASP.NET Core webové aplikace, služby, aplikace klasické pracovní plochy atd.) k tomu, aby se předpovědi s tímto generovaným modelem ML.
+První dva datové zdroje lze přímo použít ve vašich aplikacích pro koncové uživatele (ASP.NET webové aplikace Core, služeb, desktopových aplikací atd.) k vytváření předpovědí s tímto generovaným modelem ML.
 
-Třetí Asset a školicí kód vám ukáže, co ML.NET kód rozhraní API používal CLI k výuce vygenerovaného modelu, takže můžete přesměrovat svůj model a prozkoumat a iterovat na to, které konkrétní Trainer/algoritmus a parametry byly vybrány rozhraním CLI a AutoML v rámci pokrývání.
+Třetí prostředek, trénovací kód, vám ukáže, jaký ML.NET kód rozhraní API byl použit rozhraním API k trénování generovaného modelu, takže můžete přeškolit model a prozkoumat a iterovat, na kterém konkrétní trenér/algoritmus a hyperparametry byly vybrány CLI a AutoML pod kryty.
 
-## <a name="understanding-the-quality-of-the-model"></a>Princip kvality modelu
+## <a name="understanding-the-quality-of-the-model"></a>Pochopení kvality modelu
 
-Když vygenerujete "nejlepší model" pomocí nástroje CLI, uvidíte metriky kvality (například přesnost a R-kvadrát) podle potřeby pro úlohu ML, na kterou cílíte.
+Když pomocí nástroje cli vygenerujete "nejlepší model", zobrazí se metriky kvality (například přesnost a r-kvadrát) podle úkolu ML, na který cílíte.
 
-Tady jsou tyto metriky shrnuté podle úkolu ML, abyste porozuměli kvalitě automaticky generovaného nejlepšího modelu.
+Zde jsou tyto metriky shrnuty seskupeny podle úkolu ML, takže můžete pochopit kvalitu automaticky generovaného "nejlepšího modelu".
 
-### <a name="metrics-for-binary-classification-models"></a>Metriky pro binární modely klasifikace
+### <a name="metrics-for-binary-classification-models"></a>Metriky pro binární klasifikační modely
 
-V následujícím seznamu se zobrazí seznam metriky úlohy binární klasifikace v ML pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
+Následující seznam metrik úloh ml binární klasifikace pro prvních pět modelů nalezených v příkazovém příkazu příkazového příkazu:
 
 ![image](media/automate-training-with-cli/cli-binary-classification-metrics.png)
 
-Přesnost je oblíbená metrika pro problémy s klasifikací, ale přesnost není vždy nejlepší metrikou pro výběr nejlepšího modelu, jak je vysvětleno v následujících odkazech. Existují případy, kdy potřebujete vyhodnotit kvalitu modelu s dalšími metrikami.
+Přesnost je oblíbenou metrikou pro problémy s klasifikací, ale přesnost není vždy nejlepší metrikou pro výběr nejlepšího modelu, jak je vysvětleno v následujících odkazech. Existují případy, kdy je třeba vyhodnotit kvalitu modelu pomocí dalších metrik.
 
-Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro binární klasifikaci](resources/metrics.md#evaluation-metrics-for-binary-classification).
+Chcete-li prozkoumat a pochopit metriky, které jsou výstupem cli, naleznete [v tématu vyhodnocení metriky pro binární klasifikace](resources/metrics.md#evaluation-metrics-for-binary-classification).
 
-### <a name="metrics-for-multi-class-classification-models"></a>Metriky pro modely klasifikace s více třídami
+### <a name="metrics-for-multi-class-classification-models"></a>Metriky pro vícetřídní klasifikační modely
 
-Následující seznam zobrazuje seznam metrik úlohy klasifikace s více třídami pro nejoblíbenější pět modelů nalezené rozhraním příkazového řádku:
+V následujícím textu se zobrazí seznam metrik úkolů ml klasifikace více tříd pro prvních pět modelů nalezených v příkazovém příkazu k řazení:
 
 ![image](media/automate-training-with-cli/cli-multiclass-classification-metrics.png)
 
-Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro klasifikaci s více třídami](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
+Chcete-li prozkoumat a pochopit metriky, které jsou výstupem cli, naleznete [v tématu vyhodnocení metriky pro vícetřídní klasifikace](resources/metrics.md#evaluation-metrics-for-multi-class-classification).
 
-### <a name="metrics-for-regression-and-recommendation-models"></a>Metriky pro regrese a modely doporučení
+### <a name="metrics-for-regression-and-recommendation-models"></a>Metriky pro regresní a doporučení modely
 
-Regresní model odpovídá datům, pokud jsou rozdíly mezi zjištěnými hodnotami a předpovězenými hodnotami modelu malé a neposunuté. Regresi je možné vyhodnotit pomocí určitých metrik.
+Regresní model dobře odpovídá datům, pokud jsou rozdíly mezi pozorovanými hodnotami a předpovídaných hodnotami modelu malé a nezaujaté. Regrese lze vyhodnotit s určitými metrikami.
 
-Zobrazí se podobný seznam metrik pro nejlépe pět modelů kvality, které rozhraní příkazového řádku najde. V tomto konkrétním případě, který se týká úlohy regresní ML:
+Zobrazí se podobný seznam metrik pro pět nejlepších modelů kvality, které najdete v zaokrenském systému. V tomto konkrétním případě souvisejícím s regresní úlohou ML:
 
 ![image](media/automate-training-with-cli/cli-regression-metrics.png)
 
-Chcete-li prozkoumat a pochopit metriky, které jsou výstupem rozhraní příkazového řádku, přečtěte si téma [vyhodnocení metrik pro regresi](resources/metrics.md#evaluation-metrics-for-regression-and-recommendation).
+Chcete-li prozkoumat a pochopit metriky, které jsou výstupem cli, najdete [v tématu vyhodnocení metriky pro regresi](resources/metrics.md#evaluation-metrics-for-regression-and-recommendation).
 
 ## <a name="see-also"></a>Viz také
 
-- [Postup instalace nástroje ML.NET CLI](how-to-guides/install-ml-net-cli.md)
-- [Kurz: analýza mínění pomocí rozhraní příkazového řádku ML.NET](tutorials/sentiment-analysis-cli.md)
-- [Reference k příkazům rozhraní příkazového řádku ML.NET](reference/ml-net-cli-reference.md)
+- [Jak nainstalovat nástroj ML.NET CLI](how-to-guides/install-ml-net-cli.md)
+- [Kurz: Analýza mínění pomocí ML.NET CLI](tutorials/sentiment-analysis-cli.md)
+- [odkaz příkazu ML.NET CLI](reference/ml-net-cli-reference.md)
 - [Telemetrie v ML.NET CLI](resources/ml-net-cli-telemetry.md)

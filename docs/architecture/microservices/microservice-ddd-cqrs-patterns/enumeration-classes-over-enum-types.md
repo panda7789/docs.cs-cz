@@ -1,25 +1,25 @@
 ---
 title: Použití tříd Enumeration místo typů výčtů
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Mazat, jak lze použít třídy výčtu namísto výčtů jako způsob, jak vyřešit některá omezení.
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Lear, jak můžete použít výčtu třídy, namísto výčtů, jako způsob, jak vyřešit některá omezení druhé.
 ms.date: 10/08/2018
-ms.openlocfilehash: 82bd80d19b3b73eb2f45ede8cc7ad4593c688277
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: fb2cbcd744f29c70a86e6f3300721934192eb752
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628459"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847177"
 ---
-# <a name="use-enumeration-classes-instead-of-enum-types"></a>Použijte třídy výčtu místo typů Enum.
+# <a name="use-enumeration-classes-instead-of-enum-types"></a>Místo typů výčtu použijte třídy výčtu.
 
-[Výčty](../../../csharp/language-reference/builtin-types/enum.md) (nebo *výčtové typy* pro Short) jsou obálka s dynamickým jazykem kolem integrálního typu. Můžete chtít omezit jejich použití na, pokud ukládáte jednu hodnotu z uzavřené sady hodnot. Dobrým příkladem je klasifikace založená na velikostech (malá, střední, Velká). Používání výčtů pro tok řízení nebo robustnější abstrakce může být [zápach kódu](https://deviq.com/code-smells/). Tento typ použití vede k křehkému kódu s mnoha příkazy toku řízení, které kontrolují hodnoty výčtu.
+[Výčty](../../../csharp/language-reference/builtin-types/enum.md) (nebo *výčtu typy* pro krátké) jsou tenké jazyk obálky kolem integrální typ. Jejich použití můžete omezit při ukládání jedné hodnoty z uzavřené sady hodnot. Klasifikace založená na velikostech (malé, střední, velké) je dobrým příkladem. Použití výčty pro řízení toku nebo robustnější abstrakce může být [zápach kódu](https://deviq.com/code-smells/). Tento typ použití vede k křehké kód s mnoha příkazy toku řízení kontrolu hodnot výčtu.
 
-Místo toho můžete vytvořit třídy výčtu, které umožňují všechny bohatě orientované funkce pro objektově orientovaný jazyk.
+Místo toho můžete vytvořit třídy výčtu, které umožňují všechny bohaté funkce objektově orientovaného jazyka.
 
-Nejedná se však o důležité téma a v mnoha případech pro jednoduchost můžete i nadále používat běžné [typy výčtu](../../../csharp/language-reference/builtin-types/enum.md) , pokud je to vaše preference. Přesto se použití tříd výčtu podrobněji týká konceptů souvisejících s firmou.
+To však není kritické téma a v mnoha případech pro jednoduchost můžete stále používat běžné [typy výčtu,](../../../csharp/language-reference/builtin-types/enum.md) pokud je to vaše preference. Každopádně použití výčtu tříd je více souvisí s obchodní koncepty.
 
 ## <a name="implement-an-enumeration-base-class"></a>Implementace základní třídy výčtu
 
-Dořazení mikroslužeb v eShopOnContainers poskytuje ukázkovou implementaci základní třídy výčtu, jak je znázorněno v následujícím příkladu:
+Řazení mikroslužby v eShopOnContainers poskytuje ukázkovou implementaci základní třídy výčtu, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public abstract class Enumeration : IComparable
@@ -64,14 +64,14 @@ public abstract class Enumeration : IComparable
 }
 ```
 
-Tuto třídu můžete použít jako typ v jakémkoli objektu entity nebo hodnoty, jako u následujících `CardType`: `Enumeration` třídy:
+Tuto třídu můžete použít jako typ v libovolné entitě `Enumeration` nebo objektu hodnoty, jako pro následující: `CardType` třída:
 
 ```csharp
 public class CardType : Enumeration
 {
-    public static CardType Amex = new CardType(1, "Amex");
-    public static CardType Visa = new CardType(2, "Visa");
-    public static CardType MasterCard = new CardType(3, "MasterCard");
+    public static readonly CardType Amex = new CardType(1, "Amex");
+    public static readonly CardType Visa = new CardType(2, "Visa");
+    public static readonly CardType MasterCard = new CardType(3, "MasterCard");
 
     public CardType(int id, string name)
         : base(id, name)
@@ -80,12 +80,12 @@ public class CardType : Enumeration
 }
 ```
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-- **Jimmy Bogard. \ třídy výčtu**
+- **Jimmyho Bogarda. Třídy výčtu** \
   <https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/>
 
-- **Steve Smith. Alternativy výčtu v C#**  \
+- **Steva Smithe. Enum Alternativy v C #** \
   <https://ardalis.com/enum-alternatives-in-c>
 
 - **Enumeration.cs.** Základní třída výčtu v eShopOnContainers \
@@ -94,9 +94,9 @@ public class CardType : Enumeration
 - **CardType.cs**. Ukázková třída výčtu v eShopOnContainers. \
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs>
 
-- **SmartEnum**. Ardalis – třídy, které vám pomůžou vydávat silné typy inteligentnějších výčtů v .NET. \
+- **SmartEnum**. Ardalis - Třídy, které pomáhají vyrábět silně typizované chytřejší výčty v rozhraní .NET. \
   <https://www.nuget.org/packages/Ardalis.SmartEnum/>
 
 >[!div class="step-by-step"]
 >[Předchozí](implement-value-objects.md)
->[Další](domain-model-layer-validations.md)
+>[další](domain-model-layer-validations.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: zobrazení obsahu sestavení'
+title: 'Postup: Zobrazení obsahu sestavení'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -14,28 +14,28 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 72b02209d74b6b183af6c11d9bd037889ea08543
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 179b240bb06a319ff71009e14323d5c8f2740e5c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347055"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79187391"
 ---
-# <a name="how-to-view-assembly-contents"></a>Postupy: zobrazení obsahu sestavení
+# <a name="how-to-view-assembly-contents"></a>Postup: Zobrazení obsahu sestavení
 
-K zobrazení informací o jazyce MSIL (Microsoft Intermediate Language) v souboru můžete použít nástroj [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) . Pokud je testovaný soubor sestavení, mohou tyto informace obsahovat atributy sestavení a odkazy na jiné moduly a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavením nebo součástí sestavení a zda má soubor odkazy na jiné moduly nebo sestavení.
+[Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) můžete použít k zobrazení informací o zprostředkujícím jazyce Microsoft (MSIL) v souboru. Pokud je zkoumaný soubor sestavením, mohou tyto informace obsahovat atributy sestavení a odkazy na jiné moduly a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavení nebo součástí sestavení a zda soubor obsahuje odkazy na jiné moduly nebo sestavení.
 
-Chcete-li zobrazit obsah sestavení pomocí programu *Ildasm. exe*, zadejte **Ildasm \<název sestavení >** na příkazovém řádku. Například následující příkaz zpětně přeloží sestavení *Hello. exe* .
+Chcete-li zobrazit obsah sestavy pomocí *aplikace Ildasm.exe*, zadejte **název sestavy ildasmu \<>** na příkazovém řádku. Například následující příkaz rozebírá sestavení *Hello.exe.*
 
 ```cmd
 ildasm Hello.exe
 ```
 
-Chcete-li zobrazit informace o manifestu sestavení, dvakrát klikněte na ikonu **manifestu** v okně MSIL Disassembler.
+Chcete-li zobrazit informace o manifestu sestavení, poklepejte na ikonu **Manifest** u okna Disassembler msil.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad začíná základním programem "Hello World". Po zkompilování programu použijte program *Ildasm. exe* pro zpětný překlad sestavení *Hello. exe* a zobrazení manifestu sestavení.
+Následující příklad začíná základním programem "Hello World". Po kompilaci programu použijte *ildasm.exe* k demontáži sestavení *Hello.exe* a zobrazení manifestu sestavení.
 
 ```cpp
 using namespace System;
@@ -75,7 +75,7 @@ Class MainApp
 End Class
 ```
 
-Spuštěním příkazu *Ildasm. exe* v sestavení *Hello. exe* a dvojím kliknutím na ikonu **manifestu** v okně MSIL Disassembler se vytvoří následující výstup:
+Spuštění příkazu *ildasm.exe* v sestavení *Hello.exe* a poklepáním na ikonu **Manifest** v okně MSIL Disassembler vytvoří následující výstup:
 
 ```output
 // Metadata version: v4.0.30319
@@ -102,27 +102,27 @@ Spuštěním příkazu *Ildasm. exe* v sestavení *Hello. exe* a dvojím kliknut
 // Image base: 0x00600000
 ```
 
-Následující tabulka popisuje každou direktivu v manifestu sestavení sestavení *Hello. exe* používaného v příkladu:
+Následující tabulka popisuje každou direktivu v manifestu sestavení sestavení *Hello.exe* použitého v příkladu:
 
-|– Direktiva|Popis|
+|Směrnice|Popis|
 |---------------|-----------------|
-|**. Assembly název sestavení extern \<>**|Určuje jiné sestavení, které obsahuje položky, na které se odkazuje aktuální modul (v tomto příkladu `mscorlib`).|
-|**\<tokenu. PublicKeyToken >**|Určuje token skutečného klíče odkazovaného sestavení.|
-|**. ver \<číslo verze >**|Určuje číslo verze odkazovaného sestavení.|
-|**název sestavení \<sestavení >**|Určuje název sestavení.|
-|**. hash algoritmus \<hodnotu Int32 >**|Určuje použitý algoritmus hash.|
-|**. ver \<číslo verze >**|Určuje číslo verze sestavení.|
-|**. Module \<název souboru >**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá pouze z jednoho souboru.|
-|**hodnota \<. subsystému >**|Určuje prostředí aplikace vyžadované pro program. V tomto příkladu hodnota 3 znamená, že se tento spustitelný soubor spustí z konzoly.|
-|**. corflags**|Aktuálně rezervované pole v metadatech.|
+|**Název sestavení \<.assembly extern>**|Určuje jiné sestavení, které obsahuje položky odkazované aktuálním modulem (v tomto příkladu). `mscorlib`|
+|**>tokenu \<tokenu .publickeytoken**|Určuje token skutečného klíče odkazovaného sestavení.|
+|**Číslo \<verze .ver>**|Určuje číslo verze odkazovaného sestavení.|
+|**>\<názvu sestavení sestavení .assembly**|Určuje název sestavení.|
+|**hodnota algoritmu \<.hash int32>**|Určuje použitý algoritmus hash.|
+|**Číslo \<verze .ver>**|Určuje číslo verze sestavení.|
+|**>\<názvu souboru modulu**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá pouze z jednoho souboru.|
+|**Hodnota .subsystému \<>**|Určuje prostředí aplikace požadované pro program. V tomto příkladu hodnota 3 označuje, že tento spustitelný soubor je spuštěn z konzoly.|
+|**.corflags**|Aktuálně vyhrazené pole v metadatech.|
 
-Manifest sestavení může obsahovat několik různých direktiv v závislosti na obsahu sestavení. Rozsáhlý seznam direktiv v manifestu sestavení naleznete v dokumentaci ECMA, zejména v oddílu oddíl II: definice metadat a sémantika a oddíl III: sada instrukcí CIL:
+Manifest sestavení může obsahovat řadu různých směrnic v závislosti na obsahu sestavení. Rozsáhlý seznam směrnic v manifestu sestavení naleznete v dokumentaci Ecma, zejména "Oddíl II: Definice metadat a sémantika" a "Oddíl III: SADA instrukcí CIL":
 
-- [ECMA C# a Common Language Infrastructure standardy](/dotnet/standard/components#applicable-standards)
-- [Standard ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
+- [Standardy ECMA C# a společné jazykové infrastruktury](../components.md#applicable-standards)
+- [Standardní ECMA-335 – společná jazyková infrastruktura (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Aplikační domény a sestavení](../../framework/app-domains/application-domains.md#application-domains-and-assemblies)
-- [Témata s návody k doménám a sestavením aplikací](../../framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
+- [Aplikační domény a sestavení s tématy s postupy](../../framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
 - [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md)

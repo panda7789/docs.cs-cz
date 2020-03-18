@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: podepsání sestavení silným názvem'
+title: 'Postup: Podepsání sestavení se silným názvem'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, signing with strong names
@@ -12,74 +12,74 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 9998e69e8bf1505bcfc7a9103e9d89616dad9633
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160310"
 ---
-# <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: podepsání sestavení silným názvem
+# <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postup: Podepsání sestavení se silným názvem
 
 > [!NOTE]
-> I když .NET Core podporuje sestavení se silným názvem a všechna sestavení v knihovně .NET Core jsou podepsaná, většina sestavení třetích stran nepotřebuje silné názvy. Další informace najdete v tématu [podepisování silného názvu](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) na GitHubu.
+> Přestože .NET Core podporuje sestavení se silným názvem a všechna sestavení v knihovně .NET Core jsou podepsána, většina sestavení třetích stran nepotřebují silné názvy. Další informace najdete [v tématu Podpis silného názvu](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) na GitHubu.
 
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  
   
-- Pomocí karty **podepisování** v dialogovém okně **vlastnosti** projektu v aplikaci Visual Studio. Nejjednodušším a nejpohodlnějším způsobem je podepsání sestavení pomocí silného názvu.  
+- Pomocí karty **Podpisv** dialogovém okně **Vlastnosti** projektu v sadě Visual Studio. Nejjednodušším a nejpohodlnějším způsobem je podepsání sestavení pomocí silného názvu.  
   
-- Pomocí [linkeru sestavení (Al. exe)](../../framework/tools/al-exe-assembly-linker.md) můžete propojit modul kódu .NET Framework (soubor *. netmodule* ) se souborem klíče.  
+- Pomocí [propojovacího programu sestavení (Al.exe)](../../framework/tools/al-exe-assembly-linker.md) propojte modul kódu rozhraní .NET Framework (soubor *.netmodule)* se souborem klíče.  
   
-- Pomocí atributů sestavení pro vložení informací o silném názvu do kódu. V závislosti na tom, kde se nachází soubor klíče, který se má použít, můžete použít buď atribut <xref:System.Reflection.AssemblyKeyFileAttribute>, nebo atribut <xref:System.Reflection.AssemblyKeyNameAttribute>.  
+- Pomocí atributů sestavení pro vložení informací o silném názvu do kódu. Můžete použít buď <xref:System.Reflection.AssemblyKeyFileAttribute> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> atribut, v závislosti na tom, kde je umístěn soubor klíče, který má být použit.  
   
 - Pomocí možností kompilátoru.  
   
- Pro podepsání sestavení silným názvem musíte mít pár kryptografických klíčů. Další informace o vytváření páru klíčů naleznete v tématu [How to: Create a Public-Private Key páru](create-public-private-key-pair.md).  
+ Pro podepsání sestavení silným názvem musíte mít pár kryptografických klíčů. Další informace o vytvoření páru klíčů naleznete v [tématu Postup: Vytvoření páru klíčů veřejného a soukromého sektoru](create-public-private-key-pair.md).  
   
-## <a name="create-and-sign-an-assembly-with-a-strong-name-by-using-visual-studio"></a>Vytvoření a podepsání sestavení silným názvem pomocí sady Visual Studio  
+## <a name="create-and-sign-an-assembly-with-a-strong-name-by-using-visual-studio"></a>Vytvoření a podepsání sestavení se silným názvem pomocí sady Visual Studio  
   
-1. V **Průzkumník řešení**otevřete místní nabídku pro projekt a poté zvolte možnost **vlastnosti**.  
+1. V **Průzkumníku řešení**otevřete místní nabídku projektu a pak zvolte **Vlastnosti**.  
   
-2. Klikněte na kartu **podepisování** .  
+2. Zvolte kartu **Podpisování.**  
   
-3. Vyberte pole **podepsat sestavení** .  
+3. Vyberte podepsat pole **sestavy.**  
   
-4. V poli **Zvolte soubor klíče se silným názvem** zvolte možnost **Procházet**a potom přejděte k souboru klíče. Chcete-li vytvořit nový soubor klíče, vyberte možnost **Nový** a zadejte jeho název do dialogového okna **vytvořit klíč se silným názvem** .  
+4. V poli **Zvolit soubor klíče se silným názvem** zvolte **Procházet**a přejděte na soubor klíče. Chcete-li vytvořit nový soubor klíče, zvolte **Nový** a zadejte jeho název do dialogového okna **Vytvořit silný klíč názvu.**  
   
 > [!NOTE]
-> Aby bylo možné [zpozdit podepsání sestavení](delay-sign.md), vyberte soubor veřejného klíče.  
+> Chcete-li [zpozdit podepsání sestavení](delay-sign.md), zvolte soubor veřejného klíče.  
   
-### <a name="create-and-sign-an-assembly-with-a-strong-name-by-using-the-assembly-linker"></a>Vytvoření a podepsání sestavení silným názvem pomocí linkeru sestavení  
+### <a name="create-and-sign-an-assembly-with-a-strong-name-by-using-the-assembly-linker"></a>Vytvoření a podepsání sestavení se silným názvem pomocí propojovacího zařízení sestavení  
   
-V [Developer Command Prompt pro Visual Studio](../../framework/tools/developer-command-prompt-for-vs.md)zadejte následující příkaz:  
+Na [příkazovém řádku pro vývojáře pro visual studio](../../framework/tools/developer-command-prompt-for-vs.md)zadejte následující příkaz:  
 
-**Al** **/out:** \<*assemblyName*>  *\<název modulu >* **/keyfile:** \<název *souboru*>  
+**al** **/out:**\<*moduleName*> *\<moduleName>* **/keyfile:**\<*keyfileName*>  
 
 Kde:  
 
-- *AssemblyName* je název silně podepsaného sestavení (soubor *. dll* nebo *. exe* ), který bude linker sestavení generovat.  
+- *assemblyName* je název silně podepsaného sestavení (soubor *U.dll* nebo *.exe),* který bude vyzařovávat Linker sestavení.  
   
-- název *modulu* je název modulu .NET Frameworkho kódu (soubor *. netmodule* ), který obsahuje jeden nebo více typů. Můžete vytvořit soubor *. netmodule* kompilováním kódu s přepínačem `/target:module` v C# nebo Visual Basic.
+- *moduleName* je název modulu kódu rozhraní .NET Framework (soubor *.netmodule),* který obsahuje jeden nebo více typů. Soubor *.netmodule* můžete vytvořit kompilací kódu pomocí `/target:module` přepínače v jazyce C# nebo Visual Basic.
   
-- název *souboru* je název kontejneru nebo souboru, který obsahuje pár klíčů. Linker sestavení interpretuje relativní cestu ve vztahu k aktuálnímu adresáři.  
+- *keyfileName* je název kontejneru nebo souboru, který obsahuje dvojici klíčů. Linker sestavení interpretuje relativní cestu ve vztahu k aktuálnímu adresáři.  
 
-Následující příklad podepíše sestavení *MyAssembly. dll* se silným názvem pomocí souboru Key *klíči sgKey. snk*.  
+Následující příklad podepisuje sestavení *MyAssembly.dll* silným názvem pomocí souboru klíče *sgKey.snk*.  
 
 ```console
 al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk  
 ```  
   
-Další informace o tomto nástroji naleznete v tématu [linker sestavení](../../framework/tools/al-exe-assembly-linker.md).  
+Další informace o tomto nástroji naleznete v [tématu Assembly Linker](../../framework/tools/al-exe-assembly-linker.md).  
   
 ## <a name="sign-an-assembly-with-a-strong-name-by-using-attributes"></a>Podepsání sestavení silným názvem pomocí atributů  
   
-1. Přidejte atribut <xref:System.Reflection.AssemblyKeyFileAttribute?displayProperty=nameWithType> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> do souboru zdrojového kódu a zadejte název souboru nebo kontejneru obsahujícího pár klíčů, který se má použít při podepisování sestavení silným názvem.  
+1. Přidejte <xref:System.Reflection.AssemblyKeyFileAttribute?displayProperty=nameWithType> <xref:System.Reflection.AssemblyKeyNameAttribute> atribut nebo do souboru zdrojového kódu a zadejte název souboru nebo kontejneru, který obsahuje dvojici klíčů, která se má použít při podepisování sestavení se silným názvem.  
 
 2. Zkompilujte soubor zdrojového kódu běžným způsobem.  
 
    > [!NOTE]
-   > Kompilátory C# a Visual Basic vydávají upozornění kompilátoru (CS1699 a BC41008) při výskytu atributu <xref:System.Reflection.AssemblyKeyFileAttribute> nebo <xref:System.Reflection.AssemblyKeyNameAttribute> ve zdrojovém kódu. Upozornění můžete ignorovat.  
+   > Kompilátory jazyka C# a Visual Basic vydávají upozornění kompilátoru (CS1699 a <xref:System.Reflection.AssemblyKeyFileAttribute> <xref:System.Reflection.AssemblyKeyNameAttribute> BC41008, v uvedeném pořadí), když narazí na atribut nebo ve zdrojovém kódu. Upozornění můžete ignorovat.  
 
-Následující příklad používá atribut <xref:System.Reflection.AssemblyKeyFileAttribute> se souborem klíče nazvaným *keyfile. snk*, který je umístěn v adresáři, kde je sestavení zkompilováno.  
+Následující příklad používá <xref:System.Reflection.AssemblyKeyFileAttribute> atribut s klíčovým souborem s názvem *keyfile.snk*, který je umístěn v adresáři, kde je sestavení kompilován.  
 
 ```cpp
 [assembly:AssemblyKeyFileAttribute("keyfile.snk")];
@@ -93,15 +93,15 @@ Následující příklad používá atribut <xref:System.Reflection.AssemblyKeyF
 <Assembly:AssemblyKeyFileAttribute("keyfile.snk")>
 ```
 
-Při kompilaci zdrojového souboru můžete také podepsání sestavení pozdržet. Další informace naleznete v tématu [opožděné podepsání sestavení](delay-sign.md).  
+Při kompilaci zdrojového souboru můžete také podepsání sestavení pozdržet. Další informace naleznete v [tématu Delay-sign sestavení](delay-sign.md).  
 
-## <a name="sign-an-assembly-with-a-strong-name-by-using-the-compiler"></a>Podepsání sestavení silným názvem pomocí kompilátoru  
+## <a name="sign-an-assembly-with-a-strong-name-by-using-the-compiler"></a>Podepsání sestavení se silným názvem pomocí kompilátoru  
 
-Zkompilujte soubor zdrojového kódu nebo soubory pomocí možnosti kompilátoru `/keyfile` nebo `/delaysign` v C# a Visual Basic, nebo pomocí možnosti linkeru `/KEYFILE` nebo `/DELAYSIGN` v. C++ Za název možnosti přidejte dvojtečku a název souboru s klíčem. Při použití kompilátorů příkazového řádku můžete jednoduše zkopírovat soubor klíče do aktuálního adresáře, který obsahuje soubory zdrojového kódu.  
+Kompilace souboru zdrojového `/keyfile` kódu `/delaysign` nebo soubory s možností nebo kompilátoru v jazyce C# a Visual Basic nebo `/KEYFILE` možnost nebo `/DELAYSIGN` linker v jazyce C++. Za název možnosti přidejte dvojtečku a název souboru s klíčem. Při použití kompilátorů příkazového řádku můžete jednoduše zkopírovat soubor klíče do aktuálního adresáře, který obsahuje soubory zdrojového kódu.  
 
-Informace o zpožděném podepisování naleznete v tématu [opožděné podepsání sestavení](delay-sign.md).  
+Informace o zpoždění podepisování naleznete v [tématu Delay-sign sestavení](delay-sign.md).  
 
-Následující příklad používá C# kompilátor a podepíše sestavení *UtilityLibrary. dll* se silným názvem pomocí souboru klíče *klíči sgKey. snk*.  
+Následující příklad používá kompilátor Jazyka C# a podepisuje soubor *Assembly UtilityLibrary.dll* silným názvem pomocí souboru klíče *sgKey.snk*.  
 
 ```cmd
 csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk  
@@ -110,8 +110,8 @@ csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk
 ## <a name="see-also"></a>Viz také
 
 - [Vytváření a používání sestavení se silným názvem](create-use-strong-named.md)
-- [Postupy: Vytvoření páru veřejného a soukromého klíče](create-public-private-key-pair.md)
+- [Postup: Vytvoření páru klíčů veřejného a soukromého sektoru](create-public-private-key-pair.md)
 - [Al.exe (linker sestavení)](../../framework/tools/al-exe-assembly-linker.md)
-- [Zpožděný podpis sestavení](delay-sign.md)
+- [Opožděný podpis sestavení](delay-sign.md)
 - [Správa podepsání sestavení a manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)
-- [Stránka podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)
+- [Podepisovací stránka, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)

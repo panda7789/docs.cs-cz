@@ -9,27 +9,27 @@ helpviewer_keywords:
 - PLINQ queries, how to use merge options
 ms.assetid: 0f33b527-e91a-4550-a39a-e63e396fd831
 ms.openlocfilehash: 40abe2f101f6fa23d804ef30e27d642a36908196
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73139266"
 ---
 # <a name="how-to-specify-merge-options-in-plinq"></a>Postupy: Určení možností sloučení v PLINQ
-Tento příklad ukazuje, jak určit možnosti sloučení, které budou použity pro všechny následné operátory v dotazu PLINQ. Explicitně není nutné nastavovat možnosti sloučení, ale v takovém případě může dojít ke zvýšení výkonu. Další informace o možnostech sloučení naleznete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
+Tento příklad ukazuje, jak určit možnosti sloučení, které se budou vztahovat na všechny následné operátory v dotazu PLINQ. Není třeba explicitně nastavit možnosti sloučení, ale to může zlepšit výkon. Další informace o možnostech sloučení naleznete [v tématu Sloučit možnosti v plinq](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
   
 > [!WARNING]
-> Tento příklad je určený k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Tento příklad je určen k předvedení využití a nemusí běžet rychleji než ekvivalentní sekvenční LINQ na objekty dotazu. Další informace o zrychlení naleznete v [tématu Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje chování možností sloučení v základním scénáři, který má neuspořádaný zdroj a aplikuje nákladný funkce na každý prvek.  
+ Následující příklad ukazuje chování možností sloučení v základním scénáři, který má neuspořádaný zdroj a použije nákladné funkce pro každý prvek.  
   
  [!code-csharp[PLINQ#23](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#23)]
  [!code-vb[PLINQ#23](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#23)]  
   
- V případech, kdy <xref:System.Linq.ParallelMergeOptions.AutoBuffered> možnost dochází k nežádoucí latenci před tím, než se první prvek vrátí, vyzkoušejte možnost <xref:System.Linq.ParallelMergeOptions.NotBuffered>, která vrátí prvky výsledků rychleji a hladce.  
+ V případech, <xref:System.Linq.ParallelMergeOptions.AutoBuffered> kdy možnost vznikne nežádoucí latence před první prvek <xref:System.Linq.ParallelMergeOptions.NotBuffered> je výnosný, zkuste možnost výnos u datovat prvky výsledku rychleji a plynuleji.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelMergeOptions>
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

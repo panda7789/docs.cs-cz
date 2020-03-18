@@ -2,38 +2,38 @@
 title: Řazení dat (C#)
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 8db5ab2ead0e59b8d41d83704ff237d4493155c3
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 29a5e3e685bdc73536961b7783f4986796b46bdf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346459"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167904"
 ---
 # <a name="sorting-data-c"></a>Řazení dat (C#)
-Operace řazení řadí prvky sekvence na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení pro prvky. Zadáním druhého kritéria řazení můžete prvky seřadit v rámci každé primární skupiny řazení.  
+Operace řazení objednávky prvky sekvence na základě jednoho nebo více atributů. První kritérium řazení provádí primární řazení na prvky. Zadáním druhého kritéria řazení můžete třídit prvky v rámci každé primární skupiny řazení.  
   
- Následující ilustrace znázorňuje výsledky abecední operace řazení na sekvenci znaků: 
+ Následující obrázek znázorňuje výsledky abecední operace řazení na posloupnost znaků:
   
- ![Obrázek, který zobrazuje abecední operaci řazení.](./media/sorting-data/alphabetical-sort-operation.png)  
+ ![Grafika znázorněná abecední řazení.](./media/sorting-data/alphabetical-sort-operation.png)  
   
- Standardní metody operátoru dotazu, které řadí data, jsou uvedeny v následující části.  
+ Standardní metody operátoru dotazu, které řadí data jsou uvedeny v následující části.  
   
 ## <a name="methods"></a>Metody  
   
-|Název metody|Popis|C#Syntaxe výrazu dotazu|Další informace|  
+|Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|OrderBy|Seřadí hodnoty ve vzestupném pořadí.|`orderby`|<xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderBy%2A?displayProperty=nameWithType>|  
-|OrderByDescending|Seřadí hodnoty v sestupném pořadí.|`orderby … descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|  
-|ThenBy|Provede sekundární řazení ve vzestupném pořadí.|`orderby …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=nameWithType>|  
-|ThenByDescending|Provede sekundární řazení v sestupném pořadí.|`orderby …, … descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=nameWithType>|  
-|Reverse|Obrátí pořadí prvků v kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
+|Orderby|Seřadí hodnoty vzestupně.|`orderby`|<xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderBy%2A?displayProperty=nameWithType>|  
+|Orderbydescending|Seřadí hodnoty v sestupném pořadí.|`orderby … descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|  
+|Thenby|Provádí sekundární řazení ve vzestupném pořadí.|`orderby …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=nameWithType>|  
+|Thenbydescending|Provádí sekundární řazení v sestupném pořadí.|`orderby …, … descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=nameWithType>|  
+|Reverse|Obrátí pořadí prvků v kolekci.|Neužívá se.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
   
-## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
+## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazu dotazu  
   
-### <a name="primary-sort-examples"></a>Primární příklady řazení  
+### <a name="primary-sort-examples"></a>Příklady primárního řazení  
   
 #### <a name="primary-ascending-sort"></a>Primární vzestupné řazení  
- Následující příklad ukazuje, jak použít klauzuli `orderby` v dotazu LINQ k řazení řetězců v poli podle délky řetězce ve vzestupném pořadí.  
+ Následující příklad ukazuje, jak `orderby` použít klauzuli v dotazu LINQ k řazení řetězců v poli podle délky řetězce ve vzestupném pořadí.  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -55,8 +55,8 @@ foreach (string str in query)
 */  
 ```  
   
-#### <a name="primary-descending-sort"></a>Primární sestupné řazení  
- Další příklad ukazuje, jak použít klauzuli `orderby descending` v dotazu LINQ k řazení řetězců podle jejich prvního písmena v sestupném pořadí.  
+#### <a name="primary-descending-sort"></a>Primární sestupně řazení  
+ Následující příklad ukazuje, jak `orderby descending` použít klauzuli v dotazu LINQ seřadit řetězce podle jejich první písmeno, v sestupném pořadí.  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -78,10 +78,10 @@ foreach (string str in query)
 */  
 ```  
   
-### <a name="secondary-sort-examples"></a>Sekundární příklady řazení  
+### <a name="secondary-sort-examples"></a>Příklady sekundárního řazení  
   
 #### <a name="secondary-ascending-sort"></a>Sekundární vzestupné řazení  
- Následující příklad ukazuje, jak použít klauzuli `orderby` v dotazu LINQ k provedení primárního a sekundárního řazení řetězců v poli. Řetězce jsou seřazeny hlavně podle délky a secondarily podle prvního písmene řetězce, ve vzestupném pořadí.  
+ Následující příklad ukazuje, jak `orderby` použít klauzuli v dotazu LINQ k provedení primárního a sekundárního druhu řetězců v poli. Řetězce jsou seřazeny především podle délky a sekundárně podle prvního písmene řetězce, a to jak ve vzestupném pořadí.  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -103,8 +103,8 @@ foreach (string str in query)
 */  
 ```  
   
-#### <a name="secondary-descending-sort"></a>Sekundární sestupné řazení  
- Další příklad ukazuje, jak použít klauzuli `orderby descending` v dotazu LINQ k provedení primárního řazení ve vzestupném pořadí a sekundárního řazení v sestupném pořadí. Řetězce jsou seřazeny hlavně podle délky a secondarily podle prvního písmene řetězce.  
+#### <a name="secondary-descending-sort"></a>Sekundární sestupně řazení  
+ Následující příklad ukazuje, jak `orderby descending` použít klauzuli v dotazu LINQ k provedení primárnířazení, vzestupně a sekundární řazení v sestupném pořadí. Řetězce jsou seřazeny především podle délky a sekundárně podle prvního písmene řetězce.  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -126,10 +126,10 @@ foreach (string str in query)
 */  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
+- [Standardní operátory dotazů – přehled (C#)](./standard-query-operators-overview.md)
 - [orderby – klauzule](../../../language-reference/keywords/orderby-clause.md)
 - [Řazení výsledků klauzule join](../../../linq/order-the-results-of-a-join-clause.md)
-- [Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Jak řadit nebo filtrovat textová data podle libovolného slova nebo pole (LINQ) (C#)](./how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

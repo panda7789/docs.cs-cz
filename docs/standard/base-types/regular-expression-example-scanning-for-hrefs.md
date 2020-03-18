@@ -1,5 +1,5 @@
 ---
-title: 'Příklad regulárního výrazu: vyhledávání HREF atributů'
+title: 'Příklad regulárního výrazu: Hledání hrefů'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,22 +14,22 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, examples
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
 ms.openlocfilehash: d8546980dd0cf58ca7c095750f2749d5a6bc7723
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73084215"
 ---
-# <a name="regular-expression-example-scanning-for-hrefs"></a>Příklad regulárního výrazu: vyhledávání HREF atributů
-Následující příklad vyhledá vstupní řetězec a zobrazí všechny atributy href = "..." hodnoty a jejich umístění v řetězci.  
+# <a name="regular-expression-example-scanning-for-hrefs"></a>Příklad regulárního výrazu: Hledání hrefů
+Následující příklad vyhledá vstupní řetězec a zobrazí všechny href="..." hodnoty a jejich umístění v řetězci.  
   
 ## <a name="the-regex-object"></a>Objekt Regex  
- Vzhledem k tomu, že metoda `DumpHRefs` může být volána víckrát z uživatelského kódu, používá <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metodu `static` (`Shared` v Visual Basic). To umožňuje modulu regulárních výrazů ukládat do mezipaměti regulární výraz a vyhnout se režii při vytváření instancí nového objektu <xref:System.Text.RegularExpressions.Regex> pokaždé, když je metoda volána. Objekt <xref:System.Text.RegularExpressions.Match> se pak použije k iterování všech shod v řetězci.  
+ Vzhledem `DumpHRefs` k tomu, že metoda může být `static` `Shared` volána vícekrát z uživatelského kódu, používá metodu ( v jazyce <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> Visual Basic. To umožňuje modulu regulárních výrazů ukládat regulární výraz <xref:System.Text.RegularExpressions.Regex> do mezipaměti a zabraňuje režii vytváření instancí nového objektu při každém volání metody. Objekt <xref:System.Text.RegularExpressions.Match> se pak používá k iterátu přes všechny shody v řetězci.  
   
  [!code-csharp[RegularExpressions.Examples.HREF#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.HREF/cs/example.cs#1)]
  [!code-vb[RegularExpressions.Examples.HREF#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.HREF/vb/example.vb#1)]  
   
- Následující příklad ukazuje volání metody `DumpHRefs`.  
+ Následující příklad pak ilustruje volání `DumpHRefs` metody.  
   
  [!code-csharp[RegularExpressions.Examples.HREF#2](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.HREF/cs/example.cs#2)]
  [!code-vb[RegularExpressions.Examples.HREF#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.HREF/vb/example.vb#2)]  
@@ -38,22 +38,22 @@ Následující příklad vyhledá vstupní řetězec a zobrazí všechny atribut
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`href`|Porovnává řetězcový literál "href". U porovnávání se nerozlišují malá a velká písmena.|  
+|`href`|Porovná literál řetězce "href". Shoda nerozlišuje malá a velká písmena.|  
 |`\s*`|Porovná žádný nebo více prázdných znaků.|  
 |`=`|Porovná znaménko rovná se.|  
 |`\s*`|Porovná žádný nebo více prázdných znaků.|  
-|`(?:\["'\](?<1>\[^"'\]*)["']|(?<1>\S+))`|Porovnává jednu z následujících možností bez přiřazení výsledku k zachycené skupině:<br /> <ul><li><p>Uvozovky nebo apostrof, následované nula nebo více výskytů libovolného znaku, který je jiný než znak uvozovek nebo apostrof, následovaný znakem uvozovek nebo apostrofem. V tomto vzoru je obsažena skupina s názvem `1`.</p></li><li><p>Jeden nebo více prázdných znaků. V tomto vzoru je obsažena skupina s názvem `1`.</p></li></ul>|  
-|`(?<1>[^"']*)`|Přiřaďte nula nebo více výskytů libovolného znaku jiného než uvozovky nebo apostrof pro zachytávající skupinu s názvem `1`.|  
-|`(?<1>\S+)`|Přiřaďte do zachycující skupiny s názvem `1`jeden nebo více neprázdných znaků.|  
+|`(?:\["'\](?<1>\[^"'\]*)["']|(?<1>\S+))`|Porovnejte jednu z následujících možností bez přiřazení výsledku zachycené skupině:<br /> <ul><li><p>Uvozovky nebo apostrof, následované nulou nebo více výskyty libovolného znaku jiného než uvozovky nebo apostrofu, následované uvozovkami nebo apostrofem. Skupina s `1` názvem je součástí tohoto vzoru.</p></li><li><p>Jeden nebo více neprázdné znaky. Skupina s `1` názvem je součástí tohoto vzoru.</p></li></ul>|  
+|`(?<1>[^"']*)`|Přiřadit zachytávající skupině s názvem `1`přiřadit nulu nebo více výskytů libovolného znaku jiného než uvozovky nebo apostrofu .|  
+|`(?<1>\S+)`|Přiřaďte zachytávající skupině jeden nebo `1`více neprázdné znaky s názvem .|  
   
-## <a name="match-result-class"></a>Shoda třídy výsledků  
- Výsledky hledání jsou uloženy ve třídě <xref:System.Text.RegularExpressions.Match>, která poskytuje přístup ke všem podřetězcům extrahovaným hledáním. Také pamatuje hledaný řetězec a používaný regulární výraz, takže může volat metodu <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> k provedení dalšího hledání, od kterého skončil poslední konec.  
+## <a name="match-result-class"></a>Třída výsledků shody  
+ Výsledky hledání jsou uloženy <xref:System.Text.RegularExpressions.Match> ve třídě, která poskytuje přístup ke všem podřetězcům extrahovaným hledáním. Také si pamatuje řetězec prohledávaný a používaný regulární výraz, takže může volat metodu <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> k provedení jiného hledání od místa, kde skončil poslední.  
   
 ## <a name="explicitly-named-captures"></a>Explicitně pojmenovaná zachycení  
- V tradičních regulárních výrazech se zachytávání kulatých závorek automaticky očísluje. To vede k dvěma problémům. Za prvé, pokud je regulární výraz upraven vložením nebo odebráním sady závorek, musí být přepsán veškerý kód, který odkazuje na očíslované zachycení, aby odrážel nové číslování. Za druhé, protože různé sady kulatých závorek jsou často používány k poskytování dvou alternativních výrazů pro přijatelnou shodu, může být obtížné určit, který z těchto dvou výrazů skutečně vrátil výsledek.  
+ V tradičních regulárních výrazech jsou zachytávající závorky automaticky číslovány postupně. To vede ke dvěma problémům. Nejprve pokud je regulární výraz změněn vložením nebo odebráním sady závorek, musí být přepsán veškerý kód, který odkazuje na číslované sběry, aby odrážel nové číslování. Za druhé, protože různé sady závorek se často používají k poskytnutí dvou alternativních výrazů pro přijatelnou shodu, může být obtížné určit, který z těchto dvou výrazů skutečně vrátil výsledek.  
   
- Aby bylo možné tyto problémy vyřešit, třída <xref:System.Text.RegularExpressions.Regex> podporuje syntaxi `(?<name>…)` pro zachycení shody do zadané patice (slot může být pojmenován pomocí String nebo integer; celá čísla lze znovu zavolat rychleji). Proto mohou být alternativní shody stejného řetězce směrovány na stejné místo. V případě konfliktu je poslední shoda odhozena do slotu úspěšná. (K dispozici je však úplný seznam více shod pro jednu oblast. Podrobnosti najdete v kolekci <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>.)  
+ Chcete-li tyto <xref:System.Text.RegularExpressions.Regex> problémy vyřešit, třída podporuje syntaxi `(?<name>…)` pro zachycení shody do zadaného slotu (patice může být pojmenována pomocí řetězce nebo celé holčičí; celá čísla lze připomenout rychleji). Alternativní shody pro stejný řetězec tedy mohou být směrovány na stejné místo. V případě konfliktu je poslední shoda, která spadla do slotu, úspěšná shoda. (Je však k dispozici úplný seznam více shod pro jeden slot. Podrobnosti <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> naleznete v kolekci.)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Regulární výrazy .NET](../../../docs/standard/base-types/regular-expressions.md)
+- [Regulární výrazy rozhraní .NET](../../../docs/standard/base-types/regular-expressions.md)

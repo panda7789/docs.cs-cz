@@ -6,34 +6,34 @@ helpviewer_keywords:
 - PLINQ queries, how to iterate directories
 ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
 ms.openlocfilehash: 90afc767e422515c6122b8a6ef0e63ffc07caf3a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73091372"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>Postupy: Procházení adresářů se soubory pomocí jazyka PLINQ
-Tento příklad ukazuje dva jednoduché způsoby paralelizovat operací v adresářích souborů. První dotaz používá metodu <xref:System.IO.Directory.GetFiles%2A> k vyplnění pole názvů souborů v adresáři a všech podadresářích. Tato metoda nevrátí hodnotu, dokud se nezaplní celé pole, a proto může zavádět latenci na začátku operace. Nicméně po naplnění pole je PLINQ schopen ho zpracovat paralelně velmi rychle.  
+Tento příklad ukazuje dva jednoduché způsoby paralelizovat operace v adresářích souborů. První dotaz používá <xref:System.IO.Directory.GetFiles%2A> metodu k naplnění pole názvů souborů v adresáři a všech podadresářích. Tato metoda nevrátí, dokud je naplněncelé pole a proto může zavést latence na začátku operace. Však po naplnění pole, PLINQ můžete zpracovat paralelně velmi rychle.  
   
- Druhý dotaz používá statické <xref:System.IO.Directory.EnumerateDirectories%2A> a <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> metody, které okamžitě začínají vracet výsledky. Tento přístup může být rychlejší, když provádíte iteraci v rámci rozsáhlých stromů adresářů, i když doba zpracování ve srovnání s prvním příkladem může záviset na mnoha faktorech.  
+ Druhý dotaz používá <xref:System.IO.Directory.EnumerateDirectories%2A> statické <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> a metody, které začnou vracet výsledky okamžitě. Tento přístup může být rychlejší, když iterace přes velké adresářové stromy, i když doba zpracování ve srovnání s prvním příkladem může záviset na mnoha faktorech.  
   
 > [!WARNING]
-> Tyto příklady jsou určeny k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Tyto příklady jsou určeny k předvedení využití a nemusí běžet rychleji než ekvivalentní sekvenční LINQ na objekty dotazu. Další informace o zrychlení naleznete v [tématu Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak iterovat soubory adresáře v jednoduchých scénářích, když máte přístup ke všem adresářům stromu, velikosti souborů nejsou velmi velké a časy přístupu nejsou významné. Tento přístup zahrnuje dobu latence na začátku při seřazování pole názvů souborů.  
+ Následující příklad ukazuje, jak itetovat přes adresáře souborů v jednoduchých scénářích, když máte přístup ke všem adresářům ve stromu, velikosti souborů nejsou příliš velké a časy přístupu nejsou významné. Tento přístup zahrnuje období latence na začátku při vytváření pole názvů souborů.  
   
  [!code-csharp[PLINQ#33](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#33)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak iterovat soubory adresáře v jednoduchých scénářích, když máte přístup ke všem adresářům stromu, velikosti souborů nejsou velmi velké a časy přístupu nejsou významné. Tento přístup začíná vytvářet výsledky rychleji než v předchozím příkladu.  
+ Následující příklad ukazuje, jak itetovat přes adresáře souborů v jednoduchých scénářích, když máte přístup ke všem adresářům ve stromu, velikosti souborů nejsou příliš velké a časy přístupu nejsou významné. Tento přístup začíná produkovat výsledky rychleji než v předchozím příkladu.  
   
  [!code-csharp[PLINQ#34](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#34)]  
   
- Při použití <xref:System.IO.Directory.GetFiles%2A>se ujistěte, že máte dostatečná oprávnění ke všem adresářům ve stromové struktuře. V opačném případě bude vyvolána výjimka a nebudou vráceny žádné výsledky. Při použití <xref:System.IO.Directory.EnumerateDirectories%2A> v PLINQ dotazu je problematické zpracovávat výjimky vstupu a výstupu plynule, což vám umožní pokračovat v iteracích. Pokud váš kód musí zpracovat výjimky vstupně-výstupních operací nebo neoprávněného přístupu, měli byste zvážit přístup popsaný v tématu [Postupy: iterování souborů adresáře s paralelní třídou](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md).  
+ Při <xref:System.IO.Directory.GetFiles%2A>použití se ujistěte, že máte dostatečná oprávnění pro všechny adresáře ve stromu. V opačném případě bude vyvolána výjimka a nebudou vráceny žádné výsledky. Při použití <xref:System.IO.Directory.EnumerateDirectories%2A> v plinq dotazu je problematické zpracovat výjimky vstupně-v a to v elegantním způsobem, který umožňuje pokračovat v iterace. Pokud váš kód musí zpracovat výjimky vstupně-neoprávněný přístup, pak byste měli zvážit přístup popsaný v [How to: Iterate File Directories with the Parallel Class](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md).  
   
- Pokud je latence vstupně-výstupních operací, například při vstupně-výstupních operacích se soubory přes síť, zvažte použití jedné z asynchronních vstupně-výstupních metod popsaných v tématu [TPL a tradičního .NET Framework asynchronního programování](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md) a v tomto [blogovém příspěvku](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
+ Pokud je vstupně-výstupní latence problém, například se vstupně-výstupními vstupně-výstupními programy v síti, zvažte použití jedné z asynchronních technik vstupně-výstupních služeb popsaných v [tpl a tradiční asynchronní programování rozhraní .NET Framework](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md) a v tomto [příspěvku blogu](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

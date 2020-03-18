@@ -8,31 +8,31 @@ helpviewer_keywords:
 - type system, base types
 ms.assetid: 028d0ce8-ebc2-4a88-a16f-17508f6d0bd6
 ms.openlocfilehash: 8fa22ce749dc7d117a4a37de5d09abd9892eeab7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73103551"
 ---
 # <a name="working-with-base-types-in-net"></a>Práce se základními typy v .NET
-Tato část popisuje operace se základními typy .NET, včetně formátování, převodu a běžných operací.  
+Tato část popisuje operace základního typu .NET, včetně formátování, převodu a běžných operací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Převod typu v .NET Framework](../../../docs/standard/base-types/type-conversion.md)  
- Popisuje, jak převést jeden typ na jiný.  
+ [Převod typů v rozhraní .NET Framework](../../../docs/standard/base-types/type-conversion.md)  
+ Popisuje, jak převést z jednoho typu na jiný.  
   
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- Popisuje, jak formátovat řetězce pomocí specifikátorů formátu řetězce.  
+ Popisuje způsob formátování řetězců pomocí specifikátorů formátu řetězce.  
   
  [Práce s řetězci](../../../docs/standard/base-types/manipulating-strings.md)  
- Popisuje, jak manipulovat s řetězci a formátovat je.  
+ Popisuje, jak manipulovat a formátovat řetězce.  
   
  [Analýza řetězců](../../../docs/standard/base-types/parsing-strings.md)  
- Popisuje, jak převést řetězce na typy .NET Framework.  
+ Popisuje, jak převést řetězce na typy rozhraní .NET Framework.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Obecný systém typů](../../../docs/standard/base-types/common-type-system.md)  
- Popisuje typy používané .NET Framework.  
+ Popisuje typy používané rozhraním .NET Framework.  
   
  [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)  
  Popisuje způsob práce s časovými pásmy a jejich převody v aplikacích, které časová pásma zohledňují.

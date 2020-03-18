@@ -9,48 +9,48 @@ helpviewer_keywords:
 - PLINQ queries, how to handle exceptions
 ms.assetid: 8d56ff9b-a571-4d31-b41f-80c0b51b70a5
 ms.openlocfilehash: 3645f5dc470ef53710aa7f4c78c60431fb27ecfa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73123092"
 ---
 # <a name="how-to-handle-exceptions-in-a-plinq-query"></a>Postupy: Zpracování výjimek v dotazu PLINQ
 
-První příklad v tomto tématu ukazuje, jak zpracovat <xref:System.AggregateException?displayProperty=nameWithType>, které mohou být vyvolány z PLINQ dotazu při jeho spuštění. Druhý příklad ukazuje, jak umístit bloky try-catch v rámci delegátů co nejblíže k, kde bude vyvolána výjimka. Tímto způsobem je můžete zachytit ihned po jejich výskytu a případně pokračovat v provádění dotazů. Pokud jsou výjimky povoleny k bublinám zpět do spojovacího vlákna, pak je možné, že dotaz může pokračovat ve zpracování některých položek poté, co je vyvolána výjimka.
+První příklad v tomto tématu <xref:System.AggregateException?displayProperty=nameWithType> ukazuje, jak zpracovat, které mohou být vyvolány z dotazu PLINQ při spuštění. Druhý příklad ukazuje, jak umístit try-catch bloky v rámci delegátů, co nejblíže k kde bude vyvolána výjimka. Tímto způsobem můžete zachytit, jakmile k nim dojde a případně pokračovat v provádění dotazu. Pokud jsou povoleny výjimky bubliny zpět do spojovacího vlákna, pak je možné, že dotaz může pokračovat ve zpracování některých položek po vyvolání výjimky.
 
-V některých případech, pokud se PLINQ vrátí zpět k sekvenčnímu provedení a dojde k výjimce, výjimka může být šířena přímo a nesmí být zabalena do <xref:System.AggregateException>. <xref:System.Threading.ThreadAbortException>s se také vždy šíří přímo.
+V některých případech, kdy PLINQ přejde zpět na sekvenční spuštění a dojde k výjimce, může být výjimka šířena přímo a není zabalena do . <xref:System.AggregateException> Také <xref:System.Threading.ThreadAbortException>s jsou vždy šířeny přímo.
 
 > [!NOTE]
-> Když je povolená možnost Pouze můj kód, Visual Studio se na řádku, který vyvolá výjimku, přeruší a zobrazí se chybová zpráva s informacemi o tom, že výjimka není zpracována uživatelským kódem. Tato chyba je neškodná. Stiskem klávesy F5 můžete pokračovat a zobrazit chování zpracování výjimek, které je znázorněno v níže uvedených příkladech. Chcete-li aplikaci Visual Studio zabránit v přerušení první chyby, zrušte zaškrtnutí políčka Pouze můj kód v části **nástroje, možnosti, ladění, obecné**.
+> Pokud je povolena možnost "Pouze můj kód", Visual Studio se přeruší na řádku, který vyvolá výjimku a zobrazí chybovou zprávu s textem "výjimka není zpracována uživatelským kódem". Tato chyba je neškodná. Můžete stisknout Klávesu F5 pokračovat z něj a zobrazit chování zpracování výjimek, která je znázorněna v příkladech níže. Chcete-li zabránit visual studio z rozdělení na první chybu, stačí zrušit zaškrtnutí políčka "Jen můj kód" zaškrtněte políčko "Jen můj kód" v části **Nástroje, možnosti, ladění, obecné**.
 >
-> Tento příklad je určený k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
+> Tento příklad je určen k předvedení využití a nemusí běžet rychleji než ekvivalentní sekvenční LINQ na objekty dotazu. Další informace o zrychlení naleznete v [tématu Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje, jak umístit bloky try-catch kolem kódu, který spouští dotaz pro zachycení všech vyvolaných <xref:System.AggregateException?displayProperty=nameWithType>s.
+Tento příklad ukazuje, jak umístit try-catch bloky kolem kódu, <xref:System.AggregateException?displayProperty=nameWithType>který spustí dotaz zachytit všechny s, které jsou vyvolány.
 
 [!code-csharp[PLINQ#41](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#41)]
 [!code-vb[PLINQ#41](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#41)]
 
-V tomto příkladu nemůže dotaz pokračovat, i když je vyvolána výjimka. V době, kdy kód aplikace zachytí výjimku, PLINQ již zastavil dotaz na všech vláknech.
+V tomto příkladu dotaz nemůže pokračovat po vyvolání výjimky. V době, kdy kód aplikace zachytí výjimku, PLINQ již zastavil dotaz na všechna vlákna.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak umístit blok try-catch do delegáta pro zajištění, že je možné zachytit výjimku a pokračovat v provádění dotazu.
+Následující příklad ukazuje, jak umístit blok try-catch v delegátovi, aby bylo možné zachytit výjimku a pokračovat v provádění dotazu.
 
 [!code-csharp[PLINQ#42](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#42)]
 [!code-vb[PLINQ#42](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#42)]
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-- Chcete-li tyto příklady zkompilovat a spustit, zkopírujte je do ukázkového příkladu dat PLINQ a zavolejte metodu z Main.
+- Chcete-li zkompilovat a spustit tyto příklady, zkopírujte je do příkladu ukázky dat PLINQ a volání metody z Main.
 
 ## <a name="robust-programming"></a>Robustní programování
 
-Nezachyťte výjimku, Pokud nevíte, jak ji zpracovat, abyste nepoškodili stav programu.
+Nezachycujte výjimku, pokud nevíte, jak ji zpracovat, abyste nepoškodili stav programu.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelEnumerable>
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

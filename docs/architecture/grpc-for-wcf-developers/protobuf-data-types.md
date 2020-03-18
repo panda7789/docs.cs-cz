@@ -1,19 +1,19 @@
 ---
-title: Protobuf skalárních datových typů – gRPC pro vývojáře WCF
-description: Seznamte se se základními a známými datovými typy, které Protobuf a gRPC podporují v .NET Core.
+title: Scalární datové typy Protobuf - gRPC pro vývojáře WCF
+description: Seznamte se se základními a dobře známými datovými typy, které Protobuf a gRPC podporují v .NET Core.
 ms.date: 09/09/2019
-ms.openlocfilehash: f5215550a6a2d54dfe2e859c574a34f641fdb68d
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: a40f51fa32ddb97ba417ec01f31e1f0187f0d544
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543154"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148124"
 ---
 # <a name="protobuf-scalar-data-types"></a>Skalární datové typy protobuf
 
-Vyrovnávací paměť protokolu (Protobuf) podporuje rozsah nativních typů skalárních hodnot. V následující tabulce jsou uvedeny všechny s ekvivalentním C# typem:
+Buffer protokolu (Protobuf) podporuje řadu nativních typů skalárních hodnot. V následující tabulce jsou uvedeny všechny s jejich ekvivalentní c# typu:
 
-| Typ Protobuf | C#textový      | Poznámky: |
+| Typ Protobuf | C# typ      | Poznámky |
 | ------------- | ------------ | ----- |
 | `double`      | `double`     |       |
 | `float`       | `float`      |       |
@@ -33,20 +33,20 @@ Vyrovnávací paměť protokolu (Protobuf) podporuje rozsah nativních typů ska
 
 Poznámky:
 
-1. Standardní kódování pro `int32` a `int64` je neefektivní, když pracujete s podepsanými hodnotami. Pokud pole může obsahovat záporná čísla, použijte místo toho `sint32` nebo `sint64`. Tyto typy jsou mapovány C# na `int` a `long` typy v uvedeném pořadí.
-2. `fixed` pole vždy používají stejný počet bajtů bez ohledu na to, jaká hodnota je. Díky tomuto chování je serializace a deserializace rychlejší pro větší hodnoty.
-3. Protobuf řetězce mají kódování UTF-8 (nebo 7 bitů ASCII). Kódovaná délka nesmí být větší než 2<sup>32</sup>.
-4. Modul runtime Protobuf poskytuje typ `ByteString`, který se snadno mapuje do `byte[]` C# polí a z nich.
+1. Standardní kódování pro `int32` `int64` a je neefektivní při práci s podepsanými hodnotami. Pokud je pravděpodobné, že pole `sint32` bude `sint64` obsahovat záporná čísla, použijte nebo místo toho. Tyto typy mapovat `int` c# a `long` typy, v uvedeném pořadí.
+2. Pole `fixed` vždy používají stejný počet bajtů bez ohledu na to, jaká je hodnota. Toto chování umožňuje serializace a deserializace rychlejší pro větší hodnoty.
+3. Řetězce Protobuf jsou kódovány utf-8 (nebo 7bitový ASCII). Zakódovaná délka nesmí být větší než 2<sup>32</sup>.
+4. Protobuf runtime poskytuje `ByteString` typ, který mapuje `byte[]` snadno a z c# pole.
 
 ## <a name="other-net-primitive-types"></a>Jiné primitivní typy .NET
 
 ### <a name="dates-and-times"></a>Data a časy
 
-Nativní skalární typy neposkytují hodnoty data a času, které C#jsou ekvivalentní <xref:System.DateTimeOffset>, <xref:System.DateTime>a <xref:System.TimeSpan>. Tyto typy můžete zadat pomocí některých rozšíření "známé typy" Google. Tato rozšíření poskytují podporu generování kódu a běhové prostředí pro komplexní typy polí napříč podporovanými platformami. 
+Nativní skalární typy neposkytují hodnoty data a času, ekvivalentní <xref:System.DateTimeOffset> <xref:System.DateTime>C#' s , a <xref:System.TimeSpan>. Tyto typy můžete zadat pomocí některých rozšíření Google "Známé typy". Tato rozšíření poskytují generování kódu a podporu modulu runtime pro složité typy polí napříč podporovanými platformami.
 
-V následující tabulce jsou uvedeny typy data a času:
+V následující tabulce jsou uvedeny typy dat a času:
 
-| C#textový | Protobuf dobře známý typ |
+| C# typ | Protobuf známý typ |
 | ------- | ------------------------ |
 | `DateTimeOffset` | `google.protobuf.Timestamp` |
 | `DateTime` | `google.protobuf.Timestamp` |
@@ -67,7 +67,7 @@ message Meeting {
 }  
 ```
 
-Vygenerované vlastnosti ve C# třídě nejsou typy data a času .NET. Vlastnosti používají třídy `Timestamp` a `Duration` v oboru názvů `Google.Protobuf.WellKnownTypes`. Tyto třídy poskytují metody pro převod na a z `DateTimeOffset`, `DateTime`a `TimeSpan`.
+Generované vlastnosti ve třídě C# nejsou typy data a času .NET. Vlastnosti používají `Timestamp` `Duration` třídy `Google.Protobuf.WellKnownTypes` a v oboru názvů. Tyto třídy poskytují metody převodu `DateTime`do `TimeSpan`a z `DateTimeOffset`, a .
 
 ```csharp
 // Create Timestamp and Duration from .NET DateTimeOffset and TimeSpan
@@ -83,21 +83,21 @@ TimeSpan? duration = meeting.Duration?.ToTimeSpan();
 ```
 
 > [!NOTE]
-> Typ `Timestamp` pracuje s časy UTC. hodnoty `DateTimeOffset` vždy mají posun nula a vlastnost `DateTime.Kind` je vždy `DateTimeKind.Utc`.
+> Typ `Timestamp` pracuje s časy UTC. `DateTimeOffset`hodnoty mají vždy posun nula `DateTime.Kind` a `DateTimeKind.Utc`vlastnost je vždy .
 
 ### <a name="systemguid"></a>System.Guid
 
-Protobuf nepodporují přímo typ <xref:System.Guid>, který se označuje jako `UUID` na jiných platformách. Pro něj není k dispozici žádný známý typ. 
+Protobuf přímo nepodporuje <xref:System.Guid> typ, známý `UUID` jako na jiných platformách. Není pro to žádný známý typ.
 
-Nejlepším řešením je zpracovávat `Guid` hodnoty jako `string` pole pomocí standardu `8-4-4-4-12` šestnáctkového formátu (například `45a9fda3-bd01-47a9-8460-c1cd7484b0b3`). Všechny jazyky a platformy mohou tento formát analyzovat.
+Nejlepším přístupem je `Guid` zpracování hodnot `string` jako pole pomocí `8-4-4-4-12` standardního šestnáctkového formátu `45a9fda3-bd01-47a9-8460-c1cd7484b0b3`(například). Všechny jazyky a platformy můžete analyzovat tento formát.
 
-Nepoužívejte pole `bytes` pro hodnoty `Guid`. Problémy s *endian* ([definice Wikipedii](https://en.wikipedia.org/wiki/Endianness)) můžou mít za následek nestabilní chování, pokud Protobuf pracuje na jiných platformách, jako je Java.
+Nepoužívejte `bytes` pole pro `Guid` hodnoty. Problémy s *endianness* [(Definice Wikipedie)](https://en.wikipedia.org/wiki/Endianness)může mít za následek nevyzpytatelné chování, když Protobuf je interakci s jinými platformami, jako je Java.
 
 ### <a name="nullable-types"></a>Typy s povolenou hodnotou Null
 
-Generování kódu Protobuf pro C# používá nativní typy, například `int` pro `int32`. Takže hodnoty jsou vždycky zahrnuté a nesmí mít hodnotu null. 
+Generování kódu Protobuf pro C# používá nativní typy, například `int` pro `int32`. Takže hodnoty jsou vždy zahrnuty a nemůže být null.
 
-Pro hodnoty, které vyžadují explicitní hodnotu null, jako je například použití C# `int?` ve vašem kódu, jsou "dobře známé typy" Protobuf zahrnuty obálky, které C# jsou kompilovány na typy s možnou hodnotou null. Pokud je chcete použít, importujte `wrappers.proto` do souboru `.proto`, například takto:
+Pro hodnoty, které vyžadují explicitní `int?` null, například pomocí v kódu Jazyka C#, Protobuf je "Dobře známé typy" zahrnout obálky, které jsou kompilovány na null C# typy. Chcete-li je `wrappers.proto` použít, importujte `.proto` do souboru takto:
 
 ```protobuf  
 syntax = "proto3"
@@ -112,11 +112,11 @@ message Person {
 }
 ```
 
-Protobuf bude pro generovanou vlastnost zprávy používat jednoduchý `T?` (například `int?`).
+Protobuf použije pro `T?` vygenerovanou vlastnost zprávy jednoduché `int?`(například).
 
-Následující tabulka uvádí úplný seznam typů obálek s ekvivalentním C# typem:
+V následující tabulce je uveden úplný seznam typů obálky s jejich ekvivalentním typem C#:
 
-| C#textový   | Obálka dobře známého typu       |
+| C# typ   | Obálka známého typu       |
 | --------- | ----------------------------- |
 | `double?` | `google.protobuf.DoubleValue` |
 | `float?`  | `google.protobuf.FloatValue`  |
@@ -125,17 +125,17 @@ Následující tabulka uvádí úplný seznam typů obálek s ekvivalentním C# 
 | `uint?`   | `google.protobuf.UInt32Value` |
 | `ulong?`  | `google.protobuf.UInt64Value` |
 
-Známé typy `Timestamp` a `Duration` jsou reprezentovány v .NET jako třídy, takže není nutné mít k dispozici verzi s možnou hodnotou null. Při převodu na `DateTimeOffset` nebo `TimeSpan`je ale důležité, abyste u vlastností těchto typů kontrolovali hodnotu null.
+Známé typy `Timestamp` a `Duration` jsou reprezentovány v .NET jako třídy, takže není potřeba verze s možnou hodnotou null. Ale je důležité zkontrolovat null na vlastnosti těchto typů při `DateTimeOffset` převodu do nebo `TimeSpan`.
 
-## <a name="decimals"></a>Desetinných míst
+## <a name="decimals"></a>Desetinná místa
 
-Protobuf netivně podporuje typ `decimal` .NET, stačí `double` a `float`. V projektu Protobuf je průběžná diskuze o tom, jak přidat standardní `Decimal` typ do známých typů, s podporou platforem pro jazyky a architektury, které ji podporují. Ještě nic není implementované.
+Protobuf nepodporuje nativně typ `decimal` .NET, `double` `float`jen a . V projektu Protobuf probíhá diskuse o možnosti přidání `Decimal` standardního typu ke známým typům s podporou platformy pro jazyky a architektury, které jej podporují. Zatím nebylo nic implementováno.
 
-Je možné vytvořit definici zprávy, která bude představovat `decimal` typ, který bude fungovat pro bezpečnou serializaci mezi klienty a servery rozhraní .NET. Ale vývojáři na jiných platformách by museli porozumět použitému formátu a implementovat jeho vlastní zpracování.
+Je možné vytvořit definici zprávy reprezentovat `decimal` typ, který by pracoval pro bezpečné serializace mezi klienty .NET a servery. Ale vývojáři na jiných platformách by museli pochopit formát, který se používá, a implementovat pro něj vlastní zpracování.
 
-### <a name="creating-a-custom-decimal-type-for-protobuf"></a>Vytvoření vlastního typu desetinného čísla pro Protobuf
+### <a name="creating-a-custom-decimal-type-for-protobuf"></a>Vytvoření vlastního desetinného typu pro Protobuf
 
-Jednoduchá implementace může být podobná nestandardnímu typu `Money`, který používají některá rozhraní API Google, bez pole `currency`.
+Jednoduchá implementace může být podobná `Money` nestandardnímu typu, který používají `currency` některá api Google bez pole.
 
 ```protobuf
 package CustomTypes;
@@ -152,12 +152,12 @@ message Decimal {
 }
 ```
 
-`nanos` pole představuje hodnoty z `0.999_999_999` na `-0.999_999_999`. Například hodnota `decimal` `1.5m` by byla reprezentovaná jako `{ units = 1, nanos = 500_000_000 }`. To je důvod, proč pole `nanos` v tomto příkladu používá typ `sfixed32`, který kóduje efektivněji než `int32` pro větší hodnoty. Pokud je pole `units` záporné, mělo by být pole `nanos` také záporné.
+Pole `nanos` představuje hodnoty `0.999_999_999` `-0.999_999_999`od do . Například `decimal` hodnota `1.5m` by být `{ units = 1, nanos = 500_000_000 }`reprezentován jako . To je `nanos` důvod, proč pole `sfixed32` v tomto příkladu používá `int32` typ, který kóduje efektivněji než pro větší hodnoty. Pokud `units` je pole záporné, `nanos` mělo by být záporné.
 
 > [!NOTE]
-> Pro kódování `decimal` hodnoty je k dispozici více algoritmů jako bajtů, ale tato zpráva je snazší pochopit, než je některý z nich. Hodnoty nejsou ovlivněny endian na různých platformách.
+> Existuje několik dalších algoritmů `decimal` pro kódování hodnot jako bajtové řetězce, ale tato zpráva je srozumitelnější než kterýkoli z nich. Hodnoty nejsou ovlivněny endianness na různých platformách.
 
-Konverze mezi tímto typem a typem BCL `decimal` může být implementována C# takto:
+Převod mezi tímto typem a typem BCL `decimal` může být implementován v c# takto:
 
 ```csharp
 namespace CustomTypes
@@ -190,8 +190,8 @@ namespace CustomTypes
 ```
 
 > [!IMPORTANT]
-> Kdykoli použijete vlastní typy zpráv, *musíte* je dokumentovat s komentáři v `.proto`. Ostatní vývojáři pak mohou implementovat převod do a z ekvivalentního typu ve svém vlastním jazyce nebo rozhraní.
+> Kdykoli používáte vlastní typy zpráv, jako je `.proto`tento, je *nutné* je dokumentovat s komentáři v . Ostatní vývojáři pak můžete implementovat převod do a z ekvivalentního typu ve svém vlastním jazyce nebo rámci.
 
 >[!div class="step-by-step"]
 >[Předchozí](protobuf-messages.md)
->[Další](protobuf-nested-types.md)
+>[další](protobuf-nested-types.md)

@@ -1,31 +1,29 @@
 ---
 title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
-description: Naučte se zpracovávat chyby HTTP pomocí Polly a HttpClientFactory.
-ms.date: 01/30/2020
-ms.openlocfilehash: 60943360c9674f93b246b37b2667b48dab659e0e
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+description: Zjistěte, jak zpracovat chyby PROTOKOLU HTTP pomocí Polly a IHttpClientFactory.
+ms.date: 03/03/2020
+ms.openlocfilehash: 49396dd545a05699278254474c77acf1483e0e0c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502672"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846793"
 ---
-# <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů volání HTTP pomocí exponenciálního omezení rychlostiu se zásadami HttpClientFactory a Polly
+# <a name="implement-http-call-retries-with-exponential-backoff-with-ihttpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů o volání HTTP s exponenciálním vypnutím pomocí zásad IHttpClientFactory a Polly
 
-Doporučený postup pro opakování s exponenciálním omezení rychlosti je využít výhod pokročilejších knihoven .NET, jako je open source [Knihovna Polly](https://github.com/App-vNext/Polly).
+Doporučeným přístupem pro opakované pokusy s exponenciálním podvržením je využít pokročilejší knihovny .NET, jako je open source [knihovna Polly](https://github.com/App-vNext/Polly).
 
-Polly je knihovna .NET, která poskytuje funkce odolnosti a přechodných chyb. Tyto možnosti můžete implementovat pomocí zásad Polly, jako je opakování, přerušení okruhů, izolace přepážky, časový limit a Fallback. Polly cíle .NET Framework 4. x a .NET Standard 1,0, 1,1 a 2,0 (což podporuje .NET Core).
+Polly je knihovna .NET, která poskytuje odolnost a funkce zpracování přechodných chyb. Tyto možnosti můžete implementovat použitím polly zásad, jako je opakování, jistič, izolace přepážky, časový čas a záložní. Polly cíle .NET Framework 4.x a .NET Standard 1.0, 1.1 a 2.0 (který podporuje .NET Core).
 
-Nicméně psaní vlastního kódu pro použití knihovny Polly s HttpClient může být výrazně složité. V původní verzi eShopOnContainers byly [ResilientHttpClient stavební bloky](https://github.com/dotnet-architecture/eShopOnContainers/commit/0c317d56f3c8937f6823cf1b45f5683397274815#diff-e6532e623eb606a0f8568663403e3a10) založené na Polly. Ale u vydání [HttpClientFactory](use-httpclientfactory-to-implement-resilient-http-requests.md)se implementace odolné komunikace http s Polly stala mnohem jednodušší, takže sestavení-Block bylo od eShopOnContainersu zastaralá.
+Následující kroky ukazují, jak můžete použít http opakování `IHttpClientFactory`s Polly integrované do , což je vysvětleno v předchozí části.
 
-Následující kroky ukazují, jak můžete použít opakování protokolu HTTP s integrovaným Polly do HttpClientFactory, který je vysvětlen v předchozí části.
+**Odkaz na ASP.NET balíčky Core 3.1**
 
-**Odkazování na balíčky ASP.NET Core 3,1**
+`IHttpClientFactory`je k dispozici od .NET Core 2.1 však doporučujeme použít nejnovější ASP.NET balíčky Core 3.1 z NuGet ve vašem projektu. Obvykle je také nutné odkazovat `Microsoft.Extensions.Http.Polly`na balíček rozšíření .
 
-`HttpClientFactory` je k dispozici od .NET Core 2,1. Doporučujeme však použít nejnovější balíčky ASP.NET Core 3,1 z NuGet v projektu. Obvykle se také musíte odkazovat na balíček rozšíření `Microsoft.Extensions.Http.Polly`.
+**Konfigurace klienta pomocí pollyiny zásady opakování při spuštění**
 
-**Konfigurace klienta pomocí zásad opakování Polly při spuštění**
-
-Jak je znázorněno v předchozích částech, je třeba v rámci standardní metody Startup. ConfigureServices (...) definovat pojmenovanou konfiguraci HttpClient nebo napsaného klienta, ale nyní přidáte přírůstkový kód, který určuje zásadu pro opakované pokusy protokolu HTTP s exponenciálním omezení rychlosti, jako psán
+Jak je znázorněno v předchozích částech, je třeba definovat konfiguraci httpklienta s názvem nebo typem klienta ve standardní metodě Startup.ConfigureServices(...), ale nyní přidáte přírůstkový kód určující zásadu pro opakování protokolu Http s exponenciálním vypnutím jako Níže:
 
 ```csharp
 //ConfigureServices()  - Startup.cs
@@ -34,9 +32,9 @@ services.AddHttpClient<IBasketService, BasketService>()
         .AddPolicyHandler(GetRetryPolicy());
 ```
 
-Metoda **AddPolicyHandler ()** slouží k přidání zásad do objektů `HttpClient`, které budete používat. V takovém případě přidáváme zásady Polly pro opakování HTTP pomocí exponenciálního omezení rychlosti.
+**Metoda AddPolicyHandler()** je to, `HttpClient` co přidává zásady k objektům, které budete používat. V tomto případě je přidání Polly zásady pro http opakování s exponenciální backoff.
 
-Chcete-li mít obecnější přístup, zásady opakování protokolu HTTP lze definovat v samostatné metodě v souboru `Startup.cs`, jak je znázorněno v následujícím kódu:
+Chcete-li mít více modulární přístup, http opakování zásady lze `Startup.cs` definovat v samostatné metodě v rámci souboru, jak je znázorněno v následujícím kódu:
 
 ```csharp
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
@@ -49,11 +47,11 @@ static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
 }
 ```
 
-Pomocí Polly můžete definovat zásady opakování s počtem opakování, exponenciální konfigurací omezení rychlosti a akcemi, které se mají provést, pokud dojde k výjimce HTTP, jako je například protokolování chyby. V takovém případě je zásada nakonfigurovaná tak, aby vyzkoušela šest časů s exponenciálním opakováním, od dvou sekund.
+S Polly, můžete definovat zásady Opakování s počtem opakování, exponenciální backoff konfigurace a akce, které mají být přijata, když je výjimka HTTP, jako je například protokolování chyby. V tomto případě je zásada nakonfigurována tak, aby se pokusila šestkrát s exponenciálním opakováním, počínaje dvěma sekundami.
 
-## <a name="add-a-jitter-strategy-to-the-retry-policy"></a>Přidání strategie kolísání do zásady opakování
+## <a name="add-a-jitter-strategy-to-the-retry-policy"></a>Přidání strategie nervozity do zásady opakování
 
-Pravidelná zásada opakování může mít vliv na váš systém v případech vysoké souběžnosti a škálovatelnosti a vysokého sporu. Chcete-li překonat špičky podobných pokusů přicházejících z mnoha klientů v případě částečných výpadků, dobrým řešením je přidat strategii kolísání do algoritmu opakování nebo zásady. To může zvýšit celkový výkon kompletního systému přidáním náhodnosti do exponenciálního omezení rychlostiu. Tím se rozšíří špičky, když dojde k problémům. Princip je znázorněn v následujícím příkladu:
+Pravidelné zásady opakování může ovlivnit váš systém v případech vysoké souběžnosti a škálovatelnosti a pod vysokou kolizí. Chcete-li překonat špičky podobných opakování pocházejících z mnoha klientů v případě částečných výpadků, dobrým řešením je přidat strategii chvění do algoritmu nebo zásady opakování. To může zlepšit celkový výkon systému end-to-end přidáním náhodnost exponenciální backoff. To se šíří hroty, když vzniknou problémy. Princip je ilustrován následujícím příkladem:
 
 ```csharp
 Random jitterer = new Random();
@@ -66,25 +64,25 @@ var retryWithJitterPolicy = HttpPolicyExtensions
     );
 ```
 
-Polly poskytuje algoritmy chvění připravené k výrobě prostřednictvím webu projektu.
+Polly poskytuje algoritmy nervozity připravené pro výrobu prostřednictvím webových stránek projektu.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Model Opakování**  
+- **Vzorek opakování**  
   [https://docs.microsoft.com/azure/architecture/patterns/retry](/azure/architecture/patterns/retry)
 
-- **Polly a HttpClientFactory**  
+- **Polly a IHttpClientFactory**  
   <https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory>
 
-- **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  
+- **Polly (knihovna odolnosti a zpracování přechodných chyb)**  
   <https://github.com/App-vNext/Polly>
 
-- **Polly: opakovat se kolísáním**  
+- **Polly: Opakování s chvěním**  
   <https://github.com/App-vNext/Polly/wiki/Retry-with-jitter>
 
-- **Brooker ohraničení Kolísání: lepší práce díky náhodnosti**  
+- **Marca Brookera. Nervozita: Dělat věci lépe s náhodností**  
   <https://brooker.co.za/blog/2015/03/21/backoff.html>
 
 >[!div class="step-by-step"]
->[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)
->[Další](implement-circuit-breaker-pattern.md)
+>[Předchozí](use-httpclientfactory-to-implement-resilient-http-requests.md)
+>[další](implement-circuit-breaker-pattern.md)

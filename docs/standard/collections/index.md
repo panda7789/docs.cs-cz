@@ -11,77 +11,77 @@ helpviewer_keywords:
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
 ms.openlocfilehash: 3ca340e19d7340d7bea133fa62c6d8bbc3c0512a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160388"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
-Podobná data je často možné zpracovávat efektivněji, když jsou uložená a manipulována jako kolekce. Můžete použít třídu <xref:System.Array?displayProperty=nameWithType> nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System. Collections. neproměnlivé obory názvů pro přidání, odebrání a úpravu individuálních prvků nebo rozsahu prvků v kolekci.  
+Podobná data mohou být často zpracovány efektivněji při ukládání a manipulaci jako kolekce. Třídu <xref:System.Array?displayProperty=nameWithType> nebo třídy v <xref:System.Collections>oblasti <xref:System.Collections.Generic> <xref:System.Collections.Concurrent>, , System.Collections.Immutable namespaces můžete přidat, odebrat a upravit buď jednotlivé prvky nebo rozsah prvků v kolekci.  
   
- Existují dva hlavní typy kolekcí; Obecné kolekce a jiné než obecné kolekce. V .NET Framework 2,0 byly přidány obecné kolekce a poskytovaly kolekce, které jsou typově bezpečné v době kompilace. Z tohoto důvodu obecné kolekce obvykle nabízejí lepší výkon. Obecné kolekce přijímají parametr typu při jejich sestavení a nevyžadují, abyste přetypování do a z <xref:System.Object>ho typu při přidávání nebo odebírání položek z kolekce.  Kromě toho jsou v aplikacích pro Windows Store podporovány většinou obecné kolekce. Neobecné kolekce ukládají položky jako <xref:System.Object>, vyžadují přetypování a většina nejsou podporované pro vývoj aplikací pro Windows Store. V starším kódu ale můžete vidět neobecné kolekce.  
+ Existují dva hlavní typy kolekcí; obecné kolekce a neobecné kolekce. Obecné kolekce byly přidány v rozhraní .NET Framework 2.0 a poskytují kolekce, které jsou bezpečné pro typ v době kompilace. Z tohoto důvodu obecné kolekce obvykle nabízejí lepší výkon. Obecné kolekce přijmout parametr typu, když jsou vytvořeny a nevyžadují, <xref:System.Object> že přetypovat do a z typu při přidávání nebo odebírá položky z kolekce.  Kromě toho je většina obecných kolekcí podporována v aplikacích pro Windows Store. Neobecné kolekce ukládat <xref:System.Object>položky jako , vyžadují přetypování a většina z nich nejsou podporovány pro vývoj aplikací pro Windows Store. Však může zobrazit neobecné kolekce ve starším kódu.  
   
- Počínaje .NET Framework 4 poskytují kolekce v oboru názvů <xref:System.Collections.Concurrent> efektivní operace bezpečné pro přístup z více vláken pro přístup k položkám kolekce z více vláken. Neměnné třídy kolekce v System. Collections. neměnný obor názvů ([balíček NuGet](https://www.nuget.org/packages/System.Collections.Immutable)) jsou podstatou bezpečné pro přístup z více vláken, protože operace jsou prováděny na kopii původní kolekce a původní kolekci nelze změnit.  
+ Počínaje rozhraním .NET Framework 4 poskytují <xref:System.Collections.Concurrent> kolekce v oboru názvů efektivní operace bezpečné pro přístup k položkám kolekce z více vláken. Neměnné třídy kolekce v oboru názvů System.Collections.Immutable ([NuGet balíček](https://www.nuget.org/packages/System.Collections.Immutable)) jsou ze své podstaty bezpečné pro přístup z více vláken, protože operace jsou prováděny na kopii původní kolekce a původní kolekci nelze změnit.  
 
 <a name="BKMK_Commoncollectionfeatures"></a>
-## <a name="common-collection-features"></a>Společné funkce kolekcí  
- Všechny kolekce poskytují metody pro přidání, odebrání nebo vyhledání položek v kolekci. Kromě toho všechny kolekce, které přímo nebo nepřímo implementují rozhraní <xref:System.Collections.ICollection> nebo rozhraní <xref:System.Collections.Generic.ICollection%601> sdílejí tyto funkce:  
+## <a name="common-collection-features"></a>Běžné funkce kolekce  
+ Všechny kolekce poskytují metody pro přidávání, odebírání nebo hledání položek v kolekci. Kromě toho všechny kolekce, které přímo <xref:System.Collections.ICollection> nebo nepřímo <xref:System.Collections.Generic.ICollection%601> implementují rozhraní nebo rozhraní, sdílejí tyto funkce:  
   
-- **Možnost vytvořit výčet kolekce**  
+- **Možnost výčet kolekce**  
   
-     Kolekce .NET Framework buď implementují <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>, aby bylo možné kolekci vyiterovat pomocí. Enumerátor lze představit jako pohyblivý ukazatel na libovolný prvek v kolekci. Příkaz [foreach, v](../../csharp/language-reference/keywords/foreach-in.md) příkazu a [pro každý... Další příkaz](../../visual-basic/language-reference/statements/for-each-next-statement.md) použijte enumerátor vystavený metodou <xref:System.Collections.IEnumerable.GetEnumerator%2A> a skryjte složitost manipulace s enumerátorem. Kromě toho jakákoli kolekce, která implementuje <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>, je považována za *typ Queryable* a může se dotazovat pomocí LINQ. Dotazy LINQ poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelné než standardní `foreach` smyčky a poskytují možnosti filtrování, řazení a seskupování. Dotazy LINQ mohou také zlepšit výkon. Další informace naleznete v tématu [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), [Úvod do dotazů LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)a [základní operace dotazů (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
+     Kolekce rozhraní .NET <xref:System.Collections.IEnumerable?displayProperty=nameWithType> Framework <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> implementují nebo umožňují, aby byla kolekce iterována. Čítač výčtu si lze myslet jako pohyblivý ukazatel na libovolný prvek v kolekci. [Foreach, v](../../csharp/language-reference/keywords/foreach-in.md) prohlášení a [pro každý ... Další příkaz](../../visual-basic/language-reference/statements/for-each-next-statement.md) použít čítač <xref:System.Collections.IEnumerable.GetEnumerator%2A> výčtu vystavené metodou a skrýt složitost manipulace s čítač výčtu. Kromě toho všechny kolekce, <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> která implementuje je považován za *dotazovatelný typ* a může být dotazován s LINQ. Linq dotazy poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelnější než `foreach` standardní smyčky a poskytují možnosti filtrování, řazení a seskupování. Linq dotazy můžete také zlepšit výkon. Další informace naleznete [v tématech LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic),](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md) [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), [Introduction to LINQ Queries (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)a [Basic Query Operations (Visual Basic).](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)  
   
-- **Možnost Kopírovat obsah kolekce do pole**  
+- **Možnost zkopírovat obsah kolekce do pole**  
   
-     Všechny kolekce lze zkopírovat do pole pomocí metody **CopyTo** ; pořadí prvků v novém poli je však založeno na pořadí, ve kterém je vrací enumerátor. Výsledné pole je vždy jednorozměrné s dolní mezí nula.  
+     Všechny kolekce lze zkopírovat do pole pomocí **CopyTo** metody; však pořadí prvků v novém poli je založena na pořadí, ve kterém čítač je vrátí. Výsledné pole je vždy jednorozměrné s dolní mez nulou.  
   
- Kromě toho mnoho tříd kolekcí obsahuje následující funkce:  
+ Kromě toho mnoho tříd kolekce obsahuje následující funkce:  
   
 - **Vlastnosti kapacity a počtu**  
   
-     Kapacita kolekce je počet prvků, které může obsahovat. Počet prvků v kolekci je počet prvků, které ve skutečnosti obsahují. Některé kolekce skrývají kapacitu nebo počet nebo obojí.  
+     Kapacita kolekce je počet prvků, které může obsahovat. Počet kolekce je počet prvků, které skutečně obsahuje. Některé kolekce skrýt kapacitu nebo počet nebo obojí.  
   
-     Většina kolekcí se při dosažení aktuální kapacity automaticky zvětšuje v kapacitě. Paměť je znovu přidělena a prvky jsou zkopírovány z staré kolekce do nové. Tím se snižuje kód potřebný k použití kolekce; výkon kolekce však může negativně ovlivnit. Například pro <xref:System.Collections.Generic.List%601>, pokud <xref:System.Collections.Generic.List%601.Count%2A> je menší než <xref:System.Collections.Generic.List%601.Capacity%2A>, přidání položky je operace O (1). Pokud je potřeba zvýšit kapacitu tak, aby vyhovovala novému prvku, přidání položky se změní na operaci O (n), kde n je <xref:System.Collections.Generic.List%601.Count%2A>. Nejlepším způsobem, jak zabránit špatnému výkonu způsobenému více přerozdělením, je nastavit počáteční kapacitu na odhadovanou velikost kolekce.  
+     Většina kolekcí automaticky rozšířit kapacitu při dosažení aktuální kapacity. Paměť je přerozdělena a prvky jsou zkopírovány ze staré kolekce do nové. To snižuje kód potřebný k použití kolekce; však může být negativně ovlivněna výkon kolekce. Například pro <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.List%601.Count%2A> Pokud <xref:System.Collections.Generic.List%601.Capacity%2A>je menší než , přidání položky je Operace O(1). Pokud je třeba zvýšit kapacitu tak, aby vyhovovala novému prvku, přidání položky se stane operací O(n), kde n je <xref:System.Collections.Generic.List%601.Count%2A>. Nejlepší způsob, jak se vyhnout špatný výkon způsobený více přerozdělení je nastavit počáteční kapacitu, která má být odhadovaná velikost kolekce.  
   
-     <xref:System.Collections.BitArray> je zvláštní případ; jeho kapacita je shodná s délkou, která je stejná jako počet.  
+     A <xref:System.Collections.BitArray> je zvláštní případ; jeho kapacita je stejná jako jeho délka, která je stejná jako jeho počet.  
   
 - **Konzistentní dolní mez**  
   
-     Dolní mez kolekce je index jeho prvního prvku. Všechny indexované kolekce v oborech názvů <xref:System.Collections> mají dolní mez nula, což znamená, že jsou 0 – indexované. ve výchozím nastavení má <xref:System.Array> nižší mez nula, ale při vytváření instance třídy **Array** pomocí <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType>může být definována jiná dolní mez.  
+     Dolní mez kolekce je index jeho první prvek. Všechny indexované kolekce <xref:System.Collections> v oborech názvů mají dolní mez nula, což znamená, že jsou 0 indexovány. <xref:System.Array>má ve výchozím nastavení dolní mez nuly, ale při vytváření instance třídy **Array** pomocí aplikace <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType>lze definovat jinou dolní mez .  
   
-- **Synchronizace pro přístup z více vláken** (pouze<xref:System.Collections> třídy).  
+- **Synchronizace pro přístup z** <xref:System.Collections> více vláken (pouze třídy).  
   
-     Neobecné typy kolekcí v oboru názvů <xref:System.Collections> poskytují určitou bezpečnost vlákna při synchronizaci. obvykle zveřejněná prostřednictvím <xref:System.Collections.ICollection.SyncRoot%2A> a <xref:System.Collections.ICollection.IsSynchronized%2A>ch členů. Ve výchozím nastavení nejsou tyto kolekce bezpečné pro přístup z více vláken. Pokud vyžadujete škálovatelný a efektivní vícevláknový přístup ke kolekci, použijte jednu z tříd v oboru názvů <xref:System.Collections.Concurrent> nebo zvažte použití neměnné kolekce. Další informace najdete v tématu [kolekce bezpečné](../../../docs/standard/collections/thread-safe/index.md)pro přístup z více vláken.  
+     Neobecné typy kolekcí <xref:System.Collections> v oboru názvů poskytují zabezpečení vlákna se synchronizací; obvykle vystaveny <xref:System.Collections.ICollection.SyncRoot%2A> prostřednictvím <xref:System.Collections.ICollection.IsSynchronized%2A> a členy. Tyto kolekce nejsou ve výchozím nastavení bezpečné pro přístup z více vláken. Pokud požadujete škálovatelný a efektivní vícevláknový přístup ke kolekci, použijte jednu z tříd v oboru <xref:System.Collections.Concurrent> názvů nebo zvažte použití neměnné kolekce. Další informace naleznete v [tématu Thread-Safe Collections](../../../docs/standard/collections/thread-safe/index.md).  
   
 <a name="BKMK_Choosingacollection"></a>
 ## <a name="choosing-a-collection"></a>Výběr kolekce  
- Obecně byste měli použít obecné kolekce. Následující tabulka popisuje některé běžné scénáře shromažďování a třídy kolekcí, které můžete pro tyto scénáře použít. Pokud s obecnými kolekcemi začínáte, tato tabulka vám pomůže vybrat obecnou kolekci, která bude pro váš úkol fungovat nejlépe.  
+ Obecně byste měli použít obecné kolekce. Následující tabulka popisuje některé běžné scénáře kolekce a třídy kolekce, které můžete použít pro tyto scénáře. Pokud jste novým obecnými kolekcemi, tato tabulka vám pomůže vybrat obecnou kolekci, která funguje nejlépe pro váš úkol.  
 
-|Chci...|Možnosti Obecné kolekce|Možnosti bez obecné kolekce|Možnosti bezpečného a neměnného přístupu k vláknům|  
+|Chci...|Obecné možnosti kolekce|Neobecné možnosti kolekce|Možnosti kolekce bezpečné pro přístup z více vláken nebo neměnné|  
 |-|-|-|-|  
-|Ukládat položky jako páry klíč/hodnota pro rychlé vyhledání podle klíče|<xref:System.Collections.Generic.Dictionary%602>|<xref:System.Collections.Hashtable><br /><br /> (Kolekce párů klíč/hodnota, které jsou uspořádány na základě hash kódu klíče.)|<xref:System.Collections.Concurrent.ConcurrentDictionary%602><br /><br /> <xref:System.Collections.ObjectModel.ReadOnlyDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableDictionary%602>|  
+|Ukládat položky jako páry klíč/hodnota pro rychlé vyhledávání pomocí klíče|<xref:System.Collections.Generic.Dictionary%602>|<xref:System.Collections.Hashtable><br /><br /> (Kolekce párů klíč/hodnota, které jsou uspořádány na základě kódu hash klíče.)|<xref:System.Collections.Concurrent.ConcurrentDictionary%602><br /><br /> <xref:System.Collections.ObjectModel.ReadOnlyDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableDictionary%602>|  
 |Přístup k položkám podle indexu|<xref:System.Collections.Generic.List%601>|<xref:System.Array><br /><br /> <xref:System.Collections.ArrayList>|<xref:System.Collections.Immutable.ImmutableList%601><br /><br /> <xref:System.Collections.Immutable.ImmutableArray>|  
-|Použití položek first-in-first-out (FIFO)|<xref:System.Collections.Generic.Queue%601>|<xref:System.Collections.Queue>|<xref:System.Collections.Concurrent.ConcurrentQueue%601><br /><br /> <xref:System.Collections.Immutable.ImmutableQueue%601>|  
-|Použití dat Last-in-first-out (LIFO)|<xref:System.Collections.Generic.Stack%601>|<xref:System.Collections.Stack>|<xref:System.Collections.Concurrent.ConcurrentStack%601><br /><br /> <xref:System.Collections.Immutable.ImmutableStack%601>|  
-|Sekvenční přístup k položkám|<xref:System.Collections.Generic.LinkedList%601>|Bez doporučení|Bez doporučení|  
-|Dostávat oznámení, když se položky odeberou nebo přidají do kolekce (implementuje <xref:System.ComponentModel.INotifyPropertyChanged> a <xref:System.Collections.Specialized.INotifyCollectionChanged>)|<xref:System.Collections.ObjectModel.ObservableCollection%601>|Bez doporučení|Bez doporučení|  
+|Použít položky první v prvním ven (FIFO)|<xref:System.Collections.Generic.Queue%601>|<xref:System.Collections.Queue>|<xref:System.Collections.Concurrent.ConcurrentQueue%601><br /><br /> <xref:System.Collections.Immutable.ImmutableQueue%601>|  
+|Použití dat Last-In-First-Out (LIFO)|<xref:System.Collections.Generic.Stack%601>|<xref:System.Collections.Stack>|<xref:System.Collections.Concurrent.ConcurrentStack%601><br /><br /> <xref:System.Collections.Immutable.ImmutableStack%601>|  
+|Postupný přístup k položkám|<xref:System.Collections.Generic.LinkedList%601>|Žádné doporučení|Žádné doporučení|  
+|Přijímat oznámení při odebrání nebo přidání položek do kolekce. (nářadí <xref:System.ComponentModel.INotifyPropertyChanged> a <xref:System.Collections.Specialized.INotifyCollectionChanged>)|<xref:System.Collections.ObjectModel.ObservableCollection%601>|Žádné doporučení|Žádné doporučení|  
 |Seřazená kolekce|<xref:System.Collections.Generic.SortedList%602>|<xref:System.Collections.SortedList>|<xref:System.Collections.Immutable.ImmutableSortedDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
-|Sada pro matematické funkce|<xref:System.Collections.Generic.HashSet%601><br /><br /> <xref:System.Collections.Generic.SortedSet%601>|Bez doporučení|<xref:System.Collections.Immutable.ImmutableHashSet%601><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
+|Sada pro matematické funkce|<xref:System.Collections.Generic.HashSet%601><br /><br /> <xref:System.Collections.Generic.SortedSet%601>|Žádné doporučení|<xref:System.Collections.Immutable.ImmutableHashSet%601><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
   
 <a name="BKMK_RelatedTopics"></a>
 ## <a name="related-topics"></a>Související témata  
   
-|Název|Popis|  
+|Nadpis|Popis|  
 |-----------|-----------------|  
-|[Výběr třídy kolekce](../../../docs/standard/collections/selecting-a-collection-class.md)|V této části najdete popis různých kolekcí a pomůže vám to vybrat pro váš scénář.|  
-|[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Popisuje běžně používané obecné a neobecné typy kolekce, například <xref:System.Array?displayProperty=nameWithType>, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|  
-|[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje použití obecných typů kolekcí.|  
-|[Porovnávání a řazení v kolekcích](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|Popisuje použití porovnávání rovnosti a porovnávání řazení v kolekcích.|  
+|[Výběr třídy kolekce](../../../docs/standard/collections/selecting-a-collection-class.md)|Popisuje různé kolekce a pomáhá vybrat jeden pro váš scénář.|  
+|[Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)|Popisuje běžně používané obecné a neobecné <xref:System.Array?displayProperty=nameWithType>typy <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>kolekcí, například , a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|  
+|[Kdy použít generické kolekce](../../../docs/standard/collections/when-to-use-generic-collections.md)|Popisuje použití obecných typů kolekce.|  
+|[Porovnávání a řazení v kolekcích](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|Popisuje použití porovnání rovnosti a řazení porovnání v kolekcích.|  
 |[Typy řazených kolekcí](../../../docs/standard/collections/sorted-collection-types.md)|Popisuje výkon a charakteristiky seřazených kolekcí.|  
-|[Typy kolekce Hashtable a Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce obecných a neobecných typů slovníků založených na hodnotách hash.|  
-|[Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekce, například <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>, které podporují bezpečný a efektivní souběžný přístup z více vláken.|  
-|System.Collections.Immutable|Zavádí neměnné kolekce a poskytuje odkazy na typy kolekcí.|  
+|[Typy kolekce Hashtable a Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Popisuje funkce obecných a neobecných typů slovníků založených na hash.|  
+|[Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)|Popisuje typy kolekcí, jako <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> je například a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> které podporují bezpečný a efektivní souběžný přístup z více vláken.|  
+|System.Collections.Neměnný|Zavádí neměnné kolekce a poskytuje odkazy na typy kolekce.|  
   
 <a name="BKMK_Reference"></a>
 ## <a name="reference"></a>Referenční informace  

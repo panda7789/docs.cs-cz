@@ -14,47 +14,47 @@ helpviewer_keywords:
 - data storage using isolated storage, obtaining stores
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
 ms.openlocfilehash: 7104ba665f60c2d55217a2d8628c85f6e469ad6f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75706928"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Postupy: Získávání úložišť pro izolované úložiště
-Izolované úložiště zpřístupňuje virtuální systém souborů v datovém oddílu. Třída <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje řadu metod pro interakci s izolovaným úložištěm. Chcete-li vytvořit a načíst úložiště, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje tři statické metody:  
+Izolované úložiště zpřístupňuje virtuální systém souborů v rámci datového prostoru. Třída <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje řadu metod pro interakci s izolované úložiště. Chcete-li vytvořit <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a načíst úložiště, poskytuje tři statické metody:  
   
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> vrátí úložiště, které je izolované uživatelem a sestavením.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>vrátí úložiště, které je izolováno uživatelem a sestavením.  
   
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> vrátí úložiště, které je izolované podle domény a sestavení.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>vrátí úložiště, které je izolováno podle domény a sestavení.  
   
-     Obě metody načtou úložiště, které patří do kódu, ze kterého jsou volány.  
+     Obě metody načíst úložiště, které patří do kódu, ze kterého jsou volány.  
   
-- Statická metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> vrací izolované úložiště, které je určeno předáním kombinace parametrů oboru.  
+- Statická <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metoda vrátí izolované úložiště, které je určeno předáním v kombinaci parametrů oboru.  
   
- Následující kód vrátí úložiště, které je izolované uživatelem, sestavením a doménou.  
+ Následující kód vrátí úložiště, které je izolováno uživatelem, sestavením a doménou.  
   
  [!code-cpp[Conceptual.IsolatedStorage#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#6)]
  [!code-csharp[Conceptual.IsolatedStorage#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#6)]
  [!code-vb[Conceptual.IsolatedStorage#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source6.vb#6)]  
   
- Pomocí metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> můžete určit, že by úložiště mělo roaming s cestovním profilem uživatele. Podrobnosti o tom, jak tento postup nastavit, najdete v tématu [typy izolace](../../../docs/standard/io/types-of-isolation.md).  
+ Tuto metodu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> můžete použít k určení, že úložiště by se mělo přemíslat s cestovním uživatelským profilem. Podrobnosti o tom, jak toto nastavení nastavit, naleznete [v tématu Typy izolace](../../../docs/standard/io/types-of-isolation.md).  
   
- Izolované obchody získané v různých sestaveních jsou ve výchozím nastavení různými obchody. Můžete získat přístup k úložišti jiného sestavení nebo domény předáním do sestavení nebo legitimace domény v parametrech metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>. To vyžaduje oprávnění pro přístup k izolovanému úložišti pomocí identity aplikační domény. Další informace naleznete v tématu přetížení metod <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>.  
+ Izolované obchody získané z různých sestavení jsou ve výchozím nastavení různé obchody. Můžete přistupovat k úložišti jiného sestavení nebo domény předáním v sestavení <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> nebo doméně důkazy v parametrech metody. To vyžaduje oprávnění k přístupu k izolovanému úložišti podle identity domény aplikace. Další informace naleznete <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> v metodě přetížení.  
   
- Metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>a <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> vracejí objekt <xref:System.IO.IsolatedStorage.IsolatedStorageFile>. K tomu, abyste se mohli rozhodnout, který typ izolace je pro vaši situaci nejvhodnější, přečtěte si téma [typy izolace](../../../docs/standard/io/types-of-isolation.md). Pokud máte izolovaný objekt úložiště, můžete použít metody izolovaného úložiště ke čtení, zápisu, vytváření a odstraňování souborů a adresářů.  
+ , <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>a <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metody vrátí <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objekt. Chcete-li se rozhodnout, který typ izolace je pro vaši situaci nejvhodnější, naleznete v [tématu Typy izolace](../../../docs/standard/io/types-of-isolation.md). Pokud máte izolovaný objekt souboru úložiště, můžete použít metody izolovaného úložiště ke čtení, zápisu, vytváření a odstraňování souborů a adresářů.  
   
- Neexistuje žádný mechanismus, který brání kódu v předání <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objektu do kódu, který nemá dostatečný přístup k získání samotného úložiště. Identity domény a sestavení a oprávnění izolovaného úložiště jsou kontrolovány pouze v případě, že je získán odkaz na objekt <xref:System.IO.IsolatedStorage.IsolatedStorage>, obvykle v metodě <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>nebo <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>. Ochrana odkazů na objekty <xref:System.IO.IsolatedStorage.IsolatedStorageFile> je proto odpovědností kódu, který používá tyto odkazy.  
+ Neexistuje žádný mechanismus, který brání <xref:System.IO.IsolatedStorage.IsolatedStorageFile> kód předávací objekt do kódu, který nemá dostatečný přístup k získání samotného úložiště. Identity domény a sestavení a oprávnění izolovaného úložiště <xref:System.IO.IsolatedStorage.IsolatedStorage> jsou kontrolovány pouze v <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>případě, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> že je získán odkaz na objekt, obvykle v metodě , nebo metodě. Ochrana odkazů <xref:System.IO.IsolatedStorage.IsolatedStorageFile> na objekty je proto odpovědnost kódu, který používá tyto odkazy.  
   
 ## <a name="example"></a>Příklad  
- Následující kód poskytuje jednoduchý příklad třídy, která získá úložiště izolované uživatelem a sestavením. Kód může být změněn tak, aby načetl úložiště izolované uživatelem, doménou a sestavením přidáním <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> k argumentům, které metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> projde.  
+ Následující kód poskytuje jednoduchý příklad třídy získání úložiště, které je izolováno uživatelem a sestavení. Kód lze změnit načíst úložiště, které je izolováno uživatelem, doménou a sestavením přidáním <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain?displayProperty=nameWithType> argumentů, které <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metoda předá.  
   
- Po spuštění kódu se můžete ujistit, že se vytvořilo úložiště, a to zadáním **Storeadm/list** do příkazového řádku. Spustí se [Nástroj izolovaného úložiště (Storeadm. exe)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md) a vypíše všechna aktuální izolovaná úložiště pro daného uživatele.  
+ Po spuštění kódu můžete potvrdit, že obchod byl vytvořen zadáním **StoreAdm /LIST** na příkazovém řádku. To spustí [nástroj izolované úložiště (Storeadm.exe)](../../../docs/framework/tools/storeadm-exe-isolated-storage-tool.md) a zobrazí seznam všech aktuálních izolovaných úložišť pro uživatele.  
   
  [!code-cpp[Conceptual.IsolatedStorage#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source6.cpp#7)]
  [!code-csharp[Conceptual.IsolatedStorage#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source6.cs#7)]
  [!code-vb[Conceptual.IsolatedStorage#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source6.vb#7)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
 - <xref:System.IO.IsolatedStorage.IsolatedStorageScope>

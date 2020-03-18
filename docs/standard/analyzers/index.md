@@ -1,38 +1,38 @@
 ---
-title: Platformě Roslyn na základě analyzátory – .NET
-description: Další informace o analyzátory Roslyn na základě, které najít problémy a navrhují opravy těchto problémů.
+title: Analyzátory založené na Roslyn - .NET
+description: Seznamte se s analyzátory založenými na Roslyn, které naleznou problémy a navrhnou opravy těchto problémů.
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/24/2018
 ms.technology: dotnet-standard
 ms.openlocfilehash: 436cfb3904f0891f8c18bb5890563a13d65e2d1c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "62003051"
 ---
-# <a name="the-roslyn-based-analyzers"></a>Analyzátory založené platformě Roslyn
+# <a name="the-roslyn-based-analyzers"></a>Analyzátory založené na Roslyn
 
-Založené na platformě Roslyn analyzátory analyzovat zdrojový kód projektu k vyhledání problémů a opravy zobrazovat pomocí sady SDK kompilátoru .NET (Roslyn API). Různé analyzátory vyhledejte různých tříd problémů, od postupů, které můžou způsobovat chyby k zajištění zabezpečení pro kompatibilitu s rozhraními API.
+Analyzátory založené na roslyn používají .NET Compiler SDK (Roslyn API) k analýze zdrojového kódu projektu k nalezení problémů a navržení oprav. Různé analyzátory hledat různé třídy problémů, od postupů, které mohou způsobit chyby na obavy zabezpečení na kompatibilitu rozhraní API.
 
-Založené na platformě Roslyn analyzátory funguje interaktivně a během sestavení. Analyzátor obsahuje různé pokyny, když v sadě Visual Studio nebo v sestavení příkazového řádku.
+Analyzátory založené na roslyn pracují interaktivně i během sestavení. Analyzátor poskytuje různé pokyny v sadě Visual Studio nebo v sestavení příkazového řádku.
 
-Při úpravách kódu v sadě Visual Studio spustit analyzátory při provádění změn, informace o možných problémech zachycování, jakmile vytvoříte kód, který se týká aktivace. Všechny problémy jsou zvýrazněny podtržení vlnovkou pod jakýkoli problém. Visual Studio zobrazí žárovka a když na ni kliknete Analyzátor se navrhují možné opravy pro daný problém. Při vytváření projektu v sadě Visual Studio nebo z příkazového řádku se analyzuje zdrojový kód a analyzátor poskytuje úplný seznam potenciální problémy. Následující obrázek ukazuje příklad.
+Při úpravách kódu v sadě Visual Studio se analyzátory spustí při provádění změn a zachycují možné problémy, jakmile vytvoříte kód, který aktivuje obavy. Všechny problémy jsou zvýrazněny klikyháky pod jakýmkoli problémem. Visual Studio zobrazí žárovku a po kliknutí na ni analyzátor navrhne možné opravy tohoto problému. Při vytváření projektu, buď v sadě Visual Studio nebo z příkazového řádku, je analyzován veškerý zdrojový kód a analyzátor poskytuje úplný seznam potenciálních problémů. Následující obrázek ukazuje jeden příklad.
 
-![problémech ohlášených analyzátor architektury](./media/framework-analyzers-2.png)
+![problémy hlášené rámcovým analyzátorem](./media/framework-analyzers-2.png)
 
-Založené na platformě Roslyn analyzátory ohlásit potenciální problémy jako chyby, upozornění nebo informace v závislosti na závažnosti problému.
+Analyzátory založené na roslynu hlásí potenciální problémy jako chyby, upozornění nebo informace založené na závažnosti problému.
 
-Je založené na platformě Roslyn analyzátory nainstalovat jako balíčky NuGet ve vašem projektu. Nakonfigurované analyzátory a všechna nastavení pro každý Analyzátor se obnovit a spustit na počítači pro všechny vývojáře pro daný projekt.
+Analyzátory založené na Roslyn jako balíčky NuGet ve vašem projektu. Nakonfigurované analyzátory a všechna nastavení pro každý analyzátor jsou obnoveny a spuštěny v počítači libovolného vývojáře pro tento projekt.
 
 > [!NOTE]
-> Uživatelské prostředí u založené na platformě Roslyn Analyzátory se liší od, který knihoven analýzy kódu, jako je starší verze FxCop a analytické nástroje zabezpečení.  Není nutné explicitně spustit analyzátory založené na platformě Roslyn. Není nutné použít položky nabídky "Spustit analýzu kódu" v sadě Visual Studio v nabídce "Analyzovat". Založené na platformě Roslyn analyzátory spouští asynchronně při práci.
+> Uživatelské prostředí pro analyzátory založené na Roslyn je jiné než u knihoven analýzy kódu, jako jsou starší verze FxCop a nástroje pro analýzu zabezpečení.  Není nutné explicitně spustit analyzátory založené na Roslyn. Není nutné používat položky nabídky "Spustit analýzu kódu" v nabídce "Analyzovat" v sadě Visual Studio. Analyzátory založené na roslyn běží asynchronně při práci.
 
-## <a name="more-information-on-specific-analyzers"></a>Další informace o konkrétní analyzátory
+## <a name="more-information-on-specific-analyzers"></a>Více informací o konkrétních analyzátorech
 
-Následující analyzátory jsou popsané v této části:
+V této části jsou uvedeny následující analyzátory:
 
-* [Analyzátor rozhraní API](api-analyzer.md): Tento analyzátor prozkoumá váš kód pro potenciální rizika nebo používá rozhraní API nepoužívané.
-* [Analyzátor architektury](framework-analyzer.md): Tento analyzátor prozkoumá váš kód k zajištění, že splňuje pravidla pro aplikace .NET Framework. Tato pravidla zahrnují několik doporučení na základě zabezpečení.
-* [.NET portability Analyzeru](portability-analyzer.md): Tento analyzátor prozkoumá váš kód chcete zobrazit, kolik práce je nutná k zajištění aplikace kompatibilní s jinými implementace .NET a profily, včetně .NET Core, .NET Standard, UPW a Xamarin pro iOS, Android a macu.
+* [Analyzátor rozhraní API](api-analyzer.md): Tento analyzátor zkoumá váš kód pro potenciální rizika kompatibility nebo použití zastaralé rozhraní API.
+* [Framework Analyzer](framework-analyzer.md): Tento analyzátor zkontroluje váš kód a zajistí, že se bude řídit pokyny pro aplikace rozhraní .NET Framework. Tato pravidla zahrnují několik doporučení založených na zabezpečení.
+* [.NET Přenositelnost Analyzer](portability-analyzer.md): Tento analyzátor zkoumá váš kód, aby zjistil, kolik práce je nutné, aby vaše aplikace kompatibilní s jinými implementacemi a profily .NET, včetně .NET Core, .NET Standard, UpWp a Xamarin pro iOS, Android a Mac.

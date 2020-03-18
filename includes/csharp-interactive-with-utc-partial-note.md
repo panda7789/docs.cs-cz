@@ -1,13 +1,13 @@
 ---
 ms.openlocfilehash: 814372535f5c7a91f1df250404018228e4c4c812
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73198409"
 ---
 
 > [!NOTE]
-> Některé C# příklady v tomto článku se spouštějí v [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline Code Runner a playground. Kliknutím na tlačítko **Spustit** spustíte příklad v interaktivním okně. Po spuštění kódu ho můžete upravit a spustit upravený kód tak, že znovu vyberete **Spustit** . Upravený kód buď běží v interaktivním okně, nebo, pokud se kompilace nezdařila, interaktivní C# okno zobrazí všechny chybové zprávy kompilátoru.
+> Některé příklady jazyka C# v tomto článku spustit v [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline kód runner a hřiště. Výběrem tlačítka **Spustit** spustíte příklad v interaktivním okně. Jakmile spustíte kód, můžete jej upravit a spustit upravený kód výběrem **spustit** znovu. Změněný kód se spustí v interaktivním okně nebo, pokud kompilace selže, interaktivní okno zobrazí všechny chybové zprávy kompilátoru Jazyka C#.
 >
-> [Místní časové pásmo](xref:System.TimeZoneInfo.Local) [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline Code Runner a Playground je KOORDINOVANÝ světový čas nebo UTC. To může mít vliv na chování a výstup příkladů, které ilustrují <xref:System.DateTime>, <xref:System.DateTimeOffset>a <xref:System.TimeZoneInfo> typy a jejich členy.
+> [Místní časové pásmo](xref:System.TimeZoneInfo.Local) [Try.NET](https://dotnet.microsoft.com/platform/try-dotnet) inline kód běžec a hřiště je koordinovaný světový čas, nebo UTC. To může ovlivnit chování a výstup příkladů, <xref:System.DateTime> <xref:System.DateTimeOffset>které <xref:System.TimeZoneInfo> ilustrují , a typy a jejich členy.

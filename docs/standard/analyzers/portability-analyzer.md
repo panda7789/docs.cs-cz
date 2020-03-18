@@ -1,78 +1,78 @@
 ---
-title: Analyzátor přenositelnosti .NET – .NET
-description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k vyhodnocení způsobu, jakým je přenos kódu mezi různými implementacemi .NET, včetně .NET Core, .NET Standard, UWP a Xamarin.
+title: Analyzátor přenosové možnosti rozhraní .NET - .NET
+description: Naučte se používat nástroj .NET Portability Analyzer k vyhodnocení, jak přenosný je váš kód mezi různými implementacemi rozhraní .NET, včetně .NET Core, .NET Standard, UPW a Xamarin.
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
 ms.openlocfilehash: e0a5c791926b36fe5a35c5446471c3dcdb75cd7b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "72774381"
 ---
-# <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
+# <a name="the-net-portability-analyzer"></a>Analyzátor přenosové možnosti rozhraní .NET
 
-Chcete, aby vaše knihovny podporovaly více platforem? Chcete zjistit, kolik práce je třeba udělat, aby vaše aplikace .NET Framework běžela v .NET Core? [Analyzátor přenositelnosti .NET](https://github.com/microsoft/dotnet-apiport) je nástroj, který analyzuje sestavení a poskytuje podrobnou zprávu o rozhraních API .NET, která chybí pro aplikace nebo knihovny, které mají být přenosné na zadané cílené platformě .NET. Analyzátor přenositelnosti se nabízí jako [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), které analyzuje jedno sestavení na projekt a jako [konzolovou aplikaci ApiPort](https://aka.ms/apiportdownload), která analyzuje sestavení podle zadaných souborů nebo adresáře.
+Chcete, aby vaše knihovny podporovaly více platforem? Chcete zjistit, kolik práce je potřeba k tomu, aby byla aplikace rozhraní .NET Framework spuštěna na jádru .NET? [Nástroj .NET Portability Analyzer](https://github.com/microsoft/dotnet-apiport) je nástroj, který analyzuje sestavení a poskytuje podrobnou zprávu o rozhraníCH API rozhraní .NET, která chybí pro aplikace nebo knihovny, které mají být přenosné na určených cílených platformách .NET. Analyzátor přenositelnosti je nabízen jako [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), které analyzuje jedno sestavení na projekt, a jako [konzolová aplikace ApiPort](https://aka.ms/apiportdownload), která analyzuje sestavení podle zadaných souborů nebo adresářů.
 
-Po převedení projektu na cílení na novou platformu, jako je například .NET Core, můžete pomocí [nástroje Roslyn API Analyzer](api-analyzer.md) identifikovat rozhraní API, které vyvolává výjimky <xref:System.PlatformNotSupportedException> a další problémy s kompatibilitou.
+Po převodu projektu na cílnovou platformu, jako je .NET Core, můžete použít [nástroj Analyzátor rozhraní](api-analyzer.md) API <xref:System.PlatformNotSupportedException> založený na Roslynu k identifikaci rozhraní API, která vyvolání výjimek a dalších problémů s kompatibilitou.
 
 ## <a name="common-targets"></a>Společné cíle
 
-- [.NET Core](../../core/index.md): má modulární návrh, který využívá souběžné a cílené scénáře pro různé platformy. Vedle sebe vám umožní přijmout nové verze .NET Core bez porušení dalších aplikací. Pokud je vaším cílem, aby vaše aplikace podporovala více platforem .NET Core, jedná se o doporučený cíl.
-- . [NET Standard](../../standard/net-standard.md): zahrnuje rozhraní api pro .NET Standard dostupná ve všech implementacích .NET. Pokud vaším cílem je, aby se vaše knihovna spouštěla na všech platformách podporovaných rozhraním .NET, je to doporučený cíl.
-- [ASP.NET Core](/aspnet/core): moderní webové rozhraní postavené na .NET Core. Pokud je vaším cílem, aby vaše webová aplikace podporovala více platforem na .NET Core, jedná se o doporučený cíl.
-- Rozšíření .NET Core + [Platform](../../core/porting/windows-compat-pack.md): Kromě sady Windows Compatibility Pack obsahuje rozhraní API .NET Core, které poskytuje mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos vaší aplikace z .NET Framework do .NET Core ve Windows.
-- Rozšíření .NET Standard + [platforma](../../core/porting/windows-compat-pack.md): Kromě sady Windows Compatibility Pack zahrnuje i rozhraní API .NET Standard, která poskytují mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos knihovny z .NET Framework do .NET Core ve Windows.
+- [.NET Core](../../core/index.md): Má modulární návrh, zaměstnává vedle sebe a zaměřuje se na scénáře napříč platformami. Vedle sebe umožňuje přijmout nové verze .NET Core bez přerušení jiných aplikací. Pokud je vaším cílem přenést aplikaci na rozhraní .NET Core podporující různé platformy, je to doporučený cíl.
+- . [NET Standard](../../standard/net-standard.md): Zahrnuje rozhraní API standardu .NET, která jsou k dispozici ve všech implementacích rozhraní .NET. Pokud je vaším cílem, aby vaše knihovna běžet na všech platformách podporovaných rozhraním .NET, je to doporučeno cíl.
+- [ASP.NET Core](/aspnet/core): Moderní webový rámec postavený na .NET Core. Pokud je vaším cílem přenést webovou aplikaci do služby .NET Core pro podporu více platforem, je to doporučený cíl.
+- Rozšíření .NET Core + [Platform Extensions](../../core/porting/windows-compat-pack.md): Kromě sady Windows Compatibility Pack obsahuje rozhraní .NET Core API, která poskytuje mnoho dostupných technologií rozhraní .NET Framework. Toto je doporučený cíl pro přenesení aplikace z rozhraní .NET Framework do .NET Core ve Windows.
+- .NET Standard + [Rozšíření platformy](../../core/porting/windows-compat-pack.md): Zahrnuje rozhraní .NET Standard API kromě sady Windows Compatibility Pack, která poskytuje mnoho dostupných technologií rozhraní .NET Framework. Toto je doporučený cíl pro přenesení knihovny z rozhraní .NET Framework do rozhraní .NET Core v systému Windows.
 
-## <a name="how-to-use-the-net-portability-analyzer"></a>Jak používat analyzátor přenositelnosti .NET
+## <a name="how-to-use-the-net-portability-analyzer"></a>Použití analyzátoru přenosové schopnosti rozhraní .NET
 
-Pokud chcete začít používat analyzátor přenositelnosti .NET v aplikaci Visual Studio, musíte nejdřív stáhnout a nainstalovat rozšíření z [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Funguje v sadě Visual Studio 2017 a novějších verzích. Můžete ji nakonfigurovat v aplikaci Visual Studio pomocí možnosti **analyzovat** > **Nastavení analyzátoru přenositelnosti** a vybrat cílové platformy, což je platforma nebo verze .NET, pro které chcete vyhodnotit mezery v přenositelnosti porovnávání s platformou/ verze, pomocí které je vytvořeno vaše aktuální sestavení.
+Chcete-li začít používat nástroj .NET Portability Analyzer v sadě Visual Studio, musíte nejprve stáhnout a nainstalovat rozšíření z [webu Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Funguje v visual studiu 2017 a novějších verzích. Můžete ji nakonfigurovat v sadě Visual Studio pomocí **nástroje Analyzovat** > **nastavení analyzátoru přenositelnosti** a vybrat cílové platformy, což jsou platformy/verze rozhraní .NET, které chcete vyhodnotit mezery přenositelnosti ve srovnání s platformou nebo verzí, se kterou je vytvořeno aktuální sestavení.
 
-![Snímek obrazovky s analyzátorem přenositelnosti](./media/portability-analyzer/portability-screenshot.png)
+![Snímek obrazovky analyzátoru přenositelnosti](./media/portability-analyzer/portability-screenshot.png)
 
-Můžete také použít konzolovou aplikaci ApiPort, kterou si můžete stáhnout z [úložiště ApiPort](https://aka.ms/apiportdownload). Pomocí možnosti příkazového řádku `listTargets` můžete zobrazit dostupný cílový seznam a pak vybrat cílové platformy zadáním možnosti příkazového řádku `-t` nebo `--target`.
+Můžete také použít aplikaci konzoly ApiPort, stáhnout ji z [úložiště ApiPort](https://aka.ms/apiportdownload). Můžete použít `listTargets` možnost příkazu k zobrazení dostupného cílového `-t` seznamu `--target` a pak vybrat cílové platformy zadáním nebo možností příkazu.
 
-### <a name="analyze-portability"></a>Analýza přenositelnosti
-Chcete-li analyzovat celý projekt v aplikaci Visual Studio, klikněte pravým tlačítkem myši na projekt v **Průzkumník řešení** a vyberte možnost **analyzovat přenositelnost sestavení**. V opačném případě přejděte do nabídky **analyzovat** a vyberte možnost **analyzovat přenositelnost sestavení**. Odtud vyberte spustitelný soubor nebo knihovnu DLL vašeho projektu.
+### <a name="analyze-portability"></a>Analyzovat přenositelnost
+Chcete-li analyzovat celý projekt v sadě Visual Studio, klikněte pravým tlačítkem myši na projekt v **Průzkumníkovi řešení** a vyberte **analyzovat přenositelnost sestavení**. V opačném případě přejděte do nabídky **Analyzovat** a vyberte **analyzovat přenositelnost sestavení**. Odtud vyberte spustitelný soubor projektu nebo dll.
 
-![Snímek obrazovky analyzátoru přenositelnosti z Průzkumník řešení.](./media/portability-analyzer/portability-solution-explorer.png)
+![Snímek obrazovky s analyzátorem přenositelnosti z Průzkumníka řešení](./media/portability-analyzer/portability-solution-explorer.png)
 
 Můžete také použít [konzolovou aplikaci ApiPort](https://aka.ms/apiportdownload).
 
-- Zadáním následujícího příkazu Analyzujte aktuální adresář: `ApiPort.exe analyze -f .`
-- Chcete-li analyzovat konkrétní seznam souborů. dll, zadejte následující příkaz: `ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
-- Pokud chcete získat další nápovědu, spusťte `ApiPort.exe -?`.
+- Zadejte následující příkaz pro analýzu aktuálního adresáře:`ApiPort.exe analyze -f .`
+- Chcete-li analyzovat konkrétní seznam souborů DLL, zadejte následující příkaz:`ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
+- Spusťte `ApiPort.exe -?` další pomoc
 
-Doporučujeme, abyste zahrnuli všechny související soubory exe a DLL, které vlastníte a chcete portovat, a vyloučíte soubory, na kterých vaše aplikace závisí, ale nevlastníte a nemůžete port. Tím získáte nejvíc relevantní sestavu přenositelnosti.
+Doporučujeme zahrnout všechny související soubory exe a dll, které vlastníte a chcete je portovat, a vyloučit soubory, na kterých vaše aplikace závisí, ale nevlastníte a nemůžete je přenést. To vám poskytne nejrelevantnější zprávu o přenositelnosti.
 
 ### <a name="view-and-interpret-portability-result"></a>Zobrazit a interpretovat výsledek přenositelnosti
 
-V sestavě se zobrazí pouze rozhraní API, která nejsou v cílové platformě podporována.
-Po spuštění analýzy v aplikaci Visual Studio se zobrazí odkaz na soubor sestavy přenositelnosti .NET. Pokud jste použili [konzolovou aplikaci ApiPort](https://aka.ms/apiportdownload), vaše sestava přenositelnosti .NET se uloží jako soubor ve formátu, který jste zadali. Výchozí hodnota je v souboru aplikace Excel ( *. xlsx*) ve vašem aktuálním adresáři.
+V sestavě se zobrazí pouze řešení API, která nejsou podporována cílovou platformou.
+Po spuštění analýzy v sadě Visual Studio se zobrazí odkaz na soubor sestavy přenositelnost rozhraní .NET. Pokud jste [použili konzolovou aplikaci ApiPort](https://aka.ms/apiportdownload), bude sestava přenositelnost rozhraní .NET uložena jako soubor v určeném formátu. Výchozí hodnota je v souboru aplikace Excel (*xlsx*) v aktuálním adresáři.
 
 #### <a name="portability-summary"></a>Souhrn přenositelnosti
 
-![Snímek obrazovky souhrnu přenositelnosti](./media/portability-analyzer/api-catalog-portablility-summary.png)
+![Snímek obrazovky se souhrnem přenositelnosti](./media/portability-analyzer/api-catalog-portablility-summary.png)
 
-V části Souhrn přenositelnosti sestavy se zobrazuje procento přenositelnosti pro každé sestavení zahrnuté v běhu. V předchozím příkladu je 71,24% .NET Framework rozhraní API používaných v aplikaci `svcutil` dostupné v rozšířeních .NET Core + Platform. Pokud spustíte nástroj Analyzátor přenositelnosti .NET pro více sestavení, musí mít každé sestavení řádek v sestavě souhrn přenositelnosti.
+Část Souhrn přenositelnosti v sestavě zobrazuje procento přenositelnosti pro každé sestavení zahrnuté do běhu. V předchozím příkladu 71.24 % rozhraní API rozhraní `svcutil` .NET Framework používaných v aplikaci je k dispozici v rozšířeních .NET Core + Platform Extensions. Pokud spustíte nástroj .NET Přenositelnost Analyzer proti více sestavení, každé sestavení by měl mít řádek v sestavě přenositelnost souhrnu.
 
 #### <a name="details"></a>Podrobnosti
 
 ![Snímek obrazovky s podrobnostmi o přenositelnosti](./media/portability-analyzer/api-catalog-portablility-details.png)
 
-V části **Podrobnosti** sestavy jsou uvedena chybějící rozhraní API ze všech vybraných **cílových platforem**.
+V části **Podrobnosti** v sestavě jsou uvedena chybějící api na některé z vybraných **cílových platforem**.
 
-- Cílový typ: typ má chybějící rozhraní API z cílové platformy.
-- Cílový člen: v cílové platformě chybí metoda.
-- Název sestavení: .NET Framework sestavení, ve kterém chybí rozhraní API.
-- Každá z vybraných cílových platforem je jeden sloupec, jako je například hodnota ".NET Core": "Nepodporovaná" znamená, že rozhraní API není na této cílové platformě podporováno.
-- Doporučené změny: Doporučené rozhraní API nebo technologie se změní na. V současné době je toto pole prázdné nebo zastaralé pro spoustu rozhraní API. Vzhledem k velkému počtu rozhraní API máme velkou výzvu, abychom ji zachovali. Těšíme se na alternativní řešení, abychom zákazníkům poskytli užitečné informace.
+- Typ cíle: v typu chybí rozhraní API z cílové platformy.
+- Cílový člen: metoda chybí v cílové platformě
+- Název sestavení: sestavení rozhraní .NET Framework, ve které se v rozhraní API nese.
+- Každá z vybraných cílových platforem je jeden sloupec, například ".NET Core": "Není podporováno" hodnota znamená, že rozhraní API není podporováno na této cílové platformě.
+- Doporučené změny: doporučené rozhraní API nebo technologie, na které se má změnit. V současné době je toto pole prázdné nebo zastaralé pro velké množství řešení API. Vzhledem k velkému počtu api, máme velkou výzvu, aby to. Hledáme alternativní řešení, která zákazníkům poskytnou užitečné informace.
 
 #### <a name="missing-assemblies"></a>Chybějící sestavení
 
 ![Snímek obrazovky s chybějícími sestaveními](./media/portability-analyzer/api-catalog-missing-assemblies.png)
 
-V sestavě můžete najít část chybějící sestavení. Oznamuje vám, že se na tento seznam sestavení odkazuje vaše analyzovaná sestavení a že nebyly analyzovány. Pokud se jedná o sestavení, které vlastníte, zahrňte ho do spuštění analyzátoru přenositelnosti rozhraní API, abyste pro něj mohli získat podrobnou sestavu přenositelnosti rozhraní API. Pokud se jedná o knihovnu třetích stran, vyhledá, jestli má novější verzi podporující cílovou platformu. V takovém případě zvažte přechod na novější verzi. Nakonec byste očekávali, že tento seznam zahrnuje všechna sestavení třetích stran, na kterých vaše aplikace závisí, a potvrzuje, že mají verzi podporující cílovou platformu.
+Část Chybějící sestavení najdete v sestavě. Informuje vás, že tento seznam sestavení jsou odkazovány analyzované sestavení a nebyly analyzovány. Pokud se jedná o sestavení, které vlastníte, zahrňte jej do analyzátoru přenositelnosti rozhraní API, abyste pro něj mohli získat podrobnou sestavu přenositelnosti na úrovni rozhraní API. Pokud se jedná o knihovnu třetích stran, vyhledá, pokud mají novější verzi podporující vaši cílovou platformu. Pokud ano, zvažte přechod na novější verzi. Nakonec byste očekávali, že tento seznam obsahuje všechna sestavení třetích stran, na kterých vaše aplikace závisí, a potvrdil, že mají verzi podporující vaši cílovou platformu.
 
-Další informace o analyzátoru přenositelnosti .NET najdete v [dokumentaci k GitHubu](https://github.com/Microsoft/dotnet-apiport#documentation) a na [krátkém pohledu na video o analyzátoru přenositelnosti .NET pro](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer) kanál 9.
+Další informace o nástroji .NET Portability Analyzer najdete v [dokumentaci k GitHubu](https://github.com/Microsoft/dotnet-apiport#documentation) a [stručný přehled videa .NET Portability Analyzer](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer) Channel 9.

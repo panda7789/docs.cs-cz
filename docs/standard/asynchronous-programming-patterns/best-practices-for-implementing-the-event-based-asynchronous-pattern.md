@@ -13,33 +13,33 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
 ms.openlocfilehash: 439b862612d7997c9277ffb2cf4f15b14bd0b106
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78156046"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
-Asynchronní vzor založený na událostech poskytuje efektivní způsob, jak vystavit asynchronní chování ve třídách se známými sémantikou události a delegáta. Chcete-li implementovat asynchronní vzor založený na událostech, je nutné dodržovat určité konkrétní požadavky na chování. Následující části popisují požadavky a pokyny, které byste měli vzít v úvahu při implementaci třídy, která následuje za asynchronním vzorem založeným na událostech.  
+Asynchronní vzor založený na událostech poskytuje efektivní způsob, jak vystavit asynchronní chování ve třídách, se známou sémantikou událostí a delegáta. Chcete-li implementovat asynchronní vzor založený na událostech, musíte dodržovat některé specifické požadavky na chování. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která následuje asynchronní vzor založený na událostech.  
   
- Přehled naleznete v tématu [implementace asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md).  
+ Přehled naleznete v [tématu implementace asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="required-behavioral-guarantees"></a>Požadované záruky chování  
- Při implementaci asynchronního vzoru založeného na událostech musíte poskytnout řadu záruk, které zajistí, že se vaše třída bude chovat správně a klienti vaší třídy mohou spoléhat na takové chování.  
+ Pokud implementujete asynchronní vzor založený na událostech, musíte poskytnout řadu záruk, abyste zajistili, že vaše třída se bude chovat správně a klienti vaší třídy se mohou spolehnout na takové chování.  
   
 ### <a name="completion"></a>Dokončení  
- Vždy vyvolat obslužnou rutinu události <em>methodName</em>**Completed** po úspěšném dokončení, chybě nebo zrušení. Aplikace by nikdy neměly narazit na situaci, kdy zůstanou nečinné a k dokončení nedojde. Jedinou výjimkou z tohoto pravidla je, pokud je asynchronní operace navržená tak, aby se nikdy nedokončila.  
+ Vždy vyvolat <em>MethodName</em>**Completed** obslužnou rutinu události, pokud máte úspěšné dokončení, chybu nebo zrušení. Aplikace by nikdy dojít k situaci, kdy zůstanou nečinné a dokončení nikdy nedojde. Jednou z výjimek z tohoto pravidla je, pokud asynchronní operace sama o sobě je navržen tak, aby nikdy nedokončí.  
   
 ### <a name="completed-event-and-eventargs"></a>Dokončená událost a EventArgs  
- Pro každou samostatnou**asynchronní** metodu <em>methodName</em>použijte následující požadavky na návrh:  
+ Pro každou samostatnou metodu <em>MethodName</em>**Async** použijte následující požadavky na návrh:  
   
-- Definujte událost <em>methodName</em>**Completed** u stejné třídy jako metodu.  
+- Definujte událost <em>MethodName</em>**Completed** ve stejné třídě jako metoda.  
   
-- Definujte třídu <xref:System.EventArgs> a doprovodného delegáta pro událost <em>methodName</em>**dokončenou** , která je odvozena od <xref:System.ComponentModel.AsyncCompletedEventArgs> třídy. Název výchozí třídy by měl mít formu <em>methodName</em>**CompletedEventArgs**.  
+- Definujte <xref:System.EventArgs> třídu a doprovodný delegát pro událost <em>MethodName</em>**Completed,** která je odvozena <xref:System.ComponentModel.AsyncCompletedEventArgs> od třídy. Výchozí název třídy by měl být ve formuláři <em>MethodName</em>**CompletedEventArgs**.  
   
-- Ujistěte se, že třída <xref:System.EventArgs> je specifická pro návratové hodnoty metody <em>methodName</em> . Pokud používáte třídu <xref:System.EventArgs>, neměli byste od vývojářů nikdy vyžadovat, aby přetypování výsledku.  
+- Ujistěte <xref:System.EventArgs> se, že třída je specifická pro vrácené hodnoty <em>MethodName</em> metody. Při použití <xref:System.EventArgs> třídy, nikdy byste neměli vyžadovat, aby vývojáři přetypovat výsledek.  
   
-     Následující příklad kódu ukazuje dobrou a chybnou implementaci tohoto požadavku na návrh.  
+     Následující příklad kódu ukazuje dobré a chybné provádění tohoto požadavku návrhu v uvedeném pořadí.  
   
 ```csharp  
 // Good design  
@@ -55,93 +55,93 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 }  
 ```  
   
-- Nedefinujte třídu <xref:System.EventArgs> pro vracení metod, které vracejí `void`. Místo toho použijte instanci třídy <xref:System.ComponentModel.AsyncCompletedEventArgs>.  
+- Nedefinujte <xref:System.EventArgs> třídu pro vracející `void`metody, které vracejí . Místo toho použijte instanci třídy. <xref:System.ComponentModel.AsyncCompletedEventArgs>  
   
-- Ujistěte se, že jste vždycky vyvolali událost <em>methodName</em>**Completed** . Tato událost by měla být vyvolána po úspěšném dokončení, při chybě nebo při zrušení. Aplikace by nikdy neměly narazit na situaci, kdy zůstanou nečinné a k dokončení nedojde.  
+- Ujistěte se, že vždy navádíte událost <em>MethodName</em>**Completed.** Tato událost by měla být vyvolána při úspěšném dokončení, při chybě nebo při zrušení. Aplikace by nikdy dojít k situaci, kdy zůstanou nečinné a dokončení nikdy nedojde.  
   
-- Ujistěte se, že máte zachycené výjimky, ke kterým dojde v asynchronní operaci, a přiřaďte Zachycenou výjimku vlastnosti <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>.  
+- Ujistěte se, že zachytit všechny výjimky, ke kterým dochází v <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> asynchronní operace a přiřadit zachycené výjimky vlastnosti.  
   
-- Pokud při dokončování úlohy došlo k chybě, neměli byste mít přístup k výsledkům. Pokud vlastnost <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> není `null`, zajistěte, aby přístup k libovolné vlastnosti ve struktuře <xref:System.EventArgs> vyvolává výjimku. K provedení tohoto ověření použijte metodu <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A>.  
+- Pokud došlo k chybě dokončení úkolu, výsledky by neměly být přístupné. Pokud <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> vlastnost není `null`, ujistěte se, <xref:System.EventArgs> že přístup k jakékoli vlastnosti ve struktuře vyvolá výjimku. K <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A> provedení tohoto ověření použijte metodu.  
   
-- Vyprší časový limit pro chybu. Když dojde k vypršení časového limitu, vyvolejte událost <em>methodName</em>**Completed** a přiřaďte <xref:System.TimeoutException> k vlastnosti <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>.  
+- Model ovat časový čas jako chybu. Když dojde k out out, raise <em>MethodName</em>**Completed** <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> událost a přiřadit <xref:System.TimeoutException> vlastnost.  
   
-- Pokud vaše třída podporuje více souběžných volání, ujistěte se, že událost <em>methodName</em>**Completed** obsahuje příslušný objekt `userSuppliedState`.  
+- Pokud vaše třída podporuje více souběžných vyvolání, ujistěte se, že <em>Událost MethodName</em>**Completed** obsahuje příslušný `userSuppliedState` objekt.  
   
-- Zajistěte, aby se událost <em>methodName</em>**Completed** vyvolala v příslušném vlákně a v odpovídající době v životním cyklu aplikace. Další informace naleznete v části vlákna a kontexty.  
+- Ujistěte se, že <em>MethodName</em>**Completed** událost je aktivována v příslušném vlákně a ve vhodnou dobu v životním cyklu aplikace. Další informace naleznete v části Threading and Contexts.  
   
-### <a name="simultaneously-executing-operations"></a>Souběžné provádění operací  
+### <a name="simultaneously-executing-operations"></a>Současné provádění operací  
   
-- Pokud vaše třída podporuje více souběžných volání, umožněte vývojářům sledovat každé vyvolání samostatně definováním**asynchronního** přetížení <em>methodName</em>, které přijímá parametr stavu s hodnotou objektu, nebo ID úlohy s názvem `userSuppliedState`. Tento parametr by měl být vždy posledním parametrem v signatuře**asynchronní** metody <em>methodName</em>.  
+- Pokud vaše třída podporuje více souběžných vyvolání, povolte vývojáři sledovat každé vyvolání samostatně definováním <em>Přetížení MethodName</em>**Async,** `userSuppliedState`které přebírá parametr stavu s hodnotou objektu nebo ID úlohy, nazývané . Tento parametr by měl být vždy posledním parametrem v podpisu metody <em>MethodName</em>**Async.**  
   
-- Pokud vaše třída definuje**asynchronní** přetížení <em>methodName</em>, které přijímá parametr stavu s hodnotou objektu nebo ID úlohy, je nutné sledovat životnost operace s tímto ID úlohy a zajistit, aby byla vrácena zpět do obslužné rutiny dokončení. K dispozici jsou pomocné třídy, které vám můžou pomoct. Další informace o správě souběžnosti naleznete v tématu [How to: Implementing a Component, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+- Pokud vaše třída definuje <em>Přetížení MethodName</em>**Async,** které přebírá parametr stavu s hodnotou objektu nebo ID úlohy, nezapomeňte sledovat životnost operace s tímto ID úkolu a ujistěte se, že ji poskytnete zpět do obslužné rutiny dokončení. K dispozici jsou pomocné třídy. Další informace o správě souběžnosti naleznete v [tématu How to: Implement a Component that Supports the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   
-- Pokud vaše třída definuje**asynchronní** metodu <em>methodName</em>bez parametru State a nepodporuje více souběžných volání, zajistěte, aby všechny pokusy o vyvolání <em>methodName</em>**Async** předtím, než se dokončilo předchozí**asynchronní** vyvolání <em>methodName</em>, vyvolává <xref:System.InvalidOperationException>.  
+- Pokud vaše třída definuje metodu <em>MethodName</em>**Async** bez parametru stavu a nepodporuje více souběžných volání, ujistěte se, že jakýkoli pokus o <xref:System.InvalidOperationException>vyvolání <em>MethodName</em>**Async** před dokončením předchozího vyvolání**Async** <em>MethodName</em>vyvolá .  
   
-- Obecně Nevolejte výjimku, pokud je**asynchronní** metoda <em>MethodName</em>bez parametru `userSuppliedState` vyvolána několikrát, aby bylo více nezpracovaných operací. Můžete vyvolat výjimku, pokud vaše třída explicitně nemůže zvládnout tuto situaci, ale předpokládat, že vývojáři mohou zpracovat tyto vícenásobná zpětná volání, která nerozlišuje.  
+- Obecně nevyvolávejte výjimku, pokud metoda <em>MethodName</em>**Async** bez parametru `userSuppliedState` je vyvolána vícekrát, takže existuje více nevyřízených operací. Můžete vyvolat výjimku, když vaše třída explicitně nemůže zpracovat tuto situaci, ale předpokládat, že vývojáři mohou zpracovat tyto více nerozlišitelné zpětná volání  
   
 ### <a name="accessing-results"></a>Přístup k výsledkům  
   
-- Pokud při provádění asynchronní operace došlo k chybě, neměly by být k dispozici žádné výsledky. Zajistěte, aby přístup k libovolné vlastnosti v <xref:System.ComponentModel.AsyncCompletedEventArgs>, když <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> není `null` vyvolá výjimku, na kterou odkazuje <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>. Třída <xref:System.ComponentModel.AsyncCompletedEventArgs> poskytuje metodu <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A> pro tento účel.  
+- Pokud došlo k chybě během provádění asynchronní operace, výsledky by neměly být přístupné. Ujistěte se, že <xref:System.ComponentModel.AsyncCompletedEventArgs> přístup <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> k `null` jakékoli vlastnosti <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>v when není vyvolává výjimku odkazuje . Třída <xref:System.ComponentModel.AsyncCompletedEventArgs> poskytuje <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A> metodu pro tento účel.  
   
-- Zajistěte, aby všechny pokusy o přístup k výsledku vyvolaly <xref:System.InvalidOperationException> oznamující, že operace byla zrušena. K provedení tohoto ověření použijte metodu <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A?displayProperty=nameWithType>.  
+- Ujistěte se, že jakýkoli <xref:System.InvalidOperationException> pokus o přístup k výsledku vyvolá oznamující, že operace byla zrušena. K <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A?displayProperty=nameWithType> provedení tohoto ověření použijte metodu.  
   
-### <a name="progress-reporting"></a>Vytváření sestav průběhu  
+### <a name="progress-reporting"></a>Hlášení průběhu  
   
-- Podporuje vytváření sestav o průběhu, pokud je to možné. To umožňuje vývojářům poskytnout lepší uživatelské prostředí aplikace při použití vaší třídy.  
+- Pokud je to možné, podpořte vykazování průběhu. To umožňuje vývojářům poskytovat lepší uživatelské prostředí aplikace při použití vaší třídy.  
   
-- Pokud implementujete událost**ProgressChanged** **ProgressChanged** nebo <em>methodName</em>, zajistěte, aby se žádné takové události neaktivovaly pro konkrétní asynchronní operaci po vygenerování <em>methodName</em>události**dokončení** této operace.  
+- Pokud implementujete **ProgressChanged** nebo <em>MethodName</em>**ProgressChanged** událost, ujistěte se, že neexistují žádné takové události vyvolané pro konkrétní asynchronní operace po této operace <em>MethodName</em>**Completed** událost byla vyvolána.  
   
-- Pokud se naplní standardní <xref:System.ComponentModel.ProgressChangedEventArgs>, ujistěte se, že <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> může být vždy interpretována jako procento. Procentuální hodnota nemusí být přesná, ale měla by představovat procento. Pokud metrika vytváření sestav průběhu musí být jiná než procento, odvozuje třídu od třídy <xref:System.ComponentModel.ProgressChangedEventArgs> a nechte <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> na 0. Nepoužívejte nepoužitou metriku pro vytváření sestav, než je procento.  
+- Pokud je <xref:System.ComponentModel.ProgressChangedEventArgs> standard naplněn, ujistěte <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> se, že může být vždy interpretován jako procento. Procento nemusí být přesné, ale mělo by představovat procento. Pokud vaše metrika hlášení průběhu musí být něco jiného než procento, odvodit třídu <xref:System.ComponentModel.ProgressChangedEventArgs> z třídy a ponechat <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> na 0. Nepoužívejte jinou metriku přehledů než procento.  
   
-- Zajistěte, aby se událost `ProgressChanged`a vyvolala v příslušném vlákně a v odpovídající době v životním cyklu aplikace. Další informace naleznete v části vlákna a kontexty.  
+- Ujistěte `ProgressChanged` se, že událost je vyvolána v příslušném vlákně a ve vhodnou dobu v životním cyklu aplikace. Další informace naleznete v části Threading and Contexts.  
   
-### <a name="isbusy-implementation"></a>Zaneprázdněná implementace  
+### <a name="isbusy-implementation"></a>Implementace IsBusy  
   
-- Nezveřejňujte vlastnost `IsBusy`, pokud vaše třída podporuje více souběžných volání. Například proxy webové služby XML nezveřejňují vlastnost `IsBusy`, protože podporují více souběžných volání asynchronních metod.  
+- Nezveřejňujte `IsBusy` vlastnost, pokud vaše třída podporuje více souběžných vyvolání. Například proxy služby XML nezveřejňují `IsBusy` vlastnost, protože podporují více souběžných vyvolání asynchronních metod.  
   
-- Vlastnost `IsBusy` by měla vracet `true` poté, co byla volána**asynchronní** metoda <em>methodName</em>a předtím, než byla vyvolána událost <em>methodName</em>**Completed** . V opačném případě by měl vrátit `false`. Komponenty <xref:System.ComponentModel.BackgroundWorker> a <xref:System.Net.WebClient> jsou příklady tříd, které zpřístupňují vlastnost `IsBusy`.  
+- Vlastnost `IsBusy` by `true` měla vrátit po <em>MethodName</em>**Async** metoda byla volána a před <em>MethodName</em>**Completed** událost byla vyvolána. V opačném `false`případě by se měl vrátit . <xref:System.ComponentModel.BackgroundWorker> Komponenty <xref:System.Net.WebClient> a jsou příklady tříd, `IsBusy` které zveřejňují vlastnost.  
   
 ### <a name="cancellation"></a>Zrušení  
   
-- Pokud je to možné, je zrušení podpory. To umožňuje vývojářům poskytnout lepší uživatelské prostředí aplikace při použití vaší třídy.  
+- Pokud je to možné, zrušení podpory. To umožňuje vývojářům poskytovat lepší uživatelské prostředí aplikace při použití vaší třídy.  
   
-- V případě zrušení nastavte příznak <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> v objektu <xref:System.ComponentModel.AsyncCompletedEventArgs>.  
+- V případě zrušení nastavte <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> příznak v <xref:System.ComponentModel.AsyncCompletedEventArgs> objektu.  
   
-- Zajistěte, aby všechny pokusy o přístup k výsledku vyvolaly <xref:System.InvalidOperationException> oznamující, že operace byla zrušena. K provedení tohoto ověření použijte metodu <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A?displayProperty=nameWithType>.  
+- Ujistěte se, že jakýkoli <xref:System.InvalidOperationException> pokus o přístup k výsledku vyvolá oznamující, že operace byla zrušena. K <xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A?displayProperty=nameWithType> provedení tohoto ověření použijte metodu.  
   
-- Zajistěte, aby volání metody zrušení vždy vracela úspěšně, a nikdy nevyvolávají výjimku. Obecně platí, že klient není informován o tom, zda je operace v určitou dobu skutečně zrušena, a není oznámeno, zda bylo dříve vystavené zrušení úspěšné. Aplikace však bude vždy předána oznámením o úspěšném zrušení, protože aplikace je součástí stavu dokončení.  
+- Ujistěte se, že volání metody zrušení vždy úspěšně vrátit a nikdy vyvolat výjimku. Obecně platí, že klient není upozorněn na to, zda je operace skutečně zrušitelná v daném okamžiku, a není upozorněn na to, zda bylo dříve vydané zrušení úspěšné. Aplikace však bude vždy oznámení, když zrušení proběhlo úspěšně, protože aplikace se účastní stavu dokončení.  
   
-- Vyvolat událost <em>methodName</em>**Completed** při zrušení operace.  
+- Raise <em>The MethodName</em>**Completed** událost při operaci je zrušena.  
   
 ### <a name="errors-and-exceptions"></a>Chyby a výjimky  
   
-- Zachyťte všechny výjimky, ke kterým dojde v asynchronní operaci, a nastavte hodnotu vlastnosti <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=nameWithType> na tuto výjimku.  
+- Zachytit všechny výjimky, ke kterým dochází v asynchronní <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=nameWithType> operace a nastavte hodnotu vlastnosti na tuto výjimku.  
   
-### <a name="threading-and-contexts"></a>Vlákna a kontexty  
- Pro správnou funkčnost vaší třídy je důležité, aby byly obslužné rutiny událostí klienta vyvolány ve správném vlákně nebo kontextu pro daný model aplikace, včetně aplikací ASP.NET a model Windows Forms. K dispozici jsou dvě důležité pomocné třídy, které zajistí, že se asynchronní třída chová správně v rámci jakéhokoli modelu aplikace: <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager>.  
+### <a name="threading-and-contexts"></a>Zřetězení a kontexty  
+ Pro správnou funkci vaší třídy je důležité, aby obslužné rutiny událostí klienta byly vyvolány ve správném vlákně nebo kontextu pro daný model aplikace, včetně aplikací ASP.NET a Windows Forms. Dvě důležité pomocné třídy jsou k dispozici k zajištění, že vaše asynchronní třída se chová správně pod libovolný model aplikace: <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager>.  
   
- <xref:System.ComponentModel.AsyncOperationManager> poskytuje jednu metodu, <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>, která vrací <xref:System.ComponentModel.AsyncOperation>. **Asynchronní** metoda <em>methodName</em>volá <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> a vaše třída používá vrácenou <xref:System.ComponentModel.AsyncOperation> ke sledování životnosti asynchronní úlohy.  
+ <xref:System.ComponentModel.AsyncOperationManager>poskytuje jednu <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A>metodu <xref:System.ComponentModel.AsyncOperation>, která vrací . Vaše <em>MethodName</em>**Async** metoda volání <xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A> a <xref:System.ComponentModel.AsyncOperation> vaše třída používá vrácené sledovat životnost asynchronní úlohy.  
   
- Chcete-li ohlásit průběh, přírůstkové výsledky a doplňování klienta, zavolejte <xref:System.ComponentModel.AsyncOperation.Post%2A> a <xref:System.ComponentModel.AsyncOperation.OperationCompleted%2A> metody na <xref:System.ComponentModel.AsyncOperation>. <xref:System.ComponentModel.AsyncOperation> zodpovídá za zařazování volání do obslužných rutin událostí klienta do správného vlákna nebo kontextu.  
+ Chcete-li ohlásit průběh, přírůstkové výsledky <xref:System.ComponentModel.AsyncOperation.Post%2A> a <xref:System.ComponentModel.AsyncOperation.OperationCompleted%2A> dokončení <xref:System.ComponentModel.AsyncOperation>klientovi, zavolejte metody a na . <xref:System.ComponentModel.AsyncOperation>je zodpovědný za zařazování volání obslužné rutiny událostí klienta na správné vlákno nebo kontext.  
   
 > [!NOTE]
-> Tato pravidla můžete obejít, pokud výslovně chcete přejít na zásadu aplikačního modelu, ale stále výhodou dalších výhod použití asynchronního vzoru založeného na událostech. Například může být vhodné, aby třída provozovaná v model Windows Forms měla volné vlákno. Můžete vytvořit volnou třídu s více vlákny, pokud vývojářům rozumí předpokládaná omezení. Konzolové aplikace nesynchronizují provádění <xref:System.ComponentModel.AsyncOperation.Post%2A> volání. To může způsobit, že `ProgressChanged` události budou vyvolány mimo pořadí. Pokud chcete mít serializované spuštění volání <xref:System.ComponentModel.AsyncOperation.Post%2A>, implementujte a nainstalujte <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType> třídu.  
+> Tato pravidla můžete obejít, pokud explicitně chcete jít proti zásadám aplikačního modelu, ale stále těžit z dalších výhod použití asynchronního vzoru založeného na událostech. Můžete například chtít, aby třída pracující ve windows forms byla bez vláken. Můžete vytvořit bezplatnou třídu s vlákny, pokud vývojáři chápou implikovaná omezení. Konzolové aplikace nesynchronizují <xref:System.ComponentModel.AsyncOperation.Post%2A> provádění volání. To může `ProgressChanged` způsobit události, které mají být vyvolány mimo pořadí. Pokud chcete mít serializované <xref:System.ComponentModel.AsyncOperation.Post%2A> spuštění volání, implementujte a nainstalujte třídu. <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType>  
   
- Další informace o použití <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager> k povolení asynchronních operací naleznete v tématu [How to: Implementing a Component, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+ Další informace o <xref:System.ComponentModel.AsyncOperation> <xref:System.ComponentModel.AsyncOperationManager> použití a povolení asynchronních operací naleznete v tématu [How to: Implement a Component that Supports the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="guidelines"></a>Pokyny  
   
-- V ideálním případě by každá volání metody měla být nezávislá na dalších. Nemusíte se vyhnout voláním spojení se sdílenými prostředky. Pokud se prostředky mají sdílet mezi vyvoláními, budete muset ve své implementaci zadat správný mechanismus synchronizace.  
+- V ideálním případě by každá metoda vyvolání by měla být nezávislá na ostatních. Měli byste se vyhnout párování vyvolání se sdílenými prostředky. Pokud prostředky mají být sdíleny mezi vyvolání, budete muset poskytnout mechanismus správné synchronizace v implementaci.  
   
-- Nedoporučujeme návrhy, které vyžadují implementaci synchronizace klienta. Například můžete mít asynchronní metodu, která přijímá globální statický objekt jako parametr; víc souběžných volání takové metody může způsobit poškození dat nebo zablokování.  
+- Návrhy, které vyžadují klienta k implementaci synchronizace se nedoporučuje. Můžete mít například asynchronní metodu, která přijímá globální statický objekt jako parametr; více souběžných vyvolání takové metody může mít za následek poškození dat nebo zablokování.  
   
-- Pokud implementujete metodu s přetížením vícenásobného vyvolání (`userState` v signatuře), vaše třída bude potřebovat spravovat kolekci stavů uživatele nebo ID úloh a jejich odpovídající operace, které čekají na zpracování. Tato kolekce by měla být chráněná `lock`mi oblastmi, protože různá volání v kolekci přidávají a odstraňují `userState` objekty.  
+- Pokud implementujete metodu s přetížením více vyvolání (v`userState` podpisu), vaše třída bude muset spravovat kolekci uživatelských stavů nebo ID úloh a jejich odpovídající čekající operace. Tato kolekce by `lock` měla být chráněna s oblastmi, protože různé vyvolání přidat a odebrat `userState` objekty v kolekci.  
   
-- Zvažte možnost znovu použít `CompletedEventArgs` třídy, kde je to proveditelné a vhodné. V tomto případě není pojmenování konzistentní s názvem metody, protože daný delegát a typ <xref:System.EventArgs> nejsou vázány na jedinou metodu. Nicméně vynucování vývojářů k přetypování hodnoty načtené z vlastnosti v <xref:System.EventArgs> nikdy nepřijatelné.  
+- Zvažte `CompletedEventArgs` opětovné použití tříd, pokud je to proveditelné a vhodné. V tomto případě není pojmenování konzistentní s názvem metody, <xref:System.EventArgs> protože daný delegát a typ nejsou vázány na jednu metodu. Však vynucení vývojáři přetypovat hodnotu <xref:System.EventArgs> načtenou z vlastnosti na však není nikdy přijatelné.  
   
-- Pokud vytváříte třídu, která je odvozena z <xref:System.ComponentModel.Component>, Neimplementujte a neinstalujte vlastní třídu <xref:System.Threading.SynchronizationContext>. Aplikační modely, nikoli komponenty, řídí <xref:System.Threading.SynchronizationContext>, který se používá.  
+- Pokud jste authoring třídy, <xref:System.ComponentModel.Component>která je odvozena z <xref:System.Threading.SynchronizationContext> , neimplementujte a neinstalujte vlastní třídu. Aplikační modely, nikoli součásti, <xref:System.Threading.SynchronizationContext> řídí, který se používá.  
   
-- Když použijete Multithreading s více vlákny, můžete si potenciálně vystavit hodně závažných a složitých chyb. Před implementací jakéhokoli řešení, které používá multithreading, si přečtěte téma [osvědčené postupy spravovaného vlákna](../../../docs/standard/threading/managed-threading-best-practices.md).  
+- Při použití multithreading jakéhokoli druhu, můžete potenciálně vystavit sami velmi závažné a složité chyby. Před implementací jakéhokoli řešení, které používá vícevláknové, naleznete [v tématu Osvědčené postupy spravovaného podprocesu](../../../docs/standard/threading/managed-threading-best-practices.md).  
   
 ## <a name="see-also"></a>Viz také
 

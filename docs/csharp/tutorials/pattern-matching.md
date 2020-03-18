@@ -1,69 +1,69 @@
 ---
-title: Použití funkcí pro porovnávání vzorů k rozšiřování datových typů
-description: Tento rozšířený kurz ukazuje, jak používat techniky porovnávání vzorů k vytváření funkcionality pomocí dat a algoritmů, které se vytvářejí samostatně.
+title: Použití prvků porovnávání vzorů k rozšíření datových typů
+description: Tento pokročilý kurz ukazuje, jak používat techniky porovnávání vzorů k vytvoření funkce pomocí dat a algoritmů, které jsou vytvořeny samostatně.
 ms.date: 03/13/2019
 ms-technology: csharp-whats-new
 ms.custom: mvc
-ms.openlocfilehash: fd08e707402bfcd552997111a9c3fa58841a5466
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: df1054d8e0ec2b2539e6a1d00bf353d8ca927397
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240051"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156529"
 ---
-# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: použití funkcí pro porovnávání vzorů k rozšiřování datových typů
+# <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití funkcí porovnávání vzorů k rozšíření datových typů
 
-C#7 představil základní funkce pro porovnávání vzorů. Tyto funkce se v C# 8 rozšiřují novými výrazy a vzorci. Můžete napsat funkčnost, která se chová, jako byste rozšířili typy, které mohou být v jiných knihovnách. Další možností použití vzorů je vytvořit funkce, které vaše aplikace vyžaduje, nejedná se o základní funkci typu, který se rozšiřuje.
+C# 7 představil základní funkce odpovídající vzor. Tyto funkce jsou rozšířeny v C# 8 s novými výrazy a vzory. Můžete psát funkce, které se chová, jako byste rozšířené typy, které mohou být v jiných knihovnách. Další použití pro vzory je vytvořit funkce, které vaše aplikace vyžaduje, že není základní funkce typu, který je rozšířen.
 
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
 >
-> - Rozpoznává situace, kde by se měla použít porovnávání vzorů.
-> - Použijte výrazy porovnávání vzorů k implementaci chování založeného na typech a hodnotách vlastností.
-> - Kombinací porovnávání vzorů s jinými technikami vytvoříte kompletní algoritmy.
+> - Rozpoznat situace, kde by měl být použit porovnávání vzorů.
+> - K implementaci chování na základě typů a hodnot vlastností použijte výrazy porovnávání vzorů.
+> - Zkombinujte porovnávání vzorů s jinými technikami a vytvořte úplné algoritmy.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
+Budete muset nastavit počítač pro spuštění .NET Core, včetně kompilátoru C# 8.0. Kompilátor Jazyka C# 8 je k dispozici počínaje [sadou Visual Studio 2019 verze 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download).
 
-V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, včetně sady Visual Studio nebo .NET Core CLI.
+Tento kurz předpokládá, že jste obeznámeni s C# a .NET, včetně Visual Studio nebo .NET Core CLI.
 
 ## <a name="scenarios-for-pattern-matching"></a>Scénáře pro porovnávání vzorů
 
-Moderní vývoj často zahrnuje integraci dat z více zdrojů a prezentování informací a přehledů z těchto dat v jediné soudržné aplikaci. Vy a váš tým nebude mít kontrolu ani přístup pro všechny typy, které reprezentují příchozí data.
+Moderní vývoj často zahrnuje integraci dat z více zdrojů a prezentaci informací a poznatků z nich v jedné soudržné aplikaci. Vy a váš tým nebudete mít kontrolu nebo přístup pro všechny typy, které představují příchozí data.
 
-Klasický objektově orientovaný návrh by volal pro vytváření typů ve vaší aplikaci, které reprezentují každý datový typ z těchto více zdrojů dat. Vaše aplikace pak bude pracovat s těmito novými typy, vytvořit Hierarchie dědičnosti, vytvářet virtuální metody a implementovat abstrakce. Tyto techniky fungují a někdy jsou nejlepšími nástroji. Jindy můžete psát méně kódu. Můžete psát více jasných kódů pomocí technik, které oddělují data z operací, které manipulují s těmito daty.
+Klasický objektově orientovaný návrh by volal pro vytváření typů ve vaší aplikaci, které představují každý datový typ z těchto více zdrojů dat. Potom aplikace bude pracovat s těmito novými typy, sestavení hierarchie dědičnosti, vytvářet virtuální metody a implementovat abstrakce. Tyto techniky fungují, a někdy jsou nejlepší nástroje. Jindy můžete napsat méně kódu. Můžete napsat více jasný kód pomocí technik, které oddělují data z operací, které pracují s daty.
 
-V tomto kurzu vytvoříte a prozkoumáte aplikaci, která bude v jednom scénáři přijímat příchozí data z několika externích zdrojů. Uvidíte, jak **porovnávání vzorů** poskytuje efektivní způsob, jak spotřebovávat a zpracovávat tato data způsobem, který nebyl součástí původního systému.
+V tomto kurzu vytvoříte a prozkoumáte aplikaci, která přebírá příchozí data z několika externích zdrojů pro jeden scénář. Uvidíte, jak **porovnávání vzorů** poskytuje efektivní způsob, jak využívat a zpracovávat tato data způsoby, které nebyly součástí původního systému.
 
-Vezměte v úvahu hlavní metropolitní oblast, která využívá mýtné a ceny za špičku ke správě provozu. Napíšete aplikaci, která vypočítá mýtné pro vozidlo na základě jeho typu. Pozdější vylepšení zahrnují ceny na základě počtu uživatelů v rámci vozidla. Další vylepšení přidávají ceny na základě času a dne v týdnu.
+Vezměme si hlavní metropolitní oblast, která používá mýtné a ceny ve špičce pro správu provozu. Napíšete aplikaci, která vypočítá mýtné pro vozidlo na základě jeho typu. Pozdější vylepšení zahrnují ceny na základě počtu cestujících ve vozidle. Další vylepšení přidávají ceny na základě času a dne v týdnu.
 
-Z tohoto krátkého popisu jste mohli rychle vykreslit hierarchii objektů k modelování tohoto systému. Vaše data ale pocházejí z několika zdrojů, jako jsou jiné systémy pro správu registrace vozidel. Tyto systémy poskytují různé třídy pro modelování dat a nemáte jeden objektový model, který můžete použít. V tomto kurzu použijete tyto zjednodušené třídy pro modelování dat vozidel z těchto externích systémů, jak je znázorněno v následujícím kódu:
+Z tohoto stručného popisu jste možná rychle načrtli hierarchii objektů, abyste tento systém modelovali. Vaše data však pocházejí z více zdrojů, jako jsou jiné systémy řízení registrace vozidel. Tyto systémy poskytují různé třídy pro modelování dat a nemáte jeden objektový model, který můžete použít. V tomto kurzu budete používat tyto zjednodušené třídy k modelování dat vozidel z těchto externích systémů, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[ExternalSystems](~/samples/snippets/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
 
-Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start) GitHub. Můžete vidět, že třídy vozidel jsou z různých systémů a jsou v různých oborech názvů. Není možné využít žádnou společnou základní třídu, kromě `System.Object`.
+Startovací kód si můžete stáhnout z úložiště [GitHub dotnet/samples.](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start) Můžete vidět, že třídy vozidel jsou z různých systémů a jsou v různých oborech názvů. Žádná společná základní třída, kromě `System.Object` toho, že může být využita.
 
-## <a name="pattern-matching-designs"></a>Vzory porovnávání vzorů
+## <a name="pattern-matching-designs"></a>Vzory odpovídající návrhy
 
-Scénář použitý v tomto kurzu zvýrazňuje druhy problémů, které porovnávání vzorů je vhodné pro řešení:
+Scénář použitý v tomto kurzu upozorňuje na druhy problémů, které odpovídá vzor je vhodný k řešení:
 
-- Objekty, se kterými potřebujete pracovat, nejsou v hierarchii objektů, které odpovídají vašim cílům. Možná budete pracovat s třídami, které jsou součástí nesouvisejících systémů.
-- Funkce, kterou přidáváte, není součástí základní abstrakce pro tyto třídy. Telefonní linka *placená změnou vozidla pro různé* typy vozidel, ale placená linka není základní funkcí vozidla.
+- Objekty, se kterými potřebujete pracovat, nejsou v hierarchii objektů, která odpovídá vašim cílům. Je možné, že pracujete s třídami, které jsou součástí nesouvisejících systémů.
+- Funkce, které přidáváte, není součástí základní abstrakce pro tyto třídy. Mýtné placené vozidlem *se mění* pro různé typy vozidel, ale mýtné není základní funkcí vozidla.
 
-Pokud *tvar* dat a *operace* na těchto datech nejsou popsány společně, funkce pro porovnávání vzorů v C# nástroji usnadňuje práci s.
+Pokud *tvar* dat a *operace* na těchto datech nejsou popsány společně, funkce porovnávání vzorů v C# usnadňují práci s.
 
-## <a name="implement-the-basic-toll-calculations"></a>Implementace základních výpočtů mýtné
+## <a name="implement-the-basic-toll-calculations"></a>Provedení základních výpočtů mýtného
 
-Základní výpočet placená linka se spoléhá jenom na typ vozidla:
+Nejzákladnější výpočet mýtného se opírá pouze o typ vozidla:
 
-- `Car` je $2,00.
-- `Taxi` je $3,50.
-- `Bus` je $5,00.
-- `DeliveryTruck` je $10,00
+- A `Car` je 2,00 dolarů.
+- A `Taxi` je 3,50 dolarů.
+- A `Bus` je 5,00 dolarů.
+- A `DeliveryTruck` je 10,00 dolarů
 
-Vytvořte novou třídu `TollCalculator` a implementujte porovnávání vzorů pro typ vozidla, abyste získali hodnotu mýtné. Následující kód ukazuje počáteční implementaci `TollCalculator`.
+Vytvořte `TollCalculator` novou třídu a implementujte odpovídající vzor na typu vozidla, abyste získali částku mýtného. Následující kód ukazuje počáteční implementaci `TollCalculator`.
 
 ```csharp
 using System;
@@ -89,9 +89,9 @@ namespace toll_calculator
 }
 ```
 
-Předchozí kód používá **výraz Switch** (není stejný jako příkaz [`switch`](../language-reference/keywords/switch.md) ), který testuje **vzor typu**. **Výraz Switch** začíná proměnnou, `vehicle` v předchozím kódu následovaný klíčovým slovem `switch`. Dál přijde všechna **ramena přepínače** uvnitř složených závorek. Výraz `switch` umožňuje další upřesnění syntaxe, která obklopuje příkaz `switch`. Klíčové slovo `case` je vynecháno a výsledek každého ARM je výraz. Poslední dvě paže zobrazují novou funkci jazyka. `{ }` Case odpovídá jakémukoli objektu, který není null, který se neshodoval s dřívějším procesorem ARM. Tato ARM zachytí všechny nesprávné typy předané do této metody.  `{ }` případ musí splňovat jednotlivé typy vozidel. Pokud byla objednávka stornována, má `{ }` případ přednost. A konečně, `null` vzor detekuje, když se do této metody předává `null`. Vzor `null` může být poslední, protože jiné vzorce typu odpovídají pouze nenulovému objektu správného typu.
+Předchozí kód používá **výraz přepínače** (není [`switch`](../language-reference/keywords/switch.md) stejný jako příkaz), který testuje **vzor typu**. **Výraz přepínače** začíná proměnnou `vehicle` v předchozím kódu následovaném klíčovým slovem. `switch` Dále přicházejí všechny **ramena spínače** uvnitř kudrnatých šle. Výraz `switch` provede další vylepšení syntaxe, která `switch` obklopuje příkaz. Klíčové `case` slovo je vynecháno a výsledkem každé rameno je výraz. Poslední dvě paže ukazují novou jazykovou funkci. Případ `{ }` odpovídá všem objektům, které nemají hodnotu null a které neodpovídají předchozí ruce. Toto rameno zachytí všechny nesprávné typy předané této metodě.  Pouzdro `{ }` musí následovat případy pro každý typ vozidla. Pokud by bylo pořadí `{ }` obráceno, měl by přednost případ. Nakonec `null` vzor detekuje při `null` předání této metodě. Vzorek `null` může být poslední, protože jiné vzory typu odpovídají pouze objektu bez hodnoty null správného typu.
 
-Tento kód můžete otestovat pomocí následujícího kódu v `Program.cs`:
+Tento kód můžete otestovat pomocí `Program.cs`následujícího kódu v :
 
 ```csharp
 using System;
@@ -138,21 +138,21 @@ namespace toll_calculator
 }
 ```
 
-Tento kód je obsažen v projektu Starter, ale je označen jako komentář. Odstraňte komentáře a můžete testovat, co jste napsali.
+Tento kód je součástí počátečního projektu, ale je zakomentován. Odeberte komentáře a můžete otestovat, co jste napsali.
 
-Začínáte, jak vzory vám pomohou vytvořit algoritmy, kde je kód a data odděleny. Výraz `switch` testuje typ a vytváří různé hodnoty na základě výsledků. To je jenom začátek.
+Začínáte vidět, jak vzory vám mohou pomoci vytvořit algoritmy, kde kód a data jsou oddělené. Výraz `switch` testuje typ a vytváří různé hodnoty na základě výsledků. To je jen začátek.
 
-## <a name="add-occupancy-pricing"></a>Přidat ceny obsazení
+## <a name="add-occupancy-pricing"></a>Přidání cen obsazenosti
 
-Autorita pro telefonní linky chce, aby dokázala povzbudit kapacitu vozidel při maximální kapacitě. Rozhodla se doúčtovat více, pokud vozidlo má méně cestujících, a podporuje plná vozidla tím, že nabízí nižší ceny:
+Mýtný úřad chce motivovat vozidla k jízdě na maximální kapacitu. Rozhodli se účtovat více, když mají vozidla méně cestujících, a podporují plná vozidla tím, že nabízejí nižší ceny:
 
-- Automobily a Taxis bez cestujících platíte navíc $0,50.
-- Automobily a Taxis se dvěma cestujícími získají slevu $0,50.
-- Automobily a Taxis se třemi nebo více cestujícími získají slevu $1,00.
-- Na sběrnicích, které jsou menší než 50%, se zaplatí extra $2,00.
-- Pro autobusy, které jsou v plném rozsahu 90%, se zobrazí sleva $1,00.
+- Auta a taxíky bez pasažérů zaplatí dalších 0,50 usd.
+- Auta a taxíky se dvěma cestujícími získat slevu 0,50 dolarů.
+- Auta a taxíky se třemi nebo více cestujícími získají slevu 1,00 dolarů.
+- Autobusy, které jsou méně než 50% plné platit extra 2,00 dolarů.
+- Autobusy, které jsou více než 90% plné získat slevu 1,00 dolarů.
 
-Tato pravidla lze implementovat pomocí **vzoru vlastnosti** ve stejném výrazu přepínače. Po určení typu se vzorek vlastnosti prověřuje vlastnostmi objektu. Jednotlivý případ `Car` se rozšíří na čtyři různé případy:
+Tato pravidla lze implementovat pomocí **vzoru vlastnosti** ve stejném výrazu přepínač. Vzor vlastností zkoumá vlastnosti objektu po určení typu. Jediný případ pro `Car` rozšíření na čtyři různé případy:
 
 ```csharp
 vehicle switch
@@ -166,9 +166,9 @@ vehicle switch
 };
 ```
 
-První tři případy testují typ jako `Car`a pak zkontrolují hodnotu vlastnosti `Passengers`. Pokud oba odpovídají, vyhodnotí se tento výraz a vrátí se.
+První tři případy test typu `Car`jako , pak `Passengers` zkontrolujte hodnotu vlastnosti. Pokud obě shody, tento výraz je vyhodnocena a vrácena.
 
-Také rozšíříte případy pro Taxis podobným způsobem:
+Byste také rozšířit případy pro taxíky podobným způsobem:
 
 ```csharp
 vehicle switch
@@ -184,9 +184,9 @@ vehicle switch
 };
 ```
 
-V předchozím příkladu byla klauzule `when` v konečném případě vynechána.
+V předchozím příkladu `when` byla klauzule vynechána v konečném případě.
 
-Dále implementujte pravidla obsazení rozšířením případů pro autobusy, jak je znázorněno v následujícím příkladu:
+Dále implementujte pravidla obsazenosti rozšířením případů pro autobusy, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 vehicle switch
@@ -201,12 +201,12 @@ vehicle switch
 };
 ```
 
-Autorita pro telefonní linky se netýká počtu cestujících v dodacích vozíkech. Místo toho upraví hodnotu mýtné na základě váhy třídy nákladových vozíků následujícím způsobem:
+Mýtný úřad se nezabývá počtem cestujících v dodávkách. Místo toho upraví výši mýtného na základě hmotnostní třídy nákladních vozidel takto:
 
-- Za vozíky nad 5000 kg se účtuje extra $5,00.
-- Lehkými nákladními za 3000 kg se předává sleva $2,00.
+- Nákladní vozidla nad 5000 liber jsou účtovány extra 5,00 dolarů.
+- Lehké nákladní automobily pod 3000 liber jsou uvedeny 2,00 dolarů slevu.
 
-Toto pravidlo je implementováno s následujícím kódem:
+Toto pravidlo je implementováno pomocí následujícího kódu:
 
 ```csharp
 vehicle switch
@@ -219,7 +219,7 @@ vehicle switch
 };
 ```
 
-Předchozí kód ukazuje klauzuli `when` ARM přepínače. Použijte klauzuli `when` pro testování jiných podmínek než rovnosti u vlastnosti. Až budete hotovi, budete mít metodu, která vypadá podobně jako následující:
+Předchozí kód zobrazuje `when` klauzuli ramene switch. Klauzule `when` slouží k testování podmínek jiných než rovnost na vlastnost. Po dokončení budete mít metodu, která vypadá podobně jako následující:
 
 ```csharp
 vehicle switch
@@ -241,15 +241,15 @@ vehicle switch
     DeliveryTruck t when (t.GrossWeightClass > 5000) => 10.00m + 5.00m,
     DeliveryTruck t when (t.GrossWeightClass < 3000) => 10.00m - 2.00m,
     DeliveryTruck t => 10.00m,
-    
+
     { }     => throw new ArgumentException(message: "Not a known vehicle type", paramName: nameof(vehicle)),
     null    => throw new ArgumentNullException(nameof(vehicle))
 };
 ```
 
-Mnohé z těchto palných zbraní jsou příklady **rekurzivních vzorů**. Například `Car { Passengers: 1}` zobrazuje v rámci vzoru vlastnosti konstantní vzorek.
+Mnohé z těchto přepínačů jsou příklady **rekurzivních vzorů**. Například `Car { Passengers: 1}` zobrazuje konstantní vzorek uvnitř vzoru vlastností.
 
-Pomocí vnořených přepínačů můžete tento kód méně vyměnit. V předchozích příkladech mají `Car` a `Taxi` obě různé zbraně. V obou případech můžete vytvořit vzor typu, který bude informační kanál do vzoru vlastnosti. Tato technika je znázorněna v následujícím kódu:
+Tento kód můžete provést méně opakující se pomocí vnořené přepínače. `Car` A `Taxi` oba mají čtyři různé zbraně v předchozích příkladech. V obou případech můžete vytvořit vzorek textu, který se vkládá do vzoru vlastností. Tato technika je uvedena v následujícím kódu:
 
 ```csharp
 public decimal CalculateToll(object vehicle) =>
@@ -284,42 +284,42 @@ public decimal CalculateToll(object vehicle) =>
     };
 ```
 
-V předchozím příkladu použití rekurzivního výrazu znamená, že neopakujete `Car` a `Taxi` zbraně obsahující podřízená ramena, která testují hodnotu vlastnosti. Tato technika se nepoužívá pro `Bus` a `DeliveryTruck` zbraně, protože tyto zbraně jsou testovací rozsahy pro vlastnost, nikoli diskrétní hodnoty.
+V předchozí ukázce použití rekurzivního výrazu znamená, že neopakujete `Car` a `Taxi` ramena obsahující podřízené ramena, která testují hodnotu vlastnosti. Tato technika se nepoužívá `Bus` pro `DeliveryTruck` a zbraně, protože tyto zbraně jsou testovací rozsahy pro vlastnost, nikoli diskrétní hodnoty.
 
-## <a name="add-peak-pricing"></a>Přidat ceny ve špičce
+## <a name="add-peak-pricing"></a>Přidání špičkových cen
 
-U konečné funkce chce autorita pro telefonní linky přidat ceny za špičku v časově citlivém čase. Během ráno a večer nespěcháte hodin se telefonní linky zdvojnásobí. Toto pravidlo má vliv pouze na provoz v jednom směru: příchozí na město v ráno a odchozí v večer nespěcháte hodinu. Během jiné doby během pracovního dne se telefonní linky zvyšují o 50%. Pozdě v noci a včas ráno se telefonní linky snižují o 25%. Během víkendu se jedná o normální sazbu bez ohledu na čas.
+Pro konečnou funkci chce orgán pro výběr mýtného přidat časově citlivé ceny ve špičce. Během ranní a večerní špičky se mýtné zdvojnásobí. Toto pravidlo ovlivňuje pouze provoz v jednom směru: příchozí do města v dopoledních hodinách, a odchozí ve večerní špičce. Během jiných časů během pracovního dne se mýtné zvyšuje o 50 %. Pozdě v noci a brzy ráno se mýtné snižuje o 25%. Během víkendu je to běžná sazba, bez ohledu na čas.
 
-Pro tuto funkci použijete porovnávání vzorů, ale budete je integrovat s jinými technikami. Můžete sestavit výraz porovnávání s jednou maskou, který by měl být v souladu se všemi kombinacemi směr, den v týdnu a čas. Výsledkem by byl složitý výraz. Bylo těžké ho přečíst a obtížně pochopit. Díky tomu je obtížné zajistit správnost. Místo toho Zkombinujte tyto metody pro sestavení řazené kolekce členů hodnot, které stručně popisují všechny tyto stavy. Pak použijte porovnávání vzorů k výpočtu násobitele pro mýtné. Řazená kolekce členů obsahuje tři diskrétní podmínky:
+Budete používat porovnávání vzorů pro tuto funkci, ale budete integrovat s jinými technikami. Můžete vytvořit jeden vzor odpovídající výraz, který by účet pro všechny kombinace směru, den v týdnu a čas. Výsledkem by byl složitý výraz. Bylo by těžké číst a těžko pochopit. To ztěžuje zajištění správnosti. Místo toho zkombinujte tyto metody k vytvoření řazené kolekce členů s hodnotami, které výstižně popisují všechny tyto stavy. Pak použijte porovnávání vzorů k výpočtu multiplikátoru pro mýtné. Řazená kolekce členů obsahuje tři diskrétní podmínky:
 
-- Den je buď den v týdnu, nebo víkend.
-- Časové pásmo, ve kterém se má linka nashromáždit.
-- Směr je na město nebo od města.
+- Den je buď všední den nebo víkend.
+- Pásmo času, kdy se vybírá mýtné.
+- Směr je do města nebo mimo město
 
 V následující tabulce jsou uvedeny kombinace vstupních hodnot a násobitele cen ve špičce:
 
-| Day        | Čas         | Směr | Premium |
+| Den        | Time         | Směr | Premium |
 | ---------- | ------------ | --------- |--------:|
-| Názvy    | ráno nespěcháte | příjem   | × 2,00  |
-| Názvy    | ráno nespěcháte | komunikace  | × 1,00  |
-| Názvy    | Daytime      | příjem   | × 1,50  |
-| Názvy    | Daytime      | komunikace  | × 1,50  |
-| Názvy    | večerní nespěcháte | příjem   | × 1,00  |
-| Názvy    | večerní nespěcháte | komunikace  | × 2,00  |
-| Názvy    | přes noc    | příjem   | × 0,75  |
-| Názvy    | přes noc    | komunikace  | × 0,75  |
-| Volné    | ráno nespěcháte | příjem   | × 1,00  |
-| Volné    | ráno nespěcháte | komunikace  | × 1,00  |
-| Volné    | Daytime      | příjem   | × 1,00  |
-| Volné    | Daytime      | komunikace  | × 1,00  |
-| Volné    | večerní nespěcháte | příjem   | × 1,00  |
-| Volné    | večerní nespěcháte | komunikace  | × 1,00  |
-| Volné    | přes noc    | příjem   | × 1,00  |
-| Volné    | přes noc    | komunikace  | × 1,00  |
+| Weekday    | ranní spěch | inbound   | x 2,00  |
+| Weekday    | ranní spěch | Odchozí  | x 1,00  |
+| Weekday    | Denní      | inbound   | x 1,50  |
+| Weekday    | Denní      | Odchozí  | x 1,50  |
+| Weekday    | večerní spěch | inbound   | x 1,00  |
+| Weekday    | večerní spěch | Odchozí  | x 2,00  |
+| Weekday    | Přes noc    | inbound   | x 0,75  |
+| Weekday    | Přes noc    | Odchozí  | x 0,75  |
+| Weekend    | ranní spěch | inbound   | x 1,00  |
+| Weekend    | ranní spěch | Odchozí  | x 1,00  |
+| Weekend    | Denní      | inbound   | x 1,00  |
+| Weekend    | Denní      | Odchozí  | x 1,00  |
+| Weekend    | večerní spěch | inbound   | x 1,00  |
+| Weekend    | večerní spěch | Odchozí  | x 1,00  |
+| Weekend    | Přes noc    | inbound   | x 1,00  |
+| Weekend    | Přes noc    | Odchozí  | x 1,00  |
 
-Existují 16 různých kombinací tří proměnných. Kombinací některých podmínek zjednodušete výraz finálního přepínače.
+Existuje 16 různých kombinací tří proměnných. Kombinací některých podmínek zjednodušíte konečný výraz přepínače.
 
-Systém, který shromažďuje mýtné, používá strukturu <xref:System.DateTime> pro čas, kdy byla placená linka shromažďována. Sestavujte členské metody, které vytvoří proměnné z předchozí tabulky. Následující funkce používá výraz porovnávání vzorů k vyjádření, zda <xref:System.DateTime> představuje víkend nebo den v týdnu:
+Systém, který vybírá mýtné, <xref:System.DateTime> používá strukturu pro čas, kdy bylo mýtné vybráno. Vytvořte členské metody, které vytvářejí proměnné z předchozí tabulky. Následující funkce používá vzor odpovídající přepínač výraz <xref:System.DateTime> vyjádřit, zda představuje víkend nebo den v týdnu:
 
 ```csharp
 private static bool IsWeekDay(DateTime timeOfToll) =>
@@ -335,27 +335,27 @@ private static bool IsWeekDay(DateTime timeOfToll) =>
     };
 ```
 
-Tato metoda funguje, ale je repetitious. Můžete ho zjednodušit, jak je znázorněno v následujícím kódu:
+Tato metoda funguje, ale je to opakující se. Můžete jej zjednodušit, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[IsWeekDay](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
 
-Dále přidejte podobnou funkci pro kategorizaci času do bloků:
+Dále přidejte podobnou funkci kategorizovat čas do bloků:
 
 [!code-csharp[GetTimeBand](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
 
-Předchozí metoda nepoužívá porovnávání vzorů. Je jasné, že se seznámíte s `if`mi příkazy. Můžete přidat privátní `enum` pro převod jednotlivých časových úseků na samostatnou hodnotu.
+Předchozí metoda nepoužívá porovnávání vzorů. Je to jasnější pomocí známé `if` kaskády prohlášení. Přidáte soukromé `enum` převést každý rozsah času na diskrétní hodnotu.
 
-Po vytvoření těchto metod můžete použít jiný výraz `switch` se **vzorem řazené kolekce členů** pro výpočet cenové úrovně Premium. Můžete sestavit výraz `switch` se všemi 16 opěrkami rukou:
+Po vytvoření těchto metod můžete `switch` použít jiný výraz se **vzorem řazené kolekce členů** k výpočtu cenové prémie. Dalo by `switch` se vytvořit výraz se všemi 16 zbraněmi:
 
 [!code-csharp[FullTuplePattern](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
 
-Výše uvedený kód funguje, ale může být zjednodušený. Všechny osm kombinací pro daný víkend mají stejnou mýtné. Všechna osm můžete nahradit následujícím řádkem:
+Výše uvedený kód funguje, ale může být zjednodušen. Všech osm kombinací na víkend má stejnou daň. Všech osm můžete nahradit následujícím řádkem:
 
 ```csharp
 (false, _, _) => 1.0m,
 ```
 
-Příchozí i odchozí provoz mají stejný násobitel během dne v týdnu denní a jednodenních hodin. Tyto čtyři paže s přepínačem lze nahradit následujícími dvěma řádky:
+Příchozí i odchozí provoz mají stejný multiplikátor během denních a nočních hodin ve všední den. Tato čtyři ramena spínače mohou být nahrazena těmito dvěma řádky:
 
 ```csharp
 (true, TimeBand.Overnight, _) => 0.75m,
@@ -378,14 +378,14 @@ public decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
     };
 ```
 
-Nakonec můžete odebrat dvě nespěcháte hodiny, které platí pro běžnou cenu. Po odebrání těchto zbraní můžete `false` nahradit pomocí zahození (`_`) v konečném přepínači ARM. Budete mít následující metodu, kterou jste dokončili:
+Nakonec můžete odstranit dvě doby dopravní špičky, které platí běžnou cenu. Jakmile tato ramena vyjmete, můžete je v posledním rameni spínače nahradit `false` výmětem (`_`). Budete mít následující hotovou metodu:
 
 [!code-csharp[SimplifiedTuplePattern](../../../samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
 
-Tento příklad zvýrazňuje jednu z výhod porovnávání vzorů: větve vzorů jsou vyhodnocovány v pořadí. V případě, že je změníte jejich uspořádání tak, aby předchozí větev zpracovává jeden z vašich pozdějších případů, kompilátor vás upozorní na nedosažitelný kód. Tato jazyková pravidla usnadňují provádění předchozích zjednodušení s jistotou, že se kód nezměnil.
+Tento příklad zvýrazní jednu z výhod porovnávání vzorů: větve vzoru jsou vyhodnoceny v pořadí. Pokud je změníte uspořádání tak, aby starší větev zpracovává jeden z vašich pozdějších případů, kompilátor vás upozorní na nedostupný kód. Tato jazyková pravidla usnadnila předchozí zjednodušení s jistotou, že se kód nezměnil.
 
-Porovnávání vzorů usnadňuje čtení některých typů kódu a nabízí alternativu k objektově orientovaným technikám, když nemůžete přidat kód do tříd. Cloud způsobuje živá data a funkce. *Tvar* dat a jeho *operace* nejsou nutně popsány společně. V tomto kurzu jste ze své původní funkce využili stávající data zcela různými způsoby. Porovnávání vzorů vám dává možnost psát funkce, které tyto typy overrode, i když je nemůžete roztáhnout.
+Porovnávání vzorů umožňuje některé typy kódu čitelnější a nabízí alternativu k objektově orientované techniky, když nelze přidat kód do tříd. Cloud způsobuje, že data a funkce žijí odděleně. *Tvar* dat a *operace* na něm nejsou nutně popsány společně. V tomto kurzu jste spotřebovávají existující data zcela odlišnými způsoby než původní funkce. Porovnávání vzorů vám dalo možnost psát funkce, které tyto typy přeruší, i když je nelze rozšířit.
 
 ## <a name="next-steps"></a>Další kroky
 
-Hotový kód si můžete stáhnout z úložiště GitHub [/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/finished) GitHub. Prozkoumejte vlastní modely a přidejte tuto techniku do vašich běžných kódovacích aktivit. Výukové postupy poskytují další způsob přístupu k problémům a vytváření nových funkcí.
+Hotový kód si můžete stáhnout z úložiště [GitHub dotnet/samples.](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/finished) Prozkoumejte vzory na vlastní pěst a přidejte tuto techniku do svých pravidelných kódovacích aktivit. Učení těchto technik vám dává jiný způsob, jak přistupovat k problémům a vytvářet nové funkce.

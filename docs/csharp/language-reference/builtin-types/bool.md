@@ -1,5 +1,5 @@
 ---
-title: typ bool – C# referenční informace
+title: bool typ - C# odkaz
 ms.date: 11/26/2019
 f1_keywords:
 - bool
@@ -8,43 +8,43 @@ helpviewer_keywords:
 - bool data type [C#]
 - Boolean [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 0e01c183ef07c23203619e0cbbf550c6268bdd46
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 2ba2e54a6b0f24402fc3728dfe19b548a2368830
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239830"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846442"
 ---
-# <a name="bool-c-reference"></a>bool (C# Referenční dokumentace)
+# <a name="bool-c-reference"></a>bool (odkaz C#)
 
-Klíčové slovo typu `bool` je alias pro typ struktury .NET <xref:System.Boolean?displayProperty=nameWithType>, který představuje logickou hodnotu, která může být buď `true`, nebo `false`.
+Klíčové `bool` slovo typu je alias <xref:System.Boolean?displayProperty=nameWithType> pro typ struktury .NET, který představuje `true` `false`logickou hodnotu, která může být buď nebo .
 
-K provedení logických operací s hodnotami `bool`ho typu použijte logické [logické](../operators/boolean-logical-operators.md) operátory. Typ `bool` je výsledný typ operátoru [porovnání](../operators/comparison-operators.md) a [rovnosti](../operators/equality-operators.md) . Výraz `bool` může být řídicí podmíněný výraz v příkazech [if](../keywords/if-else.md), [do](../keywords/do.md), [while](../keywords/while.md)a [for](../keywords/for.md) a v [podmíněných operátorech `?:`](../operators/conditional-operator.md).
+Chcete-li provádět logické `bool` operace s hodnotami typu, použijte logické operátory [logické hodnoty.](../operators/boolean-logical-operators.md) Typ `bool` je výsledek typ [porovnání](../operators/comparison-operators.md) a [rovnosti](../operators/equality-operators.md) operátory. Výraz `bool` může být řídící podmíněný výraz v [if](../keywords/if-else.md), [do](../keywords/do.md), [while](../keywords/while.md)a [for](../keywords/for.md) statements a v [podmíněném `?:`operátoru ](../operators/conditional-operator.md).
 
-Výchozí hodnota typu `bool` je `false`.
+Výchozí hodnota `bool` typu je `false`.
 
 ## <a name="literals"></a>Literály
 
-Můžete použít `true` a `false` literály k inicializaci `bool` proměnné nebo pro předání hodnoty `bool`:
+Literály `true` a `false` můžete použít k inicializaci `bool` proměnné `bool` nebo k předání hodnoty:
 
-[!code-csharp-interactive[bool literals](~/samples/snippets/csharp/language-reference/builtin-types/BoolType.cs#Literals)]
+[!code-csharp-interactive[bool literals](snippets/BoolType.cs#Literals)]
 
-## <a name="three-valued-boolean-logic"></a>Logická logika se třemi hodnotami
+## <a name="three-valued-boolean-logic"></a>Trojcenná logická logika
 
-Použijte `bool?` typ s možnou hodnotou null, pokud potřebujete podporovat logiku se třemi hodnotami, například při práci s databázemi, které podporují logický typ se třemi hodnotami. Pro operandy `bool?` jsou předdefinované operátory `&` a `|` podporovány v rámci logiky se třemi hodnotami. Další informace naleznete v části s [možnou hodnotou null logických operátorů](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](../operators/boolean-logical-operators.md) .
+Použijte typ `bool?` s možnou hodnotou null, pokud potřebujete podporovat logiku se třemi hodnotami, například při práci s databázemi, které podporují tříhodnotný logický typ. Pro `bool?` operandy předdefinované `&` a `|` operátory podporují logiku se třemi hodnotami. Další informace naleznete v části [Nullable Boolean logické operátory](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) článku [logické operátory logické.](../operators/boolean-logical-operators.md)
 
-Další informace o typech hodnot s možnou hodnotou null naleznete v tématu [typy hodnot s možnou hodnotou null](nullable-value-types.md).
+Další informace o typech hodnot s možnou hodnotou s možnou hodnotou null naleznete v [tématu Nullable typy hodnot](nullable-value-types.md).
 
 ## <a name="conversions"></a>Převody
 
-C#poskytuje pouze dva převody, které zahrnují `bool` typ. Jedná se o implicitní převod na odpovídající typ `bool?` s možnou hodnotou null a explicitní převod z `bool?` typu. Nicméně rozhraní .NET poskytuje další metody, které lze použít pro převod na nebo z `bool`ho typu. Další informace naleznete v části [Převod do a z logických hodnot](/dotnet/api/system.boolean#converting-to-and-from-boolean-values) na referenční stránce rozhraní API <xref:System.Boolean?displayProperty=nameWithType>.
+C# poskytuje pouze dva převody, které zahrnují `bool` typ. Jedná se o implicitní převod `bool?` na odpovídající typ `bool?` s možnou hodnotou null a explicitní převod z typu. Síť .NET však poskytuje další metody, které `bool` můžete použít k převodu na nebo z typu. Další informace naleznete v části [Převod do a z logické hodnoty](/dotnet/api/system.boolean#converting-to-and-from-boolean-values) na referenční stránce <xref:System.Boolean?displayProperty=nameWithType> rozhraní API.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace naleznete v části [typ bool](~/_csharplang/spec/types.md#the-bool-type) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [Bool typ](~/_csharplang/spec/types.md#the-bool-type) [specifikace jazyka C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - [Typy hodnot](value-types.md)
-- [operátory true a false](../operators/true-false-operators.md)
+- [true a false – operátory](../operators/true-false-operators.md)

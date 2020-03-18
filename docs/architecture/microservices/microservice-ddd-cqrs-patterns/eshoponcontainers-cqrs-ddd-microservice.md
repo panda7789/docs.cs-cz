@@ -1,55 +1,55 @@
 ---
 title: Použití přístupů CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení způsobu implementace CQRS při řazení mikroslužeb v eShopOnContainers.
-ms.date: 10/08/2018
-ms.openlocfilehash: 0380e759595e8a159e89f858a5ced4dacfa4e9b4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Pochopit způsob CQRS je implementována v objednávání mikroslužby v eShopOnContainers.
+ms.date: 03/03/2020
+ms.openlocfilehash: 16fe46189a5b43591adebbb764d4acef2f7efbfb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295918"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847151"
 ---
-# <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použití CQRS a CQS přístupů v mikroslužbě DDD v eShopOnContainers
+# <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použití přístupů CQRS a CQS v mikroslužbě DDD v eShopOnContainers
 
-Návrh mikroslužby pro řazení v referenční aplikaci eShopOnContainers je založen na zásadách CQRS. Používá ale nejjednodušší přístup, který právě odděluje dotazy z příkazů a používá stejnou databázi pro obě akce.
+Návrh objednávání mikroslužby v referenční aplikaci eShopOnContainers je založen na principech CQRS. Používá však nejjednodušší přístup, který je pouze oddělení dotazů z příkazů a použití stejné databáze pro obě akce.
 
-Podstatou těchto vzorů a důležitého bodu je, že dotazy jsou idempotentní: bez ohledu na to, kolikrát se systém dotazuje, se stav tohoto systému nezmění. Jinými slovy, dotazy mají volné vedlejší účinky.
+Podstatou těchto vzorů, a důležitý bod zde, je, že dotazy jsou idempotentní: bez ohledu na to, kolikrát dotaz systému, stav tohoto systému se nezmění. Jinými slovy, dotazy jsou bez vedlejších účinků.
 
-Proto můžete použít jiný datový model "čtení", než je transakční logika "zápisy" do doménového modelu, přestože řazení mikroslužeb používá stejnou databázi. Proto jde o zjednodušený přístup k CQRS.
+Proto můžete použít jiný datový model "čtení" než transakční logika "zapíše" model domény, i když řazení mikroslužeb používají stejnou databázi. Jedná se tedy o zjednodušený přístup CQRS.
 
-Na druhé straně příkazy, které aktivují transakce a aktualizace dat, mění stav v systému. V případě příkazů musíte být opatrní při práci se složitou složitostí a neustále se měnícími obchodními pravidly. Tady je místo, kde se mají lépe modelovat systém s použitím DDD.
+Na druhou stranu příkazy, které aktivují transakce a aktualizace dat, mění stav v systému. S příkazy, musíte být opatrní při řešení složitosti a neustále se měnící obchodní pravidla. To je místo, kde chcete použít DDD techniky mít lepší modelovaný systém.
 
-Vzory DDD uvedené v této příručce by se neměly použít univerzálním způsobem. Zavádějí na návrh omezení. Tato omezení poskytují výhody, jako je vyšší kvalita v čase, zejména příkazy a jiný kód, který mění stav systému. Tato omezení však přidávají složitost s méně výhodami pro čtení a dotazování dat.
+Vzory DDD uvedené v této příručce by neměly být aplikovány univerzálně. Zavádějí omezení vašeho návrhu. Tato omezení poskytují výhody, jako je vyšší kvalita v průběhu času, zejména v příkazech a další kód, který upravuje stav systému. Tato omezení však přidat složitost s menšími výhodami pro čtení a dotazování dat.
 
-Jedním z těchto vzorů je agregovaný vzor, který prověříme v dalších částech. V rámci agregovaného vzoru se v důsledku relace v doméně považovat mnoho doménových objektů za jednu jednotku. V dotazech nesmíte vždycky získat výhody z tohoto vzoru. může zvýšit složitost logiky dotazů. Pro dotazy jen pro čtení nezískáte výhody zpracování více objektů jako jedné agregace. Získáte pouze složitost.
+Jedním z takových vzorů je agregační vzor, který zkoumáme více v pozdějších částech. Stručně řečeno, v agregační vzor považovat mnoho objektů domény jako jedna jednotka v důsledku jejich vztahu v doméně. Nemusí vždy získat výhody z tohoto vzoru v dotazech; může zvýšit složitost logiky dotazu. Pro dotazy jen pro čtení nezískáte výhody považovat za více objektů za jeden Agregace. Dostanete jen složitost.
 
-Jak je znázorněno na obrázku 7-2, tato příručka navrhuje používání vzorů DDD pouze v oblasti transakčního a aktualizovaného prostředí mikroslužeb (to znamená, jak jsou spouštěny pomocí příkazů). Dotazy mohou sledovat jednodušší přístup a měly by být odděleny od příkazů po CQRS přístupu.
+Jak je znázorněno na obrázku 7-2 v předchozí části, tato příručka navrhuje použití vzorů DDD pouze v oblasti transakční/aktualizace mikroslužeb (to znamená, jak je spuštěno příkazy). Dotazy mohou postupovat podle jednodušší přístup a by měly být odděleny od příkazů, podle přístupu CQRS.
 
-Pro implementaci "na straně" dotazů si můžete vybrat z mnoha přístupů, od celého plnohodnotnou ORM, jako je EF Core, projekce s automapper, uložené procedury, zobrazení, materializovaná zobrazení nebo mikroorm.
+Pro implementaci "dotazů strana", můžete si vybrat mezi mnoha přístupy, z vašeho full-foukané ORM jako EF Core, AutoMapper projekce, uložené procedury, zobrazení, materialized zobrazení nebo mikro ORM.
 
-V této příručce a v eShopOnContainers (konkrétně pro objednávání mikroslužeb) jsme zvolili implementaci přímých dotazů pomocí mikroorm, jako je [dapperem](https://github.com/StackExchange/dapper-dot-net). To vám umožní implementovat jakýkoli dotaz založený na příkazech SQL a získat tak nejlepší výkon díky světlému rozhraní s velmi nízkou režií.
+V této příručce a v eShopOnContainers (konkrétně objednávání mikroslužby) jsme se rozhodli implementovat přímé dotazy pomocí micro ORM jako [Dapper](https://github.com/StackExchange/dapper-dot-net). To umožňuje implementovat libovolný dotaz založený na příkazech SQL, abyste získali nejlepší výkon díky světelnému rámci s velmi malou režií.
 
-Všimněte si, že když použijete tento přístup, všechny aktualizace modelu, které mají vliv na způsob, jakým jsou entity trvale uložené v databázi SQL Database, potřebují také samostatné aktualizace pro dotazy SQL, které používá Dapperem nebo jakékoli jiné samostatné metody (jiné než EF) k dotazování.
+Všimněte si, že při použití tohoto přístupu všechny aktualizace modelu, které mají vliv na způsob, jakým jsou entity trvalé do databáze SQL také potřebovat samostatné aktualizace sql dotazů používaných Dapper nebo jiné samostatné (non-EF) přístupy k dotazování.
 
-## <a name="cqrs-and-ddd-patterns-are-not-top-level-architectures"></a>Vzory CQRS a DDD nejsou architektury nejvyšší úrovně.
+## <a name="cqrs-and-ddd-patterns-are-not-top-level-architectures"></a>Vzory CQRS a DDD nejsou architektury nejvyšší úrovně
 
-Je důležité pochopit, že CQRS a většinu vzorů DDD (například DDD vrstvy nebo doménový model s agregacemi) nejsou strukturální styly, ale jenom vzory architektury. Příklady stylů architektury jsou mikroslužby, SOA a architektura řízená událostmi (EDA). Popisují systém mnoha součástí, například mnoho mikroslužeb. Vzory CQRS a DDD popisují něco v jednom systému nebo komponentě; v tomto případě je to něco uvnitř mikroslužby.
+Je důležité si uvědomit, že CQRS a většina vzorů DDD (jako vrstvy DDD nebo model domény s agregacemi) nejsou architektonické styly, ale pouze vzory architektury. Mikroslužeb, SOA a architektura řízená událostmi (EDA) jsou příklady architektonických stylů. Popisují systém mnoha součástí, jako je například mnoho mikroslužeb. Vzory CQRS a DDD popisují něco uvnitř jednoho systému nebo součásti; v tomto případě něco uvnitř mikroslužby.
 
-Různé ohraničené kontexty (BCs) budou používat různé vzory. Mají různé zodpovědnosti a to vede k různým řešením. Je nutné zdůraznit, že vynucení stejného vzoru všude vede k selhání. Nepoužívejte vzory CQRS a DDD všude. Mnohé subsystémy, BCs nebo mikroslužby jsou jednodušší a je možné je snadno implementovat pomocí jednoduchých služeb CRUD nebo pomocí jiného přístupu.
+Různé ohraničené kontexty (BCs) bude využívat různé vzory. Mají různé povinnosti, a to vede k různým řešením. Stojí za to zdůraznit, že vynucení stejného vzoru všude vede k neúspěchu. Nepoužívejte vzory CQRS a DDD všude. Mnoho subsystémů, bc nebo mikroslužeb jsou jednodušší a lze implementovat snadněji pomocí jednoduchých služeb CRUD nebo pomocí jiného přístupu.
 
-Existuje pouze jedna architektura aplikace: architektura systému nebo komplexní aplikace, kterou navrhujete (například architektura mikroslužeb). Návrh každého vázaného kontextu nebo mikroslužby v této aplikaci ale odráží vlastní kompromisy a interní rozhodnutí o návrhu na úrovni schémat architektury. Nepokoušejte se použít stejné vzory architektury jako CQRS nebo DDD všude.
+Existuje pouze jedna architektura aplikace: architektura systému nebo end-to-end aplikace, kterou navrhujete (například architektura mikroslužeb). Návrh každého ohraničeného kontextu nebo mikroslužby v rámci této aplikace však odráží jeho vlastní kompromisy a interní rozhodnutí o návrhu na úrovni vzorů architektury. Nepokoušejte se použít stejné architektonické vzory jako CQRS nebo DDD všude.
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
-- **Martin Fowlera. CQRS** \
+- **Martin Fowler. CQRS** \
   <https://martinfowler.com/bliki/CQRS.html>
 
 - **Greg Young. Dokumenty CQRS** \
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>
 
-- **UDI Dahan. Vyjasněné \ CQRS**
+- **Udi Dahan. Vyjasněné CQRS** \
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
 >[!div class="step-by-step"]
 >[Předchozí](apply-simplified-microservice-cqrs-ddd-patterns.md)
->[Další](cqrs-microservice-reads.md)
+>[další](cqrs-microservice-reads.md)

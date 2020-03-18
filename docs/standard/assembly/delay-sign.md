@@ -13,29 +13,29 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 113df1ad3fc3ac1e27ebfef572494c1f15a3dbb5
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73733172"
 ---
 # <a name="delay-sign-an-assembly"></a>Opožděný podpis sestavení
 
-Organizace může mít pečlivě chráněný pár klíčů, ke kterým můžou vývojáři získat přístup denně. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezený jenom na pár jednotlivců. Při vývoji sestavení se silnými názvy obsahuje každé sestavení, které odkazuje na cílové sestavení se silným názvem, token veřejného klíče, který slouží k poskytnutí silného názvu cílového sestavení. K tomu je potřeba, aby byl během procesu vývoje dostupný veřejný klíč.
+Organizace může mít pečlivě střežený pár klíčů, ke kterému vývojáři nemají přístup každý den. Veřejný klíč je často k dispozici, ale přístup k soukromému klíči je omezen pouze na několik osob. Při vývoji sestavení se silnými názvy obsahuje každé sestavení, které odkazuje na sestavení cíle se silným názvem, token veřejného klíče, který slouží k tomu, aby cílové sestavení bylo silným názvem. To vyžaduje, aby veřejný klíč byl k dispozici během procesu vývoje.
 
-Můžete použít zpožděné nebo částečné podepisování v době sestavení a rezervovat tak místo v přenositelném spustitelném souboru (PE) pro podpis silného názvu, ale odložit skutečné přihlášení do pozdější fáze, obvykle těsně před expedicí sestavení.
+Můžete použít zpožděné nebo částečné podepisování v době sestavení k rezervaci místa v přenosném spustitelném souboru (PE) pro podpis silného názvu, ale odložit skutečné podepisování na nějakou pozdější fázi, obvykle těsně před odesláním sestavení.
 
-Zpožděné podepsání sestavení:
+Zpoždění-podepsat sestavení:
 
-1. Získejte veřejnou klíčovou část páru klíčů od organizace, která provede případné podepisování. Obvykle je tento klíč ve formě souboru *. snk* , který lze vytvořit pomocí [nástroje silného názvu (Sn. exe)](../../framework/tools/sn-exe-strong-name-tool.md) , který poskytuje Windows SDK.
+1. Získejte část veřejného klíče dvojice klíčů od organizace, která bude dělat případné podepisování. Obvykle je tento klíč ve formě souboru *.snk,* který lze vytvořit pomocí [nástroje Silný název (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) poskytovaného sadou Windows SDK.
 
-2. Opatřit zdrojový kód pro sestavení pomocí dvou uživatelských atributů z <xref:System.Reflection>:
+2. Osušte zdrojový kód sestavení dvěma vlastními atributy z <xref:System.Reflection>:
 
-   - <xref:System.Reflection.AssemblyKeyFileAttribute>, která předá do svého konstruktoru název souboru obsahujícího veřejný klíč jako parametr.
+   - <xref:System.Reflection.AssemblyKeyFileAttribute>, který předá název souboru obsahujícího veřejný klíč jako parametr jeho konstruktoru.
 
-   - <xref:System.Reflection.AssemblyDelaySignAttribute>, která označuje, že se opožděné podepisování používá předáním **hodnoty true** jako parametru konstruktoru.
+   - <xref:System.Reflection.AssemblyDelaySignAttribute>, což znamená, že podepisování zpoždění se používá předáním **true** jako parametr jeho konstruktoru.
 
-   Příklad:
+   Například:
 
    ```cpp
    [assembly:AssemblyKeyFileAttribute("myKey.snk")];
@@ -52,40 +52,40 @@ Zpožděné podepsání sestavení:
    <Assembly:AssemblyDelaySignAttribute(True)>
    ```
 
-3. Kompilátor vloží veřejný klíč do manifestu sestavení a rezervuje místo v souboru PE pro úplný podpis silného názvu. Skutečný veřejný klíč musí být uložen v době, kdy sestavení je sestaveno, aby ostatní sestavení, která odkazují na toto sestavení, mohla získat klíč pro uložení do vlastního odkazu na sestavení.
+3. Kompilátor vloží veřejný klíč do manifestu sestavení a rezervuje místo v souboru PE pro úplný podpis silného názvu. Skutečný veřejný klíč musí být uložen při sestavení je sestaven tak, aby ostatní sestavení, které odkazují na toto sestavení můžete získat klíč pro uložení v jejich vlastní odkaz na sestavení.
 
-4. Vzhledem k tomu, že sestavení nemá platný podpis silného názvu, musí být ověření podpisu vypnuto. To můžete provést pomocí možnosti **– VR** s nástrojem Strong Name.
+4. Vzhledem k tomu, že sestavení nemá platný podpis silného názvu, musí být ověření tohoto podpisu vypnuto. Můžete to udělat pomocí volby **–Vr** s nástrojem Silný název.
 
-     Následující příklad vypne ověřování pro sestavení s názvem *MyAssembly. dll*.
+     Následující příklad vypne ověření pro sestavení s názvem *myAssembly.dll*.
 
    ```console
    sn –Vr myAssembly.dll
    ```
 
-   Pokud chcete vypnout ověřování na platformách, u kterých nemůžete spustit nástroj silného názvu, jako jsou mikroprocesory ARM (Advanced RISC Machine), použijte k vytvoření souboru registru možnost **– VK** . Importujte soubor registru do registru v počítači, ve kterém chcete vypnout ověřování. Následující příklad vytvoří soubor registru pro `myAssembly.dll`.
+   Chcete-li vypnout ověřování na platformách, kde nelze spustit nástroj Silný název, jako jsou mikroprocesory Advanced RISC Machine (ARM), vytvořte soubor registru pomocí možnosti **–Vk.** Importujte soubor registru do registru v počítači, ve kterém chcete ověření vypnout. Následující příklad vytvoří soubor `myAssembly.dll`registru pro .
 
    ```console
    sn –Vk myRegFile.reg myAssembly.dll
    ```
 
-   Pomocí možnosti **-VR** nebo **– VK** můžete volitelně zahrnout soubor *. snk* pro podepisování testovacího klíče.
+   S možností **–Vr** nebo **–Vk** můžete volitelně zahrnout soubor *.snk* pro podepisování testovacího klíče.
 
    > [!WARNING]
-   > Nespoléhá se na silné názvy zabezpečení. Poskytují pouze jedinečnou identitu.
+   > Nespoléhejte se na silné názvy pro zabezpečení. Poskytují pouze jedinečnou identitu.
 
    > [!NOTE]
-   > Použijete-li zpožděné podepisování během vývoje pomocí sady Visual Studio na 64 počítači a zkompilujete sestavení pro **Libovolný procesor**, bude pravděpodobně nutné použít možnost **-VR** dvakrát. (V aplikaci Visual Studio je **Libovolný procesor** hodnotou vlastnosti sestavení **target Platform** ; při kompilaci z příkazového řádku je to výchozí nastavení.) Chcete-li spustit aplikaci z příkazového řádku nebo z Průzkumníka souborů, použijte 64 verzi programu [sn. exe (nástroj Strong Name)](../../framework/tools/sn-exe-strong-name-tool.md) , chcete-li použít možnost **-VR** pro sestavení. Chcete-li načíst sestavení do sady Visual Studio v době návrhu (například pokud sestavení obsahuje komponenty, které jsou používány jinými sestaveními v aplikaci), použijte 32 verzi nástroje pro silný název. Důvodem je, že kompilátor JIT zkompiluje sestavení do 64 bitového nativního kódu při spuštění sestavení z příkazového řádku a do 32 nativního kódu, když je sestavení načteno do prostředí pro dobu návrhu.
+   > Pokud používáte zpoždění podepisování během vývoje s Visual Studio na 64bitový počítač a zkompilovat sestavení pro **libovolný procesor**, budete muset použít **-VR** možnost dvakrát. (V sadě Visual Studio **je libovolný procesor** hodnotou vlastnosti sestavení Target **platformy;** při kompilaci z příkazového řádku je výchozí.) Chcete-li aplikaci spustit z příkazového řádku nebo z Průzkumníka souborů, použijte 64bitovou verzi [nástroje Sn.exe (nástroj silný název)](../../framework/tools/sn-exe-strong-name-tool.md) k použití možnosti **-Vr** na sestavení. Chcete-li načíst sestavení do sady Visual Studio v době návrhu (například pokud sestava obsahuje součásti, které jsou používány jinými sestaveními v aplikaci), použijte 32bitovou verzi nástroje silného názvu. Důvodem je, že kompilátor just-in-time (JIT) zkompiluje sestavení do 64bitového nativního kódu při spuštění sestavení z příkazového řádku a do 32bitového nativního kódu při načtení sestavení do prostředí návrhu.
 
-5. Později obvykle těsně před expedicí odešlete sestavení do podpisového autority vaší organizace pro skutečný podpis silného názvu pomocí možnosti **– R** s nástrojem silného názvu.
+5. Později, obvykle těsně před odesláním, odešlete sestavení podpisové autoritě vaší organizace pro skutečné podepisování silného názvu pomocí možnosti **–R** pomocí nástroje Silný název.
 
-   Následující příklad podepíše sestavení s názvem *MyAssembly. dll* se silným názvem pomocí páru klíčů *klíči sgKey. snk* .
+   Následující příklad podepisuje sestavení s názvem *myAssembly.dll* se silným názvem pomocí dvojice klíčů *sgKey.snk.*
 
    ```console
    sn -R myAssembly.dll sgKey.snk
    ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Vytváření sestavení](create.md)
-- [Postupy: Vytvoření páru veřejného a soukromého klíče](create-public-private-key-pair.md)
-- [SN. exe (Nástroj pro silný název)](../../framework/tools/sn-exe-strong-name-tool.md)
+- [Postup: Vytvoření páru klíčů veřejného a soukromého sektoru](create-public-private-key-pair.md)
+- [Sn.exe (nástroj silný název)](../../framework/tools/sn-exe-strong-name-tool.md)

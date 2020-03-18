@@ -1,20 +1,20 @@
 ---
-title: Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
+title: Jak řadit nebo filtrovat textová data podle libovolného slova nebo pole (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
 ms.openlocfilehash: e869d57c413d175c092cdc15a6fe54cab94e04b8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347353"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Postup řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (C#)
-Následující příklad ukazuje, jak řadit řádky strukturovaného textu, například hodnoty oddělené čárkami, podle libovolného pole na řádku. Pole lze dynamicky určit za běhu. Předpokládat, že pole v souboru skóre. csv reprezentují číslo ID studenta, po kterém následuje řada čtyř výsledků testu.  
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Jak řadit nebo filtrovat textová data podle libovolného slova nebo pole (LINQ) (C#)
+Následující příklad ukazuje, jak řadit řádky strukturovaného textu, například hodnoty oddělené čárkami, libovolným polem v řádku. Pole může být dynamicky zadáno za běhu. Předpokládejme, že pole v scores.csv představují id číslo studenta, následované řadou čtyř výsledků testů.  
   
-### <a name="to-create-a-file-that-contains-data"></a>Vytvoření souboru, který obsahuje data  
+### <a name="to-create-a-file-that-contains-data"></a>Vytvoření souboru obsahujícího data  
   
-1. Zkopírujte data výsledků. CSV z tématu [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) a uložte je do složky řešení.  
+1. Zkopírujte data scores.csv z tématu [Jak se připojit k obsahu z odlišných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md) a uložte je do složky řešení.  
   
 ## <a name="example"></a>Příklad  
   
@@ -76,8 +76,8 @@ public class SortLines
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
-Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
+Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)

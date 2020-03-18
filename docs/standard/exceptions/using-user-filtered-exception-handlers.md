@@ -7,19 +7,19 @@ helpviewer_keywords:
 - exceptions, user-filtered
 ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
 ms.openlocfilehash: 5537404178b746310f720c5b0c075c77287dda4c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75708450"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>Používání obslužných rutin uživatelsky filtrovaných výjimek
 
-V současné době Visual Basic podporuje výjimky filtrované uživatelem. Uživatelsky filtrované obslužné rutiny výjimek zachytí a zpracovávají výjimky na základě požadavků, které definujete pro výjimku. Tyto obslužné rutiny používají příkaz **catch** s klíčovým slovem **when** .  
+V současné době jazyk Visual Basic podporuje výjimky filtrované uživatelem. Uživatelem filtrované obslužné rutiny výjimek zachycují a zpracovávají výjimky na základě požadavků, které definujete pro výjimku. Tyto obslužné rutiny používají **Catch** prohlášení s **When** klíčové slovo.  
   
- Tato technika je užitečná, když konkrétní objekt výjimky odpovídá více chybám. V takovém případě má objekt obvykle vlastnost, která obsahuje konkrétní kód chyby spojený s chybou. Vlastnost kód chyby ve výrazu můžete použít k výběru pouze konkrétní chyby, kterou chcete v této klauzuli **catch** zpracovat.  
+ Tato technika je užitečná, když konkrétní objekt výjimky odpovídá více chybám. V tomto případě objekt má obvykle vlastnost, která obsahuje konkrétní kód chyby spojené s chybou. Vlastnost kódu chyby ve výrazu můžete použít k výběru pouze konkrétní chyby, kterou chcete zpracovat v této klauzuli **Catch.**  
   
- Následující příklad Visual Basic ukazuje příkaz **catch/when** .  
+ Následující příklad jazyka znázorňuje **catch/When** prohlášení.  
   
 ```vb
 Try  
@@ -29,12 +29,12 @@ Try
 End Try  
 ```  
   
- Výraz klauzule filtrované uživatelem není nijak omezen. Pokud při provádění výrazu filtrovaného uživatelem dojde k výjimce, je tato výjimka zahozena a výraz filtru je považován za vyhodnocený jako NEPRAVDA. V takovém případě modul CLR (Common Language Runtime) pokračuje v hledání obslužné rutiny pro aktuální výjimku.  
+ Výraz uživatelem filtrované klauzule není žádným způsobem omezen. Pokud dojde k výjimce během provádění výrazu filtrovaného uživatelem, je tato výjimka zahozena a výraz filtru je považován za vyhodnocený jako nepravdivý. V tomto případě za běhu společného jazyka pokračuje hledání obslužné rutiny pro aktuální výjimku.  
   
-## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a>Kombinování konkrétní výjimky a uživatelem filtrovaných klauzulí  
- Příkaz catch může obsahovat konkrétní výjimku i klauzule filtrované uživatelem. Modul runtime nejprve testuje specifickou výjimku. Pokud je specifická výjimka úspěšná, modul runtime spustí filtr uživatele. Obecný filtr může obsahovat odkaz na proměnnou deklarovanou ve filtru třídy. Všimněte si, že pořadí dvou klauzulí filtru nelze vrátit zpět.  
+## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a>Kombinace konkrétní výjimky a klauzulí filtrovaných uživatelem  
+ Příkaz catch může obsahovat konkrétní výjimku a klauzule filtrované uživatelem. Za běhu nejprve testuje konkrétní výjimku. Pokud je konkrétní výjimka úspěšná, runtime spustí filtr uživatele. Obecný filtr může obsahovat odkaz na proměnnou deklarovanou ve filtru třídy. Všimněte si, že pořadí dvou klauzulí filtru nelze stornovat.  
   
- Následující příklad Visual Basic ukazuje konkrétní výjimku `ClassLoadException` v příkazu **catch** a také klauzuli filtrovanou uživatelem pomocí klíčového slova **when** .  
+ Následující příklad jazyka znázorňuje `ClassLoadException` konkrétní výjimku v **Catch** prohlášení, stejně jako uživatelem filtrované klauzule pomocí **When** klíčové slovo.  
   
 ```vb
 Try  
@@ -44,6 +44,6 @@ Try
 End Try  
 ```  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výjimky](index.md)

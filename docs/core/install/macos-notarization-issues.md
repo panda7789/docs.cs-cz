@@ -1,27 +1,27 @@
 ---
-title: Práce s macOS Catalina notarization
-description: Jak zvládnout notarization a problémy s certifikáty pomocí macOS při instalaci modulu runtime .NET Core, sady SDK a aplikací vytvořených pomocí .NET Core
+title: Práce s macOS Catalina Notarization
+description: Jak zpracovat notářizaci a problémy s certifikáty s macOS při instalaci runtime .NET Core, Sady SDK a aplikací vytvořených pomocí .NET Core.
 author: thraka
 ms.author: adegeo
 ms.date: 02/14/2020
-ms.openlocfilehash: b16ef4074f829246df0aedebf7ffe4df75faed51
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: be39c1ea56699f84736a2b37bc958507b16e826b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78165363"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146746"
 ---
-# <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina notarization a dopad na stažení a projekty .NET Core
+# <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina Notarization a dopad na stahování a projekty .NET Core
 
-Od macOS Catalina (verze 10,15) je nutné, aby byl veškerý software sestavený od 1. června 2019 a distribuován s ID vývojáře notarized. Tento požadavek se vztahuje na modul runtime .NET Core, .NET Core SDK a software vytvořený pomocí .NET Core. Tento článek popisuje běžné scénáře, se kterými se můžete setkat s .NET Core a macOS Notarization.
+Počínaje macOS Catalina (verze 10.15), veškerý software vytvořený po červnu 1, 2019 a distribuovaný s ID vývojáře, musí být notářsky.Rúzy s MacOS Catalina (verze 10.15), veškerý software postavený po 1. Tento požadavek se vztahuje na modul runtime .NET Core, sadku .NET Core SDK a software vytvořený pomocí .NET Core. Tento článek popisuje běžné scénáře, kterým můžete čelit s notazací .NET Core a macOS.
 
-## <a name="installing-net-core"></a>Instalace .NET Core
+## <a name="installing-net-core"></a>Instalace jádra rozhraní .NET
 
-Instalační programy pro .NET Core (běhové i sady SDK) verze 3,1, 3,0 a 2,1 byly notarized od 18. února 2020. Předchozí vydané verze nejsou notarized. Nenotarized verzi rozhraní .NET Core můžete nainstalovat ručně, a to tak, že nejprve stáhnete instalační program a potom použijete příkaz `sudo installer`. Další informace najdete v tématu [Stažení a ruční instalace pro MacOS](sdk.md?pivots=os-macos#download-and-manually-install).
+Instalační programy pro .NET Core (runtime a SDK) verze 3.1, 3.0 a 2.1 byly notářsky oznamovány od 18. Předchozí vydané verze nejsou notářsky oslněny. Nenotářskou verzi rozhraní .NET Core můžete nainstalovat ručně tak, že nejprve `sudo installer` stáhnete instalační program a potom použijete příkaz. Další informace najdete [v tématu Stažení a ruční instalace macOS](sdk.md?pivots=os-macos#download-and-manually-install).
 
-Od následujících verzí jsou instalační programy .NET Core notarized:
+Počínaje následujícími verzemi jsou instalátory .NET Core notářsky ozářené:
 
-- Modul runtime .NET Core
+- .NET Core Runtime
   - 2.1.16
   - 3.0.3
   - 3.1.2
@@ -31,11 +31,11 @@ Od následujících verzí jsou instalační programy .NET Core notarized:
   - 3.0.103
   - 3.1.102
 
-## <a name="apphost-is-disabled-by-default"></a>appHost je ve výchozím nastavení zakázaná.
+## <a name="apphost-is-disabled-by-default"></a>appHost je ve výchozím nastavení zakázán
 
-Ve výchozím nastavení nenotarized verze .NET Core SDK 3,0 a vyšší mají za následek, že se při kompilaci projektu, publikování nebo spuštění spustí nativní spustitelný soubor strojového souboru (označovaný jako **appHost**). Tento spustitelný soubor je pohodlný způsob, jak aplikaci spustit. V opačném případě musí být aplikace spuštěná spuštěním `dotnet <filename.dll>`. Pokud je povolen appHost, je vyvolán příkaz `dotnet run` v kontextu appHost. Další informace najdete v tématu [kontext appHost](#context-of-the-apphost).
+Ve výchozím nastavení nenotalizované verze sady .NET Core SDK 3.0 a vyšší vytvářejí nativní spustitelný soubor Mach-O (označovaný jako **appHost),** když váš projekt zkompiluje, publikuje nebo je spuštěn. Tento spustitelný soubor je pohodlný způsob, jak spustit aplikaci. V opačném případě musí být `dotnet <filename.dll>`aplikace spuštěna spuštěním aplikace . Když je appHost povolen, `dotnet run` příkaz je vyvolán v kontextu appHost. Další informace naleznete [v tématu Kontext appHost](#context-of-the-apphost).
 
-Počínaje verzí notarized .NET Core SDK 3,0 a vyšší se ve výchozím nastavení negeneruje spustitelný soubor appHost. Generaci appHost můžete zapnout nastavením logické hodnoty [`UseAppHost`](../project-sdk/msbuild-props.md#useapphost) v souboru projektu. Můžete také přepnout appHost s parametrem `-p:UseAppHost` na příkazovém řádku pro konkrétní `dotnet` příkaz, který spustíte:
+Počínaje notářsky oznamovanými verzemi sady .NET Core SDK 3.0 a vyšší není spustitelný soubor appHost ve výchozím nastavení generován. Generování appHost můžete zapnout [`UseAppHost`](../project-sdk/msbuild-props.md#useapphost) pomocí logického nastavení v souboru projektu. Můžete také přepnout appHost `-p:UseAppHost` s parametrem na příkazovém řádku pro konkrétní `dotnet` příkaz, který spustíte:
 
 - Soubor projektu
 
@@ -51,47 +51,47 @@ Počínaje verzí notarized .NET Core SDK 3,0 a vyšší se ve výchozím nastav
   dotnet run -p:UseAppHost=true
   ```
 
-AppHost se vždy vytvoří při publikování [vlastní](../deploying/index.md#publish-self-contained)aplikace.
+AppHost se vždy vytvoří, když publikujete aplikaci [samostatnou](../deploying/index.md#publish-self-contained).
 
-Další informace o nastavení `UseAppHost` naleznete v tématu [Vlastnosti nástroje MSBuild pro Microsoft. NET. SDK](../project-sdk/msbuild-props.md#useapphost).
+Další informace o `UseAppHost` nastavení naleznete v [tématu Vlastnosti MSBuild pro sadu Microsoft.NET.Sdk](../project-sdk/msbuild-props.md#useapphost).
 
 ### <a name="context-of-the-apphost"></a>Kontext appHost
 
-Když je v projektu povolený appHost a při spuštění aplikace použijete příkaz `dotnet run`, aplikace se vyvolá v kontextu appHost a ne na výchozím hostiteli (výchozím hostitelem je `dotnet` příkaz). Pokud je appHost v projektu zakázaný, příkaz `dotnet run` spustí vaši aplikaci v kontextu výchozího hostitele. I když je appHost zakázaný, publikování aplikace jako samostatné vygeneruje spustitelný soubor appHost a uživatelé tento spustitelný soubor použijí ke spuštění vaší aplikace. Spuštění aplikace pomocí `dotnet <filename.dll>` vyvolá aplikaci s výchozím hostitelem, sdíleným modulem runtime.
+Když je appHost ve vašem projektu povolen `dotnet run` a pomocí příkazu spustíte aplikaci, aplikace se vyvolá v kontextu appHost a `dotnet` ne výchozího hostitele (výchozí hostitel je příkaz). Pokud je appHost ve vašem `dotnet run` projektu zakázán, příkaz spustí vaši aplikaci v kontextu výchozího hostitele. I když je appHost zakázán, publikování aplikace jako samostatné generuje spustitelný soubor appHost a uživatelé používají tento spustitelný soubor ke spuštění aplikace. Spuštění aplikace `dotnet <filename.dll>` s vyvolá aplikaci s výchozím hostitelem, sdíleným runtime.
 
-Po vyvolání aplikace používající appHost se oddíl certifikátu, ke kterému se aplikace přistupovala, liší od výchozího hostitele notarized. Pokud vaše aplikace musí přistupovat k certifikátům nainstalovaným prostřednictvím výchozího hostitele, spusťte pomocí příkazu `dotnet run` svoji aplikaci ze souboru projektu, nebo použijte příkaz `dotnet <filename.dll>` a spusťte aplikaci přímo.
+Když je vyvolána aplikace používající appHost, oddíl certifikátu, ke kterým má aplikace přístup, se liší od notářsky oznamovaného výchozího hostitele. Pokud vaše aplikace musí přistupovat k certifikátům `dotnet run` nainstalovaným přes výchozí ho hostitele, spusťte aplikaci přímo pomocí příkazu ze souboru projektu nebo pomocí příkazu `dotnet <filename.dll>` spusťte aplikaci přímo.
 
-Další informace o tomto scénáři najdete v části [ASP.NET Core a MacOS a certifikáty](#aspnet-core-and-macos-and-certificates) .
+Další informace o tomto scénáři jsou k dispozici v [části ASP.NET jádra a macOS a certifikáty.](#aspnet-core-and-macos-and-certificates)
 
 ## <a name="aspnet-core-and-macos-and-certificates"></a>ASP.NET Core a macOS a certifikáty
 
-.NET Core poskytuje možnost spravovat certifikáty v řetězci klíčů macOS pomocí třídy <xref:System.Security.Cryptography.X509Certificates>. Přístup k řetězci macOS používá při rozhodování, který oddíl má být považován za primární klíč, identitu aplikace. Nepodepsané aplikace například ukládají tajné klíče do nepodepsaného oddílu, ale podepsané aplikace ukládají jejich tajné klíče pouze do oddílů, ke kterým mají přístup. Zdroj spuštění, který vyvolá aplikaci, rozhoduje o tom, který oddíl se má použít.
+.NET Core poskytuje možnost spravovat certifikáty v řetězci <xref:System.Security.Cryptography.X509Certificates> klíčů macOS s třídou. Přístup k řetězci klíčů macOS používá identitu aplikací jako primární klíč při rozhodování o tom, který oddíl je třeba zvážit. Například nepodepsané aplikace ukládají tajné klíče v nepodepsaném oddílu, ale podepsané aplikace ukládají své tajné klíče v oddílech pouze k nim. Zdroj spuštění, který vyvolá vaše aplikace rozhodne, který oddíl použít.
 
-.NET Core poskytuje tři zdroje spuštění: [appHost](#apphost-is-disabled-by-default), výchozí hostitel (příkaz `dotnet`) a vlastní hostitel. Každý model spuštění může mít různé identity, buď podepsané, nebo bez znaménka, a má přístup k různým oddílům v řetězci klíčů. Certifikáty naimportované v jednom režimu nemusí být dostupné z jiné. Například verze notarized .NET Core mají výchozího hostitele, který je podepsaný. Certifikáty se importují do zabezpečeného oddílu na základě jeho identity. Tyto certifikáty nejsou přístupné z vygenerovaných appHost, protože appHost je bez znaménka.
+.NET Core poskytuje tři zdroje spuštění: [appHost](#apphost-is-disabled-by-default), výchozí hostitel `dotnet` (příkaz) a vlastní hostitel. Každý model spuštění může mít různé identity, podepsané nebo nepodepsané a má přístup k různým oddílům v rámci řetězce klíčů. Certifikáty importované jedním režimem nemusí být přístupné z jiného režimu. Například notářsky oznamované verze .NET Core mají výchozího hostitele, který je podepsán. Certifikáty jsou importovány do zabezpečeného oddílu na základě jeho identity. Tyto certifikáty nejsou přístupné z generované aplikaceHost, protože appHost je nepodepsaný.
 
-Ve výchozím nastavení například ASP.NET Core importuje výchozí certifikát SSL prostřednictvím výchozího hostitele. ASP.NET Core aplikace, které používají appHost, nebudou mít přístup k tomuto certifikátu a zobrazí se chyba, když .NET Core zjistí, že certifikát není přístupný. Chybová zpráva poskytuje pokyny k vyřešení tohoto problému.
+Jiný příklad ve výchozím nastavení ASP.NET Core importuje výchozí certifikát SSL prostřednictvím výchozího hostitele. ASP.NET Základní aplikace, které používají appHost nebude mít přístup k tomuto certifikátu a obdrží chybu, když .NET Core zjistí, že certifikát není přístupný. Chybová zpráva obsahuje pokyny k vyřešení tohoto problému.
 
-Pokud je vyžadováno sdílení certifikátů, macOS poskytuje možnosti konfigurace pomocí nástroje `security`.
+Pokud je vyžadováno sdílení certifikátů, macOS poskytuje možnosti konfigurace s `security` nástrojem.
 
-Další informace o řešení problémů s certifikátem ASP.NET Core najdete v tématu vystavení [protokolu HTTPS v ASP.NET Core](/aspnet/core/security/enforcing-ssl?view=aspnetcore-3.1&tabs=visual-studio#troubleshoot-certificate-problems).
+Další informace o řešení problémů s certifikáty ASP.NET základní informace naleznete [v tématu Enforce HTTPS in ASP.NET Core](/aspnet/core/security/enforcing-ssl?view=aspnetcore-3.1&tabs=visual-studio#troubleshoot-certificate-problems).
 
 ## <a name="default-entitlements"></a>Výchozí nároky
 
-Výchozí hostitel .NET Core (příkaz `dotnet`) obsahuje sadu výchozích nároků. Tato oprávnění se vyžadují ke správnému fungování .NET Core. Je možné, že vaše aplikace bude potřebovat další nároky. v takovém případě budete muset vygenerovat a používat [appHost](#apphost-is-disabled-by-default) a potom přidat potřebná oprávnění místně.
- 
-Výchozí sada nároků pro .NET Core:
+Výchozí hostitel rozhraní .NET `dotnet` Core (příkaz) má sadu výchozích nároků. Tyto nároky jsou vyžadovány pro správné fungování .NET Core. Je možné, že vaše aplikace může potřebovat další nároky, v takovém případě budete muset generovat a používat [appHost](#apphost-is-disabled-by-default) a pak přidat potřebné nároky místně.
+
+Výchozí sada nároků pro jádro .NET:
 
 - `com.apple.security.cs.allow-jit`
 - `com.apple.security.cs.allow-unsigned-executable-memory`
 - `com.apple.security.cs.allow-dyld-environment-variables`
 - `com.apple.security.cs.disable-library-validation`
 
-## <a name="notarize-a-net-core-app"></a>Notarize aplikace .NET Core
+## <a name="notarize-a-net-core-app"></a>Notáži aplikace .NET Core
 
-Pokud chcete, aby vaše aplikace běžela na macOS Catalina (verze 10,15) nebo vyšší, budete chtít notarize aplikaci. AppHost, které odesíláte s vaší aplikací pro notarization, by se měla použít s alespoň stejnými [výchozími nároky](#default-entitlements) pro .NET Core.
+Pokud chcete, aby vaše aplikace běžela na macOS Catalina (verze 10.15) nebo vyšší, budete chtít svou aplikaci notářsky ověřit. AppHost, který odešlete s žádostí o notářskou insukci, by měl být používán s alespoň stejnými [výchozími nároky](#default-entitlements) pro .NET Core.
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Závislosti a požadavky rozhraní .NET Core](dependencies.md).
-- [Nainstalujte .NET Core SDK](sdk.md).
-- [Instalace modulu runtime .NET Core](runtime.md)
+- [.NET Základní závislosti a požadavky](dependencies.md).
+- [Nainstalujte sadu .NET Core SDK](sdk.md).
+- [Instalace rozhraní .NET Core Runtime](runtime.md)

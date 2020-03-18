@@ -1,19 +1,19 @@
 ---
-title: Postup při serializaci pomocí XmlSerializerC#()
+title: Jak serializovat pomocí XmlSerializer (C#)
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
 ms.openlocfilehash: 0ec19e964471382c6f10f07d6d4bb25f88fd532f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347400"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a>Postup při serializaci pomocí XmlSerializerC#()
-Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Xml.Serialization.XmlSerializer>.  
+# <a name="how-to-serialize-using-xmlserializer-c"></a>Jak serializovat pomocí XmlSerializer (C#)
+Toto téma ukazuje příklad, který serializuje a <xref:System.Xml.Serialization.XmlSerializer>reserializuje pomocí .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>. Pak je zaserializace do paměťového proudu a pak je deserializace z paměťového proudu.  
+ Následující příklad vytvoří počet objektů, <xref:System.Xml.Linq.XElement> které obsahují objekty. Potom serializuje je do datového proudu paměti a potom je reserializuje z datového proudu paměti.  
   
 ```csharp  
 using System;  
@@ -78,7 +78,7 @@ class XLinqTest
 }  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Testing for type: XElementNullContainer  

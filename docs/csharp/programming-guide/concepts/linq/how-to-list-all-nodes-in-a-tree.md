@@ -1,28 +1,28 @@
 ---
-title: Jak zobrazit seznam všech uzlů ve stromu (C#)
+title: Jak vypsat všechny uzly ve stromu (C#)
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
 ms.openlocfilehash: e1b37c1d0801f2924e6811e630094524331a0d86
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345869"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Jak zobrazit seznam všech uzlů ve stromu (C#)
+# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Jak vypsat všechny uzly ve stromu (C#)
 
-Někdy je užitečné zobrazit seznam všech uzlů ve stromu. To může být užitečné při učení přesně o tom, jak metoda nebo vlastnost ovlivňuje strom. Jedním z přístupů k výpisu všech uzlů v textovém formuláři je vygenerování výrazu XPath, který přesně a konkrétně identifikuje libovolný uzel ve stromové struktuře.
+Někdy je užitečné vypsat všechny uzly ve stromu. To může být užitečné při učení přesně, jak metoda nebo vlastnost ovlivňuje strom. Jedním z přístupů k výpisu všech uzlů v textové podobě je generovat výraz XPath, který přesně a konkrétně identifikuje všechny uzly ve stromu.
 
-Není obzvláště užitečné spouštět výrazy XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath mají slabší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou mnohem výkonnější. Nicméně jako způsob identifikace uzlů ve stromu XML funguje výraz XPath dobře.
+Není zvláště užitečné spustit výrazy XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]aplikace . Výrazy XPath mají [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nižší výkon [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] než dotazy a dotazy jsou mnohem výkonnější. Jako způsob identifikace uzlů ve stromu XML však XPath funguje dobře.
 
 ## <a name="example"></a>Příklad
- Tento příklad ukazuje funkci nazvanou `GetXPath`, která generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Generuje vhodné výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpon oboru názvů.
+ Tento příklad ukazuje `GetXPath` funkci s názvem, která generuje konkrétní výraz XPath pro libovolný uzel ve stromu XML. Generuje příslušné výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpon oboru názvů.
 
- Příklad následně vytvoří malý strom XML, který obsahuje příklad několika typů uzlů. Poté provede iteraci podřízenými uzly a vytiskne výraz XPath pro každý uzel.
+ Příklad pak vytvoří malý strom XML, který obsahuje příklad několika typů uzlů. Poté itepraví prostřednictvím potomků uzly a vytiskne výraz XPath pro každý uzel.
 
- Všimněte si, že deklarace XML není uzel ve stromové struktuře.
+ Všimněte si, že deklarace XML není uzel ve stromu.
 
- Níže je soubor XML, který obsahuje několik typů uzlů:
+ Následuje soubor XML, který obsahuje několik typů uzlů:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -38,7 +38,7 @@ Není obzvláště užitečné spouštět výrazy XPath pomocí [!INCLUDE[sqltec
 </Root>
 ```
 
- Následuje seznam uzlů ve výše uvedeném stromu XML, vyjádřené jako výrazy XPath:
+ Následuje seznam uzlů ve výše uvedeném stromu XML, vyjádřený jako výrazy XPath:
 
 ```text
 /processing-instruction()
@@ -316,7 +316,7 @@ class Program
 }
 ```
 
- Tento příklad vytvoří následující výstup:
+ Tento příklad vytváří následující výstup:
 
 ```output
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>

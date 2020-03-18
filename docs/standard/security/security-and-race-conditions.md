@@ -1,5 +1,6 @@
 ---
 title: Zabezpečení a konflikty časování
+'description:': Describes pitfalls to avoid around security holes exploited by race conditions, including dispose methods, constructors, cached objects, and finalizers.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,18 +12,18 @@ helpviewer_keywords:
 - secure coding, race conditions
 - code security, race conditions
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
-ms.openlocfilehash: bc0d9f481fd212ede55bffde6cc20c3e080629e4
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 09d8d0d6e85af04fe0fb00f53df408126012081e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159413"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186783"
 ---
 # <a name="security-and-race-conditions"></a>Zabezpečení a konflikty časování
-Další oblastí obav je potenciál bezpečnostních děr vycházejících ze sporných podmínek. Existuje několik způsobů, jak se k tomu může dojít. Dílčí témata, která následují, popisují některé hlavní nástrah, se kterými se vývojář musí vyhnout.  
+Další oblastí zájmu je potenciál pro bezpečnostní díry využívané rasovými podmínkami. Existuje několik způsobů, jak k tomu může dojít. Dílčí témata, které následují, popisují některé z hlavních úskalí, kterým se vývojář musí vyhnout.  
   
-## <a name="race-conditions-in-the-dispose-method"></a>Konflikty časování v metodě Dispose  
- Pokud metoda **Dispose** třídy (pro další informace, viz [uvolňování paměti](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné, že čistící kód uvnitř **Dispose** lze spustit více než jednou, jak je znázorněno v následujícím příkladu.  
+## <a name="race-conditions-in-the-dispose-method"></a>Sporné podmínky v metodě dispose  
+ Pokud metoda **Dispose** třídy (další informace naleznete v [tématu Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)) ) není synchronizována, je možné, že vyčištění kódu uvnitř **Dispose** lze spustit více než jednou, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Sub Dispose()  
@@ -44,13 +45,13 @@ void Dispose()
 }  
 ```  
   
- Vzhledem k tomu, že tato implementace **Dispose** není synchronizována, je možné, že `Cleanup` být volána prvním jedním vláknem a druhým vláknem, před `_myObj` je nastavena na **hodnotu null**. Bez ohledu na to, zda se jedná o zabezpečení, závisí na tom, co se stane, když `Cleanup` kód spouští. Hlavní problém s nesynchronizovanými implementacemi **Dispose** zahrnuje použití popisovačů prostředků, jako jsou soubory. Nesprávné vyřazení může způsobit použití chybného popisovače, což často vede k ohrožení zabezpečení.  
+ Vzhledem k **tomu, že** tato implementace `Cleanup` Dispose není synchronizována, je možné `_myObj` volat první vlákno a potom druhé vlákno před je nastavena na **hodnotu null**. Zda se jedná o problém zabezpečení `Cleanup` závisí na tom, co se stane při spuštění kódu. Hlavní problém s nesynchronizované **dispose** implementace zahrnuje použití popisovače prostředků, jako jsou soubory. Nesprávné vyřazení může způsobit použití nesprávného popisovače, což často vede k ohrožení zabezpečení.  
   
-## <a name="race-conditions-in-constructors"></a>Konflikty časování v konstruktorech  
- V některých aplikacích může být možné, aby další vlákna mohla přistupovat ke členům třídy před tím, než se jejich konstruktory tříd úplně spustí. Měli byste zkontrolovat všechny konstruktory třídy, aby se zajistilo, že nedochází k žádným problémům se zabezpečením, pokud by k tomu došlo, nebo v případě potřeby synchronizaci vláken.  
+## <a name="race-conditions-in-constructors"></a>Závodní podmínky v konstruktorech  
+ V některých aplikacích může být možné pro jiné podprocesy pro přístup členů třídy před jejich konstruktory třídy mají zcela spustit. Měli byste zkontrolovat všechny konstruktory třídy a ujistěte se, že neexistují žádné problémy se zabezpečením, pokud k tomu dojde, nebo v případě potřeby synchronizovat vlákna.  
   
-## <a name="race-conditions-with-cached-objects"></a>Konflikty časování s objekty uloženými v mezipaměti  
- Kód, který ukládá do mezipaměti informace o zabezpečení nebo používá operaci [vyhodnocení](../../../docs/framework/misc/using-the-assert-method.md) zabezpečení přístupu kódu, může být také ohrožen konflikty časování, pokud jiné části třídy nejsou vhodně synchronizovány, jak je znázorněno v následujícím příkladu.  
+## <a name="race-conditions-with-cached-objects"></a>Podmínky časovoleb s objekty uloženými v mezipaměti  
+ Kód, který ukládá do mezipaměti informace o zabezpečení nebo používá operaci [Assert](../../../docs/framework/misc/using-the-assert-method.md) zabezpečení přístupu kódu, může být také zranitelný vůči časovacím podmínkám, pokud ostatní části třídy nejsou odpovídajícím způsobem synchronizovány, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Sub SomeSecureFunction()  
@@ -95,12 +96,12 @@ void DoOtherWork()
 }  
 ```  
   
- Pokud existují další cesty `DoOtherWork`, které je možné volat z jiného vlákna se stejným objektem, může nedůvěryhodný volající nakládat za poptávkou.  
+ Pokud existují jiné cesty, `DoOtherWork` které mohou být volány z jiného vlákna se stejným objektem, nedůvěryhodný volající může proklouznout kolem poptávky.  
   
- Pokud váš kód ukládá do mezipaměti informace o zabezpečení, ujistěte se, že je pro tuto chybu zabezpečení revidován.  
+ Pokud váš kód ukládá informace o zabezpečení do mezipaměti, zkontrolujte, zda se jedná o tuto chybu zabezpečení.  
   
-## <a name="race-conditions-in-finalizers"></a>Konflikty časování v finalizačních podmínkách  
- Ke konfliktům časování může dojít také v objektu, který odkazuje na statický nebo nespravovaný prostředek, který je poté uvolněn v jeho finalizační metodě. Pokud více objektů sdílí prostředek, který je manipulován v finalizační metodě třídy, musí objekty synchronizovat veškerý přístup k tomuto prostředku.  
+## <a name="race-conditions-in-finalizers"></a>Podmínky závodu ve finalizačních metodách  
+ Časování podmínky může dojít také v objektu, který odkazuje na statický nebo nespravovaný prostředek, který pak uvolní ve své finalizační metodě. Pokud více objektů sdílet prostředek, který je manipulováno ve finalizační metodě třídy, musí objekty synchronizovat veškerý přístup k tomuto prostředku.  
   
 ## <a name="see-also"></a>Viz také
 

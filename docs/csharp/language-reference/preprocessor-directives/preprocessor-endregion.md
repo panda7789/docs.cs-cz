@@ -1,34 +1,34 @@
 ---
-title: '#endregion – C# reference'
+title: '#endregion - C# Odkaz'
 ms.date: 07/20/2015
 f1_keywords:
 - '#endregion'
 helpviewer_keywords:
 - '#endregion directive [C#]'
 ms.assetid: 16099660-91b2-49e5-9646-77f9ef069526
-ms.openlocfilehash: b334691689da8b3e8f74f4899e34061bfc921c07
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c61c7a890811014acc69a43e422be53480bfb6f9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712530"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173416"
 ---
 # <a name="endregion-c-reference"></a>#endregion (referenční dokumentace jazyka C#)
-`#endregion` označuje konec bloku [#region](./preprocessor-region.md) . Příklad:  
+`#endregion`označuje konec [#region](./preprocessor-region.md) bloku. Například:  
   
 ```csharp
 #region MyClass definition  
-class MyClass   
+class MyClass
 {  
-    static void Main()   
+    static void Main()
     {  
     }  
 }  
 #endregion  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C# Direktivy preprocesoru](./index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [Direktivy preprocesoru jazyka C#](./index.md)

@@ -1,27 +1,27 @@
 ---
-title: dotnet – čítače – .NET Core
-description: Naučte se instalovat a používat nástroj příkazového řádku dotnet-Counter.
+title: dotnetové čítače - .NET Core
+description: Přečtěte si, jak nainstalovat a používat nástroj příkazového řádku čítova dotnet.
 ms.date: 02/26/2020
-ms.openlocfilehash: 88f701a60d0ee03dd0236ae54c57679943e14939
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: dc95297478784ca06fe442a939f8489a40b29da7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78157879"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79147175"
 ---
 # <a name="dotnet-counters"></a>dotnet-counters
 
-**Tento článek se týká:** ✔️ .net Core 3,0 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
 
-## <a name="install-dotnet-counters"></a>Instalace dotnet – čítače
+## <a name="install-dotnet-counters"></a>Instalace čítačů dotnet
 
-Pokud chcete nainstalovat nejnovější verzi `dotnet-counters` [balíčku NuGet](https://www.nuget.org/packages/dotnet-counters), použijte [instalační příkaz nástroje dotnet](../tools/dotnet-tool-install.md) :
+Chcete-li nainstalovat nejnovější `dotnet-counters` verzi [balíčku NuGet](https://www.nuget.org/packages/dotnet-counters), použijte příkaz [instalace nástroje dotnet:](../tools/dotnet-tool-install.md)
 
 ```dotnetcli
 dotnet tool install --global dotnet-counters
 ```
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-counters [-h|--help] [--version] <command>
@@ -29,32 +29,32 @@ dotnet-counters [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Popis
 
-`dotnet-counters` je nástroj pro monitorování výkonu, který slouží ke sledování stavu ad-hoc a prvotnímu šetření výkonu na nejvyšší úrovni. Může sledovat hodnoty čítače výkonu, které jsou publikovány prostřednictvím rozhraní <xref:System.Diagnostics.Tracing.EventCounter> API. Například můžete rychle monitorovat věci, jako je využití CPU, nebo četnost výjimek vyvolaných v aplikaci .NET Core, abyste viděli, jestli existují nějaké podezřelé před začneteí do závažnějšího šetření výkonu pomocí `PerfView` nebo `dotnet-trace`.
+`dotnet-counters`je nástroj pro sledování výkonu ad hoc sledování stavu a šetření výkonu první úrovně. Může sledovat hodnoty čítače výkonu, které jsou publikovány <xref:System.Diagnostics.Tracing.EventCounter> prostřednictvím rozhraní API. Můžete například rychle sledovat věci, jako je využití procesoru nebo rychlost výjimek vymrštěných v aplikaci .NET `PerfView` Core, abyste zjistili, zda je něco podezřelého, než se ponoříte do závažnějšího vyšetřování výkonu pomocí nebo `dotnet-trace`.
 
 ## <a name="options"></a>Možnosti
 
 - **`--version`**
 
-  Zobrazí verzi nástroje dotnet-Counters.
+  Zobrazí verzi nástroje dotnet-counters.
 
 - **`-h|--help`**
 
-  Zobrazí pomocníka s příkazovým řádkem.
+  Zobrazí nápovědu příkazového řádku.
 
 ## <a name="commands"></a>Příkazy
 
 | Příkaz                                             |
 | --------------------------------------------------- |
-| [dotnet – čítače jsou shromažďovány](#dotnet-counters-collect) |
-| [dotnet – seznam čítačů](#dotnet-counters-list)       |
-| [dotnet – monitorování čítačů](#dotnet-counters-monitor) |
-| [dotnet – čítače PS](#dotnet-counters-ps) |
+| [dotnetové čítače sbírají](#dotnet-counters-collect) |
+| [seznam čítačů dotnet](#dotnet-counters-list)       |
+| [monitor čítačů dotnet](#dotnet-counters-monitor) |
+| [dotnet-čítače ps](#dotnet-counters-ps) |
 
-## <a name="dotnet-counters-collect"></a>dotnet – čítače jsou shromažďovány
+## <a name="dotnet-counters-collect"></a>dotnetové čítače sbírají
 
-Pravidelně shromažďují vybrané hodnoty čítačů a exportují je do určeného formátu souboru pro následné zpracování.
+Pravidelně shromažďujte vybrané hodnoty čítačů a exportujte je do určeného formátu souboru pro následné zpracování.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-counters collect [-h|--help] [-p|--process-id] [--refreshInterval] [counter_list] [--format] [-o|--output]
@@ -64,19 +64,19 @@ dotnet-counters collect [-h|--help] [-p|--process-id] [--refreshInterval] [count
 
 - **`-p|--process-id <PID>`**
 
-  ID procesu, který se má monitorovat
+  ID procesu, který má být sledován.
 
 - **`--refresh-interval <SECONDS>`**
 
-  Počet sekund prodlevy mezi aktualizací zobrazených čítačů
+  Počet sekund zpoždění mezi aktualizací zobrazených čítačů
 
 - **`counter_list <COUNTERS>`**
 
-  Mezerou oddělený seznam čítačů. Čítače lze zadat `provider_name[:counter_name]`. Pokud se `provider_name` používá bez opravňujícího `counter_name`, zobrazí se všechny čítače. Chcete-li zjistit názvy zprostředkovatelů a čítačů, použijte příkaz [dotnet-Counters list](#dotnet-counters-list) .
+  Mezera oddělený seznam čítačů. Lze zadat čítače `provider_name[:counter_name]`. Pokud `provider_name` se používá bez `counter_name`kvalifikace , jsou zobrazeny všechny čítače. Chcete-li zjistit názvy zprostředkovatelů a čítačů, použijte příkaz [seznamu čítačů dotnet.](#dotnet-counters-list)
 
 - **`--format <csv|json>`**
 
-  Formát TNelze načíst, který se má exportovat Aktuálně dostupné: CSV, JSON.
+  TFormát, který má být exportován. V současné době k dispozici: csv, json.
 
 - **`-o|--output <output>`**
 
@@ -84,7 +84,7 @@ dotnet-counters collect [-h|--help] [-p|--process-id] [--refreshInterval] [count
 
 ### <a name="examples"></a>Příklady
 
-- Shromáždí všechny čítače v intervalu obnovování 3 sekundy a vygeneruje jako výstup sdílený svazek clusteru:
+- Shromažďovat všechny čítače v intervalu aktualizace 3 sekundy a generovat csv jako výstup:
 
   ```console
   > dotnet-counters collect --process-id 1902 --refresh-interval 3 --format csv
@@ -93,11 +93,11 @@ dotnet-counters collect [-h|--help] [-p|--process-id] [--refreshInterval] [count
   Starting a counter session. Press Q to quit.
   ```
 
-## <a name="dotnet-counters-list"></a>dotnet – seznam čítačů
+## <a name="dotnet-counters-list"></a>seznam čítačů dotnet
 
-Zobrazí seznam názvů čítačů a popisů seskupených podle poskytovatele.
+Zobrazí seznam názvů čítačů a popisů seskupených podle zprostředkovatele.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-counters list [-h|--help]
@@ -119,11 +119,11 @@ dotnet-counters list [-h|--help]
         exception-count              Number of Exceptions / sec
 ```
 
-## <a name="dotnet-counters-monitor"></a>dotnet – monitorování čítačů
+## <a name="dotnet-counters-monitor"></a>monitor čítačů dotnet
 
-Zobrazí pravidelné aktualizace hodnot vybraných čítačů.
+Zobrazuje pravidelně obnovovat hodnoty vybraných čítačů.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [counter_list]
@@ -133,19 +133,19 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
 
 - **`-p|--process-id <PID>`**
 
-  ID procesu, který se má monitorovat
+  ID procesu, který má být sledován.
 
 - **`--refresh-interval <SECONDS>`**
 
-  Počet sekund prodlevy mezi aktualizací zobrazených čítačů
+  Počet sekund zpoždění mezi aktualizací zobrazených čítačů
 
 - **`counter_list <COUNTERS>`**
 
-  Mezerou oddělený seznam čítačů. Čítače lze zadat `provider_name[:counter_name]`. Pokud se `provider_name` používá bez opravňujícího `counter_name`, zobrazí se všechny čítače. Chcete-li zjistit názvy zprostředkovatelů a čítačů, použijte příkaz [dotnet-Counters list](#dotnet-counters-list) .
+  Mezera oddělený seznam čítačů. Lze zadat čítače `provider_name[:counter_name]`. Pokud `provider_name` se používá bez `counter_name`kvalifikace , jsou zobrazeny všechny čítače. Chcete-li zjistit názvy zprostředkovatelů a čítačů, použijte příkaz [seznamu čítačů dotnet.](#dotnet-counters-list)
 
 ### <a name="examples"></a>Příklady
 
-- Monitorovat všechny čítače z `System.Runtime` v intervalu obnovování po dobu 3 sekund:
+- Sledujte všechny `System.Runtime` čítače v intervalu aktualizace 3 sekundy:
 
   ```console
   > dotnet-counters monitor --process-id 1902  --refresh-interval 3 System.Runtime
@@ -161,7 +161,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
       Number of Exceptions / sec                     4
   ```
 
-- Monitorovat pouze využití CPU a velikost haldy GC z `System.Runtime`:
+- Monitorování pouze využití procesoru a `System.Runtime`velikost haldy GC z:
 
   ```console
   > dotnet-counters monitor --process-id 1902 System.Runtime[cpu-usage,gc-heap-size]
@@ -172,7 +172,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
       GC Heap Size (MB)                            811
   ```
 
-- Monitorujte `EventCounter` hodnoty z uživatelsky definované `EventSource`. Další informace najdete v tématu [kurz: jak změřit výkon pro velmi časté události pomocí EventCounters](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
+- Sledování `EventCounter` hodnot z `EventSource`uživatelem definovaného . Další informace naleznete [v tématu Návod: Jak měřit výkon pro velmi časté události pomocí EventCounters](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
 
   ```console
   > dotnet-counters monitor --process-id 1902 Samples-EventCounterDemos-Minimal
@@ -181,11 +181,11 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
       request                                      100
   ```
   
-## <a name="dotnet-counters-ps"></a>dotnet – čítače PS 
+## <a name="dotnet-counters-ps"></a>dotnet-čítače ps
 
-Zobrazí seznam procesů dotnet, které lze monitorovat.
+Zobrazení seznamu dotnetových procesů, které lze sledovat.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-counters ps [-h|--help]

@@ -11,77 +11,77 @@ helpviewer_keywords:
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
 ms.openlocfilehash: fb03200c810290c970f7aa56a0e15d385aca7ca8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711347"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 
-Nezapomeňte si pečlivě zvolit třídu kolekce. Použití nesprávného typu může omezit použití kolekce.  
+Ujistěte se, že si pečlivě vyberete třídu kolekce. Použití nesprávného typu může omezit vaše použití kolekce.  
 
 > [!IMPORTANT]
-> Nepoužívejte typy v oboru názvů <xref:System.Collections>. Obecné a souběžné verze kolekcí se doporučují z důvodu jejich vyšší bezpečnosti typu a dalších vylepšení.  
+> Nepoužívejte typy v <xref:System.Collections> oboru názvů. Obecné a souběžné verze kolekcí se doporučuje z důvodu jejich větší bezpečnost typů a další vylepšení.  
 
  Zvažte následující otázky:  
   
-- Potřebujete sekvenční seznam, ve kterém je element obvykle zahozen po načtení jeho hodnoty?  
+- Potřebujete sekvenční seznam, kde je prvek obvykle zahozen po načtení jeho hodnoty?  
   
-  - Pokud ano, zvažte použití <xref:System.Collections.Queue> třídy nebo <xref:System.Collections.Generic.Queue%601> obecné třídy, pokud potřebujete chování first-in a First-out (FIFO). Zvažte použití třídy <xref:System.Collections.Stack> nebo obecné třídy <xref:System.Collections.Generic.Stack%601>, pokud potřebujete chování za poslední, první ven (LIFO). Pro bezpečný přístup z více vláken použijte souběžné verze <xref:System.Collections.Concurrent.ConcurrentQueue%601> a <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
+  - Pokud ano, zvažte <xref:System.Collections.Queue> použití <xref:System.Collections.Generic.Queue%601> třídy nebo obecné třídy, pokud potřebujete první dovnitř, první ven (FIFO) chování. Zvažte <xref:System.Collections.Stack> použití třídy nebo <xref:System.Collections.Generic.Stack%601> obecné třídy, pokud potřebujete chování last-in, first-out (LIFO). Pro bezpečný přístup z více vláken použijte souběžné verze <xref:System.Collections.Concurrent.ConcurrentQueue%601> a <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
   
-  - V takovém případě zvažte použití dalších kolekcí.  
+  - Pokud ne, zvažte použití jiných kolekcí.  
   
-- Potřebujete získat přístup k prvkům v určitém pořadí, jako je například FIFO, LIFO nebo Random?  
+- Potřebujete přístup k prvkům v určitém pořadí, například FIFO, LIFO nebo náhodné?  
   
-  - Třída <xref:System.Collections.Queue> a obecná třída <xref:System.Collections.Generic.Queue%601> nebo <xref:System.Collections.Concurrent.ConcurrentQueue%601> nabízí přístup k aplikaci FIFO. Další informace najdete v tématu [kdy použít kolekci bezpečnou pro přístup z více vláken](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
+  - Třída <xref:System.Collections.Queue> a <xref:System.Collections.Generic.Queue%601> nebo <xref:System.Collections.Concurrent.ConcurrentQueue%601> obecné třídy nabízejí přístup FIFO. Další informace naleznete v [tématu Kdy použít kolekci bezpečné pro přístup z více vláken](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
   
-  - Třída <xref:System.Collections.Stack> a obecná třída <xref:System.Collections.Generic.Stack%601> nebo <xref:System.Collections.Concurrent.ConcurrentStack%601> nabízí přístup LIFO. Další informace najdete v tématu [kdy použít kolekci bezpečnou pro přístup z více vláken](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
+  - Třída <xref:System.Collections.Stack> a <xref:System.Collections.Generic.Stack%601> nebo <xref:System.Collections.Concurrent.ConcurrentStack%601> obecné třídy nabízejí přístup LIFO. Další informace naleznete v [tématu Kdy použít kolekci bezpečné pro přístup z více vláken](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
   
-  - <xref:System.Collections.Generic.LinkedList%601> obecná třída umožňuje sekvenční přístup buď od pozice k zakončení, nebo od konce až po hlavní.  
+  - Obecná <xref:System.Collections.Generic.LinkedList%601> třída umožňuje sekvenční přístup buď od hlavy k ocasu, nebo od ocasu k hlavě.  
   
-- Potřebujete ke každému elementu přistupovat podle indexu?  
+- Potřebujete přístup ke každému prvku podle indexu?  
   
-  - Třídy <xref:System.Collections.ArrayList> a <xref:System.Collections.Specialized.StringCollection> a <xref:System.Collections.Generic.List%601> obecná třída nabízejí přístup k jejich elementům pomocí indexu založeného na nule elementu.  
+  - A <xref:System.Collections.ArrayList> <xref:System.Collections.Specialized.StringCollection> třídy <xref:System.Collections.Generic.List%601> a obecné třídy nabízejí přístup k jejich prvky index založený na nule prvku.  
   
-  - Třídy <xref:System.Collections.Hashtable>, <xref:System.Collections.SortedList>, <xref:System.Collections.Specialized.ListDictionary>a <xref:System.Collections.Specialized.StringDictionary> a obecné třídy <xref:System.Collections.Generic.Dictionary%602> a <xref:System.Collections.Generic.SortedDictionary%602> nabízejí přístup ke svým prvkům pomocí klíče elementu.  
+  - , <xref:System.Collections.Hashtable> <xref:System.Collections.SortedList>, <xref:System.Collections.Specialized.ListDictionary>a <xref:System.Collections.Specialized.StringDictionary> třídy <xref:System.Collections.Generic.Dictionary%602> a <xref:System.Collections.Generic.SortedDictionary%602> a obecné třídy nabízejí přístup k jejich prvky klíčem prvku.  
   
-  - Třídy <xref:System.Collections.Specialized.NameObjectCollectionBase> a <xref:System.Collections.Specialized.NameValueCollection> a obecné třídy <xref:System.Collections.ObjectModel.KeyedCollection%602> a <xref:System.Collections.Generic.SortedList%602> nabízejí přístup k jejich elementům buď pomocí indexu založeného na nule, nebo klíče elementu.  
+  - A <xref:System.Collections.Specialized.NameObjectCollectionBase> <xref:System.Collections.Specialized.NameValueCollection> třídy a <xref:System.Collections.ObjectModel.KeyedCollection%602> <xref:System.Collections.Generic.SortedList%602> a obecné třídy nabízejí přístup k jejich prvky index založený na nule nebo klíč prvku.  
   
-- Bude každý prvek obsahovat jednu hodnotu, kombinaci jednoho klíče a jednu hodnotu nebo kombinaci jednoho klíče a více hodnot?  
+- Bude každý prvek obsahovat jednu hodnotu, kombinaci jednoho klíče a jedné hodnoty nebo kombinaci jednoho klíče a více hodnot?  
   
-  - Jedna hodnota: použijte jakoukoli kolekci založenou na rozhraní <xref:System.Collections.IList> nebo <xref:System.Collections.Generic.IList%601> obecné rozhraní.  
+  - Jedna hodnota: Použijte některou z <xref:System.Collections.IList> kolekcí <xref:System.Collections.Generic.IList%601> na základě rozhraní nebo obecné rozhraní.  
   
-  - Jedna klávesa a jedna hodnota: použijte jakoukoli kolekci založenou na rozhraní <xref:System.Collections.IDictionary> nebo <xref:System.Collections.Generic.IDictionary%602> obecném rozhraní.  
+  - Jeden klíč a jedna hodnota: Použijte některou <xref:System.Collections.IDictionary> z <xref:System.Collections.Generic.IDictionary%602> kolekcí na základě rozhraní nebo obecné rozhraní.  
   
-  - Jedna hodnota s vloženým klíčem: Použijte obecnou třídu <xref:System.Collections.ObjectModel.KeyedCollection%602>.  
+  - Jedna hodnota s vloženým <xref:System.Collections.ObjectModel.KeyedCollection%602> klíčem: Použijte obecnou třídu.  
   
-  - Jeden klíč a více hodnot: použijte třídu <xref:System.Collections.Specialized.NameValueCollection>.  
+  - Jeden klíč a více <xref:System.Collections.Specialized.NameValueCollection> hodnot: Použijte třídu.  
   
-- Je nutné prvky seřadit jinak, než byly zadány?  
+- Potřebujete třídit prvky jinak, než jak byly zadány?  
   
-  - Třída <xref:System.Collections.Hashtable> seřadí své prvky podle jejich kódů hash.  
+  - Třída <xref:System.Collections.Hashtable> seřadí své prvky podle jejich hash kódů.  
   
-  - Třída <xref:System.Collections.SortedList> a obecné třídy <xref:System.Collections.Generic.SortedList%602> a <xref:System.Collections.Generic.SortedDictionary%602> seřadí jejich prvky pomocí klíče. Pořadí řazení je založeno na implementaci rozhraní <xref:System.Collections.IComparer> pro třídu <xref:System.Collections.SortedList> a implementaci <xref:System.Collections.Generic.IComparer%601> obecné rozhraní pro <xref:System.Collections.Generic.SortedList%602> a <xref:System.Collections.Generic.SortedDictionary%602> obecné třídy. Ze dvou obecných typů <xref:System.Collections.Generic.SortedDictionary%602> nabízí lepší výkon než <xref:System.Collections.Generic.SortedList%602>, zatímco <xref:System.Collections.Generic.SortedList%602> spotřebovává méně paměti.  
+  - Třída <xref:System.Collections.SortedList> a <xref:System.Collections.Generic.SortedList%602> a <xref:System.Collections.Generic.SortedDictionary%602> obecné třídy seřazují jejich prvky podle klíče. Pořadí řazení je založeno na <xref:System.Collections.IComparer> implementaci rozhraní <xref:System.Collections.SortedList> pro třídu a <xref:System.Collections.Generic.IComparer%601> na implementaci <xref:System.Collections.Generic.SortedList%602> <xref:System.Collections.Generic.SortedDictionary%602> obecného rozhraní pro obecné třídy a. Ze dvou obecných <xref:System.Collections.Generic.SortedDictionary%602> typů nabízí <xref:System.Collections.Generic.SortedList%602>lepší <xref:System.Collections.Generic.SortedList%602> výkon než , zatímco spotřebovává méně paměti.  
   
-  - <xref:System.Collections.ArrayList> poskytuje metodu <xref:System.Collections.ArrayList.Sort%2A>, která přebírá <xref:System.Collections.IComparer> implementaci jako parametr. Jeho obecný protějšek, <xref:System.Collections.Generic.List%601> obecná třída, poskytuje metodu <xref:System.Collections.Generic.List%601.Sort%2A>, která přebírá implementaci <xref:System.Collections.Generic.IComparer%601> obecného rozhraní jako parametr.  
+  - <xref:System.Collections.ArrayList>poskytuje <xref:System.Collections.ArrayList.Sort%2A> metodu, <xref:System.Collections.IComparer> která bere implementaci jako parametr. Jeho obecný protějšek, <xref:System.Collections.Generic.List%601> obecná <xref:System.Collections.Generic.List%601.Sort%2A> třída, poskytuje metodu, která přebírá implementaci <xref:System.Collections.Generic.IComparer%601> obecného rozhraní jako parametr.  
   
-- Potřebujete rychle vyhledávat a načítat informace?  
+- Potřebujete rychlé vyhledávání a vyhledávání informací?  
   
-  - <xref:System.Collections.Specialized.ListDictionary> je rychlejší než <xref:System.Collections.Hashtable> pro malé kolekce (10 položek nebo méně). <xref:System.Collections.Generic.Dictionary%602> obecná třída poskytuje rychlejší vyhledávání než <xref:System.Collections.Generic.SortedDictionary%602> obecná třída. Implementace s více vlákny je <xref:System.Collections.Concurrent.ConcurrentDictionary%602>. <xref:System.Collections.Concurrent.ConcurrentBag%601> poskytuje rychlé vícevláknové vkládání pro Neseřazená data. Další informace o vícevláknových typech naleznete v tématu [kdy použít kolekci bezpečnou pro přístup z více vláken](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
+  - <xref:System.Collections.Specialized.ListDictionary>je rychlejší <xref:System.Collections.Hashtable> než u malých kolekcí (10 položek nebo méně). Obecná <xref:System.Collections.Generic.Dictionary%602> třída poskytuje rychlejší vyhledávání <xref:System.Collections.Generic.SortedDictionary%602> než obecná třída. Vícevláknová implementace je <xref:System.Collections.Concurrent.ConcurrentDictionary%602>. <xref:System.Collections.Concurrent.ConcurrentBag%601>poskytuje rychlé vložení více vlákny pro neuspořádaná data. Další informace o obou typech s více vlákny naleznete v [tématu When to Use a Thread-Safe Collection](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md).  
   
 - Potřebujete kolekce, které přijímají pouze řetězce?  
   
-  - <xref:System.Collections.Specialized.StringCollection> (na základě <xref:System.Collections.IList>) a <xref:System.Collections.Specialized.StringDictionary> (na základě <xref:System.Collections.IDictionary>) jsou v oboru názvů <xref:System.Collections.Specialized>.  
+  - <xref:System.Collections.Specialized.StringCollection>(na <xref:System.Collections.IList>základě <xref:System.Collections.Specialized.StringDictionary> ) a <xref:System.Collections.IDictionary>(na <xref:System.Collections.Specialized> základě) jsou v oboru názvů.  
   
-  - Kromě toho můžete použít libovolnou z obecných tříd kolekce v oboru názvů <xref:System.Collections.Generic> jako kolekce řetězců silného typu zadáním <xref:System.String> třídy pro jejich argumenty obecného typu. Například můžete deklarovat proměnnou, která má být typu [seznam\<řetězec >](xref:System.Collections.Generic.List%601) nebo [Dictionary < string, String >](xref:System.Collections.Generic.Dictionary%602).
+  - Kromě toho můžete použít některou z obecných tříd kolekce v oboru <xref:System.Collections.Generic> názvů jako <xref:System.String> kolekce řetězců silného typu zadáním třídy pro jejich argumenty obecného typu. Můžete například deklarovat proměnnou typu [Řetězec\<seznamu>](xref:System.Collections.Generic.List%601) nebo Slovník<[řetězec,Řetězec>](xref:System.Collections.Generic.Dictionary%602).
   
-## <a name="linq-to-objects-and-plinq"></a>LINQ to Objects a PLINQ  
- LINQ to Objects umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, pokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzor pro přístup k datům, jsou obvykle stručnější a čitelné než standardní `foreach` smyčky a poskytují možnosti filtrování, řazení a seskupování. Další informace najdete v tématu [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md) a [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md).  
+## <a name="linq-to-objects-and-plinq"></a>LINQ k objektům a PLINQ  
+ LINQ to Objects umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, pokud typ objektu implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. LINQ dotazy poskytují společný vzor pro přístup k datům, jsou obvykle `foreach` stručnější a čitelnější než standardní smyčky a poskytují možnosti filtrování, řazení a seskupování. Další informace naleznete [v tématu LINQ na objekty (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md) a [LINQ na objekty (Visual Basic).](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
   
- PLINQ poskytuje paralelní implementaci LINQ to Objects, která může nabízet rychlejší provádění dotazů v mnoha scénářích, a to díky efektivnějšímu využívání vícejádrových počítačů. Další informace naleznete v tématu [PARALLEL LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ PLINQ poskytuje paralelní implementaci LINQ na objekty, které mohou nabídnout rychlejší provádění dotazů v mnoha scénářích, a to prostřednictvím efektivnějšího využití vícejádrových počítačů. Další informace naleznete [v tématu Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections>
 - <xref:System.Collections.Specialized>

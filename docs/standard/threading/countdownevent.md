@@ -9,42 +9,42 @@ helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
 ms.openlocfilehash: 628d6a96606117d447c61d01595d13dd4a957ce4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73138114"
 ---
 # <a name="countdownevent"></a>CountdownEvent
-<xref:System.Threading.CountdownEvent?displayProperty=nameWithType> je synchronizační primitiv, která odblokuje své čekající vlákna poté, co byla signalizována určitý počet opakování. <xref:System.Threading.CountdownEvent> je navržený pro scénáře, ve kterých byste jinak museli použít <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim> a ručně snížit proměnnou před signalizací události. Například ve scénáři rozvětvení/spojení můžete vytvořit <xref:System.Threading.CountdownEvent>, která má počet signálů 5, a potom spustit pět pracovních položek ve fondu vláken a nechat <xref:System.Threading.CountdownEvent.Signal%2A> volání pracovní položky, když je dokončí. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> sníží počet signálů o 1. V hlavním vlákně se volání <xref:System.Threading.CountdownEvent.Wait%2A> zablokuje, dokud není počet signálů nula.  
+<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>je synchronizační primitiv, který odblokuje jeho čekající vlákna poté, co byla signalizována určitý počet opakování. <xref:System.Threading.CountdownEvent>je určen pro scénáře, ve kterých <xref:System.Threading.ManualResetEvent> <xref:System.Threading.ManualResetEventSlim> byste jinak museli použít nebo nebo ručně dekrement proměnné před signalizací události. Například ve scénáři rozteč/spojení můžete <xref:System.Threading.CountdownEvent> pouze vytvořit, který má počet signálů 5 a potom spustit pět <xref:System.Threading.CountdownEvent.Signal%2A> pracovních položek ve fondu vláken a mít každé volání pracovní položky po dokončení. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> sníží počet signálů o 1. V hlavním vlákně <xref:System.Threading.CountdownEvent.Wait%2A> bude volání blokovat, dokud nebude počet signálů nula.  
   
 > [!NOTE]
-> Pro kód, který nemusí pracovat se staršími rozhraními API pro synchronizaci .NET Framework, zvažte použití objektů <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> nebo <xref:System.Threading.Tasks.Parallel.Invoke%2A> metody pro snazší přístup k paralelnímu přístupu rozvětvení.  
+> Pro kód, který nemusí pracovat se staršími rozhraními API <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> synchronizace <xref:System.Threading.Tasks.Parallel.Invoke%2A> rozhraní .NET Framework, zvažte použití objektů nebo metody pro ještě snadnější přístup k vyjádření paralelismu spojení vložky.  
   
- <xref:System.Threading.CountdownEvent> má tyto další funkce:  
+ <xref:System.Threading.CountdownEvent>má tyto další funkce:  
   
-- Operaci čekání lze zrušit pomocí tokenů zrušení.  
+- Operace čekání může být zrušena pomocí tokenů zrušení.  
   
-- Po vytvoření instance se dá zvýšit počet signálů.  
+- Jeho počet signálu může být po vytvoření instance zpřísněn.  
   
-- Instance lze znovu použít po vrácení <xref:System.Threading.CountdownEvent.Wait%2A> voláním metody <xref:System.Threading.CountdownEvent.Reset%2A>.  
+- Instance lze znovu použít <xref:System.Threading.CountdownEvent.Wait%2A> po vrácené <xref:System.Threading.CountdownEvent.Reset%2A> voláním metody.  
   
-- Instance zpřístupňují <xref:System.Threading.WaitHandle> pro integraci s jinými .NET Frameworkmi synchronizačními rozhraními API, jako je například <xref:System.Threading.WaitHandle.WaitAll%2A>.  
+- Instance vystavit <xref:System.Threading.WaitHandle> pro integraci s jinými rozhraní mise <xref:System.Threading.WaitHandle.WaitAll%2A>.NET Framework synchronizace rozhraní API, jako je například .  
   
-## <a name="basic-usage"></a>Základní využití  
- Následující příklad ukazuje, jak použít <xref:System.Threading.CountdownEvent> s pracovními položkami <xref:System.Threading.ThreadPool>.  
+## <a name="basic-usage"></a>Základní použití  
+ Následující příklad ukazuje, jak <xref:System.Threading.CountdownEvent> používat <xref:System.Threading.ThreadPool> s pracovní položky.  
   
  [!code-csharp[CDS_CountdownEvent#01](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#01)]
  [!code-vb[CDS_CountdownEvent#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/module1.vb#01)]  
   
-## <a name="countdownevent-with-cancellation"></a>CountdownEvent s zrušením  
- Následující příklad ukazuje, jak zrušit operaci čekání na <xref:System.Threading.CountdownEvent> pomocí tokenu zrušení. Základní vzor následuje model pro sjednocení zrušení, který je představený v .NET Framework 4. Další informace naleznete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md).  
+## <a name="countdownevent-with-cancellation"></a>CountdownEvent se zrušením  
+ Následující příklad ukazuje, jak zrušit <xref:System.Threading.CountdownEvent> operaci čekání na pomocí tokenu zrušení. Základní vzor následuje model pro jednotné zrušení, který je zaveden v rozhraní .NET Framework 4. Další informace naleznete [v tématu Zrušení v tématu Spravovaná vlákna](../../../docs/standard/threading/cancellation-in-managed-threads.md).  
   
  [!code-csharp[CDS_CountdownEvent#02](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#02)]
  [!code-vb[CDS_CountdownEvent#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/canceleventwait.vb#02)]  
   
- Všimněte si, že operace wait neruší vlákna, která ji signalizuje. Zrušení je obvykle použito pro logickou operaci a může zahrnovat čekání na událost a také všechny pracovní položky, které čeká na synchronizaci. V tomto příkladu je každé pracovní položce předána kopie stejného tokenu zrušení, aby mohla reagovat na žádost o zrušení.  
+ Všimněte si, že operace čekání nezruší podprocesy, které jsou signalizace. Obvykle zrušení se použije na logické operace a to může zahrnovat čekání na událost, stejně jako všechny pracovní položky, které čekání synchronizuje. V tomto příkladu je každé pracovní položce předána kopie stejného tokenu zrušení tak, aby mohla reagovat na požadavek na zrušení.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.Semaphore?displayProperty=nameWithType>

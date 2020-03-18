@@ -13,21 +13,21 @@ helpviewer_keywords:
 - implicitly throwing exceptions
 ms.assetid: 72bdd157-caa9-4478-9ee3-cb4500b84528
 ms.openlocfilehash: 750da20b8c1c40901cc363ac0eff8af888821ce9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75708859"
 ---
-# <a name="how-to-explicitly-throw-exceptions"></a>Postup explicitního vyvolání výjimek
+# <a name="how-to-explicitly-throw-exceptions"></a>Jak explicitně vyvolat výjimky
 
-Výjimku lze explicitně vyvolat pomocí C# [`throw`](../../csharp/language-reference/keywords/throw.md) nebo příkazu Visual Basic [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) . Zachycenou výjimku můžete také vyvolat znovu pomocí příkazu `throw`. Je vhodné postupovat při kódování pro přidání informací do výjimky, která se znovu vyvolala k poskytnutí dalších informací při ladění.
+Můžete explicitně vyvolat výjimku [`throw`](../../csharp/language-reference/keywords/throw.md) pomocí C# [`Throw`](../../visual-basic/language-reference/statements/throw-statement.md) nebo Visual Basic prohlášení. Můžete také vyvolat zachycené výjimky znovu pomocí příkazu. `throw` Je vhodné kódování praxe přidat informace o výjimce, která je znovu vyvolána poskytnout další informace při ladění.
 
-Následující příklad kódu používá `try`/`catch` blok k zachycení možného <xref:System.IO.FileNotFoundException>. Následující blok `try` je `catch` blok, který zachytává <xref:System.IO.FileNotFoundException> a zapisuje zprávu do konzoly, pokud datový soubor nebyl nalezen. Další příkaz je příkaz `throw`, který vyvolá nový <xref:System.IO.FileNotFoundException> a přidá do výjimky textové informace.
+Následující příklad kódu `try` / `catch` používá blok zachytit <xref:System.IO.FileNotFoundException>možné . Následující `try` blok je `catch` blok, <xref:System.IO.FileNotFoundException> který zachytí a zapíše zprávu do konzoly, pokud datový soubor nebyl nalezen. Dalším příkazem `throw` je příkaz, který <xref:System.IO.FileNotFoundException> vyvolá nový a přidá textové informace k výjimce.
 
 [!code-csharp[Exception.Throwing#1](~/samples/snippets/csharp/VS_Snippets_CLR/Exception.Throwing/CS/throw.cs#1)]
 [!code-vb[Exception.Throwing#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Exception.Throwing/VB/throw.vb#1)]  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Výjimky](index.md)

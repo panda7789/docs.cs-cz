@@ -23,82 +23,82 @@ helpviewer_keywords:
 - full weekday names
 ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
 ms.openlocfilehash: 771bd0276310eecb534fb80836faadb1a8aa10bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73084192"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu z konkrétního data
-.NET Framework usnadňuje určení pořadového čísla dne v týdnu pro konkrétní datum a zobrazení lokalizovaného názvu dne v týdnu pro konkrétní datum. Hodnota výčtu, která určuje den v týdnu odpovídající konkrétnímu datu, je k dispozici z vlastnosti <xref:System.DateTime.DayOfWeek%2A> nebo <xref:System.DateTimeOffset.DayOfWeek%2A>. Naproti tomu, že načtení názvu dne v týdnu je operace formátování, kterou lze provést voláním metody formátování, jako je například metoda `ToString` hodnoty data a času nebo metoda <xref:System.String.Format%2A?displayProperty=nameWithType>. V tomto tématu se dozvíte, jak provést tyto operace formátování.  
+Rozhraní .NET Framework usnadňuje určení řadového dne v týdnu pro určité datum a zobrazení lokalizovaného názvu dne v týdnu pro určité datum. Výčet hodnota, která označuje den v týdnu odpovídající určité datum <xref:System.DateTime.DayOfWeek%2A> <xref:System.DateTimeOffset.DayOfWeek%2A> je k dispozici od nebo vlastnost. Naproti tomu načítání názvu dne v týdnu je operace formátování, kterou lze provést voláním metody formátování, `ToString` jako je <xref:System.String.Format%2A?displayProperty=nameWithType> například metoda hodnoty data a času nebo metoda. Toto téma ukazuje, jak tyto operace formátování provádět.  
   
-### <a name="to-extract-a-number-indicating-the-day-of-the-week-from-a-specific-date"></a>Extrakce čísla určujícího den v týdnu od konkrétního data  
+### <a name="to-extract-a-number-indicating-the-day-of-the-week-from-a-specific-date"></a>Extrahování čísla označující den v týdnu od určitého data  
   
 1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
-2. Vlastnost <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> můžete použít k načtení <xref:System.DayOfWeek> hodnoty, která označuje den v týdnu.  
+2. Pomocí <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> vlastnosti or <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> <xref:System.DayOfWeek> načtěte hodnotu, která označuje den v týdnu.  
   
-3. V případě potřeby přetypování ( C#in) nebo převeďte (v Visual Basic) hodnotu <xref:System.DayOfWeek> na celé číslo.  
+3. V případě potřeby přetypujte (v jazyce C#) nebo převeďte <xref:System.DayOfWeek> (v jazyce Visual Basic) hodnotu na celé číslo.  
   
- Následující příklad zobrazuje celé číslo, které představuje den v týdnu určitého data.  
+ Následující příklad zobrazuje celé číslo představující den v týdnu určitého data.  
   
  [!code-csharp[Formatting.Howto.WeekdayName#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/weekdaynumber7.cs#7)]
  [!code-vb[Formatting.Howto.WeekdayName#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/weekdaynumber7.vb#7)]  
   
-### <a name="to-extract-the-abbreviated-weekday-name-from-a-specific-date"></a>Extrakce zkráceného názvu dne v týdnu z konkrétního data  
+### <a name="to-extract-the-abbreviated-weekday-name-from-a-specific-date"></a>Extrahování zkráceného názvu dne v týdnu od určitého data  
   
 1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
-2. Můžete extrahovat zkrácený název dne v týdnu aktuální jazykové verze nebo konkrétní jazykové verze:  
+2. Můžete extrahovat zkrácený název dne v týdnu aktuální jazykové verze nebo určité jazykové verze:  
   
-    1. Chcete-li extrahovat zkrácený název dne v týdnu pro aktuální jazykovou verzi, zavolejte metodu hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instance a předejte řetězec "ddd" jako parametr `format`. Následující příklad ilustruje volání metody <xref:System.DateTime.ToString%28System.String%29>.  
+    1. Chcete-li extrahovat zkrácený název dne v týdnu pro aktuální <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> jazykovou verzi, zavolejte metodu nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> metodu instance hodnoty data a času a předejte jako `format` parametr řetězec "ddd". Následující příklad ilustruje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname1.cs#1)]
          [!code-vb[Formatting.Howto.WeekdayName#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname1.vb#1)]  
   
-    2. Chcete-li extrahovat zkrácený název dne v týdnu pro konkrétní jazykovou verzi, zavolejte metodu hodnoty data a času <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> instance. Předejte řetězec "ddd" jako parametr `format`. Předejte buď <xref:System.Globalization.CultureInfo>, nebo objekt <xref:System.Globalization.DateTimeFormatInfo>, který představuje jazykovou verzi, jejíž název dne v týdnu chcete načíst jako parametr `provider`. Následující kód ilustruje volání metody <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> pomocí objektu <xref:System.Globalization.CultureInfo>, který představuje jazykovou verzi fr-FR.  
+    2. Chcete-li extrahovat zkrácený název dne v týdnu pro konkrétní <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> jazykovou verzi, zavolejte metodu hodnoty data a času nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> instancí. Předajte řetězec "ddd" jako `format` parametr. Předaj <xref:System.Globalization.CultureInfo> te <xref:System.Globalization.DateTimeFormatInfo> buď a nebo objekt, který představuje jazykovou verzi, jejíž název dne v týdnu `provider` chcete načíst jako parametr. Následující kód ilustruje volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> metody pomocí <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi fr-FR.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname2.cs#2)]
          [!code-vb[Formatting.Howto.WeekdayName#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname2.vb#2)]  
   
-### <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a>Extrakce úplného názvu dne v týdnu z konkrétního data  
+### <a name="to-extract-the-full-weekday-name-from-a-specific-date"></a>Extrahování celého názvu dne v týdnu z určitého data  
   
 1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%2A?displayProperty=nameWithType>.  
   
 2. Můžete extrahovat úplný název dne v týdnu aktuální jazykové verze nebo konkrétní jazykové verze:  
   
-    1. Chcete-li extrahovat název dne v týdnu pro aktuální jazykovou verzi, zavolejte metodu <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instance hodnoty data a času a předejte řetězec "dddd" jako parametr `format`. Následující příklad ilustruje volání metody <xref:System.DateTime.ToString%28System.String%29>.  
+    1. Chcete-li extrahovat název dne v týdnu pro <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> aktuální <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> jazykovou verzi, zavolejte metodu hodnoty `format` data a času nebo metodu instance a předejte jako parametr řetězec "dddd". Následující příklad ilustruje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname4.cs#4)]
          [!code-vb[Formatting.Howto.WeekdayName#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname4.vb#4)]  
   
-    2. Chcete-li extrahovat název dne v týdnu pro konkrétní jazykovou verzi, zavolejte metodu hodnoty data a času <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> instance. Předejte řetězec "dddd" jako parametr `format`. Předejte buď <xref:System.Globalization.CultureInfo>, nebo objekt <xref:System.Globalization.DateTimeFormatInfo>, který představuje jazykovou verzi, jejíž název dne v týdnu chcete načíst jako parametr `provider`. Následující kód ilustruje volání metody <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> pomocí objektu <xref:System.Globalization.CultureInfo>, který představuje jazykovou verzi ES-ES.  
+    2. Chcete-li extrahovat název dne v týdnu pro <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> konkrétní <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> jazykovou verzi, zavolejte metodu hodnoty data a času nebo instancí. Předajte řetězec "dddd" jako `format` parametr. Předaj <xref:System.Globalization.CultureInfo> te <xref:System.Globalization.DateTimeFormatInfo> buď a nebo objekt, který představuje jazykovou verzi, jejíž název dne v týdnu `provider` chcete načíst jako parametr. Následující kód ilustruje volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> metody pomocí <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi es es.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname5.cs#5)]
          [!code-vb[Formatting.Howto.WeekdayName#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname5.vb#5)]  
   
 ## <a name="example"></a>Příklad  
- Příklad znázorňuje volání vlastností <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> a <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> a metody <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> a <xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType> k načtení čísla, které představuje den v týdnu, zkrácený název dne v týdnu a úplný název dne v týdnu pro konkrétní datum.  
+ Příklad ilustruje <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> volání vlastností <xref:System.DateTimeOffset.DayOfWeek%2A?displayProperty=nameWithType> a <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> a <xref:System.DateTimeOffset.ToString%2A?displayProperty=nameWithType> metody a pro načtení čísla, které představuje den v týdnu, zkrácený název dne v týdnu a úplný název dne v týdnu pro určité datum.  
   
  [!code-csharp[Formatting.Howto.WeekdayName#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/example6.cs#6)]
  [!code-vb[Formatting.Howto.WeekdayName#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/example6.vb#6)]  
   
- Jednotlivé jazyky mohou poskytovat funkce, které duplikují nebo doplňují funkce poskytované .NET Framework. Například Visual Basic obsahuje dvě takové funkce:  
+ Jednotlivé jazyky mohou poskytovat funkce, které duplikují nebo doplňují funkce poskytované rozhraním .NET Framework. Například Visual Basic obsahuje dvě takové funkce:  
   
-- `Weekday`, která vrací číslo, které označuje den v týdnu určitého data. Považuje pořadové číslo prvního dne v týdnu za jeden, zatímco vlastnost <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> považuje hodnotu za nulu.  
+- `Weekday`, který vrátí číslo, které označuje den v týdnu určitého data. Hodnotu prvního dne v týdnu považuje za jeden, zatímco <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> vlastnost ji považuje za nulovou.  
   
-- `WeekdayName`, která vrací název týdne v aktuální jazykové verzi, který odpovídá konkrétnímu číslu dne v týdnu.  
+- `WeekdayName`, který vrátí název týdne v aktuální jazykové verzi, který odpovídá určitému číslu dne v týdnu.  
   
- Následující příklad znázorňuje použití Visual Basic `Weekday` a `WeekdayName` funkce.  
+ Následující příklad ilustruje použití jazyka a `Weekday` `WeekdayName` funkce.  
   
  [!code-vb[Formatting.HowTo.WeekdayName#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/example9.vb#9)]  
   
- Hodnotu vrácenou vlastností <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> můžete použít také k načtení názvu dne v týdnu určitého data. To vyžaduje pouze volání metody <xref:System.Enum.ToString%2A> na hodnotě <xref:System.DayOfWeek> vrácené vlastností. Nicméně tato technika nevytvoří lokalizovaný název dne v týdnu pro aktuální jazykovou verzi, jak ukazuje následující příklad.  
+ Můžete také použít hodnotu <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> vrácenou vlastností k načtení názvu konkrétního data dne v týdnu. To vyžaduje pouze volání <xref:System.Enum.ToString%2A> metody <xref:System.DayOfWeek> na hodnotu vrácenou vlastností. Tato technika však nevytváří lokalizovaný název dne v týdnu pro aktuální jazykovou verzi, jak ukazuje následující příklad.  
   
  [!code-csharp[Formatting.HowTo.WeekdayName#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/Howto1.cs#8)]
  [!code-vb[Formatting.HowTo.WeekdayName#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/Howto1.vb#8)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)
 - [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)

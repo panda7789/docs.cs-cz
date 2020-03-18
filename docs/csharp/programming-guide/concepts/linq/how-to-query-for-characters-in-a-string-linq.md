@@ -1,19 +1,19 @@
 ---
-title: Dotazování na znaky v řetězci (LINQ) (C#)
+title: Jak dotaz ovat znaky v řetězci (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
 ms.openlocfilehash: d85e488a38a6167505732103b4c540cade6ea9bc
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345684"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Dotazování na znaky v řetězci (LINQ) (C#)
-Vzhledem k tomu, že třída <xref:System.String> implementuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, může být libovolný řetězec dotazován jako posloupnost znaků. Nejedná se však o běžné použití LINQ. Pro komplexní operace porovnávání vzorů použijte třídu <xref:System.Text.RegularExpressions.Regex>.  
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Jak dotaz ovat znaky v řetězci (LINQ) (C#)
+Vzhledem <xref:System.String> k tomu, <xref:System.Collections.Generic.IEnumerable%601> že třída implementuje obecné rozhraní, může být libovolný řetězec dotazován jako posloupnost znaků. To však není běžné použití LINQ. Pro operace porovnávání složitých vzorů použijte třídu. <xref:System.Text.RegularExpressions.Regex>  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vyhledá řetězec, který určí počet číslic, které obsahuje. Všimněte si, že po prvním spuštění dotazu je dotaz znovu použit. To je možné, protože samotný dotaz neukládá žádné skutečné výsledky.  
+ Následující příklad dotazuje řetězec určit počet číselných číslic, které obsahuje. Všimněte si, že dotaz je "znovu použít" po jeho prvním spuštění. To je možné, protože dotaz sám neukládá žádné skutečné výsledky.  
   
 ```csharp  
 class QueryAString  
@@ -55,9 +55,9 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
 - [Jak kombinovat dotazy LINQ s regulárními výrazy (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)

@@ -1,21 +1,21 @@
 ---
 title: Delegáty a výrazy lambda
-description: Přečtěte si, jak Delegáti definují typ, který určuje konkrétní signaturu metody, kterou lze volat přímo nebo předat jiné metodě a volána.
+description: Zjistěte, jak delegáti definují typ, který určuje podpis konkrétní metody, který lze volat přímo nebo předán jiné metodě a volán.
 author: richlander
 ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
 ms.openlocfilehash: 0abcc73e31eab89c422513acf778bc8bd092e788
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75345544"
 ---
 # <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
-Delegáti definují typ, který určuje konkrétní signaturu metody. Metoda (static nebo instance), která odpovídá tomuto podpisu, může být přiřazena proměnné tohoto typu, pak volána přímo (s příslušnými argumenty) nebo předána jako argument do jiné metody a následně volána. Následující příklad ukazuje použití delegáta.
+Delegáti definují typ, který určuje podpis konkrétní metody. Metoda (statická nebo instance), která splňuje tento podpis, může být přiřazena proměnné tohoto typu, poté volána přímo (s příslušnými argumenty) nebo předána jako samotný argument jiné metodě a poté volána. Následující příklad ukazuje použití delegáta.
 
 ```csharp
 using System;
@@ -39,18 +39,18 @@ public class Program
 }
 ```
 
-* `public delegate string Reverse(string s);` řádek vytvoří typ delegáta určité signatury, v tomto případě metodu, která přijímá řetězcový parametr a potom vrátí řetězcový parametr.
-* Metoda `static string ReverseString(string s)`, která má přesně stejný podpis jako definovaný typ delegáta, implementuje delegáta.
-* `Reverse rev = ReverseString;` řádek ukazuje, že můžete přiřadit metodu proměnné odpovídajícího typu delegáta.
-* `Console.WriteLine(rev("a string"));` řádek ukazuje, jak použít proměnnou typu delegáta k vyvolání delegáta.
+* Řádek `public delegate string Reverse(string s);` vytvoří typ delegáta určitého podpisu, v tomto případě metoda, která přebírá parametr řetězce a pak vrátí parametr řetězce.
+* Metoda, `static string ReverseString(string s)` která má přesně stejný podpis jako definovaný typ delegáta, implementuje delegáta.
+* Řádek `Reverse rev = ReverseString;` ukazuje, že můžete přiřadit metodu proměnné odpovídajícího typu delegáta.
+* Řádek `Console.WriteLine(rev("a string"));` ukazuje, jak použít proměnnou typu delegáta k vyvolání delegáta.
 
-Aby bylo možné zjednodušit proces vývoje, obsahuje rozhraní .NET sadu typů delegátů, které mohou programátory použít a nikoli vytvářet nové typy. Jedná se o `Func<>`, `Action<>` a `Predicate<>`a dají se použít na různých místech rozhraní API .NET, aniž by bylo potřeba definovat nové typy delegátů. Samozřejmě existuje několik rozdílů mezi těmito třemi, jak vidíte ve svých signaturách, které se většinou musí provádět s způsobem, jakým byly určeny k použití:
+Za účelem zjednodušení procesu vývoje obsahuje rozhraní .NET sadu typů delegátů, které mohou programátoři znovu použít a nemusí vytvářet nové typy. Jedná `Func<>`se `Action<>` `Predicate<>`o , a , a mohou být použity na různých místech v rámci rozhraní API .NET bez nutnosti definovat nové typy delegátů. Samozřejmě, tam jsou některé rozdíly mezi těmito třemi, jak uvidíte v jejich podpisy, které většinou mají co do činění s tím, jak byly určeny k použití:
 
-* `Action<>` se používá v případě, že je potřeba provést akci pomocí argumentů delegáta.
-* `Func<>` se obvykle používá, když máte transformaci, to znamená, že je nutné transformovat argumenty delegáta na jiný výsledek. Projekce jsou hlavními příklady.
-* `Predicate<>` se používá v případě, že potřebujete určit, jestli argument splňuje podmínky delegáta. Může být také zapsána jako `Func<T, bool>`.
+* `Action<>`se používá, když je potřeba provést akci pomocí argumentů delegáta.
+* `Func<>`se obvykle používá, když máte transformace na skladě, to znamená, že je třeba transformovat argumenty delegáta do jiného výsledku. Projekce jsou toho ukázkovým příkladem.
+* `Predicate<>`se používá, když potřebujete zjistit, zda argument splňuje podmínku delegáta. To může být také `Func<T, bool>`napsáno jako .
 
-Nyní můžeme použít náš příklad výše a přepsat ho pomocí `Func<>` delegáta místo vlastního typu. Program bude pokračovat v běhu přesně stejně.
+Nyní můžeme vzít náš příklad výše a `Func<>` přepsat jej pomocí delegáta namísto vlastního typu. Program bude pokračovat v spuštění přesně stejný.
 
 ```csharp
 using System;
@@ -72,9 +72,9 @@ public class Program
 }
 ```
 
-V tomto jednoduchém příkladu se metoda definovaná mimo metodu `Main` jeví jako trochu nadbytečné. Důvodem je to, že .NET Framework 2,0 představil koncept **anonymních delegátů**. S jejich podporou můžete vytvořit "vložené" delegáty bez nutnosti zadat jakýkoliv další typ nebo metodu. Stačí jednoduše vložit definici delegáta, kde ho potřebujete.
+Pro tento jednoduchý příklad, s metodou `Main` definovanou mimo metodu se zdá být trochu nadbytečné. Je to proto, že rozhraní .NET Framework 2.0 představil koncept **anonymních delegátů**. S jejich podporou můžete vytvořit "inline" delegáty bez nutnosti zadávat další typ nebo metodu. Jednoduše zařazujete definici delegáta tam, kde ji potřebujete.
 
-V tomto příkladu ho převedeme a pomocí našeho anonymního delegáta vyfiltrujete seznam jenom s čísly a pak je vytisknete do konzoly.
+Například ji přepneme a použijeme anonymního delegáta k odfiltrování seznamu pouze sudých čísel a jejich vytištění do konzole.
 
 ```csharp
 using System;
@@ -106,13 +106,13 @@ public class Program
 }
 ```
 
-Jak vidíte, tělo delegáta je pouze sada výrazů, jako jakýkoli jiný delegát. Ale namísto toho, že se jedná o samostatnou definici, jsme v našem volání metody <xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> zavedli _ad hoc_ .
+Jak můžete vidět, tělo delegáta je jen sada výrazů, jako každý jiný delegát. Ale místo toho, aby to byla samostatná definice, zavedli jsme <xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> ji _ad hoc_ v našem volání k metodě.
 
-Nicméně i s tímto přístupem existuje stále spousta kódu, který můžeme vrátit. Toto je místo, kde se dodávají **výrazy lambda** .
+Nicméně, i s tímto přístupem, je stále mnoho kódu, který můžeme vyhodit. To je místo, kde **lambda výrazy** přicházejí do hry.
 
-Lambda výrazy nebo pouze "výrazy lambda" pro krátké, byly představeny jako první C# v 3,0 jako jeden ze základních stavebních bloků jazyka LINQ (Language Integrated Query). Jsou to pouze pohodlnější syntaxe pro použití delegátů. Deklaruje signaturu a tělo metody, ale nemají oficiální identitu své vlastní, pokud nejsou přiřazeni delegátovi. Na rozdíl od delegátů lze přímo přiřadit jako levou stranu registrace události nebo v různých klauzulích a metodách LINQ.
+Lambda výrazy, nebo jen "lambdas" v krátkosti, byly zavedeny nejprve v Jazyce C# 3.0, jako jeden z základních stavebních bloků jazyka integrovaný dotaz (LINQ). Jsou to jen pohodlnější syntaxe pro použití delegátů. Deklarují podpis a tělo metody, ale nemají vlastní formální identitu, pokud nejsou přiřazeny delegátovi. Na rozdíl od delegátů mohou být přímo přiřazeny jako levá strana registrace událostí nebo v různých klauzulích a metodách LINQ.
 
-Vzhledem k tomu, že výraz lambda je pouze dalším způsobem určení delegáta, by měl být možné přepsat výše uvedený vzorek tak, aby namísto anonymního delegáta používal výraz lambda.
+Vzhledem k tomu, že výraz lambda je pouze dalším způsobem určení delegáta, měli bychom být schopni přepsat výše uvedenou ukázku tak, aby místo anonymního delegáta použilvýraz lambda.
 
 ```csharp
 using System;
@@ -139,9 +139,9 @@ public class Program
 }
 ```
 
-V předchozím příkladu je použit výraz lambda `i => i % 2 == 0`. Znovu je to pouze **velmi** pohodlná syntaxe pro použití delegátů, takže co se stane v rámci pokrývání je podobné tomu jako u anonymního delegáta.
+V předchozím příkladu je `i => i % 2 == 0`použitý výraz lambda . Opět je to jen **velmi** výhodná syntaxe pro použití delegátů, takže to, co se děje pod kryty, je podobné tomu, co se děje s anonymním delegátem.
 
-Výrazy lambda jsou znovu pouze delegáty, což znamená, že je možné je použít jako obslužná rutina události bez jakýchkoli problémů, jak ukazuje následující fragment kódu.
+Opět lambdas jsou pouze delegáti, což znamená, že mohou být použity jako obslužná rutina události bez problémů, jak ukazuje následující fragment kódu.
 
 ```csharp
 public MainWindow()
@@ -155,10 +155,10 @@ public MainWindow()
 }
 ```
 
-Operátor `+=` v tomto kontextu slouží k přihlášení k odběru [události](../../docs/csharp/language-reference/keywords/event.md). Další informace najdete v tématu [jak se přihlásit k odběru událostí a odhlásit se z](../../docs/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)nich.
+Operátor `+=` v tomto kontextu se používá k odběru [události](../../docs/csharp/language-reference/keywords/event.md). Další informace naleznete v tématu [Jak se přihlásit k odběru a odhlásit z odběru událostí](../../docs/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
-## <a name="further-reading-and-resources"></a>Další materiály a materiály pro čtení
+## <a name="further-reading-and-resources"></a>Další čtení a zdroje
 
-* [Delegáti](../../docs/csharp/programming-guide/delegates/index.md)
+* [Delegáty](../../docs/csharp/programming-guide/delegates/index.md)
 * [Anonymní funkce](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
 * [Výrazy lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

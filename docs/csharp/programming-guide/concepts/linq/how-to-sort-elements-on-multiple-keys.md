@@ -1,23 +1,23 @@
 ---
-title: Postup řazení prvků ve více klíčích (C#)
+title: Jak řadit prvky na více klíčů (C#)
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
 ms.openlocfilehash: ddfeab4bf9b67231296ca90df1244a3b8a441440
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347383"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Postup řazení prvků ve více klíčích (C#)
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a>Jak řadit prvky na více klíčů (C#)
 
-V tomto tématu se dozvíte, jak řadit podle více klíčů.
+Toto téma ukazuje, jak řadit na více klíčů.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.
+V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního psč zásilky a poté podle data objednávky.
 
-Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).
+Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML).](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -65,9 +65,9 @@ CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).
+Následující příklad ukazuje stejný dotaz pro jazyk XML, který je v oboru názvů. Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).
 
-Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky v oboru názvů](./sample-xml-file-customers-and-orders-in-a-namespace.md).
+Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](./sample-xml-file-customers-and-orders-in-a-namespace.md).
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");

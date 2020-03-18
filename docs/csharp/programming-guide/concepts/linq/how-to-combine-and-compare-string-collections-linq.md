@@ -1,20 +1,20 @@
 ---
-title: Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)
+title: Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: 23089835e710a7905693f8e3e3b57173085d0694
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f73a31e109933a4b6dd0078934d89d3bb770de5c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141426"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169451"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)
-Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky. Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)
+Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a pak seřadit výsledky. Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průsečík na dvě sady řádků textu.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textových souborů  
   
-1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:  
+1. Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložte je do složky projektu:  
   
     ```text  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a 
     Garcia, Debra  
     ```  
   
-2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé běžné názvy.  
+2. Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé názvy společné.  
   
     ```text  
     Liu, Jinghao  
@@ -74,7 +74,7 @@ class MergeStrings
                 fileA.Intersect(fileB);  
             OutputQueryResults(commonNamesQuery, "Merge based on intersect:");  
   
-            // Find the matching fields in each list. Merge the two   
+            // Find the matching fields in each list. Merge the two
             // results by using Concat, and then  
             // sort using the default string comparer.  
             string nameMatch = "Garcia";  
@@ -169,9 +169,9 @@ class MergeStrings
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
-- [LINQ a souborové adresáře (C#)](./linq-and-file-directories.md)
+- [Linq a souborové adresáře (C#)](./linq-and-file-directories.md)

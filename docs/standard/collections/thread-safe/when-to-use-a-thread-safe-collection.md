@@ -6,61 +6,61 @@ helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
 ms.openlocfilehash: 5a0abef6de9f932f44fc7e3239b98c3a27846580
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711217"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
-.NET Framework 4 zavádí pět nových typů kolekcí, které jsou speciálně navržené tak, aby podporovaly operace přidávání a odebírání s více vlákny. Aby bylo možné dosáhnout bezpečnosti více vláken, tyto nové typy používají různé druhy efektivního uzamykání a synchronizačních mechanismů bez zámků. Synchronizace přidává k operaci režii. Množství režie závisí na druhu používané synchronizace, typu prováděných operací a dalších faktorech, jako je počet vláken, která se pokoušejí souběžně přistupovat ke kolekci.  
+Rozhraní .NET Framework 4 zavádí pět nových typů kolekce, které jsou speciálně navrženy pro podporu vícevláknových operací přidání a odebrání. Pro dosažení bezpečnosti závitů používají tyto nové typy různé druhy efektivních mechanismů uzamčení a synchronizace bez zámků. Synchronizace zvyšuje režii operace. Množství režie závisí na druhu synchronizace, která se používá, druh operací, které jsou prováděny a další faktory, jako je například počet podprocesů, které se pokoušejí souběžně přistupovat ke kolekci.  
   
- V některých scénářích je režijní náklady na synchronizaci zanedbatelná a umožňuje, aby vícevláknový typ byl výrazně rychlejší a lépe škálovatelný, než je ekvivalent bez bezpečného vlákna, pokud je chráněn externím zámkem. V jiných scénářích může režie způsobit, že typ bezpečný pro přístup z více vláken provede a škáluje o stejné nebo ještě pomalejší úrovni než verze typu externě uzamčená bez možnosti bezpečného přístupu z více vláken.  
+ V některých scénářích je režie synchronizace zanedbatelná a umožňuje vícevláknovému typu provádět výrazně rychleji a škálovat mnohem lépe než jeho ekvivalent bez bezpečnosti vláken, pokud je chráněn externím zámkem. V jiných scénářích může režie způsobit, že typ bezpečný pro přístup z více vláken provede a škáluje přibližně stejně nebo dokonce pomaleji než externě uzamčená verze typu, která není bezpečná pro přístup z více vláken.  
   
- V následujících částech najdete obecné pokyny k tomu, kdy použít kolekci bezpečnou pro přístup z více vláken a jejich ekvivalent bez bezpečného přístupu k vláknům, který má uživatelem poskytnutý zámek pro operace čtení a zápisu. Vzhledem k tomu, že výkon se může lišit v závislosti na mnoha faktorech, doprovodné materiály nejsou specifické a nemusí nutně platit za všech okolností. Pokud je výkon velmi důležitý, pak nejlepším způsobem určení toho, který typ kolekce použít, je měření výkonu na základě reprezentativních konfigurací počítačů a zatížení. Tento dokument používá následující výrazy:  
+ Následující části poskytují obecné pokyny o tom, kdy použít kolekci bezpečnou pro přístup z více vláken oproti jeho ekvivalentu, který není bezpečný pro přístup z více vláken a který má zámek zadaný uživatelem kolem operací čtení a zápisu. Vzhledem k tomu, že výkon se může lišit v závislosti na mnoha faktorech, pokyny nejsou specifické a nemusí být nutně platné za všech okolností. Pokud výkon je velmi důležité, pak nejlepší způsob, jak určit, který typ kolekce použít, je měření výkonu na základě konfigurace reprezentativní počítače a zatížení. Tento dokument používá následující termíny:  
   
- *Scénář čistého producenta pro spotřebitele*  
- Jakékoli dané vlákno buď přidává nebo odebírá prvky, ale ne obojí.  
+ *Čistý scénář výrobce a spotřebitele*  
+ Jakékoli dané vlákno je buď přidání nebo odebrání prvků, ale ne obojí.  
   
- *Smíšený scénář producent – příjemce*  
- Jakékoli dané vlákno je přidávání a odebírání prvků.  
+ *Smíšený scénář mezi producentem a spotřebitelem*  
+ Jakékoli dané vlákno je přidání a odebrání prvků.  
   
  *Zrychlení*  
- Rychlejší výkon algoritmu vzhledem k jinému typu ve stejném scénáři.  
+ Rychlejší algoritmický výkon vzhledem k jinému typu ve stejném scénáři.  
   
  *Škálovatelnost*  
- Zvýšení výkonu, které je úměrné počtu jader v počítači. Algoritmus, který se škáluje, se zrychluje na osm jader, než na dvou jádrech.  
+ Zvýšení výkonu, který je úměrný počtu jader v počítači. Algoritmus, který škáluje provádí rychleji na osm jader, než to dělá na dvou jádrech.  
   
-## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue (T) vs. Queue (T)  
- V čistých scénářích producent – spotřebitel, kde je doba zpracování každého prvku velmi malá (několik pokynů), pak <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> může nabídnout mírné výhody výkonu v <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, které mají externí zámek. V tomto scénáři <xref:System.Collections.Concurrent.ConcurrentQueue%601> vychází nejlépe v případě, že jedno vyhrazené vlákno je zařazování do fronty a jedno vyhrazené vlákno rozchází do fronty. Pokud toto pravidlo nevyberete, <xref:System.Collections.Generic.Queue%601> může dokonce fungovat mírně rychleji než <xref:System.Collections.Concurrent.ConcurrentQueue%601> na počítačích, které mají více jader.  
+## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue(T) vs. Queue(T)  
+ V čistě výrobce a spotřebitele scénáře, kde doba zpracování pro každý <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> prvek je velmi malý <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> (několik pokynů), pak může nabídnout skromné výhody výkonu oproti který má externí zámek. V tomto <xref:System.Collections.Concurrent.ConcurrentQueue%601> scénáři funguje nejlépe, když jeden vyhrazené vlákno je fronty a jeden vyhrazené vlákno je de-queuing. Pokud toto pravidlo nevynucujete, může <xref:System.Collections.Generic.Queue%601> <xref:System.Collections.Concurrent.ConcurrentQueue%601> být dokonce rychlejší než v počítačích s více jádry.  
   
- Pokud je doba zpracování okolo 500 na světě (operace s plovoucí desetinnou čárkou) nebo více, pravidlo dvou vláken se nevztahuje na <xref:System.Collections.Concurrent.ConcurrentQueue%601>, což pak má velmi dobrou škálovatelnost. <xref:System.Collections.Generic.Queue%601> se v tomto scénáři dobře nemění.  
+ Pokud doba zpracování je kolem 500 FLOPS (operace s plovoucí desetinnou <xref:System.Collections.Concurrent.ConcurrentQueue%601>tísní) nebo více, pak pravidlo dvou vláken se nevztahuje na , který pak má velmi dobrou škálovatelnost. <xref:System.Collections.Generic.Queue%601>není škálovat dobře v tomto scénáři.  
   
- Ve smíšených scénářích pro zákazníky, pokud je doba zpracování velmi malá, <xref:System.Collections.Generic.Queue%601>, která má externí zámek, lépe škáluje, než <xref:System.Collections.Concurrent.ConcurrentQueue%601>. Pokud je však čas zpracování okolo 500 nebo více, <xref:System.Collections.Concurrent.ConcurrentQueue%601> lépe škáluje.  
+ Ve smíšených scénářích výrobce a spotřebitele, když <xref:System.Collections.Generic.Queue%601> je doba zpracování velmi <xref:System.Collections.Concurrent.ConcurrentQueue%601> malá, a která má externí zámek váhy lepší než nemá. Nicméně, když doba zpracování je kolem 500 <xref:System.Collections.Concurrent.ConcurrentQueue%601> FLOPS nebo více, pak váhy lepší.  
   
-## <a name="concurrentstack-vs-stack"></a>Objektu ConcurrentStack vs. Stack  
- V čistých scénářích producent – spotřebitel, pokud je čas zpracování velmi malý, pak <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType>, které mají externí zámek, pravděpodobně budou fungovat přibližně stejně jako jedno vyhrazené vlákno vložení a jedno vyhrazené vyjímáné vlákno. Vzhledem k tomu, že počet vláken se zvyšuje, oba typy zpomalují kvůli zvýšenému kolizí a <xref:System.Collections.Generic.Stack%601> můžou zlepšit <xref:System.Collections.Concurrent.ConcurrentStack%601>. Když je čas zpracování okolo 500 nebo více, pak oba typy škálují přibližně stejnou sazbu.  
+## <a name="concurrentstack-vs-stack"></a>Souběžný zásobník vs. zásobník  
+ V čistě výrobce-spotřebitelské scénáře, kdy je <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType> doba <xref:System.Collections.Generic.Stack%601?displayProperty=nameWithType> zpracování velmi malá, pak a že má externí zámek bude pravděpodobně provádět přibližně stejné s jedním vyhrazeným tlačí cípem a jeden vyhrazený odprýskávání vlákno. Však jako počet podprocesů zvyšuje, oba typy zpomalit <xref:System.Collections.Generic.Stack%601> z důvodu <xref:System.Collections.Concurrent.ConcurrentStack%601>zvýšené kolize a může fungovat lépe než . Pokud je doba zpracování kolem 500 FLOPS nebo více, pak oba typy měřítko na přibližně stejnou rychlostí.  
   
- Ve smíšených scénářích pro spotřebitele zákazníků je <xref:System.Collections.Concurrent.ConcurrentStack%601> rychlejší pro malé i velké úlohy.  
+ Ve smíšených scénářích <xref:System.Collections.Concurrent.ConcurrentStack%601> výrobce a spotřebitele je rychlejší pro malé i velké úlohy.  
   
- Použití <xref:System.Collections.Concurrent.ConcurrentStack%601.PushRange%2A> a <xref:System.Collections.Concurrent.ConcurrentStack%601.TryPopRange%2A> může značně zrychlit dobu přístupu.  
+ Použití <xref:System.Collections.Concurrent.ConcurrentStack%601.PushRange%2A> a <xref:System.Collections.Concurrent.ConcurrentStack%601.TryPopRange%2A> může výrazně urychlit přístupové časy.  
   
-## <a name="concurrentdictionary-vs-dictionary"></a>ConcurrentDictionary vs. Dictionary  
- Obecně platí, že použijte <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> v jakémkoli scénáři, kdy přidáváte a aktualizujete klíče nebo hodnoty souběžně z více vláken. Ve scénářích, které zahrnují časté aktualizace a poměrně málo čtení, <xref:System.Collections.Concurrent.ConcurrentDictionary%602> obecně nabízí mírné výhody. Ve scénářích, které zahrnují mnoho čtení a mnoho aktualizací, je <xref:System.Collections.Concurrent.ConcurrentDictionary%602> všeobecně výrazně rychlejší na počítačích, které mají libovolný počet jader.  
+## <a name="concurrentdictionary-vs-dictionary"></a>ConcurrentDictionary vs. Slovník  
+ Obecně použijte <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> v každém scénáři, kde přidáváte a aktualizujete klíče nebo hodnoty současně z více vláken. Ve scénářích, které zahrnují časté <xref:System.Collections.Concurrent.ConcurrentDictionary%602> aktualizace a relativně málo čtení, obecně nabízí skromné výhody. Ve scénářích, které zahrnují mnoho <xref:System.Collections.Concurrent.ConcurrentDictionary%602> čtení a mnoho aktualizací, obecně je výrazně rychlejší v počítačích, které mají libovolný počet jader.  
   
- Ve scénářích, které zahrnují časté aktualizace, můžete zvýšit stupeň souběžnosti v <xref:System.Collections.Concurrent.ConcurrentDictionary%602> a pak změřit, abyste viděli, zda se výkon zvyšuje na počítačích s více jádry. Pokud změníte úroveň souběžnosti, vyhněte se globálním operacím co nejvíce.  
+ Ve scénářích, které zahrnují časté aktualizace, můžete <xref:System.Collections.Concurrent.ConcurrentDictionary%602> zvýšit stupeň souběžnosti v a pak měřit, zda zvýšení výkonu v počítačích, které mají více jader. Pokud změníte úroveň souběžnosti, vyhněte se globální operace co nejvíce.  
   
- Pokud čtete jenom klíč nebo hodnoty, <xref:System.Collections.Generic.Dictionary%602> je rychlejší, protože není nutná žádná synchronizace, pokud slovník neupravuje žádná vlákna.  
+ Pokud čtete pouze klíč nebo <xref:System.Collections.Generic.Dictionary%602> hodnoty, je rychlejší, protože není vyžadována žádná synchronizace, pokud slovník není měněn žádnými vlákny.  
   
-## <a name="concurrentbag"></a>ConcurrentBag  
- V čistých scénářích producent-příjemce se <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> pravděpodobně pomaleji než ostatní typy souběžných kolekcí.  
+## <a name="concurrentbag"></a>Concurrentbag  
+ V čistě výrobce a <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> spotřebitele scénáře bude pravděpodobně provádět pomaleji než ostatní typy souběžných kolekcí.  
   
- Ve smíšených scénářích pro spotřebitele zákazníků je <xref:System.Collections.Concurrent.ConcurrentBag%601> všeobecně mnohem rychlejší a škálovatelnější než jakýkoli jiný typ souběžného shromažďování pro velké i malé úlohy.  
+ Ve smíšených scénáře <xref:System.Collections.Concurrent.ConcurrentBag%601> výrobce a spotřebitele je obecně mnohem rychlejší a škálovatelné než jakýkoli jiný typ souběžné kolekce pro velké i malé úlohy.  
   
 ## <a name="blockingcollection"></a>BlockingCollection  
- Pokud jsou požadovány sémantika ohraničování a blokování, <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> pravděpodobně bude pracovat rychleji než jakákoli vlastní implementace. Podporuje také bohatou manipulaci s zrušením, výčtem a zpracováním výjimek.  
+ Při ohraničování a blokování <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> sémantiku jsou požadovány, bude pravděpodobně provádět rychleji než jakékoli vlastní implementace. Podporuje také bohaté zrušení, výčtu a zpracování výjimek.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)

@@ -11,33 +11,33 @@ helpviewer_keywords:
 - producer-consumer patterns, implementing [TPL]
 ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
 ms.openlocfilehash: 2db8cfcfc26b001703e08a501c430be4313aca03
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73091492"
 ---
 # <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>Postupy: Implementace vzoru toku dat producent–příjemce
-Tento dokument popisuje, jak pomocí knihovny TPL Dataflow implementovat vzor producent-příjemce. V tomto vzoru *producent* posílá zprávy do bloku zpráv a *příjemce* čte zprávy z tohoto bloku.  
+Tento dokument popisuje, jak pomocí knihovny TPL Dataflow k implementaci vzoru výrobce a spotřebitele. V tomto vzoru *výrobce* odešle zprávy do bloku zpráv a *příjemce* čte zprávy z tohoto bloku.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje základní model producent-příjemce, který používá tok dat. Metoda `Produce` zapisuje pole, která obsahují náhodné bajty dat do objektu <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType> a metoda `Consume` čte bajty z objektu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType>. Vykonáním rozhraní <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> a <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> namísto jejich odvozených typů můžete napsat opakovaně použitelný kód, který může působit na nejrůznější typy bloků toku dat. Tento příklad používá třídu <xref:System.Threading.Tasks.Dataflow.BufferBlock%601>. Vzhledem k tomu, že třída <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> funguje jako zdrojový blok i jako cílový blok, může producent a příjemce použít sdílený objekt k přenosu dat.  
+ Následující příklad ukazuje základní model výrobce a spotřebitele, který používá tok dat. Metoda `Produce` zapisuje pole, která obsahují <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType> náhodné bajty dat do objektu a `Consume` metoda čte bajty z objektu. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType> Tím, že <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> jedná na rozhraní a namísto jejich odvozené typy, můžete napsat opakovaně použitelný kód, který může působit na různé typy bloků toku dat. Tento příklad <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> používá třídu. Vzhledem <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> k tomu, že třída funguje jako zdrojový blok a jako cílový blok, výrobce a příjemce můžete použít sdílený objekt k přenosu dat.  
   
- Metoda `Produce` volá metodu <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> ve smyčce k synchronnímu zápisu dat do cílového bloku. Poté, co metoda `Produce` zapíše všechna data do cílového bloku, zavolá metodu <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A>, která označuje, že blok nikdy nebude mít k dispozici další data. Metoda `Consume` používá operátory [Async](../../csharp/language-reference/keywords/async.md) a [await](../../csharp/language-reference/operators/await.md) ([Async](../../visual-basic/language-reference/modifiers/async.md) a [await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic) k asynchronnímu výpočtu celkového počtu bajtů, které jsou přijímány z objektu <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>. K asynchronnímu fungování metoda `Consume` volá metodu <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A>, aby obdržela oznámení, když má zdrojový blok k dispozici data a když zdrojový blok nikdy nebude mít k dispozici další data.  
+ Metoda `Produce` volá <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> metodu ve smyčce synchronně zapisovat data do cílového bloku. Poté, `Produce` co metoda zapíše všechna data <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> do cílového bloku, volá metodu označující, že blok nikdy nebude mít k dispozici další data. Metoda `Consume` používá [asynchronní](../../csharp/language-reference/keywords/async.md) a [await](../../csharp/language-reference/operators/await.md) operátory ([Async](../../visual-basic/language-reference/modifiers/async.md) a [Await](../../visual-basic/language-reference/operators/await-operator.md) v jazyce Visual Basic) asynchronně <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> vypočítat celkový počet bajtů, které jsou přijaty z objektu. Chcete-li jednat asynchronně, `Consume` metoda <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A> volá metodu přijímat oznámení, když zdrojový blok má data k dispozici a zdrojový blok nikdy mít další data k dispozici.  
   
  [!code-csharp[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_producerconsumer/cs/dataflowproducerconsumer.cs#1)]
  [!code-vb[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_producerconsumer/vb/dataflowproducerconsumer.vb#1)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Předchozí příklad používá pouze jednoho příjemce ke zpracování zdrojových dat. Pokud máte v aplikaci více uživatelů, použijte metodu <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> pro čtení dat ze zdrojového bloku, jak je znázorněno v následujícím příkladu.  
+ Předchozí příklad používá pouze jednoho příjemce ke zpracování zdrojových dat. Pokud máte více spotřebitelů ve vaší <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> aplikaci, použijte metodu ke čtení dat ze zdrojového bloku, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[TPLDataflow_ProducerConsumer#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_producerconsumer/cs/dataflowproducerconsumer.cs#2)]
  [!code-vb[TPLDataflow_ProducerConsumer#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_producerconsumer/vb/dataflowproducerconsumer.vb#2)]  
   
- Metoda <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> vrátí `False`, pokud nejsou k dispozici žádná data. Pokud má více příjemců přistupovat současně ke zdrojovému bloku, tento mechanismus zaručuje, že data jsou stále k dispozici po volání <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A>.  
+ Metoda <xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> vrátí, `False` pokud nejsou k dispozici žádná data. Pokud více spotřebitelů musí přistupovat <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A>k bloku zdroje současně, tento mechanismus zaručuje, že data jsou stále k dispozici po volání .  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

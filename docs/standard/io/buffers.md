@@ -1,5 +1,5 @@
 ---
-title: System. buffers – .NET
+title: Systémové.Vyrovnávací paměti - .NET
 ms.date: 12/05/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,56 +8,56 @@ helpviewer_keywords:
 author: rick-anderson
 ms.author: riande
 ms.openlocfilehash: f939164cd56b2fb2feeeb171236b0e1171327e19
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78160115"
 ---
-# <a name="work-with-buffers-in-net"></a>Práce s vyrovnávacími paměťmi v .NET
+# <a name="work-with-buffers-in-net"></a>Práce s vyrovnávacími paměťmi v rozhraní .NET
 
-Tento článek poskytuje přehled typů, které pomůžou při čtení dat, která běží napříč více vyrovnávacími paměťmi. Používají se hlavně k podpoře <xref:System.IO.Pipelines.PipeReader> objektů.
+Tento článek obsahuje přehled typů, které pomáhají číst data, která běží přes více vyrovnávacích pamětí. Používají se především k <xref:System.IO.Pipelines.PipeReader> podpoře objektů.
 
 ## <a name="ibufferwritert"></a>IBufferWriter\<T\>
 
-<xref:System.Buffers.IBufferWriter%601?displayProperty=fullName> je kontraktem synchronního zápisu do vyrovnávací paměti. Na nejnižší úrovni rozhraní:
+<xref:System.Buffers.IBufferWriter%601?displayProperty=fullName>je smlouva pro synchronní zápis do vyrovnávací paměti. Na nejnižší úrovni rozhraní:
 
-- Je základní a není obtížné ho použít.
-- Umožňuje přístup k <xref:System.Memory%601> nebo <xref:System.Span%601>. `Memory<T>` nebo `Span<T>` lze zapsat do a můžete určit, kolik `T` položek bylo zapsáno.
+- Je základní a není těžké používat.
+- Umožňuje přístup <xref:System.Memory%601> k <xref:System.Span%601>nebo . Nebo `Memory<T>` `Span<T>` může být zapsána do a `T` můžete určit, kolik položek bylo zapsáno.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet)]
 
 Předchozí metoda:
 
-- Vyžádá vyrovnávací paměť o velikosti alespoň 5 bajtů z `IBufferWriter<byte>` pomocí `GetSpan(5)`.
-- Zapíše bajty pro řetězec ASCII "Hello" do vráceného `Span<byte>`.
-- Volá <xref:System.Buffers.IBufferWriter%601> k určení, kolik bajtů bylo zapsáno do vyrovnávací paměti.
+- Požaduje vyrovnávací paměť alespoň 5 bajtů `IBufferWriter<byte>` `GetSpan(5)`z using .
+- Zapíše bajty pro řetězec ASCII "Hello" na vrácené `Span<byte>`.
+- Volání <xref:System.Buffers.IBufferWriter%601> označující, kolik bajtů byly zapsány do vyrovnávací paměti.
 
-Tato metoda zápisu používá `Memory<T>`/`Span<T>` vyrovnávací paměti poskytované `IBufferWriter<T>`. Alternativně lze metodu rozšíření <xref:System.Buffers.BuffersExtensions.Write%2A> použít ke zkopírování existující vyrovnávací paměti do `IBufferWriter<T>`. `Write` provádí volání `GetSpan``Advance` /podle potřeby, takže není nutné volat `Advance` po zápisu:
+Tato metoda zápisu `Memory<T>` / `Span<T>` používá vyrovnávací `IBufferWriter<T>`paměť poskytovanou . Alternativně metodu <xref:System.Buffers.BuffersExtensions.Write%2A> rozšíření lze zkopírovat existující vyrovnávací `IBufferWriter<T>`paměť do . `Write`dělá práci volání `GetSpan` / `Advance` podle potřeby, takže není třeba `Advance` volat po psaní:
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet2)]
 
-<xref:System.Buffers.ArrayBufferWriter%601> je implementace `IBufferWriter<T>`, jehož záložní úložiště je jediné souvislé pole.
+<xref:System.Buffers.ArrayBufferWriter%601>je `IBufferWriter<T>` implementace, jejíž záložní úložiště je jedno souvislé pole.
 
 ### <a name="ibufferwriter-common-problems"></a>IBufferWriter běžné problémy
 
-- `GetSpan` a `GetMemory` vrátí vyrovnávací paměť s minimální požadovanou velikostí paměti. Neberete přesnou velikost vyrovnávací paměti.
-- Není nijak zaručeno, že po sobě jdoucí volání budou vracet stejnou vyrovnávací paměť nebo vyrovnávací paměť se stejnou velikostí.
-- Po volání `Advance` pro pokračování v zápisu dalších dat je nutné požádat o novou vyrovnávací paměť. Dříve získanou vyrovnávací paměť nelze zapsat do po volání `Advance`.
+- `GetSpan`a `GetMemory` vrátit vyrovnávací paměť s alespoň požadované množství paměti. Nepředpokládejte přesné velikosti vyrovnávací paměti.
+- Neexistuje žádná záruka, že po sobě jdoucí volání vrátí stejnou vyrovnávací paměť nebo vyrovnávací paměť stejné velikosti.
+- Nová vyrovnávací paměť musí `Advance` být požadována po volání pokračovat v zápisu další data. Dříve získanou `Advance` vyrovnávací paměť nelze zapsat do po byla volána.
 
 ## <a name="readonlysequencet"></a>ReadOnlySequence\<T\>
 
-![ReadOnlySequence zobrazování paměti v kanálu a pod tím, že je pozice paměti jen pro čtení.](media/buffers/ro-sequence.png)
+![ReadOnlySequence zobrazující paměť v kanálu a pod touto sekvenční pozicí paměti jen pro čtení](media/buffers/ro-sequence.png)
 
-<xref:System.Buffers.ReadOnlySequence%601> je struktura, která může představovat souvislou nebo nesouvislou sekvenci `T`. Dá se sestavit z:
+<xref:System.Buffers.ReadOnlySequence%601>je struktura, která může představovat souvislou nebo nesousedící posloupnost . `T` Může být vyroben z:
 
 1. Položka `T[]`.
 1. Položka `ReadOnlyMemory<T>`.
-1. Dvojice uzlů propojeného seznamu <xref:System.Buffers.ReadOnlySequenceSegment%601> a index představující počáteční a koncovou pozici sekvence.
+1. Dvojice propojeného uzlu <xref:System.Buffers.ReadOnlySequenceSegment%601> seznamu a indexu představující počáteční a koncovou pozici sekvence.
 
-Třetí reprezentace je nejzajímavější, protože má dopad na výkon různých operací na `ReadOnlySequence<T>`:
+Třetí zastoupení je nejzajímavější, protože má vliv na výkon `ReadOnlySequence<T>`na různé operace na :
 
-|Obrázek|Operace|Složitost|
+|Reprezentace|Operace|Složitost|
 ---|---|---|
 |`T[]`/`ReadOnlyMemory<T>`|`Length`|`O(1)`|
 |`T[]`/`ReadOnlyMemory<T>`|`GetPosition(long)`|`O(1)`|
@@ -68,50 +68,50 @@ Třetí reprezentace je nejzajímavější, protože má dopad na výkon různý
 |`ReadOnlySequenceSegment<T>`|`Slice(int, int)`|`O(number of segments)`|
 |`ReadOnlySequenceSegment<T>`|`Slice(SequencePostion, SequencePostion)`|`O(1)`|
 
-Z důvodu této smíšené reprezentace `ReadOnlySequence<T>` zpřístupňuje indexy jako `SequencePosition` namísto celého čísla. `SequencePosition`:
+Z důvodu této smíšené `ReadOnlySequence<T>` reprezentace zpřístupňuje indexy jako `SequencePosition` místo celé číslo. A `SequencePosition`:
 
-- Je neprůhledná hodnota, která představuje index do `ReadOnlySequence<T>`, kde pochází.
-- Se skládá ze dvou částí typu Integer a Object. Které tyto dvě hodnoty představují, jsou svázány s implementací `ReadOnlySequence<T>`.
+- Je neprůhledná hodnota, která `ReadOnlySequence<T>` představuje index do kde pochází.
+- Skládá se ze dvou částí, celé číslo a objekt. Co tyto dvě hodnoty představují, `ReadOnlySequence<T>`jsou vázány na implementaci .
 
 ### <a name="access-data"></a>Přístup k datům
 
-`ReadOnlySequence<T>` zpřístupňuje data jako vyčíslitelné `ReadOnlyMemory<T>`. Výčet jednotlivých segmentů lze provést pomocí základního příkazu foreach:
+Zpřístupňuje `ReadOnlySequence<T>` data jako výčtu `ReadOnlyMemory<T>`. Výčet každého segmentu lze provést pomocí základní foreach:
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet3)]
 
-Předchozí metoda vyhledá každý segment konkrétního bajtu. Pokud potřebujete sledovat `SequencePosition`jednotlivých segmentů, <xref:System.Buffers.ReadOnlySequence%601.TryGet%2A?displayProperty=nameWithType> je vhodnější. Následující ukázka změní předchozí kód a vrátí `SequencePosition` namísto celého čísla. Vrácení `SequencePosition` má výhodu povolit volajícímu zabránit druhé kontrole, aby získal data na konkrétním indexu.
+Předchozí metoda prohledává každý segment pro konkrétní bajt. Pokud potřebujete sledovat každý segment `SequencePosition`, <xref:System.Buffers.ReadOnlySequence%601.TryGet%2A?displayProperty=nameWithType> je vhodnější. Další ukázka změní předchozí kód `SequencePosition` vrátit místo celé číslo. Vrácení `SequencePosition` má tu výhodu, že umožňuje volajícímu vyhnout se druhé skenování získat data na konkrétní index.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet4)]
 
-Kombinace `SequencePosition` a `TryGet` funguje jako enumerátor. Pole pozice je upraveno na začátku každé iterace, aby bylo možné začít každý segment v rámci `ReadOnlySequence<T>`.
+Kombinace `SequencePosition` a `TryGet` působí jako čítač. Pole pozice je upraveno na začátku každé iterace `ReadOnlySequence<T>`tak, aby bylo začátkem každého segmentu v rámci .
 
-Předchozí metoda existuje jako metoda rozšíření v `ReadOnlySequence<T>`. <xref:System.Buffers.BuffersExtensions.PositionOf%2A> lze použít pro zjednodušení předchozího kódu:
+Předchozí metoda existuje jako metoda rozšíření `ReadOnlySequence<T>`na . <xref:System.Buffers.BuffersExtensions.PositionOf%2A>lze použít ke zjednodušení předchozího kódu:
 
 ```csharp
 SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => buffer.PositionOf(data);
 ```
 
-#### <a name="process-a-readonlysequencet"></a>Zpracování ReadOnlySequence\<T\>
+#### <a name="process-a-readonlysequencet"></a>Zpracování sekvence ReadOnlyT\<T\>
 
-Zpracování `ReadOnlySequence<T>` může být náročné, protože data mohou být rozdělena mezi několik segmentů v rámci sekvence. Nejlepšího výkonu dosáhnete rozdělením kódu do dvou cest:
+Zpracování `ReadOnlySequence<T>` může být náročné, protože data mohou být rozdělena mezi více segmentů v rámci sekvence. Pro dosažení nejlepšího výkonu rozdělte kód na dvě cesty:
 
-- Rychlá cesta, která se zabývá jediným segmentem – případ.
+- Rychlá cesta, která se zabývá případem jednoho segmentu.
 - Pomalá cesta, která se zabývá rozdělením dat mezi segmenty.
 
-Existuje několik přístupů, které lze použít ke zpracování dat ve více segmentech sekvence:
+Existuje několik přístupů, které lze použít ke zpracování dat ve vícesegmentových sekvencích:
 
 - Použijte [`SequenceReader<T>`](#sequencereadert).
-- Analyzujte segment dat podle segmentů a udržujte si přehled o `SequencePosition` a indexu v rámci analyzovaného segmentu. Tím se zabrání zbytečnému přidělení, ale může být neefektivní, zejména pro malé vyrovnávací paměti.
-- Zkopírujte `ReadOnlySequence<T>` do souvislého pole a považovat ho za jednu vyrovnávací paměť:
-  - Pokud je velikost `ReadOnlySequence<T>` malá, může být vhodné kopírovat data do vyrovnávací paměti přidělené zásobníkem pomocí operátoru [stackalloc](../../csharp/language-reference/operators/stackalloc.md) .
-  - Zkopírujte `ReadOnlySequence<T>` do pole ve fondu pomocí <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType>.
-  - Použijte [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). Nedoporučuje se v aktivních cestách, protože přiděluje nový `T[]` haldy.
+- Analyzovat datový segment podle segmentu, `SequencePosition` sledování a index v rámci segmentu analyzované. Tím se zabrání zbytečné přidělení, ale může být neefektivní, zejména pro malé vyrovnávací paměti.
+- Zkopírujte `ReadOnlySequence<T>` souvislé pole a zacházejte s ním jako s jednou vyrovnávací pamětí:
+  - Pokud `ReadOnlySequence<T>` je malá velikost, může být rozumné zkopírovat data do vyrovnávací paměti přidělené zásobníku pomocí operátoru [stackalloc.](../../csharp/language-reference/operators/stackalloc.md)
+  - Zkopírujte `ReadOnlySequence<T>` do sdruženého pole pomocí <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType>.
+  - Použijte [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A). To se nedoporučuje v horké cesty, protože `T[]` přiděluje nové na haldě.
 
-Následující příklady ukazují některé běžné případy zpracování `ReadOnlySequence<byte>`:
+Následující příklady ukazují některé běžné `ReadOnlySequence<byte>`případy pro zpracování :
 
 ##### <a name="process-binary-data"></a>Zpracovat binární data
 
-Následující příklad analyzuje celé číslo o velikosti 4 bajtu big-endian od začátku `ReadOnlySequence<byte>`.
+Následující příklad analyzuje 4bajtovou délku velkého endianového celého čísla `ReadOnlySequence<byte>`od začátku .
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet5)]
 
@@ -121,66 +121,66 @@ Následující příklad analyzuje celé číslo o velikosti 4 bajtu big-endian 
 
 Následující příklad:
 
-- Vyhledá první řádek nového řádku (`\r\n`) v `ReadOnlySequence<byte>` a vrátí ho pomocí parametru out ' line '.
-- Ořízne tento řádek, kromě `\r\n` ze vstupní vyrovnávací paměti.
+- Najde první nový`\r\n`řádek ( `ReadOnlySequence<byte>` ) v a vrátí jej prostřednictvím out 'line' parametr.
+- Ořízne tento `\r\n` řádek, s výjimkou vstupní vyrovnávací paměti.
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet6)]
 
 ##### <a name="empty-segments"></a>Prázdné segmenty
 
-Je platný pro ukládání prázdných segmentů do `ReadOnlySequence<T>`. Při explicitním vyčíslení segmentů může dojít k prázdným segmentům:
+Je platný pro uložení prázdných segmentů uvnitř . `ReadOnlySequence<T>` Prázdné segmenty může dojít při výčtu segmentů explicitně:
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet7)]
 
-Předchozí kód vytvoří `ReadOnlySequence<byte>` s prázdnými segmenty a ukáže, jak tyto prázdné segmenty ovlivňují různá rozhraní API:
+Předchozí kód vytvoří `ReadOnlySequence<byte>` s prázdnými segmenty a ukazuje, jak tyto prázdné segmenty ovlivňují různá řešení API:
 
-- `ReadOnlySequence<T>.Slice` s `SequencePosition` ukazujícím na prázdný segment, který zachovává tento segment.
-- `ReadOnlySequence<T>.Slice` s int přeskočí na prázdné segmenty.
-- Výčet `ReadOnlySequence<T>` vytvoří výčet prázdných segmentů.
+- `ReadOnlySequence<T>.Slice`s `SequencePosition` odkazem na prázdný segment tento segment zachová.
+- `ReadOnlySequence<T>.Slice`s int přeskočí prázdné segmenty.
+- Výčet `ReadOnlySequence<T>` výčet prázdné segmenty.
 
-### <a name="potential-problems-with-readonlysequencet-and-sequenceposition"></a>Potenciální problémy s ReadOnlySequence\<T > a SequencePosition
+### <a name="potential-problems-with-readonlysequencet-and-sequenceposition"></a>Potenciální problémy s\<> A SequencePosition ReadOnlySequence T a SequencePosition
 
-Při práci s `ReadOnlySequence<T>`/`SequencePosition` vs. normální `ReadOnlySpan<T>`/`ReadOnlyMemory<T>`/`T[]`/`int`má několik neobvyklých výsledků:
+Existuje několik neobvyklých výsledků při `ReadOnlySequence<T>` / `SequencePosition` jednání s `ReadOnlySpan<T>` / `ReadOnlyMemory<T>` / `T[]` / `int`vs normální :
 
-- `SequencePosition` je značka pozice pro konkrétní `ReadOnlySequence<T>`, nikoli absolutní pozici. Vzhledem k tomu, že je relativní ke konkrétní `ReadOnlySequence<T>`, nemá význam, pokud je použit mimo `ReadOnlySequence<T>`, kde pochází.
-- Aritmetické operace nelze provést na `SequencePosition` bez `ReadOnlySequence<T>`. To znamená, že pro `ReadOnlySequence<T>.GetPosition(position, 1)`se napíše základní věci, jako je `position++`.
-- `GetPosition(long)` nepodporuje **záporné** indexy. To znamená, že není možné získat druhý k poslednímu znaku bez procházení všech segmentů.
-- Nelze porovnat dva `SequencePosition`, což ztěžuje:
+- `SequencePosition`je značka pozice pro `ReadOnlySequence<T>`konkrétní , nikoli absolutní pozici. Vzhledem k tomu, `ReadOnlySequence<T>`že je relativní k určité , `ReadOnlySequence<T>` nemá význam, pokud se používá mimo kde pochází.
+- Aritmetika nelze provést `SequencePosition` bez . `ReadOnlySequence<T>` To znamená dělat `position++` základní `ReadOnlySequence<T>.GetPosition(position, 1)`věci, jako je napsáno .
+- `GetPosition(long)`**nepodporuje** negativní indexy. To znamená, že je nemožné získat předposlední znak bez chůze všech segmentů.
+- Dva `SequencePosition` nelze srovnávat, takže je obtížné:
   - Zjistěte, zda je jedna pozice větší nebo menší než jiná pozice.
   - Napište nějaké algoritmy analýzy.
-- `ReadOnlySequence<T>` je větší než odkaz na objekt a měla by být předána [v](../../csharp/language-reference/keywords/in-parameter-modifier.md) nebo [ref](../../csharp/language-reference/keywords/ref.md) tam, kde je to možné. Předávání `ReadOnlySequence<T>` pomocí `in` nebo `ref` omezuje kopie [struktury](../../csharp/language-reference/builtin-types/struct.md).
+- `ReadOnlySequence<T>`je větší než odkaz na objekt a pokud možno by měl být předán [dovnitř](../../csharp/language-reference/keywords/in-parameter-modifier.md) nebo [ref.](../../csharp/language-reference/keywords/ref.md) Předávání `ReadOnlySequence<T>` `in` nebo `ref` redukuje kopie [struktury](../../csharp/language-reference/builtin-types/struct.md).
 - Prázdné segmenty:
-  - Jsou platné v rámci `ReadOnlySequence<T>`.
-  - Může se zobrazit při iteraci pomocí metody `ReadOnlySequence<T>.TryGet`.
-  - Může se zobrazit v průřezu sekvence pomocí metody `ReadOnlySequence<T>.Slice()` s objekty `SequencePosition`.
+  - Jsou platné `ReadOnlySequence<T>`v rámci .
+  - Může se objevit při `ReadOnlySequence<T>.TryGet` iterace pomocí metody.
+  - Může se objevit krájení `ReadOnlySequence<T>.Slice()` sekvence `SequencePosition` pomocí metody s objekty.
 
-## <a name="sequencereadert"></a>SequenceReader\<T\>
+## <a name="sequencereadert"></a>Sekvenční čtečka\<T\>
 
 <xref:System.Buffers.SequenceReader%601>:
 
-- Je nový typ, který byl představen v rozhraní .NET Core 3,0 pro zjednodušení zpracování `ReadOnlySequence<T>`.
-- Sjednocuje rozdíly mezi jedním segmentem `ReadOnlySequence<T>` a více segmenty `ReadOnlySequence<T>`.
-- Poskytuje nápovědu pro čtení binárních a textových dat (`byte` a `char`), která může nebo nemusí být rozdělená mezi segmenty.
+- Je nový typ, který byl zaveden v .NET Core 3.0 zjednodušit zpracování `ReadOnlySequence<T>`.
+- Sjednocuje rozdíly mezi `ReadOnlySequence<T>` jedním a `ReadOnlySequence<T>`více segmenty .
+- Poskytuje pomocné položky pro`byte` čtení `char`binárních a textových dat ( a ), které mohou nebo nemusí být rozděleny mezi segmenty.
 
-Existují předdefinované metody pro práci se zpracováním binárních i oddělených dat. Následující část ukazuje, jak tyto stejné metody vypadají jako u `SequenceReader<T>`:
+Existují integrované metody pro zpracování binárních i oddělených dat. Následující část ukazuje, jak vypadají stejné `SequenceReader<T>`metody s :
 
 ### <a name="access-data"></a>Přístup k datům
 
-`SequenceReader<T>` obsahuje metody pro vytváření výčtu dat uvnitř `ReadOnlySequence<T>` přímo. Následující kód je příkladem zpracování `ReadOnlySequence<byte>` `byte` v daném čase:
+`SequenceReader<T>`má metody pro výčet dat `ReadOnlySequence<T>` uvnitř přímo. Následující kód je příkladem zpracování `ReadOnlySequence<byte>` `byte` a současně:
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet8)]
 
-`CurrentSpan` zpřístupňuje `Span`aktuálního segmentu, což se podobá tomu, co bylo provedeno v metodě ručně.
+Zpřístupní `CurrentSpan` aktuální segmentu `Span`, který je podobný tomu, co bylo provedeno v metodě ručně.
 
 ### <a name="use-position"></a>Použít pozici
 
-Následující kód představuje ukázkovou implementaci `FindIndexOf` pomocí `SequenceReader<T>`:
+Následující kód je příkladem `FindIndexOf` implementace `SequenceReader<T>`pomocí :
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet9)]
 
 ### <a name="process-binary-data"></a>Zpracovat binární data
 
-Následující příklad analyzuje celé číslo o velikosti 4 bajtu big-endian od začátku `ReadOnlySequence<byte>`.
+Následující příklad analyzuje 4bajtovou délku velkého endianového celého čísla `ReadOnlySequence<byte>`od začátku .
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet11)]
 
@@ -188,8 +188,8 @@ Následující příklad analyzuje celé číslo o velikosti 4 bajtu big-endian 
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet10)]
 
-### <a name="sequencereadert-common-problems"></a>SequenceReader\<T\> běžné problémy
+### <a name="sequencereadert-common-problems"></a>Sekvenční čtečka\<T\> běžné problémy
 
-- Protože je `SequenceReader<T>` proměnlivou strukturou, měla by být vždy předána [odkazem](../../csharp/language-reference/keywords/ref.md).
-- `SequenceReader<T>` je [Struktura ref](../../csharp/language-reference/keywords/ref.md#ref-struct-types) , aby ji bylo možné použít pouze v synchronních metodách a nelze ji uložit do polí. Další informace najdete v tématu [Zápis bezpečného a C# efektivního kódu](../../csharp/write-safe-efficient-code.md).
-- `SequenceReader<T>` je optimalizovaná pro použití jako čtecí modul jenom pro přeposílání. `Rewind` je určený pro malé zálohy, které se nedají řešit s využitím jiných rozhraní API `Read`, `Peek`a `IsNext`.
+- Protože `SequenceReader<T>` je proměnlivá struktura, měla by být vždy předána [odkazem](../../csharp/language-reference/keywords/ref.md).
+- `SequenceReader<T>`je [ref struct,](../../csharp/language-reference/keywords/ref.md#ref-struct-types) takže jej lze použít pouze v synchronních metodách a nemůže být uložen v polích. Další informace naleznete v [tématu Zápis bezpečné a efektivní kód jazyka C#](../../csharp/write-safe-efficient-code.md).
+- `SequenceReader<T>`je optimalizován pro použití jako čtečka pouze pro předávání. `Rewind`je určen pro malé zálohy, které nelze `Read`řešit `Peek`s `IsNext` využitím jiných , a rozhraní API.

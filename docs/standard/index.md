@@ -1,62 +1,62 @@
 ---
 title: Průvodce technologií .NET
-description: Přečtěte si o .NET a .NET Standard.
+description: Informace o programech .NET a .NET Standard.
 author: cartermp
 ms.date: 12/27/2019
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 ms.openlocfilehash: ce76448b69a002216125192f75d24b38e7582260
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76730777"
 ---
 # <a name="net-guide"></a>Průvodce technologií .NET
 
-Průvodce rozhraním .NET poskytuje informace o .NET. V závislosti na vaší znalosti s .NET můžete chtít prozkoumat různé části tohoto průvodce a další příručky, jako je například [.NET Core](../core/index.md) nebo [.NET Framework](../framework/index.md).
+Průvodce .NET poskytuje informace o rozhraní .NET. V závislosti na vaší obeznámenosti s rozhraním .NET můžete prozkoumat různé části této příručky a další chody, například [.NET Core](../core/index.md) nebo [.NET Framework](../framework/index.md).
 
-## <a name="new-to-net"></a>Novinka do .NET
+## <a name="new-to-net"></a>Novinka v rozhraní .NET
 
-Pokud chcete základní přehled .NET, přečtěte si téma [co je .NET?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet).
+Pokud chcete přehled na vysoké úrovni .NET, přečtěte si část [Co je .NET?](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet).
 
-Pokud s .NET začínáte, [Přečtěte si téma Začínáme](get-started.md).
+Pokud s rozhraním .NET tečujete, přečtěte si informace [o tom, jak začít](get-started.md).
 
-Pokud dáváte přednost průvodci hlavními funkcemi .NET, přečtěte si téma [prohlídky .NET](tour.md).
+Pokud dáváte přednost prohlídce hlavních funkcí rozhraní .NET s průvodcem, [přečtěte si část Prohlídka rozhraní .NET](tour.md).
 
-Přehled různých částí rozhraní .NET a o tom, jak se vejdou do společné, najdete v tématu [komponenty architektury .NET](components.md).
+Přehled různých částí rozhraní .NET a jejich zapadají do sebe naleznete v [tématu .NET architektonické komponenty](components.md).
 
-## <a name="new-to-net-core"></a>Novinka pro .NET Core
+## <a name="new-to-net-core"></a>Novinka v rozhraní .NET Core
 
-Pokud s .NET Core začínáte, podívejte se na [Začínáme s .NET Core](../core/get-started.md).
+Pokud s jádrem .NET začínáte, podívejte se [na začínáme s rozhraním .NET Core](../core/get-started.md).
 
-## <a name="new-to-net-standard"></a>Novinka .NET Standard
+## <a name="new-to-net-standard"></a>Novinka ve standardu .NET
 
-Pokud .NET Standard, přečtěte si [.NET Standard](net-standard.md).
+Pokud s rozhraním .NET Standard tečujete, podívejte se na [soubor .NET Standard](net-standard.md).
 
-## <a name="port-net-framework-code-to-net-standard-or-net-core"></a>Port .NET Framework kódu pro .NET Standard nebo .NET Core
+## <a name="port-net-framework-code-to-net-standard-or-net-core"></a>Kód rozhraní Port .NET Framework na rozhraní .NET Standard nebo .NET Core
 
-Informace o portech aplikace, služby, součásti nebo balíčku NuGet pro .NET Standard nebo .NET Core najdete v tématu [port pro .NET Core z .NET Framework](../core/porting/index.md). Nástroje pro .NET Standard a .NET Core jsou sdílené, takže obsah je relevantní pro přenos do obou platforem.
+Chcete-li přenést balíček aplikace, služby, součásti nebo nugetu na rozhraní .NET Standard nebo .NET Core, přečtěte [si informace o portu na .NET Core z rozhraní .NET Framework](../core/porting/index.md). Nástroje pro rozhraní .NET Standard a .NET Core jsou sdíleny, takže obsah je relevantní pro přenos do obou architektur.
 
-## <a name="net-concepts"></a>Koncepce .NET
+## <a name="net-concepts"></a>Koncepty rozhraní .NET
 
-Další informace o hlavních konceptech rozhraní .NET najdete v tématech:
+Další informace o hlavních konceptech rozhraní .NET naleznete v následujících tématech:
 
-* [Komponenty architektury .NET](components.md)
+* [Architektonické součásti .NET](components.md)
 * [.NET Standard](net-standard.md)
 * [Nativní interoperabilita](native-interop/index.md)
-* [Uvolňování paměti](garbage-collection/index.md)
-* [Základní typy v .NET](base-types/index.md)
+* [Uvolněné](garbage-collection/index.md)
+* [Základní typy v rozhraní .NET](base-types/index.md)
 * [Kolekce](collections/index.md)
 * [Data, časy a časová pásma](datetime/index.md)
 * [Asynchronní programování](async.md)
 
-Informace o třech hlavních jazycích .NET najdete v následujících tématech:
+Informace o třech hlavních jazycích .NET naleznete v následujících tématech:
 
-* [C#program](../csharp/index.yml)
-* [F#program](../fsharp/index.yml)
-* [Průvodce Visual Basic](../visual-basic/index.yml)
+* [Průvodce jazykem C#](../csharp/index.yml)
+* [Průvodce jazykem F#](../fsharp/index.yml)
+* [Průvodce jazykem Visual Basic](../visual-basic/index.yml)
 
 ## <a name="api-reference"></a>API – referenční informace
 
-Podrobné informace o všech rozhraních API, která jsou k dispozici v rozhraní .NET, najdete v tématu Reference k rozhraní [.NET API](../../api/index.md).
+Podrobné informace o všech rozhraních API, které jsou k dispozici v rozhraní .NET, naleznete v [tématu .NET API reference](../../api/index.md).

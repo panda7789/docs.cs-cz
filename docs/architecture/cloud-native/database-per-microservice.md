@@ -1,155 +1,155 @@
 ---
-title: Databáze na mikroslužby
-description: Kontrastování datových úložišť v monolitické a cloudových nativních aplikacích.
+title: Samostatná databáze pro každou mikroslužbu
+description: Kontrastní ukládání dat v monolitických a cloudově nativních aplikacích.
 author: robvet
 ms.date: 01/22/2020
-ms.openlocfilehash: e472309d3dc815070fc2d2c220bf4fe00b8c29ae
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c0c5611fa866d70f155e4bdad2eee1181b13c065
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794903"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141442"
 ---
-# <a name="database-per-microservice"></a>Databáze na mikroslužby
+# <a name="database-per-microservice"></a>Samostatná databáze pro každou mikroslužbu
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Jak jsme viděli v této příručce, cloudový nativní přístup mění způsob, jakým navrhujete, nasazujete a spravujete aplikace. Také mění způsob, jakým spravujete a ukládáte data.
+Jak jsme viděli v této knize, přístup nativní pro cloud mění způsob, jakým navrhujete, nasadíte a spravujete aplikace. Změní také způsob správy a ukládání dat.
 
 Obrázek 5-1 kontrastuje rozdíly.
 
-![Úložiště dat v nativních aplikacích cloudu](./media/distributed-data.png)
+![Úložiště dat v cloudových aplikacích](./media/distributed-data.png)
 
 **Obrázek 5-1**. Správa dat v cloudových nativních aplikacích
 
-Zkušení vývojáři budou snadno rozpoznávat architekturu na levé straně obrázku 5-1. V této *aplikaci monolitické*se komponenty Business Service společné umístění společně na úrovni sdílených služeb a sdílejí data z jedné relační databáze.
+Zkušení vývojáři snadno rozpoznají architekturu na levé straně obrázku 5-1. V této *monolitické aplikaci*se komponenty obchodní ch odpovědny společně nacházejí ve vrstvě sdílených služeb a sdílejí data z jedné relační databáze.
 
-V mnoha různých způsobech udržuje jedna databáze jednoduché správy dat. Dotazování dat napříč více tabulkami je jednoduché. Změny dat se aktualizují nebo se vrátí zpět. [Kyselé transakce](https://docs.microsoft.com/windows/desktop/cossdk/acid-properties) zaručují silnou a okamžitou konzistenci.
+V mnoha ohledech, jedna databáze udržuje správu dat jednoduché. Dotazování dat ve více tabulkách je jednoduché. Změny dat aktualizovat společně nebo všechny vrácení zpět. [Transakce ACID](https://docs.microsoft.com/windows/desktop/cossdk/acid-properties) zaručují silnou a okamžitou konzistenci.
 
-Návrh pro cloudový nativní režim nabízí jiný přístup. Na pravé straně obrázku 5-1 si všimněte, jak se firemní funkce odvíjí do malých nezávislých mikroslužeb. Každá mikroslužba zapouzdřuje konkrétní obchodní schopnost a její vlastní data. Databáze monolitické je rozdělená do distribuovaného datového modelu s mnoha menšími databázemi, a to z každého v souladu s mikroslužbou. Když se kouř nevymaže, ukážeme vám návrh, který zveřejňuje *databázi na mikroslužbu*.
+Navrhování pro cloud nativní, bereme jiný přístup. Na pravé straně obrázku 5-1 si všimněte, jak se obchodní funkce odděluje do malých, nezávislých mikroslužeb. Každá mikroslužba zapouzdřuje konkrétní obchodní schopnosti a vlastní data. Monolitické databáze se rozkládá do distribuovaného datového modelu s mnoha menších databází, z nichž každý zarovnání s mikroslužeb. Když se kouř vyčistí, objevíme se s návrhem, který zveřejňuje *databázi na mikroslužbu*.
 
 ## <a name="why"></a>Proč?
 
-Tato databáze na mikroslužbu poskytuje mnoho výhod, zejména pro systémy, které se musí rychle vyvíjet a podporují rozsáhlé škálování. S tímto modelem...
+Tato databáze na mikroslužbu poskytuje mnoho výhod, zejména pro systémy, které se musí rychle vyvíjet a podporovat masivní škálování. S tímto modelem...
 
 - Data domény jsou zapouzdřena v rámci služby.
-- Schéma dat se může vyvíjet bez přímého dopadu na jiné služby.
+- Schéma dat se může vyvíjet bez přímého dopadu na další služby
 - Každé úložiště dat může nezávisle škálovat
-- Selhání úložiště dat v jedné službě nebude mít přímý vliv na jiné služby.
+- Selhání úložiště dat v jedné službě nebude mít přímý dopad na jiné služby
 
-Oddělení dat také umožňuje, aby každá mikroslužba implementovala typ úložiště dat, který je nejlépe optimalizovaný pro své úlohy, potřeby úložiště a vzory čtení a zápisu. Mezi možnosti patří relační úložiště dat, dokument, klíč-hodnota a dokonce i datové obchody založené na grafu.
+Oddělení dat také umožňuje každé mikroslužeb implementovat typ úložiště dat, který je nejlépe optimalizován pro jeho zatížení, potřeby úložiště a čtení a zápis u vzorců. Volby zahrnují relační, dokument, klíč-hodnota, a dokonce i graf-založené úložiště dat.
 
-Obrázek 5-2 prezentuje princip Polyglot Persistence v systému nativním pro Cloud.
+Obrázek 5-2 představuje princip perzistence polyglotu v cloudově nativním systému.
 
-![Trvalost dat Polyglot](./media/polyglot-data-persistence.png)
+![Trvalosti dat polyglotu](./media/polyglot-data-persistence.png)
 
-**Obrázek 5-2**. Trvalost dat Polyglot
+**Obrázek 5-2**. Trvalosti dat polyglotu
 
 Všimněte si na předchozím obrázku, jak každá mikroslužba podporuje jiný typ úložiště dat.
 
-- Mikroslužba katalogu produktů využívá relační databázi pro přizpůsobení komplexní relační struktury svých podkladových dat.
-- Mikroslužba nákupního košíku spotřebovává distribuovanou mezipaměť, která podporuje své jednoduché úložiště dat klíč-hodnota.
-- Pro objednávání mikroslužeb se využívá databáze NoSql dokumentů pro operace zápisu společně s vysoce denormalizovaným úložištěm klíč/hodnota, aby se vešly velké objemy operací čtení.
+- Mikroslužba katalogu produktů spotřebovává relační databázi tak, aby vyhovovala bohaté relační struktuře podkladových dat.
+- Mikroslužba nákupního košíku spotřebovává distribuovanou mezipaměť, která podporuje jeho jednoduché úložiště dat klíč-hodnota.
+- Řazení mikroslužby spotřebovává jak databáze dokumentů NoSql pro operace zápisu spolu s vysoce nenormalizované úložiště klíč/hodnota pro umístění velké objemy operací čtení.
   
-I když budou relační databáze relevantní pro mikroslužby se složitými daty, databáze NoSQL získaly značnou oblíbenou. Poskytují ohromnou škálu a vysokou dostupnost. Bez jejich schématu umožňuje vývojářům přesunout se od architektury typových datových tříd a ORMs, které vedou ke změně nákladného a časově náročného. V této kapitole se zabýváme databázemi NoSQL dále.
+Zatímco relační databáze zůstávají relevantní pro mikroslužby se složitými daty, NoSQL databáze získaly značnou popularitu. Poskytují masivní rozsah a vysokou dostupnost. Jejich bezschématová povaha umožňuje vývojářům přejít od architektury zadaných datových tříd a ORMů, které usnadňují změny a jsou časově náročné. NoSQL databáze pokrýváme dále v této kapitole.
 
- I když zapouzdření dat do samostatných mikroslužeb může zvýšit flexibilitu, výkon a škálovatelnost, prezentuje i mnoho výzev. V další části se podíváme na tyto výzvy spolu se vzory a postupy, které vám pomůžou je překonat.  
+ Zatímco zapouzdření dat do samostatných mikroslužeb může zvýšit agilitu, výkon a škálovatelnost, představuje také mnoho výzev. V další části diskutujeme o těchto výzvách spolu se vzory a postupy, které jim pomohou je překonat.  
 
-## <a name="cross-service-queries"></a>Dotazy na více služeb
+## <a name="cross-service-queries"></a>Dotazy mezi službami
 
-I když jsou mikroslužby nezávislé a zaměřují se na konkrétní funkční možnosti, jako je inventarizace, přeprava nebo objednávání, často vyžadují integraci s dalšími mikroslužbami. Integrace často zahrnuje jednu mikroslužbu, která pro data obsahuje *dotazování* druhé. Obrázek 5-3 ukazuje scénář.
+Zatímco mikroslužby jsou nezávislé a zaměřují se na konkrétní funkční funkce, jako je inventář, expedice nebo objednávání, často vyžadují integraci s jinými mikroslužbami. Často integrace zahrnuje jednu *mikroslužbu dotazování* jiné pro data. Obrázek 5-3 ukazuje scénář.
 
 ![Dotazování napříč mikroslužbami](./media/cross-service-query.png)
 
 **Obrázek 5-3**. Dotazování napříč mikroslužbami
 
-Na předchozím obrázku se uvidí mikroslužba nákupního košíku, která přidá položku do nákupního košíku uživatele. I když úložiště dat pro tuto mikroslužbu obsahuje data koše a položky řádku, neudržuje data o produktech ani cenách. Místo toho tyto datové položky vlastní katalog a cenové služby. To představuje problém. Jak může mikroslužba nákupního košíku přidat produkt do nákupního košíku uživatele, pokud nemá v databázi ani data o produktech ani ceny?
+Na předchozím obrázku vidíme mikroslužbu nákupního košíku, která přidá položku do nákupního košíku uživatele. Zatímco úložiště dat pro tuto mikroslužbu obsahuje data košíku a řádkové položky, neudržuje data o produktech nebo cenách. Místo toho jsou tyto datové položky vlastněny katalogu a ceny mikroslužeb. To představuje problém. Jak může mikroslužba nákupního košíku přidat produkt do nákupního košíku uživatele, když nemá produkt ani údaje o cenách ve své databázi?
 
-Jedna z možností popsaná v části kapitola 4 je [přímé volání http](service-to-service-communication.md#queries) od nákupního košíku ke službě Catalog and Price. V kapitole 4 se však říká *synchronní volání http* , které spojuje mikroslužby, což snižuje autonomii a zmenšuje jejich výhody architektury.
+Jednou z možností popsaných v kapitole 4 je [přímé volání HTTP](service-to-service-communication.md#queries) z nákupního košíku do katalogu a stanovení cen mikroslužeb. V kapitole 4 jsme však řekli, že synchronní volání HTTP *spojuje pár* mikroslužeb, čímž snižuje jejich autonomii a snižuje jejich architektonické výhody.
 
-Pro každou službu můžeme také implementovat vzor požadavek-odpověď s oddělenými příchozími a odchozími frontami. Tento model je však složitý a vyžaduje k tomu, aby bylo možné korelovat zprávy žádosti a odpovědi.
-I když oddělí volání mikroslužby back-end, volající služba musí stále synchronně čekat na dokončení volání. Zahlcení sítě, přechodné chyby nebo přetížená mikroslužba a výsledkem může být dlouhotrvající a dokonce neúspěšné operace.
+Můžeme také implementovat vzor požadavek odpověď se samostatnými příchozía odchozí fronty pro každou službu. Tento vzor je však složité a vyžaduje instalatérství korelovat požadavky a odpovědi zprávy.
+Zatímco to odpojit volání back-endu mikroslužby, volání služby musí stále synchronně čekat na dokončení volání. Zahlcení sítě, přechodné chyby nebo přetížené mikroslužby a může mít za následek dlouhotrvající a dokonce i neúspěšné operace.
 
-Místo toho je široce přijatý vzor pro odebrání závislostí mezi službami, což je [vzor materializované zobrazení](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)znázorněný na obrázku 5-4.
+Místo toho široce přijímaný vzor pro odstranění závislostí mezi službami je [materiální vzorek zobrazení](https://docs.microsoft.com/azure/architecture/patterns/materialized-view), znázorněný na obrázku 5-4.
 
-![Model materializované zobrazení](./media/materialized-view-pattern.png)
+![Zhmotněný řez](./media/materialized-view-pattern.png)
 
-**Obrázek 5-4**. Model materializované zobrazení
+**Obrázek 5-4**. Model materializovaného zobrazení
 
-V tomto vzoru umístíte do služby nákupního košíku místní datovou tabulku (označovanou jako *model pro čtení*). Tato tabulka obsahuje denormalizovanou kopii dat potřebných z produktových a cenových mikroslužeb. Kopírování dat přímo do nákupního košíku mikroslužba eliminuje nutnost nákladných hovorů mezi službami. S daty, která jsou místní pro službu, můžete zlepšit dobu a spolehlivost odezvy služby. Navíc s vlastní kopií dat je služba nákupního košíku pružnější. Pokud by služba katalogu neměla být k dispozici, měla by přímo ovlivnit službu nákupního košíku. Nákupní košík může pokračovat v práci s daty z vlastního úložiště. 
+Pomocí tohoto vzoru umístíte do služby nákupního košíku místní tabulku dat (označovanou jako *model pro čtení).* Tato tabulka obsahuje nenormalizovanou kopii dat potřebných z mikroslužeb produktu a cen. Kopírování dat přímo do mikroslužby nákupního košíku eliminuje potřebu nákladných volání mezi službami. S místními daty pro službu můžete zlepšit dobu odezvy a spolehlivost služby. Navíc s vlastní kopii dat je služba nákupního košíku odolnější. Pokud by služba katalogu přestala být dostupná, neměla by přímý vliv na službu nákupního košíku. Nákupní košík může pokračovat v provozu s daty z vlastního obchodu.
 
-Tento přístup znamená, že v systému teď máte duplicitní data. *Strategická* duplikace dat v systémech nativních pro Cloud je ale stanovený postup a nepovažuje se za antipattern nebo špatný postup. Mějte na paměti, že *jedna a jenom jedna služba* může vlastnit sadu dat a mít nad ní oprávnění. Pokud aktualizujete systém záznamu, bude nutné synchronizovat modely čtení. Synchronizace je obvykle implementována prostřednictvím asynchronního zasílání zpráv pomocí [vzoru pro publikování a odběr](service-to-service-communication.md#events), jak je znázorněno na obrázku 5,4.
+Úlovek s tímto přístupem je, že nyní máte duplicitní data ve vašem systému. *Strategicky* duplikace dat v cloudnativních systémech je však zavedenou praxí a není považována za anti-pattern nebo špatnou praxi. Mějte na paměti, že *jedna a jediná služba* může vlastnit sadu dat a mít nad ní oprávnění. Při aktualizaci systému záznamu budete muset synchronizovat modely čtení. Synchronizace je obvykle implementována prostřednictvím asynchronního zasílání zpráv se [vzorem publikování/odběru](service-to-service-communication.md#events), jak je znázorněno na obrázku 5.4.
 
 ## <a name="distributed-transactions"></a>Distribuované transakce
 
-Dotazování na data napříč mikroslužbami je obtížné a implementace transakce napříč několika mikroslužbami je ještě složitější. Podstata zachování konzistence dat napříč nezávislými zdroji dat v různých mikroslužbách nemůže být podstavová. Chybějící distribuované transakce v cloudových nativních aplikacích znamená, že je nutné spravovat distribuované transakce programově. Přesunete se od světa *bezprostřední konzistence* s konečnou *konzistencí*.
+Zatímco dotazování dat napříč mikroslužbami je obtížné, implementace transakce napříč několika mikroslužeb je ještě složitější. Inherentní výzvu zachování konzistence dat napříč nezávislými zdroji dat v různých mikroslužeb nelze podceňovat. Nedostatek distribuovaných transakcí v aplikacích nativních pro cloud znamená, že je nutné spravovat distribuované transakce programově. Přesunete se ze světa *okamžité konzistence* do světa *případné konzistence*.
 
 Obrázek 5-5 ukazuje problém.
 
-![Transakce ve vzoru Saga](./media/saga-transaction-operation.png)
+![Transakce ve vzoru ságy](./media/saga-transaction-operation.png)
 
-**Obrázek 5-5**. Implementace transakce napříč mikroslužbami
+**Obrázek 5-5**. Implementace transakce mezi mikroslužbami
 
-Na předchozím obrázku se pět nezávislých mikroslužeb účastní v distribuované transakci, která vytváří objednávku. Každá mikroslužba udržuje své vlastní úložiště dat a implementuje místní transakci pro své úložiště. Chcete-li vytvořit objednávku, místní transakce pro *každou* jednotlivou mikroslužbu musí být úspěšná, nebo *všechny* musí přerušit a vrátit zpět operaci. I když je integrovaná transakční podpora k dispozici v rámci každé mikroslužby, neexistuje žádná podpora distribuované transakce, která by byla rozložená do všech pěti služeb za účelem zachování konzistence dat.
+Na předchozím obrázku pět nezávislých mikroslužeb účastnit distribuované transakce, která vytvoří objednávku. Každá mikroslužba udržuje své vlastní úložiště dat a implementuje místní transakce pro své úložiště. Chcete-li vytvořit pořadí, musí být úspěšná místní transakce pro *každou* jednotlivou mikroslužbu, nebo *musí všechny* přerušit a vrátit zpět operaci. Zatímco integrovaná transakční podpora je k dispozici v rámci každé mikroslužeb, neexistuje žádná podpora pro distribuované transakce, která by se rozprostírala napříč všemi pěti službami, aby byla data konzistentní.
 
-Místo toho je nutné tuto distribuovanou transakci sestavit *programově*.
+Místo toho je nutné vytvořit tuto distribuovanou transakci *programově*.
 
-Oblíbeným vzorem pro přidání podpory distribuovaných transakcí je SAGA vzor. Je implementováno seskupením místních transakcí společně a následným vyvoláním každého z nich. Pokud některá z místních transakcí selže, Saga přeruší operaci a vyvolá sadu [kompenzačních transakcí](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction). Kompenzační transakce vrátí zpět změny provedené předchozími místními transakcemi a obnoví konzistenci dat. Obrázek 5-6 ukazuje neúspěšnou transakci se vzorem Saga.
+Populární vzor pro přidání distribuované transakční podporu je vzor Saga. Je implementována seskupením místních transakcí dohromady programově a postupně s oprávněním ke každému z nich. Pokud některá z místních transakcí nezdaří, Saga přeruší operaci a vyvolá sadu [vyrovnávacítransakce](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction). Kompenzační transakce vrátit zpět změny provedené předchozí místní transakce a obnovit konzistenci dat. Obrázek 5-6 ukazuje neúspěšnou transakci se vzorem Saga.
 
-![Vracení zpět ve vzoru Saga](./media/saga-rollback-operation.png)
+![Vrátit se zpět do vzoru ságy](./media/saga-rollback-operation.png)
 
 **Obrázek 5-6**. Vrácení transakce zpět
 
-V předchozím obrázku se v mikroslužbě inventáře nezdařila operace *inventarizace aktualizací* . Saga vyvolá sadu kompenzačních transakcí (červeně) pro úpravu inventury, zrušení platby a objednávky a vrátí data pro každou mikroslužbu zpět do konzistentního stavu.
+Na předchozím obrázku *operace Aktualizovat zásoby* selhala v mikroslužbě Zásoby. Saga vyvolá sadu vyrovnávacích transakcí (červeně) upravit počty zásob, zrušit platbu a objednávku a vrátit data pro každou mikroslužbu zpět do konzistentního stavu.
 
-Vzorce Saga jsou obvykle choreographed jako série souvisejících událostí nebo Orchestrované jako sada souvisejících příkazů. V kapitole 4 jsme probrali model Agregátoru služby, který by byl základem pro orchestraci Saga implementace. Provedli jsme také vytváření událostí společně s Azure Service Bus a Azure Event Grid témata, která by byla základem pro implementaci choreographed Saga.
+Vzorce ságy jsou obvykle choreografovány jako série souvisejících událostí nebo orchestrovány jako sada souvisejících příkazů. V kapitole 4 jsme diskutovali o agregátoru služeb vzor, který by byl základem pro řízené ságy provádění. Také jsme diskutovali o událostech spolu s tématy Azure Service Bus a Azure Event Grid, které by byly základem pro choreografickou implementaci ságy.
 
-## <a name="high-volume-data"></a>Velké objemy dat
+## <a name="high-volume-data"></a>Velkoobjemová data
 
-Rozsáhlé aplikace pro nativní Cloud často podporují požadavky na velké objemy dat. V těchto scénářích můžou tradiční techniky úložiště dat způsobovat problémová místa. U složitých systémů, které se nasazují ve velkém měřítku, může výkon aplikace zvýšit jak CQRS (Command and Query Responsibility Segregation) (CQRS), tak i zdroje událostí.  
+Velké aplikace nativní pro cloud často podporují požadavky na velkoobjemová data. V těchto scénářích tradiční techniky ukládání dat může způsobit kritické body. U složitých systémů, které se nasazují ve velkém měřítku, může oddělení odpovědnosti příkazů i dotazů (CQRS) i získávání událostí zlepšit výkon aplikací.  
 
 ### <a name="cqrs"></a>CQRS
 
-[CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs)je model architektury, který může přispět k maximalizaci výkonu, škálovatelnosti a zabezpečení. Vzor odděluje operace, které čtou data z operací, které zapisují data. 
+[CQRS](https://docs.microsoft.com/azure/architecture/patterns/cqrs), je architektonický vzor, který může pomoci maximalizovat výkon, škálovatelnost a zabezpečení. Vzor odděluje operace, které čtou data z těchto operací, které zapisují data.
 
-V případě normálních scénářů se stejný model entity a objekt úložiště dat používají pro *operace čtení i* zápisu.
+Pro normální scénáře se stejný model entity a objekt úložiště dat používají pro operace čtení *i* zápisu.
 
-Scénář s vysokými objemy dat ale může využívat samostatné modely a tabulky dat pro čtení a zápis. Aby bylo možné zvýšit výkon, operace čtení se může dotazovat na vysoce denormalizovanou reprezentaci dat, aby nedocházelo k nákladným opakovaným spojením tabulek a zámkům tabulek. Operace *zápisu* , která se označuje jako *příkaz*, by se aktualizovala na plně normalizovanou reprezentaci dat, která by zajistila konzistenci. Pak je nutné implementovat mechanismus, aby obě reprezentace zůstala synchronizovaná. Obvykle při každé změně tabulky zápisu publikuje událost, která replikuje úpravu do tabulky pro čtení.
+Scénář dat s velkým objemem však může těžit ze samostatných modelů a tabulek dat pro čtení a zápisy. Chcete-li zlepšit výkon operace čtení může dotaz proti vysoce nenormalizované reprezentace dat, aby se zabránilo nákladné opakující se tabulka spojení a tabulka zámky. Operace *zápisu,* označovaná jako *příkaz*, by se aktualizovala proti plně normalizované reprezentaci dat, která by zaručila konzistenci. Potom je třeba implementovat mechanismus zachovat obě reprezentace v synchronizaci. Obvykle při každé změně tabulky zápisu publikuje událost, která replikuje změny tabulky pro čtení.
 
-Obrázek 5-7 ukazuje implementaci CQRS vzoru.
+Obrázek 5-7 ukazuje implementaci cqrs vzor.
 
-![CQRS (Command and Query Responsibility Segregation)](./media/cqrs-implementation.png)
+![Oddělení odpovědnosti příkazů a dotazů](./media/cqrs-implementation.png)
 
 **Obrázek 5-7**. Implementace CQRS
 
-Na předchozím obrázku jsou implementované samostatné modely příkazů a dotazů. Každá operace zápisu dat je uložena do úložiště pro zápis a následně šířena do úložiště pro čtení. Věnujte velkou pozornost tomu, jak proces šíření dat funguje na principu konečné [konzistence](http://www.cloudcomputingpatterns.org/eventual_consistency/). Model čtení se nakonec synchronizuje s modelem zápisu, ale v procesu může dojít k prodlevě. V další části se podíváme na konečnou konzistenci.
+Na předchozím obrázku jsou implementovány samostatné modely příkazů a dotazů. Každá operace zápisu dat je uložena do úložiště zápisu a poté rozšířena do úložiště pro čtení. Věnujte velkou pozornost tomu, jak proces šíření dat funguje na principu [případné konzistence](http://www.cloudcomputingpatterns.org/eventual_consistency/). Čtení modelu nakonec synchronizuje s modelem zápisu, ale může být určité zpoždění v procesu. V další části diskutujeme o případné konzistenci.
 
-Toto oddělení umožňuje čtení a zápisy nezávisle na velikosti. Operace čtení používají schéma optimalizované pro dotazy, zatímco zápisy používají schéma optimalizované pro aktualizace. Čtení dotazů přechází na Denormalizovaná data, zatímco složitá obchodní logika může být použita na model zápisu. Také můžete způsobit zvýšení zabezpečení při operacích zápisu než čtení, které zveřejňuje.
+Toto oddělení umožňuje čtení a zápisy škálovat nezávisle. Operace čtení používají schéma optimalizované pro dotazy, zatímco zápisy používají schéma optimalizované pro aktualizace. Dotazy pro čtení jdou proti nenormalizovaným datům, zatímco komplexní obchodní logiku lze použít pro model zápisu. Stejně tak můžete uložit přísnější zabezpečení pro operace zápisu, než ty, které odhalují čtení.
 
-Implementace CQRS může zlepšit výkon aplikace pro cloudové nativní služby. Výsledkem ale je složitější návrh. Aplikujte tento princip pečlivě a strategicky na tyto části vaší cloudové aplikace, která z nich bude výhodná. Další informace o CQRS naleznete v části [mikroslužby Microsoft Book .NET: architektura pro kontejnerové aplikace .NET](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns).
+Implementace CQRS může zlepšit výkon aplikací pro cloudové nativní služby. Výsledkem však je složitější návrh. Tento princip používejte pečlivě a strategicky na ty části aplikace nativní pro cloud, které z něj budou mít prospěch. Další informace o CQRS naleznete v knize Microsoft [Book .NET Microservices: Architecture for Containerized .NET Applications](https://docs.microsoft.com/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns).
 
-### <a name="event-sourcing"></a>Původ události
+### <a name="event-sourcing"></a>Získávání událostí
 
-Dalším přístupem k optimalizaci scénářů s velkými objemy dat je využití [zdrojů událostí](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
+Další přístup k optimalizaci scénářů velkoobjemových dat zahrnuje [získávání událostí](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
-Systém obvykle ukládá aktuální stav datové entity. Pokud uživatel změní své telefonní číslo, například záznam zákazníka se aktualizuje o nové číslo. Vždycky ví, že aktuální stav entity dat je, ale každá aktualizace Přepisuje předchozí stav. 
+Systém obvykle ukládá aktuální stav datové entity. Pokud například uživatel změní své telefonní číslo, záznam zákazníka se aktualizuje o nové číslo. Vždy známe aktuální stav datové entity, ale každá aktualizace přepíše předchozí stav.
 
-Ve většině případů tento model funguje dobře. V systémech s vysokým objemem ale režie z transakčního uzamykání a častých operací aktualizace může ovlivnit výkon databáze, rychlost odezvy a omezení škálovatelnosti.
+Ve většině případů tento model funguje dobře. V systémech s vysokou objemem však režie z transakčního uzamčení a častých operací aktualizace může ovlivnit výkon databáze, odezvu a omezit škálovatelnost.
 
-Pro zachytávání dat má navýšení zdroje událostí jiný přístup. Všechny operace, které mají vliv na data, jsou uchovávány v úložišti událostí. Místo aktualizace stavu datového záznamu připojíme každou změnu do sekvenčního seznamu minulých událostí – podobně jako v hlavní knize účetní knihy. Úložiště událostí se v systému zaznamená pro data. Slouží k rozšíření různých vyhodnocených zobrazení v rámci ohraničeného kontextu mikroslužby. Obrázek 5,8 ukazuje vzor.
+Event Sourcing má jiný přístup k zachycení dat. Každá operace, která ovlivňuje data, je v úložišti událostí zachována. Namísto aktualizace stavu datového záznamu připojíme každou změnu do sekvenčního seznamu minulých událostí - podobně jako účetní knihy. Úložiště událostí se stane systémem záznamu pro data. Používá se k šíření různých zhmotněných zobrazení v rámci ohraničené kontextu mikroslužeb. Obrázek 5.8 ukazuje vzorek.
 
-![Původ události](./media/event-sourcing.png)
+![Event Sourcing](./media/event-sourcing.png)
 
-**Obrázek 5-8**. Původ události
+**Obrázek 5-8**. Event Sourcing
 
-Na předchozím obrázku si všimněte, že každá položka (modře) pro nákupní košík uživatele je připojená k základnímu úložišti událostí. V sousedícím materializovém zobrazení systém projektuje aktuální stav přehráním všech událostí spojených s každým nákupním košíkem. Toto zobrazení nebo model čtení je pak zpřístupněno zpět do uživatelského rozhraní. Události je také možné integrovat s externími systémy a aplikacemi nebo s dotazem, abyste zjistili aktuální stav entity. S tímto přístupem zachováte historii. Znáte nejen aktuální stav entity, ale také to, jak jste dosáhli tohoto stavu.
+Na předchozím obrázku si všimněte, jak je každá položka (modře) pro nákupní košík uživatele připojena k podkladovému úložišti událostí. V přilehlém zhmotněným zobrazení systém promítá aktuální stav přehráním všech událostí přidružených ke každému nákupnímu košíku. Tento pohled nebo čtení modelu je pak vystavena zpět do ui. Události lze také integrovat s externími systémy a aplikacemi nebo dotazovány k určení aktuálního stavu entity. S tímto přístupem, budete udržovat historii. Znáte nejen aktuální stav entity, ale také to, jak jste k tomuto stavu dosáhli.
 
-Naproti mechanickému nahlasování se u zdroje událostí zjednoduší model zápisu. Neexistují žádné aktualizace ani odstranění. Připojení každé datové položky jako neproměnlivá událost minimalizuje konflikty kolizí, uzamykání a souběžnosti spojené s relačními databázemi. Sestavování modelů čtení pomocí vzoru materializované zobrazení umožňuje oddělit zobrazení od modelu zápisu a zvolit nejvhodnější úložiště dat pro optimalizaci potřeb uživatelského rozhraní aplikace.
+Mechanicky řečeno, získávání událostí zjednodušuje model zápisu. Neexistují žádné aktualizace nebo odstranění. Připojení každé položky dat jako neměnné události minimalizuje konflikty konfliktů kolizí, uzamčení a souběžnosti přidružené k relačním databázím. Vytváření modelů čtení s materiálním vzorem zobrazení umožňuje oddělit zobrazení od modelu zápisu a zvolit nejlepší úložiště dat pro optimalizaci potřeb vašeho aplikačního uj.
 
-Pro tento model Vezměte v úvahu úložiště dat, které přímo podporuje zdrojové události. Azure Cosmos DB, MongoDB, Cassandra, CouchDB a RavenDB jsou vhodné kandidáty.
+Pro tento vzor zvažte úložiště dat, které přímo podporuje získávání událostí. Azure Cosmos DB, MongoDB, Cassandra, CouchDB a RavenDB jsou dobří kandidáti.
 
-Stejně jako u všech vzorů a technologií implementujte strategické a v případě potřeby. I když může poskytovat zvýšení výkonu a škálovatelnosti, přináší se vám náklady na složitost a výuková křivka.
+Stejně jako u všech vzorů a technologií, realizovat strategicky a v případě potřeby. Zatímco získávání událostí může poskytovat vyšší výkon a škálovatelnost, přichází na úkor složitosti a křivky učení.
 
 >[!div class="step-by-step"]
 >[Předchozí](service-mesh-communication-infrastructure.md)
->[Další](relational-vs-nosql-data.md)
+>[další](relational-vs-nosql-data.md)

@@ -9,39 +9,39 @@ helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
 ms.openlocfilehash: c72654a2bc21035fe706d76018bb163d8ba01ee8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73106906"
 ---
 # <a name="how-to-unwrap-a-nested-task"></a>Postupy: Rozbalení vnořené úlohy
-Můžete vrátit úlohu z metody a pak počkat nebo pokračovat v této úloze, jak je znázorněno v následujícím příkladu:  
+Můžete vrátit úkol z metody a potom čekat nebo pokračovat z tohoto úkolu, jak je znázorněno v následujícím příkladu:  
   
  [!code-csharp[TPL_Unwrap#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#01)]
  [!code-vb[TPL_Unwrap#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_unwrap/vb/snippets1-3.vb#01)]  
   
- V předchozím příkladu je vlastnost <xref:System.Threading.Tasks.Task%601.Result%2A> typu `string` (`String` v Visual Basic).  
+ V předchozím příkladu <xref:System.Threading.Tasks.Task%601.Result%2A> je vlastnost `string` `String` typu ( v jazyce Visual Basic).  
   
- V některých scénářích je však vhodné vytvořit úlohu v rámci jiné úlohy a pak vrátit vnořenou úlohu. V tomto případě je `TResult` ohraničující úlohy samotný úkol. V následujícím příkladu je vlastnost Result `Task<Task<string>>` v C# nebo `Task(Of Task(Of String))` v Visual Basic.  
+ V některých případech však můžete chtít vytvořit úkol v rámci jiného úkolu a potom vrátit vnořený úkol. V tomto případě `TResult` je ohraničující úkol sám o sobě úkolem. V následujícím příkladu result vlastnost `Task<Task<string>>` je v `Task(Of Task(Of String))` jazyce C# nebo v jazyce Visual Basic.  
   
  [!code-csharp[TPL_Unwrap#02](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#02)]
  [!code-vb[TPL_Unwrap#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_unwrap/vb/snippets1-3.vb#02)]  
   
- I když je možné napsat kód, který rozbalí vnější úlohu a načte původní úlohu a její vlastnost <xref:System.Threading.Tasks.Task%601.Result%2A>, takový kód se nedá snadno zapsat, protože je nutné zpracovat výjimky a také požadavky na zrušení. V takové situaci doporučujeme použít jednu z <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> rozšiřujících metod, jak je znázorněno v následujícím příkladu.  
+ I když je možné napsat kód rozbalit vnější úkol a <xref:System.Threading.Tasks.Task%601.Result%2A> načíst původní úkol a jeho vlastnost, takový kód není snadné napsat, protože je nutné zpracovat výjimky a také požadavky na zrušení. V takovém případě doporučujeme použít jednu <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> z metod rozšíření, jak je znázorněno v následujícím příkladu.  
   
  [!code-csharp[TPL_UnWrap#03](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#03)]
  [!code-vb[TPL_UnWrap#03](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_unwrap/vb/snippets1-3.vb#03)]  
   
- Metody <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> lze použít k transformaci jakýchkoli `Task<Task>` nebo `Task<Task<TResult>>` (`Task(Of Task)` nebo `Task(Of Task(Of TResult))` v Visual Basic) na `Task` nebo `Task<TResult>` (`Task(Of TResult)` v Visual Basic). Nová úloha plně reprezentuje vnitřní vnořenou úlohu a obsahuje stav zrušení a všechny výjimky.  
+ Metody <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> lze použít k `Task<Task>` transformaci `Task<Task<TResult>>` `Task(Of Task)` některé `Task(Of Task(Of TResult))` nebo ( nebo `Task` `Task<TResult>` v`Task(Of TResult)` jazyce Visual Basic) na nebo ( v jazyce Visual Basic). Nový úkol plně představuje vnitřní vnořené úlohy a zahrnuje stav zrušení a všechny výjimky.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít metody rozšíření <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A>.  
+ Následující příklad ukazuje, jak <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> používat metody rozšíření.  
   
  [!code-csharp[TPL_UnWrap#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_unwrap/cs/unwrapprogram.cs#04)]
  [!code-vb[TPL_UnWrap#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_unwrap/vb/snippet04.vb#04)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.Tasks.TaskExtensions?displayProperty=nameWithType>
 - [Asynchronní programování založené na úlohách](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)

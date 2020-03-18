@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: dc5f608dc9eb4635e1282a9ca5e15ff1bf7d0e0d
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 711b51c590be149545fda3130148e2bcaef8be4f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449547"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78262366"
 ---
 ### <a name="private-fields-added-to-built-in-struct-types"></a>Soukromá pole přidaná k předdefinovaným typům struktury
 
-Soukromá pole byla přidána k předdefinovaným typům struktury v [referenčních sestaveních](../../../../docs/standard/assembly/reference-assemblies.md). V důsledku toho musí být C#v typu struktury vždy vytvořena instance pomocí [operátoru new](../../../../docs/csharp/language-reference/operators/new-operator.md) nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal)nebo inicializací jednotlivých privátních polí.
+Soukromá pole byla přidána k [určitým typům struktury](#affected-apis) v [referenčních sestavách](../../../../docs/standard/assembly/reference-assemblies.md). V důsledku toho v C# tyto typy struktury musí být vždy vytvořena instance pomocí [nového operátoru](../../../../docs/csharp/language-reference/operators/new-operator.md) nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V .NET Core 2,0 a předchozích verzích byly některé předdefinované typy struktury, například <xref:System.ConsoleKeyInfo>, vytvořeny jako instance bez použití operátoru `new` nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal) v C#. Důvodem je to, že [referenční sestavení](../../../../docs/standard/assembly/reference-assemblies.md) použitá C# kompilátorem neobsahovala soukromá pole pro struktury. Všechna soukromá pole pro typy struktury .NET jsou přidána do referenčních sestavení, která začínají v .NET Core 2,1.
+V rozhraní .NET Core 2.0 a předchozích verzích mohou <xref:System.ConsoleKeyInfo>být některé typy struktury, `new` například , instance bez použití operátoru nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal) v c#. Důvodem bylo, [že referenční sestavení](../../../../docs/standard/assembly/reference-assemblies.md) používaná kompilátorem jazyka C# neobsahovala soukromá pole pro struktury. Všechna soukromá pole pro typy struktury .NET jsou přidána do referenčních sestavení začínajících v rozhraní .NET Core 2.1.
 
-Například následující C# kód je zkompilován v rozhraní .net Core 2,0, ale ne v rozhraní .net Core 2,1:
+Například následující kód Jazyka C# se zkompiluje v rozhraní .NET Core 2.0, ale ne v rozhraní .NET Core 2.1:
 
 ```csharp
 ConsoleKeyInfo key;    // Struct type
@@ -25,15 +25,15 @@ if (key.ToString() == "y")
 }
 ```
 
-V .NET Core 2,1 výsledkem předchozího kódu je následující chyba kompilátoru: **CS0165-použití nepřiřazené lokální proměnné ' Key '**
+V rozhraní .NET Core 2.1 má předchozí kód za následek následující chybu kompilátoru: **CS0165 - Použití nepřiřazené místní proměnné 'klíč'**
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 2.1
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Vytvořte instanci typů struktury pomocí operátoru `new` nebo [výchozího literálu](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
+Instance typy struktury pomocí operátoru `new` nebo [výchozí literál](../../../../docs/csharp/language-reference/operators/default.md#default-literal).
 
 Například:
 
@@ -49,16 +49,6 @@ ConsoleKeyInfo key = default;    // Struct type.
 
 if (key.ToString() == "y")
     Console.WriteLine("Yes!");
-```
-
-```csharp
-ConsoleKeyInfo[] keys = new ConsoleKeyInfo[5];    // Array of structs.
-
-for (int i = 0; i < keys.Length; i++)
-{
-    // Initialize each array element with the new operator.
-    keys[i] = new ConsoleKeyInfo();
-}
 ```
 
 #### <a name="category"></a>Kategorie

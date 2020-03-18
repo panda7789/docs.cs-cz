@@ -14,22 +14,22 @@ helpviewer_keywords:
 - data stores, enumerating
 ms.assetid: 0fcf279a-f241-48f0-8034-2e3d331f1fcb
 ms.openlocfilehash: 3ba38093e9e978c89cdb2bb7a584ed9e04c1096d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75707525"
 ---
 # <a name="how-to-enumerate-stores-for-isolated-storage"></a>Postupy: Vytvoření výčtu úložišť pro izolované úložiště
-Pomocí statické metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> můžete zobrazit výčet všech izolovaných úložišť pro aktuálního uživatele. Tato metoda přebírá hodnotu <xref:System.IO.IsolatedStorage.IsolatedStorageScope> a vrací enumerátor <xref:System.IO.IsolatedStorage.IsolatedStorageFile>. Chcete-li vytvořit výčet úložišť, je nutné mít oprávnění <xref:System.Security.Permissions.IsolatedStorageFilePermission>, které určuje hodnotu <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>. Pokud voláte metodu <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> s hodnotou <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User>, vrátí pole objektů <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, které jsou definovány pro aktuálního uživatele.  
+Můžete vytvořit výčet všech izolovaných úložišť pro <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> aktuálního uživatele pomocí statické metody. Tato metoda <xref:System.IO.IsolatedStorage.IsolatedStorageScope> přebírá hodnotu <xref:System.IO.IsolatedStorage.IsolatedStorageFile> a vrátí čítač výčtu. Chcete-li vytvořit výčet úložišť, musíte <xref:System.Security.Permissions.IsolatedStorageFilePermission> mít <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser> oprávnění, které určuje hodnotu. Pokud zavoláte <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> metodu <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User> s hodnotou, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> vrátí pole objektů, které jsou definovány pro aktuálního uživatele.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu získá úložiště izolované uživatelem a sestavením, vytvoří několik souborů a načte tyto soubory pomocí metody <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A>.  
+ Následující příklad kódu získá úložiště, které je izolováno uživatelem a sestavením, vytvoří <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> několik souborů a načte tyto soubory pomocí metody.  
   
  [!code-csharp[Conceptual.IsolatedStorage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source2.cs#2)]
  [!code-vb[Conceptual.IsolatedStorage#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source2.vb#2)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

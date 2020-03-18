@@ -1,58 +1,58 @@
 ---
-title: Práce s sémantickým modelem .NET Compiler Platform SDK
-description: Tento přehled poskytuje pochopení typu, který používáte pro pochopení a manipulaci s sémantickým modelem kódu.
+title: Práce s sémantickým modelem platformy .NET Compiler Platform SDK
+description: Tento přehled poskytuje pochopení typu, který používáte k pochopení a manipulaci s sémantickým modelem kódu.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: c594447bb553f488d60fe83900e2f141608b570f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 8575988cd98a4c0ba3f24107788f065f7472f55d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105671"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156932"
 ---
 # <a name="work-with-semantics"></a>Práce se sémantikou
 
-[Stromy syntaxe](work-with-syntax.md) reprezentují lexikální a syntaktickou strukturu zdrojového kódu. I když tyto informace jsou dostatečné pro popis všech deklarací a logiky ve zdroji, není dostatek informací, aby bylo možné zjistit, co je odkazováno. Název může představovat:
+[Stromy syntaxe](work-with-syntax.md) představují lexikální a syntaktickou strukturu zdrojového kódu. I když tyto informace samy o sobě stačí k popisu všech deklarací a logiky ve zdroji, není dostatek informací k identifikaci, co je odkazováno. Název může představovat:
 
 - typ
 - pole
-- Metoda
+- Metoda 
 - lokální proměnná
 
-I když je každá z nich jednoznačně odlišná, určení toho, který identifikátor ve skutečnosti označuje, často vyžaduje důkladné porozumění jazykovým pravidlům. 
+I když každý z nich je jedinečně odlišné, určení, který z identifikátorve skutečnosti odkazuje často vyžaduje hluboké pochopení pravidel jazyka.
 
-Existují prvky programu reprezentované ve zdrojovém kódu a programy mohou také odkazovat na dříve zkompilované knihovny, zabaleny do souborů sestavení. I když žádný zdrojový kód, a proto žádné uzly syntaxe ani stromy nejsou k dispozici pro sestavení, programy mohou stále odkazovat na prvky uvnitř nich.
+Ve zdrojovém kódu jsou reprezentovány prvky programu a programy mohou také odkazovat na dříve zkompilované knihovny zabalené v souborech sestavení. Přestože žádný zdrojový kód, a proto žádné syntaktické uzly nebo stromy, jsou k dispozici pro sestavení, programy mohou stále odkazovat na prvky uvnitř nich.
 
-Pro tyto úlohy potřebujete **sémantický model**.
+Pro tyto úkoly potřebujete **sémantický model**.
 
-Kromě syntaktického modelu zdrojového kódu zapouzdřuje sémantický model jazyková pravidla a poskytuje snadný způsob, jak správně porovnat identifikátory se správným prvkem programu, na který se odkazuje.
+Kromě syntaktického modelu zdrojového kódu sémantický model zapouzdřuje jazyková pravidla, což umožňuje snadný způsob, jak správně spárovat identifikátory se správným programovým prvkem, na který se odkazuje.
 
 ## <a name="compilation"></a>Kompilace
 
-Kompilace je reprezentace všeho potřebného pro zkompilování C# nebo Visual Basic program, který zahrnuje všechny odkazy na sestavení, možnosti kompilátoru a zdrojové soubory. 
+Kompilace je reprezentace vše potřebné ke kompilaci c# nebo visual basic program, který obsahuje všechny odkazy sestavení, možnosti kompilátoru a zdrojové soubory.
 
-Vzhledem k tomu, že jsou všechny tyto informace na jednom místě, prvky obsažené ve zdrojovém kódu lze podrobněji popsat. Kompilace představuje každý deklarovaný typ, člen nebo proměnnou jako symbol. Kompilace obsahuje nejrůznější metody, které vám pomůžou najít a propojit symboly, které byly buď deklarovány ve zdrojovém kódu nebo importovány jako metadata ze sestavení.
+Vzhledem k tomu, že všechny tyto informace jsou na jednom místě, prvky obsažené ve zdrojovém kódu lze popsat podrobněji. Kompilace představuje každý deklarovaný typ, člen nebo proměnnou jako symbol. Kompilace obsahuje různé metody, které vám pomohou najít a propojit symboly, které byly deklarovány ve zdrojovém kódu nebo importovány jako metadata z sestavení.
 
-Podobně jako stromy syntaxe jsou kompilace neměnný. Po vytvoření kompilace ji nemůžete změnit vy nebo někdo jiný, se kterou byste ji mohli sdílet. Můžete však vytvořit novou kompilaci z existující kompilace a určit tak jejich změnu. Například můžete vytvořit kompilaci, která je stejná v každém jako existující kompilace, s výjimkou, že může obsahovat další zdrojový soubor nebo odkaz na sestavení.
+Podobně jako syntaxe stromy, kompilace jsou neměnné. Po vytvoření kompilace ji nemůžete změnit vy ani nikdo jiný, s kým ji sdílíte. Můžete však vytvořit novou kompilaci z existující kompilace a určit změnu. Můžete například vytvořit kompilaci, která je ve všech směrech stejná jako existující kompilace, s tím rozdílem, že může obsahovat další zdrojový soubor nebo odkaz na sestavení.
 
 ## <a name="symbols"></a>Symboly
 
-Symbol představuje jedinečný element deklarovaný ve zdrojovém kódu nebo importovaný ze sestavení jako metadata. Každý obor názvů, typ, metoda, vlastnost, pole, událost, parametr nebo místní proměnná jsou reprezentovány symbolem. 
+Symbol představuje odlišný prvek deklarovaný zdrojovým kódem nebo importovaný ze sestavení jako metadata. Každý obor názvů, typ, metoda, vlastnost, pole, událost, parametr nebo místní proměnná je reprezentován symbolem.
 
-Nejrůznější metody a vlastnosti <xref:Microsoft.CodeAnalysis.Compilation> typu vám pomůžou najít symboly. Například můžete vyhledat symbol deklarovaného typu podle jeho společných metadat. Můžete také přistupovat k celé tabulce symbolů jako strom symbolů, které jsou rootem globálního oboru názvů.
+Různé metody a vlastnosti <xref:Microsoft.CodeAnalysis.Compilation> na typu vám pomohou najít symboly. Můžete například najít symbol deklarovaného typu podle jeho společného názvu metadat. Můžete také přistupovat k celé tabulce symbolů jako strom symbolů zakořeněných globálním oborem názvů.
 
-Symboly také obsahují další informace, které kompilátor určí ze zdroje nebo metadat, jako jsou například jiné odkazované symboly. Každý druh symbolu je reprezentován samostatným rozhraním odvozeným od <xref:Microsoft.CodeAnalysis.ISymbol>, z každého s vlastními metodami a vlastnostmi, které podrobně popisují informace, které kompilátor shromáždil. Mnohé z těchto vlastností přímo odkazují na jiné symboly. Například <xref:Microsoft.CodeAnalysis.IMethodSymbol.ReturnType?displayProperty=nameWithType> vlastnost oznamuje skutečný symbol typu, na který odkazuje deklarace metody.
+Symboly také obsahují další informace, které kompilátor určuje ze zdroje nebo metadat, jako jsou například jiné odkazované symboly. Každý druh symbolu je reprezentován samostatným rozhraním odvozeným z <xref:Microsoft.CodeAnalysis.ISymbol>, každý s vlastními metodami a vlastnostmi, které podrobně popisují informace, které kompilátor shromáždil. Mnohé z těchto vlastností přímo odkazují na jiné symboly. <xref:Microsoft.CodeAnalysis.IMethodSymbol.ReturnType?displayProperty=nameWithType> Vlastnost například sděluje symbol skutečného typu, na který deklarace metody odkazuje.
 
-Symboly prezentují běžné reprezentace oborů názvů, typů a členů mezi zdrojovým kódem a metadaty. Například metoda, která byla deklarována ve zdrojovém kódu a metoda, která byla importována z metadat, jsou zastoupeny <xref:Microsoft.CodeAnalysis.IMethodSymbol> se stejnou vlastností.
+Symboly představují společnou reprezentaci jmenných prostorů, typů a členů mezi zdrojovým kódem a metadaty. Například metoda, která byla deklarována ve zdrojovém kódu a <xref:Microsoft.CodeAnalysis.IMethodSymbol> metoda, která byla importována z metadat, jsou reprezentovány a se stejnými vlastnostmi.
 
-Symboly jsou podobné v konceptu systému typu CLR, jak je reprezentované <xref:System.Reflection> rozhraním API, ale jsou bohatší v tom, že modelují více než jenom typy. Obory názvů, místní proměnné a popisky jsou všechny symboly. Kromě toho symboly jsou reprezentace jazykových konceptů, nikoli konceptů CLR. Existuje velké množství překryvů, ale existuje mnoho smysluplných odlišnosti. Například metoda iterátoru v C# nebo Visual Basic je jedním symbolem. Pokud je však metoda iterátoru přeložena na metadata CLR, jedná se o typ a více metod.
+Symboly jsou podobné v koncepci systému <xref:System.Reflection> typu CLR, jak je reprezentovánrozhraním API, ale jsou bohatší v tom, že modelují více než jen typy. Obory názvů, místní proměnné a popisky jsou všechny symboly. Kromě toho symboly jsou reprezentace konceptů jazyka, nikoli koncepty CLR. Tam je hodně překrývají, ale existuje mnoho smysluplné rozdíly stejně. Například iterátor metoda v jazyce C# nebo Visual Basic je jeden symbol. Však při iterátormetoda je přeložen a CLR metadata, je typ a více metod.
 
 ## <a name="semantic-model"></a>Sémantický model
 
-Sémantický model představuje všechny sémantické informace pro jeden zdrojový soubor. Můžete ji použít ke zjištění následujících možností: 
+Sémantický model představuje všechny sémantické informace pro jeden zdrojový soubor. Můžete ji použít k zjištění následujících:
 
-- Symboly odkazované v určitém umístění ve zdroji.
+- Symboly odkazované na určitém místě ve zdroji.
 - Výsledný typ libovolného výrazu.
-- Všechny diagnostiky, což jsou chyby a upozornění.
-- Způsob toku proměnných do oblastí zdroje a mimo ně.
-- Odpovědi na více spekulativních otázek.
+- Všechny diagnostiky, což jsou chyby a varování.
+- Jak proměnné proudí do a z oblastí zdroje.
+- Odpovědi na spekulativnější otázky.

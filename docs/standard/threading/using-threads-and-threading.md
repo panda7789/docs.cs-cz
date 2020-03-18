@@ -7,52 +7,52 @@ helpviewer_keywords:
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
 ms.openlocfilehash: 1d487edff2cdc2e63f81963bfaa1f68a06e5b36e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75936847"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 
-Pomocí technologie .NET můžete psát aplikace, které provádějí více operací současně. Operace s potenciálním provozem jiných operací se můžou spouštět v samostatných vláknech, *což je proces* , který se označuje jako *vícevláknové nebo volné podprocesy*.  
+Pomocí rozhraní .NET můžete psát aplikace, které provádějí více operací současně. Operace s potenciálem pozdržet další operace lze provést v samostatných vláknech, což je proces známý jako *multithreading* nebo *free threading*.  
   
-Aplikace, které používají multithreading, mají větší reakci na uživatelský vstup, protože uživatelské rozhraní zůstává aktivní jako úlohy náročné na procesory spouštěné v samostatných vláknech. Multithreading je také užitečné při vytváření škálovatelných aplikací, protože je možné přidat vlákna při zvýšení zatížení.
+Aplikace, které používají vícevláknové práce, lépe reagují na vstup uživatele, protože uživatelské rozhraní zůstává aktivní, protože úlohy náročné na procesor se provádějí v samostatných vláknech. Multithreading je také užitečné při vytváření škálovatelných aplikací, protože můžete přidat vlákna jako zvyšuje zatížení.
 
 > [!NOTE]
-> Pokud potřebujete větší kontrolu nad chováním vláken aplikace, můžete spravovat vlákna sami. Počínaje .NET Framework 4 se však vícevláknové programování značně zjednodušilo s třídami <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, [Paralelní LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md), nové třídy souběžných kolekcí v oboru názvů <xref:System.Collections.Concurrent?displayProperty=nameWithType> a nový programovací model, který je založen na konceptu úkolů, nikoli na vláknech. Další informace naleznete v tématu [paralelní programování](../parallel-programming/index.md) a [Task PARALLEL Library (TPL)](../parallel-programming/task-parallel-library-tpl.md).
+> Pokud potřebujete větší kontrolu nad chováním vláken aplikace, můžete spravovat vlákna sami. Počínaje rozhraním .NET Framework 4 je však programování s <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> více <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> vlákny značně zjednodušeno pomocí tříd a, Paralelní <xref:System.Collections.Concurrent?displayProperty=nameWithType> [LINQ (PLINQ),](../parallel-programming/parallel-linq-plinq.md)nové třídy souběžné kolekce v oboru názvů a nový programovací model, který je založen na konceptu úloh y spíše než na vláknech. Další informace naleznete [v tématu Paralelní programování](../parallel-programming/index.md) a paralelní [knihovna úloh (TPL).](../parallel-programming/task-parallel-library-tpl.md)
 
-## <a name="how-to-create-and-start-a-new-thread"></a>Postupy: vytvoření a spuštění nového vlákna
+## <a name="how-to-create-and-start-a-new-thread"></a>Postup: Vytvoření a spuštění nového vlákna
 
-Vytvoříte nové vlákno vytvořením nové instance třídy <xref:System.Threading.Thread?displayProperty=nameWithType> a zadáním názvu metody, kterou chcete spustit v novém vlákně konstruktoru. Chcete-li spustit vytvořené vlákno, zavolejte metodu <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>. Další informace a příklady najdete v článku [vytváření vláken a předávání dat v čase spuštění](creating-threads-and-passing-data-at-start-time.md) a Reference k rozhraní API <xref:System.Threading.Thread>.
+Vytvoříte nové vlákno vytvořením nové <xref:System.Threading.Thread?displayProperty=nameWithType> instance třídy a zadáním názvu metody, kterou chcete spustit v novém vlákně konstruktoru. Chcete-li spustit vytvořené <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> vlákno, zavolejte metodu. Další informace a příklady naleznete [v tématu vytváření vláken a předávání dat v článku čas zahájení](creating-threads-and-passing-data-at-start-time.md) a odkaz na <xref:System.Threading.Thread> rozhraní API.
 
-## <a name="how-to-stop-a-thread"></a>Postupy: zastavení vlákna
+## <a name="how-to-stop-a-thread"></a>Postup: Zastavení vlákna
 
-Chcete-li ukončit provádění vlákna, použijte <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Nabízí jednotný způsob, jak v družstvě zastavit vlákna. Další informace naleznete v tématu [zrušení ve spravovaných vláknech](cancellation-in-managed-threads.md).
+Chcete-li ukončit provádění podprocesu, použijte <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Poskytuje jednotný způsob, jak zastavit vlákna kooperativně. Další informace naleznete [v tématu Zrušení ve spravovaných vláknech](cancellation-in-managed-threads.md).
 
-V některých případech není možné vlákno zastavovat spolupracuje, protože spouští kód třetí strany, který není navržen pro kooperativní zrušení. V takovém případě může být vhodné ukončit provádění jeho vynuceně. Chcete-li ukončit provádění vlákna nuceně, v .NET Framework můžete použít metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Tato metoda vyvolává <xref:System.Threading.ThreadAbortException> ve vlákně, ve kterém je vyvolána. Další informace naleznete v tématu [zničení vláken](destroying-threads.md). Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není v rozhraní .NET Core podporována. Pokud potřebujete ukončit provádění kódu třetí strany v .NET Core nuceně, spusťte ho v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
+Někdy není možné zastavit vlákno kooperativně, protože spustí kód třetí strany, který není určen pro kooperativní zrušení. V takovém případě můžete chtít ukončit jeho provádění násilně. Chcete-li ukončit provádění podprocesu násilně, v <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> rozhraní .NET Framework můžete použít metodu. Tato metoda <xref:System.Threading.ThreadAbortException> vyvolá na vlákno, na kterém je vyvolána. Další informace naleznete v [tématu Zničení vláken](destroying-threads.md). Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není podporována v .NET Core. Pokud potřebujete ukončit provádění kódu třetí strany násilně v .NET Core, spusťte jej v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
 
-<xref:System.Threading.CancellationToken?displayProperty=nameWithType> není k dispozici před .NET Framework 4. Chcete-li zastavit vlákno ve starších verzích .NET Framework, měli byste implementovat kooperativní zrušení ručně pomocí technik synchronizace vláken. Můžete například vytvořit pole volatile Boolean `shouldStop` a použít ho k žádosti o spuštění kódu spuštěného vláknem k zastavení. Další informace naleznete v části [volatile](../../csharp/language-reference/keywords/volatile.md) v C# tématu Reference and <xref:System.Threading.Volatile?displayProperty=nameWithType>.
+Není <xref:System.Threading.CancellationToken?displayProperty=nameWithType> k dispozici před rozhraním .NET Framework 4. Chcete-li zastavit vlákno ve starších verzích rozhraní .NET Framework, měli byste implementovat kooperativní zrušení ručně pomocí technik synchronizace vláken. Můžete například vytvořit nestálé logické `shouldStop` pole a použít ho k vyžádání kódu provedeného vláknem k zastavení. Další informace naleznete [v tématu](../../csharp/language-reference/keywords/volatile.md) <xref:System.Threading.Volatile?displayProperty=nameWithType>volatile v c# reference a .
 
-Použijte metodu <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> k zajištění, aby volající vlákno čekalo na ukončení zastaveného vlákna.
+Pomocí <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> metody můžete volající vlákno čekat na ukončení podprocesu, který je zastaven.
 
-## <a name="how-to-pause-or-interrupt-a-thread"></a>Postupy: pozastavení nebo přerušení vlákna
+## <a name="how-to-pause-or-interrupt-a-thread"></a>Postup: Pozastavení nebo přerušení vlákna
 
-Použijte metodu <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> k pozastavení aktuálního vlákna po zadanou dobu. Blokované vlákno lze přerušit voláním metody <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>. Další informace najdete v tématu [pozastavení a přerušení vláken](pausing-and-resuming-threads.md).
+Metoda slouží <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> k pozastavení aktuálního vlákna po určitou dobu. Blokované vlákno můžete přerušit <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> voláním metody. Další informace naleznete [v tématu Pozastavení a přerušení podprocesů](pausing-and-resuming-threads.md).
 
 ## <a name="thread-properties"></a>Vlastnosti vlákna
 
-Následující tabulka uvádí některé vlastnosti <xref:System.Threading.Thread>:  
+V následující tabulce jsou <xref:System.Threading.Thread> uvedeny některé vlastnosti:  
   
 |Vlastnost|Popis|  
 |--------------|-----------|  
-|<xref:System.Threading.Thread.IsAlive%2A>|Vrátí `true`, pokud bylo vlákno spuštěno a dosud nebylo ukončeno normálně nebo přerušeno.|  
-|<xref:System.Threading.Thread.IsBackground%2A>|Získá nebo nastaví logickou hodnotu, která označuje, zda se jedná o vlákno na pozadí. Vlákna na pozadí jsou jako vlákna na popředí, ale vlákno na pozadí nezabrání procesu v jeho zastavení. Po zastavení všech vláken na popředí, která patří do procesu, ukončí modul CLR (Common Language Runtime) proces voláním metody <xref:System.Threading.Thread.Abort%2A> na vláknech na pozadí, které jsou stále aktivní. Další informace naleznete v tématu [vlákna v popředí a na pozadí](foreground-and-background-threads.md).|  
-|<xref:System.Threading.Thread.Name%2A>|Získá nebo nastaví název vlákna. Nejčastěji se používá ke zjišťování jednotlivých vláken při ladění.|  
-|<xref:System.Threading.Thread.Priority%2A>|Získá nebo nastaví hodnotu <xref:System.Threading.ThreadPriority>, která je používána operačním systémem k určení priorit plánování vláken. Další informace naleznete v tématu [plánování vláken](scheduling-threads.md) a <xref:System.Threading.ThreadPriority> reference.|  
+|<xref:System.Threading.Thread.IsAlive%2A>|Vrátí, `true` pokud vlákno bylo spuštěno a ještě nebylo ukončeno normálně nebo přerušeno.|  
+|<xref:System.Threading.Thread.IsBackground%2A>|Získá nebo nastaví logickou hodnotu, která označuje, pokud vlákno je vlákno na pozadí. Vlákna na pozadí jsou jako vlákna na popředí, ale vlákno na pozadí nebrání zastavení procesu. Jakmile jsou zastavena všechna vlákna v popředí, která patří do procesu, <xref:System.Threading.Thread.Abort%2A> běžný jazyk runtime ukončí proces voláním metody na vláknech na pozadí, které jsou stále naživu. Další informace naleznete [v tématu Popředí a vlákna na pozadí](foreground-and-background-threads.md).|  
+|<xref:System.Threading.Thread.Name%2A>|Získá nebo nastaví název vlákna. Nejčastěji se používá ke zjištění jednotlivých podprocesů při ladění.|  
+|<xref:System.Threading.Thread.Priority%2A>|Získá nebo <xref:System.Threading.ThreadPriority> nastaví hodnotu, která se používá v operačním systému k upřednostnění plánování podprocesů. Další informace naleznete v [tématu Plánování vláken](scheduling-threads.md) a <xref:System.Threading.ThreadPriority> odkaz.|  
 |<xref:System.Threading.Thread.ThreadState%2A>|Získá <xref:System.Threading.ThreadState> hodnotu obsahující aktuální stavy vlákna.|  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.Thread?displayProperty=nameWithType>
 - [Vlákna a dělení na vlákna](threads-and-threading.md)

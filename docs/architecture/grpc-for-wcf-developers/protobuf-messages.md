@@ -1,23 +1,23 @@
 ---
-title: Zprávy Protobuf – gRPC pro vývojáře WCF
-description: Přečtěte si, jak jsou Protobuf zprávy definovány v IDL a C#vygenerované v.
+title: Protobuf zprávy - gRPC pro vývojáře WCF
+description: Zjistěte, jak jsou zprávy Protobuf definovány v IDL a generovány v c#.
 ms.date: 09/09/2019
-ms.openlocfilehash: c7375bafb7572b0eaa0458b0310a0114e3fd078c
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 5b3d4383de39a3785ef804fec21939a740f54669
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543037"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79147981"
 ---
 # <a name="protobuf-messages"></a>Zprávy ve formátu protobuf
 
-Tato část popisuje, jak deklarovat zprávy vyrovnávací paměti protokolu (Protobuf) v souborech `.proto`. Vysvětluje základní koncepty čísel a typů polí a hledá C# kód, který generuje kompilátor `protoc`. 
+Tato část popisuje, jak deklarovat zprávy `.proto` vyrovnávací paměti protokolu (Protobuf) v souborech. Vysvětluje základní koncepty čísla polí a typy a vypadá na kód `protoc` Jazyka C#, který generuje kompilátor.
 
-Zbytek kapitoly se podrobněji podívá na to, jak se v Protobuf reprezentují různé typy dat.
+Zbytek kapitoly se podrobněji zaměří na to, jak jsou v Protobufu zastoupeny různé typy dat.
 
-## <a name="declaring-a-message"></a>Deklarace zprávy
+## <a name="declaring-a-message"></a>Deklarování zprávy
 
-V Windows Communication Foundation (WCF) může být `Stock`á třída pro obchodní obchodní aplikace, jak je uvedeno v následujícím příkladu:
+V systému Windows Communication `Stock` Foundation (WCF) může být třída pro obchodní aplikaci na akciovém trhu definována jako následující příklad:
 
 ```csharp
 namespace TraderSys
@@ -37,7 +37,7 @@ namespace TraderSys
 }
 ```
 
-Chcete-li implementovat ekvivalentní třídu v Protobuf, je nutné ji deklarovat v souboru `.proto`. Kompilátor `protoc` pak vygeneruje třídu .NET jako součást procesu sestavení.
+Chcete-li implementovat ekvivalentní třídu v Protobuf, musíte deklarovat v souboru. `.proto` Kompilátor `protoc` pak vygeneruje třídu .NET jako součást procesu sestavení.
 
 ```protobuf
 syntax "proto3";
@@ -54,28 +54,28 @@ message Stock {
 }  
 ```
 
-První řádek deklaruje použitou verzi syntaxe. Verze 3 jazyka byla vydaná v 2016. Je to verze, kterou doporučujeme pro služby gRPC Services.
+První řádek deklaruje použitou syntaktickou verzi. Verze 3 jazyka byla vydána v roce 2016. Je to verze, kterou doporučujeme pro služby gRPC.
 
-`option csharp_namespace` řádek určuje obor názvů, který se má použít pro generované C# typy. Tato možnost bude ignorována, pokud je soubor `.proto` kompilován pro jiné jazyky. Soubory Protobuf často obsahují možnosti specifické pro konkrétní jazyk v několika jazycích.
+Řádek `option csharp_namespace` určuje obor názvů, který má být použit pro generované typy jazyka C#. Tato možnost bude ignorována `.proto` při kompilaci souboru pro jiné jazyky. Soubory Protobuf často obsahují možnosti specifické pro jazyk pro několik jazyků.
 
-Definice `Stock` zprávy určuje čtyři pole. Každá z nich má typ, název a číslo pole.
+Definice `Stock` zprávy určuje čtyři pole. Každý z nich má typ, název a číslo pole.
 
 ## <a name="field-numbers"></a>Čísla polí
 
-Čísla polí jsou důležitou součástí Protobufu. Používají se k identifikaci polí v binárních kódovaných datech, což znamená, že se nemůžou změnit z verze na verzi vaší služby. Výhodou je, že je možné zpětná kompatibilita a dopředná kompatibilita. Klienti a služby budou jednoduše ignorovat čísla polí, o kterých neznají, pokud je zpracována možnost chybějící hodnoty.
+Čísla polí jsou důležitou součástí Protobufu. Používají se k identifikaci polí v binárních kódovaných datech, což znamená, že nemohou změnit z verze na verzi služby. Výhodou je, že zpětná kompatibilita a dopředná kompatibilita jsou možné. Klienti a služby budou jednoduše ignorovat čísla polí, o kterých nevědí, pokud je zpracována možnost chybějících hodnot.
 
-V binárním formátu je číslo pole kombinováno s identifikátorem typu. Čísla polí od 1 do 15 lze kódovat s jejich typem jako jeden bajt. Čísla od 16 do 2 047 pobírají 2 bajty. Pokud z jakéhokoli důvodu potřebujete více než 2 047 polí, můžete přejít na vyšší. Identifikátory jednoho bajtu pro čísla polí 1 až 15 nabízejí lepší výkon, takže je byste měli použít pro většinu základních, často používaných polí.
+V binárním formátu je číslo pole kombinováno s identifikátorem typu. Čísla polí od 1 do 15 mohou být kódována s jejich typem jako jeden bajt. Čísla od 16 do 2 047 trvá 2 bajty. Vyšší můžete, pokud potřebujete více než 2 047 polí ve zprávě z jakéhokoli důvodu. Identifikátory jednoho bajtu pro čísla polí 1 až 15 nabízejí lepší výkon, takže byste je měli použít pro nejzákladnější, často používaná pole.
 
 ## <a name="types"></a>Typy
 
-Deklarace typu používají nativní skalární datové typy Protobuf, které jsou podrobněji popsány v [následující části](protobuf-data-types.md). Zbytek této kapitoly se zabývá vestavěnými typy Protobuf a ukazuje, jak se vztahují na běžné typy .NET.
+Deklarace typu používají nativní skalární datové typy Protobuf, které jsou podrobněji popsány v [další části](protobuf-data-types.md). Zbytek této kapitoly se bude týkat předdefinovaných typů Protobuf a ukáže, jak souvisejí s běžnými typy .NET.
 
 > [!NOTE]
-> Protobuf netivně podporuje `decimal` typ, takže se místo toho použije `double`. Pro aplikace, které vyžadují plnou desítkovou přesnost, se podívejte na [část na desetinných číslech](protobuf-data-types.md#decimals) v další části této kapitoly.
+> Protobuf nepodporuje nativně `decimal` typ, `double` takže se používá místo. Aplikace, které vyžadují úplnou přesnost desetinných míst, naleznete v [části o desetinných číslech](protobuf-data-types.md#decimals) v další části této kapitoly.
 
 ## <a name="the-generated-code"></a>Generovaný kód
 
-Při sestavování aplikace Protobuf vytvoří třídy pro každou vaši zprávu a namapuje jejich nativní typy na C# typy. Vygenerovaný `Stock` typ by měl následující signaturu:
+Při vytváření aplikace Protobuf vytvoří třídy pro každou z vašich zpráv, mapování jeho nativní typy c# typy. Generovaný `Stock` typ by měl následující podpis:
 
 ```csharp
 public class Stock
@@ -87,12 +87,12 @@ public class Stock
 }
 ```
 
-Skutečný kód, který je generován, je mnohem složitější než tento. Důvodem je, že každá třída obsahuje veškerý kód potřebný k serializaci a deserializaci sebe sama do binárního formátu.
+Skutečný kód, který je generován je mnohem složitější než toto. Důvodem je, že každá třída obsahuje veškerý kód potřebný k serializaci a deserializaci do binárního formátu drátu.
 
 ### <a name="property-names"></a>Názvy vlastností
 
-Všimněte si, že kompilátor Protobuf použili `PascalCase` k názvům vlastností, i když byly `snake_case` v souboru `.proto`. [Průvodce stylem Protobuf](https://developers.google.com/protocol-buffers/docs/style) doporučuje použít `snake_case` ve vašich definicích zpráv, aby generování kódu pro jiné platformy vytvořilo očekávaný případ pro jejich konvence.
+Všimněte si, že kompilátor Protobuf aplikovaný `PascalCase` na názvy vlastností, i když byly `snake_case` v souboru. `.proto` Průvodce [stylem Protobuf](https://developers.google.com/protocol-buffers/docs/style) `snake_case` doporučuje použití v definicích zpráv tak, aby generování kódu pro jiné platformy vytvořilo očekávaný případ pro jejich konvence.
 
 >[!div class="step-by-step"]
 >[Předchozí](protocol-buffers.md)
->[Další](protobuf-data-types.md)
+>[další](protobuf-data-types.md)

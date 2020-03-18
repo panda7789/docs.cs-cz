@@ -17,22 +17,22 @@ helpviewer_keywords:
 - stores, reading and writing to files
 ms.assetid: f977ebdc-1b55-475a-bc3d-3376470b08ae
 ms.openlocfilehash: a1ea65b0b8280faf51595b2fe9edcbf17eaabd8f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75706683"
 ---
 # <a name="how-to-read-and-write-to-files-in-isolated-storage"></a>Postupy: Čtení a zápis do souborů v izolovaném úložišti
-Chcete-li číst ze souboru v izolovaném úložišti nebo do něj zapisovat, použijte objekt <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> s modulem pro čtení datového proudu (<xref:System.IO.StreamReader> objekt) nebo zapisovačem datového proudu (objekt<xref:System.IO.StreamWriter>).  
+Chcete-li číst ze souboru v izolovaném úložišti nebo do něj zapisovat, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> objekt se čtečkou datových proudů (<xref:System.IO.StreamReader> objektem) nebo zapisovačem datového proudu (<xref:System.IO.StreamWriter> objektem).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu získá izolované úložiště a ověří, zda soubor s názvem TestStore. txt existuje v úložišti. Pokud neexistuje, vytvoří soubor a zapíše do souboru "izolované úložiště Hello". Pokud TestStore. txt již existuje, ukázkový kód přečte ze souboru.  
+ Následující příklad kódu získá izolované úložiště a zkontroluje, zda soubor s názvem TestStore.txt existuje v úložišti. Pokud neexistuje, vytvoří soubor a zapíše "Hello Isolated Storage" do souboru. Pokud teststore.txt již existuje, ukázkový kód čte ze souboru.  
   
  [!code-csharp[Conceptual.IsolatedStorage#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source5.cs#5)]
  [!code-vb[Conceptual.IsolatedStorage#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source5.vb#5)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>
@@ -40,5 +40,5 @@ Chcete-li číst ze souboru v izolovaném úložišti nebo do něj zapisovat, po
 - <xref:System.IO.FileAccess?displayProperty=nameWithType>
 - <xref:System.IO.StreamReader?displayProperty=nameWithType>
 - <xref:System.IO.StreamWriter?displayProperty=nameWithType>
-- [Vstup/výstup souborů a datových proudů](../../../docs/standard/io/index.md)
+- [I/O souborů a proudů](../../../docs/standard/io/index.md)
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

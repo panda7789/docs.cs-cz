@@ -1,37 +1,37 @@
 ---
 title: Formát souborů sestavení .NET
-description: Přečtěte si o formátu souboru sestavení .NET, který se používá k popisu a zahrnutí aplikací a knihoven .NET.
+description: Informace o formátu souboru sestavení .NET, který se používá k popisu a obsahují aplikace a knihovny .NET.
 author: richlander
 ms.date: 08/20/2019
 ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 ms.openlocfilehash: 4cf6522d66d7a1efccde45078768a773db6e6cb0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75711581"
 ---
 # <a name="net-assembly-file-format"></a>Formát souborů sestavení .NET
 
-Rozhraní .NET definuje formát binárního souboru *, který se používá*k úplnému popisu a zahrnutí programů rozhraní .NET. Sestavení se používají pro samotné programy i pro všechny závislé knihovny. Program .NET může být spuštěn jako jedno nebo více sestavení, bez jiných požadovaných artefaktů, kromě příslušné implementace rozhraní .NET. Nativní závislosti, včetně rozhraní API operačního systému, jsou samostatné a nejsou součástí formátu sestavení .NET, i když jsou někdy popsány v tomto formátu (například WinRT).
+Rozhraní .NET definuje binární formát souboru, *sestavení*, který slouží k úplnému popisu a obsahují programy .NET. Sestavení se používají pro samotné programy, stejně jako všechny závislé knihovny. Program .NET lze spustit jako jedno nebo více sestavení bez dalších požadovaných artefaktů nad rámec příslušné implementace rozhraní .NET. Nativní závislosti, včetně rozhraní API operačního systému, jsou samostatným problémem a nejsou obsaženy ve formátu sestavení .NET, i když jsou někdy popsány v tomto formátu (například WinRT).
 
-> Každá komponenta rozhraní příkazového řádku poskytuje metadata pro deklarace, implementace a odkazy, které jsou specifické pro danou komponentu. Proto se metadata specifická pro komponentu označují jako metadata komponenty a výsledná komponenta je označována jako samo-popisující – od ECMA 335 I. 9.1, komponent a sestavení.
+> Každá komponenta CLI nese metadata pro deklarace, implementace a odkazy specifické pro tuto komponentu. Proto metadata specifická pro komponentu se označují jako metadata komponenty a výsledná komponenta je označována jako vlastní popisující – z ECMA 335 I.9.1, Komponenty a sestavy.
 
-Formát je plně určen a standardizován jako [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Tento formát používají všechny kompilátory a moduly runtime rozhraní .NET. Existence dokumentovaného a zřídka aktualizovaného binárního formátu byla významnou výhodou (pravděpodobně a požadavku) pro interoperabilitu. Formát byl naposledy aktualizován způsobem v 2005 (.NET 2,0), aby se vešel na obecné typy a architekturu procesoru.
+Formát je plně specifikován a standardizován jako [ECMA 335](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Tento formát používají všechny kompilátory rozhraní .NET a runtimes. Přítomnost zdokumentovaného a zřídka aktualizovaného binárního formátu byla hlavní výhodou (pravděpodobně požadavkem) pro interoperabilitu. Formát byl naposledy aktualizován podstatným způsobem v roce 2005 (.NET 2.0) tak, aby vyhovoval obecným typům a architektuře procesoru.
 
-Formát je CPU a OS-nezávislá. Byl použit jako součást implementací rozhraní .NET, která cílí na mnoho čipy a procesorů. I když má vlastní formát Windows dědictví, dá se implementovat v jakémkoli operačním systému. Jeho pravděpodobně nejvýznamnější volbou pro interoperabilitu OS je, že většina hodnot je uložená ve formátu Little endian. Nemá konkrétní spřažení pro velikost ukazatele na počítač (například 32-bit, 64 bitů).
+Formát je cpu- a OS-agnostik. Používá se jako součást implementací rozhraní .NET, které cílí na mnoho čipů a procesorů. Zatímco samotný formát má dědictví systému Windows, je implementovatelný v libovolném operačním systému. Jeho pravděpodobně nejvýznamnější volbou pro interoperabilitu operačního operačního spoje je, že většina hodnot je uložena ve formátu little-endian. Nemá specifickou spřažení velikosti ukazatele počítače (například 32bitová, 64bitová).
 
-Formát sestavení .NET je také velmi popisný o struktuře daného programu nebo knihovny. Popisuje interní součásti sestavení, konkrétně odkazy na sestavení a definované typy a jejich vnitřní strukturu. Nástroje nebo rozhraní API mohou číst a zpracovávat tyto informace pro zobrazení nebo pro provádění programových rozhodnutí.
+Formát sestavení rozhraní .NET je také velmi popisný o struktuře daného programu nebo knihovny. Popisuje vnitřní součásti sestavy, konkrétně odkazy na sestavení a definované typy a jejich vnitřní strukturu. Nástroje nebo api mohou číst a zpracovávat tyto informace pro zobrazení nebo pro programová rozhodnutí.
 
 ## <a name="format"></a>Formát
 
-Binární formát .NET je založen na formátu souboru Windows [PE](https://en.wikipedia.org/wiki/Portable_Executable) . Knihovny tříd .NET ve skutečnosti mají vyhovující Windows PEs a zobrazují se na první pohled na použití knihoven DLL (Windows Dynamic Link Library) nebo spustitelných souborů aplikace (exe). To je velmi užitečná vlastnost ve Windows, kde se dá maskovat jako nativní spustitelné binární soubory a získat některé ze stejných úprav (například zatížení operačního systému, nástroje PE).
+Binární formát .NET je založen na formátu souboru prostředí Windows [PE.](https://en.wikipedia.org/wiki/Portable_Executable) Knihovny tříd .NET jsou ve skutečnosti konformní windows pes a na první pohled se zobrazují jako knihovny dynamických odkazů systému Windows (DLL) nebo spustitelné soubory aplikací (EXEs). To je velmi užitečná charakteristika na Windows, kde se mohou maskovat jako nativní spustitelné binární soubory a získat některé stejné zacházení (například zatížení operačního systému, PE nástroje).
 
-![Hlavičky sestavení](../media/assembly-format/assembly-headers.png)
+![Záhlaví sestavení](../media/assembly-format/assembly-headers.png)
 
-Hlavičky sestavení z ECMA 335 II. 25.1, struktura formátu běhového souboru.
+Záhlaví sestavení z ECMA 335 II.25.1, Struktura formátu souboru runtime.
 
 ## <a name="process-the-assemblies"></a>Zpracování sestavení
 
-Je možné zapisovat nástroje nebo rozhraní API pro zpracování sestavení. Informace o sestavení umožňují provádět programová rozhodnutí za běhu, přepisování sestavení a poskytování technologie IntelliSense pro rozhraní API v editoru a generování dokumentace. <xref:System.Reflection?displayProperty=nameWithType>, <xref:System.Reflection.MetadataLoadContext?displayProperty=nameWithType>a [mono. Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) jsou vhodné příklady nástrojů, které se často používají k tomuto účelu.
+Je možné psát nástroje nebo api pro zpracování sestavení. Informace o sestavení umožňují provádět programová rozhodnutí za běhu, přepisovat sestavení, poskytovat rozhraní API IntelliSense v editoru a generovat dokumentaci. <xref:System.Reflection?displayProperty=nameWithType>, <xref:System.Reflection.MetadataLoadContext?displayProperty=nameWithType>, a [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) jsou dobrým příkladem nástrojů, které jsou často používány pro tento účel.
