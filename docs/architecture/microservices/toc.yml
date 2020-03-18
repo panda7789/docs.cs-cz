@@ -136,9 +136,7 @@
           href: implement-resilient-applications/implement-retries-exponential-backoff.md
         - name: Implementace odolných připojení SQL Entity Framework Core
           href: implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md
-        - name: Průzkum vlastních opakovaných volání HTTP s exponenciálním zpomalováním
-          href: implement-resilient-applications/explore-custom-http-call-retries-exponential-backoff.md
-        - name: Použití HttpClientFactory k implementaci odolných požadavků HTTP
+        - name: Použití IHttpClientFactory k implementaci odolných požadavků HTTP
           href: implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests.md
         - name: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
           href: implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md
