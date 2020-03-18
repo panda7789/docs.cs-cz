@@ -1,5 +1,5 @@
 ---
-title: Typy hodnot – C# referenční informace
+title: Typy hodnot – odkaz jazyka C#
 ms.date: 01/22/2020
 f1_keywords:
 - cs.valuetypes
@@ -8,59 +8,59 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: a2b9dce3b0ca5e66cfc0fbdbbf8f341abca0b636
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 406e5b8bbe0802146a65bb4b9a053e753a7827ee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239726"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399579"
 ---
-# <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
+# <a name="value-types-c-reference"></a>Typy hodnot (odkaz C# )
 
-*Typy hodnot* a [odkazové typy](../keywords/reference-types.md) jsou dvě hlavní kategorie C# typů. Proměnná typu hodnoty obsahuje instanci typu. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu. Ve výchozím nastavení, při [přiřazení](../operators/assignment-operator.md), předávání argumentu metodě a vrácení výsledku metody, jsou zkopírovány hodnoty proměnných. V případě proměnných typu hodnoty jsou zkopírovány odpovídající instance typu. Následující příklad ukazuje toto chování:
+*Typy hodnot* a [typy odkazů](../keywords/reference-types.md) jsou dvě hlavní kategorie c# typy. Proměnná typu hodnoty obsahuje instanci typu. To se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu. Ve výchozím nastavení se při [přiřazení](../operators/assignment-operator.md), předání argumentu metodě a vrácení výsledku metody zkopírují hodnoty proměnných. V případě proměnných typu hodnoty se zkopírují odpovídající instance typu. Následující příklad ukazuje, že chování:
 
-[!code-csharp[copy of values](~/samples/snippets/csharp/language-reference/builtin-types/ValueTypes.cs#ValueTypeCopied)]
+[!code-csharp[copy of values](snippets/ValueTypes.cs#ValueTypeCopied)]
 
-Jak ukazuje předchozí příklad, operace s proměnnou typu hodnoty ovlivňují pouze tuto instanci typu hodnoty, která je uložena v proměnné.
+Jak ukazuje předchozí příklad, operace s proměnnou typu hodnoty ovlivňují pouze tuto instanci typu hodnoty uloženou v proměnné.
 
-Pokud typ hodnoty obsahuje datový člen typu odkazu, je při zkopírování instance typu hodnota zkopírován pouze odkaz na instanci typu odkazu. Kopie i původní instance typu hodnoty mají přístup ke stejné instanci typu odkazu. Následující příklad ukazuje toto chování:
+Pokud typ hodnoty obsahuje datový člen typu odkazu, zkopíruje se při kopírování instance typu hodnoty pouze odkaz na instanci typu odkazu. Instance kopie i původní instance typu value mají přístup ke stejné instanci typu odkazu. Následující příklad ukazuje, že chování:
 
-[!code-csharp[shallow copy](~/samples/snippets/csharp/language-reference/builtin-types/ValueTypes.cs#ShallowCopy)]
+[!code-csharp[shallow copy](snippets/ValueTypes.cs#ShallowCopy)]
 
 > [!NOTE]
-> Aby byl kód méně odolnější a robustnější, definujte a používejte neměnné typy hodnot. Tento článek používá proměnlivé typy hodnot pouze pro demonstrační účely.
+> Chcete-li, aby váš kód byl méně náchylný k chybám a robustnější, definujte a používejte neměnné typy hodnot. Tento článek používá proměnlivé typy hodnot pouze pro demonstrační účely.
 
-## <a name="kinds-of-value-types"></a>Druhy hodnotových typů
+## <a name="kinds-of-value-types"></a>Druhy typů hodnot
 
-Typ hodnoty může být jeden z těchto dvou typů:
+Typ hodnoty může být jeden ze dvou následujících typů:
 
 - [typ struktury](struct.md), který zapouzdřuje data a související funkce
 - [typ výčtu](enum.md), který je definován sadou pojmenovaných konstant a představuje volbu nebo kombinaci voleb
 
-[Typ hodnoty s možnou hodnotou null](nullable-value-types.md) `T?` představuje všechny hodnoty svého základního typu hodnoty `T` a další hodnotu [null](../keywords/null.md) . Nelze přiřadit `null` k proměnné typu hodnoty, pokud se nejedná o typ hodnoty s možnou hodnotou null.
+`T?` [Typ hodnoty s možnou hodnotou null](nullable-value-types.md) představuje všechny hodnoty jeho základního typu `T` hodnoty a další [hodnotu null.](../keywords/null.md) Proměnné typu `null` hodnoty nelze přiřadit, pokud se nejedná o hodnotu s hodnotou s možnou hodnotou s hodnotou s možnou hodnotou.
 
 ## <a name="built-in-value-types"></a>Předdefinované typy hodnot
 
-C#poskytuje následující předdefinované typy hodnot, označované také jako *jednoduché typy*:
+C# poskytuje následující předdefinované typy hodnot, označované také jako *jednoduché typy*:
 
-- [Celočíselné číselné typy](integral-numeric-types.md)
-- [Číselné typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
-- [bool](bool.md) , která představuje logickou hodnotu
-- [char](char.md) , který představuje znak Unicode UTF-16
+- [Celočíselné typy](integral-numeric-types.md)
+- [Číselné typy s plovoucí desetinnou čárkou](floating-point-numeric-types.md)
+- [bool,](bool.md) který představuje logickou hodnotu
+- [znak,](char.md) který představuje znak Unicode UTF-16
 
-Všechny jednoduché typy jsou struktury typy a liší se od jiných typů struktury v tom, že umožňují určité další operace:
+Všechny jednoduché typy jsou typy struktur a liší se od jiných typů struktury v tom, že umožňují určité další operace:
 
-- Můžete použít literály k poskytnutí hodnoty jednoduchého typu. Například `'A'` je literál typu `char` a `2001` je literál typu `int`.
+- Literály můžete použít k zadání hodnoty jednoduchého typu. Například `'A'` je literál typu `char` `2001` a je literál `int`typu .
 
-- Můžete deklarovat konstanty jednoduchých typů pomocí klíčového slova [const](../keywords/const.md) . Není možné mít konstanty jiných typů struktury.
+- Můžete deklarovat konstanty jednoduchých typů s [const](../keywords/const.md) klíčové slovo. Není možné mít konstanty jiných typů struktur.
 
 - Konstantní výrazy, jejichž operandy jsou všechny konstanty jednoduchých typů, jsou vyhodnocovány v době kompilace.
 
-Počínaje C# 7,0 C# podporuje [Tuple hodnot](../../tuples.md). Hodnota řazené kolekce členů je hodnotový typ, ale ne jednoduchý typ.
+Počínaje C# 7.0, C# podporuje [kolekce členů hodnot](../../tuples.md). Řazená kolekce členů s hodnotou je typ hodnoty, ale ne jednoduchý typ.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+Další informace naleznete v následujících částech [specifikace jazyka C#](~/_csharplang/spec/introduction.md):
 
 - [Typy hodnot](~/_csharplang/spec/types.md#value-types)
 - [Jednoduché typy](~/_csharplang/spec/types.md#simple-types)
@@ -68,6 +68,6 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - <xref:System.ValueType?displayProperty=nameWithType>
-- [Typy odkazů](../keywords/reference-types.md)
+- [Referenční typy](../keywords/reference-types.md)

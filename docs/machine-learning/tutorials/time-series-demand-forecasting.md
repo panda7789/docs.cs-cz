@@ -1,21 +1,21 @@
 ---
-title: 'Kurz: odhad poptávky po absolvování kol – časové řady'
-description: V tomto kurzu se dozvíte, jak předpovědět poptávku za službu pronájmu kol pomocí analýzy univariate časových řad a ML.NET.
+title: 'Kurz: Předpověď půjčovny kol poptávka - časové řady'
+description: Tento kurz ukazuje, jak předpovědět poptávku po půjčovně kol pomocí jednorozměrné analýzy časových řad a ML.NET.
 ms.date: 11/07/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
 ms.openlocfilehash: 026421d7b1b2a0e39118ae712780ca7fc8f6e444
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76921258"
 ---
-# <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: odhadování poptávky po nájemce kol s využitím analýzy časových řad a ML.NET
+# <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: Prognóza poptávky po půjčovně kol s analýzou časových řad a ML.NET
 
-Naučte se, jak odhadnout poptávku za službu pronájmu kol pomocí analýzy univariate časových řad s daty uloženými v databázi SQL Server s ML.NET.
+Zjistěte, jak předpovídat poptávku po půjčovně kol pomocí analýzy jednorozměrné časové řady na datech uložených v databázi serveru SQL Server s ML.NET.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
@@ -29,46 +29,46 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 verze 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+- [Visual Studio 2017 verze 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou "Vývoj napříč platformami..NET Core.Core.Platform development".
 
-## <a name="time-series-forecasting-sample-overview"></a>Ukázka prognózy časových řad – přehled
+## <a name="time-series-forecasting-sample-overview"></a>Přehled ukázkových prognóz časových řad
 
-Tato ukázka je  **C# Konzolová aplikace .NET Core** , která vypovídá poptávku za nájemné za kolo pomocí algoritmu analýzy univariate Time Series, který se označuje jako analýza s jedním spektrem. Kód pro tuto ukázku najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) na GitHubu.
+Tato ukázka je **aplikace konzoly C# .NET Core,** která předpovídá poptávku po zapůjčení jízdních kol pomocí algoritmu analýzy jednorozměrné časové řady známého jako Analýza jednoho spektra. Kód pro tuto ukázku najdete v úložišti [dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) na GitHubu.
 
 ## <a name="understand-the-problem"></a>Pochopení problému
 
-Aby bylo možné spustit efektivní operaci, Správa inventáře hraje klíčovou roli. Pokud máte příliš mnoho produktů na skladě, znamená to, že neprodávané produkty jsou v police negenerují žádné výnosy. S příliš malým množstvím produktů vede ke ztrátě prodeje a zákazníkům, kteří si kupují z konkurence. Proto se jedná o konstantní otázku, co je optimální množství inventáře, abyste mohli zůstat na ruce? Analýza časových řad pomáhá poskytnout odpověď na tyto otázky zobrazením historických dat, identifikace vzorů a využitím těchto informací k předpovědi hodnot v budoucnu.
+Pro efektivní provoz hraje řízení zásob klíčovou roli. Mít příliš mnoho výrobku na skladě znamená neprodané výrobky sedí na regálech nevytváří žádné příjmy. Mít příliš málo produktů vede ke ztrátě prodeje a zákazníkům nakupujícím od konkurentů. Proto je neustálou otázkou, jaké je optimální množství zásob, které mají být po ruce? Analýza časových řad pomáhá poskytnout odpověď na tyto otázky tím, že se podíváte na historická data, identifikujete vzory a pomocí těchto informací předpovídáte hodnoty někdy v budoucnu.
 
-Technika analýzy dat používaných v tomto kurzu je univariate analýza časových řad. Analýza Univariate Time-Series se při určitých intervalech, jako je měsíční prodej, podívá na jedno číselné pozorování v určitém časovém intervalu.
+Technika pro analýzu dat použitých v tomto kurzu je jednorozměrné analýzy časových řad. Analýza jednorozměrných časových řad se podívá na jedno číselné pozorování v určitém časovém období v určitých intervalech, jako je měsíční prodej.
 
-Algoritmus použitý v tomto kurzu je [Analýza s jedním spektrem (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). SSA funguje tak, že rozdělí časovou řadu do sady základních komponent. Tyto komponenty lze interpretovat jako části signálu, který odpovídá trendům, hluku, sezónnost a mnoha dalším faktorům. Poté jsou tyto komponenty znovu sestaveny a použity k předpovědi hodnot v budoucnu.
+Algoritmus použitý v tomto kurzu je [single spectrum analysis(SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). SSA funguje tak, že rozkládá časové řady do sady hlavních součástí. Tyto komponenty lze interpretovat jako části signálu, které odpovídají trendům, šumu, sezónnosti a mnoha dalším faktorům. Potom tyto součásti jsou rekonstruovány a slouží k prognóze hodnoty nějaký čas v budoucnu.
 
 ## <a name="create-console-application"></a>Vytvoření konzolové aplikace
 
-1. Vytvořte novou  **C# konzolovou aplikaci .NET Core** nazvanou "BikeDemandForecasting".
-1. Balíček NuGet pro instalaci **Microsoft.ml** verze **1.4.0**
-    1. V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
-    1. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu **Procházet** a vyhledejte **Microsoft.ml**.
-    1. Zaškrtněte políčko **zahrnout předběžné verze** .
-    1. Vyberte tlačítko **instalovat** .
-    1. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro přijetí licence vyberte tlačítko **přijmout** .
-    1. Opakujte tyto kroky pro **System. data. SqlClient** verze **4.7.0** a **Microsoft. ml. časové řady** verze **1.4.0**.
+1. Vytvořte novou **aplikaci konzoly C# .NET Core** s názvem "BikeDemandForecasting".
+1. Instalace **Microsoft.ML** verze **1.4.0** NuGet balíček
+    1. V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyberte **spravovat balíčky NuGet**.
+    1. Jako zdroj balíčku zvolte "nuget.org", vyberte kartu **Procházet** a vyhledejte **Microsoft.ML**.
+    1. Zaškrtněte políčko **Zahrnout předběžnou verzi.**
+    1. Vyberte tlačítko **Instalovat.**
+    1. V dialogovém okně **Náhled změn** vyberte tlačítko **Ok** a pak v dialogovém okně Přijetí licence vyberte tlačítko **Přijmout,** pokud souhlasíte s licenčními podmínkami pro uvedené balíčky.
+    1. Opakujte tyto kroky pro **System.Data.SqlClient** verze **4.7.0** a **Microsoft.ML.TimeSeries** verze **1.4.0**.
 
 ### <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
-1. Vytvořte adresář s názvem *data*.
-1. Stáhněte [soubor databáze *DailyDemand. mdf* ](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf) a uložte ho do *datového* adresáře.
+1. Vytvořte adresář s názvem *Data*.
+1. Stáhněte [databázový soubor *DailyDemand.mdf* ](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf) a uložte jej do *datového* adresáře.
 
 > [!NOTE]
-> Data použitá v tomto kurzu pocházejí z [datové sady pro sdílení kol UCI](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, hadi a gama, Joao, "označování událostí kombinující detektory kompletu a znalosti na pozadí", pokrok v umělých Intelligencech (2013): PP. 1-15, Springer Berlín Heidelberg, [webový odkaz](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
+> Data použitá v tomto kurzu pochází z [datové sady Sdílení kol UCI](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, Hadi a Gama, Joao, "Event labeling kombinující detektory souborů a znalosti pozadí", Pokrok v umělé inteligenci (2013): s. 1-15, Springer Berlin Heidelberg, [Web Link](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
 
-Původní datová sada obsahuje několik sloupců, které odpovídají sezónnost a počasí. Pro zkrácení, protože algoritmus používaný v tomto kurzu vyžaduje jenom hodnoty z jednoho číselného sloupce, původní datová sada byla zúžená, aby zahrnovala jenom tyto sloupce:
+Původní datová sada obsahuje několik sloupců odpovídajících sezónnosti a počasí. Pro stručnost a protože algoritmus použitý v tomto kurzu vyžaduje pouze hodnoty z jednoho číselného sloupce, původní datová sada byla zhuštěna tak, aby zahrnovala pouze následující sloupce:
 
-- **dteday**: datum pozorování.
-- **year**: kódovaný rok sledování (0 = 2011, 1 = 2012).
-- **CNT**: celkový počet pronajatých kol za tento den.
+- **dteday**: Datum pozorování.
+- **rok**: Zakódovaný rok pozorování (0=2011, 1=2012).
+- **cnt**: Celkový počet půjčoven kol pro tento den.
 
-Původní datová sada je namapována na databázovou tabulku s následujícím schématem ve SQL Server databázi.
+Původní datová sada je mapována na databázovou tabulku s následujícím schématem v databázi serveru SQL Server.
 
 ```SQL
 CREATE TABLE [Rentals] (
@@ -80,53 +80,53 @@ CREATE TABLE [Rentals] (
 
 Následuje ukázka dat:
 
-| RentalDate | Rok | TotalRentals |
+| Datum pronájmu | Year | TotalRentals |
 | --- | --- | --- |
 |1/1/2011|0|985|
 |1/2/2011|0|801|
 |1/3/2011|0|1349|
 
-### <a name="create-input-and-output-classes"></a>Vytvoření vstupní a výstupní třídy
+### <a name="create-input-and-output-classes"></a>Vytvoření vstupních a výstupních tříd
 
-1. Otevřete soubor *program.cs* a nahraďte existující příkazy `using` následujícím způsobem:
+1. Otevřete *Program.cs* soubor `using` a nahraďte existující příkazy následujícími příkazy:
 
     [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L1-L8)]
 
-1. Vytvořte třídu `ModelInput`. Pod `Program` třídy přidejte následující kód.
+1. Vytvořte třídu `ModelInput`. Pod `Program` třídu přidejte následující kód.
 
     [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L120-L127)]
 
     Třída `ModelInput` obsahuje následující sloupce:
 
-    - **RentalDate**: datum pozorování.
-    - **Year**: kódovaný rok sledování (0 = 2011, 1 = 2012).
-    - **TotalRentals**: celkový počet pronajatých kol za tento den.
+    - **RentalDate**: Datum pozorování.
+    - **Rok**: Zakódovaný rok pozorování (0=2011, 1=2012).
+    - **TotalRentals**: Celkový počet půjčoven kol pro tento den.
 
-1. Vytvořte třídu `ModelOutput` pod nově vytvořenou `ModelInput` třídou.
+1. Vytvořte `ModelOutput` třídu `ModelInput` pod nově vytvořenou třídou.
 
     [!code-csharp [ModelOutputClass](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L129-L136)]
 
     Třída `ModelOutput` obsahuje následující sloupce:
 
-    - **ForecastedRentals**: předpokládané hodnoty pro období prognózy.
-    - **LowerBoundRentals**: předpokládané minimální hodnoty pro období prognózy.
-    - **UpperBoundRentals**: předpokládané maximální hodnoty pro období prognózy.
+    - **ForecastedRentals**: Předpokládané hodnoty pro předpokládané období.
+    - **LowerBoundRentals**: Předpokládané minimální hodnoty pro předpokládané období.
+    - **UpperBoundRentals**: Předpokládané maximální hodnoty pro předpokládané období.
 
-### <a name="define-paths-and-initialize-variables"></a>Definování cest a inicializovat proměnné
+### <a name="define-paths-and-initialize-variables"></a>Definování cest a inicializaci proměnných
 
-1. V rámci metody `Main` Definujte proměnné pro ukládání umístění vašich dat, připojovací řetězec a místo, kam se má vyškolený model Uložit.
+1. Uvnitř `Main` metody definujte proměnné pro uložení umístění dat, připojovacířetězec a kde uložit trénovaný model.
 
     [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L16-L19)]
 
-1. Inicializujte `mlContext` proměnnou novou instancí [`MLContext`](xref:Microsoft.ML.MLContext) přidáním následujícího řádku do metody `Main`.
+1. Inicializovat `mlContext` proměnnou s [`MLContext`](xref:Microsoft.ML.MLContext) novou instanci přidáním následující řádek k metodě. `Main`
 
     [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L21)]
 
-    Třída [`MLContext`](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializace mlContext vytvoří nové prostředí ml.NET, které se dá sdílet napříč objekty pracovního postupu pro vytváření modelů. Je podobný a koncepčně `DBContext` v Entity Framework.
+    Třída [`MLContext`](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ML.NET a inicializace mlContext vytvoří nové ML.NET prostředí, které lze sdílet mezi objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně, v `DBContext` entity frameworku.
 
 ## <a name="load-the-data"></a>Načtení dat
 
-1. Vytvoří `DatabaseLoader`, který načte záznamy typu `ModelInput`.
+1. Vytvořte, `DatabaseLoader` že `ModelInput`načte záznamy typu .
 
     [!code-csharp [CreateDBLoader](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L23)]
 
@@ -134,41 +134,41 @@ Následuje ukázka dat:
 
     [!code-csharp [DefineSQLQuery](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L25)]
 
-    ML.NET algoritmy očekávají, že data jsou typu [`Single`](xref:System.Single). Z toho vyplývá, že číselné hodnoty pocházející z databáze, které nejsou typu [`Real`](xref:System.Data.SqlDbType), mají hodnotu s plovoucí desetinnou čárkou s jednoduchou přesností, která musí být převedena na [`Real`](xref:System.Data.SqlDbType).
+    ML.NET algoritmy očekávají, že [`Single`](xref:System.Single)data budou typu . Proto číselné hodnoty pocházející z databáze, [`Real`](xref:System.Data.SqlDbType)které nejsou typu , s jednou přesností s [`Real`](xref:System.Data.SqlDbType)plovoucí desetinnou hodnotou, musí být převedeny na .
 
-    Sloupce `Year` a `TotalRental` jsou v databázi typu Integer. Pomocí `CAST` vestavěné funkce jsou obě přetypování do `Real`.
+    Sloupce `Year` `TotalRental` a jsou oba celé typy v databázi. Pomocí `CAST` vestavěné funkce jsou oba `Real`přetypovány do .
 
-1. Vytvořte `DatabaseSource` pro připojení k databázi a spuštění dotazu.
+1. Vytvořte `DatabaseSource` a pro připojení k databázi a spusťte dotaz.
 
     [!code-csharp [CreateDBSource](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L27-L29)]
 
-1. Načtěte data do `IDataView`.
+1. Načtěte data `IDataView`do .
 
     [!code-csharp [LoadData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L31)]
 
-1. Datová sada obsahuje dva roky s daty. Pro školení se použijí jenom data z prvního roku, druhý rok se porovná s porovnáním skutečných hodnot s prognózou vytvořenou modelem. Filtrujte data pomocí [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) transformace.
+1. Datová sada obsahuje data za dva roky. Pro školení se používají pouze údaje z prvního roku, druhý rok se koná pro porovnání skutečných hodnot s prognózou vytvořenou modelem. Filtrujte data [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) pomocí transformace.
 
     [!code-csharp [SplitData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L33-L34)]
 
-    Pro první rok jsou vybrány pouze hodnoty ve sloupci `Year` méně než 1 nastavením parametru `upperBound` na hodnotu 1. Naopak pro druhý rok jsou hodnoty větší než nebo rovny 1 vybrány nastavením parametru `lowerBound` na hodnotu 1.
+    Pro první rok jsou pouze `Year` hodnoty ve sloupci menší `upperBound` než 1 vybrány nastavením parametru na 1. Naopak pro druhý rok jsou hodnoty větší než nebo rovny `lowerBound` 1 vybrány nastavením parametru na 1.
 
-## <a name="define-time-series-analysis-pipeline"></a>Definování kanálu analýzy časové řady
+## <a name="define-time-series-analysis-pipeline"></a>Definování kanálu analýzy časových řad
 
-1. Definujte kanál, který používá [SsaForecastingEstimator](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator) k předpovědi hodnot v datové sadě časových řad.
+1. Definujte kanál, který používá [SsaForecastingEstimator](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator) k prognóze hodnot v datové sadě časových řad.
 
     [!code-csharp [DefinePipeline](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L36-L45)]
 
-    `forecastingPipeline` přebírá 365 datových bodů za první rok a ukázky nebo rozdělí datovou sadu do 30 dnů (měsíčně) intervalů určených parametrem `seriesLength`. Každá z těchto ukázek je analyzována v týdenním nebo 7 denním intervalu. Při určování toho, jaká hodnota předpovědi je pro další období, se pro vytvoření předpovědi použijí hodnoty z předchozích sedmi dnů. Model je nastaven na předpověď sedmi teček do budoucna, jak je definováno parametrem `horizon`. Vzhledem k tomu, že prognóza je včas odhad, není vždy 100% přesná. Proto je dobré znát rozsah hodnot ve scénářích nejlepšího a nejhoršího případu, jak jsou definovány horní a dolní mezí. V takovém případě je úroveň spolehlivosti pro dolní a horní mez nastavena na 95%. Úroveň spolehlivosti se proto dá zvýšit nebo snížit. Čím vyšší je hodnota, tím širší je rozsah mezi horní a dolní mezí, abyste dosáhli požadované úrovně důvěry.
+    Trvá `forecastingPipeline` 365 datových bodů za první rok a vzorkuje nebo rozdělí datovou sadu časových řad na `seriesLength` 30denní (měsíční) intervaly určené parametrem. Každý z těchto vzorků je analyzován prostřednictvím týdenního nebo 7denního okna. Při určování, co je prognózovaná hodnota pro další období, hodnoty z předchozích sedmi dnů se používají k předpovědi. Model je nastaven tak, aby předpovídal sedm období `horizon` do budoucnosti, jak je definováno parametrem. Vzhledem k tomu, že prognóza je informovaný odhad, není vždy 100% přesná. Proto je vhodné znát rozsah hodnot v nejlepších a nejhorších scénářích, jak je definováno horní a dolní hranice. V tomto případě je úroveň spolehlivosti dolní a horní hranice nastavena na 95%. Úroveň spolehlivosti může být odpovídajícím způsobem zvýšena nebo snížena. Čím vyšší je hodnota, tím širší je rozsah mezi horním a dolním mezí, aby bylo dosaženo požadované úrovně spolehlivosti.
 
-1. Použijte metodu [`Fit`](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator.Fit*) pro výuku modelu a přizpůsobení dat dříve definovaným `forecastingPipeline`.
+1. Pomocí [`Fit`](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator.Fit*) metody můžete model trénovat a `forecastingPipeline`přizpůsobit data dříve definovanému .
 
     [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L47)]
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Vyhodnoťte, jak dobře se model provádí prognózou dat z následujícího roku a porovnáním s aktuálními hodnotami.
+Vyhodnoťte, jak si model vede, a to prognózou dat příštího roku a porovnáním se skutečnými hodnotami.
 
-1. Pod metodu `Main` vytvořte novou metodu Utility nazvanou `Evaluate`.
+1. Pod `Main` metodou vytvořte novou metodu nástroje nazvanou `Evaluate`.
 
     ```csharp
     static void Evaluate(IDataView testData, ITransformer model, MLContext mlContext)
@@ -177,54 +177,54 @@ Vyhodnoťte, jak dobře se model provádí prognózou dat z následujícího rok
     }
     ```
 
-1. V rámci metody `Evaluate` vypovídat data druhého roku pomocí metody [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) s školeným modelem.
+1. Uvnitř `Evaluate` metody prognóza data druhého roku pomocí [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) metody s trénovaným modelem.
 
     [!code-csharp [EvaluateForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L62)]
 
-1. Získat skutečné hodnoty z dat pomocí metody [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) .
+1. Získejte skutečné hodnoty z dat [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) pomocí metody.
 
     [!code-csharp [GetActualRentals](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L65-L67)]
 
-1. Získejte hodnoty předpovědi pomocí metody [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) .
+1. Získejte hodnoty prognózy [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) pomocí metody.
 
     [!code-csharp [GetForecastRentals](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L70-L72)]
 
-1. Vypočítá rozdíl mezi skutečnými a předpověď hodnotami, které se běžně označují jako chyba.
+1. Vypočítejte rozdíl mezi skutečnou hodnotou a hodnotou prognózy, běžně označovanou jako chyba.
 
     [!code-csharp [CalculateError](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L75)]
 
-1. Změřte výkon tím, že vypočítají střední absolutní chybu a hlavní střední hodnoty chyb.
+1. Změřte výkon výpočtem hodnot Střední absolutní chyba a Střední kvadratická chyba kořenového adresáře.
 
     [!code-csharp [CalculateMetrics](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L78-L79)]
 
-    K vyhodnocení výkonu se použijí následující metriky:
+    K vyhodnocení výkonu se používají následující metriky:
 
-    - **Střední absolutní chyba**: měří, jak blízkoa předpovědi je skutečná hodnota. Rozsah hodnot je od 0 do nekonečno. Nejblíže k 0, což je lepší kvalita modelu.
-    - **Hlavní střední hodnota: Chyba na čtverci**: shrnuje chybu v modelu. Rozsah hodnot je od 0 do nekonečno. Nejblíže k 0, což je lepší kvalita modelu.
+    - **Střední absolutní chyba**: Měří, jak blízko předpovědi jsou na skutečnou hodnotu. Tato hodnota se pohybuje mezi 0 a nekonečno. Čím blíže k 0, tím lepší je kvalita modelu.
+    - **Kořenová střední kvadratmárská chyba**: Shrnuje chybu v modelu. Tato hodnota se pohybuje mezi 0 a nekonečno. Čím blíže k 0, tím lepší je kvalita modelu.
 
-1. Výstup metrik do konzoly.
+1. Výstup metriky do konzoly.
 
     [!code-csharp [OutputMetrics](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L82-L85)]
 
-1. Použijte metodu `Evaluate` v rámci metody `Main`.
+1. Použijte `Evaluate` metodu `Main` uvnitř metody.
 
     [!code-csharp [EvaluateModel](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L49)]
 
-## <a name="save-the-model"></a>Uložit model
+## <a name="save-the-model"></a>Uložení modelu
 
-Pokud jste s modelem spokojeni, uložte ho pro pozdější použití v jiných aplikacích.
+Pokud jste s modelem spokojeni, uložte jej pro pozdější použití v jiných aplikacích.
 
-1. V metodě `Main` vytvořte [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602). [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602) je pohodlnější způsob, jak vytvořit jeden předpovědi.
+1. V `Main` metodě vytvořte [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602). [`TimeSeriesPredictionEngine`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602)je komfortní metoda, aby se jednotlivé předpovědi.
 
     [!code-csharp [CreateTimeSeriesEngine](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L51)]
 
-1. Uložte model do souboru s názvem `MLModel.zip`, jak je určeno dříve definovanou `modelPath` proměnnou. K uložení modelu použijte metodu [`Checkpoint`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.CheckPoint*) .
+1. Uložte model do `MLModel.zip` souboru volaném `modelPath` dříve definovanou proměnnou. Pomocí [`Checkpoint`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.CheckPoint*) metody uložte model.
 
     [!code-csharp [SaveModel](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L52)]
 
-## <a name="use-the-model-to-forecast-demand"></a>Použití modelu k prognózování poptávky
+## <a name="use-the-model-to-forecast-demand"></a>Použití modelu k prognóze poptávky
 
-1. Pod metodu `Evaluate` vytvořte novou metodu Utility nazvanou `Forecast`.
+1. Pod `Evaluate` metodou vytvořte novou metodu nástroje nazvanou `Forecast`.
 
     ```csharp
     static void Forecast(IDataView testData, int horizon, TimeSeriesPredictionEngine<ModelInput, ModelOutput> forecaster, MLContext mlContext)
@@ -233,25 +233,25 @@ Pokud jste s modelem spokojeni, uložte ho pro pozdější použití v jiných a
     }
     ```
 
-1. V rámci metody `Forecast` použijte k předpovědi nájemné za dalších sedm dní metodu [`Predict`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.Predict*) .
+1. Uvnitř `Forecast` metody použijte [`Predict`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.Predict*) metodu k prognóze pronájmů pro příštích sedm dní.
 
     [!code-csharp [SingleForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L91)]
 
-1. Zarovnejte hodnoty skutečných hodnot a prognózy pro sedm teček.
+1. Zarovnejte skutečné hodnoty a hodnoty prognózy pro sedm období.
 
     [!code-csharp [GetForecastOutput](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L93-L108)]
 
-1. Iterujte ve výstupu předpovědi a zobrazte ji v konzole.
+1. Iterate prostřednictvím výstupu prognózy a zobrazí jej na konzoli.
 
     [!code-csharp [DisplayForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L111-L116)]
 
 ## <a name="run-the-application"></a>Spuštění aplikace
 
-1. Uvnitř metody `Main` volejte metodu `Forecast`.
+1. Uvnitř `Main` metody volejte `Forecast` metodu.
 
     [!code-csharp [BuildForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L54)]
 
-1. Spusťte aplikaci. Výstup podobný tomuto: by měl být zobrazený v konzole nástroje. V případě zkrácení byl výstup zúžený.
+1. Spusťte aplikaci. Výstup podobný tomu níže by se měl objevit na konzoli. Pro stručnost byl výstup zhuštěn.
 
     ```text
     Evaluation Metrics
@@ -274,17 +274,17 @@ Pokud jste s modelem spokojeni, uložte ho pro pozdější použití v jiných a
     Upper Estimate: 3573.309
     ```
 
-Kontrola skutečných a předpokládaných hodnot zobrazuje následující vztahy:
+Kontrola skutečných a předpokládaných hodnot ukazuje následující vztahy:
 
-![Aktuální porovnání předpovědi vs.](./media/time-series-demand-forecasting/forecast.png)
+![Skutečné vs porovnání prognóz](./media/time-series-demand-forecasting/forecast.png)
 
-I když hodnoty prognózy nepředpověď nad přesný počet nájemného, poskytují přesnější rozsah hodnot, který umožňuje operaci optimalizace používání prostředků.
+Zatímco předpokládané hodnoty nepředpovídají přesný počet pronájmů, poskytují užší rozsah hodnot, který umožňuje operaci optimalizovat jejich využití prostředků.
 
-Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení s časovou řadou k prognózování poptávky po pronájmu kol.
+Blahopřejeme! Nyní jste úspěšně vytvořili model strojového učení řady časových řad, abyste předpovídali poptávku po pronájmu jízdních kol.
 
-Zdrojový kód pro tento kurz najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) .
+Zdrojový kód pro tento kurz najdete v úložišti [dotnet/machinelearning-samples.](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand)
 
 ## <a name="next-steps"></a>Další kroky
 
 - [Úlohy strojového učení v ML.NET](../resources/tasks.md)
-- [Zvýšit přesnost modelu](../resources/improve-machine-learning-model-ml-net.md)
+- [Zpřesnění modelu](../resources/improve-machine-learning-model-ml-net.md)

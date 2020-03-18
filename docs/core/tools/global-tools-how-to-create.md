@@ -1,35 +1,35 @@
 ---
 title: 'Kurz: Vytvoření nástroje .NET Core'
-description: Naučte se vytvořit nástroj .NET Core. Nástroj je Konzolová aplikace, která je nainstalována pomocí .NET Core CLI.
+description: Přečtěte si, jak vytvořit nástroj .NET Core. Nástroj je konzolová aplikace, která je nainstalována pomocí rozhraní CLI jádra .NET.
 ms.date: 02/12/2020
 ms.openlocfilehash: 88cc3be7b149834ace0c5f3ba8ac8c039199908f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78156722"
 ---
-# <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Kurz: Vytvoření nástroje .NET Core pomocí .NET Core CLI
+# <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Kurz: Vytvoření nástroje .NET Core pomocí rozhraní CLI jádra .NET
 
-**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-V tomto kurzu se naučíte, jak vytvořit a zabalit nástroj .NET Core. .NET Core CLI umožňuje vytvořit konzolovou aplikaci jako nástroj, který mohou nainstalovat a spustit další. Nástroje .NET Core jsou balíčky NuGet, které jsou nainstalované z .NET Core CLI. Další informace o nástrojích najdete v tématu [Přehled nástrojů .NET Core](global-tools.md).
+Tento kurz vás naučí, jak vytvořit a zabalit nástroj .NET Core. Rozhraní .NET Core CLI umožňuje vytvořit konzolovou aplikaci jako nástroj, který mohou ostatní instalovat a spouštět. Nástroje .NET Core jsou balíčky NuGet, které jsou nainstalovány z rozhraní CLI jádra .NET. Další informace o nástrojích naleznete v [tématu Přehled nástrojů .NET Core](global-tools.md).
 
-Nástroj, který vytvoříte, je Konzolová aplikace, která jako vstup převezme zprávu, a zobrazí zprávu spolu s řádky textu, které vytvoří obrázek robota.
+Nástroj, který vytvoříte, je konzolová aplikace, která přebírá zprávu jako vstup a zobrazuje zprávu spolu s řádky textu, které vytvářejí obraz robota.
 
-Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nástroj. V následujících dvou kurzech používáte [Nástroj jako globální nástroj](global-tools-how-to-use.md) a [nástroj použijete jako místní nástroj](local-tools-how-to-use.md).
+Toto je první ze série tří výukových programů. V tomto kurzu vytvoříte a zabalíte nástroj. V dalších dvou kurzech [použijete nástroj jako globální nástroj](global-tools-how-to-use.md) a nástroj [použijete jako místní nástroj](local-tools-how-to-use.md).
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-- [.NET Core SDK 3,1](https://dotnet.microsoft.com/download) nebo novější verze.
+- [Sada .NET Core SDK 3.1](https://dotnet.microsoft.com/download) nebo novější verze.
 
-  Tento kurz a následující [kurz pro globální nástroje](global-tools-how-to-use.md) se vztahují na .NET Core SDK 2,1 a novější verze, protože v této verzi jsou dostupné globální nástroje. Ale v tomto kurzu se předpokládá, že máte nainstalovaný 3,1 nebo novější, abyste měli možnost pokračovat na [místní kurzy k nástrojům](local-tools-how-to-use.md). K dispozici jsou místní nástroje od .NET Core SDK 3,0. Postupy pro vytvoření nástroje jsou stejné, ať už používáte jako globální nástroj, nebo jako místní nástroj.
+  Tento kurz a následující [kurz pro globální nástroje](global-tools-how-to-use.md) platí pro .NET Core SDK 2.1 a novější verze, protože globální nástroje jsou k dispozici od této verze. Ale tento výukový program předpokládá, že jste nainstalovali 3.1 nebo novější, takže máte možnost pokračovat na [místní nástroje tutorial](local-tools-how-to-use.md). Místní nástroje jsou k dispozici počínaje .NET Core SDK 3.0. Postupy pro vytvoření nástroje jsou stejné, ať už jej používáte jako globální nástroj nebo jako místní nástroj.
   
 - Textový editor nebo editor kódu podle vašeho výběru.
 
 ## <a name="create-a-project"></a>Vytvoření projektu
 
-1. Otevřete příkazový řádek a vytvořte složku s názvem *úložiště*.
+1. Otevřete příkazový řádek a vytvořte složku s názvem *repozitář*.
 
 1. Přejděte do složky *úložiště* a zadejte následující příkaz:
 
@@ -37,9 +37,9 @@ Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nás
    dotnet new console -n microsoft.botsay
    ```
 
-   Příkaz vytvoří novou složku s názvem *Microsoft. botsay* ve složce *úložiště* .
+   Příkaz vytvoří novou složku s názvem *microsoft.botsay* pod složkou *úložiště.*
 
-1. Přejděte do složky *Microsoft. botsay* .
+1. Přejděte do složky *microsoft.botsay.*
 
    ```console
    cd microsoft.botsay
@@ -49,7 +49,7 @@ Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nás
 
 1. Otevřete `Program.cs` soubor pomocí editoru kódu.
 
-1. Do horní části souboru přidejte následující direktivu `using`:
+1. Do horní `using` části souboru přidejte následující direktivu:
 
    ```csharp
    using System.Reflection;
@@ -78,9 +78,9 @@ Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nás
    }
    ```
 
-   Pokud nejsou předány žádné argumenty, zobrazí se krátká zpráva help. V opačném případě jsou všechny argumenty zřetězeny do jednoho řetězce a vytištěny voláním metody `ShowBot`, kterou vytvoříte v následujícím kroku.
+   Pokud nejsou předány žádné argumenty, zobrazí se krátká zpráva nápovědy. V opačném případě jsou všechny argumenty zřetězeny do jednoho `ShowBot` řetězce a vytištěny voláním metody, kterou vytvoříte v dalším kroku.
 
-1. Přidejte novou metodu s názvem `ShowBot`, která přijímá řetězcový parametr. Metoda vytiskne zprávu a obrázek robota s použitím řádků textu.
+1. Přidejte novou `ShowBot` metodu s názvem, která přebírá parametr řetězce. Metoda vytiskne zprávu a obrázek robota pomocí řádků textu.
 
    ```csharp
    static void ShowBot(string message)
@@ -133,7 +133,7 @@ Toto je první v sérii tří kurzů. V tomto kurzu vytvoříte a zabalíte nás
 
 ## <a name="test-the-application"></a>Testování aplikace
 
-Spusťte projekt a podívejte se na výstup. Zkuste tyto variace na příkazovém řádku pro zobrazení různých výsledků:
+Spusťte projekt a podívejte se na výstup. Chcete-li zobrazit různé výsledky, vyzkoušejte tyto varianty na příkazovém řádku:
 
 ```dotnetcli
 dotnet run
@@ -141,13 +141,13 @@ dotnet run -- "Hello from the bot"
 dotnet run -- Hello from the bot
 ```
 
-Všechny argumenty po `--` oddělovači jsou předány do aplikace.
+Všechny argumenty `--` po oddělovač jsou předány do aplikace.
 
-## <a name="package-the-tool"></a>Zabalení nástroje
+## <a name="package-the-tool"></a>Balení nástroje
 
-Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nutné upravit soubor projektu.
+Před balením a distribucí aplikace jako nástroje je třeba upravit soubor projektu.
 
-1. Otevřete soubor *Microsoft. botsay. csproj* a přidejte tři nové uzly XML na konec `<PropertyGroup>` uzlu:
+1. Otevřete soubor *microsoft.botsay.csproj* a přidejte tři nové `<PropertyGroup>` uzly XML na konec uzlu:
 
    ```xml
    <PackAsTool>true</PackAsTool>
@@ -155,11 +155,11 @@ Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nu
    <PackageOutputPath>./nupkg</PackageOutputPath>
    ```
 
-   `<ToolCommandName>` je volitelný prvek, který určuje příkaz, který nástroj vyvolá po jeho instalaci. Pokud tento prvek není k dispozici, název příkazu pro nástroj je název souboru projektu bez přípony *. csproj* .
+   `<ToolCommandName>`je volitelný prvek, který určuje příkaz, který bude nástroj vyvolat po jeho instalaci. Pokud tento prvek není k dispozici, název příkazu pro nástroj je název souboru projektu bez přípony *.csproj.*
 
-   `<PackageOutputPath>` je volitelný prvek, který určuje, kde bude vytvořen balíček NuGet. Balíček NuGet je to, co .NET Core CLI používá k instalaci nástroje.
+   `<PackageOutputPath>`je volitelný prvek, který určuje, kde bude vytvořen balíček NuGet. Balíček NuGet je to, co rozhraní .NET Core CLI používá k instalaci nástroje.
 
-   Soubor projektu teď vypadá jako v následujícím příkladu:
+   Soubor projektu nyní vypadá jako následující příklad:
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
@@ -178,28 +178,28 @@ Předtím, než budete moci zabalit a distribuovat aplikaci jako nástroj, je nu
    </Project>
    ```
 
-1. Vytvořte balíček NuGet spuštěním příkazu [dotnet Pack](dotnet-pack.md) :
+1. Vytvořte balíček NuGet spuštěním příkazu [dotnet pack:](dotnet-pack.md)
 
    ```dotnetcli
    dotnet pack
    ```
 
-   Soubor *Microsoft. botsay. 1.0.0. nupkg* se vytvoří ve složce určené hodnotou `<PackageOutputPath>` ze souboru *Microsoft. botsay. csproj* , který je v tomto příkladu složkou *./nupkg* .
+   Soubor *microsoft.botsay.1.0.0.nupkg* je vytvořen ve složce identifikované `<PackageOutputPath>` hodnotou ze souboru *microsoft.botsay.csproj,* což je v tomto příkladu složka *./nupkg.*
   
-   Pokud chcete veřejně vydávat nástroj, můžete ho nahrát na `https://www.nuget.org`. Jakmile je nástroj k dispozici v NuGet, mohou vývojáři nainstalovat nástroj pomocí příkazu pro [instalaci nástroje dotnet](dotnet-tool-install.md) . V tomto kurzu nainstalujete balíček přímo z místní složky *nupkg* , takže není potřeba balíček nahrát do NuGet.
+   Chcete-li nástroj vydat veřejně, můžete jej `https://www.nuget.org`odeslat do aplikace . Jakmile je nástroj k dispozici na NuGet, vývojáři můžete nainstalovat nástroj pomocí příkazu [dotnet nástroj nainstalovat.](dotnet-tool-install.md) Pro tento kurz nainstalujete balíček přímo z místní složky *nupkg,* takže není třeba nahrát balíček do NuGet.
 
 ## <a name="troubleshoot"></a>Řešení potíží
 
-Pokud se vám zobrazí chybová zpráva s postupem v tomto kurzu, přečtěte si téma [řešení potíží s používáním nástrojů .NET Core](troubleshoot-usage-issues.md).
+Pokud se při sledování kurzu zobrazí chybová zpráva, [přečtěte si článek Poradce při potížích s používáním nástroje .NET Core](troubleshoot-usage-issues.md).
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste vytvořili konzolovou aplikaci a zabalíte ji jako nástroj. Pokud se chcete dozvědět, jak nástroj používat jako globální nástroj, přejděte k dalšímu kurzu.
+V tomto kurzu jste vytvořili konzolovou aplikaci a zabalili ji jako nástroj. Chcete-li se dozvědět, jak používat nástroj jako globální nástroj, přejdete k dalšímu kurzu.
 
 > [!div class="nextstepaction"]
 > [Instalace a použití globálního nástroje](global-tools-how-to-use.md)
 
-Pokud chcete, můžete přeskočit kurz globálních nástrojů a přejít přímo do kurzu místních nástrojů.
+Pokud dáváte přednost, můžete přeskočit globální nástroje tutorial a přejít přímo do kurzu místnínástroje.
 
 > [!div class="nextstepaction"]
 > [Instalace a použití místního nástroje](local-tools-how-to-use.md)

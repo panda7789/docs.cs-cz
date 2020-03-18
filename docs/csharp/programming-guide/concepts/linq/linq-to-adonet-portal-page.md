@@ -3,38 +3,38 @@ title: LINQ to ADO.NET (stránka portálu)
 ms.date: 07/20/2015
 ms.assetid: 6bd269b4-3509-4688-b672-836008704182
 ms.openlocfilehash: 84412e43a9d6b1e256e4ac8306a94126a3eaaaf4
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635545"
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET (stránka portálu)
-LINQ to ADO.NET vám umožní dotazovat se na jakýkoliv vyčíslitelné objekt v ADO.NET pomocí programovacího modelu LINQ (Language-Integrated Query).  
+LINQ ADO.NET umožňuje dotaz přes libovolný znakný objekt v ADO.NET pomocí programovacího modelu LINQ (Language-Integrated Query).  
   
 > [!NOTE]
-> Dokumentace LINQ to ADO.NET se nachází v části ADO.NET sady .NET Framework SDK: [LINQ a ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md).  
+> Dokumentace linq ADO.NET je umístěna v ADO.NET části sady .NET Framework SDK: [LINQ a ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md).  
   
- Existují tři samostatné technologie LINQ (ADO.NET Language-Integrated Query): LINQ to DataSet, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]a LINQ to Entities. LINQ to DataSet poskytuje bohatší a optimalizované dotazy přes <xref:System.Data.DataSet>, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] umožňuje přímo dotazovat se na SQL Server schémat databáze a LINQ to Entities umožňuje dotazovat se na model EDM (Entity Data Model).  
+ Existují tři samostatné technologie ADO.NET jazykově integrovaný dotaz (LINQ): [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]LINQ to DataSet a LINQ na entity. LINQ to DataSet poskytuje bohatší, optimalizované dotazování přes <xref:System.Data.DataSet>, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] umožňuje přímý dotaz sql server schémata databáze a LINQ entity umožňuje dotaz entity datový model.  
   
-## <a name="linq-to-dataset"></a>LINQ to DataSet  
- <xref:System.Data.DataSet> je jednou z nejpoužívanějších komponent v ADO.NET a je klíčovým prvkem odpojeného programovacího modelu, na kterém je ADO.NET sestaven. Navzdory tomuto význačnost však <xref:System.Data.DataSet> má omezené možnosti dotazování.  
+## <a name="linq-to-dataset"></a>LINQ na DataSet  
+ Je <xref:System.Data.DataSet> jednou z nejpoužívanějších součástí v ADO.NET a je klíčovým prvkem odpojeného programovacího modelu, na kterých je ADO.NET postaven. Navzdory tomuto významu <xref:System.Data.DataSet> má však omezené možnosti dotazu.  
   
- LINQ to DataSet umožňuje sestavovat bohatší možnosti dotazování do <xref:System.Data.DataSet> pomocí stejných funkcí dotazů, které jsou k dispozici pro mnoho dalších zdrojů dat.  
+ LINQ to DataSet umožňuje vytvářet <xref:System.Data.DataSet> bohatší možnosti dotazu do pomocí stejné funkce dotazu, který je k dispozici pro mnoho jiných zdrojů dat.  
   
- Další informace najdete v tématu [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).  
+ Další informace naleznete v tématu [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).  
   
 ## <a name="linq-to-sql"></a>Technologie LINQ to SQL  
- [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] poskytuje běhovou infrastrukturu pro správu relačních dat jako objektů. V [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]je datový model relační databáze mapován na objektový model vyjádřený v programovacím jazyce vývojáře. Po spuštění aplikace [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] přeloží dotazy integrované v jazyce v objektovém modelu do SQL a pošle je do databáze ke spuštění. Když databáze vrátí výsledky, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] je přeloží zpět do objektů, které můžete manipulovat.  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]poskytuje run-time infrastrukturu pro správu relačních dat jako objektů. V [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]aplikaci je datový model relační databáze mapován na objektový model vyjádřený v programovacím jazyce vývojáře. Při spuštění aplikace [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] překládá dotazy integrované jazykem v objektovém modelu do SQL a odešle je do databáze pro spuštění. Když databáze vrátí výsledky, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] převede je zpět do objektů, se kterými můžete manipulovat.  
   
- [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] zahrnuje podporu pro uložené procedury a uživatelsky definované funkce v databázi a pro dědění v objektovém modelu.  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]zahrnuje podporu pro uložené procedury a uživatelem definované funkce v databázi a dědičnost v objektovém modelu.  
   
- Další informace najdete v tématu [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md).  
+ Další informace naleznete v tématu [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md).  
   
 ## <a name="linq-to-entities"></a>LINQ to Entities  
- Prostřednictvím model EDM (Entity Data Model) jsou relační data vystavena jako objekty v prostředí .NET. Díky tomu je vrstva objektu ideálním cílem pro podporu LINQ, což vývojářům umožňuje formulovat dotazy z databáze z jazyka používaného k sestavení obchodní logiky. Tato funkce se označuje jako LINQ to Entities. Další informace najdete v tématu [LINQ to Entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md) .  
+ Prostřednictvím datového modelu entity jsou relační data vystavena jako objekty v prostředí .NET. Díky vrstvě objektu je ideální cíl pro podporu LINQ, což vývojářům umožňuje formulovat dotazy proti databázi z jazyka použitého k vytvoření obchodní logiky. Tato funkce se označuje jako LINQ entity. Další informace naleznete v tématu [LINQ to Entities.](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ a ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md)
-- [Dotaz integrovaný na jazyku (LINQ)C#()](./index.md)
+- [Dotaz integrovaný jazykem (LINQ) (C#)](./index.md)

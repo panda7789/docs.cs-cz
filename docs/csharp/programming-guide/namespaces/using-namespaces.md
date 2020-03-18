@@ -1,5 +1,5 @@
 ---
-title: Používání oborů názvů C# – Průvodce programováním
+title: Použití oborů názvů – programovací příručka jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - cs.names
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
 ms.openlocfilehash: 5193fc7aaae83cbc0c75e81835244eaaaece69a5
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75700195"
 ---
-# <a name="using-namespaces-c-programming-guide"></a>Používání oborů názvůC# (Průvodce programováním)
+# <a name="using-namespaces-c-programming-guide"></a>Použití oborů názvů (Programovací příručka Jazyka C#)
 
-Obory názvů jsou v C# rámci programů silně používány dvěma způsoby. Nejprve třídy .NET Framework používají obory názvů k uspořádání svých mnoha tříd. Následně deklarace vlastních oborů názvů vám může pomáhat řídit obor názvů tříd a metod ve větších programovacích projektech.  
+Obory názvů jsou v rámci programů jazyka C# používány dvěma způsoby. Za prvé, třídy rozhraní .NET Framework používají prostory názvů k uspořádání mnoha tříd. Za druhé deklarování vlastní chodů názvů může pomoci řídit rozsah názvů tříd a metod ve větších programovacích projektech.  
   
 ## <a name="accessing-namespaces"></a>Přístup k oborům názvů
 
- Většina C# aplikací začíná oddílem direktiv `using`. V této části jsou uvedeny obory názvů, které aplikace často používá, a uloží programátora z určení plně kvalifikovaného názvu pokaždé, když se použije metoda, která je obsažena v rámci.  
+ Většina aplikací Jazyka C# `using` začíná částí direktiv. V této části jsou uvedeny obory názvů, které bude aplikace často používat, a programátor ovi ušetří zadání plně kvalifikovaného názvu při každém použití metody, která je obsažena v aplikaci.  
   
  Například zahrnutím řádku:  
   
@@ -36,64 +36,64 @@ Obory názvů jsou v C# rámci programů silně používány dvěma způsoby. Ne
   
 ## <a name="namespace-aliases"></a>Aliasy oboru názvů
 
- Můžete také použít [direktivu`using`](../../language-reference/keywords/using-directive.md) pro vytvoření aliasu pro obor názvů. Pro přístup ke členům oboru názvů s aliasy použijte [kvalifikátor aliasu oboru názvů `::`](../../language-reference/operators/namespace-alias-qualifier.md) . Následující příklad ukazuje, jak vytvořit a použít alias oboru názvů:
+ [ `using` Direktivu](../../language-reference/keywords/using-directive.md) můžete také použít k vytvoření aliasu pro obor názvů. [Kvalifikátor `::` aliasu oboru názvů](../../language-reference/operators/namespace-alias-qualifier.md) použijte pro přístup k členům aliasového oboru názvů. Následující příklad ukazuje, jak vytvořit a použít alias oboru názvů:
   
 [!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]
   
 ## <a name="using-namespaces-to-control-scope"></a>Použití oborů názvů k řízení oboru
 
- Klíčové slovo `namespace` slouží k deklaraci oboru. Schopnost vytvářet obory v rámci projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečné typy. V následujícím příkladu je třída s názvem `SampleClass` definovaná ve dvou oborech názvů, jedna vnořená uvnitř druhé. [Operátor přístupu členů `.`](../../language-reference/operators/member-access-operators.md#member-access-operator-) slouží k odlišení, která metoda se volá.  
+ Klíčové `namespace` slovo se používá k deklarování oboru. Možnost vytvářet obory v rámci projektu pomáhá organizovat kód a umožňuje vytvářet globálně jedinečné typy. V následujícím příkladu je `SampleClass` třída s názvem definována ve dvou oborech názvů, jeden vnořený uvnitř druhého. [Operátor přístupu `.` člena](../../language-reference/operators/member-access-operators.md#member-access-operator-) se používá k rozlišení, která metoda získá volání.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
 ## <a name="fully-qualified-names"></a>Plně kvalifikované názvy
 
- Obory názvů a typy mají jedinečné názvy, které popisují plně kvalifikované názvy, které označují logickou hierarchii. Například příkaz `A.B` znamená, že `A` je název oboru názvů nebo typu a `B` je vnořen uvnitř něj.  
+ Obory názvů a typy mají jedinečné názvy popsané plně kvalifikovanými názvy, které označují logickou hierarchii. Například příkaz `A.B` znamená, `A` že je název oboru názvů `B` nebo typu a je vnořen uvnitř něj.  
   
- V následujícím příkladu jsou vnořené třídy a obory názvů. Plně kvalifikovaný název je označen jako komentář za každou entitou.  
+ V následujícím příkladu jsou vnořené třídy a obory názvů. Plně kvalifikovaný název je uveden jako komentář za každou entitou.  
   
  [!code-csharp[csProgGuideNamespaces#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#9)]  
   
  V předchozím segmentu kódu:  
   
-- Obor názvů `N1` je členem globálního oboru názvů. Jeho plně kvalifikovaný název je `N1`.  
+- Obor názvů `N1` je členem globálního oboru názvů. Jeho plně kvalifikovaný `N1`název je .  
   
-- Obor názvů `N2` je členem `N1`. Jeho plně kvalifikovaný název je `N1.N2`.  
+- Obor názvů `N2` je členem `N1`společnosti . Jeho plně kvalifikovaný `N1.N2`název je .  
   
-- `C1` třídy je členem `N1`. Jeho plně kvalifikovaný název je `N1.C1`.  
+- Třída `C1` je členem `N1`. Jeho plně kvalifikovaný `N1.C1`název je .  
   
-- Název třídy `C2` se v tomto kódu používá dvakrát. Plně kvalifikované názvy jsou ale jedinečné. První instance `C2` je deklarována uvnitř `C1`; Proto je jeho plně kvalifikovaný název: `N1.C1.C2`. Druhá instance `C2` je deklarována uvnitř oboru názvů `N2`; Proto je jeho plně kvalifikovaný název `N1.N2.C2`.  
+- Název `C2` třídy se používá dvakrát v tomto kódu. Plně kvalifikované názvy jsou však jedinečné. První instance `C2` je deklarována uvnitř `C1`; proto je jeho plně `N1.C1.C2`kvalifikovaný název: . Druhá instance `C2` je deklarována uvnitř oboru názvů `N2`; proto je `N1.N2.C2`jeho plně kvalifikovaný název .  
   
- Pomocí předchozího segmentu kódu můžete přidat nový člen třídy `C3`do oboru názvů `N1.N2` následujícím způsobem:  
+ Pomocí předchozího segmentu kódu můžete do `C3`oboru `N1.N2` názvů přidat nového člena třídy:  
   
  [!code-csharp[csProgGuideNamespaces#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#10)]  
   
- Obecně použijte [kvalifikátor aliasu oboru názvů `::`](../../language-reference/operators/namespace-alias-qualifier.md) pro odkazování na alias oboru názvů nebo `global::` pro odkazování na globální obor názvů a `.` k zařazování typů nebo členů.  
+ Obecně použijte [kvalifikátor `::` aliasu oboru názvů](../../language-reference/operators/namespace-alias-qualifier.md) k odkazování na `.` alias oboru názvů nebo `global::` k odkazování na globální obor názvů a ke kvalifikaci typů nebo členů.  
   
- Použití `::` s aliasem, který odkazuje na typ namísto oboru názvů, je chyba. Příklad:  
+ Je chyba použít `::` s alias, který odkazuje na typ namísto oboru názvů. Například:  
   
  [!code-csharp[csProgGuideNamespaces#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#11)]  
   
  [!code-csharp[csProgGuideNamespaces#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#12)]  
   
- Pamatujte, že slovo `global` není předdefinovaným aliasem. Proto `global.X` nemá žádný zvláštní význam. Získá zvláštní význam pouze v případě, že se používá s `::`.  
+ Nezapomeňte, že `global` slovo není předdefinovaný alias; `global.X` proto nemá žádný zvláštní význam. Zvláštní význam získává pouze v případě, `::`že se používá s .  
   
- Při definování aliasu s názvem Global se vygeneruje upozornění kompilátoru CS0440, protože `global::` vždycky odkazuje na globální obor názvů, ne na alias. Například následující řádek vygeneruje upozornění:  
+ Upozornění kompilátoru CS0440 je generováno, `global::` pokud definujete alias s názvem global, protože vždy odkazuje na globální obor názvů a nikoli na alias. Například následující řádek generuje upozornění:  
   
  [!code-csharp[csProgGuideNamespaces#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#13)]  
   
- Použití `::` s aliasy je dobrý nápad a chrání proti neočekávanému zavedení dalších typů. Zvažte například tento příklad:  
+ Použití `::` s aliasy je dobrý nápad a chrání před neočekávaným zavedením dalších typů. Zvažte například tento příklad:  
   
  [!code-csharp[csProgGuideNamespaces#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#14)]  
   
  [!code-csharp[csProgGuideNamespaces#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#15)]  
   
- Tento postup funguje, ale pokud byl následně zaveden typ s názvem `Alias`, `Alias.` by se místo toho naváže k tomuto typu. Pomocí `Alias::Exception` zajistí, že `Alias` je považován za alias oboru názvů a nemusíte ho označit pro typ.  
+ To funguje, ale pokud `Alias` typ s názvem byly `Alias.` následně zavedeny, by se vázat na tento typ místo. Použití `Alias::Exception` zajišťuje, `Alias` že je považován za alias oboru názvů a není zaměněn za typ.  
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)
 - [Obory názvů](./index.md)
-- [. podnikatel](../../language-reference/operators/member-access-operators.md#member-access-operator-)
-- [:: – operátor](../../language-reference/operators/namespace-alias-qualifier.md)
-- [extern alias](../../language-reference/keywords/extern-alias.md)
+- [. Operátor](../../language-reference/operators/member-access-operators.md#member-access-operator-)
+- [:: operátor](../../language-reference/operators/namespace-alias-qualifier.md)
+- [externí alias](../../language-reference/keywords/extern-alias.md)

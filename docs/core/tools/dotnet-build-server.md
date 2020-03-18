@@ -1,23 +1,23 @@
 ---
-title: dotnet – sestavení – příkaz serveru
-description: Příkaz dotnet Build-Server komunikuje s servery spuštěnými sestavením.
+title: dotnet build-server, příkaz
+description: Příkaz dotnet build-server spolupracuje se servery spuštěnými sestavením.
 ms.date: 02/14/2020
 ms.openlocfilehash: a6a9cd6de66371caef66d1101b3f844dffc771ef
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503776"
 ---
 # <a name="dotnet-build-server"></a>dotnet build-server
 
-**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet build-server` – spolupracuje se servery spuštěnými sestavením.
+`dotnet build-server`- Spolupracuje se servery spuštěnými sestavením.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
 dotnet build-server shutdown [--msbuild] [--razor] [--vbcscompiler]
@@ -29,13 +29,13 @@ dotnet build-server [-h|--help]
 
 - **`shutdown`**
 
-  Ukončí sestavovací servery, které jsou spuštěny z dotnet. Ve výchozím nastavení jsou všechny servery vypnuté.
+  Vypne servery sestavení, které jsou spuštěny z dotnet. Ve výchozím nastavení jsou všechny servery vypnuty.
 
 ## <a name="options"></a>Možnosti
 
 - **`-h|--help`**
 
-  Vypíše krátkou nápovědu k příkazu.
+  Vytiskne krátkou nápovědu pro příkaz.
 
 - **`--msbuild`**
 
@@ -47,4 +47,4 @@ dotnet build-server [-h|--help]
 
 - **`--vbcscompiler`**
 
-  Ukončí server sestavení VB/C# Compiler.
+  Vypne server sestavení kompilátoru VB/C#.

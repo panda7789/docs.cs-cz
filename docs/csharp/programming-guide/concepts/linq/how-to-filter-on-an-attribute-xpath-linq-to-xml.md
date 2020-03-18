@@ -1,25 +1,25 @@
 ---
-title: Postup filtrování atributu (XPath-LINQ to XML) (C#)
+title: Jak filtrovat atribut (XPath-LINQ na XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
 ms.openlocfilehash: ab2cd439f4dd1454de4fa565658ef5dac14b8c22
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141271"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postup filtrování atributu (XPath-LINQ to XML) (C#)
-Toto téma ukazuje, jak získat odvozené prvky se zadaným názvem a s atributem se zadanou hodnotou.  
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Jak filtrovat atribut (XPath-LINQ na XML) (C#)
+Toto téma ukazuje, jak získat potomek prvky se zadaným názvem a s atributem se zadanou hodnotou.  
   
  Výraz XPath je:  
   
  `.//Address[@Type='Shipping']`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá všechny prvky následníků s názvem `Address`a s atributem `Type` s hodnotou "expedice".  
+ Tento příklad vyhledá všechny potomky `Address`prvky s `Type` názvem , a s atributem s hodnotou "Doprava".  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML).](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -42,7 +42,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  

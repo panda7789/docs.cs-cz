@@ -1,5 +1,5 @@
 ---
-title: void – C# odkaz
+title: void - odkaz C#
 ms.date: 02/11/2020
 f1_keywords:
 - void_CSharpKeyword
@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
-ms.openlocfilehash: c37492f3c8f61c042e94848b838d7f5b445bdd1f
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: c6c1c28e3d7a53a1dcadcf50d8d7f42c8c8aeee4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239713"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846205"
 ---
-# <a name="void-c-reference"></a>void (C# Referenční dokumentace)
+# <a name="void-c-reference"></a>void (odkaz C#)
 
-Použijete `void` jako návratový typ [metody](../../programming-guide/classes-and-structs/methods.md) (nebo [místní funkce](../../programming-guide/classes-and-structs/local-functions.md)), chcete-li určit, že metoda nevrací hodnotu.
+Jako návratový typ metody (nebo [místní funkce)](../../programming-guide/classes-and-structs/local-functions.md)určit, že metoda nevrátí hodnotu. [method](../../programming-guide/classes-and-structs/methods.md) `void`
 
-[!code-csharp[void method](~/samples/snippets/csharp/language-reference/builtin-types/VoidType.cs#VoidExample)]
+[!code-csharp[void method](snippets/VoidType.cs#VoidExample)]
 
-Můžete také použít `void` jako typ referenční k deklaraci ukazatele na neznámý typ. Další informace naleznete v tématu [typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md).
+Jako referenční `void` typ můžete také deklarovat ukazatel na neznámý typ. Další informace naleznete v tématu [Pointer types](../../programming-guide/unsafe-code-pointers/pointer-types.md).
 
-Jako typ proměnné nelze použít `void`.
+Jako typ `void` proměnné nelze použít.
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - <xref:System.Void?displayProperty=nameWithType>

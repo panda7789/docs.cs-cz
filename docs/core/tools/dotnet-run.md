@@ -1,23 +1,23 @@
 ---
-title: příkaz dotnet run
-description: Příkaz dotnet Run poskytuje pohodlný způsob, jak spustit aplikaci ze zdrojového kódu.
+title: dotnet spustit, příkaz
+description: Příkaz dotnet run poskytuje vhodnou možnost spuštění aplikace ze zdrojového kódu.
 ms.date: 02/19/2020
 ms.openlocfilehash: e442ed56d676ffd189ef6d394d840cea671c2dc6
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157073"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
-**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet run` – spustí zdrojový kód bez explicitních příkazů Compile nebo Launch.
+`dotnet run`- Spustí zdrojový kód bez explicitních příkazů kompilace nebo spuštění.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
 dotnet run [-c|--configuration] [-f|--framework] [--force] [--interactive] [--launch-profile]
@@ -28,21 +28,21 @@ dotnet run [-h|--help]
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet run` poskytuje pohodlný způsob, jak spustit aplikaci ze zdrojového kódu pomocí jednoho příkazu. Je vhodný pro rychlý iterativní vývoj z příkazového řádku. Příkaz závisí na příkazu [`dotnet build`](dotnet-build.md) pro sestavení kódu. Všechny požadavky na sestavení, například, že je nutné nejprve obnovit projekt, platí pro `dotnet run`.
+Příkaz `dotnet run` poskytuje vhodnou možnost spuštění aplikace ze zdrojového kódu pomocí jednoho příkazu. Je to užitečné pro rychlý iterativní vývoj z příkazového řádku. Příkaz závisí na [`dotnet build`](dotnet-build.md) příkaz u vytvoření kódu. Všechny požadavky na sestavení, například že projekt musí být `dotnet run` obnovena jako první, platí také.
 
-Výstupní soubory jsou zapsány do výchozího umístění, které je `bin/<configuration>/<target>`. Pokud máte například aplikaci `netcoreapp2.1` a spustíte `dotnet run`, výstup je umístěný v `bin/Debug/netcoreapp2.1`. Soubory jsou v případě potřeby přepsány. Dočasné soubory jsou umístěny v adresáři `obj`.
+Výstupní soubory jsou zapsány do `bin/<configuration>/<target>`výchozího umístění, což je . Například pokud máte `netcoreapp2.1` aplikaci `dotnet run`a spustit , `bin/Debug/netcoreapp2.1`výstup je umístěn v . Soubory jsou přepsány podle potřeby. Dočasné soubory jsou `obj` umístěny v adresáři.
 
-Pokud projekt určuje více rozhraní, spuštění `dotnet run` způsobí chybu, pokud není použita možnost `-f|--framework <FRAMEWORK>` k určení architektury.
+Pokud projekt určuje více rozhraní, `dotnet run` provádění výsledků v `-f|--framework <FRAMEWORK>` chybě, pokud je použita možnost k určení rozhraní.
 
-Příkaz `dotnet run` se používá v kontextu projektů, nikoli ve vytvořených sestaveních. Pokud se pokoušíte spustit knihovnu DLL aplikace závislou na rozhraní, je nutné použít příkaz [dotnet](dotnet.md) bez příkazu. Pokud například chcete spustit `myapp.dll`, použijte:
+Příkaz `dotnet run` se používá v kontextu projektů, nikoli sestavení. Pokud se místo toho pokoušíte spustit dll aplikace závislé na rozhraní, musíte použít [dotnet](dotnet.md) bez příkazu. Chcete-li například spustit `myapp.dll`, použijte:
 
 ```dotnetcli
 dotnet myapp.dll
 ```
 
-Další informace o ovladači `dotnet` naleznete v tématu [.NET Core Command line Tools (CLI)](index.md) .
+Další informace o `dotnet` ovladači naleznete v tématu [nástroje CLI (.NET Core Command Line Tools).](index.md)
 
-Chcete-li spustit aplikaci, příkaz `dotnet run` vyřeší závislosti aplikace, které jsou mimo sdílený modul runtime z mezipaměti NuGet. Protože používá závislosti v mezipaměti, nedoporučuje se používat `dotnet run` ke spouštění aplikací v produkčním prostředí. Místo toho [vytvořte nasazení](../deploying/index.md) pomocí příkazu [`dotnet publish`](dotnet-publish.md) a nasaďte publikovaný výstup.
+Chcete-li spustit `dotnet run` aplikaci, příkaz řeší závislosti aplikace, které jsou mimo sdílené hodu runtime z mezipaměti NuGet. Vzhledem k tomu, že používá závislosti uložené `dotnet run` v mezipaměti, nedoporučuje se používat ke spouštění aplikací v produkčním prostředí. Místo toho [vytvořte](../deploying/index.md) [`dotnet publish`](dotnet-publish.md) nasazení pomocí příkazu a nasadit publikovaný výstup.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -50,81 +50,81 @@ Chcete-li spustit aplikaci, příkaz `dotnet run` vyřeší závislosti aplikace
 
 - **`--`**
 
-  Odděluje argumenty pro `dotnet run` z argumentů pro spouštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
+  Vymezuje `dotnet run` argumenty z argumentů pro spuštěnou aplikaci. Všechny argumenty po tomto oddělovači jsou předány spuštění aplikace.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota pro většinu projektů je `Debug`, ale můžete přepsat nastavení konfigurace sestavení v projektu.
+  Definuje konfiguraci sestavení. Výchozí hodnota pro `Debug`většinu projektů je , ale můžete přepsat nastavení konfigurace sestavení v projektu.
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rozhraní musí být určeno v souboru projektu.
+  Vytvoří a spustí aplikaci pomocí zadaného [rozhraní](../../standard/frameworks.md). Rámec musí být zadán v souboru projektu.
 
 - **`--force`**
 
-  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
+  Vynutí vyřešení všech závislostí, i když bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *project.assets.json.*
 
 - **`-h|--help`**
 
-  Vypíše krátkou nápovědu k příkazu.
+  Vytiskne krátkou nápovědu pro příkaz.
 
 - **`--interactive`**
 
-  Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování). K dispozici od verze .NET Core 3,0 SDK.
+  Umožňuje příkazu zastavit a čekat na vstup nebo akci uživatele (například k dokončení ověřování). K dispozici od .NET Core 3.0 SDK.
 
 - **`--launch-profile <NAME>`**
 
-  Název spouštěcího profilu (pokud existuje), který se má použít při spouštění aplikace Spouštěcí profily jsou definované v souboru *launchSettings. JSON* a obvykle se nazývají `Development`, `Staging`a `Production`. Další informace najdete v tématu [práce s více prostředími](/aspnet/core/fundamentals/environments).
+  Název profilu spuštění (pokud existuje) použít při spuštění aplikace. Profily spuštění jsou definovány v souboru *launchSettings.json* a obvykle se nazývají `Development`, `Staging`, a `Production`. Další informace naleznete v [tématu Práce s více prostředími](/aspnet/core/fundamentals/environments).
 
 - **`--no-build`**
 
-  Před spuštěním nevytvoří projekt. Také implicitně nastaví příznak `--no-restore`.
+  Nesestavuje projekt před spuštěním. Také implicitní `--no-restore` nastaví příznak.
 
 - **`--no-dependencies`**
 
-  Při obnovení projektu s odkazy z projektu na projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
+  Při obnovení projektu s odkazy projekt-projekt (P2P) obnoví kořenový projekt a nikoli odkazy.
 
 - **`--no-launch-profile`**
 
-  Nepokusí se nakonfigurovat aplikaci pomocí *launchSettings. JSON* .
+  Nepokouší se použít *launchSettings.json* ke konfiguraci aplikace.
 
 - **`--no-restore`**
 
-  Při spuštění příkazu neprovede implicitní obnovení.
+  Nespustí implicitní obnovení při spuštění příkazu.
 
 - **`-p|--project <PATH>`**
 
-  Určuje cestu k souboru projektu, který se má spustit (název složky nebo úplná cesta). Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
+  Určuje cestu ke spuštění souboru projektu (název složky nebo úplná cesta). Pokud není zadán, je výchozí aktuální adresář.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). pro sadu .NET Core 3,0 SDK je `-r` k dispozici krátká možnost.
+  Určuje cílový čas běhu, pro který má být obnoveny balíčky. Seznam identifikátorů modulu Runtime (RID) naleznete v [katalogu RID](../rid-catalog.md). `-r`krátká možnost k dispozici od .NET Core 3.0 SDK.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Výchozí hodnota je `m`. K dispozici od verze .NET Core 2,1 SDK.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Výchozí hodnota je `m`. K dispozici od .NET Core 2.1 SDK.
 
 ## <a name="examples"></a>Příklady
 
-- Spustit projekt v aktuálním adresáři:
+- Spusťte projekt v aktuálním adresáři:
 
   ```dotnetcli
   dotnet run
   ```
 
-- Spustit zadaný projekt:
+- Spusťte zadaný projekt:
 
   ```dotnetcli
   dotnet run --project ./projects/proj1/proj1.csproj
   ```
 
-- Spustí projekt v aktuálním adresáři (`--help` argument v tomto příkladu je předán do aplikace, protože je použita možnost prázdné `--`):
+- Spusťte projekt v aktuálním adresáři (argument v tomto příkladu `--help` je předán aplikaci, protože se používá prázdná `--` možnost):
 
   ```dotnetcli
   dotnet run --configuration Release -- --help
   ```
 
-- Obnovte závislosti a nástroje pro projekt v aktuálním adresáři pouze s minimálním výstupem a potom spusťte projekt: (.NET Core SDK 2,0 a novější verze):
+- Obnovení závislostí a nástrojů pro projekt v aktuálním adresáři zobrazující pouze minimální výstup a potom spustit projekt: (.NET Core SDK 2.0 a novější verze):
 
   ```dotnetcli
   dotnet run --verbosity m

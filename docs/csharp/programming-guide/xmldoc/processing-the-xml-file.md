@@ -1,89 +1,89 @@
 ---
-title: Zpracování souboru XML – C# Průvodce programováním
+title: Zpracování souboru XML – programovací příručka Jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
 ms.openlocfilehash: bc72cade9ce6edddb88d741a3424405bba0a7ad8
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76793383"
 ---
-# <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (C# Průvodce programováním)
+# <a name="processing-the-xml-file-c-programming-guide"></a>Zpracování souboru XML (průvodce programováním jazyka C#)
 
-Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je označen pro generování dokumentace. (Informace o tom, jak označit svůj kód, naleznete v tématu [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md).) Řetězec ID jednoznačně identifikuje konstrukci. Programy, které zpracovávají soubor XML, mohou použít řetězec ID k identifikaci odpovídající .NET Framework metadat nebo položek reflexe, na které se dokumentace vztahuje.
+Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je označen pro generování dokumentace. (Informace o tom, jak označit kód, naleznete [v tématu Doporučené značky pro komentáře k dokumentaci](./recommended-tags-for-documentation-comments.md).) Řetězec ID jednoznačně identifikuje konstrukci. Programy, které zpracovávají soubor XML, mohou použít řetězec ID k identifikaci odpovídající položky metadat/reflexe rozhraní .NET Framework, na kterou se vztahuje dokumentace.
 
-Soubor XML není hierarchická reprezentace vašeho kódu; Jedná se o nestrukturovaný seznam, který má vygenerované ID pro každý prvek.
+Soubor XML není hierarchickou reprezentací kódu. jedná se o plochý seznam, který má vygenerované ID pro každý prvek.
 
-Kompilátor při generování řetězců ID sleduje následující pravidla:
+Kompilátor dodržuje následující pravidla při generování řetězců ID:
 
-- Řetězec neobsahuje prázdné znaky.
+- V řetězci není žádné prázdné místo.
 
-- První část řetězce ID identifikuje druh zjištěného člena pomocí jednoho znaku následovaného dvojtečkou. Používají se následující typy členů:
+- První část řetězce ID identifikuje druh člena, který je identifikován, pomocí jednoho znaku následovaného dvojtečkou. Používají se následující typy členů:
 
     |Znak|Popis|
     |---------------|-----------------|
-    |N|Obor názvů<br /><br /> Do oboru názvů nemůžete přidávat komentáře k dokumentaci, ale můžete na ně cref odkazy, kde se podporují.|
-    |T|Type: Class, Interface, struct, enum nebo Delegate|
+    |Ne|Obor názvů<br /><br /> Do oboru názvů nelze přidávat komentáře k dokumentaci, ale můžete na ně vytvořit odkazy na cref, pokud je podporováno.|
+    |T|typ: třída, rozhraní, struktura, výčet nebo delegát|
     |F|pole|
     |P|vlastnost (včetně indexerů nebo jiných indexovaných vlastností)|
-    |M|Metoda (včetně takových speciálních metod jako konstruktory, operátory a tak dále)|
+    |M|(včetně takových speciálních metod, jako jsou konstruktory, operátory a tak dále)|
     |E|event|
-    |!|řetězec chyby<br /><br /> Zbytek řetězce poskytuje informace o chybě. C# Kompilátor generuje informace o chybě pro odkazy, které nelze přeložit.|
+    |!|chybový řetězec<br /><br /> Zbytek řetězce obsahuje informace o chybě. Kompilátor Jazyka C# generuje informace o chybě pro odkazy, které nelze přeložit.|
 
-- Druhá část řetězce je plně kvalifikovaný název položky začínající v kořenu oboru názvů. Název položky, její nadřazené typy a obor názvů jsou odděleny tečkami. Pokud má název položky vlastní tečky, nahradí se znakem hash (#). Předpokládá se, že žádná položka nemá v názvu přímo znak hash. Například plně kvalifikovaný název konstruktoru řetězce by byl "System. String. #ctor".
+- Druhá část řetězce je plně kvalifikovaný název položky, počínaje kořenem oboru názvů. Název položky, její ohraničující typ (typy) a obor názvů jsou odděleny tečkami. Pokud název samotné položky má tečky, jsou nahrazeny znakem hash ('#'). Předpokládá se, že žádná položka nemá znak hash přímo v jeho názvu. Například plně kvalifikovaný název konstruktoru String by "System.String.#ctor".
 
-- V případě vlastností a metod, pokud jsou argumenty metody, seznam argumentů uzavřený v závorkách následuje. Pokud nejsou žádné argumenty, nejsou k dispozici žádné závorky. Argumenty jsou odděleny čárkami. Kódování každého argumentu následuje přímo, jak je kódováno v signatuře .NET Framework:
+- Pro vlastnosti a metody, pokud existují argumenty metody, následuje seznam argumentů uzavřený v závorcích. Pokud neexistují žádné argumenty, jsou přítomny žádné závorky. Argumenty jsou odděleny čárkami. Kódování každého argumentu přímo následuje podle toho, jak je kódován v podpisu rozhraní .NET Framework:
 
-  - Základní typy. Běžné typy (ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE) jsou reprezentovány jako plně kvalifikovaný název typu.
+  - Základní typy. Pravidelné typy (ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE) jsou reprezentovány jako plně kvalifikovaný název typu.
 
-  - Vnitřní typy (například ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF a ELEMENT_TYPE_VOID) jsou reprezentovány jako plně kvalifikovaný název odpovídající úplného typu. Například System. Int32 nebo System. TypedReference.
+  - Vnitřní typy (například ELEMENT_TYPE_I4, ELEMENT_TYPE_OBJECT, ELEMENT_TYPE_STRING, ELEMENT_TYPE_TYPEDBYREF a ELEMENT_TYPE_VOID) jsou reprezentovány jako plně kvalifikovaný název odpovídajícího úplného typu. Například System.Int32 nebo System.TypedReference.
 
-  - ELEMENT_TYPE_PTR se reprezentuje jako "\*" za upraveným typem.
+  - ELEMENT_TYPE_PTR je reprezentována jako '\*" za změněný typ.
 
-  - ELEMENT_TYPE_BYREF se reprezentuje jako "\@" za upraveným typem.
+  - ELEMENT_TYPE_BYREF je reprezentovánjako '\@' následující změněný typ.
 
-  - ELEMENT_TYPE_PINNED je reprezentovaná jako "^" za upraveným typem. C# Kompilátor to nikdy negeneruje.
+  - ELEMENT_TYPE_PINNED je reprezentován jako ^' za změněný typ. Kompilátor Jazyka C# nikdy generuje toto.
 
-  - ELEMENT_TYPE_CMOD_REQ se reprezentuje jako&#124;a plně kvalifikovaný název třídy modifikátoru po změněném typu. C# Kompilátor to nikdy negeneruje.
+  - ELEMENT_TYPE_CMOD_REQ je reprezentován jako "&#124;" a plně kvalifikovaný název modifikátortřídy, následující změněný typ. Kompilátor Jazyka C# nikdy generuje toto.
 
-  - ELEMENT_TYPE_CMOD_OPT je reprezentována jako '! ' a plně kvalifikovaný název třídy modifikátoru za upraveným typem.
+  - ELEMENT_TYPE_CMOD_OPT je reprezentován jako '!' a plně kvalifikovaný název modifikátortřídy, následující změněný typ.
 
-  - ELEMENT_TYPE_SZARRAY je reprezentována jako "[]" za typem elementu pole.
+  - ELEMENT_TYPE_SZARRAY je reprezentován jako "[]" za typem prvku pole.
 
-  - ELEMENT_TYPE_GENERICARRAY je reprezentována jako "[?]" za typem elementu pole. C# Kompilátor to nikdy negeneruje.
+  - ELEMENT_TYPE_GENERICARRAY je reprezentován jako "[?]" za typem prvku pole. Kompilátor Jazyka C# nikdy generuje toto.
 
-  - ELEMENT_TYPE_ARRAY se reprezentuje jako [*lowerbound*:`size`,*lowerbound*:`size`], kde počet čárek je Rank-1 a dolní meze a velikost každé dimenze, pokud jsou známé, jsou reprezentovány v desítkové soustavě. Pokud není zadaná dolní mez nebo velikost, je tato hodnota jednoduše vynechána. Pokud je spodní mez a velikost pro konkrétní dimenzi vynechána, je vynechána i znak ': '. Například dvojrozměrné pole s 1 jako dolní meze a nespecifikované velikosti je [1:, 1:].
+  - ELEMENT_TYPE_ARRAY je reprezentovánjako`size`[*lowerbound*: ,*lowerbound*:`size`], kde počet čárek je pořadí - 1 a dolní hranice a velikost každé dimenze, pokud jsou známy, jsou reprezentovány v desítkové min. Pokud není zadána dolní mez nebo velikost, je jednoduše vynechána. Pokud jsou dolní mez a velikost pro určitou dimenzi vynechány, je vynecháno také ":". Například dvourozměrné pole s 1 jako dolní hranice a nespecifikované velikosti je [1:,1:].
 
-  - ELEMENT_TYPE_FNPTR je reprezentována jako "= FUNC:`type`(*Signature*)", kde `type` je návratový typ a *Signatura* je argumenty metody. Nejsou-li žádné argumenty, jsou vynechány kulaté závorky. C# Kompilátor to nikdy negeneruje.
+  - ELEMENT_TYPE_FNPTR je reprezentován jako`type`"=FUNC: `type` (*podpis*)", kde je návratový typ a *podpis* je argumenty metody. Pokud neexistují žádné argumenty, závorky jsou vynechány. Kompilátor Jazyka C# nikdy generuje toto.
 
-    Následující komponenty signatur nejsou reprezentovány, protože nejsou nikdy použity pro odlišení přetížených metod:
+    Následující součásti podpisu nejsou reprezentovány, protože se nikdy nepoužívají k rozlišování přetížených metod:
 
-  - konvence volání
+  - Konvenci
 
   - návratový typ
 
   - ELEMENT_TYPE_SENTINEL
 
-- U operátorů převodu (op_Implicit a op_Explicit) je návratová hodnota metody zakódována jako znak ~ následovaný návratovým typem, jak je kódován výše.
+- Pouze pro operátory převodu (op_Implicit a op_Explicit) je vrácená hodnota metody kódována jako '~' následovaná návratovým typem, jak je kódováno výše.
 
-- Pro obecné typy je název typu následován zpětným voláním a pak číslem, které označuje počet parametrů obecného typu. Příklad:
+- U obecných typů následuje název typu backtick a potom číslo, které označuje počet parametrů obecného typu. Například:
 
-     ``<member name="T:SampleClass`2">`` je značka pro typ, který je definován jako `public class SampleClass<T, U>`.
+     ``<member name="T:SampleClass`2">``je značka pro typ, který `public class SampleClass<T, U>`je definován jako .
 
-     Pro metody, které přibírají obecné typy jako parametry, jsou parametry obecného typu zadány jako čísla, která začínají značkami zaškrtnutí (například \`0\`1). Každé číslo představující zápis pole založený na nule pro obecné parametry typu.
+     Pro metody, které berou obecné typy jako parametry, jsou parametry obecného \`typu\`určeny jako čísla, která jsou označena zpětnými značkami (například 0, 1). Každé číslo představující zápis pole s nulou pro obecné parametry typu.
 
 ## <a name="examples"></a>Příklady
 
-Následující příklady znázorňují, jak se generují řetězce ID pro třídu a její členy:
+Následující příklady ukazují, jak by byly generovány řetězce ID pro třídu a její členy:
 
 [!code-csharp[csProgGuidePointers#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers.cs#21)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [-doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
-- [Dokumentační komentáře XML](./index.md)
+- [Průvodce programováním v C#](../index.md)
+- [-doc (možnosti kompilátoru Jazyka C#)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Komentáře dokumentace XML](./index.md)

@@ -1,5 +1,5 @@
 ---
-title: Průvodce C# programováním <typeparamref>
+title: <typeparamref>- Průvodce programováním jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - typeparamref
@@ -8,13 +8,13 @@ helpviewer_keywords:
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
 ms.openlocfilehash: 266eadad322fd3c4167c7a911cb57ef1e1333012
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76789662"
 ---
-# <a name="typeparamref-c-programming-guide"></a>\<typeparamref > (C# Průvodce programováním)
+# <a name="typeparamref-c-programming-guide"></a>\<typeparamref> (průvodce programováním jazyka C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,21 +26,21 @@ ms.locfileid: "76789662"
 
 - `name`
 
-  Název parametru typu. Název uzavřete do uvozovek ("").
+  Název parametru typu. Název uzavřete do uvozovek (" ").
 
 ## <a name="remarks"></a>Poznámky
 
-Další informace o parametrech typu v obecných typech a metodách naleznete v tématu [generické](../generics/index.md)typy.
+Další informace o parametrech typu v obecných typech a metodách naleznete v [tématu Generics](../generics/index.md).
 
-Pomocí této značky můžete uživatelům souboru dokumentace povolit formátování určitého slova nějakým způsobem, například kurzívou.
+Pomocí této značky můžete spotřebitelům souboru dokumentace umožnit formátovat slovo nějakým odlišným způsobem, například kurzívou.
 
-Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
+Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
 
 ## <a name="example"></a>Příklad
 
 [!code-csharp[csProgGuideDocComments#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#13)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

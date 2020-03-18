@@ -1,5 +1,5 @@
 ---
-title: Průvodce C# programováním <exception>
+title: <exception>- Průvodce programováním jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - exception
@@ -9,13 +9,13 @@ helpviewer_keywords:
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
 ms.openlocfilehash: 14318ac0b0cdf781d0488eecaf934879017d91f6
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76789807"
 ---
-# <a name="exception-c-programming-guide"></a>> \<výjimky (C# Průvodce programováním)
+# <a name="exception-c-programming-guide"></a>\<výjimka> (průvodce programováním Jazyka C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,27 +27,27 @@ ms.locfileid: "76789807"
 
 - cref = " `member`"
 
-  Odkaz na výjimku, která je k dispozici z aktuálního prostředí kompilace. Kompilátor kontroluje, zda daná výjimka existuje, a překládá `member` na název kanonického prvku ve výstupním souboru XML. `member` musí být v uvozovkách ("").
+  Odkaz na výjimku, která je k dispozici z aktuálního prostředí kompilace. Kompilátor zkontroluje, zda daná `member` výjimka existuje, a překládá se do názvu kanonického prvku ve výstupním XML. `member`musí být uvedeny v uvozovkách (" ").
 
-  Další informace o tom, jak formátovat `member` pro odkazování na obecný typ, naleznete v tématu [zpracování souboru XML](processing-the-xml-file.md).
+  Další informace o formátování `member` pro odkaz na obecný typ naleznete [v tématu Zpracování souboru XML](processing-the-xml-file.md).
 
 - `description`
 
-  Popis výjimky
+  Popis výjimky.
 
 ## <a name="remarks"></a>Poznámky
 
-Značka > \<výjimky umožňuje určit, které výjimky mohou být vyvolány. Tato značka se dá použít na definice pro metody, vlastnosti, události a indexery.
+Značka \<> výjimky umožňuje určit, které výjimky mohou být vyvolány. Tuto značku lze použít pro definice metod, vlastností, událostí a indexerů.
 
-Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
+Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
 
-Další informace o zpracování výjimek naleznete v tématu [výjimky a zpracování výjimek](../exceptions/index.md).
+Další informace o zpracování výjimek naleznete v [tématu Výjimky a zpracování výjimek](../exceptions/index.md).
 
 ## <a name="example"></a>Příklad
 
 [!code-csharp[csProgGuideDocComments#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#4)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [Doporučené značky pro dokumentační komentáře](recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](recommended-tags-for-documentation-comments.md)

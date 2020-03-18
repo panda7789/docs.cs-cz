@@ -3,26 +3,26 @@ title: Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
 ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345759"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)
 
-Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
+Tento příklad ukazuje, jak sloučit data z různých zdrojů do posloupnosti nových typů.
 
 > [!NOTE]
-> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která jsou stále v databázi. Takové spojení mezi doménami může vracet nedefinované výsledky z důvodu různých způsobů, kterými je možné definovat operace join pro databázové dotazy a jiné typy zdrojů. Kromě toho existuje riziko, že taková operace by mohla způsobit výjimku z důvodu nedostatku paměti, pokud je objem dat v databázi dostatečně velký. Chcete-li spojit data z databáze s daty v paměti, nejdříve zavolejte `ToList` nebo `ToArray` na dotaz databáze a pak proveďte spojení se vrácenou kolekcí.
+> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která je stále v databázi. Taková spojení mezi doménami mohou přinést nedefinované výsledky z důvodu různých způsobů, jak mohou být operace spojení definovány pro databázové dotazy a jiné typy zdrojů. Navíc existuje riziko, že taková operace může způsobit výjimku z důvodu nedostatku paměti, pokud je dostatečně velké množství dat v databázi. Chcete-li připojit data z databáze k `ToList` datům v paměti, nejprve volat nebo `ToArray` v databázovém dotazu a potom provést spojení na vrácené kolekci.
 
 ## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-Zkopírujte soubory Names. csv a výsledků. CSV do složky projektu, jak je popsáno v tématu [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md).
+Zkopírujte soubory names.csv a scores.csv do složky projektu, jak je popsáno v části [Jak se připojit k obsahu z odlišných souborů (LINQ) (C#).](./how-to-join-content-from-dissimilar-files-linq.md)
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených dat ze dvou kolekcí v paměti řetězců, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména a ID studentů a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušek. ID se používá jako cizí klíč.
+Následující příklad ukazuje, jak použít `Student` pojmenovaný typ k ukládání sloučených dat ze dvou kolekcí řetězců v paměti, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména studentů a ID a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři výsledky zkoušky. ID se používá jako cizí klíč.
 
 ```csharp
 using System;
@@ -107,9 +107,9 @@ class PopulateCollection
  */
 ```
 
-V klauzuli [Select](../../../language-reference/keywords/select-clause.md) se inicializátor objektu používá k vytvoření instance každého nového objektu `Student` pomocí dat z těchto dvou zdrojů.
+V [select](../../../language-reference/keywords/select-clause.md) klauzule inicializační objekt se používá `Student` k vytvoření instance každý nový objekt pomocí dat ze dvou zdrojů.
 
-Pokud nepotřebujete ukládat výsledky dotazu, anonymní typy můžou být vhodnější než pojmenované typy. Pojmenované typy jsou požadovány, Pokud předáte výsledky dotazu mimo metodu, ve které je dotaz proveden. Následující příklad provádí stejný úkol jako předchozí příklad, ale používá anonymní typy namísto pojmenovaných typů:
+Pokud není třeba ukládat výsledky dotazu, anonymní typy mohou být pohodlnější než pojmenované typy. Pojmenované typy jsou vyžadovány, pokud předáte výsledky dotazu mimo metodu, ve které je dotaz spuštěn. Následující příklad provede stejnou úlohu jako v předchozím příkladu, ale místo pojmenovaných typů používá anonymní typy:
 
 ```csharp
 // Merge the data sources by using an anonymous type.
@@ -139,7 +139,7 @@ foreach (var student in queryNamesScores2)
 }
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
 - [Inicializátory objektu a kolekce](../../classes-and-structs/object-and-collection-initializers.md)

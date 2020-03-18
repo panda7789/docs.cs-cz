@@ -1,5 +1,5 @@
 ---
-title: Oddělovače pro dokumentační značky – C# Průvodce programováním
+title: Oddělovače pro značky dokumentace – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML [C#], delimiters
@@ -7,38 +7,38 @@ helpviewer_keywords:
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
 ms.openlocfilehash: dd4ddb3b324bd6d235efb541c90875dbe9ed4c2d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76789821"
 ---
-# <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro dokumentační značky (C# Průvodce programováním)
+# <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro značky dokumentace (průvodce programováním jazyka C#)
 
-Použití komentářů dokumentu XML vyžaduje oddělovače, které označují kompilátoru, kde komentář k dokumentaci začíná a končí. Pomocí značek dokumentace XML můžete použít následující typy oddělovačů:
+Použití xml doc komentáře vyžaduje oddělovače, které označují kompilátoru, kde komentář dokumentace začíná a končí. S tagy dokumentace XML můžete použít následující typy oddělovačů:
 
 - `///`
 
-  Jeden řádek oddělovače. Jedná se o formulář, který je zobrazen v příkladech dokumentace a který se C# používá v šablonách Visual Project. Pokud je za oddělovačem mezera, tento znak není zahrnutý ve výstupu XML.
+  Jednořádkový oddělovač. Toto je formulář, který je zobrazen v příkladech dokumentace a používá visual c# šablony projektu. Pokud je za oddělovačem mezera, není tento znak zahrnut do výstupu XML.
 
   > [!NOTE]
-  > Integrované vývojové prostředí (IDE) sady Visual Studio obsahuje funkci s názvem úpravy inteligentních komentářů, která automaticky vkládá \<souhrn > a \</Summary > značky a přesune kurzor do těchto značek po zadání `///` oddělovače v editoru kódu. Tuto funkci můžete zapnout nebo vypnout v [dialogovém okně Možnosti](/visualstudio/ide/reference/options-text-editor-csharp-advanced).
+  > IDE sady Visual Studio má funkci nazvanou Inteligentní \<úpravy \<komentářů, která automaticky vloží značky souhrnných `///`> a /summary> a přesune kurzor v rámci těchto značek po zadání oddělovače v Editoru kódu. Tuto funkci můžete zapnout nebo vypnout v [dialogovém okně Možnosti](/visualstudio/ide/reference/options-text-editor-csharp-advanced).
   
 - `/** */`
 
-  Víceřádkové oddělovače.
+  Vícesměrové oddělovače.
 
-  Existují určitá pravidla formátování, která se použijí při použití oddělovačů `/** */`:
+  Při použití `/** */` oddělovačů je třeba dodržovat určitá pravidla formátování:
   
-  - Na řádku, který obsahuje oddělovač `/**`, pokud je zbývající část řádku mezera, řádek není zpracován pro komentáře. Je-li první znak za oddělovačem `/**` prázdný znak, bude mezera ignorována a zbytek řádku bude zpracován. V opačném případě bude celý text řádku po `/**` oddělovači zpracován jako součást komentáře.
+  - Na řádku, který `/**` obsahuje oddělovač, pokud je zbytek řádku prázdné místo, řádek není zpracován pro komentáře. Pokud je první `/**` znak po oddělovači prázdné místo, tento znak prázdného místa je ignorován a zbytek řádku je zpracován. V opačném případě je celý `/**` text řádku po oddělovači zpracován jako součást komentáře.
 
-  - Pokud je v řádku, který obsahuje oddělovač `*/`, pouze prázdné místo do oddělovače `*/`, tento řádek je ignorován. V opačném případě je text na řádku až do oddělovače `*/` zpracován jako součást komentáře v souladu s pravidly pro porovnávání vzorů popsanými v následující odrážce.
+  - Na řádku, který `*/` obsahuje oddělovač, pokud je pouze `*/` prázdné místo až k oddělovači, tento řádek je ignorován. V opačném případě je text `*/` na řádku až k oddělovači zpracován jako součást komentáře, s výhradou pravidel pro porovnávání vzorů popsaných v následující odrážce.
   
-  - Pro řádky po jednom, který začíná oddělovačem `/**`, kompilátor hledá společný vzor na začátku každého řádku. Vzor se může skládat z volitelného prázdného místa a hvězdičky (`*`) následovaný více volitelnými prázdnými znaky. Pokud kompilátor najde společný vzor na začátku každého řádku, který nezačíná oddělovačem `/**` nebo oddělovačem `*/`, ignoruje tento model pro každý řádek.
+  - Pro řádky za ten, který `/**` začíná oddělovač, kompilátor hledá společný vzor na začátku každého řádku. Vzorek se může skládat z volitelného`*`prázdného místa a hvězdičky ( ), následované volitelným prázdném místem. Pokud kompilátor najde společný vzor na začátku každého řádku, který nezačíná `/**` oddělovač nebo `*/` oddělovač, ignoruje tento vzor pro každý řádek.
 
-  Tato pravidla ilustrují následující příklady.
+  Následující příklady ilustrují tato pravidla.
 
-  - Jediná část následujícího komentáře, který bude zpracována, je řádek, který začíná na `<summary>`. Tři formáty značek vytváří stejné komentáře.
+  - Jediná část následující poznámky, která bude zpracována, je `<summary>`řádek, který začíná na . Tři formáty značek vytvářejí stejné komentáře.
 
     ```csharp
     /** <summary>text</summary> */
@@ -52,7 +52,7 @@ Použití komentářů dokumentu XML vyžaduje oddělovače, které označují k
     */
     ```
 
-  - Kompilátor identifikuje běžný vzor "\*" na začátku druhého a třetího řádku. Vzorek není zahrnut ve výstupu.
+  - Kompilátor identifikuje společný vzor \* " " na začátku druhého a třetího řádků. Vzor není součástí výstupu.
 
     ```csharp
     /**
@@ -60,7 +60,7 @@ Použití komentářů dokumentu XML vyžaduje oddělovače, které označují k
      * text </summary>*/
     ```
 
-  - Kompilátor nenajde žádný společný vzor v následujícím komentáři, protože druhý znak na třetím řádku není hvězdička. Proto je veškerý text na druhém a třetím řádku zpracován jako součást komentáře.
+  - Kompilátor nenajde žádný společný vzor v následující komentář, protože druhý znak na třetím řádku není hvězdičkou. Proto je veškerý text na druhém a třetím řádku zpracován jako součást komentáře.
 
     ```csharp
     /**
@@ -69,7 +69,7 @@ Použití komentářů dokumentu XML vyžaduje oddělovače, které označují k
     */
     ```
 
-  - Kompilátor nenajde z následujících komentářů žádný vzor, ze dvou důvodů. Za prvé je počet mezer před hvězdičkou nekonzistentní. Za druhé, pátá čára začíná tabulátorem, který se neshoduje s mezerami. Proto se veškerý text z řádků dvou až pěti zpracovává jako součást komentáře.
+  - Kompilátor nenajde žádný vzor v následující komentář ze dvou důvodů. Za prvé, počet mezer před hvězdičkou není konzistentní. Za druhé, pátý řádek začíná tabulátorem, který neodpovídá mezerám. Proto je veškerý text z řádků dva až pět zpracován jako součást komentáře.
 
     <!-- markdownlint-disable MD010 -->
     ```csharp
@@ -82,8 +82,8 @@ Použití komentářů dokumentu XML vyžaduje oddělovače, které označují k
     ```
     <!-- markdownlint-enable MD010 -->
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [Dokumentační komentáře XML](./index.md)
-- [-doc (C# možnosti kompilátoru)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Průvodce programováním v C#](../index.md)
+- [Komentáře dokumentace XML](./index.md)
+- [-doc (možnosti kompilátoru Jazyka C#)](../../language-reference/compiler-options/doc-compiler-option.md)

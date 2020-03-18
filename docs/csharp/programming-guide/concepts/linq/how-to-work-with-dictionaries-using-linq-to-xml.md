@@ -1,19 +1,19 @@
 ---
-title: Jak pracovat se slovníky pomocí LINQ to XML (C#)
+title: Jak pracovat se slovníky pomocí LINQ na XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
 ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347229"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Jak pracovat se slovníky pomocí LINQ to XML (C#)
-Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Jak pracovat se slovníky pomocí LINQ na XML (C#)
+Často je vhodné převést různé datové struktury na XML a XML zpět na jiné datové struktury. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem a <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá forma konstrukce funkčnosti, ve které se dotazují projekty nové <xref:System.Xml.Linq.XElement> objekty a výsledná kolekce se předává jako argument konstruktoru kořenového objektu <xref:System.Xml.Linq.XElement>.  
+ Tento příklad používá formu funkční konstrukce, ve <xref:System.Xml.Linq.XElement> kterém dotaz promítá nové objekty a výsledná <xref:System.Xml.Linq.XElement> kolekce je předána jako argument konstruktoru kořenového objektu.  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  

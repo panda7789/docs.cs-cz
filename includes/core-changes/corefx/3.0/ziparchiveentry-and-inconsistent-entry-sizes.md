@@ -1,30 +1,30 @@
 ---
 ms.openlocfilehash: 9520f8c6b6671917f5694bc602293a00e2dab82d
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568074"
 ---
-### <a name="ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes"></a>ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.
+### <a name="ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes"></a>ZipArchiveEntry již zpracovává archivy s nekonzistentními velikostmi položek
 
-Archivy zip uvádějí komprimovanou velikost i nekomprimovanou velikost v centrálním adresáři a v místní hlavičce.  Samotná data samotného záznamu také označují jeho velikost.  V .NET Core 2,2 a dřívějších verzích se tyto hodnoty nikdy nekontrolovaly konzistence. Počínaje .NET Core 3,0 jsou teď.
+Zip archivy seznam jak komprimované velikosti a nekomprimované velikosti v centrálním adresáři a místní záhlaví.  Vstupní data sama také označuje jeho velikost.  V rozhraní .NET Core 2.2 a starších verzích nebyly tyto hodnoty nikdy kontrolovány na konzistenci. Počínaje rozhraním .NET Core 3.0 nyní jsou.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V .NET Core 2,2 a starších verzích <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> úspěšná, i když místní hlavička odsouhlasí s centrálním hlavičkou souboru ZIP. Data se dekomprimuje, dokud se nedosáhne konce zkomprimovaného datového proudu, a to i v případě, že jeho délka přesáhne velikost nekomprimovaného souboru, která je uvedená v centrálním adresáři/místní hlavičce.
+V rozhraní .NET Core 2.2 <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> a starších verzích se daří i v případě, že místní záhlaví nesouhlasí s centrální záhlaví souboru zip. Data jsou dekomprimována až do dosažení konce komprimovaného datového proudu, a to i v případě, že jejich délka přesahuje velikost nekomprimovaného souboru uvedenou v centrálním adresáři nebo místní hlavičce.
 
-Počínaje rozhraním .NET Core 3,0 metoda <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> kontroluje, zda se místní hlavička a centrální hlavička dohodnou na komprimovaných a nekomprimovaných velikostech položky.  Pokud tomu tak není, vyvolá metoda <xref:System.IO.InvalidDataException>, pokud místní záhlaví a/nebo seznam popisovačů dat archivu mají velikost, která nesouhlasí s centrálním adresářem souboru ZIP. Při čtení položky se dekomprimovaná data zkrátí na nekomprimovaný soubor, který je uveden v hlavičce.
+Počínaje rozhraním .NET Core <xref:System.IO.Compression.ZipArchiveEntry.Open?displayProperty=nameWithType> 3.0 metoda kontroluje, zda se místní hlavička a centrální hlavička dohodnou na komprimovaných a nekomprimovaných velikostech položky.  Pokud tomu tak není, metoda <xref:System.IO.InvalidDataException> vyvolá pokud je místní záhlaví nebo velikosti seznamu popisovačů dat, které nesouhlasí s centrálním adresářem souboru zip. Při čtení položky jsou dekomprimovaná data zkrácena na nekomprimovanou velikost souboru uvedenou v záhlaví.
 
-Tato změna byla provedena, aby <xref:System.IO.Compression.ZipArchiveEntry> správně představovala velikost svých dat a bylo čteno pouze množství dat.
+Tato změna byla provedena, <xref:System.IO.Compression.ZipArchiveEntry> aby bylo zajištěno, že správně představuje velikost jeho dat a že je přečteno pouze toto množství dat.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Znovu zabalit libovolný archiv zip, který tyto problémy vykazuje.
+Přebalit všechny zip archiv, který vykazuje tyto problémy.
 
 #### <a name="category"></a>Kategorie
 

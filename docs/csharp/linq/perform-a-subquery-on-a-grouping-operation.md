@@ -1,34 +1,34 @@
 ---
-title: Provádění poddotazů na operace seskupení (LINQ v JAZYKU C#)
-description: Jak k provádění poddotazů na operace seskupení pomocí jazyka LINQ v jazyce C#.
+title: Provedení poddotazu na operaci seskupení (LINQ v c#)
+description: Jak provést poddotaz na operaci seskupení pomocí LINQ v C#.
 ms.date: 12/01/2016
 ms.assetid: d75a588e-9b6f-4f37-b195-f99ec8503855
-ms.openlocfilehash: a3757a7d358a310dd1404f85e34178f6e561bcb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fd26f87ad7d5b4892f086bf8c7a34cf19a7f9e02
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688420"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173364"
 ---
 # <a name="perform-a-subquery-on-a-grouping-operation"></a>Provádění poddotazů na skupinách
 
-Tento článek popisuje dva různé způsoby vytvoření dotazu, který seřadí zdroj dat do skupin a potom provede poddotaz v každé skupině jednotlivě. Základní postup v obou příkladech je seskupení zdrojové prvky pomocí *pokračování* s názvem `newGroup`a potom generovat nové poddotaz proti `newGroup`. Tato poddotaz spustí pro každou novou skupinu, která se vytvořila vnější dotaz. Všimněte si, že v tomto konkrétním příkladu závěrečný výstup skupinu, ale plochý sekvence anonymních typů.  
+Tento článek ukazuje dva různé způsoby, jak vytvořit dotaz, který seřazuje zdrojová data do skupin a potom provádí poddotaz na každou skupinu jednotlivě. Základní technikou v každém příkladu je seskupit zdrojové prvky pomocí `newGroup` *pokračování* s názvem `newGroup`a potom generování nového poddotazu proti . Tento poddotaz je spuštěn proti každé nové skupině, která je vytvořena vnějším dotazem. Všimněte si, že v tomto konkrétním příkladu konečný výstup není skupina, ale ploché posloupnosti anonymních typů.  
   
-Další informace o tom, jak skupiny, najdete v části [group – klauzule](../language-reference/keywords/group-clause.md).  
+Další informace o způsobu seskupení naleznete v [tématu group clause](../language-reference/keywords/group-clause.md).  
   
-Další informace o pokračování naleznete v tématu [do](../language-reference/keywords/into.md). Následující příklad používá jako zdroj dat pro strukturu dat v paměti, ale stejné zásady platí i pro jakýkoli druh zdroje dat LINQ.  
+Další informace o pokračování naleznete [v tématu](../language-reference/keywords/into.md). Následující příklad používá jako zdroj dat strukturu dat v paměti, ale stejné zásady platí pro jakýkoli druh zdroje dat LINQ.  
   
 ## <a name="example"></a>Příklad
 
 > [!NOTE]
-> Obsahuje odkazy na objekty, které jsou definovány ve vzorovém kódu v tomto příkladu [dotazování na kolekci objektů](query-a-collection-of-objects.md).
+> Tento příklad obsahuje odkazy na objekty, které jsou definovány v ukázkovém kódu v [aplikaci Query a collection of objects](query-a-collection-of-objects.md).
 
-[!code-csharp[csProgGuideLINQ#23](~/samples/snippets/csharp/concepts/linq/how-to-perform-a-subquery-on-a-grouping-operation_1.cs)] 
+[!code-csharp[csProgGuideLINQ#23](~/samples/snippets/csharp/concepts/linq/how-to-perform-a-subquery-on-a-grouping-operation_1.cs)]
 
-Dotaz ve výše uvedeném fragmentu lze také zapsat pomocí syntaxe metody. Následující fragment kódu obsahuje dotaz sémanticky ekvivalentní napsané pomocí syntaxe metody.
+Dotaz ve výše uvedeném fragmentu výstřižek lze také zapsat pomocí syntaxe metody. Následující fragment kódu má sémanticky ekvivalentní dotaz napsaný pomocí syntaxe metody.
 
 [!code-csharp[csProgGuideLINQ#86](~/samples/snippets/csharp/concepts/linq/how-to-perform-a-subquery-on-a-grouping-operation_2.cs)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [LINQ (Language Integrated Query)](index.md)

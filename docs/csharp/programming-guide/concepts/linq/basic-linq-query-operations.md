@@ -18,90 +18,90 @@ helpviewer_keywords:
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
 ms.openlocfilehash: 91c038303c1ad7c2530964d3102aae49090c4c2a
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635935"
 ---
 # <a name="basic-linq-query-operations-c"></a>Základní operace dotazů LINQ (C#)
-Toto téma poskytuje stručný úvod do výrazů LINQ Query a některé z typických typů operací, které v dotazu provedete. Podrobnější informace najdete v následujících tématech:  
+Toto téma poskytuje stručný úvod do výrazy dotazu LINQ a některé typické druhy operací, které provádíte v dotazu. Podrobnější informace naleznete v následujících tématech:  
   
- [Výrazy dotazů LINQ](../../../linq/index.md)  
+ [Výrazy dotazu LINQ](../../../linq/index.md)  
   
- [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)  
+ [Standardní operátory dotazů – přehled (C#)](./standard-query-operators-overview.md)  
   
- [Návod: zápis dotazů vC#](./walkthrough-writing-queries-linq.md)  
+ [Návod: Psaní dotazů v C #](./walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
-> Pokud už jste obeznámeni s dotazovacím jazykem, jako je SQL nebo XQuery, můžete většinu tohoto tématu přeskočit. Přečtěte si o klauzuli`from` v další části, kde se dozvíte o pořadí klauzulí ve výrazech dotazů LINQ.  
+> Pokud již znáte dotazovací jazyk, jako je SQL nebo XQuery, můžete většinu tohoto tématu přeskočit. Přečtěte si`from` o "klauzuli" v další části se dozvíte o pořadí klauzulí ve výrazech dotazu LINQ.  
   
 ## <a name="obtaining-a-data-source"></a>Získání zdroje dat  
- V dotazu LINQ je prvním krokem určení zdroje dat. V C# nástroji as ve většině programovacích jazyků musí být před použitím deklarována proměnná. V dotazu LINQ je klauzule `from` první, aby se zavedl zdroj dat (`customers`) a *Proměnná rozsahu* (`cust`).  
+ V dotazu LINQ je prvním krokem určení zdroje dat. V jazyce C# jako ve většině programovacích jazyků musí být proměnná deklarována před použitím. V dotazu LINQ `from` je klauzule na prvním místě, aby bylo možné zavést zdroj dat (`customers`) a *proměnnou rozsahu* (`cust`).  
   
  [!code-csharp[csLINQGettingStarted#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#23)]  
   
- Proměnná rozsahu je stejná jako proměnná iterace ve smyčce `foreach`, s tím rozdílem, že ve výrazu dotazu nedochází k žádným skutečným iteracím. Při spuštění dotazu bude proměnná rozsahu sloužit jako odkaz na každý následný prvek v `customers`. Protože kompilátor může odvodit typ `cust`, nemusíte ho explicitně určovat. Další proměnné rozsahu mohou být zavedeny klauzulí `let`. Další informace naleznete v [klauzuli let](../../../language-reference/keywords/let-clause.md).  
+ Proměnná rozsahu je jako iterace proměnné ve smyčce s tím rozdílem, `foreach` že žádná skutečná iterace dochází ve výrazu dotazu. Při spuštění dotazu bude proměnná rozsahu sloužit jako odkaz `customers`na každý následující prvek v aplikaci . Vzhledem k tomu, že `cust`kompilátor můžete odvodit typ , není nutné zadat explicitně. Další proměnné rozsahu mohou být `let` zavedeny klauzulí. Další informace naleznete v tématu [let klauzule](../../../language-reference/keywords/let-clause.md).  
   
 > [!NOTE]
-> U neobecných zdrojů dat, jako je například <xref:System.Collections.ArrayList>, musí být proměnná rozsahu explicitně typu. Další informace najdete v tématu [Postup dotazování objektu ArrayList pomocí LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) a [klauzule FROM](../../../language-reference/keywords/from-clause.md).  
+> Pro neobecné zdroje dat, jako <xref:System.Collections.ArrayList>je například proměnná rozsahu, musí být explicitně zadána. Další informace naleznete v [tématu Jak dotaz ArrayList s LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) a [z klauzule](../../../language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrování  
- Pravděpodobně nejběžnější operace dotazu je použití filtru ve formě logického výrazu. Filtr způsobí, že dotaz vrátí pouze prvky, pro které je výraz pravdivý. Výsledek je vytvořen pomocí klauzule `where`. Filtr v důsledku určuje, které prvky mají být vyloučeny ze zdrojové sekvence. V následujícím příkladu jsou vráceny pouze `customers`, kteří mají adresu v Londýně.  
+ Pravděpodobně nejběžnější operace dotazu je použít filtr ve formě logického výrazu. Filtr způsobí, že dotaz vrátí pouze ty prvky, pro které je výraz pravdivý. Výsledek je vytvořen pomocí `where` klauzule. Filtr v platnost určuje, které prvky vyloučit ze zdrojové sekvence. V následujícím příkladu `customers` jsou vráceny pouze ty, kteří mají adresu v Londýně.  
   
  [!code-csharp[csLINQGettingStarted#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#24)]  
   
- Pomocí známých C# logických `AND` a operátorů `OR` můžete použít libovolný počet výrazů filtru podle potřeby v klauzuli `where`. Pokud například chcete vracet pouze zákazníky z "Londýn" `AND` jejichž název je "Devon", měli byste napsat následující kód:  
+ Můžete použít známé C# `AND` `OR` logické a operátory použít tolik výrazy filtru podle potřeby v klauzuli. `where` Chcete-li například vrátit pouze `AND` zákazníky z "Londýna", jehož název je "Devon", napíšete následující kód:  
   
  [!code-csharp[csLINQGettingStarted#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#25)]  
   
- Pokud chcete vracet zákazníky z Brna nebo Paříž, napište následující kód:  
+ Chcete-li vrátit zákazníkům z Londýna nebo Paříže, napište následující kód:  
   
  [!code-csharp[csLINQGettingStarted#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#26)]  
   
- Další informace naleznete v tématu [Where klauzule](../../../language-reference/keywords/where-clause.md).  
+ Další informace naleznete v tématu [where clause](../../../language-reference/keywords/where-clause.md).  
   
 ## <a name="ordering"></a>Řazení  
- Často je vhodné řazení vrácených dat. Klauzule `orderby` způsobí, že prvky v vrácené sekvenci budou seřazeny podle výchozí porovnávací metody pro typ, který se seřadí. Například následující dotaz lze rozšířit pro řazení výsledků na základě vlastnosti `Name`. Vzhledem k tomu, že `Name` je řetězec, výchozí porovnávání provede abecední řazení z A do Z.  
+ Často je vhodné seřadit vrácená data. Klauzule `orderby` způsobí, že prvky ve vrácené sekvenci budou seřazeny podle výchozího porovnávání pro typ, který je seřazen. Například následující dotaz lze rozšířit seřadit výsledky `Name` na základě vlastnosti. Protože `Name` je řetězec, výchozí porovnávání provádí abecední řazení od A do Z.  
   
  [!code-csharp[csLINQGettingStarted#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#27)]  
   
- Pro seřazení výsledků v opačném pořadí z Z na a použijte klauzuli `orderby…descending`.  
+ Chcete-li výsledky seřadit v opačném pořadí `orderby…descending` od Z do A, použijte klauzuli.  
   
- Další informace naleznete v tématu [OrderBy klauzule](../../../language-reference/keywords/orderby-clause.md).  
+ Další informace naleznete v [tématu orderby klauzule](../../../language-reference/keywords/orderby-clause.md).  
   
 ## <a name="grouping"></a>Seskupování  
- Klauzule `group` umožňuje seskupit výsledky podle zadaného klíče. Můžete například určit, že by měly být výsledky seskupené podle `City` tak, že všichni zákazníci z Londýna nebo Paříž jsou v jednotlivých skupinách. V tomto případě je `cust.City` klíč.  
+ Klauzule `group` umožňuje seskupit výsledky na základě zadaného klíče. Můžete například určit, že výsledky by `City` měly být seskupeny tak, aby všichni zákazníci z Londýna nebo Paříže byli v jednotlivých skupinách. V tomto `cust.City` případě je klíč.  
   
  [!code-csharp[csLINQGettingStarted#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#28)]  
   
- Když ukončíte dotaz s klauzulí `group`, vaše výsledky budou mít formu seznamu seznamů. Každý prvek v seznamu je objekt, který má `Key` člen a seznam elementů, které jsou seskupeny pod tímto klíčem. Při iteraci na dotaz, který vytváří sekvenci skupin, je nutné použít vnořenou smyčku `foreach`. Vnější smyčka projde každou skupinu a vnitřní smyčka projde členy každé skupiny.  
+ Když dotaz ukončíte `group` klauzulí, budou mít výsledky podobu seznamu seznamů. Každý prvek v seznamu je objekt, který má `Key` člen a seznam prvků, které jsou seskupeny pod tímto klíčem. Při itetu přes dotaz, který vytváří posloupnost skupin, `foreach` je nutné použít vnořené smyčky. Vnější smyčka iterát přes každou skupinu a vnitřní smyčka iterates nad členy každé skupiny.  
   
- Pokud musíte odkazovat na výsledky operace skupiny, můžete pomocí klíčového slova `into` vytvořit identifikátor, který lze dotazovat dále. Následující dotaz vrátí pouze skupiny, které obsahují více než dva zákazníky:  
+ Pokud je nutné odkazovat na výsledky operace skupiny, můžete použít `into` klíčové slovo k vytvoření identifikátoru, který lze dále dotazovat. Následující dotaz vrátí pouze ty skupiny, které obsahují více než dva zákazníky:  
   
  [!code-csharp[csLINQGettingStarted#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#29)]  
   
- Další informace naleznete v tématu [Group](../../../language-reference/keywords/group-clause.md)Group.  
+ Další informace naleznete v tématu [group clause](../../../language-reference/keywords/group-clause.md).  
   
-## <a name="joining"></a>Spojování  
- Operace join vytvořte přidružení mezi sekvencemi, které nejsou explicitně modelovány ve zdrojích dat. Můžete například provést připojení a vyhledat všechny zákazníky a distributory, kteří mají stejné umístění. V jazyce LINQ klauzule `join` vždy funguje na kolekcích objektů namísto přímo v databázových tabulkách.  
+## <a name="joining"></a>Připojení  
+ Operace spojení vytvářejí přidružení mezi sekvencemi, které nejsou explicitně modelovány ve zdrojích dat. Můžete například provést spojení a najít všechny zákazníky a distributory, kteří mají stejné umístění. V LINQ `join` klauzule vždy pracuje proti kolekce objektů namísto tabulky databáze přímo.  
   
  [!code-csharp[csLINQGettingStarted#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#36)]  
   
- V LINQ není nutné používat `join` tak často jako v jazyce SQL, protože cizí klíče v technologii LINQ jsou reprezentovány v objektovém modelu jako vlastnosti, které obsahují kolekci položek. Například objekt `Customer` obsahuje kolekci objektů `Order`. Místo toho, abyste mohli provádět spojení, získáte přístup k objednávkám pomocí zápisu teček:  
+ V LINQ není třeba používat `join` tak často jako v SQL, protože cizí klíče v LINQ jsou reprezentovány v objektovém modelu jako vlastnosti, které drží kolekci položek. Například `Customer` objekt obsahuje kolekci `Order` objektů. Místo provedení spojení přistupujete k příkazům pomocí tečkového zápisu:  
   
 ```csharp
 from order in Customer.Orders...  
 ```  
   
- Další informace najdete v tématu [klauzule JOIN](../../../language-reference/keywords/join-clause.md).  
+ Další informace naleznete v tématu [join clause](../../../language-reference/keywords/join-clause.md).  
   
 ## <a name="selecting-projections"></a>Výběr (projekce)  
- Klauzule `select` generuje výsledky dotazu a určuje "tvar" nebo typ každého vráceného elementu. Můžete například určit, jestli se výsledky budou skládat z kompletních `Customer` objektů, jenom jednoho člena, podmnožiny členů nebo nějakého jiného typu výsledku založeného na výpočtu nebo vytvoření nového objektu. Když klauzule `select` vytvoří jinou než kopii zdrojového elementu, operace se nazývá *projekce*. Použití projekce k transformaci dat je výkonná schopnost výrazů dotazů LINQ. Další informace najdete v tématu [transformace dat pomocí LINQ (C#)](./data-transformations-with-linq.md) a [klauzule SELECT](../../../language-reference/keywords/select-clause.md).  
+ Klauzule `select` vytváří výsledky dotazu a určuje "tvar" nebo typ každého vráceného prvku. Můžete například určit, zda se výsledky `Customer` budou skládat z úplných objektů, pouze jednoho člena, podmnožiny členů nebo zcela jiného typu výsledku na základě výpočtu nebo vytvoření nového objektu. Když `select` klauzule vytvoří něco jiného než kopii zdrojového prvku, operace se nazývá *projekce*. Použití projekce k transformaci dat je výkonné schopnosti výrazů dotazu LINQ. Další informace naleznete [v tématu transformace dat s LINQ (C#)](./data-transformations-with-linq.md) a [select klauzule](../../../language-reference/keywords/select-clause.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Výrazy dotazů LINQ](../../../linq/index.md)
-- [Návod: zápis dotazů vC#](./walkthrough-writing-queries-linq.md)
+- [Výrazy dotazu LINQ](../../../linq/index.md)
+- [Návod: Psaní dotazů v C #](./walkthrough-writing-queries-linq.md)
 - [Klíčová slova dotazu (LINQ)](../../../language-reference/keywords/query-keywords.md)
 - [Anonymní typy](../../classes-and-structs/anonymous-types.md)

@@ -1,23 +1,23 @@
 ---
 title: Povolení dokončování pomocí tabulátoru
-description: V tomto článku se naučíte, jak povolit dokončování karet pro .NET Core CLI pro PowerShell, bash a zsh.
+description: Tento článek vás naučí, jak povolit dokončení karty pro rozhraní CLI jádra .NET pro Prostředí PowerShell, Bash a zsh.
 author: thraka
 ms.author: adegeo
 ms.date: 11/03/2019
 ms.openlocfilehash: 31328be14811760bc8d7fb527e0d55abfe6b1493
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78156748"
 ---
-# <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Jak povolit dokončování karet pro .NET Core CLI
+# <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Povolení dokončování polí TAB pro rozhraní CLI jádra .NET
 
-**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-Tento článek popisuje, jak nakonfigurovat dokončování karet pro tři prostředí, PowerShell, bash a zsh. Další prostředí naleznete v dokumentaci ke konfiguraci dokončování karet.
+Tento článek popisuje, jak nakonfigurovat dokončení karty pro tři prostředí, PowerShell, Bash a zsh. Další prostředí naleznete v jejich dokumentaci o konfiguraci dokončení karty.
 
-Po nastavení se aktivace karty .NET Core CLI aktivuje zadáním příkazu `dotnet` v prostředí a následným stisknutím klávesy TAB. Aktuální příkazový řádek se odešle do příkazu `dotnet complete` a výsledky se zpracují ve vašem prostředí. Výsledky můžete testovat bez aktivace tabulátoru odesláním nějakého přímo do příkazu `dotnet complete`. Příklad:
+Po nastavení se dokončení karty pro rozhraní příkazového příkazu `dotnet` .NET Core spustí zadáním příkazu do prostředí a stisknutím klávesy TAB. Aktuální příkazový řádek je `dotnet complete` odeslán do příkazu a výsledky jsou zpracovány prostředím. Výsledky můžete otestovat bez povolení dokončení karty `dotnet complete` odesláním něco přímo do příkazu. Například:
 
 ```console
 > dotnet complete "dotnet a"
@@ -28,23 +28,23 @@ migrate
 pack
 ```
 
-Pokud tento příkaz nefunguje, ujistěte se, že je nainstalovaná sada .NET Core 2,0 SDK nebo novější. Pokud je nainstalován, ale tento příkaz stále nefunguje, ujistěte se, že příkaz `dotnet` překládá na verzi .NET Core 2,0 SDK a vyšší. Pomocí příkazu `dotnet --version` můžete zjistit, jakou verzi `dotnet` vaše aktuální cesta překládá. Další informace najdete v tématu [Výběr verze rozhraní .NET Core, která se má použít](../versions/selection.md).
+Pokud tento příkaz nefunguje, ujistěte se, že je nainstalována sada .NET Core 2.0 SDK nebo vyšší. Pokud je nainstalován, ale tento příkaz stále nefunguje, `dotnet` ujistěte se, že příkaz překládá na verzi sady .NET Core 2.0 SDK a vyšší. Pomocí `dotnet --version` příkazu můžete zjistit, na jakou `dotnet` verzi aktuální cesty se pracuje. Další informace naleznete [v tématu Select the .NET Core version to use](../versions/selection.md).
 
 ### <a name="examples"></a>Příklady
 
-Tady je několik příkladů, které doplňování karet nabízí:
+Zde je několik příkladů, co poskytuje dokončení karty:
 
-Vstup                                | stane                                                                     | tím
+Vstup                                | se stává                                                                     | vzhledem k tomu, že klienti
 :------------------------------------|:----------------------------------------------------------------------------|:--------------------------------
-`dotnet a⇥`                          | `dotnet add`                                                                 | `add` je první dílčí příkaz abecedně.
-`dotnet add p⇥`                      | `dotnet add --help`                                                          | Doplňování tabulátoru odpovídá podřetězcům a `--help` je první abecedně.
-`dotnet add p⇥⇥`                    | `dotnet add package`                                                          | Další návrh zobrazíte stisknutím klávesy TAB a podruhé.
-`dotnet add package Microsoft⇥`      | `dotnet add package Microsoft.ApplicationInsights.Web`                      | Výsledky se vrátí abecedně.
-`dotnet remove reference ⇥`          | `dotnet remove reference ..\..\src\OmniSharp.DotNet\OmniSharp.DotNet.csproj` | Dokončování karet je soubor projektu s podporou.
+`dotnet a⇥`                          | `dotnet add`                                                                 | `add`je první podpříkaz, abecedně.
+`dotnet add p⇥`                      | `dotnet add --help`                                                          | Dokončení tabulátoru `--help` odpovídá podřetězcům a je na prvním místě abecedně.
+`dotnet add p⇥⇥`                    | `dotnet add package`                                                          | Stisknutím klávesy tab podruhé vyvoláte další návrh.
+`dotnet add package Microsoft⇥`      | `dotnet add package Microsoft.ApplicationInsights.Web`                      | Výsledky jsou vráceny abecedně.
+`dotnet remove reference ⇥`          | `dotnet remove reference ..\..\src\OmniSharp.DotNet\OmniSharp.DotNet.csproj` | Dokončení karty je vědoma souboru projektu.
 
 ## <a name="powershell"></a>PowerShell
 
-Pokud chcete pro .NET Core CLI přidat do **PowerShellu** tabulátor, vytvořte nebo upravte profil uložený v proměnné `$PROFILE`. Další informace najdete v tématu [jak vytvořit profil](/powershell/module/microsoft.powershell.core/about/about_profiles#how-to-create-a-profile) a profily a [zásady spouštění](/powershell/module/microsoft.powershell.core/about/about_profiles#profiles-and-execution-policy).
+Chcete-li do **prostředí PowerShell** přidat doplnění karty pro rozhraní PŘÍKAZOVÉHO `$PROFILE`PŘÍKAZU jádra rozhraní .NET, vytvořte nebo upravte profil uložený v proměnné . Další informace naleznete v tématu [Jak vytvořit profil](/powershell/module/microsoft.powershell.core/about/about_profiles#how-to-create-a-profile) a [profily a zásady provádění](/powershell/module/microsoft.powershell.core/about/about_profiles#profiles-and-execution-policy).
 
 Do svého profilu přidejte následující kód:
 
@@ -60,7 +60,7 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
 
 ## <a name="bash"></a>bash
 
-Chcete-li do prostředí **bash** pro .NET Core CLI přidat doplňování tabulátoru, přidejte do souboru `.bashrc` následující kód:
+Chcete-li přidat dokompletování karty do **prostředí bash** pro rozhraní `.bashrc` příkazového příkazu .NET Core, přidejte do souboru následující kód:
 
 ```bash
 # bash parameter completion for the dotnet CLI
@@ -81,9 +81,9 @@ _dotnet_bash_complete()
 complete -f -F _dotnet_bash_complete dotnet
 ```
 
-## <a name="zsh"></a>zsh
+## <a name="zsh"></a>Zsh
 
-Chcete-li do prostředí **ZSH** pro .NET Core CLI přidat doplňování tabulátoru, přidejte do souboru `.zshrc` následující kód:
+Chcete-li přidat doplnění karty do **prostředí zsh** pro rozhraní příkazového příkazu .NET Core, přidejte do `.zshrc` souboru následující kód:
 
 ```zsh
 # zsh parameter completion for the dotnet CLI

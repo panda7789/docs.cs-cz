@@ -1,159 +1,159 @@
 ---
 title: Co je nového v .NET Core 2.1
-description: Přečtěte si o nových funkcích, které najdete v .NET Core 2,1.
+description: Další informace o nových funkcích v rozhraní .NET Core 2.1.
 dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 2397bf999ba97fe0c011de180e05be4177894365
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 54ace52fc6a8f4614c1f762b65453979bcb92c7a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239882"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398865"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
-.NET Core 2,1 obsahuje vylepšení a nové funkce v následujících oblastech:
+.NET Core 2.1 obsahuje vylepšení a nové funkce v následujících oblastech:
 
 - [Nástroje](#tooling)
-- [Posunout nahoru](#roll-forward)
+- [Posunout vpřed](#roll-forward)
 - [Nasazení](#deployment)
-- [Sada Compatibility Pack pro Windows](#windows-compatibility-pack)
+- [Sada Kompatibilita systému Windows](#windows-compatibility-pack)
 - [Vylepšení kompilace JIT](#jit-compiler-improvements)
 - [Změny rozhraní API](#api-changes)
 
 ## <a name="tooling"></a>Nástroje
 
-Sada SDK .NET Core 2,1 (v 2.1.300), nástroje, které jsou součástí .NET Core 2,1, obsahují tyto změny a vylepšení:
+Sada .NET Core 2.1 SDK (v 2.1.300), nástroj, který je součástí .NET Core 2.1, obsahuje následující změny a vylepšení:
 
-### <a name="build-performance-improvements"></a>Vylepšení výkonu sestavení
+### <a name="build-performance-improvements"></a>Vytváření vylepšení výkonu
 
-Hlavní zaměření rozhraní .NET Core 2,1 zvyšuje výkon při sestavování, zejména pro přírůstková sestavení. Tato vylepšení výkonu platí pro sestavení příkazového řádku pomocí `dotnet build` a sestavení v aplikaci Visual Studio. Mezi jednotlivé oblasti vylepšení patří:
+Hlavním zaměřením .NET Core 2.1 je zlepšení výkonu sestavení, zejména pro přírůstkové sestavení. Tato vylepšení výkonu platí pro sestavení `dotnet build` příkazového řádku pomocí a sestavení v sadě Visual Studio. Některé jednotlivé oblasti zlepšení patří:
 
-- Pro účely řešení Asset Resolution vyřešte pouze prostředky využívané sestavením místo všech prostředků.
+- Pro řešení aktiv balíčku řešení pouze prostředky používané sestavení, nikoli všechny prostředky.
 
 - Ukládání odkazů na sestavení do mezipaměti.
 
-- Použití dlouhotrvajících serverů sestavení sady SDK, což jsou procesy, které jsou rozloženy mezi jednotlivá `dotnet build` volání. Eliminují potřebu JIT zkompilovat velké bloky kódu při každém spuštění `dotnet build`. Procesy sestavení serveru mohou být automaticky ukončeny pomocí následujícího příkazu:
+- Použití dlouho běžících serverů sestavení sady SDK, což `dotnet build` jsou procesy, které se rozprostírají mezi jednotlivými vyvoláními. Eliminují potřebu JIT kompilovat `dotnet build` velké bloky kódu při každém spuštění. Procesy sestavení serveru lze automaticky ukončit pomocí následujícího příkazu:
 
    ```dotnetcli
    dotnet buildserver shutdown
    ```
 
-### <a name="new-cli-commands"></a>Nové příkazy rozhraní příkazového řádku
+### <a name="new-cli-commands"></a>Nové příkazy příkazu cli
 
-Řada nástrojů, které byly k dispozici pouze pro jednotlivé projekty pomocí [`DotnetCliToolReference`](../tools/extensibility.md) , jsou nyní k dispozici jako součást .NET Core SDK. Mezi tyto nástroje patří:
+Řada nástrojů, které byly k dispozici pouze `DotnetCliToolReference` na základě projektu pomocí jsou nyní k dispozici jako součást .NET Core SDK. Mezi tyto nástroje patří:
 
-- `dotnet watch` poskytuje sledovací proces systému souborů, který čeká na změnu souboru před spuštěním určené sady příkazů. Například následující příkaz automaticky znovu sestaví aktuální projekt a generuje podrobný výstup pokaždé, když se změní soubor:
+- `dotnet watch`Poskytuje sledovací proces systému souborů, který čeká na změnu souboru před provedením určené sady příkazů. Například následující příkaz automaticky znovu vytvoří aktuální projekt a generuje podrobný výstup při každé změně souboru v něm:
 
    ```dotnetcli
    dotnet watch -- --verbose build
    ```
 
-   Poznamenejte si možnost `--`, která předchází možnosti `--verbose`. Omezuje možnosti předané přímo na `dotnet watch` příkaz z argumentů předaných podřízenému procesu `dotnet`. Bez ní se možnost `--verbose` vztahuje na příkaz `dotnet watch`, nikoli na příkaz `dotnet build`.
+   Všimněte `--` si možnosti, která předchází `--verbose` možnost. Vymezuje možnosti `dotnet watch` předané přímo příkazu z `dotnet` argumentů, které jsou předány podřízenému procesu. Bez ní `--verbose` se tato možnost `dotnet watch` vztahuje na `dotnet build` příkaz, nikoli na příkaz.
   
-   Další informace najdete v tématu [vývoj aplikací ASP.NET Core pomocí příkazu dotnet Watch](/aspnet/core/tutorials/dotnet-watch).
+   Další informace najdete [v tématu Vývoj aplikací ASP.NET Core pomocí hodinek Dotnet](/aspnet/core/tutorials/dotnet-watch)Watch .
 
-- `dotnet dev-certs` generuje a spravuje certifikáty používané během vývoje v ASP.NET Corech aplikacích.
+- `dotnet dev-certs`generuje a spravuje certifikáty používané při vývoji v ASP.NET základních aplikacích.
 
-- `dotnet user-secrets` spravuje tajné klíče v úložišti tajného uživatele v ASP.NET Corech aplikacích.
+- `dotnet user-secrets`spravuje tajné klíče v úložišti tajných klíčů uživatele v ASP.NET základních aplikacích.
 
-- `dotnet sql-cache` vytvoří tabulku a indexy v databázi Microsoft SQL Server, která se má použít pro distribuované ukládání do mezipaměti.
+- `dotnet sql-cache`vytvoří tabulku a indexuje v databázi serveru Microsoft SQL Server, která se použije pro distribuované ukládání do mezipaměti.
 
-- `dotnet ef` je nástroj pro správu databází, objektů <xref:Microsoft.EntityFrameworkCore.DbContext> a migrace v aplikacích Entity Framework Core. Další informace najdete v tématu [EF Core nástroje příkazového řádku .NET](/ef/core/miscellaneous/cli/dotnet).
+- `dotnet ef`je nástroj pro správu <xref:Microsoft.EntityFrameworkCore.DbContext> databází, objektů a migrací v aplikacích Core frameworku entit. Další informace naleznete v tématu [EF Core .NET Nástroje příkazového řádku](/ef/core/miscellaneous/cli/dotnet).
 
 ### <a name="global-tools"></a>Globální nástroje
 
-.NET Core 2,1 podporuje *globální nástroje* – tedy vlastní nástroje, které jsou k dispozici globálně z příkazového řádku. Model rozšiřitelnosti v předchozích verzích rozhraní .NET Core, které jsou k dispozici na základě jednotlivých projektů, lze použít pouze pomocí [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
+.NET Core 2.1 podporuje *globální nástroje* – to znamená vlastní nástroje, které jsou k dispozici globálně z příkazového řádku. Model rozšiřitelnosti v předchozích verzích rozhraní .NET Core zpřístupnil `DotnetCliToolReference`vlastní nástroje pro projekt pouze pomocí .
 
-K instalaci globálního nástroje použijte příkaz [dotnet Tool Install](../tools/dotnet-tool-install.md) . Příklad:
+Chcete-li nainstalovat globální nástroj, použijte příkaz [instalace nástroje dotnet.](../tools/dotnet-tool-install.md) Například:
 
 ```dotnetcli
 dotnet tool install -g dotnetsay
 ```
 
-Po instalaci můžete nástroj spustit z příkazového řádku zadáním názvu nástroje. Další informace najdete v tématu [Přehled globálních nástrojů .NET Core](../tools/global-tools.md).
+Po instalaci lze nástroj spustit z příkazového řádku zadáním názvu nástroje. Další informace naleznete v tématu [.NET Core Global Tools overview](../tools/global-tools.md).
 
-### <a name="tool-management-with-the-dotnet-tool-command"></a>Správa nástrojů pomocí příkazu `dotnet tool`
+### <a name="tool-management-with-the-dotnet-tool-command"></a>Správa nástrojů `dotnet tool` pomocí příkazu
 
-V sadě .NET Core 2,1 SDK všechny operace nástrojů používají příkaz `dotnet tool`. K dispozici jsou následující možnosti:
+V sdk.net core 2.1 sdk všechny nástroje operace použít `dotnet tool` příkaz. K dispozici jsou následující možnosti:
 
-- [`dotnet tool install`](../tools/dotnet-tool-install.md) pro instalaci nástroje.
+- [`dotnet tool install`](../tools/dotnet-tool-install.md)pro instalaci nástroje.
 
-- [`dotnet tool update`](../tools/dotnet-tool-update.md) odinstalujte a znovu nainstalujte nástroj, který ji efektivně aktualizuje.
+- [`dotnet tool update`](../tools/dotnet-tool-update.md)odinstalovat a znovu nainstalovat nástroj, který jej účinně aktualizuje.
 
-- [`dotnet tool list`](../tools/dotnet-tool-list.md) k vypsání aktuálně nainstalovaných nástrojů.
+- [`dotnet tool list`](../tools/dotnet-tool-list.md)do seznamu aktuálně nainstalovaných nástrojů.
 
-- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md) k odinstalaci aktuálně nainstalovaných nástrojů.
+- [`dotnet tool uninstall`](../tools/dotnet-tool-uninstall.md)odinstalovat aktuálně nainstalované nástroje.
 
-## <a name="roll-forward"></a>Posunout nahoru
+## <a name="roll-forward"></a>Posunout vpřed
 
-Všechny aplikace .NET Core počínaje platformou .NET Core 2,0 se automaticky předají do nejnovější *dílčí verze* nainstalované v systému.
+Všechny aplikace .NET Core začínající na rozhraní .NET Core 2.0 se automaticky přepínají na nejnovější *dílčí verzi* nainstalovanou v systému.
 
-Od verze .NET Core 2,0 platí, že pokud není k dispozici verze .NET Core, se kterou byla aplikace vytvořena, aplikace se automaticky spustí s nejnovější nainstalovanou *podverzí* rozhraní .NET Core. Jinými slovy, pokud je aplikace sestavená pomocí .NET Core 2,0 a .NET Core 2,0 není v hostitelském systému k dispozici, ale .NET Core 2,1 je, aplikace se spouští s .NET Core 2,1.
+Počínaje rozhraním .NET Core 2.0, pokud verze rozhraní .NET Core, se kterou byla aplikace vytvořena, není k dispozici za běhu, aplikace se automaticky spustí s nejnovější *nainstalovanou dílčí verzí* rozhraní .NET Core. Jinými slovy, pokud je aplikace vytvořena s rozhraním .NET Core 2.0 a rozhraní .NET Core 2.0 není v hostitelském systému k dispozici, ale je .NET Core 2.1, aplikace je spuštěna s rozhraním .NET Core 2.1.
 
 > [!IMPORTANT]
-> Toto chování při přeposílání se nevztahuje na verze Preview. Ve výchozím nastavení se ani na hlavní verze nevztahují, ale dá se změnit pomocí níže uvedených nastavení.
+> Toto chování pro přechod vpřed se nevztahuje na verze preview. Ve výchozím nastavení se také nevztahuje na hlavní verze, ale to lze změnit pomocí níže uvedených nastavení.
 
-Toto chování můžete upravit tak, že změníte nastavení pro přeposílání na žádné kandidátské sdílené rozhraní. K dispozici jsou následující nastavení:
+Toto chování můžete změnit změnou nastavení pro roll-forward na žádný kandidát sdílené rozhraní. Dostupná nastavení jsou:
 
-- `0` – zakáže chování při přeposílání dílčí verze. S tímto nastavením bude aplikace vytvořená pro .NET Core 2.0.0 předána do .NET Core 2.0.1, ale ne do .NET Core 2.2.0 nebo .NET Core 3.0.0.
-- `1` – povolí chování při přeposílání dílčí verze. Toto je výchozí hodnota pro nastavení. S tímto nastavením se aplikace sestavená pro .NET Core 2.0.0 bude převádět na rozhraní .NET Core 2.0.1 nebo .NET Core 2.2.0, podle toho, která z nich je nainstalovaná, ale nebude se převádět do .NET Core 3.0.0.
-- `2` – umožní vám dopředné chování při přeposílání menší a hlavní verze. V případě, že je nastavena i jiná hlavní verze, bude aplikace vytvořená pro .NET Core 2.0.0 předána do .NET Core 3.0.0.
+- `0`- zakázat chování dílčí verze roll-forward. Při tomto nastavení se aplikace vytvořená pro rozhraní .NET Core 2.0.0 posune dopředu na .NET Core 2.0.1, ale ne na .NET Core 2.2.0 nebo .NET Core 3.0.0.
+- `1`- povolit chování dílčí verze roll-forward. Toto je výchozí hodnota pro nastavení. Při tomto nastavení se aplikace vytvořená pro rozhraní .NET Core 2.0.0 posune dopředu buď na .NET Core 2.0.1 nebo .NET Core 2.2.0, v závislosti na tom, který z nich je nainstalován, ale nebude se posunout dopředu na .NET Core 3.0.0.
+- `2`- povolit chování dílčí ch a hlavních verzí. Pokud je nastavena, jsou považovány i různé hlavní verze, takže aplikace vytvořená pro rozhraní .NET Core 2.0.0 se posune dopředu na .NET Core 3.0.0.
 
-Toto nastavení můžete upravit některým ze tří způsobů:
+Toto nastavení můžete upravit libovolným ze tří způsobů:
 
-- Nastavte proměnnou prostředí `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` na požadovanou hodnotu.
+- Nastavte `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` proměnnou prostředí na požadovanou hodnotu.
 
-- Přidejte následující řádek s požadovanou hodnotou do souboru *. runtimeconfig. JSON* :
+- Do souboru *.runtimeconfig.json* přidejte následující řádek s požadovanou hodnotou:
 
    ```json
    "rollForwardOnNoCandidateFx" : 0
    ```
 
-- Při použití [.NET Core CLI](../tools/index.md)přidejte následující možnost s požadovanou hodnotou do příkazu .NET Core, jako je například `run`:
+- Při použití [rozhraní PŘÍKAZU .NET Core](../tools/index.md)přidejte do příkazu .NET `run`Core následující možnost s požadovanou hodnotou, například :
 
    ```dotnetcli
    dotnet run --rollForwardOnNoCandidateFx=0
    ```
 
-Přeposílání opravné verze je nezávisle na tomto nastavení a je provedeno po použití jakékoli případné nepatrné nebo hlavní verze posunutí.
+Posun out verze opravy je nezávislý na tomto nastavení a provádí se po použití jakékoli potenciální vedlejší nebo hlavní verze.
 
 ## <a name="deployment"></a>Nasazení
 
-### <a name="self-contained-application-servicing"></a>Samoobslužná Údržba aplikací
+### <a name="self-contained-application-servicing"></a>Samostatný servis aplikací
 
-`dotnet publish` nyní publikuje samostatné aplikace s verzí modulu runtime, který je součástí služby. Když publikujete samostatnou aplikaci se sadou SDK .NET Core 2,1 (v 2.1.300), vaše aplikace zahrnuje nejnovější verzi služby runtime známou danou sadou SDK. Když upgradujete na nejnovější sadu SDK, publikujete s nejnovější verzí modulu runtime .NET Core. To platí pro modul runtime .NET Core 1,0 a novější.
+`dotnet publish`nyní publikuje samostatné aplikace s obsluhovnou runtime verzí. Při publikování samostatné aplikace s .NET Core 2.1 SDK (v 2.1.300), aplikace obsahuje nejnovější verzi runtime s obsluhou známou tímto sadou SDK. Při upgradu na nejnovější sadu SDK budete publikovat s nejnovější verzí za běhu .NET Core. To platí pro běhové časy .NET Core 1.0 a novější.
 
-Samoobslužné publikování spoléhá na verze modulu runtime v NuGet.org. V počítači nemusíte mít službu runtime, která je v provozu.
+Samostatné publikování závisí na runtime verzích na NuGet.org. Není nutné mít v počítači servisní runtime.
 
-Pomocí sady .NET Core 2,0 SDK jsou samostatně obsažené aplikace publikovány s modulem runtime .NET Core 2.0.0, pokud není zadána jiná verze prostřednictvím vlastnosti `RuntimeFrameworkVersion`. S tímto novým chováním už nebudete muset tuto vlastnost nastavovat, aby se pro samostatnou aplikaci vybrala vyšší verze modulu runtime. Nejjednodušší způsob, jak dál, je publikovat vždy pomocí .NET Core 2,1 SDK (v 2.1.300).
+Pomocí sady .NET Core 2.0 SDK jsou samostatné aplikace publikovány pomocí runtime .NET Core 2.0.0, pokud není prostřednictvím vlastnosti `RuntimeFrameworkVersion` zadána jiná verze. S tímto novým chováním již nebudete muset tuto vlastnost nastavit, abyste vybrali vyšší verzi runtime pro samostatnou aplikaci. Nejjednodušší přístup do budoucna je vždy publikovat s .NET Core 2.1 SDK (v 2.1.300).
 
-Další informace najdete v tématu implementace [modulu runtime pro samostatné nasazení](../deploying/runtime-patch-selection.md).
-## <a name="windows-compatibility-pack"></a>Sada Compatibility Pack pro Windows
+Další informace naleznete [v tématu Samostatné nasazení runtime posun vpřed](../deploying/runtime-patch-selection.md).
+## <a name="windows-compatibility-pack"></a>Sada Kompatibilita systému Windows
 
-Při portování existujícího kódu z .NET Framework do .NET Core můžete použít [sadu Windows Compatibility Pack](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Poskytuje přístup k 20 000 více rozhraním API, než je k dispozici v .NET Core. Tato rozhraní API zahrnují typy v oboru názvů <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Diagnostics.EventLog> třídy, rozhraní WMI, čítače výkonu, služby systému Windows a typy a členy registru systému Windows.
+Při přenosu existujícího kódu z rozhraní .NET Framework do rozhraní .NET Core můžete použít [sadu Windows Compatibility Pack](https://www.nuget.org/packages/Microsoft.Windows.Compatibility). Poskytuje přístup k 20 000 více rozhraní API, než jsou k dispozici v .NET Core. Tato api zahrnují typy <xref:System.Drawing?displayProperty=nameWithType> v oboru <xref:System.Diagnostics.EventLog> názvů, třídy, služby WMI, čítače výkonu, služby systému Windows a typy a členy registru systému Windows.
 
 ## <a name="jit-compiler-improvements"></a>Vylepšení kompilátoru JIT
 
-.NET Core zahrnuje novou technologii kompilátoru JIT nazvanou *vrstvená kompilace* (označovaná také jako *adaptivní optimalizace*), která může významně zlepšit výkon. Vrstvená kompilace je nastavení pro výslovný souhlas.
+.NET Core obsahuje novou technologii kompilátoru JIT nazvanou *vrstvená kompilace (označovaná* také jako *adaptivní optimalizace),* která může výrazně zlepšit výkon. Vrstvená kompilace je nastavení opt-in.
 
-Jedním z důležitých úloh prováděných kompilátorem JIT je optimalizace provádění kódu. Pro málo používané cesty kódu však může kompilátor strávit více času optimalizací kódu, než modul runtime stráví neoptimalizovaným kódem. Vrstvená kompilace přináší dvě fáze kompilace JIT:
+Jedním z důležitých úkolů prováděných kompilátorem JIT je optimalizace spuštění kódu. Pro málo používané cesty kódu však kompilátor může strávit více času optimalizací kódu, než runtime stráví spuštěním neoptimalizovaného kódu. Vrstvená kompilace zavádí dvě fáze kompilace JIT:
 
 - **První vrstva**, která generuje kód co nejrychleji.
 
-- **Druhá vrstva**, která generuje optimalizovaný kód pro tyto metody, které jsou spouštěny často. Druhá vrstva kompilace se paralelně provádí za účelem zvýšení výkonu.
+- **Druhá vrstva**, která generuje optimalizovaný kód pro ty metody, které jsou často spouštěny. Druhá vrstva kompilace se provádí paralelně pro zvýšení výkonu.
 
-Můžete vyjádřit souhlas s vrstvenými kompilacemi jedním ze dvou způsobů.
+Můžete se přihlásit do vrstvené kompilace v obou způsobech.
 
-- Chcete-li použít vrstvenou kompilaci ve všech projektech, které používají sadu .NET Core 2,1 SDK, nastavte následující proměnnou prostředí:
+- Chcete-li použít vrstvenou kompilaci ve všech projektech, které používají sadu .NET Core 2.1 SDK, nastavte následující proměnnou prostředí:
 
   ```console
   COMPlus_TieredCompilation="1"
   ```
 
-- Chcete-li použít vrstvenou kompilaci pro každý projekt, přidejte vlastnost `<TieredCompilation>` do části `<PropertyGroup>` souboru projektu MSBuild, jak ukazuje následující příklad:
+- Chcete-li použít vrstvenou kompilaci pro `<TieredCompilation>` jednotlivý `<PropertyGroup>` projekt, přidejte vlastnost do části souboru projektu MSBuild, jak ukazuje následující příklad:
 
    ```xml
    <PropertyGroup>
@@ -167,69 +167,69 @@ Můžete vyjádřit souhlas s vrstvenými kompilacemi jedním ze dvou způsobů.
 
 ### <a name="spant-and-memoryt"></a>`Span<T>` a `Memory<T>`
 
-.NET Core 2,1 obsahuje některé nové typy, které umožňují pracovat s poli a dalšími typy paměti mnohem efektivnější. Mezi nové typy patří:
+.NET Core 2.1 obsahuje některé nové typy, které usnadňují práci s poli a jinými typy paměti. Mezi nové typy patří:
 
 - <xref:System.Span%601?displayProperty=nameWithType> a <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
 
 - <xref:System.Memory%601?displayProperty=nameWithType> a <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>.
 
-Bez těchto typů při předávání takových položek jako části pole nebo oddílu vyrovnávací paměti je nutné vytvořit kopii určité části dat před předáním do metody. Tyto typy poskytují virtuální pohled na tato data, který eliminuje nutnost dodatečného přidělení paměti a operací kopírování.
+Bez těchto typů při předávání těchto položek jako část pole nebo část vyrovnávací paměti, je nutné vytvořit kopii některé části dat před předáním metodě. Tyto typy poskytují virtuální zobrazení těchto dat, které eliminuje potřebu další přidělení paměti a operace kopírování.
 
-Následující příklad používá instanci <xref:System.Span%601> a <xref:System.Memory%601> k poskytnutí virtuálního zobrazení 10 prvků pole.
+Následující příklad používá <xref:System.Span%601> <xref:System.Memory%601> a instance poskytnout virtuální zobrazení 10 prvků pole.
 
 [!code-csharp[Span\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/program.cs)]
 
 [!code-vb[Memory\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/vb/program.vb)]
 
-### <a name="brotli-compression"></a>Komprese Brotli
+### <a name="brotli-compression"></a>Brotli komprese
 
-.NET Core 2,1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátová kompresní algoritmus, který je definovaný v [dokumentu RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a který podporuje většina webových prohlížečů a hlavních webových serverů. Můžete použít třídu <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> založenou na streamech nebo vysoce výkonné <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> a třídy <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> založené na rozsahu. Následující příklad ukazuje kompresi pomocí <xref:System.IO.Compression.BrotliStream> třídy:
+.NET Core 2.1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátový kompresní algoritmus, který je definován v [RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a je podporován většinou webových prohlížečů a hlavních webových serverů. Můžete použít třídu <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> založenou na datovém proudu <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> nebo <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> vysoce výkonné rozsah založené a třídy. Následující příklad ilustruje kompresi s třídou: <xref:System.IO.Compression.BrotliStream>
 
 [!code-csharp[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/brotli.cs#1)]
 
 [!code-vb[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
 
-Chování <xref:System.IO.Compression.BrotliStream> je stejné jako <xref:System.IO.Compression.DeflateStream> a <xref:System.IO.Compression.GZipStream>, což usnadňuje převod kódu, který volá tato rozhraní API na <xref:System.IO.Compression.BrotliStream>.
+Chování <xref:System.IO.Compression.BrotliStream> je stejné <xref:System.IO.Compression.DeflateStream> jako <xref:System.IO.Compression.GZipStream>a , což usnadňuje převod kódu, <xref:System.IO.Compression.BrotliStream>který volá tato api na .
 
-### <a name="new-cryptography-apis-and-cryptography-improvements"></a>Nová kryptografická rozhraní API a kryptografická vylepšení
+### <a name="new-cryptography-apis-and-cryptography-improvements"></a>Nová rozhraní API kryptografie a vylepšení kryptografie
 
-.NET Core 2,1 obsahuje řadu vylepšení rozhraní API kryptografie:
+.NET Core 2.1 obsahuje řadu vylepšení rozhraní API kryptografie:
 
-- <xref:System.Security.Cryptography.Pkcs.SignedCms?displayProperty=nameWithType> je k dispozici v balíčku System. Security. Cryptography. PKCS. Implementace je stejná jako třída <xref:System.Security.Cryptography.Pkcs.SignedCms> v .NET Framework.
+- <xref:System.Security.Cryptography.Pkcs.SignedCms?displayProperty=nameWithType>je k dispozici v balíčku System.Security.Cryptography.Pkcs. Implementace je stejná <xref:System.Security.Cryptography.Pkcs.SignedCms> jako třída v rozhraní .NET Framework.
 
-- Nová přetížení metod <xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHash%2A?displayProperty=nameWithType> a <xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHashString%2A?displayProperty=nameWithType> přijímají identifikátor algoritmu hash, aby mohli volajícím získat hodnoty kryptografického otisku certifikátu pomocí jiných algoritmů než SHA-1.
+- Nové přetížení <xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHash%2A?displayProperty=nameWithType> a <xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHashString%2A?displayProperty=nameWithType> metody přijmout identifikátor algoritmu hash umožnit volajícím získat hodnoty kryptografického otisku certifikátu pomocí algoritmů než SHA-1.
 
-- Nová rozhraní API kryptografie založená na <xref:System.Span%601>jsou k dispozici pro generování hodnot hash, HMAC, kryptografická generátor náhodných čísel, generování asymetrických podpisů, zpracování asymetrického podpisu a šifrování RSA.
+- Nová <xref:System.Span%601>kryptografická rozhraní API jsou k dispozici pro hašování, HMAC, kryptografické generování náhodných čísel, generování asymetrických podpisů, zpracování asymetrických podpisů a šifrování RSA.
 
-- Výkon <xref:System.Security.Cryptography.Rfc2898DeriveBytes?displayProperty=nameWithType> se zlepšil o 15% pomocí implementace založené na <xref:System.Span%601>.
+- Výkon <xref:System.Security.Cryptography.Rfc2898DeriveBytes?displayProperty=nameWithType> se zlepšil a to asi o <xref:System.Span%601>15 % pomocí implementace založené na článku.
 
-- Nová třída <xref:System.Security.Cryptography.CryptographicOperations?displayProperty=nameWithType> obsahuje dvě nové metody:
+- Nová <xref:System.Security.Cryptography.CryptographicOperations?displayProperty=nameWithType> třída obsahuje dvě nové metody:
 
-  - <xref:System.Security.Cryptography.CryptographicOperations.FixedTimeEquals%2A> trvat pevně stanovenou dobu pro všechny dva vstupy stejné délky, což usnadňuje použití v kryptografickém ověřování, aby se zabránilo přispívat k časování informací o kanálu na straně.
+  - <xref:System.Security.Cryptography.CryptographicOperations.FixedTimeEquals%2A>trvá pevně dobu vrátit pro všechny dva vstupy stejné délky, což je vhodné pro použití v kryptografické ověření, aby se zabránilo přispívání k časování informace o postranním kanálu.
 
-  - <xref:System.Security.Cryptography.CryptographicOperations.ZeroMemory%2A> je rutina mazání paměti, kterou není možné optimalizovat.
+  - <xref:System.Security.Cryptography.CryptographicOperations.ZeroMemory%2A>je rutina vymazání paměti, kterou nelze optimalizovat.
 
-- Metoda static <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> vyplní <xref:System.Span%601> náhodnými hodnotami.
+- Statická <xref:System.Security.Cryptography.RandomNumberGenerator.Fill%2A?displayProperty=nameWithType> metoda vyplní <xref:System.Span%601> náhodné hodnoty.
 
-- <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> se teď podporuje v systémech Linux a macOS.
+- Nyní <xref:System.Security.Cryptography.Pkcs.EnvelopedCms?displayProperty=nameWithType> je podporován na Linuxu a macOS.
 
-- Eliptická Vlnová třída Diffie-Hellman (ECDH) je teď dostupná v <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType> rodině tříd. Oblast Surface je stejná jako v .NET Framework.
+- Elliptic-Curve Diffie-Hellman (ECDH) je <xref:System.Security.Cryptography.ECDiffieHellman?displayProperty=nameWithType> nyní k dispozici v řadě rodiny. Plocha je stejná jako v rozhraní .NET Framework.
 
-- Instance vrácená pomocí <xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType> může šifrovat nebo dešifrovat pomocí výplně OAEP s využitím algoritmu SHA-2 a generovat nebo ověřovat podpisy pomocí technologie RSA-PSS.
+- Instance vrácená <xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType> pomocí aplikace OAEP pomocí metody OAEP pomocí výtahu SHA-2, stejně jako generování nebo ověřování podpisů pomocí RSA-PSS.
 
 ### <a name="sockets-improvements"></a>Vylepšení soketů
 
-.NET Core zahrnuje nový typ, <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>a přepsanou <xref:System.Net.Http.HttpMessageHandler?displayProperty=nameWithType>, které tvoří základ rozhraní API pro sítě vyšší úrovně.  <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>je například základem implementace <xref:System.Net.Http.HttpClient>. V předchozích verzích rozhraní .NET Core rozhraní API na vyšší úrovni byly založeny na nativních implementacích sítě.
+Jádro .NET obsahuje nový <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>typ a <xref:System.Net.Http.HttpMessageHandler?displayProperty=nameWithType>přepsaný , které tvoří základ síťových rozhraní API vyšší úrovně.  <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType>, je například základem <xref:System.Net.Http.HttpClient> provádění. V předchozích verzích rozhraní .NET Core byla rozhraní API vyšší úrovně založena na nativních síťových implementacích.
 
-Implementace soketů představená v .NET Core 2,1 má několik výhod:
+Implementace soketů zavedená v rozhraní .NET Core 2.1 má řadu výhod:
 
-- Významné zlepšení výkonu při porovnání s předchozí implementací.
+- Významné zlepšení výkonu ve srovnání s předchozí implementací.
 
-- Eliminujte závislosti platforem, což zjednodušuje nasazení a údržbu.
+- Eliminace závislostí platformy, což zjednodušuje nasazení a obsluhu.
 
-- Konzistentní chování napříč všemi platformami .NET Core.
+- Konzistentní chování na všech platformách .NET Core.
 
-<xref:System.Net.Http.SocketsHttpHandler> je výchozí implementací v rozhraní .NET Core 2,1. Můžete však nakonfigurovat aplikaci tak, aby používala starší třídu <xref:System.Net.Http.HttpClientHandler> voláním metody <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>:
+<xref:System.Net.Http.SocketsHttpHandler>je výchozí implementace v rozhraní .NET Core 2.1. Aplikaci však můžete nakonfigurovat <xref:System.Net.Http.HttpClientHandler> tak, aby <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> používala starší třídu voláním metody:
 
 ```csharp
 AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
@@ -239,18 +239,18 @@ AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
 AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", False)
 ```
 
-Můžete také použít proměnnou prostředí pro odsouhlasení s používáním implementací soketů založených na <xref:System.Net.Http.SocketsHttpHandler>. To provedete tak, že nastavíte `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` buď na `false`, nebo na 0.
+Proměnnou prostředí můžete také použít k odhlášení z <xref:System.Net.Http.SocketsHttpHandler>používání implementací soketů založených na aplikaci . Chcete-li to `DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER` provést, `false` nastavte buď nebo 0.
 
-V systému Windows můžete také zvolit použití <xref:System.Net.Http.WinHttpHandler?displayProperty=nameWithType>, která spoléhá na nativní implementaci, nebo na <xref:System.Net.Http.SocketsHttpHandler> třídy předáním instance třídy do konstruktoru <xref:System.Net.Http.HttpClient>.
+V systému Windows můžete <xref:System.Net.Http.WinHttpHandler?displayProperty=nameWithType>také použít , který spoléhá na <xref:System.Net.Http.SocketsHttpHandler> nativní implementaci nebo třídu <xref:System.Net.Http.HttpClient> předáním instance třídy konstruktoru.
 
-V systémech Linux a macOS můžete nakonfigurovat <xref:System.Net.Http.HttpClient> jenom pro jednotlivé procesy. V systému Linux je nutné nasadit [libcurl](https://curl.haxx.se/libcurl/) , pokud chcete použít starou implementaci <xref:System.Net.Http.HttpClient>. (Instaluje se s .NET Core 2,0.)
+V Linuxu a macOS <xref:System.Net.Http.HttpClient> můžete konfigurovat pouze na základě procesu. V systému Linux je třeba nasadit [libcurl,](https://curl.haxx.se/libcurl/) pokud chcete použít starou <xref:System.Net.Http.HttpClient> implementaci. (Je nainstalován s rozhraním .NET Core 2.0.)
 
 ### <a name="breaking-changes"></a>Změny způsobující chyby
 
-Informace o zásadních změnách najdete v tématu zásadní [změny migrace z verze 2,0 na 2,1](../compatibility/2.0-2.1.md).
+Informace o narušujících změnách naleznete v [tématu Breaking changes for migration from version 2.0 to 2.1](../compatibility/2.0-2.1.md).
 
 ## <a name="see-also"></a>Viz také
 
 - [Co je nového v .NET Core](index.md)
-- [Nové funkce v EF Core 2,1](/ef/core/what-is-new/ef-core-2.1)
-- [Co je nového v ASP.NET Core 2,1](/aspnet/core/aspnetcore-2.1)
+- [Nové funkce v EF Core 2.1](/ef/core/what-is-new/ef-core-2.1)
+- [Co je nového v ASP.NET Core 2.1](/aspnet/core/aspnetcore-2.1)

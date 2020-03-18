@@ -1,5 +1,5 @@
 ---
-title: Příkazy, výrazy a operátory – C# Průvodce programováním
+title: Příkazy, výrazy a operátory – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - expressions [C#]
@@ -10,17 +10,17 @@ helpviewer_keywords:
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
 ms.openlocfilehash: b339158848dac30f8c87a372b44574f6114a6aed
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75698635"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 
-C# Kód, který se skládá z aplikace, se skládá z příkazů tvořících klíčová slova, výrazy a operátory. Tato část obsahuje informace týkající se těchto základních prvků C# programu.
+Kód Jazyka C#, který obsahuje aplikaci, se skládá z příkazů tvořených klíčovými slovy, výrazy a operátory. Tato část obsahuje informace týkající se těchto základních prvků programu Jazyka C#.
 
- Další informace najdete v části .
+ Další informace naleznete v tématu:
 
 - [Příkazy](statements.md)
 
@@ -32,11 +32,11 @@ C# Kód, který se skládá z aplikace, se skládá z příkazů tvořících kl
 
 - [Porovnání rovnosti](equality-comparisons.md)
 
-## <a name="c-language-specification"></a>C# – jazyková specifikace
+## <a name="c-language-specification"></a>Specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)
 - [Přetypování a převody typů](../types/casting-and-type-conversions.md)

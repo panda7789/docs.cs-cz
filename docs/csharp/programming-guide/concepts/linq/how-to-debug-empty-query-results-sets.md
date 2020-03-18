@@ -3,23 +3,23 @@ title: Jak ladit prázdné sady výsledků dotazu (C#)
 ms.date: 07/20/2015
 ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
 ms.openlocfilehash: 2716f7c525ac6bee8d2fb374e4ecc4c975d852a0
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141292"
 ---
 # <a name="how-to-debug-empty-query-results-sets-c"></a>Jak ladit prázdné sady výsledků dotazu (C#)
-Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.  
+Jedním z nejčastějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by xml nebyl v oboru názvů.  
   
- První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten XML ve výchozím oboru názvů a je dotaz na něj nesprávně.  
+ První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten xml ve výchozím oboru názvů a je dotazován nesprávně.  
   
- Druhá sada příkladů ukazuje nezbytné opravy, aby bylo možné dotazovat XML v oboru názvů.  
+ Druhá sada příkladů zobrazuje potřebné opravy, takže můžete dotazovat XML v oboru názvů.  
   
- Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).  
+ Další informace naleznete [v tématu Přehled oborů názvů (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdnou sadu výsledků dotazu.  
+ Tento příklad ukazuje vytvoření xml v oboru názvů a dotaz, který vrací prázdnou sadu výsledků.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -40,7 +40,7 @@ foreach (XElement el in c1)
 Console.WriteLine("End of result set");  
 ```  
   
- Tento příklad vytvoří následující výsledek:  
+ Tento příklad přináší následující výsledek:  
   
 ```output  
 Result set follows:  
@@ -48,9 +48,9 @@ End of result set
 ```  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je správně kódován.  
+ Tento příklad ukazuje vytvoření xml v oboru názvů a dotaz, který je kódován správně.  
   
- Řešením je deklarovat a inicializovat objekt <xref:System.Xml.Linq.XNamespace> a použít ho při určení <xref:System.Xml.Linq.XName> objektů. V tomto případě je argumentem metody <xref:System.Xml.Linq.XContainer.Elements%2A> <xref:System.Xml.Linq.XName> objekt.  
+ Řešením je deklarovat a <xref:System.Xml.Linq.XNamespace> inicializovat objekt a <xref:System.Xml.Linq.XName> použít jej při zadávání objektů. V tomto případě argument <xref:System.Xml.Linq.XContainer.Elements%2A> metody je <xref:System.Xml.Linq.XName> objekt.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -72,7 +72,7 @@ foreach (XElement el in c1)
 Console.WriteLine("End of result set");  
 ```  
   
- Tento příklad vytvoří následující výsledek:  
+ Tento příklad přináší následující výsledek:  
   
 ```output  
 Result set follows:  

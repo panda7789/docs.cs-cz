@@ -1,97 +1,97 @@
 ---
 title: ML.NET metriky
-description: Pochopení metrik, které se používají k vyhodnocení výkonu ML.NET modelu
+description: Pochopit metriky, které se používají k vyhodnocení výkonu ML.NET modelu
 ms.date: 12/17/2019
 ms.openlocfilehash: 8e823fd8cc344c1b8e0ecd709b527137368cbfa0
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75739601"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79399215"
 ---
-# <a name="evaluate-your-mlnet-model-with-metrics"></a>Vyhodnocení modelu ML.NET pomocí metrik
+# <a name="evaluate-your-mlnet-model-with-metrics"></a>Vyhodnoťte svůj ML.NET model pomocí metrik
 
-Pochopení metrik používané k vyhodnocení modelu ML.NET.
+Seznamte se s metrikami použitými k vyhodnocení ML.NET modelu.
 
-Metriky vyhodnocení jsou specifické pro typ úlohy strojového učení, kterou model provádí.
+Metriky hodnocení jsou specifické pro typ úlohy strojového učení, kterou model provádí.
 
-Například pro úlohu klasifikace je model vyhodnocován pomocí měření, jak dobře předpokládaná kategorie odpovídá aktuální kategorii. A pro clustering se hodnocení vychází z toho, jak se vzájemně dostanou clusterované položky, a kolik jich mezi clustery existuje.
+Například pro úkol klasifikace je model vyhodnocen měřením, jak dobře předpovídaná kategorie odpovídá skutečné kategorii. A pro clustering hodnocení je založena na tom, jak blízko clusterované položky jsou k sobě navzájem a kolik oddělení je mezi clustery.
 
-## <a name="evaluation-metrics-for-binary-classification"></a>Metriky vyhodnocení pro binární klasifikaci
+## <a name="evaluation-metrics-for-binary-classification"></a>Hodnotící metriky pro binární klasifikaci
 
-| Metriky   |      Popis      |  Vyhledejte |
+| Metriky   |      Popis      |  Hledat |
 |-----------|-----------------------|-----------|
-| **Údajů** |  [Přesnost](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) je poměr správného předpovědi se sadou testů dat. Je to poměr počtu správných předpovědi k celkovému počtu vstupních vzorků. Funguje dobře, pokud existuje podobný počet vzorků patřících ke každé třídě.| **Nejblíže k 1,00, tím lépe**. Ale přesně 1,00 označuje problém (obvykle se jedná o netěsné úniky popisků, převzetí služeb při selhání nebo testování pomocí školicích dat). Pokud jsou testovací data nevyvážená (kde většina instancí patří do jedné z tříd), je datová sada malá nebo má skóre přístup 0,00 nebo 1,00, pak přesnost nezachycuje efektivitu klasifikátoru a potřebujete zkontrolovat další metriky. |
-| **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) nebo *plocha pod křivkou* měří oblast pod křivkou, která je vytvořená vykreslením skutečné kladné míry a falešně pozitivních sazeb.  |   **Nejblíže k 1,00, tím lépe**. Měl by být větší než 0,50, aby bylo možné model akceptovat. Model s AUC 0,50 nebo méně je bezcenné. |
-| **AUCPR** | [aucPR](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) nebo *plocha pod křivkou křivky přesnosti odvolání*: užitečná míra úspěšnosti předpovědi, pokud jsou třídy nevyrovnané (vysoce zkreslené datové sady). |  **Nejblíže k 1,00, tím lépe**. Vysoká skóre blízko až 1,00 ukazují, že klasifikátor vrací přesné výsledky (vysoká přesnost) a vrací většinu všech pozitivních výsledků (vysoké odvolání). |
-| **F1 – skóre** | [Skóre F1](https://en.wikipedia.org/wiki/F1_score) se také označuje jako *vyrovnané f-skore nebo f-Measure*. Je to harmonický význam přesnosti a odvolání. Skóre F1 je užitečné, pokud chcete vyhledat rovnováhu mezi přesností a odvoláním.| **Nejblíže k 1,00, tím lépe**.  Skóre F1 dosáhne své nejlepší hodnoty na 1,00 a nejhorší skóre v 0,00. Dozvíte se, jak přesně je třídění. |
+| **Přesnost** |  [Přesnost](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification) je podíl správných předpovědí se sadou testovacích dat. Jedná se o poměr počtu správných předpovědí k celkovému počtu vstupních vzorků. Funguje dobře, pokud existuje podobný počet vzorků, které patří do každé třídy.| **Čím blíže k 1,00, tím lépe**. Ale přesně 1,00 označuje problém (obvykle: label/target leakleak, over-fitting nebo testing with training data). Pokud jsou testovací data nevyvážená (kde většina instancí patří do jedné z tříd), datová sada je malá nebo skóre přístup 0,00 nebo 1,00, pak přesnost není ve skutečnosti zachytit účinnost třídění a je třeba zkontrolovat další metriky. |
+| **Auc** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) nebo *Oblast pod křivkou* měří plochu pod křivkou vytvořenou zametáním skutečné kladné míry vs. falešně pozitivní rychlost.  |   **Čím blíže k 1,00, tím lépe**. Pro přijatelný by měl být model větší než 0,50. Model s AUC 0,50 nebo méně je bezcenný. |
+| **AUCPR** | [aucPR](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) nebo *oblast pod křivkou precision-recall křivky*: Užitečné měřítko úspěšnosti predikce, když jsou třídy nevyvážené (vysoce zkosené datové sady). |  **Čím blíže k 1,00, tím lépe**. Vysoké skóre téměř 1,00 ukazují, že třídění vrací přesné výsledky (vysoká přesnost), stejně jako vrácení většiny všech pozitivních výsledků (vysoké odvolání). |
+| **F1-skóre** | [F1 skóre](https://en.wikipedia.org/wiki/F1_score) také známé jako *vyvážené F-skóre nebo F-míra*. Je to harmonický průměr přesnosti a odvolání. F1 Skóre je užitečné, pokud chcete najít rovnováhu mezi Precision a Recall.| **Čím blíže k 1,00, tím lépe**.  Skóre F1 dosahuje své nejlepší hodnoty na 1,00 a nejhorší skóre na 0,00. To vám řekne, jak přesné je váš třídění. |
 
-Další podrobnosti o binárních metrikách klasifikace najdete v následujících článcích:
+Další podrobnosti o binárníklasifikaci metriky přečtěte si následující články:
 
 - [Přesnost, přesnost, odvolání nebo F1?](https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9)
-- [Třída binárních metrik klasifikace](xref:Microsoft.ML.Data.BinaryClassificationMetrics)
-- [Vztah mezi přesností a odvoláním a ROC křivky](http://pages.cs.wisc.edu/~jdavis/davisgoadrichcamera2.pdf)
+- [Binární klasifikace Metriky třídy](xref:Microsoft.ML.Data.BinaryClassificationMetrics)
+- [Vztah mezi křivkami precision-recall a ROC](http://pages.cs.wisc.edu/~jdavis/davisgoadrichcamera2.pdf)
 
-## <a name="evaluation-metrics-for-multi-class-classification"></a>Metriky vyhodnocení pro klasifikaci více tříd
+## <a name="evaluation-metrics-for-multi-class-classification"></a>Hodnotící metriky pro klasifikaci více tříd
 
-| Metriky   |      Popis      |  Vyhledejte |
+| Metriky   |      Popis      |  Hledat |
 |-----------|-----------------------|-----------|
-| **Mikropřesnost** |  [Střední hodnota přesnosti](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.MicroAccuracy) agreguje příspěvky všech tříd k výpočtu průměrné metriky. Jedná se o zlomek nesprávně vypředpokládaných instancí. Střední hodnota mikroprůměru nebere v úvahu členství třídy. V podstatě každá dvojice vzorových tříd přispívá stejně jako metrika přesnosti. | **Nejblíže k 1,00, tím lépe**. V rámci úlohy klasifikace s více třídami je mikropřesnost vhodnější než přesnost v makrech, pokud máte podezření, že může dojít k nerovnováze třídy (tj. je možné, že máte mnoho dalších příkladů jedné třídy než jiné třídy).|
-| **Přesnost maker** | [Makro – Průměrná přesnost](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.MacroAccuracy) je průměrná přesnost na úrovni třídy. Je vypočítána přesnost pro každou třídu a přesnost makra je průměrem z těchto přesností. V podstatě každá třída přispívá stejně jako metrika přesnosti. Minoritní třídy mají stejnou váhu jako větší třídy. Makro – Průměrná metrika poskytuje stejnou váhu jednotlivým třídám, bez ohledu na to, kolik instancí z této třídy datová sada obsahuje. |  **Nejblíže k 1,00, tím lépe**.  Počítá metriku nezávisle pro každou třídu a pak bere průměr (proto se všechny třídy zpracovávají stejně). |
-| **Protokol – ztráta**| [Logaritmická ztráta](http://wiki.fast.ai/index.php/Log_Loss) měří výkon klasifikačního modelu, kde vstupní předpověď je pravděpodobnostní hodnota mezi 0,00 a 1,00. Ztráta protokolu se zvyšuje, protože předpokládaná pravděpodobnost se liší od skutečného popisku. | **Nejblíže k 0,00, tím lépe**. Dokonalý model by měl mít za následek ztrátu protokolu 0,00. Cílem našich modelů strojového učení je minimalizovat tuto hodnotu.|
-| **Omezení ztrát protokolu** | [Snížení logaritmických ztrát](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.LogLossReduction) může být interpretováno jako výhoda klasifikátoru na náhodné předpovědi.| **Rozsahy od-inf a 1,00, kde 1,00 je perfektní předpovědi a 0,00 znamená střední předpovědi**. Například pokud se hodnota rovná 0,20, může být interpretována jako "pravděpodobnost správné předpovědi je 20% lepší než náhodné odhadování"|
+| **Mikropřesnost** |  [Mikroprůměrná přesnost](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.MicroAccuracy) agreguje příspěvky všech tříd pro výpočet průměrné metriky. Jedná se o zlomek správně předpovídaných instancí. Mikro-průměr nebere v úvahu členství ve třídě. V podstatě každý pár třídy vzorku přispívá stejně k metrike přesnosti. | **Čím blíže k 1,00, tím lépe**. Při vícestupňové klasifikaci je mikropřesnost vhodnější než makropřesnost, pokud máte podezření, že může existovat nerovnováha třídy (tj. můžete mít mnohem více příkladů jedné třídy než jiných tříd).|
+| **Makropřesnost** | [Makroprůměrná přesnost](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.MacroAccuracy) je průměrná přesnost na úrovni třídy. Přesnost pro každou třídu je vypočítána a přesnost maker je průměr těchto přesností. V podstatě každá třída přispívá stejně k metrike přesnosti. Menšinové třídy mají stejnou váhu jako větší třídy. Makroprůměrná metrika poskytuje stejnou váhu každé třídě bez ohledu na to, kolik instancí z této třídy datová sada obsahuje. |  **Čím blíže k 1,00, tím lépe**.  Vypočítá metriku nezávisle pro každou třídu a pak vezme průměr (tedy zacházet se všemi třídami stejně) |
+| **Ztráta protokolu**| [Logaritmická ztráta](http://wiki.fast.ai/index.php/Log_Loss) měří výkon klasifikačního modelu, kde vstup předpovědi je hodnota pravděpodobnosti mezi 0,00 a 1,00. Ztráta protokolu se zvyšuje, protože předpokládaná pravděpodobnost se liší od skutečného popisku. | **Čím blíže k 0,00, tím lépe**. Perfektní model by měl log-loss 0,00. Cílem našich modelů strojového učení je minimalizovat tuto hodnotu.|
+| **Snížení ztráty protokolu** | [Logaritmické snížení ztráty](xref:Microsoft.ML.Data.MulticlassClassificationMetrics.LogLossReduction) lze interpretovat jako výhodu třídění přes náhodné předpověď.| **V rozsahu od -inf a 1,00, kde 1,00 je perfektní předpovědi a 0,00 označuje střední předpovědi**. Například pokud se hodnota rovná 0,20, může být interpretována jako "pravděpodobnost správné předpovědi je o 20 % lepší než náhodné odhadování"|
 
-Mikropřesnost je všeobecně lepší v souladu s podnikovými požadavky předpovědi ML. Pokud chcete vybrat jednu metriku pro výběr kvality úlohy klasifikace s více třídami, měla by obvykle být mikropřesnost.
+Mikropřesnost je obecně lépe v souladu s obchodními potřebami předpovědí ML. Pokud chcete vybrat jednu metriku pro výběr kvality úlohy klasifikace více tříd, měla by být obvykle mikropřesnost.
 
-Příklad pro úlohu klasifikace lístků podpory: (mapuje příchozí lístky na podporu týmů)
+Příklad pro úkol klasifikace lístků podpory: (mapuje příchozí vstupenky podpůrným týmům)
 
-- Mikropřesnost – jak často se příchozí lístek klasifikuje do správného týmu?
-- Přesnost makra – pro průměrnou tým, jak často je příchozí lístek správný pro svůj tým?
+- Mikropřesnost - jak často se příchozí jízdenka dostane do správného týmu?
+- Makro-přesnost - pro průměrný tým, jak často je příchozí lístek správný pro jejich tým?
 
-V tomto příkladu jsou předané malé týmy s přesností maker. malý tým, který získá jenom 10 lístků za rok, se počítá jako velký tým s 10 000 lístky za rok. Mikropřesnost v tomto případě je lépe koreluje s potřebnou firmou. "kolik času a peněz může společnost ukládat pomocí automatizace procesu směrování lístku".
+Makropřesnost má v tomto příkladu nadváhu malých týmů. malý tým, který dostane pouze 10 vstupenek ročně se počítá stejně jako velký tým s 10k vstupenky za rok. Mikro-přesnost v tomto případě koreluje lépe s obchodní potřebou, "kolik času / peněz může společnost ušetřit automatizací mého procesu směrování vstupenek".
 
-Další podrobnosti o metrikách klasifikace s více třídami najdete v následujících článcích:
+Další podrobnosti o metrikách klasifikace více tříd načtou následující články:
 
-- [Mikroa makro – průměr přesnosti, odvolání a F-skore](https://rushdishams.blogspot.com/2011/08/micro-and-macro-average-of-precision.html)
+- [Mikroprůměr přesnosti, odvolání a f-skóre](https://rushdishams.blogspot.com/2011/08/micro-and-macro-average-of-precision.html)
 - [Klasifikace více tříd s nevyváženou datovou sadou](https://towardsdatascience.com/machine-learning-multiclass-classification-with-imbalanced-data-set-29f6a177c1a)
 
-## <a name="evaluation-metrics-for-regression-and-recommendation"></a>Metriky vyhodnocení pro regresi a doporučení
+## <a name="evaluation-metrics-for-regression-and-recommendation"></a>Hodnotící metriky pro regresi a doporučení
 
-Úkoly regrese i doporučení předpovídá číslo. V případě regrese může být číslo výstupní vlastností, která je ovlivněna vstupními vlastnostmi. Pro doporučení je číslo obvykle hodnota hodnocení (například mezi 1 a 5 příkladem) nebo doporučení ano/ne (reprezentované 1. a 0 v uvedeném pořadí).
+Regrese a doporučení úkoly předpovědět číslo. V případě regrese může být číslo libovolnou výstupní vlastností, která je ovlivněna vstupními vlastnostmi. Pro doporučení je číslo obvykle hodnota hodnocení (například mezi 1 a 5) nebo doporučení ano/ne (reprezentované 1 a 0).
 
-| Metrika   |      Popis      |  Vyhledejte |
+| Metrika   |      Popis      |  Hledat |
 |----------|-----------------------|-----------|
-| **R – čtvercový** |  [R-kvadrát (R2)](https://en.wikipedia.org/wiki/Coefficient_of_determination)nebo *koeficienty stanovitelnosti* představují prediktivní sílu modelu jako hodnotu mezi-inf a 1,00. 1,00 znamená, že existuje dokonalé přizpůsobení a přizpůsobení může být libovolně špatné, takže skóre mohou být záporná. Skóre 0,00 znamená, že model odhaduje očekávanou hodnotu popisku. R2 měří způsob, jakým se hodnoty skutečných testovacích dat blíží předpokládaným hodnotám. | **Lepší kvalita je blíže k 1,00**. Někdy ale nízké hodnoty R-Square (například 0,50) můžou být pro váš scénář zcela normální nebo dostatečně dobré a vysoké hodnoty R-čtverce nejsou vždy dobré a jsou podezřelé. |
-| **Absolutní ztráta** |  [Absolutní ztráta](https://en.wikipedia.org/wiki/Mean_absolute_error) nebo *střední absolutní chyba (Mae)* měří způsob, jakým se předpovědi blíží skutečným výsledkům. Jedná se o průměr všech chyb modelů, kde chyba modelu je absolutní vzdálenost mezi předpovězenou hodnotou popisku a správnou hodnotou popisku. Tato chyba předpovědi je vypočítána pro každý záznam sady dat testu. Nakonec se pro všechny zaznamenané absolutní chyby vypočítá střední hodnota.| **Lepší kvalita je blíže k 0,00.** Střední absolutní chyba používá stejné měřítko jako měřená data (není normalizována na konkrétní rozsah). Absolutní ztráta, čtvercová ztráta a ztráta RMS lze použít pouze k porovnání modelů pro stejnou datovou sadu nebo datovou sadu s podobnou distribucí hodnoty popisku. |
-| **Kvadratická ztráta** |  [Čtvercová ztráta](https://en.wikipedia.org/wiki/Mean_squared_error) nebo *střední Chyba (MSE)* , označovaná také jako *střední odchylka (MSD)* , říká, jak blízko regresní čáry je sada hodnot testových dat, a to tak, že převezme vzdálenosti od bodů až po regresní čáru (tyto vzdálenosti jsou chyby E) a umocnění je. Umocnění poskytuje větší váhu většímu rozdílu. | Je vždycky nezáporné a **hodnoty blíž až 0,00 jsou lepší**. V závislosti na vašich datech nemusí být možné získat velmi malou hodnotu pro střední kvadratickou chybu.|
-| **RMS – ztráta** |  Služba [RMS – ztráta](https://en.wikipedia.org/wiki/Root-mean-square_deviation) nebo *hlavní střední hodnota chyby (RMSE)* (označuje se také jako *Kořenová střední odchylka, RMSD*), měří rozdíl mezi hodnotami předpokládanými modelem a hodnotami zjištěnými z prostředí, které je právě modelováno. Služby RMS-ztráta je druhá odmocnina čtvercové ztráty a má stejné jednotky jako popisek, podobně jako u absolutní ztráty, a poskytuje větší váhu větším rozdílům. V climatology, předpovědi a regresní analýze se běžně používá chyba na kořenovém středním průměru k ověření experimentálních výsledků. | Je vždycky nezáporné a **hodnoty blíž až 0,00 jsou lepší**. RMSD je míra přesnosti, která umožňuje porovnat chyby prognózy různých modelů pro určitou datovou sadu a ne mezi datovými sadami, protože se jedná o závislé na škálování.|
+| **R-na druhou** |  [R-kvadrát (R2)](https://en.wikipedia.org/wiki/Coefficient_of_determination)nebo *koeficient stanovení* představuje prediktivní sílu modelu jako hodnotu mezi -inf a 1,00. 1.00 znamená, že je perfektní fit, a fit může být libovolně špatná, takže skóre může být negativní. Skóre 0,00 znamená, že model je hádat očekávanou hodnotu pro popisek. R2 měří, jak blízko jsou hodnoty skutečných testovacích dat předpovídaným hodnotám. | **Čím blíže k 1,00, tím lepší kvalita**. Někdy však nízké hodnoty na druhou R (například 0,50) může být zcela normální nebo dost dobré pro váš scénář a vysoké hodnoty na druhou R nejsou vždy dobré a podezřelé. |
+| **Absolutní ztráta** |  [Absolutní ztráta](https://en.wikipedia.org/wiki/Mean_absolute_error) nebo *střední absolutní chyba (MAE)* měří, jak blízko jsou předpovědi ke skutečným výsledkům. Jedná se o průměr všech chyb modelu, kde chyba modelu je absolutní vzdálenost mezi předpokládanou hodnotou popisku a správnou hodnotou popisku. Tato chyba předpověď se vypočítá pro každý záznam testovací datové sady. Nakonec se vypočítá střední hodnota pro všechny zaznamenané absolutní chyby.| **Čím blíže k 0,00, tím lepší kvalitu.** Průměrná absolutní chyba používá stejné měřítko jako měřená data (není normalizována na konkrétní rozsah). Absolutní ztráta, kvadrátální ztráta a ztráta RMS lze použít pouze k porovnání mezi modely pro stejnou datovou sadu nebo datovou sadu s podobným rozložením hodnoty popisku. |
+| **Kvadrač-ztráta** |  [Kvadratická nebo](https://en.wikipedia.org/wiki/Mean_squared_error) *střední kvadratická chyba (MSE)*, také nazývaná *střední kvadratická odchylka (MSD),* vám řekne, jak blízko je regresní čára k sadě hodnot testovacích dat tím, že vezme vzdálenosti od bodů k regresní čáře (tyto vzdálenosti jsou chyby E) a kvadraturu je. Kvadratura dává větší váhu větším rozdílům. | Je vždy nezáporná a **hodnoty blíže k 0,00 jsou lepší**. V závislosti na vašich datech může být nemožné získat velmi malou hodnotu pro střední kvadratorovou chybu.|
+| **RMS-ztráta** |  [RMS-loss](https://en.wikipedia.org/wiki/Root-mean-square_deviation) nebo *Root Mean SquareD Error (RMSE)* (také nazývaný *Kořenová střední kvadratická odchylka, RMSD*), měří rozdíl mezi hodnotami předpovězenými modelem a hodnotami pozorovanými z prostředí, které je modelováno. RMS-ztráta je druhá odmocnina squared-ztráta a má stejné jednotky jako štítek, podobně jako absolutní-ztráta i když dává větší váhu větší rozdíly. Střední kvadratická chyba kořene se běžně používá v klimatologii, prognózách a regresní analýze k ověření experimentálních výsledků. | Je vždy nezáporná a **hodnoty blíže k 0,00 jsou lepší**. RMSD je míra přesnosti, porovnat chyby prognózy různých modelů pro konkrétní datové sady a nikoli mezi datovými sadami, protože je závislé na měřítku.|
 
-Další podrobnosti o regresních metrikách najdete v následujících článcích:
+Další podrobnosti o regresní metriky, přečtěte si následující články:
 
-- [Regresní analýza: Jak mohu interpretovat R-kvadrát a vyhodnotit dobré výsledky?](https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit)
-- [Jak interpretovat R-kvadrát v analýze regrese](https://statisticsbyjim.com/regression/interpret-r-squared-regression)
-- [Definice R-čtverce](https://www.investopedia.com/terms/r/r-squared.asp)
-- [Střední hodnota čtverce v definici chyby](https://www.statisticshowto.datasciencecentral.com/mean-squared-error/)
-- [Co znamená chyba na čtverci a hlavní střední hodnota chyby?](https://www.vernier.com/til/1014/)
+- [Regresní analýza: Jak interpretuji R-kvadratou a posoudit dobrotu fit?](https://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit)
+- [Jak interpretovat R-kvadratý v regresní analýze](https://statisticsbyjim.com/regression/interpret-r-squared-regression)
+- [R-kvadrát definice](https://www.investopedia.com/terms/r/r-squared.asp)
+- [Definice střední kvadraté chyby](https://www.statisticshowto.datasciencecentral.com/mean-squared-error/)
+- [Co jsou střední kvadratří chyba a střední kvadratická chyba kořenového adresáře?](https://www.vernier.com/til/1014/)
 
-## <a name="evaluation-metrics-for-clustering"></a>Metriky vyhodnocení pro clustering
+## <a name="evaluation-metrics-for-clustering"></a>Metriky hodnocení clusteringu
 
-| Metrika   |      Popis      |  Vyhledejte |
+| Metrika   |      Popis      |  Hledat |
 |----------|-----------------------|-----------|
-|**Průměrná vzdálenost**|Průměr vzdálenosti mezi datovými body a centrem přiřazeného clusteru Průměrná vzdálenost je míra blízkosti datových bodů ke službě cluster centroids. Jedná se o míru, jak je cluster "těsný".|Hodnoty blíže k **0** jsou lepší. Hodnota bližší k nule znamená průměrnou vzdálenost, tím více je clusterovaných dat. Všimněte si ale, že tato metrika se po zvýšení počtu clusterů sníží a v extrémním případě (kde každá z různých datových bodů je vlastním clusterem) se rovná nule.
-|**Davies Bouldin index**|Průměrný poměr vzdálenosti mezi clustery a vzdálenostmi mezi clustery. Čím užší je cluster a čím dál jsou clustery, tím nižší je hodnota.|Hodnoty blíže k **0** jsou lepší. Clustery, které jsou větší a méně rozptýlené, budou mít za následek lepší skóre.|
-|**Normalizované vzájemné informace**|Dá se použít, když se školicí data, která se používají ke výuce modelu clusteringu, dodávají s popisky pravdy (tj. pod dohledem clusteringu). Normalizovaná metrika vzájemných informací měří, jestli se podobné datové body přiřazují ke stejnému clusteru a různorodé datové body se přiřazují k různým clusterům. Normalizované vzájemné informace jsou hodnoty mezi 0 a 1.|Hodnoty blížící se **1** jsou lepší.|
+|**Průměrná vzdálenost**|Průměr vzdálenosti mezi datovými body a středem přiřazeného clusteru. Průměrná vzdálenost je mírou blízkosti datových bodů k centroidům clusteru. Je to míra toho, jak 'těsný' cluster je.|Hodnoty blíže k **0** jsou lepší. Čím blíže k nule je průměrná vzdálenost, tím více seskupených dat je. Všimněte si však, že tato metrika se sníží, pokud se zvýší počet clusterů a v extrémním případě (kde každý odlišný datový bod je vlastní cluster) se bude rovnat nule.
+|**Davies Bouldin Index**|Průměrný poměr vzdáleností v rámci clusteru k mezikupami. Čím těsnější cluster u ta je, tím nižší je tato hodnota.|Hodnoty blíže k **0** jsou lepší. Clustery, které jsou dále od sebe a méně rozptýlené bude mít za následek lepší skóre.|
+|**Normalizované vzájemné informace**|Lze použít, když trénovací data použitá k trénování modelu clusteringu také přichází s popisky pravdy země (to znamená, že pod dohledem clustering). Metrika Normalizované vzájemné informace měří, zda se podobné datové body přiřadí ke stejnému clusteru a nesourodé datové body se přiřadí do různých clusterů. Normalizované vzájemné informace je hodnota mezi 0 a 1|Hodnoty blíže k **1** jsou lepší|
 
-## <a name="evaluation-metrics-for-ranking"></a>Metriky vyhodnocení pro hodnocení
+## <a name="evaluation-metrics-for-ranking"></a>Hodnotící metriky pro hodnocení
 
-| Metrika   |      Popis      |  Vyhledejte |
+| Metrika   |      Popis      |  Hledat |
 |----------|-----------------------|-----------|
-|**Zlevněné kumulativní zisky**|Zlevněný kumulativní zisk (DCG) je míra kvality hodnocení. Je odvozen ze dvou předpokladů. Jedna: vysoce relevantní položky jsou užitečnější, pokud se v pořadí podle pořadí seřazení zobrazuje výš. Dvě: užitečnost sleduje relevanci, to znamená větší relevanci, užitečnější položku. Zlevněný kumulativní zisk se počítá pro konkrétní pozici v pořadí řazení. Sečte stupeň relevance dělený logaritmem hodnocení podle pozice v zájmu. Počítá se pomocí $ \ sum_ {i = 0} ^ {p} \frac {rel_i} {\ log_ {e} {i + 1}} $ jsou k dispozici školicímu algoritmu řazení jako označení uzemněné pravdy. Jedna hodnota DCG je poskytována pro každou pozici v tabulce hodnocení, takže název se zlevněnými kumulativními **zisky**. |**Vyšší hodnoty jsou lepší**|
-|**Normalizované zlevněné kumulativní zisky**|Normalizace DCG umožňuje porovnání metriky se seznamy řazení různých délek.|**Hodnoty blížící se 1 jsou lepší.**|
+|**Diskontované kumulativní zisky**|Diskontovaný kumulativní zisk (DCG) je měřítkem kvality hodnocení. Je odvozen ze dvou předpokladů. První: Vysoce relevantní položky jsou užitečnější, když se objevují vyšší v pořadí. Za druhé: Užitečnost sleduje relevanci, která je, čím vyšší je relevance, tím užitečnější je položka. Diskontovaný kumulativní zisk se vypočítá pro konkrétní pozici v pořadí. Shrnuje klasifikaci relevance dělenou logaritmem žebříčku indexu až do pozice zájmu. Vypočítá se pomocí $\sum_{i=0}^{p} \frac {rel_i} {\log_{e}{i+1}}$ Stupně relevance jsou k dispozici algoritmu hodnocení školení jako pozemní popisky pravdy. Pro každou pozici v tabulce pořadí je uvedena jedna hodnota DCG, proto je uveden název Diskontované kumulativní **zisky**. |**Vyšší hodnoty jsou lepší**|
+|**Normalizované diskontované kumulativní zisky**|Normalizace DCG umožňuje porovnat metriku pro pořadníky různých délek|**Hodnoty blíže k 1 jsou lepší**|
 
 ## <a name="evaluation-metrics-for-anomaly-detection"></a>Metriky vyhodnocení pro detekci anomálií
 
-| Metrika   |      Popis      |  Vyhledejte |
+| Metrika   |      Popis      |  Hledat |
 |----------|-----------------------|-----------|
-|**Plošný s křivkou ROC**|Oblast pod křivkou operátora přijímače měří, jak dobře model odděluje neobvyklé a běžné datové body.|**Hodnoty blížící se 1 jsou lepší**. Pouze hodnoty větší než 0,5 ukazují efektivitu modelu. Hodnoty 0,5 nebo nižší označují, že model není lepší než náhodné přidělování vstupů neobvyklé a obvyklým kategoriím.|
-|**Rychlost detekce při nepravdivém kladném počtu**|Rychlost detekce při nepravdivém kladném počtu je poměr počtu správně identifikovaných anomálií na celkový počet anomálií v sadě testů indexovaných každou falešně pozitivním způsobem. To znamená, že pro každou falešně pozitivní položku existuje hodnota pro rychlost detekce v hodnotě falešně pozitivního počtu.|**Hodnoty blížící se 1 jsou lepší**. Pokud neexistují žádné falešně pozitivních hodnot, je tato hodnota 1.|
+|**Plocha pod křivkou ROC**|Plocha pod křivkou operátora přijímače měří, jak dobře model odděluje neobvyklé a obvyklé datové body.|**Hodnoty blíže k 1 jsou lepší**. Účinnost modelu demonstrují pouze hodnoty větší než 0,5. Hodnoty 0,5 nebo nižší označují, že model není o nic lepší než náhodné přidělování vstupů do neobvyklých a obvyklých kategorií|
+|**Míra detekce při falešně pozitivním počtu**|Míra detekce při falešně pozitivním počtu je poměr počtu správně identifikovaných anomálií k celkovému počtu anomálií v testovací sadě indexovaných jednotlivými falešně pozitivními. To znamená, že je hodnota pro zjišťování rychlost při falešně pozitivní počet pro každou falešně pozitivní položku.|**Hodnoty blíže k 1 jsou lepší**. Pokud nejsou k dispozici žádné falešně pozitivní výsledky, je tato hodnota 1|

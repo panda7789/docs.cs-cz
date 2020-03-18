@@ -1,25 +1,25 @@
 ---
-title: Kryptografie – průlomové změny
-description: Uvádí zásadní změny týkající se kryptografie v .NET Core.
+title: Kryptografie láme změny
+description: Zobrazí seznam změn změny související s kryptografií v množení .NET Core.
 ms.date: 02/10/2020
 ms.openlocfilehash: c25eefa8e3ee01ed7a1df4ec4aa9225f2c347a4d
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77449210"
 ---
-# <a name="cryptography-breaking-changes"></a>Kryptografie – průlomové změny
+# <a name="cryptography-breaking-changes"></a>Kryptografie láme změny
 
-Na této stránce jsou popsány následující přerušující se změny:
+Na této stránce jsou popsány následující změny:
 
-| Zásadní změna | Představená verze |
+| Narušující změny | Zavedená verze |
 | - | :-: |
-| [EnvelopedCms ve výchozím nastavení šifrování AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
-| [Minimální velikost pro generování klíče RSAOpenSsl se zvýšila.](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
-| [.NET Core 3,0 upřednostňuje OpenSSL 1.1. x až OpenSSL 1.0. x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
-| [Lepší ověřování argumentu v konstruktoru Pkcs8PrivateKeyInfo](#better-argument-validation-in-the-pkcs8privatekeyinfo-constructor) | 3.0 |
-| [Je respektován logický parametr SignedCms. ComputeSignature.](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
+| [Standardy EnvelopedCms jsou výchozí pro šifrování AES-256](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
+| [Minimální velikost pro generování klíčů RSAOpenSsl se zvýšila](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
+| [.NET Core 3.0 preferuje OpenSSL 1.1.x na OpenSSL 1.0.x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
+| [Lepší ověření argumentu v konstruktoru Pkcs8PrivateKeyInfo](#better-argument-validation-in-the-pkcs8privatekeyinfo-constructor) | 3.0 |
+| [Logický parametr SignedCms.ComputeSignature je respektován](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 

@@ -1,112 +1,112 @@
 ---
 title: Komunikace v architektuře mikroslužeb
-description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami a porozumět vlivům synchronních a asynchronních způsobů.
+description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami a seznamte se s důsledky synchronních a asynchronních způsobů.
 ms.date: 01/30/2020
 ms.openlocfilehash: f2d6e78966bb7d5f481de6db0ab1dcfe2812a1b5
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503305"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401653"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 
-V aplikaci monolitické spuštěné v jednom procesu komponenty vyvolávají jednu jinou pomocí metody na úrovni jazyka nebo volání funkcí. Ty mohou být silně spojeny, pokud vytváříte objekty s kódem (například `new ClassName()`), nebo je lze vyvolat odděleným způsobem, pokud používáte vkládání závislostí odkazem na abstrakce namísto konkrétních instancí objektů. V obou případech jsou objekty spuštěné v rámci stejného procesu. Největší výzvou, při změně z aplikace monolitické na aplikaci založenou na mikroslužbách, spočívá v tom, že probíhá změna komunikačního mechanismu. Přímý převod z volání metody v rámci procesu do volání RPC na služby způsobí, že se jedná o chat a neefektivní komunikaci, která v distribuovaných prostředích nebude dobře fungovat. Problémy s návrhem distribuovaného systému jsou dostatečně dobře známé, že se jedná o i Canon známý jako [Fallacies distribuovaného výpočetního](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) prostředí, ve kterém jsou uvedeny předpoklady, které vývojáři často vytvářejí při přechodu z monolitické do distribuovaných návrhů.
+V monolitické aplikaci spuštěné v jednom procesu se komponenty vzájemně vyvolávají pomocí metody nebo volání funkcí na úrovni jazyka. Ty mohou být silně spojeny, pokud vytváříte objekty `new ClassName()`s kódem (například ), nebo mohou být vyvolány odděleným způsobem, pokud používáte vkládání závislostí odkazováním na abstrakce spíše než na konkrétní instance objektů. V obou směrech jsou objekty spuštěny ve stejném procesu. Největší výzvou při přechodu z monolitické aplikace na aplikaci založenou na mikroslužbách spočívá ve změně komunikačního mechanismu. Přímý převod z volání metody v procesu do volání Vzdáleného volání na služby způsobí upovídaný a neefektivní komunikaci, která nebude fungovat dobře v distribuovaných prostředích. Výzvy navrhování distribuovaného systému správně jsou dostatečně dobře známé, že existuje i kánek známý jako [Fallacies distribuovaných výpočetních počítačů,](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) který uvádí předpoklady, které vývojáři často dělají při přechodu z monolitických na distribuované návrhy.
 
-Neexistuje žádné řešení, ale několik. Jedno řešení zahrnuje izolaci podnikových mikroslužeb co nejvíc. Pak můžete použít asynchronní komunikaci mezi interními mikroslužbami a nahradit jemně odstupňovanou komunikaci, která je typická pro komunikaci uvnitř procesu mezi objekty a hrubou komunikací. Můžete to provést seskupením volání a vrácením dat, která agreguje výsledky více vnitřních volání, klientovi.
+Neexistuje jedno řešení, ale několik. Jedno řešení zahrnuje izolaci obchodní mikroslužeb co nejvíce. Potom použijte asynchronní komunikaci mezi interní mikroslužeb a nahradit jemně odstupňované komunikace, která je typická v intraprocesové komunikace mezi objekty s hrubší odstupňované komunikace. Můžete to provést seskupením volání a vrácením dat, která agreguje výsledky více interních volání, klientovi.
 
-Aplikace založené na mikroslužbách je distribuovaný systém běžící na více procesech nebo službách, obvykle i na různých serverech nebo hostitelích. Každá instance služby je obvykle proces. Proto musí služby komunikovat pomocí Meziprocesového komunikačního protokolu, jako je HTTP, AMQP nebo binární protokol jako TCP, v závislosti na povaze jednotlivých služeb.
+Aplikace založená na mikroslužbách je distribuovaný systém spuštěný na více procesech nebo službách, obvykle i na více serverech nebo hostitelích. Každá instance služby je obvykle proces. Proto musí služby komunikovat pomocí meziprocesového komunikačního protokolu, jako je HTTP, AMQP nebo binární protokol, jako je TCP, v závislosti na povaze každé služby.
 
-Komunita mikroslužeb podporuje filozofie[inteligentních koncových bodů a Dumb kanálů](https://simplicable.com/new/smart-endpoints-and-dumb-pipes). Tento heslo doporučuje návrh, který je mezi mikroslužbami co nejoddělený a co možno soudržný v rámci jedné mikroslužby. Jak bylo vysvětleno dříve, každá mikroslužba vlastní vlastní data a vlastní logiku domény. Nicméně mikroslužby, které sestaví koncovou aplikaci, se obvykle jednoduše choreographed pomocí komunikace REST namísto složitých protokolů, jako jsou WS-\* a flexibilní komunikace řízené událostmi namísto centralizovaných procesů pro obchodní procesy.
+Komunita mikroslužeb podporuje filozofii "[inteligentní koncové body a hloupé kanály](https://simplicable.com/new/smart-endpoints-and-dumb-pipes)" Tento slogan podporuje návrh, který je co nejvíce oddělené mezi mikroslužeb a co nejsoudržnější v rámci jedné mikroslužby. Jak bylo vysvětleno dříve, každá mikroslužba vlastní vlastní data a vlastní logiku domény. Ale mikroslužeb, které tvoří end-to-end aplikace jsou obvykle jednoduše choreografie pomocí rest\* komunikace spíše než složité protokoly, jako je ws a flexibilní komunikace řízené událostmi namísto centralizovaných orchestrátorů obchodního procesu.
 
-Mezi tyto dva běžně používané protokoly patří požadavek HTTP/odpověď s rozhraními API prostředků (při dotazování většiny všech) a odlehčené asynchronní zasílání zpráv při komunikaci s aktualizacemi napříč více mikroslužbami. Tyto informace jsou podrobněji vysvětleny v následujících částech.
+Dva běžně používané protokoly jsou požadavek/odpověď HTTP s api prostředků (při dotazování ze všeho nejvíce) a zjednodušené asynchronní zasílání zpráv při komunikaci aktualizací napříč více mikroslužeb. Ty jsou podrobněji vysvětleny v následujících částech.
 
 ## <a name="communication-types"></a>Typy komunikace
 
-Klient a služby mohou komunikovat prostřednictvím mnoha různých typů komunikace, přičemž každý z nich cílí na jiný scénář a cíle. Zpočátku lze tyto typy komunikací klasifikovat ve dvou osách.
+Klient a služby mohou komunikovat prostřednictvím mnoha různých typů komunikace, z nichž každý cílí na jiný scénář a cíle. Zpočátku mohou být tyto typy komunikace klasifikovány ve dvou osách.
 
 První osa definuje, zda je protokol synchronní nebo asynchronní:
 
-- Synchronní protokol. HTTP je synchronní protokol. Klient odešle požadavek a počká na odpověď od služby. To je nezávislé na spuštění klientského kódu, které by mohlo být synchronní (vlákno je blokováno) nebo asynchronní (vlákno není blokováno a odpověď bude nakonec k dispozici zpětnému volání). Důležitým bodem je, že protokol (HTTP/HTTPS) je synchronní a klientský kód může v případě, že obdrží odpověď serveru HTTP, pokračovat pouze v jeho úkolu.
+- Synchronní protokol. HTTP je synchronní protokol. Klient odešle požadavek a čeká na odpověď ze služby. To je nezávislé na spuštění kódu klienta, který může být synchronní (vlákno je blokováno) nebo asynchronní (vlákno není blokováno a odpověď nakonec dosáhne zpětného volání). Důležitým bodem je, že protokol (HTTP/HTTPS) je synchronní a klientský kód může pokračovat ve své úloze pouze v případě, že obdrží odpověď serveru HTTP.
 
-- Asynchronní protokol. Další protokoly, jako je AMQP (protokol podporovaný mnoha operačními systémy a cloudová prostředí), používají asynchronní zprávy. Kód klienta nebo odesílatel zprávy obvykle nečeká na odpověď. Pouze pošle zprávu jako při posílání zprávy do fronty RabbitMQ nebo v jakémkoli jiném zprostředkovateli zpráv.
+- Asynchronní protokol. Jiné protokoly, jako je AMQP (protokol podporovaný mnoha operačními systémy a cloudovými prostředími) používají asynchronní zprávy. Klientský kód nebo odesílatel zprávy obvykle nečeká na odpověď. To jen odešle zprávu jako při odesílání zprávy do fronty RabbitMQ nebo jiné zprávy broker.
 
-Druhá osa definuje, jestli má komunikace jeden přijímač nebo více přijímačů:
+Druhá osa definuje, zda má komunikace jeden přijímač nebo více přijímačů:
 
-- Jeden přijímač. Každý požadavek musí zpracovat přesně jeden příjemce nebo služba. Příkladem této komunikace je [vzor příkazu](https://en.wikipedia.org/wiki/Command_pattern).
+- Jeden přijímač. Každý požadavek musí být zpracován přesně jedním příjemcem nebo službou. Příkladem této komunikace je [vzor příkazu](https://en.wikipedia.org/wiki/Command_pattern).
 
-- Více přijímačů. Každý požadavek může být zpracován nulou pro více přijímačů. Tento typ komunikace musí být asynchronní. Příkladem je mechanismus pro [publikování a odběr](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) , který se používá ve vzorcích, jako je [Architektura řízená událostmi](https://microservices.io/patterns/data/event-driven-architecture.html). Vychází z rozhraní sběrnice událostí nebo zprostředkovatele zpráv při rozšiřování aktualizací dat mezi několika mikroslužbami prostřednictvím událostí. obvykle se implementuje prostřednictvím služby Service Bus nebo podobného artefaktu, jako je [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) pomocí [témat a odběrů](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions).
+- Více přijímačů. Každý požadavek může být zpracován nulou na více přijímačů. Tento typ komunikace musí být asynchronní. Příkladem je mechanismus [publikování/odběru](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) používaný ve vzorcích, jako je [architektura řízená událostmi](https://microservices.io/patterns/data/event-driven-architecture.html). To je založeno na rozhraní event-bus nebo zprostředkovatele zpráv při šíření aktualizací dat mezi více mikroslužeb prostřednictvím událostí; obvykle se implementuje prostřednictvím sběrnice service bus nebo podobné artefakty, jako je [Azure Service Bus](https://azure.microsoft.com/services/service-bus/) pomocí témat a [předplatných](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions).
 
-Aplikace založená na mikroslužbách bude často používat kombinaci těchto komunikačních stylů. Nejběžnějším typem je komunikace s jedním přijímačem s synchronním protokolem, jako je HTTP/HTTPS, při volání běžné služby HTTP webového rozhraní API. Mikroslužby také obvykle používají protokoly zpráv pro asynchronní komunikaci mezi mikroslužbami.
+Aplikace založená na mikroslužbách často používá kombinaci těchto stylů komunikace. Nejběžnějším typem je komunikace s jedním přijímačem se synchronním protokolem, jako je HTTP/HTTPS při vyvolání běžné služby HTTP webového rozhraní API. Mikroslužby také obvykle používají protokoly zasílání zpráv pro asynchronní komunikaci mezi mikroslužbami.
 
-Tyto osy jsou vhodné k tomu, abyste měli jasnou možnost komunikačních mechanismů, ale nejedná se o důležité obavy při vytváření mikroslužeb. Asynchronní povaha spuštění klientského vlákna ani asynchronní povaha vybraného protokolu není důležitým bodem při integraci mikroslužeb. Důležité *je* , aby se vaše mikroslužby asynchronně integrují při zachování nezávislosti mikroslužeb, jak je vysvětleno v následující části.
+Tyto osy jsou dobré vědět, takže máte jasno na možné komunikační mechanismy, ale nejsou důležité obavy při vytváření mikroslužeb. Asynchronní povaha spuštění vlákna klienta ani asynchronní povaha vybraného protokolu nejsou důležitými body při integraci mikroslužeb. Co *je* důležité, je možnost integrovat mikroslužeb asynchronně při zachování nezávislosti mikroslužeb, jak je vysvětleno v následující části.
 
-## <a name="asynchronous-microservice-integration-enforces-microservices-autonomy"></a>Asynchronní integrace mikroslužeb vynutila autonomii mikroslužby.
+## <a name="asynchronous-microservice-integration-enforces-microservices-autonomy"></a>Asynchronní integrace mikroslužeb vynucuje autonomii mikroslužeb
 
-Jak už bylo zmíněno, důležitým bodem při sestavování aplikace založené na mikroslužbách je způsob, jakým můžete své mikroslužby integrovat. V ideálním případě byste se měli pokusit minimalizovat komunikaci mezi interními mikroslužbami. Čím méně komunikace mezi mikroslužby, tím lépe. V mnoha případech ale budete muset nějaké mikroslužby integrovat. V takovém případě je třeba toto kritické pravidlo, že komunikace mezi mikroslužbami by měla být asynchronní. To neznamená, že musíte použít konkrétní protokol (například asynchronní zasílání zpráv oproti synchronnímu HTTP). Jenom to znamená, že komunikace mezi mikroslužbami by se měla provádět jenom při asynchronním šíření dat, ale nezáleží na ostatních vnitřních mikroslužbách v rámci operace HTTP/odpovědi počáteční služby.
+Jak již bylo zmíněno, důležitým bodem při vytváření aplikace založené na mikroslužbách je způsob, jakým integrovat mikroslužeb. V ideálním případě byste se měli pokusit minimalizovat komunikaci mezi interní mikroslužeb. Čím méně komunikace mezi mikroslužbami, tím lépe. Ale v mnoha případech budete muset nějak integrovat mikroslužeb. Když to potřebujete udělat, kritické pravidlo je, že komunikace mezi mikroslužeb by měla být asynchronní. To neznamená, že budete muset použít konkrétní protokol (například asynchronní zasílání zpráv versus synchronní HTTP). To jen znamená, že komunikace mezi mikroslužeb by měla být provedena pouze šíření dat asynchronně, ale snažte se nezávisí na jiné interní mikroslužeb jako součást počáteční služby http požadavek/odpověď operace.
 
-Pokud je to možné, nikdy nezáleží na synchronní komunikaci (požadavek nebo odpověď) mezi několika mikroslužbami, a to ani u dotazů. Cílem každé mikroslužby je autonomní a k dispozici klientovi klienta, i když ostatní služby, které jsou součástí komplexní aplikace, nejsou v pořádku. Pokud se domníváte, že je třeba provést volání z jedné mikroslužby do ostatních mikroslužeb (například provedení požadavku HTTP na dotaz na data), aby bylo možné poskytnout odpověď klientské aplikaci, máte architekturu, která nebude odolná, pokud se některé mikroslužby selžou.
+Pokud je to možné, nikdy nezávisí na synchronní komunikaci (požadavek/odpověď) mezi více mikroslužeb, ani pro dotazy. Cílem každé mikroslužby je být autonomní a k dispozici pro klienta spotřebitele, i v případě, že ostatní služby, které jsou součástí aplikace end-to-end jsou mimo nebo není v pořádku. Pokud si myslíte, že potřebujete volat z jedné mikroslužby do jiných mikroslužeb (jako je provádění požadavku HTTP pro datový dotaz), abyste mohli poskytnout odpověď na klientskou aplikaci, máte architekturu, která nebude odolná, když některé mikroslužby selžou.
 
-Kromě toho máte závislosti HTTP mezi mikroslužbami, například při vytváření dlouhých cyklů požadavků a odpovědí s řetězy požadavků HTTP, jak je znázorněno v první části obrázku 4-15, nejen to, že vaše mikroslužby nejsou autonomní, ale i jejich výkon se projeví, jakmile jedna ze služeb v tomto řetězci nefunguje dobře.
+Navíc s http závislosti mezi mikroslužeb, jako při vytváření dlouhé cykly požadavků a odpovědí s řetězci požadavků HTTP, jak je znázorněno v první části obrázku 4-15, nejen dělá vaše mikroslužby není autonomní, ale také jejich výkon je ovlivněna, jakmile jedna ze služeb v tomto řetězci nefunguje dobře.
 
-Čím více přidáváte synchronní závislosti mezi mikroslužbami, jako jsou požadavky na dotazy, tím horší je celková doba odezvy pro klientské aplikace.
+Čím více přidáte synchronní závislosti mezi mikroslužeb, jako jsou požadavky na dotazy, tím horší je celková doba odezvy pro klientské aplikace.
 
-![Diagram znázorňující tři typy komunikace napříč mikroslužbami.](./media/communication-in-microservice-architecture/sync-vs-async-patterns-across-microservices.png)
+![Diagram znázorňující tři typy komunikace mezi mikroslužbami.](./media/communication-in-microservice-architecture/sync-vs-async-patterns-across-microservices.png)
 
-**Obrázek 4-15**. Anti-vzory a vzory komunikace mezi mikroslužbami
+**Obrázek 4-15**. Anti-patterns a vzory v komunikaci mezi mikroslužbami
 
-Jak je znázorněno na výše uvedeném diagramu, v části synchronní komunikace je mezi mikroslužbami při obsluze žádosti klienta vytvořeno zřetězení požadavků. Toto je anti-vzor. U mikroslužeb asynchronní komunikace se používají asynchronní zprávy nebo cyklické dotazování http ke komunikaci s dalšími mikroslužbami, ale žádost klienta se poskytuje hned.
+Jak je znázorněno na výše uvedeném diagramu, v synchronní komunikaci je vytvořen "řetězec" požadavků mezi mikroslužbami při poskytování požadavku klienta. Tohle je anti-vzor. V asynchronní komunikace mikroslužeb použít asynchronní zprávy nebo http dotazování ke komunikaci s jinými mikroslužeb, ale požadavek klienta je obsluhována ihned.
 
-Pokud vaše mikroslužba potřebuje vyvolat další akci v jiné mikroslužbě (Pokud je to možné), neprovede tuto akci synchronně a jako součást původní žádosti mikroslužeb a operace odpovědi. Místo toho se provede asynchronně (pomocí asynchronního zasílání zpráv nebo událostí integrace, front atd.). Ale co nejvíc Nevolejte akci synchronně jako součást původní synchronní operace synchronního požadavku a odpovědi.
+Pokud vaše mikroslužby potřebuje vyvolat další akci v jiné mikroslužby, pokud je to možné, neprovádějte tuto akci synchronně a jako součást původní mikroslužeb požadavku a odpovědi operace. Místo toho to asynchronně (pomocí asynchronní zasílání zpráv nebo integrační události, fronty, atd.). Ale co nejvíce nevyvolávejte akci synchronně jako součást původní synchronní operace požadavku a odpovědi.
 
-A konečně (a jedná se o většinu problémů při vytváření mikroslužeb), pokud vaše počáteční mikroslužba potřebuje data, která jsou původně vlastněna jinými mikroslužbami, nespoléhá na to, aby pro tato data prováděla synchronní požadavky. Místo toho replikujte nebo rozšiřujte tato data (pouze atributy, které potřebujete) do databáze počáteční služby, a to pomocí konečné konzistence (obvykle pomocí integračních událostí, jak je vysvětleno v nadcházejících oddílech).
+A nakonec (a to je místo, kde většina problémů vznikají při vytváření mikroslužeb), pokud počáteční mikroslužeb potřebuje data, která je původně vlastněna jinými mikroslužbami, nespoléhejte na provádění synchronních požadavků pro tato data. Místo toho replikujte nebo rozšíříte tato data (pouze atributy, které potřebujete) do databáze počáteční služby pomocí konečné konzistence (obvykle pomocí událostí integrace, jak je vysvětleno v nadcházejících částech).
 
-Jak bylo uvedeno dříve v části [identifikující hranice doménového modelu pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md) , duplikace některých dat napříč několika mikroslužbami není nesprávným návrhem, v opačném případě, kdy je to možné, můžete data přeložit do konkrétního jazyka nebo podmínek, které jsou pro další domény nebo vázané kontexty. Například v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) máte mikroslužbu s názvem `identity-api`, která je ve většině dat uživatele s entitou s názvem `User`. Pokud ale potřebujete ukládat data o uživateli v rámci `Ordering` mikroslužeb, uložte ho jako jinou entitu s názvem `Buyer`. Entita `Buyer` sdílí stejnou identitu s původní `User`ou entitou, ale může mít jenom několik atributů, které vyžaduje `Ordering` doména, a ne celý profil uživatele.
+Jak je uvedeno dříve v identifikaci hranice modelu domény pro každou část [mikroslužeb,](identify-microservice-domain-model-boundaries.md) duplikování některých dat v několika mikroslužeb není nesprávný návrh – naopak, když to uděláte, že můžete přeložit data do konkrétního jazyka nebo podmínky této další domény nebo ohraničený kontext. Například v [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) máte mikroslužbu s názvem, `identity-api` která má na starosti většinu `User`dat uživatele s entitou s názvem . Však v případě, že potřebujete ukládat data o uživateli v rámci `Ordering` mikroslužby, uložíte je jako jinou entitu s názvem `Buyer`. Entita `Buyer` sdílí stejnou identitu `User` s původní entitou, ale může `Ordering` mít pouze několik atributů potřebných pro doménu a ne celý profil uživatele.
 
-Můžete použít libovolný protokol pro komunikaci a šíření dat asynchronně napříč mikroslužbami, aby bylo možné zajistit jejich případné konzistenci. Jak už jsme uvedli, mohli byste použít události integrace pomocí sběrnice událostí nebo zprostředkovatele zpráv nebo můžete protokol HTTP použít taky tak, že v něm provedete dotazování dalších služeb. Nezáleží na tom. Důležité pravidlo je nevytvářet synchronní závislosti mezi vašimi mikroslužbami.
+Můžete použít libovolný protokol ke komunikaci a šíření dat asynchronně mezi mikroslužeb, aby měly konečnou konzistenci. Jak již bylo zmíněno, můžete použít události integrace pomocí sběrnice událostí nebo zprostředkovatele zpráv nebo můžete dokonce použít protokol HTTP dotazováním jiných služeb. Nezáleží. Důležitým pravidlem je nevytvářet synchronní závislosti mezi mikroslužbami.
 
-V následujících částech se vysvětlují vícenásobné komunikační styly, které můžete zvážit v použití v rámci aplikace založené na mikroslužbách.
+V následujících částech je vysvětleno více stylů komunikace, které můžete zvážit použití v aplikaci založené na mikroslužbách.
 
 ## <a name="communication-styles"></a>Styly komunikace
 
-Existuje mnoho protokolů a možností, které můžete použít ke komunikaci v závislosti na typu komunikace, kterou chcete použít. Pokud používáte komunikační mechanismus synchronních požadavků a odpovědí, jsou protokoly, jako jsou přístupy HTTP a REST, nejběžnější, zejména pokud publikujete služby mimo hostitele Docker nebo cluster mikroslužeb. Pokud komunikujete mezi službami interně (v rámci hostitele Docker nebo clusteru mikroslužeb), můžete také použít mechanizmus komunikace v binárním formátu (například WCF pomocí protokolu TCP a binárního formátu). Alternativně můžete použít asynchronní komunikační mechanismy založené na zprávách, jako je AMQP.
+Existuje mnoho protokolů a možností, které můžete použít pro komunikaci, v závislosti na typu komunikace, který chcete použít. Pokud používáte synchronní mechanismus komunikace založené na požadavcích a odpovědích, jsou nejběžnější protokoly, jako jsou přístupy HTTP a REST, zejména pokud publikujete služby mimo hostitelský nebo cluster mikroslužeb Dockeru. Pokud komunikujete interně mezi službami (v rámci vašeho hostitele Dockeru nebo clusteru mikroslužeb), můžete také chtít použít mechanismy komunikace binárního formátu (jako je WCF pomocí TCP a binárního formátu). Alternativně můžete použít asynchronní, na základě zpráv komunikační mechanismy, jako je například AMQP.
 
-K dispozici je také více formátů zpráv, jako JSON nebo XML, nebo i binární formáty, což může být efektivnější. Pokud váš zvolený binární formát není standard, pravděpodobně nebudete mít dobrou představu o tom, že vaše služby budou veřejně publikovat v tomto formátu. Pro interní komunikaci mezi vašimi mikroslužbami můžete použít nestandardní formát. To můžete provést při komunikaci mezi mikroslužbami v rámci hostitele Docker nebo v clusteru mikroslužeb (například orchestrace Docker) nebo pro speciální klientské aplikace, které komunikují s mikroslužbami.
+Existuje také více formátů zpráv, jako je JSON nebo XML, nebo dokonce binární formáty, které mohou být efektivnější. Pokud zvolený binární formát není standardem, pravděpodobně není vhodné veřejně publikovat služby pomocí tohoto formátu. Pro interní komunikaci mezi mikroslužbami můžete použít nestandardní formát. Můžete to provést při komunikaci mezi mikroslužeb v rámci hostitele Dockeru nebo clusteru mikroslužeb (například orchestrátory Dockeru) nebo pro proprietární klientské aplikace, které komunikují s mikroslužbami.
 
-### <a name="requestresponse-communication-with-http-and-rest"></a>Komunikace mezi požadavkem a odpovědí pomocí protokolu HTTP a REST
+### <a name="requestresponse-communication-with-http-and-rest"></a>Komunikace mezi požadavky a odpověďmi s HTTP a REST
 
-Když klient používá komunikaci typu požadavek/odpověď, pošle požadavek službě, služba zpracuje požadavek a pošle zpět odpověď. Komunikace mezi požadavkem a odpovědí je obzvláště vhodná pro dotazování dat v UŽIVATELSKÉM rozhraní (živé uživatelské rozhraní) v reálném čase z klientských aplikací. V architektuře mikroslužeb proto pravděpodobně použijete tento komunikační mechanismus pro většinu dotazů, jak je znázorněno na obrázku 4-16.
+Když klient používá komunikaci požadavku a odpovědi, odešle požadavek službě, pak služba zpracuje požadavek a odešle zpět odpověď. Komunikace mezi požadavky a odpověďmi je obzvláště vhodná pro dotazování dat pro uživatelské rozhraní v reálném čase (živé uživatelské rozhraní) z klientských aplikací. Proto v architektuře mikroslužeb budete pravděpodobně používat tento komunikační mechanismus pro většinu dotazů, jak je znázorněno na obrázku 4-16.
 
-![Diagram znázorňující komunikace požadavků a odpovědí pro živé dotazy a aktualizace](./media/communication-in-microservice-architecture/request-response-comms-live-queries-updates.png)
+![Diagram zobrazující komunikování požadavků a odpovědí pro živé dotazy a aktualizace.](./media/communication-in-microservice-architecture/request-response-comms-live-queries-updates.png)
 
-**Obrázek 4-16**. Komunikace pomocí požadavků a odpovědí HTTP (synchronní nebo asynchronní)
+**Obrázek 4-16**. Použití http komunikace mezi požadavky a odpověďmi (synchronní nebo asynchronní)
 
-Pokud klient používá komunikaci typu požadavek/odpověď, předpokládá se, že odpověď dorazí v krátkém čase, obvykle méně než sekunda nebo několik sekund. U opožděných odpovědí musíte implementovat asynchronní komunikaci na základě [vzorů zasílání zpráv](https://docs.microsoft.com/azure/architecture/patterns/category/messaging) a [technologií zasílání zpráv](https://en.wikipedia.org/wiki/Message-oriented_middleware), což je jiný přístup, který vysvětlujeme v další části.
+Pokud klient používá komunikaci požadavku a odpovědi, předpokládá, že odpověď dorazí v krátkém čase, obvykle méně než sekundu nebo maximálně několik sekund. Pro zpožděné odpovědi je třeba implementovat asynchronní komunikaci na základě [vzorů zasílání zpráv](https://docs.microsoft.com/azure/architecture/patterns/category/messaging) a technologií zasílání [zpráv](https://en.wikipedia.org/wiki/Message-oriented_middleware), což je jiný přístup, který vysvětlujeme v další části.
 
-Oblíbeným stylem architektury pro komunikaci mezi požadavkem a odpovědí je [REST](https://en.wikipedia.org/wiki/Representational_state_transfer). Tento přístup je založený na a úzce spojený s protokolem [http](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) , přechodu operacemi http, jako je get, post a PUT. REST je nejčastěji používaná komunikace architektury při vytváření služeb. Služby REST můžete implementovat při vývoji ASP.NET Core služeb webového rozhraní API.
+Populární architektonický styl pro komunikaci mezi požadavky a odezvou je [REST](https://en.wikipedia.org/wiki/Representational_state_transfer). Tento přístup je založen na protokolu [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) a pevně s ním spojený, který zahrnuje slovesa HTTP jako GET, POST a PUT. REST je nejčastěji používaný architektonický komunikační přístup při vytváření služeb. Služby REST můžete implementovat při vývoji ASP.NET služby základního webového rozhraní API.
 
-K dispozici je další hodnota při používání služby HTTP REST jako jazyk definice rozhraní. Pokud například použijete [metadata Swagger](https://swagger.io/) k popisu rozhraní API služby, můžete použít nástroje, které generují zástupné procedury klienta, které mohou přímo zjišťovat a využívat vaše služby.
+Existuje další hodnota při použití služby HTTP REST jako jazyk definice rozhraní. Například pokud používáte [Metadata Swagger](https://swagger.io/) k popisu rozhraní API služby, můžete použít nástroje, které generují zástupné procedury klientů, které můžete přímo zjistit a využívat vaše služby.
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Martin Fowlera. Richardson model splatnosti** popis modelu REST. \
+- **Martin fowler. Richardson Maturity Model** Popis modelu REST. \
   <https://martinfowler.com/articles/richardsonMaturityModel.html>
 
-- **Swagger** Oficiální lokalita. \
+- **Chvástání** Oficiální stránky. \
   <https://swagger.io/>
 
-### <a name="push-and-real-time-communication-based-on-http"></a>Doručování a komunikace v reálném čase na základě HTTP
+### <a name="push-and-real-time-communication-based-on-http"></a>Push a komunikace v reálném čase založená na protokolu HTTP
 
-Další možností (obvykle pro jiné účely než REST) je komunikace v reálném čase a 1: n s architekturami vyšší úrovně, jako jsou například [ASP.NET signály](https://www.asp.net/signalr) a protokoly, jako jsou [WebSockets](https://en.wikipedia.org/wiki/WebSocket).
+Další možností (obvykle pro jiné účely než REST) je komunikace v reálném čase a 1:N s architekturami vyšší úrovně, jako je [například ASP.NET SignalR](https://www.asp.net/signalr) a protokoly, jako je [WebSockets](https://en.wikipedia.org/wiki/WebSocket).
 
-Jak ukazuje obrázek 4-17, komunikace HTTP v reálném čase znamená, že serverový kód přenáší obsah do připojených klientů, protože data budou k dispozici, místo toho, aby server čekal na vyžádání nových dat klientem.
+Jak ukazuje obrázek 4-17, komunikace HTTP v reálném čase znamená, že můžete mít kód serveru, který tlačí obsah připojeným klientům, jakmile budou data k dispozici, namísto toho, aby server čekal, až klient požádá o nová data.
 
-![Diagram znázorňující práci na vyžádání a na základě signálu v reálném čase.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
+![Diagram znázorňující push a real-time comms založené na SignalR.](./media/communication-in-microservice-architecture/one-to-many-communication.png)
 
-**Obrázek 4-17**. Komunikace mezi asynchronními zprávami 1:1 v reálném čase
+**Obrázek 4-17**. Komunikace asynchronních zpráv v reálném čase
 
-Signaler je dobrým způsobem, jak zajistit komunikaci v reálném čase pro doručování obsahu klientům ze serveru back-end. Vzhledem k tomu, že komunikace probíhá v reálném čase, aplikace klienta zobrazuje změny téměř okamžitě. To se obvykle řídí protokolem, jako jsou WebSockets, a to s využitím mnoha připojení WebSockets (jedna na každého klienta). Typickým příkladem je, že služba komunikuje se změnou skóre sportovní hry na mnoho klientských webových aplikací současně.
+SignalR je dobrý způsob, jak dosáhnout komunikace v reálném čase pro odesílání obsahu klientům z back-end serveru. Vzhledem k tomu, že komunikace je v reálném čase, klientské aplikace ukazují změny téměř okamžitě. To je obvykle zpracována protokolem, jako je Například WebSockets, pomocí mnoha připojení WebSockets (jeden na klienta). Typickým příkladem je, když služba komunikuje změnu skóre sportovní hry do mnoha klientských webových aplikací současně.
 
 >[!div class="step-by-step"]
 >[Předchozí](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
->[Další](asynchronous-message-based-communication.md)
+>[další](asynchronous-message-based-communication.md)

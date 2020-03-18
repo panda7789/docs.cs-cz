@@ -1,31 +1,31 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Doprovodné materiály k architektuře aplikací .NET
+title: Pokyny k architektuře aplikací rozhraní .NET
 metadata:
-  title: Doprovodné materiály k architektuře aplikací .NET
+  title: Pokyny k architektuře aplikací rozhraní .NET
   meta.description: 'Learn about recommended practices for architecting, designing and building .NET software.'
   ms.topic: landing-page
   ms.date: 10/22/2019
 abstract:
-  description: Naučte se vytvářet aplikace .NET připravené pro produkční prostředí s využitím bezplatného Průvodce architekturou aplikací.
+  description: Naučte se vytvářet aplikace .NET připravené pro produkční prostředí s bezplatnými pokyny k architektuře aplikací.
 sections:
-  - title: Publikované elektronické knihy
+  - title: Publikované e-knihy
     items:
-      - html: <ul><li><p><a href="grpc-for-wcf-developers/index">ASP.NET Core gRPC pro vývojáře WCF</a></p>
-      - html: '<p>Tato příručka vysvětluje, co je gRPC, s ohledem na každý koncept na ekvivalentní funkce WCF a poskytuje pokyny pro migraci existující aplikace WCF na gRPC.</p></li></ul>'
-      - html: <ul><li><p><a href="containerized-lifecycle/index">Kontejnerové životní cykly aplikace Docker s platformou a nástroji Microsoftu</a></p>
-      - html: '<p>Tato příručka představuje úvod k doporučeným procesům životního cyklu životnosti, které použijete k vývoji, ověřování a nasazení kontejnerových aplikací Docker pomocí sady Visual Studio a Microsoft Azure.</p></li></ul>'
-      - html: <ul><li><p><a href="modernize-with-azure-containers/index">Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows</a></p>
-      - html: '<p>Tato příručka představuje úvod k strategiím, které budete potřebovat k migraci stávajících webových aplikací do cloudu Azure a kontejnerů Windows. Dozvíte se o strategiích kódu, migraci dat, orchestraci a procesech CI/CD.</p></li></ul>'
-      - html: <ul><li><p><a href="modern-web-apps-azure/index">Architekt moderních webových aplikací pomocí ASP.NET Core a Azure</a></p>
-      - html: '<p>Tato příručka představuje úvod k doporučeným procesům architektury, návrhu a nasazení, které budete používat k sestavování aplikací ASP.NET a ASP.NET Core a hostování těchto aplikací v Azure.</p></li></ul>'
-      - html: <ul><li><p><a href="microservices/index">Architekty aplikací založených na kontejnerech a mikroslužbách</a></p>
-      - html: <p>Tato příručka je Úvod k vývoji aplikací založených na mikroslužbách a jejich správě pomocí kontejnerů. Věnuje se návrhům architektury a přístupům k implementaci pomocí kontejnerů .NET Core a Docker.</p></li></ul>
+      - html: <ul><li><p><a href="grpc-for-wcf-developers/index">gRPC ASP.NET Core pro vývojáře WCF</a></p>
+      - html: '<p>Tato příručka vysvětluje, co je gRPC, který se týká jednotlivých konceptů ekvivalentních funkcí WCF, a nabízí pokyny pro migraci existující aplikace WCF do gRPC.</p></li></ul>'
+      - html: <ul><li><p><a href="containerized-lifecycle/index">Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft</a></p>
+      - html: '<p>Tato příručka je úvodem k doporučeným procesům životního cyklu ukončení do konce, které budete používat k vývoji, ověřování a nasazování kontejnerizovaných aplikací Dockeru pomocí Sady Visual Studio a Microsoft Azure.</p></li></ul>'
+      - html: <ul><li><p><a href="modernize-with-azure-containers/index">Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů s Windows</a></p>
+      - html: '<p>Tato příručka je úvodem ke strategiím, které budete potřebovat k migraci existujících webových aplikací do cloudu Azure a kontejnerů Windows. Dozvíte se o strategiích kódu, migraci dat, orchestrátorech a procesech CI/CD.</p></li></ul>'
+      - html: <ul><li><p><a href="modern-web-apps-azure/index">Architektur moderních webových aplikací s ASP.NET Core a Azure</a></p>
+      - html: '<p>Tato příručka je úvodem k doporučeným procesům architektury, návrhu a nasazení, které použijete k vytváření ASP.NET a ASP.NET základních aplikací a hostování těchto aplikací v Azure.</p></li></ul>'
+      - html: <ul><li><p><a href="microservices/index">Navrhování kontejnerů a aplikací založených na mikroslužbách</a></p>
+      - html: <p>Tato příručka je úvodem do vývoje aplikací založených na mikroslužbách a jejich správě pomocí kontejnerů. Popisuje architektury návrhu a implementace přístupy pomocí .NET Core a Docker kontejnery.</p></li></ul>
       - html: '<ul><li><p><a href="serverless/index">Aplikace bez serveru: architektura, vzory a implementace v Azure</a></p>'
-      - html: '<p>Toto je průvodce pro sestavování aplikací bez serveru s příklady pomocí Azure. Popisuje různé přístupy k architektuře a navrhování, výhody a výzvy, které jsou součástí bez serveru, a poskytuje scénáře a případy použití pro aplikace bez serveru.</p></li></ul>'
+      - html: '<p>Toto je průvodce pro vytváření aplikací bez serveru s příklady pomocí Azure. Popisuje různé architektury a návrhové přístupy, výhody a výzvy, které přicházejí s bez serveru, a poskytuje scénáře a případy použití pro aplikace bez serveru.</p></li></ul>'
   - title: Náhled elektronických knih
     items:
-      - html: <ul><li><p><a href="cloud-native/index">Architekt cloudových nativních aplikací .NET pro Azure</a></p>
-      - html: '<p>Tato příručka definuje, jaký cloudový nativní je, zavádí ukázkovou aplikaci vytvořenou pomocí principů nativních pro Cloud a popisuje témata, která jsou společná pro většinu cloudových nativních aplikací.</p></li></ul>'
-      - html: <ul><li><p><a href="blazor-for-web-forms-developers/index">Blazor pro vývojáře webových formulářů ASP.NET</a></p>
-      - html: <p>Úvod do Blazor pro vývojáře webových formulářů ASP.NET. Naučte se vytvářet plnohodnotné webové aplikace s využitím .NET pomocí Blazor a .NET Core jednoduchým a známým způsobem.</p></li></ul>
+      - html: <ul><li><p><a href="cloud-native/index">Navrhování aplikací .NET nativních pro cloud pro Azure</a></p>
+      - html: '<p>Tato příručka definuje, co je cloudnativní, zavádí ukázkovou aplikaci vytvořenou pomocí zásad nativního pro cloud a popisuje témata společná pro většinu nativních cloudových aplikací.</p></li></ul>'
+      - html: <ul><li><p><a href="blazor-for-web-forms-developers/index">Blazor pro vývojáře ASP.NET Web Forms</a></p>
+      - html: <p>Úvod do Blazor u vývojářů ASP.NET webových formulářů. Naučte se vytvářet webové aplikace s plným zásobníkem pomocí rozhraní .NET pomocí Blazoru a .NET Core jednoduchým a známým způsobem.</p></li></ul>

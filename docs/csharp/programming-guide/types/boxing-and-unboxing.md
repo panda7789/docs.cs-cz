@@ -1,5 +1,5 @@
 ---
-title: Zabalení a rozbalení C# – Průvodce programováním
+title: Průvodce zabalením a rozbalením – programovací příručka jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - cs.boxing
@@ -10,45 +10,45 @@ helpviewer_keywords:
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
 ms.openlocfilehash: 62df08bf4ae3580e9b8d5b3aab0697d396674ca1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76745410"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Zabalení a rozbalení (Průvodce programováním v C#)
 
-Zabalení je proces převodu [typu hodnoty](../../language-reference/builtin-types/value-types.md) na typ `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Když pole modulu CLR (Common Language Runtime) obsahuje typ hodnoty, zabalí hodnotu uvnitř <xref:System.Object?displayProperty=nameWithType> instance a uloží ji na spravovanou haldu. Rozbalení extrahuje typ hodnoty z objektu. Zabalení je implicitní; rozbalení je explicitní. Pojem zabalení a rozbalení představuje C# sjednocený pohled na systém typů, ve kterém může být hodnota libovolného typu považována za objekt.
+Zabalení je proces převodu [typu](../../language-reference/builtin-types/value-types.md) hodnoty `object` na typ nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Když běžný jazyk runtime (CLR) krabice typ hodnoty, zalomí hodnotu uvnitř <xref:System.Object?displayProperty=nameWithType> instance a uloží ji na spravované haldy. Rozbalení extrahuje typ hodnoty z objektu. Box je implicitní; rozbalení je explicitní. Koncept zabalení a rozbalení je základem jednotného zobrazení c# systému typů, ve kterém lze hodnotu libovolného typu považovat za objekt.
 
-V následujícím příkladu je proměnná typu Integer `i` *zabalená* a přiřazená k objektu `o`.
+V následujícím příkladu je celá `i` proměnná *zabalena* `o`a přiřazena k objektu .
 
 [!code-csharp[csProgGuideTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#14)]
 
-Objekt `o` pak může být neohraničený a přiřazený k proměnné typu Integer `i`:
+Objekt `o` pak může být unboxed a přiřazené k celé číslo proměnné `i`:
 
 [!code-csharp[csProgGuideTypes#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#15)]
 
-Následující příklady ilustrují, jak se používá zabalení C#v.
+Následující příklady ilustrují, jak se zabalení používá v c#.
 
 [!code-csharp[csProgGuideTypes#47](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#47)]
 
 ## <a name="performance"></a>Výkon
 
-Ve vztahu k jednoduchým přiřazením se zabalení a rozbalení počítají jako výpočetní náročné procesy. Když je hodnotový typ v krabici, musí být přidělen a vytvořen nový objekt. V menší míře je přetypování vyžadované pro rozbalení také nákladné výpočetní. Další informace najdete v tématu [výkon](../../../framework/performance/performance-tips.md).
+Ve vztahu k jednoduchým přiřazením jsou zabalení a rozbalení výpočtově nákladné procesy. Pokud je typ hodnoty zabalen, musí být přidělen a vytvořen nový objekt. V menší míře je obsazení potřebné pro rozbalení také nákladné výpočtově. Další informace naleznete v tématu [Performance](../../../framework/performance/performance-tips.md).
 
 ## <a name="boxing"></a>Zabalení
 
-Zabalení se používá k ukládání typů hodnot v haldě uvolňování paměti. Zabalení je implicitní převod [typu hodnoty](../../language-reference/builtin-types/value-types.md) na typ `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Zabalení typu hodnoty přiděluje instanci objektu na haldě a zkopíruje hodnotu do nového objektu.
+Zabalení se používá k ukládání typů hodnot v haldě uvolňování paměti. Zabalení je implicitní převod [typu](../../language-reference/builtin-types/value-types.md) `object` hodnoty na typ nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Zabalení typu hodnoty přidělí instanci objektu na haldě a zkopíruje hodnotu do nového objektu.
 
 Zvažte následující deklaraci proměnné typu hodnoty:
 
 [!code-csharp[csProgGuideTypes#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#17)]
 
-Následující příkaz implicitně aplikuje operaci zabalení na proměnnou `i`:
+Následující příkaz implicitně použije operaci zabalení `i`proměnné :
 
 [!code-csharp[csProgGuideTypes#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#18)]
 
-Výsledek tohoto příkazu vytváří odkaz na objekt `o`v zásobníku, který odkazuje na hodnotu typu `int`, na haldě. Tato hodnota je kopií hodnoty typu hodnoty přiřazené k proměnné `i`. Rozdíl mezi dvěma proměnnými, `i` a `o`, je znázorněn na následujícím obrázku převodu zabalení:
+Výsledkem tohoto příkazu je `o`vytvoření odkazu na objekt , v zásobníku, který odkazuje na hodnotu typu `int`, na haldě. Tato hodnota je kopií hodnoty typu hodnoty přiřazené proměnné `i`. Rozdíl mezi těmito dvěma proměnnými `i` a `o`, je znázorněn na následujícím obrázku převodu zabalení:
 
 ![Obrázek znázorňující rozdíl mezi proměnnými i a o.](./media/boxing-and-unboxing/boxing-operation-i-o-variables.gif)
 
@@ -58,37 +58,37 @@ Je také možné provést zabalení explicitně jako v následujícím příklad
 
 ## <a name="description"></a>Popis
 
-Tento příklad převede proměnnou typu Integer `i` na objekt `o` pomocí zabalení. Hodnota uložená v proměnné `i` se pak změní z `123` na `456`. Příklad ukazuje, že původní typ hodnoty a zabalený objekt používají oddělené umístění paměti, a proto může ukládat jiné hodnoty.
+Tento příklad převede celou `i` proměnnou `o` na objekt pomocí zabalení. Poté se hodnota uložená `i` v `123` proměnné `456`změní z na . Příklad ukazuje, že původní typ hodnoty a zabalený objekt používají samostatná umístění paměti, a proto mohou ukládat různé hodnoty.
 
 ## <a name="example"></a>Příklad
 
 [!code-csharp[csProgGuideTypes#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#16)]
 
-## <a name="unboxing"></a>Rozbalení
+## <a name="unboxing"></a>Unboxing
 
-Rozbalení je explicitní převod z typu `object` na [typ hodnoty](../../language-reference/builtin-types/value-types.md) nebo z typu rozhraní na typ hodnoty, který implementuje rozhraní. Rozbalení operace se skládá z těchto:
+Rozbalení je explicitní převod `object` z typu na [typ hodnoty](../../language-reference/builtin-types/value-types.md) nebo z typu rozhraní na typ hodnoty, který implementuje rozhraní. Operace rozbalení se skládá z:
 
-- Kontrola instance objektu, aby se zajistilo, že se jedná o zabalenou hodnotu daného typu hodnoty.
+- Kontrola instance objektu a ujistěte se, že se jedná o zabalenou hodnotu daného typu hodnoty.
 
-- Zkopírování hodnoty z instance do proměnné typu hodnoty.
+- Kopírování hodnoty z instance do proměnné typu hodnoty.
 
-Následující příkazy ukazují operace zabalení a rozbalení:
+Následující příkazy ukazují operace zabalení i rozbalení:
 
 [!code-csharp[csProgGuideTypes#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#21)]
 
-Následující obrázek ukazuje výsledek předchozích příkazů:
+Následující obrázek ukazuje výsledek předchozích prohlášení:
 
-![Obrázek znázorňující převod rozbalení](./media/boxing-and-unboxing/unboxing-conversion-operation.gif)
+![Obrázek znázorňující převod rozbalení.](./media/boxing-and-unboxing/unboxing-conversion-operation.gif)
 
-Pro rozbalení typů hodnot, které mají být v době běhu úspěšné, musí být položka unboxed odkaz na objekt, který byl dříve vytvořen zabalením instance daného typu hodnoty. Pokus o unbox `null` způsobí <xref:System.NullReferenceException>. Pokus o unbox odkazu na nekompatibilní typ hodnoty způsobí <xref:System.InvalidCastException>.
+Pro unboxing typů hodnot úspěšné za běhu, musí být položka, která je unboxed odkaz na objekt, který byl dříve vytvořen zabalením instance tohoto typu hodnoty. Pokus o zrušení `null` rozesbalení způsobí. <xref:System.NullReferenceException> Pokus o zrušení pole odkazu na nekompatibilní <xref:System.InvalidCastException>typ hodnoty způsobí, že .
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje případ neplatného rozbalení a výsledný `InvalidCastException`. Při použití `try` a `catch`se při výskytu chyby zobrazí chybová zpráva.
+Následující příklad ukazuje případ neplatné unboxing a `InvalidCastException`výsledné . Použití `try` `catch`a , zobrazí se chybová zpráva, když dojde k chybě.
 
 [!code-csharp[csProgGuideTypes#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#20)]
 
-Výstup tohoto programu:
+Tento program vyvodí:
 
 `Specified cast is not valid. Error: Incorrect unboxing.`
 
@@ -104,7 +104,7 @@ na:
 int j = (int) o;
 ```
 
-provede se převod a zobrazí se výstup:
+konverze bude provedena, a dostanete výstup:
 
 `Unboxing OK.`
 
@@ -114,6 +114,6 @@ provede se převod a zobrazí se výstup:
 
 ## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [Typy odkazů](../../language-reference/keywords/reference-types.md)
+- [Průvodce programováním v C#](../index.md)
+- [Referenční typy](../../language-reference/keywords/reference-types.md)
 - [Typy hodnot](../../language-reference/builtin-types/value-types.md)

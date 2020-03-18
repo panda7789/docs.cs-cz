@@ -1,136 +1,136 @@
 ---
-title: Co je nového v C# 7,0 – C# příručka
-description: Získejte přehled o nových funkcích v C# jazyce verze 7,0.
+title: Co je nového v C# 7.0 - C# Průvodce
+description: Získejte přehled o nových funkcích ve verzi 7.0 jazyka C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 ms.openlocfilehash: a6ac5c00ceb2ce8e5e56e2a86a8cde937d5108e2
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448631"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399691"
 ---
-# <a name="whats-new-in-c-70"></a>Co je nového v C# 7,0
+# <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
-C#7,0 přidání řady nových funkcí do C# jazyka:
+C# 7.0 přidá do jazyka C# řadu nových funkcí:
 
-- [proměnné `out`](#out-variables)
-  - Můžete deklarovat `out` hodnoty vložené jako argumenty metodě, kde se používají.
-- [Řazené kolekce členů](#tuples)
-  - Můžete vytvořit odlehčené nejmenované typy, které obsahují více veřejných polí. Kompilátory a nástroje IDE, které porozuměl sémantikě těchto typů.
+- [`out`Proměnné](#out-variables)
+  - Hodnoty vuvedené jako argumenty můžete deklarovat `out` jako argumenty pro metodu, kde se používají.
+- [Záznamů](#tuples)
+  - Můžete vytvořit zjednodušené, nepojmenované typy, které obsahují více veřejných polí. Kompilátory a nástroje IDE pochopit sémantiku těchto typů.
 - [Zahození](#discards)
-  - Zahození jsou dočasné a proměnné jen pro zápis použité v přiřazeních, když se nemusíte starat o přiřazenou hodnotu. Jsou nejužitečnější při dekonstrukci řazených kolekcí členů a uživatelsky definovaných typů a také při volání metod s parametry `out`.
-- [Porovnávání vzorů](#pattern-matching)
+  - Zahození jsou dočasné proměnné pouze pro zápis používané v přiřazeních, pokud se nestaráte o přiřazenou hodnotu. Jsou nejužitečnější při deconstructing řazené kolekce členů a uživatelem definované typy, stejně jako při volání metody s `out` parametry.
+- [Porovnávání](#pattern-matching)
   - Můžete vytvořit logiku větvení na základě libovolných typů a hodnot členů těchto typů.
-- [`ref` místní hodnoty a vrátí](#ref-locals-and-returns)
-  - Místní proměnné metody a návratové hodnoty mohou být odkazy na jiné úložiště.
+- [`ref`místní obyvatelé a vrací](#ref-locals-and-returns)
+  - Metoda místní proměnné a vrácené hodnoty mohou být odkazy na jiné úložiště.
 - [Místní funkce](#local-functions)
-  - Funkce můžete vnořit do jiných funkcí a omezit tak jejich rozsah a viditelnost.
-- [Další členové Expression-těle](#more-expression-bodied-members)
-  - Seznam členů, které mohou být vytvořeny pomocí výrazů, byl vypěstován.
-- [Výrazy `throw`](#throw-expressions)
-  - Můžete vyvolat výjimky v konstrukcích kódu, které dříve nebyly povoleny, protože `throw` byl příkaz.
+  - Můžete vnořit funkce uvnitř jiných funkcí omezit jejich rozsah a viditelnost.
+- [Více členů s výrazovým tělem](#more-expression-bodied-members)
+  - Seznam členů, které lze vytvářet pomocí výrazů, se rozrostl.
+- [`throw`Výrazy](#throw-expressions)
+  - Můžete vyvolat výjimky v konstrukcích kódu, které `throw` dříve nebyly povoleny, protože byl příkaz.
 - [Generalizované asynchronní návratové typy](#generalized-async-return-types)
-  - Metody deklarované s modifikátorem `async` mohou kromě `Task` a `Task<T>`vracet jiné typy.
-- [Vylepšení syntaxe numerického literálu](#numeric-literal-syntax-improvements)
+  - Metody deklarované pomocí modifikátoru `async` mohou kromě `Task` a `Task<T>`.
+- [Číselná vylepšení syntaxe literálu](#numeric-literal-syntax-improvements)
   - Nové tokeny zlepšují čitelnost pro číselné konstanty.
 
-Zbývající část tohoto článku poskytuje přehled jednotlivých funkcí. U každé funkce se dozvíte, co je důvod na pozadí. Naučíte se syntaxí. Tyto funkce můžete ve svém prostředí prozkoumat pomocí globálního nástroje `dotnet try`:
+Zbývající část tohoto článku obsahuje přehled jednotlivých funkcí. U každé funkce se dozvíte důvody, které za ní stojí. Naučíte se syntaxi. Tyto funkce můžete prozkoumat ve `dotnet try` vašem prostředí pomocí globálního nástroje:
 
-1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
-1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
-1. Nastavte aktuální adresář do podadresáře *csharp7* pro úložiště *Try-Samples* .
+1. Nainstalujte globální nástroj [dotnet-try.](https://github.com/dotnet/try/blob/master/README.md#setup)
+1. Klonovat úložiště [dotnet/try-samples.](https://github.com/dotnet/try-samples)
+1. Nastavte aktuální adresář do podadresáře *csharp7* pro úložiště *try-samples.*
 1. Spusťte `dotnet try`.
 
-## <a name="out-variables"></a>proměnné `out`
+## <a name="out-variables"></a>`out`Proměnné
 
-V této verzi se vylepšila existující syntaxe, která podporuje parametry `out`. Nyní můžete deklarovat proměnné `out` v seznamu argumentů volání metody, místo psaní samostatného příkazu deklarace:
+V této verzi `out` byla vylepšena existující syntaxe, která podporuje parametry. Nyní můžete `out` deklarovat proměnné v seznamu argumentů volání metody, spíše než psát prohlášení samostatné deklarace:
 
 [!code-csharp[OutVariableDeclarations](~/samples/snippets/csharp/new-in-7/program.cs#OutVariableDeclarations "Out variable declarations")]
 
-Možná budete chtít zadat typ proměnné `out` pro přehlednost, jak je uvedeno výše. Jazyk však podporuje použití implicitně typované lokální proměnné:
+Můžete chtít zadat typ `out` proměnné pro přehlednost, jak je znázorněno výše. Jazyk však podporuje použití implicitně zadané místní proměnné:
 
 [!code-csharp[OutVarVariableDeclarations](~/samples/snippets/csharp/new-in-7/program.cs#OutVarVariableDeclarations "Implicitly typed Out variable")]
 
-- Čtení kódu je snazší.
-  - Deklarujete proměnnou, kde ji používáte, nikoli na jiném řádku výše.
-- Není nutné přiřazovat počáteční hodnotu.
-  - Deklarováním `out` proměnné, kde se používá ve volání metody, nemůžete ji omylně použít před přiřazením.
+- Kód je čitelnější.
+  - Deklarujete out proměnnou tam, kde ji používáte, nikoli na jiném výše uvedeném řádku.
+- Není třeba přiřazovat počáteční hodnotu.
+  - Deklarováním `out` proměnné, kde se používá ve volání metody, nelze omylem použít před přiřazením.
 
 ## <a name="tuples"></a>N-tice
 
-C#poskytuje bohatou syntaxi pro třídy a struktury, které slouží k vysvětlení záměru návrhu. V některých případech však bohatá syntaxe vyžaduje dodatečnou práci s minimální výhodou. Můžete často napsat metody, které vyžadují jednoduchou strukturu obsahující více než jeden datový prvek. Pro podporu těchto scénářů byly přidány *řazené kolekce členů* do C#. Řazené kolekce členů jsou jednoduché datové struktury, které obsahují více polí představujících datové členy.
-Pole se neověřují a nemůžete definovat vlastní metody.
+C# poskytuje bohatou syntaxi pro třídy a struktury, který se používá k vysvětlení záměru návrhu. Ale někdy, že bohatá syntaxe vyžaduje další práci s minimálním přínosem. Často může psát metody, které potřebují jednoduchou strukturu obsahující více než jeden datový prvek. Pro podporu těchto scénářů byly přidány *řazené kolekce členů* do jazyka C#. Řazené kolekce členů jsou zjednodušené datové struktury, které obsahují více polí představujících datové členy.
+Pole nejsou ověřena a nelze definovat vlastní metody.
 
 > [!NOTE]
-> Řazené kolekce členů byly C# k dispozici před 7,0, ale byly neefektivní a nemají žádnou jazykovou podporu.
-> To znamenalo, že prvky řazené kolekce členů mohou být pouze odkazovány jako `Item1`, `Item2` a tak dále. C#7,0 zavádí jazykovou podporu pro řazené kolekce členů, která umožňuje sémantické názvy polí řazené kolekce členů pomocí nových, efektivnějších typů řazených kolekcí členů.
+> Řazené kolekce členů byly k dispozici před C# 7.0, ale byly neefektivní a neměl žádnou jazykovou podporu.
+> To znamenalo, že prvky řazené kolekce členů lze odkazovat pouze jako `Item1`, `Item2` a tak dále. C# 7.0 zavádí jazykovou podporu pro řazené kolekce členů, který umožňuje sémantické názvy pro pole řazené kolekce členů pomocí nové, efektivnější řazené kolekce členů.
 
-Můžete vytvořit řazenou kolekci členů tak, že každému členovi přiřadíte hodnotu a volitelně zadáte sémantické názvy každé z členů řazené kolekce členů:
+Řazenou skupinu členů můžete vytvořit přiřazením hodnoty každému členovi a volitelně poskytnutím sémantických názvů každému členovi řazené kolekce členů:
 
 [!code-csharp[NamedTuple](~/samples/snippets/csharp/new-in-7/program.cs#NamedTuple "Named tuple")]
 
-Řazená kolekce členů `namedLetters` obsahuje pole, která jsou uváděna jako `Alpha` a `Beta`. Tyto názvy existují pouze v době kompilace a nejsou zachovány, například při kontrole řazené kolekce členů pomocí reflexe za běhu.
+Řazená `namedLetters` kolekce členů `Alpha` `Beta`obsahuje pole označovaná jako a . Tyto názvy existují pouze v době kompilace a nejsou zachovány, například při kontrole řazené kolekce členů pomocí reflexe za běhu.
 
 V přiřazení řazené kolekce členů můžete také zadat názvy polí na pravé straně přiřazení:
 
 [!code-csharp[ImplicitNamedTuple](~/samples/snippets/csharp/new-in-7/program.cs#ImplicitNamedTuple "Implicitly named tuple")]
 
-Mohou nastat situace, kdy budete chtít odbalit členy řazené kolekce členů, které byly vráceny metodou.  To můžete provést deklarováním samostatných proměnných pro každou z hodnot v řazené kolekci členů. Toto rozbalení se označuje jako *dekonstrukce* řazené kolekce členů:
+Může být časy, kdy chcete zrušit balíček členy řazené kolekce členů, které byly vráceny z metody.  Můžete to provést deklarováním samostatných proměnných pro každou z hodnot v řazené kolekce členů. Toto odbalování se nazývá *deconstructing* řazené kolekce členů:
 
 [!code-csharp[CallingWithDeconstructor](~/samples/snippets/csharp/new-in-7/program.cs#CallingWithDeconstructor "Deconstructing a tuple")]
 
-Můžete také poskytnout podobný dekonstrukci pro libovolný typ v rozhraní .NET. Napíšete metodu `Deconstruct` jako člena třídy. Tato metoda `Deconstruct` poskytuje sadu `out` argumentů pro každou z vlastností, které chcete extrahovat. Zvažte tuto `Point` třídu, která poskytuje metodu dekonstruktoru, která extrahuje souřadnice `X` a `Y`:
+Můžete také poskytnout podobnou dekonstrukci pro libovolný typ v rozhraní .NET. Napíšete `Deconstruct` metodu jako člen třídy. Tato `Deconstruct` metoda poskytuje `out` sadu argumentů pro každou z vlastností, které chcete extrahovat. Zvažte `Point` tuto třídu, která poskytuje deconstructor metoda, která extrahuje `X` a `Y` souřadnice:
 
 [!code-csharp[PointWithDeconstruction](~/samples/snippets/csharp/new-in-7/point.cs#PointWithDeconstruction "Point with deconstruction method")]
 
-Jednotlivá pole můžete extrahovat přiřazením `Point` k řazené kolekci členů:
+Jednotlivá pole můžete extrahovat `Point` přiřazením řazené kolekce členů:
 
 [!code-csharp[DeconstructPoint](~/samples/snippets/csharp/new-in-7/program.cs#DeconstructPoint "Deconstruct a point")]
 
-Podrobnější informace o řazených kolekcích členů najdete v [článku o řazených kolekcích členů](../tuples.md).
+Další informace o řazených kolekcích členů se dozvíte podrobněji v [článku n-tic](../tuples.md).
 
 ## <a name="discards"></a>Zahození
 
-Často při dekonstrukci řazené kolekce členů nebo volání metody s parametry `out` jste nuceni definovat proměnnou, jejíž hodnotu nezáleží na a nehodláte ji používat. C#Přidá podporu pro *zahození* pro zpracování tohoto scénáře. Zahození je proměnná, která je jen pro zápis, jejíž název je `_` (znak podtržítka); můžete přiřadit všechny hodnoty, které mají být zahozeny do jedné proměnné. Zahození je jako Nepřiřazená proměnná; Kromě příkazu přiřazení nelze zrušit použití v kódu.
+Často při deconstructing řazené `out` kolekce členů nebo volání metody s parametry, jste nuceni definovat proměnnou, jejíž hodnotu nezajímáte a nemají v úmyslu použít. C# přidá podporu pro *zahození* pro zpracování tohoto scénáře. Zahození je proměnná pouze `_` pro zápis, jejíž název je (znak podtržítka); můžete přiřadit všechny hodnoty, které chcete zahodit k jedné proměnné. Výmět je jako nepřiřazená proměnná; kromě příkazu přiřazení nelze zahodit použít v kódu.
 
-Zahození jsou podporovaná v následujících scénářích:
+Zahození jsou podporovány v následujících scénářích:
 
-- Při dekonstrukci řazených kolekcí členů nebo uživatelsky definovaných typů.
-- Při volání metod s [výstupními](../language-reference/keywords/out-parameter-modifier.md) parametry.
-- V operaci porovnávání vzorů s příkazy [is](../language-reference/keywords/is.md) a [Switch](../language-reference/keywords/switch.md) .
+- Při dekonstrukci řazené kolekce členů nebo uživatelem definované typy.
+- Při volání metod s [out](../language-reference/keywords/out-parameter-modifier.md) parametry.
+- V operaci porovnávání vzorů s příkazy [is](../language-reference/keywords/is.md) a [switch.](../language-reference/keywords/switch.md)
 - Jako samostatný identifikátor, pokud chcete explicitně identifikovat hodnotu přiřazení jako zahození.
 
-Následující příklad definuje metodu `QueryCityDataForYears`, která vrací 6 – řazenou kolekci členů obsahující data města pro dva různé roky. Volání metody v příkladu se týká pouze dvou hodnot naplnění vrácených metodou, takže poběží zbývající hodnoty v řazené kolekci členů jako zahození při dekonstrukci řazené kolekce členů.
+Následující příklad definuje `QueryCityDataForYears` metodu, která vrací 6 řazené kolekce členů, která obsahuje data pro město pro dva různé roky. Volání metody v příkladu se týká pouze dvě hodnoty základního souboru vrácené metodou a tak zachází zbývající hodnoty v řazené kolekce členů jako zahodí při deconstructs řazené kolekce členů.
 
 [!code-csharp[Tuple-discard](~/samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
-Další informace najdete v tématu [zahození](../discards.md).
+Další informace naleznete [v tématu Discards](../discards.md).
 
 ## <a name="pattern-matching"></a>Porovnávání vzorů
 
-*Porovnávání vzorů* je funkce, která umožňuje implementovat odeslání metody pro jiné vlastnosti než typ objektu. V závislosti na typu objektu již pravděpodobně znáte způsob odeslání metody. V objektově orientovaném programování metody Virtual a override poskytují jazykovou syntaxi pro implementaci metody odeslání na základě typu objektu. Základní a odvozené třídy poskytují různé implementace.
-Výrazy pro porovnávání vzorů přesahují tento koncept, takže můžete snadno implementovat podobné vzory odeslání pro typy a datové prvky, které nesouvisí s hierarchií dědičnosti.
+*Porovnávání vzorů* je funkce, která umožňuje implementovat odeslání metody na vlastnosti než typ objektu. Pravděpodobně jste již obeznámeni s odesláním metody na základě typu objektu. V objektově orientovaném programování poskytují metody virtual a override syntaxi pro implementaci dispečerské metody založené na typu objektu. Základní a odvozené třídy poskytují různé implementace.
+Vzor odpovídající výrazy rozšířit tento koncept tak, aby můžete snadno implementovat podobné vzorky odeslání pro typy a datové prvky, které nesouvisejí prostřednictvím hierarchie dědičnosti.
 
-Porovnávání vzorů podporuje `is` výrazy a `switch` výrazy. Každá z nich umožňuje kontrolu objektu a jeho vlastností, aby bylo možné určit, zda tento objekt splňuje požadovaný vzor. Pomocí klíčového slova `when` můžete určit další pravidla pro vzor.
+Porovnávání `is` vzorů podporuje `switch` výrazy a výrazy. Každý umožňuje kontrolu objektu a jeho vlastnosti k určení, pokud tento objekt splňuje požadovaný vzor. `when` Klíčové slovo slouží k určení dalších pravidel vzoru.
 
-Výraz `is` Pattern rozšiřuje známý [`is` operátor](../language-reference/keywords/is.md#pattern-matching-with-is) pro dotazování objektu na jeho typ a přiřazení výsledku do jedné instrukce. Následující kód zkontroluje, zda je proměnná `int`a v případě potřeby ji přidá k aktuálnímu součtu:
+Výraz `is` vzoru rozšiřuje známý [ `is` operátor](../language-reference/keywords/is.md#pattern-matching-with-is) k dotazování objektu o jeho typu a přiřazení výsledku v jedné instrukci. Následující kód zkontroluje, zda `int`je proměnná , a pokud ano, přidá ji k aktuálnímu součtu:
 
 ```csharp
 if (input is int count)
     sum += count;
 ```
 
-Předchozí malý příklad ukazuje vylepšení výrazu `is`. Můžete testovat proti typům hodnot i odkazovým typům a k nové proměnné správného typu můžete přiřadit úspěšný výsledek.
+Předchozí malý příklad ukazuje vylepšení výrazu. `is` Můžete testovat proti typy hodnot, jakož i typy odkazů a můžete přiřadit úspěšný výsledek nové proměnné správného typu.
 
-Výraz porovnávání přepínačů má známou syntaxi na základě příkazu `switch`, který již je C# součástí jazyka. Aktualizovaný příkaz switch má několik nových konstrukcí:
+Výraz shody přepínače má známou `switch` syntaxi založenou na příkazu, který je již součástí jazyka C#. Příkaz aktualizovaný přepínač má několik nových konstrukcí:
 
-- Typ řízení výrazu `switch` již není omezen na celočíselné typy, `Enum` typy, `string`nebo typ s možnou hodnotou null, který odpovídá jednomu z těchto typů. Může být použit libovolný typ.
-- Můžete testovat typ `switch` výraz v každém `case` popisku. Stejně jako u výrazu `is` lze k tomuto typu přiřadit novou proměnnou.
-- Můžete přidat klauzuli `when` pro další podmínky testování v této proměnné.
-- Pořadí popisků `case` je teď důležité. První větev, která se má porovnat, se spustí; ostatní se přeskočí.
+- Řídící typ výrazu `switch` již není omezen na `Enum` integrální typy, `string`typy nebo typ s možnou hodnotou null odpovídající jednomu z těchto typů. Lze použít libovolný typ.
+- Můžete otestovat typ `switch` výrazu `case` v každém popisku. Stejně `is` jako u výrazu můžete tomuto typu přiřadit novou proměnnou.
+- Můžete přidat `when` klauzuli k dalšímu testování podmínek na tuto proměnnou.
+- Pořadí štítků `case` je nyní důležité. První větev, která má odpovídat, je spuštěna; ostatní jsou přeskočeny.
 
-Následující kód demonstruje tyto nové funkce:
+Následující kód ukazuje tyto nové funkce:
 
 ```csharp
 public static int SumPositiveNumbers(IEnumerable<object> sequence)
@@ -161,104 +161,104 @@ public static int SumPositiveNumbers(IEnumerable<object> sequence)
 }
 ```
 
-- `case 0:` je známý konstantní vzor.
-- `case IEnumerable<int> childSequence:` je vzor typu.
-- `case int n when n > 0:` je vzor typu s další podmínkou `when`.
-- `case null:` je vzor hodnoty null.
-- `default:` je známý výchozí případ.
+- `case 0:`je známý konstantní vzor.
+- `case IEnumerable<int> childSequence:`je vzor typu.
+- `case int n when n > 0:`je vzor typu s `when` další podmínkou.
+- `case null:`je vzor null.
+- `default:`je známé výchozí případ.
 
-Další informace o porovnávání vzorů najdete ve vzorovém [porovnávání C#v ](../pattern-matching.md).
+Další informace o porovnávání vzorů v [porovnání vzorů v c#](../pattern-matching.md).
 
-## <a name="ref-locals-and-returns"></a>Místní a návratové hodnoty REF
+## <a name="ref-locals-and-returns"></a>Ref místní obyvatelé a vrací
 
-Tato funkce umožňuje algoritmy, které používají a vracejí odkazy na proměnné definované jinde. Jeden příklad pracuje s velkými maticemi a hledá jedno umístění s určitými charakteristikami. Následující metoda vrátí **odkaz** na toto úložiště v matici:
+Tato funkce umožňuje algoritmy, které používají a vracejí odkazy na proměnné definované jinde. Jedním z příkladů je práce s velkými maticemi a nalezení jednoho místa s určitými vlastnostmi. Následující metoda vrátí **odkaz** na toto úložiště v matici:
 
 [!code-csharp[FindReturningRef](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#FindReturningRef "Find returning by reference")]
 
-Můžete deklarovat návratovou hodnotu jako `ref` a upravit tuto hodnotu v matici, jak je znázorněno v následujícím kódu:
+Můžete deklarovat vrácenou `ref` hodnotu jako a upravit tuto hodnotu v matici, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[AssignRefReturn](~/samples/snippets/csharp/new-in-7/Program.cs#AssignRefReturn "Assign ref return")]
 
-C# Jazyk obsahuje několik pravidel, která vás chrání před nepoužitými `ref` místními a vrací:
+Jazyk C# má několik pravidel, která vás `ref` chrání před zneužitím místních obyvatel a vrátí:
 
-- Do signatury metody a do všech příkazů `return` v metodě je nutné přidat klíčové slovo `ref`.
-  - Tím se vymaže metoda, kterou vrátí odkaz v rámci této metody.
-- `ref return` může být přiřazena proměnné hodnot nebo proměnné `ref`.
-  - Volající řídí, zda je vrácená hodnota zkopírována nebo ne. Vynechání modifikátoru `ref` při přiřazování návratové hodnoty znamená, že volající chce kopii hodnoty, nikoli odkaz na úložiště.
-- Nemůžete přiřadit návratovou hodnotu standardní metody k `ref` místní proměnné.
-  - Která nepovoluje příkazy jako `ref int i = sequence.Count();`
-- Nemůžete vrátit `ref` proměnné, jejíž doba života nepřesahuje po provedení metody.
-  - To znamená, že nemůžete vrátit odkaz na místní proměnnou nebo proměnnou s podobným oborem.
-- `ref` lokální hodnoty a vrácení nelze použít s asynchronními metodami.
-  - Kompilátor nemůže zjistit, zda se odkazovaná proměnná nastavila na konečnou hodnotu, když vrátí asynchronní metoda.
+- Klíčové `ref` slovo je nutné přidat k `return` podpisu metody a ke všem příkazům v metodě.
+  - To jasně ukazuje, metoda vrátí odkazem v celé metodě.
+- A `ref return` může být přiřazena k `ref` proměnné hodnoty nebo proměnné.
+  - Volající určuje, zda je vrácená hodnota zkopírována nebo ne. Vynechání modifikátor při `ref` přiřazování vrácená hodnota označuje, že volající chce kopii hodnoty, nikoli odkaz na úložiště.
+- Standardní metodu nelze přiřadit `ref` k místní proměnné.
+  - Že zamítá prohlášení jako`ref int i = sequence.Count();`
+- Nelze vrátit `ref` proměnné, jejíž životnost nepřesahuje provádění metody.
+  - To znamená, že nelze vrátit odkaz na místní proměnnou nebo proměnnou s podobným rozsahem.
+- `ref`místní a vrácení nelze použít s asynchronní metody.
+  - Kompilátor nemůže vědět, pokud byla odkazovaná proměnná nastavena na konečnou hodnotu, když se vrátí asynchronní metoda.
 
-Přidání místních a návratových odkazů umožňuje algoritmy, které jsou efektivnější, protože se vyhnete kopírování hodnot nebo provádění operací zrušení odkazování vícekrát.
+Přidání ref locals a ref vrátí umožňuje algoritmy, které jsou efektivnější tím, že zabrání kopírování hodnot nebo provádění dereferencing operace vícekrát.
 
-Přidání `ref` do návratové hodnoty je [Změna kompatibilní se zdrojem](version-update-considerations.md#source-compatible-changes). Existující kód je zkompilován, ale návratová hodnota REF je při přiřazení zkopírována. Volající musí aktualizovat úložiště pro návratovou hodnotu na `ref` místní proměnná pro uložení návratu jako odkazu.
+Přidání `ref` k vrácené hodnotě je [změna kompatibilní se zdrojem](version-update-considerations.md#source-compatible-changes). Existující kód se zkompiluje, ale vrácená hodnota ref je zkopírována při přiřazení. Volající musí aktualizovat úložiště pro vrácenou `ref` hodnotu na místní proměnnou, aby bylo vráceno jako odkaz.
 
-Další informace najdete v článku věnovaném [klíčovému slovu ref](../language-reference/keywords/ref.md) .
+Další informace naleznete v článku [klíčového slova ref.](../language-reference/keywords/ref.md)
 
 ## <a name="local-functions"></a>Lokální funkce
 
-Mnoho návrhů pro třídy obsahuje metody, které jsou volány pouze z jednoho umístění. Tyto další privátní metody udržují jednotlivé metody malé a prioritní. *Místní funkce* umožňují deklarovat metody v kontextu jiné metody. Místní funkce usnadňují čtenářům třídy, aby bylo vidět, že místní metoda je volána pouze z kontextu, ve kterém je deklarována.
+Mnoho návrhů pro třídy obsahuje metody, které jsou volány pouze z jednoho umístění. Tyto další soukromé metody udržují každou metodu malou a zaměřenou. *Místní funkce* umožňují deklarovat metody v kontextu jiné metody. Místní funkce usnadňují čtenářům třídy vidět, že místní metoda je volána pouze z kontextu, ve kterém je deklarována.
 
-Existují dva běžné případy použití pro místní funkce: veřejné metody iterátoru a veřejné asynchronní metody. Oba typy metod generují kód, který hlásí chyby později než programátoři mohou očekávat. V metodách iterátoru jsou všechny výjimky pozorovány pouze při volání kódu, který vytvoří výčet vrácené sekvence. V asynchronních metodách jsou jakékoli výjimky pozorovány pouze v případě, že je očekáváno vrácení `Task`. Následující příklad ukazuje oddělení ověřování parametrů z implementace iterátoru pomocí místní funkce:
+Existují dva běžné případy použití pro místní funkce: metody veřejného iterátoru a veřejné asynchronní metody. Oba typy metod generují kód, který hlásí chyby později, než mohou programátoři očekávat. V metodách iterátoru jsou všechny výjimky pozorovány pouze při volání kódu, který vyjmenovává vrácenou sekvenci. V asynchronních metodách jsou všechny výjimky pozorovány pouze v případě, že je očekáváno vrácené. `Task` Následující příklad ukazuje oddělení ověření parametru od implementace iterátoru pomocí místní funkce:
 
 [!code-csharp[22_IteratorMethodLocal](~/samples/snippets/csharp/new-in-7/Iterator.cs#IteratorMethodLocal "Iterator method with local function")]
 
-Stejný postup lze použít s metodami `async`, aby bylo zajištěno, že výjimky vznikající z ověřování argumentu jsou vyvolány před zahájením asynchronní práce:
+Stejnou techniku lze `async` použít s metodami, které zajišťují, že výjimky vyplývající z ověření argumentu jsou vyvolány před zahájením asynchronní práce:
 
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> Některé z návrhů, které jsou podporovány místními funkcemi, by mohly být také provedeny pomocí *výrazů lambda*. Další informace naleznete v tématu [místní funkce vs. výrazy lambda](../local-functions-vs-lambdas.md).
+> Některé návrhy, které jsou podporovány místními funkcemi, lze také provést pomocí *výrazů lambda*. Další informace naleznete [v tématu Místní funkce vs. lambda výrazy](../local-functions-vs-lambdas.md).
 
-## <a name="more-expression-bodied-members"></a>Další členové Expression-těle
+## <a name="more-expression-bodied-members"></a>Více členů s výrazovým tělem
 
-C#6 zavedlo [členy Expression-těle](csharp-6.md#expression-bodied-function-members) pro členské funkce a vlastnosti jen pro čtení. C#7,0 rozšíří povolené členy, které mohou být implementovány jako výrazy. V C# 7,0 můžete implementovat *konstruktory*, *finalizační metody*a `get` a `set` přistupující objekty do *vlastností* a *indexerů*. Následující kód ukazuje příklady jednotlivých:
+C# 6 představil [výraz tělo členy](csharp-6.md#expression-bodied-function-members) pro členské funkce a vlastnosti jen pro čtení. C# 7.0 rozbalí povolené členy, které mohou být implementovány jako výrazy. V c# 7.0 můžete implementovat *konstruktory*, `get` `set` *finalizační metody*a přístupové objekty na *vlastnosti* a *indexery*. Následující kód ukazuje příklady každého z nich:
 
 [!code-csharp[ExpressionBodiedMembers](~/samples/snippets/csharp/new-in-7/expressionmembers.cs#ExpressionBodiedEverything "new expression-bodied members")]
 
 > [!NOTE]
-> Tento příklad nepotřebuje finalizační metodu, ale je zobrazený k předvedení syntaxe. V třídě byste neměli implementovat finalizační metodu, pokud není nutné vydávat nespravované prostředky. Měli byste také zvážit použití třídy <xref:System.Runtime.InteropServices.SafeHandle> namísto přímého spravování nespravovaných prostředků.
+> Tento příklad nepotřebuje finalizační metodu, ale je zobrazen k předvedení syntaxe. Ve své třídě byste neměli implementovat finalizační metodu, pokud není nutné uvolnit nespravované prostředky. Měli byste také <xref:System.Runtime.InteropServices.SafeHandle> zvážit použití třídy namísto přímé správy nespravovaných prostředků.
 
-Tato nová umístění pro členy Expression-těle reprezentují důležitý milník pro C# jazyk: tyto funkce byly implementovány členy komunity, kteří pracují na open source projektu [Roslyn](https://github.com/dotnet/Roslyn) .
+Tato nová umístění pro členy s výrazem představují důležitý milník pro jazyk C#: Tyto funkce byly implementovány členy komunity pracujícími na projektu [Roslyn](https://github.com/dotnet/Roslyn) s otevřeným zdrojovým kódem.
 
-Změna metody na člen výrazu těle je [binární kompatibilní změna](version-update-considerations.md#binary-compatible-changes).
+Změna metody na člen výrazu je [binární kompatibilní změna](version-update-considerations.md#binary-compatible-changes).
 
 ## <a name="throw-expressions"></a>Výrazy throw
 
-V C#`throw` byl vždy příkaz. Vzhledem k tomu, že `throw` je příkaz, nikoli výraz, C# byly zde konstrukce, kde je nemůžete použít. Tyto zahrnuté podmíněné výrazy, null slučovací výrazy a některé lambda výrazy. Přidání členů Expression-těle přidá více míst, kde by mohly být užitečné `throw` výrazy. Takže můžete napsat libovolný z těchto konstrukcí, C# 7,0 zavádí [*výrazy throw*](../language-reference/keywords/throw.md#the-throw-expression).
+V C#, `throw` byl vždy prohlášení. Protože `throw` je příkaz, nikoli výraz, byly c# konstrukce, kde nelze použít. Mezi ně patřily podmíněné výrazy, nulové slučující výrazy a některé výrazy lambda. Přidání členů s výrazem přidá další `throw` umístění, kde výrazy by bylo užitečné. Tak, že můžete napsat některý z těchto konstrukcí, C# 7.0 zavádí [*vyvolat výrazy*](../language-reference/keywords/throw.md#the-throw-expression).
 
-Díky tomu je snazší psát další kód založený na výrazu. Pro kontrolu chyb nepotřebujete další příkazy.
+Toto přidání usnadňuje psaní kódu založeného na výrazu. Nepotřebujete další příkazy pro kontrolu chyb.
 
 ## <a name="generalized-async-return-types"></a>Generalizované asynchronní návratové typy
 
-Vrácení `Task` objektu z asynchronních metod může způsobit kritické body výkonu v určitých cestách. `Task` je odkazový typ, takže jeho použití znamená přidělení objektu. V případech, kdy metoda deklarovaná s modifikátorem `async` vrací výsledek uložený v mezipaměti nebo je dokončena synchronně, se další přidělení můžou stát značnými náklady v částech kritického výkonu v kódu. Pokud dojde k přidělení v těsných smyčkách, může to být nákladné.
+Vrácení objektu `Task` z asynchronních metod může zavést kritické body výkonu v určitých cestách. `Task`je typ odkazu, takže jeho použití znamená přidělení objektu. V případech, kdy metoda `async` deklarovaná s modifikátorem vrátí výsledek v mezipaměti nebo dokončí synchronně, může se mimořádná přidělení stát významnými časovými náklady v částech kódu kritických pro výkon. Může být nákladné, pokud se tyto alokace vyskytují v těsných smyčkách.
 
-Nová funkce jazyka znamená, že návratové typy asynchronní metody nejsou omezeny na `Task`, `Task<T>`a `void`. Vrácený typ musí stále splňovat asynchronní vzorek, což znamená, že metoda `GetAwaiter` musí být přístupná. Jako jeden konkrétní příklad byl do .NET přidán `ValueTask` typ, aby bylo možné používat tuto novou jazykovou funkci:
+Nová funkce jazyka znamená, že návratové typy `Task`asynchronní metody nejsou omezeny na , `Task<T>`a `void`. Vrácený typ musí stále splňovat asynchronní vzorek, což znamená, že `GetAwaiter` metoda musí být přístupná. Jako jeden konkrétní `ValueTask` příklad byl typ přidán do rozhraní .NET, aby bylo dosaženo této nové funkce jazyka:
 
 [!code-csharp[UsingValueTask](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#UsingValueTask "Using ValueTask")]
 
 > [!NOTE]
-> Chcete-li použít typ <xref:System.Threading.Tasks.ValueTask%601>, je nutné přidat balíček NuGet [`System.Threading.Tasks.Extensions`](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) .
+> Je třeba přidat Balíček [`System.Threading.Tasks.Extensions`](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) NuGet, <xref:System.Threading.Tasks.ValueTask%601> aby bylo možné použít typ.
 
-Toto vylepšení je nejužitečnější pro autory knihovny, aby nedošlo k přidělení `Task` v kódu kritickém pro výkon.
+Toto vylepšení je nejužitečnější pro autory `Task` knihovny, aby se zabránilo přidělení v kritickém výkonu kódu.
 
-## <a name="numeric-literal-syntax-improvements"></a>Vylepšení syntaxe numerického literálu
+## <a name="numeric-literal-syntax-improvements"></a>Číselná vylepšení syntaxe literálu
 
-Nepřečtené číselné konstanty mohou ztížit pochopení kódu při prvním čtení. Bitové masky nebo jiné symbolické hodnoty jsou náchylné k nepochopení. C#7,0 obsahuje dvě nové funkce pro zápis čísel v nejčitelnějším způsobu pro zamýšlené použití: *binární literály*a *oddělovače číslic*.
+Nesprávné čtení číselných konstant může ztížit pochopení kódu při prvním čtení. Bitové masky nebo jiné symbolické hodnoty jsou náchylné k nedorozumění. C# 7.0 obsahuje dvě nové funkce pro zápis čísel nejčitelnějším způsobem pro zamýšlené použití: *binární literály*a *oddělovače číslic*.
 
-V případech, kdy vytváříte bitové masky, nebo pokaždé, když binární reprezentace čísla provede Nejčitelnější kód, zapište toto číslo v binárním formátu:
+Pro ty časy, kdy vytváříte bitové masky nebo kdykoli binární reprezentace čísla vytvoří nejčitelnější kód, napište toto číslo do binárního souboru:
 
 [!code-csharp[ThousandSeparators](~/samples/snippets/csharp/new-in-7/Program.cs#ThousandSeparators "Thousands separators")]
 
-`0b` na začátku konstanty označuje, že číslo je zapsáno jako binární číslo. Binární čísla mohou být dlouhá, takže je často snazší zobrazit bitové vzory pomocí `_` jako oddělovač číslic, jak je uvedeno výše v binární konstantě. Oddělovač číslic se může objevit kdekoli v konstantě. U základních 10 čísel je běžné ji použít jako oddělovač tisíců:
+Na `0b` začátku konstanty označuje, že číslo je zapsáno jako binární číslo. Binární čísla mohou být dlouhá, takže je často snazší vidět `_` bitové vzory zavedením oddělovače číslic, jak je znázorněno výše v binární konstantě. Oddělovač číslic se může objevit kdekoli v konstantě. Pro základní 10 čísel, je běžné použít jako oddělovač tisíců:
 
 [!code-csharp[LargeIntegers](~/samples/snippets/csharp/new-in-7/Program.cs#LargeIntegers "Large integer")]
 
-Oddělovač číslic lze použít s typy `decimal`, `float`a `double`:
+Oddělovač číslic lze `decimal`použít `float`také `double` s , a typy:
 
 [!code-csharp[OtherConstants](~/samples/snippets/csharp/new-in-7/Program.cs#OtherConstants "non-integral constants")]
 
-Společně můžete deklarovat číselné konstanty s mnohem větší čitelností.
+Dohromady můžete deklarovat číselné konstanty s mnohem větší čitelností.

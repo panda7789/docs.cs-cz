@@ -1,25 +1,25 @@
 ---
-title: dotnet – příkaz
-description: Přečtěte si o příkazu dotnet (obecný ovladač pro .NET Core CLI) a jeho použití.
+title: dotnet, příkaz
+description: Další informace o příkazu dotnet (obecný ovladač pro rozhraní příkazu .NET Core CLI) a jeho použití.
 ms.date: 02/13/2020
 ms.openlocfilehash: da37c5cc3b019851e245fa3f65ae9dfb8a3fef54
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240867"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398893"
 ---
-# <a name="dotnet-command"></a>dotnet – příkaz
+# <a name="dotnet-command"></a>dotnet, příkaz
 
-**Tento článek se týká:** ✔️ .net Core 2,1 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.1 SDK a novější verze
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet` – obecný ovladač pro .NET Core CLI.
+`dotnet`- Obecný ovladač pro rozhraní CLI jádra .NET.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
-Chcete-li získat informace o dostupných příkazech a prostředí:
+Získání informací o dostupných příkazech a prostředí:
 
 ```dotnetcli
 dotnet [-h|--help] [--version] [--info]
@@ -45,7 +45,7 @@ dotnet exec [--additionalprobingpath] [--additional-deps]
     <PATH_TO_APPLICATION> [arguments]
 ```
 
-`--roll-forward` je k dispozici od verze .NET Core 3. x. Použijte `--roll-forward-on-no-candidate-fx` pro .NET Core 2. x.
+`--roll-forward`je k dispozici od rozhraní .NET Core 3.x. Slouží `--roll-forward-on-no-candidate-fx` pro rozhraní .NET Core 2.x.
 
 ## <a name="description"></a>Popis
 
@@ -53,35 +53,35 @@ Příkaz `dotnet` má dvě funkce:
 
 - Poskytuje příkazy pro práci s projekty .NET Core.
 
-  Například [`dotnet build`](dotnet-build.md) sestavit projekt. Každý příkaz definuje vlastní parametry a argumenty. Všechny příkazy podporují možnost `--help` pro tisk stručné dokumentace k použití příkazu.
+  Například [`dotnet build`](dotnet-build.md) vytvoří projekt. Každý příkaz definuje své vlastní možnosti a argumenty. Všechny příkazy `--help` podporují možnost tisku stručné dokumentace o použití příkazu.
 
 - Spouští aplikace .NET Core.
 
-  Zadejte cestu k souboru aplikace `.dll` pro spuštění aplikace. Například `dotnet myapp.dll` spouští aplikaci `myapp`. Další informace o možnostech nasazení najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md) .
+  Určíte cestu k `.dll` souboru aplikace pro spuštění aplikace. Například `dotnet myapp.dll` spustí `myapp` aplikaci. Informace o možnostech nasazení najdete v tématu [Nasazení aplikace .NET Core.](../deploying/index.md)
 
 ## <a name="options"></a>Možnosti
 
-K dispozici jsou různé možnosti `dotnet` samostatně, pro spuštění příkazu a pro spuštění aplikace.
+Různé možnosti `dotnet` jsou k dispozici samostatně, pro spuštění příkazu a pro spuštění aplikace.
 
-### <a name="options-for-dotnet-by-itself"></a>Možnosti pro dotnet samotné
+### <a name="options-for-dotnet-by-itself"></a>Možnosti pro dotnet sám o sobě
 
-Následující možnosti jsou `dotnet` samotné. například `dotnet --info`. Tisknou informace o daném prostředí.
+Následující možnosti `dotnet` jsou samy o sobě. Například, `dotnet --info`. Tisknou informace o životním prostředí.
 
 - **`--info`**
 
-  Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí, jako je aktuální operační systém, a potvrzení SHA verze .NET Core.
+  Vytiskne podrobné informace o instalaci jádra .NET a prostředí počítače, jako je například aktuální operační systém, a potvrdí sha verze .NET Core.
 
 - **`--version`**
 
-  Vytiskne verzi .NET Core SDK, která se používá.
+  Vytiskne verzi sady .NET Core SDK, která se používá.
 
 - **`--list-runtimes`**
 
-  Vytiskne seznam nainstalovaných modulů runtime .NET Core.
+  Vytiskne seznam nainstalovaných runčasů jádra .NET.
 
 - **`--list-sdks`**
 
-  Vytiskne seznam nainstalovaných sad SDK .NET Core.
+  Vytiskne seznam nainstalovaných sad SDK jádra .NET.
 
 - **`-h|--help`**
 
@@ -89,68 +89,68 @@ Následující možnosti jsou `dotnet` samotné. například `dotnet --info`. Ti
 
 ### <a name="sdk-options-for-running-a-command"></a>Možnosti sady SDK pro spuštění příkazu
 
-Následující možnosti jsou pro `dotnet` s příkazem. například `dotnet build --help`.
+Následující možnosti `dotnet` jsou pro s příkazem. Například, `dotnet build --help`.
 
 - **`-d|--diagnostics`**
 
-  Povolí výstup diagnostiky.
+  Umožňuje diagnostický výstup.
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`a `diag[nostic]`. Nepodporováno v každém příkazu. Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
+  Nastaví úroveň podrobností příkazu. Povolené hodnoty `q[uiet]` `m[inimal]`jsou `n[ormal]` `d[etailed]`, `diag[nostic]`, , a . Není podporováno v každém příkazu. Chcete-li zjistit, zda je tato možnost k dispozici, podívejte se na konkrétní příkazovou stránku.
 
 - **`-h|--help`**
 
-  Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`.
+  Vytiskne dokumentaci pro daný `dotnet build --help`příkaz, například .
 
 - **`command options`**
 
-  Každý příkaz definuje možnosti specifické pro tento příkaz. Seznam dostupných možností najdete v tématu konkrétní příkazová stránka.
+  Každý příkaz definuje možnosti specifické pro tento příkaz. Seznam dostupných možností naleznete na konkrétní stránce příkazů.
 
-### <a name="runtime-options"></a>Možnosti modulu runtime
+### <a name="runtime-options"></a>Možnosti běhu
 
-Když `dotnet` spouští aplikaci, jsou k dispozici následující možnosti. například `dotnet myapp.dll --fx-version 3.1.1`.
+Následující možnosti jsou `dotnet` k dispozici při spuštění aplikace. Například, `dotnet myapp.dll --fx-version 3.1.1`.
 
 - **`--additionalprobingpath <PATH>`**
 
-  Cesta obsahující zásady a sestavení pro zjišťování k testování
+  Cesta obsahující sondování zásady a sestavení pro sondu.
 
 - **`--additional-deps <PATH>`**
 
-  Cesta k dodatečnému souboru *. DEPS. JSON* . Soubor *DEPS. JSON* obsahuje seznam závislostí, závislosti kompilace a informace o verzi používané k řešení konfliktů sestavení. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) na GitHubu.
+  Cesta k dalšímu souboru *.deps.json.* Soubor *deps.json* obsahuje seznam závislostí, závislostí kompilace a informací o verzi, které se používají k řešení konfliktů sestavení. Další informace najdete [v tématu Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) na GitHubu.
 
 - **`--fx-version <VERSION>`**
 
-  Verze modulu runtime .NET Core, která se má použít ke spuštění aplikace
+  Verze runtime .NET Core, která se má použít ke spuštění aplikace.
 
 - **`--runtimeconfig`**
 
-  Cesta k souboru *runtimeconfig. JSON* . Soubor *runtimeconfig. JSON* je konfigurační soubor, který obsahuje nastavení běhu. Další informace najdete v tématu [nastavení konfigurace runtime .NET Core](../run-time-config/index.md#runtimeconfigjson).
+  Cesta k souboru *runtimeconfig.json.* Soubor *runtimeconfig.json* je konfigurační soubor, který obsahuje nastavení běhu. Další informace naleznete v [tématu Nastavení konfigurace rozhraní .NET Core run-time](../run-time-config/index.md#runtimeconfigjson).
 
-- **`--roll-forward-on-no-candidate-fx <N>`** **k dispozici v sadě .NET Core 2. x SDK.**
+- **`--roll-forward-on-no-candidate-fx <N>`****K dispozici v sdk .NET Core 2.x.**
 
-  Definuje chování v případě, že požadovaná sdílená architektura není k dispozici. `N` může být:
+  Definuje chování, když není k dispozici požadovaná sdílená architektura. `N`může být:
 
-  - `0` – zakažte u sebe i menší verzi.
-  - `1` – předejte se k dílčí verzi, ale ne k hlavní verzi. Toto je výchozí chování.
-  - `2` – předejte se do menších a hlavních verzí.
+  - `0`- Zakázat i menší verze roll vpřed.
+  - `1`- Roll vpřed na dílčí verzi, ale ne na hlavní verzi. Toto je výchozí chování.
+  - `2`- Roll vpřed na menší a hlavní verze.
 
-   Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
+   Další informace naleznete v [tématu Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-- **`--roll-forward <SETTING>`** **k dispozici od .NET Core SDK 3,0.**
+- **`--roll-forward <SETTING>`****K dispozici počínaje sadou .NET Core SDK 3.0.**
 
-  Určuje, jak se v aplikaci aplikuje posunutí. `SETTING` může být jedna z následujících hodnot. Pokud není zadaný, `Minor` je výchozí hodnota.
+  Určuje, jak se v aplikaci použije posun vpřed. Může `SETTING` být jedna z následujících hodnot. Pokud není `Minor` zadán, je výchozí.
 
-  - `LatestPatch` – vraťte se k nejvyšší verzi opravy. Tím se zakáže dílčí verze s posunem.
-  - v případě, že chybí požadovaná podverze, `Minor` – převeďte na nejnižší nižší verzi. Pokud je k dispozici požadovaná dílčí verze, použije se zásada LatestPatch.
-  - Pokud chybí požadovaná hlavní verze, `Major` – převeďte na nejnižší vyšší hlavní verzi a nejnižší podverzi. Pokud je k dispozici požadovaná hlavní verze, použije se vedlejší zásada.
-  - `LatestMinor` – převeďte do nejvyšší dílčí verze, i když je k dispozici požadovaná dílčí verze. Určeno pro scénáře hostování součástí.
-  - `LatestMajor` – převeďte do nejvyšší hlavní a nejvyšší dílčí verze, a to i v případě, že je k dispozici požadovaná hlavní verze. Určeno pro scénáře hostování součástí.
-  - `Disable` – nezavádět do popředí. Vytvoří se jenom vazba na určenou verzi. Tyto zásady se nedoporučují pro obecné použití, protože zakazují možnost navrátit se k nejnovějším opravám. Tato hodnota se doporučuje jenom pro testování.
+  - `LatestPatch`- Přetočte se dopředu na nejvyšší verzi opravy. Tím se zakáže dílčí verze posunout vpřed.
+  - `Minor`- Převrátit na nejnižší vyšší dílčí verze, pokud je požadována dílčí verze chybí. Pokud je k dispozici požadovaná dílčí verze, použije se zásada LatestPatch.
+  - `Major`- Roll vpřed na nejnižší vyšší hlavní verze, a nejnižší dílčí verze, pokud požadované hlavní verze chybí. Pokud je k dispozici požadovaná hlavní verze, použije se zásada Vedlejší.
+  - `LatestMinor`- Převrátit na nejvyšší dílčí verzi, a to i v případě, že je požadována dílčí verze je k dispozici. Určeno pro scénáře hostování komponent.
+  - `LatestMajor`- Převrátit na nejvyšší hlavní a nejvyšší dílčí verze, i když požadované hlavní je přítomen. Určeno pro scénáře hostování komponent.
+  - `Disable`- Neotáčejte se dopředu. Spojte se pouze se zadanou verzí. Tato zásada se nedoporučuje pro obecné použití, protože zakáže možnost převést na nejnovější opravy. Tato hodnota je doporučena pouze pro testování.
 
-S výjimkou `Disable`budou všechna nastavení využívat nejvyšší dostupnou verzi opravy.
+S výjimkou `Disable`aplikace budou všechna nastavení používat nejvyšší dostupnou verzi opravy.
 
-Chování při posunutí nahoru lze také nakonfigurovat v vlastnost souboru projektu, vlastnosti konfiguračního souboru modulu runtime a proměnné prostředí. Další informace najdete v tématu o [zavedení modulu runtime hlavní verze – posunutí](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward).
+Chování posunout vpřed lze také nakonfigurovat ve vlastnosti souboru projektu, vlastnosti konfiguračního souboru za běhu a proměnné prostředí. Další informace naleznete v [tématu Hlavní verze runtime posun vpřed](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward).
 
 ## <a name="dotnet-commands"></a>Příkazy dotnet
 
@@ -159,26 +159,26 @@ Chování při posunutí nahoru lze také nakonfigurovat v vlastnost souboru pro
 | Příkaz                                       | Funkce                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)               | Vytvoří aplikaci .NET Core.                                     |
-| [dotnet build-server](dotnet-build-server.md) | Komunikuje se servery spuštěnými sestavením.                          |
-| [dotnet clean](dotnet-clean.md)               | Vyčistit výstupy sestavení.                                                |
-| [dotnet help](dotnet-help.md)                 | Zobrazí podrobnější dokumentaci pro příkaz online.           |
-| [dotnet migrate](dotnet-migrate.md)           | Migruje platný projekt verze Preview 2 na projekt .NET Core SDK 1,0.  |
+| [dotnet build-server](dotnet-build-server.md) | Spolupracuje se servery spuštěnými sestavením.                          |
+| [dotnet clean](dotnet-clean.md)               | Čisté výstupy sestavení.                                                |
+| [dotnet help](dotnet-help.md)                 | Zobrazuje podrobnější dokumentaci online pro příkaz.           |
+| [dotnet migrate](dotnet-migrate.md)           | Přenese platný projekt Preview 2 do projektu .NET Core SDK 1.0.  |
 | [dotnet msbuild](dotnet-msbuild.md)           | Poskytuje přístup k příkazovému řádku MSBuild.                        |
 | [dotnet new](dotnet-new.md)                   | Inicializuje projekt C# nebo F# pro danou šablonu.                |
 | [dotnet pack](dotnet-pack.md)                 | Vytvoří balíček NuGet vašeho kódu.                               |
-| [dotnet publish](dotnet-publish.md)           | Publikuje aplikaci závislou na rozhraní .NET Framework nebo samostatnou aplikaci. |
+| [dotnet publish](dotnet-publish.md)           | Publikuje aplikaci závislou na rozhraní .NET nebo samostatnou aplikaci. |
 | [dotnet restore](dotnet-restore.md)           | Obnoví závislosti pro danou aplikaci.                  |
 | [dotnet run](dotnet-run.md)                   | Spustí aplikaci ze zdroje.                                   |
-| [dotnet run](dotnet-sln.md)                   | Možnosti pro přidání, odebrání a výpis projektů v souboru řešení.       |
-| [dotnet restore](dotnet-store.md)               | Ukládá sestavení do úložiště balíčků modulu runtime.                     |
-| [dotnet test](dotnet-test.md)                 | Spustí testy pomocí nástroje Test Runner.                                     |
+| [dotnet run](dotnet-sln.md)                   | Možnosti pro přidání, odebrání a seznam projektů v souboru řešení.       |
+| [dotnet restore](dotnet-store.md)               | Ukládá sestavení v runtime balíček úložiště.                     |
+| [dotnet test](dotnet-test.md)                 | Spustí testy pomocí testovacího běhu.                                     |
 
 ### <a name="project-references"></a>Odkazy na projekty
 
 Příkaz | Funkce
 --- | ---
 [dotnet add reference](dotnet-add-reference.md) | Přidá odkaz na projekt.
-[dotnet list reference](dotnet-list-reference.md) | Vypíše odkazy na projekt.
+[dotnet list reference](dotnet-list-reference.md) | Zobrazí seznam odkazů na projekt.
 [dotnet remove reference](dotnet-remove-reference.md) | Odebere odkaz na projekt.
 
 ### <a name="nuget-packages"></a>Balíčky NuGet
@@ -192,38 +192,38 @@ Příkaz | Funkce
 
 Příkaz | Funkce
 --- | ---
-[dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo zruší výpis balíčku ze serveru.
-[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo vypíše místní prostředky NuGet, jako je mezipaměť požadavků HTTP, dočasná mezipaměť nebo složka globálních balíčků v celém počítači.
-[dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje ho.
+[dotnet nuget delete](dotnet-nuget-delete.md) | Odstraní nebo odřadí seznam balíčku ze serveru.
+[dotnet nuget locals](dotnet-nuget-locals.md) | Vymaže nebo zobrazí seznam místních prostředků NuGet, jako je například mezipaměť http-request, dočasná mezipaměť nebo globální balíček pro celý počítač.
+[dotnet nuget push](dotnet-nuget-push.md) | Odešle balíček na server a publikuje jej.
 
-### <a name="global-tool-path-and-local-tools-commands"></a>Příkazy globálních nástrojů, nástrojů a cest a místních nástrojů
+### <a name="global-tool-path-and-local-tools-commands"></a>Příkazy globálních nástrojů, cest nástrojů a místních nástrojů
 
-Nástroje jsou konzolové aplikace, které jsou nainstalovány z balíčků NuGet a jsou vyvolány z příkazového řádku. Můžete psát nástroje sami nebo instalovat nástroje napsané třetí stranou. Nástroje jsou také známé jako globální nástroje, nástroje pro cestu nástrojů a místní nástroje. Další informace najdete v tématu [Přehled nástrojů .NET Core](global-tools.md). Nástroje pro globální a cestu nástrojů jsou k dispozici od .NET Core SDK 2,1. K dispozici jsou místní nástroje od .NET Core SDK 3,0.
+Nástroje jsou konzolové aplikace, které jsou nainstalovány z balíčků NuGet a jsou vyvolány z příkazového řádku. Můžete psát nástroje sami nebo instalovat nástroje napsané třetími stranami. Nástroje jsou také známé jako globální nástroje, nástroje pro cestu nástrojů a místní nástroje. Další informace naleznete v tématu [Přehled nástrojů .NET Core](global-tools.md). Globální nástroje a nástroje cesta jsou k dispozici počínaje .NET Core SDK 2.1. Místní nástroje jsou k dispozici počínaje .NET Core SDK 3.0.
 
 Příkaz | Funkce
 --- | ---
-[dotnet tool install](dotnet-tool-install.md) | Nainstaluje nástroj na váš počítač.
-[dotnet tool list](dotnet-tool-list.md) | Zobrazí seznam všech nástrojů, které jsou aktuálně nainstalované na vašem počítači, na základě globálních nástrojů, nástrojů a cest.
-[dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstaluje nástroj z počítače.
-[dotnet tool update](dotnet-tool-update.md) | Aktualizuje nástroj, který je nainstalovaný na vašem počítači.
+[dotnet tool install](dotnet-tool-install.md) | Nainstaluje do počítače nástroj.
+[dotnet tool list](dotnet-tool-list.md) | Zobrazí seznam všech globálních, nástrojových cest nebo místních nástrojů, které jsou v počítači aktuálně nainstalovány.
+[dotnet tool uninstall](dotnet-tool-uninstall.md) | Odinstaluje nástroj ze zařízení.
+[dotnet tool update](dotnet-tool-update.md) | Aktualizuje nástroj, který je nainstalován v počítači.
 
 ### <a name="additional-tools"></a>Další nástroje
 
-Počínaje .NET Core SDK 2.1.300 je teď k dispozici několik nástrojů, které byly k dispozici pouze pro jednotlivé projekty pomocí `DotnetCliToolReference` jsou nyní k dispozici jako součást .NET Core SDK. Tyto nástroje jsou uvedené v následující tabulce:
+Počínaje .NET Core SDK 2.1.300, počet nástrojů, které byly k `DotnetCliToolReference` dispozici pouze na základě projektu pomocí jsou nyní k dispozici jako součást .NET Core SDK. Tyto nástroje jsou uvedeny v následující tabulce:
 
 | Nástroj                                              | Funkce                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| vývoj – certifikáty                                         | Vytvoří a spravuje vývojové certifikáty.                |
-| [EF](/ef/core/miscellaneous/cli/dotnet)           | Entity Framework Core nástroje příkazového řádku.                    |
-| sql-cache                                         | Nástroje příkazového řádku pro SQL Server cache                         |
-| [uživatel – tajné klíče](/aspnet/core/security/app-secrets) | Spravuje tajné klíče uživatele.                            |
-| [sledovací](/aspnet/core/tutorials/dotnet-watch)      | Spustí sledovací proces souborů, který spustí příkaz, když se soubory změní. |
+| dev-certs                                         | Vytváří a spravuje vývojové certifikáty.                |
+| [Ef](/ef/core/miscellaneous/cli/dotnet)           | Nástroje příkazového řádku Core entity Framework.                    |
+| sql-cache                                         | Nástroje příkazového řádku mezipaměti serveru SQL Server.                         |
+| [uživatelské tajemství](/aspnet/core/security/app-secrets) | Spravuje tajné kódy uživatelů vývoje.                            |
+| [Sledovat](/aspnet/core/tutorials/dotnet-watch)      | Spustí sledovací proces souboru, který spustí příkaz při změně souborů. |
 
-Další informace o jednotlivých nástrojích získáte, když zadáte `dotnet <tool-name> --help`.
+Další informace o jednotlivých `dotnet <tool-name> --help`nástrojích získáte zadáním příkazu .
 
 ## <a name="examples"></a>Příklady
 
-Vytvořte novou konzolovou aplikaci .NET Core:
+Vytvořte novou aplikaci konzoly .NET Core:
 
 ```dotnetcli
 dotnet new console
@@ -245,61 +245,61 @@ dotnet myapp.dll
 
 - `DOTNET_ROOT`, `DOTNET_ROOT(x86)`
 
-  Určuje umístění modulů runtime .NET Core, pokud nejsou nainstalovány ve výchozím umístění. Výchozí umístění ve Windows je `C:\Program Files\dotnet`. Výchozí umístění v systému Linux a macOS je `/usr/share/dotnet`. Tato proměnná prostředí se používá jenom při spouštění aplikací prostřednictvím generovaných spustitelných souborů (apphosts). místo toho se používá `DOTNET_ROOT(x86)`, když se na 64 operačním systému spouští 32 spustitelný soubor.
+  Určuje umístění runčasů jádra .NET, pokud nejsou nainstalovány ve výchozím umístění. Výchozí umístění v `C:\Program Files\dotnet`systému Windows je . Výchozí umístění na Linuxu a `/usr/share/dotnet`macOS je . Tato proměnná prostředí se používá pouze při spouštění aplikací prostřednictvím generovaných spustitelných souborů (apphosts). `DOTNET_ROOT(x86)`se používá místo toho při spuštění 32bitového spustitelného souboru v 64bitovém osu.
 
 - `DOTNET_PACKAGES`
 
-  Složka globálních balíčků. Pokud není nastavené, použije se výchozí nastavení `~/.nuget/packages` v systému UNIX nebo `%userprofile%\.nuget\packages` ve Windows.
+  Složka globálních balíčků. Pokud není nastavena, `~/.nuget/packages` je výchozí `%userprofile%\.nuget\packages` na Unix nebo na Windows.
 
 - `DOTNET_SERVICING`
 
-  Určuje umístění indexu údržby používaného sdíleným hostitelem při načítání modulu runtime.
+  Určuje umístění indexu obsluhy, který má sdílený hostitel použít při načítání za běhu.
 
 - `DOTNET_CLI_TELEMETRY_OPTOUT`
 
-  Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` pro výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijaté). Jinak nastavte `false` tak, aby se přihlásil k funkcím telemetrie (hodnoty `false`, `0`nebo přijaté `no`). Pokud není nastavená, výchozí hodnota je `false` a funkce telemetrie je aktivní.
+  Určuje, zda jsou data o použití nástrojů .NET Core shromažďována a odesílána společnosti Microsoft. Nastavte `true` na odhlášení z funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijaté). V opačném `false` případě nastavte na opt-li `false` `0`do `no` funkce telemetrie (hodnoty , nebo přijat). Pokud není nastavena, `false` výchozí je a funkce telemetrie je aktivní.
 
 - `DOTNET_MULTILEVEL_LOOKUP`
 
-  Určuje, zda je rozhraní .NET Core Runtime, sdílené rozhraní nebo sada SDK vyřešeno z globálního umístění. Pokud není nastavené, použije se výchozí hodnota 1 (logická `true`). Nastavte na 0 (logický `false`), aby se nepřeložily z globálního umístění a měly izolované instalace .NET Core. Další informace o vyhledávání na více úrovních najdete v tématu [SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
+  Určuje, zda jsou z globálního umístění vyřešeny zaběhu .NET Core, sdílené ho frameworku nebo sdk. Pokud není nastavena, je výchozí `true`hodnota 1 (logické). Nastavte 0 (logické) `false`není vyřešit z globálního umístění a mají izolované instalace .NET Core. Další informace o víceúrovňovém vyhledávání naleznete v [tématu Vyhledávání SharedFX na více úrovních](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
-- `DOTNET_ROLL_FORWARD` **k dispozici počínaje verzí .NET Core 3. x SDK.**
+- `DOTNET_ROLL_FORWARD`**K dispozici počínaje sadou .NET Core 3.x SDK.**
 
-  Určuje chování při posunu nahoru. Další informace najdete v části `--roll-forward` možnosti výše v tomto článku.
+  Určuje chování posunout vpřed. Další informace naleznete `--roll-forward` v této možnosti dříve v tomto článku.
 
-- `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` **k dispozici v sadě .NET Core 2. x SDK.**
+- `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX`**K dispozici v sdk .NET Core 2.x.**
 
-  Zakáže posunutí dílčí verze, pokud je nastaveno na `0`. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
+  Zakáže dílčí verze posunout `0`vpřed, pokud je nastavena na . Další informace naleznete v [tématu Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
-  Nastaví jazyk uživatelského rozhraní CLI pomocí hodnoty národního prostředí, například `en-us`. Podporované hodnoty jsou stejné jako u sady Visual Studio. Další informace najdete v části o změně jazyka instalačního programu v [dokumentaci k instalaci sady Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019). Použijí se pravidla správce prostředků .NET, takže nemusíte vybírat přesnou shodu&mdash;můžete také vybrat následníky ve stromu `CultureInfo`. Například pokud nastavíte `fr-CA`, rozhraní příkazového řádku nalezne a použije překlady `fr`. Pokud ho nastavíte na jazyk, který není podporován, rozhraní příkazového řádku se vrátí do angličtiny.
+  Nastaví jazyk rozhraní rozhraní rozhraní SEkatelu `en-us`pomocí hodnoty národního prostředí, například . Podporované hodnoty jsou stejné jako pro Visual Studio. Další informace naleznete v části o změně jazyka instalačního programu v [dokumentaci k instalaci sady Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019). Platí pravidla správce prostředků .NET, takže nemusíte vybírat přesnou shodu,&mdash; `CultureInfo` můžete také vybrat potomky ve stromu. Pokud ji například nastavíte na `fr-CA`, vykázané nastavení matné a konstatování překlady vyhledá a použije. `fr` Pokud jej nastavíte na jazyk, který není podporován, rozhraní se konkretním rozhraním SE vrátí zpět do angličtiny.
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 
-  U generovaných spustitelných souborů s povoleným grafickým uživatelským rozhraním – zakáže dialogová okna, která obvykle zobrazuje určité třídy chyb. Zapisuje pouze do `stderr` a v těchto případech skončí.
+  Pro gui-umožnil generované spustitelné soubory - zakáže dialogové okno, které obvykle ukazuje pro určité třídy chyb. Pouze zapisuje `stderr` a ukončí v těchto případech.
   
 - `DOTNET_ADDITIONAL_DEPS`
 
-  Ekvivalent možnosti CLI `--additional-deps`.
+  Ekvivalentní možnost ipříkazové konzace `--additional-deps`.
 
 - `DOTNET_RUNTIME_ID`
 
-  Přepíše zjištěný identifikátor RID.
+  Přepíše zjištěný rid.
 
 - `DOTNET_SHARED_STORE`
 
-  Umístění sdíleného úložiště, na které se rozlišení sestavení vrátí v některých případech.
+  Umístění "sdílenéúložiště", které rozlišení sestavení spadá zpět do v některých případech.
 
 - `DOTNET_STARTUP_HOOKS`
 
-  Seznam sestavení pro načtení a spuštění spouštěcích háky z.
+  Seznam sestavení pro načtení a spuštění spouštěcích háků z.
 
 - `COREHOST_TRACE`, `COREHOST_TRACEFILE`, `COREHOST_TRACE_VERBOSITY`
 
-  Řídí trasování diagnostiky z komponent hostování, například `dotnet.exe`, `hostfxr`a `hostpolicy`.
+  Řídí diagnostiku trasování z hostitelských `dotnet.exe`součástí, například , `hostfxr`a `hostpolicy`.
 
 ## <a name="see-also"></a>Viz také
 
-- [Běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
-- [Nastavení konfigurace runtime .NET Core](../run-time-config/index.md)
+- [Konfigurační soubory runtime](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
+- [Nastavení konfigurace jádra .NET](../run-time-config/index.md)

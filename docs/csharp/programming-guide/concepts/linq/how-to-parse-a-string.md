@@ -1,21 +1,21 @@
 ---
-title: Postup analýzy řetězce (C#)
+title: Jak analyzovat řetězec (C#)
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
 ms.openlocfilehash: 79821eb9e5cd7187ac3c2a93f85eaae45c5c48ac
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75345813"
 ---
-# <a name="how-to-parse-a-string-c"></a>Postup analýzy řetězce (C#)
+# <a name="how-to-parse-a-string-c"></a>Jak analyzovat řetězec (C#)
 
-Toto téma ukazuje, jak analyzovat řetězec pro vytvoření stromu XML v C#.
+Toto téma ukazuje, jak analyzovat řetězec k vytvoření stromu XML v jazyce C#.
 
 ## <a name="example"></a>Příklad
 
-Následující C# kód ukazuje, jak analyzovat řetězec XML:
+Následující kód jazyka C# ukazuje, jak analyzovat řetězec XML:
 
 ```csharp
 XElement contacts = XElement.Parse(
@@ -47,13 +47,13 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);
 ```
 
-Uzel kořenového `Contacts` má dva uzly `Contact`. Chcete-li získat přístup k určitým datům v analyzovaném kódu XML, použijte metodu [XElement. Elements ()](xref:System.Xml.Linq.XContainer.Elements) , která v tomto případě vrátí podřízené prvky kořenového uzlu `Contacts`. Následující příklad vytiskne první `Contact` uzel do konzoly:
+Kořenový `Contacts` uzel má `Contact` dva uzly. Chcete-li získat přístup k některým konkrétním datům v analyzovaném XML, použijte metodu [XElement.Elements(),](xref:System.Xml.Linq.XContainer.Elements) která v tomto případě vrátí podřízené prvky kořenového `Contacts` uzlu. Následující příklad vytiskne první `Contact` uzel do konzoly:
 
 ```csharp
 List<XElement> contactNodes = contacts.Elements("Contact").ToList();
 Console.WriteLine(contactNodes[0]);
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Jak najít element s konkrétním atributem (C#)](how-to-find-an-element-with-a-specific-attribute.md)
+- [Jak najít prvek s určitým atributem (C#)](how-to-find-an-element-with-a-specific-attribute.md)

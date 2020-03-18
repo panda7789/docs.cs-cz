@@ -1,28 +1,28 @@
 ---
-title: Infer.NET hra – párování aplikací – pravděpodobnostní programování
-description: Naučte se používat programování v pravděpodobnostní s Infer.NET k vytvoření rozhodné aplikace seznamu pro porovnávání her na základě zjednodušené verze TrueSkill.
+title: Infer.NET herní match-up aplikace - pravděpodobnostní programování
+description: Zjistěte, jak pomocí pravděpodobnostního programování s Infer.NET vytvořit aplikaci pro seznam herních zápasů založenou na zjednodušené verzi TrueSkill.
 ms.date: 01/30/2020
 ms.custom: mvc,how-to
 ms.openlocfilehash: 8e489d61c5e6cca53ba12b13fddd0b73c7f85ef9
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77092600"
 ---
-# <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravděpodobnostní programováním
+# <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření aplikace pro seznam her se Infer.NET a pravděpodobnostním programováním
 
-Tato příručka vás seznámí s programováním v pravděpodobnostní pomocí Infer.NET. Programování pravděpodobnostní je přístup strojového učení, kde se vlastní modely vyjadřují jako počítačové programy. Umožňuje začlenit znalostní bázi domény v modelech a díky tomu může systém Machine Learning lépe interpretovat. Podporuje také online odvozování – proces učení se zadoručením nových dat. Infer.NET se používá v různých produktech Microsoftu v Azure, Xbox a Bingu.
+Tento návod vás naučí o pravděpodobnostním programování pomocí Infer.NET. Pravděpodobnostní programování je přístup strojového učení, kde jsou vlastní modely vyjádřeny jako počítačové programy. Umožňuje začlenit znalosti domény do modelů a činí systém strojového učení více interpretovatelným. Podporuje také on-line odvození - proces učení, jak přicházejí nová data. Infer.NET se používá v různých produktech společnosti Microsoft v Azure, Xboxu a Bingu.
 
 ## <a name="what-is-probabilistic-programming"></a>Co je pravděpodobnostní programování?
 
-Programování pravděpodobnostní vám umožňuje vytvářet statistické modely reálných procesů.
+Pravděpodobnostní programování umožňuje vytvářet statistické modely reálných procesů.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
-- Nastavení místního vývojového prostředí
+- Nastavení prostředí místního rozvoje
 
-  Tato průvodce vám očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v MacOS, Windows nebo Linux.
+  Tento návod očekává, že budete mít stroj, který můžete použít pro vývoj. Kurz .NET [Hello World za 10 minut](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému macOS, Windows nebo Linuxu.
 
 ## <a name="create-your-app"></a>Vytvoření aplikace
 
@@ -33,38 +33,38 @@ dotnet new console -o myApp
 cd myApp
 ```
 
-Příkaz `dotnet` vytvoří `new` aplikace typu `console`. Parametr `-o` vytvoří adresář s názvem `myApp`, kde je vaše aplikace uložená, a naplní ji požadovanými soubory. Příkaz `cd myApp` vloží do nově vytvořeného adresáře aplikace.
+Příkaz `dotnet` vytvoří `new` aplikaci `console`typu . Parametr `-o` vytvoří adresář `myApp` s názvem, kde je aplikace uložena, a naplní ho požadovanými soubory. Příkaz `cd myApp` vás umístí do nově vytvořeného adresáře aplikace.
 
-## <a name="install-infernet-package"></a>Nainstalovat balíček Infer.NET
+## <a name="install-infernet-package"></a>Nainstalovat Infer.NET balíček
 
-Pokud chcete používat Infer.NET, musíte nainstalovat balíček `Microsoft.ML.Probabilistic.Compiler`. Na příkazovém řádku spusťte následující příkaz:
+Chcete-li použít Infer.NET, `Microsoft.ML.Probabilistic.Compiler` musíte nainstalovat balíček. V příkazovém řádku spusťte následující příkaz:
 
 ```dotnetcli
 dotnet add package Microsoft.ML.Probabilistic.Compiler
 ```
 
-## <a name="design-your-model"></a>Návrh modelu
+## <a name="design-your-model"></a>Navrhněte svůj model
 
-Vzorový příklad používá v sadě Office shodu tabulky tenis nebo Foosball. Máte účastníky a výsledek každé shody.  Chcete odvodit dovednosti přehrávače od těchto dat. Předpokládejme, že každý hráč má obvykle distribuovanou latentní dovednost a jejich odpovídající výkon je tato dovednostní verze. Data omezí výkon vítěze tak, aby byla větší než výkon loser. Toto je zjednodušená verze oblíbeného modelu [TrueSkill](https://www.microsoft.com/research/project/trueskill-ranking-system/) , která také podporuje týmy, kreslení a další rozšíření. [Pokročilá verze](https://www.microsoft.com/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) tohoto modelu se používá pro Matchmaking v nejlepším prodeji názvů her Halo a ozubeného kolaci války.
+Ukázka příkladu používá stolní tenis nebo stolní fotbal zápasy hrané v kanceláři. Máte účastníky a výsledek každého zápasu.  Chcete-li odvodit dovednosti hráče z těchto dat. Předpokládejme, že každý hráč má normálně distribuované latentní dovednosti a jejich daný výkon zápasu je hlučná verze této dovednosti. Data omezuje výkon vítěze na výkon vyšší než výkon poraženého. Toto je zjednodušená verze populárního modelu [TrueSkill,](https://www.microsoft.com/research/project/trueskill-ranking-system/) který také podporuje týmy, remízy a další rozšíření. [Pokročilá verze](https://www.microsoft.com/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) tohoto modelu se používá pro dohazování v nejprodávanějších herních titulech Halo a Gears of War.
 
-Musíte uvést, jaké dovednosti v přehrávači jsou společně s jejich odchylkou – míra nejistoty v rámci dovedností.
+Musíte uvést odvozené hráčské dovednosti, spolu s jejich rozptylem - míra nejistoty kolem dovedností.
 
-*Ukázková data výsledků her*
+*Ukázková data výsledků hry*
 
-Hra |Replik | Loser
+Herní |Vítěz | Loser
 ---------|----------|---------
- 1 | Přehrávač 0 | Hráč 1
- 2 | Přehrávač 0 | Hráč 3
- 3 | Přehrávač 0 | Hráč 4
+ 1 | Hráč 0 | Hráč 1
+ 2 | Hráč 0 | Hráč 3
+ 3 | Hráč 0 | Hráč 4
  4 | Hráč 1 | Hráč 2
  5 | Hráč 3 | Hráč 1
  6 | Hráč 4 | Hráč 2
 
-Podíváme se na vzorová data a Všimněte si, že hráči 3 a 4 mají jednu ze všech výher a jednu ztrátu. Pojďme se podívat, jak pořadí vypadá pomocí pravděpodobnostní programování. Všimněte si také, že je přehrávač nulový, protože v seznamech pro nás, které jsou v souladu s více kancelářemi, je nula.
+Při bližším pohledu na ukázková data si všimnete, že hráči 3 a 4 mají jednu výhru a jednu ztrátu. Podívejme se, jak vypadají žebříčky pomocí pravděpodobnostního programování. Všimněte si také, že je hráč nula, protože i kancelářské zápas y seznamy jsou nulové na základě nás vývojářů.
 
 ## <a name="write-some-code"></a>Napsat nějaký kód
 
-Model byl navržený tak, jak ho vyjádřit jako pravděpodobnostní program pomocí rozhraní API pro modelování Infer.NET. Ve svém oblíbeném textovém editoru otevřete `Program.cs` a nahraďte jeho obsah následujícím kódem:
+Po navržení modelu je čas vyjádřit jej jako pravděpodobnostní program pomocí rozhraní API pro modelování Infer.NET. Otevřete `Program.cs` ve svém oblíbeném textovém editoru a nahraďte veškerý jeho obsah následujícím kódem:
 
 ```csharp
 namespace myApp
@@ -128,7 +128,7 @@ namespace myApp
 
 ## <a name="run-your-app"></a>Spuštění aplikace
 
-Na příkazovém řádku spusťte následující příkaz:
+V příkazovém řádku spusťte následující příkaz:
 
 ```dotnetcli
 dotnet run
@@ -136,7 +136,7 @@ dotnet run
 
 ## <a name="results"></a>Výsledky
 
-Výsledky by měly být podobné následujícímu:
+Vaše výsledky by měly být podobné následujícímu:
 
 ```console
 Compiling model...done.
@@ -149,14 +149,14 @@ Player 1 skill: Gaussian(4.955, 3.503)
 Player 2 skill: Gaussian(2.639, 4.288)
 ```
 
-Ve výsledcích si všimněte, že hráč 3 rozhodne o něco vyšším než hráč 4 podle našeho modelu. Důvodem je to, že Victory of Player 3 over Player 1 je důležitější než Victory Player 4 přes Player 2 – Poznámka: Player 1 Beats Player 2. Přehrávač 0 je celkový Champ!
+Ve výsledcích si všimněte, že hráč 3 je podle našeho modelu o něco vyšší než hráč 4. To proto, že vítězství hráče 3 nad hráčem 1 je významnější než vítězství hráče 4 nad hráčem 2 - všimněte si, že hráč 1 porazí hráče 2. Hráč 0 je celkový šampion!
 
-## <a name="keep-learning"></a>Průběžné učení
+## <a name="keep-learning"></a>Mějte učení
 
-Návrh statistických modelů je dovedností sám o sobě. Tým Microsoft Research Cambridge napsal [bezplatnou online knihu](http://mbmlbook.com/), která poskytuje mírné představení tohoto článku. Kapitola 3 této knihy pokrývá model TrueSkill podrobněji. Jakmile máte model, můžete ho transformovat na kód pomocí [obsáhlé dokumentace](https://dotnet.github.io/infer/) na webu Infer.NET.
+Navrhování statistických modelů je dovednost sama o sobě. Tým Microsoft Research Cambridge napsal [bezplatnou online knihu](http://mbmlbook.com/), která poskytuje jemný úvod do článku. Kapitola 3 této knihy pokrývá trueskill model podrobněji. Jakmile máte model na mysli, můžete jej převést do kódu pomocí [rozsáhlé dokumentace](https://dotnet.github.io/infer/) na webu Infer.NET.
 
 ## <a name="next-steps"></a>Další kroky
 
-Podívejte se na úložiště GitHub Infer.NET a pokračujte v učení a Najděte další ukázky.
+Podívejte se na Infer.NET úložiště GitHub, abyste se dál učili a našli další ukázky.
 > [!div class="nextstepaction"]
-> [dotnet/odvodit úložiště GitHub](https://github.com/dotnet/infer)
+> [dotnet/infer úložiště GitHub](https://github.com/dotnet/infer)

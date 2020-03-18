@@ -1,25 +1,25 @@
 ---
-title: Postup přidání vlastních metod pro dotazy LINQ (C#)
+title: Jak přidat vlastní metody pro dotazy LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: 1a500f60-2e10-49fb-8b2a-d8d08e4817cb
 ms.openlocfilehash: e16175d3332b6ce36458eaa78af093e4f8772723
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141468"
 ---
-# <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Postup přidání vlastních metod pro dotazy LINQ (C#)
+# <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Jak přidat vlastní metody pro dotazy LINQ (C#)
 
-Můžete rozšířit sadu metod, které lze použít pro dotazy LINQ přidáním rozšiřujících metod do rozhraní <xref:System.Collections.Generic.IEnumerable%601>. Například kromě standardních průměrných nebo maximálních operací můžete vytvořit vlastní agregační metodu pro výpočet jedné hodnoty z sekvence hodnot. Můžete také vytvořit metodu, která funguje jako vlastní filtr nebo konkrétní transformace dat pro sekvenci hodnot a vrátí novou sekvenci. Příklady takových metod jsou <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A>a <xref:System.Linq.Enumerable.Reverse%2A>.
+Sadu metod, které můžete použít pro dotazy LINQ, můžete rozšířit <xref:System.Collections.Generic.IEnumerable%601> přidáním rozšiřujících metod do rozhraní. Kromě standardního průměru nebo maximálních operací můžete například vytvořit vlastní agregační metodu pro výpočet jedné hodnoty z posloupnosti hodnot. Můžete také vytvořit metodu, která funguje jako vlastní filtr nebo konkrétní transformace dat pro posloupnost hodnot a vrátí novou sekvenci. Příklady takových metod <xref:System.Linq.Enumerable.Distinct%2A> <xref:System.Linq.Enumerable.Skip%2A>jsou <xref:System.Linq.Enumerable.Reverse%2A>, a .
 
-Když rozšíříte rozhraní <xref:System.Collections.Generic.IEnumerable%601>, můžete použít vlastní metody do jakékoli vyčíslitelné kolekce. Další informace naleznete v tématu [metody rozšíření](../../classes-and-structs/extension-methods.md).
+Při rozšíření <xref:System.Collections.Generic.IEnumerable%601> rozhraní, můžete použít vlastní metody pro libovolný počet početné kolekce. Další informace naleznete v [tématu Metody rozšíření](../../classes-and-structs/extension-methods.md).
 
 ## <a name="adding-an-aggregate-method"></a>Přidání agregační metody
 
-Agregační metoda vypočítá jednu hodnotu ze sady hodnot. LINQ poskytuje několik agregačních metod, včetně <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Min%2A>a <xref:System.Linq.Enumerable.Max%2A>. Můžete vytvořit vlastní agregační metodu přidáním metody rozšíření do rozhraní <xref:System.Collections.Generic.IEnumerable%601>.
+Agregační metoda vypočítá jednu hodnotu ze sady hodnot. LINQ poskytuje několik agregačních metod, včetně <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Max%2A>. Můžete vytvořit vlastní agregační metodu přidáním metody rozšíření do <xref:System.Collections.Generic.IEnumerable%601> rozhraní.
 
-Následující příklad kódu ukazuje, jak vytvořit metodu rozšíření nazvanou `Median` pro výpočet mediánu pro sekvenci čísel typu `double`.
+Následující příklad kódu ukazuje, jak vytvořit `Median` metodu rozšíření volané pro `double`výpočet mediánu pro posloupnost čísel typu .
 
 ```csharp
 public static class LINQExtension
@@ -51,9 +51,9 @@ public static class LINQExtension
 }
 ```
 
-Tuto metodu rozšíření pro každou vyčíslitelné kolekci můžete zavolat stejným způsobem jako jiné agregační metody z rozhraní <xref:System.Collections.Generic.IEnumerable%601>.
+Volání této metody rozšíření pro všechny výčtové kolekce stejným způsobem <xref:System.Collections.Generic.IEnumerable%601> volat jiné agregační metody z rozhraní.
 
-Následující příklad kódu ukazuje, jak použít metodu `Median` pro pole typu `double`.
+Následující příklad kódu ukazuje, `Median` jak použít metodu `double`pro pole typu .
 
 ```csharp
 double[] numbers1 = { 1.9, 2, 8, 4, 5.7, 6, 7.2, 0 };
@@ -71,13 +71,13 @@ Console.WriteLine("double: Median = " + query1);
 */
 ```
 
-### <a name="overloading-an-aggregate-method-to-accept-various-types"></a>Přetížení agregované metody pro příjem různých typů
+### <a name="overloading-an-aggregate-method-to-accept-various-types"></a>Přetížení agregační metody přijmout různé typy
 
-Můžete přetížit agregační metodu tak, aby mohla přijímat sekvence různých typů. Standardní přístup je vytvořit přetížení pro každý typ. Další možností je vytvořit přetížení, které bude přebírat obecný typ a převést jej na konkrétní typ pomocí delegáta. Oba přístupy můžete také kombinovat.
+Můžete přetížení agregační metody tak, aby přijímá sekvence různých typů. Standardní přístup je vytvořit přetížení pro každý typ. Jiný přístup je vytvořit přetížení, které bude trvat obecný typ a převést na určitý typ pomocí delegáta. Můžete také kombinovat oba přístupy.
 
-#### <a name="to-create-an-overload-for-each-type"></a>Pro vytvoření přetížení pro každý typ
+#### <a name="to-create-an-overload-for-each-type"></a>Chcete-li vytvořit přetížení pro každý typ
 
-Můžete vytvořit konkrétní přetížení pro každý typ, který chcete podporovat. Následující příklad kódu ukazuje přetížení metody `Median` pro typ `integer`.
+Můžete vytvořit konkrétní přetížení pro každý typ, který chcete podporovat. Následující příklad kódu ukazuje přetížení `Median` metody `integer` pro typ.
 
 ```csharp
 //int overload
@@ -88,7 +88,7 @@ public static double Median(this IEnumerable<int> source)
 }
 ```
 
-Nyní můžete volat `Median` přetížení pro typy `integer` a `double`, jak je znázorněno v následujícím kódu:
+Nyní můžete volat `Median` přetížení pro `integer` `double` oba typy, jak je znázorněno v následujícím kódu:
 
 ```csharp
 double[] numbers1 = { 1.9, 2, 8, 4, 5.7, 6, 7.2, 0 };
@@ -115,11 +115,11 @@ Console.WriteLine("int: Median = " + query2);
 */
 ```
 
-#### <a name="to-create-a-generic-overload"></a>Vytvoření obecného přetížení
+#### <a name="to-create-a-generic-overload"></a>Chcete-li vytvořit obecné přetížení
 
-Můžete také vytvořit přetížení, které přijímá sekvenci generických objektů. Toto přetížení přebírá jako parametr delegáta a používá ho k převodu sekvence objektů obecného typu na konkrétní typ.
+Můžete také vytvořit přetížení, které přijímá posloupnost obecných objektů. Toto přetížení trvá delegát jako parametr a používá jej k převodu posloupnosti objektů obecného typu na určitý typ.
 
-Následující kód ukazuje přetížení metody `Median`, která přebírá <xref:System.Func%602> delegáta jako parametr. Tento delegát přebírá objekt generického typu T a vrátí objekt typu `double`.
+Následující kód ukazuje přetížení `Median` metody, která <xref:System.Func%602> přebírá delegáta jako parametr. Tento delegát převezme objekt obecného typu T `double`a vrátí objekt typu .
 
 ```csharp
 // Generic overload.
@@ -131,9 +131,9 @@ public static double Median<T>(this IEnumerable<T> numbers,
 }
 ```
 
-Nyní můžete zavolat metodu `Median` pro sekvenci objektů libovolného typu. Pokud typ nemá vlastní metodu přetížení, je nutné předat parametr delegáta. V C#aplikaci můžete pro tento účel použít výraz lambda. Také v Visual Basic pouze v případě, že použijete klauzuli `Aggregate` nebo `Group By` namísto volání metody, můžete předat libovolnou hodnotu nebo výraz, který je v rámci této klauzule Scope.
+Nyní můžete volat `Median` metodu pro posloupnost objektů libovolného typu. Pokud typ nemá vlastní přetížení metody, budete muset předat parametr delegáta. V c# můžete použít lambda výraz pro tento účel. Také pouze v jazyce Visual `Aggregate` Basic, pokud použijete klauzuli or `Group By` namísto volání metody, můžete předat libovolnou hodnotu nebo výraz, který je v oboru této klauzule.
 
-Následující příklad kódu ukazuje, jak zavolat metodu `Median` pro pole celých čísel a pole řetězců. Pro řetězce se počítá medián pro délky řetězců v poli. Příklad ukazuje, jak předat parametr delegáta <xref:System.Func%602> do metody `Median` pro každý případ.
+Následující ukázkový kód ukazuje, `Median` jak volat metodu pro pole celá čísla a pole řetězců. Pro řetězce se vypočítá medián pro délky řetězců v poli. Příklad ukazuje, jak <xref:System.Func%602> předat parametr `Median` delegáta metodě pro každý případ.
 
 ```csharp
 int[] numbers3 = { 1, 2, 3, 4, 5 };
@@ -164,11 +164,11 @@ Console.WriteLine("String: Median = " + query4);
 */
 ```
 
-## <a name="adding-a-method-that-returns-a-collection"></a>Přidání metody, která vrátí kolekci
+## <a name="adding-a-method-that-returns-a-collection"></a>Přidání metody, která vrací kolekci
 
-Rozhraní <xref:System.Collections.Generic.IEnumerable%601> můžete roztáhnout vlastní metodou dotazu, která vrací sekvenci hodnot. V tomto případě musí metoda vracet kolekci typu <xref:System.Collections.Generic.IEnumerable%601>. Tyto metody lze použít k aplikování filtrů nebo transformací dat na sekvenci hodnot.
+<xref:System.Collections.Generic.IEnumerable%601> Rozhraní můžete rozšířit o vlastní metodu dotazu, která vrací posloupnost hodnot. V tomto případě musí metoda vrátit <xref:System.Collections.Generic.IEnumerable%601>kolekci typu . Tyto metody lze použít filtry nebo transformace dat na posloupnost hodnot.
 
-Následující příklad ukazuje, jak vytvořit metodu rozšíření s názvem `AlternateElements`, která vrátí všechny ostatní prvky v kolekci počínaje prvním prvkem.
+Následující příklad ukazuje, jak vytvořit `AlternateElements` metodu rozšíření s názvem, která vrací každý další prvek v kolekci, počínaje prvním prvkem.
 
 ```csharp
 // Extension method for the IEnumerable<T> interface.
@@ -194,7 +194,7 @@ public static IEnumerable<T> AlternateElements<T>(this IEnumerable<T> source)
 }
 ```
 
-Tuto metodu rozšíření můžete zavolat pro všechny vyčíslitelné kolekce stejně, jako byste volali jiné metody z rozhraní <xref:System.Collections.Generic.IEnumerable%601>, jak je znázorněno v následujícím kódu:
+Tuto metodu rozšíření můžete volat pro libovolnou početnou kolekci <xref:System.Collections.Generic.IEnumerable%601> stejně jako byste volat jiné metody z rozhraní, jak je znázorněno v následujícím kódu:
 
 ```csharp
 string[] strings = { "a", "b", "c", "d", "e" };
@@ -214,7 +214,7 @@ foreach (var element in query)
 */
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Collections.Generic.IEnumerable%601>
-- [Rozšiřující metody](../../classes-and-structs/extension-methods.md)
+- [Metody rozšíření](../../classes-and-structs/extension-methods.md)

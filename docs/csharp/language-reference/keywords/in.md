@@ -1,5 +1,5 @@
 ---
-title: C# odkaz na
+title: in - C# Reference
 ms.date: 02/06/2018
 f1_keywords:
 - in
@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - in keyword [C#]
 ms.openlocfilehash: 251a330ec327366ce458dd8066061365ab0e1dad
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713460"
 ---
 # <a name="in-c-reference"></a>Kontextové klíčové slovo in (Referenční dokumentace jazyka C#)
 
-Klíčové slovo `in` se používá ve čtyřech kontextech:  
+Klíčové `in` slovo se používá ve čtyřech kontextech:  
   
-- [parametry obecného typu](in-generic-modifier.md) v obecných rozhraních a delegátech.
-- Jako [modifikátor parametru](in-parameter-modifier.md), který umožňuje předat argument metodě odkazem namísto hodnoty.
-- příkazy [foreach](foreach-in.md) .
-- [from – klauzule](from-clause.md) ve výrazech dotazů LINQ.
-- [klauzule JOIN](join-clause.md) ve výrazech dotazů LINQ
+- [obecnýtyp parametry](in-generic-modifier.md) v obecných rozhraních a delegátů.
+- [Modifikátor parametrů](in-parameter-modifier.md), který umožňuje předat argument metodě odkazem, nikoli hodnotou.
+- [pro každé](foreach-in.md) prohlášení.
+- [z klauzulí](from-clause.md) ve výrazech dotazu LINQ.
+- [spojit klauzule](join-clause.md) ve výrazech dotazu LINQ.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Klíčová slova jazyka C#](index.md)
-- [C#Odkaz](../index.md)
+- [C# Klíčová slova](index.md)
+- [Odkaz jazyka C#](../index.md)

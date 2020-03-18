@@ -1,20 +1,20 @@
 ---
-title: Začínáme s analýzou syntaxe (rozhraní API Roslyn)
-description: Úvod do procházení, dotazování a procházení stromů syntaxe.
+title: Začínáme se syntaktickou analýzou (Roslyn API)
+description: Úvod do procházení, dotazování a chůze syntaxe stromy.
 ms.date: 02/05/2018
 ms.custom: mvc
 ms.openlocfilehash: 22d1303c9daa2ae35cf130b0c857cd7a5efdbe76
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78240510"
 ---
-# <a name="get-started-with-syntax-analysis"></a>Začínáme s analýzou syntaxe
+# <a name="get-started-with-syntax-analysis"></a>Začínáme se syntaktickou analýzou
 
-V tomto kurzu prozkoumáte **rozhraní API syntaxe**. Rozhraní API syntaxe poskytuje přístup k datovým strukturám, které C# popisují nebo Visual Basic program. Tyto datové struktury mají dostatek podrobností, které mohou plně představovat libovolný program libovolné velikosti. Tyto struktury mohou popsat kompletní programy, které jsou zkompilovány a spouštěny správně. Můžou také popsat nedokončené programy, jak je píšete v editoru.
+V tomto kurzu budete zkoumat **syntaxní rozhraní API**. Syntaxe ROZHRANÍ API poskytuje přístup k datovým strukturám, které popisují c# nebo visual basic program. Tyto datové struktury mají dostatek podrobností, aby mohly plně reprezentovat libovolný program libovolné velikosti. Tyto struktury mohou popisovat úplné programy, které kompilují a spouštějí správně. Mohou také popsat neúplné programy, jak je píšete, v editoru.
 
-Chcete-li povolit tento bohatý výraz, datové struktury a rozhraní API, které tvoří rozhraní API syntaxe, jsou nutně složité. Pojďme začít s tím, jak datová struktura vypadá jako typický program "Hello World":
+Chcete-li povolit tento bohatý výraz, datové struktury a rozhraní API, které tvoří syntaxe rozhraní API jsou nutně složité. Začněme s tím, jak vypadá datová struktura pro typický program "Hello World":
 
 ```csharp
 using System;
@@ -33,88 +33,88 @@ namespace HelloWorld
 }
 ```
 
-Podívejte se na text předchozího programu. Rozpoznáváte známé prvky. Celý text představuje jeden zdrojový soubor nebo **jednotku kompilace**. První tři řádky tohoto zdrojového souboru používají **direktivy**. Zbývající zdroj je obsažen v **deklaraci oboru názvů**. Deklarace oboru názvů obsahuje **deklaraci podřízené třídy**. Deklarace třídy obsahuje jednu **deklaraci metody**.
+Podívejte se na text předchozího programu. Poznáváte známé prvky. Celý text představuje jeden zdrojový soubor nebo **jednotku kompilace**. První tři řádky tohoto zdrojového souboru **používají direktivy**. Zbývající zdroj je obsažen v **deklaraci oboru názvů**. Deklarace oboru názvů obsahuje deklaraci podřízené **třídy**. Deklarace třídy obsahuje **jednu deklaraci metody**.
 
-Rozhraní API syntaxe vytvoří stromovou strukturu s kořenovou jednotkou, která představuje kompilační jednotku. Uzly ve stromové struktuře reprezentují direktivy using, deklaraci oboru názvů a všechny ostatní prvky programu. Stromová struktura pokračuje na nejnižší úrovni: řetězec "Hello World!" je **řetězcový literálový token** , který je odvozeným **argumentem**. Rozhraní API syntaxe poskytuje přístup ke struktuře programu. Můžete zadávat dotazy na konkrétní postupy kódu, procházet celý strom a porozumět kódu a vytvářet nové stromy úpravou stávajícího stromu.
+Syntaxe ROZHRANÍ API vytvoří stromovou strukturu s kořenem představující jednotku kompilace. Uzly ve stromu představují pomocí směrnic, deklarace oboru názvů a všechny ostatní prvky programu. Stromová struktura pokračuje až na nejnižší úroveň: řetězec "Hello World!" je **řetězec literál token,** který je potomkem **argumentu**. Syntaxapi poskytuje přístup ke struktuře programu. Můžete dotaz na konkrétní postupy kódu, chodit celý strom pochopit kód a vytvořit nové stromy úpravou existující strom.
 
-Tento stručný popis poskytuje přehled o druhu dostupné informace pomocí rozhraní API syntaxe. Rozhraní API syntaxe není nic větší než formální rozhraní API, které popisuje známé konstrukce kódu, ze C#kterých se dozvíte. Všechny možnosti obsahují informace o tom, jak je kód formátovaný, včetně konců řádků, mezer a odsazení. Pomocí těchto informací můžete kód plně vyjádřit jako zapsaný a načtený lidskými programátory nebo kompilátorem. Použití této struktury vám umožní pracovat se zdrojovým kódem na hluboko smysluplné úrovni. Již není to textový řetězec, ale data, která představují strukturu C# programu.
+Tento stručný popis poskytuje přehled o druhu informací přístupných pomocí syntaxe API. Syntaxapi není nic jiného než formální rozhraní API, které popisuje známé konstrukce kódu znáte z Jazyka C#. Úplné možnosti zahrnují informace o tom, jak je kód formátován, včetně konců řádků, prázdného místa a odsazení. Pomocí těchto informací můžete plně reprezentovat kód jako napsaný a přečtený lidskými programátory nebo kompilátorem. Pomocí této struktury umožňuje interakci se zdrojovým kódem na hluboce smysluplné úrovni. Již nejsou textové řetězce, ale data, která představují strukturu programu Jazyka C#.
 
-Abyste mohli začít, musíte nainstalovat **sadu .NET Compiler Platform SDK**:
+Chcete-li začít, budete muset nainstalovat **sdk platformy kompilátoru .NET**:
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
 ## <a name="understanding-syntax-trees"></a>Principy stromů syntaxe
 
-Použijete rozhraní API syntaxe pro jakoukoli analýzu struktury C# kódu. **Rozhraní API syntaxe** zveřejňuje analyzátory, stromy syntaxe a nástroje pro analýzu a sestavování stromů syntaxe. Je to způsob, jak hledat v kódu konkrétní prvky syntaxe, nebo si přečtěte kód pro program.
+Syntaxe ROZHRANÍ API pro všechny analýzy struktury kódu Jazyka C#. Syntaxe **ROZHRANÍ API** zpřístupňuje analyzátory, stromy syntaxe a nástroje pro analýzu a vytváření stromů syntaxe. Je to, jak hledat kód pro konkrétní prvky syntaxe nebo číst kód pro program.
 
-Strom syntaxe je datová struktura, kterou používají kompilátory C# a Visual Basic pro pochopení C# a Visual Basic programů. Stromy syntaxí jsou vytvářeny stejným analyzátorem, který se spouští při sestavení projektu nebo v případě, že je vývojář povede na F5. Stromy syntaxe mají plnou přesnost s jazykem; Všechny bitové informace v souboru kódu jsou reprezentovány ve stromové struktuře. Zápis stromu syntaxe do textu reprodukuje přesný původní text, který byl analyzován. Stromy syntaxe jsou také **neměnné**; Po vytvoření strom syntaxe nelze nikdy změnit. Uživatelé stromů mohou analyzovat stromy ve více vláknech, bez zámků nebo jiných měr souběžnosti, přičemž se data nikdy nemění. Rozhraní API můžete použít k vytvoření nových stromů, které jsou výsledkem úprav existujícího stromu.
+Strom syntaxe je datová struktura používaná kompilátory jazyka C# a Visual Basic k pochopení programů jazyka C# a Visual Basic. Syntaxe stromy jsou vytvářeny stejným analyzátorem, který běží při vytvoření projektu nebo vývojář hity F5. Stromy syntaxe mají plnou věrnost s jazykem; každý bit informací v souboru kódu je reprezentován ve stromu. Zápis stromu syntaxe do textu reprodukuje přesný původní text, který byl analyzován. Syntaxe stromy jsou také **neměnné**; po vytvoření stromu syntaxe nelze nikdy změnit. Spotřebitelé stromů můžete analyzovat stromy na více vláken, bez zámky nebo jiné souběžnosti opatření, s vědomím, že data se nikdy nezmění. Pomocí prostředí API můžete vytvořit nové stromy, které jsou výsledkem úpravy existujícího stromu.
 
-Čtyři primární stavební kameny stromů syntaxe jsou:
+Čtyři primární stavební bloky syntaktických stromů jsou:
 
-* Třída <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, instance, která představuje celý strom analýzy. <xref:Microsoft.CodeAnalysis.SyntaxTree> je abstraktní třída, která obsahuje deriváty specifické pro jazyk. Metody Parse třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> (nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType>) slouží k analýze textu C# nebo Visual Basic.
-* <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType> třídy, jejichž instance reprezentují syntaktické konstrukce, jako jsou deklarace, příkazy, klauzule a výrazy.
-* Struktura <xref:Microsoft.CodeAnalysis.SyntaxToken?displayProperty=nameWithType>, která představuje jednotlivá klíčová slova, identifikátor, operátor nebo interpunkční znaménko.
-* A nakonec <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> strukturu, která představuje syntakticky nevýznamné bity informací, jako jsou prázdné znaky mezi tokeny, direktivami předzpracování a komentáři.
+* Třída, <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType> jejíž instance představuje celý strom analýzy. <xref:Microsoft.CodeAnalysis.SyntaxTree>je abstraktní třída, která má deriváty specifické pro jazyk. Metody analýzy třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> (nebo) <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType>slouží k analýzě textu v jazyce C# nebo visual basicu.
+* Třída, <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType> jejíž instance představují syntaktické konstrukce, jako jsou deklarace, příkazy, klauzule a výrazy.
+* Struktura, <xref:Microsoft.CodeAnalysis.SyntaxToken?displayProperty=nameWithType> která představuje jednotlivé klíčové slovo, identifikátor, operátor nebo interpunkci.
+* A konečně <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType> struktura, která představuje syntakticky nevýznamné bity informací, jako je například prázdné místo mezi tokeny, předzpracování směrnic a komentáře.
 
-Minihry, tokeny a uzly jsou vytvořeny hierarchicky pro vytvoření stromu, který zcela zastupuje vše v fragmentu Visual Basic nebo C# kódu. Tuto strukturu můžete zobrazit pomocí okna **syntax visualizer** . V aplikaci Visual Studio vyberte možnost **zobrazit** > **jiné > systému Windows** **syntax visualizer**. Například předchozí C# zdrojový soubor testovaný pomocí **syntax visualizer** vypadá jako na následujícím obrázku:
+Trivia, tokeny a uzly jsou skládány hierarchicky tvořit strom, který zcela představuje vše v fragmentu kódu jazyka Nebo C#. Tuto strukturu můžete zobrazit pomocí okna **Vizualizace syntaxe.** Ve Visual Studiu zvolte **Zobrazit** > jiný**vizualizátor syntaxe****windows** > . Například předchozí zdrojový soubor Jazyka C# zkoumaný pomocí **vizualizéru syntaxe** vypadá jako následující obrázek:
 
-**SyntaxNode**: Blue | **SyntaxToken**: zelená | **SyntaxTrivia**: Red ![C# soubor kódu](media/walkthrough-csharp-syntax-figure1.png)
+**Syntaxnode**: Modrá | **Syntaxtoken**: Zelená | **Syntaxtrivia**: ![Červený soubor kódu C#](media/walkthrough-csharp-syntax-figure1.png)
 
-Přechodem na tuto stromovou strukturu můžete v souboru kódu najít libovolný příkaz, výraz, token nebo bitovou kopii prázdného místa.
+Procházením této stromové struktury můžete najít libovolný příkaz, výraz, token nebo bit prázdného místa v souboru kódu.
 
-I když můžete najít cokoli v souboru kódu pomocí rozhraní API syntaxe, Většina scénářů zahrnuje zkoumání malých fragmentů kódu nebo hledání konkrétních příkazů nebo fragmentů. Následující dva příklady ukazují typické použití pro procházení struktury kódu nebo hledání jednoduchých příkazů.
+Zatímco můžete najít cokoli v souboru kódu pomocí syntaxe rozhraní API, většina scénářů zahrnují zkoumání malé fragmenty kódu nebo hledání konkrétní příkazy nebo fragmenty. Dva následující příklady ukazují typické použití procházet strukturu kódu nebo hledat jednotlivé příkazy.
 
-## <a name="traversing-trees"></a>Procházení stromů
+## <a name="traversing-trees"></a>Projíždějící stromy
 
-Uzly ve stromu syntaxe můžete prozkoumávat dvěma způsoby. Můžete procházet stromovou strukturou a prozkoumávat jednotlivé uzly, nebo se můžete dotazovat na konkrétní prvky nebo uzly.
+Uzly ve stromu syntaxe můžete prozkoumat dvěma způsoby. Můžete procházet stromem prozkoumat každý uzel, nebo můžete dotaz na určité prvky nebo uzly.
 
-### <a name="manual-traversal"></a>Ruční procházení
+### <a name="manual-traversal"></a>Ruční průchod
 
-Dokončený kód pro tuto ukázku najdete v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SyntaxQuickStart).
+Hotový kód pro tuto ukázku najdete v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SyntaxQuickStart).
 
 > [!NOTE]
-> Typy stromové struktury syntaxe používají dědičnost k popisu různých syntaktických prvků, které jsou platné v různých umístěních v programu. Použití těchto rozhraní API často znamená přetypování vlastností nebo členů kolekce na konkrétní odvozené typy. V následujících příkladech je přiřazení a přetypování samostatné příkazy pomocí explicitně typových proměnných. Můžete si přečíst kód a zobrazit návratové typy rozhraní API a typ modulu runtime vrácených objektů. V praxi je obvyklejší používat implicitně typové proměnné a spoléhat na názvy rozhraní API k popisu typu testovaných objektů.
+> Typy stromů syntaxe používají dědičnost k popisu různých prvků syntaxe, které jsou platné na různých místech v programu. Použití těchto rozhraní API často znamená, že vlastnosti přetypování nebo členy kolekce na konkrétní odvozené typy. V následujících příkladech jsou přiřazení a přetypování samostatné příkazy, které používají explicitně zadané proměnné. Můžete si přečíst kód zobrazíte návratové typy rozhraní API a typ runtime vrácených objektů. V praxi je běžnější používat implicitně zadané proměnné a spoléhat se na názvy rozhraní API k popisu typu zkoumaných objektů.
 
-Vytvořit nový C# projekt **Nástroje pro analýzu samostatného kódu** :
+Vytvořte nový projekt **nástroje pro analýzu samostatného kódu** jazyka C#:
 
-* V aplikaci Visual Studio vyberte **soubor** > **Nový** > **projekt** . zobrazí se dialogové okno Nový projekt.
-* V části **rozšiřitelnost** **vizuálního C#**  > vyberte **Nástroj pro analýzu**samostatného kódu.
-* Pojmenujte projekt "**SyntaxTreeManualTraversal**" a klikněte na tlačítko OK.
+* V Sadě Visual Studio zvolte **Soubor** > **nový** > **projekt,** abyste zobrazili dialogové okno Nový projekt.
+* V **části Visual C#** > **Rozšiřitelnost**zvolte **Nástroj pro analýzu samostatného kódu**.
+* Pojmenujte projekt **"SyntaxTreeManualTraversal**" a klepněte na tlačítko OK.
 
-Chystáte se analyzovat základní "Hello World!" program byl zobrazen výše.
-Do `Program` třídy přidejte text pro Hello World program jako konstantu:
+Budete analyzovat základní "Hello World!" program zobrazen dříve.
+Přidejte text programu Hello World jako `Program` konstantu ve své třídě:
 
 [!code-csharp[Declare the program text](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#1 "Declare a constant string for the program text to analyze")]
 
-Dále přidejte následující kód, který sestaví **strom syntaxe** pro text kódu v konstantě `programText`.  Do metody `Main` přidejte následující řádek:
+Dále přidejte následující kód k vytvoření **stromu syntaxe** pro text kódu v konstantě. `programText`  Do metody přidejte `Main` následující řádek:
 
 [!code-csharp[Create the tree](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#2 "Create the syntax tree")]
 
-Tyto dva řádky vytvoří strom a načtou kořenový uzel tohoto stromu. Nyní můžete zkontrolovat uzly ve stromové struktuře. Přidejte tyto řádky do metody `Main` pro zobrazení některých vlastností kořenového uzlu ve stromové struktuře:
+Tyto dva řádky vytvořit strom a načíst kořenový uzel tohoto stromu. Nyní můžete prozkoumat uzly ve stromu. Přidejte tyto `Main` řádky do metody, abyste zobrazili některé vlastnosti kořenového uzlu ve stromu:
 
 [!code-csharp[Examine the root node](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#3 "Examine the root node")]
 
-Spusťte aplikaci, abyste viděli, jak kód zjistil kořenový uzel v tomto stromu.
+Spusťte aplikaci a zjistěte, co váš kód zjistil o kořenovém uzlu v tomto stromu.
 
-Obvykle byste procházeli procházením stromu, abyste se dozvěděli o kódu. V tomto příkladu analyzujete kód, který znáte pro zkoumání rozhraní API. Přidejte následující kód pro prohlédnutí prvního členu `root` uzlu:
+Obvykle byste procházet stromu se dozvíte o kódu. V tomto příkladu analyzujete kód, který znáte k prozkoumání api. Přidejte následující kód a zkontrolujte `root` prvního člena uzlu:
 
 [!code-csharp[Find the first member](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#4 "Find the first member")]
 
-Tento člen je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType>. Představuje vše v rozsahu deklarace `namespace HelloWorld`. Přidejte následující kód k prohlédnutí uzlů, které jsou deklarovány v oboru názvů `HelloWorld`:
+Tento člen <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax?displayProperty=nameWithType>je . Představuje vše, co je `namespace HelloWorld` v rozsahu deklarace. Přidejte následující kód a prozkoumejte, `HelloWorld` jaké uzly jsou deklarovány uvnitř oboru názvů:
 
 [!code-csharp[Find the class declaration](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#5 "Find the class declaration")]
 
-Spusťte program a podívejte se, co jste se naučili.
+Spusťte program a zjistěte, co jste se naučili.
 
-Teď, když víte, že je deklarace <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax?displayProperty=nameWithType>, deklarujte novou proměnnou tohoto typu pro prohlédnutí deklarace třídy. Tato třída obsahuje pouze jednoho člena: metodu `Main`. Přidejte následující kód k nalezení `Main` metody a přetypujte ji na <xref:Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax?displayProperty=nameWithType>.
+Nyní, když víte, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax?displayProperty=nameWithType>že deklarace je , deklarujte novou proměnnou tohoto typu, abyste prozkoumali deklaraci třídy. Tato třída obsahuje pouze `Main` jeden člen: metoda. Přidejte následující kód, `Main` který najde metodu, a přetypujte ji do . <xref:Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax?displayProperty=nameWithType>
 
 [!code-csharp[Find the main declaration](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#6 "Find the main declaration")]
 
-Uzel deklarace metody obsahuje všechny syntaktické informace o metodě. Pojďme zobrazit návratový typ metody `Main`, číslo a typy argumentů a text těla metody. Přidejte následující kód:
+Uzel deklarace metody obsahuje všechny syntaktické informace o metodě. Zobrazme návratový typ `Main` metody, počet a typy argumentů a základní text metody. Přidejte následující kód:
 
 [!code-csharp[Examine the syntax of the main method](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#7 "Display information about the main method")]
 
-Spuštěním programu zobrazíte všechny informace, které jste zjistili o tomto programu:
+Spuštěním programu zobrazíte všechny informace, které jste o tomto programu zjistili:
 
 ```text
 The tree is a CompilationUnit node.
@@ -138,57 +138,57 @@ The body text of the Main method follows:
         }
 ```
 
-### <a name="query-methods"></a>Metody dotazů
+### <a name="query-methods"></a>Metody dotazu
 
-Kromě procházení stromů můžete také prozkoumat strom syntaxe pomocí metod dotazů definovaných v <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>. Tyto metody by se měly hned seznámit s kýmkoli, kdo zná výraz XPath. Tyto metody můžete použít spolu s LINQ k rychlému vyhledání položek ve stromové struktuře. <xref:Microsoft.CodeAnalysis.SyntaxNode> obsahuje metody dotazů jako <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.AncestorsAndSelf%2A> a <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes%2A>.
+Kromě procházení stromů můžete také prozkoumat strom syntaxe pomocí <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>metod dotazu definovaných v aplikaci . Tyto metody by měly být okamžitě obeznámeni s kýmkoli, kdo je obeznámen s XPath. Tyto metody můžete použít s LINQ rychle najít věci ve stromu. Má <xref:Microsoft.CodeAnalysis.SyntaxNode> metody dotazu, jako <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>jsou například , <xref:Microsoft.CodeAnalysis.SyntaxNode.AncestorsAndSelf%2A> a <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes%2A>.
 
-Pomocí těchto metod dotazů můžete najít argument metody `Main` jako alternativu k navigaci stromu. Do dolní části `Main` metody přidejte následující kód:
+Tyto metody dotazu můžete najít argument `Main` metody jako alternativu k navigaci stromu. Přidejte následující kód na `Main` konec metody:
 
 [!code-csharp[Query the tree for the arguments to Main](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/HelloSyntaxTree/Program.cs#8 "Query the tree for the arguments to Main")]
 
-První příkaz používá výraz LINQ a metodu <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A> k vyhledání stejného parametru jako v předchozím příkladu.
+První příkaz používá výraz LINQ <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A> a metodu k vyhledání stejného parametru jako v předchozím příkladu.
 
 Spusťte program a uvidíte, že výraz LINQ našel stejný parametr jako ruční navigace ve stromu.
 
-Ukázka používá `WriteLine` příkazy pro zobrazení informací o stromech syntaxe při jejich procházení. Další informace můžete získat také spuštěním dokončeného programu v rámci ladicího programu. Můžete prozkoumávat více vlastností a metod, které jsou součástí stromu syntaxe vytvořeného pro program Hello World.
+Ukázka `WriteLine` používá příkazy k zobrazení informací o stromech syntaxe při jejich procházení. Můžete se také dozvědět mnohem více spuštěním dokončeného programu v ladicím programu. Můžete prozkoumat další vlastnosti a metody, které jsou součástí stromu syntaxe vytvořeného pro program Hello World.
 
-## <a name="syntax-walkers"></a>Průvodce syntaxí
+## <a name="syntax-walkers"></a>Syntaxe chodci
 
-Často chcete najít všechny uzly určitého typu ve stromu syntaxe, například každou deklaraci vlastnosti v souboru. Rozšířením třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker?displayProperty=nameWithType> a přepsáním <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitPropertyDeclaration(Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax)> metody zpracováváte všechny deklarace vlastností ve stromu syntaxe, aniž byste museli svou strukturu předem znát. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> je konkrétní druh <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor>, který rekurzivně navštíví uzel a každý z jeho podřízených objektů.
+Často chcete najít všechny uzly určitého typu ve stromu syntaxe, například každou deklaraci vlastností v souboru. Rozšířením <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker?displayProperty=nameWithType> třídy a <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitPropertyDeclaration(Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax)> přepsáním metody zpracujete každou deklaraci vlastnosti ve stromu syntaxe, aniž byste předem znali její strukturu. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>je specifický druh, <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor> který rekurzivně navštíví uzel a každý z jeho dětí.
 
-Tento příklad implementuje <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>, který prověřuje strom syntaxe. Shromažďuje `using` direktivy, které zjistí, že neimportují obor názvů `System`.
+Tento příklad implementuje, <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> který zkoumá strom syntaxe. Shromažďuje direktivy, `using` které neimportují obor `System` názvů.
 
-Vytvořit nový C# projekt **Nástroje pro analýzu samostatného kódu** ; pojmenujte ho "**SyntaxWalker**".
+Vytvořte nový projekt **nástroje pro analýzu samostatného kódu** jazyka C#. pojmenujte **"SyntaxWalker**".
 
-Dokončený kód pro tuto ukázku najdete v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SyntaxQuickStart). Ukázka na GitHubu obsahuje oba projekty popsané v tomto kurzu.
+Hotový kód pro tuto ukázku najdete v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SyntaxQuickStart). Ukázka na GitHubu obsahuje oba projekty popsané v tomto kurzu.
 
-Stejně jako v předchozím příkladu můžete definovat řetězcovou konstantu, která bude obsahovat text programu, který budete analyzovat:
+Stejně jako v předchozí ukázce můžete definovat řetězcovou konstantu pro uložení textu programu, který budete analyzovat:
 
 [!code-csharp[Define the code text to analyzer](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#1 "Define the program text to analyze")]
 
-Tento zdrojový text obsahuje `using` direktivy rozptýlené ve čtyřech různých umístěních: na úrovni souboru v oboru názvů nejvyšší úrovně a ve dvou vnořených oborech názvů. Tento příklad zvýrazní základní scénář použití třídy <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> pro dotazování kódu. Je nenáročný na návštěvu všech uzlů v kořenovém stromu syntaxe pro vyhledání pomocí deklarací. Místo toho můžete vytvořit odvozenou třídu a přepsat metodu, která bude volána pouze v případě, že aktuální uzel ve stromové struktuře je Direktiva using. Váš návštěvník neprovádí žádnou práci na žádném jiném typu uzlu. Tato jediná metoda prověřuje jednotlivé příkazy `using` a vytvoří kolekci oborů názvů, které nejsou v oboru názvů `System`. Sestavíte <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>, který prověřuje všechny příkazy `using`, ale pouze příkazy `using`.
+Tento zdrojový `using` text obsahuje direktivy rozptýlené ve čtyřech různých umístěních: úroveň souboru, v oboru názvů nejvyšší úrovně a ve dvou vnořených oborech názvů. Tento příklad zvýrazní základní <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> scénář pro použití třídy k dotazu kódu. Bylo by těžkopádné navštívit každý uzel ve stromu syntaxe kořene najít pomocí deklarací. Místo toho vytvoříte odvozenou třídu a přepsat metodu, která se nazývá pouze v případě, že aktuální uzel ve stromu je using směrnice. Návštěvník neprovádí žádnou práci na jiných typech uzlů. Tato jediná metoda zkoumá `using` každý z příkazů a vytvoří kolekci oborů `System` názvů, které nejsou v oboru názvů. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> Sestavení, který zkoumá všechny `using` příkazy, `using` ale pouze příkazy.
 
-Nyní, když jste definovali text programu, je třeba vytvořit `SyntaxTree` a získat kořen této stromové struktury:
+Nyní, když jste definovali text programu, `SyntaxTree` musíte vytvořit a získat kořen tohoto stromu:
 
 [!code-csharp[Create the Syntax tree and access the root](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#2 "Create the Syntax tree and access the root node.")]
 
-Dále vytvořte novou třídu. V aplikaci Visual Studio vyberte **projekt** > **Přidat novou položku**. V dialogovém okně **Přidat novou položku** jako název souboru zadejte *UsingCollector.cs* .
+Dále vytvořte novou třídu. V Sadě Visual Studio zvolte Přidat**novou položku** **projektu** > . V dialogovém okně **Přidat novou položku** *UsingCollector.cs* jako název souboru.
 
-Implementujete funkci `using` návštěvníka ve třídě `UsingCollector`. Začněte tím, že třídu `UsingCollector` odvodíte z <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>.
+Implementovat `using` funkce návštěvníka `UsingCollector` ve třídě. Začněte tím, `UsingCollector` že <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker>třída odvodit z .
 
 [!code-csharp[Declare the base class for the using collector](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#3 "Declare the base class for the UsingCollector")]
 
-Pro uložení uzlů oboru názvů, které shromažďujete, potřebujete úložiště.  Deklarace veřejné vlastnosti jen pro čtení ve třídě `UsingCollector`; pomocí této proměnné můžete ukládat <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> uzly, které najdete:
+Potřebujete úložiště pro uložení uzlů oboru názvů, které shromažďujete.  Deklarujte veřejnou vlastnost `UsingCollector` jen pro čtení ve třídě; tuto proměnnou použijete <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> k uložení uzlů, které najdete:
 
 [!code-csharp[Declare storage for the using syntax nodes](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#4 "Declare storage for the using syntax nodes")]
 
-Základní třída <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> implementuje logiku pro návštěvě každého uzlu ve stromové struktuře syntaxe. Odvozená třída Přepisuje metody volané pro konkrétní uzly, které vás zajímají. V takovém případě vás zajímá jakákoli `using` direktiva. To znamená, že je nutné přepsat metodu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitUsingDirective(Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax)>. Jedním z argumentů této metody je objekt <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax?displayProperty=nameWithType>. To je důležitou výhodou pro použití návštěvníků: volá přepsané metody s argumenty, které už jsou přetypování na konkrétní typ uzlu. Třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax?displayProperty=nameWithType> obsahuje vlastnost <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.Name>, která ukládá název importovaného oboru názvů. Je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType>. Do přepsání <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitUsingDirective(Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax)> přidejte následující kód:
+Základní třída <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker> implementuje logiku k návštěvě každého uzlu ve stromu syntaxe. Odvozená třída přepíše metody volané pro konkrétní uzly, které vás zajímají. V tomto případě vás zajímá `using` jakákoliv směrnice. To znamená, že <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitUsingDirective(Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax)> je nutné přepsat metodu. Jeden argument této metody <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax?displayProperty=nameWithType> je objekt. To je důležitá výhoda pro použití návštěvníků: volají přepsané metody s argumenty již přetypované na konkrétní typ uzlu. Třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax?displayProperty=nameWithType> má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax.Name> vlastnost, která ukládá název oboru názvů, který se importuje. Je to <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType>. Do přepsání <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor.VisitUsingDirective(Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax)> přidejte následující kód:
 
 [!code-csharp[Examine using nodes for the System namespace](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/UsingCollector.cs#5 "Examine all using nodes for the System namespace.")]
 
-Stejně jako v předchozím příkladu jste přidali celou řadu `WriteLine` příkazů, které pomáhají pochopit tuto metodu. Můžete vidět, kdy se volá a kde se do něj předávají argumenty.
+Stejně jako v předchozím příkladu jste `WriteLine` přidali různé příkazy, které pomáhají pochopit tuto metodu. Můžete vidět, kdy se nazývá a jaké argumenty jsou předány pokaždé.
 
-Nakonec potřebujete přidat dva řádky kódu pro vytvoření `UsingCollector` a pokaždé, když navštívíte kořenový uzel a budete shromažďovat všechny příkazy `using`. Pak přidejte smyčku `foreach` pro zobrazení všech příkazů `using`, které kolekce nalezla:
+Nakonec je třeba přidat dva řádky kódu `UsingCollector` k vytvoření a mít navštívit kořenový uzel, shromažďování všech `using` příkazů. Potom přidejte `foreach` smyčku, `using` která zobrazí všechny příkazy, které váš sběratel našel:
 
 [!code-csharp[Create the UsingCollector and visit the root node.](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxQuickStart/SyntaxWalker/Program.cs#6 "Create the UsingCollector and visit the root node.")]
 
@@ -220,4 +220,4 @@ Microsoft.CSharp
 Press any key to continue . . .
 ```
 
-Blahopřejeme! Použili jste **rozhraní API syntaxe** k vyhledání konkrétních druhů C# příkazů a deklarací ve C# zdrojovém kódu.
+Blahopřejeme! Syntaxe rozhraní **API** jste použili k vyhledání konkrétních druhů příkazů a deklarací jazyka C# ve zdrojovém kódu jazyka C#.

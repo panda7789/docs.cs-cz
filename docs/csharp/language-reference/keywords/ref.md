@@ -1,5 +1,5 @@
 ---
-title: ref – C# klíčové slovo Reference
+title: ref klíčové slovo - C# Reference
 ms.date: 03/26/2019
 f1_keywords:
 - ref_CSharpKeyword
@@ -7,157 +7,158 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 25c74317ce9033ef10735ee0087f275632b6bd17
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 05f0bd8566851678203a3f064b96bfff7dee18b6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715189"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399362"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
-Klíčové slovo `ref` označuje hodnotu, která je předána odkazem. Používá se ve čtyřech různých kontextech:
+Klíčové `ref` slovo označuje hodnotu, která je předána odkazem. Používá se ve čtyřech různých kontextech:
 
-- V signatuře metody a ve volání metody předejte argument metodě odkazem. Další informace naleznete v tématu [předání argumentu odkazem](#passing-an-argument-by-reference).
-- V signatuře metody pro vrácení hodnoty volajícímu odkazem. Další informace najdete v tématu [referenční návratové hodnoty](#reference-return-values).
-- V těle člena, aby označoval, že návratová hodnota odkazu je uložená místně jako odkaz, který volající chce změnit, nebo obecně místní proměnná přistupuje k jiné hodnotě odkazem. Další informace naleznete v tématu [místní hodnoty REF](#ref-locals).
-- V deklaraci `struct` k deklaraci `ref struct` nebo `readonly ref struct`. Další informace naleznete v tématu [typy referenční struktury](#ref-struct-types).
+- V podpisu metody a volání metody předat argument metodě odkazem. Další informace naleznete [v tématu Předávání argument odkazem](#passing-an-argument-by-reference).
+- V podpisu metody, chcete-li vrátit hodnotu volajícímu odkazem. Další informace naleznete v [tématu Reference return values](#reference-return-values).
+- V těle člena označuje, že referenční vrácená hodnota je uložena místně jako odkaz, který volající zamýšlí změnit, nebo obecně místní proměnná přistupuje k jiné hodnotě odkazem. Další informace naleznete v tématu [Ref locals](#ref-locals).
+- V `struct` prohlášení o `ref struct` prohlášení `readonly ref struct`o prohlášení a nebo . Další informace naleznete v tématu [ref struct types](#ref-struct-types).
 
 ## <a name="passing-an-argument-by-reference"></a>Předání argumentu odkazem
 
-Při použití v seznamu parametrů metody označuje klíčové slovo `ref`, že argument je předán odkazem, nikoli hodnotou. Klíčové slovo `ref` provede formální parametr alias pro argument, který musí být proměnná. Jinými slovy, každá operace s parametrem je provedena na argumentu. Například pokud volající předává výraz místní proměnné nebo výraz přístupu k elementu pole a volaná metoda nahradí objekt, na který odkazuje parametr ref, pak místní proměnná volajícího nebo prvek pole nyní odkazuje na nový objekt, když Metoda vrací.
+Při použití v seznamu parametrů metody `ref` klíčové slovo označuje, že argument je předán odkazem, nikoli hodnotou. Klíčové `ref` slovo vytvoří formální parametr alias pro argument, který musí být proměnnou. Jinými slovy, každá operace na parametr je provedena na argument. Pokud například volající předá výraz místní proměnné nebo přístupový výraz prvku pole a volaná metoda nahradí objekt, na který odkazuje parametr ref, pak místní proměnná volajícího nebo element pole nyní odkazuje na nový objekt, když metoda vrátí.
 
 > [!NOTE]
-> Nepleťte si koncept předávání odkazem s konceptem typů odkazů. Tyto dvě koncepce nejsou stejné. Parametr metody lze upravit pomocí `ref` bez ohledu na to, zda se jedná o typ hodnoty nebo typ odkazu. Pokud je předána odkazem, není k dispozici žádný zabalení typu hodnoty.  
+> Nepleťte si koncept předávání odkazem s pojmem typy odkazů. Tyto dva pojmy nejsou stejné. Parametr metody lze upravit `ref` bez ohledu na to, zda se jedná o typ hodnoty nebo typ odkazu. Neexistuje žádné zabalení typu hodnoty, pokud je předán odkazem.  
 
-Chcete-li použít parametr `ref`, musí definice metody a volající metoda explicitně používat klíčové slovo `ref`, jak je znázorněno v následujícím příkladu.  
+Chcete-li `ref` použít parametr, definice metody a volající `ref` metoda musí explicitně použít klíčové slovo, jak je znázorněno v následujícím příkladu.  
 
 [!code-csharp-interactive[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#1)]
 
-Argument předaný `ref` nebo parametr `in` musí být před předáním inicializován. To se liší od parametrů [out](out-parameter-modifier.md) , jejichž argumenty není nutné před předáním explicitně inicializovat.
+Argument, který je `ref` předán `in` nebo parametr musí být inicializován před předáním. To se liší [od](out-parameter-modifier.md) out parametry, jejichž argumenty nemusí být explicitně inicializovány před jejich předáním.
 
-Členové třídy nemohou mít signatury, které se liší pouze `ref`, `in`nebo `out`. K chybě kompilátoru dojde, pokud jediným rozdílem mezi dvěma členy typu je, že jeden z nich má parametr `ref` a druhý má `out`nebo parametr `in`. Následující kód například není zkompilován.  
+Členové třídy nemohou mít podpisy, které `ref` `in`se `out`liší pouze podle , nebo . K chybě kompilátoru dochází, pokud je jediným rozdílem mezi `ref` dvěma členy typu, že jeden z nich má parametr a druhý má parametr `out`nebo `in` parametr . Následující kód, například nekompiluje.  
 
 ```csharp
 class CS0663_Example
 {
-    // Compiler error CS0663: "Cannot define overloaded 
+    // Compiler error CS0663: "Cannot define overloaded
     // methods that differ only on ref and out".
     public void SampleMethod(out int i) { }
     public void SampleMethod(ref int i) { }
 }
 ```
 
-Nicméně metody mohou být přetíženy v případě, že jedna metoda má parametr `ref`, `in`nebo `out` a druhý má parametr hodnoty, jak je znázorněno v následujícím příkladu.
+Metody však mohou být přetíženy, `ref` `in`pokud `out` má jedna metoda , nebo parametr a druhá má parametr hodnoty, jak je znázorněno v následujícím příkladu.
   
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#2)]
   
- V jiných situacích, které vyžadují shodu s podpisy, jako je například skrytí nebo přepsání, `in`, `ref`a `out` jsou součástí podpisu a vzájemně se neshodují.  
+ V jiných situacích, které vyžadují porovnávání `in`podpisů, například skrytí nebo přepsání , , `ref`a `out` jsou součástí podpisu a vzájemně se neshodují.  
   
- Vlastnosti nejsou proměnné. Jsou to metody a nelze je předat `ref` parametrům.  
+ Vlastnosti nejsou proměnné. Jsou to metody a nelze `ref` je předat parametrům.  
   
- Klíčová slova `ref`, `in`a `out` nelze použít pro následující typy metod:  
+ Klíčová `out` slova a `ref`klíčová `in`slova nelze použít pro následující typy metod:  
   
-- Asynchronní metody, které definujete pomocí modifikátoru [Async](async.md) .  
-- Metody iterátoru, které zahrnují příkaz [yield return](yield.md) nebo `yield break`.  
+- Asynchronní metody, které definujete pomocí [asynchronního](async.md) modifikátoru.  
+- Iterátor metody, které zahrnují výnos `yield break` výnos [return](yield.md) nebo příkaz.  
 
-## <a name="passing-an-argument-by-reference-an-example"></a>Předání argumentu odkazem: příklad
+## <a name="passing-an-argument-by-reference-an-example"></a>Předání argumentu odkazem: Příklad
 
-Předchozí příklady přecházejí typu hodnoty odkazem. Můžete také použít klíčové slovo `ref` k předání typu odkazu odkazem. Předání typu odkazu odkazem umožňuje volané metodě nahradit objekt, na který odkazuje parametr reference v volajícím. Umístění úložiště objektu je předáno metodě jako hodnota referenčního parametru. Změníte-li hodnotu v umístění úložiště parametru (aby odkazovala na nový objekt), můžete také změnit umístění úložiště, do kterého se volající odkazuje. Následující příklad předává instanci typu odkazu jako parametr `ref`.
+Předchozí příklady předat typy hodnot odkazem. Klíčové `ref` slovo můžete také použít k předání referenčních typů odkazem. Předání typu odkazu odkazem umožňuje volané metodě nahradit objekt, na který odkazuje referenční parametr volajícího. Umístění úložiště objektu je předáno metodě jako hodnota referenčního parametru. Pokud změníte hodnotu v umístění úložiště parametru (chcete-li přejděte na nový objekt), změníte také umístění úložiště, na které volající odkazuje. Následující příklad předá instanci typu `ref` odkazu jako parametr.
   
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#3)]
 
-Další informace o tom, jak předat typy odkazů podle hodnoty a odkazu, naleznete v tématu [předávání parametrů typu odkazu](../../programming-guide/classes-and-structs/passing-reference-type-parameters.md).
+Další informace o předávání typů odkazů podle hodnoty a odkazu naleznete [v tématu Předávání parametrů typu odkazu](../../programming-guide/classes-and-structs/passing-reference-type-parameters.md).
   
 ## <a name="reference-return-values"></a>Referenční návratové hodnoty
 
-Návratové hodnoty odkazu (nebo ref vrátí) jsou hodnoty, které metoda vrátí odkazem na volajícího. To znamená, že volající může změnit hodnotu vrácenou metodou a tato změna se projeví ve stavu objektu, který obsahuje metodu.
+Referenční vrácené hodnoty (nebo ref vrátí) jsou hodnoty, které metoda vrátí odkazem na volajícího. To znamená, že volající může upravit hodnotu vrácenou metodou a tato změna se projeví ve stavu objektu, který obsahuje metodu.
 
-Návratová hodnota odkazu je definována pomocí klíčového slova `ref`:
+Referenční vrácená hodnota je `ref` definována pomocí klíčového slova:
 
-- V signatuře metody. Například následující signatura metody označuje, že metoda `GetCurrentPrice` vrací hodnotu <xref:System.Decimal> odkazem.
+- V podpisu metody. Například následující podpis metody označuje, `GetCurrentPrice` že <xref:System.Decimal> metoda vrátí hodnotu odkazem.
 
 ```csharp
 public ref decimal GetCurrentPrice()
 ```
 
-- Mezi tokenem `return` a proměnnou vrácenou v příkazu `return` v metodě. Příklad:
+- Mezi `return` token a proměnná `return` vrácena v příkazu v metodě. Například:
 
 ```csharp
 return ref DecimalArray[0];
 ```
 
-Aby mohl volající změnit stav objektu, návratová hodnota odkazu musí být uložena do proměnné, která je explicitně definována jako [místní referenční](#ref-locals)číslo.
+Aby volající mohl upravit stav objektu, musí být vrácená hodnota odkazu uložena do proměnné, která je explicitně definována jako [ref local](#ref-locals).
 
-Volaná metoda může také deklarovat návratovou hodnotu jako `ref readonly`, aby vrátila hodnotu odkazem a vynutila, že volající kód nemůže změnit vrácenou hodnotu. Volající metoda se může vyhnout zkopírování vracené hodnoty tím, že uloží hodnotu v proměnné s [parametrem ReadOnly](#ref-readonly-locals) .
+Volaná metoda může také `ref readonly` deklarovat vrácenou hodnotu, která vrací hodnotu odkazem, a vynutit, aby volající kód nemohl změnit vrácenou hodnotu. Volající metoda se může vyhnout kopírování vrácené hodnoty uložením hodnoty v místní proměnné [pouze pro čtení ref.](#ref-readonly-locals)
 
-Příklad naleznete v části [ref Returns a lokální hodnoty REF](#a-ref-returns-and-ref-locals-example).
+Příklad viz [Ref returns a ref locals example](#a-ref-returns-and-ref-locals-example).
 
-## <a name="ref-locals"></a>Lokální hodnoty REF
+## <a name="ref-locals"></a>Ref místní obyvatelé
 
-Lokální proměnná ref slouží k odkazování na hodnoty vrácené pomocí `return ref`. Lokální proměnnou ref nelze inicializovat pro návratovou hodnotu, která není ref. Jinými slovy, pravé straně inicializace musí být odkaz. Jakékoli úpravy hodnoty lokálního odkazu se projeví ve stavu objektu, jehož metoda vrátila hodnotu odkazem.
+Ref místní proměnná se používá k `return ref`odkazování na hodnoty vrácené pomocí . Místní proměnnou ref nelze inicializovat na nevratnou hodnotu bez ref. Jinými slovy, pravá strana inicializace musí být odkaz. Všechny změny hodnoty ref local se projeví ve stavu objektu, jehož metoda vrátila hodnotu odkazem.
 
-Místní klíčová slova se definují pomocí klíčového slova `ref` před deklaraci proměnné, stejně jako bezprostředně před voláním metody, která vrací hodnotu odkazem.
+Definujete ref místní pomocí `ref` klíčového slova před deklarace proměnné, jakož i bezprostředně před volání metody, která vrací hodnotu odkazem.
 
-Například následující příkaz definuje lokální hodnotu REF, která je vrácena metodou s názvem `GetEstimatedValue`:
+Například následující příkaz definuje ref místní hodnotu, která `GetEstimatedValue`je vrácena metodou s názvem :
 
 ```csharp
 ref decimal estValue = ref Building.GetEstimatedValue();
 ```
 
-K hodnotě můžete přistupovat stejným způsobem pomocí odkazu. V některých případech přístup k hodnotě pomocí odkazu zvyšuje výkon tím, že se vyhne potenciálně nákladné operaci kopírování. Například následující příkaz ukazuje, jak může jeden definovat místní hodnotu REF, která se používá k odkazování na hodnotu.
+Můžete přistupovat k hodnotě odkazem stejným způsobem. V některých případech přístup k hodnotě odkazem zvyšuje výkon tím, že se vyhne potenciálně nákladné operaci kopírování. Například následující příkaz ukazuje, jak lze definovat ref místní hodnotu, která se používá k odkazu na hodnotu.
 
 ```csharp
 ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
-Všimněte si, že v obou příkladech musí být klíčové slovo `ref` použito na obou místech, nebo kompilátor generuje chybu CS8172, "" nemůže inicializovat proměnnou podle odkazu s hodnotou. "
+Všimněte si, že `ref` v obou příkladech musí být klíčové slovo použito na obou místech nebo kompilátor generuje chybu CS8172, "Nelze inicializovat proměnnou odkazu s hodnotou."
 
-Počínaje C# 7,3 může být proměnná iterace příkazu `foreach` místní proměnnou ref nebo ref jen pro čtení. Další informace naleznete v článku o [příkazu foreach](foreach-in.md) .
+Počínaje C# 7.3, iterace `foreach` proměnná příkazu může být ref místní nebo ref pro čtení místní proměnné. Další informace naleznete v článku [foreach prohlášení.](foreach-in.md)
 
-## <a name="ref-readonly-locals"></a>Místní referenční hodnoty jen pro čtení
+Také počínaje C# 7.3, můžete znovu přiřadit ref místní nebo ref pouze pro čtení místní proměnné s [operátorem přiřazení ref](../operators/assignment-operator.md#ref-assignment-operator).
 
-Místní odkaz jen pro čtení se používá k odkazování na hodnoty vrácené metodou nebo vlastností, která má `ref readonly` v jejím podpisu a používá `return ref`. Proměnná `ref readonly` kombinuje vlastnosti `ref` místní proměnné s proměnnou `readonly`: Jedná se o alias úložiště, ke kterému je přiřazený, a nedá se změnit. 
+## <a name="ref-readonly-locals"></a>Ref pouze pro čtení místních obyvatel
 
-## <a name="a-ref-returns-and-ref-locals-example"></a>Příklad odkazů vrátí a místní hodnoty REF
+Ref pouze pro čtení místní se používá k odkazování `ref readonly` na hodnoty vrácené metodou nebo vlastností, která má ve svém podpisu a používá `return ref`. Proměnná `ref readonly` kombinuje vlastnosti `ref` místní proměnné `readonly` s proměnnou: jedná se o alias k úložišti, ke kterým je přiřazena, a nelze ji změnit.
 
-Následující příklad definuje třídu `Book`, která má dvě pole <xref:System.String>, `Title` a `Author`. Definuje také třídu `BookCollection`, která obsahuje soukromé pole `Book` objektů. Jednotlivé objekty knihy jsou vráceny odkazem voláním jeho metody `GetBookByTitle`.
+## <a name="a-ref-returns-and-ref-locals-example"></a>Ref vrátí a ref místní příklad
+
+Následující příklad definuje `Book` třídu, <xref:System.String> která `Title` má `Author`dvě pole a . Definuje také třídu, `BookCollection` která obsahuje `Book` soukromé pole objektů. Jednotlivé objekty knihy jsou vráceny odkazem voláním jeho `GetBookByTitle` metody.
 
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#4)]
 
-Když volající ukládá hodnotu vrácenou metodou `GetBookByTitle` jako místní referenční číslo, změny, které volající provede na vrácenou hodnotu, se projeví v objektu `BookCollection`, jak ukazuje následující příklad.
+Když volající uloží hodnotu `GetBookByTitle` vrácenou metodou jako ref local, změny, které volající provede `BookCollection` na vrácenou hodnotu, se projeví v objektu, jak ukazuje následující příklad.
 
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#5)]
 
-## <a name="ref-struct-types"></a>Typy referenční struktury
+## <a name="ref-struct-types"></a>Typy struktury ref
 
-Přidání modifikátoru `ref` do deklarace `struct` definuje, že instance daného typu musí být přiděleny zásobníku. Jinými slovy, instance těchto typů nelze nikdy vytvořit v haldě jako člen jiné třídy. Primární motivace pro tuto funkci byla <xref:System.Span%601> a související struktury.
+Přidání `ref` modifikátoru `struct` do deklarace definuje, že instance tohoto typu musí být přiděleny. Jinými slovy instance těchto typů nelze nikdy vytvořit na haldě jako člen jiné třídy. Primární motivací pro <xref:System.Span%601> tuto funkci byla a související struktury.
 
-Cílem uchování `ref struct` typu jako proměnné přidělené zásobníkem zavádí několik pravidel, která kompilátor vynutil pro všechny typy `ref struct`.
+Cílem zachování `ref struct` typu jako proměnné přidělené zásobníku zavádí několik pravidel, která `ref struct` kompilátor vynucuje pro všechny typy.
 
-- Nemůžete box `ref struct`. Typ `ref struct` nelze přiřadit proměnné typu `object`, `dynamic`ani libovolnému typu rozhraní.
-- typy `ref struct` nemohou implementovat rozhraní.
-- Nelze deklarovat `ref struct` jako člena pole třídy nebo normální struktury. To zahrnuje deklaraci automaticky implementované vlastnosti, která vytvoří pole pro zálohování generované kompilátorem. 
-- Nelze deklarovat lokální proměnné, které jsou `ref struct` typy v asynchronních metodách. Můžete je deklarovat v synchronních metodách, které vracejí <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> nebo `Task`typy podobných.
-- V iterátorech nelze deklarovat `ref struct` lokální proměnné.
-- Ve výrazech lambda nebo místních funkcích nemůžete zachytit proměnné `ref struct`.
+- Nemůžete box. `ref struct` Nelze přiřadit `ref struct` typ proměnné typu `object`, `dynamic`nebo typu rozhraní.
+- `ref struct`typy nelze implementovat rozhraní.
+- Nelze deklarovat `ref struct` jako člen pole třídy nebo normální struktury. To zahrnuje deklarování automaticky implementované vlastnosti, která vytvoří kompilátor generované doprovodné pole.
+- Nelze deklarovat místní `ref struct` proměnné, které jsou typy v asynchronní metody. Můžete deklarovat je v <xref:System.Threading.Tasks.Task>synchronní metody, které vracejí nebo <xref:System.Threading.Tasks.Task%601> `Task`-like typy.
+- Nelze deklarovat `ref struct` místní proměnné v iterátorech.
+- Proměnné nelze `ref struct` zachytit ve výrazech lambda nebo místních funkcích.
 
-Tato omezení zajistí, že nechtěně nepoužíváte `ref struct` způsobem, který by ho mohl zvýšit na spravovanou haldu.
+Tato omezení zajistí, že omylem `ref struct` nepoužijete způsobem, který by ji mohl propagovat na spravovanou haldu.
 
-Můžete kombinovat modifikátory pro deklaraci struktury jako `readonly ref`. `readonly ref struct` kombinuje výhody a omezení deklarací `ref struct` a `readonly struct`.
+Můžete kombinovat modifikátory deklarovat strukturu jako `readonly ref`. A `readonly ref struct` kombinuje výhody a `ref struct` omezení `readonly struct` a prohlášení.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Zapisovat bezpečný efektivní kód](../../write-safe-efficient-code.md)
-- [Návratové a místní referenční hodnoty](../../programming-guide/classes-and-structs/ref-returns.md)
+- [Zapisujte bezpečný efektivní kód](../../write-safe-efficient-code.md)
+- [Návratové hodnoty podle odkazu a lokální proměnné podle odkazu](../../programming-guide/classes-and-structs/ref-returns.md)
 - [Podmíněný výraz ref](../operators/conditional-operator.md#conditional-ref-expression)
-- [operátor přiřazení ref](../operators/assignment-operator.md#ref-assignment-operator)
 - [Předávání parametrů](../../programming-guide/classes-and-structs/passing-parameters.md)
 - [Parametry metody](method-parameters.md)
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](index.md)

@@ -1,55 +1,55 @@
 ---
 title: Oficiální image .NET Dockeru
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Oficiální image Docker pro .NET
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Oficiální obrázky .NET Docker
 ms.date: 01/30/2020
 ms.openlocfilehash: 50a50587b35f811859841c4e049f40cb99479372
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77501867"
 ---
 # <a name="official-net-docker-images"></a>Oficiální image .NET Dockeru
 
-Oficiální image rozhraní .NET Docker jsou image Docker vytvořené a optimalizované Microsoftem. Jsou veřejně dostupné v úložištích Microsoftu v [Docker Hub](https://hub.docker.com/u/microsoft/). Každé úložiště může obsahovat několik imagí v závislosti na verzích .NET a v závislosti na operačním systému a verzích (Linux Debian, Linux Alpine, Windows nano Server, Windows Server Core atd.).
+Oficiální bitové kopie .NET Docker jsou image Dockeru vytvořené a optimalizované společností Microsoft. Jsou veřejně dostupné v repozitářích Microsoftu v [Docker Hubu](https://hub.docker.com/u/microsoft/). Každé úložiště může obsahovat více obrázků v závislosti na verzích .NET a v závislosti na operačním systému a verzích (Linux Debian, Linux Alpine, Windows Nano Server, Windows Server Core atd.).
 
-Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí .NET Core: <https://hub.docker.com/_/microsoft-dotnet-core/>.
+Vzhledem k tomu, že .NET Core 2.1, všechny image .NET Core, včetně ASP.NET <https://hub.docker.com/_/microsoft-dotnet-core/>Core jsou k dispozici v Docker Hub u .NET Core image repozitáře: .
 
-Vzhledem k tomu, že je to 2018, jsou image Microsoft [Container Registry v Microsoftu](https://azure.microsoft.com/blog/microsoft-syndicates-container-catalog/). Oficiální katalog je stále dostupný jenom v Docker Hub a tam najdete aktualizovanou adresu pro vyžádání image.
+Od května 2018 jsou bitové kopie společnosti Microsoft [syndikovány v registru microsoft kontejnerů](https://azure.microsoft.com/blog/microsoft-syndicates-container-catalog/). Oficiální katalog je stále k dispozici pouze v Docker Hubu a tam najdete aktualizovanou adresu pro vytažení obrázku.
 
-Většina úložišť imagí poskytuje rozsáhlé označování, které vám pomůžou vybrat nejen konkrétní verzi architektury, ale také zvolit operační systém (distribuci Linux nebo verzi Windows).
+Většina úložišť obrázků poskytuje rozsáhlé značkování, které vám pomůže vybrat nejen konkrétní verzi architektury, ale také zvolit operační systém (linuxová distribuce nebo verze systému Windows).
 
-## <a name="net-core-and-docker-image-optimizations-for-development-versus-production"></a>Optimalizace imagí .NET Core a Docker pro vývoj a produkci
+## <a name="net-core-and-docker-image-optimizations-for-development-versus-production"></a>Optimalizace bitových obrázků .NET Core a Docker pro vývoj versus produkční
 
-Při sestavování imagí Docker pro vývojáře se společnost Microsoft zaměřuje na následující hlavní scénáře:
+Při vytváření imitek Dockeru pro vývojáře se Microsoft zaměřil na následující hlavní scénáře:
 
-- Obrázky používané k *vývoji* a sestavování aplikací .NET Core
+- Obrázky používané k *vývoji* a vytváření aplikací .NET Core.
 
-- Image používané ke *spouštění* aplikací .NET Core
+- Obrázky používané ke *spuštění* aplikací .NET Core.
 
-Proč více imagí? Při vývoji, sestavování a spouštění kontejnerových aplikací jsou obvykle k dispozici různé priority. Poskytováním různých imagí pro tyto samostatné úlohy pomáhá Microsoft optimalizovat samostatné procesy vývoje, sestavování a nasazování aplikací.
+Proč více obrázků? Při vývoji, vytváření a spouštění kontejnerizovaných aplikací máte obvykle různé priority. Poskytováním různých iobrazek pro tyto samostatné úkoly pomáhá společnost Microsoft optimalizovat samostatné procesy vývoje, vytváření a nasazování aplikací.
 
-### <a name="during-development-and-build"></a>Během vývoje a sestavení
+### <a name="during-development-and-build"></a>Během vývoje a budování
 
-V průběhu vývoje je důležité, jak rychle iterovat změny a možnost ladit změny. Velikost obrázku není tak důležitá jako schopnost provádět změny kódu a rychle zobrazit změny. Některé nástroje a kontejnery agentů sestavení využívají během vývoje a procesu sestavování bitovou kopii rozhraní .NET Core (*MCR.Microsoft.com/dotnet/Core/SDK:3.1*). Při sestavování uvnitř kontejneru Docker jsou důležité aspekty prvky, které jsou potřeba ke kompilaci vaší aplikace. To zahrnuje kompilátor a všechny další závislosti rozhraní .NET.
+Během vývoje je důležité, jak rychle můžete iterate změny a schopnost ladit změny. Velikost obrázku není tak důležitá jako možnost provádět změny v kódu a rychle zobrazit změny. Některé nástroje a "build agent kontejnery", použijte vývoj .NET Image Jádra (*mcr.microsoft.com/dotnet/core/sdk:3.1*) během procesu vývoje a sestavení. Při vytváření uvnitř kontejneru Dockeru jsou důležité aspekty prvky, které jsou potřeba ke kompilaci vaší aplikace. To zahrnuje kompilátor a všechny ostatní .NET závislosti.
 
-Proč je tento typ image sestavení důležitý? Tuto image nebudete nasazovat do produkčního prostředí. Místo toho se jedná o obrázek, který použijete k vytvoření obsahu, který umístíte do produkční image. Tento obrázek se použije v prostředí pro průběžnou integraci (CI) nebo v prostředí sestavení při použití víceprocesorového sestavení Docker.
+Proč je tento typ image sestavení důležitý? Tuto bitové kopii nelze nasadit do produkčního prostředí. Místo toho se jedná o bitovou kopii, kterou použijete k vytvoření obsahu, který umístíte do produkční bitové kopie. Tato bitová kopie by se použila v prostředí průběžné integrace (CI) nebo při použití vícefázových sestavení Dockeru.
 
-### <a name="in-production"></a>V produkčním prostředí
+### <a name="in-production"></a>Ve výrobě
 
-Důležité informace o tom, jak rychle můžete nasadit a spustit kontejnery založené na provozní imagi .NET Core, najdete v tématu o produkčním prostředí. Proto je bitová kopie pouze za běhu založená na *MCR.Microsoft.com/dotnet/Core/ASPNET:3.1* malá, aby mohla rychle cestovat přes síť z registru Docker do hostitelů Docker. Obsah je připravený ke spuštění, což umožňuje nejrychlejší čas od spuštění kontejneru až po zpracování výsledků. V modelu Docker není nutné provádět kompilaci z kódu jazyka C\#, protože při použití kontejneru sestavení je při spuštění sestavení dotnet nebo dotnet publish použito.
+Co je důležité v produkčním prostředí je, jak rychle můžete nasadit a spustit kontejnery na základě produkční bitové kopie .NET Core. Proto bitová kopie pouze za běhu založená na *mcr.microsoft.com/dotnet/core/aspnet:3.1* je malá, takže může rychle cestovat po síti z registru Dockeru k hostitelům Dockeru. Obsah je připraven ke spuštění, což umožňuje nejrychlejší čas od spuštění kontejneru ke zpracování výsledků. V modelu Dockeru není potřeba kompilace\# z kódu C, jako je při spuštění dotnet sestavení nebo dotnet publikovat při použití kontejneru sestavení.
 
-V této optimalizované imagi vložíte jenom binární soubory a další obsah potřebný ke spuštění aplikace. Například obsah vytvořený pomocí `dotnet publish` obsahuje pouze kompilované binární soubory .NET, obrázky,. js a. CSS. V průběhu času se zobrazí obrázky, které obsahují zpracovaných kompilátorem JIT (kompilace z IL do nativní, ke které dochází v době běhu) balíčků.
+V této optimalizované bitové kopii vložíte pouze binární soubory a další obsah potřebný ke spuštění aplikace. Například obsah vytvořený `dotnet publish` obsahuje pouze zkompilované binární soubory .NET, obrázky, soubory JS a CSS. V průběhu času se zobrazí obrázky, které obsahují předem jitted (kompilace z IL nanativní, ke kterému dochází za běhu) balíčky.
 
-I když existuje více verzí rozhraní .NET Core a ASP.NET Core imagí, všechny sdílejí jednu nebo více vrstev, včetně základní vrstvy. Proto je velikost místa na disku potřebného pro uložení obrázku malá. obsahuje jenom rozdíl mezi vlastní image a její základní imagí. Výsledkem je rychlé načtení obrázku z registru.
+Přestože existuje více verzí obrazů .NET Core a ASP.NET Core, všechny sdílejí jednu nebo více vrstev, včetně základní vrstvy. Proto je velikost místa na disku potřebné k uložení bitové kopie malá; skládá se pouze z rozdílu mezi vlastní bitovou kopii a její základní bitovou kopii. Výsledkem je, že je rychlé vytáhnout obrázek z registru.
 
-Když prozkoumáte úložiště imagí .NET v Docker Hub, zjistíte více verzí imagí klasifikovaných nebo označených pomocí značek. Tyto značky vám pomůžou určit, která z nich se má použít, v závislosti na verzi, kterou potřebujete, třeba v následující tabulce:
+Když prozkoumáte úložiště bitových bitových údajů .NET v Docker Hubu, najdete více verzí bitových obrázků klasifikovaných nebo označených značkami. Tyto značky pomáhají rozhodnout, který z nich použít, v závislosti na verzi, kterou potřebujete, jako jsou ty v následující tabulce:
 
 | Image | Komentáře |
 |-------|----------|
-| mcr.microsoft.com/dotnet/core/aspnet:**3,1** | ASP.NET Core, pouze s modulem runtime a optimalizace ASP.NET Core v systémech Linux a Windows (více archů) |
-| mcr.microsoft.com/dotnet/core/sdk:**3,1** | Rozhraní .NET Core se zahrnutými sadami SDK v systému Linux a Windows (vícenásobný arch) |
+| mcr.microsoft.com/dotnet/core/aspnet:**3.1** | ASP.NET Core, s pouze runtime a optimalizací ASP.NET Core, na Linuxu a Windows (multi-arch) |
+| mcr.microsoft.com/dotnet/core/sdk:**3.1** | .NET Core, včetně sad SDK, na Linuxu a Windows (multi-arch) |
 
 > [!div class="step-by-step"]
 > [Předchozí](net-container-os-targets.md)
-> [Další](../architect-microservice-container-applications/index.md)
+> [další](../architect-microservice-container-applications/index.md)

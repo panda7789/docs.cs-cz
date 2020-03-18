@@ -16,40 +16,40 @@ helpviewer_keywords:
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
 ms.openlocfilehash: 99e2a837877494dd4c7e0106047bce3cc39a9282
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75342368"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Jak nastavit proměnné prostředí pro příkazový řádek sady Visual Studio
 
-Soubor VsDevCmd. bat nastaví příslušné proměnné prostředí pro povolení sestavení příkazového řádku.
+Soubor VsDevCmd.bat nastaví příslušné proměnné prostředí pro povolení sestavení příkazového řádku.
 
 > [!NOTE]
-> Visual Studio 2015 a starší verze používaly VSVARS32. bat, nikoli VsDevCmd. bat pro stejný účel. Tento soubor byl uložen ve složce \Program Files\Microsoft Visual Studio\\*verze*\Common7\Tools nebo Program Files (x86) \Microsoft visual Studio\\*verze*\Common7\Tools.
+> Visual Studio 2015 a starší verze používají VSVARS32.bat, ne VsDevCmd.bat pro stejný účel. Tento soubor byl uložen v \Program\\Files\Microsoft Visual Studio*Version*\Common7\Tools or\\Program Files (x86)\Microsoft Visual Studio*Version*\Common7\Tools.
 
-Pokud je aktuální verze sady Visual Studio nainstalována na počítači, který má také starší verzi sady Visual Studio, neměli byste spouštět VsDevCmd. bat a VSVARS32. BAT z různých verzí ve stejném okně příkazového řádku. Místo toho byste měli spustit příkaz pro každou verzi ve vlastním okně.
+Pokud je aktuální verze sady Visual Studio nainstalována v počítači, který má také starší verzi sady Visual Studio, neměli byste spouštět VsDevCmd.bat a VSVARS32. BAT z různých verzí ve stejném okně příkazového řádku. Místo toho byste měli spustit příkaz pro každou verzi ve vlastním okně.
 
-### <a name="to-run-vsdevcmdbat"></a>Spuštění VsDevCmd. BAT
+### <a name="to-run-vsdevcmdbat"></a>Spuštění souboru VsDevCmd.BAT
 
-1. V nabídce **Start** otevřete **Developer Command Prompt pro vs 2019**.  Je ve složce **Visual Studio 2019** .
+1. V nabídce **Start** otevřete **příkazový řádek pro vývojáře pro VS 2019**.  Je ve složce **Visual Studio 2019.**
 
-2. Přejděte do složky \Program Files\Microsoft Visual Studio\\*verze*\\*nabídce*\Common7\Tools nebo \Program Files (x86) \Microsoft visual Studio\\*verze*\\*Nabídka*\Common7\Tools podadresář instalace.  (*Verze* je *2019* pro aktuální verzi. *Nabídka* je jedním z firem *Enterprise*, *Professional* nebo *Community*.)
+2. Změňte na \Program Files\Microsoft\\Visual Studio*Version*\\*Offering*\Common7\Tools or \Program\\Files (x86)\Microsoft Visual Studio*Version*\\*Offering*\Common7\Tools subdirectory aplikace Installation.  (*Verze* je *2019* pro aktuální verzi. *Nabídka* je jedním z *Enterprise*, *Professional* nebo *Společenství*.)
 
-3. Spusťte VsDevCmd. bat zadáním **VsDevCmd**.
+3. Spusťte VsDevCmd.bat zadáním **VsDevCmd**.
 
     > [!CAUTION]
-    > VsDevCmd. bat se může lišit od počítače k počítači. Neměňte chybějící nebo poškozený soubor VsDevCmd. bat s příponou VsDevCmd. bat z jiného počítače. Namísto toho nahraďte chybějící soubor opětovným spuštěním instalačního programu.
+    > VsDevCmd.bat se může lišit od počítače k počítači. Nenahrazujte chybějící nebo poškozený soubor VsDevCmd.bat souborem VsDevCmd.bat z jiného počítače. Namísto toho nahraďte chybějící soubor opětovným spuštěním instalačního programu.
 
-### <a name="available-options-for-vsdevcmdbat"></a>Dostupné možnosti pro VsDevCmd. BAT
+### <a name="available-options-for-vsdevcmdbat"></a>Dostupné možnosti pro VsDevCmd.BAT
 
-Pokud chcete zobrazit dostupné možnosti pro VsDevCmd. BAT, spusťte příkaz s možností `-help`:
+Chcete-li zobrazit dostupné možnosti pro VsDevCmd.BAT, spusťte příkaz s `-help` možností:
 
 ```console
 VsDevCmd.bat -help
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Sestavování pomocí programu csc.exe v příkazovém řádku](./command-line-building-with-csc-exe.md)

@@ -1,21 +1,21 @@
 ---
-title: Postup vytvoření C/C++ sjednocení pomocí atributů ()C#
+title: Jak vytvořit sjednocení C/C++ pomocí atributů (C#)
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
 ms.openlocfilehash: ff8ce560444581a28b257820573224f89a274cd9
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141570"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Postup vytvoření C/C++ sjednocení pomocí atributů ()C#
+# <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Jak vytvořit sjednocení C/C++ pomocí atributů (C#)
 
-Pomocí atributů můžete přizpůsobit, jak jsou struktury rozloženy v paměti. Můžete například vytvořit, co se říká sjednocení v C/C++ pomocí atributů `StructLayout(LayoutKind.Explicit)` a `FieldOffset`.
+Pomocí atributů můžete přizpůsobit způsob, jakým jsou struktury rozloženy v paměti. Můžete například vytvořit to, co je známé jako unie v `StructLayout(LayoutKind.Explicit)` `FieldOffset` jazyce C/C++ pomocí atributů a.
 
 ## <a name="example"></a>Příklad
 
-V tomto segmentu kódu se všechna pole `TestUnion` začínají na stejném místě v paměti.
+V tomto segmentu kódu všechna `TestUnion` pole začít ve stejném umístění v paměti.
 
 ```csharp
 // Add a using directive for System.Runtime.InteropServices.
@@ -39,7 +39,7 @@ struct TestUnion
 
 ## <a name="example"></a>Příklad
 
-Následuje další příklad, kdy se pole spouštějí v různých explicitních nastaveních umístění.
+Následuje další příklad, kde pole začínají v různých explicitně nastavených umístěních.
 
 ```csharp
 // Add a using directive for System.Runtime.InteropServices.
@@ -67,13 +67,13 @@ struct TestExplicit
 }
 ```
 
-Dvě celočíselná pole, `i1` a `i2`, sdílejí stejná umístění v paměti jako `lg`. Tento druh řízení nad rozložením struktury je užitečný při volání platformy.
+Dvě celá pole `i1` a `i2`, sdílejí stejná `lg`umístění paměti jako . Tento druh kontroly nad rozložení struktury je užitečné při použití vyvolání platformy.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním v jazyce C#](../../index.md)
+- [Programovací příručka jazyka C#](../../index.md)
 - [Atributy](../../../../standard/attributes/index.md)
 - [Reflexe (C#)](../reflection.md)
 - [Atributy (C#)](index.md)

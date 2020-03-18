@@ -1,23 +1,23 @@
 ---
-title: Jak najít elementy s určitým atributem (XPath-LINQ to XML) (C#)
+title: Jak najít prvky s určitým atributem (XPath-LINQ na XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
 ms.openlocfilehash: e79cad3ad6fb0bf88e388b552f8e39327acfb4ad
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141049"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Jak najít elementy s určitým atributem (XPath-LINQ to XML) (C#)
-Někdy chcete najít všechny prvky, které mají konkrétní atribut. Nemáte obavy o obsah atributu. Místo toho je třeba vybrat na základě existence atributu.  
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Jak najít prvky s určitým atributem (XPath-LINQ na XML) (C#)
+Někdy chcete najít všechny prvky, které mají určitý atribut. Nejste znepokojeni obsahem atributu. Místo toho chcete vybrat na základě existence atributu.  
   
  Výraz XPath je:  
   
  `./*[@Select]`  
   
 ## <a name="example"></a>Příklad  
- Následující kód vybere pouze prvky, které mají atribut `Select`.  
+ Následující kód vybere pouze prvky, `Select` které mají atribut.  
   
 ```csharp  
 XElement doc = XElement.Parse(  
@@ -48,7 +48,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```output  
 Results are identical  

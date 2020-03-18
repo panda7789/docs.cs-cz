@@ -1,20 +1,20 @@
 ---
 title: O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
-description: Zabezpečení v mikroslužbách a webových aplikacích .NET – získáte přehled o hlavních možnostech ověřování v ASP.NET Core aplikací – na základě rolí a na základě zásad.
+description: Zabezpečení v .NET Microservices a webových aplikací – získat přehled o hlavních možnostech autorizace v ASP.NET základní aplikace – založené na rolích a na zásadách.
 author: mjrousos
 ms.date: 01/30/2020
 ms.openlocfilehash: f6b69faceac9a9b4819212cc04f89080f3ddad56
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77501770"
 ---
 # <a name="about-authorization-in-net-microservices-and-web-applications"></a>O autorizaci v mikroslužbách a webových aplikacích v technologii .NET
 
-Po ověření musí ASP.NET Core webových rozhraní API autorizovat přístup. Tento proces umožňuje službě zpřístupnit rozhraní API některým ověřeným uživatelům, ale ne všem. [Autorizaci](/aspnet/core/security/authorization/introduction) můžete provádět na základě rolí uživatelů nebo na základě vlastních zásad, které můžou zahrnovat kontrolu deklarací identity nebo jiné heuristiky.
+Po ověření je třeba ASP.NET základní webová api autorizovat přístup. Tento proces umožňuje službě zpřístupnit rozhraní API některým ověřeným uživatelům, ale ne všem. [Autorizaci](/aspnet/core/security/authorization/introduction) lze provést na základě rolí uživatelů nebo na základě vlastních zásad, které mohou zahrnovat kontrolu deklarací nebo jiné heuristiky.
 
-Omezení přístupu k ASP.NET Core trasám MVC je stejně snadné jako použití autorizačního atributu na metodu akce (nebo na třídu kontroleru, pokud všechny akce kontroleru vyžadují autorizaci), jak je znázorněno v následujícím příkladu:
+Omezení přístupu k ASP.NET základní mvc trasy je stejně snadné jako použití Authorize atribut na metodu akce (nebo na třídu řadiče, pokud všechny akce řadiče vyžadují autorizaci), jak je znázorněno v následujícím příkladu:
 
 ```csharp
 public class AccountController : Controller
@@ -30,13 +30,13 @@ public class AccountController : Controller
 }
 ```
 
-Při přidání autorizačního atributu bez parametrů se ve výchozím nastavení omezí přístup k ověřeným uživatelům daného kontroleru nebo akce. Chcete-li dále omezit rozhraní API k dispozici pro konkrétní uživatele, lze atribut rozšířit tak, aby určoval požadované role nebo zásady, které uživatelé musí splnit.
+Ve výchozím nastavení přidání atributu Authorize bez parametrů omezí přístup ověřeným uživatelům pro tento řadič nebo akci. Chcete-li dále omezit rozhraní API, které má být k dispozici pouze pro konkrétní uživatele, atribut lze rozbalit určit požadované role nebo zásady, které uživatelé musí splňovat.
 
-## <a name="implement-role-based-authorization"></a>Implementace autorizace na základě rolí
+## <a name="implement-role-based-authorization"></a>Implementace autorizace založené na rolích
 
-ASP.NET Core identita má integrovaný koncept rolí. Kromě uživatelů ASP.NET Core identita ukládá informace o různých rolích používaných aplikací a udržuje přehled o tom, kteří uživatelé jsou přiřazeni k rolím. Tato přiřazení je možné změnit programově pomocí typu `RoleManager`, který aktualizuje role v trvalém úložišti, a `UserManager` typu, který může udělit nebo odvolávat role uživatelů.
+ASP.NET Core Identity má předdefinovaný koncept rolí. Kromě uživatelů ASP.NET Core Identity ukládá informace o různých rolích používaných aplikací a sleduje, kteří uživatelé jsou přiřazeni ke kterým rolím. Tato přiřazení lze programově změnit `RoleManager` s typem, který aktualizuje role `UserManager` v trvalém úložišti, a typu, který může udělit nebo odvolat role od uživatelů.
 
-Pokud ověřujete pomocí nosných tokenů JWT, naplní middleware ověřování Bearer ASP.NET Core JWT role uživatele na základě deklarací identity nalezených v tokenu. Chcete-li omezit přístup k akci nebo kontroler MVC na uživatele v konkrétních rolích, můžete do autorizační poznámky (atributu) zahrnout parametr role, jak je znázorněno v následujícím fragmentu kódu:
+Pokud ověřujete pomocí tokenů nosiče JWT, ASP.NET middleware pro ověřování nosiče JWT jádra JWT naplní role uživatele na základě deklarací rolí nalezených v tokenu. Chcete-li omezit přístup k akci MVC nebo kontroleru pro uživatele v určitých rolích, můžete zahrnout parametr Role do poznámky (atributu Autorizovat), jak je znázorněno v následujícím fragmentu kódu:
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -53,9 +53,9 @@ public class ControlPanelController : Controller
 }
 ```
 
-V tomto příkladu mají přístup k rozhraním API v řadiči ControlPanel (například provádění akce SetTime –) jenom uživatelé v rolích správce nebo PowerUser. Rozhraní API pro vypnutí je dál omezené, aby povoloval přístup jenom uživatelům v roli správce.
+V tomto příkladu mají k rozhraním API v řadiči ControlPanel pouze uživatelé v rolích Administrator nebo PowerUser (například spuštění akce SetTime). Rozhraní SHUTDown API je dále omezeno tak, aby umožňovalo přístup pouze uživatelům v roli správce.
 
-Pro vyžadování uživatele v několika rolích použijte více autorizačních atributů, jak je znázorněno v následujícím příkladu:
+Chcete-li vyžadovat, aby byl uživatel ve více rolích, použijte více atributů Authorize, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -66,19 +66,19 @@ public ActionResult API1 ()
 }
 ```
 
-V tomto příkladu pro volání API1 musí uživatel:
+V tomto příkladu pro volání rozhraní API1 musí uživatel:
 
-- Být v roli správce *nebo* PowerUser *a*
+- Buďte v roli správce *nebo* PowerUser *a*
 
-- Být v roli RemoteEmployee *a*
+- Buďte v roli RemoteEmployee *a*
 
-- Vyhovět vlastní obslužné rutině pro autorizaci CustomPolicy
+- Uspokojte vlastní obslužnou rutinu pro autorizaci CustomPolicy.
 
-## <a name="implement-policy-based-authorization"></a>Implementace autorizace na základě zásad
+## <a name="implement-policy-based-authorization"></a>Implementace autorizace založené na zásadách
 
-Vlastní autorizační pravidla se dají zapisovat taky pomocí [autorizačních zásad](https://docs.asp.net/en/latest/security/authorization/policies.html). V této části najdete přehled. Další informace najdete v tématu [ASP.NET Authorization Workshop](https://github.com/blowdart/AspNetAuthorizationWorkshop).
+Vlastní autorizační pravidla lze také zapsat pomocí [zásad autorizace](https://docs.asp.net/en/latest/security/authorization/policies.html). Tato část obsahuje přehled. Další informace naleznete v [ASP.NET Autorizační workshop](https://github.com/blowdart/AspNetAuthorizationWorkshop).
 
-Vlastní zásady autorizace jsou registrovány v metodě Startup. ConfigureServices pomocí služby. Metoda AddAuthorization Tato metoda přebírá delegáta, který konfiguruje argument AuthorizationOptions.
+Vlastní zásady autorizace jsou registrovány v Metodě Startup.ConfigureServices pomocí služby. AddAuthorization metoda. Tato metoda trvá delegáta, který konfiguruje Argument AuthorizationOptions.
 
 ```csharp
 services.AddAuthorization(options =>
@@ -94,38 +94,38 @@ services.AddAuthorization(options =>
 });
 ```
 
-Jak je znázorněno v příkladu, mohou být zásady přidruženy k různým typům požadavků. Po registraci jsou zásady možné použít pro akci nebo kontroler předáním názvu zásady jako argumentu zásad autorizačního atributu (například `[Authorize(Policy="EmployeesOnly")]`), který může mít více požadavků, nikoli jenom jeden (jak je znázorněno v těchto příkladech).
+Jak je znázorněno v příkladu, zásady mohou být přidruženy k různým typům požadavků. Po zaregistrování zásad je lze použít na akci nebo řadič předáním názvu zásady jako argument `[Authorize(Policy="EmployeesOnly")]`zásad atributu Authorize (například ) Zásady mohou mít více požadavků, nikoli pouze jeden (jak je znázorněno v těchto příkladech).
 
-V předchozím příkladu je první volání AddPolicy pouze alternativním způsobem autorizace rolí. Pokud se `[Authorize(Policy="AdministratorsOnly")]` aplikuje na rozhraní API, budou mít přístup jenom uživatelé v roli správce.
+V předchozím příkladu první AddPolicy volání je pouze alternativní způsob autorizace podle role. Pokud `[Authorize(Policy="AdministratorsOnly")]` je použito rozhraní API, budou k němu mít přístup pouze uživatelé v roli správce.
 
-Druhý <xref:Microsoft.AspNetCore.Authorization.AuthorizationOptions.AddPolicy%2A> hovor ukazuje snadný způsob, jak vyžadovat, aby uživatel měl k dispozici konkrétní deklaraci identity. Metoda <xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireClaim%2A> taky volitelně přijímá očekávané hodnoty deklarace identity. Pokud jsou zadány hodnoty, je požadavek splněn pouze v případě, že uživatel má deklaraci identity správného typu a jednu ze zadaných hodnot. Pokud používáte middleware pro ověřování JWT Bearer, budou k dispozici všechny vlastnosti JWT jako deklarace identity uživatelů.
+Druhý <xref:Microsoft.AspNetCore.Authorization.AuthorizationOptions.AddPolicy%2A> hovor ukazuje snadný způsob, jak vyžadovat, aby konkrétní deklarace měla být přítomna pro uživatele. Metoda <xref:Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder.RequireClaim%2A> také volitelně přebírá očekávané hodnoty deklarace. Pokud jsou zadány hodnoty, požadavek je splněn pouze v případě, že uživatel má deklaraci správného typu a jednu ze zadaných hodnot. Pokud používáte middleware pro ověřování nosiče JWT, všechny vlastnosti JWT budou k dispozici jako deklarace identity uživatelů.
 
-Nejzajímavější zásada uvedená tady je třetí `AddPolicy` metoda, protože používá vlastní požadavek na autorizaci. Pomocí vlastních autorizačních požadavků můžete mít velkou kontrolu nad tím, jak se provádí autorizace. Aby to fungovalo, je nutné implementovat tyto typy:
+Nejzajímavější zásady zde je ve `AddPolicy` třetí metodě, protože používá požadavek na vlastní autorizaci. Pomocí vlastních požadavků na autorizaci můžete mít velkou kontrolu nad tím, jak se autorizace provádí. Aby to fungovalo, je nutné implementovat tyto typy:
 
-- Typ požadavků, který je odvozen od <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement> a obsahuje pole určující Podrobnosti požadavku. V tomto příkladu je toto pole stáří pro vzorový `MinimumAgeRequirement` typ.
+- A Požadavky typ, <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement> který je odvozen od a který obsahuje pole určující podrobnosti požadavku. V příkladu se jedná o věkové `MinimumAgeRequirement` pole pro typ vzorku.
 
-- Obslužná rutina, která implementuje <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601>, kde T je typ <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement>, který obslužná rutina může splnit. Obslužná rutina musí implementovat metodu <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601.HandleRequirementAsync%2A>, která kontroluje, zda zadaný kontext, který obsahuje informace o uživateli, splňuje požadavek.
+- Obslužná <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601>rutina, která <xref:Microsoft.AspNetCore.Authorization.IAuthorizationRequirement> implementuje , kde T je typ, který obslužná rutina může uspokojit. Obslužná <xref:Microsoft.AspNetCore.Authorization.AuthorizationHandler%601.HandleRequirementAsync%2A> rutina musí implementovat metodu, která zkontroluje, zda zadaný kontext, který obsahuje informace o uživateli, splňuje požadavek.
 
-Pokud uživatel splňuje požadavek, volání `context.Succeed` bude označovat, že uživatel má oprávnění. Existuje-li více způsobů, jak může uživatel splnit požadavek na autorizaci, lze vytvořit více obslužných rutin.
+Pokud uživatel splňuje požadavek, `context.Succeed` volání bude znamenat, že uživatel je oprávněn. Pokud existuje více způsobů, které uživatel může splňovat požadavek na autorizaci, lze vytvořit více obslužných rutin.
 
-Kromě registrace požadavků na vlastní zásady pomocí `AddPolicy` volání je také potřeba zaregistrovat vlastní obslužné rutiny požadavků prostřednictvím injektáže závislosti (`services.AddTransient<IAuthorizationHandler, MinimumAgeHandler>()`).
+Kromě registrace vlastních požadavků `AddPolicy` zásad s voláními je také nutné zaregistrovat`services.AddTransient<IAuthorizationHandler, MinimumAgeHandler>()`vlastní obslužné rutiny požadavků prostřednictvím vkládání závislostí ( ).
 
-Příkladem vlastního autorizačního požadavku a obslužné rutiny pro kontrolu stáří uživatele (na základě `DateOfBirth` deklarace) je k dispozici v dokumentaci k [autorizaci](https://docs.asp.net/en/latest/security/authorization/policies.html)ASP.NET Core.
+Příklad požadavku na vlastní autorizaci a obslužné rutiny `DateOfBirth` pro kontrolu věku uživatele (na základě deklarace) je k dispozici v dokumentaci k [autorizaci](https://docs.asp.net/en/latest/security/authorization/policies.html)ASP.NET jádra .
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **ASP.NET Core ověřování** \
+- **ověřování ASP.NET jádra** \
   [https://docs.microsoft.com/aspnet/core/security/authentication/identity](/aspnet/core/security/authentication/identity)
 
-- **ASP.NET Core autorizaci** \
+- **ASP.NET základní autorizace** \
   [https://docs.microsoft.com/aspnet/core/security/authorization/introduction](/aspnet/core/security/authorization/introduction)
 
--  \ **autorizace na základě rolí**
+- **Autorizace založená na rolích** \
   [https://docs.microsoft.com/aspnet/core/security/authorization/roles](/aspnet/core/security/authorization/roles)
 
-- **Vlastní ověřování na základě zásad** \
+- **Vlastní autorizace založená na zásadách** \
   [https://docs.microsoft.com/aspnet/core/security/authorization/policies](/aspnet/core/security/authorization/policies)
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)
->[Další](developer-app-secrets-storage.md)
+>[další](developer-app-secrets-storage.md)

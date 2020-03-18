@@ -1,19 +1,19 @@
 ---
-title: Nejnovější změny nástroje MSBuild
-description: Obsahuje seznam nejnovějších změn v nástroji MSBuild pro .NET Core.
+title: Změny při vytváření změn msbuild
+description: Uvádí nejnovější změny v MSBuild pro .NET Core.
 ms.date: 02/10/2020
 ms.openlocfilehash: 42588fc885c38a3d543fa94b11765e77633e209c
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77453788"
 ---
-# <a name="msbuild-breaking-changes"></a>Nejnovější změny nástroje MSBuild
+# <a name="msbuild-breaking-changes"></a>Změny při vytváření změn msbuild
 
-Na této stránce jsou popsány následující přerušující se změny:
+Na této stránce jsou popsány následující změny:
 
-- [Název souboru manifestu prostředku – změna](#resource-manifest-file-names)
+- [Změna názvu souboru manifestu prostředku](#resource-manifest-file-names)
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 
