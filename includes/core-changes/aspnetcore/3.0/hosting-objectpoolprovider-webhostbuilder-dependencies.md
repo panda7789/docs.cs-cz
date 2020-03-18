@@ -1,44 +1,44 @@
 ---
 ms.openlocfilehash: 4d99d0b6e99a7a9b976cf11832b33ad3bdc6d299
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901719"
 ---
-### <a name="hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies"></a>Hostování: ObjectPoolProvider se odebral ze závislostí WebHostBuilder.
+### <a name="hosting-objectpoolprovider-removed-from-webhostbuilder-dependencies"></a>Hostování: Objekt Usvého zprostředkovatele objectpoolu odebrán ze závislostí WebHostBuilder
 
-V rámci zvýšení ASP.NET Core platíte za Play se `ObjectPoolProvider` odebral z hlavní sady závislostí. Konkrétní komponenty, které se spoléhají na `ObjectPoolProvider` nyní přidat sami sebe.
+Jako součást toho, ASP.NET Core více `ObjectPoolProvider` platit za hru, byl odstraněn z hlavní sady závislostí. Konkrétní součásti, `ObjectPoolProvider` na které se spoléhají, nyní přidávají sami.
 
-Diskuzi najdete v tématu [dotnet/aspnetcore # 5944](https://github.com/dotnet/aspnetcore/issues/5944).
+Diskuse naleznete [v tématu dotnet/aspnetcore#5944](https://github.com/dotnet/aspnetcore/issues/5944).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-`WebHostBuilder` poskytuje `ObjectPoolProvider` ve výchozím nastavení v kontejneru DI.
+`WebHostBuilder`poskytuje `ObjectPoolProvider` ve výchozím nastavení v kontejneru DI.
 
 #### <a name="new-behavior"></a>Nové chování
 
-`WebHostBuilder` už v kontejneru DI neposkytuje `ObjectPoolProvider` ve výchozím nastavení.
+`WebHostBuilder`již poskytuje `ObjectPoolProvider` ve výchozím nastavení v kontejneru DI.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Tato změna se provedla, aby se zajistilo ASP.NET Core více platíte za Play.
+Tato změna byla provedena, aby se ASP.NET Core více platit za hru.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud vaše komponenta vyžaduje `ObjectPoolProvider`, je nutné ji přidat do svých závislostí prostřednictvím `IServiceCollection`.
+Pokud vaše `ObjectPoolProvider`komponenta vyžaduje , je třeba přidat `IServiceCollection`do vašich závislostí prostřednictvím .
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Žádné
+Žádný
 
 <!-- 
 

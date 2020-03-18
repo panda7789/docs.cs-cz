@@ -10,27 +10,27 @@ helpviewer_keywords:
 - threading [.NET Framework], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
 ms.openlocfilehash: 842ca4ff17f9cbab3a1518d2dea37436c9b23f9d
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78155929"
 ---
 # <a name="destroying-threads"></a>Zničení vláken
 
-Chcete-li ukončit provádění vlákna, obvykle používáte [model zrušení spolupráce](cancellation-in-managed-threads.md). V některých případech není možné vlákno zastavovat spolupracuje, protože spouští kód třetí strany, který není navržen pro kooperativní zrušení. Metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> v .NET Framework lze použít k vynucenému ukončení spravovaného vlákna. Když zavoláte <xref:System.Threading.Thread.Abort%2A>, modul CLR (Common Language Runtime) vyvolá <xref:System.Threading.ThreadAbortException> v cílovém vlákně, které může zachytit cílové vlákno. Další informace naleznete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není v rozhraní .NET Core podporována. Pokud potřebujete ukončit provádění kódu třetí strany v .NET Core nuceně, spusťte ho v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
+Chcete-li ukončit provádění podprocesu, obvykle používáte [model zrušení spolupráce](cancellation-in-managed-threads.md). Někdy není možné zastavit vlákno kooperativně, protože spustí kód třetí strany, který není určen pro kooperativní zrušení. Metodu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> v rozhraní .NET Framework lze použít k násilnému ukončení spravovaného vlákna. Při volání <xref:System.Threading.Thread.Abort%2A>, common language runtime <xref:System.Threading.ThreadAbortException> vyvolá v cílovévlákno, které může zachytit cílové vlákno. Další informace naleznete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Metoda <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> není podporována v .NET Core. Pokud potřebujete ukončit provádění kódu třetí strany násilně v .NET Core, spusťte jej v samostatném procesu a použijte <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
 
 > [!NOTE]
-> Pokud vlákno spouští nespravovaný kód, když je volána jeho metoda <xref:System.Threading.Thread.Abort%2A>, modul runtime ho označí <xref:System.Threading.ThreadState.AbortRequested?displayProperty=nameWithType>. Výjimka je vyvolána, když se vlákno vrátí do spravovaného kódu.  
+> Pokud vlákno provádí nespravovaný <xref:System.Threading.Thread.Abort%2A> kód při volání jeho <xref:System.Threading.ThreadState.AbortRequested?displayProperty=nameWithType>metody, modul runtime jej označí . Výjimka je vyvolána, když se vlákno vrátí do spravovaného kódu.  
   
  Jakmile je vlákno přerušeno, nelze jej restartovat.  
   
- Metoda <xref:System.Threading.Thread.Abort%2A> nezpůsobí okamžité přerušení vlákna, protože cílové vlákno může zachytit <xref:System.Threading.ThreadAbortException> a provádět v bloku `finally` libovolné množství kódu. Můžete volat <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>, pokud potřebujete počkat, dokud vlákno neskončí. <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> je blokující volání, které nevrací až do chvíle, kdy bylo vlákno skutečně zastaveno nebo byl ukončen nepovinný časový limit. Přerušené vlákno může zavolat metodu <xref:System.Threading.Thread.ResetAbort%2A> nebo provést neohraničené zpracování v bloku `finally`, takže pokud nezadáte časový limit, není zaručeno ukončení čekání.  
+ Metoda <xref:System.Threading.Thread.Abort%2A> nezpůsobí vlákno přerušit okamžitě, protože cílové vlákno <xref:System.Threading.ThreadAbortException> můžete zachytit a spustit libovolné `finally` množství kódu v bloku. Můžete volat, <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> pokud potřebujete počkat, dokud vlákno skončí. <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>je blokující volání, které se nevrátí, dokud vlákno skutečně zastavilo provádění nebo neuplynul volitelný časový limit. Přerušené vlákno může <xref:System.Threading.Thread.ResetAbort%2A> volat metodu nebo provádět `finally` neomezené zpracování v bloku, takže pokud nezadáte časový čas, čekání není zaručeno ukončení.  
   
- Vlákna, která čekají na volání metody <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> lze přerušit jinými vlákny, které volají <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>.  
+ Podprocesy, které čekají na <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> volání metody může být přerušena jinými vlákny, které volají <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType>.  
   
-## <a name="handling-threadabortexception"></a>Zpracování ThreadAbortException  
- Očekáváte-li, že vlákno bude přerušeno, buď v důsledku volání <xref:System.Threading.Thread.Abort%2A> z vlastního kódu nebo v důsledku uvolnění domény aplikace, ve které je vlákno spuštěno (<xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> používá <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> k ukončení vlákna), vlákno musí zpracovat <xref:System.Threading.ThreadAbortException> a provést jakékoliv konečné zpracování v klauzuli `finally`, jak je znázorněno v následujícím kódu.  
+## <a name="handling-threadabortexception"></a>Zpracování výjimky ThreadAbortException  
+ Pokud očekáváte, že vaše vlákno bude přerušeno, buď v důsledku <xref:System.Threading.Thread.Abort%2A> volání z vlastního kódu, nebo v<xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> důsledku <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> uvolnění domény aplikace, ve <xref:System.Threading.ThreadAbortException> které je vlákno spuštěno (používá k ukončení podprocesů), musí vlákno zpracovat a provést konečné zpracování v `finally` klauzuli, jak je znázorněno v následujícím kódu.  
   
 ```vb  
 Try  
@@ -61,12 +61,12 @@ catch (ThreadAbortException ex)
 // is rethrown at the end of the Finally clause.  
 ```  
   
- Váš kód pro vyčištění musí být v klauzuli `catch` nebo v klauzuli `finally`, protože <xref:System.Threading.ThreadAbortException> znovu vyvolán systém na konci `finally` klauzule nebo na konci klauzule `catch`, pokud neexistuje žádná `finally` klauzule.  
+ Váš kód pro vyčištění musí `catch` být `finally` v klauzuli <xref:System.Threading.ThreadAbortException> nebo klauzuli, protože je znovu `finally` vyvolánsystémem na konci `catch` klauzule nebo `finally` na konci klauzule, pokud neexistuje žádná klauzule.  
   
- Můžete zabránit, aby systém znovu vyvolal výjimku, voláním metody <xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType>. Měli byste to ale udělat jenom v případě, že váš vlastní kód způsobil <xref:System.Threading.ThreadAbortException>.  
+ Můžete zabránit systému znovu vyvolání výjimky <xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType> voláním metody. Měli byste to však provést pouze <xref:System.Threading.ThreadAbortException>v případě, že vlastní kód způsobil .  
   
 ## <a name="see-also"></a>Viz také
 
 - <xref:System.Threading.ThreadAbortException>
 - <xref:System.Threading.Thread>
-- [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)
+- [Použití vláken a zřetězení](../../../docs/standard/threading/using-threads-and-threading.md)

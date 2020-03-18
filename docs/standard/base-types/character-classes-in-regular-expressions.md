@@ -1,6 +1,6 @@
 ---
-title: Třídy znaků v regulárních výrazech .NET
-description: Naučte se, jak používat třídy znaků k reprezentaci sady znaků v regulárních výrazech .NET.
+title: Třídy znaků v regulárních výrazech rozhraní .NET
+description: Naučte se používat třídy znaků k reprezentaci sady znaků v regulárních výrazech rozhraní .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,61 +13,61 @@ helpviewer_keywords:
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 ms.openlocfilehash: 07bd63c90bc8d78c9831e2007695a232a85111b1
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "78159335"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 
 Třída znaků definuje množinu znaků, přičemž kterýkoli z nich se může vyskytovat ve vstupním řetězci tak, aby došlo ke shodě. Jazyk regulárních výrazů v rozhraní .NET podporuje následující třídy znaků:  
   
-- Skupiny pozitivních znaků. Znak ve vstupním řetězci musí odpovídat jedné ze zadaných množin znaků. Další informace naleznete v tématu [Skupina pozitivních znaků](#PositiveGroup).  
+- Skupiny pozitivních znaků. Znak ve vstupním řetězci musí odpovídat jedné ze zadaných množin znaků. Další informace naleznete [v tématu Positive Character Group](#PositiveGroup).  
   
-- Skupiny negativních znaků. Znak ve vstupním řetězci nesmí odpovídat jedné ze zadaných množin znaků. Další informace naleznete v tématu [Skupina negativních znaků](#NegativeGroup).  
+- Skupiny negativních znaků. Znak ve vstupním řetězci nesmí odpovídat jedné ze zadaných množin znaků. Další informace naleznete [v tématu Negative Character Group](#NegativeGroup).  
   
-- Libovolný znak. Znak `.` (tečka nebo tečka) v regulárním výrazu je zástupný znak, který odpovídá jakémukoli znaku s výjimkou `\n`. Další informace naleznete v tématu [libovolný znak](#AnyCharacter).  
+- Libovolný znak. Znak `.` (tečka nebo tečka) v regulárním výrazu `\n`je zástupný znak, který odpovídá libovolnému znaku s výjimkou . Další informace naleznete v tématu [Libovolný znak](#AnyCharacter).  
   
-- Obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody musí být znak ve vstupním řetězci členem určité kategorie sady Unicode nebo musí spadat do souvislého rozsahu znaků sady Unicode. Další informace najdete v tématu [Kategorie sady Unicode nebo blok sady Unicode](#CategoryOrBlock).  
+- Obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody musí být znak ve vstupním řetězci členem určité kategorie sady Unicode nebo musí spadat do souvislého rozsahu znaků sady Unicode. Další informace naleznete [v tématu Unicode Category or Unicode Block](#CategoryOrBlock).  
   
-- Negativní obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody nesmí být znak ve vstupním řetězci členem určité kategorie sady Unicode ani nesmí spadat do souvislého rozsahu znaků sady Unicode. Další informace naleznete v tématu [negativní kategorie sady Unicode nebo blok sady Unicode](#NegativeCategoryOrBlock).  
+- Negativní obecná kategorie nebo pojmenovaný blok sady Unicode. Pro úspěšné vyhledání shody nesmí být znak ve vstupním řetězci členem určité kategorie sady Unicode ani nesmí spadat do souvislého rozsahu znaků sady Unicode. Další informace naleznete v [tématu Negativní kategorie Unicode nebo Unicode Block](#NegativeCategoryOrBlock).  
   
-- Znak slova. Znak ve vstupním řetězci může patřit do kterékoli kategorie sady Unicode, která je vhodná pro znaky ve slovech. Další informace naleznete v tématu [slovní znak](#WordCharacter).  
+- Znak slova. Znak ve vstupním řetězci může patřit do kterékoli kategorie sady Unicode, která je vhodná pro znaky ve slovech. Další informace naleznete v tématu [Word Character](#WordCharacter).  
   
-- Mimoslovní znak. Znak ve vstupním řetězci může patřit do jakékoli kategorie sady Unicode, která není znakem slova. Další informace naleznete v tématu [jiný znak než Word](#NonWordCharacter).  
+- Mimoslovní znak. Znak ve vstupním řetězci může patřit do jakékoli kategorie sady Unicode, která není znakem slova. Další informace naleznete [v tématu Non-Word Character](#NonWordCharacter).  
   
-- Prázdný znak. Znakem ve vstupním řetězci může být jakýkoli oddělovací znak sady Unicode nebo některý z mnoha řídicích znaků. Další informace naleznete v tématu [prázdný znak](#WhitespaceCharacter).  
+- Prázdný znak. Znakem ve vstupním řetězci může být jakýkoli oddělovací znak sady Unicode nebo některý z mnoha řídicích znaků. Další informace naleznete [v tématu White-Space Character](#WhitespaceCharacter).  
   
-- Neprázdný znak. Znakem ve vstupním řetězci může být libovolný znak, který není prázdným znakem. Další informace naleznete v tématu [jiný než prázdný znak](#NonWhitespaceCharacter).  
+- Neprázdný znak. Znakem ve vstupním řetězci může být libovolný znak, který není prázdným znakem. Další informace naleznete [v tématu Non-White-Space Character](#NonWhitespaceCharacter).  
   
-- Desítková číslice. Znakem ve vstupním řetězci může být kterýkoli ze znaků, který je klasifikován jako desítková číslice sady Unicode. Další informace naleznete v tématu [znak desítkové číslice](#DigitCharacter).  
+- Desítková číslice. Znakem ve vstupním řetězci může být kterýkoli ze znaků, který je klasifikován jako desítková číslice sady Unicode. Další informace naleznete [v tématu Decimal Digit Character](#DigitCharacter).  
   
-- Nedesetinné číslo. Znakem ve vstupním řetězci může být jakýkoli jiný znak než desítková číslice sady Unicode. Další informace naleznete v tématu [znak desítkové číslice](#NonDigitCharacter).  
+- Nedesetinné číslo. Znakem ve vstupním řetězci může být jakýkoli jiný znak než desítková číslice sady Unicode. Další informace naleznete [v tématu Decimal Digit Character](#NonDigitCharacter).  
   
- Rozhraní .NET podporuje výrazy odčítání tříd znaků, které umožňují definovat sadu znaků jako výsledek vyloučení jedné třídy znaků z jiné třídy znaků. Další informace naleznete v tématu [odčítání třídy znaků](#CharacterClassSubtraction).  
+ Rozhraní .NET podporuje výrazy odčítání třídy znaků, což umožňuje definovat sadu znaků v důsledku vyloučení jedné třídy znaků z jiné třídy znaků. Další informace naleznete v [tématu Odčítání třídy znaků](#CharacterClassSubtraction).  
   
 > [!NOTE]
-> Třídy znaků, které odpovídají znakům podle kategorie, například [\w](#WordCharacter) , aby odpovídaly znakům Wordu nebo [\p{}](#CategoryOrBlock) tak, aby odpovídaly kategorii Unicode, spoléhají na třídu <xref:System.Globalization.CharUnicodeInfo> a poskytuje informace o kategoriích znaků.  Počínaje .NET Framework 4.6.2 jsou kategorie znaků založené na [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V .NET Framework 4 až do .NET Framework 4.6.1 jsou založené na [standardu Unicode verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+> Třídy znaků, které odpovídají znakům podle kategorií, například [\w](#WordCharacter) tak, aby odpovídaly <xref:System.Globalization.CharUnicodeInfo> znakům slova nebo [\p{} ](#CategoryOrBlock) tak, aby odpovídaly kategorii Unicode, spoléhají na třídu, aby poskytly informace o kategoriích znaků.  Počínaje rozhraním .NET Framework 4.6.2 jsou kategorie znaků založeny na [standardu Unicode Standard verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V rozhraní .NET Framework 4 prostřednictvím rozhraní .NET Framework 4.6.1 jsou založeny na [standardu Unicode, verze 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
   
 <a name="PositiveGroup"></a>
-## <a name="positive-character-group--"></a>Skupina pozitivních znaků: []  
+## <a name="positive-character-group--"></a>Skupina pozitivních znaků: [ ]  
  Skupina pozitivních znaků určuje seznam znaků, které se mohou objevit ve vstupním řetězci, aby nastala shoda. Tento seznam znaků může být zadán jako jednotlivé znaky, jako rozsah nebo obojí.  
   
  Syntaxe pro určení seznamu jednotlivých znaků je následující:  
 
 `[*character_group*]`
 
- kde *character_group* je seznam jednotlivých znaků, které se mohou objevit ve vstupním řetězci, aby byla shoda úspěšná. *character_group* se může skládat z jakékoli kombinace jednoho nebo více literálních znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
+ kde *character_group* je seznam jednotlivých znaků, které se mohou objevit ve vstupním řetězci, aby byla shoda úspěšná. *character_group* se může skládat z libovolné kombinace jednoho nebo více literálových znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
   
  Syntaxe pro zadání rozsahu znaků je následující:  
   
 `[firstCharacter-lastCharacter]`  
   
- kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak, který ukončuje rozsah. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode. *firstCharacter* musí být znak s nižším bodem kódu a *lastCharacter* musí být znak s vyšším bodem kódu.
+ where *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak, který končí rozsah. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode. *firstCharacter* musí být znak s dolníbod kódu a *lastCharacter* musí být znak s vyšším bodem kódu.
 
 > [!NOTE]
-> Vzhledem k tomu, že skupina pozitivních znaků může zahrnovat jak množinu znaků, tak i rozsah znaků, znak spojovníku (`-`) je vždy interpretován jako oddělovač rozsahu, pokud se nejedná o první nebo poslední znak skupiny.
+> Vzhledem k tomu, že skupina kladných znaků může obsahovat`-`sadu znaků i rozsah znaků, je znak pomlčky ( ) vždy interpretován jako oddělovač rozsahu, pokud se nejedná o první nebo poslední znak skupiny.
 
 Některé běžné vzory regulárních výrazů, které obsahují pozitivní třídy znaků, jsou uvedeny v následující tabulce.  
   
@@ -75,14 +75,14 @@ Některé běžné vzory regulárních výrazů, které obsahují pozitivní tř
 |-------------|-----------------|  
 |`[aeiou]`|Porovná se všemi samohláskami.|  
 |`[\p{P}\d]`|Porovná se všemi interpunkčními znaky a znaky desítkových číslic.|  
-|`[\s\p{P}]`|Porovnává všechny prázdné znaky a interpunkční znaménka.|  
+|`[\s\p{P}]`|Porovná všechny prázdné znaky a interpunkci.|  
   
  V následujícím příkladu je definována skupina pozitivních znaků obsahující znaky „a“ a „e“ tak, že vstupní řetězec musí obsahovat slovo „grey“ nebo „gray“ následované jiným slovem, aby došlo ke shodě.  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/positivecharclasses.cs#1)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/positivecharclasses.vb#1)]  
   
- Regulární výraz `gr[ae]y\s\S+?[\s|\p{P}]` je definován následujícím způsobem:  
+ Regulární `gr[ae]y\s\S+?[\s|\p{P}]` výraz je definován takto:  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -92,12 +92,12 @@ Některé běžné vzory regulárních výrazů, které obsahují pozitivní tř
 |`\S+?`|Porovná s jedním nebo několika neprázdnými znaky, avšak s co nejmenším počtem.|  
 |`[\s\p{P}]`|Porovná s prázdným znakem nebo se znakem interpunkčního znaménka.|  
   
- V následujícím příkladu jsou vyhledána slova začínající kterýmkoli velkým písmenem. Pomocí dílčího výrazu `[A-Z]` představuje rozsah velkých písmen od A do Z.  
+ V následujícím příkladu jsou vyhledána slova začínající kterýmkoli velkým písmenem. Používá dílčí výraz `[A-Z]` k reprezentaci rozsahu velkých písmen od A do Z.  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/range.cs#3)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/range.vb#3)]  
   
- Regulární výraz `\b[A-Z]\w*\b` je definován tak, jak je uvedeno v následující tabulce.  
+ Regulární `\b[A-Z]\w*\b` výraz je definován tak, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -114,20 +114,20 @@ Syntaxe pro určení seznamu jednotlivých znaků je následující:
 
 `[*^character_group*]`
 
- kde *character_group* je seznam jednotlivých znaků, které se nemohou objevit ve vstupním řetězci, aby byla shoda úspěšná. *character_group* se může skládat z jakékoli kombinace jednoho nebo více literálních znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
+ kde *character_group* je seznam jednotlivých znaků, které se nemohou zobrazit ve vstupním řetězci, aby byla shoda úspěšná. *character_group* se může skládat z libovolné kombinace jednoho nebo více literálových znaků, [řídicích znaků](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)nebo tříd znaků.  
   
  Syntaxe pro zadání rozsahu znaků je následující:  
 
 `[^*firstCharacter*-*lastCharacter*]`
 
-kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak, který ukončuje rozsah. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode. *firstCharacter* musí být znak s nižším bodem kódu a *lastCharacter* musí být znak s vyšším bodem kódu.
+where *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak, který končí rozsah. Rozsah znaků je souvislá řada znaků definovaná zadáním prvního znaku v řadě, spojovníku (-) a posledního znaku v řadě. Dva znaky jsou souvislé, pokud mají sousedící kódové body sady Unicode. *firstCharacter* musí být znak s dolníbod kódu a *lastCharacter* musí být znak s vyšším bodem kódu.
 
 > [!NOTE]
-> Vzhledem k tomu, že skupina negativních znaků může zahrnovat množinu znaků a rozsah znaků, znak spojovníku (`-`) je vždy interpretován jako oddělovač rozsahu, pokud se nejedná o první nebo poslední znak skupiny.
+> Vzhledem k tomu, že skupina negativních znaků může obsahovat`-`sadu znaků i rozsah znaků, je znak pomlčky ( ) vždy interpretován jako oddělovač rozsahu, pokud se nejedná o první nebo poslední znak skupiny.
   
- Mohou být spojeny dva nebo více rozsahů znaků. Pokud například chcete zadat rozsah desítkových číslic od "0" až "9", rozsah malých písmen od "a" až "f" a rozsah velkých písmen od "A" až po "F", použijte `[0-9a-fA-F]`.  
+ Mohou být spojeny dva nebo více rozsahů znaků. Chcete-li například zadat rozsah desetinných míst od "0" do "9", rozsah malých písmen od "a" do "f" a rozsah velkých `[0-9a-fA-F]`písmen od "A" do "F", použijte .  
   
- Přední znak stříšky (`^`) ve skupině negativních znaků je povinný a označuje, že skupina znaků je skupina negativních znaků, nikoli skupina pozitivních znaků.  
+ Úvodní znak stříšky (`^`) ve skupině negativních znaků je povinný a označuje, že skupina znaků je skupina negativních znaků namísto skupiny kladných znaků.  
   
 > [!IMPORTANT]
 > Skupina negativních znaků ve větším vzoru regulárního výrazu není kontrolní výraz nulové šířky. To znamená, že po vyhodnocení skupiny negativních znaků modul regulárních výrazů postoupí o jeden znak ve vstupním řetězci.  
@@ -144,7 +144,7 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/negativecharclasses.cs#2)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/negativecharclasses.vb#2)]  
   
- Regulární výraz `\bth[^o]\w+\b` je definován tak, jak je uvedeno v následující tabulce.  
+ Regulární `\bth[^o]\w+\b` výraz je definován tak, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -155,43 +155,43 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |`\b`|Skončí na hranici slova.|  
   
 <a name="AnyCharacter"></a>
-## <a name="any-character-"></a>Libovolný znak:.  
- Znak tečky (.) odpovídá jakémukoli znaku kromě `\n` (znak nového řádku, \u000A), s následujícími dvěma kvalifikacemi:  
+## <a name="any-character-"></a>Libovolný znak: .  
+ Znak tečky (.) odpovídá `\n` libovolnému znaku s výjimkou (znak nového řádku, \u000A) s následujícími dvěma kvalifikacemi:  
   
-- Pokud je vzor regulárního výrazu upraven možností <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType>, nebo pokud část vzoru obsahující `.` znaková třída je upravena možností `s`, `.` odpovídá jakémukoli znaku. Další informace najdete v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+- Pokud je vzor regulárního <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> výrazu změněn volbou nebo pokud `.` je část vzorku, která obsahuje třídu znaků, změněna volbou, `s` `.` odpovídá libovolnému znaku. Další informace naleznete v [tématu Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
-     Následující příklad ilustruje různé chování třídy `.` znaků ve výchozím nastavení a s možností <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType>. Regulární výraz `^.+` začíná na začátku řetězce a odpovídá každému znaku. Ve výchozím nastavení porovnávání končí na konci prvního řádku; vzorek regulárního výrazu se shoduje se znakem návratu na začátek řádku, `\r` nebo \u000D, ale neodpovídá `\n`. Vzhledem k tomu, že možnost <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> interpretuje celý vstupní řetězec jako jediný řádek, odpovídá každému znaku ve vstupním řetězci, včetně `\n`.  
+     Následující příklad ilustruje různé chování `.` třídy znaků ve <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> výchozím nastavení a s možností. Regulární `^.+` výraz začíná na začátku řetězce a odpovídá každému znaku. Ve výchozím nastavení končí shoda na konci prvního řádku. vzor regulárního výrazu `\r` odpovídá znaku návratu řádku nebo \u000D, ale neodpovídá `\n`. Protože <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> možnost interpretuje celý vstupní řetězec jako jeden řádek, odpovídá každému `\n`znaku ve vstupním řetězci, včetně .  
   
      [!code-csharp[Conceptual.Regex.Language.CharacterClasses#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/any2.cs#5)]
      [!code-vb[Conceptual.Regex.Language.CharacterClasses#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any2.vb#5)]  
   
 > [!NOTE]
-> Vzhledem k tomu, že odpovídá jakémukoli znaku kromě `\n`, třída `.` znaků odpovídá také `\r` (znak návratu na začátek řádku, \u000D).  
+> Protože odpovídá libovolnému `\n`znaku `.` s `\r` výjimkou , třída znaků se také shoduje (znak návratu vozíku, \u000D).  
   
-- Ve skupině pozitivních nebo negativních znaků je tečka považována za literální znak tečky a nikoli za třídu znaků. Další informace naleznete v části [Skupina pozitivních znaků](#PositiveGroup) a [Skupina negativních znaků](#NegativeGroup) dříve v tomto tématu. Následující příklad poskytuje ilustraci definováním regulárního výrazu, který obsahuje znak tečky (`.`) jako třídu znaků a jako člen skupiny pozitivních znaků. Regulární výraz `\b.*[.?!;:](\s|\z)` začíná na hranici slova, odpovídá jakémukoli znaku, dokud se nevyskytne jedno z pěti interpunkčních znamének, včetně tečky, a pak odpovídá buď prázdnému znaku, nebo konci řetězce.  
+- Ve skupině pozitivních nebo negativních znaků je tečka považována za literální znak tečky a nikoli za třídu znaků. Další informace naleznete v [tématu Skupina pozitivních znaků](#PositiveGroup) a [Skupina negativních znaků](#NegativeGroup) dříve v tomto tématu. Následující příklad poskytuje ilustraci definováním regulárního`.`výrazu, který obsahuje znak tečky ( ) jako znakovou třídu i jako člen skupiny kladných znaků. Regulární `\b.*[.?!;:](\s|\z)` výraz začíná na hranici slova, odpovídá libovolnému znaku, dokud nenarazí na jeden z pěti interpunkčních znamének, včetně tečky, a pak odpovídá znaku prázdného místa nebo konci řetězce.  
   
      [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/any1.cs#4)]
      [!code-vb[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any1.vb#4)]  
   
 > [!NOTE]
-> Vzhledem k tomu, že odpovídá jakémukoli znaku, prvek jazyka `.` se často používá s opožděným kvantifikátorem, pokud se vzor regulárního výrazu pokusí porovnat libovolný znak několikrát. Další informace najdete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Vzhledem k tomu, `.` že odpovídá libovolnému znaku, prvek jazyka se často používá s opožděným kvantifikátorem, pokud se vzor regulárního výrazu pokusí několikrát porovnat libovolný znak. Další informace naleznete [v tématu Kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
 <a name="CategoryOrBlock"></a>
-## <a name="unicode-category-or-unicode-block-p"></a>Kategorie sady Unicode nebo blok sady Unicode: \p{}  
- Standard Unicode přiřadí každému znaku obecnou kategorii. Konkrétní znak může být například velké písmeno (reprezentované kategorií `Lu`), desítková číslice (kategorie `Nd`), matematický symbol (kategorie `Sm`) nebo oddělovač odstavců (`Zl` kategorie). Určité množiny znaků sady Unicode zabírají také určité oblasti nebo bloky po sobě následujících bodů kódu. Například množina znaků základní Latinky se nalézá od \u0000 až do \u007F, zatímco množina znaků Arabštiny se nalézá od \u0600 až do \u06FF.  
+## <a name="unicode-category-or-unicode-block-p"></a>Kategorie Unicode nebo blok Unicode: \p{}  
+ Standard Unicode přiřadí každému znaku obecnou kategorii. Určitým znakem může být například velké písmeno `Lu` (představované kategorií), desetinná číslice `Nd` (kategorie), `Sm` matematický symbol (kategorie) `Zl` nebo oddělovač odstavců (kategorie). Určité množiny znaků sady Unicode zabírají také určité oblasti nebo bloky po sobě následujících bodů kódu. Například množina znaků základní Latinky se nalézá od \u0000 až do \u007F, zatímco množina znaků Arabštiny se nalézá od \u0600 až do \u06FF.  
   
  Konstrukce regulárního výrazu  
   
- *název* `\p{` `}`  
+ `\p{`*název*`}`  
   
- odpovídá jakémukoli znaku, který patří do obecné kategorie sady Unicode nebo pojmenovaného bloku, kde *Name* je zkratka kategorie nebo název pojmenovaného bloku. Seznam zkratek kategorií najdete v části [podporované obecné kategorie sady Unicode](#SupportedUnicodeGeneralCategories) dále v tomto tématu. Seznam pojmenovaných bloků najdete v části [podporované pojmenované bloky](#SupportedNamedBlocks) dále v tomto tématu.  
+ odpovídá libovolnému znaku, který patří do obecné kategorie Unicode nebo pojmenovaného bloku, kde *název* je zkratka kategorie nebo pojmenovaný název bloku. Seznam zkratek kategorií naleznete v části [Podporované obecné kategorie unicode](#SupportedUnicodeGeneralCategories) dále v tomto tématu. Seznam pojmenovaných bloků naleznete v části [Podporované pojmenované bloky](#SupportedNamedBlocks) dále v tomto tématu.  
   
- Následující příklad používá `\p{`*název*`}` konstrukce pro spárování jak obecné kategorie Unicode (v tomto případě `Pd`, nebo interpunkční znaménka, pomlčka kategorie), tak pojmenovaného bloku (`IsGreek` a `IsBasicLatin` pojmenovaných bloků).  
+ Následující příklad používá `\p{` *name* `}` název konstrukce tak, aby odpovídaly obecné kategorie `Pd`Unicode (v tomto případě , nebo interpunkce, Dash kategorie) a pojmenované bloku `IsGreek` (a `IsBasicLatin` pojmenované bloky).  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/category1.cs#6)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/category1.vb#6)]  
   
- Regulární výraz `\b(\p{IsGreek}+(\s)?)+\p{Pd}\s(\p{IsBasicLatin}+(\s)?)+` je definován tak, jak je uvedeno v následující tabulce.  
+ Regulární `\b(\p{IsGreek}+(\s)?)+\p{Pd}\s(\p{IsBasicLatin}+(\s)?)+` výraz je definován tak, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -206,25 +206,25 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |`(\p{IsBasicLatin}+(\s)?)+`|Porovná vzor jednoho nebo více znaků základní Latinky následovaný žádným nebo jedním prázdným znakem jednou nebo vícekrát.|  
   
 <a name="NegativeCategoryOrBlock"></a>
-## <a name="negative-unicode-category-or-unicode-block-p"></a>Negativní kategorie sady Unicode nebo blok sady Unicode: \p{}  
- Standard Unicode přiřadí každému znaku obecnou kategorii. Konkrétní znak může být například velké písmeno (reprezentované kategorií `Lu`), desítková číslice (kategorie `Nd`), matematický symbol (kategorie `Sm`) nebo oddělovač odstavců (`Zl` kategorie). Určité množiny znaků sady Unicode zabírají také určité oblasti nebo bloky po sobě následujících bodů kódu. Například množina znaků základní Latinky se nalézá od \u0000 až do \u007F, zatímco množina znaků Arabštiny se nalézá od \u0600 až do \u06FF.  
+## <a name="negative-unicode-category-or-unicode-block-p"></a>Negativní kategorie Unicode nebo blok Unicode: \P{}  
+ Standard Unicode přiřadí každému znaku obecnou kategorii. Určitým znakem může být například velké písmeno `Lu` (představované kategorií), desetinná číslice `Nd` (kategorie), `Sm` matematický symbol (kategorie) `Zl` nebo oddělovač odstavců (kategorie). Určité množiny znaků sady Unicode zabírají také určité oblasti nebo bloky po sobě následujících bodů kódu. Například množina znaků základní Latinky se nalézá od \u0000 až do \u007F, zatímco množina znaků Arabštiny se nalézá od \u0600 až do \u06FF.  
   
  Konstrukce regulárního výrazu  
   
- *název* `\P{` `}`  
+ `\P{`*název*`}`  
   
- odpovídá jakémukoli znaku, který nepatří do obecné kategorie sady Unicode nebo pojmenovaného bloku, kde *Name* je zkratka kategorie nebo název pojmenovaného bloku. Seznam zkratek kategorií najdete v části [podporované obecné kategorie sady Unicode](#SupportedUnicodeGeneralCategories) dále v tomto tématu. Seznam pojmenovaných bloků najdete v části [podporované pojmenované bloky](#SupportedNamedBlocks) dále v tomto tématu.  
+ odpovídá libovolnému znaku, který nepatří do obecné kategorie Unicode nebo pojmenovaného bloku, kde *název* je zkratka kategorie nebo pojmenovaný název bloku. Seznam zkratek kategorií naleznete v části [Podporované obecné kategorie unicode](#SupportedUnicodeGeneralCategories) dále v tomto tématu. Seznam pojmenovaných bloků naleznete v části [Podporované pojmenované bloky](#SupportedNamedBlocks) dále v tomto tématu.  
   
- Následující příklad používá `\P{`*název*`}` konstrukce pro odebrání libovolných symbolů měny (v tomto případě `Sc`nebo symbol, kategorie měny) z číselných řetězců.  
+ Následující příklad používá `\P{` *name* `}` název konstrukce k odstranění všech symbolů `Sc`měny (v tomto případě , nebo symbol, měna kategorie) z číselných řetězců.  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/notcategory1.cs#7)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/notcategory1.vb#7)]  
   
- Vzor regulárního výrazu `(\P{Sc})+` porovnává s jedním nebo více znaky, které nejsou symboly měny; efektivně odříznout libovolný symbol měny z výsledného řetězce.  
+ Vzor regulárního výrazu `(\P{Sc})+` odpovídá jednomu nebo více znakům, které nejsou symboly měny; účinně odstraní libovolný symbol měny z výsledného řetězce.  
   
 <a name="WordCharacter"></a>
 ## <a name="word-character-w"></a>Znak slova: \w  
- `\w` odpovídá libovolnému znaku slova. Znak slova je členem každé kategorie sady Unicode uvedených v následující tabulce.  
+ `\w`odpovídá libovolnému znaku slova. Znak slova je členem každé kategorie sady Unicode uvedených v následující tabulce.  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  
@@ -237,14 +237,14 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |Nd|číslo, desítková číslice|  
 |Pc|interpunkce, spojka. Tato kategorie zahrnuje deset znaků, z nichž nejčastěji používaný je LOWLINE znak (_), u+005F.|  
   
- Pokud je určeno chování vyhovující ECMAScript, `\w` je ekvivalentem `[a-zA-Z_0-9]`. Informace o regulárních výrazech ECMAScript naleznete v části "chování při shodě ECMAScript" v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+ Pokud je zadáno chování kompatibilní `\w` s ECMAScript, je ekvivalentní . `[a-zA-Z_0-9]` Informace o regulárních výrazech ECMAScript naleznete v části Chování připorovnávání ecmascriptu v [části Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Vzhledem k tomu, že odpovídá libovolnému znaku slova, je prvek `\w` jazyka často používán s opožděným kvantifikátorem, pokud se vzor regulárního výrazu pokusí porovnat libovolný slovní znak několikrát, následovaný určitým znakem slova. Další informace najdete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Vzhledem k tomu, `\w` že odpovídá libovolnému znaku slova, prvek jazyka se často používá s opožděným kvantifikátorem, pokud se vzor regulárního výrazu pokusí několikrát porovnat libovolný znak slova následovaný určitým znakem slova. Další informace naleznete [v tématu Kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
- Následující příklad používá prvek jazyka `\w`, aby odpovídal duplicitním znakům ve slově. Příklad definuje vzor regulárního výrazu, `(\w)\1`, který lze interpretovat následujícím způsobem.  
+ Následující příklad používá `\w` element jazyka tak, aby odpovídal duplicitním znakům ve slově. Příklad definuje vzor regulárního výrazu , `(\w)\1`který lze interpretovat následujícím způsobem.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |(\w)|Porovnává znak slova. Toto je první zachytávající skupina.|  
 |\1|Porovnává hodnotu prvního zachycení.|  
@@ -253,12 +253,12 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/wordchar1.vb#8)]  
   
 <a name="NonWordCharacter"></a>
-## <a name="non-word-character-w"></a>Znak jiný než Word: \w  
- `\W` odpovídá jakémukoli znaku, který není znakem slova. Prvek jazyka \W je ekvivalentní s následující třídou znaků:  
+## <a name="non-word-character-w"></a>Neslovaný znak: \W  
+ `\W`odpovídá libovolnému neslovnímu znaku. Prvek jazyka \W je ekvivalentní s následující třídou znaků:  
   
 `[^\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`  
   
- Jinými slovy, odpovídá jakémukoli znaku kromě těch v kategoriích Unicode uvedených v následující tabulce.  
+ Jinými slovy odpovídá libovolnému znaku s výjimkou znaků v kategoriích Unicode uvedených v následující tabulce.  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  
@@ -271,14 +271,14 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |Nd|číslo, desítková číslice|  
 |Pc|interpunkce, spojka. Tato kategorie zahrnuje deset znaků, z nichž nejčastěji používaný je LOWLINE znak (_), u+005F.|  
   
- Pokud je určeno chování vyhovující ECMAScript, `\W` je ekvivalentem `[^a-zA-Z_0-9]`. Informace o regulárních výrazech ECMAScript naleznete v části "chování při shodě ECMAScript" v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+ Pokud je zadáno chování kompatibilní `\W` s ECMAScript, je ekvivalentní . `[^a-zA-Z_0-9]` Informace o regulárních výrazech ECMAScript naleznete v části Chování připorovnávání ecmascriptu v [části Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Vzhledem k tomu, že odpovídá jakémukoli neslovnímu znaku, je prvek jazyka `\W` často používán s opožděným kvantifikátorem, pokud se vzor regulárního výrazu pokusí vyhledat libovolný neslovní znak několikrát následovaný určitým znakem mimo slovo. Další informace najdete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Vzhledem k tomu, že `\W` odpovídá libovolnému znaku, který není slovo, je prvek jazyka často používán s opožděným kvantifikátorem, pokud se vzor regulárního výrazu pokusí několikrát porovnat libovolný znak, který není slovo, následovaný určitým neslovním znakem. Další informace naleznete [v tématu Kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
- Následující příklad ukazuje třídu `\W` znaků.  Definuje vzor regulárního výrazu, `\b(\w+)(\W){1,2}`, který se shoduje se slovem následovaným jedním nebo dvěma znaky, jako je prázdné místo nebo interpunkční znaménko. Regulární výraz je interpretován tak, jak je uvedeno v následující tabulce.  
+ Následující příklad ilustruje `\W` třídu znaků.  Definuje vzor regulárního `\b(\w+)(\W){1,2}`výrazu , který odpovídá slovu následovanému jedním nebo dvěma neslovními znaky, například mezerami nebo interpunkcí. Regulární výraz je interpretován tak, jak je uvedeno v následující tabulce.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |\b|Začne porovnání na hranici slova.|  
 |(\w+)|Porovná jeden nebo více znaků slova. Toto je první zachytávající skupina.|  
@@ -287,11 +287,11 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/nonwordchar1.cs#9)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/nonwordchar1.vb#9)]  
   
- Vzhledem k tomu, že objekt <xref:System.Text.RegularExpressions.Group> pro druhou zachytávající skupinu obsahuje pouze jeden zachycený neslovní znak, příklad načte všechny zachycené jiné znaky z objektu <xref:System.Text.RegularExpressions.CaptureCollection>, který je vrácen vlastností <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>.  
+ Vzhledem <xref:System.Text.RegularExpressions.Group> k tomu, že objekt pro druhou zachytávající skupinu obsahuje pouze jeden zachycený <xref:System.Text.RegularExpressions.CaptureCollection> neslovní znak, <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> příklad načte všechny zachycené znaky bez slova z objektu, který je vrácen vlastností.  
   
 <a name="WhitespaceCharacter"></a>
-## <a name="whitespace-character-s"></a>Prázdný znak: \s  
- `\s` odpovídá jakémukoli prázdnému znaku. Je ekvivalentní s uvozovacími sekvencemi a kategoriemi sady Unicode, které jsou uvedeny v následující tabulce.  
+## <a name="whitespace-character-s"></a>Prázdné znaky: \s  
+ `\s`odpovídá libovolnému prázdnému znaku. Je ekvivalentní s uvozovacími sekvencemi a kategoriemi sady Unicode, které jsou uvedeny v následující tabulce.  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  
@@ -303,30 +303,30 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |`\x85`|Znak tři tečky nebo znak NEXT LINE (NEL) (…), \u0085.|  
 |`\p{Z}`|Porovnává s jakýmkoli znakem oddělovače.|  
   
- Pokud je určeno chování vyhovující ECMAScript, `\s` je ekvivalentem `[ \f\n\r\t\v]`. Informace o regulárních výrazech ECMAScript naleznete v části "chování při shodě ECMAScript" v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+ Pokud je zadáno chování kompatibilní `\s` s ECMAScript, je ekvivalentní . `[ \f\n\r\t\v]` Informace o regulárních výrazech ECMAScript naleznete v části Chování připorovnávání ecmascriptu v [části Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
- Následující příklad ukazuje třídu `\s` znaků. Definuje vzor regulárního výrazu, `\b\w+(e)?s(\s|$)`, který odpovídá slovu končícímu na "s" nebo "ES" následovaný prázdným znakem nebo koncem vstupního řetězce. Regulární výraz je interpretován tak, jak je uvedeno v následující tabulce.  
+ Následující příklad ilustruje `\s` třídu znaků. Definuje vzor regulárního `\b\w+(e)?s(\s|$)`výrazu , který odpovídá slovu končícímu buď na "s" nebo "es", následované znakem prázdného místa nebo koncem vstupního řetězce. Regulární výraz je interpretován tak, jak je uvedeno v následující tabulce.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |\b|Začne porovnání na hranici slova.|  
 |\w+|Porovná jeden nebo více znaků slova.|  
-|(e)?|Porovnává s „e“ jednou nebo vůbec.|  
+|e)?|Porovnává s „e“ jednou nebo vůbec.|  
 |s|Porovnává s „s“.|  
-|(\s&#124;$)|Porovnává buď prázdný znak, nebo konec vstupního řetězce.|  
+|(\s&#124;$)|Porovná buď nebělošný znak, nebo konec vstupního řetězce.|  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/whitespace1.cs#10)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/whitespace1.vb#10)]  
   
 <a name="NonWhitespaceCharacter"></a>
-## <a name="non-whitespace-character-s"></a>Znak, který není prázdný,: \s  
- `\S` odpovídá jakémukoli neprázdnému znaku. Je ekvivalentní se vzorem regulárního výrazu `[^\f\n\r\t\v\x85\p{Z}]` nebo opakem vzoru regulárního výrazu, který je ekvivalentní `\s`, který se shoduje s prázdnými znaky. Další informace najdete v tématu [prázdný znak: \s](#WhitespaceCharacter).  
+## <a name="non-whitespace-character-s"></a>Nezamykaný znak: \S  
+ `\S`odpovídá libovolnému neprázdnému znaku. Je ekvivalentní vzoru `[^\f\n\r\t\v\x85\p{Z}]` regulárního výrazu nebo opaku vzoru `\s`regulárního výrazu, který je ekvivalentní písmo , který odpovídá prázdné znaky. Další informace naleznete [v tématu White-Space Character: \s](#WhitespaceCharacter).  
   
- Pokud je určeno chování vyhovující ECMAScript, `\S` je ekvivalentem `[^ \f\n\r\t\v]`. Informace o regulárních výrazech ECMAScript naleznete v části "chování při shodě ECMAScript" v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+ Pokud je zadáno chování kompatibilní `\S` s ECMAScript, je ekvivalentní . `[^ \f\n\r\t\v]` Informace o regulárních výrazech ECMAScript naleznete v části Chování připorovnávání ecmascriptu v [části Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
- Následující příklad ukazuje prvek jazyka `\S`. Vzor regulárního výrazu `\b(\S+)\s?` odpovídá řetězcům, které jsou odděleny prázdnými znaky. Druhý prvek v objektu <xref:System.Text.RegularExpressions.GroupCollection> shody obsahuje porovnávaný řetězec. Vzor regulárního výrazu může být interpretován tak, jak je uvedeno v následující tabulce.  
+ Následující příklad ilustruje `\S` prvek jazyka. Vzor regulárního výrazu `\b(\S+)\s?` odpovídá řetězcům, které jsou odděleny znaky prázdného místa. Druhý prvek v <xref:System.Text.RegularExpressions.GroupCollection> objektu shody obsahuje odpovídající řetězec. Vzor regulárního výrazu může být interpretován tak, jak je uvedeno v následující tabulce.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne porovnání na hranici slova.|  
 |`(\S+)`|Porovnává s jedním nebo více prázdnými znaky. Toto je první zachytávající skupina.|  
@@ -336,14 +336,14 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/nonwhitespace1.vb#11)]  
   
 <a name="DigitCharacter"></a>
-## <a name="decimal-digit-character-d"></a>Znak desítkové číslice: \d  
- `\d` odpovídá jakékoli desítkové číslici. Je ekvivalentní se vzorem regulárního výrazu `\p{Nd}`, který zahrnuje standardní desítkové číslice 0-9 a také desítkové číslice řady dalších znakových sad.  
+## <a name="decimal-digit-character-d"></a>Desetinný znak: \d  
+ `\d`odpovídá jakékoli desetinné číslici. Je ekvivalentní vzoru `\p{Nd}` regulárního výrazu, který obsahuje standardní desetinné číslice 0-9 a desetinné číslice několika dalších znakových sad.  
   
- Pokud je určeno chování vyhovující ECMAScript, `\d` je ekvivalentem `[0-9]`. Informace o regulárních výrazech ECMAScript naleznete v části "chování při shodě ECMAScript" v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+ Pokud je zadáno chování kompatibilní `\d` s ECMAScript, je ekvivalentní . `[0-9]` Informace o regulárních výrazech ECMAScript naleznete v části Chování připorovnávání ecmascriptu v [části Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
- Následující příklad ukazuje prvek jazyka `\d`. Ověřuje, zda vstupní řetězec představuje platné telefonní číslo ve Spojených státech a Kanadě. Vzor regulárního výrazu `^(\(?\d{3}\)?[\s-])?\d{3}-\d{4}$` je definován tak, jak je uvedeno v následující tabulce.  
+ Následující příklad ilustruje `\d` prvek jazyka. Ověřuje, zda vstupní řetězec představuje platné telefonní číslo ve Spojených státech a Kanadě. Vzor regulárního výrazu `^(\(?\d{3}\)?[\s-])?\d{3}-\d{4}$` je definován tak, jak je znázorněno v následující tabulce.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`^`|Zahájí porovnávání na začátku vstupního řetězce.|  
 |`\(?`|Porovnává s jedním nebo žádným literálním znakem "(".|  
@@ -358,27 +358,27 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/digit1.vb#12)]  
   
 <a name="NonDigitCharacter"></a>
-## <a name="non-digit-character-d"></a>Nečíselný znak: \d  
- `\D` odpovídá jakémukoli nenumerickému znaku. Je ekvivalentní se vzorem regulárního výrazu `\P{Nd}`.  
+## <a name="non-digit-character-d"></a>Nečíselný znak: \D  
+ `\D`odpovídá libovolnému nemístnému znaku. Je ekvivalentní vzoru `\P{Nd}` regulárního výrazu.  
   
- Pokud je určeno chování vyhovující ECMAScript, `\D` je ekvivalentem `[^0-9]`. Informace o regulárních výrazech ECMAScript naleznete v části "chování při shodě ECMAScript" v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
+ Pokud je zadáno chování kompatibilní `\D` s ECMAScript, je ekvivalentní . `[^0-9]` Informace o regulárních výrazech ECMAScript naleznete v části Chování připorovnávání ecmascriptu v [části Možnosti regulárního výrazu](../../../docs/standard/base-types/regular-expression-options.md).  
   
- Následující příklad ukazuje prvek jazyka \D. Ověřuje, zda se řetězec jako součást čísla skládá z vhodné kombinace desítkových a nedesítkových znaků. Vzor regulárního výrazu `^\D\d{1,5}\D*$` je definován tak, jak je uvedeno v následující tabulce.  
+ Následující příklad ukazuje prvek jazyka \D. Ověřuje, zda se řetězec jako součást čísla skládá z vhodné kombinace desítkových a nedesítkových znaků. Vzor regulárního výrazu `^\D\d{1,5}\D*$` je definován tak, jak je znázorněno v následující tabulce.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |`^`|Zahájí porovnávání na začátku vstupního řetězce.|  
 |`\D`|Porovná nečíslicový znak.|  
 |`\d{1,5}`|Porovná jednu až pět desítkových číslic.|  
-|`\D*`|Porovná nula, jednu nebo více než desítkových znaků.|  
+|`\D*`|Porovná nula, jeden nebo více nedesetinných znaků.|  
 |`$`|Porovná konec vstupního řetězce.|  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/nondigit1.cs#13)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/nondigit1.vb#13)]  
   
 <a name="SupportedUnicodeGeneralCategories"></a>
-## <a name="supported-unicode-general-categories"></a>Podporované obecné kategorie sady Unicode  
- Sada Unicode definuje obecné kategorie uvedené v následující tabulce. Další informace najdete v tématu "formát souboru UCD" a "Obecné hodnoty kategorií" v [databázi znaků Unicode](https://www.unicode.org/reports/tr44/).  
+## <a name="supported-unicode-general-categories"></a>Podporované obecné kategorie unicode  
+ Sada Unicode definuje obecné kategorie uvedené v následující tabulce. Další informace naleznete v dílčích tématech "Formát souboru UCD" a Obecné hodnoty kategorií v [databázi znaků Unicode](https://www.unicode.org/reports/tr44/).  
   
 |Kategorie|Popis|  
 |--------------|-----------------|  
@@ -387,15 +387,15 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |`Lt`|písmeno, velké počáteční písmeno|  
 |`Lm`|písmeno, modifikátor|  
 |`Lo`|písmeno, jiné|  
-|`L`|Všechny znaky písmena. To zahrnuje `Lu`, `Ll`, `Lt`, `Lm`a `Lo` znaků.|  
+|`L`|Všechny znaky písmena. To zahrnuje `Lu` `Ll`znaky `Lt` `Lm`, `Lo` , , a.|  
 |`Mn`|značka, bez mezer|  
 |`Mc`|značka, kombinování mezer|  
 |`Me`|značka, uzavření|  
-|`M`|Všechny značky diakritických znamének. To zahrnuje kategorie `Mn`, `Mc`a `Me`.|  
+|`M`|Všechny značky diakritických znamének. To zahrnuje `Mn` `Mc`, `Me` a kategorie.|  
 |`Nd`|číslo, desítková číslice|  
 |`Nl`|číslo, písmeno|  
 |`No`|číslo, jiné|  
-|`N`|Všechna čísla. To zahrnuje kategorie `Nd`, `Nl`a `No`.|  
+|`N`|Všechna čísla. To zahrnuje `Nd` `Nl`, `No` a kategorie.|  
 |`Pc`|interpunkce, spojka|  
 |`Pd`|interpunkce, pomlčka|  
 |`Ps`|interpunkce, otevřená|  
@@ -403,24 +403,24 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 |`Pi`|interpunkce, počáteční uvozovka (může se chovat jako Ps nebo Pe v závislosti na použití)|  
 |`Pf`|interpunkce, koncová uvozovka (může se chovat jako Ps nebo Pe v závislosti na použití)|  
 |`Po`|interpunkce, jiné|  
-|`P`|Všechny znaky interpunkce. To zahrnuje kategorie `Pc`, `Pd`, `Ps`, `Pe`, `Pi`, `Pf`a `Po`.|  
+|`P`|Všechny znaky interpunkce. To zahrnuje `Pc` `Pd`kategorie `Ps` `Pe`, `Pi` `Pf`, `Po` , , , a.|  
 |`Sm`|symbol, matematický|  
 |`Sc`|symbol, měna|  
 |`Sk`|symbol, modifikátor|  
 |`So`|symbol, jiný|  
-|`S`|Všechny symboly. To zahrnuje kategorie `Sm`, `Sc`, `Sk`a `So`.|  
+|`S`|Všechny symboly. To zahrnuje `Sm` `Sc`, `Sk`, `So` , a kategorie.|  
 |`Zs`|oddělovač, mezera|  
 |`Zl`|oddělovač, řádek|  
 |`Zp`|oddělovač, odstavec|  
-|`Z`|Všechny znaky oddělovačů. To zahrnuje kategorie `Zs`, `Zl`a `Zp`.|  
+|`Z`|Všechny znaky oddělovačů. To zahrnuje `Zs` `Zl`, `Zp` a kategorie.|  
 |`Cc`|jiný, ovládací prvek|  
 |`Cf`|jiný, formát|  
 |`Cs`|jiný, náhradník|  
 |`Co`|jiný, soukromé použití|  
 |`Cn`|jiný, nepřiřazené (žádné znaky nemají tuto vlastnost)|  
-|`C`|Všechny znaky ovládacích prvků. To zahrnuje kategorie `Cc`, `Cf`, `Cs`, `Co`a `Cn`.|  
+|`C`|Všechny znaky ovládacích prvků. To zahrnuje `Cc` `Cf`kategorie `Cs` `Co`, `Cn` , , a.|  
   
- Můžete určit kategorii sady Unicode jakéhokoliv konkrétního znaku předáním tohoto znaku metodě <xref:System.Char.GetUnicodeCategory%2A>. Následující příklad používá metodu <xref:System.Char.GetUnicodeCategory%2A> k určení kategorie každého prvku v poli, které obsahuje vybrané znaky latinky.  
+ Můžete určit kategorii Unicode libovolného konkrétního znaku <xref:System.Char.GetUnicodeCategory%2A> předáním tohoto znaku metodě. Následující příklad používá <xref:System.Char.GetUnicodeCategory%2A> metodu k určení kategorie každého prvku v poli, které obsahuje vybrané znaky latinky.  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/getunicodecategory1.cs#14)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/getunicodecategory1.vb#14)]  
@@ -428,7 +428,7 @@ kde *firstCharacter* je znak, který začíná rozsah a *lastCharacter* je znak,
 <a name="SupportedNamedBlocks"></a>
 ## <a name="supported-named-blocks"></a>Podporované pojmenované bloky
 
-Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. Množina podporovaných pojmenovaných bloků je založena na sadě Unicode 4.0 a Perl 5.6. Regulární výraz, který používá pojmenované bloky, naleznete v části [Kategorie sady Unicode nebo blok sady Unicode: \\p{}](#unicode-category-or-unicode-block-p) .  
+Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. Množina podporovaných pojmenovaných bloků je založena na sadě Unicode 4.0 a Perl 5.6. Regulární výraz, který používá pojmenované bloky, naleznete v [části Unicode kategorie nebo unicode \\bloku: p.{} ](#unicode-category-or-unicode-block-p)  
   
 |Rozsah bodu kódu|Název bloku|  
 |----------------------|----------------|  
@@ -539,26 +539,26 @@ Rozhraní .NET poskytuje pojmenované bloky uvedené v následující tabulce. M
 |FFF0 - FFFF|`IsSpecials`|  
   
 <a name="CharacterClassSubtraction"></a>
-## <a name="character-class-subtraction-base_group---excluded_group"></a>Odčítání tříd znaků: [base_group-[excluded_group]]  
+## <a name="character-class-subtraction-base_group---excluded_group"></a>Odčítání třídy znaků: [base_group - [excluded_group]]  
  Třída znaků definuje množinu znaků. Odčítání třídy znaků získává množinu znaků, která je výsledkem vyloučení znaků jedné třídy znaků, které jsou obsaženy v jiné třídě znaků.  
   
  Výraz odčítání třídy znaků má následující tvar:  
   
- `[` *base_group* `-[` *excluded_group* `]]`  
+ `[`*base_group* `-[` *excluded_group*`]]`  
   
- Hranaté závorky (`[]`) a spojovníky (`-`) jsou povinné. *Base_group* je [Skupina pozitivních znaků](#PositiveGroup) nebo [Skupina negativních znaků](#NegativeGroup). Komponenta *excluded_group* je další pozitivní nebo negativní skupina znaků nebo jiný výraz odčítání třídy znaků (to znamená, že je možné vnořit výrazy odčítání třídy znaků).  
+ Čtvercové závorky (`[]``-`) a pomlčka ( ) jsou povinné. *base_group* je [skupina kladných znaků](#PositiveGroup) nebo [skupina negativních znaků](#NegativeGroup). Komponenta *excluded_group* je jiná kladná nebo záporná skupina znaků nebo jiný výraz odčítání třídy znaků (to znamená, že můžete vnořit výrazy odčítání třídy znaků).  
   
- Předpokládejme například, že máte základní skupinu, která se skládá z rozsahu znaků od „a“ až do „z“. Chcete-li definovat množinu znaků, která se skládá ze základní skupiny s výjimkou znaku "m", použijte `[a-z-[m]]`. Chcete-li definovat množinu znaků, která se skládá ze základní skupiny s výjimkou sady znaků "d", "j" a "p", použijte `[a-z-[djp]]`. Chcete-li definovat množinu znaků, která se skládá ze základní skupiny s výjimkou rozsahu znaků od "m" do "p", použijte `[a-z-[m-p]]`.  
+ Předpokládejme například, že máte základní skupinu, která se skládá z rozsahu znaků od „a“ až do „z“. Chcete-li definovat sadu znaků, která se skládá ze základní skupiny s výjimkou znaku "m", použijte `[a-z-[m]]`. Chcete-li definovat sadu znaků, která se skládá ze základní skupiny s výjimkou sady znaků "d", "j" a "p", použijte `[a-z-[djp]]`. Chcete-li definovat sadu znaků, která se skládá ze základní skupiny s výjimkou `[a-z-[m-p]]`rozsahu znaků od "m" do "p", použijte .  
   
- Zvažte výraz odčítání třídy vnořeného znaku `[a-z-[d-w-[m-o]]]`. Výraz je vyhodnocen od nejvnitřnějšího rozsahu znaků ven. Nejdříve se rozsah znaků od „m“ do „o“ odečte od rozsahu znaků „d“ až „w“, který dává množinu znaků od „d“ až „l“ a „p“ až „w“. Tato sada se pak odečte od rozsahu znaků od "a" do "z", což má za důsledek množinu znaků `[abcmnoxyz]`.  
+ Zvažte vnořený výraz `[a-z-[d-w-[m-o]]]`odčítání třídy znaků . Výraz je vyhodnocen od nejvnitřnějšího rozsahu znaků ven. Nejdříve se rozsah znaků od „m“ do „o“ odečte od rozsahu znaků „d“ až „w“, který dává množinu znaků od „d“ až „l“ a „p“ až „w“. Tato sada je pak odečtena od rozsahu znaků od "a" do "z", což dává sadu znaků `[abcmnoxyz]`.  
   
- Při odčítání třídy znaků můžete použít libovolnou třídu znaků. Chcete-li definovat sadu znaků, které se skládají ze všech znaků Unicode z \u0000 až \uFFFF, kromě prázdných znaků (`\s`), znaky v kategorii interpunkce (`\p{P}`), znaky v `IsGreek` pojmenovaném bloku (`\p{IsGreek}`) a znak ovládacího prvku dalšího řádku (\x85) Unicode, použijte `[\u0000-\uFFFF-[\s\p{P}\p{IsGreek}\x85]]`.  
+ Při odčítání třídy znaků můžete použít libovolnou třídu znaků. Chcete-li definovat sadu znaků, která se skládá ze všech znaků Unicode od \u0000 až\uFFFF s výjimkou nemezerových znaků`\s`( ), znaků v obecné kategorii interpunkce (`\p{P}`), znaků v `IsGreek` pojmenovaném bloku (`\p{IsGreek}`) a řídicího znaku Unicode NEXT LINE (\x85) použijte `[\u0000-\uFFFF-[\s\p{P}\p{IsGreek}\x85]]`.  
   
- Zvolte třídy znaků pro výraz odčítání třídy znaků, které budou poskytovat užitečné výsledky. Vyhněte se výrazu, jehož výsledkem jsou prázdné množiny znaků, které nemohou odpovídat ničemu, nebo výrazu, který odpovídá původní základní skupině. Například prázdná sada je výsledkem výrazu `[\p{IsBasicLatin}-[\x00-\x7F]]`, který odečte všechny znaky v rozsahu `IsBasicLatin` znaků v kategorii `IsBasicLatin` Obecné. Podobně je původní základní skupina výsledkem `[a-z-[0-9]]`výrazu.  Důvodem je skutečnost, že základní skupina, která je rozsahem znaků písmen od „a“ až do „z“, neobsahuje žádné znaky ve vyloučené skupině, která je rozsahem znaků desítkových číslic od „0“ až po „9“.  
+ Zvolte třídy znaků pro výraz odčítání třídy znaků, které budou poskytovat užitečné výsledky. Vyhněte se výrazu, jehož výsledkem jsou prázdné množiny znaků, které nemohou odpovídat ničemu, nebo výrazu, který odpovídá původní základní skupině. Například prázdná sada je výsledkem `[\p{IsBasicLatin}-[\x00-\x7F]]`výrazu , který odečte všechny znaky v rozsahu `IsBasicLatin` znaků od `IsBasicLatin` obecné kategorie. Podobně původní základní skupina je výsledkem `[a-z-[0-9]]`výrazu .  Důvodem je skutečnost, že základní skupina, která je rozsahem znaků písmen od „a“ až do „z“, neobsahuje žádné znaky ve vyloučené skupině, která je rozsahem znaků desítkových číslic od „0“ až po „9“.  
   
- Následující příklad definuje regulární výraz `^[0-9-[2468]]+$`, který odpovídá nule a lichým číslicím ve vstupním řetězci.  Regulární výraz je interpretován tak, jak je uvedeno v následující tabulce.  
+ Následující příklad definuje regulární `^[0-9-[2468]]+$`výraz , který odpovídá nule a lichým číslicím ve vstupním řetězci.  Regulární výraz je interpretován tak, jak je uvedeno v následující tabulce.  
   
-|Prvek|Popis|  
+|Element|Popis|  
 |-------------|-----------------|  
 |^|Začne porovnávání na začátku vstupního řetězce.|  
 |`[0-9-[2468]]+`|Porovnává jeden nebo více výskytů libovolného znaku od 0 do 9 s výjimkou 2, 4, 6 a 8. Jinými slovy, porovnává jeden nebo více výskytů nuly nebo liché číslice.|  

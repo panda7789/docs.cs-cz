@@ -1,5 +1,5 @@
 ---
-title: Continue – příkaz C# – reference
+title: continue prohlášení - C# Reference
 ms.date: 07/20/2015
 f1_keywords:
 - continue_CSharpKeyword
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
 ms.openlocfilehash: 83b43b31eacf0ed835ee3d7a919538eb9f1dd1e8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713663"
 ---
 # <a name="continue-c-reference"></a>continue (Referenční dokumentace jazyka C#)
 
-Příkaz `continue` předá řízení další iteraci ohraničujícího příkazu [while](./while.md) [, do,](./do.md) [pro](./for.md)nebo [foreach](./foreach-in.md) , ve kterém se zobrazí.
+Příkaz `continue` předá řízení další iteraci ohraničující [while](./while.md), [do](./do.md), [for](./for.md)nebo [foreach](./foreach-in.md) příkaz, ve kterém se zobrazí.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu je čítač inicializován pro počítání od 1 do 10. Pomocí příkazu `continue` ve spojení s `(i < 9)`výrazů se příkazy mezi `continue` a koncem `for`ho textu přeskočí.
+V tomto příkladu je inicializovánčí čítač počítat od 1 do 10. Pomocí `continue` příkazu ve spojení `(i < 9)`s výrazem `continue` jsou příkazy `for` mezi a koncem těla přeskočeny.
 
 [!code-csharp[csrefKeywordsJump#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#3)]
 
@@ -28,9 +28,9 @@ V tomto příkladu je čítač inicializován pro počítání od 1 do 10. Pomoc
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](./index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](./index.md)
 - [break – příkaz](/cpp/cpp/break-statement-cpp)

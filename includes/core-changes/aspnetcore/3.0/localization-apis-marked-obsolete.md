@@ -1,40 +1,40 @@
 ---
 ms.openlocfilehash: 8cb0aca991f5adfe4561ef56090cb9f7b2e56283
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901940"
 ---
 ### <a name="localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete"></a>Lokalizace: ResourceManagerWithCultureStringLocalizer a WithCulture označené jako zastaralé
 
-Člen třídy [ResourceManagerWithCultureStringLocalizer](https://github.com/aspnet/Localization/blob/43b974482c7b703c92085c6f68b3b23d8fe32720/src/Microsoft.Extensions.Localization/ResourceManagerWithCultureStringLocalizer.cs#L18) a rozhraní [WithCulture](https://github.com/aspnet/Localization/blob/master/src/Microsoft.Extensions.Localization/ResourceManagerStringLocalizer.cs#L154-L170) jsou často zdrojem nejasností pro uživatele lokalizace, zejména při vytváření vlastní `IStringLocalizer` implementace. Tyto položky přidávají uživateli dojem, že instance `IStringLocalizer` je "pro jednotlivé jazyky" podle prostředků ". Ve skutečnosti by měly být instance pouze "za prostředek". Hledaný jazyk je určen `CultureInfo.CurrentUICulture` v době spuštění. Aby se vyloučil zdroj nejasností, rozhraní API byla v ASP.NET Core 3,0 Preview 3 označená jako zastaralá. Rozhraní API se v budoucí verzi odeberou.
+[ResourceManagerWithCultureStringLocalizer](https://github.com/aspnet/Localization/blob/43b974482c7b703c92085c6f68b3b23d8fe32720/src/Microsoft.Extensions.Localization/ResourceManagerWithCultureStringLocalizer.cs#L18) třídy a [WithCulture](https://github.com/aspnet/Localization/blob/master/src/Microsoft.Extensions.Localization/ResourceManagerStringLocalizer.cs#L154-L170) člen rozhraní jsou často zdrojem nejasností `IStringLocalizer` pro uživatele lokalizace, zejména při vytváření vlastní implementace. Tyto položky dávají uživateli `IStringLocalizer` dojem, že instance je "podle jazyka, podle prostředku". Ve skutečnosti by instance měly být pouze "na prostředek". Vyhledávaný jazyk je `CultureInfo.CurrentUICulture` určen časem spuštění. Chcete-li odstranit zdroj nejasností, byla v ASP.NET core 3.0 Preview 3 označena jako zastaralá. Api budou odebrány v budoucí verzi.
 
-Pro kontext viz [dotnet/aspnetcore # 3324](https://github.com/dotnet/aspnetcore/issues/3324). Diskuzi najdete v tématu [dotnet/aspnetcore # 7756](https://github.com/dotnet/aspnetcore/issues/7756).
+Kontext naleznete [v tématu dotnet/aspnetcore#3324](https://github.com/dotnet/aspnetcore/issues/3324). Diskuse naleznete [v tématu dotnet/aspnetcore#7756](https://github.com/dotnet/aspnetcore/issues/7756).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Metody nebyly označeny jako `Obsolete`.
+Metody nebyly označeny `Obsolete`jako .
 
 #### <a name="new-behavior"></a>Nové chování
 
-Metody jsou označeny `Obsolete`.
+Metody jsou `Obsolete`označeny .
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Rozhraní API představovaly případ použití, který se nedoporučuje. Při návrhu lokalizace došlo k nejasnostem.
+Api představovalpřípad použití, který není doporučeno. Tam byl zmatek o návrhu lokalizace.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Doporučujeme místo toho použít `ResourceManagerStringLocalizer`. Nechte tuto jazykovou verzi nastavit pomocí `CurrentCulture`. Pokud to není možnost, vytvořte a použijte kopii [ResourceManagerWithCultureStringLocalizer](https://github.com/aspnet/Localization/blob/43b974482c7b703c92085c6f68b3b23d8fe32720/src/Microsoft.Extensions.Localization/ResourceManagerWithCultureStringLocalizer.cs#L18).
+Doporučení je použít `ResourceManagerStringLocalizer` místo. Nechť je jazyková verze nastavena souborem `CurrentCulture`. Pokud to není možnost, vytvořte a použijte kopii [ResourceManagerWithCultureStringLocalizer](https://github.com/aspnet/Localization/blob/43b974482c7b703c92085c6f68b3b23d8fe32720/src/Microsoft.Extensions.Localization/ResourceManagerWithCultureStringLocalizer.cs#L18).
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

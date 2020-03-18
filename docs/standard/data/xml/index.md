@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
 ms.openlocfilehash: e0c3f3e99b06b65caf79d87a7831369f6fb33b08
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75710788"
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 
-.NET Framework poskytuje komplexní a integrovanou sadu tříd, které vám umožní snadno vytvářet aplikace podporující XML. Třídy v následujících oborech názvů podporují analýzu a zápis XML, úpravu dat XML v paměti, ověřování dat a transformaci XSLT.
+Rozhraní .NET Framework poskytuje komplexní a integrovanou sadu tříd, které umožňují snadné vytváření aplikací podporujících jazyk XML. Třídy v následujících oborech názvů podporují analýzu a zápis XML, úpravy dat XML v paměti, ověření dat a transformaci XSLT.
 
 - <xref:System.Xml>
 
@@ -24,63 +24,63 @@ ms.locfileid: "75710788"
 
 - <xref:System.Xml.Linq>
 
-Úplný seznam najdete v tématu "System. XML" v [prohlížeči rozhraní .NET API](https://docs.microsoft.com/dotnet/api/?term=system.xml).
+Úplný seznam vyhledejte v [prohlížeči rozhraní .NET API](https://docs.microsoft.com/dotnet/api/?term=system.xml)v režimu "System.Xml" .
 
-Třídy v těchto oborech názvů podporují doporučení konsorcium World Wide Web (W3C). Příklad:
+Třídy v těchto oborech názvů podporují doporučení konsorcia W3C (World Wide Web Consortium). Například:
 
-- Třída <xref:System.Xml.XmlDocument?displayProperty=nameWithType> implementuje základní doporučení úrovně 1 základní a [DOM úrovně 2](https://www.w3.org/TR/DOM-Level-2-Core/) pro [W3C model DOM (Document Object Model) (DOM)](https://www.w3.org/TR/REC-DOM-Level-1/) .
+- Třída <xref:System.Xml.XmlDocument?displayProperty=nameWithType> implementuje [W3C Document Object Model (DOM) Úroveň 1 Core](https://www.w3.org/TR/REC-DOM-Level-1/) a [DOM Úroveň 2 Core](https://www.w3.org/TR/DOM-Level-2-Core/) doporučení.
 
-- Třídy <xref:System.Xml.XmlReader?displayProperty=nameWithType> a <xref:System.Xml.XmlWriter?displayProperty=nameWithType> podporují [W3C XML 1,0](https://www.w3.org/TR/2006/REC-xml-20060816/) a [obory názvů v](https://www.w3.org/TR/REC-xml-names/) doporučeních XML.
+- <xref:System.Xml.XmlReader?displayProperty=nameWithType> Třídy <xref:System.Xml.XmlWriter?displayProperty=nameWithType> a podporují [W3C XML 1.0](https://www.w3.org/TR/2006/REC-xml-20060816/) a [Namespaces v doporučeních XML.](https://www.w3.org/TR/REC-xml-names/)
 
-- Schémata ve třídě <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> podporují rozhraní [W3C XML schématu část 1: struktury](https://www.w3.org/TR/xmlschema-1/) a [schéma XML – část 2: doporučení pro DataTypes](https://www.w3.org/TR/xmlschema-2/) .
+- Schémata ve <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> třídě podporují [W3C XML schéma část 1: Struktury](https://www.w3.org/TR/xmlschema-1/) a schéma XML Část [2: Datatypes](https://www.w3.org/TR/xmlschema-2/) doporučení.
 
-- Třídy v oboru názvů <xref:System.Xml.Xsl?displayProperty=nameWithType> podporují transformace XSLT, které odpovídají doporučením [W3C XSLT 1,0](https://www.w3.org/TR/xslt) .
+- Třídy <xref:System.Xml.Xsl?displayProperty=nameWithType> v oboru názvů podporují transformace XSLT, které odpovídají doporučení [W3C XSLT 1.0.](https://www.w3.org/TR/xslt)
 
-Třídy XML v .NET Framework poskytují tyto výhody:
+Třídy XML v rozhraní .NET Framework poskytují tyto výhody:
 
-- **Produktivitu.** [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) usnadňují program s XML a poskytuje dotazové prostředí podobné SQL.
+- **Produktivity.** [LINQ na XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ do XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) usnadňuje programování pomocí jazyka XML a poskytuje prostředí dotazu, které je podobné SQL.
 
-- **Možností.** Třídy XML v .NET Framework jsou rozšiřitelné prostřednictvím použití abstraktních základních tříd a virtuálních metod. Můžete například vytvořit odvozenou třídu třídy <xref:System.Xml.XmlUrlResolver>, která ukládá datový proud mezipaměti na místní disk.
+- **Rozšiřitelnost.** Třídy XML v rozhraní .NET Framework jsou rozšiřitelné pomocí abstraktních základních tříd a virtuálních metod. Můžete například vytvořit odvozenou třídu <xref:System.Xml.XmlUrlResolver> třídy, která ukládá datový proud mezipaměti na místní disk.
 
-- **Připojitelné architektury.** .NET Framework poskytuje architekturu, ve které komponenty mohou být vzájemně využívány, a data lze streamovat mezi komponentami. Například úložiště dat, například objekt <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument>, lze transformovat pomocí třídy <xref:System.Xml.Xsl.XslCompiledTransform> a výstup lze následně streamovat buď do jiného úložiště, nebo vráceného jako datový proud z webové služby.
+- **Připojitelná architektura.** Rozhraní .NET Framework poskytuje architekturu, ve které součásti mohou využívat navzájem a data mohou být datového proudu mezi součástmi. Například úložiště dat, jako <xref:System.Xml.XPath.XPathDocument> je <xref:System.Xml.XmlDocument> například nebo objekt, <xref:System.Xml.Xsl.XslCompiledTransform> lze transformovat s třídou a výstup pak může být datový proud buď do jiného úložiště nebo vráceny jako datový proud z webové služby.
 
-- **Výkon.** Pro lepší výkon aplikace některé třídy XML v .NET Framework podporují model založený na streamování s následujícími charakteristikami:
+- **Výkon.** Pro lepší výkon aplikace podporují některé třídy XML v rozhraní .NET Framework model založený na streamování s následujícími charakteristikami:
 
-  - Minimální ukládání do mezipaměti pouze pro analýzu modelu vyžádání obsahu (<xref:System.Xml.XmlReader>).
+  - Minimální ukládání do mezipaměti pro analýzu modelu<xref:System.Xml.XmlReader>tahu pouze dopředu ( ).
 
-  - Ověřování pouze s dopředné (<xref:System.Xml.XmlReader>).
+  - Ověření pouze dopředu<xref:System.Xml.XmlReader>( ).
 
-  - Navigace ve stylu kurzoru, která minimalizuje vytváření uzlů na jeden virtuální uzel při poskytování náhodného přístupu k dokumentu (<xref:System.Xml.XPath.XPathNavigator>).
+  - Navigace ve stylu kurzoru, která minimalizuje vytváření uzlů do jednoho<xref:System.Xml.XPath.XPathNavigator>virtuálního uzlu a zároveň poskytuje náhodný přístup k dokumentu ( ).
 
-  Pro lepší výkon vždy, když je vyžadováno zpracování XSLT, můžete použít třídu <xref:System.Xml.XPath.XPathDocument>, což je optimalizované úložiště jen pro čtení pro dotazy XPath navržené pro efektivní práci s třídou <xref:System.Xml.Xsl.XslCompiledTransform>.
+  Pro lepší výkon vždy, když je vyžadováno <xref:System.Xml.XPath.XPathDocument> zpracování XSLT, můžete použít třídu, která je optimalizované úložiště <xref:System.Xml.Xsl.XslCompiledTransform> jen pro čtení pro dotazy XPath určené pro efektivní práci s třídou.
 
-- **Integrace s ADO.NET.** Třídy XML a [ADO.NET](../../../../docs/framework/data/adonet/index.md) jsou pevně integrované pro spojování relačních dat a XML. Třída <xref:System.Data.DataSet> je mezipaměť dat načtená z databáze z paměti. Třída <xref:System.Data.DataSet> má možnost číst a zapisovat XML pomocí tříd <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>, aby zachovala svou interní relační strukturu schématu jako schémata XML (XSD), a k odvození struktury schématu dokumentu XML.
+- **Integrace s ADO.NET.** Třídy XML a [ADO.NET](../../../../docs/framework/data/adonet/index.md) jsou úzce integrovány tak, aby spojily relační data a XML. Třída <xref:System.Data.DataSet> je mezipaměť dat načtených z databáze v paměti. Třída <xref:System.Data.DataSet> má schopnost číst a zapisovat XML pomocí tříd <xref:System.Xml.XmlReader> y a, <xref:System.Xml.XmlWriter> zachovat vnitřní strukturu relačního schématu jako schémata XML (XSD) a odvodit strukturu schématu dokumentu XML.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Možnosti zpracování XML](../../../../docs/standard/data/xml/xml-processing-options.md) Popisuje možnosti zpracování dat XML.
+[Možnosti zpracování XML](../../../../docs/standard/data/xml/xml-processing-options.md) Popisuje možnosti pro zpracování dat XML.
 
-[Zpracování dat XML v paměti](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md) Popisuje tři modely pro zpracování dat XML v paměti: [LINQ to XMLC#()](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md), třídu <xref:System.Xml.XmlDocument> (na základě model DOM (Document Object Model) W3C) a třídu <xref:System.Xml.XPath.XPathDocument> (na základě datového modelu XPath).
+[Zpracování dat XML v paměti](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md) Popisuje tři modely pro zpracování dat XML v paměti: [LINQ na XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) a <xref:System.Xml.XmlDocument> [LINQ na XML (Visual Basic),](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) <xref:System.Xml.XPath.XPathDocument> třída (na základě w3c document object model) a třída (na základě datového modelu XPath).
 
 [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)\
-Popisuje, jak používat procesor XSLT.
+Popisuje způsob použití procesoru XSLT.
 
-[Model objektu XML schématu (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)\
-Popisuje třídy používané pro sestavování a manipulaci se schématy XML (XSD) poskytnutím <xref:System.Xml.Schema.XmlSchema> třídy pro načtení a úpravu schématu.
+[Objektový model schématu XML (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)\
+Popisuje třídy používané pro vytváření a manipulaci se schématy XML <xref:System.Xml.Schema.XmlSchema> (XSD) tím, že poskytuje třídu pro načtení a úpravu schématu.
 
 [Integrace XML s relačními daty a ADO.NET](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)\
-Popisuje, jak .NET Framework umožňuje synchronní přístup v reálném čase do relačních i hierarchických reprezentace dat prostřednictvím objektu <xref:System.Data.DataSet> a objektu <xref:System.Xml.XmlDataDocument>.
+Popisuje, jak rozhraní .NET Framework umožňuje synchronní přístup k relačním i hierarchickým reprezentacím dat prostřednictvím objektu <xref:System.Data.DataSet> a objektu v <xref:System.Xml.XmlDataDocument> reálném čase.
 
 [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)\
-Popisuje, jak se třída <xref:System.Xml.XmlNamespaceManager> používá k ukládání a údržbě informací o oboru názvů.
+Popisuje, jak <xref:System.Xml.XmlNamespaceManager> se třída používá k ukládání a údržbě informací o oboru názvů.
 
-[Podpora typů v třídách System. Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)\
-Popisuje, jak jsou datové typy XML mapovány na typy CLR, jak převést datové typy XML a jiné funkce podpory typu v <xref:System.Xml> třídy.
+[Podpora typů ve třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)\
+Popisuje, jak se datové typy XML mapují na typy CLR, jak <xref:System.Xml> převést datové typy XML a další funkce podpory typů ve třídách.
 
 ## <a name="related-sections"></a>Související oddíly
 
 [ADO.NET](../../../../docs/framework/data/adonet/index.md)\
-Poskytuje informace o tom, jak přistupovat k datům pomocí ADO.NET.
+Obsahuje informace o tom, jak získat přístup k datům pomocí ADO.NET.
 
 [Zabezpečení](../../../../docs/standard/security/index.md)\
-V této části najdete přehled systému .NET Framework Security.
+Obsahuje přehled systému zabezpečení rozhraní .NET Framework.

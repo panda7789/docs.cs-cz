@@ -6,16 +6,16 @@ helpviewer_keywords:
 - PLINQ, overview
 ms.assetid: 3d4d0cd3-bde4-490b-99e7-f4e41be96455
 ms.openlocfilehash: 1ea880c6403a5fc8b26ba67fe21dfce79c4683db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73140033"
 ---
 # <a name="parallel-linq-plinq"></a>Paralelní LINQ (PLINQ)
-Paralelní LINQ (PLINQ) je paralelní implementace LINQ to Objects. PLINQ implementuje úplnou sadu standardních operátorů dotazů LINQ jako metody rozšíření pro obor názvů <xref:System.Linq> a má další operátory pro paralelní operace. PLINQ kombinuje jednoduchost a čitelnost syntaxe LINQ s výkonem paralelního programování. Stejně jako kód, který cílí na Task Parallel Library, PLINQ dotazy škálují v míře souběžnosti na základě schopností hostitelského počítače.  
+Paralelní LINQ (PLINQ) je paralelní implementace LINQ na objekty. PLINQ implementuje úplnou sadu linq standardní operátory dotazů jako metody rozšíření pro obor <xref:System.Linq> názvů a má další operátory pro paralelní operace. PLINQ kombinuje jednoduchost a čitelnost syntaxe LINQ s výkonem paralelního programování. Stejně jako kód, který cílí na paralelní knihovnu úloh, se dotazy PLINQ škálují v stupni souběžnosti na základě možností hostitelského počítače.  
   
- V mnoha scénářích může PLINQ významně zvýšit rychlost LINQ to Objects dotazů pomocí všech dostupných jader na hostitelském počítači efektivněji. Tento zvýšený výkon přináší vysoce výkonný výpočetní výkon na plochu.  
+ V mnoha scénářích může PLINQ výrazně zvýšit rychlost dotazů LINQ na objekty efektivnějším použitím všech dostupných jader v hostitelském počítači. Tento zvýšený výkon přináší na plochu vysoký výpočetní výkon.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Úvod do PLINQ](../../../docs/standard/parallel-programming/introduction-to-plinq.md)  
@@ -28,9 +28,9 @@ Paralelní LINQ (PLINQ) je paralelní implementace LINQ to Objects. PLINQ implem
   
  [Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-create-and-execute-a-simple-plinq-query.md)  
   
- [Postupy: Řazení ovládacích prvků v dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md)  
+ [Postupy: Řazení ovládacích prvků v PLINQ dotazu](../../../docs/standard/parallel-programming/how-to-control-ordering-in-a-plinq-query.md)  
   
- [Postupy: Kombinování paralelních a sekvenčních dotazů LINQ](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)  
+ [Postupy: Kombinování paralelních a sekvenčních LINQ dotazů](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)  
   
  [Postupy: Zpracování výjimek v dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)  
   
@@ -48,9 +48,9 @@ Paralelní LINQ (PLINQ) je paralelní implementace LINQ to Objects. PLINQ implem
   
  [Ukázková data pro PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.ParallelEnumerable>
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
-- [LINQ (Language-Integrated Query) –C#](../../csharp/programming-guide/concepts/linq/index.md)  
-- [LINQ (Language-Integrated Query) – Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md)  
+- [Dotaz integrovaný jazykem (LINQ) – C #](../../csharp/programming-guide/concepts/linq/index.md)  
+- [Dotaz integrovaný jazykem (LINQ) – visual basic](../../visual-basic/programming-guide/concepts/linq/index.md)  
