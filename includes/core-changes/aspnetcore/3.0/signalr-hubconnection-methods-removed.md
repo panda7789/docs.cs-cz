@@ -1,38 +1,38 @@
 ---
 ms.openlocfilehash: de06825f1031d05bc83183a83bae165e2f9512ff
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901919"
 ---
-### <a name="signalr-hubconnection-resetsendping-and-resettimeout-methods-removed"></a>Signál: odebraly se HubConnection ResetSendPing a metody ResetTimeout.
+### <a name="signalr-hubconnection-resetsendping-and-resettimeout-methods-removed"></a>SignalR: Metody ResetSendPing a ResetTimeout připojení hubu byly odebrány
 
-Metody `ResetSendPing` a `ResetTimeout` se odebraly z rozhraní API pro signalizaci `HubConnection`. Tyto metody byly původně určeny pouze pro interní použití, ale byly zveřejněny v ASP.NET Core 2,2. Tyto metody nebudou dostupné od verze ASP.NET Core 3,0 Preview 4. Diskuzi najdete v tématu [dotnet/aspnetcore # 8543](https://github.com/dotnet/aspnetcore/issues/8543).
+Metody `ResetSendPing` `ResetTimeout` a byly odebrány `HubConnection` z rozhraní API signalr. Tyto metody byly původně určeny pouze pro vnitřní použití, ale byly zveřejněny v ASP.NET core 2.2. Tyto metody nebudou k dispozici počínaje ASP.NET verze Core 3.0 Preview 4. Diskuse naleznete [v tématu dotnet/aspnetcore#8543](https://github.com/dotnet/aspnetcore/issues/8543).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Rozhraní API jsou k dispozici.
+K dispozici byla rozhraní API.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Rozhraní API se odeberou.
+Api jsou odebrány.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Tyto metody byly původně určeny pouze pro interní použití, ale byly zveřejněny v ASP.NET Core 2,2.
+Tyto metody byly původně určeny pouze pro vnitřní použití, ale byly zveřejněny v ASP.NET core 2.2.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Tyto metody nepoužívejte.
+Nepoužívejte tyto metody.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

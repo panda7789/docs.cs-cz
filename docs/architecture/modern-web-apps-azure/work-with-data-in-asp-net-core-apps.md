@@ -1,43 +1,43 @@
 ---
-title: Práce s daty v aplikacích ASP.NET Core
-description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Práce s daty v aplikacích ASP.NET Core
+title: Práce s daty v ASP.NET základních aplikacích
+description: Architekt moderní webové aplikace s ASP.NET core a Azure | Práce s daty v aplikacích ASP.NET Core
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
 ms.openlocfilehash: 5a38ca94b6df676858e7cb058272e450aaf1572e
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78241036"
 ---
-# <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
+# <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v základních aplikacích ASP.NET
 
-> "Data jsou úžasné a budou naposledy delší než systémy samotné."
+> "Data jsou vzácná věc a vydrží déle než samotné systémy."
 >
-> Tim Berners-Novák
+> Tim Berners-Lee
 
-Přístup k datům je důležitou součástí téměř libovolné softwarové aplikace. ASP.NET Core podporuje celou řadu možností přístupu k datům, včetně Entity Framework Core (a také Entity Framework 6), a může fungovat s libovolným rozhraním .NET Data Access Framework. Volba rozhraní pro přístup k datům, která se má použít, závisí na potřebách aplikace. Díky abstrakci těchto voleb z projektů ApplicationCore a uživatelských rozhraní a zapouzdřování podrobností o implementaci v infrastruktuře vám pomůže vydávat volně spojený testovatelné software.
+Přístup k datům je důležitou součástí téměř každé softwarové aplikace. ASP.NET Core podporuje celou řadu možností přístupu k datům, včetně entity framework core (a entity Framework 6 také) a může pracovat s libovolným rozhraním pro přístup k datům .NET. Volba, které rozhraní pro přístup k datům použít, závisí na potřebách aplikace. Abstrakce těchto možností z projektů ApplicationCore a UI a zapouzdření podrobností implementace v infrastruktuře pomáhá vytvářet volně vázaný, testovatelný software.
 
-## <a name="entity-framework-core-for-relational-databases"></a>Entity Framework Core (pro relační databáze)
+## <a name="entity-framework-core-for-relational-databases"></a>Core rámce entity (pro relační databáze)
 
-Pokud vytváříte novou ASP.NET Core aplikaci, která potřebuje pracovat s relačními daty, je doporučeným způsobem, jak vaše aplikace přistupuje k datům, je Entity Framework Core (EF Core). EF Core je objektově-relační Mapovač (O/RM), který umožňuje vývojářům v rozhraní .NET zachovat objekty do a ze zdroje dat. Eliminuje nutnost, že většina vývojářů kódu pro přístup k datům obvykle vyžaduje zápis. Podobně jako u ASP.NET Core se EF Core od základu přepsala pro podporu modulárních aplikací pro více platforem. Přidáte ho do vaší aplikace jako balíček NuGet, nakonfigurujete ho při spuštění a vyžádáte ho přes vkládání závislostí všude, kde ho potřebujete.
+Pokud píšete novou ASP.NET základní aplikace, která potřebuje pracovat s relačními daty, pak entity framework core (EF Core) je doporučený způsob, jak pro vaši aplikaci přístup k datům. EF Core je objektrelační mapovač (O/RM), který umožňuje vývojářům rozhraní .NET uchovávat objekty do a ze zdroje dat. Eliminuje potřebu pro většinu vývojáři kódu přístupu k datům by obvykle nutné psát. Stejně jako ASP.NET Core, EF Core byl přepsán od základu pro podporu modulárních aplikací pro více platforem. Přidáte ji do aplikace jako balíček NuGet, nakonfigurujte jej při spuštění a požádejte o něj prostřednictvím vkládání závislostí, kdekoli ji potřebujete.
 
-Pokud chcete použít EF Core s databází SQL Server, spusťte následující příkaz dotnet CLI:
+Chcete-li použít ef core s databází serveru SQL Server, spusťte následující příkaz dotnet CLI:
 
 ```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
-Přidání podpory pro zdroj dat pro nedostatek paměti pro testování:
+Chcete-li přidat podporu pro zdroj dat InMemory, pro testování:
 
 ```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```
 
-### <a name="the-dbcontext"></a>DbContext
+### <a name="the-dbcontext"></a>Kontextu db
 
-Chcete-li pracovat s EF Core, potřebujete podtřídu <xref:Microsoft.EntityFrameworkCore.DbContext>. Tato třída uchovává vlastnosti představující kolekce entit, se kterými bude aplikace pracovat. Ukázka eShopOnWeb zahrnuje CatalogContext s kolekcemi pro položky, značky a typy:
+Chcete-li pracovat s EF Core, <xref:Microsoft.EntityFrameworkCore.DbContext>potřebujete podtřídu . Tato třída obsahuje vlastnosti představující kolekce entit, se kterými bude aplikace pracovat. Ukázka eShopOnWeb obsahuje Kontext katalogu s kolekcemi pro položky, značky a typy:
 
 ```csharp
 public class CatalogContext : DbContext
@@ -55,11 +55,11 @@ public class CatalogContext : DbContext
 }
 ```
 
-Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předávat tento argument základnímu konstruktoru DbContext. Máte-li ve své aplikaci pouze jeden DbContext, můžete předat instanci DbContextOptions, ale pokud máte více než jeden, musíte použít > typu Generic DbContextOptions\<T a předat jako obecný parametr typ DbContext.
+DbContext musí mít konstruktor, který přijímá DbContextOptions a předat tento argument základní dbContext konstruktoru. Pokud máte pouze jeden DbContext ve vaší aplikaci, můžete předat instanci DbContextOptions, ale pokud\<máte více než jeden, musíte použít obecný DbContextOptions T> typu, předávání typu DbContext jako obecný parametr.
 
-### <a name="configuring-ef-core"></a>Konfigurace EF Core
+### <a name="configuring-ef-core"></a>Konfigurace jádra EF
 
-Ve vaší aplikaci ASP.NET Core obvykle ve své metodě ConfigureServices nakonfigurujete EF Core. EF Core používá DbContextOptionsBuilder, který podporuje několik užitečných metod rozšíření pro zjednodušení konfigurace. Chcete-li nakonfigurovat CatalogContext pro použití databáze SQL Server s připojovacím řetězcem definovaným v konfiguraci, přidejte do ConfigureServices následující kód:
+Ve vaší aplikaci ASP.NET Core obvykle nakonfigurujete EF Core v metodě ConfigureServices. EF Core používá DbContextOptionsBuilder, který podporuje několik užitečných metod rozšíření pro zjednodušení jeho konfigurace. Chcete-li nakonfigurovat CatalogContext pro použití databáze serveru SQL Server s připojovacím řetězcem definovaným v konfiguraci, přidejte do služby ConfigureServices následující kód:
 
 ```csharp
 services.AddDbContext<CatalogContext>(options => options.UseSqlServer (Configuration.GetConnectionString("DefaultConnection")));
@@ -72,17 +72,17 @@ services.AddDbContext<CatalogContext>(options =>
     options.UseInMemoryDatabase());
 ```
 
-Jakmile nainstalujete EF Core, vytvoříte podřízený typ DbContext a nakonfigurujete ho v ConfigureServices, jste připraveni použít EF Core. Můžete požádat o instanci DbContext typu v jakékoli službě, která ji potřebuje, a začít pracovat s trvalými entitami pomocí LINQ, jako kdyby byly jednoduše v kolekci. EF Core provádí překlad výrazů LINQ do dotazů SQL a ukládá a načítá vaše data.
+Po instalaci EF Core, vytvořil dbcontext podřízený typ a nakonfiguroval jej v ConfigureServices, jste připraveni k použití EF Core. Můžete požádat o instanci typu DbContext v libovolné službě, která ji potřebuje, a začít pracovat s trvalými entitami pomocí LINQ, jako by byly jednoduše v kolekci. EF Core provádí překlad výrazů LINQ do dotazů SQL pro uložení a načtení dat.
 
-Můžete zobrazit dotazy EF Core spouštíte konfigurací protokolovacího nástroje a zajištěním jeho úrovně na alespoň informace, jak je znázorněno na obrázku 8-1.
+Můžete vidět dotazy EF Core je spuštěn a konfigurace protokolování a zajištění jeho úroveň je nastavena alespoň informace, jak je znázorněno na obrázku 8-1.
 
 ![Protokolování dotazů EF Core do konzoly](./media/image8-1.png)
 
 **Obrázek 8-1**. Protokolování dotazů EF Core do konzoly
 
-### <a name="fetching-and-storing-data"></a>Načítají se a ukládají se data.
+### <a name="fetching-and-storing-data"></a>Načítání a ukládání dat
 
-Chcete-li načíst data z EF Core, přistupujete k příslušné vlastnosti a pomocí LINQ můžete filtrovat výsledek. Můžete také použít LINQ k provedení projekce a transformovat výsledek z jednoho typu na jiný. Následující příklad by načetl CatalogBrands seřazený podle názvu, vyfiltroval podle jejich povolených vlastností a propnul na SelectListItem typ:
+Chcete-li načíst data z EF Core, přístup k příslušné vlastnosti a pomocí LINQ filtrovat výsledek. Můžete také použít LINQ k provedení projekce, transformovat výsledek z jednoho typu do druhého. Následující příklad by načetl CatalogBrands, seřazené podle názvu, filtrované podle jejich Vlastnost IPoa a promítnuté do typu SelectListItem:
 
 ```csharp
 var brandItems = await _context.CatalogBrands
@@ -93,9 +93,9 @@ var brandItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Ve výše uvedeném příkladu je důležité přidat volání do ToListAsync, aby se dotaz spustil okamžitě. V opačném případě příkaz přiřadí rozhraní IQueryable\<SelectListItem > k brandItems, které nebude provedeno, dokud není vyhodnocena. Existují specialisté a nevýhody vrácení výsledků IQueryable z metod. Umožňuje, aby byl dotaz EF Core dále upravován, ale může také vést k chybám, ke kterým dochází pouze za běhu, pokud jsou do dotazu přidány operace, které EF Core nelze přeložit. Obecně je bezpečnější předat jakékoli filtry do metody, která provádí přístup k datům, a vrátit zpět kolekci v paměti (například seznam\<T >) jako výsledek.
+Ve výše uvedeném příkladu je důležité přidat volání toListAsync, aby bylo možné okamžitě spustit dotaz. V opačném případě příkaz přiřadí\<IQueryable SelectListItem> brandItems, které nebudou provedeny, dokud nebude uveden výčet. Existují klady a zápory k vrácení IQueryable výsledky z metod. Umožňuje dotaz EF Core bude konstrukce dále upravit, ale může také způsobit chyby, které dochází pouze za běhu, pokud operace jsou přidány do dotazu, který EF Core nelze přeložit. Obecně je bezpečnější předat všechny filtry do metody provádějící přístup k datům a vrátit\<zpět kolekci v paměti (například Seznam T>) jako výsledek.
 
-EF Core sleduje změny entit, které načítá z Persistence. Chcete-li uložit změny ve sledované entitě, stačí zavolat metodu SaveChanges na DbContext, čímž se zajistí, že se jedná o stejnou instanci DbContext, která byla použita k načtení entity. Přidávání a odebírání entit je přímo provedeno na příslušné vlastnosti Negenerickými a volání metody SaveChanges ke spuštění databázových příkazů. Následující příklad ukazuje přidávání, aktualizování a odebírání entit z Persistence.
+EF Core sleduje změny na entity, které načte z trvalosti. Chcete-li uložit změny sledované entity, stačí zavolat SaveChanges metoda na DbContext, ujistěte se, že je to stejné DbContext instance, která byla použita k načtení entity. Přidání a odebrání entit se provádí přímo na příslušné DbSet vlastnost, opět s voláním SaveChanges ke spuštění příkazů databáze. Následující příklad ukazuje přidání, aktualizaci a odebrání entit z trvalosti.
 
 ```csharp
 // create
@@ -114,11 +114,11 @@ _context.CatalogBrands.Remove(brandToDelete);
 await _context.SaveChangesAsync();
 ```
 
-EF Core podporuje synchronní i asynchronní metody pro načítání a ukládání. Ve webových aplikacích se doporučuje použít vzor Async/await s asynchronními metodami, aby se vlákna webového serveru neblokovala při čekání na dokončení operací přístupu k datům.
+EF Core podporuje synchronní i asynchronní metody pro načítání a ukládání. Ve webových aplikacích se doporučuje použít vzor async/await s asynchronními metodami, aby vlákna webového serveru nebyla blokována při čekání na dokončení operací přístupu k datům.
 
-### <a name="fetching-related-data"></a>Načítají se související data.
+### <a name="fetching-related-data"></a>Načítání souvisejících dat
 
-Když EF Core načítá entity, naplní všechny vlastnosti, které jsou uloženy přímo s touto entitou v databázi. Navigační vlastnosti, jako jsou například seznamy souvisejících entit, nejsou naplněny a mohou mít hodnotu nastavenou na hodnotu null. Tím se zajistí, že EF Core nenačítá víc dat, než je potřeba, což je zvláště důležité pro webové aplikace, které musí rychle zpracovávat požadavky a vracet odpovědi účinným způsobem. Chcete-li zahrnout relace s entitou pomocí _Eager načítání_, zadejte vlastnost pomocí metody include Extension na dotaz, jak je znázorněno níže:
+Když EF Core načte entity, naplní všechny vlastnosti, které jsou uloženy přímo s tuto entitu v databázi. Navigační vlastnosti, jako jsou seznamy souvisejících entit, nejsou naplněny a mohou mít jejich hodnotu nastavenou na hodnotu null. Tím je zajištěno, že EF Core nenačítá více dat, než je potřeba, což je obzvláště důležité pro webové aplikace, které musí rychle zpracovat požadavky a vrátit odpovědi efektivním způsobem. Chcete-li zahrnout vztahy s entitou pomocí _eager loading_, zadejte vlastnost pomocí metody Include extension v dotazu, jak je znázorněno:
 
 ```csharp
 // .Include requires using Microsoft.EntityFrameworkCore
@@ -127,13 +127,13 @@ var brandsWithItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Můžete zahrnout více relací a můžete také zahrnout podrelace pomocí ThenInclude. EF Core spustí jeden dotaz, který načte výslednou sadu entit. Alternativně můžete zahrnout navigační vlastnosti navigačních vlastností předáním ".". -řetězec oddělený řetězcem metody rozšíření `.Include()`, například:
+Můžete zahrnout více relací a můžete také zahrnout podvztahy pomocí ThenInclude. EF Core spustí jeden dotaz k načtení výsledné sady entit. Alternativně můžete zahrnout navigační vlastnosti navigačnívlastnosti předáním '.. -oddělený řetězec `.Include()` k metodě rozšíření, například takto:
 
 ```csharp
     .Include(“Items.Products”)
 ```
 
-Kromě zapouzdření logiky filtrování může specifikace určit tvar dat, která mají být vrácena, včetně vlastností, které mají být naplněny. Ukázka eShopOnWeb obsahuje několik specifikací, které ukazují, jak zapouzdřit Eager načítání informací v rámci specifikace. To, jak se specifikace používá jako součást dotazu, vidíte tady:
+Kromě logiky zapouzdření filtrování může specifikace určit tvar dat, která mají být vrácena, včetně vlastností, které mají být naplněny. Ukázka eShopOnWeb obsahuje několik specifikací, které demonstrují zapouzdření dychtivých informací o načítání v rámci specifikace. Můžete vidět, jak se specifikace používá jako součást dotazu zde:
 
 ```csharp
 // Includes all expression-based includes
@@ -145,15 +145,15 @@ query = specification.IncludeStrings.Aggregate(query,
             (current, include) => current.Include(include));
 ```
 
-Další možností načítání souvisejících dat je použití _explicitního načítání_. Explicitní načítání umožňuje načíst další data do entity, která již byla načtena. Vzhledem k tomu, že se jedná o samostatný požadavek na databázi, není doporučeno používat webové aplikace, což by mělo minimalizovat počet přenosů databáze odeslaných na požadavek.
+Další možností pro načítání souvisejících dat je použití _explicitního načítání_. Explicitní načítání umožňuje načíst další data do entity, která již byla načtena. Vzhledem k tomu, že se jedná o samostatný požadavek do databáze, není doporučeno pro webové aplikace, což by mělo minimalizovat počet databázových zpátečních cest provedených na požadavek.
 
-_Opožděné načítání_ je funkce, která automaticky načte související data, která jsou odkazována aplikací. EF Core přidaná podpora pro opožděné načítání ve verzi 2,1. Opožděné načítání není ve výchozím nastavení povolené a vyžaduje instalaci `Microsoft.EntityFrameworkCore.Proxies`. Stejně jako u explicitního načítání by se obvykle mělo pro webové aplikace zakázat opožděné načítání, protože jeho použití bude mít za následek další databázové dotazy v rámci každé webové žádosti. Režijní náklady spojené s opožděným načtením se bohužel často neúčtují v době vývoje, pokud je latence malá a často jsou datové sady používané pro testování malé. Nicméně v produkčním prostředí s více uživateli, více daty a větší latencí můžou další požadavky databáze často způsobit špatný výkon webových aplikací, které využívají opožděné načítání.
+_Opožděné načtení_ je funkce, která automaticky načte související data, jak je odkazováno aplikací. EF Core přidal podporu pro opožděné načítání ve verzi 2.1. Opožděné načtení není ve výchozím `Microsoft.EntityFrameworkCore.Proxies`nastavení povoleno a vyžaduje instalaci rozhraní . Stejně jako u explicitní načítání opožděné načítání by měla být obvykle zakázána pro webové aplikace, protože jeho použití bude mít za následek další databázové dotazy v rámci každého webového požadavku. Bohužel režie vzniklé opožděné načítání často bez povšimnutí v době vývoje, kdy latence je malý a často datové sady používané pro testování jsou malé. V produkčním prostředí s více uživateli, více dat a více latence, další požadavky na databázi může často vést ke snížení výkonu pro webové aplikace, které využívají náročné načítání.
 
-[Vyhnout se entitám opožděného načítání ve webových aplikacích](https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications)
+[Vyhněte se opožděné načítání entit ve webových aplikacích](https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications)
 
 ### <a name="encapsulating-data"></a>Zapouzdření dat
 
-EF Core podporuje několik funkcí, které umožní vašemu modelu správně zapouzdřit svůj stav. Běžným problémem v doménových modelech je to, že zveřejňují vlastnosti navigace v kolekci jako veřejně přístupné typy seznamů. To umožňuje všem spolupracovníkům manipulovat s obsahem těchto typů kolekcí, což může obejít důležité obchodní pravidla související s kolekcí, což může opustit objekt v neplatném stavu. Řešením je vystavit přístup jen pro čtení k souvisejícím kolekcím a explicitně poskytnout metody definující způsoby, kterými je můžou klienti manipulovat, jako v tomto příkladu:
+EF Core podporuje několik funkcí, které umožňují modelu správně zapouzdřit jeho stav. Běžným problémem v modelech domény je, že zveřejňují navigační vlastnosti kolekce jako veřejně přístupné typy seznamů. To umožňuje všechny spolupracovníky manipulovat s obsahem těchto typů kolekce, které mohou obejít důležitá obchodní pravidla související s kolekcí, případně ponechat objekt v neplatném stavu. Řešením je vystavit přístup jen pro čtení k související kolekce a explicitně poskytnout metody definující způsoby, ve kterém klienti mohou manipulovat s nimi, jako v tomto příkladu:
 
 ```csharp
 public class Basket : BaseEntity
@@ -180,7 +180,7 @@ public class Basket : BaseEntity
 }
 ```
 
-Tento typ entity nevystavuje vlastnost Public `List` nebo `ICollection`, ale místo toho zpřístupňuje typ `IReadOnlyCollection`, který zabalí základní typ seznamu. Při použití tohoto modelu můžete určit, že se má Entity Framework Core použít pole pro zálohování, například:
+Tento typ entity nezveřejňuje `List` veřejné `ICollection` nebo vlastnosti, `IReadOnlyCollection` ale místo toho zveřejňuje typ, který obtéká základní typ seznamu. Při použití tohoto vzoru můžete na jádro entity frameworku určit, že se má použít záložní pole takto:
 
 ```csharp
 private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
@@ -191,7 +191,7 @@ private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
 }
 ```
 
-Dalším způsobem, jak můžete zlepšit model domény, je použití objektů hodnot pro typy, které postrádají identitu a jsou rozlišeny jenom jejich vlastnostmi. Použití takových typů jako vlastností vašich entit může pomoci udržet logiku specifickou pro objekt hodnoty, kde patří, a může zabránit duplicitní logice mezi několika entitami, které používají stejný pojem. V Entity Framework Core můžete zachovat objekty hodnot ve stejné tabulce jako jejich vlastnící entita nakonfigurováním typu jako vlastněné entity, například takto:
+Dalším způsobem, ve kterém můžete zlepšit model domény je pomocí hodnotových objektů pro typy, které postrádají identitu a jsou rozlišeny pouze jejich vlastnosti. Použití takových typů, jako jsou vlastnosti entit, může pomoci zachovat logiku specifickou pro objekt hodnoty, kam patří, a vyhnout se duplicitní logice mezi více entitami, které používají stejný koncept. V jádru entity frameworku můžete zachovat hodnotové objekty ve stejné tabulce jako jejich vlastnící entitu konfigurací typu jako vlastněné entity, například takto:
 
 ```csharp
 private void ConfigureOrder(EntityTypeBuilder<Order> builder)
@@ -200,17 +200,17 @@ private void ConfigureOrder(EntityTypeBuilder<Order> builder)
 }
 ```
 
-V tomto příkladu je vlastnost `ShipToAddress` typu `Address`. `Address` je objekt hodnoty s několika vlastnostmi, například `Street` a `City`. EF Core mapuje objekt `Order` na jeho tabulku s jedním sloupcem na `Address` vlastnost, přičemž prefixuje název každého sloupce s názvem vlastnosti. V tomto příkladu by tabulka `Order` zahrnovala sloupce jako `ShipToAddress_Street` a `ShipToAddress_City`. V případě potřeby je také možné uložit vlastněné typy v samostatných tabulkách.
+V tomto příkladu `ShipToAddress` je `Address`vlastnost typu . `Address`je objekt s několika vlastnostmi, například `Street` a `City`. EF Core `Order` mapuje objekt na jeho `Address` tabulku s jedním sloupcem na vlastnost, předponou každý název sloupce s názvem vlastnosti. V tomto příkladu by tabulka `Order` `ShipToAddress_Street` obsahovala sloupce, jako jsou a `ShipToAddress_City`. Je také možné v případě potřeby ukládat vlastněné typy v samostatných tabulkách.
 
-Přečtěte si další informace o podpoře vlastněných [entit v EF Core](/ef/core/modeling/owned-entities).
+Další informace o [podpoře vlastněných entit v EF Core](/ef/core/modeling/owned-entities).
 
 ### <a name="resilient-connections"></a>Odolná připojení
 
-Externí prostředky, jako jsou databáze SQL, mohou být občas nedostupné. V případech dočasné nedostupnosti mohou aplikace použít logiku opakování, aby nedošlo k vyvolání výjimky. Tato technika se běžně označuje jako _odolnost připojení_. Můžete implementovat [vlastní opakování pomocí exponenciální omezení rychlosti](https://docs.microsoft.com/azure/architecture/patterns/retry) techniky tím, že zkusíte opakovat pokus s exponenciálním zvýšením čekací doby, dokud nedosáhnete maximálního počtu opakování. Tato technika zahrnuje skutečnost, že prostředky cloudu můžou být občas nedostupné po krátkou dobu, což vede k selhání některých požadavků.
+Externí prostředky, jako jsou databáze SQL, mohou být občas nedostupné. V případech dočasné nedostupnosti aplikace můžete použít logiku opakování, aby se zabránilo vyvolání výjimky. Tato technika se běžně označuje jako _odolnost proti chybám připojení_. Můžete implementovat [vlastní opakování s exponenciální backoff](https://docs.microsoft.com/azure/architecture/patterns/retry) technika pokusem o opakování s exponenciálně zvyšuje čekací doby, dokud není dosaženo maximální počet opakování bylo dosaženo. Tato technika zahrnuje skutečnost, že cloudové prostředky může být občas k dispozici pro krátké časové období, což má za následek selhání některých požadavků.
 
-Pro Azure SQL DB už Entity Framework Core k dispozici odolnost interního připojení k databázi a logiku opakování. Pro každé připojení DbContext ale musíte povolit strategii spouštění Entity Framework, pokud chcete mít odolná EF Core připojení.
+Pro Azure SQL DB, Entity Framework Core již poskytuje odolnost proti interní muškát připojení databáze a logiku opakování. Ale musíte povolit strategii provádění entity framework pro každé připojení DbContext, pokud chcete mít odolné připojení EF Core.
 
-Například následující kód na úrovni připojení EF Core umožňuje odolné připojení SQL, které se opakuje, pokud se připojení nepovede.
+Například následující kód na úrovni připojení EF Core umožňuje odolná připojení SQL, která jsou opakována, pokud se připojení nezdaří.
 
 ```csharp
 // Startup.cs from any ASP.NET Core Web API
@@ -236,13 +236,13 @@ public class Startup
 
 #### <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a>Strategie provádění a explicitní transakce pomocí BeginTransaction a více DbContexts
 
-Když jsou v EF Core připojení povolené opakované pokusy, každá operace, kterou provádíte pomocí EF Core, se stal svou vlastní opakovanou operací. Každý dotaz a každé volání metody SaveChanges se bude opakovat jako jednotka, pokud dojde k přechodnému selhání.
+Pokud jsou v připojeních EF Core povoleny opakované pokusy, každá operace, kterou provedete pomocí EF Core, se stane vlastní opakovatelnou operací. Každý dotaz a každé volání SaveChanges bude opakován jako celek, pokud dojde k přechodné selhání.
 
-Nicméně pokud váš kód inicializuje transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je třeba považovat za jednotku. vše uvnitř transakce se musí vrátit zpátky, pokud dojde k selhání. Pokud se pokusíte provést tuto transakci při použití strategie provádění EF (opakování zásad) a zahrnete do něj několik DbContexts, zobrazí se výjimka podobná následující.
+Pokud však váš kód iniciuje transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je třeba považovat za jednotku; vše uvnitř transakce musí být vrácena zpět, pokud dojde k selhání. Zobrazí se výjimka, jako je následující, pokud se pokusíte provést tuto transakci při použití strategie provádění EF (zásady opakování) a zahrnout několik SaveChanges z více DbContexts v něm.
 
-System. InvalidOperationException: nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. K provedení všech operací v transakci jako opakované jednotky použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().
+System.InvalidOperationException: Nakonfigurovaná strategie spuštění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem. Pomocí strategie provádění vrácené 'DbContext.Database.CreateExecutionStrategy()' provést všechny operace v transakci jako opakovatelné jednotky.
 
-Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Následující kód ukazuje, jak implementovat tento přístup:
+Řešením je ručně vyvolat strategii provádění EF s delegátem představující vše, co je třeba provést. Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta. Následující kód ukazuje, jak implementovat tento přístup:
 
 ```csharp
 // Use of an EF Core resiliency strategy when using multiple DbContexts
@@ -267,24 +267,24 @@ await strategy.ExecuteAsync(async () =>
 });
 ```
 
-První DbContext je \_catalogContext a druhá DbContext je v objektu \_integrationEventLogService. Nakonec se akce potvrzení provede více DbContexts a použije se strategie provádění EF.
+První DbContext je \_catalogContext a druhý DbContext \_je v rámci integrationEventLogService objektu. Nakonec potvrzení akce by být provedena více DbContexts a pomocí strategie provádění EF.
 
-> ### <a name="references--entity-framework-core"></a>Odkazy – Entity Framework Core
+> ### <a name="references--entity-framework-core"></a>Odkazy – jádro rámce entity
 >
-> - **EF Core Docs**
+> - **Základní dokumenty EF**
 >   <https://docs.microsoft.com/ef/>
-> - **EF Core: související
->   dat** <https://docs.microsoft.com/ef/core/querying/related-data>
-> - **Vyhněte se entitám opožděného načítání v aplikacích ASPNET**
+> - **EF Core: Související údaje**
+>   <https://docs.microsoft.com/ef/core/querying/related-data>
+> - **Vyhněte se opožděným načítáním entit v aplikacích ASPNET**
 >   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
 
-## <a name="ef-core-or-micro-orm"></a>EF Core nebo mikroorm?
+## <a name="ef-core-or-micro-orm"></a>EF Core nebo mikro-ORM?
 
-I když je EF Core skvělou volbou pro správu trvalosti a většina z nich zapouzdřuje podrobnosti databáze od vývojářů aplikací, není jedinou volbou. Další oblíbenou alternativou Open Source je [dapperem](https://github.com/StackExchange/Dapper), což se říká mikroorm. Mikroorm je odlehčený a méně plnohodnotný nástroj pro mapování objektů na datové struktury. V případě Dapperem se záměr jejich návrhu zaměřuje na výkon, místo úplného zapouzdření základních dotazů, které používá k načtení a aktualizaci dat. Vzhledem k tomu, že se nejedná o abstraktní SQL z vývojářů, Dapperem je "blíže k metalu" a vývojářům umožňuje psát přesné dotazy, které chtějí použít pro danou operaci přístupu k datům.
+Zatímco EF Core je skvělou volbou pro správu trvalosti a z větší části zapouzdřuje podrobnosti o databázi od vývojářů aplikací, není to jediná volba. Další populární open-source alternativou je [Dapper](https://github.com/StackExchange/Dapper), takzvaný mikro-ORM. Mikro-ORM je lehký, méně plnohodnotný nástroj pro mapování objektů na datové struktury. V případě Dapper, jeho cíle návrhu se zaměřují na výkon, spíše než plně zapouzdření základní dotazy, které používá k načtení a aktualizaci dat. Vzhledem k tomu, že není abstraktní SQL od vývojáře, Dapper je "blíže ke kovu" a umožňuje vývojářům psát přesné dotazy, které chtějí použít pro danou operaci přístupu k datům.
 
-EF Core má dvě důležité funkce, které nabízí oddělení IT od Dapperem, ale také přidávají k jeho režijnímu výkonu. První je převod z výrazů LINQ do jazyka SQL. Tyto překlady jsou ukládány do mezipaměti, ale i tak, aby při prvním spuštění bylo režie. Druhým je sledování změn u entit (aby bylo možné vygenerovat efektivní příkazy aktualizace). Toto chování je možné vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking. EF Core také generuje dotazy SQL, které jsou obvykle velice efektivní a v jakémkoliv případě zcela přijatelné z hlediska výkonu, ale pokud potřebujete lepší kontrolu nad přesným dotazem, který se má provést, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF. Jádro. V takovém případě Dapperem stále vykonává EF Core, ale jenom mírně. Julie Lerman prezentuje údaje o výkonu v jeho 2016 článku na webu MSDN [dapperem, Entity Framework a hybridních aplikacích](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Další data srovnávacích testů výkonu pro celou řadu metod přístupu k datům najdete na [webu dapperem](https://github.com/StackExchange/Dapper).
+EF Core má dvě významné funkce, které poskytuje, které ji oddělují od Dapper, ale také přidat k jeho výkonu režie. První je překlad z výrazů LINQ do SQL. Tyto překlady jsou uloženy do mezipaměti, ale i tak je režie při jejich provádění poprvé. Druhým je sledování změn na entity (tak, aby efektivní příkazy aktualizace mohou být generovány). Toto chování lze vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking. EF Core také generuje SQL dotazy, které jsou obvykle velmi efektivní a v každém případě dokonale přijatelné z hlediska výkonu, ale pokud potřebujete jemnou kontrolu nad přesnýdotaz, který má být proveden, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF Jádro taky. V tomto případě Dapper stále překonává EF Core, ale jen mírně. Julie Lerman představuje některé údaje o výkonu ve svém článku MSDN z května 2016 [Dapper, Entity Framework a Hybridní aplikace](https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps). Další srovnávací údaje o výkonnosti pro různé metody přístupu k datům lze nalézt na [webu Dapper](https://github.com/StackExchange/Dapper).
 
-Chcete-li zjistit, jak se syntaxe Dapperem liší od EF Core, zvažte tyto dvě verze stejné metody pro načtení seznamu položek:
+Chcete-li zjistit, jak se syntaxe pro Dapper liší od EF Core, zvažte tyto dvě verze stejné metody pro načítání seznamu položek:
 
 ```csharp
 // EF Core
@@ -302,7 +302,7 @@ public async Task<IEnumerable<CatalogType>> GetCatalogTypesWithDapper()
 }
 ```
 
-Pokud potřebujete vytvořit složitější grafy objektů pomocí Dapperem, je potřeba napsat přidružené dotazy sami (na rozdíl od přidání zahrnutí jako při EF Core). To je podporováno prostřednictvím nejrůznějších syntaxí, včetně funkce s názvem vícenásobné mapování, které umožňuje mapovat jednotlivé řádky na více mapovaných objektů. Například vzhledem k tomu, že daný příspěvek třídy se vlastníkem vlastnosti typu uživatel, vrátí následující SQL všechna potřebná data:
+Pokud potřebujete vytvořit složitější objektové grafy s Dapper, musíte napsat přidružené dotazy sami (na rozdíl od přidání Include jako v EF Core). To je podporováno prostřednictvím různých syntaxí, včetně funkce s názvem Vícenásobné mapování, která umožňuje mapovat jednotlivé řádky na více mapovaných objektů. Například vzhledem k tomu, třídy Post s vlastností Vlastník typu Uživatel, následující SQL vrátí všechna potřebná data:
 
 ```sql
 select * from #Posts p
@@ -310,13 +310,13 @@ left join #Users u on u.Id = p.OwnerId
 Order by p.Id
 ```
 
-Každý vrácený řádek obsahuje data uživatelů i post. Vzhledem k tomu, že data uživatelů by měla být připojena k post data prostřednictvím její vlastnosti Owner, je použita následující funkce:
+Každý vrácený řádek obsahuje data uživatele i příspěvku. Vzhledem k tomu, že uživatelská data by měla být připojena k datům Příspěvku prostřednictvím vlastnosti Owner, používá se následující funkce:
 
 ```csharp
 (post, user) => { post.Owner = user; return post; }
 ```
 
-Úplný výpis kódu, který vrátí kolekci příspěvků s vlastností Owner naplněnou s přidruženými uživatelskými daty, by byl:
+Úplný výpis kódu pro vrácení kolekce příspěvků s jejich owner vlastností naplněnou přidruženými uživatelskými daty by byl:
 
 ```csharp
 var sql = @"select * from #Posts p
@@ -326,61 +326,61 @@ var data = connection.Query<Post, User, Post>(sql,
 (post, user) => { post.Owner = user; return post;});
 ```
 
-Vzhledem k tomu, že nabízí méně zapouzdření, Dapperem vyžaduje, aby si vývojáři dozvěděli více o tom, jak jsou jejich data uložená, jak je efektivně dotazovat, a zapsali další kód pro jeho načtení. Při změně modelu místo pouhého vytvoření nové migrace (jiné funkce EF Core) a aktualizace informací o mapování na jednom místě v DbContext musí být všechny ovlivněné dotazy aktualizované. Tyto dotazy nemají žádné záruky v době kompilace, takže můžou v reakci na změny modelu nebo databáze přerušit za běhu. díky tomu je obtížné detekovat chyby rychleji. V systému Exchange pro tyto kompromisy nabízí Dapperem extrémně vysoký výkon.
+Vzhledem k tomu, že nabízí méně zapouzdření, Dapper vyžaduje, aby vývojáři věděli více o tom, jak jsou jejich data uložena, jak je efektivně dotazovat a psát další kód pro jejich načtení. Při změně modelu, namísto jednoduše vytvoření nové migrace (jiné funkce EF Core) a/nebo aktualizace informací o mapování na jednom místě v DbContext, každý dotaz, který je ovlivněn, musí být aktualizovány. Tyto dotazy nemají žádné záruky kompilace, takže může přerušit za běhu v reakci na změny modelu nebo databáze, takže chyby obtížnější zjistit rychle. Výměnou za tyto kompromisy, Dapper nabízí extrémně rychlý výkon.
 
-Pro většinu aplikací a pro většinu částí téměř všech aplikací nabízí EF Core přijatelný výkon. Proto se přínosy pro produktivitu vývojářů můžou snížit na výkon. V případě dotazů, které mohou využívat ukládání do mezipaměti, může být samotný dotaz proveden pouze v malém procentu času, což vede k poměrně malým rozdílům ve výkonu dotazů moot.
+Pro většinu aplikací a většinu částí téměř všech aplikací nabízí EF Core přijatelný výkon. Výhody produktivity vývojářů tedy pravděpodobně převáží nad režií výkonu. U dotazů, které mohou těžit z ukládání do mezipaměti, skutečný dotaz může být proveden pouze malé procento času, takže relativně malé rozdíly výkonu dotazu diskutabilní.
 
 ## <a name="sql-or-nosql"></a>SQL nebo NoSQL
 
-Tradičně jsou relační databáze, jako je SQL Server, na webu Marketplace pro trvalé úložiště dat, ale nejedná se o jediné dostupné řešení. Databáze NoSQL, jako je [MongoDB](https://www.mongodb.com/what-is-mongodb) , nabízejí odlišný přístup k ukládání objektů. Místo mapování objektů na tabulky a řádky je další možností serializace celého grafu objektů a uložení výsledku. Nejnižšími výhodami tohoto přístupu je jednoduchost a výkon. Je jednodušší uložit jeden serializovaný objekt s klíčem, než aby bylo možné objekt rozložit na mnoho tabulek se vztahy a aktualizacemi a řádky, které se mohly změnit od posledního načtení objektu z databáze. Podobně načítání a deserializace jednoho objektu z úložiště založeného na klíčích je obvykle mnohem rychlejší a jednodušší než složitá spojení nebo více databázových dotazů, které jsou nutné k úplnému vytvoření stejného objektu z relační databáze. Chybějící zámky nebo transakce nebo pevné schéma také zpřístupňuje NoSQL databází snadněji škálování napříč mnoha počítači a podporují velmi velké datové sady.
+Relační databáze jako SQL Server tradičně dominují trhu pro trvalé ukládání dat, ale nejsou jediným dostupným řešením. NoSQL databáze jako [MongoDB](https://www.mongodb.com/what-is-mongodb) nabízejí jiný přístup k ukládání objektů. Spíše než mapování objektů na tabulky a řádky, další možností je serializovat celý objekt grafu a uložit výsledek. Výhody tohoto přístupu, alespoň zpočátku, jsou jednoduchost a výkon. Je jednodušší uložit jeden serializovaný objekt s klíčem než rozložit objekt do mnoha tabulek s relacemi a aktualizace a řádky, které se mohly změnit od posledního načtení objektu z databáze. Podobně načítání a deserializace jednoho objektu z úložiště založeného na klíči je obvykle mnohem rychlejší a jednodušší než komplexní spojení nebo více databázových dotazů potřebných k úplnému vytvoření stejného objektu z relační databáze. Nedostatek zámků nebo transakcí nebo pevné schéma také umožňuje NoSQL databáze přístupné škálování napříč mnoha počítači, podporující velmi velké datové sady.
 
-Na druhé straně databáze NoSQL (jak jsou obvykle volány) mají své nevýhody. Relační databáze používají normalizaci k vymáhání konzistence a vyhnout se duplikaci dat. Tím se zmenší celková velikost databáze a zajistí, že aktualizace sdílených dat budou k dispozici okamžitě v rámci databáze. V relační databázi může tabulka adres odkazovat na tabulku zemí podle ID, takže pokud se změnil název země nebo oblasti, budou se záznamy adres těžit z této aktualizace, aniž by bylo nutné je aktualizovat. V databázi NoSQL se ale adresa a přidružená země můžou serializovat jako součást mnoha uložených objektů. Aktualizace názvu země nebo oblasti by vyžadovala aktualizaci všech takových objektů, nikoli jednoho řádku. Relační databáze mohou také zajistit relační integritu vynucením pravidel, jako jsou cizí klíče. Databáze NoSQL obvykle nenabízejí taková omezení pro svá data.
+Na druhou stranu, NoSQL databáze (jak se obvykle nazývají) mají své nevýhody. Relační databáze používají normalizaci k vynucení konzistence a zabránění duplikaci dat. Tím se zmenší celková velikost databáze a zajistí, že aktualizace sdílených dat jsou k dispozici okamžitě v celé databázi. V relační databázi může tabulka Adresa odkazovat na tabulku Země podle ID, takže pokud by byl změněn název země nebo oblasti, záznamy adres by měly prospěch z aktualizace, aniž by musely být aktualizovány. V databázi NoSQL však může být adresa a přidružená země serializována jako součást mnoha uložených objektů. Aktualizace názvu země nebo oblasti by vyžadovala, aby byly aktualizovány všechny tyto objekty, nikoli jeden řádek. Relační databáze mohou také zajistit relační integritu vynucením pravidel, jako jsou cizí klíče. NoSQL databáze obvykle nenabízejí taková omezení na jejich data.
 
-Jiné databáze složitosti NoSQL musí řešit správu verzí. Když se změní vlastnosti objektu, nemusí být možné deserializovat z minulých verzí, které byly uloženy. Proto musí být všechny existující objekty, které mají serializovanou (předchozí) verzi objektu, aktualizovány tak, aby odpovídaly novému schématu. Nejedná se o koncepční rozdíl od relační databáze, kde změny schématu někdy vyžadují skripty aktualizace nebo aktualizace mapování. Počet položek, které je třeba upravit, je však často mnohem větší v přístupu NoSQL, protože existuje více duplicit dat.
+Další složitost NoSQL databáze musí řešit, je správa verzí. Při změně vlastností objektu nemusí být možné rekonstruovat z minulých verzí, které byly uloženy. Proto všechny existující objekty, které mají serializované (předchozí) verze objektu musí být aktualizovány tak, aby odpovídaly jeho nové schéma. To se koncepčně neliší od relační databáze, kde změny schématu někdy vyžadují aktualizace skriptů nebo aktualizace mapování. Počet položek, které musí být změněny, je však často mnohem větší v přístupu NoSQL, protože je více duplikace dat.
 
-Je možné, že databáze NoSQL ukládá více verzí objektů, ale některé pevné relační databáze schémat obvykle nepodporují. Nicméně v tomto případě bude kód vaší aplikace muset brát v úvahu existenci předchozích verzí objektů a přidává další složitost.
+Je možné v nosql databázích ukládat více verzí objektů, něco pevné schéma relační databáze obvykle nepodporují. V tomto případě však kód aplikace bude muset účet pro existenci předchozíverze objektů, přidání další složitosti.
 
-Databáze NoSQL obvykle vynutily [kyselinu](https://en.wikipedia.org/wiki/ACID), což znamená, že výhody výkonu i škálovatelnosti oproti relačním databázím. Jsou vhodné pro extrémně velké datové sady a objekty, které nejsou vhodné pro úložiště v normalizovaných strukturách tabulek. Neexistuje žádný důvod, proč jediná aplikace nemůže využívat relační i NoSQL databáze, a to s využitím každého z nich, kde se nejlépe hodí.
+NoSQL databáze obvykle nevynucují [ACID](https://en.wikipedia.org/wiki/ACID), což znamená, že mají výhody výkonu i škálovatelnosti oproti relačním databázím. Jsou vhodné pro extrémně velké datové sady a objekty, které nejsou vhodné pro ukládání v normalizovaných strukturách tabulek. Neexistuje žádný důvod, proč jedna aplikace nemůže využít relační a NoSQL databáze, pomocí každého, kde je nejvhodnější.
 
-## <a name="azure-cosmos-db"></a>Databáze Azure Cosmos
+## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-Azure Cosmos DB je plně spravovaná databázová služba NoSQL, která nabízí cloudové úložiště dat bez schématu. Azure Cosmos DB je postavená na zajištění rychlého a předvídatelného výkonu, vysoké dostupnosti, elastického škálování a globální distribuce. I když se jedná o databázi NoSQL, můžou vývojáři používat pro data JSON bohatou a známou schopnost dotazů SQL. Všechny prostředky v Azure Cosmos DB jsou uloženy jako dokumenty JSON. Prostředky se spravují jako _položky_, což jsou dokumenty obsahující metadata a _kanály_, které jsou kolekcemi položek. Obrázek 8-2 ukazuje vztah mezi různými prostředky Azure Cosmos DB.
+Azure Cosmos DB je plně spravovaná databázová služba NoSQL, která nabízí cloudové úložiště dat bez schématu. Azure Cosmos DB je vybudován pro rychlý a předvídatelný výkon, vysokou dostupnost, elastické škálování a globální distribuci. Přesto, že je databáze NoSQL, mohou vývojáři používat bohaté a známé funkce DOTAZŮ SQL na datech JSON. Všechny prostředky v Azure Cosmos DB jsou uloženy jako dokumenty JSON. Prostředky jsou _spravovány_jako položky , což jsou dokumenty obsahující metadata a _informační kanály_, což jsou kolekce položek. Obrázek 8-2 znázorňuje vztah mezi různými prostředky Azure Cosmos DB.
 
-![Hierarchický vztah mezi prostředky v Azure Cosmos DB databáze JSON NoSQL](./media/image8-2.png)
+![Hierarchický vztah mezi prostředky v Azure Cosmos DB, databázi NoSQL JSON](./media/image8-2.png)
 
-**Obrázek 8-2.** Azure Cosmos DB organizace prostředků.
+**Obrázek 8-2.** Organizace prostředků Azure Cosmos DB.
 
 Dotazovací jazyk Azure Cosmos DB je jednoduché, ale výkonné rozhraní pro dotazování dokumentů JSON. Tento jazyk podporuje podmnožinu gramatiky ANSI SQL a přidává těsnou integraci s javascriptovými objekty, poli, vytvářením objektů a voláním funkcí.
 
-**Odkazy – Azure Cosmos DB**
+**Reference – Azure Cosmos DB**
 
-- Azure Cosmos DB Úvod <https://docs.microsoft.com/azure/cosmos-db/introduction>
+- Úvod do Azure Cosmos DB<https://docs.microsoft.com/azure/cosmos-db/introduction>
 
 ## <a name="other-persistence-options"></a>Další možnosti trvalosti
 
-Kromě možností relačního a NoSQL úložiště mohou aplikace ASP.NET Core používat Azure Storage k ukládání nejrůznějších formátů dat a souborů v cloudovém škálovatelném způsobem. Azure Storage je široce škálovatelná, takže můžete začít ukládat malé objemy dat a škálovat je tak, aby se ukládaly stovky nebo terabajty, pokud je vaše aplikace vyžaduje. Azure Storage podporuje čtyři druhy dat:
+Kromě možností relačního úložiště a úložiště NoSQL můžou aplikace ASP.NET Core používat Azure Storage k ukládání různých formátů dat a souborů cloudovým a škálovatelným způsobem. Azure Storage je masivně škálovatelné, takže můžete začít ukládat malá množství dat a škálovat až na ukládání stovek nebo terabajtů, pokud to vaše aplikace vyžaduje. Azure Storage podporuje čtyři druhy dat:
 
-- Blob Storage nestrukturovaných textových nebo binárních úložišť, označovaných také jako úložiště objektů.
+- Úložiště objektů blob pro nestrukturovaný text nebo binární úložiště, označované také jako úložiště objektů.
 
-- Table Storage strukturovaných datových sad, které jsou přístupné prostřednictvím klíčů řádků.
+- Úložiště tabulek pro strukturované datové sady, přístupné pomocí klíčů řádků.
 
-- Queue Storage pro spolehlivé zasílání zpráv na základě fronty.
+- Úložiště fronty pro spolehlivé zasílání zpráv založené na frontách.
 
-- File Storage pro přístup ke sdíleným souborům mezi virtuálními počítači Azure a místními aplikacemi.
+- Úložiště souborů pro sdílený přístup k souborům mezi virtuálními počítači Azure a místními aplikacemi.
 
-**Odkazy – Azure Storage**
+**Reference – Azure Storage**
 
-- Azure Storage Úvod <https://docs.microsoft.com/azure/storage/storage-introduction>
+- Úvod k úložišti Azure<https://docs.microsoft.com/azure/storage/storage-introduction>
 
 ## <a name="caching"></a>Ukládání do mezipaměti
 
-V případě webových aplikací by měly být jednotlivé webové žádosti dokončeny v nejkratší možné době. Toho můžete dosáhnout tak, že omezíte počet externích volání, které server musí provést, aby se žádost dokončila. Ukládání do mezipaměti zahrnuje ukládání kopie dat na server (nebo jiné úložiště dat, které je snazší dotazovat se na zdroj dat). Webové aplikace a zejména tradiční webové aplikace bez ověřování hesla potřebují pro každý požadavek sestavit celé uživatelské rozhraní. To často znamená, že mnoho stejných databázových dotazů opakovaně vychází z jednoho požadavku uživatele na další. Ve většině případů se tato data mění zřídka, proto existuje málo důvodů, jak ji z databáze trvale vyžádat. ASP.NET Core podporuje ukládání odpovědí do mezipaměti, pro ukládání celých stránek do mezipaměti a ukládání dat do mezipaměti, které podporuje podrobnější chování ukládání do mezipaměti.
+Ve webových aplikacích by měl být každý webový požadavek dokončen v co nejkratším možném čase. Jedním ze způsobů, jak toho dosáhnout, je omezit počet externích volání, která musí server provést k dokončení požadavku. Ukládání do mezipaměti zahrnuje ukládání kopie dat na server (nebo jiné úložiště dat, které je snadněji dotazován než zdroj dat). Webové aplikace, a zejména non-SPA tradiční webové aplikace, je třeba vytvořit celé uživatelské rozhraní s každým požadavkem. To často zahrnuje provádění mnoho stejných databázových dotazů opakovaně z jednoho požadavku uživatele na další. Ve většině případů se tato data mění zřídka, takže je malý důvod neustále požadovat z databáze. ASP.NET Core podporuje ukládání do mezipaměti odpovědí, ukládání do mezipaměti celých stránek a ukládání dat do mezipaměti, které podporuje podrobnější chování ukládání do mezipaměti.
 
-Při implementaci ukládání do mezipaměti je důležité mít na paměti oddělení obav. Vyhněte se implementaci logiky ukládání do mezipaměti v logice přístupu k datům nebo v uživatelském rozhraní. Místo toho zapouzdřujte ukládání do mezipaměti ve vlastních třídách a pomocí konfigurace spravujte jeho chování. Postupuje podle otevřených/uzavřených a jednoduchých zodpovědností a usnadňuje vám správu způsobu ukládání do mezipaměti ve vaší aplikaci během rozšiřování.
+Při implementaci ukládání do mezipaměti je důležité mít na paměti oddělení obav. Vyhněte se implementaci logiky ukládání do mezipaměti v logice přístupu k datům nebo v uživatelském rozhraní. Místo toho zapouzdřte ukládání do mezipaměti ve vlastních třídách a použijte konfiguraci ke správě jeho chování. To se řídí otevřenými/uzavřenými a jednotnými zásadami odpovědnosti a usnadňuje vám správu způsobu používání ukládání do mezipaměti v aplikaci podle jeho růstu.
 
-### <a name="aspnet-core-response-caching"></a>Ukládání odpovědí do mezipaměti ASP.NET Core
+### <a name="aspnet-core-response-caching"></a>ASP.NET ukládání do mezipaměti odpovědi jádra
 
-ASP.NET Core podporuje dvě úrovně ukládání odpovědí do mezipaměti. První úroveň neukládá do mezipaměti cokoli na serveru, ale přidává hlavičky HTTP, které instruují klienty a proxy servery k ukládání odpovědí do mezipaměti. To je implementováno přidáním atributu ResponseCache na jednotlivé řadiče nebo akce:
+ASP.NET Core podporuje dvě úrovně ukládání do mezipaměti odezvy. První úroveň neukládá na server nic do mezipaměti, ale přidává hlavičky HTTP, které instruují klienty a proxy servery k ukládání odpovědí do mezipaměti. To je implementováno přidáním atributu ResponseCache k jednotlivým řadičům nebo akcím:
 
 ```csharp
 [ResponseCache(Duration = 60)]
@@ -391,11 +391,11 @@ public IActionResult Contact()
 }
 ```
 
-V předchozím příkladu bude k odpovědi přidáno následující záhlaví, které dává klientům pokyn, aby výsledky do mezipaměti po dobu až 60 sekund.
+V předchozím příkladu bude mít za následek následující záhlaví, které jsou přidány do odpovědi, pokyn klientům do mezipaměti výsledek po dobu až 60 sekund.
 
-Cache-Control: Public, Max-Age = 60
+Cache-Control: veřejná,max-age=60
 
-Aby bylo možné do aplikace přidat ukládání do mezipaměti na straně serveru, musíte odkazovat na balíček NuGet Microsoft. AspNetCore. ResponseCaching a pak přidat middleware pro ukládání odpovědí do mezipaměti. Tento middleware je nakonfigurovaný jak v ConfigureServices, tak v konfiguraci při spuštění:
+Chcete-li do aplikace přidat ukládání do mezipaměti na straně serveru v paměti, musíte odkazovat na balíček NuGet služby Microsoft.AspNetCore.ResponseCaching a potom přidat middleware pro ukládání do mezipaměti odpovědi. Tento middleware je konfigurován v configureservices a konfigurovat při spuštění:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -409,13 +409,13 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-Middleware pro ukládání odpovědí do mezipaměti bude automaticky ukládat odpovědi na základě sady podmínek, které můžete přizpůsobit. Ve výchozím nastavení se do mezipaměti ukládají pouze odpovědi 200 (OK) požadované prostřednictvím metody GET nebo HEAD. Kromě toho musí mít požadavky odpověď s hlavičkou Cache-Control: Public header a nesmí obsahovat hlavičky pro Authorization nebo Set-cookie. Podívejte se na [úplný seznam podmínek ukládání do mezipaměti, které používá middleware pro ukládání odpovědí do mezipaměti](/aspnet/core/performance/caching/middleware#conditions-for-caching).
+Middleware pro ukládání do mezipaměti odpovědi bude automaticky ukládány do mezipaměti na základě sady podmínek, které můžete přizpůsobit. Ve výchozím nastavení pouze 200 (OK) odpovědi požadované prostřednictvím GET nebo HEAD metody jsou uloženy do mezipaměti. Kromě toho musí mít požadavky odpověď s ovládacím prvkem cache: veřejné záhlaví a nesmí obsahovat záhlaví pro autorizaci nebo set-cookie. Podívejte se na [úplný seznam podmínek ukládání do mezipaměti používaných middleware pro ukládání do mezipaměti odpovědi](/aspnet/core/performance/caching/middleware#conditions-for-caching).
 
 ### <a name="data-caching"></a>Ukládání dat do mezipaměti
 
-Místo (nebo kromě) ukládání úplných webových odpovědí do mezipaměti můžete ukládat výsledky jednotlivých dotazů na data. V takovém případě můžete použít v ukládání do mezipaměti na webovém serveru nebo použít [distribuovanou mezipaměť](/aspnet/core/performance/caching/distributed). V této části se dozvíte, jak implementovat v mezipaměti paměti.
+Spíše než (nebo kromě) ukládání úplných webových odpovědí do mezipaměti můžete ukládat výsledky jednotlivých datových dotazů do mezipaměti. K tomu můžete použít ukládání do mezipaměti paměti na webovém serveru nebo [použít distribuovanou mezipaměť](/aspnet/core/performance/caching/distributed). Tato část ukáže, jak implementovat do mezipaměti paměti.
 
-Přidáte podporu pro ukládání do mezipaměti (nebo distribuované) do mezipaměti v ConfigureServices:
+Podporu ukládání do mezipaměti paměti (nebo distribuovaného) ukládání do mezipaměti v programu ConfigureServices přidáte:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -425,9 +425,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Nezapomeňte přidat také balíček NuGet Microsoft. Extensions. Caching. Memory.
+Nezapomeňte také přidat balíček Microsoft.Extensions.Caching.Memory NuGet.
 
-Po přidání služby si vyžádáte IMemoryCache prostřednictvím injektáže závislosti, kdykoli budete potřebovat přístup do mezipaměti. V tomto příkladu používá CachedCatalogService vzor návrhu proxy (nebo dekoratér) tím, že poskytuje alternativní implementaci ICatalogService, která řídí přístup k základní implementaci CatalogService (nebo k tomu přidává chování).
+Po přidání služby požádáte IMemoryCache prostřednictvím vkládání závislostí všude tam, kde potřebujete přístup k mezipaměti. V tomto příkladu CachedCatalogService používá proxy (nebo decorator) návrhový vzor tím, že poskytuje alternativní implementaci ICatalogService, která řídí přístup (nebo přidá chování) základní implementace CatalogService.
 
 ```csharp
 public class CachedCatalogService : ICatalogService
@@ -474,7 +474,7 @@ public class CachedCatalogService : ICatalogService
 }
 ```
 
-Chcete-li nakonfigurovat aplikaci tak, aby používala verzi služby uloženou v mezipaměti, ale stále umožňuje službě získat v jejím konstruktoru instanci CatalogService, kterou potřebuje, přidejte do ConfigureServices následující:
+Chcete-li nakonfigurovat aplikaci tak, aby používala verzi služby uloženou v mezipaměti, ale přesto povolit službě získat instanci služby CatalogService, kterou potřebuje ve svém konstruktoru, byste do služby ConfigureServices přidali následující:
 
 ```csharp
 services.AddMemoryCache();
@@ -482,17 +482,17 @@ services.AddScoped<ICatalogService, CachedCatalogService>();
 services.AddScoped<CatalogService>();
 ```
 
-V takovém případě se databáze volá do načtení dat katalogu pouze jednou za minutu, nikoli u všech požadavků. V závislosti na provozu na lokalitu to může mít výrazný vliv na počet dotazů provedených v databázi a na průměrnou dobu načítání stránky pro domovskou stránku, která v současné době závisí na všech třech dotazech vystavených touto službou.
+S tímto na místě volání databáze načíst data katalogu bude provedena pouze jednou za minutu, nikoli na každém požadavku. V závislosti na provozu na webu to může mít významný vliv na počet dotazů provedených v databázi a průměrnou dobu načítání stránky pro domovskou stránku, která aktuálně závisí na všech třech dotazech vystavených touto službou.
 
-K problému, který nastane při implementaci ukládání do mezipaměti, je _zastaralá data_ – to znamená, že data, která se změnila ve zdroji, ale zastaralá verze, zůstanou v mezipaměti. Jednoduchým způsobem, jak tento problém zmírnit, je použití malých mezipamětí, protože u zaneprázdněné aplikace je k rozšíření dat délky v mezipaměti omezená další výhoda. Představte si například stránku, která vytváří jeden databázový dotaz a je požadována desetkrát za sekundu. Pokud se tato stránka ukládá do mezipaměti po dobu jedné minuty, bude se počet dotazů databáze za minutu odpustit z 600 na 1, což snižuje 99,8%. Pokud místo toho jste udělali dobu trvání mezipaměti, celkové snížení by bylo 99,997%, ale teď je pravděpodobnost výrazně větší i potenciální stáří zastaralých dat.
+Problém, který vzniká při implementaci ukládání do mezipaměti, jsou _zastaralá data_ – to znamená data, která se změnila u zdroje, ale v mezipaměti zůstává zastaralá verze. Jednoduchý způsob, jak zmírnit tento problém je použití malé mezipaměti trvání, protože pro zaneprázdněné aplikace je omezená další výhoda rozšíření délky dat je uložena v mezipaměti. Zvažte například stránku, která vytvoří dotaz na jednu databázi a je požadována 10krát za sekundu. Pokud je tato stránka uložena do mezipaměti po dobu jedné minuty, bude mít za následek počet dotazů databáze provedených za minutu, aby klesly z 600 na 1, což je snížení o 99,8 %. Pokud místo toho trvání mezipaměti byly provedeny jednu hodinu, celkové snížení by bylo 99,997%, ale nyní pravděpodobnost a potenciální stáří zastaralých dat jsou oba dramaticky zvýšily.
 
-Další možností je proaktivně odebrat položky mezipaměti, když jsou data, která obsahují, aktualizována. Jednotlivé položky lze odebrat, pokud je její klíč znám:
+Dalším přístupem je proaktivní odebrání položek mezipaměti při aktualizaci dat, která obsahují. Každá jednotlivá položka může být odebrána, pokud je znám její klíč:
 
 ```csharp
 _cache.Remove(cacheKey);
 ```
 
-Pokud vaše aplikace zpřístupňuje funkce pro aktualizaci záznamů, které ukládá do mezipaměti, můžete odebrat odpovídající položky mezipaměti v kódu, který provádí aktualizace. V některých případech se může jednat o mnoho různých položek závislých na konkrétní sadě dat. V takovém případě může být užitečné vytvořit závislosti mezi položkami mezipaměti pomocí CancellationChangeToken. S CancellationChangeToken můžete vypršet platnost několika záznamů v mezipaměti tím, že token zrušíte.
+Pokud aplikace zveřejňuje funkce pro aktualizaci položek, které ukládá do mezipaměti, můžete odebrat odpovídající položky mezipaměti v kódu, který provádí aktualizace. Někdy může existovat mnoho různých položek, které závisí na konkrétní sadu dat. V takovém případě může být užitečné vytvořit závislosti mezi položkami mezipaměti pomocí CancellationChangeToken. S CancellationChangeToken můžete vypršet více položek mezipaměti najednou zrušením tokenu.
 
 ```csharp
 // configure CancellationToken and add entry to cache
@@ -506,8 +506,8 @@ new CancellationChangeToken(cts.Token));
 _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
-Ukládání do mezipaměti může výrazně zlepšit výkon webových stránek, které opakovaně vyžádají stejné hodnoty z databáze. Nezapomeňte změřit přístup k datům a výkon stránky před použitím ukládání do mezipaměti a použít ukládání do mezipaměti jenom v případě, že je potřeba zlepšení. Ukládání do mezipaměti spotřebovává prostředky paměti webového serveru a zvyšuje složitost aplikace, takže je důležité, abyste s touto technikou nemuseli předčasně optimalizovat.
+Ukládání do mezipaměti může výrazně zlepšit výkon webových stránek, které opakovaně požadují stejné hodnoty z databáze. Před použitím ukládání do mezipaměti nezapomeňte měřit přístup k datům a výkon stránky a používat ukládání do mezipaměti pouze tam, kde je potřeba zlepšení. Ukládání do mezipaměti spotřebovává prostředky paměti webového serveru a zvyšuje složitost aplikace, takže je důležité, abyste předčasně optimalizovat pomocí této techniky.
 
 >[!div class="step-by-step"]
 >[Předchozí](develop-asp-net-core-mvc-apps.md)
->[Další](test-asp-net-core-mvc-apps.md)
+>[další](test-asp-net-core-mvc-apps.md)

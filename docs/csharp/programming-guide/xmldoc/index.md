@@ -1,5 +1,5 @@
 ---
-title: Komentáře k dokumentaci XML C# – Průvodce programováním
+title: Komentáře k dokumentaci XML – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - cs.xml
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - XML documentation comments [C#]
 ms.assetid: 803b7f7b-7428-4725-b5db-9a6cff273199
 ms.openlocfilehash: f5a507bc35b0cc0a679fd055bfc255bb3cb9a090
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "76789785"
 ---
-# <a name="xml-documentation-comments-c-programming-guide"></a>Komentáře dokumentace XML (C# Průvodce programováním)
+# <a name="xml-documentation-comments-c-programming-guide"></a>Komentáře k dokumentaci XML (průvodce programováním jazyka C#)
 
-V C#aplikaci můžete vytvořit dokumentaci pro svůj kód zahrnutím prvků XML do speciálních polí komentářů (označených třemi lomítky) ve zdrojovém kódu přímo před blok kódu, na který komentáře odkazují, například.
+V jazyce C# můžete vytvořit dokumentaci pro váš kód zahrnutím elementů XML do zvláštních polí komentářů (označených trojitými lomítky) ve zdrojovém kódu přímo před blokem kódu, na který odkazují komentáře.
 
 ```csharp
 /// <summary>
@@ -29,33 +29,33 @@ V C#aplikaci můžete vytvořit dokumentaci pro svůj kód zahrnutím prvků XML
 public class MyClass {}
 ```
 
-Při kompilaci s možností [-doc](../../language-reference/compiler-options/doc-compiler-option.md) bude kompilátor hledat všechny značky XML ve zdrojovém kódu a vytvořit soubor dokumentace XML. Chcete-li vytvořit konečnou dokumentaci založenou na souboru generovaném kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako je [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).
+Při kompilaci s volbou [-doc](../../language-reference/compiler-options/doc-compiler-option.md) kompilátor vyhledá všechny značky XML ve zdrojovém kódu a vytvoří soubor dokumentace XML. Chcete-li vytvořit konečnou dokumentaci založenou na souboru generovaném kompilátorem, můžete vytvořit vlastní nástroj nebo použít nástroj, jako je [DocFX](https://dotnet.github.io/docfx/) nebo [Sandcastle](https://github.com/EWSoftware/SHFB).
 
-Chcete-li odkazovat na prvky XML (například vaše funkce zpracovává konkrétní prvky XML, které chcete popsat v komentáři k dokumentaci XML), můžete použít standardní mechanismus pro Quoting (`<` a `>`).  Chcete-li odkazovat na obecné identifikátory v prvcích referencí kódu (`cref`), můžete použít řídicí znaky (například `cref="List&lt;T&gt;"`) nebo složené závorky (`cref="List{T}"`).  Ve zvláštním případě kompilátor analyzuje složené závorky jako lomené závorky, a to proto, aby komentáře v dokumentaci nebyly pro autora při vytváření odkazů na obecné identifikátory tak složité.
+Chcete-li odkazovat na elementy XML (například vaše funkce zpracovává určité elementy XML, které chcete`<` `>`popsat v komentáři k dokumentaci XML), můžete použít standardní mechanismus citace ( a ).  Chcete-li odkazovat na obecné`cref`identifikátory v elementech odkazu na kód `cref="List&lt;T&gt;"`( ),`cref="List{T}"`můžete použít řídicí znaky (například) nebo závorky ( ).  Ve zvláštním případě kompilátor analyzuje složené závorky jako lomené závorky, a to proto, aby komentáře v dokumentaci nebyly pro autora při vytváření odkazů na obecné identifikátory tak složité.
 
 > [!NOTE]
 > Komentáře dokumentace XML nejsou metadata; nejsou zahrnuty ve zkompilovaném sestavení, a proto nejsou přístupné prostřednictvím reflexe.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-- [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)
 
-- [Zpracování souboru XML](./processing-the-xml-file.md)
+- [Zpracování souboru XML](./processing-the-xml-file.md)
 
-- [Oddělovače pro dokumentační značky](./delimiters-for-documentation-tags.md)
+- [Oddělovače pro značky dokumentace](./delimiters-for-documentation-tags.md)
 
 - [Jak používat funkce dokumentace XML](./how-to-use-the-xml-documentation-features.md)
 
 ## <a name="related-sections"></a>Související oddíly
 
-Další informace najdete v části .
+Další informace naleznete v tématu:
 
-- [-doc (zpracování dokumentačních komentářů)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [-doc (Komentáře k procesní dokumentaci)](../../language-reference/compiler-options/doc-compiler-option.md)
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)

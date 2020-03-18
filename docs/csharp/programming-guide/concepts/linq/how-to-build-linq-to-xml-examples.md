@@ -1,19 +1,19 @@
 ---
-title: Postup sestavení příkladů LINQ to XML (C#)
+title: Jak vytvořit LINQ na XML příklady (C#)
 ms.date: 07/20/2015
 ms.assetid: e5d18fa1-2704-48fe-a44b-1564f97c9e9c
 ms.openlocfilehash: 289a13daed7e3c871156bf50c6fa04c113c0cd13
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141464"
 ---
-# <a name="how-to-build-linq-to-xml-examples-c"></a>Postup sestavení příkladů LINQ to XML (C#)
-Jednotlivé fragmenty kódu a příklady v této dokumentaci využívají třídy a typy z různých oborů názvů. Při kompilování C# kódu je nutné dodat příslušné `using` direktivy.  
+# <a name="how-to-build-linq-to-xml-examples-c"></a>Jak vytvořit LINQ na XML příklady (C#)
+Různé úryvky a příklady v této dokumentaci používají třídy a typy z různých oborů názvů. Při kompilaci kódu Jazyka C# je `using` třeba zadat příslušné direktivy.  
   
 ## <a name="example"></a>Příklad  
- Následující kód obsahuje direktivy `using`, které C# příklady vyžadují pro sestavení a spuštění. Pro každý příklad nejsou vyžadovány všechny direktivy `using`.  
+ Následující kód obsahuje `using` direktivy, které c# příklady vyžadují k sestavení a spuštění. Ne `using` všechny direktivy jsou vyžadovány pro každý příklad.  
   
 ```csharp  
 using System;  
@@ -34,6 +34,6 @@ using System.Reflection;
 using System.IO.Packaging;  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Přehled programování LINQ to XML (C#)](./linq-to-xml-overview.md)

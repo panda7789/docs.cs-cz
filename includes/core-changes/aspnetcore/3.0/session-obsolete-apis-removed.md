@@ -1,26 +1,26 @@
 ---
 ms.openlocfilehash: 4dcb357570cb6597fde86c9e8f2acb74364cfaa3
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198401"
 ---
-### <a name="session-state-obsolete-apis-removed"></a>Stav relace: odebrané zastaralé rozhraní API
+### <a name="session-state-obsolete-apis-removed"></a>Stav relace: Odebraná zastaralá api
 
-Odebrala se zastaralá rozhraní API pro konfiguraci souborů cookie relací. Další informace najdete v tématu [ASPNET/oznámení # 257](https://github.com/aspnet/Announcements/issues/257).
+Zastaralá nastavení API pro konfiguraci souborů cookie relace byla odebrána. Další informace naleznete [v tématu aspnet/Announcements#257](https://github.com/aspnet/Announcements/issues/257).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Tato změna vynutila konzistenci napříč rozhraními API pro konfiguraci funkcí, které používají soubory cookie.
+Tato změna vynucuje konzistenci mezi api pro konfiguraci funkcí, které používají soubory cookie.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Migrujte využití odebraných rozhraní API na jejich novější náhrady. Vezměte v úvahu následující příklad v `Startup.ConfigureServices`:
+Migrujte použití odebraných api do jejich novějších náhrad. Vezměme si `Startup.ConfigureServices`následující příklad v :
 
 ```csharp
 public void ConfigureServices(ServiceCollection services)
@@ -46,7 +46,7 @@ public void ConfigureServices(ServiceCollection services)
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

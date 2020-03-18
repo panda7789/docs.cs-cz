@@ -1,42 +1,42 @@
 ---
-title: Události LINQ to XML (C#)
+title: LinQ na xml události (C#)
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
 ms.openlocfilehash: 8e0cb4519dd0fc2bed443d9a62b9a2545d10e161
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253177"
 ---
-# <a name="linq-to-xml-events-c"></a>Události LINQ to XML (C#)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]události umožňují být upozorňovány při změně stromu XML.  
+# <a name="linq-to-xml-events-c"></a>LinQ na xml události (C#)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]události umožňují upozornění při změně stromu XML.  
   
- Události můžete přidat do instance libovolné <xref:System.Xml.Linq.XObject>. Obslužná rutina události poté obdrží události pro úpravy tohoto <xref:System.Xml.Linq.XObject> a kteréhokoli z jeho potomků. Například můžete přidat obslužnou rutinu události do kořenového adresáře stromu a zpracovat všechny změny stromu z této obslužné rutiny události.  
+ Události můžete přidat do instance <xref:System.Xml.Linq.XObject>libovolné aplikace . Obslužná rutina události pak <xref:System.Xml.Linq.XObject> obdrží události pro změny, které a všechny jeho potomci. Můžete například přidat obslužnou rutinu události do kořenového adresáře stromu a zpracovat všechny změny stromu z této obslužné rutiny události.  
   
- Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] událostí naleznete v tématech <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.  
+ Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] událostí naleznete <xref:System.Xml.Linq.XObject.Changing> v <xref:System.Xml.Linq.XObject.Changed>tématu a .  
   
 ## <a name="types-and-events"></a>Typy a události  
- Při práci s událostmi můžete použít následující typy:  
+ Při práci s událostmi se používají následující typy:  
   
-|type|Popis|  
+|Typ|Popis|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události při vyvolání události pro <xref:System.Xml.Linq.XObject>.|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> události a <xref:System.Xml.Linq.XObject.Changed> .|  
+|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události, když je událost <xref:System.Xml.Linq.XObject>vyvolána pro .|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data <xref:System.Xml.Linq.XObject.Changing> pro <xref:System.Xml.Linq.XObject.Changed> události a.|  
   
  Při úpravě stromu XML jsou vyvolány následující události:  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|Nastane těsně před tím <xref:System.Xml.Linq.XObject> , než se tato nebo kterákoli z jeho potomků změní.|  
-|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se v <xref:System.Xml.Linq.XObject> případě, že došlo ke změně nebo některému z jeho potomků.|  
+|<xref:System.Xml.Linq.XObject.Changing>|Vyskytuje se <xref:System.Xml.Linq.XObject> těsně před tím, než se toto nebo některý z jeho potomků změní.|  
+|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se <xref:System.Xml.Linq.XObject> při změně nebo změně některého z jeho potomků.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML. Například můžete chtít zachovat celkovou částku faktury, která je součtem položek řádků faktury. V tomto příkladu se používají události pro udržování celkového počtu všech podřízených elementů v rámci komplexního prvku `Items`.  
+ Události jsou užitečné, pokud chcete zachovat některé souhrnné informace ve stromu XML. Můžete například chtít udržovat součet faktury, který je součtem řádkových položek faktury. Tento příklad používá události k udržení součtu všech podřízených prvků pod komplexníprvek `Items`.  
   
-### <a name="code"></a>Kód  
+### <a name="code"></a>kód  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -76,7 +76,7 @@ Console.WriteLine(root);
 ```  
   
 ### <a name="comments"></a>Komentáře  
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```output  
 Changed System.Xml.Linq.XElement Add  

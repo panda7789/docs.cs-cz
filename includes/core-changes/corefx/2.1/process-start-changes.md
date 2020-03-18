@@ -1,31 +1,31 @@
 ---
 ms.openlocfilehash: 58cb3580c8701773452ae8338f036a94bbee80c5
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77449390"
 ---
-### <a name="change-in-default-value-of-useshellexecute"></a>Změna výchozí hodnoty UseShellExecute objektu Process
+### <a name="change-in-default-value-of-useshellexecute"></a>Změna výchozí hodnoty useShellExecute
 
-<xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> má výchozí hodnotu `false` v .NET Core. V .NET Framework je výchozí hodnota `true`.
+<xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType>má výchozí hodnotu `false` na .NET Core. V rozhraní .NET Framework `true`je jeho výchozí hodnota .
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> umožňuje spustit aplikaci přímo, například pomocí kódu, jako je například `Process.Start("mspaint.exe")`, který spouští funkci malování. Umožňuje vám také nepřímo spustit přidruženou aplikaci, pokud je <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> nastaveno na `true`. V .NET Framework je výchozí hodnota pro <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> `true`, což znamená, že kód, jako je například `Process.Start("mytextfile.txt")`, by spouštěl Poznámkový blok, pokud jste přidružil soubory *. txt* pomocí tohoto editoru. Chcete-li zabránit nepřímo spustit aplikaci na .NET Framework, je nutné explicitně nastavit <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> na `false`. V .NET Core je výchozí hodnota pro <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> `false`. To znamená, že ve výchozím nastavení nejsou přidružené aplikace spouštěny při volání `Process.Start`.
+<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>umožňuje spustit aplikaci přímo, například s `Process.Start("mspaint.exe")` kódem, jako je například spuštění programu Malování. Umožňuje také nepřímo spustit přidruženou aplikaci, <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> `true`pokud je nastavena na . V rozhraní .NET Framework <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> je `true`výchozí hodnota pro `Process.Start("mytextfile.txt")` , což znamená, že kód, jako je spuštění programu Poznámkový blok, pokud jste k tomuto editoru přidružili soubory *TXT.* Chcete-li zabránit nepřímému spuštění aplikace v <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> rozhraní `false`.NET Framework, musíte explicitně nastavit . Na .NET Core je <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> `false`výchozí hodnota pro . To znamená, že ve výchozím nastavení nejsou `Process.Start`přidružené aplikace spuštěny při volání .
 
-Tato změna byla představena v rozhraní .NET Core z důvodů výkonu. Obvykle se <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> používá ke spuštění aplikace přímo. Přímým spouštěním aplikace není nutné zahrnovat prostředí systému Windows a získat související náklady na výkon. Aby byl tento výchozí případ rychlejší, .NET Core změní výchozí hodnotu <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> na `false`. Pokud ho budete potřebovat, můžete se na pomalejší cestu rozhodnout.
+Tato změna byla zavedena v .NET Core z důvodů výkonu. Obvykle se <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> používá ke spuštění aplikace přímo. Spuštění aplikace přímo nemusí zahrnovat prostředí Windows a vznikají související náklady na výkon. Chcete-li tento výchozí případ urychlit, změní <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute?displayProperty=nameWithType> jádro `false`.NET výchozí hodnotu na . Můžete se přihlásit do pomalejší cesty, pokud ji potřebujete.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 2.1
 
 > [!NOTE]
-> V dřívějších verzích rozhraní .NET Core `UseShellExecute` nebyl implementován pro systém Windows.
+> V dřívějších verzích rozhraní `UseShellExecute` .NET Core nebyla implementována pro systém Windows.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud vaše aplikace spoléhá na staré chování, zavolejte <xref:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)?displayProperty=nameWithType> s <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute> nastavenou na `true` na objektu <xref:System.Diagnostics.ProcessStartInfo>.
+Pokud vaše aplikace závisí na staré <xref:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)?displayProperty=nameWithType> <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute> chování, `true` volání <xref:System.Diagnostics.ProcessStartInfo> s nastavenou na objekt.
 
 #### <a name="category"></a>Kategorie
 

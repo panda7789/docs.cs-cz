@@ -1,31 +1,31 @@
 ---
 title: Závěry
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | přijaté
+description: Modernizace existujících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Závěry
 ms.date: 10/26/2017
 ms.openlocfilehash: c7c4042b224577238ae74bd786d4803e487998e7
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68677105"
 ---
 # <a name="conclusions"></a>Závěry
 
-- Řešení založená na kontejnerech nakonec poskytují výhody úspory nákladů. Kontejnery představují řešení problémů, protože odstraňují tření způsobené nepřítomností závislostí v produkčních prostředích. Odstraněním těchto problémů se významně zlepší vývoj a testování, DevOps a produkční operace.
+- Řešení založená na kontejnerech v konečném důsledku poskytují výhody úspor nákladů. Kontejnery jsou řešením problémů s nasazením, protože odstraňují tření způsobené absencí závislostí v produkčním prostředí. Odebráním těchto problémů výrazně vylepšuje vývoj/testování, devops a produkční operace.
 
-- Kontejner Docker se stává standardní jednotkou nasazení pro jakoukoli serverovou aplikaci nebo službu.
+- Kontejner Dockeru se stává standardní jednotkou nasazení pro všechny serverové aplikace nebo služby.
 
-- V produkčních prostředích můžete k hostování škálovatelných aplikací založených na kontejnerech použít produkt Orchestrator (například Kubernetes).
+- Pro produkční prostředí byste měli použít orchestrator (jako Kubernetes) k hostování škálovatelných aplikací založených na kontejnerech.
 
-- Virtuální počítače Azure hostující kontejnery představují rychlý a jednoduchý způsob, jak vytvářet malá vývojová a testovací prostředí v cloudu.
+- Hostování kontejnerů virtuálních počítače Azure je rychlý a jednoduchý způsob, jak vytvořit malá prostředí pro vývoj a testování v cloudu.
 
-- Při migraci relačních databází z existujících aplikací do Azure se ve výchozím nastavení doporučuje Azure SQL Database spravovaná instance.
+- Azure SQL Database Managed Instance se doporučuje ve výchozím nastavení při migraci relačních databází z existujících aplikací do Azure.
 
-- Visual Studio 2017 a Image2Docker jsou základní nástroje, které vám pomohou začít modernizaci své stávající aplikace .NET s kontejnery Windows díky urychlení křivky Začínáme.
+- Visual Studio 2017 a Image2Docker jsou základní nástroje pro zahájení modernizace stávajících aplikací .NET pomocí kontejnerů windows urychlením křivky učení začínáme.
 
-- Při umísťování kontejnerových aplikací v produkčním prostředí vždy vytvoříte nebo přijmete DevOpsou jazykovou verzi a nástroje DevOps pro kanály CI/CD, jako je Azure DevOps Services nebo Jenkinse.
+- Při umísťování kontejnerizovaných aplikací do produkčního prostředí vždy vytvoříte nebo přijmete jazykovou verzi DevOps a nástroje DevOps pro kanály CI/CD, jako jsou azure devops services nebo Jenkins.
 
-- Microsoft Azure poskytuje nejkomplexnější a kompletní prostředí pro modernizovatí stávajících .NET Frameworkch aplikací s kontejnery Windows, cloudovou infrastrukturou a PaaS službami.
+- Microsoft Azure poskytuje nejkomplexnější a nejkomplexnější prostředí pro modernizaci stávajících aplikací rozhraní .NET Framework pomocí kontejnerů Windows, cloudové infrastruktury a služeb PaaS.
 
 >[!div class="step-by-step"]
 >[Předchozí](walkthroughs-technical-get-started-overview.md)

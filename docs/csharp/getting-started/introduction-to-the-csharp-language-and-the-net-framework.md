@@ -1,71 +1,71 @@
 ---
 title: Úvod do jazyka C# a rozhraní .NET Framework
-description: Seznamte se se C# základy a .NET. Získejte přehled o C# jazyce a ekosystému .NET.
+description: Naučte se základy c# a .NET. Získejte přehled jazyka C# a ekosystému .NET.
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
 ms.openlocfilehash: d2fd879203932ea3f2211e38a2efdd626928962b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713915"
 ---
-# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Seznámení C# s jazykem a .NET Framework
+# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
-C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umožňuje vývojářům vytvářet různé zabezpečené a robustní aplikace, které běží na .NET Framework. Pomocí C# nástroje můžete vytvářet klientské aplikace pro Windows, webové služby XML, distribuované součásti, aplikace klient-server, databázové aplikace a spoustu dalších věcí. Visual C# poskytuje pokročilý editor kódu, praktické návrháře uživatelského rozhraní, integrovaný ladicí program a mnoho dalších nástrojů, které usnadňují vývoj aplikací na základě C# jazyka a .NET Framework.  
+C# je elegantní a typově bezpečný objektově orientovaný jazyk, který vývojářům umožňuje vytvářet různé zabezpečené a robustní aplikace, které běží v rozhraní .NET Framework. Pomocí jazyka C# můžete vytvářet klientské aplikace systému Windows, webové služby XML, distribuované součásti, aplikace klient-server, databázové aplikace a mnoho dalšího. Visual C# poskytuje pokročilý editor kódu, pohodlné návrháře uživatelského rozhraní, integrovaný ladicí program a mnoho dalších nástrojů, které usnadňují vývoj aplikací na základě jazyka C# a rozhraní .NET Framework.  
   
 > [!NOTE]
-> Dokumentace k C# vizuálu předpokládá, že máte přehled o základních konceptech programování. Pokud jste zcela začátečník, možná budete chtít prozkoumat Visual C# Express, který je k dispozici na webu. Můžete také využít výhod knih a webových prostředků a seznámit C# se s praktickými znalostmi programování.  
+> Visual C# dokumentace předpokládá, že máte pochopení základní koncepty programování. Pokud jste úplný začátečník, můžete prozkoumat Visual C# Express, který je k dispozici na webu. Můžete také využít knihy a webové prostředky o jazyce C# naučit praktické programovací dovednosti.  
   
 ## <a name="c-language"></a>jazyk C#
 
-C#syntaxe je velice expresná, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky C# se okamžitě rozpozná pro všechny známé pomocí jazyka C, C++nebo Java. Vývojáři, kteří znají některý z těchto jazyků, obvykle mohou začít pracovat v C# rámci velmi krátkého času. C#syntaxe zjednodušuje mnohé ze složitých prvků C++ a poskytuje výkonné funkce, jako jsou typy hodnot s možnou hodnotou null, výčty, delegáti, výrazy lambda a přímý přístup do paměti. C#podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekcí definovat vlastní chování iterací, které je jednoduché pro použití klientským kódem. Výrazy LINQ (Language-Integrated Query) přidávají dotaz silného typu na konstrukci jazyka první třídy.  
+Syntaxe jazyka C# je vysoce expresivní, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky jazyka C# bude okamžitě rozpoznatelná pro všechny osoby obeznámené s c, c++ nebo javou. Vývojáři, kteří znají některý z těchto jazyků jsou obvykle schopni začít pracovat produktivně v jazyce C# ve velmi krátkém čase. Syntaxe jazyka C# zjednodušuje mnoho složitostí jazyka C++ a poskytuje výkonné funkce, jako jsou typy hodnot s možnou hodnotou null, výčty, delegáty, výrazy lambda a přímý přístup do paměti. C# podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekce definovat vlastní iterace chování, které jsou jednoduché použití podle klientského kódu. Výrazy linq (Language Integrated Query) činí z dotazu silného typu konstrukci jazyka první třídy.  
   
- Jako objektově orientovaný jazyk C# podporuje koncepty zapouzdření, dědičnosti a polymorfismu. Všechny proměnné a metody, včetně metody `Main`, vstupního bodu aplikace, jsou zapouzdřeny v rámci definice třídy. Třída může dědit přímo z jedné nadřazené třídy, ale může implementovat libovolný počet rozhraní. Metody, které přepisují virtuální metody v nadřazené třídě, vyžadují klíčové slovo `override` jako způsob, jak se vyhnout náhodnému předefinování. V C#je struktura jako odlehčená třída; Jedná se o typ přidělený zásobníkem, který může implementovat rozhraní, ale nepodporuje dědění.  
+ Jako objektově orientovaný jazyk c# podporuje koncepty zapouzdření, dědičnosti a polymorfismu. Všechny proměnné a metody, `Main` včetně metody, vstupníbod aplikace, jsou zapouzdřeny v rámci definice třídy. Třída může dědit přímo z jedné nadřazené třídy, ale může implementovat libovolný počet rozhraní. Metody, které přepsat virtuální metody v `override` nadřazené třídě vyžadují klíčové slovo jako způsob, jak se vyhnout náhodnému předefinování. V C# struct je jako odlehčené třídy; jedná se o typ přidělený zásobníkem, který může implementovat rozhraní, ale nepodporuje dědičnost.  
   
- Kromě těchto základních principů orientovaných na objekty C# usnadňuje vývoj softwarových komponent prostřednictvím několika inovativních jazykových konstrukcí, včetně následujících:  
+ Kromě těchto základních principů zaměřených na objekty c# usnadňuje vývoj softwarových komponent prostřednictvím několika inovativních jazykových konstrukcí, včetně následujících:  
   
-- Zapouzdřené podpisy metod označované jako *Delegáti*, které umožňují typově bezpečná oznámení o událostech.  
+- Zapouzdřené podpisy metod nazývané *delegáty*, které umožňují oznámení událostí bezpečného typu.  
   
-- Vlastnosti, které slouží jako přístupové objekty pro soukromé proměnné členů.  
+- Vlastnosti, které slouží jako přistupující objekty pro proměnné soukromých členů.  
   
-- Atributy, které poskytují deklarativní metadata o typech v době běhu.  
+- Atributy, které poskytují deklarativní metadata o typech za běhu.  
   
-- Vložené dokumentační komentáře XML.  
+- Komentáře k dokumentaci vřádku XML.  
   
-- LINQ (Language-Integrated Query), které poskytuje integrované možnosti dotazování napříč různými zdroji dat.  
+- Jazykově integrovaný dotaz (LINQ), který poskytuje integrované funkce dotazů napříč různými zdroji dat.  
   
- Pokud potřebujete pracovat s jiným softwarem Windows, jako jsou objekty COM nebo nativní knihovny DLL Win32, můžete to provést C# pomocí procesu s názvem "Interoperabilita". Interoperabilita C# umožňuje programům provádět téměř cokoli, co C++ může provést nativní aplikace. C#dokonce podporuje i ukazatele a pojem "nebezpečný" kód pro případy, kdy je důležité přímý přístup do paměti.  
+ Pokud máte k interakci s jiným softwarem systému Windows, jako jsou objekty COM nebo nativní Win32 Knihovny DLL, můžete to provést v jazyce C# prostřednictvím procesu s názvem "Interop". Interop umožňuje c# programy dělat téměř cokoliv, co nativní aplikace Jazyka C++ může dělat. C# dokonce podporuje ukazatele a koncept "nebezpečný" kód pro ty případy, ve kterých je kritický přímý přístup do paměti.  
   
- Proces C# sestavení je jednoduchý v porovnání s jazykem C C++ a a flexibilnější než v jazyce Java. Neexistují žádné samostatné hlavičkové soubory a nejsou požadovány, aby metody a typy byly deklarovány v určitém pořadí. C# Zdrojový soubor může definovat libovolný počet tříd, struktur, rozhraní a událostí.  
+ Proces sestavení jazyka C# je jednoduchý ve srovnání s C a C++ a flexibilnější než v jazyce Java. Neexistují žádné samostatné soubory hlaviček a žádný požadavek, aby metody a typy byly deklarovány v určitém pořadí. Zdrojový soubor Jazyka C# může definovat libovolný počet tříd, struktur, rozhraní a událostí.  
   
- Níže jsou uvedené další C# zdroje informací:  
+ Následují další prostředky jazyka C#:  
   
-- Dobrý obecný úvod k jazyku naleznete v kapitole 1 [ C# specifikace jazyka](/dotnet/csharp/language-reference/language-specification/introduction).  
+- Dobrý obecný úvod do jazyka naleznete v kapitole 1 [specifikace jazyka C#](/dotnet/csharp/language-reference/language-specification/introduction).  
   
-- Podrobné informace o konkrétních aspektech C# jazyka najdete v [ C# referenčních](../language-reference/index.md)informacích.  
+- Podrobné informace o konkrétních aspektech jazyka C# naleznete v [odkazu jazyka C#](../language-reference/index.md).  
   
-- Další informace o LINQ naleznete v tématu [LINQ (jazykově integrovaný dotaz)](../programming-guide/concepts/linq/index.md).  
+- Další informace o LINQ naleznete v tématu [LINQ (Language-Integrated Query).](../programming-guide/concepts/linq/index.md)  
 
 ## <a name="net-framework-platform-architecture"></a>Architektura platformy .NET Framework
 
- C#programy spouštěné v .NET Framework, nedílnou součást systému Windows, která zahrnuje virtuální spouštěcí systém nazvaný modul CLR (Common Language Runtime) a jednotnou sadu knihoven tříd. CLR je komerční implementace od Microsoftu v rámci společné jazykové infrastruktury (CLI), což je mezinárodní standard, který je základem pro vytváření prostředí pro spouštění a vývoj, ve kterém jazyky a knihovny spolupracují bez problémů.  
+ Programy jazyka C# jsou spuštěny v rozhraní .NET Framework, což je integrální součást systému Windows, který zahrnuje systém virtuálního spuštění nazývaný clr (COMMON Language runtime) a jednotnou sadu knihoven tříd. CLR je komerční implementace společné jazykové infrastruktury (CLI) společností Microsoft, což je mezinárodní standard, který je základem pro vytváření prostředí pro provádění a vývoj, ve kterých jazyky a knihovny bezproblémově spolupracují.  
   
- Zdrojový kód napsaný C# v je zkompilován do [mezilehlého jazyka (IL)](../../standard/managed-code.md) , který odpovídá specifikaci rozhraní příkazového řádku. Kód IL a prostředky, jako jsou bitmapy a řetězce, jsou uloženy na disku ve spustitelném souboru nazývaném sestavení, obvykle s příponou. exe nebo. dll. Sestavení obsahuje manifest, který poskytuje informace o typech sestavení, verzi, jazykové verzi a požadavky na zabezpečení.  
+ Zdrojový kód napsaný v jazyce C# je zkompilován do [zprostředkujícího jazyka (IL),](../../standard/managed-code.md) který odpovídá specifikaci rozhraní rozhraní. Il kód a prostředky, jako jsou bitmapy a řetězce, jsou uloženy na disku ve spustitelném souboru nazývaném sestavení, obvykle s příponou .exe nebo DLL. Sestavení obsahuje manifest, který poskytuje informace o typech sestavení, verzi, jazykové verzi a požadavcích na zabezpečení.  
   
- Po spuštění C# programu je sestavení načteno do CLR, což může provádět různé akce na základě informací v manifestu. V případě splnění požadavků zabezpečení pak modul CLR provede kompilaci JIT (just-in-time) k převedení kódu IL na nativní instrukce počítače. CLR také poskytuje další služby související s automatickým uvolňováním paměti, zpracováním výjimek a správou prostředků. Kód, který je spuštěn modulem CLR, se někdy označuje jako "spravovaný kód", na rozdíl od "nespravovaného kódu", který je zkompilován do nativního strojového jazyka, který cílí na konkrétní systém. Následující diagram znázorňuje vztahy za běhu a dobu běhu souborů C# zdrojového kódu, knihovny tříd .NET Framework, sestavení a CLR.  
+ Při spuštění programu C# sestavení je načten do CLR, které může provádět různé akce na základě informací v manifestu. Pokud jsou splněny požadavky na zabezpečení, clr provede kompilaci Just-In-Time (JIT) převést il kód na nativní instrukce počítače. CLR také poskytuje další služby související s automatickým uvolňováním paměti, zpracováním výjimek a správou prostředků. Kód, který je spuštěn CLR se někdy označuje jako "spravovaný kód", na rozdíl od "nespravovaného kódu", který je kompilován do nativního strojového jazyka, který se zaměřuje na konkrétní systém. Následující diagram znázorňuje relace kompilace a run-time souborů zdrojového kódu jazyka C#, knihoven tříd rozhraní .NET Framework, sestavení a clr.  
   
- ![Ze C# zdrojového kódu na spuštění počítače](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
+ ![Ze zdrojového kódu Jazyka C# do spuštění počítače](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
- Interoperabilita jazyka je klíčovou funkcí .NET Framework. Vzhledem k tomu, že kód IL C# generovaný kompilátorem odpovídá specifikaci CTS (Common Type Specification), kód Il generovaný z C# může pracovat s kódem, který byl vygenerován z verzí rozhraní .NET Visual Basic, vizuálu C++nebo z více než 20 dalších jazyků odpovídajících standardu CTS. Jedno sestavení může obsahovat více modulů napsaných v různých jazycích .NET a typy mohou odkazovat na sebe stejně, jako kdyby byly napsány ve stejném jazyce.  
+ Jazyková interoperabilita je klíčovou funkcí rozhraní .NET Framework. Vzhledem k tomu, že il kód vytvořený kompilátorem jazyka C# odpovídá společné specifikaci typu (CTS), může kód IL generovaný z jazyka C# pracovat s kódem, který byl vygenerován z verzí jazyka .NET jazyka Visual Basic, Visual C++ nebo některého z více než 20 dalších jazyků kompatibilních s CTS. Jedno sestavení může obsahovat více modulů napsaných v různých jazycích .NET a typy mohou odkazovat na sebe stejně jako kdyby byly napsány ve stejném jazyce.  
   
- Kromě běhových služeb .NET Framework obsahuje také rozsáhlou knihovnu více než 4000 tříd uspořádaných do oborů názvů, které poskytují širokou škálu užitečných funkcí pro vše od vstupu a výstupu souborů k manipulaci s řetězci do XML. analýza, pro model Windows Forms ovládací prvky. Typická C# aplikace často používá knihovnu tříd .NET Framework pro zpracování běžných "rutinních" instalací.  
+ Kromě služeb běhu obsahuje rozhraní .NET Framework také rozsáhlou knihovnu více než 4000 tříd uspořádaných do oborů názvů, které poskytují širokou škálu užitečných funkcí pro vše od vstupu a výstupu až po manipulaci s řetězci až po XML analýzy, na ovládací prvky Windows Forms. Typická aplikace Jazyka C# používá knihovnu tříd rozhraní .NET Framework k rozsáhlému zpracování běžných "instalatérských" domácích práce.  
   
- Další informace o .NET Framework najdete v tématu [Přehled služby Microsoft .NET Framework](../../framework/get-started/overview.md).  
+ Další informace o rozhraní .NET Framework naleznete v [tématu Přehled rozhraní Microsoft .NET Framework](../../framework/get-started/overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Začínáme pomocí vizuáluC#](/visualstudio/ide/quickstart-csharp-console)
+- [Začínáme s visual c #](/visualstudio/ide/quickstart-csharp-console)

@@ -1,43 +1,43 @@
 ---
 title: Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení integračních událostí pro implementaci komunikace založené na událostech mezi mikroslužbami.
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Porozumět událostem integrace k implementaci komunikace založené na událostech mezi mikroslužbami.
 ms.date: 10/02/2018
 ms.openlocfilehash: 6d4e324a05def91935a82df41c971a75cb75c3f8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712400"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 
-Jak bylo popsáno výše, při použití komunikace založené na událostech publikuje mikroslužba událost, když dojde k nějaké významné situaci, například při aktualizaci obchodní entity. Další mikroslužby se přihlásí k odběru těchto událostí. Když mikroslužba obdrží událost, může aktualizovat své vlastní obchodní entity, což může vést k publikování dalších událostí. Toto je podstata konečné koncepce s ohledem na konzistenci. Tento systém pro publikování a odběr se obvykle provádí pomocí implementace sběrnice událostí. Tato sběrnice se dá navrhovat jako rozhraní s rozhraním API, které se potřebuje k přihlášení k odběru událostí a k jejich zrušení a publikování událostí. Může také mít jednu nebo více implementací na základě jakékoli komunikace mezi procesy nebo zasílání zpráv, jako je například fronta zpráv nebo sběrnice podporující asynchronní komunikaci a model publikování/odběr.
+Jak je popsáno dříve, při použití komunikace založené na událostech, mikroslužba publikuje událost, když se stane něco pozoruhodného, například když aktualizuje obchodní entitu. Ostatní mikroslužby přihlásit k odběru těchto událostí. Když mikroslužba obdrží událost, může aktualizovat své vlastní obchodní entity, což může vést k publikování dalších událostí. To je podstata konečného konceptu konzistence. Tento systém publikování/odběru se obvykle provádí pomocí implementace sběrnice událostí. Sběrnice událostí může být navržena jako rozhraní s rozhraním API potřebným k přihlášení k odběru a odhlášení z odběru událostí a publikování událostí. Může mít také jednu nebo více implementací založených na jakékoli komunikaci mezi procesy nebo zasílání zpráv, jako je například fronta zpráv nebo sběrnice služby, která podporuje asynchronní komunikaci a model publikování/odběru.
 
-Události můžete použít k implementaci obchodních transakcí, které obsahují více služeb, což vám umožní zajistit jejich konzistenci mezi těmito službami. Nakonec konzistentní transakce se skládá z řady distribuovaných akcí. V každé akci mikroslužba aktualizuje obchodní entitu a publikuje událost, která spustí další akci. Obrázek 6-18 níže ukazuje událost PriceUpdated publikovanou prostřednictvím služby a sběrnice událostí, takže se aktualizace ceny rozšíří na košík a další mikroslužby.
+Události můžete použít k implementaci obchodních transakcí, které pokrývají více služeb, což vám dává konečnou konzistenci mezi těmito službami. Nakonec konzistentní transakce se skládá z řady distribuovaných akcí. Při každé akci mikroslužby aktualizuje obchodní entity a publikuje událost, která aktivuje další akci. Obrázek 6-18 níže, ukazuje PriceUpdated událost publikovaná prostřednictvím a sběrnice událostí, takže aktualizace ceny je rozšířena do košíku a dalších mikroslužeb.
 
-![Diagram komunikace založené na asynchronní události se sběrnicí událostí](./media/integration-event-based-microservice-communications/event-driven-communication.png)
+![Diagram asynchronní komunikace řízené událostmi se sběrnicí událostí.](./media/integration-event-based-microservice-communications/event-driven-communication.png)
 
 **Obrázek 6-18**. Komunikace řízená událostmi na základě sběrnice událostí
 
-Tato část popisuje, jak můžete implementovat tento typ komunikace s .NET pomocí obecného rozhraní pro sběrnici událostí, jak je znázorněno na obrázku 6-18. Existuje několik možných implementací, z nichž každá využívá jinou technologii nebo infrastrukturu, jako je RabbitMQ, Azure Service Bus nebo jakákoli jiná Open Source nebo komerční služba Service Bus třetí strany.
+Tato část popisuje, jak můžete implementovat tento typ komunikace s rozhraním .NET pomocí obecného rozhraní sběrnice událostí, jak je znázorněno na obrázku 6-18. Existuje několik potenciálních implementací, z nichž každá používá jinou technologii nebo infrastrukturu, jako je RabbitMQ, Azure Service Bus nebo jakákoli jiná open source nebo komerční sběrnice.
 
-## <a name="using-message-brokers-and-services-buses-for-production-systems"></a>Používání služby zprostředkovatelé zpráv a služeb pro produkční systémy
+## <a name="using-message-brokers-and-services-buses-for-production-systems"></a>Použití zprostředkovatelů zpráv a sběrnic služeb pro výrobní systémy
 
-Jak je uvedeno v části architektura, můžete si vybrat z více technologií zasílání zpráv pro implementaci abstraktní sběrnice událostí. Tyto technologie jsou ale na různých úrovních. Například RabbitMQ, přenos zprostředkovatele zasílání zpráv, je nižší než komerční produkty, jako je Azure Service Bus, NServiceBus, MassTransit nebo jasnější. Většina těchto produktů může pracovat na RabbitMQ nebo Azure Service Bus. Vaše volba produktu závisí na tom, kolik funkcí a kolik je potřeba pro vaši aplikaci.
+Jak je uvedeno v části architektura, můžete si vybrat z více technologií zasílání zpráv pro implementaci sběrnice abstraktní události. Ale tyto technologie jsou na různých úrovních. Například RabbitMQ, přenos zprostředkovatele zasílání zpráv, je na nižší úrovni než komerční produkty, jako je Azure Service Bus, NServiceBus, MassTransit nebo Brighter. Většina těchto produktů může fungovat na webu RabbitMQ nebo Azure Service Bus. Výběr produktu závisí na tom, kolik funkcí a kolik out-of-the-box škálovatelnost, kterou potřebujete pro vaši aplikaci.
 
-V případě, že je pro vaše vývojové prostředí implementováno pouze vytváření konceptů služby Event Bus, jako v ukázce eShopOnContainers, může být k dispozici Jednoduchá implementace nad RabbitMQ spuštěným jako kontejner. Ale u důležitých a produkčních systémů, které vyžadují vysokou škálovatelnost, možná budete chtít vyhodnotit a použít Azure Service Bus.
+Pro implementaci pouze sběrnice událostí proof-of-concept pro vývojové prostředí, jako v eShopOnContainers vzorku, jednoduchá implementace nad RabbitMQ běží jako kontejner může stačit. Ale pro kritické a produkční systémy, které vyžadují vysokou škálovatelnost, můžete chtít vyhodnotit a používat Azure Service Bus.
 
-Pokud vyžadujete, aby se vyhodnotily špičkové abstrakce a bohatší funkce jako [Sagas](https://docs.particular.net/nservicebus/sagas/) pro dlouhotrvající procesy, které usnadňují distribuovaný vývoj, budou se vyhodnocovat i další komerční a open-source sběrnice, jako je NServiceBus, MassTransit a jasnější. V tomto případě by se abstrakce a rozhraní API používaly obvykle přímo z těch, které poskytují tyto sběrnice služby na vysoké úrovni, a ne vlastní abstrakce (jako jsou [jednoduché abstrakce sběrnice událostí poskytované na eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/BuildingBlocks/EventBus/EventBus/Abstractions/IEventBus.cs)). V takovém případě můžete [eShopOnContainers rozvětvení pomocí NServiceBus](https://go.particular.net/eShopOnContainers) (další odvozená ukázka implementovaná konkrétním softwarem).
+Pokud požadujete abstrakce na vysoké úrovni a bohatší funkce, jako [je Sagas](https://docs.particular.net/nservicebus/sagas/) pro dlouhotrvající procesy, které usnadňují distribuovaný vývoj, stojí za to vyhodnotit další komerční a open source servisní autobusy, jako je NServiceBus, MassTransit a Brighter. V tomto případě abstrakce a API k použití by obvykle přímo ty, které poskytují tyto vysoké úrovni servisní chrupnaté místo své vlastní abstrakce (jako [jednoduché abstrakce události sběrnice poskytované na eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/BuildingBlocks/EventBus/EventBus/Abstractions/IEventBus.cs)). Když na to přijde, můžete zkoumat [rozlokka eShopOnContainers pomocí NServiceBus](https://go.particular.net/eShopOnContainers) (další odvozené ukázky implementované konkrétní software).
 
-Samozřejmě byste mohli kdykoli vytvořit vlastní funkce služby Service Bus, jako je RabbitMQ a Docker, ale práci potřebnou k rezásobě kol může být pro vlastní podnikovou aplikaci moc nákladné.
+Samozřejmě můžete vždy vytvořit vlastní funkce sběrnice na nižší úrovni technologií, jako je RabbitMQ a Docker, ale práce potřebná k "znovuobjevení kola" může být příliš nákladná pro vlastní podnikovou aplikaci.
 
-Pro opakování iterace: ukázkové abstrakce a implementace sběrnice událostí v ukázce eShopOnContainers jsou určené k použití jenom jako důkaz konceptu. Jakmile se rozhodnete, že chcete mít asynchronní a událostní komunikaci, jak je vysvětleno v aktuální části, měli byste zvolit produkt Service Bus, který nejlépe vyhovuje vašim potřebám v produkčním prostředí.
+Chcete-li zopakovat: ukázkové abstrakce sběrnice událostí a implementace uvedené v eShopOnContainers vzorku jsou určeny k použití pouze jako důkaz koncepce. Jakmile se rozhodnete, že chcete mít asynchronní a událostmi řízenou komunikaci, jak je vysvětleno v aktuální části, měli byste zvolit produkt sběrnice, který nejlépe vyhovuje vašim potřebám pro výrobu.
 
 ## <a name="integration-events"></a>Události integrace
 
-Integrační události se používají k zavedení stavu domény v synchronizaci napříč několika mikroslužbami nebo externími systémy. To se provádí publikováním událostí integrace mimo mikroslužby. Když je událost publikovaná u více mikroslužeb přijímače (do tolika mikroslužeb, které se přihlásily k odběru události Integration), příslušná obslužná rutina události v každé mikroslužbě přijímače tuto událost zpracuje.
+Události integrace se používají pro synchronizaci stavu domény ve více mikroslužbách nebo externích systémech. To se provádí publikováním událostí integrace mimo mikroslužbu. Při publikování události do více mikroslužeb příjemce (tolik mikroslužeb, jak jsou přihlášeni k odběru události integrace), příslušné obslužné rutiny události v každém mikroslužbě příjemce zpracovává událost.
 
-Událost integrace je v podstatě Třída datového hospodářství, jak je znázorněno v následujícím příkladu:
+Událost integrace je v podstatě třída pro držení dat, jako v následujícím příkladu:
 
 ```csharp
 public class ProductPriceChangedIntegrationEvent : IntegrationEvent
@@ -56,51 +56,51 @@ public class ProductPriceChangedIntegrationEvent : IntegrationEvent
 }
 ```
 
-Integrační události lze definovat na úrovni aplikace každé mikroslužby, takže jsou odděleny od ostatních mikroslužeb způsobem, který je srovnatelný s tím, jak jsou definovány ViewModels na serveru a klientovi. Nedoporučuje se sdílet společnou knihovnu integračních událostí napříč více mikroslužbami. To by bylo propojení těchto mikroslužeb s jednou knihovnou dat definice události. Nechcete to dělat ze stejných důvodů, proč nechcete sdílet společný doménový model napříč více mikroslužbami: mikroslužby musí být zcela autonomní.
+Události integrace lze definovat na úrovni aplikace každé mikroslužby, takže jsou odděleny od jiných mikroslužeb, způsobem srovnatelným s tím, jak Jsou definovány ViewModels v serveru a klienta. Co se nedoporučuje, je sdílení společné knihovny událostí integrace mezi více mikroslužeb; přitom by bylo propojení těchto mikroslužeb s knihovnou dat definice jedné události. Nechcete to provést ze stejných důvodů, proč nechcete sdílet společný model domény napříč více mikroslužeb: mikroslužeb musí být zcela autonomní.
 
-Existuje jen několik druhů knihoven, které byste měli sdílet mezi mikroslužbami. Jednou z nich jsou knihovny finálních aplikačních bloků, jako je například [klientské rozhraní API sběrnice událostí](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/BuildingBlocks/EventBus), jako v eShopOnContainers. Další jsou knihovny, které představují nástroje, které by mohly být také sdíleny jako komponenty NuGet, například serializátory JSON.
+Existuje pouze několik druhů knihoven, které byste měli sdílet mezi mikroslužbami. Jedním z nich jsou knihovny, které jsou konečné bloky aplikace, jako [je rozhraní API klienta event bus](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/BuildingBlocks/EventBus), jako v eShopOnContainers. Dalším je knihovny, které představují nástroje, které by mohly být také sdíleny jako součásti NuGet, jako jsou serializátory JSON.
 
 ## <a name="the-event-bus"></a>Sběrnice událostí
 
-Sběrnice událostí umožňuje komunikaci ve stylu pro publikování a odběr mezi mikroslužbami, aniž by bylo nutné, aby byly komponenty explicitně vzájemně jiné, jak je znázorněno na obrázku 6-19.
+Sběrnice událostí umožňuje publikovat/odebírat styl komunikace mezi mikroslužeb bez nutnosti komponenty explicitně znát navzájem, jak je znázorněno na obrázku 6-19.
 
-![Diagram znázorňující základní vzor pro publikování a odběr.](./media/integration-event-based-microservice-communications/publish-subscribe-basics.png)
+![Diagram znázorňující základní vzor publikování/odběru.](./media/integration-event-based-microservice-communications/publish-subscribe-basics.png)
 
-**Obrázek 6-19**. Základy publikování a odběru pomocí sběrnice událostí
+**Obrázek 6-19**. Publikování/přihlášení k odběru základů pomocí sběrnice událostí
 
-Výše uvedený diagram znázorňuje, že mikroslužba A publikuje do sběrnice událostí, která distribuuje odběr mikroslužeb B a C, aniž by museli znát předplatitele. Sběrnice událostí souvisí se vzorem pozorovatele a vzorem publikování a odběru.
+Výše uvedený diagram ukazuje, že mikroslužeb A publikuje na Event Bus, který distribuuje k odběru mikroslužeb B a C, aniž by vydavatel potřebuje znát předplatitele. Sběrnice událostí souvisí s Observer vzor a publikování odběru vzor.
 
 ### <a name="observer-pattern"></a>Vzor pozorovatele
 
-Ve [vzorku pozorovatele](https://en.wikipedia.org/wiki/Observer_pattern)váš primární objekt (označovaný jako pozorovatelný) oznamuje jiné zúčastněné objekty (označované jako pozorovatelé) s relevantními informacemi (událostmi).
+Ve [vzoru Observer](https://en.wikipedia.org/wiki/Observer_pattern), primární objekt (označovaný jako pozorovatelné) upozorní další objekty zájem (označované jako Pozorovatelé) s relevantní informace (události).
 
-### <a name="publishsubscribe-pubsub-pattern"></a>Vzor pro publikování/odběr (pub/sub)
+### <a name="publishsubscribe-pubsub-pattern"></a>Vzor Publikovat/Přihlásit se k odběru (Pub/Sub)
 
-Účel [vzoru pro publikování a odběr](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) je stejný jako vzor pozorovatele: Chcete-li, aby byly určité události vykonaty, je třeba informovat další služby. Existují však důležité rozdíly mezi dvěma pozorovateli a podvzorci Pub/sub. V rámci modelu pozorovatele se všesměrové vysílání provádí přímo z pozorovatele pozorovatelům, takže "ví". Ale při použití vzoru Pub/sub je k dispozici třetí součást, která se nazývá zprostředkovatel nebo zprostředkovatel zpráv nebo sběrnice událostí, která je známá vydavatelem i předplatitelem. Proto při použití modelu Pub/sub se Vydavatel a předplatitelé přesně oddělí na zmíněnou sběrnici událostí nebo zprostředkovatele zpráv.
+Účel [publikování/odběru vzor](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) je stejný jako Observer vzor: chcete upozornit ostatní služby, když dojde k určité události. Ale tam je důležitý rozdíl mezi Pozorovatel a Pub / Sub vzory. Ve vzoru pozorovatele se vysílání provádí přímo z pozorovatelných pozorovatelů, takže se navzájem "znají". Ale při použití Pub / Sub vzor, je třetí součást, volal broker nebo zprávy broker nebo událost sběrnice, která je známa vydavatel i odběratel. Proto při použití Pub / Sub vzor vydavatel a odběratelé jsou přesně odděleny díky uvedené události sběrnice nebo zprávy broker.
 
-### <a name="the-middleman-or-event-bus"></a>Prostředníka nebo sběrnice událostí
+### <a name="the-middleman-or-event-bus"></a>Prostředník nebo autobus událostí
 
-Jak můžete dosáhnout anonymity mezi vydavatelem a předplatitelem? Snadným způsobem je, že se postará o veškerou komunikaci. Sběrnice událostí je taková střední.
+Jak dosáhnout anonymity mezi vydavatelem a předplatitelem? Snadný způsob je nechat prostředníka, aby se postaral o veškerou komunikaci. Autobus událostí je jeden takový prostředník.
 
-Sběrnice událostí se typicky skládá ze dvou částí:
+Sběrnice událostí se obvykle skládá ze dvou částí:
 
 - Abstrakce nebo rozhraní.
 
 - Jedna nebo více implementací.
 
-Na obrázku 6-19 se můžete podívat, jak, od aplikačního bodu, není sběrnice událostí prázdná, než kanál pro publikování a následné kanály. Způsob implementace této asynchronní komunikace se může lišit. Může mít více implementací, aby bylo možné mezi nimi přepínat v závislosti na požadavcích prostředí (například na produkčních a vývojových prostředích).
+Na obrázku 6-19 můžete vidět, jak z hlediska aplikace není sběrnice událostí ničím jiným než kanálem Pub/Sub. Způsob implementace této asynchronní komunikace se může lišit. Může mít více implementací, takže mezi nimi můžete přepínat v závislosti na požadavcích na prostředí (například produkční versus vývojová prostředí).
 
-Na obrázku 6-20 se můžete podívat na abstrakci sběrnice událostí s více implementacemi na základě technologie zasílání zpráv infrastruktury, jako je RabbitMQ, Azure Service Bus nebo jiný Zprostředkovatel událostí a zpráv.
+Na obrázku 6-20 můžete vidět abstrakci sběrnice událostí s více implementacemi na základě technologií zasílání zpráv infrastruktury, jako je RabbitMQ, Azure Service Bus nebo jiného zprostředkovatele událostí nebo zpráv.
 
-![Diagram znázorňující přidání vrstvy abstrakce pro sběrnici událostí](./media/integration-event-based-microservice-communications/multiple-implementations-event-bus.png)
+![Diagram znázorňující přidání vrstvy abstrakce sběrnice událostí.](./media/integration-event-based-microservice-communications/multiple-implementations-event-bus.png)
 
-**Obrázek 6-20.** Více implementací sběrnice událostí
+**Obrázek 6- 20.** Více implementací sběrnice událostí
 
-Je vhodné, aby byla sběrnice událostí definovaná prostřednictvím rozhraní, aby se mohla implementovat s několika technologiemi, jako je RabbitMQ Azure Service Bus nebo jiné. A jak již bylo uvedeno dříve, použití vlastních abstrakcí (rozhraní sběrnice událostí) je dobré pouze v případě, že vaše abstrakce vyžadují základní funkce sběrnice událostí. Pokud potřebujete funkce služby Service Bus, měli byste použít rozhraní API a abstrakce poskytované upřednostňovanou komerční službou Service Bus místo vašich vlastních abstrakcí.
+Je dobré mít sběrnici událostí definovanou prostřednictvím rozhraní, aby ji bylo možné implementovat pomocí několika technologií, jako je sběrnice RabbitMQ Azure Service nebo jiné. Nicméně, a jak již bylo zmíněno dříve, pomocí vlastní abstrakce (rozhraní sběrnice událostí) je dobré pouze v případě, že potřebujete základní funkce sběrnice událostí podporované abstrakce. Pokud potřebujete bohatší funkce služby Service Bus, měli byste pravděpodobně použít rozhraní API a abstrakce poskytované upřednostňovanou komerční sběrnicí služby namísto vlastních abstrakcí.
 
 ### <a name="defining-an-event-bus-interface"></a>Definování rozhraní sběrnice událostí
 
-Pojďme začít s některým implementačním kódem pro rozhraní sběrnice událostí a možnými implementacemi pro účely průzkumu. Rozhraní by mělo být obecné a jednoduché, jako v následujícím rozhraní.
+Začněme s některými kódimplementace pro rozhraní sběrnice událostí a možné implementace pro účely průzkumu. Rozhraní by mělo být obecné a jednoduché, jako v následujícím rozhraní.
 
 ```csharp
 public interface IEventBus
@@ -123,23 +123,23 @@ public interface IEventBus
 }
 ```
 
-Metoda `Publish` je jednoduchá. Sběrnice událostí bude všesměrově zasílat událost integrace do jakékoli mikroslužby nebo i do externí aplikace, která se přihlásí k odběru této události. Tuto metodu používá mikroslužba, která publikuje událost.
+Metoda `Publish` je přímočará. Sběrnice událostí bude vysílat integrační událost, která jí byla předána jakékoli mikroslužbě nebo dokonce externí aplikaci, která se k této události přihlásila. Tato metoda se používá mikroslužby, která publikuje událost.
 
-Metody `Subscribe` (můžete mít několik implementací závislých na argumentech), které jsou používány mikroslužbami, které chtějí přijímat události. Tato metoda má dva argumenty. První je událost integrace k přihlášení k odběru (`IntegrationEvent`). Druhý argument je obslužná rutina události Integration (nebo metoda zpětného volání) s názvem `IIntegrationEventHandler<T>`, která se má provést, když mikroslužba příjemce obdrží tuto zprávu události integrace.
+Metody `Subscribe` (můžete mít několik implementací v závislosti na argumenty) jsou používány mikroslužeb, které chcete přijímat události. Tato metoda má dva argumenty. První je integrační událost, k které se můžete přihlásit (`IntegrationEvent`). Druhý argument je obslužná rutina `IIntegrationEventHandler<T>`události integrace (nebo metoda zpětného volání), s názvem , která má být provedena, když mikroslužba příjemce získá zprávu události integrace.
 
-## <a name="additional-resources"></a>Další materiály a zdroje informací
+## <a name="additional-resources"></a>Další zdroje
 
-Některá řešení pro zasílání zpráv připravená pro produkční prostředí:
+Některá řešení zasílání zpráv připravená pro produkční prostředí:
 
 - **Azure Service Bus** \
   <https://docs.microsoft.com/azure/service-bus-messaging/>
   
-- **NServiceBus** \
+- **Sběrnice NServiceBus** \
   <https://particular.net/nservicebus>
   
-- **MassTransit** \
+- **Hromadná doprava** \
   <https://masstransit-project.com/>
 
 > [!div class="step-by-step"]
 > [Předchozí](database-server-container.md)
-> [Další](rabbitmq-event-bus-development-test-environment.md)
+> [další](rabbitmq-event-bus-development-test-environment.md)

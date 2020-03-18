@@ -1,6 +1,6 @@
 ---
-title: Syntaxe vlastností nástroje DebugView (C#)
-description: Popisuje zvláštní syntaxi vlastností nástroje DebugView k vytvoření řetězcové vyjádření stromů výrazů
+title: Syntaxe používaná vlastností DebugView (C#)
+description: Popisuje speciální syntaxi použitou vlastností DebugView k vytvoření řetězcové reprezentace stromů výrazů.
 author: zspitz
 ms.author: wiwagn
 ms.date: 05/22/2019
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - expression trees
 - debugview
 ms.openlocfilehash: ba695fc808108c49a4eee3c70a305b24c91769d8
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "67661719"
 ---
-# <a name="debugview-syntax"></a>`DebugView` Syntaxe
+# <a name="debugview-syntax"></a>`DebugView`Syntaxe
 
-`DebugView` (K dispozici pouze při ladění) obsahuje řetězec vykreslování stromů výrazů. Většina syntaxe je celkem jasné, abyste pochopili; zvláštní případy jsou popsány v následujících částech.
+Vlastnost `DebugView` (k dispozici pouze při ladění) poskytuje vykreslování řetězce stromů výrazů. Většina syntaxe je poměrně jednoduché pochopit; zvláštní případy jsou popsány v následujících oddílech.
 
-Každý příklad následuje blok komentáře, který obsahuje `DebugView`.
+Za každým příkladem následuje blokový komentář `DebugView`obsahující .
 
-## <a name="parameterexpression"></a>Výraz ParameterExpression
+## <a name="parameterexpression"></a>Parameterexpression
 
-<xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> se zobrazují názvy proměnných `$` symbolu na počátku.
+<xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType>názvy proměnných jsou `$` zobrazeny se symbolem na začátku.
 
-Pokud parametr nemá název, je přiřazen automaticky vygenerovaný název, jako například `$var1` nebo `$var2`.
+Pokud parametr nemá název, je mu přiřazen automaticky generovaný `$var1` `$var2`název, například nebo .
 
 ### <a name="examples"></a>Příklady
 
@@ -41,13 +41,13 @@ ParameterExpression numParam =  Expression.Parameter(typeof(int));
 */
 ```
 
-## <a name="constantexpression"></a>ConstantExpression
+## <a name="constantexpression"></a>Constantexpression
 
-Pro <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objekty, které představují celočíselných hodnot, řetězce a `null`, zobrazí se hodnota konstanty.
+Pro <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objekty, které představují celé hodnoty, řetězce a `null`, je zobrazena hodnota konstanty.
 
-Pro číselné typy, které mají standardní přípony jako literály jazyka C# se přidá přípona k hodnotě. V následující tabulce jsou uvedeny přípony spojené s různé číselné typy.
+Pro číselné typy, které mají standardní přípony jako literály jazyka C#, je přípona přidána k hodnotě. V následující tabulce jsou uvedeny přípony přidružené k různým číselným typům.
 
-| type | Klíčové slovo | Přípona |
+| Typ | Klíčové slovo | Přípona |
 |--|--|--|
 | <xref:System.UInt32?displayProperty=nameWithType> | [uint](../../../language-reference/builtin-types/integral-numeric-types.md) | U |
 | <xref:System.Int64?displayProperty=nameWithType> | [long](../../../language-reference/builtin-types/integral-numeric-types.md) | L |
@@ -72,9 +72,9 @@ ConstantExpression expr = Expression.Constant(num);
 */
 ```
 
-## <a name="blockexpression"></a>BlockExpression
+## <a name="blockexpression"></a>Blockexpression
 
-Pokud typ <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> objektu se liší od typu posledního výrazu v bloku, zobrazí se typ v lomených závorkách (`<` a `>`). V opačném případě typu <xref:System.Linq.Expressions.BlockExpression> objekt se nezobrazuje.
+Pokud se typ <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> objektu liší od typu posledního výrazu v bloku, zobrazí se`<` `>`text v rámci úhlových závorek ( a ). V opačném případě <xref:System.Linq.Expressions.BlockExpression> se nezobrazí typ objektu.
 
 ### <a name="examples"></a>Příklady
 
@@ -96,9 +96,9 @@ BlockExpression block =  Expression.Block(typeof(Object), Expression.Constant("t
 
 ## <a name="lambdaexpression"></a>LambdaExpression
 
-<xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objekty se zobrazí spolu s jejich typy delegátů.
+<xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType>objekty jsou zobrazeny společně s jejich typy delegátů.
 
-Pokud výraz lambda nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Lambda1` nebo `#Lambda2`.
+Pokud výraz lambda nemá název, je mu přiřazen automaticky generovaný název, například `#Lambda1` nebo `#Lambda2`.
 
 ### <a name="examples"></a>Příklady
 
@@ -120,11 +120,11 @@ LambdaExpression lambda =  Expression.Lambda<Func<int>>(Expression.Constant(1), 
 
 ## <a name="labelexpression"></a>LabelExpression
 
-Pokud chcete zadat výchozí hodnotu pro <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> objektu, zobrazí se tato hodnota před <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> objektu.
+Pokud zadáte výchozí hodnotu <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> objektu, tato hodnota <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> se zobrazí před objektem.
 
-`.Label` Token označuje začátek popisek. `.LabelTarget` Určuje cílové cíl, který chcete přejít na token.
+Token `.Label` označuje začátek popisku. Token `.LabelTarget` označuje cíl cíle, na který chcete přejít.
 
-Pokud popisek nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Label1` nebo `#Label2`.
+Pokud popisek nemá název, je mu přiřazen automaticky generovaný název, například `#Label1` nebo `#Label2`.
 
 ### <a name="examples"></a>Příklady
 
@@ -157,9 +157,9 @@ BlockExpression block = Expression.Block(
 */
 ```
 
-## <a name="checked-operators"></a>Checked operátory
+## <a name="checked-operators"></a>Kontrolované operátory
 
-Checked operátory jsou zobrazovány `#` symbol před operátor. Například operátor checked sčítání se zobrazí jako `#+`.
+Kontrolované operátory jsou zobrazeny se symbolem `#` před operátorem. Například operátor checked sčítání se `#+`zobrazí jako .
 
 ### <a name="examples"></a>Příklady
 

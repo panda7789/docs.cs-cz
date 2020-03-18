@@ -1,51 +1,51 @@
 ---
-title: 'Postupy: Vylepšení přesnosti modelu'
-description: Naučte se zlepšit přesnost modelu.
+title: 'Jak na to: Zlepšete přesnost modelu'
+description: Přečtěte si, jak zlepšit přesnost modelu
 ms.date: 04/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc
 ms.openlocfilehash: 8f3b283de378a37bfe429688207ea9fb52f9ca7f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75739584"
 ---
-# <a name="improve-mlnet-model-accuracy"></a>Zvýšení přesnosti modelu ML.NET
+# <a name="improve-mlnet-model-accuracy"></a>Zlepšete přesnost ML.NET modelu
 
-Naučte se, jak zlepšit přesnost modelu.
+Přečtěte si, jak zlepšit přesnost modelu.
 
-## <a name="reframe-the-problem"></a>Přeorámování problému
+## <a name="reframe-the-problem"></a>Přeformulovat problém
 
-V některých případech nemusí mít vylepšení modelu nic dělat s daty nebo technikami, které slouží ke výukě modelu. Místo toho se může stát, že budete požádáni o špatnou otázku. Zvažte, jak se podívat na problém z různých úhlů, a využijte data k extrakci latentních indikátorů a skrytých vztahů za účelem upřesnění otázky.
+V některých případě může zlepšení modelu mít nic společného s daty nebo techniky používané k trénování modelu. Místo toho se může jen zeptat na špatnou otázku. Zvažte možnost podívat se na problém z různých úhlů a využít data k extrahování latentních indikátorů a skrytých vztahů, aby bylo možné tuto otázku upřesnit.
 
-## <a name="provide-more-data-samples"></a>Poskytnutí dalších ukázek dat
+## <a name="provide-more-data-samples"></a>Poskytnutí dalších vzorků dat
 
-Podobně jako u člověka se zvyšuje více školicích algoritmů, což je pravděpodobnost lepšího zvýšení výkonu. Jedním ze způsobů, jak zlepšit výkon modelu, je poskytnout více ukázek dat školení k algoritmům. Další data, která se z nich učí, jsou další případy, kdy je dokáže správně identifikovat.
+Stejně jako lidé, čím více tréninkových algoritmů se zvyšuje pravděpodobnost lepšího výkonu. Jedním ze způsobů, jak zlepšit výkon modelu je poskytnout další ukázky trénovací data algoritmy. Čím více dat se učí, tím více případů je schopno správně identifikovat.
 
-## <a name="add-context-to-the-data"></a>Přidat kontext k datům
+## <a name="add-context-to-the-data"></a>Přidání kontextu k datům
 
-Význam jednoho datového bodu může být obtížné interpretovat. Vytváření kontextu kolem datových bodů pomáhá algoritmům a odborníkům na danou problematiku lépe rozhodovat. Například skutečnost, že dům má tři ložnicemi, nemá správnou indikaci jeho ceny. Pokud ale přidáte kontext a teď víte, že se nachází v dílčí městě mimo velkou metropolitní oblast, kde je průměrnou věkovou 38, průměrný příjem domácností je $80 000 a školy jsou v horním dvacátém percentilu a potom má algoritmus Další informace, které se zazákladem rozhodnutí. Všechny tyto kontexty je možné přidat jako vstup do modelu Machine Learning jako funkce.
+Význam jednoho datového bodu může být obtížné interpretovat. Vytváření kontextu kolem datových bodů pomáhá algoritmům i odborníkům na dané téma lépe rozhodovat. Například skutečnost, že dům má tři ložnice, sama o sobě nedává dobrý údaj o jeho ceně. Nicméně, pokud přidáte kontext a nyní víte, že je v příměstské čtvrti mimo hlavní metropolitní oblasti, kde průměrný věk je 38, průměrný příjem domácnosti je 80.000 dolarů a školy jsou v top 20. rozhodnutí. Všechny tyto kontexty lze přidat jako vstup do modelu strojového učení jako funkce.
 
 ## <a name="use-meaningful-data-and-features"></a>Použití smysluplných dat a funkcí
 
-I když více ukázek dat a funkcí může pomoci zlepšit přesnost modelu, můžou také způsobit šum, protože ne všechna data a funkce jsou smysluplné. Proto je důležité pochopit, jaké funkce jsou ty, které mají největší dopad na rozhodnutí prováděná algoritmem. Používání technik, jako je třeba funkce permutace (PFI), může pomoci identifikovat tyto funkce nejdůležitějšími a nejen vysvětlovat model, ale také použít výstup jako metodu výběru funkce ke snížení množství funkcí s vysokou úrovní šumu v rámci školicích procesů.
+Přestože další vzorky dat a funkce mohou pomoci zlepšit přesnost modelu, mohou také zavést šum, protože ne všechna data a funkce jsou smysluplné. Proto je důležité pochopit, které funkce jsou ty, které nejvíce ovlivňují rozhodnutí provedená algoritmem. Použití technik, jako je Důležitost funkce permutace (PFI), může pomoci identifikovat tyto významné funkce a nejen pomoci vysvětlit model, ale také použít výstup jako metodu výběru funkce ke snížení množství hlučných funkcí, které jdou do procesu školení.
 
-Další informace o použití PFI najdete v tématu [vysvětlení modelu předpovědi pomocí funkce permutace důležitost](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md).
+Další informace o použití PFI naleznete [v tématu Vysvětlení předpovědí modelu pomocí důležitosti funkce permutace](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md).
 
 ## <a name="cross-validation"></a>Křížové ověření
 
-Křížové ověřování je technikou pro vyhodnocení školení a modelů, které rozdělí data do několika oddílů a navlakuje více algoritmů na těchto oddílech. Tento postup zvyšuje odolnost modelu tím, že podrží data z procesu školení. Kromě zlepšení výkonu u nezpracovaných pozorování v prostředích s omezenými daty může být účinný nástroj pro školení modelů s menší datovou sadou.
+Křížové ověřování je technika trénování a vyhodnocení modelu, která rozděluje data do několika oddílů a trénuje více algoritmů na těchto oddílech. Tato technika zlepšuje robustnost modelu tím, že podrží data z tréninkového procesu. Kromě zlepšení výkonu na neviditelné pozorování, v prostředí s omezenými daty může být účinným nástrojem pro trénování modelů s menší datovou sadou.
 
-Další informace [o použití ověřování v ml.NET](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md) najdete na následujícím odkazu.
+Navštivte následující odkaz, kde se [dozvíte, jak používat křížové ověřování v ML.NET](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md)
 
 ## <a name="hyperparameter-tuning"></a>Ladění hyperparametrů
 
-Školení modelů strojového učení je iterativní a průzkumné proces. Například to, jaký je optimální počet clusterů při výuce modelu pomocí algoritmu K? Odpověď závisí na mnoha faktorech, například na struktuře dat. Hledání tohoto čísla by vyžadovalo experimentování s různými hodnotami pro k a pak vyhodnocení výkonu za účelem určení, která hodnota je nejlepší. Postup optimalizace těchto parametrů pro vyhledání optimálního modelu se nazývá ladění Hyper-parametru.
+Tréninkové modely strojového učení je iterativní a průzkumný proces. Například jaký je optimální počet clusterů při trénování modelu pomocí algoritmu K-Means? Odpověď závisí na mnoha faktorech, jako je struktura dat. Nalezení tohoto čísla by vyžadovalo experimentování s různými hodnotami pro k a následné vyhodnocení výkonu k určení, která hodnota je nejlepší. Praxe ladění těchto parametrů najít optimální model se nazývá hyper-parametr tuning.
 
-## <a name="choose-a-different-algorithm"></a>Zvolit jiný algoritmus
+## <a name="choose-a-different-algorithm"></a>Výběr jiného algoritmu
 
-Úlohy strojového učení, jako je regrese a klasifikace, obsahují různé implementace algoritmu. Může se jednat o případ, kdy problém, který se snažíte vyřešit, a způsob, jakým jsou vaše data strukturovaná, není vhodný pro aktuální algoritmus. V takovém případě zvažte použití jiného algoritmu pro váš úkol, abyste zjistili, jestli se z vašich dat lépe učí.
+Úlohy strojového učení, jako je regrese a klasifikace obsahují různé implementace algoritmů. Může se podařit, že problém, který se snažíte vyřešit, a způsob, jakým jsou data strukturována, nezapadá dobře do aktuálního algoritmu. V takovém případě zvažte použití jiného algoritmu pro váš úkol, abyste zjistili, zda se lépe učí z vašich dat.
 
-Následující odkaz poskytuje další [pokyny, které algoritmus zvolit](../how-to-choose-an-ml-net-algorithm.md).
+Následující odkaz obsahuje další [pokyny, který algoritmus zvolit](../how-to-choose-an-ml-net-algorithm.md).

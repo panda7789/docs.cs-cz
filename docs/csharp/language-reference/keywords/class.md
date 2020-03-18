@@ -1,5 +1,5 @@
 ---
-title: klíčové slovo třídy C# – referenční informace
+title: klíčové slovo třídy – odkaz jazyka C#
 ms.date: 07/18/2017
 f1_keywords:
 - class_CSharpKeyword
@@ -8,10 +8,10 @@ helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
 ms.openlocfilehash: 500160d3bc9280b866e5f5ba24c5edc623e752c1
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77673092"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
@@ -28,22 +28,22 @@ class TestClass
 
 ## <a name="remarks"></a>Poznámky
 
-V C#je povolena pouze jedna dědičnost. Jinými slovy třída může dědit pouze implementaci pouze z jedné základní třídy. Třída však může implementovat více než jedno rozhraní. V následující tabulce jsou uvedeny příklady dědičnosti tříd a implementace rozhraní:
+V c#. Jinými slovy, třída může dědit implementaci pouze z jedné základní třídy. Třída však může implementovat více než jedno rozhraní. V následující tabulce jsou uvedeny příklady dědičnosti třídy a implementace rozhraní:
 
 |Dědičnost|Příklad|
 |-----------------|-------------|
-|Žádná|`class ClassA { }`|
-|Jednoduché|`class DerivedClass : BaseClass { }`|
+|Žádný|`class ClassA { }`|
+|Single|`class DerivedClass : BaseClass { }`|
 |Žádné, implementuje dvě rozhraní|`class ImplClass : IFace1, IFace2 { }`|
-|Single, implementuje jedno rozhraní.|`class ImplDerivedClass : BaseClass, IFace1 { }`|
+|Jediné, implementuje jedno rozhraní|`class ImplDerivedClass : BaseClass, IFace1 { }`|
 
-Třídy, které deklarujete přímo v rámci oboru názvů, nikoli vnořené v rámci jiných tříd, mohou být buď [veřejné](./public.md) , nebo [interní](./internal.md). Třídy jsou ve výchozím nastavení `internal`.
+Třídy, které deklarujete přímo v oboru názvů, nikoli vnořené do jiných tříd, mohou být [veřejné](./public.md) nebo [interní](./internal.md). Třídy `internal` jsou ve výchozím nastavení.
 
-Členy třídy, včetně vnořených tříd, mohou být [Veřejná](public.md), [chráněná interní](protected-internal.md), [chráněná](protected.md), [interní](internal.md), [soukromá](private.md)nebo [soukromá](private-protected.md). Ve výchozím nastavení jsou členy `private`.
+Členové třídy, včetně vnořených tříd, mohou být [veřejné](public.md), [chráněné vnitřní](protected-internal.md), [chráněné](protected.md), [interní](internal.md), [soukromé](private.md)nebo [soukromé chráněné](private-protected.md). Členové `private` jsou ve výchozím nastavení.
 
-Další informace najdete v tématu [modifikátory přístupu](../../programming-guide/classes-and-structs/access-modifiers.md).
+Další informace naleznete [v tématu Access Modifiers](../../programming-guide/classes-and-structs/access-modifiers.md).
 
-Můžete deklarovat obecné třídy, které mají parametry typu. Další informace naleznete v tématu [Obecné třídy](../../programming-guide/generics/generic-classes.md).
+Můžete deklarovat obecné třídy, které mají parametry typu. Další informace naleznete [v tématu Obecné třídy](../../programming-guide/generics/generic-classes.md).
 
 Třída může obsahovat deklarace následujících členů:
 
@@ -63,7 +63,7 @@ Třída může obsahovat deklarace následujících členů:
 
 - [Operátory](../operators/index.md)
 
-- [Události](../../programming-guide/events/index.md)
+- [Akce](../../programming-guide/events/index.md)
 
 - [Delegáty](../../programming-guide/delegates/index.md)
 
@@ -71,29 +71,29 @@ Třída může obsahovat deklarace následujících členů:
 
 - [Rozhraní](../../programming-guide/interfaces/index.md)
 
-- [Typy struktury](../builtin-types/struct.md)
+- [Typy struktur](../builtin-types/struct.md)
 
-- [Výčtové typy](../builtin-types/enum.md)
+- [Typy výčtu](../builtin-types/enum.md)
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje deklaraci polí třídy, konstruktorů a metod. Ukazuje také vytváření instancí objektů a data instance tisku. V tomto příkladu jsou deklarovány dvě třídy. První třída, `Child`, obsahuje dvě soukromá pole (`name` a `age`), dva veřejné konstruktory a jedna veřejná metoda. Druhá třída, `StringTest`, slouží k zahrnutí `Main`.
+Následující příklad ukazuje deklarování polí třídy, konstruktorů a metod. Také ukazuje instanciontace objektu a tisk instancí dat. V tomto příkladu jsou deklarovány dvě třídy. První třída `Child`, obsahuje dvě`name` soukromá pole ( a `age`), dva veřejné konstruktory a jednu veřejnou metodu. Druhá třída `StringTest`, se používá `Main`k obsahují .
 
 [!code-csharp[csrefKeywordsTypes#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#5)]
 
 ## <a name="comments"></a>Komentáře
 
-Všimněte si, že v předchozím příkladu mohou být soukromá pole (`name` a `age`) dostupná pouze prostřednictvím veřejné metody třídy `Child`. Nemůžete například vytisknout název podřízeného objektu z metody `Main` pomocí příkazu podobného tomuto:
+Všimněte si, že v`name` předchozím `age`příkladu soukromé pole ( a `Child` ) lze přistupovat pouze prostřednictvím veřejné metody třídy. Například nelze vytisknout název dítěte, z `Main` metody, pomocí příkazu, jako je tento:
 
 ```csharp
 Console.Write(child1.name);   // Error
 ```
 
-Přístup k soukromým členům `Child` z `Main` by byl možný pouze v případě, že `Main` byly členem třídy.
+Přístup k soukromým `Child` `Main` členům z `Main` by bylo možné pouze v případě, že by byli členy třídy.
 
-Typy deklarované uvnitř třídy bez modifikátoru přístupu `private`výchozí, takže datové členy v tomto příkladu budou nadále `private`, pokud bylo klíčové slovo odebráno.
+Typy deklarované uvnitř třídy `private`bez modifikátoru přístupu `private` ve výchozím nastavení , takže datové členy v tomto příkladu by stále bylo, pokud klíčové slovo byly odebrány.
 
-Nakonec si všimněte, že pro objekt vytvořený pomocí konstruktoru bez parametrů (`child3`) se ve výchozím nastavení `age` pole inicializoval jako nula.
+Nakonec si všimněte, že pro objekt vytvořený`child3`pomocí `age` konstruktoru bez parametrů ( ), bylo pole ve výchozím nastavení inicializováno na nulu.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -101,7 +101,7 @@ Nakonec si všimněte, že pro objekt vytvořený pomocí konstruktoru bez param
 
 ## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](./index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](./index.md)
 - [Odkazové typy](./reference-types.md)

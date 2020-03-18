@@ -1,156 +1,156 @@
 ---
-title: Doporučení hostování Azure pro ASP.NET Core Web Apps
-description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Doporučení hostování Azure pro webové aplikace v ASP.NET
+title: Doporučení pro hostování Azure pro webové aplikace ASP.NET Core
+description: Architekt moderní webové aplikace s ASP.NET core a Azure | Doporučení pro hostování Azure pro ASP.NET webové aplikace
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
 ms.openlocfilehash: 5587b8b20da8a6801d77b722e9c3326f6e695574
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73416717"
 ---
-# <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení hostování Azure pro ASP.NET Core Web Apps
+# <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení pro hostování Azure pro webové aplikace ASP.NET Core
 
-> "Obchodní vedoucí pracovníci obcházejí oddělení IT, aby získali aplikace z cloudu (označované také jako SaaS) a platíte za ně, jako by to bylo předplatné časopisu. A když už službu nepotřebujete, může předplatné zrušit bez nevyužitého zařízení, které se v rohu nepoužívá. "  
-> _\- Daryl Plummer, analytik Gartner_
+> "Lídři v řadě podniků všude na světě obcházejí IT oddělení, aby získali aplikace z cloudu (také známého jako SaaS) a platili za ně, jako by to bylo předplatné časopisu. A pokud služba již není vyžadována, mohou zrušit předplatné bez zařízení, které by zůstalo v rohu nevyužito."  
+> _\-Daryl Plummer, analytik společnosti Gartner_
 
-Bez ohledu na potřeby a architekturu vaší aplikace ji Microsoft Azure můžou podporovat. Vaše potřeby hostování můžou být jednoduché jako statický web nebo propracované aplikace tvořené spoustou služeb. Pro ASP.NET Core webové aplikace a podpůrné služby je k dispozici několik známých konfigurací, které se doporučují. Doporučení k tomuto článku jsou seskupená na základě druhu prostředku, který se má hostovat, bez ohledu na to, jestli jsou úplné aplikace, jednotlivé procesy nebo data.
+Ať už vaše aplikace potřebuje a architekturu, microsoft azure ji může podporovat. Vaše hostingové potřeby mohou být stejně jednoduché jako statické webové stránky nebo sofistikované aplikace tvořené desítkami služeb. Pro ASP.NET monolitických webových aplikací core a podpůrných služeb, existuje několik známých konfigurací, které jsou doporučeny. Doporučení k tomuto článku jsou seskupeny na základě druhu prostředku, který má být hostován, zda úplné aplikace, jednotlivé procesy nebo data.
 
 ## <a name="web-applications"></a>Webové aplikace
 
 Webové aplikace mohou být hostovány pomocí:
 
-- App Service Web Apps
+- Webové aplikace služby App Service
 
 - Kontejnery (několik možností)
 
-- Virtual Machines (virtuální počítače)
+- Virtuální počítače (virtuální počítače)
 
-Z těchto důvodů je App Service Web Apps doporučený postup pro většinu scénářů, včetně jednoduchých aplikací založených na kontejnerech. Pro architektury mikroslužeb zvažte přístup založený na kontejneru. Pokud potřebujete větší kontrolu nad počítači, na kterých běží vaše aplikace, vezměte v úvahu Azure Virtual Machines.
+Z nich app service web apps je doporučený přístup pro většinu scénářů, včetně jednoduchých aplikací založených na kontejnerech. Pro architektury mikroslužeb zvažte přístup založený na kontejneru. Pokud potřebujete větší kontrolu nad počítači se spuštěnou aplikací, zvažte virtuální počítače Azure.
 
-### <a name="app-service-web-apps"></a>App Service Web Apps
+### <a name="app-service-web-apps"></a>Webové aplikace služby App Service
 
-App Service Web Apps nabízí plně spravovanou platformu optimalizovanou pro hostování webových aplikací. Je to nabídka typu platforma jako služba (PaaS), která vám umožní soustředit se na obchodní logiku, zatímco Azure se postará o infrastrukturu potřebnou ke spuštění a škálování aplikace. Některé klíčové funkce App Service Web Apps:
+App Service Web Apps nabízí plně spravovanou platformu optimalizovanou pro hostování webových aplikací. Je to platforma jako služba (PaaS), která vám umožní soustředit se na vaši obchodní logiku, zatímco Azure se postará o infrastrukturu potřebnou ke spuštění a škálování aplikace. Některé klíčové funkce webových aplikací App Service:
 
-- Optimalizace DevOps (průběžná integrace a doručování, více prostředí, testování a/B, podpora skriptování).
+- Optimalizace DevOps (průběžná integrace a doručování, více prostředí, testování A/B, podpora skriptování).
 
-- Globální škálování a vysoká dostupnost.
+- Globální rozsah a vysoká dostupnost.
 
-- Připojení k platformám SaaS a k místním datům.
+- Připojení k platformám SaaS a místním datům.
 
-- Zabezpečení a dodržování předpisů.
+- Bezpečnost a dodržování předpisů.
 
-- Integrace sady Visual Studio.
+- Integrace visual studia.
 
-Azure App Service je nejlepší volbou pro většinu webových aplikací. Nasazení a správa jsou integrované do platformy, weby se můžou rychle škálovat a zvládnout tak vysoké zatížení a integrované vyrovnávání zatížení a Traffic Manager poskytují vysokou dostupnost. Stávající weby můžete přesunout do Azure App Service snadno pomocí nástroje pro migraci online, pomocí Open Source aplikace z galerie webových aplikací nebo pomocí architektury a nástrojů podle vašeho výběru vytvořit novou lokalitu. Funkce WebJobs usnadňuje přidání zpracování úloh na pozadí do webové aplikace App Service. Pokud máte existující aplikaci ASP.NET hostovanou místně pomocí místní databáze, je k migraci aplikace do App Service webové aplikace možné použít Azure SQL Database (nebo zabezpečený přístup k místnímu databázovému serveru, pokud je upřednostňovaný).
+Azure App Service je nejlepší volbou pro většinu webových aplikací. Nasazování a správa jsou integrované přímo do platformy, weby se rychle škálují pro zvládnutí vysokého přenosového zatížení a integrované vyrovnávání zatížení a služba Traffic Manager zajišťují vysokou dostupnost. Do služby Azure App Service můžete snadno přesunout existující weby pomocí online nástroje pro migraci, můžete použít open source aplikaci z galerie webových aplikací nebo vytvořit nový web pomocí rozhraní a nástrojů podle vašeho výběru. Díky funkci WebJobs můžete do své webové aplikace App Service snadno přidat zpracování úloh na pozadí. Pokud máte existující ASP.NET aplikace hostované místně pomocí místní databáze, je tu jasnou cestu k migraci aplikace do webové aplikace služby app service s Azure SQL Database (nebo zabezpečený přístup k místnímu databázovému serveru, pokud je to výhodné).
 
-![Doporučená strategie migrace pro místní aplikace .NET pro Azure App Service](./media/image1-6.png)
+![Doporučená strategie migrace pro místní aplikace .NET do služby Azure App Service](./media/image1-6.png)
 
-Ve většině případů se přesun z místně hostované aplikace ASP.NET do webové aplikace App Service přímočarý. V samotné aplikaci by měla být vyžadována jen malá nebo žádná úprava a může rychle začít využívat celou řadu funkcí, které Azure App Service Web Apps nabídce.
+Ve většině případů je přechod z místně hostované ASP.NET aplikace na webovou aplikaci služby App Service jednoduchý proces. Od samotné aplikace by měla být vyžadována malá nebo žádná změna a může rychle začít využívat mnoho funkcí, které azure app service web apps nabízejí.
 
-Kromě aplikací, které nejsou optimalizované pro Cloud, jsou Azure App Service Web Apps vynikajícím řešením pro spoustu jednoduchých aplikací monolitické (nedistribuovaných), jako je třeba mnoho aplikací ASP.NET Core. V tomto přístupu je architektura základní a jednoduchá a srozumitelná a spravovatelná:
+Kromě aplikací, které nejsou optimalizované pro cloud, jsou Azure App Service Web Apps vynikajícím řešením pro mnoho jednoduchých monolitických (nedistribuovaných) aplikací, jako je například mnoho ASP.NET základních aplikací. V tomto přístupu je architektura základní a snadno pochopitelná a spravovatelná:
 
 ![Základní architektura Azure](./media/image1-5.png)
 
-Pro správu takové aplikace obvykle stačí malý počet prostředků v jedné skupině prostředků. Aplikace, které jsou obvykle nasazené jako jedna jednotka, nikoli aplikace tvořené mnoha samostatnými procesy, jsou vhodnými kandidáty pro tento [základní přístup k architektuře](https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app). I když je architektura spolehlivě jednoduchá, tato metoda stále umožňuje, aby hostovaná aplikace nastavila větší kapacitu (více prostředků na uzel) a výstupní (více hostovaných uzlů) tak, aby splňovaly jakékoli zvýšení poptávky. Díky automatickému škálování je možné aplikaci nakonfigurovat tak, aby automaticky upravila počet uzlů hostujících aplikaci na základě poptávky a průměrného zatížení napříč uzly.
+Malý počet prostředků v jedné skupině prostředků je obvykle dostačující ke správě takové aplikace. Aplikace, které jsou obvykle nasazeny jako jeden celek, nikoli ty aplikace, které se sloučí z mnoha samostatných procesů, jsou dobrými kandidáty pro tento [základní architektonický přístup](https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app). Ačkoli architektonicky jednoduché, tento přístup stále umožňuje hostované aplikace vertikálně navýšit kapacitu (více prostředků na uzel) a ven (více hostovaných uzlů) k uspokojení jakékoli zvýšení poptávky. Pomocí automatického škálování lze aplikaci nakonfigurovat tak, aby automaticky upravila počet uzlů hostujících aplikaci na základě poptávky a průměrného zatížení mezi uzly.
 
-### <a name="app-service-web-apps-for-containers"></a>App Service Web Apps pro kontejnery
+### <a name="app-service-web-apps-for-containers"></a>Webové aplikace služby App Service pro kontejnery
 
-Kromě podpory hostování webových aplikací přímo [App Service Web Apps kontejnerů](https://azure.microsoft.com/services/app-service/containers/) lze použít ke spouštění kontejnerových aplikací v systému Windows a Linux. Pomocí této služby můžete snadno nasazovat a spouštět aplikace s využitím kontejnerů, které se můžou škálovat podle vaší firmy. Aplikace mají všechny funkce App Service Web Apps uvedené výše. Kromě toho Web Apps for Containers podporuje zjednodušenou CI/CD s využitím Docker Hub, Azure Container Registry a GitHubu. Pomocí Azure DevOps můžete definovat kanály sestavení a nasazení, které publikují změny v registru. Tyto změny se pak dají testovat v přípravném prostředí a automaticky se nasazují do produkčního prostředí s využitím slotů nasazení a umožňují tak nevýpadky. Vrácení zpět na předchozí verze se může provádět stejně snadno.
+Kromě podpory pro přímé hostování webových aplikací lze [webové aplikace App Service pro kontejnery](https://azure.microsoft.com/services/app-service/containers/) používat ke spouštění kontejnerizovaných aplikací v systému Windows a Linuxu. Pomocí této služby můžete snadno nasadit a spustit kontejnerizované aplikace, které lze škálovat s vaší firmou. Aplikace mají všechny funkce App Service Web Apps uvedené výše. Kromě toho webové aplikace pro kontejnery podporují zjednodušené CI/CD s Docker Hub, Azure Container Registry a GitHub. Azure DevOps můžete použít k definování kanálů sestavení a nasazení, které publikují změny v registru. Tyto změny pak mohou být testovány v přípravném prostředí a automaticky nasazeny do produkčního prostředí pomocí slotů pro nasazení, což umožňuje upgrady s nulovými prostoji. Vrácení zpět k předchozím verzím lze provést stejně snadno.
 
-K dispozici je několik scénářů, kdy Web Apps pro kontejnery nejvíc vydávat smysl. Pokud máte existující aplikace, které můžete kontejnerizace, ať už v kontejnerech Windows nebo Linux, můžete je snadno hostovat pomocí této sady nástrojů. Stačí publikovat kontejner a potom nakonfigurovat Web Apps pro kontejnery, aby si stáhli nejnovější verzi tohoto obrázku z vašeho registru dle vlastního výběru. Toto je přístup "výtah a Shift" pro migraci z klasických hostujících modelů aplikace do modelu optimalizovaného pro Cloud.
+Existuje několik scénářů, kde webové aplikace pro kontejnery dávají největší smysl. Pokud máte existující aplikace, které můžete kontejnerizovat, ať už v kontejnerech Windows nebo Linux, můžete je snadno hostovat pomocí této sady nástrojů. Jednoduše publikujte kontejner a pak nakonfigurujte webové aplikace pro kontejnery tak, aby vytahovaly nejnovější verzi této bitové kopie z vybraného registru. Jedná se o přístup "lift and shift" k migraci z klasických modelů hostování aplikací na model optimalizovaný pro cloud.
 
-![Migrace kontejneru místní aplikace .NET do Azure Web Apps for Containers](./media/image1-8.png)
+![Migrace kontejnerizované místní aplikace .NET do Azure Web Apps pro kontejnery](./media/image1-8.png)
 
-Tento přístup také funguje v případě, že váš vývojový tým může přejít na proces vývoje založený na kontejneru. Vnitřní smyčka pro vývoj aplikací pomocí kontejnerů zahrnuje vytvoření aplikace pomocí kontejnerů. Změny provedené v kódu i konfigurace kontejneru jsou vloženy do správy zdrojových kódů a automatizované sestavení zodpovídá za publikování nových imagí kontejneru do registru, jako je Docker Hub nebo Azure Container Registry. Tyto image se pak používají jako základ pro další vývoj a také pro nasazení do produkčního prostředí, jak je znázorněno v následujícím diagramu:
+Tento přístup funguje také dobře, pokud váš vývojový tým je schopen přejít na proces vývoje na základě kontejneru. "Vnitřní smyčka" vývoje aplikací s kontejnery zahrnuje vytváření aplikace s kontejnery. Změny provedené v kódu, stejně jako konfigurace kontejneru jsou nabízeny do správy zdrojového kódu a automatizované sestavení je zodpovědný za publikování nových ibi kontejnerů do registru, jako je Docker Hub nebo Azure Container Registry. Tyto obrázky se pak používají jako základ pro další vývoj, stejně jako pro nasazení do produkčního prostředí, jak je znázorněno na následujícím diagramu:
 
-![Konečný pracovní postup životního cyklu Docker DevOps](./media/image1-7.png)
+![Pracovní postup životního cyklu Koncové do koncového Dockeru](./media/image1-7.png)
 
-Vývoj s kontejnery nabízí spoustu výhod, zejména v případě, že se kontejnery používají v produkčním prostředí. Stejná konfigurace kontejneru se používá k hostování aplikace v každém prostředí, ve kterém je spuštěná, od místního vývojového počítače po vytváření a testování systémů do produkčního prostředí. Tím se významně snižuje pravděpodobnost vad vyplývající z rozdílů v konfiguraci počítače nebo verzích softwaru. Vývojáři můžou k tomu využít i jakékoli nástroje, které s nimi mají nejvyšší produktivitu, včetně operačního systému, protože kontejnery můžou běžet na jakémkoli operačním systému. V některých případech mohou být distribuované aplikace zahrnující mnoho kontejnerů velmi náročné na spouštění na jednom vývojovém počítači. V tomto scénáři může být vhodné upgradovat na používání Kubernetes a Azure Dev Spaces, které jsou popsané v další části.
+Vývoj s kontejnery nabízí mnoho výhod, zejména při použití kontejnerů ve výrobě. Stejná konfigurace kontejneru se používá k hostování aplikace v každém prostředí, ve kterém běží, od místního vývojového počítače až po vytváření a testování systémů až po produkční prostředí. To výrazně snižuje pravděpodobnost závad v důsledku rozdílů v konfiguraci počítače nebo verzí softwaru. Vývojáři mohou také používat jakékoli nástroje, se kterými jsou nejproduktivnější, včetně operačního systému, protože kontejnery lze spustit v libovolném operačním systému. V některých případech distribuované aplikace zahrnující mnoho kontejnerů může být velmi náročné na prostředky spustit na jednom vývojovém počítači. V tomto scénáři může mít smysl upgradovat na using Kubernetes a Azure Dev Spaces, které jsou popsány v další části.
 
-V případě, že se některé větší aplikace rozdělují na vlastní menší nezávislé *mikroslužby*, můžete k vylepšení chování aplikace použít další vzory návrhu. Namísto práce přímo s jednotlivými službami může *Brána API* zjednodušit přístup a oddělit klienta od jeho back-endu. Samostatné služby back-endu pro jiné front-endy také umožňují službám vyvíjet se svými zákazníky společně. K běžným službám je možné přistupovat prostřednictvím samostatného kontejneru na *vozíku* , který může zahrnovat běžné knihovny pro připojení klientů pomocí modelu *velvyslance* .
+Jako části větších aplikací jsou rozděleny do jejich vlastní menší, nezávislé *mikroslužeb*, další návrhové vzory lze použít ke zlepšení chování aplikací. Namísto přímé práce s jednotlivými službami může *brána rozhraní API* zjednodušit přístup a oddělit klienta od jeho back-endu. S oddělenými servisními back-endy pro různé front-endy také umožňuje, aby se služby vyvíjely ve shodě se svými spotřebiteli. Běžné služby lze přistupovat prostřednictvím samostatného kontejneru *sajdkáru,* který může zahrnovat běžné knihovny připojení klienta pomocí *vzoru ambassador.*
 
-![Ukázková architektura mikroslužeb s několika zjištěnými běžnými vzory návrhu.](./media/image1-10.png)
+![Mikroslužeb ukázkové architektury s několika běžných vzorů návrhu poznamenal.](./media/image1-10.png)
 
-[Další informace o vzorech návrhu, které je potřeba vzít v úvahu při sestavování systémů založených na mikroslužbách](https://docs.microsoft.com/azure/architecture/microservices/design/patterns)
+[Další informace o návrhových vzorech, které je třeba vzít v úvahu při vytváření systémů založených na mikroslužbách.](https://docs.microsoft.com/azure/architecture/microservices/design/patterns)
 
-### <a name="azure-kubernetes-service"></a>Služba Azure Kubernetes
+### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-Azure Kubernetes Service (AKS) spravuje hostované prostředí Kubernetes, díky čemuž je rychlé a snadné nasazení a Správa kontejnerových aplikací bez znalosti orchestrace kontejnerů. Také eliminuje zatížení průběžných operací a údržby díky zřizování, upgradování a škálování prostředků na vyžádání bez nutnosti přepínat aplikace do offline režimu.
+Azure Kubernetes Service (AKS) spravuje hostované prostředí Kubernetes a umožňuje tak rychle a snadno nasazovat a spravovat kontejnerizované aplikace bez znalosti orchestrace kontejnerů. Zároveň eliminuje režii spojenou s probíhajícími operacemi a údržbou díky zřizování, upgradování a škálování prostředků na vyžádání bez nutnosti odpojovat aplikace.
 
-AKS snižuje složitost a provozní režii při správě clusteru Kubernetes tím, že z něj přenese velkou část této zodpovědnosti do Azure. Jako hostovaná služba Kubernetes zpracovává Azure kritické úkoly, jako je monitorování stavu a údržba. Platíte taky jenom za uzly agenta v rámci svých clusterů, a ne pro hlavní servery. AKS jako spravovaná služba Kubernetes poskytuje:
+AKS zjednodušuje správu clusteru Kubernetes a snižuje provozní režii s tím spojenou díky přenášení většiny zodpovědnosti na Azure. Jako hostovaná služba Kubernetes se za vás Azure stará o důležité úlohy, jako je monitorování stavu a údržba. Také platíte pouze pro uzly agenta v rámci clusterů, nikoli pro předlohy. AKS jako spravovaná služba Kubernetes poskytuje:
 
-- Automatizované upgrady a opravy verzí Kubernetes.
+- Automatické upgrady a opravy verzí Kubernetes.
 - Snadné škálování clusteru.
-- Samoobslužná plocha hostovaného ovládacího prvku (hlavní servery).
-- Úspora nákladů – Plaťte jenom za spuštěné uzly fondu agentů.
+- Samoopraviteho hostovací řídicí rovinu (mistři).
+- Úspora nákladů – platí pouze za spuštění uzlů fondu agenta.
 
-Díky Azure, který zpracovává správu uzlů v clusteru AKS, už nemusíte provádět mnoho úloh ručně, jako je upgrade clusteru. Vzhledem k tomu, že Azure zpracovává tyto kritické úlohy údržby za vás, neposkytuje AKS přímý přístup (například s SSH) do clusteru.
+Díky tomu, že se Azure stará o správu uzlů ve vašem clusteru AKS, už řadu úloh, například upgrady clusteru, nemusíte provádět ručně. Vzhledem k tomu, že Azure zpracovává tyto úkoly kritické údržby za vás, AKS neposkytuje přímý přístup (například s SSH) do clusteru.
 
-Týmy, které využívají AKS, mohou také využít výhod Azure Dev Spaces. Azure Dev Spaces pomáhá týmům soustředit se na vývoj a rychlou iteraci své aplikace mikroslužeb tím, že týmům umožní pracovat přímo s celou architekturou mikroslužeb nebo aplikací spuštěnou v AKS. Azure Dev Spaces taky poskytuje způsob, jak nezávisle aktualizovat části architektury mikroslužeb v izolaci, aniž by to ovlivnilo zbytek clusteru AKS nebo jiných vývojářů.
+Týmy, které využívají AKS, můžou taky využít Azure Dev Spaces. Azure Dev Spaces pomáhá týmům zaměřit se na vývoj a rychlou iteraci jejich aplikace mikroslužeb tím, že umožňuje týmům pracovat přímo s celou architekturou mikroslužeb nebo aplikací spuštěnou v AKS. Azure Dev Spaces také poskytuje způsob, jak nezávisle aktualizovat části architektury mikroslužeb izolovaně bez ovlivnění zbytku clusteru AKS nebo jiných vývojářů.
 
 ![Příklad pracovního postupu Azure Dev Spaces](./media/image1-9.gif)
 
 Azure Dev Spaces:
 
 - Minimalizace času nastavení místního počítače a požadavků na prostředky
-- Umožňuje týmům rychleji iterovat.
-- Snižte počet integračních prostředí vyžadovaných týmem.
-- Při vývoji a testování se musí v distribuovaném systému napodobovat určité služby.
+- Umožněte týmům rychleji iterátovat
+- Snížení počtu integračních prostředí požadovaných týmem
+- Odstranit potřebu zesměšňovat některé služby v distribuovaném systému při vývoji / testování
 
 [Další informace o Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
 
-### <a name="azure-virtual-machines"></a>Virtual Machines Azure
+### <a name="azure-virtual-machines"></a>Azure Virtual Machines
 
-Pokud máte existující aplikaci, která by vyžadovala významné změny pro spuštění v App Service, můžete zvolit Virtual Machines, aby bylo možné zjednodušit migraci do cloudu. Správná konfigurace, zabezpečení a údržba virtuálních počítačů ale vyžaduje mnohem více času a odbornost IT v porovnání s Azure App Service. Pokud zvažujete Virtual Machines Azure, ujistěte se, že jste přihlédli k probíhajícímu úsilí údržby potřebnému k opravě, aktualizaci a správě prostředí virtuálních počítačů. Azure Virtual Machines je infrastruktura jako služba (IaaS), zatímco App Service je PaaS. Měli byste taky zvážit, jestli nasazování aplikace jako kontejneru Windows do Web App for Containers může být možnost životaschopná pro váš scénář.
+Pokud máte existující aplikaci, která by vyžadovala podstatné změny ke spuštění ve službě App Service, můžete zvolit virtuální počítače, abyste zjednodušili migraci do cloudu. Správná konfigurace, zabezpečení a údržba virtuálních počítačů však vyžaduje mnohem více času a odborných znalostí v oblasti IT ve srovnání se službou Azure App Service. Pokud uvažujete o virtuálních počítačích Azure, ujistěte se, že berete v úvahu probíhající úsilí údržby potřebné k opravě, aktualizaci a správě prostředí virtuálních počítačů. Virtuální počítače Azure je infrastruktura jako služba (IaaS), zatímco služba App Service je PaaS. Měli byste také zvážit, zda nasazení aplikace jako kontejneru Windows do webové aplikace pro kontejnery může být životaschopnou možností pro váš scénář.
 
 ## <a name="logical-processes"></a>Logické procesy
 
-Jednotlivé logické procesy, které je možné oddělit od zbytku aplikace, je možné nasadit nezávisle na Azure Functions způsobem bez serveru. Azure Functions vám umožňuje napsat kód, který potřebujete pro daný problém, aniž byste se museli starat o aplikaci nebo infrastrukturu, kterou by mohli spustit. Můžete si vybrat z nejrůznějších programovacích jazyků, včetně C\#, F\#, Node. js, Pythonu a PHP, což vám umožní vybrat si pro daný úkol nejvíc produktivní jazyk. Podobně jako u většiny cloudových řešení platíte jenom za využité množství času a můžete Azure Functions důvěřovat, abyste mohli škálovat podle potřeby.
+Jednotlivé logické procesy, které lze oddělit od zbytku aplikace, mohou být nasazeny nezávisle na Azure Functions způsobem bez serveru. Funkce Azure umožňuje pouze napsat kód, který potřebujete pro daný problém, bez obav o aplikaci nebo infrastrukturu pro jeho spuštění. Můžete si vybrat z různých programovacích\#jazyků, včetně C , F\#, Node.js, Python a PHP, což vám umožní vybrat nejproduktivnější jazyk pro daný úkol. Stejně jako většina cloudových řešení platíte jenom za dobu, po kterou používáte, a můžete důvěřovat funkcím Azure, které se podle potřeby zvětšují.
 
 ## <a name="data"></a>Data
 
-Azure nabízí širokou škálu možností úložiště dat, takže vaše aplikace může pro příslušné údaje používat vhodného poskytovatele dat.
+Azure nabízí širokou škálu možností úložiště dat, takže vaše aplikace může použít příslušného poskytovatele dat pro příslušná data.
 
-V případě transakčních, relačních dat je nejlepší volbou Azure SQL Database. Pro vysoce výkonná data pro čtení, která jsou převážně pro čtení, je Redis mezipaměť zajištěná Azure SQL Database dobrým řešením.
+Pro transakční, relační data Azure SQL databases jsou nejlepší volbou. Pro vysoce výkonná data pro čtení je dobrým řešením mezipaměť Redis podporovaná databází Azure SQL Database.
 
-Nestrukturovaná data JSON můžete ukládat různými způsoby, od SQL Database sloupců až po objekty blob nebo tabulky v Azure Storage Azure Cosmos DB. Z těchto důvodů Azure Cosmos DB nabízí nejlepší funkce pro dotazování a je doporučenou možností pro velký počet dokumentů založených na JSON, které musí podporovat dotazování.
+Nestrukturovaná data JSON se můžou ukládat různými způsoby, od sloupců databáze SQL přes objekty BLOB nebo tabulky ve službě Azure Storage až po Azure Cosmos DB. Z nich Azure Cosmos DB nabízí nejlepší funkce dotazování a je doporučená možnost pro velký počet dokumentů založených na JSON, které musí podporovat dotazování.
 
-Přechodná data založená na příkazech nebo událostech sloužících k orchestraci chování aplikace mohou používat fronty Azure Service Bus nebo Azure Storage. Azure Storage sběrnice nabízí větší flexibilitu a je doporučenou službou pro netriviální zasílání zpráv v rámci aplikací a mezi nimi.
+Přechodná data založená na příkazech nebo událostech, která se používají k orchestraci chování aplikací, můžou používat Azure Service Bus nebo Fronty úložiště Azure. Azure Storage Bus nabízí větší flexibilitu a je doporučená služba pro netriviální zasílání zpráv v rámci aplikací a mezi nimi.
 
 ## <a name="architecture-recommendations"></a>Doporučení architektury
 
-Požadavky vaší aplikace by měly určovat její architekturu. K dispozici je celá řada různých služeb Azure. Výběr pravého rozhodnutí je důležité rozhodnutí. Microsoft nabízí galerii referenčních architektur, které vám pomůžou identifikovat typické architektury optimalizované pro běžné scénáře. Můžete najít referenční architekturu, která se bude úzce mapovat na požadavky vaší aplikace, nebo aspoň na výchozím bodu.
+Požadavky aplikace by měly určovat její architekturu. K dispozici je mnoho různých služeb Azure. Výběr toho správného je důležité rozhodnutí. Společnost Microsoft nabízí galerii referenčních architektur, které pomáhají identifikovat typické architektury optimalizované pro běžné scénáře. Můžete najít referenční architekturu, která se mapuje úzce na požadavky vaší aplikace, nebo alespoň nabízí výchozí bod.
 
-Obrázek 11-1 ukazuje příklad referenční architektury. Tento diagram popisuje doporučený postup architektury pro web systému správy obsahu Sitecore optimalizovaný pro marketing.
+Obrázek 11-1 znázorňuje ukázkovou referenční architekturu. Tento diagram popisuje doporučený přístup architektury pro web systému správy obsahu Sitecore optimalizovaný pro marketing.
 
 ![Obrázek 11-1](./media/image11-2.png)
 
-**Obrázek 11-1.** Referenční architektura Sitecore marketingu webu.
+**Obrázek 11-1.** Referenční architektura webových stránek sitecore marketing.
 
-**Odkazy – doporučení hostování Azure**
+**Reference – doporučení pro hostování azure**
 
-- Architektury řešení Azure \
+- Architektury řešení Azure\
   <https://azure.microsoft.com/solutions/architecture/>
 
-- Architektura základní webové aplikace Azure
+- Architektura webových aplikací Azure Basic\
   <https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app>
 
-- Vzory návrhu pro mikroslužby \
+- Návrhové vzory pro mikroslužby\
   <https://docs.microsoft.com/azure/architecture/microservices/design/patterns>
 
-- Příručka pro vývojáře Azure
+- Průvodce vývojáři Azure\
   <https://azure.microsoft.com/campaigns/developer-guide/>
 
-- Přehled Web Appse \
+- Přehled webových aplikací\
   <https://docs.microsoft.com/azure/app-service/app-service-web-overview>
 
-- Web App for Containers \
+- Webová aplikace pro kontejnery\
   <https://azure.microsoft.com/services/app-service/containers/>
 
-- Seznámení se službou Azure Kubernetes Service (AKS) \
+- Úvod ke službě Azure Kubernetes (AKS)\
   <https://docs.microsoft.com/azure/aks/intro-kubernetes>
 
 >[!div class="step-by-step"]

@@ -1,20 +1,21 @@
 ---
-title: Reference k příkazům rozhraní příkazového řádku ML.NET
-description: Přehled, ukázky a Reference k příkazu pro automatický vlak v nástroji CLI ML.NET
+title: odkaz příkazu ML.NET CLI
+description: Přehled, ukázky a odkaz na příkaz automatického tácení v nástroji ML.NET CLI.
 ms.date: 12/18/2019
-ms.openlocfilehash: 537f8d361c170378f5fe8cf454320831d7c8cbf2
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.custom: mlnet-tooling
+ms.openlocfilehash: bb161c596a76134876ee2bf0a6229bc551e0dad2
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449696"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "78848922"
 ---
-# <a name="the-mlnet-cli-command-reference"></a>Reference k příkazům rozhraní příkazového řádku ML.NET
+# <a name="the-mlnet-cli-command-reference"></a>Odkaz na příkaz ML.NET CLI
 
-Příkaz `auto-train` je hlavním příkazem, který poskytuje nástroj ML.NET CLI. Příkaz umožňuje vygenerovat dobrý model ML.NET s využitím automatizovaného strojového učení (AutoML) a také ukázkový C# kód pro spuštění nebo určení skóre modelu. Kromě toho C# kód pro výuku modelu je vygenerován pro vás, abyste mohli prozkoumat algoritmus a nastavení modelu.
+Příkaz `auto-train` je hlavním příkazem poskytovaným nástrojem ML.NET CLI. Příkaz umožňuje generovat kvalitní ML.NET modelu pomocí automatizovaného strojového učení (AutoML) a také v příkladu kódu Jazyka C# pro spuštění a skóre tohoto modelu. Kromě toho je generován kód Jazyka C# pro trénování modelu pro výzkum algoritmu a nastavení modelu.
 
 > [!NOTE]
-> Toto téma odkazuje na ML.NET CLI a ML.NET AutoML, které jsou momentálně ve verzi Preview, a materiál může být změněn.
+> Toto téma odkazuje na ML.NET cli a ML.NET AutoML, které jsou aktuálně ve verzi Preview, a materiál může být může být možné změnit.
 
 ## <a name="overview"></a>Přehled
 
@@ -24,15 +25,15 @@ Příklad použití:
 mlnet auto-train --task regression --dataset "cars.csv" --label-column-name price
 ```
 
-Příkaz `mlnet auto-train` generuje následující prostředky:
+Příkaz `mlnet auto-train` generuje následující datové zdroje:
 
-- Serializovaný model. zip ("nejlepší model") je připravený k použití.
-- C#kód, který se má spustit, nebo vyhodnotit skóre generovaný model.
-- C#kód s školicím kódem, který slouží ke generování tohoto modelu.
+- Serializovaný model .zip ("nejlepší model") připravený k použití.
+- C# kód ke spuštění/skóre, které vygenerovaly model.
+- C# kód s trénovací kód slouží ke generování tohoto modelu.
 
-První dva prostředky lze použít přímo v aplikacích pro koncové uživatele (ASP.NET Core webové aplikace, služby, aplikace klasické pracovní plochy a další) k tomu, aby předpovědi s modelem.
+První dva datové zdroje lze přímo použít ve vašich aplikacích pro koncové uživatele (ASP.NET základní webové aplikace, služby, desktopové aplikace a další) k předpovědi s modelem.
 
-Třetí Asset a školicí kód vám ukáže, co ML.NET kód rozhraní API používal CLI k výuce vygenerovaného modelu, takže můžete prozkoumat konkrétní algoritmus a nastavení modelu.
+Třetí prostředek, trénovací kód, ukazuje, jaký ML.NET kód rozhraní API byl použit rozhraní matné rozhraní API k trénování generovaného modelu, takže můžete prozkoumat konkrétní algoritmus a nastavení modelu.
 
 ## <a name="examples"></a>Příklady
 
@@ -42,21 +43,21 @@ Nejjednodušší příkaz CLI pro problém binární klasifikace (AutoML odvodí
 mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
 ```
 
-Další jednoduchý příkaz CLI pro problém regrese:
+Další jednoduchý příkaz CLI pro regresní problém:
 
 ``` console
 mlnet auto-train --task regression --dataset "cars.csv" --label-column-name Price
 ```
 
-Vytvoření a výuka modelu binární klasifikace s datovou sadou vlaků, testovací datovou sadou a dalšími explicitními argumenty přizpůsobení:
+Vytvořte a trénujte model binární klasifikace s datovou sadou vlakových dat, testovací datovou sadou a dalšími explicitními argumenty přizpůsobení:
 
 ```console
 mlnet auto-train --task binary-classification --dataset "/MyDataSets/Population-Training.csv" --test-dataset "/MyDataSets/Population-Test.csv" --label-column-name "InsuranceRisk" --cache on --max-exploration-time 600
 ```
 
-## <a name="command-options"></a>Možnosti příkazu
+## <a name="command-options"></a>Volby příkazů
 
-`mlnet auto-train` vlacích v závislosti na zadané datové sadě a nakonec vybírá nejlepší model, uloží ho jako serializovaný soubor. zip a vygeneruje související C# kód pro bodování a školení.
+`mlnet auto-train`trénuje více modelů založených na poskytnuté datové sadě a nakonec vybere nejlepší model, uloží jej jako serializovaný soubor ZIP plus generuje související kód C# pro vyhodnocování a trénování.
 
 ```console
 mlnet auto-train
@@ -92,176 +93,176 @@ mlnet auto-train
 
 ```
 
-Neplatné možnosti vstupu způsobí, že nástroj rozhraní příkazového řádku vygeneruje seznam platných vstupů a chybovou zprávu.
+Neplatné možnosti zadávání způsobí, že nástroj rozhraní se konstatování rozhraní A CLI vyzařuje seznam platných vstupů a chybovou zprávu.
 
 ## <a name="task"></a>Úkol
 
-`--task | --mltask | -T` (String)
+`--task | --mltask | -T`(řetězec)
 
-Jeden řetězec, který poskytuje problém k řešení ML. Například kterákoli z následujících úloh (rozhraní příkazového řádku bude nakonec podporovat všechny úlohy podporované v AutoML):
+Jeden řetězec poskytující problém ML k vyřešení. Například některý z následujících úkolů (příkaz příkazpříkaz příkazového konto nakonec bude podporovat všechny úkoly podporované v automatické ml):
 
-- `regression` – vyberte, jestli se má pro předpověď číselné hodnoty použít model ML.
-- `binary-classification` – vyberte, jestli má výsledek modelu ML dvě možné kategorií logické hodnoty (0 nebo 1).
-- `multiclass-classification` – vyberte, jestli má výsledek modelu ML více kategorií možných hodnot.
+- `regression`- Zvolte, zda bude model ML použit k předvídání číselné hodnoty
+- `binary-classification`- Zvolte, zda má výsledek modelu ML dvě možné kategorie logických hodnot (0 nebo 1).
+- `multiclass-classification`- Zvolte, zda má výsledek modelu ML více kategorických možných hodnot.
 
-V tomto argumentu by měla být uvedena pouze jedna úloha ML.
+V tomto argumentu by měl být poskytnut pouze jeden úkol ML.
 
 ## <a name="dataset"></a>Datová sada
 
-`--dataset | -d` (String)
+`--dataset | -d`(řetězec)
 
-Tento argument poskytuje cestu k jedné z následujících možností:
+Tento argument poskytuje cestu k souboru jedné z následujících možností:
 
-- Odpověď *: soubor celé datové sady:* Pokud tato možnost používá a uživatel neposkytuje `--test-dataset` a `--validation-dataset`, pak se k ověřování modelu použije interní ověřování (k přeložení atd.) nebo automatizované přístupy k rozdělení dat. V takovém případě bude muset uživatel pouze zadat FilePath pro datovou sadu.
+- *A: Celý soubor datové sady:* Pokud používáte tuto možnost a `--test-dataset` `--validation-dataset`uživatel neposkytuje a , pak křížové ověření (k-fold, atd.) nebo automatizované přístupy rozdělení dat budou použity interně pro ověření modelu. V takovém případě bude uživatel potřebovat pouze poskytnout cestu souboru datové sady.
 
-- *B: soubor datové sady školení:* Pokud uživatel také poskytuje datové sady pro ověřování modelu (pomocí `--test-dataset` a volitelně `--validation-dataset`), pak argument `--dataset` znamená, že má pouze "školicí sadu". Například při použití přístupu 80%-20% k ověření kvality modelu a získání metrik přesnosti bude mít "školicí datová sada" 80% dat a "testovací sada" bude obsahovat 20% dat.
+- *B: Soubor trénovací datové sady:* Pokud uživatel také poskytuje datové sady pro `--test-dataset` ověření `--validation-dataset`modelu (pomocí a volitelně ), pak `--dataset` argument znamená mít pouze "trénovací datové sady". Například při použití 80 % - 20% přístup k ověření kvality modelu a získat metriky přesnosti, "trénovací datové sady" bude mít 80 % dat a "testovací datové sady" bude mít 20 % dat.
 
 ## <a name="test-dataset"></a>Testovací datová sada
 
-`--test-dataset | -t` (String)
+`--test-dataset | -t`(řetězec)
 
-Cesta k souboru, který odkazuje na soubor sady dat testu, například při použití 80%-20% přístupu při pravidelném ověřování, aby bylo možné získat metriky přesnosti.
+Cesta k souboru směřující k souboru testovací datové sady, například při použití přístupu 80 % až 20 % při provádění pravidelných ověření za účelem získání metrik přesnosti.
 
-Pokud používáte `--test-dataset`, vyžaduje se také `--dataset`.
+Pokud `--test-dataset`používáte `--dataset` , pak je také nutné.
 
-Argument `--test-dataset` je nepovinný, pokud se nepoužívá--ověření-DataSet. V takovém případě musí uživatel použít tři argumenty.
+Argument `--test-dataset` je volitelný, pokud --validation-dataset se používá. V takovém případě musí uživatel použít tři argumenty.
 
-## <a name="validation-dataset"></a>Ověření datové sady
+## <a name="validation-dataset"></a>Ověřovací datová sada
 
-`--validation-dataset | -v` (String)
+`--validation-dataset | -v`(řetězec)
 
-Cesta k souboru, který odkazuje na soubor datové sady ověření. Datová sada ověření je volitelná, v každém případě.
+Cesta k souboru směřující k ověřovacímu souboru datové sady. Ověřovací datová sada je v každém případě volitelná.
 
-Pokud používáte `validation dataset`, mělo by se jednat o toto chování:
+Pokud používáte `validation dataset`, chování by mělo být:
 
-- Jsou také požadovány argumenty `test-dataset` a `--dataset`.
+- A `test-dataset` `--dataset` argumenty jsou také požadovány.
 
-- Datová sada `validation-dataset` slouží k odhadu chyby předpovědi pro výběr modelu.
+- Datová `validation-dataset` sada se používá k odhadu chyby předpovědi pro výběr modelu.
 
-- `test-dataset` se používá pro vyhodnocení chyby generalizace finálního zvoleného modelu. V ideálním případě by měl být testovací sada uchovávána v "trezoru" a musí být uvedena pouze na konci analýzy dat.
+- Slouží `test-dataset` k posouzení chyby generalizace konečného zvoleného modelu. V ideálním případě by testovací sada měla být uložena v "trezoru" a měla by být vyvedena pouze na konci analýzy dat.
 
-V podstatě při použití `validation dataset` a `test dataset`je fáze ověření rozdělená na dvě části:
+V podstatě, `validation dataset` při `test dataset`použití plus , fáze validace je rozdělena do dvou částí:
 
-1. V první části se jenom podíváte na vaše modely a vyberete nejlepší způsob, jak pomocí ověřovacích dat (= ověřování) vybrat nejvhodnější přístup.
-2. Pak odhadnete přesnost vybraného přístupu (= test).
+1. V první části se stačí podívat na své modely a vybrat nejvýkonnější přístup pomocí ověřovacích dat (=ověření)
+2. Poté odhadnete přesnost zvoleného přístupu (=test).
 
-Oddělení dat by proto mohlo být 80/10/10 nebo 75/15/10. Například:
+Oddělení údajů by proto mohlo být 80/10/10 nebo 75/15/10. Například:
 
-- soubor `training-dataset` by měl mít 75% dat.
-- soubor `validation-dataset` by měl mít 15% dat.
-- soubor `test-dataset` by měl mít 10% dat.
+- `training-dataset`soubor by měl mít 75% dat.
+- `validation-dataset`soubor by měl mít 15% dat.
+- `test-dataset`soubor by měl mít 10% dat.
 
-V každém případě se tyto procentní podíly určí uživatelem pomocí rozhraní příkazového řádku, který poskytne soubory, které jsou už rozdělené.
+V každém případě budou tyto procenta rozhodovat uživatel pomocí rozhraní se kli, který poskytne soubory, které jsou již rozděleny.
 
 ## <a name="label-column-name"></a>Název sloupce popisku
 
-`--label-column-name | -n` (String)
+`--label-column-name | -n`(řetězec)
 
-Pomocí tohoto argumentu je možné zadat konkrétní sloupec cíl/cíl (proměnnou, kterou chcete odhadnout) pomocí názvu sloupce nastaveného v záhlaví datové sady.
+Pomocí tohoto argumentu lze zadat konkrétní sloupec cíle/cíle (proměnnou, kterou chcete předpovědět) pomocí názvu sloupce nastaveného v záhlaví datové sady.
 
-Tento argument se používá jenom pro úlohy pod dohledem ML, jako je například *problém s klasifikací*. Nedá se použít pro úlohy s nekontrolovanými ML, jako je například *clustering*.
+Tento argument se používá pouze pro úkoly ML pod dohledem, jako je *například problém klasifikace*. Nelze jej použít pro úlohy ML bez dohledu, jako je *clustering*.
 
 ## <a name="label-column-index"></a>Index sloupce popisku
 
-`--label-column-index | -i` (int)
+`--label-column-index | -i`(int)
 
-Pomocí tohoto argumentu se dá určit konkrétní sloupec cíl/cíl (proměnná, kterou chcete předpovědět), pomocí číselného indexu sloupce v souboru datové sady (hodnoty indexu sloupce začínají na 1).
+Pomocí tohoto argumentu lze zadat konkrétní sloupec cíle/cíle (proměnnou, kterou chcete předpovědět) pomocí číselného indexu sloupce v souboru datové sady (Hodnoty indexu sloupce začínají na 1).
 
-*Poznámka:* Pokud uživatel používá taky `--label-column-name`, `--label-column-name` je ten, který se používá.
+*Poznámka:* Pokud uživatel také používá `--label-column-name`, `--label-column-name` je ten, který se používá.
 
-Tento argument se používá jenom pro úlohu pod dohledem ML, jako je například *problém s klasifikací*. Nedá se použít pro úlohy s nekontrolovanými ML, jako je například *clustering*.
+Tento argument se používá pouze pro úkol ml pod dohledem, jako je *například problém klasifikace*. Nelze jej použít pro úlohy ML bez dohledu, jako je *clustering*.
 
 ## <a name="ignore-columns"></a>Ignorovat sloupce
 
-`--ignore-columns | -I` (String)
+`--ignore-columns | -I`(řetězec)
 
-Pomocí tohoto argumentu můžete ignorovat existující sloupce v souboru DataSet, aby nebyly načteny a použity v školicích procesech.
+Pomocí tohoto argumentu můžete ignorovat existující sloupce v souboru datové sady, aby nebyly načteny a používány trénovacími procesy.
 
-Zadejte názvy sloupců, které chcete ignorovat. K oddělení více názvů sloupců použijte ', ' (čárka s mezerou) nebo ' ' (mezera). Můžete použít uvozovky pro názvy sloupců obsahující prázdné znaky (například "přihlášen").
+Zadejte názvy sloupců, které chcete ignorovat. K oddělení více názvů sloupců použijte ', ' (čárka s mezerou) nebo '' (mezera). U názvů sloupců obsahujících mezery (např.
 
 Příklad:
 
 `--ignore-columns email, address, id, logged_in`
 
-## <a name="has-header"></a>Má hlavičku
+## <a name="has-header"></a>Má záhlaví
 
-`--has-header | -h` (bool)
+`--has-header | -h`(bool)
 
-Určete, zda mají soubory DataSet řádek záhlaví.
+Určete, zda mají soubory datové sady řádek záhlaví.
 Možné hodnoty:
 
 - `true`
 - `false`
 
-Výchozí hodnota je `true`, pokud tento argument není zadán uživatelem.
+Výchozí hodnota je, `true` pokud tento argument není určen uživatelem.
 
-Aby bylo možné použít argument `--label-column-name`, musíte mít v souboru DataSet hlavičku a `--has-header` nastavit na `true` (což je ve výchozím nastavení).
+Chcete-li použít `--label-column-name` argument, musíte mít záhlaví v souboru `--has-header` datové `true` sady a nastavit na (což je ve výchozím nastavení).
 
 ## <a name="max-exploration-time"></a>Maximální doba průzkumu
 
-`--max-exploration-time | -x` (String)
+`--max-exploration-time | -x`(řetězec)
 
 Ve výchozím nastavení je maximální doba průzkumu 30 minut.
 
-Tento argument nastaví maximální dobu (v sekundách), po kterou má proces prozkoumat více školitelů a konfigurací. Nakonfigurovaný čas může být překročen, pokud je zadaný čas příliš krátký (řekněme 2 sekundy) pro jednu iteraci. V tomto případě je skutečný čas potřebný čas k vytvoření jedné konfigurace modelu v rámci jedné iterace.
+Tento argument nastaví maximální čas (v sekundách) pro proces prozkoumat více školitelů a konfigurace. Nakonfigurovaný čas může být překročen, pokud je zadaný čas příliš krátký (řekněme 2 sekundy) pro jednu iteraci. V tomto případě skutečný čas je požadovaný čas k vytvoření jedné konfigurace modelu v jedné iteraci.
 
-Čas potřebný pro iterace se může lišit v závislosti na velikosti datové sady.
+Potřebný čas pro iterací se může lišit v závislosti na velikosti datové sady.
 
 ## <a name="cache"></a>Mezipaměť
 
-`--cache | -c` (String)
+`--cache | -c`(řetězec)
 
-Pokud použijete ukládání do mezipaměti, načte se celá datová sada školení v paměti.
+Pokud používáte ukládání do mezipaměti, bude celá trénovací datová sada načtena do paměti.
 
-V případě malých a středně velkých datových sad může použití mezipaměti významně zlepšit výkon školení, což znamená, že doba přípravy může být kratší, než když mezipaměť nepoužíváte.
+U malých a středních datových sad může použití mezipaměti výrazně zlepšit výkon školení, což znamená, že doba školení může být kratší než při nepoužívání mezipaměti.
 
-U rozsáhlých datových sad ale načítání všech dat v paměti může negativně ovlivnit vzhledem k tomu, že může dojít k dostatku paměti. Při školení s rozsáhlými soubory DataSet a nepoužíváte-li mezipaměť, bude ML.NET streamovat datové bloky dat z disku, když potřebuje načíst více dat během školení.
+U velkých datových sad však načítání všech dat v paměti může mít negativní dopad, protože může dojít k nedostatku paměti. Při trénování s velkými soubory datových sad a nepoužíváte mezipaměť, ML.NET bude streamování bloků dat z jednotky, když potřebuje načíst více dat při trénování.
 
 Můžete určit tyto hodnoty:
 
-`on`: Vynutí použití mezipaměti při školení.
-`off`: vynutí, aby se mezipaměť nepoužívala při výuce.
-`auto`: v závislosti na heuristikách AutoML se mezipaměť použije nebo ne. Malé nebo střední datové sady budou obvykle používat mezipaměť a velké datové sady nebudou používat mezipaměť, pokud použijete možnost `auto`.
+`on`: Vynutí použití mezipaměti při trénování.
+`off`: Vynutí, aby se mezipaměť při trénování nepoužívala.
+`auto`: V závislosti na heuristici automatické homl bude mezipaměť použita či nikoli. Malé a střední datové sady obvykle používají mezipaměť a velké datové `auto` sady nebudou používat mezipaměť, pokud použijete volbu.
 
-Pokud parametr `--cache` nezadáte, použije se ve výchozím nastavení mezipaměť `auto` konfigurace.
+Pokud `--cache` parametr nezadáte, bude konfigurace `auto` mezipaměti použita ve výchozím nastavení.
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`--name | -N` (String)
+`--name | -N`(řetězec)
 
-Název vytvořeného výstupního projektu nebo řešení. Pokud název nezadáte, použije se název `sample-{mltask}`.
+Název vytvořeného výstupního projektu nebo řešení. Pokud není zadán žádný `sample-{mltask}` název, bude použit název.
 
-Soubor modelu ML.NET (. Soubor ZIP) bude mít stejný název i.
+Soubor modelu ML.NET (. ZIP) dostane stejný název, stejně.
 
 ## <a name="output-path"></a>Výstupní cesta
 
-`--output-path | -o` (String)
+`--output-path | -o`(řetězec)
 
-Kořenové umístění/složka, do které se umístí vygenerovaný výstup Výchozí je aktuální adresář.
+Kořenové umístění/složka pro umístění generovaného výstupu. Výchozí je aktuální adresář.
 
-## <a name="verbosity"></a>Verbosity
+## <a name="verbosity"></a>Podrobnosti
 
-`--verbosity | -V` (String)
+`--verbosity | -V`(řetězec)
 
 Nastaví úroveň podrobností standardního výstupu.
 
-Povolené hodnoty jsou:
+Povolené hodnoty jsou následující:
 
 - `q[uiet]`
-- `m[inimal]` (ve výchozím nastavení)
-- `diag[nostic]` (úroveň informací o protokolování)
+- `m[inimal]`(ve výchozím nastavení)
+- `diag[nostic]`(úroveň informací o protokolování)
 
-Ve výchozím nastavení by měl nástroj rozhraní příkazového řádku při práci zobrazit určitou minimální odezvu (minimální), jako je třeba zmínku o tom, že funguje, a pokud je to možné, kolik času zbývá nebo kolik času bylo dokončeno.
+Ve výchozím nastavení by měl nástroj zaokreslování vykazovat minimální zpětnou vazbu (minimální) při práci, například zmínku, že funguje a pokud je to možné, kolik času zbývá nebo kolik % času je dokončeno.
 
 ## <a name="help"></a>Nápověda
 
 `-h|--help`
 
-Vytiskne nápovědu pro příkaz s popisem pro každý parametr příkazu.
+Vytiskne nápovědu pro příkaz s popisem pro parametr každého příkazu.
 
 ## <a name="see-also"></a>Viz také
 
-- [Postup instalace nástroje ML.NET CLI](../how-to-guides/install-ml-net-cli.md)
-- [Přehled rozhraní příkazového řádku ML.NET](../automate-training-with-cli.md)
-- [Kurz: analýza mínění pomocí rozhraní příkazového řádku ML.NET](../tutorials/sentiment-analysis-cli.md)
+- [Jak nainstalovat nástroj ML.NET CLI](../how-to-guides/install-ml-net-cli.md)
+- [Přehled ML.NET CLI](../automate-training-with-cli.md)
+- [Kurz: Analýza mínění pomocí ML.NET CLI](../tutorials/sentiment-analysis-cli.md)
 - [Telemetrie v ML.NET CLI](../resources/ml-net-cli-telemetry.md)

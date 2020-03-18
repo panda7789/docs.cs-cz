@@ -1,48 +1,48 @@
 ---
 ms.openlocfilehash: 85f50b221e7ecb1ebd6fa539894ab7aabed8d362
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "67540097"
 ---
-### <a name="install-the-global-tool"></a>Nainstalujte nástroj global
+### <a name="install-the-global-tool"></a>Instalace globálního nástroje
 
-Prostředky balíčku by měl být nainstalován do chráněného umístění pomocí `--tool-path` možnost. Toto oddělení zabraňuje sdílení obsahu s omezeným přístupem uživatelské prostředí s prostředí se zvýšenými oprávněními.
+Prostředky balíčku by měly být `--tool-path` nainstalovány v chráněném umístění pomocí možnosti. Toto oddělení zabraňuje sdílení prostředí s omezeným přístupem uživatele se zvýšenými oprávněními prostředí.
 
 ```bash
 sudo dotnet tool install PACKAGEID --tool-path /usr/local/share/dotnet-tools
 ```
 
-`/usr/local/share/dotnet-tools` bude vytvořena s oprávněním `drwxr-xr-x`. Pokud adresář již existuje, použijte `ls -l` příkazu ověřte s omezeným přístupem uživatel nemá oprávnění k úpravám adresáři. Pokud ano, použít `sudo chmod o-w -R /usr/share/dotnet-tools` příkazu k odebrání přístupu.
+`/usr/local/share/dotnet-tools`bude vytvořena se `drwxr-xr-x`svolením . Pokud adresář již existuje, `ls -l` ověřte pomocí příkazu, že uživatel s omezeným přístupem nemá oprávnění k úpravám adresáře. Pokud ano, `sudo chmod o-w -R /usr/share/dotnet-tools` odeberte přístup pomocí příkazu.
 
-### <a name="run-the-global-tool"></a>Spusťte nástroj global
+### <a name="run-the-global-tool"></a>Spuštění globálního nástroje
 
-**Možnost 1** použít úplnou cestu s příkazem sudo:
+**Možnost 1** Použijte celou cestu s sudo:
 
 ```bash
 sudo /usr/local/share/dotnet-tools/TOOLCOMMAND
 ```
 
-**Možnost 2** přidat odkaz na symbol nástroje, jednou za nástroj pro:
+**Možnost č. 2** Přidejte odkaz na symbol nástroje jednou za nástroj:
 
 ```bash
 sudo ln -s /usr/local/share/dotnet-tools/TOOLCOMMAND /usr/local/bin/TOOLCOMMAND
 ```
 
-A spuštění:
+A běh s:
 
 ```bash
 sudo TOOLCOMMAND
 ```
 
-### <a name="uninstall-the-global-tool"></a>Odinstalujte nástroj global
+### <a name="uninstall-the-global-tool"></a>Odinstalace globálního nástroje
 
 ```bash
 sudo dotnet tool uninstall PACKAGEID --tool-path /usr/local/share/dotnet-tools
 ```
 
-Pokud jste provedli odkaz symbol, musíte také odebrat:
+Pokud jste vytvořili odkaz na symbol, musíte jej také odstranit:
 
 ```bash
 sudo rm /usr/local/bin/TOOLCOMMAND

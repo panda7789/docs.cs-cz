@@ -1,41 +1,41 @@
 ---
-title: Běhové prostředí pro nasazení samoobslužných aplikací v rozhraní .NET Core
-description: Přečtěte si o dotnet publish změnách pro samostatná nasazení.
+title: Runtime roll vpřed pro nasazení samostatných aplikací .NET Core.
+description: Další informace o dotnet publikovat změny pro samostatná nasazení.
 author: KathleenDollard
 ms.date: 05/31/2018
 ms.openlocfilehash: 22385c7b5d2bf87755fd51cd6268d21fe3431c74
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75740793"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>Samostatné nasazení – dopředné posunutí modulu runtime
 
-[Nasazení samostatně obsažených aplikací](index.md) .NET Core zahrnuje i knihovny .NET Core i modul runtime .NET Core. Počínaje rozhraním .NET Core 2,1 SDK (verze 2.1.300) publikovaná samostatná nasazení aplikace [publikuje na vašem počítači nejvyšší modul opravy](https://github.com/dotnet/designs/pull/36). Ve výchozím nastavení [`dotnet publish`](../tools/dotnet-publish.md) pro samostatné nasazení vybere nejnovější verzi nainstalovanou jako součást sady SDK na počítači pro publikování. Tím umožníte, aby se nasazená aplikace spouštěla s opravami zabezpečení (a dalšími opravami), které jsou dostupné během `publish`. Aby bylo možné získat novou opravu, je nutné aplikaci znovu publikovat. Samostatné aplikace jsou vytvořeny zadáním `-r <RID>` v příkazu `dotnet publish` nebo zadáním [identifikátoru modulu runtime (RID)](../rid-catalog.md) v souboru projektu (csproj/vbproj) nebo na příkazovém řádku.
+[Samostatná nasazení aplikací](index.md) .NET Core zahrnují knihovny .NET Core i runtime .NET Core. Počínaje .NET Core 2.1 SDK (verze 2.1.300) samostatné nasazení aplikace [publikuje nejvyšší čas běhu opravy na vašem počítači](https://github.com/dotnet/designs/pull/36). Ve výchozím [`dotnet publish`](../tools/dotnet-publish.md) nastavení pro samostatné nasazení vybere nejnovější verzi nainstalovanou jako součást sady SDK v počítači pro publikování. To umožňuje nasazené aplikace spustit s opravami zabezpečení `publish`(a další opravy) k dispozici během . Aplikace musí být znovu publikována, aby bylo možné získat novou opravu. Samostatné aplikace jsou vytvářeny zadáním `-r <RID>` `dotnet publish` příkazu nebo zadáním [identifikátoru runtime (RID)](../rid-catalog.md) v souboru projektu (csproj / vbproj) nebo na příkazovém řádku.
 
-## <a name="patch-version-roll-forward-overview"></a>Přehled aktualizace verze posunutí – přehled
+## <a name="patch-version-roll-forward-overview"></a>Přehled posunu verze opravy vpřed
 
-[`restore`](../tools/dotnet-restore.md), [`build`](../tools/dotnet-build.md) a [`publish`](../tools/dotnet-publish.md) , jsou `dotnet` příkazy, které se dají spouštět samostatně. Volba modulu runtime je součástí operace `restore`, nikoli `publish` nebo `build`. Pokud zavoláte `publish`, bude zvolena nejnovější verze patch. Pokud zavoláte `publish` s argumentem `--no-restore`, pak nebudete mít k dispozici požadovanou verzi opravy, protože předchozí `restore` pravděpodobně nebyla provedena s novou zásadou pro publikování aplikací, která je samostatnou součástí. V tomto případě se chyba sestavení generuje s textem podobným následujícímu:
+[`restore`](../tools/dotnet-restore.md)a [`build`](../tools/dotnet-build.md) [`publish`](../tools/dotnet-publish.md) jsou `dotnet` příkazy, které lze spustit samostatně. Volba runtime je součástí `restore` operace, `publish` `build`nikoli nebo . Pokud zavoláte `publish`, bude vybrána nejnovější verze opravy. Pokud voláte `publish` `--no-restore` s argumentem, pak nemusí získat požadovanou `restore` verzi opravy, protože předchozí nemusí být provedeny s novou zásadu publikování samostatné aplikace. V tomto případě je generována chyba sestavení s textem podobným následujícímu:
 
-  "Projekt se obnovil pomocí Microsoft. NETCore. app verze 2.0.0, ale s aktuálním nastavením se místo toho použije verze 2.0.6. Chcete-li tento problém vyřešit, zajistěte, aby se pro obnovení používalo stejné nastavení a pro následné operace, jako je například sestavení nebo publikování. K tomuto problému obvykle dochází, pokud je vlastnost RuntimeIdentifier nastavena během sestavování nebo publikování, ale nikoli během obnovení. "
+  "Projekt byl obnoven pomocí Microsoft.NETCore.App verze 2.0.0, ale s aktuálním nastavením by se místo toho použila verze 2.0.6. Chcete-li tento problém vyřešit, ujistěte se, že stejná nastavení se používají pro obnovení a pro následné operace, jako je například sestavení nebo publikování. Obvykle k tomuto problému může dojít, pokud runtimeidentifier vlastnost je nastavena během sestavení nebo publikovat, ale ne během obnovení."
 
 > [!NOTE]
-> `restore` a `build` lze spustit implicitně jako součást jiného příkazu, jako je `publish`. Při implicitním spuštění jako součást jiného příkazu jsou k dispozici s dalším kontextem, aby byly vytvořeny správné artefakty. Když `publish`te s modulem runtime (například `dotnet publish -r linux-x64`), implicitní `restore` obnoví balíčky pro modul runtime pro Linux-x64. Pokud `restore` explicitně zavoláte, neobnoví běhové balíčky ve výchozím nastavení, protože nemá daný kontext.
+> `restore`a `build` lze jej spustit implicitně jako `publish`součást jiného příkazu, například . Při spuštění implicitně jako součást jiného příkazu jsou k dispozici další kontext tak, aby byly vytvořeny správné artefakty. Když `publish` s runtime (například `dotnet publish -r linux-x64`), `restore` implicitní obnoví balíčky pro linux-x64 runtime. Pokud voláte `restore` explicitně, neobnoví balíčky za běhu ve výchozím nastavení, protože nemá tento kontext.
 
 ## <a name="how-to-avoid-restore-during-publish"></a>Jak se vyhnout obnovení během publikování
 
-Spuštění `restore` jako součást operace `publish` může být pro váš scénář nežádoucí. Abyste se vyhnuli `restore` během `publish` při vytváření samostatných aplikací, udělejte toto:
+Spuštění `restore` jako součást `publish` operace může být nežádoucí pro váš scénář. Chcete-li se vyhnout `restore` při `publish` vytváření samostatných aplikací, postupujte takto:
 
-- Nastavte vlastnost `RuntimeIdentifiers` na seznam oddělený středníkem všech [identifikátorů RID](../rid-catalog.md) , které se mají publikovat.
-- Nastavte `TargetLatestRuntimePatch` vlastnost `true`.
+- Nastavte `RuntimeIdentifiers` vlastnost na středník-oddělený seznam všech [IDs, které](../rid-catalog.md) mají být publikovány.
+- Nastavte `TargetLatestRuntimePatch` vlastnost `true`na .
 
-## <a name="no-restore-argument-with-dotnet-publish-options"></a>Argument No-Restore s možnostmi dotnet publish
+## <a name="no-restore-argument-with-dotnet-publish-options"></a>Argument bez obnovení s možnostmi publikování dotnet
 
-Pokud chcete vytvořit samostatně používané aplikace i [aplikace závislé na architektuře](index.md) se stejným souborem projektu a chcete použít argument `--no-restore` s `dotnet publish`a pak zvolte jednu z následujících možností:
+Pokud chcete vytvořit samostatné aplikace i [aplikace závislé na rámci](index.md) se stejným souborem projektu `--no-restore` a `dotnet publish`chcete použít argument s , zvolte jednu z následujících možností:
 
-1. Preferovat chování závislé na rozhraní. Pokud je aplikace závislá na rozhraní, jedná se o výchozí chování. Pokud je aplikace samostatná a může použít neopravený místní modul runtime 2.1.0, nastavte `TargetLatestRuntimePatch` na `false` v souboru projektu.
+1. Preferují chování závislé na rámci. Pokud je aplikace závislá na rámci, toto je výchozí chování. Pokud je aplikace samostatná a může použít neopravený místní runtime 2.1.0, nastavte `TargetLatestRuntimePatch` do `false` v souboru projektu.
 
-2. Preferovat chování samostatně obsaženého. Pokud je aplikace samostatná, jedná se o výchozí chování. Pokud je aplikace závislá na rozhraní a vyžaduje nainstalovanou nejnovější opravu, nastavte `TargetLatestRuntimePatch` na `true` v souboru projektu.
+2. Preferujte samostatné chování. Pokud je aplikace samostatná, jedná se o výchozí chování. Pokud je aplikace závislá na rozhraní a vyžaduje `TargetLatestRuntimePatch` nainstalovanou nejnovější opravu, nastavte ji `true` v souboru projektu.
 
-3. Převezměte explicitní řízení verze rozhraní Runtime nastavením `RuntimeFrameworkVersion` na konkrétní verzi opravy v souboru projektu.
+3. Převzít explicitní kontrolu verze rozhraní `RuntimeFrameworkVersion` runtime rozhraní nastavením na konkrétní verzi opravy v souboru projektu.

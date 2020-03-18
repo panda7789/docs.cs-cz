@@ -1,5 +1,5 @@
 ---
-title: <seealso> – C# Průvodce programováním
+title: <seealso> - Průvodce programováním jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - cref
@@ -13,13 +13,13 @@ helpviewer_keywords:
 - <seealso> C# XML tag
 ms.assetid: 8e157f3f-f220-4fcf-9010-88905b080b18
 ms.openlocfilehash: e24d5910ab21f01aebb5a32ce7646cf56886a81a
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77093458"
 ---
-# <a name="seealso-c-programming-guide"></a>\<SeeAlso > (C# Průvodce programováním)
+# <a name="seealso-c-programming-guide"></a>\<seealso> (Průvodce programováním Jazyka C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,21 +31,21 @@ ms.locfileid: "77093458"
 
 - cref = " `member`"
 
-  Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje a zda předává `member` do názvu prvku ve výstupním souboru XML.`member` v uvozovkách ("") se musí vyskytovat.
+  Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje a zda předává `member` do názvu prvku ve výstupním souboru XML.`member` musí být uvedeny v uvozovkách (" ").
 
-  Informace o tom, jak vytvořit odkaz cref na obecný typ, naleznete v tématu [atribut cref](./cref-attribute.md).
+  Informace o tom, jak vytvořit odkaz na obecný typ, naleznete v [atributu cref](./cref-attribute.md).
 
 ## <a name="remarks"></a>Poznámky
 
-Značka > \<SeeAlso umožňuje určit text, který se může objevit v části Viz také. Použijte [\<v části >](./see.md) určete odkaz z textu.
+Značka \<seealso> umožňuje určit text, který se může chtít zobrazit v části Viz také. Pomocí [ \<>můžete](./see.md) zadat odkaz z textu.
 
-Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
+Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
 
 ## <a name="example"></a>Příklad
 
-Příklad použití \<SeeAlso > najdete v článku [> souhrnu\<](./summary.md) .
+Viz [ \<souhrnné>](./summary.md) příklad \<použití viz také>.
 
 ## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

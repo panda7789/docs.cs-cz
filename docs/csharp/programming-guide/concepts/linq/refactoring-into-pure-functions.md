@@ -1,36 +1,36 @@
 ---
-title: Refaktoring do čistě funkcí (C#)
+title: Refaktoring do čistých funkcí (C#)
 ms.date: 07/20/2015
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 ms.openlocfilehash: 4cf91ff078bd1c4582daa05475a91c4a4ecaba3e
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253102"
 ---
-# <a name="refactoring-into-pure-functions-c"></a>Refaktoring do čistě funkcí (C#)
+# <a name="refactoring-into-pure-functions-c"></a>Refaktoring do čistých funkcí (C#)
 
-Důležitým aspektem čistě funkční transformace je učení, jak refaktorovat kód pomocí čistě funkcí.  
+Důležitým aspektem čistě funkční transformace je naučit se refaktorovat kód pomocí čisté funkce.  
   
 > [!NOTE]
-> Běžnou klasifikací při funkčním programování je, že refaktoruje programy pomocí funkce Pure. V Visual Basic a C++se tato možnost zarovnává s použitím funkcí v odpovídajících jazycích. V C#nástroji se však funkce nazývají metody. Pro účely této diskuze je funkce Pure implementována jako metoda v C#.  
+> Běžnou nomenklaturou ve funkčním programování je, že refaktorujete programy pomocí čistých funkcí. V jazyce Visual Basic a C++ to zarovná s použitím funkcí v příslušných jazycích. Však v C#, funkce se nazývají metody. Pro účely této diskuse je čistá funkce implementována jako metoda v c#.  
   
- Jak bylo uvedeno dříve v této části, funkce Pure má dvě užitečné charakteristiky:  
+ Jak je uvedeno dříve v této části, čistá funkce má dvě užitečné vlastnosti:  
   
-- Nemá žádné vedlejší účinky. Funkce nemění žádné proměnné ani data žádného typu mimo funkci.  
+- Nemá žádné vedlejší účinky. Funkce nemění žádné proměnné nebo data jakéhokoli typu mimo funkci.  
   
-- Je konzistentní. V případě stejné sady vstupních dat bude vždy vracet stejnou výstupní hodnotu.  
+- Je to konzistentní. Vzhledem ke stejné sadě vstupních dat vždy vrátí stejnou výstupní hodnotu.  
   
- Jedním ze způsobů, jak přecházet do funkčního programování, je refaktorující existující kód, který eliminuje nepotřebné vedlejší účinky a externí závislosti. Tímto způsobem můžete vytvářet čistě verze funkcí stávajícího kódu.  
+ Jedním ze způsobů přechodu na funkční programování je refaktorovat existující kód k odstranění zbytečných vedlejších účinků a externích závislostí. Tímto způsobem můžete vytvořit čistě funkční verze existujícího kódu.  
   
- Toto téma popisuje, co je funkce Pure a co není. Tento [kurz: Seznámení s obsahem v kurzu WordprocessingMLC#Document](./shape-of-wordprocessingml-documents.md) () ukazuje, jak manipulovat s dokumentem WordprocessingML a obsahuje dva příklady refaktorování pomocí funkce Pure.  
+ Toto téma popisuje, co je čistá funkce a co není. [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md) kurz ukazuje, jak manipulovat s dokumentem WordprocessingML a obsahuje dva příklady, jak refaktorovat pomocí čisté funkce.  
   
-## <a name="eliminating-side-effects-and-external-dependencies"></a>Vyloučení vedlejších efektů a externích závislostí  
- Následující příklady kontrastují dvě nečisté funkce a funkci Pure.  
+## <a name="eliminating-side-effects-and-external-dependencies"></a>Odstranění vedlejších účinků a externích závislostí  
+ Následující příklady kontrastují dvě nečisté funkce a čistou funkci.  
   
-### <a name="non-pure-function-that-changes-a-class-member"></a>Nečistá funkce, která mění člena třídy  
- V následujícím kódu `HyphenatedConcat` není funkce čistě funkcí, protože `aMember` upravuje datový člen ve třídě:  
+### <a name="non-pure-function-that-changes-a-class-member"></a>Nečistá funkce, která mění člen třídy  
+ V následujícím kódu `HyphenatedConcat` funkce není čistě, protože upravuje `aMember` datový člen ve třídě:  
   
 ```csharp  
 public class Program  
@@ -50,16 +50,16 @@ public class Program
 }  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```output  
 StringOne-StringTwo  
 ```  
   
- Všimněte si, že je nedůležité, jestli data, `public` která `private` jsou měněna, mají `static` přístup nebo jsou členem nebo členem instance. Funkce Pure nemění žádná data mimo funkci.  
+ Všimněte si, že je irelevantní, zda má upravná data `public` nebo `private` přístup, nebo je `static` členem nebo členem instance. Čistá funkce nemění žádná data mimo funkci.  
   
 ### <a name="non-pure-function-that-changes-an-argument"></a>Nečistá funkce, která mění argument  
- Kromě toho následující verze této funkce není čistá, protože upravuje obsah svého parametru, `sb`.  
+ Kromě toho následující verze stejné funkce není čistá, protože upravuje obsah svého `sb`parametru .  
   
 ```csharp  
 public class Program  
@@ -78,13 +78,13 @@ public class Program
 }  
 ```  
   
- Tato verze programu vytvoří stejný výstup jako první verze, protože `HyphenatedConcat` funkce změnila hodnotu (stav) jeho prvního parametru <xref:System.Text.StringBuilder.Append%2A> vyvoláním členské funkce. Všimněte si, že tato změna probíhá navzdory tomu `HyphenatedConcat` , že používá předávání parametru volání podle hodnoty.  
+ Tato verze programu vytváří stejný výstup jako první verze, protože `HyphenatedConcat` funkce změnila hodnotu (stav) svého prvního parametru <xref:System.Text.StringBuilder.Append%2A> vyvoláním členské funkce. Všimněte si, že k `HyphenatedConcat` této změně dochází navzdory skutečnosti, že používá předávání parametru call-by-value.  
   
 > [!IMPORTANT]
-> Pro typy odkazů, Pokud předáte parametr podle hodnoty, výsledkem bude kopie odkazu na předaný objekt. Tato kopie je stále přidružená ke stejným datům instance jako původní odkaz (dokud referenční proměnná není přiřazena k novému objektu). Volání po odkazech nemusí nutně vyžadovat, aby funkce mohla upravovat parametr.  
+> Pro typy odkazů, pokud předáte parametr podle hodnoty, výsledkem je kopie odkazu na předávaný objekt. Tato kopie je stále přidružena ke stejným datům instance jako původní odkaz (dokud není referenční proměnná přiřazena novému objektu). Volání podle odkazu není nutně nutné pro funkci upravit parametr.  
   
-### <a name="pure-function"></a>Funkce Pure  
-Tato další verze programu ukazuje, jak implementovat `HyphenatedConcat` funkci jako čistě funkci.  
+### <a name="pure-function"></a>Čistá funkce  
+Tato další verze programu ukazuje, `HyphenatedConcat` jak implementovat funkci jako čistou funkci.  
   
 ```csharp  
 class Program  
@@ -103,16 +103,16 @@ class Program
 }  
 ```  
   
- Tato verze znovu vytvoří stejný řádek výstupu: `StringOne-StringTwo`. Všimněte si, že pokud chcete zachovat zřetězenou hodnotu, je uložena v mezilehlé proměnné `s2`.  
+ Opět platí, že tato verze produkuje `StringOne-StringTwo`stejný řádek výstupu: . Všimněte si, že chcete-li zachovat zřetězenou `s2`hodnotu, je uložen v zprostředkující proměnné .  
   
- Jedním z přístupů, které mohou být velmi užitečné, je psaní funkcí, které jsou místně nečisté (to znamená, že deklarují a mění místní proměnné), ale jsou globálně čistě. Tyto funkce mají mnoho z hlediska žádoucích vlastností, ale nemusíte používat rekurzi idiomy, jako je třeba použití rekurze, když by jednoduchá smyčka mohla dosáhnout stejné věci.  
+ Jeden přístup, který může být velmi užitečné, je psát funkce, které jsou místně nečisté (to znamená, že deklarují a upravují místní proměnné), ale jsou globálně čisté. Tyto funkce mají mnoho žádoucí charakteristiky kompozity, ale vyhnout se některé více spletité funkční programovací idiomy, jako je například nutnost používat rekurze, když jednoduchá smyčka by dosáhnout totéž.  
   
-## <a name="standard-query-operators"></a>Standardní operátory dotazu  
- Důležitou vlastností standardních operátorů dotazu je to, že jsou implementované jako čisté funkce.  
+## <a name="standard-query-operators"></a>Standardní operátory dotazů  
+ Důležitou charakteristikou standardních operátorů dotazů je, že jsou implementovány jako čisté funkce.  
   
- Další informace najdete v tématu [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md).  
+ Další informace naleznete [v tématu Přehled operátorů standardních dotazů (C#)](./standard-query-operators-overview.md).  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do čistě funkční transformace (C#)](./introduction-to-pure-functional-transformations.md)
-- [Funkční programování vs. Imperativní programování (C#)](./functional-programming-vs-imperative-programming.md)
+- [Úvod do čistě funkčních transformací (C#)](./introduction-to-pure-functional-transformations.md)
+- [Funkční programování vs. imperativní programování (C#)](./functional-programming-vs-imperative-programming.md)

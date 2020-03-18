@@ -1,30 +1,30 @@
 ---
-title: dotnet – výpis paměti – .NET Core
+title: dotnet-dump - .NET Core
 description: Instalace a použití nástroje příkazového řádku dotnet-dump.
 ms.date: 10/14/2019
 ms.openlocfilehash: 3c0e28d4efc96ae53ec7dfae243725ab400e6b8f
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76737670"
 ---
-# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Výpis kolekce a analytického nástroje (`dotnet-dump`)
+# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Nástroj pro sběr`dotnet-dump`a analýzu výpisu ( )
 
-**Tento článek se týká:** ✔️ .net Core 3,0 SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 3.0 SDK a novější verze
 
 > [!NOTE]
-> `dotnet-dump` není v macOS podporován.
+> `dotnet-dump`v macOS není podporována.
 
-## <a name="installing-dotnet-dump"></a>Instalace nástroje `dotnet-dump`
+## <a name="installing-dotnet-dump"></a>Instalace`dotnet-dump`
 
-Pokud chcete nainstalovat nejnovější verzi `dotnet-dump` [balíčku NuGet](https://www.nuget.org/packages/dotnet-dump), použijte [instalační příkaz nástroje dotnet](../tools/dotnet-tool-install.md) :
+Chcete-li nainstalovat nejnovější `dotnet-dump` verzi [balíčku NuGet](https://www.nuget.org/packages/dotnet-dump), použijte příkaz [instalace nástroje dotnet:](../tools/dotnet-tool-install.md)
 
 ```dotnetcli
 dotnet tool install -g dotnet-dump
 ```
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-dump [-h|--help] [--version] <command>
@@ -32,30 +32,30 @@ dotnet-dump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Popis
 
-Nástroj `dotnet-dump` Global je způsob, jak shromažďovat a analyzovat výpisy Windows a Linux, aniž by to mělo žádný nativní ladicí program, jako je `lldb` v systému Linux. Tento nástroj je důležitý na platformách, jako je například Alpine Linux, kde není k dispozici plně funkční `lldb`. Nástroj `dotnet-dump` umožňuje spouštět příkazy SOS k analýze havárií a uvolňování paměti (GC), ale není to nativní ladicí program, takže se nepodporují například zobrazení nativních rámců zásobníku.
+Globální `dotnet-dump` nástroj je způsob, jak shromažďovat a analyzovat výpisy windows a `lldb` linuxbez nativního ladicího programu, který se podílí jako na Linuxu. Tento nástroj je důležitý na platformách, `lldb` jako je Alpine Linux, kde plně funkční není k dispozici. Nástroj `dotnet-dump` umožňuje spustit příkazy SOS k analýze selhání a uvolňování paměti (GC), ale není nativní ladicí program, takže věci jako zobrazení nativních rámců zásobníku nejsou podporovány.
 
 ## <a name="options"></a>Možnosti
 
 - **`--version`**
 
-  Zobrazí verzi nástroje dotnet-Counters.
+  Zobrazí verzi nástroje dotnet-counters.
 
 - **`-h|--help`**
 
-  Zobrazí pomocníka s příkazovým řádkem.
+  Zobrazí nápovědu příkazového řádku.
 
 ## <a name="commands"></a>Příkazy
 
 | Příkaz                                     |
 | ------------------------------------------- |
-| [dotnet – výpis shromažďování](#dotnet-dump-collect) |
-| [dotnet – vystavení příkazu analyzovat](#dotnet-dump-analyze) |
+| [dotnet-dump collect](#dotnet-dump-collect) |
+| [dotnet-dump analýza](#dotnet-dump-analyze) |
 
-## <a name="dotnet-dump-collect"></a>dotnet – výpis shromažďování
+## <a name="dotnet-dump-collect"></a>dotnet-dump collect
 
-Zachycuje výpis paměti z procesu.
+Zachytí výpis z procesu.
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag]
@@ -65,41 +65,41 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`-h|--help`**
 
-  Zobrazí pomocníka s příkazovým řádkem.
+  Zobrazí nápovědu příkazového řádku.
 
 - **`-p|--process-id <PID>`**
 
-  Určuje číslo ID procesu, ze kterého se má shromáždit výpis paměti.
+  Určuje číslo ID procesu, ze kterých má být shromažďováno výpis stavu paměti.
 
 - **`--type <Heap|Mini>`**
 
-  Určuje typ výpisu, který určuje typy informací shromažďovaných z procesu. Existují dva typy:
+  Určuje typ výpisu, který určuje druhy informací, které jsou shromažďovány z procesu. Existují dva typy:
 
-  - `Heap` – velký a poměrně vyčerpávající výpis obsahující seznamy modulů, seznam vláken, všechny zásobníky, informace o výjimkách, informace o popisovači a všechny paměti s výjimkou mapovaných imagí.
-  - `Mini` – malý výpis obsahující seznamy modulů, seznam vláken, informace o výjimce a všechny zásobníky.
+  - `Heap`- Velký a relativně komplexní výpis obsahující seznamy modulů, seznamy vláken, všechny zásobníky, informace o výjimkách, zpracování informací a všechny paměti s výjimkou mapovaných obrázků.
+  - `Mini`- Malý výpis obsahující seznamy modulů, seznamy vláken, informace o výjimkách a všechny zásobníky.
 
-  Pokud není zadaný, `Heap` je výchozí hodnota.
+  Pokud není `Heap` zadán, je výchozí.
 
 - **`-o|--output <output_dump_path>`**
 
-  Úplná cesta a název souboru, kam se má nazapisovat shromážděný výpis paměti
+  Úplná cesta a název souboru, kde by měl být zapsán shromážděný výpis.
 
-  Pokud není zadán:
+  Pokud není specifikováno:
 
-  - Výchozí hodnota je *. \ dump_YYYYMMDD_HHMMSS. dmp* ve Windows.
-  - Výchozí hodnota je *./core_YYYYMMDD_HHMMSS* v systému Linux.
+  - Výchozí hodnota *je .\dump_YYYYMMDD_HHMMSS.dmp v* systému Windows.
+  - Výchozí hodnota *na ./core_YYYYMMDD_HHMMSS* na Linuxu.
 
-  RRRRMMDD je rok/měsíc/den a HHMMSS je hodina/minuta za sekundu.
+  YYYYMMDD je rok / měsíc / den a HHMMSS je hodina / minutu / sekunda.
 
 - **`--diag`**
 
   Povolí protokolování diagnostiky kolekce výpisu.
 
-## <a name="dotnet-dump-analyze"></a>dotnet – vystavení příkazu analyzovat
+## <a name="dotnet-dump-analyze"></a>dotnet-dump analýza
 
-Spustí interaktivní prostředí pro zkoumání výpisu paměti. Prostředí akceptuje různé [příkazy SOS](#analyze-sos-commands).
+Spustí interaktivní prostředí k prozkoumání výpisu. Prostředí přijímá různé [příkazy SOS](#analyze-sos-commands).
 
-### <a name="synopsis"></a>Stručný obsah
+### <a name="synopsis"></a>Synopse
 
 ```console
 dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
@@ -109,15 +109,15 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 
 - **`<dump_path>`**
 
-  Určuje cestu k souboru s výpisem paměti, která se má analyzovat.
+  Určuje cestu k souboru výpisu stavu paměti, který má být analyzovat.
 
 ### <a name="options"></a>Možnosti
 
 - **`-c|--command <debug_command>`**
 
-  Určuje [příkaz](#analyze-sos-commands) , který se má spustit v prostředí při spuštění.
+  Určuje [příkaz,](#analyze-sos-commands) který má být spuštěn v prostředí při spuštění.
 
-### <a name="analyze-sos-commands"></a>Analyzovat příkazy SOS
+### <a name="analyze-sos-commands"></a>Analýza příkazů SOS
 
 | Příkaz                             | Funkce                                                                                      |
 | ----------------------------------- | --------------------------------------------------------------------------------------------- |
@@ -125,13 +125,13 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `soshelp|help <command>`            | Zobrazí zadaný příkaz.                                                               |
 | `exit|quit`                         | Ukončí interaktivní režim.                                                                       |
 | `clrstack <arguments>`              | Poskytne trasování zásobníku pouze pro spravovaný kód.                                                  |
-| `clrthreads <arguments>`            | Zobrazí seznam spravovaných vláken, která běží.                                                            |
-| `dumpasync <arguments>`             | Zobrazí informace o počítačích asynchronního stavu na haldě shromážděné paměti.                |
+| `clrthreads <arguments>`            | Zobrazí seznam spuštěných spravovaných vláken.                                                            |
+| `dumpasync <arguments>`             | Zobrazí informace o asynchronních stavových počítačích na haldě uvolněné.                |
 | `dumpassembly <arguments>`          | Zobrazí podrobnosti o sestavení.                                                           |
 | `dumpclass <arguments>`             | Zobrazí informace o struktuře třídy EE na zadané adrese.                     |
 | `dumpdelegate <arguments>`          | Zobrazí informace o delegátovi.                                                        |
-| `dumpdomain <arguments>`            | Zobrazí informace o všech objektech třídy AppDomain a všech sestaveních v rámci domén.                |
-| `dumpheap <arguments>`              | Zobrazí informace o haldě shromážděné paměti a statistiky shromažďování informací o objektech.       |
+| `dumpdomain <arguments>`            | Zobrazí informace o všech doménách aplikace a všech sestaveních v doménách.                |
+| `dumpheap <arguments>`              | Zobrazí informace o haldě uvolněné paměti a statistiky kolekce objektů.       |
 | `dumpil <arguments>`                | Zobrazí kód v jazyce MSIL (Microsoft Intermediate Language) přidružený ke spravované metodě. |
 | `dumplog <arguments>`               | Zapíše obsah zátěžového protokolu uloženého v paměti do zadaného souboru.                         |
 | `dumpmd <arguments>`                | Zobrazí informace o struktuře MethodDesc na zadané adrese.                   |
@@ -139,26 +139,26 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `dumpmt <arguments>`                | Zobrazí informace o tabulce metod na zadané adrese.                           |
 | `dumpobj <arguments>`               | Zobrazí informace o objektu na zadané adrese.                                       |
 | `dso|dumpstackobjects <arguments>`  | Zobrazí všechny spravované objekty nalezené v rámci aktuálního zásobníku.                    |
-| `eeheap <arguments>`                | Zobrazí informace o paměti procesu spotřebované interními datovými strukturami modulu runtime.              |
+| `eeheap <arguments>`                | Zobrazí informace o procesní paměti spotřebované interními datovými strukturami za běhu.              |
 | `finalizequeue <arguments>`         | Zobrazí všechny objekty, které jsou registrovány pro dokončení.                                             |
-| `gcroot <arguments>`                | Zobrazí informace o odkazech (neboli kořenech) na objekt na zadané adrese.              |
-| `gcwhere <arguments>`               | Zobrazí umístění v haldě GC argumentu předaného.                               |
+| `gcroot <arguments>`                | Zobrazí informace o odkazech (nebo kořenech) na objekt na zadané adrese.              |
+| `gcwhere <arguments>`               | Zobrazí umístění v haldě GC předaného argumentu.                               |
 | `ip2md <arguments>`                 | Zobrazí strukturu MethodDesc na zadané adrese v kódu JIT.                       |
-| `histclear <arguments>`             | Uvolňuje všechny prostředky, které používá rodina `hist*` příkazů.                                |
+| `histclear <arguments>`             | Uvolní všechny prostředky používané rodinou `hist*` příkazů.                                |
 | `histinit <arguments>`              | Inicializuje struktury SOS ze zátěžového protokolu uloženého v laděné položce.                     |
-| `histobj <arguments>`               | Zobrazí přemístění zátěžového protokolu uvolňování paměti související s `<arguments>`.              |
+| `histobj <arguments>`               | Zobrazí přemisťování protokolu `<arguments>`stresu při uvolňování paměti související s aplikací .              |
 | `histobjfind <arguments>`           | Zobrazí všechny položky protokolu, které odkazují na objekt na zadané adrese.               |
 | `histroot <arguments>`              | Zobrazí informace týkající se propagace a přemístění zadaného kořenu.        |
-| `lm|modules`                        | Zobrazí v procesu nativní moduly.                                                   |
-| `name2ee <arguments>`               | Zobrazuje strukturu metody a strukturu EEClass pro `<argument>`.                |
+| `lm|modules`                        | Zobrazí nativní moduly v procesu.                                                   |
+| `name2ee <arguments>`               | Zobrazí strukturu MethodTable a Strukturu EEClass pro `<argument>`.                |
 | `pe|printexception <arguments>`     | Zobrazí libovolný objekt odvozený z třídy Exception na adrese `<argument>`.             |
-| `setsymbolserver <arguments>`       | Povolí podporu serveru symbolů.                                                             |
-| `syncblk <arguments>`               | Zobrazí informace o držiteli SyncBlock.                                                           |
+| `setsymbolserver <arguments>`       | Povolí podporu symbolového serveru.                                                             |
+| `syncblk <arguments>`               | Zobrazí informace o držáku SyncBlock.                                                           |
 | `threads|setthread <threadid>`      | Nastaví nebo zobrazí aktuální ID vlákna pro příkazy SOS.                                  |
 
-## <a name="using-dotnet-dump"></a>Použití `dotnet-dump`
+## <a name="using-dotnet-dump"></a>Použití metody `dotnet-dump`
 
-Prvním krokem je shromáždění výpisu paměti. Tento krok lze přeskočit, pokud již byl vygenerován základní Výpis paměti. Pro každý operační systém nebo integrovanou [funkci generování výpisu](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) modulu runtime .NET Core můžete vytvořit základní výpisy.
+Prvním krokem je shromáždit skládku. Tento krok lze přeskočit, pokud již byl vygenerován výpis jádra. Operační systém nebo [vestavěná funkce generování výpisu stavu .NET](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) Core může každý vytvořit výpisy jádra.
 
 ```console
 $ dotnet-dump collect --process-id 1902
@@ -167,7 +167,7 @@ Written 98983936 bytes (24166 pages) to core file
 Complete
 ```
 
-Nyní Analyzujte základní Výpis pomocí příkazu `analyze`:
+Nyní analyzujte výpis `analyze` jádra pomocí příkazu:
 
 ```console
 $ dotnet-dump analyze ./core_20190226_135850
@@ -177,7 +177,7 @@ Type 'quit' or 'exit' to exit the session.
 >
 ```
 
-Tato akce přinese interaktivní relaci, která přijímá příkazy jako:
+Tato akce vyvolá interaktivní relaci, která přijímá příkazy jako:
 
 ```console
 > clrstack
@@ -193,7 +193,7 @@ OS Thread Id: 0x573d (0)
 00007FFD28B43610 00007fb22aa9cedf [GCFrame: 00007ffd28b43610]
 ```
 
-Pokud chcete zobrazit neošetřenou výjimku, která ukončila vaši aplikaci:
+Zobrazení neošetřené výjimky, která vaši aplikaci zabila:
 
 ```console
 > pe -lines
@@ -214,12 +214,12 @@ StackTraceString: <none>
 HResult: 80131604
 ```
 
-## <a name="special-instructions-for-docker"></a>Speciální pokyny pro Docker
+## <a name="special-instructions-for-docker"></a>Zvláštní pokyny pro Docker
 
-Pokud pracujete v Docker, vyžaduje výpis kolekce výpisu `SYS_PTRACE` (`--cap-add=SYS_PTRACE` nebo `--privileged`).
+Pokud používáte v Dockeru, `SYS_PTRACE` kolekce`--cap-add=SYS_PTRACE` výpisu vyžaduje možnosti (nebo). `--privileged`
 
-V obrázcích Docker systému Microsoft .NET Core SDK Linux mohou některé `dotnet-dump` příkazy vyvolat následující výjimku:
+Na inacích Linux Dockeru microsoft `dotnet-dump` .NET Core SDK mohou některé příkazy vyvolat následující výjimku:
 
-> Neošetřená výjimka: System. DllNotFoundException –: nelze načíst sdílenou knihovnu ' libdl.so ' nebo jednu z jejích závislostí.
+> Neošetřená výjimka: System.DllNotFoundException: Nelze načíst sdílenou knihovnu "libdl.so" nebo výjimku jedné z jejích závislostí.
 
-Pokud chcete tento problém obejít, nainstalujte balíček "libc6-dev".
+Chcete-li tento problém vyřešit, nainstalujte balíček "libc6-dev".

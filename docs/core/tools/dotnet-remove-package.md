@@ -1,23 +1,23 @@
 ---
-title: dotnet – odebrat balíček – příkaz
-description: Příkaz dotnet Remove Package nabízí pohodlný způsob, jak odebrat odkaz na balíček NuGet do projektu.
+title: dotnet odebrat balíček, příkaz
+description: Dotnet remove package příkaz poskytuje vhodnou možnost odebrat odkaz na balíček NuGet na projekt.
 ms.date: 02/14/2020
 ms.openlocfilehash: 8eaa311748c5627351ef149012dc4dddd2ab2793
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503629"
 ---
 # <a name="dotnet-remove-package"></a>dotnet remove package
 
-**Tento článek se týká:** ✔️ .NET Core 2. x SDK a novějších verzí
+**Tento článek se týká:** ✔️ .NET Core 2.x SDK a novější verze
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name (Název)
 
-`dotnet remove package` – odebere odkaz na balíček ze souboru projektu.
+`dotnet remove package`- Odebere odkaz na balíček ze souboru projektu.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Synopse
 
 ```dotnetcli
 dotnet remove [<PROJECT>] package <PACKAGE_NAME> [-h|--help]
@@ -25,23 +25,23 @@ dotnet remove [<PROJECT>] package <PACKAGE_NAME> [-h|--help]
 
 ## <a name="description"></a>Popis
 
-Příkaz `dotnet remove package` poskytuje pohodlný způsob, jak odebrat odkaz na balíček NuGet z projektu.
+Příkaz `dotnet remove package` poskytuje vhodnou možnost odebrat odkaz na balíček NuGet z projektu.
 
 ## <a name="arguments"></a>Argumenty
 
 `PROJECT`
 
-Určuje soubor projektu. Pokud není zadán, příkaz vyhledá v aktuálním adresáři.
+Určuje soubor projektu. Pokud není zadán, příkaz prohledá aktuální adresář pro jeden.
 
 `PACKAGE_NAME`
 
-Odkaz na balíček, který se má odebrat
+Odkaz na balíček odebrat.
 
 ## <a name="options"></a>Možnosti
 
 - **`-h|--help`**
 
-  Vypíše krátkou nápovědu k příkazu.
+  Vytiskne krátkou nápovědu pro příkaz.
 
 ## <a name="examples"></a>Příklady
 

@@ -1,19 +1,19 @@
 ---
-title: Serializace do třídy XmlReader (vyvolání XSLT) (C#)
+title: Serializace na xmlreader (vyvolání XSLT) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cc3ee03-ef4c-429b-a408-fedd10b728cd
 ms.openlocfilehash: b079fe05fa8c230f644e011dcb62ec54f55cae60
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66487190"
 ---
-# <a name="serializing-to-an-xmlreader-invoking-xslt-c"></a>Serializace do třídy XmlReader (vyvolání XSLT) (C#)
-Při použití <xref:System.Xml?displayProperty=nameWithType> funkce interoperability [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete použít <xref:System.Xml.Linq.XNode.CreateReader%2A> k vytvoření <xref:System.Xml.XmlReader>. Modul, který čte z tohoto <xref:System.Xml.XmlReader> přečte uzlů ze stromu XML a zpracovává je odpovídajícím způsobem.  
+# <a name="serializing-to-an-xmlreader-invoking-xslt-c"></a>Serializace na xmlreader (vyvolání XSLT) (C#)
+Používáte-li možnosti [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]interoperability aplikace <xref:System.Xml.Linq.XNode.CreateReader%2A> , <xref:System.Xml.XmlReader>můžete použít k vytvoření aplikace . <xref:System.Xml?displayProperty=nameWithType> Modul, který čte <xref:System.Xml.XmlReader> z tohoto čte uzly ze stromu XML a zpracovává je odpovídajícím způsobem.  
   
 ## <a name="invoking-an-xslt-transformation"></a>Vyvolání transformace XSLT  
- Jedním z využití pro tuto metodu je při vyvolání transformace XSLT. Můžete vytvořit stromu XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML vytvoříte nový textový dokument a pak vytvořte <xref:System.Xml.XmlWriter> k zápisu do nového dokumentu. Potom můžete vyvolat transformace XSLT, při předávání v <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>. Po úspěšném dokončení transformace stromu XML nové naplněný výsledky transformace.  
+ Jedním z možných použití pro tuto metodu je při vyvolání transformace XSLT. Můžete vytvořit strom XML, <xref:System.Xml.XmlReader> vytvořit ze stromu XML, vytvořit nový <xref:System.Xml.XmlWriter> dokument a pak vytvořit a zapisovat do nového dokumentu. Potom můžete vyvolat xslt transformace, <xref:System.Xml.XmlReader> předávání <xref:System.Xml.XmlWriter>a . Po úspěšném dokončení transformace je nový strom XML naplněn výsledky transformace.  
   
 ```csharp  
 string xslMarkup = @"<?xml version='1.0'?>  
@@ -50,7 +50,7 @@ using (XmlWriter writer = newTree.CreateWriter()) {
 Console.WriteLine(newTree);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root>  
@@ -59,6 +59,6 @@ Console.WriteLine(newTree);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Serializace stromů XML (C#)](serializing-to-files-textwriters-and-xmlwriters.md)

@@ -1,40 +1,40 @@
 ---
 ms.openlocfilehash: d1ddba72ce25c5e01025d916d52f785b5a1a9e71
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901990"
 ---
-### <a name="hosting-generic-host-restricts-startup-constructor-injection"></a>Hostování: obecný hostitel omezuje úvodní vkládání spouštěcího konstruktoru.
+### <a name="hosting-generic-host-restricts-startup-constructor-injection"></a>Hostování: Obecný hostitel omezuje injekci konstruktoru spuštění
 
-Jediný typ, který je podporován pro vkládání konstruktoru `Startup` třídy, je `IHostEnvironment`, `IWebHostEnvironment`a `IConfiguration`. Aplikace používající `WebHost` nejsou nijak ovlivněny.
+Jediné typy, které obecný `Startup` hostitel podporuje `IHostEnvironment`pro `IWebHostEnvironment`vstřikování konstruktoru třídy, jsou , , a `IConfiguration`. Aplikace, `WebHost` které používají, nejsou ovlivněny.
 
 #### <a name="change-description"></a>Popis změny
 
-Před ASP.NET Core 3,0 lze vložení konstruktoru použít pro libovolný typ v konstruktoru třídy `Startup`. V ASP.NET Core 3,0 byl webový zásobník znovu založen na obecné knihovně hostitelů. Můžete zobrazit změnu v souboru *program.cs* šablony:
+Před ASP.NET Core 3.0, vstřikování konstruktoru `Startup` lze použít pro libovolné typy v konstruktoru třídy. V ASP.NET Core 3.0 byl webový zásobník přepojován do obecné hostitelské knihovny. Můžete vidět změnu v *souboru Program.cs* šablon:
 
-**ASP.NET Core 2. x:**
+**ASP.NET Jádro 2.x:**
 
 <https://github.com/dotnet/aspnetcore/blob/5cb615fcbe8559e49042e93394008077e30454c0/src/Templating/src/Microsoft.DotNet.Web.ProjectTemplates/content/EmptyWeb-CSharp/Program.cs#L20-L22>
 
-**ASP.NET Core 3,0:**
+**ASP.NET jádro 3.0:**
 
 <https://github.com/dotnet/aspnetcore/blob/b1ca2c1155da3920f0df5108b9fedbe82efaa11c/src/ProjectTemplates/Web.ProjectTemplates/content/EmptyWeb-CSharp/Program.cs#L19-L24>
 
-`Host` používá k sestavení aplikace jeden kontejner vkládání závislostí (DI). `WebHost` používá dva kontejnery: jeden pro hostitele a jeden pro aplikaci. V důsledku toho konstruktor `Startup` již nepodporuje vlastní vkládání služeb. Vložit lze pouze `IHostEnvironment`, `IWebHostEnvironment`a `IConfiguration`. Tato změna zabraňuje chybám typu DI, jako je vytváření duplicitních služeb typu singleton.
+`Host`používá jeden kontejner vkládání závislostí (DI) k vytvoření aplikace. `WebHost`používá dva kontejnery: jeden pro hostitele a jeden pro aplikaci. V důsledku toho `Startup` konstruktor již podporuje vlastní injektáž služby. Pouze `IHostEnvironment` `IWebHostEnvironment`, `IConfiguration` , a může být aplikován. Tato změna zabraňuje di problémy, jako je například duplicitní vytvoření služby singleton.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Tato změna je v důsledku opětovného hostování webového zásobníku do obecné knihovny hostitelů.
+Tato změna je důsledkem replatforming webovézásobníku do obecné knihovny hostitelů.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Vloží služby do signatury `Startup.Configure` metody. Příklad:
+Vložte služby do podpisu `Startup.Configure` metody. Například:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IOptions<MyOptions> options)
@@ -42,11 +42,11 @@ public void Configure(IApplicationBuilder app, IOptions<MyOptions> options)
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-Žádné
+Žádný
 
 <!-- 
 

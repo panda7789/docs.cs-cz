@@ -1,5 +1,5 @@
 ---
-title: Události – C# Průvodce programováním
+title: Události – průvodce programováním jazyka C#
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [C#], events
@@ -7,57 +7,57 @@ helpviewer_keywords:
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
 ms.openlocfilehash: 183f53a579bdd9f70deb16ca9157c377fa3aff3f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75712309"
 ---
 # <a name="events-c-programming-guide"></a>Události (Průvodce programováním v C#)
-Události umožňují [třídě](../../language-reference/keywords/class.md) nebo objektu upozornit jiné třídy nebo objekty, když dojde k nějakému zájmu. Třída, která odesílá (nebo *vyvolává*) událost, se nazývá *Vydavatel* a třídy, které přijmou (nebo *zpracovávají*) událost se nazývají *předplatitelé*.  
+Události umožňují [třídy](../../language-reference/keywords/class.md) nebo objekt upozorňovat jiné třídy nebo objekty, když dojde k něčemu zajímavého. Třída, která odesílá (nebo *vyvolává*) událost se nazývá *vydavatel* a třídy, které přijímají (nebo *zpracování*) události se nazývají *předplatitelé*.  
   
-V typické C# model Windows Forms nebo webové aplikaci se přihlásíte k odběru událostí vyvolaných ovládacími prvky, jako jsou tlačítka a seznamy. Pomocí integrovaného vývojového C# prostředí (IDE) jazyka Visual můžete procházet události, které ovládací prvek publikuje, a vybrat ty, které chcete zpracovat. Rozhraní IDE poskytuje snadný způsob, jak automaticky přidat prázdnou metodu obslužné rutiny události a kód pro přihlášení k odběru události. Další informace najdete v tématu [jak se přihlásit k odběru událostí a odhlásit se z](./how-to-subscribe-to-and-unsubscribe-from-events.md)nich.
+V typické C# Windows Forms nebo webové aplikace se přihlásíte k odběru událostí vyzdvižených ovládacími prvky, jako jsou tlačítka a seznamy. Integrované vývojové prostředí Visual C# (IDE) můžete procházet události, které ovládací prvek publikuje a vyberte ty, které chcete zpracovat. IDE poskytuje snadný způsob, jak automaticky přidat prázdnou metodu obslužné rutiny události a kód k přihlášení k odběru události. Další informace naleznete v tématu [Jak se přihlásit k odběru a odhlásit z odběru událostí](./how-to-subscribe-to-and-unsubscribe-from-events.md).
   
 ## <a name="events-overview"></a>Přehled událostí  
  Události mají následující vlastnosti:  
   
-- Vydavatel určí, kdy se událost vyvolá; Předplatitelé určují, jakou akci provádí v reakci na událost.  
+- Vydavatel určuje, kdy je vyvolána událost; odběratelé určit, jaká akce je přijata v reakci na událost.  
   
-- Událost může mít více odběratelů. Předplatitel může zpracovávat více událostí od více vydavatelů.  
+- Událost může mít více odběratelů. Odběratel může zpracovávat více událostí od více vydavatelů.  
   
-- Události, které nemají žádné předplatitele, nejsou nikdy vyvolány.  
+- Události, které nemají žádné odběratele jsou nikdy aktivována.  
   
-- Události se obvykle používají k signalizaci uživatelských akcí, jako například kliknutí na tlačítko nebo výběry nabídky v grafickém uživatelském rozhraní.  
+- Události se obvykle používají k signalizaci akcí uživatele, jako jsou kliknutí na tlačítko nebo výběr nabídky v grafických uživatelských rozhraních.  
   
-- Pokud má událost více odběratelů, obslužné rutiny události jsou vyvolány synchronně při vyvolání události. Chcete-li vyvolat události asynchronně, přečtěte si téma [asynchronní volání synchronních metod](../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).  
+- Pokud událost má více odběratelů, obslužné rutiny události jsou vyvolány synchronně při vyvolání události. Chcete-li vyvolat události asynchronně, naleznete [v tématu volání synchronní metody asynchronně](../../../standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md).  
   
-- V knihovně tříd .NET Framework jsou události založeny na delegátu <xref:System.EventHandler> a základní třídě <xref:System.EventArgs>.  
+- V knihovně třídy rozhraní .NET <xref:System.EventHandler> Framework jsou <xref:System.EventArgs> události založeny na delegátovi a základní třídě.  
   
 ## <a name="related-sections"></a>Související oddíly  
- Další informace najdete v části .  
+ Další informace naleznete v tématu:  
   
-- [Přihlášení a odhlášení odběru událostí](./how-to-subscribe-to-and-unsubscribe-from-events.md)
+- [Jak přihlásit a odhlásit odběr událostí](./how-to-subscribe-to-and-unsubscribe-from-events.md)
 
-- [Jak publikovat události, které jsou v souladu s pokyny pro .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [Jak publikovat události vyhovující pravidlům rozhraní .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 
-- [Postup vyvolání událostí třídy Base v odvozených třídách](./how-to-raise-base-class-events-in-derived-classes.md)
+- [Jak vyvolávat události základní třídy v odvozených třídách](./how-to-raise-base-class-events-in-derived-classes.md)
 
-- [Postup implementace událostí rozhraní](./how-to-implement-interface-events.md)
+- [Jak implementovat události rozhraní](./how-to-implement-interface-events.md)
 
-- [Implementace vlastních přístupových objektů událostí](./how-to-implement-custom-event-accessors.md)
+- [Jak implementovat vlastní přístupové objekty událostí](./how-to-implement-custom-event-accessors.md)
 
-## <a name="c-language-specification"></a>C# – jazyková specifikace  
+## <a name="c-language-specification"></a>Specifikace jazyka C#  
 
-Další informace najdete v tématu [události](~/_csharplang/spec/classes.md#events) ve [ C# specifikaci jazyka](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+For more information, see [Events](~/_csharplang/spec/classes.md#events) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="featured-book-chapters"></a>Doporučené kapitoly knihy  
- [Delegáti, události a výrazy lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [ C# 3,0 kuchařka, třetí vydání: více než 250 řešení pro C# 3,0 programátorů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
+ [Delegáti, události a Lambda výrazy](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [C# 3.0 Kuchařka, Třetí vydání: Více než 250 řešení pro C# 3.0 programátory](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
   
- [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) ve [studiu C# 3,0: hlavní základy pro C# 3,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
+ [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) v [učení C# 3.0: Master základy C# 3.0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.EventHandler>
-- [Průvodce programováním v jazyce C#](../index.md)
-- [Delegáti](../delegates/index.md)
+- [Programovací příručka jazyka C#](../index.md)
+- [Delegáty](../delegates/index.md)
 - [Vytváření obslužných rutin událostí ve Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)

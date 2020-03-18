@@ -3,33 +3,33 @@ title: Přístup k atributům pomocí reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: dce3a696-4ceb-489a-b5e4-322a83052f18
 ms.openlocfilehash: 990b6487e50bfb2d123c3871e5f85da063711d9e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69595505"
 ---
 # <a name="accessing-attributes-by-using-reflection-c"></a>Přístup k atributům pomocí reflexe (C#)
-Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu, by měl být malými hodnotami bez jakéhokoli způsobu, jak tyto informace načítat a na ni bude působit. Pomocí reflexe můžete načíst informace, které byly definovány s vlastními atributy. Klíčovou metodou je `GetCustomAttributes`, která vrací pole objektů, které jsou ekvivalenty zdrojového kódu v době běhu. Tato metoda má několik přetížených verzí. Další informace naleznete v tématu <xref:System.Attribute>.  
+Skutečnost, že můžete definovat vlastní atributy a umístit je do zdrojového kódu by měl malou hodnotu bez nějaký způsob načítání těchto informací a působí na ně. Pomocí reflexe můžete načíst informace, které byly definovány s vlastní atributy. Klíčová metoda `GetCustomAttributes`je , která vrací pole objektů, které jsou ekvivalenty run-time atributy zdrojového kódu. Tato metoda má několik přetížených verzí. Další informace naleznete v tématu <xref:System.Attribute>.  
   
- Specifikace atributu jako:  
+ Specifikace atributu, například:  
   
 ```csharp  
 [Author("P. Ackerman", version = 1.1)]  
 class SampleClass  
 ```  
   
- je koncepční ekvivalent:  
+ je koncepčně ekvivalentní tomuto:  
   
 ```csharp  
 Author anonymousAuthorObject = new Author("P. Ackerman");  
 anonymousAuthorObject.version = 1.1;  
 ```  
   
- Kód však není proveden, dokud `SampleClass` není dotazován na atributy. Volání `GetCustomAttributes` `Author` na `SampleClass` způsobí, že se objekt sestrojí a inicializuje podle výše uvedeného. Pokud má třída jiné atributy, další objekty atributů jsou konstruovány podobně. `GetCustomAttributes`pak vrátí `Author` objekt a všechny objekty atributů v poli. Pak můžete iterovat přes toto pole, určit, jaké atributy byly aplikovány na základě typu každého prvku pole a extrahovat informace z objektů atributů.  
+ Kód však není spuštěn, `SampleClass` dokud je dotazován na atributy. Volání `GetCustomAttributes` `SampleClass` způsobí, `Author` že objekt, který má být vytvořen a inicializován jako výše. Pokud třída má jiné atributy, jiné atribut objekty jsou vytvořeny podobně. `GetCustomAttributes`pak vrátí `Author` objekt a všechny ostatní objekty atributů v poli. Potom můžete itaci přes toto pole, určit, jaké atributy byly použity na základě typu každého prvku pole a extrahovat informace z atributu objektů.  
   
 ## <a name="example"></a>Příklad  
- Tady je kompletní příklad. Vlastní atribut je definován, aplikován na několik entit a načten prostřednictvím reflexe.  
+ Zde je úplný příklad. Vlastní atribut je definován, použit na několik entit a načten prostřednictvím reflexe.  
   
 ```csharp  
 // Multiuse attribute.  
@@ -113,11 +113,11 @@ class TestAuthorAttribute
 */  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním v jazyce C#](../../index.md)
+- [Programovací příručka jazyka C#](../../index.md)
 - [Načítání informací uložených v atributech](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
 - [Reflexe (C#)](../reflection.md)
 - [Atributy (C#)](./index.md)

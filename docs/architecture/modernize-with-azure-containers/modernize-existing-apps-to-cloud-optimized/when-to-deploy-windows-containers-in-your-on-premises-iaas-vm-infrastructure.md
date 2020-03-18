@@ -1,22 +1,22 @@
 ---
 title: Kdy nasadit kontejnery Windows v místní infrastruktuře virtuálních počítačů IaaS
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Kdy nasadit kontejnery Windows do místní infrastruktury virtuálních počítačů s IaaS
+description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Kdy nasadit kontejnery Windows do místní infrastruktury virtuálních zařízení IaaS
 ms.date: 04/28/2018
 ms.openlocfilehash: 5986073e295eeba5921a2d899b236c68a27251fd
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68676919"
 ---
 # <a name="when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure"></a>Kdy nasadit kontejnery Windows v místní infrastruktuře virtuálních počítačů IaaS
 
-- Vaše organizace možná nebude připravená na přechod do cloudu nebo nemusí být schopná přejít ke cloudu z obchodního důvodu. Můžete ale i nadále využívat výhody použití kontejnerů Windows ve vlastních datacentrech.
+- Vaše organizace nemusí být připravená k přechodu do cloudu nebo se z obchodního důvodu nemůže přesunout do cloudu. Ale stále můžete získat výhody používání kontejnerů systému Windows ve vlastních datových centrech.
 
-- Můžete mít jiné artefakty, které jsou používány místně, což vám při pokusu o přechod do cloudu může zpomalit. Například závislosti zabezpečení nebo ověřování pomocí místní služby Windows Server Active Directory nebo jakéhokoli jiného místního prostředku.
+- Můžete mít další artefakty, které se používají místně a které vás mohou zpomalit při pokusu o přesunutí do cloudu. Například závislosti zabezpečení nebo ověřování s místní službou Windows Server Active Directory nebo jakýkoli jiný místní datový zdroj.
 
-- Pokud dnes začnete používat kontejnery Windows, můžete provést migraci do cloudu z mnohem lepšího umístění. Kontejnery Windows se stávají jednotkou nasazení pro jakýkoliv Cloud bez jakýchkoli zámků.
+- Pokud začnete používat Windows Containers dnes, můžete provést fázovou migraci do cloudu zítra z mnohem lepší pozice. Kontejnery Windows se stávají jednotkou nasazení pro jakýkoli cloud bez uzamčení.
 
 >[!div class="step-by-step"]
 >[Předchozí](when-not-to-deploy-to-windows-containers.md)
->[Další](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
+>[další](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)

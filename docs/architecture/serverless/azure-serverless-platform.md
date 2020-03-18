@@ -1,26 +1,26 @@
 ---
-title: Aplikace bez serveru založené na platformě Azure bez serveru
-description: Platforma bez serveru Azure poskytuje možnosti, jako je kód okamžitého škálování spouštěného událostmi, cloudová operace Pub/sub, orchestrace pracovních postupů a další.
+title: Platforma Azure bez serveru – aplikace bez serveru
+description: Platforma Azure bez serveru poskytuje funkce, včetně kódu okamžitého škálování spouštěné událostmi, cloudové hospody/sub, orchestrace pracovních postupů a dalších.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 43646db564ae31d26fe59e1ad7392e51d2d4e953
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68676802"
 ---
-# <a name="azure-serverless-platform"></a>Platforma bez serveru Azure
+# <a name="azure-serverless-platform"></a>Platforma Azure bez serveru
 
-Platforma bez serveru Azure zahrnuje Azure Functions, Logic Apps a Event Grid. Tyto služby spolupracují společně a připojují se s nesčetných dalšími prostředky. Platforma bez serveru funguje s veškerými databázemi a úložišti pro analýzy a strojovým učením nebo umělou logikou.
+Platforma Azure bez serveru zahrnuje funkce Azure, logic aplikace a event grid. Tyto služby spolupracují a spojují se s nesčetnými dalšími zdroji. Platforma bez serveru pracuje se vším od databází a úložišť až po analytiku a strojové učení /umělou inteligenci.
 
-Můžete také použít Application Insights platformu bez serveru pro zachytávání diagnostických trasování a telemetrie. Application Insights jsou k dispozici pro aplikace všech typů (Desktop, Mobile nebo Web) a také implementace bez serveru. Tato platforma je vizuálně znázorněná v následujícím diagramu:
+Můžete také použít Application Insights, platformu bez serveru pro zachycení diagnostických trasování a telemetrie. Application Insights jsou k dispozici pro aplikace všech typů (stolní, mobilní nebo webové) i implementace bez serveru. Platforma je vizualizována v následujícím diagramu:
 
-![Platforma bez serveru Azure](./media/azure-serverless-platform.png)
+![Platforma Azure bez serveru](./media/azure-serverless-platform.png)
 
-Tato kapitola rozděluje základy jednotlivých komponent.
+Tato kapitola rozděluje základy každé složky.
 
 >[!div class="step-by-step"]
 >[Předchozí](serverless-design-examples.md)
->[Další](azure-functions.md)
+>[další](azure-functions.md)

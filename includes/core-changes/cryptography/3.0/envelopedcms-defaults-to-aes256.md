@@ -1,22 +1,22 @@
 ---
 ms.openlocfilehash: f9000b19997201c2d3de0643669f9029ff1ca31c
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74567975"
 ---
-### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>EnvelopedCms ve výchozím nastavení šifrování AES-256
+### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>Standardy EnvelopedCms jsou výchozí pro šifrování AES-256
 
-Výchozí algoritmus symetrického šifrování používaný `EnvelopedCms` se změnil z TripleDES na AES-256.
+Výchozí algoritmus symetrického šifrování, který používá, `EnvelopedCms` se změnil z TripleDES na AES-256.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-V rozhraní .NET Core Preview 7 a starších verzích, pokud <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> slouží k šifrování dat bez určení symetrického algoritmu šifrování prostřednictvím přetížení konstruktoru, byla data zašifrována pomocí algoritmu TripleDES/3DES/3DEA/DES3-EDE.
+V .NET Core Preview 7 a <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> starších verzích, když se používá k šifrování dat bez zadání algoritmu symetrického šifrování prostřednictvím přetížení konstruktoru, byla data zašifrována algoritmem TripleDES/3DES/3DEA/DES3-EDE.
 
-Počínaje rozhraním .NET Core 3,0 Preview 8 (přes 4.6.0 verze balíčku [System. Security. Cryptography. PKCS](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) ) se výchozí algoritmus změnil na AES-256 pro modernizaci algoritmu a pro zlepšení zabezpečení výchozích možností. Pokud má certifikát příjemce zprávy (jiný než EC) veřejný klíč Diffie-Hellman, může operace šifrování selhat s <xref:System.Security.Cryptography.CryptographicException> v důsledku omezení v základní platformě.
+Počínaje rozhraním .NET Core 3.0 Preview 8 (prostřednictvím verze 4.6.0 balíčku [System.Security.Cryptography.Pkcs](https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/) NuGet) byl výchozí algoritmus změněn na AES-256 pro modernizaci algoritmu a zlepšení zabezpečení výchozích možností. Pokud má certifikát příjemce zprávy (non-ES) Diffie-Hellman veřejný klíč, <xref:System.Security.Cryptography.CryptographicException> operace šifrování může selhat s z důvodu omezení v podkladové platformě.
 
-V následujícím ukázkovém kódu jsou data při použití v rozhraní .NET Core 3,0 Preview 7 nebo starší zašifrovaná pomocí TripleDES. Pokud používáte .NET Core 3,0 Preview 8 nebo novější, je zašifrovaný pomocí AES-256.
+V následujícím ukázkovém kódu jsou data šifrována pomocí TripleDES, pokud jsou spuštěna na rozhraní .NET Core 3.0 Preview 7 nebo starší. Pokud běží na .NET Core 3.0 Náhled 8 nebo novější, je šifrován s AES-256.
 
 ```csharp
 EnvelopedCms cms = new EnvelopedCms(content);
@@ -24,13 +24,13 @@ cms.Encrypt(recipient);
 return cms.Encode();
 ```
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0 Preview 8
+3.0 Náhled 8
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud se změnou negativně neovlivní změna, můžete šifrování TripleDES obnovit explicitním zadáním identifikátoru šifrovacího algoritmu v <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> konstruktoru, který obsahuje parametr typu <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>, například:
+Pokud jste negativně ovlivněni změnou, můžete obnovit šifrování TripleDES explicitním zadáním <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> identifikátoru šifrovacího algoritmu v konstruktoru, který obsahuje parametr typu <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier>, například:
 
 ```csharp
 Oid tripleDesOid = new Oid("1.2.840.113549.3.7", null);

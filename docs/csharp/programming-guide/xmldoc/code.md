@@ -9,13 +9,13 @@ helpviewer_keywords:
 - <code> C# XML tag
 ms.assetid: f235e3bc-a709-43cf-8a9f-bd57cabdf6da
 ms.openlocfilehash: 1b292f0e1f93f815cc31ef3dfb7015b8950bf8a6
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76789834"
 ---
-# <a name="code-c-programming-guide"></a>> kódu \<(C# Průvodce programováním)
+# <a name="code-c-programming-guide"></a>\<> kódu (průvodce programováním jazyka C#)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,15 +31,15 @@ ms.locfileid: "76789834"
 
 ## <a name="remarks"></a>Poznámky
 
-Značka \<kódu > poskytuje způsob, jak označit více řádků jako kód. Použijte [\<> c](./code-inline.md) k označení toho, že text v rámci popisu by měl být označený jako kód.
+Značka \<> kódu umožňuje označit více řádků jako kód. C [ \<>](./code-inline.md) označuje, že text v popisu by měl být označen jako kód.
 
-Zkompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) a zpracujte komentáře k dokumentaci do souboru.
+Kompilujte s [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentů komentáře do souboru.
 
 ## <a name="example"></a>Příklad
 
-Příklad použití značky > kódu \<naleznete v tématu [\<příklad >](./example.md) tématu.
+Příklad>tématu najdete příklad použití \<značky> kódu. [ \<](./example.md)
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Průvodce programováním](../index.md)
-- [Doporučené značky pro dokumentační komentáře](./recommended-tags-for-documentation-comments.md)
+- [Průvodce programováním v C#](../index.md)
+- [Doporučené značky pro komentáře dokumentace](./recommended-tags-for-documentation-comments.md)

@@ -1,41 +1,41 @@
 ---
 ms.openlocfilehash: c5e4b5619394f99a419fe48aee190ad741ea8c0d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73041656"
 ---
-### <a name="identity-ui-uses-static-web-assets-feature"></a>Identita: uživatelské rozhraní používá funkci statických webových prostředků.
+### <a name="identity-ui-uses-static-web-assets-feature"></a>Identita: Uživatelské uživatelské zařízení používá funkci statických webových datových zdrojů
 
-ASP.NET Core 3,0 zavedlo funkci statického webového prostředku a uživatelské rozhraní identity ho přijalo.
+ASP.NET Core 3.0 představil statickou funkci webových datových zdrojů a uživatelské uživatelské uživatelské číslo identity ji přijalo.
 
-#### <a name="change-description"></a>Změnit popis
+#### <a name="change-description"></a>Popis změny
 
-Následkem toho, že uživatelské rozhraní identity přijímá funkci statických webových prostředků:
+V důsledku identity uživatelského uživatelského prvku přijetí statické webové datové zdroje funkce:
 
-- Výběr architektury se dá provést pomocí vlastnosti `IdentityUIFrameworkVersion` v souboru projektu.
-- Výchozím rozhraním uživatelského rozhraní identity je Bootstrap 4. Spouštěcí rutina 3 dosáhla konce životnosti a měli byste zvážit migraci na podporovanou verzi.
+- Výběr architektury se provádí `IdentityUIFrameworkVersion` pomocí vlastnosti v souboru projektu.
+- Bootstrap 4 je výchozí rozhraní ui pro rozhraní identity. Bootstrap 3 dosáhl konce životnosti a měli byste zvážit migraci na podporovanou verzi.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
 3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Výchozí architektura uživatelského rozhraní pro uživatelské rozhraní identity byla **bootstrap 3**. ROZHRANÍ .NET Framework může být nakonfigurováno pomocí parametru pro volání metody `AddDefaultUI` v `Startup.ConfigureServices`.
+Výchozí rozhraní ui pro identity ui byl **Bootstrap 3**. Rozhraní ui lze nakonfigurovat pomocí `AddDefaultUI` parametru `Startup.ConfigureServices`volání metody v .
 
 #### <a name="new-behavior"></a>Nové chování
 
-Výchozí architektura uživatelského rozhraní pro uživatelské rozhraní identity je **bootstrap 4**. ROZHRANÍ .NET Framework musí být nakonfigurováno v souboru projektu místo ve volání metody `AddDefaultUI`.
+Výchozí rozhraní ui pro identity ui je **Bootstrap 4**. Rozhraní ui musí být nakonfigurovánv souboru `AddDefaultUI` projektu, nikoli ve volání metody.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Při přijetí funkce statických webových prostředků se vyžaduje, aby se konfigurace architektury uživatelského rozhraní přesunula na MSBuild. Rozhodnutí, na které rozhraní vkládat, je rozhodnutí o době sestavení, ne rozhodnutí za běhu.
+Přijetí funkce statické webové datové zdroje vyžaduje, aby konfigurace rozhraní rozhraní přesunout do MSBuild. Rozhodnutí, na kterém rámci vložit je sestavení rozhodnutí, nikoli runtime rozhodnutí.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Zkontrolujte uživatelské rozhraní lokality a ujistěte se, že jsou nové součásti s rutinou Bootstrap 4 kompatibilní. V případě potřeby použijte vlastnost `IdentityUIFrameworkVersion` MSBuild a vraťte se k rutině Bootstrap 3. Přidejte vlastnost do prvku `<PropertyGroup>` v souboru projektu:
+Zkontrolujte své rozhraní webu, abyste se ujistili, že nové komponenty Bootstrap 4 jsou kompatibilní. V případě potřeby `IdentityUIFrameworkVersion` použijte msbuild vlastnost vrátit do Bootstrap 3. Přidejte vlastnost `<PropertyGroup>` do prvku v souboru projektu:
 
 ```xml
 <IdentityUIFrameworkVersion>Bootstrap3</IdentityUIFrameworkVersion>
@@ -43,7 +43,7 @@ Zkontrolujte uživatelské rozhraní lokality a ujistěte se, že jsou nové sou
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

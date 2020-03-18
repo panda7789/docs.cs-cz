@@ -1,92 +1,92 @@
 ---
-title: Migrace z DNX na .NET Core CLI
-description: Migrujte z použití nástrojů DNX k .NET Core CLI nástrojů.
+title: Migrace z dnx na rozhraní CLI jádra .NET
+description: Migrujte z použití nástrojů DNX na nástroje .NET Core CLI.
 ms.date: 06/20/2016
 ms.openlocfilehash: 31317f110ae1e8586b78becd757d0a8ff07f1459
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503830"
 ---
-# <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX na .NET Core CLI (Project. JSON)
+# <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migrace z DNX na rozhraní CLI jádra .NET (project.json)
 
 ## <a name="overview"></a>Přehled
-Verze RC1 rozhraní .NET Core a ASP.NET Core 1,0 představila nástroje DNX. Verze RC2 rozhraní .NET Core a ASP.NET Core 1,0 byla přesunuta z DNX do .NET Core CLI.
+Verze RC1 .NET Core a ASP.NET Core 1.0 představila nástroje DNX. Verze RC2 .NET Core a ASP.NET Core 1.0 se přesunula z DNX do rozhraní .NET Core CLI.
 
-Jako mírnou aktualizační program si rekapitulace, co se DNX. DNX je modul runtime a sada nástrojů, která se používá k sestavování .NET Core a konkrétně k aplikacím ASP.NET Core 1,0. Skládá se ze 3 hlavních částí:
+Jako mírný opakovací, pojďme shrnout, co DNX bylo asi. DNX byl runtime a sada nástrojů používaných k vytváření .NET Core a konkrétněji ASP.NET aplikací Core 1.0. Skládá se ze 3 hlavních kusů:
 
-1. DNVM – instalační skript pro získání DNX
-2. DNX (příkaz dotnet Execution Runtime) – modul runtime, který spouští váš kód
-3. DNU (dotnet Developer Utility) – nástroje pro správu závislostí, vytváření a publikování aplikací
+1. DNVM - instalační skript pro získání DNX
+2. DNX (Dotnet Execution Runtime) - runtime, který spouští váš kód
+3. DNU (Dotnet Developer Utility) - nástroje pro správu závislostí, vytváření a publikování vašich aplikací
 
-Při zavedení rozhraní příkazového řádku jsou nyní všechny výše uvedené součásti součástí jedné sady nástrojů. Vzhledem k tomu, že služba DNX byla k dispozici v časovém rámci RC1, možná máte vytvořené projekty, které chcete přesunout na nové nástroje rozhraní příkazového řádku.
+Se zavedením cli, všechny výše uvedené jsou nyní součástí jedné sady nástrojů. Vzhledem k tomu, že dnx byl k dispozici v časovém rámci RC1, můžete mít projekty, které byly vytvořeny pomocí něj, které byste chtěli přejít na nové nástroje rozhraní příkazového příkazu.
 
-Tato příručka k migraci se zabývá základy migrace projektů z DNX a na .NET Core CLI. Pokud právě začínáte projekt v .NET Core od začátku, můžete tento dokument volně přeskočit.
+Tento průvodce migrací bude zahrnovat základní informace o tom, jak migrovat projekty mimo DNX a na rozhraní .NET Core CLI. Pokud právě začínáte projekt na .NET Core od začátku, můžete tento dokument volně přeskočit.
 
 ## <a name="main-changes-in-the-tooling"></a>Hlavní změny v nástrojích
-Existují některé obecné změny v nástrojích, které by měly být nejprve popsaný.
+V nástrojích jsou uvedeny některé obecné změny, které by měly být popsány jako první.
 
-### <a name="no-more-dnvm"></a>Žádné další DNVM
-DNVM, short pro *dotnet Version Manager* , byl skript bash/PowerShellu, který se používá k instalaci DNX na vašem počítači. Pomohl uživatelům získat DNX, které potřebují z informačního kanálu, které zadal (nebo ve výchozím nastavení), a označit konkrétní DNX "aktivní", která by byla vložena do $PATH pro danou relaci. To vám umožní používat různé nástroje.
+### <a name="no-more-dnvm"></a>Už žádné DNVM
+DNVM, zkratka pro *DotNet Version Manager* byl bash / PowerShell skript používaný k instalaci DNX na vašem počítači. To pomohlo uživatelům získat DNX, které potřebují z krmiva, které zadali (nebo výchozí ty), stejně jako označit určité DNX "aktivní", který by dal na $PATH pro danou relaci. To by vám umožnilo používat různé nástroje.
 
-DNVM byla přerušena, protože její sada funkcí byla redundantní, protože změny přicházejí v .NET Core CLI.
+DNVM byla ukončena, protože jeho sada funkcí byla redundantní změny přicházející v rozhraní .NET Core CLI.
 
-CLI se vloží do balíčku dvěma hlavními způsoby:
+ClI je dodáván a zabalen dvěma hlavními způsoby:
 
 1. Nativní instalační programy pro danou platformu
-2. Nainstalovat skript pro jiné situace (například servery CI)
+2. Instalace skriptu pro jiné situace (například ci servery)
 
-V takovém případě nejsou funkce instalace DNVM potřeba. Ale co o funkcích výběru za běhu?
+Vzhledem k tomu nejsou funkce instalace DNVM potřebné. Ale co funkce výběru za běhu?
 
-V `project.json` odkazujete na modul runtime přidáním balíčku určité verze k vašim závislostem. V této změně bude vaše aplikace moci používat nové běhové bity. Načítání těchto bitů do počítače je stejné jako u rozhraní příkazového řádku: modul runtime nainstalujete pomocí jednoho z nativních instalačních programů, které podporuje nebo prostřednictvím instalačního skriptu.
+Odkazujete na runtime `project.json` ve vašem přidáním balíčku určité verze do vašich závislostí. S touto změnou bude aplikace moci používat nové bity runtime. Získání těchto bitů do počítače je stejné jako u cli: nainstalujete runtime prostřednictvím jednoho z nativních instalačních programů, které podporuje, nebo prostřednictvím instalačního skriptu.
 
 ### <a name="different-commands"></a>Různé příkazy
-Pokud jste používali DNX, použili jste některé příkazy z jedné ze tří částí (DNX, DNU nebo DNVM). V rozhraní příkazového řádku se některé z těchto příkazů změní, některé nejsou k dispozici a některé jsou stejné, ale mají mírně odlišnou sémantiku.
+Pokud jste používali DNX, použili jste některé příkazy z jedné z jeho tří částí (DNX, DNU nebo DNVM). S ROZHRANÍ MAT Některá z těchto příkazů se změní, některé nejsou k dispozici a některé jsou stejné, ale mají mírně odlišnou sémantiku.
 
-Následující tabulka ukazuje mapování mezi příkazy DNX/DNU a jejich protějšky CLI.
+V následující tabulce je zobrazeno mapování mezi příkazy DNX/DNU a jejich protějšky v příkazech cli.
 
-| DNX – příkaz                    | CLI – příkaz    | Popis                                                                                                     |
+| DNX, příkaz                    | Příkaz příkazového příkazu, příkaz    | Popis                                                                                                     |
 |--------------------------------|----------------|-----------------------------------------------------------------------------------------------------------------|
-| DNX spuštění                        | `dotnet run`     | Spustí kód ze zdroje.                                                                                           |
-| dnu sestavení                      | `dotnet build`   | Sestavte binární soubor IL vašeho kódu.                                                                                |
-| dnu Pack                       | `dotnet pack`    | Zabalit balíček NuGet vašeho kódu.                                                                        |
-| DNX \[příkaz] (například "DNX web") | Není k dispozici\*          | V DNX World spusťte příkaz definovaný v projektu Project. JSON.                                                     |
-| instalace dnu                    | Není k dispozici\*          | V DNX World nainstalujte balíček jako závislost.                                                            |
-| dnu obnovení                    | `dotnet restore` | Obnoví závislosti zadané v projektu. JSON. ([Viz poznámku](#dotnet-restore-note))                                                            |
-| publikování dnu                    | `dotnet publish` | Publikujte aplikaci pro nasazení v jedné ze tří forem (přenosné, přenosné s nativní a samostatnou). |
-| dnu zalomení                       | Není k dispozici\*          | V DNX World zabalte Project. JSON ve csproj.                                                                    |
-| příkazy dnu                   | Není k dispozici\*          | V DNX World spravujte globálně nainstalované příkazy.                                                           |
+| dnx běh                        | `dotnet run`     | Spusťte kód ze zdroje.                                                                                           |
+| dnu sestavení                      | `dotnet build`   | Vytvořte il binární kód.                                                                                |
+| dnu balíček                       | `dotnet pack`    | Balíček do NuGet balíček vašeho kódu.                                                                        |
+| dnx \[příkaz] (například "dnx web") | N/a\*          | Ve světě DNX spusťte příkaz definovaný v souboru project.json.                                                     |
+| dnu instalace                    | N/a\*          | Ve světě DNX nainstalujte balíček jako závislost.                                                            |
+| dnu obnovení                    | `dotnet restore` | Obnovení závislostí zadaných v souboru project.json. ([viz poznámka](#dotnet-restore-note))                                                            |
+| dnu publikovat                    | `dotnet publish` | Publikujte aplikaci pro nasazení v jednom ze tří formulářů (přenosné, přenosné s nativní a samostatné). |
+| zábal dnu                       | N/a\*          | Ve světě DNX zabalte project.json do csproj.                                                                    |
+| dnu příkazy                   | N/a\*          | Ve světě DNX spravujte globálně nainstalované příkazy.                                                           |
 
-(\*) – tyto funkce nejsou v rozhraní příkazového řádku v rámci návrhu podporovány.
+(\*) - tyto funkce nejsou v rozhraní zanesení podle návrhu podporovány.
 
-## <a name="dnx-features-that-are-not-supported"></a>Nepodporované funkce DNX
-Jak vidíte v tabulce výše, jsou k dispozici funkce z DNX světa, které jsme se rozhodli, že v rozhraní příkazového řádku nepodporujeme aspoň po dobu. Tato část prochází nejdůležitějšími a vysvětluje odůvodnění tím, že je nepodporují, a alternativní řešení, pokud je potřebujete.
+## <a name="dnx-features-that-are-not-supported"></a>Funkce DNX, které nejsou podporovány
+Jak ukazuje výše uvedená tabulka, existují funkce ze světa DNX, které jsme se rozhodli nepodporovat v CLI, alespoň prozatím. Tato část projde ty nejdůležitější a nastínit důvody, které nepodporují, stejně jako řešení, pokud je potřebujete.
 
 ### <a name="global-commands"></a>Globální příkazy
-DNU byl dodán s konceptem s názvem "globální příkazy". V podstatě byly konzolové aplikace zabalené jako balíčky NuGet pomocí skriptu prostředí, který by vyvolal DNX, který jste zadali ke spuštění aplikace.
+DNU přišel s konceptem nazvaným "globální příkazy". Jednalo se v podstatě o konzolové aplikace zabalené jako balíčky NuGet se skriptem prostředí, který by vyvolal dnx, který jste zadali ke spuštění aplikace.
 
-Rozhraní příkazového řádku nepodporuje tento koncept. Nicméně podporuje koncept přidávání příkazů pro projekt, které lze vyvolat pomocí známé `dotnet <command>` syntaxe.
+ClI nepodporuje tento koncept. Podporuje však koncept přidání příkazů pro projekt, které lze vyvolat pomocí `dotnet <command>` známé syntaxe.
 
 ### <a name="installing-dependencies"></a>Instalace závislostí
-Od verze V1 nemá .NET Core CLI k dispozici `install` příkaz pro instalaci závislostí. Aby bylo možné nainstalovat balíček z nástroje NuGet, je nutné jej přidat jako závislost do souboru `project.json` a potom spustit `dotnet restore` ([Viz poznámku](#dotnet-restore-note)).
+Od v1 rozhraní PŘÍKAZOVÉHO PŘÍKAZU jádra `install` .NET nemá příkaz pro instalaci závislostí. Chcete-li nainstalovat balíček z NuGet, budete muset přidat jako `project.json` závislost do `dotnet restore` souboru a pak spustit[(viz poznámka](#dotnet-restore-note)).
 
 ### <a name="running-your-code"></a>Spuštění kódu
-Existují dva hlavní způsoby, jak kód spustit. Jedna je ze zdroje, s `dotnet run`. Na rozdíl od `dnx run`to neprovede žádnou kompilaci v paměti. Ve skutečnosti vyvolá `dotnet build` sestavení kódu a potom spustí sestavený binární soubor.
+Kód lze spustit dvěma hlavními způsoby. Jeden je ze `dotnet run`zdroje, s . Na `dnx run`rozdíl od , to nebude dělat žádné kompilace v paměti. Bude skutečně `dotnet build` vyvolat k sestavení kódu a potom spustit vytvořený binární soubor.
 
-Dalším způsobem je použití samotného `dotnet` ke spuštění kódu. To se provádí zadáním cesty k sestavení: `dotnet path/to/an/assembly.dll`.
+Jiný způsob, `dotnet` jak je použití sám spustit kód. To se provádí poskytnutím cesty `dotnet path/to/an/assembly.dll`k sestavení: .
 
-## <a name="migrating-your-dnx-project-to-net-core-cli"></a>Migrace projektu DNX na .NET Core CLI
-Kromě použití nových příkazů při práci s vaším kódem jsou v migraci z DNX tři hlavní věci:
+## <a name="migrating-your-dnx-project-to-net-core-cli"></a>Migrace projektu DNX do rozhraní .NET Core CLI
+Kromě použití nových příkazů při práci s kódem, existují tři hlavní věci vlevo v migraci z DNX:
 
-1. Pokud máte přístup k rozhraní příkazového řádku, migrujte soubor `global.json`.
-2. Migrace souboru projektu (`project.json`) sama na nástroje rozhraní příkazového řádku.
-3. Migrace všech DNX rozhraní API na své BCL protějšky.
+1. `global.json` Pokud jej máte, můžete soubor použít, pokud jej budete moci používat.
+2. Migrace samotného souboru`project.json`projektu ( ) na nástroje vykreslování lisování lisů.
+3. Migrace z libovolného řešení API DNX na jejich protějšky BCL.
 
-### <a name="changing-the-globaljson-file"></a>Změna souboru Global. JSON
-Soubor `global.json` funguje jako soubor řešení pro projekty RC1 a RC2 (nebo novější). Aby se .NET Core CLI (stejně jako aplikace Visual Studio) rozlišila mezi RC1 a novějšími verzemi, používají vlastnost `"sdk": { "version" }` k tomu, aby byl rozlišený, který projekt je RC1 nebo novější. Pokud `global.json` nemá tento uzel vůbec, předpokládá se to jako poslední.
+### <a name="changing-the-globaljson-file"></a>Změna souboru global.json
+Soubor `global.json` se chová jako soubor řešení pro projekty RC1 a RC2 (nebo novější). V pořadí pro .NET Core CLI (stejně jako Visual Studio) rozlišovat mezi `"sdk": { "version" }` RC1 a novější verze, používají vlastnost, aby se rozlišování, který projekt je RC1 nebo novější. Pokud `global.json` nemá tento uzel vůbec, předpokládá se, že nejnovější.
 
-Chcete-li aktualizovat soubor `global.json`, buď odeberte vlastnost nebo ji nastavte na přesnou verzi nástrojů, které chcete použít, v tomto případě **1.0.0-preview2-003121**:
+Chcete-li `global.json` aktualizovat soubor, odeberte vlastnost nebo ji nastavte na přesnou verzi nástrojů, které chcete použít, v tomto případě **1.0.0-preview2-003121**:
 
 ```json
 {
@@ -96,11 +96,11 @@ Chcete-li aktualizovat soubor `global.json`, buď odeberte vlastnost nebo ji nas
 }
 ```
 
-### <a name="migrating-the-project-file"></a>Migruje se soubor projektu.
+### <a name="migrating-the-project-file"></a>Migrace souboru projektu
 
-Rozhraní příkazového řádku a DNX používají stejný základní systém projektu na základě `project.json` souboru. Syntaxe a sémantika souboru projektu je poměrně velká a s malým rozdílem na základě scénářů. K dispozici jsou také některé změny schématu, které lze zobrazit v [souboru schématu](http://json.schemastore.org/project).
+CLI a DNX oba používají stejný základní `project.json` projektový systém založený na souboru. Syntaxe a sémantiku souboru projektu jsou téměř stejné, s malými rozdíly na základě scénářů. Existují také některé změny schématu, které můžete vidět v [souboru schématu](http://json.schemastore.org/project).
 
-Pokud vytváříte konzolovou aplikaci, je nutné do souboru projektu přidat následující fragment kódu:
+Pokud vytváříte konzolovou aplikaci, je třeba do souboru projektu přidat následující úryvek:
 
 ```json
 "buildOptions": {
@@ -108,24 +108,24 @@ Pokud vytváříte konzolovou aplikaci, je nutné do souboru projektu přidat n�
 }
 ```
 
-Tímto dáte `dotnet build`, aby vygenerovala vstupní bod pro vaši aplikaci a efektivně tak spustitelný kód. Pokud vytváříte knihovnu tříd, jednoduše vynechejte výše uvedenou část. Samozřejmě, když přidáte výše uvedený fragment kódu do souboru `project.json`, je nutné přidat statický vstupní bod. Při přesunutí z DNX již není k dispozici služba DI Services, kterou poskytuje, proto musí být základním vstupním bodem .NET: `static void Main()`.
+To instruuje k vyzařování `dotnet build` vstupního bodu pro vaši aplikaci, efektivně, takže váš kód runnable. Pokud vytváříte knihovnu tříd, jednoduše vynechete výše uvedenou část. Samozřejmě, jakmile přidáte výše uvedený úryvek do `project.json` souboru, musíte přidat statický vstupní bod. S přechodem z DNX, DI služby, které poskytuje již nejsou k dispozici, `static void Main()`a proto to musí být základní .NET vstupní bod: .
 
-Pokud máte v `project.json`oddíl Commands, můžete ho odebrat. Některé příkazy, které se používají jako DNU příkazy, například Entity Framework příkazy rozhraní příkazového řádku, se předávají do rozhraní příkazového řádku jako rozšíření pro jednotlivé projekty. Pokud jste vytvořili vlastní příkazy, které používáte v projektech, je nutné je nahradit rozšířeními rozhraní příkazového řádku. V takovém případě musí být uzel `commands` v `project.json` nahrazen uzlem `tools` a musí obsahovat seznam závislostí nástrojů.
+Pokud máte v oddílu "příkazy" v aplikaci `project.json`, můžete ji odebrat. Některé příkazy, které dříve existovaly jako příkazy DNU, například příkazy rozhraní příkazu CLI rozhraní entity framework, jsou portovány jako rozšíření pro projekt na rozhraní příkazového příkazu. Pokud jste vytvořili vlastní příkazy, které používáte ve svých projektech, je třeba je nahradit rozšířením příkazového příkazu. V tomto případě `commands` uzel `project.json` v musí být nahrazen `tools` uzla a je třeba uvést seznam závislostí nástroje.
 
-Po dokončení těchto akcí se musíte rozhodnout, jaký typ přenositelnosti chcete mít pro vaši aplikaci. S .NET Core jsme investovali do poskytování spektra možností přenositelnosti, ze kterých si můžete vybrat. Například může být vhodné mít plně *přenosné* aplikace nebo může chtít mít *samostatnou* aplikaci. Možnost přenosné aplikace je větší, jako .NET Framework aplikace funguje: potřebuje sdílenou komponentu, aby ji bylo možné spustit na cílovém počítači (.NET Core). Samostatně obsažená aplikace nevyžaduje instalaci .NET Core na cíl, ale musíte pro každý operační systém, který chcete podporovat, vydávat jednu aplikaci. Tyto typy přenositelnosti a další jsou popsány v dokumentu [typu přenositelnosti aplikace](../deploying/index.md) .
+Po dokončení těchto věcí se musíte rozhodnout, jaký typ přenositelnosti si pro aplikaci přejete. S rozhraním .NET Core jsme investovali do poskytování spektra možností přenositelnosti, ze kterých si můžete vybrat. Můžete například chtít mít plně *přenosnou* aplikaci nebo můžete mít *samostatnou aplikaci.* Možnost přenosné aplikace je spíše jako aplikace rozhraní .NET Framework: potřebuje sdílenou komponentu k jeho spuštění v cílovém počítači (.NET Core). Samostatná aplikace nevyžaduje .NET Core, které mají být nainstalovány na cíl, ale je nutné vytvořit jednu aplikaci pro každý operační systém, který chcete podporovat. Tyto typy přenositelnosti a další jsou popsány v dokumentu [typu přenositelnosti aplikace.](../deploying/index.md)
 
-Jakmile zavoláte, jaký typ přenositelnosti chcete, musíte změnit cílové rozhraní. Pokud jste zapisovali aplikace pro .NET Core, pravděpodobně jste jako cílové rozhraní používali `dnxcore50`. V rozhraní příkazového řádku a změny, které nově [.NET Standard](../../standard/net-standard.md) , musí být rozhraní jedna z následujících:
+Jakmile provedete volání o jaký typ přenositelnosti, musíte změnit cílené rozhraní. Pokud jste psali aplikace pro .NET Core, jste s největší pravděpodobností používali `dnxcore50` jako cílené rozhraní. S rozhraní maty a změny, které přinesl nový [standard .NET,](../../standard/net-standard.md) musí být rámec jedním z následujících:
 
-1. `netcoreapp1.0` – Pokud píšete aplikace v .NET Core (včetně ASP.NET Corech aplikací)
-2. `netstandard1.6` – Pokud píšete knihovny tříd pro .NET Core
+1. `netcoreapp1.0`- pokud píšete aplikace na .NET Core (včetně ASP.NET core aplikací)
+2. `netstandard1.6`- pokud píšete knihovny tříd pro .NET Core
 
-Pokud používáte jiné cíle `dnx`, jako `dnx451`, budete je muset změnit také. `dnx451` by měl být změněn na `net451`.
-Další informace najdete v tématu [.NET Standard](../../standard/net-standard.md) .
+Pokud používáte `dnx` jiné cíle, jako `dnx451` budete muset změnit ty stejně. `dnx451`by měla `net451`být změněna na .
+Další informace naleznete v tématu [standardu .NET.](../../standard/net-standard.md)
 
-Vaše `project.json` je teď většinou připravená. Musíte projít seznam závislostí a aktualizovat závislosti na jejich novějších verzích, zejména pokud používáte závislosti ASP.NET Core. Pokud jste používali samostatné balíčky pro rozhraní API BCL, můžete použít balíček modulu runtime, jak je vysvětleno v dokumentu [typ přenositelnosti aplikace](../deploying/index.md) .
+Vaše `project.json` je nyní většinou připraven. Musíte projít seznam závislostí a aktualizovat závislosti na jejich novější verze, zejména pokud používáte ASP.NET základní závislosti. Pokud jste používali samostatné balíčky pro řešení API BCL, můžete použít balíček runtime, jak je vysvětleno v dokumentu [typu přenositelnosti aplikace.](../deploying/index.md)
 
-Až budete připraveni, můžete se pokusit o obnovení pomocí `dotnet restore` ([Viz poznámku](#dotnet-restore-note)). V závislosti na verzi vašich závislostí může dojít k chybám, pokud NuGet nemůže vyřešit závislosti pro jednu z cílových rozhraní výše. Jedná se o problém "k určitému bodu v čase"; v průběhu času bude více a více balíčků zahrnovat podporu pro tyto architektury. Prozatím, pokud narazíte na to, můžete použít příkaz `imports` v rámci `framework` uzlu k určení balíčku NuGet, že může obnovit balíčky cílené na rozhraní v rámci příkazu Imports.
-Chyby obnovení, které v tomto případě získáte, by měly poskytnout dostatek informací, abychom vám sdělili, které architektury potřebujete importovat. Pokud dojde ke mírné ztrátě nebo novému tomu, v obecném případě určení `dnxcore50` a `portable-net45+win8` v příkazu `imports` by měl být štych. Následující fragment kódu JSON ukazuje, jak vypadá takto:
+Jakmile budete připraveni, můžete zkusit obnovení s `dotnet restore` ( viz[poznámka](#dotnet-restore-note)). V závislosti na verzi vašich závislostí může dojít k chybám, pokud NuGet nelze vyřešit závislosti pro jeden z výše uvedených cílových rozhraní. Jedná se o problém "point-in-time"; jak čas postupuje, bude stále více balíčků zahrnovat podporu těchto rámců. Pro tuto chvíli, pokud narazíte na `imports` to, `framework` můžete použít příkaz v rámci uzlu určit NuGet, že můžete obnovit balíčky cílení na rozhraní v rámci "imports" prohlášení.
+Chyby obnovení, které získáte v tomto případě by měl poskytnout dostatek informací, které vám řeknou, které architektury je třeba importovat. Pokud jste mírně ztraceni nebo nové, obecně, `dnxcore50` `portable-net45+win8` zadání `imports` a v prohlášení by měl udělat trik. JSON úryvek níže ukazuje, jak to vypadá:
 
 ```json
     "frameworks": {
@@ -135,7 +135,7 @@ Chyby obnovení, které v tomto případě získáte, by měly poskytnout dostat
     }
 ```
 
-Spuštění `dotnet build` zobrazí všechny chyby sestavení, i když by nemělo být příliš mnoho z nich. Poté, co kód sestaví a funguje správně, můžete ho otestovat pomocí spouštěče. Spusťte `dotnet <path-to-your-assembly>` a podívejte se na to.
+Spuštění `dotnet build` se zobrazí případné chyby sestavení, i když by nemělo být příliš mnoho z nich. Poté, co váš kód je sestavení a běží správně, můžete vyzkoušet s běžec. Spusťte `dotnet <path-to-your-assembly>` a uvidíte, že běží.
 
 <a name="dotnet-restore-note"></a>
 

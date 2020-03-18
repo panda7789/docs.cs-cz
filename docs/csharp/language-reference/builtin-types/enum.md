@@ -1,6 +1,6 @@
 ---
-title: Výčtové typy C# – referenční informace
-description: Seznamte C# se s typy výčtu, které reprezentují volbu nebo kombinaci voleb.
+title: Typy výčtu – odkaz jazyka C#
+description: Informace o typech výčtu jazyka C#, které představují volbu nebo kombinaci možností
 ms.date: 12/13/2019
 f1_keywords:
 - enum
@@ -11,16 +11,16 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 77c7b7bd7f3e59fbe782755c829f18cf1cefc725
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: ab5eb1679f846bf0e25d90a4d0e0a71f0bdb0096
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239817"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78847703"
 ---
-# <a name="enumeration-types-c-reference"></a>Výčtové typyC# (referenční)
+# <a name="enumeration-types-c-reference"></a>Typy výčtu (odkaz Jazyka C#)
 
-*Výčtový typ* (nebo *typ výčtu*) je [typ hodnoty](value-types.md) definovaný sadou pojmenovaných konstant základního [integrálního číselného](integral-numeric-types.md) typu. Chcete-li definovat typ výčtu, použijte klíčové slovo `enum` a zadejte názvy *členů výčtu*:
+*Typ výčtu* (nebo *typ výčtu*) je typ [hodnoty](value-types.md) definovaný sadou pojmenovaných konstant základního [integrálního číselného](integral-numeric-types.md) typu. Chcete-li definovat typ výčtu, použijte `enum` klíčové slovo a zadejte názvy členů *výčtu*:
 
 ```csharp
 enum Season
@@ -32,7 +32,7 @@ enum Season
 }
 ```
 
-Ve výchozím nastavení jsou přidružené konstantní hodnoty členů výčtu typu `int`; začínají nulou a zvyšují se o jednu z následujících hodnot podle pořadí textu definice. Můžete explicitně zadat jakýkoli jiný [integrální číselný](integral-numeric-types.md) typ jako nadřízený typ výčtového typu. Můžete také explicitně zadat přidružené konstantní hodnoty, jak ukazuje následující příklad:
+Ve výchozím nastavení jsou přidružené konstantní hodnoty `int`členů výčtu typu ; začínají nulou a zvyšují se o jednu po pořadí definičního textu. Jako základní typ typu výčtu můžete explicitně zadat jakýkoli jiný [integrální číselný](integral-numeric-types.md) typ. Můžete také explicitně zadat přidružené konstantní hodnoty, jak ukazuje následující příklad:
 
 ```csharp
 enum ErrorCode : ushort
@@ -44,51 +44,51 @@ enum ErrorCode : ushort
 }
 ```
 
-V definici typu výčtu nelze definovat metodu. Chcete-li přidat funkci do výčtového typu, vytvořte [metodu rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
+Metodu nelze definovat uvnitř definice typu výčtu. Chcete-li přidat funkce do typu výčtu, vytvořte [metodu rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
 
-Výchozí hodnota typu výčtu `E` je hodnota vytvořená výrazem `(E)0`, i když nula nemá odpovídajícího člena výčtu.
+Výchozí hodnota typu `E` výčtu je hodnota vytvořená výrazem `(E)0`, i když nula nemá odpovídající výčtový člen.
 
-Typ výčtu můžete použít k reprezentaci výběru ze sady vzájemně se vylučujících hodnot nebo kombinací možností. Pro reprezentaci kombinace voleb Definujte typ výčtu jako bitové příznaky.
+Typ výčtu slouží k reprezentaci volby ze sady vzájemně se vylučujících hodnot nebo kombinace voleb. Chcete-li představovat kombinaci voleb, definujte typ výčtu jako bitové příznaky.
 
-## <a name="enumeration-types-as-bit-flags"></a>Výčtové typy jako bitové příznaky
+## <a name="enumeration-types-as-bit-flags"></a>Typy výčtu jako bitové příznaky
 
-Chcete-li, aby typ výčtu představoval kombinaci možností, definujte členy výčtu pro tyto možnosti tak, aby jednotlivá volba byla bitového pole. To znamená, že přidružené hodnoty těchto členů výčtu by měly být mocninou dvou. Pak můžete použít [bitové logické operátory `|` nebo `&`](../operators/bitwise-and-shift-operators.md#enumeration-logical-operators) k kombinování voleb nebo průsečíku kombinací voleb v uvedeném pořadí. Chcete-li označit, že typ výčtu deklaruje bitová pole, použijte atribut [Flags](xref:System.FlagsAttribute) na něj. Jak ukazuje následující příklad, můžete také zahrnout některé typické kombinace v definici výčtového typu.
+Pokud chcete, aby typ výčtu představoval kombinaci voleb, definujte členy výčtu pro tyto volby tak, aby individuální volba byla bitové pole. To znamená, že přidružené hodnoty těchto členů výčtu by měly být pravomoci dvou. Potom můžete použít [bitové logické `|` `&` operátory nebo](../operators/bitwise-and-shift-operators.md#enumeration-logical-operators) kombinovat volby nebo protínat kombinace voleb, v uvedeném pořadí. Chcete-li označit, že typ výčtu deklaruje bitová pole, použijte atribut [Flags.](xref:System.FlagsAttribute) Jak ukazuje následující příklad, můžete také zahrnout některé typické kombinace v definici typu výčtu.
 
-[!code-csharp[enum flags](~/samples/snippets/csharp/language-reference/builtin-types/EnumType.cs#Flags)]
+[!code-csharp[enum flags](snippets/EnumType.cs#Flags)]
 
-Další informace a příklady najdete na stránce s referenčními informacemi k rozhraní <xref:System.FlagsAttribute?displayProperty=nameWithType> API a v části [atributu flags](/dotnet/api/system.enum#non-exclusive-members-and-the-flags-attribute) na referenční stránce rozhraní API <xref:System.Enum?displayProperty=nameWithType>.
+Další informace a příklady <xref:System.FlagsAttribute?displayProperty=nameWithType> naleznete na referenční stránce rozhraní API a v části [Nevýhradní členy a Atribut příznaky](/dotnet/api/system.enum#non-exclusive-members-and-the-flags-attribute) na stránce reference <xref:System.Enum?displayProperty=nameWithType> rozhraní API.
 
-## <a name="the-systemenum-type-and-enum-constraint"></a>Typ System. Enum a omezení výčtu
+## <a name="the-systemenum-type-and-enum-constraint"></a>Typ System.Enum a omezení výčtu
 
-Typ <xref:System.Enum?displayProperty=nameWithType> je abstraktní základní třída všech typů výčtu. Poskytuje několik metod pro získání informací o typu výčtu a jeho hodnotách. Další informace a příklady najdete na stránce s referenčními informacemi k rozhraní <xref:System.Enum?displayProperty=nameWithType> API.
+Typ <xref:System.Enum?displayProperty=nameWithType> je abstraktní základní třída všech typů výčtu. Poskytuje řadu metod pro získání informací o typu výčtu a jeho hodnotách. Další informace a příklady <xref:System.Enum?displayProperty=nameWithType> naleznete na referenční stránce rozhraní API.
 
-Počínaje C# 7,3 můžete použít `System.Enum` v omezení základní třídy (označované jako [omezení výčtu](../../programming-guide/generics/constraints-on-type-parameters.md#enum-constraints)), chcete-li určit, že parametr typu je výčtový typ.
+Počínaje C# 7.3, můžete `System.Enum` použít v omezení základní třídy (který je známý jako [omezení výčtu)](../../programming-guide/generics/constraints-on-type-parameters.md#enum-constraints)určit, že parametr typu je typ výčtu.
 
 ## <a name="conversions"></a>Převody
 
-Pro jakýkoliv typ výčtu existují explicitní převody mezi výčtovým typem a jeho základním integrálním typem. Pokud [přetypování](../operators/type-testing-and-cast.md#cast-operator-) hodnoty výčtu na svůj nadřízený typ, je výsledkem přidružená celočíselná hodnota člena výčtu.
+Pro libovolný typ výčtu existují explicitní převody mezi typem výčtu a jeho základním integrálním typem. Pokud [přetypovat](../operators/type-testing-and-cast.md#cast-operator-) hodnotu výčtu na jeho základní typ, výsledkem je přidružená integrální hodnota člena výčtu.
 
-[!code-csharp[enum conversions](~/samples/snippets/csharp/language-reference/builtin-types/EnumType.cs#Conversions)]
+[!code-csharp[enum conversions](snippets/EnumType.cs#Conversions)]
 
-Použijte metodu <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> k určení, zda typ výčtu obsahuje člena výčtu s určitou přidruženou hodnotou.
+Pomocí <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> metody určete, zda typ výčtu obsahuje člen výčtu s určitou přidruženou hodnotou.
 
-Pro jakýkoliv typ výčtu existují převody [zabalení a rozbalení](../../programming-guide/types/boxing-and-unboxing.md) do a z typu <xref:System.Enum?displayProperty=nameWithType> v uvedeném pořadí.
+Pro libovolný typ výčtu existují převody [zabalení a rozbalení](../../programming-guide/types/boxing-and-unboxing.md) do a z <xref:System.Enum?displayProperty=nameWithType> typu, v uvedeném pořadí.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v následujících oddílech [ C# specifikace jazyka](~/_csharplang/spec/introduction.md):
+Další informace naleznete v následujících částech [specifikace jazyka C#](~/_csharplang/spec/introduction.md):
 
 - [Výčty](~/_csharplang/spec/enums.md)
-- [Výčtové hodnoty a operace](~/_csharplang/spec/enums.md#enum-values-and-operations)
+- [Hodnoty a operace výčtu](~/_csharplang/spec/enums.md#enum-values-and-operations)
 - [Logické operátory výčtu](~/_csharplang/spec/expressions.md#enumeration-logical-operators)
 - [Operátory porovnání výčtu](~/_csharplang/spec/expressions.md#enumeration-comparison-operators)
 - [Explicitní převody výčtu](~/_csharplang/spec/conversions.md#explicit-enumeration-conversions)
-- [Implicitní převody výčtu](~/_csharplang/spec/conversions.md#implicit-enumeration-conversions)
+- [Převody implicitního výčtu](~/_csharplang/spec/conversions.md#implicit-enumeration-conversions)
 
 ## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
-- [Řetězce formátu výčtu](../../../standard/base-types/enumeration-format-strings.md)
-- [Pokyny pro návrh – návrh výčtu](../../../standard/design-guidelines/enum.md)
-- [Pokyny pro návrh – zásady vytváření názvů výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
+- [Referenční dokumentace k jazyku C#](../index.md)
+- [Formátové řetězce výčtu](../../../standard/base-types/enumeration-format-strings.md)
+- [Pokyny pro návrh - Výčet](../../../standard/design-guidelines/enum.md)
+- [Pokyny pro návrh – konvence pojmenování výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
 - [příkaz switch](../keywords/switch.md)

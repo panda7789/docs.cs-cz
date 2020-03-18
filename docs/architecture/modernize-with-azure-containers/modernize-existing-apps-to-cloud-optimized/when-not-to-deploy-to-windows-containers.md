@@ -1,41 +1,41 @@
 ---
 title: Kdy neprovádět nasazení do kontejnerů Windows
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Kdy nasadit do kontejnerů Windows
+description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Kdy není nasadit do kontejnerů Windows
 ms.date: 04/28/2018
 ms.openlocfilehash: 65e793b846b495e9a1be6db9ddfa38bbf0d49445
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68676913"
 ---
 # <a name="when-not-to-deploy-to-windows-containers"></a>Kdy neprovádět nasazení do kontejnerů Windows
 
-Kontejnery Windows nepodporují některé technologie Windows. V těchto případech je stále potřeba migrovat na virtuální počítače Standard, obvykle jenom na Windows a IIS.
+Některé technologie systému Windows nejsou kontejnery systému Windows podporovány. V těchto případech stále potřebujete migrovat na virtuální servery standardy, obvykle pouze se systémem Windows a službou IIS.
 
-Případy nepodporované v kontejnerech Windows, od května 2018:
+Případy, které nejsou podporovány v kontejnerech windows, od května 2018:
 
-- Služba Řízení front zpráv (MSMQ) je aktuálně dostupná jenom v kontejnerech Windows, které jsou založené na verzi Windows serveru v1803, ale ne v jiných předchozích verzích.
+- Služba Microsoft Message Queuing (MSMQ) je v současné době k dispozici pouze v kontejnerech systému Windows na základě verze windows server v1803, ale ne v jiných předchozích verzích.
 
-  - [Fórum žádosti UserVoice](https://windowsserver.uservoice.com/forums/304624-containers/suggestions/15719031-create-base-container-image-with-msmq-server)
+  - [Fórum pro žádosti uživatele UserVoice](https://windowsserver.uservoice.com/forums/304624-containers/suggestions/15719031-create-base-container-image-with-msmq-server)
 
   - [Diskuzní fórum](https://social.msdn.microsoft.com/Forums/bce99a7d-aa60-44fa-a348-450855650810/msmqserver-is-it-supported?forum=windowscontainers)
 
-- Microsoft DTC (Distributed Transaction Coordinator) (MSDTC) aktuálně není v kontejnerech Windows podporován.
+- Koordinátor distribuovaných transakcí společnosti Microsoft (MSDTC) není v kontejnerech systému Windows aktuálně podporován.
 
-  - [Problém GitHubu](https://github.com/MicrosoftDocs/Virtualization-Documentation/issues/494)
+  - [Problém githubu](https://github.com/MicrosoftDocs/Virtualization-Documentation/issues/494)
 
-- Systém Microsoft Office v současné době nepodporuje kontejnery.
+- Sada Microsoft Office aktuálně nepodporuje kontejnery.
 
-  - [Fórum žádosti UserVoice](https://windowsserver.uservoice.com/forums/304624-containers/suggestions/19686220-provide-office-support-for-containers)
+  - [Fórum pro žádosti uživatele UserVoice](https://windowsserver.uservoice.com/forums/304624-containers/suggestions/19686220-provide-office-support-for-containers)
 
-- Aplikace uživatelského rozhraní (klientské aplikace s vizuálním uživatelským rozhraním) nepodporují scénáře.
+- Aplikace uživatelského rozhraní (klientské aplikace s vizuálním uživatelským rozhraním) nejsou podporované scénáře.
 
-- Role infrastruktury systému Windows (DNS, DHCP, DC, NTP, tisk, souborový server, IAM atd.) nejsou podporované scénáře.
+- Role infrastruktury systému Windows (DNS, DHCP, DC, NTP, PRINT, souborový server, IAM atd.) nejsou podporovány scénáře.
 
-Další nepodporované scénáře a požadavky od komunity najdete v tématu Fórum UserVoice pro kontejnery Windows: <https://windowsserver.uservoice.com/forums/304624-containers>.
+Další nepodporované scénáře a požadavky komunity najdete ve fóru UserVoice <https://windowsserver.uservoice.com/forums/304624-containers>pro kontejnery windows: .
 
-### <a name="additional-resources"></a>Další materiály a zdroje informací
+### <a name="additional-resources"></a>Další zdroje
 
 - **Virtuální počítače a kontejnery v Azure**
 
@@ -43,4 +43,4 @@ Další nepodporované scénáře a požadavky od komunity najdete v tématu Fó
 
 > [!div class="step-by-step"]
 > [Předchozí](deploy-existing-net-apps-as-windows-containers.md)
-> [Další](when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md)
+> [další](when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md)

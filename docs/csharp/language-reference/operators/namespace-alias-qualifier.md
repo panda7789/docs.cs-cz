@@ -1,5 +1,5 @@
 ---
-title: ':: operator- C# reference'
+title: ':: operátor - C# odkaz'
 ms.date: 08/09/2019
 f1_keywords:
 - ::_CSharpKeyword
@@ -11,17 +11,17 @@ helpviewer_keywords:
 - global keyword [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
 ms.openlocfilehash: a18e52ea05d49bf2b3a468923f1433f09fff9a8b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712673"
 ---
-# <a name="-operator-c-reference"></a>:: – operátorC# (Referenční dokumentace)
+# <a name="-operator-c-reference"></a>:: operátor (odkaz C#)
 
-Pro přístup ke členu oboru názvů s aliasem použijte Kvalifikátor aliasu oboru názvů `::`. Kvalifikátor `::` můžete použít jenom mezi dvěma identifikátory. Levý identifikátor může být libovolný z následujících aliasů:
+Kvalifikátor `::` aliasu oboru názvů použijte pro přístup k členovi aliasového oboru názvů. `::` Kvalifikátor lze použít pouze mezi dvěma identifikátory. Identifikátor levé ruky může být libovolný z následujících aliasů:
 
-- Alias oboru názvů vytvořený pomocí [direktivy aliasu using](../keywords/using-directive.md):
+- Alias oboru názvů vytvořený [direktivou using alias](../keywords/using-directive.md):
 
   ```csharp
   using forwinforms = System.Drawing;
@@ -33,10 +33,10 @@ Pro přístup ke členu oboru názvů s aliasem použijte Kvalifikátor aliasu o
   }
   ```
 
-- [Externí alias](../keywords/extern-alias.md).
-- Alias `global`, který je globálním aliasem oboru názvů. Globální obor názvů je obor názvů, který obsahuje obory názvů a typy, které nejsou deklarovány uvnitř pojmenovaného oboru názvů. Při použití s kvalifikátorem `::` se alias `global` vždycky odkazuje na globální obor názvů, a to i v případě, že je k dispozici uživatelsky definovaný `global` alias oboru názvů.
+- [Extern alias](../keywords/extern-alias.md).
+- Alias, `global` což je globální alias oboru názvů. Globální obor názvů je obor názvů, který obsahuje obory názvů a typy, které nejsou deklarovány uvnitř pojmenovaného oboru názvů. Při použití `::` s kvalifikátorem `global` alias vždy odkazuje na globální obor `global` názvů, i když existuje uživatelem definovaný alias oboru názvů.
 
-  Následující příklad používá alias `global` pro přístup k oboru názvů .NET <xref:System>, který je členem globálního oboru názvů. Bez aliasu `global` by byl k dispozici uživatelsky definovaný `System` obor názvů, který je členem `MyCompany.MyProduct` oboru názvů:
+  Následující příklad používá `global` alias pro přístup <xref:System> k oboru názvů .NET, který je členem globálního oboru názvů. Bez `global` aliasu by byl `System` přístup k uživatelem definovanému oboru názvů, který je členem oboru `MyCompany.MyProduct` názvů:
 
   ```csharp
   namespace MyCompany.MyProduct.System
@@ -54,16 +54,16 @@ Pro přístup ke členu oboru názvů s aliasem použijte Kvalifikátor aliasu o
   ```
 
   > [!NOTE]
-  > Klíčové slovo `global` je globální alias oboru názvů pouze v případě, že se jedná o identifikátor pravého kvalifikátoru `::`.
+  > Klíčové `global` slovo je alias globálního oboru názvů pouze v případě, `::` že se jedná o identifikátor kvalifikátoru na levostranné straně.
 
-Pro přístup ke členu oboru názvů s aliasem můžete také použít [operátor přístupu členů `.`](member-access-operators.md#member-access-operator-) . Nicméně operátor `.` slouží také pro přístup k členu typu. Kvalifikátor `::` zajišťuje, že jeho levý identifikátor vždy odkazuje na alias oboru názvů, i když existuje typ nebo obor názvů se stejným názvem.
+Můžete také použít [operátor `.` přístupu člena](member-access-operators.md#member-access-operator-) pro přístup k členu aliasovaného oboru názvů. Operátor se `.` však také používá pro přístup k členu typu. Kvalifikátor `::` zajišťuje, že jeho levý identifikátor vždy odkazuje na alias oboru názvů, i když existuje typ nebo obor názvů se stejným názvem.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v části [kvalifikátory aliasu oboru názvů](~/_csharplang/spec/namespaces.md#namespace-alias-qualifiers) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [Kvalifikátory aliasu oboru názvů](~/_csharplang/spec/namespaces.md#namespace-alias-qualifiers) ve [specifikaci jazyka C#](~/_csharplang/spec/introduction.md).
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#odkaz](../index.md)
+- [Referenční dokumentace k jazyku C#](../index.md)
 - [Operátory jazyka C#](index.md)
-- [Používání oborů názvů](../../programming-guide/namespaces/using-namespaces.md)
+- [Používání oboru názvů](../../programming-guide/namespaces/using-namespaces.md)

@@ -1,28 +1,28 @@
 ---
 ms.openlocfilehash: 9631e64bb403a3fe7b1b91e8ac592b57ce8068d9
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937081"
 ---
-### <a name="donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported"></a>Přepínač kompatibility DoNotSupportSelectAllShortcutInMultilineTextBox se nepodporuje.
+### <a name="donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported"></a>Přepínač kompatibility DoNotSupportSelectAllShortcutInMultilineTextBox není podporován
 
-V model Windows Forms .NET Core 3,0 není podporován přepínač kompatibility `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox`, který byl představen v .NET Framework 4.6.1.
+Přepínač `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` kompatibility, který byl zaveden v rozhraní .NET Framework 4.6.1, není ve formulářích Windows v rozhraní .NET Core 3.0 podporován.
 
 #### <a name="change-description"></a>Popis změny
 
-Počínaje .NET Framework 4.6.1 vybere <kbd>klávesu Ctrl</kbd> <kbd> + </kbd> klávesovou zkratku v ovládacím prvku <xref:System.Windows.Forms.TextBox> vybraný veškerý text. V .NET Framework 4,6 a předchozích verzích se při výběru <kbd>klávesy Ctrl</kbd> <kbd> + klávesové</kbd> zkratky nepodařilo vybrat veškerý text, pokud jsou vlastnosti [TextBox. ShortcutsEnabled](xref:System.Windows.Forms.TextBoxBase.ShortcutsEnabled) a <xref:System.Windows.Forms.TextBox.Multiline?displayProperty=nameWithType> nastaveny na `true`. Přepínač kompatibility `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` byl představen v .NET Framework 4.6.1 za účelem zachování původního chování. Další informace najdete v tématu <xref:System.Windows.Forms.TextBox.ProcessCmdKey%2A?displayProperty=nameWithType>.
+Počínaje rozhraním .NET Framework 4.6.1 vyberte klávesovou zkratku <kbd>Ctrl</kbd> + <kbd>A</kbd> v ovládacím prvku vybraný <xref:System.Windows.Forms.TextBox> veškerý text. V rozhraní .NET Framework 4.6 a předchozích verzích se výběru klávesové zkratky <kbd>Ctrl</kbd> + <kbd>A</kbd> nepodařilo `true`vybrat veškerý text, pokud byly obě [vlastnosti Textbox.ShortcutsEnabled](xref:System.Windows.Forms.TextBoxBase.ShortcutsEnabled) a <xref:System.Windows.Forms.TextBox.Multiline?displayProperty=nameWithType> vlastnosti nastaveny na . Přepínač `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` kompatibility byl zaveden v rozhraní .NET Framework 4.6.1 zachovat původní chování. Další informace naleznete zde <xref:System.Windows.Forms.TextBox.ProcessCmdKey%2A?displayProperty=nameWithType>.
 
-V rozhraní .NET Core není přepínač `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` podporován.
+V rozhraní .NET `Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox` Core není přepínač podporován.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0 Preview 9
+3.0 Náhled 9
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Odeberte přepínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
+Odstraňte spínač. Přepínač není podporován a nejsou k dispozici žádné alternativní funkce.
 
 #### <a name="category"></a>Kategorie
 
@@ -30,7 +30,7 @@ Windows Forms
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 
-- Žádné
+- Žádný
 
 <!-- 
 

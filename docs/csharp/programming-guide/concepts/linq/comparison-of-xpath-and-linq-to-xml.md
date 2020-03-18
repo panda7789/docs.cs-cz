@@ -6,53 +6,53 @@ dev_langs:
 - vb
 ms.assetid: 87d361b1-daa9-4fd4-a53a-cbfa40111ad3
 ms.openlocfilehash: e9bf192a2075653802f0c5a8b4e44ff0ceacb975
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66487541"
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a>Porovnání jazyka XPath a technologie LINQ to XML
-Výraz XPath a technologie LINQ to XML nabízejí některé podobné funkce. Jak lze použít k dotazování stromu XML, vrátí tyto výsledky jako kolekci elementů, kolekce atributů, kolekce uzlů nebo hodnotu elementu nebo atributu. Existují však také několik rozdílů.  
+XPath a LINQ na XML nabízejí některé podobné funkce. Oba lze použít k dotazování stromu XML, vrácení takové výsledky jako kolekce prvků, kolekce atributů, kolekce uzlů nebo hodnota prvku nebo atributu. Existují však také určité rozdíly.  
   
-## <a name="differences-between-xpath-and-linq-to-xml"></a>Rozdíly mezi XPath a technologie LINQ to XML  
- Výraz XPath není povolena projekce nových typů. To může vrátit pouze kolekce uzlů ze stromu, zatímco LINQ to XML můžete spustit dotaz a projekt grafu objektu nebo stromu XML v nový tvar. Technologie LINQ to XML dotazů zvětšíte mnohem víc funkcí a jsou výrazně výkonnější než výrazy XPath.  
+## <a name="differences-between-xpath-and-linq-to-xml"></a>Rozdíly mezi XPath a LINQ na XML  
+ XPath neumožňuje projekci nových typů. Může vrátit pouze kolekce uzlů ze stromu, zatímco LINQ do XML může spustit dotaz a promítnout objektový graf nebo strom XML v novém obrazci. Dotazy LINQ na XML zahrnují mnohem více funkcí a jsou mnohem výkonnější než výrazy XPath.  
   
- Výrazy XPath existovat samostatně v rámci řetězce. Kompilátor jazyka C# vám nemůže pomoci parsovat výraz XPath v době kompilace. Naopak LINQ to XML dotazy jsou analyzovány a zkompilovány kompilátorem jazyka C#. Kompilátoru je moci zachytávat chyby mnoho dotazů.  
+ Výrazy XPath existují izolovaně v rámci řetězce. Kompilátor Jazyka C# nemůže pomoci analyzovat výraz XPath v době kompilace. Naproti tomu linq na XML dotazy jsou analyzovány a kompilovány kompilátorem Jazyka C#. Kompilátor je schopen zachytit mnoho chyb dotazu.  
   
- Výraz XPath výsledky nejsou silného typu. V počtu situací je výsledkem vyhodnocení výrazu XPath objektu a je vývojářům určit správný typ a přetypujte výsledek podle potřeby. Naopak projekce v LINQ dotazu XML jsou silného typu.  
+ Výsledky XPath nejsou silně zadány. V řadě okolností je výsledkem vyhodnocení výrazu XPath objekt a je na vývojáři, aby určil správný typ a podle potřeby přetypoval výsledek. Naproti tomu projekce z linq do dotazu XML jsou silně zadávány.  
   
-## <a name="result-ordering"></a>Výsledek řazení  
- Výraz XPath 1.0 doporučení uvádí, že kolekce, která je výsledkem vyhodnocení výrazu XPath Neseřazený.  
+## <a name="result-ordering"></a>Pořadí výsledků  
+ Doporučení XPath 1.0 uvádí, že kolekce, která je výsledkem vyhodnocení výrazu XPath je neuspořádané.  
   
- Ale když iterace v kolekci vrácené LINQ metody osy XML XPath, uzly v kolekci jsou vráceny v pořadí dokumentů. To platí i v případě, že přístup k osy XPath kde predikáty se vyjadřují v pořadí reverzní dokumentů, jako například `preceding` a `preceding-sibling`.  
+ Však při iterace prostřednictvím kolekce vrácené LINQ na XML XPath osy metody, uzly v kolekci jsou vráceny v pořadí dokumentů. To platí i při přístupu k osám XPath, kde jsou predikáty vyjádřeny obráceným pořadím dokumentů, například `preceding` a `preceding-sibling`.  
   
- Naopak většina technologie LINQ to XML osy vrací kolekce v pořadí dokumentů, ale dva z nich, <xref:System.Xml.Linq.XNode.Ancestors%2A> a <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>, vrací kolekce v pořadí reverzní dokumentů. V následující tabulce vytvoří výčet OS a určuje pořadí kolekce pro jednotlivé:  
+ Naproti tomu většina os LINQ do XML vrací kolekce v pořadí <xref:System.Xml.Linq.XNode.Ancestors%2A> <xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A>dokumentů, ale dvě z nich a , vrátí kolekce v obráceném pořadí dokumentů. Následující tabulka obsahuje výčet os a označuje pořadí sběru pro každou z nich:  
   
-|Technologie LINQ to XML – osa|Řazení|  
+|LinQ na osu XML|Řazení|  
 |----------------------|--------------|  
 |XContainer.DescendantNodes|Pořadí dokumentů|  
 |XContainer.Descendants|Pořadí dokumentů|  
-|XContainer.Elements|Pořadí dokumentů|  
-|XContainer.Nodes|Pořadí dokumentů|  
+|XKontejner.Elements|Pořadí dokumentů|  
+|XContainer.Uzly|Pořadí dokumentů|  
 |XContainer.NodesAfterSelf|Pořadí dokumentů|  
 |XContainer.NodesBeforeSelf|Pořadí dokumentů|  
-|XElement.AncestorsAndSelf|Pořadí reverzní dokumentů|  
-|XElement.Attributes|Pořadí dokumentů|  
+|XElement.AncestorsAndSelf|Obrácené pořadí dokumentů|  
+|XElement.Atributy|Pořadí dokumentů|  
 |XElement.DescendantNodesAndSelf|Pořadí dokumentů|  
 |XElement.DescendantsAndSelf|Pořadí dokumentů|  
-|XNode.Ancestors|Pořadí reverzní dokumentů|  
+|XNode.Předkové|Obrácené pořadí dokumentů|  
 |XNode.ElementsAfterSelf|Pořadí dokumentů|  
 |XNode.ElementsBeforeSelf|Pořadí dokumentů|  
 |XNode.NodesAfterSelf|Pořadí dokumentů|  
 |XNode.NodesBeforeSelf|Pořadí dokumentů|  
   
-## <a name="positional-predicates"></a>Poziční predikáty.  
- Ve výrazu XPath poziční predikáty se vyjadřují v pořadí dokumentů pro mnoho osy, ale jsou vyjádřeny v pořadí reverzní dokumentů pro reverzní osy, které jsou `preceding`, `preceding-sibling`, `ancestor`, a `ancestor-or-self`. Například výraz XPath `preceding-sibling::*[1]` vrátí bezprostředně předcházející na stejné úrovni. To platí i v případě, že sada konečný výsledek se zobrazí v pořadí dokumentů.  
+## <a name="positional-predicates"></a>Poziční predikáty  
+ V rámci výrazu XPath jsou poziční predikáty vyjádřeny v pořadí dokumentů pro mnoho os, ale `preceding` `preceding-sibling`jsou `ancestor`vyjádřeny v obráceném pořadí dokumentů pro reverzní osy, které jsou , , , a `ancestor-or-self`. Například výraz `preceding-sibling::*[1]` XPath vrátí bezprostředně předcházející na stejné úrovni. To je případ i v případě, že konečná sada výsledků je uveden v pořadí dokumentů.  
   
- Naopak všechny predikáty poziční v technologii LINQ to XML se vždy vyjadřují v pořadí osy. Například `anElement.ElementsBeforeSelf().ElementAt(0)` vrátí první podřízený element nadřazeného elementu poslal dotaz, ne okamžité předcházející na stejné úrovni. Další příklad: `anElement.Ancestors().ElementAt(0)` vrátí nadřazeného elementu.  
+ Naproti tomu všechny poziční predikáty v LINQ na XML jsou vždy vyjádřeny v pořadí osy. Například `anElement.ElementsBeforeSelf().ElementAt(0)` vrátí první podřízený prvek nadřazeného prvku dotazovaného prvku, nikoli bezprostředně předcházející na stejné úrovni. Jiný příklad: `anElement.Ancestors().ElementAt(0)` vrátí nadřazený prvek.  
   
- Pokud byste chtěli najít bezprostředně předcházející prvek v technologii LINQ to XML, měli byste napsat následující výraz:  
+ Pokud byste chtěli najít bezprostředně předcházející prvek v LINQ do XML, napsali byste následující výraz:  
   
 ```csharp
 ElementsBeforeSelf().Last()
@@ -63,12 +63,12 @@ ElementsBeforeSelf().Last()
 ```
   
 ## <a name="performance-differences"></a>Rozdíly ve výkonu  
- Dotazy XPath, které používají funkce XPath v technologii LINQ to XML nebude provádět, tak LINQ dotazy XML.  
+ Dotazy XPath, které používají funkci XPath v LINQ na XML, nebudou fungovat tak dobře jako linq na dotazy XML.  
   
 ## <a name="comparison-of-composition"></a>Porovnání složení  
- Složení LINQ to XML dotazu je poněkud paralelní složení výraz XPath, ale velmi odlišné v syntaxi.  
+ Složení dotazu LINQ na XML je poněkud paralelní se složením výrazu XPath, i když se velmi liší syntaxí.  
   
- Například, pokud máte v proměnné s názvem elementu `customers`, a vy chcete najít podřízený element s názvem `CompanyName` v rámci všech podřízených elementů s názvem `Customer`, měli byste napsat výraz XPath následujícím způsobem:  
+ Například pokud máte prvek v proměnné `customers`s názvem , a chcete `CompanyName` najít prvek vnouče s názvem pod všechny podřízené prvky s názvem `Customer`, byste napsat výraz XPath takto:  
   
 ```csharp  
 customers.XPathSelectElements("./Customer/CompanyName")
@@ -78,7 +78,7 @@ customers.XPathSelectElements("./Customer/CompanyName")
 customers.XPathSelectElements("./Customer/CompanyName")
 ```
 
- Je ekvivalentní LINQ to XML dotazu:  
+ Ekvivalentní linq dotazu XML je:  
   
 ```csharp  
 customers.Elements("Customer").Elements("CompanyName")
@@ -88,19 +88,19 @@ customers.Elements("Customer").Elements("CompanyName")
 customers.Elements("Customer").Elements("CompanyName")
 ```  
 
- Jsou podobné parallels pro každý OS XPath.  
+ Existují podobné paralely pro každou z os XPath.  
   
-|Výraz XPath osy|Technologie LINQ to XML – osa|  
+|Osa XPath|LinQ na osu XML|  
 |----------------|----------------------|  
-|podřízený (na ose výchozí)|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
-|Nadřazené (.)|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=nameWithType>|  
-|atribut osy (@)|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
-|předchůdce osy|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
-|předchůdce nebo self OS|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
-|Následnické osy (/ /)|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
-|descendant-or-self|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=nameWithType>|  
-|Následující na stejné úrovni|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=nameWithType>|  
-|preceding-sibling|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType><br /><br /> or<br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=nameWithType>|  
+|podřízená (výchozí osa)|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|  
+|Rodič (..)od rodičů (..)|<xref:System.Xml.Linq.XObject.Parent%2A?displayProperty=nameWithType>|  
+|osa atributu (@)|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType><br /><br /> – nebo –<br /><br /> <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|  
+|předek osa|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|  
+|předek-nebo-vlastní osa|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|  
+|následná osa (//)|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType><br /><br /> – nebo –<br /><br /> <xref:System.Xml.Linq.XContainer.DescendantNodes%2A?displayProperty=nameWithType>|  
+|potomek-nebo-já|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType><br /><br /> – nebo –<br /><br /> <xref:System.Xml.Linq.XElement.DescendantNodesAndSelf%2A?displayProperty=nameWithType>|  
+|následující-sourozenec|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType><br /><br /> – nebo –<br /><br /> <xref:System.Xml.Linq.XNode.NodesAfterSelf%2A?displayProperty=nameWithType>|  
+|předchozí-sourozenec|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType><br /><br /> – nebo –<br /><br /> <xref:System.Xml.Linq.XNode.NodesBeforeSelf%2A?displayProperty=nameWithType>|  
 |Následující|Žádný přímý ekvivalent.|  
-|předchozí|Žádný přímý ekvivalent.|  
+|Předchozí|Žádný přímý ekvivalent.|  
   

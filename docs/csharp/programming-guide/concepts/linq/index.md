@@ -1,49 +1,49 @@
 ---
-title: Dotaz integrovaný na jazyku (LINQ)C#()
+title: Dotaz integrovaný jazykem (LINQ) (C#)
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
 ms.openlocfilehash: 07a9d68c042d524ee9faba8122b406a81e816378
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73418244"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
-LINQ (Language-Integrated Query) je název sady technologií založených na integraci možností dotazů přímo do C# jazyka. Tradičně se dotazy na data vyjadřují jako jednoduché řetězce bez kontroly typu v době kompilace nebo v podpoře technologie IntelliSense. Kromě toho se musíte naučit jiný dotazovací jazyk pro každý typ zdroje dat: databáze SQL, dokumenty XML, různé webové služby a tak dále. Pomocí LINQ je dotazem konstrukce jazyka první třídy, stejně jako třídy, metody a události. Zapisujete dotazy na kolekce objektů se silnými typy pomocí klíčových slov jazyka a známých operátorů. Rodina technologie LINQ nabízí konzistentní možnosti dotazování pro objekty (LINQ to Objects), relační databáze (LINQ to SQL) a XML (LINQ to XML).
+Jazykintegrovaný dotaz (LINQ) je název pro sadu technologií založených na integraci dotazovacích funkcí přímo do jazyka C#. Dotazy na data jsou tradičně vyjádřeny jako jednoduché řetězce bez kontroly typu v době kompilace nebo podpory technologie IntelliSense. Kromě toho se musíte naučit jiný dotazovací jazyk pro každý typ zdroje dat: databáze SQL, dokumenty XML, různé webové služby a tak dále. S LINQ dotaz je prvotřídní jazyk konstrukce, stejně jako třídy, metody, události. Můžete psát dotazy proti silně zadaným kolekcíobjektů pomocí klíčových slov jazyka a známé operátory. Řada technologií LINQ poskytuje konzistentní prostředí dotazů pro objekty (LINQ na objekty), relační databáze (LINQ to SQL) a XML (LINQ na XML).
 
-Pro vývojáře, který zapisuje dotazy, je nejpravděpodobnější "jazykově integrovaná" část LINQ výraz dotazu. Výrazy dotazů jsou zapsány v deklarativní *syntaxi dotazu*. Pomocí syntaxe dotazů můžete provádět filtrování, řazení a seskupování operací na zdrojích dat s minimálním kódem. Pro dotazování a transformaci dat v databázích SQL, datových sadách ADO .NET, dokumentech XML a datových proudech a kolekcích .NET můžete použít stejné základní vzorce výrazů dotazů.
+Pro vývojáře, který píše dotazy, nejviditelnější "jazykově integrované" část LINQ je výraz dotazu. Výrazy dotazu jsou zapsány v syntaxi deklarativního *dotazu*. Pomocí syntaxe dotazu můžete provádět operace filtrování, řazení a seskupování na zdrojích dat s minimem kódu. Stejné vzory výrazů základnídotaz použít k dotazování a transformaci dat v databázích SQL, Datových sadách ADO .NET, dokumentech XML a datových proudech a kolekcích .NET.
 
-Dotazy LINQ v můžete psát v C# pro SQL Server databáze, dokumenty XML, datové sady ADO.NET a všechny kolekce objektů, které podporují <xref:System.Collections.IEnumerable> nebo obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>. Podporu LINQ poskytují i třetí strany pro mnoho webových služeb a dalších implementací databáze.
+Můžete psát dotazy LINQ v jazyce C# pro sql server databáze, dokumenty XML, <xref:System.Collections.IEnumerable> ADO.NET <xref:System.Collections.Generic.IEnumerable%601> datové sady a všechny kolekce objektů, které podporuje nebo obecné rozhraní. Podpora LINQ je také poskytována třetími stranami pro mnoho webových služeb a dalších implementací databází.
 
-Následující příklad ukazuje operaci dokončení dotazu. Operace Complete zahrnuje vytvoření zdroje dat, definování výrazu dotazu a spuštění dotazu v příkazu `foreach`.
+Následující příklad ukazuje celou operaci dotazu. Kompletní operace zahrnuje vytvoření zdroje dat, definování výrazu dotazu a `foreach` spuštění dotazu v příkazu.
 
 [!code-csharp[csProgGuideLINQ#11](~/samples/snippets/csharp/concepts/linq/index_1.cs)]
 
-Následující obrázek ze sady Visual Studio ukazuje částečně dokončený dotaz LINQ na SQL Server databázi v Visual Basic C# a s úplnou kontrolou typu a podporou technologie IntelliSense:
+Následující obrázek z sady Visual Studio znázorňuje částečně vyplněný dotaz LINQ na databázi serveru SQL Server v jazyce C# i jazyce Visual Basic s úplnou kontrolou typu a podporou technologie IntelliSense:
 
-![Diagram, který zobrazuje dotaz LINQ pomocí technologie IntelliSense.](./media/introduction-to-linq/linq-query-intellisense.png)
+![Diagram, který zobrazuje dotaz LINQ s Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)
 
 ## <a name="query-expression-overview"></a>Přehled výrazu dotazu
 
-- Výrazy dotazů lze použít k dotazování a transformaci dat z libovolného zdroje dat s podporou jazyka LINQ. Jeden dotaz může například načíst data z databáze SQL a vytvořit datový proud XML jako výstup.
-- Výrazy dotazů jsou snadno hlavní, protože používají mnoho známých C# jazykových konstrukcí.
-- Proměnné ve výrazu dotazu jsou všechny silně typované, i když v mnoha případech nemusíte explicitně zadat typ, protože ho kompilátor může odvodit. Další informace najdete v tématu [vztahy typů v operacích dotazu LINQ](type-relationships-in-linq-query-operations.md).
-- Dotaz není proveden, dokud neprovedete iteraci nad proměnnou dotazu, například v příkazu `foreach`. Další informace najdete v tématu [Úvod do dotazů LINQ](introduction-to-linq-queries.md).
-- V době kompilace jsou výrazy dotazu převedeny na standardní volání metody operátoru dotazu v souladu s pravidly uvedenými ve C# specifikaci. Jakýkoli dotaz, který lze vyjádřit pomocí syntaxe dotazu, lze také vyjádřit pomocí syntaxe metody. Ve většině případů je ale syntaxe dotazů čitelnější a Stručná. Další informace najdete v tématu [ C# přehled jazykové specifikace](~/_csharplang/spec/expressions.md#query-expressions) a [standardní operátory dotazu](standard-query-operators-overview.md).
-- Jako pravidlo při psaní dotazů LINQ doporučujeme použít syntaxi dotazu, kdykoli je to možné, a syntaxi metody kdykoli je to nezbytné. Mezi dvěma různými formuláři není žádný sémantický nebo výkonový rozdíl. Výrazy dotazů jsou často čitelnější než ekvivalentní výrazy napsané v syntaxi metody.
-- Některé operace dotazu, například <xref:System.Linq.Enumerable.Count%2A> nebo <xref:System.Linq.Enumerable.Max%2A>, nemají žádnou ekvivalentní klauzuli výrazu dotazu a musí být proto vyjádřeny jako volání metody. Syntaxi metody lze kombinovat se syntaxí dotazu různými způsoby. Další informace naleznete v tématu [syntaxe dotazu a syntaxe metody v jazyce LINQ](query-syntax-and-method-syntax-in-linq.md).
-- Výrazy dotazů lze zkompilovat do stromů výrazů nebo delegátů v závislosti na typu, na který je dotaz použit. <xref:System.Collections.Generic.IEnumerable%601> dotazy jsou kompilovány delegátům. dotazy <xref:System.Linq.IQueryable> a <xref:System.Linq.IQueryable%601> jsou kompilovány do stromů výrazů. Další informace najdete v tématu [stromy výrazů](../../../expression-trees.md).
+- Výrazy dotazu lze použít k dotazování a transformaci dat z libovolného zdroje dat s podporou LINQ. Například jeden dotaz může načíst data z databáze SQL a vytvořit datový proud XML jako výstup.
+- Výrazy dotazu jsou snadno zvládnout, protože používají mnoho známých konstrukce jazyka C#.
+- Proměnné ve výrazu dotazu jsou všechny silného typu, i když v mnoha případech není nutné zadat typ explicitně, protože kompilátor můžete odvodit. Další informace naleznete [v tématu Typ relací v operacích dotazu LINQ](type-relationships-in-linq-query-operations.md).
+- Dotaz není proveden, dokud iterate přes proměnnou dotazu, `foreach` například v příkazu. Další informace naleznete [v tématu Úvod do linq dotazy](introduction-to-linq-queries.md).
+- V době kompilace jsou výrazy dotazu převedeny na volání metody Operátor standardnídotaz podle pravidel stanovených ve specifikaci C#. Jakýkoli dotaz, který lze vyjádřit pomocí syntaxe dotazu, lze také vyjádřit pomocí syntaxe metody. Ve většině případů je však syntaxe dotazu čitelnější a stručnější. Další informace naleznete v [tématu C# specifikace jazyka](~/_csharplang/spec/expressions.md#query-expressions) a [standardní operátory dotazu přehled](standard-query-operators-overview.md).
+- Při psaní dotazů LINQ doporučujeme použít syntaxi dotazu, kdykoli je to možné, a syntaxi metody, kdykoli je to nutné. Neexistuje žádný sémantický nebo výkon rozdíl mezi dvěma různými formami. Výrazy dotazu jsou často čitelnější než ekvivalentní výrazy napsané v syntaxi metody.
+- Některé operace dotazu, například <xref:System.Linq.Enumerable.Count%2A> nebo <xref:System.Linq.Enumerable.Max%2A>, nemají žádnou rovnocennou klauzuli výrazu dotazu a proto musí být vyjádřeny jako volání metody. Syntaxe metody lze kombinovat se syntaxí dotazu různými způsoby. Další informace naleznete [v tématu Syntaxe a syntaxe metody dotazu v linq](query-syntax-and-method-syntax-in-linq.md).
+- Výrazy dotazu lze kompilovat do stromů výrazů nebo delegátů v závislosti na typu, na který je dotaz použit. <xref:System.Collections.Generic.IEnumerable%601>dotazy jsou kompilovány delegátům. <xref:System.Linq.IQueryable>a <xref:System.Linq.IQueryable%601> dotazy jsou kompilovány do stromů výrazů. Další informace naleznete v [tématu Expression trees](../../../expression-trees.md).
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud chcete získat další informace o LINQ, začněte tím, že se seznámíte s některými základními koncepty v [základech dotazů na dotazy](../../../linq/query-expression-basics.md)a pak si přečtěte dokumentaci pro technologii LINQ, ve které máte zájem:
+Chcete-li se dozvědět více podrobností o LINQ, začněte tím, že se seznámíte s některými základními pojmy v [základech výrazu dotazu](../../../linq/query-expression-basics.md)a pak si přečtěte dokumentaci k technologii LINQ, o kterou máte zájem:
 
 - Dokumenty XML: [LINQ to XML](linq-to-xml-overview.md)  
-- ADO.NET Entity Framework: [LINQ to](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md) Entities
-- Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects](linq-to-objects.md)
+- ADO.NET entity: [LINQ pro entity](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)
+- Kolekce.NET, soubory, řetězce a tak dále: [LINQ na objekty](linq-to-objects.md)
 
-Chcete-li získat hlubší porozumění LINQ obecně, přečtěte si téma [LINQ in C# ](../../../linq/linq-in-csharp.md).
+Chcete-li získat hlubší pochopení LINQ obecně, naleznete v tématu [LINQ v C#](../../../linq/linq-in-csharp.md).
 
-Chcete-li začít pracovat s C#LINQ v, přečtěte si kurz [práce s LINQ](../../../tutorials/working-with-linq.md).
+Chcete-li začít pracovat s LINQ v C#, naleznete v kurzu [Práce s LINQ](../../../tutorials/working-with-linq.md).

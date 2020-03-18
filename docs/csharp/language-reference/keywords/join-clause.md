@@ -1,5 +1,5 @@
 ---
-title: klauzule JOIN – C# odkaz
+title: klauzule join - Odkaz jazyka C#
 ms.date: 07/20/2015
 f1_keywords:
 - join
@@ -9,90 +9,90 @@ helpviewer_keywords:
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
 ms.openlocfilehash: 8e52e9db241392b67818b7316767dd97bd38432a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713406"
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 
-Klauzule `join` je užitečná pro přidružení prvků z různých zdrojových sekvencí, které nemají přímou relaci v objektovém modelu. Jediným požadavkem je, aby elementy v jednotlivých zdrojích sdílely určitou hodnotu, která může být porovnána s rovností. Například distributor potravinářského prostředí může mít seznam dodavatelů určitého produktu a seznam nákupčích. Klauzuli `join` lze použít například k vytvoření seznamu dodavatelů a nákupčích tohoto produktu, kteří jsou ve stejné konkrétní oblasti.
+Klauzule je užitečná `join` pro asociování prvků z různých zdrojových sekvencí, které nemají žádný přímý vztah v objektovém modelu. Jediným požadavkem je, že prvky v každém zdroji sdílejí určitou hodnotu, kterou lze porovnat pro rovnost. Distributor potravin může mít například seznam dodavatelů určitého produktu a seznam kupujících. Klauzule `join` může být použita například k vytvoření seznamu dodavatelů a kupujících tohoto produktu, kteří jsou všichni ve stejné zadané oblasti.
 
-Klauzule `join` přijímá jako vstup dvě zdrojové sekvence. Prvky v každé sekvenci musí být buď nebo obsahují vlastnost, která může být porovnána s odpovídající vlastností v druhé sekvenci. Klauzule `join` porovnává zadané klíče k rovnosti pomocí klíčového slova Special `equals`. Všechna spojení prováděná klauzulí `join` jsou equijoins. Tvar výstupu klauzule `join` závisí na konkrétním typu spojení, které provádíte. Níže jsou tři nejběžnější typy spojení:
+Klauzule `join` trvá dvě zdrojové sekvence jako vstup. Prvky v každé sekvenci musí být nebo obsahovat vlastnost, která může být porovnána s odpovídající vlastností v jiné sekvenci. Klauzule `join` porovnává zadané klíče pro rovnost pomocí `equals` speciální klíčové slovo. Všechna spojení provedená `join` klauzulí jsou equijoins. Tvar výstupu `join` klauzule závisí na konkrétním typu spojení, které provádíte. Následují tři nejběžnější typy spojení:
 
 - Vnitřní spojení
 
-- Spojení skupin
+- Spojení se skupinou
 
 - Levé vnější spojení
 
 ## <a name="inner-join"></a>Vnitřní spojení
 
-Následující příklad ukazuje jednoduchý vnitřní equijoin. Tento dotaz vytvoří nestrukturovanou posloupnost párů "název produktu/kategorie". Stejný řetězec kategorie se zobrazí ve více prvcích. Pokud prvek z `categories` nemá žádné odpovídající `products`, tato kategorie se ve výsledcích nezobrazí.
+Následující příklad ukazuje jednoduchý vnitřní equijoin. Tento dotaz vytváří plochou sekvenci párů "název produktu / kategorie". Stejný řetězec kategorie se zobrazí ve více prvcích. Pokud prvek `categories` z nemá `products`žádné odpovídající , tato kategorie se nezobrazí ve výsledcích.
 
 [!code-csharp[cscsrefQueryKeywords#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#24)]
 
-Další informace najdete v tématu [provádění vnitřních spojení](../../linq/perform-inner-joins.md).
+Další informace naleznete v [tématu Provedení vnitřních spojení](../../linq/perform-inner-joins.md).
 
-## <a name="group-join"></a>Spojení skupin
+## <a name="group-join"></a>Spojení se skupinou
 
-Klauzule `join` s výrazem `into` se nazývá spojení se skupinou.
+Klauzule `join` s `into` výrazem se nazývá skupinové spojení.
 
 [!code-csharp[cscsrefQueryKeywords#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#25)]
 
-Spojení se skupinou vytvoří hierarchickou sekvenci výsledků, která přidruží prvky v levé zdrojové sekvenci k jednomu nebo více shodným prvkům zdrojové sekvence na pravé straně. Spojení se skupinami nemá v relačních výrazech žádný ekvivalent. v podstatě je to sekvence polí objektů.
+Spojení skupiny vytvoří hierarchickou sekvenci výsledků, která přidruží prvky v levé zdrojové sekvenci s jedním nebo více odpovídajícími prvky v posloupnosti zdroje na pravé straně. Spojení skupiny nemá z relačních podmínek žádný ekvivalent. je v podstatě posloupnost objektových polí.
 
-Pokud se nenajde žádné elementy z pravé zdrojové sekvence, aby odpovídaly elementu v levém zdroji, klauzule `join` vytvoří prázdné pole pro tuto položku. Proto je spojení se skupinou stále v podstatě vnitřní equijoin s tím rozdílem, že je sekvence výsledků uspořádána do skupin.
+Pokud žádné prvky z pravé zdrojové sekvence jsou nalezeny `join` tak, aby odpovídaly prvek v levém zdroji, klauzule vytvoří prázdné pole pro tuto položku. Proto spojení skupiny je stále v podstatě vnitřní equijoin s tím rozdílem, že výsledek sekvence je uspořádándo skupin.
 
-Pokud jste vybrali jenom výsledky spojení se skupinami, můžete k položkám přistupovat, ale nemůžete identifikovat klíč, na kterém se shodují. Proto je obecně vhodnější vybrat výsledky připojení skupiny do nového typu, který má také název klíče, jak je znázorněno v předchozím příkladu.
+Pokud vyberete výsledky skupinového spojení, můžete získat přístup k položkám, ale nemůžete identifikovat klíč, na který se shodují. Proto je obecně užitečnější vybrat výsledky skupiny spojit do nového typu, který má také název klíče, jak je znázorněno v předchozím příkladu.
 
-Můžete samozřejmě také použít výsledek spojení skupiny jako generátor jiného poddotazu:
+Můžete také, samozřejmě, použít výsledek skupiny připojit jako generátor jiného poddotazu:
 
 [!code-csharp[cscsrefQueryKeywords#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#26)]
 
-Další informace najdete v tématu [provedení seskupených spojení](../../linq/perform-grouped-joins.md).
+Další informace naleznete v [tématu Perform grouped joins](../../linq/perform-grouped-joins.md).
 
 ## <a name="left-outer-join"></a>Levé vnější spojení
 
-V levém vnějším spojení jsou vráceny všechny prvky v levé zdrojové sekvenci, a to i v případě, že v pravé sekvenci nejsou žádné vyhovující prvky. K provedení levého vnějšího spojení v LINQ použijte metodu `DefaultIfEmpty` v kombinaci s připojením skupiny k určení výchozího prvku na pravé straně, který se vytvoří, pokud element na levé straně nemá žádné shody. Můžete použít `null` jako výchozí hodnotu pro jakýkoli typ odkazu, nebo můžete zadat uživatelsky definovaný výchozí typ. V následujícím příkladu je zobrazen uživatelsky definovaný výchozí typ:
+V levém vnějším spojení jsou vráceny všechny prvky v levé zdrojové sekvenci, i když žádné odpovídající prvky jsou v pravém pořadí. Chcete-li provést levé vnější spojení `DefaultIfEmpty` v LINQ, použijte metodu v kombinaci se skupinovým spojením k určení výchozího prvku na pravé straně, který má být k výrobě, pokud prvek na levé straně nemá žádné shody. Jako výchozí `null` hodnotu můžete použít pro libovolný typ odkazu nebo můžete zadat výchozí typ definovaný uživatelem. V následujícím příkladu je zobrazen výchozí typ definovaný uživatelem:
 
 [!code-csharp[cscsrefQueryKeywords#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#27)]
 
-Další informace najdete v tématu [provedení levých vnějších spojení](../../linq/perform-left-outer-joins.md).
+Další informace naleznete v [tématu Provedení levého vnějšího spojení](../../linq/perform-left-outer-joins.md).
 
-## <a name="the-equals-operator"></a>Operátor Equals
+## <a name="the-equals-operator"></a>Operátor rovná se
 
-Klauzule `join` provádí equijoin. Jinými slovy, můžete pouze základní shody s rovností dvou klíčů. Jiné typy porovnání, jako je "větší než" nebo "nerovnost", nejsou podporovány. Aby bylo jasné, že se všechna spojení equijoins, klauzule `join` používá klíčové slovo `equals` namísto operátoru `==`. Klíčové slovo `equals` lze použít pouze v klauzuli `join` a liší se od operátoru `==` v jednom důležitém způsobu. V `equals`levý klíč spotřebovává vnější zdrojovou sekvenci a pravý klíč spotřebuje vnitřní zdroj. Vnější zdroj je pouze v rozsahu na levé straně `equals` a vnitřní zdrojová sekvence je pouze v rozsahu na pravé straně.
+Klauzule `join` provádí equijoin. Jinými slovy, můžete pouze založit shody na rovnost dvou klíčů. Jiné typy porovnání, například "větší než" nebo "není rovno" nejsou podporovány. Chcete-li jasně najevo, že všechna spojení `join` jsou `equals` equijoins, klauzule používá klíčové slovo namísto operátoru. `==` Klíčové `equals` slovo lze použít `join` pouze v klauzuli `==` a liší se od operátora jedním důležitým způsobem. S `equals`, levý klíč spotřebovává vnější zdrojové sekvence a pravý klíč spotřebovává vnitřní zdroj. Vnější zdroj je pouze v oboru `equals` na levé straně a vnitřní zdrojsekvence je pouze v oboru na pravé straně.
 
-## <a name="non-equijoins"></a>Bez equijoins
+## <a name="non-equijoins"></a>Nee-spojení
 
-Pomocí několika klauzulí `from` můžete provádět nezávisle na neequijoins, křížové spojení a další vlastní operace JOIN, které zavádějí nové sekvence nezávisle na dotaz. Další informace najdete v tématu [provádění vlastních operací spojení](../../linq/perform-custom-join-operations.md).
+Můžete provádět non-equijoins, křížové spojení a další operace `from` vlastního spojení pomocí více klauzulí zavést nové sekvence nezávisle do dotazu. Další informace naleznete v [tématu Provádění operací vlastního spojení](../../linq/perform-custom-join-operations.md).
 
-## <a name="joins-on-object-collections-vs-relational-tables"></a>Spojení s kolekcemi objektů vs. relačními tabulkami
+## <a name="joins-on-object-collections-vs-relational-tables"></a>Spojení na kolekcích objektů vs. relační tabulky
 
-Ve výrazu dotazu LINQ se operace join provádí na kolekcích objektů. Kolekce objektů nemohou být "připojené" stejným způsobem jako dvě relační tabulky. V LINQ jsou klauzule Explicit `join` požadovány pouze v případě, že dvě zdrojové sekvence nejsou svázány s žádnou relací. Při práci s [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]jsou tabulky cizích klíčů v objektovém modelu reprezentovány jako vlastnosti primární tabulky. Například v databázi Northwind má tabulka Customer relaci cizího klíče s tabulkou Orders. Při mapování tabulek na objektový model má třída Customer vlastnost Orders, která obsahuje kolekci objednávek přidružených k danému zákazníkovi. V důsledku toho se připojení už pro vás udělalo.
+Ve výrazu dotazu LINQ jsou operace spojení prováděny na kolekcích objektů. Kolekce objektů nelze "spojit" přesně stejným způsobem jako dvě relační tabulky. V LINQ `join` explicitní klauzule jsou vyžadovány pouze v případě, že dvě zdrojové sekvence nejsou vázány žádný vztah. Při práci [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]s , tabulky cizího klíče jsou reprezentovány v objektovém modelu jako vlastnosti primární tabulky. Například v databázi Northwind má tabulka Zákazník vztah cizího klíče s tabulkou Objednávky. Když mapujete tabulky na objektový model, třída Customer má vlastnost Orders, která obsahuje kolekci objednávek přidružených k tomuto zákazníkovi. Ve skutečnosti již bylo spojení provedeno za vás.
 
-Další informace o dotazování napříč souvisejícími tabulkami v kontextu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]naleznete v tématu [How to: map Database Relationships](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
+Další informace o dotazování napříč souvisejícími tabulkami v kontextu naleznete v tématu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]How [to: Map Database Relationships](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
 
-## <a name="composite-keys"></a>Složené klíče
+## <a name="composite-keys"></a>Složené klávesy
 
-K otestování rovnosti více hodnot můžete použít složený klíč. Další informace najdete v tématu [připojení pomocí složených klíčů](../../linq/join-by-using-composite-keys.md). Složené klíče lze také použít v klauzuli `group`.
+Rovnost více hodnot můžete otestovat pomocí složeného klíče. Další informace naleznete v tématu [Join pomocí složených klíčů](../../linq/join-by-using-composite-keys.md). Složené klíče lze také `group` použít v klauzuli.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad porovnává výsledky vnitřního spojení, spojení skupin a levé vnější spojení se stejnými zdroji dat pomocí stejných shodných klíčů. Do těchto příkladů se přidá nějaký další kód, který vyjasní výsledky v zobrazení konzoly.
+Následující příklad porovnává výsledky vnitřní spojení, spojení skupiny a levé vnější spojení na stejné zdroje dat pomocí stejné odpovídající klíče. Některé další kód je přidán do těchto příkladů objasnit výsledky v konzolové zobrazení.
 
 [!code-csharp[cscsrefQueryKeywords#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#23)]
 
 ## <a name="remarks"></a>Poznámky
 
-Klauzule `join`, která není následována `into` je přeložena do volání metody <xref:System.Linq.Enumerable.Join%2A>. Klauzule `join`, která je následována `into` je přeložena na volání metody <xref:System.Linq.Enumerable.GroupJoin%2A>.
+Klauzule, `join` která není `into` následuje je <xref:System.Linq.Enumerable.Join%2A> přeložen do volání metody. Klauzule, `join` která `into` je následována, je přeložena do volání <xref:System.Linq.Enumerable.GroupJoin%2A> metody.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Klíčová slova dotazu (LINQ)](query-keywords.md)
-- [ (LINQ)](../../linq/index.md)
+- [LINQ (Language Integrated Query)](../../linq/index.md)
 - [Operace sjednocení](../../programming-guide/concepts/linq/join-operations.md)
 - [group – klauzule](group-clause.md)
 - [Provedení levých vnějších spojení](../../linq/perform-left-outer-joins.md)

@@ -1,35 +1,35 @@
 ---
 ms.openlocfilehash: 53d2c989120c92f4e2d18f50ce4b364bd4c9b604
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901798"
 ---
-### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP: synchronní v/v – zakázáno na všech serverech
+### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP: Synchronní vi zakázáno na všech serverech
 
-Počínaje ASP.NET Core 3,0 jsou synchronní operace serveru ve výchozím nastavení zakázané.
+Počínaje ASP.NET jádrem 3.0 jsou synchronní operace serveru ve výchozím nastavení zakázány.
 
 #### <a name="change-description"></a>Popis změny
 
-`AllowSynchronousIO` je možnost na každém serveru, který povoluje nebo zakazuje synchronní rozhraní API pro vstupně-výstupní operace jako `HttpRequest.Body.Read`, `HttpResponse.Body.Write`a `Stream.Flush`. Tato rozhraní API jsou dlouhodobě zdrojem vláken vyčerpání a aplikace přestane reagovat. Počínaje verzí ASP.NET Core 3,0 Preview 3 jsou tyto synchronní operace ve výchozím nastavení zakázány.
+`AllowSynchronousIO`je možnost na každém serveru, která povoluje nebo `HttpRequest.Body.Read` `HttpResponse.Body.Write`zakazuje `Stream.Flush`synchronní vypovězení vi, jako je , a . Tato rozhraní API jsou již dlouho zdrojem hladovění podprocesu a přestane reagovat aplikace. Počínaje ASP.NET Core 3.0 Preview 3, tyto synchronní operace jsou ve výchozím nastavení zakázány.
 
-Ovlivněné servery:
+Ohrožené servery:
 
 - Kestrel
 - HttpSys
-- Vnitroprocesové v rámci služby IIS
-- TestServer
+- IIS v průběhu
+- Testovací server
 
-Očekávat chyby podobné:
+Očekávejte chyby podobné:
 
 - `Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call FlushAsync or set AllowSynchronousIO to true instead.`
 
-Každý server má možnost `AllowSynchronousIO`, která řídí toto chování a výchozí hodnota pro všechny jsou nyní `false`.
+Každý server `AllowSynchronousIO` má možnost, která řídí toto chování `false`a výchozí pro všechny z nich je nyní .
 
-Chování je také možné přepsat na základě jednotlivých požadavků jako dočasné zmírnění. Příklad:
+Chování může být také přepsána na základě požadavku jako dočasné zmírnění. Například:
 
 ```csharp
 var syncIOFeature = HttpContext.Features.Get<IHttpBodyControlFeature>();
@@ -39,23 +39,23 @@ if (syncIOFeature != null)
 }
 ```
 
-Pokud máte potíže s `TextWriter` nebo jiným datovým proudem, který volá synchronní rozhraní API v `Dispose`, zavolejte místo toho nové rozhraní API `DisposeAsync`.
+Pokud máte potíže `TextWriter` s nebo jiný datový proud `Dispose`volání synchronní `DisposeAsync` rozhraní API v , volání nové rozhraní API místo.
 
-Diskuzi najdete v tématu [dotnet/aspnetcore # 7644](https://github.com/dotnet/aspnetcore/issues/7644).
+Diskuse naleznete [v tématu dotnet/aspnetcore#7644](https://github.com/dotnet/aspnetcore/issues/7644).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-ve výchozím nastavení jsou povolené `HttpRequest.Body.Read`, `HttpResponse.Body.Write`a `Stream.Flush`.
+`HttpRequest.Body.Read`, `HttpResponse.Body.Write`a `Stream.Flush` byly ve výchozím nastavení povoleny.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Ve výchozím nastavení nejsou povolena tato synchronní rozhraní API:
+Tato synchronní prostředí API jsou ve výchozím nastavení zakázána:
 
-Očekávat chyby podobné:
+Očekávejte chyby podobné:
 
 - `Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.`
 - `Synchronous operations are disallowed. Call WriteAsync or set AllowSynchronousIO to true instead.`
@@ -63,11 +63,11 @@ Očekávat chyby podobné:
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Tato synchronní rozhraní API byla dlouhodobě zdrojem vláken vyčerpání a aplikace přestane reagovat. Počínaje verzí ASP.NET Core 3,0 Preview 3 jsou synchronní operace ve výchozím nastavení zakázané.
+Tato synchronní rozhraní API jsou již dlouho zdrojem hladovění podprocesu a přestane reagovat. Počínaje ASP.NET Core 3.0 Preview 3 jsou synchronní operace ve výchozím nastavení zakázány.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Použijte asynchronní verze metod. Chování je také možné přepsat na základě jednotlivých požadavků jako dočasné zmírnění.
+Použijte asynchronní verze metod. Chování může být také přepsána na základě požadavku jako dočasné zmírnění.
 
 ```csharp
 var syncIOFeature = HttpContext.Features.Get<IHttpBodyControlFeature>();
@@ -79,7 +79,7 @@ if (syncIOFeature != null)
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

@@ -1,29 +1,29 @@
 ---
-title: Postup inicializace slovníku pomocí inicializátoru kolekce – C# Průvodce programováním
+title: Jak inicializovat slovník s inicializátorem kolekce - C# Programovací průvodce
 ms.date: 12/20/2018
 helpviewer_keywords:
 - collection initializers [C#], with Dictionary
 ms.assetid: 25283922-f8ee-40dc-a639-fac30804ec71
 ms.openlocfilehash: 1e6e7fac9dd49ad1943ac9046bd9e4932c383257
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75741367"
 ---
-# <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>Postup inicializace slovníku pomocí inicializátoru kolekce (C# Průvodce programováním)
+# <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>Jak inicializovat slovník s inicializátorem kolekce (Průvodce programováním jazyka C#)
 
-<xref:System.Collections.Generic.Dictionary%602> obsahuje kolekci párů klíč/hodnota. Jeho metoda <xref:System.Collections.Generic.Dictionary%602.Add%2A> přijímá dva parametry, jednu pro klíč a jednu pro hodnotu. Jedním ze způsobů, jak inicializovat <xref:System.Collections.Generic.Dictionary%602>, nebo jakoukoli kolekci, jejíž `Add` metoda přijímá více parametrů, je uzavřít každou sadu parametrů do složených závorek, jak je znázorněno v následujícím příkladu. Další možností je použít inicializátor indexu, který je také znázorněn v následujícím příkladu.
+A <xref:System.Collections.Generic.Dictionary%602> obsahuje kolekci párů klíč/hodnota. Jeho <xref:System.Collections.Generic.Dictionary%602.Add%2A> metoda trvá dva parametry, jeden pro klíč a jeden pro hodnotu. Jedním ze způsobů, <xref:System.Collections.Generic.Dictionary%602>jak inicializovat , nebo všechny kolekce, jejichž `Add` metoda trvá více parametrů, je uzavřít každou sadu parametrů v závorkách, jak je znázorněno v následujícím příkladu. Další možností je použít inicializátor indexu, který je také uveden v následujícím příkladu.
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu kódu je <xref:System.Collections.Generic.Dictionary%602> inicializován s instancemi typu `StudentName`.  První inicializace používá metodu `Add` se dvěma argumenty. Kompilátor vygeneruje volání `Add` pro každou dvojici klíčů `int` a hodnoty `StudentName`. Druhý používá metodu pro `Dictionary` třídy Public pro čtení a zápis:
+V následujícím příkladu <xref:System.Collections.Generic.Dictionary%602> kódu je inicializován `StudentName`a s instancemi typu .  První inicializace `Add` používá metodu se dvěma argumenty. Kompilátor generuje volání `Add` pro každou dvojici `int` klíčů `StudentName` a hodnot. Druhý používá veřejné čtení / zápis indexer metoda třídy: `Dictionary`
 
 [!code-csharp[InitializerExample](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/HowToDictionaryInitializer.cs#HowToDictionaryInitializer)]  
 
-Všimněte si dvou párů složených závorek v každém elementu kolekce v první deklaraci. Nejvnitřnější složené závorky obklopují inicializátor objektu pro `StudentName`a vnější složené závorky mají k dispozici inicializátor pro dvojici klíč/hodnota, která bude přidána do `students` <xref:System.Collections.Generic.Dictionary%602>. Nakonec je celý inicializátor kolekce pro slovník uzavřený ve složených závorkách. Při druhé inicializaci je levá strana přiřazení klíč a pravá strana je hodnota pomocí inicializátoru objektu pro `StudentName`.
+Všimněte si dvou párů závorek v každém prvku kolekce v první deklaraci. Nejvnitřnější závorky uzavřete `StudentName`inicializační prostředek objektu pro a vnější závorky uzavřou `students` <xref:System.Collections.Generic.Dictionary%602>inicializátor pro dvojici klíč/hodnota, která bude přidána do . Nakonec je uzavřena celá inicializátor kolekce pro slovník. Při druhé inicializaci je klíčem levá strana přiřazení a pravá strana je hodnota `StudentName`pomocí inicializátoru objektu pro .
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Programovací příručka jazyka C#](../index.md)
 - [Inicializátory objektu a kolekce](./object-and-collection-initializers.md)

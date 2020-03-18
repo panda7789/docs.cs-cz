@@ -1,23 +1,23 @@
 ---
-title: Zachování prázdných znaků při Serializing3
+title: Zachování prázdného místa při serializaci3
 ms.date: 07/20/2015
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
 ms.openlocfilehash: 6d357d40c13a66a152b3c8bb5f61e3a3374c4055
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66484074"
 ---
 # <a name="preserving-white-space-while-serializing"></a>Zachování prázdných znaků při serializaci
-Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.  
+Toto téma popisuje, jak řídit prázdné místo při serializaci stromu XML.  
   
- Běžný scénář, kdy je pro čtení odsazený XML, vytvoření stromu XML v paměti bez ostatní uzly text prázdné místo (tedy ne zachování prázdné znaky), provádění některých operací na XML a pak uložte soubor XML s odsazením. Při serializaci XML s formátováním je zachována pouze významný prázdný znak ve stromové struktuře XML. Toto je výchozí chování pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+ Běžným scénářem je čtení odsazeného xml, vytvoření stromu XML v paměti bez neložených uzl (tj. nezachování prázdného místa), provedení některých operací v xml a následné uložení XML s odsazením. Při serializaci xml s formátováním se zachová pouze významné prázdné místo ve stromu XML. Toto je výchozí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]chování pro aplikace .  
   
- Další z typických možností je číst a upravovat kód XML, který již byl záměrně odsazeny. Nebudete chtít změnit tento odsazení žádným způsobem. Chcete-li to provést v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], zachovat mezer při načtení nebo analyzovat kód XML a zakázat formátování při serializaci kódu XML.  
+ Dalším běžným scénářem je čtení a úprava xml, který již byl záměrně odsazen. Možná nebudete chtít změnit toto odsazení v žádném případě. Chcete-li [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]to provést v aplikace , zachovejte prázdné místo při načtení nebo analýzě xml a zakázat formátování při serializaci XML.  
   
-## <a name="white-space-behavior-of-methods-that-serialize-xml-trees"></a>Prázdné místo chování metody, které serializace stromů XML  
- Následující metody u <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy serializaci stromu XML. Může serializovat stromu XML do souboru <xref:System.IO.TextReader>, nebo <xref:System.Xml.XmlReader>. `ToString` Metoda provede serializaci do řetězce.  
+## <a name="white-space-behavior-of-methods-that-serialize-xml-trees"></a>Prázdné místo Chování metod, které serializovat stromy XML  
+ Následující metody v <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XDocument> a třídy serializovat strom XML. Strom XML můžete serializovat do souboru, stromu <xref:System.IO.TextReader>NEBO . <xref:System.Xml.XmlReader> Metoda `ToString` serializuje řetězec.  
   
 - <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
   
@@ -27,6 +27,6 @@ Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.
   
 - [XDocument.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
   
- Pokud metoda nepřijímá <xref:System.Xml.Linq.SaveOptions> jako argument, pak metoda naformátuje (odsazení) serializovaném kódu XML. V takovém případě se zahodí všechny neplatné prázdné znaky ve stromové struktuře XML.  
+ Pokud metoda nebere <xref:System.Xml.Linq.SaveOptions> jako argument, pak metoda bude formátovat (odsazení) serializované XML. V tomto případě jsou zahozeny všechny nevýznamné prázdné místo ve stromu XML.  
   
- Pokud trvá, než metoda <xref:System.Xml.Linq.SaveOptions> jako argument, potom můžete zadat, že metoda není formátování (odsazení) serializovaném kódu XML. V takovém případě se zachovají všechny prázdné znaky ve stromové struktuře XML.  
+ Pokud metoda trvá <xref:System.Xml.Linq.SaveOptions> jako argument, můžete určit, že metoda není formátovat (odsazení) serializovanéXML. V tomto případě je zachováno všechny prázdné místo ve stromu XML.  

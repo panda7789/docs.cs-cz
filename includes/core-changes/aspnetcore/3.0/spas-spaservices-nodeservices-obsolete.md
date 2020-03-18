@@ -1,63 +1,63 @@
 ---
 ms.openlocfilehash: ac5a3c4f3aefbb59418ad92b2d795f36916f877f
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394232"
 ---
-### <a name="spas-spaservices-and-nodeservices-marked-obsolete"></a>Jednostránkové: SpaServices a NodeServices označené jako zastaralé
+### <a name="spas-spaservices-and-nodeservices-marked-obsolete"></a>SPAServices a NodeServices označené jako zastaralé
 
-Obsah následujících balíčků NuGet byl od ASP.NET Core 2,1 zbytečný. V důsledku toho jsou následující balíčky označeny jako zastaralé:
+Obsah následujících balíčků NuGet byly všechny zbytečné od ASP.NET Core 2.1. V důsledku toho jsou následující balíčky označeny jako zastaralé:
 
-- [Microsoft. AspNetCore. SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/)
-- [Microsoft. AspNetCore. NodeServices](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/)
+- [Služby Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/)
+- [Služby Microsoft.AspNetCore.NodeServices](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/)
 
 Ze stejného důvodu jsou následující moduly npm označeny jako zastaralé:
 
-- [ASPNET – úhlová](https://www.npmjs.com/package/aspnet-angular)
-- [ASPNET – předběžné vykreslování](https://www.npmjs.com/package/aspnet-prerendering)
-- [ASPNET – Webpack](https://www.npmjs.com/package/aspnet-webpack)
-- [ASPNET – Webpack – reakce](https://www.npmjs.com/package/aspnet-webpack-react)
-- [Doména – úloha](https://www.npmjs.com/package/domain-task)
+- [aspnet-úhlové](https://www.npmjs.com/package/aspnet-angular)
+- [aspnet-prerendering](https://www.npmjs.com/package/aspnet-prerendering)
+- [aspnet-webpack](https://www.npmjs.com/package/aspnet-webpack)
+- [aspnet-webpack-reagovat](https://www.npmjs.com/package/aspnet-webpack-react)
+- [úloha domény](https://www.npmjs.com/package/domain-task)
 
 Předchozí balíčky a moduly npm budou později odebrány v rozhraní .NET 5.
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Zastaralé balíčky a moduly npm byly určeny k integraci ASP.NET Core s různými architekturami jednostránkové aplikace (SPA). Mezi takové architektury patří úhlová, reakce a reakce na Redux.
+Zastaralé balíčky a moduly npm byly určeny k integraci ASP.NET Core s různými jednostránkovými aplikačními (SPA) rámci. Mezi takové rámce patří Angular, React a React with Redux.
 
 #### <a name="new-behavior"></a>Nové chování
 
-V balíčku NuGet [Microsoft. AspNetCore. SpaServices. Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices.Extensions/) existuje nový integrační mechanismus. Balíček zůstává základem úhlů a Reagujecích šablon projektů od ASP.NET Core 2,1.
+V balíčku [Microsoft.AspNetCore.SpaServices.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices.Extensions/) NuGet existuje nový mechanismus integrace. Balíček zůstává základem šablon projektu Angular a React od ASP.NET Core 2.1.
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-ASP.NET Core podporuje integraci s různými architekturami jednostránkové aplikace (SPA), včetně úhlů, reakce a reakce na Redux. Zpočátku se integrace s těmito rozhraními provedla s ASP.NET Core specifickými komponentami, které zpracovávají scénáře jako předběžné vykreslování na straně serveru a integraci s nástrojem Webpack. V době, kdy došlo k úpravě, se oborové standardy změnily. Každé rozhraní zabezpečeného ověřování hesla uvolnilo vlastní standardní rozhraní příkazového řádku. Například úhlové CLI a vytvořit reakci-aplikace.
+ASP.NET Core podporuje integraci s různými jednostránkovými rozhraními aplikace (SPA), včetně Angular, React a React with Redux. Zpočátku integrace s těmito rámci bylo dosaženo s ASP.NET komponenty specifické pro jádro, které zpracovávaly scénáře, jako je předběžné vykreslování na straně serveru a integrace s webpack. Jak šel čas, průmyslové standardy se měnily. Každý z spa rámců vydal vlastní standardní rozhraní příkazového řádku. Například úhlové CLI a create-react-app.
 
-Po vydání ASP.NET Core 2,1 do května 2018 tým odpověděl na změnu v normách. Byl poskytnut novější a jednodušší způsob, jak integrovat s vlastními sady nástrojů architekturou SPA. Nový integrační mechanismus existuje v balíčku `Microsoft.AspNetCore.SpaServices.Extensions` a zůstává základem úhlů a Reagujecích šablon projektů od ASP.NET Core 2,1.
+Když byl v květnu 2018 vydán ASP.NET Core 2.1, tým reagoval na změnu standardů. Byl zajištěn novější a jednodušší způsob integrace s vlastními řetězci nástrojů spa frameworků. Nový integrační mechanismus `Microsoft.AspNetCore.SpaServices.Extensions` existuje v balíčku a zůstává základem šablon projektu Angular a React od ASP.NET Core 2.1.
 
-Pro objasnění, že starší součásti specifické pro ASP.NET Core jsou důležité a nedoporučuje se:
+Chcete-li objasnit, že starší ASP.NET komponenty specifické pro jádro jsou irelevantní a nedoporučuje se:
 
-- Mechanismus Integration pre-2,1 je označený jako zastaralý.
+- Integrační mechanismus pre-2.1 je označen jako zastaralý.
 - Podpůrné balíčky npm jsou označeny jako zastaralé.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Pokud tyto balíčky používáte, aktualizujte aplikace tak, aby používaly tyto funkce:
+Pokud používáte tyto balíčky, aktualizujte aplikace tak, aby používaly tyto funkce:
 
-- V balíčku `Microsoft.AspNetCore.SpaServices.Extensions`.
-- Poskytované rozhraními zabezpečeného hesla, které používáte
+- V `Microsoft.AspNetCore.SpaServices.Extensions` balíčku.
+- Poskytované spa frameworky, které používáte
 
-Pokud chcete povolit funkce, jako je například předběžné vykreslení na straně serveru a Hot Module reload, přečtěte si dokumentaci pro odpovídající architekturu SPA. Funkce v *`Microsoft.AspNetCore.SpaServices.Extensions` není zastaralá* a bude nadále podporována.
+Chcete-li povolit funkce, jako je předběžné vykreslování na straně serveru a opětovné načtení horkého modulu, přečtěte si dokumentaci k příslušnému rozhraní SPA. Funkce v `Microsoft.AspNetCore.SpaServices.Extensions` in *není* zastaralá a bude i nadále podporována.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

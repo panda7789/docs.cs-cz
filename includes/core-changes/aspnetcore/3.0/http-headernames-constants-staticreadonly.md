@@ -1,49 +1,49 @@
 ---
 ms.openlocfilehash: 31e7f84a787d255a474f4c2b1fa3068903dbed52
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901908"
 ---
-### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP: HeaderNames konstanty se změnily na static jen pro čtení
+### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP: Konstanty HeaderNames se změnily na statické jen pro čtení.
 
-Počínaje verzí ASP.NET Core 3,0 Preview 5 se pole v <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> změnila z `const` na `static readonly`.
+Počínaje ASP.NET jádrem 3.0 Náhled <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> 5 `const` se `static readonly`pole v polích změnila z na .
 
-Diskuzi najdete v tématu [dotnet/aspnetcore # 9514](https://github.com/dotnet/aspnetcore/issues/9514).
+Diskuse naleznete [v tématu dotnet/aspnetcore#9514](https://github.com/dotnet/aspnetcore/issues/9514).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Staré chování
 
-Tato pole se používají k `const`.
+Tato pole bývala `const`.
 
 #### <a name="new-behavior"></a>Nové chování
 
-Tato pole jsou nyní `static readonly`.
+Tato pole `static readonly`jsou nyní .
 
 #### <a name="reason-for-change"></a>Důvod změny
 
 Změna:
 
-* Zabraňuje vložení hodnoty přes hranice sestavení, což umožňuje opravy hodnot podle potřeby.
+* Zabrání vkládání hodnot přes hranice sestavy, což umožňuje podle potřeby opravy hodnot.
 * Umožňuje rychlejší kontroly rovnosti odkazů.
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Znovu kompilovat proti 3,0. Zdrojový kód pomocí těchto polí již neumožňuje následující akce:
+Překompilovat proti 3.0. Zdrojový kód používající tato pole následujícími způsoby již nemůže:
 
-* Jako argument atributu
-* Jako `case` v příkazu `switch`
-* Při definování jiného `const`
+* Jako atribut ový argument
+* Jako `case` v `switch` prohlášení
+* Při definování jiného`const`
 
-Chcete-li obejít zásadní změnu, přepněte na použití vlastní konstanty názvů hlaviček nebo řetězcových literálů.
+Chcete-li obejít narušující změnu, přepněte na použití samodefinovaných konstant názvu záhlaví nebo literál řetězce.
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

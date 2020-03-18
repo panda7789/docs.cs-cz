@@ -1,70 +1,70 @@
 ---
-title: Provádění vnitřních spojení (LINQ v JAZYKU C#)
-description: Zjistěte, jak k provádění vnitřních spojení pomocí jazyka LINQ v jazyce C#.
+title: Provedení vnitřních spojení (LINQ v C#)
+description: Zjistěte, jak provádět vnitřní spojení pomocí LINQ v C#.
 ms.date: 12/01/2016
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
 ms.openlocfilehash: a3e8e9bd97ec630797bc48a3302b27ed45d9103e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "61659836"
 ---
 # <a name="perform-inner-joins"></a>Provádění vnitřních spojení
 
-V podmínkách relační databázi *vnitřní spojení* vytvoří sadu výsledků dotazu v které jednotlivých prvcích objektu první kolekce se zobrazí vždy jednou pro každý odpovídající prvek v druhé kolekci. Pokud prvek v první kolekce neobsahuje žádné prvky odpovídající, nezobrazí se v sadě výsledků. <xref:System.Linq.Enumerable.Join%2A> Metody, které je voláno rozhraním `join` klauzule v jazyce C#, implementuje vnitřního spojení.
+V relační chod databáze termíny *vnitřní spojení* vytvoří sadu výsledků, ve kterém každý prvek první kolekce se zobrazí jednou pro každý odpovídající prvek v druhé kolekci. Pokud prvek v první kolekci nemá žádné odpovídající prvky, nezobrazí se v sadě výsledků. Metoda, <xref:System.Linq.Enumerable.Join%2A> která je volána `join` klauzulí v c#, implementuje vnitřní spojení.
 
-Tento článek ukazuje, jak provést čtyři variace vnitřního spojení:
+Tento článek ukazuje, jak provést čtyři varianty vnitřního spojení:
 
-- Jednoduché vnitřní spojení, které souvisí prvky ze dvou zdrojů dat na základě jednoduchého klíče.
+- Jednoduché vnitřní spojení, které koreluje prvky ze dvou zdrojů dat na základě jednoduchého klíče.
 
-- Na základě vnitřního spojení, které prvky ze dvou zdrojů dat. souvisí *složené* klíč. Složený klíč, který je klíčem, který se skládá z více než jednu hodnotu, umožňuje korelovat prvkům založeným na více než jednu vlastnost.
+- Vnitřní spojení, které koreluje prvky ze dvou zdrojů dat na základě *složeného* klíče. Složený klíč, který je klíč, který se skládá z více než jednu hodnotu, umožňuje korelovat prvky založené na více než jednu vlastnost.
 
-- A *více spojení* v které po sobě jdoucích spojení operace se připojují k sobě navzájem.
+- *Více násobné spojení,* ve kterém jsou vzájemně připojeny po sobě po sobě po sobě po sobě jdoucí operace spojení.
 
-- Vnitřní spojení, která je implementována pomocí spojení skupiny.
+- Vnitřní spojení, které je implementováno pomocí spojení skupiny.
 
-## <a name="example---simple-key-join"></a>Příklad – jednoduché klíče spojení
+## <a name="example---simple-key-join"></a>Příklad - Jednoduché spojení s klíčem
 
-Následující příklad vytvoří dvě kolekce, které obsahují objekty dva typy definované uživatelem, `Person` a `Pet`. Použije dotaz `join` klauzule v jazyce C# tak, aby odpovídaly `Person` objekty s `Pet` objekty, jejichž `Owner` je, že `Person`. `select` Klauzule v jazyce C# definuje, jak bude vypadat výsledných objektech. Výsledné objekty v tomto příkladu jsou anonymní typy, které se skládají z křestní jméno vlastníka a zvířecí mazlíček.
+Následující příklad vytvoří dvě kolekce, které obsahují objekty `Person` `Pet`dvou typů definovaných uživatelem a . Dotaz používá `join` klauzuli v c# `Pet` tak, `Owner` aby `Person`odpovídala `Person` objektům s objekty, jejichž je to . Klauzule `select` v C# definuje, jak budou výsledné objekty vypadat. V tomto příkladu výsledné objekty jsou anonymní typy, které se skládají z křestního jména vlastníka a názvu domácího mazlíčka.
 
 [!code-csharp[CsLINQProgJoining#1](~/samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_1.cs)]
 
-Všimněte si, že `Person` jehož `LastName` je "Huff" se nezobrazí v sadě výsledků, protože neexistuje žádný `Pet` objekt, který má `Pet.Owner` roven `Person`.
+Všimněte `Person` si, `LastName` že objekt, jehož je "Huff" `Pet` se nezobrazí v sadě výsledků, protože neexistuje žádný objekt, který má `Pet.Owner` rovno . `Person`
 
-## <a name="example---composite-key-join"></a>Příklad – složené klíče spojení
+## <a name="example---composite-key-join"></a>Příklad - Spojení složeného klíče
 
-Místo korelace prvkům založeným na právě jednu vlastnost, můžete použít složený klíč k porovnání prvků na základě více vlastností. Chcete-li to provést, zadejte funkci selektoru klíče pro každou kolekci vrátit anonymního typu, který se skládá z vlastnosti, které chcete porovnat. Pokud označíte popiskem vlastnosti, musí mít stejný popisek v anonymním typu každý klíč. Vlastnosti musí být uvedena také ve stejném pořadí.
+Namísto korelace prvků založených pouze na jedné vlastnosti můžete použít složený klíč k porovnání prvků založených na více vlastnostech. Chcete-li to provést, zadejte funkci selektoru klíčů pro každou kolekci, chcete-li vrátit anonymní typ, který se skládá z vlastností, které chcete porovnat. Pokud označíte vlastnosti, musí mít stejný popisek v anonymním typu každého klíče. Vlastnosti se musí také zobrazit ve stejném pořadí.
 
-Následující příklad používá seznam `Employee` objekty a seznam `Student` objekty k určení, které zaměstnanci jsou také studentů. Oba tyto typy mají `FirstName` a `LastName` vlastnost typu <xref:System.String>. Vrátí anonymní typ, který se skládá z funkce, které vytvoří spojení klíče z každé seznamu elementů `FirstName` a `LastName` vlastnosti jednotlivých prvků. Operace spojení porovnává tyto složené klíče pro rovnost a vrátí dvojice objektů z každého seznamu, kde křestní jméno a příjmení shodují.
+Následující příklad používá seznam `Employee` objektů a `Student` seznam objektů k určení, kteří zaměstnanci jsou také studenti. Oba tyto typy `FirstName` mají `LastName` a vlastnost <xref:System.String>typu . Funkce, které vytvářejí klíče spojení z prvků každého seznamu vrátit anonymní `FirstName` `LastName` typ, který se skládá z a vlastnosti každého prvku. Operace spojení porovná tyto složené klíče pro rovnost a vrátí dvojice objektů z každého seznamu, kde se shoduje křestní jméno i příjmení.
 
 [!code-csharp[CsLINQProgJoining#2](~/samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_2.cs)]
 
-## <a name="example---multiple-join"></a>Příklad: více spojení
+## <a name="example---multiple-join"></a>Příklad – vícenásobné spojení
 
-Libovolný počet operací spojování lze připojit k sobě navzájem provádět více připojení. Každý `join` klauzule v jazyce C# koreluje s výsledkem předchozí spojení zadaný zdroj.
+Libovolný počet operací spojení lze připojit k sobě navzájem provést více spojit. Každá `join` klauzule v C# koreluje zadaný zdroj dat s výsledky předchozího spojení.
 
-Následující příklad vytvoří tři kolekce: seznam `Person` objekty, seznam `Cat` objekty a seznam `Dog` objekty.
+Následující příklad vytvoří tři kolekce: `Person` seznam objektů, `Cat` seznam objektů a `Dog` seznam objektů.
 
-První `join` klauzule v jazyce C# odpovídá lidí a na základě koček `Person` odpovídající objekt `Cat.Owner`. Vrátí sekvenci anonymní typy, které obsahují `Person` objektu a `Cat.Name`.
+První `join` klauzule v C# odpovídá lidem `Person` a `Cat.Owner`kočkám na základě odpovídajícího objektu . Vrátí posloupnost anonymních typů, které obsahují `Person` objekt a `Cat.Name`.
 
-Druhá `join` klauzule v jazyce C# koreluje anonymní typy vrácených první spojení s `Dog` objektů v zadaný seznam psy, podle složený klíč skládající se z `Owner` vlastnost typu `Person`a první písmeno názvu zvířat. Vrátí sekvenci anonymní typy, které obsahují `Cat.Name` a `Dog.Name` vlastnosti z každé shodnou dvojici. Protože se jedná vnitřní spojení, jsou vráceny pouze ty objekty z prvního zdroje dat, které mají v druhý zdroj dat shoda.
+Druhá `join` klauzule v C# koreluje anonymní typy `Dog` vrácené první spojení s objekty v zadaném seznamu `Owner` psů, `Person`na základě složený klíč, který se skládá z vlastnosti typu a první písmeno názvu zvířete. Vrátí posloupnost anonymnítypy, `Cat.Name` které `Dog.Name` obsahují vlastnosti a z každé odpovídající dvojice. Vzhledem k tomu, že se jedná o vnitřní spojení, jsou vráceny pouze ty objekty z prvního zdroje dat, které mají shodu ve druhém zdroji dat.
 
 [!code-csharp[CsLINQProgJoining#3](~/samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_3.cs)]
 
-## <a name="example---inner-join-by-using-grouped-join"></a>Příklad – vnitřní spojení pomocí seskupených spojení
+## <a name="example---inner-join-by-using-grouped-join"></a>Příklad – vnitřní spojení pomocí seskupeného spojení
 
-Následující příklad ukazuje, jak implementovat vnitřního spojení pomocí spojení skupiny.
+Následující příklad ukazuje, jak implementovat vnitřní spojení pomocí spojení skupiny.
 
-V `query1`, seznam `Person` objekty je připojené skupiny do seznamu `Pet` na základě objektů `Person` odpovídající `Pet.Owner` vlastnost. Spojení skupiny vytvoří kolekci zprostředkujících skupin, kde každá skupina skládá `Person` objektu a sekvencí odpovídající `Pet` objekty.
+V `query1`oblasti je `Person` seznam objektů spojen se `Pet` skupinovým seznamem objektů na základě `Person` odpovídající vlastnosti. `Pet.Owner` Spojení skupiny vytvoří kolekci zprostředkujících skupin, `Person` kde každá skupina `Pet` se skládá z objektu a posloupnosti odpovídajících objektů.
 
-Tak, že přidáte druhý `from` klauzule dotazu, tato sekvence sekvencí je kombinovat (nebo plochý) do jedné sekvence delší dobu. Typ prvků závěrečné sekvenci je určená `select` klauzuli. V tomto příkladu, že typ je anonymní typ, který se skládá z `Person.FirstName` a `Pet.Name` vlastnosti pro každý odpovídající dvojice.
+Přidáním druhé `from` klauzule do dotazu je tato sekvence kombinována (nebo sloučena) do jedné delší sekvence. Typ prvků konečné sekvence je určen klauzulí. `select` V tomto příkladu je tento typ anonymní `Person.FirstName` typ, který se skládá z vlastností a `Pet.Name` pro každou odpovídající dvojici.
 
-Výsledek `query1` je ekvivalentní sadu výsledků, které by byly získány pomocí `join` klauzule bez `into` k provedení vnitřního spojení. `query2` Proměnná ukazuje tento dotaz ekvivalentní.
+Výsledek `query1` je ekvivalentní sadu výsledků, které by byly `join` získány `into` pomocí klauzule bez klauzule k provedení vnitřní spojení. Proměnná `query2` ukazuje tento ekvivalentní dotaz.
 
 [!code-csharp[CsLINQProgJoining#4](~/samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_4.cs)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - <xref:System.Linq.Enumerable.Join%2A>
 - <xref:System.Linq.Enumerable.GroupJoin%2A>

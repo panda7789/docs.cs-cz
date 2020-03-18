@@ -1,24 +1,24 @@
 ---
-title: Serializace pomocí deklarace XML (C#)
+title: Serializace s deklarací XML (C#)
 ms.date: 07/20/2015
 ms.assetid: c237fa4a-a042-40fd-886f-17b54c66bb75
 ms.openlocfilehash: 4533d69f2b0bee68b4adee6e18fe28dde18078ae
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66483480"
 ---
-# <a name="serializing-with-an-xml-declaration-c"></a>Serializace pomocí deklarace XML (C#)
-Toto téma popisuje, jak řídit, jestli serializace generuje deklaraci XML.  
+# <a name="serializing-with-an-xml-declaration-c"></a>Serializace s deklarací XML (C#)
+Toto téma popisuje, jak řídit, zda serializace generuje deklaraci XML.  
   
 ## <a name="xml-declaration-generation"></a>Generování deklarace XML  
- Serializace do <xref:System.IO.File> nebo <xref:System.IO.TextWriter> pomocí <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> metoda nebo <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> metoda generuje deklaraci XML. Při serializaci do <xref:System.Xml.XmlWriter>, nastavení zapisovače (zadané v poli <xref:System.Xml.XmlWriterSettings> objektu) určuje, zda bude generovat deklarace XML, nebo ne.  
+ Serializace na <xref:System.IO.File> nebo <xref:System.IO.TextWriter> pomocí <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> metody <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> nebo metody generuje deklaraci XML. Při serializaci do <xref:System.Xml.XmlWriter>aplikace určují nastavení pro <xref:System.Xml.XmlWriterSettings> zápis (zadané v objektu), zda je deklarace XML generována či nikoli.  
   
- Pokud serializujete na řetězec pomocí `ToString` metoda výsledného kódu XML nebude obsahovat deklaraci XML.  
+ Pokud serializujete řetězec pomocí `ToString` metody, výsledný kód XML nebude obsahovat deklaraci XML.  
   
 ### <a name="serializing-with-an-xml-declaration"></a>Serializace pomocí deklarace XML  
- Následující příklad vytvoří <xref:System.Xml.Linq.XElement>, uloží dokument k souboru a potom zobrazí soubor do konzoly:  
+ Následující příklad vytvoří <xref:System.Xml.Linq.XElement>soubor , uloží dokument do souboru a pak jej vytiskne do konzoly:  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -29,7 +29,7 @@ string str = File.ReadAllText("Root.xml");
 Console.WriteLine(str);  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -39,7 +39,7 @@ Console.WriteLine(str);
 ```  
   
 ### <a name="serializing-without-an-xml-declaration"></a>Serializace bez deklarace XML  
- Následující příklad ukazuje, jak uložit <xref:System.Xml.Linq.XElement> do <xref:System.Xml.XmlWriter>.  
+ Následující příklad ukazuje, jak <xref:System.Xml.Linq.XElement> uložit <xref:System.Xml.XmlWriter>do .  
   
 ```csharp  
 StringBuilder sb = new StringBuilder();  
@@ -55,12 +55,12 @@ using (XmlWriter xw = XmlWriter.Create(sb, xws)) {
 Console.WriteLine(sb.ToString());  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ Tento příklad vytváří následující výstup:  
   
 ```xml  
 <Root><Child>child content</Child></Root>  
 ```  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Serializace stromů XML (C#)](serializing-to-files-textwriters-and-xmlwriters.md)

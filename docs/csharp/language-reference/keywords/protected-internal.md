@@ -1,21 +1,21 @@
 ---
-title: chráněná interní C# reference
+title: chráněné vnitřní - C# Reference
 ms.date: 11/15/2017
 author: sputier
 ms.openlocfilehash: 877df74b51fb859043171619f5687ecddb8409d1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713193"
 ---
-# <a name="protected-internal-c-reference"></a>chráněný interní (C# Referenční dokumentace)
+# <a name="protected-internal-c-reference"></a>chráněné interní (C# Reference)
 
-Kombinací klíčového slova `protected internal` je modifikátor přístupu ke členu. Chráněný interní člen je přístupný z aktuálního sestavení nebo z typů, které jsou odvozeny z nadřazené třídy. Porovnání `protected internal` s dalšími modifikátory přístupu najdete v tématu [úrovně usnadnění](accessibility-levels.md).
+Kombinace `protected internal` klíčových slov je modifikátor přístupu členů. Chráněný interní člen je přístupný z aktuálního sestavení nebo z typů, které jsou odvozeny z obsahující třídy. Porovnání `protected internal` s ostatními modifikátory přístupu naleznete v [tématu Úrovně usnadnění přístupu](accessibility-levels.md).
 
 ## <a name="example"></a>Příklad
 
-Chráněný interní člen základní třídy je přístupný z libovolného typu v rámci jeho obsahujícího sestavení. Je také přístupný v odvozené třídě nacházející se v jiném sestavení pouze v případě, že k přístupu dojde prostřednictvím proměnné odvozeného typu třídy. Zvažte například následující segment kódu:
+Chráněný vnitřní člen základní třídy je přístupný z libovolného typu v rámci jeho obsahující sestavení. Je také přístupný v odvozené třídě umístěné v jiném sestavení pouze v případě, že přístup probíhá prostřednictvím proměnné odvozeného typu třídy. Zvažte například následující segment kódu:
 
 ```csharp
 // Assembly1.cs
@@ -55,25 +55,25 @@ class DerivedClass : BaseClass
 }
 ```
 
-Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`.
-První soubor obsahuje veřejnou základní třídu, `BaseClass`a jinou třídu `TestAccess`. `BaseClass` vlastní chráněný interní člen, `myValue`, ke kterému se přistupoval pomocí typu `TestAccess`.
-V druhém souboru dojde k pokusu o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě, zatímco přístup k tomuto členu prostřednictvím instance odvozené třídy, `DerivedClass` bude úspěšný.
+Tento příklad obsahuje `Assembly1.cs` dva `Assembly2.cs`soubory a .
+První soubor obsahuje třídu `BaseClass`public base a `TestAccess`jinou třídu . `BaseClass`vlastní chráněný interní člen `myValue`, ke kterému `TestAccess` má typ přístup.
+V druhém souboru pokus `myValue` o přístup `BaseClass` prostřednictvím instance způsobí chybu, zatímco přístup k tomuto členu prostřednictvím instance odvozené třídy, `DerivedClass` bude úspěšné.
 
-Členy struktury nelze `protected internal`, protože strukturu nelze zdědit.
+Členy struktury nelze `protected internal` zdědit, protože strukturu nelze zdědit.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [C#Odkaz](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Klíčová slova jazyka C#](index.md)
+- [Odkaz jazyka C#](../index.md)
+- [Programovací příručka jazyka C#](../../programming-guide/index.md)
+- [C# Klíčová slova](index.md)
 - [Modifikátory přístupu](access-modifiers.md)
 - [Úrovně přístupnosti](accessibility-levels.md)
 - [Modifikátory](index.md)
-- [public](public.md)
-- [private](private.md)
-- [internal](internal.md)
-- [Problémy se zabezpečením pro interní virtuální klíčová slova](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Veřejné](public.md)
+- [Soukromé](private.md)
+- [Vnitřní](internal.md)
+- [Obavy o zabezpečení interních virtuálních klíčových slov](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

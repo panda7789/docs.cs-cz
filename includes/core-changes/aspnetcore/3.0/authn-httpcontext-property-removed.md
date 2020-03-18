@@ -1,36 +1,36 @@
 ---
 ms.openlocfilehash: 60ebcd9fc9ca18c33d31b82ba5020426d22a7d5a
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901966"
 ---
-### <a name="authentication-httpcontextauthentication-property-removed"></a>Ověřování: vlastnost HttpContext. Authentication byla odebrána.
+### <a name="authentication-httpcontextauthentication-property-removed"></a>Ověřování: Vlastnost HttpContext.Authentication byla odebrána.
 
-Vystaralá vlastnost `Authentication` v `HttpContext` byla odebrána.
+Zastaralá `Authentication` vlastnost byla `HttpContext` odebrána.
 
 #### <a name="change-description"></a>Popis změny
 
-Jako součást [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504)byla odebrána vystaralá vlastnost `Authentication` v `HttpContext`. Vlastnost `Authentication` se od 2,0 nepoužívá. [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) byl publikován pro migraci kódu pomocí této zastaralé vlastnosti do nových náhradních rozhraní API. Zbývající nepoužívané třídy/rozhraní API související se starým ASP.NET Core 1. x zásobník ověřování byly v [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)pro zápis odebrány.
+Jako součást [dotnet/aspnetcore#6504](https://github.com/dotnet/aspnetcore/pull/6504)byla odebrána `Authentication` zastaralá vlastnost. `HttpContext` Ubytovací `Authentication` zařízení je od roku 2.0 zastaralé. [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) byl publikován pro migraci kódu pomocí této zastaralé vlastnosti do nových náhradních api. Zbývající nepoužívané třídy / API související se starým ASP.NET zásobníku [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)ověřování Jádra 1.x byly odebrány v potvrzení .
 
-Diskuzi najdete v tématu [dotnet/aspnetcore # 6533](https://github.com/dotnet/aspnetcore/issues/6533).
+Diskuse naleznete [v tématu dotnet/aspnetcore#6533](https://github.com/dotnet/aspnetcore/issues/6533).
 
-#### <a name="version-introduced"></a>Představená verze
+#### <a name="version-introduced"></a>Zavedená verze
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Důvod změny
 
-Rozhraní API ASP.NET Core 1,0 byla nahrazena metodami rozšíření v <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>.
+ASP.NET core 1.0 API byly nahrazeny <xref:Microsoft.AspNetCore.Authentication.AuthenticationHttpContextExtensions?displayProperty=fullName>rozšiřujícími metodami v .
 
 #### <a name="recommended-action"></a>Doporučená akce
 
-Viz [Průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).
+Podívejte se na [průvodce migrací](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).
 
 #### <a name="category"></a>Kategorie
 
-ASP.NET Core
+Jádro ASP.NET
 
 #### <a name="affected-apis"></a>Ovlivněná rozhraní API
 

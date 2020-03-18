@@ -1,57 +1,57 @@
 ---
-title: Funkční programování vs. Imperativní programování (C#)
+title: Funkční programování vs. imperativní programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
 ms.openlocfilehash: a163a62912ed2a44d6ea8cad5bc536f03343f15c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69594311"
 ---
-# <a name="functional-programming-vs-imperative-programming-c"></a>Funkční programování vs. Imperativní programování (C#)
-Toto téma porovnává a kontrastuje funkční programování s více tradičními imperativních (procedurální) programování.  
+# <a name="functional-programming-vs-imperative-programming-c"></a>Funkční programování vs. imperativní programování (C#)
+Toto téma porovnává a kontrastuje funkční programování s více tradiční imperativní (procedurální) programování.  
   
 ## <a name="functional-programming-vs-imperative-programming"></a>Funkční programování vs. imperativní programování  
- *Funkce programovacího programování* byla explicitně vytvořena pro podporu čistě funkčního přístupu k řešení problémů. Funkční programování je forma deklarativního *programování*. Naopak většina běžných jazyků, včetně objektově orientovaného programování (OOP), jako C#jsou například Visual Basic, C++a Java, byla navržena tak, aby primárně podporovala *imperativní* (procedurální) programování.  
+ Funkční *programovací* paradigma bylo explicitně vytvořeno pro podporu čistě funkčního přístupu k řešení problémů. Funkční programování je formou *deklarativního programování*. Naproti tomu většina běžných jazyků, včetně jazyky objektově orientovaného programování (OOP), jako je C#, Visual Basic, C++ a Java, byla navržena především tak, aby podporovala *imperativní* (procedurální) programování.  
   
- V případě imperativního přístupu Vývojář zapíše kód, který popisuje přesný popis kroků, které musí počítač provést k dosažení cíle. Tento postup se někdy označuje jako *algoritmy* programování. Kromě toho funkční přístup zahrnuje vytvoření problému jako sady funkcí, které mají být provedeny. Nadefinujete pečlivě vstup na jednotlivé funkce a funkci, kterou vrátí každá funkce. Následující tabulka popisuje některé z obecných rozdílů mezi těmito dvěma přístupy.  
+ S imperativní přístup, vývojář zapíše kód, který podrobně popisuje kroky, které musí počítač provést k dosažení cíle. To se někdy označuje jako *algoritmické* programování. Naproti tomu funkční přístup zahrnuje skládání problému jako sadu funkcí, které mají být provedeny. Pečlivě definujete vstup pro každou funkci a co jednotlivé funkce vrátí. Následující tabulka popisuje některé obecné rozdíly mezi těmito dvěma přístupy.  
   
-|Charakteristiku|Imperativní přístup|Funkční přístup|  
+|Charakteristika|Imperativní přístup|Funkční přístup|  
 |--------------------|-------------------------|-------------------------|  
-|Programátorské zaměření|Jak provádět úlohy (algoritmy) a jak sledovat změny ve stavu.|Jaké informace jsou požadovány a jaké transformace jsou vyžadovány.|  
-|Změny stavu|Významná.|Neexistující.|  
-|Pořadí spouštění|Významná.|Nízká důležitost.|  
-|Primární řízení toku|Cykly, podmíněné funkce a volání funkcí (metoda).|Volání funkcí, včetně rekurze.|  
-|Primární manipulační jednotka|Instance struktur nebo tříd.|Funguje jako objekty a kolekce dat první třídy.|  
+|Zaměření programátora|Jak provádět úkoly (algoritmy) a jak sledovat změny ve stavu.|Jaké informace jsou žádoucí a jaké transformace jsou požadovány.|  
+|Změny stavu|Důležité.|Neexistující.|  
+|Pořadí exekuce|Důležité.|Nízká důležitost.|  
+|Primární řízení průtoku|Smyčky, podmíněné a volání funkce (metody).|Funkční volání, včetně rekurze.|  
+|Primární manipulační jednotka|Instance struktur nebo tříd.|Funguje jako prvotřídní objekty a kolekce dat.|  
   
- I když většina jazyků byla navržena pro podporu konkrétního programovacího paradigmata, mnoho obecných jazyků je dostatečně flexibilní, aby podporovalo více paradigmat. Například většina jazyků, které obsahují ukazatele na funkce, může být použita k crediblyí podpory funkčního programování. Kromě toho C# obsahuje explicitní jazyková rozšíření pro podporu funkčního programování, včetně výrazů lambda a odvození typu. Technologie LINQ je forma deklarativního funkčního programování.  
+ Ačkoli většina jazyků byla navržena tak, aby podporovala konkrétní programovací paradigma, mnoho obecných jazyků je dostatečně flexibilních, aby podporovaly více paradigmat. Například většina jazyků, které obsahují ukazatele funkce lze věrohodně podporovat funkční programování. Kromě toho C# obsahuje explicitní rozšíření jazyka pro podporu funkční programování, včetně lambda výrazy a odvození typu. TECHNOLOGIE LINQ je formou deklarativního funkčního programování.  
   
 ## <a name="functional-programming-using-xslt"></a>Funkční programování pomocí XSLT  
- Mnoho vývojářů XSLT je obeznámené s čistě funkčním přístupem. Nejúčinnější způsob, jak vytvořit šablonu stylů XSLT, je zacházet s každou šablonou jako s izolovanou a sestavitelnou transformací. Pořadí spuštění je zcela zvýrazněné. XSLT nepovoluje vedlejší účinky (s výjimkou, že řídicí mechanismy pro spuštění procedurálního kódu mohou představovat vedlejší účinky, které mají za následek funkční nečistotu). I když je jazyk XSLT účinným nástrojem, některé z jeho vlastností nejsou optimální. Například vyjadřující programovací konstrukce v XML zjednodušují kód poměrně podrobné, a proto je obtížné ho udržovat. Velmi náročné na rekurzi pro řízení toku může mít za následek těžko čitelný kód. Další informace o XSLT naleznete v tématu [transformace XSLT](../../../../standard/data/xml/xslt-transformations.md).  
+ Mnoho vývojářů XSLT je obeznámeno s čistě funkčním přístupem. Nejúčinnějším způsobem, jak vytvořit šablonu stylů XSLT, je považovat každou šablonu za izolovanou a kompozitní transformaci. Pořadí provedení je zcela de-zdůraznil. XSLT neumožňuje vedlejší účinky (s výjimkou, že uvození mechanismy pro provádění procedurální kód může zavést vedlejší účinky, které mají za následek funkční nečistoty). Ačkoli xslt je účinný nástroj, některé jeho vlastnosti nejsou optimální. Například vyjádření programovací chod v JAZYCE XML umožňuje relativně podrobné kóda a proto je obtížné jej udržovat. Také těžké spoléhání se na rekurzi pro řízení toku může mít za následek kód, který je těžko čitelný. Další informace o XSLT naleznete v tématu [Transformace XSLT](../../../../standard/data/xml/xslt-transformations.md).  
   
- XSLT však ukázala hodnotu použití čistě funkčního přístupu pro transformaci XML z jednoho obrazce na jiný. Čistě funkční programování s LINQ to XML je podobně v mnoha způsobech transformace XSLT. Nicméně programovací konstrukce zavedené LINQ to XML a C# umožňují psát čistě funkční transformace, které jsou čitelnější a udržovatelnější než XSLT.  
+ XSLT však prokázalhodnotu použití čistě funkční přístup pro transformaci XML z jednoho obrazce do druhého. Čisté funkční programování s LINQ na XML je v mnoha ohledech podobné XSLT. Však programovací konstrukce zavedené LINQ do XML a C# umožňují psát čistě funkční transformace, které jsou čitelnější a udržovatelné než XSLT.  
   
-## <a name="advantages-of-pure-functions"></a>Výhody čistě funkcí  
- Hlavním důvodem pro implementaci funkční transformace jako čistě funkcí je, že čistě funkce jsou sestavitelné: to znamená, že jsou samostatné a bezstavové. Tyto charakteristiky přinášejí řadu výhod, včetně následujících:  
+## <a name="advantages-of-pure-functions"></a>Výhody čistých funkcí  
+ Hlavním důvodem pro implementaci funkční transformace jako čisté funkce je, že čisté funkce jsou kompozitovatelné: to znamená, že samostatné a bezstavové. Tyto vlastnosti přinášejí řadu výhod, včetně následujících:  
   
-- Zvýšení čitelnosti a udržovatelnosti. Je to proto, že každá funkce je navržena k provedení konkrétního úkolu, který je dán argumenty. Funkce nespoléhá na žádný externí stav.  
+- Zvýšená čitelnost a udržovatelnost. Důvodem je, že každá funkce je navržena tak, aby splnila určitý úkol vzhledem k jeho argumentům. Funkce nespoléhá na žádný externí stav.  
   
-- Jednodušší vývoj. Vzhledem k tomu, že kód je snazší Refaktorovat, je často snazší implementovat změny návrhu. Předpokládejme například, že píšete složitou transformaci a pak si myslíte, že je nějaký kód několikrát opakován v transformaci. Pokud provádíte refaktorování čistě metody, můžete zavolat metodu Pure na, aniž byste se museli starat o vedlejší účinky.  
+- Snadnější reiterativní vývoj. Vzhledem k tomu, že kód je jednodušší refaktorovat, změny návrhu jsou často jednodušší implementovat. Předpokládejme například, že napíšete složitou transformaci a pak si uvědomíte, že některé kód se opakuje několikrát v transformaci. Máte-li refaktorovat prostřednictvím čisté metody, můžete volat svou čistou metodu podle vůle bez obav o vedlejší účinky.  
   
-- Jednodušší testování a ladění. Vzhledem k tomu, že čisté funkce lze snáze testovat v izolaci, můžete napsat testovací kód, který volá funkci Pure s typickými hodnotami, platnými okraji a neplatnými hraničními případy.  
+- Snadnější testování a ladění. Vzhledem k tomu, že čisté funkce lze snadněji testovat izolovaně, můžete napsat testovací kód, který volá čistou funkci s typickými hodnotami, platnými hraničními případy a neplatnými hraničními případy.  
   
 ## <a name="transitioning-for-oop-developers"></a>Přechod pro vývojáře OOP  
- V tradičním objektově orientovaném programování (OOP) je většina vývojářů zvykla na programování ve stylu imperativního/procedurálního. Chcete-li přepnout do vývoje čistě funkčního stylu, musí provést přechod v jejich přemýšlejce a jejich přístupu k vývoji.  
+ V tradičním objektově orientovaném programování (OOP) je většina vývojářů zvyklá na programování v imperatickém/procedurálním stylu. Chcete-li přejít na rozvoj v čistém funkčním stylu, musí provést přechod ve svém myšlení a jejich přístup k rozvoji.  
   
- Chcete-li vyřešit problémy, vývojáři OOP navrhují hierarchie tříd, soustředit se na správné zapouzdření a vzít v úvahu pojem smlouvy. Chování a stav typů objektů jsou nejdůležitější a jazykové funkce, jako jsou třídy, rozhraní, dědičnost a polymorfismu, jsou poskytnuty k vyřešení těchto otázek.  
+ Chcete-li vyřešit problémy, vývojáři OOP navrhují hierarchie tříd, zaměřují se na správné zapouzdření a přemýšlejí z hlediska smluv třídy. Chování a stav typů objektů jsou prvořadé a jazykové funkce, jako jsou třídy, rozhraní, dědičnost a polymorfismus, jsou k dispozici k řešení těchto problémů.  
   
- Naproti tomu funkční programování přistupuje k výpočetním problémům jako cvičení při vyhodnocování čistě funkčních transformací kolekcí dat. Funkční programování zabraňuje stavovým a proměnlivým datům a místo toho zvýrazní použití funkcí.  
+ Naproti tomu funkční programování přistupuje k výpočetním problémům jako cvičení při hodnocení čistě funkčních transformací sběru dat. Funkční programování zabraňuje stavu a proměnlivá data a místo toho klade důraz na použití funkcí.  
   
- Naštěstí, C# nevyžaduje úplný odkaz na funkční programování, protože podporuje jak imperativně, tak i funkční programovací postupy. Vývojář si může vybrat, který přístup je nejvhodnější pro konkrétní scénář. V některých případech programy často kombinují obě přístupy.  
+ Naštěstí C# nevyžaduje úplný skok na funkční programování, protože podporuje imperativní a funkční programovací přístupy. Vývojář si může vybrat, který přístup je nejvhodnější pro konkrétní scénář. Ve skutečnosti programy často kombinují oba přístupy.  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-- [Úvod do čistě funkční transformace (C#)](./introduction-to-pure-functional-transformations.md)
+- [Úvod do čistě funkčních transformací (C#)](./introduction-to-pure-functional-transformations.md)
 - [Transformace XSLT](../../../../standard/data/xml/xslt-transformations.md)
-- [Refaktoring do čistě funkcí (C#)](./refactoring-into-pure-functions.md)
+- [Refaktoring do čistých funkcí (C#)](./refactoring-into-pure-functions.md)

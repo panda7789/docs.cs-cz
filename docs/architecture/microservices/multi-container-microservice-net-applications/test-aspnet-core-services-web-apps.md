@@ -1,37 +1,37 @@
 ---
 title: Testování služeb a webových aplikací ASP.NET Core
-description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Prozkoumejte architekturu pro testování ASP.NET Core služeb a webových aplikací v kontejnerech.
+description: Architektura mikroslužeb .NET pro kontejnerizované aplikace .NET | Prozkoumejte architekturu pro testování ASP.NET základních služeb a webových aplikací v kontejnerech.
 ms.date: 01/30/2020
 ms.openlocfilehash: ab3ae6276ea4e4c741731f050913d956046271ca
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77501994"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb a webových aplikací ASP.NET Core
 
-Řadiče jsou centrální součástí jakékoli ASP.NET Core služby API a webové aplikace ASP.NET MVC. V takovém případě byste měli mít jistotu, že se chovají jako zamýšlená pro vaši aplikaci. Automatizované testy vám můžou poskytnout tuto jistotu a můžou odhalit chyby dřív, než dosáhnou produkčního prostředí.
+Řadiče jsou centrální součástí jakékoli služby ASP.NET Core API a ASP.NET webové aplikace MVC. Jako takové byste měli mít jistotu, že se chovají tak, jak je určeno pro vaši aplikaci. Automatizované testy vám mohou poskytnout tuto jistotu a mohou zjistit chyby dříve, než se dostanou do produkčního prostředí.
 
-Je nutné otestovat, jak se kontroler chová na základě platných nebo neplatných vstupů, a odezvy testovacího kontroléru na základě výsledku obchodní operace, kterou provádí. Nicméně byste měli mít tyto typy testů pro vaše mikroslužby:
+Je třeba otestovat, jak se ovladač chová na základě platných nebo neplatných vstupů a testovat odpovědi řadiče na základě výsledku obchodní operace, kterou provádí. Měli byste však mít tyto typy testů pro vaše mikroslužby:
 
-- Testování částí. Tím zajistíte, že jednotlivé komponenty aplikace fungují podle očekávání. Kontrolní výrazy testují rozhraní API součásti.
+- Jednotkové testy. Ty zajišťují, že jednotlivé součásti aplikace fungují podle očekávání. Kontrolní výrazy testují rozhraní API komponenty.
 
-- Integrační testy. Tím zajistíte, aby interakce komponent fungovaly podle očekávání proti externím artefaktům, jako jsou databáze. Kontrolní výrazy mohou testovat součásti rozhraní API komponenty, uživatelského rozhraní nebo vedlejší účinky akcí, jako je v/v databáze, protokolování atd.
+- Integrační testy. Ty zajišťují, že interakce komponent fungovat podle očekávání proti externí artefakty, jako jsou databáze. Kontrolní výrazy můžete otestovat rozhraní API součásti, ui nebo vedlejší účinky akcí, jako je vstupně-v.o databáze, protokolování, atd.
 
-- Funkční testy pro jednotlivé mikroslužby. Tím se zajistí, že aplikace bude v perspektivě uživatele fungovat podle očekávání.
+- Funkční testy pro každou mikroslužbu. Ty zajišťují, že aplikace funguje podle očekávání z pohledu uživatele.
 
-- Testy služby. Tím se zajistí, že budou testovány kompletní případy použití služeb, včetně testování více služeb současně. Pro tento typ testování musíte nejprve připravit prostředí. V takovém případě to znamená spouštění služeb (například pomocí Docker – sestavení).
+- Servisní testy. Ty zajišťují, že jsou testovány případy použití služby end-to-end, včetně testování více služeb současně. Pro tento typ testování je třeba nejprve připravit prostředí. V tomto případě to znamená spuštění služeb (například pomocí docker-compose up).
 
-### <a name="implementing-unit-tests-for-aspnet-core-web-apis"></a>Implementace testů jednotek pro ASP.NET Core webová rozhraní API
+### <a name="implementing-unit-tests-for-aspnet-core-web-apis"></a>Implementace testů částí pro ASP.NET základní webová rozhraní API
 
-Testování částí zahrnuje testování součásti aplikace v izolaci od jejich infrastruktury a závislostí. V případě logiky testovacího kontroleru jednotek je testován pouze obsah jedné akce nebo metody, nikoli chování jeho závislostí nebo samotného rozhraní. Testy jednotek nezjišťují problémy v interakci mezi komponentami, což je účel testování integrací.
+Testování částí zahrnuje testování části aplikace v izolaci od její infrastruktury a závislostí. Při testování logiky řadiče jednotky pouze obsah jedné akce nebo metody je testován, nikoli chování jeho závislostí nebo samotného rozhraní. Testování částí nezjišťuje problémy v interakci mezi součástmi – to je účel testování integrace.
 
-Při testování akcí kontroleru se ujistěte, že se zaměříte jenom na jejich chování. Test jednotek kontroleru se vyhne tomu, jako jsou filtry, směrování nebo vazby modelů (mapování dat požadavků na ViewModel nebo DTO). Vzhledem k tomu, že se soustředí na testování pouze jedné věci, testy jednotek jsou obecně jednoduché pro psaní a rychlé spuštění. Dobře zapsaná sada testů jednotek se může spouštět často bez nadměrné režie.
+Při testování částí akce ovladače, ujistěte se, že se zaměříte pouze na jejich chování. Testování jednotky řadiče se vyhýbá věcem, jako jsou filtry, směrování nebo vazba modelu (mapování dat požadavku na ViewModel nebo DTO). Vzhledem k tomu, že se zaměřují na testování pouze jednu věc, testování částí jsou obecně jednoduché psát a rychle spustit. Dobře napsaná sada testů částí lze spustit často bez velké režie.
 
-Testy jednotek jsou implementovány na základě testovacích rozhraní, jako jsou xUnit.net, MSTest, MOQ nebo NUnit. Pro ukázkovou aplikaci eShopOnContainers používáme xUnit.
+Testování částí jsou implementovány na základě testovacích architektur, jako je xUnit.net, MSTest, Moq nebo NUnit. Pro ukázkovou aplikaci eShopOnContainers používáme xUnit.
 
-Při psaní testu jednotek pro kontroler webového rozhraní API se vytvoří instance třídy Controller přímo pomocí klíčového slova New v jazyce C\#, aby se test spouštěl co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako testovacího rozhraní.
+Při psaní testování částí pro řadič webového rozhraní API, konstanci třídy\#řadiče přímo pomocí nové klíčové slovo v C , tak, aby test bude spuštěn co nejrychleji. Následující příklad ukazuje, jak to provést při použití [xUnit](https://xunit.github.io/) jako rozhraní Test.
 
 ```csharp
 [Fact]
@@ -58,19 +58,19 @@ public async Task Get_order_detail_success()
 }
 ```
 
-### <a name="implementing-integration-and-functional-tests-for-each-microservice"></a>Implementace integračních a funkčních testů pro jednotlivé mikroslužby
+### <a name="implementing-integration-and-functional-tests-for-each-microservice"></a>Implementace integračních a funkčních testů pro každou mikroslužbu
 
-Jak je uvedeno, testy integrace a funkční testy mají různé účely a cíle. Nicméně způsob implementace při testování ASP.NET Corech řadičů je podobný, takže v této části se zaměřujeme na integrační testy.
+Jak již bylo uvedeno, integrační testy a funkční testy mají různé účely a cíle. Způsob implementace obou při testování ASP.NET řadiče Core je však podobný, takže v této části se soustředíme na integrační testy.
 
-Při testování integrace je zajištěno, že komponenty aplikace budou při sestavování fungovat správně. ASP.NET Core podporuje testování integrace pomocí rozhraní pro testování částí a integrovaného testovacího webového hostitele, který lze použít pro zpracování požadavků bez režie sítě.
+Testování integrace zajišťuje, že součásti aplikace fungují správně při sestavení. ASP.NET Core podporuje testování integrace pomocí rozhraní testování částí a integrovaného testovacího webového hostitele, který lze použít ke zpracování požadavků bez zatížení sítě.
 
-Na rozdíl od testování částí zahrnuje testy pro integraci často aspekty infrastruktury aplikace, jako je databáze, systém souborů, síťové prostředky nebo webové požadavky a odpovědi. Testování částí místo těchto otázek používají napodobeniny nebo napodobné objekty. Ale účelem integračních testů je potvrdit, že systém pracuje podle očekávání u těchto systémů, takže pro účely integrace při integraci nepoužíváte napodobeniny nebo objekty s přípravou. Místo toho zahrnete infrastrukturu, jako je přístup k databázi nebo vyvolání služby z jiných služeb.
+Na rozdíl od testování částí testy integrace často zahrnují problémy infrastruktury aplikací, jako je například databáze, systém souborů, síťové prostředky nebo webové požadavky a odpovědi. Testy částí používají falešné nebo falešné objekty místo těchto obav. Ale účelem integračních testů je potvrdit, že systém funguje podle očekávání s těmito systémy, takže pro testování integrace nepoužíváte padělky nebo falešné objekty. Místo toho zahrnete infrastrukturu, jako je přístup k databázi nebo vyvolání služby z jiných služeb.
 
-Vzhledem k tomu, že integrační testy vykonávají větší segmenty kódu než testy jednotek a protože integrační testy spoléhají na prvky infrastruktury, mají za následek, že se jedná o objednávky pomaleji než testy jednotek. Proto je vhodné omezit počet testů integrace, které zapisujete a spouštíte.
+Vzhledem k tomu, že integrační testy vykonávají větší segmenty kódu než testy částí a protože integrační testy spoléhají na prvky infrastruktury, mají tendenci být řádově pomalejší než testy částí. Proto je vhodné omezit, kolik integračních testů napíšete a spustíte.
 
-ASP.NET Core obsahuje vestavěný testovací webový hostitel, který se dá použít ke zpracování požadavků HTTP bez režie sítě, což znamená, že tyto testy můžete spouštět rychleji než při použití reálného webového hostitele. Testovací webový hostitel (TestServer) je k dispozici v komponentě NuGet jako Microsoft. AspNetCore. TestHost. Lze ji přidat do projektů Integration Tests a použít k hostování ASP.NET Corech aplikací.
+ASP.NET Core obsahuje vestavěný testovací webový hostitel, který lze použít ke zpracování požadavků HTTP bez zatížení sítě, což znamená, že tyto testy můžete spustit rychleji než při použití skutečného webového hostitele. Testovací webový hostitel (TestServer) je k dispozici v součásti NuGet jako Microsoft.AspNetCore.TestHost. Lze jej přidat do projektů testů integrace a použít k hostování ASP.NET základních aplikací.
 
-Jak vidíte v následujícím kódu, při vytváření integračních testů pro ASP.NET Core řadiče, vytváříte instance řadičů přes testovacího hostitele. To je srovnatelné s požadavkem HTTP, ale běží rychleji.
+Jak můžete vidět v následujícím kódu, při vytváření testů integrace pro ASP.NET řadiče Core, můžete vytvořit instanci řadiče prostřednictvím testovacího hostitele. To je srovnatelné s požadavkem HTTP, ale běží rychleji.
 
 ```csharp
 public class PrimeWebDefaultRequestShould
@@ -101,54 +101,54 @@ public class PrimeWebDefaultRequestShould
 
 #### <a name="additional-resources"></a>Další zdroje
 
-- **Steve Smith. Testovací kontroléry** (ASP.NET Core) \
+- **Steva Smithe. Testovací řadiče** (ASP.NET Core) \
     [https://docs.microsoft.com/aspnet/core/mvc/controllers/testing](/aspnet/core/mvc/controllers/testing)
 
-- **Steve Smith. Testování integrace** (ASP.NET Core) \
+- **Steva Smithe. Testování integrace** (ASP.NET jádro) \
     [https://docs.microsoft.com/aspnet/core/test/integration-tests](/aspnet/core/test/integration-tests)
 
-- **Testování částí v .NET Core pomocí příkazu dotnet test** \
+- **Testování částí v rozhraní .NET Core pomocí dotnetového testu** \
     [https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test](../../../core/testing/unit-testing-with-dotnet-test.md)
 
-- **xUnit.NET**. Oficiální lokalita. \
+- **xUnit.net**. Oficiální stránky. \
     <https://xunit.github.io/>
 
-- **Základy testování částí.** \
+- **Základy testu částí.** \
     [https://docs.microsoft.com/visualstudio/test/unit-test-basics](/visualstudio/test/unit-test-basics)
 
-- **MOQ**. Úložiště GitHub. \
+- **Moq**. úložiště GitHub. \
     <https://github.com/moq/moq>
 
-- **Nunit**. Oficiální lokalita. \
+- **NUnit**. Oficiální stránky. \
     <https://www.nunit.org/>
 
-### <a name="implementing-service-tests-on-a-multi-container-application"></a>Implementace testů služby v aplikaci s více kontejnery
+### <a name="implementing-service-tests-on-a-multi-container-application"></a>Implementace servisních testů v aplikaci s více kontejnery
 
-Jak bylo uvedeno dříve, při testování aplikací s více kontejnery musí být všechny mikroslužby spuštěny v hostiteli Docker nebo v clusteru kontejnerů. Komplexní testy služby, které zahrnují více operací, které zahrnují několik mikroslužeb, vyžadují nasazení a spuštění celé aplikace v hostiteli Docker spuštěním Docker – sestavení (nebo srovnatelného mechanismu, pokud používáte nástroj Orchestrator). Po spuštění celé aplikace a všech jejích služeb můžete provést ucelenou integraci a funkční testy.
+Jak již bylo uvedeno dříve, při testování aplikací s více kontejnery, všechny mikroslužby musí být spuštěnv rámci clusteru hostitele Dockeru nebo kontejneru. End-to-end testy služeb, které zahrnují více operací zahrnujících několik mikroslužeb vyžadují nasazení a spuštění celé aplikace v hostiteli Dockeru spuštěním docker-compose up (nebo srovnatelný mechanismus, pokud používáte orchestrator). Jakmile je spuštěna celá aplikace a všechny její služby, můžete provést komplexní integrační a funkční testy.
 
-K dispozici je několik přístupů, které můžete použít. V souboru Docker-Compose. yml, který používáte k nasazení aplikace na úrovni řešení, můžete rozšířit vstupní bod pro použití [testu dotnet](../../../core/tools/dotnet-test.md). Můžete také použít jiný soubor pro vytváření, který by spouštěl testy v imagi, na kterou cílíte. Pomocí jiného souboru pro testy integrace, který obsahuje vaše mikroslužby a databáze na kontejnerech, můžete zajistit, aby se související data při spuštění testů vždycky obnovila do původního stavu.
+Existuje několik přístupů, které můžete použít. V souboru docker-compose.yml, který používáte k nasazení aplikace na úrovni řešení, můžete rozbalit vstupní bod a použít [test dotnet](../../../core/tools/dotnet-test.md). Můžete také použít jiný soubor compose, který by spustit testy v obrázku, který cílí. Pomocí jiného souboru compose pro integrační testy, které zahrnuje vaše mikroslužeb a databází na kontejnery, můžete se ujistit, že související data je vždy obnovit původní stav před spuštěním testů.
 
-Jakmile je aplikace pro psaní v provozu, můžete využít zarážky a výjimky, pokud používáte sadu Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu CI v Azure DevOps Services nebo jakémkoli jiném systému CI/CD, který podporuje kontejnery Docker.
+Jakmile je aplikace pro komponovat spuštěna, můžete využít zarážky a výjimky, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu CI ve službě Azure DevOps Services nebo v jakémkoli jiném systému CI/CD, který podporuje kontejnery Dockeru.
 
 ## <a name="testing-in-eshoponcontainers"></a>Testování v eShopOnContainers
 
-Testy referenční aplikace (eShopOnContainers) se nedávno změnily a teď existují čtyři kategorie:
+Testy referenční aplikace (eShopOnContainers) byly nedávno restrukturalizovány a nyní existují čtyři kategorie:
 
-1. Testování **částí** , stejně jako staré staré testy jednotek, obsažené v poli **{mikroservice}. Projekty UnitTests**
+1. **Testy částí,** jen obyčejné staré pravidelné testy částí, obsažené v **{MicroserviceName}. Projekty UnitTests**
 
-2. **Testy funkčnosti nebo integrace mikroslužeb**s testovacími případy, které se týkají infrastruktury pro jednotlivé mikroslužby, ale izolované od ostatních a jsou součástí služby **{mikroslužba}. Projekty FunctionalTests**
+2. **Mikroslužby funkční/integrační testy**, s testovacích případů zahrnující infrastrukturu pro každou mikroslužbu, ale izolované od ostatních a jsou obsaženy v **{MicroserviceName}. FunctionalTests** projekty.
 
-3. **Funkce/integrační testy pro aplikace**, které se zaměřují na integraci mikroslužeb, s testovacími případy, které působí několik mikroslužeb. Tyto testy jsou umístěny v Project **Application. FunctionalTests**.
+3. **Testy funkčnosti/integrace aplikace**, které se zaměřují na integraci mikroslužeb, s testovacích případů, které vyvíjejí několik mikroslužeb. Tyto testy jsou umístěny v projektu **Application.FunctionalTests**.
 
-Test jednotek a integračních testů na mikroslužbu je obsažen v testovací složce v každé mikroslužbě a aplikaci. testy zatížení jsou obsaženy ve složce test ve složce řešení, jak je znázorněno na obrázku 6-25.
+Testování jednotky a integrace na mikroslužbu jsou obsaženy v testovací složce v každé mikroslužbě a aplikace zatížení testy jsou obsaženy pod testovací složky ve složce řešení, jak je znázorněno na obrázku 6-25.
 
-![Snímek obrazovky VS ukazující některé z testovacích projektů v řešení](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
+![Snímek obrazovky v VS s upozorněním na některé testovací projekty v řešení.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
 
-**Obrázek 6-25**. Struktura testovacích složek v eShopOnContainers
+**Obrázek 6-25**. Testování struktury složek v kontejnerech eShopOnContainers
 
-Testy funkcí a integrace mikroslužeb a aplikací jsou spouštěny ze sady Visual Studio pomocí rutiny regulárních testů, ale nejdřív je potřeba spustit požadované služby infrastruktury, a to pomocí sady souborů Docker-skládání obsažených ve složce pro testování řešení:
+Mikroslužby a testy funkce/integrace aplikací jsou spuštěny z visual studia pomocí pravidelné testy runner, ale nejprve je třeba spustit požadované služby infrastruktury pomocí sady docker-compose souborů obsažených ve složce test řešení:
 
-**Docker-Compose-test. yml**
+**docker-compose-test.yml**
 
 ```yml
 version: '3.4'
@@ -164,7 +164,7 @@ services:
     image: mongo
 ```
 
-**Docker-Compose-test. override. yml**
+**docker-compose-test.override.yml**
 
 ```yml
 version: '3.4'
@@ -188,22 +188,22 @@ services:
       - "27017:27017"
 ```
 
-Takže pokud chcete spustit testy funkčnosti nebo integrace, musíte nejdřív spustit tento příkaz ze složky test řešení:
+Chcete-li spustit testy funkčnosti/integrace, musíte nejprve spustit tento příkaz ze složky testu řešení:
 
 ```console
 docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 ```
 
-Jak vidíte, tyto soubory Docker-skládání začínají pouze mikroslužby Redis, RabbitMQ, SQL Server a MongoDB.
+Jak můžete vidět, tyto soubory docker-compose pouze spustit Redis, RabbitMQ, SQL Server a MongoDB mikroslužeb.
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **Testuje soubor Readme** v úložišti EShopOnContainers na GitHubu \
+- **Testuje soubor README** na úložišti eShopOnContainers na GitHubu \
     <https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/test>
 
-- **Zátěžové testy souboru Readme** v úložišti EShopOnContainers na GitHubu \
+- **Načtení testů souborreadme** na eShopOnContainers repo na GitHub \
     <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/test/ServicesTests/LoadTest/>
 
 > [!div class="step-by-step"]
 > [Předchozí](subscribe-events.md)
-> [Další](background-tasks-with-ihostedservice.md)
+> [další](background-tasks-with-ihostedservice.md)

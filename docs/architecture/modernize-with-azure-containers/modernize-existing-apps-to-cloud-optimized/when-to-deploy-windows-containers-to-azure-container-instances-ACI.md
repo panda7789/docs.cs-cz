@@ -1,39 +1,39 @@
 ---
-title: Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
-description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
+title: Kdy nasadit kontejnery Windows do instancí kontejnerů Azure (ACI)
+description: Modernizace stávajících aplikací .NET pomocí Azure Cloudu a kontejnerů Windows | Kdy nasadit kontejnery Windows do instancí kontejnerů Azure (ACI)
 ms.date: 04/29/2018
 ms.openlocfilehash: 3b6ae1ced9c4e01f5ab400e2575947a396064ebd
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68676907"
 ---
-# <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Kdy nasadit kontejnery Windows do Azure Container Instances (ACI)
+# <a name="when-to-deploy-windows-containers-to-azure-container-instances-aci"></a>Kdy nasadit kontejnery Windows do instancí kontejnerů Azure (ACI)
 
-Azure Container Instances hlavní pozice hodnoty znamená, že můžete k němu nasazovat kontejnery a nemusíte ho udržovat, nemusíte upgradovat/opravovat základní operační systémy nebo virtuální počítače, které jsou transparentní a Vy jenom nasadíte kontejnery do prostředí připravené k použití.
+Azure Container Instances hlavní hodnota návrh je, že můžete okamžitě nasadit kontejnery do něj a nemusíte udržovat toto prostředí, nemusíte upgradovat/opravit základní operační systém nebo virtuální počítače, vše, co je transparentní a stačí nasadit kontejnery do připraveného k použití prostředí.
 
-Důvody a scénáře, kdy byste chtěli použít ACI, jsou podobné hlavním scénářům při použití virtuálních počítačů Azure s kontejnery, a to v podstatě hlavní scénáře použití Azure Container Instances:
+Důvody a scénáře, když byste chtěli použít ACI jsou podobné hlavní scénáře při použití virtuálních počítačích Azure s kontejnery, takže v podstatě hlavní scénáře pro použití Azure Container Instances jsou:
 
 - **Scénáře pro vývoj a testování**
 - **Automatizace úloh**
-- **Agenti CI/CD**
-- **Dávkové zpracování malých nebo škálovatelných**
+- **Ci/CD agenti**
+- **Malé/zmenšené dávkové zpracování**
 - **Jednoduché webové aplikace**
 
-Scénář jednoduché webové aplikace je spravedlivý scénář pro ACI, ale vezme v úvahu, že protože v ACI máte jenom jednu instanci kontejneru na Image kontejneru, nebudete mít vysokou dostupnost a máte jenom omezené škálovatelnost.
+Jednoduchý scénář webových aplikací je spravedlivý scénář pro ACI, ale vezměte v úvahu, že vzhledem k tomu, že v ACI můžete mít pouze jednu instanci kontejneru na bitovou kopii kontejneru, nebudete mít vysokou dostupnost a máte pouze omezenou škálovatelnost.
 
-I když se ACI považuje za infrastrukturu, protože poskytuje jenom jednu instanci kontejneru, je ve srovnání s běžnými virtuálními počítači Azure s Windows serverem velký přínos. V ACI stačí nasadit kontejnery do samostatného prostředí a Vy jenom platíte za tyto kontejnery. Nemusíte spravovat/aktualizovat/opravovat virtuální počítače, takže je to mnohem lepší platforma pro většinu scénářů, ve kterých můžete používat virtuální počítače s kontejnery. Použití ACI je rovné, stačí pouze nasadit kontejner, takže nemusíte vytvářet prostředí virtuálních počítačů, které pouze nasazujete kontejnery.
+I v případě, že aci je považován za infrastrukturu, protože poskytuje pouze jeden kontejner instance, je obrovská výhoda ve srovnání s běžnými virtuálními počítači Azure s Windows Server. S ACI, stačí nasadit kontejnery do prostředí s vlastním údržbou a stačí zaplatit za tyto kontejnery. Nemusíte udržovat/ aktualizovat/opravovat virtuální uživatele, takže je to mnohem lepší platforma pro většinu scénářů, kde můžete používat virtuální aplikace s kontejnery. Použití ACI je přímočaré, stačí nasadit kontejner, není třeba vytvářet prostředí virtuálního uživatele, které právě nasadíte kontejnery.
 
-Hlavní výhody Azure Container Instances (ACI) jsou:
+Hlavní výhody azure container instance (ACI) jsou:
 
-- Spouštění kontejnerů bez správy serverů
-- Zvýšení flexibility pomocí kontejnerů na vyžádání
-- Pomocí jediného příkazu můžete nasadit kontejnery do cloudu s nepředchůdci a rychlostí.
-- Zabezpečení aplikací s izolací hypervisoru
+- Spuštění kontejnerů bez správy serverů
+- Zvyšte agilitu díky kontejnerům na vyžádání
+- Nasazujte kontejnery do cloudu s nebývalou jednoduchostí a rychlostí – s jediným příkazem.
+- Bezpečné aplikace s izolací hypervisoru
 
-V krátkém ACI můžete rychle vyvíjet aplikace bez nutnosti spravovat virtuální počítače nebo se seznámit s novými nástroji. Je to jenom vaše aplikace v kontejneru spuštěná v cloudu.
+Stručně řečeno, s ACI můžete vyvíjet aplikace rychle bez správy virtuálních počítačů nebo se museli učit nové nástroje. Je to jen vaše aplikace, v kontejneru, běží v cloudu.
 
 > [!div class="step-by-step"]
 > [Předchozí](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
-> [Další](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+> [další](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

@@ -1,20 +1,20 @@
 ---
-title: Interpretace ML.NET modelů pomocí generalizované doplňkové modely
-description: Použijte generalizované doplňkové modely a funkce tvarů pro výklad modelu v ML.NET
+title: Interpretace ML.NET modelů pomocí generalizovaných aditivních modelů
+description: Použití generalizovaných aditivních modelů a funkcí tvarů pro interpretaci modelu v ML.NET
 ms.date: 01/30/2020
 ms.custom: mvc,how-to
 ms.openlocfilehash: 6df19eff4fec98c5815a9f8f4d8e4e9a80cba6ed
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "77092470"
 ---
-# <a name="use-generalized-additive-models-and-shape-functions-for-model-interpretability-in-mlnet"></a>Použijte generalizované doplňkové modely a funkce tvarů pro výklad modelu v ML.NET
+# <a name="use-generalized-additive-models-and-shape-functions-for-model-interpretability-in-mlnet"></a>Použití generalizovaných aditivních modelů a funkcí tvarů pro interpretaci modelu v ML.NET
 
-Při vytváření modelů strojového učení není často dost dělat předpovědi. Vývojáři strojového učení, tvůrci rozhodování a oprávnění ovlivněné modely potřebují pochopit, jak modely strojového učení vytvářejí rozhodnutí a jaké funkce přispívají ke svému výkonu. **Generalizované doplňkové modely (GAMs)** se interně používají v Microsoftu, aby bylo možné modelovat, aby mohli vývojáři strojového učení vytvářet vysoce náročné modely, které můžou snadno interpretovat jiní uživatelé.
+Při vytváření modelů strojového učení často nestačí jednoduše vytvářet předpovědi. Vývojáři strojového učení, osoby s rozhodovací pravomocí a ti, kterých se modely týkají, často potřebují pochopit, jak modely strojového učení rozhodují a které funkce přispívají k jejich výkonu. **Generalizované aditivní modely (GAM)** se používají interně v Microsoftu pro interpretaci modelu, aby vývojáři strojového učení mohli vytvářet vysokokapacitní modely, které mohou snadno interpretovat ostatní uživatelé.
 
-GAMs jsou třída **interpretované modely** , které jsou lineární modely, kde jsou tyto výrazy nelineární funkce, nazývané "funkce tvarů" jedné proměnné. Jako lineární modely jsou snadno interpretované, ale vzhledem k tomu, že modely se učí funkce funkcí místo jedné váhy, můžou modelovat složitější vztahy než jednoduchý lineární model. Výsledný prediktivní GAM má zachycený výraz, který představuje průměrnou předpověď v rámci sady školení a funkce tvarů, které představují odchylku od průměrného předpovědi. Funkce tvaru lze kontrolovat podle očí, aby bylo možné zobrazit odpověď modelu na různé hodnoty funkce a vizuálů jako následující graf, který je vytvořen na konci příkladu kódu. GAM Trainer v ML.NET je implementována pomocí nech stromů s omezeným přechodem (například stromu stumps) k získání funkcí neparametrového obrazce a je založena na metodě popsané v [srozumitelných modelech pro klasifikaci a regresi](https://www.cs.cornell.edu/~yinlou/papers/lou-kdd12.pdf) pomocí Lou, Caruana a Gehrke.
+GAMs jsou třída **interpretovatelných modelů,** které jsou lineární modely, kde termíny jsou nelineární funkce, nazývané "tvarové funkce" jedné proměnné. Jako lineární modely jsou snadno interpretovány, ale protože se modely učí funkce funkcí namísto jedné hmotnosti, mohou modelovat složitější vztahy než jednoduchý lineární model. Výsledný gam prediktor má intercept termín, který představuje průměrnou předpověď přes trénovací sadu a tvar funkce, které představují odchylku od průměrné předpovědi. Funkce tvaru mohou být zkontrolovány okem, aby se zovírala odezva modelu na různé hodnoty prvku, a vizualizované jako následující graf, který je vytvořen na konci příkladu kódu. Gam trainer v ML.NET je implementován pomocí mělkého gradientu posílených stromů (například pařezů stromů) pro učení neparametrických funkcí tvaru a je založen na metodě popsané v [Intelligible Models for Classification and Regression](https://www.cs.cornell.edu/~yinlou/papers/lou-kdd12.pdf) by Lou, Caruana a Gehrke.
 
 ```csharp
 // Train the Generalized Additive Model
@@ -48,6 +48,6 @@ for (int i = 0; i < myFeatureBins.Length; i++)
 }
 ```
 
-![Graf funkcí obrazce generalizovaná doplňková](./media/use-gams-for-model-explainability/gam-shape-function-graph.png)
+![Graf funkce tvarových modelů generalizovaných aditivních modelů](./media/use-gams-for-model-explainability/gam-shape-function-graph.png)
 
-Ukázku toho, jak vytvořit model GAM a prozkoumat a interpretovat výsledky, najdete v [úložišti GitHub/Machinelearning GitHub](https://github.com/dotnet/machinelearning/blob/master/docs/samples/Microsoft.ML.Samples/Dynamic/GeneralizedAdditiveModels.cs).
+Ukázku, jak trénovat model GAM a zkontrolovat a interpretovat výsledky, naleznete [v úložišti GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/blob/master/docs/samples/Microsoft.ML.Samples/Dynamic/GeneralizedAdditiveModels.cs).
