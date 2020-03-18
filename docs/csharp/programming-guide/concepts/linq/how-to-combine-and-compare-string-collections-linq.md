@@ -1,20 +1,20 @@
 ---
-title: Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)
+title: Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: 23089835e710a7905693f8e3e3b57173085d0694
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f73a31e109933a4b6dd0078934d89d3bb770de5c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141426"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169451"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="e42d1-102">Postup kombinování a porovnávání kolekcí řetězců (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="e42d1-102">How to combine and compare string collections (LINQ) (C#)</span></span>
-<span data-ttu-id="e42d1-103">Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky.</span><span class="sxs-lookup"><span data-stu-id="e42d1-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="e42d1-104">Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.</span><span class="sxs-lookup"><span data-stu-id="e42d1-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="eff8c-102">Jak kombinovat a porovnávat kolekce řetězců (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="eff8c-102">How to combine and compare string collections (LINQ) (C#)</span></span>
+<span data-ttu-id="eff8c-103">Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a pak seřadit výsledky.</span><span class="sxs-lookup"><span data-stu-id="eff8c-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="eff8c-104">Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průsečík na dvě sady řádků textu.</span><span class="sxs-lookup"><span data-stu-id="eff8c-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
   
-### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="e42d1-105">Nastavení projektu a textových souborů</span><span class="sxs-lookup"><span data-stu-id="e42d1-105">To set up the project and the text files</span></span>  
+### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="eff8c-105">Nastavení projektu a textových souborů</span><span class="sxs-lookup"><span data-stu-id="eff8c-105">To set up the project and the text files</span></span>  
   
-1. <span data-ttu-id="e42d1-106">Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="e42d1-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1. <span data-ttu-id="eff8c-106">Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložte je do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="eff8c-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```text  
     Bankov, Peter  
@@ -29,7 +29,7 @@ ms.locfileid: "74141426"
     Garcia, Debra  
     ```  
   
-2. <span data-ttu-id="e42d1-107">Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="e42d1-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="e42d1-108">Všimněte si, že dva soubory mají některé běžné názvy.</span><span class="sxs-lookup"><span data-stu-id="e42d1-108">Note that the two files have some names in common.</span></span>  
+2. <span data-ttu-id="eff8c-107">Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte je do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="eff8c-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="eff8c-108">Všimněte si, že dva soubory mají některé názvy společné.</span><span class="sxs-lookup"><span data-stu-id="eff8c-108">Note that the two files have some names in common.</span></span>  
   
     ```text  
     Liu, Jinghao  
@@ -44,7 +44,7 @@ ms.locfileid: "74141426"
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="e42d1-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="e42d1-109">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="eff8c-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="eff8c-109">Example</span></span>  
   
 ```csharp  
 class MergeStrings  
@@ -74,7 +74,7 @@ class MergeStrings
                 fileA.Intersect(fileB);  
             OutputQueryResults(commonNamesQuery, "Merge based on intersect:");  
   
-            // Find the matching fields in each list. Merge the two   
+            // Find the matching fields in each list. Merge the two
             // results by using Concat, and then  
             // sort using the default string comparer.  
             string nameMatch = "Garcia";  
@@ -168,10 +168,10 @@ class MergeStrings
 */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="e42d1-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e42d1-110">Compiling the Code</span></span>  
- <span data-ttu-id="e42d1-111">Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="e42d1-111">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="eff8c-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="eff8c-110">Compiling the Code</span></span>  
+ <span data-ttu-id="eff8c-111">Vytvořte projekt aplikace konzoly `using` Jazyka C# se direktivami pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="eff8c-111">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e42d1-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e42d1-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eff8c-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="eff8c-112">See also</span></span>
 
-- [<span data-ttu-id="e42d1-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="e42d1-113">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
-- [<span data-ttu-id="e42d1-114">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="e42d1-114">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+- [<span data-ttu-id="eff8c-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="eff8c-113">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="eff8c-114">Linq a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="eff8c-114">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)

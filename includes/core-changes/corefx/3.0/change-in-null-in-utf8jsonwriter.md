@@ -1,22 +1,22 @@
 ---
 ms.openlocfilehash: 7c39fe7ffd59fa7a5564bb45f32a6a2fbe0ddb33
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568246"
 ---
-### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a><span data-ttu-id="34536-101">Změna v sémantikě `(string)null` v Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="34536-101">Change in semantics of `(string)null` in Utf8JsonWriter</span></span>
+### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a><span data-ttu-id="43daa-101">Změna sémantiky `(string)null` v Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="43daa-101">Change in semantics of `(string)null` in Utf8JsonWriter</span></span>
 
-<span data-ttu-id="34536-102">V rozhraní .NET Core 3,0 Preview 7 je řetězec s hodnotou null považován za prázdný řetězec v <xref:System.Text.Json.Utf8JsonWriter>.</span><span class="sxs-lookup"><span data-stu-id="34536-102">In .NET Core 3.0 Preview 7, the null string is treated as the empty string in <xref:System.Text.Json.Utf8JsonWriter>.</span></span> <span data-ttu-id="34536-103">Počínaje rozhraním .NET Core 3,0 Preview 8 vygeneruje řetězec null výjimku při použití jako názvu vlastnosti a vygeneruje token JSON s hodnotou null, pokud se používá jako hodnota.</span><span class="sxs-lookup"><span data-stu-id="34536-103">Starting with .NET Core 3.0 Preview 8, the null string throws an exception when used as a property name, and it emits the JSON null token when used as a value.</span></span>
+<span data-ttu-id="43daa-102">V rozhraní .NET Core 3.0 Preview 7 je nulový <xref:System.Text.Json.Utf8JsonWriter>řetězec považován za prázdný řetězec v .</span><span class="sxs-lookup"><span data-stu-id="43daa-102">In .NET Core 3.0 Preview 7, the null string is treated as the empty string in <xref:System.Text.Json.Utf8JsonWriter>.</span></span> <span data-ttu-id="43daa-103">Počínaje .NET Core 3.0 Preview 8, nulový řetězec vyvolá výjimku při použití jako název vlastnosti a vydává token null JSON při použití jako hodnota.</span><span class="sxs-lookup"><span data-stu-id="43daa-103">Starting with .NET Core 3.0 Preview 8, the null string throws an exception when used as a property name, and it emits the JSON null token when used as a value.</span></span>
 
-#### <a name="change-description"></a><span data-ttu-id="34536-104">Změnit popis</span><span class="sxs-lookup"><span data-stu-id="34536-104">Change description</span></span>
+#### <a name="change-description"></a><span data-ttu-id="43daa-104">Popis změny</span><span class="sxs-lookup"><span data-stu-id="43daa-104">Change description</span></span>
 
-<span data-ttu-id="34536-105">V rozhraní .NET Core 3,0 Preview 7 byl řetězec `null` považován za `""` při psaní názvů vlastností a při psaní hodnot.</span><span class="sxs-lookup"><span data-stu-id="34536-105">In .NET Core 3.0 Preview 7, the `null` string was treated as `""` both when writing property names and when writing values.</span></span>  
+<span data-ttu-id="43daa-105">V .NET Core 3.0 `null` Preview 7 byl `""` řetězec považován za při psaní názvů vlastností i při psaní hodnot.</span><span class="sxs-lookup"><span data-stu-id="43daa-105">In .NET Core 3.0 Preview 7, the `null` string was treated as `""` both when writing property names and when writing values.</span></span>  
 
-<span data-ttu-id="34536-106">Počínaje verzí .NET Core 3,0 Preview 8 `null` název vlastnosti vyvolá `ArgumentNullException`a `null` hodnota je považována za volání <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> nebo <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="34536-106">Starting with .NET Core 3.0 Preview 8, a `null` property name throws an `ArgumentNullException`, and a `null` value is treated as a call to <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> or <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType>.</span></span>
+<span data-ttu-id="43daa-106">Počínaje rozhraním .NET Core 3.0 Preview 8, `null` název vlastnosti vyvolá `ArgumentNullException`a <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType> `null` hodnota je považována za volání nebo .</span><span class="sxs-lookup"><span data-stu-id="43daa-106">Starting with .NET Core 3.0 Preview 8, a `null` property name throws an `ArgumentNullException`, and a `null` value is treated as a call to <xref:System.Text.Json.Utf8JsonWriter.WriteNull%2A?displayProperty=nameWithType> or <xref:System.Text.Json.Utf8JsonWriter.WriteNullValue?displayProperty=nameWithType>.</span></span>
 
-<span data-ttu-id="34536-107">Vezměte v úvahu následující kód:</span><span class="sxs-lookup"><span data-stu-id="34536-107">Consider the following code:</span></span>
+<span data-ttu-id="43daa-107">Uvažujte následující kód:</span><span class="sxs-lookup"><span data-stu-id="43daa-107">Consider the following code:</span></span>
 
 ```csharp
 string propertyName1 = null;
@@ -40,39 +40,39 @@ using (Utf8JsonWriter writer = new Utf8JsonWriter(stream))
 }
 ```
 
-<span data-ttu-id="34536-108">Pokud spustíte s .NET Core 3,0 Preview 7, modul pro zápis vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="34536-108">If run with .NET Core 3.0 Preview 7, the writer produces the following output:</span></span>
+<span data-ttu-id="43daa-108">Při spuštění s rozhraním .NET Core 3.0 Preview 7 vytvoří zapisovač následující výstup:</span><span class="sxs-lookup"><span data-stu-id="43daa-108">If run with .NET Core 3.0 Preview 7, the writer produces the following output:</span></span>
 
 ```js
 [{"":"","prop2":""},""]
 ```
 
-<span data-ttu-id="34536-109">Počínaje rozhraním .NET Core 3,0 Preview 8 volání `writer.WriteString(propertyName1, propertyValue1)` vyvolá <xref:System.ArgumentNullException>.</span><span class="sxs-lookup"><span data-stu-id="34536-109">Starting with .NET Core 3.0 Preview 8, the call to `writer.WriteString(propertyName1, propertyValue1)` throws an <xref:System.ArgumentNullException>.</span></span>  <span data-ttu-id="34536-110">Pokud je `propertyName1 = null` nahrazena `propertyName1 = string.Empty`, výstup by nyní byl:</span><span class="sxs-lookup"><span data-stu-id="34536-110">If `propertyName1 = null` is replaced with `propertyName1 = string.Empty`, the output would now be:</span></span>
+<span data-ttu-id="43daa-109">Počínaje rozhraním .NET Core 3.0 `writer.WriteString(propertyName1, propertyValue1)` Preview 8 <xref:System.ArgumentNullException>vyvolá volání .</span><span class="sxs-lookup"><span data-stu-id="43daa-109">Starting with .NET Core 3.0 Preview 8, the call to `writer.WriteString(propertyName1, propertyValue1)` throws an <xref:System.ArgumentNullException>.</span></span>  <span data-ttu-id="43daa-110">Pokud `propertyName1 = null` je nahrazen `propertyName1 = string.Empty`, výstup by nyní:</span><span class="sxs-lookup"><span data-stu-id="43daa-110">If `propertyName1 = null` is replaced with `propertyName1 = string.Empty`, the output would now be:</span></span>
 
 ```js
 [{"":null,"prop2":null},null]
 ```
 
-<span data-ttu-id="34536-111">Tato změna byla provedena pro lepší zarovnání se očekáváním volajícího pro hodnoty `null`.</span><span class="sxs-lookup"><span data-stu-id="34536-111">This change was made to better align with caller expectations for `null` values.</span></span>
+<span data-ttu-id="43daa-111">Tato změna byla provedena lépe sladit s očekávání volajícího pro `null` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="43daa-111">This change was made to better align with caller expectations for `null` values.</span></span>
 
-#### <a name="version-introduced"></a><span data-ttu-id="34536-112">Představená verze</span><span class="sxs-lookup"><span data-stu-id="34536-112">Version introduced</span></span>
+#### <a name="version-introduced"></a><span data-ttu-id="43daa-112">Zavedená verze</span><span class="sxs-lookup"><span data-stu-id="43daa-112">Version introduced</span></span>
 
-<span data-ttu-id="34536-113">3,0 Preview 8</span><span class="sxs-lookup"><span data-stu-id="34536-113">3.0 Preview 8</span></span>
+<span data-ttu-id="43daa-113">3.0 Náhled 8</span><span class="sxs-lookup"><span data-stu-id="43daa-113">3.0 Preview 8</span></span>
 
-#### <a name="recommended-action"></a><span data-ttu-id="34536-114">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="34536-114">Recommended action</span></span>
+#### <a name="recommended-action"></a><span data-ttu-id="43daa-114">Doporučená akce</span><span class="sxs-lookup"><span data-stu-id="43daa-114">Recommended action</span></span>
 
-<span data-ttu-id="34536-115">Při psaní názvů vlastností a hodnot pomocí <xref:System.Text.Json.Utf8JsonWriter> třídy:</span><span class="sxs-lookup"><span data-stu-id="34536-115">When writing property names and values with the <xref:System.Text.Json.Utf8JsonWriter> class:</span></span>
+<span data-ttu-id="43daa-115">Při psaní názvů vlastností <xref:System.Text.Json.Utf8JsonWriter> a hodnot s třídou:</span><span class="sxs-lookup"><span data-stu-id="43daa-115">When writing property names and values with the <xref:System.Text.Json.Utf8JsonWriter> class:</span></span>
 
-- <span data-ttu-id="34536-116">Zajistěte, aby se jako názvy vlastností používaly řetězce bez`null`.</span><span class="sxs-lookup"><span data-stu-id="34536-116">Ensure non-`null` strings are used as property names.</span></span>
+- <span data-ttu-id="43daa-116">Ujistěte`null` se, že jako názvy vlastností se používají jiné řetězce.</span><span class="sxs-lookup"><span data-stu-id="43daa-116">Ensure non-`null` strings are used as property names.</span></span>
 
-- <span data-ttu-id="34536-117">Pokud je požadované předchozí chování, použijte volání slučování s hodnotou null; například `writer.WriteString(propertyName1 ?? "", propertyValue1)`.</span><span class="sxs-lookup"><span data-stu-id="34536-117">If the previous behavior is desired, use a null coalescing invocation; for example, `writer.WriteString(propertyName1 ?? "", propertyValue1)`.</span></span>
+- <span data-ttu-id="43daa-117">Pokud je požadováno předchozí chování, použijte null coalescing vyvolání; například `writer.WriteString(propertyName1 ?? "", propertyValue1)`.</span><span class="sxs-lookup"><span data-stu-id="43daa-117">If the previous behavior is desired, use a null coalescing invocation; for example, `writer.WriteString(propertyName1 ?? "", propertyValue1)`.</span></span>
 
-- <span data-ttu-id="34536-118">Pokud zápis literálu `null` pro hodnotu `null` řetězce není žádoucí, použijte volání slučování s hodnotou null; například `writer.WriteString(propertyName2, propertyValue2 ?? "")`.</span><span class="sxs-lookup"><span data-stu-id="34536-118">If writing a `null` literal for a `null` string value is not desirable, use a null coalescing invocation; for example, `writer.WriteString(propertyName2, propertyValue2 ?? "")`.</span></span>
+- <span data-ttu-id="43daa-118">Pokud zápis `null` literálu `null` pro hodnotu řetězce není žádoucí, použijte null coalescing vyvolání; například `writer.WriteString(propertyName2, propertyValue2 ?? "")`.</span><span class="sxs-lookup"><span data-stu-id="43daa-118">If writing a `null` literal for a `null` string value is not desirable, use a null coalescing invocation; for example, `writer.WriteString(propertyName2, propertyValue2 ?? "")`.</span></span>
 
-#### <a name="category"></a><span data-ttu-id="34536-119">Kategorie</span><span class="sxs-lookup"><span data-stu-id="34536-119">Category</span></span>
+#### <a name="category"></a><span data-ttu-id="43daa-119">Kategorie</span><span class="sxs-lookup"><span data-stu-id="43daa-119">Category</span></span>
 
-<span data-ttu-id="34536-120">CoreFx</span><span class="sxs-lookup"><span data-stu-id="34536-120">CoreFx</span></span>
+<span data-ttu-id="43daa-120">CoreFx</span><span class="sxs-lookup"><span data-stu-id="43daa-120">CoreFx</span></span>
 
-#### <a name="affected-apis"></a><span data-ttu-id="34536-121">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="34536-121">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="43daa-121">Ovlivněná rozhraní API</span><span class="sxs-lookup"><span data-stu-id="43daa-121">Affected APIs</span></span>
 
 - <xref:System.Text.Json.Utf8JsonWriter.WriteBase64String(System.String,System.ReadOnlySpan%7BSystem.Byte%7D)?displayProperty=nameWithType>
 - <xref:System.Text.Json.Utf8JsonWriter.WriteBoolean(System.String,System.Boolean)?displayProperty=nameWithType>

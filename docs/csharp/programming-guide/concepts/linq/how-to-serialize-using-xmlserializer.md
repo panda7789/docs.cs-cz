@@ -1,19 +1,19 @@
 ---
-title: Postup při serializaci pomocí XmlSerializerC#()
+title: Jak serializovat pomocí XmlSerializer (C#)
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
 ms.openlocfilehash: 0ec19e964471382c6f10f07d6d4bb25f88fd532f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347400"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a><span data-ttu-id="98e51-102">Postup při serializaci pomocí XmlSerializerC#()</span><span class="sxs-lookup"><span data-stu-id="98e51-102">How to serialize using XmlSerializer (C#)</span></span>
-<span data-ttu-id="98e51-103">Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Xml.Serialization.XmlSerializer>.</span><span class="sxs-lookup"><span data-stu-id="98e51-103">This topic shows an example that serializes and deserializes using <xref:System.Xml.Serialization.XmlSerializer>.</span></span>  
+# <a name="how-to-serialize-using-xmlserializer-c"></a><span data-ttu-id="26aa3-102">Jak serializovat pomocí XmlSerializer (C#)</span><span class="sxs-lookup"><span data-stu-id="26aa3-102">How to serialize using XmlSerializer (C#)</span></span>
+<span data-ttu-id="26aa3-103">Toto téma ukazuje příklad, který serializuje a <xref:System.Xml.Serialization.XmlSerializer>reserializuje pomocí .</span><span class="sxs-lookup"><span data-stu-id="26aa3-103">This topic shows an example that serializes and deserializes using <xref:System.Xml.Serialization.XmlSerializer>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="98e51-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="98e51-104">Example</span></span>  
- <span data-ttu-id="98e51-105">Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="98e51-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="98e51-106">Pak je zaserializace do paměťového proudu a pak je deserializace z paměťového proudu.</span><span class="sxs-lookup"><span data-stu-id="98e51-106">It then serializes them to a memory stream, and then deserializes them from the memory stream.</span></span>  
+## <a name="example"></a><span data-ttu-id="26aa3-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="26aa3-104">Example</span></span>  
+ <span data-ttu-id="26aa3-105">Následující příklad vytvoří počet objektů, <xref:System.Xml.Linq.XElement> které obsahují objekty.</span><span class="sxs-lookup"><span data-stu-id="26aa3-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="26aa3-106">Potom serializuje je do datového proudu paměti a potom je reserializuje z datového proudu paměti.</span><span class="sxs-lookup"><span data-stu-id="26aa3-106">It then serializes them to a memory stream, and then deserializes them from the memory stream.</span></span>  
   
 ```csharp  
 using System;  
@@ -78,7 +78,7 @@ class XLinqTest
 }  
 ```  
   
- <span data-ttu-id="98e51-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="98e51-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="26aa3-107">Tento příklad vytváří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="26aa3-107">This example produces the following output:</span></span>  
   
 ```output  
 Testing for type: XElementNullContainer  
