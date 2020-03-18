@@ -30,13 +30,13 @@
         - name: Provádění operací formátování
           href: performing-formatting-operations.md
           items:
-            - name: 'Postupy: Vyplnění čísla úvodními nulami'
+            - name: 'Postupy: Zarovnání čísla úvodními nulami'
               href: how-to-pad-a-number-with-leading-zeros.md
             - name: 'Postupy: Extrahování dne v týdnu z konkrétního data'
               href: how-to-extract-the-day-of-the-week-from-a-specific-date.md
             - name: 'Postupy: Definování a používání vlastních poskytovatelů číselného formátu'
               href: how-to-define-and-use-custom-numeric-format-providers.md
-            - name: 'Postupy: Hodnoty data a doby odezvy'
+            - name: 'Postupy: Hodnoty data a času round-trip'
               href: how-to-round-trip-date-and-time-values.md
             - name: "Postupy: Zobrazení milisekund v\_hodnotách data a\_času"
               href: how-to-display-milliseconds-in-date-and-time-values.md

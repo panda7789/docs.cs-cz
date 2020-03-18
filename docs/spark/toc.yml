@@ -35,11 +35,11 @@
       href: how-to-guides/ubuntu-instructions.md
     - name: Sestavení aplikace ve Windows
       href: how-to-guides/windows-instructions.md
-- name: Odkaz
+- name: Referenční informace
   items:
-    - name: Referenční dokumentace ke knihovně API
+    - name: Referenční materiály k rozhraní API
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'
-- name: Prostředky
+- name: Zdroje
   items:
     - name: Přehled prostředků
       href: resources/index.md
